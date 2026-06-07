@@ -3,6 +3,7 @@
 import Link from 'next/link'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { useT } from '@/lib/i18n/use-t'
 
 type WalkthroughCard = {
   kind: 'Notice' | 'Say' | 'Zoom Out'
@@ -91,6 +92,7 @@ function CardBlock({ card }: { card: WalkthroughCard }) {
 }
 
 export default function OfMiceAndMenExtractWalkthroughPage() {
+  const tr = useT()
   return (
     <main className="mx-auto max-w-4xl px-4 py-10">
       <BreadcrumbJsonLd
@@ -111,23 +113,26 @@ export default function OfMiceAndMenExtractWalkthroughPage() {
 
       <nav className="mb-6 text-sm text-muted-foreground">
         <Link href="/revision/texts/of-mice-and-men" className="hover:underline">
-          &larr; Back to Of Mice and Men
+          &larr; {tr('rev.texts.common.back_to_text').replace('{text}', 'Of Mice and Men')}
         </Link>
       </nav>
 
       <header className="mb-8">
         <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-          Extract walkthrough
+          {tr('rev.texts2.omam.extract.eyebrow')}
         </p>
-        <h1 className="mt-1 text-3xl font-bold tracking-tight">The closing scene at the pool</h1>
+        <h1 className="mt-1 text-3xl font-bold tracking-tight">
+          {tr('rev.texts2.omam.extract.title')}
+        </h1>
         <p className="mt-3 text-base text-muted-foreground">
-          Lennie at the Salinas pool, the rabbit hallucination, and George&rsquo;s act of mercy. A
-          close reading of the final pages of Steinbeck&rsquo;s 1937 novella.
+          {tr('rev.texts2.omam.extract.intro')}
         </p>
       </header>
 
       <section className="mb-10">
-        <h2 className="mb-3 text-xl font-semibold">Setting the scene</h2>
+        <h2 className="mb-3 text-xl font-semibold">
+          {tr('rev.texts2.omam.extract.setting_scene')}
+        </h2>
         <p className="text-sm leading-relaxed">
           Chapter 6 returns to the &ldquo;deep green pool&rdquo; of Chapter 1. Lennie has fled after
           accidentally killing Curley&rsquo;s wife. He hallucinates first his Aunt Clara, then a
@@ -138,7 +143,7 @@ export default function OfMiceAndMenExtractWalkthroughPage() {
       </section>
 
       <section className="mb-10">
-        <h2 className="mb-4 text-xl font-semibold">Walkthrough</h2>
+        <h2 className="mb-4 text-xl font-semibold">{tr('rev.texts2.common.walkthrough')}</h2>
         <div className="grid gap-4 md:grid-cols-2">
           {WALKTHROUGH.map((card) => (
             <CardBlock key={card.title} card={card} />
@@ -147,7 +152,7 @@ export default function OfMiceAndMenExtractWalkthroughPage() {
       </section>
 
       <section className="mb-10">
-        <h2 className="mb-3 text-xl font-semibold">The rabbit hallucination</h2>
+        <h2 className="mb-3 text-xl font-semibold">{tr('rev.texts2.omam.extract.rabbit')}</h2>
         <p className="text-sm leading-relaxed">
           Before George arrives, a giant imagined rabbit appears and tells Lennie he is not fit to
           lick its boots. Steinbeck externalises Lennie&rsquo;s shame as a vision drawn from the
@@ -158,14 +163,14 @@ export default function OfMiceAndMenExtractWalkthroughPage() {
       </section>
 
       <section className="mb-10">
-        <h2 className="mb-3 text-xl font-semibold">Model paragraph (≈250 words)</h2>
+        <h2 className="mb-3 text-xl font-semibold">{tr('rev.texts2.omam.extract.model_para')}</h2>
         <p className="rounded-lg border border-border/60 bg-card/40 p-5 text-sm leading-relaxed">
           {MODEL_PARAGRAPH}
         </p>
       </section>
 
       <section className="mb-10">
-        <h2 className="mb-3 text-xl font-semibold">Practice prompts</h2>
+        <h2 className="mb-3 text-xl font-semibold">{tr('rev.texts2.common.practice_prompts')}</h2>
         <ul className="list-disc space-y-2 pl-6 text-sm">
           <li>
             How does Steinbeck use the closing chapter to make Lennie&rsquo;s death feel inevitable?
@@ -182,17 +187,8 @@ export default function OfMiceAndMenExtractWalkthroughPage() {
       </section>
 
       <footer className="mt-12 border-t border-border/60 pt-4 text-xs text-muted-foreground">
-        <p className="font-semibold">Fair dealing notice</p>
-        <p className="mt-1">
-          Of Mice and Men by John Steinbeck (first published 1937) remains in copyright. UK rights
-          are held by Penguin Books Ltd (originally published in the United States by Covici Friede,
-          now part of Penguin Random House / Viking). Short verbatim fragments are reproduced here
-          under the fair dealing provisions of the Copyright, Designs and Patents Act 1988 for the
-          purposes of criticism, review and educational quotation. All quoted fragments are fewer
-          than fifteen words and are accompanied by substantial critical commentary. No part of this
-          page is intended to substitute for the full text. Students should obtain a complete
-          edition from Penguin or their school or public library.
-        </p>
+        <p className="font-semibold">{tr('rev.texts2.common.fair_dealing_notice_heading')}</p>
+        <p className="mt-1">{tr('rev.texts2.omam.extract.fair_dealing_body')}</p>
       </footer>
     </main>
   )

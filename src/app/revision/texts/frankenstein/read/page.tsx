@@ -3,6 +3,7 @@
 import { InteractiveTextViewer, type TextData } from '@/components/study/InteractiveTextViewer'
 import Link from 'next/link'
 
+import { useT } from '@/lib/i18n/use-t'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 // ─── Full Frankenstein reading data ─────────────────────────────────────────
 // Mary Shelley's Frankenstein (1818) is in the public domain.
@@ -751,6 +752,7 @@ Frankenstein was published anonymously on 1 January 1818. Most reviewers assumed
 // ─── Page component ─────────────────────────────────────────────────────────
 
 export default function FrankensteinReadPage() {
+  const t = useT()
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       <BreadcrumbJsonLd
@@ -774,16 +776,14 @@ export default function FrankensteinReadPage() {
           Frankenstein
         </Link>
         <span>/</span>
-        <span className="text-foreground font-medium">Read the Novel</span>
+        <span className="text-foreground font-medium">{t('rev.texts.fr.read.crumb_current')}</span>
       </nav>
 
       {/* Public domain notice */}
       <div className="mb-6 rounded-xl border border-teal-500/20 bg-teal-500/5 px-4 py-3">
         <p className="text-sm text-muted-foreground">
-          <span className="font-semibold text-teal-400">Public Domain Text</span> &mdash;{' '}
-          <em>Frankenstein; or, The Modern Prometheus</em> (1818) by Mary Shelley is in the public
-          domain. The text below is from the original 1818 first edition. Key chapters are presented
-          with interactive annotations for GCSE study.
+          <span className="font-semibold text-teal-400">{t('rev.texts.fr.read.pd_label')}</span>{' '}
+          &mdash; {t('rev.texts.fr.read.pd_body')}
         </p>
       </div>
 
@@ -796,15 +796,12 @@ export default function FrankensteinReadPage() {
 
       {/* Footer */}
       <div className="mt-8 flex flex-col gap-4 border-t border-border/60 pt-6 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-xs text-muted-foreground">
-          <em>Frankenstein; or, The Modern Prometheus</em> (1818) by Mary Shelley is in the public
-          domain. Text sourced from the 1818 first edition. Annotations are original study material.
-        </p>
+        <p className="text-xs text-muted-foreground">{t('rev.texts.fr.read.footer_pd')}</p>
         <Link
           href="/revision/texts/frankenstein"
           className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-2 text-sm font-medium text-foreground hover:bg-muted transition-colors"
         >
-          Back to Study Guide
+          {t('rev.texts.fr.read.back_to_guide')}
         </Link>
       </div>
     </div>

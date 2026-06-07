@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ArrowLeft, Users, Quote, Sparkles, Shield, Skull } from 'lucide-react'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
+import { t } from '@/lib/i18n/t'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -220,6 +221,12 @@ export default async function LotFCharactersPage() {
     redirect('/revision/texts')
   }
 
+  const tOverview = await t('rev.texts.common.overview')
+  const tAllegoricalRole = await t('rev.texts.common.allegorical_role_label')
+  const tCharDev = await t('rev.texts.common.character_development')
+  const tKeyQuotations = await t('rev.texts.common.key_quotations')
+  const tExamTip = await t('rev.texts.common.exam_tip')
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -239,10 +246,10 @@ export default async function LotFCharactersPage() {
       />
       <Breadcrumb
         items={[
-          { label: 'Revision', href: '/revision' },
-          { label: 'Set Texts', href: '/revision/texts' },
+          { label: await t('rev.texts.common.crumb_revision'), href: '/revision' },
+          { label: await t('rev.texts.common.crumb_set_texts'), href: '/revision/texts' },
           { label: 'Lord of the Flies', href: '/revision/texts/lord-of-the-flies' },
-          { label: 'Characters' },
+          { label: await t('rev.texts.common.crumb_characters') },
         ]}
       />
 
@@ -258,13 +265,13 @@ export default async function LotFCharactersPage() {
             render={<Link href="/revision/texts/lord-of-the-flies" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Lord of the Flies
+            {await t('rev.texts.lotf.back')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Users className="mr-1 size-3 text-emerald-400" />
-              Character Analysis
+              {await t('rev.texts.lotf.characters.badge')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               AQA / OCR / Eduqas
@@ -272,14 +279,13 @@ export default async function LotFCharactersPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Lord of the Flies -- Characters
+            {await t('rev.texts.lotf.characters.title')}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
-            by William Golding -- published 1954
+            {await t('rev.texts.lotf.byline')}
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Detailed analysis of every major character, including their allegorical roles,
-            development across the novel, key quotations and exam-focused advice.
+            {await t('rev.texts.lotf.characters.intro')}
           </p>
         </div>
       </section>
@@ -288,7 +294,9 @@ export default async function LotFCharactersPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Sparkles className="size-5 text-clay-600" />
-          <h2 className="text-heading-lg font-heading text-foreground">Allegorical Framework</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {await t('rev.texts.common.allegorical_framework')}
+          </h2>
         </div>
         <Card>
           <CardContent className="p-6 sm:p-8 text-body-sm text-muted-foreground space-y-3">
@@ -327,8 +335,11 @@ export default async function LotFCharactersPage() {
             {/* Overview */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-heading-md font-heading">Overview</CardTitle>
-                <CardDescription>Allegorical role: {ch.allegoricalRole}</CardDescription>
+                <CardTitle className="text-heading-md font-heading">{tOverview}</CardTitle>
+                <CardDescription>
+                  {tAllegoricalRole}
+                  {ch.allegoricalRole}
+                </CardDescription>
               </CardHeader>
               <CardContent className="text-body-sm text-muted-foreground">
                 <p>{ch.overview}</p>
@@ -341,7 +352,7 @@ export default async function LotFCharactersPage() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
                     <Users className="size-4 text-emerald-400" />
-                    Character Development
+                    {tCharDev}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-2 text-body-sm text-muted-foreground">
@@ -359,7 +370,7 @@ export default async function LotFCharactersPage() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
                     <Quote className="size-4 text-violet-400" />
-                    Key Quotations
+                    {tKeyQuotations}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
@@ -378,7 +389,7 @@ export default async function LotFCharactersPage() {
               <CardContent className="flex gap-3 p-5">
                 <Skull className="mt-0.5 size-4 shrink-0 text-primary" />
                 <div>
-                  <p className="text-sm font-semibold text-foreground mb-1">Exam Tip</p>
+                  <p className="text-sm font-semibold text-foreground mb-1">{tExamTip}</p>
                   <p className="text-body-sm text-muted-foreground">{ch.examTip}</p>
                 </div>
               </CardContent>
@@ -389,10 +400,7 @@ export default async function LotFCharactersPage() {
 
       {/* Copyright notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations from <em>Lord of the Flies</em> by William Golding (1954) are reproduced
-        under the fair dealing provision of the Copyright, Designs and Patents Act 1988 for the
-        purpose of criticism, review and educational study. Full text available from your school or
-        local library.
+        {await t('rev.texts.lotf.fair_dealing')}
       </p>
     </div>
   )

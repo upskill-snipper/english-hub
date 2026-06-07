@@ -16,6 +16,7 @@ import {
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ── Types ──────────────────────────────────────────────────────── */
 
@@ -55,8 +56,7 @@ const ESSAY_PLANS: EssayPlan[] = [
     poetA: 'Alfred Lord Tennyson',
     poemB: 'Exposure',
     poetB: 'Wilfred Owen',
-    question:
-      'Compare how the poets present the experience of soldiers in war.',
+    question: 'Compare how the poets present the experience of soldiers in war.',
     thesis:
       'Tennyson glorifies the soldiers\u2019 courage through galloping rhythm and heroic imagery, whereas Owen strips war of any glory and presents suffering through relentless, exhausting repetition.',
     paragraphs: [
@@ -70,8 +70,7 @@ const ESSAY_PLANS: EssayPlan[] = [
           'The galloping rhythm sweeps the reader forward, mirroring the cavalry\u2019s unstoppable advance and making us feel the excitement of the charge.',
         poemBPoint:
           'Owen uses half-rhyme and ellipsis to show the paralysing tedium of trench life.',
-        poemBEvidence:
-          '"But nothing happens" \u2014 the refrain that closes multiple stanzas.',
+        poemBEvidence: '"But nothing happens" \u2014 the refrain that closes multiple stanzas.',
         poemBAnalysis:
           'The anti-climactic refrain deflates any expectation of action, forcing the reader to share the soldiers\u2019 frustration and hopelessness.',
         comparison:
@@ -85,10 +84,8 @@ const ESSAY_PLANS: EssayPlan[] = [
           '"Into the jaws of Death, / Into the mouth of hell" \u2014 personification of death as a consuming beast.',
         poemAAnalysis:
           'The capitalised personification elevates the danger into something mythic, making the soldiers\u2019 willingness to ride forward seem all the more heroic.',
-        poemBPoint:
-          'Owen personifies nature itself as the true enemy.',
-        poemBEvidence:
-          '"the merciless iced east winds that knive us" \u2014 nature is weaponised.',
+        poemBPoint: 'Owen personifies nature itself as the true enemy.',
+        poemBEvidence: '"the merciless iced east winds that knive us" \u2014 nature is weaponised.',
         poemBAnalysis:
           'The sibilance and harsh consonants make the wind feel actively cruel; Owen implies that the enemy is irrelevant because the conditions alone are deadly.',
         comparison:
@@ -96,14 +93,12 @@ const ESSAY_PLANS: EssayPlan[] = [
       },
       {
         topic: 'The poets\u2019 attitudes to duty and sacrifice',
-        poemAPoint:
-          'Tennyson argues the soldiers\u2019 obedience deserves eternal honour.',
+        poemAPoint: 'Tennyson argues the soldiers\u2019 obedience deserves eternal honour.',
         poemAEvidence:
           '"Honour the charge they made! / Honour the Light Brigade" \u2014 the imperative commands the reader to respect them.',
         poemAAnalysis:
           'The imperative tone turns the poem into a public monument; Tennyson positions the reader as an audience with a moral obligation to remember.',
-        poemBPoint:
-          'Owen questions whether sacrifice achieves anything.',
+        poemBPoint: 'Owen questions whether sacrifice achieves anything.',
         poemBEvidence:
           '"For love of God seems dying" \u2014 even faith cannot sustain the soldiers.',
         poemBAnalysis:
@@ -125,21 +120,18 @@ const ESSAY_PLANS: EssayPlan[] = [
     poetA: 'William Blake',
     poemB: 'Cousin Kate',
     poetB: 'Christina Rossetti',
-    question:
-      'Compare how the poets present the effects of suppressed feelings.',
+    question: 'Compare how the poets present the effects of suppressed feelings.',
     thesis:
       'Blake uses an extended metaphor of a growing tree to show how concealed anger becomes murderous, while Rossetti uses a dramatic monologue to show how a woman\u2019s concealed bitterness leads to a desire for revenge.',
     paragraphs: [
       {
         topic: 'How suppressed feelings are established',
-        poemAPoint:
-          'Blake sets up a binary: honesty resolves anger, secrecy nourishes it.',
+        poemAPoint: 'Blake sets up a binary: honesty resolves anger, secrecy nourishes it.',
         poemAEvidence:
           '"I was angry with my friend; / I told my wrath, my wrath did end" then "I was angry with my foe: / I told it not, my wrath did grow."',
         poemAAnalysis:
           'The neat parallelism of the opening stanza gives the poem the tone of a moral lesson, almost a nursery rhyme. The simplicity of the language makes the lesson feel obvious, which makes the speaker\u2019s later choice to suppress seem all the more disturbing.',
-        poemBPoint:
-          'Rossetti\u2019s speaker suppresses her pain beneath a narrative of blame.',
+        poemBPoint: 'Rossetti\u2019s speaker suppresses her pain beneath a narrative of blame.',
         poemBEvidence:
           '"O Lady Kate, my cousin Kate, / You grew more fair than I" \u2014 the repeated address to Kate is accusatory.',
         poemBAnalysis:
@@ -149,14 +141,12 @@ const ESSAY_PLANS: EssayPlan[] = [
       },
       {
         topic: 'How the consequences of suppression are shown',
-        poemAPoint:
-          'Blake\u2019s suppressed anger produces a literal poisoned fruit.',
+        poemAPoint: 'Blake\u2019s suppressed anger produces a literal poisoned fruit.',
         poemAEvidence:
           '"And it grew both day and night, / Till it bore an apple bright" \u2014 the anger becomes an alluring weapon.',
         poemAAnalysis:
           'The Biblical allusion to the tree of knowledge links the speaker\u2019s deception to original sin, suggesting that concealed anger is a fundamental human failing.',
-        poemBPoint:
-          'Rossetti\u2019s speaker turns her pain into a weapon: her illegitimate son.',
+        poemBPoint: 'Rossetti\u2019s speaker turns her pain into a weapon: her illegitimate son.',
         poemBEvidence:
           '"Yet I\u2019ve a gift you have not got, / And seem not like to get" \u2014 the child becomes a trump card.',
         poemBAnalysis:
@@ -166,8 +156,7 @@ const ESSAY_PLANS: EssayPlan[] = [
       },
       {
         topic: 'The poets\u2019 moral and social commentary',
-        poemAPoint:
-          'Blake implies that society encourages dishonesty.',
+        poemAPoint: 'Blake implies that society encourages dishonesty.',
         poemAEvidence:
           '"And I sunned it with smiles, / And with soft deceitful wiles" \u2014 the sibilance suggests seduction.',
         poemAAnalysis:
@@ -195,21 +184,18 @@ const ESSAY_PLANS: EssayPlan[] = [
     poetA: 'John Agard',
     poemB: 'The Class Game',
     poetB: 'Mary Casey',
-    question:
-      'Compare how the poets challenge prejudice and assert their identity.',
+    question: 'Compare how the poets challenge prejudice and assert their identity.',
     thesis:
       'Both poets use a confrontational, second-person address to challenge a listener who has judged them, but Agard dismantles racial prejudice through absurdist logic while Casey uses defiant class pride and raw energy.',
     paragraphs: [
       {
         topic: 'How the poets establish a confrontational voice',
-        poemAPoint:
-          'Agard directly addresses the person who used the term "half-caste".',
+        poemAPoint: 'Agard directly addresses the person who used the term "half-caste".',
         poemAEvidence:
           '"Excuse me / standing on one leg / I\u2019m half-caste" \u2014 the opening is ironic and physical.',
         poemAAnalysis:
           'The absurd image of standing on one leg literalises the insult, exposing its stupidity. The informal, spoken register makes the poem feel like a face-to-face confrontation.',
-        poemBPoint:
-          'Casey directly challenges the middle-class listener\u2019s judgement.',
+        poemBPoint: 'Casey directly challenges the middle-class listener\u2019s judgement.',
         poemBEvidence:
           '"How can you tell what class I\u2019m from?" \u2014 the opening question is a dare.',
         poemBAnalysis:
@@ -219,16 +205,14 @@ const ESSAY_PLANS: EssayPlan[] = [
       },
       {
         topic: 'How language itself becomes a theme',
-        poemAPoint:
-          'Agard writes in Caribbean Creole to refuse Standard English norms.',
+        poemAPoint: 'Agard writes in Caribbean Creole to refuse Standard English norms.',
         poemAEvidence:
           '"wid de whole of yu eye / an de whole of yu ear" \u2014 the phonetic spelling insists on the speaker\u2019s own voice.',
         poemAAnalysis:
           'By refusing to write in Standard English, Agard performs his argument: he will not use "half" of his language any more than he is "half" a person.',
-        poemBPoint:
-          'Casey deliberately uses working-class dialect and slang.',
+        poemBPoint: 'Casey deliberately uses working-class dialect and slang.',
         poemBEvidence:
-          '"Say \'toilet\' instead of \'bog\'" \u2014 the list of class markers is unapologetic.',
+          "\"Say 'toilet' instead of 'bog'\" \u2014 the list of class markers is unapologetic.",
         poemBAnalysis:
           'Casey turns the supposed markers of inferiority into badges of pride. The list format dares the reader to judge each word.',
         comparison:
@@ -236,14 +220,12 @@ const ESSAY_PLANS: EssayPlan[] = [
       },
       {
         topic: 'How the poems end with a demand or assertion',
-        poemAPoint:
-          'Agard demands the listener return with their whole self.',
+        poemAPoint: 'Agard demands the listener return with their whole self.',
         poemAEvidence:
           '"come back tomorrow / wid de whole of yu eye / an de whole of yu ear / an de whole of yu mind" \u2014 the imperative is a challenge.',
         poemAAnalysis:
           'The closing imperative reverses the power dynamic: the speaker tells the listener they are the one who is incomplete. The open ending leaves the confrontation unresolved.',
-        poemBPoint:
-          'Casey closes with a defiant rhetorical question.',
+        poemBPoint: 'Casey closes with a defiant rhetorical question.',
         poemBEvidence:
           '"So why do you care what class I\u2019m from?" \u2014 the poem ends where it began.',
         poemBAnalysis:
@@ -265,23 +247,19 @@ const ESSAY_PLANS: EssayPlan[] = [
     poetA: 'William Wordsworth',
     poemB: 'Exposure',
     poetB: 'Wilfred Owen',
-    question:
-      'Compare how the poets present the power of nature.',
+    question: 'Compare how the poets present the power of nature.',
     thesis:
       'Wordsworth presents nature as an overwhelming spiritual force that educates through fear, while Owen presents nature as an indifferent killer that renders human conflict meaningless.',
     paragraphs: [
       {
         topic: 'How nature is personified',
-        poemAPoint:
-          'Wordsworth personifies the mountain as a living, judging presence.',
+        poemAPoint: 'Wordsworth personifies the mountain as a living, judging presence.',
         poemAEvidence:
           '"a huge peak, black and huge... / With purpose of its own / And measured motion like a living thing, / Strode after me" \u2014 the mountain pursues the boy.',
         poemAAnalysis:
           'The enjambment and caesura create a sense of the mountain slowly rising, as if waking up. The verb "strode" gives it intentional, deliberate movement.',
-        poemBPoint:
-          'Owen personifies the wind as a deliberate aggressor.',
-        poemBEvidence:
-          '"the merciless iced east winds that knive us" \u2014 nature is weaponised.',
+        poemBPoint: 'Owen personifies the wind as a deliberate aggressor.',
+        poemBEvidence: '"the merciless iced east winds that knive us" \u2014 nature is weaponised.',
         poemBAnalysis:
           'The neologism "knive" (used as a verb) makes the wind an active assailant, blurring the line between nature and enemy combatant.',
         comparison:
@@ -289,14 +267,12 @@ const ESSAY_PLANS: EssayPlan[] = [
       },
       {
         topic: 'The human response to nature\u2019s power',
-        poemAPoint:
-          'The boy is transformed by his encounter with nature.',
+        poemAPoint: 'The boy is transformed by his encounter with nature.',
         poemAEvidence:
           '"and after I had seen / That spectacle, for many days, my brain / Worked with a dim and undetermined sense / Of unknown modes of being" \u2014 nature reshapes his understanding of the world.',
         poemAAnalysis:
           'The abstract language ("unknown modes of being") suggests the experience is beyond words, a spiritual awakening that cannot be fully articulated.',
-        poemBPoint:
-          'The soldiers are numbed into passive acceptance.',
+        poemBPoint: 'The soldiers are numbed into passive acceptance.',
         poemBEvidence:
           '"We only know war lasts, rain soaks, and clouds sag stormy" \u2014 knowledge is reduced to mere sensation.',
         poemBAnalysis:
@@ -306,14 +282,12 @@ const ESSAY_PLANS: EssayPlan[] = [
       },
       {
         topic: 'Structure and form reflecting nature\u2019s power',
-        poemAPoint:
-          'The blank verse mirrors the flowing, continuous quality of memory.',
+        poemAPoint: 'The blank verse mirrors the flowing, continuous quality of memory.',
         poemAEvidence:
           'The extract is written in unrhymed iambic pentameter with frequent enjambment.',
         poemAAnalysis:
           'The lack of end-stopping creates a sense of thoughts tumbling forward, just as the boy\u2019s boat is carried along by the current. The single-block structure mimics the overwhelming, unbroken power of the mountain.',
-        poemBPoint:
-          'Owen uses pararhyme (half-rhyme) to create unease.',
+        poemBPoint: 'Owen uses pararhyme (half-rhyme) to create unease.',
         poemBEvidence:
           '"knive us / nervous", "silent / salient" \u2014 the rhymes almost match but never quite land.',
         poemBAnalysis:
@@ -335,21 +309,18 @@ const ESSAY_PLANS: EssayPlan[] = [
     poetA: 'Thomas Hardy',
     poemB: 'What Were They Like?',
     poetB: 'Denise Levertov',
-    question:
-      'Compare how the poets present the effects of war on ordinary people.',
+    question: 'Compare how the poets present the effects of war on ordinary people.',
     thesis:
       'Hardy uses a single soldier\u2019s colloquial reflection to expose the absurdity of killing a stranger, while Levertov uses a clinical question-and-answer format to mourn an entire culture destroyed by war.',
     paragraphs: [
       {
         topic: 'How the poets give voice to ordinary people',
-        poemAPoint:
-          'Hardy uses a working-class speaker who struggles to justify what he has done.',
+        poemAPoint: 'Hardy uses a working-class speaker who struggles to justify what he has done.',
         poemAEvidence:
           '"Yes; quaint and curious war is! / You shoot a fellow down / You\u2019d treat if met where any bar is" \u2014 the casual tone jars with the subject.',
         poemAAnalysis:
           'The colloquial language ("fellow", "bar") makes the speaker relatable, while the exclamation mark on "curious" is unconvincing \u2014 the speaker is trying and failing to make sense of his experience.',
-        poemBPoint:
-          'Levertov\u2019s second voice describes a people who have been silenced.',
+        poemBPoint: 'Levertov\u2019s second voice describes a people who have been silenced.',
         poemBEvidence:
           '"It is not remembered" \u2014 the passive voice erases the culture\u2019s agency.',
         poemBAnalysis:
@@ -359,14 +330,12 @@ const ESSAY_PLANS: EssayPlan[] = [
       },
       {
         topic: 'How structure reflects the poets\u2019 messages',
-        poemAPoint:
-          'Hardy uses a ballad form with a conversational, faltering rhythm.',
+        poemAPoint: 'Hardy uses a ballad form with a conversational, faltering rhythm.',
         poemAEvidence:
           'The dashes and hesitations ("I shot him dead \u2014 because \u2014 / Because he was my foe") suggest the speaker is thinking aloud.',
         poemAAnalysis:
           'The dashes break the ballad\u2019s regularity, mirroring the speaker\u2019s inability to construct a coherent justification for killing.',
-        poemBPoint:
-          'Levertov splits the poem into numbered questions and answers.',
+        poemBPoint: 'Levertov splits the poem into numbered questions and answers.',
         poemBEvidence:
           'Six questions about Vietnamese culture are followed by six devastated answers.',
         poemBAnalysis:
@@ -376,14 +345,12 @@ const ESSAY_PLANS: EssayPlan[] = [
       },
       {
         topic: 'The poets\u2019 attitudes to war',
-        poemAPoint:
-          'Hardy suggests that soldiers on both sides are identical.',
+        poemAPoint: 'Hardy suggests that soldiers on both sides are identical.',
         poemAEvidence:
           '"He thought he\u2019d \u2019list, perhaps, / Off-hand like \u2014 just as I" \u2014 the speaker imagines his victim\u2019s motives were the same as his own.',
         poemAAnalysis:
           'The symmetry of motive makes the killing feel arbitrary and senseless. Hardy implies that war forces ordinary people to kill mirror images of themselves.',
-        poemBPoint:
-          'Levertov implies that the destruction of a culture is a crime beyond war.',
+        poemBPoint: 'Levertov implies that the destruction of a culture is a crime beyond war.',
         poemBEvidence:
           '"their light hearts turned to stone" \u2014 the metaphor suggests permanent, irreversible damage.',
         poemBAnalysis:
@@ -406,21 +373,18 @@ const ESSAY_PLANS: EssayPlan[] = [
     poetA: 'William Wordsworth',
     poemB: 'London',
     poetB: 'William Blake',
-    question:
-      'Compare how the poets present the city of London.',
+    question: 'Compare how the poets present the city of London.',
     thesis:
       'Wordsworth presents an idealised London at dawn, silent and beautiful, while Blake presents a London of suffering, oppression and moral corruption. Both are Romantics, but they see utterly different cities.',
     paragraphs: [
       {
         topic: 'First impressions of the city',
-        poemAPoint:
-          'Wordsworth is overwhelmed by London\u2019s beauty at dawn.',
+        poemAPoint: 'Wordsworth is overwhelmed by London\u2019s beauty at dawn.',
         poemAEvidence:
           '"Earth has not anything to show more fair" \u2014 the hyperbole places London above all natural scenery.',
         poemAAnalysis:
           'The Petrarchan sonnet form gives the poem a sense of control and classical beauty. The superlative "not anything... more fair" is a deliberate shock from a Romantic poet who usually celebrates nature.',
-        poemBPoint:
-          'Blake is overwhelmed by London\u2019s suffering.',
+        poemBPoint: 'Blake is overwhelmed by London\u2019s suffering.',
         poemBEvidence:
           '"I wander thro\u2019 each charter\u2019d street, / Near the charter\u2019d Thames" \u2014 the repetition of "charter\u2019d" exposes institutional control.',
         poemBAnalysis:
@@ -430,14 +394,12 @@ const ESSAY_PLANS: EssayPlan[] = [
       },
       {
         topic: 'The role of the speaker',
-        poemAPoint:
-          'Wordsworth is a passive observer, standing still on the bridge.',
+        poemAPoint: 'Wordsworth is a passive observer, standing still on the bridge.',
         poemAEvidence:
           '"Ne\u2019er saw I, never felt, a calm so deep!" \u2014 the speaker is emotionally moved but physically stationary.',
         poemAAnalysis:
           'The sonnet\u2019s volta at line 9 shifts from description to personal feeling, but Wordsworth remains a spectator. His London is a painting, not a lived experience.',
-        poemBPoint:
-          'Blake is an active walker, moving through the streets.',
+        poemBPoint: 'Blake is an active walker, moving through the streets.',
         poemBEvidence:
           '"I wander thro\u2019 each charter\u2019d street" \u2014 the verb "wander" implies both movement and aimlessness.',
         poemBAnalysis:
@@ -447,16 +409,13 @@ const ESSAY_PLANS: EssayPlan[] = [
       },
       {
         topic: 'The natural world within the city',
-        poemAPoint:
-          'Wordsworth sees nature and city as harmonious.',
+        poemAPoint: 'Wordsworth sees nature and city as harmonious.',
         poemAEvidence:
           '"The river glideth at his own sweet will" \u2014 the Thames is free and natural.',
         poemAAnalysis:
           'Personifying the river as free suggests a London at peace with nature. The verb "glideth" is gentle and effortless.',
-        poemBPoint:
-          'Blake sees the natural world as corrupted.',
-        poemBEvidence:
-          '"the charter\u2019d Thames" \u2014 even the river is owned and controlled.',
+        poemBPoint: 'Blake sees the natural world as corrupted.',
+        poemBEvidence: '"the charter\u2019d Thames" \u2014 even the river is owned and controlled.',
         poemBAnalysis:
           'Where Wordsworth\u2019s Thames glides freely, Blake\u2019s Thames is "charter\u2019d" \u2014 mapped, taxed and enclosed. Nature in Blake\u2019s London has been claimed by power.',
         comparison:
@@ -476,8 +435,7 @@ const ESSAY_PLANS: EssayPlan[] = [
     poetA: 'Moniza Alvi',
     poemB: 'Hurricane Hits England',
     poetB: 'Grace Nichols',
-    question:
-      'Compare how the poets explore the relationship between place and identity.',
+    question: 'Compare how the poets explore the relationship between place and identity.',
     thesis:
       'Alvi presents cultural identity as fractured and unresolved, caught between two homelands, while Nichols presents a moment where a violent natural event reconnects the speaker to her Caribbean roots in England.',
     paragraphs: [
@@ -500,8 +458,7 @@ const ESSAY_PLANS: EssayPlan[] = [
       },
       {
         topic: 'How objects and nature carry cultural meaning',
-        poemAPoint:
-          'Alvi uses the clothes as symbols of cultural identity.',
+        poemAPoint: 'Alvi uses the clothes as symbols of cultural identity.',
         poemAEvidence:
           '"My salwar kameez / didn\u2019t impress the schoolfriend" \u2014 the clothes attract attention and mark difference.',
         poemAAnalysis:
@@ -517,14 +474,12 @@ const ESSAY_PLANS: EssayPlan[] = [
       },
       {
         topic: 'Resolution and the question of belonging',
-        poemAPoint:
-          'Alvi\u2019s poem ends without resolution.',
+        poemAPoint: 'Alvi\u2019s poem ends without resolution.',
         poemAEvidence:
           '"I was there of no fixed nationality" \u2014 the speaker remains between two worlds.',
         poemAAnalysis:
           'The phrase "no fixed nationality" echoes "no fixed abode" \u2014 language associated with homelessness. Alvi suggests that cultural hybridity is not always enriching; it can be alienating.',
-        poemBPoint:
-          'Nichols\u2019s poem ends with a moment of reconciliation.',
+        poemBPoint: 'Nichols\u2019s poem ends with a moment of reconciliation.',
         poemBEvidence:
           '"the earth is the earth is the earth" \u2014 the final repetition insists on unity.',
         poemBAnalysis:
@@ -559,8 +514,7 @@ const ESSAY_PLANS: EssayPlan[] = [
           '"Where we made the fire / In the summer time / Of branch and briar" \u2014 the simple past tense marks a lost time.',
         poemAAnalysis:
           'The short, clipped lines and simple diction give the description a stark, factual quality, as if the speaker is cataloguing what remains. The monosyllables slow the reading and create a heavy mood.',
-        poemBPoint:
-          'Jennings returns to a place that looks the same but feels utterly different.',
+        poemBPoint: 'Jennings returns to a place that looks the same but feels utterly different.',
         poemBEvidence:
           '"I visited the place where we last met" \u2014 the plain opening establishes the situation simply.',
         poemBAnalysis:
@@ -570,16 +524,13 @@ const ESSAY_PLANS: EssayPlan[] = [
       },
       {
         topic: 'How the poets convey the gap between past and present',
-        poemAPoint:
-          'Hardy emphasises physical decay to represent emotional loss.',
+        poemAPoint: 'Hardy emphasises physical decay to represent emotional loss.',
         poemAEvidence:
           '"the ashes are / A ghost of that day\u2019s fire" \u2014 the metaphor links the dead fire to dead happiness.',
         poemAAnalysis:
           'The word "ghost" is carefully chosen: it suggests something that was once alive now haunts the place. The fire is both literal (picnic remains) and metaphorical (warmth of the relationship).',
-        poemBPoint:
-          'Jennings finds the place unchanged, which makes the absence worse.',
-        poemBEvidence:
-          '"Nothing was changed" \u2014 but everything feels different.',
+        poemBPoint: 'Jennings finds the place unchanged, which makes the absence worse.',
+        poemBEvidence: '"Nothing was changed" \u2014 but everything feels different.',
         poemBAnalysis:
           'The paradox that nothing has changed yet everything is different captures the experience of grief: the world carries on indifferently while the bereaved person is transformed.',
         comparison:
@@ -587,14 +538,12 @@ const ESSAY_PLANS: EssayPlan[] = [
       },
       {
         topic: 'How the poems end',
-        poemAPoint:
-          'Hardy\u2019s poem ends with a sense of complete desolation.',
+        poemAPoint: 'Hardy\u2019s poem ends with a sense of complete desolation.',
         poemAEvidence:
           'The final image is of the bare, windswept site with no trace of the gathering.',
         poemAAnalysis:
           'The poem\u2019s circular structure \u2014 returning to the picnic site only to find emptiness \u2014 suggests that revisiting the past offers no comfort, only confirmation of loss.',
-        poemBPoint:
-          'Jennings\u2019s poem ends with the pain of presence without the person.',
+        poemBPoint: 'Jennings\u2019s poem ends with the pain of presence without the person.',
         poemBEvidence:
           '"The loss of what I had felt most" \u2014 the emphasis falls on feeling rather than the person.',
         poemBAnalysis:
@@ -616,21 +565,18 @@ const ESSAY_PLANS: EssayPlan[] = [
     poetA: 'John Keats',
     poemB: 'I started Early \u2013 Took my Dog',
     poetB: 'Emily Dickinson',
-    question:
-      'Compare how the poets present the natural world.',
+    question: 'Compare how the poets present the natural world.',
     thesis:
       'Keats presents autumn as a season of rich, sensuous fulfilment, accepting its closeness to death, while Dickinson presents the sea as an alluring but dangerous force that threatens to overwhelm the speaker.',
     paragraphs: [
       {
         topic: 'How the poets use personification',
-        poemAPoint:
-          'Keats personifies Autumn as a benign, drowsy figure.',
+        poemAPoint: 'Keats personifies Autumn as a benign, drowsy figure.',
         poemAEvidence:
           '"sitting careless on a granary floor, / Thy hair soft-lifted by the winnowing wind" \u2014 Autumn is a relaxed harvest worker.',
         poemAAnalysis:
           'The languid, unhurried image of Autumn sitting "careless" suggests abundance without effort. The soft sibilance creates a feeling of warmth and contentment.',
-        poemBPoint:
-          'Dickinson personifies the sea as a pursuer with almost romantic intentions.',
+        poemBPoint: 'Dickinson personifies the sea as a pursuer with almost romantic intentions.',
         poemBEvidence:
           '"But no Man moved Me \u2013 till the Tide / Went past my simple Shoe" \u2014 the sea encroaches on the speaker\u2019s body.',
         poemBAnalysis:
@@ -640,14 +586,12 @@ const ESSAY_PLANS: EssayPlan[] = [
       },
       {
         topic: 'The speaker\u2019s position in relation to nature',
-        poemAPoint:
-          'Keats\u2019s speaker is an observer who accepts nature\u2019s cycle.',
+        poemAPoint: 'Keats\u2019s speaker is an observer who accepts nature\u2019s cycle.',
         poemAEvidence:
           '"Where are the songs of Spring? Ay, where are they? / Think not of them, thou hast thy music too" \u2014 the speaker counsels acceptance.',
         poemAAnalysis:
           'The rhetorical question about spring is immediately answered: autumn has its own beauty. Keats argues that every stage of the natural cycle deserves appreciation, even the one closest to death.',
-        poemBPoint:
-          'Dickinson\u2019s speaker is drawn into nature against her will.',
+        poemBPoint: 'Dickinson\u2019s speaker is drawn into nature against her will.',
         poemBEvidence:
           '"He followed \u2013 close behind \u2013 / I felt His Silver Heel / Upon my Ankle" \u2014 the sea pursues the speaker up the beach.',
         poemBAnalysis:
@@ -663,8 +607,7 @@ const ESSAY_PLANS: EssayPlan[] = [
           'Stanza 1: ripeness and harvest. Stanza 2: the figure of Autumn resting. Stanza 3: the sounds of evening.',
         poemAAnalysis:
           'The three-stanza arc mirrors a single day (morning to evening) and a single season (early to late autumn). The gradual movement towards silence and darkness is accepted, not resisted.',
-        poemBPoint:
-          'Dickinson uses a narrative arc from curiosity to threat to escape.',
+        poemBPoint: 'Dickinson uses a narrative arc from curiosity to threat to escape.',
         poemBEvidence:
           'The poem begins with a walk, escalates to a chase, and ends with the sea\u2019s retreat at the "Solid Town".',
         poemBAnalysis:
@@ -686,21 +629,18 @@ const ESSAY_PLANS: EssayPlan[] = [
     poetA: 'Robert Browning',
     poemB: 'Adlestrop',
     poetB: 'Edward Thomas',
-    question:
-      'Compare how the poets present feelings of longing for a particular place.',
+    question: 'Compare how the poets present feelings of longing for a particular place.',
     thesis:
       'Browning expresses an explicit, joyful longing for an idealised English spring, while Thomas captures a fleeting, unplanned moment of stillness that expands into a quiet love for the English countryside.',
     paragraphs: [
       {
         topic: 'How the poets establish the moment of longing',
-        poemAPoint:
-          'Browning\u2019s longing is stated directly and enthusiastically.',
+        poemAPoint: 'Browning\u2019s longing is stated directly and enthusiastically.',
         poemAEvidence:
           '"Oh, to be in England / Now that April\u2019s there" \u2014 the exclamation opens the poem with unashamed yearning.',
         poemAAnalysis:
           'The exclamatory "Oh" and the present tense "April\u2019s there" make the longing feel immediate and urgent. The speaker imagines England in the present tense while he is physically absent.',
-        poemBPoint:
-          'Thomas\u2019s longing emerges from an accidental stop.',
+        poemBPoint: 'Thomas\u2019s longing emerges from an accidental stop.',
         poemBEvidence:
           '"Yes. I remember Adlestrop \u2014 / The name, because one afternoon / Of heat the express-train drew up there / Unwontedly" \u2014 the memory is triggered by the name.',
         poemBAnalysis:
@@ -710,14 +650,12 @@ const ESSAY_PLANS: EssayPlan[] = [
       },
       {
         topic: 'How the poets idealise the English landscape',
-        poemAPoint:
-          'Browning lists specific English sights with intense detail.',
+        poemAPoint: 'Browning lists specific English sights with intense detail.',
         poemAEvidence:
           '"the whitethroat / Hark, where my blossomed pear-tree in the hedge / Leans to the field" \u2014 the details are precise and personal.',
         poemAAnalysis:
           'The specificity of "whitethroat" and "pear-tree" makes the longing concrete. Browning is not homesick for England in general but for particular, remembered details.',
-        poemBPoint:
-          'Thomas expands from a small station to all of England.',
+        poemBPoint: 'Thomas expands from a small station to all of England.',
         poemBEvidence:
           '"And for that minute a blackbird sang / Close by, and round him, mistier, / Farther and farther, all the birds / Of Oxfordshire and Gloucestershire" \u2014 the sound radiates outward.',
         poemBAnalysis:
@@ -727,14 +665,12 @@ const ESSAY_PLANS: EssayPlan[] = [
       },
       {
         topic: 'The tone and mood at the poems\u2019 close',
-        poemAPoint:
-          'Browning ends with breathless excitement.',
+        poemAPoint: 'Browning ends with breathless excitement.',
         poemAEvidence:
           '"That\u2019s the wise thrush; he sings each song twice over" \u2014 the speaker delights in the thought of birdsong.',
         poemAAnalysis:
           'The confident, declarative "That\u2019s the wise thrush" is the tone of someone savouring a mental picture. The semicolon creates a satisfying pause before the bird sings again.',
-        poemBPoint:
-          'Thomas ends with a quiet, almost melancholy hush.',
+        poemBPoint: 'Thomas ends with a quiet, almost melancholy hush.',
         poemBEvidence:
           'The final line ("all the birds / Of Oxfordshire and Gloucestershire") trails off into silence.',
         poemBAnalysis:
@@ -783,9 +719,7 @@ function EssayPlanCard({ plan }: { plan: EssayPlan }) {
               Plan {plan.id}
             </Badge>
           </div>
-          <h3 className="text-heading-md font-heading text-foreground">
-            {plan.title}
-          </h3>
+          <h3 className="text-heading-md font-heading text-foreground">{plan.title}</h3>
           <p className="mt-1 text-body-sm text-muted-foreground">
             {plan.poemA} ({plan.poetA}) &amp; {plan.poemB} ({plan.poetB})
           </p>
@@ -802,9 +736,7 @@ function EssayPlanCard({ plan }: { plan: EssayPlan }) {
         <div className="border-t border-border/40 p-5 sm:p-6 space-y-6">
           {/* Question */}
           <div className="rounded-xl border border-blue-500/20 bg-blue-500/[0.06] p-4">
-            <p className="text-body-sm font-medium text-foreground mb-1">
-              Exam-style question
-            </p>
+            <p className="text-body-sm font-medium text-foreground mb-1">Exam-style question</p>
             <p className="text-body-sm text-muted-foreground italic">
               &ldquo;{plan.question}&rdquo;
             </p>
@@ -815,9 +747,7 @@ function EssayPlanCard({ plan }: { plan: EssayPlan }) {
             <p className="text-caption font-semibold uppercase tracking-wider text-muted-foreground mb-1">
               Thesis / argument
             </p>
-            <p className="text-body-sm text-muted-foreground leading-relaxed">
-              {plan.thesis}
-            </p>
+            <p className="text-body-sm text-muted-foreground leading-relaxed">{plan.thesis}</p>
           </div>
 
           {/* Paragraphs */}
@@ -831,54 +761,41 @@ function EssayPlanCard({ plan }: { plan: EssayPlan }) {
                   <span className="flex size-6 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
                     {i + 1}
                   </span>
-                  <h4 className="text-sm font-semibold text-foreground">
-                    {para.topic}
-                  </h4>
+                  <h4 className="text-sm font-semibold text-foreground">{para.topic}</h4>
                 </div>
 
                 {/* Poem A */}
                 <div className="space-y-1 pl-8">
-                  <p className="text-caption font-semibold text-foreground">
-                    {plan.poemA}
+                  <p className="text-caption font-semibold text-foreground">{plan.poemA}</p>
+                  <p className="text-body-sm text-muted-foreground">
+                    <strong className="text-foreground">Point:</strong> {para.poemAPoint}
                   </p>
                   <p className="text-body-sm text-muted-foreground">
-                    <strong className="text-foreground">Point:</strong>{' '}
-                    {para.poemAPoint}
+                    <strong className="text-foreground">Evidence:</strong> {para.poemAEvidence}
                   </p>
                   <p className="text-body-sm text-muted-foreground">
-                    <strong className="text-foreground">Evidence:</strong>{' '}
-                    {para.poemAEvidence}
-                  </p>
-                  <p className="text-body-sm text-muted-foreground">
-                    <strong className="text-foreground">Analysis:</strong>{' '}
-                    {para.poemAAnalysis}
+                    <strong className="text-foreground">Analysis:</strong> {para.poemAAnalysis}
                   </p>
                 </div>
 
                 {/* Poem B */}
                 <div className="space-y-1 pl-8">
-                  <p className="text-caption font-semibold text-foreground">
-                    {plan.poemB}
+                  <p className="text-caption font-semibold text-foreground">{plan.poemB}</p>
+                  <p className="text-body-sm text-muted-foreground">
+                    <strong className="text-foreground">Point:</strong> {para.poemBPoint}
                   </p>
                   <p className="text-body-sm text-muted-foreground">
-                    <strong className="text-foreground">Point:</strong>{' '}
-                    {para.poemBPoint}
+                    <strong className="text-foreground">Evidence:</strong> {para.poemBEvidence}
                   </p>
                   <p className="text-body-sm text-muted-foreground">
-                    <strong className="text-foreground">Evidence:</strong>{' '}
-                    {para.poemBEvidence}
-                  </p>
-                  <p className="text-body-sm text-muted-foreground">
-                    <strong className="text-foreground">Analysis:</strong>{' '}
-                    {para.poemBAnalysis}
+                    <strong className="text-foreground">Analysis:</strong> {para.poemBAnalysis}
                   </p>
                 </div>
 
                 {/* Comparison */}
                 <div className="pl-8 rounded-lg border border-primary/20 bg-primary/[0.04] p-3">
                   <p className="text-body-sm text-muted-foreground">
-                    <strong className="text-primary">Compare:</strong>{' '}
-                    {para.comparison}
+                    <strong className="text-primary">Compare:</strong> {para.comparison}
                   </p>
                 </div>
               </div>
@@ -890,17 +807,14 @@ function EssayPlanCard({ plan }: { plan: EssayPlan }) {
             <p className="text-caption font-semibold uppercase tracking-wider text-muted-foreground mb-1">
               Conclusion
             </p>
-            <p className="text-body-sm text-muted-foreground leading-relaxed">
-              {plan.conclusion}
-            </p>
+            <p className="text-body-sm text-muted-foreground leading-relaxed">{plan.conclusion}</p>
           </div>
 
           {/* Exam tip */}
           <div className="flex gap-3 rounded-xl border border-amber-500/20 bg-amber-500/[0.06] p-4">
             <Lightbulb className="mt-0.5 size-4 shrink-0 text-clay-600" />
             <p className="text-body-sm text-muted-foreground leading-relaxed">
-              <strong className="text-foreground">Exam tip:</strong>{' '}
-              {plan.examTip}
+              <strong className="text-foreground">Exam tip:</strong> {plan.examTip}
             </p>
           </div>
         </div>
@@ -912,14 +826,11 @@ function EssayPlanCard({ plan }: { plan: EssayPlan }) {
 /* ── Page component ─────────────────────────────────────────────── */
 
 export default function EdexcelEssayPlansPage() {
-  const [filter, setFilter] = useState<'all' | 'Conflict' | 'Time and Place'>(
-    'all',
-  )
+  const [filter, setFilter] = useState<'all' | 'Conflict' | 'Time and Place'>('all')
 
-  const filtered =
-    filter === 'all'
-      ? ESSAY_PLANS
-      : ESSAY_PLANS.filter((p) => p.cluster === filter)
+  const t = useT()
+
+  const filtered = filter === 'all' ? ESSAY_PLANS : ESSAY_PLANS.filter((p) => p.cluster === filter)
 
   return (
     <div className="space-y-10 pb-16">
@@ -932,7 +843,7 @@ export default function EdexcelEssayPlansPage() {
           render={<Link href="/revision/poetry/edexcel" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Edexcel Poetry
+          {t('poetry_hub.edexcel.back_to_anthology')}
         </Button>
       </div>
 
@@ -945,24 +856,20 @@ export default function EdexcelEssayPlansPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Sparkles className="mr-1 size-3" />
-              Pearson Edexcel GCSE English Literature
+              {t('poetry_hub.edexcel.badge_spec_short')}
             </Badge>
-            <Badge className="bg-primary/10 text-primary border-primary/20">
-              Edexcel
-            </Badge>
+            <Badge className="bg-primary/10 text-primary border-primary/20">Edexcel</Badge>
           </div>
           <div className="flex items-center gap-3">
             <div className="flex size-12 items-center justify-center rounded-2xl bg-primary/10">
               <FileText className="size-6 text-primary" />
             </div>
             <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-              Poetry Comparison Essay Plans
+              {t('rev.poetry2.edexcel.ep.title')}
             </h1>
           </div>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Ten model essay plans covering both the Conflict and Time &amp; Place
-            clusters. Each plan gives you a thesis, three comparative paragraphs
-            with point&ndash;evidence&ndash;analysis for both poems, and an exam tip.
+            {t('rev.poetry2.edexcel.ep.lead')}
           </p>
         </div>
       </section>
@@ -971,11 +878,10 @@ export default function EdexcelEssayPlansPage() {
       <section className="flex items-start gap-3 rounded-xl border border-blue-500/20 bg-blue-500/5 p-4">
         <BookOpen className="mt-0.5 size-4 shrink-0 text-blue-400" />
         <p className="text-body-sm text-muted-foreground">
-          In <strong className="text-foreground">Paper 2, Section A</strong> you
-          will be given a named poem and asked to compare it with one of your own
-          choice from the same cluster. These plans practise exactly that skill.
-          Adapt each plan to whatever poem the exam names &mdash; the comparative
-          frameworks transfer.
+          In <strong className="text-foreground">Paper 2, Section A</strong> you will be given a
+          named poem and asked to compare it with one of your own choice from the same cluster.
+          These plans practise exactly that skill. Adapt each plan to whatever poem the exam names
+          &mdash; the comparative frameworks transfer.
         </p>
       </section>
 
@@ -989,14 +895,14 @@ export default function EdexcelEssayPlansPage() {
             onClick={() => setFilter(f)}
           >
             {f === 'all' ? (
-              'All plans'
+              t('rev.poetry2.edexcel.ep.filter_all')
             ) : f === 'Conflict' ? (
               <>
-                <Swords className="mr-1 size-3" /> Conflict
+                <Swords className="mr-1 size-3" /> {t('poetry_hub.edexcel.cluster.conflict.title')}
               </>
             ) : (
               <>
-                <MapPin className="mr-1 size-3" /> Time &amp; Place
+                <MapPin className="mr-1 size-3" /> {t('poetry_hub.edexcel.cluster.tp.title')}
               </>
             )}
           </Button>
@@ -1017,40 +923,39 @@ export default function EdexcelEssayPlansPage() {
             <Lightbulb className="size-5 text-clay-600" />
           </div>
           <h2 className="text-heading-md font-heading text-foreground">
-            How to use these plans
+            {t('poetry_hub.edexcel.ep.how_title')}
           </h2>
         </div>
         <ul className="space-y-2 text-body-sm text-muted-foreground">
           <li className="flex items-start gap-2">
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-400" />
             <span>
-              <strong className="text-foreground">Read the thesis first</strong>{' '}
-              &mdash; it tells you the argument the whole essay will make. Every
-              paragraph should link back to it.
+              <strong className="text-foreground">Read the thesis first</strong> &mdash; it tells
+              you the argument the whole essay will make. Every paragraph should link back to it.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-400" />
             <span>
-              <strong className="text-foreground">Practise the comparison sentences</strong>{' '}
-              &mdash; the green &ldquo;Compare&rdquo; boxes show you how to link
-              the two poems within a single paragraph.
+              <strong className="text-foreground">Practise the comparison sentences</strong> &mdash;
+              the green &ldquo;Compare&rdquo; boxes show you how to link the two poems within a
+              single paragraph.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-400" />
             <span>
-              <strong className="text-foreground">Swap in your own poem</strong>{' '}
-              &mdash; if the exam names a different poem, keep the same comparative
-              framework and replace one side of the comparison.
+              <strong className="text-foreground">Swap in your own poem</strong> &mdash; if the exam
+              names a different poem, keep the same comparative framework and replace one side of
+              the comparison.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-400" />
             <span>
-              <strong className="text-foreground">Time yourself</strong>{' '}
-              &mdash; aim for 35&ndash;40 minutes on the comparison question. These
-              plans are designed to be writable in that time.
+              <strong className="text-foreground">Time yourself</strong> &mdash; aim for 35&ndash;40
+              minutes on the comparison question. These plans are designed to be writable in that
+              time.
             </span>
           </li>
         </ul>

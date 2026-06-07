@@ -9,6 +9,7 @@ import type { PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ── Poem data (verified PD text from Verified Library) ──────────── */
 
@@ -294,6 +295,7 @@ NARRATIVE ARC: Burial (stanza 1) → background (stanza 2) → eternal aftermath
 }
 
 export default function DrummerHodgeEduqasPage() {
+  const t = useT()
   return (
     <div className="space-y-8">
       <CourseJsonLd
@@ -321,7 +323,7 @@ export default function DrummerHodgeEduqasPage() {
           render={<Link href="/revision/poetry/eduqas" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Eduqas Poetry
+          {t('rev.poetry.shared.back_to_eduqas_poetry')}
         </Button>
 
         <div className="flex items-center gap-3">

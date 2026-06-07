@@ -22,6 +22,7 @@ import { Badge } from '@/components/ui/badge'
 
 import { useBoard } from '@/hooks/useBoard'
 import type { ExamBoard } from '@/lib/board/board-store'
+import { useT } from '@/lib/i18n/use-t'
 
 import type { QuizQuestion, Topic } from './quiz-data'
 import {
@@ -274,6 +275,7 @@ function saveResult(result: QuizResult) {
 // ─── Component ─────────────────────────────────────────────────────────────
 
 export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEngineProps) {
+  const t = useT()
   const { board } = useBoard()
 
   // Defensive runtime board filter - even if upstream passed mixed questions,
@@ -475,23 +477,31 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
         {/* Grade card */}
         <div className="rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 text-center">
           <Trophy className="mx-auto mb-3 size-10 text-clay-600" aria-hidden="true" />
-          <h2 className="text-display-sm font-heading text-foreground">Quiz Complete</h2>
+          <h2 className="text-display-sm font-heading text-foreground">
+            {t('rev.misc.quiz.complete')}
+          </h2>
 
           <div className="mt-6 flex items-center justify-center gap-6">
             <div className="text-center">
               <div className="text-4xl font-bold text-foreground">
                 {score}/{questions.length}
               </div>
-              <div className="text-sm text-muted-foreground mt-1">Correct</div>
+              <div className="text-sm text-muted-foreground mt-1">
+                {t('rev.misc.quiz.correct_label')}
+              </div>
             </div>
             <div className="h-16 w-px bg-border/60" />
             <div className="text-center">
               <div className="text-4xl font-bold text-primary">{percentage}%</div>
-              <div className="text-sm text-muted-foreground mt-1">Score</div>
+              <div className="text-sm text-muted-foreground mt-1">
+                {t('rev.misc.quiz.score_label')}
+              </div>
             </div>
             <div className="h-16 w-px bg-border/60" />
             <div className="text-center">
-              <div className="text-4xl font-bold text-foreground">Grade {grade}</div>
+              <div className="text-4xl font-bold text-foreground">
+                {t('rev.misc.quiz.grade_label').replace('{grade}', grade)}
+              </div>
               <div className="text-sm text-muted-foreground mt-1">{descriptor}</div>
             </div>
           </div>
@@ -499,14 +509,18 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
           {timerEnabled && totalTime > 0 && (
             <div className="mt-4 text-sm text-muted-foreground">
               <Clock className="inline-block size-3.5 mr-1" />
-              Time remaining: {formatTime(timeLeft)} / {formatTime(totalTime)}
+              {t('rev.misc.quiz.time_remaining')
+                .replace('{left}', formatTime(timeLeft))
+                .replace('{total}', formatTime(totalTime))}
             </div>
           )}
         </div>
 
         {/* Topic breakdown */}
         <div className="rounded-2xl border border-border/60 bg-card p-5">
-          <h3 className="text-heading-md font-heading text-foreground mb-4">Topic Breakdown</h3>
+          <h3 className="text-heading-md font-heading text-foreground mb-4">
+            {t('rev.misc.quiz.topic_breakdown')}
+          </h3>
           <div className="space-y-3">
             {Object.entries(topicBreakdown).map(([topic, data]) => {
               const meta = TOPIC_META[topic as Topic]
@@ -553,11 +567,13 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
             <div className="rounded-2xl border border-border/60 bg-card p-5">
               <h3 className="text-heading-md font-heading text-foreground mb-1 flex items-center gap-2">
                 <Zap className="size-4 text-clay-600" />
-                Recommended Revision
+                {t('rev.misc.quiz.recommended_revision')}
               </h3>
               <p className="text-body-sm text-muted-foreground mb-4">
-                Based on your weakest topic{weakTopics.length > 1 ? 's' : ''} (
-                {weakTopics.map((t) => TOPIC_META[t].label).join(', ')}), focus next on:
+                {weakTopics.length > 1
+                  ? t('rev.misc.quiz.weak_intro_plural')
+                  : t('rev.misc.quiz.weak_intro')}{' '}
+                ({weakTopics.map((topic) => TOPIC_META[topic].label).join(', ')})
               </p>
               <div className="grid gap-3 sm:grid-cols-2">
                 {recs.map((rec) => (
@@ -584,7 +600,9 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
 
         {/* Question review */}
         <div className="rounded-2xl border border-border/60 bg-card p-5">
-          <h3 className="text-heading-md font-heading text-foreground mb-4">Review Answers</h3>
+          <h3 className="text-heading-md font-heading text-foreground mb-4">
+            {t('rev.misc.quiz.review_answers')}
+          </h3>
           <div className="space-y-3">
             {questions.map((q, i) => {
               const userAnswer = answers[i]
@@ -617,9 +635,13 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
                   </summary>
                   <div className="mt-2 pl-7 space-y-1.5">
                     {userAnswer !== null && userAnswer !== correctValueForQ && (
-                      <p className="text-sm text-red-400">Your answer: {userAnswer}</p>
+                      <p className="text-sm text-red-400">
+                        {t('rev.misc.quiz.your_answer').replace('{answer}', userAnswer)}
+                      </p>
                     )}
-                    <p className="text-sm text-emerald-400">Correct answer: {correctValueForQ}</p>
+                    <p className="text-sm text-emerald-400">
+                      {t('rev.misc.quiz.correct_answer').replace('{answer}', correctValueForQ)}
+                    </p>
                     <p className="text-body-sm text-muted-foreground">{q.explanation}</p>
                   </div>
                 </details>
@@ -632,11 +654,11 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
         <div className="flex flex-wrap gap-3">
           <Button variant="default" size="lg" onClick={onRestart}>
             <RotateCcw className="size-4" />
-            New Quiz
+            {t('rev.misc.quiz.new_quiz')}
           </Button>
           <Button variant="outline" size="lg" render={<Link href="/revision" />}>
             <Home className="size-4" />
-            Revision Hub
+            {t('rev.misc.quiz.revision_hub')}
           </Button>
         </div>
       </div>
@@ -656,7 +678,9 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
           <Zap className="size-4 text-clay-600" />
           <span>
-            Question {currentIndex + 1} of {questions.length}
+            {t('rev.misc.quiz.question_x_of_y')
+              .replace('{n}', String(currentIndex + 1))
+              .replace('{total}', String(questions.length))}
           </span>
         </div>
 
@@ -670,7 +694,7 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
               className="text-muted-foreground"
             >
               {timerEnabled ? <TimerOff className="size-3.5" /> : <Timer className="size-3.5" />}
-              {timerEnabled ? 'Timer off' : 'Timer on'}
+              {timerEnabled ? t('rev.misc.quiz.timer_off') : t('rev.misc.quiz.timer_on')}
             </Button>
           )}
 
@@ -685,7 +709,9 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
           )}
 
           <Badge variant="secondary" className="tabular-nums">
-            Score: {score}/{currentIndex + (hasAnswered ? 1 : 0)}
+            {t('rev.misc.quiz.score_progress')
+              .replace('{score}', String(score))
+              .replace('{total}', String(currentIndex + (hasAnswered ? 1 : 0)))}
           </Badge>
         </div>
       </div>
@@ -697,7 +723,9 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
         aria-valuenow={Math.round(progress)}
         aria-valuemin={0}
         aria-valuemax={100}
-        aria-label={`Quiz progress: ${currentIndex + (hasAnswered ? 1 : 0)} of ${questions.length} questions`}
+        aria-label={t('rev.misc.quiz.progress_aria')
+          .replace('{n}', String(currentIndex + (hasAnswered ? 1 : 0)))
+          .replace('{total}', String(questions.length))}
       >
         <div
           className="h-full bg-primary rounded-full transition-all duration-300 ease-out"
@@ -784,12 +812,16 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
             {isCorrect ? (
               <>
                 <Check className="size-4 text-emerald-400" />
-                <span className="text-sm font-semibold text-emerald-400">Correct!</span>
+                <span className="text-sm font-semibold text-emerald-400">
+                  {t('rev.misc.quiz.correct')}
+                </span>
               </>
             ) : (
               <>
                 <X className="size-4 text-red-400" />
-                <span className="text-sm font-semibold text-red-400">Incorrect</span>
+                <span className="text-sm font-semibold text-red-400">
+                  {t('rev.misc.quiz.incorrect')}
+                </span>
               </>
             )}
           </div>
@@ -803,12 +835,12 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
           <Button variant="default" size="lg" onClick={handleNext} className="animate-scale-in">
             {currentIndex < questions.length - 1 ? (
               <>
-                Next Question
+                {t('rev.misc.quiz.next_question')}
                 <ArrowRight className="size-4" />
               </>
             ) : (
               <>
-                See Results
+                {t('rev.misc.quiz.see_results')}
                 <Trophy className="size-4" />
               </>
             )}

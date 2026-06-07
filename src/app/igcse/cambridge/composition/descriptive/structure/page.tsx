@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -66,7 +67,7 @@ export default async function StructurePage() {
         render={<Link href="/igcse/cambridge/composition/descriptive" />}
       >
         <ChevronLeft className="size-3.5" />
-        Back to descriptive
+        {await t('igcse.page.back_to_descriptive')}
       </Button>
 
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 lg:p-10">
@@ -75,7 +76,7 @@ export default async function StructurePage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="bg-primary/10 text-primary border-primary/20">
               <Sparkles className="mr-1 size-3" />
-              Cambridge IGCSE
+              {await t('igcse.cambridge.badge.cambridge_igcse')}
             </Badge>
             <Badge variant="secondary">Technique 3 of 5</Badge>
           </div>

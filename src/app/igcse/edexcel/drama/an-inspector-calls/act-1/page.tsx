@@ -4,6 +4,7 @@ import { ArrowLeft, Sparkles, Info, BookOpen } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
+import { t } from '@/lib/i18n/t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
@@ -99,7 +100,7 @@ export default async function InspectorCallsAct1Page() {
           render={<Link href="/igcse/edexcel/drama/an-inspector-calls" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to An Inspector Calls
+          {await t('igcse.page.back_to')} An Inspector Calls
         </Button>
       </div>
 
@@ -108,7 +109,7 @@ export default async function InspectorCallsAct1Page() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="border-primary/20 bg-primary/10 text-primary">
               <Sparkles className="mr-1 size-3" />
-              Edexcel IGCSE Literature
+              {await t('igcse.page.badge_edexcel_lit')}
             </Badge>
             <Badge variant="secondary">Act 1 Analysis</Badge>
           </div>
@@ -128,10 +129,10 @@ export default async function InspectorCallsAct1Page() {
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
             <h2 className="text-body-sm font-semibold text-foreground">
-              Key quotations only &mdash; read the full text
+              {await t('igcse.page.copyright_heading')}
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
-              Short extracts are included under fair dealing for study and criticism.
+              {await t('igcse.page.fair_dealing_body')}
             </p>
           </div>
         </div>

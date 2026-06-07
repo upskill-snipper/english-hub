@@ -14,6 +14,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { useT } from '@/lib/i18n/use-t'
 
 interface Poem {
   title: string
@@ -132,6 +133,7 @@ const POEMS: Poem[] = [
 ]
 
 export default function OCRPowerAndNaturalWorldPage() {
+  const t = useT()
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -154,7 +156,7 @@ export default function OCRPowerAndNaturalWorldPage() {
           render={<Link href="/revision/poetry/ocr" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to OCR Anthology
+          {t('poetry_hub.ocr.back_to_anthology')}
         </Button>
       </div>
 
@@ -166,17 +168,16 @@ export default function OCRPowerAndNaturalWorldPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Sparkles className="mr-1 size-3" />
-              OCR Towards a World Unknown
+              {t('poetry_hub.ocr.badge_anthology')}
             </Badge>
             <Badge className="bg-primary/10 text-primary border-primary/20">OCR</Badge>
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Power and the Natural World
+            {t('poetry_hub.ocr.cluster.pnw.title')}
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            15 poems exploring nature, environment and human power. From Shelley and Blake to Ted
-            Hughes, Seamus Heaney and Chinua Achebe.
+            {t('poetry_hub.ocr.pnw.hero_lead')}
           </p>
         </div>
       </section>
@@ -191,7 +192,9 @@ export default function OCRPowerAndNaturalWorldPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Mountain className="size-5 text-emerald-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">All 15 Poems</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {t('poetry_hub.ocr.all_15')}
+          </h2>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -230,7 +233,9 @@ export default function OCRPowerAndNaturalWorldPage() {
 
               <div className="mt-3">
                 <Badge variant="outline" className="text-[0.65rem]">
-                  {poem.publicDomain ? 'Full study page' : 'Key quotations only'}
+                  {poem.publicDomain
+                    ? t('poetry_hub.ocr.full_study')
+                    : t('poetry_hub.ocr.quotes_only')}
                 </Badge>
               </div>
             </Link>
@@ -240,49 +245,45 @@ export default function OCRPowerAndNaturalWorldPage() {
 
       <section className="rounded-2xl border border-amber-500/40 bg-amber-500/[0.04] p-5 sm:p-6">
         <h2 className="text-heading-sm font-heading text-foreground">
-          Version note: The Prelude (1799 two-part edition)
+          {t('poetry_hub.ocr.prelude_version_title')}
         </h2>
         <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
-          OCR prescribes the <strong>1799 two-part Prelude</strong>, drafted in Wordsworth&apos;s
-          lifetime but unpublished until 1973. The boat-stealing episode appears in
-          <strong> Part First, lines 81&ndash;129</strong>. AQA prescribes the
-          <strong> 1850 posthumous Prelude</strong> (edited by Wordsworth&apos;s widow Mary). The
-          wording is materially different between the two editions &mdash; never cross-quote between
-          versions. If you are revising for OCR, use only the 1799 text.
+          {t('poetry_hub.ocr.prelude_version_body')}
         </p>
       </section>
 
       <section className="rounded-2xl border border-border/60 bg-muted/30 p-5 sm:p-6">
-        <h2 className="text-heading-sm font-heading text-foreground">Why are some poems locked?</h2>
+        <h2 className="text-heading-sm font-heading text-foreground">
+          {t('poetry_hub.ocr.why_locked')}
+        </h2>
         <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
-          Older poems are public domain so we provide full annotated study pages. More recent poems
-          are still in copyright -- for those we offer context, themes and key quotation analysis
-          only. You will need a copy of the OCR <em>Towards a World Unknown</em> anthology to read
-          the full text.
+          {t('poetry_hub.ocr.why_locked_body')}
         </p>
         <p className="mt-3 text-body-sm text-muted-foreground leading-relaxed">
-          <strong className="text-foreground">Rights notice.</strong> Several poems in this cluster
-          remain in copyright &mdash; Hughes&rsquo;s <em>Wind</em> and Heaney&rsquo;s{' '}
-          <em>Storm on the Island</em> and <em>At a Potato Digging</em> (&copy; Faber &amp; Faber),
-          Dharker&rsquo;s <em>Living Space</em> (&copy; Bloodaxe Books), Achebe&rsquo;s{' '}
-          <em>From a Mother in a Refugee Camp</em> (&copy; Carcanet Press), MacNeice&rsquo;s{' '}
-          <em>Snow</em> (&copy; Faber &amp; Faber) and others. Quotations on individual set-text
-          pages are short fair-dealing extracts under CDPA 1988 &sect;30 (criticism, review,
-          quotation). For full text, students should consult the board-licensed OCR{' '}
-          <em>Towards a World Unknown</em> anthology.
+          <strong className="text-foreground">{t('poetry_hub.ocr.rights_notice_label')}</strong>{' '}
+          Several poems in this cluster remain in copyright &mdash; Hughes&rsquo;s <em>Wind</em> and
+          Heaney&rsquo;s <em>Storm on the Island</em> and <em>At a Potato Digging</em> (&copy; Faber
+          &amp; Faber), Dharker&rsquo;s <em>Living Space</em> (&copy; Bloodaxe Books),
+          Achebe&rsquo;s <em>From a Mother in a Refugee Camp</em> (&copy; Carcanet Press),
+          MacNeice&rsquo;s <em>Snow</em> (&copy; Faber &amp; Faber) and others. Quotations on
+          individual set-text pages are short fair-dealing extracts under CDPA 1988 &sect;30
+          (criticism, review, quotation). For full text, students should consult the board-licensed
+          OCR <em>Towards a World Unknown</em> anthology.
         </p>
       </section>
 
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8 text-center">
         <BookOpen className="mx-auto mb-3 size-8 text-emerald-400" />
-        <h2 className="text-heading-lg font-heading text-foreground">Explore other clusters</h2>
+        <h2 className="text-heading-lg font-heading text-foreground">
+          {t('poetry_hub.ocr.explore_other_clusters')}
+        </h2>
         <Button
           variant="default"
           size="lg"
           className="mt-5"
           render={<Link href="/revision/poetry/ocr" />}
         >
-          Back to OCR Anthology
+          {t('poetry_hub.ocr.back_to_anthology')}
           <ArrowRight className="size-4" />
         </Button>
       </section>

@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { getServerBoard } from '@/lib/board/get-server-board'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -249,6 +250,12 @@ export default async function GreatExpectationsThemesPage() {
     redirect('/revision/texts')
   }
 
+  // Pre-resolve chrome labels used inside .map() callbacks.
+  const howDickensLabel = await t('rev.texts2.ge.themes.how_dickens')
+  const linkedQuotationsLabel = await t('rev.texts2.common.linked_quotations')
+  const keyMomentsLabel = await t('rev.texts2.common.key_moments')
+  const aqaExamTipLabel = await t('rev.texts2.common.aqa_exam_tip')
+
   return (
     <div className="space-y-10 pb-16">
       {/* Hero */}
@@ -263,13 +270,13 @@ export default async function GreatExpectationsThemesPage() {
             render={<Link href="/revision/texts/great-expectations" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Great Expectations
+            {(await t('rev.texts.common.back_to_text')).replace('{text}', 'Great Expectations')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <BookOpen className="mr-1 size-3 text-emerald-400" />
-              19th-Century Novel
+              {await t('rev.texts2.common.c19_novel')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               AQA
@@ -277,14 +284,13 @@ export default async function GreatExpectationsThemesPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Key Themes
+            {await t('rev.texts2.ge.themes.title')}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
             Great Expectations - Charles Dickens
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Six major themes analysed in detail, with linked quotations, key moments and
-            exam-focused guidance for AQA English Literature.
+            {await t('rev.texts2.ge.themes.intro')}
           </p>
         </div>
       </section>
@@ -307,9 +313,7 @@ export default async function GreatExpectationsThemesPage() {
 
               {/* How Dickens presents it */}
               <div>
-                <h3 className="mb-2 text-sm font-semibold text-foreground">
-                  How Dickens presents this theme
-                </h3>
+                <h3 className="mb-2 text-sm font-semibold text-foreground">{howDickensLabel}</h3>
                 <ul className="space-y-2 text-body-sm text-muted-foreground">
                   {theme.howDickensPresentsIt.map((point, i) => (
                     <li key={i} className="flex gap-2">
@@ -324,7 +328,7 @@ export default async function GreatExpectationsThemesPage() {
               <div className="space-y-3">
                 <h3 className="flex items-center gap-2 text-sm font-semibold text-foreground">
                   <Quote className="size-4 text-violet-400" />
-                  Linked quotations
+                  {linkedQuotationsLabel}
                 </h3>
                 {theme.linkedQuotes.map((q, i) => (
                   <div key={i} className="rounded-xl border border-border/60 bg-muted/20 p-4">
@@ -339,7 +343,7 @@ export default async function GreatExpectationsThemesPage() {
 
               {/* Key Moments */}
               <div>
-                <h3 className="mb-2 text-sm font-semibold text-foreground">Key moments</h3>
+                <h3 className="mb-2 text-sm font-semibold text-foreground">{keyMomentsLabel}</h3>
                 <ul className="space-y-1.5 text-body-sm text-muted-foreground">
                   {theme.keyMoments.map((m, i) => (
                     <li key={i} className="flex gap-2">
@@ -352,7 +356,7 @@ export default async function GreatExpectationsThemesPage() {
 
               {/* Exam Tip */}
               <div className="rounded-xl border border-primary/20 bg-primary/5 p-4">
-                <h3 className="mb-1.5 text-sm font-semibold text-foreground">AQA exam tip</h3>
+                <h3 className="mb-1.5 text-sm font-semibold text-foreground">{aqaExamTipLabel}</h3>
                 <p className="text-body-sm text-muted-foreground">{theme.examTip}</p>
               </div>
             </CardContent>
@@ -362,8 +366,8 @@ export default async function GreatExpectationsThemesPage() {
 
       {/* Public domain notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Great Expectations by Charles Dickens (1861) is in the public domain. Quotations are
-        reproduced freely as the text is no longer subject to copyright.
+        <em>Great Expectations</em>
+        {await t('rev.texts2.common.public_domain_dickens_after')}
       </p>
     </div>
   )

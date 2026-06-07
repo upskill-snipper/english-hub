@@ -12,6 +12,7 @@ import {
 } from 'lucide-react'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
+import { t } from '@/lib/i18n/t'
 import StudyTools from '@/components/study/StudyTools'
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
@@ -128,11 +129,11 @@ export default async function MacbethHubPage() {
             href="/igcse/edexcel/shakespeare"
             className="text-sm text-muted-foreground hover:text-foreground"
           >
-            &larr; Shakespeare hub
+            &larr; {await t('igcse.page.shakespeare_hub')}
           </Link>
           <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
             <GraduationCap className="h-4 w-4" />
-            Edexcel IGCSE Literature
+            {await t('igcse.page.badge_edexcel_lit')}
           </div>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
             Macbeth

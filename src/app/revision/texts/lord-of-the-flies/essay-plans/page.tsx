@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ArrowLeft, BookOpen, FileText, Lightbulb, Sparkles } from 'lucide-react'
 
 import StudyTools from '@/components/study/StudyTools'
+import { useT } from '@/lib/i18n/use-t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ────────────────────────────────────────────────────────────────────── */
@@ -245,6 +246,9 @@ const ESSAY_PLANS: EssayPlan[] = [
 /* ────────────────────────────────────────────────────────────────────── */
 
 export default function LOTFEssayPlansPage() {
+  const t = useT()
+  const tEssayTpl = t('rev.texts.common.essay_n')
+  const tParagraphTpl = t('rev.texts.common.paragraph_n_dash')
   return (
     <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
@@ -273,13 +277,13 @@ export default function LOTFEssayPlansPage() {
             className="mb-4 inline-flex items-center gap-1 text-sm text-primary hover:text-primary/80"
           >
             <ArrowLeft className="size-3.5" />
-            Back to Lord of the Flies
+            {t('rev.texts.lotf.back')}
           </Link>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1 rounded-full bg-clay-500/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-clay-700 dark:text-clay-300">
               <FileText className="size-3" />
-              Essay Plans
+              {t('rev.texts.common.essay_plans')}
             </span>
             <span className="inline-flex items-center gap-1 rounded-full border border-border/60 px-3 py-1 text-xs text-primary">
               <Sparkles className="size-3" />
@@ -288,14 +292,10 @@ export default function LOTFEssayPlansPage() {
           </div>
 
           <h1 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Lord of the Flies &mdash; Essay Plans
+            {t('rev.texts.lotf.essays.title')}
           </h1>
-          <p className="mt-2 text-lg text-muted-foreground">by William Golding &mdash; 1954</p>
-          <p className="mt-4 max-w-2xl text-muted-foreground">
-            Six structured essay plans covering the most common GCSE exam questions on Lord of the
-            Flies. Each plan includes a thesis statement, paragraph-level guidance with evidence and
-            analysis, a conclusion and an exam tip.
-          </p>
+          <p className="mt-2 text-lg text-muted-foreground">{t('rev.texts.lotf.essays.byline')}</p>
+          <p className="mt-4 max-w-2xl text-muted-foreground">{t('rev.texts.lotf.essays.intro')}</p>
         </section>
 
         {/* Exam tip banner */}
@@ -303,7 +303,9 @@ export default function LOTFEssayPlansPage() {
           <div className="flex items-start gap-3">
             <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-700 dark:text-clay-300" />
             <div className="text-sm text-muted-foreground">
-              <p className="mb-1 font-bold text-foreground">How to use these essay plans</p>
+              <p className="mb-1 font-bold text-foreground">
+                {t('rev.texts.common.how_to_use_essay_plans')}
+              </p>
               <p>
                 Each plan provides a structure you can adapt to your own argument. Do not memorise
                 them word-for-word &mdash; examiners reward original thinking. Use the thesis
@@ -323,14 +325,14 @@ export default function LOTFEssayPlansPage() {
                 <FileText className="size-5 text-clay-700 dark:text-clay-300" />
               </div>
               <h2 className="font-heading text-2xl font-bold text-foreground">
-                Essay {plan.number}
+                {tEssayTpl.replace('{n}', String(plan.number))}
               </h2>
             </div>
 
             {/* Question */}
             <div className="rounded-xl border border-border/60 bg-card p-5 mb-4">
               <p className="text-xs font-bold uppercase tracking-wider text-primary mb-2">
-                Question
+                {t('rev.texts.common.question')}
               </p>
               <p className="font-heading text-lg font-semibold text-foreground italic">
                 {plan.question}
@@ -340,7 +342,7 @@ export default function LOTFEssayPlansPage() {
             {/* Thesis */}
             <div className="rounded-xl border border-primary/20 bg-primary/5 p-4 mb-4">
               <p className="text-xs font-bold uppercase tracking-wider text-primary mb-1">
-                Thesis Statement
+                {t('rev.texts.common.thesis_statement')}
               </p>
               <p className="text-sm leading-relaxed text-foreground font-medium">
                 {plan.thesisStatement}
@@ -350,7 +352,7 @@ export default function LOTFEssayPlansPage() {
             {/* Introduction */}
             <div className="rounded-xl border border-border/60 bg-card p-4 mb-4">
               <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-1">
-                Introduction
+                {t('rev.texts.common.introduction')}
               </p>
               <p className="text-sm leading-relaxed text-muted-foreground">{plan.introduction}</p>
             </div>
@@ -359,19 +361,20 @@ export default function LOTFEssayPlansPage() {
             {plan.paragraphs.map((para, i) => (
               <div key={i} className="rounded-xl border border-border/60 bg-card p-5 mb-4">
                 <p className="text-xs font-bold uppercase tracking-wider text-primary mb-2">
-                  Paragraph {i + 1} &mdash; {para.point}
+                  {tParagraphTpl.replace('{n}', String(i + 1))}
+                  {para.point}
                 </p>
 
                 <div className="mb-3 rounded-lg border border-clay-500/20 bg-clay-500/[0.08] p-3">
                   <p className="text-xs font-bold uppercase tracking-wider text-clay-700 dark:text-clay-300 mb-1">
-                    Evidence
+                    {t('rev.texts.common.evidence')}
                   </p>
                   <p className="text-sm leading-relaxed text-foreground italic">{para.evidence}</p>
                 </div>
 
                 <div>
                   <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-1">
-                    Analysis
+                    {t('rev.texts.common.analysis')}
                   </p>
                   <p className="text-sm leading-relaxed text-muted-foreground">{para.analysis}</p>
                 </div>
@@ -381,7 +384,7 @@ export default function LOTFEssayPlansPage() {
             {/* Conclusion */}
             <div className="rounded-xl border border-border/60 bg-card p-4 mb-4">
               <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-1">
-                Conclusion
+                {t('rev.texts.common.conclusion')}
               </p>
               <p className="text-sm leading-relaxed text-muted-foreground">{plan.conclusion}</p>
             </div>
@@ -392,7 +395,7 @@ export default function LOTFEssayPlansPage() {
                 <Lightbulb className="mt-0.5 size-4 shrink-0 text-clay-700 dark:text-clay-300" />
                 <div>
                   <p className="mb-1 text-xs font-bold uppercase tracking-wider text-clay-700 dark:text-clay-300">
-                    Exam Tip
+                    {t('rev.texts.common.exam_tip')}
                   </p>
                   <p className="text-sm leading-relaxed text-muted-foreground">{plan.examTip}</p>
                 </div>
@@ -408,38 +411,37 @@ export default function LOTFEssayPlansPage() {
 
         {/* Navigation */}
         <section className="mt-14 rounded-xl border border-border/60 bg-primary/5 p-6">
-          <h3 className="font-heading text-xl font-bold text-foreground">Continue studying</h3>
+          <h3 className="font-heading text-xl font-bold text-foreground">
+            {t('rev.texts.common.continue_studying')}
+          </h3>
           <p className="mt-1 text-sm text-muted-foreground">
-            Explore characters, themes, context and key quotes for Lord of the Flies.
+            {t('rev.texts.lotf.essays.continue_sub')}
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link
               href="/revision/texts/lord-of-the-flies/characters"
               className="inline-flex items-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
             >
-              Characters
+              {t('rev.texts.common.characters')}
             </Link>
             <Link
               href="/revision/texts/lord-of-the-flies/themes"
               className="inline-flex items-center rounded-lg border border-border/60 bg-card px-4 py-2 text-sm font-medium text-primary hover:bg-primary/5"
             >
-              Themes
+              {t('rev.texts.common.themes')}
             </Link>
             <Link
               href="/revision/texts/lord-of-the-flies/key-quotes"
               className="inline-flex items-center rounded-lg border border-border/60 bg-card px-4 py-2 text-sm font-medium text-primary hover:bg-primary/5"
             >
-              Key Quotes
+              {t('rev.texts.common.key_quotes')}
             </Link>
           </div>
         </section>
 
         {/* Fair-dealing notice */}
         <p className="mt-10 border-t border-border/60 pt-4 text-xs text-muted-foreground">
-          Short quotations (&le;15 words each) reproduced under the fair dealing provision of the
-          Copyright, Designs and Patents Act 1988 for the purpose of criticism, review and
-          educational study. <em>Lord of the Flies</em> by William Golding is published by Faber and
-          Faber. Full text available from your school or local library.
+          {t('rev.texts.lotf.faber_fair_dealing')}
         </p>
       </div>
     </div>

@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button'
 import { getServerBoard } from '@/lib/board/get-server-board'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Blood Brothers - Essay Plans | The English Hub',
@@ -263,6 +264,13 @@ export default async function BloodBrothersEssayPlansPage() {
     redirect('/revision/texts')
   }
 
+  // Pre-resolve chrome labels used inside .map() callbacks.
+  const planNTpl = await t('rev.texts2.common.plan_n')
+  const thesisLabel = await t('rev.texts2.common.thesis')
+  const paragraphNTpl = await t('rev.texts.common.paragraph_n')
+  const contextLinkLabel = await t('rev.texts2.common.context_link')
+  const conclusionLabel = await t('rev.texts.common.conclusion')
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -292,13 +300,13 @@ export default async function BloodBrothersEssayPlansPage() {
             render={<Link href="/revision/texts/blood-brothers" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Blood Brothers
+            {(await t('rev.texts.common.back_to_text')).replace('{text}', 'Blood Brothers')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Drama className="mr-1 size-3 text-violet-400" />
-              Modern Text - Play
+              {await t('rev.texts2.common.modern_text_play')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -307,12 +315,11 @@ export default async function BloodBrothersEssayPlansPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Essay Plans
+            {await t('rev.texts.common.essay_plans')}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">Blood Brothers by Willy Russell</p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Five exam-style essay plans with thesis statements, paragraph outlines, embedded
-            quotations and contextual links. All quotes are 15 words or fewer.
+            {await t('rev.texts2.bb.essay_plans.intro')}
           </p>
         </div>
       </section>
@@ -321,13 +328,17 @@ export default async function BloodBrothersEssayPlansPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <FileText className="size-5 text-violet-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">Plans</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {await t('rev.texts2.common.plans')}
+          </h2>
         </div>
         <div className="space-y-8">
           {ESSAY_PLANS.map((plan) => (
             <Card key={plan.id}>
               <CardHeader>
-                <CardTitle className="text-heading-md font-heading">Plan {plan.id}</CardTitle>
+                <CardTitle className="text-heading-md font-heading">
+                  {planNTpl.replace('{n}', String(plan.id))}
+                </CardTitle>
                 <CardDescription className="text-body-sm font-medium italic">
                   {plan.question}
                 </CardDescription>
@@ -338,7 +349,7 @@ export default async function BloodBrothersEssayPlansPage() {
                   <div className="flex items-center gap-2 mb-1.5">
                     <Quote className="size-3.5 text-primary" />
                     <p className="text-xs font-semibold uppercase tracking-wide text-primary">
-                      Thesis
+                      {thesisLabel}
                     </p>
                   </div>
                   <p className="text-body-sm text-muted-foreground">{plan.thesis}</p>
@@ -348,7 +359,7 @@ export default async function BloodBrothersEssayPlansPage() {
                 {plan.paragraphs.map((para, i) => (
                   <div key={i} className="space-y-3">
                     <h3 className="text-sm font-semibold text-foreground">
-                      Paragraph {i + 1}: {para.pointHeading}
+                      {paragraphNTpl.replace('{n}', String(i + 1))}: {para.pointHeading}
                     </h3>
                     <p className="text-body-sm text-muted-foreground">{para.topic}</p>
 
@@ -363,7 +374,9 @@ export default async function BloodBrothersEssayPlansPage() {
                     </div>
 
                     <div className="rounded-lg border border-border/40 bg-muted/30 p-3">
-                      <p className="text-xs font-semibold text-foreground mb-1">Context link</p>
+                      <p className="text-xs font-semibold text-foreground mb-1">
+                        {contextLinkLabel}
+                      </p>
                       <p className="text-xs text-muted-foreground">{para.contextLink}</p>
                     </div>
                   </div>
@@ -371,7 +384,7 @@ export default async function BloodBrothersEssayPlansPage() {
 
                 {/* Conclusion */}
                 <div>
-                  <h3 className="mb-1 text-sm font-semibold text-foreground">Conclusion</h3>
+                  <h3 className="mb-1 text-sm font-semibold text-foreground">{conclusionLabel}</h3>
                   <p className="text-body-sm text-muted-foreground">{plan.conclusion}</p>
                 </div>
               </CardContent>
@@ -387,7 +400,7 @@ export default async function BloodBrothersEssayPlansPage() {
           size="sm"
           render={<Link href="/revision/texts/blood-brothers/acts" />}
         >
-          Act-by-act analysis
+          {await t('rev.texts2.common.act_by_act_sc')}
           <ArrowRight className="size-3.5" />
         </Button>
         <Button
@@ -395,7 +408,7 @@ export default async function BloodBrothersEssayPlansPage() {
           size="sm"
           render={<Link href="/revision/texts/blood-brothers/characters" />}
         >
-          Characters
+          {await t('rev.texts.common.characters')}
           <ArrowRight className="size-3.5" />
         </Button>
         <Button
@@ -403,7 +416,7 @@ export default async function BloodBrothersEssayPlansPage() {
           size="sm"
           render={<Link href="/revision/texts/blood-brothers/themes" />}
         >
-          Themes
+          {await t('rev.texts.common.themes')}
           <ArrowRight className="size-3.5" />
         </Button>
         <Button
@@ -411,7 +424,7 @@ export default async function BloodBrothersEssayPlansPage() {
           size="sm"
           render={<Link href="/revision/texts/blood-brothers/key-quotes" />}
         >
-          Key quotes
+          {await t('rev.texts2.common.key_quotes_sc')}
           <ArrowRight className="size-3.5" />
         </Button>
       </section>

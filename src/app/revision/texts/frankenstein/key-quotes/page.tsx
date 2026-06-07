@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { getServerBoard } from '@/lib/board/get-server-board'
+import { t } from '@/lib/i18n/t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
@@ -276,6 +277,8 @@ export default async function FrankensteinKeyQuotesPage() {
     redirect('/revision/texts')
   }
 
+  const tQuotesCountTpl = await t('rev.texts.common.quotes_count')
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -302,13 +305,13 @@ export default async function FrankensteinKeyQuotesPage() {
             render={<Link href="/revision/texts/frankenstein" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Frankenstein
+            {await t('rev.texts.fr.back')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Quote className="mr-1 size-3 text-violet-400" />
-              Key Quotations
+              {await t('rev.texts.common.key_quotations')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               AQA / Edexcel / OCR
@@ -316,12 +319,13 @@ export default async function FrankensteinKeyQuotesPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            25 Key Quotes by Theme
+            {await t('rev.texts.fr.quotes.title')}
           </h1>
-          <p className="mt-2 text-body-lg text-muted-foreground">Frankenstein by Mary Shelley</p>
+          <p className="mt-2 text-body-lg text-muted-foreground">
+            {await t('rev.texts.fr.byline')}
+          </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Every quotation you need for the exam, organised by theme with detailed analysis. All
-            from the public-domain 1818 text.
+            {await t('rev.texts.fr.quotes.intro')}
           </p>
         </div>
       </section>
@@ -330,7 +334,9 @@ export default async function FrankensteinKeyQuotesPage() {
       <section>
         <Card>
           <CardContent className="p-5">
-            <p className="text-sm font-semibold text-foreground mb-3">Jump to theme</p>
+            <p className="text-sm font-semibold text-foreground mb-3">
+              {await t('rev.texts.fr.quotes.jump_to_theme')}
+            </p>
             <div className="flex flex-wrap gap-2">
               {QUOTES_BY_THEME.map((section) => (
                 <a
@@ -354,7 +360,7 @@ export default async function FrankensteinKeyQuotesPage() {
             <span className={`block size-3 rounded-full ${section.colour}`} />
             <h2 className="text-heading-lg font-heading text-foreground">{section.theme}</h2>
             <Badge variant="outline" className="text-muted-foreground">
-              {section.quotes.length} quotes
+              {tQuotesCountTpl.replace('{n}', String(section.quotes.length))}
             </Badge>
           </div>
 
@@ -380,8 +386,7 @@ export default async function FrankensteinKeyQuotesPage() {
 
       {/* Footer */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        <em>Frankenstein; or, The Modern Prometheus</em> (1818) by Mary Shelley is in the public
-        domain. All quotations are from the original 1818 text and are reproduced freely.
+        {await t('rev.texts.fr.quotes.public_domain')}
       </p>
     </div>
   )

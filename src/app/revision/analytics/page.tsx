@@ -29,6 +29,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
 import { createServerSupabaseClient } from '@/lib/supabase/server'
+import { t } from '@/lib/i18n/t'
 import {
   getLearnerSnapshot,
   type DifficultyBand,
@@ -86,10 +87,13 @@ export default async function RevisionAnalyticsPage() {
 
 // ─── Hero ───────────────────────────────────────────────────────────────────
 
-function PageHero({ snapshot }: { snapshot: LearnerSnapshot }) {
+async function PageHero({ snapshot }: { snapshot: LearnerSnapshot }) {
   const subtitle = snapshot.hasData
-    ? `Based on ${snapshot.progress.totalAnswered.toLocaleString()} real answer${snapshot.progress.totalAnswered === 1 ? '' : 's'} you've given across quizzes.`
-    : 'Your personal performance dashboard -- powered by the quizzes you take on this site.'
+    ? (snapshot.progress.totalAnswered === 1
+        ? await t('rev.misc.analytics.subtitle_data_one')
+        : await t('rev.misc.analytics.subtitle_data')
+      ).replace('{count}', snapshot.progress.totalAnswered.toLocaleString())
+    : await t('rev.misc.analytics.subtitle_empty')
 
   return (
     <section
@@ -108,13 +112,13 @@ function PageHero({ snapshot }: { snapshot: LearnerSnapshot }) {
       <div className="relative">
         <Badge variant="secondary" className="mb-4">
           <BarChart3 className="mr-1 size-3" aria-hidden="true" />
-          Personal analytics
+          {await t('rev.misc.analytics.badge')}
         </Badge>
         <h1
           id="analytics-hero-heading"
           className="text-display-sm font-heading text-foreground sm:text-display"
         >
-          Your Analytics
+          {await t('rev.misc.analytics.title')}
         </h1>
         <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">{subtitle}</p>
       </div>
@@ -124,7 +128,7 @@ function PageHero({ snapshot }: { snapshot: LearnerSnapshot }) {
 
 // ─── Empty state ────────────────────────────────────────────────────────────
 
-function EmptyState() {
+async function EmptyState() {
   return (
     <Card>
       <CardContent className="py-12">
@@ -132,17 +136,14 @@ function EmptyState() {
           <div className="mb-4 flex size-12 items-center justify-center rounded-xl bg-primary/10">
             <BarChart3 className="size-6 text-primary" aria-hidden="true" />
           </div>
-          <h2 className="text-heading-md font-heading text-foreground">No data yet</h2>
+          <h2 className="text-heading-md font-heading text-foreground">
+            {await t('rev.misc.analytics.empty_heading')}
+          </h2>
           <p className="mt-2 text-body-sm text-muted-foreground">
-            Take your first quiz at{' '}
-            <Link href="/revision/quiz" className="text-primary hover:underline">
-              /revision/quiz
-            </Link>{' '}
-            and come back. Your weak spots, progress trend, and suggested next-steps will appear
-            here once you've answered a handful of questions.
+            {await t('rev.misc.analytics.empty_body')}
           </p>
           <Button className="mt-5" render={<Link href="/revision/quiz" />}>
-            Start your first quiz
+            {await t('rev.misc.analytics.empty_cta')}
             <ArrowRight className="size-4" />
           </Button>
         </div>
@@ -153,8 +154,14 @@ function EmptyState() {
 
 // ─── Progress snapshot ──────────────────────────────────────────────────────
 
-function ProgressSnapshot({ snapshot }: { snapshot: LearnerSnapshot }) {
+async function ProgressSnapshot({ snapshot }: { snapshot: LearnerSnapshot }) {
   const { progress } = snapshot
+
+  const overAnswers = async (n: number) =>
+    (n === 1
+      ? await t('rev.misc.analytics.tile.over_answers_one')
+      : await t('rev.misc.analytics.tile.over_answers')
+    ).replace('{count}', String(n))
 
   const tiles: Array<{
     label: string
@@ -165,44 +172,50 @@ function ProgressSnapshot({ snapshot }: { snapshot: LearnerSnapshot }) {
     icon: typeof TrendingUp
   }> = [
     {
-      label: 'Questions answered',
+      label: await t('rev.misc.analytics.tile.answered'),
       value: progress.totalAnswered.toLocaleString(),
-      sub: `${progress.totalCorrect.toLocaleString()} correct overall`,
+      sub: (await t('rev.misc.analytics.tile.answered_sub')).replace(
+        '{count}',
+        progress.totalCorrect.toLocaleString(),
+      ),
       accent: 'text-blue-400',
       bg: 'bg-blue-500/10',
       icon: BarChart3,
     },
     {
-      label: 'Correct last 7 days',
+      label: await t('rev.misc.analytics.tile.correct_7d'),
       value: progress.answeredLast7Days > 0 ? `${progress.correctRateLast7Days}%` : '--',
       sub:
         progress.answeredLast7Days > 0
-          ? `over ${progress.answeredLast7Days} answer${progress.answeredLast7Days === 1 ? '' : 's'}`
-          : 'no activity this week',
+          ? await overAnswers(progress.answeredLast7Days)
+          : await t('rev.misc.analytics.tile.no_activity_week'),
       accent: 'text-emerald-400',
       bg: 'bg-emerald-500/10',
       icon: TrendingUp,
     },
     {
-      label: 'Correct last 30 days',
+      label: await t('rev.misc.analytics.tile.correct_30d'),
       value: progress.answeredLast30Days > 0 ? `${progress.correctRateLast30Days}%` : '--',
       sub:
         progress.answeredLast30Days > 0
-          ? `over ${progress.answeredLast30Days} answer${progress.answeredLast30Days === 1 ? '' : 's'}`
-          : 'no activity this month',
+          ? await overAnswers(progress.answeredLast30Days)
+          : await t('rev.misc.analytics.tile.no_activity_month'),
       accent: 'text-violet-400',
       bg: 'bg-violet-500/10',
       icon: TrendingUp,
     },
     {
-      label: 'Answering streak',
+      label: await t('rev.misc.analytics.tile.streak'),
       value: `${progress.currentStreakDays}d`,
       sub:
         progress.longestStreakDays > progress.currentStreakDays
-          ? `best: ${progress.longestStreakDays}d`
+          ? (await t('rev.misc.analytics.tile.streak_best')).replace(
+              '{count}',
+              String(progress.longestStreakDays),
+            )
           : progress.currentStreakDays > 0
-            ? 'keep it going!'
-            : 'answer a question today to start',
+            ? await t('rev.misc.analytics.tile.streak_keep')
+            : await t('rev.misc.analytics.tile.streak_start'),
       accent: 'text-clay-600',
       bg: 'bg-amber-500/10',
       icon: Target,
@@ -214,27 +227,27 @@ function ProgressSnapshot({ snapshot }: { snapshot: LearnerSnapshot }) {
       <div className="mb-4 flex items-center gap-3">
         <TrendingUp className="size-5 text-primary" aria-hidden="true" />
         <h2 id="progress-snapshot-heading" className="text-heading-lg font-heading text-foreground">
-          Your progress snapshot
+          {await t('rev.misc.analytics.snapshot_heading')}
         </h2>
       </div>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {tiles.map((t) => (
+        {tiles.map((tile) => (
           <div
-            key={t.label}
+            key={tile.label}
             className="rounded-2xl border border-border/60 bg-card p-5 transition-colors hover:border-border"
           >
             <div className="flex items-start justify-between">
               <div>
-                <p className={`text-xs font-medium uppercase tracking-wider ${t.accent}/80`}>
-                  {t.label}
+                <p className={`text-xs font-medium uppercase tracking-wider ${tile.accent}/80`}>
+                  {tile.label}
                 </p>
                 <p className="mt-2 text-3xl font-bold tracking-tight text-foreground tabular-nums">
-                  {t.value}
+                  {tile.value}
                 </p>
-                <p className="mt-1 text-xs text-muted-foreground">{t.sub}</p>
+                <p className="mt-1 text-xs text-muted-foreground">{tile.sub}</p>
               </div>
-              <div className={`flex size-10 items-center justify-center rounded-xl ${t.bg}`}>
-                <t.icon className={`size-5 ${t.accent}`} aria-hidden="true" />
+              <div className={`flex size-10 items-center justify-center rounded-xl ${tile.bg}`}>
+                <tile.icon className={`size-5 ${tile.accent}`} aria-hidden="true" />
               </div>
             </div>
           </div>
@@ -246,44 +259,46 @@ function ProgressSnapshot({ snapshot }: { snapshot: LearnerSnapshot }) {
 
 // ─── Weak topics card ───────────────────────────────────────────────────────
 
-function WeakTopicsCard({ snapshot }: { snapshot: LearnerSnapshot }) {
+async function WeakTopicsCard({ snapshot }: { snapshot: LearnerSnapshot }) {
   const topics = snapshot.weakTopics
+  const xOfY = await t('rev.misc.analytics.weak.x_of_y')
 
   return (
     <Card>
       <CardHeader>
         <div className="flex items-center gap-2">
           <AlertCircle className="size-4 text-clay-600" aria-hidden="true" />
-          <CardTitle>Your weakest topics</CardTitle>
+          <CardTitle>{await t('rev.misc.analytics.weak.title')}</CardTitle>
         </div>
-        <CardDescription>
-          Topics where your correct-rate is lowest, based on at least 2 attempts.
-        </CardDescription>
+        <CardDescription>{await t('rev.misc.analytics.weak.desc')}</CardDescription>
       </CardHeader>
       <CardContent>
         {topics.length === 0 ? (
           <div className="rounded-lg border border-dashed border-border/60 bg-background/40 p-5 text-center text-body-sm text-muted-foreground">
-            Keep answering quiz questions -- we'll surface weak spots once you have at least 2
-            attempts in a topic.
+            {await t('rev.misc.analytics.weak.empty')}
           </div>
         ) : (
           <ul className="space-y-3">
-            {topics.map((t) => (
+            {topics.map((topic) => (
               <li
-                key={t.topicKey}
+                key={topic.topicKey}
                 className="flex items-center justify-between gap-3 rounded-lg border border-border/40 bg-background/50 px-4 py-3"
               >
                 <div className="min-w-0">
-                  <p className="truncate text-sm font-semibold text-foreground">{t.topicLabel}</p>
+                  <p className="truncate text-sm font-semibold text-foreground">
+                    {topic.topicLabel}
+                  </p>
                   <p className="mt-0.5 text-xs text-muted-foreground">
-                    {t.totalCorrect} of {t.totalAnswered} correct
+                    {xOfY
+                      .replace('{correct}', String(topic.totalCorrect))
+                      .replace('{total}', String(topic.totalAnswered))}
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="min-w-[3.5rem] text-right text-sm font-semibold tabular-nums text-foreground">
-                    {t.correctRate}%
+                    {topic.correctRate}%
                   </div>
-                  <TopicProgressBar percentage={t.correctRate} />
+                  <TopicProgressBar percentage={topic.correctRate} />
                 </div>
               </li>
             ))}
@@ -294,7 +309,7 @@ function WeakTopicsCard({ snapshot }: { snapshot: LearnerSnapshot }) {
   )
 }
 
-function TopicProgressBar({ percentage }: { percentage: number }) {
+async function TopicProgressBar({ percentage }: { percentage: number }) {
   const band =
     percentage >= 80
       ? 'bg-emerald-400'
@@ -303,11 +318,12 @@ function TopicProgressBar({ percentage }: { percentage: number }) {
         : percentage >= 40
           ? 'bg-clay-600'
           : 'bg-red-400'
+  const ariaLabel = (await t('rev.misc.analytics.weak.pct_correct_aria')).replace(
+    '{pct}',
+    String(percentage),
+  )
   return (
-    <div
-      className="h-2 w-20 overflow-hidden rounded-full bg-border/60"
-      aria-label={`${percentage}% correct`}
-    >
+    <div className="h-2 w-20 overflow-hidden rounded-full bg-border/60" aria-label={ariaLabel}>
       <div
         className={`h-full ${band} transition-all`}
         style={{ width: `${Math.max(2, Math.min(100, percentage))}%` }}
@@ -318,24 +334,23 @@ function TopicProgressBar({ percentage }: { percentage: number }) {
 
 // ─── Suggestions card ───────────────────────────────────────────────────────
 
-function SuggestionsCard({ snapshot }: { snapshot: LearnerSnapshot }) {
+async function SuggestionsCard({ snapshot }: { snapshot: LearnerSnapshot }) {
   const suggestions = snapshot.suggestions
+  const reviseNow = await t('rev.misc.analytics.suggest.revise_now')
+  const rateAria = await t('rev.misc.analytics.suggest.rate_aria')
   return (
     <Card>
       <CardHeader>
         <div className="flex items-center gap-2">
           <Target className="size-4 text-emerald-400" aria-hidden="true" />
-          <CardTitle>Suggested next study</CardTitle>
+          <CardTitle>{await t('rev.misc.analytics.suggest.title')}</CardTitle>
         </div>
-        <CardDescription>
-          The three topics with the biggest potential for improvement, with a direct link to the
-          matching revision section.
-        </CardDescription>
+        <CardDescription>{await t('rev.misc.analytics.suggest.desc')}</CardDescription>
       </CardHeader>
       <CardContent>
         {suggestions.length === 0 ? (
           <div className="rounded-lg border border-dashed border-border/60 bg-background/40 p-5 text-center text-body-sm text-muted-foreground">
-            Once you've answered a few more questions, we'll recommend a next-step study path here.
+            {await t('rev.misc.analytics.suggest.empty')}
           </div>
         ) : (
           <ul className="space-y-3">
@@ -352,7 +367,7 @@ function SuggestionsCard({ snapshot }: { snapshot: LearnerSnapshot }) {
                   <Badge
                     variant="outline"
                     className="shrink-0 tabular-nums"
-                    aria-label={`Current correct rate ${s.correctRate}%`}
+                    aria-label={rateAria.replace('{pct}', String(s.correctRate))}
                   >
                     {s.correctRate}%
                   </Badge>
@@ -363,7 +378,7 @@ function SuggestionsCard({ snapshot }: { snapshot: LearnerSnapshot }) {
                   className="mt-3"
                   render={<Link href={s.href} />}
                 >
-                  Revise this now
+                  {reviseNow}
                   <ArrowRight className="size-3.5" />
                 </Button>
               </li>
@@ -377,95 +392,101 @@ function SuggestionsCard({ snapshot }: { snapshot: LearnerSnapshot }) {
 
 // ─── Difficulty distribution ────────────────────────────────────────────────
 
-const DIFFICULTY_META: Record<DifficultyBand, { label: string; className: string; hint: string }> =
-  {
-    easy: {
-      label: 'Easy',
-      className: 'bg-emerald-400',
-      hint: 'You get these right ~80% of the time.',
-    },
-    medium: {
-      label: 'Medium',
-      className: 'bg-primary',
-      hint: '50-79% correct -- room to grow.',
-    },
-    hard: {
-      label: 'Hard',
-      className: 'bg-clay-600',
-      hint: '25-49% correct -- focus area.',
-    },
-    'very-hard': {
-      label: 'Very hard',
-      className: 'bg-red-400',
-      hint: 'Below 25% correct -- needs dedicated revision.',
-    },
-  }
+const DIFFICULTY_CLASSNAME: Record<DifficultyBand, string> = {
+  easy: 'bg-emerald-400',
+  medium: 'bg-primary',
+  hard: 'bg-clay-600',
+  'very-hard': 'bg-red-400',
+}
 
-function DifficultyDistributionCard({ snapshot }: { snapshot: LearnerSnapshot }) {
+const DIFFICULTY_LABEL_KEY: Record<DifficultyBand, string> = {
+  easy: 'rev.misc.analytics.diff.easy',
+  medium: 'rev.misc.analytics.diff.medium',
+  hard: 'rev.misc.analytics.diff.hard',
+  'very-hard': 'rev.misc.analytics.diff.very_hard',
+}
+
+const DIFFICULTY_HINT_KEY: Record<DifficultyBand, string> = {
+  easy: 'rev.misc.analytics.diff.easy_hint',
+  medium: 'rev.misc.analytics.diff.medium_hint',
+  hard: 'rev.misc.analytics.diff.hard_hint',
+  'very-hard': 'rev.misc.analytics.diff.very_hard_hint',
+}
+
+async function DifficultyDistributionCard({ snapshot }: { snapshot: LearnerSnapshot }) {
   const total = snapshot.progress.totalAnswered
   const buckets = snapshot.difficultyDistribution
+
+  // Resolve all difficulty labels/hints up-front (locale read once).
+  const labels: Record<string, string> = {}
+  const hints: Record<string, string> = {}
+  for (const b of buckets) {
+    labels[b.difficulty] = await t(DIFFICULTY_LABEL_KEY[b.difficulty])
+    hints[b.difficulty] = await t(DIFFICULTY_HINT_KEY[b.difficulty])
+  }
+  const answersPct = await t('rev.misc.analytics.diff.answers_pct')
+  const answersPctOne = await t('rev.misc.analytics.diff.answers_pct_one')
 
   return (
     <Card>
       <CardHeader>
         <div className="flex items-center gap-2">
           <BarChart3 className="size-4 text-primary" aria-hidden="true" />
-          <CardTitle>Overall difficulty distribution</CardTitle>
+          <CardTitle>{await t('rev.misc.analytics.diff.title')}</CardTitle>
         </div>
-        <CardDescription>
-          How the questions you've answered break down by how hard they've been for you personally.
-        </CardDescription>
+        <CardDescription>{await t('rev.misc.analytics.diff.desc')}</CardDescription>
       </CardHeader>
       <CardContent>
         {total === 0 ? (
-          <p className="text-sm text-muted-foreground">No answers yet.</p>
+          <p className="text-sm text-muted-foreground">
+            {await t('rev.misc.analytics.diff.no_answers')}
+          </p>
         ) : (
           <>
             {/* Stacked bar */}
             <div
               role="img"
-              aria-label="Stacked bar of difficulty distribution"
+              aria-label={await t('rev.misc.analytics.diff.bar_aria')}
               className="flex h-6 w-full overflow-hidden rounded-full border border-border/40 bg-border/40"
             >
               {buckets.map((b) => {
-                const meta = DIFFICULTY_META[b.difficulty]
                 if (b.count === 0) return null
                 return (
                   <div
                     key={b.difficulty}
-                    className={`${meta.className} h-full`}
+                    className={`${DIFFICULTY_CLASSNAME[b.difficulty]} h-full`}
                     style={{ width: `${b.percentage}%` }}
-                    title={`${meta.label}: ${b.count} (${b.percentage}%)`}
+                    title={`${labels[b.difficulty]}: ${b.count} (${b.percentage}%)`}
                   />
                 )
               })}
             </div>
             {/* Legend */}
             <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              {buckets.map((b) => {
-                const meta = DIFFICULTY_META[b.difficulty]
-                return (
-                  <div
-                    key={b.difficulty}
-                    className="rounded-lg border border-border/40 bg-background/50 p-3"
-                  >
-                    <div className="flex items-center gap-2">
-                      <span
-                        className={`size-3 shrink-0 rounded-full ${meta.className}`}
-                        aria-hidden="true"
-                      />
-                      <span className="text-sm font-semibold text-foreground">{meta.label}</span>
-                    </div>
-                    <p className="mt-1.5 text-xs tabular-nums text-foreground">
-                      {b.count} answer{b.count === 1 ? '' : 's'}{' '}
-                      <span className="text-muted-foreground">({b.percentage}%)</span>
-                    </p>
-                    <p className="mt-1 text-[11px] leading-snug text-muted-foreground">
-                      {meta.hint}
-                    </p>
+              {buckets.map((b) => (
+                <div
+                  key={b.difficulty}
+                  className="rounded-lg border border-border/40 bg-background/50 p-3"
+                >
+                  <div className="flex items-center gap-2">
+                    <span
+                      className={`size-3 shrink-0 rounded-full ${DIFFICULTY_CLASSNAME[b.difficulty]}`}
+                      aria-hidden="true"
+                    />
+                    <span className="text-sm font-semibold text-foreground">
+                      {labels[b.difficulty]}
+                    </span>
                   </div>
-                )
-              })}
+                  <p className="mt-1.5 text-xs tabular-nums text-muted-foreground">
+                    {(b.count === 1 ? answersPctOne : answersPct)
+                      .replace('{count}', String(b.count))
+                      .replace('{pct}', String(b.percentage))}
+                  </p>
+                  <p className="mt-1 text-[11px] leading-snug text-muted-foreground">
+                    {hints[b.difficulty]}
+                  </p>
+                </div>
+              ))}
             </div>
           </>
         )}

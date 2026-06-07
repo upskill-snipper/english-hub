@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ArrowLeft, BookOpen, Lightbulb, Quote, Sparkles, Filter } from 'lucide-react'
 
 import StudyTools from '@/components/study/StudyTools'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ────────────────────────────────────────────────────────────────────── */
 /*  Data                                                                 */
@@ -473,6 +474,7 @@ import { useState } from 'react'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export default function KeyQuotesPage() {
+  const t = useT()
   const [filterAct, setFilterAct] = useState<string | null>(null)
   const [filterTheme, setFilterTheme] = useState<string | null>(null)
 
@@ -510,13 +512,13 @@ export default function KeyQuotesPage() {
             className="mb-4 inline-flex items-center gap-1 text-sm text-teal-600 hover:text-teal-700 dark:text-teal-300 dark:hover:text-teal-200"
           >
             <ArrowLeft className="size-3.5" />
-            Back to An Inspector Calls
+            {t('rev.texts.aic.back')}
           </Link>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1 rounded-full bg-teal-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-teal-700 dark:text-teal-300">
               <Quote className="size-3" />
-              Key Quotes Bank
+              {t('rev.texts.common.key_quotes_bank')}
             </span>
             <span className="inline-flex items-center gap-1 rounded-full border border-clay-500/30 px-3 py-1 text-xs text-clay-700 dark:text-clay-300">
               <Sparkles className="size-3" />
@@ -525,13 +527,10 @@ export default function KeyQuotesPage() {
           </div>
 
           <h1 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            An Inspector Calls &mdash; Key Quotes
+            {t('rev.texts.aic.quotes.title')}
           </h1>
-          <p className="mt-2 text-lg text-muted-foreground">by J.B. Priestley &mdash; 1945</p>
-          <p className="mt-4 max-w-2xl text-muted-foreground">
-            30 essential quotations with full AO2 language analysis, AO3 context links, and exam
-            technique tips. Filter by act or theme to find the quotes you need.
-          </p>
+          <p className="mt-2 text-lg text-muted-foreground">{t('rev.texts.aic.byline')}</p>
+          <p className="mt-4 max-w-2xl text-muted-foreground">{t('rev.texts.aic.quotes.intro')}</p>
         </section>
 
         {/* Exam tip banner */}
@@ -539,13 +538,10 @@ export default function KeyQuotesPage() {
           <div className="flex items-start gap-3">
             <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-600 dark:text-clay-300" />
             <div className="text-sm text-muted-foreground">
-              <p className="mb-1 font-bold text-foreground">Exam technique</p>
-              <p>
-                You do not need to memorise every quote. Choose{' '}
-                <strong>3&ndash;4 versatile quotes per character</strong> that you can use across
-                multiple themes and question types. For each, learn the quote, the speaker, the act,
-                and one strong AO2 analytical point.
+              <p className="mb-1 font-bold text-foreground">
+                {t('rev.texts.common.exam_technique')}
               </p>
+              <p>{t('rev.texts.aic.quotes.exam_technique_body')}</p>
             </div>
           </div>
         </section>
@@ -555,7 +551,7 @@ export default function KeyQuotesPage() {
           <div className="flex items-center gap-2 mb-3">
             <Filter className="size-4 text-teal-600 dark:text-teal-300" />
             <h2 className="text-sm font-bold uppercase tracking-wider text-muted-foreground">
-              Filter Quotes
+              {t('rev.texts.common.filter_quotes')}
             </h2>
           </div>
           <div className="flex flex-wrap gap-2">
@@ -570,7 +566,7 @@ export default function KeyQuotesPage() {
                   : 'bg-muted text-muted-foreground hover:bg-secondary'
               }`}
             >
-              All ({QUOTES.length})
+              {t('rev.texts.common.all_count').replace('{n}', String(QUOTES.length))}
             </button>
             {ACTS.map((act) => (
               <button
@@ -628,7 +624,7 @@ export default function KeyQuotesPage() {
               {/* Context */}
               <div className="mt-3">
                 <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                  Context
+                  {t('rev.texts.common.context')}
                 </p>
                 <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{q.context}</p>
               </div>
@@ -636,7 +632,7 @@ export default function KeyQuotesPage() {
               {/* AO2 */}
               <div className="mt-3">
                 <p className="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-300">
-                  AO2 &mdash; Language Analysis
+                  {t('rev.texts.common.ao2_language_analysis')}
                 </p>
                 <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
                   {q.ao2Analysis}
@@ -646,7 +642,7 @@ export default function KeyQuotesPage() {
               {/* AO3 */}
               <div className="mt-3">
                 <p className="text-xs font-bold uppercase tracking-wider text-clay-600 dark:text-clay-300">
-                  AO3 &mdash; Context Link
+                  {t('rev.texts.common.ao3_context_link_dash')}
                 </p>
                 <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{q.ao3Context}</p>
               </div>
@@ -668,7 +664,9 @@ export default function KeyQuotesPage() {
                 <div className="flex items-start gap-2">
                   <Lightbulb className="mt-0.5 size-3.5 shrink-0 text-clay-600 dark:text-clay-300" />
                   <p className="text-xs leading-relaxed text-muted-foreground">
-                    <span className="font-bold text-clay-600 dark:text-clay-300">Exam tip: </span>
+                    <span className="font-bold text-clay-600 dark:text-clay-300">
+                      {t('rev.texts.common.exam_tip_label')}
+                    </span>
                     {q.examTip}
                   </p>
                 </div>
@@ -679,46 +677,43 @@ export default function KeyQuotesPage() {
 
         {filtered.length === 0 && (
           <div className="mt-8 rounded-xl border border-border/60 bg-muted p-8 text-center">
-            <p className="text-sm text-muted-foreground">
-              No quotes match your current filters. Try a different combination.
-            </p>
+            <p className="text-sm text-muted-foreground">{t('rev.texts.common.no_quotes_match')}</p>
           </div>
         )}
 
         {/* Navigation */}
         <section className="mt-14 rounded-xl border border-teal-500/20 bg-teal-500/5 p-6">
-          <h3 className="font-heading text-xl font-bold text-foreground">Continue studying</h3>
+          <h3 className="font-heading text-xl font-bold text-foreground">
+            {t('rev.texts.common.continue_studying')}
+          </h3>
           <p className="mt-1 text-sm text-muted-foreground">
-            Explore characters, themes, and context for An Inspector Calls.
+            {t('rev.texts.aic.context.continue_sub')}
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link
               href="/revision/texts/an-inspector-calls/characters"
               className="inline-flex items-center rounded-lg bg-teal-600 px-4 py-2 text-sm font-medium text-white hover:bg-teal-700"
             >
-              Characters
+              {t('rev.texts.common.characters')}
             </Link>
             <Link
               href="/revision/texts/an-inspector-calls/themes"
               className="inline-flex items-center rounded-lg border border-teal-500/30 bg-card px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5 dark:text-teal-300"
             >
-              Themes
+              {t('rev.texts.common.themes')}
             </Link>
             <Link
               href="/revision/texts/an-inspector-calls/context"
               className="inline-flex items-center rounded-lg border border-teal-500/30 bg-card px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5 dark:text-teal-300"
             >
-              Context
+              {t('rev.texts.common.context')}
             </Link>
           </div>
         </section>
 
         {/* Fair-dealing notice */}
         <p className="mt-10 border-t border-border/60 pt-4 text-xs text-muted-foreground">
-          Short quotations (&le;15 words each) reproduced under the fair dealing provision of the
-          Copyright, Designs and Patents Act 1988 for the purpose of criticism, review and
-          educational study. <em>An Inspector Calls</em> &copy; J.B. Priestley Estate. Full text
-          available from your school or local library.
+          {t('rev.texts.aic.fair_dealing')}
         </p>
       </div>
     </div>

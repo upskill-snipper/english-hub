@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { CheckCircle2, XCircle, Lightbulb, ChevronDown, ChevronUp } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
+import { useT } from '@/lib/i18n/use-t'
 
 export function Grade9ComparisonExample({
   exampleTitle,
@@ -21,6 +22,7 @@ export function Grade9ComparisonExample({
   higherEssay: string
   contextNote?: string
 }) {
+  const t = useT()
   const [show, setShow] = useState(false)
 
   return (
@@ -30,7 +32,9 @@ export function Grade9ComparisonExample({
           <Lightbulb className="size-4.5 text-primary" />
         </div>
         <h2 className="text-heading-md font-heading text-foreground">
-          {lowerLabel} vs {higherLabel}: See the Difference
+          {t('rev.misc.gradeint.compare_title')
+            .replace('{lower}', lowerLabel)
+            .replace('{higher}', higherLabel)}
         </h2>
       </div>
       <p className="text-body-sm text-muted-foreground mb-5">
@@ -44,7 +48,7 @@ export function Grade9ComparisonExample({
         className="flex items-center gap-2 text-sm font-medium text-primary mb-4 hover:underline"
       >
         {show ? <ChevronUp className="size-4" /> : <ChevronDown className="size-4" />}
-        {show ? 'Hide comparison' : 'Show comparison'}
+        {show ? t('rev.misc.gradeint.hide_comparison') : t('rev.misc.gradeint.show_comparison')}
       </button>
 
       {show && (

@@ -9,6 +9,7 @@ import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { useT } from '@/lib/i18n/use-t'
 const toAutumn: PoemData = {
   title: 'To Autumn',
   poet: 'John Keats',
@@ -869,6 +870,7 @@ const ESSAY_PROMPTS = [
 ]
 
 export default function ToAutumnPage() {
+  const t = useT()
   return (
     <div className="space-y-8">
       <CourseJsonLd
@@ -892,7 +894,7 @@ export default function ToAutumnPage() {
           render={<Link href="/revision/poetry/edexcel/time-and-place" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Time and Place cluster
+          {t('rev.poetry.shared.back_to_time_and_place')}
         </Button>
 
         <div className="flex items-center gap-3">
@@ -930,7 +932,9 @@ export default function ToAutumnPage() {
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">
         <div className="flex items-center gap-2 mb-4">
           <GitCompare className="size-4.5 text-muted-foreground" />
-          <h2 className="text-heading-sm font-heading text-foreground">Compare with</h2>
+          <h2 className="text-heading-sm font-heading text-foreground">
+            {t('rev.poetry.shared.compare_with')}
+          </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
           Strong pairings with To Autumn from the Edexcel Time and Place cluster.

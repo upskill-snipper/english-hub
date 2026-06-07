@@ -17,6 +17,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
+import { useT } from '@/lib/i18n/use-t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ── Context data ────────────────────────────────────────────────────── */
@@ -170,6 +171,7 @@ const sections: ContextSection[] = [
 /* ── Page ────────────────────────────────────────────────────────────── */
 
 export default function ContextPage() {
+  const tr = useT()
   return (
     <div className="space-y-10 bg-background pb-16">
       <BreadcrumbJsonLd
@@ -202,13 +204,13 @@ export default function ContextPage() {
             render={<Link href="/revision/texts/things-fall-apart" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Things Fall Apart
+            {tr('rev.texts.common.back_to_text').replace('{text}', 'Things Fall Apart')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Landmark className="mr-1 size-3 text-clay-500" />
-              Deep Study
+              {tr('rev.texts.common.deep_study')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -217,15 +219,13 @@ export default function ContextPage() {
           </div>
 
           <h1 className="font-heading text-display-sm text-foreground sm:text-display">
-            Historical and Social Context
+            {tr('rev.texts2.tfa.context.title')}
           </h1>
           <p className="mt-2 text-body-lg italic text-clay-600 dark:text-clay-300">
             Things Fall Apart by Chinua Achebe
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            The essential background for the exam: pre-colonial Igbo society, British colonialism in
-            Nigeria, Achebe&apos;s response to Conrad, the Yeats title, postcolonial literature and
-            the politics of language.
+            {tr('rev.texts2.tfa.context.intro')}
           </p>
         </div>
       </section>
@@ -234,7 +234,9 @@ export default function ContextPage() {
       <section>
         <Card>
           <CardContent className="p-4 sm:p-6">
-            <h2 className="mb-4 font-heading text-heading-md text-foreground">Jump to a Section</h2>
+            <h2 className="mb-4 font-heading text-heading-md text-foreground">
+              {tr('rev.texts.common.jump_to_section')}
+            </h2>
             <div className="grid gap-2 sm:grid-cols-2">
               {sections.map((s) => {
                 const Icon = s.icon
@@ -280,7 +282,7 @@ export default function ContextPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 font-heading text-heading-md">
                   <BookOpen className="size-4 text-clay-500" />
-                  Overview
+                  {tr('rev.texts.common.overview')}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4 text-body-sm text-muted-foreground">
@@ -295,7 +297,7 @@ export default function ContextPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 font-heading text-heading-md">
                   <Lightbulb className="size-4 text-amber-400" />
-                  Key Facts
+                  {tr('rev.texts.common.key_facts')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -315,7 +317,7 @@ export default function ContextPage() {
               <CardContent className="p-5 sm:p-6">
                 <h4 className="mb-3 text-sm font-semibold text-foreground flex items-center gap-2">
                   <Quote className="size-4 text-clay-500" />
-                  Links to the Text
+                  {tr('rev.texts.common.links_to_the_text')}
                 </h4>
                 <ul className="list-disc space-y-2 pl-4 text-body-sm text-muted-foreground">
                   {section.textLinks.map((l, i) => (
@@ -335,7 +337,7 @@ export default function ContextPage() {
             <Lightbulb className="size-5 text-amber-400" />
           </div>
           <h2 className="font-heading text-heading-lg text-foreground">
-            How to Use Context in Your Exam
+            {tr('rev.texts2.common.how_to_use_context')}
           </h2>
         </div>
 
@@ -386,9 +388,7 @@ export default function ContextPage() {
 
       {/* Fair dealing notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the Copyright, Designs and
-        Patents Act 1988 for criticism and review. Full text available from your school or local
-        library.
+        {tr('rev.texts2.common.fair_dealing_notice')}
       </p>
     </div>
   )

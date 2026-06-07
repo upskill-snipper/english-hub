@@ -5,6 +5,7 @@ import { ArrowLeft, Sparkles, Info, Quote } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
+import { useT } from '@/lib/i18n/use-t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 const quotes = [
@@ -93,7 +94,8 @@ const quotes = [
       'The foundational lie. Ed rewrites Christopher\u2019s reality to avoid the pain of explaining Judy\u2019s departure.',
   },
   {
-    quote: '\u201cI think people believe in heaven because they don\u2019t like the idea of dying.\u201d',
+    quote:
+      '\u201cI think people believe in heaven because they don\u2019t like the idea of dying.\u201d',
     speaker: 'Christopher',
     context: 'Conversation with the Reverend Peters',
     analysis:
@@ -121,7 +123,8 @@ const quotes = [
       'The inciting incident. The accusation is unjust but comprehensible \u2014 Christopher is found holding the dead dog and a garden fork.',
   },
   {
-    quote: '\u201cSometimes we get sad about things and we don\u2019t like to tell other people.\u201d',
+    quote:
+      '\u201cSometimes we get sad about things and we don\u2019t like to tell other people.\u201d',
     speaker: 'Siobhan',
     context: 'Explaining social behaviour to Christopher',
     analysis:
@@ -137,16 +140,23 @@ const quotes = [
 ]
 
 export default function CuriousIncidentKeyQuotesPage() {
+  const tr = useT()
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
-          { name: "Edexcel IGCSE Literature", url: "https://theenglishhub.app/igcse/edexcel" },
-          { name: "Drama", url: "https://theenglishhub.app/igcse/edexcel/drama" },
-          { name: "The Curious Incident of the Dog in the Night-Time", url: "https://theenglishhub.app/igcse/edexcel/drama/curious-incident" },
-          { name: "Key Quotations", url: "https://theenglishhub.app/igcse/edexcel/drama/curious-incident/key-quotes" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
+          { name: 'Edexcel IGCSE Literature', url: 'https://theenglishhub.app/igcse/edexcel' },
+          { name: 'Drama', url: 'https://theenglishhub.app/igcse/edexcel/drama' },
+          {
+            name: 'The Curious Incident of the Dog in the Night-Time',
+            url: 'https://theenglishhub.app/igcse/edexcel/drama/curious-incident',
+          },
+          {
+            name: 'Key Quotations',
+            url: 'https://theenglishhub.app/igcse/edexcel/drama/curious-incident/key-quotes',
+          },
         ]}
       />
       <div>
@@ -156,7 +166,7 @@ export default function CuriousIncidentKeyQuotesPage() {
           render={<Link href="/igcse/edexcel/drama/curious-incident" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to The Curious Incident
+          {tr('igcse.page.back_to')} The Curious Incident
         </Button>
       </div>
 
@@ -171,16 +181,16 @@ export default function CuriousIncidentKeyQuotesPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="border-primary/20 bg-primary/10 text-primary">
               <Sparkles className="mr-1 size-3" />
-              Edexcel IGCSE Literature
+              {tr('igcse.page.badge_edexcel_lit')}
             </Badge>
-            <Badge variant="secondary">Key Quotes</Badge>
+            <Badge variant="secondary">{tr('igcse.page.section.key_quotes')}</Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
             The Curious Incident: Key Quotes
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Eighteen essential quotations with speaker, context and analysis
-            &mdash; designed for exam revision and essay planning.
+            Eighteen essential quotations with speaker, context and analysis &mdash; designed for
+            exam revision and essay planning.
           </p>
         </div>
       </section>
@@ -189,14 +199,11 @@ export default function CuriousIncidentKeyQuotesPage() {
         <div className="flex gap-3">
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
-            <h2 className="text-body-sm font-semibold text-foreground">
-              Fair dealing notice
-            </h2>
+            <h2 className="text-body-sm font-semibold text-foreground">Fair dealing notice</h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
-              All quotations are short extracts included under the fair dealing
-              provision of the Copyright, Designs and Patents Act 1988 for the
-              purpose of criticism, review and study. This page is not a
-              substitute for reading the full play.
+              All quotations are short extracts included under the fair dealing provision of the
+              Copyright, Designs and Patents Act 1988 for the purpose of criticism, review and
+              study. This page is not a substitute for reading the full play.
             </p>
           </div>
         </div>
@@ -205,25 +212,16 @@ export default function CuriousIncidentKeyQuotesPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Quote className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            18 key quotations
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">18 key quotations</h2>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
           {quotes.map((q, i) => (
-            <div
-              key={i}
-              className="rounded-xl border border-border/60 bg-card p-5"
-            >
+            <div key={i} className="rounded-xl border border-border/60 bg-card p-5">
               <blockquote className="border-l-2 border-primary/40 pl-3 text-body-md italic text-foreground">
                 {q.quote}
               </blockquote>
-              <p className="mt-2 text-body-xs font-medium text-primary">
-                &mdash; {q.speaker}
-              </p>
-              <p className="mt-1 text-body-xs text-muted-foreground">
-                {q.context}
-              </p>
+              <p className="mt-2 text-body-xs font-medium text-primary">&mdash; {q.speaker}</p>
+              <p className="mt-1 text-body-xs text-muted-foreground">{q.context}</p>
               <p className="mt-2 text-body-sm leading-relaxed text-muted-foreground">
                 {q.analysis}
               </p>
@@ -233,9 +231,9 @@ export default function CuriousIncidentKeyQuotesPage() {
       </section>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        The Curious Incident of the Dog in the Night-Time &copy; Mark Haddon
-        (novel) / Simon Stephens (play). Short quotations reproduced under the
-        fair dealing provision of the CDPA 1988 for criticism and review.
+        The Curious Incident of the Dog in the Night-Time &copy; Mark Haddon (novel) / Simon
+        Stephens (play). Short quotations reproduced under the fair dealing provision of the CDPA
+        1988 for criticism and review.
       </p>
     </div>
   )

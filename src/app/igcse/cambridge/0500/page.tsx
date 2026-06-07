@@ -23,6 +23,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
+import { t } from '@/lib/i18n/t'
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
@@ -210,7 +211,9 @@ export default async function Cambridge0500HubPage() {
 
         <div className="relative">
           <div className="mb-4 flex flex-wrap items-center gap-2">
-            <Badge className="bg-primary/10 text-primary border-primary/20">Cambridge IGCSE</Badge>
+            <Badge className="bg-primary/10 text-primary border-primary/20">
+              {await t('igcse.cambridge.badge.cambridge_igcse')}
+            </Badge>
             <Badge variant="secondary">
               <Sparkles className="mr-1 size-3" />
               First Language English

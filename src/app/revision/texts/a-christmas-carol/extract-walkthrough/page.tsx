@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
+import { useT } from '@/lib/i18n/use-t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
@@ -245,6 +246,7 @@ const walkthrough: WalkthroughChunk[] = [
 /* ── Page ────────────────────────────────────────────────────────────── */
 
 export default function ExtractWalkthroughPage() {
+  const t = useT()
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -281,13 +283,13 @@ export default function ExtractWalkthroughPage() {
             render={<Link href="/revision/texts/a-christmas-carol" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to A Christmas Carol
+            {t('rev.texts.acc.back')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <ScrollText className="mr-1 size-3 text-blue-400" />
-              Extract Study
+              {t('rev.texts.acc.extract.badge')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -296,15 +298,13 @@ export default function ExtractWalkthroughPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Extract Walkthrough: The Opening of Stave 1
+            {t('rev.texts.acc.extract.title')}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
-            A Christmas Carol by Charles Dickens
+            {t('rev.texts.acc.extract.byline')}
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            A close reading of Dickens's opening portrait of Scrooge, with the full passage
-            line-numbered, six method-led walkthrough cards, and a model paragraph showing how to
-            argue the AO1 thesis with secure AO2 and AO3 anchoring.
+            {t('rev.texts.acc.extract.intro')}
           </p>
         </div>
       </section>
@@ -315,9 +315,9 @@ export default function ExtractWalkthroughPage() {
           <CardHeader>
             <CardTitle className="text-heading-md font-heading flex items-center gap-2">
               <BookOpen className="size-5 text-blue-400" />
-              Where this extract sits
+              {t('rev.texts.acc.extract.where_sits_h')}
             </CardTitle>
-            <CardDescription>Stave 1, "Marley's Ghost"</CardDescription>
+            <CardDescription>{t('rev.texts.acc.extract.where_sits_desc')}</CardDescription>
           </CardHeader>
           <CardContent className="space-y-3 text-body-sm text-muted-foreground">
             <p>
@@ -348,12 +348,9 @@ export default function ExtractWalkthroughPage() {
           <CardHeader>
             <CardTitle className="text-heading-md font-heading flex items-center gap-2">
               <ScrollText className="size-5 text-violet-400" />
-              The Extract
+              {t('rev.texts.common.the_extract')}
             </CardTitle>
-            <CardDescription>
-              From "Oh! But he was a tight-fisted hand..." to "Solitary as an oyster." Public domain
-              text, Dickens, 1843.
-            </CardDescription>
+            <CardDescription>{t('rev.texts.acc.extract.the_extract_desc')}</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="rounded-lg border border-border/60 bg-muted/20 p-4 sm:p-6">
@@ -380,15 +377,11 @@ export default function ExtractWalkthroughPage() {
         <div className="mb-2 flex items-center gap-3">
           <Telescope className="size-5 text-blue-400" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            Method-by-Method Walkthrough
+            {t('rev.texts.acc.extract.walkthrough_h')}
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground max-w-3xl">
-          For each chunk: <strong className="text-foreground">Notice</strong> identifies the
-          mechanics on the page; <strong className="text-foreground">Say</strong> models the
-          analytical sentence a strong AO2 response would write; and{' '}
-          <strong className="text-foreground">Zoom out</strong> connects the moment to the wider arc
-          and to the 1843 reformist context in which Dickens was writing.
+          {t('rev.texts.acc.extract.walkthrough_intro')}
         </p>
 
         {walkthrough.map((chunk) => (
@@ -408,21 +401,21 @@ export default function ExtractWalkthroughPage() {
               <div className="rounded-lg border-l-4 border-l-blue-400/60 bg-muted/30 p-4">
                 <h3 className="mb-1 flex items-center gap-2 text-sm font-semibold text-foreground">
                   <Eye className="size-4 text-blue-400" />
-                  Notice
+                  {t('rev.texts.common.notice')}
                 </h3>
                 <p>{chunk.notice}</p>
               </div>
               <div className="rounded-lg border-l-4 border-l-violet-400/60 bg-muted/30 p-4">
                 <h3 className="mb-1 flex items-center gap-2 text-sm font-semibold text-foreground">
                   <PenLine className="size-4 text-violet-400" />
-                  Say
+                  {t('rev.texts.common.say')}
                 </h3>
                 <p className="italic text-foreground/90">{chunk.say}</p>
               </div>
               <div className="rounded-lg border-l-4 border-l-clay-500/60 bg-muted/30 p-4">
                 <h3 className="mb-1 flex items-center gap-2 text-sm font-semibold text-foreground">
                   <Telescope className="size-4 text-clay-600" />
-                  Zoom out
+                  {t('rev.texts.common.zoom_out')}
                 </h3>
                 <p>{chunk.zoomOut}</p>
               </div>
@@ -435,17 +428,16 @@ export default function ExtractWalkthroughPage() {
       <section>
         <div className="mb-3 flex items-center gap-3">
           <PenLine className="size-5 text-violet-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">Model Paragraph</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {t('rev.texts.common.model_paragraph_h')}
+          </h2>
         </div>
         <Card>
           <CardHeader>
             <CardTitle className="text-heading-md font-heading">
               How does Dickens characterise Scrooge in the opening of Stave 1?
             </CardTitle>
-            <CardDescription>
-              A single, exam-style paragraph (~250 words) arguing how the opening prepares the
-              reader for Scrooge's eventual transformation.
-            </CardDescription>
+            <CardDescription>{t('rev.texts.acc.extract.model_para_desc')}</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="rounded-lg border-l-4 border-l-primary/40 bg-muted/30 p-5 text-body-md leading-relaxed text-foreground/90">
@@ -478,10 +470,7 @@ export default function ExtractWalkthroughPage() {
 
       {/* Public domain notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        A Christmas Carol by Charles Dickens (1843) is in the public domain. Quotations are
-        reproduced freely as the text is no longer subject to copyright. This walkthrough is
-        provided for educational purposes under normal fair-dealing principles for study and
-        criticism.
+        {t('rev.texts.acc.extract.public_domain')}
       </p>
     </div>
   )

@@ -9,6 +9,7 @@ import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { useT } from '@/lib/i18n/use-t'
 const poemData: PoemData = {
   title: "Sonnet 29 -- 'I think of thee!'",
   poet: 'Elizabeth Barrett Browning',
@@ -522,6 +523,7 @@ const COMPARE_POEMS = [
 ]
 
 export default function Sonnet29Page() {
+  const t = useT()
   return (
     <div className="space-y-6">
       <CourseJsonLd
@@ -551,7 +553,7 @@ export default function Sonnet29Page() {
           render={<Link href="/revision/poetry" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Poetry
+          {t('rev.poetry.shared.back_to_poetry')}
         </Button>
         <div className="flex items-center gap-3 mb-1">
           <h1 className="text-heading-lg font-heading text-foreground">Sonnet 29</h1>

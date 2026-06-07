@@ -24,6 +24,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import StudyTools from '@/components/study/StudyTools'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ── Poem data (Eduqas GCSE 2025 anthology - 12 poems) ────────────── */
 
@@ -214,7 +215,15 @@ const totalPoems =
   WAR_AND_CONFLICT.length +
   IDENTITY_AND_VOICE.length
 
+const THEME_LABEL_KEY: Record<string, string> = {
+  'Childhood & Nature': 'poetry_hub.eduqas.theme.childhood_nature',
+  'Love & Relationships': 'poetry_hub.eduqas.theme.love',
+  'War & Conflict': 'poetry_hub.eduqas.theme.war',
+  'Identity & Voice': 'poetry_hub.eduqas.theme.identity',
+}
+
 export default function EduqasPoetryPage() {
+  const t = useT()
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -241,16 +250,16 @@ export default function EduqasPoetryPage() {
             render={<Link href="/revision/poetry" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Poetry
+            {t('poetry_hub.eduqas.back_to_poetry')}
           </Button>
 
           <Badge variant="secondary" className="mb-4">
             <Sparkles className="mr-1 size-3" />
-            Eduqas GCSE 2025 Anthology
+            {t('poetry_hub.eduqas.badge_anthology')}
           </Badge>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            WJEC Eduqas Poetry
+            {t('poetry_hub.eduqas.hero_title')}
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             Master all {totalPoems} poems from the WJEC Eduqas GCSE English Literature 2025
@@ -272,13 +281,16 @@ export default function EduqasPoetryPage() {
           <div className="mt-3 flex items-start gap-2 rounded-lg bg-amber-500/5 border border-amber-500/10 p-3 max-w-2xl">
             <Scale className="mt-0.5 size-4 shrink-0 text-clay-600" />
             <p className="text-caption text-muted-foreground">
-              <strong className="text-foreground">Rights notice:</strong> Six of these twelve Eduqas
-              poems remain in copyright &mdash; Heaney&rsquo;s <em>Blackberry Picking</em> (&copy;
-              Faber &amp; Faber), Clarke&rsquo;s <em>Catrin</em> (&copy; Carcanet Press),
-              Garland&rsquo;s <em>Kamikaze</em> (&copy; Enitharmon Press), Ewing&rsquo;s{' '}
-              <em>Origin Story</em> (&copy; Haymarket Books) and others. Quotations on this site are
-              short fair-dealing extracts under CDPA 1988 &sect;30 (criticism, review, quotation).
-              For full text, students should consult the board-licensed Eduqas Poetry Anthology.
+              <strong className="text-foreground">
+                {t('poetry_hub.eduqas.rights_notice_label')}
+              </strong>{' '}
+              Six of these twelve Eduqas poems remain in copyright &mdash; Heaney&rsquo;s{' '}
+              <em>Blackberry Picking</em> (&copy; Faber &amp; Faber), Clarke&rsquo;s <em>Catrin</em>{' '}
+              (&copy; Carcanet Press), Garland&rsquo;s <em>Kamikaze</em> (&copy; Enitharmon Press),
+              Ewing&rsquo;s <em>Origin Story</em> (&copy; Haymarket Books) and others. Quotations on
+              this site are short fair-dealing extracts under CDPA 1988 &sect;30 (criticism, review,
+              quotation). For full text, students should consult the board-licensed Eduqas Poetry
+              Anthology.
             </p>
           </div>
         </div>
@@ -307,7 +319,7 @@ export default function EduqasPoetryPage() {
               <div key={group.id}>
                 <h3 className="mb-3 flex items-center gap-2 text-heading-sm font-heading text-foreground">
                   <Icon className={`size-4 ${group.accent}`} />
-                  {group.label}
+                  {THEME_LABEL_KEY[group.label] ? t(THEME_LABEL_KEY[group.label]) : group.label}
                 </h3>
                 <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                   {group.poems.map((poem) => {
@@ -336,7 +348,7 @@ export default function EduqasPoetryPage() {
                           ) : !poem.publicDomain ? (
                             <Lock
                               className="size-3.5 shrink-0 text-muted-foreground"
-                              aria-label="In copyright - study notes only"
+                              aria-label={t('poetry_hub.eduqas.in_copyright_aria')}
                             />
                           ) : null}
                         </div>
@@ -365,12 +377,12 @@ export default function EduqasPoetryPage() {
                         )}
                         {!poem.slug && !poem.publicDomain && (
                           <p className="text-[11px] text-muted-foreground italic">
-                            In copyright - study notes only (short fair-dealing extracts)
+                            {t('poetry_hub.eduqas.copyright_only')}
                           </p>
                         )}
                         {!poem.slug && poem.publicDomain && (
                           <p className="text-[11px] text-muted-foreground italic">
-                            Public domain - study page coming soon
+                            {t('poetry_hub.eduqas.pd_soon')}
                           </p>
                         )}
                       </>
@@ -406,7 +418,7 @@ export default function EduqasPoetryPage() {
         <div className="mb-5 flex items-center gap-3">
           <GitCompareArrows className="size-5 text-emerald-400" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            Comparison Question Practice
+            {t('poetry_hub.eduqas.comparison_heading')}
           </h2>
         </div>
 
@@ -419,38 +431,36 @@ export default function EduqasPoetryPage() {
               <div className="space-y-3">
                 <div>
                   <h3 className="text-heading-sm font-heading text-foreground">
-                    How the Eduqas comparison question works
+                    {t('poetry_hub.eduqas.comparison_how_title')}
                   </h3>
                   <p className="mt-1 text-body-sm text-muted-foreground">
-                    Component 1 Section B will give you one named poem and ask you to compare it
-                    with another poem from the anthology of your choice. Choose your second poem
-                    carefully - it must share a clear theme or contrast.
+                    {t('poetry_hub.eduqas.comparison_how_body')}
                   </p>
                 </div>
                 <ul className="grid gap-2 sm:grid-cols-2 text-body-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-400" />
-                    Pick a poem with strong thematic links
+                    {t('poetry_hub.eduqas.cb_pick')}
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-400" />
-                    Plan three points of comparison
+                    {t('poetry_hub.eduqas.cb_plan')}
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-400" />
-                    Use connectives: similarly, in contrast, whereas
+                    {t('poetry_hub.eduqas.cb_connectives')}
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-400" />
-                    Quote from both poems in every paragraph
+                    {t('poetry_hub.eduqas.cb_quote')}
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-400" />
-                    Comment on form and structure, not just language
+                    {t('poetry_hub.eduqas.cb_form')}
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-400" />
-                    Link analysis to context and the poet's intention
+                    {t('poetry_hub.eduqas.cb_context')}
                   </li>
                 </ul>
               </div>
@@ -459,8 +469,7 @@ export default function EduqasPoetryPage() {
         </Card>
 
         <p className="mb-4 text-body-sm text-muted-foreground max-w-2xl">
-          Strong pairings to practise. Each pair shares a clear thematic link, letting you draw both
-          similarities and contrasts.
+          {t('poetry_hub.eduqas.comparison_tip_intro')}
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2">
@@ -496,9 +505,9 @@ export default function EduqasPoetryPage() {
               </div>
               <div>
                 <CardTitle className="text-heading-md font-heading">
-                  Love &amp; betrayal pair
+                  {t('poetry_hub.eduqas.love_betrayal_title')}
                 </CardTitle>
-                <CardDescription>A Victorian comparison anchor</CardDescription>
+                <CardDescription>{t('poetry_hub.eduqas.love_betrayal_desc')}</CardDescription>
               </div>
             </div>
           </CardHeader>
@@ -519,9 +528,9 @@ export default function EduqasPoetryPage() {
               </div>
               <div>
                 <CardTitle className="text-heading-md font-heading">
-                  War &amp; identity pair
+                  {t('poetry_hub.eduqas.war_identity_title')}
                 </CardTitle>
-                <CardDescription>Two wars, two erasures</CardDescription>
+                <CardDescription>{t('poetry_hub.eduqas.war_identity_desc')}</CardDescription>
               </div>
             </div>
           </CardHeader>
@@ -534,7 +543,7 @@ export default function EduqasPoetryPage() {
             <div className="mt-auto pt-2 flex items-start gap-2 rounded-md bg-amber-500/5 border border-amber-500/10 p-2">
               <ShieldAlert className="mt-0.5 size-3.5 shrink-0 text-clay-600" />
               <p className="text-[11px] text-muted-foreground leading-snug">
-                Note: <em>Drummer Hodge</em> is a Boer War poem (1899), not WWI.
+                {t('poetry_hub.eduqas.boer_note')}
               </p>
             </div>
           </CardContent>

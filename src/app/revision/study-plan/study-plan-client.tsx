@@ -28,6 +28,7 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig, type ExamBoard } from '@/lib/board/board-store'
 import { getSetTextsForBoard } from '@/lib/board/set-texts'
 import { GRADE_SYSTEMS } from '@/lib/board/grade-boundaries'
+import { useT } from '@/lib/i18n/use-t'
 
 // ─── Board-aware grade-question labels ────────────────────────────────────
 //
@@ -494,6 +495,7 @@ function buildPlan(answers: StudyPlanAnswers, board: ExamBoard | null): PlannedW
 // ─── Component ─────────────────────────────────────────────────────────────
 
 export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | null }) {
+  const t = useT()
   const { board: hookBoard } = useBoard()
   const board = hookBoard ?? initialBoard
   const config = getBoardConfig(board)
@@ -597,7 +599,12 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
 
     return (
       <div className="space-y-8 pb-16">
-        <Breadcrumb items={[{ label: 'Revision', href: '/revision' }, { label: 'Study Plan' }]} />
+        <Breadcrumb
+          items={[
+            { label: 'Revision', href: '/revision' },
+            { label: t('rev.misc.plan.breadcrumb') },
+          ]}
+        />
         <div>
           <Button
             variant="ghost"
@@ -606,34 +613,41 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
             render={<Link href="/revision" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Revision Hub
+            {t('rev.misc.plan.back_revision')}
           </Button>
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <Badge variant="secondary" className="mb-2">
                 <Sparkles className="mr-1 size-3" />
-                Your study plan
+                {t('rev.misc.plan.badge_saved')}
               </Badge>
               <h1 className="text-heading-lg font-heading text-foreground">
-                Your Personalised {planBoardConfig?.shortName ?? ''} Plan
+                {t('rev.misc.plan.saved_title').replace(
+                  '{board}',
+                  planBoardConfig?.shortName ?? '',
+                )}
               </h1>
-              <p className="text-body-sm text-muted-foreground">Generated on {created}</p>
+              <p className="text-body-sm text-muted-foreground">
+                {t('rev.misc.plan.generated_on').replace('{date}', created)}
+              </p>
             </div>
             <Button variant="outline" size="sm" onClick={handleRetake}>
               <RotateCcw className="size-3.5" />
-              Retake Diagnostic
+              {t('rev.misc.plan.retake_diagnostic')}
             </Button>
           </div>
         </div>
 
         {/* Plan summary */}
         <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
-          <h2 className="text-heading-md font-heading text-foreground mb-4">Plan summary</h2>
+          <h2 className="text-heading-md font-heading text-foreground mb-4">
+            {t('rev.misc.plan.summary')}
+          </h2>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             <div className="rounded-xl border border-border/40 bg-background/50 p-4">
               <div className="flex items-center gap-2 text-xs text-muted-foreground">
                 <CalendarDays className="size-3.5" />
-                Time horizon
+                {t('rev.misc.plan.time_horizon')}
               </div>
               <p className="mt-1 text-sm font-semibold text-foreground">
                 {boardQuestions[0].options.find((o) => o.value === meta.weeks)?.label}
@@ -642,7 +656,7 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
             <div className="rounded-xl border border-border/40 bg-background/50 p-4">
               <div className="flex items-center gap-2 text-xs text-muted-foreground">
                 <TrendingUp className="size-3.5" />
-                Target grade
+                {t('rev.misc.plan.target_grade')}
               </div>
               <p className="mt-1 text-sm font-semibold text-foreground">
                 {boardQuestions[1].options.find((o) => o.value === meta.grade)?.label}
@@ -651,16 +665,16 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
             <div className="rounded-xl border border-border/40 bg-background/50 p-4">
               <div className="flex items-center gap-2 text-xs text-muted-foreground">
                 <GraduationCap className="size-3.5" />
-                Exam board
+                {t('rev.misc.plan.exam_board')}
               </div>
               <p className="mt-1 text-sm font-semibold text-foreground">
-                {planBoardConfig?.shortName ?? 'Not set'}
+                {planBoardConfig?.shortName ?? t('rev.misc.plan.not_set')}
               </p>
             </div>
             <div className="rounded-xl border border-border/40 bg-background/50 p-4">
               <div className="flex items-center gap-2 text-xs text-muted-foreground">
                 <Target className="size-3.5" />
-                Weakest area
+                {t('rev.misc.plan.weakest_area')}
               </div>
               <p className="mt-1 text-sm font-semibold text-foreground capitalize">
                 {Array.isArray(meta.weakArea)
@@ -671,7 +685,7 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
             <div className="rounded-xl border border-border/40 bg-background/50 p-4">
               <div className="flex items-center gap-2 text-xs text-muted-foreground">
                 <Clock className="size-3.5" />
-                Hours per week
+                {t('rev.misc.plan.hours_per_week')}
               </div>
               <p className="mt-1 text-sm font-semibold text-foreground">
                 {boardQuestions[3].options.find((o) => o.value === meta.hoursPerWeek)?.label}
@@ -680,10 +694,13 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
             <div className="rounded-xl border border-primary/30 bg-primary/5 p-4">
               <div className="flex items-center gap-2 text-xs text-primary">
                 <Sparkles className="size-3.5" />
-                Plan length
+                {t('rev.misc.plan.plan_length')}
               </div>
               <p className="mt-1 text-sm font-semibold text-foreground">
-                {planWeeks.length} week{planWeeks.length === 1 ? '' : 's'}
+                {(planWeeks.length === 1
+                  ? t('rev.misc.plan.weeks_count_one')
+                  : t('rev.misc.plan.weeks_count')
+                ).replace('{count}', String(planWeeks.length))}
               </p>
             </div>
           </div>
@@ -691,18 +708,23 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
 
         {/* Weeks */}
         <section className="space-y-4">
-          <h2 className="text-heading-md font-heading text-foreground">Week-by-week tasks</h2>
+          <h2 className="text-heading-md font-heading text-foreground">
+            {t('rev.misc.plan.week_by_week')}
+          </h2>
           {planWeeks.map((week) => (
             <div key={week.week} className="rounded-2xl border border-border/60 bg-card p-5 sm:p-6">
               <div className="mb-4 flex items-center justify-between gap-3">
                 <div>
                   <Badge variant="secondary" className="mb-1.5">
-                    Week {week.week}
+                    {t('rev.misc.plan.week_label').replace('{n}', String(week.week))}
                   </Badge>
                   <h3 className="text-heading-sm font-heading text-foreground">{week.focus}</h3>
                 </div>
                 <span className="text-xs text-muted-foreground">
-                  {week.tasks.length} task{week.tasks.length === 1 ? '' : 's'}
+                  {(week.tasks.length === 1
+                    ? t('rev.misc.plan.tasks_count_one')
+                    : t('rev.misc.plan.tasks_count')
+                  ).replace('{count}', String(week.tasks.length))}
                 </span>
               </div>
               <div className="grid gap-3 sm:grid-cols-2">
@@ -738,13 +760,14 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
 
         <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-primary/[0.06] via-card to-emerald-500/[0.04] p-6 text-center">
           <CheckCircle2 className="mx-auto mb-3 size-8 text-primary" />
-          <h2 className="text-heading-md font-heading text-foreground">Stick with the plan</h2>
+          <h2 className="text-heading-md font-heading text-foreground">
+            {t('rev.misc.plan.stick_title')}
+          </h2>
           <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-            Your plan is saved on this device. Come back any time and tick off tasks as you complete
-            them. If your situation changes, you can always retake the diagnostic.
+            {t('rev.misc.plan.stick_body')}
           </p>
           <Button variant="default" size="lg" className="mt-5" render={<Link href="/revision" />}>
-            Back to Revision Hub
+            {t('rev.misc.plan.back_revision')}
             <ArrowRight className="size-4" />
           </Button>
         </section>
@@ -756,7 +779,12 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
   if (step === 0 && Object.keys(answers).length === 0) {
     return (
       <div className="space-y-8 pb-16">
-        <Breadcrumb items={[{ label: 'Revision', href: '/revision' }, { label: 'Study Plan' }]} />
+        <Breadcrumb
+          items={[
+            { label: 'Revision', href: '/revision' },
+            { label: t('rev.misc.plan.breadcrumb') },
+          ]}
+        />
         <div>
           <Button
             variant="ghost"
@@ -765,21 +793,25 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
             render={<Link href="/revision" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Revision Hub
+            {t('rev.misc.plan.back_revision')}
           </Button>
           <Badge variant="secondary" className="mb-3">
             <Sparkles className="mr-1 size-3" />
-            {QUESTIONS.length}-question diagnostic
-            {boardName ? ` for ${boardName}` : ''}
+            {boardName
+              ? t('rev.misc.plan.diagnostic_badge_board')
+                  .replace('{count}', String(QUESTIONS.length))
+                  .replace('{board}', boardName)
+              : t('rev.misc.plan.diagnostic_badge').replace('{count}', String(QUESTIONS.length))}
           </Badge>
           <h1 className="text-heading-lg font-heading text-foreground">
-            Build your personalised study plan
+            {t('rev.misc.plan.intro_title')}
           </h1>
           <p className="mt-2 max-w-2xl text-body-sm text-muted-foreground">
-            Answer {QUESTIONS.length} quick questions and we will generate a week-by-week revision
-            plan tailored to your exam date, target grade, and weakest area
-            {boardName ? ` -- using ${boardName} texts and links throughout` : ''}. Your plan is
-            saved on this device so you can come back any time.
+            {boardName
+              ? t('rev.misc.plan.intro_body_board')
+                  .replace('{count}', String(QUESTIONS.length))
+                  .replace('{board}', boardName)
+              : t('rev.misc.plan.intro_body').replace('{count}', String(QUESTIONS.length))}
           </p>
         </div>
 
@@ -800,7 +832,12 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
   if (!isComplete) {
     return (
       <div className="space-y-8 pb-16">
-        <Breadcrumb items={[{ label: 'Revision', href: '/revision' }, { label: 'Study Plan' }]} />
+        <Breadcrumb
+          items={[
+            { label: 'Revision', href: '/revision' },
+            { label: t('rev.misc.plan.breadcrumb') },
+          ]}
+        />
         <div>
           <Button
             variant="ghost"
@@ -809,14 +846,17 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
             render={<Link href="/revision" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Revision Hub
+            {t('rev.misc.plan.back_revision')}
           </Button>
           <Badge variant="secondary" className="mb-3">
             <Sparkles className="mr-1 size-3" />
-            Building your plan
-            {boardName ? ` for ${boardName}` : ''}
+            {boardName
+              ? t('rev.misc.plan.building_badge_board').replace('{board}', boardName)
+              : t('rev.misc.plan.building_badge')}
           </Badge>
-          <h1 className="text-heading-lg font-heading text-foreground">A few quick questions</h1>
+          <h1 className="text-heading-lg font-heading text-foreground">
+            {t('rev.misc.plan.few_questions')}
+          </h1>
         </div>
 
         <DiagnosticStep
@@ -836,7 +876,7 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
   return (
     <div className="rounded-2xl border border-border/60 bg-card p-8 text-center">
       <Sparkles className="mx-auto mb-3 size-8 text-primary animate-pulse" />
-      <p className="text-body-sm text-muted-foreground">Building your plan...</p>
+      <p className="text-body-sm text-muted-foreground">{t('rev.misc.plan.building_fallback')}</p>
     </div>
   )
 }
@@ -860,6 +900,7 @@ function DiagnosticStep<T extends string>({
   canGoBack: boolean
   currentValue: string | string[] | undefined
 }) {
+  const t = useT()
   const progress = Math.round(((stepIndex + 1) / totalSteps) * 100)
   const isMulti = question.multiSelect ?? false
 
@@ -907,7 +948,9 @@ function DiagnosticStep<T extends string>({
       <div className="mb-6">
         <div className="mb-2 flex items-center justify-between">
           <span className="text-caption font-medium text-muted-foreground">
-            Question {stepIndex + 1} of {totalSteps}
+            {t('rev.misc.plan.step_x_of_y')
+              .replace('{n}', String(stepIndex + 1))
+              .replace('{total}', String(totalSteps))}
           </span>
           <span className="text-caption font-semibold text-foreground">{progress}%</span>
         </div>
@@ -926,8 +969,8 @@ function DiagnosticStep<T extends string>({
       {isMulti && (
         <p className="mt-2 text-caption text-muted-foreground">
           {localSelections.length === 0
-            ? 'Select one or more.'
-            : `${localSelections.length} selected`}
+            ? t('rev.misc.plan.select_one_or_more')
+            : t('rev.misc.plan.n_selected').replace('{count}', String(localSelections.length))}
         </p>
       )}
 
@@ -975,7 +1018,7 @@ function DiagnosticStep<T extends string>({
         {canGoBack ? (
           <Button variant="ghost" size="sm" onClick={onBack}>
             <ArrowLeft className="size-3.5" />
-            Previous
+            {t('rev.misc.plan.previous')}
           </Button>
         ) : (
           <span aria-hidden="true" />
@@ -988,7 +1031,7 @@ function DiagnosticStep<T extends string>({
             onClick={handleContinue}
             disabled={localSelections.length === 0}
           >
-            Continue
+            {t('rev.misc.plan.continue')}
             <ArrowRight className="size-3.5" />
           </Button>
         )}

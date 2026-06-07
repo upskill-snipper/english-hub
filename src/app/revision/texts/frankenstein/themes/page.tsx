@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { getServerBoard } from '@/lib/board/get-server-board'
+import { t } from '@/lib/i18n/t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
@@ -246,6 +247,11 @@ export default async function FrankensteinThemesPage() {
     redirect('/revision/texts')
   }
 
+  const tDetailedAnalysis = await t('rev.texts.common.detailed_analysis')
+  const tKeyQuotations = await t('rev.texts.common.key_quotations')
+  const tContextLink = await t('rev.texts.common.context_link')
+  const tExamTip = await t('rev.texts.common.exam_tip_sc')
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -269,13 +275,13 @@ export default async function FrankensteinThemesPage() {
             render={<Link href="/revision/texts/frankenstein" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Frankenstein
+            {await t('rev.texts.fr.back')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Lightbulb className="mr-1 size-3 text-clay-600" />
-              Theme Analysis
+              {await t('rev.texts.common.theme_analysis')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               AQA / Edexcel / OCR
@@ -283,12 +289,13 @@ export default async function FrankensteinThemesPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Themes - Deep Study
+            {await t('rev.texts.fr.themes.title')}
           </h1>
-          <p className="mt-2 text-body-lg text-muted-foreground">Frankenstein by Mary Shelley</p>
+          <p className="mt-2 text-body-lg text-muted-foreground">
+            {await t('rev.texts.fr.byline')}
+          </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Comprehensive analysis of the six key themes with quotations, contextual links, and exam
-            strategies.
+            {await t('rev.texts.fr.themes.intro')}
           </p>
         </div>
       </section>
@@ -308,7 +315,7 @@ export default async function FrankensteinThemesPage() {
             {/* Detailed analysis */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-heading-md font-heading">Detailed Analysis</CardTitle>
+                <CardTitle className="text-heading-md font-heading">{tDetailedAnalysis}</CardTitle>
               </CardHeader>
               <CardContent className="text-body-sm text-muted-foreground">
                 <p>{t.detailed}</p>
@@ -320,7 +327,7 @@ export default async function FrankensteinThemesPage() {
               <CardHeader>
                 <div className="flex items-center gap-3">
                   <Quote className="size-5 text-violet-400" />
-                  <CardTitle className="text-heading-md font-heading">Key Quotations</CardTitle>
+                  <CardTitle className="text-heading-md font-heading">{tKeyQuotations}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="space-y-5">
@@ -339,7 +346,7 @@ export default async function FrankensteinThemesPage() {
             {/* Context link */}
             <Card className="border-l-4 border-l-emerald-400">
               <CardContent className="p-5">
-                <p className="text-sm font-semibold text-foreground mb-1">Context link</p>
+                <p className="text-sm font-semibold text-foreground mb-1">{tContextLink}</p>
                 <p className="text-body-sm text-muted-foreground">{t.contextLink}</p>
               </CardContent>
             </Card>
@@ -347,7 +354,7 @@ export default async function FrankensteinThemesPage() {
             {/* Exam tip */}
             <Card className="bg-primary/5">
               <CardContent className="p-5">
-                <p className="text-sm font-semibold text-foreground mb-1">Exam tip</p>
+                <p className="text-sm font-semibold text-foreground mb-1">{tExamTip}</p>
                 <p className="text-body-sm text-muted-foreground">{t.examTip}</p>
               </CardContent>
             </Card>
@@ -357,8 +364,7 @@ export default async function FrankensteinThemesPage() {
 
       {/* Footer */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        <em>Frankenstein; or, The Modern Prometheus</em> (1818) by Mary Shelley is in the public
-        domain. All quotations are reproduced freely.
+        {await t('rev.texts.fr.public_domain')}
       </p>
     </div>
   )

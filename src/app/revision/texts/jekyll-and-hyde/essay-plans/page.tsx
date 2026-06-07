@@ -10,6 +10,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
@@ -379,6 +380,15 @@ export default async function JekyllEssayPlansPage() {
     redirect('/revision/texts')
   }
 
+  // Pre-resolve chrome labels used inside .map() callbacks.
+  const keyQuotationsLabel = await t('rev.texts.common.key_quotations')
+  const analysisLabel = await t('rev.texts.common.analysis')
+  const contextualLinkLabel = await t('rev.texts2.common.contextual_link')
+  const thesisLabel = await t('rev.texts.common.thesis_statement')
+  const introductionLabel = await t('rev.texts.common.introduction')
+  const conclusionLabel = await t('rev.texts.common.conclusion')
+  const examTipLabel = await t('rev.texts.common.exam_tip')
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -418,13 +428,13 @@ export default async function JekyllEssayPlansPage() {
             render={<Link href="/revision/texts/jekyll-and-hyde" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to study guide
+            {await t('rev.texts2.common.back_to_study_guide')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Feather className="mr-1 size-3 text-violet-400" />
-              Essay Plans
+              {await t('rev.texts.common.essay_plans')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               AQA / Edexcel / OCR / Eduqas
@@ -432,14 +442,13 @@ export default async function JekyllEssayPlansPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            GCSE Essay Plans
+            {await t('rev.texts2.common.gcse_essay_plans')}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
             Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson (1886)
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Five complete essay plans with thesis statements, paragraph-by-paragraph breakdowns, key
-            quotations, analysis, contextual links, and exam tips.
+            {await t('rev.texts2.common.essay_plans_intro')}
           </p>
         </div>
       </section>
@@ -449,7 +458,7 @@ export default async function JekyllEssayPlansPage() {
         <Card>
           <CardContent className="p-5">
             <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              Jump to essay
+              {await t('rev.texts2.common.jump_to_essay')}
             </p>
             <div className="flex flex-col gap-2">
               {essayPlans.map((ep, i) => (
@@ -484,7 +493,7 @@ export default async function JekyllEssayPlansPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
                 <Target className="size-4 text-violet-400" />
-                Thesis Statement
+                {thesisLabel}
               </CardTitle>
             </CardHeader>
             <CardContent className="text-body-sm text-foreground font-medium italic">
@@ -497,7 +506,7 @@ export default async function JekyllEssayPlansPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
                 <BookOpen className="size-4 text-blue-400" />
-                Introduction
+                {introductionLabel}
               </CardTitle>
             </CardHeader>
             <CardContent className="text-body-sm text-muted-foreground">
@@ -520,7 +529,7 @@ export default async function JekyllEssayPlansPage() {
                 {/* Quotations */}
                 <div>
                   <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                    Key Quotations
+                    {keyQuotationsLabel}
                   </p>
                   <div className="space-y-1.5">
                     {para.quotations.map((q, qi) => (
@@ -534,7 +543,7 @@ export default async function JekyllEssayPlansPage() {
                 {/* Analysis */}
                 <div>
                   <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                    Analysis
+                    {analysisLabel}
                   </p>
                   <p className="text-body-sm text-muted-foreground">{para.analysis}</p>
                 </div>
@@ -542,7 +551,7 @@ export default async function JekyllEssayPlansPage() {
                 {/* Context */}
                 <div className="rounded-lg border border-border/40 bg-amber-500/[0.03] p-3">
                   <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-clay-600">
-                    Contextual Link
+                    {contextualLinkLabel}
                   </p>
                   <p className="text-body-sm text-muted-foreground">{para.context}</p>
                 </div>
@@ -555,7 +564,7 @@ export default async function JekyllEssayPlansPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
                 <Lightbulb className="size-4 text-clay-600" />
-                Conclusion
+                {conclusionLabel}
               </CardTitle>
             </CardHeader>
             <CardContent className="text-body-sm text-muted-foreground">
@@ -568,7 +577,7 @@ export default async function JekyllEssayPlansPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
                 <Target className="size-4 text-blue-400" />
-                Exam Tip
+                {examTipLabel}
               </CardTitle>
             </CardHeader>
             <CardContent className="text-body-sm text-muted-foreground">{ep.examTip}</CardContent>
@@ -587,7 +596,7 @@ export default async function JekyllEssayPlansPage() {
           render={<Link href="/revision/texts/jekyll-and-hyde/chapters" />}
         >
           <BookOpen className="size-3.5" />
-          Chapter Analysis
+          {await t('rev.texts2.common.chapter_analysis')}
         </Button>
         <Button
           variant="outline"
@@ -595,7 +604,7 @@ export default async function JekyllEssayPlansPage() {
           render={<Link href="/revision/texts/jekyll-and-hyde/key-quotes" />}
         >
           <Quote className="size-3.5" />
-          Key Quotes by Theme
+          {await t('rev.texts2.common.key_quotes_by_theme')}
         </Button>
         <Button
           variant="outline"
@@ -603,14 +612,16 @@ export default async function JekyllEssayPlansPage() {
           render={<Link href="/revision/texts/jekyll-and-hyde" />}
         >
           <ArrowLeft className="size-3.5" />
-          Study Guide Overview
+          {await t('rev.texts2.common.study_guide_overview')}
         </Button>
       </section>
 
       {/* Public domain notice */}
       <p className="text-xs text-muted-foreground border-t border-border/60 pt-4">
-        <em>Strange Case of Dr Jekyll and Mr Hyde</em> (1886) by Robert Louis Stevenson is in the
-        public domain. Quotations are reproduced freely.
+        <em>Strange Case of Dr Jekyll and Mr Hyde</em>
+        {(await t('rev.texts2.common.public_domain_notice_after2'))
+          .replace('{year}', '1886')
+          .replace('{author}', 'Robert Louis Stevenson')}
       </p>
     </div>
   )

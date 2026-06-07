@@ -17,6 +17,7 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { t } from '@/lib/i18n/t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
@@ -398,6 +399,10 @@ export default async function ActsPage() {
   const isAr = locale === 'ar'
   const pick = (en: string, ar?: string) => (isAr && ar ? ar : en)
   const pickArr = (en: string[], ar?: string[]) => (isAr && ar && ar.length === en.length ? ar : en)
+  const tSummary = await t('rev.texts.common.summary')
+  const tKeyQuotesActTpl = await t('rev.texts.aic.acts.key_quotes_act')
+  const tLangActTpl = await t('rev.texts.aic.acts.language_techniques_act')
+  const tDramaActTpl = await t('rev.texts.aic.acts.dramatic_techniques_act')
 
   return (
     <div className="space-y-10 pb-16" dir={isAr ? 'rtl' : 'ltr'}>
@@ -428,13 +433,13 @@ export default async function ActsPage() {
             render={<Link href="/revision/texts/an-inspector-calls" />}
           >
             <ArrowLeft className="size-3.5" />
-            {isAr ? 'رجوع لـ An Inspector Calls' : 'Back to An Inspector Calls'}
+            {await t('rev.texts.aic.back')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Drama className="mr-1 size-3 text-violet-400" />
-              {isAr ? 'تحليل فصلاً بفصل' : 'Act-by-Act Analysis'}
+              {await t('rev.texts.subpage.acts.title')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -443,15 +448,13 @@ export default async function ActsPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            {isAr ? 'An Inspector Calls - تحليل الفصول' : 'An Inspector Calls - Acts Analysis'}
+            {await t('rev.texts.aic.acts.title')}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
-            {isAr ? 'تأليف J.B. Priestley - 1945' : 'by J.B. Priestley - 1945'}
+            {await t('rev.texts.aic.byline')}
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            {isAr
-              ? 'تحليل تفصيلي لكل فصول المسرحية الثلاثة مع الاقتباسات المفتاحية والأساليب اللغوية والوسائل الدرامية. كل اقتباس 15 كلمة أو أقل بالإنجليزية.'
-              : 'Detailed analysis of all three acts with key quotations, language techniques and dramatic devices. Every quote is 15 words or fewer.'}
+            {await t('rev.texts.aic.acts.intro')}
           </p>
         </div>
       </section>
@@ -470,7 +473,7 @@ export default async function ActsPage() {
           {/* Summary */}
           <Card>
             <CardHeader>
-              <CardTitle className="text-heading-md font-heading">Summary</CardTitle>
+              <CardTitle className="text-heading-md font-heading">{tSummary}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4 text-body-sm text-muted-foreground">
               {act.summary.map((para, i) => (
@@ -484,7 +487,7 @@ export default async function ActsPage() {
             <div className="mb-4 flex items-center gap-2">
               <Quote className="size-4.5 text-clay-600" />
               <h3 className="text-heading-sm font-heading text-foreground">
-                Key Quotes &mdash; Act {act.number}
+                {tKeyQuotesActTpl.replace('{n}', String(act.number))}
               </h3>
             </div>
             <div className="grid gap-4">
@@ -505,7 +508,7 @@ export default async function ActsPage() {
             <div className="mb-4 flex items-center gap-2">
               <MessageSquare className="size-4.5 text-blue-400" />
               <h3 className="text-heading-sm font-heading text-foreground">
-                Language Techniques &mdash; Act {act.number}
+                {tLangActTpl.replace('{n}', String(act.number))}
               </h3>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
@@ -528,7 +531,7 @@ export default async function ActsPage() {
             <div className="mb-4 flex items-center gap-2">
               <Lightbulb className="size-4.5 text-emerald-400" />
               <h3 className="text-heading-sm font-heading text-foreground">
-                Dramatic Techniques &mdash; Act {act.number}
+                {tDramaActTpl.replace('{n}', String(act.number))}
               </h3>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
@@ -556,9 +559,11 @@ export default async function ActsPage() {
         <Card className="bg-primary/5">
           <CardContent className="flex flex-col items-start gap-4 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
             <div>
-              <h3 className="text-heading-md font-heading text-foreground">Continue studying</h3>
+              <h3 className="text-heading-md font-heading text-foreground">
+                {await t('rev.texts.common.continue_studying')}
+              </h3>
               <p className="mt-1 text-body-sm text-muted-foreground">
-                Explore essay plans and key quotes for An Inspector Calls.
+                {await t('rev.texts.aic.acts.continue_sub')}
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
@@ -567,14 +572,14 @@ export default async function ActsPage() {
                 size="sm"
                 render={<Link href="/revision/texts/an-inspector-calls/essay-plans" />}
               >
-                Essay Plans
+                {await t('rev.texts.common.essay_plans')}
               </Button>
               <Button
                 variant="outline"
                 size="sm"
                 render={<Link href="/revision/texts/an-inspector-calls/key-quotes" />}
               >
-                Key Quotes
+                {await t('rev.texts.common.key_quotes')}
               </Button>
             </div>
           </CardContent>
@@ -583,10 +588,7 @@ export default async function ActsPage() {
 
       {/* Fair-dealing notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations (&le;15 words each) reproduced under the fair dealing provision of the
-        Copyright, Designs and Patents Act 1988 for the purpose of criticism, review and educational
-        study. <em>An Inspector Calls</em> &copy; J.B. Priestley Estate. Full text available from
-        your school or local library.
+        {await t('rev.texts.aic.fair_dealing')}
       </p>
     </div>
   )

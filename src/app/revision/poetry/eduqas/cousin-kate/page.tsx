@@ -9,6 +9,7 @@ import type { PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ── Poem data (verified PD text from Verified Library) ──────────── */
 
@@ -275,6 +276,7 @@ Volta: التحوّل الدرامي يجي في المقطع الأخير، ل�
 }
 
 export default function CousinKateEduqasPage() {
+  const t = useT()
   return (
     <div className="space-y-8">
       <CourseJsonLd
@@ -302,7 +304,7 @@ export default function CousinKateEduqasPage() {
           render={<Link href="/revision/poetry/eduqas" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Eduqas Poetry
+          {t('rev.poetry.shared.back_to_eduqas_poetry')}
         </Button>
 
         <div className="flex items-center gap-3">

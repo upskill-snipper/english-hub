@@ -122,8 +122,17 @@ import { STUDY_SKILLS_DICTIONARY } from './dictionary-study-skills'
 import { REV_POETRY_LANG_DICTIONARY } from './dictionary-rev-poetry-lang'
 // 2026-06-05: trilingual per-page study chrome (en + Khaleeji ar + es).
 import { REV_TEXTS_DICTIONARY } from './dictionary-rev-texts'
+// 2026-06-07: second set-text subpage chrome shard (rev.texts2.*).
+import { REV_TEXTS2_DICTIONARY } from './dictionary-rev-texts2'
 import { IGCSE_PAGES_DICTIONARY } from './dictionary-igcse-pages'
 import { KS3_PAGES_DICTIONARY } from './dictionary-ks3-pages'
+// 2026-06-07: remaining revision chrome (exam-technique guides + hub widgets).
+// Curated EN + Khaleeji AR + ES. Chrome only - teaching prose stays English.
+import { REV_MISC2_DICTIONARY } from './dictionary-rev-misc2'
+// 2026-06-07: revision interactive/analytics/grade-target chrome (rev.misc.*)
+// and second poetry-hub shard (rev.poetry2.*). Curated EN + Khaleeji AR + ES.
+import { REV_MISC_DICTIONARY } from './dictionary-rev-misc'
+import { REV_POETRY2_DICTIONARY } from './dictionary-rev-poetry2'
 
 export type Locale = 'en' | 'ar' | 'es'
 
@@ -24666,6 +24675,10 @@ export function lookup(key: string, locale: Locale): string {
     // 2026-06-07: revision poetry + language chrome (rev.poetry.*/rev.lang.*).
     REV_POETRY_LANG_DICTIONARY[key] ??
     REV_TEXTS_DICTIONARY[key] ??
+    REV_TEXTS2_DICTIONARY[key] ??
+    REV_MISC2_DICTIONARY[key] ??
+    REV_MISC_DICTIONARY[key] ??
+    REV_POETRY2_DICTIONARY[key] ??
     IGCSE_PAGES_DICTIONARY[key] ??
     KS3_PAGES_DICTIONARY[key] ??
     PRESS_AND_VERIFIED_FIX[key] ??

@@ -14,6 +14,7 @@ import {
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
+import { useT } from '@/lib/i18n/use-t'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 /* ─── Page metadata (client component, so no Metadata export) ─────── */
@@ -142,6 +143,13 @@ const modelParagraph = `Simon's death in Chapter 9 is the moment Golding's thesi
 /* ─── Page ────────────────────────────────────────────────────────── */
 
 export default function LordOfTheFliesExtractWalkthroughPage() {
+  const t = useT()
+  const kindLabel: Record<'notice' | 'say' | 'zoom-out', string> = {
+    notice: t('rev.texts.common.notice'),
+    say: t('rev.texts.common.say'),
+    'zoom-out': t('rev.texts.common.zoom_out'),
+  }
+  const cardOfTpl = t('rev.texts.lotf.extract.card_of')
   return (
     <>
       <BreadcrumbJsonLd
@@ -160,10 +168,10 @@ export default function LordOfTheFliesExtractWalkthroughPage() {
       <main className="mx-auto w-full max-w-4xl px-4 py-8 md:py-12">
         <Breadcrumb
           items={[
-            { label: 'Revision', href: '/revision' },
-            { label: 'Texts', href: '/revision/texts' },
+            { label: t('rev.texts.common.crumb_revision'), href: '/revision' },
+            { label: t('rev.texts.common.crumb_set_texts'), href: '/revision/texts' },
             { label: 'Lord of the Flies', href: '/revision/texts/lord-of-the-flies' },
-            { label: 'Extract walkthrough' },
+            { label: t('rev.texts.lotf.extract.crumb_current') },
           ]}
         />
 
@@ -171,23 +179,18 @@ export default function LordOfTheFliesExtractWalkthroughPage() {
         <header className="mb-8">
           <div className="mb-3 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">Lord of the Flies</Badge>
-            <Badge>Chapter 9 - A View to a Death</Badge>
-            <Badge variant="outline">Extract walkthrough</Badge>
+            <Badge>{t('rev.texts.lotf.extract.badge_chapter')}</Badge>
+            <Badge variant="outline">{t('rev.texts.lotf.extract.crumb_current')}</Badge>
           </div>
           <h1 className="mb-3 text-3xl font-bold tracking-tight md:text-4xl">
-            Simon&apos;s death - extract walkthrough
+            {t('rev.texts.lotf.extract.title')}
           </h1>
-          <p className="max-w-2xl text-muted-foreground">
-            How Golding stages the storm, the chant and the misrecognition that kills Simon - and
-            how the scene carries the central thesis of the whole novel. Read the cards in order;
-            each <em>Notice</em> points at something concrete, each <em>Say</em> tells you what to
-            write about it, and each <em>Zoom out</em> places it in the bigger argument.
-          </p>
+          <p className="max-w-2xl text-muted-foreground">{t('rev.texts.lotf.extract.intro')}</p>
           <div className="mt-5">
             <Link href="/revision/texts/lord-of-the-flies">
               <Button variant="outline" size="sm">
                 <ArrowLeft className="mr-2 size-4" />
-                Back to Lord of the Flies guide
+                {t('rev.texts.lotf.extract.back_to_guide')}
               </Button>
             </Link>
           </div>
@@ -205,10 +208,12 @@ export default function LordOfTheFliesExtractWalkthroughPage() {
                     className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium ${meta.pill}`}
                   >
                     <Icon className="size-3.5" />
-                    {meta.label}
+                    {kindLabel[card.kind]}
                   </span>
                   <span className="text-xs text-muted-foreground">
-                    Card {i + 1} of {cards.length}
+                    {cardOfTpl
+                      .replace('{n}', String(i + 1))
+                      .replace('{total}', String(cards.length))}
                   </span>
                 </div>
 
@@ -216,21 +221,25 @@ export default function LordOfTheFliesExtractWalkthroughPage() {
                   <blockquote className="mb-3 border-l-2 border-foreground/30 pl-3 text-sm italic text-foreground">
                     &ldquo;{card.fragment}&rdquo;
                     <span className="ml-2 not-italic text-xs text-muted-foreground">
-                      - Golding, Ch. 9
+                      {t('rev.texts.lotf.extract.attribution')}
                     </span>
                   </blockquote>
                 )}
 
                 {card.paraphrase && !card.fragment && (
                   <p className="mb-3 text-sm text-muted-foreground">
-                    <span className="font-medium text-foreground">In the scene: </span>
+                    <span className="font-medium text-foreground">
+                      {t('rev.texts.lotf.extract.in_the_scene')}
+                    </span>
                     {card.paraphrase}
                   </p>
                 )}
 
                 {card.paraphrase && card.fragment && (
                   <p className="mb-3 text-sm text-muted-foreground">
-                    <span className="font-medium text-foreground">In the scene: </span>
+                    <span className="font-medium text-foreground">
+                      {t('rev.texts.lotf.extract.in_the_scene')}
+                    </span>
                     {card.paraphrase}
                   </p>
                 )}
@@ -248,19 +257,18 @@ export default function LordOfTheFliesExtractWalkthroughPage() {
         >
           <div className="mb-4 flex items-center gap-2">
             <ScrollText className="size-5 text-muted-foreground" />
-            <h2 className="text-xl font-semibold">
-              Model paragraph - Simon&apos;s death and the novel&apos;s thesis
-            </h2>
+            <h2 className="text-xl font-semibold">{t('rev.texts.lotf.extract.model_para_h')}</h2>
           </div>
           <p className="mb-4 text-sm text-muted-foreground">
-            A single, exam-length paragraph (~250 words) showing how to link this scene to
-            Golding&apos;s argument that civilisation is a thin veneer over savagery. Use it as a
-            target, not a script - your own paragraph should sound like you, not like this.
+            {t('rev.texts.lotf.extract.model_para_desc')}
           </p>
           <div className="rounded-lg border bg-background p-5">
             <p className="whitespace-pre-line text-[0.95rem] leading-relaxed">{modelParagraph}</p>
             <p className="mt-3 text-right text-xs text-muted-foreground">
-              ~{modelParagraph.split(/\s+/).filter(Boolean).length} words
+              {t('rev.texts.lotf.extract.words_suffix').replace(
+                '{n}',
+                String(modelParagraph.split(/\s+/).filter(Boolean).length),
+              )}
             </p>
           </div>
         </section>
@@ -272,9 +280,9 @@ export default function LordOfTheFliesExtractWalkthroughPage() {
             className="group flex items-center justify-between rounded-lg border bg-card p-4 transition-colors hover:bg-muted"
           >
             <div>
-              <p className="text-sm font-medium">Full revision guide</p>
+              <p className="text-sm font-medium">{t('rev.texts.lotf.extract.full_guide_title')}</p>
               <p className="text-xs text-muted-foreground">
-                Plot, characters, themes, context, key quotes, essay plans
+                {t('rev.texts.lotf.extract.full_guide_desc')}
               </p>
             </div>
             <BookOpen className="size-4 text-muted-foreground group-hover:text-foreground" />
@@ -284,9 +292,9 @@ export default function LordOfTheFliesExtractWalkthroughPage() {
             className="group flex items-center justify-between rounded-lg border bg-card p-4 transition-colors hover:bg-muted"
           >
             <div>
-              <p className="text-sm font-medium">All set texts</p>
+              <p className="text-sm font-medium">{t('rev.texts.lotf.extract.all_texts_title')}</p>
               <p className="text-xs text-muted-foreground">
-                Browse other extract walkthroughs and revision guides
+                {t('rev.texts.lotf.extract.all_texts_desc')}
               </p>
             </div>
             <ArrowLeft className="size-4 rotate-180 text-muted-foreground group-hover:text-foreground" />
@@ -300,33 +308,16 @@ export default function LordOfTheFliesExtractWalkthroughPage() {
         >
           <div className="mb-2 flex items-center gap-2 font-semibold">
             <AlertTriangle className="size-4" />
-            Copyright &amp; fair dealing
+            {t('rev.texts.lotf.extract.copyright_h')}
           </div>
-          <p className="mb-2">
-            <em>Lord of the Flies</em> by William Golding (first published 1954) remains in
-            copyright. The UK rights are held by <strong>Faber &amp; Faber Ltd</strong>; the William
-            Golding Estate is represented by United Agents. This page is published in the United
-            Kingdom and relies on the <em>fair dealing</em> exception for criticism, review and
-            quotation under sections 30(1) and 30(1ZA) of the Copyright, Designs and Patents Act
-            1988.
-          </p>
-          <p className="mb-2">
-            Each verbatim fragment is fifteen words or fewer, taken from the novel&apos;s widely
-            available text, used solely as the object of analytical commentary, and clearly
-            attributed to Golding (Chapter 9). No continuous extract is reproduced; the scene is
-            otherwise summarised in our own paraphrase. The amount used is no more than is necessary
-            for the educational purpose of teaching close-reading technique to GCSE and IGCSE
-            students.
-          </p>
+          <p className="mb-2">{t('rev.texts.lotf.extract.copyright_p1')}</p>
+          <p className="mb-2">{t('rev.texts.lotf.extract.copyright_p2')}</p>
           <p>
-            If you are the rights holder and believe any use here exceeds fair dealing, please
-            contact us at{' '}
+            {t('rev.texts.lotf.extract.copyright_p3_pre')}
             <a href="mailto:hello@theenglishhub.app" className="underline">
               hello@theenglishhub.app
-            </a>{' '}
-            and we will remove or revise the material promptly. Students should buy or borrow a
-            licensed copy of the novel from Faber &amp; Faber, their school library, or a public
-            library.
+            </a>
+            {t('rev.texts.lotf.extract.copyright_p3_post')}
           </p>
         </footer>
       </main>

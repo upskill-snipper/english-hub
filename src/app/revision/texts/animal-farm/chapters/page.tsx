@@ -17,6 +17,7 @@ import {
 } from 'lucide-react'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
+import { t } from '@/lib/i18n/t'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -346,6 +347,12 @@ export default async function ChaptersPage() {
     redirect('/revision/texts')
   }
 
+  const tChapterTpl = await t('rev.texts.common.chapter_n_colon')
+  const tKeyEvents = await t('rev.texts.common.key_events')
+  const tCharDev = await t('rev.texts.common.character_development')
+  const tAllegory = await t('rev.texts.common.allegorical_parallels')
+  const tKeyQuotes = await t('rev.texts.common.key_quotes')
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -372,13 +379,13 @@ export default async function ChaptersPage() {
             render={<Link href="/revision/texts/animal-farm" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Animal Farm
+            {await t('rev.texts.af.back')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <BookOpen className="mr-1 size-3 text-blue-400" />
-              Deep Study
+              {await t('rev.texts.common.deep_study')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               AQA / Edexcel / OCR
@@ -386,13 +393,13 @@ export default async function ChaptersPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Chapter-by-Chapter Analysis
+            {await t('rev.texts.common.chapter_by_chapter_analysis')}
           </h1>
-          <p className="mt-2 text-body-lg text-muted-foreground">Animal Farm by George Orwell</p>
+          <p className="mt-2 text-body-lg text-muted-foreground">
+            {await t('rev.texts.af.byline')}
+          </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            All 10 chapters analysed with key events, character development, allegorical parallels
-            and short quotations. Use this as a detailed revision companion alongside your own
-            annotated copy.
+            {await t('rev.texts.af.chapters.intro')}
           </p>
         </div>
       </section>
@@ -405,7 +412,8 @@ export default async function ChaptersPage() {
             <div className="mb-5 flex items-center gap-3">
               <Icon className={`size-5 ${ch.iconColour}`} />
               <h2 className="text-heading-lg font-heading text-foreground">
-                Chapter {ch.number}: {ch.title}
+                {tChapterTpl.replace('{n}', String(ch.number))}
+                {ch.title}
               </h2>
             </div>
 
@@ -413,7 +421,7 @@ export default async function ChaptersPage() {
               {/* Key Events */}
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-heading-md font-heading">Key Events</CardTitle>
+                  <CardTitle className="text-heading-md font-heading">{tKeyEvents}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-2 text-body-sm text-muted-foreground">
                   <ul className="list-disc space-y-2 pl-4">
@@ -427,9 +435,7 @@ export default async function ChaptersPage() {
               {/* Character Development */}
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-heading-md font-heading">
-                    Character Development
-                  </CardTitle>
+                  <CardTitle className="text-heading-md font-heading">{tCharDev}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-2 text-body-sm text-muted-foreground">
                   <ul className="list-disc space-y-2 pl-4">
@@ -443,9 +449,7 @@ export default async function ChaptersPage() {
               {/* Allegory */}
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-heading-md font-heading">
-                    Allegorical Parallels
-                  </CardTitle>
+                  <CardTitle className="text-heading-md font-heading">{tAllegory}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-2 text-body-sm text-muted-foreground">
                   <ul className="list-disc space-y-2 pl-4">
@@ -459,7 +463,7 @@ export default async function ChaptersPage() {
               {/* Key Quotes */}
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-heading-md font-heading">Key Quotes</CardTitle>
+                  <CardTitle className="text-heading-md font-heading">{tKeyQuotes}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3 text-body-sm">
                   {ch.quotes.map((q, i) => (
@@ -479,13 +483,7 @@ export default async function ChaptersPage() {
 
       {/* Rights / fair-dealing notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        <strong>Rights notice:</strong> While <em>Animal Farm</em> entered UK public domain in 2021,
-        the Orwell estate (AM Heath) actively manages educational use. Quotations on this page are
-        short fair-dealing extracts; longer engagement should use a school-licensed edition. Short
-        quotations (each under 15 words) reproduced under the fair dealing provision of the
-        Copyright, Designs and Patents Act 1988 (s.30) for the purpose of criticism, review and
-        educational study. <em>Animal Farm</em> by George Orwell is published by Penguin Books. Full
-        text available from your school or local library.
+        {await t('rev.texts.af.rights_notice')}
       </p>
     </div>
   )

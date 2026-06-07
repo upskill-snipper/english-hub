@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { GraduationCap } from 'lucide-react'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
+import { t } from '@/lib/i18n/t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
@@ -92,11 +93,11 @@ export default async function MacbethContextPage() {
             href="/igcse/edexcel/shakespeare/macbeth"
             className="text-sm text-muted-foreground hover:text-foreground"
           >
-            &larr; Macbeth hub
+            &larr; {await t('igcse.page.macbeth_hub')}
           </Link>
           <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
             <GraduationCap className="h-4 w-4" />
-            Edexcel IGCSE Literature
+            {await t('igcse.page.badge_edexcel_lit')}
           </div>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
             Macbeth &mdash; Context

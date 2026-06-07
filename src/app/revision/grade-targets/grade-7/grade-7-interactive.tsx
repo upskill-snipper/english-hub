@@ -10,6 +10,7 @@ import {
   MessageSquare,
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
+import { useT } from '@/lib/i18n/use-t'
 
 const VOCABULARY_BANK = [
   {
@@ -46,6 +47,7 @@ const VOCABULARY_BANK = [
 ]
 
 export function Grade7VocabBank() {
+  const t = useT()
   const [expanded, setExpanded] = useState<number | null>(null)
 
   return (
@@ -54,12 +56,11 @@ export function Grade7VocabBank() {
         <div className="flex size-9 items-center justify-center rounded-lg bg-amber-500/10">
           <MessageSquare className="size-4.5 text-clay-600" />
         </div>
-        <h2 className="text-heading-md font-heading text-foreground">Vocabulary Bank</h2>
+        <h2 className="text-heading-md font-heading text-foreground">
+          {t('rev.misc.gradeint.vocab_title')}
+        </h2>
       </div>
-      <p className="text-body-sm text-muted-foreground mb-5">
-        These words and phrases will make your analysis sound more precise and academic. Click each
-        word to see how to use it in a sentence.
-      </p>
+      <p className="text-body-sm text-muted-foreground mb-5">{t('rev.misc.gradeint.vocab_desc')}</p>
 
       <div className="grid gap-2 sm:grid-cols-2">
         {VOCABULARY_BANK.map((item, i) => (
@@ -109,6 +110,7 @@ export function Grade7ComparisonExample({
   higherEssay: string
   contextNote?: string
 }) {
+  const t = useT()
   const [show, setShow] = useState(false)
 
   return (
@@ -118,7 +120,9 @@ export function Grade7ComparisonExample({
           <Lightbulb className="size-4.5 text-primary" />
         </div>
         <h2 className="text-heading-md font-heading text-foreground">
-          {lowerLabel} vs {higherLabel}: See the Difference
+          {t('rev.misc.gradeint.compare_title')
+            .replace('{lower}', lowerLabel)
+            .replace('{higher}', higherLabel)}
         </h2>
       </div>
       <p className="text-body-sm text-muted-foreground mb-5">
@@ -132,7 +136,7 @@ export function Grade7ComparisonExample({
         className="flex items-center gap-2 text-sm font-medium text-primary mb-4 hover:underline"
       >
         {show ? <ChevronUp className="size-4" /> : <ChevronDown className="size-4" />}
-        {show ? 'Hide comparison' : 'Show comparison'}
+        {show ? t('rev.misc.gradeint.hide_comparison') : t('rev.misc.gradeint.show_comparison')}
       </button>
 
       {show && (

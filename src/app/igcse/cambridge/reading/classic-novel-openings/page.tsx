@@ -17,6 +17,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -82,21 +83,23 @@ const checklist = [
 export default async function ClassicNovelOpeningsPage() {
   await requireIgcseBoard(['cambridge-0500', 'cambridge-0990'])
 
+  const gutenbergLabel = await t('igcse.page.reading.read_on_gutenberg')
+
   return (
     <div className="space-y-8 pb-16">
       {/* Header */}
       <header className="space-y-4">
         <Button variant="ghost" size="sm" render={<Link href="/igcse/cambridge/reading" />}>
           <ArrowLeft className="size-3.5" />
-          All reading frameworks
+          {await t('igcse.page.reading.all_frameworks')}
         </Button>
         <div className="flex flex-wrap items-center gap-2">
           <Badge className="bg-primary/10 text-primary border-primary/20">
             <Sparkles className="mr-1 size-3" />
-            Cambridge IGCSE
+            {await t('igcse.cambridge.badge.cambridge_igcse')}
           </Badge>
-          <Badge variant="secondary">Reading framework</Badge>
-          <Badge variant="secondary">Paper 1</Badge>
+          <Badge variant="secondary">{await t('igcse.page.reading.framework_badge')}</Badge>
+          <Badge variant="secondary">{await t('igcse.cambridge.badge.paper_1')}</Badge>
         </div>
         <h1 className="text-display-sm font-heading text-foreground">Classic Novel Openings</h1>
         <p className="max-w-3xl text-body-lg text-muted-foreground">
@@ -155,7 +158,7 @@ export default async function ClassicNovelOpeningsPage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
                 >
-                  Read on Project Gutenberg
+                  {gutenbergLabel}
                   <ExternalLink className="size-3.5" />
                 </a>
               </CardContent>

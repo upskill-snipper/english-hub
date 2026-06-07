@@ -11,6 +11,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
@@ -611,6 +612,15 @@ export default async function JekyllChaptersPage() {
   const isAr = h.get('x-lang') === 'ar'
   const pickStr = (en: string, ar?: string) => (isAr && ar ? ar : en)
 
+  // Pre-resolve chrome labels used inside .map() callbacks.
+  const chAbbrTpl = await t('rev.texts2.common.ch_abbr')
+  const chapterWord = await t('rev.texts2.common.chapter')
+  const summaryLabel = await t('rev.texts.common.summary')
+  const keyEventsLabel = await t('rev.texts2.common.key_events')
+  const characterDevLabel = await t('rev.texts.common.character_development')
+  const languageAnalysisLabel = await t('rev.texts.common.language_analysis')
+  const structuralLabel = await t('rev.texts2.common.structural_significance')
+
   return (
     <div className="space-y-10 pb-16" dir={isAr ? 'rtl' : undefined}>
       <BreadcrumbJsonLd
@@ -650,13 +660,13 @@ export default async function JekyllChaptersPage() {
             render={<Link href="/revision/texts/jekyll-and-hyde" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to study guide
+            {await t('rev.texts2.common.back_to_study_guide')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <BookOpen className="mr-1 size-3 text-emerald-400" />
-              Deep Study
+              {await t('rev.texts.common.deep_study')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               AQA / Edexcel / OCR / Eduqas
@@ -664,14 +674,13 @@ export default async function JekyllChaptersPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Chapter-by-Chapter Analysis
+            {await t('rev.texts2.common.chapter_by_chapter')}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
             Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson (1886)
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            All 10 chapters analysed in depth: summaries, key events, character development, five
-            language techniques per chapter with full quotations, and structural significance.
+            {await t('rev.texts2.jh.chapters.intro')}
           </p>
         </div>
       </section>
@@ -681,7 +690,7 @@ export default async function JekyllChaptersPage() {
         <Card>
           <CardContent className="p-5">
             <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              Jump to chapter
+              {await t('rev.texts2.common.jump_to_chapter_short')}
             </p>
             <div className="flex flex-wrap gap-2">
               {chapters.map((ch) => (
@@ -690,7 +699,9 @@ export default async function JekyllChaptersPage() {
                   href={`#chapter-${ch.number}`}
                   className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-card px-3 py-1.5 text-sm font-medium text-foreground transition-colors hover:bg-primary/10 hover:border-primary/30"
                 >
-                  <span className="text-xs text-muted-foreground">Ch {ch.number}</span>
+                  <span className="text-xs text-muted-foreground">
+                    {chAbbrTpl.replace('{n}', String(ch.number))}
+                  </span>
                   {ch.title}
                 </a>
               ))}
@@ -707,7 +718,7 @@ export default async function JekyllChaptersPage() {
               {ch.number}
             </span>
             <h2 className="text-heading-lg font-heading text-foreground">
-              {isAr ? 'الفصل' : 'Chapter'} {ch.number}: {ch.title}
+              {chapterWord} {ch.number}: {ch.title}
             </h2>
           </div>
 
@@ -716,7 +727,7 @@ export default async function JekyllChaptersPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
                 <BookOpen className="size-4 text-blue-400" />
-                {isAr ? 'الملخص' : 'Summary'}
+                {summaryLabel}
               </CardTitle>
             </CardHeader>
             <CardContent className="text-body-sm text-muted-foreground">
@@ -729,7 +740,7 @@ export default async function JekyllChaptersPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
                 <Layers className="size-4 text-clay-600" />
-                Key Events
+                {keyEventsLabel}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -751,7 +762,7 @@ export default async function JekyllChaptersPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
                 <Users className="size-4 text-violet-400" />
-                Character Development
+                {characterDevLabel}
               </CardTitle>
             </CardHeader>
             <CardContent className="text-body-sm text-muted-foreground">
@@ -764,7 +775,7 @@ export default async function JekyllChaptersPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
                 <Feather className="size-4 text-emerald-400" />
-                Language Analysis
+                {languageAnalysisLabel}
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-5">
@@ -785,7 +796,7 @@ export default async function JekyllChaptersPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
                 <Layers className="size-4 text-blue-400" />
-                Structural Significance
+                {structuralLabel}
               </CardTitle>
             </CardHeader>
             <CardContent className="text-body-sm text-muted-foreground">
@@ -806,7 +817,7 @@ export default async function JekyllChaptersPage() {
           render={<Link href="/revision/texts/jekyll-and-hyde/key-quotes" />}
         >
           <Quote className="size-3.5" />
-          Key Quotes by Theme
+          {await t('rev.texts2.common.key_quotes_by_theme')}
         </Button>
         <Button
           variant="outline"
@@ -814,7 +825,7 @@ export default async function JekyllChaptersPage() {
           render={<Link href="/revision/texts/jekyll-and-hyde/essay-plans" />}
         >
           <Feather className="size-3.5" />
-          Essay Plans
+          {await t('rev.texts.common.essay_plans')}
         </Button>
         <Button
           variant="outline"
@@ -822,14 +833,16 @@ export default async function JekyllChaptersPage() {
           render={<Link href="/revision/texts/jekyll-and-hyde" />}
         >
           <ArrowLeft className="size-3.5" />
-          Study Guide Overview
+          {await t('rev.texts2.common.study_guide_overview')}
         </Button>
       </section>
 
       {/* Public domain notice */}
       <p className="text-xs text-muted-foreground border-t border-border/60 pt-4">
-        <em>Strange Case of Dr Jekyll and Mr Hyde</em> (1886) by Robert Louis Stevenson is in the
-        public domain. Quotations are reproduced freely.
+        <em>Strange Case of Dr Jekyll and Mr Hyde</em>
+        {(await t('rev.texts2.common.public_domain_notice_after2'))
+          .replace('{year}', '1886')
+          .replace('{author}', 'Robert Louis Stevenson')}
       </p>
     </div>
   )

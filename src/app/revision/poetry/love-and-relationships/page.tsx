@@ -20,6 +20,7 @@ import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
 import StudyTools from '@/components/study/StudyTools'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { useT } from '@/lib/i18n/use-t'
 
 // ─── localStorage key (shared with other anthology pages) ─────────────────
 
@@ -235,7 +236,15 @@ const TAG_COLOURS: Record<string, string> = {
 
 // ─── Component ─────────────────────────────────────────────────────────────
 
+const LR_THEME_LABEL_KEY: Record<string, string> = {
+  'Romantic Love': 'poetry_hub.lr.theme.romantic',
+  'Family Love': 'poetry_hub.lr.theme.family',
+  'Distance & Loss': 'poetry_hub.lr.theme.distance_loss',
+  'Identity & Possession': 'poetry_hub.lr.theme.identity_possession',
+}
+
 export default function LoveAndRelationshipsPage() {
+  const t = useT()
   const { studied, mounted } = useStudiedPoems()
 
   const studiedCount = useMemo(() => ALL_POEMS.filter((p) => studied.has(p.slug)).length, [studied])
@@ -264,7 +273,7 @@ export default function LoveAndRelationshipsPage() {
           render={<Link href="/revision/poetry" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Poetry
+          {t('poetry_hub.lr.back_to_poetry')}
         </Button>
       </div>
 
@@ -277,17 +286,17 @@ export default function LoveAndRelationshipsPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Sparkles className="mr-1 size-3" />
-              AQA GCSE English Literature
+              {t('poetry_hub.lr.badge_spec')}
             </Badge>
-            <Badge className="bg-primary/10 text-primary border-primary/20">AQA Only</Badge>
+            <Badge className="bg-primary/10 text-primary border-primary/20">
+              {t('poetry_hub.lr.badge_aqa_only')}
+            </Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Love &amp; Relationships Poetry
+            {t('poetry_hub.lr.hero_title')}
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Master all 15 poems in the AQA Love and Relationships anthology. Each study page
-            includes annotations, key quotations, context, and comparison notes to help you write
-            top-grade essays.
+            {t('poetry_hub.lr.hero_lead')}
           </p>
 
           {/* Progress bar */}
@@ -295,7 +304,8 @@ export default function LoveAndRelationshipsPage() {
             <div className="mt-6 max-w-md">
               <div className="mb-2 flex items-center justify-between">
                 <span className="text-caption font-medium text-muted-foreground">
-                  {studiedCount} of {TOTAL_POEMS} poems studied
+                  {studiedCount} {t('poetry_hub.lr.of')} {TOTAL_POEMS}{' '}
+                  {t('poetry_hub.lr.poems_studied')}
                 </span>
                 <span className="text-caption font-semibold text-foreground">
                   {progressPercent}%
@@ -317,7 +327,9 @@ export default function LoveAndRelationshipsPage() {
       {/* ── Rights notice ───────────────────────────────────────────── */}
       <section className="rounded-xl border border-border/60 bg-muted/30 px-4 py-3 text-caption text-muted-foreground">
         <p>
-          <span className="font-medium text-foreground">Rights notice: </span>
+          <span className="font-medium text-foreground">
+            {t('poetry_hub.lr.rights_notice_label')}{' '}
+          </span>
           Seven of these fifteen poems remain in copyright &mdash; Heaney&rsquo;s <em>Follower</em>,
           Nagra&rsquo;s <em>Singh Song!</em> and Waterhouse&rsquo;s <em>Climbing My Grandfather</em>{' '}
           (&copy; Faber &amp; Faber), Causley&rsquo;s <em>Eden Rock</em> (&copy; David Higham
@@ -336,10 +348,13 @@ export default function LoveAndRelationshipsPage() {
             <div className={`flex size-8 items-center justify-center rounded-lg ${group.bgColour}`}>
               <group.icon className={`size-4 ${group.colour}`} />
             </div>
-            <h2 className="text-heading-lg font-heading text-foreground">{group.label}</h2>
+            <h2 className="text-heading-lg font-heading text-foreground">
+              {LR_THEME_LABEL_KEY[group.label] ? t(LR_THEME_LABEL_KEY[group.label]) : group.label}
+            </h2>
             {mounted && (
               <Badge variant="outline" className="ml-auto text-xs">
-                {group.poems.filter((p) => studied.has(p.slug)).length}/{group.poems.length} studied
+                {group.poems.filter((p) => studied.has(p.slug)).length}/{group.poems.length}{' '}
+                {t('poetry_hub.lr.studied')}
               </Badge>
             )}
           </div>
@@ -388,7 +403,7 @@ export default function LoveAndRelationshipsPage() {
                   </div>
 
                   <div className="mt-4 flex items-center gap-1 text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
-                    Study this poem
+                    {t('poetry_hub.lr.study_this_poem')}
                     <ArrowRight className="size-3.5" />
                   </div>
                 </Link>
@@ -405,14 +420,14 @@ export default function LoveAndRelationshipsPage() {
             <Lightbulb className="size-5 text-clay-600" />
           </div>
           <h2 className="text-heading-lg font-heading text-foreground">
-            Study Tips: Comparing Love &amp; Relationships
+            {t('poetry_hub.lr.study_tips_title')}
           </h2>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-border/40 bg-background/50 p-4">
             <h3 className="mb-2 text-sm font-semibold text-foreground">
-              Pair contrasting perspectives
+              {t('poetry_hub.lr.tip_pair_title')}
             </h3>
             <p className="text-body-sm text-muted-foreground leading-relaxed">
               The exam asks you to compare two poems. Choose poems that share a theme but differ in
@@ -423,7 +438,7 @@ export default function LoveAndRelationshipsPage() {
 
           <div className="rounded-xl border border-border/40 bg-background/50 p-4">
             <h3 className="mb-2 text-sm font-semibold text-foreground">
-              Examine the speaker, not the poet
+              {t('poetry_hub.lr.tip_speaker_title')}
             </h3>
             <p className="text-body-sm text-muted-foreground leading-relaxed">
               Each poem has a constructed speaker. Analyse how that voice presents love -
@@ -434,7 +449,7 @@ export default function LoveAndRelationshipsPage() {
 
           <div className="rounded-xl border border-border/40 bg-background/50 p-4">
             <h3 className="mb-2 text-sm font-semibold text-foreground">
-              Compare methods, not just content
+              {t('poetry_hub.lr.tip_methods_title')}
             </h3>
             <p className="text-body-sm text-muted-foreground leading-relaxed">
               Top-band responses compare how poets use language, structure and form. Notice how
@@ -445,7 +460,7 @@ export default function LoveAndRelationshipsPage() {
 
           <div className="rounded-xl border border-border/40 bg-background/50 p-4">
             <h3 className="mb-2 text-sm font-semibold text-foreground">
-              Learn 2-3 key quotes per poem
+              {t('poetry_hub.lr.tip_quotes_title')}
             </h3>
             <p className="text-body-sm text-muted-foreground leading-relaxed">
               You don&apos;t need to memorise entire poems. Focus on short, technique-rich
@@ -459,7 +474,7 @@ export default function LoveAndRelationshipsPage() {
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8 text-center">
         <BookOpen className="mx-auto mb-3 size-8 text-rose-400" />
         <h2 className="text-heading-lg font-heading text-foreground">
-          Ready to explore more poetry?
+          {t('poetry_hub.lr.ready_explore_title')}
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
           Head back to the Poetry hub to explore the AQA Power and Conflict anthology, the AQA
@@ -471,7 +486,7 @@ export default function LoveAndRelationshipsPage() {
           className="mt-5"
           render={<Link href="/revision/poetry" />}
         >
-          Back to Poetry Hub
+          {t('poetry_hub.lr.back_to_hub')}
           <ArrowRight className="size-4" />
         </Button>
       </section>

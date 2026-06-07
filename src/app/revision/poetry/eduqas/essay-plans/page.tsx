@@ -17,6 +17,7 @@ import {
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ── Essay plan data ─────────────────────────────────────────────── */
 
@@ -499,6 +500,7 @@ const ESSAY_PLANS: EssayPlan[] = [
 /* ── Page component ───────────────────────────────────────────────── */
 
 export default function EduqasEssayPlansPage() {
+  const t = useT()
   return (
     <div className="space-y-10 pb-16">
       {/* ── Hero ──────────────────────────────────────────────────── */}
@@ -514,21 +516,19 @@ export default function EduqasEssayPlansPage() {
             render={<Link href="/revision/poetry/eduqas" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Eduqas Poetry
+            {t('rev.poetry.shared.back_to_eduqas_poetry')}
           </Button>
 
           <Badge variant="secondary" className="mb-4">
             <PenLine className="mr-1 size-3" />
-            Eduqas Essay Plans
+            {t('rev.poetry2.eduqas.ep.badge')}
           </Badge>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Comparison Essay Plans
+            {t('rev.poetry2.eduqas.ep.title')}
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            {ESSAY_PLANS.length} fully planned comparison essays drawn from the Eduqas GCSE 2025
-            anthology. Each plan provides a comparative question, a thesis, three comparative
-            paragraphs with evidence, and a conclusion.
+            {t('rev.poetry2.eduqas.ep.lead').replace('{count}', String(ESSAY_PLANS.length))}
           </p>
 
           <div className="mt-5 flex items-start gap-2 rounded-lg bg-emerald-500/5 border border-emerald-500/10 p-3 max-w-2xl">
@@ -562,7 +562,7 @@ export default function EduqasEssayPlansPage() {
               <div className="space-y-3">
                 <div>
                   <h3 className="text-heading-sm font-heading text-foreground">
-                    How to use these essay plans
+                    {t('rev.poetry2.eduqas.ep.how_title')}
                   </h3>
                   <p className="mt-1 text-body-sm text-muted-foreground">
                     These are model plans, not model answers. Use them to practise structuring your
@@ -601,7 +601,7 @@ export default function EduqasEssayPlansPage() {
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            All {ESSAY_PLANS.length} Essay Plans
+            {t('rev.poetry2.eduqas.ep.all_plans').replace('{count}', String(ESSAY_PLANS.length))}
           </h2>
         </div>
 

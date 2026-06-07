@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { useT } from '@/lib/i18n/use-t'
 
 interface Poem {
   title: string
@@ -124,6 +125,7 @@ const POEMS: Poem[] = [
 ]
 
 export default function OCRYouthAndAgePage() {
+  const t = useT()
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -146,7 +148,7 @@ export default function OCRYouthAndAgePage() {
           render={<Link href="/revision/poetry/ocr" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to OCR Anthology
+          {t('poetry_hub.ocr.back_to_anthology')}
         </Button>
       </div>
 
@@ -158,17 +160,16 @@ export default function OCRYouthAndAgePage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Sparkles className="mr-1 size-3" />
-              OCR Towards a World Unknown
+              {t('poetry_hub.ocr.badge_anthology')}
             </Badge>
             <Badge className="bg-primary/10 text-primary border-primary/20">OCR</Badge>
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Youth and Age
+            {t('poetry_hub.ocr.cluster.ya.title')}
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            15 poems exploring childhood, growing up, parenthood and mortality. From Yeats and Keats
-            to Helen Dunmore and Carol Rumens.
+            {t('poetry_hub.ocr.ya.hero_lead')}
           </p>
         </div>
       </section>
@@ -183,7 +184,9 @@ export default function OCRYouthAndAgePage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Clock className="size-5 text-clay-600" />
-          <h2 className="text-heading-lg font-heading text-foreground">All 15 Poems</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {t('poetry_hub.ocr.all_15')}
+          </h2>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -218,7 +221,9 @@ export default function OCRYouthAndAgePage() {
 
               <div className="mt-3">
                 <Badge variant="outline" className="text-[0.65rem]">
-                  {poem.publicDomain ? 'Full study page' : 'Key quotations only'}
+                  {poem.publicDomain
+                    ? t('poetry_hub.ocr.full_study')
+                    : t('poetry_hub.ocr.quotes_only')}
                 </Badge>
               </div>
             </Link>
@@ -227,25 +232,26 @@ export default function OCRYouthAndAgePage() {
       </section>
 
       <section className="rounded-2xl border border-border/60 bg-muted/30 p-5 sm:p-6">
-        <h2 className="text-heading-sm font-heading text-foreground">Why are some poems locked?</h2>
+        <h2 className="text-heading-sm font-heading text-foreground">
+          {t('poetry_hub.ocr.why_locked')}
+        </h2>
         <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
-          Older poems are public domain so we provide full annotated study pages. More recent poems
-          are still in copyright -- for those we offer context, themes and key quotation analysis
-          only. You will need a copy of the OCR <em>Towards a World Unknown</em> anthology to read
-          the full text.
+          {t('poetry_hub.ocr.why_locked_body')}
         </p>
       </section>
 
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8 text-center">
         <BookOpen className="mx-auto mb-3 size-8 text-clay-600" />
-        <h2 className="text-heading-lg font-heading text-foreground">Explore other clusters</h2>
+        <h2 className="text-heading-lg font-heading text-foreground">
+          {t('poetry_hub.ocr.explore_other_clusters')}
+        </h2>
         <Button
           variant="default"
           size="lg"
           className="mt-5"
           render={<Link href="/revision/poetry/ocr" />}
         >
-          Back to OCR Anthology
+          {t('poetry_hub.ocr.back_to_anthology')}
           <ArrowRight className="size-4" />
         </Button>
       </section>

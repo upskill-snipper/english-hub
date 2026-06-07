@@ -22,6 +22,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -158,9 +159,9 @@ export default async function CompositionHubPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="bg-primary/10 text-primary border-primary/20">
               <Sparkles className="mr-1 size-3" />
-              Cambridge IGCSE
+              {await t('igcse.cambridge.badge.cambridge_igcse')}
             </Badge>
-            <Badge variant="secondary">Paper 2 - Section B</Badge>
+            <Badge variant="secondary">{await t('igcse.cambridge.badge.paper_2_section_b')}</Badge>
             <Badge variant="secondary">40 marks</Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">

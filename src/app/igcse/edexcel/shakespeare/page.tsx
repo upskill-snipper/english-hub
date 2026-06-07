@@ -4,6 +4,7 @@ import { buttonVariants } from '@/components/ui/button-variants'
 import { Drama, ArrowRight, BookOpen, Sparkles } from 'lucide-react'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
+import { t } from '@/lib/i18n/t'
 import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
@@ -92,11 +93,11 @@ export default async function ShakespeareHubPage() {
       <section className="border-b border-border bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <Link href="/igcse" className="text-sm text-muted-foreground hover:text-foreground">
-            &larr; IGCSE English
+            &larr; {await t('igcse.page.igcse_english')}
           </Link>
           <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
             <Drama className="h-4 w-4" />
-            Edexcel IGCSE Literature
+            {await t('igcse.page.badge_edexcel_lit')}
           </div>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
             Shakespeare Study Guides
@@ -148,7 +149,9 @@ export default async function ShakespeareHubPage() {
 
         {/* ── Plays ───────────────────────────────────────────── */}
         <section className="mt-14">
-          <h2 className="text-2xl font-bold text-foreground">Choose your set text</h2>
+          <h2 className="text-2xl font-bold text-foreground">
+            {await t('igcse.page.choose_set_text')}
+          </h2>
           <p className="mt-2 text-muted-foreground">
             Students study one of the three plays below. Pick the one your teacher has selected.
           </p>

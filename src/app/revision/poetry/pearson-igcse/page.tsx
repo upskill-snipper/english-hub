@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
 import { SET_TEXTS } from '@/lib/board/set-texts'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -22,10 +23,11 @@ export const metadata: Metadata = {
   },
 }
 
-export default function PearsonIgcsePoetryHub() {
+export default async function PearsonIgcsePoetryHub() {
   const poems = SET_TEXTS.filter(
-    (t) => t.category === 'poetry-anthology' && t.boards.includes('edexcel-igcse-lang'),
+    (st) => st.category === 'poetry-anthology' && st.boards.includes('edexcel-igcse-lang'),
   )
+  const openNotesLabel = await t('rev.poetry2.pearson.open_notes')
 
   return (
     <div className="space-y-8 pb-16">
@@ -46,33 +48,32 @@ export default function PearsonIgcsePoetryHub() {
             render={<Link href="/revision/poetry" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Poetry Hub
+            {await t('rev.poetry2.pearson.back')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Sparkles className="mr-1 size-3" />
-              Section B
+              {await t('rev.poetry2.pearson.badge_section_b')}
             </Badge>
-            <Badge variant="secondary">{poems.length} poems</Badge>
+            <Badge variant="secondary">
+              {poems.length} {await t('rev.poetry2.pearson.poems')}
+            </Badge>
             <Badge variant="secondary">4EA1</Badge>
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Pearson IGCSE Poetry Anthology
+            {await t('rev.poetry2.pearson.hero_title')}
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            All 15 prescribed poems for the Pearson Edexcel International GCSE English Language A
-            (4EA1) Section B anthology. Full study guides are in production. Each poem currently has
-            a registry entry, themes and a one-paragraph teaser; line-by-line analysis and
-            exam-style practice questions are being added.
+            {await t('rev.poetry2.pearson.hero_lead')}
           </p>
         </div>
       </section>
 
       {/* ── Anthology version disclaimer ────────────────────────────── */}
       <section
-        aria-label="Anthology version notice"
+        aria-label={await t('rev.poetry2.pearson.version_notice_aria')}
         className="rounded-xl border border-amber-500/30 bg-amber-500/[0.06] p-5 text-body-sm text-card-foreground"
       >
         <p className="mb-2">
@@ -106,7 +107,9 @@ export default function PearsonIgcsePoetryHub() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-blue-700" />
-          <h2 className="text-heading-lg font-heading text-foreground">All 15 anthology poems</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {await t('rev.poetry2.pearson.all_poems')}
+          </h2>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -127,12 +130,12 @@ export default function PearsonIgcsePoetryHub() {
               <CardContent className="flex flex-1 flex-col gap-3">
                 {poem.keyThemes && poem.keyThemes.length > 0 && (
                   <div className="flex flex-wrap gap-1.5">
-                    {poem.keyThemes.map((t) => (
+                    {poem.keyThemes.map((theme) => (
                       <span
-                        key={t}
+                        key={theme}
                         className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground"
                       >
-                        {t}
+                        {theme}
                       </span>
                     ))}
                   </div>
@@ -144,7 +147,7 @@ export default function PearsonIgcsePoetryHub() {
                     className="w-full"
                     render={<Link href={`/revision/poetry/pearson-igcse/${poem.slug}`} />}
                   >
-                    Open study notes
+                    {openNotesLabel}
                     <ArrowRight className="size-3.5" />
                   </Button>
                 </div>

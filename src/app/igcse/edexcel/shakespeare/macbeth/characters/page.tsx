@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { GraduationCap } from 'lucide-react'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
+import { t } from '@/lib/i18n/t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
@@ -126,11 +127,11 @@ export default async function MacbethCharactersPage() {
             href="/igcse/edexcel/shakespeare/macbeth"
             className="text-sm text-muted-foreground hover:text-foreground"
           >
-            &larr; Macbeth hub
+            &larr; {await t('igcse.page.macbeth_hub')}
           </Link>
           <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
             <GraduationCap className="h-4 w-4" />
-            Edexcel IGCSE Literature
+            {await t('igcse.page.badge_edexcel_lit')}
           </div>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
             Macbeth &mdash; Characters
@@ -144,7 +145,9 @@ export default async function MacbethCharactersPage() {
       <div className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
         {/* ── Quick nav ───────────────────────────────────────── */}
         <nav className="rounded-xl bg-muted p-6">
-          <h2 className="text-lg font-bold text-foreground">On this page</h2>
+          <h2 className="text-lg font-bold text-foreground">
+            {await t('igcse.page.on_this_page')}
+          </h2>
           <ul className="mt-3 grid gap-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
             {CHARACTERS.map((c) => (
               <li key={c.name}>

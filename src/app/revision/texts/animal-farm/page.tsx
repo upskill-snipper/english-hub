@@ -8,6 +8,7 @@ import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Animal Farm revision guide - themes, characters, key quotes - The English Hub',
@@ -626,12 +627,7 @@ export default async function AnimalFarmPage() {
       />
       <TextGuide data={data} />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        <strong>Rights notice:</strong> While <em>Animal Farm</em> entered UK public domain in 2021,
-        the Orwell estate (AM Heath) actively manages educational use. Quotations on this page are
-        short fair-dealing extracts; longer engagement should use a school-licensed edition. Short
-        quotations reproduced under the fair dealing provision of the Copyright, Designs and Patents
-        Act 1988 (s.30) for criticism and review. Full text available from your school or local
-        library.
+        {await t('rev.texts.af.rights_notice_short')}
       </p>
     </>
   )

@@ -12,6 +12,7 @@ import {
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -677,7 +678,7 @@ const ESSAY_PLANS: EssayPlan[] = [
 
 /* ── Component ───────────────────────────────────────────────────── */
 
-export default function EssayPlansPage() {
+export default async function EssayPlansPage() {
   return (
     <div className="space-y-10 pb-16">
       {/* ── Back link ──────────────────────────────────────────────── */}
@@ -689,7 +690,7 @@ export default function EssayPlansPage() {
           render={<Link href="/revision/poetry/power-and-conflict" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Power &amp; Conflict
+          {await t('rev.poetry2.pc.ep.back')}
         </Button>
       </div>
 
@@ -701,18 +702,17 @@ export default function EssayPlansPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Sparkles className="mr-1 size-3" />
-              AQA GCSE English Literature
+              {await t('rev.poetry2.pc.ep.badge_spec')}
             </Badge>
-            <Badge className="bg-primary/10 text-primary border-primary/20">AQA Only</Badge>
+            <Badge className="bg-primary/10 text-primary border-primary/20">
+              {await t('rev.poetry2.pc.ep.badge_aqa_only')}
+            </Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Essay Plans
+            {await t('rev.poetry2.pc.ep.title')}
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Ten ready-made essay plans for the most common AQA Power &amp; Conflict comparison
-            questions. Each plan includes a full introduction, three PEEL comparison paragraphs, and
-            a conclusion &mdash; with Grade&nbsp;5 and Grade&nbsp;9 approaches so you can see
-            exactly what the examiner wants at each level.
+            {await t('rev.poetry2.pc.ep.lead')}
           </p>
         </div>
       </section>
@@ -723,11 +723,15 @@ export default function EssayPlansPage() {
           <div className="flex size-8 items-center justify-center rounded-lg bg-blue-500/10">
             <Target className="size-4 text-blue-400" />
           </div>
-          <h2 className="text-heading-lg font-heading text-foreground">How to use these plans</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {await t('rev.poetry2.pc.ep.how_title')}
+          </h2>
         </div>
         <div className="grid gap-4 sm:grid-cols-3">
           <div className="rounded-xl border border-border/40 bg-background/50 p-4">
-            <p className="mb-1 text-sm font-semibold text-foreground">1. Read the question</p>
+            <p className="mb-1 text-sm font-semibold text-foreground">
+              {await t('rev.poetry2.pc.ep.step1_title')}
+            </p>
             <p className="text-body-sm text-muted-foreground leading-relaxed">
               Each plan answers a real AQA-style comparison question. In the exam, the named poem is
               printed for you; the second poem is your choice.
@@ -735,7 +739,7 @@ export default function EssayPlansPage() {
           </div>
           <div className="rounded-xl border border-border/40 bg-background/50 p-4">
             <p className="mb-1 text-sm font-semibold text-foreground">
-              2. Study the PEEL structure
+              {await t('rev.poetry2.pc.ep.step2_title')}
             </p>
             <p className="text-body-sm text-muted-foreground leading-relaxed">
               Each paragraph follows Point &rarr; Evidence &rarr; Explain &rarr; Link. Notice how
@@ -744,7 +748,7 @@ export default function EssayPlansPage() {
           </div>
           <div className="rounded-xl border border-border/40 bg-background/50 p-4">
             <p className="mb-1 text-sm font-semibold text-foreground">
-              3. Practise writing your own
+              {await t('rev.poetry2.pc.ep.step3_title')}
             </p>
             <p className="text-body-sm text-muted-foreground leading-relaxed">
               Use these plans as models, then practise with different poem pairings. The more plans
@@ -882,7 +886,9 @@ export default function EssayPlansPage() {
 
       {/* ── Quick jump ───────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
-        <h2 className="mb-4 text-heading-lg font-heading text-foreground">Quick jump</h2>
+        <h2 className="mb-4 text-heading-lg font-heading text-foreground">
+          {await t('rev.poetry2.pc.ep.quick_jump')}
+        </h2>
         <div className="grid gap-2 sm:grid-cols-2">
           {ESSAY_PLANS.map((plan) => (
             <a
@@ -905,7 +911,7 @@ export default function EssayPlansPage() {
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8 text-center">
         <BookOpen className="mx-auto mb-3 size-8 text-clay-600" />
         <h2 className="text-heading-lg font-heading text-foreground">
-          Ready to write your own comparisons?
+          {await t('rev.poetry2.pc.ep.cta_title')}
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
           Read our comparison guide for step-by-step techniques, or explore themes to find the best
@@ -917,9 +923,9 @@ export default function EssayPlansPage() {
             size="lg"
             disabled
             aria-disabled="true"
-            title="Comparison guide - coming soon"
+            title={await t('rev.poetry2.pc.ep.cg_soon_title')}
           >
-            Comparison guide (coming soon)
+            {await t('rev.poetry2.pc.ep.cg_soon')}
             <ArrowRight className="size-4" />
           </Button>
           <Button
@@ -927,9 +933,9 @@ export default function EssayPlansPage() {
             size="lg"
             disabled
             aria-disabled="true"
-            title="Themes - coming soon"
+            title={await t('rev.poetry2.pc.ep.themes_soon_title')}
           >
-            Explore themes (coming soon)
+            {await t('rev.poetry2.pc.ep.themes_soon')}
             <ArrowRight className="size-4" />
           </Button>
         </div>

@@ -16,6 +16,7 @@ import {
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ── Paragraph frames ──────────────────────────────────────────── */
 
@@ -173,6 +174,7 @@ const AO_BANDS = [
 /* ── Component ─────────────────────────────────────────────────── */
 
 export default function ComparisonGuidePage() {
+  const t = useT()
   return (
     <div className="space-y-10 pb-16">
       {/* ── Back link ─────────────────────────────────────────── */}
@@ -184,7 +186,7 @@ export default function ComparisonGuidePage() {
           render={<Link href="/revision/poetry/love-and-relationships" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Love &amp; Relationships
+          {t('rev.poetry2.lr.back_to_lr')}
         </Button>
       </div>
 
@@ -197,17 +199,17 @@ export default function ComparisonGuidePage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Sparkles className="mr-1 size-3" />
-              AQA GCSE English Literature
+              {t('poetry_hub.lr.badge_spec')}
             </Badge>
-            <Badge className="bg-primary/10 text-primary border-primary/20">AQA Only</Badge>
+            <Badge className="bg-primary/10 text-primary border-primary/20">
+              {t('poetry_hub.lr.badge_aqa_only')}
+            </Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            How to Compare Love &amp; Relationships Poems
+            {t('rev.poetry2.lr.cg.title')}
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            A complete guide to AQA Paper 2 Section B. Learn the point-by-point method, build Grade
-            9 thesis statements, choose strong pairings, and avoid the mistakes that cap otherwise
-            good essays at Grade 6.
+            {t('rev.poetry2.lr.cg.lead')}
           </p>
         </div>
       </section>
@@ -217,7 +219,7 @@ export default function ComparisonGuidePage() {
         <div className="mb-4 flex items-center gap-3">
           <Info className="size-5 text-sky-400" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            What the Exam Asks You to Do
+            {t('rev.poetry2.lr.cg.what_asks_title')}
           </h2>
         </div>
         <div className="rounded-xl border border-border/40 bg-background/50 p-5">
@@ -251,7 +253,7 @@ export default function ComparisonGuidePage() {
         <div className="mb-5 flex items-center gap-3">
           <Layers className="size-5 text-sky-400" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            Point-by-Point vs Block: Why Point-by-Point Wins
+            {t('rev.poetry2.lr.cg.pbp_title')}
           </h2>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
@@ -310,7 +312,9 @@ export default function ComparisonGuidePage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Target className="size-5 text-emerald-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">Three Levels of Thesis</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {t('rev.poetry2.lr.cg.thesis_title')}
+          </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl">
           Your thesis is the single most important sentence in the essay. Here are three versions of
@@ -340,7 +344,9 @@ export default function ComparisonGuidePage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Layers className="size-5 text-violet-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">Three Paragraph Frames</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {t('rev.poetry2.lr.cg.frames_title')}
+          </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl">
           These frames give you a reliable structure for every comparative paragraph. Pick the frame
@@ -380,7 +386,7 @@ export default function ComparisonGuidePage() {
         <div className="mb-5 flex items-center gap-3">
           <GitCompare className="size-5 text-rose-400" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            10 Strong Pairings to Know
+            {t('rev.poetry2.lr.cg.pairings_title')}
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl">
@@ -410,7 +416,9 @@ export default function ComparisonGuidePage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Target className="size-5 text-clay-600" />
-          <h2 className="text-heading-lg font-heading text-foreground">AQA Mark Scheme Decoded</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {t('rev.poetry2.lr.cg.markscheme_title')}
+          </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl">
           Understanding what examiners are actually looking for at each grade boundary helps you
@@ -451,7 +459,7 @@ export default function ComparisonGuidePage() {
         <div className="mb-4 flex items-center gap-3">
           <AlertTriangle className="size-5 text-clay-600" />
           <h2 className="text-heading-md font-heading text-foreground">
-            Common Mistakes That Cap Your Grade
+            {t('rev.poetry2.lr.cg.mistakes_title')}
           </h2>
         </div>
         <ul className="space-y-3">
@@ -476,7 +484,7 @@ export default function ComparisonGuidePage() {
         <div className="mb-4 flex items-center gap-3">
           <Lightbulb className="size-5 text-clay-600" />
           <h2 className="text-heading-md font-heading text-foreground">
-            5-Minute Planning Checklist
+            {t('rev.poetry2.lr.cg.checklist_title')}
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-4 max-w-2xl">
@@ -508,7 +516,7 @@ export default function ComparisonGuidePage() {
         <div className="mb-4 flex items-center gap-3">
           <GitCompare className="size-5 text-violet-400" />
           <h2 className="text-heading-md font-heading text-foreground">
-            Comparative Language to Use
+            {t('rev.poetry2.lr.cg.language_title')}
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-4 max-w-2xl">
@@ -518,7 +526,7 @@ export default function ComparisonGuidePage() {
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/[0.04] p-4">
             <h3 className="text-xs font-semibold uppercase tracking-wider text-emerald-400 mb-2">
-              For similarities
+              {t('poetry_hub.ocr.cg.connectives_sim')}
             </h3>
             <ul className="space-y-1 text-body-sm text-muted-foreground">
               <li>Both poets...</li>
@@ -530,7 +538,7 @@ export default function ComparisonGuidePage() {
           </div>
           <div className="rounded-xl border border-rose-500/20 bg-rose-500/[0.04] p-4">
             <h3 className="text-xs font-semibold uppercase tracking-wider text-rose-400 mb-2">
-              For differences
+              {t('poetry_hub.ocr.cg.connectives_diff')}
             </h3>
             <ul className="space-y-1 text-body-sm text-muted-foreground">
               <li>Whereas [Poet A]..., [Poet B] takes a markedly different approach...</li>
@@ -547,7 +555,7 @@ export default function ComparisonGuidePage() {
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8 text-center">
         <BookOpen className="mx-auto mb-3 size-8 text-rose-400" />
         <h2 className="text-heading-lg font-heading text-foreground">
-          See these techniques in action
+          {t('rev.poetry2.lr.cg.cta_title')}
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
           10 fully worked essay plans showing the point-by-point method, Grade 9 theses, and
@@ -559,7 +567,7 @@ export default function ComparisonGuidePage() {
           className="mt-5"
           render={<Link href="/revision/poetry/love-and-relationships/essay-plans" />}
         >
-          Essay Plans
+          {t('poetry_hub.ocr.cg.essay_plans_cta')}
           <ArrowRight className="size-4" />
         </Button>
       </section>

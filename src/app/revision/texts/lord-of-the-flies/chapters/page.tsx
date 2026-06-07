@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ArrowLeft, BookOpen, Quote, Users, Flame, Skull } from 'lucide-react'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
+import { t } from '@/lib/i18n/t'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -358,6 +359,12 @@ export default async function LotFChaptersPage() {
     redirect('/revision/texts')
   }
 
+  const tChapterTpl = await t('rev.texts.common.chapter_n_colon')
+  const tKeyEvents = await t('rev.texts.common.key_events')
+  const tSymbolism = await t('rev.texts.common.symbolism')
+  const tCharDev = await t('rev.texts.common.character_development')
+  const tKeyQuotation = await t('rev.texts.common.key_quotation')
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -377,10 +384,10 @@ export default async function LotFChaptersPage() {
       />
       <Breadcrumb
         items={[
-          { label: 'Revision', href: '/revision' },
-          { label: 'Set Texts', href: '/revision/texts' },
+          { label: await t('rev.texts.common.crumb_revision'), href: '/revision' },
+          { label: await t('rev.texts.common.crumb_set_texts'), href: '/revision/texts' },
           { label: 'Lord of the Flies', href: '/revision/texts/lord-of-the-flies' },
-          { label: 'Chapters' },
+          { label: await t('rev.texts.common.crumb_chapters') },
         ]}
       />
 
@@ -396,13 +403,13 @@ export default async function LotFChaptersPage() {
             render={<Link href="/revision/texts/lord-of-the-flies" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Lord of the Flies
+            {await t('rev.texts.lotf.back')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <BookOpen className="mr-1 size-3 text-blue-400" />
-              Chapter-by-Chapter Analysis
+              {await t('rev.texts.common.chapter_by_chapter_analysis')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               AQA / OCR / Eduqas
@@ -410,14 +417,13 @@ export default async function LotFChaptersPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Lord of the Flies -- Chapters
+            {await t('rev.texts.lotf.chapters.title')}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
-            by William Golding -- published 1954
+            {await t('rev.texts.lotf.byline')}
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Detailed analysis of all twelve chapters, covering key events, symbolism, character
-            development and a key quotation for each.
+            {await t('rev.texts.lotf.chapters.intro')}
           </p>
         </div>
       </section>
@@ -431,7 +437,8 @@ export default async function LotFChaptersPage() {
             </div>
             <div>
               <h2 className="text-heading-lg font-heading text-foreground">
-                Chapter {ch.number}: {ch.title}
+                {tChapterTpl.replace('{n}', String(ch.number))}
+                {ch.title}
               </h2>
             </div>
           </div>
@@ -442,7 +449,7 @@ export default async function LotFChaptersPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
                   <Flame className="size-4 text-clay-600" />
-                  Key Events
+                  {tKeyEvents}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-2 text-body-sm text-muted-foreground">
@@ -460,7 +467,7 @@ export default async function LotFChaptersPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
                   <Skull className="size-4 text-violet-400" />
-                  Symbolism
+                  {tSymbolism}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-2 text-body-sm text-muted-foreground">
@@ -478,7 +485,7 @@ export default async function LotFChaptersPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
                   <Users className="size-4 text-emerald-400" />
-                  Character Development
+                  {tCharDev}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-2 text-body-sm text-muted-foreground">
@@ -496,7 +503,7 @@ export default async function LotFChaptersPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
                   <Quote className="size-4 text-primary" />
-                  Key Quotation
+                  {tKeyQuotation}
                 </CardTitle>
                 <CardDescription>{ch.keyQuote.speaker}</CardDescription>
               </CardHeader>
@@ -513,10 +520,7 @@ export default async function LotFChaptersPage() {
 
       {/* Copyright notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations from <em>Lord of the Flies</em> by William Golding (1954) are reproduced
-        under the fair dealing provision of the Copyright, Designs and Patents Act 1988 for the
-        purpose of criticism, review and educational study. Full text available from your school or
-        local library.
+        {await t('rev.texts.lotf.fair_dealing')}
       </p>
     </div>
   )

@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
+import { useT } from '@/lib/i18n/use-t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
@@ -324,6 +325,7 @@ const CHARACTERS: CharacterStudy[] = [
 /* ─── Page ───────────────────────────────────────────────────── */
 
 export default function JekyllAndHydeCharactersPage() {
+  const tr = useT()
   return (
     <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
@@ -356,13 +358,13 @@ export default function JekyllAndHydeCharactersPage() {
               render={<Link href="/revision/texts/jekyll-and-hyde" />}
             >
               <ArrowLeft className="size-3.5" />
-              Back to Jekyll and Hyde
+              {tr('rev.texts.common.back_to_text').replace('{text}', 'Jekyll and Hyde')}
             </Button>
 
             <div className="mb-4 flex flex-wrap items-center gap-2">
               <Badge variant="secondary">
                 <Users className="mr-1 size-3 text-emerald-400" />
-                Character Study
+                {tr('rev.texts2.common.character_study')}
               </Badge>
               <Badge variant="outline" className="text-muted-foreground">
                 AQA / Edexcel / OCR / Eduqas
@@ -370,14 +372,13 @@ export default function JekyllAndHydeCharactersPage() {
             </div>
 
             <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-              Characters - Deep Study
+              {tr('rev.texts2.jh.characters.title')}
             </h1>
             <p className="mt-2 text-body-lg text-muted-foreground">
               Strange Case of Dr Jekyll and Mr Hyde by Robert Louis Stevenson
             </p>
             <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-              Detailed analysis of every major character with key quotations, character development,
-              theme links, and exam tips for top-grade responses.
+              {tr('rev.texts2.jh.characters.intro')}
             </p>
           </div>
         </section>
@@ -398,7 +399,9 @@ export default function JekyllAndHydeCharactersPage() {
                 {/* Analysis */}
                 <Card>
                   <CardHeader>
-                    <CardTitle className="text-heading-md font-heading">Analysis</CardTitle>
+                    <CardTitle className="text-heading-md font-heading">
+                      {tr('rev.texts.common.analysis')}
+                    </CardTitle>
                   </CardHeader>
                   <CardContent className="text-body-sm text-muted-foreground">
                     <p>{ch.analysis}</p>
@@ -409,7 +412,7 @@ export default function JekyllAndHydeCharactersPage() {
                 <Card>
                   <CardHeader>
                     <CardTitle className="text-heading-md font-heading">
-                      Character Development
+                      {tr('rev.texts.common.character_development')}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="text-body-sm text-muted-foreground">
@@ -422,7 +425,9 @@ export default function JekyllAndHydeCharactersPage() {
                   <CardHeader>
                     <div className="flex items-center gap-3">
                       <Quote className="size-5 text-violet-400" />
-                      <CardTitle className="text-heading-md font-heading">Key Quotations</CardTitle>
+                      <CardTitle className="text-heading-md font-heading">
+                        {tr('rev.texts.common.key_quotations')}
+                      </CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent className="space-y-5">
@@ -443,7 +448,9 @@ export default function JekyllAndHydeCharactersPage() {
                 {/* Theme links */}
                 <Card className="border-l-4 border-l-emerald-400">
                   <CardContent className="p-5">
-                    <p className="text-sm font-semibold text-foreground mb-2">Theme links</p>
+                    <p className="text-sm font-semibold text-foreground mb-2">
+                      {tr('rev.texts2.common.theme_links')}
+                    </p>
                     <div className="flex flex-wrap gap-2">
                       {ch.themeLinks.map((theme) => (
                         <Badge key={theme} variant="outline" className="text-muted-foreground">
@@ -459,7 +466,9 @@ export default function JekyllAndHydeCharactersPage() {
                   <CardContent className="p-5">
                     <div className="flex items-center gap-2 mb-1">
                       <Lightbulb className="size-4 text-clay-600" />
-                      <p className="text-sm font-semibold text-foreground">Exam tip</p>
+                      <p className="text-sm font-semibold text-foreground">
+                        {tr('rev.texts2.common.exam_tip')}
+                      </p>
                     </div>
                     <p className="text-body-sm text-muted-foreground">{ch.examTip}</p>
                   </CardContent>
@@ -471,8 +480,10 @@ export default function JekyllAndHydeCharactersPage() {
 
         {/* Footer */}
         <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-          <em>Strange Case of Dr Jekyll and Mr Hyde</em> (1886) by Robert Louis Stevenson is in the
-          public domain. All quotations are reproduced freely.
+          <em>Strange Case of Dr Jekyll and Mr Hyde</em>
+          {tr('rev.texts2.common.public_domain_notice_after')
+            .replace('{year}', '1886')
+            .replace('{author}', 'Robert Louis Stevenson')}
         </p>
       </div>
     </div>

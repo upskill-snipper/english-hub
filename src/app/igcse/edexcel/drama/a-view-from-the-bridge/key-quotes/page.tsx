@@ -4,6 +4,7 @@ import { ArrowLeft, Sparkles, Info, Quote } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
+import { t } from '@/lib/i18n/t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
@@ -156,7 +157,7 @@ export default async function AViewKeyQuotesPage() {
           render={<Link href="/igcse/edexcel/drama/a-view-from-the-bridge" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to A View from the Bridge
+          {await t('igcse.page.back_to')} A View from the Bridge
         </Button>
       </div>
 
@@ -165,9 +166,9 @@ export default async function AViewKeyQuotesPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="border-primary/20 bg-primary/10 text-primary">
               <Sparkles className="mr-1 size-3" />
-              Edexcel IGCSE Literature
+              {await t('igcse.page.badge_edexcel_lit')}
             </Badge>
-            <Badge variant="secondary">Key Quotes</Badge>
+            <Badge variant="secondary">{await t('igcse.page.section.key_quotes')}</Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
             A View from the Bridge: Key Quotes

@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { Star } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { useT } from '@/lib/i18n/use-t'
 
 const FAVOURITES_KEY = 'english-hub-favourites'
 const FAVOURITES_EVENT = 'english-hub-favourites-changed'
@@ -30,6 +31,7 @@ function writeFavourites(list: string[]): void {
 export function FavouriteToggle({ href, title }: { href: string; title: string }) {
   const [mounted, setMounted] = useState(false)
   const [isFav, setIsFav] = useState(false)
+  const t = useT()
 
   const refresh = useCallback(() => {
     setIsFav(readFavourites().includes(href))
@@ -73,8 +75,12 @@ export function FavouriteToggle({ href, title }: { href: string; title: string }
       type="button"
       onClick={toggle}
       aria-pressed={isFav}
-      aria-label={isFav ? `Remove ${title} from favourites` : `Add ${title} to favourites`}
-      title={isFav ? 'Remove from favourites' : 'Add to favourites'}
+      aria-label={
+        isFav
+          ? t('rev.misc2.fav.remove').replace('{title}', title)
+          : t('rev.misc2.fav.add').replace('{title}', title)
+      }
+      title={isFav ? t('rev.misc2.fav.remove_short') : t('rev.misc2.fav.add_short')}
       className={cn(
         'absolute right-3 top-3 z-10 inline-flex h-7 w-7 items-center justify-center rounded-full border border-border/40 bg-background/80 backdrop-blur transition-colors',
         'hover:border-amber-500/50 hover:bg-amber-500/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/50',

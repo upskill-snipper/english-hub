@@ -15,6 +15,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
+import { t } from '@/lib/i18n/t'
 import StudyTools from '@/components/study/StudyTools'
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
@@ -191,6 +192,8 @@ const keyQuotations = [
 export default async function InspectorCallsHubPage() {
   await requireIgcseBoard(['edexcel-igcse'])
 
+  const openLabel = await t('igcse.page.cta.open')
+
   return (
     <div className="space-y-10 pb-16">
       <CourseJsonLd
@@ -212,7 +215,7 @@ export default async function InspectorCallsHubPage() {
       <div>
         <Button variant="ghost" size="sm" render={<Link href="/igcse/edexcel/drama" />}>
           <ArrowLeft className="size-3.5" />
-          Back to Edexcel drama
+          {await t('igcse.page.back_to_edexcel_drama')}
         </Button>
       </div>
 
@@ -221,9 +224,9 @@ export default async function InspectorCallsHubPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="border-primary/20 bg-primary/10 text-primary">
               <Sparkles className="mr-1 size-3" />
-              Edexcel IGCSE Literature
+              {await t('igcse.page.badge_edexcel_lit')}
             </Badge>
-            <Badge variant="secondary">Modern drama</Badge>
+            <Badge variant="secondary">{await t('igcse.page.section.modern_drama')}</Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
             An Inspector Calls
@@ -246,7 +249,7 @@ export default async function InspectorCallsHubPage() {
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
             <h2 className="text-body-sm font-semibold text-foreground">
-              Key quotations only - read the full text
+              {await t('igcse.page.copyright_heading')}
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               An Inspector Calls is in copyright. This guide includes short extracts under fair
@@ -259,7 +262,9 @@ export default async function InspectorCallsHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">Plot overview</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {await t('igcse.page.section.plot_overview')}
+          </h2>
         </div>
         <div className="grid gap-4 md:grid-cols-3">
           {plotBeats.map((beat) => (
@@ -278,7 +283,9 @@ export default async function InspectorCallsHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Sparkles className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">Core themes</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {await t('igcse.page.section.core_themes')}
+          </h2>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
           {themes.map((theme) => (
@@ -295,7 +302,9 @@ export default async function InspectorCallsHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Drama className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">Deep dives</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {await t('igcse.page.section.deep_dives')}
+          </h2>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
           {subPages.map((p) => {
@@ -321,7 +330,7 @@ export default async function InspectorCallsHubPage() {
                     className="w-full"
                     render={<Link href={p.href} />}
                   >
-                    Open
+                    {openLabel}
                     <ArrowRight className="size-3.5" />
                   </Button>
                 </CardContent>
@@ -334,7 +343,9 @@ export default async function InspectorCallsHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Quote className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">Key quotations</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {await t('igcse.page.section.key_quotations')}
+          </h2>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
           {keyQuotations.map((q, i) => (

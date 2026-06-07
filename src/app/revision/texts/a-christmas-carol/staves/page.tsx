@@ -7,6 +7,7 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { t } from '@/lib/i18n/t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
@@ -458,6 +459,13 @@ export default async function StavesPage() {
     redirect('/revision/texts')
   }
 
+  const tStaveTpl = await t('rev.texts.common.stave_n_colon')
+  const tSummaryAnalysis = await t('rev.texts.common.summary_and_analysis')
+  const tKeyMoments = await t('rev.texts.common.key_moments')
+  const tKeyQuotations = await t('rev.texts.common.key_quotations')
+  const tLanguageAnalysis = await t('rev.texts.common.language_analysis')
+  const tThematicSig = await t('rev.texts.common.thematic_significance')
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -487,13 +495,13 @@ export default async function StavesPage() {
             render={<Link href="/revision/texts/a-christmas-carol" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to A Christmas Carol
+            {await t('rev.texts.acc.back')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <BookOpen className="mr-1 size-3 text-blue-400" />
-              Deep Study
+              {await t('rev.texts.common.deep_study')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -502,17 +510,13 @@ export default async function StavesPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            A Christmas Carol -- All Five Staves
+            {await t('rev.texts.acc.staves.title')}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
-            In-depth analysis of every stave: plot, language, key quotations and exam-ready
-            commentary
+            {await t('rev.texts.acc.staves.subtitle')}
           </p>
           <p className="mt-4 max-w-2xl text-body-sm text-muted-foreground">
-            Dickens called the chapters of his novella &ldquo;staves&rdquo; -- a musical term
-            meaning the lines on which notes are written. This choice reflects the structure of a
-            carol: each stave builds on the last to form a harmonious whole, with a message of
-            redemption and joy.
+            {await t('rev.texts.acc.staves.intro')}
           </p>
         </div>
       </section>
@@ -521,7 +525,9 @@ export default async function StavesPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-blue-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">Jump to a Stave</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {await t('rev.texts.common.jump_to_stave')}
+          </h2>
         </div>
         <Card>
           <CardContent className="p-4 sm:p-6">
@@ -558,7 +564,8 @@ export default async function StavesPage() {
             </div>
             <div>
               <h2 className="text-heading-lg font-heading text-foreground">
-                Stave {stave.number}: {stave.title}
+                {tStaveTpl.replace('{n}', String(stave.number))}
+                {stave.title}
               </h2>
               <p className="text-body-sm text-muted-foreground">{stave.subtitle}</p>
             </div>
@@ -569,7 +576,7 @@ export default async function StavesPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
                 <BookOpen className="size-4 text-blue-400" />
-                Summary and Analysis
+                {tSummaryAnalysis}
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4 text-body-sm text-muted-foreground">
@@ -584,7 +591,7 @@ export default async function StavesPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
                 <Flame className="size-4 text-clay-600" />
-                Key Moments
+                {tKeyMoments}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -603,7 +610,7 @@ export default async function StavesPage() {
           <div>
             <div className="mb-4 flex items-center gap-2">
               <Quote className="size-4 text-violet-400" />
-              <h3 className="text-heading-md font-heading text-foreground">Key Quotations</h3>
+              <h3 className="text-heading-md font-heading text-foreground">{tKeyQuotations}</h3>
             </div>
             <div className="grid gap-4">
               {stave.quotes.map((q, i) => (
@@ -632,7 +639,7 @@ export default async function StavesPage() {
           <div>
             <div className="mb-4 flex items-center gap-2">
               <Lightbulb className="size-4 text-clay-600" />
-              <h3 className="text-heading-md font-heading text-foreground">Language Analysis</h3>
+              <h3 className="text-heading-md font-heading text-foreground">{tLanguageAnalysis}</h3>
             </div>
             <Card>
               <CardContent className="space-y-5 p-6 sm:p-8 text-body-sm text-muted-foreground">
@@ -651,7 +658,7 @@ export default async function StavesPage() {
             <CardContent className="p-5 sm:p-6">
               <h4 className="mb-2 text-sm font-semibold text-foreground flex items-center gap-2">
                 <Ghost className="size-4 text-primary/70" />
-                Thematic Significance
+                {tThematicSig}
               </h4>
               <p className="text-body-sm text-muted-foreground">{stave.thematicSignificance}</p>
             </CardContent>
@@ -661,8 +668,7 @@ export default async function StavesPage() {
 
       {/* Public domain notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        A Christmas Carol by Charles Dickens (1843) is in the public domain. Quotations are
-        reproduced freely as the text is no longer subject to copyright.
+        {await t('rev.texts.acc.staves.public_domain')}
       </p>
     </div>
   )

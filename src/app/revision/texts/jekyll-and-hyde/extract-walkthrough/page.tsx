@@ -6,6 +6,7 @@ import { ArrowLeft, Eye, MessageSquareQuote, Telescope, BookOpen } from 'lucide-
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ─── Extract chunks (public domain - Stevenson, 1886) ─────────────────────
  * Source: The Strange Case of Dr Jekyll and Mr Hyde, Chapter 1
@@ -60,6 +61,7 @@ const MODEL_PARAGRAPH = `Stevenson stages this trampling as the novella's primal
 const wordCount = MODEL_PARAGRAPH.trim().split(/\s+/).length
 
 export default function JekyllExtractWalkthroughPage() {
+  const tr = useT()
   return (
     <>
       <BreadcrumbJsonLd
@@ -84,7 +86,7 @@ export default function JekyllExtractWalkthroughPage() {
           className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-6"
         >
           <ArrowLeft className="h-4 w-4" />
-          Back to Jekyll and Hyde
+          {tr('rev.texts.common.back_to_text').replace('{text}', 'Jekyll and Hyde')}
         </Link>
 
         <header className="mb-10 border-b border-border/60 pb-8">
@@ -92,7 +94,7 @@ export default function JekyllExtractWalkthroughPage() {
             Chapter 1 - Story of the Door
           </Badge>
           <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight mb-3">
-            Extract Walkthrough: The Trampling of the Girl
+            {tr('rev.texts2.jh.extract.title')}
           </h1>
           <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
             A close reading of Enfield's recollection - from{' '}
@@ -105,13 +107,15 @@ export default function JekyllExtractWalkthroughPage() {
 
         <section aria-labelledby="walkthrough-heading" className="space-y-10">
           <h2 id="walkthrough-heading" className="sr-only">
-            Walkthrough
+            {tr('rev.texts2.common.walkthrough')}
           </h2>
 
           {CHUNKS.map((chunk, index) => (
             <article key={chunk.id} className="space-y-4">
               <div className="flex items-baseline justify-between gap-4">
-                <h3 className="text-xl font-semibold tracking-tight">Chunk {index + 1}</h3>
+                <h3 className="text-xl font-semibold tracking-tight">
+                  {tr('rev.texts2.common.chunk_n').replace('{n}', String(index + 1))}
+                </h3>
                 <span className="text-xs uppercase tracking-wider text-muted-foreground">
                   Stevenson, 1886
                 </span>
@@ -126,7 +130,7 @@ export default function JekyllExtractWalkthroughPage() {
                   <CardHeader className="pb-3">
                     <CardTitle className="flex items-center gap-2 text-sm font-semibold">
                       <Eye className="h-4 w-4 text-amber-600 dark:text-amber-400" />
-                      Notice
+                      {tr('rev.texts2.common.notice')}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="text-sm leading-relaxed text-foreground/80">
@@ -138,7 +142,7 @@ export default function JekyllExtractWalkthroughPage() {
                   <CardHeader className="pb-3">
                     <CardTitle className="flex items-center gap-2 text-sm font-semibold">
                       <MessageSquareQuote className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-                      Say
+                      {tr('rev.texts2.common.say')}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="text-sm leading-relaxed text-foreground/80">
@@ -150,7 +154,7 @@ export default function JekyllExtractWalkthroughPage() {
                   <CardHeader className="pb-3">
                     <CardTitle className="flex items-center gap-2 text-sm font-semibold">
                       <Telescope className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-                      Zoom Out
+                      {tr('rev.texts2.common.zoom_out')}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="text-sm leading-relaxed text-foreground/80">
@@ -169,10 +173,10 @@ export default function JekyllExtractWalkthroughPage() {
               className="text-2xl font-semibold tracking-tight flex items-center gap-2"
             >
               <BookOpen className="h-5 w-5 text-primary" />
-              Model Paragraph
+              {tr('rev.texts2.common.model_paragraph')}
             </h2>
             <Badge variant="outline" className="text-xs">
-              {wordCount} words
+              {tr('rev.texts2.common.words_count').replace('{n}', String(wordCount))}
             </Badge>
           </div>
           <p className="text-sm text-muted-foreground mb-4">
@@ -187,8 +191,8 @@ export default function JekyllExtractWalkthroughPage() {
         </section>
 
         <p className="text-xs text-muted-foreground mt-12 border-t border-border/60 pt-4">
-          <em>The Strange Case of Dr Jekyll and Mr Hyde</em> (1886) by Robert Louis Stevenson is in
-          the public domain. The extract is reproduced in full from Chapter 1, "Story of the Door."
+          <em>The Strange Case of Dr Jekyll and Mr Hyde</em>
+          {tr('rev.texts2.jh.extract.notice')}
         </p>
       </main>
     </>

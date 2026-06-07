@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ArrowLeft, BookOpen, FileText, Lightbulb } from 'lucide-react'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
+import { t } from '@/lib/i18n/t'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -221,6 +222,16 @@ export default async function EssayPlansPage() {
     redirect('/revision/texts')
   }
 
+  const tEssayTpl = await t('rev.texts.common.essay_n')
+  const tQuestion = await t('rev.texts.common.question')
+  const tThesisStatement = await t('rev.texts.common.thesis_statement')
+  const tIntroduction = await t('rev.texts.common.introduction')
+  const tParagraphTpl = await t('rev.texts.common.paragraph_n')
+  const tEvidence = await t('rev.texts.common.evidence')
+  const tAnalysis = await t('rev.texts.common.analysis')
+  const tConclusion = await t('rev.texts.common.conclusion')
+  const tExamTip = await t('rev.texts.common.exam_tip')
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -247,13 +258,13 @@ export default async function EssayPlansPage() {
             render={<Link href="/revision/texts/animal-farm" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Animal Farm
+            {await t('rev.texts.af.back')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <FileText className="mr-1 size-3 text-violet-400" />
-              Deep Study
+              {await t('rev.texts.common.deep_study')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               AQA / Edexcel / OCR
@@ -261,13 +272,13 @@ export default async function EssayPlansPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Essay Plans
+            {await t('rev.texts.common.essay_plans')}
           </h1>
-          <p className="mt-2 text-body-lg text-muted-foreground">Animal Farm by George Orwell</p>
+          <p className="mt-2 text-body-lg text-muted-foreground">
+            {await t('rev.texts.af.byline')}
+          </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Five structured essay plans covering the most common GCSE exam questions on Animal Farm.
-            Each plan includes a thesis statement, paragraph-level guidance with evidence and
-            analysis, a conclusion and an exam tip.
+            {await t('rev.texts.af.essays.intro')}
           </p>
         </div>
       </section>
@@ -277,20 +288,22 @@ export default async function EssayPlansPage() {
         <section key={plan.number} id={`essay-${plan.number}`}>
           <div className="mb-5 flex items-center gap-3">
             <FileText className="size-5 text-violet-400" />
-            <h2 className="text-heading-lg font-heading text-foreground">Essay {plan.number}</h2>
+            <h2 className="text-heading-lg font-heading text-foreground">
+              {tEssayTpl.replace('{n}', String(plan.number))}
+            </h2>
           </div>
 
           <div className="space-y-4">
             {/* Question & Thesis */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-heading-md font-heading">Question</CardTitle>
+                <CardTitle className="text-heading-md font-heading">{tQuestion}</CardTitle>
                 <CardDescription className="text-body-md font-medium italic text-foreground">
                   {plan.question}
                 </CardDescription>
               </CardHeader>
               <CardContent className="text-body-sm text-muted-foreground">
-                <h3 className="mb-1 text-sm font-semibold text-foreground">Thesis Statement</h3>
+                <h3 className="mb-1 text-sm font-semibold text-foreground">{tThesisStatement}</h3>
                 <p>{plan.thesisStatement}</p>
               </CardContent>
             </Card>
@@ -298,7 +311,7 @@ export default async function EssayPlansPage() {
             {/* Introduction */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-heading-md font-heading">Introduction</CardTitle>
+                <CardTitle className="text-heading-md font-heading">{tIntroduction}</CardTitle>
               </CardHeader>
               <CardContent className="text-body-sm text-muted-foreground">
                 <p>{plan.introduction}</p>
@@ -309,18 +322,20 @@ export default async function EssayPlansPage() {
             {plan.paragraphs.map((para, i) => (
               <Card key={i}>
                 <CardHeader>
-                  <CardTitle className="text-heading-md font-heading">Paragraph {i + 1}</CardTitle>
+                  <CardTitle className="text-heading-md font-heading">
+                    {tParagraphTpl.replace('{n}', String(i + 1))}
+                  </CardTitle>
                   <CardDescription>{para.point}</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-3 text-body-sm text-muted-foreground">
                   <div>
-                    <h4 className="mb-1 text-sm font-semibold text-foreground">Evidence</h4>
+                    <h4 className="mb-1 text-sm font-semibold text-foreground">{tEvidence}</h4>
                     <div className="rounded-lg border border-border/60 bg-muted/30 p-3">
                       <p className="font-medium italic text-foreground">{para.evidence}</p>
                     </div>
                   </div>
                   <div>
-                    <h4 className="mb-1 text-sm font-semibold text-foreground">Analysis</h4>
+                    <h4 className="mb-1 text-sm font-semibold text-foreground">{tAnalysis}</h4>
                     <p>{para.analysis}</p>
                   </div>
                 </CardContent>
@@ -330,7 +345,7 @@ export default async function EssayPlansPage() {
             {/* Conclusion */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-heading-md font-heading">Conclusion</CardTitle>
+                <CardTitle className="text-heading-md font-heading">{tConclusion}</CardTitle>
               </CardHeader>
               <CardContent className="text-body-sm text-muted-foreground">
                 <p>{plan.conclusion}</p>
@@ -344,7 +359,7 @@ export default async function EssayPlansPage() {
                   <Lightbulb className="size-4 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold text-foreground">Exam Tip</h3>
+                  <h3 className="text-sm font-semibold text-foreground">{tExamTip}</h3>
                   <p className="mt-1 text-body-sm text-muted-foreground">{plan.examTip}</p>
                 </div>
               </CardContent>
@@ -355,13 +370,7 @@ export default async function EssayPlansPage() {
 
       {/* Rights / fair-dealing notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        <strong>Rights notice:</strong> While <em>Animal Farm</em> entered UK public domain in 2021,
-        the Orwell estate (AM Heath) actively manages educational use. Quotations on this page are
-        short fair-dealing extracts; longer engagement should use a school-licensed edition. Short
-        quotations (each under 15 words) reproduced under the fair dealing provision of the
-        Copyright, Designs and Patents Act 1988 (s.30) for the purpose of criticism, review and
-        educational study. <em>Animal Farm</em> by George Orwell is published by Penguin Books. Full
-        text available from your school or local library.
+        {await t('rev.texts.af.rights_notice')}
       </p>
     </div>
   )

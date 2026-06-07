@@ -16,6 +16,7 @@ import {
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ── Sub-pages ───────────────────────────────────────────────── */
 
@@ -61,8 +62,7 @@ const PEEL_STEPS = [
     bgColour: 'bg-violet-500/10',
     description:
       'A short, embedded quotation that supports your point. Never drop a quote on its own -- weave it into your sentence so it reads naturally.',
-    example:
-      '"She metaphorises hope as \'the thing with feathers / That perches in the soul\'."',
+    example: '"She metaphorises hope as \'the thing with feathers / That perches in the soul\'."',
   },
   {
     letter: 'E',
@@ -87,6 +87,7 @@ const PEEL_STEPS = [
 ]
 
 export default function EssayTechniqueHubPage() {
+  const tr = useT()
   return (
     <div className="space-y-10 pb-16">
       <div>
@@ -97,7 +98,7 @@ export default function EssayTechniqueHubPage() {
           render={<Link href="/igcse/edexcel" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Edexcel IGCSE Hub
+          {tr('igcse.page.back_to_edexcel_hub')}
         </Button>
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
@@ -105,11 +106,9 @@ export default function EssayTechniqueHubPage() {
           </div>
           <div className="flex flex-col gap-1">
             <div className="flex items-center gap-2">
-              <h1 className="text-heading-lg font-heading text-foreground">
-                Essay Technique
-              </h1>
+              <h1 className="text-heading-lg font-heading text-foreground">Essay Technique</h1>
               <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
-                Edexcel IGCSE Literature
+                {tr('igcse.page.badge_edexcel_lit')}
               </Badge>
             </div>
             <p className="text-body-sm text-muted-foreground">
@@ -130,12 +129,12 @@ export default function EssayTechniqueHubPage() {
           IGCSE Literature rewards tightly structured, comparative essays
         </h2>
         <p className="text-body-sm text-muted-foreground max-w-2xl leading-relaxed">
-          Edexcel IGCSE examiners see hundreds of essays that show good knowledge but
-          lack clear structure. The candidates who score highest are the ones who introduce a
-          focused thesis, build paragraphs around it with embedded evidence, and finish with a
-          conclusion that answers the question without simply repeating it. This hub breaks
-          down each part of the essay and shows you the specific moves that push a response
-          from Grade 6 into Grade 8 and 9 territory.
+          Edexcel IGCSE examiners see hundreds of essays that show good knowledge but lack clear
+          structure. The candidates who score highest are the ones who introduce a focused thesis,
+          build paragraphs around it with embedded evidence, and finish with a conclusion that
+          answers the question without simply repeating it. This hub breaks down each part of the
+          essay and shows you the specific moves that push a response from Grade 6 into Grade 8 and
+          9 territory.
         </p>
       </section>
 
@@ -143,33 +142,28 @@ export default function EssayTechniqueHubPage() {
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="mb-4 flex items-center gap-3">
           <BookOpen className="size-5 text-sky-400" />
-          <h2 className="text-heading-md font-heading text-foreground">
-            The 3-Part Introduction
-          </h2>
+          <h2 className="text-heading-md font-heading text-foreground">The 3-Part Introduction</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 leading-relaxed max-w-2xl">
-          A strong introduction does three things in three sentences. Any longer and you
-          are wasting writing time; any shorter and you are not setting up your argument.
+          A strong introduction does three things in three sentences. Any longer and you are wasting
+          writing time; any shorter and you are not setting up your argument.
         </p>
         <div className="grid gap-4 md:grid-cols-3">
           {[
             {
               n: '1',
               title: 'Thesis',
-              body:
-                'A clear, arguable answer to the question. Not "this essay will discuss..." but "Both poets present X, though they differ in Y."',
+              body: 'A clear, arguable answer to the question. Not "this essay will discuss..." but "Both poets present X, though they differ in Y."',
             },
             {
               n: '2',
               title: 'Roadmap',
-              body:
-                'A one-sentence indication of the three points or angles you will pursue. Do not list paragraphs -- group them thematically.',
+              body: 'A one-sentence indication of the three points or angles you will pursue. Do not list paragraphs -- group them thematically.',
             },
             {
               n: '3',
               title: 'Context (light touch)',
-              body:
-                'For set texts, one phrase of genuinely relevant context. For unseen poetry, skip context entirely -- it is not heavily weighted there.',
+              body: 'For set texts, one phrase of genuinely relevant context. For unseen poetry, skip context entirely -- it is not heavily weighted there.',
             },
           ].map((s) => (
             <div key={s.n} className="rounded-xl border border-border/40 bg-background/50 p-4">
@@ -201,9 +195,9 @@ export default function EssayTechniqueHubPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl">
-          PEEL stands for Point, Evidence, Explanation, Link. For poetry analysis, the
-          Explanation step is where the marks live -- this is where you apply What-How-Why
-          and zoom in on individual words and images.
+          PEEL stands for Point, Evidence, Explanation, Link. For poetry analysis, the Explanation
+          step is where the marks live -- this is where you apply What-How-Why and zoom in on
+          individual words and images.
         </p>
 
         <div className="grid gap-4 md:grid-cols-2">
@@ -234,13 +228,11 @@ export default function EssayTechniqueHubPage() {
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="mb-4 flex items-center gap-3">
           <Quote className="size-5 text-clay-600" />
-          <h2 className="text-heading-md font-heading text-foreground">
-            Embedding Quotations
-          </h2>
+          <h2 className="text-heading-md font-heading text-foreground">Embedding Quotations</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 leading-relaxed">
-          Never drop a quotation into a sentence as a block. Weave it in. Below are three
-          levels of embedding, from weakest to strongest.
+          Never drop a quotation into a sentence as a block. Weave it in. Below are three levels of
+          embedding, from weakest to strongest.
         </p>
 
         <div className="space-y-3">
@@ -275,14 +267,12 @@ export default function EssayTechniqueHubPage() {
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="mb-4 flex items-center gap-3">
           <CheckCircle2 className="size-5 text-emerald-400" />
-          <h2 className="text-heading-md font-heading text-foreground">
-            The Conclusion
-          </h2>
+          <h2 className="text-heading-md font-heading text-foreground">The Conclusion</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-4 leading-relaxed max-w-2xl">
-          A strong conclusion does not repeat the introduction. It should do three things:
-          restate your thesis in fresher terms, offer a final insight that has emerged from
-          your analysis, and leave the examiner with a sense of closure.
+          A strong conclusion does not repeat the introduction. It should do three things: restate
+          your thesis in fresher terms, offer a final insight that has emerged from your analysis,
+          and leave the examiner with a sense of closure.
         </p>
         <div className="grid gap-3 sm:grid-cols-3">
           {[

@@ -18,6 +18,7 @@ import {
 } from 'lucide-react'
 
 import StudyTools from '@/components/study/StudyTools'
+import { useT } from '@/lib/i18n/use-t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ────────────────────────────────────────────────────────────────────── */
@@ -360,6 +361,7 @@ const CHARACTERS: CharacterStudy[] = [
 /* ────────────────────────────────────────────────────────────────────── */
 
 export default function CharactersPage() {
+  const t = useT()
   return (
     <div className="min-h-screen bg-background font-heading">
       <BreadcrumbJsonLd
@@ -388,13 +390,13 @@ export default function CharactersPage() {
             className="mb-4 inline-flex items-center gap-1 text-sm text-teal-600 hover:text-teal-700 dark:text-teal-300 dark:hover:text-teal-200"
           >
             <ArrowLeft className="size-3.5" />
-            Back to An Inspector Calls
+            {t('rev.texts.aic.back')}
           </Link>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1 rounded-full bg-teal-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-teal-700 dark:text-teal-300">
               <Users className="size-3" />
-              Character Guide
+              {t('rev.texts.common.character_guide')}
             </span>
             <span className="inline-flex items-center gap-1 rounded-full border border-clay-500/30 px-3 py-1 text-xs text-clay-700 dark:text-clay-300">
               <Sparkles className="size-3" />
@@ -403,13 +405,11 @@ export default function CharactersPage() {
           </div>
 
           <h1 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            An Inspector Calls &mdash; Characters
+            {t('rev.texts.aic.characters.title')}
           </h1>
-          <p className="mt-2 text-lg text-muted-foreground">by J.B. Priestley &mdash; 1945</p>
+          <p className="mt-2 text-lg text-muted-foreground">{t('rev.texts.aic.byline')}</p>
           <p className="mt-4 max-w-2xl text-muted-foreground">
-            Complete character analysis for all seven key characters. Each section includes a
-            detailed overview, character arc, key quotes with AO2 analysis, theme links, and exam
-            technique advice.
+            {t('rev.texts.aic.characters.intro')}
           </p>
         </section>
 
@@ -418,13 +418,10 @@ export default function CharactersPage() {
           <div className="flex items-start gap-3">
             <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-600 dark:text-clay-300" />
             <div className="text-sm text-muted-foreground">
-              <p className="mb-1 font-bold text-foreground">Exam technique</p>
-              <p>
-                In GCSE literature, character questions always require you to discuss
-                Priestley&rsquo;s <strong>intentions</strong> (AO1/AO3) and analyse{' '}
-                <strong>language and structure</strong> (AO2). For every character point, ask:{' '}
-                <em>what is Priestley trying to show the audience through this character?</em>
+              <p className="mb-1 font-bold text-foreground">
+                {t('rev.texts.common.exam_technique')}
               </p>
+              <p>{t('rev.texts.aic.characters.exam_technique_body')}</p>
             </div>
           </div>
         </section>
@@ -455,7 +452,7 @@ export default function CharactersPage() {
               {/* Overview */}
               <div className={`mt-4 rounded-xl border ${accentBorder} bg-muted p-5`}>
                 <h3 className="mb-2 text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                  Overview
+                  {t('rev.texts.common.overview')}
                 </h3>
                 <p className="text-sm leading-relaxed text-muted-foreground">{char.overview}</p>
               </div>
@@ -463,7 +460,7 @@ export default function CharactersPage() {
               {/* Character arc */}
               <div className="mt-4 rounded-xl border border-border/60 bg-card p-5">
                 <h3 className="mb-2 text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                  Character Arc
+                  {t('rev.texts.common.character_arc')}
                 </h3>
                 <p className="text-sm leading-relaxed text-muted-foreground">{char.arc}</p>
               </div>
@@ -472,7 +469,9 @@ export default function CharactersPage() {
               <div className="mt-6">
                 <div className="mb-3 flex items-center gap-2">
                   <Quote className={`size-4 ${accentText}`} />
-                  <h3 className="font-heading text-lg font-bold text-foreground">Key Quotes</h3>
+                  <h3 className="font-heading text-lg font-bold text-foreground">
+                    {t('rev.texts.common.key_quotes')}
+                  </h3>
                 </div>
                 <div className="space-y-3">
                   {char.keyQuotes.map((q, qi) => (
@@ -484,7 +483,9 @@ export default function CharactersPage() {
                         {q.act}
                       </p>
                       <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                        <span className="font-semibold text-foreground">AO2: </span>
+                        <span className="font-semibold text-foreground">
+                          {t('rev.texts.common.ao2_label')}
+                        </span>
                         {q.analysis}
                       </p>
                     </div>
@@ -495,7 +496,7 @@ export default function CharactersPage() {
               {/* Theme links */}
               <div className="mt-5 rounded-xl border border-border/60 bg-muted p-4">
                 <h3 className="mb-2 text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                  Theme Links
+                  {t('rev.texts.common.theme_links')}
                 </h3>
                 <ul className="space-y-1">
                   {char.themeLinks.map((link, li) => (
@@ -515,7 +516,7 @@ export default function CharactersPage() {
                   <Lightbulb className="mt-0.5 size-4 shrink-0 text-clay-600 dark:text-clay-300" />
                   <div>
                     <p className="mb-1 text-xs font-bold uppercase tracking-wider text-clay-600 dark:text-clay-300">
-                      Exam Tip
+                      {t('rev.texts.common.exam_tip')}
                     </p>
                     <p className="text-sm leading-relaxed text-muted-foreground">{char.examTip}</p>
                   </div>
@@ -530,38 +531,37 @@ export default function CharactersPage() {
 
         {/* Navigation */}
         <section className="mt-14 rounded-xl border border-teal-500/20 bg-teal-500/5 p-6">
-          <h3 className="font-heading text-xl font-bold text-foreground">Continue studying</h3>
+          <h3 className="font-heading text-xl font-bold text-foreground">
+            {t('rev.texts.common.continue_studying')}
+          </h3>
           <p className="mt-1 text-sm text-muted-foreground">
-            Explore themes, key quotes, and context for An Inspector Calls.
+            {t('rev.texts.aic.characters.continue_sub')}
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link
               href="/revision/texts/an-inspector-calls/themes"
               className="inline-flex items-center rounded-lg bg-teal-600 px-4 py-2 text-sm font-medium text-white hover:bg-teal-700"
             >
-              Themes
+              {t('rev.texts.common.themes')}
             </Link>
             <Link
               href="/revision/texts/an-inspector-calls/key-quotes"
               className="inline-flex items-center rounded-lg border border-teal-500/30 bg-card px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5 dark:text-teal-300"
             >
-              Key Quotes
+              {t('rev.texts.common.key_quotes')}
             </Link>
             <Link
               href="/revision/texts/an-inspector-calls/context"
               className="inline-flex items-center rounded-lg border border-teal-500/30 bg-card px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5 dark:text-teal-300"
             >
-              Context
+              {t('rev.texts.common.context')}
             </Link>
           </div>
         </section>
 
         {/* Fair-dealing notice */}
         <p className="mt-10 border-t border-border/60 pt-4 text-xs text-muted-foreground">
-          Short quotations (&le;15 words each) reproduced under the fair dealing provision of the
-          Copyright, Designs and Patents Act 1988 for the purpose of criticism, review and
-          educational study. <em>An Inspector Calls</em> &copy; J.B. Priestley Estate. Full text
-          available from your school or local library.
+          {t('rev.texts.aic.fair_dealing')}
         </p>
       </div>
     </div>

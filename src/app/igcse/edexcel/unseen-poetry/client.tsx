@@ -20,6 +20,7 @@ import {
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ── Sub-page links ──────────────────────────────────────────────── */
 
@@ -147,6 +148,7 @@ const PRACTICE_TIPS = [
 /* ── Component ──────────────────────────────────────────────────── */
 
 export default function UnseenPoetryHubPage() {
+  const tr = useT()
   return (
     <div className="space-y-10 pb-16">
       {/* ── Header ──────────────────────────────────────────────── */}
@@ -158,7 +160,7 @@ export default function UnseenPoetryHubPage() {
           render={<Link href="/igcse/edexcel" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Edexcel IGCSE Hub
+          {tr('igcse.page.back_to_edexcel_hub')}
         </Button>
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-sky-500/10">
@@ -168,7 +170,7 @@ export default function UnseenPoetryHubPage() {
             <div className="flex items-center gap-2">
               <h1 className="text-heading-lg font-heading text-foreground">Unseen Poetry</h1>
               <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
-                Edexcel IGCSE Literature
+                {tr('igcse.page.badge_edexcel_lit')}
               </Badge>
             </div>
             <p className="text-body-sm text-muted-foreground">
@@ -183,7 +185,7 @@ export default function UnseenPoetryHubPage() {
         <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-sky-500/5 blur-3xl" />
         <Badge variant="secondary" className="mb-3">
           <Sparkles className="mr-1 size-3" />
-          Paper 2 - Unseen Poetry
+          {tr('igcse.page.badge_paper2_unseen')}
         </Badge>
         <h2 className="text-heading-md font-heading text-foreground mb-2">
           Unseen poetry is the section students fear most -- and rewards most

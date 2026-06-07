@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { getServerBoard } from '@/lib/board/get-server-board'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -269,6 +270,17 @@ export default async function GreatExpectationsEssayPlansPage() {
     redirect('/revision/texts')
   }
 
+  // Pre-resolve chrome labels used inside .map() callbacks.
+  const essayNTpl = await t('rev.texts2.common.essay_n')
+  const introductionLabel = await t('rev.texts.common.introduction')
+  const paragraphNTpl = await t('rev.texts.common.paragraph_n')
+  const pointLabel = await t('rev.texts.common.point')
+  const quotationLabel = await t('rev.texts2.common.quotation')
+  const analysisLabel = await t('rev.texts.common.analysis')
+  const contextLabel = await t('rev.texts.common.context')
+  const conclusionLabel = await t('rev.texts.common.conclusion')
+  const aqaExamTipLabel = await t('rev.texts2.common.aqa_exam_tip')
+
   return (
     <div className="space-y-10 pb-16">
       {/* Hero */}
@@ -283,13 +295,13 @@ export default async function GreatExpectationsEssayPlansPage() {
             render={<Link href="/revision/texts/great-expectations" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Great Expectations
+            {(await t('rev.texts.common.back_to_text')).replace('{text}', 'Great Expectations')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <BookOpen className="mr-1 size-3 text-emerald-400" />
-              19th-Century Novel
+              {await t('rev.texts2.common.c19_novel')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               AQA
@@ -297,15 +309,13 @@ export default async function GreatExpectationsEssayPlansPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Essay Plans
+            {await t('rev.texts.common.essay_plans')}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
             Great Expectations - Charles Dickens
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Five model essay plans for AQA GCSE English Literature, each with a structured
-            introduction, three analytical paragraphs with embedded quotation and context, and a
-            strong conclusion.
+            {await t('rev.texts2.ge.essay_plans.intro')}
           </p>
         </div>
       </section>
@@ -318,7 +328,7 @@ export default async function GreatExpectationsEssayPlansPage() {
               <div className="flex items-center gap-2 mb-1">
                 <Badge variant="outline" className="text-xs">
                   <FileText className="mr-1 size-3" />
-                  Essay {plan.id}
+                  {essayNTpl.replace('{n}', String(plan.id))}
                 </Badge>
               </div>
               <CardTitle className="text-heading-md font-heading leading-snug">
@@ -330,7 +340,7 @@ export default async function GreatExpectationsEssayPlansPage() {
               <div>
                 <h3 className="mb-2 flex items-center gap-2 text-sm font-semibold text-foreground">
                   <Lightbulb className="size-4 text-clay-600" />
-                  Introduction
+                  {introductionLabel}
                 </h3>
                 <p className="text-body-sm text-muted-foreground">{plan.introduction}</p>
               </div>
@@ -342,30 +352,30 @@ export default async function GreatExpectationsEssayPlansPage() {
                   className="space-y-3 rounded-xl border border-border/60 bg-background/50 p-5"
                 >
                   <h3 className="text-sm font-semibold text-foreground">
-                    Paragraph {i + 1}: {para.pointHeading}
+                    {paragraphNTpl.replace('{n}', String(i + 1))}: {para.pointHeading}
                   </h3>
                   <div>
                     <p className="mb-1 text-xs font-medium uppercase tracking-wide text-primary">
-                      Point
+                      {pointLabel}
                     </p>
                     <p className="text-body-sm text-muted-foreground">{para.topic}</p>
                   </div>
                   <div className="rounded-lg border border-border/60 bg-muted/20 p-3">
                     <p className="mb-1 text-xs font-medium uppercase tracking-wide text-violet-400">
                       <Quote className="mr-1 inline size-3" />
-                      Quotation
+                      {quotationLabel}
                     </p>
                     <p className="text-body-sm font-medium italic text-foreground">{para.quote}</p>
                   </div>
                   <div>
                     <p className="mb-1 text-xs font-medium uppercase tracking-wide text-primary">
-                      Analysis
+                      {analysisLabel}
                     </p>
                     <p className="text-body-sm text-muted-foreground">{para.analysis}</p>
                   </div>
                   <div>
                     <p className="mb-1 text-xs font-medium uppercase tracking-wide text-primary">
-                      Context
+                      {contextLabel}
                     </p>
                     <p className="text-body-sm text-muted-foreground">{para.context}</p>
                   </div>
@@ -374,13 +384,13 @@ export default async function GreatExpectationsEssayPlansPage() {
 
               {/* Conclusion */}
               <div>
-                <h3 className="mb-2 text-sm font-semibold text-foreground">Conclusion</h3>
+                <h3 className="mb-2 text-sm font-semibold text-foreground">{conclusionLabel}</h3>
                 <p className="text-body-sm text-muted-foreground">{plan.conclusion}</p>
               </div>
 
               {/* Exam Tip */}
               <div className="rounded-xl border border-primary/20 bg-primary/5 p-4">
-                <h3 className="mb-1.5 text-sm font-semibold text-foreground">AQA exam tip</h3>
+                <h3 className="mb-1.5 text-sm font-semibold text-foreground">{aqaExamTipLabel}</h3>
                 <p className="text-body-sm text-muted-foreground">{plan.examTip}</p>
               </div>
             </CardContent>
@@ -390,8 +400,8 @@ export default async function GreatExpectationsEssayPlansPage() {
 
       {/* Public domain notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Great Expectations by Charles Dickens (1861) is in the public domain. Quotations are
-        reproduced freely as the text is no longer subject to copyright.
+        <em>Great Expectations</em>
+        {await t('rev.texts2.common.public_domain_dickens_after')}
       </p>
     </div>
   )

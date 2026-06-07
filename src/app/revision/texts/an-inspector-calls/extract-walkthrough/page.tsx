@@ -11,6 +11,8 @@ import {
   Sparkles,
 } from 'lucide-react'
 
+import { useT } from '@/lib/i18n/use-t'
+
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 /* ────────────────────────────────────────────────────────────────────── */
@@ -111,6 +113,9 @@ const FRAGMENTS: Fragment[] = [
 /* ────────────────────────────────────────────────────────────────────── */
 
 export default function ExtractWalkthroughPage() {
+  const t = useT()
+  const fragmentTpl = t('rev.texts.aic.extract.fragment_of')
+  const quoteCaptionTpl = t('rev.texts.aic.extract.quote_caption')
   return (
     <div className="min-h-screen bg-background font-heading">
       <BreadcrumbJsonLd
@@ -137,13 +142,13 @@ export default function ExtractWalkthroughPage() {
             className="mb-4 inline-flex items-center gap-1 text-sm text-teal-600 hover:text-teal-700 dark:text-teal-300 dark:hover:text-teal-200"
           >
             <ArrowLeft className="size-3.5" />
-            Back to An Inspector Calls
+            {t('rev.texts.aic.back')}
           </Link>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1 rounded-full bg-teal-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-teal-700 dark:text-teal-300">
               <BookOpen className="size-3" />
-              Extract walkthrough
+              {t('rev.texts.aic.extract.badge')}
             </span>
             <span className="inline-flex items-center gap-1 rounded-full border border-clay-500/30 px-3 py-1 text-xs text-clay-700 dark:text-clay-300">
               <Sparkles className="size-3" />
@@ -152,17 +157,10 @@ export default function ExtractWalkthroughPage() {
           </div>
 
           <h1 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            The Inspector&rsquo;s Final Speech &mdash; A Close Reading
+            {t('rev.texts.aic.extract.title')}
           </h1>
-          <p className="mt-2 text-lg text-muted-foreground">
-            An Inspector Calls, Act 3 &mdash; J.B. Priestley
-          </p>
-          <p className="mt-4 max-w-2xl text-muted-foreground">
-            A fragment-by-fragment walkthrough of the play&rsquo;s didactic climax. We work through
-            the speech in short, fair-dealing extracts &mdash; each followed by{' '}
-            <strong>notice</strong>, <strong>say</strong>, and <strong>zoom-out</strong> cards that
-            mirror the moves a strong AQA / Edexcel essay must make.
-          </p>
+          <p className="mt-2 text-lg text-muted-foreground">{t('rev.texts.aic.extract.byline')}</p>
+          <p className="mt-4 max-w-2xl text-muted-foreground">{t('rev.texts.aic.extract.intro')}</p>
         </section>
 
         {/* How to use */}
@@ -170,14 +168,10 @@ export default function ExtractWalkthroughPage() {
           <div className="flex items-start gap-3">
             <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-600 dark:text-clay-300" />
             <div className="text-sm text-muted-foreground">
-              <p className="mb-1 font-bold text-foreground">How to read this page</p>
-              <p>
-                Don&rsquo;t skim. For each fragment, read the quotation aloud, then work through{' '}
-                <strong>Notice</strong> (what the words do mechanically), <strong>Say</strong> (your
-                argument about authorial method), and <strong>Zoom out</strong> (the AO3 context
-                that makes the choice meaningful in 1945). This is the AO1 &rarr; AO2 &rarr; AO3
-                spine of a top-band paragraph.
+              <p className="mb-1 font-bold text-foreground">
+                {t('rev.texts.aic.extract.how_to_read_h')}
               </p>
+              <p>{t('rev.texts.aic.extract.how_to_read_body')}</p>
             </div>
           </div>
         </section>
@@ -188,7 +182,9 @@ export default function ExtractWalkthroughPage() {
             <article key={f.id} className="rounded-2xl border border-border/60 bg-muted p-5 sm:p-6">
               {/* Bridge */}
               <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                Fragment {f.id} of {FRAGMENTS.length}
+                {fragmentTpl
+                  .replace('{n}', String(f.id))
+                  .replace('{total}', String(FRAGMENTS.length))}
               </p>
               <p className="mt-1 text-sm italic leading-relaxed text-muted-foreground">
                 {f.bridge}
@@ -198,7 +194,7 @@ export default function ExtractWalkthroughPage() {
               <blockquote className="mt-4 border-l-4 border-teal-500/40 bg-card p-4">
                 <p className="text-lg font-medium italic text-foreground">{f.quote}</p>
                 <p className="mt-1 text-xs text-muted-foreground">
-                  Inspector Goole, Act 3 &mdash; {f.wordCount} words (fair dealing)
+                  {quoteCaptionTpl.replace('{n}', String(f.wordCount))}
                 </p>
               </blockquote>
 
@@ -207,7 +203,7 @@ export default function ExtractWalkthroughPage() {
                 <div className="flex items-center gap-2">
                   <Eye className="size-4 text-teal-600 dark:text-teal-300" />
                   <p className="text-xs font-bold uppercase tracking-wider text-teal-700 dark:text-teal-300">
-                    Notice &mdash; what the words do
+                    {t('rev.texts.aic.extract.notice_h')}
                   </p>
                 </div>
                 <p className="mt-2 text-sm leading-relaxed text-foreground">{f.notice}</p>
@@ -218,7 +214,7 @@ export default function ExtractWalkthroughPage() {
                 <div className="flex items-center gap-2">
                   <MessageSquare className="size-4 text-clay-600 dark:text-clay-300" />
                   <p className="text-xs font-bold uppercase tracking-wider text-clay-600 dark:text-clay-300">
-                    Say &mdash; your AO2 argument
+                    {t('rev.texts.aic.extract.say_h')}
                   </p>
                 </div>
                 <p className="mt-2 text-sm leading-relaxed text-foreground">{f.say}</p>
@@ -229,7 +225,7 @@ export default function ExtractWalkthroughPage() {
                 <div className="flex items-center gap-2">
                   <Telescope className="size-4 text-muted-foreground" />
                   <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                    Zoom out &mdash; AO3 context
+                    {t('rev.texts.aic.extract.zoom_h')}
                   </p>
                 </div>
                 <p className="mt-2 text-sm leading-relaxed text-foreground">{f.zoomOut}</p>
@@ -243,11 +239,11 @@ export default function ExtractWalkthroughPage() {
           <div className="mb-3 flex items-center gap-2">
             <Sparkles className="size-4 text-teal-600 dark:text-teal-300" />
             <p className="text-xs font-bold uppercase tracking-wider text-teal-700 dark:text-teal-300">
-              Model paragraph &mdash; ~250 words
+              {t('rev.texts.aic.extract.model_para_label')}
             </p>
           </div>
           <h2 className="font-heading text-2xl font-bold tracking-tight text-foreground">
-            The final speech as Priestley&rsquo;s didactic climax
+            {t('rev.texts.aic.extract.model_para_title')}
           </h2>
           <div className="mt-4 space-y-3 text-sm leading-relaxed text-foreground sm:text-base">
             <p>
@@ -277,34 +273,36 @@ export default function ExtractWalkthroughPage() {
 
         {/* Continue studying */}
         <section className="mt-12 rounded-xl border border-teal-500/20 bg-teal-500/5 p-6">
-          <h3 className="font-heading text-xl font-bold text-foreground">Continue studying</h3>
+          <h3 className="font-heading text-xl font-bold text-foreground">
+            {t('rev.texts.common.continue_studying')}
+          </h3>
           <p className="mt-1 text-sm text-muted-foreground">
-            Take this close-reading method into the rest of An Inspector Calls.
+            {t('rev.texts.aic.extract.continue_sub')}
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link
               href="/revision/texts/an-inspector-calls/key-quotes"
               className="inline-flex items-center rounded-lg bg-teal-600 px-4 py-2 text-sm font-medium text-white hover:bg-teal-700"
             >
-              Key quotes
+              {t('rev.texts.common.key_quotes')}
             </Link>
             <Link
               href="/revision/texts/an-inspector-calls/themes"
               className="inline-flex items-center rounded-lg border border-teal-500/30 bg-card px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5 dark:text-teal-300"
             >
-              Themes
+              {t('rev.texts.common.themes')}
             </Link>
             <Link
               href="/revision/texts/an-inspector-calls/characters"
               className="inline-flex items-center rounded-lg border border-teal-500/30 bg-card px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5 dark:text-teal-300"
             >
-              Characters
+              {t('rev.texts.common.characters')}
             </Link>
             <Link
               href="/revision/texts/an-inspector-calls/essay-plans"
               className="inline-flex items-center rounded-lg border border-teal-500/30 bg-card px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5 dark:text-teal-300"
             >
-              Essay plans
+              {t('rev.texts.common.essay_plans')}
             </Link>
           </div>
         </section>
@@ -312,17 +310,9 @@ export default function ExtractWalkthroughPage() {
         {/* Fair-dealing footer */}
         <footer className="mt-12 rounded-xl border border-border/60 bg-muted p-5 text-xs leading-relaxed text-muted-foreground">
           <p className="mb-2 font-bold uppercase tracking-wider text-foreground">
-            Fair dealing &amp; copyright
+            {t('rev.texts.common.fair_dealing_copyright')}
           </p>
-          <p>
-            <em>An Inspector Calls</em> by J.B. Priestley remains in copyright (Heinemann editions;
-            &copy; the Estate of J.B. Priestley). All quotations on this page are short extracts of
-            fifteen words or fewer, reproduced under the fair-dealing provisions of the{' '}
-            <strong>Copyright, Designs and Patents Act 1988, sections 30(1) and 30(1ZA)</strong> for
-            the purposes of criticism, review and quotation, with sufficient acknowledgement of the
-            author and work. No continuous block extract is reproduced. Students should consult a
-            licensed edition of the play (Heinemann, 1992 or later) for the complete text.
-          </p>
+          <p>{t('rev.texts.aic.extract.fair_dealing')}</p>
         </footer>
       </div>
     </div>

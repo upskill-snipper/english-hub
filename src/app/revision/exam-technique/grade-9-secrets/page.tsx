@@ -18,6 +18,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
+import { t } from '@/lib/i18n/t'
 
 /* ── Data ───────────────────────────────────────────────────────── */
 
@@ -178,14 +179,20 @@ const GRADE_9_VOCAB: { term: string; usage: string }[] = [
 
 /* ── Page ────────────────────────────────────────────────────────── */
 
-export default function Grade9SecretsPage() {
+export default async function Grade9SecretsPage() {
+  // Constant labels reused inside synchronous .map() callbacks below.
+  const exampleLabel = await t('rev.misc2.example')
+  const grade7Label = await t('rev.misc2.g9.grade7')
+  const grade9Label = await t('rev.misc2.g9.grade9')
+  const whyItWorksLabel = await t('rev.misc2.g9.why_it_works')
+
   return (
     <div className="space-y-10 pb-16">
       <Breadcrumb
         items={[
-          { label: 'Revision', href: '/revision' },
-          { label: 'Exam Technique', href: '/revision/exam-technique' },
-          { label: 'Grade 9 Secrets' },
+          { label: await t('rev.misc2.crumb.revision'), href: '/revision' },
+          { label: await t('rev.misc2.crumb.exam_technique'), href: '/revision/exam-technique' },
+          { label: await t('rev.misc2.g9.crumb') },
         ]}
       />
 
@@ -198,7 +205,7 @@ export default function Grade9SecretsPage() {
           render={<Link href="/revision/exam-technique" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Exam Technique
+          {await t('rev.misc2.back.exam_technique')}
         </Button>
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-amber-500/10">
@@ -206,12 +213,9 @@ export default function Grade9SecretsPage() {
           </div>
           <div>
             <h1 className="text-heading-lg font-heading text-foreground">
-              What Separates Grade 7 from Grade 9
+              {await t('rev.misc2.g9.title')}
             </h1>
-            <p className="text-body-sm text-muted-foreground">
-              10 specific techniques that unlock the highest band in GCSE English Literature and
-              Language
-            </p>
+            <p className="text-body-sm text-muted-foreground">{await t('rev.misc2.g9.subtitle')}</p>
           </div>
         </div>
       </div>
@@ -221,17 +225,13 @@ export default function Grade9SecretsPage() {
         <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-amber-500/5 blur-3xl" />
         <Badge variant="secondary" className="mb-3">
           <Sparkles className="mr-1 size-3" />
-          The Grade 9 Mindset
+          {await t('rev.misc2.g9.badge.mindset')}
         </Badge>
         <h2 className="text-heading-md font-heading text-foreground mb-2">
-          It is not about knowing more -- it is about thinking differently
+          {await t('rev.misc2.g9.overview.heading')}
         </h2>
         <p className="text-body-sm text-muted-foreground max-w-2xl leading-relaxed">
-          Grade 7 students know the texts well and can write clear, supported paragraphs. Grade 9
-          students do something more: they treat literature as a set of deliberate choices made by a
-          writer for a purpose, offer multiple interpretations, and connect every detail to a bigger
-          argument. The jump from 7 to 9 is not about learning more quotes -- it is about upgrading
-          how you think and write about them.
+          {await t('rev.misc2.g9.overview.body')}
         </p>
       </section>
 
@@ -240,37 +240,37 @@ export default function Grade9SecretsPage() {
         <div className="mb-5 flex items-center gap-3">
           <Zap className="size-5 text-clay-600" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            10 Techniques Grade 9 Students Use
+            {await t('rev.misc2.g9.techniques.heading')}
           </h2>
         </div>
 
         <div className="space-y-4">
-          {TECHNIQUES.map((t) => (
+          {TECHNIQUES.map((tech) => (
             <div
-              key={t.number}
+              key={tech.number}
               className="rounded-2xl border border-border/60 bg-card p-5 sm:p-6 space-y-4"
             >
               <div className="flex items-start gap-3">
                 <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-amber-500/10 text-sm font-bold text-clay-600">
-                  {t.number}
+                  {tech.number}
                 </span>
                 <div>
-                  <h3 className="text-heading-md font-heading text-foreground">{t.title}</h3>
+                  <h3 className="text-heading-md font-heading text-foreground">{tech.title}</h3>
                   <p className="text-body-sm text-muted-foreground mt-1 leading-relaxed font-medium">
-                    {t.summary}
+                    {tech.summary}
                   </p>
                 </div>
               </div>
 
-              <p className="text-body-sm text-muted-foreground leading-relaxed">{t.detail}</p>
+              <p className="text-body-sm text-muted-foreground leading-relaxed">{tech.detail}</p>
 
-              {t.example && (
+              {tech.example && (
                 <div className="rounded-xl border border-border/40 bg-background/50 p-4 space-y-2">
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                    Example
+                    {exampleLabel}
                   </p>
                   <p className="text-body-sm text-muted-foreground leading-relaxed italic">
-                    {t.example}
+                    {tech.example}
                   </p>
                 </div>
               )}
@@ -284,12 +284,11 @@ export default function Grade9SecretsPage() {
         <div className="mb-5 flex items-center gap-3">
           <Layers className="size-5 text-blue-400" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            Before and After: Grade 7 vs Grade 9 Paragraphs
+            {await t('rev.misc2.g9.beforeafter.heading')}
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl leading-relaxed">
-          The same knowledge, transformed by technique. Study what changes between the
-          &ldquo;before&rdquo; (solid Grade 7) and &ldquo;after&rdquo; (Grade 9) versions.
+          {await t('rev.misc2.g9.beforeafter.intro')}
         </p>
 
         <div className="space-y-4">
@@ -309,7 +308,7 @@ export default function Grade9SecretsPage() {
                   <div className="flex items-center gap-2">
                     <AlertTriangle className="size-4 text-clay-600" />
                     <p className="text-xs font-semibold text-clay-600 uppercase tracking-wider">
-                      Grade 7
+                      {grade7Label}
                     </p>
                   </div>
                   <p className="text-body-sm text-muted-foreground leading-relaxed">{ba.before}</p>
@@ -319,7 +318,7 @@ export default function Grade9SecretsPage() {
                   <div className="flex items-center gap-2">
                     <Star className="size-4 text-emerald-400" />
                     <p className="text-xs font-semibold text-emerald-400 uppercase tracking-wider">
-                      Grade 9
+                      {grade9Label}
                     </p>
                   </div>
                   <p className="text-body-sm text-muted-foreground leading-relaxed">{ba.after}</p>
@@ -330,7 +329,7 @@ export default function Grade9SecretsPage() {
                 <div className="flex gap-3">
                   <Lightbulb className="mt-0.5 size-4 shrink-0 text-emerald-400" />
                   <p className="text-body-sm text-muted-foreground leading-relaxed">
-                    <span className="font-semibold text-foreground">Why it works: </span>
+                    <span className="font-semibold text-foreground">{whyItWorksLabel}</span>
                     {ba.why}
                   </p>
                 </div>
@@ -345,7 +344,7 @@ export default function Grade9SecretsPage() {
         <div className="mb-5 flex items-center gap-3">
           <Quote className="size-5 text-violet-400" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            Vocabulary That Signals Higher-Grade Thinking
+            {await t('rev.misc2.g9.vocab.heading')}
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl leading-relaxed">
@@ -372,7 +371,7 @@ export default function Grade9SecretsPage() {
         <div className="flex items-center gap-3">
           <Brain className="size-5 text-rose-400" />
           <h2 className="text-heading-md font-heading text-foreground">
-            How to Be &ldquo;Conceptualised&rdquo; and &ldquo;Critical&rdquo;
+            {await t('rev.misc2.g9.concept.heading')}
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground leading-relaxed">
@@ -383,7 +382,7 @@ export default function Grade9SecretsPage() {
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-border/40 bg-background/50 p-5 space-y-3">
             <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
-              Conceptualised
+              {await t('rev.misc2.g9.badge.conceptualised')}
             </Badge>
             <p className="text-body-sm text-muted-foreground leading-relaxed">
               A <span className="font-semibold text-foreground">conceptualised</span> response
@@ -395,7 +394,9 @@ export default function Grade9SecretsPage() {
             <div className="flex gap-3 rounded-lg border border-emerald-500/20 bg-emerald-500/[0.06] p-3">
               <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-400" />
               <p className="text-xs text-muted-foreground leading-relaxed">
-                <span className="font-semibold text-foreground">Test: </span>
+                <span className="font-semibold text-foreground">
+                  {await t('rev.misc2.g9.test_label')}
+                </span>
                 Could your topic sentence apply to a university-level essay on the same text? If
                 yes, it is conceptualised. If it reads like a plot summary, it is not.
               </p>
@@ -404,7 +405,7 @@ export default function Grade9SecretsPage() {
 
           <div className="rounded-xl border border-border/40 bg-background/50 p-5 space-y-3">
             <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
-              Critical
+              {await t('rev.misc2.g9.badge.critical')}
             </Badge>
             <p className="text-body-sm text-muted-foreground leading-relaxed">
               A <span className="font-semibold text-foreground">critical</span> response does not
@@ -415,7 +416,9 @@ export default function Grade9SecretsPage() {
             <div className="flex gap-3 rounded-lg border border-emerald-500/20 bg-emerald-500/[0.06] p-3">
               <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-400" />
               <p className="text-xs text-muted-foreground leading-relaxed">
-                <span className="font-semibold text-foreground">Test: </span>
+                <span className="font-semibold text-foreground">
+                  {await t('rev.misc2.g9.test_label')}
+                </span>
                 Does your essay contain the word &ldquo;alternatively&rdquo; or
                 &ldquo;however&rdquo; at least twice? If not, you are probably not being critical
                 enough.
@@ -430,7 +433,7 @@ export default function Grade9SecretsPage() {
         <div className="flex items-center gap-3">
           <Eye className="size-5 text-cyan-400" />
           <h2 className="text-heading-md font-heading text-foreground">
-            Alternative Interpretations and How to Use Them
+            {await t('rev.misc2.g9.altinterp.heading')}
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground leading-relaxed">
@@ -500,7 +503,7 @@ export default function Grade9SecretsPage() {
 
         <div className="rounded-xl border border-border/40 bg-background/50 p-4 space-y-2">
           <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-            Example in action
+            {await t('rev.misc2.g9.example_in_action')}
           </p>
           <p className="text-body-sm text-muted-foreground leading-relaxed italic">
             &ldquo;The Creature&apos;s request for a companion can be read as a genuine plea for
@@ -521,7 +524,7 @@ export default function Grade9SecretsPage() {
         <div className="mb-4 flex items-center gap-3">
           <CheckCircle2 className="size-5 text-emerald-400" />
           <h2 className="text-heading-md font-heading text-foreground">
-            Grade 9 Paragraph Checklist
+            {await t('rev.misc2.g9.checklist.heading')}
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl">
@@ -557,16 +560,16 @@ export default function Grade9SecretsPage() {
           render={<Link href="/revision/exam-technique/common-mistakes" />}
         >
           <ArrowLeft className="size-4" />
-          Common Mistakes
+          {await t('rev.misc2.g9.nav.common_mistakes')}
         </Button>
         <Button
           variant="default"
           className="flex-1"
           disabled
           aria-disabled="true"
-          title="Practice Extracts - coming soon"
+          title={await t('rev.misc2.cta.practice_extracts_title')}
         >
-          Practice Extracts (coming soon)
+          {await t('rev.misc2.cta.practice_extracts')}
           <ArrowRight className="size-4" />
         </Button>
       </div>

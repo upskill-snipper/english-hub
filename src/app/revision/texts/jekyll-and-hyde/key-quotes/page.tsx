@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
+import { useT } from '@/lib/i18n/use-t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ─── Types ──────────────────────────────────────────────────── */
@@ -257,6 +258,7 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
 /* ─── Page ───────────────────────────────────────────────────── */
 
 export default function JekyllAndHydeKeyQuotesPage() {
+  const tr = useT()
   return (
     <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
@@ -289,13 +291,13 @@ export default function JekyllAndHydeKeyQuotesPage() {
               render={<Link href="/revision/texts/jekyll-and-hyde" />}
             >
               <ArrowLeft className="size-3.5" />
-              Back to Jekyll and Hyde
+              {tr('rev.texts.common.back_to_text').replace('{text}', 'Jekyll and Hyde')}
             </Button>
 
             <div className="mb-4 flex flex-wrap items-center gap-2">
               <Badge variant="secondary">
                 <Quote className="mr-1 size-3 text-violet-400" />
-                Key Quotations
+                {tr('rev.texts.common.key_quotations')}
               </Badge>
               <Badge variant="outline" className="text-muted-foreground">
                 AQA / Edexcel / OCR / Eduqas
@@ -303,14 +305,13 @@ export default function JekyllAndHydeKeyQuotesPage() {
             </div>
 
             <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-              25 Key Quotes by Theme
+              {tr('rev.texts2.jh.key_quotes.title')}
             </h1>
             <p className="mt-2 text-body-lg text-muted-foreground">
               Strange Case of Dr Jekyll and Mr Hyde by Robert Louis Stevenson
             </p>
             <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-              Every quotation you need for the exam, organised by theme with detailed analysis. All
-              from the public-domain text.
+              {tr('rev.texts2.jh.key_quotes.intro')}
             </p>
           </div>
         </section>
@@ -319,7 +320,9 @@ export default function JekyllAndHydeKeyQuotesPage() {
         <section className="mt-10">
           <Card>
             <CardContent className="p-5">
-              <p className="text-sm font-semibold text-foreground mb-3">Jump to theme</p>
+              <p className="text-sm font-semibold text-foreground mb-3">
+                {tr('rev.texts2.common.jump_to_theme_short')}
+              </p>
               <div className="flex flex-wrap gap-2">
                 {QUOTES_BY_THEME.map((section) => (
                   <a
@@ -344,7 +347,10 @@ export default function JekyllAndHydeKeyQuotesPage() {
                 <span className={`block size-3 rounded-full ${section.colour}`} />
                 <h2 className="text-heading-lg font-heading text-foreground">{section.theme}</h2>
                 <Badge variant="outline" className="text-muted-foreground">
-                  {section.quotes.length} quotes
+                  {tr('rev.texts.common.quotes_count').replace(
+                    '{n}',
+                    String(section.quotes.length),
+                  )}
                 </Badge>
               </div>
 
@@ -373,8 +379,10 @@ export default function JekyllAndHydeKeyQuotesPage() {
 
         {/* Footer */}
         <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-          <em>Strange Case of Dr Jekyll and Mr Hyde</em> (1886) by Robert Louis Stevenson is in the
-          public domain. All quotations are reproduced freely.
+          <em>Strange Case of Dr Jekyll and Mr Hyde</em>
+          {tr('rev.texts2.common.public_domain_notice_after')
+            .replace('{year}', '1886')
+            .replace('{author}', 'Robert Louis Stevenson')}
         </p>
       </div>
     </div>

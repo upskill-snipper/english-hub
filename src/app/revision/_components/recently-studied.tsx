@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { BookOpen, Clock, ArrowRight } from 'lucide-react'
 import { useBoard } from '@/hooks/useBoard'
 import type { ExamBoard } from '@/hooks/useBoard'
+import { useT } from '@/lib/i18n/use-t'
 
 const RECENTLY_STUDIED_KEY = 'english-hub-recently-studied'
 const STUDIED_POEMS_KEY = 'english-hub-studied-poems'
@@ -69,6 +70,7 @@ export function RecentlyStudied() {
   const [recentItems, setRecentItems] = useState<RecentItem[]>([])
   const [mounted, setMounted] = useState(false)
   const { board } = useBoard()
+  const t = useT()
 
   useEffect(() => {
     setMounted(true)
@@ -150,7 +152,9 @@ export function RecentlyStudied() {
     <section>
       <div className="mb-5 flex items-center gap-3">
         <Clock className="size-5 text-muted-foreground" />
-        <h2 className="text-heading-lg font-heading text-foreground">Recently Studied</h2>
+        <h2 className="text-heading-lg font-heading text-foreground">
+          {t('rev.misc2.recent.heading')}
+        </h2>
       </div>
 
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">

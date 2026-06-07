@@ -23,6 +23,7 @@ import { Breadcrumb } from '@/components/ui/breadcrumb'
 
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig, type ExamBoard } from '@/lib/board/board-store'
+import { useT } from '@/lib/i18n/use-t'
 
 import { QuizEngine } from './quiz-engine'
 import {
@@ -62,6 +63,7 @@ const TOPIC_ICONS: Record<Topic, typeof BookOpen> = {
 // ─── Component ─────────────────────────────────────────────────────────────
 
 export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null }) {
+  const t = useT()
   const { board: hookBoard } = useBoard()
   // Prefer client store after hydration; fall back to server cookie value
   const board = hookBoard ?? initialBoard
@@ -137,7 +139,7 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
           onClick={handleRestart}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Quiz Hub
+          {t('rev.misc.quiz.back_hub')}
         </Button>
 
         <QuizEngine
@@ -152,7 +154,9 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
   // ─── Hub screen ──────────────────────────────────────────────────────────
   return (
     <div className="space-y-8 pb-16">
-      <Breadcrumb items={[{ label: 'Revision', href: '/revision' }, { label: 'Quiz' }]} />
+      <Breadcrumb
+        items={[{ label: 'Revision', href: '/revision' }, { label: t('rev.misc.quiz.breadcrumb') }]}
+      />
       {/* Header */}
       <div>
         <Button
@@ -162,7 +166,7 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
           render={<Link href="/revision" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Revision Hub
+          {t('rev.misc.quiz.back_revision')}
         </Button>
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-orange-500/10">
@@ -170,17 +174,19 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
           </div>
           <div className="flex-1">
             <div className="flex flex-wrap items-center gap-2">
-              <h1 className="text-heading-lg font-heading text-foreground">Quick Quizzes</h1>
+              <h1 className="text-heading-lg font-heading text-foreground">
+                {t('rev.misc.quiz.title')}
+              </h1>
               {boardName && (
                 <Badge variant="outline" className="text-xs">
-                  For {boardName}
+                  {t('rev.misc.quiz.for_board').replace('{board}', boardName)}
                 </Badge>
               )}
             </div>
             <p className="text-body-sm text-muted-foreground">
               {boardName
-                ? `Test yourself on ${boardName} English topics`
-                : 'Test yourself on any GCSE English topic'}
+                ? t('rev.misc.quiz.subtitle_board').replace('{board}', boardName)
+                : t('rev.misc.quiz.subtitle_generic')}
             </p>
           </div>
         </div>
@@ -188,11 +194,13 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
 
       {/* Topic selector */}
       <section>
-        <h2 className="text-heading-md font-heading text-foreground mb-3">Choose Topics</h2>
+        <h2 className="text-heading-md font-heading text-foreground mb-3">
+          {t('rev.misc.quiz.choose_topics')}
+        </h2>
         <p className="text-body-sm text-muted-foreground mb-4">
           {boardName
-            ? `Showing topics covered by ${boardName}. Select one or more, or leave all unselected for a mixed quiz.`
-            : 'Select one or more topics, or leave all unselected for a mixed quiz.'}
+            ? t('rev.misc.quiz.choose_topics_desc_board').replace('{board}', boardName)
+            : t('rev.misc.quiz.choose_topics_desc_generic')}
         </p>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {availableTopics.map((topic) => {
@@ -244,7 +252,9 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
 
       {/* Quiz modes */}
       <section>
-        <h2 className="text-heading-md font-heading text-foreground mb-3">Start a Quiz</h2>
+        <h2 className="text-heading-md font-heading text-foreground mb-3">
+          {t('rev.misc.quiz.start_a_quiz')}
+        </h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {/* Quick quiz */}
           <button
@@ -265,16 +275,18 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
               </div>
               <div>
                 <h3 className="text-heading-md font-heading text-foreground group-hover:text-primary transition-colors">
-                  Quick Quiz
+                  {t('rev.misc.quiz.mode.quick_title')}
                 </h3>
-                <span className="text-caption text-muted-foreground">10 questions</span>
+                <span className="text-caption text-muted-foreground">
+                  {t('rev.misc.quiz.questions_count').replace('{count}', '10')}
+                </span>
               </div>
             </div>
             <p className="flex-1 text-body-sm text-muted-foreground">
-              A fast quiz to test your knowledge. Perfect for a revision break.
+              {t('rev.misc.quiz.mode.quick_desc')}
             </p>
             <div className="mt-3 flex items-center gap-1 text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
-              Start quiz <ChevronRight className="size-3.5" />
+              {t('rev.misc.quiz.start_quiz')} <ChevronRight className="size-3.5" />
             </div>
           </button>
 
@@ -297,16 +309,18 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
               </div>
               <div>
                 <h3 className="text-heading-md font-heading text-foreground group-hover:text-primary transition-colors">
-                  Full Quiz
+                  {t('rev.misc.quiz.mode.full_title')}
                 </h3>
-                <span className="text-caption text-muted-foreground">30 questions</span>
+                <span className="text-caption text-muted-foreground">
+                  {t('rev.misc.quiz.questions_count').replace('{count}', '30')}
+                </span>
               </div>
             </div>
             <p className="flex-1 text-body-sm text-muted-foreground">
-              A thorough test covering more ground. Great for exam preparation.
+              {t('rev.misc.quiz.mode.full_desc')}
             </p>
             <div className="mt-3 flex items-center gap-1 text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
-              Start quiz <ChevronRight className="size-3.5" />
+              {t('rev.misc.quiz.start_quiz')} <ChevronRight className="size-3.5" />
             </div>
           </button>
 
@@ -321,18 +335,20 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
               </div>
               <div>
                 <h3 className="text-heading-md font-heading text-foreground group-hover:text-primary transition-colors">
-                  Mixed Topics
+                  {t('rev.misc.quiz.mode.mixed_title')}
                 </h3>
-                <span className="text-caption text-muted-foreground">15 questions</span>
+                <span className="text-caption text-muted-foreground">
+                  {t('rev.misc.quiz.questions_count').replace('{count}', '15')}
+                </span>
               </div>
             </div>
             <p className="flex-1 text-body-sm text-muted-foreground">
               {boardName
-                ? `Questions from every ${boardName} topic, randomly shuffled.`
-                : 'Questions from every topic, randomly shuffled. Covers all your bases.'}
+                ? t('rev.misc.quiz.mode.mixed_desc_board').replace('{board}', boardName)
+                : t('rev.misc.quiz.mode.mixed_desc_generic')}
             </p>
             <div className="mt-3 flex items-center gap-1 text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
-              Start quiz <ChevronRight className="size-3.5" />
+              {t('rev.misc.quiz.start_quiz')} <ChevronRight className="size-3.5" />
             </div>
           </button>
         </div>
@@ -343,7 +359,9 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
         <section>
           <div className="flex items-center gap-3 mb-4">
             <Trophy className="size-5 text-clay-600" />
-            <h2 className="text-heading-md font-heading text-foreground">Score History</h2>
+            <h2 className="text-heading-md font-heading text-foreground">
+              {t('rev.misc.quiz.score_history')}
+            </h2>
           </div>
 
           <div className="rounded-2xl border border-border/60 bg-card overflow-hidden">
@@ -352,16 +370,16 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
                 <thead>
                   <tr className="border-b border-border/60 bg-muted/30">
                     <th className="px-4 py-3 text-left font-semibold text-muted-foreground">
-                      Date
+                      {t('rev.misc.quiz.col_date')}
                     </th>
                     <th className="px-4 py-3 text-left font-semibold text-muted-foreground">
-                      Mode
+                      {t('rev.misc.quiz.col_mode')}
                     </th>
                     <th className="px-4 py-3 text-center font-semibold text-muted-foreground">
-                      Score
+                      {t('rev.misc.quiz.col_score')}
                     </th>
                     <th className="px-4 py-3 text-center font-semibold text-muted-foreground">
-                      Grade
+                      {t('rev.misc.quiz.col_grade')}
                     </th>
                   </tr>
                 </thead>
@@ -394,7 +412,7 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
                         </td>
                         <td className="px-4 py-3 text-center">
                           <Badge variant="outline" className={`${gradeColour} font-bold`}>
-                            Grade {grade}
+                            {t('rev.misc.quiz.grade_label').replace('{grade}', grade)}
                           </Badge>
                         </td>
                       </tr>
@@ -411,11 +429,10 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
       <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-orange-500/[0.04] via-card to-primary/[0.04] p-6 text-center">
         <Flame className="mx-auto mb-2 size-7 text-clay-600" />
         <h3 className="text-heading-md font-heading text-foreground">
-          Regular quizzing boosts long-term retention
+          {t('rev.misc.quiz.motivate_title')}
         </h3>
         <p className="mx-auto mt-1 max-w-md text-body-sm text-muted-foreground">
-          Research shows that testing yourself is one of the most effective revision strategies. Try
-          a quick quiz every day to keep your knowledge sharp.
+          {t('rev.misc.quiz.motivate_body')}
         </p>
       </section>
     </div>

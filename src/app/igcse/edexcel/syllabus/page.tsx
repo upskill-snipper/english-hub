@@ -17,6 +17,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -117,7 +118,7 @@ export default async function EdexcelSyllabusPage() {
           render={<Link href="/igcse/edexcel" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Edexcel IGCSE Literature
+          {await t('igcse.page.back_to_lit')}
         </Button>
       </div>
 
@@ -148,7 +149,7 @@ export default async function EdexcelSyllabusPage() {
               Syllabus breakdown
             </Badge>
             <Badge className="bg-primary/10 text-primary border-primary/20">
-              Edexcel IGCSE Literature
+              {await t('igcse.page.badge_edexcel_lit')}
             </Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">

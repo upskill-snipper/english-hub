@@ -13,6 +13,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
+import { t } from '@/lib/i18n/t'
 
 /* ── Data ───────────────────────────────────────────────────────── */
 
@@ -265,14 +266,18 @@ function getCategoryColour(category: string) {
 
 /* ── Page ────────────────────────────────────────────────────────── */
 
-export default function CommonMistakesPage() {
+export default async function CommonMistakesPage() {
+  // Constant labels reused inside the synchronous MISTAKES.map() below.
+  const whatToAvoidLabel = await t('rev.misc2.cm.what_to_avoid')
+  const whatToDoLabel = await t('rev.misc2.cm.what_to_do')
+
   return (
     <div className="space-y-10 pb-16">
       <Breadcrumb
         items={[
-          { label: 'Revision', href: '/revision' },
-          { label: 'Exam Technique', href: '/revision/exam-technique' },
-          { label: 'Common Mistakes' },
+          { label: await t('rev.misc2.crumb.revision'), href: '/revision' },
+          { label: await t('rev.misc2.crumb.exam_technique'), href: '/revision/exam-technique' },
+          { label: await t('rev.misc2.cm.crumb') },
         ]}
       />
 
@@ -285,7 +290,7 @@ export default function CommonMistakesPage() {
           render={<Link href="/revision/exam-technique" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Exam Technique
+          {await t('rev.misc2.back.exam_technique')}
         </Button>
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-rose-500/10">
@@ -293,12 +298,9 @@ export default function CommonMistakesPage() {
           </div>
           <div>
             <h1 className="text-heading-lg font-heading text-foreground">
-              20 Most Common GCSE English Mistakes
+              {await t('rev.misc2.cm.title')}
             </h1>
-            <p className="text-body-sm text-muted-foreground">
-              What goes wrong and exactly how to fix it -- with wrong vs right examples for every
-              mistake
-            </p>
+            <p className="text-body-sm text-muted-foreground">{await t('rev.misc2.cm.subtitle')}</p>
           </div>
         </div>
       </div>
@@ -308,16 +310,13 @@ export default function CommonMistakesPage() {
         <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-rose-500/5 blur-3xl" />
         <Badge variant="secondary" className="mb-3">
           <Sparkles className="mr-1 size-3" />
-          Why This Matters
+          {await t('rev.misc2.cm.badge.why')}
         </Badge>
         <h2 className="text-heading-md font-heading text-foreground mb-2">
-          Most marks are lost, not earned
+          {await t('rev.misc2.cm.overview.heading')}
         </h2>
         <p className="text-body-sm text-muted-foreground max-w-2xl leading-relaxed">
-          The difference between a Grade 5 and a Grade 7 is rarely about knowing more content -- it
-          is about avoiding the habits that cap your marks. Every mistake below is something
-          examiners see hundreds of times a day. Eliminating even three or four of them can push
-          your grade up significantly.
+          {await t('rev.misc2.cm.overview.body')}
         </p>
       </section>
 
@@ -325,7 +324,9 @@ export default function CommonMistakesPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-md font-heading text-foreground">Mistakes by Category</h2>
+          <h2 className="text-heading-md font-heading text-foreground">
+            {await t('rev.misc2.cm.bycategory.heading')}
+          </h2>
         </div>
         <div className="flex flex-wrap gap-2">
           {CATEGORIES.map((cat) => {
@@ -380,7 +381,7 @@ export default function CommonMistakesPage() {
                   <div className="flex items-center gap-2">
                     <XCircle className="size-4 text-rose-400" />
                     <p className="text-xs font-semibold text-rose-400 uppercase tracking-wider">
-                      What to avoid
+                      {whatToAvoidLabel}
                     </p>
                   </div>
                   <p className="text-body-sm text-muted-foreground leading-relaxed">{m.wrong}</p>
@@ -390,7 +391,7 @@ export default function CommonMistakesPage() {
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="size-4 text-emerald-400" />
                     <p className="text-xs font-semibold text-emerald-400 uppercase tracking-wider">
-                      What to do instead
+                      {whatToDoLabel}
                     </p>
                   </div>
                   <p className="text-body-sm text-muted-foreground leading-relaxed">{m.right}</p>
@@ -406,7 +407,7 @@ export default function CommonMistakesPage() {
         <div className="mb-4 flex items-center gap-3">
           <AlertTriangle className="size-5 text-clay-600" />
           <h2 className="text-heading-md font-heading text-foreground">
-            Quick Self-Check Before Submitting
+            {await t('rev.misc2.cm.selfcheck.heading')}
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl">
@@ -444,16 +445,16 @@ export default function CommonMistakesPage() {
           render={<Link href="/revision/exam-technique/grade-9-secrets" />}
         >
           <ArrowLeft className="size-4" />
-          Grade 9 Secrets
+          {await t('rev.misc2.cm.nav.grade_9_secrets')}
         </Button>
         <Button
           variant="default"
           className="flex-1"
           disabled
           aria-disabled="true"
-          title="Practice Extracts - coming soon"
+          title={await t('rev.misc2.cta.practice_extracts_title')}
         >
-          Practice Extracts (coming soon)
+          {await t('rev.misc2.cta.practice_extracts')}
           <ArrowRight className="size-4" />
         </Button>
       </div>

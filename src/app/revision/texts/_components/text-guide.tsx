@@ -92,7 +92,10 @@ export type TextGuideData = {
 async function readServerLocale(): Promise<'en' | 'ar' | 'es'> {
   try {
     const h = await headers()
-    return h.get('x-lang') === 'ar' ? 'ar' : 'en'
+    const v = h.get('x-lang')
+    if (v === 'ar') return 'ar'
+    if (v === 'es') return 'es'
+    return 'en'
   } catch {
     return 'en'
   }
@@ -120,9 +123,42 @@ const CHROME_AR = {
   published: 'النشر',
 }
 
+// ES-mode chrome labels. Standard Spanish for the section headings,
+// tabs, buttons and back links only — study content (poem/text body,
+// analysis, quotations) stays in English per editorial policy. Brand /
+// tech terms stay Latin. Mirrors CHROME_AR key-for-key.
+const CHROME_ES: typeof CHROME_AR = {
+  modernText: 'Texto moderno',
+  quickInfo: 'Información rápida',
+  plotSummary: 'Resumen del argumento',
+  mainCharacters: 'Personajes principales',
+  keyThemes: 'Temas clave',
+  historicalContext: 'Contexto histórico',
+  keyQuotations: 'Citas clave',
+  studyFurther: 'Sigue estudiando',
+  studyFurtherSub: 'Memoriza las citas y ponte a prueba antes del examen.',
+  flashcards: 'Tarjetas de memoria',
+  quizHub: 'Centro de cuestionarios',
+  byAuthor: 'por',
+  backToTexts: 'Volver a todos los textos',
+  genre: 'Género',
+  setting: 'Ambientación',
+  length: 'Extensión',
+  published: 'Publicación',
+}
+
 export async function TextGuide({ data }: { data: TextGuideData }) {
   const locale = await readServerLocale()
   const isAr = locale === 'ar'
+  const isEs = locale === 'es'
+  // Chrome label resolver. AR + ES carry full local maps; everything
+  // else (en) falls back to the inline English literal at each call
+  // site. `c(key, en)` returns the localised chrome string for the
+  // active locale, or the English default.
+  const chromeMap = isAr ? CHROME_AR : isEs ? CHROME_ES : null
+  const c = (key: keyof typeof CHROME_AR, en: string) => chromeMap?.[key] ?? en
+  // Study CONTENT pickers stay EN/AR only — Spanish renders English
+  // content per editorial policy (only chrome is translated to ES).
   const pick = (en: string, ar?: string) => (isAr && ar ? ar : en)
   const pickArr = (en: string[], ar?: string[]) => (isAr && ar && ar.length === en.length ? ar : en)
   return (
@@ -139,15 +175,13 @@ export async function TextGuide({ data }: { data: TextGuideData }) {
             render={<Link href="/revision/texts" />}
           >
             <ArrowLeft className="size-3.5" />
-            {isAr ? CHROME_AR.backToTexts : 'Back to all texts'}
+            {c('backToTexts', 'Back to all texts')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Drama className="mr-1 size-3 text-violet-400" />
-              {isAr
-                ? `${CHROME_AR.modernText} - ${data.category}`
-                : `Modern Text - ${data.category}`}
+              {`${c('modernText', 'Modern Text')} - ${data.category}`}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -159,9 +193,7 @@ export async function TextGuide({ data }: { data: TextGuideData }) {
             {data.title}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
-            {isAr
-              ? `${CHROME_AR.byAuthor} ${data.author} - ${pick(data.year, data.yearAr)}`
-              : `by ${data.author} - ${data.year}`}
+            {`${c('byAuthor', 'by')} ${data.author} - ${pick(data.year, data.yearAr)}`}
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
             {pick(data.intro, data.introAr)}
@@ -186,29 +218,29 @@ export async function TextGuide({ data }: { data: TextGuideData }) {
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-blue-400" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            {isAr ? CHROME_AR.quickInfo : 'Quick Info'}
+            {c('quickInfo', 'Quick Info')}
           </h2>
         </div>
         <Card>
           <CardContent className="grid gap-4 p-6 sm:grid-cols-2 lg:grid-cols-4">
             <InfoTile
               icon={Drama}
-              label={isAr ? CHROME_AR.genre : 'Genre'}
+              label={c('genre', 'Genre')}
               value={pick(data.quickInfo.genre, data.quickInfoAr?.genre)}
             />
             <InfoTile
               icon={Globe}
-              label={isAr ? CHROME_AR.setting : 'Setting'}
+              label={c('setting', 'Setting')}
               value={pick(data.quickInfo.setting, data.quickInfoAr?.setting)}
             />
             <InfoTile
               icon={FileText}
-              label={isAr ? CHROME_AR.length : 'Length'}
+              label={c('length', 'Length')}
               value={pick(data.quickInfo.length, data.quickInfoAr?.length)}
             />
             <InfoTile
               icon={Calendar}
-              label={isAr ? CHROME_AR.published : 'Published'}
+              label={c('published', 'Published')}
               value={pick(data.quickInfo.published, data.quickInfoAr?.published)}
             />
           </CardContent>
@@ -220,7 +252,7 @@ export async function TextGuide({ data }: { data: TextGuideData }) {
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-blue-400" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            {isAr ? CHROME_AR.plotSummary : 'Plot Summary'}
+            {c('plotSummary', 'Plot Summary')}
           </h2>
         </div>
         <Card>
@@ -237,7 +269,7 @@ export async function TextGuide({ data }: { data: TextGuideData }) {
         <div className="mb-5 flex items-center gap-3">
           <Users className="size-5 text-emerald-400" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            {isAr ? CHROME_AR.mainCharacters : 'Main Characters'}
+            {c('mainCharacters', 'Main Characters')}
           </h2>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
@@ -260,7 +292,7 @@ export async function TextGuide({ data }: { data: TextGuideData }) {
         <div className="mb-5 flex items-center gap-3">
           <Lightbulb className="size-5 text-clay-600" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            {isAr ? CHROME_AR.keyThemes : 'Key Themes'}
+            {c('keyThemes', 'Key Themes')}
           </h2>
         </div>
         <Card>
@@ -282,7 +314,7 @@ export async function TextGuide({ data }: { data: TextGuideData }) {
         <div className="mb-5 flex items-center gap-3">
           <Clock className="size-5 text-blue-400" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            {isAr ? CHROME_AR.historicalContext : 'Historical Context'}
+            {c('historicalContext', 'Historical Context')}
           </h2>
         </div>
         <Card>
@@ -299,7 +331,7 @@ export async function TextGuide({ data }: { data: TextGuideData }) {
         <div className="mb-5 flex items-center gap-3">
           <Quote className="size-5 text-violet-400" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            {isAr ? CHROME_AR.keyQuotations : 'Key Quotations'}
+            {c('keyQuotations', 'Key Quotations')}
           </h2>
         </div>
         <div className="grid gap-4">
@@ -327,21 +359,19 @@ export async function TextGuide({ data }: { data: TextGuideData }) {
           <CardContent className="flex flex-col items-start gap-4 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
             <div>
               <h3 className="text-heading-md font-heading text-foreground">
-                {isAr ? CHROME_AR.studyFurther : 'Study further'}
+                {c('studyFurther', 'Study further')}
               </h3>
               <p className="mt-1 text-body-sm text-muted-foreground">
-                {isAr
-                  ? CHROME_AR.studyFurtherSub
-                  : 'Lock in your quotations and test yourself before the exam.'}
+                {c('studyFurtherSub', 'Lock in your quotations and test yourself before the exam.')}
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
               <Button variant="default" size="sm" render={<Link href="/revision/flashcards" />}>
-                {isAr ? CHROME_AR.flashcards : 'Flashcards'}
+                {c('flashcards', 'Flashcards')}
                 <ArrowRight className="size-3.5" />
               </Button>
               <Button variant="outline" size="sm" render={<Link href="/revision/quiz" />}>
-                {isAr ? CHROME_AR.quizHub : 'Quiz hub'}
+                {c('quizHub', 'Quiz hub')}
                 <ArrowRight className="size-3.5" />
               </Button>
             </div>

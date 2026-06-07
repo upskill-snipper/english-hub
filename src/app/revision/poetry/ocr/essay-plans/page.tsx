@@ -18,6 +18,7 @@ import {
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { useT } from '@/lib/i18n/use-t'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -592,6 +593,7 @@ function EssayPlanCard({ plan }: { plan: EssayPlan }) {
 // ─── Page ────────────────────────────────────────────────────────────────────
 
 export default function OCREssayPlansPage() {
+  const t = useT()
   return (
     <div className="space-y-10 pb-16">
       {/* ── Back nav ──────────────────────────────────────────────────── */}
@@ -603,7 +605,7 @@ export default function OCREssayPlansPage() {
           render={<Link href="/revision/poetry/ocr" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to OCR Anthology
+          {t('poetry_hub.ocr.back_to_anthology')}
         </Button>
       </div>
 
@@ -616,17 +618,16 @@ export default function OCREssayPlansPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Sparkles className="mr-1 size-3" />
-              OCR Towards a World Unknown
+              {t('poetry_hub.ocr.badge_anthology')}
             </Badge>
             <Badge className="bg-primary/10 text-primary border-primary/20">OCR</Badge>
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Poetry Comparison Essay Plans
+            {t('poetry_hub.ocr.ep.title')}
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            10 ready-made essay plans covering all 4 OCR clusters. Each plan pairs two poems,
-            provides a three-point structure with side-by-side analysis, and includes an exam tip.
+            {t('poetry_hub.ocr.ep.lead')}
           </p>
         </div>
       </section>
@@ -636,7 +637,9 @@ export default function OCREssayPlansPage() {
         <div className="flex items-start gap-3">
           <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-600" />
           <div>
-            <h2 className="text-heading-sm font-heading text-foreground">How to use these plans</h2>
+            <h2 className="text-heading-sm font-heading text-foreground">
+              {t('poetry_hub.ocr.ep.how_to_title')}
+            </h2>
             <ul className="mt-2 space-y-1.5 text-body-sm text-muted-foreground leading-relaxed">
               <li>
                 Each plan follows a proven comparison structure: shared theme, three analytical
@@ -660,7 +663,9 @@ export default function OCREssayPlansPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <FileText className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">All 10 Essay Plans</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {t('poetry_hub.ocr.ep.all_plans')}
+          </h2>
         </div>
 
         <div className="space-y-4">
@@ -672,7 +677,9 @@ export default function OCREssayPlansPage() {
 
       {/* ── Copyright note ────────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-muted/30 p-5 sm:p-6">
-        <h2 className="text-heading-sm font-heading text-foreground">A note on quotations</h2>
+        <h2 className="text-heading-sm font-heading text-foreground">
+          {t('poetry_hub.ocr.ep.quotes_note_title')}
+        </h2>
         <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
           These essay plans discuss themes, methods and context rather than reproducing copyrighted
           poem text. To complete your essays you will need to select and analyse your own quotations
@@ -684,7 +691,9 @@ export default function OCREssayPlansPage() {
       {/* ── Back CTA ──────────────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8 text-center">
         <BookOpen className="mx-auto mb-3 size-8 text-primary" />
-        <h2 className="text-heading-lg font-heading text-foreground">Explore the anthology</h2>
+        <h2 className="text-heading-lg font-heading text-foreground">
+          {t('poetry_hub.ocr.ep.explore')}
+        </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
           Head back to the OCR hub to study individual poems, explore themes, or learn how to write
           a comparison essay.
@@ -695,7 +704,7 @@ export default function OCREssayPlansPage() {
           className="mt-5"
           render={<Link href="/revision/poetry/ocr" />}
         >
-          Back to OCR Anthology
+          {t('poetry_hub.ocr.back_to_anthology')}
           <ArrowRight className="size-4" />
         </Button>
       </section>

@@ -14,6 +14,7 @@ import {
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ── What-How-Why steps ─────────────────────────────────────── */
 
@@ -135,6 +136,7 @@ const SOUND_EFFECTS = [
 ]
 
 export default function LanguageAnalysisPage() {
+  const tr = useT()
   return (
     <div className="space-y-10 pb-16">
       <div>
@@ -145,7 +147,7 @@ export default function LanguageAnalysisPage() {
           render={<Link href="/igcse/edexcel/unseen-poetry" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Unseen Poetry
+          {tr('igcse.page.back_to_unseen_poetry')}
         </Button>
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-emerald-500/10">
@@ -157,7 +159,7 @@ export default function LanguageAnalysisPage() {
                 Language Analysis Framework
               </h1>
               <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
-                Edexcel IGCSE Literature
+                {tr('igcse.page.badge_edexcel_lit')}
               </Badge>
             </div>
             <p className="text-body-sm text-muted-foreground">

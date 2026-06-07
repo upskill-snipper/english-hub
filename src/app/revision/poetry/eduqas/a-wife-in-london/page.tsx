@@ -10,6 +10,7 @@ import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { useT } from '@/lib/i18n/use-t'
 const wifeInLondon: PoemData = {
   title: 'A Wife in London',
   poet: 'Thomas Hardy',
@@ -726,6 +727,7 @@ const ESSAY_PROMPTS = [
 ]
 
 export default function WifeInLondonEduqasPage() {
+  const t = useT()
   return (
     <div className="space-y-8">
       <CourseJsonLd
@@ -752,7 +754,7 @@ export default function WifeInLondonEduqasPage() {
           render={<Link href="/revision/poetry/eduqas" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Eduqas Poetry
+          {t('rev.poetry.shared.back_to_eduqas_poetry')}
         </Button>
 
         <div className="mb-5 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-body-sm text-amber-100">
@@ -798,7 +800,9 @@ export default function WifeInLondonEduqasPage() {
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">
         <div className="flex items-center gap-2 mb-4">
           <GitCompare className="size-4.5 text-muted-foreground" />
-          <h2 className="text-heading-sm font-heading text-foreground">Compare with</h2>
+          <h2 className="text-heading-sm font-heading text-foreground">
+            {t('rev.poetry.shared.compare_with')}
+          </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
           Strong Eduqas pairings for comparison questions involving A Wife in London.

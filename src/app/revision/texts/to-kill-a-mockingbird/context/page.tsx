@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button'
 import { getServerBoard } from '@/lib/board/get-server-board'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title: 'To Kill a Mockingbird - Historical Context | The English Hub',
@@ -130,6 +131,14 @@ export default async function ToKillAMockingbirdContextPage() {
     redirect('/revision/texts')
   }
 
+  // Pre-resolve chrome labels used inside .map() callbacks.
+  const backLabel = (await t('rev.texts.common.back_to_text')).replace(
+    '{text}',
+    'To Kill a Mockingbird',
+  )
+  const linkToTextLabel = await t('rev.texts2.common.link_to_the_text')
+  const examTipLabel = await t('rev.texts2.common.exam_tip')
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -159,13 +168,13 @@ export default async function ToKillAMockingbirdContextPage() {
             render={<Link href="/revision/texts/to-kill-a-mockingbird" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to To Kill a Mockingbird
+            {backLabel}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <BookOpen className="mr-1 size-3 text-violet-400" />
-              Modern Text - Novel
+              {await t('rev.texts2.common.modern_text_novel')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -174,14 +183,13 @@ export default async function ToKillAMockingbirdContextPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Historical &amp; Social Context
+            {await t('rev.texts2.tkam.context.title')}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
             To Kill a Mockingbird by Harper Lee
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            The essential background you need for the exam: 1930s Alabama, Jim Crow laws, the Great
-            Depression, Harper Lee&apos;s life and the Scottsboro Boys trial.
+            {await t('rev.texts2.tkam.context.intro')}
           </p>
         </div>
       </section>
@@ -190,7 +198,9 @@ export default async function ToKillAMockingbirdContextPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Clock className="size-5 text-blue-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">Context</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {await t('rev.texts.common.context')}
+          </h2>
         </div>
         <div className="space-y-6">
           {SECTIONS.map((s) => {
@@ -214,14 +224,16 @@ export default async function ToKillAMockingbirdContextPage() {
                     ))}
                   </div>
                   <div>
-                    <h3 className="mb-1 text-sm font-semibold text-foreground">Link to the text</h3>
+                    <h3 className="mb-1 text-sm font-semibold text-foreground">
+                      {linkToTextLabel}
+                    </h3>
                     <p className="text-body-sm text-muted-foreground">{s.keyLink}</p>
                   </div>
                   <div className="rounded-xl border border-primary/20 bg-primary/5 p-4">
                     <div className="flex items-center gap-2 mb-1.5">
                       <Quote className="size-3.5 text-primary" />
                       <p className="text-xs font-semibold uppercase tracking-wide text-primary">
-                        Exam tip
+                        {examTipLabel}
                       </p>
                     </div>
                     <p className="text-body-sm text-muted-foreground">{s.examTip}</p>
@@ -240,28 +252,26 @@ export default async function ToKillAMockingbirdContextPage() {
           size="sm"
           render={<Link href="/revision/texts/to-kill-a-mockingbird/characters" />}
         >
-          Characters <ArrowRight className="size-3.5" />
+          {await t('rev.texts.common.characters')} <ArrowRight className="size-3.5" />
         </Button>
         <Button
           variant="outline"
           size="sm"
           render={<Link href="/revision/texts/to-kill-a-mockingbird/themes" />}
         >
-          Themes <ArrowRight className="size-3.5" />
+          {await t('rev.texts.common.themes')} <ArrowRight className="size-3.5" />
         </Button>
         <Button
           variant="outline"
           size="sm"
           render={<Link href="/revision/texts/to-kill-a-mockingbird/key-quotes" />}
         >
-          Key quotes <ArrowRight className="size-3.5" />
+          {await t('rev.texts2.common.key_quotes_sc')} <ArrowRight className="size-3.5" />
         </Button>
       </section>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the Copyright, Designs and
-        Patents Act 1988 for criticism and review. Full text available from your school or local
-        library.
+        {await t('rev.texts2.common.fair_dealing_notice')}
       </p>
     </div>
   )

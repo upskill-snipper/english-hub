@@ -18,10 +18,12 @@ import {
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { useT } from '@/lib/i18n/use-t'
 
 // ─── Page ────────────────────────────────────────────────────────────────────
 
 export default function OCRComparisonGuidePage() {
+  const t = useT()
   return (
     <div className="space-y-10 pb-16">
       {/* ── Back nav ──────────────────────────────────────────────────── */}
@@ -33,7 +35,7 @@ export default function OCRComparisonGuidePage() {
           render={<Link href="/revision/poetry/ocr" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to OCR Anthology
+          {t('poetry_hub.ocr.back_to_anthology')}
         </Button>
       </div>
 
@@ -46,17 +48,16 @@ export default function OCRComparisonGuidePage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Sparkles className="mr-1 size-3" />
-              OCR Towards a World Unknown
+              {t('poetry_hub.ocr.badge_anthology')}
             </Badge>
             <Badge className="bg-primary/10 text-primary border-primary/20">OCR</Badge>
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            How to Write a Poetry Comparison
+            {t('poetry_hub.ocr.cg.title')}
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            A step-by-step guide to writing a top-band OCR poetry comparison essay. Covers
-            structure, technique, and the most common mistakes students make.
+            {t('poetry_hub.ocr.cg.lead')}
           </p>
         </div>
       </section>
@@ -68,7 +69,7 @@ export default function OCRComparisonGuidePage() {
             <Target className="size-5 text-primary" />
           </div>
           <h2 className="text-heading-lg font-heading text-foreground">
-            What the OCR exam asks you to do
+            {t('poetry_hub.ocr.cg.what_asks_title')}
           </h2>
         </div>
 
@@ -91,20 +92,30 @@ export default function OCRComparisonGuidePage() {
         <div className="mt-5 grid gap-4 sm:grid-cols-3">
           <div className="rounded-xl border border-border/40 bg-background/50 p-4 text-center">
             <Clock className="mx-auto mb-2 size-5 text-clay-600" />
-            <p className="text-sm font-semibold text-foreground">Time</p>
-            <p className="mt-1 text-caption text-muted-foreground">Approximately 40 minutes</p>
+            <p className="text-sm font-semibold text-foreground">
+              {t('poetry_hub.ocr.cg.time_label')}
+            </p>
+            <p className="mt-1 text-caption text-muted-foreground">
+              {t('poetry_hub.ocr.cg.time_value')}
+            </p>
           </div>
           <div className="rounded-xl border border-border/40 bg-background/50 p-4 text-center">
             <Target className="mx-auto mb-2 size-5 text-emerald-400" />
-            <p className="text-sm font-semibold text-foreground">Marks</p>
+            <p className="text-sm font-semibold text-foreground">
+              {t('poetry_hub.ocr.cg.marks_label')}
+            </p>
             <p className="mt-1 text-caption text-muted-foreground">
-              Up to 24 marks for this section
+              {t('poetry_hub.ocr.cg.marks_value')}
             </p>
           </div>
           <div className="rounded-xl border border-border/40 bg-background/50 p-4 text-center">
             <Layers className="mx-auto mb-2 size-5 text-violet-400" />
-            <p className="text-sm font-semibold text-foreground">Assessment</p>
-            <p className="mt-1 text-caption text-muted-foreground">AO1, AO2, AO3 are all tested</p>
+            <p className="text-sm font-semibold text-foreground">
+              {t('poetry_hub.ocr.cg.assess_label')}
+            </p>
+            <p className="mt-1 text-caption text-muted-foreground">
+              {t('poetry_hub.ocr.cg.assess_value')}
+            </p>
           </div>
         </div>
       </section>
@@ -116,7 +127,7 @@ export default function OCRComparisonGuidePage() {
             <Layers className="size-5 text-violet-400" />
           </div>
           <h2 className="text-heading-lg font-heading text-foreground">
-            The Assessment Objectives
+            {t('poetry_hub.ocr.cg.aos_title')}
           </h2>
         </div>
 
@@ -184,7 +195,7 @@ export default function OCRComparisonGuidePage() {
             <PenLine className="size-5 text-primary" />
           </div>
           <h2 className="text-heading-lg font-heading text-foreground">
-            Recommended Essay Structure
+            {t('poetry_hub.ocr.cg.structure_title')}
           </h2>
         </div>
 
@@ -286,7 +297,9 @@ export default function OCRComparisonGuidePage() {
           <div className="flex size-10 items-center justify-center rounded-xl bg-cyan-500/10">
             <GitCompareArrows className="size-5 text-cyan-400" />
           </div>
-          <h2 className="text-heading-lg font-heading text-foreground">Comparison Connectives</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {t('poetry_hub.ocr.cg.connectives_title')}
+          </h2>
         </div>
 
         <p className="mb-5 text-body-sm text-muted-foreground leading-relaxed">
@@ -296,7 +309,9 @@ export default function OCRComparisonGuidePage() {
 
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-border/40 bg-background/50 p-4">
-            <h3 className="mb-2 text-sm font-semibold text-emerald-400">For similarities</h3>
+            <h3 className="mb-2 text-sm font-semibold text-emerald-400">
+              {t('poetry_hub.ocr.cg.connectives_sim')}
+            </h3>
             <ul className="space-y-1 text-body-sm text-muted-foreground">
               <li>"Similarly, [Poet B] also..."</li>
               <li>"This idea is echoed in [Poem B], where..."</li>
@@ -307,7 +322,9 @@ export default function OCRComparisonGuidePage() {
           </div>
 
           <div className="rounded-xl border border-border/40 bg-background/50 p-4">
-            <h3 className="mb-2 text-sm font-semibold text-red-400">For differences</h3>
+            <h3 className="mb-2 text-sm font-semibold text-red-400">
+              {t('poetry_hub.ocr.cg.connectives_diff')}
+            </h3>
             <ul className="space-y-1 text-body-sm text-muted-foreground">
               <li>"However, [Poet B] takes a different approach..."</li>
               <li>"In contrast, [Poem B] suggests..."</li>
@@ -326,7 +343,7 @@ export default function OCRComparisonGuidePage() {
             <MessageSquareQuote className="size-5 text-pink-400" />
           </div>
           <h2 className="text-heading-lg font-heading text-foreground">
-            How to Analyse a Quotation
+            {t('poetry_hub.ocr.cg.quoting_title')}
           </h2>
         </div>
 
@@ -384,7 +401,7 @@ export default function OCRComparisonGuidePage() {
             <Lightbulb className="size-5 text-clay-600" />
           </div>
           <h2 className="text-heading-lg font-heading text-foreground">
-            Choosing Your Comparison Poem
+            {t('poetry_hub.ocr.cg.choosing_title')}
           </h2>
         </div>
 
@@ -397,7 +414,7 @@ export default function OCRComparisonGuidePage() {
           <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/[0.04] p-4">
             <div className="mb-2 flex items-center gap-2">
               <CheckCircle2 className="size-4 text-emerald-400" />
-              <h3 className="text-sm font-semibold text-foreground">Do</h3>
+              <h3 className="text-sm font-semibold text-foreground">{t('poetry_hub.ocr.cg.do')}</h3>
             </div>
             <ul className="space-y-2 text-body-sm text-muted-foreground leading-relaxed">
               <li>
@@ -419,7 +436,9 @@ export default function OCRComparisonGuidePage() {
           <div className="rounded-xl border border-red-500/20 bg-red-500/[0.04] p-4">
             <div className="mb-2 flex items-center gap-2">
               <AlertTriangle className="size-4 text-red-400" />
-              <h3 className="text-sm font-semibold text-foreground">Avoid</h3>
+              <h3 className="text-sm font-semibold text-foreground">
+                {t('poetry_hub.ocr.cg.avoid')}
+              </h3>
             </div>
             <ul className="space-y-2 text-body-sm text-muted-foreground leading-relaxed">
               <li>
@@ -446,7 +465,9 @@ export default function OCRComparisonGuidePage() {
           <div className="flex size-10 items-center justify-center rounded-xl bg-red-500/10">
             <AlertTriangle className="size-5 text-red-400" />
           </div>
-          <h2 className="text-heading-lg font-heading text-foreground">Common Mistakes to Avoid</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {t('poetry_hub.ocr.cg.mistakes_title')}
+          </h2>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2">
@@ -495,7 +516,9 @@ export default function OCRComparisonGuidePage() {
           <div className="flex size-10 items-center justify-center rounded-xl bg-emerald-500/10">
             <CheckCircle2 className="size-5 text-emerald-400" />
           </div>
-          <h2 className="text-heading-lg font-heading text-foreground">Top-Band Checklist</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {t('poetry_hub.ocr.cg.checklist_title')}
+          </h2>
         </div>
 
         <p className="mb-5 text-body-sm text-muted-foreground leading-relaxed">
@@ -526,7 +549,7 @@ export default function OCRComparisonGuidePage() {
       {/* ── Copyright note ────────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-muted/30 p-5 sm:p-6">
         <h2 className="text-heading-sm font-heading text-foreground">
-          About quotations in your exam
+          {t('poetry_hub.ocr.cg.quotes_in_exam_title')}
         </h2>
         <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
           The exam paper prints the given poem in full. For your chosen comparison poem, you must
@@ -539,7 +562,9 @@ export default function OCRComparisonGuidePage() {
       {/* ── Back CTA ──────────────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8 text-center">
         <BookOpen className="mx-auto mb-3 size-8 text-primary" />
-        <h2 className="text-heading-lg font-heading text-foreground">Ready to practise?</h2>
+        <h2 className="text-heading-lg font-heading text-foreground">
+          {t('poetry_hub.ocr.cg.ready_practise')}
+        </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
           Try one of our 10 ready-made essay plans, or head to your cluster to revise individual
           poems.
@@ -550,11 +575,11 @@ export default function OCRComparisonGuidePage() {
             size="lg"
             render={<Link href="/revision/poetry/ocr/essay-plans" />}
           >
-            Essay Plans
+            {t('poetry_hub.ocr.cg.essay_plans_cta')}
             <ArrowRight className="size-4" />
           </Button>
           <Button variant="outline" size="lg" render={<Link href="/revision/poetry/ocr" />}>
-            Back to OCR Anthology
+            {t('poetry_hub.ocr.back_to_anthology')}
           </Button>
         </div>
       </section>

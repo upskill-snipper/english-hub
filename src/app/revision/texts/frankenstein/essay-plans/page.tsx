@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { getServerBoard } from '@/lib/board/get-server-board'
+import { t } from '@/lib/i18n/t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
@@ -275,6 +276,12 @@ export default async function FrankensteinEssayPlansPage() {
     redirect('/revision/texts')
   }
 
+  const tEssayTpl = await t('rev.texts.common.essay_n')
+  const tIntroduction = await t('rev.texts.common.introduction')
+  const tAnalysis = await t('rev.texts.common.analysis')
+  const tContextLink = await t('rev.texts.common.context_link')
+  const tConclusion = await t('rev.texts.common.conclusion')
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -301,13 +308,13 @@ export default async function FrankensteinEssayPlansPage() {
             render={<Link href="/revision/texts/frankenstein" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Frankenstein
+            {await t('rev.texts.fr.back')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <FileText className="mr-1 size-3 text-blue-400" />
-              Essay Plans
+              {await t('rev.texts.common.essay_plans')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               AQA / Edexcel / OCR
@@ -315,12 +322,13 @@ export default async function FrankensteinEssayPlansPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Model Essay Plans
+            {await t('rev.texts.fr.essays.title')}
           </h1>
-          <p className="mt-2 text-body-lg text-muted-foreground">Frankenstein by Mary Shelley</p>
+          <p className="mt-2 text-body-lg text-muted-foreground">
+            {await t('rev.texts.fr.byline')}
+          </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Five exam-ready essay plans with introductions, three-paragraph structures, embedded
-            quotations, analysis, context, and conclusions.
+            {await t('rev.texts.fr.essays.intro')}
           </p>
         </div>
       </section>
@@ -331,7 +339,9 @@ export default async function FrankensteinEssayPlansPage() {
           <div className="mb-5 flex items-center gap-3">
             <FileText className="size-5 text-blue-400" />
             <div>
-              <h2 className="text-heading-lg font-heading text-foreground">Essay {idx + 1}</h2>
+              <h2 className="text-heading-lg font-heading text-foreground">
+                {tEssayTpl.replace('{n}', String(idx + 1))}
+              </h2>
               <p className="text-body-sm font-medium text-muted-foreground italic">
                 &ldquo;{plan.question}&rdquo;
               </p>
@@ -342,7 +352,7 @@ export default async function FrankensteinEssayPlansPage() {
             {/* Introduction */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-heading-md font-heading">Introduction</CardTitle>
+                <CardTitle className="text-heading-md font-heading">{tIntroduction}</CardTitle>
               </CardHeader>
               <CardContent className="text-body-sm text-muted-foreground">
                 <p>{plan.introduction}</p>
@@ -373,13 +383,13 @@ export default async function FrankensteinEssayPlansPage() {
 
                   {/* Analysis */}
                   <div>
-                    <p className="text-sm font-semibold text-foreground mb-1">Analysis</p>
+                    <p className="text-sm font-semibold text-foreground mb-1">{tAnalysis}</p>
                     <p className="text-body-sm text-muted-foreground">{para.analysis}</p>
                   </div>
 
                   {/* Context */}
                   <div className="rounded-lg border-l-4 border-l-emerald-400 bg-muted/30 p-4">
-                    <p className="text-sm font-semibold text-foreground mb-1">Context link</p>
+                    <p className="text-sm font-semibold text-foreground mb-1">{tContextLink}</p>
                     <p className="text-body-sm text-muted-foreground">{para.contextLink}</p>
                   </div>
                 </CardContent>
@@ -389,7 +399,7 @@ export default async function FrankensteinEssayPlansPage() {
             {/* Conclusion */}
             <Card className="bg-primary/5">
               <CardHeader>
-                <CardTitle className="text-heading-md font-heading">Conclusion</CardTitle>
+                <CardTitle className="text-heading-md font-heading">{tConclusion}</CardTitle>
               </CardHeader>
               <CardContent className="text-body-sm text-muted-foreground">
                 <p>{plan.conclusion}</p>
@@ -405,7 +415,9 @@ export default async function FrankensteinEssayPlansPage() {
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-3">
               <Lightbulb className="size-5 text-clay-600" />
-              <p className="text-sm font-semibold text-foreground">General exam strategy</p>
+              <p className="text-sm font-semibold text-foreground">
+                {await t('rev.texts.fr.essays.general_strategy')}
+              </p>
             </div>
             <ul className="space-y-2 text-body-sm text-muted-foreground">
               <li className="flex gap-2">
@@ -445,8 +457,7 @@ export default async function FrankensteinEssayPlansPage() {
 
       {/* Footer */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        <em>Frankenstein; or, The Modern Prometheus</em> (1818) by Mary Shelley is in the public
-        domain. All quotations are reproduced freely.
+        {await t('rev.texts.fr.public_domain')}
       </p>
     </div>
   )

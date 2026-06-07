@@ -3,6 +3,7 @@
 
 import Link from 'next/link'
 import { ArrowLeft, BookOpen, GitCompare } from 'lucide-react'
+import { useT } from '@/lib/i18n/use-t'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
@@ -440,6 +441,7 @@ const comparisons = [
 /* ── Page ─────────────────────────────────────────────────────────── */
 
 export default function RememberPage() {
+  const tr = useT()
   return (
     <div className="space-y-8">
       <div>
@@ -450,7 +452,7 @@ export default function RememberPage() {
           render={<Link href="/igcse/edexcel/poetry" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Anthology
+          {tr('anth_text.back_to_anthology')}
         </Button>
 
         <div className="flex items-center gap-3">
@@ -463,7 +465,7 @@ export default function RememberPage() {
               Christina Rossetti &middot; Edexcel IGCSE Anthology
             </p>
             <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
-              Edexcel IGCSE Literature
+              {tr('igcse.page.badge_edexcel_lit')}
             </Badge>
           </div>
         </div>
@@ -476,7 +478,9 @@ export default function RememberPage() {
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">
         <div className="flex items-center gap-2 mb-4">
           <GitCompare className="size-4.5 text-muted-foreground" />
-          <h2 className="text-heading-sm font-heading text-foreground">Compare with</h2>
+          <h2 className="text-heading-sm font-heading text-foreground">
+            {tr('anth_text.section.compare_with')}
+          </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
           The Edexcel exam asks you to compare the named poem with another from the anthology. These

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ArrowLeft, BookOpen, Calendar, Clock, Lightbulb, Sparkles, Users } from 'lucide-react'
 
 import StudyTools from '@/components/study/StudyTools'
+import { useT } from '@/lib/i18n/use-t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ────────────────────────────────────────────────────────────────────── */
@@ -195,6 +196,7 @@ const TIMELINE: TimelineEvent[] = [
 /* ────────────────────────────────────────────────────────────────────── */
 
 export default function AnimalFarmContextPage() {
+  const t = useT()
   return (
     <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
@@ -217,29 +219,25 @@ export default function AnimalFarmContextPage() {
             className="mb-4 inline-flex items-center gap-1 text-sm text-primary hover:text-primary/80"
           >
             <ArrowLeft className="size-3.5" />
-            Back to Animal Farm
+            {t('rev.texts.af.back')}
           </Link>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1 rounded-full bg-clay-500/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-clay-700 dark:text-clay-300">
               <Calendar className="size-3" />
-              Historical Context
+              {t('rev.texts.common.historical_context')}
             </span>
             <span className="inline-flex items-center gap-1 rounded-full border border-border/60 px-3 py-1 text-xs text-primary">
               <Sparkles className="size-3" />
-              AO3 &mdash; Context
+              {t('rev.texts.af.context.ao3_badge')}
             </span>
           </div>
 
           <h1 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Animal Farm &mdash; Context
+            {t('rev.texts.af.context.title')}
           </h1>
-          <p className="mt-2 text-lg text-muted-foreground">by George Orwell &mdash; 1945</p>
-          <p className="mt-4 max-w-2xl text-muted-foreground">
-            Historical and social context for GCSE literature. Covers the Russian Revolution, Stalin
-            vs Trotsky, Orwell&rsquo;s democratic socialism, the Spanish Civil War, allegory and
-            satire, publication difficulties and Cold War relevance.
-          </p>
+          <p className="mt-2 text-lg text-muted-foreground">{t('rev.texts.af.context.byline')}</p>
+          <p className="mt-4 max-w-2xl text-muted-foreground">{t('rev.texts.af.context.intro')}</p>
         </section>
 
         {/* Exam tip banner */}
@@ -247,14 +245,10 @@ export default function AnimalFarmContextPage() {
           <div className="flex items-start gap-3">
             <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-700 dark:text-clay-300" />
             <div className="text-sm text-muted-foreground">
-              <p className="mb-1 font-bold text-foreground">AO3 &mdash; What examiners want</p>
-              <p>
-                AO3 rewards you for showing how <strong>context shapes meaning</strong>. Do not
-                simply list facts about the Russian Revolution &mdash; explain how the allegorical
-                parallels affect the reader&rsquo;s understanding of Orwell&rsquo;s purpose. The
-                best answers show <em>why</em> Orwell chose to tell this story through animals on a
-                farm.
+              <p className="mb-1 font-bold text-foreground">
+                {t('rev.texts.af.context.ao3_want_h')}
               </p>
+              <p>{t('rev.texts.af.context.ao3_want_body')}</p>
             </div>
           </div>
         </section>
@@ -263,7 +257,9 @@ export default function AnimalFarmContextPage() {
         <section className="mt-10">
           <div className="flex items-center gap-2 mb-4">
             <Clock className="size-5 text-primary" />
-            <h2 className="font-heading text-2xl font-bold text-foreground">Key Timeline</h2>
+            <h2 className="font-heading text-2xl font-bold text-foreground">
+              {t('rev.texts.common.key_timeline')}
+            </h2>
           </div>
           <div className="relative ml-4 border-l-2 border-border/60 pl-6 space-y-4">
             {TIMELINE.map((item, i) => (
@@ -303,7 +299,7 @@ export default function AnimalFarmContextPage() {
             {/* Key point */}
             <div className="mt-4 rounded-xl border border-primary/20 bg-primary/5 p-4">
               <p className="text-xs font-bold uppercase tracking-wider text-primary mb-1">
-                Key Point
+                {t('rev.texts.common.key_point')}
               </p>
               <p className="text-sm leading-relaxed text-foreground font-medium">
                 {section.keyPoint}
@@ -316,7 +312,7 @@ export default function AnimalFarmContextPage() {
                 <Lightbulb className="mt-0.5 size-4 shrink-0 text-clay-700 dark:text-clay-300" />
                 <div>
                   <p className="mb-1 text-xs font-bold uppercase tracking-wider text-clay-700 dark:text-clay-300">
-                    Using This in Your Essay
+                    {t('rev.texts.common.using_in_essay')}
                   </p>
                   <p className="text-sm leading-relaxed text-muted-foreground">
                     {section.examLink}
@@ -335,7 +331,7 @@ export default function AnimalFarmContextPage() {
         {/* Allegory quick-reference */}
         <section className="mt-12">
           <h2 className="font-heading text-2xl font-bold text-foreground mb-4">
-            Quick Reference: Allegorical Parallels
+            {t('rev.texts.af.context.quick_ref_h')}
           </h2>
           <div className="overflow-x-auto rounded-xl border border-border/60">
             <table className="w-full text-sm">
@@ -401,41 +397,37 @@ export default function AnimalFarmContextPage() {
 
         {/* Navigation */}
         <section className="mt-14 rounded-xl border border-border/60 bg-primary/5 p-6">
-          <h3 className="font-heading text-xl font-bold text-foreground">Continue studying</h3>
+          <h3 className="font-heading text-xl font-bold text-foreground">
+            {t('rev.texts.common.continue_studying')}
+          </h3>
           <p className="mt-1 text-sm text-muted-foreground">
-            Explore characters, themes, key quotes and essay plans for Animal Farm.
+            {t('rev.texts.af.context.continue_sub')}
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link
               href="/revision/texts/animal-farm/characters"
               className="inline-flex items-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
             >
-              Characters
+              {t('rev.texts.common.characters')}
             </Link>
             <Link
               href="/revision/texts/animal-farm/themes"
               className="inline-flex items-center rounded-lg border border-border/60 bg-card px-4 py-2 text-sm font-medium text-primary hover:bg-primary/5"
             >
-              Themes
+              {t('rev.texts.common.themes')}
             </Link>
             <Link
               href="/revision/texts/animal-farm/key-quotes"
               className="inline-flex items-center rounded-lg border border-border/60 bg-card px-4 py-2 text-sm font-medium text-primary hover:bg-primary/5"
             >
-              Key Quotes
+              {t('rev.texts.common.key_quotes')}
             </Link>
           </div>
         </section>
 
         {/* Rights / fair-dealing notice */}
         <p className="mt-10 border-t border-border/60 pt-4 text-xs text-muted-foreground">
-          <strong>Rights notice:</strong> While <em>Animal Farm</em> entered UK public domain in
-          2021, the Orwell estate (AM Heath) actively manages educational use. Quotations on this
-          page are short fair-dealing extracts; longer engagement should use a school-licensed
-          edition. Short quotations (&le;15 words each) reproduced under the fair dealing provision
-          of the Copyright, Designs and Patents Act 1988 (s.30) for the purpose of criticism, review
-          and educational study. <em>Animal Farm</em> by George Orwell is published by Penguin
-          Books. Full text available from your school or local library.
+          {t('rev.texts.af.rights_notice')}
         </p>
       </div>
     </div>

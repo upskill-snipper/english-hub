@@ -15,6 +15,7 @@ import {
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ── Essay plan data ───────────────────────────────────────────── */
 
@@ -471,6 +472,7 @@ const ESSAY_PLANS: EssayPlan[] = [
 /* ── Component ─────────────────────────────────────────────────── */
 
 export default function EssayPlansPage() {
+  const t = useT()
   return (
     <div className="space-y-10 pb-16">
       {/* ── Back link ─────────────────────────────────────────── */}
@@ -482,7 +484,7 @@ export default function EssayPlansPage() {
           render={<Link href="/revision/poetry/love-and-relationships" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Love &amp; Relationships
+          {t('rev.poetry2.lr.back_to_lr')}
         </Button>
       </div>
 
@@ -495,17 +497,17 @@ export default function EssayPlansPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Sparkles className="mr-1 size-3" />
-              AQA GCSE English Literature
+              {t('poetry_hub.lr.badge_spec')}
             </Badge>
-            <Badge className="bg-primary/10 text-primary border-primary/20">AQA Only</Badge>
+            <Badge className="bg-primary/10 text-primary border-primary/20">
+              {t('poetry_hub.lr.badge_aqa_only')}
+            </Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Essay Plans: Love &amp; Relationships
+            {t('rev.poetry2.lr.ep.title')}
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            10 fully worked comparison essay plans for AQA Paper 2 Section B. Each plan includes a
-            Grade 9 thesis, three point-by-point comparative paragraphs with quotations, and a
-            conclusion. Use these as models for structuring your own responses.
+            {t('rev.poetry2.lr.ep.lead')}
           </p>
         </div>
       </section>
@@ -516,7 +518,7 @@ export default function EssayPlansPage() {
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
             <h2 className="text-body-sm font-semibold text-foreground">
-              Key quotations only -- read the full poems
+              {t('rev.poetry2.lr.ep.copyright_title')}
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               Short extracts are included under fair dealing for the purpose of study and criticism.
@@ -530,14 +532,16 @@ export default function EssayPlansPage() {
       <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-emerald-500/[0.06] via-card to-primary/[0.04] p-6 sm:p-8">
         <div className="mb-4 flex items-center gap-3">
           <Lightbulb className="size-5 text-emerald-400" />
-          <h2 className="text-heading-md font-heading text-foreground">How to Use These Plans</h2>
+          <h2 className="text-heading-md font-heading text-foreground">
+            {t('rev.poetry2.lr.ep.how_title')}
+          </h2>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-border/40 bg-background/50 p-4">
             <div className="mb-2 flex items-center gap-2">
               <CheckCircle2 className="size-4 text-emerald-400" />
               <h3 className="text-sm font-semibold text-foreground">
-                Study the structure, not the words
+                {t('rev.poetry2.lr.ep.tip_structure_title')}
               </h3>
             </div>
             <p className="text-body-sm text-muted-foreground leading-relaxed">
@@ -548,7 +552,9 @@ export default function EssayPlansPage() {
           <div className="rounded-xl border border-border/40 bg-background/50 p-4">
             <div className="mb-2 flex items-center gap-2">
               <CheckCircle2 className="size-4 text-emerald-400" />
-              <h3 className="text-sm font-semibold text-foreground">Adapt for the exam question</h3>
+              <h3 className="text-sm font-semibold text-foreground">
+                {t('rev.poetry2.lr.ep.tip_adapt_title')}
+              </h3>
             </div>
             <p className="text-body-sm text-muted-foreground leading-relaxed">
               The exam will name one poem and ask you to choose the second. Use these plans to
@@ -559,7 +565,9 @@ export default function EssayPlansPage() {
           <div className="rounded-xl border border-border/40 bg-background/50 p-4">
             <div className="mb-2 flex items-center gap-2">
               <AlertTriangle className="size-4 text-clay-600" />
-              <h3 className="text-sm font-semibold text-foreground">Do not memorise essays</h3>
+              <h3 className="text-sm font-semibold text-foreground">
+                {t('rev.poetry2.lr.ep.tip_memorise_title')}
+              </h3>
             </div>
             <p className="text-body-sm text-muted-foreground leading-relaxed">
               AQA examiners are trained to spot pre-learned responses. Memorising full essays will
@@ -570,7 +578,9 @@ export default function EssayPlansPage() {
           <div className="rounded-xl border border-border/40 bg-background/50 p-4">
             <div className="mb-2 flex items-center gap-2">
               <Target className="size-4 text-violet-400" />
-              <h3 className="text-sm font-semibold text-foreground">Every paragraph compares</h3>
+              <h3 className="text-sm font-semibold text-foreground">
+                {t('rev.poetry2.lr.ep.tip_every_para_title')}
+              </h3>
             </div>
             <p className="text-body-sm text-muted-foreground leading-relaxed">
               Notice how every paragraph in these plans discusses both poems. This is the
@@ -683,7 +693,7 @@ export default function EssayPlansPage() {
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8 text-center">
         <BookOpen className="mx-auto mb-3 size-8 text-rose-400" />
         <h2 className="text-heading-lg font-heading text-foreground">
-          Ready to practise comparing poems?
+          {t('rev.poetry2.lr.ep.cta_title')}
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
           Learn the step-by-step method for writing comparison essays in the exam, with paragraph
@@ -695,7 +705,7 @@ export default function EssayPlansPage() {
           className="mt-5"
           render={<Link href="/revision/poetry/love-and-relationships/comparison-guide" />}
         >
-          Comparison Guide
+          {t('poetry_hub.ocr.themes.comparison_guide_cta')}
           <ArrowRight className="size-4" />
         </Button>
       </section>

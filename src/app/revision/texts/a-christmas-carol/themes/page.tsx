@@ -19,6 +19,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
+import { useT } from '@/lib/i18n/use-t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ── Theme data ──────────────────────────────────────────────────────── */
@@ -507,6 +508,7 @@ const themes: ThemeData[] = [
 /* ── Page ────────────────────────────────────────────────────────────── */
 
 export default function ThemesPage() {
+  const t = useT()
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -539,13 +541,13 @@ export default function ThemesPage() {
             render={<Link href="/revision/texts/a-christmas-carol" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to A Christmas Carol
+            {t('rev.texts.acc.themes.back')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <BookOpen className="mr-1 size-3 text-emerald-400" />
-              Deep Study
+              {t('rev.texts.common.deep_study')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -554,14 +556,13 @@ export default function ThemesPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Theme Analysis
+            {t('rev.texts.acc.themes.title')}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
-            A Christmas Carol by Charles Dickens
+            {t('rev.texts.acc.themes.byline')}
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Seven major themes explored in depth: definition, evidence from each stave, key
-            quotations, links to historical context, and essay planning tips for GCSE success.
+            {t('rev.texts.acc.themes.intro')}
           </p>
         </div>
       </section>
@@ -570,7 +571,9 @@ export default function ThemesPage() {
       <section>
         <Card>
           <CardContent className="p-4 sm:p-6">
-            <h2 className="mb-4 text-heading-md font-heading text-foreground">Jump to a Theme</h2>
+            <h2 className="mb-4 text-heading-md font-heading text-foreground">
+              {t('rev.texts.common.jump_to_theme')}
+            </h2>
             <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
               {themes.map((th) => {
                 const Icon = th.icon
@@ -619,7 +622,7 @@ export default function ThemesPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
                   <BookOpen className="size-4 text-blue-400" />
-                  Overview
+                  {t('rev.texts.common.overview')}
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-body-sm text-muted-foreground">
@@ -632,7 +635,7 @@ export default function ThemesPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
                   <Flame className="size-4 text-clay-600" />
-                  Evidence Across the Novella
+                  {t('rev.texts.common.evidence_across_novella')}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4 text-body-sm text-muted-foreground">
@@ -649,7 +652,9 @@ export default function ThemesPage() {
             <div>
               <div className="mb-4 flex items-center gap-2">
                 <Quote className="size-4 text-violet-400" />
-                <h3 className="text-heading-md font-heading text-foreground">Key Quotations</h3>
+                <h3 className="text-heading-md font-heading text-foreground">
+                  {t('rev.texts.common.key_quotations')}
+                </h3>
               </div>
               <div className="grid gap-3">
                 {theme.keyQuotes.map((q, i) => (
@@ -670,7 +675,7 @@ export default function ThemesPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
                   <BookOpen className="size-4 text-teal-400" />
-                  Links to Context
+                  {t('rev.texts.common.links_to_context')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -687,11 +692,11 @@ export default function ThemesPage() {
               <CardContent className="p-5 sm:p-6">
                 <h4 className="mb-3 text-sm font-semibold text-foreground flex items-center gap-2">
                   <Lightbulb className="size-4 text-clay-600" />
-                  Essay Planning Tips
+                  {t('rev.texts.common.essay_planning_tips')}
                 </h4>
                 <ul className="list-disc space-y-2 pl-4 text-body-sm text-muted-foreground">
-                  {theme.essayTips.map((t, i) => (
-                    <li key={i}>{t}</li>
+                  {theme.essayTips.map((tip, i) => (
+                    <li key={i}>{tip}</li>
                   ))}
                 </ul>
               </CardContent>
@@ -702,8 +707,7 @@ export default function ThemesPage() {
 
       {/* Public domain notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        A Christmas Carol by Charles Dickens (1843) is in the public domain. Quotations are
-        reproduced freely as the text is no longer subject to copyright.
+        {t('rev.texts.acc.themes.public_domain')}
       </p>
     </div>
   )

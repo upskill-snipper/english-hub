@@ -9,6 +9,7 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { GeoFaq, type GeoFaqItem } from '@/components/seo/GeoFaq'
+import { t } from '@/lib/i18n/t'
 
 const AIC_FAQS: GeoFaqItem[] = [
   {
@@ -892,10 +893,7 @@ export default async function AnInspectorCallsPage() {
         <GeoFaq faqs={AIC_FAQS} heading="An Inspector Calls: frequently asked questions" />
       </section>
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations (&le;15 words each) reproduced under the fair dealing provision of the
-        Copyright, Designs and Patents Act 1988 for the purpose of criticism, review and educational
-        study. <em>An Inspector Calls</em> &copy; J.B. Priestley Estate. Full text available from
-        your school or local library.
+        {await t('rev.texts.aic.fair_dealing')}
       </p>
     </>
   )

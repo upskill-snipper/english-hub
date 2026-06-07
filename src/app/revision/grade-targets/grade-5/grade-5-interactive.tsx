@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { CheckCircle2, XCircle, Lightbulb, ChevronDown, ChevronUp } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
+import { useT } from '@/lib/i18n/use-t'
 
 const CHECKLIST_ITEMS = [
   'I can identify and name language techniques (metaphor, simile, alliteration, etc.)',
@@ -18,6 +19,7 @@ const CHECKLIST_ITEMS = [
 ]
 
 export function Grade5Checklist() {
+  const t = useT()
   const [checkedItems, setCheckedItems] = useState<Set<number>>(new Set())
 
   const toggleItem = (index: number) => {
@@ -37,11 +39,12 @@ export function Grade5Checklist() {
         <div className="flex size-9 items-center justify-center rounded-lg bg-amber-500/10">
           <CheckCircle2 className="size-4.5 text-clay-600" />
         </div>
-        <h2 className="text-heading-md font-heading text-foreground">Mastery Checklist</h2>
+        <h2 className="text-heading-md font-heading text-foreground">
+          {t('rev.misc.gradeint.checklist_title')}
+        </h2>
       </div>
       <p className="text-body-sm text-muted-foreground mb-5">
-        Tick off each skill as you feel confident with it. Aim to have all of these ticked before
-        your exam.
+        {t('rev.misc.gradeint.checklist_desc')}
       </p>
 
       <div className="flex items-center gap-3 mb-5">
@@ -101,6 +104,7 @@ export function Grade5ComparisonExample({
   higherEssay: string
   contextNote?: string
 }) {
+  const t = useT()
   const [show, setShow] = useState(false)
 
   return (
@@ -110,7 +114,9 @@ export function Grade5ComparisonExample({
           <Lightbulb className="size-4.5 text-primary" />
         </div>
         <h2 className="text-heading-md font-heading text-foreground">
-          {lowerLabel} vs {higherLabel}: See the Difference
+          {t('rev.misc.gradeint.compare_title')
+            .replace('{lower}', lowerLabel)
+            .replace('{higher}', higherLabel)}
         </h2>
       </div>
       <p className="text-body-sm text-muted-foreground mb-5">
@@ -124,7 +130,7 @@ export function Grade5ComparisonExample({
         className="flex items-center gap-2 text-sm font-medium text-primary mb-4 hover:underline"
       >
         {show ? <ChevronUp className="size-4" /> : <ChevronDown className="size-4" />}
-        {show ? 'Hide comparison' : 'Show comparison'}
+        {show ? t('rev.misc.gradeint.hide_comparison') : t('rev.misc.gradeint.show_comparison')}
       </button>
 
       {show && (

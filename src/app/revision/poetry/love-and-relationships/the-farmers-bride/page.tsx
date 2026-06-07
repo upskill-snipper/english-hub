@@ -9,6 +9,7 @@ import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { useT } from '@/lib/i18n/use-t'
 /* ── Poem data ─────────────────────────────────────────────────────── */
 
 const farmersBridePoem: PoemData = {
@@ -554,6 +555,7 @@ const comparePoems = [
 /* ── Page component ────────────────────────────────────────────────── */
 
 export default function TheFarmersBridePage() {
+  const t = useT()
   return (
     <div className="space-y-8">
       <CourseJsonLd
@@ -584,7 +586,7 @@ export default function TheFarmersBridePage() {
           render={<Link href="/revision/poetry/love-and-relationships" />}
         >
           <ArrowLeft className="size-3.5" />
-          Love and Relationships
+          {t('rev.poetry.shared.back_label_love_and_relationships')}
         </Button>
         <div className="flex flex-wrap items-center gap-2 mb-1">
           <h1 className="text-heading-lg font-heading text-foreground">The Farmer&apos;s Bride</h1>
@@ -623,7 +625,9 @@ export default function TheFarmersBridePage() {
 
       {/* ── Compare with ─────────────────────────────────────────── */}
       <section className="space-y-4">
-        <h2 className="text-heading-md font-heading text-foreground">Compare with</h2>
+        <h2 className="text-heading-md font-heading text-foreground">
+          {t('rev.poetry.shared.compare_with')}
+        </h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {comparePoems.map((cp) => (
             <div

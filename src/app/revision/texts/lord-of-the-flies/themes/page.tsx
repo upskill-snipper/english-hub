@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ArrowLeft, Lightbulb, Quote, Flame, Shield, Skull, Eye } from 'lucide-react'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
+import { t } from '@/lib/i18n/t'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -257,6 +258,12 @@ export default async function LotFThemesPage() {
     redirect('/revision/texts')
   }
 
+  const tKeyPoints = await t('rev.texts.common.key_points')
+  const tWritersMethods = await t('rev.texts.common.writers_methods')
+  const tMeaning = await t('rev.texts.common.meaning')
+  const tKeyQuotation = await t('rev.texts.common.key_quotation')
+  const tDevelopment = await t('rev.texts.lotf.themes.development')
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -276,10 +283,10 @@ export default async function LotFThemesPage() {
       />
       <Breadcrumb
         items={[
-          { label: 'Revision', href: '/revision' },
-          { label: 'Set Texts', href: '/revision/texts' },
+          { label: await t('rev.texts.common.crumb_revision'), href: '/revision' },
+          { label: await t('rev.texts.common.crumb_set_texts'), href: '/revision/texts' },
           { label: 'Lord of the Flies', href: '/revision/texts/lord-of-the-flies' },
-          { label: 'Themes' },
+          { label: await t('rev.texts.common.themes') },
         ]}
       />
 
@@ -295,13 +302,13 @@ export default async function LotFThemesPage() {
             render={<Link href="/revision/texts/lord-of-the-flies" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Lord of the Flies
+            {await t('rev.texts.lotf.back')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Lightbulb className="mr-1 size-3 text-clay-600" />
-              Themes & Symbolism
+              {await t('rev.texts.lotf.themes.badge')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               AQA / OCR / Eduqas
@@ -309,15 +316,13 @@ export default async function LotFThemesPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Lord of the Flies -- Themes & Symbolism
+            {await t('rev.texts.lotf.themes.title')}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
-            by William Golding -- published 1954
+            {await t('rev.texts.lotf.byline')}
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Detailed analysis of the novel's key themes -- civilisation vs savagery, power,
-            innocence and fear -- plus the four central symbols: the conch, the signal fire, the
-            beast and the pig's head.
+            {await t('rev.texts.lotf.themes.intro')}
           </p>
         </div>
       </section>
@@ -326,7 +331,9 @@ export default async function LotFThemesPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Lightbulb className="size-5 text-clay-600" />
-          <h2 className="text-heading-lg font-heading text-foreground">Key Themes</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {await t('rev.texts.common.key_themes')}
+          </h2>
         </div>
       </section>
 
@@ -351,7 +358,7 @@ export default async function LotFThemesPage() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
                     <Shield className="size-4 text-blue-400" />
-                    Key Points
+                    {tKeyPoints}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-2 text-body-sm text-muted-foreground">
@@ -369,7 +376,7 @@ export default async function LotFThemesPage() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
                     <Eye className="size-4 text-emerald-400" />
-                    Writer's Methods
+                    {tWritersMethods}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-2 text-body-sm text-muted-foreground">
@@ -403,7 +410,9 @@ export default async function LotFThemesPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Skull className="size-5 text-violet-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">Key Symbols</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {await t('rev.texts.common.key_symbols')}
+          </h2>
         </div>
         <p className="mb-6 text-body-sm text-muted-foreground max-w-2xl">
           Golding threads four central symbols through the novel. Each evolves across the twelve
@@ -422,13 +431,11 @@ export default async function LotFThemesPage() {
             {/* Meaning & Development */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-heading-md font-heading">Meaning</CardTitle>
+                <CardTitle className="text-heading-md font-heading">{tMeaning}</CardTitle>
                 <CardDescription>{sym.meaning}</CardDescription>
               </CardHeader>
               <CardContent className="space-y-2 text-body-sm text-muted-foreground">
-                <p className="text-sm font-semibold text-foreground mb-2">
-                  Development through the novel
-                </p>
+                <p className="text-sm font-semibold text-foreground mb-2">{tDevelopment}</p>
                 {sym.development.map((d, i) => (
                   <div key={i} className="flex gap-2">
                     <span className="mt-1 block size-1.5 shrink-0 rounded-full bg-violet-400/60" />
@@ -443,7 +450,7 @@ export default async function LotFThemesPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
                   <Quote className="size-4 text-primary" />
-                  Key Quotation
+                  {tKeyQuotation}
                 </CardTitle>
                 <CardDescription>{sym.keyQuote.speaker}</CardDescription>
               </CardHeader>
@@ -459,10 +466,7 @@ export default async function LotFThemesPage() {
 
       {/* Copyright notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations from <em>Lord of the Flies</em> by William Golding (1954) are reproduced
-        under the fair dealing provision of the Copyright, Designs and Patents Act 1988 for the
-        purpose of criticism, review and educational study. Full text available from your school or
-        local library.
+        {await t('rev.texts.lotf.fair_dealing')}
       </p>
     </div>
   )

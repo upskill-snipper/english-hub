@@ -5,6 +5,7 @@ import { ArrowLeft, Sparkles, Info, Quote } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
+import { useT } from '@/lib/i18n/use-t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 const themeGroups = [
@@ -161,16 +162,23 @@ const themeGroups = [
 ]
 
 export default function ThingsFallApartKeyQuotesPage() {
+  const tr = useT()
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
-          { name: "Edexcel IGCSE Literature", url: "https://theenglishhub.app/igcse/edexcel" },
-          { name: "Prose", url: "https://theenglishhub.app/igcse/edexcel/prose" },
-          { name: "Things Fall Apart", url: "https://theenglishhub.app/igcse/edexcel/prose/things-fall-apart" },
-          { name: "Key Quotations", url: "https://theenglishhub.app/igcse/edexcel/prose/things-fall-apart/key-quotes" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
+          { name: 'Edexcel IGCSE Literature', url: 'https://theenglishhub.app/igcse/edexcel' },
+          { name: 'Prose', url: 'https://theenglishhub.app/igcse/edexcel/prose' },
+          {
+            name: 'Things Fall Apart',
+            url: 'https://theenglishhub.app/igcse/edexcel/prose/things-fall-apart',
+          },
+          {
+            name: 'Key Quotations',
+            url: 'https://theenglishhub.app/igcse/edexcel/prose/things-fall-apart/key-quotes',
+          },
         ]}
       />
       <div>
@@ -180,31 +188,27 @@ export default function ThingsFallApartKeyQuotesPage() {
           render={<Link href="/igcse/edexcel/prose/things-fall-apart" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Things Fall Apart
+          {tr('igcse.page.back_to')} Things Fall Apart
         </Button>
       </div>
 
-      <StudyTools
-        textName="Things Fall Apart"
-        textType="novel"
-        examBoard="IGCSE Edexcel"
-      />
+      <StudyTools textName="Things Fall Apart" textType="novel" examBoard="IGCSE Edexcel" />
 
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 lg:p-10">
         <div className="relative">
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="border-primary/20 bg-primary/10 text-primary">
               <Sparkles className="mr-1 size-3" />
-              Edexcel IGCSE Literature
+              {tr('igcse.page.badge_edexcel_lit')}
             </Badge>
-            <Badge variant="secondary">Key Quotes</Badge>
+            <Badge variant="secondary">{tr('igcse.page.section.key_quotes')}</Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
             Things Fall Apart: Key Quotes
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Twenty essential quotations organised by theme &mdash; with speaker,
-            context and analysis for exam revision.
+            Twenty essential quotations organised by theme &mdash; with speaker, context and
+            analysis for exam revision.
           </p>
         </div>
       </section>
@@ -213,14 +217,11 @@ export default function ThingsFallApartKeyQuotesPage() {
         <div className="flex gap-3">
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
-            <h2 className="text-body-sm font-semibold text-foreground">
-              Fair dealing notice
-            </h2>
+            <h2 className="text-body-sm font-semibold text-foreground">Fair dealing notice</h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
-              All quotations are short extracts included under the fair dealing
-              provision of the Copyright, Designs and Patents Act 1988 for the
-              purpose of criticism, review and study. This page is not a
-              substitute for reading the full novel.
+              All quotations are short extracts included under the fair dealing provision of the
+              Copyright, Designs and Patents Act 1988 for the purpose of criticism, review and
+              study. This page is not a substitute for reading the full novel.
             </p>
           </div>
         </div>
@@ -230,22 +231,15 @@ export default function ThingsFallApartKeyQuotesPage() {
         <section key={group.theme}>
           <div className="mb-5 flex items-center gap-3">
             <Quote className="size-5 text-primary" />
-            <h2 className="text-heading-lg font-heading text-foreground">
-              {group.theme}
-            </h2>
+            <h2 className="text-heading-lg font-heading text-foreground">{group.theme}</h2>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
             {group.quotes.map((q, i) => (
-              <div
-                key={i}
-                className="rounded-xl border border-border/60 bg-card p-5"
-              >
+              <div key={i} className="rounded-xl border border-border/60 bg-card p-5">
                 <blockquote className="border-l-2 border-primary/40 pl-3 text-body-md italic text-foreground">
                   &ldquo;{q.text}&rdquo;
                 </blockquote>
-                <p className="mt-2 text-body-xs font-medium text-primary">
-                  &mdash; {q.speaker}
-                </p>
+                <p className="mt-2 text-body-xs font-medium text-primary">&mdash; {q.speaker}</p>
                 <p className="mt-2 text-body-sm leading-relaxed text-muted-foreground">
                   {q.analysis}
                 </p>
@@ -256,9 +250,8 @@ export default function ThingsFallApartKeyQuotesPage() {
       ))}
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Things Fall Apart &copy; The Estate of Chinua Achebe. Short quotations
-        reproduced under the fair dealing provision of the CDPA 1988 for
-        criticism and review.
+        Things Fall Apart &copy; The Estate of Chinua Achebe. Short quotations reproduced under the
+        fair dealing provision of the CDPA 1988 for criticism and review.
       </p>
     </div>
   )

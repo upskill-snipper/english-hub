@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button'
 import { getServerBoard } from '@/lib/board/get-server-board'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { t as tx } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Blood Brothers - Themes | The English Hub',
@@ -214,6 +215,13 @@ export default async function BloodBrothersThemesPage() {
     redirect('/revision/texts')
   }
 
+  // Pre-resolve chrome labels used inside .map() callbacks.
+  const overviewLabel = await tx('rev.texts.common.overview')
+  const howRussellLabel = await tx('rev.texts2.bb.themes.how_russell')
+  const keyQuotationsLabel = await tx('rev.texts2.common.key_quotations_sc')
+  const contextualLinkLabel = await tx('rev.texts2.common.contextual_link_sc')
+  const examTipLabel = await tx('rev.texts2.common.exam_tip')
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -240,13 +248,13 @@ export default async function BloodBrothersThemesPage() {
             render={<Link href="/revision/texts/blood-brothers" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Blood Brothers
+            {(await tx('rev.texts.common.back_to_text')).replace('{text}', 'Blood Brothers')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Drama className="mr-1 size-3 text-violet-400" />
-              Modern Text - Play
+              {await tx('rev.texts2.common.modern_text_play')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -255,12 +263,11 @@ export default async function BloodBrothersThemesPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Theme Analysis
+            {await tx('rev.texts.common.theme_analysis')}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">Blood Brothers by Willy Russell</p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Six major themes explored in depth with Russell&apos;s methods, contextual links and
-            examiner guidance. All quotes are 15 words or fewer.
+            {await tx('rev.texts2.bb.themes.intro')}
           </p>
         </div>
       </section>
@@ -269,7 +276,9 @@ export default async function BloodBrothersThemesPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Lightbulb className="size-5 text-clay-600" />
-          <h2 className="text-heading-lg font-heading text-foreground">Themes</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {await tx('rev.texts.common.themes')}
+          </h2>
         </div>
         <div className="space-y-6">
           {THEMES.map((t) => (
@@ -280,21 +289,19 @@ export default async function BloodBrothersThemesPage() {
               <CardContent className="space-y-5">
                 {/* Overview */}
                 <div>
-                  <h3 className="mb-1 text-sm font-semibold text-foreground">Overview</h3>
+                  <h3 className="mb-1 text-sm font-semibold text-foreground">{overviewLabel}</h3>
                   <p className="text-body-sm text-muted-foreground">{t.overview}</p>
                 </div>
 
                 {/* How Russell presents it */}
                 <div>
-                  <h3 className="mb-1 text-sm font-semibold text-foreground">
-                    How Russell presents it
-                  </h3>
+                  <h3 className="mb-1 text-sm font-semibold text-foreground">{howRussellLabel}</h3>
                   <p className="text-body-sm text-muted-foreground">{t.howRussellPresentsIt}</p>
                 </div>
 
                 {/* Key quotes */}
                 <div className="space-y-3">
-                  <h3 className="text-sm font-semibold text-foreground">Key quotations</h3>
+                  <h3 className="text-sm font-semibold text-foreground">{keyQuotationsLabel}</h3>
                   {t.keyQuotes.map((q) => (
                     <div
                       key={q.text}
@@ -311,7 +318,9 @@ export default async function BloodBrothersThemesPage() {
 
                 {/* Context link */}
                 <div>
-                  <h3 className="mb-1 text-sm font-semibold text-foreground">Contextual link</h3>
+                  <h3 className="mb-1 text-sm font-semibold text-foreground">
+                    {contextualLinkLabel}
+                  </h3>
                   <p className="text-body-sm text-muted-foreground">{t.contextLink}</p>
                 </div>
 
@@ -320,7 +329,7 @@ export default async function BloodBrothersThemesPage() {
                   <div className="flex items-center gap-2 mb-1.5">
                     <Quote className="size-3.5 text-primary" />
                     <p className="text-xs font-semibold uppercase tracking-wide text-primary">
-                      Exam tip
+                      {examTipLabel}
                     </p>
                   </div>
                   <p className="text-body-sm text-muted-foreground">{t.examTip}</p>
@@ -338,7 +347,7 @@ export default async function BloodBrothersThemesPage() {
           size="sm"
           render={<Link href="/revision/texts/blood-brothers/acts" />}
         >
-          Act-by-act analysis
+          {await tx('rev.texts2.common.act_by_act_sc')}
           <ArrowRight className="size-3.5" />
         </Button>
         <Button
@@ -346,7 +355,7 @@ export default async function BloodBrothersThemesPage() {
           size="sm"
           render={<Link href="/revision/texts/blood-brothers/characters" />}
         >
-          Characters
+          {await tx('rev.texts.common.characters')}
           <ArrowRight className="size-3.5" />
         </Button>
         <Button
@@ -354,7 +363,7 @@ export default async function BloodBrothersThemesPage() {
           size="sm"
           render={<Link href="/revision/texts/blood-brothers/key-quotes" />}
         >
-          Key quotes
+          {await tx('rev.texts2.common.key_quotes_sc')}
           <ArrowRight className="size-3.5" />
         </Button>
         <Button
@@ -362,16 +371,15 @@ export default async function BloodBrothersThemesPage() {
           size="sm"
           render={<Link href="/revision/texts/blood-brothers/essay-plans" />}
         >
-          Essay plans
+          {await tx('rev.texts2.common.essay_plans_sc')}
           <ArrowRight className="size-3.5" />
         </Button>
       </section>
 
       {/* Copyright notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        <strong>Rights notice:</strong> &copy; Methuen Drama / Bloomsbury on behalf of Willy Russell
-        (b. 1947). Quotations are short fair-dealing extracts under CDPA 1988 &sect;30 (criticism,
-        review, quotation). For full text, students should consult the licensed school edition.
+        <strong>{await tx('rev.texts2.common.rights_notice_label')}</strong>
+        {await tx('rev.texts2.bb.rights_body')}
       </p>
     </div>
   )

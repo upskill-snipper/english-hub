@@ -18,6 +18,7 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { t } from '@/lib/i18n/t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
@@ -278,6 +279,13 @@ export default async function EssayPlansPage() {
     redirect('/revision/texts')
   }
 
+  const tEssayTpl = await t('rev.texts.common.essay_n')
+  const tThesis = await t('rev.texts.common.thesis')
+  const tParagraphTpl = await t('rev.texts.common.paragraph_n')
+  const tAnalysis = await t('rev.texts.common.analysis')
+  const tLink = await t('rev.texts.common.link')
+  const tConclusion = await t('rev.texts.common.conclusion')
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -307,13 +315,13 @@ export default async function EssayPlansPage() {
             render={<Link href="/revision/texts/an-inspector-calls" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to An Inspector Calls
+            {await t('rev.texts.aic.back')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <PenTool className="mr-1 size-3 text-emerald-400" />
-              GCSE Essay Plans
+              {await t('rev.texts.common.gcse_essay_plans')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -322,12 +330,13 @@ export default async function EssayPlansPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            An Inspector Calls &mdash; Essay Plans
+            {await t('rev.texts.aic.essays.title')}
           </h1>
-          <p className="mt-2 text-body-lg text-muted-foreground">by J.B. Priestley &mdash; 1945</p>
+          <p className="mt-2 text-body-lg text-muted-foreground">
+            {await t('rev.texts.aic.byline')}
+          </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Five structured GCSE essay plans with thesis statements, paragraph plans, key quotes and
-            analytical points. Use these as a framework for timed practice.
+            {await t('rev.texts.aic.essays.intro')}
           </p>
         </div>
       </section>
@@ -337,13 +346,10 @@ export default async function EssayPlansPage() {
         <CardContent className="flex items-start gap-3 p-5">
           <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-600" />
           <div className="text-body-sm text-muted-foreground">
-            <p className="mb-1 font-semibold text-foreground">Exam tip</p>
-            <p>
-              These plans follow a four-paragraph structure (plus introduction and conclusion)
-              suitable for a 45-minute GCSE literature response. Each paragraph uses a{' '}
-              <strong>Point &rarr; Quote &rarr; Analysis &rarr; Link</strong> structure. Adapt the
-              plans to match the specific wording of your exam question.
+            <p className="mb-1 font-semibold text-foreground">
+              {await t('rev.texts.common.exam_tip')}
             </p>
+            <p>{await t('rev.texts.aic.essays.exam_tip_body')}</p>
           </div>
         </CardContent>
       </Card>
@@ -357,7 +363,7 @@ export default async function EssayPlansPage() {
             </div>
             <div>
               <p className="text-caption uppercase tracking-wide text-muted-foreground">
-                Essay {plan.id}
+                {tEssayTpl.replace('{n}', String(plan.id))}
               </p>
               <h2 className="text-heading-md font-heading text-foreground">{plan.question}</h2>
             </div>
@@ -367,7 +373,7 @@ export default async function EssayPlansPage() {
           <Card className="border-primary/20 bg-primary/[0.03]">
             <CardContent className="p-5">
               <p className="mb-1 text-caption font-semibold uppercase tracking-wide text-primary">
-                Thesis
+                {tThesis}
               </p>
               <p className="text-body-sm text-foreground">{plan.thesis}</p>
             </CardContent>
@@ -379,7 +385,7 @@ export default async function EssayPlansPage() {
               <Card key={i}>
                 <CardHeader>
                   <CardDescription className="text-caption font-semibold uppercase tracking-wide">
-                    Paragraph {i + 1}
+                    {tParagraphTpl.replace('{n}', String(i + 1))}
                   </CardDescription>
                   <CardTitle className="text-heading-md font-heading">{para.point}</CardTitle>
                 </CardHeader>
@@ -390,13 +396,13 @@ export default async function EssayPlansPage() {
                   </div>
                   <div>
                     <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                      Analysis
+                      {tAnalysis}
                     </p>
                     <p className="text-body-sm text-muted-foreground">{para.analysis}</p>
                   </div>
                   <div>
                     <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                      Link
+                      {tLink}
                     </p>
                     <p className="text-body-sm text-muted-foreground">{para.link}</p>
                   </div>
@@ -409,7 +415,7 @@ export default async function EssayPlansPage() {
           <Card className="border-muted bg-muted/20">
             <CardContent className="p-5">
               <p className="mb-1 text-caption font-semibold uppercase tracking-wide text-muted-foreground">
-                Conclusion
+                {tConclusion}
               </p>
               <p className="text-body-sm text-muted-foreground">{plan.conclusion}</p>
             </CardContent>
@@ -425,9 +431,11 @@ export default async function EssayPlansPage() {
         <Card className="bg-primary/5">
           <CardContent className="flex flex-col items-start gap-4 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
             <div>
-              <h3 className="text-heading-md font-heading text-foreground">Continue studying</h3>
+              <h3 className="text-heading-md font-heading text-foreground">
+                {await t('rev.texts.common.continue_studying')}
+              </h3>
               <p className="mt-1 text-body-sm text-muted-foreground">
-                Deepen your knowledge with act analysis and key quotes.
+                {await t('rev.texts.aic.essays.continue_sub')}
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
@@ -436,14 +444,14 @@ export default async function EssayPlansPage() {
                 size="sm"
                 render={<Link href="/revision/texts/an-inspector-calls/acts" />}
               >
-                Acts Analysis
+                {await t('rev.texts.aic.acts_link')}
               </Button>
               <Button
                 variant="outline"
                 size="sm"
                 render={<Link href="/revision/texts/an-inspector-calls/key-quotes" />}
               >
-                Key Quotes
+                {await t('rev.texts.common.key_quotes')}
               </Button>
             </div>
           </CardContent>
@@ -452,10 +460,7 @@ export default async function EssayPlansPage() {
 
       {/* Fair-dealing notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations (&le;15 words each) reproduced under the fair dealing provision of the
-        Copyright, Designs and Patents Act 1988 for the purpose of criticism, review and educational
-        study. <em>An Inspector Calls</em> &copy; J.B. Priestley Estate. Full text available from
-        your school or local library.
+        {await t('rev.texts.aic.fair_dealing')}
       </p>
     </div>
   )

@@ -19,6 +19,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
+import { useT } from '@/lib/i18n/use-t'
 
 import type { BoardEssayContent } from '@/components/revision/BoardSpecificExamTechnique'
 
@@ -56,7 +57,9 @@ function Section({
           <ChevronDown className="size-5 text-muted-foreground shrink-0" />
         )}
       </button>
-      {open && <div className="border-t border-border/40 p-5 sm:p-6 pt-5 space-y-5">{children}</div>}
+      {open && (
+        <div className="border-t border-border/40 p-5 sm:p-6 pt-5 space-y-5">{children}</div>
+      )}
     </div>
   )
 }
@@ -134,17 +137,16 @@ function GradeComparison({
           <Badge variant="secondary" className="mb-2 bg-amber-500/10 text-clay-600 text-[0.65rem]">
             Grade 5
           </Badge>
-          <p className="text-body-sm text-muted-foreground leading-relaxed italic">
-            {grade5}
-          </p>
+          <p className="text-body-sm text-muted-foreground leading-relaxed italic">{grade5}</p>
         </div>
         <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/[0.04] p-4">
-          <Badge variant="secondary" className="mb-2 bg-emerald-500/10 text-emerald-400 text-[0.65rem]">
+          <Badge
+            variant="secondary"
+            className="mb-2 bg-emerald-500/10 text-emerald-400 text-[0.65rem]"
+          >
             Grade 9
           </Badge>
-          <p className="text-body-sm text-muted-foreground leading-relaxed italic">
-            {grade9}
-          </p>
+          <p className="text-body-sm text-muted-foreground leading-relaxed italic">{grade9}</p>
         </div>
       </div>
     </div>
@@ -162,6 +164,7 @@ export default function EssayStructureView({
   shortName: string
   essay: BoardEssayContent
 }) {
+  const t = useT()
   return (
     <div className="space-y-6 pb-16">
       {/* ── Header ────────────────────────────────────────────── */}
@@ -173,7 +176,7 @@ export default function EssayStructureView({
           render={<Link href="/revision/exam-technique" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Exam Technique
+          {t('rev.misc.et.back_exam_technique')}
         </Button>
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-blue-500/10">
@@ -224,7 +227,10 @@ export default function EssayStructureView({
             </p>
             <ul className="space-y-1.5">
               {essay.examinerChecklist.map((item) => (
-                <li key={item} className="flex items-start gap-2 text-body-sm text-muted-foreground">
+                <li
+                  key={item}
+                  className="flex items-start gap-2 text-body-sm text-muted-foreground"
+                >
                   <CheckCircle2 className="mt-0.5 size-3.5 shrink-0 text-emerald-400" />
                   <span>{item}</span>
                 </li>
@@ -241,7 +247,10 @@ export default function EssayStructureView({
         </p>
         <div className="space-y-3">
           {essay.structureTips.map((tip) => (
-            <div key={tip} className="flex gap-3 rounded-xl border border-border/40 bg-background/50 p-4">
+            <div
+              key={tip}
+              className="flex gap-3 rounded-xl border border-border/40 bg-background/50 p-4"
+            >
               <Star className="mt-0.5 size-4 shrink-0 text-blue-400" />
               <p className="text-body-sm text-muted-foreground leading-relaxed">{tip}</p>
             </div>
@@ -272,32 +281,43 @@ export default function EssayStructureView({
               letter: 'P',
               name: 'Point',
               colour: '#3b82f6',
-              detail: 'Make a clear, arguable claim that directly answers the question. This is your topic sentence.',
-              example: 'Shakespeare presents Macbeth as a character consumed by guilt after murdering Duncan.',
+              detail:
+                'Make a clear, arguable claim that directly answers the question. This is your topic sentence.',
+              example:
+                'Shakespeare presents Macbeth as a character consumed by guilt after murdering Duncan.',
             },
             {
               letter: 'E',
               name: 'Evidence',
               colour: '#10b981',
-              detail: 'Embed a short, relevant quotation or textual reference that supports your point.',
-              example: 'This is evident when Macbeth hallucinates, asking "Will all great Neptune\'s ocean wash this blood clean from my hand?"',
+              detail:
+                'Embed a short, relevant quotation or textual reference that supports your point.',
+              example:
+                'This is evident when Macbeth hallucinates, asking "Will all great Neptune\'s ocean wash this blood clean from my hand?"',
             },
             {
               letter: 'E',
               name: 'Explain',
               colour: '#a855f7',
-              detail: 'Analyse what the evidence shows. Discuss language, structure, or form. Use subject terminology.',
-              example: 'The rhetorical question reveals Macbeth\'s psychological torment. The hyperbole of "all great Neptune\'s ocean" suggests that no force in nature can undo his crime.',
+              detail:
+                'Analyse what the evidence shows. Discuss language, structure, or form. Use subject terminology.',
+              example:
+                'The rhetorical question reveals Macbeth\'s psychological torment. The hyperbole of "all great Neptune\'s ocean" suggests that no force in nature can undo his crime.',
             },
             {
               letter: 'L',
               name: 'Link',
               colour: '#f59e0b',
-              detail: 'Connect back to the question, to wider themes, or to authorial intent / context.',
-              example: 'Shakespeare may be using Macbeth\'s guilt to warn a Jacobean audience about the divine consequences of regicide.',
+              detail:
+                'Connect back to the question, to wider themes, or to authorial intent / context.',
+              example:
+                "Shakespeare may be using Macbeth's guilt to warn a Jacobean audience about the divine consequences of regicide.",
             },
           ].map((item) => (
-            <div key={item.name} className="rounded-xl border border-border/40 bg-background/50 p-4 space-y-2">
+            <div
+              key={item.name}
+              className="rounded-xl border border-border/40 bg-background/50 p-4 space-y-2"
+            >
               <div className="flex items-center gap-2">
                 <span
                   className="flex size-7 items-center justify-center rounded-lg text-sm font-bold"
@@ -309,16 +329,18 @@ export default function EssayStructureView({
               </div>
               <p className="text-body-sm text-muted-foreground leading-relaxed">{item.detail}</p>
               <div className="rounded-lg border border-border/30 bg-card p-3">
-                <p className="text-xs text-muted-foreground italic leading-relaxed">{item.example}</p>
+                <p className="text-xs text-muted-foreground italic leading-relaxed">
+                  {item.example}
+                </p>
               </div>
             </div>
           ))}
         </div>
 
         <Tip>
-          The best paragraphs often have multiple E layers -- you explain one word or
-          technique, then zoom in on another. This is sometimes called PEEEL or PETAL.
-          Quality of analysis matters more than paragraph length.
+          The best paragraphs often have multiple E layers -- you explain one word or technique,
+          then zoom in on another. This is sometimes called PEEEL or PETAL. Quality of analysis
+          matters more than paragraph length.
         </Tip>
 
         <ModelParagraph
@@ -330,19 +352,18 @@ export default function EssayStructureView({
             { letter: 'L', colour: '#f59e0b', text: 'Link' },
           ]}
         >
-          Shakespeare presents Macbeth as a character overwhelmed by guilt following the
-          murder of King Duncan. This is powerfully conveyed through Macbeth&apos;s desperate
-          rhetorical question, &ldquo;Will all great Neptune&apos;s ocean wash this blood
-          clean from my hand?&rdquo; The allusion to Neptune, the Roman god of the sea,
-          creates a sense of cosmic scale: Macbeth is not merely asking about physical
-          blood, but about whether any force in the universe can absolve his moral crime.
-          The hyperbole of &ldquo;all great Neptune&apos;s ocean&rdquo; implies that his
-          guilt is so vast it exceeds even the power of the divine. Furthermore, the image
-          of blood that cannot be washed away becomes a recurring motif throughout the play,
-          linking to Lady Macbeth&apos;s later sleepwalking scene and suggesting that guilt
-          is contagious and inescapable. Shakespeare may be using this to remind his
-          Jacobean audience of the doctrine of Divine Right -- that killing an anointed king
-          is not simply murder but an offence against God&apos;s natural order.
+          Shakespeare presents Macbeth as a character overwhelmed by guilt following the murder of
+          King Duncan. This is powerfully conveyed through Macbeth&apos;s desperate rhetorical
+          question, &ldquo;Will all great Neptune&apos;s ocean wash this blood clean from my
+          hand?&rdquo; The allusion to Neptune, the Roman god of the sea, creates a sense of cosmic
+          scale: Macbeth is not merely asking about physical blood, but about whether any force in
+          the universe can absolve his moral crime. The hyperbole of &ldquo;all great Neptune&apos;s
+          ocean&rdquo; implies that his guilt is so vast it exceeds even the power of the divine.
+          Furthermore, the image of blood that cannot be washed away becomes a recurring motif
+          throughout the play, linking to Lady Macbeth&apos;s later sleepwalking scene and
+          suggesting that guilt is contagious and inescapable. Shakespeare may be using this to
+          remind his Jacobean audience of the doctrine of Divine Right -- that killing an anointed
+          king is not simply murder but an offence against God&apos;s natural order.
         </ModelParagraph>
       </Section>
 
@@ -350,8 +371,8 @@ export default function EssayStructureView({
       <Section title="Introduction Techniques">
         <p className="text-body-sm text-muted-foreground leading-relaxed">
           A strong introduction sets the direction for your entire response. On {shortName}
-          literature essays it should be concise (3--5 sentences), address the question
-          directly, and outline your argument.
+          literature essays it should be concise (3--5 sentences), address the question directly,
+          and outline your argument.
         </p>
 
         <div className="space-y-4">
@@ -362,22 +383,29 @@ export default function EssayStructureView({
                 step: '1',
                 name: 'Context hook',
                 detail: 'Open with a brief, relevant contextual point that frames your argument.',
-                example: 'Writing in 1606, Shakespeare crafted Macbeth during a period of intense anxiety about kingship and the supernatural.',
+                example:
+                  'Writing in 1606, Shakespeare crafted Macbeth during a period of intense anxiety about kingship and the supernatural.',
               },
               {
                 step: '2',
                 name: 'Thesis statement',
-                detail: 'State your main argument clearly. This is the single most important sentence in your essay.',
-                example: 'Throughout the play, Shakespeare presents ambition as a destructive force that corrupts both the individual and the state.',
+                detail:
+                  'State your main argument clearly. This is the single most important sentence in your essay.',
+                example:
+                  'Throughout the play, Shakespeare presents ambition as a destructive force that corrupts both the individual and the state.',
               },
               {
                 step: '3',
                 name: 'Roadmap',
                 detail: 'Briefly indicate how your argument will develop across the essay.',
-                example: 'This is explored through Macbeth\'s psychological deterioration, Lady Macbeth\'s manipulation, and the ultimate restoration of moral order.',
+                example:
+                  "This is explored through Macbeth's psychological deterioration, Lady Macbeth's manipulation, and the ultimate restoration of moral order.",
               },
             ].map((item) => (
-              <div key={item.step} className="rounded-xl border border-border/40 bg-background/50 p-4 space-y-2">
+              <div
+                key={item.step}
+                className="rounded-xl border border-border/40 bg-background/50 p-4 space-y-2"
+              >
                 <div className="flex items-center gap-2">
                   <span className="flex size-6 items-center justify-center rounded-md bg-primary/10 text-xs font-bold text-primary">
                     {item.step}
@@ -386,7 +414,9 @@ export default function EssayStructureView({
                 </div>
                 <p className="text-body-sm text-muted-foreground leading-relaxed">{item.detail}</p>
                 <div className="rounded-lg border border-border/30 bg-card p-3">
-                  <p className="text-xs text-muted-foreground italic leading-relaxed">{item.example}</p>
+                  <p className="text-xs text-muted-foreground italic leading-relaxed">
+                    {item.example}
+                  </p>
                 </div>
               </div>
             ))}
@@ -394,19 +424,18 @@ export default function EssayStructureView({
         </div>
 
         <Warning>
-          Never start with &ldquo;In this essay I will...&rdquo;. It wastes words and
-          sounds formulaic. Jump straight into your argument. The marker knows it is
-          an essay -- you do not need to announce it.
+          Never start with &ldquo;In this essay I will...&rdquo;. It wastes words and sounds
+          formulaic. Jump straight into your argument. The marker knows it is an essay -- you do not
+          need to announce it.
         </Warning>
 
         <ModelParagraph label="Model introduction -- Macbeth and ambition">
-          Writing in the aftermath of the Gunpowder Plot, Shakespeare explores the
-          catastrophic consequences of unchecked ambition in his tragedy Macbeth.
-          Throughout the play, ambition is presented not merely as a personal flaw but
-          as a force that disrupts the natural order, corrupts relationships, and
-          ultimately leads to self-destruction. This is traced through Macbeth&apos;s
-          transformation from a loyal warrior to a tyrannical king, Lady Macbeth&apos;s
-          descent into madness, and the restoration of legitimate rule that suggests
+          Writing in the aftermath of the Gunpowder Plot, Shakespeare explores the catastrophic
+          consequences of unchecked ambition in his tragedy Macbeth. Throughout the play, ambition
+          is presented not merely as a personal flaw but as a force that disrupts the natural order,
+          corrupts relationships, and ultimately leads to self-destruction. This is traced through
+          Macbeth&apos;s transformation from a loyal warrior to a tyrannical king, Lady
+          Macbeth&apos;s descent into madness, and the restoration of legitimate rule that suggests
           Shakespeare endorsed the divine right of kings.
         </ModelParagraph>
       </Section>
@@ -414,32 +443,40 @@ export default function EssayStructureView({
       {/* ── Thesis Statements ─────────────────────────────────── */}
       <Section title="How to Write a Thesis Statement">
         <p className="text-body-sm text-muted-foreground leading-relaxed">
-          Your thesis is the controlling idea of your essay. Every paragraph should connect
-          back to it. A strong thesis is arguable (someone could disagree), specific
-          (not vague), and addresses the question directly.
+          Your thesis is the controlling idea of your essay. Every paragraph should connect back to
+          it. A strong thesis is arguable (someone could disagree), specific (not vague), and
+          addresses the question directly.
         </p>
 
         <div className="space-y-4">
-          <h3 className="text-sm font-semibold text-foreground">Weak vs Strong thesis statements</h3>
+          <h3 className="text-sm font-semibold text-foreground">
+            Weak vs Strong thesis statements
+          </h3>
           <div className="space-y-3">
             {[
               {
                 weak: 'Macbeth is about ambition.',
-                strong: 'Shakespeare presents ambition as an inherently destructive force that, when untempered by moral conscience, corrupts both the individual and the society they govern.',
+                strong:
+                  'Shakespeare presents ambition as an inherently destructive force that, when untempered by moral conscience, corrupts both the individual and the society they govern.',
                 why: 'The weak version is vague and descriptive. The strong version makes an arguable claim and hints at how the argument will develop.',
               },
               {
                 weak: 'The poet uses lots of language techniques in the poem.',
-                strong: 'Through a sustained semantic field of decay and a fragmented sonnet form, Shelley argues that political power is inherently temporary, regardless of the ruler\'s self-image.',
+                strong:
+                  "Through a sustained semantic field of decay and a fragmented sonnet form, Shelley argues that political power is inherently temporary, regardless of the ruler's self-image.",
                 why: 'The weak version says nothing specific. The strong version identifies precise techniques and connects them to a clear interpretation.',
               },
               {
                 weak: 'Jekyll and Hyde is about duality.',
-                strong: 'Stevenson uses the duality of Jekyll and Hyde to expose the hypocrisy of Victorian respectability, suggesting that suppressing natural desires creates, rather than prevents, monstrous behaviour.',
+                strong:
+                  'Stevenson uses the duality of Jekyll and Hyde to expose the hypocrisy of Victorian respectability, suggesting that suppressing natural desires creates, rather than prevents, monstrous behaviour.',
                 why: 'The strong version goes beyond surface-level theme identification to make an argument about authorial intent.',
               },
             ].map((item, i) => (
-              <div key={i} className="rounded-xl border border-border/40 bg-background/50 p-4 space-y-3">
+              <div
+                key={i}
+                className="rounded-xl border border-border/40 bg-background/50 p-4 space-y-3"
+              >
                 <div className="grid gap-2 sm:grid-cols-2">
                   <div className="rounded-lg border border-red-500/20 bg-red-500/[0.04] p-3">
                     <span className="text-xs font-semibold text-red-400">Weak</span>
@@ -460,18 +497,18 @@ export default function EssayStructureView({
         </div>
 
         <Tip>
-          A useful formula: &ldquo;[Author] uses [technique/structure] to present
-          [theme/character] as [your interpretation], suggesting that [wider argument
-          about society/humanity].&rdquo; Adapt this to sound natural, not mechanical.
+          A useful formula: &ldquo;[Author] uses [technique/structure] to present [theme/character]
+          as [your interpretation], suggesting that [wider argument about society/humanity].&rdquo;
+          Adapt this to sound natural, not mechanical.
         </Tip>
       </Section>
 
       {/* ── Linking Paragraphs ────────────────────────────────── */}
       <Section title="Linking Paragraphs">
         <p className="text-body-sm text-muted-foreground leading-relaxed">
-          {shortName} markers reward &ldquo;sustained&rdquo; and &ldquo;cohesive&rdquo;
-          responses. Your paragraphs should flow logically from one to the next, building
-          an argument rather than listing separate points.
+          {shortName} markers reward &ldquo;sustained&rdquo; and &ldquo;cohesive&rdquo; responses.
+          Your paragraphs should flow logically from one to the next, building an argument rather
+          than listing separate points.
         </p>
 
         <div className="space-y-4">
@@ -480,30 +517,54 @@ export default function EssayStructureView({
             {[
               {
                 type: 'Building',
-                words: ['Furthermore', 'Moreover', 'This is developed further when', 'Building on this idea'],
+                words: [
+                  'Furthermore',
+                  'Moreover',
+                  'This is developed further when',
+                  'Building on this idea',
+                ],
                 when: 'When your next point extends or deepens the same argument.',
               },
               {
                 type: 'Contrasting',
-                words: ['However', 'Conversely', 'In contrast to this', 'Yet Shakespeare complicates this by'],
+                words: [
+                  'However',
+                  'Conversely',
+                  'In contrast to this',
+                  'Yet Shakespeare complicates this by',
+                ],
                 when: 'When your next point offers a different or opposing perspective.',
               },
               {
                 type: 'Shifting focus',
-                words: ['While [X], it is also significant that', 'Elsewhere in the text', 'At this point in the play'],
+                words: [
+                  'While [X], it is also significant that',
+                  'Elsewhere in the text',
+                  'At this point in the play',
+                ],
                 when: 'When moving to a different aspect of the text or a new section.',
               },
               {
                 type: 'Returning to thesis',
-                words: ['This reinforces the idea that', 'Once again, this demonstrates', 'Ultimately, this contributes to'],
+                words: [
+                  'This reinforces the idea that',
+                  'Once again, this demonstrates',
+                  'Ultimately, this contributes to',
+                ],
                 when: 'When reconnecting to your overarching argument.',
               },
             ].map((item) => (
-              <div key={item.type} className="rounded-xl border border-border/40 bg-background/50 p-4 space-y-2">
+              <div
+                key={item.type}
+                className="rounded-xl border border-border/40 bg-background/50 p-4 space-y-2"
+              >
                 <p className="text-sm font-semibold text-foreground">{item.type}</p>
                 <div className="flex flex-wrap gap-1.5">
                   {item.words.map((w) => (
-                    <span key={w} className="rounded-md bg-primary/10 px-2 py-0.5 text-xs font-medium text-primary">
+                    <span
+                      key={w}
+                      className="rounded-md bg-primary/10 px-2 py-0.5 text-xs font-medium text-primary"
+                    >
                       {w}
                     </span>
                   ))}
@@ -516,17 +577,17 @@ export default function EssayStructureView({
 
         <Warning>
           Avoid mechanical connectives like &ldquo;My first point is...&rdquo;,
-          &ldquo;Secondly...&rdquo;, &ldquo;My next point is...&rdquo;. These make
-          your essay feel like a list. Let the logic of your argument create the flow.
+          &ldquo;Secondly...&rdquo;, &ldquo;My next point is...&rdquo;. These make your essay feel
+          like a list. Let the logic of your argument create the flow.
         </Warning>
       </Section>
 
       {/* ── Conclusions ───────────────────────────────────────── */}
       <Section title="Conclusions That Impress">
         <p className="text-body-sm text-muted-foreground leading-relaxed">
-          Your conclusion is the last thing the marker reads. It should not simply
-          repeat your introduction -- it should show that your argument has arrived
-          somewhere. Think of it as the destination, not a summary.
+          Your conclusion is the last thing the marker reads. It should not simply repeat your
+          introduction -- it should show that your argument has arrived somewhere. Think of it as
+          the destination, not a summary.
         </p>
 
         <div className="space-y-4">
@@ -547,20 +608,19 @@ export default function EssayStructureView({
         </div>
 
         <ModelParagraph label="Model conclusion -- Macbeth and ambition">
-          Ultimately, Shakespeare presents ambition as a force that is not inherently evil,
-          but becomes catastrophic when it operates without moral restraint. Macbeth&apos;s
-          tragedy lies not in his desire for greatness, but in his willingness to sacrifice
-          his conscience, his relationships, and his humanity in pursuit of it. By restoring
-          order through Malcolm at the play&apos;s close, Shakespeare suggests that society
-          can recover from the damage caused by unchecked ambition -- but the personal cost
-          to those consumed by it is permanent and irreversible.
+          Ultimately, Shakespeare presents ambition as a force that is not inherently evil, but
+          becomes catastrophic when it operates without moral restraint. Macbeth&apos;s tragedy lies
+          not in his desire for greatness, but in his willingness to sacrifice his conscience, his
+          relationships, and his humanity in pursuit of it. By restoring order through Malcolm at
+          the play&apos;s close, Shakespeare suggests that society can recover from the damage
+          caused by unchecked ambition -- but the personal cost to those consumed by it is permanent
+          and irreversible.
         </ModelParagraph>
 
         <Tip>
-          Try ending with a short, punchy sentence after a longer analytical one. The
-          contrast creates a sense of finality. For example: &ldquo;The blood on
-          Macbeth&apos;s hands may eventually be washed away. The stain on his soul
-          cannot.&rdquo;
+          Try ending with a short, punchy sentence after a longer analytical one. The contrast
+          creates a sense of finality. For example: &ldquo;The blood on Macbeth&apos;s hands may
+          eventually be washed away. The stain on his soul cannot.&rdquo;
         </Tip>
       </Section>
 
@@ -575,8 +635,8 @@ export default function EssayStructureView({
           <TabsContent value="literature">
             <div className="space-y-4">
               <p className="text-body-sm text-muted-foreground leading-relaxed">
-                A typical {shortName} Literature essay should follow this structure. Aim for
-                3 analytical paragraphs plus an introduction and conclusion.
+                A typical {shortName} Literature essay should follow this structure. Aim for 3
+                analytical paragraphs plus an introduction and conclusion.
               </p>
 
               <div className="space-y-3">
@@ -584,35 +644,43 @@ export default function EssayStructureView({
                   {
                     part: 'Introduction',
                     time: '5 mins',
-                    detail: 'Context hook + thesis statement + brief roadmap. 3-5 sentences. No quotations needed here.',
+                    detail:
+                      'Context hook + thesis statement + brief roadmap. 3-5 sentences. No quotations needed here.',
                     ao: 'AO1, AO3',
                   },
                   {
                     part: 'Paragraph 1 -- Extract analysis',
                     time: '10 mins',
-                    detail: 'Analyse the given extract closely. Pick 2-3 key quotations from it. Use PEEL for each quotation. Focus on language and structure (AO2).',
+                    detail:
+                      'Analyse the given extract closely. Pick 2-3 key quotations from it. Use PEEL for each quotation. Focus on language and structure (AO2).',
                     ao: 'AO1, AO2',
                   },
                   {
                     part: 'Paragraph 2 -- Wider text',
                     time: '10 mins',
-                    detail: 'Move beyond the extract to the rest of the play. Choose quotations from different parts of the text. Show how the theme develops or changes.',
+                    detail:
+                      'Move beyond the extract to the rest of the play. Choose quotations from different parts of the text. Show how the theme develops or changes.',
                     ao: 'AO1, AO2, AO3',
                   },
                   {
                     part: 'Paragraph 3 -- Context and alternative readings',
                     time: '10 mins',
-                    detail: 'Connect to historical/social context. Consider alternative interpretations. Show critical thinking about authorial intent.',
+                    detail:
+                      'Connect to historical/social context. Consider alternative interpretations. Show critical thinking about authorial intent.',
                     ao: 'AO1, AO2, AO3',
                   },
                   {
                     part: 'Conclusion',
                     time: '5 mins',
-                    detail: 'Restate thesis in new words. Zoom out to the bigger picture. End with a thought-provoking final sentence.',
+                    detail:
+                      'Restate thesis in new words. Zoom out to the bigger picture. End with a thought-provoking final sentence.',
                     ao: 'AO1, AO3',
                   },
                 ].map((item) => (
-                  <div key={item.part} className="flex gap-4 rounded-xl border border-border/40 bg-background/50 p-4">
+                  <div
+                    key={item.part}
+                    className="flex gap-4 rounded-xl border border-border/40 bg-background/50 p-4"
+                  >
                     <div className="shrink-0 text-right">
                       <Badge variant="secondary" className="font-mono text-xs">
                         {item.time}
@@ -620,10 +688,15 @@ export default function EssayStructureView({
                     </div>
                     <div className="space-y-1">
                       <p className="text-sm font-semibold text-foreground">{item.part}</p>
-                      <p className="text-body-sm text-muted-foreground leading-relaxed">{item.detail}</p>
+                      <p className="text-body-sm text-muted-foreground leading-relaxed">
+                        {item.detail}
+                      </p>
                       <div className="flex gap-1.5 pt-1">
                         {item.ao.split(', ').map((ao) => (
-                          <span key={ao} className="rounded-md bg-blue-500/10 px-2 py-0.5 text-xs font-medium text-blue-400">
+                          <span
+                            key={ao}
+                            className="rounded-md bg-blue-500/10 px-2 py-0.5 text-xs font-medium text-blue-400"
+                          >
                             {ao}
                           </span>
                         ))}
@@ -638,8 +711,8 @@ export default function EssayStructureView({
           <TabsContent value="language">
             <div className="space-y-4">
               <p className="text-body-sm text-muted-foreground leading-relaxed">
-                A {shortName} Language writing task requires a different approach.
-                Structure is about craft and effect rather than analysis.
+                A {shortName} Language writing task requires a different approach. Structure is
+                about craft and effect rather than analysis.
               </p>
 
               <div className="space-y-3">
@@ -647,35 +720,43 @@ export default function EssayStructureView({
                   {
                     part: 'Planning',
                     time: '5 mins',
-                    detail: 'Decide on purpose, audience, form. Create a brief plan: opening hook, 3-4 main sections, ending. Note 2-3 techniques you will use deliberately.',
+                    detail:
+                      'Decide on purpose, audience, form. Create a brief plan: opening hook, 3-4 main sections, ending. Note 2-3 techniques you will use deliberately.',
                     ao: 'AO5',
                   },
                   {
                     part: 'Opening -- Hook the reader',
                     time: '5 mins',
-                    detail: 'Start in media res, with dialogue, a striking image, or a provocative statement. Establish tone and voice immediately.',
+                    detail:
+                      'Start in media res, with dialogue, a striking image, or a provocative statement. Establish tone and voice immediately.',
                     ao: 'AO5',
                   },
                   {
                     part: 'Development -- Build your piece',
                     time: '25 mins',
-                    detail: 'Vary sentence structures (short for impact, complex for detail). Use paragraphs to control pace. Deploy at least 3 deliberate language techniques. Use varied punctuation.',
+                    detail:
+                      'Vary sentence structures (short for impact, complex for detail). Use paragraphs to control pace. Deploy at least 3 deliberate language techniques. Use varied punctuation.',
                     ao: 'AO5, AO6',
                   },
                   {
                     part: 'Ending -- Leave an impression',
                     time: '5 mins',
-                    detail: 'Circle back to your opening image or idea. End on a powerful, memorable line. Avoid cliches or rushed endings.',
+                    detail:
+                      'Circle back to your opening image or idea. End on a powerful, memorable line. Avoid cliches or rushed endings.',
                     ao: 'AO5',
                   },
                   {
                     part: 'Proofread',
                     time: '5 mins',
-                    detail: 'Check spelling, punctuation, and paragraphing. Fix homophones (there/their/they\'re). Ensure sentence demarcation is accurate throughout.',
+                    detail:
+                      "Check spelling, punctuation, and paragraphing. Fix homophones (there/their/they're). Ensure sentence demarcation is accurate throughout.",
                     ao: 'AO6',
                   },
                 ].map((item) => (
-                  <div key={item.part} className="flex gap-4 rounded-xl border border-border/40 bg-background/50 p-4">
+                  <div
+                    key={item.part}
+                    className="flex gap-4 rounded-xl border border-border/40 bg-background/50 p-4"
+                  >
                     <div className="shrink-0 text-right">
                       <Badge variant="secondary" className="font-mono text-xs">
                         {item.time}
@@ -683,10 +764,15 @@ export default function EssayStructureView({
                     </div>
                     <div className="space-y-1">
                       <p className="text-sm font-semibold text-foreground">{item.part}</p>
-                      <p className="text-body-sm text-muted-foreground leading-relaxed">{item.detail}</p>
+                      <p className="text-body-sm text-muted-foreground leading-relaxed">
+                        {item.detail}
+                      </p>
                       <div className="flex gap-1.5 pt-1">
                         {item.ao.split(', ').map((ao) => (
-                          <span key={ao} className="rounded-md bg-violet-500/10 px-2 py-0.5 text-xs font-medium text-violet-400">
+                          <span
+                            key={ao}
+                            className="rounded-md bg-violet-500/10 px-2 py-0.5 text-xs font-medium text-violet-400"
+                          >
                             {ao}
                           </span>
                         ))}
@@ -703,9 +789,9 @@ export default function EssayStructureView({
       {/* ── Grade 5 vs Grade 9 ────────────────────────────────── */}
       <Section title="Grade 5 vs Grade 9 Comparison">
         <p className="text-body-sm text-muted-foreground leading-relaxed mb-2">
-          The difference between a Grade 5 and Grade 9 on {shortName} essays is rarely about
-          knowing more quotations -- it is about depth of analysis, precision of expression,
-          and sophistication of argument. Study these comparisons carefully.
+          The difference between a Grade 5 and Grade 9 on {shortName} essays is rarely about knowing
+          more quotations -- it is about depth of analysis, precision of expression, and
+          sophistication of argument. Study these comparisons carefully.
         </p>
 
         <div className="space-y-5">
@@ -735,9 +821,9 @@ export default function EssayStructureView({
         </div>
 
         <Tip>
-          Notice the patterns in Grade 9 writing: embedded quotations rather than
-          standalone ones, precise subject terminology, multiple layers of analysis on a
-          single word, and context woven into the argument rather than bolted on separately.
+          Notice the patterns in Grade 9 writing: embedded quotations rather than standalone ones,
+          precise subject terminology, multiple layers of analysis on a single word, and context
+          woven into the argument rather than bolted on separately.
         </Tip>
       </Section>
 
@@ -745,7 +831,9 @@ export default function EssayStructureView({
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="flex items-center gap-3 mb-2">
           <Sparkles className="size-5 text-primary" />
-          <h2 className="text-heading-md font-heading text-foreground">Apply It in Your Revision</h2>
+          <h2 className="text-heading-md font-heading text-foreground">
+            Apply It in Your Revision
+          </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
           Pair essay structure with these related guides.
@@ -759,7 +847,9 @@ export default function EssayStructureView({
               <Star className="size-4 text-cyan-400" />
             </div>
             <div className="min-w-0">
-              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Grade 5 Standards</p>
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">
+                Grade 5 Standards
+              </p>
               <p className="text-xs text-muted-foreground mt-0.5">PEE/PEEL paragraphs in action.</p>
             </div>
           </Link>
@@ -771,8 +861,12 @@ export default function EssayStructureView({
               <Star className="size-4 text-cyan-400" />
             </div>
             <div className="min-w-0">
-              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Grade 9 Standards</p>
-              <p className="text-xs text-muted-foreground mt-0.5">Conceptualised, sustained arguments.</p>
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">
+                Grade 9 Standards
+              </p>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                Conceptualised, sustained arguments.
+              </p>
             </div>
           </Link>
           <Link
@@ -783,8 +877,12 @@ export default function EssayStructureView({
               <BookOpen className="size-4 text-blue-400" />
             </div>
             <div className="min-w-0">
-              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Reading Comprehension</p>
-              <p className="text-xs text-muted-foreground mt-0.5">Find the evidence your essays need.</p>
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">
+                Reading Comprehension
+              </p>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                Find the evidence your essays need.
+              </p>
             </div>
           </Link>
           <Link
@@ -795,8 +893,12 @@ export default function EssayStructureView({
               <PenLine className="size-4 text-rose-400" />
             </div>
             <div className="min-w-0">
-              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Poetry Analysis</p>
-              <p className="text-xs text-muted-foreground mt-0.5">Practise structures on the anthology.</p>
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">
+                Poetry Analysis
+              </p>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                Practise structures on the anthology.
+              </p>
             </div>
           </Link>
         </div>
@@ -810,14 +912,14 @@ export default function EssayStructureView({
           render={<Link href="/revision/exam-technique" />}
         >
           <ArrowLeft className="size-4" />
-          Back to Exam Technique
+          {t('rev.misc.et.back_exam_technique')}
         </Button>
         <Button
           variant="default"
           className="flex-1"
           render={<Link href="/revision/exam-technique/time-management" />}
         >
-          Time Management
+          {t('rev.misc.et.time_management')}
           <ArrowRight className="size-4" />
         </Button>
       </div>

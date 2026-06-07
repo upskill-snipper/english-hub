@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { getServerBoard } from '@/lib/board/get-server-board'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -238,6 +239,12 @@ export default async function GreatExpectationsCharactersPage() {
     redirect('/revision/texts')
   }
 
+  // Pre-resolve chrome labels used inside .map() callbacks.
+  const overviewLabel = await t('rev.texts.common.overview')
+  const characterDevLabel = await t('rev.texts2.common.character_development_sc')
+  const keyQuotationsLabel = await t('rev.texts2.common.key_quotations_sc')
+  const examFocusLabel = await t('rev.texts2.common.exam_focus')
+
   return (
     <div className="space-y-10 pb-16">
       {/* Hero */}
@@ -252,13 +259,13 @@ export default async function GreatExpectationsCharactersPage() {
             render={<Link href="/revision/texts/great-expectations" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Great Expectations
+            {(await t('rev.texts.common.back_to_text')).replace('{text}', 'Great Expectations')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <BookOpen className="mr-1 size-3 text-emerald-400" />
-              19th-Century Novel
+              {await t('rev.texts2.common.c19_novel')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               AQA
@@ -266,14 +273,13 @@ export default async function GreatExpectationsCharactersPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Character Analysis
+            {await t('rev.texts.common.character_analysis')}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
             Great Expectations - Charles Dickens
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Detailed profiles of nine key characters covering their role, development, key
-            quotations and exam focus points.
+            {await t('rev.texts2.ge.characters.intro')}
           </p>
         </div>
       </section>
@@ -296,21 +302,19 @@ export default async function GreatExpectationsCharactersPage() {
             <CardContent className="space-y-6 p-6 sm:p-8">
               {/* Overview */}
               <div>
-                <h3 className="mb-2 text-sm font-semibold text-foreground">Overview</h3>
+                <h3 className="mb-2 text-sm font-semibold text-foreground">{overviewLabel}</h3>
                 <p className="text-body-sm text-muted-foreground">{c.overview}</p>
               </div>
 
               {/* Development */}
               <div>
-                <h3 className="mb-2 text-sm font-semibold text-foreground">
-                  Character development
-                </h3>
+                <h3 className="mb-2 text-sm font-semibold text-foreground">{characterDevLabel}</h3>
                 <p className="text-body-sm text-muted-foreground">{c.development}</p>
               </div>
 
               {/* Key Quotes */}
               <div className="space-y-3">
-                <h3 className="text-sm font-semibold text-foreground">Key quotations</h3>
+                <h3 className="text-sm font-semibold text-foreground">{keyQuotationsLabel}</h3>
                 {c.keyQuotes.map((q, i) => (
                   <div key={i} className="rounded-xl border border-border/60 bg-muted/20 p-4">
                     <p className="mb-1.5 text-body-sm font-medium italic text-foreground">
@@ -323,7 +327,7 @@ export default async function GreatExpectationsCharactersPage() {
 
               {/* Exam Focus */}
               <div className="rounded-xl border border-primary/20 bg-primary/5 p-4">
-                <h3 className="mb-1.5 text-sm font-semibold text-foreground">Exam focus</h3>
+                <h3 className="mb-1.5 text-sm font-semibold text-foreground">{examFocusLabel}</h3>
                 <p className="text-body-sm text-muted-foreground">{c.examFocus}</p>
               </div>
             </CardContent>
@@ -333,8 +337,8 @@ export default async function GreatExpectationsCharactersPage() {
 
       {/* Public domain notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Great Expectations by Charles Dickens (1861) is in the public domain. Quotations are
-        reproduced freely as the text is no longer subject to copyright.
+        <em>Great Expectations</em>
+        {await t('rev.texts2.common.public_domain_dickens_after')}
       </p>
     </div>
   )

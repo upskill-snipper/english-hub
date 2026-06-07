@@ -4,6 +4,7 @@ import { ArrowLeft, Sparkles, Info } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
+import { t } from '@/lib/i18n/t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
@@ -85,6 +86,8 @@ const themes = [
 export default async function TkamThemesPage() {
   await requireIgcseBoard(['edexcel-igcse'])
 
+  const keyMomentsLabel = await t('igcse.page.label.key_moments')
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -110,7 +113,7 @@ export default async function TkamThemesPage() {
           render={<Link href="/igcse/edexcel/prose/to-kill-a-mockingbird" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to To Kill a Mockingbird
+          {await t('igcse.page.back_to')} To Kill a Mockingbird
         </Button>
       </div>
 
@@ -119,9 +122,9 @@ export default async function TkamThemesPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="border-primary/20 bg-primary/10 text-primary">
               <Sparkles className="mr-1 size-3" />
-              Edexcel IGCSE Literature
+              {await t('igcse.page.badge_edexcel_lit')}
             </Badge>
-            <Badge variant="secondary">Themes</Badge>
+            <Badge variant="secondary">{await t('anth_text.section.themes')}</Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
             To Kill a Mockingbird: Themes
@@ -139,10 +142,10 @@ export default async function TkamThemesPage() {
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
             <h2 className="text-body-sm font-semibold text-foreground">
-              Key quotations only - read the full text
+              {await t('igcse.page.copyright_heading')}
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
-              Short extracts are included under fair dealing for study and criticism.
+              {await t('igcse.page.fair_dealing_body')}
             </p>
           </div>
         </div>
@@ -154,7 +157,8 @@ export default async function TkamThemesPage() {
             <h2 className="text-heading-md font-heading text-foreground">{t.title}</h2>
             <p className="mt-3 text-body-sm leading-relaxed text-muted-foreground">{t.intro}</p>
             <p className="mt-3 text-body-xs text-muted-foreground">
-              <span className="font-semibold text-foreground">Key moments:</span> {t.textualMoments}
+              <span className="font-semibold text-foreground">{keyMomentsLabel}</span>{' '}
+              {t.textualMoments}
             </p>
             <blockquote className="mt-3 border-l-2 border-primary/40 pl-3 text-body-sm italic text-foreground">
               {t.quote}

@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -43,12 +44,14 @@ const WORLDS_AND_LIVES: AnthologyPoem[] = [
   { title: 'Like an Heiress', poet: 'Grace Nichols' },
 ]
 
-export default function AqaWorldsAndLivesHubPage() {
+export default async function AqaWorldsAndLivesHubPage() {
   const breadcrumbItems = [
     { label: 'Revision', href: '/revision' },
     { label: 'Poetry', href: '/revision/poetry' },
     { label: 'AQA Worlds and Lives' },
   ]
+
+  const soonBadge = await t('poetry_hub.wl.soon_badge')
 
   return (
     <>
@@ -74,7 +77,7 @@ export default function AqaWorldsAndLivesHubPage() {
             render={<Link href="/revision/poetry" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Poetry
+            {await t('poetry_hub.wl.back_to_poetry')}
           </Button>
         </div>
 
@@ -87,14 +90,14 @@ export default function AqaWorldsAndLivesHubPage() {
             <div className="mb-4 flex flex-wrap items-center gap-2">
               <Badge variant="secondary">
                 <Sparkles className="mr-1 size-3" />
-                AQA GCSE English Literature (8702)
+                {await t('poetry_hub.wl.badge_spec')}
               </Badge>
               <Badge className="border-emerald-500/20 bg-emerald-500/10 text-emerald-300">
-                Worlds and Lives
+                {await t('poetry_hub.wl.badge_anthology')}
               </Badge>
             </div>
             <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-              AQA Worlds and Lives Anthology
+              {await t('poetry_hub.wl.hero_title')}
             </h1>
             <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
               The newest AQA cluster brings together fifteen poems on{' '}
@@ -131,16 +134,18 @@ export default function AqaWorldsAndLivesHubPage() {
         <section className="flex items-start gap-3 rounded-xl border border-border/60 bg-card p-4">
           <Shield className="mt-0.5 size-4 shrink-0 text-emerald-400" />
           <p className="text-body-sm text-muted-foreground">
-            <strong className="text-foreground">Rights notice.</strong> The Worlds and Lives cluster
-            mixes pre-1900 poems that are in the public domain (Wordsworth, Shelley, Brontë, Eliot)
-            with contemporary work that remains in copyright &mdash; Imtiaz Dharker (&copy; Bloodaxe
-            Books), Caleb Femi (&copy; Penguin), Roger Robinson (&copy; Peepal Tree Press), Raymond
-            Antrobus (&copy; Picador / Pan Macmillan), James Berry (&copy; Bloodaxe), Liz Berry
-            (&copy; Chatto &amp; Windus) and Grace Nichols (&copy; Bloodaxe). Quotations on this
-            site are short fair-dealing extracts under CDPA 1988 &sect;30 (criticism, review,
-            quotation). For full text, students should consult the board-licensed AQA Worlds and
-            Lives anthology. No commercial use is intended; all quotations remain the intellectual
-            property of the respective rights holders.
+            <strong className="text-foreground">
+              {await t('poetry_hub.wl.rights_notice_label')}
+            </strong>{' '}
+            The Worlds and Lives cluster mixes pre-1900 poems that are in the public domain
+            (Wordsworth, Shelley, Brontë, Eliot) with contemporary work that remains in copyright
+            &mdash; Imtiaz Dharker (&copy; Bloodaxe Books), Caleb Femi (&copy; Penguin), Roger
+            Robinson (&copy; Peepal Tree Press), Raymond Antrobus (&copy; Picador / Pan Macmillan),
+            James Berry (&copy; Bloodaxe), Liz Berry (&copy; Chatto &amp; Windus) and Grace Nichols
+            (&copy; Bloodaxe). Quotations on this site are short fair-dealing extracts under CDPA
+            1988 &sect;30 (criticism, review, quotation). For full text, students should consult the
+            board-licensed AQA Worlds and Lives anthology. No commercial use is intended; all
+            quotations remain the intellectual property of the respective rights holders.
           </p>
         </section>
 
@@ -152,7 +157,7 @@ export default function AqaWorldsAndLivesHubPage() {
             </div>
             <div className="flex-1 space-y-2">
               <h2 className="text-heading-md font-heading text-foreground">
-                Detailed study pages coming soon
+                {await t('poetry_hub.wl.soon_title')}
               </h2>
               <p className="text-body-sm text-muted-foreground">
                 We are writing full annotations, key quotations, technique analysis and comparison
@@ -166,7 +171,7 @@ export default function AqaWorldsAndLivesHubPage() {
                   size="sm"
                   render={<Link href="/revision/poetry/power-and-conflict" />}
                 >
-                  Power and Conflict (full)
+                  {await t('poetry_hub.wl.soon_cta_pc')}
                   <ArrowRight className="size-3.5" />
                 </Button>
                 <Button
@@ -174,7 +179,7 @@ export default function AqaWorldsAndLivesHubPage() {
                   size="sm"
                   render={<Link href="/revision/poetry/love-and-relationships" />}
                 >
-                  Love and Relationships (full)
+                  {await t('poetry_hub.wl.soon_cta_lr')}
                   <ArrowRight className="size-3.5" />
                 </Button>
               </div>
@@ -187,7 +192,7 @@ export default function AqaWorldsAndLivesHubPage() {
           <div className="mb-5 flex items-center gap-3">
             <BookOpen className="size-5 text-emerald-400" />
             <h2 className="text-heading-lg font-heading text-foreground">
-              All 15 Worlds and Lives poems
+              {await t('poetry_hub.wl.all_poems_heading')}
             </h2>
           </div>
 
@@ -208,7 +213,7 @@ export default function AqaWorldsAndLivesHubPage() {
                   variant="outline"
                   className="shrink-0 text-[0.65rem] uppercase tracking-wider"
                 >
-                  Soon
+                  {soonBadge}
                 </Badge>
               </div>
             ))}
@@ -218,32 +223,40 @@ export default function AqaWorldsAndLivesHubPage() {
         {/* ── Themes overview ─────────────────────────────────────────── */}
         <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
           <h2 className="text-heading-md font-heading text-foreground">
-            Key themes across the anthology
+            {await t('poetry_hub.wl.themes_heading')}
           </h2>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <div className="space-y-1">
-              <h3 className="text-sm font-semibold text-foreground">Identity and heritage</h3>
+              <h3 className="text-sm font-semibold text-foreground">
+                {await t('poetry_hub.wl.theme_identity_title')}
+              </h3>
               <p className="text-body-sm text-muted-foreground">
                 Naming, ancestry and the negotiation of cultural identity in poems like Name
                 Journeys, A Portable Paradise and pot.
               </p>
             </div>
             <div className="space-y-1">
-              <h3 className="text-sm font-semibold text-foreground">Place and landscape</h3>
+              <h3 className="text-sm font-semibold text-foreground">
+                {await t('poetry_hub.wl.theme_place_title')}
+              </h3>
               <p className="text-body-sm text-muted-foreground">
                 Landscapes as memory, refuge or critique - Tintern Abbey, In a London Drawingroom
                 and Homing.
               </p>
             </div>
             <div className="space-y-1">
-              <h3 className="text-sm font-semibold text-foreground">Power and politics</h3>
+              <h3 className="text-sm font-semibold text-foreground">
+                {await t('poetry_hub.wl.theme_power_title')}
+              </h3>
               <p className="text-body-sm text-muted-foreground">
                 Poetry as protest and witness in England in 1819, Thirteen and On an Afternoon Train
                 from Purley to Victoria, 1955.
               </p>
             </div>
             <div className="space-y-1">
-              <h3 className="text-sm font-semibold text-foreground">Belonging and migration</h3>
+              <h3 className="text-sm font-semibold text-foreground">
+                {await t('poetry_hub.wl.theme_belonging_title')}
+              </h3>
               <p className="text-body-sm text-muted-foreground">
                 Crossings, arrivals and the search for home in A Wider View, A Century Later and
                 With Birds You&apos;re Never Lonely.
@@ -255,7 +268,9 @@ export default function AqaWorldsAndLivesHubPage() {
         {/* ── Footer CTA ──────────────────────────────────────────────── */}
         <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-emerald-500/[0.06] via-card to-violet-500/[0.04] p-6 text-center sm:p-8">
           <Globe className="mx-auto mb-3 size-8 text-emerald-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">Want a poem prioritised?</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {await t('poetry_hub.wl.priority_title')}
+          </h2>
           <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
             We are publishing Worlds and Lives study pages in batches. If your class is on a poem
             that is still &ldquo;coming soon&rdquo;, the existing AQA Power and Conflict and Love
@@ -267,7 +282,7 @@ export default function AqaWorldsAndLivesHubPage() {
             className="mt-5"
             render={<Link href="/revision/poetry" />}
           >
-            Back to poetry hub
+            {await t('poetry_hub.wl.back_to_hub')}
             <ArrowRight className="size-4" />
           </Button>
         </section>

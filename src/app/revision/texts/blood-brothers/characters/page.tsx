@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button'
 import { getServerBoard } from '@/lib/board/get-server-board'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Blood Brothers - Character Analysis | The English Hub',
@@ -219,6 +220,12 @@ export default async function BloodBrothersCharactersPage() {
     redirect('/revision/texts')
   }
 
+  // Pre-resolve chrome labels used inside .map() callbacks.
+  const overviewLabel = await t('rev.texts.common.overview')
+  const characterArcLabel = await t('rev.texts2.common.character_arc_sc')
+  const keyQuotationsLabel = await t('rev.texts2.common.key_quotations_sc')
+  const examTipLabel = await t('rev.texts2.common.exam_tip')
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -248,13 +255,13 @@ export default async function BloodBrothersCharactersPage() {
             render={<Link href="/revision/texts/blood-brothers" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Blood Brothers
+            {(await t('rev.texts.common.back_to_text')).replace('{text}', 'Blood Brothers')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Drama className="mr-1 size-3 text-violet-400" />
-              Modern Text - Play
+              {await t('rev.texts2.common.modern_text_play')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -263,12 +270,11 @@ export default async function BloodBrothersCharactersPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Character Analysis
+            {await t('rev.texts.common.character_analysis')}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">Blood Brothers by Willy Russell</p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Deep profiles for every major character: overview, arc, key quotations and examiner
-            tips. All quotes are 15 words or fewer.
+            {await t('rev.texts2.bb.characters.intro')}
           </p>
         </div>
       </section>
@@ -277,7 +283,9 @@ export default async function BloodBrothersCharactersPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Users className="size-5 text-emerald-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">Characters</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {await t('rev.texts.common.characters')}
+          </h2>
         </div>
         <div className="space-y-6">
           {CHARACTERS.map((c) => (
@@ -289,19 +297,21 @@ export default async function BloodBrothersCharactersPage() {
               <CardContent className="space-y-5">
                 {/* Overview */}
                 <div>
-                  <h3 className="mb-1 text-sm font-semibold text-foreground">Overview</h3>
+                  <h3 className="mb-1 text-sm font-semibold text-foreground">{overviewLabel}</h3>
                   <p className="text-body-sm text-muted-foreground">{c.overview}</p>
                 </div>
 
                 {/* Arc */}
                 <div>
-                  <h3 className="mb-1 text-sm font-semibold text-foreground">Character arc</h3>
+                  <h3 className="mb-1 text-sm font-semibold text-foreground">
+                    {characterArcLabel}
+                  </h3>
                   <p className="text-body-sm text-muted-foreground">{c.arc}</p>
                 </div>
 
                 {/* Key quotes */}
                 <div className="space-y-3">
-                  <h3 className="text-sm font-semibold text-foreground">Key quotations</h3>
+                  <h3 className="text-sm font-semibold text-foreground">{keyQuotationsLabel}</h3>
                   {c.keyQuotes.map((q) => (
                     <div
                       key={q.text}
@@ -321,7 +331,7 @@ export default async function BloodBrothersCharactersPage() {
                   <div className="flex items-center gap-2 mb-1.5">
                     <Quote className="size-3.5 text-primary" />
                     <p className="text-xs font-semibold uppercase tracking-wide text-primary">
-                      Exam tip
+                      {examTipLabel}
                     </p>
                   </div>
                   <p className="text-body-sm text-muted-foreground">{c.examTip}</p>
@@ -339,7 +349,7 @@ export default async function BloodBrothersCharactersPage() {
           size="sm"
           render={<Link href="/revision/texts/blood-brothers/acts" />}
         >
-          Act-by-act analysis
+          {await t('rev.texts2.common.act_by_act_sc')}
           <ArrowRight className="size-3.5" />
         </Button>
         <Button
@@ -347,7 +357,7 @@ export default async function BloodBrothersCharactersPage() {
           size="sm"
           render={<Link href="/revision/texts/blood-brothers/themes" />}
         >
-          Themes
+          {await t('rev.texts.common.themes')}
           <ArrowRight className="size-3.5" />
         </Button>
         <Button
@@ -355,7 +365,7 @@ export default async function BloodBrothersCharactersPage() {
           size="sm"
           render={<Link href="/revision/texts/blood-brothers/key-quotes" />}
         >
-          Key quotes
+          {await t('rev.texts2.common.key_quotes_sc')}
           <ArrowRight className="size-3.5" />
         </Button>
         <Button
@@ -363,16 +373,15 @@ export default async function BloodBrothersCharactersPage() {
           size="sm"
           render={<Link href="/revision/texts/blood-brothers/essay-plans" />}
         >
-          Essay plans
+          {await t('rev.texts2.common.essay_plans_sc')}
           <ArrowRight className="size-3.5" />
         </Button>
       </section>
 
       {/* Copyright notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        <strong>Rights notice:</strong> &copy; Methuen Drama / Bloomsbury on behalf of Willy Russell
-        (b. 1947). Quotations are short fair-dealing extracts under CDPA 1988 &sect;30 (criticism,
-        review, quotation). For full text, students should consult the licensed school edition.
+        <strong>{await t('rev.texts2.common.rights_notice_label')}</strong>
+        {await t('rev.texts2.bb.rights_body')}
       </p>
     </div>
   )

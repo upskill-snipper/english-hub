@@ -16,6 +16,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -78,7 +79,7 @@ export default async function Paper2Page() {
       <div>
         <Button variant="ghost" size="sm" render={<Link href="/igcse/cambridge/0990" />}>
           <ArrowLeft className="size-3.5" />
-          Back to IGCSE Language B hub
+          {await t('igcse.page.back_to_lang_b_hub')}
         </Button>
       </div>
 
@@ -88,7 +89,7 @@ export default async function Paper2Page() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="bg-primary/10 text-primary border-primary/20">
               <Sparkles className="mr-1 size-3" />
-              Cambridge IGCSE Language B
+              {await t('igcse.cambridge.badge.cambridge_lang_b')}
             </Badge>
             <Badge variant="secondary">Paper 2</Badge>
             <Badge variant="secondary">Writing</Badge>

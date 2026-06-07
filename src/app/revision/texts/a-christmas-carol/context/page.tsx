@@ -17,6 +17,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
+import { useT } from '@/lib/i18n/use-t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ── Context data ────────────────────────────────────────────────────── */
@@ -194,6 +195,7 @@ const sections: ContextSection[] = [
 /* ── Page ────────────────────────────────────────────────────────────── */
 
 export default function ContextPage() {
+  const t = useT()
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -226,13 +228,13 @@ export default function ContextPage() {
             render={<Link href="/revision/texts/a-christmas-carol" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to A Christmas Carol
+            {t('rev.texts.acc.themes.back')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Landmark className="mr-1 size-3 text-teal-400" />
-              Deep Study
+              {t('rev.texts.common.deep_study')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -241,16 +243,13 @@ export default function ContextPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Historical and Social Context
+            {t('rev.texts.acc.context.title')}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
-            A Christmas Carol by Charles Dickens
+            {t('rev.texts.acc.themes.byline')}
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Understanding the world Dickens was writing about -- and writing FOR. Seven sections
-            covering Victorian social conditions, the Poor Law, Dickens&apos;s own experience of
-            poverty, publication context, the Industrial Revolution, the class system, and the
-            novella&apos;s reception and lasting impact.
+            {t('rev.texts.acc.context.intro')}
           </p>
         </div>
       </section>
@@ -259,7 +258,9 @@ export default function ContextPage() {
       <section>
         <Card>
           <CardContent className="p-4 sm:p-6">
-            <h2 className="mb-4 text-heading-md font-heading text-foreground">Jump to a Section</h2>
+            <h2 className="mb-4 text-heading-md font-heading text-foreground">
+              {t('rev.texts.common.jump_to_section')}
+            </h2>
             <div className="grid gap-2 sm:grid-cols-2">
               {sections.map((s) => {
                 const Icon = s.icon
@@ -305,7 +306,7 @@ export default function ContextPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
                   <BookOpen className="size-4 text-blue-400" />
-                  Overview
+                  {t('rev.texts.common.overview')}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4 text-body-sm text-muted-foreground">
@@ -320,7 +321,7 @@ export default function ContextPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
                   <Lightbulb className="size-4 text-clay-600" />
-                  Key Facts
+                  {t('rev.texts.common.key_facts')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -340,7 +341,7 @@ export default function ContextPage() {
               <CardContent className="p-5 sm:p-6">
                 <h4 className="mb-3 text-sm font-semibold text-foreground flex items-center gap-2">
                   <Quote className="size-4 text-violet-400" />
-                  Links to the Text
+                  {t('rev.texts.common.links_to_the_text')}
                 </h4>
                 <ul className="list-disc space-y-2 pl-4 text-body-sm text-muted-foreground">
                   {section.textLinks.map((l, i) => (
@@ -360,7 +361,7 @@ export default function ContextPage() {
             <Lightbulb className="size-5 text-clay-600" />
           </div>
           <h2 className="text-heading-lg font-heading text-foreground">
-            How to Use Context in Your Exam
+            {t('rev.texts.acc.context.how_to_use_h')}
           </h2>
         </div>
 
@@ -410,8 +411,7 @@ export default function ContextPage() {
 
       {/* Public domain notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        A Christmas Carol by Charles Dickens (1843) is in the public domain. Quotations are
-        reproduced freely as the text is no longer subject to copyright.
+        {t('rev.texts.acc.themes.public_domain')}
       </p>
     </div>
   )

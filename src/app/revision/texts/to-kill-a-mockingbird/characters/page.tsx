@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button'
 import { getServerBoard } from '@/lib/board/get-server-board'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title: 'To Kill a Mockingbird - Character Analysis | The English Hub',
@@ -265,6 +266,16 @@ export default async function ToKillAMockingbirdCharactersPage() {
     redirect('/revision/texts')
   }
 
+  // Pre-resolve chrome labels used inside .map() callbacks.
+  const backLabel = (await t('rev.texts.common.back_to_text')).replace(
+    '{text}',
+    'To Kill a Mockingbird',
+  )
+  const overviewLabel = await t('rev.texts.common.overview')
+  const characterArcLabel = await t('rev.texts2.common.character_arc_sc')
+  const keyQuotationsLabel = await t('rev.texts2.common.key_quotations_sc')
+  const examTipLabel = await t('rev.texts2.common.exam_tip')
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -294,13 +305,13 @@ export default async function ToKillAMockingbirdCharactersPage() {
             render={<Link href="/revision/texts/to-kill-a-mockingbird" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to To Kill a Mockingbird
+            {backLabel}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <BookOpen className="mr-1 size-3 text-violet-400" />
-              Modern Text - Novel
+              {await t('rev.texts2.common.modern_text_novel')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -309,14 +320,13 @@ export default async function ToKillAMockingbirdCharactersPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Character Analysis
+            {await t('rev.texts.common.character_analysis')}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
             To Kill a Mockingbird by Harper Lee
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Deep profiles for every major character: overview, arc, key quotations and examiner
-            tips. All quotes are 15 words or fewer.
+            {await t('rev.texts2.tkam.characters.intro')}
           </p>
         </div>
       </section>
@@ -325,7 +335,9 @@ export default async function ToKillAMockingbirdCharactersPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Users className="size-5 text-emerald-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">Characters</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {await t('rev.texts.common.characters')}
+          </h2>
         </div>
         <div className="space-y-6">
           {CHARACTERS.map((c) => (
@@ -336,15 +348,17 @@ export default async function ToKillAMockingbirdCharactersPage() {
               </CardHeader>
               <CardContent className="space-y-5">
                 <div>
-                  <h3 className="mb-1 text-sm font-semibold text-foreground">Overview</h3>
+                  <h3 className="mb-1 text-sm font-semibold text-foreground">{overviewLabel}</h3>
                   <p className="text-body-sm text-muted-foreground">{c.overview}</p>
                 </div>
                 <div>
-                  <h3 className="mb-1 text-sm font-semibold text-foreground">Character arc</h3>
+                  <h3 className="mb-1 text-sm font-semibold text-foreground">
+                    {characterArcLabel}
+                  </h3>
                   <p className="text-body-sm text-muted-foreground">{c.arc}</p>
                 </div>
                 <div className="space-y-3">
-                  <h3 className="text-sm font-semibold text-foreground">Key quotations</h3>
+                  <h3 className="text-sm font-semibold text-foreground">{keyQuotationsLabel}</h3>
                   {c.keyQuotes.map((q) => (
                     <div
                       key={q.text}
@@ -362,7 +376,7 @@ export default async function ToKillAMockingbirdCharactersPage() {
                   <div className="flex items-center gap-2 mb-1.5">
                     <Quote className="size-3.5 text-primary" />
                     <p className="text-xs font-semibold uppercase tracking-wide text-primary">
-                      Exam tip
+                      {examTipLabel}
                     </p>
                   </div>
                   <p className="text-body-sm text-muted-foreground">{c.examTip}</p>
@@ -380,28 +394,26 @@ export default async function ToKillAMockingbirdCharactersPage() {
           size="sm"
           render={<Link href="/revision/texts/to-kill-a-mockingbird/themes" />}
         >
-          Themes <ArrowRight className="size-3.5" />
+          {await t('rev.texts.common.themes')} <ArrowRight className="size-3.5" />
         </Button>
         <Button
           variant="outline"
           size="sm"
           render={<Link href="/revision/texts/to-kill-a-mockingbird/key-quotes" />}
         >
-          Key quotes <ArrowRight className="size-3.5" />
+          {await t('rev.texts2.common.key_quotes_sc')} <ArrowRight className="size-3.5" />
         </Button>
         <Button
           variant="outline"
           size="sm"
           render={<Link href="/revision/texts/to-kill-a-mockingbird/context" />}
         >
-          Context <ArrowRight className="size-3.5" />
+          {await t('rev.texts.common.context')} <ArrowRight className="size-3.5" />
         </Button>
       </section>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the Copyright, Designs and
-        Patents Act 1988 for criticism and review. Full text available from your school or local
-        library.
+        {await t('rev.texts2.common.fair_dealing_notice')}
       </p>
     </div>
   )

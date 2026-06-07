@@ -12,6 +12,7 @@ import { Button } from '@/components/ui/button'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { getBoardConfig } from '@/lib/board/board-config'
 import { getBoundaryForGrade, gradeNineToLetterEquivalent } from '@/lib/board/grade-boundaries'
+import { t } from '@/lib/i18n/t'
 
 // Grade-specific skill lists for every 9-1 grade. Each entry has five lit
 // and five lang bullets, a short summary paragraph, and 3-4 "key skills"
@@ -371,7 +372,7 @@ export async function GradeTargetPage({ grade }: { grade: GradeKey }) {
         render={<Link href="/revision/grade-targets" />}
       >
         <ArrowLeft className="size-3.5" />
-        All grade targets
+        {await t('rev.misc.grade.back_all')}
       </Button>
 
       {/* Hero */}
@@ -397,7 +398,9 @@ export async function GradeTargetPage({ grade }: { grade: GradeKey }) {
           <div className="flex items-center gap-2 mb-2">
             <Target className="size-4 text-primary" />
             <h2 className="text-sm font-semibold text-foreground">
-              {boardConfig.shortName} {boundary.label} Boundary
+              {(await t('rev.misc.grade.boundary_heading'))
+                .replace('{board}', boardConfig.shortName)
+                .replace('{label}', boundary.label)}
             </h2>
           </div>
           <p className="text-xs text-muted-foreground leading-relaxed">
@@ -422,7 +425,7 @@ export async function GradeTargetPage({ grade }: { grade: GradeKey }) {
             <CheckCircle2 className="size-4.5 text-cyan-400" />
           </div>
           <h2 className="text-heading-md font-heading text-foreground">
-            What {data.title} looks like
+            {(await t('rev.misc.grade.what_looks_like')).replace('{grade}', data.title)}
           </h2>
         </div>
 
@@ -430,7 +433,7 @@ export async function GradeTargetPage({ grade }: { grade: GradeKey }) {
           <div className="rounded-xl border border-border/40 bg-background/50 p-5">
             <h3 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
               <BookOpen className="size-4 text-blue-400" />
-              English Literature ({data.title})
+              {(await t('rev.misc.grade.lit_label')).replace('{grade}', data.title)}
             </h3>
             <ul className="space-y-2.5">
               {data.litSkills.map((item) => (
@@ -445,7 +448,7 @@ export async function GradeTargetPage({ grade }: { grade: GradeKey }) {
           <div className="rounded-xl border border-border/40 bg-background/50 p-5">
             <h3 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
               <PenTool className="size-4 text-violet-400" />
-              English Language ({data.title})
+              {(await t('rev.misc.grade.lang_label')).replace('{grade}', data.title)}
             </h3>
             <ul className="space-y-2.5">
               {data.langSkills.map((item) => (
@@ -465,7 +468,9 @@ export async function GradeTargetPage({ grade }: { grade: GradeKey }) {
           <div className="flex size-9 items-center justify-center rounded-lg bg-emerald-500/10">
             <Sparkles className="size-4.5 text-emerald-400" />
           </div>
-          <h2 className="text-heading-md font-heading text-foreground">How to get there</h2>
+          <h2 className="text-heading-md font-heading text-foreground">
+            {await t('rev.misc.grade.how_to_get_there')}
+          </h2>
         </div>
 
         <div className="space-y-4">
@@ -492,7 +497,9 @@ export async function GradeTargetPage({ grade }: { grade: GradeKey }) {
           >
             <ArrowLeft className="size-4 text-muted-foreground" />
             <div>
-              <p className="text-xs text-muted-foreground">Previous grade</p>
+              <p className="text-xs text-muted-foreground">
+                {await t('rev.misc.grade.prev_grade')}
+              </p>
               <p className="text-sm font-semibold text-foreground group-hover:text-primary">
                 Grade {data.prev}
               </p>
@@ -505,7 +512,9 @@ export async function GradeTargetPage({ grade }: { grade: GradeKey }) {
             className="group flex items-center gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-border sm:col-start-2"
           >
             <div className="flex-1 text-right">
-              <p className="text-xs text-muted-foreground">Next grade</p>
+              <p className="text-xs text-muted-foreground">
+                {await t('rev.misc.grade.next_grade')}
+              </p>
               <p className="text-sm font-semibold text-foreground group-hover:text-primary">
                 Grade {data.next}
               </p>

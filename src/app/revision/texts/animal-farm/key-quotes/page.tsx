@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { ArrowLeft, BookOpen, Filter, Lightbulb, Quote, Sparkles } from 'lucide-react'
 
 import StudyTools from '@/components/study/StudyTools'
+import { useT } from '@/lib/i18n/use-t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ────────────────────────────────────────────────────────────────────── */
@@ -342,6 +343,7 @@ const THEME_LIST = [
 /* ────────────────────────────────────────────────────────────────────── */
 
 export default function AnimalFarmKeyQuotesPage() {
+  const t = useT()
   const [filterTheme, setFilterTheme] = useState<string | null>(null)
 
   const filtered = QUOTES.filter((q) => {
@@ -374,13 +376,13 @@ export default function AnimalFarmKeyQuotesPage() {
             className="mb-4 inline-flex items-center gap-1 text-sm text-primary hover:text-primary/80"
           >
             <ArrowLeft className="size-3.5" />
-            Back to Animal Farm
+            {t('rev.texts.af.back')}
           </Link>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1 rounded-full bg-clay-500/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-clay-700 dark:text-clay-300">
               <Quote className="size-3" />
-              Key Quotes
+              {t('rev.texts.common.key_quotes')}
             </span>
             <span className="inline-flex items-center gap-1 rounded-full border border-border/60 px-3 py-1 text-xs text-primary">
               <Sparkles className="size-3" />
@@ -389,13 +391,10 @@ export default function AnimalFarmKeyQuotesPage() {
           </div>
 
           <h1 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Animal Farm &mdash; Key Quotes
+            {t('rev.texts.af.quotes.title')}
           </h1>
-          <p className="mt-2 text-lg text-muted-foreground">by George Orwell &mdash; 1945</p>
-          <p className="mt-4 max-w-2xl text-muted-foreground">
-            Twenty essential quotations organised by chapter and theme, each with speaker, context,
-            detailed analysis, thematic links and exam tips for GCSE English Literature.
-          </p>
+          <p className="mt-2 text-lg text-muted-foreground">{t('rev.texts.af.quotes.byline')}</p>
+          <p className="mt-4 max-w-2xl text-muted-foreground">{t('rev.texts.af.quotes.intro')}</p>
         </section>
 
         {/* Exam tip banner */}
@@ -403,13 +402,10 @@ export default function AnimalFarmKeyQuotesPage() {
           <div className="flex items-start gap-3">
             <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-700 dark:text-clay-300" />
             <div className="text-sm text-muted-foreground">
-              <p className="mb-1 font-bold text-foreground">How to use these quotes</p>
-              <p>
-                You do not need to memorise all twenty. Aim for{' '}
-                <strong>10&ndash;12 versatile quotes</strong> that you can analyse in depth and that
-                cover multiple themes. For each quote, practise identifying the technique,
-                explaining its effect, and linking it to Orwell&rsquo;s allegorical purpose.
+              <p className="mb-1 font-bold text-foreground">
+                {t('rev.texts.common.how_to_use_quotes')}
               </p>
+              <p>{t('rev.texts.af.quotes.how_to_use_body')}</p>
             </div>
           </div>
         </section>
@@ -419,7 +415,7 @@ export default function AnimalFarmKeyQuotesPage() {
           <div className="flex items-center gap-2 mb-3">
             <Filter className="size-4 text-primary" />
             <h2 className="text-sm font-bold uppercase tracking-wider text-muted-foreground">
-              Filter by Theme
+              {t('rev.texts.common.filter_by_theme')}
             </h2>
           </div>
           <div className="flex flex-wrap gap-2">
@@ -431,7 +427,7 @@ export default function AnimalFarmKeyQuotesPage() {
                   : 'bg-muted text-muted-foreground hover:bg-secondary'
               }`}
             >
-              All ({QUOTES.length})
+              {t('rev.texts.common.all_count').replace('{n}', String(QUOTES.length))}
             </button>
             {THEME_LIST.map((theme) => (
               <button
@@ -475,33 +471,35 @@ export default function AnimalFarmKeyQuotesPage() {
               {/* Context */}
               <div className="mb-3">
                 <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                  Context
+                  {t('rev.texts.common.context')}
                 </p>
                 <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{q.context}</p>
               </div>
 
               {/* Analysis */}
               <div className="mb-3">
-                <p className="text-xs font-bold uppercase tracking-wider text-primary">Analysis</p>
+                <p className="text-xs font-bold uppercase tracking-wider text-primary">
+                  {t('rev.texts.common.analysis')}
+                </p>
                 <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{q.analysis}</p>
               </div>
 
               {/* Thematic links */}
               <div className="mb-3 rounded-lg border border-primary/20 bg-primary/5 p-3">
                 <p className="mb-1 text-xs font-bold uppercase tracking-wider text-primary">
-                  Thematic Links
+                  {t('rev.texts.common.thematic_links')}
                 </p>
                 <p className="text-sm leading-relaxed text-muted-foreground">{q.thematicLinks}</p>
               </div>
 
               {/* Themes */}
               <div className="mb-3 flex flex-wrap gap-1.5">
-                {q.themes.map((t) => (
+                {q.themes.map((th) => (
                   <span
-                    key={t}
+                    key={th}
                     className="rounded-full border border-clay-500/30 bg-clay-500/10 px-2.5 py-0.5 text-xs font-medium text-clay-700 dark:text-clay-300"
                   >
-                    {t}
+                    {th}
                   </span>
                 ))}
               </div>
@@ -511,7 +509,9 @@ export default function AnimalFarmKeyQuotesPage() {
                 <div className="flex items-start gap-2">
                   <Lightbulb className="mt-0.5 size-3.5 shrink-0 text-clay-700 dark:text-clay-300" />
                   <p className="text-xs leading-relaxed text-muted-foreground">
-                    <span className="font-bold text-clay-700 dark:text-clay-300">Exam tip: </span>
+                    <span className="font-bold text-clay-700 dark:text-clay-300">
+                      {t('rev.texts.common.exam_tip_label')}
+                    </span>
                     {q.examTip}
                   </p>
                 </div>
@@ -523,54 +523,50 @@ export default function AnimalFarmKeyQuotesPage() {
         {filtered.length === 0 && (
           <div className="mt-8 rounded-xl border border-border/60 bg-card p-8 text-center">
             <p className="text-sm text-muted-foreground">
-              No quotes match your current filter. Try a different theme.
+              {t('rev.texts.common.no_quotes_match_theme')}
             </p>
           </div>
         )}
 
         {/* Navigation */}
         <section className="mt-14 rounded-xl border border-border/60 bg-primary/5 p-6">
-          <h3 className="font-heading text-xl font-bold text-foreground">Continue studying</h3>
+          <h3 className="font-heading text-xl font-bold text-foreground">
+            {t('rev.texts.common.continue_studying')}
+          </h3>
           <p className="mt-1 text-sm text-muted-foreground">
-            Explore characters, themes, context and essay plans for Animal Farm.
+            {t('rev.texts.af.quotes.continue_sub')}
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link
               href="/revision/texts/animal-farm/characters"
               className="inline-flex items-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
             >
-              Characters
+              {t('rev.texts.common.characters')}
             </Link>
             <Link
               href="/revision/texts/animal-farm/themes"
               className="inline-flex items-center rounded-lg border border-border/60 bg-card px-4 py-2 text-sm font-medium text-primary hover:bg-primary/5"
             >
-              Themes
+              {t('rev.texts.common.themes')}
             </Link>
             <Link
               href="/revision/texts/animal-farm/context"
               className="inline-flex items-center rounded-lg border border-border/60 bg-card px-4 py-2 text-sm font-medium text-primary hover:bg-primary/5"
             >
-              Context
+              {t('rev.texts.common.context')}
             </Link>
             <Link
               href="/revision/texts/animal-farm/essay-plans"
               className="inline-flex items-center rounded-lg border border-border/60 bg-card px-4 py-2 text-sm font-medium text-primary hover:bg-primary/5"
             >
-              Essay Plans
+              {t('rev.texts.common.essay_plans')}
             </Link>
           </div>
         </section>
 
         {/* Rights / fair-dealing notice */}
         <p className="mt-10 border-t border-border/60 pt-4 text-xs text-muted-foreground">
-          <strong>Rights notice:</strong> While <em>Animal Farm</em> entered UK public domain in
-          2021, the Orwell estate (AM Heath) actively manages educational use. Quotations on this
-          page are short fair-dealing extracts; longer engagement should use a school-licensed
-          edition. Short quotations (&le;15 words each) reproduced under the fair dealing provision
-          of the Copyright, Designs and Patents Act 1988 (s.30) for the purpose of criticism, review
-          and educational study. <em>Animal Farm</em> by George Orwell is published by Penguin
-          Books. Full text available from your school or local library.
+          {t('rev.texts.af.rights_notice')}
         </p>
       </div>
     </div>

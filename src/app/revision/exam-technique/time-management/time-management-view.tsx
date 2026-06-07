@@ -18,6 +18,7 @@ import {
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { useT } from '@/lib/i18n/use-t'
 
 import type {
   PaperBreakdown,
@@ -132,6 +133,7 @@ export default function TimeManagementView({
   structureSummary: string
   papers: PaperBreakdown[]
 }) {
+  const t = useT()
   return (
     <div className="space-y-6 pb-16">
       {/* ── Header ────────────────────────────────────────────── */}
@@ -143,7 +145,7 @@ export default function TimeManagementView({
           render={<Link href="/revision/exam-technique" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Exam Technique
+          {t('rev.misc.et.back_exam_technique')}
         </Button>
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-amber-500/10">
@@ -493,14 +495,14 @@ export default function TimeManagementView({
           render={<Link href="/revision/exam-technique/essay-structure" />}
         >
           <ArrowLeft className="size-4" />
-          Essay Structure
+          {t('rev.misc.et.essay_structure')}
         </Button>
         <Button
           variant="default"
           className="flex-1"
           render={<Link href="/revision/exam-technique/question-types" />}
         >
-          Question Types
+          {t('rev.misc.et.question_types')}
           <ArrowRight className="size-4" />
         </Button>
       </div>

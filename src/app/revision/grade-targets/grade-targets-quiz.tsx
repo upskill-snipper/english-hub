@@ -5,6 +5,7 @@ import { ArrowRight, Star, AlertCircle, Sparkles, ChevronRight } from 'lucide-re
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { useT } from '@/lib/i18n/use-t'
 import type { GradeSystem } from '@/lib/board/grade-boundaries'
 
 /* ── Quiz data ────────────────────────────────────────────────────────── */
@@ -126,6 +127,7 @@ export function GradeTargetsQuiz({
   paperLanguage: string
   gradeSystem: GradeSystem
 }) {
+  const t = useT()
   const [quizStarted, setQuizStarted] = useState(false)
   const [currentQ, setCurrentQ] = useState(0)
   const [answers, setAnswers] = useState<number[]>([])
@@ -159,17 +161,16 @@ export function GradeTargetsQuiz({
           <Sparkles className="size-4.5 text-primary" />
         </div>
         <h2 className="text-heading-md font-heading text-foreground">
-          What Grade Am I Working At?
+          {t('rev.misc.gtquiz.title')}
         </h2>
       </div>
       <p className="text-body-sm text-muted-foreground mb-6 max-w-2xl">
-        Answer five quick questions about how you currently write and analyse texts for{' '}
-        {paperLiterature}. This is not a test - it helps you identify which guide to start with.
+        {t('rev.misc.gtquiz.intro').replace('{paper}', paperLiterature)}
       </p>
 
       {!quizStarted && !showResult && (
         <Button variant="default" size="lg" onClick={() => setQuizStarted(true)}>
-          Start Self-Assessment
+          {t('rev.misc.gtquiz.start')}
           <ArrowRight className="size-4" />
         </Button>
       )}
@@ -179,7 +180,9 @@ export function GradeTargetsQuiz({
           {/* Progress */}
           <div className="flex items-center gap-3 mb-5">
             <span className="text-xs font-medium text-muted-foreground">
-              Question {currentQ + 1} of {questions.length}
+              {t('rev.misc.gtquiz.question_x_of_y')
+                .replace('{n}', String(currentQ + 1))
+                .replace('{total}', String(questions.length))}
             </span>
             <div className="flex-1 h-1.5 rounded-full bg-muted/60">
               <div
@@ -213,7 +216,7 @@ export function GradeTargetsQuiz({
             <div className="flex items-center gap-3 mb-3">
               <Badge variant="secondary" className="text-sm">
                 <Star className="size-3 mr-1" />
-                Your result
+                {t('rev.misc.gtquiz.your_result')}
               </Badge>
               <span className={`text-lg font-bold ${result.colour}`}>{result.grade}</span>
             </div>
@@ -226,7 +229,7 @@ export function GradeTargetsQuiz({
                 <ChevronRight className="size-4" />
               </Button>
               <Button variant="outline" onClick={resetQuiz}>
-                Retake quiz
+                {t('rev.misc.gtquiz.retake')}
               </Button>
             </div>
           </div>
@@ -234,9 +237,7 @@ export function GradeTargetsQuiz({
           <div className="flex items-start gap-2.5 rounded-lg border border-amber-500/20 bg-amber-500/[0.04] p-4">
             <AlertCircle className="size-4 shrink-0 text-clay-600 mt-0.5" />
             <p className="text-xs text-muted-foreground leading-relaxed">
-              This is a rough self-assessment, not a prediction. Your actual grade depends on exam
-              performance, timing, and how well you apply techniques on the day. Use this as a
-              starting point to focus your revision.
+              {t('rev.misc.gtquiz.disclaimer')}
             </p>
           </div>
         </div>

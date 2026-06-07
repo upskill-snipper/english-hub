@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
+import { useT } from '@/lib/i18n/use-t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ── Quote data ──────────────────────────────────────────────────────── */
@@ -264,6 +265,7 @@ const themeGroups = [
 /* ── Page ────────────────────────────────────────────────────────────── */
 
 export default function KeyQuotesPage() {
+  const tr = useT()
   return (
     <div className="space-y-10 bg-background pb-16">
       <BreadcrumbJsonLd
@@ -296,13 +298,13 @@ export default function KeyQuotesPage() {
             render={<Link href="/revision/texts/things-fall-apart" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Things Fall Apart
+            {tr('rev.texts.common.back_to_text').replace('{text}', 'Things Fall Apart')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Quote className="mr-1 size-3 text-clay-500" />
-              Deep Study
+              {tr('rev.texts.common.deep_study')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -311,14 +313,13 @@ export default function KeyQuotesPage() {
           </div>
 
           <h1 className="font-heading text-display-sm text-foreground sm:text-display">
-            Key Quotes Bank
+            {tr('rev.texts.common.key_quotes_bank')}
           </h1>
           <p className="mt-2 text-body-lg italic text-clay-600 dark:text-clay-300">
             Things Fall Apart by Chinua Achebe
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Twenty-two essential quotations organised by theme. Each quote includes speaker, part
-            reference, context, detailed analysis, and thematic links for exam revision.
+            {tr('rev.texts2.tfa.key_quotes.intro')}
           </p>
         </div>
       </section>
@@ -327,7 +328,9 @@ export default function KeyQuotesPage() {
       <section>
         <Card>
           <CardContent className="p-4 sm:p-6">
-            <h2 className="mb-4 font-heading text-heading-md text-foreground">Jump to a Theme</h2>
+            <h2 className="mb-4 font-heading text-heading-md text-foreground">
+              {tr('rev.texts.common.jump_to_theme')}
+            </h2>
             <div className="flex flex-wrap gap-2">
               {themeGroups
                 .filter((t) => quotes.some((q) => q.themes[0] === t))
@@ -383,7 +386,7 @@ export default function KeyQuotesPage() {
                     {/* Context */}
                     <div>
                       <h4 className="mb-1 text-xs font-mono font-medium uppercase tracking-wider text-muted-foreground">
-                        Context
+                        {tr('rev.texts.common.context')}
                       </h4>
                       <p className="text-body-sm text-muted-foreground">{q.context}</p>
                     </div>
@@ -391,7 +394,7 @@ export default function KeyQuotesPage() {
                     {/* Analysis */}
                     <div>
                       <h4 className="mb-1 text-xs font-mono font-medium uppercase tracking-wider text-muted-foreground">
-                        Language Analysis
+                        {tr('rev.texts.common.language_analysis')}
                       </h4>
                       <p className="text-body-sm text-muted-foreground">{q.analysis}</p>
                     </div>
@@ -399,7 +402,7 @@ export default function KeyQuotesPage() {
                     {/* Themes */}
                     <div>
                       <h4 className="mb-1.5 text-xs font-mono font-medium uppercase tracking-wider text-muted-foreground">
-                        Thematic Links
+                        {tr('rev.texts2.common.thematic_links')}
                       </h4>
                       <div className="flex flex-wrap gap-1.5">
                         {q.themes.map((t) => (
@@ -422,9 +425,7 @@ export default function KeyQuotesPage() {
 
       {/* Fair dealing notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the Copyright, Designs and
-        Patents Act 1988 for criticism and review. Full text available from your school or local
-        library.
+        {tr('rev.texts2.common.fair_dealing_notice')}
       </p>
     </div>
   )

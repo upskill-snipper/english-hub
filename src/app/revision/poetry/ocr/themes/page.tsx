@@ -30,6 +30,7 @@ import {
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { useT } from '@/lib/i18n/use-t'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -711,6 +712,7 @@ const THEMES: Theme[] = [
 // ─── Page ────────────────────────────────────────────────────────────────────
 
 export default function OCRThemesPage() {
+  const t = useT()
   return (
     <div className="space-y-10 pb-16">
       {/* ── Back nav ──────────────────────────────────────────────────── */}
@@ -722,7 +724,7 @@ export default function OCRThemesPage() {
           render={<Link href="/revision/poetry/ocr" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to OCR Anthology
+          {t('poetry_hub.ocr.back_to_anthology')}
         </Button>
       </div>
 
@@ -735,18 +737,16 @@ export default function OCRThemesPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Sparkles className="mr-1 size-3" />
-              OCR Towards a World Unknown
+              {t('poetry_hub.ocr.badge_anthology')}
             </Badge>
             <Badge className="bg-primary/10 text-primary border-primary/20">OCR</Badge>
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Themes Across All Clusters
+            {t('poetry_hub.ocr.themes.title')}
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Every major theme in the OCR anthology mapped to the poems that explore it. Use this to
-            find strong comparison pairings and to see how the same idea appears across different
-            clusters.
+            {t('poetry_hub.ocr.themes.lead')}
           </p>
         </div>
       </section>
@@ -756,7 +756,9 @@ export default function OCRThemesPage() {
         <div className="flex items-start gap-3">
           <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-600" />
           <div>
-            <h2 className="text-heading-sm font-heading text-foreground">How to use this page</h2>
+            <h2 className="text-heading-sm font-heading text-foreground">
+              {t('poetry_hub.ocr.themes.how_title')}
+            </h2>
             <ul className="mt-2 space-y-1.5 text-body-sm text-muted-foreground leading-relaxed">
               <li>
                 Each theme lists every poem in the anthology that engages with it, across all 4
@@ -785,7 +787,10 @@ export default function OCRThemesPage() {
             <div>
               <h2 className="text-heading-lg font-heading text-foreground">{theme.name}</h2>
               <p className="text-caption text-muted-foreground">
-                {theme.poems.length} poem{theme.poems.length === 1 ? '' : 's'}
+                {theme.poems.length}{' '}
+                {theme.poems.length === 1
+                  ? t('poetry_hub.ocr.themes.poem_singular')
+                  : t('poetry_hub.ocr.themes.poem_plural')}
               </p>
             </div>
           </div>
@@ -822,7 +827,9 @@ export default function OCRThemesPage() {
 
       {/* ── Copyright note ────────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-muted/30 p-5 sm:p-6">
-        <h2 className="text-heading-sm font-heading text-foreground">About these study notes</h2>
+        <h2 className="text-heading-sm font-heading text-foreground">
+          {t('poetry_hub.ocr.themes.notes_title')}
+        </h2>
         <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
           These theme descriptions discuss ideas, methods and context rather than reproducing
           copyrighted poem text. You will need a copy of the OCR <em>Towards a World Unknown</em>{' '}
@@ -834,7 +841,9 @@ export default function OCRThemesPage() {
       {/* ── Back CTA ──────────────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8 text-center">
         <BookOpen className="mx-auto mb-3 size-8 text-primary" />
-        <h2 className="text-heading-lg font-heading text-foreground">Explore more</h2>
+        <h2 className="text-heading-lg font-heading text-foreground">
+          {t('poetry_hub.ocr.themes.explore_more')}
+        </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
           Try our essay plans for ready-made comparison structures, or learn how to write a top-band
           comparison essay.
@@ -845,7 +854,7 @@ export default function OCRThemesPage() {
             size="lg"
             render={<Link href="/revision/poetry/ocr/essay-plans" />}
           >
-            Essay Plans
+            {t('poetry_hub.ocr.cg.essay_plans_cta')}
             <ArrowRight className="size-4" />
           </Button>
           <Button
@@ -853,10 +862,10 @@ export default function OCRThemesPage() {
             size="lg"
             render={<Link href="/revision/poetry/ocr/comparison-guide" />}
           >
-            Comparison Guide
+            {t('poetry_hub.ocr.themes.comparison_guide_cta')}
           </Button>
           <Button variant="outline" size="lg" render={<Link href="/revision/poetry/ocr" />}>
-            Back to OCR Anthology
+            {t('poetry_hub.ocr.back_to_anthology')}
           </Button>
         </div>
       </section>

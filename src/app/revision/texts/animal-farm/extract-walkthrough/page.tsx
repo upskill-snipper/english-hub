@@ -15,6 +15,7 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { useT } from '@/lib/i18n/use-t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
@@ -115,6 +116,17 @@ const WALKTHROUGH: WalkthroughCard[] = [
 /* ── Page ───────────────────────────────────────────────────────────────── */
 
 export default function ExtractWalkthroughPage() {
+  const t = useT()
+  const stageLabel: Record<'Notice' | 'Say' | 'Zoom out', string> = {
+    Notice: t('rev.texts.common.notice'),
+    Say: t('rev.texts.common.say'),
+    'Zoom out': t('rev.texts.common.zoom_out'),
+  }
+  const stageHelperText: Record<'Notice' | 'Say' | 'Zoom out', string> = {
+    Notice: t('rev.texts.af.extract.notice_helper'),
+    Say: t('rev.texts.af.extract.say_helper'),
+    'Zoom out': t('rev.texts.af.extract.zoom_helper'),
+  }
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -142,13 +154,13 @@ export default function ExtractWalkthroughPage() {
             render={<Link href="/revision/texts/animal-farm" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Animal Farm
+            {t('rev.texts.af.back')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Quote className="mr-1 size-3 text-violet-400" />
-              Extract Walkthrough
+              {t('rev.texts.af.extract.badge')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               AQA / Edexcel / OCR
@@ -156,15 +168,13 @@ export default function ExtractWalkthroughPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            The Closing Paragraph: &ldquo;impossible to say which was which&rdquo;
+            {t('rev.texts.af.extract.title')}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
-            Animal Farm by George Orwell - final paragraph of Chapter 10
+            {t('rev.texts.af.extract.byline')}
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            A guided walkthrough using the <strong>Notice / Say / Zoom out</strong> framework. Use
-            this to model how examiners want you to move from observation, to analysis, to wider
-            argument - without losing grip on the words on the page.
+            {t('rev.texts.af.extract.intro')}
           </p>
         </div>
       </section>
@@ -173,12 +183,14 @@ export default function ExtractWalkthroughPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Quote className="size-5 text-violet-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">The Extract</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {t('rev.texts.common.the_extract')}
+          </h2>
         </div>
         <Card>
           <CardContent className="space-y-3 pt-6">
             <p className="text-caption uppercase tracking-wide text-muted-foreground">
-              Closing paragraph, Chapter 10
+              {t('rev.texts.af.extract.extract_caption')}
             </p>
             <blockquote className="space-y-2 border-l-4 border-violet-400/60 pl-4 text-body-md italic text-foreground">
               {EXTRACT_LINES.map((line, i) => (
@@ -201,12 +213,7 @@ export default function ExtractWalkthroughPage() {
             : stage === 'Say'
               ? 'text-blue-400'
               : 'text-violet-400'
-        const stageHelper =
-          stage === 'Notice'
-            ? 'Surface details a careful reader would mark in the margin.'
-            : stage === 'Say'
-              ? 'Turn the noticed details into argued analysis with evidence.'
-              : 'Step back to context, allegory and the broader thesis.'
+        const stageHelper = stageHelperText[stage]
         return (
           <section key={stage}>
             <div className="mb-5">
@@ -214,7 +221,9 @@ export default function ExtractWalkthroughPage() {
                 {stage === 'Notice' && <Eye className={`size-5 ${stageColour}`} />}
                 {stage === 'Say' && <MessageSquare className={`size-5 ${stageColour}`} />}
                 {stage === 'Zoom out' && <Telescope className={`size-5 ${stageColour}`} />}
-                <h2 className="text-heading-lg font-heading text-foreground">{stage}</h2>
+                <h2 className="text-heading-lg font-heading text-foreground">
+                  {stageLabel[stage]}
+                </h2>
               </div>
               <p className="text-body-sm text-muted-foreground">{stageHelper}</p>
             </div>
@@ -237,7 +246,7 @@ export default function ExtractWalkthroughPage() {
                       {card.evidence && (
                         <div className="rounded-lg border border-border/60 bg-muted/30 p-3">
                           <p className="text-caption uppercase tracking-wide text-primary">
-                            Evidence
+                            {t('rev.texts.common.evidence')}
                           </p>
                           <p className="mt-1 italic text-foreground">{card.evidence}</p>
                         </div>
@@ -256,7 +265,7 @@ export default function ExtractWalkthroughPage() {
         <div className="mb-5 flex items-center gap-3">
           <PenLine className="size-5 text-emerald-400" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            Model Paragraph (~250 words)
+            {t('rev.texts.af.extract.model_para_h')}
           </h2>
         </div>
         <Card>
@@ -293,13 +302,7 @@ export default function ExtractWalkthroughPage() {
 
       {/* Rights / fair-dealing notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        <strong>Rights notice:</strong> <em>Animal Farm</em> entered the UK public domain in 2021
-        (70 years after Orwell&rsquo;s death in 1950) but remains in copyright in the United States
-        until 2041. As The English Hub serves international students, the extract above is
-        reproduced as a short fair-dealing quotation under the Copyright, Designs and Patents Act
-        1988 (s.30) for the purpose of criticism, review and educational study. <em>Animal Farm</em>{' '}
-        by George Orwell is published by Penguin Books; the Orwell estate is administered by AM
-        Heath. Students outside the UK should consult a school-licensed edition.
+        {t('rev.texts.af.extract.rights_notice')}
       </p>
     </div>
   )

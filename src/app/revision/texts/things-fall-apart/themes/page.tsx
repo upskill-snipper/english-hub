@@ -20,6 +20,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
+import { useT } from '@/lib/i18n/use-t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ── Theme data ──────────────────────────────────────────────────────── */
@@ -440,6 +441,7 @@ const themes: ThemeData[] = [
 /* ── Page ────────────────────────────────────────────────────────────── */
 
 export default function ThemesPage() {
+  const tr = useT()
   return (
     <div className="space-y-10 bg-background pb-16">
       <BreadcrumbJsonLd
@@ -472,13 +474,13 @@ export default function ThemesPage() {
             render={<Link href="/revision/texts/things-fall-apart" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Things Fall Apart
+            {tr('rev.texts.common.back_to_text').replace('{text}', 'Things Fall Apart')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <BookOpen className="mr-1 size-3 text-clay-500" />
-              Deep Study
+              {tr('rev.texts.common.deep_study')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -487,14 +489,13 @@ export default function ThemesPage() {
           </div>
 
           <h1 className="font-heading text-display-sm text-foreground sm:text-display">
-            Theme Analysis
+            {tr('rev.texts.common.theme_analysis')}
           </h1>
           <p className="mt-2 text-body-lg italic text-clay-600 dark:text-clay-300">
             Things Fall Apart by Chinua Achebe
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Seven major themes explored in depth: definition, evidence from each part of the novel,
-            key quotations, links to historical context, and essay planning tips for exam success.
+            {tr('rev.texts2.tfa.themes.intro')}
           </p>
         </div>
       </section>
@@ -503,7 +504,9 @@ export default function ThemesPage() {
       <section>
         <Card>
           <CardContent className="p-4 sm:p-6">
-            <h2 className="mb-4 font-heading text-heading-md text-foreground">Jump to a Theme</h2>
+            <h2 className="mb-4 font-heading text-heading-md text-foreground">
+              {tr('rev.texts.common.jump_to_theme')}
+            </h2>
             <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
               {themes.map((th) => {
                 const Icon = th.icon
@@ -554,7 +557,7 @@ export default function ThemesPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 font-heading text-heading-md">
                   <BookOpen className="size-4 text-clay-500" />
-                  Overview
+                  {tr('rev.texts.common.overview')}
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-body-sm text-muted-foreground">
@@ -567,7 +570,7 @@ export default function ThemesPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 font-heading text-heading-md">
                   <Flame className="size-4 text-ochre-500" />
-                  Evidence Across the Novel
+                  {tr('rev.texts.common.evidence_across_novella')}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4 text-body-sm text-muted-foreground">
@@ -584,7 +587,9 @@ export default function ThemesPage() {
             <div>
               <div className="mb-4 flex items-center gap-2">
                 <Quote className="size-4 text-clay-500" />
-                <h3 className="font-heading text-heading-md text-foreground">Key Quotations</h3>
+                <h3 className="font-heading text-heading-md text-foreground">
+                  {tr('rev.texts.common.key_quotations')}
+                </h3>
               </div>
               <div className="grid gap-3">
                 {theme.keyQuotes.map((q, i) => (
@@ -606,7 +611,7 @@ export default function ThemesPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 font-heading text-heading-md">
                   <BookOpen className="size-4 text-teal-500" />
-                  Links to Context
+                  {tr('rev.texts.common.links_to_context')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -623,7 +628,7 @@ export default function ThemesPage() {
               <CardContent className="p-5 sm:p-6">
                 <h4 className="mb-3 text-sm font-semibold text-foreground flex items-center gap-2">
                   <Lightbulb className="size-4 text-amber-400" />
-                  Essay Planning Tips
+                  {tr('rev.texts.common.essay_planning_tips')}
                 </h4>
                 <ul className="list-disc space-y-2 pl-4 text-body-sm text-muted-foreground">
                   {theme.essayTips.map((t, i) => (
@@ -638,9 +643,7 @@ export default function ThemesPage() {
 
       {/* Fair dealing notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the Copyright, Designs and
-        Patents Act 1988 for criticism and review. Full text available from your school or local
-        library.
+        {tr('rev.texts2.common.fair_dealing_notice')}
       </p>
     </div>
   )

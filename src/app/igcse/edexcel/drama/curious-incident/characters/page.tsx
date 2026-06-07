@@ -5,6 +5,7 @@ import { ArrowLeft, Users, Sparkles, Info } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
+import { useT } from '@/lib/i18n/use-t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 const characters = [
@@ -67,6 +68,7 @@ const characters = [
 ]
 
 export default function CuriousIncidentCharactersPage() {
+  const tr = useT()
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -92,7 +94,7 @@ export default function CuriousIncidentCharactersPage() {
           render={<Link href="/igcse/edexcel/drama/curious-incident" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to The Curious Incident
+          {tr('igcse.page.back_to')} The Curious Incident
         </Button>
       </div>
 
@@ -107,9 +109,9 @@ export default function CuriousIncidentCharactersPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="border-primary/20 bg-primary/10 text-primary">
               <Sparkles className="mr-1 size-3" />
-              Edexcel IGCSE Literature
+              {tr('igcse.page.badge_edexcel_lit')}
             </Badge>
-            <Badge variant="secondary">Characters</Badge>
+            <Badge variant="secondary">{tr('igcse.page.section.characters')}</Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
             The Curious Incident: Characters
@@ -126,10 +128,10 @@ export default function CuriousIncidentCharactersPage() {
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
             <h2 className="text-body-sm font-semibold text-foreground">
-              Key quotations only &mdash; read the full text
+              {tr('igcse.page.copyright_heading')}
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
-              Short extracts are included under fair dealing for study and criticism.
+              {tr('igcse.page.fair_dealing_body')}
             </p>
           </div>
         </div>
@@ -138,7 +140,9 @@ export default function CuriousIncidentCharactersPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Users className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">Character profiles</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {tr('igcse.page.section.character_profiles')}
+          </h2>
         </div>
         <div className="grid gap-5 md:grid-cols-2">
           {characters.map((c) => (

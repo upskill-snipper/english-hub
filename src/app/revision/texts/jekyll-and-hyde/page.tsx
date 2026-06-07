@@ -8,6 +8,7 @@ import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 import { GeoFaq, type GeoFaqItem } from '@/components/seo/GeoFaq'
 
 const JH_FAQS: GeoFaqItem[] = [
@@ -851,7 +852,7 @@ export default async function JekyllAndHydePage() {
       />
       <section aria-labelledby="jh-direct-answer" className="mx-auto mt-8 max-w-3xl px-4">
         <h2 id="jh-direct-answer" className="sr-only">
-          Dr Jekyll and Mr Hyde: quick summary
+          {await t('rev.texts2.jh.quick_summary_heading')}
         </h2>
         <p className="text-base leading-relaxed text-muted-foreground">
           <strong className="text-foreground">Strange Case of Dr Jekyll and Mr Hyde</strong> is an
@@ -945,11 +946,13 @@ export default async function JekyllAndHydePage() {
       />
       <TextGuide data={data} />
       <section className="mx-auto mt-12 max-w-3xl px-4">
-        <GeoFaq faqs={JH_FAQS} heading="Dr Jekyll and Mr Hyde: frequently asked questions" />
+        <GeoFaq faqs={JH_FAQS} heading={await t('rev.texts2.jh.faq_heading')} />
       </section>
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        <em>Strange Case of Dr Jekyll and Mr Hyde</em> (1886) by Robert Louis Stevenson is in the
-        public domain. Quotations are reproduced freely.
+        <em>Strange Case of Dr Jekyll and Mr Hyde</em>
+        {(await t('rev.texts2.common.public_domain_notice_after2'))
+          .replace('{year}', '1886')
+          .replace('{author}', 'Robert Louis Stevenson')}
       </p>
     </>
   )

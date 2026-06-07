@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button'
 import { getServerBoard } from '@/lib/board/get-server-board'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title: 'To Kill a Mockingbird - Key Quotes | The English Hub',
@@ -271,6 +272,11 @@ export default async function ToKillAMockingbirdKeyQuotesPage() {
     redirect('/revision/texts')
   }
 
+  const backLabel = (await t('rev.texts.common.back_to_text')).replace(
+    '{text}',
+    'To Kill a Mockingbird',
+  )
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -300,13 +306,13 @@ export default async function ToKillAMockingbirdKeyQuotesPage() {
             render={<Link href="/revision/texts/to-kill-a-mockingbird" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to To Kill a Mockingbird
+            {backLabel}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <BookOpen className="mr-1 size-3 text-violet-400" />
-              Modern Text - Novel
+              {await t('rev.texts2.common.modern_text_novel')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -315,14 +321,13 @@ export default async function ToKillAMockingbirdKeyQuotesPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Key Quotations
+            {await t('rev.texts.common.key_quotations')}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
             To Kill a Mockingbird by Harper Lee
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Twenty-five essential quotations for exam revision. Each quote is 15 words or fewer,
-            with speaker, context, analysis and theme tags for quick reference.
+            {await t('rev.texts2.tkam.key_quotes.intro')}
           </p>
         </div>
       </section>
@@ -331,7 +336,9 @@ export default async function ToKillAMockingbirdKeyQuotesPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Quote className="size-5 text-violet-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">25 Key Quotes</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {await t('rev.texts2.tkam.key_quotes.title')}
+          </h2>
         </div>
         <div className="grid gap-4">
           {KEY_QUOTES.map((q) => (
@@ -370,28 +377,26 @@ export default async function ToKillAMockingbirdKeyQuotesPage() {
           size="sm"
           render={<Link href="/revision/texts/to-kill-a-mockingbird/characters" />}
         >
-          Characters <ArrowRight className="size-3.5" />
+          {await t('rev.texts.common.characters')} <ArrowRight className="size-3.5" />
         </Button>
         <Button
           variant="outline"
           size="sm"
           render={<Link href="/revision/texts/to-kill-a-mockingbird/themes" />}
         >
-          Themes <ArrowRight className="size-3.5" />
+          {await t('rev.texts.common.themes')} <ArrowRight className="size-3.5" />
         </Button>
         <Button
           variant="outline"
           size="sm"
           render={<Link href="/revision/texts/to-kill-a-mockingbird/context" />}
         >
-          Context <ArrowRight className="size-3.5" />
+          {await t('rev.texts.common.context')} <ArrowRight className="size-3.5" />
         </Button>
       </section>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the Copyright, Designs and
-        Patents Act 1988 for criticism and review. Full text available from your school or local
-        library.
+        {await t('rev.texts2.common.fair_dealing_notice')}
       </p>
     </div>
   )

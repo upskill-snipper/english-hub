@@ -17,6 +17,7 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { t } from '@/lib/i18n/t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
@@ -268,6 +269,12 @@ export default async function ThemesPage() {
     redirect('/revision/texts')
   }
 
+  const tOverview = await t('rev.texts.common.overview')
+  const tKeyPoints = await t('rev.texts.common.key_points')
+  const tHowOrwell = await t('rev.texts.af.how_orwell_presents')
+  const tRelevantQuotes = await t('rev.texts.common.relevant_quotes')
+  const tExamDiscussion = await t('rev.texts.common.exam_discussion_points')
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -291,13 +298,13 @@ export default async function ThemesPage() {
             render={<Link href="/revision/texts/animal-farm" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Animal Farm
+            {await t('rev.texts.af.back')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Lightbulb className="mr-1 size-3 text-clay-600" />
-              Deep Study
+              {await t('rev.texts.common.deep_study')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               AQA / Edexcel / OCR
@@ -305,12 +312,13 @@ export default async function ThemesPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Themes Analysis
+            {await t('rev.texts.common.themes_analysis')}
           </h1>
-          <p className="mt-2 text-body-lg text-muted-foreground">Animal Farm by George Orwell</p>
+          <p className="mt-2 text-body-lg text-muted-foreground">
+            {await t('rev.texts.af.byline')}
+          </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Six major themes explored in depth: overview, key points, how Orwell presents each theme
-            through literary methods, relevant quotations and links to exam questions.
+            {await t('rev.texts.af.themes.intro')}
           </p>
         </div>
       </section>
@@ -329,7 +337,7 @@ export default async function ThemesPage() {
               {/* Overview */}
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-heading-md font-heading">Overview</CardTitle>
+                  <CardTitle className="text-heading-md font-heading">{tOverview}</CardTitle>
                 </CardHeader>
                 <CardContent className="text-body-sm text-muted-foreground">
                   <p>{theme.overview}</p>
@@ -340,7 +348,7 @@ export default async function ThemesPage() {
                 {/* Key Points */}
                 <Card>
                   <CardHeader>
-                    <CardTitle className="text-heading-md font-heading">Key Points</CardTitle>
+                    <CardTitle className="text-heading-md font-heading">{tKeyPoints}</CardTitle>
                   </CardHeader>
                   <CardContent className="text-body-sm text-muted-foreground">
                     <ul className="list-disc space-y-2 pl-4">
@@ -354,9 +362,7 @@ export default async function ThemesPage() {
                 {/* How Orwell Presents This Theme */}
                 <Card>
                   <CardHeader>
-                    <CardTitle className="text-heading-md font-heading">
-                      How Orwell Presents This
-                    </CardTitle>
+                    <CardTitle className="text-heading-md font-heading">{tHowOrwell}</CardTitle>
                   </CardHeader>
                   <CardContent className="text-body-sm text-muted-foreground">
                     <ul className="list-disc space-y-2 pl-4">
@@ -371,7 +377,7 @@ export default async function ThemesPage() {
               {/* Quotes */}
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-heading-md font-heading">Relevant Quotes</CardTitle>
+                  <CardTitle className="text-heading-md font-heading">{tRelevantQuotes}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3 text-body-sm">
                   {theme.relevantQuotes.map((q, i) => (
@@ -386,9 +392,7 @@ export default async function ThemesPage() {
               {/* Exam Links */}
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-heading-md font-heading">
-                    Exam Discussion Points
-                  </CardTitle>
+                  <CardTitle className="text-heading-md font-heading">{tExamDiscussion}</CardTitle>
                 </CardHeader>
                 <CardContent className="text-body-sm text-muted-foreground">
                   <ul className="list-disc space-y-2 pl-4">
@@ -405,13 +409,7 @@ export default async function ThemesPage() {
 
       {/* Rights / fair-dealing notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        <strong>Rights notice:</strong> While <em>Animal Farm</em> entered UK public domain in 2021,
-        the Orwell estate (AM Heath) actively manages educational use. Quotations on this page are
-        short fair-dealing extracts; longer engagement should use a school-licensed edition. Short
-        quotations (each under 15 words) reproduced under the fair dealing provision of the
-        Copyright, Designs and Patents Act 1988 (s.30) for the purpose of criticism, review and
-        educational study. <em>Animal Farm</em> by George Orwell is published by Penguin Books. Full
-        text available from your school or local library.
+        {await t('rev.texts.af.rights_notice')}
       </p>
     </div>
   )

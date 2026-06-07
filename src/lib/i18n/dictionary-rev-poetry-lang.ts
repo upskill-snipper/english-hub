@@ -51,6 +51,46 @@ export const REV_POETRY_LANG_DICTIONARY: Dictionary = {
     ar: 'مختارات',
     es: 'antología',
   },
+  'rev.poetry.shared.back_to_eduqas_poetry': {
+    en: 'Back to Eduqas Poetry',
+    ar: 'رجوع لشعر Eduqas',
+    es: 'Volver a Poesía Eduqas',
+  },
+  'rev.poetry.shared.back_to_edexcel_poetry': {
+    en: 'Back to Edexcel Poetry',
+    ar: 'رجوع لشعر Edexcel',
+    es: 'Volver a Poesía Edexcel',
+  },
+  'rev.poetry.shared.back_to_time_and_place': {
+    en: 'Back to Time and Place cluster',
+    ar: 'رجوع لمجموعة Time and Place',
+    es: 'Volver al grupo Time and Place',
+  },
+  'rev.poetry.shared.back_to_conflict_cluster': {
+    en: 'Back to Conflict cluster',
+    ar: 'رجوع لمجموعة Conflict',
+    es: 'Volver al grupo Conflict',
+  },
+  'rev.poetry.shared.back_to_youth_and_age': {
+    en: 'Back to Youth and Age',
+    ar: 'رجوع لـ Youth and Age',
+    es: 'Volver a Youth and Age',
+  },
+  'rev.poetry.shared.back_to_power_natural_world': {
+    en: 'Back to Power and the Natural World',
+    ar: 'رجوع لـ Power and the Natural World',
+    es: 'Volver a Power and the Natural World',
+  },
+  'rev.poetry.shared.back_to_love_and_relationships': {
+    en: 'Back to Love and Relationships',
+    ar: 'رجوع لـ Love and Relationships',
+    es: 'Volver a Love and Relationships',
+  },
+  'rev.poetry.shared.back_label_love_and_relationships': {
+    en: 'Love and Relationships',
+    ar: 'رجوع لـ Love and Relationships',
+    es: 'Volver a Love and Relationships',
+  },
 
   // ─── Unseen poetry guide (rev.poetry.unseen.*) ──────────────────────
   'rev.poetry.unseen.badge_guide': {

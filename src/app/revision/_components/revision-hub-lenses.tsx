@@ -14,6 +14,7 @@ import {
   TrendingUp,
 } from 'lucide-react'
 import { GlassPanel, PanelEyebrow } from '@/components/dataviz/GlassPanel'
+import { useT } from '@/lib/i18n/use-t'
 
 const RECENTLY_STUDIED_KEY = 'english-hub-recently-studied'
 const LAST_VISITED_KEY = 'english-hub-last-visited-revision'
@@ -100,6 +101,7 @@ export function RevisionHubLenses({
   const [mounted, setMounted] = useState(false)
   const [inProgress, setInProgress] = useState<InProgressItem[]>([])
   const [favourites, setFavourites] = useState<AllSectionEntry[]>([])
+  const t = useT()
 
   const refreshFavourites = useCallback(() => {
     const hrefs = readFavouriteHrefs()
@@ -126,15 +128,15 @@ export function RevisionHubLenses({
   }, [refreshFavourites])
 
   return (
-    <section aria-label="Your hub overview" className="grid gap-4 lg:grid-cols-3">
+    <section aria-label={t('rev.misc2.lenses.aria')} className="grid gap-4 lg:grid-cols-3">
       {/* In Progress lens */}
       <GlassPanel accent="primary" className="p-5">
         <div className="flex items-center justify-between gap-2">
           <div>
-            <PanelEyebrow>In Progress</PanelEyebrow>
+            <PanelEyebrow>{t('rev.misc2.lenses.inprogress.eyebrow')}</PanelEyebrow>
             <h2 className="mt-1 flex items-center gap-2 text-heading-sm font-heading text-foreground">
               <Clock className="size-4 text-primary" aria-hidden="true" />
-              Pick up where you left off
+              {t('rev.misc2.lenses.inprogress.heading')}
             </h2>
           </div>
         </div>
@@ -142,7 +144,7 @@ export function RevisionHubLenses({
         <ul className="mt-4 space-y-2">
           {mounted && inProgress.length === 0 && (
             <li className="rounded-lg border border-dashed border-border/50 px-3 py-3 text-xs text-muted-foreground">
-              Nothing in progress yet - pick a board topic below.
+              {t('rev.misc2.lenses.inprogress.empty')}
             </li>
           )}
           {!mounted && (
@@ -179,7 +181,7 @@ export function RevisionHubLenses({
           href="/revision/study-plan"
           className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-primary hover:gap-1.5 transition-all"
         >
-          View all <ArrowRight className="size-3" aria-hidden="true" />
+          {t('rev.misc2.lenses.view_all')} <ArrowRight className="size-3" aria-hidden="true" />
         </Link>
       </GlassPanel>
 
@@ -187,10 +189,10 @@ export function RevisionHubLenses({
       <GlassPanel accent="clay" className="p-5">
         <div className="flex items-center justify-between gap-2">
           <div>
-            <PanelEyebrow>Recommended</PanelEyebrow>
+            <PanelEyebrow>{t('rev.misc2.lenses.recommended.eyebrow')}</PanelEyebrow>
             <h2 className="mt-1 flex items-center gap-2 text-heading-sm font-heading text-foreground">
               <Sparkles className="size-4 text-clay-600" aria-hidden="true" />
-              Fast wins for your board
+              {t('rev.misc2.lenses.recommended.heading')}
             </h2>
           </div>
         </div>
@@ -226,7 +228,7 @@ export function RevisionHubLenses({
           href="/demo/student"
           className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-clay-600 hover:gap-1.5 transition-all"
         >
-          View all <ArrowRight className="size-3" aria-hidden="true" />
+          {t('rev.misc2.lenses.view_all')} <ArrowRight className="size-3" aria-hidden="true" />
         </Link>
       </GlassPanel>
 
@@ -234,10 +236,10 @@ export function RevisionHubLenses({
       <GlassPanel accent="teal" className="p-5">
         <div className="flex items-center justify-between gap-2">
           <div>
-            <PanelEyebrow>Favourites</PanelEyebrow>
+            <PanelEyebrow>{t('rev.misc2.lenses.favourites.eyebrow')}</PanelEyebrow>
             <h2 className="mt-1 flex items-center gap-2 text-heading-sm font-heading text-foreground">
               <Star className="size-4 text-teal-500" aria-hidden="true" />
-              Your pinned sections
+              {t('rev.misc2.lenses.favourites.heading')}
             </h2>
           </div>
         </div>
@@ -245,7 +247,7 @@ export function RevisionHubLenses({
         <ul className="mt-4 space-y-2">
           {mounted && favourites.length === 0 && (
             <li className="rounded-lg border border-dashed border-border/50 px-3 py-3 text-xs text-muted-foreground">
-              Star any section below to pin it here.
+              {t('rev.misc2.lenses.favourites.empty')}
             </li>
           )}
           {!mounted && (
@@ -277,7 +279,7 @@ export function RevisionHubLenses({
         </ul>
 
         <p className="mt-4 text-[0.7rem] text-muted-foreground">
-          Tip: every card below has a star button - click it to pin.
+          {t('rev.misc2.lenses.favourites.tip')}
         </p>
       </GlassPanel>
     </section>

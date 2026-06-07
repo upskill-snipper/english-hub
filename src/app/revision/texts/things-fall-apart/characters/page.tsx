@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
+import { useT } from '@/lib/i18n/use-t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ── Character data ──────────────────────────────────────────────────── */
@@ -408,6 +409,7 @@ const characters: CharacterData[] = [
 /* ── Page ────────────────────────────────────────────────────────────── */
 
 export default function CharactersPage() {
+  const tr = useT()
   return (
     <div className="space-y-10 bg-background pb-16">
       <BreadcrumbJsonLd
@@ -440,13 +442,13 @@ export default function CharactersPage() {
             render={<Link href="/revision/texts/things-fall-apart" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Things Fall Apart
+            {tr('rev.texts.common.back_to_text').replace('{text}', 'Things Fall Apart')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Users className="mr-1 size-3 text-clay-500" />
-              Deep Study
+              {tr('rev.texts.common.deep_study')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -455,15 +457,13 @@ export default function CharactersPage() {
           </div>
 
           <h1 className="font-heading text-display-sm text-foreground sm:text-display">
-            Character Analysis
+            {tr('rev.texts.common.character_analysis')}
           </h1>
           <p className="mt-2 text-body-lg italic text-clay-600 dark:text-clay-300">
             Things Fall Apart by Chinua Achebe
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Ten key characters analysed in depth: role in the novel, character development across
-            all three parts, key quotations with detailed analysis, links to themes, and exam
-            technique tips.
+            {tr('rev.texts2.tfa.characters.intro')}
           </p>
         </div>
       </section>
@@ -473,7 +473,7 @@ export default function CharactersPage() {
         <Card>
           <CardContent className="p-4 sm:p-6">
             <h2 className="mb-4 font-heading text-heading-md text-foreground">
-              Jump to a Character
+              {tr('rev.texts.common.jump_to_character')}
             </h2>
             <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
               {characters.map((ch) => (
@@ -522,14 +522,16 @@ export default function CharactersPage() {
             <CardContent className="space-y-5 text-body-sm text-muted-foreground">
               {/* Description */}
               <div>
-                <h3 className="mb-1 text-sm font-semibold text-foreground">Role in the Novel</h3>
+                <h3 className="mb-1 text-sm font-semibold text-foreground">
+                  {tr('rev.texts2.common.role_in_novel')}
+                </h3>
                 <p>{ch.description}</p>
               </div>
 
               {/* Character Arc */}
               <div>
                 <h3 className="mb-2 text-sm font-semibold text-foreground">
-                  Character Development
+                  {tr('rev.texts.common.character_development')}
                 </h3>
                 <ul className="list-disc space-y-2 pl-4">
                   {ch.arc.map((a, i) => (
@@ -542,7 +544,7 @@ export default function CharactersPage() {
               <div>
                 <h3 className="mb-3 text-sm font-semibold text-foreground flex items-center gap-2">
                   <Quote className="size-4 text-clay-500" />
-                  Key Quotes
+                  {tr('rev.texts.common.key_quotes')}
                 </h3>
                 <div className="space-y-3">
                   {ch.keyQuotes.map((q, i) => (
@@ -562,7 +564,9 @@ export default function CharactersPage() {
 
               {/* Theme Links */}
               <div>
-                <h3 className="mb-2 text-sm font-semibold text-foreground">Links to Themes</h3>
+                <h3 className="mb-2 text-sm font-semibold text-foreground">
+                  {tr('rev.texts.common.links_to_themes')}
+                </h3>
                 <ul className="list-disc space-y-2 pl-4">
                   {ch.themeLinks.map((t, i) => (
                     <li key={i}>{t}</li>
@@ -574,7 +578,7 @@ export default function CharactersPage() {
               <div className="rounded-lg bg-primary/[0.03] border border-primary/10 p-4">
                 <h3 className="mb-2 text-sm font-semibold text-foreground flex items-center gap-2">
                   <Lightbulb className="size-4 text-clay-600" />
-                  Exam Tip
+                  {tr('rev.texts.common.exam_tip')}
                 </h3>
                 <p>{ch.examTip}</p>
               </div>
@@ -585,9 +589,7 @@ export default function CharactersPage() {
 
       {/* Fair dealing notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the Copyright, Designs and
-        Patents Act 1988 for criticism and review. Full text available from your school or local
-        library.
+        {tr('rev.texts2.common.fair_dealing_notice')}
       </p>
     </div>
   )

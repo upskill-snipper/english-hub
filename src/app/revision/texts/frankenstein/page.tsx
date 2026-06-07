@@ -8,6 +8,7 @@ import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Frankenstein revision guide - themes, characters, key quotes - The English Hub',
@@ -608,8 +609,7 @@ export default async function FrankensteinPage() {
       />
       <TextGuide data={data} />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        <em>Frankenstein</em> (1818) by Mary Shelley is in the public domain. Quotations are
-        reproduced freely.
+        {await t('rev.texts.fr.public_domain_short')}
       </p>
     </>
   )

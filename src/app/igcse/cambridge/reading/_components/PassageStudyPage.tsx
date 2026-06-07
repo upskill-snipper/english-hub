@@ -13,6 +13,7 @@ import {
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { t } from '@/lib/i18n/t'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -77,7 +78,7 @@ const difficultyClass: Record<PassageStudyPageProps['difficulty'], string> = {
 
 // ─── Component ───────────────────────────────────────────────────────────────
 
-export function PassageStudyPage({
+export async function PassageStudyPage({
   title,
   author,
   publication,
@@ -90,6 +91,11 @@ export function PassageStudyPage({
   vocabulary,
 }: PassageStudyPageProps) {
   const totalComprehensionMarks = comprehension.reduce((sum, q) => sum + q.marks, 0)
+  const markLabel = await t('igcse.page.reading.mark')
+  const marksLabel = await t('igcse.page.reading.marks')
+  const questionLabel = await t('igcse.page.reading.question')
+  const modelAnswerLabel = await t('igcse.page.reading.model_answer')
+  const examinerNoteLabel = await t('igcse.page.reading.examiner_note')
 
   return (
     <div className="space-y-10 pb-16">
@@ -97,7 +103,7 @@ export function PassageStudyPage({
       <div>
         <Button variant="ghost" size="sm" render={<Link href="/igcse/cambridge/reading" />}>
           <ArrowLeft className="size-3.5" />
-          All reading passages
+          {await t('igcse.page.reading.all_passages')}
         </Button>
       </div>
 
@@ -109,10 +115,10 @@ export function PassageStudyPage({
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Sparkles className="mr-1 size-3" />
-              Cambridge IGCSE
+              {await t('igcse.cambridge.badge.cambridge_igcse')}
             </Badge>
             <Badge className="bg-primary/10 text-primary border-primary/20">
-              IGCSE Language &middot; Paper 1
+              {await t('igcse.page.reading.badge_lang_paper1')}
             </Badge>
             <Badge variant="outline" className={difficultyClass[difficulty]}>
               {difficulty}
@@ -135,13 +141,16 @@ export function PassageStudyPage({
       <section>
         <div className="mb-4 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">The Passage</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {await t('igcse.page.reading.the_passage')}
+          </h2>
         </div>
         <Card>
           <CardHeader className="pb-3">
             <CardTitle className="text-heading-sm font-heading leading-tight">{title}</CardTitle>
             <CardDescription className="text-body-xs">
-              From {publication}. Public domain text.
+              {await t('igcse.page.reading.public_domain_from')} {publication}.{' '}
+              {await t('igcse.page.reading.public_domain_note')}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -165,10 +174,13 @@ export function PassageStudyPage({
           <div className="flex items-center gap-3">
             <Target className="size-5 text-primary" />
             <h2 className="text-heading-lg font-heading text-foreground">
-              Comprehension Questions
+              {await t('igcse.page.reading.comprehension_questions')}
             </h2>
           </div>
-          <Badge variant="secondary">Reading &middot; {totalComprehensionMarks} marks</Badge>
+          <Badge variant="secondary">
+            {await t('igcse.page.reading.reading_marks')} &middot; {totalComprehensionMarks}{' '}
+            {marksLabel}
+          </Badge>
         </div>
 
         <div className="space-y-4">
@@ -177,10 +189,10 @@ export function PassageStudyPage({
               <CardHeader className="pb-2">
                 <div className="flex items-start justify-between gap-3">
                   <CardTitle className="text-heading-sm font-heading leading-tight">
-                    Question {q.number}
+                    {questionLabel} {q.number}
                   </CardTitle>
                   <Badge variant="outline" className="shrink-0">
-                    {q.marks} {q.marks === 1 ? 'mark' : 'marks'}
+                    {q.marks} {q.marks === 1 ? markLabel : marksLabel}
                   </Badge>
                 </div>
                 <CardDescription className="pt-1 text-body-sm text-foreground">
@@ -191,14 +203,14 @@ export function PassageStudyPage({
                 <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
                   <div className="mb-2 flex items-center gap-2 text-body-xs font-semibold uppercase tracking-wider text-primary">
                     <Quote className="size-3.5" />
-                    Model answer
+                    {modelAnswerLabel}
                   </div>
                   <p className="text-body-sm text-foreground/90 leading-relaxed">{q.modelAnswer}</p>
                 </div>
                 <div className="rounded-xl border border-border/60 bg-primary/5 p-4">
                   <div className="mb-2 flex items-center gap-2 text-body-xs font-semibold uppercase tracking-wider text-primary">
                     <Info className="size-3.5" />
-                    Examiner note
+                    {examinerNoteLabel}
                   </div>
                   <p className="text-body-sm text-muted-foreground leading-relaxed">
                     {q.examinerNote}
@@ -215,9 +227,14 @@ export function PassageStudyPage({
         <div className="mb-4 flex items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             <Feather className="size-5 text-primary" />
-            <h2 className="text-heading-lg font-heading text-foreground">Language Analysis</h2>
+            <h2 className="text-heading-lg font-heading text-foreground">
+              {await t('anth_text.section.language_analysis')}
+            </h2>
           </div>
-          <Badge variant="secondary">Language &middot; {languageTask.marks} marks</Badge>
+          <Badge variant="secondary">
+            {await t('igcse.page.reading.language_marks')} &middot; {languageTask.marks}{' '}
+            {marksLabel}
+          </Badge>
         </div>
 
         <Card>
@@ -230,7 +247,7 @@ export function PassageStudyPage({
             {languageTask.focusWords.length > 0 && (
               <div>
                 <p className="mb-2 text-body-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                  Words and phrases to consider
+                  {await t('igcse.page.reading.words_to_consider')}
                 </p>
                 <div className="flex flex-wrap gap-1.5">
                   {languageTask.focusWords.map((word) => (
@@ -248,7 +265,7 @@ export function PassageStudyPage({
             <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
               <div className="mb-2 flex items-center gap-2 text-body-xs font-semibold uppercase tracking-wider text-primary">
                 <Quote className="size-3.5" />
-                Model answer
+                {modelAnswerLabel}
               </div>
               <p className="whitespace-pre-line text-body-sm text-foreground/90 leading-relaxed">
                 {languageTask.modelAnswer}
@@ -257,7 +274,7 @@ export function PassageStudyPage({
             <div className="rounded-xl border border-border/60 bg-primary/5 p-4">
               <div className="mb-2 flex items-center gap-2 text-body-xs font-semibold uppercase tracking-wider text-primary">
                 <Info className="size-3.5" />
-                Examiner note
+                {examinerNoteLabel}
               </div>
               <p className="text-body-sm text-muted-foreground leading-relaxed">
                 {languageTask.examinerNote}
@@ -273,10 +290,13 @@ export function PassageStudyPage({
           <div className="flex items-center gap-3">
             <ScrollText className="size-5 text-primary" />
             <h2 className="text-heading-lg font-heading text-foreground">
-              Summary Task (Paper 1 Q3)
+              {await t('igcse.page.reading.summary_task')}
             </h2>
           </div>
-          <Badge variant="secondary">Reading + Summary &middot; {summaryTask.marks} marks</Badge>
+          <Badge variant="secondary">
+            {await t('igcse.page.reading.reading_summary_marks')} &middot; {summaryTask.marks}{' '}
+            {marksLabel}
+          </Badge>
         </div>
 
         <Card>
@@ -289,7 +309,7 @@ export function PassageStudyPage({
             <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
               <div className="mb-2 flex items-center gap-2 text-body-xs font-semibold uppercase tracking-wider text-primary">
                 <Quote className="size-3.5" />
-                Model summary
+                {await t('igcse.page.reading.model_summary')}
               </div>
               <p className="whitespace-pre-line text-body-sm text-foreground/90 leading-relaxed">
                 {summaryTask.modelAnswer}
@@ -298,7 +318,7 @@ export function PassageStudyPage({
             <div className="rounded-xl border border-border/60 bg-primary/5 p-4">
               <div className="mb-2 flex items-center gap-2 text-body-xs font-semibold uppercase tracking-wider text-primary">
                 <Info className="size-3.5" />
-                Examiner note
+                {examinerNoteLabel}
               </div>
               <p className="text-body-sm text-muted-foreground leading-relaxed">
                 {summaryTask.examinerNote}
@@ -312,7 +332,9 @@ export function PassageStudyPage({
       <section>
         <div className="mb-4 flex items-center gap-3">
           <Lightbulb className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">Key Vocabulary</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {await t('igcse.page.reading.key_vocabulary')}
+          </h2>
         </div>
         <Card>
           <CardContent className="pt-6">
@@ -334,11 +356,13 @@ export function PassageStudyPage({
 
       {/* ── Footer CTA ─────────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 text-center sm:p-8">
-        <p className="text-body-sm text-muted-foreground">Ready for another passage?</p>
+        <p className="text-body-sm text-muted-foreground">
+          {await t('igcse.page.reading.ready_another')}
+        </p>
         <div className="mt-4">
           <Button variant="default" size="sm" render={<Link href="/igcse/cambridge/reading" />}>
             <ArrowLeft className="size-3.5" />
-            Back to all passages
+            {await t('igcse.page.reading.back_to_all')}
           </Button>
         </div>
       </section>

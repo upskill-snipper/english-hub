@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { getServerBoard } from '@/lib/board/get-server-board'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -164,6 +165,11 @@ export default async function GreatExpectationsChaptersPage() {
     redirect('/revision/texts')
   }
 
+  // Pre-resolve chrome labels used inside .map() callbacks.
+  const whatHappensLabel = await t('rev.texts2.common.what_happens')
+  const whyItMattersLabel = await t('rev.texts2.common.why_it_matters_sc')
+  const writersMethodsLabel = await t('rev.texts2.common.writers_methods')
+
   return (
     <div className="space-y-10 pb-16">
       {/* Hero */}
@@ -178,13 +184,13 @@ export default async function GreatExpectationsChaptersPage() {
             render={<Link href="/revision/texts/great-expectations" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Great Expectations
+            {(await t('rev.texts.common.back_to_text')).replace('{text}', 'Great Expectations')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <BookOpen className="mr-1 size-3 text-emerald-400" />
-              19th-Century Novel
+              {await t('rev.texts2.common.c19_novel')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               AQA
@@ -192,15 +198,13 @@ export default async function GreatExpectationsChaptersPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Key Chapters
+            {await t('rev.texts2.ge.chapters.title')}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
             Great Expectations - Charles Dickens
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Five pivotal moments in the novel analysed in depth: the graveyard encounter, Satis
-            House, the announcement of expectations, the revelation of the true benefactor, and the
-            ambiguous ending.
+            {await t('rev.texts2.ge.chapters.intro')}
           </p>
         </div>
       </section>
@@ -223,13 +227,13 @@ export default async function GreatExpectationsChaptersPage() {
             <CardContent className="space-y-6 p-6 sm:p-8">
               {/* Summary */}
               <div>
-                <h3 className="mb-2 text-sm font-semibold text-foreground">What happens</h3>
+                <h3 className="mb-2 text-sm font-semibold text-foreground">{whatHappensLabel}</h3>
                 <p className="text-body-sm text-muted-foreground">{ch.summary}</p>
               </div>
 
               {/* Significance */}
               <div>
-                <h3 className="mb-2 text-sm font-semibold text-foreground">Why it matters</h3>
+                <h3 className="mb-2 text-sm font-semibold text-foreground">{whyItMattersLabel}</h3>
                 <ul className="space-y-2 text-body-sm text-muted-foreground">
                   {ch.significance.map((s, i) => (
                     <li key={i} className="flex gap-2">
@@ -251,7 +255,7 @@ export default async function GreatExpectationsChaptersPage() {
               {/* Writer's Methods */}
               <div>
                 <h3 className="mb-2 text-sm font-semibold text-foreground">
-                  Writer&apos;s methods
+                  {writersMethodsLabel}
                 </h3>
                 <ul className="space-y-2 text-body-sm text-muted-foreground">
                   {ch.writersMethods.map((m, i) => (
@@ -269,8 +273,8 @@ export default async function GreatExpectationsChaptersPage() {
 
       {/* Public domain notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Great Expectations by Charles Dickens (1861) is in the public domain. Quotations are
-        reproduced freely as the text is no longer subject to copyright.
+        <em>Great Expectations</em>
+        {await t('rev.texts2.common.public_domain_dickens_after')}
       </p>
     </div>
   )

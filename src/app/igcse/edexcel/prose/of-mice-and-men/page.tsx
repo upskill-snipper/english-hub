@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
+import { t } from '@/lib/i18n/t'
 import StudyTools from '@/components/study/StudyTools'
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
@@ -188,7 +189,7 @@ export default async function OmamHubPage() {
       <div>
         <Button variant="ghost" size="sm" render={<Link href="/igcse/edexcel/prose" />}>
           <ArrowLeft className="size-3.5" />
-          Back to Edexcel prose
+          {await t('igcse.page.back_to_edexcel_prose')}
         </Button>
       </div>
 
@@ -197,9 +198,9 @@ export default async function OmamHubPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="border-primary/20 bg-primary/10 text-primary">
               <Sparkles className="mr-1 size-3" />
-              Edexcel IGCSE Literature
+              {await t('igcse.page.badge_edexcel_lit')}
             </Badge>
-            <Badge variant="secondary">Modern prose</Badge>
+            <Badge variant="secondary">{await t('igcse.page.section.modern_prose')}</Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
             Of Mice and Men
@@ -220,7 +221,7 @@ export default async function OmamHubPage() {
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
             <h2 className="text-body-sm font-semibold text-foreground">
-              Key quotations only - read the full text
+              {await t('igcse.page.copyright_heading')}
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               Of Mice and Men is in copyright. This guide uses short extracts for fair-dealing study
@@ -233,7 +234,9 @@ export default async function OmamHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">Plot overview</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {await t('igcse.page.section.plot_overview')}
+          </h2>
         </div>
         <div className="grid gap-4 md:grid-cols-3">
           {plotBeats.map((beat) => (
@@ -252,7 +255,9 @@ export default async function OmamHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Feather className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">Characters at a glance</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {await t('igcse.page.section.characters_at_glance')}
+          </h2>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
           {characters.map((c) => (
@@ -267,11 +272,15 @@ export default async function OmamHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Sparkles className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">Deep dive</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {await t('igcse.page.section.deep_dive')}
+          </h2>
         </div>
         <Card className="max-w-md">
           <CardHeader className="pb-3">
-            <CardTitle className="text-heading-md font-heading leading-tight">Themes</CardTitle>
+            <CardTitle className="text-heading-md font-heading leading-tight">
+              {await t('anth_text.section.themes')}
+            </CardTitle>
             <CardDescription className="text-body-sm">
               American Dream, loneliness, friendship, discrimination and fate.
             </CardDescription>
@@ -283,7 +292,7 @@ export default async function OmamHubPage() {
               className="w-full"
               render={<Link href="/igcse/edexcel/prose/of-mice-and-men/themes" />}
             >
-              Open themes
+              {await t('igcse.page.cta.open_themes')}
               <ArrowRight className="size-3.5" />
             </Button>
           </CardContent>
@@ -293,7 +302,9 @@ export default async function OmamHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Quote className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">Key quotations</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {await t('igcse.page.section.key_quotations')}
+          </h2>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
           {keyQuotations.map((q, i) => (

@@ -5,6 +5,7 @@ import { ArrowLeft, BookOpen, Eye, MessageSquare, Maximize2, Quote, Lightbulb } 
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import { useT } from '@/lib/i18n/use-t'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 /* ── Walkthrough data ──────────────────────────────────────────────── */
@@ -108,6 +109,7 @@ const MODEL_PARAGRAPH_NOTES = [
 /* ── Page ──────────────────────────────────────────────────────────── */
 
 export default function FrankensteinExtractWalkthroughPage() {
+  const t = useT()
   return (
     <>
       <BreadcrumbJsonLd
@@ -129,23 +131,23 @@ export default function FrankensteinExtractWalkthroughPage() {
           className="mb-6 inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
         >
           <ArrowLeft className="mr-2 h-4 w-4" />
-          Back to Frankenstein
+          {t('rev.texts.fr.back')}
         </Link>
 
         <header className="mb-10">
           <Badge variant="secondary" className="mb-3">
-            Volume I · Chapter 5 · The Awakening
+            {t('rev.texts.fr.extract.badge')}
           </Badge>
           <h1 className="text-4xl font-bold tracking-tight mb-3">{EXTRACT_TITLE}</h1>
           <p className="text-lg text-muted-foreground max-w-3xl">
-            A guided extract walkthrough on the moment Victor Frankenstein animates the Creature.
-            Each card invites you to <em>notice</em> a feature, <em>say</em> what the writer is
-            doing with it, and <em>zoom out</em> to context. A model 250-word paragraph follows.
+            {t('rev.texts.fr.extract.intro')}
           </p>
           <p className="mt-4 text-sm text-muted-foreground">
-            Extract opens: <span className="italic">{EXTRACT_OPENER}</span>
+            {t('rev.texts.fr.extract.opens')}
+            <span className="italic">{EXTRACT_OPENER}</span>
             <br />
-            Extract closes: <span className="italic">{EXTRACT_CLOSER}</span>
+            {t('rev.texts.fr.extract.closes')}
+            <span className="italic">{EXTRACT_CLOSER}</span>
           </p>
         </header>
 
@@ -154,7 +156,7 @@ export default function FrankensteinExtractWalkthroughPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-xl">
               <BookOpen className="h-5 w-5 text-primary" />
-              The Extract
+              {t('rev.texts.common.the_extract')}
             </CardTitle>
           </CardHeader>
           <CardContent className="prose prose-sm max-w-none dark:prose-invert">
@@ -164,15 +166,14 @@ export default function FrankensteinExtractWalkthroughPage() {
               </p>
             ))}
             <p className="text-xs text-muted-foreground mt-4 not-italic">
-              From <em>Frankenstein; or, The Modern Prometheus</em>, Mary Shelley, 1818 (public
-              domain).
+              {t('rev.texts.fr.extract.attribution')}
             </p>
           </CardContent>
         </Card>
 
         {/* Walkthrough cards */}
         <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-2">Notice / Say / Zoom Out</h2>
+          <h2 className="text-2xl font-semibold mb-2">{t('rev.texts.fr.extract.nsz_h')}</h2>
           <p className="text-sm text-muted-foreground mb-6">
             Four guided readings tracing pathetic fallacy, Victor&apos;s revulsion, the catalogue of
             physical detail, and the abandonment foreshadowed by Victor&apos;s flight.
@@ -193,21 +194,21 @@ export default function FrankensteinExtractWalkthroughPage() {
                   <div>
                     <div className="flex items-center gap-2 text-sm font-semibold text-blue-700 dark:text-blue-300 mb-2">
                       <Eye className="h-4 w-4" />
-                      Notice
+                      {t('rev.texts.common.notice')}
                     </div>
                     <p className="text-sm leading-relaxed">{card.notice}</p>
                   </div>
                   <div>
                     <div className="flex items-center gap-2 text-sm font-semibold text-amber-700 dark:text-amber-300 mb-2">
                       <MessageSquare className="h-4 w-4" />
-                      Say
+                      {t('rev.texts.common.say')}
                     </div>
                     <p className="text-sm leading-relaxed">{card.say}</p>
                   </div>
                   <div>
                     <div className="flex items-center gap-2 text-sm font-semibold text-emerald-700 dark:text-emerald-300 mb-2">
                       <Maximize2 className="h-4 w-4" />
-                      Zoom Out
+                      {t('rev.texts.common.zoom_out')}
                     </div>
                     <p className="text-sm leading-relaxed">{card.zoomOut}</p>
                   </div>
@@ -230,7 +231,7 @@ export default function FrankensteinExtractWalkthroughPage() {
             <CardHeader className="bg-emerald-500/5">
               <CardTitle className="flex items-center gap-2 text-xl">
                 <Quote className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
-                Model Paragraph (250 words)
+                {t('rev.texts.fr.extract.model_para_h')}
               </CardTitle>
               <p className="text-sm text-muted-foreground mt-1">
                 How Victor&apos;s response - not the Creature&apos;s appearance - is the true
@@ -246,7 +247,7 @@ export default function FrankensteinExtractWalkthroughPage() {
           <div className="mt-6">
             <h3 className="flex items-center gap-2 text-lg font-semibold mb-3">
               <Lightbulb className="h-5 w-5 text-amber-500" />
-              Why this paragraph works
+              {t('rev.texts.fr.extract.why_works_h')}
             </h3>
             <ul className="space-y-3">
               {MODEL_PARAGRAPH_NOTES.map((n) => (

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ArrowLeft, BookOpen, Users } from 'lucide-react'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
+import { t } from '@/lib/i18n/t'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -276,6 +277,12 @@ export default async function CharactersPage() {
     redirect('/revision/texts')
   }
 
+  const tAllegoricalSig = await t('rev.texts.common.allegorical_significance')
+  const tRoleInNovel = await t('rev.texts.common.role_in_novel')
+  const tCharArc = await t('rev.texts.common.character_arc')
+  const tKeyQuotes = await t('rev.texts.common.key_quotes')
+  const tExamTips = await t('rev.texts.common.exam_tips')
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -302,13 +309,13 @@ export default async function CharactersPage() {
             render={<Link href="/revision/texts/animal-farm" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Animal Farm
+            {await t('rev.texts.af.back')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Users className="mr-1 size-3 text-emerald-400" />
-              Deep Study
+              {await t('rev.texts.common.deep_study')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               AQA / Edexcel / OCR
@@ -316,13 +323,13 @@ export default async function CharactersPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Character Analysis
+            {await t('rev.texts.common.character_analysis')}
           </h1>
-          <p className="mt-2 text-body-lg text-muted-foreground">Animal Farm by George Orwell</p>
+          <p className="mt-2 text-body-lg text-muted-foreground">
+            {await t('rev.texts.af.byline')}
+          </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Eight key characters analysed in depth: role, allegorical significance, character arc,
-            key quotations and exam tips. Each character is a lens through which Orwell examines
-            power, loyalty and betrayal.
+            {await t('rev.texts.af.characters.intro')}
           </p>
         </div>
       </section>
@@ -343,21 +350,19 @@ export default async function CharactersPage() {
             <CardContent className="space-y-5 text-body-sm text-muted-foreground">
               {/* Allegorical significance */}
               <div>
-                <h3 className="mb-1 text-sm font-semibold text-foreground">
-                  Allegorical Significance
-                </h3>
+                <h3 className="mb-1 text-sm font-semibold text-foreground">{tAllegoricalSig}</h3>
                 <p>{ch.allegorical}</p>
               </div>
 
               {/* Description */}
               <div>
-                <h3 className="mb-1 text-sm font-semibold text-foreground">Role in the Novel</h3>
+                <h3 className="mb-1 text-sm font-semibold text-foreground">{tRoleInNovel}</h3>
                 <p>{ch.description}</p>
               </div>
 
               {/* Character Arc */}
               <div>
-                <h3 className="mb-2 text-sm font-semibold text-foreground">Character Arc</h3>
+                <h3 className="mb-2 text-sm font-semibold text-foreground">{tCharArc}</h3>
                 <ul className="list-disc space-y-2 pl-4">
                   {ch.arc.map((a, i) => (
                     <li key={i}>{a}</li>
@@ -367,7 +372,7 @@ export default async function CharactersPage() {
 
               {/* Key Quotes */}
               <div>
-                <h3 className="mb-2 text-sm font-semibold text-foreground">Key Quotes</h3>
+                <h3 className="mb-2 text-sm font-semibold text-foreground">{tKeyQuotes}</h3>
                 <div className="space-y-3">
                   {ch.keyQuotes.map((q, i) => (
                     <div key={i} className="rounded-lg border border-border/60 bg-muted/30 p-3">
@@ -380,10 +385,10 @@ export default async function CharactersPage() {
 
               {/* Exam Tips */}
               <div>
-                <h3 className="mb-2 text-sm font-semibold text-foreground">Exam Tips</h3>
+                <h3 className="mb-2 text-sm font-semibold text-foreground">{tExamTips}</h3>
                 <ul className="list-disc space-y-2 pl-4">
-                  {ch.examTips.map((t, i) => (
-                    <li key={i}>{t}</li>
+                  {ch.examTips.map((tip, i) => (
+                    <li key={i}>{tip}</li>
                   ))}
                 </ul>
               </div>
@@ -394,13 +399,7 @@ export default async function CharactersPage() {
 
       {/* Rights / fair-dealing notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        <strong>Rights notice:</strong> While <em>Animal Farm</em> entered UK public domain in 2021,
-        the Orwell estate (AM Heath) actively manages educational use. Quotations on this page are
-        short fair-dealing extracts; longer engagement should use a school-licensed edition. Short
-        quotations (each under 15 words) reproduced under the fair dealing provision of the
-        Copyright, Designs and Patents Act 1988 (s.30) for the purpose of criticism, review and
-        educational study. <em>Animal Farm</em> by George Orwell is published by Penguin Books. Full
-        text available from your school or local library.
+        {await t('rev.texts.af.rights_notice')}
       </p>
     </div>
   )

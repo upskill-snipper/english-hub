@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { getServerBoard } from '@/lib/board/get-server-board'
+import { t } from '@/lib/i18n/t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
@@ -218,6 +219,10 @@ export default async function FrankensteinCharactersPage() {
     redirect('/revision/texts')
   }
 
+  const tAnalysis = await t('rev.texts.common.analysis')
+  const tKeyQuotations = await t('rev.texts.common.key_quotations')
+  const tExamTip = await t('rev.texts.common.exam_tip_sc')
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -244,13 +249,13 @@ export default async function FrankensteinCharactersPage() {
             render={<Link href="/revision/texts/frankenstein" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Frankenstein
+            {await t('rev.texts.fr.back')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Users className="mr-1 size-3 text-emerald-400" />
-              Character Study
+              {await t('rev.texts.common.character_study')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               AQA / Edexcel / OCR
@@ -258,12 +263,13 @@ export default async function FrankensteinCharactersPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Characters - Deep Study
+            {await t('rev.texts.fr.characters.title')}
           </h1>
-          <p className="mt-2 text-body-lg text-muted-foreground">Frankenstein by Mary Shelley</p>
+          <p className="mt-2 text-body-lg text-muted-foreground">
+            {await t('rev.texts.fr.byline')}
+          </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Detailed analysis of every major character with key quotations, contextual links, and
-            exam tips for top-grade responses.
+            {await t('rev.texts.fr.characters.intro')}
           </p>
         </div>
       </section>
@@ -283,7 +289,7 @@ export default async function FrankensteinCharactersPage() {
             {/* Analysis */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-heading-md font-heading">Analysis</CardTitle>
+                <CardTitle className="text-heading-md font-heading">{tAnalysis}</CardTitle>
               </CardHeader>
               <CardContent className="text-body-sm text-muted-foreground">
                 <p>{ch.analysis}</p>
@@ -295,7 +301,7 @@ export default async function FrankensteinCharactersPage() {
               <CardHeader>
                 <div className="flex items-center gap-3">
                   <Quote className="size-5 text-violet-400" />
-                  <CardTitle className="text-heading-md font-heading">Key Quotations</CardTitle>
+                  <CardTitle className="text-heading-md font-heading">{tKeyQuotations}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="space-y-5">
@@ -314,7 +320,7 @@ export default async function FrankensteinCharactersPage() {
             {/* Exam tip */}
             <Card className="bg-primary/5">
               <CardContent className="p-5">
-                <p className="text-sm font-semibold text-foreground mb-1">Exam tip</p>
+                <p className="text-sm font-semibold text-foreground mb-1">{tExamTip}</p>
                 <p className="text-body-sm text-muted-foreground">{ch.examTip}</p>
               </CardContent>
             </Card>
@@ -324,8 +330,7 @@ export default async function FrankensteinCharactersPage() {
 
       {/* Footer */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        <em>Frankenstein; or, The Modern Prometheus</em> (1818) by Mary Shelley is in the public
-        domain. All quotations are reproduced freely.
+        {await t('rev.texts.fr.public_domain')}
       </p>
     </div>
   )

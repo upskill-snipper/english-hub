@@ -7,6 +7,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { getServerBoard } from '@/lib/board/get-server-board'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -253,6 +254,8 @@ export default async function GreatExpectationsKeyQuotesPage() {
     redirect('/revision/texts')
   }
 
+  const analysisLabel = await t('rev.texts.common.analysis')
+
   return (
     <div className="space-y-10 pb-16">
       {/* Hero */}
@@ -267,13 +270,13 @@ export default async function GreatExpectationsKeyQuotesPage() {
             render={<Link href="/revision/texts/great-expectations" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Great Expectations
+            {(await t('rev.texts.common.back_to_text')).replace('{text}', 'Great Expectations')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <BookOpen className="mr-1 size-3 text-emerald-400" />
-              19th-Century Novel
+              {await t('rev.texts2.common.c19_novel')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               AQA
@@ -281,14 +284,13 @@ export default async function GreatExpectationsKeyQuotesPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Key Quotations
+            {await t('rev.texts.common.key_quotations')}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
             Great Expectations - Charles Dickens
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            25 essential quotations with speaker, chapter, linked themes and detailed analysis. All
-            quotations are from the public-domain text of Great Expectations (1861).
+            {await t('rev.texts2.ge.key_quotes.intro')}
           </p>
         </div>
       </section>
@@ -323,7 +325,7 @@ export default async function GreatExpectationsKeyQuotesPage() {
                   <div className="rounded-xl border border-border/60 bg-muted/20 p-4">
                     <p className="flex items-center gap-1.5 mb-1.5 text-xs font-medium uppercase tracking-wide text-foreground">
                       <Quote className="size-3 text-violet-400" />
-                      Analysis
+                      {analysisLabel}
                     </p>
                     <p className="text-body-sm text-muted-foreground">{q.analysis}</p>
                   </div>
@@ -336,8 +338,8 @@ export default async function GreatExpectationsKeyQuotesPage() {
 
       {/* Public domain notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Great Expectations by Charles Dickens (1861) is in the public domain. Quotations are
-        reproduced freely as the text is no longer subject to copyright.
+        <em>Great Expectations</em>
+        {await t('rev.texts2.common.public_domain_dickens_after')}
       </p>
     </div>
   )
