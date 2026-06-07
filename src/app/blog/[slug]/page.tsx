@@ -158,7 +158,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<Para
   // and stamps x-lang=ar; getBlogPost then serves the AR variant if
   // a sibling `<slug>.ar.mdx` exists, falling back to EN otherwise.
   const lang = (await headers()).get('x-lang')
-  const locale: 'en' | 'ar' = lang === 'ar' ? 'ar' : 'en'
+  const locale: 'en' | 'ar' | 'es' = lang === 'ar' ? 'ar' : 'en'
   const post = getBlogPost(slug, locale)
   if (!post) notFound()
 

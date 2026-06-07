@@ -117,9 +117,9 @@ import { STUDY_REVNOTES_DICTIONARY } from './dictionary-study-revnotes'
 import { STUDY_POETRY_CONTEXT_DICTIONARY } from './dictionary-study-poetry-context'
 import { STUDY_SKILLS_DICTIONARY } from './dictionary-study-skills'
 
-export type Locale = 'en' | 'ar'
+export type Locale = 'en' | 'ar' | 'es'
 
-export type Dictionary = Record<string, { en: string; ar?: string }>
+export type Dictionary = Record<string, { en: string; ar?: string; es?: string }>
 
 export const DICTIONARY: Dictionary = {
   // ─── Header / nav / CTAs ────────────────────────────────────────────
@@ -165,7 +165,14 @@ export const DICTIONARY: Dictionary = {
   'lang.ar.tooltip': {
     en: 'Arabic mode - content in Arabic (Gulf Khaleeji)',
     ar: 'الوضع العربي - المحتوى بالعربي (خليجي)',
+    es: 'Modo árabe - contenido en árabe (golfo, khaleeji)',
   },
+  'lang.es.tooltip': {
+    en: 'Spanish mode - content in Spanish',
+    ar: 'الوضع الإسباني - المحتوى بالإسباني',
+    es: 'Modo español - contenido en español',
+  },
+  'lang.es': { en: 'Spanish mode', ar: 'الوضع الإسباني', es: 'Modo español' },
   'nav.main': { en: 'Main navigation', ar: 'القائمة الرئيسية' },
   'nav.mobile': { en: 'Mobile navigation', ar: 'قائمة الموبايل' },
   'nav.open': { en: 'Open menu', ar: 'افتح القائمة' },
@@ -14950,5 +14957,6 @@ export function lookup(key: string, locale: Locale): string {
     AUDIT_FIX_DICTIONARY[key]
   if (!entry) return `[[${key}]]`
   if (locale === 'ar' && entry.ar) return entry.ar
+  if (locale === 'es' && entry.es) return entry.es
   return entry.en
 }

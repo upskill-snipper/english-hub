@@ -30,12 +30,12 @@
  * Edexcel, Eduqas, WJEC, Cambridge, AO, AI, Ofsted, GDPR, DPA, CPD,
  * £ amounts and numbers.
  *
- * Annotated `Record<string, { en: string; ar?: string }>` (NOT `as
+ * Annotated `Record<string, { en: string; ar?: string; es?: string }>` (NOT `as
  * const`) so string indexing works when the orchestrator wires it into
  * the master lookup() chain. Do NOT edit dictionary.ts from here.
  */
 
-export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string }> = {
+export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?: string }> = {
   /* ═══════════════════ HOMEPAGE (src/app/page.tsx) ═══════════════════ */
 
   // ── Students board intro band ──────────────────────────────────────

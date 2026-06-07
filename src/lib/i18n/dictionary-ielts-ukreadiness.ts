@@ -10,7 +10,10 @@
 // Wired into src/lib/i18n/dictionary.ts (import + one line in lookup()).
 // ────────────────────────────────────────────────────────────────────────────
 
-export const IELTS_UKREADINESS_DICTIONARY: Record<string, { en: string; ar?: string }> = {
+export const IELTS_UKREADINESS_DICTIONARY: Record<
+  string,
+  { en: string; ar?: string; es?: string }
+> = {
   // ── UK Readiness overview: header / chrome ────────────────────────────────
   'ielts.ukread.back': { en: 'Back to IELTS', ar: 'ارجع لـ IELTS' },
   'ielts.ukread.eyebrow': {

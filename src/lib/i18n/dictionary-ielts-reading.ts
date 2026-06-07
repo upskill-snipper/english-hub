@@ -16,7 +16,7 @@
 // Wired into src/lib/i18n/dictionary.ts centrally (import + one line in lookup()).
 // ────────────────────────────────────────────────────────────────────────────
 
-export const IELTS_READING_DICTIONARY: Record<string, { en: string; ar?: string }> = {
+export const IELTS_READING_DICTIONARY: Record<string, { en: string; ar?: string; es?: string }> = {
   // ─── Header ────────────────────────────────────────────────────────────
   'ielts.reading.header.title': { en: 'IELTS Academic Reading', ar: 'IELTS القراءة الأكاديمية' },
   'ielts.reading.header.subtitle': {

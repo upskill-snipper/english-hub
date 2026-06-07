@@ -99,7 +99,7 @@ export interface LogAiDecisionInput {
   userId?: string | null
   /** `User.isMinor` - drives the data-minimisation posture of this record. */
   isMinor?: boolean | null
-  /** Resolved request locale ('en' | 'ar' | other). */
+  /** Resolved request locale ('en' | 'ar' | 'es' | other). */
   locale?: string | null
 
   /**

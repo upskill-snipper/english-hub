@@ -30,9 +30,11 @@ import { lookup, type Locale } from './dictionary'
 function readLocale(): Locale {
   if (typeof document === 'undefined') return 'en'
   // Match legacy 'bi' too so we can coerce it to 'en'.
-  const match = document.cookie.match(/(?:^|;\s*)eh-lang=(en|bi|ar)\b/)
+  const match = document.cookie.match(/(?:^|;\s*)eh-lang=(en|bi|ar|es)\b/)
   const v = match?.[1]
-  return v === 'ar' ? 'ar' : 'en'
+  if (v === 'ar') return 'ar'
+  if (v === 'es') return 'es'
+  return 'en'
 }
 
 export function useT(): (key: string) => string {

@@ -27,7 +27,7 @@
 // section names, word counts, part numbers) so a phrase stays translatable whole.
 // ────────────────────────────────────────────────────────────────────────────
 
-export const IELTS_MOCK_DICTIONARY: Record<string, { en: string; ar?: string }> = {
+export const IELTS_MOCK_DICTIONARY: Record<string, { en: string; ar?: string; es?: string }> = {
   // ══════════════════════════════════════════════════════════════════════════
   // INTRO / SETUP  (MockIntro.tsx - owns the route's single <h1>)
   // ══════════════════════════════════════════════════════════════════════════

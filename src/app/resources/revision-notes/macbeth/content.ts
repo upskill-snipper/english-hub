@@ -1091,7 +1091,7 @@ export const FOOTER_COPYRIGHT: Bi = {
  * locale. Default is `en` so this is safe to call before the cookie
  * read settles (SSR / first paint).
  */
-export function pick(b: Bi, locale: 'en' | 'ar'): string {
+export function pick(b: Bi, locale: 'en' | 'ar' | 'es'): string {
   if (locale === 'ar' && b.ar) return b.ar
   return b.en
 }

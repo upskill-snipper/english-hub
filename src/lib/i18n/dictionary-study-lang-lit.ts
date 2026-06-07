@@ -30,7 +30,7 @@
  * shape stays assignable to the merged Dictionary lookup map.
  */
 
-export const STUDY_LANG_LIT_DICTIONARY: Record<string, { en: string; ar?: string }> = {
+export const STUDY_LANG_LIT_DICTIONARY: Record<string, { en: string; ar?: string; es?: string }> = {
   // ─── Shared chrome (both subjects) ──────────────────────────────────
   'study.shared.home': { en: 'Home', ar: 'الرئيسية' },
   'study.shared.resources': { en: 'Resources', ar: 'المصادر' },

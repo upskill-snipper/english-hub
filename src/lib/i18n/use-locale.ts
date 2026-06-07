@@ -13,14 +13,15 @@
  */
 import { useEffect, useState } from 'react'
 
-export type Locale = 'en' | 'ar'
+export type Locale = 'en' | 'ar' | 'es'
 
 function readCookie(): Locale {
   if (typeof document === 'undefined') return 'en'
   // Match legacy 'bi' too, then coerce - old sessions upgrade cleanly.
-  const m = document.cookie.match(/(?:^|;\s*)eh-lang=(en|bi|ar)\b/)
+  const m = document.cookie.match(/(?:^|;\s*)eh-lang=(en|bi|ar|es)\b/)
   const raw = m?.[1]
   if (raw === 'ar') return 'ar'
+  if (raw === 'es') return 'es'
   return 'en'
 }
 
@@ -32,6 +33,8 @@ export function useLocale(): Locale {
       const detail = (e as CustomEvent).detail
       if (detail === 'ar') {
         setLocale('ar')
+      } else if (detail === 'es') {
+        setLocale('es')
       } else if (detail === 'en' || detail === 'bi') {
         // 'bi' is legacy - fold to 'en' (no bilingual mode anymore).
         setLocale('en')

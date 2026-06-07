@@ -29,7 +29,7 @@
 // dynamic value (counts, skill labels) stay translatable as a whole.
 // ────────────────────────────────────────────────────────────────────────────
 
-export const IELTS_LEARN_DICTIONARY: Record<string, { en: string; ar?: string }> = {
+export const IELTS_LEARN_DICTIONARY: Record<string, { en: string; ar?: string; es?: string }> = {
   // ══════════════════════════════════════════════════════════════════════════
   // HUB  (src/app/ielts/learn/page.tsx)
   // ══════════════════════════════════════════════════════════════════════════

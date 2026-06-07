@@ -20,7 +20,7 @@ import { Button } from '@/components/ui/button'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
-async function readServerLocale(): Promise<'en' | 'ar'> {
+async function readServerLocale(): Promise<'en' | 'ar' | 'es'> {
   try {
     const h = await headers()
     return h.get('x-lang') === 'ar' ? 'ar' : 'en'

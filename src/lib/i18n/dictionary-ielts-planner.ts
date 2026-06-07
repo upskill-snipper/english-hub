@@ -28,7 +28,7 @@
 // design (mirrors the diagnostic + plan shards).
 // ────────────────────────────────────────────────────────────────────────────
 
-export const IELTS_PLANNER_DICTIONARY: Record<string, { en: string; ar?: string }> = {
+export const IELTS_PLANNER_DICTIONARY: Record<string, { en: string; ar?: string; es?: string }> = {
   // ─── Header ─────────────────────────────────────────────────────────
   'ielts.planner.back': { en: 'Back to IELTS', ar: 'رجوع لـ IELTS' },
   'ielts.planner.title': { en: 'IELTS Study Planner', ar: 'مخطّط دراسة IELTS' },

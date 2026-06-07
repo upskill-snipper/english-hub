@@ -6,7 +6,7 @@
 // Wired into src/lib/i18n/dictionary.ts (import + one line in lookup()).
 // ────────────────────────────────────────────────────────────────────────────
 
-export const IELTS_DICTIONARY: Record<string, { en: string; ar?: string }> = {
+export const IELTS_DICTIONARY: Record<string, { en: string; ar?: string; es?: string }> = {
   'ielts.nav': { en: 'IELTS', ar: 'IELTS' },
   'ielts.hub.eyebrow': { en: 'IELTS Academic', ar: 'IELTS أكاديمي' },
   'ielts.hub.title': {

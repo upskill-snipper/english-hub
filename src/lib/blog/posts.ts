@@ -121,7 +121,7 @@ export function getAllBlogPosts(): BlogPost[] {
  * post so the URL still resolves (better UX than a 404 mid-rollout
  * while translations are still landing one-by-one).
  */
-export function getBlogPost(slug: string, locale: 'en' | 'ar' = 'en'): BlogPost | null {
+export function getBlogPost(slug: string, locale: 'en' | 'ar' | 'es' = 'en'): BlogPost | null {
   if (locale === 'ar') {
     const arFile = readMdxFile<BlogPostFrontmatter>(BLOG_DIR, `${slug}.ar`)
     if (arFile) {

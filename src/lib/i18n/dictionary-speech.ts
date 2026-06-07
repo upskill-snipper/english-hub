@@ -4,7 +4,7 @@
 // Wired into src/lib/i18n/dictionary.ts (import + one line in lookup()).
 // ────────────────────────────────────────────────────────────────────────────
 
-export const SPEECH_DICTIONARY: Record<string, { en: string; ar?: string }> = {
+export const SPEECH_DICTIONARY: Record<string, { en: string; ar?: string; es?: string }> = {
   'speech.dictate': { en: 'Dictate', ar: 'تحدّث للكتابة' },
   'speech.listening': { en: 'Listening…', ar: 'نسمعك…' },
   'speech.read_aloud': { en: 'Read aloud', ar: 'اسمعها بصوت' },

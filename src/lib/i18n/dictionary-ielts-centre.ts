@@ -8,7 +8,7 @@
 // Wired into src/lib/i18n/dictionary.ts (import + one line in lookup()).
 // ────────────────────────────────────────────────────────────────────────────
 
-export const IELTS_CENTRE_DICTIONARY: Record<string, { en: string; ar?: string }> = {
+export const IELTS_CENTRE_DICTIONARY: Record<string, { en: string; ar?: string; es?: string }> = {
   // Header
   'ielts.centre.back': { en: 'Back to IELTS', ar: 'رجوع إلى IELTS' },
   'ielts.centre.title': { en: 'IELTS Centre Dashboard', ar: 'لوحة مركز IELTS' },

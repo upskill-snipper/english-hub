@@ -28,7 +28,10 @@
  * (dictionary.ts) can merge it via lookup(). DO NOT edit dictionary.ts here.
  */
 
-export const STUDY_POETRY_CONTEXT_DICTIONARY: Record<string, { en: string; ar?: string }> = {
+export const STUDY_POETRY_CONTEXT_DICTIONARY: Record<
+  string,
+  { en: string; ar?: string; es?: string }
+> = {
   /* ───────────────────────── Shared chrome ──────────────────────────── */
   // Breadcrumb + nav labels reused across context era pages.
   'study.shared.crumb.home': { en: 'Home', ar: 'الرئيسية' },

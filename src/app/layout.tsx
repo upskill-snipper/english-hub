@@ -138,12 +138,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const reqHeaders = await headers()
   const lang = reqHeaders.get('x-lang') ?? 'en'
   const cspNonce = reqHeaders.get('x-nonce') ?? undefined
+  // Spanish (es) is LTR like English; only Arabic is RTL.
   const dir = lang === 'ar' ? 'rtl' : 'ltr'
   // `lang` attribute uses the BCP-47 tag the SR / browser actually cares
   // about. We don't have an explicit Gulf locale tag, so 'ar' (modern
   // standard) is the right umbrella value for screen readers and search
   // engines until we ship a per-route `/ar/...` URL strategy.
-  const htmlLang = lang === 'ar' ? 'ar' : 'en-GB'
+  const htmlLang = lang === 'ar' ? 'ar' : lang === 'es' ? 'es' : 'en-GB'
   const skipToContent = await t('a11y.skip_short')
 
   return (

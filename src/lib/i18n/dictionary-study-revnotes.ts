@@ -24,7 +24,7 @@
  * via lookup() in dictionary.ts. Do NOT edit dictionary.ts here.
  */
 
-export const STUDY_REVNOTES_DICTIONARY: Record<string, { en: string; ar?: string }> = {
+export const STUDY_REVNOTES_DICTIONARY: Record<string, { en: string; ar?: string; es?: string }> = {
   // ─── Shared recurring CHROME labels (study.revnotes.common.*) ──────────
   // Section headings (the heading is chrome; the prose beneath stays English).
   'study.revnotes.common.plot_summary': { en: 'Plot Summary', ar: 'ملخّص الأحداث' },

@@ -27,7 +27,7 @@ const BOARD_COOKIE = 'english-hub-board'
 // indexed for Arabic queries. Follow-up will mirror Arabic content under
 // `/ar/...` paths with hreflang alternates for actual Arabic indexing.
 const LANG_COOKIE = 'eh-lang'
-const LANG_VALUES = new Set(['en', 'ar'])
+const LANG_VALUES = new Set(['en', 'ar', 'es'])
 
 // Paths that are allowed through without a board cookie.
 // Use exact matches and prefix matches (prefixes end with "/").

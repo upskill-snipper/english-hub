@@ -20,7 +20,10 @@
 // {date}, {rate}, {months}, {n} are preserved verbatim for runtime .replace().
 // ────────────────────────────────────────────────────────────────────────────
 
-export const IELTS_READINESS_UI_DICTIONARY: Record<string, { en: string; ar?: string }> = {
+export const IELTS_READINESS_UI_DICTIONARY: Record<
+  string,
+  { en: string; ar?: string; es?: string }
+> = {
   // ══ ReadinessReportClient: header / overall ════════════════════════════════
   'ielts.readiness.header.title': {
     en: 'UK Candidate Readiness Report',

@@ -25,7 +25,10 @@
 // en-dashes – preserved exactly).
 // ────────────────────────────────────────────────────────────────────────────
 
-export const IELTS_MODELANSWERS_DICTIONARY: Record<string, { en: string; ar?: string }> = {
+export const IELTS_MODELANSWERS_DICTIONARY: Record<
+  string,
+  { en: string; ar?: string; es?: string }
+> = {
   // ── Writing Task 1 · Academic ─────────────────────────────────────────────
   'ielts.modelans.wt1a.section': {
     en: 'Writing Task 1 · Academic',

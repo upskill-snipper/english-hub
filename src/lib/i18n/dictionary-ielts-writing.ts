@@ -23,7 +23,7 @@
 // page-specific chrome that has no shared equivalent.
 // ────────────────────────────────────────────────────────────────────────────
 
-export const IELTS_WRITING_DICTIONARY: Record<string, { en: string; ar?: string }> = {
+export const IELTS_WRITING_DICTIONARY: Record<string, { en: string; ar?: string; es?: string }> = {
   // ── Hero ──────────────────────────────────────────────────────────────────
   'ielts.writing.hero.badge': {
     en: 'AI band feedback - IELTS Academic',
