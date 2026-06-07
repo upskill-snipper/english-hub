@@ -35,7 +35,7 @@ export const IELTS_DASHBOARD_DICTIONARY: Record<string, { en: string; ar?: strin
     'ielts.dashboard.hero.heading.has_data': {
       en: 'Here’s where you stand today.',
       ar: 'هذي وين موقفك اليوم.',
-      es: 'Aquí es donde estás hoy.',
+      es: 'Esta es tu situación hoy.',
     },
     'ielts.dashboard.hero.heading.cold': {
       en: 'Welcome - let’s build your IELTS plan.',
@@ -309,7 +309,7 @@ export const IELTS_DASHBOARD_DICTIONARY: Record<string, { en: string; ar?: strin
     'ielts.dashboard.reason.gap_one': {
       en: 'Band {current} now vs your Band {target} target - about {steps} band to close.',
       ar: 'Band {current} الحين مقابل هدفك Band {target} - تقريباً {steps} Band تسكّرها.',
-      es: 'Band {current} ahora frente a tu objetivo de Band {target}: unas {steps} Band por cubrir.',
+      es: 'Band {current} ahora frente a tu objetivo de Band {target}: unos {steps} puntos de Band por cubrir.',
     },
     'ielts.dashboard.reason.gap_other': {
       en: 'Band {current} now vs your Band {target} target - about {steps} bands to close.',

@@ -71,7 +71,7 @@ export const IELTS_READINESS_UI_DICTIONARY: Record<
   'ielts.readiness.locked.cta': {
     en: 'See IELTS plans — {currency}{price}/month',
     ar: 'شوف خطط IELTS — {currency}{price}/شهر',
-    es: 'Ver planes de IELTS — {currency}{price}/mes',
+    es: 'Ver planes de IELTS: {currency}{price}/mes',
   },
 
   // ══ Target band selector ═══════════════════════════════════════════════════
@@ -761,7 +761,7 @@ export const IELTS_READINESS_UI_DICTIONARY: Record<
   'ielts.visa.locked.body': {
     en: 'Work through the UK Student-route money and document rules — maintenance funds, the 28-day rule, CAS, TB test and ATAS — and get a clear can-apply / not-yet / blocked status that feeds your Readiness Report. Part of the IELTS plan.',
     ar: 'اشتغل على قواعد الأموال والمستندات لمسار الـ Student visa في UK — أموال المعيشة، وقاعدة الـ 28 يوم، والـ CAS، والـ TB test، والـ ATAS — وخذ حالة واضحة تقدر تقدّم / مو بعد / متوقّف تغذّي تقرير جاهزيتك. جزء من خطة IELTS.',
-    es: 'Repasa las normas de dinero y documentos de la ruta Student del Reino Unido —fondos de manutención, la regla de 28 días, CAS, TB test y ATAS— y obtén un estado claro de puedes-solicitar / todavía-no / bloqueado que alimenta tu informe de preparación. Forma parte del plan IELTS.',
+    es: 'Repasa las normas de dinero y documentos de la ruta Student del Reino Unido (fondos de manutención, la regla de 28 días, CAS, TB test y ATAS) y obtén un estado claro de puedes-solicitar / todavía-no / bloqueado que alimenta tu informe de preparación. Forma parte del plan IELTS.',
   },
   'ielts.visa.locked.example': {
     en: 'Example: outside London, 9 months',

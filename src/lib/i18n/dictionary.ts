@@ -3375,7 +3375,7 @@ export const DICTIONARY: Dictionary = {
   'board.tagline.ocr': {
     en: 'Conflict cluster and Romeo & Juliet',
     ar: 'مجموعة الصراع و Romeo & Juliet',
-    es: 'Cluster Conflict y Romeo & Juliet',
+    es: 'Grupo Conflict y Romeo & Juliet',
   },
   'board.tagline.eduqas': {
     en: 'Single anthology and unseen poetry',
@@ -4315,7 +4315,7 @@ export const DICTIONARY: Dictionary = {
   'pricing.anth.teacher.feat.ppt': {
     en: 'PowerPoint builder (Anthology-styled)',
     ar: 'منشئ PowerPoint (بأسلوب Anthology)',
-    es: 'Generador de PowerPoint (con el estilo de la antología)',
+    es: 'Generador de PowerPoint (con el estilo de Anthology)',
   },
   'pricing.anth.teacher.feat.assignment_tracker': {
     en: 'Assignment tracker & marking',
@@ -6231,7 +6231,7 @@ export const DICTIONARY: Dictionary = {
   },
   'mock.duration': { en: 'Duration', ar: 'المدة', es: 'Duración' },
   'mock.total_marks': { en: 'Total Marks', ar: 'مجموع العلامات', es: 'Puntos totales' },
-  'mock.grade': { en: 'Grade', ar: 'الدرجة', es: 'Grade' },
+  'mock.grade': { en: 'Grade', ar: 'الدرجة', es: 'Nota' },
   'mock.grade_scale_1_9': { en: '1-9 scale', ar: 'مقياس ١-٩', es: 'Escala 1-9' },
   'mock.question_overview': {
     en: 'Question Overview',
@@ -7285,7 +7285,7 @@ export const DICTIONARY: Dictionary = {
     ar: 'اختر صف',
     es: 'Selecciona una clase',
   },
-  'school.students.selected_count': { en: 'selected', ar: 'محدّد', es: 'seleccionadas' },
+  'school.students.selected_count': { en: 'selected', ar: 'محدّد', es: 'seleccionados' },
   'school.students.remove.title': {
     en: 'Remove Student',
     ar: 'احذف الطالب',
@@ -7337,7 +7337,7 @@ export const DICTIONARY: Dictionary = {
     ar: 'ما بدا',
     es: 'Sin empezar',
   },
-  'school.students.detail.child_ref': { en: 'your child', ar: 'ابنك أو بنتك', es: 'tu hijo' },
+  'school.students.detail.child_ref': { en: 'your child', ar: 'ابنك أو بنتك', es: 'tu hijo/a' },
 
   // ─── School / Teachers list ─────────────────────────────────────
   'school.teachers.title': { en: 'Teachers', ar: 'المعلمين', es: 'Profesores' },
@@ -7461,7 +7461,7 @@ export const DICTIONARY: Dictionary = {
     ar: 'صدّر المحدّد',
     es: 'Exportar lo seleccionado',
   },
-  'school.teachers.selected_count': { en: 'selected', ar: 'محدّد', es: 'seleccionadas' },
+  'school.teachers.selected_count': { en: 'selected', ar: 'محدّد', es: 'seleccionados' },
   'school.teachers.remove.title': {
     en: 'Remove Teacher',
     ar: 'احذف المعلم',
@@ -7788,7 +7788,7 @@ export const DICTIONARY: Dictionary = {
   'school.classes.detail.add_modal.footer_selected': {
     en: 'selected',
     ar: 'محدّد',
-    es: 'seleccionadas',
+    es: 'seleccionados',
   },
   'school.classes.detail.add_modal.add_selected': {
     en: 'Add Selected',
@@ -8275,7 +8275,7 @@ export const DICTIONARY: Dictionary = {
     es: 'preguntas disponibles en este nivel',
   },
   'quiz.start': { en: 'Start Quiz', ar: 'ابدأ الاختبار', es: 'Empezar el cuestionario' },
-  'quiz.working_at_grade': { en: 'Working at Grade', ar: 'مستواك درجة', es: 'Working at Grade' },
+  'quiz.working_at_grade': { en: 'Working at Grade', ar: 'مستواك درجة', es: 'Trabajando en Grade' },
   'quiz.excellent_understanding': {
     en: 'Excellent understanding!',
     ar: 'فهم ممتاز!',
@@ -9878,7 +9878,7 @@ export const DICTIONARY: Dictionary = {
   'parent.working_at_grade': {
     en: 'Working At Grade',
     ar: 'الدرجة الحالية',
-    es: 'Working At Grade',
+    es: 'Nota actual',
   },
   'parent.predicted_grade': { en: 'Predicted Grade', ar: 'الدرجة المتوقعة', es: 'Nota prevista' },
   'parent.page.title': { en: 'Parent Dashboard', ar: 'لوحة ولي الأمر', es: 'Panel para padres' },
@@ -10219,7 +10219,7 @@ export const DICTIONARY: Dictionary = {
   'admin.root.col.joined': { en: 'Joined', ar: 'تاريخ الانضمام', es: 'Se unió' },
   'admin.root.col.user_id': { en: 'User ID', ar: 'معرّف المستخدم', es: 'ID de usuario' },
   'admin.root.col.course': { en: 'Course', ar: 'الدورة', es: 'Curso' },
-  'admin.root.col.type': { en: 'Type', ar: 'النوع', es: 'Escribe' },
+  'admin.root.col.type': { en: 'Type', ar: 'النوع', es: 'Tipo' },
   'admin.root.col.date': { en: 'Date', ar: 'التاريخ', es: 'Fecha' },
   'admin.root.empty_users': {
     en: 'No users yet.',
@@ -10360,7 +10360,7 @@ export const DICTIONARY: Dictionary = {
   },
   'admin.email.dns_records': { en: 'DNS records', ar: 'سجلات DNS', es: 'Registros DNS' },
   'admin.email.col.status': { en: 'Status', ar: 'الحالة', es: 'Estado' },
-  'admin.email.col.type': { en: 'Type', ar: 'النوع', es: 'Escribe' },
+  'admin.email.col.type': { en: 'Type', ar: 'النوع', es: 'Tipo' },
   'admin.email.col.name': { en: 'Name', ar: 'الاسم', es: 'Nombre' },
   'admin.email.col.value': { en: 'Value', ar: 'القيمة', es: 'Valor' },
   'admin.email.col.purpose': { en: 'Purpose', ar: 'الغرض', es: 'Propósito' },
@@ -10861,7 +10861,7 @@ export const DICTIONARY: Dictionary = {
     ar: 'دوّر على المصادر…',
     es: 'Buscar recursos...',
   },
-  'resource.filter.label.subject': { en: 'Subject', ar: 'المادة', es: 'Asunto' },
+  'resource.filter.label.subject': { en: 'Subject', ar: 'المادة', es: 'Asignatura' },
   'resource.filter.label.topic': { en: 'Topic', ar: 'الموضوع', es: 'Tema' },
   'resource.filter.label.resource_type': {
     en: 'Resource Type',
@@ -14059,7 +14059,7 @@ export const DICTIONARY: Dictionary = {
   'revision_page.eal_companion.body': {
     en: 'EAL practice pairs with whichever board you are studying - vocabulary, reading fluency, comprehension, grammar and writing confidence, with Khaleeji-Arabic explanations for common transfer errors.',
     ar: 'تدريب EAL يمشي جنب أي بورد تدرسه - المفردات، طلاقة القراءة، الفهم، القواعد، والثقة بالكتابة، مع شرح باللهجة الخليجية للأخطاء الشائعة في النقل بين اللغتين.',
-    es: 'La práctica de EAL se combina con cualquier junta que estudies - vocabulario, fluidez lectora, comprensión, gramática y confianza en la escritura, con explicaciones en árabe khaleeji para los errores de transferencia más habituales.',
+    es: 'La práctica de EAL se combina con la junta examinadora que estudies - vocabulario, fluidez lectora, comprensión, gramática y confianza en la escritura, con explicaciones en árabe khaleeji para los errores de transferencia más habituales.',
   },
   'revision_page.eal_companion.cta': {
     en: 'Open EAL practice',
@@ -14272,7 +14272,7 @@ export const DICTIONARY: Dictionary = {
   'revision_page.section.model_answers.stats': {
     en: 'Grade 7-9',
     ar: 'الدرجات ٧-٩',
-    es: 'Grade 7-9',
+    es: 'Notas 7-9',
   },
   'revision_page.section.comparison.title': {
     en: 'Comparison Essay Guide',
@@ -16181,7 +16181,7 @@ export const DICTIONARY: Dictionary = {
   'cookie_policy.s4.th_provider': { en: 'Provider', ar: 'المزوّد', es: 'Proveedor' },
   'cookie_policy.s4.th_purpose': { en: 'Purpose', ar: 'الغرض', es: 'Propósito' },
   'cookie_policy.s4.th_duration': { en: 'Duration', ar: 'المدة', es: 'Duración' },
-  'cookie_policy.s4.th_type': { en: 'Type', ar: 'النوع', es: 'Escribe' },
+  'cookie_policy.s4.th_type': { en: 'Type', ar: 'النوع', es: 'Tipo' },
   'cookie_policy.s4.type.essential': { en: 'Essential', ar: 'ضروري', es: 'Esencial' },
   'cookie_policy.s4.type.functional': { en: 'Functional', ar: 'وظيفي', es: 'Funcional' },
   'cookie_policy.s4.type.analytics': { en: 'Analytics', ar: 'تحليلي', es: 'Analíticas' },
@@ -17607,7 +17607,7 @@ export const DICTIONARY: Dictionary = {
   'igcse.badge.lit_lang': {
     en: 'Literature & Language',
     ar: 'الأدب واللغة',
-    es: 'Literature y Language',
+    es: 'Literatura y Lengua',
   },
   'igcse.h1': {
     en: 'IGCSE English revision - Pearson Edexcel and Cambridge specs covered',
@@ -17637,7 +17637,7 @@ export const DICTIONARY: Dictionary = {
   'igcse.lit_literature': {
     en: 'Literature & Language',
     ar: 'الأدب واللغة',
-    es: 'Literature y Language',
+    es: 'Literatura y Lengua',
   },
   'igcse.course.literature.name': {
     en: 'IGCSE Literature',
@@ -18725,7 +18725,7 @@ export const DICTIONARY: Dictionary = {
   'igcse.cambridge.narr_struct.freytag_body_post': {
     en: '. Five beats, each tiny, each essential.',
     ar: '. خمس نبضات، كل وحدة صغيرة، كل وحدة أساسية.',
-    es: '. Cinco golpes, cada uno minúsculo, cada uno esencial.',
+    es: '. Cinco tiempos, cada uno minúsculo, cada uno esencial.',
   },
   'igcse.cambridge.narr_struct.arc_h2': {
     en: 'The five-part arc (450 words)',
@@ -19426,7 +19426,7 @@ export const DICTIONARY: Dictionary = {
   'poetry_hub.related.compare_command.title': {
     en: 'Compare Command Words',
     ar: 'كلمات أوامر المقارنة',
-    es: 'Palabras de mandato de comparación',
+    es: 'Palabras de instrucción de comparación',
   },
   'poetry_hub.related.compare_command.desc': {
     en: 'Decode the comparison question.',
@@ -20411,7 +20411,7 @@ export const DICTIONARY: Dictionary = {
   'pricing.faq.q7': {
     en: 'What exam boards do you support?',
     ar: 'أي بوردات امتحان تدعمونها؟',
-    es: '¿Qué juntas examinadoras admitís?',
+    es: '¿Qué juntas examinadoras admiten?',
   },
   'pricing.faq.a7': {
     en: 'We support AQA, Edexcel, OCR, WJEC Eduqas, and Cambridge IGCSE/CAIE. All content is specifically aligned to your chosen board.',
@@ -20601,7 +20601,11 @@ export const DICTIONARY: Dictionary = {
   },
   'school.seating.color.grade': { en: 'Current Grade', ar: 'الدرجة الحالية', es: 'Nota actual' },
   'school.seating.color.trajectory': { en: 'Trajectory', ar: 'الاتجاه', es: 'Trayectoria' },
-  'school.seating.color.target': { en: 'Target Grade', ar: 'الدرجة المستهدفة', es: 'Target Grade' },
+  'school.seating.color.target': {
+    en: 'Target Grade',
+    ar: 'الدرجة المستهدفة',
+    es: 'Nota objetivo',
+  },
   'school.seating.color.gender': { en: 'Gender', ar: 'الجنس', es: 'Género' },
   'school.seating.gender.male': { en: 'Male', ar: 'ذكر', es: 'Masculino' },
   'school.seating.gender.female': { en: 'Female', ar: 'أنثى', es: 'Femenino' },
@@ -20773,7 +20777,7 @@ export const DICTIONARY: Dictionary = {
     es: 'Generado',
   },
   'school.group_gen.export.students_suffix': { en: 'students', ar: 'طالب', es: 'estudiantes' },
-  'school.group_gen.export.grade_label': { en: 'Grade', ar: 'الدرجة', es: 'Grade' },
+  'school.group_gen.export.grade_label': { en: 'Grade', ar: 'الدرجة', es: 'Nota' },
   'school.group_gen.export.ability_label': { en: 'Ability', ar: 'القدرة', es: 'Capacidad' },
   'school.group_gen.export.na': { en: 'N/A', ar: 'غير متاح', es: 'N/D' },
   'school.group_gen.timer.title': {
@@ -21317,7 +21321,7 @@ export const DICTIONARY: Dictionary = {
   'ocr.lit.overview.intro': {
     en: 'The OCR GCSE English Literature specification (J352) is assessed through two examined papers, each worth 50% of the final grade. There is no coursework or controlled assessment.',
     ar: 'منهج OCR GCSE English Literature (J352) يُقيَّم عبر ورقتين ممتحَنتين، كل وحدة تساوي ٥٠٪ من الدرجة النهائية. ما في تكليف دراسي ولا تقييم مُراقَب.',
-    es: 'La especificación de OCR GCSE English Literature (J352) se evalúa mediante dos exámenes examinados, cada uno con un valor del 50% de la nota final. No hay trabajo de curso ni evaluación controlada.',
+    es: 'La especificación de OCR GCSE English Literature (J352) se evalúa mediante dos exámenes, cada uno con un valor del 50% de la nota final. No hay trabajo de curso ni evaluación controlada.',
   },
   'ocr.lit.papers.h2': { en: 'Exam Papers', ar: 'أوراق الامتحان', es: 'Exámenes' },
   'ocr.lit.papers.intro': {
@@ -23879,7 +23883,7 @@ export const DICTIONARY: Dictionary = {
     ar: 'هيئة الامتحان',
     es: 'Junta examinadora',
   },
-  'resources.tl.lp.detail.meta.subject': { en: 'Subject', ar: 'المادّة', es: 'Asunto' },
+  'resources.tl.lp.detail.meta.subject': { en: 'Subject', ar: 'المادّة', es: 'Materia' },
   'resources.tl.lp.detail.subject.literature': {
     en: 'Literature',
     ar: 'Literature',
@@ -24293,7 +24297,7 @@ export const DICTIONARY: Dictionary = {
   // BentoFeatures
   'home.bento.eyebrow': { en: '01 - Contents', ar: '٠١ - المحتويات', es: '01 - Contenido' },
   'home.bento.h2.before': { en: 'A ', ar: 'قسم إنجليزي ', es: 'Un ' },
-  'home.bento.h2.emph': { en: 'complete', ar: 'كامل', es: 'completado' },
+  'home.bento.h2.emph': { en: 'complete', ar: 'كامل', es: 'completo' },
   'home.bento.h2.after': {
     en: ' English department, re-shelved.',
     ar: '، مرتّب من جديد.',
@@ -24536,7 +24540,7 @@ export const DICTIONARY: Dictionary = {
   'home.testimonials.patterson.role': {
     en: 'Head of English',
     ar: 'رئيسة قسم إنجليزي',
-    es: 'Jefe de inglés',
+    es: 'Jefa de inglés',
   },
   'home.testimonials.priya.quote': {
     en: 'The mock exams with grade boundaries are exactly like the real thing. I felt so prepared walking into my actual exam.',

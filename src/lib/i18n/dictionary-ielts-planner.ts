@@ -160,7 +160,7 @@ export const IELTS_PLANNER_DICTIONARY: Record<string, { en: string; ar?: string;
   'ielts.planner.rightnow.learn.body_unit': {
     en: 'A focused {skillLower} lesson - {blurb} Just enough to move one thing forward.',
     ar: 'درس {skillLower} مركّز - {blurb} بس عشان تتقدّم شي واحد.',
-    es: 'Una lección de {skillLower} enfocada - {blurb} Lo justo para avanzar en una cosa.',
+    es: 'Una lección de {skillLower} enfocada: {blurb} Lo justo para avanzar en una cosa.',
   },
   'ielts.planner.rightnow.learn.body_generic': {
     en: 'One short {skillLower} lesson to keep momentum.',

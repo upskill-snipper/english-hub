@@ -129,12 +129,12 @@ export const REV_TEXTGRP3_DICTIONARY: Dictionary = {
   'rev.texts.avftb.context.title': {
     en: 'A View from the Bridge — Context',
     ar: 'A View from the Bridge — السياق',
-    es: 'A View from the Bridge — Contexto',
+    es: 'A View from the Bridge: Contexto',
   },
   'rev.texts.avftb.context.byline': {
     en: 'by Arthur Miller — 1955/1956',
     ar: 'تأليف Arthur Miller — 1955/1956',
-    es: 'por Arthur Miller — 1955/1956',
+    es: 'por Arthur Miller, 1955/1956',
   },
   'rev.texts.avftb.context.intro': {
     en: 'The essential background you need for the exam: 1950s Red Hook Brooklyn, Italian immigration, waterfront culture, Greek tragedy, McCarthyism, codes of honour and the American Dream.',
@@ -144,12 +144,12 @@ export const REV_TEXTGRP3_DICTIONARY: Dictionary = {
   'rev.texts.avftb.context.ao3_badge': {
     en: 'AO3 — Context',
     ar: 'AO3 — السياق',
-    es: 'AO3 — Contexto',
+    es: 'AO3: Contexto',
   },
   'rev.texts.avftb.context.examiners_want_h': {
     en: 'AO3 — What examiners want',
     ar: 'AO3 — شنو يبغون المصححون',
-    es: 'AO3 — Qué quieren los examinadores',
+    es: 'AO3: Qué quieren los examinadores',
   },
   'rev.texts.avftb.context.examiners_want_body': {
     en: 'AO3 rewards you for showing how context shapes meaning. Do not simply list historical facts — explain how the 1950s setting, Italian immigration and McCarthyism affect the audience’s response to the play. The best answers explain why Miller made specific choices, not just when things happened.',

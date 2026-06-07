@@ -38,7 +38,7 @@ export const IELTS_MODELANSWERS_DICTIONARY: Record<
   'ielts.modelans.wt1a.promptNote': {
     en: 'Self-authored data: National Gallery — 2.0m (2010), 3.2m (2015), 4.5m (2020). Science Centre — 1.5m (2010), 2.8m (2015), 3.0m (2020). History Museum — 3.5m (2010), 3.1m (2015), 2.4m (2020).',
     ar: 'بيانات من إعدادنا: National Gallery — 2.0m (2010)، 3.2m (2015)، 4.5m (2020). Science Centre — 1.5m (2010)، 2.8m (2015)، 3.0m (2020). History Museum — 3.5m (2010)، 3.1m (2015)، 2.4m (2020).',
-    es: 'Datos de elaboración propia: National Gallery — 2.0m (2010), 3.2m (2015), 4.5m (2020). Science Centre — 1.5m (2010), 2.8m (2015), 3.0m (2020). History Museum — 3.5m (2010), 3.1m (2015), 2.4m (2020).',
+    es: 'Datos de elaboración propia: National Gallery: 2.0m (2010), 3.2m (2015), 4.5m (2020). Science Centre: 1.5m (2010), 2.8m (2015), 3.0m (2020). History Museum: 3.5m (2010), 3.1m (2015), 2.4m (2020).',
   },
   'ielts.modelans.wt1a.s0.label': {
     en: 'Developing (≈ Band 6.5)',
@@ -73,7 +73,7 @@ export const IELTS_MODELANSWERS_DICTIONARY: Record<
   'ielts.modelans.wt1a.s1.why.0': {
     en: 'The overview is placed second, is fully separate, and captures the single most important idea — the reversal in ranking — which is exactly what lifts the task-response mark.',
     ar: 'النظرة العامة جت ثاني، ومنفصلة تمام، وتمسك الفكرة الأهم — انقلاب الترتيب — وهذا بالضبط اللي يرفع درجة الاستجابة للمهمة.',
-    es: 'El resumen general aparece en segundo lugar, está totalmente separado y capta la idea más importante —la inversión del orden—, que es exactamente lo que eleva la nota de respuesta a la tarea.',
+    es: 'El resumen general aparece en segundo lugar, está totalmente separado y capta la idea más importante (la inversión del orden), que es exactamente lo que eleva la nota de respuesta a la tarea.',
   },
   'ielts.modelans.wt1a.s1.why.1': {
     en: 'Data is selected and grouped (the two rising museums versus the declining one) rather than listed year by year.',
@@ -353,7 +353,7 @@ export const IELTS_MODELANSWERS_DICTIONARY: Record<
   'ielts.modelans.hero.subtitle': {
     en: '{count} self-authored sample answers for Writing and Speaking, each written to a target band — a developing answer (around 6.5) and a strong answer (around 8) for the same question — with a plain-English note on exactly what moves the answer up the scale.',
     ar: '{count} نموذج إجابة من إعدادنا للكتابة والمحادثة، كل وحدة مكتوبة لـ Band مستهدف — إجابة في طور التطور (حوالي 6.5) وإجابة قوية (حوالي 8) لنفس السؤال — مع ملاحظة بإنجليزي بسيط عن وش بالضبط يطلّع الإجابة فوق بالسلّم.',
-    es: '{count} modelos de respuesta de elaboración propia para Writing y Speaking, cada uno escrito para una banda objetivo —una respuesta en desarrollo (en torno a 6.5) y una respuesta sólida (en torno a 8) para la misma pregunta— con una nota en inglés sencillo sobre qué hace exactamente que la respuesta suba en la escala.',
+    es: '{count} modelos de respuesta de elaboración propia para Writing y Speaking, cada uno escrito para una banda objetivo, una respuesta en desarrollo (en torno a 6.5) y una respuesta sólida (en torno a 8) para la misma pregunta, con una nota en inglés sencillo sobre qué hace exactamente que la respuesta suba en la escala.',
   },
   'ielts.modelans.hero.disclaimer': {
     en: 'These are original examples written by The English Hub. They are not taken from any real exam paper, and our scoring notes describe the marking criteria in our own words. Bands are illustrative, not a guarantee of a result.',
@@ -403,7 +403,7 @@ export const IELTS_MODELANSWERS_DICTIONARY: Record<
   'ielts.modelans.upsell.body': {
     en: 'The full library — and unlimited AI band feedback on your own Writing and Speaking — is part of the IELTS plan.',
     ar: 'المكتبة الكاملة — وتقييم Band بالـ AI بلا حدود على كتابتك ومحادثتك أنت — جزء من خطة IELTS.',
-    es: 'La biblioteca completa —y feedback de banda ilimitado con IA sobre tu propio Writing y Speaking— forma parte del plan IELTS.',
+    es: 'La biblioteca completa (y feedback de banda ilimitado con IA sobre tu propio Writing y Speaking) forma parte del plan IELTS.',
   },
   'ielts.modelans.upsell.cta': {
     en: 'See IELTS plans',

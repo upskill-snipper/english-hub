@@ -511,7 +511,7 @@ export const IELTS_DIAGNOSTIC_DICTIONARY: Record<string, { en: string; ar?: stri
     'ielts.plan.step.baseline.action': {
       en: 'You haven’t practised {skill} yet, so we can’t measure the gap to Band {target}. Do one {taskKind} to set your starting point - it will reshape this whole plan.',
       ar: 'ما تدرّبت على {skill} بعد، فما نقدر نقيس الفرق لين Band {target}. سوِّ {taskKind} وحدة عشان تحدّد نقطة بدايتك - بتعيد تشكيل الخطة كلها.',
-      es: 'Aún no has practicado {skill}, así que no podemos medir la diferencia hasta Band {target}. Haz un/a {taskKind} para fijar tu punto de partida: reconfigurará todo este plan.',
+      es: 'Aún no has practicado {skill}, así que no podemos medir la diferencia hasta Band {target}. Completa {taskKind} para fijar tu punto de partida: reconfigurará todo este plan.',
     },
     // {taskKind} variants for the baseline action
     'ielts.plan.taskkind.feedback': {

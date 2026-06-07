@@ -33,7 +33,7 @@ export const HOMEPAGE_DICTIONARY: Record<string, { en: string; ar: string; es?: 
   'homepage.gcse.subheading': {
     en: 'Year 10-11, ages 14-16. Tap your board and you’ll land on the exact specification you sit.',
     ar: 'سنة 10-11، أعمار 14-16. اضغط على البورد حقّك وبتوصل عالمنهج اللي تمتحن فيه بالضبط.',
-    es: 'Year 10-11, de 14 a 16 años. Toca tu junta y llegarás al programa exacto que vas a examinar.',
+    es: 'Year 10-11, de 14 a 16 años. Toca tu junta y llegarás al programa exacto del que te vas a examinar.',
   },
 
   /* ── KS3 board picker section (Years 7-9, pre-GCSE) ── */
@@ -167,7 +167,7 @@ export const HOMEPAGE_DICTIONARY: Record<string, { en: string; ar: string; es?: 
   'homepage.board.help.text': {
     en: 'Not sure which spec your school sits?',
     ar: 'مو متأكد أي منهج مدرستك تمتحن فيه؟',
-    es: '¿No sabes qué programa examina tu escuela?',
+    es: '¿No sabes de qué programa se examina tu escuela?',
   },
   'homepage.board.help.link': {
     en: 'Choose by level instead.',

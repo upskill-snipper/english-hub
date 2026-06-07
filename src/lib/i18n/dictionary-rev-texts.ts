@@ -354,12 +354,12 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
   'rev.texts.aic.themes.title': {
     en: 'An Inspector Calls — Themes',
     ar: 'An Inspector Calls — المحاور',
-    es: 'An Inspector Calls — Temas',
+    es: 'An Inspector Calls: Temas',
   },
   'rev.texts.aic.themes.byline': {
     en: 'by J.B. Priestley — 1945',
     ar: 'تأليف J.B. Priestley — 1945',
-    es: 'por J.B. Priestley — 1945',
+    es: 'por J.B. Priestley, 1945',
   },
   'rev.texts.aic.themes.intro': {
     en: 'Seven major themes analysed in depth with key quotes, act-by-act evidence, AO3 context links, and essay planning tips for GCSE literature.',
@@ -646,12 +646,12 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
   'rev.texts.common.ao2_language_analysis': {
     en: 'AO2 — Language Analysis',
     ar: 'AO2 — تحليل اللغة',
-    es: 'AO2 — Análisis del lenguaje',
+    es: 'AO2: Análisis del lenguaje',
   },
   'rev.texts.common.ao3_context_link_dash': {
     en: 'AO3 — Context Link',
     ar: 'AO3 — رابط السياق',
-    es: 'AO3 — Vínculo de contexto',
+    es: 'AO3: Vínculo de contexto',
   },
   'rev.texts.common.using_in_essay': {
     en: 'Using This in Your Essay',
@@ -892,22 +892,22 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
   'rev.texts.af.context.title': {
     en: 'Animal Farm — Context',
     ar: 'Animal Farm — السياق',
-    es: 'Animal Farm — Contexto',
+    es: 'Animal Farm: Contexto',
   },
   'rev.texts.af.context.byline': {
     en: 'by George Orwell — 1945',
     ar: 'تأليف George Orwell — 1945',
-    es: 'por George Orwell — 1945',
+    es: 'por George Orwell, 1945',
   },
   'rev.texts.af.context.ao3_badge': {
     en: 'AO3 — Context',
     ar: 'AO3 — السياق',
-    es: 'AO3 — Contexto',
+    es: 'AO3: Contexto',
   },
   'rev.texts.af.context.ao3_want_h': {
     en: 'AO3 — What examiners want',
     ar: 'AO3 — شنو يبغى المصححون',
-    es: 'AO3 — Qué quieren los examinadores',
+    es: 'AO3: Qué quieren los examinadores',
   },
   'rev.texts.af.context.intro': {
     en: 'Historical and social context for GCSE literature. Covers the Russian Revolution, Stalin vs Trotsky, Orwell’s democratic socialism, the Spanish Civil War, allegory and satire, publication difficulties and Cold War relevance.',
@@ -932,12 +932,12 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
   'rev.texts.af.quotes.title': {
     en: 'Animal Farm — Key Quotes',
     ar: 'Animal Farm — الاقتباسات المفتاحية',
-    es: 'Animal Farm — Citas clave',
+    es: 'Animal Farm: Citas clave',
   },
   'rev.texts.af.quotes.byline': {
     en: 'by George Orwell — 1945',
     ar: 'تأليف George Orwell — 1945',
-    es: 'por George Orwell — 1945',
+    es: 'por George Orwell, 1945',
   },
   'rev.texts.af.quotes.intro': {
     en: 'Twenty essential quotations organised by chapter and theme, each with speaker, context, detailed analysis, thematic links and exam tips for GCSE English Literature.',
@@ -1125,7 +1125,7 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
   'rev.texts.common.paragraph_n_dash': {
     en: 'Paragraph {n} — ',
     ar: 'الفقرة {n} — ',
-    es: 'Párrafo {n} — ',
+    es: 'Párrafo {n}: ',
   },
   'rev.texts.common.how_to_use_essay_plans': {
     en: 'How to use these essay plans',
@@ -1354,22 +1354,22 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
   'rev.texts.lotf.context.title': {
     en: 'Lord of the Flies — Context',
     ar: 'Lord of the Flies — السياق',
-    es: 'Lord of the Flies — Contexto',
+    es: 'Lord of the Flies: Contexto',
   },
   'rev.texts.lotf.context.byline': {
     en: 'by William Golding — 1954',
     ar: 'تأليف William Golding — 1954',
-    es: 'por William Golding — 1954',
+    es: 'por William Golding, 1954',
   },
   'rev.texts.lotf.context.ao3_badge': {
     en: 'AO3 — Context',
     ar: 'AO3 — السياق',
-    es: 'AO3 — Contexto',
+    es: 'AO3: Contexto',
   },
   'rev.texts.lotf.context.ao3_want_h': {
     en: 'AO3 — What examiners want',
     ar: 'AO3 — شنو يبغى المصححون',
-    es: 'AO3 — Qué quieren los examinadores',
+    es: 'AO3: Qué quieren los examinadores',
   },
   'rev.texts.lotf.context.intro': {
     en: 'Historical and social context for GCSE literature. Covers post-WWII Britain, Golding’s war experience, the atomic age, The Coral Island, original sin, the Cold War and the Nobel Prize.',
@@ -1389,12 +1389,12 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
   'rev.texts.lotf.essays.title': {
     en: 'Lord of the Flies — Essay Plans',
     ar: 'Lord of the Flies — خطط المقالات',
-    es: 'Lord of the Flies — Planes de ensayo',
+    es: 'Lord of the Flies: Planes de ensayo',
   },
   'rev.texts.lotf.essays.byline': {
     en: 'by William Golding — 1954',
     ar: 'تأليف William Golding — 1954',
-    es: 'por William Golding — 1954',
+    es: 'por William Golding, 1954',
   },
   'rev.texts.lotf.essays.intro': {
     en: 'Six structured essay plans covering the most common GCSE exam questions on Lord of the Flies. Each plan includes a thesis statement, paragraph-level guidance with evidence and analysis, a conclusion and an exam tip.',
@@ -1409,12 +1409,12 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
   'rev.texts.lotf.quotes.title': {
     en: 'Lord of the Flies — Key Quotes',
     ar: 'Lord of the Flies — الاقتباسات المفتاحية',
-    es: 'Lord of the Flies — Citas clave',
+    es: 'Lord of the Flies: Citas clave',
   },
   'rev.texts.lotf.quotes.byline': {
     en: 'by William Golding — 1954',
     ar: 'تأليف William Golding — 1954',
-    es: 'por William Golding — 1954',
+    es: 'por William Golding, 1954',
   },
   'rev.texts.lotf.quotes.intro': {
     en: 'Twenty essential quotations with speaker, chapter reference, detailed analysis and thematic links for GCSE English Literature.',
@@ -1531,7 +1531,7 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
   'rev.texts.aic.byline': {
     en: 'by J.B. Priestley — 1945',
     ar: 'تأليف J.B. Priestley — 1945',
-    es: 'por J.B. Priestley — 1945',
+    es: 'por J.B. Priestley, 1945',
   },
   'rev.texts.aic.back': {
     en: 'Back to An Inspector Calls',
@@ -1558,17 +1558,17 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
   'rev.texts.aic.acts.language_techniques_act': {
     en: 'Language Techniques — Act {n}',
     ar: 'الأساليب اللغوية — الفصل {n}',
-    es: 'Técnicas lingüísticas — Acto {n}',
+    es: 'Técnicas lingüísticas: Acto {n}',
   },
   'rev.texts.aic.acts.dramatic_techniques_act': {
     en: 'Dramatic Techniques — Act {n}',
     ar: 'الوسائل الدرامية — الفصل {n}',
-    es: 'Recursos dramáticos — Acto {n}',
+    es: 'Recursos dramáticos: Acto {n}',
   },
   'rev.texts.aic.acts.key_quotes_act': {
     en: 'Key Quotes — Act {n}',
     ar: 'الاقتباسات المفتاحية — الفصل {n}',
-    es: 'Citas clave — Acto {n}',
+    es: 'Citas clave: Acto {n}',
   },
   'rev.texts.aic.acts.continue_sub': {
     en: 'Explore essay plans and key quotes for An Inspector Calls.',
@@ -1585,7 +1585,7 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
   'rev.texts.aic.characters.title': {
     en: 'An Inspector Calls — Characters',
     ar: 'An Inspector Calls — الشخصيات',
-    es: 'An Inspector Calls — Personajes',
+    es: 'An Inspector Calls: Personajes',
   },
   'rev.texts.aic.characters.intro': {
     en: 'Complete character analysis for all seven key characters. Each section includes a detailed overview, character arc, key quotes with AO2 analysis, theme links, and exam technique advice.',
@@ -1607,7 +1607,7 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
   'rev.texts.aic.context.title': {
     en: 'An Inspector Calls — Context',
     ar: 'An Inspector Calls — السياق',
-    es: 'An Inspector Calls — Contexto',
+    es: 'An Inspector Calls: Contexto',
   },
   'rev.texts.aic.context.intro': {
     en: 'Historical and social context for GCSE literature. Covers the 1912 setting, 1945 writing date, Priestley’s socialism, the welfare state, the class system, women’s rights, and the Labour landslide.',
@@ -1644,7 +1644,7 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
   'rev.texts.aic.quotes.title': {
     en: 'An Inspector Calls — Key Quotes',
     ar: 'An Inspector Calls — الاقتباسات المفتاحية',
-    es: 'An Inspector Calls — Citas clave',
+    es: 'An Inspector Calls: Citas clave',
   },
   'rev.texts.aic.quotes.intro': {
     en: '30 essential quotations with full AO2 language analysis, AO3 context links, and exam technique tips. Filter by act or theme to find the quotes you need.',
@@ -1661,7 +1661,7 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
   'rev.texts.aic.essays.title': {
     en: 'An Inspector Calls — Essay Plans',
     ar: 'An Inspector Calls — خطط المقالات',
-    es: 'An Inspector Calls — Planes de ensayo',
+    es: 'An Inspector Calls: Planes de ensayo',
   },
   'rev.texts.aic.essays.intro': {
     en: 'Five structured GCSE essay plans with thesis statements, paragraph plans, key quotes and analytical points. Use these as a framework for timed practice.',
@@ -1688,12 +1688,12 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
   'rev.texts.aic.extract.title': {
     en: 'The Inspector’s Final Speech — A Close Reading',
     ar: 'خطبة المفتش الختامية — قراءة متأنّية',
-    es: 'El discurso final del Inspector — Una lectura atenta',
+    es: 'El discurso final del Inspector: Una lectura atenta',
   },
   'rev.texts.aic.extract.byline': {
     en: 'An Inspector Calls, Act 3 — J.B. Priestley',
     ar: 'An Inspector Calls، الفصل 3 — J.B. Priestley',
-    es: 'An Inspector Calls, Acto 3 — J.B. Priestley',
+    es: 'An Inspector Calls, Acto 3: J.B. Priestley',
   },
   'rev.texts.aic.extract.how_to_read_h': {
     en: 'How to read this page',
@@ -1708,27 +1708,27 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
   'rev.texts.aic.extract.quote_caption': {
     en: 'Inspector Goole, Act 3 — {n} words (fair dealing)',
     ar: 'Inspector Goole، الفصل 3 — {n} كلمة (استخدام عادل)',
-    es: 'Inspector Goole, Acto 3 — {n} palabras (uso legítimo)',
+    es: 'Inspector Goole, Acto 3: {n} palabras (uso legítimo)',
   },
   'rev.texts.aic.extract.notice_h': {
     en: 'Notice — what the words do',
     ar: 'لاحظ — شنو تسوّي الكلمات',
-    es: 'Observa — qué hacen las palabras',
+    es: 'Observa: qué hacen las palabras',
   },
   'rev.texts.aic.extract.say_h': {
     en: 'Say — your AO2 argument',
     ar: 'قُل — حجّتك في AO2',
-    es: 'Di — tu argumento de AO2',
+    es: 'Di: tu argumento de AO2',
   },
   'rev.texts.aic.extract.zoom_h': {
     en: 'Zoom out — AO3 context',
     ar: 'وسّع الصورة — سياق AO3',
-    es: 'Amplía — contexto de AO3',
+    es: 'Amplía: contexto de AO3',
   },
   'rev.texts.aic.extract.model_para_label': {
     en: 'Model paragraph — ~250 words',
     ar: 'فقرة نموذجية — ~250 كلمة',
-    es: 'Párrafo modelo — ~250 palabras',
+    es: 'Párrafo modelo: ~250 palabras',
   },
   'rev.texts.aic.extract.intro': {
     en: 'A fragment-by-fragment walkthrough of the play’s didactic climax. We work through the speech in short, fair-dealing extracts — each followed by notice, say, and zoom-out cards that mirror the moves a strong AQA / Edexcel essay must make.',

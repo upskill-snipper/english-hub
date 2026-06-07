@@ -100,7 +100,7 @@ export const IELTS_PARTNERS_DICTIONARY: Dictionary = {
   'ielts.partners.overview.offer.bulk.body': {
     en: 'Onboard a cohort in one step and assign the full IELTS Academic learning loop - diagnostic, study plan, four-skill practice and mock tests - to every learner under one agreement.',
     ar: 'سجّل الدفعة بخطوة وحدة وعيّن حلقة تعلّم IELTS Academic الكاملة - التشخيص، وخطة الدراسة، وتدريب المهارات الأربع، والامتحانات التجريبية - لكل طالب تحت اتفاقية وحدة.',
-    es: 'Incorpora a un grupo en un solo paso y asigna el ciclo completo de aprendizaje de IELTS Academic —diagnóstico, plan de estudio, práctica de las cuatro destrezas y exámenes simulados— a cada estudiante bajo un único acuerdo.',
+    es: 'Incorpora a un grupo en un solo paso y asigna el ciclo completo de aprendizaje de IELTS Academic (diagnóstico, plan de estudio, práctica de las cuatro destrezas y exámenes simulados) a cada estudiante bajo un único acuerdo.',
   },
   'ielts.partners.overview.offer.dashboard.title': {
     en: 'A centre dashboard',
@@ -506,7 +506,7 @@ export const IELTS_PARTNERS_DICTIONARY: Dictionary = {
   'ielts.partners.schools.features.cohort.body': {
     en: 'Assign the full IELTS Academic learning loop - diagnostic, plan, four-skill practice and mocks - to every student under a single agreement.',
     ar: 'عيّن حلقة تعلّم IELTS Academic الكاملة - التشخيص، والخطة، وتدريب المهارات الأربع، والامتحانات التجريبية - لكل طالب تحت اتفاقية وحدة.',
-    es: 'Asigna el ciclo completo de aprendizaje de IELTS Academic —diagnóstico, plan, práctica de las cuatro destrezas y simulacros— a cada estudiante bajo un único acuerdo.',
+    es: 'Asigna el ciclo completo de aprendizaje de IELTS Academic (diagnóstico, plan, práctica de las cuatro destrezas y simulacros) a cada estudiante bajo un único acuerdo.',
   },
   'ielts.partners.schools.features.feedback.title': {
     en: 'Instant AI band feedback',
@@ -971,7 +971,7 @@ export const IELTS_PARTNERS_DICTIONARY: Dictionary = {
   'ielts.partners.agencies.faq.a1': {
     en: 'No. The English Hub is an independent IELTS preparation platform, not a UCAS or university recruitment agent. We support the preparation side - getting applicants IELTS-ready - and we describe any recruitment or accreditation routes we are pursuing as exactly that: routes we are pursuing, not affiliations we hold.',
     ar: 'لا. The English Hub منصّة مستقلة لتحضير IELTS، مو وكيل استقطاب لـ UCAS أو للجامعات. إحنا ندعم جانب التحضير - نخلّي المتقدّمين جاهزين لـ IELTS - ونوصف أي طُرق استقطاب أو اعتماد نسعى لها بالضبط كذا: طُرق نسعى لها، مو ارتباطات نملكها.',
-    es: 'No. The English Hub es una plataforma independiente de preparación de IELTS, no un agente de captación de UCAS ni de universidades. Apoyamos la parte de la preparación —preparar a los solicitantes para IELTS— y describimos cualquier vía de captación o acreditación que estemos buscando exactamente como eso: vías que estamos buscando, no afiliaciones que tengamos.',
+    es: 'No. The English Hub es una plataforma independiente de preparación de IELTS, no un agente de captación de UCAS ni de universidades. Apoyamos la parte de la preparación (preparar a los solicitantes para IELTS) y describimos cualquier vía de captación o acreditación que estemos buscando exactamente como eso: vías que estamos buscando, no afiliaciones que tengamos.',
   },
   'ielts.partners.agencies.faq.q2': {
     en: 'How does this help our placements?',

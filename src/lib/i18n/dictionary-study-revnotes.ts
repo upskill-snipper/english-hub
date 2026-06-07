@@ -223,7 +223,7 @@ export const STUDY_REVNOTES_DICTIONARY: Record<string, { en: string; ar?: string
   'study.revnotes.common.eyebrow': {
     en: 'GCSE English Literature — Revision Notes',
     ar: 'GCSE English Literature — ملخّصات المراجعة',
-    es: 'GCSE English Literature — Notas de repaso',
+    es: 'GCSE English Literature: Notas de repaso',
   },
   'study.revnotes.common.eyebrow_gcse_lit': {
     en: 'GCSE English Literature',

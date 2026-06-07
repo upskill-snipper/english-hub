@@ -3456,11 +3456,11 @@ export const AUDIT_FIX_DICTIONARY: Dictionary = {
     ar: `الفترة`,
     es: `Selecciona un periodo`,
   },
-  'school.calendar.lesson.subject': { en: `Subject`, ar: `الموضوع`, es: `Asunto` },
+  'school.calendar.lesson.subject': { en: `Subject`, ar: `الموضوع`, es: `Materia` },
   'school.calendar.lesson.subject_placeholder': {
     en: `Subject Placeholder`,
     ar: `الموضوع`,
-    es: `Introduce el asunto`,
+    es: `Introduce la materia`,
   },
   'school.calendar.lesson.title': { en: `Title`, ar: `عنوان`, es: `Título` },
   'school.calendar.lesson.title_placeholder': {
@@ -3838,11 +3838,11 @@ export const AUDIT_FIX_DICTIONARY: Dictionary = {
     es: `Política de contraseñas`,
   },
   'school.settings.security.policy.basic': { en: `Basic`, ar: `أساسي`, es: `Básico` },
-  'school.settings.security.policy.strong': { en: `Strong`, ar: `قوي`, es: `Destacado` },
+  'school.settings.security.policy.strong': { en: `Strong`, ar: `قوي`, es: `Fuerte` },
   'school.settings.security.policy.very_strong': {
     en: `Very Strong`,
     ar: `قوي وايد`,
-    es: `Muy bueno`,
+    es: `Muy fuerte`,
   },
   'school.settings.security.policy_help': {
     en: `Policy Help`,
@@ -3869,7 +3869,7 @@ export const AUDIT_FIX_DICTIONARY: Dictionary = {
   'school.settings.security.session_timeout': {
     en: `Session Timeout`,
     ar: `انتهاء مهلة الجلسة`,
-    es: `Sesión caducada`,
+    es: `Tiempo de espera de sesión`,
   },
   'school.settings.security.tfa_desc': {
     en: `Tfa Desc`,
@@ -3949,7 +3949,7 @@ export const AUDIT_FIX_DICTIONARY: Dictionary = {
   'teacher.analytics.need_support': {
     en: `Need Support`,
     ar: `يحتاج دعم`,
-    es: `¿Necesitas ayuda?`,
+    es: `Necesita apoyo`,
   },
   'teacher.analytics.score_improvement': {
     en: `Score Improvement`,

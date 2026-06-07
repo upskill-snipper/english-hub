@@ -112,7 +112,7 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
     'ielts.admissions.hub.glance.band.body': {
       en: 'An IELTS Academic score that meets - ideally beats - the course threshold.',
       ar: 'درجة IELTS Academic توصل للحد المطلوب للتخصص - والأفضل تتعدّاه.',
-      es: 'Una puntuación de IELTS Academic que alcance —idealmente supere— el umbral del curso.',
+      es: 'Una puntuación de IELTS Academic que alcance (idealmente, supere) el umbral del curso.',
     },
     'ielts.admissions.hub.glance.visa.title': {
       en: 'A student visa',
@@ -385,7 +385,7 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
     'ielts.admissions.hub.ps.point4': {
       en: 'Reflect on each example - what it changed, what question it raised - rather than just listing it.',
       ar: 'تتأمّل في كل مثال - شنو غيّر، وش سؤال أثاره - بدل ما تسرده بس.',
-      es: 'Reflexionar sobre cada ejemplo —qué cambió, qué pregunta planteó— en lugar de solo enumerarlo.',
+      es: 'Reflexionar sobre cada ejemplo (qué cambió, qué pregunta planteó) en lugar de solo enumerarlo.',
     },
     'ielts.admissions.hub.ps.point5': {
       en: 'Read fluently and accurately, in an academic but natural register (especially important when English is an additional language).',
@@ -422,7 +422,7 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
     'ielts.admissions.hub.visa.body': {
       en: 'Most students from the Gulf will need the UK <strong>Student visa</strong>. In outline, you apply after you accept an unconditional offer and your university issues a Confirmation of Acceptance for Studies (CAS). You will typically need to evidence your accepted place, sufficient funds for fees and living costs, and - depending on your nationality and course - an approved English-language qualification such as IELTS (often the IELTS for UKVI variant; check what your university and the visa route require).',
       ar: 'أغلب الطلاب من الخليج بيحتاجون <strong>فيزا Student</strong> البريطانية. باختصار، تقدّم عليها بعد ما تقبل عرض غير مشروط وتصدر لك الجامعة Confirmation of Acceptance for Studies (CAS). عادةً بتحتاج تثبت مقعدك المقبول، وأموال كافية للرسوم وتكاليف المعيشة، و - حسب جنسيّتك وتخصصك - مؤهّل إنجليزي معتمد مثل IELTS (غالباً نسخة IELTS for UKVI؛ شوف شنو تطلبه جامعتك ومسار الفيزا).',
-      es: 'La mayoría de los estudiantes del Golfo necesitarán el <strong>visado Student</strong> del Reino Unido. A grandes rasgos, lo solicitas después de aceptar una oferta incondicional y de que tu universidad emita un Confirmation of Acceptance for Studies (CAS). Normalmente tendrás que acreditar tu plaza aceptada, fondos suficientes para las tasas y el coste de vida y —según tu nacionalidad y curso— una titulación de inglés aprobada como IELTS (a menudo la variante IELTS for UKVI; comprueba qué exigen tu universidad y la ruta del visado).',
+      es: 'La mayoría de los estudiantes del Golfo necesitarán el <strong>visado Student</strong> del Reino Unido. A grandes rasgos, lo solicitas después de aceptar una oferta incondicional y de que tu universidad emita un Confirmation of Acceptance for Studies (CAS). Normalmente tendrás que acreditar tu plaza aceptada, fondos suficientes para las tasas y el coste de vida y (según tu nacionalidad y curso) una titulación de inglés aprobada como IELTS (a menudo la variante IELTS for UKVI; comprueba qué exigen tu universidad y la ruta del visado).',
     },
     'ielts.admissions.hub.visa.button': {
       en: 'Read the student-visa overview',
@@ -474,7 +474,7 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
     'ielts.admissions.hub.faq.a3': {
       en: 'Grades and your English band get you over the threshold; the personal statement helps a selective course choose between applicants who all meet it. For applicants from the Gulf and elsewhere outside the UK, a specific, reflective statement - showing why this subject and what you have done about it - is one of the clearest ways to stand out.',
       ar: 'الدرجات وبَند الإنجليزي حقّك يوصّلونك للحد المطلوب؛ والـ personal statement يساعد التخصص الانتقائي يختار بين متقدّمين كلهم محقّقينه. للمتقدّمين من الخليج وغيرهم من برّا بريطانيا، statement محدّد ومليان تأمّل - يبيّن سبب اختيار هذا التخصص وشنو سوّيت بخصوصه - من أوضح الطرق عشان تتميّز.',
-      es: 'Las notas y tu banda de inglés te llevan por encima del umbral; el personal statement ayuda a un curso selectivo a elegir entre solicitantes que ya lo cumplen. Para los solicitantes del Golfo y de otros lugares fuera del Reino Unido, un statement concreto y reflexivo —que muestre por qué esta asignatura y qué has hecho al respecto— es una de las formas más claras de destacar.',
+      es: 'Las notas y tu banda de inglés te llevan por encima del umbral; el personal statement ayuda a un curso selectivo a elegir entre solicitantes que ya lo cumplen. Para los solicitantes del Golfo y de otros lugares fuera del Reino Unido, un statement concreto y reflexivo (que muestre por qué esta asignatura y qué has hecho al respecto) es una de las formas más claras de destacar.',
     },
     'ielts.admissions.hub.faq.q4': {
       en: 'When should I start, and when are the deadlines?',
@@ -494,7 +494,7 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
     'ielts.admissions.hub.faq.a5': {
       en: 'Most students from the Gulf will need the UK Student visa. You generally apply after you accept an unconditional offer and receive a Confirmation of Acceptance for Studies (CAS) from your university. You will usually need to show your accepted offer, evidence of funds, and - depending on your nationality and course - an approved English-language qualification such as IELTS. See our student-visa basics for an overview.',
       ar: 'أغلب الطلاب من الخليج بيحتاجون فيزا Student البريطانية. عادةً تقدّم بعد ما تقبل عرض غير مشروط وتستلم Confirmation of Acceptance for Studies (CAS) من جامعتك. غالباً بتحتاج تبيّن عرضك المقبول، وإثبات أموال، و - حسب جنسيّتك وتخصصك - مؤهّل إنجليزي معتمد مثل IELTS. شوف أساسيات فيزا الدراسة عندنا لنظرة عامة.',
-      es: 'La mayoría de los estudiantes del Golfo necesitarán el visado Student del Reino Unido. En general lo solicitas después de aceptar una oferta incondicional y recibir un Confirmation of Acceptance for Studies (CAS) de tu universidad. Normalmente tendrás que mostrar tu oferta aceptada, prueba de fondos y —según tu nacionalidad y curso— una titulación de inglés aprobada como IELTS. Consulta nuestros conceptos básicos del visado de estudiante para una visión general.',
+      es: 'La mayoría de los estudiantes del Golfo necesitarán el visado Student del Reino Unido. En general lo solicitas después de aceptar una oferta incondicional y recibir un Confirmation of Acceptance for Studies (CAS) de tu universidad. Normalmente tendrás que mostrar tu oferta aceptada, prueba de fondos y (según tu nacionalidad y curso) una titulación de inglés aprobada como IELTS. Consulta nuestros conceptos básicos del visado de estudiante para una visión general.',
     },
 
     // ─── Hub: closing CTA ────────────────────────────────────────────────────────
@@ -864,7 +864,7 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
     'ielts.admissions.visa.checklist.english.detail': {
       en: 'Often an IELTS qualification - frequently the IELTS for UKVI variant - unless your course or nationality exempts you. Check which test and score the route requires.',
       ar: 'غالباً مؤهّل IELTS - وكثير نسخة IELTS for UKVI - إلا إذا كان تخصصك أو جنسيّتك يعفيك. شوف أي اختبار وأي درجة يطلبها المسار.',
-      es: 'A menudo una titulación de IELTS —con frecuencia la variante IELTS for UKVI— salvo que tu curso o nacionalidad te exima. Comprueba qué prueba y qué puntuación exige la ruta.',
+      es: 'A menudo una titulación de IELTS (con frecuencia la variante IELTS for UKVI) salvo que tu curso o nacionalidad te exima. Comprueba qué prueba y qué puntuación exige la ruta.',
     },
     'ielts.admissions.visa.checklist.passport.label': {
       en: 'Passport and personal documents',
