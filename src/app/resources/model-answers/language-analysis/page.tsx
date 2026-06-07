@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { GradeTabs } from '@/components/model-answers/GradeTabs'
 import { GradeBadge, GradeSummary } from '@/components/model-answers/GradeComponents'
 import { GRADE_LEVELS } from '@/components/model-answers/grade-data'
+import { tMany } from '@/lib/i18n/t'
 
 /* ─── Metadata ───────────────────────────────────────────────── */
 
@@ -38,12 +39,10 @@ function Annotation({ children, note }: { children: React.ReactNode; note: strin
 
 /* ─── Examiner comment ───────────────────────────────────────── */
 
-function ExaminerComment({ children }: { children: React.ReactNode }) {
+function ExaminerComment({ children, label }: { children: React.ReactNode; label: string }) {
   return (
     <div className="mt-4 rounded-lg border-l-4 border-primary bg-primary/5 p-4">
-      <p className="mb-1 text-xs font-bold uppercase tracking-wider text-primary">
-        Examiner Commentary
-      </p>
+      <p className="mb-1 text-xs font-bold uppercase tracking-wider text-primary">{label}</p>
       <p className="text-sm leading-relaxed text-muted-foreground">{children}</p>
     </div>
   )
@@ -84,23 +83,56 @@ function AnswerCard({ children }: { children: React.ReactNode }) {
 
 /* ─── Page ───────────────────────────────────────────────────── */
 
-export default function LanguageAnalysisPage() {
+export default async function LanguageAnalysisPage() {
+  const [
+    eyebrow,
+    heroTitle,
+    subtitle,
+    bcHome,
+    bcResources,
+    bcMa,
+    bcThis,
+    contents,
+    tocQuestion,
+    tocResponses,
+    tocComparison,
+    secQuestion,
+    secResponses,
+    secComparison,
+    labelSource,
+    tableSkill,
+    examinerLabel,
+  ] = await tMany([
+    'study.skills.ma.sub.eyebrow',
+    'study.skills.ma.lang.title',
+    'study.skills.ma.lang.subtitle',
+    'study.skills.common.bc.home',
+    'study.skills.common.bc.resources',
+    'study.skills.ma.bc.this',
+    'study.skills.ma.lang.bc.this',
+    'study.skills.common.contents',
+    'study.skills.ma.lang.toc.question',
+    'study.skills.ma.lang.toc.responses',
+    'study.skills.ma.lang.toc.comparison',
+    'study.skills.ma.lang.sec.question',
+    'study.skills.ma.lang.sec.responses',
+    'study.skills.ma.lang.sec.comparison',
+    'study.skills.ma.lang.label.source',
+    'study.skills.ma.lang.table.skill',
+    'study.skills.common.examiner_commentary',
+  ])
   return (
     <>
       {/* Hero */}
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-            Model Answers
+            {eyebrow}
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Language Analysis
+            {heroTitle}
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            See exactly how top students respond to &ldquo;How does the writer use
-            language...&rdquo; questions. Grade 3, 5, 7, and 9 examples with full examiner
-            commentary.
-          </p>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">{subtitle}</p>
         </div>
       </section>
 
@@ -109,13 +141,13 @@ export default function LanguageAnalysisPage() {
         <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
           <li>
             <Link href="/" className="transition-colors hover:text-foreground">
-              Home
+              {bcHome}
             </Link>
           </li>
           <li>/</li>
           <li>
             <Link href="/resources" className="transition-colors hover:text-foreground">
-              Resources
+              {bcResources}
             </Link>
           </li>
           <li>/</li>
@@ -124,11 +156,11 @@ export default function LanguageAnalysisPage() {
               href="/resources/model-answers"
               className="transition-colors hover:text-foreground"
             >
-              Model Answers
+              {bcMa}
             </Link>
           </li>
           <li>/</li>
-          <li className="font-medium text-foreground">Language Analysis</li>
+          <li className="font-medium text-foreground">{bcThis}</li>
         </ol>
       </nav>
 
@@ -139,12 +171,12 @@ export default function LanguageAnalysisPage() {
           <aside className="hidden lg:block">
             <nav className="sticky top-24 space-y-1 text-sm">
               <p className="mb-2 text-xs font-bold uppercase tracking-wider text-foreground">
-                Contents
+                {contents}
               </p>
               {[
-                { id: 'question', label: 'The Question' },
-                { id: 'responses', label: 'Model Responses' },
-                { id: 'comparison', label: 'Grade Comparison' },
+                { id: 'question', label: tocQuestion },
+                { id: 'responses', label: tocResponses },
+                { id: 'comparison', label: tocComparison },
               ].map((item) => (
                 <a
                   key={item.id}
@@ -160,7 +192,7 @@ export default function LanguageAnalysisPage() {
           {/* Main content */}
           <div className="space-y-16">
             {/* ─── THE QUESTION ─────────────────────────────────── */}
-            <Section id="question" title="The Question">
+            <Section id="question" title={secQuestion}>
               <div className="rounded-xl border border-border bg-card p-6 shadow-md">
                 <p className="mb-2 text-xs font-bold uppercase tracking-wider text-primary">
                   GCSE English Language -- Reading Question
@@ -174,7 +206,7 @@ export default function LanguageAnalysisPage() {
                 </p>
                 <div className="mt-4 rounded-lg bg-muted p-4">
                   <p className="mb-2 text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                    Source Text (Extract)
+                    {labelSource}
                   </p>
                   <p className="text-sm italic leading-relaxed text-muted-foreground">
                     &ldquo;The sky had turned the colour of a bruise, deep purples bleeding into
@@ -192,7 +224,7 @@ export default function LanguageAnalysisPage() {
             </Section>
 
             {/* ─── RESPONSES ─────────────────────────────────────── */}
-            <Section id="responses" title="Model Responses">
+            <Section id="responses" title={secResponses}>
               <GradeTabs defaultGrade={9}>
                 {{
                   /* ── Grade 9 ────────────────────────────── */
@@ -262,7 +294,7 @@ export default function LanguageAnalysisPage() {
                           enclosure and powerlessness.
                         </p>
                       </AnswerCard>
-                      <ExaminerComment>
+                      <ExaminerComment label={examinerLabel}>
                         This is a sophisticated, perceptive response that moves well beyond
                         technique identification. The student offers a conceptualised reading from
                         the outset, analyses grammatical and structural choices alongside imagery,
@@ -329,7 +361,7 @@ export default function LanguageAnalysisPage() {
                           sound,&rdquo; leaving the reader with a sense of total sensory overwhelm.
                         </p>
                       </AnswerCard>
-                      <ExaminerComment>
+                      <ExaminerComment label={examinerLabel}>
                         A clear step up from grade 5. This response explores connotations rather
                         than simply identifying techniques. The student links language choices to
                         effects with more precision and considers how techniques work together. To
@@ -391,7 +423,7 @@ export default function LanguageAnalysisPage() {
                           which makes the reader feel like they can hear the rain.
                         </p>
                       </AnswerCard>
-                      <ExaminerComment>
+                      <ExaminerComment label={examinerLabel}>
                         This response identifies relevant language features (metaphor, simile,
                         onomatopoeia) and makes some attempt to explain their effects. However, the
                         analysis remains at a surface level: the student tends to identify and
@@ -446,7 +478,7 @@ export default function LanguageAnalysisPage() {
                           .
                         </p>
                       </AnswerCard>
-                      <ExaminerComment>
+                      <ExaminerComment label={examinerLabel}>
                         This response shows some awareness of the text and makes a basic attempt to
                         comment on language. However, it largely retells the content or translates
                         quotations into simpler language rather than analysing effects. Techniques
@@ -473,7 +505,7 @@ export default function LanguageAnalysisPage() {
             </Section>
 
             {/* ─── COMPARISON ──────────────────────────────────── */}
-            <Section id="comparison" title="What Makes the Difference?">
+            <Section id="comparison" title={secComparison}>
               <p className="mb-6 leading-relaxed text-muted-foreground">
                 Understanding what separates each grade boundary is the key to improvement. Here is
                 a side-by-side breakdown of how the four responses differ:
@@ -484,7 +516,7 @@ export default function LanguageAnalysisPage() {
                   <thead>
                     <tr>
                       <th className="border border-border bg-muted p-3 text-left font-bold text-foreground">
-                        Skill
+                        {tableSkill}
                       </th>
                       <th className="border border-border bg-card p-3 text-left font-bold text-red-600">
                         Grade 3

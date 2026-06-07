@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -128,7 +129,8 @@ const sections = [
   },
 ]
 
-export default function AQAEnglishLanguagePage() {
+export default async function AQAEnglishLanguagePage() {
+  const studyNowLabel = await t('study.shared.study_now')
   return (
     <>
       <BreadcrumbJsonLd
@@ -146,11 +148,10 @@ export default function AQAEnglishLanguagePage() {
             AQA GCSE (8700)
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            English Language Revision Hub
+            {await t('study.lang.aqa.h1')}
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Everything you need to achieve your best grade in AQA GCSE English Language. Detailed
-            study notes, techniques, marking guides, and example responses for both papers.
+            {await t('study.lang.aqa.intro')}
           </p>
         </div>
       </section>
@@ -160,39 +161,51 @@ export default function AQAEnglishLanguagePage() {
         <ol className="flex items-center gap-2 text-sm text-muted-foreground">
           <li>
             <Link href="/" className="hover:text-primary transition-colors">
-              Home
+              {await t('study.shared.home')}
             </Link>
           </li>
           <li>/</li>
           <li>
             <Link href="/resources" className="hover:text-primary transition-colors">
-              Resources
+              {await t('study.shared.resources')}
             </Link>
           </li>
           <li>/</li>
-          <li className="text-primary font-medium">AQA English Language</li>
+          <li className="text-primary font-medium">
+            {await t('study.lang.aqa.breadcrumb_current')}
+          </li>
         </ol>
       </nav>
 
       {/* Overview */}
       <div className="mx-auto max-w-5xl px-4 py-10">
         <div className="rounded-xl border border-primary/20 bg-primary/10 p-6 sm:p-8">
-          <h2 className="text-xl font-bold text-foreground">About this qualification</h2>
+          <h2 className="text-xl font-bold text-foreground">
+            {await t('study.shared.about_qualification')}
+          </h2>
           <div className="mt-4 grid gap-4 text-muted-foreground sm:grid-cols-2 lg:grid-cols-4">
             <div>
-              <p className="text-sm font-semibold text-muted-foreground">Exam board</p>
+              <p className="text-sm font-semibold text-muted-foreground">
+                {await t('study.shared.exam_board')}
+              </p>
               <p className="text-lg font-bold text-primary">AQA</p>
             </div>
             <div>
-              <p className="text-sm font-semibold text-muted-foreground">Specification code</p>
+              <p className="text-sm font-semibold text-muted-foreground">
+                {await t('study.shared.spec_code')}
+              </p>
               <p className="text-lg font-bold text-primary">8700</p>
             </div>
             <div>
-              <p className="text-sm font-semibold text-muted-foreground">Assessment</p>
+              <p className="text-sm font-semibold text-muted-foreground">
+                {await t('study.shared.assessment')}
+              </p>
               <p className="text-lg font-bold text-primary">2 exams + NEA (spoken language)</p>
             </div>
             <div>
-              <p className="text-sm font-semibold text-muted-foreground">Total marks</p>
+              <p className="text-sm font-semibold text-muted-foreground">
+                {await t('study.shared.total_marks')}
+              </p>
               <p className="text-lg font-bold text-primary">160 (80 per paper)</p>
             </div>
           </div>
@@ -219,7 +232,7 @@ export default function AQAEnglishLanguagePage() {
                 {s.description}
               </p>
               <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent group-hover:text-primary transition-colors">
-                Study now
+                {studyNowLabel}
                 <svg
                   className="h-4 w-4 transition-transform group-hover:translate-x-1"
                   fill="none"
@@ -241,7 +254,7 @@ export default function AQAEnglishLanguagePage() {
         {/* Exam structure summary */}
         <div className="mt-10 rounded-xl border border-primary/20 bg-gradient-to-r from-primary/10 to-primary/10 p-6 sm:p-8">
           <h2 className="text-xl font-bold text-foreground">
-            How is the qualification structured?
+            {await t('study.lang.aqa.how_structured')}
           </h2>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <div className="rounded-lg border border-border bg-card/70 p-4">
@@ -269,7 +282,7 @@ export default function AQAEnglishLanguagePage() {
         {/* Quick tips */}
         <div className="mt-10 rounded-xl border border-border bg-card p-6 sm:p-8">
           <h2 className="text-xl font-bold text-foreground">
-            Quick revision tips for AQA English Language
+            {await t('study.lang.aqa.quick_tips')}
           </h2>
           <ul className="mt-4 space-y-3 text-muted-foreground">
             <li className="flex gap-3">
@@ -329,10 +342,11 @@ export default function AQAEnglishLanguagePage() {
       {/* CTA */}
       <section className="mx-auto max-w-5xl px-4 pb-12">
         <div className="rounded-xl border bg-gradient-to-b from-primary/[0.06] to-transparent p-8 text-center sm:p-10">
-          <h2 className="text-2xl font-bold sm:text-3xl">Ready to start revising?</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl">
+            {await t('study.shared.start_revising')}
+          </h2>
           <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
-            Begin with Paper 1 or Paper 2, or build your foundations with the Language Techniques
-            and Writing Skills guides.
+            {await t('study.lang.aqa.cta_intro')}
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link

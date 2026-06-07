@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
+import { t } from '@/lib/i18n/t'
 
 /* ─── Metadata ───────────────────────────────────────────────── */
 
@@ -198,7 +199,7 @@ const dramaticTechniques = [
 
 /* ─── Page component ─────────────────────────────────────────── */
 
-export default function Paper2Page() {
+export default async function Paper2Page() {
   return (
     <>
       {/* ── Hero ────────────────────────────────────────────────── */}
@@ -443,7 +444,7 @@ export default function Paper2Page() {
             href="/resources/english-literature/caie"
             className="font-medium text-foreground underline underline-offset-2 hover:text-primary"
           >
-            &larr; Back to Cambridge IGCSE English Literature
+            &larr; {await t('study.lit.back.caie')}
           </Link>
         </div>
 

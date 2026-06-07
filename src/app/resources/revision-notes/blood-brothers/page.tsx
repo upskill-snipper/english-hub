@@ -3,6 +3,21 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { AITextArea } from '@/components/AITextArea'
+import { useT } from '@/lib/i18n/use-t'
+
+const NAV_CHIPS: { id: string; labelKey: string }[] = [
+  { id: 'scene-summaries', labelKey: 'study.revnotes.common.nav.scene_summaries' },
+  { id: 'characters', labelKey: 'study.revnotes.common.nav.characters' },
+  { id: 'themes', labelKey: 'study.revnotes.common.nav.themes' },
+  { id: 'key-quotes', labelKey: 'study.revnotes.common.nav.key_quotes' },
+  { id: 'dramatic-devices', labelKey: 'study.revnotes.common.nav.dramatic_devices' },
+  { id: 'context', labelKey: 'study.revnotes.common.nav.context' },
+  { id: 'essay-planning', labelKey: 'study.revnotes.common.nav.essay_planning' },
+  { id: 'writers-methods', labelKey: 'study.revnotes.common.nav.writers_methods' },
+  { id: 'grade-9-points', labelKey: 'study.revnotes.common.nav.grade_9_points' },
+  { id: 'exam-questions', labelKey: 'study.revnotes.common.nav.exam_questions' },
+  { id: 'practice-questions', labelKey: 'study.revnotes.common.nav.practice_questions' },
+]
 
 /* ─── Expandable section component ──────────────────────────── */
 
@@ -512,49 +527,40 @@ const essayQuestions = [
 /* ─── Page Component ─────────────────────────────────────────── */
 
 export default function BloodBrothersStudyGuide() {
+  const t = useT()
   return (
     <div className="space-y-6">
       {/* Hero */}
       <div className="rounded-xl border bg-gradient-to-b from-primary/[0.06] to-transparent px-6 py-10 sm:py-14">
         <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-          GCSE English Literature &mdash; Revision Notes
+          {t('study.revnotes.common.eyebrow')}
         </p>
         <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-          Blood Brothers &mdash; Complete Study Guide
+          Blood Brothers &mdash; {t('study.revnotes.common.suffix.study_guide')}
         </h1>
         <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
-          Willy Russell&rsquo;s 1983 musical play. Act-by-act summaries, character analysis, themes,
-          22 key quotations with analysis, dramatic devices, context, and essay planning.
+          {t('study.revnotes.blood-brothers.lead')}
         </p>
       </div>
 
       {/* Quick nav */}
-      <nav className="flex flex-wrap gap-2 text-sm" aria-label="Page sections">
-        {[
-          'Scene Summaries',
-          'Characters',
-          'Themes',
-          'Key Quotes',
-          'Dramatic Devices',
-          'Context',
-          'Essay Planning',
-          "Writer's Methods",
-          'Grade 9 Points',
-          'Exam Questions',
-          'Practice Questions',
-        ].map((s) => (
+      <nav
+        className="flex flex-wrap gap-2 text-sm"
+        aria-label={t('study.revnotes.common.page_sections_aria')}
+      >
+        {NAV_CHIPS.map((c) => (
           <a
-            key={s}
-            href={`#${s.toLowerCase().replace(/\s+/g, '-')}`}
+            key={c.id}
+            href={`#${c.id}`}
             className="rounded-full border border-primary/30 px-3 py-1 text-foreground transition hover:bg-primary/10"
           >
-            {s}
+            {t(c.labelKey)}
           </a>
         ))}
       </nav>
 
       {/* Scene Summaries */}
-      <Section id="scene-summaries" title="Act-by-Act Summary" defaultOpen>
+      <Section id="scene-summaries" title={t('study.revnotes.common.act_summary')} defaultOpen>
         <div className="space-y-6">
           {scenes.map((act) => (
             <div key={act.act}>
@@ -575,7 +581,7 @@ export default function BloodBrothersStudyGuide() {
       </Section>
 
       {/* Characters */}
-      <Section id="characters" title="Character Analysis">
+      <Section id="characters" title={t('study.revnotes.common.character_analysis')}>
         <div className="space-y-5">
           {characters.map((c) => (
             <div key={c.name} className="rounded-lg border border-border bg-muted p-4">
@@ -592,7 +598,7 @@ export default function BloodBrothersStudyGuide() {
       </Section>
 
       {/* Themes */}
-      <Section id="themes" title="Key Themes">
+      <Section id="themes" title={t('study.revnotes.common.key_themes')}>
         <div className="grid gap-4 sm:grid-cols-2">
           {themes.map((t) => (
             <div key={t.name} className="rounded-lg border border-border bg-muted p-4">
@@ -604,7 +610,10 @@ export default function BloodBrothersStudyGuide() {
       </Section>
 
       {/* Key Quotes */}
-      <Section id="key-quotes" title={`Key Quotations (${keyQuotes.length})`}>
+      <Section
+        id="key-quotes"
+        title={`${t('study.revnotes.common.key_quotations')} (${keyQuotes.length})`}
+      >
         <p className="mb-4 text-sm text-muted-foreground">
           Each quotation includes detailed analysis suitable for GCSE-level essay responses,
           including references to song lyrics.
@@ -625,7 +634,7 @@ export default function BloodBrothersStudyGuide() {
       </Section>
 
       {/* Dramatic Devices */}
-      <Section id="dramatic-devices" title="Dramatic Devices">
+      <Section id="dramatic-devices" title={t('study.revnotes.common.dramatic_devices')}>
         <div className="space-y-4">
           {dramaticDevices.map((d) => (
             <div key={d.device} className="rounded-lg border border-border bg-muted p-4">
@@ -637,7 +646,7 @@ export default function BloodBrothersStudyGuide() {
       </Section>
 
       {/* Context */}
-      <Section id="context" title="Historical & Social Context">
+      <Section id="context" title={t('study.revnotes.common.context_hist_social')}>
         <div className="space-y-4">
           {contextSections.map((c) => (
             <div key={c.title} className="rounded-lg border border-border bg-muted p-4">
@@ -649,7 +658,7 @@ export default function BloodBrothersStudyGuide() {
       </Section>
 
       {/* Essay Planning */}
-      <Section id="essay-planning" title="Essay Planning for Common Questions">
+      <Section id="essay-planning" title={t('study.revnotes.common.essay_planning_common')}>
         <div className="space-y-5">
           {essayQuestions.map((eq, i) => (
             <div key={i} className="rounded-lg border border-border bg-muted p-4">
@@ -668,7 +677,7 @@ export default function BloodBrothersStudyGuide() {
       </Section>
 
       {/* Writer's Methods */}
-      <Section id="writers-methods" title="Writer&rsquo;s Methods &amp; Techniques">
+      <Section id="writers-methods" title={t('study.revnotes.common.writers_methods_tech')}>
         <div className="space-y-4">
           {[
             {
@@ -716,7 +725,7 @@ export default function BloodBrothersStudyGuide() {
       </Section>
 
       {/* Grade 9 Exemplar Points */}
-      <Section id="grade-9-points" title="Grade 9 Exemplar Points">
+      <Section id="grade-9-points" title={t('study.revnotes.common.grade_9_exemplar')}>
         <p className="mb-4 text-sm text-muted-foreground">
           These sophisticated, conceptualised arguments distinguish Grade 9 responses.
         </p>
@@ -739,7 +748,7 @@ export default function BloodBrothersStudyGuide() {
       </Section>
 
       {/* Exam Questions with Model Answer Outlines */}
-      <Section id="exam-questions" title="Exam-Style Questions with Model Answer Outlines">
+      <Section id="exam-questions" title={t('study.revnotes.common.exam_questions_outlines')}>
         <p className="mb-4 text-sm text-muted-foreground">
           These outlines show how to structure a full-mark GCSE response.
         </p>
@@ -796,7 +805,7 @@ export default function BloodBrothersStudyGuide() {
       </Section>
 
       {/* Practice Questions */}
-      <Section id="practice-questions" title="Practice Questions">
+      <Section id="practice-questions" title={t('study.revnotes.common.practice_questions')}>
         <p className="text-sm text-muted-foreground mb-6">
           Write your answer below each question and receive AI-powered feedback tailored to GCSE
           English Literature mark schemes. Aim for at least 150 words per response to get meaningful
@@ -810,8 +819,8 @@ export default function BloodBrothersStudyGuide() {
               <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
-              placeholder="Write your essay response here..."
-              label="Your answer"
+              placeholder={t('study.revnotes.common.essay_placeholder')}
+              label={t('study.revnotes.common.your_answer')}
               subject="English Literature"
               topic="Blood Brothers - How Russell presents the effects of social class"
               minWords={150}
@@ -828,8 +837,8 @@ export default function BloodBrothersStudyGuide() {
               <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
-              placeholder="Write your essay response here..."
-              label="Your answer"
+              placeholder={t('study.revnotes.common.essay_placeholder')}
+              label={t('study.revnotes.common.your_answer')}
               subject="English Literature"
               topic="Blood Brothers - How Russell uses the Narrator to create dramatic tension"
               minWords={150}
@@ -845,8 +854,8 @@ export default function BloodBrothersStudyGuide() {
               <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
-              placeholder="Write your essay response here..."
-              label="Your answer"
+              placeholder={t('study.revnotes.common.essay_placeholder')}
+              label={t('study.revnotes.common.your_answer')}
               subject="English Literature"
               topic="Blood Brothers - How Russell presents the character of Mrs Johnstone"
               minWords={150}
@@ -862,8 +871,8 @@ export default function BloodBrothersStudyGuide() {
               ?<span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
-              placeholder="Write your essay response here..."
-              label="Your answer"
+              placeholder={t('study.revnotes.common.essay_placeholder')}
+              label={t('study.revnotes.common.your_answer')}
               subject="English Literature"
               topic="Blood Brothers - How Russell presents the theme of nature versus nurture"
               minWords={150}
@@ -880,7 +889,7 @@ export default function BloodBrothersStudyGuide() {
           href="/resources/revision-notes"
           className="font-medium text-foreground underline underline-offset-2 hover:text-primary"
         >
-          &larr; Back to Revision Notes
+          &larr; {t('study.revnotes.common.back')}
         </Link>
       </div>
 

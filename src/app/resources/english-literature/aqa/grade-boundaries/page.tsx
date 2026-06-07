@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 
 import { STRINGS } from './content'
 import { headers } from 'next/headers'
+import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title: 'AQA GCSE English Literature (8702) Grade Boundaries',
@@ -560,7 +561,7 @@ export default async function GradeBoundariesPage() {
                 d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
               />
             </svg>
-            Back to AQA English Literature
+            {await t('study.lit.back.aqa')}
           </Link>
         </div>
       </div>

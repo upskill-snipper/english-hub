@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import type { JSX } from 'react'
 import Link from 'next/link'
+import { t } from '@/lib/i18n/t'
 
 /* ─── Metadata ───────────────────────────────────────────────── */
 
@@ -19,10 +20,10 @@ export const metadata: Metadata = {
 /* ─── Data ───────────────────────────────────────────────────── */
 
 type EraCard = {
-  title: string
+  titleKey: string
   slug: string
   period: string
-  description: string
+  descKey: string
   texts: string[]
   colour: string
   gradient: string
@@ -31,11 +32,10 @@ type EraCard = {
 
 const ERAS: EraCard[] = [
   {
-    title: 'Victorian Era',
+    titleKey: 'study.context.hub.era.victorian',
     slug: 'victorian',
     period: '1837 -- 1901',
-    description:
-      'The reign of Queen Victoria saw rapid industrialisation, stark class divisions, the workhouse system, and seismic debates between religion and science. Essential context for A Christmas Carol and Jekyll & Hyde.',
+    descKey: 'study.context.hub.era.victorian.desc',
     texts: ['A Christmas Carol', 'Jekyll and Hyde', 'Frankenstein', 'Great Expectations'],
     colour: 'border-primary/40',
     gradient: 'from-primary/[0.08] to-primary/[0.02]',
@@ -56,11 +56,10 @@ const ERAS: EraCard[] = [
     ),
   },
   {
-    title: 'Elizabethan & Jacobean',
+    titleKey: 'study.context.hub.era.elizabethan',
     slug: 'elizabethan-jacobean',
     period: '1558 -- 1625',
-    description:
-      'The age of Shakespeare: the Great Chain of Being, Divine Right of Kings, witchcraft fears, and the birth of professional theatre. Vital for Macbeth, Romeo and Juliet, and The Tempest.',
+    descKey: 'study.context.hub.era.elizabethan.desc',
     texts: ['Macbeth', 'Romeo and Juliet', 'The Tempest', 'Much Ado About Nothing'],
     colour: 'border-primary/40',
     gradient: 'from-primary/[0.08] to-primary/[0.02]',
@@ -81,11 +80,10 @@ const ERAS: EraCard[] = [
     ),
   },
   {
-    title: 'Twentieth Century',
+    titleKey: 'study.context.hub.era.twentieth',
     slug: 'twentieth-century',
     period: '1900 -- 1999',
-    description:
-      "Two world wars, the welfare state, class upheaval, and Thatcher's Britain. Understand the social forces behind An Inspector Calls, Lord of the Flies, Animal Farm, and Blood Brothers.",
+    descKey: 'study.context.hub.era.twentieth.desc',
     texts: ['An Inspector Calls', 'Lord of the Flies', 'Animal Farm', 'Blood Brothers'],
     colour: 'border-primary/40',
     gradient: 'from-primary/[0.08] to-primary/[0.02]',
@@ -106,11 +104,10 @@ const ERAS: EraCard[] = [
     ),
   },
   {
-    title: 'Romantic Era',
+    titleKey: 'study.context.hub.era.romantic',
     slug: 'romantic',
     period: '1780 -- 1850',
-    description:
-      'A reaction against industrialisation and rationalism. The Romantics championed nature, individual freedom, emotion, and the sublime. Key context for the poetry anthology.',
+    descKey: 'study.context.hub.era.romantic.desc',
     texts: ['Power and Conflict Poetry', 'Love and Relationships Poetry'],
     colour: 'border-primary/40',
     gradient: 'from-primary/[0.08] to-primary/[0.02]',
@@ -150,22 +147,29 @@ function ArrowRight() {
 
 /* ─── Page ───────────────────────────────────────────────────── */
 
-export default function ContextHubPage() {
+export default async function ContextHubPage() {
+  const eras = await Promise.all(
+    ERAS.map(async (era) => ({
+      ...era,
+      title: await t(era.titleKey),
+      description: await t(era.descKey),
+    })),
+  )
+  const exploreCta = await t('study.context.hub.era.cta')
+
   return (
     <>
       {/* Hero */}
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-            GCSE English Literature
+            {await t('study.context.hub.hero.eyebrow')}
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Historical &amp; Social Context
+            {await t('study.context.hub.hero.title')}
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Context is worth up to a third of your marks in Literature. Learn the historical periods
-            behind every set text and discover how to weave contextual knowledge into your essays
-            for top-band responses.
+            {await t('study.context.hub.hero.subtitle')}
           </p>
         </div>
       </section>
@@ -173,7 +177,7 @@ export default function ContextHubPage() {
       {/* Era cards */}
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2">
-          {ERAS.map((era) => (
+          {eras.map((era) => (
             <Link
               key={era.slug}
               href={`/resources/context/${era.slug}`}
@@ -209,7 +213,7 @@ export default function ContextHubPage() {
                 {/* CTA */}
                 <div className="mt-auto pt-5">
                   <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent group-hover:text-primary transition-colors">
-                    Explore this era <ArrowRight />
+                    {exploreCta} <ArrowRight />
                   </span>
                 </div>
               </div>
@@ -222,7 +226,7 @@ export default function ContextHubPage() {
       <section className="bg-muted px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-center text-2xl font-bold text-foreground">
-            Why does context matter in the exam?
+            {await t('study.context.hub.why.title')}
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-muted-foreground">
             Every exam board requires you to &ldquo;show understanding of the relationships between
@@ -265,23 +269,25 @@ export default function ContextHubPage() {
 
       {/* Quick links */}
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-foreground">Continue exploring</h2>
+        <h2 className="text-2xl font-bold text-foreground">
+          {await t('study.context.hub.continue.title')}
+        </h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-3">
           {[
             {
-              label: 'Revision Notes',
+              label: await t('study.context.hub.link.revision_notes'),
               href: '/resources/revision-notes',
-              desc: 'Text-by-text revision guides for Literature.',
+              desc: await t('study.context.hub.link.revision_notes.desc'),
             },
             {
-              label: 'Techniques Reference',
+              label: await t('study.context.hub.link.techniques'),
               href: '/resources/techniques',
-              desc: 'Language and structural devices for analysis.',
+              desc: await t('study.context.hub.link.techniques.desc'),
             },
             {
-              label: 'All Resources',
+              label: await t('study.context.hub.link.all_resources'),
               href: '/resources',
-              desc: 'Browse all revision resources.',
+              desc: await t('study.context.hub.link.all_resources.desc'),
             },
           ].map((link) => (
             <Link

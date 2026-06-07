@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 
 /* ─── Metadata ───────────────────────────────────────────────── */
 
@@ -150,7 +151,8 @@ const RESOURCES = [
 
 /* ─── Page component ─────────────────────────────────────────── */
 
-export default function CaieEnglishLanguagePage() {
+export default async function CaieEnglishLanguagePage() {
+  const viewResourceLabel = await t('study.shared.view_resource')
   return (
     <>
       <BreadcrumbJsonLd
@@ -172,13 +174,13 @@ export default function CaieEnglishLanguagePage() {
             <ol className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
               <li>
                 <Link href="/" className="transition-colors hover:text-muted-foreground">
-                  Home
+                  {await t('study.shared.home')}
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
               <li>
                 <Link href="/resources" className="transition-colors hover:text-muted-foreground">
-                  Resources
+                  {await t('study.shared.resources')}
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
@@ -187,7 +189,7 @@ export default function CaieEnglishLanguagePage() {
                   href="/resources/english-language"
                   className="transition-colors hover:text-muted-foreground"
                 >
-                  English Language
+                  {await t('study.shared.english_language')}
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
@@ -198,31 +200,41 @@ export default function CaieEnglishLanguagePage() {
             Cambridge International (CAIE)
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            IGCSE English Language
+            {await t('study.lang.caie.h1')}
           </h1>
           <p className="mt-2 text-lg font-medium text-muted-foreground">
             Core &amp; Extended / 9&ndash;1 Grading
           </p>
           <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground">
-            Everything you need to prepare for your Cambridge IGCSE English Language examination.
-            Thorough coverage of both reading and writing papers, language techniques, marking
-            guides, and grade boundaries.
+            {await t('study.lang.caie.intro')}
           </p>
         </div>
       </section>
 
       {/* ── Syllabus overview ───────────────────────────────────── */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
-        <h2 className="text-2xl font-bold text-foreground">Course Overview</h2>
+        <h2 className="text-2xl font-bold text-foreground">
+          {await t('study.shared.course_overview')}
+        </h2>
         <div className="mt-6 overflow-x-auto">
           <table className="w-full min-w-[600px] text-left text-sm">
             <thead>
               <tr className="border-b-2 border-primary/20">
-                <th className="py-3 pr-4 font-semibold text-foreground">Component</th>
-                <th className="py-3 pr-4 font-semibold text-foreground">Paper</th>
-                <th className="py-3 pr-4 font-semibold text-foreground">Duration</th>
-                <th className="py-3 pr-4 font-semibold text-foreground">Marks</th>
-                <th className="py-3 font-semibold text-foreground">Weighting</th>
+                <th className="py-3 pr-4 font-semibold text-foreground">
+                  {await t('study.shared.component')}
+                </th>
+                <th className="py-3 pr-4 font-semibold text-foreground">
+                  {await t('study.shared.paper')}
+                </th>
+                <th className="py-3 pr-4 font-semibold text-foreground">
+                  {await t('study.shared.duration')}
+                </th>
+                <th className="py-3 pr-4 font-semibold text-foreground">
+                  {await t('study.shared.marks')}
+                </th>
+                <th className="py-3 font-semibold text-foreground">
+                  {await t('study.shared.weighting')}
+                </th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border text-muted-foreground">
@@ -267,10 +279,10 @@ export default function CaieEnglishLanguagePage() {
       {/* ── Resource cards ──────────────────────────────────────── */}
       <section className="bg-muted px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-foreground">Study Resources</h2>
-          <p className="mt-2 text-muted-foreground">
-            Select a topic below to access full, detailed revision material.
-          </p>
+          <h2 className="text-2xl font-bold text-foreground">
+            {await t('study.shared.study_resources')}
+          </h2>
+          <p className="mt-2 text-muted-foreground">{await t('study.lang.caie.select_topic')}</p>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {RESOURCES.map((r) => (
@@ -292,7 +304,7 @@ export default function CaieEnglishLanguagePage() {
                   {r.description}
                 </p>
                 <span className="mt-4 inline-flex items-center text-sm font-medium text-foreground group-hover:text-primary">
-                  View resource
+                  {viewResourceLabel}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"
@@ -312,7 +324,9 @@ export default function CaieEnglishLanguagePage() {
 
       {/* ── Key dates & tips ────────────────────────────────────── */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
-        <h2 className="text-2xl font-bold text-foreground">Exam Tips for International Students</h2>
+        <h2 className="text-2xl font-bold text-foreground">
+          {await t('study.lang.caie.exam_tips_intl')}
+        </h2>
         <div className="mt-6 grid gap-6 sm:grid-cols-2">
           <div className="rounded-lg border border-border border-l-4 border-l-primary bg-card p-5 shadow-md">
             <h3 className="font-semibold text-foreground">Time Management</h3>

@@ -285,26 +285,27 @@ const TEXTS: TextCard[] = [
   },
 ]
 
-const CATEGORIES: { key: Category; label: string; description: string }[] = [
+// label/description are i18n keys resolved at render time via tr().
+const CATEGORIES: { key: Category; labelKey: string; descKey: string }[] = [
   {
     key: 'shakespeare',
-    label: 'Shakespeare',
-    description: 'Plays studied for the Shakespeare component of GCSE Literature',
+    labelKey: 'study.revnotes.hub.cat.shakespeare',
+    descKey: 'study.revnotes.hub.cat.shakespeare.desc',
   },
   {
     key: 'nineteenth',
-    label: '19th-Century Novels',
-    description: 'Novels from the 1800s studied for the prose component',
+    labelKey: 'study.revnotes.hub.cat.nineteenth',
+    descKey: 'study.revnotes.hub.cat.nineteenth.desc',
   },
   {
     key: 'modern',
-    label: 'Modern Texts',
-    description: '20th-century plays and novels studied for the modern text component',
+    labelKey: 'study.revnotes.hub.cat.modern',
+    descKey: 'study.revnotes.hub.cat.modern.desc',
   },
   {
     key: 'poetry',
-    label: 'Poetry Anthologies',
-    description: 'Set poetry collections studied for the poetry component of GCSE Literature',
+    labelKey: 'study.revnotes.hub.cat.poetry',
+    descKey: 'study.revnotes.hub.cat.poetry.desc',
   },
 ]
 
@@ -328,12 +329,25 @@ function toSetTextSlug(localSlug: string): string {
   return LOCAL_SLUG_TO_SET_TEXT_SLUG[localSlug] ?? localSlug
 }
 
-const TYPE_LABELS: Record<string, { label: string; bg: string; text: string }> = {
-  play: { label: 'Play', bg: 'bg-primary/10', text: 'text-primary' },
-  novel: { label: 'Novel', bg: 'bg-primary/10', text: 'text-primary' },
-  novella: { label: 'Novella', bg: 'bg-primary/10', text: 'text-primary' },
-  allegory: { label: 'Allegory', bg: 'bg-primary/10', text: 'text-primary' },
-  anthology: { label: 'Anthology', bg: 'bg-primary/10', text: 'text-primary' },
+// labelKey is an i18n key resolved at render time via tr().
+const TYPE_LABELS: Record<string, { labelKey: string; bg: string; text: string }> = {
+  play: { labelKey: 'study.revnotes.hub.type.play', bg: 'bg-primary/10', text: 'text-primary' },
+  novel: { labelKey: 'study.revnotes.hub.type.novel', bg: 'bg-primary/10', text: 'text-primary' },
+  novella: {
+    labelKey: 'study.revnotes.hub.type.novella',
+    bg: 'bg-primary/10',
+    text: 'text-primary',
+  },
+  allegory: {
+    labelKey: 'study.revnotes.hub.type.allegory',
+    bg: 'bg-primary/10',
+    text: 'text-primary',
+  },
+  anthology: {
+    labelKey: 'study.revnotes.hub.type.anthology',
+    bg: 'bg-primary/10',
+    text: 'text-primary',
+  },
 }
 
 /* ─── Icons ──────────────────────────────────────────────────── */
@@ -659,8 +673,8 @@ export function RevisionNotesView({ board }: { board: ExamBoard | null }) {
       {categoriesWithTexts.map((cat) => (
         <section key={cat.key} className="mb-12">
           <div className="mb-6">
-            <h2 className="text-2xl font-bold text-foreground">{cat.label}</h2>
-            <p className="mt-1 text-sm text-muted-foreground">{cat.description}</p>
+            <h2 className="text-2xl font-bold text-foreground">{tr(cat.labelKey)}</h2>
+            <p className="mt-1 text-sm text-muted-foreground">{tr(cat.descKey)}</p>
           </div>
 
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -696,7 +710,7 @@ export function RevisionNotesView({ board }: { board: ExamBoard | null }) {
                       <span
                         className={`inline-block rounded-full px-2.5 py-0.5 text-xs font-semibold ${typeInfo.bg} ${typeInfo.text}`}
                       >
-                        {typeInfo.label}
+                        {tr(typeInfo.labelKey)}
                       </span>
                     </div>
 
@@ -741,7 +755,7 @@ export function RevisionNotesView({ board }: { board: ExamBoard | null }) {
 
       {/* Study tip box */}
       <div className="mt-4 rounded-xl border border-primary/20 bg-primary/5 p-6">
-        <h3 className="text-lg font-bold text-foreground">How to use these revision notes</h3>
+        <h3 className="text-lg font-bold text-foreground">{tr('study.revnotes.hub.how_to_use')}</h3>
         <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />

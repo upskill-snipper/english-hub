@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -878,6 +879,7 @@ const COMPARISON_PAIRS: ComparisonPair[] = [
 /* ------------------------------------------------------------------ */
 
 export default function EdexcelAnthologyPage() {
+  const t = useT()
   const [expandAll, setExpandAll] = useState(false)
 
   return (
@@ -886,15 +888,13 @@ export default function EdexcelAnthologyPage() {
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">
-            Edexcel UK GCSE English Literature (1ET0)
+            {t('study.poetry.edex.hero.eyebrow')}
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Relationships Poetry Anthology
+            {t('study.poetry.edex.hero.title')}
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            In-depth analysis of all 15 poems in the Edexcel UK GCSE Pearson Anthology Relationships
-            cluster (1ET0 only - not the Edexcel IGCSE 4ET1 anthology). Context, summaries, form and
-            structure, key quotations with technique analysis, themes, and comparison guidance.
+            {t('study.poetry.edex.hero.subtitle')}
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <span className="rounded-full bg-card/20 px-4 py-1.5 text-sm font-medium">
@@ -914,16 +914,18 @@ export default function EdexcelAnthologyPage() {
       <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h2 className="text-2xl font-bold text-foreground">Poem Analysis</h2>
+            <h2 className="text-2xl font-bold text-foreground">
+              {t('study.poetry.edex.analysis.title')}
+            </h2>
             <p className="mt-1 text-sm text-muted-foreground">
-              Click any poem to expand its full analysis.
+              {t('study.poetry.edex.analysis.subtitle')}
             </p>
           </div>
           <button
             onClick={() => setExpandAll(!expandAll)}
             className="inline-flex items-center gap-2 rounded-lg border border-primary px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary hover:text-foreground"
           >
-            {expandAll ? 'Collapse All' : 'Expand All'}
+            {expandAll ? t('study.shared.btn.collapse_all') : t('study.shared.btn.expand_all')}
           </button>
         </div>
 

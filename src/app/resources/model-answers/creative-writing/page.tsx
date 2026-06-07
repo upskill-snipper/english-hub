@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { GradeTabs } from '@/components/model-answers/GradeTabs'
 import { GradeBadge, GradeSummary } from '@/components/model-answers/GradeComponents'
 import { GRADE_LEVELS } from '@/components/model-answers/grade-data'
+import { tMany } from '@/lib/i18n/t'
 
 /* ─── Metadata ───────────────────────────────────────────────── */
 
@@ -38,12 +39,10 @@ function Annotation({ children, note }: { children: React.ReactNode; note: strin
 
 /* ─── Examiner comment ───────────────────────────────────────── */
 
-function ExaminerComment({ children }: { children: React.ReactNode }) {
+function ExaminerComment({ children, label }: { children: React.ReactNode; label: string }) {
   return (
     <div className="mt-4 rounded-lg border-l-4 border-primary bg-primary/5 p-4">
-      <p className="mb-1 text-xs font-bold uppercase tracking-wider text-primary">
-        Examiner Commentary
-      </p>
+      <p className="mb-1 text-xs font-bold uppercase tracking-wider text-primary">{label}</p>
       <div className="text-sm leading-relaxed text-muted-foreground">{children}</div>
     </div>
   )
@@ -84,22 +83,54 @@ function AnswerCard({ children }: { children: React.ReactNode }) {
 
 /* ─── Page ───────────────────────────────────────────────────── */
 
-export default function CreativeWritingModelAnswersPage() {
+export default async function CreativeWritingModelAnswersPage() {
+  const [
+    eyebrow,
+    heroTitle,
+    subtitle,
+    bcHome,
+    bcResources,
+    bcMa,
+    bcThis,
+    contents,
+    tocDescriptive,
+    tocNarrative,
+    tocTechniques,
+    secDescriptive,
+    secNarrative,
+    secTechniques,
+    labelTask,
+    examinerLabel,
+  ] = await tMany([
+    'study.skills.ma.sub.eyebrow',
+    'study.skills.ma.cw.title',
+    'study.skills.ma.cw.subtitle',
+    'study.skills.common.bc.home',
+    'study.skills.common.bc.resources',
+    'study.skills.ma.bc.this',
+    'study.skills.ma.cw.bc.this',
+    'study.skills.common.contents',
+    'study.skills.ma.cw.toc.descriptive',
+    'study.skills.ma.cw.toc.narrative',
+    'study.skills.ma.cw.toc.techniques',
+    'study.skills.ma.cw.sec.descriptive',
+    'study.skills.ma.cw.sec.narrative',
+    'study.skills.ma.cw.sec.techniques',
+    'study.skills.ma.cw.label.task',
+    'study.skills.common.examiner_commentary',
+  ])
   return (
     <>
       {/* Hero */}
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-            Model Answers
+            {eyebrow}
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Creative Writing
+            {heroTitle}
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Full model descriptive and narrative responses at grade 3, 5, 7, and 9, with annotations
-            highlighting every technique and examiner insights on what earns each grade.
-          </p>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">{subtitle}</p>
         </div>
       </section>
 
@@ -108,13 +139,13 @@ export default function CreativeWritingModelAnswersPage() {
         <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
           <li>
             <Link href="/" className="transition-colors hover:text-foreground">
-              Home
+              {bcHome}
             </Link>
           </li>
           <li>/</li>
           <li>
             <Link href="/resources" className="transition-colors hover:text-foreground">
-              Resources
+              {bcResources}
             </Link>
           </li>
           <li>/</li>
@@ -123,11 +154,11 @@ export default function CreativeWritingModelAnswersPage() {
               href="/resources/model-answers"
               className="transition-colors hover:text-foreground"
             >
-              Model Answers
+              {bcMa}
             </Link>
           </li>
           <li>/</li>
-          <li className="font-medium text-foreground">Creative Writing</li>
+          <li className="font-medium text-foreground">{bcThis}</li>
         </ol>
       </nav>
 
@@ -138,12 +169,12 @@ export default function CreativeWritingModelAnswersPage() {
           <aside className="hidden lg:block">
             <nav className="sticky top-24 space-y-1 text-sm">
               <p className="mb-2 text-xs font-bold uppercase tracking-wider text-foreground">
-                Contents
+                {contents}
               </p>
               {[
-                { id: 'descriptive', label: 'Descriptive Writing' },
-                { id: 'narrative', label: 'Narrative Writing' },
-                { id: 'techniques', label: 'Key Techniques' },
+                { id: 'descriptive', label: tocDescriptive },
+                { id: 'narrative', label: tocNarrative },
+                { id: 'techniques', label: tocTechniques },
               ].map((item) => (
                 <a
                   key={item.id}
@@ -159,9 +190,11 @@ export default function CreativeWritingModelAnswersPage() {
           {/* Main content */}
           <div className="space-y-16">
             {/* ─── DESCRIPTIVE WRITING ─────────────────────────── */}
-            <Section id="descriptive" title="Descriptive Writing">
+            <Section id="descriptive" title={secDescriptive}>
               <div className="mb-6 rounded-xl border border-border bg-card p-6 shadow-md">
-                <p className="mb-2 text-xs font-bold uppercase tracking-wider text-primary">Task</p>
+                <p className="mb-2 text-xs font-bold uppercase tracking-wider text-primary">
+                  {labelTask}
+                </p>
                 <p className="font-medium text-foreground">Describe a busy market scene.</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   You could write about what you see, hear, smell, and feel. Focus on creating a
@@ -236,7 +269,7 @@ export default function CreativeWritingModelAnswersPage() {
                           .
                         </p>
                       </AnswerCard>
-                      <ExaminerComment>
+                      <ExaminerComment label={examinerLabel}>
                         <p>
                           An exceptional response that demonstrates complete control of the craft of
                           descriptive writing. The piece opens with a striking single-sentence
@@ -318,7 +351,7 @@ export default function CreativeWritingModelAnswersPage() {
                           </Annotation>
                         </p>
                       </AnswerCard>
-                      <ExaminerComment>
+                      <ExaminerComment label={examinerLabel}>
                         <p>
                           A strong response with clear sensory engagement and some effective
                           figurative language. Sentence variety is present but not as controlled as
@@ -386,7 +419,7 @@ export default function CreativeWritingModelAnswersPage() {
                           .
                         </p>
                       </AnswerCard>
-                      <ExaminerComment>
+                      <ExaminerComment label={examinerLabel}>
                         <p>
                           This response demonstrates a generally competent approach with some
                           awareness of descriptive techniques. However, the writing is largely
@@ -443,7 +476,7 @@ export default function CreativeWritingModelAnswersPage() {
                           .
                         </p>
                       </AnswerCard>
-                      <ExaminerComment>
+                      <ExaminerComment label={examinerLabel}>
                         <p>
                           This response shows basic awareness of the task but struggles to move
                           beyond simple statements. The writing is heavily reliant on telling and
@@ -470,9 +503,11 @@ export default function CreativeWritingModelAnswersPage() {
             </Section>
 
             {/* ─── NARRATIVE WRITING ─────────────────────────────── */}
-            <Section id="narrative" title="Narrative Writing">
+            <Section id="narrative" title={secNarrative}>
               <div className="mb-6 rounded-xl border border-border bg-card p-6 shadow-md">
-                <p className="mb-2 text-xs font-bold uppercase tracking-wider text-primary">Task</p>
+                <p className="mb-2 text-xs font-bold uppercase tracking-wider text-primary">
+                  {labelTask}
+                </p>
                 <p className="font-medium text-foreground">
                   Write about a time when everything changed.
                 </p>
@@ -557,7 +592,7 @@ export default function CreativeWritingModelAnswersPage() {
                           </Annotation>
                         </p>
                       </AnswerCard>
-                      <ExaminerComment>
+                      <ExaminerComment label={examinerLabel}>
                         <p>
                           A beautifully crafted narrative that demonstrates mastery of voice,
                           structure, and technique. The in medias res opening is arresting, and the
@@ -630,7 +665,7 @@ export default function CreativeWritingModelAnswersPage() {
                           </Annotation>
                         </p>
                       </AnswerCard>
-                      <ExaminerComment>
+                      <ExaminerComment label={examinerLabel}>
                         <p>
                           A well-crafted narrative with a clear sense of voice and some effective
                           moments. Some expressions are conventional, and the ending feels slightly
@@ -699,7 +734,7 @@ export default function CreativeWritingModelAnswersPage() {
                           </Annotation>
                         </p>
                       </AnswerCard>
-                      <ExaminerComment>
+                      <ExaminerComment label={examinerLabel}>
                         <p>
                           A clear narrative with some effective moments (the photo, watching the
                           street disappear). However, the piece relies heavily on telling rather
@@ -755,7 +790,7 @@ export default function CreativeWritingModelAnswersPage() {
                           </Annotation>
                         </p>
                       </AnswerCard>
-                      <ExaminerComment>
+                      <ExaminerComment label={examinerLabel}>
                         <p>
                           This response tells a basic story but struggles to develop it beyond a
                           simple recount. The writing is almost entirely telling with no figurative
@@ -781,7 +816,7 @@ export default function CreativeWritingModelAnswersPage() {
             </Section>
 
             {/* ─── KEY TECHNIQUES ──────────────────────────────── */}
-            <Section id="techniques" title="Key Techniques Annotated">
+            <Section id="techniques" title={secTechniques}>
               <p className="mb-6 leading-relaxed text-muted-foreground">
                 These are the techniques that separate good creative writing from exceptional
                 creative writing. Study how they are used in the grade 9 examples above.

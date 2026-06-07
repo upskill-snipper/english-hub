@@ -108,6 +108,14 @@ import { IELTS_READINESS_UI_DICTIONARY } from './dictionary-ielts-readiness-ui'
 import { IELTS_UKREADINESS_DICTIONARY } from './dictionary-ielts-ukreadiness'
 // 2026-05-25: site-wide speech kit (dictation / read-aloud) labels.
 import { SPEECH_DICTIONARY } from './dictionary-speech'
+// 2026-06-05: GCSE/IGCSE study-page UI chrome (study.lang.* / study.lit.*).
+// Curated EN + Khaleeji AR. Chrome only - exam questions, model answers,
+// examiner commentary and grade-boundary values stay English in source.
+import { STUDY_LANG_LIT_DICTIONARY } from './dictionary-study-lang-lit'
+// 2026-06-05: Arabic per-page study chrome (resources tree).
+import { STUDY_REVNOTES_DICTIONARY } from './dictionary-study-revnotes'
+import { STUDY_POETRY_CONTEXT_DICTIONARY } from './dictionary-study-poetry-context'
+import { STUDY_SKILLS_DICTIONARY } from './dictionary-study-skills'
 
 export type Locale = 'en' | 'ar'
 
@@ -14930,6 +14938,10 @@ export function lookup(key: string, locale: Locale): string {
     IELTS_READINESS_UI_DICTIONARY[key] ??
     IELTS_UKREADINESS_DICTIONARY[key] ??
     SPEECH_DICTIONARY[key] ??
+    STUDY_LANG_LIT_DICTIONARY[key] ??
+    STUDY_REVNOTES_DICTIONARY[key] ??
+    STUDY_POETRY_CONTEXT_DICTIONARY[key] ??
+    STUDY_SKILLS_DICTIONARY[key] ??
     PRESS_AND_VERIFIED_FIX[key] ??
     PLACEHOLDER_FIX_MAY16[key] ??
     PLACEHOLDER_FIX_MAY15[key] ??

@@ -3,8 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
-import { STRINGS } from './content'
-import { useLocale } from '@/lib/i18n/use-locale'
+import { useT } from '@/lib/i18n/use-t'
 /* ─── Expandable Section ─────────────────────────────────────── */
 
 function Section({
@@ -98,22 +97,20 @@ function TimelineEvent({ year, event }: { year: string; event: string }) {
 /* ─── Page ───────────────────────────────────────────────────── */
 
 export default function TwentiethCenturyContextPage() {
-  const locale = useLocale()
-  const tr = (en: string): string => {
-    if (locale !== 'ar') return en
-    for (const v of Object.values(STRINGS)) if (v.en === en) return v.ar || en
-    return en
-  }
+  const t = useT()
 
   return (
     <>
       {/* Breadcrumb */}
-      <nav className="mx-auto max-w-6xl px-4 pt-6 sm:px-6 lg:px-8" aria-label="Breadcrumb">
+      <nav
+        className="mx-auto max-w-6xl px-4 pt-6 sm:px-6 lg:px-8"
+        aria-label={t('study.shared.aria.breadcrumb')}
+      >
         <ol className="flex flex-wrap items-center gap-1.5 text-sm text-muted-foreground">
           {[
-            { href: '/', label: 'Home' },
-            { href: '/resources', label: 'Resources' },
-            { href: '/resources/context', label: 'Context' },
+            { href: '/', label: t('study.shared.crumb.home') },
+            { href: '/resources', label: t('study.shared.crumb.resources') },
+            { href: '/resources/context', label: t('study.shared.crumb.context') },
           ].map((crumb, i) => (
             <li key={crumb.href} className="flex items-center gap-1.5">
               {i > 0 && (
@@ -142,7 +139,9 @@ export default function TwentiethCenturyContextPage() {
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
-            <span className="font-medium text-primary">{tr(`Twentieth Century`)}</span>
+            <span className="font-medium text-primary">
+              {t('study.context.era.twentieth.crumb')}
+            </span>
           </li>
         </ol>
       </nav>
@@ -155,30 +154,28 @@ export default function TwentiethCenturyContextPage() {
               1900 -- 1999
             </span>
             <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-              {tr(`An Inspector Calls`)}
+              An Inspector Calls
             </span>
             <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-              {tr(`Lord of the Flies`)}
+              Lord of the Flies
             </span>
             <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-              {tr(`Animal Farm`)}
+              Animal Farm
             </span>
             <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-              {tr(`Blood Brothers`)}
+              Blood Brothers
             </span>
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Twentieth-Century Context
+            {t('study.context.era.twentieth.title')}
           </h1>
           <p className="mt-3 max-w-3xl text-lg text-muted-foreground leading-relaxed">
-            The twentieth century reshaped Britain through two world wars, the birth of the welfare
-            state, Cold War tensions, and Thatcher&apos;s revolution. These upheavals are the
-            backdrop to some of the most studied GCSE texts.
+            {t('study.context.era.twentieth.intro')}
           </p>
         </div>
 
         {/* Timeline */}
-        <Section id="timeline" title={tr(`Key Timeline`)} badge="1900-1999" defaultOpen>
+        <Section id="timeline" title="Key Timeline" badge="1900-1999" defaultOpen>
           <div className="grid gap-0 sm:grid-cols-2">
             <div>
               <TimelineEvent
@@ -245,33 +242,33 @@ export default function TwentiethCenturyContextPage() {
 
         <div className="mt-5 space-y-5">
           {/* WWI and WWII */}
-          <Section id="wars" title={tr(`World War I & World War II`)} colour="bg-primary">
+          <Section id="wars" title="World War I & World War II" colour="bg-primary">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
-                <strong>{tr(`World War I (1914-1918)`)}</strong> shattered the certainties of
-                Edwardian Britain. Before the war, there was a widespread belief -- especially among
-                the upper classes -- that the existing social order was stable and just. The horror
-                of the trenches, where working-class soldiers died in their millions while generals
-                dined safely behind the lines, destroyed this illusion.
+                <strong>World War I (1914-1918)</strong> shattered the certainties of Edwardian
+                Britain. Before the war, there was a widespread belief -- especially among the upper
+                classes -- that the existing social order was stable and just. The horror of the
+                trenches, where working-class soldiers died in their millions while generals dined
+                safely behind the lines, destroyed this illusion.
               </p>
               <p>
-                <strong>{tr(`World War II (1939-1945)`)}</strong> was a total war that affected
-                every citizen. The Blitz, rationing, and evacuation broke down social barriers. Rich
-                and poor, men and women, all contributed to the war effort. This shared sacrifice
+                <strong>World War II (1939-1945)</strong> was a total war that affected every
+                citizen. The Blitz, rationing, and evacuation broke down social barriers. Rich and
+                poor, men and women, all contributed to the war effort. This shared sacrifice
                 created a powerful demand for a fairer, more equal society.
               </p>
               <p>
-                Priestley set <strong>{tr(`An Inspector Calls`)}</strong> in 1912 but wrote it in
-                1945. This is crucial: the audience knows what the Birlings do not -- that two world
-                wars are coming, that the Titanic will sink, that the comfortable Edwardian world is
-                about to collapse. Priestley uses dramatic irony to expose the arrogance and
-                complacency of the capitalist class.
+                Priestley set <strong>An Inspector Calls</strong> in 1912 but wrote it in 1945. This
+                is crucial: the audience knows what the Birlings do not -- that two world wars are
+                coming, that the Titanic will sink, that the comfortable Edwardian world is about to
+                collapse. Priestley uses dramatic irony to expose the arrogance and complacency of
+                the capitalist class.
               </p>
             </div>
           </Section>
 
           {/* Class System Evolution */}
-          <Section id="class" title={tr(`The Changing Class System`)} colour="bg-primary">
+          <Section id="class" title="The Changing Class System" colour="bg-primary">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 The rigid Edwardian class system -- with its clear divisions between upper, middle,
@@ -281,23 +278,23 @@ export default function TwentiethCenturyContextPage() {
               </p>
               <p>
                 However, class divisions never disappeared. In the 1980s,{' '}
-                <strong>{tr(`Margaret Thatcher&apos;s`)}</strong>
+                <strong>Margaret Thatcher&apos;s</strong>
                 policies created new divisions. The closure of mines, steelworks, and factories
                 devastated working-class communities in the North of England, Scotland, and Wales.
                 Unemployment soared. The gap between rich and poor widened.
               </p>
               <p>
-                Willy Russell&apos;s <strong>{tr(`Blood Brothers`)}</strong> dramatises this class
-                divide through the story of twins separated at birth: Mickey, raised in a
-                working-class family, and Eddie, raised in wealth. Their contrasting fates -- shaped
-                entirely by class, not ability -- make Russell&apos;s argument that the system is
-                rigged against the poor.
+                Willy Russell&apos;s <strong>Blood Brothers</strong> dramatises this class divide
+                through the story of twins separated at birth: Mickey, raised in a working-class
+                family, and Eddie, raised in wealth. Their contrasting fates -- shaped entirely by
+                class, not ability -- make Russell&apos;s argument that the system is rigged against
+                the poor.
               </p>
             </div>
           </Section>
 
           {/* Socialism and Capitalism */}
-          <Section id="socialism" title={tr(`Socialism vs Capitalism`)} colour="bg-primary">
+          <Section id="socialism" title="Socialism vs Capitalism" colour="bg-primary">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 The twentieth century was defined by the ideological battle between
@@ -313,24 +310,23 @@ export default function TwentiethCenturyContextPage() {
                 body&rdquo; and must take collective responsibility for each other.
               </p>
               <p>
-                <strong>{tr(`George Orwell`)}</strong> was also a socialist, but one deeply critical
-                of how revolutions can be corrupted. <strong>{tr(`Animal Farm`)}</strong> is not
-                anti-socialist -- it is anti-Stalinist. Orwell shows how the pigs (representing the
-                Communist Party leadership) gradually betray the revolution&apos;s ideals, becoming
+                <strong>George Orwell</strong> was also a socialist, but one deeply critical of how
+                revolutions can be corrupted. <strong>Animal Farm</strong> is not anti-socialist --
+                it is anti-Stalinist. Orwell shows how the pigs (representing the Communist Party
+                leadership) gradually betray the revolution&apos;s ideals, becoming
                 indistinguishable from the humans (the capitalist oppressors) they overthrew.
               </p>
             </div>
           </Section>
 
           {/* Welfare State */}
-          <Section id="welfare" title={tr(`The Welfare State`)} colour="bg-primary">
+          <Section id="welfare" title="The Welfare State" colour="bg-primary">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 After WWII, the Labour government of 1945 created the <strong>welfare state</strong>
                 : the NHS (1948), national insurance, council housing, and free secondary education.
-                The architect was the <strong>{tr(`Beveridge Report (1942)`)}</strong>, which
-                identified five &ldquo;Giant Evils&rdquo;: want, disease, ignorance, squalor, and
-                idleness.
+                The architect was the <strong>Beveridge Report (1942)</strong>, which identified
+                five &ldquo;Giant Evils&rdquo;: want, disease, ignorance, squalor, and idleness.
               </p>
               <p>
                 This was a radical transformation. For the first time, the state accepted
@@ -351,10 +347,10 @@ export default function TwentiethCenturyContextPage() {
           <Section id="eighties" title="1980s Britain & Thatcherism" colour="bg-primary">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
-                <strong>{tr(`Margaret Thatcher`)}</strong> (Prime Minister 1979-1990) fundamentally
-                reshaped Britain. Her philosophy -- often called <strong>Thatcherism</strong> --
-                emphasised individual responsibility, free markets, privatisation of state
-                industries, and reducing the power of trade unions.
+                <strong>Margaret Thatcher</strong> (Prime Minister 1979-1990) fundamentally reshaped
+                Britain. Her philosophy -- often called <strong>Thatcherism</strong> -- emphasised
+                individual responsibility, free markets, privatisation of state industries, and
+                reducing the power of trade unions.
               </p>
               <p>
                 Thatcher famously declared that &ldquo;there is no such thing as society&rdquo; -- a
@@ -369,8 +365,8 @@ export default function TwentiethCenturyContextPage() {
                 areas.
               </p>
               <p>
-                <strong>{tr(`Blood Brothers`)}</strong> is set against this backdrop. Russell shows
-                how Thatcher&apos;s Britain offered opportunities to the middle class (Eddie goes to
+                <strong>Blood Brothers</strong> is set against this backdrop. Russell shows how
+                Thatcher&apos;s Britain offered opportunities to the middle class (Eddie goes to
                 university, gets a good job) while trapping the working class (Mickey faces
                 unemployment, depression, and crime). The musical&apos;s narrator repeatedly asks
                 whether class or fate determines destiny.
@@ -379,7 +375,7 @@ export default function TwentiethCenturyContextPage() {
           </Section>
 
           {/* Post-war Society */}
-          <Section id="postwar" title={tr(`Post-War Disillusionment`)} colour="bg-muted">
+          <Section id="postwar" title="Post-War Disillusionment" colour="bg-muted">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 The aftermath of WWII did not bring simple optimism. The revelations of the
@@ -392,16 +388,16 @@ export default function TwentiethCenturyContextPage() {
                 reliable guard against savagery, was shattered.
               </p>
               <p>
-                <strong>{tr(`William Golding`)}</strong> wrote{' '}
-                <strong>{tr(`Lord of the Flies (1954)`)}</strong> directly from this
-                disillusionment. As a schoolteacher who had served in the Royal Navy during WWII,
-                Golding had witnessed humanity&apos;s capacity for cruelty firsthand. His novel
-                strips away civilisation to reveal the savagery he believed lay beneath -- even in
-                English schoolboys, the supposed pinnacle of civilised upbringing.
+                <strong>William Golding</strong> wrote <strong>Lord of the Flies (1954)</strong>{' '}
+                directly from this disillusionment. As a schoolteacher who had served in the Royal
+                Navy during WWII, Golding had witnessed humanity&apos;s capacity for cruelty
+                firsthand. His novel strips away civilisation to reveal the savagery he believed lay
+                beneath -- even in English schoolboys, the supposed pinnacle of civilised
+                upbringing.
               </p>
               <p>
-                The novel can also be read as a <strong>{tr(`Cold War allegory`)}</strong>. The boys
-                are evacuated because of a nuclear war. Ralph and Jack&apos;s conflict mirrors the
+                The novel can also be read as a <strong>Cold War allegory</strong>. The boys are
+                evacuated because of a nuclear war. Ralph and Jack&apos;s conflict mirrors the
                 democratic West vs totalitarian East. The &ldquo;beast&rdquo; represents the
                 irrational fears that drive societies toward destruction.
               </p>
@@ -411,7 +407,7 @@ export default function TwentiethCenturyContextPage() {
           {/* Linking Context to Texts */}
           <Section
             id="linking"
-            title={tr(`How to Link Context to Your Texts`)}
+            title="How to Link Context to Your Texts"
             badge="Exam skill"
             colour="bg-accent"
           >
@@ -421,9 +417,7 @@ export default function TwentiethCenturyContextPage() {
                 <strong>woven into your analysis</strong> of the writer&apos;s methods and message.
               </p>
 
-              <h3 className="text-base font-bold text-foreground pt-2">
-                {tr(`An Inspector Calls`)}
-              </h3>
+              <h3 className="text-base font-bold text-foreground pt-2">An Inspector Calls</h3>
               <div className="space-y-3">
                 <ContextExample
                   text="An Inspector Calls"
@@ -437,9 +431,7 @@ export default function TwentiethCenturyContextPage() {
                 />
               </div>
 
-              <h3 className="text-base font-bold text-foreground pt-4">
-                {tr(`Lord of the Flies`)}
-              </h3>
+              <h3 className="text-base font-bold text-foreground pt-4">Lord of the Flies</h3>
               <div className="space-y-3">
                 <ContextExample
                   text="Lord of the Flies"
@@ -448,7 +440,7 @@ export default function TwentiethCenturyContextPage() {
                 />
               </div>
 
-              <h3 className="text-base font-bold text-foreground pt-4">{tr(`Animal Farm`)}</h3>
+              <h3 className="text-base font-bold text-foreground pt-4">Animal Farm</h3>
               <div className="space-y-3">
                 <ContextExample
                   text="Animal Farm"
@@ -457,7 +449,7 @@ export default function TwentiethCenturyContextPage() {
                 />
               </div>
 
-              <h3 className="text-base font-bold text-foreground pt-4">{tr(`Blood Brothers`)}</h3>
+              <h3 className="text-base font-bold text-foreground pt-4">Blood Brothers</h3>
               <div className="space-y-3">
                 <ContextExample
                   text="Blood Brothers"
@@ -467,9 +459,7 @@ export default function TwentiethCenturyContextPage() {
               </div>
 
               <div className="mt-6 rounded-xl border border-primary/20 bg-primary/10 p-5">
-                <h3 className="text-sm font-bold text-foreground">
-                  {tr(`Sentence starters for context`)}
-                </h3>
+                <h3 className="text-sm font-bold text-foreground">Sentence starters for context</h3>
                 <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />

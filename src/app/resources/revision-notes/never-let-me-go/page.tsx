@@ -2,6 +2,16 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import { useT } from '@/lib/i18n/use-t'
+
+const NAV_CHIPS: { id: string; labelKey: string }[] = [
+  { id: 'part-summaries', labelKey: 'study.revnotes.common.nav.part_summaries' },
+  { id: 'characters', labelKey: 'study.revnotes.common.nav.characters' },
+  { id: 'themes', labelKey: 'study.revnotes.common.nav.themes' },
+  { id: 'key-quotes', labelKey: 'study.revnotes.common.nav.key_quotes' },
+  { id: 'context', labelKey: 'study.revnotes.common.nav.context' },
+  { id: 'essay-planning', labelKey: 'study.revnotes.common.nav.essay_planning' },
+]
 
 /* ─── Expandable section component ──────────────────────────── */
 
@@ -514,40 +524,40 @@ const essayQuestions = [
 /* ─── Page Component ─────────────────────────────────────────── */
 
 export default function NeverLetMeGoStudyGuide() {
+  const t = useT()
   return (
     <div className="space-y-6">
       {/* Hero */}
       <div className="rounded-xl border bg-gradient-to-b from-primary/[0.06] to-transparent px-6 py-10 sm:py-14">
         <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-          GCSE English Literature &mdash; Revision Notes
+          {t('study.revnotes.common.eyebrow')}
         </p>
         <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-          Never Let Me Go &mdash; Complete Study Guide
+          Never Let Me Go &mdash; {t('study.revnotes.common.suffix.study_guide')}
         </h1>
         <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
-          Kazuo Ishiguro&rsquo;s 2005 dystopian novel. Part-by-part summaries, character analysis,
-          themes, {keyQuotes.length} key quotations with analysis, historical and literary context,
-          and essay planning.
+          {t('study.revnotes.never-let-me-go.lead')}
         </p>
       </div>
 
       {/* Quick nav */}
-      <nav className="flex flex-wrap gap-2 text-sm" aria-label="Page sections">
-        {['Part Summaries', 'Characters', 'Themes', 'Key Quotes', 'Context', 'Essay Planning'].map(
-          (s) => (
-            <a
-              key={s}
-              href={`#${s.toLowerCase().replace(/\s+/g, '-')}`}
-              className="rounded-full border border-primary/30 px-3 py-1 text-foreground transition hover:bg-primary/10"
-            >
-              {s}
-            </a>
-          ),
-        )}
+      <nav
+        className="flex flex-wrap gap-2 text-sm"
+        aria-label={t('study.revnotes.common.page_sections_aria')}
+      >
+        {NAV_CHIPS.map((c) => (
+          <a
+            key={c.id}
+            href={`#${c.id}`}
+            className="rounded-full border border-primary/30 px-3 py-1 text-foreground transition hover:bg-primary/10"
+          >
+            {t(c.labelKey)}
+          </a>
+        ))}
       </nav>
 
       {/* Part Summaries */}
-      <Section id="part-summaries" title="Part-by-Part Summary" defaultOpen>
+      <Section id="part-summaries" title={t('study.revnotes.common.part_summary')} defaultOpen>
         <div className="space-y-6">
           {parts.map((part) => (
             <div key={part.part}>
@@ -568,7 +578,7 @@ export default function NeverLetMeGoStudyGuide() {
       </Section>
 
       {/* Characters */}
-      <Section id="characters" title="Character Analysis">
+      <Section id="characters" title={t('study.revnotes.common.character_analysis')}>
         <div className="space-y-5">
           {characters.map((c) => (
             <div key={c.name} className="rounded-lg border border-border bg-muted p-4">
@@ -585,7 +595,7 @@ export default function NeverLetMeGoStudyGuide() {
       </Section>
 
       {/* Themes */}
-      <Section id="themes" title="Key Themes">
+      <Section id="themes" title={t('study.revnotes.common.key_themes')}>
         <div className="grid gap-4 sm:grid-cols-2">
           {themes.map((t) => (
             <div key={t.name} className="rounded-lg border border-border bg-muted p-4">
@@ -597,7 +607,10 @@ export default function NeverLetMeGoStudyGuide() {
       </Section>
 
       {/* Key Quotes */}
-      <Section id="key-quotes" title={`Key Quotations (${keyQuotes.length})`}>
+      <Section
+        id="key-quotes"
+        title={`${t('study.revnotes.common.key_quotations')} (${keyQuotes.length})`}
+      >
         <p className="mb-4 text-sm text-muted-foreground">
           Each quotation includes detailed analysis suitable for GCSE-level essay responses.
         </p>
@@ -618,7 +631,7 @@ export default function NeverLetMeGoStudyGuide() {
       </Section>
 
       {/* Context */}
-      <Section id="context" title="Historical & Literary Context">
+      <Section id="context" title={t('study.revnotes.common.context_hist_lit_amp')}>
         <div className="space-y-4">
           {contextSections.map((c) => (
             <div key={c.title} className="rounded-lg border border-border bg-muted p-4">

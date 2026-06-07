@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ─── Types ──────────────────────────────────────────────────── */
 
@@ -465,6 +466,7 @@ function TechniqueCard({ t }: { t: Technique }) {
 }
 
 export default function TechniquesPage() {
+  const tHub = useT()
   const [filter, setFilter] = useState('All')
   const filtered = filter === 'All' ? techniques : techniques.filter((t) => t.category === filter)
 
@@ -746,7 +748,7 @@ export default function TechniquesPage() {
                 d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
               />
             </svg>
-            Back to English Language
+            {tHub('study.lang.back_to_lang')}
           </Link>
         </div>
       </div>

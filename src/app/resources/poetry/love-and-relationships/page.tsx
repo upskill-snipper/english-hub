@@ -2,6 +2,19 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
+import { useT } from '@/lib/i18n/use-t'
+
+/* Maps a generic English section heading to its dictionary key. Only the
+   generic chrome headings are listed; poem-specific titles are never mapped. */
+const HEADING_KEYS: Record<string, string> = {
+  Summary: 'study.shared.heading.summary',
+  Themes: 'study.shared.heading.themes',
+  Context: 'study.shared.heading.context',
+  'Key Quotes': 'study.shared.heading.key_quotes',
+  'Form & Structure': 'study.shared.heading.form_structure',
+  'Comparison Suggestions': 'study.shared.heading.comparison_suggestions',
+  'Version note': 'study.shared.heading.version_note',
+}
 
 /* ================================================================== */
 /*  Reusable Components                                                */
@@ -23,6 +36,7 @@ function Section({
   defaultOpen?: boolean
 }) {
   const [open, setOpen] = useState(defaultOpen)
+  const t = useT()
   return (
     <div className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
       <button
@@ -57,7 +71,7 @@ function Section({
                 href={studyHref}
                 className="inline-flex items-center gap-2 rounded-lg bg-primary/10 px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/20"
               >
-                Study this poem in depth
+                {t('study.shared.cta.study_in_depth')}
                 <svg
                   className="h-4 w-4"
                   fill="none"
@@ -81,9 +95,11 @@ function Section({
 }
 
 function SubSection({ title, children }: { title: string; children: React.ReactNode }) {
+  const t = useT()
+  const key = HEADING_KEYS[title]
   return (
     <div>
-      <h3 className="text-base font-bold text-primary mb-2">{title}</h3>
+      <h3 className="text-base font-bold text-primary mb-2">{key ? t(key) : title}</h3>
       {children}
     </div>
   )
@@ -382,6 +398,7 @@ const ALL_PERIODS = Array.from(new Set(POEM_META.map((p) => p.period)))
 /* ================================================================== */
 
 export default function LoveAndRelationshipsPage() {
+  const t = useT()
   const [showTable, setShowTable] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const [activeTheme, setActiveTheme] = useState<string | null>(null)
@@ -411,15 +428,13 @@ export default function LoveAndRelationshipsPage() {
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-            AQA GCSE English Literature (8702) &middot; Poetry Anthology
+            {t('study.poetry.lar.hero.eyebrow')}
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Love and Relationships
+            {t('study.poetry.lar.hero.title')}
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Complete analysis of all 15 poems in the AQA Love and Relationships cluster. Key
-            quotations, techniques, themes, context, and comparison guidance for every poem. Studied
-            for AQA Paper 2, Section B.
+            {t('study.poetry.lar.hero.subtitle')}
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <span className="rounded-full bg-muted px-3 py-1 text-sm font-medium text-muted-foreground">
@@ -452,7 +467,7 @@ export default function LoveAndRelationshipsPage() {
             </svg>
             <input
               type="text"
-              placeholder="Search poems by title, poet, or theme..."
+              placeholder={t('study.poetry.search.placeholder')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full rounded-lg border border-border bg-card py-2.5 pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors"
@@ -461,7 +476,7 @@ export default function LoveAndRelationshipsPage() {
               <button
                 onClick={() => setSearchQuery('')}
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-muted-foreground"
-                aria-label="Clear search"
+                aria-label={t('study.poetry.search.clear_aria')}
               >
                 <svg
                   className="h-4 w-4"
@@ -479,7 +494,7 @@ export default function LoveAndRelationshipsPage() {
           {/* Theme filters */}
           <div>
             <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">
-              Filter by theme
+              {t('study.poetry.filter.by_theme')}
             </p>
             <div className="flex flex-wrap gap-2">
               {ALL_THEMES.map((theme) => (
@@ -501,7 +516,7 @@ export default function LoveAndRelationshipsPage() {
           {/* Period filters */}
           <div>
             <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">
-              Filter by period
+              {t('study.poetry.filter.by_period')}
             </p>
             <div className="flex flex-wrap gap-2">
               {ALL_PERIODS.map((period) => (
@@ -526,7 +541,7 @@ export default function LoveAndRelationshipsPage() {
                   }}
                   className="rounded-full bg-red-500/10 px-3 py-1 text-xs font-medium text-red-600 hover:bg-red-500/15 transition-colors"
                 >
-                  Clear all filters
+                  {t('study.poetry.filter.clear_all')}
                 </button>
               )}
             </div>
@@ -535,9 +550,10 @@ export default function LoveAndRelationshipsPage() {
           {/* Result count */}
           {(searchQuery || activeTheme || activePeriod) && (
             <p className="text-sm text-muted-foreground">
-              Showing <span className="font-semibold text-foreground">{matchCount}</span> of 15
-              poems
-              {matchCount === 0 && ' - try broadening your search.'}
+              {t('study.poetry.results.showing')}{' '}
+              <span className="font-semibold text-foreground">{matchCount}</span>{' '}
+              {t('study.poetry.results.of_poems')}
+              {matchCount === 0 && t('study.poetry.results.broaden')}
             </p>
           )}
         </div>
@@ -546,7 +562,9 @@ export default function LoveAndRelationshipsPage() {
       {/* Quick nav */}
       <section className="mx-auto max-w-6xl px-4 py-4 sm:px-6 lg:px-8">
         <div className="rounded-xl border border-border bg-card p-4 shadow-md">
-          <p className="text-sm font-semibold text-muted-foreground mb-3">Jump to a poem:</p>
+          <p className="text-sm font-semibold text-muted-foreground mb-3">
+            {t('study.poetry.nav.jump_to')}
+          </p>
           <div className="flex flex-wrap gap-2">
             {POEM_META.filter((p) => visiblePoemIds.has(p.id)).map((p) => (
               <a
@@ -561,7 +579,7 @@ export default function LoveAndRelationshipsPage() {
               href="#comparison-table"
               className="rounded-lg bg-primary/10 px-3 py-1.5 text-xs font-semibold text-primary hover:bg-primary/20 transition-colors"
             >
-              Comparison Table
+              {t('study.poetry.nav.comparison_table')}
             </a>
           </div>
         </div>
@@ -573,7 +591,7 @@ export default function LoveAndRelationshipsPage() {
           {matchCount === 0 && (
             <div className="rounded-xl border border-dashed border-border bg-muted p-8 text-center">
               <p className="text-muted-foreground text-sm">
-                No poems match your current filters. Try adjusting your search or clearing filters.
+                {t('study.poetry.results.none_match')}
               </p>
             </div>
           )}
@@ -2112,17 +2130,15 @@ export default function LoveAndRelationshipsPage() {
       {/* ================================================================== */}
       <section id="comparison-table" className="bg-primary/10 px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold text-foreground">Comparison Table</h2>
-          <p className="mt-2 text-muted-foreground">
-            Use this at-a-glance table to find poems that work well together for your comparison
-            essay. Click to expand.
-          </p>
+          <h2 className="text-2xl font-bold text-foreground">{t('study.poetry.cmp.title')}</h2>
+          <p className="mt-2 text-muted-foreground">{t('study.poetry.cmp.subtitle')}</p>
 
           <button
             onClick={() => setShowTable((o) => !o)}
             className="mt-4 inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary/90"
           >
-            {showTable ? 'Hide' : 'Show'} Comparison Table
+            {showTable ? t('study.poetry.cmp.hide') : t('study.poetry.cmp.show')}{' '}
+            {t('study.poetry.cmp.table_suffix')}
             <svg
               className={`h-4 w-4 transition-transform ${showTable ? 'rotate-180' : ''}`}
               fill="none"
@@ -2139,12 +2155,24 @@ export default function LoveAndRelationshipsPage() {
               <table className="min-w-full text-sm">
                 <thead>
                   <tr className="bg-primary text-white">
-                    <th className="px-4 py-3 text-left font-semibold">Poem</th>
-                    <th className="px-4 py-3 text-left font-semibold">Poet</th>
-                    <th className="px-4 py-3 text-left font-semibold">Period</th>
-                    <th className="px-4 py-3 text-left font-semibold">Key Themes</th>
-                    <th className="px-4 py-3 text-left font-semibold">Tone</th>
-                    <th className="px-4 py-3 text-left font-semibold">Form</th>
+                    <th className="px-4 py-3 text-left font-semibold">
+                      {t('study.poetry.cmp.col.poem')}
+                    </th>
+                    <th className="px-4 py-3 text-left font-semibold">
+                      {t('study.poetry.cmp.col.poet')}
+                    </th>
+                    <th className="px-4 py-3 text-left font-semibold">
+                      {t('study.poetry.cmp.col.period')}
+                    </th>
+                    <th className="px-4 py-3 text-left font-semibold">
+                      {t('study.poetry.cmp.col.key_themes')}
+                    </th>
+                    <th className="px-4 py-3 text-left font-semibold">
+                      {t('study.poetry.cmp.col.tone')}
+                    </th>
+                    <th className="px-4 py-3 text-left font-semibold">
+                      {t('study.poetry.cmp.col.form')}
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -2175,10 +2203,10 @@ export default function LoveAndRelationshipsPage() {
       {/*  Thematic Groupings                                                 */}
       {/* ================================================================== */}
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-foreground">Thematic Groupings for Comparison</h2>
-        <p className="mt-2 text-muted-foreground mb-8">
-          When choosing poems to compare, group them by shared themes. Here are the key clusters.
-        </p>
+        <h2 className="text-2xl font-bold text-foreground">
+          {t('study.poetry.pac.thematic.title')}
+        </h2>
+        <p className="mt-2 text-muted-foreground mb-8">{t('study.poetry.pac.thematic.subtitle')}</p>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[
@@ -2252,7 +2280,7 @@ export default function LoveAndRelationshipsPage() {
       <section className="bg-card px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-2xl font-bold text-foreground">
-            Exam Tips for Love and Relationships
+            {t('study.poetry.lar.exam_tips.title')}
           </h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
@@ -2327,7 +2355,7 @@ export default function LoveAndRelationshipsPage() {
               d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
             />
           </svg>
-          Back to Poetry Hub
+          {t('study.shared.cta.back_to_poetry')}
         </Link>
       </section>
     </>

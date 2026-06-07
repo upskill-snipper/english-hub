@@ -1,7 +1,8 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import Link from "next/link";
+import { useState } from 'react'
+import Link from 'next/link'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ─── Expandable Section ─────────────────────────────────────── */
 
@@ -9,18 +10,18 @@ function Section({
   id,
   title,
   badge,
-  colour = "bg-primary",
+  colour = 'bg-primary',
   children,
   defaultOpen = false,
 }: {
-  id: string;
-  title: string;
-  badge?: string;
-  colour?: string;
-  children: React.ReactNode;
-  defaultOpen?: boolean;
+  id: string
+  title: string
+  badge?: string
+  colour?: string
+  children: React.ReactNode
+  defaultOpen?: boolean
 }) {
-  const [open, setOpen] = useState(defaultOpen);
+  const [open, setOpen] = useState(defaultOpen)
   return (
     <div className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
       <button
@@ -39,8 +40,11 @@ function Section({
           )}
         </div>
         <svg
-          className={`h-5 w-5 text-muted-foreground transition-transform ${open ? "rotate-180" : ""}`}
-          fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"
+          className={`h-5 w-5 text-muted-foreground transition-transform ${open ? 'rotate-180' : ''}`}
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={2}
+          stroke="currentColor"
         >
           <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
         </svg>
@@ -51,7 +55,7 @@ function Section({
         </div>
       )}
     </div>
-  );
+  )
 }
 
 /* ─── Context Example Box ────────────────────────────────────── */
@@ -61,9 +65,9 @@ function ContextExample({
   point,
   analysis,
 }: {
-  text: string;
-  point: string;
-  analysis: string;
+  text: string
+  point: string
+  analysis: string
 }) {
   return (
     <div className="rounded-lg border-l-4 border-accent bg-primary/10/40 p-4">
@@ -71,7 +75,7 @@ function ContextExample({
       <p className="mt-1 text-sm font-semibold text-foreground">{point}</p>
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
-  );
+  )
 }
 
 /* ─── Timeline Event ─────────────────────────────────────────── */
@@ -87,37 +91,56 @@ function TimelineEvent({ year, event }: { year: string; event: string }) {
       </div>
       <p className="pb-6 text-sm text-muted-foreground">{event}</p>
     </div>
-  );
+  )
 }
 
 /* ─── Page ───────────────────────────────────────────────────── */
 
 export default function VictorianContextPage() {
+  const t = useT()
   return (
     <>
-
       {/* Breadcrumb */}
-      <nav className="mx-auto max-w-6xl px-4 pt-6 sm:px-6 lg:px-8" aria-label="Breadcrumb">
+      <nav
+        className="mx-auto max-w-6xl px-4 pt-6 sm:px-6 lg:px-8"
+        aria-label={t('study.shared.aria.breadcrumb')}
+      >
         <ol className="flex flex-wrap items-center gap-1.5 text-sm text-muted-foreground">
           {[
-            { href: "/", label: "Home" },
-            { href: "/resources", label: "Resources" },
-            { href: "/resources/context", label: "Context" },
+            { href: '/', label: t('study.shared.crumb.home') },
+            { href: '/resources', label: t('study.shared.crumb.resources') },
+            { href: '/resources/context', label: t('study.shared.crumb.context') },
           ].map((crumb, i) => (
             <li key={crumb.href} className="flex items-center gap-1.5">
               {i > 0 && (
-                <svg className="h-4 w-4 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg
+                  className="h-4 w-4 text-muted-foreground"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
               )}
-              <Link href={crumb.href} className="hover:text-primary transition-colors">{crumb.label}</Link>
+              <Link href={crumb.href} className="hover:text-primary transition-colors">
+                {crumb.label}
+              </Link>
             </li>
           ))}
           <li className="flex items-center gap-1.5">
-            <svg className="h-4 w-4 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <svg
+              className="h-4 w-4 text-muted-foreground"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
-            <span className="font-medium text-primary">Victorian Era</span>
+            <span className="font-medium text-primary">
+              {t('study.context.era.victorian.crumb')}
+            </span>
           </li>
         </ol>
       </nav>
@@ -129,16 +152,18 @@ export default function VictorianContextPage() {
             <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
               1837 -- 1901
             </span>
-            <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">A Christmas Carol</span>
-            <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Jekyll &amp; Hyde</span>
+            <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+              A Christmas Carol
+            </span>
+            <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+              Jekyll &amp; Hyde
+            </span>
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Victorian Era Context
+            {t('study.context.era.victorian.title')}
           </h1>
           <p className="mt-3 max-w-3xl text-lg text-muted-foreground leading-relaxed">
-            The Victorian period transformed Britain from a rural society into the
-            world&apos;s first industrial superpower. Understanding these seismic
-            social changes is essential for analysing Dickens and Stevenson.
+            {t('study.context.era.victorian.intro')}
           </p>
         </div>
 
@@ -146,19 +171,52 @@ export default function VictorianContextPage() {
         <Section id="timeline" title="Key Timeline" badge="1837-1901" defaultOpen>
           <div className="grid gap-0 sm:grid-cols-2">
             <div>
-              <TimelineEvent year="1837" event="Victoria becomes Queen at age 18. The British Empire is expanding rapidly." />
-              <TimelineEvent year="1834" event="The Poor Law Amendment Act creates the workhouse system, designed to deter the poor from seeking help." />
-              <TimelineEvent year="1842" event="The Mines Act bans women and children under 10 from working underground." />
-              <TimelineEvent year="1843" event="Dickens publishes A Christmas Carol, attacking Victorian attitudes to poverty." />
-              <TimelineEvent year="1848" event="The Communist Manifesto is published. Revolutions sweep across Europe." />
-              <TimelineEvent year="1859" event="Darwin publishes On the Origin of Species, shaking religious certainty." />
+              <TimelineEvent
+                year="1837"
+                event="Victoria becomes Queen at age 18. The British Empire is expanding rapidly."
+              />
+              <TimelineEvent
+                year="1834"
+                event="The Poor Law Amendment Act creates the workhouse system, designed to deter the poor from seeking help."
+              />
+              <TimelineEvent
+                year="1842"
+                event="The Mines Act bans women and children under 10 from working underground."
+              />
+              <TimelineEvent
+                year="1843"
+                event="Dickens publishes A Christmas Carol, attacking Victorian attitudes to poverty."
+              />
+              <TimelineEvent
+                year="1848"
+                event="The Communist Manifesto is published. Revolutions sweep across Europe."
+              />
+              <TimelineEvent
+                year="1859"
+                event="Darwin publishes On the Origin of Species, shaking religious certainty."
+              />
             </div>
             <div>
-              <TimelineEvent year="1867" event="The Second Reform Act extends the vote to more working-class men." />
-              <TimelineEvent year="1870" event="The Education Act introduces elementary schooling for all children." />
-              <TimelineEvent year="1886" event="Stevenson publishes The Strange Case of Dr Jekyll and Mr Hyde." />
-              <TimelineEvent year="1888" event="Jack the Ripper murders in Whitechapel highlight urban poverty and crime." />
-              <TimelineEvent year="1891" event="Free elementary education is established for all children." />
+              <TimelineEvent
+                year="1867"
+                event="The Second Reform Act extends the vote to more working-class men."
+              />
+              <TimelineEvent
+                year="1870"
+                event="The Education Act introduces elementary schooling for all children."
+              />
+              <TimelineEvent
+                year="1886"
+                event="Stevenson publishes The Strange Case of Dr Jekyll and Mr Hyde."
+              />
+              <TimelineEvent
+                year="1888"
+                event="Jack the Ripper murders in Whitechapel highlight urban poverty and crime."
+              />
+              <TimelineEvent
+                year="1891"
+                event="Free elementary education is established for all children."
+              />
               <TimelineEvent year="1901" event="Queen Victoria dies. The Edwardian era begins." />
             </div>
           </div>
@@ -169,20 +227,23 @@ export default function VictorianContextPage() {
           <Section id="class" title="The Social Class System" colour="bg-primary">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
-                Victorian society was rigidly hierarchical. The <strong>upper class</strong> (aristocracy
-                and landed gentry) held political power and vast wealth. The growing <strong>middle class</strong> --
-                factory owners, merchants, professionals -- gained economic influence but craved
-                social respectability. The <strong>working class</strong> and the destitute poor lived in
-                overcrowded slums, working gruelling hours for meagre wages.
+                Victorian society was rigidly hierarchical. The <strong>upper class</strong>{' '}
+                (aristocracy and landed gentry) held political power and vast wealth. The growing{' '}
+                <strong>middle class</strong> -- factory owners, merchants, professionals -- gained
+                economic influence but craved social respectability. The{' '}
+                <strong>working class</strong> and the destitute poor lived in overcrowded slums,
+                working gruelling hours for meagre wages.
               </p>
               <p>
-                Social mobility was extremely limited. The Victorians believed in &ldquo;self-help&rdquo;
-                and that poverty was often the fault of the individual -- a moral failing rather
-                than a systemic problem. This attitude is exactly what Dickens attacks through
-                Scrooge&apos;s famous dismissal of the poor: &ldquo;Are there no prisons? Are there no workhouses?&rdquo;
+                Social mobility was extremely limited. The Victorians believed in
+                &ldquo;self-help&rdquo; and that poverty was often the fault of the individual -- a
+                moral failing rather than a systemic problem. This attitude is exactly what Dickens
+                attacks through Scrooge&apos;s famous dismissal of the poor: &ldquo;Are there no
+                prisons? Are there no workhouses?&rdquo;
               </p>
               <p>
-                The concept of the <strong>&ldquo;deserving&rdquo; vs &ldquo;undeserving&rdquo; poor</strong> was
+                The concept of the{' '}
+                <strong>&ldquo;deserving&rdquo; vs &ldquo;undeserving&rdquo; poor</strong> was
                 central to Victorian thinking. Only those deemed morally worthy were considered
                 entitled to charity, while others were seen as lazy or sinful.
               </p>
@@ -195,19 +256,21 @@ export default function VictorianContextPage() {
               <p>
                 Britain was the birthplace of the Industrial Revolution. By the mid-nineteenth
                 century, factories, railways, and mass production had transformed the landscape.
-                Cities like Manchester, Birmingham, and London swelled with workers seeking employment.
+                Cities like Manchester, Birmingham, and London swelled with workers seeking
+                employment.
               </p>
               <p>
-                <strong>Child labour</strong> was rampant. Children as young as five worked in mines,
-                factories, and as chimney sweeps. The conditions were dangerous and often fatal.
-                Dickens himself experienced child labour when his father was imprisoned for debt
-                and young Charles was sent to work in a blacking factory -- an experience that
+                <strong>Child labour</strong> was rampant. Children as young as five worked in
+                mines, factories, and as chimney sweeps. The conditions were dangerous and often
+                fatal. Dickens himself experienced child labour when his father was imprisoned for
+                debt and young Charles was sent to work in a blacking factory -- an experience that
                 haunted his writing for life.
               </p>
               <p>
                 The gap between rich and poor widened dramatically. Benjamin Disraeli famously
-                described Britain as <strong>&ldquo;Two Nations&rdquo;</strong> -- the rich and the poor --
-                who lived as though in different countries, with no understanding of each other.
+                described Britain as <strong>&ldquo;Two Nations&rdquo;</strong> -- the rich and the
+                poor -- who lived as though in different countries, with no understanding of each
+                other.
               </p>
             </div>
           </Section>
@@ -217,10 +280,10 @@ export default function VictorianContextPage() {
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 The <strong>1834 Poor Law Amendment Act</strong> was designed to reduce the cost of
-                looking after the poor. It established <strong>workhouses</strong> -- deliberately grim
-                institutions where conditions were made worse than the lowest-paid job outside.
-                This was the principle of <strong>&ldquo;less eligibility&rdquo;</strong>: if the workhouse
-                was awful enough, only the truly desperate would enter.
+                looking after the poor. It established <strong>workhouses</strong> -- deliberately
+                grim institutions where conditions were made worse than the lowest-paid job outside.
+                This was the principle of <strong>&ldquo;less eligibility&rdquo;</strong>: if the
+                workhouse was awful enough, only the truly desperate would enter.
               </p>
               <p>
                 Families were separated upon entry. Food was minimal and monotonous (often gruel).
@@ -229,9 +292,9 @@ export default function VictorianContextPage() {
               </p>
               <p>
                 Dickens was a fierce critic of the workhouse system. In A Christmas Carol, the
-                charity collectors tell Scrooge that many would &ldquo;rather die&rdquo; than enter the
-                workhouse -- to which Scrooge replies they &ldquo;had better do it, and decrease the
-                surplus population.&rdquo; This echoes the real views of Thomas Malthus, whose
+                charity collectors tell Scrooge that many would &ldquo;rather die&rdquo; than enter
+                the workhouse -- to which Scrooge replies they &ldquo;had better do it, and decrease
+                the surplus population.&rdquo; This echoes the real views of Thomas Malthus, whose
                 population theories influenced Victorian social policy.
               </p>
             </div>
@@ -241,22 +304,25 @@ export default function VictorianContextPage() {
           <Section id="religion-science" title="Religion vs Science" colour="bg-primary">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
-                The Victorian era saw an unprecedented clash between <strong>religious faith</strong> and
-                <strong> scientific discovery</strong>. For centuries, Christianity had provided a stable
-                framework for understanding the world. The Bible was considered literal truth.
+                The Victorian era saw an unprecedented clash between{' '}
+                <strong>religious faith</strong> and
+                <strong> scientific discovery</strong>. For centuries, Christianity had provided a
+                stable framework for understanding the world. The Bible was considered literal
+                truth.
               </p>
               <p>
-                <strong>Charles Darwin&apos;s On the Origin of Species (1859)</strong> shattered this certainty.
-                Evolution by natural selection suggested that humans were not divinely created but
-                had evolved from earlier species. This created a crisis of faith that permeated
-                Victorian literature and culture.
+                <strong>Charles Darwin&apos;s On the Origin of Species (1859)</strong> shattered
+                this certainty. Evolution by natural selection suggested that humans were not
+                divinely created but had evolved from earlier species. This created a crisis of
+                faith that permeated Victorian literature and culture.
               </p>
               <p>
                 In Jekyll and Hyde, Stevenson explores the tension between rational science and
                 moral restraint. Jekyll&apos;s experiments represent the Victorian fear that science
                 without morality could unleash humanity&apos;s worst instincts. The duality of
-                Jekyll/Hyde also reflects the era&apos;s obsession with <strong>respectability</strong> --
-                maintaining a moral public face while hiding private desires.
+                Jekyll/Hyde also reflects the era&apos;s obsession with{' '}
+                <strong>respectability</strong> -- maintaining a moral public face while hiding
+                private desires.
               </p>
             </div>
           </Section>
@@ -266,19 +332,20 @@ export default function VictorianContextPage() {
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 Victorian society enforced strict gender roles. Women were expected to embody the
-                <strong> &ldquo;Angel in the House&rdquo;</strong> ideal -- pure, domestic, obedient, and morally
-                superior to men. Middle- and upper-class women were confined to the domestic sphere;
-                they could not vote, own property after marriage (until 1882), or enter most professions.
+                <strong> &ldquo;Angel in the House&rdquo;</strong> ideal -- pure, domestic,
+                obedient, and morally superior to men. Middle- and upper-class women were confined
+                to the domestic sphere; they could not vote, own property after marriage (until
+                1882), or enter most professions.
               </p>
               <p>
-                Men, by contrast, occupied the <strong>public sphere</strong>: politics, business, and
-                professional life. Masculinity was tied to rationality, self-control, and financial
-                provision. The pressure to maintain respectability was immense.
+                Men, by contrast, occupied the <strong>public sphere</strong>: politics, business,
+                and professional life. Masculinity was tied to rationality, self-control, and
+                financial provision. The pressure to maintain respectability was immense.
               </p>
               <p>
                 In Jekyll and Hyde, the absence of significant female characters reflects the male
-                homosocial world of Victorian professional life. The story&apos;s focus on secrecy and
-                repression mirrors the pressures men faced to conform to strict moral codes.
+                homosocial world of Victorian professional life. The story&apos;s focus on secrecy
+                and repression mirrors the pressures men faced to conform to strict moral codes.
               </p>
             </div>
           </Section>
@@ -288,20 +355,20 @@ export default function VictorianContextPage() {
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 Victorian cities were plagued by crime, much of it driven by poverty. Overcrowded
-                slums, lack of sanitation, and the gin trade created breeding grounds for
-                theft, violence, and prostitution.
+                slums, lack of sanitation, and the gin trade created breeding grounds for theft,
+                violence, and prostitution.
               </p>
               <p>
-                The <strong>Metropolitan Police</strong> was established in 1829, but public trust was
-                slow to develop. The justice system was harsh: over 200 offences carried the death
-                penalty at the start of the century, and transportation to penal colonies (such as
-                Australia) was common.
+                The <strong>Metropolitan Police</strong> was established in 1829, but public trust
+                was slow to develop. The justice system was harsh: over 200 offences carried the
+                death penalty at the start of the century, and transportation to penal colonies
+                (such as Australia) was common.
               </p>
               <p>
-                Gothic literature -- including Jekyll and Hyde -- drew heavily on Victorian anxieties
-                about urban crime. Stevenson set his novella in the dark streets of London (though he
-                was inspired by Edinburgh&apos;s Old Town), creating an atmosphere of menace that
-                reflected real fears about what lurked in the city&apos;s shadows.
+                Gothic literature -- including Jekyll and Hyde -- drew heavily on Victorian
+                anxieties about urban crime. Stevenson set his novella in the dark streets of London
+                (though he was inspired by Edinburgh&apos;s Old Town), creating an atmosphere of
+                menace that reflected real fears about what lurked in the city&apos;s shadows.
               </p>
             </div>
           </Section>
@@ -310,14 +377,46 @@ export default function VictorianContextPage() {
           <Section id="figures" title="Key Figures & Events" colour="bg-primary">
             <div className="grid gap-4 sm:grid-cols-2">
               {[
-                { name: "Queen Victoria", detail: "Reigned 1837-1901. Her long reign gave the era its name and its emphasis on morality and duty." },
-                { name: "Charles Dickens", detail: "The most popular novelist of the age. Used fiction to expose poverty, injustice, and the failures of institutions." },
-                { name: "Charles Darwin", detail: "Published On the Origin of Species (1859). Revolutionised science and triggered a crisis of religious faith." },
-                { name: "Thomas Malthus", detail: "Economist who argued population growth would outstrip food supply. His ideas influenced the harsh Poor Laws." },
-                { name: "Karl Marx", detail: "Co-authored The Communist Manifesto (1848). Critiqued capitalism and class exploitation." },
-                { name: "Florence Nightingale", detail: "Pioneered modern nursing during the Crimean War. Challenged gender norms by working in public life." },
-                { name: "Jack the Ripper", detail: "Unidentified serial killer (1888). The murders exposed the squalor of London's East End." },
-                { name: "Robert Louis Stevenson", detail: "Published Jekyll and Hyde (1886). Explored duality, repression, and the dark side of respectability." },
+                {
+                  name: 'Queen Victoria',
+                  detail:
+                    'Reigned 1837-1901. Her long reign gave the era its name and its emphasis on morality and duty.',
+                },
+                {
+                  name: 'Charles Dickens',
+                  detail:
+                    'The most popular novelist of the age. Used fiction to expose poverty, injustice, and the failures of institutions.',
+                },
+                {
+                  name: 'Charles Darwin',
+                  detail:
+                    'Published On the Origin of Species (1859). Revolutionised science and triggered a crisis of religious faith.',
+                },
+                {
+                  name: 'Thomas Malthus',
+                  detail:
+                    'Economist who argued population growth would outstrip food supply. His ideas influenced the harsh Poor Laws.',
+                },
+                {
+                  name: 'Karl Marx',
+                  detail:
+                    'Co-authored The Communist Manifesto (1848). Critiqued capitalism and class exploitation.',
+                },
+                {
+                  name: 'Florence Nightingale',
+                  detail:
+                    'Pioneered modern nursing during the Crimean War. Challenged gender norms by working in public life.',
+                },
+                {
+                  name: 'Jack the Ripper',
+                  detail:
+                    "Unidentified serial killer (1888). The murders exposed the squalor of London's East End.",
+                },
+                {
+                  name: 'Robert Louis Stevenson',
+                  detail:
+                    'Published Jekyll and Hyde (1886). Explored duality, repression, and the dark side of respectability.',
+                },
               ].map((fig) => (
                 <div key={fig.name} className="rounded-lg bg-muted p-4">
                   <h3 className="text-sm font-bold text-foreground">{fig.name}</h3>
@@ -328,11 +427,17 @@ export default function VictorianContextPage() {
           </Section>
 
           {/* Linking Context to Texts */}
-          <Section id="linking" title="How to Link Context to Your Texts" badge="Exam skill" colour="bg-accent">
+          <Section
+            id="linking"
+            title="How to Link Context to Your Texts"
+            badge="Exam skill"
+            colour="bg-accent"
+          >
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 The key to top marks is <strong>embedding context into your analysis</strong>, not
-                bolting it on as a separate paragraph. Here are model examples showing how to do this.
+                bolting it on as a separate paragraph. Here are model examples showing how to do
+                this.
               </p>
 
               <h3 className="text-base font-bold text-foreground pt-2">A Christmas Carol</h3>
@@ -372,15 +477,23 @@ export default function VictorianContextPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <span>&ldquo;Dickens/Stevenson uses [character/event] to critique the Victorian belief that...&rdquo;</span>
+                    <span>
+                      &ldquo;Dickens/Stevenson uses [character/event] to critique the Victorian
+                      belief that...&rdquo;
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <span>&ldquo;This reflects the nineteenth-century tension between...&rdquo;</span>
+                    <span>
+                      &ldquo;This reflects the nineteenth-century tension between...&rdquo;
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <span>&ldquo;Perhaps [the writer] intended to challenge the prevailing attitude that...&rdquo;</span>
+                    <span>
+                      &ldquo;Perhaps [the writer] intended to challenge the prevailing attitude
+                      that...&rdquo;
+                    </span>
                   </li>
                 </ul>
               </div>
@@ -394,23 +507,42 @@ export default function VictorianContextPage() {
             href="/resources/context"
             className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-3 text-sm font-semibold text-muted-foreground shadow-md transition hover:bg-muted"
           >
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+            <svg
+              className="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+              />
             </svg>
-            All Eras
+            {t('study.context.era.nav.all_eras')}
           </Link>
           <Link
             href="/resources/context/elizabethan-jacobean"
             className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-primary/90"
           >
-            Elizabethan &amp; Jacobean
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            {t('study.context.era.nav.elizabethan')}
+            <svg
+              className="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+              />
             </svg>
           </Link>
         </div>
       </div>
-
     </>
-  );
+  )
 }

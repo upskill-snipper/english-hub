@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { tMany } from '@/lib/i18n/t'
 
 /* ─── Metadata ───────────────────────────────────────────────── */
 
@@ -20,9 +21,8 @@ export const metadata: Metadata = {
 const QUESTION_TYPES = [
   {
     slug: 'language-analysis',
-    title: 'Language Analysis',
-    description:
-      "Model responses to 'How does the writer use language...' questions. Grade 3, 5, 7, and 9 examples with examiner commentary and side-by-side comparisons showing what makes the difference.",
+    titleKey: 'study.skills.ma.type.language.title',
+    descKey: 'study.skills.ma.type.language.desc',
     grades: ['Grade 3', 'Grade 5', 'Grade 7', 'Grade 9'],
     icon: (
       <svg
@@ -42,9 +42,8 @@ const QUESTION_TYPES = [
   },
   {
     slug: 'creative-writing',
-    title: 'Creative Writing',
-    description:
-      'Descriptive and narrative model responses at every grade level. Full annotated examples showing how to craft atmosphere, use structural techniques, and deploy sophisticated vocabulary.',
+    titleKey: 'study.skills.ma.type.creative.title',
+    descKey: 'study.skills.ma.type.creative.desc',
     grades: ['Grade 3', 'Grade 5', 'Grade 7', 'Grade 9'],
     icon: (
       <svg
@@ -64,9 +63,8 @@ const QUESTION_TYPES = [
   },
   {
     slug: 'literature-essay',
-    title: 'Literature Essays',
-    description:
-      'Literature essays on key texts including Macbeth, A Christmas Carol, An Inspector Calls, and poetry comparison at multiple grade levels. Annotations show how to structure arguments and embed quotations.',
+    titleKey: 'study.skills.ma.type.literature.title',
+    descKey: 'study.skills.ma.type.literature.desc',
     grades: ['Grade 3', 'Grade 5', 'Grade 7', 'Grade 9'],
     icon: (
       <svg
@@ -86,9 +84,8 @@ const QUESTION_TYPES = [
   },
   {
     slug: 'persuasive-writing',
-    title: 'Persuasive & Transactional Writing',
-    description:
-      'Model articles, speeches, and letters at every grade level with annotations highlighting rhetorical devices, structural choices, and persuasive techniques.',
+    titleKey: 'study.skills.ma.type.persuasive.title',
+    descKey: 'study.skills.ma.type.persuasive.desc',
     grades: ['Grade 3', 'Grade 5', 'Grade 7', 'Grade 9'],
     icon: (
       <svg
@@ -109,7 +106,7 @@ const QUESTION_TYPES = [
 ]
 
 const GRADE_FILTERS = [
-  { id: 'all', label: 'All Grades' },
+  { id: 'all', label: null },
   { id: '3', label: 'Grade 3' },
   { id: '5', label: 'Grade 5' },
   { id: '7', label: 'Grade 7' },
@@ -118,23 +115,84 @@ const GRADE_FILTERS = [
 
 /* ─── Page ───────────────────────────────────────────────────── */
 
-export default function ModelAnswersPage() {
+export default async function ModelAnswersPage() {
+  const [
+    eyebrow,
+    heroTitle,
+    subtitle,
+    bcHome,
+    bcResources,
+    bcThis,
+    gradeLevel,
+    filterAll,
+    howtoTitle,
+    howtoReadTitle,
+    howtoReadBody,
+    howtoCompareTitle,
+    howtoCompareBody,
+    howtoPractiseTitle,
+    howtoPractiseBody,
+    statModel,
+    statGrades,
+    statTypes,
+    statAnnotations,
+  ] = await tMany([
+    'study.skills.ma.hero.eyebrow',
+    'study.skills.ma.hero.title',
+    'study.skills.ma.hero.subtitle',
+    'study.skills.common.bc.home',
+    'study.skills.common.bc.resources',
+    'study.skills.ma.bc.this',
+    'study.skills.ma.grade_level',
+    'study.skills.ma.filter.all',
+    'study.skills.ma.howto.title',
+    'study.skills.ma.howto.read.title',
+    'study.skills.ma.howto.read.body',
+    'study.skills.ma.howto.compare.title',
+    'study.skills.ma.howto.compare.body',
+    'study.skills.ma.howto.practise.title',
+    'study.skills.ma.howto.practise.body',
+    'study.skills.ma.stat.model_answers',
+    'study.skills.ma.stat.grade_levels',
+    'study.skills.ma.stat.question_types',
+    'study.skills.ma.stat.annotations',
+  ])
+
+  const typeCopy = await tMany([
+    'study.skills.ma.type.language.title',
+    'study.skills.ma.type.creative.title',
+    'study.skills.ma.type.literature.title',
+    'study.skills.ma.type.persuasive.title',
+    'study.skills.ma.type.language.desc',
+    'study.skills.ma.type.creative.desc',
+    'study.skills.ma.type.literature.desc',
+    'study.skills.ma.type.persuasive.desc',
+  ])
+  const titleBySlug: Record<string, string> = {
+    'language-analysis': typeCopy[0],
+    'creative-writing': typeCopy[1],
+    'literature-essay': typeCopy[2],
+    'persuasive-writing': typeCopy[3],
+  }
+  const descBySlug: Record<string, string> = {
+    'language-analysis': typeCopy[4],
+    'creative-writing': typeCopy[5],
+    'literature-essay': typeCopy[6],
+    'persuasive-writing': typeCopy[7],
+  }
+
   return (
     <>
       {/* Hero */}
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-            Learn from the Best
+            {eyebrow}
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Model Answers
+            {heroTitle}
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Expert-written model responses at every grade level. Each answer includes examiner
-            commentary, technique annotations, and clear explanations of what separates a good
-            answer from a great one.
-          </p>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">{subtitle}</p>
         </div>
       </section>
 
@@ -143,17 +201,17 @@ export default function ModelAnswersPage() {
         <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
           <li>
             <Link href="/" className="hover:text-foreground transition-colors">
-              Home
+              {bcHome}
             </Link>
           </li>
           <li>/</li>
           <li>
             <Link href="/resources" className="hover:text-foreground transition-colors">
-              Resources
+              {bcResources}
             </Link>
           </li>
           <li>/</li>
-          <li className="font-medium text-foreground">Model Answers</li>
+          <li className="font-medium text-foreground">{bcThis}</li>
         </ol>
       </nav>
 
@@ -161,7 +219,7 @@ export default function ModelAnswersPage() {
       <div className="mx-auto max-w-5xl px-4 pt-8 sm:px-6 lg:px-8">
         <div>
           <label className="mb-1 block text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-            Grade Level
+            {gradeLevel}
           </label>
           <div className="flex flex-wrap gap-2">
             {GRADE_FILTERS.map((grade) => (
@@ -173,7 +231,7 @@ export default function ModelAnswersPage() {
                     : 'bg-muted text-muted-foreground hover:bg-primary/10 hover:text-foreground'
                 }`}
               >
-                {grade.label}
+                {grade.label ?? filterAll}
               </button>
             ))}
           </div>
@@ -193,10 +251,10 @@ export default function ModelAnswersPage() {
                 <div className="flex-shrink-0 rounded-lg bg-primary/10 p-3">{type.icon}</div>
                 <div className="flex-1">
                   <h2 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
-                    {type.title}
+                    {titleBySlug[type.slug]}
                   </h2>
                   <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                    {type.description}
+                    {descBySlug[type.slug]}
                   </p>
                   <div className="mt-3 flex flex-wrap gap-2">
                     {type.grades.map((grade) => (
@@ -216,17 +274,15 @@ export default function ModelAnswersPage() {
 
         {/* How to Use section */}
         <div className="mt-12 rounded-xl border border-primary/20 bg-primary/5 p-6 sm:p-8">
-          <h2 className="text-xl font-bold text-foreground">How to Use These Model Answers</h2>
+          <h2 className="text-xl font-bold text-foreground">{howtoTitle}</h2>
           <div className="mt-4 grid gap-4 sm:grid-cols-3">
             <div className="flex items-start gap-3">
               <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
                 1
               </span>
               <div>
-                <h3 className="font-semibold text-foreground">Read Actively</h3>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Hover over highlighted text to see technique annotations and examiner insights.
-                </p>
+                <h3 className="font-semibold text-foreground">{howtoReadTitle}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{howtoReadBody}</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -234,10 +290,8 @@ export default function ModelAnswersPage() {
                 2
               </span>
               <div>
-                <h3 className="font-semibold text-foreground">Compare Grades</h3>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Study the difference between grade 5, 7, and 9 responses on the same question.
-                </p>
+                <h3 className="font-semibold text-foreground">{howtoCompareTitle}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{howtoCompareBody}</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -245,10 +299,8 @@ export default function ModelAnswersPage() {
                 3
               </span>
               <div>
-                <h3 className="font-semibold text-foreground">Practise</h3>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Use the techniques you have identified to improve your own answers.
-                </p>
+                <h3 className="font-semibold text-foreground">{howtoPractiseTitle}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{howtoPractiseBody}</p>
               </div>
             </div>
           </div>
@@ -257,10 +309,10 @@ export default function ModelAnswersPage() {
         {/* Quick stats */}
         <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
           {[
-            { stat: '20+', label: 'Model Answers' },
-            { stat: '4', label: 'Grade Levels' },
-            { stat: '4', label: 'Question Types' },
-            { stat: '100+', label: 'Annotations' },
+            { stat: '20+', label: statModel },
+            { stat: '4', label: statGrades },
+            { stat: '4', label: statTypes },
+            { stat: '100+', label: statAnnotations },
           ].map((item) => (
             <div
               key={item.label}

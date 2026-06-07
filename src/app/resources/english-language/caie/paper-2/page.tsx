@@ -4,6 +4,7 @@ import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 
 import { STRINGS } from './content'
 import { headers } from 'next/headers'
+import { t } from '@/lib/i18n/t'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
@@ -58,7 +59,7 @@ export default async function Paper2Page() {
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
-            Back to CAIE English Language
+            {await t('study.lang.caie.back')}
           </Link>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Paper 2: Directed Writing &amp; Composition

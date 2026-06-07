@@ -3,6 +3,22 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { AITextArea } from '@/components/AITextArea'
+import { useT } from '@/lib/i18n/use-t'
+
+/* Nav chips: English value drives the anchor href (must match Section id);
+   labelKey resolves the translated visible label. */
+const NAV_CHIPS: { id: string; labelKey: string }[] = [
+  { id: 'chapter-summaries', labelKey: 'study.revnotes.common.nav.chapter_summaries' },
+  { id: 'characters', labelKey: 'study.revnotes.common.nav.characters' },
+  { id: 'themes', labelKey: 'study.revnotes.common.nav.themes' },
+  { id: 'key-quotes', labelKey: 'study.revnotes.common.nav.key_quotes' },
+  { id: 'context', labelKey: 'study.revnotes.common.nav.context' },
+  { id: 'essay-planning', labelKey: 'study.revnotes.common.nav.essay_planning' },
+  { id: 'writers-methods', labelKey: 'study.revnotes.common.nav.writers_methods' },
+  { id: 'grade-9-points', labelKey: 'study.revnotes.common.nav.grade_9_points' },
+  { id: 'exam-questions', labelKey: 'study.revnotes.common.nav.exam_questions' },
+  { id: 'practice-questions', labelKey: 'study.revnotes.common.nav.practice_questions' },
+]
 
 /* ─── Expandable section component ──────────────────────────── */
 
@@ -369,48 +385,44 @@ const essayQuestions = [
 /* ─── Page Component ─────────────────────────────────────────── */
 
 export default function OfMiceAndMenStudyGuide() {
+  const t = useT()
   return (
     <div className="space-y-6">
       {/* Hero */}
       <div className="rounded-xl border bg-gradient-to-b from-primary/[0.06] to-transparent px-6 py-10 sm:py-14">
         <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-          GCSE English Literature &mdash; Revision Notes
+          {t('study.revnotes.common.eyebrow')}
         </p>
         <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-          Of Mice and Men &mdash; Complete Study Guide
+          Of Mice and Men &mdash; {t('study.revnotes.common.suffix.study_guide')}
         </h1>
         <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
-          John Steinbeck&rsquo;s 1937 novella. Chapter summaries, character analysis, themes, 20 key
-          quotations with analysis, historical context, writer&rsquo;s methods, and essay planning.
+          {t('study.revnotes.of-mice-and-men.lead')}
         </p>
       </div>
 
       {/* Quick nav */}
-      <nav className="flex flex-wrap gap-2 text-sm" aria-label="Page sections">
-        {[
-          'Chapter Summaries',
-          'Characters',
-          'Themes',
-          'Key Quotes',
-          'Context',
-          'Essay Planning',
-          "Writer's Methods",
-          'Grade 9 Points',
-          'Exam Questions',
-          'Practice Questions',
-        ].map((s) => (
+      <nav
+        className="flex flex-wrap gap-2 text-sm"
+        aria-label={t('study.revnotes.common.page_sections_aria')}
+      >
+        {NAV_CHIPS.map((c) => (
           <a
-            key={s}
-            href={`#${s.toLowerCase().replace(/\s+/g, '-')}`}
+            key={c.id}
+            href={`#${c.id}`}
             className="rounded-full border border-primary/30 px-3 py-1 text-foreground transition hover:bg-primary/10"
           >
-            {s}
+            {t(c.labelKey)}
           </a>
         ))}
       </nav>
 
       {/* Chapter Summaries */}
-      <Section id="chapter-summaries" title="Chapter-by-Chapter Summary" defaultOpen>
+      <Section
+        id="chapter-summaries"
+        title={t('study.revnotes.common.chapter_summary')}
+        defaultOpen
+      >
         <div className="space-y-4">
           {chapters.map((ch) => (
             <div key={ch.chapter} className="rounded-lg border border-border bg-muted p-4">
@@ -422,7 +434,7 @@ export default function OfMiceAndMenStudyGuide() {
       </Section>
 
       {/* Characters */}
-      <Section id="characters" title="Character Analysis">
+      <Section id="characters" title={t('study.revnotes.common.character_analysis')}>
         <div className="space-y-5">
           {characters.map((c) => (
             <div key={c.name} className="rounded-lg border border-border bg-muted p-4">
@@ -434,7 +446,7 @@ export default function OfMiceAndMenStudyGuide() {
       </Section>
 
       {/* Themes */}
-      <Section id="themes" title="Key Themes">
+      <Section id="themes" title={t('study.revnotes.common.key_themes')}>
         <div className="grid gap-4 sm:grid-cols-2">
           {themes.map((t) => (
             <div key={t.name} className="rounded-lg border border-border bg-muted p-4">
@@ -446,7 +458,10 @@ export default function OfMiceAndMenStudyGuide() {
       </Section>
 
       {/* Key Quotes */}
-      <Section id="key-quotes" title={`Key Quotations (${keyQuotes.length})`}>
+      <Section
+        id="key-quotes"
+        title={`${t('study.revnotes.common.key_quotations')} (${keyQuotes.length})`}
+      >
         <p className="mb-4 text-sm text-muted-foreground">
           Each quotation includes detailed analysis suitable for GCSE-level essay responses.
         </p>
@@ -471,7 +486,7 @@ export default function OfMiceAndMenStudyGuide() {
       </Section>
 
       {/* Context */}
-      <Section id="context" title="Historical & Literary Context">
+      <Section id="context" title={t('study.revnotes.common.context_hist_lit_amp')}>
         <div className="space-y-4">
           {contextSections.map((c) => (
             <div key={c.title} className="rounded-lg border border-border bg-muted p-4">
@@ -483,13 +498,15 @@ export default function OfMiceAndMenStudyGuide() {
       </Section>
 
       {/* Essay Planning */}
-      <Section id="essay-planning" title="Essay Planning for Common Questions">
+      <Section id="essay-planning" title={t('study.revnotes.common.essay_planning_common')}>
         <div className="space-y-5">
           {essayQuestions.map((eq, i) => (
             <div key={i} className="rounded-lg border border-border bg-muted p-4">
               <p className="font-medium text-foreground">{eq.question}</p>
               <div className="mt-3 rounded bg-primary/5 p-3">
-                <p className="text-xs font-semibold text-foreground">Key points to cover:</p>
+                <p className="text-xs font-semibold text-foreground">
+                  {t('study.revnotes.common.key_points_to_cover')}
+                </p>
                 <ul className="mt-1 space-y-1 text-sm text-muted-foreground">
                   {eq.points.map((p, j) => (
                     <li key={j}>&bull; {p}</li>
@@ -502,7 +519,7 @@ export default function OfMiceAndMenStudyGuide() {
       </Section>
 
       {/* Writer's Methods */}
-      <Section id="writers-methods" title="Writer&rsquo;s Methods &amp; Techniques">
+      <Section id="writers-methods" title={t('study.revnotes.common.writers_methods_tech')}>
         <div className="space-y-4">
           {[
             {
@@ -555,7 +572,7 @@ export default function OfMiceAndMenStudyGuide() {
       </Section>
 
       {/* Grade 9 Exemplar Points */}
-      <Section id="grade-9-points" title="Grade 9 Exemplar Points">
+      <Section id="grade-9-points" title={t('study.revnotes.common.grade_9_exemplar')}>
         <p className="mb-4 text-sm text-muted-foreground">
           Sophisticated, conceptualised arguments that distinguish Grade 9 responses.
         </p>
@@ -578,7 +595,7 @@ export default function OfMiceAndMenStudyGuide() {
       </Section>
 
       {/* Exam Questions with Model Answer Outlines */}
-      <Section id="exam-questions" title="Exam-Style Questions with Model Answer Outlines">
+      <Section id="exam-questions" title={t('study.revnotes.common.exam_questions_outlines')}>
         <p className="mb-4 text-sm text-muted-foreground">
           These outlines show how to structure a full-mark GCSE response.
         </p>
@@ -636,7 +653,7 @@ export default function OfMiceAndMenStudyGuide() {
       </Section>
 
       {/* Practice Questions */}
-      <Section id="practice-questions" title="Practice Questions">
+      <Section id="practice-questions" title={t('study.revnotes.common.practice_questions')}>
         <p className="text-sm text-muted-foreground mb-6">
           Write your answer below each question and receive AI-powered feedback tailored to GCSE
           English Literature mark schemes. Aim for at least 150 words per response to get meaningful
@@ -650,8 +667,8 @@ export default function OfMiceAndMenStudyGuide() {
               <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
-              placeholder="Write your essay response here..."
-              label="Your answer"
+              placeholder={t('study.revnotes.common.essay_placeholder')}
+              label={t('study.revnotes.common.your_answer')}
               subject="English Literature"
               topic="Of Mice and Men - How Steinbeck presents the theme of loneliness"
               minWords={150}
@@ -667,8 +684,8 @@ export default function OfMiceAndMenStudyGuide() {
               <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
-              placeholder="Write your essay response here..."
-              label="Your answer"
+              placeholder={t('study.revnotes.common.essay_placeholder')}
+              label={t('study.revnotes.common.your_answer')}
               subject="English Literature"
               topic="Of Mice and Men - How Steinbeck presents Curley's wife"
               minWords={150}
@@ -685,8 +702,8 @@ export default function OfMiceAndMenStudyGuide() {
               <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
-              placeholder="Write your essay response here..."
-              label="Your answer"
+              placeholder={t('study.revnotes.common.essay_placeholder')}
+              label={t('study.revnotes.common.your_answer')}
               subject="English Literature"
               topic="Of Mice and Men - How Steinbeck uses the dream farm to explore the American Dream"
               minWords={150}
@@ -703,8 +720,8 @@ export default function OfMiceAndMenStudyGuide() {
               <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
-              placeholder="Write your essay response here..."
-              label="Your answer"
+              placeholder={t('study.revnotes.common.essay_placeholder')}
+              label={t('study.revnotes.common.your_answer')}
               subject="English Literature"
               topic="Of Mice and Men - How Steinbeck presents the relationship between George and Lennie"
               minWords={150}
@@ -721,7 +738,7 @@ export default function OfMiceAndMenStudyGuide() {
           href="/resources/revision-notes"
           className="font-medium text-foreground underline underline-offset-2 hover:text-primary"
         >
-          &larr; Back to Revision Notes
+          &larr; {t('study.revnotes.common.back')}
         </Link>
       </div>
 

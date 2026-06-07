@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
+import { t } from '@/lib/i18n/t'
 
 /* ─── Metadata ───────────────────────────────────────────────── */
 
@@ -320,7 +321,7 @@ const assessmentObjectives = [
 
 /* ─── Page component ─────────────────────────────────────────── */
 
-export default function ChristmasCarolStudyGuide() {
+export default async function ChristmasCarolStudyGuide() {
   return (
     <>
       {/* ── Hero ────────────────────────────────────────────────── */}
@@ -780,7 +781,7 @@ export default function ChristmasCarolStudyGuide() {
             href="/resources/english-literature/caie"
             className="font-medium text-foreground underline underline-offset-2 hover:text-primary"
           >
-            &larr; Back to Cambridge IGCSE English Literature
+            &larr; {await t('study.lit.back.caie')}
           </Link>
         </div>
 

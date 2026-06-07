@@ -6,6 +6,7 @@ import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 
 import { STRINGS } from './content'
 import { useLocale } from '@/lib/i18n/use-locale'
+import { useT } from '@/lib/i18n/use-t'
 /* ─── Collapsible section ────────────────────────────────────── */
 
 function Section({
@@ -162,6 +163,7 @@ const CORE_BOUNDARIES: CoreBoundaryRow[] = [
 
 export default function GradeBoundariesPage() {
   const locale = useLocale()
+  const t = useT()
   const tr = (en: string): string => {
     if (locale !== 'ar') return en
     for (const v of Object.values(STRINGS)) if (v.en === en) return v.ar || en
@@ -1088,7 +1090,7 @@ export default function GradeBoundariesPage() {
                 d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
               />
             </svg>
-            Back to CAIE English Language
+            {t('study.lang.caie.back')}
           </Link>
         </div>
       </div>

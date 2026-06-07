@@ -3,6 +3,22 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { AITextArea } from '@/components/AITextArea'
+import { useT } from '@/lib/i18n/use-t'
+
+const NAV_CHIPS: { id: string; labelKey: string }[] = [
+  { id: 'chapter-summaries', labelKey: 'study.revnotes.common.nav.chapter_summaries' },
+  { id: 'characters', labelKey: 'study.revnotes.common.nav.characters' },
+  { id: 'themes', labelKey: 'study.revnotes.common.nav.themes' },
+  { id: 'key-quotes', labelKey: 'study.revnotes.common.nav.key_quotes' },
+  { id: 'seven-commandments', labelKey: 'study.revnotes.common.nav.seven_commandments' },
+  { id: 'allegory', labelKey: 'study.revnotes.common.nav.allegory' },
+  { id: 'context', labelKey: 'study.revnotes.common.nav.context' },
+  { id: 'essay-planning', labelKey: 'study.revnotes.common.nav.essay_planning' },
+  { id: 'writers-methods', labelKey: 'study.revnotes.common.nav.writers_methods' },
+  { id: 'grade-9-points', labelKey: 'study.revnotes.common.nav.grade_9_points' },
+  { id: 'exam-questions', labelKey: 'study.revnotes.common.nav.exam_questions' },
+  { id: 'practice-questions', labelKey: 'study.revnotes.common.nav.practice_questions' },
+]
 
 /* ─── Expandable section component ──────────────────────────── */
 
@@ -475,51 +491,44 @@ const essayQuestions = [
 /* ─── Page Component ─────────────────────────────────────────── */
 
 export default function AnimalFarmStudyGuide() {
+  const t = useT()
   return (
     <div className="space-y-6">
       {/* Hero */}
       <div className="rounded-xl border bg-gradient-to-b from-primary/[0.06] to-transparent px-6 py-10 sm:py-14">
         <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-          GCSE English Literature &mdash; Revision Notes
+          {t('study.revnotes.common.eyebrow')}
         </p>
         <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-          Animal Farm &mdash; Complete Study Guide
+          Animal Farm &mdash; {t('study.revnotes.common.suffix.study_guide')}
         </h1>
         <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
-          George Orwell&rsquo;s 1945 allegorical novella. Chapter summaries, character analysis,
-          themes, allegory mapping, 25+ key quotations, the Seven Commandments, context, and essay
-          planning.
+          {t('study.revnotes.animal-farm.lead')}
         </p>
       </div>
 
       {/* Quick nav */}
-      <nav className="flex flex-wrap gap-2 text-sm" aria-label="Page sections">
-        {[
-          'Chapter Summaries',
-          'Characters',
-          'Themes',
-          'Key Quotes',
-          'Seven Commandments',
-          'Allegory',
-          'Context',
-          'Essay Planning',
-          "Writer's Methods",
-          'Grade 9 Points',
-          'Exam Questions',
-          'Practice Questions',
-        ].map((s) => (
+      <nav
+        className="flex flex-wrap gap-2 text-sm"
+        aria-label={t('study.revnotes.common.page_sections_aria')}
+      >
+        {NAV_CHIPS.map((c) => (
           <a
-            key={s}
-            href={`#${s.toLowerCase().replace(/\s+/g, '-')}`}
+            key={c.id}
+            href={`#${c.id}`}
             className="rounded-full border border-primary/30 px-3 py-1 text-foreground transition hover:bg-primary/10"
           >
-            {s}
+            {t(c.labelKey)}
           </a>
         ))}
       </nav>
 
       {/* Chapter Summaries */}
-      <Section id="chapter-summaries" title="Chapter-by-Chapter Summary" defaultOpen>
+      <Section
+        id="chapter-summaries"
+        title={t('study.revnotes.common.chapter_summary')}
+        defaultOpen
+      >
         <div className="space-y-4">
           {chapters.map((ch) => (
             <div key={ch.chapter} className="rounded-lg border border-border bg-muted p-4">
@@ -531,7 +540,7 @@ export default function AnimalFarmStudyGuide() {
       </Section>
 
       {/* Characters */}
-      <Section id="characters" title="Character Analysis & Allegory Mapping">
+      <Section id="characters" title={t('study.revnotes.animal-farm.sec.characters')}>
         <div className="space-y-5">
           {characters.map((c) => (
             <div key={c.name} className="rounded-lg border border-border bg-muted p-4">
@@ -548,7 +557,7 @@ export default function AnimalFarmStudyGuide() {
       </Section>
 
       {/* Themes */}
-      <Section id="themes" title="Key Themes">
+      <Section id="themes" title={t('study.revnotes.common.key_themes')}>
         <div className="grid gap-4 sm:grid-cols-2">
           {themes.map((t) => (
             <div key={t.name} className="rounded-lg border border-border bg-muted p-4">
@@ -560,7 +569,10 @@ export default function AnimalFarmStudyGuide() {
       </Section>
 
       {/* Key Quotes */}
-      <Section id="key-quotes" title={`Key Quotations (${keyQuotes.length})`}>
+      <Section
+        id="key-quotes"
+        title={`${t('study.revnotes.common.key_quotations')} (${keyQuotes.length})`}
+      >
         <p className="mb-4 text-sm text-muted-foreground">
           Each quotation includes detailed analysis suitable for GCSE-level essay responses.
         </p>
@@ -581,7 +593,10 @@ export default function AnimalFarmStudyGuide() {
       </Section>
 
       {/* Seven Commandments Evolution */}
-      <Section id="seven-commandments" title="The Seven Commandments: How They Change">
+      <Section
+        id="seven-commandments"
+        title={t('study.revnotes.animal-farm.sec.seven_commandments')}
+      >
         <p className="mb-4 text-sm text-muted-foreground">
           The evolution of the Seven Commandments tracks the pigs&rsquo; corruption. Each alteration
           is a measurable betrayal of the revolution&rsquo;s original principles.
@@ -601,7 +616,7 @@ export default function AnimalFarmStudyGuide() {
       </Section>
 
       {/* Allegory */}
-      <Section id="allegory" title="Allegory Mapping: Animal Farm & the Russian Revolution">
+      <Section id="allegory" title={t('study.revnotes.animal-farm.sec.allegory')}>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
@@ -643,7 +658,7 @@ export default function AnimalFarmStudyGuide() {
       </Section>
 
       {/* Context */}
-      <Section id="context" title="Historical & Literary Context">
+      <Section id="context" title={t('study.revnotes.common.context_hist_lit_amp')}>
         <div className="space-y-4">
           {contextSections.map((c) => (
             <div key={c.title} className="rounded-lg border border-border bg-muted p-4">
@@ -655,7 +670,7 @@ export default function AnimalFarmStudyGuide() {
       </Section>
 
       {/* Essay Planning */}
-      <Section id="essay-planning" title="Essay Planning for Common Questions">
+      <Section id="essay-planning" title={t('study.revnotes.common.essay_planning_common')}>
         <div className="space-y-5">
           {essayQuestions.map((eq, i) => (
             <div key={i} className="rounded-lg border border-border bg-muted p-4">
@@ -674,7 +689,7 @@ export default function AnimalFarmStudyGuide() {
       </Section>
 
       {/* Writer's Methods */}
-      <Section id="writers-methods" title="Writer&rsquo;s Methods &amp; Techniques">
+      <Section id="writers-methods" title={t('study.revnotes.common.writers_methods_tech')}>
         <div className="space-y-4">
           {[
             {
@@ -727,7 +742,7 @@ export default function AnimalFarmStudyGuide() {
       </Section>
 
       {/* Grade 9 Exemplar Points */}
-      <Section id="grade-9-points" title="Grade 9 Exemplar Points">
+      <Section id="grade-9-points" title={t('study.revnotes.common.grade_9_exemplar')}>
         <p className="mb-4 text-sm text-muted-foreground">
           These are the kinds of sophisticated, conceptualised arguments that distinguish Grade 9
           responses. Use them as springboards for your own analysis.
@@ -751,7 +766,7 @@ export default function AnimalFarmStudyGuide() {
       </Section>
 
       {/* Exam Questions with Model Answer Outlines */}
-      <Section id="exam-questions" title="Exam-Style Questions with Model Answer Outlines">
+      <Section id="exam-questions" title={t('study.revnotes.common.exam_questions_outlines')}>
         <p className="mb-4 text-sm text-muted-foreground">
           These outlines show how to structure a full-mark GCSE response. Each follows the
           What-How-Why method: What is Orwell saying? How does he convey it? Why does it matter
@@ -811,7 +826,7 @@ export default function AnimalFarmStudyGuide() {
       </Section>
 
       {/* ────────────────────────────────────────── PRACTICE QUESTIONS */}
-      <Section id="practice-questions" title="Practice Questions">
+      <Section id="practice-questions" title={t('study.revnotes.common.practice_questions')}>
         <p className="text-sm text-muted-foreground mb-6">
           Write your answer below each question and receive AI-powered feedback tailored to GCSE
           English Literature mark schemes. Aim for at least 150 words per response to get meaningful
@@ -826,8 +841,8 @@ export default function AnimalFarmStudyGuide() {
               <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
-              placeholder="Write your essay response here..."
-              label="Your answer"
+              placeholder={t('study.revnotes.common.essay_placeholder')}
+              label={t('study.revnotes.common.your_answer')}
               subject="English Literature"
               topic="Animal Farm - How Orwell uses Napoleon to explore the corrupting nature of power"
               minWords={150}
@@ -844,8 +859,8 @@ export default function AnimalFarmStudyGuide() {
               <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
-              placeholder="Write your essay response here..."
-              label="Your answer"
+              placeholder={t('study.revnotes.common.essay_placeholder')}
+              label={t('study.revnotes.common.your_answer')}
               subject="English Literature"
               topic="Animal Farm - How Orwell presents propaganda and language as tools of control"
               minWords={150}
@@ -862,8 +877,8 @@ export default function AnimalFarmStudyGuide() {
               <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
-              placeholder="Write your essay response here..."
-              label="Your answer"
+              placeholder={t('study.revnotes.common.essay_placeholder')}
+              label={t('study.revnotes.common.your_answer')}
               subject="English Literature"
               topic="Animal Farm - How Orwell uses Boxer to explore the exploitation of the working class"
               minWords={150}
@@ -879,8 +894,8 @@ export default function AnimalFarmStudyGuide() {
               ?<span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
-              placeholder="Write your essay response here..."
-              label="Your answer"
+              placeholder={t('study.revnotes.common.essay_placeholder')}
+              label={t('study.revnotes.common.your_answer')}
               subject="English Literature"
               topic="Animal Farm - How Orwell presents the theme of equality and its betrayal"
               minWords={150}
@@ -897,7 +912,7 @@ export default function AnimalFarmStudyGuide() {
           href="/resources/revision-notes"
           className="font-medium text-foreground underline underline-offset-2 hover:text-primary"
         >
-          &larr; Back to Revision Notes
+          &larr; {t('study.revnotes.common.back')}
         </Link>
       </div>
 

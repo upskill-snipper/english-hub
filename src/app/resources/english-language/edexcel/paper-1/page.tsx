@@ -4,6 +4,7 @@ import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 
 import { STRINGS } from './content'
 import { headers } from 'next/headers'
+import { t } from '@/lib/i18n/t'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
@@ -47,7 +48,7 @@ export default async function Paper1Page() {
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
             </svg>
-            Back to Edexcel Hub
+            {await t('study.lang.edexcel.back')}
           </Link>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Paper 1: Fiction &amp; Imaginative Writing

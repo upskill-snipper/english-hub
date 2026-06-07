@@ -86,7 +86,7 @@ export default async function WritingSkillsPage() {
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
-            Back to CAIE English Language
+            {await _trServer('study.lang.caie.back')}
           </Link>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Writing Skills

@@ -14,6 +14,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { getSetText } from '@/lib/board/set-texts'
+import { t } from '@/lib/i18n/t'
 
 /**
  * Catch-all fallback for /resources/revision-notes/<slug>.
@@ -76,7 +77,7 @@ export default async function RevisionNotesPlaceholder({ params }: { params: Pro
         render={<Link href="/resources/revision-notes" />}
       >
         <ArrowLeft className="size-3.5" />
-        Back to all revision notes
+        {await t('study.revnotes.slug.back')}
       </Button>
 
       {/* Header */}
@@ -84,16 +85,22 @@ export default async function RevisionNotesPlaceholder({ params }: { params: Pro
         <div className="flex flex-wrap items-center gap-2">
           <Badge variant="secondary" className="bg-amber-500/10 text-amber-700 border-amber-500/20">
             <Construction className="mr-1 size-3" />
-            In production
+            {await t('study.revnotes.slug.in_production')}
           </Badge>
           {text && (
             <Badge variant="outline" className="text-muted-foreground">
-              {text.boards.length === 1 ? '1 exam board' : `${text.boards.length} exam boards`}
+              {text.boards.length === 1
+                ? await t('study.revnotes.slug.boards_one')
+                : `${text.boards.length} exam boards`}
             </Badge>
           )}
         </div>
         <h1 className="font-heading text-display-sm text-foreground sm:text-display">{title}</h1>
-        {author && <p className="text-body-lg text-muted-foreground">by {author}</p>}
+        {author && (
+          <p className="text-body-lg text-muted-foreground">
+            {await t('study.revnotes.slug.by')} {author}
+          </p>
+        )}
       </header>
 
       {/* Status card */}
@@ -104,7 +111,7 @@ export default async function RevisionNotesPlaceholder({ params }: { params: Pro
               <Construction className="size-5 text-amber-700" />
             </div>
             <CardTitle className="text-heading-md font-heading">
-              Revision notes are being written
+              {await t('study.revnotes.slug.status_title')}
             </CardTitle>
           </div>
           <CardDescription className="mt-2">
@@ -122,7 +129,9 @@ export default async function RevisionNotesPlaceholder({ params }: { params: Pro
 
       {/* Alternative paths */}
       <section className="space-y-4">
-        <h2 className="font-heading text-heading-md text-foreground">What you can do now</h2>
+        <h2 className="font-heading text-heading-md text-foreground">
+          {await t('study.revnotes.slug.what_now')}
+        </h2>
         <div className="grid gap-4 sm:grid-cols-2">
           {text && (
             <Card className="group transition-all hover:border-border hover:shadow-card-hover">
@@ -131,7 +140,9 @@ export default async function RevisionNotesPlaceholder({ params }: { params: Pro
                   <div className="flex size-10 items-center justify-center rounded-xl bg-blue-500/10">
                     <BookOpen className="size-5 text-blue-700" />
                   </div>
-                  <CardTitle className="text-heading-md font-heading">Full study guide</CardTitle>
+                  <CardTitle className="text-heading-md font-heading">
+                    {await t('study.revnotes.slug.card.guide.title')}
+                  </CardTitle>
                 </div>
                 <CardDescription className="mt-2">
                   Characters, themes, key quotations and exam-ready analysis for {title}.
@@ -144,7 +155,7 @@ export default async function RevisionNotesPlaceholder({ params }: { params: Pro
                   className="w-full"
                   render={<Link href={`/revision/texts/${text.slug}`} />}
                 >
-                  Open study guide
+                  {await t('study.revnotes.slug.card.guide.cta')}
                   <ArrowRight className="size-3.5" />
                 </Button>
               </CardContent>
@@ -157,10 +168,12 @@ export default async function RevisionNotesPlaceholder({ params }: { params: Pro
                 <div className="flex size-10 items-center justify-center rounded-xl bg-emerald-500/10">
                   <Quote className="size-5 text-emerald-700" />
                 </div>
-                <CardTitle className="text-heading-md font-heading">Browse all set texts</CardTitle>
+                <CardTitle className="text-heading-md font-heading">
+                  {await t('study.revnotes.slug.card.texts.title')}
+                </CardTitle>
               </div>
               <CardDescription className="mt-2">
-                Every text on every board with the revision notes that are already published.
+                {await t('study.revnotes.slug.card.texts.desc')}
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -170,7 +183,7 @@ export default async function RevisionNotesPlaceholder({ params }: { params: Pro
                 className="w-full"
                 render={<Link href="/revision/texts" />}
               >
-                Browse set texts
+                {await t('study.revnotes.slug.card.texts.cta')}
                 <ArrowRight className="size-3.5" />
               </Button>
             </CardContent>
@@ -182,7 +195,9 @@ export default async function RevisionNotesPlaceholder({ params }: { params: Pro
                 <div className="flex size-10 items-center justify-center rounded-xl bg-violet-500/10">
                   <PenTool className="size-5 text-violet-700" />
                 </div>
-                <CardTitle className="text-heading-md font-heading">AI essay marking</CardTitle>
+                <CardTitle className="text-heading-md font-heading">
+                  {await t('study.revnotes.slug.card.marking.title')}
+                </CardTitle>
               </div>
               <CardDescription className="mt-2">
                 Submit any practice essay on {title} and get AO-aligned feedback in under a minute.
@@ -195,7 +210,7 @@ export default async function RevisionNotesPlaceholder({ params }: { params: Pro
                 className="w-full"
                 render={<Link href="/marking" />}
               >
-                Submit essay
+                {await t('study.revnotes.slug.card.marking.cta')}
                 <ArrowRight className="size-3.5" />
               </Button>
             </CardContent>
@@ -207,10 +222,12 @@ export default async function RevisionNotesPlaceholder({ params }: { params: Pro
                 <div className="flex size-10 items-center justify-center rounded-xl bg-rose-500/10">
                   <Sparkles className="size-5 text-rose-700" />
                 </div>
-                <CardTitle className="text-heading-md font-heading">Your hub</CardTitle>
+                <CardTitle className="text-heading-md font-heading">
+                  {await t('study.revnotes.slug.card.hub.title')}
+                </CardTitle>
               </div>
               <CardDescription className="mt-2">
-                Personalised revision plan, mock papers, and progress for your exam board.
+                {await t('study.revnotes.slug.card.hub.desc')}
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -220,7 +237,7 @@ export default async function RevisionNotesPlaceholder({ params }: { params: Pro
                 className="w-full"
                 render={<Link href="/revision" />}
               >
-                Open your hub
+                {await t('study.revnotes.slug.card.hub.cta')}
                 <ArrowRight className="size-3.5" />
               </Button>
             </CardContent>

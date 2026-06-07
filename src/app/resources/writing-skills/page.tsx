@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
+import { tMany } from '@/lib/i18n/t'
 
 /* ─── Metadata ───────────────────────────────────────────────── */
 
@@ -20,11 +21,10 @@ export const metadata: Metadata = {
 
 const SKILL_AREAS = [
   {
-    title: 'Creative Writing',
-    subtitle: 'Descriptive & Narrative',
+    titleKey: 'study.skills.ws.card.creative.title',
+    subtitleKey: 'study.skills.ws.card.creative.subtitle',
+    descKey: 'study.skills.ws.card.creative.desc',
     href: '/resources/writing-skills/creative-writing',
-    description:
-      'Master descriptive and narrative writing with advanced techniques including sensory language, structural devices, compelling openings and endings, and vocabulary enhancement. Includes full annotated model responses.',
     topics: [
       'Descriptive writing',
       'Narrative writing',
@@ -54,11 +54,10 @@ const SKILL_AREAS = [
     hoverBg: 'hover:bg-primary/10',
   },
   {
-    title: 'Persuasive Writing',
-    subtitle: 'Articles, Letters & Speeches',
+    titleKey: 'study.skills.ws.card.persuasive.title',
+    subtitleKey: 'study.skills.ws.card.persuasive.subtitle',
+    descKey: 'study.skills.ws.card.persuasive.desc',
     href: '/resources/writing-skills/persuasive-writing',
-    description:
-      'Learn how to argue, persuade, and influence through writing. Covers AFOREST techniques, counter-arguments, tone and register, plus format conventions for articles, speeches, letters, and reports. Annotated models included.',
     topics: [
       'AFOREST techniques',
       'Counter-arguments',
@@ -87,11 +86,10 @@ const SKILL_AREAS = [
     hoverBg: 'hover:bg-accent/10',
   },
   {
-    title: 'Analytical Writing',
-    subtitle: 'Essays & Language Analysis',
+    titleKey: 'study.skills.ws.card.analytical.title',
+    subtitleKey: 'study.skills.ws.card.analytical.subtitle',
+    descKey: 'study.skills.ws.card.analytical.desc',
     href: '/resources/writing-skills/analytical-writing',
-    description:
-      'Write sophisticated analytical responses for literature and language papers. Master PEEL paragraphs, quotation embedding, language and structural analysis, evaluative vocabulary, and contextual linking. Full annotated essays included.',
     topics: [
       'PEEL paragraphs',
       'Embedding quotations',
@@ -121,11 +119,10 @@ const SKILL_AREAS = [
     hoverBg: 'hover:bg-secondary/10',
   },
   {
-    title: 'Grammar & Punctuation',
-    subtitle: 'SPaG Mastery',
+    titleKey: 'study.skills.ws.card.grammar.title',
+    subtitleKey: 'study.skills.ws.card.grammar.subtitle',
+    descKey: 'study.skills.ws.card.grammar.desc',
     href: '/resources/writing-skills/grammar-punctuation',
-    description:
-      'Elevate your technical accuracy and learn to use grammar and punctuation for deliberate effect. Covers sentence types, advanced punctuation, paragraphing, common errors, voice, and tense control.',
     topics: [
       'Sentence types',
       'Semicolons & colons',
@@ -191,24 +188,24 @@ const QUICK_TIPS = [
 
 const PRACTICE_LINKS = [
   {
-    label: 'Creative Writing Questions',
+    labelKey: 'study.skills.ws.practice.creative.label',
     href: '/practice?type=creative-writing',
-    description: 'Descriptive and narrative prompts with AI-powered feedback.',
+    descKey: 'study.skills.ws.practice.creative.desc',
   },
   {
-    label: 'Persuasive Writing Questions',
+    labelKey: 'study.skills.ws.practice.persuasive.label',
     href: '/practice?type=persuasive-writing',
-    description: 'Article, speech, and letter tasks to sharpen your argument.',
+    descKey: 'study.skills.ws.practice.persuasive.desc',
   },
   {
-    label: 'Language Analysis Questions',
+    labelKey: 'study.skills.ws.practice.language.label',
     href: '/practice?type=language-analysis',
-    description: 'Extract-based questions testing your analytical writing.',
+    descKey: 'study.skills.ws.practice.language.desc',
   },
   {
-    label: 'All Practice Questions',
+    labelKey: 'study.skills.ws.practice.all.label',
     href: '/practice',
-    description: 'Browse every question type across all exam boards.',
+    descKey: 'study.skills.ws.practice.all.desc',
   },
 ]
 
@@ -230,22 +227,91 @@ function ArrowRight() {
 
 /* ─── Page ───────────────────────────────────────────────────── */
 
-export default function WritingSkillsPage() {
+export default async function WritingSkillsPage() {
+  const [
+    heroEyebrow,
+    heroTitle,
+    heroSubtitle,
+    ctaExplore,
+    ctaPractice,
+    bcHome,
+    bcResources,
+    bcThis,
+    chooseTitle,
+    chooseSubtitle,
+    startLearning,
+    tipsTitle,
+    tipsSubtitle,
+    aiTitle,
+    aiBody,
+    aiCta,
+    practiceTitle,
+    practiceSubtitle,
+    startPractising,
+    whyTitle,
+    whyBoardTitle,
+    whyBoardBody,
+    whyExamplesTitle,
+    whyExamplesBody,
+    whyModelsTitle,
+    whyModelsBody,
+  ] = await tMany([
+    'study.skills.ws.hero.eyebrow',
+    'study.skills.ws.hero.title',
+    'study.skills.ws.hero.subtitle',
+    'study.skills.ws.hero.cta_explore',
+    'study.skills.ws.hero.cta_practice',
+    'study.skills.common.bc.home',
+    'study.skills.common.bc.resources',
+    'study.skills.ws.bc.this',
+    'study.skills.ws.choose.title',
+    'study.skills.ws.choose.subtitle',
+    'study.skills.common.start_learning',
+    'study.skills.ws.tips.title',
+    'study.skills.ws.tips.subtitle',
+    'study.skills.ws.ai.title',
+    'study.skills.ws.ai.body',
+    'study.skills.ws.ai.cta',
+    'study.skills.ws.practice.title',
+    'study.skills.ws.practice.subtitle',
+    'study.skills.ws.practice.start',
+    'study.skills.ws.why.title',
+    'study.skills.ws.why.board.title',
+    'study.skills.ws.why.board.body',
+    'study.skills.ws.why.examples.title',
+    'study.skills.ws.why.examples.body',
+    'study.skills.ws.why.models.title',
+    'study.skills.ws.why.models.body',
+  ])
+
+  const areaCopy = await tMany(SKILL_AREAS.flatMap((a) => [a.titleKey, a.subtitleKey, a.descKey]))
+  const areaText = SKILL_AREAS.map((a, i) => ({
+    href: a.href,
+    title: areaCopy[i * 3],
+    subtitle: areaCopy[i * 3 + 1],
+    desc: areaCopy[i * 3 + 2],
+  }))
+
+  const practiceCopy = await tMany(PRACTICE_LINKS.flatMap((l) => [l.labelKey, l.descKey]))
+  const practiceText = PRACTICE_LINKS.map((l, i) => ({
+    href: l.href,
+    label: practiceCopy[i * 2],
+    desc: practiceCopy[i * 2 + 1],
+  }))
+
   return (
     <>
       {/* ── Hero ───────────────────────────────────────────────── */}
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-20 sm:py-24">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-            Writing Skills Masterclass
+            {heroEyebrow}
           </p>
           <h1 className="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
-            Write Like a Grade&nbsp;9 Student
+            {heroTitle}
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            Board-agnostic writing guides that work for AQA, Edexcel, OCR, and Cambridge IGCSE.
-            Whether you are crafting a story, arguing a case, or analysing a text, these
-            masterclasses will transform your writing.
+            {heroSubtitle}
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
@@ -253,13 +319,13 @@ export default function WritingSkillsPage() {
               href="#skill-areas"
               className="rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-primary/90"
             >
-              Explore Writing Skills
+              {ctaExplore}
             </Link>
             <Link
               href="/practice"
               className="rounded-lg border px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-muted"
             >
-              Practice Questions
+              {ctaPractice}
             </Link>
           </div>
         </div>
@@ -270,17 +336,17 @@ export default function WritingSkillsPage() {
         <ol className="flex items-center gap-2 text-sm text-muted-foreground">
           <li>
             <Link href="/" className="transition-colors hover:text-foreground">
-              Home
+              {bcHome}
             </Link>
           </li>
           <li aria-hidden="true">/</li>
           <li>
             <Link href="/resources" className="transition-colors hover:text-foreground">
-              Resources
+              {bcResources}
             </Link>
           </li>
           <li aria-hidden="true">/</li>
-          <li className="font-medium text-foreground">Writing Skills</li>
+          <li className="font-medium text-foreground">{bcThis}</li>
         </ol>
       </nav>
 
@@ -289,14 +355,11 @@ export default function WritingSkillsPage() {
         id="skill-areas"
         className="mx-auto max-w-6xl scroll-mt-8 px-4 py-14 sm:px-6 lg:px-8"
       >
-        <h2 className="text-2xl font-bold text-foreground">Choose a Writing Skill</h2>
-        <p className="mt-2 max-w-2xl text-muted-foreground">
-          Each guide is a complete masterclass packed with techniques, examples, and full annotated
-          model responses.
-        </p>
+        <h2 className="text-2xl font-bold text-foreground">{chooseTitle}</h2>
+        <p className="mt-2 max-w-2xl text-muted-foreground">{chooseSubtitle}</p>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2">
-          {SKILL_AREAS.map((area) => (
+          {SKILL_AREAS.map((area, i) => (
             <Link
               key={area.href}
               href={area.href}
@@ -306,11 +369,13 @@ export default function WritingSkillsPage() {
                 <div className="shrink-0">{area.icon}</div>
                 <div className="flex-1">
                   <h3 className="text-lg font-bold text-foreground transition-colors group-hover:text-foreground">
-                    {area.title}
+                    {areaText[i].title}
                   </h3>
-                  <p className="text-sm font-medium text-muted-foreground">{area.subtitle}</p>
+                  <p className="text-sm font-medium text-muted-foreground">
+                    {areaText[i].subtitle}
+                  </p>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    {area.description}
+                    {areaText[i].desc}
                   </p>
                 </div>
               </div>
@@ -327,7 +392,7 @@ export default function WritingSkillsPage() {
               </div>
 
               <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors group-hover:text-foreground">
-                Start learning <ArrowRight />
+                {startLearning} <ArrowRight />
               </span>
             </Link>
           ))}
@@ -337,12 +402,8 @@ export default function WritingSkillsPage() {
       {/* ── 5 Universal Writing Tips ───────────────────────────── */}
       <section className="bg-muted px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-center text-2xl font-bold text-foreground">
-            5 Tips That Work in Every Exam
-          </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-center text-muted-foreground">
-            Universal writing strategies you can apply to any paper, any board, every time.
-          </p>
+          <h2 className="text-center text-2xl font-bold text-foreground">{tipsTitle}</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-center text-muted-foreground">{tipsSubtitle}</p>
 
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {QUICK_TIPS.map((item) => (
@@ -384,20 +445,15 @@ export default function WritingSkillsPage() {
 
             {/* Content */}
             <div className="flex-1">
-              <h2 className="text-xl font-bold text-foreground sm:text-2xl">
-                AI Feedback Built Into Every Answer
-              </h2>
+              <h2 className="text-xl font-bold text-foreground sm:text-2xl">{aiTitle}</h2>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                Every practice question comes with instant, personalised AI feedback. Submit your
-                response and receive detailed commentary on your vocabulary choices, sentence
-                structures, technique usage, and SPaG -- with actionable suggestions to push your
-                writing into the top band.
+                {aiBody}
               </p>
               <Link
                 href="/practice"
                 className="mt-4 inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-md transition hover:bg-primary"
               >
-                Try a Practice Question
+                {aiCta}
                 <svg
                   className="h-4 w-4"
                   fill="none"
@@ -420,14 +476,11 @@ export default function WritingSkillsPage() {
       {/* ── Practice Questions Links ───────────────────────────── */}
       <section className="bg-card px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold text-foreground">Practice Makes Perfect</h2>
-          <p className="mt-2 text-muted-foreground">
-            Put your skills to the test with exam-style questions and get instant AI feedback on
-            your responses.
-          </p>
+          <h2 className="text-2xl font-bold text-foreground">{practiceTitle}</h2>
+          <p className="mt-2 text-muted-foreground">{practiceSubtitle}</p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {PRACTICE_LINKS.map((link) => (
+            {practiceText.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -436,9 +489,9 @@ export default function WritingSkillsPage() {
                 <h3 className="font-bold text-foreground transition-colors group-hover:text-foreground">
                   {link.label}
                 </h3>
-                <p className="mt-1.5 text-sm text-muted-foreground">{link.description}</p>
+                <p className="mt-1.5 text-sm text-muted-foreground">{link.desc}</p>
                 <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-primary transition-colors group-hover:text-foreground">
-                  Start practising <ArrowRight />
+                  {startPractising} <ArrowRight />
                 </span>
               </Link>
             ))}
@@ -448,7 +501,7 @@ export default function WritingSkillsPage() {
 
       {/* ── Why These Guides Work ──────────────────────────────── */}
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-foreground">Why These Guides Work</h2>
+        <h2 className="text-2xl font-bold text-foreground">{whyTitle}</h2>
         <div className="mt-8 grid gap-6 sm:grid-cols-3">
           <div className="rounded-xl border border-border bg-card p-6">
             <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
@@ -466,11 +519,8 @@ export default function WritingSkillsPage() {
                 />
               </svg>
             </div>
-            <h3 className="mt-4 font-bold text-foreground">Board-Agnostic</h3>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Works for AQA, Edexcel, OCR, and Cambridge IGCSE. The skills transfer across every
-              specification because great writing is great writing.
-            </p>
+            <h3 className="mt-4 font-bold text-foreground">{whyBoardTitle}</h3>
+            <p className="mt-2 text-sm text-muted-foreground">{whyBoardBody}</p>
           </div>
 
           <div className="rounded-xl border border-border bg-card p-6">
@@ -489,11 +539,8 @@ export default function WritingSkillsPage() {
                 />
               </svg>
             </div>
-            <h3 className="mt-4 font-bold text-foreground">Real Examples</h3>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Every technique is illustrated with genuine examples you can model in your own work.
-              No vague advice -- just concrete, usable demonstrations.
-            </p>
+            <h3 className="mt-4 font-bold text-foreground">{whyExamplesTitle}</h3>
+            <p className="mt-2 text-sm text-muted-foreground">{whyExamplesBody}</p>
           </div>
 
           <div className="rounded-xl border border-border bg-card p-6">
@@ -512,11 +559,8 @@ export default function WritingSkillsPage() {
                 />
               </svg>
             </div>
-            <h3 className="mt-4 font-bold text-foreground">Full Model Responses</h3>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Every guide includes complete annotated model responses so you can see exactly how
-              top-grade writing looks from start to finish.
-            </p>
+            <h3 className="mt-4 font-bold text-foreground">{whyModelsTitle}</h3>
+            <p className="mt-2 text-sm text-muted-foreground">{whyModelsBody}</p>
           </div>
         </div>
       </section>

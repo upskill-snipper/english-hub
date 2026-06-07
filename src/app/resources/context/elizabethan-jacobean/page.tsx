@@ -1,7 +1,8 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import Link from "next/link";
+import { useState } from 'react'
+import Link from 'next/link'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ─── Expandable Section ─────────────────────────────────────── */
 
@@ -9,18 +10,18 @@ function Section({
   id,
   title,
   badge,
-  colour = "bg-primary",
+  colour = 'bg-primary',
   children,
   defaultOpen = false,
 }: {
-  id: string;
-  title: string;
-  badge?: string;
-  colour?: string;
-  children: React.ReactNode;
-  defaultOpen?: boolean;
+  id: string
+  title: string
+  badge?: string
+  colour?: string
+  children: React.ReactNode
+  defaultOpen?: boolean
 }) {
-  const [open, setOpen] = useState(defaultOpen);
+  const [open, setOpen] = useState(defaultOpen)
   return (
     <div className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
       <button
@@ -39,8 +40,11 @@ function Section({
           )}
         </div>
         <svg
-          className={`h-5 w-5 text-muted-foreground transition-transform ${open ? "rotate-180" : ""}`}
-          fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"
+          className={`h-5 w-5 text-muted-foreground transition-transform ${open ? 'rotate-180' : ''}`}
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={2}
+          stroke="currentColor"
         >
           <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
         </svg>
@@ -51,7 +55,7 @@ function Section({
         </div>
       )}
     </div>
-  );
+  )
 }
 
 /* ─── Context Example Box ────────────────────────────────────── */
@@ -61,9 +65,9 @@ function ContextExample({
   point,
   analysis,
 }: {
-  text: string;
-  point: string;
-  analysis: string;
+  text: string
+  point: string
+  analysis: string
 }) {
   return (
     <div className="rounded-lg border-l-4 border-accent bg-primary/10/40 p-4">
@@ -71,7 +75,7 @@ function ContextExample({
       <p className="mt-1 text-sm font-semibold text-foreground">{point}</p>
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
-  );
+  )
 }
 
 /* ─── Timeline Event ─────────────────────────────────────────── */
@@ -87,37 +91,56 @@ function TimelineEvent({ year, event }: { year: string; event: string }) {
       </div>
       <p className="pb-6 text-sm text-muted-foreground">{event}</p>
     </div>
-  );
+  )
 }
 
 /* ─── Page ───────────────────────────────────────────────────── */
 
 export default function ElizabethanJacobeanContextPage() {
+  const t = useT()
   return (
     <>
-
       {/* Breadcrumb */}
-      <nav className="mx-auto max-w-6xl px-4 pt-6 sm:px-6 lg:px-8" aria-label="Breadcrumb">
+      <nav
+        className="mx-auto max-w-6xl px-4 pt-6 sm:px-6 lg:px-8"
+        aria-label={t('study.shared.aria.breadcrumb')}
+      >
         <ol className="flex flex-wrap items-center gap-1.5 text-sm text-muted-foreground">
           {[
-            { href: "/", label: "Home" },
-            { href: "/resources", label: "Resources" },
-            { href: "/resources/context", label: "Context" },
+            { href: '/', label: t('study.shared.crumb.home') },
+            { href: '/resources', label: t('study.shared.crumb.resources') },
+            { href: '/resources/context', label: t('study.shared.crumb.context') },
           ].map((crumb, i) => (
             <li key={crumb.href} className="flex items-center gap-1.5">
               {i > 0 && (
-                <svg className="h-4 w-4 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg
+                  className="h-4 w-4 text-muted-foreground"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
               )}
-              <Link href={crumb.href} className="hover:text-primary transition-colors">{crumb.label}</Link>
+              <Link href={crumb.href} className="hover:text-primary transition-colors">
+                {crumb.label}
+              </Link>
             </li>
           ))}
           <li className="flex items-center gap-1.5">
-            <svg className="h-4 w-4 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <svg
+              className="h-4 w-4 text-muted-foreground"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
-            <span className="font-medium text-primary">Elizabethan &amp; Jacobean</span>
+            <span className="font-medium text-primary">
+              {t('study.context.era.elizabethan.crumb')}
+            </span>
           </li>
         </ol>
       </nav>
@@ -129,17 +152,21 @@ export default function ElizabethanJacobeanContextPage() {
             <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
               1558 -- 1625
             </span>
-            <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Macbeth</span>
-            <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Romeo &amp; Juliet</span>
-            <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">The Tempest</span>
+            <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+              Macbeth
+            </span>
+            <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+              Romeo &amp; Juliet
+            </span>
+            <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+              The Tempest
+            </span>
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Elizabethan &amp; Jacobean Context
+            {t('study.context.era.elizabethan.title')}
           </h1>
           <p className="mt-3 max-w-3xl text-lg text-muted-foreground leading-relaxed">
-            Shakespeare wrote during two monarchies: Elizabeth I and James I. Understanding
-            the beliefs, fears, and power structures of this period is essential for
-            unlocking the deeper meanings of his plays.
+            {t('study.context.era.elizabethan.intro')}
           </p>
         </div>
 
@@ -147,20 +174,53 @@ export default function ElizabethanJacobeanContextPage() {
         <Section id="timeline" title="Key Timeline" badge="1558-1625" defaultOpen>
           <div className="grid gap-0 sm:grid-cols-2">
             <div>
-              <TimelineEvent year="1558" event="Elizabeth I becomes Queen. The Elizabethan era begins -- a golden age of exploration and culture." />
-              <TimelineEvent year="1564" event="William Shakespeare is born in Stratford-upon-Avon." />
-              <TimelineEvent year="1567" event="The Red Lion, one of London's first purpose-built playhouses, opens." />
-              <TimelineEvent year="1587" event="Mary Queen of Scots is executed for plotting against Elizabeth." />
-              <TimelineEvent year="1592" event="Shakespeare is established in London as an actor and playwright." />
+              <TimelineEvent
+                year="1558"
+                event="Elizabeth I becomes Queen. The Elizabethan era begins -- a golden age of exploration and culture."
+              />
+              <TimelineEvent
+                year="1564"
+                event="William Shakespeare is born in Stratford-upon-Avon."
+              />
+              <TimelineEvent
+                year="1567"
+                event="The Red Lion, one of London's first purpose-built playhouses, opens."
+              />
+              <TimelineEvent
+                year="1587"
+                event="Mary Queen of Scots is executed for plotting against Elizabeth."
+              />
+              <TimelineEvent
+                year="1592"
+                event="Shakespeare is established in London as an actor and playwright."
+              />
               <TimelineEvent year="1594" event="Romeo and Juliet is written (approximate date)." />
             </div>
             <div>
-              <TimelineEvent year="1599" event="The Globe Theatre is built on the South Bank. Shakespeare is a shareholder." />
-              <TimelineEvent year="1603" event="Elizabeth I dies. James VI of Scotland becomes James I of England." />
-              <TimelineEvent year="1604" event="James I passes the Witchcraft Act, making it a capital offence." />
-              <TimelineEvent year="1605" event="The Gunpowder Plot: Catholic conspirators attempt to blow up Parliament." />
-              <TimelineEvent year="1606" event="Macbeth is first performed, likely at Hampton Court for King James." />
-              <TimelineEvent year="1611" event="The Tempest is written -- one of Shakespeare's last plays." />
+              <TimelineEvent
+                year="1599"
+                event="The Globe Theatre is built on the South Bank. Shakespeare is a shareholder."
+              />
+              <TimelineEvent
+                year="1603"
+                event="Elizabeth I dies. James VI of Scotland becomes James I of England."
+              />
+              <TimelineEvent
+                year="1604"
+                event="James I passes the Witchcraft Act, making it a capital offence."
+              />
+              <TimelineEvent
+                year="1605"
+                event="The Gunpowder Plot: Catholic conspirators attempt to blow up Parliament."
+              />
+              <TimelineEvent
+                year="1606"
+                event="Macbeth is first performed, likely at Hampton Court for King James."
+              />
+              <TimelineEvent
+                year="1611"
+                event="The Tempest is written -- one of Shakespeare's last plays."
+              />
             </div>
           </div>
         </Section>
@@ -170,20 +230,22 @@ export default function ElizabethanJacobeanContextPage() {
           <Section id="chain" title="The Great Chain of Being" colour="bg-primary">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
-                Elizabethans and Jacobeans believed in a <strong>divinely ordained hierarchy</strong> that
-                placed everything in the universe in a fixed order: God at the top, followed by
-                angels, then the monarch, nobles, gentlemen, commoners, animals, plants, and minerals.
+                Elizabethans and Jacobeans believed in a{' '}
+                <strong>divinely ordained hierarchy</strong> that placed everything in the universe
+                in a fixed order: God at the top, followed by angels, then the monarch, nobles,
+                gentlemen, commoners, animals, plants, and minerals.
               </p>
               <p>
                 This was not just a political idea -- it was a <strong>cosmological belief</strong>.
                 Disrupting the Chain was believed to cause chaos throughout nature. When a king was
-                murdered, the natural world would respond with storms, darkness, and unnatural events.
+                murdered, the natural world would respond with storms, darkness, and unnatural
+                events.
               </p>
               <p>
-                In <strong>Macbeth</strong>, the murder of King Duncan is immediately followed by unnatural
-                occurrences: &ldquo;The night has been unruly&rdquo;, horses eat each other, and
-                darkness covers the land. Shakespeare uses this to show that Macbeth has violated
-                the natural order, bringing chaos upon Scotland.
+                In <strong>Macbeth</strong>, the murder of King Duncan is immediately followed by
+                unnatural occurrences: &ldquo;The night has been unruly&rdquo;, horses eat each
+                other, and darkness covers the land. Shakespeare uses this to show that Macbeth has
+                violated the natural order, bringing chaos upon Scotland.
               </p>
             </div>
           </Section>
@@ -192,21 +254,21 @@ export default function ElizabethanJacobeanContextPage() {
           <Section id="divine-right" title="The Divine Right of Kings" colour="bg-primary">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
-                The <strong>Divine Right of Kings</strong> was the belief that monarchs were chosen by
-                God and answerable only to God. Challenging or killing a king was therefore not
+                The <strong>Divine Right of Kings</strong> was the belief that monarchs were chosen
+                by God and answerable only to God. Challenging or killing a king was therefore not
                 just treason but <strong>sacrilege</strong> -- a sin against God himself.
               </p>
               <p>
                 James I was a passionate advocate of Divine Right. He wrote a treatise called
-                <em> The True Law of Free Monarchies</em> (1598) arguing that kings were &ldquo;God&apos;s
-                lieutenants upon earth.&rdquo; This made him particularly interested in stories about
-                regicide.
+                <em> The True Law of Free Monarchies</em> (1598) arguing that kings were
+                &ldquo;God&apos;s lieutenants upon earth.&rdquo; This made him particularly
+                interested in stories about regicide.
               </p>
               <p>
-                <strong>Macbeth</strong> dramatises the horror of regicide. Duncan is presented as a saintly,
-                divinely appointed king -- &ldquo;his silver skin laced with his golden blood.&rdquo;
-                Shakespeare makes clear that killing him brings damnation. This would have
-                powerfully reinforced James I&apos;s political message.
+                <strong>Macbeth</strong> dramatises the horror of regicide. Duncan is presented as a
+                saintly, divinely appointed king -- &ldquo;his silver skin laced with his golden
+                blood.&rdquo; Shakespeare makes clear that killing him brings damnation. This would
+                have powerfully reinforced James I&apos;s political message.
               </p>
             </div>
           </Section>
@@ -215,9 +277,10 @@ export default function ElizabethanJacobeanContextPage() {
           <Section id="witchcraft" title="Attitudes to Witchcraft" colour="bg-muted">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
-                Belief in witchcraft was <strong>widespread and deadly serious</strong> in this period.
-                Thousands of people (mostly women) were accused, tried, and executed for witchcraft
-                across Europe. In England and Scotland, witch trials peaked between 1560 and 1640.
+                Belief in witchcraft was <strong>widespread and deadly serious</strong> in this
+                period. Thousands of people (mostly women) were accused, tried, and executed for
+                witchcraft across Europe. In England and Scotland, witch trials peaked between 1560
+                and 1640.
               </p>
               <p>
                 <strong>James I</strong> had a personal obsession with witchcraft. He wrote
@@ -226,11 +289,12 @@ export default function ElizabethanJacobeanContextPage() {
                 North Berwick trials (1590), where women were accused of trying to sink his ship.
               </p>
               <p>
-                In <strong>Macbeth</strong>, the Witches (or &ldquo;Weird Sisters&rdquo;) are ambiguous figures.
-                Shakespeare does not make clear whether they control Macbeth or merely reveal his
-                existing desires. A Jacobean audience would have found them genuinely terrifying --
-                not the Halloween caricatures we might imagine today. Their presence flatters
-                James I&apos;s interest in the supernatural while raising questions about fate and free will.
+                In <strong>Macbeth</strong>, the Witches (or &ldquo;Weird Sisters&rdquo;) are
+                ambiguous figures. Shakespeare does not make clear whether they control Macbeth or
+                merely reveal his existing desires. A Jacobean audience would have found them
+                genuinely terrifying -- not the Halloween caricatures we might imagine today. Their
+                presence flatters James I&apos;s interest in the supernatural while raising
+                questions about fate and free will.
               </p>
             </div>
           </Section>
@@ -240,26 +304,27 @@ export default function ElizabethanJacobeanContextPage() {
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 Shakespeare&apos;s theatre was radically different from modern performance. The
-                <strong> Globe Theatre</strong> was an open-air, roughly circular building. Performances
-                took place in the afternoon using natural light. The audience stood as
+                <strong> Globe Theatre</strong> was an open-air, roughly circular building.
+                Performances took place in the afternoon using natural light. The audience stood as
                 &ldquo;groundlings&rdquo; in the pit or sat in tiered galleries.
               </p>
               <p>
                 <strong>All roles were played by men and boys.</strong> Female characters -- Juliet,
-                Lady Macbeth, Miranda -- were performed by boy actors. This adds layers of irony
-                to scenes about gender and disguise.
+                Lady Macbeth, Miranda -- were performed by boy actors. This adds layers of irony to
+                scenes about gender and disguise.
               </p>
               <p>
-                Theatre was entertainment for <strong>all social classes</strong>. Groundlings paid a penny
-                (a working-class wage) while wealthier audience members sat in the galleries.
-                Shakespeare wrote for this mixed audience, blending crude humour with sophisticated
-                poetry, physical comedy with philosophical depth.
+                Theatre was entertainment for <strong>all social classes</strong>. Groundlings paid
+                a penny (a working-class wage) while wealthier audience members sat in the
+                galleries. Shakespeare wrote for this mixed audience, blending crude humour with
+                sophisticated poetry, physical comedy with philosophical depth.
               </p>
               <p>
-                Key conventions included <strong>soliloquies</strong> (characters speaking their private
-                thoughts aloud), <strong>asides</strong> (brief comments to the audience), and
-                <strong> dramatic irony</strong> (where the audience knows more than the characters).
-                There was minimal scenery; language created the setting.
+                Key conventions included <strong>soliloquies</strong> (characters speaking their
+                private thoughts aloud), <strong>asides</strong> (brief comments to the audience),
+                and
+                <strong> dramatic irony</strong> (where the audience knows more than the
+                characters). There was minimal scenery; language created the setting.
               </p>
             </div>
           </Section>
@@ -269,27 +334,29 @@ export default function ElizabethanJacobeanContextPage() {
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 Women in Elizabethan and Jacobean England had very limited legal rights. They were
-                considered the <strong>property</strong> of their father until marriage, at which point
-                they became the property of their husband. The concept of
-                <strong> &ldquo;coverture&rdquo;</strong> meant a married woman had no independent legal identity.
+                considered the <strong>property</strong> of their father until marriage, at which
+                point they became the property of their husband. The concept of
+                <strong> &ldquo;coverture&rdquo;</strong> meant a married woman had no independent
+                legal identity.
               </p>
               <p>
-                <strong>Marriage was a financial and political arrangement</strong>, especially among
-                the upper classes. Love was a bonus, not a requirement. Fathers chose husbands for
-                their daughters based on wealth, status, and alliance. Disobedience was scandalous.
+                <strong>Marriage was a financial and political arrangement</strong>, especially
+                among the upper classes. Love was a bonus, not a requirement. Fathers chose husbands
+                for their daughters based on wealth, status, and alliance. Disobedience was
+                scandalous.
               </p>
               <p>
-                In <strong>Romeo and Juliet</strong>, Juliet&apos;s refusal to marry Paris is an act of
-                extraordinary defiance. Lord Capulet&apos;s fury -- &ldquo;hang, beg, starve, die in the
-                streets&rdquo; -- reflects the real consequences of disobedience. The play dramatises the
-                tension between patriarchal authority and individual desire.
+                In <strong>Romeo and Juliet</strong>, Juliet&apos;s refusal to marry Paris is an act
+                of extraordinary defiance. Lord Capulet&apos;s fury -- &ldquo;hang, beg, starve, die
+                in the streets&rdquo; -- reflects the real consequences of disobedience. The play
+                dramatises the tension between patriarchal authority and individual desire.
               </p>
               <p>
-                <strong>Lady Macbeth</strong> transgresses gender norms by urging murder and questioning
-                her husband&apos;s masculinity. Her invocation to &ldquo;unsex me here&rdquo; reveals
-                the extent to which ambition and violence were seen as exclusively male traits.
-                Her eventual madness and suicide can be read as the &ldquo;punishment&rdquo; for
-                stepping outside her gendered role.
+                <strong>Lady Macbeth</strong> transgresses gender norms by urging murder and
+                questioning her husband&apos;s masculinity. Her invocation to &ldquo;unsex me
+                here&rdquo; reveals the extent to which ambition and violence were seen as
+                exclusively male traits. Her eventual madness and suicide can be read as the
+                &ldquo;punishment&rdquo; for stepping outside her gendered role.
               </p>
             </div>
           </Section>
@@ -299,9 +366,9 @@ export default function ElizabethanJacobeanContextPage() {
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 England underwent a seismic religious upheaval in the sixteenth century. Henry VIII
-                broke from the Catholic Church in 1534, establishing the <strong>Church of England</strong>.
-                For the next century, England swung between Protestantism and Catholicism depending
-                on the monarch.
+                broke from the Catholic Church in 1534, establishing the{' '}
+                <strong>Church of England</strong>. For the next century, England swung between
+                Protestantism and Catholicism depending on the monarch.
               </p>
               <p>
                 By Elizabeth I&apos;s reign, England was officially Protestant, but many Catholics
@@ -309,16 +376,17 @@ export default function ElizabethanJacobeanContextPage() {
                 Catholics faced fines, imprisonment, and execution if suspected of plotting.
               </p>
               <p>
-                <strong>James I</strong> faced the <strong>Gunpowder Plot (1605)</strong>, in which Catholic
-                conspirators attempted to blow up Parliament. This deepened anti-Catholic sentiment
-                and made loyalty to the Protestant crown a matter of national security.
+                <strong>James I</strong> faced the <strong>Gunpowder Plot (1605)</strong>, in which
+                Catholic conspirators attempted to blow up Parliament. This deepened anti-Catholic
+                sentiment and made loyalty to the Protestant crown a matter of national security.
               </p>
               <p>
-                Religious tension permeates Shakespeare&apos;s plays. In <strong>Romeo and Juliet</strong>,
-                the religious imagery -- &ldquo;holy shrine,&rdquo; &ldquo;saints,&rdquo; &ldquo;pilgrims&rdquo; --
-                reflects the Catholic context of Verona, while Friar Lawrence&apos;s failed intervention
-                can be read as a critique of religious meddling. In <strong>Macbeth</strong>, the language
-                of damnation and salvation reflects a deeply Christian worldview.
+                Religious tension permeates Shakespeare&apos;s plays. In{' '}
+                <strong>Romeo and Juliet</strong>, the religious imagery -- &ldquo;holy
+                shrine,&rdquo; &ldquo;saints,&rdquo; &ldquo;pilgrims&rdquo; -- reflects the Catholic
+                context of Verona, while Friar Lawrence&apos;s failed intervention can be read as a
+                critique of religious meddling. In <strong>Macbeth</strong>, the language of
+                damnation and salvation reflects a deeply Christian worldview.
               </p>
             </div>
           </Section>
@@ -327,12 +395,36 @@ export default function ElizabethanJacobeanContextPage() {
           <Section id="figures" title="Key Figures" colour="bg-primary">
             <div className="grid gap-4 sm:grid-cols-2">
               {[
-                { name: "Elizabeth I (r. 1558-1603)", detail: "The 'Virgin Queen.' Her long, stable reign saw a flowering of English culture, exploration, and national confidence." },
-                { name: "James I (r. 1603-1625)", detail: "James VI of Scotland became James I of England, uniting the crowns. Patron of Shakespeare's company (renamed the King's Men). Obsessed with witchcraft and Divine Right." },
-                { name: "William Shakespeare", detail: "Playwright, poet, actor, and shareholder in the Globe. Wrote approximately 37 plays between c.1590 and 1613." },
-                { name: "Christopher Marlowe", detail: "Shakespeare's great rival. Pioneered blank verse in English drama before his mysterious murder in 1593." },
-                { name: "Guy Fawkes", detail: "The most famous of the Gunpowder Plotters (1605). The plot intensified anti-Catholic sentiment and fears of treason." },
-                { name: "Mary Queen of Scots", detail: "Catholic cousin of Elizabeth I. Executed in 1587 for plotting to overthrow Elizabeth. Her son became James I." },
+                {
+                  name: 'Elizabeth I (r. 1558-1603)',
+                  detail:
+                    "The 'Virgin Queen.' Her long, stable reign saw a flowering of English culture, exploration, and national confidence.",
+                },
+                {
+                  name: 'James I (r. 1603-1625)',
+                  detail:
+                    "James VI of Scotland became James I of England, uniting the crowns. Patron of Shakespeare's company (renamed the King's Men). Obsessed with witchcraft and Divine Right.",
+                },
+                {
+                  name: 'William Shakespeare',
+                  detail:
+                    'Playwright, poet, actor, and shareholder in the Globe. Wrote approximately 37 plays between c.1590 and 1613.',
+                },
+                {
+                  name: 'Christopher Marlowe',
+                  detail:
+                    "Shakespeare's great rival. Pioneered blank verse in English drama before his mysterious murder in 1593.",
+                },
+                {
+                  name: 'Guy Fawkes',
+                  detail:
+                    'The most famous of the Gunpowder Plotters (1605). The plot intensified anti-Catholic sentiment and fears of treason.',
+                },
+                {
+                  name: 'Mary Queen of Scots',
+                  detail:
+                    'Catholic cousin of Elizabeth I. Executed in 1587 for plotting to overthrow Elizabeth. Her son became James I.',
+                },
               ].map((fig) => (
                 <div key={fig.name} className="rounded-lg bg-muted p-4">
                   <h3 className="text-sm font-bold text-foreground">{fig.name}</h3>
@@ -343,7 +435,12 @@ export default function ElizabethanJacobeanContextPage() {
           </Section>
 
           {/* Linking Context to Texts */}
-          <Section id="linking" title="How to Link Context to Your Texts" badge="Exam skill" colour="bg-accent">
+          <Section
+            id="linking"
+            title="How to Link Context to Your Texts"
+            badge="Exam skill"
+            colour="bg-accent"
+          >
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 The best candidates <strong>embed context into their analysis</strong> rather than
@@ -387,19 +484,30 @@ export default function ElizabethanJacobeanContextPage() {
                 <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <span>&ldquo;A Jacobean/Elizabethan audience would have understood this as...&rdquo;</span>
+                    <span>
+                      &ldquo;A Jacobean/Elizabethan audience would have understood this as...&rdquo;
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <span>&ldquo;Shakespeare uses [character/event] to reflect the contemporary belief that...&rdquo;</span>
+                    <span>
+                      &ldquo;Shakespeare uses [character/event] to reflect the contemporary belief
+                      that...&rdquo;
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <span>&ldquo;This would have been particularly significant for James I, who...&rdquo;</span>
+                    <span>
+                      &ldquo;This would have been particularly significant for James I,
+                      who...&rdquo;
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <span>&ldquo;Perhaps Shakespeare intended to challenge/reinforce the prevailing attitude that...&rdquo;</span>
+                    <span>
+                      &ldquo;Perhaps Shakespeare intended to challenge/reinforce the prevailing
+                      attitude that...&rdquo;
+                    </span>
                   </li>
                 </ul>
               </div>
@@ -413,23 +521,42 @@ export default function ElizabethanJacobeanContextPage() {
             href="/resources/context/victorian"
             className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-3 text-sm font-semibold text-muted-foreground shadow-md transition hover:bg-muted"
           >
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+            <svg
+              className="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+              />
             </svg>
-            Victorian Era
+            {t('study.context.era.nav.victorian')}
           </Link>
           <Link
             href="/resources/context/twentieth-century"
             className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-primary/90"
           >
-            Twentieth Century
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            {t('study.context.era.nav.twentieth')}
+            <svg
+              className="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+              />
             </svg>
           </Link>
         </div>
       </div>
-
     </>
-  );
+  )
 }

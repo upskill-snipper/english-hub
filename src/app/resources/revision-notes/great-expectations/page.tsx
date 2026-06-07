@@ -2,6 +2,16 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import { useT } from '@/lib/i18n/use-t'
+
+const NAV_CHIPS: { id: string; labelKey: string }[] = [
+  { id: 'plot-summary', labelKey: 'study.revnotes.common.nav.plot_summary_short' },
+  { id: 'characters', labelKey: 'study.revnotes.common.nav.characters' },
+  { id: 'themes', labelKey: 'study.revnotes.common.nav.themes' },
+  { id: 'key-quotes', labelKey: 'study.revnotes.common.nav.key_quotes' },
+  { id: 'context', labelKey: 'study.revnotes.common.nav.context' },
+  { id: 'essay-planning', labelKey: 'study.revnotes.common.nav.essay_planning' },
+]
 
 /* ─── Expandable section component ──────────────────────────── */
 
@@ -456,39 +466,40 @@ const essayQuestions = [
 /* ─── Page Component ─────────────────────────────────────────── */
 
 export default function GreatExpectationsStudyGuide() {
+  const t = useT()
   return (
     <div className="space-y-6">
       {/* Hero */}
       <div className="rounded-xl border bg-gradient-to-b from-primary/[0.06] to-transparent px-6 py-10 sm:py-14">
         <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-          GCSE English Literature &mdash; Revision Notes
+          {t('study.revnotes.common.eyebrow')}
         </p>
         <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-          Great Expectations &mdash; Complete Study Guide
+          Great Expectations &mdash; {t('study.revnotes.common.suffix.study_guide')}
         </h1>
         <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
-          Charles Dickens&rsquo;s 1861 Bildungsroman. Three-stage plot summary, character analysis,
-          themes, 25+ key quotations with analysis, Victorian context, and essay planning.
+          {t('study.revnotes.great-expectations.lead')}
         </p>
       </div>
 
       {/* Quick nav */}
-      <nav className="flex flex-wrap gap-2 text-sm" aria-label="Page sections">
-        {['Plot Summary', 'Characters', 'Themes', 'Key Quotes', 'Context', 'Essay Planning'].map(
-          (s) => (
-            <a
-              key={s}
-              href={`#${s.toLowerCase().replace(/\s+/g, '-')}`}
-              className="rounded-full border border-primary/30 px-3 py-1 text-foreground transition hover:bg-primary/10"
-            >
-              {s}
-            </a>
-          ),
-        )}
+      <nav
+        className="flex flex-wrap gap-2 text-sm"
+        aria-label={t('study.revnotes.common.page_sections_aria')}
+      >
+        {NAV_CHIPS.map((c) => (
+          <a
+            key={c.id}
+            href={`#${c.id}`}
+            className="rounded-full border border-primary/30 px-3 py-1 text-foreground transition hover:bg-primary/10"
+          >
+            {t(c.labelKey)}
+          </a>
+        ))}
       </nav>
 
       {/* Plot Summary */}
-      <Section id="plot-summary" title="Three-Stage Plot Summary" defaultOpen>
+      <Section id="plot-summary" title={t('study.revnotes.common.three_stage_plot')} defaultOpen>
         <p className="mb-4 text-sm text-muted-foreground">
           Dickens structured the novel in three &lsquo;stages&rsquo; corresponding to the three
           volumes of its original publication. Each stage marks a phase of Pip&rsquo;s moral and
@@ -506,7 +517,7 @@ export default function GreatExpectationsStudyGuide() {
       </Section>
 
       {/* Characters */}
-      <Section id="characters" title="Character Analysis">
+      <Section id="characters" title={t('study.revnotes.common.character_analysis')}>
         <div className="space-y-5">
           {characters.map((c) => (
             <div key={c.name} className="rounded-lg border border-border bg-muted p-4">
@@ -523,7 +534,7 @@ export default function GreatExpectationsStudyGuide() {
       </Section>
 
       {/* Themes */}
-      <Section id="themes" title="Key Themes">
+      <Section id="themes" title={t('study.revnotes.common.key_themes')}>
         <div className="grid gap-4 sm:grid-cols-2">
           {themes.map((t) => (
             <div key={t.name} className="rounded-lg border border-border bg-muted p-4">
@@ -535,7 +546,10 @@ export default function GreatExpectationsStudyGuide() {
       </Section>
 
       {/* Key Quotes */}
-      <Section id="key-quotes" title={`Key Quotations (${keyQuotes.length})`}>
+      <Section
+        id="key-quotes"
+        title={`${t('study.revnotes.common.key_quotations')} (${keyQuotes.length})`}
+      >
         <p className="mb-4 text-sm text-muted-foreground">
           Each quotation includes detailed analysis suitable for GCSE-level essay responses.
         </p>
@@ -556,7 +570,7 @@ export default function GreatExpectationsStudyGuide() {
       </Section>
 
       {/* Context */}
-      <Section id="context" title="Historical & Literary Context">
+      <Section id="context" title={t('study.revnotes.common.context_hist_lit_amp')}>
         <div className="space-y-4">
           {contextSections.map((c) => (
             <div key={c.title} className="rounded-lg border border-border bg-muted p-4">
@@ -568,13 +582,15 @@ export default function GreatExpectationsStudyGuide() {
       </Section>
 
       {/* Essay Planning */}
-      <Section id="essay-planning" title="Essay Planning for Common Questions">
+      <Section id="essay-planning" title={t('study.revnotes.common.essay_planning_common')}>
         <div className="space-y-5">
           {essayQuestions.map((eq, i) => (
             <div key={i} className="rounded-lg border border-border bg-muted p-4">
               <p className="font-medium text-foreground">{eq.question}</p>
               <div className="mt-3 rounded bg-primary/5 p-3">
-                <p className="text-xs font-semibold text-foreground">Key points to cover:</p>
+                <p className="text-xs font-semibold text-foreground">
+                  {t('study.revnotes.common.key_points_to_cover')}
+                </p>
                 <ul className="mt-1 space-y-1 text-sm text-muted-foreground">
                   {eq.points.map((p, j) => (
                     <li key={j}>&bull; {p}</li>
@@ -592,7 +608,7 @@ export default function GreatExpectationsStudyGuide() {
           href="/resources/revision-notes"
           className="font-medium text-foreground underline underline-offset-2 hover:text-primary"
         >
-          &larr; Back to Revision Notes
+          &larr; {t('study.revnotes.common.back')}
         </Link>
       </div>
 

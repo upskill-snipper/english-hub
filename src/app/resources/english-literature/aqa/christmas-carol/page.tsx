@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -466,7 +467,7 @@ const essayQuestions = [
 
 /* ─── Component ──────────────────────────────────────────────── */
 
-export default function ChristmasCarolPage() {
+export default async function ChristmasCarolPage() {
   return (
     <>
       {/* Hero */}
@@ -691,7 +692,7 @@ export default function ChristmasCarolPage() {
           href="/resources/english-literature/aqa"
           className="text-sm font-medium text-accent hover:text-primary transition"
         >
-          &larr; Back to AQA English Literature
+          &larr; {await t('study.lit.back.aqa')}
         </Link>
       </section>
 

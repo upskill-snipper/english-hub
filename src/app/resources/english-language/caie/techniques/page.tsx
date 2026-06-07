@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
+import { t } from '@/lib/i18n/t'
 
 /* ─── Metadata ───────────────────────────────────────────────── */
 
@@ -394,7 +395,7 @@ const CATEGORY_DISPLAY: Record<Technique['category'], string> = {
 
 /* ─── Page component ─────────────────────────────────────────── */
 
-export default function TechniquesPage() {
+export default async function TechniquesPage() {
   return (
     <>
       {/* ── Hero ────────────────────────────────────────────────── */}
@@ -414,7 +415,7 @@ export default function TechniquesPage() {
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
-            Back to CAIE English Language
+            {await t('study.lang.caie.back')}
           </Link>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Language Techniques

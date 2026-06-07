@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ─── Expandable Section ─────────────────────────────────────── */
 
@@ -60,15 +61,19 @@ function Section({
 /* ─── Page ───────────────────────────────────────────────────── */
 
 export default function RomanticContextPage() {
+  const t = useT()
   return (
     <>
       {/* Breadcrumb */}
-      <nav className="mx-auto max-w-6xl px-4 pt-6 sm:px-6 lg:px-8" aria-label="Breadcrumb">
+      <nav
+        className="mx-auto max-w-6xl px-4 pt-6 sm:px-6 lg:px-8"
+        aria-label={t('study.shared.aria.breadcrumb')}
+      >
         <ol className="flex flex-wrap items-center gap-1.5 text-sm text-muted-foreground">
           {[
-            { href: '/', label: 'Home' },
-            { href: '/resources', label: 'Resources' },
-            { href: '/resources/context', label: 'Context' },
+            { href: '/', label: t('study.shared.crumb.home') },
+            { href: '/resources', label: t('study.shared.crumb.resources') },
+            { href: '/resources/context', label: t('study.shared.crumb.context') },
           ].map((crumb, i) => (
             <li key={crumb.href} className="flex items-center gap-1.5">
               {i > 0 && (
@@ -97,7 +102,9 @@ export default function RomanticContextPage() {
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
-            <span className="font-medium text-primary">Romantic Era</span>
+            <span className="font-medium text-primary">
+              {t('study.context.era.romantic.crumb')}
+            </span>
           </li>
         </ol>
       </nav>
@@ -114,13 +121,10 @@ export default function RomanticContextPage() {
             </span>
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Romantic Era Context
+            {t('study.context.era.romantic.title')}
           </h1>
           <p className="mt-3 max-w-3xl text-lg text-muted-foreground leading-relaxed">
-            The Romantic movement was a passionate reaction against industrialisation, rationalism,
-            and social conformity. Understanding Romantic ideals is key to analysing the poetry
-            anthology, as many poems draw on Romantic traditions of nature, emotion, and individual
-            freedom.
+            {t('study.context.era.romantic.intro')}
           </p>
         </div>
 
@@ -481,13 +485,13 @@ export default function RomanticContextPage() {
                 d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
               />
             </svg>
-            Twentieth Century
+            {t('study.context.era.nav.twentieth')}
           </Link>
           <Link
             href="/resources/context"
             className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-primary/90"
           >
-            All Eras
+            {t('study.context.era.nav.all_eras')}
             <svg
               className="h-4 w-4"
               fill="none"
