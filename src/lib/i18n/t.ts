@@ -28,7 +28,9 @@ async function resolveLocale(): Promise<Locale> {
   try {
     const h = await headers()
     const v = h.get('x-lang')
-    return v === 'ar' ? 'ar' : 'en'
+    if (v === 'ar') return 'ar'
+    if (v === 'es') return 'es'
+    return 'en'
   } catch {
     // headers() throws when called outside a request scope (e.g.
     // at build time on fully static pages). Default to en - those

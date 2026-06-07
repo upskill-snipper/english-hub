@@ -26,19 +26,21 @@ import { useT } from '@/lib/i18n/use-t'
 const COOKIE = 'eh-lang'
 const ONE_YEAR = 60 * 60 * 24 * 365
 
-type Mode = 'en' | 'ar'
+type Mode = 'en' | 'ar' | 'es'
 
 const MODE_DEFS: { value: Mode; label: string; tooltipKey: string }[] = [
   { value: 'en', label: 'EN', tooltipKey: 'lang.en.tooltip' },
   { value: 'ar', label: 'العربية', tooltipKey: 'lang.ar.tooltip' },
+  { value: 'es', label: 'Español', tooltipKey: 'lang.es.tooltip' },
 ]
 
 function readCookie(): Mode {
   if (typeof document === 'undefined') return 'en'
   // Accept legacy `bi` values and coerce to `en` so old sessions upgrade cleanly.
-  const match = document.cookie.match(/(?:^|;\s*)eh-lang=(en|bi|ar)\b/)
+  const match = document.cookie.match(/(?:^|;\s*)eh-lang=(en|bi|ar|es)\b/)
   const raw = match?.[1]
   if (raw === 'ar') return 'ar'
+  if (raw === 'es') return 'es'
   return 'en'
 }
 

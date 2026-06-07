@@ -89,7 +89,7 @@ export type TextGuideData = {
   historicalContextAr?: string[]
 }
 
-async function readServerLocale(): Promise<'en' | 'ar'> {
+async function readServerLocale(): Promise<'en' | 'ar' | 'es'> {
   try {
     const h = await headers()
     return h.get('x-lang') === 'ar' ? 'ar' : 'en'

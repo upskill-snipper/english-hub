@@ -22,326 +22,400 @@
  * `dictionary.ts` from this shard.
  */
 
-export const MKT_TEACHERS_DICTIONARY: Record<string, { en: string; ar: string }> = {
+export const MKT_TEACHERS_DICTIONARY: Record<string, { en: string; ar: string; es?: string }> = {
   // ── Metadata (title + description) ─────────────────────────────────
   'mkt.teachers.meta.title': {
     en: 'For Teachers - reduce workload, support every student',
     ar: 'للمعلّمين - قلّل الضغط وادعم كل طالب',
+    es: 'Para profesores: reduce la carga de trabajo, apoya a cada estudiante',
   },
   'mkt.teachers.meta.description': {
     en: 'AI-assisted feedback, homework setting, worksheet building and clearer student insight - designed to support teacher judgement and reduce repetitive workload.',
     ar: 'تغذية راجعة بمساعدة الـ AI، تحضير الواجبات، بناء أوراق العمل، ورؤية أوضح عن طلابك - مصمّم يدعم حكم المعلّم ويقلّل الشغل المتكرّر.',
+    es: 'Comentarios asistidos por IA, asignación de deberes, creación de fichas de trabajo y una visión más clara del estudiante, diseñado para apoyar el criterio del profesor y reducir la carga de trabajo repetitiva.',
   },
   'mkt.teachers.meta.og_title': {
     en: 'For Teachers - The English Hub',
     ar: 'للمعلّمين - The English Hub',
+    es: 'Para profesores - The English Hub',
   },
   'mkt.teachers.meta.og_description': {
     en: 'Support every student without adding to your workload.',
     ar: 'ادعم كل طالب بدون ما تزيد على شغلك.',
+    es: 'Apoya a cada estudiante sin aumentar tu carga de trabajo.',
   },
   'mkt.teachers.meta.og_image_alt': {
     en: 'The English Hub for Teachers',
     ar: 'The English Hub للمعلّمين',
+    es: 'The English Hub para profesores',
   },
 
   // ── 1. Hero ────────────────────────────────────────────────────────
   'mkt.teachers.hero.eyebrow': {
     en: 'For teachers',
     ar: 'للمعلّمين',
+    es: 'Para profesores',
   },
   'mkt.teachers.hero.title': {
     en: 'Support every student without adding to your workload',
     ar: 'ادعم كل طالب بدون ما تزيد على شغلك',
+    es: 'Apoya a cada estudiante sin aumentar tu carga de trabajo',
   },
   'mkt.teachers.hero.subtitle': {
     en: 'The English Hub is designed to reduce repetitive marking, give you clearer insight into class weaknesses, and help you focus more time on teaching. It supports your judgement - it does not replace it.',
     ar: 'The English Hub مصمّم يقلّل التصحيح المتكرّر، يعطيك رؤية أوضح عن نقاط ضعف الصف، ويساعدك تركّز وقتك أكثر على التدريس. يدعم حكمك المهني - ما يحلّ محلّه.',
+    es: 'The English Hub está diseñado para reducir la corrección repetitiva, darte una visión más clara de las debilidades de la clase y ayudarte a dedicar más tiempo a enseñar. Apoya tu criterio; no lo sustituye.',
   },
   'mkt.teachers.hero.cta_primary': {
     en: 'See teacher pricing',
     ar: 'شوف أسعار المعلّمين',
+    es: 'Ver precios para profesores',
   },
   'mkt.teachers.hero.cta_secondary': {
     en: 'Bring it to your school',
     ar: 'وصّله لمدرستك',
+    es: 'Llévalo a tu escuela',
   },
   'mkt.teachers.hero.pill_reduce_marking': {
     en: 'Reduce repetitive marking',
     ar: 'قلّل التصحيح المتكرّر',
+    es: 'Reduce la corrección repetitiva',
   },
   'mkt.teachers.hero.pill_class_insight': {
     en: 'Class-level insight',
     ar: 'رؤية على مستوى الصف',
+    es: 'Visión a nivel de clase',
   },
   'mkt.teachers.hero.pill_spec_aligned': {
     en: 'Specification-aligned',
     ar: 'متوافق مع المنهج',
+    es: 'Alineado con el programa',
   },
 
   // ── 2. Before / After ──────────────────────────────────────────────
   'mkt.teachers.shift.eyebrow': {
     en: 'The shift',
     ar: 'النقلة',
+    es: 'El cambio',
   },
   'mkt.teachers.shift.title': {
     en: 'What changes when teachers use The English Hub',
     ar: 'شنو يتغيّر لمّا المعلّمين يستخدمون The English Hub',
+    es: 'Qué cambia cuando los profesores usan The English Hub',
   },
   'mkt.teachers.shift.lead': {
     en: 'A qualitative shift in where teacher time goes - fewer evenings on repetitive marking, more class hours spent on what actually moves the dial.',
     ar: 'نقلة نوعية في توزيع وقت المعلّم - ليالي أقل على التصحيح المتكرّر، وساعات صف أكثر على اللي فعلاً يفرق.',
+    es: 'Un cambio cualitativo en cómo se reparte el tiempo del profesor: menos noches dedicadas a la corrección repetitiva y más horas de clase en lo que de verdad marca la diferencia.',
   },
 
   // Without - eyebrow + heading + four bullets
   'mkt.teachers.shift.without.eyebrow': {
     en: 'Without',
     ar: 'بدون',
+    es: 'Sin',
   },
   'mkt.teachers.shift.without.title': {
     en: 'The familiar grind',
     ar: 'الروتين اللي تعرفه',
+    es: 'La rutina de siempre',
   },
   'mkt.teachers.shift.without.point_late_nights': {
     en: 'Long marking nights that eat into planning and family time',
     ar: 'ليالي تصحيح طويلة تاكل من وقت التحضير ووقت العائلة',
+    es: 'Largas noches de corrección que se comen el tiempo de planificación y de familia',
   },
   'mkt.teachers.shift.without.point_scattered_feedback': {
     en: 'Feedback scattered across exercise books, docs and emails',
     ar: 'التغذية الراجعة مبعثرة بين الدفاتر والمستندات والإيميلات',
+    es: 'Comentarios dispersos entre cuadernos, documentos y correos',
   },
   'mkt.teachers.shift.without.point_late_identification': {
     en: 'Struggling students identified late, after the gap has widened',
     ar: 'الطلاب اللي يعانون يتم اكتشافهم متأخّر، بعد ما تكبر الفجوة',
+    es: 'Estudiantes con dificultades detectados tarde, cuando la brecha ya se ha ampliado',
   },
   'mkt.teachers.shift.without.point_invisible_patterns': {
     en: 'Class-wide patterns invisible until exam season',
     ar: 'الأنماط على مستوى الصف ما تبيّن إلا في موسم الامتحانات',
+    es: 'Patrones de toda la clase invisibles hasta la temporada de exámenes',
   },
 
   // With - eyebrow + heading + four bullets
   'mkt.teachers.shift.with.eyebrow': {
     en: 'With The English Hub',
     ar: 'مع The English Hub',
+    es: 'Con The English Hub',
   },
   'mkt.teachers.shift.with.title': {
     en: 'Time back, signal up',
     ar: 'وقت يرجع لك، ووضوح أكثر',
+    es: 'Recuperas tiempo, ganas claridad',
   },
   'mkt.teachers.shift.with.point_faster_turnaround': {
     en: 'Faster feedback turnaround on routine written work',
     ar: 'تغذية راجعة أسرع على الأعمال الكتابية الروتينية',
+    es: 'Comentarios más rápidos en el trabajo escrito rutinario',
   },
   'mkt.teachers.shift.with.point_structured_commentary': {
     en: 'Structured commentary aligned to assessment objectives',
     ar: 'تعليق منظّم متوافق مع الـ assessment objectives',
+    es: 'Comentarios estructurados alineados con los assessment objectives',
   },
   'mkt.teachers.shift.with.point_earlier_surfacing': {
     en: 'Earlier surfacing of students who may need intervention',
     ar: 'اكتشاف أبكر للطلاب اللي يحتاجون تدخّل',
+    es: 'Detección más temprana de los estudiantes que pueden necesitar intervención',
   },
   'mkt.teachers.shift.with.point_class_patterns': {
     en: 'Class-wide pattern insight you can act on next lesson',
     ar: 'رؤية لأنماط الصف تقدر تتصرّف عليها في الحصة الجاية',
+    es: 'Visión de patrones de toda la clase sobre la que puedes actuar en la próxima clase',
   },
 
   // ── 3. Feature grid - workflow surfaces ────────────────────────────
   'mkt.teachers.features.eyebrow': {
     en: 'Workflow surfaces',
     ar: 'محاور سير العمل',
+    es: 'Áreas del flujo de trabajo',
   },
   'mkt.teachers.features.title': {
     en: 'What it does for you',
     ar: 'شنو يسوّي لك',
+    es: 'Qué hace por ti',
   },
   'mkt.teachers.features.lead': {
     en: 'Eight workflow surfaces designed around the day-to-day reality of an English department.',
     ar: 'ثمانية محاور لسير العمل مصمّمة حول الواقع اليومي لقسم اللغة الإنجليزية.',
+    es: 'Ocho áreas del flujo de trabajo diseñadas en torno a la realidad diaria de un departamento de inglés.',
   },
   'mkt.teachers.features.panel_eyebrow': {
     en: 'What it does for teachers',
     ar: 'شنو يسوّي للمعلّمين',
+    es: 'Qué hace por los profesores',
   },
 
   // Eight feature items (title + body)
   'mkt.teachers.features.ai_feedback.title': {
     en: 'AI-assisted feedback',
     ar: 'تغذية راجعة بمساعدة الـ AI',
+    es: 'Comentarios asistidos por IA',
   },
   'mkt.teachers.features.ai_feedback.body': {
     en: 'Structured, criteria-referenced feedback you can review, adjust and build on.',
     ar: 'تعليقات منظّمة مرجعها معايير التقييم، تقدر تراجعها وتعدّل عليها وتبني فوقها.',
+    es: 'Comentarios estructurados y basados en criterios que puedes revisar, ajustar y ampliar.',
   },
   'mkt.teachers.features.class_weaknesses.title': {
     en: 'Class weaknesses',
     ar: 'نقاط ضعف الصف',
+    es: 'Debilidades de la clase',
   },
   'mkt.teachers.features.class_weaknesses.body': {
     en: 'See where a class is struggling so you can target the next lesson.',
     ar: 'شوف وين يعاني الصف عشان تستهدف الحصة الجاية.',
+    es: 'Mira dónde tiene dificultades una clase para enfocar la próxima lección.',
   },
   'mkt.teachers.features.homework_setting.title': {
     en: 'Homework setting',
     ar: 'تحضير الواجبات',
+    es: 'Asignación de deberes',
   },
   'mkt.teachers.features.homework_setting.body': {
     en: 'Set specification-aligned practice in a few clicks.',
     ar: 'حضّر تمارين متوافقة مع المنهج بكم ضغطة.',
+    es: 'Asigna práctica alineada con el programa en unos pocos clics.',
   },
   'mkt.teachers.features.worksheet_builder.title': {
     en: 'Worksheet & revision builder',
     ar: 'بنّاء أوراق العمل والمراجعة',
+    es: 'Creador de fichas y de material de repaso',
   },
   'mkt.teachers.features.worksheet_builder.body': {
     en: 'Draft worksheets and revision material aligned to the specification.',
     ar: 'جهّز أوراق عمل ومواد مراجعة متوافقة مع المنهج.',
+    es: 'Elabora fichas de trabajo y material de repaso alineados con el programa.',
   },
   'mkt.teachers.features.student_reports.title': {
     en: 'Student reports',
     ar: 'تقارير الطلاب',
+    es: 'Informes de estudiantes',
   },
   'mkt.teachers.features.student_reports.body': {
     en: 'Clearer progress summaries for parents’ evenings and reviews.',
     ar: 'ملخّصات تقدّم أوضح للقاءات الأهل والمراجعات.',
+    es: 'Resúmenes de progreso más claros para las reuniones con las familias y las revisiones.',
   },
   'mkt.teachers.features.reading_support.title': {
     en: 'Reading & comprehension support',
     ar: 'دعم القراءة والفهم',
+    es: 'Apoyo a la lectura y la comprensión',
   },
   'mkt.teachers.features.reading_support.body': {
     en: 'Structured comprehension practice across key stages.',
     ar: 'تمارين فهم منظّمة عبر مراحل الـ key stages.',
+    es: 'Práctica de comprensión estructurada a lo largo de los key stages.',
   },
   'mkt.teachers.features.eal_support.title': {
     en: 'EAL support',
     ar: 'دعم EAL',
+    es: 'Apoyo EAL',
   },
   'mkt.teachers.features.eal_support.body': {
     en: 'Differentiated practice to support EAL learners in your class.',
     ar: 'تمارين متفاوتة المستوى لدعم طلاب EAL في صفّك.',
+    es: 'Práctica diferenciada para apoyar a los estudiantes EAL de tu clase.',
   },
   'mkt.teachers.features.targeted_revision.title': {
     en: 'Targeted revision',
     ar: 'مراجعة مستهدفة',
+    es: 'Repaso específico',
   },
   'mkt.teachers.features.targeted_revision.body': {
     en: 'Point students at the practice that will move their grade.',
     ar: 'وجّه الطلاب للتمارين اللي تحرّك درجتهم.',
+    es: 'Dirige a los estudiantes a la práctica que mejorará su nota.',
   },
 
   // Trust statement card
   'mkt.teachers.features.trust.eyebrow': {
     en: 'Designed to support, not replace',
     ar: 'مصمّم يدعم، مو يحلّ محلّك',
+    es: 'Diseñado para apoyar, no para sustituir',
   },
   'mkt.teachers.features.trust.body': {
     en: 'AI-assisted feedback is designed to support your professional judgement and reduce repetitive workload - not to replace marking or teaching. Teachers stay in control of every decision.',
     ar: 'التغذية الراجعة بمساعدة الـ AI مصمّمة تدعم حكمك المهني وتقلّل الشغل المتكرّر - مو تحلّ محل التصحيح ولا التدريس. المعلّم يبقى مسيطر على كل قرار.',
+    es: 'Los comentarios asistidos por IA están diseñados para apoyar tu criterio profesional y reducir la carga de trabajo repetitiva, no para sustituir la corrección ni la enseñanza. Los profesores mantienen el control de cada decisión.',
   },
 
   // ── 4. A typical week ──────────────────────────────────────────────
   'mkt.teachers.week.eyebrow': {
     en: 'The rhythm',
     ar: 'الإيقاع',
+    es: 'El ritmo',
   },
   'mkt.teachers.week.title': {
     en: 'A typical week',
     ar: 'أسبوع نموذجي',
+    es: 'Una semana típica',
   },
   'mkt.teachers.week.lead': {
     en: 'How the platform fits the cadence of a real English teaching week - from Monday setup through to half-term reporting.',
     ar: 'كيف المنصّة تنسجم مع إيقاع أسبوع تدريس إنجليزي حقيقي - من تحضير الإثنين إلى تقارير منتصف الفصل.',
+    es: 'Cómo encaja la plataforma en el ritmo de una semana real de enseñanza de inglés, desde la preparación del lunes hasta los informes de mitad de trimestre.',
   },
   'mkt.teachers.week.step_label': {
     en: 'Step',
     ar: 'خطوة',
+    es: 'Paso',
   },
 
   // Four week steps (day + body)
   'mkt.teachers.week.monday.day': {
     en: 'Monday',
     ar: 'الإثنين',
+    es: 'Lunes',
   },
   'mkt.teachers.week.monday.body': {
     en: 'Set homework aligned to your specification',
     ar: 'حضّر واجبات متوافقة مع منهجك',
+    es: 'Asigna deberes alineados con tu programa',
   },
   'mkt.teachers.week.tue_thu.day': {
     en: 'Tue - Thu',
     ar: 'الثلاثاء - الخميس',
+    es: 'Mar - Jue',
   },
   'mkt.teachers.week.tue_thu.body': {
     en: 'Students practise; AI drafts first-pass feedback',
     ar: 'الطلاب يتمرّنون؛ والـ AI يجهّز مسوّدة أولى للتغذية الراجعة',
+    es: 'Los estudiantes practican; la IA redacta una primera versión de los comentarios',
   },
   'mkt.teachers.week.friday.day': {
     en: 'Friday',
     ar: 'الجمعة',
+    es: 'Viernes',
   },
   'mkt.teachers.week.friday.body': {
     en: 'Review feedback, focus class time where it matters',
     ar: 'راجع التغذية الراجعة، وركّز وقت الصف وين يهم',
+    es: 'Revisa los comentarios y centra el tiempo de clase donde importa',
   },
   'mkt.teachers.week.half_term.day': {
     en: 'End of half-term',
     ar: 'نهاية نصف الفصل',
+    es: 'Fin de medio trimestre',
   },
   'mkt.teachers.week.half_term.body': {
     en: 'Share progress with parents and leadership',
     ar: 'شارك التقدّم مع الأهل والإدارة',
+    es: 'Comparte el progreso con las familias y la dirección',
   },
 
   // ── 5. Demo CTA ────────────────────────────────────────────────────
   'mkt.teachers.demo.eyebrow': {
     en: 'Live walkthrough',
     ar: 'جولة حيّة',
+    es: 'Recorrido en directo',
   },
   'mkt.teachers.demo.title': {
     en: 'See the teacher workspace',
     ar: 'شوف مساحة عمل المعلّم',
+    es: 'Conoce el espacio de trabajo del profesor',
   },
   'mkt.teachers.demo.lead': {
     en: 'Browse a sample teacher dashboard with mark queue, class analytics and student insight - no sign-up needed.',
     ar: 'تصفّح لوحة معلّم تجريبية فيها قائمة تصحيح، وتحليلات الصف، ورؤية عن الطلاب - بدون تسجيل.',
+    es: 'Explora un panel de profesor de ejemplo con cola de corrección, analíticas de clase y visión del estudiante, sin necesidad de registrarte.',
   },
   'mkt.teachers.demo.cta_primary': {
     en: 'Open the teacher demo',
     ar: 'افتح ديمو المعلّم',
+    es: 'Abrir la demo del profesor',
   },
   'mkt.teachers.demo.cta_secondary': {
     en: 'Or see the school dashboard view',
     ar: 'أو شوف عرض لوحة المدرسة',
+    es: 'O ver la vista del panel de la escuela',
   },
 
   // ── 6. FAQ ─────────────────────────────────────────────────────────
   'mkt.teachers.faq.eyebrow': {
     en: 'Answers',
     ar: 'أجوبة',
+    es: 'Respuestas',
   },
   'mkt.teachers.faq.title': {
     en: 'Common questions',
     ar: 'أسئلة شائعة',
+    es: 'Preguntas frecuentes',
   },
   'mkt.teachers.faq.panel_eyebrow': {
     en: 'Teacher FAQ',
     ar: 'أسئلة المعلّمين الشائعة',
+    es: 'Preguntas frecuentes para profesores',
   },
 
   // ── 7. Final CTA strip ─────────────────────────────────────────────
   'mkt.teachers.final.title': {
     en: 'Ready to take a closer look?',
     ar: 'مستعد تشوف عن قرب؟',
+    es: '¿Listo para verlo de cerca?',
   },
   'mkt.teachers.final.body': {
     en: 'Start with teacher pricing or bring The English Hub to your whole department.',
     ar: 'ابدأ بأسعار المعلّمين أو وصّل The English Hub لقسمك كامل.',
+    es: 'Empieza con los precios para profesores o lleva The English Hub a todo tu departamento.',
   },
   'mkt.teachers.final.cta_pricing': {
     en: 'See teacher pricing',
     ar: 'شوف أسعار المعلّمين',
+    es: 'Ver precios para profesores',
   },
   'mkt.teachers.final.cta_school': {
     en: 'Bring it to your school',
     ar: 'وصّله لمدرستك',
+    es: 'Llévalo a tu escuela',
   },
 }

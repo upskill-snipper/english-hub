@@ -74,7 +74,7 @@ import { STRINGS as _MC_STRINGS } from './content'
 import { useLocale as _useMcLocale } from '@/lib/i18n/use-locale'
 import { useEffect as _useMcEffect } from 'react'
 
-let _mcLocale: 'en' | 'ar' = 'en'
+let _mcLocale: 'en' | 'ar' | 'es' = 'en'
 function _tr(en: string): string {
   if (_mcLocale !== 'ar') return en
   for (const v of Object.values(_MC_STRINGS)) if (v.en === en) return v.ar || en

@@ -21,7 +21,7 @@ import type { NextRequest } from 'next/server'
 const LANG_COOKIE = 'eh-lang'
 
 /** Read the user's language preference from a NextRequest. */
-export function resolveLocaleFromRequest(request: NextRequest): 'en' | 'ar' {
+export function resolveLocaleFromRequest(request: NextRequest): 'en' | 'ar' | 'es' {
   const headerLang = request.headers.get('x-lang')
   if (headerLang === 'ar') return 'ar'
   if (headerLang === 'en' || headerLang === 'bi') return 'en'

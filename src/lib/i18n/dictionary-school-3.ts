@@ -53,7 +53,7 @@
  * tier BEFORE AUDIT_FIX. Wiring lives in dictionary.ts (not edited here).
  */
 
-export const SCHOOL_3_DICTIONARY: Record<string, { en: string; ar: string }> = {
+export const SCHOOL_3_DICTIONARY: Record<string, { en: string; ar: string; es?: string }> = {
   // ─── School · Analytics · NRR · Cohort retention ────────────────────
   // /school/analytics/nrr/cohorts - investor cohort-retention page:
   // page title/subtitle, a 4-tile "Month N retention" summary row
@@ -63,34 +63,42 @@ export const SCHOOL_3_DICTIONARY: Record<string, { en: string; ar: string }> = {
   'school.analytics.cohorts.title': {
     en: 'Cohort retention',
     ar: 'الاحتفاظ حسب المجموعة',
+    es: 'Retención por cohorte',
   },
   'school.analytics.cohorts.subtitle': {
     en: 'How much revenue each signup cohort keeps as it ages',
     ar: 'كم إيراد تحتفظ فيه كل مجموعة اشتراك مع مرور الوقت',
+    es: 'Cuántos ingresos conserva cada cohorte de alta a medida que pasa el tiempo',
   },
   'school.analytics.cohorts.month_prefix': {
     en: 'Month',
     ar: 'الشهر',
+    es: 'Mes',
   },
   'school.analytics.cohorts.retention_suffix': {
     en: 'retention',
     ar: 'احتفاظ',
+    es: 'retención',
   },
   'school.analytics.cohorts.avg_all_cohorts': {
     en: 'Average across all cohorts',
     ar: 'المتوسّط على كل المجموعات',
+    es: 'Media de todas las cohortes',
   },
   'school.analytics.cohorts.heatmap_title': {
     en: 'Retention heatmap',
     ar: 'الخريطة الحرارية للاحتفاظ',
+    es: 'Mapa de calor de retención',
   },
   'school.analytics.cohorts.heatmap_subtitle': {
     en: 'Each row is a signup cohort; each column is its revenue retained that many months on.',
     ar: 'كل صف مجموعة اشتراك، وكل عمود يبيّن الإيراد المحتفَظ فيه بعد ذاك العدد من الشهور.',
+    es: 'Cada fila es una cohorte de alta; cada columna muestra los ingresos retenidos tantos meses después.',
   },
   'school.analytics.cohorts.how_to_read': {
     en: 'How to read this',
     ar: 'كيف تقرأ هذا',
+    es: 'Cómo leer esto',
   },
 
   // ─── School · Analytics · NRR · Revenue movements ───────────────────
@@ -101,34 +109,42 @@ export const SCHOOL_3_DICTIONARY: Record<string, { en: string; ar: string }> = {
   'school.analytics.movements.title': {
     en: 'Revenue movements',
     ar: 'حركات الإيراد',
+    es: 'Movimientos de ingresos',
   },
   'school.analytics.movements.subtitle': {
     en: 'New, expansion, contraction and churn that drive monthly MRR',
     ar: 'الجديد والتوسّع والانكماش والفقد اللي تحرّك الـ MRR الشهري',
+    es: 'Altas, expansión, contracción y bajas que impulsan el MRR mensual',
   },
   'school.analytics.movements.waterfall_title': {
     en: 'MRR waterfall',
     ar: 'شلال الـ MRR',
+    es: 'Cascada de MRR',
   },
   'school.analytics.movements.waterfall_subtitle': {
     en: 'How the selected month moved from opening to closing MRR',
     ar: 'كيف تحرّك الشهر المحدّد من MRR البداية لـ MRR النهاية',
+    es: 'Cómo evolucionó el mes seleccionado del MRR inicial al MRR final',
   },
   'school.analytics.movements.tracker_title': {
     en: 'Movement tracker',
     ar: 'متتبّع الحركات',
+    es: 'Seguimiento de movimientos',
   },
   'school.analytics.movements.tracker_subtitle': {
     en: 'Every revenue movement, month by month - click a row to see its waterfall.',
     ar: 'كل حركة إيراد، شهر بشهر - اضغط على أي صف عشان تشوف الشلال مالته.',
+    es: 'Cada movimiento de ingresos, mes a mes: haz clic en una fila para ver su cascada.',
   },
   'school.analytics.movements.col.month': {
     en: 'Month',
     ar: 'الشهر',
+    es: 'Mes',
   },
   'school.analytics.movements.col.net': {
     en: 'Net',
     ar: 'الصافي',
+    es: 'Neto',
   },
 
   // ─── School · Revision Calendar (/school/calendar) ──────────────────
@@ -139,17 +155,21 @@ export const SCHOOL_3_DICTIONARY: Record<string, { en: string; ar: string }> = {
   'school.calendar.all_boards': {
     en: 'All boards',
     ar: 'كل اللجان',
+    es: 'Todas las juntas',
   },
   'school.calendar.all_classes': {
     en: 'All classes',
     ar: 'كل الصفوف',
+    es: 'Todas las clases',
   },
   'school.calendar.add_lesson': {
     en: 'Add lesson',
     ar: 'إضافة درس',
+    es: 'Añadir clase',
   },
   'school.calendar.cancel': {
     en: 'Cancel',
     ar: 'إلغاء',
+    es: 'Cancelar',
   },
 }
