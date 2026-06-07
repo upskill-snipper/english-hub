@@ -10,6 +10,7 @@ import { Breadcrumb } from '@/components/ui/breadcrumb'
 import { getServerBoard } from '@/lib/board/get-server-board'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Jane Eyre Key Chapters Analysed | The English Hub',
@@ -275,6 +276,10 @@ export default async function JaneEyreChaptersPage() {
     redirect('/revision/texts')
   }
 
+  const significanceLabel = await t('rev.textgrp4.common.significance')
+  const keyEventsLabel = await t('rev.textgrp4.common.key_events')
+  const examTipLabel = await t('rev.textgrp4.common.exam_tip')
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -291,10 +296,10 @@ export default async function JaneEyreChaptersPage() {
       />
       <Breadcrumb
         items={[
-          { label: 'Revision', href: '/revision' },
-          { label: 'Set Texts', href: '/revision/texts' },
+          { label: await t('rev.textgrp4.common.bc_revision'), href: '/revision' },
+          { label: await t('rev.textgrp4.common.bc_set_texts'), href: '/revision/texts' },
           { label: 'Jane Eyre', href: '/revision/texts/jane-eyre' },
-          { label: 'Key Chapters' },
+          { label: await t('rev.texts.jane-eyre.chapters.breadcrumb') },
         ]}
       />
 
@@ -310,13 +315,13 @@ export default async function JaneEyreChaptersPage() {
             render={<Link href="/revision/texts/jane-eyre" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Jane Eyre
+            {await t('rev.texts.jane-eyre.chapters.back')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <BookOpen className="mr-1 size-3 text-emerald-400" />
-              19th-Century Novel
+              {await t('rev.textgrp4.common.19c_novel')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -325,14 +330,13 @@ export default async function JaneEyreChaptersPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Jane Eyre -- Key Chapters
+            {await t('rev.texts.jane-eyre.chapters.title')}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
-            by Charlotte Bronte -- published 1847
+            {await t('rev.texts.jane-eyre.chapters.byline')}
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Detailed analysis of the most important chapters for your GCSE exam. Each entry covers
-            significance, key events, quotations with analysis, and an exam-focused study tip.
+            {await t('rev.texts.jane-eyre.chapters.intro')}
           </p>
         </div>
       </section>
@@ -353,7 +357,7 @@ export default async function JaneEyreChaptersPage() {
             {/* Significance */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-heading-md font-heading">Significance</CardTitle>
+                <CardTitle className="text-heading-md font-heading">{significanceLabel}</CardTitle>
               </CardHeader>
               <CardContent className="text-body-sm text-muted-foreground">
                 {ch.significance}
@@ -363,7 +367,7 @@ export default async function JaneEyreChaptersPage() {
             {/* Key events */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-heading-md font-heading">Key Events</CardTitle>
+                <CardTitle className="text-heading-md font-heading">{keyEventsLabel}</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="list-disc space-y-1.5 pl-5 text-body-sm text-muted-foreground">
@@ -394,7 +398,7 @@ export default async function JaneEyreChaptersPage() {
               <div className="flex items-start gap-2">
                 <Sparkles className="mt-0.5 size-4 shrink-0 text-clay-600" />
                 <div>
-                  <p className="text-sm font-semibold text-foreground">Exam Tip</p>
+                  <p className="text-sm font-semibold text-foreground">{examTipLabel}</p>
                   <p className="mt-1 text-body-sm text-muted-foreground">{ch.examTip}</p>
                 </div>
               </div>
@@ -405,8 +409,10 @@ export default async function JaneEyreChaptersPage() {
 
       {/* Public domain notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Jane Eyre by Charlotte Bronte (1847) is in the public domain. Quotations are reproduced
-        freely as the text is no longer subject to copyright.
+        {(await t('rev.textgrp4.common.public_domain'))
+          .replace('{title}', 'Jane Eyre')
+          .replace('{author}', 'Charlotte Bronte')
+          .replace('{year}', '1847')}
       </p>
     </div>
   )

@@ -9,6 +9,7 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { GeoFaq, type GeoFaqItem } from '@/components/seo/GeoFaq'
+import { t } from '@/lib/i18n/t'
 
 const ACC_FAQS: GeoFaqItem[] = [
   {
@@ -698,7 +699,7 @@ export default async function AChristmasCarolPage() {
       />
       <section aria-labelledby="acc-direct-answer" className="mx-auto mt-8 max-w-3xl px-4">
         <h2 id="acc-direct-answer" className="sr-only">
-          A Christmas Carol: quick summary
+          {await t('rev.texts.acc.quick_summary_h')}
         </h2>
         <p className="text-base leading-relaxed text-muted-foreground">
           <strong className="text-foreground">A Christmas Carol</strong> is an 1843 novella by
@@ -720,50 +721,50 @@ export default async function AChristmasCarolPage() {
             id: 'read',
             href: '/revision/texts/a-christmas-carol/read',
             icon: 'read' as const,
-            title: 'Read Full Text',
-            description: 'With annotations',
+            title: await t('rev.texts.subpage.read.title'),
+            description: await t('rev.texts.subpage.read.desc'),
           },
           {
             id: 'staves',
             href: '/revision/texts/a-christmas-carol/staves',
             icon: 'acts' as const,
-            title: 'Stave-by-Stave Analysis',
-            description: 'Key moments & quotes',
+            title: await t('rev.textgrp4.subpage.staves_analysis.title'),
+            description: await t('rev.texts.subpage.acts.desc'),
           },
           {
             id: 'characters',
             href: '/revision/texts/a-christmas-carol/characters',
             icon: 'characters' as const,
-            title: 'Characters',
-            description: 'Full character guide',
+            title: await t('rev.texts.subpage.characters.title'),
+            description: await t('rev.texts.subpage.characters.desc'),
           },
           {
             id: 'themes',
             href: '/revision/texts/a-christmas-carol/themes',
             icon: 'themes' as const,
-            title: 'Themes',
-            description: 'Theme analysis',
+            title: await t('rev.texts.subpage.themes.title'),
+            description: await t('rev.texts.subpage.themes.desc'),
           },
           {
             id: 'quotes',
             href: '/revision/texts/a-christmas-carol/key-quotes',
             icon: 'quotes' as const,
-            title: 'Key Quotes',
-            description: 'Quotes with analysis',
+            title: await t('rev.texts.subpage.quotes.title'),
+            description: await t('rev.texts.subpage.quotes.desc'),
           },
           {
             id: 'context',
             href: '/revision/texts/a-christmas-carol/context',
             icon: 'context' as const,
-            title: 'Context',
-            description: 'Historical context',
+            title: await t('rev.texts.subpage.context.title'),
+            description: await t('rev.texts.subpage.context.desc'),
           },
           {
             id: 'essays',
             href: '/revision/texts/a-christmas-carol/essay-plans',
             icon: 'essays' as const,
-            title: 'Essay Plans',
-            description: 'GCSE essay plans',
+            title: await t('rev.texts.subpage.essays.title'),
+            description: await t('rev.texts.subpage.essays.desc'),
           },
         ]}
         quizQuotes={data.quotations.slice(0, 10).map((q) => ({
@@ -792,11 +793,13 @@ export default async function AChristmasCarolPage() {
       />
       <TextGuide data={data} />
       <section className="mx-auto mt-12 max-w-3xl px-4">
-        <GeoFaq faqs={ACC_FAQS} heading="A Christmas Carol: frequently asked questions" />
+        <GeoFaq faqs={ACC_FAQS} heading={await t('rev.texts.acc.faq_heading')} />
       </section>
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        A Christmas Carol by Charles Dickens (1843) is in the public domain. Quotations are
-        reproduced freely as the text is no longer subject to copyright.
+        {(await t('rev.textgrp4.common.public_domain'))
+          .replace('{title}', 'A Christmas Carol')
+          .replace('{author}', 'Charles Dickens')
+          .replace('{year}', '1843')}
       </p>
     </>
   )

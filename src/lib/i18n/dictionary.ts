@@ -124,6 +124,19 @@ import { REV_POETRY_LANG_DICTIONARY } from './dictionary-rev-poetry-lang'
 import { REV_TEXTS_DICTIONARY } from './dictionary-rev-texts'
 // 2026-06-07: second set-text subpage chrome shard (rev.texts2.*).
 import { REV_TEXTS2_DICTIONARY } from './dictionary-rev-texts2'
+// 2026-06-07: set-text group 2 page chrome (Hamlet, Othello, King Lear,
+// The Tempest, Merchant of Venice, etc.). Curated EN + Khaleeji AR + ES.
+import { REV_TEXTGRP2_DICTIONARY } from './dictionary-rev-textgrp2'
+// 2026-06-07: set-text group 3 chrome — modern drama (A View from the Bridge,
+// A Streetcar Named Desire, Blood Brothers). Curated EN + Khaleeji AR + ES.
+import { REV_TEXTGRP3_DICTIONARY } from './dictionary-rev-textgrp3'
+// 2026-06-07: set-text group 1 (Romeo & Juliet + Macbeth subpages), group 4
+// (Jane Eyre, Pride & Prejudice, Great Expectations, A Christmas Carol, Gatsby),
+// group 5 (modern novels), group 6 (significant-cigarettes banner). Chrome only.
+import { REV_TEXTGRP1_DICTIONARY } from './dictionary-rev-textgrp1'
+import { REV_TEXTGRP4_DICTIONARY } from './dictionary-rev-textgrp4'
+import { REV_TEXTGRP5_DICTIONARY } from './dictionary-rev-textgrp5'
+import { REV_TEXTGRP6_DICTIONARY } from './dictionary-rev-textgrp6'
 import { IGCSE_PAGES_DICTIONARY } from './dictionary-igcse-pages'
 import { KS3_PAGES_DICTIONARY } from './dictionary-ks3-pages'
 // 2026-06-07: remaining revision chrome (exam-technique guides + hub widgets).
@@ -24676,6 +24689,12 @@ export function lookup(key: string, locale: Locale): string {
     REV_POETRY_LANG_DICTIONARY[key] ??
     REV_TEXTS_DICTIONARY[key] ??
     REV_TEXTS2_DICTIONARY[key] ??
+    REV_TEXTGRP1_DICTIONARY[key] ??
+    REV_TEXTGRP2_DICTIONARY[key] ??
+    REV_TEXTGRP3_DICTIONARY[key] ??
+    REV_TEXTGRP4_DICTIONARY[key] ??
+    REV_TEXTGRP5_DICTIONARY[key] ??
+    REV_TEXTGRP6_DICTIONARY[key] ??
     REV_MISC2_DICTIONARY[key] ??
     REV_MISC_DICTIONARY[key] ??
     REV_POETRY2_DICTIONARY[key] ??

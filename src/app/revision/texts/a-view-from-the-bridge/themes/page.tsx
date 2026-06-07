@@ -10,6 +10,7 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 import StudyTools from '@/components/study/StudyTools'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title: 'A View from the Bridge - Themes | The English Hub',
@@ -215,6 +216,12 @@ export default async function AViewFromTheBridgeThemesPage() {
     redirect('/revision/texts')
   }
 
+  const overviewLabel = await t('rev.texts.common.overview')
+  const howMillerLabel = await t('rev.texts.grp3.common.how_miller_presents_it_h')
+  const keyQuotationsLabel = await t('rev.texts.grp3.common.key_quotations_h')
+  const contextualLinkLabel = await t('rev.texts.grp3.common.contextual_link_h')
+  const examTipLabel = await t('rev.texts.common.exam_tip')
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -244,12 +251,12 @@ export default async function AViewFromTheBridgeThemesPage() {
             className="mb-4 -ml-2 text-muted-foreground"
             render={<Link href="/revision/texts/a-view-from-the-bridge" />}
           >
-            <ArrowLeft className="size-3.5" /> Back to A View from the Bridge
+            <ArrowLeft className="size-3.5" /> {await t('rev.texts.avftb.back')}
           </Button>
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Drama className="mr-1 size-3 text-violet-400" />
-              Modern Text - Play
+              {await t('rev.texts.grp3.common.modern_text_play')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -257,14 +264,13 @@ export default async function AViewFromTheBridgeThemesPage() {
             </Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Theme Analysis
+            {await t('rev.texts.avftb.themes.title')}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
-            A View from the Bridge by Arthur Miller
+            {await t('rev.texts.avftb.byline')}
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Six major themes explored in depth with Miller&apos;s methods, contextual links and
-            examiner guidance. All quotes are 15 words or fewer.
+            {await t('rev.texts.avftb.themes.intro')}
           </p>
         </div>
       </section>
@@ -273,28 +279,28 @@ export default async function AViewFromTheBridgeThemesPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Lightbulb className="size-5 text-clay-600" />
-          <h2 className="text-heading-lg font-heading text-foreground">Themes</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {await t('rev.texts.common.themes')}
+          </h2>
         </div>
         <div className="space-y-6">
-          {THEMES.map((t) => (
-            <Card key={t.title}>
+          {THEMES.map((theme) => (
+            <Card key={theme.title}>
               <CardHeader>
-                <CardTitle className="text-heading-md font-heading">{t.title}</CardTitle>
+                <CardTitle className="text-heading-md font-heading">{theme.title}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-5">
                 <div>
-                  <h3 className="mb-1 text-sm font-semibold text-foreground">Overview</h3>
-                  <p className="text-body-sm text-muted-foreground">{t.overview}</p>
+                  <h3 className="mb-1 text-sm font-semibold text-foreground">{overviewLabel}</h3>
+                  <p className="text-body-sm text-muted-foreground">{theme.overview}</p>
                 </div>
                 <div>
-                  <h3 className="mb-1 text-sm font-semibold text-foreground">
-                    How Miller presents it
-                  </h3>
-                  <p className="text-body-sm text-muted-foreground">{t.howMillerPresentsIt}</p>
+                  <h3 className="mb-1 text-sm font-semibold text-foreground">{howMillerLabel}</h3>
+                  <p className="text-body-sm text-muted-foreground">{theme.howMillerPresentsIt}</p>
                 </div>
                 <div className="space-y-3">
-                  <h3 className="text-sm font-semibold text-foreground">Key quotations</h3>
-                  {t.keyQuotes.map((q) => (
+                  <h3 className="text-sm font-semibold text-foreground">{keyQuotationsLabel}</h3>
+                  {theme.keyQuotes.map((q) => (
                     <div
                       key={q.text}
                       className="rounded-xl border border-border/60 bg-background/50 p-4 space-y-1.5"
@@ -308,17 +314,19 @@ export default async function AViewFromTheBridgeThemesPage() {
                   ))}
                 </div>
                 <div>
-                  <h3 className="mb-1 text-sm font-semibold text-foreground">Contextual link</h3>
-                  <p className="text-body-sm text-muted-foreground">{t.contextLink}</p>
+                  <h3 className="mb-1 text-sm font-semibold text-foreground">
+                    {contextualLinkLabel}
+                  </h3>
+                  <p className="text-body-sm text-muted-foreground">{theme.contextLink}</p>
                 </div>
                 <div className="rounded-xl border border-primary/20 bg-primary/5 p-4">
                   <div className="flex items-center gap-2 mb-1.5">
                     <Quote className="size-3.5 text-primary" />
                     <p className="text-xs font-semibold uppercase tracking-wide text-primary">
-                      Exam tip
+                      {examTipLabel}
                     </p>
                   </div>
-                  <p className="text-body-sm text-muted-foreground">{t.examTip}</p>
+                  <p className="text-body-sm text-muted-foreground">{theme.examTip}</p>
                 </div>
               </CardContent>
             </Card>
@@ -333,28 +341,26 @@ export default async function AViewFromTheBridgeThemesPage() {
           size="sm"
           render={<Link href="/revision/texts/a-view-from-the-bridge/characters" />}
         >
-          Characters <ArrowRight className="size-3.5" />
+          {await t('rev.texts.grp3.common.nav_characters')} <ArrowRight className="size-3.5" />
         </Button>
         <Button
           variant="outline"
           size="sm"
           render={<Link href="/revision/texts/a-view-from-the-bridge/key-quotes" />}
         >
-          Key quotes <ArrowRight className="size-3.5" />
+          {await t('rev.texts.grp3.common.nav_key_quotes')} <ArrowRight className="size-3.5" />
         </Button>
         <Button
           variant="outline"
           size="sm"
           render={<Link href="/revision/texts/a-view-from-the-bridge/context" />}
         >
-          Context <ArrowRight className="size-3.5" />
+          {await t('rev.texts.grp3.common.nav_context')} <ArrowRight className="size-3.5" />
         </Button>
       </section>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the Copyright, Designs and
-        Patents Act 1988 for criticism and review. Full text available from your school or local
-        library.
+        {await t('rev.texts.grp3.common.fair_dealing_short')}
       </p>
     </div>
   )

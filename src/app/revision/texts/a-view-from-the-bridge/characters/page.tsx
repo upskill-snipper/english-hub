@@ -10,6 +10,7 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 import StudyTools from '@/components/study/StudyTools'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title: 'A View from the Bridge - Character Analysis | The English Hub',
@@ -215,6 +216,11 @@ export default async function AViewFromTheBridgeCharactersPage() {
     redirect('/revision/texts')
   }
 
+  const overviewLabel = await t('rev.texts.common.overview')
+  const characterArcLabel = await t('rev.texts.grp3.common.character_arc_h')
+  const keyQuotationsLabel = await t('rev.texts.grp3.common.key_quotations_h')
+  const examTipLabel = await t('rev.texts.common.exam_tip')
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -244,12 +250,12 @@ export default async function AViewFromTheBridgeCharactersPage() {
             className="mb-4 -ml-2 text-muted-foreground"
             render={<Link href="/revision/texts/a-view-from-the-bridge" />}
           >
-            <ArrowLeft className="size-3.5" /> Back to A View from the Bridge
+            <ArrowLeft className="size-3.5" /> {await t('rev.texts.avftb.back')}
           </Button>
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Drama className="mr-1 size-3 text-violet-400" />
-              Modern Text - Play
+              {await t('rev.texts.grp3.common.modern_text_play')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -257,14 +263,13 @@ export default async function AViewFromTheBridgeCharactersPage() {
             </Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Character Analysis
+            {await t('rev.texts.avftb.characters.title')}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
-            A View from the Bridge by Arthur Miller
+            {await t('rev.texts.avftb.byline')}
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Deep profiles for every major character: overview, arc, key quotations and examiner
-            tips. All quotes are 15 words or fewer.
+            {await t('rev.texts.avftb.characters.intro')}
           </p>
         </div>
       </section>
@@ -273,7 +278,9 @@ export default async function AViewFromTheBridgeCharactersPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Users className="size-5 text-emerald-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">Characters</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {await t('rev.texts.common.characters')}
+          </h2>
         </div>
         <div className="space-y-6">
           {CHARACTERS.map((c) => (
@@ -284,15 +291,17 @@ export default async function AViewFromTheBridgeCharactersPage() {
               </CardHeader>
               <CardContent className="space-y-5">
                 <div>
-                  <h3 className="mb-1 text-sm font-semibold text-foreground">Overview</h3>
+                  <h3 className="mb-1 text-sm font-semibold text-foreground">{overviewLabel}</h3>
                   <p className="text-body-sm text-muted-foreground">{c.overview}</p>
                 </div>
                 <div>
-                  <h3 className="mb-1 text-sm font-semibold text-foreground">Character arc</h3>
+                  <h3 className="mb-1 text-sm font-semibold text-foreground">
+                    {characterArcLabel}
+                  </h3>
                   <p className="text-body-sm text-muted-foreground">{c.arc}</p>
                 </div>
                 <div className="space-y-3">
-                  <h3 className="text-sm font-semibold text-foreground">Key quotations</h3>
+                  <h3 className="text-sm font-semibold text-foreground">{keyQuotationsLabel}</h3>
                   {c.keyQuotes.map((q) => (
                     <div
                       key={q.text}
@@ -310,7 +319,7 @@ export default async function AViewFromTheBridgeCharactersPage() {
                   <div className="flex items-center gap-2 mb-1.5">
                     <Quote className="size-3.5 text-primary" />
                     <p className="text-xs font-semibold uppercase tracking-wide text-primary">
-                      Exam tip
+                      {examTipLabel}
                     </p>
                   </div>
                   <p className="text-body-sm text-muted-foreground">{c.examTip}</p>
@@ -328,28 +337,26 @@ export default async function AViewFromTheBridgeCharactersPage() {
           size="sm"
           render={<Link href="/revision/texts/a-view-from-the-bridge/themes" />}
         >
-          Themes <ArrowRight className="size-3.5" />
+          {await t('rev.texts.grp3.common.nav_themes')} <ArrowRight className="size-3.5" />
         </Button>
         <Button
           variant="outline"
           size="sm"
           render={<Link href="/revision/texts/a-view-from-the-bridge/key-quotes" />}
         >
-          Key quotes <ArrowRight className="size-3.5" />
+          {await t('rev.texts.grp3.common.nav_key_quotes')} <ArrowRight className="size-3.5" />
         </Button>
         <Button
           variant="outline"
           size="sm"
           render={<Link href="/revision/texts/a-view-from-the-bridge/context" />}
         >
-          Context <ArrowRight className="size-3.5" />
+          {await t('rev.texts.grp3.common.nav_context')} <ArrowRight className="size-3.5" />
         </Button>
       </section>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the Copyright, Designs and
-        Patents Act 1988 for criticism and review. Full text available from your school or local
-        library.
+        {await t('rev.texts.grp3.common.fair_dealing_short')}
       </p>
     </div>
   )

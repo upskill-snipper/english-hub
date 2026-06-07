@@ -7,6 +7,7 @@ import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title:
@@ -563,29 +564,29 @@ export default async function AViewFromTheBridgePage() {
             id: 'characters',
             href: '/revision/texts/a-view-from-the-bridge/characters',
             icon: 'characters' as const,
-            title: 'Characters',
-            description: 'Full character guide',
+            title: await t('rev.texts.subpage.characters.title'),
+            description: await t('rev.texts.subpage.characters.desc'),
           },
           {
             id: 'themes',
             href: '/revision/texts/a-view-from-the-bridge/themes',
             icon: 'themes' as const,
-            title: 'Themes',
-            description: 'Theme analysis',
+            title: await t('rev.texts.subpage.themes.title'),
+            description: await t('rev.texts.subpage.themes.desc'),
           },
           {
             id: 'quotes',
             href: '/revision/texts/a-view-from-the-bridge/key-quotes',
             icon: 'quotes' as const,
-            title: 'Key Quotes',
-            description: 'Quotes with analysis',
+            title: await t('rev.texts.subpage.quotes.title'),
+            description: await t('rev.texts.subpage.quotes.desc'),
           },
           {
             id: 'context',
             href: '/revision/texts/a-view-from-the-bridge/context',
             icon: 'context' as const,
-            title: 'Context',
-            description: 'Historical context',
+            title: await t('rev.texts.subpage.context.title'),
+            description: await t('rev.texts.subpage.context.desc'),
           },
         ]}
         quizQuotes={data.quotations.slice(0, 10).map((q) => ({
@@ -614,9 +615,7 @@ export default async function AViewFromTheBridgePage() {
       />
       <TextGuide data={data} />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the Copyright, Designs and
-        Patents Act 1988 for criticism and review. Full text available from your school or local
-        library.
+        {await t('rev.texts.grp3.common.fair_dealing_short')}
       </p>
     </>
   )

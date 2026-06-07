@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
+import { useT } from '@/lib/i18n/use-t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ─── Types ──────────────────────────────────────────────────── */
@@ -257,6 +258,7 @@ const THEMES: ThemeStudy[] = [
 /* ─── Page ───────────────────────────────────────────────────── */
 
 export default function RomeoAndJulietThemesPage() {
+  const tr = useT()
   return (
     <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
@@ -289,13 +291,13 @@ export default function RomeoAndJulietThemesPage() {
               render={<Link href="/revision/texts/romeo-and-juliet" />}
             >
               <ArrowLeft className="size-3.5" />
-              Back to Romeo and Juliet
+              {tr('rev.texts.common.back_to_text').replace('{text}', 'Romeo and Juliet')}
             </Button>
 
             <div className="mb-4 flex flex-wrap items-center gap-2">
               <Badge variant="secondary">
                 <Lightbulb className="mr-1 size-3 text-clay-600" />
-                Theme Analysis
+                {tr('rev.texts.common.theme_analysis')}
               </Badge>
               <Badge variant="outline" className="text-muted-foreground">
                 AQA / Edexcel / OCR / Eduqas
@@ -303,14 +305,11 @@ export default function RomeoAndJulietThemesPage() {
             </div>
 
             <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-              Themes - Deep Study
+              {tr('rev.texts.rj.themes.h1')}
             </h1>
-            <p className="mt-2 text-body-lg text-muted-foreground">
-              Romeo and Juliet by William Shakespeare
-            </p>
+            <p className="mt-2 text-body-lg text-muted-foreground">{tr('rev.texts.rj.byline')}</p>
             <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-              Comprehensive analysis of the seven key themes with quotations, contextual links, and
-              exam strategies for top-grade responses.
+              {tr('rev.texts.rj.themes.intro')}
             </p>
           </div>
         </section>
@@ -332,7 +331,7 @@ export default function RomeoAndJulietThemesPage() {
                 <Card>
                   <CardHeader>
                     <CardTitle className="text-heading-md font-heading">
-                      Detailed Analysis
+                      {tr('rev.texts.common.detailed_analysis')}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="text-body-sm text-muted-foreground">
@@ -345,7 +344,9 @@ export default function RomeoAndJulietThemesPage() {
                   <CardHeader>
                     <div className="flex items-center gap-3">
                       <Quote className="size-5 text-violet-400" />
-                      <CardTitle className="text-heading-md font-heading">Key Quotations</CardTitle>
+                      <CardTitle className="text-heading-md font-heading">
+                        {tr('rev.texts.common.key_quotations')}
+                      </CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent className="space-y-5">
@@ -368,7 +369,9 @@ export default function RomeoAndJulietThemesPage() {
                   <CardContent className="p-5">
                     <div className="flex items-center gap-2 mb-1">
                       <BookOpen className="size-4 text-emerald-400" />
-                      <p className="text-sm font-semibold text-foreground">Context link</p>
+                      <p className="text-sm font-semibold text-foreground">
+                        {tr('rev.texts.common.context_link')}
+                      </p>
                     </div>
                     <p className="text-body-sm text-muted-foreground">{t.contextLink}</p>
                   </CardContent>
@@ -379,7 +382,9 @@ export default function RomeoAndJulietThemesPage() {
                   <CardContent className="p-5">
                     <div className="flex items-center gap-2 mb-1">
                       <Lightbulb className="size-4 text-clay-600" />
-                      <p className="text-sm font-semibold text-foreground">Essay tip</p>
+                      <p className="text-sm font-semibold text-foreground">
+                        {tr('rev.texts.common.essay_tip')}
+                      </p>
                     </div>
                     <p className="text-body-sm text-muted-foreground">{t.essayTip}</p>
                   </CardContent>
@@ -391,8 +396,7 @@ export default function RomeoAndJulietThemesPage() {
 
         {/* Footer */}
         <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-          <em>Romeo and Juliet</em> (c. 1594-96) by William Shakespeare is in the public domain. All
-          quotations are reproduced freely.
+          {tr('rev.texts.rj.public_domain_note')}
         </p>
       </div>
     </div>

@@ -6,6 +6,7 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import StudyTools from '@/components/study/StudyTools'
 import { LearningResourceJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Pigeon English revision guide - themes, characters, key quotes - The English Hub',
@@ -192,16 +193,12 @@ export default async function PigeonEnglishPage() {
       />
       <StudyTools textName="Pigeon English" textType="novel" examBoard="AQA" />
       <div className="mb-6 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-sm text-amber-100">
-        <strong className="block text-foreground">Draft study guide</strong>
-        <span>
-          AI-assisted draft under expert review. Cross-check with your teacher&rsquo;s notes.
-        </span>
+        <strong className="block text-foreground">{await t('rev.texts.common.draft_badge')}</strong>
+        <span>{await t('rev.texts.common.draft_note')}</span>
       </div>
       <TextGuide data={data} />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the Copyright, Designs and
-        Patents Act 1988 for criticism and review. Full text available from your school or local
-        library.
+        {await t('rev.texts.common.fair_dealing_review')}
       </p>
     </>
   )

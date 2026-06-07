@@ -10,6 +10,7 @@ import { Breadcrumb } from '@/components/ui/breadcrumb'
 import { getServerBoard } from '@/lib/board/get-server-board'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Jane Eyre Key Quotes -- 25 Essential Quotations | The English Hub',
@@ -270,6 +271,8 @@ export default async function JaneEyreKeyQuotesPage() {
     redirect('/revision/texts')
   }
 
+  const contextLabel = await t('rev.textgrp4.common.context_label')
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -286,10 +289,10 @@ export default async function JaneEyreKeyQuotesPage() {
       />
       <Breadcrumb
         items={[
-          { label: 'Revision', href: '/revision' },
-          { label: 'Set Texts', href: '/revision/texts' },
+          { label: await t('rev.textgrp4.common.bc_revision'), href: '/revision' },
+          { label: await t('rev.textgrp4.common.bc_set_texts'), href: '/revision/texts' },
           { label: 'Jane Eyre', href: '/revision/texts/jane-eyre' },
-          { label: 'Key Quotes' },
+          { label: await t('rev.texts.jane-eyre.quotes.breadcrumb') },
         ]}
       />
 
@@ -305,13 +308,13 @@ export default async function JaneEyreKeyQuotesPage() {
             render={<Link href="/revision/texts/jane-eyre" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Jane Eyre
+            {await t('rev.texts.jane-eyre.quotes.back')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <BookOpen className="mr-1 size-3 text-emerald-400" />
-              19th-Century Novel
+              {await t('rev.textgrp4.common.19c_novel')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -320,14 +323,13 @@ export default async function JaneEyreKeyQuotesPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Jane Eyre -- 25 Key Quotes
+            {await t('rev.texts.jane-eyre.quotes.title')}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
-            by Charlotte Bronte -- published 1847
+            {await t('rev.texts.jane-eyre.quotes.byline')}
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Twenty-five essential quotations with detailed analysis, context, and theme links. All
-            quotations are from the public domain text and may be freely reproduced.
+            {await t('rev.texts.jane-eyre.quotes.intro')}
           </p>
         </div>
       </section>
@@ -343,7 +345,7 @@ export default async function JaneEyreKeyQuotesPage() {
               </div>
               <p className="text-caption uppercase tracking-wide text-primary">{q.speaker}</p>
               <p className="text-body-sm text-muted-foreground">
-                <span className="font-semibold text-foreground">Context: </span>
+                <span className="font-semibold text-foreground">{contextLabel}</span>
                 {q.context}
               </p>
               <p className="text-body-sm text-muted-foreground">{q.analysis}</p>
@@ -364,8 +366,10 @@ export default async function JaneEyreKeyQuotesPage() {
 
       {/* Public domain notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Jane Eyre by Charlotte Bronte (1847) is in the public domain. Quotations are reproduced
-        freely as the text is no longer subject to copyright.
+        {(await t('rev.textgrp4.common.public_domain'))
+          .replace('{title}', 'Jane Eyre')
+          .replace('{author}', 'Charlotte Bronte')
+          .replace('{year}', '1847')}
       </p>
     </div>
   )

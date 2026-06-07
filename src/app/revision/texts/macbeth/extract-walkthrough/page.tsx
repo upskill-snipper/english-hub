@@ -17,6 +17,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
+import { useT } from '@/lib/i18n/use-t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
@@ -129,6 +130,7 @@ const SEGMENTS: Segment[] = [
 // ── Page component ────────────────────────────────────────────────────────────
 
 export default function MacbethExtractWalkthroughPage() {
+  const t = useT()
   return (
     <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
@@ -157,24 +159,24 @@ export default function MacbethExtractWalkthroughPage() {
               render={<Link href="/revision/texts/macbeth" />}
             >
               <ArrowLeft className="size-3.5" />
-              Back to Macbeth overview
+              {t('rev.texts.common.back_to_overview').replace('{text}', 'Macbeth')}
             </Button>
             <div className="mb-4 flex flex-wrap items-center gap-2">
               <Badge variant="secondary">
                 <ScrollText className="mr-1 size-3 text-violet-400" />
-                Extract Walkthrough
+                {t('rev.texts.macbeth.extract.badge')}
               </Badge>
-              <Badge variant="outline">Act 1, Scene 7</Badge>
-              <Badge variant="outline">Lines 1-28</Badge>
-              <Badge variant="outline">AQA-style</Badge>
+              <Badge variant="outline">
+                {t('rev.texts.common.act_n_scene_s').replace('{n}', '1').replace('{s}', '7')}
+              </Badge>
+              <Badge variant="outline">{t('rev.texts.macbeth.extract.lines_badge')}</Badge>
+              <Badge variant="outline">{t('rev.texts.macbeth.extract.aqa_style_badge')}</Badge>
             </div>
             <h1 className="text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
-              Macbeth’s &ldquo;If it were done&rdquo; soliloquy &mdash; line-by-line walkthrough
+              {t('rev.texts.macbeth.extract.title')}
             </h1>
             <p className="mt-3 max-w-2xl text-muted-foreground">
-              A worked AQA-style extract analysis of Macbeth’s first great soliloquy. For each
-              segment you get what to <em>notice</em>, what to <em>say</em> in AO2 method language,
-              and how to <em>zoom out</em> to the wider play.
+              {t('rev.texts.macbeth.extract.intro')}
             </p>
           </div>
         </section>
@@ -184,7 +186,7 @@ export default function MacbethExtractWalkthroughPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <BookOpen className="size-5 text-violet-400" />
-              Where we are in the play
+              {t('rev.texts.macbeth.extract.where_we_are_h')}
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
@@ -215,10 +217,10 @@ export default function MacbethExtractWalkthroughPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Quote className="size-5 text-amber-500" />
-              The extract
+              {t('rev.texts.macbeth.extract.the_extract_h')}
             </CardTitle>
             <p className="text-sm text-muted-foreground">
-              Macbeth, alone. Act 1, Scene 7, lines 1-28.
+              {t('rev.texts.macbeth.extract.extract_source')}
             </p>
           </CardHeader>
           <CardContent>
@@ -235,17 +237,18 @@ export default function MacbethExtractWalkthroughPage() {
               </ol>
             </div>
             <p className="mt-3 text-xs text-muted-foreground/70">
-              Text from <em>Macbeth</em>, Act 1 Scene 7. Public domain.
+              {t('rev.texts.macbeth.extract.text_pd_note')}
             </p>
           </CardContent>
         </Card>
 
         {/* Walkthrough */}
         <section className="space-y-2">
-          <h2 className="text-xl font-bold tracking-tight sm:text-2xl">Segment-by-segment</h2>
+          <h2 className="text-xl font-bold tracking-tight sm:text-2xl">
+            {t('rev.texts.macbeth.extract.segment_h')}
+          </h2>
           <p className="text-sm text-muted-foreground">
-            For each chunk: what to <strong>notice</strong>, what to <strong>say</strong>, how to{' '}
-            <strong>zoom out</strong>.
+            {t('rev.texts.macbeth.extract.segment_desc')}
           </p>
         </section>
 
@@ -277,7 +280,7 @@ export default function MacbethExtractWalkthroughPage() {
                 {/* Notice */}
                 <div>
                   <h4 className="mb-1 flex items-center gap-1.5 font-semibold">
-                    <Eye className="size-4 text-violet-400" /> Notice
+                    <Eye className="size-4 text-violet-400" /> {t('rev.texts.common.notice')}
                   </h4>
                   <p className="text-muted-foreground leading-relaxed">{seg.notice}</p>
                 </div>
@@ -285,7 +288,8 @@ export default function MacbethExtractWalkthroughPage() {
                 {/* Say */}
                 <div>
                   <h4 className="mb-1 flex items-center gap-1.5 font-semibold">
-                    <PenLine className="size-4 text-amber-500" /> Say (AO2)
+                    <PenLine className="size-4 text-amber-500" />{' '}
+                    {t('rev.texts.macbeth.extract.say_ao2')}
                   </h4>
                   <p className="text-muted-foreground leading-relaxed">{seg.say}</p>
                 </div>
@@ -293,7 +297,7 @@ export default function MacbethExtractWalkthroughPage() {
                 {/* Zoom out */}
                 <div className="rounded-lg border border-violet-500/20 bg-violet-500/[0.04] p-4">
                   <h4 className="mb-1 flex items-center gap-1.5 font-semibold text-violet-700 dark:text-violet-300">
-                    <Telescope className="size-4" /> Zoom out
+                    <Telescope className="size-4" /> {t('rev.texts.common.zoom_out')}
                   </h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">{seg.zoomOut}</p>
                 </div>
@@ -307,11 +311,10 @@ export default function MacbethExtractWalkthroughPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Lightbulb className="size-5 text-amber-500" />
-              Model paragraph &mdash; how this extract reveals ambition
+              {t('rev.texts.macbeth.extract.model_para_h')}
             </CardTitle>
             <p className="text-sm text-muted-foreground">
-              ~250 words. A single tightly-argued paragraph that braids language, structure and
-              context into one thesis on ambition.
+              {t('rev.texts.macbeth.extract.model_para_desc')}
             </p>
           </CardHeader>
           <CardContent>
@@ -346,19 +349,16 @@ export default function MacbethExtractWalkthroughPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center pt-4 pb-4">
           <Button variant="outline" render={<Link href="/revision/texts/macbeth/key-quotes" />}>
-            <ArrowLeft className="size-4 mr-1" /> Key Quotes
+            <ArrowLeft className="size-4 mr-1" /> {t('rev.texts.common.key_quotes')}
           </Button>
           <Button variant="outline" render={<Link href="/revision/texts/macbeth/essay-plans" />}>
-            Essay Plans <BookOpen className="size-4 ml-1" />
+            {t('rev.texts.common.essay_plans')} <BookOpen className="size-4 ml-1" />
           </Button>
         </div>
 
         {/* Fair-dealing footer */}
         <p className="pb-8 text-xs text-muted-foreground/70 leading-relaxed">
-          Extract from <em>Macbeth</em> by William Shakespeare (c. 1606), Act 1 Scene 7, lines 1-28
-          - in the public domain. Commentary, segmentation and model paragraph are original
-          educational analysis intended for study and revision under fair-dealing provisions for
-          criticism, review and quotation.
+          {t('rev.texts.macbeth.extract.fair_dealing')}
         </p>
       </div>
     </div>

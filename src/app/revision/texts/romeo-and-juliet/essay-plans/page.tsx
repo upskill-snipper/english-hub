@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Romeo and Juliet - GCSE Essay Plans | The English Hub',
@@ -283,6 +284,14 @@ export default async function RomeoAndJulietEssayPlansPage() {
     redirect('/revision/texts')
   }
 
+  const essayNLabel = await t('rev.texts.common.essay_n')
+  const thesisLabel = await t('rev.texts.common.thesis')
+  const paragraphNLabel = await t('rev.texts.common.paragraph_n')
+  const pointLabel = await t('rev.texts.common.point')
+  const analysisLabel = await t('rev.texts.common.analysis')
+  const conclusionLabel = await t('rev.texts.common.conclusion')
+  const examinerTipLabel = await t('rev.texts.common.examiner_tip')
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -312,13 +321,13 @@ export default async function RomeoAndJulietEssayPlansPage() {
             render={<Link href="/revision/texts/romeo-and-juliet" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Romeo and Juliet
+            {(await t('rev.texts.common.back_to_text')).replace('{text}', 'Romeo and Juliet')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Drama className="mr-1 size-3 text-violet-400" />
-              Shakespeare - Play
+              {await t('rev.texts.common.shakespeare_play_badge')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -327,12 +336,10 @@ export default async function RomeoAndJulietEssayPlansPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Romeo and Juliet - GCSE Essay Plans
+            {await t('rev.texts.rj.essays.title')}
           </h1>
           <p className="mt-2 max-w-2xl text-body-lg text-muted-foreground">
-            Five model essay plans with thesis statements, paragraph structures, key quotations and
-            examiner tips. Each plan follows the point-quotation-analysis structure expected at
-            GCSE.
+            {await t('rev.texts.rj.essays.intro')}
           </p>
         </div>
       </section>
@@ -342,7 +349,9 @@ export default async function RomeoAndJulietEssayPlansPage() {
         <section key={essay.id}>
           <div className="mb-5 flex items-center gap-3">
             <BookOpen className="size-5 text-blue-400" />
-            <h2 className="text-heading-lg font-heading text-foreground">Essay {essay.id}</h2>
+            <h2 className="text-heading-lg font-heading text-foreground">
+              {essayNLabel.replace('{n}', String(essay.id))}
+            </h2>
           </div>
 
           {/* Question */}
@@ -352,7 +361,7 @@ export default async function RomeoAndJulietEssayPlansPage() {
             </CardHeader>
             <CardContent className="space-y-3 text-body-sm text-muted-foreground">
               <div>
-                <h4 className="mb-1 text-sm font-semibold text-foreground">Thesis</h4>
+                <h4 className="mb-1 text-sm font-semibold text-foreground">{thesisLabel}</h4>
                 <p>{essay.thesis}</p>
               </div>
             </CardContent>
@@ -363,11 +372,13 @@ export default async function RomeoAndJulietEssayPlansPage() {
             {essay.paragraphs.map((para, i) => (
               <Card key={i}>
                 <CardHeader>
-                  <CardTitle className="text-heading-md font-heading">Paragraph {i + 1}</CardTitle>
+                  <CardTitle className="text-heading-md font-heading">
+                    {paragraphNLabel.replace('{n}', String(i + 1))}
+                  </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3 text-body-sm text-muted-foreground">
                   <div>
-                    <h4 className="mb-1 text-sm font-semibold text-foreground">Point</h4>
+                    <h4 className="mb-1 text-sm font-semibold text-foreground">{pointLabel}</h4>
                     <p>{para.point}</p>
                   </div>
 
@@ -381,7 +392,7 @@ export default async function RomeoAndJulietEssayPlansPage() {
                   </div>
 
                   <div>
-                    <h4 className="mb-1 text-sm font-semibold text-foreground">Analysis</h4>
+                    <h4 className="mb-1 text-sm font-semibold text-foreground">{analysisLabel}</h4>
                     <p>{para.analysis}</p>
                   </div>
                 </CardContent>
@@ -393,7 +404,7 @@ export default async function RomeoAndJulietEssayPlansPage() {
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <Card>
               <CardHeader>
-                <CardTitle className="text-heading-md font-heading">Conclusion</CardTitle>
+                <CardTitle className="text-heading-md font-heading">{conclusionLabel}</CardTitle>
               </CardHeader>
               <CardContent className="text-body-sm text-muted-foreground">
                 <p>{essay.conclusion}</p>
@@ -404,7 +415,7 @@ export default async function RomeoAndJulietEssayPlansPage() {
               <CardHeader>
                 <div className="flex items-center gap-2">
                   <Lightbulb className="size-4 text-clay-600" />
-                  <CardTitle className="text-heading-md font-heading">Examiner Tip</CardTitle>
+                  <CardTitle className="text-heading-md font-heading">{examinerTipLabel}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="text-body-sm text-muted-foreground">

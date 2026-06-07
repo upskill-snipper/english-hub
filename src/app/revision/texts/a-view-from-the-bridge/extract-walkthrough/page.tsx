@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ────────────────────────────────────────────────────────────────────── */
 /*  Data - fragmentary fair-dealing only (≤15 words per fragment)         */
@@ -73,6 +74,7 @@ const MODEL_PARAGRAPH = `The climactic confrontation between Eddie and Marco ful
 const MODEL_WORD_COUNT = MODEL_PARAGRAPH.trim().split(/\s+/).length
 
 export default function ExtractWalkthroughPage() {
+  const t = useT()
   return (
     <>
       <BreadcrumbJsonLd
@@ -98,24 +100,20 @@ export default function ExtractWalkthroughPage() {
             className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to A View from the Bridge
+            {t('rev.texts.avftb.back')}
           </Link>
         </div>
 
         <header className="mb-10 space-y-3">
           <div className="flex flex-wrap items-center gap-2">
             <Badge variant="secondary">Edexcel IGCSE</Badge>
-            <Badge variant="outline">Modern Tragedy</Badge>
-            <Badge variant="outline">Extract Skills</Badge>
+            <Badge variant="outline">{t('rev.texts.avftb.extract.badge_modern_tragedy')}</Badge>
+            <Badge variant="outline">{t('rev.texts.avftb.extract.badge_extract_skills')}</Badge>
           </div>
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
-            Extract Walkthrough - The Climactic Confrontation
+            {t('rev.texts.avftb.extract.title')}
           </h1>
-          <p className="text-muted-foreground text-lg">
-            Eddie versus Marco in the Red Hook street: how Arthur Miller stages the inevitable. A
-            close-reading walkthrough using Notice / Say / Zoom Out cards, with a model 250-word
-            paragraph on Alfieri\'s "destiny" and Greek tragic structure.
-          </p>
+          <p className="text-muted-foreground text-lg">{t('rev.texts.avftb.extract.intro')}</p>
         </header>
 
         {/* Orientation */}
@@ -123,13 +121,9 @@ export default function ExtractWalkthroughPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <BookOpen className="h-5 w-5 text-primary" />
-              Where this extract sits
+              {t('rev.texts.avftb.extract.where_sits_h')}
             </CardTitle>
-            <CardDescription>
-              The play\'s closing minutes, on the street outside the Carbone apartment, immediately
-              after Marco has been released on bail and Eddie has refused to retract his act of
-              informing.
-            </CardDescription>
+            <CardDescription>{t('rev.texts.avftb.extract.where_sits_desc')}</CardDescription>
           </CardHeader>
           <CardContent className="space-y-3 text-sm leading-relaxed">
             <p>
@@ -149,12 +143,8 @@ export default function ExtractWalkthroughPage() {
 
         {/* Walkthrough cards */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-2">Notice / Say / Zoom Out</h2>
-          <p className="text-muted-foreground mb-6">
-            Six moments through the climax. For each: what the audience <em>notices</em> on stage,
-            what an examiner-grade reader would <em>say</em> about it, and how to <em>zoom out</em>{' '}
-            to context, form and tradition.
-          </p>
+          <h2 className="text-2xl font-bold mb-2">{t('rev.texts.avftb.extract.nsz_h')}</h2>
+          <p className="text-muted-foreground mb-6">{t('rev.texts.avftb.extract.nsz_intro')}</p>
 
           <div className="space-y-6">
             {CARDS.map((card) => (
@@ -164,28 +154,28 @@ export default function ExtractWalkthroughPage() {
                     <Badge variant="default" className="rounded-full">
                       {card.id}
                     </Badge>
-                    Moment {card.id}
+                    {t('rev.texts.avftb.extract.moment_n').replace('{n}', String(card.id))}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="grid md:grid-cols-3 gap-4 pt-6">
                   <div className="space-y-2">
                     <div className="flex items-center gap-2 text-sm font-semibold text-amber-700 dark:text-amber-400">
                       <Eye className="h-4 w-4" />
-                      Notice
+                      {t('rev.texts.grp3.common.notice')}
                     </div>
                     <p className="text-sm leading-relaxed">{card.notice}</p>
                   </div>
                   <div className="space-y-2">
                     <div className="flex items-center gap-2 text-sm font-semibold text-blue-700 dark:text-blue-400">
                       <MessageSquare className="h-4 w-4" />
-                      Say
+                      {t('rev.texts.grp3.common.say')}
                     </div>
                     <p className="text-sm leading-relaxed">{card.say}</p>
                   </div>
                   <div className="space-y-2">
                     <div className="flex items-center gap-2 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
                       <ZoomOut className="h-4 w-4" />
-                      Zoom Out
+                      {t('rev.texts.grp3.common.zoom_out')}
                     </div>
                     <p className="text-sm leading-relaxed">{card.zoomOut}</p>
                   </div>
@@ -199,7 +189,9 @@ export default function ExtractWalkthroughPage() {
         <section className="mb-12 grid md:grid-cols-2 gap-4">
           <Card>
             <CardHeader>
-              <CardTitle className="text-lg">Eddie\'s name as honour</CardTitle>
+              <CardTitle className="text-lg">
+                {t('rev.texts.avftb.extract.thread_name_h')}
+              </CardTitle>
             </CardHeader>
             <CardContent className="text-sm leading-relaxed space-y-2">
               {/* VERIFIED: Penguin Modern Classics edition - Eddie's line is "He's gonna give it back to me" (not "give it to me"). Fragments rephrased to match the original wording. */}
@@ -219,7 +211,9 @@ export default function ExtractWalkthroughPage() {
 
           <Card>
             <CardHeader>
-              <CardTitle className="text-lg">Alfieri as Greek chorus</CardTitle>
+              <CardTitle className="text-lg">
+                {t('rev.texts.avftb.extract.thread_chorus_h')}
+              </CardTitle>
             </CardHeader>
             <CardContent className="text-sm leading-relaxed space-y-2">
               <p>
@@ -237,7 +231,9 @@ export default function ExtractWalkthroughPage() {
 
           <Card>
             <CardHeader>
-              <CardTitle className="text-lg">Masculinity as honour</CardTitle>
+              <CardTitle className="text-lg">
+                {t('rev.texts.avftb.extract.thread_masculinity_h')}
+              </CardTitle>
             </CardHeader>
             <CardContent className="text-sm leading-relaxed space-y-2">
               <p>
@@ -255,7 +251,9 @@ export default function ExtractWalkthroughPage() {
 
           <Card>
             <CardHeader>
-              <CardTitle className="text-lg">Immigrant code vs American law</CardTitle>
+              <CardTitle className="text-lg">
+                {t('rev.texts.avftb.extract.thread_code_h')}
+              </CardTitle>
             </CardHeader>
             <CardContent className="text-sm leading-relaxed space-y-2">
               {/* VERIFIED: Penguin Modern Classics edn - Marco's line is "In my country he would be dead by now" (the word "by" was missing in the earlier draft). */}
@@ -280,12 +278,16 @@ export default function ExtractWalkthroughPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Sparkles className="h-5 w-5 text-primary" />
-                Model paragraph - 250 words
+                {t('rev.texts.avftb.extract.model_h')}
               </CardTitle>
               <CardDescription>
-                How the climax fulfils Alfieri\'s foreshadowing of "destiny" and Miller\'s
-                adaptation of Greek tragedy to a Brooklyn waterfront.{' '}
-                <span className="ml-1 text-xs">({MODEL_WORD_COUNT} words)</span>
+                {t('rev.texts.avftb.extract.model_desc')}{' '}
+                <span className="ml-1 text-xs">
+                  {t('rev.texts.avftb.extract.model_words').replace(
+                    '{n}',
+                    String(MODEL_WORD_COUNT),
+                  )}
+                </span>
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -298,7 +300,7 @@ export default function ExtractWalkthroughPage() {
         <section className="mb-12">
           <Card>
             <CardHeader>
-              <CardTitle>Examiner takeaways</CardTitle>
+              <CardTitle>{t('rev.texts.avftb.extract.takeaways_h')}</CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2 text-sm list-disc pl-5">
@@ -329,7 +331,9 @@ export default function ExtractWalkthroughPage() {
 
         {/* Fair dealing footer */}
         <footer className="mt-12 border-t border-border/60 pt-6 space-y-3 text-xs text-muted-foreground leading-relaxed">
-          <p className="font-semibold text-foreground">Copyright and fair dealing notice</p>
+          <p className="font-semibold text-foreground">
+            {t('rev.texts.avftb.extract.copyright_h')}
+          </p>
           <p>
             <em>A View from the Bridge</em> by Arthur Miller (one-act version 1955; revised two-act
             version 1956) remains in copyright. All rights are reserved by the Estate of Arthur

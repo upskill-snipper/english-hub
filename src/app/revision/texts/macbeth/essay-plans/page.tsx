@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
+import { useT } from '@/lib/i18n/use-t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 // ── Essay plan data ───────────────────────────────────────────────────────────
@@ -397,6 +398,7 @@ const ESSAY_PLANS: EssayPlan[] = [
 // ── Page component ────────────────────────────────────────────────────────────
 
 export default function MacbethEssayPlansPage() {
+  const t = useT()
   return (
     <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
@@ -425,22 +427,22 @@ export default function MacbethEssayPlansPage() {
               render={<Link href="/revision/texts/macbeth" />}
             >
               <ArrowLeft className="size-3.5" />
-              Back to Macbeth overview
+              {t('rev.texts.common.back_to_overview').replace('{text}', 'Macbeth')}
             </Button>
             <div className="mb-4 flex flex-wrap items-center gap-2">
               <Badge variant="secondary">
                 <FileText className="mr-1 size-3 text-rose-400" />
-                Essay Plans
+                {t('rev.texts.common.essay_plans')}
               </Badge>
-              <Badge variant="outline">8 plans</Badge>
+              <Badge variant="outline">
+                {t('rev.texts.common.plans_count').replace('{n}', '8')}
+              </Badge>
             </div>
             <h1 className="text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
-              Macbeth - Essay Plans
+              {t('rev.texts.macbeth.essays.title')}
             </h1>
             <p className="mt-3 max-w-2xl text-muted-foreground">
-              Eight exam-style essay plans covering character, theme, and writer&apos;s methods
-              questions. Each plan includes an introduction, three PEAL paragraphs with quotes and
-              analysis, and a conclusion.
+              {t('rev.texts.macbeth.essays.intro')}
             </p>
           </div>
         </section>
@@ -448,7 +450,7 @@ export default function MacbethEssayPlansPage() {
         {/* Exam tip */}
         <div className="rounded-lg border border-amber-500/20 bg-amber-500/[0.04] p-4">
           <h4 className="mb-1 flex items-center gap-1.5 font-semibold text-amber-700 dark:text-amber-300">
-            <Lightbulb className="size-4" /> How to Use These Plans
+            <Lightbulb className="size-4" /> {t('rev.texts.macbeth.essays.how_to_use_h')}
           </h4>
           <p className="text-sm text-muted-foreground leading-relaxed">
             These plans follow the PEAL structure (Point, Evidence, Analysis, Link to context). In
@@ -476,7 +478,7 @@ export default function MacbethEssayPlansPage() {
               {/* Introduction */}
               <div>
                 <h4 className="mb-1 font-semibold text-sm uppercase tracking-wide text-muted-foreground/70">
-                  Introduction
+                  {t('rev.texts.common.introduction')}
                 </h4>
                 <p className="text-muted-foreground leading-relaxed">{plan.introduction}</p>
               </div>
@@ -487,20 +489,20 @@ export default function MacbethEssayPlansPage() {
                   <h4 className="font-semibold">{p.label}</h4>
                   <div>
                     <span className="text-xs font-medium uppercase tracking-wide text-rose-500">
-                      Point
+                      {t('rev.texts.common.point')}
                     </span>
                     <p className="mt-0.5 text-sm text-muted-foreground">{p.point}</p>
                   </div>
                   <div className="rounded border border-border/40 bg-muted/30 p-3">
                     <span className="text-xs font-medium uppercase tracking-wide text-amber-500">
-                      Evidence
+                      {t('rev.texts.common.evidence')}
                     </span>
                     <p className="mt-1 font-medium">&ldquo;{p.quote}&rdquo;</p>
                     <p className="mt-0.5 text-xs text-muted-foreground/70">{p.quoteSource}</p>
                   </div>
                   <div>
                     <span className="text-xs font-medium uppercase tracking-wide text-blue-500">
-                      Analysis
+                      {t('rev.texts.common.analysis')}
                     </span>
                     <p className="mt-0.5 text-sm text-muted-foreground leading-relaxed">
                       {p.analysis}
@@ -508,7 +510,7 @@ export default function MacbethEssayPlansPage() {
                   </div>
                   <div className="rounded border border-emerald-500/20 bg-emerald-500/[0.04] p-3">
                     <span className="text-xs font-medium uppercase tracking-wide text-emerald-500">
-                      Context Link
+                      {t('rev.texts.common.context_link')}
                     </span>
                     <p className="mt-0.5 text-sm text-muted-foreground leading-relaxed">
                       {p.contextLink}
@@ -520,7 +522,7 @@ export default function MacbethEssayPlansPage() {
               {/* Conclusion */}
               <div>
                 <h4 className="mb-1 font-semibold text-sm uppercase tracking-wide text-muted-foreground/70">
-                  Conclusion
+                  {t('rev.texts.common.conclusion')}
                 </h4>
                 <p className="text-muted-foreground leading-relaxed">{plan.conclusion}</p>
               </div>
@@ -531,10 +533,10 @@ export default function MacbethEssayPlansPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center pt-4 pb-8">
           <Button variant="outline" render={<Link href="/revision/texts/macbeth" />}>
-            <ArrowLeft className="size-4 mr-1" /> Overview
+            <ArrowLeft className="size-4 mr-1" /> {t('rev.texts.common.overview')}
           </Button>
           <Button variant="outline" render={<Link href="/revision/texts/macbeth/characters" />}>
-            Characters <Quote className="size-4 ml-1" />
+            {t('rev.texts.common.characters')} <Quote className="size-4 ml-1" />
           </Button>
         </div>
       </div>

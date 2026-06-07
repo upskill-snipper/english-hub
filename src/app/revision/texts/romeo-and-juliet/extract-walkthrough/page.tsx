@@ -9,6 +9,7 @@ import { ArrowLeft, BookOpen, Quote, Lightbulb, ScrollText } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { useT } from '@/lib/i18n/use-t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
@@ -99,6 +100,7 @@ const MODEL_PARAGRAPH = `The Prologue\'s most striking effect comes from the col
 /* ─── Page ───────────────────────────────────────────────────── */
 
 export default function RomeoAndJulietExtractWalkthroughPage() {
+  const t = useT()
   return (
     <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
@@ -130,25 +132,23 @@ export default function RomeoAndJulietExtractWalkthroughPage() {
               render={<Link href="/revision/texts/romeo-and-juliet" />}
             >
               <ArrowLeft className="size-3.5" />
-              Back to Romeo and Juliet
+              {t('rev.texts.common.back_to_text').replace('{text}', 'Romeo and Juliet')}
             </Button>
 
             <div className="mb-4 flex flex-wrap items-center gap-2">
               <Badge variant="secondary">
                 <ScrollText className="mr-1 size-3 text-clay-600 dark:text-clay-300" />
-                Extract Walkthrough
+                {t('rev.texts.rj.extract.badge')}
               </Badge>
-              <Badge variant="outline">Public Domain</Badge>
-              <Badge variant="outline">Sonnet form</Badge>
+              <Badge variant="outline">{t('rev.texts.rj.extract.public_domain_badge')}</Badge>
+              <Badge variant="outline">{t('rev.texts.rj.extract.sonnet_form_badge')}</Badge>
             </div>
 
             <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              The Prologue: a love sonnet that announces a tragedy
+              {t('rev.texts.rj.extract.title')}
             </h1>
             <p className="mt-3 max-w-2xl text-base text-muted-foreground sm:text-lg">
-              A line-by-line walkthrough of the opening fourteen lines of <em>Romeo and Juliet</em>{' '}
-              - Shakespeare’s decision to frame his tragedy in the form of a love sonnet, and the
-              central paradox that choice creates.
+              {t('rev.texts.rj.extract.intro')}
             </p>
           </div>
         </section>
@@ -159,12 +159,12 @@ export default function RomeoAndJulietExtractWalkthroughPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Quote className="size-5 text-clay-600 dark:text-clay-300" />
-                The full extract
+                {t('rev.texts.rj.extract.full_extract_h')}
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="mb-3 text-sm text-muted-foreground">
-                Chorus, Prologue (public domain). Act 1, opening of the play.
+                {t('rev.texts.rj.extract.full_extract_source')}
               </p>
               <blockquote className="rounded-lg border-l-4 border-amber-500/40 bg-amber-500/10 p-5 font-heading text-base leading-relaxed text-foreground sm:text-lg">
                 Two households, both alike in dignity,
@@ -203,7 +203,7 @@ export default function RomeoAndJulietExtractWalkthroughPage() {
         <section className="mt-10">
           <h2 className="mb-4 flex items-center gap-2 text-2xl font-bold tracking-tight">
             <BookOpen className="size-5 text-clay-600 dark:text-clay-300" />
-            Line-by-line analysis
+            {t('rev.texts.rj.extract.line_by_line_h')}
           </h2>
           <div className="space-y-4">
             {PROLOGUE_LINES.map((line) => (
@@ -232,7 +232,7 @@ export default function RomeoAndJulietExtractWalkthroughPage() {
         <section className="mt-12">
           <h2 className="mb-4 flex items-center gap-2 text-2xl font-bold tracking-tight">
             <Lightbulb className="size-5 text-clay-600" />
-            Form, sound and structure
+            {t('rev.texts.rj.extract.form_sound_h')}
           </h2>
           <div className="grid gap-4 md:grid-cols-2">
             {FORM_NOTES.map((note) => (
@@ -254,11 +254,10 @@ export default function RomeoAndJulietExtractWalkthroughPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-xl">
                 <ScrollText className="size-5 text-violet-700 dark:text-violet-300" />
-                Model 250-word paragraph
+                {t('rev.texts.rj.extract.model_para_h')}
               </CardTitle>
               <p className="mt-1 text-sm text-muted-foreground">
-                How the Prologue’s form (love sonnet) collides with its content (death and feud) to
-                set up the play’s central paradox.
+                {t('rev.texts.rj.extract.model_para_desc')}
               </p>
             </CardHeader>
             <CardContent>
@@ -266,7 +265,7 @@ export default function RomeoAndJulietExtractWalkthroughPage() {
                 {MODEL_PARAGRAPH}
               </p>
               <p className="mt-3 text-xs uppercase tracking-wide text-muted-foreground">
-                Approx. 280 words
+                {t('rev.texts.rj.extract.approx_words')}
               </p>
             </CardContent>
           </Card>
@@ -276,7 +275,7 @@ export default function RomeoAndJulietExtractWalkthroughPage() {
         <div className="mt-12 flex justify-center">
           <Button variant="outline" render={<Link href="/revision/texts/romeo-and-juliet" />}>
             <ArrowLeft className="size-3.5" />
-            Back to Romeo and Juliet hub
+            {t('rev.texts.rj.extract.back_hub')}
           </Button>
         </div>
       </div>

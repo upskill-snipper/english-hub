@@ -6,6 +6,7 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title: 'The Merchant of Venice - Study Guide | The English Hub',
@@ -249,11 +250,10 @@ export default async function TheMerchantOfVenicePage() {
         ]}
       />
       <div className="mb-6 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-sm text-amber-100">
-        <strong className="block text-foreground">Draft study guide</strong>
-        <span>
-          This AI-assisted guide is under expert review. Cross-check with your teacher&rsquo;s notes
-          before relying on it for exam preparation.
-        </span>
+        <strong className="block text-foreground">
+          {await t('rev.texts.common.draft_guide_title')}
+        </strong>
+        <span>{await t('rev.texts.common.draft_guide_note_long')}</span>
       </div>
       <TextGuide data={data} />
     </>

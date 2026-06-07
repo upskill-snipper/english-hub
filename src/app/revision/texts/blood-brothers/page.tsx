@@ -8,6 +8,7 @@ import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Blood Brothers revision guide - themes, characters, key quotes - The English Hub',
@@ -565,36 +566,36 @@ export default async function BloodBrothersPage() {
             id: 'acts',
             href: '/revision/texts/blood-brothers/acts',
             icon: 'acts' as const,
-            title: 'Act-by-Act Analysis',
-            description: 'Key moments & quotes',
+            title: await t('rev.texts.bloodbrothers.subpage.acts.title'),
+            description: await t('rev.texts.bloodbrothers.subpage.acts.desc'),
           },
           {
             id: 'characters',
             href: '/revision/texts/blood-brothers/characters',
             icon: 'characters' as const,
-            title: 'Characters',
-            description: 'Full character guide',
+            title: await t('rev.texts.bloodbrothers.subpage.characters.title'),
+            description: await t('rev.texts.bloodbrothers.subpage.characters.desc'),
           },
           {
             id: 'themes',
             href: '/revision/texts/blood-brothers/themes',
             icon: 'themes' as const,
-            title: 'Themes',
-            description: 'Theme analysis',
+            title: await t('rev.texts.bloodbrothers.subpage.themes.title'),
+            description: await t('rev.texts.bloodbrothers.subpage.themes.desc'),
           },
           {
             id: 'quotes',
             href: '/revision/texts/blood-brothers/key-quotes',
             icon: 'quotes' as const,
-            title: 'Key Quotes',
-            description: 'Quotes with analysis',
+            title: await t('rev.texts.bloodbrothers.subpage.quotes.title'),
+            description: await t('rev.texts.bloodbrothers.subpage.quotes.desc'),
           },
           {
             id: 'essays',
             href: '/revision/texts/blood-brothers/essay-plans',
             icon: 'essays' as const,
-            title: 'Essay Plans',
-            description: 'GCSE essay plans',
+            title: await t('rev.texts.bloodbrothers.subpage.essays.title'),
+            description: await t('rev.texts.bloodbrothers.subpage.essays.desc'),
           },
         ]}
         quizQuotes={data.quotations.slice(0, 10).map((q) => ({
@@ -623,9 +624,10 @@ export default async function BloodBrothersPage() {
       />
       <TextGuide data={data} />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        <strong>Rights notice:</strong> &copy; Methuen Drama / Bloomsbury on behalf of Willy Russell
-        (b. 1947). Quotations are short fair-dealing extracts under CDPA 1988 &sect;30 (criticism,
-        review, quotation). For full text, students should consult the licensed school edition.
+        <strong>{await t('rev.texts.bloodbrothers.rights_notice_label')}</strong> &copy; Methuen
+        Drama / Bloomsbury on behalf of Willy Russell (b. 1947). Quotations are short fair-dealing
+        extracts under CDPA 1988 &sect;30 (criticism, review, quotation). For full text, students
+        should consult the licensed school edition.
       </p>
     </>
   )

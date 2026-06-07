@@ -8,6 +8,7 @@ import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Jane Eyre revision guide - themes, characters, key quotes - The English Hub',
@@ -487,36 +488,36 @@ export default async function JaneEyrePage() {
             id: 'chapters',
             href: '/revision/texts/jane-eyre/chapters',
             icon: 'acts' as const,
-            title: 'Chapter-by-Chapter',
-            description: 'Key moments & quotes',
+            title: await t('rev.textgrp4.subpage.chapters.title'),
+            description: await t('rev.texts.subpage.acts.desc'),
           },
           {
             id: 'characters',
             href: '/revision/texts/jane-eyre/characters',
             icon: 'characters' as const,
-            title: 'Characters',
-            description: 'Full character guide',
+            title: await t('rev.texts.subpage.characters.title'),
+            description: await t('rev.texts.subpage.characters.desc'),
           },
           {
             id: 'themes',
             href: '/revision/texts/jane-eyre/themes',
             icon: 'themes' as const,
-            title: 'Themes',
-            description: 'Theme analysis',
+            title: await t('rev.texts.subpage.themes.title'),
+            description: await t('rev.texts.subpage.themes.desc'),
           },
           {
             id: 'quotes',
             href: '/revision/texts/jane-eyre/key-quotes',
             icon: 'quotes' as const,
-            title: 'Key Quotes',
-            description: 'Quotes with analysis',
+            title: await t('rev.texts.subpage.quotes.title'),
+            description: await t('rev.texts.subpage.quotes.desc'),
           },
           {
             id: 'essays',
             href: '/revision/texts/jane-eyre/essay-plans',
             icon: 'essays' as const,
-            title: 'Essay Plans',
-            description: 'GCSE essay plans',
+            title: await t('rev.texts.subpage.essays.title'),
+            description: await t('rev.texts.subpage.essays.desc'),
           },
         ]}
         quizQuotes={data.quotations.slice(0, 10).map((q) => ({
@@ -545,8 +546,10 @@ export default async function JaneEyrePage() {
       />
       <TextGuide data={data} />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        <em>Jane Eyre</em> (1847) by Charlotte Bront&euml; is in the public domain. Quotations are
-        reproduced freely.
+        {(await t('rev.textgrp4.common.public_domain'))
+          .replace('{title}', 'Jane Eyre')
+          .replace('{author}', 'Charlotte Brontë')
+          .replace('{year}', '1847')}
       </p>
     </>
   )

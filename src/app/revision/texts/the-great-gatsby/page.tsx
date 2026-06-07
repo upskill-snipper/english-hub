@@ -9,6 +9,7 @@ import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title: 'The Great Gatsby - Study Guide | The English Hub',
@@ -657,10 +658,10 @@ export default async function TheGreatGatsbyPage() {
         ]}
       />
       <div className="mb-6 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-sm text-amber-100">
-        <strong className="block text-foreground">Draft study guide</strong>
-        <span>
-          AI-assisted draft under expert review. Cross-check with your teacher&rsquo;s notes.
-        </span>
+        <strong className="block text-foreground">
+          {await t('rev.textgrp4.common.draft_badge')}
+        </strong>
+        <span>{await t('rev.textgrp4.common.draft_note')}</span>
       </div>
       <TextStudyHub
         textName="The Great Gatsby"
@@ -672,50 +673,50 @@ export default async function TheGreatGatsbyPage() {
             id: 'read',
             href: '/revision/texts/the-great-gatsby/read',
             icon: 'read' as const,
-            title: 'Read Full Text',
-            description: 'With annotations',
+            title: await t('rev.texts.subpage.read.title'),
+            description: await t('rev.texts.subpage.read.desc'),
           },
           {
             id: 'acts',
             href: '/revision/texts/the-great-gatsby/chapters',
             icon: 'acts' as const,
-            title: 'Chapter-by-Chapter Analysis',
-            description: 'Key moments & quotes',
+            title: await t('rev.textgrp4.subpage.chapters_analysis.title'),
+            description: await t('rev.texts.subpage.acts.desc'),
           },
           {
             id: 'characters',
             href: '/revision/texts/the-great-gatsby/characters',
             icon: 'characters' as const,
-            title: 'Characters',
-            description: 'Full character guide',
+            title: await t('rev.texts.subpage.characters.title'),
+            description: await t('rev.texts.subpage.characters.desc'),
           },
           {
             id: 'themes',
             href: '/revision/texts/the-great-gatsby/themes',
             icon: 'themes' as const,
-            title: 'Themes',
-            description: 'Theme analysis',
+            title: await t('rev.texts.subpage.themes.title'),
+            description: await t('rev.texts.subpage.themes.desc'),
           },
           {
             id: 'quotes',
             href: '/revision/texts/the-great-gatsby/key-quotes',
             icon: 'quotes' as const,
-            title: 'Key Quotes',
-            description: 'Quotes with analysis',
+            title: await t('rev.texts.subpage.quotes.title'),
+            description: await t('rev.texts.subpage.quotes.desc'),
           },
           {
             id: 'context',
             href: '/revision/texts/the-great-gatsby/context',
             icon: 'context' as const,
-            title: 'Context',
-            description: 'Historical context',
+            title: await t('rev.texts.subpage.context.title'),
+            description: await t('rev.texts.subpage.context.desc'),
           },
           {
             id: 'essays',
             href: '/revision/texts/the-great-gatsby/essay-plans',
             icon: 'essays' as const,
-            title: 'Essay Plans',
-            description: 'A-Level essay plans',
+            title: await t('rev.texts.subpage.essays.title'),
+            description: await t('rev.textgrp4.subpage.essays_alevel.desc'),
           },
         ]}
         quizQuotes={data.quotations.slice(0, 10).map((q) => ({

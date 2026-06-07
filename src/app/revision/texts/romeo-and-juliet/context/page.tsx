@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
+import { useT } from '@/lib/i18n/use-t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ─── Types ──────────────────────────────────────────────────── */
@@ -89,6 +90,7 @@ const CONTEXT_SECTIONS: ContextSection[] = [
 /* ─── Page ───────────────────────────────────────────────────── */
 
 export default function RomeoAndJulietContextPage() {
+  const t = useT()
   return (
     <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
@@ -121,13 +123,13 @@ export default function RomeoAndJulietContextPage() {
               render={<Link href="/revision/texts/romeo-and-juliet" />}
             >
               <ArrowLeft className="size-3.5" />
-              Back to Romeo and Juliet
+              {t('rev.texts.common.back_to_text').replace('{text}', 'Romeo and Juliet')}
             </Button>
 
             <div className="mb-4 flex flex-wrap items-center gap-2">
               <Badge variant="secondary">
                 <Globe className="mr-1 size-3 text-emerald-400" />
-                Historical Context
+                {t('rev.texts.common.historical_context')}
               </Badge>
               <Badge variant="outline" className="text-muted-foreground">
                 AQA / Edexcel / OCR / Eduqas
@@ -135,14 +137,13 @@ export default function RomeoAndJulietContextPage() {
             </div>
 
             <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-              Context - Deep Study
+              {t('rev.texts.rj.context.h1')}
             </h1>
             <p className="mt-2 text-body-lg text-muted-foreground">
-              Romeo and Juliet by William Shakespeare
+              {t('rev.texts.rj.context.byline')}
             </p>
             <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-              Essential historical, social and literary context for top-grade GCSE responses. Every
-              section includes exam relevance to help you apply context effectively.
+              {t('rev.texts.rj.context.intro')}
             </p>
           </div>
         </section>
@@ -163,7 +164,9 @@ export default function RomeoAndJulietContextPage() {
                 {/* Detailed content */}
                 <Card>
                   <CardHeader>
-                    <CardTitle className="text-heading-md font-heading">In Detail</CardTitle>
+                    <CardTitle className="text-heading-md font-heading">
+                      {t('rev.texts.common.in_detail')}
+                    </CardTitle>
                   </CardHeader>
                   <CardContent className="text-body-sm text-muted-foreground">
                     <p>{s.detailed}</p>
@@ -175,7 +178,9 @@ export default function RomeoAndJulietContextPage() {
                   <CardContent className="p-5">
                     <div className="flex items-center gap-2 mb-1">
                       <Lightbulb className="size-4 text-clay-600" />
-                      <p className="text-sm font-semibold text-foreground">Exam relevance (AO3)</p>
+                      <p className="text-sm font-semibold text-foreground">
+                        {t('rev.texts.common.exam_relevance_ao3')}
+                      </p>
                     </div>
                     <p className="text-body-sm text-muted-foreground">{s.examRelevance}</p>
                   </CardContent>
@@ -187,8 +192,7 @@ export default function RomeoAndJulietContextPage() {
 
         {/* Footer */}
         <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-          <em>Romeo and Juliet</em> (c. 1594-96) by William Shakespeare is in the public domain.
-          Context information is drawn from standard historical and literary scholarship.
+          {t('rev.texts.rj.context.public_domain_note')}
         </p>
       </div>
     </div>

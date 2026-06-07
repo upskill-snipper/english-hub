@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button'
 import { getServerBoard } from '@/lib/board/get-server-board'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Pride and Prejudice - Character Analysis | The English Hub',
@@ -268,6 +269,10 @@ export default async function PrideAndPrejudiceCharactersPage() {
     redirect('/revision/texts')
   }
 
+  const characterDevelopmentLabel = await t('rev.textgrp4.common.character_development')
+  const keyQuotationsLabel = await t('rev.textgrp4.common.key_quotations')
+  const examTipLabel = await t('rev.textgrp4.common.exam_tip_lc')
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -298,13 +303,13 @@ export default async function PrideAndPrejudiceCharactersPage() {
             render={<Link href="/revision/texts/pride-and-prejudice" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Pride and Prejudice
+            {await t('rev.texts.pp.characters.back')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <BookOpen className="mr-1 size-3 text-emerald-400" />
-              19th-Century Novel
+              {await t('rev.textgrp4.common.19c_novel')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -313,14 +318,13 @@ export default async function PrideAndPrejudiceCharactersPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Character Analysis
+            {await t('rev.texts.pp.characters.title')}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
-            Pride and Prejudice by Jane Austen
+            {await t('rev.texts.pp.characters.byline')}
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Detailed analysis of every major character, with key quotations, development arcs and
-            exam tips for GCSE and A-Level literature.
+            {await t('rev.texts.pp.characters.intro')}
           </p>
         </div>
       </section>
@@ -329,7 +333,9 @@ export default async function PrideAndPrejudiceCharactersPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Users className="size-5 text-emerald-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">Major Characters</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {await t('rev.textgrp4.common.major_characters')}
+          </h2>
         </div>
 
         <div className="space-y-6">
@@ -357,14 +363,14 @@ export default async function PrideAndPrejudiceCharactersPage() {
                 {/* Character development */}
                 <div>
                   <h4 className="text-sm font-semibold text-foreground mb-1">
-                    Character development
+                    {characterDevelopmentLabel}
                   </h4>
                   <p className="text-body-sm text-muted-foreground">{c.development}</p>
                 </div>
 
                 {/* Key quotes */}
                 <div className="space-y-3">
-                  <h4 className="text-sm font-semibold text-foreground">Key Quotations</h4>
+                  <h4 className="text-sm font-semibold text-foreground">{keyQuotationsLabel}</h4>
                   {c.keyQuotes.map((q, i) => (
                     <div
                       key={i}
@@ -378,7 +384,7 @@ export default async function PrideAndPrejudiceCharactersPage() {
 
                 {/* Exam tip */}
                 <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 p-4">
-                  <h4 className="text-sm font-semibold text-amber-700 mb-1">Exam tip</h4>
+                  <h4 className="text-sm font-semibold text-amber-700 mb-1">{examTipLabel}</h4>
                   <p className="text-body-sm text-muted-foreground">{c.examTip}</p>
                 </div>
               </CardContent>
@@ -389,8 +395,10 @@ export default async function PrideAndPrejudiceCharactersPage() {
 
       {/* ── Public domain notice ─────────────────────────────────────── */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Pride and Prejudice by Jane Austen (1813) is in the public domain. Quotations are reproduced
-        freely as the text is no longer subject to copyright.
+        {(await t('rev.textgrp4.common.public_domain'))
+          .replace('{title}', 'Pride and Prejudice')
+          .replace('{author}', 'Jane Austen')
+          .replace('{year}', '1813')}
       </p>
     </div>
   )

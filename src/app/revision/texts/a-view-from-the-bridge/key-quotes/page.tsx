@@ -10,6 +10,7 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 import StudyTools from '@/components/study/StudyTools'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title: 'A View from the Bridge - Key Quotes | The English Hub',
@@ -256,12 +257,12 @@ export default async function AViewFromTheBridgeKeyQuotesPage() {
             className="mb-4 -ml-2 text-muted-foreground"
             render={<Link href="/revision/texts/a-view-from-the-bridge" />}
           >
-            <ArrowLeft className="size-3.5" /> Back to A View from the Bridge
+            <ArrowLeft className="size-3.5" /> {await t('rev.texts.avftb.back')}
           </Button>
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Drama className="mr-1 size-3 text-violet-400" />
-              Modern Text - Play
+              {await t('rev.texts.grp3.common.modern_text_play')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -269,14 +270,13 @@ export default async function AViewFromTheBridgeKeyQuotesPage() {
             </Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Key Quotations
+            {await t('rev.texts.avftb.quotes.title')}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
-            A View from the Bridge by Arthur Miller
+            {await t('rev.texts.avftb.byline')}
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Twenty essential quotations for exam revision. Each quote is 15 words or fewer, with
-            speaker, context, analysis and theme tags for quick reference.
+            {await t('rev.texts.avftb.quotes.intro')}
           </p>
         </div>
       </section>
@@ -285,7 +285,9 @@ export default async function AViewFromTheBridgeKeyQuotesPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Quote className="size-5 text-violet-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">20 Key Quotes</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {await t('rev.texts.avftb.quotes.count_h')}
+          </h2>
         </div>
         <div className="grid gap-4">
           {KEY_QUOTES.map((q) => (
@@ -324,28 +326,26 @@ export default async function AViewFromTheBridgeKeyQuotesPage() {
           size="sm"
           render={<Link href="/revision/texts/a-view-from-the-bridge/characters" />}
         >
-          Characters <ArrowRight className="size-3.5" />
+          {await t('rev.texts.grp3.common.nav_characters')} <ArrowRight className="size-3.5" />
         </Button>
         <Button
           variant="outline"
           size="sm"
           render={<Link href="/revision/texts/a-view-from-the-bridge/themes" />}
         >
-          Themes <ArrowRight className="size-3.5" />
+          {await t('rev.texts.grp3.common.nav_themes')} <ArrowRight className="size-3.5" />
         </Button>
         <Button
           variant="outline"
           size="sm"
           render={<Link href="/revision/texts/a-view-from-the-bridge/context" />}
         >
-          Context <ArrowRight className="size-3.5" />
+          {await t('rev.texts.grp3.common.nav_context')} <ArrowRight className="size-3.5" />
         </Button>
       </section>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the Copyright, Designs and
-        Patents Act 1988 for criticism and review. Full text available from your school or local
-        library.
+        {await t('rev.texts.grp3.common.fair_dealing_short')}
       </p>
     </div>
   )

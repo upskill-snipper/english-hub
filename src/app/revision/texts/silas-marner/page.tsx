@@ -8,6 +8,7 @@ import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Silas Marner - Study Guide | The English Hub',
@@ -618,11 +619,10 @@ export default async function SilasMarnerPage() {
         ]}
       />
       <div className="mb-6 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-sm text-amber-100">
-        <strong className="block text-foreground">Draft study guide</strong>
-        <span>
-          This AI-assisted guide is under expert review. Cross-check with your teacher&rsquo;s notes
-          before relying on it for exam preparation.
-        </span>
+        <strong className="block text-foreground">
+          {await t('rev.textgrp4.common.draft_badge')}
+        </strong>
+        <span>{await t('rev.textgrp4.common.draft_note_long')}</span>
       </div>
       <TextStudyHub
         textName="Silas Marner"
@@ -634,50 +634,50 @@ export default async function SilasMarnerPage() {
             id: 'read',
             href: '/revision/texts/silas-marner/read',
             icon: 'read' as const,
-            title: 'Read Full Text',
-            description: 'With annotations',
+            title: await t('rev.texts.subpage.read.title'),
+            description: await t('rev.texts.subpage.read.desc'),
           },
           {
             id: 'chapters',
             href: '/revision/texts/silas-marner/chapters',
             icon: 'acts' as const,
-            title: 'Chapter-by-Chapter Analysis',
-            description: 'Key moments & quotes',
+            title: await t('rev.textgrp4.subpage.chapters_analysis.title'),
+            description: await t('rev.texts.subpage.acts.desc'),
           },
           {
             id: 'characters',
             href: '/revision/texts/silas-marner/characters',
             icon: 'characters' as const,
-            title: 'Characters',
-            description: 'Full character guide',
+            title: await t('rev.texts.subpage.characters.title'),
+            description: await t('rev.texts.subpage.characters.desc'),
           },
           {
             id: 'themes',
             href: '/revision/texts/silas-marner/themes',
             icon: 'themes' as const,
-            title: 'Themes',
-            description: 'Theme analysis',
+            title: await t('rev.texts.subpage.themes.title'),
+            description: await t('rev.texts.subpage.themes.desc'),
           },
           {
             id: 'quotes',
             href: '/revision/texts/silas-marner/key-quotes',
             icon: 'quotes' as const,
-            title: 'Key Quotes',
-            description: 'Quotes with analysis',
+            title: await t('rev.texts.subpage.quotes.title'),
+            description: await t('rev.texts.subpage.quotes.desc'),
           },
           {
             id: 'context',
             href: '/revision/texts/silas-marner/context',
             icon: 'context' as const,
-            title: 'Context',
-            description: 'Historical context',
+            title: await t('rev.texts.subpage.context.title'),
+            description: await t('rev.texts.subpage.context.desc'),
           },
           {
             id: 'essays',
             href: '/revision/texts/silas-marner/essay-plans',
             icon: 'essays' as const,
-            title: 'Essay Plans',
-            description: 'GCSE essay plans',
+            title: await t('rev.texts.subpage.essays.title'),
+            description: await t('rev.texts.subpage.essays.desc'),
           },
         ]}
         quizQuotes={data.quotations.slice(0, 10).map((q) => ({

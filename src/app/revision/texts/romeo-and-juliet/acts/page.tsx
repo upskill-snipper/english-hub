@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Romeo and Juliet - Act-by-Act Analysis | The English Hub',
@@ -390,6 +391,13 @@ export default async function RomeoAndJulietActsPage() {
     redirect('/revision/texts')
   }
 
+  const actNLabel = await t('rev.texts.common.act_n')
+  const actNSceneLabel = await t('rev.texts.common.act_n_scene_s')
+  const prologueLabel = await t('rev.texts.common.prologue')
+  const prologueAct2Label = await t('rev.texts.common.prologue_act2')
+  const summaryLabel = await t('rev.texts.common.summary')
+  const languageAnalysisLabel = await t('rev.texts.common.language_analysis')
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -419,13 +427,13 @@ export default async function RomeoAndJulietActsPage() {
             render={<Link href="/revision/texts/romeo-and-juliet" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Romeo and Juliet
+            {(await t('rev.texts.common.back_to_text')).replace('{text}', 'Romeo and Juliet')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Drama className="mr-1 size-3 text-violet-400" />
-              Shakespeare - Play
+              {await t('rev.texts.common.shakespeare_play_badge')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -434,10 +442,10 @@ export default async function RomeoAndJulietActsPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Romeo and Juliet - Act-by-Act Analysis
+            {await t('rev.texts.rj.acts.title')}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
-            All five acts analysed scene by scene, with language analysis and key quotations.
+            {await t('rev.texts.rj.acts.intro')}
           </p>
         </div>
       </section>
@@ -448,7 +456,7 @@ export default async function RomeoAndJulietActsPage() {
           <div className="mb-5 flex items-center gap-3">
             <BookOpen className="size-5 text-blue-400" />
             <h2 className="text-heading-lg font-heading text-foreground">
-              Act {act.act}: {act.title}
+              {actNLabel.replace('{n}', String(act.act))}: {act.title}
             </h2>
           </div>
 
@@ -464,20 +472,22 @@ export default async function RomeoAndJulietActsPage() {
                 <CardHeader>
                   <CardTitle className="text-heading-md font-heading">
                     {act.act === 1 && scene.scene === 'Prologue'
-                      ? 'Prologue'
+                      ? prologueLabel
                       : act.act === 2 && scene.scene === 'Prologue'
-                        ? 'Prologue (Act 2)'
-                        : `Act ${act.act}, ${scene.scene}`}
+                        ? prologueAct2Label
+                        : actNSceneLabel
+                            .replace('{n}', String(act.act))
+                            .replace('{s}', scene.scene.replace(/^Scene\s*/, ''))}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4 text-body-sm text-muted-foreground">
                   <div>
-                    <h4 className="mb-1 text-sm font-semibold text-foreground">Summary</h4>
+                    <h4 className="mb-1 text-sm font-semibold text-foreground">{summaryLabel}</h4>
                     <p>{scene.summary}</p>
                   </div>
                   <div>
                     <h4 className="mb-1 text-sm font-semibold text-foreground">
-                      Language Analysis
+                      {languageAnalysisLabel}
                     </h4>
                     <p>{scene.language}</p>
                   </div>

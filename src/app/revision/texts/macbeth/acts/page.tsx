@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 export const metadata = {
   openGraph: {
     title: 'Macbeth - Act-by-Act Study Guide | The English Hub',
@@ -1208,6 +1209,9 @@ export default async function MacbethActsPage() {
     redirect('/revision/texts')
   }
 
+  const actNLabel = await t('rev.texts.common.act_n')
+  const languageTechniquesLabel = await t('rev.texts.common.language_techniques')
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -1234,31 +1238,28 @@ export default async function MacbethActsPage() {
             render={<Link href="/revision/texts/macbeth" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Macbeth
+            {(await t('rev.texts.common.back_to_text')).replace('{text}', 'Macbeth')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Drama className="mr-1 size-3 text-violet-400" />
-              Shakespeare - Play
+              {await t('rev.texts.common.shakespeare_play_badge')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
-              All 5 Acts Scene-by-Scene
+              {await t('rev.texts.common.all_5_acts_scene')}
             </Badge>
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Macbeth - Act-by-Act Study Guide
+            {await t('rev.texts.macbeth.acts.title')}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
-            Every scene with full public-domain quotations and language technique analysis
+            {await t('rev.texts.macbeth.acts.intro')}
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            This guide breaks down all five acts of Macbeth scene by scene. Each scene includes a
-            plot summary, at least five key quotations from Shakespeare&apos;s original text (public
-            domain), and detailed analysis of the language techniques Shakespeare employs. Use it
-            for close reading, essay planning, and exam preparation.
+            {await t('rev.texts.macbeth.acts.framing')}
           </p>
         </div>
       </section>
@@ -1267,7 +1268,9 @@ export default async function MacbethActsPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-blue-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">Jump to Act</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {await t('rev.texts.common.jump_to_act')}
+          </h2>
         </div>
         <div className="flex flex-wrap gap-2">
           {ACTS.map((a) => (
@@ -1277,7 +1280,7 @@ export default async function MacbethActsPage() {
               render={<a href={`#act-${a.act}`} />}
               className="cursor-pointer transition-colors hover:bg-primary/10 hover:text-primary"
             >
-              Act {a.act}: {a.title}
+              {actNLabel.replace('{n}', String(a.act))}: {a.title}
             </Badge>
           ))}
         </div>
@@ -1289,7 +1292,7 @@ export default async function MacbethActsPage() {
           <div className="mb-5 flex items-center gap-3">
             <BookOpen className="size-5 text-emerald-400" />
             <h2 className="text-heading-lg font-heading text-foreground">
-              Act {act.act} - {act.title}
+              {actNLabel.replace('{n}', String(act.act))} - {act.title}
             </h2>
           </div>
 
@@ -1314,23 +1317,23 @@ export default async function MacbethActsPage() {
                 {/* Techniques */}
                 <div className="space-y-4">
                   <p className="text-caption uppercase tracking-wide text-primary font-semibold">
-                    Language Techniques
+                    {languageTechniquesLabel}
                   </p>
-                  {scene.techniques.map((t, ti) => (
+                  {scene.techniques.map((tech, ti) => (
                     <div
                       key={ti}
                       className="rounded-xl border border-border/50 bg-muted/20 p-4 space-y-2"
                     >
                       <div className="flex items-start gap-2">
                         <Badge variant="secondary" className="shrink-0 mt-0.5">
-                          {t.name}
+                          {tech.name}
                         </Badge>
                       </div>
                       <p className="text-body-md font-medium italic text-foreground flex items-start gap-2">
                         <Quote className="size-4 text-violet-400 shrink-0 mt-1" />
-                        {t.quote}
+                        {tech.quote}
                       </p>
-                      <p className="text-body-sm text-muted-foreground">{t.analysis}</p>
+                      <p className="text-body-sm text-muted-foreground">{tech.analysis}</p>
                     </div>
                   ))}
                 </div>
@@ -1342,8 +1345,7 @@ export default async function MacbethActsPage() {
 
       {/* Public domain note */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        All quotations are from Shakespeare&apos;s <em>Macbeth</em> (c. 1606), which is in the
-        public domain. Analysis and study notes are original to The English Hub.
+        {await t('rev.texts.macbeth.acts.public_domain_note')}
       </p>
     </div>
   )

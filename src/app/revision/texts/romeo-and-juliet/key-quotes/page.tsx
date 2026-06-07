@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
+import { useT } from '@/lib/i18n/use-t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ─── Types ──────────────────────────────────────────────────── */
@@ -287,6 +288,7 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
 /* ─── Page ───────────────────────────────────────────────────── */
 
 export default function RomeoAndJulietKeyQuotesPage() {
+  const t = useT()
   return (
     <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
@@ -319,13 +321,13 @@ export default function RomeoAndJulietKeyQuotesPage() {
               render={<Link href="/revision/texts/romeo-and-juliet" />}
             >
               <ArrowLeft className="size-3.5" />
-              Back to Romeo and Juliet
+              {t('rev.texts.common.back_to_text').replace('{text}', 'Romeo and Juliet')}
             </Button>
 
             <div className="mb-4 flex flex-wrap items-center gap-2">
               <Badge variant="secondary">
                 <Quote className="mr-1 size-3 text-violet-400" />
-                Key Quotations
+                {t('rev.texts.common.key_quotations')}
               </Badge>
               <Badge variant="outline" className="text-muted-foreground">
                 AQA / Edexcel / OCR / Eduqas
@@ -333,14 +335,11 @@ export default function RomeoAndJulietKeyQuotesPage() {
             </div>
 
             <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-              30 Key Quotes by Theme
+              {t('rev.texts.rj.quotes.h1')}
             </h1>
-            <p className="mt-2 text-body-lg text-muted-foreground">
-              Romeo and Juliet by William Shakespeare
-            </p>
+            <p className="mt-2 text-body-lg text-muted-foreground">{t('rev.texts.rj.byline')}</p>
             <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-              Every quotation you need for the exam, organised by theme with detailed analysis. All
-              from the public-domain text.
+              {t('rev.texts.rj.quotes.intro_short')}
             </p>
           </div>
         </section>
@@ -349,7 +348,9 @@ export default function RomeoAndJulietKeyQuotesPage() {
         <section className="mt-10">
           <Card>
             <CardContent className="p-5">
-              <p className="text-sm font-semibold text-foreground mb-3">Jump to theme</p>
+              <p className="text-sm font-semibold text-foreground mb-3">
+                {t('rev.texts.common.jump_to_theme_label')}
+              </p>
               <div className="flex flex-wrap gap-2">
                 {QUOTES_BY_THEME.map((section) => (
                   <a
@@ -374,7 +375,7 @@ export default function RomeoAndJulietKeyQuotesPage() {
                 <span className={`block size-3 rounded-full ${section.colour}`} />
                 <h2 className="text-heading-lg font-heading text-foreground">{section.theme}</h2>
                 <Badge variant="outline" className="text-muted-foreground">
-                  {section.quotes.length} quotes
+                  {t('rev.texts.common.quotes_count').replace('{n}', String(section.quotes.length))}
                 </Badge>
               </div>
 
@@ -403,8 +404,7 @@ export default function RomeoAndJulietKeyQuotesPage() {
 
         {/* Footer */}
         <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-          <em>Romeo and Juliet</em> (c. 1594-96) by William Shakespeare is in the public domain. All
-          quotations are reproduced freely.
+          {t('rev.texts.rj.public_domain_note')}
         </p>
       </div>
     </div>

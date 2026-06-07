@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button'
 import { getServerBoard } from '@/lib/board/get-server-board'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Pride and Prejudice - Key Chapters Analysed | The English Hub',
@@ -244,6 +245,9 @@ export default async function PrideAndPrejudiceChaptersPage() {
     redirect('/revision/texts')
   }
 
+  const keyQuotationsLabel = await t('rev.textgrp4.common.key_quotations')
+  const whyChapterMattersLabel = await t('rev.textgrp4.common.why_chapter_matters')
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -274,13 +278,13 @@ export default async function PrideAndPrejudiceChaptersPage() {
             render={<Link href="/revision/texts/pride-and-prejudice" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Pride and Prejudice
+            {await t('rev.texts.pp.chapters.back')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <BookOpen className="mr-1 size-3 text-emerald-400" />
-              19th-Century Novel
+              {await t('rev.textgrp4.common.19c_novel')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -289,14 +293,13 @@ export default async function PrideAndPrejudiceChaptersPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Key Chapters Analysed
+            {await t('rev.texts.pp.chapters.title')}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
-            Pride and Prejudice by Jane Austen
+            {await t('rev.texts.pp.chapters.byline')}
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            A volume-by-volume analysis of the most important chapters in the novel, with full
-            public-domain quotations and exam-ready commentary on Austen&apos;s methods.
+            {await t('rev.texts.pp.chapters.intro')}
           </p>
         </div>
       </section>
@@ -317,7 +320,7 @@ export default async function PrideAndPrejudiceChaptersPage() {
               <p className="text-body-sm text-muted-foreground">{ch.summary}</p>
 
               <div className="space-y-4">
-                <h4 className="text-sm font-semibold text-foreground">Key Quotations</h4>
+                <h4 className="text-sm font-semibold text-foreground">{keyQuotationsLabel}</h4>
                 {ch.keyQuotes.map((q, i) => (
                   <div
                     key={i}
@@ -331,7 +334,7 @@ export default async function PrideAndPrejudiceChaptersPage() {
 
               <div>
                 <h4 className="text-sm font-semibold text-foreground mb-1">
-                  Why this chapter matters
+                  {whyChapterMattersLabel}
                 </h4>
                 <p className="text-body-sm text-muted-foreground">{ch.significance}</p>
               </div>
@@ -342,8 +345,10 @@ export default async function PrideAndPrejudiceChaptersPage() {
 
       {/* ── Public domain notice ─────────────────────────────────────── */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Pride and Prejudice by Jane Austen (1813) is in the public domain. Quotations are reproduced
-        freely as the text is no longer subject to copyright.
+        {(await t('rev.textgrp4.common.public_domain'))
+          .replace('{title}', 'Pride and Prejudice')
+          .replace('{author}', 'Jane Austen')
+          .replace('{year}', '1813')}
       </p>
     </div>
   )

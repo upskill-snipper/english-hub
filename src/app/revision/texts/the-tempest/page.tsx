@@ -8,6 +8,7 @@ import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title: 'The Tempest revision guide - themes, characters, key quotes - The English Hub',
@@ -651,50 +652,50 @@ export default async function TheTempestPage() {
             id: 'read',
             href: '/revision/texts/the-tempest/read',
             icon: 'read' as const,
-            title: 'Read Full Text',
-            description: 'With annotations',
+            title: await t('rev.texts.subpage.read.title'),
+            description: await t('rev.texts.subpage.read.desc'),
           },
           {
             id: 'acts',
             href: '/revision/texts/the-tempest/acts',
             icon: 'acts' as const,
-            title: 'Act-by-Act Analysis',
-            description: 'Key moments & quotes',
+            title: await t('rev.texts.subpage.acts.title'),
+            description: await t('rev.texts.subpage.acts.desc'),
           },
           {
             id: 'characters',
             href: '/revision/texts/the-tempest/characters',
             icon: 'characters' as const,
-            title: 'Characters',
-            description: 'Full character guide',
+            title: await t('rev.texts.subpage.characters.title'),
+            description: await t('rev.texts.subpage.characters.desc'),
           },
           {
             id: 'themes',
             href: '/revision/texts/the-tempest/themes',
             icon: 'themes' as const,
-            title: 'Themes',
-            description: 'Theme analysis',
+            title: await t('rev.texts.subpage.themes.title'),
+            description: await t('rev.texts.subpage.themes.desc'),
           },
           {
             id: 'quotes',
             href: '/revision/texts/the-tempest/key-quotes',
             icon: 'quotes' as const,
-            title: 'Key Quotes',
-            description: 'Quotes with analysis',
+            title: await t('rev.texts.subpage.quotes.title'),
+            description: await t('rev.texts.subpage.quotes.desc'),
           },
           {
             id: 'context',
             href: '/revision/texts/the-tempest/context',
             icon: 'context' as const,
-            title: 'Context',
-            description: 'Historical context',
+            title: await t('rev.texts.subpage.context.title'),
+            description: await t('rev.texts.subpage.context.desc'),
           },
           {
             id: 'essays',
             href: '/revision/texts/the-tempest/essay-plans',
             icon: 'essays' as const,
-            title: 'Essay Plans',
-            description: 'GCSE/A-Level essay plans',
+            title: await t('rev.texts.subpage.essays.title'),
+            description: await t('rev.texts.subpage.essays.desc_gcse_alevel'),
           },
         ]}
         quizQuotes={data.quotations.slice(0, 10).map((q) => ({
@@ -723,10 +724,8 @@ export default async function TheTempestPage() {
       />
 
       <div className="mx-auto my-4 max-w-5xl rounded-lg border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-sm text-amber-700 dark:text-amber-200">
-        <strong className="font-semibold">Draft - awaiting English-teacher review.</strong> This
-        study guide for The Tempest has been auto-drafted and has not yet been checked by a subject
-        specialist. Plot details, character descriptions and quotations should be verified against a
-        trusted edition before exam use.
+        <strong className="font-semibold">{await t('rev.texts.tempest.draft_title')}</strong>{' '}
+        {await t('rev.texts.tempest.draft_body')}
       </div>
 
       <TextGuide data={data} />
