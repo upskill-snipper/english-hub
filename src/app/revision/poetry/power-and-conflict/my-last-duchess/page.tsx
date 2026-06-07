@@ -10,6 +10,7 @@ import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { useT } from '@/lib/i18n/use-t'
 /* ── Poem data ─────────────────────────────────────────────────── */
 
 const poemData: PoemData = {
@@ -860,6 +861,7 @@ const comparisons: Comparison[] = [
 /* ── Page component ────────────────────────────────────────────── */
 
 export default function MyLastDuchessPage() {
+  const t = useT()
   return (
     <div className="space-y-8">
       <CourseJsonLd
@@ -890,7 +892,7 @@ export default function MyLastDuchessPage() {
           render={<Link href="/revision/poetry" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Poetry
+          {t('rev.poetry.shared.back_to_poetry')}
         </Button>
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-rose-500/10">
@@ -928,7 +930,9 @@ export default function MyLastDuchessPage() {
 
       {/* Comparison section */}
       <section className="space-y-4">
-        <h2 className="text-heading-md font-heading text-foreground">Compare with other poems</h2>
+        <h2 className="text-heading-md font-heading text-foreground">
+          {t('rev.poetry.shared.compare_with_other')}
+        </h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {comparisons.map((c) => (
             <div key={c.poem} className="rounded-xl border border-border bg-card p-5 space-y-3">

@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
+import { t } from '@/lib/i18n/t'
 import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
@@ -96,6 +97,10 @@ const proseTexts = [
 export default async function ProseHubPage() {
   await requireIgcseBoard(['edexcel-igcse'])
 
+  const tAvailable = await t('igcse.page.badge_available')
+  const tComingSoon = await t('igcse.page.badge_coming_soon')
+  const tOpenGuide = await t('igcse.page.open_study_guide')
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -120,7 +125,7 @@ export default async function ProseHubPage() {
       <div>
         <Button variant="ghost" size="sm" render={<Link href="/igcse/edexcel" />}>
           <ArrowLeft className="size-3.5" />
-          Back to Edexcel IGCSE Literature
+          {await t('igcse.page.back_to_lit')}
         </Button>
       </div>
 
@@ -131,16 +136,14 @@ export default async function ProseHubPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="border-primary/20 bg-primary/10 text-primary">
               <Sparkles className="mr-1 size-3" />
-              Edexcel IGCSE Literature
+              {await t('igcse.page.badge_edexcel_lit')}
             </Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Modern Prose
+            {await t('igcse.page.prose.hero_h1')}
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Pick your set prose text to explore plot, characters, themes, context and a curated bank
-            of short key quotations. Each guide is built around understanding the text, analysing
-            language and structure, and comparing texts.
+            {await t('igcse.page.prose.hero_lead')}
           </p>
         </div>
       </section>
@@ -151,16 +154,16 @@ export default async function ProseHubPage() {
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
             <h2 className="text-body-sm font-semibold text-foreground">
-              Key quotations only - read the full text
+              {await t('igcse.page.copyright_heading')}
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
-              These texts are all in copyright. Our guides include short extracts for fair-dealing
-              study and analysis only. Students should always read the complete novel alongside
-              these notes.
+              {await t('igcse.page.copyright_body_prose')}
             </p>
             <p className="mt-2 text-body-xs text-muted-foreground leading-relaxed">
-              <strong className="text-foreground">Rights notice.</strong> All prose set texts on
-              this hub remain in copyright &mdash; including Hill&rsquo;s{' '}
+              <strong className="text-foreground">
+                {await t('igcse.page.prose.rights_label')}
+              </strong>{' '}
+              All prose set texts on this hub remain in copyright &mdash; including Hill&rsquo;s{' '}
               <em>The Woman in Black</em> (&copy; Vintage / Penguin Random House). Quotations on
               individual set-text pages are short fair-dealing extracts under CDPA 1988 &sect;30
               (criticism, review, quotation). For full text, students should consult the licensed
@@ -174,12 +177,14 @@ export default async function ProseHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">Choose your set text</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {await t('igcse.page.choose_set_text')}
+          </h2>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {proseTexts.map((t) => (
+          {proseTexts.map((text) => (
             <Card
-              key={t.slug}
+              key={text.slug}
               className="group relative flex flex-col overflow-hidden transition-all duration-200 hover:border-border hover:shadow-card-hover"
             >
               <CardHeader className="pb-3">
@@ -187,25 +192,25 @@ export default async function ProseHubPage() {
                   <div className="flex size-11 items-center justify-center rounded-xl bg-primary/10">
                     <Feather className="size-5 text-primary" />
                   </div>
-                  {t.available ? (
+                  {text.available ? (
                     <Badge className="border-primary/20 bg-primary/10 text-primary">
-                      Available
+                      {tAvailable}
                     </Badge>
                   ) : (
-                    <Badge variant="secondary">Coming soon</Badge>
+                    <Badge variant="secondary">{tComingSoon}</Badge>
                   )}
                 </div>
                 <CardTitle className="text-heading-md font-heading leading-tight">
-                  {t.title}
+                  {text.title}
                 </CardTitle>
                 <CardDescription className="text-body-sm">
-                  {t.author} · {t.year}
+                  {text.author} · {text.year}
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex flex-1 flex-col gap-4">
-                <p className="text-body-sm leading-relaxed text-muted-foreground">{t.blurb}</p>
+                <p className="text-body-sm leading-relaxed text-muted-foreground">{text.blurb}</p>
                 <div className="flex flex-wrap gap-1.5">
-                  {t.themes.map((theme) => (
+                  {text.themes.map((theme) => (
                     <span
                       key={theme}
                       className="inline-flex items-center rounded-md border border-border/60 bg-muted/40 px-2 py-0.5 text-body-xs text-muted-foreground"
@@ -215,19 +220,19 @@ export default async function ProseHubPage() {
                   ))}
                 </div>
                 <div className="mt-auto pt-2">
-                  {t.available ? (
+                  {text.available ? (
                     <Button
                       variant="default"
                       size="sm"
                       className="w-full"
-                      render={<Link href={`/igcse/edexcel/prose/${t.slug}`} />}
+                      render={<Link href={`/igcse/edexcel/prose/${text.slug}`} />}
                     >
-                      Open study guide
+                      {tOpenGuide}
                       <ArrowRight className="size-3.5" />
                     </Button>
                   ) : (
                     <Button variant="outline" size="sm" className="w-full" disabled>
-                      Coming soon
+                      {tComingSoon}
                     </Button>
                   )}
                 </div>

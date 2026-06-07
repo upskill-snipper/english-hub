@@ -15,6 +15,7 @@ import {
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -258,7 +259,7 @@ export default async function TheDangerOfASingleStoryPage() {
           render={<Link href="/igcse/edexcel-lang/anthology" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Anthology
+          {await t('anth_text.back_to_anthology')}
         </Button>
 
         <div className="flex items-center gap-3">
@@ -274,10 +275,10 @@ export default async function TheDangerOfASingleStoryPage() {
             </p>
             <div className="mt-1.5 flex flex-wrap gap-1.5">
               <Badge variant="secondary" className="text-[0.65rem]">
-                Edexcel IGCSE Language A
+                {await t('anth_text.badge_lang_a')}
               </Badge>
               <Badge className="bg-amber-500/10 text-amber-700 border-amber-500/20 dark:text-clay-600 text-[0.65rem]">
-                Paper 1 Section A
+                {await t('anth_text.badge_paper_1a')}
               </Badge>
             </div>
           </div>
@@ -304,10 +305,10 @@ export default async function TheDangerOfASingleStoryPage() {
         <div className="flex items-center gap-2 mb-4">
           <Quote className="size-4.5 text-amber-600 dark:text-clay-600" />
           <h2 className="text-heading-sm font-heading text-foreground font-serif">
-            Verified TED talk lines
+            {await t('igcse.page.anth.verified_ted_lines')}
           </h2>
           <span className="font-mono text-body-xs text-muted-foreground ml-auto">
-            Fair-dealing extracts for study
+            {await t('igcse.page.anth.fair_dealing_extracts')}
           </span>
         </div>
         <p className="text-body-sm text-muted-foreground mb-4">
@@ -335,7 +336,7 @@ export default async function TheDangerOfASingleStoryPage() {
         <div className="flex items-center gap-2 mb-4">
           <Pen className="size-4.5 text-primary" />
           <h2 className="text-heading-sm font-heading text-foreground font-serif">
-            Language Analysis
+            {await t('anth_text.section.language_analysis')}
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
@@ -362,7 +363,7 @@ export default async function TheDangerOfASingleStoryPage() {
         <div className="flex items-center gap-2 mb-4">
           <Layers className="size-4.5 text-primary" />
           <h2 className="text-heading-sm font-heading text-foreground font-serif">
-            Structural Analysis
+            {await t('anth_text.section.structural_analysis')}
           </h2>
         </div>
         <div className="space-y-4">
@@ -393,13 +394,13 @@ export default async function TheDangerOfASingleStoryPage() {
         <div className="flex items-center gap-2 mb-4">
           <Target className="size-4.5 text-primary" />
           <h2 className="text-heading-sm font-heading text-foreground font-serif">
-            Writer&apos;s Purpose
+            {await t('anth_text.section.writers_purpose')}
           </h2>
         </div>
         <div className="space-y-4">
           <div className="rounded-xl border border-border/40 bg-muted/20 p-4">
             <span className="font-mono text-body-xs text-primary uppercase tracking-wider font-semibold">
-              What is the writer trying to achieve?
+              {await t('anth_text.writers_purpose.achieve')}
             </span>
             <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
               {writersPurpose.achieve}
@@ -407,7 +408,7 @@ export default async function TheDangerOfASingleStoryPage() {
           </div>
           <div className="rounded-xl border border-border/40 bg-muted/20 p-4">
             <span className="font-mono text-body-xs text-primary uppercase tracking-wider font-semibold">
-              How does the writer want the reader to feel?
+              {await t('anth_text.writers_purpose.reader_feel')}
             </span>
             <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
               {writersPurpose.readerFeel}
@@ -415,7 +416,7 @@ export default async function TheDangerOfASingleStoryPage() {
           </div>
           <div className="rounded-xl border border-border/40 bg-muted/20 p-4">
             <span className="font-mono text-body-xs text-primary uppercase tracking-wider font-semibold">
-              Central message or argument
+              {await t('anth_text.writers_purpose.message')}
             </span>
             <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
               {writersPurpose.message}
@@ -429,7 +430,7 @@ export default async function TheDangerOfASingleStoryPage() {
         <div className="flex items-center gap-2 mb-4">
           <BookMarked className="size-4.5 text-primary" />
           <h2 className="text-heading-sm font-heading text-foreground font-serif">
-            Key Vocabulary
+            {await t('anth_text.section.key_vocabulary')}
           </h2>
         </div>
         <div className="grid gap-3 sm:grid-cols-2">
@@ -446,7 +447,9 @@ export default async function TheDangerOfASingleStoryPage() {
       <section className="rounded-2xl border border-border/60 bg-card p-5 sm:p-6">
         <div className="flex items-center gap-2 mb-4">
           <GraduationCap className="size-4.5 text-primary" />
-          <h2 className="text-heading-sm font-heading text-foreground font-serif">Exam Practice</h2>
+          <h2 className="text-heading-sm font-heading text-foreground font-serif">
+            {await t('anth_text.section.exam_practice')}
+          </h2>
         </div>
         <div className="space-y-5">
           <div className="rounded-xl border border-border/40 bg-muted/20 p-4">
@@ -463,7 +466,7 @@ export default async function TheDangerOfASingleStoryPage() {
             <p className="mt-2 text-body text-foreground font-medium">{examPractice.q2.question}</p>
             <div className="mt-4 rounded-lg border border-amber-500/20 bg-amber-50/50 p-4 dark:bg-amber-950/20">
               <span className="font-mono text-body-xs text-amber-700 dark:text-clay-600 uppercase tracking-wider font-semibold">
-                Model answer outline
+                {await t('anth_text.exam.model_outline')}
               </span>
               <ul className="mt-2 space-y-2 text-body-sm text-muted-foreground">
                 {examPractice.q2.modelOutline.map((point, i) => (
@@ -489,10 +492,12 @@ export default async function TheDangerOfASingleStoryPage() {
       <section className="rounded-2xl border border-border/60 bg-card p-5 sm:p-6">
         <div className="flex items-center gap-2 mb-4">
           <GitCompare className="size-4.5 text-primary" />
-          <h2 className="text-heading-sm font-heading text-foreground font-serif">Compare With</h2>
+          <h2 className="text-heading-sm font-heading text-foreground font-serif">
+            {await t('anth_text.section.compare_with')}
+          </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          Strong pairings for comparison questions in the exam.
+          {await t('anth_text.compare_with.intro')}
         </p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {comparisonLinks.map((c) => (
@@ -507,12 +512,12 @@ export default async function TheDangerOfASingleStoryPage() {
               <p className="text-xs text-muted-foreground mb-2">{c.author}</p>
               <p className="text-xs text-muted-foreground leading-relaxed mb-3">{c.reason}</p>
               <div className="flex flex-wrap gap-1.5">
-                {c.themes.map((t) => (
+                {c.themes.map((theme) => (
                   <span
-                    key={t}
+                    key={theme}
                     className="rounded-full bg-muted px-2 py-0.5 text-[11px] text-muted-foreground"
                   >
-                    {t}
+                    {theme}
                   </span>
                 ))}
               </div>
@@ -524,12 +529,12 @@ export default async function TheDangerOfASingleStoryPage() {
       {/* ── Copyright notice ───────────────────────────────────────── */}
       <footer className="rounded-lg bg-muted/50 p-4 text-center text-body-xs text-muted-foreground">
         <p>
-          <strong className="text-foreground">Rights notice:</strong> &copy; Wylie Agency / TED
-          Conferences / Pearson Education on behalf of Chimamanda Ngozi Adichie (b. 1977).
-          Quotations are short fair-dealing extracts under CDPA 1988 &sect;30 (criticism, review,
-          quotation). For full text, students should consult the licensed school edition (Pearson
-          Edexcel IGCSE anthology, ISBN 978-1-446-93108-0) or the original TEDGlobal 2009 talk
-          transcript.
+          <strong className="text-foreground">{await t('anth_text.rights_notice_label')}</strong>{' '}
+          &copy; Wylie Agency / TED Conferences / Pearson Education on behalf of Chimamanda Ngozi
+          Adichie (b. 1977). Quotations are short fair-dealing extracts under CDPA 1988 &sect;30
+          (criticism, review, quotation). For full text, students should consult the licensed school
+          edition (Pearson Edexcel IGCSE anthology, ISBN 978-1-446-93108-0) or the original
+          TEDGlobal 2009 talk transcript.
         </p>
         <p className="mt-2">Aligned with Pearson Edexcel specification 4EA1</p>
       </footer>

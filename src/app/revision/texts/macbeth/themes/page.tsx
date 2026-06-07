@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
+import { useT } from '@/lib/i18n/use-t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 // ── Theme data ────────────────────────────────────────────────────────────────
@@ -401,6 +402,7 @@ const THEMES: ThemeStudy[] = [
 // ── Page component ────────────────────────────────────────────────────────────
 
 export default function MacbethThemesPage() {
+  const t = useT()
   return (
     <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
@@ -426,56 +428,59 @@ export default function MacbethThemesPage() {
               render={<Link href="/revision/texts/macbeth" />}
             >
               <ArrowLeft className="size-3.5" />
-              Back to Macbeth overview
+              {t('rev.texts.common.back_to_overview').replace('{text}', 'Macbeth')}
             </Button>
             <div className="mb-4 flex flex-wrap items-center gap-2">
               <Badge variant="secondary">
                 <BookOpen className="mr-1 size-3 text-emerald-400" />
-                Theme Analysis
+                {t('rev.texts.common.theme_analysis')}
               </Badge>
-              <Badge variant="outline">9 themes</Badge>
+              <Badge variant="outline">
+                {t('rev.texts.common.themes_count').replace('{n}', '9')}
+              </Badge>
             </div>
             <h1 className="text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
-              Macbeth - Themes
+              {t('rev.texts.macbeth.themes.title')}
             </h1>
             <p className="mt-3 max-w-2xl text-muted-foreground">
-              In-depth analysis of every major theme in Macbeth with key quotes, evidence by act,
-              historical context, and essay tips for GCSE and IGCSE English Literature.
+              {t('rev.texts.macbeth.themes.intro')}
             </p>
           </div>
         </section>
 
         {/* Theme cards */}
-        {THEMES.map((t) => (
-          <Card key={t.title} id={t.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}>
+        {THEMES.map((theme) => (
+          <Card key={theme.title} id={theme.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <BookOpen className="size-5 text-emerald-400" />
-                {t.title}
+                {theme.title}
               </CardTitle>
-              <p className="text-sm text-muted-foreground">{t.overview}</p>
+              <p className="text-sm text-muted-foreground">{theme.overview}</p>
             </CardHeader>
             <CardContent className="space-y-5">
               {/* Detailed analysis */}
               <div>
-                <h4 className="mb-1 font-semibold">Analysis</h4>
-                <p className="text-muted-foreground leading-relaxed">{t.detailed}</p>
+                <h4 className="mb-1 font-semibold">{t('rev.texts.common.analysis')}</h4>
+                <p className="text-muted-foreground leading-relaxed">{theme.detailed}</p>
               </div>
 
               {/* Key quotes */}
               <div>
                 <h4 className="mb-2 flex items-center gap-1.5 font-semibold">
-                  <Quote className="size-4 text-amber-500" /> Key Quotes
+                  <Quote className="size-4 text-amber-500" /> {t('rev.texts.common.key_quotes')}
                 </h4>
                 <div className="space-y-3">
-                  {t.keyQuotes.map((q, i) => (
+                  {theme.keyQuotes.map((q, i) => (
                     <div key={i} className="rounded-lg border border-border/60 p-3">
                       <p className="font-medium">&ldquo;{q.quote}&rdquo;</p>
                       <p className="mt-0.5 text-xs text-muted-foreground/70">
                         {q.speaker} &mdash; {q.actScene}
                       </p>
                       <p className="mt-1.5 text-sm text-muted-foreground">
-                        <span className="font-medium text-foreground">Analysis: </span>
+                        <span className="font-medium text-foreground">
+                          {t('rev.texts.common.analysis')}:{' '}
+                        </span>
                         {q.analysis}
                       </p>
                     </div>
@@ -485,14 +490,13 @@ export default function MacbethThemesPage() {
 
               {/* Evidence by act */}
               <div>
-                <h4 className="mb-2 font-semibold">Evidence by Act</h4>
+                <h4 className="mb-2 font-semibold">{t('rev.texts.common.evidence_by_act')}</h4>
                 <div className="space-y-2">
-                  {t.evidenceByAct.map((e, i) => (
+                  {theme.evidenceByAct.map((e, i) => (
                     <div key={i} className="flex gap-2 text-sm text-muted-foreground">
-                      <Badge
-                        variant="outline"
-                        className="mt-0.5 shrink-0 text-xs"
-                      >{`Act ${i + 1}`}</Badge>
+                      <Badge variant="outline" className="mt-0.5 shrink-0 text-xs">
+                        {t('rev.texts.common.act_n').replace('{n}', String(i + 1))}
+                      </Badge>
                       <span>{e.replace(/^Act \d: /, '')}</span>
                     </div>
                   ))}
@@ -502,17 +506,17 @@ export default function MacbethThemesPage() {
               {/* Context */}
               <div className="rounded-lg border border-blue-500/20 bg-blue-500/[0.04] p-4">
                 <h4 className="mb-1 font-semibold text-blue-600 dark:text-blue-400">
-                  Historical Context
+                  {t('rev.texts.common.historical_context')}
                 </h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">{t.contextLink}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{theme.contextLink}</p>
               </div>
 
               {/* Essay tip */}
               <div className="rounded-lg border border-amber-500/20 bg-amber-500/[0.04] p-4">
                 <h4 className="mb-1 flex items-center gap-1.5 font-semibold text-amber-700 dark:text-amber-300">
-                  <Lightbulb className="size-4" /> Essay Tip
+                  <Lightbulb className="size-4" /> {t('rev.texts.common.essay_tip')}
                 </h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">{t.essayTip}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{theme.essayTip}</p>
               </div>
             </CardContent>
           </Card>
@@ -521,10 +525,10 @@ export default function MacbethThemesPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center pt-4 pb-8">
           <Button variant="outline" render={<Link href="/revision/texts/macbeth" />}>
-            <ArrowLeft className="size-4 mr-1" /> Overview
+            <ArrowLeft className="size-4 mr-1" /> {t('rev.texts.common.overview')}
           </Button>
           <Button variant="outline" render={<Link href="/revision/texts/macbeth/key-quotes" />}>
-            Key Quotes <Quote className="size-4 ml-1" />
+            {t('rev.texts.common.key_quotes')} <Quote className="size-4 ml-1" />
           </Button>
         </div>
       </div>

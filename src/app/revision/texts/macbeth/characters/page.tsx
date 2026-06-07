@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
+import { useT } from '@/lib/i18n/use-t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 // ── Character data ────────────────────────────────────────────────────────────
@@ -407,6 +408,7 @@ const CHARACTERS: CharacterStudy[] = [
 // ── Page component ────────────────────────────────────────────────────────────
 
 export default function MacbethCharactersPage() {
+  const tr = useT()
   return (
     <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
@@ -435,21 +437,22 @@ export default function MacbethCharactersPage() {
               render={<Link href="/revision/texts/macbeth" />}
             >
               <ArrowLeft className="size-3.5" />
-              Back to Macbeth overview
+              {tr('rev.texts.common.back_to_overview').replace('{text}', 'Macbeth')}
             </Button>
             <div className="mb-4 flex flex-wrap items-center gap-2">
               <Badge variant="secondary">
                 <Users className="mr-1 size-3 text-violet-400" />
-                Character Analysis
+                {tr('rev.texts.common.character_analysis')}
               </Badge>
-              <Badge variant="outline">11 characters</Badge>
+              <Badge variant="outline">
+                {tr('rev.texts.common.characters_count').replace('{n}', '11')}
+              </Badge>
             </div>
             <h1 className="text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
-              Macbeth - Character Analysis
+              {tr('rev.texts.macbeth.characters.title')}
             </h1>
             <p className="mt-3 max-w-2xl text-muted-foreground">
-              Full character studies for every significant figure in Macbeth, with key quotes,
-              character arcs, theme links, and exam tips for GCSE and IGCSE English Literature.
+              {tr('rev.texts.macbeth.characters.intro')}
             </p>
           </div>
         </section>
@@ -467,14 +470,14 @@ export default function MacbethCharactersPage() {
             <CardContent className="space-y-5">
               {/* Analysis */}
               <div>
-                <h4 className="mb-1 font-semibold">Analysis</h4>
+                <h4 className="mb-1 font-semibold">{tr('rev.texts.common.analysis')}</h4>
                 <p className="text-muted-foreground leading-relaxed">{c.analysis}</p>
               </div>
 
               {/* Key quotes */}
               <div>
                 <h4 className="mb-2 flex items-center gap-1.5 font-semibold">
-                  <Quote className="size-4 text-amber-500" /> Key Quotes
+                  <Quote className="size-4 text-amber-500" /> {tr('rev.texts.common.key_quotes')}
                 </h4>
                 <div className="space-y-3">
                   {c.keyQuotes.map((q, i) => (
@@ -482,7 +485,9 @@ export default function MacbethCharactersPage() {
                       <p className="font-medium">&ldquo;{q.quote}&rdquo;</p>
                       <p className="mt-0.5 text-xs text-muted-foreground/70">{q.context}</p>
                       <p className="mt-1.5 text-sm text-muted-foreground">
-                        <span className="font-medium text-foreground">Analysis: </span>
+                        <span className="font-medium text-foreground">
+                          {tr('rev.texts.common.analysis')}:{' '}
+                        </span>
                         {q.analysis}
                       </p>
                     </div>
@@ -492,17 +497,17 @@ export default function MacbethCharactersPage() {
 
               {/* Character arc */}
               <div>
-                <h4 className="mb-1 font-semibold">Character Arc</h4>
+                <h4 className="mb-1 font-semibold">{tr('rev.texts.common.character_arc')}</h4>
                 <p className="text-muted-foreground leading-relaxed">{c.arc}</p>
               </div>
 
               {/* Theme links */}
               <div>
-                <h4 className="mb-2 font-semibold">Links to Themes</h4>
+                <h4 className="mb-2 font-semibold">{tr('rev.texts.common.links_to_themes')}</h4>
                 <div className="flex flex-wrap gap-2">
-                  {c.themeLinks.map((t) => (
-                    <Badge key={t} variant="outline">
-                      {t}
+                  {c.themeLinks.map((link) => (
+                    <Badge key={link} variant="outline">
+                      {link}
                     </Badge>
                   ))}
                 </div>
@@ -511,7 +516,7 @@ export default function MacbethCharactersPage() {
               {/* Exam tip */}
               <div className="rounded-lg border border-amber-500/20 bg-amber-500/[0.04] p-4">
                 <h4 className="mb-1 flex items-center gap-1.5 font-semibold text-amber-700 dark:text-amber-300">
-                  <Lightbulb className="size-4" /> Exam Tip
+                  <Lightbulb className="size-4" /> {tr('rev.texts.common.exam_tip')}
                 </h4>
                 <p className="text-sm text-muted-foreground leading-relaxed">{c.examTip}</p>
               </div>
@@ -522,10 +527,10 @@ export default function MacbethCharactersPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center pt-4 pb-8">
           <Button variant="outline" render={<Link href="/revision/texts/macbeth" />}>
-            <ArrowLeft className="size-4 mr-1" /> Overview
+            <ArrowLeft className="size-4 mr-1" /> {tr('rev.texts.common.overview')}
           </Button>
           <Button variant="outline" render={<Link href="/revision/texts/macbeth/themes" />}>
-            Themes <BookOpen className="size-4 ml-1" />
+            {tr('rev.texts.common.themes')} <BookOpen className="size-4 ml-1" />
           </Button>
         </div>
       </div>

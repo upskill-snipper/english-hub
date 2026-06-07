@@ -16,6 +16,7 @@ import {
 } from 'lucide-react'
 
 import StudyTools from '@/components/study/StudyTools'
+import { useT } from '@/lib/i18n/use-t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ────────────────────────────────────────────────────────────────────── */
@@ -456,6 +457,7 @@ const THEMES: ThemeStudy[] = [
 /* ────────────────────────────────────────────────────────────────────── */
 
 export default function ThemesPage() {
+  const t = useT()
   return (
     <div className="min-h-screen bg-background font-heading">
       <BreadcrumbJsonLd
@@ -484,13 +486,13 @@ export default function ThemesPage() {
             className="mb-4 inline-flex items-center gap-1 text-sm text-teal-600 hover:text-teal-700 dark:text-teal-300 dark:hover:text-teal-200"
           >
             <ArrowLeft className="size-3.5" />
-            Back to An Inspector Calls
+            {t('rev.texts.common.back_to_text').replace('{text}', 'An Inspector Calls')}
           </Link>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1 rounded-full bg-teal-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-teal-700 dark:text-teal-300">
               <BookOpen className="size-3" />
-              Theme Analysis
+              {t('rev.texts.common.theme_analysis')}
             </span>
             <span className="inline-flex items-center gap-1 rounded-full border border-clay-500/30 px-3 py-1 text-xs text-clay-700 dark:text-clay-300">
               <Sparkles className="size-3" />
@@ -499,13 +501,10 @@ export default function ThemesPage() {
           </div>
 
           <h1 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            An Inspector Calls &mdash; Themes
+            {t('rev.texts.aic.themes.title')}
           </h1>
-          <p className="mt-2 text-lg text-muted-foreground">by J.B. Priestley &mdash; 1945</p>
-          <p className="mt-4 max-w-2xl text-muted-foreground">
-            Seven major themes analysed in depth with key quotes, act-by-act evidence, AO3 context
-            links, and essay planning tips for GCSE literature.
-          </p>
+          <p className="mt-2 text-lg text-muted-foreground">{t('rev.texts.aic.themes.byline')}</p>
+          <p className="mt-4 max-w-2xl text-muted-foreground">{t('rev.texts.aic.themes.intro')}</p>
         </section>
 
         {/* Exam tip banner */}
@@ -513,14 +512,10 @@ export default function ThemesPage() {
           <div className="flex items-start gap-3">
             <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-600 dark:text-clay-300" />
             <div className="text-sm text-muted-foreground">
-              <p className="mb-1 font-bold text-foreground">Exam technique</p>
-              <p>
-                Theme questions require you to track how an idea develops across the{' '}
-                <strong>whole play</strong> (AO1), analyse Priestley&rsquo;s use of{' '}
-                <strong>language and structure</strong> (AO2), and link to{' '}
-                <strong>historical context</strong> (AO3). Use the act-by-act evidence sections
-                below to build a progressive argument.
+              <p className="mb-1 font-bold text-foreground">
+                {t('rev.texts.common.exam_technique')}
               </p>
+              <p>{t('rev.texts.aic.themes.exam_technique_body')}</p>
             </div>
           </div>
         </section>
@@ -540,7 +535,7 @@ export default function ThemesPage() {
             {/* Detailed analysis */}
             <div className="mt-4 rounded-xl border border-border/60 bg-muted p-5">
               <h3 className="mb-2 text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                Detailed Analysis
+                {t('rev.texts.common.detailed_analysis')}
               </h3>
               <p className="text-sm leading-relaxed text-muted-foreground">{theme.detailed}</p>
             </div>
@@ -549,7 +544,9 @@ export default function ThemesPage() {
             <div className="mt-6">
               <div className="mb-3 flex items-center gap-2">
                 <Quote className="size-4 text-teal-700 dark:text-teal-300" />
-                <h3 className="font-heading text-lg font-bold text-foreground">Key Quotes</h3>
+                <h3 className="font-heading text-lg font-bold text-foreground">
+                  {t('rev.texts.common.key_quotes')}
+                </h3>
               </div>
               <div className="space-y-3">
                 {theme.keyQuotes.map((q, qi) => (
@@ -559,7 +556,9 @@ export default function ThemesPage() {
                       {q.speaker} &mdash; {q.act}
                     </p>
                     <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                      <span className="font-semibold text-foreground">AO2: </span>
+                      <span className="font-semibold text-foreground">
+                        {t('rev.texts.common.ao2_label')}
+                      </span>
                       {q.analysis}
                     </p>
                   </div>
@@ -570,7 +569,7 @@ export default function ThemesPage() {
             {/* Evidence by act */}
             <div className="mt-5">
               <h3 className="mb-3 text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                Evidence by Act
+                {t('rev.texts.common.evidence_by_act')}
               </h3>
               <div className="grid gap-3 sm:grid-cols-3">
                 {theme.evidenceByAct.map((ev, ei) => (
@@ -587,7 +586,7 @@ export default function ThemesPage() {
             {/* Context link */}
             <div className="mt-4 rounded-xl border border-clay-500/20 bg-clay-500/10 p-4">
               <p className="mb-1 text-xs font-bold uppercase tracking-wider text-clay-600 dark:text-clay-300">
-                AO3 Context Link
+                {t('rev.texts.common.ao3_context_link')}
               </p>
               <p className="text-sm leading-relaxed text-muted-foreground">{theme.contextLink}</p>
             </div>
@@ -598,7 +597,7 @@ export default function ThemesPage() {
                 <Lightbulb className="mt-0.5 size-4 shrink-0 text-teal-600 dark:text-teal-300" />
                 <div>
                   <p className="mb-1 text-xs font-bold uppercase tracking-wider text-teal-700 dark:text-teal-300">
-                    Essay Planning Tip
+                    {t('rev.texts.common.essay_planning_tip')}
                   </p>
                   <p className="text-sm leading-relaxed text-muted-foreground">{theme.essayTip}</p>
                 </div>
@@ -612,38 +611,37 @@ export default function ThemesPage() {
 
         {/* Navigation */}
         <section className="mt-14 rounded-xl border border-teal-500/20 bg-teal-500/5 p-6">
-          <h3 className="font-heading text-xl font-bold text-foreground">Continue studying</h3>
+          <h3 className="font-heading text-xl font-bold text-foreground">
+            {t('rev.texts.common.continue_studying')}
+          </h3>
           <p className="mt-1 text-sm text-muted-foreground">
-            Explore characters, key quotes, and context for An Inspector Calls.
+            {t('rev.texts.aic.themes.continue_sub')}
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link
               href="/revision/texts/an-inspector-calls/characters"
               className="inline-flex items-center rounded-lg bg-teal-600 px-4 py-2 text-sm font-medium text-white hover:bg-teal-700"
             >
-              Characters
+              {t('rev.texts.common.characters')}
             </Link>
             <Link
               href="/revision/texts/an-inspector-calls/key-quotes"
               className="inline-flex items-center rounded-lg border border-teal-500/30 bg-card px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5 dark:text-teal-300"
             >
-              Key Quotes
+              {t('rev.texts.common.key_quotes')}
             </Link>
             <Link
               href="/revision/texts/an-inspector-calls/context"
               className="inline-flex items-center rounded-lg border border-teal-500/30 bg-card px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5 dark:text-teal-300"
             >
-              Context
+              {t('rev.texts.common.context')}
             </Link>
           </div>
         </section>
 
         {/* Fair-dealing notice */}
         <p className="mt-10 border-t border-border/60 pt-4 text-xs text-muted-foreground">
-          Short quotations (&le;15 words each) reproduced under the fair dealing provision of the
-          Copyright, Designs and Patents Act 1988 for the purpose of criticism, review and
-          educational study. <em>An Inspector Calls</em> &copy; J.B. Priestley Estate. Full text
-          available from your school or local library.
+          {t('rev.texts.aic.themes.fair_dealing')}
         </p>
       </div>
     </div>

@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from 'next'
 import Link from 'next/link'
+import { t } from '@/lib/i18n/t'
 import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import {
   NON_FICTION_TEXT_TYPES,
@@ -117,7 +118,7 @@ const PRACTICE: Practice[] = [
 
 const NON_FICTION_PROMPTS = GUIDED_READING_PROMPTS.nonFiction
 
-export default function ReportsTextTypePage() {
+export default async function ReportsTextTypePage() {
   return (
     <>
       <BreadcrumbJsonLd
@@ -155,30 +156,30 @@ export default function ReportsTextTypePage() {
           <ol className="flex flex-wrap items-center gap-1">
             <li>
               <Link href="/" className="hover:text-primary">
-                Home
+                {await t('ks3.page.bc.home')}
               </Link>
             </li>
             <li aria-hidden="true">/</li>
             <li>
               <Link href="/ks3" className="hover:text-primary">
-                KS3
+                {await t('ks3.page.bc.ks3')}
               </Link>
             </li>
             <li aria-hidden="true">/</li>
             <li>
               <Link href="/ks3/ilowersecondary" className="hover:text-primary">
-                iLowerSecondary English
+                {await t('ks3.page.bc.ils')}
               </Link>
             </li>
             <li aria-hidden="true">/</li>
             <li>
               <Link href="/ks3/ilowersecondary/text-types" className="hover:text-primary">
-                Text types
+                {await t('ks3.page.bc.text_types')}
               </Link>
             </li>
             <li aria-hidden="true">/</li>
             <li aria-current="page" className="font-medium text-foreground">
-              Reports
+              {await t('ks3.page.text_types.reports.bc')}
             </li>
           </ol>
         </nav>

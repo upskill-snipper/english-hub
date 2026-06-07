@@ -9,6 +9,7 @@ import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { useT } from '@/lib/i18n/use-t'
 /* ── Theme tokens ──────────────────────────────────────────────── */
 
 const THEMES = [
@@ -871,6 +872,7 @@ ELLIPSIS:
 /* ── Page component ────────────────────────────────────────────── */
 
 export default function ExposurePage() {
+  const t = useT()
   return (
     <div className="space-y-8">
       <CourseJsonLd
@@ -901,7 +903,7 @@ export default function ExposurePage() {
           render={<Link href="/revision/poetry" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Poetry
+          {t('rev.poetry.shared.back_to_poetry')}
         </Button>
 
         <div className="flex items-center gap-3">

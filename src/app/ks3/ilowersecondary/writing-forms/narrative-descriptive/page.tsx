@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from 'next'
 import Link from 'next/link'
+import { t } from '@/lib/i18n/t'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import {
   WRITING_FORMS,
@@ -96,7 +97,7 @@ const DESCRIPTIVE_CRAFT = [
   },
 ]
 
-export default function NarrativeDescriptivePage() {
+export default async function NarrativeDescriptivePage() {
   return (
     <>
       <BreadcrumbJsonLd
@@ -123,30 +124,30 @@ export default function NarrativeDescriptivePage() {
           <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
             <li>
               <Link href="/" className="hover:text-primary">
-                Home
+                {await t('ks3.page.bc.home')}
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
               <Link href="/ks3" className="hover:text-primary">
-                KS3
+                {await t('ks3.page.bc.ks3')}
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
               <Link href="/ks3/ilowersecondary" className="hover:text-primary">
-                iLowerSecondary English
+                {await t('ks3.page.bc.ils')}
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
               <Link href="/ks3/ilowersecondary/writing-forms" className="hover:text-primary">
-                Writing forms
+                {await t('ks3.page.bc.writing_forms')}
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li className="font-medium text-muted-foreground" aria-current="page">
-              Narrative &amp; descriptive
+              {await t('ks3.page.writing_forms.narrative_descriptive.bc')}
             </li>
           </ol>
         </nav>

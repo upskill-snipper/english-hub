@@ -9,6 +9,7 @@ import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { useT } from '@/lib/i18n/use-t'
 /* ── Poem data ─────────────────────────────────────────────────────── */
 
 const londonPoem: PoemData = {
@@ -693,6 +694,7 @@ const comparePoems = [
 /* ── Page component ────────────────────────────────────────────────── */
 
 export default function LondonPage() {
+  const t = useT()
   return (
     <div className="space-y-8">
       <CourseJsonLd
@@ -770,7 +772,9 @@ export default function LondonPage() {
 
       {/* ── Compare with ─────────────────────────────────────────── */}
       <section className="space-y-4">
-        <h2 className="text-heading-md font-heading text-foreground">Compare with</h2>
+        <h2 className="text-heading-md font-heading text-foreground">
+          {t('rev.poetry.shared.compare_with')}
+        </h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {comparePoems.map((cp) => (
             <div

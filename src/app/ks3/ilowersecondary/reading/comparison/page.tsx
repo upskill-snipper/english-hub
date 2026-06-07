@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { t } from '@/lib/i18n/t'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import {
   READING_SKILLS,
@@ -54,7 +55,7 @@ const FEATURE_ROWS = [
   { feature: 'A list of three', text1: true, text2: true },
 ]
 
-export default function ComparisonPage() {
+export default async function ComparisonPage() {
   return (
     <>
       <BreadcrumbJsonLd
@@ -78,18 +79,18 @@ export default function ComparisonPage() {
 
       <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
         <Link href="/ks3" className="hover:text-foreground">
-          KS3
+          {await t('ks3.page.bc.ks3')}
         </Link>
         <span> · </span>
         <Link href="/ks3/ilowersecondary" className="hover:text-foreground">
-          iLowerSecondary English
+          {await t('ks3.page.bc.ils')}
         </Link>
         <span> · </span>
         <Link href="/ks3/ilowersecondary/reading" className="hover:text-foreground">
-          Reading skills
+          {await t('ks3.page.bc.reading_skills')}
         </Link>
         <span> · </span>
-        <span>Comparison</span>
+        <span>{await t('ks3.page.reading.comparison.bc')}</span>
       </p>
 
       <h1>Comparing non-fiction texts</h1>

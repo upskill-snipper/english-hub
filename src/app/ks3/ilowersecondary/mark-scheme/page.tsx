@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { t } from '@/lib/i18n/t'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import {
   SECTIONS,
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
 const WAO1 = ASSESSMENT_OBJECTIVES.WAO1
 const WAO2 = ASSESSMENT_OBJECTIVES.WAO2
 
-export default function MarkSchemePage() {
+export default async function MarkSchemePage() {
   return (
     <>
       <BreadcrumbJsonLd
@@ -47,14 +48,14 @@ export default function MarkSchemePage() {
 
       <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
         <Link href="/ks3" className="hover:text-foreground">
-          KS3
+          {await t('ks3.page.bc.ks3')}
         </Link>
         <span> · </span>
         <Link href="/ks3/ilowersecondary" className="hover:text-foreground">
-          iLowerSecondary English
+          {await t('ks3.page.bc.ils')}
         </Link>
         <span> · </span>
-        <span>Mark scheme</span>
+        <span>{await t('ks3.page.mark_scheme.bc')}</span>
       </p>
 
       <h1>How your answers are marked</h1>

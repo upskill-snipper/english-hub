@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { t } from '@/lib/i18n/t'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { QUESTION_TYPES, ASSESSMENT_OBJECTIVES, SPEC_ATTRIBUTION } from '@/lib/ilowersecondary/spec'
 
@@ -184,7 +185,7 @@ const WORKED_EXAMPLES: WorkedExample[] = [
   },
 ]
 
-export default function PunctuationEffectPage() {
+export default async function PunctuationEffectPage() {
   return (
     <>
       <BreadcrumbJsonLd
@@ -212,23 +213,25 @@ export default function PunctuationEffectPage() {
             <ol className="flex flex-wrap items-center gap-1.5">
               <li>
                 <Link href="/ks3" className="hover:text-primary">
-                  KS3
+                  {await t('ks3.page.bc.ks3')}
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
               <li>
                 <Link href="/ks3/ilowersecondary" className="hover:text-primary">
-                  iLowerSecondary English
+                  {await t('ks3.page.bc.ils')}
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
               <li>
                 <Link href="/ks3/ilowersecondary/question-types" className="hover:text-primary">
-                  Question types
+                  {await t('ks3.page.bc.question_types')}
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
-              <li className="font-semibold text-muted-foreground">Punctuation effect</li>
+              <li className="font-semibold text-muted-foreground">
+                {await t('ks3.page.question_types.punctuation_effect.bc')}
+              </li>
             </ol>
           </nav>
 

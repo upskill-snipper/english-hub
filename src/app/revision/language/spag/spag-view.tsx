@@ -19,6 +19,7 @@ import { Badge } from '@/components/ui/badge'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import type { ExamBoard } from '@/lib/board/board-store'
 import { isIgcseBoard } from '@/lib/board/board-filter'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ── Helpers ──────────────────────────────────────────────────────── */
 
@@ -110,6 +111,7 @@ const BOARD_SPAG_MARK_NOTES: Partial<Record<ExamBoard, string>> = {
 }
 
 export default function SpagView({ boardId, boardName }: SpagViewProps) {
+  const t = useT()
   const markNote =
     boardId && BOARD_SPAG_MARK_NOTES[boardId]
       ? BOARD_SPAG_MARK_NOTES[boardId]
@@ -127,7 +129,7 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
           render={<Link href="/revision/language" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Language Skills
+          {t('rev.lang.spag.back')}
         </Button>
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-amber-500/10">
@@ -136,17 +138,15 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
           <div className="min-w-0 flex-1">
             <div className="flex flex-wrap items-center gap-2">
               <h1 className="text-heading-lg font-heading text-foreground">
-                Spelling, Punctuation &amp; Grammar
+                {t('rev.lang.spag.title')}
               </h1>
               {boardId && (
                 <Badge variant="secondary" className="text-xs">
-                  Applies to {boardName}
+                  {t('rev.lang.spag.applies_to')} {boardName}
                 </Badge>
               )}
             </div>
-            <p className="text-body-sm text-muted-foreground">
-              The technical accuracy that earns (and loses) marks on every paper
-            </p>
+            <p className="text-body-sm text-muted-foreground">{t('rev.lang.spag.subtitle')}</p>
           </div>
         </div>
       </div>
@@ -157,7 +157,7 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
           <Info className="mt-0.5 size-5 shrink-0 text-clay-600" />
           <div className="flex-1">
             <p className="text-sm font-semibold text-foreground">
-              SPaG is universal -- every board rewards it
+              {t('rev.lang.spag.igcse_banner_title')}
             </p>
             <p className="mt-1 text-body-sm text-muted-foreground leading-relaxed">
               Spelling, punctuation, and grammar rules are identical across GCSE and IGCSE. The
@@ -172,7 +172,7 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
                 }
                 className="text-primary underline hover:no-underline"
               >
-                your IGCSE hub
+                {t('rev.lang.spag.your_igcse_hub')}
               </Link>{' '}
               for exact mark allocations.
             </p>
@@ -190,7 +190,7 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
 
       {/* ── 1. Spelling Rules and Common Errors ──────────────────── */}
       <Section
-        title="Spelling Rules and Common Errors"
+        title={t('rev.lang.spag.sec_spelling')}
         icon={SpellCheck}
         colour="text-clay-600"
         defaultOpen
@@ -322,7 +322,7 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
       </Section>
 
       {/* ── 2. Punctuation Guide ─────────────────────────────────── */}
-      <Section title="Punctuation Guide" icon={Type} colour="text-blue-400">
+      <Section title={t('rev.lang.spag.sec_punctuation')} icon={Type} colour="text-blue-400">
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
             Accurate punctuation is not just about avoiding errors -- it is a tool for controlling
@@ -332,11 +332,11 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
 
           <Tabs defaultValue="commas">
             <TabsList className="w-full sm:w-auto flex-wrap">
-              <TabsTrigger value="commas">Commas</TabsTrigger>
-              <TabsTrigger value="semicolons">Semicolons</TabsTrigger>
-              <TabsTrigger value="colons">Colons</TabsTrigger>
-              <TabsTrigger value="dashes">Dashes</TabsTrigger>
-              <TabsTrigger value="apostrophes">Apostrophes</TabsTrigger>
+              <TabsTrigger value="commas">{t('rev.lang.spag.tab_commas')}</TabsTrigger>
+              <TabsTrigger value="semicolons">{t('rev.lang.spag.tab_semicolons')}</TabsTrigger>
+              <TabsTrigger value="colons">{t('rev.lang.spag.tab_colons')}</TabsTrigger>
+              <TabsTrigger value="dashes">{t('rev.lang.spag.tab_dashes')}</TabsTrigger>
+              <TabsTrigger value="apostrophes">{t('rev.lang.spag.tab_apostrophes')}</TabsTrigger>
             </TabsList>
 
             <TabsContent value="commas" className="mt-4 space-y-3">
@@ -525,7 +525,7 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
       </Section>
 
       {/* ── 3. Grammar Essentials ────────────────────────────────── */}
-      <Section title="Grammar Essentials" icon={BookOpen} colour="text-emerald-400">
+      <Section title={t('rev.lang.spag.sec_grammar')} icon={BookOpen} colour="text-emerald-400">
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
             Grammar errors undermine even the most creative or insightful writing. The marking guide
@@ -625,7 +625,7 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
       </Section>
 
       {/* ── 4. Common Mistakes to Avoid ──────────────────────────── */}
-      <Section title="Common Mistakes to Avoid" icon={AlertTriangle} colour="text-rose-400">
+      <Section title={t('rev.lang.spag.sec_mistakes')} icon={AlertTriangle} colour="text-rose-400">
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
             These are the errors that markers see thousands of times every year. Avoiding them puts
@@ -713,12 +713,10 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
       <div className="rounded-2xl border border-border/60 bg-gradient-to-r from-amber-500/[0.06] via-card to-emerald-500/[0.04] p-6 text-center">
         <SpellCheck className="mx-auto mb-3 size-7 text-clay-600" />
         <h2 className="text-heading-md font-heading text-foreground">
-          Accuracy Is a Habit, Not a Last-Minute Fix
+          {t('rev.lang.spag.footer_title')}
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-          The best way to improve your SPaG is to practise it in every piece of writing you do --
-          homework, notes, and timed essays. If you only think about accuracy in the exam, it will
-          feel unnatural. Make it second nature now.
+          {t('rev.lang.spag.footer_body')}
         </p>
         <Button
           variant="default"
@@ -726,7 +724,7 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
           className="mt-4"
           render={<Link href="/revision/language/writing" />}
         >
-          Practise in Writing Skills
+          {t('rev.lang.spag.footer_cta')}
         </Button>
       </div>
     </div>

@@ -23,6 +23,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -531,7 +532,12 @@ const COMMON_MISTAKES = [
    PAGE COMPONENT
    ═══════════════════════════════════════════════════════════════════════════ */
 
-export default function UnseenPoetryGuidePage() {
+export default async function UnseenPoetryGuidePage() {
+  // Repeated labels used inside .map() loops, resolved once.
+  const effectLabel = await t('rev.poetry.unseen.effect_label')
+  const focusLabel = await t('rev.poetry.unseen.focus_label')
+  const analysisQuestionsLabel = await t('rev.poetry.unseen.analysis_questions')
+  const revealModelLabel = await t('rev.poetry.unseen.reveal_model')
   return (
     <div className="space-y-12 pb-16">
       <BreadcrumbJsonLd
@@ -554,7 +560,7 @@ export default function UnseenPoetryGuidePage() {
           render={<Link href="/revision/poetry" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Poetry
+          {await t('rev.poetry.shared.back_to_poetry')}
         </Button>
       </div>
 
@@ -567,21 +573,19 @@ export default function UnseenPoetryGuidePage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Sparkles className="mr-1 size-3" />
-              Comprehensive Guide
+              {await t('rev.poetry.unseen.badge_guide')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Eye className="mr-1 size-3" />
-              All Exam Boards
+              {await t('rev.poetry.unseen.badge_all_boards')}
             </Badge>
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Unseen Poetry Guide
+            {await t('rev.poetry.unseen.hero_title')}
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Everything you need to approach, analyse, and write about a poem you have never seen
-            before. A five-step method, twenty key techniques, five practice poems with model
-            responses, and the most common mistakes to avoid.
+            {await t('rev.poetry.unseen.hero_lead')}
           </p>
         </div>
       </section>
@@ -593,9 +597,11 @@ export default function UnseenPoetryGuidePage() {
         <div className="mb-5 flex items-center gap-3">
           <ListOrdered className="size-5 text-violet-400" />
           <div>
-            <h2 className="text-heading-lg font-heading text-foreground">The five-step approach</h2>
+            <h2 className="text-heading-lg font-heading text-foreground">
+              {await t('rev.poetry.unseen.s_steps_title')}
+            </h2>
             <p className="text-body-sm text-muted-foreground">
-              Follow these steps in order on every unseen poem.
+              {await t('rev.poetry.unseen.s_steps_lead')}
             </p>
           </div>
         </div>
@@ -630,11 +636,10 @@ export default function UnseenPoetryGuidePage() {
           <Search className="size-5 text-clay-600" />
           <div>
             <h2 className="text-heading-lg font-heading text-foreground">
-              Key techniques to look for
+              {await t('rev.poetry.unseen.s_tech_title')}
             </h2>
             <p className="text-body-sm text-muted-foreground">
-              Twenty poetic techniques you should be able to identify and analyse in any unseen
-              poem.
+              {await t('rev.poetry.unseen.s_tech_lead')}
             </p>
           </div>
         </div>
@@ -660,7 +665,7 @@ export default function UnseenPoetryGuidePage() {
                   {t.example}
                 </p>
                 <p className="text-xs text-muted-foreground/80 leading-relaxed">
-                  <span className="font-medium text-muted-foreground">Effect: </span>
+                  <span className="font-medium text-muted-foreground">{effectLabel} </span>
                   {t.effect}
                 </p>
               </CardContent>
@@ -677,12 +682,10 @@ export default function UnseenPoetryGuidePage() {
           <Layers className="size-5 text-blue-400" />
           <div>
             <h2 className="text-heading-lg font-heading text-foreground">
-              How to write about structure
+              {await t('rev.poetry.unseen.s_structure_title')}
             </h2>
             <p className="text-body-sm text-muted-foreground">
-              Structure is not just &ldquo;how the poem looks on the page.&rdquo; It is how the poet
-              organises meaning. Here are the structural features to look for and how to discuss
-              them.
+              {await t('rev.poetry.unseen.s_structure_lead')}
             </p>
           </div>
         </div>
@@ -710,7 +713,9 @@ export default function UnseenPoetryGuidePage() {
             <div className="flex items-start gap-3">
               <Lightbulb className="mt-0.5 size-4 shrink-0 text-violet-400" />
               <div>
-                <p className="text-sm font-semibold text-foreground">Examiner tip</p>
+                <p className="text-sm font-semibold text-foreground">
+                  {await t('rev.poetry.unseen.examiner_tip')}
+                </p>
                 <p className="mt-1 text-body-sm text-muted-foreground leading-relaxed">
                   A strong structural point often earns more marks than a language point because
                   fewer students attempt them. Even a simple observation like &ldquo;The poem is a
@@ -731,10 +736,10 @@ export default function UnseenPoetryGuidePage() {
           <PenLine className="size-5 text-emerald-400" />
           <div>
             <h2 className="text-heading-lg font-heading text-foreground">
-              How to write about language
+              {await t('rev.poetry.unseen.s_language_title')}
             </h2>
             <p className="text-body-sm text-muted-foreground">
-              Use the What-How-Why framework to turn feature-spotting into genuine analysis.
+              {await t('rev.poetry.unseen.s_language_lead')}
             </p>
           </div>
         </div>
@@ -810,7 +815,7 @@ export default function UnseenPoetryGuidePage() {
         <Card className="mt-4">
           <CardContent className="p-5 sm:p-6">
             <p className="text-sm font-semibold text-foreground mb-3">
-              Full example paragraph (What-How-Why combined)
+              {await t('rev.poetry.unseen.full_example_title')}
             </p>
             <blockquote className="border-l-2 border-emerald-500/40 pl-4 text-body-sm text-muted-foreground leading-relaxed">
               Owen uses the simile &ldquo;like old beggars under sacks&rdquo; to describe soldiers
@@ -834,11 +839,10 @@ export default function UnseenPoetryGuidePage() {
           <Feather className="size-5 text-rose-400" />
           <div>
             <h2 className="text-heading-lg font-heading text-foreground">
-              Practice poems with model responses
+              {await t('rev.poetry.unseen.s_practice_title')}
             </h2>
             <p className="text-body-sm text-muted-foreground">
-              Five public domain poems with guided analysis questions. Try to answer the questions
-              yourself before revealing the model response.
+              {await t('rev.poetry.unseen.s_practice_lead')}
             </p>
           </div>
         </div>
@@ -856,7 +860,7 @@ export default function UnseenPoetryGuidePage() {
                     <p className="text-xs text-muted-foreground">{p.poet}</p>
                   </div>
                   <Badge variant="outline" className="text-muted-foreground text-[0.65rem]">
-                    Focus: {p.focus}
+                    {focusLabel} {p.focus}
                   </Badge>
                 </div>
               </CardHeader>
@@ -873,7 +877,7 @@ export default function UnseenPoetryGuidePage() {
                 <div>
                   <p className="mb-3 text-sm font-semibold text-foreground flex items-center gap-2">
                     <MessageSquareQuote className="size-4 text-clay-600" />
-                    Analysis questions
+                    {analysisQuestionsLabel}
                   </p>
                   <ol className="list-decimal space-y-2 pl-5">
                     {p.questions.map((q, idx) => (
@@ -888,7 +892,7 @@ export default function UnseenPoetryGuidePage() {
                 <details className="group rounded-xl border border-border/40 bg-background/40">
                   <summary className="flex cursor-pointer items-center gap-2 px-4 py-3 text-sm font-semibold text-foreground select-none hover:bg-muted/40 rounded-xl transition-colors">
                     <ArrowRight className="size-3.5 text-muted-foreground transition-transform group-open:rotate-90" />
-                    Reveal model response
+                    {revealModelLabel}
                   </summary>
                   <div className="border-t border-border/40 px-4 py-4 sm:px-5">
                     <div className="prose-sm max-w-none">
@@ -917,11 +921,10 @@ export default function UnseenPoetryGuidePage() {
           <GitCompare className="size-5 text-cyan-400" />
           <div>
             <h2 className="text-heading-lg font-heading text-foreground">
-              How to compare two unseen poems
+              {await t('rev.poetry.unseen.s_comparison_title')}
             </h2>
             <p className="text-body-sm text-muted-foreground">
-              Many exam boards include a comparison question. Follow these five steps to structure a
-              strong comparative response.
+              {await t('rev.poetry.unseen.s_comparison_lead')}
             </p>
           </div>
         </div>
@@ -951,7 +954,7 @@ export default function UnseenPoetryGuidePage() {
         <Card className="mt-4">
           <CardContent className="p-5 sm:p-6">
             <p className="text-sm font-semibold text-foreground mb-3">
-              Example comparison paragraph
+              {await t('rev.poetry.unseen.example_comparison_title')}
             </p>
             <blockquote className="border-l-2 border-cyan-500/40 pl-4 text-body-sm text-muted-foreground leading-relaxed">
               Both Shelley and Owen explore the destructive consequences of power, but they focus on
@@ -980,10 +983,11 @@ export default function UnseenPoetryGuidePage() {
         <div className="mb-5 flex items-center gap-3">
           <AlertTriangle className="size-5 text-red-400" />
           <div>
-            <h2 className="text-heading-lg font-heading text-foreground">Ten common mistakes</h2>
+            <h2 className="text-heading-lg font-heading text-foreground">
+              {await t('rev.poetry.unseen.s_mistakes_title')}
+            </h2>
             <p className="text-body-sm text-muted-foreground">
-              These are the errors examiners see most often. Avoiding them will immediately improve
-              your grade.
+              {await t('rev.poetry.unseen.s_mistakes_lead')}
             </p>
           </div>
         </div>
@@ -1014,11 +1018,10 @@ export default function UnseenPoetryGuidePage() {
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8 text-center">
         <BookOpen className="mx-auto mb-3 size-8 text-violet-400" />
         <h2 className="text-heading-lg font-heading text-foreground">
-          Ready to study the anthology?
+          {await t('rev.poetry.unseen.cta_title')}
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-          Head back to the Poetry hub to explore Power and Conflict, Love and Relationships, and
-          your full set of anthology poems.
+          {await t('rev.poetry.unseen.cta_lead')}
         </p>
         <Button
           variant="default"
@@ -1026,7 +1029,7 @@ export default function UnseenPoetryGuidePage() {
           className="mt-5"
           render={<Link href="/revision/poetry" />}
         >
-          Back to Poetry Hub
+          {await t('rev.poetry.shared.back_to_poetry_hub')}
           <ArrowRight className="size-4" />
         </Button>
       </section>

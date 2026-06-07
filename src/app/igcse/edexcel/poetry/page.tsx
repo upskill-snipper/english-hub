@@ -13,6 +13,7 @@ import {
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
+import { t } from '@/lib/i18n/t'
 import StudyTools from '@/components/study/StudyTools'
 
 export const metadata: Metadata = {
@@ -270,6 +271,9 @@ const studyPlan = [
 export default async function EdexcelPoetryAnthologyPage() {
   await requireIgcseBoard(['edexcel-igcse'])
 
+  const tFullGuide = await t('igcse.page.poetry.badge_full_guide')
+  const tNotesOnly = await t('igcse.page.poetry.badge_notes_only')
+
   return (
     <div className="space-y-10">
       {/* ── Breadcrumb / header ─────────────────────────────────────── */}
@@ -281,7 +285,7 @@ export default async function EdexcelPoetryAnthologyPage() {
           render={<Link href="/igcse/edexcel" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Edexcel IGCSE
+          {await t('igcse.page.back_to_edexcel_igcse')}
         </Button>
 
         <div className="flex items-start gap-4">
@@ -291,16 +295,17 @@ export default async function EdexcelPoetryAnthologyPage() {
           <div className="flex-1">
             <div className="flex flex-wrap items-center gap-2 mb-1.5">
               <Badge variant="secondary" className="text-[0.65rem]">
-                Edexcel IGCSE Literature
+                {await t('igcse.page.badge_edexcel_lit')}
               </Badge>
               <Badge variant="outline" className="text-[0.65rem]">
-                Paper 1 - Anthology Poetry
+                {await t('igcse.page.badge_paper1_poetry')}
               </Badge>
             </div>
-            <h1 className="text-heading-lg font-heading text-foreground">Anthology Poetry</h1>
+            <h1 className="text-heading-lg font-heading text-foreground">
+              {await t('igcse.page.poetry.hero_h1')}
+            </h1>
             <p className="text-body-sm text-muted-foreground mt-1 max-w-2xl">
-              The prescribed poems of the Pearson Edexcel IGCSE Literature (4ET1) Anthology - full
-              line-by-line study guides for the public-domain poems and concise notes for the rest.
+              {await t('igcse.page.poetry.hero_lead')}
             </p>
           </div>
         </div>
@@ -319,7 +324,8 @@ export default async function EdexcelPoetryAnthologyPage() {
         className="rounded-xl border border-amber-500/30 bg-amber-500/[0.06] p-5 text-body-sm text-card-foreground"
       >
         <p className="mb-2">
-          <strong className="text-foreground">Anthology version:</strong> This site teaches the{' '}
+          <strong className="text-foreground">{await t('igcse.page.poetry.version_label')}</strong>{' '}
+          This site teaches the{' '}
           <strong className="text-foreground">Edexcel IGCSE Anthology Issue 2</strong> (ISBN
           978-1-446-93108-0, Pearson Education). Material differences from Issue 1 and from
           freely-available online versions include:
@@ -351,7 +357,9 @@ export default async function EdexcelPoetryAnthologyPage() {
         <div className="rounded-xl border border-border bg-card p-5">
           <div className="flex items-center gap-2 mb-2">
             <BookOpen className="size-4 text-rose-400" />
-            <h2 className="text-sm font-semibold text-foreground">The anthology</h2>
+            <h2 className="text-sm font-semibold text-foreground">
+              {await t('igcse.page.poetry.overview_anthology')}
+            </h2>
           </div>
           <p className="text-xs text-muted-foreground leading-relaxed">
             13 prescribed poems spanning four centuries, from Shakespeare and Blake to Duffy and
@@ -363,7 +371,9 @@ export default async function EdexcelPoetryAnthologyPage() {
         <div className="rounded-xl border border-border bg-card p-5">
           <div className="flex items-center gap-2 mb-2">
             <Target className="size-4 text-clay-600" />
-            <h2 className="text-sm font-semibold text-foreground">The exam</h2>
+            <h2 className="text-sm font-semibold text-foreground">
+              {await t('igcse.page.poetry.overview_exam')}
+            </h2>
           </div>
           <p className="text-xs text-muted-foreground leading-relaxed">
             Paper 1 - Anthology Poetry (30 marks). You have roughly 45 minutes to compare the named
@@ -374,7 +384,9 @@ export default async function EdexcelPoetryAnthologyPage() {
         <div className="rounded-xl border border-border bg-card p-5">
           <div className="flex items-center gap-2 mb-2">
             <GitCompare className="size-4 text-emerald-400" />
-            <h2 className="text-sm font-semibold text-foreground">Key skill</h2>
+            <h2 className="text-sm font-semibold text-foreground">
+              {await t('igcse.page.poetry.overview_skill')}
+            </h2>
           </div>
           <p className="text-xs text-muted-foreground leading-relaxed">
             Comparison. Every paragraph should weave both poems together rather than treating them
@@ -386,7 +398,7 @@ export default async function EdexcelPoetryAnthologyPage() {
       {/* ── Poem list ───────────────────────────────────────────────── */}
       <section>
         <h2 className="text-heading-sm font-heading text-foreground mb-4">
-          The prescribed anthology poems
+          {await t('igcse.page.poetry.poems_heading')}
         </h2>
 
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -429,23 +441,23 @@ export default async function EdexcelPoetryAnthologyPage() {
                   </p>
 
                   <div className="flex flex-wrap gap-1.5 mb-3">
-                    {poem.themes.map((t) => (
+                    {poem.themes.map((theme) => (
                       <span
-                        key={t}
+                        key={theme}
                         className="rounded-full bg-muted px-2 py-0.5 text-[10px] text-muted-foreground"
                       >
-                        {t}
+                        {theme}
                       </span>
                     ))}
                   </div>
 
                   {poem.publicDomain ? (
                     <Badge variant="secondary" className="text-[10px]">
-                      Full interactive study guide
+                      {tFullGuide}
                     </Badge>
                   ) : (
                     <Badge variant="outline" className="text-[10px] text-muted-foreground">
-                      Study notes only - see textbook for full text
+                      {tNotesOnly}
                     </Badge>
                   )}
                 </Link>
@@ -482,12 +494,12 @@ export default async function EdexcelPoetryAnthologyPage() {
                 </p>
 
                 <div className="flex flex-wrap gap-1.5 mb-3">
-                  {poem.themes.map((t) => (
+                  {poem.themes.map((theme) => (
                     <span
-                      key={t}
+                      key={theme}
                       className="rounded-full bg-muted px-2 py-0.5 text-[10px] text-muted-foreground"
                     >
-                      {t}
+                      {theme}
                     </span>
                   ))}
                 </div>
@@ -512,7 +524,7 @@ export default async function EdexcelPoetryAnthologyPage() {
         <div className="flex items-center gap-2 mb-4">
           <GitCompare className="size-4 text-muted-foreground" />
           <h2 className="text-heading-sm font-heading text-foreground">
-            Strong comparison pairings
+            {await t('igcse.page.poetry.pairings_heading')}
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-3xl">
@@ -545,7 +557,9 @@ export default async function EdexcelPoetryAnthologyPage() {
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">
         <div className="flex items-center gap-2 mb-4">
           <Calendar className="size-4 text-muted-foreground" />
-          <h2 className="text-heading-sm font-heading text-foreground">10-week study plan</h2>
+          <h2 className="text-heading-sm font-heading text-foreground">
+            {await t('igcse.page.poetry.study_plan_heading')}
+          </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
           A sensible order for working through the anthology from your first read to exam-ready.

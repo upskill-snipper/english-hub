@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from 'next'
 import Link from 'next/link'
+import { t } from '@/lib/i18n/t'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { QUESTION_TYPES, ASSESSMENT_OBJECTIVES, SPEC_ATTRIBUTION } from '@/lib/ilowersecondary/spec'
 
@@ -285,7 +286,7 @@ const SECTIONS: { title: string; band: string; items: Item[] }[] = [
 
 const TOTAL_ITEMS = EASY.length + MEDIUM.length + HARD.length
 
-export default function SynonymVocabularyPage() {
+export default async function SynonymVocabularyPage() {
   return (
     <>
       <BreadcrumbJsonLd
@@ -312,30 +313,30 @@ export default function SynonymVocabularyPage() {
           <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
             <li>
               <Link href="/" className="hover:text-primary">
-                Home
+                {await t('ks3.page.bc.home')}
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
               <Link href="/ks3" className="hover:text-primary">
-                KS3
+                {await t('ks3.page.bc.ks3')}
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
               <Link href="/ks3/ilowersecondary" className="hover:text-primary">
-                iLowerSecondary English
+                {await t('ks3.page.bc.ils')}
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
               <Link href="/ks3/ilowersecondary/question-types" className="hover:text-primary">
-                Question types
+                {await t('ks3.page.bc.question_types')}
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li className="font-medium text-muted-foreground" aria-current="page">
-              Synonyms &amp; vocabulary
+              {await t('ks3.page.question_types.synonym_vocabulary.bc')}
             </li>
           </ol>
         </nav>

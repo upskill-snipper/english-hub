@@ -11,6 +11,7 @@
 // runtime and static JSON-LD remain consistent.
 
 import { useState, useMemo, useCallback } from 'react'
+import { useT } from '@/lib/i18n/use-t'
 import Link from 'next/link'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import {
@@ -46,21 +47,22 @@ function shuffle<T>(input: readonly T[]): T[] {
 }
 
 function Breadcrumb() {
+  const t = useT()
   return (
     <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
       <Link href="/" className="hover:text-foreground">
-        Home
+        {t('ks3.page.bc.home')}
       </Link>
       <span> · </span>
       <Link href="/ks3" className="hover:text-foreground">
-        KS3
+        {t('ks3.page.bc.ks3')}
       </Link>
       <span> · </span>
       <Link href="/ks3/ilowersecondary" className="hover:text-foreground">
-        iLowerSecondary English
+        {t('ks3.page.bc.ils')}
       </Link>
       <span> · </span>
-      <span>Quiz</span>
+      <span>{t('ks3.page.quiz.bc')}</span>
     </p>
   )
 }

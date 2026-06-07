@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { t } from '@/lib/i18n/t'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import {
   ASSESSMENT_OBJECTIVES,
@@ -146,7 +147,7 @@ const SELF_CHECK = [
   'Have I quoted precisely, or put it accurately in my own words - without distorting the meaning?',
 ]
 
-export default function RetrievalRAO1Page() {
+export default async function RetrievalRAO1Page() {
   return (
     <>
       <BreadcrumbJsonLd
@@ -172,30 +173,30 @@ export default function RetrievalRAO1Page() {
         <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
           <li>
             <Link href="/" className="hover:text-foreground">
-              Home
+              {await t('ks3.page.bc.home')}
             </Link>
           </li>
           <li aria-hidden>/</li>
           <li>
             <Link href="/ks3" className="hover:text-foreground">
-              KS3
+              {await t('ks3.page.bc.ks3')}
             </Link>
           </li>
           <li aria-hidden>/</li>
           <li>
             <Link href="/ks3/ilowersecondary" className="hover:text-foreground">
-              iLowerSecondary English
+              {await t('ks3.page.bc.ils')}
             </Link>
           </li>
           <li aria-hidden>/</li>
           <li>
             <Link href="/ks3/ilowersecondary/reading-skills" className="hover:text-foreground">
-              Reading skills
+              {await t('ks3.page.bc.reading_skills')}
             </Link>
           </li>
           <li aria-hidden>/</li>
           <li className="text-foreground" aria-current="page">
-            Retrieval ({RAO1.code})
+            {await t('ks3.page.reading.retrieval.bc')} ({RAO1.code})
           </li>
         </ol>
       </nav>

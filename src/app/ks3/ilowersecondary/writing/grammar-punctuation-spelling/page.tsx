@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { t } from '@/lib/i18n/t'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import {
   ASSESSMENT_OBJECTIVES,
@@ -285,7 +286,7 @@ const SPELLING_TRAPS: { wrong: string; right: string; tip: string }[] = [
   },
 ]
 
-export default function GrammarPunctuationSpellingPage() {
+export default async function GrammarPunctuationSpellingPage() {
   return (
     <>
       <BreadcrumbJsonLd
@@ -311,30 +312,30 @@ export default function GrammarPunctuationSpellingPage() {
         <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
           <li>
             <Link href="/" className="hover:text-foreground">
-              Home
+              {await t('ks3.page.bc.home')}
             </Link>
           </li>
           <li aria-hidden>/</li>
           <li>
             <Link href="/ks3" className="hover:text-foreground">
-              KS3
+              {await t('ks3.page.bc.ks3')}
             </Link>
           </li>
           <li aria-hidden>/</li>
           <li>
             <Link href="/ks3/ilowersecondary" className="hover:text-foreground">
-              iLowerSecondary English
+              {await t('ks3.page.bc.ils')}
             </Link>
           </li>
           <li aria-hidden>/</li>
           <li>
             <Link href="/ks3/ilowersecondary/writing-skills" className="hover:text-foreground">
-              Writing skills
+              {await t('ks3.page.bc.writing_skills')}
             </Link>
           </li>
           <li aria-hidden>/</li>
           <li className="text-foreground" aria-current="page">
-            Grammar, punctuation &amp; spelling ({WAO2.code})
+            {await t('ks3.page.writing.grammar_punctuation_spelling.bc')} ({WAO2.code})
           </li>
         </ol>
       </nav>

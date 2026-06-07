@@ -21,6 +21,7 @@ import { Badge } from '@/components/ui/badge'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import type { ExamBoard } from '@/lib/board/board-store'
 import { isIgcseBoard } from '@/lib/board/board-filter'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ── Board-specific writing paper info ────────────────────────────── */
 
@@ -153,12 +154,15 @@ interface WritingViewProps {
 }
 
 export default function WritingView({ boardId, boardName }: WritingViewProps) {
+  const t = useT()
   const papers = boardId && WRITING_PAPERS[boardId]
   const showIgcseBanner = isIgcseBoard(boardId)
-  const heading = boardId ? `${boardName} Language Writing Skills` : 'Writing Skills'
+  const heading = boardId
+    ? `${boardName} ${t('rev.lang.writing.title_board_suffix')}`
+    : t('rev.lang.writing.title_generic')
   const subheading = boardId
-    ? `Creative and transactional writing craft for ${boardName}`
-    : 'Creative writing, transactional writing, planning, and language craft'
+    ? `${t('rev.lang.writing.subtitle_board_prefix')} ${boardName}`
+    : t('rev.lang.writing.subtitle_generic')
 
   return (
     <div className="space-y-6 pb-16">
@@ -171,7 +175,7 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
           render={<Link href="/revision/language" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Language Skills
+          {t('rev.lang.writing.back')}
         </Button>
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-emerald-500/10">
@@ -197,7 +201,7 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
           <Info className="mt-0.5 size-5 shrink-0 text-clay-600" />
           <div className="flex-1">
             <p className="text-sm font-semibold text-foreground">
-              Your board uses a different paper structure
+              {t('rev.lang.writing.igcse_banner_title')}
             </p>
             <p className="mt-1 text-body-sm text-muted-foreground leading-relaxed">
               The creative, transactional, and planning techniques below apply to every writing
@@ -212,7 +216,7 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
                 }
                 className="text-primary underline hover:no-underline"
               >
-                your IGCSE hub
+                {t('rev.lang.writing.your_igcse_hub')}
               </Link>{' '}
               for exam-specific writing guidance.
             </p>
@@ -226,39 +230,48 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
           <div className="rounded-2xl border border-border/60 bg-card p-4">
             <div className="flex items-center gap-2 mb-2">
               <Palette className="size-4 text-emerald-400" />
-              <h2 className="text-sm font-semibold text-foreground">Creative Writing</h2>
+              <h2 className="text-sm font-semibold text-foreground">
+                {t('rev.lang.writing.creative_writing')}
+              </h2>
             </div>
             <p className="text-xs font-medium text-foreground mb-2">{papers.creative.paperLabel}</p>
             <ul className="space-y-1 text-xs text-muted-foreground">
               <li>
-                <strong className="text-foreground">Length:</strong> {papers.creative.wordCount}
+                <strong className="text-foreground">{t('rev.lang.writing.length_label')}</strong>{' '}
+                {papers.creative.wordCount}
               </li>
               <li>
-                <strong className="text-foreground">Marks:</strong> {papers.creative.marks}
+                <strong className="text-foreground">{t('rev.lang.writing.marks_label')}</strong>{' '}
+                {papers.creative.marks}
               </li>
               <li>
-                <strong className="text-foreground">Timing:</strong> {papers.creative.timing}
+                <strong className="text-foreground">{t('rev.lang.writing.timing_label')}</strong>{' '}
+                {papers.creative.timing}
               </li>
             </ul>
           </div>
           <div className="rounded-2xl border border-border/60 bg-card p-4">
             <div className="flex items-center gap-2 mb-2">
               <FileText className="size-4 text-blue-400" />
-              <h2 className="text-sm font-semibold text-foreground">Transactional Writing</h2>
+              <h2 className="text-sm font-semibold text-foreground">
+                {t('rev.lang.writing.transactional_writing')}
+              </h2>
             </div>
             <p className="text-xs font-medium text-foreground mb-2">
               {papers.transactional.paperLabel}
             </p>
             <ul className="space-y-1 text-xs text-muted-foreground">
               <li>
-                <strong className="text-foreground">Length:</strong>{' '}
+                <strong className="text-foreground">{t('rev.lang.writing.length_label')}</strong>{' '}
                 {papers.transactional.wordCount}
               </li>
               <li>
-                <strong className="text-foreground">Marks:</strong> {papers.transactional.marks}
+                <strong className="text-foreground">{t('rev.lang.writing.marks_label')}</strong>{' '}
+                {papers.transactional.marks}
               </li>
               <li>
-                <strong className="text-foreground">Timing:</strong> {papers.transactional.timing}
+                <strong className="text-foreground">{t('rev.lang.writing.timing_label')}</strong>{' '}
+                {papers.transactional.timing}
               </li>
             </ul>
           </div>
@@ -267,7 +280,7 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
 
       {/* ── 1. Creative Writing Techniques ────────────────────────── */}
       <Section
-        title="Creative Writing Techniques"
+        title={t('rev.lang.writing.sec_creative')}
         icon={Palette}
         colour="text-emerald-400"
         defaultOpen
@@ -281,8 +294,8 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
 
           <Tabs defaultValue="narrative">
             <TabsList className="w-full sm:w-auto">
-              <TabsTrigger value="narrative">Narrative Writing</TabsTrigger>
-              <TabsTrigger value="descriptive">Descriptive Writing</TabsTrigger>
+              <TabsTrigger value="narrative">{t('rev.lang.writing.tab_narrative')}</TabsTrigger>
+              <TabsTrigger value="descriptive">{t('rev.lang.writing.tab_descriptive')}</TabsTrigger>
             </TabsList>
 
             <TabsContent value="narrative" className="mt-4 space-y-4">
@@ -384,7 +397,11 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
       </Section>
 
       {/* ── 2. Transactional Writing ──────────────────────────────── */}
-      <Section title="Transactional Writing" icon={FileText} colour="text-blue-400">
+      <Section
+        title={t('rev.lang.writing.sec_transactional')}
+        icon={FileText}
+        colour="text-blue-400"
+      >
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
             Your transactional writing task asks you to write for a specific audience and purpose.
@@ -394,9 +411,9 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
 
           <Tabs defaultValue="article">
             <TabsList className="w-full sm:w-auto flex-wrap">
-              <TabsTrigger value="article">Articles</TabsTrigger>
-              <TabsTrigger value="letter">Letters</TabsTrigger>
-              <TabsTrigger value="speech">Speeches</TabsTrigger>
+              <TabsTrigger value="article">{t('rev.lang.writing.tab_article')}</TabsTrigger>
+              <TabsTrigger value="letter">{t('rev.lang.writing.tab_letter')}</TabsTrigger>
+              <TabsTrigger value="speech">{t('rev.lang.writing.tab_speech')}</TabsTrigger>
             </TabsList>
 
             <TabsContent value="article" className="mt-4 space-y-3">
@@ -541,7 +558,7 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
       </Section>
 
       {/* ── 3. Planning Methods ───────────────────────────────────── */}
-      <Section title="Planning Methods" icon={PenTool} colour="text-violet-400">
+      <Section title={t('rev.lang.writing.sec_planning')} icon={PenTool} colour="text-violet-400">
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
             Five minutes of planning saves fifteen minutes of confused writing. A clear plan
@@ -614,7 +631,7 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
       </Section>
 
       {/* ── 4. Vocabulary Enhancement ─────────────────────────────── */}
-      <Section title="Vocabulary Enhancement" icon={BookOpen} colour="text-rose-400">
+      <Section title={t('rev.lang.writing.sec_vocab')} icon={BookOpen} colour="text-rose-400">
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
             You do not need rare or obscure words to score highly. What matters is choosing the
@@ -683,7 +700,7 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
       </Section>
 
       {/* ── 5. Sentence Variety ───────────────────────────────────── */}
-      <Section title="Sentence Variety" icon={Type} colour="text-cyan-400">
+      <Section title={t('rev.lang.writing.sec_sentence')} icon={Type} colour="text-cyan-400">
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
             Varying your sentence structures is one of the simplest ways to improve your writing.
@@ -755,7 +772,11 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
       </Section>
 
       {/* ── 6. Paragraphing and Cohesion ──────────────────────────── */}
-      <Section title="Paragraphing and Cohesion" icon={AlignLeft} colour="text-clay-600">
+      <Section
+        title={t('rev.lang.writing.sec_paragraphing')}
+        icon={AlignLeft}
+        colour="text-clay-600"
+      >
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
             Paragraphing is not just about making your work look neat -- it is a structural tool
@@ -871,10 +892,12 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="flex items-center gap-3 mb-2">
           <Lightbulb className="size-5 text-primary" />
-          <h2 className="text-heading-md font-heading text-foreground">Take it Further</h2>
+          <h2 className="text-heading-md font-heading text-foreground">
+            {t('rev.lang.writing.take_further')}
+          </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          Pair your writing skills with these related guides.
+          {t('rev.lang.writing.take_further_lead')}
         </p>
         <div className="grid gap-3 sm:grid-cols-2">
           <Link
@@ -886,10 +909,10 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
             </div>
             <div className="min-w-0">
               <p className="text-sm font-semibold text-foreground group-hover:text-primary">
-                Essay Structure
+                {t('rev.lang.writing.rel_essay_title')}
               </p>
               <p className="text-xs text-muted-foreground mt-0.5">
-                Plan and structure your written response.
+                {t('rev.lang.writing.rel_essay_desc')}
               </p>
             </div>
           </Link>
@@ -902,10 +925,10 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
             </div>
             <div className="min-w-0">
               <p className="text-sm font-semibold text-foreground group-hover:text-primary">
-                SPaG Mastery
+                {t('rev.lang.writing.rel_spag_title')}
               </p>
               <p className="text-xs text-muted-foreground mt-0.5">
-                Polish accuracy for top writing marks.
+                {t('rev.lang.writing.rel_spag_desc')}
               </p>
             </div>
           </Link>
@@ -918,10 +941,10 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
             </div>
             <div className="min-w-0">
               <p className="text-sm font-semibold text-foreground group-hover:text-primary">
-                Grade 9 Writing Standards
+                {t('rev.lang.writing.rel_grade9_title')}
               </p>
               <p className="text-xs text-muted-foreground mt-0.5">
-                See what crafted writing looks like at the top.
+                {t('rev.lang.writing.rel_grade9_desc')}
               </p>
             </div>
           </Link>
@@ -934,10 +957,10 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
             </div>
             <div className="min-w-0">
               <p className="text-sm font-semibold text-foreground group-hover:text-primary">
-                Time Management
+                {t('rev.lang.writing.rel_time_title')}
               </p>
               <p className="text-xs text-muted-foreground mt-0.5">
-                Hit the planning, drafting, and checking stages.
+                {t('rev.lang.writing.rel_time_desc')}
               </p>
             </div>
           </Link>

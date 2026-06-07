@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { t } from '@/lib/i18n/t'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import {
   ASSESSMENT_OBJECTIVES,
@@ -512,7 +513,7 @@ function highlight(sentence: string, target: string) {
   )
 }
 
-export default function GrammarTerminologyPage() {
+export default async function GrammarTerminologyPage() {
   return (
     <>
       <BreadcrumbJsonLd
@@ -536,16 +537,16 @@ export default function GrammarTerminologyPage() {
 
       <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
         <Link href="/ks3" className="hover:text-foreground">
-          KS3
+          {await t('ks3.page.bc.ks3')}
         </Link>
         <span> · </span>
         <Link href="/ks3/ilowersecondary" className="hover:text-foreground">
-          iLowerSecondary English
+          {await t('ks3.page.bc.ils')}
         </Link>
         <span> · </span>
-        <span>Reading skills</span>
+        <span>{await t('ks3.page.bc.reading_skills')}</span>
         <span> · </span>
-        <span>Grammar terminology</span>
+        <span>{await t('ks3.page.reading.grammar_terminology.bc')}</span>
       </p>
 
       <h1>Grammar terminology reference</h1>

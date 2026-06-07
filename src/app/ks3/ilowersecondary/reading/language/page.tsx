@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { t } from '@/lib/i18n/t'
 import { headers } from 'next/headers'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import {
@@ -296,22 +297,22 @@ export default async function LanguageRAO4Page() {
 
       <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
         <Link href="/" className="hover:text-foreground">
-          Home
+          {await t('ks3.page.bc.home')}
         </Link>
         <span> · </span>
         <Link href="/ks3" className="hover:text-foreground">
-          KS3
+          {await t('ks3.page.bc.ks3')}
         </Link>
         <span> · </span>
         <Link href="/ks3/ilowersecondary" className="hover:text-foreground">
-          iLowerSecondary English
+          {await t('ks3.page.bc.ils')}
         </Link>
         <span> · </span>
         <Link href="/ks3/ilowersecondary/reading" className="hover:text-foreground">
-          Reading skills
+          {await t('ks3.page.bc.reading_skills')}
         </Link>
         <span> · </span>
-        <span>Language (RAO4)</span>
+        <span>{await t('ks3.page.reading.language.bc')}</span>
       </p>
 
       <h1>Language analysis masterclass</h1>

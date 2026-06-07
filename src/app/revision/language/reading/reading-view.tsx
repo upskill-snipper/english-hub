@@ -20,6 +20,7 @@ import { Badge } from '@/components/ui/badge'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import type { ExamBoard } from '@/lib/board/board-store'
 import { isIgcseBoard } from '@/lib/board/board-filter'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ── Board-specific reading paper info ────────────────────────────── */
 
@@ -165,6 +166,7 @@ interface ReadingViewProps {
 }
 
 export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
+  const t = useT()
   const paper = boardId && READING_PAPERS[boardId]
   const showIgcseBanner = isIgcseBoard(boardId)
   const headingSuffix = boardId ? ` for ${boardName}` : ''
@@ -180,7 +182,7 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
           render={<Link href="/revision/language" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Language Skills
+          {t('rev.lang.reading.back')}
         </Button>
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-blue-500/10">
@@ -188,15 +190,18 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
           </div>
           <div className="min-w-0 flex-1">
             <div className="flex flex-wrap items-center gap-2">
-              <h1 className="text-heading-lg font-heading text-foreground">Reading Skills</h1>
+              <h1 className="text-heading-lg font-heading text-foreground">
+                {t('rev.lang.reading.title')}
+              </h1>
               {boardId && (
                 <Badge variant="secondary" className="text-xs">
-                  For {boardName} Language Paper 1
+                  {t('rev.lang.reading.badge_paper1_prefix')} {boardName}{' '}
+                  {t('rev.lang.reading.badge_paper1_suffix')}
                 </Badge>
               )}
             </div>
             <p className="text-body-sm text-muted-foreground">
-              Extract analysis, inference, language methods, and comparison techniques
+              {t('rev.lang.reading.subtitle')}
               {headingSuffix}
             </p>
           </div>
@@ -209,7 +214,7 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
           <Info className="mt-0.5 size-5 shrink-0 text-clay-600" />
           <div className="flex-1">
             <p className="text-sm font-semibold text-foreground">
-              Your board uses a different paper structure
+              {t('rev.lang.reading.igcse_banner_title')}
             </p>
             <p className="mt-1 text-body-sm text-muted-foreground leading-relaxed">
               The reading techniques below (What-How-Why, inference, comparison) are universal and
@@ -229,7 +234,7 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
                 }
                 className="text-primary underline hover:no-underline"
               >
-                your IGCSE hub
+                {t('rev.lang.reading.your_igcse_hub')}
               </Link>{' '}
               for exam-specific guidance.
             </p>
@@ -247,7 +252,7 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
           <p className="text-body-sm text-muted-foreground leading-relaxed">{paper.description}</p>
           <div className="mt-3">
             <p className="text-xs font-semibold text-foreground mb-1.5">
-              Question types you will face:
+              {t('rev.lang.reading.question_types_label')}
             </p>
             <ul className="space-y-1">
               {paper.questionTypes.map((q, i) => (
@@ -263,7 +268,7 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
 
       {/* ── 1. Approaching Reading Questions ──────────────────────── */}
       <Section
-        title="Approaching Reading Questions"
+        title={t('rev.lang.reading.sec_approaching')}
         icon={Search}
         colour="text-blue-400"
         defaultOpen
@@ -338,7 +343,7 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
       </Section>
 
       {/* ── 2. Inference and Deduction ────────────────────────────── */}
-      <Section title="Inference and Deduction" icon={Eye} colour="text-violet-400">
+      <Section title={t('rev.lang.reading.sec_inference')} icon={Eye} colour="text-violet-400">
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
             Inference means reading between the lines -- working out what the writer implies but
@@ -403,7 +408,7 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
       </Section>
 
       {/* ── 3. Language Analysis: What-How-Why ────────────────────── */}
-      <Section title="Language Analysis: What-How-Why" icon={Layers} colour="text-emerald-400">
+      <Section title={t('rev.lang.reading.sec_whw')} icon={Layers} colour="text-emerald-400">
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
             The What-How-Why framework is the single most useful structure for analysing language in
@@ -483,7 +488,7 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
       </Section>
 
       {/* ── 4. Writer's Methods and Effects ───────────────────────── */}
-      <Section title="Writer's Methods and Their Effects" icon={Target} colour="text-rose-400">
+      <Section title={t('rev.lang.reading.sec_methods')} icon={Target} colour="text-rose-400">
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
             &ldquo;Writer&apos;s methods&rdquo; is the umbrella term markers use for every
@@ -583,7 +588,7 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
       </Section>
 
       {/* ── 5. Comparison Techniques ──────────────────────────────── */}
-      <Section title="Comparison Techniques" icon={BarChart3} colour="text-cyan-400">
+      <Section title={t('rev.lang.reading.sec_comparison')} icon={BarChart3} colour="text-cyan-400">
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
             Most boards require you to compare two writers at some point in the reading section. For{' '}
@@ -657,11 +662,7 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
       </Section>
 
       {/* ── 6. Practice Extract with Guided Questions ─────────────── */}
-      <Section
-        title="Practice Extract with Guided Questions"
-        icon={BookOpen}
-        colour="text-clay-600"
-      >
+      <Section title={t('rev.lang.reading.sec_practice')} icon={BookOpen} colour="text-clay-600">
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
             Use this short extract to practise your reading skills. Try answering each question
@@ -670,7 +671,7 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
 
           <div className="rounded-xl border border-border/60 bg-background/50 p-4">
             <Badge variant="outline" className="mb-3">
-              Practice Extract
+              {t('rev.lang.reading.practice_extract')}
             </Badge>
             <p className="text-body-sm text-foreground leading-relaxed italic">
               The fog crept through the alleyways like a living thing, swallowing the gaslight in
@@ -700,11 +701,7 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
       </Section>
 
       {/* ── 7. Grade Comparison: 5 vs 7 vs 9 ─────────────────────── */}
-      <Section
-        title="Grade 5 vs Grade 7 vs Grade 9 Responses"
-        icon={BarChart3}
-        colour="text-primary"
-      >
+      <Section title={t('rev.lang.reading.sec_grades')} icon={BarChart3} colour="text-primary">
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
             Understanding what separates each grade boundary helps you target your revision. Below
@@ -781,10 +778,12 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="flex items-center gap-3 mb-2">
           <Lightbulb className="size-5 text-primary" />
-          <h2 className="text-heading-md font-heading text-foreground">Take it Further</h2>
+          <h2 className="text-heading-md font-heading text-foreground">
+            {t('rev.lang.reading.take_further')}
+          </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          Build on your reading skills with related guides.
+          {t('rev.lang.reading.take_further_lead')}
         </p>
         <div className="grid gap-3 sm:grid-cols-2">
           <Link
@@ -796,10 +795,10 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
             </div>
             <div className="min-w-0">
               <p className="text-sm font-semibold text-foreground group-hover:text-primary">
-                Essay Structure Guide
+                {t('rev.lang.reading.rel_essay_title')}
               </p>
               <p className="text-xs text-muted-foreground mt-0.5">
-                Turn close reading into top-band paragraphs.
+                {t('rev.lang.reading.rel_essay_desc')}
               </p>
             </div>
           </Link>
@@ -812,10 +811,10 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
             </div>
             <div className="min-w-0">
               <p className="text-sm font-semibold text-foreground group-hover:text-primary">
-                Question Types Decoded
+                {t('rev.lang.reading.rel_qtypes_title')}
               </p>
               <p className="text-xs text-muted-foreground mt-0.5">
-                Match reading techniques to each question.
+                {t('rev.lang.reading.rel_qtypes_desc')}
               </p>
             </div>
           </Link>
@@ -828,10 +827,10 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
             </div>
             <div className="min-w-0">
               <p className="text-sm font-semibold text-foreground group-hover:text-primary">
-                Aiming for Grade 7
+                {t('rev.lang.reading.rel_grade7_title')}
               </p>
               <p className="text-xs text-muted-foreground mt-0.5">
-                See how perceptive reading is rewarded.
+                {t('rev.lang.reading.rel_grade7_desc')}
               </p>
             </div>
           </Link>
@@ -844,10 +843,10 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
             </div>
             <div className="min-w-0">
               <p className="text-sm font-semibold text-foreground group-hover:text-primary">
-                Test Yourself
+                {t('rev.lang.reading.rel_quiz_title')}
               </p>
               <p className="text-xs text-muted-foreground mt-0.5">
-                Quick quizzes on language techniques.
+                {t('rev.lang.reading.rel_quiz_desc')}
               </p>
             </div>
           </Link>
@@ -868,6 +867,7 @@ function PracticeQuestion({
   question: string
   guidance: string
 }) {
+  const t = useT()
   const [showGuidance, setShowGuidance] = useState(false)
 
   return (
@@ -883,7 +883,9 @@ function PracticeQuestion({
             onClick={() => setShowGuidance(!showGuidance)}
             className="mt-2 text-xs font-medium text-primary hover:underline"
           >
-            {showGuidance ? 'Hide guidance' : 'Show guidance'}
+            {showGuidance
+              ? t('rev.lang.reading.hide_guidance')
+              : t('rev.lang.reading.show_guidance')}
           </button>
           {showGuidance && (
             <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed rounded-lg bg-primary/[0.03] p-3">

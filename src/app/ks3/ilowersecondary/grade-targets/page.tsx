@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { t } from '@/lib/i18n/t'
 import {
   QUALIFICATION,
   WAO1_GRID,
@@ -86,7 +87,7 @@ const climb: { from: WritingLevel; to: WritingLevel; points: string[] }[] = [
 
 const ORDER: WritingLevel[] = ['S1', 'S2', 'S3', 'S4']
 
-export default function GradeTargetsPage() {
+export default async function GradeTargetsPage() {
   return (
     <>
       <BreadcrumbJsonLd
@@ -106,14 +107,14 @@ export default function GradeTargetsPage() {
 
       <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
         <Link href="/ks3" className="hover:text-foreground">
-          KS3
+          {await t('ks3.page.bc.ks3')}
         </Link>
         <span> · </span>
         <Link href="/ks3/ilowersecondary" className="hover:text-foreground">
-          iLowerSecondary English
+          {await t('ks3.page.bc.ils')}
         </Link>
         <span> · </span>
-        <span>Grade targets</span>
+        <span>{await t('ks3.page.grade_targets.bc')}</span>
       </p>
 
       <h1>Grade targets: what S1-S4 looks like and how to climb</h1>

@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from 'next'
 import Link from 'next/link'
+import { t } from '@/lib/i18n/t'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import {
   SECTIONS,
@@ -160,7 +161,7 @@ const METHOD_STEPS = [
   },
 ]
 
-export default function SectionBTaskPage() {
+export default async function SectionBTaskPage() {
   return (
     <>
       <BreadcrumbJsonLd
@@ -187,30 +188,30 @@ export default function SectionBTaskPage() {
           <ol className="flex flex-wrap items-center gap-1">
             <li>
               <Link href="/" className="hover:text-primary">
-                Home
+                {await t('ks3.page.bc.home')}
               </Link>
             </li>
             <li aria-hidden="true">/</li>
             <li>
               <Link href="/ks3" className="hover:text-primary">
-                KS3
+                {await t('ks3.page.bc.ks3')}
               </Link>
             </li>
             <li aria-hidden="true">/</li>
             <li>
               <Link href="/ks3/ilowersecondary" className="hover:text-primary">
-                iLowerSecondary English
+                {await t('ks3.page.bc.ils')}
               </Link>
             </li>
             <li aria-hidden="true">/</li>
             <li>
               <Link href="/ks3/ilowersecondary/writing" className="hover:text-primary">
-                Writing skills
+                {await t('ks3.page.bc.writing_skills')}
               </Link>
             </li>
             <li aria-hidden="true">/</li>
             <li aria-current="page" className="font-medium text-muted-foreground">
-              The Section B task
+              {await t('ks3.page.writing.section_b_task.bc')}
             </li>
           </ol>
         </nav>

@@ -8,6 +8,7 @@ import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { GeoFaq, type GeoFaqItem } from '@/components/seo/GeoFaq'
+import { t } from '@/lib/i18n/t'
 type TopQuote = {
   quote: string
   character: string
@@ -710,6 +711,8 @@ export default async function MacbethPage() {
     redirect('/revision/texts')
   }
   const userBoardLabel = board ? (getBoardConfig(board)?.shortName ?? 'AQA') : 'AQA'
+  const ao2ReadingLabel = await t('rev.texts.macbeth.ao2_reading_label')
+  const openGuideLabel = await t('rev.texts.common.open_guide')
   return (
     <>
       <CourseJsonLd
@@ -745,50 +748,50 @@ export default async function MacbethPage() {
             id: 'read',
             href: '/revision/texts/macbeth/read',
             icon: 'read' as const,
-            title: 'Read Full Text',
-            description: 'With annotations',
+            title: await t('rev.texts.subpage.read.title'),
+            description: await t('rev.texts.subpage.read.desc'),
           },
           {
             id: 'acts',
             href: '/revision/texts/macbeth/acts',
             icon: 'acts' as const,
-            title: 'Act-by-Act Analysis',
-            description: 'Key moments & quotes',
+            title: await t('rev.texts.subpage.acts.title'),
+            description: await t('rev.texts.subpage.acts.desc'),
           },
           {
             id: 'characters',
             href: '/revision/texts/macbeth/characters',
             icon: 'characters' as const,
-            title: 'Characters',
-            description: 'Full character guide',
+            title: await t('rev.texts.subpage.characters.title'),
+            description: await t('rev.texts.subpage.characters.desc'),
           },
           {
             id: 'themes',
             href: '/revision/texts/macbeth/themes',
             icon: 'themes' as const,
-            title: 'Themes',
-            description: 'Theme analysis',
+            title: await t('rev.texts.subpage.themes.title'),
+            description: await t('rev.texts.subpage.themes.desc'),
           },
           {
             id: 'quotes',
             href: '/revision/texts/macbeth/key-quotes',
             icon: 'quotes' as const,
-            title: 'Key Quotes',
-            description: 'Quotes with analysis',
+            title: await t('rev.texts.subpage.quotes.title'),
+            description: await t('rev.texts.subpage.quotes.desc'),
           },
           {
             id: 'context',
             href: '/revision/texts/macbeth/context',
             icon: 'context' as const,
-            title: 'Context',
-            description: 'Historical context',
+            title: await t('rev.texts.subpage.context.title'),
+            description: await t('rev.texts.subpage.context.desc'),
           },
           {
             id: 'essays',
             href: '/revision/texts/macbeth/essay-plans',
             icon: 'essays' as const,
-            title: 'Essay Plans',
-            description: 'GCSE essay plans',
+            title: await t('rev.texts.subpage.essays.title'),
+            description: await t('rev.texts.subpage.essays.desc'),
           },
         ]}
         quizQuotes={data.quotations.slice(0, 10).map((q) => ({
@@ -821,7 +824,7 @@ export default async function MacbethPage() {
           id="macbeth-introduction"
           className="mb-4 font-heading text-3xl font-semibold text-foreground"
         >
-          Macbeth at a glance
+          {await t('rev.texts.macbeth.at_a_glance')}
         </h2>
         <div className="space-y-4 text-base leading-relaxed text-muted-foreground">
           <p>
@@ -877,11 +880,10 @@ export default async function MacbethPage() {
           id="macbeth-top-quotes"
           className="mb-2 font-heading text-2xl font-semibold text-foreground"
         >
-          Top 5 quotes you must know for AO2
+          {await t('rev.texts.macbeth.top5_heading')}
         </h2>
         <p className="mb-6 text-sm text-muted-foreground">
-          Five exam-essential quotations with focused AO2 readings. Memorise the wording exactly
-          &mdash; precise quotation is the foundation of Grade 7+ analysis.
+          {await t('rev.texts.macbeth.top5_sub')}
         </p>
         <ol className="space-y-6">
           {TOP_FIVE_QUOTES.map((q, i) => (
@@ -896,7 +898,7 @@ export default async function MacbethPage() {
               </div>
               <p className="mb-2 text-sm font-medium text-foreground/80">{q.character}</p>
               <p className="text-sm leading-relaxed text-muted-foreground">
-                <span className="font-semibold text-foreground">AO2 reading: </span>
+                <span className="font-semibold text-foreground">{ao2ReadingLabel}</span>
                 {q.ao2}
               </p>
             </li>
@@ -911,11 +913,10 @@ export default async function MacbethPage() {
           id="macbeth-compare-with"
           className="mb-2 font-heading text-2xl font-semibold text-foreground"
         >
-          Compare with
+          {await t('rev.texts.common.compare_with')}
         </h2>
         <p className="mb-6 text-sm text-muted-foreground">
-          Comparative thinking is rewarded by examiners across boards. Cross-reference Macbeth with
-          these set texts to strengthen your thematic essays.
+          {await t('rev.texts.macbeth.compare_sub')}
         </p>
         <div className="grid gap-4 sm:grid-cols-3">
           {COMPARISON_CARDS.map((card) => (
@@ -932,7 +933,7 @@ export default async function MacbethPage() {
                 aria-hidden="true"
                 className="mt-3 inline-block text-xs font-semibold text-primary"
               >
-                Open guide &rarr;
+                {openGuideLabel}
               </span>
             </Link>
           ))}
@@ -940,7 +941,7 @@ export default async function MacbethPage() {
       </section>
 
       <section className="mx-auto my-12 max-w-3xl px-4">
-        <GeoFaq faqs={MACBETH_FAQS} heading="Macbeth: frequently asked questions" />
+        <GeoFaq faqs={MACBETH_FAQS} heading={await t('rev.texts.macbeth.faq_heading')} />
       </section>
     </>
   )

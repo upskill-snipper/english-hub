@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
+import { useT } from '@/lib/i18n/use-t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 // ── Context data ──────────────────────────────────────────────────────────────
@@ -216,6 +217,7 @@ const CONTEXT_TOPICS: ContextTopic[] = [
 // ── Page component ────────────────────────────────────────────────────────────
 
 export default function MacbethContextPage() {
+  const tr = useT()
   return (
     <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
@@ -241,22 +243,22 @@ export default function MacbethContextPage() {
               render={<Link href="/revision/texts/macbeth" />}
             >
               <ArrowLeft className="size-3.5" />
-              Back to Macbeth overview
+              {tr('rev.texts.common.back_to_overview').replace('{text}', 'Macbeth')}
             </Button>
             <div className="mb-4 flex flex-wrap items-center gap-2">
               <Badge variant="secondary">
                 <ScrollText className="mr-1 size-3 text-blue-400" />
-                Historical Context
+                {tr('rev.texts.common.historical_context')}
               </Badge>
-              <Badge variant="outline">8 topics</Badge>
+              <Badge variant="outline">
+                {tr('rev.texts.common.topics_count').replace('{n}', '8')}
+              </Badge>
             </div>
             <h1 className="text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
-              Macbeth - Historical Context
+              {tr('rev.texts.macbeth.context.title')}
             </h1>
             <p className="mt-3 max-w-2xl text-muted-foreground">
-              Essential Jacobean context for Macbeth: James I, witchcraft, the Gunpowder Plot, the
-              Divine Right of Kings, and the theatrical world Shakespeare wrote for. Understanding
-              context is worth up to 6 marks in AQA GCSE Literature.
+              {tr('rev.texts.macbeth.context.intro')}
             </p>
           </div>
         </section>
@@ -264,7 +266,7 @@ export default function MacbethContextPage() {
         {/* Exam tip */}
         <div className="rounded-lg border border-amber-500/20 bg-amber-500/[0.04] p-4">
           <h4 className="mb-1 flex items-center gap-1.5 font-semibold text-amber-700 dark:text-amber-300">
-            <Lightbulb className="size-4" /> Using Context in Your Essays
+            <Lightbulb className="size-4" /> {tr('rev.texts.macbeth.context.using_context_h')}
           </h4>
           <p className="text-sm text-muted-foreground leading-relaxed">
             Context should support your argument, not replace it. The strongest approach is to embed
@@ -288,14 +290,14 @@ export default function MacbethContextPage() {
             <CardContent className="space-y-5">
               {/* Detailed explanation */}
               <div>
-                <h4 className="mb-1 font-semibold">Background</h4>
+                <h4 className="mb-1 font-semibold">{tr('rev.texts.common.background')}</h4>
                 <p className="text-muted-foreground leading-relaxed">{topic.detail}</p>
               </div>
 
               {/* Links to the play */}
               <div className="rounded-lg border border-emerald-500/20 bg-emerald-500/[0.04] p-4">
                 <h4 className="mb-1 flex items-center gap-1.5 font-semibold text-emerald-600 dark:text-emerald-400">
-                  <BookOpen className="size-4" /> How This Connects to the Play
+                  <BookOpen className="size-4" /> {tr('rev.texts.macbeth.context.how_connects_h')}
                 </h4>
                 <p className="text-sm text-muted-foreground leading-relaxed">{topic.linksToPlay}</p>
               </div>
@@ -303,7 +305,7 @@ export default function MacbethContextPage() {
               {/* Relevant quote */}
               <div className="rounded-lg border border-border/60 p-4 space-y-2">
                 <h4 className="flex items-center gap-1.5 font-semibold text-sm">
-                  <Quote className="size-4 text-amber-500" /> Key Quote
+                  <Quote className="size-4 text-amber-500" /> {tr('rev.texts.common.key_quote')}
                 </h4>
                 <p className="text-lg font-medium leading-snug">
                   &ldquo;{topic.relevantQuote.quote}&rdquo;
@@ -312,14 +314,16 @@ export default function MacbethContextPage() {
                   {topic.relevantQuote.speaker} &mdash; {topic.relevantQuote.actScene}
                 </p>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  <span className="font-medium text-foreground">Why it matters: </span>
+                  <span className="font-medium text-foreground">
+                    {tr('rev.texts.common.why_it_matters')}
+                  </span>
                   {topic.relevantQuote.whyItMatters}
                 </p>
               </div>
 
               {/* Key terms */}
               <div>
-                <h4 className="mb-2 font-semibold">Key Terms</h4>
+                <h4 className="mb-2 font-semibold">{tr('rev.texts.common.key_terms')}</h4>
                 <div className="flex flex-wrap gap-2">
                   {topic.keyTerms.map((term) => (
                     <Badge key={term} variant="outline">
@@ -335,7 +339,7 @@ export default function MacbethContextPage() {
         {/* AO3 context advice */}
         <div className="rounded-lg border border-blue-500/20 bg-blue-500/[0.04] p-4 space-y-3">
           <h4 className="font-semibold text-blue-600 dark:text-blue-400">
-            How Context Earns AO3 Marks
+            {tr('rev.texts.macbeth.context.ao3_marks_h')}
           </h4>
           <p className="text-sm text-muted-foreground leading-relaxed">
             AQA Assessment Objective 3 (AO3) asks you to &ldquo;show understanding of the
@@ -379,7 +383,7 @@ export default function MacbethContextPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Lightbulb className="size-5 text-clay-700 dark:text-clay-300" />
-              Common Context Mistakes to Avoid
+              {tr('rev.texts.macbeth.context.mistakes_h')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -421,11 +425,12 @@ export default function MacbethContextPage() {
                   className="rounded-lg border border-red-500/15 bg-red-500/[0.03] p-3 space-y-1.5"
                 >
                   <p className="text-sm font-medium text-red-600 dark:text-red-400">
-                    Mistake: {item.mistake}
+                    {tr('rev.texts.macbeth.context.mistake_label')}
+                    {item.mistake}
                   </p>
                   <p className="text-sm text-muted-foreground">
                     <span className="font-medium text-emerald-600 dark:text-emerald-400">
-                      Better:{' '}
+                      {tr('rev.texts.macbeth.context.better_label')}
                     </span>
                     {item.correction}
                   </p>
@@ -440,7 +445,7 @@ export default function MacbethContextPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Quote className="size-5 text-blue-400" />
-              Key Dates Timeline
+              {tr('rev.texts.macbeth.context.timeline_h')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -496,10 +501,10 @@ export default function MacbethContextPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center pt-4 pb-8">
           <Button variant="outline" render={<Link href="/revision/texts/macbeth" />}>
-            <ArrowLeft className="size-4 mr-1" /> Overview
+            <ArrowLeft className="size-4 mr-1" /> {tr('rev.texts.common.overview')}
           </Button>
           <Button variant="outline" render={<Link href="/revision/texts/macbeth/essay-plans" />}>
-            Essay Plans <BookOpen className="size-4 ml-1" />
+            {tr('rev.texts.common.essay_plans')} <BookOpen className="size-4 ml-1" />
           </Button>
         </div>
       </div>

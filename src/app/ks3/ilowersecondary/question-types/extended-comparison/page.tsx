@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { t } from '@/lib/i18n/t'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import {
   QUESTION_TYPES,
@@ -30,7 +31,7 @@ const RAO5 = ASSESSMENT_OBJECTIVES.RAO5
 
 const MAX_MARKS = COMPARISON_LEVELS[COMPARISON_LEVELS.length - 1].marks.split('-')[1]
 
-export default function ExtendedComparisonPage() {
+export default async function ExtendedComparisonPage() {
   return (
     <>
       <BreadcrumbJsonLd
@@ -54,18 +55,18 @@ export default function ExtendedComparisonPage() {
 
       <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
         <Link href="/ks3" className="hover:text-foreground">
-          KS3
+          {await t('ks3.page.bc.ks3')}
         </Link>
         <span> · </span>
         <Link href="/ks3/ilowersecondary" className="hover:text-foreground">
-          iLowerSecondary English
+          {await t('ks3.page.bc.ils')}
         </Link>
         <span> · </span>
         <Link href="/ks3/ilowersecondary/question-types" className="hover:text-foreground">
-          Question types
+          {await t('ks3.page.bc.question_types')}
         </Link>
         <span> · </span>
-        <span>Extended comparison</span>
+        <span>{await t('ks3.page.question_types.extended_comparison.bc')}</span>
       </p>
 
       <h1>The {QUESTION.typicalMarks}-mark extended comparison question</h1>

@@ -9,6 +9,7 @@ import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { useT } from '@/lib/i18n/use-t'
 /* ── Poem data ─────────────────────────────────────────────────── */
 
 const POEM: PoemData = {
@@ -849,6 +850,7 @@ const COMPARE_WITH = [
 /* ── Page component ────────────────────────────────────────────── */
 
 export default function ThePreludePage() {
+  const t = useT()
   return (
     <div className="space-y-8">
       <CourseJsonLd
@@ -879,7 +881,7 @@ export default function ThePreludePage() {
           render={<Link href="/revision/poetry" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Poetry
+          {t('rev.poetry.shared.back_to_poetry')}
         </Button>
 
         <div className="flex items-center gap-3">
@@ -920,7 +922,9 @@ export default function ThePreludePage() {
 
       {/* ── Compare with ───────────────────────────────────────── */}
       <section>
-        <h2 className="text-heading-md font-heading text-foreground mb-4">Compare with</h2>
+        <h2 className="text-heading-md font-heading text-foreground mb-4">
+          {t('rev.poetry.shared.compare_with')}
+        </h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {COMPARE_WITH.map((cmp) => (
             <div

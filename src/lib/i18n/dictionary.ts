@@ -116,6 +116,14 @@ import { STUDY_LANG_LIT_DICTIONARY } from './dictionary-study-lang-lit'
 import { STUDY_REVNOTES_DICTIONARY } from './dictionary-study-revnotes'
 import { STUDY_POETRY_CONTEXT_DICTIONARY } from './dictionary-study-poetry-context'
 import { STUDY_SKILLS_DICTIONARY } from './dictionary-study-skills'
+// 2026-06-07: revision poetry + language page-level UI chrome
+// (rev.poetry.* / rev.lang.*). Curated EN + Khaleeji AR + ES. Chrome only -
+// poem text, analysis prose, model answers and word lists stay English.
+import { REV_POETRY_LANG_DICTIONARY } from './dictionary-rev-poetry-lang'
+// 2026-06-05: trilingual per-page study chrome (en + Khaleeji ar + es).
+import { REV_TEXTS_DICTIONARY } from './dictionary-rev-texts'
+import { IGCSE_PAGES_DICTIONARY } from './dictionary-igcse-pages'
+import { KS3_PAGES_DICTIONARY } from './dictionary-ks3-pages'
 
 export type Locale = 'en' | 'ar' | 'es'
 
@@ -24655,6 +24663,11 @@ export function lookup(key: string, locale: Locale): string {
     STUDY_REVNOTES_DICTIONARY[key] ??
     STUDY_POETRY_CONTEXT_DICTIONARY[key] ??
     STUDY_SKILLS_DICTIONARY[key] ??
+    // 2026-06-07: revision poetry + language chrome (rev.poetry.*/rev.lang.*).
+    REV_POETRY_LANG_DICTIONARY[key] ??
+    REV_TEXTS_DICTIONARY[key] ??
+    IGCSE_PAGES_DICTIONARY[key] ??
+    KS3_PAGES_DICTIONARY[key] ??
     PRESS_AND_VERIFIED_FIX[key] ??
     PLACEHOLDER_FIX_MAY16[key] ??
     PLACEHOLDER_FIX_MAY15[key] ??

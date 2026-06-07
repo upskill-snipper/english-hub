@@ -18,6 +18,7 @@ import { Badge } from '@/components/ui/badge'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
 import type { ExamBoard } from '@/lib/board/board-store'
 import { isIgcseBoard } from '@/lib/board/board-filter'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ── Board-specific paper info ────────────────────────────────────── */
 
@@ -89,26 +90,22 @@ const BOARD_PAPERS: Record<
 /* ── Section data ─────────────────────────────────────────────────── */
 
 interface LanguageSection {
-  title: string
-  description: string
+  /** i18n key suffix under rev.lang.hub.section.* for title/desc/stats. */
+  key: string
   href: string
   icon: typeof BookOpen
   colour: string
   bgColour: string
-  stats: string
   tips: string[]
 }
 
 const SECTIONS: LanguageSection[] = [
   {
-    title: 'Reading Skills',
-    description:
-      'How to approach unseen extracts, inference and deduction, language analysis using What-How-Why, comparison techniques, and model responses at every grade.',
+    key: 'reading',
     href: '/revision/language/reading',
     icon: BookOpen,
     colour: 'text-blue-400',
     bgColour: 'bg-blue-500/10',
-    stats: '7 key topics',
     tips: [
       'Always re-read the extract at least twice before answering',
       'Highlight key words in the question to stay focused',
@@ -116,14 +113,11 @@ const SECTIONS: LanguageSection[] = [
     ],
   },
   {
-    title: 'Writing Skills',
-    description:
-      'Creative writing techniques for narrative and descriptive pieces, transactional writing for articles, letters, and speeches, plus planning and vocabulary strategies.',
+    key: 'writing',
     href: '/revision/language/writing',
     icon: Edit3,
     colour: 'text-emerald-400',
     bgColour: 'bg-emerald-500/10',
-    stats: '6 key topics',
     tips: [
       'Spend 5 minutes planning before you write a single sentence',
       'Vary your sentence lengths deliberately for effect',
@@ -131,14 +125,11 @@ const SECTIONS: LanguageSection[] = [
     ],
   },
   {
-    title: 'SPaG',
-    description:
-      'Spelling rules and common errors, punctuation mastery (semicolons, colons, dashes, apostrophes), grammar essentials, and the mistakes that cost marks.',
+    key: 'spag',
     href: '/revision/language/spag',
     icon: SpellCheck,
     colour: 'text-clay-600',
     bgColour: 'bg-amber-500/10',
-    stats: '4 key areas',
     tips: [
       'Semicolons join two complete sentences that are closely related',
       'Apostrophes show possession or contraction, never plurals',
@@ -190,10 +181,13 @@ interface LanguageViewProps {
 }
 
 export default function LanguageView({ boardId, boardName }: LanguageViewProps) {
+  const t = useT()
   const { progress, toggleSection, completedCount, totalCount, percentage } = useLanguageProgress()
   const [expandedTips, setExpandedTips] = useState<string | null>(null)
 
-  const heading = boardId ? `${boardName} English Language Revision` : 'English Language Revision'
+  const heading = boardId
+    ? `${boardName} ${t('rev.lang.hub.heading_board_suffix')}`
+    : t('rev.lang.hub.heading_generic')
 
   const papers =
     boardId && boardId in BOARD_PAPERS ? BOARD_PAPERS[boardId as keyof typeof BOARD_PAPERS] : null
@@ -202,7 +196,12 @@ export default function LanguageView({ boardId, boardName }: LanguageViewProps) 
 
   return (
     <div className="space-y-8 pb-16">
-      <Breadcrumb items={[{ label: 'Revision', href: '/revision' }, { label: 'Language' }]} />
+      <Breadcrumb
+        items={[
+          { label: t('rev.lang.hub.breadcrumb_revision'), href: '/revision' },
+          { label: t('rev.lang.hub.breadcrumb_language') },
+        ]}
+      />
       {/* Header */}
       <div>
         <Button
@@ -212,7 +211,7 @@ export default function LanguageView({ boardId, boardName }: LanguageViewProps) 
           render={<Link href="/revision" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Revision Hub
+          {t('rev.lang.hub.back_to_revision')}
         </Button>
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-violet-500/10">
@@ -220,9 +219,7 @@ export default function LanguageView({ boardId, boardName }: LanguageViewProps) 
           </div>
           <div>
             <h1 className="text-heading-lg font-heading text-foreground">{heading}</h1>
-            <p className="text-body-sm text-muted-foreground">
-              Reading, writing, and SPaG mastery tailored to your exam board
-            </p>
+            <p className="text-body-sm text-muted-foreground">{t('rev.lang.hub.subtitle')}</p>
           </div>
         </div>
       </div>
@@ -233,7 +230,7 @@ export default function LanguageView({ boardId, boardName }: LanguageViewProps) 
           <Info className="mt-0.5 size-5 shrink-0 text-clay-600" />
           <div className="flex-1">
             <h2 className="text-sm font-semibold text-foreground">
-              Your board uses a different paper structure
+              {t('rev.lang.hub.igcse_banner_title')}
             </h2>
             <p className="mt-1 text-body-sm text-muted-foreground">
               {boardId === 'cambridge-0500' &&
@@ -259,7 +256,7 @@ export default function LanguageView({ boardId, boardName }: LanguageViewProps) 
                   />
                 }
               >
-                Go to your IGCSE hub
+                {t('rev.lang.hub.go_to_igcse')}
                 <ArrowRight className="size-3.5" />
               </Button>
             </div>
@@ -272,10 +269,12 @@ export default function LanguageView({ boardId, boardName }: LanguageViewProps) 
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
             <CheckCircle2 className="size-4 text-primary" />
-            <span className="text-sm font-medium text-foreground">Your Progress</span>
+            <span className="text-sm font-medium text-foreground">
+              {t('rev.lang.hub.your_progress')}
+            </span>
           </div>
           <Badge variant="secondary">
-            {completedCount}/{totalCount} sections
+            {completedCount}/{totalCount} {t('rev.lang.hub.sections_suffix')}
           </Badge>
         </div>
         <div className="h-2 w-full rounded-full bg-muted/60">
@@ -284,9 +283,7 @@ export default function LanguageView({ boardId, boardName }: LanguageViewProps) 
             style={{ width: `${percentage}%` }}
           />
         </div>
-        <p className="mt-2 text-caption text-muted-foreground">
-          Click the checkbox on each section card to track what you have revised
-        </p>
+        <p className="mt-2 text-caption text-muted-foreground">{t('rev.lang.hub.progress_hint')}</p>
       </div>
 
       {/* Section cards */}
@@ -295,6 +292,7 @@ export default function LanguageView({ boardId, boardName }: LanguageViewProps) 
           const key = section.href
           const isComplete = !!progress[key]
           const tipsOpen = expandedTips === key
+          const sectionTitle = t(`rev.lang.hub.section.${section.key}.title`)
 
           return (
             <div
@@ -314,8 +312,8 @@ export default function LanguageView({ boardId, boardName }: LanguageViewProps) 
                     }`}
                     aria-label={
                       isComplete
-                        ? `Mark ${section.title} as incomplete`
-                        : `Mark ${section.title} as complete`
+                        ? `Mark ${sectionTitle} as incomplete`
+                        : `Mark ${sectionTitle} as complete`
                     }
                   >
                     {isComplete && <CheckCircle2 className="size-3" />}
@@ -331,13 +329,15 @@ export default function LanguageView({ boardId, boardName }: LanguageViewProps) 
                       </div>
                       <div>
                         <h2 className="text-heading-md font-heading text-foreground">
-                          {section.title}
+                          {sectionTitle}
                         </h2>
-                        <span className="text-caption text-muted-foreground">{section.stats}</span>
+                        <span className="text-caption text-muted-foreground">
+                          {t(`rev.lang.hub.section.${section.key}.stats`)}
+                        </span>
                       </div>
                     </div>
                     <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
-                      {section.description}
+                      {t(`rev.lang.hub.section.${section.key}.desc`)}
                     </p>
 
                     {/* Quick tips toggle */}
@@ -347,7 +347,7 @@ export default function LanguageView({ boardId, boardName }: LanguageViewProps) 
                       className="mt-3 flex items-center gap-1.5 text-xs font-medium text-primary hover:underline"
                     >
                       <Lightbulb className="size-3" />
-                      {tipsOpen ? 'Hide quick tips' : 'Show quick tips'}
+                      {tipsOpen ? t('rev.lang.hub.hide_tips') : t('rev.lang.hub.show_tips')}
                     </button>
 
                     {tipsOpen && (
@@ -367,7 +367,7 @@ export default function LanguageView({ boardId, boardName }: LanguageViewProps) 
                     {/* CTA */}
                     <div className="mt-4">
                       <Button variant="outline" size="sm" render={<Link href={section.href} />}>
-                        Start revising
+                        {t('rev.lang.hub.start_revising')}
                         <ArrowRight className="size-3.5" />
                       </Button>
                     </div>
@@ -385,13 +385,13 @@ export default function LanguageView({ boardId, boardName }: LanguageViewProps) 
           <div className="flex items-center gap-2 mb-3">
             <Lightbulb className="size-5 text-violet-400" />
             <h2 className="text-heading-md font-heading text-foreground">
-              {boardName} Language Papers at a Glance
+              {boardName} {t('rev.lang.hub.papers_glance_suffix')}
             </h2>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             <div className="rounded-xl border border-border/40 bg-background/50 p-4">
               <Badge variant="outline" className="mb-2 text-xs">
-                Paper 1
+                {t('rev.lang.hub.paper1')}
               </Badge>
               <p className="text-sm font-semibold text-foreground leading-snug">
                 {papers.paper1.name}
@@ -402,7 +402,7 @@ export default function LanguageView({ boardId, boardName }: LanguageViewProps) 
             </div>
             <div className="rounded-xl border border-border/40 bg-background/50 p-4">
               <Badge variant="outline" className="mb-2 text-xs">
-                Paper 2
+                {t('rev.lang.hub.paper2')}
               </Badge>
               <p className="text-sm font-semibold text-foreground leading-snug">
                 {papers.paper2.name}
@@ -413,7 +413,7 @@ export default function LanguageView({ boardId, boardName }: LanguageViewProps) 
             </div>
           </div>
           <p className="mt-3 text-caption text-muted-foreground">
-            Both papers carry equal weight and both test SPaG in the writing section.
+            {t('rev.lang.hub.papers_equal_note')}
           </p>
         </div>
       )}
@@ -422,15 +422,14 @@ export default function LanguageView({ boardId, boardName }: LanguageViewProps) 
         <div className="rounded-2xl border border-border/60 bg-gradient-to-r from-violet-500/[0.06] via-card to-blue-500/[0.04] p-6 text-center">
           <Lightbulb className="mx-auto mb-3 size-7 text-violet-400" />
           <h2 className="text-heading-md font-heading text-foreground">
-            Language Paper Quick Reminder
+            {t('rev.lang.hub.quick_reminder_title')}
           </h2>
           <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-            Select your exam board to see paper-specific guidance. Paper 1 and Paper 2 structures
-            vary by board, but reading, writing, and SPaG skills are universal.
+            {t('rev.lang.hub.quick_reminder_body')}
           </p>
           <div className="mt-4">
             <Button variant="outline" size="sm" render={<Link href="/board-select" />}>
-              Select your exam board
+              {t('rev.lang.hub.select_board')}
             </Button>
           </div>
         </div>

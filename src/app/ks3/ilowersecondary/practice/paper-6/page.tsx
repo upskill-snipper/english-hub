@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
+import { t } from '@/lib/i18n/t'
 import Link from 'next/link'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import {
@@ -69,18 +70,18 @@ export default async function PracticePaper6Page() {
 
       <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
         <Link href="/ks3" className="hover:text-foreground">
-          KS3
+          {await t('ks3.page.bc.ks3')}
         </Link>
         <span> · </span>
         <Link href="/ks3/ilowersecondary" className="hover:text-foreground">
-          iLowerSecondary English
+          {await t('ks3.page.bc.ils')}
         </Link>
         <span> · </span>
         <Link href="/ks3/ilowersecondary/practice-papers" className="hover:text-foreground">
-          Practice papers
+          {await t('ks3.page.bc.practice_papers')}
         </Link>
         <span> · </span>
-        <span>Paper 6: Discovery</span>
+        <span>{await t('ks3.page.practice.paper_6.bc')}</span>
       </p>
 
       <h1>Practice Paper 6: Discovery</h1>

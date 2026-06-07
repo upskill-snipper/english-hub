@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from 'next'
 import Link from 'next/link'
+import { t } from '@/lib/i18n/t'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import {
   WRITING_SKILLS,
@@ -181,7 +182,7 @@ const AUDIENCE_REGISTERS = [
   },
 ]
 
-export default function FormAudiencePurposePage() {
+export default async function FormAudiencePurposePage() {
   return (
     <>
       <BreadcrumbJsonLd
@@ -208,30 +209,30 @@ export default function FormAudiencePurposePage() {
           <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
             <li>
               <Link href="/" className="hover:text-primary">
-                Home
+                {await t('ks3.page.bc.home')}
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
               <Link href="/ks3" className="hover:text-primary">
-                KS3
+                {await t('ks3.page.bc.ks3')}
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
               <Link href="/ks3/ilowersecondary" className="hover:text-primary">
-                iLowerSecondary English
+                {await t('ks3.page.bc.ils')}
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
               <Link href="/ks3/ilowersecondary/writing" className="hover:text-primary">
-                Writing skills
+                {await t('ks3.page.bc.writing_skills')}
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li className="font-medium text-muted-foreground" aria-current="page">
-              Form, audience &amp; purpose
+              {await t('ks3.page.writing.form_audience_purpose.bc')}
             </li>
           </ol>
         </nav>

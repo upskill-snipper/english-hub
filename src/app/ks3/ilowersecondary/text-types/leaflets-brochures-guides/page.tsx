@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from 'next'
 import Link from 'next/link'
+import { t } from '@/lib/i18n/t'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import {
   NON_FICTION_TEXT_TYPES,
@@ -168,7 +169,7 @@ const PRACTICE: PracticeQ[] = [
   },
 ]
 
-export default function LeafletsBrochuresGuidesPage() {
+export default async function LeafletsBrochuresGuidesPage() {
   return (
     <>
       <BreadcrumbJsonLd
@@ -195,30 +196,30 @@ export default function LeafletsBrochuresGuidesPage() {
           <ol className="flex flex-wrap items-center gap-1">
             <li>
               <Link href="/" className="hover:text-primary">
-                Home
+                {await t('ks3.page.bc.home')}
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
               <Link href="/ks3" className="hover:text-primary">
-                KS3
+                {await t('ks3.page.bc.ks3')}
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
               <Link href="/ks3/ilowersecondary" className="hover:text-primary">
-                iLowerSecondary English
+                {await t('ks3.page.bc.ils')}
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
               <Link href="/ks3/ilowersecondary/text-types" className="hover:text-primary">
-                Text types
+                {await t('ks3.page.bc.text_types')}
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li className="font-medium text-muted-foreground" aria-current="page">
-              Leaflets, brochures &amp; guides
+              {await t('ks3.page.text_types.leaflets_brochures_guides.bc')}
             </li>
           </ol>
         </nav>
