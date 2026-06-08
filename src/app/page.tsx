@@ -99,92 +99,59 @@ export default async function Home() {
       {/* Funnel: home_viewed (consent-gated in src/lib/posthog.ts) */}
       <TrackEvent event="home_viewed" />
 
-      {/* 1. Institutional hero */}
+      {/* ============================================================
+       * Homepage structure (post 2026-06-08 hero rebuild)
+       *
+       * The new 7-card hero already covers what the old "Students:
+       * choose your exam board" section + FeatureRail + three
+       * BoardPickerSection calls + AudienceSection + EalSection +
+       * DemoShowcase were saying. Rendering them again below the
+       * hero produced a long, repetitive scroll that the founder
+       * flagged: every learner track, every demo, the EAL section
+       * and every board are reachable in one row of the hero.
+       *
+       * What stays below the hero is content depth (institutional
+       * framing, extractable benefit lists for AI Overviews, a real
+       * pricing tile, two FAQ blocks, a closing CTA). Each section
+       * is doing distinct work — nothing repeats the hero.
+       *
+       * BoardPickerSection / FeatureRail / AudienceSection /
+       * EalSection / DemoShowcase function definitions are kept
+       * below for now (they may be useful elsewhere on the site)
+       * but are no longer rendered on this page. The `copy.*Kicker`
+       * etc. fields are still resolved by the i18n cache but cost
+       * nothing meaningful.
+       * ============================================================ */}
+
+      {/* 1. Hero — 7 demo cards + sales CTAs */}
       {await HomeHero()}
 
-      {/* ───── Students: choose your exam board (existing funnel preserved) ───── */}
-      <section
-        aria-labelledby="students-board-heading"
-        className="border-t border-border/60 bg-muted/30"
-      >
-        <div className="mx-auto max-w-[1400px] px-4 pt-14 sm:px-6 sm:pt-20">
-          <div className="text-center">
-            <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-              {await t('home.students.eyebrow')}
-            </p>
-            <h2
-              id="students-board-heading"
-              className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
-            >
-              {await t('home.students.heading')}
-            </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-              {await t('home.students.body')}
-            </p>
-          </div>
-        </div>
-      </section>
-      {await FeatureRail()}
-      <BoardPickerSection
-        level="ks3"
-        boards={KS3_BOARDS}
-        sectionId="ks3-boards"
-        kicker={copy.ks3Kicker}
-        heading={copy.ks3Heading}
-        subheading={copy.ks3Subheading}
-        showHelpLink={false}
-        headingLevel="h2"
-        showDivider
-      />
-      <BoardPickerSection
-        level="gcse"
-        boards={GCSE_BOARDS}
-        sectionId="gcse-boards"
-        kicker={copy.gcseKicker}
-        heading={copy.gcseHeading}
-        subheading={copy.gcseSubheading}
-        showHelpLink={false}
-        headingLevel="h2"
-        showDivider
-      />
-      <BoardPickerSection
-        level="igcse"
-        boards={IGCSE_BOARDS}
-        sectionId="igcse-boards"
-        heading={copy.igcseHeading}
-        subheading={copy.igcseSubheading}
-        showHelpLink
-        showDivider
-      />
-      <div className="mx-auto w-full max-w-5xl px-4 pb-16 sm:px-6">
+      {/* 2. Institutional framing — "what the platform IS" */}
+      {await SchoolPlatformSection()}
+
+      {/* 3. Key benefits — extractable list for AI Overviews */}
+      {await KeyBenefitsSection()}
+
+      {/* 4. Capabilities — AI marking + analytics + intervention */}
+      {await CapabilitiesSection()}
+
+      {/* 5. Founder school pilot — primary Qatar conversion path */}
+      {await PilotCtaSection()}
+
+      {/* 6. Pricing preview */}
+      {await PricingPreviewSection()}
+
+      {/* 7. Consumer board FAQ — emits the homepage's single
+             FAQPage JSON-LD (GCSE_BOARD_FAQS). Strong GEO signal:
+             question-shaped headings that AI engines extract. */}
+      <div className="mx-auto w-full max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
         <GeoFaq faqs={GCSE_BOARD_FAQS} heading={copy.faqHeading} />
       </div>
 
-      {/* 2. Built for students, teachers and schools */}
-      {await AudienceSection()}
-
-      {/* 3. School platform section */}
-      {await SchoolPlatformSection()}
-
-      {/* 4. Key benefits */}
-      {await KeyBenefitsSection()}
-
-      {/* 5 + 6. AI-assisted marking + analytics/intervention */}
-      {await CapabilitiesSection()}
-
-      {/* 7. EAL support */}
-      {await EalSection()}
-
-      {/* 7.5 Demo showcase */}
-      <DemoShowcase />
-
-      {/* 8. Founder school pilot CTA */}
-      {await PilotCtaSection()}
-
-      {/* 9. Pricing preview */}
-      {await PricingPreviewSection()}
-
-      {/* 10. FAQ */}
+      {/* 8. School-leader FAQ — visible B2B FAQ. emitJsonLd=false:
+             two FAQPage entities on one URL is invalid structured
+             data (was Google's "2 invalid items" on the homepage),
+             so the GeoFaq above owns the FAQPage slot. */}
       <section aria-labelledby="home-faq-heading" className="border-t border-border/60">
         <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20">
           <h2
@@ -193,16 +160,11 @@ export default async function Home() {
           >
             {await t('home.faq.school_leaders')}
           </h2>
-          {/* emitJsonLd=false: the homepage's single FAQPage block is the
-              consumer GeoFaq above (GCSE_BOARD_FAQS). Two FAQPage entities on
-              one URL is invalid/duplicate structured data (was Google's "2
-              invalid items" on the homepage), so this B2B block renders
-              visibly but does not emit a second FAQPage. */}
           <SchoolFAQ emitJsonLd={false} />
         </div>
       </section>
 
-      {/* 11. Final CTA */}
+      {/* 9. Closing CTA */}
       {await FinalCtaSection()}
     </main>
   )
@@ -237,62 +199,81 @@ async function HomeHero() {
   // middleware sets the cookie before redirecting to the clean URL),
   // and /demo/teacher + /demo/school are the role-specific dashboard
   // demos shipped in the SEO wave 2 commit.
+  // Per-track styling: `card` paints the WHOLE card with the accent
+  // gradient (founder asked for IELTS/EAL-style coloured backgrounds
+  // on every card); `iconBg` is the solid tile holding the icon
+  // inside the card; `iconText` is the icon's own colour. Each track
+  // also carries a punchy sales-CTA subtitle (founder ask) so the
+  // grid reads as seven micro-promises, not seven labels.
   const TRACKS: Array<{
     label: string
     sub: string
     href?: string
     icon: typeof Award
-    accent: string
+    card: string
+    iconBg: string
+    iconText: string
   }> = [
     {
       label: 'IELTS',
-      sub: 'Academic English exam',
+      sub: 'Master English and ace your exam',
       href: '/ielts',
       icon: Award,
-      accent:
-        'from-violet-500/15 to-violet-500/5 ring-violet-500/25 text-violet-700 dark:text-violet-300',
+      card: 'bg-gradient-to-br from-violet-500/15 via-violet-500/8 to-violet-500/[0.03] border-violet-500/30 hover:border-violet-500/55',
+      iconBg: 'bg-violet-500/20 ring-1 ring-violet-500/35',
+      iconText: 'text-violet-700 dark:text-violet-300',
     },
     {
       label: 'EAL',
-      sub: 'English as Additional Language',
+      sub: 'Master English with bilingual support',
       href: '/eal',
       icon: Languages,
-      accent: 'from-teal-500/15 to-teal-500/5 ring-teal-500/25 text-teal-700 dark:text-teal-300',
+      card: 'bg-gradient-to-br from-teal-500/15 via-teal-500/8 to-teal-500/[0.03] border-teal-500/30 hover:border-teal-500/55',
+      iconBg: 'bg-teal-500/20 ring-1 ring-teal-500/35',
+      iconText: 'text-teal-700 dark:text-teal-300',
     },
     {
       label: 'KS3',
-      sub: 'Years 7–9',
+      sub: 'Build the foundation for top GCSE grades',
       href: '/demo/student?setBoard=ks3',
       icon: BookOpen,
-      accent: 'from-clay-500/15 to-clay-500/5 ring-clay-500/25 text-clay-700 dark:text-clay-300',
+      card: 'bg-gradient-to-br from-clay-500/15 via-clay-500/8 to-clay-500/[0.03] border-clay-500/30 hover:border-clay-500/55',
+      iconBg: 'bg-clay-500/20 ring-1 ring-clay-500/35',
+      iconText: 'text-clay-700 dark:text-clay-300',
     },
     {
       label: 'GCSE',
-      sub: 'Pick your board',
+      sub: 'Hit your top grade, every board',
       icon: Compass,
-      accent:
-        'from-emerald-500/15 to-emerald-500/5 ring-emerald-500/25 text-emerald-700 dark:text-emerald-300',
+      card: 'bg-gradient-to-br from-emerald-500/15 via-emerald-500/8 to-emerald-500/[0.03] border-emerald-500/30 hover:border-emerald-500/55',
+      iconBg: 'bg-emerald-500/20 ring-1 ring-emerald-500/35',
+      iconText: 'text-emerald-700 dark:text-emerald-300',
     },
     {
       label: 'IGCSE',
-      sub: 'Pick your board',
+      sub: 'Excel at international English, fast',
       icon: Globe,
-      accent:
-        'from-ochre-500/15 to-ochre-500/5 ring-ochre-500/25 text-ochre-700 dark:text-ochre-300',
+      card: 'bg-gradient-to-br from-ochre-500/15 via-ochre-500/8 to-ochre-500/[0.03] border-ochre-500/30 hover:border-ochre-500/55',
+      iconBg: 'bg-ochre-500/20 ring-1 ring-ochre-500/35',
+      iconText: 'text-ochre-700 dark:text-ochre-300',
     },
     {
       label: 'Teachers',
-      sub: 'AI marking & insight',
+      sub: 'Save hours and reach every student',
       href: '/demo/teacher',
       icon: Users2,
-      accent: 'from-sage-500/15 to-sage-500/5 ring-sage-500/25 text-sage-700 dark:text-sage-300',
+      card: 'bg-gradient-to-br from-sage-500/15 via-sage-500/8 to-sage-500/[0.03] border-sage-500/30 hover:border-sage-500/55',
+      iconBg: 'bg-sage-500/20 ring-1 ring-sage-500/35',
+      iconText: 'text-sage-700 dark:text-sage-300',
     },
     {
       label: 'Schools',
-      sub: 'Department portal',
+      sub: 'Run a sharper English department',
       href: '/demo/school',
       icon: Building2,
-      accent: 'from-primary/15 to-primary/5 ring-primary/25 text-primary dark:text-primary',
+      card: 'bg-gradient-to-br from-primary/15 via-primary/8 to-primary/[0.03] border-primary/30 hover:border-primary/55',
+      iconBg: 'bg-primary/20 ring-1 ring-primary/35',
+      iconText: 'text-primary',
     },
   ]
 
@@ -349,14 +330,14 @@ async function HomeHero() {
           {TRACKS.map((track) => {
             const Icon = track.icon
             const inner = (
-              <span className="flex flex-col items-center gap-2 px-4 py-4">
+              <span className="flex flex-col items-center gap-2.5 px-4 py-5">
                 <span
-                  className={`inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br ring-1 ${track.accent}`}
+                  className={`inline-flex h-10 w-10 items-center justify-center rounded-xl ${track.iconBg}`}
                 >
-                  <Icon className="h-4 w-4" aria-hidden="true" />
+                  <Icon className={`h-5 w-5 ${track.iconText}`} aria-hidden="true" />
                 </span>
                 <span className="text-sm font-semibold text-foreground">{track.label}</span>
-                <span className="text-[11px] text-muted-foreground">{track.sub}</span>
+                <span className="text-[11px] leading-snug text-muted-foreground">{track.sub}</span>
               </span>
             )
             if (track.href) {
@@ -365,7 +346,7 @@ async function HomeHero() {
                   key={track.label}
                   href={track.href}
                   aria-label={`Explore ${track.label} — ${track.sub}`}
-                  className="group rounded-2xl border border-border/60 bg-card text-center transition-all hover:border-primary/40 hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                  className={`group rounded-2xl border text-center shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${track.card}`}
                 >
                   {inner}
                 </Link>
@@ -378,20 +359,20 @@ async function HomeHero() {
             return (
               <details
                 key={track.label}
-                className="group rounded-2xl border border-border/60 bg-card text-center transition-all hover:border-primary/40 hover:shadow-sm sm:col-span-1 [&[open]>summary>span.chev]:rotate-180"
+                className={`group rounded-2xl border text-center shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md sm:col-span-1 [&[open]>summary>span.chev]:rotate-180 ${track.card}`}
               >
                 <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
                   {inner}
-                  <span className="chev mt-1 inline-flex items-center justify-center text-muted-foreground transition-transform duration-200">
+                  <span className="chev mt-1 inline-flex items-center justify-center pb-2 text-muted-foreground transition-transform duration-200">
                     <ChevronDown className="h-3.5 w-3.5" aria-hidden="true" />
                   </span>
                 </summary>
-                <ul className="space-y-1 border-t border-border/40 px-2 py-3 text-left">
+                <ul className="space-y-1 border-t border-foreground/10 px-2 py-3 text-left">
                   {boards.map((b) => (
                     <li key={b.href}>
                       <Link
                         href={b.href}
-                        className="flex items-center justify-between gap-2 rounded-lg px-2.5 py-1.5 text-xs text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                        className="flex items-center justify-between gap-2 rounded-lg px-2.5 py-1.5 text-xs text-muted-foreground transition-colors hover:bg-foreground/5 hover:text-foreground"
                       >
                         <span>{b.name}</span>
                         <ArrowRight className="h-3 w-3 shrink-0" aria-hidden="true" />
