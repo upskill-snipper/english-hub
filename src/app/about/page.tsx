@@ -7,18 +7,28 @@ import { tMany } from '@/lib/i18n/t'
 // and the founder's name is not surfaced. The page is purely
 // informational about the product itself.
 export const metadata: Metadata = {
-  title: 'About',
+  // 2026-06-08 — SEO audit fix. Title was "About" (5 chars), too short
+  // and too generic to rank or earn an AI Overview citation. Now reads
+  // as a full descriptive title with the primary keyword.
+  title: 'About The English Hub — GCSE & IGCSE English revision platform',
   description:
-    'How The English Hub works, who built it, and why it focuses on GCSE & IGCSE English revision.',
+    'How The English Hub works, who built it, and why it focuses on GCSE and IGCSE English revision — including the exam boards covered and the school audience served.',
   alternates: { canonical: 'https://theenglishhub.app/about' },
+  keywords: [
+    'about The English Hub',
+    'GCSE English revision platform',
+    'IGCSE English platform',
+    'English Hub company',
+    'Upskill Energy Limited',
+  ],
   openGraph: {
-    title: 'About - The English Hub',
+    title: 'About The English Hub — GCSE & IGCSE English revision platform',
     description:
-      'How The English Hub works, who built it, and why it focuses on GCSE & IGCSE English revision.',
+      'How The English Hub works, who built it, and why it focuses on GCSE and IGCSE English revision.',
     url: 'https://theenglishhub.app/about',
     images: [
       {
-        url: '/api/og?title=About+The+English+Hub&subtitle=GCSE+%26+IGCSE+English+revision',
+        url: 'https://theenglishhub.app/api/og?title=About+The+English+Hub&subtitle=GCSE+%26+IGCSE+English+revision',
         width: 1200,
         height: 630,
         alt: 'About The English Hub - GCSE & IGCSE English revision',
@@ -27,10 +37,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About - The English Hub',
+    title: 'About The English Hub — GCSE & IGCSE English revision',
     description:
-      'How The English Hub works, who built it, and why it focuses on GCSE & IGCSE English revision.',
-    images: ['/api/og?title=About+The+English+Hub&subtitle=GCSE+%26+IGCSE+English+revision'],
+      'How The English Hub works, who built it, and why it focuses on GCSE and IGCSE English revision.',
+    images: [
+      'https://theenglishhub.app/api/og?title=About+The+English+Hub&subtitle=GCSE+%26+IGCSE+English+revision',
+    ],
   },
 }
 

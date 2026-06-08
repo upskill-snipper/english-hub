@@ -106,12 +106,19 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
  * verbatim - that's the project convention. Otherwise we synthesise a
  * fresh /api/og URL from the title and category so the post still has a
  * branded social card.
+ *
+ * 2026-06-08 — SEO audit fix. Previously this returned RELATIVE URLs
+ * like `/api/og?…`. Some social scrapers (LinkedIn most notably, plus
+ * a handful of email clients) silently fail on relative OG image URLs
+ * and render no preview card. Every URL is now absolute, prefixed with
+ * `https://theenglishhub.app`.
  */
 function buildOgImage(post: BlogPost): string {
-  if (post.cover && post.cover.startsWith('/api/og')) return post.cover
+  const SITE = 'https://theenglishhub.app'
   if (post.cover && post.cover.startsWith('http')) return post.cover
-  if (post.cover && post.cover.startsWith('/')) return post.cover
-  return `/api/og?title=${encodeURIComponent(post.title)}&subtitle=${encodeURIComponent(post.category || 'The English Hub Blog')}`
+  if (post.cover && post.cover.startsWith('/api/og')) return `${SITE}${post.cover}`
+  if (post.cover && post.cover.startsWith('/')) return `${SITE}${post.cover}`
+  return `${SITE}/api/og?title=${encodeURIComponent(post.title)}&subtitle=${encodeURIComponent(post.category || 'The English Hub Blog')}`
 }
 
 function formatDisplayDate(iso: string): string {

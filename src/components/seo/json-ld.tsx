@@ -483,3 +483,56 @@ export function ReviewedBylineJsonLd({
     />
   )
 }
+
+/**
+ * SoftwareApplication schema for the public demo dashboards.
+ *
+ * 2026-06-08 — SEO + GEO audit fix. The demo pages (/demo, /demo/school,
+ * /demo/teacher, /demo/student) were previously blocked from crawlers
+ * via robots.txt; they are now indexable and are the primary
+ * institutional conversion surface (Qatar / GCC school sales). Emitting
+ * SoftwareApplication structured data on each demo helps Google AI
+ * Overviews + Perplexity surface them for intent queries like
+ * "AI English platform demo for schools" or "GCSE English software
+ * demo". applicationCategory and operatingSystem follow schema.org
+ * defaults for browser-delivered education software.
+ */
+export function SoftwareApplicationJsonLd({
+  name,
+  description,
+  url,
+  audience,
+  screenshot,
+  nonce,
+}: {
+  name: string
+  description: string
+  url: string
+  /** "Heads of English", "English teachers", "GCSE students" etc. */
+  audience: string
+  /** Absolute URL for the OG / hero screenshot. Optional. */
+  screenshot?: string
+  nonce?: string
+}) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name,
+    description,
+    url,
+    applicationCategory: 'EducationalApplication',
+    operatingSystem: 'Any (Web)',
+    publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+    audience: { '@type': 'EducationalAudience', educationalRole: audience },
+    isAccessibleForFree: true,
+    inLanguage: 'en-GB',
+    ...(screenshot ? { screenshot } : {}),
+  }
+  return (
+    <script
+      type="application/ld+json"
+      nonce={nonce}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  )
+}

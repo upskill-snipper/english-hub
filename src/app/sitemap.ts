@@ -59,8 +59,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/school-pilot`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/teachers`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/students`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/eal`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/pricing`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/press`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${base}/creators`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/igcse`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+
+    // Demo dashboards — 2026-06-08 SEO+GEO audit. These are the primary
+    // institutional conversion surface (Qatar Expo / school sales calls)
+    // and were previously blocked in robots.txt + not in the sitemap.
+    // They are public, no-sign-up demos that show synthetic data with a
+    // clear "demo only" chip — Google + AI crawlers should be able to
+    // index them so a headteacher Googling "AI English platform demo
+    // for schools" can find them. The dashboards are static React with
+    // no PII so there is no privacy concern.
+    { url: `${base}/demo`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/demo/school`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/demo/teacher`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/demo/student`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+
+    // 2026-06-08 — School content policy page (cultural-sensitivity audit).
+    // Indexable because the policy itself is one of the strongest signals
+    // for a GCC / Qatar buyer evaluating cultural fit; we want it
+    // surfacing in branded + intent search.
+    {
+      url: `${base}/legal/school-content-policy`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.4,
+    },
 
     // IELTS Academic learning loop (2026-05-25). /ielts/progress (personal
     // dashboard, noindex) and /ielts/plan (user-specific) are intentionally
