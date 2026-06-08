@@ -14,9 +14,15 @@ import {
   FileText,
   Layers,
   ArrowRight,
+  ChevronDown,
+  Globe,
+  Award,
+  BookOpen,
+  Compass,
 } from 'lucide-react'
 import { TrackEvent } from '@/components/analytics/TrackEvent'
 import { GeoFaq, GCSE_BOARD_FAQS } from '@/components/seo/GeoFaq'
+import { LanguageToggle } from '@/components/layout/language-toggle'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { BenefitGrid } from '@/components/schools/BenefitCard'
@@ -204,38 +210,219 @@ export default async function Home() {
 
 /* ───────────────────── Institutional sections ───────────────────── */
 
+/**
+ * Landing page hero — 2026-06-08 redesign per founder ask.
+ *
+ *   Headline: "Intelligent English Learning for Everyone".
+ *   Underneath: 5 track buttons (IELTS, EAL, KS3, GCSE, IGCSE).
+ *   GCSE + IGCSE expand to a board sub-selector via native <details>
+ *   so no client-side state is needed and the hero stays a server
+ *   component. Each board routes through /revision?setBoard=<id>
+ *   so the middleware sets the cookie and lands the visitor in the
+ *   live revision hub (the real "demo" experience).
+ *   Language toggle is surfaced inline at the top of the hero so
+ *   Arabic visitors can switch without scrolling to the header.
+ *
+ * Copy is hard-coded English literals so this commit can ship
+ * standalone. Khaleeji Arabic translation can follow in a small
+ * dictionary update without touching this file.
+ */
 async function HomeHero() {
+  // 7-card "explore a demo" grid. The five learner tracks come first
+  // (IELTS, EAL, KS3, GCSE, IGCSE — board pickers expand inline via
+  // <details>) followed by the two audience demos (Teachers, Schools).
+  // Every destination is a demo experience: /ielts and /eal are full
+  // public hubs that ARE the demo, /demo/student is the student
+  // dashboard demo (board context primed via ?setBoard=… so the
+  // middleware sets the cookie before redirecting to the clean URL),
+  // and /demo/teacher + /demo/school are the role-specific dashboard
+  // demos shipped in the SEO wave 2 commit.
+  const TRACKS: Array<{
+    label: string
+    sub: string
+    href?: string
+    icon: typeof Award
+    accent: string
+  }> = [
+    {
+      label: 'IELTS',
+      sub: 'Academic English exam',
+      href: '/ielts',
+      icon: Award,
+      accent:
+        'from-violet-500/15 to-violet-500/5 ring-violet-500/25 text-violet-700 dark:text-violet-300',
+    },
+    {
+      label: 'EAL',
+      sub: 'English as Additional Language',
+      href: '/eal',
+      icon: Languages,
+      accent: 'from-teal-500/15 to-teal-500/5 ring-teal-500/25 text-teal-700 dark:text-teal-300',
+    },
+    {
+      label: 'KS3',
+      sub: 'Years 7–9',
+      href: '/demo/student?setBoard=ks3',
+      icon: BookOpen,
+      accent: 'from-clay-500/15 to-clay-500/5 ring-clay-500/25 text-clay-700 dark:text-clay-300',
+    },
+    {
+      label: 'GCSE',
+      sub: 'Pick your board',
+      icon: Compass,
+      accent:
+        'from-emerald-500/15 to-emerald-500/5 ring-emerald-500/25 text-emerald-700 dark:text-emerald-300',
+    },
+    {
+      label: 'IGCSE',
+      sub: 'Pick your board',
+      icon: Globe,
+      accent:
+        'from-ochre-500/15 to-ochre-500/5 ring-ochre-500/25 text-ochre-700 dark:text-ochre-300',
+    },
+    {
+      label: 'Teachers',
+      sub: 'AI marking & insight',
+      href: '/demo/teacher',
+      icon: Users2,
+      accent: 'from-sage-500/15 to-sage-500/5 ring-sage-500/25 text-sage-700 dark:text-sage-300',
+    },
+    {
+      label: 'Schools',
+      sub: 'Department portal',
+      href: '/demo/school',
+      icon: Building2,
+      accent: 'from-primary/15 to-primary/5 ring-primary/25 text-primary dark:text-primary',
+    },
+  ]
+
+  // GCSE / IGCSE board pickers — clicking a board sets the board cookie
+  // via the middleware then redirects to the clean /demo/student URL so
+  // the visitor lands in the student demo dashboard with their board
+  // context primed for the real product later.
+  const GCSE_BOARDS = [
+    { name: 'AQA', href: '/demo/student?setBoard=aqa' },
+    { name: 'Pearson Edexcel', href: '/demo/student?setBoard=edexcel' },
+    { name: 'OCR', href: '/demo/student?setBoard=ocr' },
+    { name: 'WJEC Eduqas', href: '/demo/student?setBoard=eduqas' },
+  ]
+  const IGCSE_BOARDS = [
+    { name: 'Cambridge IGCSE (0500 / 0990)', href: '/demo/student?setBoard=cambridge-0500' },
+    { name: 'Pearson Edexcel IGCSE Literature', href: '/demo/student?setBoard=edexcel-igcse' },
+    { name: 'Pearson Edexcel IGCSE Language A', href: '/demo/student?setBoard=edexcel-igcse-lang' },
+  ]
+
   return (
     <section className="relative overflow-hidden border-b border-border/60">
       <div
         aria-hidden
         className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl"
       />
-      <div className="relative mx-auto max-w-5xl px-4 py-20 text-center sm:px-6 sm:py-28">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -left-20 top-40 h-72 w-72 rounded-full bg-clay-500/[0.06] blur-3xl"
+      />
+      <div className="relative mx-auto max-w-5xl px-4 py-16 text-center sm:px-6 sm:py-24">
+        {/* Language toggle, surfaced in-hero so visitors can switch
+            without scrolling to the header. */}
+        <div className="mb-8 flex items-center justify-center">
+          <LanguageToggle />
+        </div>
+
         <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-primary">
-          {await t('home.hero.eyebrow')}
+          The English Hub
         </p>
-        <h1 className="mx-auto mt-5 max-w-3xl font-serif text-4xl font-semibold leading-[1.1] tracking-tight text-foreground sm:text-5xl md:text-6xl">
-          {await t('home.hero.title')}
+        <h1 className="mx-auto mt-5 max-w-3xl font-serif text-4xl font-semibold leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl">
+          Intelligent English Learning for Everyone
         </h1>
-        <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-          {await t('home.hero.body')}
+        <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          Personalised, exam-aligned and AI-assisted — from Years 7–9 through GCSE, IGCSE and IELTS,
+          and structured English support for EAL learners. Pick your track to explore the live demo.
         </p>
-        <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Button size="lg" className="h-12 px-7 text-base" render={<Link href="#gcse-boards" />}>
-            {await t('home.hero.cta_board')}
-          </Button>
+
+        {/* Seven primary demo buttons — five learner tracks (IELTS · EAL ·
+            KS3 · GCSE · IGCSE) followed by two audience demos
+            (Teachers, Schools). Responsive grid: 2-col on mobile,
+            4-col at md, 7-col at lg so they sit in a single row on
+            laptop+ widths. */}
+        <div className="mx-auto mt-10 grid w-full max-w-5xl gap-3 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7">
+          {TRACKS.map((track) => {
+            const Icon = track.icon
+            const inner = (
+              <span className="flex flex-col items-center gap-2 px-4 py-4">
+                <span
+                  className={`inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br ring-1 ${track.accent}`}
+                >
+                  <Icon className="h-4 w-4" aria-hidden="true" />
+                </span>
+                <span className="text-sm font-semibold text-foreground">{track.label}</span>
+                <span className="text-[11px] text-muted-foreground">{track.sub}</span>
+              </span>
+            )
+            if (track.href) {
+              return (
+                <Link
+                  key={track.label}
+                  href={track.href}
+                  aria-label={`Explore ${track.label} — ${track.sub}`}
+                  className="group rounded-2xl border border-border/60 bg-card text-center transition-all hover:border-primary/40 hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                >
+                  {inner}
+                </Link>
+              )
+            }
+            // Expandable GCSE / IGCSE tile — native <details> so no
+            // client-side state is required and the section ships from
+            // the server component.
+            const boards = track.label === 'GCSE' ? GCSE_BOARDS : IGCSE_BOARDS
+            return (
+              <details
+                key={track.label}
+                className="group rounded-2xl border border-border/60 bg-card text-center transition-all hover:border-primary/40 hover:shadow-sm sm:col-span-1 [&[open]>summary>span.chev]:rotate-180"
+              >
+                <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                  {inner}
+                  <span className="chev mt-1 inline-flex items-center justify-center text-muted-foreground transition-transform duration-200">
+                    <ChevronDown className="h-3.5 w-3.5" aria-hidden="true" />
+                  </span>
+                </summary>
+                <ul className="space-y-1 border-t border-border/40 px-2 py-3 text-left">
+                  {boards.map((b) => (
+                    <li key={b.href}>
+                      <Link
+                        href={b.href}
+                        className="flex items-center justify-between gap-2 rounded-lg px-2.5 py-1.5 text-xs text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                      >
+                        <span>{b.name}</span>
+                        <ArrowRight className="h-3 w-3 shrink-0" aria-hidden="true" />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            )
+          })}
+        </div>
+
+        {/* Single high-intent CTA below the demo grid — the Schools card
+            in the grid covers the audience entry point; the school
+            pilot is kept as a distinct conversion path because it is
+            the primary Qatar Expo / GCC school sales motion. */}
+        <div className="mt-9 flex items-center justify-center">
           <Button
             variant="outline"
             size="lg"
-            className="h-12 px-7 text-base"
-            render={<Link href="/schools" />}
+            className="h-11 px-6"
+            render={<Link href="/school-pilot" />}
           >
-            {await t('home.hero.cta_schools')}
+            Book a school pilot
+            <ArrowRight className="ml-1 h-3.5 w-3.5" aria-hidden="true" />
           </Button>
         </div>
+
         <p className="mx-auto mt-8 max-w-xl text-xs leading-relaxed text-muted-foreground">
-          {await t('home.hero.footnote')}
+          Personalised practice + AI-assisted feedback aligned to AQA, Edexcel, OCR, Eduqas,
+          Cambridge IGCSE and Pearson Edexcel International specifications.
         </p>
       </div>
     </section>
