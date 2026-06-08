@@ -146,6 +146,8 @@ import { REV_MISC2_DICTIONARY } from './dictionary-rev-misc2'
 // and second poetry-hub shard (rev.poetry2.*). Curated EN + Khaleeji AR + ES.
 import { REV_MISC_DICTIONARY } from './dictionary-rev-misc'
 import { REV_POETRY2_DICTIONARY } from './dictionary-rev-poetry2'
+// 2026-06-08: landing-page hero rebuild chrome (home.lp.*).
+import { HOME_LP_DICTIONARY } from './dictionary-home-hero'
 
 export type Locale = 'en' | 'ar' | 'es'
 
@@ -24702,6 +24704,7 @@ export function lookup(key: string, locale: Locale): string {
     REV_MISC2_DICTIONARY[key] ??
     REV_MISC_DICTIONARY[key] ??
     REV_POETRY2_DICTIONARY[key] ??
+    HOME_LP_DICTIONARY[key] ??
     IGCSE_PAGES_DICTIONARY[key] ??
     KS3_PAGES_DICTIONARY[key] ??
     PRESS_AND_VERIFIED_FIX[key] ??

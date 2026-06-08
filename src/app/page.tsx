@@ -216,7 +216,7 @@ async function HomeHero() {
   }> = [
     {
       label: 'IELTS',
-      sub: 'Master English and ace your exam',
+      sub: await t('home.lp.track.ielts.sub'),
       href: '/ielts',
       icon: Award,
       card: 'bg-gradient-to-br from-violet-500/15 via-violet-500/8 to-violet-500/[0.03] border-violet-500/30 hover:border-violet-500/55',
@@ -225,7 +225,7 @@ async function HomeHero() {
     },
     {
       label: 'EAL',
-      sub: 'Master English with bilingual support',
+      sub: await t('home.lp.track.eal.sub'),
       href: '/eal',
       icon: Languages,
       card: 'bg-gradient-to-br from-teal-500/15 via-teal-500/8 to-teal-500/[0.03] border-teal-500/30 hover:border-teal-500/55',
@@ -234,7 +234,7 @@ async function HomeHero() {
     },
     {
       label: 'KS3',
-      sub: 'Build the foundation for top GCSE grades',
+      sub: await t('home.lp.track.ks3.sub'),
       href: '/demo/student?setBoard=ks3',
       icon: BookOpen,
       card: 'bg-gradient-to-br from-clay-500/15 via-clay-500/8 to-clay-500/[0.03] border-clay-500/30 hover:border-clay-500/55',
@@ -243,7 +243,7 @@ async function HomeHero() {
     },
     {
       label: 'GCSE',
-      sub: 'Hit your top grade, every board',
+      sub: await t('home.lp.track.gcse.sub'),
       icon: Compass,
       card: 'bg-gradient-to-br from-emerald-500/15 via-emerald-500/8 to-emerald-500/[0.03] border-emerald-500/30 hover:border-emerald-500/55',
       iconBg: 'bg-emerald-500/20 ring-1 ring-emerald-500/35',
@@ -251,15 +251,15 @@ async function HomeHero() {
     },
     {
       label: 'IGCSE',
-      sub: 'Excel at international English, fast',
+      sub: await t('home.lp.track.igcse.sub'),
       icon: Globe,
       card: 'bg-gradient-to-br from-ochre-500/15 via-ochre-500/8 to-ochre-500/[0.03] border-ochre-500/30 hover:border-ochre-500/55',
       iconBg: 'bg-ochre-500/20 ring-1 ring-ochre-500/35',
       iconText: 'text-ochre-700 dark:text-ochre-300',
     },
     {
-      label: 'Teachers',
-      sub: 'Save hours and reach every student',
+      label: await t('home.lp.track.teachers.label'),
+      sub: await t('home.lp.track.teachers.sub'),
       href: '/demo/teacher',
       icon: Users2,
       card: 'bg-gradient-to-br from-sage-500/15 via-sage-500/8 to-sage-500/[0.03] border-sage-500/30 hover:border-sage-500/55',
@@ -267,8 +267,8 @@ async function HomeHero() {
       iconText: 'text-sage-700 dark:text-sage-300',
     },
     {
-      label: 'Schools',
-      sub: 'Run a sharper English department',
+      label: await t('home.lp.track.schools.label'),
+      sub: await t('home.lp.track.schools.sub'),
       href: '/demo/school',
       icon: Building2,
       card: 'bg-gradient-to-br from-primary/15 via-primary/8 to-primary/[0.03] border-primary/30 hover:border-primary/55',
@@ -276,6 +276,13 @@ async function HomeHero() {
       iconText: 'text-primary',
     },
   ]
+
+  // Localised aria-label template + headline copy for the hero.
+  const ariaTpl = await t('home.lp.track.aria')
+  const heroH1 = await t('home.lp.h1')
+  const heroSubtitle = await t('home.lp.subtitle')
+  const ctaPilot = await t('home.lp.cta_pilot')
+  const specNote = await t('home.lp.spec_note')
 
   // GCSE / IGCSE board pickers — clicking a board sets the board cookie
   // via the middleware then redirects to the clean /demo/student URL so
@@ -314,11 +321,10 @@ async function HomeHero() {
           The English Hub
         </p>
         <h1 className="mx-auto mt-5 max-w-3xl font-serif text-4xl font-semibold leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl">
-          Intelligent English Learning for Everyone
+          {heroH1}
         </h1>
         <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-          Personalised, exam-aligned and AI-assisted — from Years 7–9 through GCSE, IGCSE and IELTS,
-          and structured English support for EAL learners. Pick your track to explore the live demo.
+          {heroSubtitle}
         </p>
 
         {/* Seven primary demo buttons — five learner tracks (IELTS · EAL ·
@@ -345,7 +351,7 @@ async function HomeHero() {
                 <Link
                   key={track.label}
                   href={track.href}
-                  aria-label={`Explore ${track.label} — ${track.sub}`}
+                  aria-label={ariaTpl.replace('{label}', track.label).replace('{sub}', track.sub)}
                   className={`group rounded-2xl border text-center shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${track.card}`}
                 >
                   {inner}
@@ -396,14 +402,13 @@ async function HomeHero() {
             className="h-11 px-6"
             render={<Link href="/school-pilot" />}
           >
-            Book a school pilot
+            {ctaPilot}
             <ArrowRight className="ml-1 h-3.5 w-3.5" aria-hidden="true" />
           </Button>
         </div>
 
         <p className="mx-auto mt-8 max-w-xl text-xs leading-relaxed text-muted-foreground">
-          Personalised practice + AI-assisted feedback aligned to AQA, Edexcel, OCR, Eduqas,
-          Cambridge IGCSE and Pearson Edexcel International specifications.
+          {specNote}
         </p>
       </div>
     </section>
