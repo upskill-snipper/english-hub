@@ -58,7 +58,7 @@ export default async function PracticePaper6Page() {
           },
           {
             name: 'Practice papers',
-            url: 'https://theenglishhub.app/ks3/ilowersecondary/practice-papers',
+            url: 'https://theenglishhub.app/ks3/ilowersecondary/practice',
           },
           {
             name: 'Paper 6: Discovery',
@@ -77,7 +77,7 @@ export default async function PracticePaper6Page() {
           {await t('ks3.page.bc.ils')}
         </Link>
         <span> · </span>
-        <Link href="/ks3/ilowersecondary/practice-papers" className="hover:text-foreground">
+        <Link href="/ks3/ilowersecondary/practice" className="hover:text-foreground">
           {await t('ks3.page.bc.practice_papers')}
         </Link>
         <span> · </span>
