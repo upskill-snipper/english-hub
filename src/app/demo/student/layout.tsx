@@ -1,97 +1,74 @@
-'use client'
+import type { Metadata } from 'next'
+import { headers } from 'next/headers'
+import { SoftwareApplicationJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import StudentDemoLayoutClient from './layout-client'
 
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { useT } from '@/lib/i18n/use-t'
-import { LayoutDashboard, BookOpen, Target, BarChart3, Sparkles } from 'lucide-react'
+export const dynamic = 'force-dynamic'
 
-const NAV_ITEMS_DEF = [
-  { href: '/demo/student', key: 'demo.b15.student_layout.nav_dashboard', icon: LayoutDashboard },
-  { href: '/demo/student/courses', key: 'demo.b15.student_layout.nav_courses', icon: BookOpen },
-  { href: '/demo/student/flashcards', key: 'demo.b15.student_layout.nav_flashcards', icon: Target },
-  { href: '/demo/student/practice', key: 'demo.b15.student_layout.nav_practice', icon: Sparkles },
-  { href: '/demo/student/progress', key: 'demo.b15.student_layout.nav_progress', icon: BarChart3 },
-]
+export const metadata: Metadata = {
+  // 2026-06-08 — SEO + GEO audit wave 2. /demo/student was a pure
+  // 'use client' layout with no metadata export, so search engines
+  // saw a blank head. The layout-client.tsx file holds the existing
+  // sidebar/navigation; this server layout supplies the metadata +
+  // structured data wrapper.
+  title: 'Student dashboard demo — revision, AI feedback and progress',
+  description:
+    'Explore the English Hub student dashboard with sample work: revision, AI essay feedback, flashcards, practice quizzes and progress tracking. No signup required.',
+  alternates: { canonical: 'https://theenglishhub.app/demo/student' },
+  keywords: [
+    'GCSE English student demo',
+    'IGCSE English revision demo',
+    'AI essay feedback student demo',
+    'English revision dashboard demo',
+    'KS3 English platform demo',
+  ],
+  openGraph: {
+    title: 'Student dashboard demo — The English Hub',
+    description:
+      'Interactive demo of the English Hub student dashboard: revision, AI essay feedback, flashcards, practice and progress tracking. Synthetic data, no signup.',
+    url: 'https://theenglishhub.app/demo/student',
+    type: 'website',
+    siteName: 'The English Hub',
+    images: [
+      {
+        url: 'https://theenglishhub.app/api/og?title=Student+dashboard+demo&subtitle=Revision%2C+AI+feedback+and+progress',
+        width: 1200,
+        height: 630,
+        alt: 'The English Hub — interactive student dashboard demo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Student dashboard demo — The English Hub',
+    description: 'Interactive demo: revision, AI essay feedback, flashcards, practice. No signup.',
+    images: [
+      'https://theenglishhub.app/api/og?title=Student+dashboard+demo&subtitle=Revision%2C+AI+feedback+and+progress',
+    ],
+  },
+}
 
-export default function StudentDemoLayout({ children }: { children: React.ReactNode }) {
-  const t = useT()
-  const pathname = usePathname()
-
+export default async function StudentDemoLayout({ children }: { children: React.ReactNode }) {
+  const nonce = (await headers()).get('x-nonce') ?? undefined
   return (
-    <div className="flex min-h-screen bg-background">
-      {/* Sidebar */}
-      <aside className="hidden lg:flex w-64 flex-col border-r border-border/60 bg-background">
-        {/* Logo */}
-        <div className="flex items-center gap-3 px-6 py-5 border-b border-border/60">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-clay-400 flex items-center justify-center">
-            <span className="text-[10px] font-bold text-primary-foreground">EH</span>
-          </div>
-          <div>
-            <p className="text-sm font-medium text-foreground">
-              {t('demo.b15.student_layout.app_name')}
-            </p>
-            <p className="text-[10px] text-muted-foreground">
-              {t('demo.b15.student_layout.portal')}
-            </p>
-          </div>
-        </div>
-
-        {/* Nav */}
-        <nav className="flex-1 px-3 py-4 space-y-1">
-          {NAV_ITEMS_DEF.map((item) => {
-            const isActive =
-              item.href === '/demo/student'
-                ? pathname === '/demo/student'
-                : pathname.startsWith(item.href)
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors ${
-                  isActive
-                    ? 'bg-muted text-foreground'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                }`}
-              >
-                <item.icon className="h-4 w-4" />
-                {t(item.key)}
-              </Link>
-            )
-          })}
-        </nav>
-
-        {/* CTA */}
-        <div className="px-4 pb-4 space-y-2">
-          <Link
-            href="/auth/register"
-            className="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-lg bg-gradient-to-r from-violet-500 to-clay-400 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-          >
-            <Sparkles className="h-4 w-4" />
-            {t('demo.b15.student_layout.start_trial')}
-          </Link>
-        </div>
-      </aside>
-
-      {/* Mobile header */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 py-3 bg-background/95 backdrop-blur border-b border-border/60">
-        <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-violet-500 to-clay-400 flex items-center justify-center">
-            <span className="text-[9px] font-bold text-primary-foreground">EH</span>
-          </div>
-          <span className="text-sm text-foreground">
-            {t('demo.b15.student_layout.student_demo')}
-          </span>
-        </div>
-        <Link
-          href="/auth/register"
-          className="px-3 py-1.5 rounded-lg bg-gradient-to-r from-violet-500 to-clay-400 text-xs font-medium text-primary-foreground"
-        >
-          {t('demo.b15.student_layout.start_trial')}
-        </Link>
-      </div>
-
-      {/* Main content */}
-      <main className="flex-1 overflow-auto lg:p-0 pt-14 lg:pt-0">{children}</main>
-    </div>
+    <>
+      <BreadcrumbJsonLd
+        nonce={nonce}
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Demos', url: 'https://theenglishhub.app/demo' },
+          { name: 'Student dashboard', url: 'https://theenglishhub.app/demo/student' },
+        ]}
+      />
+      <SoftwareApplicationJsonLd
+        nonce={nonce}
+        name="The English Hub — student dashboard demo"
+        description="Interactive demo of the English Hub student dashboard with sample work: revision, AI essay feedback, flashcards, practice quizzes and progress tracking."
+        url="https://theenglishhub.app/demo/student"
+        audience="GCSE, IGCSE and KS3 English students"
+        screenshot="https://theenglishhub.app/api/og?title=Student+dashboard+demo&subtitle=Revision%2C+AI+feedback+and+progress"
+      />
+      <StudentDemoLayoutClient>{children}</StudentDemoLayoutClient>
+    </>
   )
 }
