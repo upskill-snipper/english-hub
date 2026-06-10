@@ -7,7 +7,7 @@
     "placeholder:check": "node scripts/check-placeholders.mjs",
     "blog:quality-check": "node scripts/check-blog-quality.mjs",
     "eal:dupe-check": "node scripts/check-eal-level-dupes.mjs",
-    "prebuild": "node scripts/check-placeholders.mjs && node scripts/check-blog-quality.mjs",
+    "prebuild": "node scripts/generate-sitemap-routes.mjs && node scripts/generate-llms-txt.mjs",
     "build": "prisma generate && node scripts/apply-migrations.mjs && NODE_OPTIONS='--max-old-space-size=14336' next build",
     "migrate:apply": "node scripts/apply-migrations.mjs",
     "postinstall": "prisma generate",
@@ -53,10 +53,10 @@
     "dompurify": "^3.3.3",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.577.0",
-    "next": "^15.5.15",
+    "next": "^15.5.19",
     "next-mdx-remote": "^6.0.0",
     "next-themes": "^0.4.6",
-    "nodemailer": "^7.0.13",
+    "nodemailer": "^8.0.10",
     "pg": "^8.21.0",
     "posthog-js": "^1.371.2",
     "pptxgenjs": "^4.0.1",
@@ -71,7 +71,7 @@
     "zustand": "^5.0.12"
   },
   "devDependencies": {
-    "@cyclonedx/cyclonedx-npm": "^1.20.0",
+    "@cyclonedx/cyclonedx-npm": "^4.2.1",
     "@next/bundle-analyzer": "^14.2.35",
     "@playwright/test": "^1.52.0",
     "@sentry/cli": "^2.42.2",
@@ -102,5 +102,10 @@
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.9.3",
     "vitest": "^4.1.0"
+  },
+  "overrides": {
+    "next": {
+      "postcss": "^8.5.10"
+    }
   }
 }

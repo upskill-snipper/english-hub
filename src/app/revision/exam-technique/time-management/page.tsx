@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
@@ -9,6 +10,13 @@ import {
 } from '@/components/revision/BoardSpecificExamTechnique'
 
 import TimeManagementView from './time-management-view'
+
+export const metadata: Metadata = {
+  title: 'GCSE English Exam Time Management',
+  description:
+    'Plan your GCSE English exam timing with board-specific, minute-by-minute guides, so you finish every question and still have time to check your answers.',
+  alternates: { canonical: 'https://theenglishhub.app/revision/exam-technique/time-management' },
+}
 
 export default async function TimeManagementPage() {
   const board = await getServerBoard()

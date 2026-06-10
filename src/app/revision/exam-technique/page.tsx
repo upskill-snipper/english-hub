@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
@@ -11,6 +12,13 @@ import {
 import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 import ExamTechniqueHubView from './exam-technique-hub-view'
+
+export const metadata: Metadata = {
+  title: 'GCSE Exam Technique | English Revision Guides',
+  description:
+    'Master GCSE English exam technique with board-specific guides to essay structure, time management, question types, common mistakes and Grade 9 skills.',
+  alternates: { canonical: 'https://theenglishhub.app/revision/exam-technique' },
+}
 
 export default async function ExamTechniquePage() {
   const board = await getServerBoard()

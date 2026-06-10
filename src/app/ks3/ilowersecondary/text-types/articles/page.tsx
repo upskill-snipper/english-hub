@@ -10,6 +10,15 @@ import {
   SPEC_ATTRIBUTION,
 } from '@/lib/ilowersecondary/spec'
 
+export const metadata: Metadata = {
+  title: 'Newspaper & Magazine Articles | KS3 English',
+  description:
+    'Learn the conventions of newspaper and magazine articles for KS3 iLowerSecondary English: headlines, structure, annotated examples and guided reading prompts.',
+  alternates: {
+    canonical: 'https://theenglishhub.app/ks3/ilowersecondary/text-types/articles',
+  },
+}
+
 const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/text-types/articles'
 
 const ARTICLES_TYPE = NON_FICTION_TEXT_TYPES.find((t) => t === 'newspaper and magazine articles')!

@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
@@ -9,6 +10,13 @@ import {
 } from '@/components/revision/BoardSpecificExamTechnique'
 
 import QuestionTypesView from './question-types-view'
+
+export const metadata: Metadata = {
+  title: 'GCSE English Question Types Explained',
+  description:
+    'Understand every GCSE English question type for your exam board, what each one is really asking, and how to plan answers that target the full marks.',
+  alternates: { canonical: 'https://theenglishhub.app/revision/exam-technique/question-types' },
+}
 
 export default async function QuestionTypesPage() {
   const board = await getServerBoard()

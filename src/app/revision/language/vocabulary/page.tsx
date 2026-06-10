@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, BookOpen, Palette, Swords, Search, Scale, Lightbulb } from 'lucide-react'
@@ -747,6 +748,13 @@ const CATEGORIES: VocabCategory[] = [
 ]
 
 /* ── Main page component ────────────────────────────────────────── */
+
+export const metadata: Metadata = {
+  title: 'GCSE English Vocabulary Builder',
+  description:
+    'Grow your GCSE English vocabulary with curated word lists for analysis and ambitious writing, complete with meanings and examples you can use in exams.',
+  alternates: { canonical: 'https://theenglishhub.app/revision/language/vocabulary' },
+}
 
 export default async function VocabularyPage() {
   const board = await getServerBoard()

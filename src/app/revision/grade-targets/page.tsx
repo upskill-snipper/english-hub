@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import {
   TrendingUp,
   ArrowLeft,
@@ -131,6 +132,13 @@ const LETTER_GRADE_CARDS: GradeCard[] = [
 ]
 
 /* ── Component ────────────────────────────────────────────────────────── */
+
+export const metadata: Metadata = {
+  title: 'GCSE English Grade Targets | Revision by Grade',
+  description:
+    'Choose your target grade and see exactly what GCSE English examiners reward at each level, with focused revision guides from Grade 1 up to Grade 9.',
+  alternates: { canonical: 'https://theenglishhub.app/revision/grade-targets' },
+}
 
 export default async function GradeTargetsPage() {
   const board = await getServerBoard()

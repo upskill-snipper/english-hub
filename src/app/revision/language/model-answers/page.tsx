@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import {
@@ -474,6 +475,13 @@ const MODEL_ANSWERS: ModelAnswer[] = [
 ]
 
 /* ── Main page component ────────────────────────────────────────── */
+
+export const metadata: Metadata = {
+  title: 'GCSE English Language Model Answers',
+  description:
+    'Read annotated model answers for GCSE English Language questions and see how top-band responses are built, paragraph by paragraph, for your exam board.',
+  alternates: { canonical: 'https://theenglishhub.app/revision/language/model-answers' },
+}
 
 export default async function ModelAnswersPage() {
   const board = await getServerBoard()

@@ -14,6 +14,7 @@ const SKILL_1_1 = READING_SKILLS.find((s) => s.code === '1.1')!
 const RETRIEVAL_Q = QUESTION_TYPES.find((q) => q.id === 'short-retrieval')!
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/ks3/ilowersecondary/reading/retrieval' },
   title: 'Retrieval (RAO1) - find and quote exact information',
   description:
     `A masterclass on ${RAO1.code}: ${RAO1.descriptor} Learn what retrieval means, ` +

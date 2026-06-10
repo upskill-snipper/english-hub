@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/igcse/edexcel/drama/curious-incident/key-quotes' },
   title: 'Curious Incident: Key Quotes - Edexcel IGCSE Literature',
   description:
     'Key quotations from The Curious Incident of the Dog in the Night-Time for Edexcel IGCSE Literature, with analysis of truth, trust and difference.',

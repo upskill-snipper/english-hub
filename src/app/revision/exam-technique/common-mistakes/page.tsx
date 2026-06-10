@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import {
   ArrowLeft,
   ArrowRight,
@@ -265,6 +266,13 @@ function getCategoryColour(category: string) {
 }
 
 /* ── Page ────────────────────────────────────────────────────────── */
+
+export const metadata: Metadata = {
+  title: 'Common Mistakes in GCSE English Exams',
+  description:
+    'Avoid the most common mistakes in GCSE English essays, from retelling the plot to feature-spotting, with fixes that turn lost marks into higher grades.',
+  alternates: { canonical: 'https://theenglishhub.app/revision/exam-technique/common-mistakes' },
+}
 
 export default async function CommonMistakesPage() {
   // Constant labels reused inside the synchronous MISTAKES.map() below.

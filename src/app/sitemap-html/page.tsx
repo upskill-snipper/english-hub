@@ -158,7 +158,7 @@ const SECTION_DEFS: SectionKeyDef[] = [
 /* ─── Page ───────────────────────────────────────────────────── */
 
 export default async function SitemapHtmlPage() {
-  const entries = sitemap()
+  const entries = await sitemap()
 
   // Resolve section headings once at request time. We pre-load all keys (one
   // per section, plus the "Other pages" fallback and the H1/lead pair).

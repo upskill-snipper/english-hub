@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import {
   ArrowLeft,
   ArrowRight,
@@ -178,6 +179,13 @@ const GRADE_9_VOCAB: { term: string; usage: string }[] = [
 ]
 
 /* ── Page ────────────────────────────────────────────────────────── */
+
+export const metadata: Metadata = {
+  title: 'Grade 9 Secrets: Top-Band GCSE English Technique',
+  description:
+    'Ten top-band techniques for Grade 9 GCSE English: conceptualised topic sentences, alternative interpretations, structural analysis and embedded context.',
+  alternates: { canonical: 'https://theenglishhub.app/revision/exam-technique/grade-9-secrets' },
+}
 
 export default async function Grade9SecretsPage() {
   // Constant labels reused inside synchronous .map() callbacks below.

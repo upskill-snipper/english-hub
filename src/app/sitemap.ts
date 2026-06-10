@@ -1,846 +1,69 @@
 import { MetadataRoute } from 'next'
+import { ANALYSIS_PAGES } from '@/data/analysis'
 import { allCourses } from '@/data/courses'
 import { getBlogSlugs } from '@/lib/blog/posts'
+import { SET_TEXTS } from '@/lib/board/set-texts'
 import { EAL } from '@/lib/eal/curriculum'
 import { ALL_LESSONS } from '@/lib/ielts/lessons'
+import { KS3 } from '@/lib/ks3/curriculum'
+import { getAllLessonPlans } from '@/lib/lesson-plans/list'
+import { getPrintableSlugs } from '@/lib/printables/list'
+import staticRoutes from '@/lib/seo/static-routes.json'
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const base = 'https://theenglishhub.app'
-  const now = new Date()
+// ============================================================
+// Sitemap — filesystem-driven since 2026-06-10.
+//
+// The previous implementation was a ~1,450-line hand-maintained URL
+// list that had drifted ~200 public pages behind the real route tree
+// (every new section shipped without a sitemap entry) and listed three
+// redirecting `syllabus` URLs. That drift is what produced the large
+// "Discovered / Crawled — currently not indexed" backlog in Search
+// Console.
+//
+// Static routes now come from src/lib/seo/static-routes.json, generated
+// by scripts/generate-sitemap-routes.mjs (npm prebuild hook) from
+// src/app/**/page.tsx minus one explicit exclusion policy (robots-
+// disallowed sections, redirect sources, noindex user tools). Dynamic
+// routes ([slug] pages) are appended from their data sources below so
+// new content appears automatically.
+//
+// Everything goes through a Map keyed by URL — duplicates collapse and
+// the LAST writer wins, so the DEMOTED/OVERRIDES maps at the bottom can
+// adjust priority for legacy content without removing it.
+// ============================================================
 
-  const staticRoutes: MetadataRoute.Sitemap = [
-    // Core pages
-    { url: base, lastModified: now, changeFrequency: 'weekly', priority: 1 },
-    { url: `${base}/courses`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${base}/practice`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${base}/revision`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${base}/revision/poetry`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
-    { url: `${base}/revision/texts`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
-    {
-      url: `${base}/revision/language`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${base}/revision/flashcards`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${base}/revision/exam-technique`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${base}/revision/grade-targets`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    { url: `${base}/revision/quiz`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
-    {
-      url: `${base}/revision/common-errors`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    { url: `${base}/mock-exams`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
-    { url: `${base}/games`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
+const BASE = 'https://theenglishhub.app'
 
-    // Audience / institutional pages - the canonical marketing surface as of
-    // 2026-05-20. The legacy /for-teachers · /for-schools · /for-parents now
-    // 308-redirect to these, so the redirecting URLs are intentionally
-    // EXCLUDED from the sitemap (listing a 3xx URL is an SEO anti-pattern;
-    // same convention as the /legal/safeguarding note below).
-    { url: `${base}/schools`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${base}/school-pilot`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/teachers`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/students`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/eal`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/pricing`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${base}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/press`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${base}/creators`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/igcse`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+type Entry = MetadataRoute.Sitemap[number]
+type ChangeFreq = NonNullable<Entry['changeFrequency']>
 
-    // Demo dashboards — 2026-06-08 SEO+GEO audit. These are the primary
-    // institutional conversion surface (Qatar Expo / school sales calls)
-    // and were previously blocked in robots.txt + not in the sitemap.
-    // They are public, no-sign-up demos that show synthetic data with a
-    // clear "demo only" chip — Google + AI crawlers should be able to
-    // index them so a headteacher Googling "AI English platform demo
-    // for schools" can find them. The dashboards are static React with
-    // no PII so there is no privacy concern.
-    { url: `${base}/demo`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/demo/school`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/demo/teacher`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/demo/student`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+// Hand-tuned priorities for the pages that matter most commercially.
+const PRIORITY_OVERRIDES: Record<string, number> = {
+  '/': 1,
+  '/pricing': 0.9,
+  '/schools': 0.9,
+  '/school-pilot': 0.9,
+  '/courses': 0.9,
+  '/resources': 0.9,
+  '/ielts': 0.9,
+  '/revision': 0.9,
+  '/igcse': 0.85,
+  '/eal': 0.85,
+  '/ks3': 0.85,
+  '/teachers': 0.8,
+  '/students': 0.8,
+  '/demo': 0.8,
+  '/demo/school': 0.8,
+  '/qatar-igcse-english': 0.8,
+  '/gcc-igcse-english': 0.8,
+}
 
-    // 2026-06-08 — School content policy page (cultural-sensitivity audit).
-    // Indexable because the policy itself is one of the strongest signals
-    // for a GCC / Qatar buyer evaluating cultural fit; we want it
-    // surfacing in branded + intent search.
-    {
-      url: `${base}/legal/school-content-policy`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.4,
-    },
-
-    // IELTS Academic learning loop (2026-05-25). /ielts/progress (personal
-    // dashboard, noindex) and /ielts/plan (user-specific) are intentionally
-    // excluded; the hub + diagnostic + four skill modules are indexable.
-    { url: `${base}/ielts`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
-    {
-      url: `${base}/ielts/diagnostic`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    { url: `${base}/ielts/reading`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${base}/ielts/listening`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${base}/ielts/writing`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${base}/ielts/speaking`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
-    // Wave 2 (2026-05-25): admissions track + partnerships. /ielts/centre is a
-    // private teacher dashboard (noindex), so it is intentionally excluded.
-    {
-      url: `${base}/ielts/admissions`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${base}/ielts/admissions/personal-statement`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${base}/ielts/admissions/student-visa`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    { url: `${base}/ielts/partners`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    {
-      url: `${base}/ielts/partners/for-schools`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${base}/ielts/partners/for-agencies`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    // Readiness-program surfaces (2026-05-25). The learn hub (leveled
-    // curriculum), the exam guide (evergreen reference) and the timed mock
-    // tests are public, indexable content. /ielts/dashboard (personal "Your
-    // Hub") and /ielts/planner (exam-date plan, user-specific) are
-    // intentionally EXCLUDED, like /ielts/progress + /ielts/plan. Per-lesson
-    // pages (/ielts/learn/<skill>/<slug>) are appended dynamically below.
-    { url: `${base}/ielts/learn`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${base}/ielts/guide`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/ielts/mock`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
-
-    // Resources hub
-    { url: `${base}/resources`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
-
-    // English Language resources
-    {
-      url: `${base}/resources/english-language`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    ...['aqa', 'edexcel', 'ocr', 'wjec', 'caie'].map((board) => ({
-      url: `${base}/resources/english-language/${board}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    })),
-    ...['aqa', 'edexcel', 'ocr', 'caie'].flatMap((board) =>
-      ['paper-1', 'paper-2', 'techniques', 'writing-skills', 'grade-boundaries'].map((sub) => ({
-        url: `${base}/resources/english-language/${board}/${sub}`,
-        lastModified: now,
-        changeFrequency: 'monthly' as const,
-        priority: 0.6,
-      })),
-    ),
-    {
-      url: `${base}/resources/english-language/ocr/spoken-language`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${base}/resources/english-language/wjec/grade-boundaries`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-
-    // English Literature resources
-    {
-      url: `${base}/resources/english-literature`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    ...['aqa', 'edexcel', 'ocr', 'wjec', 'caie'].map((board) => ({
-      url: `${base}/resources/english-literature/${board}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    })),
-    ...['aqa', 'edexcel', 'ocr'].flatMap((board) =>
-      ['paper-1', 'paper-2', 'poetry', 'grade-boundaries'].map((sub) => ({
-        url: `${base}/resources/english-literature/${board}/${sub}`,
-        lastModified: now,
-        changeFrequency: 'monthly' as const,
-        priority: 0.6,
-      })),
-    ),
-    // AQA Literature texts
-    ...['macbeth', 'romeo-and-juliet', 'christmas-carol', 'inspector-calls', 'jekyll-and-hyde'].map(
-      (text) => ({
-        url: `${base}/resources/english-literature/aqa/${text}`,
-        lastModified: now,
-        changeFrequency: 'monthly' as const,
-        priority: 0.7,
-      }),
-    ),
-    // Edexcel Literature texts
-    ...[
-      'macbeth',
-      'romeo-and-juliet',
-      'christmas-carol',
-      'inspector-calls',
-      'jekyll-and-hyde',
-      'animal-farm',
-      'lord-of-the-flies',
-    ].map((text) => ({
-      url: `${base}/resources/english-literature/edexcel/${text}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    })),
-    // OCR Literature texts
-    ...['macbeth', 'romeo-and-juliet', 'christmas-carol', 'inspector-calls', 'jekyll-and-hyde'].map(
-      (text) => ({
-        url: `${base}/resources/english-literature/ocr/${text}`,
-        lastModified: now,
-        changeFrequency: 'monthly' as const,
-        priority: 0.7,
-      }),
-    ),
-    // CAIE Literature texts and pages
-    ...[
-      'paper-1',
-      'paper-2',
-      'poetry',
-      'unseen',
-      'grade-boundaries',
-      'exam-technique',
-      'macbeth',
-      'christmas-carol',
-      'inspector-calls',
-      'jekyll-and-hyde',
-      'great-expectations',
-      'to-kill-a-mockingbird',
-      'things-fall-apart',
-      'a-midsummer-nights-dream',
-      'a-streetcar-named-desire',
-      'a-taste-of-honey',
-      'blues-for-an-alabama-sky',
-      'fire-on-the-mountain',
-      'picnic-at-hanging-rock',
-      'rebecca',
-      'songs-of-ourselves-v1',
-      'songs-of-ourselves-v2',
-      'unseen-poetry',
-    ].map((sub) => ({
-      url: `${base}/resources/english-literature/caie/${sub}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    })),
-    // CAIE 0475 Songs of Ourselves Volume 1 - individual poems
-    ...[
-      'funeral-blues',
-      'hawk-roosting',
-      'he-never-expected-much',
-      'on-finding-a-small-fly-crushed-in-a-book',
-      'rain',
-      'the-city-planners',
-      'the-thought-fox',
-      'wind',
-    ].map((poem) => ({
-      url: `${base}/resources/english-literature/caie/songs-of-ourselves-v1/${poem}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.5,
-    })),
-    {
-      url: `${base}/resources/english-literature/wjec/grade-boundaries`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-
-    // Revision notes
-    {
-      url: `${base}/resources/revision-notes`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    ...[
-      'macbeth',
-      'romeo-and-juliet',
-      'christmas-carol',
-      'inspector-calls',
-      'jekyll-and-hyde',
-      'animal-farm',
-      'lord-of-the-flies',
-      'great-expectations',
-      'frankenstein',
-      'jane-eyre',
-      'othello',
-      'the-tempest',
-      'merchant-of-venice',
-      'much-ado-about-nothing',
-      'pride-and-prejudice',
-      'blood-brothers',
-      'view-from-the-bridge',
-      'the-crucible',
-      'silas-marner',
-      'sign-of-four',
-      'woman-in-black',
-      'never-let-me-go',
-    ].map((text) => ({
-      url: `${base}/resources/revision-notes/${text}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    })),
-
-    // Poetry
-    {
-      url: `${base}/resources/poetry`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    ...[
-      'power-and-conflict',
-      'love-and-relationships',
-      'edexcel-anthology',
-      'unseen-poetry',
-      'techniques',
-    ].map((sub) => ({
-      url: `${base}/resources/poetry/${sub}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    })),
-
-    // Writing skills
-    {
-      url: `${base}/resources/writing-skills`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    ...['creative-writing', 'persuasive-writing', 'analytical-writing', 'grammar-punctuation'].map(
-      (sub) => ({
-        url: `${base}/resources/writing-skills/${sub}`,
-        lastModified: now,
-        changeFrequency: 'monthly' as const,
-        priority: 0.6,
-      }),
-    ),
-
-    // Exam technique
-    {
-      url: `${base}/resources/exam-technique`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    ...['essay-structure', 'question-types', 'time-management', 'exam-day'].map((sub) => ({
-      url: `${base}/resources/exam-technique/${sub}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    })),
-
-    // Themes
-    {
-      url: `${base}/resources/themes`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    ...['power', 'love', 'guilt', 'conflict', 'social-responsibility'].map((sub) => ({
-      url: `${base}/resources/themes/${sub}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    })),
-
-    // Context
-    {
-      url: `${base}/resources/context`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    ...['elizabethan-jacobean', 'victorian', 'romantic', 'twentieth-century'].map((sub) => ({
-      url: `${base}/resources/context/${sub}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    })),
-
-    // Grade targets
-    {
-      url: `${base}/resources/grade-targets`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    ...['grade-5', 'grade-7', 'grade-9'].map((sub) => ({
-      url: `${base}/resources/grade-targets/${sub}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    })),
-
-    // Model answers
-    {
-      url: `${base}/resources/model-answers`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    ...['creative-writing', 'language-analysis', 'literature-essay', 'persuasive-writing'].map(
-      (sub) => ({
-        url: `${base}/resources/model-answers/${sub}`,
-        lastModified: now,
-        changeFrequency: 'monthly' as const,
-        priority: 0.6,
-      }),
-    ),
-
-    // Techniques, vocabulary, study tools
-    {
-      url: `${base}/resources/techniques`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${base}/resources/techniques/language-devices`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${base}/resources/techniques/structural-devices`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${base}/resources/vocabulary`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    ...['academic', 'analytical', 'descriptive'].map((sub) => ({
-      url: `${base}/resources/vocabulary/${sub}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    })),
-    {
-      url: `${base}/resources/study-tools`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    ...['flashcards', 'checklists', 'quote-tester', 'revision-planner'].map((sub) => ({
-      url: `${base}/resources/study-tools/${sub}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    })),
-    {
-      url: `${base}/resources/glossary`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${base}/resources/spoken-language`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${base}/resources/spoken-language/topics`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-
-    // Teaching resources
-    {
-      url: `${base}/resources/teaching`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    // /resources/teaching/printables and /resources/teaching/lesson-plans
-    // are top-level resource hubs (sibling agents own them) so they get a
-    // slightly higher priority than the rest of the teaching surfaces.
-    ...['lesson-plans', 'printables'].map((sub) => ({
-      url: `${base}/resources/teaching/${sub}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    })),
-    {
-      url: `${base}/resources/teaching/assessment`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-
-    // Analysis pages
-    ...[
-      'macbeth',
-      'jekyll-hyde',
-      'inspector-calls',
-      'christmas-carol',
-      'aqa-love-relationships',
-      'aqa-power-conflict',
-      'language-paper',
-      'revision',
-    ].map((slug) => ({
-      url: `${base}/analysis/${slug}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    })),
-
-    // Assessment
-    {
-      url: `${base}/assessment/reading`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-
-    // Revision text hub pages
-    ...[
-      'macbeth',
-      'romeo-and-juliet',
-      'jekyll-and-hyde',
-      'a-christmas-carol',
-      'an-inspector-calls',
-      'animal-farm',
-      'lord-of-the-flies',
-      'great-expectations',
-      'frankenstein',
-      'jane-eyre',
-      'much-ado-about-nothing',
-      'the-tempest',
-      'of-mice-and-men',
-      'a-view-from-the-bridge',
-      'blood-brothers',
-      'things-fall-apart',
-      'to-kill-a-mockingbird',
-      'pride-and-prejudice',
-      'anita-and-me',
-      'curious-incident',
-      'never-let-me-go',
-      'pigeon-english',
-    ].map((text) => ({
-      url: `${base}/revision/texts/${text}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    })),
-
-    // Revision text sub-pages (discovered from filesystem)
-    ...(
-      [
-        [
-          'a-christmas-carol',
-          ['characters', 'context', 'essay-plans', 'key-quotes', 'staves', 'themes'],
-        ],
-        ['a-view-from-the-bridge', ['characters', 'context', 'key-quotes', 'themes']],
-        [
-          'an-inspector-calls',
-          ['acts', 'characters', 'context', 'essay-plans', 'key-quotes', 'themes'],
-        ],
-        [
-          'animal-farm',
-          ['chapters', 'characters', 'context', 'essay-plans', 'key-quotes', 'themes'],
-        ],
-        ['blood-brothers', ['acts', 'characters', 'essay-plans', 'key-quotes', 'themes']],
-        ['frankenstein', ['chapters', 'characters', 'essay-plans', 'key-quotes', 'read', 'themes']],
-        ['great-expectations', ['chapters', 'characters', 'essay-plans', 'key-quotes', 'themes']],
-        ['jane-eyre', ['chapters', 'key-quotes']],
-        [
-          'jekyll-and-hyde',
-          ['chapters', 'characters', 'context', 'essay-plans', 'key-quotes', 'themes'],
-        ],
-        [
-          'lord-of-the-flies',
-          ['chapters', 'characters', 'context', 'essay-plans', 'key-quotes', 'themes'],
-        ],
-        [
-          'macbeth',
-          [
-            'act-1',
-            'act-2',
-            'act-3',
-            'acts',
-            'characters',
-            'context',
-            'essay-plans',
-            'key-quotes',
-            'read',
-            'themes',
-          ],
-        ],
-        ['of-mice-and-men', ['characters', 'context', 'key-quotes', 'themes']],
-        ['pride-and-prejudice', ['chapters', 'characters']],
-        [
-          'romeo-and-juliet',
-          ['acts', 'characters', 'context', 'essay-plans', 'key-quotes', 'themes'],
-        ],
-        ['things-fall-apart', ['characters', 'context', 'key-quotes', 'themes']],
-        ['to-kill-a-mockingbird', ['characters', 'context', 'key-quotes', 'themes']],
-      ] as const
-    ).flatMap(([text, subs]) =>
-      subs.map((sub) => ({
-        url: `${base}/revision/texts/${text}/${sub}`,
-        lastModified: now,
-        changeFrequency: 'monthly' as const,
-        priority: 0.6,
-      })),
-    ),
-
-    // Revision poetry hubs
-    {
-      url: `${base}/revision/poetry/power-and-conflict`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${base}/revision/poetry/power-and-conflict/essay-plans`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${base}/revision/poetry/love-and-relationships`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${base}/revision/poetry/love-and-relationships/essay-plans`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${base}/revision/poetry/love-and-relationships/comparison-guide`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${base}/revision/poetry/aqa-worlds-and-lives`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.6,
-    },
-    {
-      url: `${base}/revision/poetry/edexcel`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${base}/revision/poetry/edexcel/essay-plans`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${base}/revision/poetry/edexcel/conflict`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${base}/revision/poetry/edexcel/time-and-place`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${base}/revision/poetry/eduqas`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${base}/revision/poetry/eduqas/essay-plans`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${base}/revision/poetry/ocr`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${base}/revision/poetry/ocr/essay-plans`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${base}/revision/poetry/ocr/comparison-guide`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${base}/revision/poetry/ocr/themes`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${base}/revision/poetry/ocr/conflict`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${base}/revision/poetry/ocr/love-and-relationships`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${base}/revision/poetry/ocr/power-and-natural-world`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${base}/revision/poetry/ocr/youth-and-age`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${base}/revision/poetry/unseen-poetry`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-
-    // Individual poems - Power and Conflict (AQA)
-    ...[
-      'ozymandias',
-      'london',
-      'the-prelude',
-      'my-last-duchess',
-      'the-charge-of-the-light-brigade',
-      'exposure',
-      'storm-on-the-island',
-      'bayonet-charge',
-      'remains',
-      'poppies',
-      'war-photographer',
-      'tissue',
-      'the-emigree',
-      'kamikaze',
-      'checking-out-me-history',
-    ].map((poem) => ({
-      url: `${base}/revision/poetry/power-and-conflict/${poem}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    })),
-
-    // Individual poems - Love and Relationships (AQA)
-    ...[
-      'when-we-two-parted',
-      'loves-philosophy',
-      'neutral-tones',
-      'porphyrias-lover',
-      'sonnet-29',
-      'before-you-were-mine',
-      'climbing-my-grandfather',
-      'eden-rock',
-      'follower',
-      'letters-from-yorkshire',
-      'mother-any-distance',
-      'singh-song',
-      'the-farmers-bride',
-      'walking-away',
-      'winter-swans',
-    ].map((poem) => ({
-      url: `${base}/revision/poetry/love-and-relationships/${poem}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    })),
-
-    // Individual poems - Edexcel Conflict
-    ...['a-poison-tree', 'the-destruction-of-sennacherib'].map((poem) => ({
-      url: `${base}/revision/poetry/edexcel/conflict/${poem}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    })),
-
-    // Individual poems - Edexcel Time and Place
-    ...[
-      'london',
-      'composed-upon-westminster-bridge',
-      'i-started-early-took-my-dog',
-      'to-autumn',
-    ].map((poem) => ({
-      url: `${base}/revision/poetry/edexcel/time-and-place/${poem}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    })),
-
-    // Individual poems - Eduqas (legacy pre-2025 anthology)
-    // These poems are NOT part of the Eduqas 2025 cluster but still serve content as a
-    // study reference. Demoted to priority 0.1 to prevent SEO promotion of legacy content.
-    ...[
+// Legacy content kept reachable for archived study traffic but demoted
+// so it is never promoted over current-spec content.
+const DEMOTED: Record<string, { priority: number; changeFrequency: ChangeFreq }> =
+  Object.fromEntries(
+    [
+      // Eduqas pre-2025 anthology poems (not in the 2025 cluster).
       'dulce-et-decorum-est',
       'the-soldier',
       'london',
@@ -849,813 +72,112 @@ export default function sitemap(): MetadataRoute.Sitemap {
       'a-wife-in-london',
       'sonnet-43',
       'to-autumn',
-    ].map((poem) => ({
-      url: `${base}/revision/poetry/eduqas/${poem}`,
-      lastModified: now,
-      changeFrequency: 'yearly' as const,
-      priority: 0.1,
-    })),
+    ]
+      .map((p) => [
+        `/revision/poetry/eduqas/${p}`,
+        { priority: 0.1, changeFrequency: 'yearly' as ChangeFreq },
+      ])
+      .concat(
+        // Edexcel IGCSE poems outside the current 4ET1 Anthology Issue 2.
+        ['cousin-kate', 'piano', 'the-man-he-killed'].map((p) => [
+          `/igcse/edexcel/poetry/${p}`,
+          { priority: 0.3, changeFrequency: 'yearly' as ChangeFreq },
+        ]),
+      ),
+  )
 
-    // Individual poems - OCR Love and Relationships
-    ...['neutral-tones', 'she-dwelt-among-the-untrodden-ways', 'she-walks-in-beauty'].map(
-      (poem) => ({
-        url: `${base}/revision/poetry/ocr/love-and-relationships/${poem}`,
-        lastModified: now,
-        changeFrequency: 'monthly' as const,
+/** Depth-based defaults: hubs high + weekly, leaves lower + monthly. */
+function defaults(route: string): { priority: number; changeFrequency: ChangeFreq } {
+  const depth = route === '/' ? 0 : route.split('/').length - 1
+  if (depth <= 1) return { priority: 0.8, changeFrequency: 'weekly' }
+  if (depth === 2) return { priority: 0.7, changeFrequency: 'weekly' }
+  if (depth === 3) return { priority: 0.6, changeFrequency: 'monthly' }
+  return { priority: 0.5, changeFrequency: 'monthly' }
+}
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const now = new Date()
+  const entries = new Map<string, Entry>()
+
+  const add = (route: string, opts: Partial<Entry> = {}) => {
+    const d = defaults(route)
+    const demoted = DEMOTED[route]
+    const override = PRIORITY_OVERRIDES[route]
+    entries.set(route, {
+      url: route === '/' ? BASE : `${BASE}${route}`,
+      lastModified: now,
+      changeFrequency:
+        demoted?.changeFrequency ?? (opts.changeFrequency as ChangeFreq) ?? d.changeFrequency,
+      priority: demoted?.priority ?? override ?? opts.priority ?? d.priority,
+    })
+  }
+
+  // 1. Every indexable static route, straight from the filesystem scan.
+  for (const route of staticRoutes as string[]) add(route)
+
+  // 2. Dynamic routes from their data sources.
+  for (const course of allCourses) add(`/courses/${course.id}`, { priority: 0.8 })
+  for (const slug of getBlogSlugs())
+    add(`/blog/${slug}`, { priority: 0.6, changeFrequency: 'monthly' })
+
+  // Set texts: /revision/texts/[slug] serves any SET_TEXTS slug that has no
+  // dedicated static page. NOTE: /resources/revision-notes/[slug] is a
+  // noindexed in-production placeholder for slugs without a static page, so
+  // the dynamic route contributes nothing here — only the static
+  // /resources/revision-notes/<dir> pages (already in static-routes.json)
+  // are listed.
+  for (const text of SET_TEXTS) {
+    add(`/revision/texts/${text.slug}`, { priority: 0.7, changeFrequency: 'monthly' })
+  }
+
+  // Pearson IGCSE Language A poetry anthology (mirrors the page's
+  // generateStaticParams filter).
+  for (const text of SET_TEXTS) {
+    if (text.category === 'poetry-anthology' && text.boards.includes('edexcel-igcse-lang')) {
+      add(`/revision/poetry/pearson-igcse/${text.slug}`, {
         priority: 0.6,
-      }),
-    ),
+        changeFrequency: 'monthly',
+      })
+    }
+  }
 
-    // Individual poems - OCR Power and Natural World
-    ...['the-eagle'].map((poem) => ({
-      url: `${base}/revision/poetry/ocr/power-and-natural-world/${poem}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
+  // Analysis catch-all pages ([category, article] slug pairs).
+  for (const page of ANALYSIS_PAGES) {
+    add(`/analysis/${page.slug.join('/')}`, { priority: 0.6, changeFrequency: 'monthly' })
+  }
+
+  // KS3 curriculum years (/ks3/year-7 …). Term/week drill-downs are
+  // crawlable from the year pages and intentionally not sitemapped.
+  for (const year of KS3.years) add(`/ks3/year-${year.number}`, { priority: 0.7 })
+
+  // EAL: topic hubs and the four skill pages. Banded /level/* views are NOT
+  // listed — b1/b2/c1 are noindex everywhere and a2 is noindex on half the
+  // topics (grammar topics), so the level variants stay out wholesale.
+  for (const topic of EAL.topics) {
+    add(`/eal/${topic.id}`, { priority: 0.6, changeFrequency: 'monthly' })
+    for (const skill of ['reading', 'writing', 'listening', 'speaking']) {
+      add(`/eal/${topic.id}/${skill}`, { priority: 0.5, changeFrequency: 'monthly' })
+    }
+  }
+
+  // IELTS lesson library.
+  for (const lesson of ALL_LESSONS) {
+    add(`/ielts/learn/${lesson.skill}/${lesson.slug}`, {
+      priority: 0.5,
+      changeFrequency: 'monthly',
+    })
+  }
+
+  // Teaching library: lesson plans + printables.
+  for (const plan of getAllLessonPlans()) {
+    add(`/resources/teaching/lesson-plans/${plan.slug}`, {
       priority: 0.6,
-    })),
+      changeFrequency: 'monthly',
+    })
+  }
+  for (const slug of await getPrintableSlugs()) {
+    add(`/resources/teaching/printables/${slug}`, { priority: 0.6, changeFrequency: 'monthly' })
+  }
 
-    // Individual poems - OCR Youth and Age
-    ...['crossing-the-bar', 'when-i-have-fears'].map((poem) => ({
-      url: `${base}/revision/poetry/ocr/youth-and-age/${poem}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    })),
-
-    // ============================================================
-    // IGCSE - Edexcel
-    // ============================================================
-    { url: `${base}/igcse/edexcel`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
-    {
-      url: `${base}/igcse/edexcel/syllabus`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${base}/igcse/edexcel/past-papers`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${base}/igcse/edexcel/exam-technique`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${base}/igcse/edexcel/essay-technique`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${base}/igcse/edexcel/essay-technique/comparison-essays`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${base}/igcse/edexcel/essay-technique/mark-scheme`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-
-    // IGCSE Edexcel Drama
-    {
-      url: `${base}/igcse/edexcel/drama`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    ...(
-      [
-        [
-          'a-view-from-the-bridge',
-          ['characters', 'context', 'essay-plans', 'key-quotes', 'themes'],
-        ],
-        [
-          'an-inspector-calls',
-          [
-            'act-1',
-            'act-2',
-            'act-3',
-            'characters',
-            'context',
-            'essay-plans',
-            'key-quotes',
-            'themes',
-          ],
-        ],
-        ['curious-incident', ['characters', 'key-quotes', 'themes']],
-      ] as const
-    ).flatMap(([text, subs]) => [
-      {
-        url: `${base}/igcse/edexcel/drama/${text}`,
-        lastModified: now,
-        changeFrequency: 'weekly' as const,
-        priority: 0.7,
-      },
-      ...subs.map((sub) => ({
-        url: `${base}/igcse/edexcel/drama/${text}/${sub}`,
-        lastModified: now,
-        changeFrequency: 'monthly' as const,
-        priority: 0.6,
-      })),
-    ]),
-
-    // IGCSE Edexcel Prose
-    {
-      url: `${base}/igcse/edexcel/prose`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    ...(
-      [
-        ['of-mice-and-men', ['chapters', 'characters', 'essay-plans', 'key-quotes', 'themes']],
-        ['things-fall-apart', ['characters', 'key-quotes', 'themes']],
-        [
-          'to-kill-a-mockingbird',
-          ['chapters', 'characters', 'context', 'essay-plans', 'key-quotes', 'themes'],
-        ],
-      ] as const
-    ).flatMap(([text, subs]) => [
-      {
-        url: `${base}/igcse/edexcel/prose/${text}`,
-        lastModified: now,
-        changeFrequency: 'weekly' as const,
-        priority: 0.7,
-      },
-      ...subs.map((sub) => ({
-        url: `${base}/igcse/edexcel/prose/${text}/${sub}`,
-        lastModified: now,
-        changeFrequency: 'monthly' as const,
-        priority: 0.6,
-      })),
-    ]),
-
-    // IGCSE Edexcel Shakespeare
-    {
-      url: `${base}/igcse/edexcel/shakespeare`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    ...(
-      [
-        ['macbeth', ['characters', 'context', 'essay-plans', 'plot', 'quotes', 'themes']],
-        ['much-ado', ['characters', 'quotes', 'themes']],
-        ['romeo-and-juliet', ['characters', 'context', 'essay-plans', 'quotes', 'themes']],
-      ] as const
-    ).flatMap(([text, subs]) => [
-      {
-        url: `${base}/igcse/edexcel/shakespeare/${text}`,
-        lastModified: now,
-        changeFrequency: 'weekly' as const,
-        priority: 0.7,
-      },
-      ...subs.map((sub) => ({
-        url: `${base}/igcse/edexcel/shakespeare/${text}/${sub}`,
-        lastModified: now,
-        changeFrequency: 'monthly' as const,
-        priority: 0.6,
-      })),
-    ]),
-
-    // IGCSE Edexcel Poetry - official 4ET1 Anthology Issue 2 (13 poems)
-    {
-      url: `${base}/igcse/edexcel/poetry`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    ...[
-      'an-unknown-girl',
-      'disabled',
-      'half-caste',
-      'if',
-      'la-belle-dame-sans-merci',
-      'out-out',
-      'ozymandias',
-      'remember',
-      'sonnet-116',
-      'still-i-rise',
-      'the-bright-lights-of-sarajevo',
-      'the-tyger',
-      'war-photographer',
-    ].map((poem) => ({
-      url: `${base}/igcse/edexcel/poetry/${poem}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    })),
-    // Orphan IGCSE Edexcel poetry slugs - pages exist but are NOT in the
-    // current 4ET1 Anthology Issue 2. Demoted to priority 0.3 to keep them
-    // discoverable for archived study traffic without promoting in SEO.
-    ...['cousin-kate', 'piano', 'the-man-he-killed'].map((poem) => ({
-      url: `${base}/igcse/edexcel/poetry/${poem}`,
-      lastModified: now,
-      changeFrequency: 'yearly' as const,
-      priority: 0.3,
-    })),
-
-    // IGCSE Edexcel Unseen Poetry
-    {
-      url: `${base}/igcse/edexcel/unseen-poetry`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    ...['approach', 'comparison', 'language-analysis', 'practice', 'structure-form'].map((sub) => ({
-      url: `${base}/igcse/edexcel/unseen-poetry/${sub}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    })),
-
-    // ============================================================
-    // IGCSE - Edexcel Language
-    // ============================================================
-    {
-      url: `${base}/igcse/edexcel-lang`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${base}/igcse/edexcel-lang/anthology`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    // Edexcel IGCSE English Language A (4EA1) - all 10 prescribed Anthology texts
-    ...[
-      '127-hours',
-      'a-game-of-polo-with-a-headless-goat',
-      'a-passage-to-africa',
-      'beyond-the-sky-and-the-earth',
-      'chinese-cinderella',
-      'explorers-or-boys-messing-about',
-      'h-is-for-hawk',
-      'the-danger-of-a-single-story',
-      'the-explorers-daughter',
-      'young-and-dyslexic',
-    ].map((text) => ({
-      url: `${base}/igcse/edexcel-lang/anthology/${text}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    })),
-
-    // ============================================================
-    // IGCSE - Cambridge
-    // ============================================================
-    { url: `${base}/igcse/cambridge`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
-
-    // Cambridge 0500
-    {
-      url: `${base}/igcse/cambridge/0500`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${base}/igcse/cambridge/0500/syllabus`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${base}/igcse/cambridge/0500/vocabulary`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${base}/igcse/cambridge/0500/grade-boundaries`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${base}/igcse/cambridge/0500/comprehension-strategies`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${base}/igcse/cambridge/0500/paper-1`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    ...[
-      'language-analysis',
-      'model-answers',
-      'practice',
-      'reading-techniques',
-      'summary-writing',
-    ].map((sub) => ({
-      url: `${base}/igcse/cambridge/0500/paper-1/${sub}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    })),
-    {
-      url: `${base}/igcse/cambridge/0500/paper-2`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    ...['descriptive-writing', 'directed-writing', 'model-answers', 'narrative-writing'].map(
-      (sub) => ({
-        url: `${base}/igcse/cambridge/0500/paper-2/${sub}`,
-        lastModified: now,
-        changeFrequency: 'monthly' as const,
-        priority: 0.6,
-      }),
-    ),
-
-    // Cambridge 0990
-    {
-      url: `${base}/igcse/cambridge/0990`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    ...[
-      'difference-vs-0500',
-      'grade-5-guide',
-      'grade-7-guide',
-      'grade-9-guide',
-      'grade-conversion',
-      'practice-paper-1',
-      'practice-paper-2',
-      'syllabus',
-    ].map((sub) => ({
-      url: `${base}/igcse/cambridge/0990/${sub}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    })),
-    {
-      url: `${base}/igcse/cambridge/0990/paper-1`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${base}/igcse/cambridge/0990/paper-1/question-types`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${base}/igcse/cambridge/0990/paper-2`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-
-    // Cambridge Composition
-    {
-      url: `${base}/igcse/cambridge/composition`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${base}/igcse/cambridge/composition/mark-scheme`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${base}/igcse/cambridge/composition/sentence-variety`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${base}/igcse/cambridge/composition/vocabulary-upgrade`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${base}/igcse/cambridge/composition/descriptive`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    ...[
-      'extended-metaphors',
-      'model-answers',
-      'practice-prompts',
-      'sensory-language',
-      'structure',
-    ].map((sub) => ({
-      url: `${base}/igcse/cambridge/composition/descriptive/${sub}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    })),
-    {
-      url: `${base}/igcse/cambridge/composition/narrative`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    ...['character', 'dialogue', 'model-answers', 'practice-prompts', 'structure', 'tension'].map(
-      (sub) => ({
-        url: `${base}/igcse/cambridge/composition/narrative/${sub}`,
-        lastModified: now,
-        changeFrequency: 'monthly' as const,
-        priority: 0.6,
-      }),
-    ),
-
-    // Cambridge Reading
-    {
-      url: `${base}/igcse/cambridge/reading`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    ...[
-      'character-introductions',
-      'childrens-classic',
-      'classic-novel-openings',
-      'descriptive-nature',
-      'dialogue-analysis',
-      'modernist-fiction',
-      'narrative-voice',
-      'setting-atmosphere',
-      'travel-writing',
-      'victorian-fiction',
-    ].map((sub) => ({
-      url: `${base}/igcse/cambridge/reading/${sub}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    })),
-
-    // ============================================================
-    // Toolkit
-    // ============================================================
-    // `/toolkit` 308-redirects to `/revision` (src/middleware.ts), so the
-    // index and its sub-routes are intentionally EXCLUDED from the sitemap
-    // (listing a 3xx URL is an SEO anti-pattern). The individual tools are
-    // surfaced from the unified hub at `/revision`.
-
-    // Note: /demo/*, /dashboard/*, and /auth/* are disallowed in robots.ts and
-    // intentionally excluded from the sitemap to avoid "Indexed though blocked"
-    // warnings in Google Search Console.
-
-    // ============================================================
-    // Blog (index)
-    // Article URLs are appended dynamically below from getBlogSlugs().
-    // ============================================================
-    { url: `${base}/blog`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-
-    // ============================================================
-    // Free resources & local-SEO landing pages
-    // Top-level URLs maintained by sibling agents - listed here so they
-    // appear in the sitemap alongside the rest of the site.
-    // ============================================================
-    {
-      url: `${base}/free-resources`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${base}/qatar-igcse-english`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${base}/gcc-igcse-english`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${base}/international-school-igcse-english`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-
-    // ============================================================
-    // Other
-    // ============================================================
-    { url: `${base}/board-select`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${base}/exam-boards`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-
-    // Info & legal pages
-    { url: `${base}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${base}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${base}/sitemap-html`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
-    { url: `${base}/faqs`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
-    { url: `${base}/help`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
-    { url: `${base}/help/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
-    { url: `${base}/help/faq`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
-    { url: `${base}/help/report`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
-    {
-      url: `${base}/help/suggestions`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.4,
-    },
-    { url: `${base}/safeguarding`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
-    {
-      url: `${base}/safeguarding/report`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.4,
-    },
-    // /privacy-policy 308-redirects to /legal/privacy (next.config.js), so
-    // the sitemap lists the real destination, not the redirecting URL.
-    { url: `${base}/legal/privacy`, lastModified: now, changeFrequency: 'monthly', priority: 0.3 },
-    { url: `${base}/terms`, lastModified: now, changeFrequency: 'monthly', priority: 0.3 },
-    { url: `${base}/cookie-policy`, lastModified: now, changeFrequency: 'monthly', priority: 0.3 },
-    { url: `${base}/accessibility`, lastModified: now, changeFrequency: 'monthly', priority: 0.3 },
-    { url: `${base}/refund-policy`, lastModified: now, changeFrequency: 'monthly', priority: 0.3 },
-    {
-      url: `${base}/data-processing`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.3,
-    },
-
-    // Additional pages
-    { url: `${base}/pricing`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
-    {
-      url: `${base}/for-teachers/free-resources`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${base}/for-schools/contact`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    { url: `${base}/affiliates`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
-    {
-      url: `${base}/legal/acceptable-use`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.3,
-    },
-    {
-      url: `${base}/legal/ai-transparency`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.3,
-    },
-    {
-      url: `${base}/legal/cancellation`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.3,
-    },
-    {
-      url: `${base}/legal/complaints`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.3,
-    },
-    {
-      url: `${base}/legal/disclaimer`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.3,
-    },
-    {
-      url: `${base}/legal/privacy-qatar`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.3,
-    },
-    // Note: /legal/safeguarding 308-redirects to /safeguarding (listed above),
-    // so the redirecting URL is intentionally excluded from the sitemap.
-    {
-      url: `${base}/legal/rights`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.3,
-    },
-  ]
-
-  const courseRoutes: MetadataRoute.Sitemap = allCourses.map((course) => ({
-    url: `${base}/courses/${course.id}`,
-    lastModified: now,
-    changeFrequency: 'monthly' as const,
-    priority: 0.8,
-  }))
-
-  // Blog post URLs - discovered at build time by listing every `.mdx`
-  // file under `content/blog/`. Returns an empty array before the first
-  // post lands, which keeps the sitemap valid.
-  const blogPostRoutes: MetadataRoute.Sitemap = getBlogSlugs().map((slug) => ({
-    url: `${base}/blog/${slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly' as const,
-    priority: 0.6,
-  }))
-
-  // KS3 + iLowerSecondary English hub. The /ks3 curriculum routes plus
-  // every iLowerSecondary student-facing page (Pearson Edexcel LEH11).
-  const ks3Paths: string[] = [
-    '/ks3',
-    '/ks3/skills',
-    '/ks3/rubrics',
-    '/ks3/end-of-ks3',
-    '/ks3/ilowersecondary',
-    '/ks3/ilowersecondary/specification',
-    '/ks3/ilowersecondary/exam-format',
-    '/ks3/ilowersecondary/mark-scheme',
-    '/ks3/ilowersecondary/grade-targets',
-    '/ks3/ilowersecondary/about',
-    '/ks3/ilowersecondary/progression',
-    '/ks3/ilowersecondary/for-parents-teachers',
-    '/ks3/ilowersecondary/study-plan',
-    '/ks3/ilowersecondary/model-answers',
-    '/ks3/ilowersecondary/quiz',
-    '/ks3/ilowersecondary/grammar-lab',
-    '/ks3/ilowersecondary/vocabulary',
-    '/ks3/ilowersecondary/reading-skills',
-    '/ks3/ilowersecondary/reading/retrieval',
-    '/ks3/ilowersecondary/reading/inference',
-    '/ks3/ilowersecondary/reading/structure',
-    '/ks3/ilowersecondary/reading/language',
-    '/ks3/ilowersecondary/reading/purpose-viewpoint',
-    '/ks3/ilowersecondary/reading/critical-response',
-    '/ks3/ilowersecondary/reading/comparison',
-    '/ks3/ilowersecondary/reading/grammar-terminology',
-    '/ks3/ilowersecondary/question-types',
-    '/ks3/ilowersecondary/question-types/synonym-vocabulary',
-    '/ks3/ilowersecondary/question-types/short-answer',
-    '/ks3/ilowersecondary/question-types/punctuation-effect',
-    '/ks3/ilowersecondary/question-types/meaning-impact',
-    '/ks3/ilowersecondary/question-types/feature-tables',
-    '/ks3/ilowersecondary/question-types/extended-comparison',
-    '/ks3/ilowersecondary/writing-skills',
-    '/ks3/ilowersecondary/writing/form-audience-purpose',
-    '/ks3/ilowersecondary/writing/structure-organisation',
-    '/ks3/ilowersecondary/writing/sentence-variety',
-    '/ks3/ilowersecondary/writing/vocabulary-cohesion',
-    '/ks3/ilowersecondary/writing/grammar-punctuation-spelling',
-    '/ks3/ilowersecondary/writing/planning-proofreading',
-    '/ks3/ilowersecondary/writing/section-b-task',
-    '/ks3/ilowersecondary/writing-forms/letter-diary',
-    '/ks3/ilowersecondary/writing-forms/narrative-descriptive',
-    '/ks3/ilowersecondary/writing-forms/recount-newsletter-biography',
-    '/ks3/ilowersecondary/text-types',
-    '/ks3/ilowersecondary/text-types/autobiography-biography',
-    '/ks3/ilowersecondary/text-types/blogs-journals',
-    '/ks3/ilowersecondary/text-types/leaflets-brochures-guides',
-    '/ks3/ilowersecondary/text-types/articles',
-    '/ks3/ilowersecondary/text-types/instructions',
-    '/ks3/ilowersecondary/text-types/recount',
-    '/ks3/ilowersecondary/text-types/reports',
-    '/ks3/ilowersecondary/text-types/purposes',
-    '/ks3/ilowersecondary/fiction',
-    '/ks3/ilowersecondary/fiction/genres',
-    '/ks3/ilowersecondary/fiction/narrative-perspective',
-    '/ks3/ilowersecondary/fiction/reading-fiction',
-    '/ks3/ilowersecondary/practice',
-    '/ks3/ilowersecondary/practice/paper-1',
-    '/ks3/ilowersecondary/practice/paper-2',
-    '/ks3/ilowersecondary/practice/paper-3',
-    '/ks3/ilowersecondary/practice/paper-4',
-    '/ks3/ilowersecondary/practice/paper-5',
-    '/ks3/ilowersecondary/practice/paper-6',
-    '/ks3/ilowersecondary/practice/writing-tasks',
-    '/ks3/ilowersecondary/reference/command-words',
-    '/ks3/ilowersecondary/reference/sentence-openers',
-    '/ks3/ilowersecondary/reference/spelling-punctuation',
-    '/ks3/ilowersecondary/reference/connectives',
-  ]
-  const ks3Routes: MetadataRoute.Sitemap = ks3Paths.map((p) => ({
-    url: `${base}${p}`,
-    lastModified: now,
-    changeFrequency: 'monthly' as const,
-    priority: p === '/ks3' || p === '/ks3/ilowersecondary' ? 0.8 : 0.6,
-  }))
-
-  // Standalone games - GCSE/IGCSE plus the EAL & KS3 literacy games.
-  const gameSlugs: string[] = [
-    'theme-matcher',
-    'speed-analysis',
-    'vocabulary-builder',
-    'spelling-bee',
-    'comprehension-challenge',
-    'grade-climber',
-    'quote-detective',
-    // EAL & new-to-English
-    'picture-word-match',
-    'everyday-vocab-flashcards',
-    'article-a-an-the',
-    'plural-builder',
-    'to-be-conjugation',
-    'numbers-and-time',
-    'days-months-seasons',
-    'classroom-objects',
-    'greetings-dialogue',
-    'capital-letter-quest',
-    'tricky-word-spelling',
-    'tense-timeline',
-    'prepositions-of-place',
-    'phrasal-verbs-match',
-    'question-formation',
-    'common-error-fixer',
-    'comparatives-superlatives',
-    'collocations-challenge',
-    // KS3 literacy
-    'word-class-sorter',
-    'punctuation-repair',
-    'apostrophe-ace',
-    'homophone-hero',
-    'sentence-builder',
-    'prefix-suffix-lab',
-    'synonym-shuffle',
-    'spelling-patterns',
-    'reading-detective',
-    'figurative-language-finder',
-    'dictionary-skills',
-    'paragraph-jumble',
-  ]
-  const gameRoutes: MetadataRoute.Sitemap = gameSlugs.map((s) => ({
-    url: `${base}/games/${s}`,
-    lastModified: now,
-    changeFrequency: 'monthly' as const,
-    priority: 0.5,
-  }))
-
-  // ============================================================
-  // EAL - English for Arabic speakers (CEFR A2-C1)
-  // Landing + placement test + 10 topics × 4 banded views +
-  // 4 banded practice sets.
-  // ============================================================
-  const ealCefrSlugs = ['a2', 'b1', 'b2', 'c1'] as const
-  // Only the a2 level page per topic is indexable; b1/b2/c1 level variants
-  // are set to noindex elsewhere, so they are excluded from the sitemap.
-  const ealIndexableLevelSlugs = ['a2'] as const
-  const ealRoutes: MetadataRoute.Sitemap = [
-    { url: `${base}/eal`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
-    {
-      url: `${base}/eal/diagnostic`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    ...ealCefrSlugs.map((l) => ({
-      url: `${base}/eal/practice/mock-exam-${l}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    })),
-    ...EAL.topics.flatMap((topic) => [
-      {
-        url: `${base}/eal/${topic.id}`,
-        lastModified: now,
-        changeFrequency: 'monthly' as const,
-        priority: 0.6,
-      },
-      ...ealIndexableLevelSlugs.map((l) => ({
-        url: `${base}/eal/${topic.id}/level/${l}`,
-        lastModified: now,
-        changeFrequency: 'monthly' as const,
-        priority: 0.5,
-      })),
-    ]),
-  ]
-
-  // IELTS readiness-program lessons - the leveled strategy library served at
-  // /ielts/learn/<skill>/<slug> (route + slug contract: src/lib/ielts/curriculum.ts).
-  // Generated from the authored lesson set so new lessons appear automatically.
-  const ieltsLessonRoutes: MetadataRoute.Sitemap = ALL_LESSONS.map((lesson) => ({
-    url: `${base}/ielts/learn/${lesson.skill}/${lesson.slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly' as const,
-    priority: 0.5,
-  }))
-
-  return [
-    ...staticRoutes,
-    ...courseRoutes,
-    ...blogPostRoutes,
-    ...ks3Routes,
-    ...gameRoutes,
-    ...ealRoutes,
-    ...ieltsLessonRoutes,
-  ]
+  return [...entries.values()]
 }

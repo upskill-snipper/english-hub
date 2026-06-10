@@ -3,6 +3,7 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import EssayTechniqueClient from './client'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/igcse/edexcel/essay-technique' },
   title: 'Essay Technique - Edexcel IGCSE Literature',
   description:
     'Edexcel IGCSE English Literature essay technique: the 3-part introduction, PEEL paragraphs for poetry, embedding quotations and writing high-grade conclusions.',

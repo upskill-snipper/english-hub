@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/igcse/edexcel/prose/things-fall-apart/key-quotes' },
   title: 'Things Fall Apart: Key Quotes - Edexcel IGCSE Literature',
   description:
     "Key quotations from Achebe's Things Fall Apart for Edexcel IGCSE Literature, with analysis of masculinity, colonialism, tradition and change for the exam essay.",

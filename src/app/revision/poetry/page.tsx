@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, BookOpen, Sparkles, Info } from 'lucide-react'
 
@@ -10,6 +11,13 @@ import { t } from '@/lib/i18n/t'
 import { PoetryHubAQAClient } from './PoetryHubAQAClient'
 
 type SearchParams = { wrongBoard?: string }
+
+export const metadata: Metadata = {
+  title: 'GCSE Poetry Anthology Revision',
+  description:
+    'Revise your GCSE poetry anthology by exam board: AQA Power and Conflict, Edexcel, Eduqas and OCR clusters with poem guides, themes and comparisons.',
+  alternates: { canonical: 'https://theenglishhub.app/revision/poetry' },
+}
 
 export default async function PoetryRevisionPage(props: { searchParams?: Promise<SearchParams> }) {
   const searchParams = await props.searchParams

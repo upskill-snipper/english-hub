@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/igcse/edexcel/unseen-poetry/comparison' },
   title: 'Comparison Techniques - Edexcel IGCSE Unseen Poetry',
   description:
     'Compare two unseen poems for Edexcel IGCSE Literature: point-by-point structure, linking phrases for similarity, difference and development, plus pitfalls.',

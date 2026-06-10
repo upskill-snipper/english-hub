@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/igcse/edexcel/poetry/the-man-he-killed' },
   title: 'The Man He Killed (Thomas Hardy) - Edexcel IGCSE Poetry',
   description:
     "Analysis of Hardy's 'The Man He Killed' for the Edexcel IGCSE Literature anthology: the futility of war, with key quotations, colloquial voice and structure.",

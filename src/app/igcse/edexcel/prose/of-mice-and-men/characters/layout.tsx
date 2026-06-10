@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/igcse/edexcel/prose/of-mice-and-men/characters' },
   title: 'Of Mice and Men: Characters - Edexcel IGCSE Literature',
   description:
     "Character analysis for Steinbeck's Of Mice and Men for Edexcel IGCSE Literature: George, Lennie, Curley's wife, Candy, Crooks and Slim, with key quotations.",

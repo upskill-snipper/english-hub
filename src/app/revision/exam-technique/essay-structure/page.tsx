@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
@@ -9,6 +10,15 @@ import {
 } from '@/components/revision/BoardSpecificExamTechnique'
 
 import EssayStructureView from './essay-structure-view'
+
+export const metadata: Metadata = {
+  title: 'GCSE English Essay Structure Guide',
+  description:
+    'Learn how to structure GCSE English essays with board-specific guidance on introductions, paragraphs and conclusions that hit the assessment objectives.',
+  alternates: {
+    canonical: 'https://theenglishhub.app/revision/exam-technique/essay-structure',
+  },
+}
 
 export default async function EssayStructurePage() {
   const board = await getServerBoard()

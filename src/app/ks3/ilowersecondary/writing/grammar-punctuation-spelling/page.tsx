@@ -13,6 +13,7 @@ const WAO2 = ASSESSMENT_OBJECTIVES.WAO2
 const SKILL_2_3 = WRITING_SKILLS.find((s) => s.code === '2.3')!
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/ks3/ilowersecondary/writing/grammar-punctuation-spelling' },
   title: 'Grammar, punctuation & spelling (WAO2) - convey meaning accurately',
   description:
     `A masterclass on ${WAO2.code}: ${WAO2.descriptor} Learn sentence ` +

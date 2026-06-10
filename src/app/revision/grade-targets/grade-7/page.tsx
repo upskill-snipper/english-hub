@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import {
   ArrowLeft,
   ArrowRight,
@@ -106,6 +107,13 @@ function getExampleForBoard(setTexts: SetText[]): EssayExample | null {
 }
 
 /* ── Page ─────────────────────────────────────────────────────────────── */
+
+export const metadata: Metadata = {
+  title: 'How to Get a Grade 7 in GCSE English',
+  description:
+    'Push to a Grade 7 in GCSE English with thoughtful, developed analysis: the skills examiners reward and the habits that lift answers into the top bands.',
+  alternates: { canonical: 'https://theenglishhub.app/revision/grade-targets/grade-7' },
+}
 
 export default async function Grade7Page() {
   const board = await getServerBoard()

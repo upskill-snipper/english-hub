@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/igcse/edexcel/poetry/still-i-rise' },
   title: 'Still I Rise (Maya Angelou) - Edexcel IGCSE Poetry',
   description:
     "Analysis of Angelou's 'Still I Rise' for the Edexcel IGCSE Literature anthology: resilience, pride and oppression, with key quotations, repetition and tone.",

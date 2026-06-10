@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/igcse/edexcel/unseen-poetry/practice' },
   title: 'Practice Poems - Edexcel IGCSE Unseen Poetry',
   description:
     'Practise unseen poetry for Edexcel IGCSE Literature with annotated poems, exam-style questions, model openings and analysis notes for reading and writing.',

@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
@@ -6,6 +7,13 @@ import { getSetTextsForBoard } from '@/lib/board/set-texts'
 import { t } from '@/lib/i18n/t'
 
 import TextsRevisionView from './texts-view'
+
+export const metadata: Metadata = {
+  title: 'Set Texts | GCSE English Literature Revision',
+  description:
+    'Browse every GCSE English Literature set text we cover, from Macbeth to A Christmas Carol, with board labels and a dedicated revision guide for each.',
+  alternates: { canonical: 'https://theenglishhub.app/revision/texts' },
+}
 
 export default async function TextsRevisionPage() {
   const board = await getServerBoard()

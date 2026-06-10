@@ -75,7 +75,13 @@ export async function updateSession(request: NextRequest) {
   // /practice is likewise left public. If individual /practice pages turn out to depend on a
   // user session at runtime, add guards inside those pages rather than re-gating the whole route.
   const protectedRoutes = ['/dashboard', '/account', '/admin', '/affiliates/dashboard', '/school']
-  const isProtected = protectedRoutes.some((route) => request.nextUrl.pathname.startsWith(route))
+  // Segment-aware matching: a bare startsWith('/school') also captured the
+  // PUBLIC marketing pages /schools and /school-pilot, auth-walling them for
+  // every anonymous visitor and for Googlebot (they 307'd to /auth/login).
+  const isProtected = protectedRoutes.some(
+    (route) =>
+      request.nextUrl.pathname === route || request.nextUrl.pathname.startsWith(route + '/'),
+  )
 
   // Allow unauthenticated access to invite pages so users can see invite details before logging in
   const publicSchoolRoutes = ['/school/invite']
