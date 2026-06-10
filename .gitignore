@@ -48,3 +48,8 @@ google-play-service-account.json
 
 # External audit pack (reference only, not committed)
 external-audit-pack/
+
+# Agent-fleet artifacts (D:/AI-Agent-Server) — never commit to the site repo.
+__pycache__/
+*.pyc
+/*.py
