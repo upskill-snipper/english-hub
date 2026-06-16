@@ -3,7 +3,29 @@ import Link from 'next/link'
 import { GradeTabs } from '@/components/model-answers/GradeTabs'
 import { GradeBadge, GradeSummary } from '@/components/model-answers/GradeComponents'
 import { GRADE_LEVELS } from '@/components/model-answers/grade-data'
+import { LockedContent } from '@/components/paywall/LockedContent'
 import { tMany } from '@/lib/i18n/t'
+import { createServerSupabaseClient } from '@/lib/supabase/server'
+import { hasActiveSubscription } from '@/lib/course-access'
+
+/* ─── Entitlement gate ───────────────────────────────────────── */
+// GCSE model answers are gated by the global subscription/trial flag (NOT the
+// separate IELTS entitlement). Resolved server-side; anonymous + Googlebot
+// fall through to `false` and see only the free teaser grade band.
+async function resolveHasAccess(): Promise<boolean> {
+  try {
+    const supabase = createServerSupabaseClient()
+    const {
+      data: { user },
+    } = await supabase.auth.getUser()
+    if (user) {
+      return await hasActiveSubscription(supabase, user.id)
+    }
+  } catch {
+    // Signed out / auth unavailable → no access.
+  }
+  return false
+}
 
 /* ─── Metadata ───────────────────────────────────────────────── */
 
@@ -119,6 +141,7 @@ export default async function CreativeWritingModelAnswersPage() {
     'study.skills.ma.cw.label.task',
     'study.skills.common.examiner_commentary',
   ])
+  const hasAccess = await resolveHasAccess()
   return (
     <>
       {/* Hero */}
@@ -202,9 +225,11 @@ export default async function CreativeWritingModelAnswersPage() {
                 </p>
               </div>
 
-              <GradeTabs defaultGrade={9}>
+              <GradeTabs defaultGrade={hasAccess ? 9 : 3}>
                 {{
-                  9: (
+                  9: !hasAccess ? (
+                    <LockedContent label="the Grade 5, 7 and 9 model answers" />
+                  ) : (
                     <>
                       <div className="mb-4 flex items-center gap-3">
                         <GradeBadge grade="Grade 9 (Exceptional)" color="bg-primary" />
@@ -293,7 +318,9 @@ export default async function CreativeWritingModelAnswersPage() {
                     </>
                   ),
 
-                  7: (
+                  7: !hasAccess ? (
+                    <LockedContent label="the Grade 5, 7 and 9 model answers" />
+                  ) : (
                     <>
                       <div className="mb-4 flex items-center gap-3">
                         <GradeBadge grade="Grade 7 (Strong)" color="bg-green-600" />
@@ -374,7 +401,9 @@ export default async function CreativeWritingModelAnswersPage() {
                     </>
                   ),
 
-                  5: (
+                  5: !hasAccess ? (
+                    <LockedContent label="the Grade 5, 7 and 9 model answers" />
+                  ) : (
                     <>
                       <div className="mb-4 flex items-center gap-3">
                         <GradeBadge grade="Grade 5 (Solid)" color="bg-amber-500" />
@@ -516,9 +545,11 @@ export default async function CreativeWritingModelAnswersPage() {
                 </p>
               </div>
 
-              <GradeTabs defaultGrade={9}>
+              <GradeTabs defaultGrade={hasAccess ? 9 : 3}>
                 {{
-                  9: (
+                  9: !hasAccess ? (
+                    <LockedContent label="the Grade 5, 7 and 9 model answers" />
+                  ) : (
                     <>
                       <div className="mb-4 flex items-center gap-3">
                         <GradeBadge grade="Grade 9 (Exceptional)" color="bg-primary" />
@@ -614,7 +645,9 @@ export default async function CreativeWritingModelAnswersPage() {
                     </>
                   ),
 
-                  7: (
+                  7: !hasAccess ? (
+                    <LockedContent label="the Grade 5, 7 and 9 model answers" />
+                  ) : (
                     <>
                       <div className="mb-4 flex items-center gap-3">
                         <GradeBadge grade="Grade 7 (Strong)" color="bg-green-600" />
@@ -687,7 +720,9 @@ export default async function CreativeWritingModelAnswersPage() {
                     </>
                   ),
 
-                  5: (
+                  5: !hasAccess ? (
+                    <LockedContent label="the Grade 5, 7 and 9 model answers" />
+                  ) : (
                     <>
                       <div className="mb-4 flex items-center gap-3">
                         <GradeBadge grade="Grade 5 (Solid)" color="bg-amber-500" />

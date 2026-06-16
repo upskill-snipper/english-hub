@@ -7,7 +7,41 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { LockedContent } from '@/components/paywall/LockedContent'
 import { t } from '@/lib/i18n/t'
+import { createServerSupabaseClient } from '@/lib/supabase/server'
+import { hasActiveSubscription } from '@/lib/course-access'
+
+// 2026-06-08 paywall — force per-request rendering. Without this the page
+// is statically generated (generateStaticParams below), so resolveHasAccess
+// runs ONCE at build time where getUser() has no cookies → its try/catch
+// swallows the "Dynamic server usage" throw and bakes hasAccess=false into
+// the static HTML. A paying subscriber would then be served the cached
+// LOCKED version. force-dynamic evaluates the entitlement per request, so
+// subscribers see the full essay and anonymous/lapsed users see the teaser
+// + lock. SEO is preserved — the SSR HTML still contains the crawlable
+// teaser paragraphs. generateStaticParams is retained as the valid-slug
+// allow-list (unknown slugs still 404).
+export const dynamic = 'force-dynamic'
+
+/* ─── Entitlement gate ───────────────────────────────────────── */
+// Model essays are GCSE premium content, gated by the global subscription/trial
+// flag (NOT the separate IELTS entitlement). Resolved server-side; anonymous +
+// Googlebot fall through to `false` and see only the free teaser paragraphs.
+async function resolveHasAccess(): Promise<boolean> {
+  try {
+    const supabase = createServerSupabaseClient()
+    const {
+      data: { user },
+    } = await supabase.auth.getUser()
+    if (user) {
+      return await hasActiveSubscription(supabase, user.id)
+    }
+  } catch {
+    // Signed out / auth unavailable → no access.
+  }
+  return false
+}
 
 /* ─── Types (mirror sibling data files) ────────────────────────── */
 
@@ -126,16 +160,18 @@ function isTextKey(s: string): s is TextKey {
 }
 
 /* ─── Static params ────────────────────────────────────────────── */
-
-export async function generateStaticParams() {
-  const all = await Promise.all(
-    ALL_TEXT_KEYS.map(async (text) => {
-      const essays = await loadEssaysFor(text)
-      return essays.map((e) => ({ text, slug: e.slug }))
-    }),
-  )
-  return all.flat()
-}
+//
+// 2026-06-08 paywall: generateStaticParams was REMOVED. With it present,
+// Next 15 prerenders every slug as static HTML (the `●` build symbol)
+// even alongside `export const dynamic = 'force-dynamic'`, which baked
+// hasAccess=false into the cached HTML and served paying subscribers a
+// paywall on content they had unlocked. Removing it makes the route
+// unambiguously per-request dynamic (`ƒ`), so the entitlement is
+// evaluated against the real session on every request. Invalid slugs are
+// still 404'd by the `if (!essay) notFound()` guard in the page below
+// (dynamicParams defaults to true, so any slug renders then resolves to
+// notFound() when no matching essay exists). SEO is unaffected — the
+// page is server-rendered with the crawlable teaser on every request.
 
 /* ─── Metadata ─────────────────────────────────────────────────── */
 
@@ -185,6 +221,15 @@ export default async function ModelEssayPage({
   const essay = essays.find((e) => e.slug === slug)
 
   if (!essay) notFound()
+
+  const hasAccess = await resolveHasAccess()
+  // Teaser slice: show ~30% of the annotated paragraphs (at least the first one)
+  // to everyone — anonymous visitors and crawlers included — then lock the rest
+  // behind the paywall for non-subscribers. Subscribers see every paragraph.
+  const totalParagraphs = essay.paragraphs.length
+  const teaserCount = hasAccess ? totalParagraphs : Math.max(1, Math.ceil(totalParagraphs * 0.3))
+  const visibleParagraphs = essay.paragraphs.slice(0, teaserCount)
+  const lockedCount = totalParagraphs - teaserCount
 
   const textLabel = TEXT_LABELS[text]
   const breadcrumbItems = [
@@ -286,9 +331,14 @@ export default async function ModelEssayPage({
 
         {/* ── Paragraphs ────────────────────────────────────── */}
         <section aria-label="Annotated essay" className="space-y-6">
-          {essay.paragraphs.map((p, i) => (
+          {visibleParagraphs.map((p, i) => (
             <ParagraphRow key={i} index={i} paragraph={p} />
           ))}
+          {lockedCount > 0 && (
+            <LockedContent
+              label={`the remaining ${lockedCount} annotated paragraph${lockedCount === 1 ? '' : 's'}`}
+            />
+          )}
         </section>
 
         {/* ── Footer / back link ────────────────────────────── */}
