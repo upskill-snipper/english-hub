@@ -32,6 +32,7 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
+import { hasIeltsAccess } from '@/lib/course-access'
 import { rateLimit } from '@/lib/rate-limit'
 import { checkMinorAIConsent } from '@/lib/consent-check'
 import { contentSafetyCheck } from '@/lib/content-safety'
@@ -103,6 +104,21 @@ export async function POST(request: NextRequest) {
     if (aiOptedOut) {
       return forbiddenResponse(
         'AI features are currently disabled for your account. To re-enable AI marking, visit your privacy settings or ask a parent/guardian to update your preferences.',
+      )
+    }
+
+    // 4b. IELTS entitlement (2026-06-08 paywall, audit H2). IELTS Writing
+    //     Task 2 marking is billable and part of the paid IELTS plan
+    //     (mirrors /api/ielts/writing-feedback). This was previously gated
+    //     ONLY by the G-LIVE launch flag below — which fails closed today,
+    //     masking the gap. The moment G-LIVE flips on, every authenticated
+    //     user (free / never-subscribed / lapsed) would get free IELTS WT2
+    //     marking. Gate on a live IELTS entitlement here so it holds
+    //     independently of the launch flag.
+    const hasIelts = await hasIeltsAccess(supabase, user.id)
+    if (!hasIelts) {
+      return forbiddenResponse(
+        'IELTS Writing Task 2 marking is part of the IELTS plan. Start your free trial to continue.',
       )
     }
 

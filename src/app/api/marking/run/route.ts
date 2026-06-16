@@ -24,6 +24,7 @@ import type Anthropic from '@anthropic-ai/sdk'
 import { getAnthropicClient, ANTHROPIC_MODEL } from '@/lib/anthropic-client'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { verifySchoolMember } from '@/lib/school-auth'
+import { hasActiveSubscription } from '@/lib/course-access'
 import { rateLimit } from '@/lib/rate-limit'
 import {
   badRequestResponse,
@@ -106,6 +107,19 @@ export async function POST(request: NextRequest) {
     if (row.source === 'b2c_self') {
       if (row.student_id !== user.id) {
         return forbiddenResponse('You can only run marking on your own submission.')
+      }
+      // 2026-06-08 paywall (audit H1): AI marking is billable. This branch
+      // previously trusted ownership alone, so a user who created a
+      // submission while on a paid plan and then lapsed could keep POSTing
+      // their leftover pending submissionId and consume paid AI marking
+      // (up to the 30/day rate limit) indefinitely. Gate on a live
+      // subscription / trial here. b2b_class stays governed by
+      // verifySchoolMember in the else-branch (school seat = entitlement).
+      const isPremium = await hasActiveSubscription(supabase, user.id)
+      if (!isPremium) {
+        return forbiddenResponse(
+          'AI marking is a Premium feature. Start your free trial to continue.',
+        )
       }
     } else {
       // b2b_class - caller must be an accepted member of the row's school.
