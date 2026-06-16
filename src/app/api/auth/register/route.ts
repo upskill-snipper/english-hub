@@ -56,8 +56,9 @@ import * as Sentry from '@sentry/nextjs'
 import { z, ZodError } from 'zod'
 import { Prisma } from '@prisma/client'
 import { prisma } from '@/lib/prisma'
-import { createServerSupabaseClient } from '@/lib/supabase/server'
+import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { rateLimit } from '@/lib/rate-limit'
+import { PRICING } from '@/constants/pricing'
 
 export const dynamic = 'force-dynamic'
 
@@ -260,6 +261,76 @@ export async function POST(request: NextRequest) {
       // upserts the defaults into the relevant settings tables, then
       // call it here gated on `isMinor && age < 16`.
       // if (isMinor && age < 16) await applyChildDefaults(created.id)
+
+      // ── 8. Provision the 7-day free trial (2026-06-08 Option C paywall) ──
+      //
+      // The web entitlement gates read `profiles.subscription_status === 'pro'`
+      // (see src/lib/course-access.ts), while the mobile app reads the Prisma
+      // `Subscription` row (src/lib/entitlements.ts). To make "sign up → 7-day
+      // trial → pay" actually grant access on BOTH surfaces, we write both,
+      // mirroring exactly what the Stripe webhook does for a Stripe-managed
+      // trial (webhook/route.ts: profiles.subscription_status='pro' +
+      // subscription_end_date; prisma.subscription.upsert status=TRIALING).
+      //
+      // Safety rules:
+      //   • Idempotent — the Prisma upsert no-ops its `update` branch, so a
+      //     retry (or a returning user with a real paid sub) is never
+      //     clobbered.
+      //   • Never downgrade — we only set the profile to the trial when its
+      //     current subscription_status is empty / 'free'. An existing
+      //     'pro' / 'active' / 'past_due' user is left untouched, so an
+      //     idempotent re-POST can never shorten a paid period.
+      //   • Best-effort — a trial-write failure is logged but never fails
+      //     registration (the user still gets their account; the trial can
+      //     be reconciled later).
+      try {
+        const now = new Date()
+        const trialEnd = new Date(now.getTime() + PRICING.TRIAL_DAYS * 24 * 60 * 60 * 1000)
+
+        // Mobile-parity Subscription row. upsert keyed on userId @unique;
+        // empty update branch = do not touch an existing row.
+        await prisma.subscription.upsert({
+          where: { userId: created.id },
+          create: {
+            userId: created.id,
+            plan: 'MONTHLY',
+            status: 'TRIALING',
+            currentPeriodStart: now,
+            currentPeriodEnd: trialEnd,
+            platform: 'WEB',
+            isTeacherPlan: role === 'TEACHER',
+          },
+          update: {},
+        })
+
+        // Web-gate truth source. Only grant the trial if the profile is not
+        // already in a paid/known state — never downgrade.
+        const svc = createServiceRoleClient()
+        const { data: existingProfile } = await svc
+          .from('profiles')
+          .select('subscription_status')
+          .eq('id', authUser.id)
+          .single()
+        const current = existingProfile?.subscription_status
+        const isFreshOrFree = !current || current === 'free'
+        if (isFreshOrFree) {
+          const { error: trialErr } = await svc
+            .from('profiles')
+            .update({
+              subscription_status: 'pro',
+              subscription_end_date: trialEnd.toISOString(),
+            })
+            .eq('id', authUser.id)
+          if (trialErr) {
+            console.error('[api/auth/register] trial profile write failed:', trialErr)
+            Sentry.captureException(trialErr, { tags: { area: 'trial-provisioning' } })
+          }
+        }
+      } catch (trialError) {
+        // Never block account creation on a trial-provisioning error.
+        console.error('[api/auth/register] trial provisioning failed:', trialError)
+        Sentry.captureException(trialError, { tags: { area: 'trial-provisioning' } })
+      }
 
       return NextResponse.json(created, { status: 201 })
     } catch (dbError) {

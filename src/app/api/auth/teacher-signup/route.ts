@@ -34,8 +34,9 @@ import * as Sentry from '@sentry/nextjs'
 import { z, ZodError } from 'zod'
 import { Prisma, ExamBoard } from '@prisma/client'
 import { prisma } from '@/lib/prisma'
-import { createServerSupabaseClient } from '@/lib/supabase/server'
+import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { rateLimit } from '@/lib/rate-limit'
+import { PRICING } from '@/constants/pricing'
 
 export const dynamic = 'force-dynamic'
 
@@ -199,6 +200,55 @@ export async function POST(request: NextRequest) {
           isMinor: true,
         },
       })
+
+      // 7-day free trial provisioning (2026-06-08 Option C paywall). Same
+      // dual-write + safety rules as /api/auth/register (see that route for
+      // the full rationale): mirror the Stripe-webhook trial pattern so the
+      // teacher gets working access on web (profiles.subscription_status
+      // ='pro') and mobile (Prisma TRIALING row). Idempotent, never
+      // downgrades an existing paid teacher, best-effort (never blocks
+      // account creation). isTeacherPlan=true so mobile entitlements expose
+      // teacher_tools during the trial.
+      try {
+        const now = new Date()
+        const trialEnd = new Date(now.getTime() + PRICING.TRIAL_DAYS * 24 * 60 * 60 * 1000)
+        await prisma.subscription.upsert({
+          where: { userId: created.id },
+          create: {
+            userId: created.id,
+            plan: 'MONTHLY',
+            status: 'TRIALING',
+            currentPeriodStart: now,
+            currentPeriodEnd: trialEnd,
+            platform: 'WEB',
+            isTeacherPlan: true,
+          },
+          update: {},
+        })
+        const svc = createServiceRoleClient()
+        const { data: existingProfile } = await svc
+          .from('profiles')
+          .select('subscription_status')
+          .eq('id', authUser.id)
+          .single()
+        const current = existingProfile?.subscription_status
+        if (!current || current === 'free') {
+          const { error: trialErr } = await svc
+            .from('profiles')
+            .update({
+              subscription_status: 'pro',
+              subscription_end_date: trialEnd.toISOString(),
+            })
+            .eq('id', authUser.id)
+          if (trialErr) {
+            console.error('[api/auth/teacher-signup] trial profile write failed:', trialErr)
+            Sentry.captureException(trialErr, { tags: { area: 'trial-provisioning' } })
+          }
+        }
+      } catch (trialError) {
+        console.error('[api/auth/teacher-signup] trial provisioning failed:', trialError)
+        Sentry.captureException(trialError, { tags: { area: 'trial-provisioning' } })
+      }
 
       return NextResponse.json(created, { status: 201 })
     } catch (dbError) {
