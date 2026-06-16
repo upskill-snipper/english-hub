@@ -74,7 +74,30 @@ export async function updateSession(request: NextRequest) {
   //
   // /practice is likewise left public. If individual /practice pages turn out to depend on a
   // user session at runtime, add guards inside those pages rather than re-gating the whole route.
-  const protectedRoutes = ['/dashboard', '/account', '/admin', '/affiliates/dashboard', '/school']
+  // 2026-06-08 — Option C paywall, wave 1. Personal "doing" routes with
+  // ZERO SEO value are added here so anonymous visitors must sign in
+  // (and start their free trial) to use them:
+  //   /revision/study-plan  - personal AI study planner
+  //   /revision/analytics   - personal progress dashboard
+  //   /toolkit              - teacher content-generation tools
+  // The crawlable content routes (/revision/texts/**, /revision/poetry/**,
+  // /revision/language, /revision/exam-technique, /revision/grade-targets,
+  // /practice, /mock-exams index, /games, /learn previews) deliberately
+  // STAY public — see the long note above for the SEO rationale. The
+  // interactive ACTIONS inside those pages (AI marking, quiz scoring,
+  // mock submission) are gated server-side via the entitlements API in a
+  // later wave, so Googlebot still crawls the page while the action
+  // itself prompts sign-in.
+  const protectedRoutes = [
+    '/dashboard',
+    '/account',
+    '/admin',
+    '/affiliates/dashboard',
+    '/school',
+    '/revision/study-plan',
+    '/revision/analytics',
+    '/toolkit',
+  ]
   // Segment-aware matching: a bare startsWith('/school') also captured the
   // PUBLIC marketing pages /schools and /school-pilot, auth-walling them for
   // every anonymous visitor and for Googlebot (they 307'd to /auth/login).

@@ -909,17 +909,17 @@ export default function FreeResourcesPage() {
           <h2 className="text-2xl font-bold mb-2">{tr(`Ready to Transform Your Teaching?`)}</h2>
           <p className="text-muted-foreground max-w-xl mx-auto mb-8">
             Get full access to every lesson plan, worksheet, teaching guide, AI essay marking, and
-            student progress tracking. Demo 3 free uses without a card - paid plans start with a
-            7-day free trial (card required, cancel before day 7).
+            student progress tracking. Start a 7-day free trial — no card required — then continue
+            for a small monthly or annual fee.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button render={<Link href="/auth/teacher-register" />} size="lg">
               Start Your Free Week
             </Button>
-            <Button render={<Link href="/for-teachers" />} variant="outline" size="lg">
+            <Button render={<Link href="/teachers" />} variant="outline" size="lg">
               See All Plans
             </Button>
-            <Button render={<Link href="/for-schools" />} variant="ghost" size="lg">
+            <Button render={<Link href="/schools" />} variant="ghost" size="lg">
               Founding Schools Programme
             </Button>
           </div>

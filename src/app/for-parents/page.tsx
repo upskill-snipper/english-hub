@@ -452,7 +452,7 @@ export default async function ForParentsPage() {
                   <span className="text-muted-foreground">/month</span>
                 </div>
                 <p className="text-sm text-emerald-400 font-semibold mt-1">
-                  {PRICING.TRIAL_TEXT} &middot; card required &middot; cancel before day 7
+                  {PRICING.TRIAL_TEXT} &middot; no card required &middot; sign up in seconds
                 </p>
               </div>
 

@@ -117,10 +117,15 @@ export const PRICING = {
   SCHOOL_CURRENCY: '£',
 
   // ── Trial ───────────────────────────────────────────────────────────
+  // 2026-06-08 — Option C paywall. Trial flipped to NO-CARD so visitors
+  // can sample the full product after a frictionless sign-up; payment
+  // is collected only when the trial ends and they choose to continue.
+  // Card-up-front materially depresses first-touch sign-up conversion,
+  // which is the exact funnel we are trying to open.
   TRIAL_DAYS: 7,
   TRIAL_TEXT: '7-day free trial',
-  TRIAL_REQUIRES_CARD: true,
-  TRIAL_HEADLINE: '7-day free trial · card required · cancel anytime before day 7',
+  TRIAL_REQUIRES_CARD: false,
+  TRIAL_HEADLINE: '7-day free trial · no card required · sign up in seconds',
 
   // ── Plan structure flags ────────────────────────────────────────────
   MONTHLY_PLAN_ENABLED: true,
