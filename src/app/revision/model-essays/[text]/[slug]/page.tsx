@@ -12,16 +12,17 @@ import { t } from '@/lib/i18n/t'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { hasActiveSubscription } from '@/lib/course-access'
 
-// 2026-06-08 paywall — force per-request rendering. Without this the page
-// is statically generated (generateStaticParams below), so resolveHasAccess
-// runs ONCE at build time where getUser() has no cookies → its try/catch
-// swallows the "Dynamic server usage" throw and bakes hasAccess=false into
-// the static HTML. A paying subscriber would then be served the cached
-// LOCKED version. force-dynamic evaluates the entitlement per request, so
-// subscribers see the full essay and anonymous/lapsed users see the teaser
-// + lock. SEO is preserved — the SSR HTML still contains the crawlable
-// teaser paragraphs. generateStaticParams is retained as the valid-slug
-// allow-list (unknown slugs still 404).
+// 2026-06-08 paywall — force per-request rendering. The entitlement
+// (hasAccess) must be evaluated against the real request session, never
+// baked at build time. This page used to be statically generated via
+// generateStaticParams; that prerendered hasAccess=false into the cached
+// HTML (getUser() has no cookies at build, and resolveHasAccess's
+// try/catch swallowed the "Dynamic server usage" throw), so a paying
+// subscriber was served a cached LOCKED page. generateStaticParams has
+// been removed (see the note where it used to live) and this flag makes
+// the route dynamic, so subscribers see the full essay and anonymous /
+// lapsed users see the teaser + lock. SEO is preserved — the SSR HTML
+// still contains the crawlable teaser paragraphs on every request.
 export const dynamic = 'force-dynamic'
 
 /* ─── Entitlement gate ───────────────────────────────────────── */
