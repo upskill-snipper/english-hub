@@ -55,12 +55,26 @@ const captureVersionsMock = vi.fn(async (..._args: unknown[]) => ({
   rubricVersionId: null,
 }))
 
-vi.mock('@/lib/supabase/server', () => ({
-  createServerSupabaseClient: () => ({
-    auth: { getUser: async () => ({ data: { user: session.user }, error: session.error }) },
-  }),
-  createServiceRoleClient: () => ({ __svc: true }),
-}))
+// The b2c_self branch now gates on hasActiveSubscription (2026-06-08 paywall),
+// which reads supabase.from('profiles').select('subscription_status').eq().single().
+// Give the mock a chainable .from() returning a 'pro' profile so the entitlement
+// check passes — these tests exercise the state/authorisation contract, not the
+// paywall (the paywall is covered by the gate-logic audit + course-access tests).
+vi.mock('@/lib/supabase/server', () => {
+  const profileBuilder = {
+    select: () => profileBuilder,
+    eq: () => profileBuilder,
+    single: async () => ({ data: { subscription_status: 'pro' }, error: null }),
+    maybeSingle: async () => ({ data: { subscription_status: 'pro' }, error: null }),
+  }
+  return {
+    createServerSupabaseClient: () => ({
+      auth: { getUser: async () => ({ data: { user: session.user }, error: session.error }) },
+      from: () => profileBuilder,
+    }),
+    createServiceRoleClient: () => ({ __svc: true }),
+  }
+})
 vi.mock('@/lib/rate-limit', () => ({
   rateLimit: async () => rlResult,
   getClientIp: () => '127.0.0.1',

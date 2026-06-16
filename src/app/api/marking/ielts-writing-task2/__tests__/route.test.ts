@@ -133,12 +133,39 @@ const FAKE_OUTCOME = {
   },
 }
 
+/**
+ * A mocked server-supabase client whose `.from('profiles')` chain resolves to an
+ * entitled profile (pro + IELTS active), so the step-4b `hasIeltsAccess` gate
+ * passes and each test reaches the link it is actually exercising. The 401 test
+ * overrides this with a null-user client (short-circuits at auth, never reaches 4b).
+ */
+function entitledSupabaseClient(user: { id: string } | null) {
+  const profileBuilder = {
+    select: () => profileBuilder,
+    eq: () => profileBuilder,
+    single: async () => ({
+      data: { subscription_status: 'pro', ielts_status: 'active' },
+      error: null,
+    }),
+    maybeSingle: async () => ({
+      data: { subscription_status: 'pro', ielts_status: 'active' },
+      error: null,
+    }),
+  }
+  return {
+    auth: { getUser: vi.fn().mockResolvedValue({ data: { user }, error: null }) },
+    from: () => profileBuilder,
+  } as unknown as ReturnType<typeof createServerSupabaseClient>
+}
+
 beforeEach(() => {
   vi.clearAllMocks()
   // Happy-path gate chain by default (each individual test breaks one link).
-  mockedSupabase.mockReturnValue({
-    auth: { getUser: vi.fn().mockResolvedValue({ data: { user: { id: 'user_1' } }, error: null }) },
-  } as unknown as ReturnType<typeof createServerSupabaseClient>)
+  // Step 4b now gates on hasIeltsAccess, which reads
+  // supabase.from('profiles').select('subscription_status, ielts_status').eq().single().
+  // The default client returns an entitled profile so the gate chain proceeds to
+  // the link each test is actually exercising (G-LIVE / rate-limit / engine).
+  mockedSupabase.mockReturnValue(entitledSupabaseClient({ id: 'user_1' }))
   mockedConsent.mockResolvedValue({ allowed: true } as Awaited<
     ReturnType<typeof checkMinorAIConsent>
   >)

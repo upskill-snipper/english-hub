@@ -102,7 +102,27 @@ async function loadEssaysFor(key: TextKey): Promise<ModelEssay[]> {
       mod?.[`${camelKey(key)}ModelEssays`],
     ]
     const arr = candidates.find((c) => Array.isArray(c))
-    return Array.isArray(arr) ? (arr as ModelEssay[]) : []
+    if (!Array.isArray(arr)) return []
+    // Sibling data files are inconsistent: macbeth.ts uses `slug`/`targetGrade`/
+    // `title`, while the other four use `id`/`grade`/`topic`. The detail page
+    // (`[text]/[slug]/page.tsx`) normalises the same way; mirror it here so the
+    // index card links (`/revision/model-essays/<text>/<slug>`) resolve to a real
+    // page instead of `/undefined`. Drop any entry that still lacks a slug.
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return (
+      (arr as any[])
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        .map((e: any) => ({
+          slug: typeof e?.slug === 'string' && e.slug.length > 0 ? e.slug : e?.id,
+          title: e?.title ?? e?.topic,
+          text: e?.text,
+          paragraphs: Array.isArray(e?.paragraphs) ? e.paragraphs : [],
+          targetGrade: e?.targetGrade ?? e?.grade,
+          wordCount: e?.wordCount,
+          keyTechniques: Array.isArray(e?.keyTechniques) ? e.keyTechniques : [],
+        }))
+        .filter((e) => typeof e.slug === 'string' && e.slug.length > 0) as ModelEssay[]
+    )
   } catch {
     return []
   }

@@ -283,13 +283,15 @@ export default function EALHubPage() {
             <Sparkles className="mr-1 size-3" aria-hidden="true" />
             <span dir="auto">{tx('mkt.eal.hero.badge')}</span>
           </Badge>
-          <h1
+          {/* Sub-hero (learner-facing). Demoted to <h2>: the institutional
+              hero above carries the page's single <h1> (one-H1 SEO contract). */}
+          <h2
             id="eal-hero-heading"
             className="text-display-sm font-heading text-foreground sm:text-display"
             dir="auto"
           >
             {tx('mkt.eal.hero.heading')}
-          </h1>
+          </h2>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground" dir="auto">
             {tx('mkt.eal.hero.lead')}
           </p>

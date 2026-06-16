@@ -35,12 +35,23 @@ export const metadata: Metadata = {
     siteName: 'The English Hub',
     type: 'website',
     locale: 'en_GB',
+    images: [
+      {
+        url: '/api/og?title=Structured+English+for+EAL+learners&subtitle=With+a+bilingual+CEFR+placement+test',
+        width: 1200,
+        height: 630,
+        alt: 'Structured English support for EAL learners - The English Hub',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Structured English support for EAL learners - The English Hub',
     description:
       'Structured EAL support with teacher visibility and progress reporting, plus a bilingual CEFR placement test.',
+    images: [
+      '/api/og?title=Structured+English+for+EAL+learners&subtitle=With+a+bilingual+CEFR+placement+test',
+    ],
   },
 }
 

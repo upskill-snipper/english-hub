@@ -176,6 +176,8 @@ export const PRICING_DISPLAY = {
   annual: `£${PRICING.STUDENT_ANNUAL}/year`,
   /** @deprecated Retained for call sites that previously read `monthly`. */
   monthly: `£${PRICING.STUDENT_MONTHLY}/month`,
-  trialText: `${PRICING.TRIAL_TEXT} · card required`,
+  // Derived from TRIAL_REQUIRES_CARD so the card/no-card phrasing can never drift
+  // from the actual trial config (2026-06-08 Option C flipped this to no-card).
+  trialText: `${PRICING.TRIAL_TEXT} · ${PRICING.TRIAL_REQUIRES_CARD ? 'card required' : 'no card required'}`,
   promoBanner: `Use code ${PRICING.AFFILIATE_PROMO_CODE} - annual plan £${PRICING.STUDENT_ANNUAL_WITH_CODE} (save £${PRICING.STUDENT_ANNUAL_SAVINGS})`,
 } as const
