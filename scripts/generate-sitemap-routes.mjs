@@ -34,6 +34,7 @@ const REDIRECT_SOURCES = new Set([
   '/igcse/cambridge/0990/syllabus',
   '/revision/texts/127-hours', '/resources/revision-notes/127-hours',
   '/legal/safeguarding', '/legal/privacy-qatar-supplement',
+  '/help/faq', // server-side redirect shell to /faqs (canonical -> /faqs)
   '/toolkit',
   // In-page redirect() stubs (return 307 with no body).
   '/ks3/ilowersecondary/reading', '/ks3/ilowersecondary/writing',

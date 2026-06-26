@@ -558,175 +558,175 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
   },
   {
     slug: ['inspector-calls', 'a-chain-of-events-meaning'],
-    title: 'We are members of one body - meaning',
+    title: 'A chain of events - meaning',
     description:
       'GCSE analysis of "a chain of events" in An Inspector Calls. Causality, collective guilt, dramatic structure and Grade 9 marker commentary.',
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'a-man-has-to-make-his-own-way'],
-    title: 'Community and all that nonsense',
+    title: 'A man has to make his own way',
     description:
       'Analysis of Arthur Birling\'s "a man has to make his own way" speech in An Inspector Calls. Capitalism, individualism, and dramatic irony explained.',
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'age-theme-analysis'],
-    title: 'Sheila Birling - character analysis',
+    title: 'Age theme - An Inspector Calls',
     description:
       "GCSE analysis of the age theme in An Inspector Calls. Young vs old, who changes, why it matters and Priestley's generational argument.",
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'arthur-birling-character-analysis'],
-    title: 'A man has to make his own way',
+    title: 'Arthur Birling - character analysis',
     description:
       "Full GCSE character analysis of Arthur Birling in An Inspector Calls. Capitalism, dramatic irony, class and Priestley's satirical target.",
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'class-theme-analysis'],
-    title: 'Girls of that class - meaning',
+    title: 'Class theme - An Inspector Calls',
     description:
       'GCSE analysis of the class theme in An Inspector Calls. Edwardian hierarchy, capital vs labour, Birling, Croft, Eva Smith and Grade 9 tips.',
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'community-and-all-that-nonsense'],
-    title: 'A man has to make his own way',
+    title: 'Community and all that nonsense',
     description:
       'Analysis of Birling\'s "community and all that nonsense" in An Inspector Calls. What the line shows about capitalism, dismissal, and Priestley\'s satire.',
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'cranks-walking-out-meaning'],
-    title: 'A man has to make his own way',
+    title: 'Cranks walking out - meaning',
     description:
       'GCSE analysis of Birling\'s "cranks walking out" in An Inspector Calls. Contempt for socialism, dramatic irony and marker commentary.',
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'eric-birling-character-analysis'],
-    title: 'Sheila Birling - character analysis',
+    title: 'Eric Birling - character analysis',
     description:
       'Full GCSE character analysis of Eric Birling in An Inspector Calls. Guilt, alcohol, masculinity, moral growth and Grade 9 essay tips.',
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'fire-and-blood-and-anguish-meaning'],
-    title: 'We are members of one body - meaning',
+    title: 'Fire and blood and anguish - meaning',
     description:
       'What "fire and blood and anguish" means in An Inspector Calls: biblical imagery, WWI context, triadic structure and Grade 9 GCSE analysis.',
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'gender-theme-analysis'],
-    title: 'Sheila Birling - character analysis',
+    title: 'Gender theme - An Inspector Calls',
     description:
       'GCSE analysis of the gender theme in An Inspector Calls. Patriarchy, Sheila, Eva, Mrs Birling and Grade 9 marker commentary.',
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'girls-of-that-class-meaning'],
-    title: 'She asked for the earth',
+    title: 'Girls of that class - meaning',
     description:
       'Analysis of Mrs Birling\'s "girls of that class" in An Inspector Calls. Class prejudice, Eva Smith and Grade 9 GCSE commentary.',
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'how-to-write-grade-9-inspector-calls-essay'],
-    title: 'Social responsibility - theme',
+    title: 'How to write a Grade 9 An Inspector Calls essay',
     description:
       'Step-by-step guide to writing a Grade 9 An Inspector Calls essay. Thesis, planning, integrated quotation, context and marker tips from The English Hub.',
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'i-wasnt-in-any-way-responsible'],
-    title: 'Girls of that class - meaning',
+    title: "I wasn't in any way responsible - meaning",
     description:
       "GCSE analysis of Mrs Birling's \"I wasn't in any way responsible\" in An Inspector Calls. Denial, guilt and Priestley's moral critique.",
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'inspector-goole-character-analysis'],
-    title: "The Inspector's stage directions",
+    title: 'Inspector Goole - character analysis',
     description:
       'Full GCSE character analysis of Inspector Goole in An Inspector Calls. Name, stage directions, speech, dramatic function and Grade 9 essay tips.',
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'its-better-to-ask-for-the-earth'],
-    title: 'She asked for the earth',
+    title: "It's better to ask for the earth - meaning",
     description:
       'GCSE analysis of the Inspector\'s "it\'s better to ask for the earth than to take it" in An Inspector Calls. Rhetorical reversal and Grade 9 commentary.',
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'millions-and-millions-of-eva-smiths'],
-    title: 'Fire and blood and anguish - meaning',
+    title: 'Millions and millions of Eva Smiths - meaning',
     description:
       'GCSE analysis of "millions and millions of Eva Smiths and John Smiths" in An Inspector Calls. Universality, socialism and marker commentary.',
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'port-the-governor-used-to-send'],
-    title: 'A man has to make his own way',
+    title: 'Port the governor used to send - meaning',
     description:
       "GCSE analysis of Birling's port boast in An Inspector Calls - status, class, and Priestley's satire of the Edwardian middle class.",
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'priestley-socialism-context'],
-    title: 'Social responsibility - theme',
+    title: "Priestley's socialism - context",
     description:
       "Context for An Inspector Calls: J. B. Priestley's socialism, 1912 vs 1945, the welfare state, WWI and WWII, and why Grade 9 essays need this.",
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'public-men-have-responsibilities'],
-    title: 'A man has to make his own way',
+    title: 'Public men have responsibilities - meaning',
     description:
       'GCSE analysis of Inspector Goole\'s "public men have responsibilities as well as privileges" speech in An Inspector Calls.',
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'she-asked-for-the-earth'],
-    title: "It's better to ask for the earth",
+    title: 'She asked for the earth - meaning',
     description:
       'GCSE analysis of Mrs Birling\'s "she asked for the earth" line in An Inspector Calls. Class contempt, hyperbole and marker commentary.',
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'sheila-birling-character-analysis'],
-    title: 'Eric Birling - character analysis',
+    title: 'Sheila Birling - character analysis',
     description:
       'Full GCSE character analysis of Sheila Birling in An Inspector Calls. Moral growth, gender, generational change and Grade 9 essay tips.',
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'social-responsibility-theme'],
-    title: 'We are members of one body - meaning',
+    title: 'Social responsibility theme - An Inspector Calls',
     description:
       "GCSE analysis of the social responsibility theme in An Inspector Calls. Priestley's thesis, the Inspector, the Birlings and Grade 9 essay tips.",
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'the-inspector-stage-directions'],
-    title: 'We are members of one body - meaning',
+    title: "The Inspector's stage directions - analysis",
     description:
       'Analysis of the Inspector\'s stage directions in An Inspector Calls: "massiveness, solidity and purposefulness" - meaning, effect, and Grade 9 GCSE commentary.',
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'we-are-members-of-one-body-meaning'],
-    title: 'Fire and blood and anguish - meaning',
+    title: 'We are members of one body - meaning',
     description:
       'Meaning, context and analysis of "We are members of one body" from An Inspector Calls. Religious imagery, collective responsibility and Grade 9 GCSE analysis.',
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'we-dont-live-alone'],
-    title: 'We are members of one body - meaning',
+    title: "We don't live alone - meaning",
     description:
       'GCSE analysis of the Inspector\'s "we don\'t live alone" in An Inspector Calls. Social responsibility, plural pronouns and marker commentary.',
     category: 'inspector-calls',

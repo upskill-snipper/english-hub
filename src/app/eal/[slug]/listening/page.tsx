@@ -53,7 +53,18 @@ export default async function EALListeningPage({ params }: { params: Promise<{ s
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
+  const topic = findEALTopic(slug)
+  // 2026-06 de-index fix: this route previously returned only a title and
+  // inherited the /eal section canonical, so Google folded it into /eal and
+  // dropped it. Emit a self-referential canonical (mirrors speaking/page.tsx)
+  // plus a topic-specific title + description.
+  const title = topic ? `${topic.title.en} - Listening practice` : 'EAL Listening practice'
+  const description = topic
+    ? `Listening comprehension practice on "${topic.title.en}" for EAL learners at ${topic.cefr}, supporting Arabic speakers preparing for GCSE and IGCSE English.`
+    : 'Listening comprehension practice for EAL learners preparing for GCSE and IGCSE English.'
   return {
-    title: `EAL ${slug} - Listening`,
+    title,
+    description,
+    alternates: { canonical: `https://theenglishhub.app/eal/${slug}/listening` },
   }
 }
