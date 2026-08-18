@@ -350,12 +350,24 @@ export async function POST(request: NextRequest) {
     } catch (aiError: unknown) {
       const err = aiError as { message?: string; status?: number; error?: { type?: string } }
 
+      // Surface the real failure class in Vercel runtime logs. Without this the
+      // audit-log write below is the only record of WHY the AI failed - and it
+      // is fire-and-forget (and itself fails when the DB pool is exhausted), so
+      // every AI failure otherwise collapses into an opaque 503 with nothing to
+      // diagnose. This one line is what makes "is the ANTHROPIC_API_KEY live?"
+      // answerable from the logs: 401 = bad/rotated key, 404 = model retired or
+      // no access, 429 = provider overloaded. (No secrets or user text logged.)
+      const errorClass = err.error?.type ?? (err.status ? `http_${err.status}` : 'anthropic_error')
+      console.error(
+        `[ielts/diagnostic-assess] AI call failed: class=${errorClass} status=${err.status ?? 'n/a'} model=${ANTHROPIC_MODEL}`,
+      )
+
       void logAiDecision({
         ...aiAuditBase,
         requestStartedAt: aiRequestStartedAt,
         responseFinishedAt: new Date(),
         success: false,
-        errorClass: err.error?.type ?? (err.status ? `http_${err.status}` : 'anthropic_error'),
+        errorClass,
         errorMessage: typeof err.message === 'string' ? err.message.slice(0, 300) : null,
       })
 
