@@ -45,6 +45,9 @@ type ToolkitSectionDef = {
   tagKey?: string
 }
 
+// Tag honesty: 'ai_powered' is reserved for tools whose API genuinely calls
+// a model. The test builder is a deterministic question-bank engine
+// (api/toolkit/generate-test has no AI call), so it carries no AI tag.
 const AI_TOOL_DEFS: ToolkitSectionDef[] = [
   {
     titleKey: 'toolkit.ai.test_builder.title',
@@ -53,7 +56,7 @@ const AI_TOOL_DEFS: ToolkitSectionDef[] = [
     icon: PenTool,
     colour: 'text-violet-500',
     bgColour: 'bg-violet-500/10',
-    tagKey: 'toolkit.tag.ai_powered',
+    tagKey: 'toolkit.tag.question_bank',
   },
   {
     titleKey: 'toolkit.ai.revision_notes.title',

@@ -31,9 +31,11 @@ import {
   type QuizHistoryEntry,
 } from '@/components/toolkit/toolkit-types'
 
-// ─── AI Test Builder ──────────────────────────────────────────────────────
-// Student selects topic and question count, then generates a test
-// via the API. They take it inline and see their results with GCSE grade.
+// ─── Question Bank Test Builder ───────────────────────────────────────────
+// Student selects topic and question count, then builds a test from the
+// deterministic question-bank API (/api/toolkit/generate-test - template
+// engine, NO AI call; never badge or title this tool as AI-powered).
+// They take it inline and see their results with GCSE grade.
 //
 // Note: there is no Foundation/Higher selector - the question bank is the
 // same and the student's answers determine the grade band via

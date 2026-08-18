@@ -19,7 +19,6 @@ import {
   ChevronLeft,
   ChevronRight,
   GraduationCap,
-  BarChart3,
   Target,
   Sparkles,
   BookOpen,
@@ -59,7 +58,11 @@ interface ExamQuestion {
   sourceText?: string
   isMultipleChoice?: boolean
   options?: string[]
-  correctOption?: number
+  /**
+   * Indices into `options` that are correct. Multiple choice is the only
+   * question type the app can genuinely mark, and only when this is present.
+   */
+  correctOptions?: number[]
   markScheme?: string[]
   modelAnswer?: string
 }
@@ -267,7 +270,8 @@ const EXAM_PAPERS: Record<string, ExamPaperData> = {
           'Some of the desks were shared between two children.',
           'The writer felt immediately welcomed by the staff.',
         ],
-        correctOption: -1,
+        // B, D, G, H per the mark scheme below
+        correctOptions: [1, 3, 6, 7],
         sourceText: `Source A: From a 2019 newspaper article about education in rural communities.\n\nI arrived at the small village school on a Tuesday morning, just as the bell was ringing. The building sat at the edge of the village, its red brick walls softened by years of ivy. Inside, the single classroom held roughly twenty-five children of various ages, all sharing wooden desks that had been worn smooth by generations of use. Large windows flooded the room with pale morning light, looking out over a courtyard rather than the surrounding fields. The head teacher, Mrs Patterson, had been a fixture of the village for fifteen years. She greeted me warmly, as did the two teaching assistants who bustled about organising exercise books. The children wore no uniforms -- just everyday clothes, many hand-me-downs by the look of them.`,
         markScheme: [
           'B: The school was located in a rural village (TRUE)',
@@ -686,36 +690,16 @@ function useExamTimer(durationMinutes: number, isRunning: boolean) {
   }
 }
 
-// ─── Grade Calculator ───────────────────────────────────────────────────────
+// ─── Multiple-choice marking ────────────────────────────────────────────────
+// The only genuinely markable question type. One mark per correctly selected
+// option; wrong selections earn nothing. Written answers are never scored by
+// the app - they are self-marked against the mark scheme on the results view.
 
-function calculateGrade(score: number, boundaries: GradeBoundary[]): number {
-  const sorted = [...boundaries].sort((a, b) => b.minMarks - a.minMarks)
-  for (const boundary of sorted) {
-    if (score >= boundary.minMarks) {
-      return boundary.grade
-    }
-  }
-  return 0
-}
-
-function getGradeColor(grade: number) {
-  if (grade >= 7) return 'text-teal-800'
-  if (grade >= 5) return 'text-amber-700'
-  return 'text-red-600'
-}
-
-function getGradeBg(grade: number) {
-  if (grade >= 7) return 'bg-teal-50 border-teal-200'
-  if (grade >= 5) return 'bg-amber-50 border-amber-200'
-  return 'bg-red-50 border-red-200'
-}
-
-function getGradeLabelKey(grade: number): string {
-  if (grade >= 7) return 'mock.grade_label_excellent'
-  if (grade >= 5) return 'mock.grade_label_good_pass'
-  if (grade >= 4) return 'mock.grade_label_standard_pass'
-  if (grade >= 1) return 'mock.grade_label_below_pass'
-  return 'mock.grade_label_ungraded'
+function markMultipleChoice(question: ExamQuestion, selections: number[]): number | null {
+  if (!question.isMultipleChoice || !question.correctOptions) return null
+  const correct = new Set(question.correctOptions)
+  const earned = selections.filter((s) => correct.has(s)).length
+  return Math.min(earned, question.marks)
 }
 
 // ─── Intro Phase ────────────────────────────────────────────────────────────
@@ -1022,7 +1006,11 @@ function ExamView({
   onQuit,
 }: {
   paper: ExamPaperData
-  onSubmit: (answers: string[], mcSelections: Record<number, number[]>) => void
+  onSubmit: (
+    answers: string[],
+    mcSelections: Record<number, number[]>,
+    elapsedSeconds: number,
+  ) => void
   onQuit: () => void
 }) {
   const t = useT()
@@ -1073,8 +1061,8 @@ function ExamView({
   }, [answers, mcSelections, paper.questions])
 
   const handleSubmit = useCallback(() => {
-    onSubmit(answers, mcSelections)
-  }, [answers, mcSelections, onSubmit])
+    onSubmit(answers, mcSelections, paper.timeMinutes * 60 - timer.secondsRemaining)
+  }, [answers, mcSelections, onSubmit, paper.timeMinutes, timer.secondsRemaining])
 
   // Auto-submit when time expires
   useEffect(() => {
@@ -1262,48 +1250,38 @@ function ResultsView({
   paper,
   answers,
   mcSelections,
+  elapsedSeconds,
   onRetry,
 }: {
   paper: ExamPaperData
   answers: string[]
   mcSelections: Record<number, number[]>
+  elapsedSeconds: number
   onRetry: () => void
 }) {
   const t = useT()
-  // Calculate a rough estimated score based on answer length and MC correctness
-  const estimatedScore = useMemo(() => {
-    let score = 0
-    paper.questions.forEach((q, i) => {
-      if (q.isMultipleChoice) {
-        // For MC questions, we can't truly grade without a full answer key
-        // Give partial marks based on selections
-        const selections = mcSelections[i] ?? []
-        score += Math.min(selections.length, q.marks)
-      } else {
-        const wordCount = answers[i].split(/\s+/).filter(Boolean).length
-        if (wordCount === 0) return
 
-        // Rough heuristic: proportion of marks based on response length
-        if (q.marks <= 8) {
-          // Short questions: decent answer is 50-150 words
-          const ratio = Math.min(wordCount / 100, 1)
-          score += Math.round(q.marks * ratio * 0.7)
-        } else if (q.marks <= 20) {
-          // Medium questions: decent answer is 150-400 words
-          const ratio = Math.min(wordCount / 300, 1)
-          score += Math.round(q.marks * ratio * 0.65)
-        } else {
-          // Long questions: decent answer is 300-800 words
-          const ratio = Math.min(wordCount / 500, 1)
-          score += Math.round(q.marks * ratio * 0.6)
-        }
-      }
-    })
-    return Math.min(score, paper.totalMarks)
-  }, [answers, mcSelections, paper])
+  // Neutral facts only: what the student did, never a mark for written work.
+  const totalWords = useMemo(
+    () =>
+      paper.questions.reduce((sum, q, i) => {
+        if (q.isMultipleChoice) return sum
+        return sum + answers[i].split(/\s+/).filter(Boolean).length
+      }, 0),
+    [answers, paper.questions],
+  )
 
-  const grade = calculateGrade(estimatedScore, paper.gradeBoundaries)
-  const percentage = Math.round((estimatedScore / paper.totalMarks) * 100)
+  const answeredCount = useMemo(
+    () =>
+      paper.questions.filter((q, i) =>
+        q.isMultipleChoice
+          ? (mcSelections[i]?.length ?? 0) > 0
+          : answers[i].split(/\s+/).filter(Boolean).length > 0,
+      ).length,
+    [answers, mcSelections, paper.questions],
+  )
+
+  const elapsedMinutes = Math.max(1, Math.round(elapsedSeconds / 60))
   const isLanguage = paper.paperType === 'language'
 
   return (
@@ -1319,84 +1297,46 @@ function ResultsView({
         />
 
         <CardContent className="pt-8 pb-8">
-          {/* Hero result */}
+          {/* Hero: paper complete, self-assessment frame - no fabricated grade */}
           <div className="text-center mb-8">
-            <div
-              className="inline-flex items-center justify-center h-24 w-24 rounded-2xl border-2 mb-4"
-              style={{
-                borderColor:
-                  grade >= 7
-                    ? 'rgb(52,211,153)'
-                    : grade >= 5
-                      ? 'rgb(251,191,36)'
-                      : 'rgb(248,113,113)',
-                background:
-                  grade >= 7
-                    ? 'rgba(16,185,129,0.1)'
-                    : grade >= 5
-                      ? 'rgba(245,158,11,0.1)'
-                      : 'rgba(239,68,68,0.1)',
-              }}
-            >
-              <span className={cn('text-5xl font-bold', getGradeColor(grade))}>{grade}</span>
+            <div className="inline-flex items-center justify-center h-16 w-16 rounded-2xl border-2 border-primary/30 bg-primary/10 mb-4">
+              <CheckCircle2 className="h-8 w-8 text-primary" />
             </div>
-            <h2 className="text-2xl font-bold text-foreground mb-1">
-              {t(getGradeLabelKey(grade))}
-            </h2>
-            <p className="text-muted-foreground">
-              {t('mock.estimated_grade_for')} {paper.paperName}
-            </p>
+            <h2 className="text-2xl font-bold text-foreground mb-1">{t('mock.results_title')}</h2>
+            <p className="text-muted-foreground">{paper.paperName}</p>
           </div>
 
           <Separator className="mb-8" />
 
-          {/* Stats grid */}
+          {/* Neutral stats: facts about the attempt, not marks */}
           <div className="grid grid-cols-3 gap-4 mb-8">
             <div className="text-center p-4 rounded-xl bg-muted/30 border border-border/40">
-              <p className="text-2xl font-bold text-foreground">{estimatedScore}</p>
-              <p className="text-xs text-muted-foreground mt-1">
-                {t('mock.of')} {paper.totalMarks} {t('marking.mark_plural')}
-              </p>
+              <p className="text-2xl font-bold text-foreground">{totalWords}</p>
+              <p className="text-xs text-muted-foreground mt-1">{t('mock.words_written')}</p>
             </div>
             <div className="text-center p-4 rounded-xl bg-muted/30 border border-border/40">
-              <p className="text-2xl font-bold text-foreground">{percentage}%</p>
-              <p className="text-xs text-muted-foreground mt-1">{t('mock.percentage')}</p>
+              <p className="text-2xl font-bold text-foreground">
+                {elapsedMinutes} {t('mock.minutes_short')}
+              </p>
+              <p className="text-xs text-muted-foreground mt-1">{t('mock.time_taken')}</p>
             </div>
             <div className="text-center p-4 rounded-xl bg-muted/30 border border-border/40">
-              <p className={cn('text-2xl font-bold', getGradeColor(grade))}>
-                {t('mock.grade')} {grade}
+              <p className="text-2xl font-bold text-foreground">
+                {answeredCount}/{paper.questions.length}
               </p>
-              <p className="text-xs text-muted-foreground mt-1">{t('mock.gcse_grade')}</p>
+              <p className="text-xs text-muted-foreground mt-1">{t('mock.answered')}</p>
             </div>
           </div>
 
-          {/* Grade boundaries reference */}
-          <div className="mb-8">
-            <h3 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
-              <BarChart3 className="h-4 w-4 text-primary" />
-              {t('mock.grade_boundaries')}
+          {/* How to mark this paper - the honest frame */}
+          <div className="rounded-xl border border-primary/20 bg-primary/5 p-4 mb-8">
+            <h3 className="font-semibold text-primary mb-2 flex items-center gap-2">
+              <Sparkles className="h-4 w-4" />
+              {t('mock.self_mark_title')}
             </h3>
-            <div className="grid grid-cols-9 gap-1">
-              {paper.gradeBoundaries.map(({ grade: g, minMarks }) => (
-                <div
-                  key={g}
-                  className={cn(
-                    'rounded-lg p-2 text-center border transition-all',
-                    g === grade ? 'ring-2 ring-primary ring-offset-1 ring-offset-background' : '',
-                    g >= 7
-                      ? 'bg-teal-50 border-teal-200'
-                      : g >= 5
-                        ? 'bg-amber-50 border-amber-200'
-                        : 'bg-muted border-border',
-                  )}
-                >
-                  <div className={cn('text-sm font-bold', getGradeColor(g))}>{g}</div>
-                  <div className="text-[10px] text-muted-foreground mt-0.5">
-                    {minMarks}/{paper.totalMarks}
-                  </div>
-                </div>
-              ))}
-            </div>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              {t('mock.self_mark_body')}
+            </p>
           </div>
 
           {/* Question breakdown */}
@@ -1408,9 +1348,9 @@ function ResultsView({
             <div className="space-y-3">
               {paper.questions.map((q, i) => {
                 const wordCount = answers[i].split(/\s+/).filter(Boolean).length
-                const hasAnswer = q.isMultipleChoice
-                  ? (mcSelections[i]?.length ?? 0) > 0
-                  : wordCount > 0
+                const selections = mcSelections[i] ?? []
+                const hasAnswer = q.isMultipleChoice ? selections.length > 0 : wordCount > 0
+                const mcMarks = markMultipleChoice(q, selections)
 
                 return (
                   <div
@@ -1435,9 +1375,11 @@ function ResultsView({
                       </p>
                       <p className="text-xs text-muted-foreground">
                         {q.isMultipleChoice
-                          ? `${mcSelections[i]?.length ?? 0} ${t('mock.options_selected')}`
+                          ? mcMarks !== null
+                            ? `${mcMarks}/${q.marks} ${t('marking.mark_plural')} - ${t('mock.mc_auto_marked')}`
+                            : `${selections.length} ${t('mock.options_selected')}`
                           : hasAnswer
-                            ? `${wordCount} ${t('mock.words_written')}`
+                            ? `${wordCount} ${t('mock.words_written')} - ${t('mock.self_marked_label')}`
                             : t('mock.no_response')}
                       </p>
                     </div>
@@ -1449,17 +1391,6 @@ function ResultsView({
                 )
               })}
             </div>
-          </div>
-
-          {/* Note about grading */}
-          <div className="rounded-xl border border-primary/20 bg-primary/5 p-4 mb-8">
-            <h3 className="font-semibold text-primary mb-2 flex items-center gap-2">
-              <Sparkles className="h-4 w-4" />
-              {t('mock.about_estimate')}
-            </h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              {t('mock.about_estimate_body')}
-            </p>
           </div>
 
           {/* Marking guide / model answers section */}
@@ -1560,6 +1491,7 @@ export default function ExamPage({ params }: { params: Promise<{ id: string }> }
   const [phase, setPhase] = useState<ExamPhase>('intro')
   const [submittedAnswers, setSubmittedAnswers] = useState<string[]>([])
   const [submittedMcSelections, setSubmittedMcSelections] = useState<Record<number, number[]>>({})
+  const [submittedElapsedSeconds, setSubmittedElapsedSeconds] = useState(0)
 
   if (!paper) {
     return <PaperNotFound />
@@ -1569,9 +1501,14 @@ export default function ExamPage({ params }: { params: Promise<{ id: string }> }
     setPhase('exam')
   }
 
-  const handleSubmit = (answers: string[], mcSelections: Record<number, number[]>) => {
+  const handleSubmit = (
+    answers: string[],
+    mcSelections: Record<number, number[]>,
+    elapsedSeconds: number,
+  ) => {
     setSubmittedAnswers(answers)
     setSubmittedMcSelections(mcSelections)
+    setSubmittedElapsedSeconds(elapsedSeconds)
     setPhase('results')
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
@@ -1599,6 +1536,7 @@ export default function ExamPage({ params }: { params: Promise<{ id: string }> }
           paper={paper}
           answers={submittedAnswers}
           mcSelections={submittedMcSelections}
+          elapsedSeconds={submittedElapsedSeconds}
           onRetry={handleRetry}
         />
       )

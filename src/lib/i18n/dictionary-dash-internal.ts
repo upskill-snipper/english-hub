@@ -132,11 +132,15 @@ export const DASH_INTERNAL_DICTIONARY: Dictionary = {
     es: 'Panel de notas bloqueado',
   },
   'dashboard.grades.locked.body': {
-    en: 'Complete at least 5 practice tests or assessments to unlock your Grade Dashboard.',
-    ar: 'خلّص ٥ تدريبات أو تقييمات على الأقل عشان تفتح لوحة الدرجات.',
-    es: 'Completa al menos 5 pruebas de práctica o evaluaciones para desbloquear tu panel de notas.',
+    en: 'Complete at least 3 course assessments to unlock your Grade Dashboard. Predicted grades here are only ever based on real assessment scores.',
+    ar: 'خلّص ٣ تقييمات كورسات على الأقل عشان تفتح لوحة الدرجات. الدرجات المتوقعة هنا تنبني بس على درجات تقييم حقيقية.',
+    es: 'Completa al menos 3 evaluaciones de curso para desbloquear tu panel de notas. Las notas previstas aquí se basan únicamente en puntuaciones de evaluación reales.',
   },
-  'dashboard.grades.locked.progress': { en: 'Progress', ar: 'التقدم', es: 'Progreso' },
+  'dashboard.grades.locked.progress': {
+    en: 'Assessments completed',
+    ar: 'التقييمات اللي خلّصتها',
+    es: 'Evaluaciones completadas',
+  },
   'dashboard.grades.locked.practice': {
     en: 'Practice Questions',
     ar: 'أسئلة تدريب',

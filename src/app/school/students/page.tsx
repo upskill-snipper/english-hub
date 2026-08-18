@@ -23,7 +23,7 @@ import {
   Hash,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { percentageToGCSEGrade, gcseGradeColor, isGCSEYearGroup } from '@/lib/grades'
+import { percentageToGCSEGrade, gcseGradeColor } from '@/lib/grades'
 import { useT } from '@/lib/i18n/use-t'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -56,7 +56,7 @@ interface Student {
   yearGroup: string
   className: string | null
   lastActive: string | null
-  progress: number
+  progress: number | null
   status: StudentStatus
 }
 
@@ -64,193 +64,36 @@ interface Student {
 
 const YEAR_GROUPS = ['Year 7', 'Year 8', 'Year 9', 'Year 10', 'Year 11', 'Year 12', 'Year 13']
 
-const MOCK_CLASSES = [
-  '7A',
-  '7B',
-  '8A',
-  '8B',
-  '9A',
-  '9B',
-  '10A',
-  '10B',
-  '11A',
-  '11B',
-  '11C',
-  '12A',
-  '13A',
-]
-
 const PAGE_SIZE = 25
 
-// ── Mock data ──────────────────────────────────────────────────────────────────
+// ── API row shape (GET /api/school/students returns { students: [...] }) ──────
 
-const MOCK_STUDENTS: Student[] = [
-  {
-    id: '1',
-    firstName: 'Oliver',
-    lastName: 'Bennett',
-    email: 'o.bennett@school.edu',
-    yearGroup: 'Year 10',
-    className: '10B',
-    lastActive: new Date(Date.now() - 2 * 864e5).toISOString(),
-    progress: 72,
-    status: 'active',
-  },
-  {
-    id: '2',
-    firstName: 'Amara',
-    lastName: 'Osei',
-    email: 'a.osei@school.edu',
-    yearGroup: 'Year 9',
-    className: '9A',
-    lastActive: new Date(Date.now() - 0).toISOString(),
-    progress: 88,
-    status: 'active',
-  },
-  {
-    id: '3',
-    firstName: 'Lucas',
-    lastName: 'Fernandez',
-    email: 'l.fernandez@school.edu',
-    yearGroup: 'Year 10',
-    className: '10B',
-    lastActive: null,
-    progress: 12,
-    status: 'inactive',
-  },
-  {
-    id: '4',
-    firstName: 'Chloe',
-    lastName: 'Walsh',
-    email: 'c.walsh@school.edu',
-    yearGroup: 'Year 11',
-    className: '11C',
-    lastActive: new Date(Date.now() - 2 * 864e5).toISOString(),
-    progress: 61,
-    status: 'active',
-  },
-  {
-    id: '5',
-    firstName: 'Fatima',
-    lastName: 'Al-Rashid',
-    email: 'f.alrashid@school.edu',
-    yearGroup: 'Year 9',
-    className: '9A',
-    lastActive: new Date(Date.now() - 0).toISOString(),
-    progress: 95,
-    status: 'active',
-  },
-  {
-    id: '6',
-    firstName: 'Thomas',
-    lastName: 'Griffiths',
-    email: 't.griffiths@school.edu',
-    yearGroup: 'Year 11',
-    className: '11C',
-    lastActive: new Date(Date.now() - 5 * 864e5).toISOString(),
-    progress: 34,
-    status: 'suspended',
-  },
-  {
-    id: '7',
-    firstName: 'Ethan',
-    lastName: 'Clarke',
-    email: 'e.clarke@school.edu',
-    yearGroup: 'Year 10',
-    className: '10A',
-    lastActive: new Date(Date.now() - 1 * 864e5).toISOString(),
-    progress: 58,
-    status: 'active',
-  },
-  {
-    id: '8',
-    firstName: 'Sophie',
-    lastName: 'Turner',
-    email: 's.turner@school.edu',
-    yearGroup: 'Year 12',
-    className: '12A',
-    lastActive: new Date(Date.now() - 3 * 864e5).toISOString(),
-    progress: 81,
-    status: 'active',
-  },
-  {
-    id: '9',
-    firstName: 'Jayden',
-    lastName: 'Okafor',
-    email: 'j.okafor@school.edu',
-    yearGroup: 'Year 8',
-    className: '8B',
-    lastActive: null,
-    progress: 5,
-    status: 'inactive',
-  },
-  {
-    id: '10',
-    firstName: 'Isla',
-    lastName: 'MacLeod',
-    email: 'i.macleod@school.edu',
-    yearGroup: 'Year 7',
-    className: '7A',
-    lastActive: new Date(Date.now() - 0).toISOString(),
-    progress: 43,
-    status: 'active',
-  },
-  {
-    id: '11',
-    firstName: 'Reuben',
-    lastName: 'Fletcher',
-    email: 'r.fletcher@school.edu',
-    yearGroup: 'Year 13',
-    className: '13A',
-    lastActive: new Date(Date.now() - 7 * 864e5).toISOString(),
-    progress: 77,
-    status: 'active',
-  },
-  {
-    id: '12',
-    firstName: 'Mei',
-    lastName: 'Zhang',
-    email: 'm.zhang@school.edu',
-    yearGroup: 'Year 9',
-    className: '9B',
-    lastActive: new Date(Date.now() - 14 * 864e5).toISOString(),
-    progress: 50,
-    status: 'active',
-  },
-  {
-    id: '13',
-    firstName: 'Aaron',
-    lastName: 'Patel',
-    email: 'a.patel@school.edu',
-    yearGroup: 'Year 11',
-    className: '11A',
-    lastActive: new Date(Date.now() - 1 * 864e5).toISOString(),
-    progress: 67,
-    status: 'active',
-  },
-  {
-    id: '14',
-    firstName: 'Niamh',
-    lastName: "O'Brien",
-    email: 'n.obrien@school.edu',
-    yearGroup: 'Year 10',
-    className: '10A',
-    lastActive: new Date(Date.now() - 21 * 864e5).toISOString(),
-    progress: 29,
-    status: 'inactive',
-  },
-  {
-    id: '15',
-    firstName: 'Callum',
-    lastName: 'Reid',
-    email: 'c.reid@school.edu',
-    yearGroup: 'Year 8',
-    className: '8A',
-    lastActive: new Date(Date.now() - 0).toISOString(),
-    progress: 91,
-    status: 'active',
-  },
-]
+interface ApiStudentRow {
+  id: string
+  user_id: string | null
+  full_name: string | null
+  email: string
+  year_group: string | null
+  invite_status: string | null
+  last_active_at: string | null
+}
+
+function mapStudentRow(row: ApiStudentRow): Student {
+  const parts = (row.full_name ?? '').trim().split(/\s+/).filter(Boolean)
+  return {
+    id: row.id,
+    firstName: parts[0] ?? row.email,
+    lastName: parts.slice(1).join(' '),
+    email: row.email,
+    yearGroup: row.year_group ?? '',
+    // The students endpoint does not return class membership or progress -
+    // both render as absent rather than invented.
+    className: null,
+    lastActive: row.last_active_at,
+    progress: null,
+    status: row.invite_status === 'accepted' ? 'active' : 'inactive',
+  }
+}
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -418,20 +261,11 @@ interface ActionMenuProps {
   classes: string[]
   t: (k: string) => string
   onMoveToClass: (id: string, cls: string) => void
-  onResetPassword: (id: string) => void
   onSuspend: (id: string) => void
   onRemove: (id: string) => void
 }
 
-function ActionMenu({
-  student,
-  classes,
-  t,
-  onMoveToClass,
-  onResetPassword,
-  onSuspend,
-  onRemove,
-}: ActionMenuProps) {
+function ActionMenu({ student, classes, t, onMoveToClass, onSuspend, onRemove }: ActionMenuProps) {
   const [open, setOpen] = useState(false)
   const [moveOpen, setMoveOpen] = useState(false)
 
@@ -498,14 +332,13 @@ function ActionMenu({
               )}
             </div>
 
+            {/* No password-reset endpoint exists yet - disabled, never a silent no-op */}
             <button
-              className="flex w-full items-center gap-2.5 px-3 py-1.5 text-sm text-foreground hover:bg-accent"
-              onClick={() => {
-                onResetPassword(student.id)
-                setOpen(false)
-              }}
+              className="flex w-full cursor-not-allowed items-center gap-2.5 px-3 py-1.5 text-sm text-muted-foreground/50"
+              disabled
+              title="Password resets are issued from the Export logins flow"
             >
-              <Key className="size-3.5 text-muted-foreground" />
+              <Key className="size-3.5" />
               {t('school.students.action.reset_password')}
             </button>
 
@@ -633,8 +466,10 @@ function MoveToClassDialog({ open, classes, t, onConfirm, onCancel }: MoveToClas
 
 export default function StudentsPage() {
   const t = useT()
-  const [students, setStudents] = useState<Student[]>(MOCK_STUDENTS)
+  const [students, setStudents] = useState<Student[]>([])
   const [loading, setLoading] = useState(true)
+  const [loadError, setLoadError] = useState(false)
+  const [reloadKey, setReloadKey] = useState(0)
   const [search, setSearch] = useState('')
   const [yearFilter, setYearFilter] = useState('all')
   const [statusFilter, setStatusFilter] = useState('all')
@@ -648,28 +483,25 @@ export default function StudentsPage() {
 
   useEffect(() => {
     let cancelled = false
+    setLoading(true)
+    setLoadError(false)
     async function fetchStudents() {
       try {
         const res = await fetch('/api/school/students')
         if (!res.ok) throw new Error('fetch failed')
-        const data = await res.json()
-        if (!cancelled) setStudents(data.students ?? data ?? [])
+        const data = (await res.json()) as { students?: ApiStudentRow[] }
+        if (!cancelled) setStudents((data.students ?? []).map(mapStudentRow))
       } catch {
-        // keep mock data
+        if (!cancelled) setLoadError(true)
       } finally {
         if (!cancelled) setLoading(false)
       }
     }
-    const t = setTimeout(() => fetchStudents(), 0)
-    const lt = setTimeout(() => {
-      if (!cancelled) setLoading(false)
-    }, 900)
+    fetchStudents()
     return () => {
       cancelled = true
-      clearTimeout(t)
-      clearTimeout(lt)
     }
-  }, [])
+  }, [reloadKey])
 
   // ── Derived data ──────────────────────────────────────────────────────────
 
@@ -751,10 +583,6 @@ export default function StudentsPage() {
     setStudents((prev) => prev.map((s) => (s.id === id ? { ...s, className: cls } : s)))
   }
 
-  function handleResetPassword(_id: string) {
-    // POST /api/school/students/:id/reset-password
-  }
-
   function handleSuspend(id: string) {
     setStudents((prev) =>
       prev.map((s) =>
@@ -785,10 +613,8 @@ export default function StudentsPage() {
     setMoveDialogOpen(false)
   }
 
-  function handleBulkResetPasswords() {
-    // POST /api/school/students/reset-passwords { ids: [...] }
-    setSelected(new Set())
-  }
+  // NOTE: password reset has no server endpoint yet - the controls below are
+  // disabled rather than silently succeeding on a security action.
 
   function handleBulkExport() {
     const rows = students.filter((s) => selected.has(s.id))
@@ -800,7 +626,7 @@ export default function StudentsPage() {
           s.email,
           s.yearGroup,
           s.className ?? '',
-          `${s.progress}%`,
+          s.progress !== null ? `${s.progress}%` : '',
           s.status,
         ].join(','),
       ),
@@ -945,7 +771,7 @@ export default function StudentsPage() {
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="all">{t('school.students.filter.all_classes')}</SelectItem>
-              {(availableClasses.length > 0 ? availableClasses : MOCK_CLASSES).map((cls) => (
+              {availableClasses.map((cls) => (
                 <SelectItem key={cls} value={cls}>
                   {cls}
                 </SelectItem>
@@ -981,7 +807,12 @@ export default function StudentsPage() {
                 <MoveRight className="size-3" />
                 {t('school.students.action.move_to_class')}
               </Button>
-              <Button size="xs" variant="outline" onClick={handleBulkResetPasswords}>
+              <Button
+                size="xs"
+                variant="outline"
+                disabled
+                title="Password resets are issued from the Export logins flow"
+              >
                 <Key className="size-3" />
                 {t('school.students.action.reset_passwords')}
               </Button>
@@ -1062,6 +893,22 @@ export default function StudentsPage() {
               <tbody>
                 {loading ? (
                   Array.from({ length: 8 }).map((_, i) => <TableSkeletonRow key={i} />)
+                ) : loadError ? (
+                  /* Error state - real error, real retry, never placeholder pupils */
+                  <tr>
+                    <td colSpan={9} className="px-4 py-12 text-center text-muted-foreground">
+                      <GraduationCap className="mx-auto mb-2 size-8 opacity-30" />
+                      <p className="text-sm">We could not load your school&apos;s pupils.</p>
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="mt-3"
+                        onClick={() => setReloadKey((k) => k + 1)}
+                      >
+                        {t('school.classes.error.retry')}
+                      </Button>
+                    </td>
+                  </tr>
                 ) : students.length === 0 ? (
                   /* Empty state */
                   <tr>
@@ -1147,28 +994,36 @@ export default function StudentsPage() {
                         {formatRelativeTime(student.lastActive, t)}
                       </td>
                       <td className="px-4 py-3">
-                        <div className="flex items-center gap-2">
-                          <div className="h-1.5 w-20 overflow-hidden rounded-full bg-muted">
-                            <div
-                              className={cn(
-                                'h-full rounded-full transition-all duration-500',
-                                progressBarColor(student.progress),
-                              )}
-                              style={{ width: `${student.progress}%` }}
-                            />
+                        {student.progress !== null ? (
+                          <div className="flex items-center gap-2">
+                            <div className="h-1.5 w-20 overflow-hidden rounded-full bg-muted">
+                              <div
+                                className={cn(
+                                  'h-full rounded-full transition-all duration-500',
+                                  progressBarColor(student.progress),
+                                )}
+                                style={{ width: `${student.progress}%` }}
+                              />
+                            </div>
+                            <span className="text-xs tabular-nums text-muted-foreground">
+                              {student.progress}%
+                            </span>
                           </div>
-                          <span className="text-xs tabular-nums text-muted-foreground">
-                            {student.progress}%
-                          </span>
-                        </div>
+                        ) : (
+                          <span className="text-xs text-muted-foreground/40">&mdash;</span>
+                        )}
                       </td>
                       <td className="px-4 py-3">
-                        <span
-                          className={`text-sm font-medium ${gcseGradeColor(percentageToGCSEGrade(student.progress))}`}
-                        >
-                          {t('school.students.col.grade_prefix')}{' '}
-                          {percentageToGCSEGrade(student.progress)}
-                        </span>
+                        {student.progress !== null ? (
+                          <span
+                            className={`text-sm font-medium ${gcseGradeColor(percentageToGCSEGrade(student.progress))}`}
+                          >
+                            {t('school.students.col.grade_prefix')}{' '}
+                            {percentageToGCSEGrade(student.progress)}
+                          </span>
+                        ) : (
+                          <span className="text-xs text-muted-foreground/40">&mdash;</span>
+                        )}
                       </td>
                       <td className="px-4 py-3">
                         <StatusBadge status={student.status} t={t} />
@@ -1176,10 +1031,9 @@ export default function StudentsPage() {
                       <td className="px-4 py-3 text-right">
                         <ActionMenu
                           student={student}
-                          classes={availableClasses.length > 0 ? availableClasses : MOCK_CLASSES}
+                          classes={availableClasses}
                           t={t}
                           onMoveToClass={handleMoveToClass}
-                          onResetPassword={handleResetPassword}
                           onSuspend={handleSuspend}
                           onRemove={handleRemove}
                         />
@@ -1257,7 +1111,7 @@ export default function StudentsPage() {
 
       <MoveToClassDialog
         open={moveDialogOpen}
-        classes={availableClasses.length > 0 ? availableClasses : MOCK_CLASSES}
+        classes={availableClasses}
         t={t}
         onConfirm={handleBulkMoveToClass}
         onCancel={() => setMoveDialogOpen(false)}

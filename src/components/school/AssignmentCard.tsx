@@ -1,21 +1,42 @@
 'use client'
 
 import Link from 'next/link'
-import { Calendar, Users, CheckCircle, Clock, FileText } from 'lucide-react'
+import { Calendar, Users, CheckCircle } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import type { Assignment } from '@/lib/types/assignment'
-import { ASSIGNMENT_TYPE_LABELS } from '@/lib/types/assignment'
+
+/* ── Types ─────────────────────────────────────────────────────────────── */
+
+export type AssignmentCardStatus = 'draft' | 'active' | 'closed'
+
+/**
+ * Count-based view of an assignment, derived from the server API
+ * (GET /api/school/assignments), which returns submission counts rather
+ * than per-pupil rows.
+ */
+export interface AssignmentCardData {
+  id: string
+  title: string
+  description: string | null
+  typeLabel: string
+  status: AssignmentCardStatus
+  dueDate: string | null
+  totalStudents: number
+  submittedCount: number
+}
+
+/** Labels for the server's assignment type values. */
+export const API_TYPE_LABELS: Record<string, string> = {
+  HOMEWORK: 'Homework',
+  CLASSWORK: 'Classwork',
+  ASSESSMENT: 'Assessment',
+  REVISION: 'Revision',
+}
 
 /* ── Helpers ───────────────────────────────────────────────────────────── */
 
-function statusBadgeClass(status: Assignment['status']): string {
+function statusBadgeClass(status: AssignmentCardStatus): string {
   switch (status) {
     case 'active':
       return 'border-green-500/30 bg-green-500/10 text-green-400'
@@ -61,18 +82,17 @@ function isOverdue(iso: string): boolean {
 /* ── Component ─────────────────────────────────────────────────────────── */
 
 interface AssignmentCardProps {
-  assignment: Assignment
+  assignment: AssignmentCardData
   className?: string
 }
 
 export function AssignmentCard({ assignment, className }: AssignmentCardProps) {
-  const totalStudents = assignment.submissions.length
-  const submitted = assignment.submissions.filter(
-    (s) => s.status === 'submitted' || s.status === 'graded',
-  ).length
-  const completionRate = totalStudents > 0 ? Math.round((submitted / totalStudents) * 100) : 0
-  const overdue = assignment.status === 'active' && isOverdue(assignment.dueDate)
-  const dueSoon = assignment.status === 'active' && isDueSoon(assignment.dueDate)
+  const { totalStudents, submittedCount } = assignment
+  const completionRate = totalStudents > 0 ? Math.round((submittedCount / totalStudents) * 100) : 0
+  const overdue =
+    assignment.status === 'active' && assignment.dueDate !== null && isOverdue(assignment.dueDate)
+  const dueSoon =
+    assignment.status === 'active' && assignment.dueDate !== null && isDueSoon(assignment.dueDate)
 
   return (
     <Link href={`/school/assignments/${assignment.id}`}>
@@ -88,9 +108,7 @@ export function AssignmentCard({ assignment, className }: AssignmentCardProps) {
           <div className="flex items-start justify-between gap-2">
             <div className="min-w-0 flex-1">
               <CardTitle className="truncate text-base">{assignment.title}</CardTitle>
-              <p className="text-xs text-muted-foreground mt-0.5">
-                {ASSIGNMENT_TYPE_LABELS[assignment.type]}
-              </p>
+              <p className="text-xs text-muted-foreground mt-0.5">{assignment.typeLabel}</p>
             </div>
             <Badge
               variant="outline"
@@ -111,15 +129,23 @@ export function AssignmentCard({ assignment, className }: AssignmentCardProps) {
           {/* Stats row */}
           <div className="grid grid-cols-3 gap-2 mb-3">
             <div className="flex items-center gap-1.5">
-              <Calendar className={cn(
-                'h-3.5 w-3.5',
-                overdue ? 'text-red-400' : dueSoon ? 'text-clay-600' : 'text-muted-foreground',
-              )} />
-              <span className={cn(
-                'text-xs',
-                overdue ? 'text-red-400 font-medium' : dueSoon ? 'text-clay-600 font-medium' : 'text-muted-foreground',
-              )}>
-                {formatDueDate(assignment.dueDate)}
+              <Calendar
+                className={cn(
+                  'h-3.5 w-3.5',
+                  overdue ? 'text-red-400' : dueSoon ? 'text-clay-600' : 'text-muted-foreground',
+                )}
+              />
+              <span
+                className={cn(
+                  'text-xs',
+                  overdue
+                    ? 'text-red-400 font-medium'
+                    : dueSoon
+                      ? 'text-clay-600 font-medium'
+                      : 'text-muted-foreground',
+                )}
+              >
+                {assignment.dueDate ? formatDueDate(assignment.dueDate) : 'No due date'}
               </span>
             </div>
 
@@ -133,7 +159,7 @@ export function AssignmentCard({ assignment, className }: AssignmentCardProps) {
             <div className="flex items-center gap-1.5">
               <CheckCircle className="h-3.5 w-3.5 text-muted-foreground" />
               <span className="text-xs text-muted-foreground">
-                {submitted}/{totalStudents} done
+                {submittedCount}/{totalStudents} done
               </span>
             </div>
           </div>
@@ -142,9 +168,7 @@ export function AssignmentCard({ assignment, className }: AssignmentCardProps) {
           <div>
             <div className="flex items-center justify-between text-xs mb-1">
               <span className="text-muted-foreground">Completion</span>
-              <span className="font-medium tabular-nums text-foreground">
-                {completionRate}%
-              </span>
+              <span className="font-medium tabular-nums text-foreground">{completionRate}%</span>
             </div>
             <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
               <div

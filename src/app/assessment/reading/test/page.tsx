@@ -644,8 +644,6 @@ export default function ReadingTestPage() {
           passageId: passage.id,
           readingTimeSeconds: totalReadingTimeSeconds,
           wordCount: passage.wordCount,
-          // Estimate words correct as ~95% for self-reported reading
-          wordsCorrect: Math.round(passage.wordCount * 0.95),
         },
       ],
       phase: 'questions',

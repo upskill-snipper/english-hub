@@ -132,6 +132,63 @@ export const SUBMISSION_SELECT = `
   moderation_notes
 ` as const
 
+// ─── Server-side school/class resolution ─────────────────────────────────────
+
+export interface SubmissionContext {
+  source: SubmissionSource
+  schoolId: string | null
+  classId: string | null
+}
+
+/**
+ * Resolve the submitting student's school and class SERVER-side from their
+ * most recent active `class_students` enrolment (and the class's school_id).
+ *
+ * WHY: schoolId/classId must never be trusted from the request body - a
+ * client could otherwise inject its submission into another school's marking
+ * queue, and could equally hide a class submission from its teacher by
+ * claiming b2c. A pupil with an active enrolment in an active class submits
+ * as 'b2b_class' scoped to that class's school; everyone else is 'b2c_self'
+ * with no school or class.
+ */
+export async function resolveSubmissionContext(
+  svc: SupabaseClient,
+  studentId: string,
+): Promise<SubmissionContext> {
+  const { data, error } = await svc
+    .from('class_students')
+    .select('class_id, joined_at, classes!inner(id, school_id, is_active)')
+    .eq('student_id', studentId)
+    .eq('is_active', true)
+    .eq('classes.is_active', true)
+    .order('joined_at', { ascending: false })
+    .limit(1)
+    .maybeSingle()
+
+  if (error) {
+    // A failed lookup must not block the submission - it only loses B2B
+    // routing for this one row. Logged so a systemic failure is visible.
+    console.error('[marking/persistence] class enrolment lookup failed', error)
+    return { source: 'b2c_self', schoolId: null, classId: null }
+  }
+  if (!data) {
+    return { source: 'b2c_self', schoolId: null, classId: null }
+  }
+
+  const row = data as unknown as {
+    class_id: string
+    classes:
+      | { id: string; school_id: string | null }
+      | { id: string; school_id: string | null }[]
+      | null
+  }
+  const cls = Array.isArray(row.classes) ? (row.classes[0] ?? null) : row.classes
+  if (!cls || !cls.school_id) {
+    return { source: 'b2c_self', schoolId: null, classId: null }
+  }
+  return { source: 'b2b_class', schoolId: cls.school_id, classId: row.class_id }
+}
+
 // ─── Insert ──────────────────────────────────────────────────────────────────
 
 export interface NewSubmissionInput {

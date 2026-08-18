@@ -70,61 +70,6 @@ interface SchoolStudent {
   year_group: string | null
 }
 
-// ── Mock data (shown while API loads or on error) ─────────────────────────────
-
-const MOCK_CLASS: ClassDetail = {
-  id: 'mock-1',
-  name: 'Year 10 English - Set 1',
-  year_group: 'Year 10',
-  exam_board: 'AQA',
-  teacher_id: null,
-  teacher_name: 'Ms. Johnson',
-  student_count: 4,
-}
-
-const MOCK_STUDENTS: ClassStudent[] = [
-  {
-    student_id: 's1',
-    full_name: 'Alice Hartley',
-    email: 'alice@school.ac.uk',
-    year_group: 'Year 10',
-    last_activity: new Date(Date.now() - 1000 * 60 * 60 * 24).toISOString(),
-    avg_quiz_score: 78,
-    modules_completed: 12,
-    completion_rate: 80,
-  },
-  {
-    student_id: 's2',
-    full_name: 'Ben Okafor',
-    email: 'ben@school.ac.uk',
-    year_group: 'Year 10',
-    last_activity: new Date(Date.now() - 1000 * 60 * 60 * 24 * 3).toISOString(),
-    avg_quiz_score: 54,
-    modules_completed: 8,
-    completion_rate: 53,
-  },
-  {
-    student_id: 's3',
-    full_name: 'Clara Ng',
-    email: 'clara@school.ac.uk',
-    year_group: 'Year 10',
-    last_activity: new Date(Date.now() - 1000 * 60 * 60 * 24 * 14).toISOString(),
-    avg_quiz_score: 35,
-    modules_completed: 3,
-    completion_rate: 20,
-  },
-  {
-    student_id: 's4',
-    full_name: 'Daniel Reeves',
-    email: 'daniel@school.ac.uk',
-    year_group: 'Year 10',
-    last_activity: new Date(Date.now() - 1000 * 60 * 60 * 2).toISOString(),
-    avg_quiz_score: 91,
-    modules_completed: 15,
-    completion_rate: 100,
-  },
-]
-
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
 function boardBadgeClass(board: string | null): string {
@@ -679,6 +624,7 @@ export default function ClassDetailPage() {
   const [classInfo, setClassInfo] = useState<ClassDetail | null>(null)
   const [students, setStudents] = useState<ClassStudent[]>([])
   const [loading, setLoading] = useState(true)
+  const [loadError, setLoadError] = useState(false)
 
   // Students tab state
   const [search, setSearch] = useState('')
@@ -688,34 +634,35 @@ export default function ClassDetailPage() {
   // ── Fetch ──────────────────────────────────────────────────────────────────
 
   const fetchData = useCallback(async () => {
+    setLoading(true)
+    setLoadError(false)
     try {
       const [classRes, studentsRes] = await Promise.all([
         fetch(`/api/school/classes/${classId}`),
         fetch(`/api/school/classes/${classId}/students`),
       ])
 
-      if (classRes.ok) {
-        const data = await classRes.json()
-        // GET /api/school/classes/[classId] returns { class, students, student_count }
-        const cls: ClassDetail = data.class ?? data
-        // Attach teacher_name from students response if not already present
-        setClassInfo(cls)
-        // If this endpoint also returns students, use them
-        if (data.students) {
-          setStudents(data.students)
-        }
-      } else {
-        setClassInfo(MOCK_CLASS)
-        setStudents(MOCK_STUDENTS)
+      if (!classRes.ok) {
+        // A failed load renders the error state - never substitute data.
+        setLoadError(true)
+        return
+      }
+
+      const data = await classRes.json()
+      // GET /api/school/classes/[classId] returns { class, students, student_count }
+      const cls: ClassDetail = data.class ?? data
+      setClassInfo(cls)
+      // If this endpoint also returns students, use them
+      if (data.students) {
+        setStudents(data.students)
       }
 
       if (studentsRes.ok) {
-        const data = await studentsRes.json()
-        if (data.students) setStudents(data.students)
+        const studentsData = await studentsRes.json()
+        if (studentsData.students) setStudents(studentsData.students)
       }
     } catch {
-      setClassInfo(MOCK_CLASS)
-      setStudents(MOCK_STUDENTS)
+      setLoadError(true)
     } finally {
       setLoading(false)
     }
@@ -796,8 +743,43 @@ export default function ClassDetailPage() {
     )
   }
 
-  const cls = classInfo ?? MOCK_CLASS
-  const displayStudents = students.length > 0 ? students : MOCK_STUDENTS
+  // ── Error state: never substitute placeholder pupils ───────────────────────
+
+  if (loadError || !classInfo) {
+    return (
+      <div className="min-h-screen bg-background">
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 space-y-6">
+          <Link href="/school/classes">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="gap-1.5 text-muted-foreground hover:text-foreground -ml-2"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              {t('school.classes.detail.back')}
+            </Button>
+          </Link>
+          <GlassPanel accent="clay" className="p-10">
+            <div className="flex flex-col items-center gap-4 text-center">
+              <AlertTriangle className="h-8 w-8 text-red-400" aria-hidden />
+              <div>
+                <p className="font-semibold text-foreground">{t('school.classes.error.title')}</p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  We could not load this class. No data is shown rather than placeholder pupils.
+                </p>
+              </div>
+              <Button variant="outline" size="sm" onClick={fetchData}>
+                {t('school.classes.error.retry')}
+              </Button>
+            </div>
+          </GlassPanel>
+        </div>
+      </div>
+    )
+  }
+
+  const cls = classInfo
+  const displayStudents = students
 
   // ── Derived class KPIs (only render deltas/sparks the data supports) ────────
 
@@ -1031,13 +1013,23 @@ export default function ClassDetailPage() {
                   <tbody className="divide-y divide-border/60">
                     {filteredStudents.length === 0 && (
                       <tr>
-                        <td
-                          colSpan={7}
-                          className="px-4 py-10 text-center text-sm text-muted-foreground"
-                        >
-                          {search
-                            ? t('school.classes.detail.no_search_match')
-                            : t('school.classes.detail.no_in_class')}
+                        <td colSpan={7} className="px-4 py-10 text-center text-sm">
+                          <p className="text-muted-foreground">
+                            {search
+                              ? t('school.classes.detail.no_search_match')
+                              : t('school.classes.detail.no_in_class')}
+                          </p>
+                          {!search && (
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              className="mt-4 gap-1.5"
+                              onClick={() => setAddModalOpen(true)}
+                            >
+                              <Plus className="h-4 w-4" />
+                              {t('school.classes.detail.add_students')}
+                            </Button>
+                          )}
                         </td>
                       </tr>
                     )}

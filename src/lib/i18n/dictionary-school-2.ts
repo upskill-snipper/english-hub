@@ -791,10 +791,65 @@ export const SCHOOL_2_DICTIONARY: Record<string, { en: string; ar: string; es?: 
   // ─── Toolkit · Student hub (/toolkit) + progress preview ────────────
   // The student's personal learning command centre: AI study tools, a
   // progress preview row, dashboard sections, and a grade-predictor CTA.
+  // Heading is 'Study tools', not 'AI study tools': only the revision-notes
+  // tool calls a model, so an AI umbrella heading would be a false claim.
   'toolkit.ai_heading': {
-    en: 'AI study tools',
-    ar: 'أدوات الدراسة بالذكاء الاصطناعي',
-    es: 'Herramientas de estudio con IA',
+    en: 'Study tools',
+    ar: 'أدوات الدراسة',
+    es: 'Herramientas de estudio',
+  },
+  'toolkit.ai.test_builder.title': {
+    en: 'Question bank test builder',
+    ar: 'منشئ الاختبارات من بنك الأسئلة',
+    es: 'Creador de pruebas del banco de preguntas',
+  },
+  'toolkit.ai.test_builder.desc': {
+    en: "Build a practice test from our question bank for your board's set texts, answer it online, and check your answers instantly.",
+    ar: 'سوِّ اختبار تدريبي من بنك الأسئلة على النصوص المقررة لهيئتك، وحله أونلاين، وراجع إجاباتك فوراً.',
+    es: 'Crea una prueba de práctica a partir de nuestro banco de preguntas sobre los textos prescritos de tu junta, respóndela en línea y comprueba tus respuestas al instante.',
+  },
+  'toolkit.ai.revision_notes.title': {
+    en: 'AI revision notes',
+    ar: 'ملاحظات مراجعة بالذكاء الاصطناعي',
+    es: 'Apuntes de repaso con IA',
+  },
+  'toolkit.ai.revision_notes.desc': {
+    en: 'Generate revision notes on any set text or topic, written for your exam board and level.',
+    ar: 'ولّد ملاحظات مراجعة عن أي نص مقرر أو موضوع، مكتوبة لهيئة امتحانك ومستواك.',
+    es: 'Genera apuntes de repaso sobre cualquier texto prescrito o tema, redactados para tu junta examinadora y tu nivel.',
+  },
+  'toolkit.ai.personalised.title': {
+    en: 'Personalised revision guide',
+    ar: 'دليل مراجعة شخصي',
+    es: 'Guía de repaso personalizada',
+  },
+  'toolkit.ai.personalised.desc': {
+    en: 'A revision guide built from your own quiz scores and marked essays, targeting your weakest areas first.',
+    ar: 'دليل مراجعة مبني على نتائج اختباراتك ومقالاتك المصححة، يستهدف أضعف نقاطك أولاً.',
+    es: 'Una guía de repaso construida a partir de tus propios resultados de cuestionarios y redacciones corregidas, que ataca primero tus puntos más débiles.',
+  },
+  'toolkit.tag.ai_powered': { en: 'AI-powered', ar: 'بالذكاء الاصطناعي', es: 'Con IA' },
+  'toolkit.tag.data_driven': { en: 'Data-driven', ar: 'مبني على بياناتك', es: 'Basado en datos' },
+  'toolkit.tag.question_bank': { en: 'Question bank', ar: 'بنك أسئلة', es: 'Banco de preguntas' },
+  'toolkit.dashboard.progress.title': {
+    en: 'My progress',
+    ar: 'تقدّمي',
+    es: 'Mi progreso',
+  },
+  'toolkit.dashboard.progress.desc': {
+    en: 'See your quiz scores, study streak, and topic strengths in one place.',
+    ar: 'شوف نتائج اختباراتك وسلسلة أيام دراستك ونقاط قوتك بالمواضيع بمكان واحد.',
+    es: 'Consulta tus resultados de cuestionarios, tu racha de estudio y tus puntos fuertes por tema en un solo lugar.',
+  },
+  'toolkit.dashboard.materials.title': {
+    en: 'My materials',
+    ar: 'موادي',
+    es: 'Mis materiales',
+  },
+  'toolkit.dashboard.materials.desc': {
+    en: 'Tests and notes you have saved, ready to revisit or print.',
+    ar: 'الاختبارات والملاحظات اللي حفظتها، جاهزة ترجع لها أو تطبعها.',
+    es: 'Las pruebas y los apuntes que has guardado, listos para repasarlos o imprimirlos.',
   },
   'toolkit.crumb.home': { en: 'Home', ar: 'الرئيسية', es: 'Inicio' },
   'toolkit.crumb.self': { en: 'Toolkit', ar: 'Toolkit', es: 'Toolkit' },

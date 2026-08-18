@@ -1,11 +1,7 @@
 // ─── Teacher Notification Generation & Storage ──────────────────────────────
 
 import { percentageToGCSEGradeLabel } from '@/lib/grades'
-import type {
-  StudentAnalytics,
-  ClassAnalytics,
-  SchoolOverview,
-} from '@/lib/types'
+import type { StudentAnalytics, ClassAnalytics, SchoolOverview } from '@/lib/types'
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -137,9 +133,7 @@ export function getUnreadCount(notifications: TeacherNotification[]): number {
   return notifications.filter((n) => !map[n.id]).length
 }
 
-export function applyReadStatus(
-  notifications: TeacherNotification[]
-): TeacherNotification[] {
+export function applyReadStatus(notifications: TeacherNotification[]): TeacherNotification[] {
   const map = getReadStatusMap()
   return notifications.map((n) => ({
     ...n,
@@ -174,7 +168,7 @@ function cacheNotifications(notifications: TeacherNotification[]) {
     JSON.stringify({
       notifications,
       generatedAt: new Date().toISOString(),
-    })
+    }),
   )
 }
 
@@ -190,7 +184,7 @@ function notificationId(type: NotificationType, ...parts: string[]): string {
 function generateStudentAtRiskNotifications(
   students: StudentAnalytics[],
   classId: string,
-  className: string
+  className: string,
 ): TeacherNotification[] {
   const now = new Date().toISOString()
   const notifications: TeacherNotification[] = []
@@ -239,7 +233,7 @@ function generateStudentAtRiskNotifications(
 function generateInactivityAlerts(
   students: StudentAnalytics[],
   classId: string,
-  className: string
+  className: string,
 ): TeacherNotification[] {
   const now = new Date()
   const notifications: TeacherNotification[] = []
@@ -249,9 +243,7 @@ function generateInactivityAlerts(
     if (!student.last_active_at) continue
     const lastActive = new Date(student.last_active_at)
     if (lastActive < sevenDaysAgo) {
-      const daysSince = Math.floor(
-        (now.getTime() - lastActive.getTime()) / (1000 * 60 * 60 * 24)
-      )
+      const daysSince = Math.floor((now.getTime() - lastActive.getTime()) / (1000 * 60 * 60 * 24))
       notifications.push({
         id: notificationId('inactivity_alert', student.student_id),
         type: 'inactivity_alert',
@@ -272,9 +264,7 @@ function generateInactivityAlerts(
   return notifications
 }
 
-function generateClassMilestones(
-  classes: ClassAnalytics[]
-): TeacherNotification[] {
+function generateClassMilestones(classes: ClassAnalytics[]): TeacherNotification[] {
   const now = new Date().toISOString()
   const notifications: TeacherNotification[] = []
 
@@ -301,7 +291,7 @@ function generateClassMilestones(
 function generateGradePredictionChanges(
   students: StudentAnalytics[],
   classId: string,
-  className: string
+  className: string,
 ): TeacherNotification[] {
   const now = new Date().toISOString()
   const notifications: TeacherNotification[] = []
@@ -326,16 +316,9 @@ function generateGradePredictionChanges(
         actionUrl: `/school/students/${student.student_id}`,
         metadata: { direction: 'up', predictedGrade: student.predicted_grade },
       })
-    } else if (
-      student.trajectory === 'declining' &&
-      student.avg_quiz_score < 50
-    ) {
+    } else if (student.trajectory === 'declining' && student.avg_quiz_score < 50) {
       notifications.push({
-        id: notificationId(
-          'grade_prediction_change',
-          'down',
-          student.student_id
-        ),
+        id: notificationId('grade_prediction_change', 'down', student.student_id),
         type: 'grade_prediction_change',
         priority: 'high',
         title: 'Predicted grade dropped',
@@ -389,9 +372,7 @@ function generateWeeklyDigest(overview: SchoolOverview): TeacherNotification[] {
   ]
 }
 
-function generateMockAssignmentDueSoon(
-  classes: ClassAnalytics[]
-): TeacherNotification[] {
+function generateMockAssignmentDueSoon(classes: ClassAnalytics[]): TeacherNotification[] {
   const now = new Date()
   const tomorrow = new Date(now.getTime() + 24 * 60 * 60 * 1000)
   const notifications: TeacherNotification[] = []
@@ -421,13 +402,13 @@ function generateMockAssignmentDueSoon(
 function generateMockInterventionReminders(
   students: StudentAnalytics[],
   classId: string,
-  className: string
+  className: string,
 ): TeacherNotification[] {
   const now = new Date()
   const notifications: TeacherNotification[] = []
 
   const atRiskStudents = students.filter(
-    (s) => s.trajectory === 'declining' || s.avg_quiz_score < 40
+    (s) => s.trajectory === 'declining' || s.avg_quiz_score < 40,
   )
 
   if (atRiskStudents.length > 0) {
@@ -451,9 +432,7 @@ function generateMockInterventionReminders(
   return notifications
 }
 
-function generateNewStudentJoined(
-  classes: ClassAnalytics[]
-): TeacherNotification[] {
+function generateNewStudentJoined(classes: ClassAnalytics[]): TeacherNotification[] {
   const now = new Date()
   const notifications: TeacherNotification[] = []
 
@@ -468,9 +447,7 @@ function generateNewStudentJoined(
         message: `A new student has joined ${cls.class_name} using the class join code. Total students: ${cls.student_count}.`,
         classId: cls.class_id,
         className: cls.class_name,
-        timestamp: new Date(
-          now.getTime() - 2 * 60 * 60 * 1000
-        ).toISOString(),
+        timestamp: new Date(now.getTime() - 2 * 60 * 60 * 1000).toISOString(),
         read: false,
         actionUrl: `/school/classes/${cls.class_id}`,
       })
@@ -488,9 +465,7 @@ export interface GenerateNotificationsInput {
   studentsByClass: Record<string, StudentAnalytics[]>
 }
 
-export function generateNotifications(
-  input: GenerateNotificationsInput
-): TeacherNotification[] {
+export function generateNotifications(input: GenerateNotificationsInput): TeacherNotification[] {
   // Check cache first
   const cached = getCachedNotifications()
   if (cached) return applyReadStatus(cached)
@@ -503,22 +478,10 @@ export function generateNotifications(
     const students = studentsByClass[cls.class_id] ?? []
 
     allNotifications.push(
-      ...generateStudentAtRiskNotifications(
-        students,
-        cls.class_id,
-        cls.class_name
-      ),
+      ...generateStudentAtRiskNotifications(students, cls.class_id, cls.class_name),
       ...generateInactivityAlerts(students, cls.class_id, cls.class_name),
-      ...generateGradePredictionChanges(
-        students,
-        cls.class_id,
-        cls.class_name
-      ),
-      ...generateMockInterventionReminders(
-        students,
-        cls.class_id,
-        cls.class_name
-      )
+      ...generateGradePredictionChanges(students, cls.class_id, cls.class_name),
+      ...generateMockInterventionReminders(students, cls.class_id, cls.class_name),
     )
   }
 
@@ -527,7 +490,7 @@ export function generateNotifications(
     ...generateClassMilestones(overview.classes),
     ...generateWeeklyDigest(overview),
     ...generateMockAssignmentDueSoon(overview.classes),
-    ...generateNewStudentJoined(overview.classes)
+    ...generateNewStudentJoined(overview.classes),
   )
 
   // Sort by priority then timestamp
@@ -547,167 +510,6 @@ export function generateNotifications(
   return applyReadStatus(allNotifications)
 }
 
-// ── Mock data generator (for demo/development) ──────────────────────────────
-
-export function generateMockNotifications(): TeacherNotification[] {
-  const now = new Date()
-
-  const mocks: TeacherNotification[] = [
-    {
-      id: 'mock_risk_1',
-      type: 'student_at_risk',
-      priority: 'high',
-      title: 'Student score critically low',
-      message:
-        'Emily Watson has an average score of 32% in 10B English. Consider scheduling an intervention.',
-      classId: 'cls_1',
-      className: '10B English',
-      studentId: 'stu_1',
-      studentName: 'Emily Watson',
-      timestamp: new Date(now.getTime() - 15 * 60 * 1000).toISOString(),
-      read: false,
-      actionUrl: '/school/students/stu_1',
-    },
-    {
-      id: 'mock_risk_2',
-      type: 'student_at_risk',
-      priority: 'high',
-      title: 'Student performance declining',
-      message:
-        "James Chen's performance has been declining in 11A Literature. Their trajectory shows consistent drops over recent weeks.",
-      classId: 'cls_2',
-      className: '11A Literature',
-      studentId: 'stu_2',
-      studentName: 'James Chen',
-      timestamp: new Date(now.getTime() - 45 * 60 * 1000).toISOString(),
-      read: false,
-      actionUrl: '/school/students/stu_2',
-    },
-    {
-      id: 'mock_grade_1',
-      type: 'grade_prediction_change',
-      priority: 'high',
-      title: 'Predicted grade dropped',
-      message:
-        "Sophie Taylor's predicted grade in 11A Literature has dropped to Grade 4. Intervention may be needed.",
-      classId: 'cls_2',
-      className: '11A Literature',
-      studentId: 'stu_3',
-      studentName: 'Sophie Taylor',
-      timestamp: new Date(now.getTime() - 1 * 60 * 60 * 1000).toISOString(),
-      read: false,
-      actionUrl: '/school/students/stu_3',
-      metadata: { direction: 'down', predictedGrade: 'Grade 4' },
-    },
-    {
-      id: 'mock_assignment_1',
-      type: 'assignment_due_soon',
-      priority: 'medium',
-      title: 'Assignment due tomorrow',
-      message:
-        'The module assessment for 10B English is due Friday 22nd Mar. 28 students enrolled.',
-      classId: 'cls_1',
-      className: '10B English',
-      timestamp: new Date(now.getTime() - 2 * 60 * 60 * 1000).toISOString(),
-      read: false,
-      actionUrl: '/school/classes/cls_1',
-    },
-    {
-      id: 'mock_intervention_1',
-      type: 'intervention_reminder',
-      priority: 'medium',
-      title: 'Scheduled intervention coming up',
-      message:
-        'Reminder: Intervention session with Emily Watson (10B English) is scheduled for this week. Score: 32%.',
-      classId: 'cls_1',
-      className: '10B English',
-      studentId: 'stu_1',
-      studentName: 'Emily Watson',
-      timestamp: new Date(now.getTime() - 3 * 60 * 60 * 1000).toISOString(),
-      read: false,
-      actionUrl: '/school/students/stu_1',
-    },
-    {
-      id: 'mock_inactivity_1',
-      type: 'inactivity_alert',
-      priority: 'medium',
-      title: 'Student inactive',
-      message:
-        "Oliver Brown hasn't logged in for 12 days in 10B English.",
-      classId: 'cls_1',
-      className: '10B English',
-      studentId: 'stu_4',
-      studentName: 'Oliver Brown',
-      timestamp: new Date(now.getTime() - 4 * 60 * 60 * 1000).toISOString(),
-      read: false,
-      actionUrl: '/school/students/stu_4',
-    },
-    {
-      id: 'mock_milestone_1',
-      type: 'class_milestone',
-      priority: 'low',
-      title: 'Class milestone reached',
-      message:
-        '9C English has reached 85% overall completion. Great progress!',
-      classId: 'cls_3',
-      className: '9C English',
-      timestamp: new Date(now.getTime() - 6 * 60 * 60 * 1000).toISOString(),
-      read: false,
-      actionUrl: '/school/classes/cls_3',
-    },
-    {
-      id: 'mock_new_student_1',
-      type: 'new_student_joined',
-      priority: 'low',
-      title: 'New student joined',
-      message:
-        'A new student has joined 10B English using the class join code. Total students: 29.',
-      classId: 'cls_1',
-      className: '10B English',
-      timestamp: new Date(now.getTime() - 8 * 60 * 60 * 1000).toISOString(),
-      read: false,
-      actionUrl: '/school/classes/cls_1',
-    },
-    {
-      id: 'mock_grade_up_1',
-      type: 'grade_prediction_change',
-      priority: 'low',
-      title: 'Predicted grade improved',
-      message:
-        "Ava Singh's predicted grade in 9C English has improved to Grade 7. Keep up the good work!",
-      classId: 'cls_3',
-      className: '9C English',
-      studentId: 'stu_5',
-      studentName: 'Ava Singh',
-      timestamp: new Date(now.getTime() - 10 * 60 * 60 * 1000).toISOString(),
-      read: false,
-      actionUrl: '/school/students/stu_5',
-      metadata: { direction: 'up', predictedGrade: 'Grade 7' },
-    },
-    {
-      id: 'mock_digest_1',
-      type: 'weekly_digest',
-      priority: 'low',
-      title: 'Weekly activity summary',
-      message:
-        'This week: 45/52 students active, 68% avg score, 72% completion rate across all classes.',
-      timestamp: new Date(
-        now.getTime() - 24 * 60 * 60 * 1000
-      ).toISOString(),
-      read: false,
-      actionUrl: '/school',
-      metadata: {
-        activeStudents: 45,
-        totalStudents: 52,
-        avgScore: 68,
-        completionRate: 72,
-      },
-    },
-  ]
-
-  return applyReadStatus(mocks)
-}
-
 // ── Filter helpers ───────────────────────────────────────────────────────────
 
 export function filterNotifications(
@@ -718,7 +520,7 @@ export function filterNotifications(
     dateFrom?: Date
     dateTo?: Date
     readStatus?: 'all' | 'read' | 'unread'
-  }
+  },
 ): TeacherNotification[] {
   return notifications.filter((n) => {
     if (filters.types && filters.types.length > 0) {

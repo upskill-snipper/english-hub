@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
+import { displayNameFromEmail } from '@/lib/school-students'
 
 export const dynamic = 'force-dynamic'
 
@@ -112,10 +113,32 @@ export async function POST(request: NextRequest) {
         )
       }
 
+      // The schema requires email (NOT NULL, UNIQUE per school) and the
+      // portal gate requires invite_status='accepted' (school_members
+      // defaults to 'pending', which src/lib/school-access.ts filters out,
+      // so a bare insert produced a membership that could never log in).
+      const teacherEmail = user.email?.toLowerCase() ?? null
+      if (!teacherEmail) {
+        return NextResponse.json(
+          { error: 'Your account has no email address, which is required to join as a teacher.' },
+          { status: 422 },
+        )
+      }
+
+      const { data: teacherProfile } = await admin
+        .from('profiles')
+        .select('full_name')
+        .eq('id', user.id)
+        .maybeSingle()
+
       const { error: memberInsertError } = await admin.from('school_members').insert({
         school_id: schoolId,
         user_id: user.id,
         role: 'teacher',
+        full_name: teacherProfile?.full_name ?? displayNameFromEmail(teacherEmail),
+        email: teacherEmail,
+        invite_status: 'accepted',
+        accepted_at: new Date().toISOString(),
       })
 
       if (memberInsertError) {
@@ -165,13 +188,17 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Check if the student is already in the school via school_students table first
+    // Check if the student is already in the school via school_students first.
+    // Schema note: school_students keys on user_id + status
+    // ('active'|'suspended'|'removed'), NOT student_id/is_active - see
+    // supabase/migrations/20260404_school_promo_and_access.sql. The previous
+    // column names made every join-code attempt 500.
     const { data: existingSchoolStudent } = await admin
       .from('school_students')
       .select('id')
       .eq('school_id', schoolId)
-      .eq('student_id', user.id)
-      .eq('is_active', true)
+      .eq('user_id', user.id)
+      .eq('status', 'active')
       .limit(1)
 
     const alreadyInSchool = !!existingSchoolStudent && existingSchoolStudent.length > 0
@@ -187,7 +214,8 @@ export async function POST(request: NextRequest) {
     if (!alreadyInSchool) {
       const { error: schoolStudentError } = await admin.from('school_students').insert({
         school_id: schoolId,
-        student_id: user.id,
+        user_id: user.id,
+        status: 'active',
       })
 
       if (schoolStudentError) {
@@ -266,11 +294,15 @@ export async function POST(request: NextRequest) {
           .eq('class_id', classId)
           .eq('student_id', user.id)
       }
-      await admin
-        .from('school_students')
-        .update({ is_active: false })
-        .eq('school_id', schoolId)
-        .eq('student_id', user.id)
+      // Only unwind the membership we created in THIS request - an existing
+      // active member re-using a stale code must keep their place.
+      if (!alreadyInSchool) {
+        await admin
+          .from('school_students')
+          .update({ status: 'removed' })
+          .eq('school_id', schoolId)
+          .eq('user_id', user.id)
+      }
       return NextResponse.json(
         {
           error:
@@ -312,12 +344,12 @@ export async function POST(request: NextRequest) {
             .eq('id', classId)
         }
 
-        // Roll back school_students
+        // Roll back school_students (user_id/status per the real schema)
         await admin
           .from('school_students')
-          .update({ is_active: false })
+          .update({ status: 'removed' })
           .eq('school_id', schoolId)
-          .eq('student_id', user.id)
+          .eq('user_id', user.id)
 
         // Roll back join code usage increment via the inverse RPC-style
         // decrement (best effort - the counter can drift by 1 under

@@ -70,13 +70,6 @@ interface WeekPlan {
   slots: Record<string, PlannerSlot> // key = "day-period" e.g. "0-2"
 }
 
-interface WeakAreaInfo {
-  className: string
-  area: string
-  severity: 'critical' | 'warning' | 'minor'
-  avgScore: number
-}
-
 // ── Lesson Catalogue ─────────────────────────────────────────────────────────
 
 const ALL_LESSONS: LessonPlan[] = [
@@ -257,30 +250,7 @@ const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'] as const
 const PERIODS = ['Period 1', 'Period 2', 'Period 3', 'Period 4', 'Period 5', 'Period 6'] as const
 const TOPICS = Array.from(new Set(ALL_LESSONS.map((l) => l.topic))).sort()
 
-const CLASS_NAMES = [
-  '10A English',
-  '10B English',
-  '11A English',
-  '11B English',
-  '9C English',
-  '9D English',
-]
-
-// Simulated analytics weak areas per class
-const MOCK_WEAK_AREAS: WeakAreaInfo[] = [
-  { className: '10A English', area: 'Poetry', severity: 'critical', avgScore: 38 },
-  { className: '10A English', area: 'Language Analysis', severity: 'warning', avgScore: 52 },
-  { className: '10B English', area: 'Shakespeare', severity: 'critical', avgScore: 35 },
-  { className: '10B English', area: 'Creative Writing', severity: 'warning', avgScore: 48 },
-  { className: '11A English', area: 'Exam Technique', severity: 'critical', avgScore: 40 },
-  { className: '11A English', area: 'Contextual Knowledge', severity: 'warning', avgScore: 50 },
-  { className: '11B English', area: 'Comparison', severity: 'warning', avgScore: 45 },
-  { className: '11B English', area: 'Modern Text', severity: 'critical', avgScore: 37 },
-  { className: '9C English', area: 'Essay Structure', severity: 'critical', avgScore: 33 },
-  { className: '9C English', area: 'Quotation Use', severity: 'warning', avgScore: 47 },
-  { className: '9D English', area: 'Shakespeare', severity: 'warning', avgScore: 51 },
-  { className: '9D English', area: 'Skills', severity: 'warning', avgScore: 49 },
-]
+// Class names come from GET /api/school/classes - never a hard-coded list.
 
 // ── Color helpers ────────────────────────────────────────────────────────────
 
@@ -361,16 +331,19 @@ function saveWeekPlan(plan: WeekPlan) {
 
 // ── Auto-fill logic ──────────────────────────────────────────────────────────
 
-function autoFillWeek(existingPlan: WeekPlan): WeekPlan {
+/**
+ * Spread lessons across the week for the school's REAL classes, varying
+ * topics. This is a scheduling convenience only - it makes no claims about
+ * pupil performance (the old version matched invented "weak areas").
+ */
+function autoFillWeek(existingPlan: WeekPlan, classNames: string[]): WeekPlan {
   const newSlots: Record<string, PlannerSlot> = { ...existingPlan.slots }
-
-  // Build a schedule: each class gets lessons across the week
-  // Prioritise weak areas, ensure variety, avoid repeats
+  if (classNames.length === 0) return existingPlan
 
   const classSchedules: Record<string, { dayIndex: number; periodIndex: number }[]> = {}
 
   // Assign each class 3-5 slots across the week, spread out
-  CLASS_NAMES.forEach((cls, clsIndex) => {
+  classNames.forEach((cls, clsIndex) => {
     const slotsPerWeek = 3 + (clsIndex % 3) // 3-5 lessons per class
     const schedule: { dayIndex: number; periodIndex: number }[] = []
 
@@ -389,9 +362,7 @@ function autoFillWeek(existingPlan: WeekPlan): WeekPlan {
     classSchedules[cls] = schedule
   })
 
-  // For each class, find lessons matching their weak areas
-  for (const cls of CLASS_NAMES) {
-    const weakAreas = MOCK_WEAK_AREAS.filter((w) => w.className === cls)
+  for (const cls of classNames) {
     const schedule = classSchedules[cls] || []
     const usedLessonIds = new Set<string>()
 
@@ -402,38 +373,9 @@ function autoFillWeek(existingPlan: WeekPlan): WeekPlan {
       }
     }
 
-    // Sort weak areas by severity (critical first)
-    const sortedWeakAreas = [...weakAreas].sort((a, b) => {
-      const order = { critical: 0, warning: 1, minor: 2 }
-      return order[a.severity] - order[b.severity]
-    })
+    const allCandidates = ALL_LESSONS.filter((l) => !usedLessonIds.has(l.id))
 
-    // Find matching lessons for weak areas
-    const candidateLessons: LessonPlan[] = []
-
-    for (const area of sortedWeakAreas) {
-      const areaLower = area.area.toLowerCase()
-      const matches = ALL_LESSONS.filter((l) => {
-        if (usedLessonIds.has(l.id)) return false
-        const searchText = `${l.topic} ${l.skill} ${l.title}`.toLowerCase()
-        return searchText.includes(areaLower)
-      })
-      candidateLessons.push(...matches)
-    }
-
-    // Add variety: include lessons from topics not covered by weak areas
-    const weakTopics = new Set(sortedWeakAreas.map((w) => w.area.toLowerCase()))
-    const varietyLessons = ALL_LESSONS.filter((l) => {
-      if (usedLessonIds.has(l.id)) return false
-      if (candidateLessons.some((c) => c.id === l.id)) return false
-      const topicLower = l.topic.toLowerCase()
-      return !weakTopics.has(topicLower)
-    })
-
-    // Combine: weak area lessons first, then variety
-    const allCandidates = [...candidateLessons, ...varietyLessons]
-
-    // Assign lessons to schedule slots
+    // Assign lessons to schedule slots, avoiding consecutive same topics
     let candidateIndex = 0
     const usedTopicsThisWeek: string[] = []
 
@@ -443,13 +385,11 @@ function autoFillWeek(existingPlan: WeekPlan): WeekPlan {
       const slotKey = `${dayIndex}-${periodIndex}`
       if (newSlots[slotKey]?.lessonId) continue
 
-      // Try to find a lesson that doesn't repeat the same topic as last assigned
       let lesson: LessonPlan | null = null
       for (let j = candidateIndex; j < allCandidates.length; j++) {
         const candidate = allCandidates[j]
         if (usedLessonIds.has(candidate.id)) continue
 
-        // Avoid consecutive same topics for this class
         const lastTopic = usedTopicsThisWeek[usedTopicsThisWeek.length - 1]
         if (lastTopic && candidate.topic === lastTopic && j + 1 < allCandidates.length) {
           continue
@@ -469,17 +409,10 @@ function autoFillWeek(existingPlan: WeekPlan): WeekPlan {
         usedLessonIds.add(lesson.id)
         usedTopicsThisWeek.push(lesson.topic)
 
-        // Determine if this was a weak-area-driven recommendation
-        const isWeakAreaLesson = sortedWeakAreas.some((w) => {
-          const areaLower = w.area.toLowerCase()
-          const searchText = `${lesson!.topic} ${lesson!.skill} ${lesson!.title}`.toLowerCase()
-          return searchText.includes(areaLower)
-        })
-
         newSlots[slotKey] = {
           lessonId: lesson.id,
           className: cls,
-          notes: isWeakAreaLesson ? 'Auto-filled: targets weak area' : 'Auto-filled: variety',
+          notes: 'Auto-filled',
         }
       }
     }
@@ -631,20 +564,29 @@ interface SlotEditDialogProps {
   onClose: () => void
   slotKey: string
   slot: PlannerSlot | undefined
+  classNames: string[]
   onSave: (slotKey: string, slot: PlannerSlot) => void
   onDelete: (slotKey: string) => void
 }
 
-function SlotEditDialog({ open, onClose, slotKey, slot, onSave, onDelete }: SlotEditDialogProps) {
+function SlotEditDialog({
+  open,
+  onClose,
+  slotKey,
+  slot,
+  classNames,
+  onSave,
+  onDelete,
+}: SlotEditDialogProps) {
   const [lessonId, setLessonId] = useState(slot?.lessonId || '')
-  const [className, setClassName] = useState(slot?.className || CLASS_NAMES[0])
+  const [className, setClassName] = useState(slot?.className || classNames[0] || '')
   const [notes, setNotes] = useState(slot?.notes || '')
 
   useEffect(() => {
     setLessonId(slot?.lessonId || '')
-    setClassName(slot?.className || CLASS_NAMES[0])
+    setClassName(slot?.className || classNames[0] || '')
     setNotes(slot?.notes || '')
-  }, [slot, open])
+  }, [slot, open, classNames])
 
   const dayIndex = parseInt(slotKey.split('-')[0])
   const periodIndex = parseInt(slotKey.split('-')[1])
@@ -689,7 +631,7 @@ function SlotEditDialog({ open, onClose, slotKey, slot, onSave, onDelete }: Slot
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
-                {CLASS_NAMES.map((c) => (
+                {classNames.map((c) => (
                   <SelectItem key={c} value={c}>
                     {c}
                   </SelectItem>
@@ -832,6 +774,28 @@ export function WeeklyPlanner() {
   // Jump to week
   const [jumpDate, setJumpDate] = useState('')
 
+  // Real class names from GET /api/school/classes - empty until loaded, and
+  // honestly empty when the school has no classes.
+  const [classNames, setClassNames] = useState<string[]>([])
+
+  useEffect(() => {
+    let cancelled = false
+    fetch('/api/school/classes')
+      .then((res) => {
+        if (!res.ok) throw new Error('fetch failed')
+        return res.json()
+      })
+      .then((json: { classes?: { name: string }[] }) => {
+        if (!cancelled) setClassNames((json.classes ?? []).map((c) => c.name))
+      })
+      .catch(() => {
+        // Leave the list empty - the planner still works for manual browsing.
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
   // Lesson map for quick lookup
   const lessonMap = useMemo(() => {
     const map = new Map<string, LessonPlan>()
@@ -889,23 +853,26 @@ export function WeeklyPlanner() {
   }, [jumpDate])
 
   // Slot operations
-  const handleDrop = useCallback((slotKey: string, lessonId: string) => {
-    setPlan((prev) => {
-      const existing = prev.slots[slotKey]
-      const updated: WeekPlan = {
-        ...prev,
-        slots: {
-          ...prev.slots,
-          [slotKey]: {
-            lessonId,
-            className: existing?.className || CLASS_NAMES[0],
-            notes: existing?.notes || '',
+  const handleDrop = useCallback(
+    (slotKey: string, lessonId: string) => {
+      setPlan((prev) => {
+        const existing = prev.slots[slotKey]
+        const updated: WeekPlan = {
+          ...prev,
+          slots: {
+            ...prev.slots,
+            [slotKey]: {
+              lessonId,
+              className: existing?.className || classNames[0] || '',
+              notes: existing?.notes || '',
+            },
           },
-        },
-      }
-      return updated
-    })
-  }, [])
+        }
+        return updated
+      })
+    },
+    [classNames],
+  )
 
   const handleSlotClick = useCallback((slotKey: string) => {
     setEditingSlot(slotKey)
@@ -947,15 +914,15 @@ export function WeeklyPlanner() {
     }, 300)
   }, [plan])
 
-  // Auto-fill
+  // Auto-fill across the school's real classes
   const handleAutoFill = useCallback(() => {
+    if (classNames.length === 0) return
     setAutoFilling(true)
-    // Simulate brief processing delay
     setTimeout(() => {
-      setPlan((prev) => autoFillWeek(prev))
+      setPlan((prev) => autoFillWeek(prev, classNames))
       setAutoFilling(false)
-    }, 600)
-  }, [])
+    }, 300)
+  }, [classNames])
 
   // Copy previous week
   const handleCopyPreviousWeek = useCallback(() => {
@@ -1063,7 +1030,7 @@ export function WeeklyPlanner() {
                   variant="outline"
                   size="sm"
                   onClick={handleAutoFill}
-                  disabled={autoFilling}
+                  disabled={autoFilling || classNames.length === 0}
                   className="h-8 text-xs gap-1.5"
                 >
                   {autoFilling ? (
@@ -1076,8 +1043,8 @@ export function WeeklyPlanner() {
               </TooltipTrigger>
               <TooltipContent>
                 <p className="text-xs max-w-[220px]">
-                  Uses analytics to generate a recommended week of lessons, prioritising weak areas
-                  for each class
+                  Spreads a varied week of lessons across your classes. You can edit every slot
+                  afterwards.
                 </p>
               </TooltipContent>
             </Tooltip>
@@ -1206,7 +1173,7 @@ export function WeeklyPlanner() {
                   {topic}
                 </Badge>
               ))
-            : CLASS_NAMES.map((cls) => (
+            : classNames.map((cls) => (
                 <Badge
                   key={cls}
                   variant="outline"
@@ -1300,28 +1267,8 @@ export function WeeklyPlanner() {
             )}
           </div>
 
-          {/* Weak Areas Summary */}
-          <div className="border-t border-border p-3">
-            <h4 className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider mb-2 flex items-center gap-1">
-              <AlertTriangle className="h-3 w-3 text-clay-600" />
-              Weak Areas (Analytics)
-            </h4>
-            <div className="space-y-1 max-h-[120px] overflow-y-auto">
-              {MOCK_WEAK_AREAS.filter((w) => w.severity === 'critical')
-                .slice(0, 5)
-                .map((w, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center justify-between text-[10px] rounded px-2 py-1 bg-red-500/5 border border-red-500/10"
-                  >
-                    <span className="text-foreground truncate">{w.className}</span>
-                    <span className="text-red-400 shrink-0 ml-2">
-                      {w.area} ({w.avgScore}%)
-                    </span>
-                  </div>
-                ))}
-            </div>
-          </div>
+          {/* Weak-area analytics are not wired to this planner yet; nothing is
+              shown rather than simulated class scores. */}
         </div>
       </div>
 
@@ -1353,6 +1300,7 @@ export function WeeklyPlanner() {
         onClose={() => setEditingSlot(null)}
         slotKey={editingSlot || '0-0'}
         slot={editingSlot ? plan.slots[editingSlot] : undefined}
+        classNames={classNames}
         onSave={handleSlotSave}
         onDelete={handleSlotDelete}
       />

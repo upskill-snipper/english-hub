@@ -24,10 +24,12 @@ const BRAND_ACCENT = '#2E86C1'
 const BRAND_LIGHT = '#D6EAF8'
 
 const APP_BASE = process.env.NEXT_PUBLIC_SITE_URL || 'https://theenglishhub.app'
-const WEB_PARENT_URL = `${APP_BASE}/parent/progress`
+// The old /parent/** portal and /dashboard/parent/settings were removed
+// (August 2026); /dashboard/parent is the real parent surface.
+const WEB_PARENT_URL = `${APP_BASE}/dashboard/parent`
 const TERMS_URL = `${APP_BASE}/terms`
 const PRIVACY_URL = `${APP_BASE}/privacy-policy`
-const UNSUBSCRIBE_URL = `${APP_BASE}/dashboard/parent/settings`
+const UNSUBSCRIBE_URL = `${APP_BASE}/dashboard/parent`
 
 // ─── Inputs ──────────────────────────────────────────────────────────────
 

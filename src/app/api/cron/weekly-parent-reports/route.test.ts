@@ -2,8 +2,11 @@
  * Tests for the weekly-parent-reports cron route.
  *
  * Strategy: stub CRON_SECRET, mock Prisma, sendEmail, and global fetch.
- * Invoke POST directly and assert the envelope plus the number of
- * persists, emails, and push fan-outs.
+ * Invoke GET (Vercel Cron convention: Bearer CRON_SECRET) and POST
+ * (manual convention: x-cron-secret) directly and assert the envelope
+ * plus the number of persists, emails, and push fan-outs. The
+ * WEEKLY_PARENT_REPORTS_ENABLED kill switch is exercised explicitly:
+ * sends stay off until a working unsubscribe mechanism exists.
  */
 
 import { describe, it, expect, vi, beforeEach } from 'vitest'
@@ -107,6 +110,9 @@ const fetchMock = vi.fn(async () => new Response('{"ok":true}', { status: 200 })
 
 beforeEach(() => {
   process.env.CRON_SECRET = 'test-secret-abcdef'
+  // Kill switch: most tests exercise the enabled path explicitly. The
+  // disabled-by-default behaviour has its own test below.
+  process.env.WEEKLY_PARENT_REPORTS_ENABLED = 'true'
   state.parentChildPairs = []
   state.essaysByChild = {}
   state.assignmentsCountByChild = {}
@@ -120,7 +126,7 @@ beforeEach(() => {
 
 // ─── Import AFTER mocks are registered ───────────────────────────────────
 
-const { POST } = await import('./route')
+const { GET, POST } = await import('./route')
 
 // ─── Helpers ─────────────────────────────────────────────────────────────
 
@@ -128,6 +134,13 @@ function buildRequest(secret = 'test-secret-abcdef'): NextRequest {
   return new NextRequest('http://localhost/api/cron/weekly-parent-reports', {
     method: 'POST',
     headers: { 'x-cron-secret': secret },
+  })
+}
+
+function buildGetRequest(authorization?: string): NextRequest {
+  return new NextRequest('http://localhost/api/cron/weekly-parent-reports', {
+    method: 'GET',
+    headers: authorization ? { authorization } : {},
   })
 }
 
@@ -176,6 +189,45 @@ describe('cron /api/cron/weekly-parent-reports', () => {
   it('rejects callers without a valid CRON_SECRET', async () => {
     const res = await POST(buildRequest('nope'))
     expect(res.status).toBe(401)
+  })
+
+  it('GET rejects a missing or invalid Bearer token', async () => {
+    const missing = await GET(buildGetRequest())
+    expect(missing.status).toBe(401)
+
+    const wrong = await GET(buildGetRequest('Bearer wrong-secret'))
+    expect(wrong.status).toBe(401)
+  })
+
+  it('GET with a valid Bearer token runs the cron (Vercel Cron convention)', async () => {
+    seedEligibleChild('c1', 'p1', { essays: 2 })
+
+    const res = await GET(buildGetRequest('Bearer test-secret-abcdef'))
+    expect(res.status).toBe(200)
+
+    const json = (await res.json()) as { ok: boolean; data: { generated: number } }
+    expect(json.ok).toBe(true)
+    expect(json.data.generated).toBe(1)
+    expect(sendEmailMock).toHaveBeenCalledTimes(1)
+  })
+
+  it('kill switch: skips all work and sends nothing when WEEKLY_PARENT_REPORTS_ENABLED is unset', async () => {
+    delete process.env.WEEKLY_PARENT_REPORTS_ENABLED
+    seedEligibleChild('c1', 'p1', { essays: 2 })
+
+    const res = await GET(buildGetRequest('Bearer test-secret-abcdef'))
+    expect(res.status).toBe(200)
+
+    const json = (await res.json()) as { skipped?: string }
+    expect(json.skipped).toBe('disabled - no unsubscribe mechanism yet')
+    expect(createSpy).not.toHaveBeenCalled()
+    expect(sendEmailMock).not.toHaveBeenCalled()
+
+    // The POST convention honours the same switch.
+    const postRes = await POST(buildRequest())
+    expect(postRes.status).toBe(200)
+    const postJson = (await postRes.json()) as { skipped?: string }
+    expect(postJson.skipped).toBe('disabled - no unsubscribe mechanism yet')
   })
 
   it('generates reports for 3 eligible parents and skips ineligible cases', async () => {

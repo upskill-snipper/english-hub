@@ -52,38 +52,6 @@ interface AffiliateDashboardProps {
   commissionRates: AffiliateCommissionDefaults | null
 }
 
-/* ────────────────────────── Mock data ────────────────────── */
-
-const MOCK_TESTIMONIALS = [
-  {
-    quote: 'Thanks to The English Hub, I went from a Grade 4 to a Grade 7 in just 3 months.',
-    name: 'Year 11 Student',
-    role: 'GCSE English',
-    avatar: 'S',
-  },
-  {
-    quote: 'The AI marking changed everything for my essay writing. My teacher was amazed.',
-    name: 'Year 10 Student',
-    role: 'GCSE English Literature',
-    avatar: 'A',
-  },
-  {
-    quote: "I used to spend 6 hours planning per week. Now it's under 1 hour.",
-    name: 'English Teacher',
-    role: 'Secondary School',
-    avatar: 'T',
-  },
-]
-
-const MOCK_MONTHLY_EARNINGS = [
-  { month: 'Nov', amount: 12 },
-  { month: 'Dec', amount: 28 },
-  { month: 'Jan', amount: 45 },
-  { month: 'Feb', amount: 38 },
-  { month: 'Mar', amount: 67 },
-  { month: 'Apr', amount: 52 },
-]
-
 /* ────────────────────────── Helpers ──────────────────────── */
 
 const formatGBP = (amount: number) => `£${amount.toFixed(2)}`
@@ -165,10 +133,31 @@ export default function AffiliateDashboard({
     .filter((r) => r.commission_status === 'confirmed')
     .reduce((sum, r) => sum + (r.commission_amount_gbp ?? 0), 0)
 
-  // Impact stats (mock multiplied by real referral count)
-  const studentCount = Math.max(activeReferrals.length, 1)
-  const hoursLearning = studentCount * 47
-  const teacherHoursSaved = Math.round(studentCount * 3.2)
+  // 2026-08-18: the invented "impact" multipliers (hours learning =
+  // referrals x 47, teacher hours saved = x 3.2) were deleted with the
+  // section that displayed them. Real monthly earnings for the chart are
+  // aggregated from the referral rows below - the same source the
+  // earnings tabs already trust.
+  const monthlyEarnings = (() => {
+    const months: { month: string; amount: number }[] = []
+    const nowD = new Date()
+    for (let i = 5; i >= 0; i--) {
+      const start = new Date(nowD.getFullYear(), nowD.getMonth() - i, 1)
+      const end = new Date(nowD.getFullYear(), nowD.getMonth() - i + 1, 0, 23, 59, 59)
+      const amount = referrals
+        .filter((r) => {
+          if (!r.converted_to_paid_at) return false
+          const d = new Date(r.converted_to_paid_at)
+          return d >= start && d <= end
+        })
+        .reduce((sum, r) => sum + (r.commission_amount_gbp ?? 0), 0)
+      months.push({
+        month: start.toLocaleString('en-GB', { month: 'short' }),
+        amount: Math.round(amount * 100) / 100,
+      })
+    }
+    return months
+  })()
 
   // Earnings by period
   const now = new Date()
@@ -226,7 +215,7 @@ export default function AffiliateDashboard({
     .slice(0, 8)
 
   // Chart max for scaling
-  const chartMax = Math.max(...MOCK_MONTHLY_EARNINGS.map((e) => e.amount), 1)
+  const chartMax = Math.max(...monthlyEarnings.map((e) => e.amount), 1)
 
   /* ── Share handlers ── */
   const shareText = `Check out The English Hub - AI-powered GCSE English revision! ${affiliateUrl}`
@@ -415,81 +404,16 @@ export default function AffiliateDashboard({
           </div>
         </div>
 
-        {/* ══════════════════════════════════════════════════════════════
-            2. YOUR IMPACT SECTION
-        ══════════════════════════════════════════════════════════════ */}
-        <section className="mb-10">
-          <div className="flex items-center gap-2 mb-6">
-            <Sparkles className="w-5 h-5 text-primary" />
-            <h2 className="text-xl font-bold text-foreground">{t('aff_comp.dash.impact.title')}</h2>
-            <span className="text-xs text-muted-foreground ml-1">
-              {t('aff_comp.dash.impact.subtitle')}
-            </span>
-          </div>
-
-          {/* Impact stat cards */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-            <ImpactCard
-              icon={<GraduationCap className="w-6 h-6" />}
-              value={String(studentCount)}
-              label={t('aff_comp.dash.impact.students_helped')}
-              sublabel={t('aff_comp.dash.impact.improving_grades')}
-              color="text-emerald-400"
-              bg="bg-emerald-500/10"
-            />
-            <ImpactCard
-              icon={<BookOpen className="w-6 h-6" />}
-              value={hoursLearning.toLocaleString()}
-              label={t('aff_comp.dash.impact.hours_learning')}
-              sublabel={t('aff_comp.dash.impact.via_your_link')}
-              color="text-blue-400"
-              bg="bg-blue-500/10"
-            />
-            <ImpactCard
-              icon={<Award className="w-6 h-6" />}
-              value="+1.2"
-              label={t('aff_comp.dash.impact.avg_grade_improvement')}
-              sublabel={t('aff_comp.dash.impact.across_referred_students')}
-              color="text-clay-600"
-              bg="bg-amber-500/10"
-              badge={t('aff_comp.dash.impact.badge_grades')}
-            />
-            <ImpactCard
-              icon={<Timer className="w-6 h-6" />}
-              value={String(teacherHoursSaved)}
-              label={t('aff_comp.dash.impact.teacher_hours_saved')}
-              sublabel={t('aff_comp.dash.impact.across_referred_teachers')}
-              color="text-purple-400"
-              bg="bg-purple-500/10"
-              badge={t('aff_comp.dash.impact.badge_hours')}
-            />
-          </div>
-
-          {/* Testimonial cards */}
-          <div className="grid md:grid-cols-3 gap-4">
-            {MOCK_TESTIMONIALS.map((tm, i) => (
-              <div
-                key={i}
-                className="relative bg-card border border-border rounded-xl p-5 hover:border-primary/20 transition-colors group"
-              >
-                <Quote className="w-8 h-8 text-primary/15 absolute top-4 right-4 group-hover:text-primary/25 transition-colors" />
-                <p className="text-sm text-foreground/90 leading-relaxed mb-4 italic">
-                  &ldquo;{tm.quote}&rdquo;
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center text-xs font-bold text-primary">
-                    {tm.avatar}
-                  </div>
-                  <div>
-                    <p className="text-xs font-medium text-foreground">{tm.name}</p>
-                    <p className="text-xs text-muted-foreground">{tm.role}</p>
-                  </div>
-                </div>
-                <div className="absolute bottom-0 left-5 right-5 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
-              </div>
-            ))}
-          </div>
-        </section>
+        {/* 2026-08-18: the "Your Impact" section was deleted. It showed
+            affiliates fabricated outcome statistics as if measured - hours
+            of learning (referral count times 47), teacher hours saved
+            (times 3.2), a hardcoded "+1.2 average grade improvement", and
+            three invented student/teacher testimonials including a
+            grade-jump quote. Affiliates republish what their dashboard
+            tells them, so every one of these numbers was a fabricated
+            public claim in waiting - and a grade promise on a children's
+            product. Reinstate only with genuinely measured, per-affiliate
+            data and real, consented quotes. */}
 
         {/* ══════════════════════════════════════════════════════════════
             3. EARNINGS BREAKDOWN
@@ -753,10 +677,10 @@ export default function AffiliateDashboard({
               </h2>
             </div>
             <div className="flex items-end gap-3 h-48">
-              {MOCK_MONTHLY_EARNINGS.map((m) => {
+              {monthlyEarnings.map((m, idx) => {
                 const heightPct = (m.amount / chartMax) * 100
                 return (
-                  <div key={m.month} className="flex-1 flex flex-col items-center gap-2">
+                  <div key={idx} className="flex-1 flex flex-col items-center gap-2">
                     <span className="text-xs text-muted-foreground font-medium">£{m.amount}</span>
                     <div className="w-full relative flex-1 flex items-end">
                       <div

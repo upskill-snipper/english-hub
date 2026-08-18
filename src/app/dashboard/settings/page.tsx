@@ -6,8 +6,6 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
-import { Toggle } from '@/components/ui/Toggle'
-import { Modal } from '@/components/ui/Modal'
 import { ToastProvider, useToast } from '@/components/ui/Toast'
 import { useT } from '@/lib/i18n/use-t'
 
@@ -91,52 +89,6 @@ interface UserProfile {
   country: string
   createdAt: string
 }
-
-interface BillingEntry {
-  id: string
-  date: string
-  description: string
-  amount: string
-  status: 'paid' | 'pending' | 'failed'
-}
-
-interface SubscriptionInfo {
-  plan: string
-  status: string
-  nextBillingDate: string | null
-}
-
-// ─── Mock data ──────────────────────────────────────────────────────────
-
-const MOCK_SUBSCRIPTION: SubscriptionInfo = {
-  plan: 'Monthly',
-  status: 'Active',
-  nextBillingDate: '2026-04-22',
-}
-
-const MOCK_BILLING: BillingEntry[] = [
-  {
-    id: 'inv_1',
-    date: '2026-03-22',
-    description: 'Monthly plan',
-    amount: '\u00a34.99',
-    status: 'paid',
-  },
-  {
-    id: 'inv_2',
-    date: '2026-02-22',
-    description: 'Monthly plan',
-    amount: '\u00a34.99',
-    status: 'paid',
-  },
-  {
-    id: 'inv_3',
-    date: '2026-01-22',
-    description: 'Monthly plan',
-    amount: '\u00a34.99',
-    status: 'paid',
-  },
-]
 
 // ─── Country labels ─────────────────────────────────────────────────────
 
@@ -462,99 +414,25 @@ function PasswordTab() {
 // ═══════════════════════════════════════════════════════════════════════
 
 function CommunicationTab() {
-  const { toast } = useToast()
-  const [productUpdates, setProductUpdates] = useState(true)
-  const [tipsContent, setTipsContent] = useState(false)
-  const [marketing, setMarketing] = useState(false)
-  const [saving, setSaving] = useState(false)
-
-  // Track initial values to detect changes
-  const [initial, setInitial] = useState({
-    productUpdates: true,
-    tipsContent: false,
-    marketing: false,
-  })
-
-  const isDirty =
-    productUpdates !== initial.productUpdates ||
-    tipsContent !== initial.tipsContent ||
-    marketing !== initial.marketing
-
-  async function handleSave() {
-    setSaving(true)
-    try {
-      // Stub: PUT /api/user/communication - simulated until endpoint exists
-      await new Promise((resolve) => setTimeout(resolve, 500))
-
-      setInitial({ productUpdates, tipsContent, marketing })
-      toast('success', 'Communication preferences saved.')
-    } catch {
-      toast('error', 'Failed to save preferences. Please try again.')
-    } finally {
-      setSaving(false)
-    }
-  }
-
   return (
-    <div className="space-y-6 max-w-lg">
+    <div className="space-y-4 max-w-lg">
       <div>
-        <h3 className="text-sm font-semibold text-foreground">Email notifications</h3>
+        <h3 className="text-sm font-semibold text-foreground">Email preferences</h3>
         <p className="mt-1 text-xs text-muted-foreground">
-          Choose which emails you would like to receive.
+          Choices about marketing and other optional emails are consent decisions, so they are
+          managed in one place: the consent centre. Changes you make there take effect immediately
+          and are recorded on your consent history.
         </p>
       </div>
-
-      <div className="space-y-5">
-        {/* Essential - always on */}
-        <div className="flex items-start gap-3">
-          <div className="relative inline-flex h-6 w-11 shrink-0 cursor-not-allowed rounded-full bg-primary opacity-70">
-            <span
-              aria-hidden="true"
-              className="pointer-events-none inline-block h-5 w-5 translate-x-5 transform rounded-full bg-card shadow-sm"
-            />
-          </div>
-          <div>
-            <p className="text-sm font-medium text-foreground">Essential emails</p>
-            <p className="text-xs text-muted-foreground">
-              Billing confirmations, security alerts, and account notifications. These cannot be
-              disabled.
-            </p>
-          </div>
-        </div>
-
-        <Toggle
-          checked={productUpdates}
-          onChange={setProductUpdates}
-          label="Product updates"
-          description="New features, improvements, and platform updates."
-        />
-
-        <Toggle
-          checked={tipsContent}
-          onChange={setTipsContent}
-          label="Tips and learning content"
-          description="Revision tips, study techniques, and educational content."
-        />
-
-        <div>
-          <Toggle
-            checked={marketing}
-            onChange={setMarketing}
-            label="Marketing emails"
-            description="Promotions, offers, and partner content."
-          />
-          {marketing && (
-            <p className="mt-2 ml-14 text-xs text-clay-600 bg-amber-500/10 rounded-lg px-3 py-2">
-              By enabling marketing emails, you explicitly consent to receiving promotional
-              communications. You can withdraw this consent at any time.
-            </p>
-          )}
-        </div>
-      </div>
-
-      <LoadingButton onClick={handleSave} loading={saving} disabled={!isDirty}>
-        Save preferences
-      </LoadingButton>
+      <nav className="space-y-2" aria-label="Communication preferences navigation">
+        <Link
+          href="/dashboard/consent"
+          className="flex items-center justify-between rounded-lg border border-border px-4 py-3 text-sm text-foreground hover:border-accent/40 hover:bg-muted transition-colors"
+        >
+          <span>Manage email and consent preferences</span>
+          <ChevronRightIcon />
+        </Link>
+      </nav>
     </div>
   )
 }
@@ -564,128 +442,31 @@ function CommunicationTab() {
 // ═══════════════════════════════════════════════════════════════════════
 
 function SubscriptionTab() {
-  const subscription = MOCK_SUBSCRIPTION
-  const billing = MOCK_BILLING
-
   return (
-    <div className="space-y-8 max-w-2xl">
-      {/* Current plan */}
-      <div className="card">
-        <h3 className="text-sm font-semibold text-foreground">Current plan</h3>
-        <div className="mt-3 grid gap-3 sm:grid-cols-3">
-          <div>
-            <p className="text-xs text-muted-foreground">Plan</p>
-            <p className="mt-0.5 text-sm font-medium text-foreground">{subscription.plan}</p>
-          </div>
-          <div>
-            <p className="text-xs text-muted-foreground">Status</p>
-            <p className="mt-0.5">
-              <span
-                className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${
-                  subscription.status === 'Active'
-                    ? 'bg-green-500/10 text-green-600'
-                    : 'bg-muted text-foreground'
-                }`}
-              >
-                {subscription.status}
-              </span>
-            </p>
-          </div>
-          <div>
-            <p className="text-xs text-muted-foreground">Next billing date</p>
-            <p className="mt-0.5 text-sm font-medium text-foreground">
-              {subscription.nextBillingDate
-                ? new Date(subscription.nextBillingDate).toLocaleDateString('en-GB', {
-                    day: 'numeric',
-                    month: 'long',
-                    year: 'numeric',
-                  })
-                : 'N/A'}
-            </p>
-          </div>
-        </div>
-
-        <div className="mt-4 flex flex-wrap gap-3">
-          <Link href="/dashboard/subscription" className="btn-primary text-sm">
-            Manage plan
-          </Link>
-          <Link
-            href="/dashboard/subscription/cancel"
-            className="text-sm font-medium text-red-500 hover:text-red-600 transition-colors px-2 py-2"
-          >
-            Cancel subscription
-          </Link>
-        </div>
-      </div>
-
-      {/* Billing history */}
+    <div className="space-y-4 max-w-lg">
       <div>
-        <h3 className="text-sm font-semibold text-foreground">Billing history</h3>
-        {billing.length === 0 ? (
-          <p className="mt-3 text-sm text-muted-foreground">No billing history available.</p>
-        ) : (
-          <div className="mt-3 overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-border">
-                  <th
-                    scope="col"
-                    className="pb-2 pr-4 text-left text-xs font-medium text-muted-foreground"
-                  >
-                    Date
-                  </th>
-                  <th
-                    scope="col"
-                    className="pb-2 pr-4 text-left text-xs font-medium text-muted-foreground"
-                  >
-                    Description
-                  </th>
-                  <th
-                    scope="col"
-                    className="pb-2 pr-4 text-left text-xs font-medium text-muted-foreground"
-                  >
-                    Amount
-                  </th>
-                  <th
-                    scope="col"
-                    className="pb-2 text-left text-xs font-medium text-muted-foreground"
-                  >
-                    Status
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border">
-                {billing.map((entry) => (
-                  <tr key={entry.id}>
-                    <td className="py-2.5 pr-4 text-foreground">
-                      {new Date(entry.date).toLocaleDateString('en-GB', {
-                        day: 'numeric',
-                        month: 'short',
-                        year: 'numeric',
-                      })}
-                    </td>
-                    <td className="py-2.5 pr-4 text-foreground">{entry.description}</td>
-                    <td className="py-2.5 pr-4 font-medium text-foreground">{entry.amount}</td>
-                    <td className="py-2.5">
-                      <span
-                        className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${
-                          entry.status === 'paid'
-                            ? 'bg-green-500/10 text-green-600'
-                            : entry.status === 'pending'
-                              ? 'bg-amber-500/10 text-clay-600'
-                              : 'bg-red-500/10 text-red-600'
-                        }`}
-                      >
-                        {entry.status.charAt(0).toUpperCase() + entry.status.slice(1)}
-                      </span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        )}
+        <h3 className="text-sm font-semibold text-foreground">Subscription and billing</h3>
+        <p className="mt-1 text-xs text-muted-foreground">
+          Your plan, billing status and cancellation options are managed on the subscription page,
+          which always shows your real, up-to-date details.
+        </p>
       </div>
+      <nav className="space-y-2" aria-label="Subscription navigation">
+        <Link
+          href="/dashboard/subscription"
+          className="flex items-center justify-between rounded-lg border border-border px-4 py-3 text-sm text-foreground hover:border-accent/40 hover:bg-muted transition-colors"
+        >
+          <span>Manage subscription</span>
+          <ChevronRightIcon />
+        </Link>
+        <Link
+          href="/account/billing"
+          className="flex items-center justify-between rounded-lg border border-border px-4 py-3 text-sm text-foreground hover:border-accent/40 hover:bg-muted transition-colors"
+        >
+          <span>Plans and purchases</span>
+          <ChevronRightIcon />
+        </Link>
+      </nav>
     </div>
   )
 }
@@ -695,44 +476,6 @@ function SubscriptionTab() {
 // ═══════════════════════════════════════════════════════════════════════
 
 function DataPrivacyTab() {
-  const { toast } = useToast()
-  const [downloading, setDownloading] = useState(false)
-  const [showDeleteModal, setShowDeleteModal] = useState(false)
-  const [deleteConfirm, setDeleteConfirm] = useState('')
-  const [deleting, setDeleting] = useState(false)
-
-  async function handleDownloadData() {
-    setDownloading(true)
-    try {
-      // Stub: POST /api/user/data-export - simulated until endpoint exists
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-      toast(
-        'success',
-        'Your data export has been requested. You will receive an email when it is ready.',
-      )
-    } catch {
-      toast('error', 'Failed to request data export. Please try again.')
-    } finally {
-      setDownloading(false)
-    }
-  }
-
-  async function handleDeleteAccount() {
-    if (deleteConfirm !== 'DELETE') return
-
-    setDeleting(true)
-    try {
-      // Stub: DELETE /api/user/account - simulated until endpoint exists
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-      toast('info', 'Account deletion has been initiated.')
-      setShowDeleteModal(false)
-    } catch {
-      toast('error', 'Failed to delete account. Please try again.')
-    } finally {
-      setDeleting(false)
-    }
-  }
-
   return (
     <div className="space-y-8 max-w-lg">
       {/* Links */}
@@ -767,18 +510,16 @@ function DataPrivacyTab() {
       <div>
         <h3 className="text-sm font-semibold text-foreground">Download your data</h3>
         <p className="mt-1 text-xs text-muted-foreground">
-          Request a copy of all data we hold about you. You will receive an email with a download
-          link once the export is ready.
+          Get a copy of all the data we hold about you as a file downloaded straight to your device,
+          from the data export page.
         </p>
-        <LoadingButton
-          variant="outline"
-          size="sm"
-          onClick={handleDownloadData}
-          loading={downloading}
-          className="mt-3"
+        <Link
+          href="/account/data-export"
+          className="mt-3 inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground hover:border-accent/40 hover:bg-muted transition-colors"
         >
-          Download all my data
-        </LoadingButton>
+          Go to data export
+          <ChevronRightIcon />
+        </Link>
       </div>
 
       {/* Delete account */}
@@ -787,79 +528,17 @@ function DataPrivacyTab() {
           Delete your account
         </h3>
         <p className="mt-1 text-xs text-red-600">
-          This action is permanent and cannot be undone. All your data, essays, feedback, and
-          subscription will be permanently deleted.
+          Deleting your account is permanent once the grace period ends. The deletion page explains
+          exactly what is removed and asks you to confirm before anything happens.
         </p>
-        <LoadingButton
-          variant="destructive"
-          size="sm"
-          onClick={() => setShowDeleteModal(true)}
-          className="mt-3"
+        <Link
+          href="/account/delete"
+          className="mt-3 inline-flex items-center gap-2 rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-2 text-sm font-medium text-red-600 hover:bg-red-500/20 transition-colors"
         >
-          Delete my account
-        </LoadingButton>
+          Go to account deletion
+          <ChevronRightIcon />
+        </Link>
       </div>
-
-      {/* Delete confirmation modal */}
-      <Modal
-        open={showDeleteModal}
-        onClose={() => {
-          setShowDeleteModal(false)
-          setDeleteConfirm('')
-        }}
-        title="Delete your account?"
-        actions={
-          <>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => {
-                setShowDeleteModal(false)
-                setDeleteConfirm('')
-              }}
-            >
-              Cancel
-            </Button>
-            <LoadingButton
-              variant="destructive"
-              size="sm"
-              onClick={handleDeleteAccount}
-              loading={deleting}
-              disabled={deleteConfirm !== 'DELETE'}
-            >
-              Permanently delete
-            </LoadingButton>
-          </>
-        }
-      >
-        <div className="space-y-4">
-          <div className="rounded-lg bg-red-500/10 border border-red-500/20 p-3">
-            <p className="text-sm text-red-700 dark:text-red-300 font-medium">
-              This cannot be undone.
-            </p>
-            <ul className="mt-2 space-y-1 text-xs text-red-600 list-disc list-inside">
-              <li>All your essays and feedback will be permanently deleted</li>
-              <li>Your subscription will be cancelled immediately</li>
-              <li>You will lose access to all data associated with this account</li>
-              <li>This action complies with your right to erasure under GDPR</li>
-            </ul>
-          </div>
-          <div>
-            <label htmlFor="delete-confirm" className="block text-sm font-medium text-foreground">
-              Type <span className="font-mono font-bold">DELETE</span> to confirm
-            </label>
-            <input
-              id="delete-confirm"
-              type="text"
-              value={deleteConfirm}
-              onChange={(e) => setDeleteConfirm(e.target.value)}
-              className="mt-1 block w-full rounded-lg border border-border px-3 py-2 text-sm focus:border-red-500 focus:ring-1 focus:ring-red-500"
-              autoComplete="off"
-              spellCheck={false}
-            />
-          </div>
-        </div>
-      </Modal>
     </div>
   )
 }

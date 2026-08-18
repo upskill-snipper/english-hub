@@ -22,6 +22,7 @@ import {
   Sparkles,
   Gift,
   Zap,
+  Users,
 } from 'lucide-react'
 
 import { getUtmParams } from '@/lib/utm'
@@ -69,8 +70,17 @@ function RegisterForm() {
   const searchParams = useSearchParams()
   const { board: selectedBoard } = useBoard()
   const t = useT()
-  const [accountType, setAccountType] = useState<'student' | 'teacher'>(
-    searchParams.get('type') === 'teacher' ? 'teacher' : 'student',
+  // Three public account types. `?role=parent` (used by the /for-parents
+  // CTAs) selects the parent variant; `?type=teacher` keeps its historic
+  // meaning. Parent accounts are for adults only - they skip the
+  // student-specific fields (year group, guardian email) and link to an
+  // existing student account by invite code after sign-up.
+  const [accountType, setAccountType] = useState<'student' | 'teacher' | 'parent'>(
+    searchParams.get('role') === 'parent' || searchParams.get('type') === 'parent'
+      ? 'parent'
+      : searchParams.get('type') === 'teacher'
+        ? 'teacher'
+        : 'student',
   )
   const [fullName, setFullName] = useState('')
   const [dobDay, setDobDay] = useState('')
@@ -149,6 +159,14 @@ function RegisterForm() {
       }
     }
 
+    if (accountType === 'parent') {
+      // Parent accounts are adults only. We collect date of birth because
+      // the Prisma projection row (/api/auth/register) requires it, and it
+      // lets us enforce the 18+ rule honestly rather than on trust.
+      if (!dobDay || !dobMonth || !dobYear) errors.dob = t('form.dob_required')
+      else if (userAge !== null && userAge < 18) errors.dob = t('form.must_be_18')
+    }
+
     // PDPPL Article 17 - explicit cross-border consent required for QA
     // residents before the account can be created. The signup flow now
     // collects country of residence; if QA, a named-destination consent
@@ -209,6 +227,10 @@ function RegisterForm() {
       options: {
         data: {
           full_name: fullName,
+          // Identity convergence: write the role into user_metadata at
+          // sign-up so Supabase auth, the profiles row, and the Prisma
+          // projection all agree on the account type from day one.
+          role: accountType,
           ...(utmParams && {
             utm_source: utmParams.utm_source,
             utm_medium: utmParams.utm_medium,
@@ -252,9 +274,11 @@ function RegisterForm() {
         full_name: fullName,
         role: accountType,
         year_group: accountType === 'student' ? yearGroup || null : null,
-        exam_board: examBoard || null,
+        exam_board: accountType === 'parent' ? null : examBoard || null,
         school_name: accountType === 'teacher' ? schoolName || null : null,
-        date_of_birth: accountType === 'student' ? dateOfBirth : null,
+        // Students and parents both provide a date of birth (parents to
+        // evidence the 18+ rule); teachers do not.
+        date_of_birth: accountType === 'teacher' ? null : dateOfBirth,
         parent_guardian_email: accountType === 'student' ? parentGuardianEmail || null : null,
         is_minor: isMinorUser,
         // Children's Code (GAP-5A / GAP-7A): high-privacy defaults for under-16s
@@ -335,7 +359,12 @@ function RegisterForm() {
             lastName,
             dateOfBirth,
             country: 'GB',
-            role: accountType === 'teacher' ? 'TEACHER' : 'STUDENT',
+            role:
+              accountType === 'teacher'
+                ? 'TEACHER'
+                : accountType === 'parent'
+                  ? 'PARENT'
+                  : 'STUDENT',
           }),
         }).catch(() => {})
       }
@@ -353,7 +382,12 @@ function RegisterForm() {
     // session, fall back to the verification-pending success card.
     // When Supabase email-confirmation is OFF, signUp() returns a session and we go straight to /dashboard. When confirmation is ON, no session → fall through to the verification-pending success card below.
     if (data.session) {
-      window.location.assign('/dashboard?welcome=true')
+      // Parents land on the parent dashboard, where the link-your-child
+      // panel is the first thing they see. Students and teachers keep the
+      // welcome-flagged student dashboard.
+      window.location.assign(
+        accountType === 'parent' ? '/dashboard/parent' : '/dashboard?welcome=true',
+      )
       return
     }
 
@@ -385,6 +419,11 @@ function RegisterForm() {
               {accountType === 'teacher' && (
                 <p className="text-sm text-muted-foreground mb-4">
                   {t('auth.register.teacher_after_verify')}
+                </p>
+              )}
+              {accountType === 'parent' && (
+                <p className="text-sm text-muted-foreground mb-4">
+                  {t('auth.register.parent_after_verify')}
                 </p>
               )}
               <p className="text-sm text-muted-foreground mb-4">
@@ -452,38 +491,59 @@ function RegisterForm() {
             <CardTitle className="text-2xl">
               {accountType === 'teacher'
                 ? t('auth.register.teacher_title')
-                : t('auth.register.student_title')}
+                : accountType === 'parent'
+                  ? t('auth.register.parent_title')
+                  : t('auth.register.student_title')}
             </CardTitle>
             <CardDescription>
               {accountType === 'teacher'
                 ? t('auth.register.teacher_subtitle')
-                : t('auth.register.student_subtitle')}
+                : accountType === 'parent'
+                  ? t('auth.register.parent_subtitle')
+                  : t('auth.register.student_subtitle')}
             </CardDescription>
           </CardHeader>
 
-          {/* Free trial benefits */}
-          <div className="px-6 pb-2">
-            <div className="rounded-lg border border-primary/20 bg-primary/5 p-4 space-y-2.5">
-              <p className="text-sm font-medium text-foreground flex items-center gap-2">
-                <Gift className="h-4 w-4 text-primary" />
-                {t('auth.register.whats_included')}
-              </p>
-              <div className="grid grid-cols-1 gap-1.5 text-sm text-muted-foreground">
-                <span className="flex items-center gap-2">
-                  <CheckCircle className="h-3.5 w-3.5 text-primary shrink-0" />
-                  {t('auth.register.included_courses')}
-                </span>
-                <span className="flex items-center gap-2">
-                  <Sparkles className="h-3.5 w-3.5 text-primary shrink-0" />
-                  {t('auth.register.included_ai')}
-                </span>
-                <span className="flex items-center gap-2">
-                  <Zap className="h-3.5 w-3.5 text-primary shrink-0" />
-                  {t('auth.register.included_upgrade')}
-                </span>
+          {/* Parent variant: adults-only statement + how linking works */}
+          {accountType === 'parent' && (
+            <div className="px-6 pb-2">
+              <div className="rounded-lg border border-primary/20 bg-primary/5 p-4 space-y-2">
+                <p className="text-sm font-medium text-foreground flex items-center gap-2">
+                  <Users className="h-4 w-4 text-primary" />
+                  {t('auth.register.parent_adults_only_lead')}
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  {t('auth.register.parent_adults_only_body')}
+                </p>
               </div>
             </div>
-          </div>
+          )}
+
+          {/* Free trial benefits (student and teacher variants) */}
+          {accountType !== 'parent' && (
+            <div className="px-6 pb-2">
+              <div className="rounded-lg border border-primary/20 bg-primary/5 p-4 space-y-2.5">
+                <p className="text-sm font-medium text-foreground flex items-center gap-2">
+                  <Gift className="h-4 w-4 text-primary" />
+                  {t('auth.register.whats_included')}
+                </p>
+                <div className="grid grid-cols-1 gap-1.5 text-sm text-muted-foreground">
+                  <span className="flex items-center gap-2">
+                    <CheckCircle className="h-3.5 w-3.5 text-primary shrink-0" />
+                    {t('auth.register.included_courses')}
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <Sparkles className="h-3.5 w-3.5 text-primary shrink-0" />
+                    {t('auth.register.included_ai')}
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <Zap className="h-3.5 w-3.5 text-primary shrink-0" />
+                    {t('auth.register.included_upgrade')}
+                  </span>
+                </div>
+              </div>
+            </div>
+          )}
 
           <CardContent>
             {(process.env.NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED === 'true' ||
@@ -514,11 +574,11 @@ function RegisterForm() {
               {/* Account type toggle */}
               <div className="space-y-1.5">
                 <Label>{t('auth.register.i_am_a')}</Label>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-3 gap-2">
                   <button
                     type="button"
                     onClick={() => setAccountType('student')}
-                    className={`flex items-center justify-center gap-2 rounded-lg border-2 px-4 py-3 text-sm font-medium transition-all ${
+                    className={`flex items-center justify-center gap-2 rounded-lg border-2 px-2 py-3 text-sm font-medium transition-all ${
                       accountType === 'student'
                         ? 'border-primary bg-primary/5 text-primary'
                         : 'border-border text-muted-foreground hover:border-primary/40'
@@ -530,7 +590,7 @@ function RegisterForm() {
                   <button
                     type="button"
                     onClick={() => setAccountType('teacher')}
-                    className={`flex items-center justify-center gap-2 rounded-lg border-2 px-4 py-3 text-sm font-medium transition-all ${
+                    className={`flex items-center justify-center gap-2 rounded-lg border-2 px-2 py-3 text-sm font-medium transition-all ${
                       accountType === 'teacher'
                         ? 'border-primary bg-primary/5 text-primary'
                         : 'border-border text-muted-foreground hover:border-primary/40'
@@ -538,6 +598,18 @@ function RegisterForm() {
                   >
                     <School className="w-5 h-5" />
                     {t('auth.register.teacher')}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setAccountType('parent')}
+                    className={`flex items-center justify-center gap-2 rounded-lg border-2 px-2 py-3 text-sm font-medium transition-all ${
+                      accountType === 'parent'
+                        ? 'border-primary bg-primary/5 text-primary'
+                        : 'border-border text-muted-foreground hover:border-primary/40'
+                    }`}
+                  >
+                    <Users className="w-5 h-5" />
+                    {t('auth.register.parent')}
                   </button>
                 </div>
               </div>
@@ -568,7 +640,7 @@ function RegisterForm() {
                 )}
               </div>
 
-              {accountType === 'student' && (
+              {accountType !== 'teacher' && (
                 <fieldset
                   className="space-y-1.5"
                   aria-describedby={fieldErrors.dob ? 'dob-error' : undefined}
@@ -646,6 +718,9 @@ function RegisterForm() {
                       </select>
                     </div>
                   </div>
+                  {accountType === 'parent' && (
+                    <p className="text-sm text-muted-foreground">{t('form.parent_dob_help')}</p>
+                  )}
                   {fieldErrors.dob && (
                     <p id="dob-error" className="text-sm text-destructive mt-1">
                       {fieldErrors.dob}
@@ -825,25 +900,27 @@ function RegisterForm() {
                 </div>
               )}
 
-              <div className="space-y-1.5">
-                <Label htmlFor="examBoard">{t('form.exam_board')}</Label>
-                <div className="relative">
-                  <BookOpen className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
-                  <select
-                    id="examBoard"
-                    value={examBoard}
-                    onChange={(e) => setExamBoard(e.target.value)}
-                    className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 pl-11 text-base shadow-xs transition-[color,box-shadow] outline-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
-                  >
-                    <option value="">{t('form.select_exam_board')}</option>
-                    {EXAM_BOARDS.map((board) => (
-                      <option key={board} value={board}>
-                        {t(EXAM_BOARD_LABEL_KEYS[board])}
-                      </option>
-                    ))}
-                  </select>
+              {accountType !== 'parent' && (
+                <div className="space-y-1.5">
+                  <Label htmlFor="examBoard">{t('form.exam_board')}</Label>
+                  <div className="relative">
+                    <BookOpen className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                    <select
+                      id="examBoard"
+                      value={examBoard}
+                      onChange={(e) => setExamBoard(e.target.value)}
+                      className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 pl-11 text-base shadow-xs transition-[color,box-shadow] outline-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
+                    >
+                      <option value="">{t('form.select_exam_board')}</option>
+                      {EXAM_BOARDS.map((board) => (
+                        <option key={board} value={board}>
+                          {t(EXAM_BOARD_LABEL_KEYS[board])}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* PDPPL G7 (2026-05-20): country of residence + Qatar
                   Article 17 cross-border consent panel. The privacy
@@ -977,6 +1054,8 @@ function RegisterForm() {
                   </>
                 ) : accountType === 'teacher' ? (
                   t('auth.register.create_teacher_account')
+                ) : accountType === 'parent' ? (
+                  t('auth.register.create_parent_account')
                 ) : (
                   t('auth.register.create_free_account')
                 )}

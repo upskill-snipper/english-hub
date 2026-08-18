@@ -287,12 +287,18 @@ export default function AssessmentPage() {
               const certJson = await certRes.json()
               if (certJson.certificate_id) {
                 setCertificateId(certJson.certificate_id)
+              } else {
+                setError(t('learn.assessment.result.cert_error'))
               }
             } else {
+              // Never swallow this: a passing student with no certificate and
+              // no explanation is worse than an honest failure message.
               console.error('Failed to issue certificate:', await certRes.text())
+              setError(t('learn.assessment.result.cert_error'))
             }
           } catch (certErr) {
             console.error('Failed to issue certificate:', certErr)
+            setError(t('learn.assessment.result.cert_error'))
           }
         }
       } catch (err) {

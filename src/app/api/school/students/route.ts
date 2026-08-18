@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 import { verifySchoolMember } from '@/lib/school-auth'
+import { getSchoolStudents } from '@/lib/school-students'
 
 export const dynamic = 'force-dynamic'
 
@@ -49,21 +50,19 @@ export async function GET(request: NextRequest) {
     }
 
     const admin = createServiceRoleClient()
-    const { data: students, error: studentsError } = await admin
-      .from('school_members')
-      .select(
-        'id, user_id, full_name, email, year_group, invite_status, last_active_at, created_at',
-      )
-      .eq('school_id', member.school_id)
-      .eq('role', 'student')
-      .order('full_name', { ascending: true })
 
-    if (studentsError) {
-      console.error('[school/students] GET fetch error:', studentsError)
+    // Canonical union of school_members role='student' AND school_students
+    // (the join-code flow writes the latter) so pupils appear regardless of
+    // which path enrolled them. Response keys are unchanged.
+    let students
+    try {
+      students = await getSchoolStudents(admin, member.school_id as string)
+    } catch (fetchError) {
+      console.error('[school/students] GET fetch error:', fetchError)
       return NextResponse.json({ error: 'Failed to fetch students' }, { status: 500 })
     }
 
-    return NextResponse.json({ students: students || [] })
+    return NextResponse.json({ students })
   } catch (error) {
     console.error('[school/students] GET error:', error)
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
@@ -232,23 +231,47 @@ export async function DELETE(request: NextRequest) {
 
     const admin = createServiceRoleClient()
 
-    // Confirm the target row belongs to this school and has role "student"
-    const { data: target, error: lookupError } = await admin
+    // The students list is a union of school_members (role='student') and
+    // school_students, so the id may belong to either table. Try the
+    // school_members row first, then fall back to soft-removing the
+    // school_students row (its schema treats status='removed' as deletion).
+    const { data: target } = await admin
       .from('school_members')
       .select('id, role, school_id')
       .eq('id', studentId)
       .eq('school_id', member.school_id)
       .eq('role', 'student')
-      .single()
+      .maybeSingle()
 
-    if (lookupError || !target) {
+    if (target) {
+      const { error: deleteError } = await admin.from('school_members').delete().eq('id', studentId)
+
+      if (deleteError) {
+        console.error('[school/students] DELETE error:', deleteError)
+        return NextResponse.json({ error: 'Failed to remove student' }, { status: 500 })
+      }
+
+      return NextResponse.json({ success: true })
+    }
+
+    const { data: joinTarget } = await admin
+      .from('school_students')
+      .select('id')
+      .eq('id', studentId)
+      .eq('school_id', member.school_id)
+      .maybeSingle()
+
+    if (!joinTarget) {
       return NextResponse.json({ error: 'Student not found in your school' }, { status: 404 })
     }
 
-    const { error: deleteError } = await admin.from('school_members').delete().eq('id', studentId)
+    const { error: removeError } = await admin
+      .from('school_students')
+      .update({ status: 'removed' })
+      .eq('id', studentId)
 
-    if (deleteError) {
-      console.error('[school/students] DELETE error:', deleteError)
+    if (removeError) {
+      console.error('[school/students] DELETE (school_students) error:', removeError)
       return NextResponse.json({ error: 'Failed to remove student' }, { status: 500 })
     }
 

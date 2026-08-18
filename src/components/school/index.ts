@@ -73,8 +73,5 @@ export { SchoolFAQ } from './SchoolFAQ'
 export { SchoolTestimonials } from './SchoolTestimonials'
 export { SchoolStats } from './SchoolStats'
 export { ContentCreationDemo } from './ContentCreationDemo'
-export { AnalyticsDashboardDemo } from './AnalyticsDashboardDemo'
-export { InterventionInsightsPanel } from './InterventionInsightsPanel'
 
 export { LessonBuilderPreview } from './LessonBuilderPreview'
-export { StudentProgressPreview } from './StudentProgressPreview'

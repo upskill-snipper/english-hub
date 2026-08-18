@@ -29,6 +29,15 @@ const insertSubmissionMock = vi.fn(
   async (..._args: unknown[]): Promise<{ id: string }> => ({ id: 'sub-new-1' }),
 )
 
+// Server-side school/class resolution (never trusted from the body). Defaults
+// to the B2C outcome; individual tests override for the enrolled-pupil case.
+let resolvedContext: { source: string; schoolId: string | null; classId: string | null } = {
+  source: 'b2c_self',
+  schoolId: null,
+  classId: null,
+}
+const resolveSubmissionContextMock = vi.fn(async (..._args: unknown[]) => resolvedContext)
+
 vi.mock('@/lib/supabase/server', () => ({
   createServerSupabaseClient: () => ({
     auth: { getUser: async () => ({ data: { user: session.user }, error: session.error }) },
@@ -56,6 +65,7 @@ vi.mock('@/lib/marking/mark-schemes', () => ({
 }))
 vi.mock('@/lib/marking/persistence', () => ({
   insertSubmission: (...a: unknown[]) => insertSubmissionMock(...a),
+  resolveSubmissionContext: (...a: unknown[]) => resolveSubmissionContextMock(...a),
 }))
 
 function makeRequest(body: unknown, opts: { json?: boolean } = {}): NextRequest {
@@ -98,6 +108,8 @@ beforeEach(() => {
   schemeResult = { id: 'aqa-lit-p1', board: 'AQA', version: 'v1.0' }
   insertSubmissionMock.mockClear()
   insertSubmissionMock.mockResolvedValue({ id: 'sub-new-1' })
+  resolvedContext = { source: 'b2c_self', schoolId: null, classId: null }
+  resolveSubmissionContextMock.mockClear()
 })
 
 describe('POST /api/submissions - gate order', () => {
@@ -217,14 +229,34 @@ describe('POST /api/submissions - happy path & mapping', () => {
     expect((await res.json()).error).toMatch(/failed to save/i)
   })
 
-  it('b2b_class submission also succeeds (schoolId/classId optional)', async () => {
+  it('resolves school/class SERVER-side for an enrolled pupil (b2b_class)', async () => {
+    resolvedContext = { source: 'b2b_class', schoolId: 'sch-real', classId: 'cls-real' }
+    const res = await POST(makeRequest(validBody))
+    expect(res.status).toBe(201)
+    expect(resolveSubmissionContextMock).toHaveBeenCalledTimes(1)
+    // Second arg to resolveSubmissionContext is the session user id
+    expect(resolveSubmissionContextMock.mock.calls[0][1]).toBe('auth-1')
+    const arg = insertSubmissionMock.mock.calls[0][1] as Record<string, unknown>
+    expect(arg.source).toBe('b2b_class')
+    expect(arg.schoolId).toBe('sch-real')
+    expect(arg.classId).toBe('cls-real')
+  })
+
+  it('IGNORES schoolId/classId/source from the request body (injection hole closed)', async () => {
+    // The client claims a b2b context for another school; the resolver says
+    // the user has no enrolment, so the row must land as b2c with no school.
     const res = await POST(
-      makeRequest({ ...validBody, source: 'b2b_class', schoolId: 'sch-1', classId: 'cls-1' }),
+      makeRequest({
+        ...validBody,
+        source: 'b2b_class',
+        schoolId: 'victim-school',
+        classId: 'victim-class',
+      }),
     )
     expect(res.status).toBe(201)
     const arg = insertSubmissionMock.mock.calls[0][1] as Record<string, unknown>
-    expect(arg.source).toBe('b2b_class')
-    expect(arg.schoolId).toBe('sch-1')
-    expect(arg.classId).toBe('cls-1')
+    expect(arg.source).toBe('b2c_self')
+    expect(arg.schoolId).toBeNull()
+    expect(arg.classId).toBeNull()
   })
 })

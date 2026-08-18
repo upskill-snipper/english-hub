@@ -82,7 +82,10 @@ describe('scoreAnswer', () => {
       // unique keywords: dark, forest, night, gloomy, woods (5 total)
       // answer contains "dark", "forest", "night" = 3/5 = 60% >= 50%
       const q = saQuestion()
-      const answer: ComprehensionAnswer = { questionId: 'p1q2', answer: 'It was a dark forest at night' }
+      const answer: ComprehensionAnswer = {
+        questionId: 'p1q2',
+        answer: 'It was a dark forest at night',
+      }
       expect(scoreAnswer(answer, q)).toBe(4)
     })
 
@@ -119,7 +122,11 @@ describe('scoreAnswer', () => {
     })
 
     it('handles question with no acceptableKeywords', () => {
-      const q = saQuestion({ correctAnswer: 'the cat sat', acceptableKeywords: undefined, points: 2 })
+      const q = saQuestion({
+        correctAnswer: 'the cat sat',
+        acceptableKeywords: undefined,
+        points: 2,
+      })
       // keywords from correctAnswer only: the, cat, sat (3)
       // answer "the cat" = 2/3 = 66% >= 50%
       const answer: ComprehensionAnswer = { questionId: 'p1q2', answer: 'the cat' }
@@ -128,9 +135,10 @@ describe('scoreAnswer', () => {
   })
 })
 
-// ─── scoreFluency (tested via calculateReadingAge) ──────────────────────────
-// scoreFluency is not exported, so we test it through calculateReadingAge's
-// rawScores.fluency output.
+// ─── scoreFluency ───────────────────────────────────────────────────────────
+// Self-timed reading rate only. Accuracy and adjusted WPM were removed after
+// audit: the screener cannot hear the child read, so an earlier version's
+// flat 95% "accuracy" was fabricated - these tests pin the honest contract.
 
 describe('scoreFluency (via calculateReadingAge)', () => {
   function fluencyResult(timings: FluencyTiming[]) {
@@ -139,72 +147,45 @@ describe('scoreFluency (via calculateReadingAge)', () => {
 
   it('calculates WPM correctly for a single passage', () => {
     // 100 words in 60 seconds = 100 WPM
-    const result = fluencyResult([
-      { passageId: 'p1', readingTimeSeconds: 60, wordCount: 100, wordsCorrect: 100 },
-    ])
+    const result = fluencyResult([{ passageId: 'p1', readingTimeSeconds: 60, wordCount: 100 }])
     expect(result.wordsPerMinute).toBe(100)
-    expect(result.accuracy).toBe(100)
-    expect(result.adjustedWpm).toBe(100)
   })
 
   it('caps WPM at 450', () => {
     // 1000 words in 60 seconds = 1000 WPM (unrealistic), should cap at 450
-    const result = fluencyResult([
-      { passageId: 'p1', readingTimeSeconds: 60, wordCount: 1000, wordsCorrect: 1000 },
-    ])
+    const result = fluencyResult([{ passageId: 'p1', readingTimeSeconds: 60, wordCount: 1000 }])
     expect(result.wordsPerMinute).toBe(450)
-    expect(result.adjustedWpm).toBe(450)
   })
 
-  it('calculates accuracy as wordsCorrect / wordCount', () => {
-    // 80 of 100 words correct = 80%
-    const result = fluencyResult([
-      { passageId: 'p1', readingTimeSeconds: 60, wordCount: 100, wordsCorrect: 80 },
-    ])
-    expect(result.accuracy).toBe(80)
-  })
-
-  it('adjustedWpm = wpm * accuracy proportion', () => {
-    // 200 words in 60s = 200 WPM, 90% accuracy => adjusted = 200 * 0.9 = 180
-    const result = fluencyResult([
-      { passageId: 'p1', readingTimeSeconds: 60, wordCount: 200, wordsCorrect: 180 },
-    ])
-    expect(result.wordsPerMinute).toBe(200)
-    expect(result.accuracy).toBe(90)
-    expect(result.adjustedWpm).toBe(180)
+  it('never reports an accuracy figure - accuracy is not measurable here', () => {
+    const result = fluencyResult([{ passageId: 'p1', readingTimeSeconds: 60, wordCount: 100 }])
+    expect(result).not.toHaveProperty('accuracy')
+    expect(result).not.toHaveProperty('adjustedWpm')
   })
 
   it('averages across multiple passages', () => {
     const result = fluencyResult([
-      { passageId: 'p1', readingTimeSeconds: 60, wordCount: 120, wordsCorrect: 120 }, // 120 WPM, 100%
-      { passageId: 'p2', readingTimeSeconds: 60, wordCount: 80, wordsCorrect: 80 },   // 80 WPM, 100%
+      { passageId: 'p1', readingTimeSeconds: 60, wordCount: 120 }, // 120 WPM
+      { passageId: 'p2', readingTimeSeconds: 60, wordCount: 80 }, // 80 WPM
     ])
-    // avg WPM = (120+80)/2 = 100, accuracy = 100%
+    // avg WPM = (120+80)/2 = 100
     expect(result.wordsPerMinute).toBe(100)
-    expect(result.adjustedWpm).toBe(100)
   })
 
   it('returns zeros for empty timings array', () => {
     const result = fluencyResult([])
     expect(result.wordsPerMinute).toBe(0)
-    expect(result.accuracy).toBe(0)
-    expect(result.adjustedWpm).toBe(0)
   })
 
   it('handles zero reading time (0 seconds)', () => {
-    const result = fluencyResult([
-      { passageId: 'p1', readingTimeSeconds: 0, wordCount: 100, wordsCorrect: 100 },
-    ])
+    const result = fluencyResult([{ passageId: 'p1', readingTimeSeconds: 0, wordCount: 100 }])
     // minutes = 0, rawWpm = 0 (guarded by minutes > 0)
     expect(result.wordsPerMinute).toBe(0)
   })
 
   it('handles zero word count', () => {
-    const result = fluencyResult([
-      { passageId: 'p1', readingTimeSeconds: 60, wordCount: 0, wordsCorrect: 0 },
-    ])
+    const result = fluencyResult([{ passageId: 'p1', readingTimeSeconds: 60, wordCount: 0 }])
     expect(result.wordsPerMinute).toBe(0)
-    expect(result.accuracy).toBe(0)
   })
 })
 
@@ -215,13 +196,18 @@ describe('calculateReadingAge', () => {
     const result = calculateReadingAge(buildInput())
     expect(result).toHaveProperty('readingAge')
     expect(result).toHaveProperty('decodingAge')
-    expect(result).toHaveProperty('fluencyAge')
     expect(result).toHaveProperty('rawScores')
     expect(result).toHaveProperty('ceilingLevel')
     expect(result).toHaveProperty('ceilingReached')
     expect(result).toHaveProperty('passagesAttempted')
     expect(result).toHaveProperty('strengths')
     expect(result).toHaveProperty('areasForDevelopment')
+
+    // Removed after audit - must never come back:
+    // a "fluency age" from a self-clicked timer and a GCSE mapping
+    // from a reading age were both fabricated numbers.
+    expect(result).not.toHaveProperty('fluencyAge')
+    expect(result).not.toHaveProperty('gcseEquivalent')
 
     // AgeScore shape
     expect(result.readingAge).toHaveProperty('years')
@@ -242,10 +228,12 @@ describe('calculateReadingAge', () => {
 
   it('scores comprehension correctly', () => {
     const q = mcQuestion({ id: 'p1q1', correctAnswer: 'b', points: 2 })
-    const result = calculateReadingAge(buildInput({
-      comprehensionAnswers: [{ questionId: 'p1q1', answer: 'b' }],
-      questions: [q],
-    }))
+    const result = calculateReadingAge(
+      buildInput({
+        comprehensionAnswers: [{ questionId: 'p1q1', answer: 'b' }],
+        questions: [q],
+      }),
+    )
     expect(result.rawScores.comprehension.score).toBe(2)
     expect(result.rawScores.comprehension.maxScore).toBe(2)
     expect(result.rawScores.comprehension.percentage).toBe(100)
@@ -283,10 +271,12 @@ describe('calculateReadingAge', () => {
   })
 })
 
-// ─── GCSE grade prediction ─────────────────────────────────────────────────
+// ─── No GCSE mapping (regression) ──────────────────────────────────────────
+// A reading age does not map to a GCSE grade. The old gcseEquivalent output
+// was removed after audit; this pins its absence even at ceiling scores.
 
-describe('GCSE grade prediction', () => {
-  function gradeForScores(compPct: number, decPct: number, adjWpm: number) {
+describe('no GCSE grade mapping', () => {
+  function resultForScores(compPct: number, decPct: number, wpm: number) {
     // Build questions/answers to hit the desired comprehension percentage
     const questions: ComprehensionQuestion[] = []
     const answers: ComprehensionAnswer[] = []
@@ -304,39 +294,31 @@ describe('GCSE grade prediction', () => {
       decodingAnswers.push({ wordId: `d${i}`, correct: i < decPct, responseTimeMs: 500 })
     }
 
-    // Build fluency timing to produce the desired adjustedWpm
     const fluencyTimings: FluencyTiming[] = [
-      { passageId: 'p1', readingTimeSeconds: 60, wordCount: adjWpm, wordsCorrect: adjWpm },
+      { passageId: 'p1', readingTimeSeconds: 60, wordCount: wpm },
     ]
 
-    return calculateReadingAge(buildInput({
-      comprehensionAnswers: answers,
-      questions,
-      decodingAnswers,
-      fluencyTimings,
-    }))
+    return calculateReadingAge(
+      buildInput({
+        comprehensionAnswers: answers,
+        questions,
+        decodingAnswers,
+        fluencyTimings,
+      }),
+    )
   }
 
-  it('assigns gcseEquivalent when reading age >= 14', () => {
-    // High scores across all dimensions should produce reading age >= 14
-    const result = gradeForScores(95, 95, 250)
-    expect(result.gcseEquivalent).toBeDefined()
-    expect(result.gcseEquivalent).toBeGreaterThanOrEqual(1)
-    expect(result.gcseEquivalent).toBeLessThanOrEqual(9)
+  it('never emits a gcseEquivalent, even for a ceiling performance', () => {
+    const result = resultForScores(95, 95, 250)
+    expect(result).not.toHaveProperty('gcseEquivalent')
+    // The composite still reflects the strong performance
+    expect(result.readingAge.years).toBeGreaterThanOrEqual(14)
   })
 
-  it('does not assign gcseEquivalent when reading age < 14', () => {
-    // Low scores should produce reading age well below 14
-    const result = gradeForScores(10, 10, 20)
-    expect(result.gcseEquivalent).toBeUndefined()
-  })
-
-  it('grade 9 requires reading age >= 17y6m (>= 210 months)', () => {
-    const result = gradeForScores(95, 95, 250)
-    if (result.gcseEquivalent === 9) {
-      const months = result.readingAge.years * 12 + result.readingAge.months
-      expect(months).toBeGreaterThanOrEqual(210)
-    }
+  it('never recommends clinical interventions in plain-language feedback', () => {
+    const weak = resultForScores(10, 10, 20)
+    const allFeedback = [...weak.strengths, ...weak.areasForDevelopment].join(' ')
+    expect(allFeedback.toLowerCase()).not.toContain('systematic phonics intervention')
   })
 })
 
@@ -345,10 +327,12 @@ describe('GCSE grade prediction', () => {
 describe('edge cases', () => {
   it('comprehension with no matching question IDs scores zero', () => {
     const q = mcQuestion({ id: 'p1q1' })
-    const result = calculateReadingAge(buildInput({
-      comprehensionAnswers: [{ questionId: 'nonexistent', answer: 'b' }],
-      questions: [q],
-    }))
+    const result = calculateReadingAge(
+      buildInput({
+        comprehensionAnswers: [{ questionId: 'nonexistent', answer: 'b' }],
+        questions: [q],
+      }),
+    )
     // Answer doesn't match any question, so score is 0 but maxScore is still counted
     expect(result.rawScores.comprehension.score).toBe(0)
   })
@@ -373,13 +357,12 @@ describe('edge cases', () => {
 
   it('very fast reading time gets capped at 450 WPM per passage', () => {
     // 500 words in 10 seconds = 3000 WPM raw, but should cap at 450
-    const result = calculateReadingAge(buildInput({
-      fluencyTimings: [
-        { passageId: 'p1', readingTimeSeconds: 10, wordCount: 500, wordsCorrect: 500 },
-      ],
-    }))
+    const result = calculateReadingAge(
+      buildInput({
+        fluencyTimings: [{ passageId: 'p1', readingTimeSeconds: 10, wordCount: 500 }],
+      }),
+    )
     expect(result.rawScores.fluency.wordsPerMinute).toBe(450)
-    expect(result.rawScores.fluency.adjustedWpm).toBeLessThanOrEqual(450)
   })
 })
 

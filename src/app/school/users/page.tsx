@@ -46,7 +46,7 @@ import {
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
-type Role = 'admin' | 'teacher' | 'student'
+type Role = 'admin' | 'head_of_department' | 'teacher' | 'student'
 type Status = 'active' | 'pending' | 'suspended'
 
 interface SchoolUser {
@@ -62,145 +62,87 @@ interface SchoolUser {
   avatarInitials: string
 }
 
-// ── Mock data ─────────────────────────────────────────────────────────────────
+// ── API row shapes (GET /api/school/members and /api/school/students) ─────────
 
-const MOCK_USERS: SchoolUser[] = [
-  {
-    id: '1',
-    firstName: 'Sarah',
-    lastName: 'Mitchell',
-    email: 's.mitchell@school.edu',
-    role: 'admin',
-    status: 'active',
-    lastActive: 'Today, 09:14',
-    avatarInitials: 'SM',
-  },
-  {
-    id: '2',
-    firstName: 'James',
-    lastName: 'Hargreaves',
-    email: 'j.hargreaves@school.edu',
-    role: 'teacher',
-    class: '10B',
-    status: 'active',
-    lastActive: 'Today, 08:52',
-    avatarInitials: 'JH',
-  },
-  {
-    id: '3',
-    firstName: 'Priya',
-    lastName: 'Nair',
-    email: 'p.nair@school.edu',
-    role: 'teacher',
-    class: '9A',
-    status: 'active',
-    lastActive: 'Yesterday',
-    avatarInitials: 'PN',
-  },
-  {
-    id: '4',
-    firstName: 'Oliver',
-    lastName: 'Bennett',
-    email: 'o.bennett@school.edu',
+interface ApiMemberRow {
+  id: string
+  user_id: string | null
+  role: string
+  full_name: string | null
+  email: string
+  invite_status: string | null
+  last_active_at: string | null
+}
+
+interface ApiStudentRow {
+  id: string
+  user_id: string | null
+  full_name: string | null
+  email: string
+  year_group: string | null
+  invite_status: string | null
+  last_active_at: string | null
+}
+
+function splitName(
+  fullName: string | null,
+  email: string,
+): {
+  firstName: string
+  lastName: string
+  initials: string
+} {
+  const parts = (fullName ?? '').trim().split(/\s+/).filter(Boolean)
+  const firstName = parts[0] ?? email
+  const lastName = parts.slice(1).join(' ')
+  const initials =
+    `${parts[0]?.[0] ?? email[0] ?? '?'}${parts.length > 1 ? (parts[parts.length - 1][0] ?? '') : ''}`.toUpperCase()
+  return { firstName, lastName, initials }
+}
+
+function mapStatus(inviteStatus: string | null): Status {
+  return inviteStatus === 'accepted' ? 'active' : 'pending'
+}
+
+function formatLastActive(iso: string | null): string | undefined {
+  if (!iso) return undefined
+  const d = new Date(iso)
+  if (isNaN(d.getTime())) return undefined
+  return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
+}
+
+function mapMember(m: ApiMemberRow): SchoolUser {
+  const { firstName, lastName, initials } = splitName(m.full_name, m.email)
+  const role: Role =
+    m.role === 'admin' || m.role === 'head_of_department' || m.role === 'teacher'
+      ? (m.role as Role)
+      : 'teacher'
+  return {
+    id: m.id,
+    firstName,
+    lastName,
+    email: m.email,
+    role,
+    status: mapStatus(m.invite_status),
+    lastActive: formatLastActive(m.last_active_at),
+    avatarInitials: initials,
+  }
+}
+
+function mapStudent(s: ApiStudentRow): SchoolUser {
+  const { firstName, lastName, initials } = splitName(s.full_name, s.email)
+  return {
+    id: s.id,
+    firstName,
+    lastName,
+    email: s.email,
     role: 'student',
-    yearGroup: 'Year 10',
-    class: '10B',
-    status: 'active',
-    lastActive: 'Today, 11:30',
-    avatarInitials: 'OB',
-  },
-  {
-    id: '5',
-    firstName: 'Amara',
-    lastName: 'Osei',
-    email: 'a.osei@school.edu',
-    role: 'student',
-    yearGroup: 'Year 9',
-    class: '9A',
-    status: 'active',
-    lastActive: 'Today, 10:05',
-    avatarInitials: 'AO',
-  },
-  {
-    id: '6',
-    firstName: 'Lucas',
-    lastName: 'Fernandez',
-    email: 'l.fernandez@school.edu',
-    role: 'student',
-    yearGroup: 'Year 10',
-    class: '10B',
-    status: 'pending',
-    avatarInitials: 'LF',
-  },
-  {
-    id: '7',
-    firstName: 'Chloe',
-    lastName: 'Walsh',
-    email: 'c.walsh@school.edu',
-    role: 'student',
-    yearGroup: 'Year 11',
-    class: '11C',
-    status: 'active',
-    lastActive: '2 days ago',
-    avatarInitials: 'CW',
-  },
-  {
-    id: '8',
-    firstName: 'Daniel',
-    lastName: 'Kim',
-    email: 'd.kim@school.edu',
-    role: 'teacher',
-    class: '11C',
-    status: 'pending',
-    avatarInitials: 'DK',
-  },
-  {
-    id: '9',
-    firstName: 'Fatima',
-    lastName: 'Al-Rashid',
-    email: 'f.alrashid@school.edu',
-    role: 'student',
-    yearGroup: 'Year 9',
-    class: '9A',
-    status: 'active',
-    lastActive: 'Today, 09:47',
-    avatarInitials: 'FA',
-  },
-  {
-    id: '10',
-    firstName: 'Thomas',
-    lastName: 'Griffiths',
-    email: 't.griffiths@school.edu',
-    role: 'student',
-    yearGroup: 'Year 11',
-    class: '11C',
-    status: 'suspended',
-    lastActive: '5 days ago',
-    avatarInitials: 'TG',
-  },
-  {
-    id: '11',
-    firstName: 'Isabella',
-    lastName: 'Russo',
-    email: 'i.russo@school.edu',
-    role: 'admin',
-    status: 'active',
-    lastActive: 'Today, 07:30',
-    avatarInitials: 'IR',
-  },
-  {
-    id: '12',
-    firstName: 'Ethan',
-    lastName: 'Clarke',
-    email: 'e.clarke@school.edu',
-    role: 'student',
-    yearGroup: 'Year 10',
-    class: '10A',
-    status: 'active',
-    lastActive: 'Yesterday',
-    avatarInitials: 'EC',
-  },
-]
+    yearGroup: s.year_group ?? undefined,
+    status: mapStatus(s.invite_status),
+    lastActive: formatLastActive(s.last_active_at),
+    avatarInitials: initials,
+  }
+}
 
 const YEAR_GROUPS = ['Year 7', 'Year 8', 'Year 9', 'Year 10', 'Year 11', 'Year 12', 'Year 13']
 const PAGE_SIZE = 8
@@ -244,6 +186,10 @@ function RoleBadge({ role }: { role: Role }) {
     admin: {
       label: 'Admin',
       className: 'bg-rose-500/15 text-rose-400 border border-rose-500/25',
+    },
+    head_of_department: {
+      label: 'Head of Department',
+      className: 'bg-primary/15 text-primary border border-primary/25',
     },
     teacher: {
       label: 'Teacher',
@@ -302,6 +248,7 @@ function StatusBadge({ status }: { status: Status }) {
 function AvatarCircle({ initials, role }: { initials: string; role: Role }) {
   const colorClass: Record<Role, string> = {
     admin: 'bg-rose-500/20 text-rose-400 ring-rose-500/30',
+    head_of_department: 'bg-primary/20 text-primary ring-primary/30',
     teacher: 'bg-blue-500/20 text-blue-400 ring-blue-500/30',
     student: 'bg-emerald-500/20 text-emerald-400 ring-emerald-500/30',
   }
@@ -514,10 +461,9 @@ interface ActionMenuProps {
   user: SchoolUser
   onEdit: (user: SchoolUser) => void
   onRemove: (id: string) => void
-  onResetPassword: (id: string) => void
 }
 
-function ActionMenu({ user, onEdit, onRemove, onResetPassword }: ActionMenuProps) {
+function ActionMenu({ user, onEdit, onRemove }: ActionMenuProps) {
   const tx = useT()
   const [open, setOpen] = useState(false)
   return (
@@ -544,14 +490,13 @@ function ActionMenu({ user, onEdit, onRemove, onResetPassword }: ActionMenuProps
               <Edit className="size-3.5 text-muted-foreground" />
               {tx('school.b15.users.action_edit')}
             </button>
+            {/* No password-reset endpoint exists yet - disabled, never a silent no-op */}
             <button
-              className="flex w-full items-center gap-2.5 px-3 py-1.5 text-sm text-foreground hover:bg-accent"
-              onClick={() => {
-                onResetPassword(user.id)
-                setOpen(false)
-              }}
+              className="flex w-full cursor-not-allowed items-center gap-2.5 px-3 py-1.5 text-sm text-muted-foreground/50"
+              disabled
+              title="Password resets are issued from the Export logins flow"
             >
-              <Key className="size-3.5 text-muted-foreground" />
+              <Key className="size-3.5" />
               {tx('school.b15.users.action_reset_pw')}
             </button>
             <div className="my-1 border-t border-border" />
@@ -576,8 +521,10 @@ function ActionMenu({ user, onEdit, onRemove, onResetPassword }: ActionMenuProps
 
 export default function UserManagementPage() {
   const tx = useT()
-  const [users, setUsers] = useState<SchoolUser[]>(MOCK_USERS)
+  const [users, setUsers] = useState<SchoolUser[]>([])
   const [loading, setLoading] = useState(true)
+  const [loadError, setLoadError] = useState(false)
+  const [reloadKey, setReloadKey] = useState(0)
   const [activeTab, setActiveTab] = useState('all')
   const [search, setSearch] = useState('')
   const [roleFilter, setRoleFilter] = useState('all')
@@ -588,9 +535,11 @@ export default function UserManagementPage() {
   const [addModalOpen, setAddModalOpen] = useState(false)
   const [editingUser, setEditingUser] = useState<SchoolUser | null>(null)
 
-  // Fetch data from API, fall back to mock data on error
+  // Fetch real members and students; on failure render the error state.
   useEffect(() => {
     let cancelled = false
+    setLoading(true)
+    setLoadError(false)
     async function fetchUsers() {
       try {
         const [membersRes, studentsRes] = await Promise.all([
@@ -598,41 +547,39 @@ export default function UserManagementPage() {
           fetch('/api/school/students'),
         ])
         if (!membersRes.ok || !studentsRes.ok) throw new Error('fetch failed')
-        const membersData: SchoolUser[] = await membersRes.json()
-        const studentsData: SchoolUser[] = await studentsRes.json()
-        const merged = [
-          ...membersData,
-          ...studentsData.filter((s) => !membersData.some((m) => m.id === s.id)),
-        ]
+        const membersJson = (await membersRes.json()) as { members?: ApiMemberRow[] }
+        const studentsJson = (await studentsRes.json()) as { students?: ApiStudentRow[] }
+        const staff = (membersJson.members ?? []).map(mapMember)
+        const pupils = (studentsJson.students ?? []).map(mapStudent)
+        // Staff and pupil rows come from different tables; dedupe by email in
+        // case someone appears in both.
+        const staffEmails = new Set(staff.map((u) => u.email.toLowerCase()))
+        const merged = [...staff, ...pupils.filter((p) => !staffEmails.has(p.email.toLowerCase()))]
         if (!cancelled) setUsers(merged)
       } catch {
-        // keep mock data
+        if (!cancelled) setLoadError(true)
       } finally {
         if (!cancelled) setLoading(false)
       }
     }
-    const timer = setTimeout(() => {
-      if (!cancelled) fetchUsers()
-    }, 0)
-    // Simulate loading for mock display
-    const loadTimer = setTimeout(() => {
-      if (!cancelled) setLoading(false)
-    }, 800)
+    fetchUsers()
     return () => {
       cancelled = true
-      clearTimeout(timer)
-      clearTimeout(loadTimer)
     }
-  }, [])
+  }, [reloadKey])
 
   // ── Filtered users ──────────────────────────────────────────────────────────
 
   const filtered = useMemo(() => {
     let list = users
 
-    // Tab filter
+    // Tab filter (heads of department are counted with teachers)
     if (activeTab !== 'all') {
-      list = list.filter((u) => u.role === activeTab)
+      list = list.filter((u) =>
+        activeTab === 'teacher'
+          ? u.role === 'teacher' || u.role === 'head_of_department'
+          : u.role === activeTab,
+      )
     }
 
     // Search
@@ -647,7 +594,11 @@ export default function UserManagementPage() {
 
     // Role dropdown filter (independent of tabs so they stack)
     if (roleFilter !== 'all') {
-      list = list.filter((u) => u.role === roleFilter)
+      list = list.filter((u) =>
+        roleFilter === 'teacher'
+          ? u.role === 'teacher' || u.role === 'head_of_department'
+          : u.role === roleFilter,
+      )
     }
 
     // Year group filter
@@ -675,7 +626,7 @@ export default function UserManagementPage() {
   const counts = useMemo(
     () => ({
       all: users.length,
-      teacher: users.filter((u) => u.role === 'teacher').length,
+      teacher: users.filter((u) => u.role === 'teacher' || u.role === 'head_of_department').length,
       student: users.filter((u) => u.role === 'student').length,
       admin: users.filter((u) => u.role === 'admin').length,
     }),
@@ -715,10 +666,8 @@ export default function UserManagementPage() {
     setSelected(new Set())
   }
 
-  function handleResetPasswords() {
-    // In real app: POST /api/school/members/reset-passwords
-    setSelected(new Set())
-  }
+  // NOTE: bulk password reset has no server endpoint yet - the button below is
+  // disabled rather than silently succeeding on a security action.
 
   function handleExportSelected() {
     const rows = users.filter((u) => selected.has(u.id))
@@ -755,10 +704,6 @@ export default function UserManagementPage() {
       next.delete(id)
       return next
     })
-  }
-
-  function handleResetPassword(_id: string) {
-    // In real app: POST /api/school/members/:id/reset-password
   }
 
   // ── Render ──────────────────────────────────────────────────────────────────
@@ -914,7 +859,12 @@ export default function UserManagementPage() {
                     <Download className="size-3" />
                     {tx('school.b15.users.bulk_export')}
                   </Button>
-                  <Button size="xs" variant="outline" onClick={handleResetPasswords}>
+                  <Button
+                    size="xs"
+                    variant="outline"
+                    disabled
+                    title="Password resets are issued from the Export logins flow"
+                  >
                     <RefreshCw className="size-3" />
                     {tx('school.b15.users.bulk_reset_pw')}
                   </Button>
@@ -972,6 +922,24 @@ export default function UserManagementPage() {
                       <tbody>
                         {loading ? (
                           Array.from({ length: PAGE_SIZE }).map((_, i) => <SkeletonRow key={i} />)
+                        ) : loadError ? (
+                          <tr>
+                            <td
+                              colSpan={8}
+                              className="px-4 py-12 text-center text-muted-foreground"
+                            >
+                              <Users className="mx-auto mb-2 size-8 opacity-30" />
+                              <p className="text-sm">We could not load your school&apos;s users.</p>
+                              <Button
+                                size="sm"
+                                variant="outline"
+                                className="mt-3"
+                                onClick={() => setReloadKey((k) => k + 1)}
+                              >
+                                {tx('school.classes.error.retry')}
+                              </Button>
+                            </td>
+                          </tr>
                         ) : paginated.length === 0 ? (
                           <tr>
                             <td
@@ -1032,7 +1000,6 @@ export default function UserManagementPage() {
                                   user={user}
                                   onEdit={setEditingUser}
                                   onRemove={handleRemoveUser}
-                                  onResetPassword={handleResetPassword}
                                 />
                               </td>
                             </tr>

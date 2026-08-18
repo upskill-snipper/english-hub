@@ -1,11 +1,17 @@
 // ─── Reading Assessment Scoring Engine ────────────────────────────────────────
-// Calculates Reading Age, Decoding Age, and Fluency Age based on standardised
-// methodology inspired by NFER, Salford, Suffolk, and York Assessment of
-// Reading for Comprehension (YARC).
+// Calculates indicative Reading Age and Decoding Age from a self-administered
+// online screener. The norm tables below are hand-authored approximations in
+// the style of standardised instruments (NFER, Salford, YARC) - they are NOT
+// standardised norms, carry no sample or standard error, and every consumer
+// must present the output as indicative only, with a visible caveat.
 //
-// The engine maps raw scores across comprehension, decoding, and fluency
-// dimensions to age-equivalent scores aligned with UK national curriculum
-// expectations.
+// Deliberately absent (removed after audit - do not reintroduce):
+//   - Reading ACCURACY: the screener cannot hear the child read, so accuracy
+//     cannot be measured. It was previously hardcoded to 95% for everyone.
+//   - Fluency Age: with no accuracy capture, a "fluency age" is purely a
+//     function of how quickly the child pressed "finished". The self-timed
+//     reading rate (WPM) is still reported, labelled as self-timed.
+//   - GCSE equivalent: a reading age does not map to a GCSE grade.
 // ──────────────────────────────────────────────────────────────────────────────
 
 import type { ComprehensionQuestion, DecodingWord } from '@/data/reading-passages'
@@ -18,13 +24,14 @@ export interface AgeScore {
 }
 
 export interface ReadingAssessmentResult {
+  /** Indicative only - composite of comprehension and decoding ages. */
   readingAge: AgeScore
   decodingAge: AgeScore
-  fluencyAge: AgeScore
   rawScores: {
     comprehension: { score: number; maxScore: number; percentage: number }
     decoding: { score: number; maxScore: number; percentage: number }
-    fluency: { wordsPerMinute: number; accuracy: number; adjustedWpm: number }
+    /** Self-timed reading rate. A fact about the attempt, not a measured skill level. */
+    fluency: { wordsPerMinute: number }
   }
   /** Highest passage level completed with >50% accuracy */
   ceilingLevel: number
@@ -34,8 +41,6 @@ export interface ReadingAssessmentResult {
   passagesAttempted: number
   strengths: string[]
   areasForDevelopment: string[]
-  /** GCSE grade equivalent if applicable (for Year 10+ scores) */
-  gcseEquivalent?: number
 }
 
 export interface ComprehensionAnswer {
@@ -56,8 +61,6 @@ export interface FluencyTiming {
   readingTimeSeconds: number
   /** Word count of the passage */
   wordCount: number
-  /** Number of words read correctly (self-reported or tracked) */
-  wordsCorrect: number
 }
 
 export interface AssessmentInput {
@@ -124,31 +127,6 @@ const DECODING_NORMS: [number, number, number][] = [
   [10, 6, 0],
   [5, 5, 6],
   [0, 5, 0],
-]
-
-// Fluency norms: [minAdjustedWpm, ageYears, ageMonths]
-// Adjusted WPM = raw WPM * accuracy proportion
-const FLUENCY_NORMS: [number, number, number][] = [
-  [250, 17, 0],
-  [230, 16, 0],
-  [210, 15, 0],
-  [195, 14, 0],
-  [180, 13, 0],
-  [165, 12, 6],
-  [150, 12, 0],
-  [135, 11, 6],
-  [120, 11, 0],
-  [110, 10, 6],
-  [100, 10, 0],
-  [90, 9, 6],
-  [80, 9, 0],
-  [70, 8, 6],
-  [60, 8, 0],
-  [50, 7, 6],
-  [40, 7, 0],
-  [30, 6, 6],
-  [20, 6, 0],
-  [0, 5, 6],
 ]
 
 // ─── Scoring Functions ───────────────────────────────────────────────────────
@@ -228,40 +206,29 @@ function scoreDecoding(answers: DecodingAnswer[]): {
 // it was designed for.
 const MAX_FLUENCY_WPM = 450
 
-function scoreFluency(timings: FluencyTiming[]): {
-  wordsPerMinute: number
-  accuracy: number
-  adjustedWpm: number
-} {
+export function scoreFluency(timings: FluencyTiming[]): { wordsPerMinute: number } {
   if (timings.length === 0) {
-    return { wordsPerMinute: 0, accuracy: 0, adjustedWpm: 0 }
+    return { wordsPerMinute: 0 }
   }
 
   // Average across all timed passages. Each passage's WPM is individually
   // capped so one suspiciously-fast passage can't skew the average upward.
+  // No accuracy adjustment: the screener never hears the child read, so
+  // accuracy is unmeasurable here (an earlier version invented a flat 95%).
   let totalWpm = 0
-  let totalAccuracy = 0
 
   for (const timing of timings) {
     const minutes = timing.readingTimeSeconds / 60
     const rawWpm = minutes > 0 ? timing.wordCount / minutes : 0
     // Cap individual passage WPM - any reading faster than this is gaming
     // the button (clicking "finished" too quickly) rather than genuine fluency.
-    const wpm = Math.min(rawWpm, MAX_FLUENCY_WPM)
-    const accuracy = timing.wordCount > 0 ? timing.wordsCorrect / timing.wordCount : 0
-
-    totalWpm += wpm
-    totalAccuracy += accuracy
+    totalWpm += Math.min(rawWpm, MAX_FLUENCY_WPM)
   }
 
   const avgWpm = totalWpm / timings.length
-  const avgAccuracy = totalAccuracy / timings.length
-  const adjustedWpm = Math.min(avgWpm * avgAccuracy, MAX_FLUENCY_WPM)
 
   return {
     wordsPerMinute: Math.round(Math.min(avgWpm, MAX_FLUENCY_WPM)),
-    accuracy: Math.round(avgAccuracy * 100),
-    adjustedWpm: Math.round(adjustedWpm),
   }
 }
 
@@ -321,7 +288,7 @@ function findCeilingLevel(
 function analysePerformance(
   comprehension: { percentage: number },
   decoding: { percentage: number },
-  fluency: { accuracy: number; adjustedWpm: number },
+  fluency: { wordsPerMinute: number },
   ceilingLevel: number,
 ): { strengths: string[]; areasForDevelopment: string[] } {
   const strengths: string[] = []
@@ -345,7 +312,9 @@ function analysePerformance(
     )
   }
 
-  // Decoding analysis
+  // Decoding analysis. Plain language only - no clinical terminology
+  // ('systematic phonics intervention' etc.), because this is an indicative
+  // screener and clinical recommendations require a validated instrument.
   if (decoding.percentage >= 85) {
     strengths.push(
       'Excellent decoding skills - confident word recognition across regular and irregular words',
@@ -357,30 +326,17 @@ function analysePerformance(
     )
   } else {
     areas.push(
-      'Decoding and word recognition requires additional support - consider systematic phonics intervention',
+      'Word reading looks like an area to work on - regular practice reading aloud with an adult would help, and a teacher or SENCo can advise on next steps',
     )
   }
 
-  // Fluency analysis
-  if (fluency.adjustedWpm >= 150) {
-    strengths.push(
-      'Reading fluency is age-appropriate or above - reads at a good pace with accuracy',
-    )
-  } else if (fluency.adjustedWpm >= 100) {
-    strengths.push('Developing fluency with reasonable reading speed')
+  // Self-timed reading rate. Framed as a fact about the attempt - the rate
+  // depends on when the child pressed "finished", so it never drives an age.
+  if (fluency.wordsPerMinute >= 150) {
+    strengths.push('A good self-timed reading pace across the passages')
+  } else if (fluency.wordsPerMinute > 0 && fluency.wordsPerMinute < 100) {
     areas.push(
-      'Increase reading fluency through regular reading practice - aim for 15-20 minutes of daily reading',
-    )
-  } else if (fluency.adjustedWpm > 0) {
-    areas.push(
-      'Reading fluency needs development - practise reading aloud regularly with texts at a comfortable level',
-    )
-  }
-
-  // Accuracy specific
-  if (fluency.accuracy < 90 && fluency.accuracy > 0) {
-    areas.push(
-      'Reading accuracy could be improved - slow down and check unfamiliar words carefully',
+      'Build reading stamina through regular practice - aim for 15-20 minutes of daily reading',
     )
   }
 
@@ -406,13 +362,14 @@ function analysePerformance(
 // ─── Main Scoring Function ───────────────────────────────────────────────────
 
 /**
- * Calculate Reading Age, Decoding Age, and Fluency Age from assessment answers.
+ * Calculate indicative Reading Age and Decoding Age from assessment answers.
  *
- * Based on standardised reading test methodology:
- * - Comprehension is scored against grade-level norms (NFER/YARC style)
+ * - Comprehension is scored against hand-authored age tables (NFER/YARC style,
+ *   NOT standardised norms)
  * - Decoding is scored on word recognition accuracy (Salford style)
- * - Fluency uses adjusted words-per-minute (accuracy-weighted WPM)
- * - Reading Age is a weighted composite of all three dimensions
+ * - Reading Age is a weighted composite of the two genuinely-scored
+ *   dimensions only. The self-timed reading rate is reported as a fact but
+ *   never feeds an age: it measures button-pressing speed as much as reading.
  */
 export function calculateReadingAge(input: AssessmentInput): ReadingAssessmentResult {
   // Build passage-level map from question IDs
@@ -447,17 +404,16 @@ export function calculateReadingAge(input: AssessmentInput): ReadingAssessmentRe
   const decodingScores = scoreDecoding(input.decodingAnswers)
   const fluencyScores = scoreFluency(input.fluencyTimings)
 
-  // Look up ages from norms
+  // Look up ages from the approximate tables
   const comprehensionAge = lookupAge(COMPREHENSION_NORMS, comprehensionScores.percentage)
   const decodingAge = lookupAge(DECODING_NORMS, decodingScores.percentage)
-  const fluencyAge = lookupAge(FLUENCY_NORMS, fluencyScores.adjustedWpm)
 
-  // Composite reading age: weighted average (comprehension 50%, decoding 25%, fluency 25%)
+  // Composite reading age from the two answer-scored dimensions only
+  // (comprehension 2/3, decoding 1/3 - preserving the old 50:25 ratio).
   const compMonths = comprehensionAge.years * 12 + comprehensionAge.months
   const decMonths = decodingAge.years * 12 + decodingAge.months
-  const fluMonths = fluencyAge.years * 12 + fluencyAge.months
 
-  const compositeMonths = Math.round(compMonths * 0.5 + decMonths * 0.25 + fluMonths * 0.25)
+  const compositeMonths = Math.round((compMonths * 2) / 3 + decMonths / 3)
   const readingAge: AgeScore = {
     years: Math.floor(compositeMonths / 12),
     months: compositeMonths % 12,
@@ -476,30 +432,9 @@ export function calculateReadingAge(input: AssessmentInput): ReadingAssessmentRe
     ceilingLevel,
   )
 
-  // GCSE grade equivalent for Year 10+ readers
-  let gcseEquivalent: number | undefined
-  if (readingAge.years >= 14) {
-    // Map reading age 14-18 to GCSE grades 1-9
-    const ageInMonths = readingAge.years * 12 + readingAge.months
-    if (ageInMonths >= 210)
-      gcseEquivalent = 9 // 17y6m+
-    else if (ageInMonths >= 198)
-      gcseEquivalent = 8 // 16y6m+
-    else if (ageInMonths >= 186)
-      gcseEquivalent = 7 // 15y6m+
-    else if (ageInMonths >= 180)
-      gcseEquivalent = 6 // 15y0m+
-    else if (ageInMonths >= 174)
-      gcseEquivalent = 5 // 14y6m+
-    else if (ageInMonths >= 168)
-      gcseEquivalent = 4 // 14y0m+
-    else gcseEquivalent = 3
-  }
-
   return {
     readingAge,
     decodingAge,
-    fluencyAge,
     rawScores: {
       comprehension: comprehensionScores,
       decoding: decodingScores,
@@ -510,7 +445,6 @@ export function calculateReadingAge(input: AssessmentInput): ReadingAssessmentRe
     passagesAttempted: input.passagesAttempted ?? attemptedPassageIds.size,
     strengths,
     areasForDevelopment,
-    gcseEquivalent,
   }
 }
 

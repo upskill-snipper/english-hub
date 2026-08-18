@@ -1,9 +1,10 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { ArrowLeft, ClipboardList, Plus, Loader2 } from 'lucide-react'
+import { ArrowLeft, ClipboardList, Plus, Loader2, AlertTriangle } from 'lucide-react'
+import { toast } from 'sonner'
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -18,118 +19,94 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { Separator } from '@/components/ui/separator'
-import type {
-  Assignment,
-  AssignmentType,
-  AssignmentStatus,
-  AssignmentSubmission,
-} from '@/lib/types/assignment'
-import { addAssignment, ASSIGNMENT_TYPE_LABELS } from '@/lib/types/assignment'
+import { createAssignment } from '@/lib/types/assignment'
 import { useT } from '@/lib/i18n/use-t'
 
-/* ── Mock data for classes and resources ───────────────────────────────── */
-// In production these would come from API/store; using localStorage stubs for now
+/* ── API contract ──────────────────────────────────────────────────────────
+ * Class list: GET /api/school/classes -> { classes: [{ id, name, ... }] }
+ * Create:     POST /api/school/assignments with
+ *   { class_id, title, description?, type, due_date?, status? }
+ * where type is HOMEWORK | CLASSWORK | ASSESSMENT | REVISION and status is
+ * DRAFT | ACTIVE (server-validated values).
+ * ────────────────────────────────────────────────────────────────────────── */
 
-const MOCK_CLASSES = [
-  { id: 'class-1', name: 'Year 10 English' },
-  { id: 'class-2', name: 'Year 11 Literature' },
-  { id: 'class-3', name: 'Year 9 Language' },
-]
-
-const MOCK_RESOURCES: Record<string, { id: string; name: string }[]> = {
-  module: [
-    { id: 'mod-1', name: 'Shakespeare: Macbeth' },
-    { id: 'mod-2', name: 'Poetry Analysis' },
-    { id: 'mod-3', name: 'Creative Writing Fundamentals' },
-  ],
-  mock_exam: [
-    { id: 'mock-1', name: 'AQA Paper 1 Mock' },
-    { id: 'mock-2', name: 'Edexcel Paper 2 Mock' },
-  ],
-  quiz: [
-    { id: 'quiz-1', name: 'Grammar Basics Quiz' },
-    { id: 'quiz-2', name: 'Comprehension Skills Quiz' },
-  ],
-  flashcards: [
-    { id: 'fc-1', name: 'Key Literary Terms' },
-    { id: 'fc-2', name: 'Vocabulary Set A' },
-  ],
-  essay: [],
-  custom: [],
+interface SchoolClass {
+  id: string
+  name: string
+  year_group?: string | null
 }
 
-const MOCK_STUDENTS: Record<string, { id: string; name: string }[]> = {
-  'class-1': [
-    { id: 'stu-1', name: 'Alice Johnson' },
-    { id: 'stu-2', name: 'Ben Carter' },
-    { id: 'stu-3', name: 'Charlie Davis' },
-    { id: 'stu-4', name: 'Diana Evans' },
-    { id: 'stu-5', name: 'Ethan Foster' },
-  ],
-  'class-2': [
-    { id: 'stu-6', name: 'Fiona Green' },
-    { id: 'stu-7', name: 'George Hill' },
-    { id: 'stu-8', name: 'Hannah Irving' },
-  ],
-  'class-3': [
-    { id: 'stu-9', name: 'Isaac Jones' },
-    { id: 'stu-10', name: 'Julia King' },
-    { id: 'stu-11', name: 'Kevin Lee' },
-    { id: 'stu-12', name: 'Laura Martin' },
-  ],
-}
+const API_TYPES = ['HOMEWORK', 'CLASSWORK', 'ASSESSMENT', 'REVISION'] as const
+type ApiAssignmentType = (typeof API_TYPES)[number]
 
-/* ── Component ─────────────────────────────────────────────────────────── */
+const TYPE_LABELS: Record<ApiAssignmentType, string> = {
+  HOMEWORK: 'Homework',
+  CLASSWORK: 'Classwork',
+  ASSESSMENT: 'Assessment',
+  REVISION: 'Revision',
+}
 
 export default function CreateAssignmentPage() {
   const t = useT()
   const router = useRouter()
   const [saving, setSaving] = useState(false)
 
+  // Class list state
+  const [classes, setClasses] = useState<SchoolClass[]>([])
+  const [classesLoading, setClassesLoading] = useState(true)
+  const [classesError, setClassesError] = useState(false)
+  const [reloadKey, setReloadKey] = useState(0)
+
   // Form state
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const [classId, setClassId] = useState('')
-  const [type, setType] = useState<AssignmentType | ''>('')
-  const [resourceId, setResourceId] = useState('')
+  const [type, setType] = useState<ApiAssignmentType | ''>('')
   const [dueDate, setDueDate] = useState('')
-  const [status, setStatus] = useState<AssignmentStatus>('active')
+  const [status, setStatus] = useState<'DRAFT' | 'ACTIVE'>('ACTIVE')
 
-  const availableResources = type ? (MOCK_RESOURCES[type] ?? []) : []
-  const hasResources = availableResources.length > 0
+  useEffect(() => {
+    let cancelled = false
+    setClassesLoading(true)
+    setClassesError(false)
+    fetch('/api/school/classes')
+      .then((res) => {
+        if (!res.ok) throw new Error('fetch failed')
+        return res.json()
+      })
+      .then((json: { classes?: SchoolClass[] }) => {
+        if (!cancelled) setClasses(json.classes ?? [])
+      })
+      .catch(() => {
+        if (!cancelled) setClassesError(true)
+      })
+      .finally(() => {
+        if (!cancelled) setClassesLoading(false)
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [reloadKey])
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (!title.trim() || !classId || !type || !dueDate) return
 
     setSaving(true)
-
-    const students = MOCK_STUDENTS[classId] ?? []
-    const submissions: AssignmentSubmission[] = students.map((s) => ({
-      studentId: s.id,
-      studentName: s.name,
-      status: 'pending' as const,
-    }))
-
-    const assignment: Assignment = {
-      id: crypto.randomUUID(),
-      classId,
-      title: title.trim(),
-      description: description.trim(),
-      type: type as AssignmentType,
-      resourceId: resourceId || undefined,
-      dueDate: new Date(dueDate).toISOString(),
-      createdAt: new Date().toISOString(),
-      status,
-      submissions,
-    }
-
-    addAssignment(assignment)
-
-    // Brief delay for UX
-    setTimeout(() => {
+    try {
+      await createAssignment({
+        class_id: classId,
+        title: title.trim(),
+        description: description.trim() || undefined,
+        type,
+        due_date: new Date(dueDate).toISOString(),
+        status,
+      })
       router.push('/school/assignments')
-    }, 300)
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : 'Failed to create the assignment')
+      setSaving(false)
+    }
   }
 
   return (
@@ -162,161 +139,187 @@ export default function CreateAssignmentPage() {
 
       <Separator className="mb-6" />
 
-      <form onSubmit={handleSubmit}>
-        <Card>
-          <CardHeader>
-            <CardTitle>{t('school.assignments.create.form_title')}</CardTitle>
-            <CardDescription>{t('school.assignments.create.form_subtitle')}</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-6">
-            {/* Title */}
-            <div className="space-y-2">
-              <Label htmlFor="title">{t('school.assignments.field.title')} *</Label>
-              <Input
-                id="title"
-                placeholder={t('school.assignments.field.title_placeholder')}
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                required
-              />
-            </div>
+      {/* Class-list error: cannot set work without a real class */}
+      {classesError && (
+        <Card className="mb-6 border-dashed">
+          <CardContent className="flex flex-col items-center justify-center py-10 text-center">
+            <AlertTriangle className="mb-3 h-8 w-8 text-muted-foreground" />
+            <p className="text-sm text-muted-foreground">
+              We could not load your classes, so work cannot be set yet.
+            </p>
+            <Button
+              variant="outline"
+              size="sm"
+              className="mt-4"
+              onClick={() => setReloadKey((k) => k + 1)}
+            >
+              {t('school.classes.error.retry')}
+            </Button>
+          </CardContent>
+        </Card>
+      )}
 
-            {/* Description / Instructions */}
-            <div className="space-y-2">
-              <Label htmlFor="description">{t('school.assignments.field.instructions')}</Label>
-              <Textarea
-                id="description"
-                placeholder={t('school.assignments.field.instructions_placeholder')}
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-                rows={4}
-              />
-            </div>
+      {/* No classes yet: honest empty state with a route to fix it */}
+      {!classesError && !classesLoading && classes.length === 0 && (
+        <Card className="mb-6 border-dashed">
+          <CardContent className="flex flex-col items-center justify-center py-10 text-center">
+            <ClipboardList className="mb-3 h-8 w-8 text-muted-foreground" />
+            <p className="text-sm text-muted-foreground">
+              Your school has no classes yet. Create a class first, then set work for it.
+            </p>
+            <Button
+              variant="outline"
+              size="sm"
+              className="mt-4"
+              render={<Link href="/school/classes" />}
+            >
+              {t('school.classes.empty.cta')}
+            </Button>
+          </CardContent>
+        </Card>
+      )}
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              {/* Class */}
+      {!classesError && (classesLoading || classes.length > 0) && (
+        <form onSubmit={handleSubmit}>
+          <Card>
+            <CardHeader>
+              <CardTitle>{t('school.assignments.create.form_title')}</CardTitle>
+              <CardDescription>{t('school.assignments.create.form_subtitle')}</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              {/* Title */}
               <div className="space-y-2">
-                <Label>{t('school.assignments.field.class')} *</Label>
-                <Select value={classId} onValueChange={(v) => setClassId(v ?? '')}>
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder={t('school.assignments.field.class_placeholder')} />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {MOCK_CLASSES.map((cls) => (
-                      <SelectItem key={cls.id} value={cls.id}>
-                        {cls.name}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-
-              {/* Type */}
-              <div className="space-y-2">
-                <Label>{t('school.assignments.field.type')} *</Label>
-                <Select
-                  value={type}
-                  onValueChange={(v) => {
-                    setType((v ?? '') as AssignmentType | '')
-                    setResourceId('')
-                  }}
-                >
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder={t('school.assignments.field.type_placeholder')} />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {(Object.entries(ASSIGNMENT_TYPE_LABELS) as [AssignmentType, string][]).map(
-                      ([value, label]) => (
-                        <SelectItem key={value} value={value}>
-                          {label}
-                        </SelectItem>
-                      ),
-                    )}
-                  </SelectContent>
-                </Select>
-              </div>
-            </div>
-
-            {/* Linked Resource */}
-            {type && hasResources && (
-              <div className="space-y-2">
-                <Label>{t('school.assignments.field.linked_resource')}</Label>
-                <Select value={resourceId} onValueChange={(v) => setResourceId(v ?? '')}>
-                  <SelectTrigger className="w-full">
-                    <SelectValue
-                      placeholder={t('school.assignments.field.linked_resource_placeholder')}
-                    />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {availableResources.map((r) => (
-                      <SelectItem key={r.id} value={r.id}>
-                        {r.name}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                <p className="text-xs text-muted-foreground">
-                  {t('school.assignments.field.linked_resource_hint')}
-                </p>
-              </div>
-            )}
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              {/* Due Date */}
-              <div className="space-y-2">
-                <Label htmlFor="dueDate">{t('school.assignments.field.due_date')} *</Label>
+                <Label htmlFor="title">{t('school.assignments.field.title')} *</Label>
                 <Input
-                  id="dueDate"
-                  type="datetime-local"
-                  value={dueDate}
-                  onChange={(e) => setDueDate(e.target.value)}
+                  id="title"
+                  placeholder={t('school.assignments.field.title_placeholder')}
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
                   required
                 />
               </div>
 
-              {/* Status */}
+              {/* Description / Instructions */}
               <div className="space-y-2">
-                <Label>{t('school.assignments.field.status')}</Label>
-                <Select
-                  value={status}
-                  onValueChange={(v) => setStatus((v ?? 'active') as AssignmentStatus)}
-                >
-                  <SelectTrigger className="w-full">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="draft">{t('school.assignments.status.draft')}</SelectItem>
-                    <SelectItem value="active">{t('school.assignments.status.active')}</SelectItem>
-                  </SelectContent>
-                </Select>
-                <p className="text-xs text-muted-foreground">
-                  {t('school.assignments.field.status_hint')}
-                </p>
+                <Label htmlFor="description">{t('school.assignments.field.instructions')}</Label>
+                <Textarea
+                  id="description"
+                  placeholder={t('school.assignments.field.instructions_placeholder')}
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                  rows={4}
+                />
               </div>
-            </div>
-          </CardContent>
-        </Card>
 
-        {/* Actions */}
-        <div className="mt-6 flex items-center justify-end gap-3">
-          <Button type="button" variant="outline" render={<Link href="/school/assignments" />}>
-            {t('school.assignments.action.cancel')}
-          </Button>
-          <Button type="submit" disabled={saving || !title.trim() || !classId || !type || !dueDate}>
-            {saving ? (
-              <>
-                <Loader2 className="h-4 w-4 animate-spin" />
-                {t('school.assignments.action.creating')}
-              </>
-            ) : (
-              <>
-                <Plus className="h-4 w-4" />
-                {t('school.assignments.create_cta')}
-              </>
-            )}
-          </Button>
-        </div>
-      </form>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {/* Class - real classes from the API */}
+                <div className="space-y-2">
+                  <Label>{t('school.assignments.field.class')} *</Label>
+                  <Select
+                    value={classId}
+                    onValueChange={(v) => setClassId(v ?? '')}
+                    disabled={classesLoading}
+                  >
+                    <SelectTrigger className="w-full">
+                      <SelectValue
+                        placeholder={
+                          classesLoading ? '…' : t('school.assignments.field.class_placeholder')
+                        }
+                      />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {classes.map((cls) => (
+                        <SelectItem key={cls.id} value={cls.id}>
+                          {cls.name}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                {/* Type - the values the API validates */}
+                <div className="space-y-2">
+                  <Label>{t('school.assignments.field.type')} *</Label>
+                  <Select
+                    value={type}
+                    onValueChange={(v) => setType((v ?? '') as ApiAssignmentType | '')}
+                  >
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder={t('school.assignments.field.type_placeholder')} />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {API_TYPES.map((value) => (
+                        <SelectItem key={value} value={value}>
+                          {TYPE_LABELS[value]}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                {/* Due Date */}
+                <div className="space-y-2">
+                  <Label htmlFor="dueDate">{t('school.assignments.field.due_date')} *</Label>
+                  <Input
+                    id="dueDate"
+                    type="datetime-local"
+                    value={dueDate}
+                    onChange={(e) => setDueDate(e.target.value)}
+                    required
+                  />
+                </div>
+
+                {/* Status */}
+                <div className="space-y-2">
+                  <Label>{t('school.assignments.field.status')}</Label>
+                  <Select
+                    value={status}
+                    onValueChange={(v) => setStatus((v ?? 'ACTIVE') as 'DRAFT' | 'ACTIVE')}
+                  >
+                    <SelectTrigger className="w-full">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="DRAFT">{t('school.assignments.status.draft')}</SelectItem>
+                      <SelectItem value="ACTIVE">
+                        {t('school.assignments.status.active')}
+                      </SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <p className="text-xs text-muted-foreground">
+                    {t('school.assignments.field.status_hint')}
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Actions */}
+          <div className="mt-6 flex items-center justify-end gap-3">
+            <Button type="button" variant="outline" render={<Link href="/school/assignments" />}>
+              {t('school.assignments.action.cancel')}
+            </Button>
+            <Button
+              type="submit"
+              disabled={saving || !title.trim() || !classId || !type || !dueDate}
+            >
+              {saving ? (
+                <>
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                  {t('school.assignments.action.creating')}
+                </>
+              ) : (
+                <>
+                  <Plus className="h-4 w-4" />
+                  {t('school.assignments.create_cta')}
+                </>
+              )}
+            </Button>
+          </div>
+        </form>
+      )}
     </div>
   )
 }

@@ -129,6 +129,42 @@ export const B15_DASHBOARD_DICTIONARY: Record<string, { en: string; ar: string; 
     ar: 'واصل الدراسة والتدريب لتحسين درجة جاهزيتك.',
     es: 'Sigue estudiando y practicando para mejorar tu puntuación de preparación.',
   },
+  // ── Minimum-sample unlock state (shown until 3 real scores exist) ─────────
+  'dashboard.analytics.stat_locked': {
+    en: 'Locked',
+    ar: 'مقفلة',
+    es: 'Bloqueado',
+  },
+  'dashboard.analytics.stat_locked_hint': {
+    en: 'Answer 5 practice questions to unlock',
+    ar: 'جاوب على ٥ أسئلة تدريب عشان تفتحها',
+    es: 'Responde 5 preguntas de práctica para desbloquearlo',
+  },
+  'dashboard.analytics.tooltip_locked': {
+    en: 'Shown once you have at least 3 real scores, so your grade reflects actual work rather than a guess',
+    ar: 'تظهر لمّن يكون عندك ٣ درجات حقيقية على الأقل، عشان تعكس درجتك شغلك الفعلي مو تخمين',
+    es: 'Se muestra cuando tienes al menos 3 puntuaciones reales, para que tu nota refleje trabajo real y no una suposición',
+  },
+  'dashboard.analytics.unlock_title': {
+    en: 'Unlock your working-at grade',
+    ar: 'افتح درجتك الحالية',
+    es: 'Desbloquea tu nivel actual',
+  },
+  'dashboard.analytics.unlock_body': {
+    en: 'Answer 5 practice questions to unlock your working-at grade, exam readiness and skill breakdown. It takes about 6 minutes.',
+    ar: 'جاوب على ٥ أسئلة تدريب عشان تفتح درجتك الحالية وجاهزيتك للامتحان وتفصيل مهاراتك. ياخذ حوالي ٦ دقايق.',
+    es: 'Responde 5 preguntas de práctica para desbloquear tu nivel actual, tu preparación para el examen y el desglose de habilidades. Tarda unos 6 minutos.',
+  },
+  'dashboard.analytics.unlock_progress_label': {
+    en: 'Scores so far',
+    ar: 'درجاتك لحد الحين',
+    es: 'Puntuaciones hasta ahora',
+  },
+  'dashboard.analytics.unlock_cta': {
+    en: 'Start practising',
+    ar: 'ابدأ التدريب',
+    es: 'Empieza a practicar',
+  },
   'dashboard.analytics.skills_title': {
     en: 'Performance by Skill Area',
     ar: 'الأداء حسب مجال المهارة',
@@ -1611,15 +1647,17 @@ export const B15_DASHBOARD_DICTIONARY: Record<string, { en: string; ar: string; 
     ar: 'رجوع للأدوات',
     es: 'Volver a las herramientas',
   },
+  // Honesty: this tool is a deterministic question-bank engine, not AI -
+  // the title and subtitle must never claim otherwise.
   'toolkit.test_builder.title': {
-    en: 'AI Test Builder',
-    ar: 'منشئ الاختبارات بالذكاء الاصطناعي',
-    es: 'Creador de pruebas con IA',
+    en: 'Question Bank Test Builder',
+    ar: 'منشئ الاختبارات من بنك الأسئلة',
+    es: 'Creador de pruebas del banco de preguntas',
   },
   'toolkit.test_builder.subtitle': {
-    en: 'Generate custom tests and score them with GCSE grade equivalents',
-    ar: 'أنشئ اختبارات مخصصة وقيّمها بدرجات GCSE المعادلة',
-    es: 'Genera pruebas personalizadas y puntúalas con sus equivalencias de notas de GCSE',
+    en: "Build a practice test from our question bank on your board's set texts - multiple-choice questions are marked instantly, written answers are self-assessed",
+    ar: 'سوِّ اختبار تدريبي من بنك الأسئلة على النصوص المقررة لهيئتك - أسئلة الاختيار من متعدد تتصحّح فوراً، والإجابات المكتوبة تقيّمها بنفسك',
+    es: 'Crea una prueba de práctica a partir de nuestro banco de preguntas sobre los textos prescritos de tu junta: las preguntas de opción múltiple se corrigen al instante y las respuestas escritas las evalúas tú mismo',
   },
   'toolkit.test_builder.label_topic': {
     en: 'Topic / Text',

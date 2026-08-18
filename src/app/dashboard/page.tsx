@@ -250,27 +250,43 @@ export default function DashboardPage() {
     [moduleProgress],
   )
 
-  const enrolledCourses = useMemo(() => {
-    return enrolments
-      .map((e) => {
-        const course = courseMap.get(e.course_id)
+  const workingCourses = useMemo(() => {
+    // Subscribers never get `enrolments` rows (those are only written by
+    // one-off Stripe course purchases), so the list of courses a student is
+    // working on is derived from `module_progress` grouped by course, most
+    // recent activity first. Enrolments are unioned in afterwards purely as
+    // an entitlement source, so a purchased-but-unstarted course still shows.
+    const lastActivityByCourse = new Map<string, number>()
+    for (const mp of moduleProgress) {
+      const ts = mp.completed_at ? new Date(mp.completed_at).getTime() : 0
+      const prev = lastActivityByCourse.get(mp.course_id)
+      if (prev === undefined || ts > prev) lastActivityByCourse.set(mp.course_id, ts)
+    }
+
+    const orderedCourseIds = Array.from(lastActivityByCourse.keys()).sort(
+      (a, b) => (lastActivityByCourse.get(b) ?? 0) - (lastActivityByCourse.get(a) ?? 0),
+    )
+    for (const e of enrolments) {
+      if (!lastActivityByCourse.has(e.course_id)) orderedCourseIds.push(e.course_id)
+    }
+
+    return orderedCourseIds
+      .map((courseId) => {
+        const course = courseMap.get(courseId)
         if (!course) return null
 
         const totalModules = course.moduleList.length
-        const completedModules = moduleProgress.filter(
-          (mp) => mp.course_id === e.course_id && mp.completed,
-        ).length
-
         const completedModuleIds = new Set(
           moduleProgress
-            .filter((mp) => mp.course_id === e.course_id && mp.completed)
+            .filter((mp) => mp.course_id === courseId && mp.completed)
             .map((mp) => mp.module_id),
         )
-
+        const completedModules = completedModuleIds.size
         const nextModule = course.moduleList.find((m) => !completedModuleIds.has(m.id))
 
         return {
-          ...e,
+          id: courseId,
+          course_id: courseId,
           course,
           totalModules,
           completedModules,
@@ -278,22 +294,22 @@ export default function DashboardPage() {
           nextModule,
         }
       })
-      .filter(Boolean) as Array<
-      {
-        course: CourseData
-        totalModules: number
-        completedModules: number
-        progress: number
-        nextModule: CourseData['moduleList'][number] | undefined
-      } & Enrolment
-    >
-  }, [enrolments, moduleProgress])
+      .filter(Boolean) as Array<{
+      id: string
+      course_id: string
+      course: CourseData
+      totalModules: number
+      completedModules: number
+      progress: number
+      nextModule: CourseData['moduleList'][number] | undefined
+    }>
+  }, [enrolments, moduleProgress, courseMap])
 
   const firstName = profile?.full_name?.split(' ')[0] ?? t('dash.student')
   const greeting = t(getGreetingKey())
 
-  const activeCourses = enrolledCourses.filter((ec) => ec.progress < 100)
-  const completedCourses = enrolledCourses.filter((ec) => ec.progress >= 100)
+  const activeCourses = workingCourses.filter((ec) => ec.progress < 100)
+  const completedCourses = workingCourses.filter((ec) => ec.progress >= 100)
 
   // ── Quick Actions ───────────────────────────────────────────────────────
 
@@ -510,6 +526,26 @@ export default function DashboardPage() {
             <ArrowRight className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
           </Link>
 
+          {/* ── AI Marking CTA ───────────────────────────────────────── */}
+          <Link
+            href="/marking/submit"
+            className="group mb-6 flex items-center gap-4 rounded-xl border border-primary/20 bg-gradient-to-br from-amber-500/[0.06] via-card to-primary/[0.05] p-5 transition-all hover:border-primary/40 hover:shadow-card-hover"
+          >
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-amber-500/15">
+              <Sparkles className="h-6 w-6 text-amber-600" />
+            </div>
+            <div className="min-w-0 flex-1">
+              <div className="flex items-center gap-2">
+                <h2 className="font-semibold text-foreground">{t('dash.marking_cta.title')}</h2>
+                <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
+                  {t('dash.marking_cta.badge')}
+                </Badge>
+              </div>
+              <p className="mt-0.5 text-sm text-muted-foreground">{t('dash.marking_cta.blurb')}</p>
+            </div>
+            <ArrowRight className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+          </Link>
+
           {/* ── Stats Row ──────────────────────────────────────────────── */}
           <div className="mb-2 flex items-center gap-1.5">
             <h2 className="text-sm font-medium text-muted-foreground">{t('dash.your_stats')}</h2>
@@ -529,10 +565,10 @@ export default function DashboardPage() {
                   icon={<BookOpen className="h-5 w-5" />}
                   iconBg="bg-primary/10"
                   iconColor="text-primary"
-                  label={t('dash.stat.enrolled')}
-                  value={enrolments.length}
-                  sub={enrolments.length === 1 ? t('dash.stat.course') : t('dash.stat.courses')}
-                  tooltip={t('dash.stat.enrolled_tooltip')}
+                  label={t('dash.stat.your_courses')}
+                  value={workingCourses.length}
+                  sub={workingCourses.length === 1 ? t('dash.stat.course') : t('dash.stat.courses')}
+                  tooltip={t('dash.stat.your_courses_tooltip')}
                 />
                 <StatCard
                   icon={<CheckCircle className="h-5 w-5" />}
@@ -624,7 +660,7 @@ export default function DashboardPage() {
                     )}
                   </TabsTrigger>
                 </TabsList>
-                {enrolledCourses.length > 0 && (
+                {workingCourses.length > 0 && (
                   <Button variant="link" size="sm" render={<Link href="/courses" />}>
                     {t('action.view_all')} <ArrowRight className="h-3.5 w-3.5" />
                   </Button>

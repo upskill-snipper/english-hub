@@ -698,7 +698,9 @@ const ANONYMOUS_NAMES = [
   'Sleek Panther',
 ]
 
-const LEADERBOARD_KEY = 'english-hub-leaderboard'
+// v2: earlier versions seeded this store with invented competitors, so the
+// old key is abandoned wholesale - only genuinely played scores live here.
+const LEADERBOARD_KEY = 'english-hub-leaderboard-v2'
 const PLAYER_NAME_KEY = 'english-hub-player-name'
 const LEADERBOARD_WEEK_KEY = 'english-hub-leaderboard-week'
 
@@ -720,42 +722,16 @@ function getPlayerName(): string {
   return name
 }
 
-function generateSeedEntries(): LeaderboardEntry[] {
-  const today = new Date().toISOString()
-  const names = shuffleArray(ANONYMOUS_NAMES).slice(0, 8)
-  const games = [
-    'word-scramble',
-    'quote-match',
-    'grammar-fix',
-    'theme-matcher',
-    'speed-analysis',
-    'vocabulary-builder',
-    'spelling-bee',
-  ]
-  const entries: LeaderboardEntry[] = []
-
-  // Spread seed entries across all three games
-  names.forEach((name, i) => {
-    const game = games[i % 3]
-    const total = game === 'word-scramble' ? WORD_SCRAMBLE_WORDS.length : 10
-    const minScore = Math.floor(total * 0.4)
-    const score = minScore + Math.floor(Math.random() * (total - minScore + 1))
-    entries.push({ name, game, score, total, date: today })
-  })
-  return entries
-}
-
 function getLeaderboard(): LeaderboardEntry[] {
   if (typeof window === 'undefined') return []
   const currentWeek = getWeekNumber()
   const storedWeek = localStorage.getItem(LEADERBOARD_WEEK_KEY)
 
   if (storedWeek !== currentWeek) {
-    // Weekly reset - seed with fake entries
-    const seed = generateSeedEntries()
-    localStorage.setItem(LEADERBOARD_KEY, JSON.stringify(seed))
+    // New week: the panel shows this week's scores only, so start empty.
+    localStorage.setItem(LEADERBOARD_KEY, JSON.stringify([]))
     localStorage.setItem(LEADERBOARD_WEEK_KEY, currentWeek)
-    return seed
+    return []
   }
 
   try {
@@ -837,8 +813,11 @@ function WeeklyLeaderboard() {
               <Trophy className="size-5 text-clay-600" aria-hidden="true" />
             </div>
             <div>
-              <CardTitle>Weekly Leaderboard</CardTitle>
-              <CardDescription className="text-xs mt-0.5">Resets every week</CardDescription>
+              <CardTitle>Your best scores this week</CardTitle>
+              <CardDescription className="text-xs mt-0.5">
+                {playerName ? `Playing as ${playerName} · ` : ''}only your own scores on this device
+                are shown
+              </CardDescription>
             </div>
           </div>
           <Badge variant="outline" className="text-[10px] text-muted-foreground">
@@ -868,20 +847,24 @@ function WeeklyLeaderboard() {
               <TabsContent key={id} value={id}>
                 {top.length === 0 ? (
                   <p className="text-center text-sm text-muted-foreground py-6">
-                    No scores yet this week. Be the first!
+                    No scores yet this week. Play a round to set your first one!
                   </p>
                 ) : (
                   <div className="space-y-1">
                     {top.map((entry, idx) => {
-                      const isYou = entry.name === playerName
                       const pct = Math.round((entry.score / entry.total) * 100)
+                      const attemptDate = new Date(entry.date)
+                      const dateLabel = Number.isNaN(attemptDate.getTime())
+                        ? ''
+                        : attemptDate.toLocaleDateString('en-GB', {
+                            weekday: 'short',
+                            day: 'numeric',
+                            month: 'short',
+                          })
                       return (
                         <div
                           key={`${entry.name}-${entry.date}-${idx}`}
-                          className={cn(
-                            'flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-colors',
-                            isYou ? 'bg-primary/10 border border-primary/20' : 'hover:bg-muted/50',
-                          )}
+                          className="flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-colors hover:bg-muted/50"
                         >
                           {/* Rank badge */}
                           <div className="w-7 shrink-0 text-center">
@@ -909,17 +892,8 @@ function WeeklyLeaderboard() {
                               </span>
                             )}
                           </div>
-                          {/* Name */}
-                          <span
-                            className={cn('flex-1 font-medium truncate', isYou && 'text-primary')}
-                          >
-                            {entry.name}
-                            {isYou && (
-                              <span className="ml-1.5 text-[10px] uppercase tracking-wider font-bold text-primary/70">
-                                You
-                              </span>
-                            )}
-                          </span>
+                          {/* Attempt date - every row is the local player's own score */}
+                          <span className="flex-1 font-medium truncate">{dateLabel}</span>
                           {/* Score */}
                           <div className="flex items-center gap-2 shrink-0">
                             <span

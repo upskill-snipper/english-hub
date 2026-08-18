@@ -18,7 +18,6 @@ import {
   AlertTriangle,
   Sparkles,
   Eye,
-  Volume2,
   FileText,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -124,12 +123,26 @@ function ResultsDisplay({
   const t = useT()
   return (
     <div className="space-y-8">
+      {/* Persistent caveat - must sit ABOVE the age tiles and never be
+          collapsible: the ages below are indicative screener output only */}
+      <div className="flex items-start gap-3 rounded-2xl border border-amber-500/30 bg-amber-500/10 p-5">
+        <AlertTriangle className="h-6 w-6 text-amber-700 dark:text-amber-300 mt-0.5 shrink-0" />
+        <div>
+          <h2 className="font-semibold text-amber-800 dark:text-amber-200 mb-1">
+            {t('assessment.reading.caveat_title')}
+          </h2>
+          <p className="text-sm text-foreground/80 leading-relaxed">
+            {t('assessment.reading.caveat_body')}
+          </p>
+        </div>
+      </div>
+
       {/* Age Gauges */}
       <div>
         <h2 className="text-xl font-bold text-foreground mb-4">
           {t('assessment.reading.profile_heading')}
         </h2>
-        <div className="grid gap-4 sm:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2">
           <AgeGauge
             label={t('assessment.reading.label.reading_age')}
             age={result.readingAge}
@@ -144,36 +157,8 @@ function ResultsDisplay({
             color="blue"
             chronologicalAge={chronologicalAge}
           />
-          <AgeGauge
-            label={t('assessment.reading.label.fluency_age')}
-            age={result.fluencyAge}
-            icon={Volume2}
-            color="violet"
-            chronologicalAge={chronologicalAge}
-          />
         </div>
       </div>
-
-      {/* GCSE Grade */}
-      {result.gcseEquivalent && (
-        <Card>
-          <CardContent className="pt-5">
-            <div className="flex items-center gap-3">
-              <div className="rounded-lg bg-amber-500/10 p-2">
-                <Target className="h-5 w-5 text-amber-700 dark:text-amber-300" />
-              </div>
-              <div>
-                <p className="text-sm text-muted-foreground">
-                  {t('assessment.reading.gcse_equivalent')}
-                </p>
-                <p className="text-2xl font-bold text-foreground">
-                  {t('assessment.reading.grade_prefix')} {result.gcseEquivalent}
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      )}
 
       {/* Raw Scores */}
       <Card>
@@ -209,14 +194,12 @@ function ResultsDisplay({
             </div>
             <div className="rounded-xl border border-border p-4">
               <p className="text-xs text-muted-foreground mb-1">
-                {t('assessment.reading.fluency')}
+                {t('assessment.reading.label.reading_rate')}
               </p>
               <p className="text-2xl font-bold text-foreground">
-                {result.rawScores.fluency.adjustedWpm} {t('assessment.reading.wpm_short')}
+                {result.rawScores.fluency.wordsPerMinute} {t('assessment.reading.wpm_short')}
               </p>
-              <p className="text-sm text-muted-foreground">
-                {result.rawScores.fluency.accuracy}% {t('assessment.reading.accuracy_label')}
-              </p>
+              <p className="text-sm text-muted-foreground">{t('assessment.reading.self_timed')}</p>
             </div>
           </div>
         </CardContent>
@@ -318,16 +301,14 @@ function ResultsDisplay({
               t('assessment.reading.download.title'),
               '========================',
               '',
+              t('assessment.reading.caveat_body'),
+              '',
               `${t('assessment.reading.label.reading_age')}: ${formatAgeScore(result.readingAge)}`,
               `${t('assessment.reading.label.decoding_age')}: ${formatAgeScore(result.decodingAge)}`,
-              `${t('assessment.reading.label.fluency_age')}: ${formatAgeScore(result.fluencyAge)}`,
               '',
               `${t('assessment.reading.comprehension')}: ${result.rawScores.comprehension.score}/${result.rawScores.comprehension.maxScore} (${result.rawScores.comprehension.percentage}%)`,
               `${t('assessment.reading.decoding')}: ${result.rawScores.decoding.score}/${result.rawScores.decoding.maxScore} (${result.rawScores.decoding.percentage}%)`,
-              `${t('assessment.reading.fluency')}: ${result.rawScores.fluency.adjustedWpm} ${t('assessment.reading.wpm_short')} (${result.rawScores.fluency.accuracy}% ${t('assessment.reading.accuracy_label')})`,
-              result.gcseEquivalent
-                ? `${t('assessment.reading.gcse_equivalent')}: ${t('assessment.reading.grade_prefix')} ${result.gcseEquivalent}`
-                : '',
+              `${t('assessment.reading.label.reading_rate')}: ${result.rawScores.fluency.wordsPerMinute} ${t('assessment.reading.wpm_short')} (${t('assessment.reading.self_timed')})`,
               '',
               t('assessment.reading.download.strengths_label'),
               ...result.strengths.map((s) => `  - ${s}`),
@@ -548,11 +529,11 @@ export default function ReadingAssessmentPage() {
                   <div className="flex items-center gap-2 mb-2">
                     <Timer className="h-5 w-5 text-clay-600 dark:text-clay-300" />
                     <h3 className="font-semibold text-foreground text-sm">
-                      {t('assessment.reading.label.fluency_age')}
+                      {t('assessment.reading.label.reading_rate')}
                     </h3>
                   </div>
                   <p className="text-xs text-muted-foreground">
-                    {t('assessment.reading.landing.fluency_age_body')}
+                    {t('assessment.reading.landing.reading_rate_body')}
                   </p>
                 </div>
               </div>

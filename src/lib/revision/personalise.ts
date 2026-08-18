@@ -14,7 +14,8 @@ import {
 import {
   LS_KEYS,
   lsGet,
-  type QuizHistoryEntry,
+  normaliseQuizHistory,
+  quizAttemptsFromHistory,
   type StudiedPoem,
   type GameScoreEntry,
   type MarkingHistoryEntry,
@@ -121,8 +122,12 @@ function calculateStreak(): number {
 // ─── Build Student Profile ───────────────────────────────────────────────────
 
 export function buildStudentProfile(board: ExamBoard | null): StudentProfile {
-  // Read raw data from localStorage
-  const quizHistory = lsGet<QuizHistoryEntry[]>(LS_KEYS.quizHistory, [])
+  // Read raw data from localStorage. The quiz store may contain the legacy
+  // per-attempt shape (raw correct count in `score`); normalise converts it
+  // to per-topic percentage entries so old devices are not stuck reading
+  // counts as percentages (which produced "Predicted Grade 1" for 85% students).
+  const quizHistory = normaliseQuizHistory(lsGet<unknown[]>(LS_KEYS.quizHistory, []))
+  const quizAttempts = quizAttemptsFromHistory(quizHistory)
   const studiedPoems = lsGet<StudiedPoem[]>(LS_KEYS.studiedPoems, [])
   const gameScores = lsGet<GameScoreEntry[]>(LS_KEYS.gameScores, [])
   const markingHistory = lsGet<MarkingHistoryEntry[]>(LS_KEYS.markingHistory, [])
@@ -238,7 +243,10 @@ export function buildStudentProfile(board: ExamBoard | null): StudentProfile {
     .sort((a, b) => a.percentage - b.percentage) // worst first
 
   // ── Predicted grade ──
-  const allScores = quizHistory.map((q) => q.score)
+  // One percentage per whole ATTEMPT (oldest first), never per-topic rows:
+  // calculatePredictedGrade projects a trend, so feeding it five topic rows
+  // from one quiz would both overweight that quiz and invent a trajectory.
+  const allScores = quizAttempts.map((a) => a.percentage)
   const avgPercentage =
     allScores.length > 0 ? allScores.reduce((a, b) => a + b, 0) / allScores.length : 0
   const predictedGradeNum =
@@ -257,7 +265,7 @@ export function buildStudentProfile(board: ExamBoard | null): StudentProfile {
     strongTopics,
     unstudiedAreas,
     aoGaps,
-    totalQuizzes: quizHistory.length,
+    totalQuizzes: quizAttempts.length,
     totalEssays: markingHistory.length,
     totalPoems: studiedPoems.length,
     streak,
@@ -288,8 +296,13 @@ function getTopicSuggestion(topic: string, avg: number): string {
       return `Your exam technique scores average ${Math.round(avg)}%. ${gradeImpact} Work on essay structure, time management, and the PEE/PEEL framework.`
     case 'context':
       return `Your context scores average ${Math.round(avg)}%. ${gradeImpact} Learn key historical and social contexts for your set texts.`
-    default:
-      return `Your ${topic} scores average ${Math.round(avg)}%. ${gradeImpact}`
+    default: {
+      // Unknown or legacy topic keys must still read as English - never
+      // interpolate a raw key (or undefined) into student-facing copy.
+      const label =
+        TOPIC_META[topic as Topic]?.label ?? (topic && topic !== 'mixed' ? topic : 'quiz')
+      return `Your ${label} scores average ${Math.round(avg)}%. ${gradeImpact}`
+    }
   }
 }
 

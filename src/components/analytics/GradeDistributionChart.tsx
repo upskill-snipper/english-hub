@@ -4,7 +4,7 @@
  * Single source of truth for "Working At Grade Distribution" across:
  *   /demo/school, /school/dashboard, /school/analytics,
  *   /dashboard/analytics, /dashboard/parent, /dashboard/parent/progress,
- *   /dashboard/progress, /dashboard/teacher analytics, etc.
+ *   /dashboard/teacher analytics, etc.
  *
  * The per-grade bar chart now renders through the premium "cinematic
  * glass" Recharts layer (ChartFrame + BarChart + GlassTooltip) instead

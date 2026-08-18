@@ -4,7 +4,13 @@ import { useEffect, useState, useMemo } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
 import { loadAllCourses } from '@/data/course-loader'
-import type { Enrolment, ModuleProgress, AssessmentAttempt, Certificate, CourseData } from '@/lib/types'
+import type {
+  Enrolment,
+  ModuleProgress,
+  AssessmentAttempt,
+  Certificate,
+  CourseData,
+} from '@/lib/types'
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -66,6 +72,15 @@ export interface AnalyticsData {
   modulesCompleted: number
   totalModules: number
   averagePracticeScore: number
+  /** Number of real scores (module quizzes, assessments, practice ratings) behind the averages. */
+  scoreSampleCount: number
+  /**
+   * True once scoreSampleCount >= MIN_SCORE_SAMPLES. Every derived grade,
+   * readiness figure and skill radar must be gated on this - below the
+   * threshold the UI shows a first-task unlock state, never a Grade 1,
+   * a 0% gauge or a collapsed radar.
+   */
+  hasMinimumScoreSamples: boolean
   currentStreak: number
   examReadiness: number
 
@@ -97,6 +112,13 @@ export interface AnalyticsData {
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
+/**
+ * Minimum number of real scores before any derived grade, readiness score
+ * or radar is shown. Mirrors MIN_SAMPLES in /api/profile/grade-progress:
+ * below this the honest answer is "not enough data yet", not "Grade 1".
+ */
+export const MIN_SCORE_SAMPLES = 3
+
 const SKILL_CATEGORIES: Record<string, string[]> = {
   'Reading Comprehension': ['Language Analysis', 'Structure Analysis', 'Evaluation', 'Reading'],
   'Creative Writing': ['Creative Writing', 'Descriptive Writing', 'Narrative Writing'],
@@ -125,7 +147,7 @@ function startOfDay(date: Date): Date {
 function calculateStreak(
   moduleProgress: ModuleProgress[],
   practiceSessions: PracticeSession[],
-  assessments: AssessmentAttempt[]
+  assessments: AssessmentAttempt[],
 ): number {
   // Collect all activity dates
   const activityDates = new Set<string>()
@@ -165,7 +187,7 @@ function calculateStreak(
 function calculateExamReadiness(
   courseProgress: CourseProgress[],
   averageScore: number,
-  skillScores: SkillScore[]
+  skillScores: SkillScore[],
 ): number {
   if (courseProgress.length === 0) return 0
 
@@ -200,7 +222,7 @@ export function useAnalytics(): AnalyticsData {
 
   const courseMap = useMemo(
     () => new Map<string, CourseData>(allCourses.map((c) => [c.id, c])),
-    [allCourses]
+    [allCourses],
   )
 
   useEffect(() => {
@@ -297,7 +319,7 @@ export function useAnalytics(): AnalyticsData {
 
   const modulesCompleted = useMemo(
     () => moduleProgress.filter((mp) => mp.completed).length,
-    [moduleProgress]
+    [moduleProgress],
   )
 
   const totalModules = useMemo(() => {
@@ -311,7 +333,7 @@ export function useAnalytics(): AnalyticsData {
 
   // ── Average practice score ─────────────────────────────────────────────
 
-  const averagePracticeScore = useMemo(() => {
+  const scoreStats = useMemo(() => {
     const scores: number[] = []
 
     // Quiz scores from module progress
@@ -331,15 +353,22 @@ export function useAnalytics(): AnalyticsData {
       }
     }
 
-    if (scores.length === 0) return 0
-    return Math.round(scores.reduce((a, b) => a + b, 0) / scores.length)
+    return {
+      count: scores.length,
+      average:
+        scores.length === 0 ? 0 : Math.round(scores.reduce((a, b) => a + b, 0) / scores.length),
+    }
   }, [moduleProgress, assessments, practiceSessions])
+
+  const averagePracticeScore = scoreStats.average
+  const scoreSampleCount = scoreStats.count
+  const hasMinimumScoreSamples = scoreSampleCount >= MIN_SCORE_SAMPLES
 
   // ── Current streak ─────────────────────────────────────────────────────
 
   const currentStreak = useMemo(
     () => calculateStreak(moduleProgress, practiceSessions, assessments),
-    [moduleProgress, practiceSessions, assessments]
+    [moduleProgress, practiceSessions, assessments],
   )
 
   // ── Course progress ────────────────────────────────────────────────────
@@ -352,12 +381,14 @@ export function useAnalytics(): AnalyticsData {
 
         const totalMods = course.moduleList.length
         const completedMods = moduleProgress.filter(
-          (mp) => mp.course_id === e.course_id && mp.completed
+          (mp) => mp.course_id === e.course_id && mp.completed,
         ).length
 
         const lastMod = moduleProgress
           .filter((mp) => mp.course_id === e.course_id && mp.completed_at)
-          .sort((a, b) => new Date(b.completed_at!).getTime() - new Date(a.completed_at!).getTime())[0]
+          .sort(
+            (a, b) => new Date(b.completed_at!).getTime() - new Date(a.completed_at!).getTime(),
+          )[0]
 
         return {
           courseId: e.course_id,
@@ -510,7 +541,7 @@ export function useAnalytics(): AnalyticsData {
         const completedIds = new Set(
           moduleProgress
             .filter((mp) => mp.course_id === cp.courseId && mp.completed)
-            .map((mp) => mp.module_id)
+            .map((mp) => mp.module_id),
         )
         const nextMod = cp.course.moduleList.find((m) => !completedIds.has(m.id))
         if (nextMod) {
@@ -526,7 +557,7 @@ export function useAnalytics(): AnalyticsData {
 
     // Suggest revision if there are completed modules with low quiz scores
     const lowScoreModules = moduleProgress.filter(
-      (mp) => mp.completed && mp.quiz_score !== null && mp.quiz_score < 60
+      (mp) => mp.completed && mp.quiz_score !== null && mp.quiz_score < 60,
     )
     if (lowScoreModules.length > 0) {
       recs.push({
@@ -591,7 +622,7 @@ export function useAnalytics(): AnalyticsData {
 
   const examReadiness = useMemo(
     () => calculateExamReadiness(courseProgress, averagePracticeScore, skillScores),
-    [courseProgress, averagePracticeScore, skillScores]
+    [courseProgress, averagePracticeScore, skillScores],
   )
 
   return {
@@ -600,6 +631,8 @@ export function useAnalytics(): AnalyticsData {
     modulesCompleted,
     totalModules,
     averagePracticeScore,
+    scoreSampleCount,
+    hasMinimumScoreSamples,
     currentStreak,
     examReadiness,
     courseProgress,

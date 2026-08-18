@@ -19,9 +19,10 @@ import {
   Users,
   Activity,
   Loader2,
+  Lock,
 } from 'lucide-react'
 import { useAuthStore } from '@/store/auth-store'
-import { useAnalytics } from '@/hooks/useAnalytics'
+import { useAnalytics, MIN_SCORE_SAMPLES } from '@/hooks/useAnalytics'
 import { formatDuration, formatDate, cn } from '@/lib/utils'
 import { percentageToGCSEGradeLabel, percentageToGCSEGrade, gcseGradeColor } from '@/lib/grades'
 import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip'
@@ -96,6 +97,56 @@ function SectionSkeleton() {
   )
 }
 
+// ── Unlock invite (below minimum sample threshold) ───────────────────────────
+//
+// A brand-new student must never see "Grade 1", a 0% gauge or a collapsed
+// radar. Until there are MIN_SCORE_SAMPLES real scores (the same threshold
+// as /api/profile/grade-progress), derived metrics render this first-task
+// state instead.
+
+function UnlockInvite({
+  t,
+  scoreSampleCount,
+  showProgress = true,
+}: {
+  t: (key: string) => string
+  scoreSampleCount: number
+  showProgress?: boolean
+}) {
+  return (
+    <div className="flex flex-col items-center py-4 text-center">
+      <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+        <Target className="h-6 w-6 text-primary" />
+      </div>
+      <p className="text-sm font-medium text-foreground">{t('dashboard.analytics.unlock_title')}</p>
+      <p className="mt-1 max-w-xs text-xs text-muted-foreground leading-relaxed">
+        {t('dashboard.analytics.unlock_body')}
+      </p>
+      {showProgress && (
+        <div className="mt-3 w-40">
+          <div className="mb-1 flex items-center justify-between text-[11px] text-muted-foreground">
+            <span>{t('dashboard.analytics.unlock_progress_label')}</span>
+            <span className="font-medium tabular-nums">
+              {scoreSampleCount} / {MIN_SCORE_SAMPLES}
+            </span>
+          </div>
+          <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
+            <div
+              className="h-full rounded-full bg-primary transition-all duration-500"
+              style={{
+                width: `${Math.min((scoreSampleCount / MIN_SCORE_SAMPLES) * 100, 100)}%`,
+              }}
+            />
+          </div>
+        </div>
+      )}
+      <Button size="sm" className="mt-4" render={<Link href="/practice" />}>
+        {t('dashboard.analytics.unlock_cta')} <ArrowRight className="h-3.5 w-3.5" />
+      </Button>
+    </div>
+  )
+}
+
 // ── Activity Icon ────────────────────────────────────────────────────────────
 
 function ActivityIcon({ type }: { type: 'module' | 'assessment' | 'practice' }) {
@@ -154,6 +205,8 @@ export default function AnalyticsPage() {
     modulesCompleted,
     totalModules,
     averagePracticeScore,
+    scoreSampleCount,
+    hasMinimumScoreSamples,
     currentStreak,
     examReadiness,
     courseProgress,
@@ -297,20 +350,39 @@ export default function AnalyticsPage() {
                             <p className="text-[11px] uppercase tracking-wider text-muted-foreground">
                               {t('dashboard.analytics.stat_working_at_grade')}
                             </p>
-                            <p
-                              className={`text-xl font-bold tabular-nums ${gcseGradeColor(percentageToGCSEGrade(averagePracticeScore))}`}
-                            >
-                              Grade {percentageToGCSEGrade(averagePracticeScore)}
-                            </p>
-                            <p className="text-[11px] text-muted-foreground">
-                              {t('dashboard.analytics.stat_avg_score')} ({averagePracticeScore}%)
-                            </p>
+                            {hasMinimumScoreSamples ? (
+                              <>
+                                <p
+                                  className={`text-xl font-bold tabular-nums ${gcseGradeColor(percentageToGCSEGrade(averagePracticeScore))}`}
+                                >
+                                  Grade {percentageToGCSEGrade(averagePracticeScore)}
+                                </p>
+                                <p className="text-[11px] text-muted-foreground">
+                                  {t('dashboard.analytics.stat_avg_score')} ({averagePracticeScore}
+                                  %)
+                                </p>
+                              </>
+                            ) : (
+                              <>
+                                <p className="flex items-center gap-1.5 text-xl font-bold text-muted-foreground">
+                                  <Lock className="h-4 w-4" />
+                                  {t('dashboard.analytics.stat_locked')}
+                                </p>
+                                <p className="text-[11px] text-muted-foreground">
+                                  {t('dashboard.analytics.stat_locked_hint')}
+                                </p>
+                              </>
+                            )}
                           </div>
                         </div>
                       </CardContent>
                     </Card>
                   </TooltipTrigger>
-                  <TooltipContent>{t('dashboard.analytics.tooltip_avg_score')}</TooltipContent>
+                  <TooltipContent>
+                    {hasMinimumScoreSamples
+                      ? t('dashboard.analytics.tooltip_avg_score')
+                      : t('dashboard.analytics.tooltip_locked')}
+                  </TooltipContent>
                 </Tooltip>
 
                 {/* Streak */}
@@ -356,18 +428,36 @@ export default function AnalyticsPage() {
                             <p className="text-[11px] uppercase tracking-wider text-muted-foreground">
                               {t('dashboard.analytics.stat_exam_ready')}
                             </p>
-                            <p className="text-xl font-bold tabular-nums text-foreground">
-                              {examReadiness}%
-                            </p>
-                            <p className="text-[11px] text-muted-foreground">
-                              {t('dashboard.analytics.stat_readiness_score')}
-                            </p>
+                            {hasMinimumScoreSamples ? (
+                              <>
+                                <p className="text-xl font-bold tabular-nums text-foreground">
+                                  {examReadiness}%
+                                </p>
+                                <p className="text-[11px] text-muted-foreground">
+                                  {t('dashboard.analytics.stat_readiness_score')}
+                                </p>
+                              </>
+                            ) : (
+                              <>
+                                <p className="flex items-center gap-1.5 text-xl font-bold text-muted-foreground">
+                                  <Lock className="h-4 w-4" />
+                                  {t('dashboard.analytics.stat_locked')}
+                                </p>
+                                <p className="text-[11px] text-muted-foreground">
+                                  {t('dashboard.analytics.stat_locked_hint')}
+                                </p>
+                              </>
+                            )}
                           </div>
                         </div>
                       </CardContent>
                     </Card>
                   </TooltipTrigger>
-                  <TooltipContent>{t('dashboard.analytics.tooltip_exam_ready')}</TooltipContent>
+                  <TooltipContent>
+                    {hasMinimumScoreSamples
+                      ? t('dashboard.analytics.tooltip_exam_ready')
+                      : t('dashboard.analytics.tooltip_locked')}
+                  </TooltipContent>
                 </Tooltip>
               </>
             )}
@@ -459,6 +549,8 @@ export default function AnalyticsPage() {
                     <Skeleton className="h-[120px] w-[120px] rounded-full" />
                     <Skeleton className="h-3 w-20" />
                   </div>
+                ) : !hasMinimumScoreSamples ? (
+                  <UnlockInvite t={t} scoreSampleCount={scoreSampleCount} />
                 ) : (
                   <div className="flex flex-col items-center py-2">
                     <ExamReadinessGauge percentage={examReadiness} />
@@ -495,6 +587,8 @@ export default function AnalyticsPage() {
                       </div>
                     ))}
                   </div>
+                ) : !hasMinimumScoreSamples ? (
+                  <UnlockInvite t={t} scoreSampleCount={scoreSampleCount} showProgress={false} />
                 ) : (
                   <SkillRadar skills={skillScores} />
                 )}

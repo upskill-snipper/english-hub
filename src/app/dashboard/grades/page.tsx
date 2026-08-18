@@ -205,9 +205,15 @@ export default function GradeDashboardPage() {
   }, [user])
 
   // ── Eligibility ──────────────────────────────────────────────────────────
+  //
+  // The predicted/potential grades below are computed from ASSESSMENT scores
+  // only, so eligibility must be counted in assessments too - mirroring
+  // MIN_SAMPLES in /api/profile/grade-progress. (Previously 5 practice
+  // sessions with zero assessments unlocked the dashboard, which then
+  // rendered "Predicted: Grade 1" from an empty assessment list.)
 
-  const totalSessions = assessments.length + practiceSessions.length
-  const isEligible = totalSessions >= 5
+  const MIN_ASSESSMENT_SAMPLES = 3
+  const isEligible = assessments.length >= MIN_ASSESSMENT_SAMPLES
 
   // ── Computed grade data ──────────────────────────────────────────────────
 
@@ -435,28 +441,32 @@ export default function GradeDashboardPage() {
                 <span className="text-muted-foreground">
                   {t('dashboard.grades.locked.progress')}
                 </span>
-                <span className="font-medium">{totalSessions} / 5</span>
+                <span className="font-medium">
+                  {assessments.length} / {MIN_ASSESSMENT_SAMPLES}
+                </span>
               </div>
               <div className="h-3 w-full overflow-hidden rounded-full bg-border">
                 <div
                   className="h-full rounded-full bg-primary transition-all duration-500"
-                  style={{ width: `${Math.min((totalSessions / 5) * 100, 100)}%` }}
+                  style={{
+                    width: `${Math.min((assessments.length / MIN_ASSESSMENT_SAMPLES) * 100, 100)}%`,
+                  }}
                 />
               </div>
             </div>
 
             <div className="mt-6 flex gap-3">
               <Link
-                href="/practice"
+                href="/courses"
                 className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary/90"
               >
-                {t('dashboard.grades.locked.practice')} <ArrowRight className="h-4 w-4" />
+                {t('dashboard.grades.locked.browse')} <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                href="/courses"
+                href="/practice"
                 className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-card"
               >
-                {t('dashboard.grades.locked.browse')}
+                {t('dashboard.grades.locked.practice')}
               </Link>
             </div>
           </div>

@@ -23,6 +23,7 @@ import { Badge } from '@/components/ui/badge'
 import { useBoard } from '@/hooks/useBoard'
 import type { ExamBoard } from '@/lib/board/board-store'
 import { useT } from '@/lib/i18n/use-t'
+import type { QuizHistoryEntry } from '@/components/toolkit/toolkit-types'
 
 import type { QuizQuestion, Topic } from './quiz-data'
 import {
@@ -247,26 +248,49 @@ interface QuizEngineProps {
   onRestart: () => void
 }
 
-interface QuizResult {
-  date: string
-  mode: string
-  score: number
-  total: number
-  percentage: number
-  grade: string
-  topics: Topic[]
-  topicBreakdown: Record<Topic, { correct: number; total: number }>
-}
-
 const HISTORY_KEY = 'english-hub-quiz-history'
 
-function saveResult(result: QuizResult) {
+// One QuizHistoryEntry per topic per attempt, matching toolkit-types.
+// `score` MUST be a percentage: the toolkit readers (personalise.ts,
+// progress pages) average these values directly, so writing a raw
+// correct count here silently destroys every downstream grade.
+function saveResult(
+  mode: string,
+  correct: number,
+  total: number,
+  percentage: number,
+  board: string | null,
+  topicBreakdown: Record<string, { correct: number; total: number }>,
+) {
   try {
     const stored = localStorage.getItem(HISTORY_KEY)
-    const history: QuizResult[] = stored ? JSON.parse(stored) : []
-    history.unshift(result)
-    // Keep last 50 results
-    localStorage.setItem(HISTORY_KEY, JSON.stringify(history.slice(0, 50)))
+    const history: QuizHistoryEntry[] = stored ? JSON.parse(stored) : []
+    const date = new Date().toISOString()
+    const attemptId =
+      typeof crypto !== 'undefined' && 'randomUUID' in crypto
+        ? crypto.randomUUID()
+        : `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`
+
+    const entries: QuizHistoryEntry[] = Object.entries(topicBreakdown)
+      .filter(([, data]) => data.total > 0)
+      .map(([topic, data]) => ({
+        id: `${attemptId}-${topic}`,
+        topic,
+        score: Math.round((data.correct / data.total) * 100),
+        total: data.total,
+        correct: data.correct,
+        date,
+        board: board ?? 'unknown',
+        attemptId,
+        mode,
+        attemptCorrect: correct,
+        attemptTotal: total,
+        attemptPercentage: percentage,
+      }))
+
+    history.unshift(...entries)
+    // Cap at 150 entries (roughly 30+ attempts across several topics each)
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(history.slice(0, 150)))
   } catch {
     // ignore
   }
@@ -436,20 +460,8 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
     })
 
     const percentage = Math.round((score / questions.length) * 100)
-    const { grade } = getGrade(percentage)
 
-    const usedTopics = [...new Set(questions.map((q) => q.topic))] as Topic[]
-
-    saveResult({
-      date: new Date().toISOString(),
-      mode,
-      score,
-      total: questions.length,
-      percentage,
-      grade,
-      topics: usedTopics,
-      topicBreakdown: topicBreakdown as Record<Topic, { correct: number; total: number }>,
-    })
+    saveResult(mode, score, questions.length, percentage, board, topicBreakdown)
   }
 
   // Format time

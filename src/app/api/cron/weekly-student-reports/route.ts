@@ -57,7 +57,26 @@ interface CronResult {
   errors: string[]
 }
 
-// ─── Handler ─────────────────────────────────────────────────────────────
+export const dynamic = 'force-dynamic'
+
+// ─── Handlers ────────────────────────────────────────────────────────────
+//
+// Vercel Cron invokes scheduled routes with GET and an
+// `Authorization: Bearer ${CRON_SECRET}` header. This route originally
+// exported only POST, so the Sunday schedule in vercel.json returned 405
+// forever and no student digest was ever sent. The POST body already
+// authenticates the Bearer header, so GET simply delegates to it.
+//
+// No kill switch here (unlike weekly-parent-reports): the digest goes to
+// the student themselves - an account holder who controls the gating
+// preference. Sends are hard-gated on
+// `PrivacySettings.marketingEnabled === true`, which is OFF by default for
+// children and manageable by the account holder at /dashboard/privacy, so
+// a working opt-out already exists.
+
+export async function GET(request: NextRequest): Promise<Response> {
+  return POST(request)
+}
 
 export async function POST(request: NextRequest): Promise<Response> {
   // ── Auth: Authorization: Bearer <CRON_SECRET> (timing-safe) ─────────

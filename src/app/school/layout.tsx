@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
-import { redirect } from 'next/navigation'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { getSchoolAccess } from '@/lib/school-access'
-import { SchoolSidebarNav } from '@/components/school/SchoolSidebarNav'
+import { SchoolPortalGate, type GateAccess } from './school-portal-gate'
 
 export const metadata: Metadata = {
   title: 'School Admin',
@@ -10,45 +9,47 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 }
 
+// ─── School portal layout ───────────────────────────────────────────────────
+//
+// This server layout only GATHERS auth state; the gate itself lives in
+// SchoolPortalGate (a client component) because it must vary by pathname:
+// /school/join and /school/invite/[token] are allowlisted past the role
+// check so invited teachers and code-holding pupils can get in, and a
+// server layout cannot read the request pathname.
+//
+// Role policy (changed 2026-08-18): teachers are allowed into the portal.
+// The old admin/HoD-only gate locked out the very role the marking queue,
+// classes and analytics APIs were built for, and bounced already-signed-in
+// users to /auth/login in a loop. Admin-only pages (billing, users,
+// permissions, import, settings, join-codes) are expected to enforce their
+// own inline admin check - see requireSchoolAdmin in src/lib/school-access.
+// ────────────────────────────────────────────────────────────────────────────
+
 export default async function SchoolAdminLayout({ children }: { children: React.ReactNode }) {
   const supabase = createServerSupabaseClient()
   const {
     data: { user },
   } = await supabase.auth.getUser()
 
-  if (!user) {
-    redirect('/auth/login')
-  }
+  const access = user ? await getSchoolAccess(user.id, user.email ?? undefined) : null
 
-  const access = await getSchoolAccess(user.id, user.email ?? undefined)
-
-  if (!access || !access.isActive) {
-    redirect('/auth/login')
-  }
-
-  // Only admins and head_of_department can access the school admin portal
-  if (access.userRole !== 'admin' && access.userRole !== 'head_of_department') {
-    redirect('/auth/login')
-  }
+  const gateAccess: GateAccess | null = access
+    ? {
+        schoolName: access.schoolName,
+        accessType: access.accessType,
+        accessUntil: access.accessUntil,
+        isActive: access.isActive,
+        userRole: access.userRole,
+      }
+    : null
 
   return (
-    <div className="flex min-h-screen bg-background">
-      {/* Sidebar (fixed 240px desktop, hamburger on mobile) */}
-      <SchoolSidebarNav
-        schoolName={access.schoolName}
-        userEmail={user.email ?? ''}
-        accessType={access.accessType}
-        founderAccess={access.accessType === 'founder'}
-        accessUntil={access.accessUntil ?? undefined}
-      />
-
-      {/* Main content area - id matches the skip-to-content link in
-          src/app/layout.tsx. The root layout-shell suppresses its own
-          #main-content wrapper on /school/* routes, so this is the only
-          anchor keyboard users land on after using the skip link. */}
-      <main id="main-content" className="flex-1 min-w-0 overflow-auto p-6">
-        {children}
-      </main>
-    </div>
+    <SchoolPortalGate
+      isAuthenticated={Boolean(user)}
+      userEmail={user?.email ?? ''}
+      access={gateAccess}
+    >
+      {children}
+    </SchoolPortalGate>
   )
 }

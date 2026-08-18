@@ -3,6 +3,7 @@ import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supab
 import { verifySchoolMember } from '@/lib/school-auth'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 import { sendEmail } from '@/lib/email'
+import { displayNameFromEmail } from '@/lib/school-students'
 
 export const dynamic = 'force-dynamic'
 
@@ -218,16 +219,21 @@ export async function POST(request: NextRequest) {
         // Check if the email belongs to an existing Supabase auth user
         const { data: existingProfile } = await admin
           .from('profiles')
-          .select('id')
+          .select('id, full_name')
           .eq('email', email)
           .maybeSingle()
 
         if (existingProfile) {
-          // User already has an account - add directly as accepted member
+          // User already has an account - add directly as accepted member.
+          // full_name must be supplied: the column predates the 20260818
+          // migration on most rows and a name is expected everywhere the
+          // member is displayed. Prefer the profile's real name, fall back
+          // to a name derived from the email local-part.
           const { error: insertError } = await admin.from('school_members').insert({
             school_id: actor.school_id,
             user_id: existingProfile.id,
             role,
+            full_name: existingProfile.full_name ?? displayNameFromEmail(email),
             email,
             invite_status: 'accepted',
             invite_token: null,
@@ -260,10 +266,14 @@ export async function POST(request: NextRequest) {
         const inviteToken = crypto.randomUUID()
         const inviteExpiresAt = new Date(Date.now() + INVITE_TTL_MS).toISOString()
 
+        // full_name is derived from the email local-part because it is all
+        // we know about the invitee at this point; the acceptance flow can
+        // overwrite it with their real name once they sign up.
         const { error: insertError } = await admin.from('school_members').insert({
           school_id: actor.school_id,
           user_id: null,
           role,
+          full_name: displayNameFromEmail(email),
           email,
           invite_status: 'pending',
           invite_token: inviteToken,

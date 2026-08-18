@@ -2376,6 +2376,47 @@ export const DICTIONARY: Dictionary = {
     ar: 'سوّ حساب معلم مجاني',
     es: 'Crear cuenta gratuita de profesor',
   },
+  'auth.register.parent': { en: 'Parent', ar: 'ولي أمر', es: 'Padre/madre' },
+  'auth.register.parent_title': {
+    en: 'Create your parent account',
+    ar: 'سوّ حساب ولي الأمر',
+    es: 'Crea tu cuenta de padre o madre',
+  },
+  'auth.register.parent_subtitle': {
+    en: "Follow your child's real progress. You link to their account with an invite code they generate.",
+    ar: 'تابع تقدم ابنك الحقيقي. تربط حسابك بحسابه برمز دعوة يسوّيه هو.',
+    es: 'Sigue el progreso real de tu hijo. Vinculas tu cuenta a la suya con un código de invitación que genera él.',
+  },
+  'auth.register.create_parent_account': {
+    en: 'Create parent account',
+    ar: 'سوّ حساب ولي أمر',
+    es: 'Crear cuenta de padre o madre',
+  },
+  'auth.register.parent_adults_only_lead': {
+    en: 'Parent accounts are for adults (18 or over).',
+    ar: 'حسابات أولياء الأمور للبالغين (١٨ سنة فما فوق).',
+    es: 'Las cuentas de padres son para adultos (18 años o más).',
+  },
+  'auth.register.parent_adults_only_body': {
+    en: 'Your child keeps their own student account. After you sign up, ask them to generate an invite code from Settings, then Parent link, and enter it on your parent dashboard to connect the accounts.',
+    ar: 'ابنك يحتفظ بحسابه الطلابي. بعد ما تسجّل، اطلب منه يسوّي رمز دعوة من الإعدادات ثم ربط ولي الأمر، وأدخله في لوحة ولي الأمر عشان تربط الحسابين.',
+    es: 'Tu hijo conserva su propia cuenta de estudiante. Después de registrarte, pídele que genere un código de invitación desde Configuración, luego Vínculo parental, e introdúcelo en tu panel para padres para conectar las cuentas.',
+  },
+  'auth.register.parent_after_verify': {
+    en: 'Once verified, sign in and open your parent dashboard. Enter the invite code your child generates from Settings, then Parent link, to see their progress.',
+    ar: 'بعد ما تأكد الإيميل، سجّل دخولك وافتح لوحة ولي الأمر. أدخل رمز الدعوة اللي يسوّيه ابنك من الإعدادات ثم ربط ولي الأمر عشان تشوف تقدمه.',
+    es: 'Una vez verificado, inicia sesión y abre tu panel para padres. Introduce el código de invitación que tu hijo genera desde Configuración, luego Vínculo parental, para ver su progreso.',
+  },
+  'form.must_be_18': {
+    en: 'You must be 18 or over to create a parent account.',
+    ar: 'لازم يكون عمرك ١٨ سنة أو أكثر عشان تسوّي حساب ولي أمر.',
+    es: 'Debes tener 18 años o más para crear una cuenta de padre o madre.',
+  },
+  'form.parent_dob_help': {
+    en: 'We ask for your date of birth only to confirm you are 18 or over.',
+    ar: 'نطلب تاريخ ميلادك فقط عشان نتأكد إن عمرك ١٨ أو أكثر.',
+    es: 'Solo pedimos tu fecha de nacimiento para confirmar que tienes 18 años o más.',
+  },
   'auth.register.already_have_account': {
     en: 'Already have an account?',
     ar: 'عندك حساب من قبل؟',
@@ -4661,6 +4702,7 @@ export const DICTIONARY: Dictionary = {
   },
   'dash.view_certificate': { en: 'View Certificate', ar: 'شوف الشهادة', es: 'Ver certificado' },
   'dash.stat.enrolled': { en: 'Enrolled', ar: 'مسجَّل فيها', es: 'Matriculado' },
+  'dash.stat.your_courses': { en: 'Your Courses', ar: 'كورساتك', es: 'Tus cursos' },
   'dash.stat.completed': { en: 'Completed', ar: 'مخلَّصة', es: 'Completado' },
   'dash.stat.certificates': { en: 'Certificates', ar: 'الشهادات', es: 'Certificados' },
   'dash.stat.plan': { en: 'Plan', ar: 'الخطة', es: 'Plan' },
@@ -4674,6 +4716,11 @@ export const DICTIONARY: Dictionary = {
     en: 'Total number of courses you have enrolled in',
     ar: 'عدد الكورسات اللي مسجَّل فيها',
     es: 'Número total de cursos en los que te has matriculado',
+  },
+  'dash.stat.your_courses_tooltip': {
+    en: 'Courses you are working through or have bought',
+    ar: 'الكورسات اللي شغّال عليها أو اشتريتها',
+    es: 'Cursos en los que estás trabajando o que has comprado',
   },
   'dash.stat.completed_tooltip': {
     en: 'Total modules you have completed across all courses',
@@ -4715,6 +4762,21 @@ export const DICTIONARY: Dictionary = {
     es: 'Panel del colegio',
   },
   'dash.qa.join_school': { en: 'Join School', ar: 'انضم لمدرسة', es: 'Unirse a un colegio' },
+  'dash.marking_cta.title': {
+    en: 'Mark an essay',
+    ar: 'صحّح مقالك',
+    es: 'Corrige una redacción',
+  },
+  'dash.marking_cta.badge': {
+    en: 'AI marking',
+    ar: 'تصحيح بالذكاء الاصطناعي',
+    es: 'Corrección con IA',
+  },
+  'dash.marking_cta.blurb': {
+    en: 'Paste your essay and get examiner-style feedback in minutes.',
+    ar: 'حط مقالك وخذ ملاحظات بأسلوب المصحح خلال دقايق.',
+    es: 'Pega tu redacción y recibe comentarios al estilo del examinador en minutos.',
+  },
   'sub.free': { en: 'Free', ar: 'ببلاش', es: 'Gratis' },
   'sub.premium': { en: 'Premium', ar: 'بريميوم', es: 'Premium' },
   'sub.cancelled': { en: 'Cancelled', ar: 'ملغى', es: 'Cancelado' },
@@ -6230,16 +6292,23 @@ export const DICTIONARY: Dictionary = {
     ar: 'تفصيل الأسئلة',
     es: 'Desglose de preguntas',
   },
-  'mock.grade_boundaries': { en: 'Grade Boundaries', ar: 'حدود الدرجات', es: 'Notas de corte' },
+  'mock.grade_boundaries': {
+    en: 'Indicative grade boundaries',
+    ar: 'حدود درجات استرشادية',
+    es: 'Notas de corte orientativas',
+  },
+  // 2026-08-18: the old note said "Based on recent {board} grade
+  // boundaries" - the tables are in fact indicative approximations
+  // authored for practice, not official published boundaries.
   'mock.boundaries_note_prefix': {
-    en: 'Based on recent',
-    ar: 'بناءً على حدود درجات',
-    es: 'Basado en las recientes',
+    en: 'Indicative for practice only - not official',
+    ar: 'استرشادية للتمرين فقط - ليست حدود',
+    es: 'Orientativas solo para practicar - no son las notas de corte oficiales de',
   },
   'mock.boundaries_note_suffix': {
-    en: 'grade boundaries. Boundaries vary each year.',
-    ar: 'الأخيرة. الحدود تتغير كل سنة.',
-    es: 'notas de corte. Las notas de corte varían cada año.',
+    en: 'boundaries, which change with every exam series.',
+    ar: 'الرسمية، واللي تتغير مع كل دورة امتحانات.',
+    es: ', que cambian en cada convocatoria.',
   },
   'mock.gcse_english': { en: 'GCSE English', ar: 'إنجليزي GCSE', es: 'Inglés de GCSE' },
   'mock.paper': { en: 'Paper', ar: 'الورقة', es: 'Examen' },
@@ -6284,9 +6353,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Puedes pausar el cronómetro si lo necesitas (no permitido en los exámenes reales)',
   },
   'mock.cond_submit_finish': {
-    en: 'Click "Submit Exam" when finished to see your estimated grade',
-    ar: 'اضغط "سلّم الامتحان" لما تخلّص عشان تشوف درجتك المتوقعة',
-    es: 'Haz clic en "Enviar el examen" cuando termines para ver tu nota estimada',
+    en: 'Click "Submit Exam" when finished to check your answers against the mark scheme',
+    ar: 'اضغط "سلّم الامتحان" لما تخلّص عشان تراجع إجاباتك مع سلم العلامات',
+    es: 'Haz clic en "Enviar el examen" cuando termines para comprobar tus respuestas con la guía de corrección',
   },
   'mock.question': { en: 'Question', ar: 'سؤال', es: 'Pregunta' },
   'mock.of': { en: 'of', ar: 'من', es: 'de' },
@@ -6341,6 +6410,29 @@ export const DICTIONARY: Dictionary = {
   },
   'mock.words_written': { en: 'words written', ar: 'كلمة مكتوبة', es: 'palabras escritas' },
   'mock.no_response': { en: 'No response', ar: 'ما في إجابة', es: 'Sin respuesta' },
+  'mock.results_title': { en: 'Paper Complete', ar: 'خلّصت الورقة', es: 'Examen terminado' },
+  'mock.minutes_short': { en: 'min', ar: 'دقيقة', es: 'min' },
+  'mock.time_taken': { en: 'Time taken', ar: 'الوقت المستغرق', es: 'Tiempo empleado' },
+  'mock.self_mark_title': {
+    en: 'How to mark this paper',
+    ar: 'كيف تصحّح ورقتك',
+    es: 'Cómo corregir este examen',
+  },
+  'mock.self_mark_body': {
+    en: 'Written answers are not marked automatically, so no grade is shown. Use the mark scheme and example responses below to self-assess each answer against the level descriptors, and be honest about the level your answer reaches. Multiple-choice answers are marked for you.',
+    ar: 'الإجابات المكتوبة ما تتصحّح تلقائياً، فما نعرض درجة. استخدم سلم العلامات والإجابات النموذجية تحت عشان تقيّم كل إجابة بنفسك حسب واصفات المستويات، وكن صادقاً مع نفسك عن المستوى اللي وصلته إجابتك. أسئلة الاختيار من متعدد تتصحّح لك تلقائياً.',
+    es: 'Las respuestas escritas no se corrigen automáticamente, así que no se muestra ninguna nota. Usa la guía de corrección y las respuestas de ejemplo de abajo para autoevaluar cada respuesta según los descriptores de nivel, siendo sincero sobre el nivel que alcanza tu respuesta. Las preguntas de opción múltiple se corrigen automáticamente.',
+  },
+  'mock.mc_auto_marked': {
+    en: 'marked automatically',
+    ar: 'تصحّحت تلقائياً',
+    es: 'corregida automáticamente',
+  },
+  'mock.self_marked_label': {
+    en: 'self-mark against the scheme below',
+    ar: 'صحّحها بنفسك حسب السلم تحت',
+    es: 'corrígela tú mismo con la guía de abajo',
+  },
   'mock.about_estimate': {
     en: 'About This Estimate',
     ar: 'عن هذا التقدير',
@@ -12501,9 +12593,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Evaluación de comprensión lectora',
   },
   'assessment.reading.page_subtitle': {
-    en: 'Measure your reading age, decoding skills, and fluency',
-    ar: 'قِس عمر القراءة مالك ومهارات فك الكلمات والطلاقة',
-    es: 'Mide tu edad lectora, tus habilidades de decodificación y tu fluidez',
+    en: 'An indicative screener of reading comprehension, decoding, and self-timed reading rate',
+    ar: 'فحص استرشادي للفهم القرائي وفك الكلمات وسرعة القراءة الذاتية التوقيت',
+    es: 'Un cribado orientativo de comprensión lectora, decodificación y velocidad de lectura autocronometrada',
   },
   'assessment.reading.profile_heading': {
     en: 'Your Reading Profile',
@@ -12524,6 +12616,26 @@ export const DICTIONARY: Dictionary = {
     en: 'Fluency Age',
     ar: 'عمر الطلاقة',
     es: 'Edad de fluidez',
+  },
+  'assessment.reading.label.reading_rate': {
+    en: 'Reading Rate',
+    ar: 'سرعة القراءة',
+    es: 'Velocidad de lectura',
+  },
+  'assessment.reading.self_timed': {
+    en: 'self-timed reading rate',
+    ar: 'سرعة قراءة بتوقيت ذاتي',
+    es: 'velocidad de lectura autocronometrada',
+  },
+  'assessment.reading.caveat_title': {
+    en: 'Before you read these results',
+    ar: 'قبل ما تقرا هذي النتائج',
+    es: 'Antes de leer estos resultados',
+  },
+  'assessment.reading.caveat_body': {
+    en: 'This is an indicative, self-administered online screener - not a standardised reading assessment. The age scores are approximate and can easily be out by several months either way. Please do not make decisions about support, intervention or school placement from this screener alone: those decisions should use a validated instrument administered by a teacher, SENCo or educational psychologist.',
+    ar: 'هذا فحص استرشادي أونلاين يسويه الطالب بنفسه، مو تقييم قراءة معتمد. الأعمار المعروضة تقريبية وممكن تختلف عدة أشهر زيادة أو نقصان. لا تاخذ قرارات عن الدعم أو التدخل أو المسار الدراسي بناءً على هذا الفحص وحده: هذي القرارات لازم تعتمد على أداة معتمدة يطبّقها معلم أو منسق احتياجات تعليمية أو اختصاصي نفسي تربوي.',
+    es: 'Esto es un cribado orientativo en línea autoadministrado, no una evaluación de lectura estandarizada. Las edades mostradas son aproximadas y pueden desviarse fácilmente varios meses en cualquier dirección. No tomes decisiones sobre apoyo, intervención o escolarización basándote solo en este cribado: esas decisiones deben apoyarse en un instrumento validado administrado por un profesor, un coordinador de necesidades educativas o un psicólogo educativo.',
   },
   'assessment.reading.comparison.above': {
     en: 'Above expected',
@@ -12635,9 +12747,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Cómo funciona el test',
   },
   'assessment.reading.methodology.how_it_works_body': {
-    en: 'This assessment uses graded passages of increasing difficulty (Year 3 to Year 13 level) to measure reading ability across three dimensions: comprehension, decoding, and fluency.',
-    ar: 'هذا التقييم يستخدم نصوص متدرّجة في الصعوبة (من السنة الثالثة لين السنة الثالثة عشرة) عشان يقيس القدرة على القراءة في ثلاث محاور: الفهم وفك الكلمات والطلاقة.',
-    es: 'Esta evaluación usa pasajes graduados de dificultad creciente (del nivel de Year 3 al de Year 13) para medir la capacidad lectora en tres dimensiones: comprensión, decodificación y fluidez.',
+    en: 'This screener uses graded passages of increasing difficulty (Year 3 to Year 13 level) to score reading comprehension and decoding from your answers, and records a self-timed reading rate.',
+    ar: 'هذا الفحص يستخدم نصوص متدرّجة في الصعوبة (من السنة الثالثة لين السنة الثالثة عشرة) عشان يحسب الفهم القرائي وفك الكلمات من إجاباتك، ويسجّل سرعة قراءة بتوقيت ذاتي.',
+    es: 'Este cribado usa pasajes graduados de dificultad creciente (del nivel de Year 3 al de Year 13) para puntuar la comprensión lectora y la decodificación a partir de tus respuestas, y registra una velocidad de lectura autocronometrada.',
   },
   'assessment.reading.methodology.comprehension_body': {
     en: 'Measured through a combination of literal (retrieval), inferential (reading between the lines), and evaluative (analysis and judgment) questions on each passage. Both multiple-choice and short-answer formats are used.',
@@ -12650,19 +12762,19 @@ export const DICTIONARY: Dictionary = {
     es: 'Se mide mediante la precisión en el reconocimiento de palabras, incluyendo tanto palabras reales como pseudopalabras (palabras sin sentido que siguen los patrones fonéticos del inglés, similar al phonics screening check de Year 1). Esto aísla la capacidad de decodificación del conocimiento del vocabulario.',
   },
   'assessment.reading.methodology.fluency_body': {
-    en: 'Measured through words-per-minute reading speed, adjusted for accuracy. The adjusted WPM (words read correctly per minute) is compared against age-related norms.',
-    ar: 'نقيسها بسرعة القراءة بالكلمة في الدقيقة، معدَّلة على أساس الدقّة. والكلمات الصحيحة بالدقيقة تنقارن بمعايير الفئة العمرية.',
-    es: 'Se mide mediante la velocidad de lectura en palabras por minuto, ajustada según la precisión. Las PPM ajustadas (palabras leídas correctamente por minuto) se comparan con las normas relacionadas con la edad.',
+    en: 'Reading speed is recorded as self-timed words per minute: the reader presses "finished" after each passage. Because nothing checks how accurately the passage was read, the rate is a rough indication only and does not feed into the reading age.',
+    ar: 'سرعة القراءة تنسجّل بالكلمة في الدقيقة بتوقيت ذاتي: القارئ يضغط "خلصت" بعد كل نص. ولأن ما في شي يتحقق من دقّة القراءة، السرعة مؤشر تقريبي فقط وما تدخل في حساب عمر القراءة.',
+    es: 'La velocidad de lectura se registra como palabras por minuto autocronometradas: el lector pulsa "terminado" tras cada pasaje. Como nada comprueba con qué precisión se leyó el pasaje, la velocidad es solo una indicación aproximada y no entra en el cálculo de la edad lectora.',
   },
   'assessment.reading.methodology.standardisation': {
-    en: 'Standardisation',
-    ar: 'المعايرة',
-    es: 'Estandarización',
+    en: 'How the ages are calculated',
+    ar: 'كيف تنحسب الأعمار',
+    es: 'Cómo se calculan las edades',
   },
   'assessment.reading.methodology.standardisation_body': {
-    en: 'Results are standardised against UK national curriculum reading expectations. The reading age is calculated as a weighted composite: comprehension (50%), decoding (25%), and fluency (25%). This weighting reflects the primacy of comprehension in reading ability while acknowledging the foundational importance of decoding and fluency.',
-    ar: 'النتائج تنعاير على أساس توقعات منهج القراءة الوطني البريطاني. ويحسب عمر القراءة كمتوسط مرجَّح: الفهم (50%) وفك الكلمات (25%) والطلاقة (25%). هذا الوزن يعكس أهمية الفهم في القدرة على القراءة مع الاعتراف بأن فك الكلمات والطلاقة أساس مهم.',
-    es: 'Los resultados se estandarizan según las expectativas de lectura del currículo nacional del Reino Unido. La edad lectora se calcula como un compuesto ponderado: comprensión (50%), decodificación (25%) y fluidez (25%). Esta ponderación refleja la primacía de la comprensión en la capacidad lectora a la vez que reconoce la importancia fundamental de la decodificación y la fluidez.',
+    en: 'The age tables in this screener are hand-built approximations written in the style of standardised reading tests - they are not standardised norms and carry no error margins. The reading age is a weighted composite of comprehension (two thirds) and decoding (one third), the two dimensions that are genuinely scored from your answers.',
+    ar: 'جداول الأعمار في هذا الفحص تقديرات مبنية يدوياً على نمط اختبارات القراءة المعتمدة، وهي مو معايير رسمية وما لها هوامش خطأ. عمر القراءة متوسط مرجَّح من الفهم (ثلثين) وفك الكلمات (ثلث)، وهما البُعدان اللي ينحسبان فعلاً من إجاباتك.',
+    es: 'Las tablas de edades de este cribado son aproximaciones construidas a mano al estilo de los tests de lectura estandarizados: no son normas estandarizadas y no llevan márgenes de error. La edad lectora es un compuesto ponderado de comprensión (dos tercios) y decodificación (un tercio), las dos dimensiones que sí se puntúan a partir de tus respuestas.',
   },
   'assessment.reading.methodology.basis': {
     en: 'Methodology basis',
@@ -12670,9 +12782,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Base metodológica',
   },
   'assessment.reading.methodology.basis_body': {
-    en: 'The assessment draws on methodology from established standardised reading tests including the NFER Group Reading Test, the Salford Sentence Reading Test, the Suffolk Reading Scale, and the York Assessment of Reading for Comprehension (YARC). Grade boundaries are mapped to chronological reading age norms used in these assessments.',
-    ar: 'التقييم يستند على منهجية اختبارات قراءة معتمدة، منها NFER Group Reading Test وSalford Sentence Reading Test وSuffolk Reading Scale وYork Assessment of Reading for Comprehension (YARC). وحدود الدرجات تنطابق مع معايير عمر القراءة المستخدمة في هذي الاختبارات.',
-    es: 'La evaluación se basa en la metodología de tests de lectura estandarizados consolidados, como el NFER Group Reading Test, el Salford Sentence Reading Test, la Suffolk Reading Scale y el York Assessment of Reading for Comprehension (YARC). Las notas de corte se corresponden con las normas de edad lectora cronológica usadas en estas evaluaciones.',
+    en: 'The structure of the screener is inspired by established standardised reading tests including the NFER Group Reading Test, the Salford Sentence Reading Test, the Suffolk Reading Scale, and the York Assessment of Reading for Comprehension (YARC). The age tables here are approximations in the style of those instruments - they are not the published norms of any of them.',
+    ar: 'بنية الفحص مستوحاة من اختبارات قراءة معتمدة، منها NFER Group Reading Test وSalford Sentence Reading Test وSuffolk Reading Scale وYork Assessment of Reading for Comprehension (YARC). وجداول الأعمار هنا تقديرات على نمط هذي الأدوات، وهي مو المعايير المنشورة لأي منها.',
+    es: 'La estructura del cribado se inspira en tests de lectura estandarizados consolidados, como el NFER Group Reading Test, el Salford Sentence Reading Test, la Suffolk Reading Scale y el York Assessment of Reading for Comprehension (YARC). Las tablas de edades de aquí son aproximaciones al estilo de esos instrumentos: no son las normas publicadas de ninguno de ellos.',
   },
   'assessment.reading.methodology.limitations': {
     en: 'Limitations',
@@ -12692,9 +12804,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Qué mide este test',
   },
   'assessment.reading.landing.what_subtitle': {
-    en: 'A comprehensive assessment of reading ability across three dimensions',
-    ar: 'تقييم شامل للقدرة على القراءة في ثلاث محاور',
-    es: 'Una evaluación integral de la capacidad lectora en tres dimensiones',
+    en: 'An indicative screener of comprehension, decoding, and self-timed reading rate',
+    ar: 'فحص استرشادي للفهم وفك الكلمات وسرعة القراءة الذاتية التوقيت',
+    es: 'Un cribado orientativo de comprensión, decodificación y velocidad de lectura autocronometrada',
   },
   'assessment.reading.landing.reading_age_body': {
     en: 'Your overall reading comprehension level, expressed as an age equivalent. Measures understanding of both fiction and non-fiction texts.',
@@ -12706,10 +12818,10 @@ export const DICTIONARY: Dictionary = {
     ar: 'قدرتك على التعرّف على الكلمات وفكّها بدقّة، تشمل كلمات حقيقية وكلمات وهمية تختبر معرفتك بالصوتيات.',
     es: 'Tu capacidad para reconocer y decodificar palabras con precisión, incluyendo palabras reales y pseudopalabras que ponen a prueba el conocimiento de la fonética.',
   },
-  'assessment.reading.landing.fluency_age_body': {
-    en: 'Your reading speed combined with accuracy. Fluent readers read smoothly and quickly while maintaining comprehension.',
-    ar: 'سرعتك في القراءة مع الدقّة. القارئ الطليق يقرا بسلاسة وبسرعة وفي نفس الوقت يفهم.',
-    es: 'Tu velocidad de lectura combinada con la precisión. Los lectores fluidos leen con soltura y rapidez sin perder la comprensión.',
+  'assessment.reading.landing.reading_rate_body': {
+    en: 'How quickly you read each passage, timed by you. Reported in words per minute as a rough guide - it is not a measured skill level.',
+    ar: 'سرعتك في قراءة كل نص، بتوقيتك أنت. تنعرض بالكلمة في الدقيقة كمؤشر تقريبي، وهي مو مستوى مهارة مقاس.',
+    es: 'La rapidez con la que lees cada pasaje, cronometrada por ti. Se muestra en palabras por minuto como guía aproximada: no es un nivel de destreza medido.',
   },
   'assessment.reading.landing.how_title': {
     en: 'How it works',
@@ -12762,9 +12874,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Obtén tus resultados',
   },
   'assessment.reading.landing.step5_body': {
-    en: 'Receive your reading age, decoding age, and fluency age with detailed feedback.',
-    ar: 'بتحصل على عمر القراءة وعمر فك الكلمات وعمر الطلاقة مع ملاحظات تفصيلية.',
-    es: 'Recibe tu edad lectora, tu edad de decodificación y tu edad de fluidez con feedback detallado.',
+    en: 'Receive your indicative reading age and decoding age with detailed feedback.',
+    ar: 'بتحصل على عمر القراءة وعمر فك الكلمات الاسترشاديين مع ملاحظات تفصيلية.',
+    es: 'Recibe tu edad lectora y tu edad de decodificación orientativas con feedback detallado.',
   },
   'assessment.reading.landing.duration': {
     en: 'Approximately 20-30 minutes',
@@ -17550,6 +17662,11 @@ export const DICTIONARY: Dictionary = {
     en: 'Your results were calculated but could not be saved. Please try again.',
     ar: 'انحسبت نتائجك بس ما قدرنا نحفظها. جرّب مرة ثانية لو سمحت.',
     es: 'Tus resultados se calcularon pero no se pudieron guardar. Inténtalo de nuevo.',
+  },
+  'learn.assessment.result.cert_error': {
+    en: 'You passed, but we could not issue your certificate. Your result is saved - please contact support@theenglishhub.app and we will sort it out.',
+    ar: 'نجحت، بس ما قدرنا نصدر شهادتك. نتيجتك محفوظة - تواصل مع support@theenglishhub.app وبنحلها لك.',
+    es: 'Has aprobado, pero no hemos podido emitir tu certificado. Tu resultado está guardado: escribe a support@theenglishhub.app y lo resolveremos.',
   },
 
   // Results - breakdown
@@ -23569,9 +23686,161 @@ export const DICTIONARY: Dictionary = {
   // ─── Dashboard pages ────────────────────────────────────────────────
   'dashboard.parent.h1': { en: 'Parent Dashboard', ar: 'لوحة ولي الأمر', es: 'Panel para padres' },
   'dashboard.parent.intro': {
-    en: 'Track your child’s progress, view reports, and manage account settings.',
-    ar: 'تابع تقدّم ابنك، شوف التقارير، وأدر إعدادات الحساب.',
-    es: 'Haz seguimiento del progreso de tu hijo, consulta los informes y gestiona la configuración de la cuenta.',
+    en: 'See your linked child’s real activity: marked essays, strengths and focus areas from their weekly reports.',
+    ar: 'شوف نشاط ابنك الحقيقي: المقالات المصححة ونقاط القوة ومجالات التركيز من تقاريره الأسبوعية.',
+    es: 'Consulta la actividad real de tu hijo: redacciones corregidas, puntos fuertes y áreas de mejora de sus informes semanales.',
+  },
+  'dashboard.parent.loading': {
+    en: 'Loading your dashboard...',
+    ar: 'نحمّل لوحتك...',
+    es: 'Cargando tu panel...',
+  },
+  'dashboard.parent.signin_title': {
+    en: 'Sign in to see your parent dashboard',
+    ar: 'سجّل دخولك عشان تشوف لوحة ولي الأمر',
+    es: 'Inicia sesión para ver tu panel para padres',
+  },
+  'dashboard.parent.signin_body': {
+    en: 'You need to be signed in with a parent account to see your linked child.',
+    ar: 'لازم تسجّل دخول بحساب ولي أمر عشان تشوف حساب ابنك المربوط.',
+    es: 'Debes iniciar sesión con una cuenta de padre o madre para ver la cuenta vinculada de tu hijo.',
+  },
+  'dashboard.parent.signin_cta': { en: 'Sign in', ar: 'تسجيل الدخول', es: 'Iniciar sesión' },
+  'dashboard.parent.signin_register_cta': {
+    en: 'New here? Create a parent account',
+    ar: 'جديد هنا؟ سوّ حساب ولي أمر',
+    es: '¿Eres nuevo? Crea una cuenta de padre o madre',
+  },
+  'dashboard.parent.not_parent_title': {
+    en: 'This page is for parent accounts',
+    ar: 'هذي الصفحة لحسابات أولياء الأمور',
+    es: 'Esta página es para cuentas de padres',
+  },
+  'dashboard.parent.not_parent_body': {
+    en: 'You are signed in, but not with a parent account, so there is nothing to show here. If you are a parent, create a separate parent account with your own email address, then link to your child with their invite code. If you are a student, your progress lives on your own dashboard.',
+    ar: 'أنت مسجّل دخول، بس مو بحساب ولي أمر، فما فيه شي نعرضه هنا. إذا أنت ولي أمر، سوّ حساب ولي أمر منفصل بإيميلك الخاص، وبعدها اربطه بحساب ابنك برمز الدعوة. وإذا أنت طالب، تقدمك موجود في لوحتك الخاصة.',
+    es: 'Has iniciado sesión, pero no con una cuenta de padre o madre, así que no hay nada que mostrar aquí. Si eres padre o madre, crea una cuenta de padres separada con tu propio correo y luego vincúlala a la de tu hijo con su código de invitación. Si eres estudiante, tu progreso está en tu propio panel.',
+  },
+  'dashboard.parent.not_parent_cta': {
+    en: 'Create a parent account',
+    ar: 'سوّ حساب ولي أمر',
+    es: 'Crear una cuenta de padre o madre',
+  },
+  'dashboard.parent.not_parent_student_cta': {
+    en: 'Go to my dashboard',
+    ar: 'روح للوحتي',
+    es: 'Ir a mi panel',
+  },
+  'dashboard.parent.error_generic': {
+    en: 'Something went wrong loading your dashboard. Please try again.',
+    ar: 'صار خلل أثناء تحميل لوحتك. حاول مرة ثانية.',
+    es: 'Algo ha ido mal al cargar tu panel. Inténtalo de nuevo.',
+  },
+  'dashboard.parent.retry': { en: 'Try again', ar: 'حاول مرة ثانية', es: 'Intentar de nuevo' },
+  'dashboard.parent.link_title': {
+    en: "Link your child's account",
+    ar: 'اربط حساب ابنك',
+    es: 'Vincula la cuenta de tu hijo',
+  },
+  'dashboard.parent.link_another_title': {
+    en: 'Link another child',
+    ar: 'اربط ابن ثاني',
+    es: 'Vincular a otro hijo',
+  },
+  'dashboard.parent.link_body': {
+    en: 'Ask your child to generate an invite code from their account: Settings, then Parent link. Codes are 8 characters and expire after 7 days.',
+    ar: 'اطلب من ابنك يسوّي رمز دعوة من حسابه: الإعدادات ثم ربط ولي الأمر. الرمز ٨ خانات وينتهي بعد ٧ أيام.',
+    es: 'Pide a tu hijo que genere un código de invitación desde su cuenta: Configuración, luego Vínculo parental. Los códigos tienen 8 caracteres y caducan a los 7 días.',
+  },
+  'dashboard.parent.link_code_label': {
+    en: 'Invite code',
+    ar: 'رمز الدعوة',
+    es: 'Código de invitación',
+  },
+  'dashboard.parent.link_code_required': {
+    en: 'Please enter the invite code.',
+    ar: 'أدخل رمز الدعوة.',
+    es: 'Introduce el código de invitación.',
+  },
+  'dashboard.parent.link_submit': { en: 'Link account', ar: 'اربط الحساب', es: 'Vincular cuenta' },
+  'dashboard.parent.link_linking': { en: 'Linking...', ar: 'نربط...', es: 'Vinculando...' },
+  'dashboard.parent.link_success': {
+    en: 'Linked. You can now see their progress below.',
+    ar: 'تم الربط. تقدر الحين تشوف تقدمه تحت.',
+    es: 'Vinculado. Ahora puedes ver su progreso abajo.',
+  },
+  'dashboard.parent.link_failed': {
+    en: 'Could not link the account. Please check the code and try again.',
+    ar: 'ما قدرنا نربط الحساب. تأكد من الرمز وحاول مرة ثانية.',
+    es: 'No se ha podido vincular la cuenta. Comprueba el código e inténtalo de nuevo.',
+  },
+  'dashboard.parent.link_hint': {
+    en: 'Linking requires the student to have an active subscription. Your child is emailed whenever a parent links to their account, and they can remove the link at any time.',
+    ar: 'الربط يتطلب اشتراك فعّال للطالب. ابنك يوصله إيميل كل ما يربط ولي أمر حسابه، ويقدر يلغي الربط في أي وقت.',
+    es: 'La vinculación requiere que el estudiante tenga una suscripción activa. Tu hijo recibe un correo cada vez que un padre se vincula a su cuenta, y puede eliminar el vínculo en cualquier momento.',
+  },
+  'dashboard.parent.badge_active_sub': {
+    en: 'Active subscription',
+    ar: 'اشتراك فعّال',
+    es: 'Suscripción activa',
+  },
+  'dashboard.parent.badge_no_sub': {
+    en: 'No active subscription',
+    ar: 'ما فيه اشتراك فعّال',
+    es: 'Sin suscripción activa',
+  },
+  'dashboard.parent.unlink_btn': { en: 'Unlink', ar: 'إلغاء الربط', es: 'Desvincular' },
+  'dashboard.parent.unlinking': { en: 'Unlinking...', ar: 'نلغي الربط...', es: 'Desvinculando...' },
+  'dashboard.parent.unlink_confirm': {
+    en: 'Remove your access to this account? Your child keeps their account; you will just no longer see their progress.',
+    ar: 'تبي تلغي وصولك لهذا الحساب؟ ابنك يحتفظ بحسابه؛ بس ما راح تشوف تقدمه بعد.',
+    es: '¿Quitar tu acceso a esta cuenta? Tu hijo conserva su cuenta; simplemente dejarás de ver su progreso.',
+  },
+  'dashboard.parent.unlink_failed': {
+    en: 'Could not remove the link. Please try again.',
+    ar: 'ما قدرنا نلغي الربط. حاول مرة ثانية.',
+    es: 'No se ha podido eliminar el vínculo. Inténtalo de nuevo.',
+  },
+  'dashboard.parent.reports_title': {
+    en: 'Weekly reports',
+    ar: 'التقارير الأسبوعية',
+    es: 'Informes semanales',
+  },
+  'dashboard.parent.no_reports': {
+    en: 'No weekly reports yet. Reports are built from marked essay activity and will appear here once they are generated.',
+    ar: 'ما فيه تقارير أسبوعية للحين. التقارير تنبني من نشاط المقالات المصححة وبتظهر هنا أول ما تتولد.',
+    es: 'Aún no hay informes semanales. Los informes se generan a partir de la actividad de redacciones corregidas y aparecerán aquí cuando estén disponibles.',
+  },
+  'dashboard.parent.reports_load_failed': {
+    en: 'Weekly reports could not be loaded right now. Linked accounts are shown below without them.',
+    ar: 'ما قدرنا نحمّل التقارير الأسبوعية الحين. الحسابات المربوطة معروضة تحت بدونها.',
+    es: 'No se han podido cargar los informes semanales ahora mismo. Las cuentas vinculadas se muestran abajo sin ellos.',
+  },
+  'dashboard.parent.report_week_of': {
+    en: 'Week beginning',
+    ar: 'أسبوع يبدأ',
+    es: 'Semana que empieza el',
+  },
+  'dashboard.parent.report_essays': {
+    en: 'Marked essays',
+    ar: 'مقالات مصححة',
+    es: 'Redacciones corregidas',
+  },
+  'dashboard.parent.report_avg': {
+    en: 'Average essay mark',
+    ar: 'متوسط درجة المقالات',
+    es: 'Nota media de redacción',
+  },
+  'dashboard.parent.report_strengths': { en: 'Strengths', ar: 'نقاط القوة', es: 'Puntos fuertes' },
+  'dashboard.parent.report_focus': {
+    en: 'Focus areas',
+    ar: 'مجالات التركيز',
+    es: 'Áreas de mejora',
+  },
+  'dashboard.parent.report_suggestions': {
+    en: 'Suggested next step',
+    ar: 'الخطوة الجاية المقترحة',
+    es: 'Siguiente paso sugerido',
   },
   'dashboard.settings.h1': {
     en: 'Account Settings',

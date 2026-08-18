@@ -66,8 +66,6 @@ interface HardestQuestion {
   difficulty: 'easy' | 'medium' | 'hard' | 'very-hard'
 }
 
-const FOUNDER_ACCESS_UNTIL = 'August 2027'
-
 // ── Setup checklist ──────────────────────────────────────────────────────────
 
 interface SetupStep {
@@ -89,6 +87,7 @@ export default function SchoolDashboardPage() {
   })
   const [classes, setClasses] = useState<ClassData[]>([])
   const [isFounder, setIsFounder] = useState(false)
+  const [accessUntil, setAccessUntil] = useState<string | null>(null)
   const [setupSteps, setSetupSteps] = useState<SetupStep[]>([])
   const [hardestQuestions, setHardestQuestions] = useState<HardestQuestion[]>([])
   const [loading, setLoading] = useState(true)
@@ -120,9 +119,23 @@ export default function SchoolDashboardPage() {
       const schoolData = (membership as { schools?: SchoolData }).schools
       if (schoolData) {
         setSchool(schoolData)
-        setIsFounder(
-          schoolData.subscription_plan === 'custom' || schoolData.subscription_plan === 'school',
-        )
+      }
+
+      // Founder status and expiry come from GET /api/school/access - the
+      // server derives both from the schools row, so the banner can never
+      // contradict billing.
+      try {
+        const accessRes = await fetch('/api/school/access')
+        if (accessRes.ok) {
+          const accessJson = (await accessRes.json()) as {
+            accessType?: string
+            accessUntil?: string | null
+          }
+          setIsFounder(accessJson.accessType === 'founder')
+          setAccessUntil(accessJson.accessUntil ?? null)
+        }
+      } catch {
+        // Leave the banner hidden if access status cannot be loaded.
       }
 
       const schoolId = membership.school_id
@@ -242,14 +255,20 @@ export default function SchoolDashboardPage() {
         </div>
       </div>
 
-      {/* FOUNDER access banner */}
-      {isFounder && (
+      {/* FOUNDER access banner - expiry from /api/school/access, never hard-coded */}
+      {isFounder && accessUntil && (
         <div className="mb-6 rounded-lg border border-amber-500/30 bg-amber-500/10 px-5 py-4">
           <div className="flex items-start gap-3">
             <span className="mt-0.5 text-lg">&#9733;</span>
             <div>
               <p className="font-semibold text-clay-600">
-                {t('school.dash.founder.active_until_prefix')} {FOUNDER_ACCESS_UNTIL}.
+                {t('school.dash.founder.active_until_prefix')}{' '}
+                {new Date(accessUntil).toLocaleDateString('en-GB', {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric',
+                })}
+                .
               </p>
               <p className="mt-0.5 text-sm text-clay-600/80">
                 {t('school.dash.founder.rate_locked')}

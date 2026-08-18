@@ -12,7 +12,9 @@ const BRAND_COLOR = '#1A5276'
 const BRAND_ACCENT = '#2E86C1'
 const BRAND_LIGHT = '#D6EAF8'
 const DASHBOARD_URL = `${BASE_URL}/dashboard/parent`
-const UNSUBSCRIBE_URL = `${BASE_URL}/dashboard/parent/settings`
+// /dashboard/parent/settings was removed (August 2026) - point at the
+// real parent dashboard instead.
+const UNSUBSCRIBE_URL = `${BASE_URL}/dashboard/parent`
 const TERMS_URL = `${BASE_URL}/terms`
 const PRIVACY_URL = `${BASE_URL}/privacy-policy`
 

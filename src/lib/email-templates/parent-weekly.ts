@@ -8,108 +8,98 @@
 //   await sendEmail(parent.email, subject, html);
 // ─────────────────────────────────────────────────────────────────────────
 
-import { percentageToGCSEGradeLabel } from "@/lib/grades";
+import { percentageToGCSEGradeLabel } from '@/lib/grades'
 
 // ─── Configuration ───────────────────────────────────────────────────────
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://theenglishhub.app";
-const BRAND_COLOR = "#1A5276";
-const BRAND_ACCENT = "#2E86C1";
-const BRAND_LIGHT = "#D6EAF8";
-const PROGRESS_URL = `${BASE_URL}/parent/progress`;
-const UNSUBSCRIBE_URL = `${BASE_URL}/dashboard/parent/settings`;
-const TERMS_URL = `${BASE_URL}/terms`;
-const PRIVACY_URL = `${BASE_URL}/privacy-policy`;
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://theenglishhub.app'
+const BRAND_COLOR = '#1A5276'
+const BRAND_ACCENT = '#2E86C1'
+const BRAND_LIGHT = '#D6EAF8'
+// The old /parent/** portal and /dashboard/parent/settings were removed
+// (August 2026); /dashboard/parent is the real parent surface.
+const PROGRESS_URL = `${BASE_URL}/dashboard/parent`
+const UNSUBSCRIBE_URL = `${BASE_URL}/dashboard/parent`
+const TERMS_URL = `${BASE_URL}/terms`
+const PRIVACY_URL = `${BASE_URL}/privacy-policy`
 
 // ─── Types ───────────────────────────────────────────────────────────────
 
 export interface ParentWeeklyData {
-  parentName: string;
-  parentEmail: string;
-  childName: string;
-  weekStart: Date;
-  weekEnd: Date;
+  parentName: string
+  parentEmail: string
+  childName: string
+  weekStart: Date
+  weekEnd: Date
 
   /** Content items studied (poems, texts, etc.) */
-  itemsStudied: string[];
+  itemsStudied: string[]
   /** Games played */
-  gamesPlayed: number;
+  gamesPlayed: number
 
   /** Individual quiz scores as percentages (0-100) */
-  quizScores: { quizName: string; score: number }[];
+  quizScores: { quizName: string; score: number }[]
 
   /** Estimated time spent on the platform in minutes */
-  timeSpentMinutes: number;
+  timeSpentMinutes: number
 
   /** Consecutive days active */
-  streakDays: number;
+  streakDays: number
 
   /** Suggested focus areas for the coming week */
-  suggestedFocus: string[];
+  suggestedFocus: string[]
 
   /** Unsubscribe token for one-click unsubscribe */
-  unsubscribeToken?: string;
+  unsubscribeToken?: string
 }
 
 // ─── Builder ─────────────────────────────────────────────────────────────
 
-export function buildParentWeeklyEmail(
-  data: ParentWeeklyData
-): { subject: string; html: string } {
-  const subject = `${data.childName}\u2019s English Hub Weekly Report`;
+export function buildParentWeeklyEmail(data: ParentWeeklyData): { subject: string; html: string } {
+  const subject = `${data.childName}\u2019s English Hub Weekly Report`
 
   // ── Time display ─────────────────────────────────────────────────────
 
-  const hours = Math.floor(data.timeSpentMinutes / 60);
-  const minutes = data.timeSpentMinutes % 60;
-  const timeDisplay =
-    hours > 0 ? `${hours}h ${minutes}m` : `${minutes}m`;
+  const hours = Math.floor(data.timeSpentMinutes / 60)
+  const minutes = data.timeSpentMinutes % 60
+  const timeDisplay = hours > 0 ? `${hours}h ${minutes}m` : `${minutes}m`
 
   // ── Quiz summary ─────────────────────────────────────────────────────
 
-  const hasQuizzes = data.quizScores.length > 0;
+  const hasQuizzes = data.quizScores.length > 0
   const avgScore = hasQuizzes
-    ? Math.round(
-        data.quizScores.reduce((a, b) => a + b.score, 0) /
-          data.quizScores.length
-      )
-    : 0;
+    ? Math.round(data.quizScores.reduce((a, b) => a + b.score, 0) / data.quizScores.length)
+    : 0
 
   const quizRows = data.quizScores
     .map((q) => {
-      const gradeLabel = percentageToGCSEGradeLabel(q.score);
-      const scoreColor =
-        q.score >= 70 ? "#27AE60" : q.score >= 50 ? "#F39C12" : "#E74C3C";
+      const gradeLabel = percentageToGCSEGradeLabel(q.score)
+      const scoreColor = q.score >= 70 ? '#27AE60' : q.score >= 50 ? '#F39C12' : '#E74C3C'
       return `<tr>
         <td style="padding:8px 12px;font-size:14px;color:#555;border-bottom:1px solid #eee;">${escapeHtml(q.quizName)}</td>
         <td style="padding:8px 12px;font-size:14px;font-weight:700;color:${scoreColor};text-align:center;border-bottom:1px solid #eee;">${q.score}%</td>
         <td style="padding:8px 12px;font-size:14px;color:#888;text-align:center;border-bottom:1px solid #eee;">${gradeLabel}</td>
-      </tr>`;
+      </tr>`
     })
-    .join("");
+    .join('')
 
   // ── Activity summary ─────────────────────────────────────────────────
 
-  const totalItems = data.itemsStudied.length;
+  const totalItems = data.itemsStudied.length
   const activitySummary =
-    totalItems > 0
-      ? `${totalItems} item${totalItems !== 1 ? "s" : ""} studied`
-      : "No items studied";
+    totalItems > 0 ? `${totalItems} item${totalItems !== 1 ? 's' : ''} studied` : 'No items studied'
 
   // ── Focus recommendations ────────────────────────────────────────────
 
   const focusList = data.suggestedFocus
-    .map(
-      (f) =>
-        `<li style="padding:4px 0;font-size:14px;color:#555;">${escapeHtml(f)}</li>`
-    )
-    .join("");
+    .map((f) => `<li style="padding:4px 0;font-size:14px;color:#555;">${escapeHtml(f)}</li>`)
+    .join('')
 
   // ── Unsubscribe link ─────────────────────────────────────────────────
 
   const unsubLink = data.unsubscribeToken
     ? `${BASE_URL}/unsubscribe?token=${data.unsubscribeToken}`
-    : UNSUBSCRIBE_URL;
+    : UNSUBSCRIBE_URL
 
   // ── Build HTML ───────────────────────────────────────────────────────
 
@@ -148,7 +138,7 @@ export function buildParentWeeklyEmail(
           <!-- Summary stats -->
           <tr>
             <td style="padding:8px 32px 24px 32px;">
-              <h3 style="margin:0 0 12px 0;font-size:16px;color:${BRAND_COLOR};">Your child studied ${totalItems} item${totalItems !== 1 ? "s" : ""} this week</h3>
+              <h3 style="margin:0 0 12px 0;font-size:16px;color:${BRAND_COLOR};">Your child studied ${totalItems} item${totalItems !== 1 ? 's' : ''} this week</h3>
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                 <tr>
                   <td width="33%" align="center" style="padding:14px 8px;background:${BRAND_LIGHT};border-radius:8px 0 0 8px;">
@@ -168,7 +158,9 @@ export function buildParentWeeklyEmail(
             </td>
           </tr>
 
-          ${data.itemsStudied.length > 0 ? `
+          ${
+            data.itemsStudied.length > 0
+              ? `
           <!-- Items studied -->
           <tr>
             <td style="padding:0 32px 24px 32px;">
@@ -177,15 +169,19 @@ export function buildParentWeeklyEmail(
                 ${data.itemsStudied
                   .map(
                     (item) =>
-                      `<li style="padding:3px 0;font-size:14px;color:#555;">${escapeHtml(item)}</li>`
+                      `<li style="padding:3px 0;font-size:14px;color:#555;">${escapeHtml(item)}</li>`,
                   )
-                  .join("")}
+                  .join('')}
               </ul>
-              ${data.gamesPlayed > 0 ? `<p style="margin:0;font-size:14px;color:#555;"><strong>${data.gamesPlayed}</strong> revision game${data.gamesPlayed !== 1 ? "s" : ""} played</p>` : ""}
+              ${data.gamesPlayed > 0 ? `<p style="margin:0;font-size:14px;color:#555;"><strong>${data.gamesPlayed}</strong> revision game${data.gamesPlayed !== 1 ? 's' : ''} played</p>` : ''}
             </td>
-          </tr>` : ""}
+          </tr>`
+              : ''
+          }
 
-          ${hasQuizzes ? `
+          ${
+            hasQuizzes
+              ? `
           <!-- Quiz scores -->
           <tr>
             <td style="padding:0 32px 24px 32px;">
@@ -203,9 +199,13 @@ export function buildParentWeeklyEmail(
                 (GCSE Grade <strong>${percentageToGCSEGradeLabel(avgScore)}</strong>)
               </p>
             </td>
-          </tr>` : ""}
+          </tr>`
+              : ''
+          }
 
-          ${data.suggestedFocus.length > 0 ? `
+          ${
+            data.suggestedFocus.length > 0
+              ? `
           <!-- Suggested focus areas -->
           <tr>
             <td style="padding:0 32px 24px 32px;">
@@ -214,7 +214,9 @@ export function buildParentWeeklyEmail(
                 ${focusList}
               </ul>
             </td>
-          </tr>` : ""}
+          </tr>`
+              : ''
+          }
 
           <!-- CTA Button -->
           <tr>
@@ -256,26 +258,26 @@ export function buildParentWeeklyEmail(
     </tr>
   </table>
 </body>
-</html>`;
+</html>`
 
-  return { subject, html };
+  return { subject, html }
 }
 
 // ─── Helpers ─────────────────────────────────────────────────────────────
 
 function formatDate(date: Date): string {
-  return date.toLocaleDateString("en-GB", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
+  return date.toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  })
 }
 
 function escapeHtml(str: string): string {
   return str
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
 }

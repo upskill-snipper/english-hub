@@ -9,10 +9,13 @@
 //   auth → subscription → checkMinorAIConsent → isAiOptedOutServer →
 //   rateLimit → contentSafetyCheck
 //
-// Both B2C self-study (no school) and B2B class submissions flow through here;
-// schoolId / classId are nullable. The student answer is mapped onto
-// `essay_text`. DB access is via the Supabase service-role client only (the
-// new tables are intentionally absent from the local Prisma client).
+// Both B2C self-study (no school) and B2B class submissions flow through here.
+// school_id / class_id / source are resolved SERVER-side from the submitting
+// user's active class_students enrolment - never from the request body, which
+// would let a client inject rows into another school's marking queue. The
+// student answer is mapped onto `essay_text`. DB access is via the Supabase
+// service-role client only (the new tables are intentionally absent from the
+// local Prisma client).
 // ────────────────────────────────────────────────────────────────────────────
 
 import { NextRequest } from 'next/server'
@@ -32,7 +35,11 @@ import {
   requireJsonContentType,
 } from '@/lib/api-response'
 import { getMarkScheme } from '@/lib/marking/mark-schemes'
-import { insertSubmission, type SubmissionSource } from '@/lib/marking/persistence'
+import {
+  insertSubmission,
+  resolveSubmissionContext,
+  type SubmissionSource,
+} from '@/lib/marking/persistence'
 
 export const dynamic = 'force-dynamic'
 export const maxDuration = 30
@@ -40,6 +47,8 @@ export const maxDuration = 30
 // ─── Validation ──────────────────────────────────────────────────────────────
 
 interface SubmissionRequestBody {
+  /** Accepted for backwards compatibility but IGNORED - the true source is
+   *  resolved server-side from the user's class enrolment. */
   source: SubmissionSource
   examBoard: string
   qualification?: string
@@ -51,8 +60,6 @@ interface SubmissionRequestBody {
   targetGrade?: string
   markSchemeId: string
   questionId: string
-  schoolId?: string
-  classId?: string
 }
 
 const MAX_ANSWER_CHARS = 30_000
@@ -60,7 +67,6 @@ const MIN_ANSWER_CHARS = 80
 const MAX_QUESTION_CHARS = 2_000
 
 interface ValidatedBody {
-  source: SubmissionSource
   examBoard: string
   qualification: string | null
   paper: string | null
@@ -71,8 +77,6 @@ interface ValidatedBody {
   targetGrade: string | null
   markSchemeId: string
   questionId: string
-  schoolId: string | null
-  classId: string | null
 }
 
 function optionalString(v: unknown, max = 500): string | null {
@@ -122,14 +126,12 @@ function validateBody(
     return { ok: false, error: `Your answer exceeds the ${MAX_ANSWER_CHARS} character limit.` }
   }
 
-  const source = b.source as SubmissionSource
-  const schoolId = optionalString(b.schoolId, 64)
-  const classId = optionalString(b.classId, 64)
-
+  // NB: b.source is validated above for backwards compatibility with older
+  // clients but deliberately NOT returned - the effective source (and any
+  // schoolId/classId the client may have sent) is resolved server-side.
   return {
     ok: true,
     data: {
-      source,
       examBoard: b.examBoard.trim().slice(0, 120),
       qualification: optionalString(b.qualification, 120),
       paper: optionalString(b.paper, 120),
@@ -140,8 +142,6 @@ function validateBody(
       targetGrade: optionalString(b.targetGrade, 16),
       markSchemeId: b.markSchemeId.trim(),
       questionId: b.questionId.trim(),
-      schoolId,
-      classId,
     },
   }
 }
@@ -220,15 +220,20 @@ export async function POST(request: NextRequest) {
       return badRequestResponse(`Unknown mark scheme "${data.markSchemeId}".`)
     }
 
-    // 9. Insert the submission (service role - Supabase only, never Prisma).
+    // 9. Resolve school/class SERVER-side from the user's active class
+    //    enrolment. The request body's source/schoolId/classId are never
+    //    trusted - see resolveSubmissionContext for why.
     const svc = createServiceRoleClient()
+    const context = await resolveSubmissionContext(svc, user.id)
+
+    // 10. Insert the submission (service role - Supabase only, never Prisma).
     let inserted: { id: string }
     try {
       inserted = await insertSubmission(svc, {
-        source: data.source,
+        source: context.source,
         studentId: user.id,
-        schoolId: data.schoolId,
-        classId: data.classId,
+        schoolId: context.schoolId,
+        classId: context.classId,
         examBoard: data.examBoard,
         qualification: data.qualification,
         paper: data.paper,

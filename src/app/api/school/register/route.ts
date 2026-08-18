@@ -323,6 +323,13 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   const adminUserId = authData.user.id
 
   // ── Create school record ─────────────────────────────────────────────────
+  // access_type / access_until / promo_code_used are PERSISTED (columns from
+  // 20260404_school_promo_and_access.sql). Previously the resolved promo
+  // outcome was only echoed in the API response and discarded, so
+  // getSchoolAccess (and GET /api/school/access, which the dashboard and
+  // billing page read) could never see the real expiry. The schools row is
+  // the single server-side source of truth for access expiry; for FOUNDER
+  // that is the 2026-08-31 data value.
   const schoolInsert: Record<string, unknown> = {
     name: schoolName!.trim(),
     slug,
@@ -337,6 +344,11 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     subscription_status: subscriptionStatus,
     subscription_plan: 'school',
     seat_limit: 9999,
+    // The schools.access_type CHECK allows trial/founder/paid/expired, so
+    // the resolver's 'standard' maps onto 'trial'.
+    access_type: accessType === 'founder' ? 'founder' : 'trial',
+    access_until: accessUntil,
+    promo_code_used: promoCode?.trim() ? promoCode.trim().toUpperCase() : null,
   }
 
   const { data: school, error: schoolError } = await admin

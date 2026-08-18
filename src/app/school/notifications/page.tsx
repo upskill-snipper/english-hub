@@ -33,7 +33,6 @@ import {
   type TeacherNotification,
   type NotificationType,
   NOTIFICATION_TYPE_CONFIG,
-  generateMockNotifications,
   filterNotifications,
   markNotificationRead,
   markAllNotificationsRead,
@@ -157,9 +156,9 @@ function getDateFrom(range: string): Date | undefined {
 
 export default function NotificationsPage() {
   const t = useT()
-  const [notifications, setNotifications] = useState<TeacherNotification[]>(() =>
-    generateMockNotifications(),
-  )
+  // No notifications API exists yet, so the list is honestly empty - it must
+  // never be seeded with invented pupils or fabricated scores.
+  const [notifications, setNotifications] = useState<TeacherNotification[]>([])
 
   // Filter state
   const [typeFilter, setTypeFilter] = useState<string>('all')

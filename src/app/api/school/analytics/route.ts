@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { verifySchoolMember } from '@/lib/school-auth'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
+import { getSchoolStudents, type SchoolStudentRecord } from '@/lib/school-students'
 
 export const dynamic = 'force-dynamic'
 
@@ -51,7 +52,8 @@ interface AnalyticsResponse {
   totalClasses: number
   activeStudentsThisWeek: number
   assignmentsSubmittedThisWeek: number
-  averageScore: number
+  /** Null when no scored work exists yet - never a fabricated value. */
+  averageScore: number | null
   atRiskStudents: AtRiskStudent[]
   yearGroupStats: YearGroupStat[]
   topClasses: TopClass[]
@@ -59,29 +61,12 @@ interface AnalyticsResponse {
   weeklyActivity: WeeklyActivity[]
 }
 
-// ---------------------------------------------------------------------------
-// Mock / fallback helpers
-// ---------------------------------------------------------------------------
-
-/** Returns mock weekly activity for the past N weeks. */
-function mockWeeklyActivity(weeks: number): WeeklyActivity[] {
-  const result: WeeklyActivity[] = []
-  for (let i = weeks - 1; i >= 0; i--) {
-    const weekStart = new Date(Date.now() - (i + 1) * 7 * 24 * 60 * 60 * 1000)
-    result.push({
-      weekStart: weekStart.toISOString().split('T')[0],
-      activeStudents: Math.floor(Math.random() * 40) + 20,
-      assignmentsSubmitted: Math.floor(Math.random() * 30) + 10,
-    })
-  }
-  return result
-}
-
-/** Seeded pseudo-random so mock data is stable within a render. */
-function stableRandom(seed: number): number {
-  const x = Math.sin(seed + 1) * 10000
-  return x - Math.floor(x)
-}
+// NOTE: this route previously carried mock/fallback generators (a fixed
+// averageScore of 62, three invented classes, six invented resource rows and
+// a Math.random() weekly-activity series). All fabricated fallbacks were
+// removed on 2026-08-18: a children's education product must never present
+// invented figures as real school data. Empty/null values are returned
+// honestly and the UI owns the empty states.
 
 // ---------------------------------------------------------------------------
 // GET /api/school/analytics
@@ -145,14 +130,18 @@ export async function GET(request: NextRequest) {
     const oneWeekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString()
     const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)
 
-    // ── Fetch school members (students + teachers) ──────────────────────────
-    const [schoolResult, membersResult] = await Promise.all([
+    // ── Fetch school members (staff) + canonical students ───────────────────
+    // Staff come from school_members; students come from the shared
+    // getSchoolStudents helper, which unions school_members role='student'
+    // with school_students (the join-code flow) so both write paths count.
+    const [schoolResult, membersResult, studentRecords] = await Promise.all([
       admin.from('schools').select('id, name').eq('id', schoolId).single(),
       admin
         .from('school_members')
         .select('id, user_id, full_name, email, role, year_group, last_active_at, invite_status')
         .eq('school_id', schoolId)
         .eq('invite_status', 'accepted'),
+      getSchoolStudents(admin, schoolId, { acceptedOnly: true }),
     ])
 
     if (!schoolResult.data) {
@@ -171,7 +160,9 @@ export async function GET(request: NextRequest) {
     }
 
     const allMembers = (membersResult.data ?? []) as MemberRow[]
-    const studentMembers = allMembers.filter((m) => m.role === 'student')
+    const studentMembers = studentRecords.filter(
+      (s): s is SchoolStudentRecord & { user_id: string } => s.user_id !== null,
+    )
     const teacherMembers = allMembers.filter(
       (m) => m.role === 'teacher' || m.role === 'head_of_department' || m.role === 'admin',
     )
@@ -213,7 +204,7 @@ export async function GET(request: NextRequest) {
         new Set((csRows ?? []).map((r: { student_id: string }) => r.student_id)),
       )
     } else {
-      scopedStudentIds = studentMembers.map((m) => m.user_id).filter(Boolean)
+      scopedStudentIds = Array.from(new Set(studentMembers.map((m) => m.user_id)))
     }
 
     const totalStudents = isTeacher ? scopedStudentIds.length : studentMembers.length
@@ -262,7 +253,9 @@ export async function GET(request: NextRequest) {
     }
 
     // ── Average score from module_progress ─────────────────────────────────
-    let averageScore = 0
+    // Null when there is no scored work in the period. The previous fixed
+    // fallback of 62 was a fabricated statistic and has been removed.
+    let averageScore: number | null = null
 
     if (scopedStudentIds.length > 0) {
       const { data: scoreRows } = await admin
@@ -278,12 +271,7 @@ export async function GET(request: NextRequest) {
 
       if (scores.length > 0) {
         averageScore = Math.round(scores.reduce((a: number, b: number) => a + b, 0) / scores.length)
-      } else {
-        // Fallback mock so the dashboard always shows a value
-        averageScore = 62
       }
-    } else {
-      averageScore = 62
     }
 
     // ── At-risk students ────────────────────────────────────────────────────
@@ -294,8 +282,11 @@ export async function GET(request: NextRequest) {
       ? studentMembers.filter((m) => scopedStudentIds.includes(m.user_id))
       : studentMembers
 
-    // Determine average scores per student for risk detection
+    // Determine average scores per student for risk detection. The per-student
+    // completion counts are kept too so year-group stats can report a REAL
+    // completed-work figure instead of the previous invented one.
     let studentScoreMap = new Map<string, number>()
+    const studentCompletedCountMap = new Map<string, number>()
 
     if (scopedStudentIds.length > 0) {
       const { data: allProgressRows } = await admin
@@ -315,6 +306,7 @@ export async function GET(request: NextRequest) {
 
       for (const [uid, agg] of scoreAccum) {
         studentScoreMap.set(uid, Math.round(agg.total / agg.count))
+        studentCompletedCountMap.set(uid, agg.count)
       }
     }
 
@@ -382,12 +374,13 @@ export async function GET(request: NextRequest) {
       const averageProgress =
         ygScores.length > 0 ? Math.round(ygScores.reduce((a, b) => a + b, 0) / ygScores.length) : 0
 
-      // assignmentsCompleted: count module_progress completed for these students
-      // Use a stable mock per year-group if real data is sparse
-      const assignmentsCompleted =
-        ygScores.length > 0
-          ? ygScores.length * 3 // approximate from score sample count
-          : Math.floor(stableRandom(yg.charCodeAt(0) ?? 1) * 80) + 20
+      // assignmentsCompleted: the real count of scored module completions
+      // for this year group's students. Zero when nothing is completed -
+      // the previous pseudo-random placeholder was a fabricated statistic.
+      const assignmentsCompleted = data.studentIds.reduce(
+        (sum, uid) => sum + (studentCompletedCountMap.get(uid) ?? 0),
+        0,
+      )
 
       yearGroupStats.push({
         yearGroup: yg,
@@ -449,66 +442,14 @@ export async function GET(request: NextRequest) {
       topClasses.splice(5)
     }
 
-    // If no class data yet, populate with illustrative placeholders so the
-    // dashboard always has something to render.
-    if (topClasses.length === 0) {
-      topClasses.push(
-        {
-          classId: 'mock-1',
-          className: '10A English',
-          teacherName: 'J. Smith',
-          studentCount: 28,
-          averageScore: 74,
-        },
-        {
-          classId: 'mock-2',
-          className: '11B English',
-          teacherName: 'M. Jones',
-          studentCount: 25,
-          averageScore: 68,
-        },
-        {
-          classId: 'mock-3',
-          className: '9C English',
-          teacherName: 'R. Patel',
-          studentCount: 30,
-          averageScore: 61,
-        },
-      )
-    }
+    // No class data yet is reported honestly as an empty list. The previous
+    // three invented classes (with named teachers) were fabricated data.
 
     // ── Resource usage ──────────────────────────────────────────────────────
-    // Attempt to read from a resource_access or similar table; fall back to mock.
-    let resourceUsage: ResourceUsage[] = []
-
-    try {
-      const { data: resourceRows } = await admin
-        .from('resource_access')
-        .select('resource_name, count:id')
-        .eq('school_id', schoolId)
-        .gte('accessed_at', periodStart)
-        .order('count', { ascending: false })
-        .limit(10)
-
-      if (resourceRows && resourceRows.length > 0) {
-        resourceUsage = (resourceRows as Array<{ resource_name: string; count: number }>).map(
-          (r) => ({ resourceName: r.resource_name, accessCount: r.count }),
-        )
-      }
-    } catch {
-      // Table may not exist - use mock data
-    }
-
-    if (resourceUsage.length === 0) {
-      resourceUsage = [
-        { resourceName: 'GCSE English Language Revision', accessCount: 312 },
-        { resourceName: 'Creative Writing Techniques', accessCount: 287 },
-        { resourceName: 'Reading Comprehension Practice', accessCount: 241 },
-        { resourceName: 'SPaG Essentials', accessCount: 198 },
-        { resourceName: 'Poetry Analysis Guide', accessCount: 176 },
-        { resourceName: 'Spoken Language Preparation', accessCount: 143 },
-      ]
-    }
+    // No resource-access tracking table exists in the committed schema, so
+    // there is nothing truthful to report yet. Empty until real per-resource
+    // tracking lands - the previous six invented rows were fabricated data.
+    const resourceUsage: ResourceUsage[] = []
 
     // ── Weekly activity (last 8 weeks) ──────────────────────────────────────
     const weeklyActivity: WeeklyActivity[] = []
@@ -525,10 +466,13 @@ export async function GET(request: NextRequest) {
         .gte('completed_at', eightWeeksAgo)
         .not('completed_at', 'is', null)
 
-      // Also fetch assignment submissions if the table has submitted_at
+      // Also fetch assignment submissions if the table has submitted_at.
+      // Scoped to this school's students: without the .in filter this
+      // counted every school's submissions into this school's chart.
       const { data: weeklyAssignRows } = await admin
         .from('assignment_submissions')
         .select('student_id, submitted_at')
+        .in('student_id', scopedStudentIds)
         .gte('submitted_at', eightWeeksAgo)
         .not('submitted_at', 'is', null)
 
@@ -562,14 +506,9 @@ export async function GET(request: NextRequest) {
       }
     }
 
-    // If all weeks are zero (no data yet), use plausible mock so charts render.
-    const hasRealActivity = weeklyActivity.some(
-      (w) => w.activeStudents > 0 || w.assignmentsSubmitted > 0,
-    )
-    if (!hasRealActivity) {
-      weeklyActivity.length = 0
-      weeklyActivity.push(...mockWeeklyActivity(WEEKS))
-    }
+    // An all-zero series is returned as-is: it is the truth about a school
+    // with no activity yet. The previous Math.random() replacement chart
+    // was fabricated data and changed on every refresh.
 
     // ── Build and return response ────────────────────────────────────────────
     const response: AnalyticsResponse = {

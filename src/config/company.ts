@@ -97,6 +97,17 @@ export const COMPANY: CompanyConfig = {
     'Upskill Energy Limited · Co. 16511479 · ICO ZC016690 · Registered in England & Wales · Registered office available via Companies House',
 } as const
 
+/**
+ * Dedicated schools/billing contact for the school portal (replaces the
+ * info@Upskillenergy.com address that was hard-coded across the billing,
+ * guide and settings pages - a different company's mailbox).
+ *
+ * TODO(founder): the schools@theenglishhub.app mailbox does not exist yet
+ * and must be created (or aliased to a monitored inbox) before this address
+ * receives renewal and procurement email.
+ */
+export const SCHOOLS_CONTACT_EMAIL = 'schools@theenglishhub.app'
+
 /** 80-120-word company boilerplate for press releases and partner-pack pages. */
 export const COMPANY_BOILERPLATE = `The English Hub is an independent English learning platform for GCSE, IGCSE, KS3 and EAL students, teachers and schools. It combines verified English resources, AI-assisted feedback, exam-style practice, teacher tools, class analytics, mock exams, reading and writing support, and school-level progress reporting. The platform is exam-board aligned, not exam-board endorsed, and supports AQA, Pearson Edexcel, OCR, WJEC Eduqas and Cambridge IGCSE specifications. The English Hub is a trading brand of Upskill Energy Limited (Companies House 16511479), registered in England & Wales and registered with the ICO under ZC016690.`
 

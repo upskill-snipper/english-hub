@@ -36,11 +36,37 @@ import {
 } from '@/lib/parent-reports/generate'
 import { buildWeeklyParentReportEmail } from '@/emails/weekly-parent-report'
 
+export const dynamic = 'force-dynamic'
+
 // ─── Constants ───────────────────────────────────────────────────────────
 
 const SEVEN_DAYS_MS = 7 * 24 * 60 * 60 * 1000
 
-// ─── Handler ─────────────────────────────────────────────────────────────
+// ─── Handlers ────────────────────────────────────────────────────────────
+//
+// Vercel Cron invokes scheduled routes with GET and an
+// `Authorization: Bearer ${CRON_SECRET}` header (see trial-expiry for the
+// house pattern). This route originally exported only POST guarded by an
+// `x-cron-secret` header, so the Sunday schedule in vercel.json returned
+// 405 forever and no report was ever generated. GET is now the canonical
+// entry point; POST is retained for manual invocation with either header
+// convention already used by internal callers.
+
+export async function GET(request: NextRequest): Promise<Response> {
+  const expectedSecret = process.env.CRON_SECRET
+  if (!expectedSecret) {
+    console.error('[weekly-parent-reports] CRON_SECRET is not configured')
+    return NextResponse.json({ error: 'Server misconfiguration' }, { status: 500 })
+  }
+  const authHeader = request.headers.get('authorization') ?? ''
+  const incoming = Buffer.from(authHeader)
+  const expected = Buffer.from(`Bearer ${expectedSecret}`)
+  if (incoming.length !== expected.length || !crypto.timingSafeEqual(incoming, expected)) {
+    return NextResponse.json({ error: 'Unauthorised' }, { status: 401 })
+  }
+
+  return executeWeeklyParentReports(expectedSecret)
+}
 
 export async function POST(request: NextRequest): Promise<Response> {
   // ── CRON_SECRET gate (timing-safe) ─────────────────────────────────
@@ -55,6 +81,26 @@ export async function POST(request: NextRequest): Promise<Response> {
     !crypto.timingSafeEqual(Buffer.from(cronSecret), Buffer.from(expectedSecret))
   ) {
     return NextResponse.json({ error: 'Unauthorised' }, { status: 401 })
+  }
+
+  return executeWeeklyParentReports(expectedSecret)
+}
+
+async function executeWeeklyParentReports(expectedSecret: string): Promise<Response> {
+  // ── Kill switch ────────────────────────────────────────────────────
+  //
+  // The 2026-08 audit found there is no working unsubscribe mechanism for
+  // parent report emails: the email's Unsubscribe link pointed at a stub
+  // settings page and the cron honours no per-parent preference. Sending
+  // marketing-adjacent email with no opt-out is not acceptable, so sends
+  // stay OFF until a persisted preference + signed unsubscribe token +
+  // List-Unsubscribe header exist. Set WEEKLY_PARENT_REPORTS_ENABLED=true
+  // only once that opt-out path is built.
+  if (process.env.WEEKLY_PARENT_REPORTS_ENABLED !== 'true') {
+    return NextResponse.json(
+      { skipped: 'disabled - no unsubscribe mechanism yet' },
+      { status: 200 },
+    )
   }
 
   return runCron('weekly-parent-reports', async () => {

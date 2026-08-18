@@ -540,37 +540,12 @@ function QuestionBreakdown({ questions }: { questions: QuestionSummary[] }) {
   )
 }
 
-// ─── Past Performance Component ──────────────────────────────────────────────
-
-function PastPerformance({ grade }: { grade: number | null | undefined }) {
-  const t = useT()
-  if (grade == null) {
-    return (
-      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-        <BarChart3 className="h-4 w-4" />
-        <span>{t('mock.no_attempts')}</span>
-      </div>
-    )
-  }
-
-  return (
-    <div className="flex items-center gap-3">
-      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-        <TrendingUp className="h-4 w-4" />
-        <span>{t('mock.best_grade')}</span>
-      </div>
-      <div
-        className={cn(
-          'flex items-center justify-center h-8 w-8 rounded-lg border font-bold text-sm',
-          getGradeBg(grade),
-          getGradeColor(grade),
-        )}
-      >
-        {grade}
-      </div>
-    </div>
-  )
-}
+// 2026-08-18: the "Past performance / best grade" panel was removed. Its
+// data source (`pastGrade`) was hardcoded null on every paper, so it
+// permanently rendered "No attempts yet" for a statistic nothing tracked -
+// and any grade it might have shown would have come from the old
+// word-count scorer, whose grades were fabricated. Attempt tracking, if
+// built, should come from real stored results.
 
 // ─── Exam Paper Card ─────────────────────────────────────────────────────────
 
@@ -660,11 +635,6 @@ function ExamPaperCard({ exam }: { exam: ExamCardData }) {
               </p>
             </div>
           </div>
-        </div>
-
-        {/* Past performance */}
-        <div className="mt-4">
-          <PastPerformance grade={exam.pastGrade} />
         </div>
 
         {/* Expandable details */}

@@ -3,6 +3,7 @@ import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supab
 import { verifySchoolMember } from '@/lib/school-auth'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 import { summariseCEFRCohort } from '@/lib/eal/cefr-aggregate'
+import { getSchoolStudentUserIds } from '@/lib/school-students'
 
 export const dynamic = 'force-dynamic'
 
@@ -128,17 +129,10 @@ export async function GET(request: NextRequest) {
         )
       }
     } else {
-      // Admin / head of department: all accepted student members.
-      const { data: memberRows } = await admin
-        .from('school_members')
-        .select('user_id, role, invite_status')
-        .eq('school_id', schoolId)
-        .eq('invite_status', 'accepted')
-        .eq('role', 'student')
-
-      scopedStudentIds = (memberRows ?? [])
-        .map((m: { user_id: string }) => m.user_id)
-        .filter(Boolean)
+      // Admin / head of department: all live students via the canonical
+      // helper (union of school_members role='student' and school_students,
+      // so join-code pupils are included).
+      scopedStudentIds = await getSchoolStudentUserIds(admin, schoolId)
     }
 
     // ── Aggregate ───────────────────────────────────────────────────────────

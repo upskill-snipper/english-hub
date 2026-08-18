@@ -5,18 +5,31 @@ import { cn } from '@/lib/utils'
 import { Star, TrendingUp, TrendingDown, Minus, Clock, BookOpen, Award } from 'lucide-react'
 import { Textarea } from '@/components/ui/textarea'
 
-import type { StudentAnalytics } from '@/lib/types'
-import { percentageToGCSEGradeLabel } from '@/lib/grades'
-
 /* ── Types ──────────────────────────────────────────────────────────────────── */
 
-export interface ProgressCardData extends StudentAnalytics {
+/**
+ * Everything on a printed card must come from real pupil data. Fields the
+ * analytics API does not provide are nullable and their sections are hidden
+ * rather than filled with placeholder values.
+ */
+export interface ProgressCardData {
+  student_id: string
+  student_name: string
+  year_group: string | null
+  exam_board: string | null
+  modules_completed: number
+  total_modules: number | null
+  avg_quiz_score: number | null
+  trajectory: 'improving' | 'stable' | 'declining' | null
+  strengths: string[]
+  weaknesses: string[]
+  predicted_grade: string | null
   target_grade: string | null
-  effort_rating: number // 1-5
+  effort_rating: number | null // 1-5
   teacher_comment: string
   next_steps: string[]
-  recommended_revision_hours: number
-  actual_revision_hours: number
+  recommended_revision_hours: number | null
+  actual_revision_hours: number | null
 }
 
 export interface ProgressCardProps {
@@ -34,13 +47,6 @@ function parseGrade(grade: string | null): number {
   if (!grade) return 0
   const n = parseInt(grade, 10)
   return isNaN(n) ? 0 : Math.min(9, Math.max(0, n))
-}
-
-function formatTime(seconds: number): string {
-  const hours = Math.floor(seconds / 3600)
-  const mins = Math.round((seconds % 3600) / 60)
-  if (hours === 0) return `${mins}m`
-  return mins > 0 ? `${hours}h ${mins}m` : `${hours}h`
 }
 
 /* ── Grade Gauge (SVG semi-circle dial) ─────────────────────────────────────── */
@@ -69,9 +75,21 @@ function GradeGauge({ grade, maxGrade = 9 }: { grade: number; maxGrade?: number 
   return (
     <svg viewBox="0 0 100 58" className="w-full max-w-[100px]">
       {/* Background track */}
-      <path d={bgArcD} fill="none" stroke="#374151" strokeWidth={strokeWidth} strokeLinecap="round" />
+      <path
+        d={bgArcD}
+        fill="none"
+        stroke="#374151"
+        strokeWidth={strokeWidth}
+        strokeLinecap="round"
+      />
       {/* Filled arc */}
-      <path d={filledArcD} fill="none" stroke={gradeColour} strokeWidth={strokeWidth} strokeLinecap="round" />
+      <path
+        d={filledArcD}
+        fill="none"
+        stroke={gradeColour}
+        strokeWidth={strokeWidth}
+        strokeLinecap="round"
+      />
       {/* Needle dot */}
       <circle cx={needleX} cy={needleY} r={3} fill={gradeColour} />
       {/* Grade number */}
@@ -85,19 +103,20 @@ function GradeGauge({ grade, maxGrade = 9 }: { grade: number; maxGrade?: number 
         {grade > 0 ? grade : '-'}
       </text>
       {/* Label */}
-      <text
-        x={cx}
-        y={cy + 8}
-        textAnchor="middle"
-        style={{ fontSize: '6px', fill: '#9ca3af' }}
-      >
+      <text x={cx} y={cy + 8} textAnchor="middle" style={{ fontSize: '6px', fill: '#9ca3af' }}>
         Predicted
       </text>
     </svg>
   )
 }
 
-function describeArc(cx: number, cy: number, r: number, startAngle: number, endAngle: number): string {
+function describeArc(
+  cx: number,
+  cy: number,
+  r: number,
+  startAngle: number,
+  endAngle: number,
+): string {
   const startX = cx + r * Math.cos(endAngle)
   const startY = cy - r * Math.sin(endAngle)
   const endX = cx + r * Math.cos(startAngle)
@@ -164,14 +183,18 @@ function RevisionBar({ actual, recommended }: { actual: number; recommended: num
             style={{ width: `${actualPct}%` }}
           />
         </div>
-        <span className="w-8 text-right tabular-nums text-foreground print:text-black">{actual}h</span>
+        <span className="w-8 text-right tabular-nums text-foreground print:text-black">
+          {actual}h
+        </span>
       </div>
       <div className="flex items-center gap-2 text-[10px]">
         <span className="w-16 text-muted-foreground shrink-0">Recommended</span>
         <div className="h-2 flex-1 rounded-full bg-gray-700 print:bg-gray-200">
           <div className="h-full rounded-full bg-blue-500" style={{ width: `${recPct}%` }} />
         </div>
-        <span className="w-8 text-right tabular-nums text-foreground print:text-black">{recommended}h</span>
+        <span className="w-8 text-right tabular-nums text-foreground print:text-black">
+          {recommended}h
+        </span>
       </div>
     </div>
   )
@@ -257,72 +280,74 @@ export const PROGRESS_CARD_PRINT_STYLES = `
 
 /* ── Main Component ────────────────────────────────────────────────────────── */
 
-export const ProgressCard = forwardRef<HTMLDivElement, ProgressCardProps>(
-  function ProgressCard(
-    { student, className, schoolName, date, onCommentChange, editable = true },
-    ref,
-  ) {
-    const grade = parseGrade(student.predicted_grade)
-    const targetGrade = parseGrade(student.target_grade)
-    const strengths = student.strengths.slice(0, 3)
-    const weaknesses = student.weaknesses.slice(0, 3)
-    const nextSteps = student.next_steps.slice(0, 3)
+export const ProgressCard = forwardRef<HTMLDivElement, ProgressCardProps>(function ProgressCard(
+  { student, className, schoolName, date, onCommentChange, editable = true },
+  ref,
+) {
+  const grade = parseGrade(student.predicted_grade)
+  const targetGrade = parseGrade(student.target_grade)
+  const strengths = student.strengths.slice(0, 3)
+  const weaknesses = student.weaknesses.slice(0, 3)
+  const nextSteps = student.next_steps.slice(0, 3)
 
-    const trajectoryInfo = {
-      improving: { icon: TrendingUp, label: 'Improving', colour: 'text-green-500' },
-      stable: { icon: Minus, label: 'Stable', colour: 'text-amber-500' },
-      declining: { icon: TrendingDown, label: 'Declining', colour: 'text-red-500' },
-    }
-    const traj = trajectoryInfo[student.trajectory]
-    const TrajectoryIcon = traj.icon
+  const trajectoryInfo = {
+    improving: { icon: TrendingUp, label: 'Improving', colour: 'text-green-500' },
+    stable: { icon: Minus, label: 'Stable', colour: 'text-amber-500' },
+    declining: { icon: TrendingDown, label: 'Declining', colour: 'text-red-500' },
+  }
+  const traj = student.trajectory ? trajectoryInfo[student.trajectory] : null
+  const TrajectoryIcon = traj?.icon ?? Minus
 
-    return (
-      <div
-        ref={ref}
-        className={cn(
-          'progress-card rounded-2xl border border-border/60 bg-card p-5 print:p-0',
-          className,
-        )}
-      >
-        {/* ── Header ─────────────────────────────────────────────────────────── */}
-        <div className="flex items-start justify-between gap-3 border-b border-border/60 pb-3 mb-3 print:border-gray-300">
-          <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-2 flex-wrap">
-              {schoolName && (
-                <span className="text-[10px] uppercase tracking-widest text-muted-foreground">
-                  {schoolName}
-                </span>
-              )}
-            </div>
-            <h3 className="text-lg font-bold text-foreground truncate print:text-black">
-              {student.student_name}
-            </h3>
-            <div className="flex items-center gap-3 mt-0.5 text-xs text-muted-foreground flex-wrap">
-              {student.year_group && <span>Year {student.year_group}</span>}
-              {student.exam_board && <span>{student.exam_board}</span>}
-              {date && <span>{date}</span>}
-            </div>
+  return (
+    <div
+      ref={ref}
+      className={cn(
+        'progress-card rounded-2xl border border-border/60 bg-card p-5 print:p-0',
+        className,
+      )}
+    >
+      {/* ── Header ─────────────────────────────────────────────────────────── */}
+      <div className="flex items-start justify-between gap-3 border-b border-border/60 pb-3 mb-3 print:border-gray-300">
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2 flex-wrap">
+            {schoolName && (
+              <span className="text-[10px] uppercase tracking-widest text-muted-foreground">
+                {schoolName}
+              </span>
+            )}
           </div>
-          {/* Grade Gauge */}
+          <h3 className="text-lg font-bold text-foreground truncate print:text-black">
+            {student.student_name}
+          </h3>
+          <div className="flex items-center gap-3 mt-0.5 text-xs text-muted-foreground flex-wrap">
+            {student.year_group && <span>Year {student.year_group}</span>}
+            {student.exam_board && <span>{student.exam_board}</span>}
+            {date && <span>{date}</span>}
+          </div>
+        </div>
+        {/* Grade Gauge - only when a real predicted grade exists */}
+        {grade > 0 && (
           <div className="shrink-0 w-[90px]">
             <GradeGauge grade={grade} />
           </div>
-        </div>
+        )}
+      </div>
 
-        {/* ── Body Grid ──────────────────────────────────────────────────────── */}
-        <div className="grid grid-cols-2 gap-x-5 gap-y-3 text-xs">
-          {/* Left Column */}
-          <div className="space-y-3">
-            {/* Target Grade + Trajectory */}
-            <div className="flex items-center gap-4">
-              <div>
-                <span className="text-muted-foreground">Target Grade</span>
-                <div className="flex items-center gap-1.5 mt-0.5">
-                  <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-blue-500/10 text-sm font-bold text-blue-400 print:text-blue-700 print:bg-blue-50 print:border print:border-blue-200">
-                    {targetGrade > 0 ? targetGrade : '-'}
-                  </span>
-                </div>
+      {/* ── Body Grid ──────────────────────────────────────────────────────── */}
+      <div className="grid grid-cols-2 gap-x-5 gap-y-3 text-xs">
+        {/* Left Column */}
+        <div className="space-y-3">
+          {/* Target Grade + Trajectory */}
+          <div className="flex items-center gap-4">
+            <div>
+              <span className="text-muted-foreground">Target Grade</span>
+              <div className="flex items-center gap-1.5 mt-0.5">
+                <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-blue-500/10 text-sm font-bold text-blue-400 print:text-blue-700 print:bg-blue-50 print:border print:border-blue-200">
+                  {targetGrade > 0 ? targetGrade : '-'}
+                </span>
               </div>
+            </div>
+            {traj && (
               <div>
                 <span className="text-muted-foreground">Trajectory</span>
                 <div className="flex items-center gap-1 mt-0.5">
@@ -330,146 +355,156 @@ export const ProgressCard = forwardRef<HTMLDivElement, ProgressCardProps>(
                   <span className={cn('font-medium', traj.colour)}>{traj.label}</span>
                 </div>
               </div>
-            </div>
+            )}
+          </div>
 
-            {/* Modules Completed */}
-            <div>
-              <div className="flex items-center justify-between mb-1">
-                <span className="text-muted-foreground flex items-center gap-1">
-                  <BookOpen className="h-3 w-3" /> Modules Completed
-                </span>
-                <span className="font-semibold tabular-nums text-foreground print:text-black">
-                  {student.modules_completed}/{student.total_modules}
-                </span>
-              </div>
+          {/* Modules Completed */}
+          <div>
+            <div className="flex items-center justify-between mb-1">
+              <span className="text-muted-foreground flex items-center gap-1">
+                <BookOpen className="h-3 w-3" /> Modules Completed
+              </span>
+              <span className="font-semibold tabular-nums text-foreground print:text-black">
+                {student.modules_completed}
+                {student.total_modules !== null ? `/${student.total_modules}` : ''}
+              </span>
+            </div>
+            {student.total_modules !== null && (
               <SimpleProgressBar
                 value={student.modules_completed}
                 max={student.total_modules}
                 colour="bg-primary"
               />
-            </div>
-
-            {/* Strengths */}
-            <div>
-              <span className="text-muted-foreground font-medium">Strengths</span>
-              <ul className="mt-1 space-y-0.5">
-                {strengths.length > 0 ? (
-                  strengths.map((s, i) => (
-                    <li key={i} className="flex items-start gap-1.5">
-                      <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0" />
-                      <span className="text-foreground print:text-black">{s}</span>
-                    </li>
-                  ))
-                ) : (
-                  <li className="text-muted-foreground italic">No data yet</li>
-                )}
-              </ul>
-            </div>
-
-            {/* Areas for Improvement */}
-            <div>
-              <span className="text-muted-foreground font-medium">Areas for Improvement</span>
-              <ul className="mt-1 space-y-0.5">
-                {weaknesses.length > 0 ? (
-                  weaknesses.map((w, i) => (
-                    <li key={i} className="flex items-start gap-1.5">
-                      <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-amber-500 shrink-0" />
-                      <span className="text-foreground print:text-black">{w}</span>
-                    </li>
-                  ))
-                ) : (
-                  <li className="text-muted-foreground italic">No data yet</li>
-                )}
-              </ul>
-            </div>
+            )}
           </div>
 
-          {/* Right Column */}
-          <div className="space-y-3">
-            {/* Effort + Stats Row */}
-            <div className="flex items-center gap-4">
+          {/* Strengths */}
+          <div>
+            <span className="text-muted-foreground font-medium">Strengths</span>
+            <ul className="mt-1 space-y-0.5">
+              {strengths.length > 0 ? (
+                strengths.map((s, i) => (
+                  <li key={i} className="flex items-start gap-1.5">
+                    <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0" />
+                    <span className="text-foreground print:text-black">{s}</span>
+                  </li>
+                ))
+              ) : (
+                <li className="text-muted-foreground italic">No data yet</li>
+              )}
+            </ul>
+          </div>
+
+          {/* Areas for Improvement */}
+          <div>
+            <span className="text-muted-foreground font-medium">Areas for Improvement</span>
+            <ul className="mt-1 space-y-0.5">
+              {weaknesses.length > 0 ? (
+                weaknesses.map((w, i) => (
+                  <li key={i} className="flex items-start gap-1.5">
+                    <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-amber-500 shrink-0" />
+                    <span className="text-foreground print:text-black">{w}</span>
+                  </li>
+                ))
+              ) : (
+                <li className="text-muted-foreground italic">No data yet</li>
+              )}
+            </ul>
+          </div>
+        </div>
+
+        {/* Right Column */}
+        <div className="space-y-3">
+          {/* Effort + Stats Row */}
+          <div className="flex items-center gap-4">
+            {student.effort_rating !== null && (
               <div>
                 <span className="text-muted-foreground">Effort This Term</span>
                 <div className="mt-0.5">
                   <EffortStars rating={student.effort_rating} />
                 </div>
               </div>
-              <div>
-                <span className="text-muted-foreground flex items-center gap-1">
-                  <Award className="h-3 w-3" /> Avg Score
-                </span>
-                <span className="font-semibold text-foreground print:text-black mt-0.5 block">
-                  {percentageToGCSEGradeLabel(Math.round(student.avg_quiz_score))}
-                </span>
-              </div>
-            </div>
-
-            {/* Revision Time */}
+            )}
             <div>
-              <span className="text-muted-foreground flex items-center gap-1 mb-1">
-                <Clock className="h-3 w-3" /> Revision Time This Term
+              <span className="text-muted-foreground flex items-center gap-1">
+                <Award className="h-3 w-3" /> Avg Score
               </span>
-              <RevisionBar
-                actual={student.actual_revision_hours}
-                recommended={student.recommended_revision_hours}
-              />
-            </div>
-
-            {/* Next Steps */}
-            <div>
-              <span className="text-muted-foreground font-medium">Next Steps</span>
-              <ul className="mt-1 space-y-0.5">
-                {nextSteps.length > 0 ? (
-                  nextSteps.map((step, i) => (
-                    <li key={i} className="flex items-start gap-1.5">
-                      <span className="mt-0.5 text-primary font-bold shrink-0">{i + 1}.</span>
-                      <span className="text-foreground print:text-black">{step}</span>
-                    </li>
-                  ))
+              <span className="font-semibold text-foreground print:text-black mt-0.5 block">
+                {student.avg_quiz_score !== null ? (
+                  `${Math.round(student.avg_quiz_score)}%`
                 ) : (
-                  <li className="text-muted-foreground italic">No recommendations</li>
+                  <span className="text-muted-foreground italic font-normal">No data yet</span>
                 )}
-              </ul>
+              </span>
             </div>
+          </div>
 
-            {/* Teacher Comment */}
-            <div>
-              <span className="text-muted-foreground font-medium">Teacher Comment</span>
-              <div className="mt-1">
-                {editable ? (
-                  <Textarea
-                    value={student.teacher_comment}
-                    onChange={(e) =>
-                      onCommentChange?.(student.student_id, e.target.value)
-                    }
-                    placeholder="Add a comment..."
-                    className="min-h-[48px] text-xs resize-none print:min-h-[36px]"
-                    rows={2}
-                  />
-                ) : (
-                  <p className="text-foreground print:text-black whitespace-pre-wrap">
-                    {student.teacher_comment || (
-                      <span className="text-muted-foreground italic">No comment</span>
-                    )}
-                  </p>
-                )}
+          {/* Revision Time - only when real hours are recorded */}
+          {student.actual_revision_hours !== null &&
+            student.recommended_revision_hours !== null && (
+              <div>
+                <span className="text-muted-foreground flex items-center gap-1 mb-1">
+                  <Clock className="h-3 w-3" /> Revision Time This Term
+                </span>
+                <RevisionBar
+                  actual={student.actual_revision_hours}
+                  recommended={student.recommended_revision_hours}
+                />
               </div>
-            </div>
-          </div>
-        </div>
+            )}
 
-        {/* ── Footer: Parent Signature ───────────────────────────────────────── */}
-        <div className="mt-3 pt-2 border-t border-border/60 print:border-gray-300 flex items-end justify-between gap-4">
-          <div className="flex-1">
-            <span className="text-[10px] text-muted-foreground">Parent / Guardian Signature</span>
-            <div className="signature-line mt-2 border-b border-border/60 print:border-gray-400 w-full h-5" />
+          {/* Next Steps */}
+          <div>
+            <span className="text-muted-foreground font-medium">Next Steps</span>
+            <ul className="mt-1 space-y-0.5">
+              {nextSteps.length > 0 ? (
+                nextSteps.map((step, i) => (
+                  <li key={i} className="flex items-start gap-1.5">
+                    <span className="mt-0.5 text-primary font-bold shrink-0">{i + 1}.</span>
+                    <span className="text-foreground print:text-black">{step}</span>
+                  </li>
+                ))
+              ) : (
+                <li className="text-muted-foreground italic">No recommendations</li>
+              )}
+            </ul>
           </div>
-          <div className="shrink-0">
-            <span className="text-[10px] text-muted-foreground">Date</span>
-            <div className="signature-line mt-2 border-b border-border/60 print:border-gray-400 w-24 h-5" />
+
+          {/* Teacher Comment */}
+          <div>
+            <span className="text-muted-foreground font-medium">Teacher Comment</span>
+            <div className="mt-1">
+              {editable ? (
+                <Textarea
+                  value={student.teacher_comment}
+                  onChange={(e) => onCommentChange?.(student.student_id, e.target.value)}
+                  placeholder="Add a comment..."
+                  className="min-h-[48px] text-xs resize-none print:min-h-[36px]"
+                  rows={2}
+                />
+              ) : (
+                <p className="text-foreground print:text-black whitespace-pre-wrap">
+                  {student.teacher_comment || (
+                    <span className="text-muted-foreground italic">No comment</span>
+                  )}
+                </p>
+              )}
+            </div>
           </div>
         </div>
       </div>
-    )
-  },
-)
+
+      {/* ── Footer: Parent Signature ───────────────────────────────────────── */}
+      <div className="mt-3 pt-2 border-t border-border/60 print:border-gray-300 flex items-end justify-between gap-4">
+        <div className="flex-1">
+          <span className="text-[10px] text-muted-foreground">Parent / Guardian Signature</span>
+          <div className="signature-line mt-2 border-b border-border/60 print:border-gray-400 w-full h-5" />
+        </div>
+        <div className="shrink-0">
+          <span className="text-[10px] text-muted-foreground">Date</span>
+          <div className="signature-line mt-2 border-b border-border/60 print:border-gray-400 w-24 h-5" />
+        </div>
+      </div>
+    </div>
+  )
+})

@@ -34,21 +34,30 @@ import {
   type Topic,
   type QuizQuestion,
 } from './quiz-data'
+import {
+  normaliseQuizHistory,
+  quizAttemptsFromHistory,
+  type QuizAttemptSummary,
+} from '@/components/toolkit/toolkit-types'
 
 // ─── History types ─────────────────────────────────────────────────────────
 
-interface QuizResult {
-  date: string
-  mode: string
-  score: number
-  total: number
-  percentage: number
-  grade: string
-  topics: Topic[]
-  topicBreakdown: Record<Topic, { correct: number; total: number }>
-}
-
 const HISTORY_KEY = 'english-hub-quiz-history'
+
+// The store holds one row per topic per attempt (plus possible legacy
+// per-attempt rows from older versions); collapse to whole attempts,
+// newest first, for the score-history table.
+function loadAttemptHistory(): QuizAttemptSummary[] {
+  try {
+    const stored = localStorage.getItem(HISTORY_KEY)
+    if (!stored) return []
+    const raw = JSON.parse(stored)
+    if (!Array.isArray(raw)) return []
+    return quizAttemptsFromHistory(normaliseQuizHistory(raw)).reverse()
+  } catch {
+    return []
+  }
+}
 
 // ─── Topic icons ───────────────────────────────────────────────────────────
 
@@ -84,28 +93,18 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
     questions: QuizQuestion[]
     mode: string
   } | null>(null)
-  const [history, setHistory] = useState<QuizResult[]>([])
+  const [history, setHistory] = useState<QuizAttemptSummary[]>([])
   const [mounted, setMounted] = useState(false)
 
   // Load history from localStorage
   useEffect(() => {
     setMounted(true)
-    try {
-      const stored = localStorage.getItem(HISTORY_KEY)
-      if (stored) setHistory(JSON.parse(stored))
-    } catch {
-      // ignore
-    }
+    setHistory(loadAttemptHistory())
   }, [])
 
   // Refresh history after quiz
   const refreshHistory = () => {
-    try {
-      const stored = localStorage.getItem(HISTORY_KEY)
-      if (stored) setHistory(JSON.parse(stored))
-    } catch {
-      // ignore
-    }
+    setHistory(loadAttemptHistory())
   }
 
   // Toggle topic selection
@@ -396,7 +395,7 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
 
                     return (
                       <tr
-                        key={i}
+                        key={result.attemptId || i}
                         className="border-b border-border/30 last:border-0 hover:bg-muted/20 transition-colors"
                       >
                         <td className="px-4 py-3 text-muted-foreground">
@@ -406,9 +405,11 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
                             year: 'numeric',
                           })}
                         </td>
-                        <td className="px-4 py-3 text-foreground font-medium">{result.mode}</td>
+                        <td className="px-4 py-3 text-foreground font-medium">
+                          {result.mode ?? t('rev.misc.quiz.breadcrumb')}
+                        </td>
                         <td className="px-4 py-3 text-center text-foreground tabular-nums">
-                          {result.score}/{result.total} ({result.percentage}%)
+                          {result.correct}/{result.total} ({result.percentage}%)
                         </td>
                         <td className="px-4 py-3 text-center">
                           <Badge variant="outline" className={`${gradeColour} font-bold`}>

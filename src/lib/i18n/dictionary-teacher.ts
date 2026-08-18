@@ -40,6 +40,108 @@
 import type { Dictionary } from './dictionary'
 
 export const TEACHER_DICTIONARY: Dictionary = {
+  // ── Teacher hub (src/app/dashboard/teacher/page.tsx, 2026-08-18 rebuild) ──
+  'teacher.hub.title': {
+    en: `Teacher hub`,
+    ar: `Hub المعلّم`,
+    es: `Centro del profesor`,
+  },
+  'teacher.hub.subtitle': {
+    en: `Your tools, your resources, and the route into your school workspace.`,
+    ar: `أدواتك ومواردك، وطريقك لمساحة عمل مدرستك.`,
+    es: `Tus herramientas, tus recursos y el acceso al espacio de tu colegio.`,
+  },
+  'teacher.hub.school.connected_title': {
+    en: `Your school workspace`,
+    ar: `مساحة عمل مدرستك`,
+    es: `El espacio de trabajo de tu colegio`,
+  },
+  'teacher.hub.school.connected_desc': {
+    en: `Classes, the marking queue and department analytics live in your school workspace.`,
+    ar: `الصفوف وقائمة التصحيح وتحليلات القسم كلها في مساحة عمل مدرستك.`,
+    es: `Las clases, la cola de corrección y las analíticas del departamento están en el espacio de tu colegio.`,
+  },
+  'teacher.hub.school.open_workspace': {
+    en: `Open school workspace`,
+    ar: `افتح مساحة المدرسة`,
+    es: `Abrir el espacio del colegio`,
+  },
+  'teacher.hub.school.none_title': {
+    en: `Not connected to a school yet`,
+    ar: `ما زلت غير مرتبط بمدرسة`,
+    es: `Aún sin conexión con un colegio`,
+  },
+  'teacher.hub.school.none_desc': {
+    en: `Join with the code from your school admin, or talk to us about setting your school up. All the tools below work for you either way.`,
+    ar: `انضم بالكود من إدارة مدرستك، أو كلّمنا عشان نجهّز مدرستك. كل الأدوات تحت تشتغل لك بالحالتين.`,
+    es: `Únete con el código de tu administrador escolar, o habla con nosotros para configurar tu colegio. Todas las herramientas de abajo funcionan igualmente.`,
+  },
+  'teacher.hub.school.join_code': {
+    en: `Join with a school code`,
+    ar: `انضم بكود المدرسة`,
+    es: `Unirse con un código de colegio`,
+  },
+  'teacher.hub.school.set_up': {
+    en: `Set up my school`,
+    ar: `جهّز مدرستي`,
+    es: `Configurar mi colegio`,
+  },
+  'teacher.hub.tools_heading': {
+    en: `Tools that work today`,
+    ar: `أدوات شغّالة اليوم`,
+    es: `Herramientas que funcionan hoy`,
+  },
+  'teacher.hub.tool.lesson_notes.title': {
+    en: `AI revision notes`,
+    ar: `ملخصات مراجعة بالـ AI`,
+    es: `Apuntes de repaso con IA`,
+  },
+  'teacher.hub.tool.lesson_notes.desc': {
+    en: `Generate topic notes matched to your board and target grade.`,
+    ar: `جهّز ملخصات مواضيع على بوردك والدرجة المستهدفة.`,
+    es: `Genera apuntes por tema según tu junta y la nota objetivo.`,
+  },
+  'teacher.hub.tool.test_builder.title': {
+    en: `Question bank test builder`,
+    ar: `بنّاء اختبارات من بنك الأسئلة`,
+    es: `Generador de pruebas del banco de preguntas`,
+  },
+  'teacher.hub.tool.test_builder.desc': {
+    en: `Build printable tests from your board's set texts.`,
+    ar: `ركّب اختبارات قابلة للطباعة من نصوص بوردك.`,
+    es: `Crea pruebas imprimibles con los textos fijados de tu junta.`,
+  },
+  'teacher.hub.tool.marking.title': {
+    en: `AI essay marking`,
+    ar: `تصحيح المقالات بالـ AI`,
+    es: `Corrección de redacciones con IA`,
+  },
+  'teacher.hub.tool.marking.desc': {
+    en: `Mark an essay against the assessment objectives in moments.`,
+    ar: `صحّح مقالة على معايير الـ AOs في لحظات.`,
+    es: `Corrige una redacción según los objetivos de evaluación en un momento.`,
+  },
+  'teacher.hub.tool.resources.title': {
+    en: `Teaching resources`,
+    ar: `موارد تدريس`,
+    es: `Recursos didácticos`,
+  },
+  'teacher.hub.tool.resources.desc': {
+    en: `Lesson plans, mark schemes, differentiation and creative-writing packs.`,
+    ar: `خطط دروس ومعايير تصحيح وتمايز وحزم كتابة إبداعية.`,
+    es: `Planes de clase, criterios de corrección, diferenciación y packs de escritura creativa.`,
+  },
+  'teacher.hub.tool.flashcards.title': {
+    en: `Flashcard decks`,
+    ar: `مجموعات بطاقات`,
+    es: `Mazos de tarjetas`,
+  },
+  'teacher.hub.tool.flashcards.desc': {
+    en: `2,000+ cards across set texts, poetry and exam technique.`,
+    ar: `أكثر من 2,000 بطاقة تغطي النصوص والشعر وتقنية الامتحان.`,
+    es: `Más de 2.000 tarjetas de textos fijados, poesía y técnica de examen.`,
+  },
+
   // ── Shell / layout (src/app/dashboard/teacher/layout.tsx) ──────────────
   'teacher.layout.loading': {
     en: `Loading your dashboard…`,

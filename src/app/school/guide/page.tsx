@@ -28,6 +28,7 @@ import {
   Info,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { SCHOOLS_CONTACT_EMAIL } from '@/config/company'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -592,10 +593,10 @@ function FaqContent() {
           your current plan, update payment details, and download invoices. For enterprise pricing
           or purchase orders, contact us at{' '}
           <a
-            href="mailto:info@Upskillenergy.com"
+            href={`mailto:${SCHOOLS_CONTACT_EMAIL}`}
             className="text-primary underline-offset-4 hover:underline"
           >
-            info@Upskillenergy.com
+            {SCHOOLS_CONTACT_EMAIL}
           </a>
           .
         </span>
@@ -731,7 +732,11 @@ export default function SchoolSetupGuidePage() {
             <Download className="h-4 w-4" />
             {tx('school.b15.guide.btn_pdf')}
           </Button>
-          <Button size="sm" className="gap-1.5" render={<a href="mailto:info@Upskillenergy.com" />}>
+          <Button
+            size="sm"
+            className="gap-1.5"
+            render={<a href={`mailto:${SCHOOLS_CONTACT_EMAIL}`} />}
+          >
             <Mail className="h-4 w-4" />
             {tx('school.b15.guide.btn_support')}
           </Button>
@@ -818,10 +823,10 @@ export default function SchoolSetupGuidePage() {
             <Button
               size="sm"
               className="gap-1.5"
-              render={<a href="mailto:info@Upskillenergy.com" />}
+              render={<a href={`mailto:${SCHOOLS_CONTACT_EMAIL}`} />}
             >
               <Mail className="h-4 w-4" />
-              info@Upskillenergy.com
+              {SCHOOLS_CONTACT_EMAIL}
             </Button>
           </div>
         </CardContent>

@@ -57,80 +57,34 @@ interface Teacher {
   status: TeacherStatus
 }
 
-// ── Mock data ──────────────────────────────────────────────────────────────────
+/** Row shape from GET /api/school/members ({ members: [...] }). */
+interface ApiMemberRow {
+  id: string
+  user_id: string | null
+  role: string
+  full_name: string | null
+  email: string
+  invite_status: string | null
+  last_active_at: string | null
+}
 
-const MOCK_TEACHERS: Teacher[] = [
-  {
-    id: '1',
-    firstName: 'James',
-    lastName: 'Hargreaves',
-    email: 'j.hargreaves@school.edu',
-    role: 'teacher',
-    classesAssigned: ['10B', '9A'],
-    lastActive: new Date(Date.now() - 0).toISOString(),
-    status: 'active',
-  },
-  {
-    id: '2',
-    firstName: 'Priya',
-    lastName: 'Nair',
-    email: 'p.nair@school.edu',
-    role: 'head_of_department',
-    classesAssigned: ['9A', '9B', '8A'],
-    lastActive: new Date(Date.now() - 1 * 864e5).toISOString(),
-    status: 'active',
-  },
-  {
-    id: '3',
-    firstName: 'Daniel',
-    lastName: 'Kim',
-    email: 'd.kim@school.edu',
-    role: 'teacher',
-    classesAssigned: ['11C'],
-    lastActive: null,
-    status: 'inactive',
-  },
-  {
-    id: '4',
-    firstName: 'Sarah',
-    lastName: 'Mitchell',
-    email: 's.mitchell@school.edu',
-    role: 'admin',
+function mapMemberToTeacher(m: ApiMemberRow): Teacher {
+  const parts = (m.full_name ?? '').trim().split(/\s+/).filter(Boolean)
+  const role: TeacherRole =
+    m.role === 'admin' || m.role === 'head_of_department' ? (m.role as TeacherRole) : 'teacher'
+  return {
+    id: m.id,
+    firstName: parts[0] ?? m.email,
+    lastName: parts.slice(1).join(' '),
+    email: m.email,
+    role,
+    // The members endpoint does not return class assignments - rendered as none
+    // rather than invented.
     classesAssigned: [],
-    lastActive: new Date(Date.now() - 0).toISOString(),
-    status: 'active',
-  },
-  {
-    id: '5',
-    firstName: 'Elspeth',
-    lastName: 'Murray',
-    email: 'e.murray@school.edu',
-    role: 'teacher',
-    classesAssigned: ['12A', '13A'],
-    lastActive: new Date(Date.now() - 3 * 864e5).toISOString(),
-    status: 'active',
-  },
-  {
-    id: '6',
-    firstName: 'Damian',
-    lastName: 'Osei',
-    email: 'd.osei@school.edu',
-    role: 'teacher',
-    classesAssigned: ['7A', '7B'],
-    lastActive: new Date(Date.now() - 14 * 864e5).toISOString(),
-    status: 'suspended',
-  },
-  {
-    id: '7',
-    firstName: 'Claire',
-    lastName: 'Weston',
-    email: 'c.weston@school.edu',
-    role: 'teacher',
-    classesAssigned: ['8B', '10A'],
-    lastActive: new Date(Date.now() - 2 * 864e5).toISOString(),
-    status: 'active',
-  },
-]
+    lastActive: m.last_active_at,
+    status: m.invite_status === 'accepted' ? 'active' : 'inactive',
+  }
+}
 
 const PAGE_SIZE = 25
 
@@ -296,12 +250,11 @@ interface ActionMenuProps {
   teacher: Teacher
   t: (k: string) => string
   onEdit: (t: Teacher) => void
-  onResetPassword: (id: string) => void
   onSuspend: (id: string) => void
   onRemove: (id: string) => void
 }
 
-function ActionMenu({ teacher, t, onEdit, onResetPassword, onSuspend, onRemove }: ActionMenuProps) {
+function ActionMenu({ teacher, t, onEdit, onSuspend, onRemove }: ActionMenuProps) {
   const [open, setOpen] = useState(false)
   return (
     <div className="relative">
@@ -327,14 +280,13 @@ function ActionMenu({ teacher, t, onEdit, onResetPassword, onSuspend, onRemove }
               <Edit className="size-3.5 text-muted-foreground" />
               {t('school.teachers.action.edit')}
             </button>
+            {/* No password-reset endpoint exists yet - disabled, never a silent no-op */}
             <button
-              className="flex w-full items-center gap-2.5 px-3 py-1.5 text-sm text-foreground hover:bg-accent"
-              onClick={() => {
-                onResetPassword(teacher.id)
-                setOpen(false)
-              }}
+              className="flex w-full cursor-not-allowed items-center gap-2.5 px-3 py-1.5 text-sm text-muted-foreground/50"
+              disabled
+              title="Password resets are issued from the Export logins flow"
             >
-              <Key className="size-3.5 text-muted-foreground" />
+              <Key className="size-3.5" />
               {t('school.teachers.action.reset_password')}
             </button>
             <div className="my-1 border-t border-border" />
@@ -499,8 +451,10 @@ function EditTeacherDialog({ teacher, t, onSave, onCancel }: EditTeacherDialogPr
 
 export default function TeachersPage() {
   const t = useT()
-  const [teachers, setTeachers] = useState<Teacher[]>(MOCK_TEACHERS)
+  const [teachers, setTeachers] = useState<Teacher[]>([])
   const [loading, setLoading] = useState(true)
+  const [loadError, setLoadError] = useState(false)
+  const [reloadKey, setReloadKey] = useState(0)
   const [search, setSearch] = useState('')
   const [roleFilter, setRoleFilter] = useState('all')
   const [statusFilter, setStatusFilter] = useState('all')
@@ -513,31 +467,28 @@ export default function TeachersPage() {
 
   useEffect(() => {
     let cancelled = false
+    setLoading(true)
+    setLoadError(false)
     async function fetchTeachers() {
       try {
         const res = await fetch('/api/school/members')
         if (!res.ok) throw new Error('fetch failed')
-        const data = await res.json()
-        const members: Teacher[] = (data.members ?? data ?? []).filter((m: Teacher) =>
-          ['teacher', 'head_of_department', 'admin'].includes(m.role),
-        )
-        if (!cancelled && members.length > 0) setTeachers(members)
+        const data = (await res.json()) as { members?: ApiMemberRow[] }
+        const members = (data.members ?? [])
+          .filter((m) => ['teacher', 'head_of_department', 'admin'].includes(m.role))
+          .map(mapMemberToTeacher)
+        if (!cancelled) setTeachers(members)
       } catch {
-        // keep mock data
+        if (!cancelled) setLoadError(true)
       } finally {
         if (!cancelled) setLoading(false)
       }
     }
-    const t = setTimeout(() => fetchTeachers(), 0)
-    const lt = setTimeout(() => {
-      if (!cancelled) setLoading(false)
-    }, 900)
+    fetchTeachers()
     return () => {
       cancelled = true
-      clearTimeout(t)
-      clearTimeout(lt)
     }
-  }, [])
+  }, [reloadKey])
 
   // ── Derived data ──────────────────────────────────────────────────────────
 
@@ -611,10 +562,6 @@ export default function TeachersPage() {
     setEditTarget(null)
   }
 
-  function handleResetPassword(_id: string) {
-    // POST /api/school/members/:id/reset-password
-  }
-
   function handleSuspend(id: string) {
     setTeachers((prev) =>
       prev.map((t) =>
@@ -639,10 +586,8 @@ export default function TeachersPage() {
     setRemoveTarget(null)
   }
 
-  function handleBulkResetPasswords() {
-    // POST /api/school/members/reset-passwords { ids: [...] }
-    setSelected(new Set())
-  }
+  // NOTE: password reset has no server endpoint yet - the controls below are
+  // disabled rather than silently succeeding on a security action.
 
   function handleBulkExport() {
     const rows = teachers.filter((t) => selected.has(t.id))
@@ -815,7 +760,12 @@ export default function TeachersPage() {
               {selected.size} {t('school.teachers.selected_count')}
             </span>
             <div className="ml-auto flex flex-wrap items-center gap-2">
-              <Button size="xs" variant="outline" onClick={handleBulkResetPasswords}>
+              <Button
+                size="xs"
+                variant="outline"
+                disabled
+                title="Password resets are issued from the Export logins flow"
+              >
                 <Key className="size-3" />
                 {t('school.teachers.action.reset_passwords')}
               </Button>
@@ -890,6 +840,22 @@ export default function TeachersPage() {
               <tbody>
                 {loading ? (
                   Array.from({ length: 6 }).map((_, i) => <TableSkeletonRow key={i} />)
+                ) : loadError ? (
+                  /* Error state - real error, real retry, never placeholder staff */
+                  <tr>
+                    <td colSpan={8} className="px-4 py-12 text-center text-muted-foreground">
+                      <Users className="mx-auto mb-2 size-8 opacity-30" />
+                      <p className="text-sm">We could not load your school&apos;s teachers.</p>
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="mt-3"
+                        onClick={() => setReloadKey((k) => k + 1)}
+                      >
+                        {t('school.classes.error.retry')}
+                      </Button>
+                    </td>
+                  </tr>
                 ) : teachers.length === 0 ? (
                   /* Empty state */
                   <tr>
@@ -995,7 +961,6 @@ export default function TeachersPage() {
                           teacher={teacher}
                           t={t}
                           onEdit={setEditTarget}
-                          onResetPassword={handleResetPassword}
                           onSuspend={handleSuspend}
                           onRemove={handleRemove}
                         />

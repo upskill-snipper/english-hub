@@ -17,6 +17,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { useT } from '@/lib/i18n/use-t'
+import { SCHOOLS_CONTACT_EMAIL } from '@/config/company'
 
 // ---------------------------------------------------------------------------
 // Types
@@ -43,8 +44,7 @@ interface UsageStats {
 // Constants
 // ---------------------------------------------------------------------------
 
-const BILLING_EMAIL = 'info@Upskillenergy.com'
-const FOUNDER_EXPIRY = new Date('2026-08-31T23:59:59Z')
+const BILLING_EMAIL = SCHOOLS_CONTACT_EMAIL
 const RENEWAL_WARNING_DAYS = 60
 const FOUNDING_SCHOOLS_TOTAL = 10
 
@@ -95,11 +95,6 @@ const PRICING_TIERS: PricingTier[] = [
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
-
-function calcDaysRemaining(): number {
-  const ms = FOUNDER_EXPIRY.getTime() - Date.now()
-  return Math.max(0, Math.ceil(ms / (1000 * 60 * 60 * 24)))
-}
 
 function formatDate(iso: string): string {
   return new Date(iso).toLocaleDateString('en-GB', {
@@ -632,7 +627,9 @@ export default function SchoolBillingPage() {
 
   const isFounder = access?.accessType === 'founder'
   const isPaid = access?.accessType === 'paid'
-  const daysRemaining = isFounder ? calcDaysRemaining() : (access?.daysRemaining ?? 0)
+  // Days remaining always comes from GET /api/school/access - never a
+  // hard-coded expiry date that can drift from the database.
+  const daysRemaining = access?.daysRemaining ?? 0
 
   return (
     <div className="px-4 py-8 sm:px-6 lg:px-8">

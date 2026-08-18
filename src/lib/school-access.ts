@@ -165,6 +165,37 @@ export async function getSchoolForUser(
 }
 
 // ---------------------------------------------------------------------------
+// requireSchoolAdmin
+// Server-side guard for ADMIN-ONLY school surfaces (billing, users,
+// permissions, import, settings, join-codes). The /school layout now admits
+// teachers as well, so any page or route that must stay admin/HoD-only
+// calls this and treats null as "render the 403 state / return 403".
+//
+// Pass adminOnly: true to restrict to the 'admin' role alone; the default
+// also admits head_of_department, matching the pre-existing per-page gates.
+// ---------------------------------------------------------------------------
+
+export async function requireSchoolAdmin(options?: {
+  adminOnly?: boolean
+}): Promise<SchoolAccess | null> {
+  const supabase = createServerSupabaseClient()
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
+
+  if (!user) return null
+
+  const access = await getSchoolAccess(user.id, user.email ?? undefined)
+  if (!access || !access.isActive) return null
+
+  const allowed: SchoolAccess['userRole'][] = options?.adminOnly
+    ? ['admin']
+    : ['admin', 'head_of_department']
+
+  return allowed.includes(access.userRole) ? access : null
+}
+
+// ---------------------------------------------------------------------------
 // isFounderAccessExpired
 // Pure utility: returns true if the given accessUntil date is in the past.
 // ---------------------------------------------------------------------------

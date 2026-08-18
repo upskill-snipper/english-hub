@@ -1,7 +1,7 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { useParams, useRouter } from 'next/navigation'
+import { useCallback, useEffect, useState } from 'react'
+import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import {
   ArrowLeft,
@@ -17,13 +17,12 @@ import {
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { percentageToGCSEGradeLabel, percentageToGCSEGrade, gcseGradeColor } from '@/lib/grades'
+import { toast } from 'sonner'
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
 import { Separator } from '@/components/ui/separator'
-import { Textarea } from '@/components/ui/textarea'
 import {
   Select,
   SelectContent,
@@ -31,20 +30,78 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import type { Assignment, AssignmentSubmission, AssignmentStatus } from '@/lib/types/assignment'
 import {
-  getAssignmentById,
-  updateAssignment,
-  ASSIGNMENT_TYPE_LABELS,
-  ASSIGNMENT_STATUS_LABELS,
+  fetchAssignmentById,
+  patchAssignment,
+  type ApiAssignment,
+  type ApiSubmission,
 } from '@/lib/types/assignment'
+import { API_TYPE_LABELS } from '@/components/school/AssignmentCard'
 import { useT } from '@/lib/i18n/use-t'
-import { DictationButton } from '@/components/speech/DictationButton'
 import { ReadAloudButton } from '@/components/speech/ReadAloudButton'
+
+/* ── View model (adapted from the server API) ──────────────────────────── */
+
+type ViewStatus = 'draft' | 'active' | 'closed'
+type ViewSubmissionStatus = 'pending' | 'submitted' | 'graded'
+
+interface SubmissionView {
+  id: string
+  studentId: string
+  studentName: string
+  status: ViewSubmissionStatus
+  score: number | null
+  feedback: string | null
+  submittedAt: string | null
+}
+
+interface AssignmentView {
+  id: string
+  classId: string
+  title: string
+  description: string | null
+  typeLabel: string
+  status: ViewStatus
+  dueDate: string | null
+  submissions: SubmissionView[]
+}
+
+function toViewStatus(status: string): ViewStatus {
+  const lower = status.toLowerCase()
+  return lower === 'active' || lower === 'closed' ? lower : 'draft'
+}
+
+function toViewSubmissionStatus(status: string): ViewSubmissionStatus {
+  const lower = status.toLowerCase()
+  return lower === 'submitted' || lower === 'graded' ? lower : 'pending'
+}
+
+function apiToView(a: ApiAssignment, nameByStudentId: Map<string, string>): AssignmentView {
+  return {
+    id: a.id,
+    classId: a.classId,
+    title: a.title,
+    description: a.description,
+    typeLabel: API_TYPE_LABELS[a.type] ?? a.type,
+    status: toViewStatus(a.status),
+    dueDate: a.dueDate,
+    submissions: (a.submissions ?? []).map((s: ApiSubmission) => ({
+      id: s.id,
+      studentId: s.studentId,
+      // Resolved from the class roster; a pupil since removed from the class
+      // shows as unnamed rather than invented.
+      studentName: nameByStudentId.get(s.studentId) ?? 'Unknown pupil',
+      status: toViewSubmissionStatus(s.status),
+      score: s.score,
+      feedback: s.feedback,
+      submittedAt: s.submittedAt,
+    })),
+  }
+}
 
 /* ── Helpers ───────────────────────────────────────────────────────────── */
 
-function statusBadgeClass(status: Assignment['status']): string {
+function statusBadgeClass(status: ViewStatus): string {
   switch (status) {
     case 'active':
       return 'border-green-500/30 bg-green-500/10 text-green-400'
@@ -55,7 +112,7 @@ function statusBadgeClass(status: Assignment['status']): string {
   }
 }
 
-function submissionStatusBadge(status: AssignmentSubmission['status']): string {
+function submissionStatusBadge(status: ViewSubmissionStatus): string {
   switch (status) {
     case 'graded':
       return 'border-green-500/30 bg-green-500/10 text-green-400'
@@ -87,22 +144,65 @@ function formatDate(iso: string): string {
 export default function AssignmentDetailPage() {
   const t = useT()
   const params = useParams()
-  const router = useRouter()
   const assignmentId = params.assignmentId as string
 
-  const [assignment, setAssignment] = useState<Assignment | null>(null)
+  const [assignment, setAssignment] = useState<AssignmentView | null>(null)
   const [loading, setLoading] = useState(true)
-
-  // Inline grading state
-  const [editingStudentId, setEditingStudentId] = useState<string | null>(null)
-  const [editScore, setEditScore] = useState('')
-  const [editFeedback, setEditFeedback] = useState('')
+  const [loadError, setLoadError] = useState(false)
+  const [reloadKey, setReloadKey] = useState(0)
+  const [statusSaving, setStatusSaving] = useState(false)
 
   useEffect(() => {
-    const data = getAssignmentById(assignmentId)
-    setAssignment(data ?? null)
-    setLoading(false)
-  }, [assignmentId])
+    let cancelled = false
+    setLoading(true)
+    setLoadError(false)
+    async function load() {
+      try {
+        const api = await fetchAssignmentById(assignmentId)
+        // Resolve pupil names from the class roster - the assignments API
+        // returns submission rows keyed by student id only.
+        const nameByStudentId = new Map<string, string>()
+        try {
+          const res = await fetch(`/api/school/classes/${api.classId}/students`)
+          if (res.ok) {
+            const json = (await res.json()) as {
+              students?: { student_id: string; full_name: string | null; email: string }[]
+            }
+            for (const s of json.students ?? []) {
+              nameByStudentId.set(s.student_id, s.full_name ?? s.email)
+            }
+          }
+        } catch {
+          // Roster fetch failure just means names fall back to "Unknown pupil".
+        }
+        if (!cancelled) setAssignment(apiToView(api, nameByStudentId))
+      } catch {
+        if (!cancelled) setLoadError(true)
+      } finally {
+        if (!cancelled) setLoading(false)
+      }
+    }
+    load()
+    return () => {
+      cancelled = true
+    }
+  }, [assignmentId, reloadKey])
+
+  const handleStatusChange = useCallback(
+    async (newStatus: ViewStatus) => {
+      if (!assignment || newStatus === assignment.status) return
+      setStatusSaving(true)
+      try {
+        await patchAssignment(assignment.id, { status: newStatus.toUpperCase() })
+        setAssignment((prev) => (prev ? { ...prev, status: newStatus } : prev))
+      } catch (err) {
+        toast.error(err instanceof Error ? err.message : 'Failed to update the assignment')
+      } finally {
+        setStatusSaving(false)
+      }
+    },
+    [assignment],
+  )
 
   if (loading) {
     return (
@@ -112,7 +212,7 @@ export default function AssignmentDetailPage() {
     )
   }
 
-  if (!assignment) {
+  if (loadError || !assignment) {
     return (
       <div className="px-4 py-6 sm:px-6 lg:px-8">
         <Button
@@ -133,13 +233,21 @@ export default function AssignmentDetailPage() {
             <p className="text-sm text-muted-foreground">
               {t('school.assignments.not_found.body')}
             </p>
+            <Button
+              variant="outline"
+              size="sm"
+              className="mt-4"
+              onClick={() => setReloadKey((k) => k + 1)}
+            >
+              {t('school.classes.error.retry')}
+            </Button>
           </CardContent>
         </Card>
       </div>
     )
   }
 
-  // Computed stats
+  // Computed stats - all derived from real submission rows
   const totalStudents = assignment.submissions.length
   const submitted = assignment.submissions.filter(
     (s) => s.status === 'submitted' || s.status === 'graded',
@@ -149,7 +257,7 @@ export default function AssignmentDetailPage() {
   const completionRate = totalStudents > 0 ? Math.round((submitted / totalStudents) * 100) : 0
 
   const gradedSubmissions = assignment.submissions.filter(
-    (s) => s.status === 'graded' && s.score !== undefined,
+    (s) => s.status === 'graded' && s.score !== null,
   )
   const avgScore =
     gradedSubmissions.length > 0
@@ -164,59 +272,10 @@ export default function AssignmentDetailPage() {
   const lowestScore =
     gradedSubmissions.length > 0 ? Math.min(...gradedSubmissions.map((s) => s.score ?? 0)) : null
 
-  const isOverdue = assignment.status === 'active' && new Date(assignment.dueDate) < new Date()
-
-  // Handlers
-  function handleStatusChange(newStatus: AssignmentStatus) {
-    if (!assignment) return
-    const updated = { ...assignment, status: newStatus }
-    updateAssignment(updated)
-    setAssignment(updated)
-  }
-
-  function handleStartGrading(submission: AssignmentSubmission) {
-    setEditingStudentId(submission.studentId)
-    setEditScore(submission.score?.toString() ?? '')
-    setEditFeedback(submission.feedback ?? '')
-  }
-
-  function handleSaveGrade() {
-    if (!assignment || !editingStudentId) return
-    const score = editScore ? parseInt(editScore, 10) : undefined
-    const updated: Assignment = {
-      ...assignment,
-      submissions: assignment.submissions.map((s) =>
-        s.studentId === editingStudentId
-          ? {
-              ...s,
-              score,
-              feedback: editFeedback || undefined,
-              status: 'graded' as const,
-              submittedAt: s.submittedAt ?? new Date().toISOString(),
-            }
-          : s,
-      ),
-    }
-    updateAssignment(updated)
-    setAssignment(updated)
-    setEditingStudentId(null)
-    setEditScore('')
-    setEditFeedback('')
-  }
-
-  function handleMarkSubmitted(studentId: string) {
-    if (!assignment) return
-    const updated: Assignment = {
-      ...assignment,
-      submissions: assignment.submissions.map((s) =>
-        s.studentId === studentId
-          ? { ...s, status: 'submitted' as const, submittedAt: new Date().toISOString() }
-          : s,
-      ),
-    }
-    updateAssignment(updated)
-    setAssignment(updated)
-  }
+  const isOverdue =
+    assignment.status === 'active' &&
+    assignment.dueDate !== null &&
+    new Date(assignment.dueDate) < new Date()
 
   return (
     <div className="px-4 py-6 sm:px-6 lg:px-8">
@@ -246,7 +305,7 @@ export default function AssignmentDetailPage() {
                 variant="outline"
                 className={cn('text-xs', statusBadgeClass(assignment.status))}
               >
-                {ASSIGNMENT_STATUS_LABELS[assignment.status]}
+                {assignment.status.charAt(0).toUpperCase() + assignment.status.slice(1)}
               </Badge>
               {isOverdue && (
                 <Badge
@@ -257,18 +316,16 @@ export default function AssignmentDetailPage() {
                 </Badge>
               )}
             </div>
-            <p className="mt-1 text-sm text-muted-foreground">
-              {ASSIGNMENT_TYPE_LABELS[assignment.type]}
-              {assignment.resourceId && ` \u00b7 ${t('school.assignments.resource_linked')}`}
-            </p>
+            <p className="mt-1 text-sm text-muted-foreground">{assignment.typeLabel}</p>
           </div>
         </div>
 
-        {/* Status control */}
+        {/* Status control - persists via PATCH /api/school/assignments/[id] */}
         <div className="flex items-center gap-2 shrink-0">
           <Select
             value={assignment.status}
-            onValueChange={(v) => v && handleStatusChange(v as AssignmentStatus)}
+            onValueChange={(v) => v && handleStatusChange(v as ViewStatus)}
+            disabled={statusSaving}
           >
             <SelectTrigger>
               <SelectValue />
@@ -358,7 +415,7 @@ export default function AssignmentDetailPage() {
               </div>
               <div>
                 <p className="text-sm font-semibold text-foreground">
-                  {formatDate(assignment.dueDate)}
+                  {assignment.dueDate ? formatDate(assignment.dueDate) : '--'}
                 </p>
                 <p className="text-xs text-muted-foreground">
                   {t('school.assignments.stat.due_date')}
@@ -391,7 +448,8 @@ export default function AssignmentDetailPage() {
 
       <Separator className="mb-6" />
 
-      {/* Submissions Table */}
+      {/* Submissions Table (read-only: marking happens through the marking
+          workflow, and no submission-grading endpoint exists yet) */}
       <Card>
         <CardHeader>
           <CardTitle>{t('school.assignments.submissions.title')}</CardTitle>
@@ -418,17 +476,14 @@ export default function AssignmentDetailPage() {
                   <th className="pb-3 pr-4 font-medium text-muted-foreground">
                     {t('school.assignments.col.score')}
                   </th>
-                  <th className="pb-3 pr-4 font-medium text-muted-foreground">
-                    {t('school.assignments.col.feedback')}
-                  </th>
                   <th className="pb-3 font-medium text-muted-foreground">
-                    {t('school.assignments.col.actions')}
+                    {t('school.assignments.col.feedback')}
                   </th>
                 </tr>
               </thead>
               <tbody>
                 {assignment.submissions.map((sub) => (
-                  <tr key={sub.studentId} className="border-b border-border/50 last:border-0">
+                  <tr key={sub.id} className="border-b border-border/50 last:border-0">
                     <td className="py-3 pr-4">
                       <span className="font-medium text-foreground">{sub.studentName}</span>
                     </td>
@@ -451,17 +506,7 @@ export default function AssignmentDetailPage() {
                       )}
                     </td>
                     <td className="py-3 pr-4">
-                      {editingStudentId === sub.studentId ? (
-                        <Input
-                          type="number"
-                          min={0}
-                          max={100}
-                          value={editScore}
-                          onChange={(e) => setEditScore(e.target.value)}
-                          className="w-20 h-8"
-                          placeholder={t('school.assignments.grade.placeholder')}
-                        />
-                      ) : sub.score !== undefined ? (
+                      {sub.score !== null ? (
                         <span
                           className={cn(
                             'font-semibold tabular-nums',
@@ -474,23 +519,8 @@ export default function AssignmentDetailPage() {
                         <span className="text-xs text-muted-foreground">--</span>
                       )}
                     </td>
-                    <td className="py-3 pr-4">
-                      {editingStudentId === sub.studentId ? (
-                        <div className="flex items-start gap-1.5">
-                          <Textarea
-                            value={editFeedback}
-                            onChange={(e) => setEditFeedback(e.target.value)}
-                            className="min-h-[60px] text-xs"
-                            placeholder={t('school.assignments.feedback.placeholder')}
-                          />
-                          <DictationButton
-                            onText={(text) =>
-                              setEditFeedback((v) => (v ? v.trimEnd() + ' ' : '') + text)
-                            }
-                            iconOnly
-                          />
-                        </div>
-                      ) : sub.feedback ? (
+                    <td className="py-3">
+                      {sub.feedback ? (
                         <span className="flex items-center gap-1 text-xs text-muted-foreground max-w-[200px] truncate">
                           <MessageSquare className="h-3 w-3 shrink-0" />
                           {sub.feedback}
@@ -498,45 +528,6 @@ export default function AssignmentDetailPage() {
                         </span>
                       ) : (
                         <span className="text-xs text-muted-foreground">--</span>
-                      )}
-                    </td>
-                    <td className="py-3">
-                      {editingStudentId === sub.studentId ? (
-                        <div className="flex items-center gap-1">
-                          <Button size="sm" onClick={handleSaveGrade}>
-                            {t('school.assignments.action.save')}
-                          </Button>
-                          <Button
-                            size="sm"
-                            variant="ghost"
-                            onClick={() => setEditingStudentId(null)}
-                          >
-                            {t('school.assignments.action.cancel')}
-                          </Button>
-                        </div>
-                      ) : (
-                        <div className="flex items-center gap-1">
-                          {sub.status === 'pending' && (
-                            <Button
-                              size="sm"
-                              variant="outline"
-                              onClick={() => handleMarkSubmitted(sub.studentId)}
-                            >
-                              {t('school.assignments.action.mark_submitted')}
-                            </Button>
-                          )}
-                          {(sub.status === 'submitted' || sub.status === 'graded') && (
-                            <Button
-                              size="sm"
-                              variant="outline"
-                              onClick={() => handleStartGrading(sub)}
-                            >
-                              {sub.status === 'graded'
-                                ? t('school.assignments.action.edit_grade')
-                                : t('school.assignments.action.grade')}
-                            </Button>
-                          )}
-                        </div>
                       )}
                     </td>
                   </tr>

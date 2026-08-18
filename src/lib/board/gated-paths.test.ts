@@ -89,7 +89,7 @@ describe('isBoardSpecificPath - routes whose content is board-filtered', () => {
     '/marking/submit',
     '/toolkit',
     '/dashboard',
-    '/dashboard/progress',
+    '/dashboard/analytics',
   ]
 
   for (const path of mustGate) {

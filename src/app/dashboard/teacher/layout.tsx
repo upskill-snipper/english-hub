@@ -21,48 +21,10 @@ const navItems = [
       </svg>
     ),
   },
-  {
-    labelKey: 'teacher.nav.students',
-    href: '/dashboard/teacher/students',
-    icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"
-        />
-      </svg>
-    ),
-  },
-  {
-    labelKey: 'teacher.nav.assignments',
-    href: '/dashboard/teacher/assignments',
-    icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
-        />
-      </svg>
-    ),
-  },
-  {
-    labelKey: 'teacher.nav.analytics',
-    href: '/dashboard/teacher/analytics',
-    icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-        />
-      </svg>
-    ),
-  },
+  // 2026-08-18: the Students, Assignments and Analytics entries were
+  // removed with their pages - all three were hardcoded mock dashboards
+  // (invented pupils, no-op controls). Class management lives in the real
+  // school workspace at /school; this tree is the individual-teacher hub.
   {
     labelKey: 'teacher.nav.resources',
     href: '/dashboard/teacher/resources',
@@ -218,38 +180,10 @@ export default function TeacherLayout({ children }: { children: React.ReactNode 
             {t('teacher.layout.topbar_title')}
           </p>
         </header>
-        <div
-          role="status"
-          className="mx-4 lg:mx-8 mt-4 flex items-start gap-3 rounded-xl border border-amber-500/40 bg-amber-500/10 px-5 py-4"
-        >
-          <svg
-            className="h-5 w-5 shrink-0 text-amber-600 mt-0.5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M12 9v2m0 4h.01M5 19h14a2 2 0 001.84-2.75L13.73 4a2 2 0 00-3.46 0L3.17 16.25A2 2 0 005 19z"
-            />
-          </svg>
-          <div className="text-sm text-foreground">
-            <p className="font-semibold">{t('teacher.layout.preview_title')}</p>
-            <p className="mt-1 text-muted-foreground">
-              {t('teacher.layout.preview_body_before')}{' '}
-              <a
-                href="mailto:info@upskillenergy.com"
-                className="underline underline-offset-2 font-medium text-foreground hover:text-primary"
-              >
-                info@upskillenergy.com
-              </a>
-              {t('teacher.layout.preview_body_after')}
-            </p>
-          </div>
-        </div>
+        {/* 2026-08-18: the amber "sample data preview" banner is gone with
+            the sample data it disclosed - every surviving surface in this
+            tree is real. It also pointed teachers at the operating
+            company's energy-brand mailbox, which confused school staff. */}
         <main className="flex-1 p-4 lg:p-8 overflow-auto">{children}</main>
       </div>
     </div>
