@@ -526,7 +526,7 @@ export default async function CookiePolicyPage() {
           <h2 className="text-xl font-semibold text-foreground">{s10H2}</h2>
           <p className="mt-2 text-muted-foreground leading-relaxed">
             {s10PPre}
-            <Link href="/privacy-policy" className="underline hover:text-foreground">
+            <Link href="/legal/privacy" className="underline hover:text-foreground">
               {s10PLink}
             </Link>
             .

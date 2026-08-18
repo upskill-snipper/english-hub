@@ -209,7 +209,7 @@ const studyTools = [
   {
     titleKey: 'igcse.tool.toolkit.title',
     descKey: 'igcse.tool.toolkit.desc',
-    href: '/toolkit',
+    href: '/revision',
     icon: Wrench,
   },
 ]
@@ -242,7 +242,7 @@ const examResources = [
   {
     titleKey: 'edexcel.lit.exam.syllabus.title',
     descKey: 'edexcel.lit.exam.syllabus.desc',
-    href: '/igcse/edexcel/syllabus',
+    href: '/igcse/edexcel',
     icon: ScrollText,
   },
 ]

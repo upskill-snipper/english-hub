@@ -2,7 +2,6 @@ import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
-import { InfographicBanner } from '@/components/marketing/InfographicBanner'
 import { BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/json-ld'
 import {
   BookOpen,
@@ -152,12 +151,10 @@ export default async function ForStudentsPage() {
           { name: 'For Students', url: 'https://theenglishhub.app/for-students' },
         ]}
       />
-      {/* Infographic banner - one-glance product summary for students */}
-      {/* TODO(designer): regenerate /infographics/for-students.png to remove "Aanya, Student" testimonial */}
-      <InfographicBanner
-        src="/infographics/for-students.png"
-        alt="Infographic: GCSE and IGCSE English revision in one place. Shows progress toward goals, skills being built (reading, writing, listening, speaking), all-in-one learning, personalised recommendations, progress tracking, and real-world confidence."
-      />
+      {/* Infographic banner removed 2026-08-18: the PNG carried an invented
+          "Aanya, Student" testimonial (see the old designer TODO) - invented
+          testimonials are banned on this product. Reinstate only with a
+          regenerated image free of fabricated people or numbers. */}
 
       {/* Hero + CTAs */}
       <section className="relative overflow-hidden pt-10 pb-16 sm:pt-14 sm:pb-20">

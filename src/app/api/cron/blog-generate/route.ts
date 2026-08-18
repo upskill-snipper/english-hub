@@ -221,6 +221,22 @@ function runQualityChecks(
   // House style: no em dashes anywhere in the authored post.
   if (raw.includes('—')) failures.push('contains an em dash (house style forbids em dashes)')
 
+  // MDX validity: HTML comments are invalid MDX (`{/* */}` is the MDX
+  // comment form). 19 posts shipped with `<!-- -->` markers and collapsed
+  // to empty shells at render time (Aug 2026); with check-mdx-compile.mjs
+  // now in prebuild, one bad post would block every deploy. Reject at the
+  // gate so it never reaches a PR. Raw `{`/`}` in prose is the other
+  // common compile-breaker (MDX parses it as a JSX expression).
+  if (body.includes('<!--')) {
+    failures.push('contains an HTML comment (invalid MDX - use {/* ... */} or remove)')
+  }
+  const bodyOutsideCode = body
+    .replace(/```[\s\S]*?```/g, '') // fenced code blocks
+    .replace(/`[^`\n]*`/g, '') // inline code spans
+  if (/[{}]/.test(bodyOutsideCode)) {
+    failures.push('contains a raw { or } outside code (MDX parses this as a JSX expression)')
+  }
+
   // Duplicate / near-duplicate against the existing corpus.
   for (const e of existing) {
     if (e.title && e.title === title)

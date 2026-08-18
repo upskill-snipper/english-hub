@@ -196,7 +196,7 @@ export default async function AiExplainerPage() {
           </ul>
           <p className="text-muted-foreground leading-relaxed mt-3">
             For full details on how we handle your data, see our{' '}
-            <Link href="/privacy-policy" className="underline text-foreground">
+            <Link href="/legal/privacy" className="underline text-foreground">
               Privacy Policy
             </Link>
             .

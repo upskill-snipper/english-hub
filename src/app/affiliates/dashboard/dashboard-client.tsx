@@ -976,8 +976,8 @@ function LinksCard({ links, totalClicks }: { links: AffiliateLink[]; totalClicks
               link{links.length === 1 ? '' : 's'}
             </p>
           </div>
-          <Button variant="outline" size="sm" render={<Link href="/affiliate/links" />}>
-            Create a custom link
+          <Button variant="outline" size="sm" render={<Link href="/affiliates/resources" />}>
+            Get links & assets
             <ArrowUpRight className="h-3.5 w-3.5" />
           </Button>
         </div>

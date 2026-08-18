@@ -102,14 +102,25 @@ export const PRICING = {
     'Indicative founder pricing. Final pricing depends on school size, scope and rollout requirements.',
   SCHOOL_PILOT_LENGTH: 'one term (around 8-12 weeks)',
 
-  // ── Urgency messaging (shown on every price banner) ───────────────
-  /** Month the standard pricing takes effect. Used for urgency copy. */
-  PRICE_INCREASE_DATE: 'August 2026',
-  /** Ready-made urgency line for price banners. */
-  PRICE_INCREASE_MESSAGE: 'Prices increasing August 2026',
+  // ── Early-access messaging (shown on every price banner) ──────────
+  //
+  // 2026-08-18 honesty pass: the previous copy hard-coded "August 2026"
+  // as the standard-pricing rollover ("Prices increasing August 2026",
+  // "Standard Pricing (from August 2026)"). August 2026 arrived without a
+  // checkout price change, so every banner was advertising a deadline that
+  // had already passed - a credibility and (UK CAP code) compliance risk.
+  // Copy is now date-neutral. When the founder decides to actually roll
+  // over to standard pricing: update the Stripe price env vars, move
+  // `PRICE_INCREASE_DATE` in src/lib/pricing/grandfather.ts to the real
+  // cutover, and (optionally) reintroduce a dated line here.
+  /** When standard pricing takes effect. Deliberately undated. */
+  PRICE_INCREASE_DATE: 'when the founding period closes',
+  /** Ready-made line for price banners - honest, no fabricated deadline. */
+  PRICE_INCREASE_MESSAGE:
+    'Founding-member pricing - lock in your rate before standard pricing applies',
   EARLY_ACCESS_LABEL: 'Early Access - Founding Price',
   FOUNDING_SCHOOLS_LABEL: 'Founding Schools Programme',
-  STANDARD_PRICE_LABEL: 'Standard Pricing (from August 2026)',
+  STANDARD_PRICE_LABEL: 'Planned standard pricing',
 
   // ── Misc ────────────────────────────────────────────────────────────
   FREE_USES_PER_FEATURE: 3,

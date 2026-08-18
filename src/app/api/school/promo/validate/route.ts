@@ -43,11 +43,15 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   const normalized = promoCode.trim().toUpperCase()
 
   // ── FOUNDER code - hardcoded special case ────────────────────────────────
+  // NOTE (2026-08-18): accessUntil expires 31 Aug 2026 - a school redeeming
+  // FOUNDER today gets days, not a pilot. Founder decision needed: extend
+  // this date or retire the code. Copy is date-neutral so the UI doesn't
+  // advertise the stale deadline meanwhile.
   if (normalized === 'FOUNDER') {
     return NextResponse.json({
       valid: true,
       discount: '100%',
-      description: 'Free access until August 2026',
+      description: 'Founding Schools free pilot access',
       accessUntil: '2026-08-31',
     })
   }

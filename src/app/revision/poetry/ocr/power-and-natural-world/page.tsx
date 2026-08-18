@@ -22,6 +22,10 @@ interface Poem {
   slug: string
   publicDomain: boolean
   hook: string
+  // Full study page for this poem, verified to exist. Most public-domain
+  // poems have no page in this cluster, so they borrow the same poem's page
+  // elsewhere on the site; poems with no page anywhere stay unlinked.
+  studyHref?: string
 }
 
 const POEMS: Poem[] = [
@@ -30,6 +34,7 @@ const POEMS: Poem[] = [
     poet: 'Percy Bysshe Shelley',
     slug: 'ozymandias',
     publicDomain: true,
+    studyHref: '/revision/poetry/power-and-conflict/ozymandias',
     hook: 'A shattered statue in the desert reveals the futility of human power.',
   },
   {
@@ -37,6 +42,7 @@ const POEMS: Poem[] = [
     poet: 'William Blake',
     slug: 'london',
     publicDomain: true,
+    studyHref: '/revision/poetry/power-and-conflict/london',
     hook: 'A walk through London exposes suffering and institutional oppression.',
   },
   {
@@ -44,6 +50,7 @@ const POEMS: Poem[] = [
     poet: 'Alfred Lord Tennyson',
     slug: 'the-eagle',
     publicDomain: true,
+    studyHref: '/revision/poetry/ocr/power-and-natural-world/the-eagle',
     hook: 'A six-line miniature portrait of a majestic bird poised above the sea.',
   },
   {
@@ -86,9 +93,13 @@ const POEMS: Poem[] = [
     poet: 'William Wordsworth',
     slug: 'composed-upon-westminster-bridge',
     publicDomain: true,
+    studyHref: '/revision/poetry/edexcel/time-and-place/composed-upon-westminster-bridge',
     hook: 'Wordsworth, a country poet, is silenced by the early-morning beauty of London.',
   },
   {
+    // No studyHref: the existing Prelude pages cover the 1850 extract used by
+    // AQA and Eduqas, whereas OCR prescribes the materially different 1799
+    // two-part text, so there is no correct page to link to.
     title: 'The Prelude (extract) - 1799 two-part Prelude (Part First, lines 81-129)',
     poet: 'William Wordsworth',
     slug: 'the-prelude',
@@ -201,22 +212,18 @@ export default function OCRPowerAndNaturalWorldPage() {
           {POEMS.map((poem) => (
             <Link
               key={poem.slug}
-              href={
-                poem.publicDomain
-                  ? `/revision/poetry/ocr/power-and-natural-world/${poem.slug}`
-                  : '#'
-              }
+              href={poem.studyHref ?? '#'}
               className={`group relative flex flex-col rounded-2xl border border-border/60 bg-card p-5 transition-all duration-200 ${
-                poem.publicDomain
+                poem.studyHref
                   ? 'hover:border-border hover:shadow-card-hover'
                   : 'cursor-not-allowed opacity-70'
               }`}
               onClick={(e) => {
-                if (!poem.publicDomain) e.preventDefault()
+                if (!poem.studyHref) e.preventDefault()
               }}
             >
               <div className="absolute right-4 top-4">
-                {poem.publicDomain ? (
+                {poem.studyHref ? (
                   <CheckCircle2 className="size-4 text-emerald-400" />
                 ) : (
                   <Lock className="size-4 text-muted-foreground/50" />
@@ -233,7 +240,7 @@ export default function OCRPowerAndNaturalWorldPage() {
 
               <div className="mt-3">
                 <Badge variant="outline" className="text-[0.65rem]">
-                  {poem.publicDomain
+                  {poem.studyHref
                     ? t('poetry_hub.ocr.full_study')
                     : t('poetry_hub.ocr.quotes_only')}
                 </Badge>

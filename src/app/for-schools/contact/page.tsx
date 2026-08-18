@@ -176,8 +176,8 @@ function FoundingSchoolsPanel() {
             <li className="flex items-start gap-3">
               <Gift className="h-4 w-4 mt-0.5 shrink-0 text-clay-600" />
               <span className="text-sm text-muted-foreground">
-                <span className="font-medium text-foreground">Free access until August 2026</span> -
-                no payment required to get started
+                <span className="font-medium text-foreground">Free pilot period</span> - no payment
+                required to get started
               </span>
             </li>
             <li className="flex items-start gap-3">
@@ -214,13 +214,15 @@ function FoundingSchoolsPanel() {
             <p className="text-sm font-semibold text-amber-700">
               Founding Schools: <span className="text-foreground">£4,000/year</span>{' '}
               <span className="text-muted-foreground/80">
-                (Standard <span className="line-through">£8,000</span> from August 2026)
+                (planned standard <span className="line-through">£8,000</span>)
               </span>
             </p>
             <p className="text-xs text-amber-700/90 font-medium">
-              First 10 schools only - additional schools welcome at Standard rates.
+              First 10 schools only - additional schools welcome at standard rates.
             </p>
-            <p className="text-[11px] text-amber-700">⚡ Prices increasing August 2026.</p>
+            <p className="text-[11px] text-amber-700">
+              ⚡ Founding rate locked for the life of your agreement.
+            </p>
           </div>
         </CardContent>
       </Card>
@@ -289,7 +291,7 @@ function SuccessScreen({ t }: { t: (key: string) => string }) {
         </h2>
         <p className="text-muted-foreground">{t('for_schools_contact.success.body')}</p>
       </div>
-      <Button render={<Link href="/for-schools" />} variant="outline">
+      <Button render={<Link href="/schools" />} variant="outline">
         <ChevronLeft className="h-4 w-4" />
         {t('for_schools_contact.back_to_schools')}
       </Button>
@@ -386,7 +388,7 @@ export default function BookACallPage() {
         {/* Header */}
         <div className="mb-10 text-center">
           <Link
-            href="/for-schools"
+            href="/schools"
             className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground mb-4 transition-colors"
           >
             <ChevronLeft className="h-4 w-4" />

@@ -34,9 +34,9 @@ export const MKT_SCHOOLS_DICTIONARY: Record<string, { en: string; ar: string; es
     es: 'The English Hub para colegios: evaluación, intervención e informes',
   },
   'mkt.schools.meta.description': {
-    en: 'A school-ready English platform helping teachers save time, students improve faster and leaders understand where support is needed across English Language, Literature and EAL.',
-    ar: 'منصّة إنجليزي جاهزة للمدارس تساعد المعلّمين يوفّرون وقتهم، والطلاب يتحسّنون أسرع، والقادة يفهمون وين يحتاج الدعم - في English Language وLiterature وEAL.',
-    es: 'Una plataforma de inglés lista para colegios que ayuda a los profesores a ahorrar tiempo, a los estudiantes a mejorar más rápido y a los directivos a entender dónde se necesita apoyo en English Language, Literature y EAL.',
+    en: 'A school-ready English platform helping teachers save time, students get more practice with instant feedback and leaders understand where support is needed across English Language, Literature and EAL.',
+    ar: 'منصّة إنجليزي جاهزة للمدارس تساعد المعلّمين يوفّرون وقتهم، والطلاب ياخذون تمارين أكثر مع ملاحظات فورية، والقادة يفهمون وين يحتاج الدعم - في English Language وLiterature وEAL.',
+    es: 'Una plataforma de inglés lista para colegios que ayuda a los profesores a ahorrar tiempo, a los estudiantes a practicar más con feedback instantáneo y a los directivos a entender dónde se necesita apoyo en English Language, Literature y EAL.',
   },
   'mkt.schools.meta.og_title': {
     en: 'The English Hub for Schools',
@@ -73,9 +73,9 @@ export const MKT_SCHOOLS_DICTIONARY: Record<string, { en: string; ar: string; es
     es: 'Inteligencia, evaluación e intervención del departamento de inglés en una sola plataforma',
   },
   'mkt.schools.hero.lede': {
-    en: 'A school-ready platform helping teachers save time, students improve faster and leaders understand where support is needed.',
-    ar: 'منصّة جاهزة للمدارس تساعد المعلّمين يوفّرون وقتهم، والطلاب يتحسّنون أسرع، والقادة يفهمون وين يحتاج الدعم.',
-    es: 'Una plataforma lista para colegios que ayuda a los profesores a ahorrar tiempo, a los estudiantes a mejorar más rápido y a los directivos a entender dónde se necesita apoyo.',
+    en: 'A school-ready platform helping teachers save time, students get more practice with instant feedback and leaders understand where support is needed.',
+    ar: 'منصّة جاهزة للمدارس تساعد المعلّمين يوفّرون وقتهم، والطلاب ياخذون تمارين أكثر مع ملاحظات فورية، والقادة يفهمون وين يحتاج الدعم.',
+    es: 'Una plataforma lista para colegios que ayuda a los profesores a ahorrar tiempo, a los estudiantes a practicar más con feedback instantáneo y a los directivos a entender dónde se necesita apoyo.',
   },
   'mkt.schools.hero.cta_primary': {
     en: 'Start a 90-Day School Pilot',

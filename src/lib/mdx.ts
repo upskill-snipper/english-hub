@@ -47,7 +47,15 @@ export function resolveContentDir(relativeDir: string): string {
  * Returns an empty array if the directory does not exist - sibling
  * surfaces under construction can still build before any content lands.
  * Hidden files (starting with `.`) and non-`.mdx` files are ignored.
+ *
+ * Locale variant files (`<slug>.ar.mdx`, `<slug>.es.mdx`) are NOT slugs -
+ * they are translations of the base `<slug>.mdx`, looked up explicitly by
+ * `getBlogPost(slug, locale)`. Listing them as slugs published 40 phantom
+ * `/blog/<slug>.ar` URLs (Arabic body inside English chrome), doubled every
+ * card on the blog index, and put the `.ar` URLs in the sitemap.
  */
+const LOCALE_VARIANT_SUFFIX = /\.(?:ar|es)$/
+
 export function listMdxSlugs(relativeDir: string): string[] {
   const dir = resolveContentDir(relativeDir)
   if (!fs.existsSync(dir)) return []
@@ -55,7 +63,13 @@ export function listMdxSlugs(relativeDir: string): string[] {
     .readdirSync(dir)
     .filter((entry) => entry.endsWith('.mdx') && !entry.startsWith('.'))
     .map((entry) => entry.replace(/\.mdx$/, ''))
+    .filter((slug) => !LOCALE_VARIANT_SUFFIX.test(slug))
     .sort()
+}
+
+/** True when `content/<relativeDir>/<slug>.mdx` exists. No read, no parse. */
+export function mdxFileExists(relativeDir: string, slug: string): boolean {
+  return fs.existsSync(path.join(resolveContentDir(relativeDir), `${slug}.mdx`))
 }
 
 /**

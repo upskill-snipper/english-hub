@@ -2216,9 +2216,9 @@ export const B15_DEMO_DICTIONARY: Record<string, { en: string; ar: string; es?: 
     es: 'Esta es una de más de 300 lecciones listas para usar.',
   },
   'demo.b15.lessons.cta_body': {
-    en: 'Start a 7-day free trial to access them all - fully editable, printable, and aligned to your exam board. Card required, cancel before day 7.',
-    ar: 'ابدأ تجربة مجانية 7 أيام للوصول إلى الكل - قابل للتعديل والطباعة ومتوافق مع بوردك. تتطلب بطاقة، ألغِ قبل اليوم السابع.',
-    es: 'Empieza una prueba gratuita de 7 días para acceder a todas: totalmente editables, imprimibles y alineadas con tu junta examinadora. Se requiere tarjeta, cancela antes del día 7.',
+    en: 'Start a 7-day free trial to access them all - fully editable, printable, and aligned to your exam board. No card required to start.',
+    ar: 'ابدأ تجربة مجانية 7 أيام للوصول إلى الكل - قابل للتعديل والطباعة ومتوافق مع بوردك. ما تحتاج بطاقة للبداية.',
+    es: 'Empieza una prueba gratuita de 7 días para acceder a todas: totalmente editables, imprimibles y alineadas con tu junta examinadora. Sin tarjeta para empezar.',
   },
   'demo.b15.lessons.cta_btn': {
     en: 'Start 7-day trial',

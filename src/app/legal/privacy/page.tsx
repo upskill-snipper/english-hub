@@ -859,7 +859,7 @@ export default async function PrivacyPolicyPage() {
 
         <p className="mt-4">
           {s5MOutPre}
-          <Link href="/legal/safeguarding" className="underline">
+          <Link href="/safeguarding" className="underline">
             {s5MOutLink}
           </Link>
           {s5MOutPost}

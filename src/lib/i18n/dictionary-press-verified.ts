@@ -197,15 +197,15 @@ export const PRESS_AND_VERIFIED_FIX: Dictionary = {
   'press.product.pricing.h3': { en: 'Pricing', ar: 'الأسعار', es: 'Precios' },
   'press.product.pricing.pupil_strong': { en: 'Students', ar: 'الطلاب', es: 'Estudiantes' },
   'press.product.pricing.pupil_body': {
-    en: 'Early Access £3.99/month or £29.99/year (Standard £7.99/month or £69.99/year from August 2026). A 7-day free trial applies to all paid plans.',
-    ar: 'الوصول المبكر £3.99 بالشهر أو £29.99 بالسنة (السعر العادي £7.99 بالشهر أو £69.99 بالسنة من أغسطس 2026). تجربة مجانية 7 أيام على كل الباقات المدفوعة.',
-    es: 'Acceso anticipado £3.99/mes o £29.99/año (Estándar £7.99/mes o £69.99/año desde agosto de 2026). Una prueba gratuita de 7 días se aplica a todos los planes de pago.',
+    en: 'Early Access £3.99/month or £29.99/year (planned standard £7.99/month or £69.99/year). A 7-day free trial applies to all paid plans.',
+    ar: 'الوصول المبكر £3.99 بالشهر أو £29.99 بالسنة (السعر العادي المخطط له £7.99 بالشهر أو £69.99 بالسنة). تجربة مجانية 7 أيام على كل الباقات المدفوعة.',
+    es: 'Acceso anticipado £3.99/mes o £29.99/año (estándar previsto £7.99/mes o £69.99/año). Una prueba gratuita de 7 días se aplica a todos los planes de pago.',
   },
   'press.product.pricing.teacher_strong': { en: 'Teachers', ar: 'المعلّمون', es: 'Profesores' },
   'press.product.pricing.teacher_body': {
-    en: 'Early Access £6.99/month or £67.99/year (Standard £11.99/month or £99/year from August 2026). 3 free uses per premium tool with no card required.',
-    ar: 'الوصول المبكر £6.99 بالشهر أو £67.99 بالسنة (السعر العادي £11.99 بالشهر أو £99 بالسنة من أغسطس 2026). 3 استخدامات مجانية لكل أداة مميّزة بدون الحاجة لبطاقة.',
-    es: 'Acceso anticipado £6.99/mes o £67.99/año (Estándar £11.99/mes o £99/año desde agosto de 2026). 3 usos gratuitos por herramienta premium sin necesidad de tarjeta.',
+    en: 'Early Access £6.99/month or £67.99/year (planned standard £11.99/month or £99/year). 3 free uses per premium tool with no card required.',
+    ar: 'الوصول المبكر £6.99 بالشهر أو £67.99 بالسنة (السعر العادي المخطط له £11.99 بالشهر أو £99 بالسنة). 3 استخدامات مجانية لكل أداة مميّزة بدون الحاجة لبطاقة.',
+    es: 'Acceso anticipado £6.99/mes o £67.99/año (estándar previsto £11.99/mes o £99/año). 3 usos gratuitos por herramienta premium sin necesidad de tarjeta.',
   },
   'press.product.pricing.founding_strong': { en: 'Schools', ar: 'المدارس', es: 'Colegios' },
   'press.product.pricing.founding_body': {

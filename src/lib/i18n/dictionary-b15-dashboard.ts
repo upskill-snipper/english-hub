@@ -1206,9 +1206,9 @@ export const B15_DASHBOARD_DICTIONARY: Record<string, { en: string; ar: string; 
     es: 'Guía de diferenciación para Inglés',
   },
   'dashboard.differentiation.subtitle': {
-    en: 'Practical strategies for differentiating English lessons by ability, need, and learning style. Includes PP, SEND, and EAL guidance aligned to Ofsted expectations.',
-    ar: 'استراتيجيات عملية لتمايز دروس اللغة الإنجليزية حسب القدرة والاحتياج وأسلوب التعلم. يشمل التوجيه الخاص بـ PP وSEND وEAL وفق توقعات Ofsted.',
-    es: 'Estrategias prácticas para diferenciar las clases de inglés según la capacidad, las necesidades y el estilo de aprendizaje. Incluye orientación sobre PP, SEND y EAL alineada con las expectativas de Ofsted.',
+    en: 'Practical strategies for differentiating English lessons by ability, need, and learning style. Includes PP, SEND, and EAL guidance.',
+    ar: 'استراتيجيات عملية لتمايز دروس اللغة الإنجليزية حسب القدرة والاحتياج وأسلوب التعلم. يشمل التوجيه الخاص بـ PP وSEND وEAL.',
+    es: 'Estrategias prácticas para diferenciar las clases de inglés según la capacidad, las necesidades y el estilo de aprendizaje. Incluye orientación sobre PP, SEND y EAL.',
   },
   'dashboard.differentiation.by_ability': {
     en: 'Differentiation by Ability',

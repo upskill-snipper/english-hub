@@ -56,15 +56,18 @@ describe('resolveTierAtSignup', () => {
   })
 
   it('returns standard after the rollover', () => {
-    const after = new Date('2026-09-01T00:00:00.000Z')
+    // Derived from the constant so the test survives rollover-date moves
+    // (2026-08-18: date pushed out after August 2026 passed with no real
+    // Stripe price change - see the note in grandfather.ts).
+    const after = new Date(PRICE_INCREASE_DATE.getTime() + 24 * 60 * 60 * 1000)
     expect(resolveTierAtSignup(after)).toBe('standard')
   })
 
-  it('returns early_access for today (pre-Aug-2026 clock)', () => {
-    // Assumes this test runs on the assistant's system clock, which is
-    // pinned pre-rollover per the R-031 pre-launch window.
-    const today = new Date('2026-04-23T12:00:00.000Z')
-    expect(resolveTierAtSignup(today)).toBe('early_access')
+  it('returns early_access for the current clock (pre-rollover window)', () => {
+    // Guard: if this fails, the real-world clock has crossed
+    // PRICE_INCREASE_DATE and the Stripe price env vars + marketing copy
+    // must be rolled over on the same day (or the date pushed out again).
+    expect(resolveTierAtSignup(new Date())).toBe('early_access')
   })
 })
 
@@ -80,7 +83,7 @@ describe('captureGrandfatherFields', () => {
   })
 
   it('captures Standard teacher annual post-rollover (simulated clock)', () => {
-    const now = new Date('2026-08-15T00:00:00.000Z')
+    const now = new Date(PRICE_INCREASE_DATE.getTime() + 24 * 60 * 60 * 1000)
     const cap = captureGrandfatherFields('ANNUAL', 'teacher', now)
     expect(cap).toEqual({
       grandfatheredPriceMinor: p(PRICING.TEACHER_ANNUAL_STANDARD),
@@ -97,8 +100,10 @@ describe('renewal preservation contract', () => {
   // different tiers, proving that the webhook MUST preserve the earlier
   // captured value on RENEWAL rather than recompute.
   it('would produce a different tier at renewal if recomputed naively', () => {
-    const signup = captureGrandfatherFields('MONTHLY', 'student', new Date('2026-05-01'))
-    const renewal = captureGrandfatherFields('MONTHLY', 'student', new Date('2026-09-01'))
+    const preRollover = new Date(PRICE_INCREASE_DATE.getTime() - 24 * 60 * 60 * 1000)
+    const postRollover = new Date(PRICE_INCREASE_DATE.getTime() + 24 * 60 * 60 * 1000)
+    const signup = captureGrandfatherFields('MONTHLY', 'student', preRollover)
+    const renewal = captureGrandfatherFields('MONTHLY', 'student', postRollover)
     expect(signup.pricingTier).toBe('early_access')
     expect(renewal.pricingTier).toBe('standard')
     expect(signup.grandfatheredPriceMinor).not.toBe(renewal.grandfatheredPriceMinor)

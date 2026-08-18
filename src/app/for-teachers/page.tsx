@@ -11,7 +11,6 @@ import { Separator } from '@/components/ui/separator'
 import { cn } from '@/lib/utils'
 import { TrustBox } from '@/components/trustpilot/TrustBox'
 import { VAT_LABEL } from '@/lib/copy/pricing'
-import { InfographicBanner } from '@/components/marketing/InfographicBanner'
 import { PromoCodePrompt } from '@/components/billing/AffiliateCodeField'
 import { FAQPageJsonLd } from '@/components/seo/json-ld'
 import { useT } from '@/lib/i18n/use-t'
@@ -178,13 +177,10 @@ export default function ForTeachersPage() {
   const resolvedFaqs = faqKeys.map((f) => ({ q: t(f.q), a: t(f.a) }))
   return (
     <main className="min-h-screen bg-background">
-      {/* ================================================================
-          INFOGRAPHIC BANNER - one-glance product summary for teachers
-      ================================================================ */}
-      <InfographicBanner
-        src="/infographics/for-teachers.png"
-        alt="Infographic: powerful AI tools and insights for English teachers - save time, teach with precision, personalise learning, track progress, plan with confidence. Shows class overview, focus areas (vocabulary, structuring writing, reading inference, spelling), AI Lesson Builder, faster lesson planning, and student reports."
-      />
+      {/* Infographic banner removed 2026-08-18: the PNG baked in unevidenced
+          outcome stats ("4.5 hrs saved per week", cohort percentages) -
+          fabricated numbers are banned on this product. Reinstate only with
+          a regenerated image whose numbers are real or labelled sample data. */}
 
       {/* ================================================================
           HERO
@@ -752,6 +748,12 @@ export default function ForTeachersPage() {
                   {t('mkt.teachers.ft.analytics.submitted_on_time')}
                 </p>
               </Card>
+
+              {/* Names and figures above are invented for illustration - a
+                  marketing mockup must never read as real pupil data. */}
+              <p className="text-[11px] text-muted-foreground/70 text-center">
+                Illustrative sample data - names and figures are not real pupils.
+              </p>
             </div>
 
             <div className="order-1 lg:order-2">
@@ -1095,7 +1097,7 @@ export default function ForTeachersPage() {
                 variant="secondary"
                 size="lg"
                 className="w-full text-base h-12"
-                render={<Link href="/for-schools" />}
+                render={<Link href="/schools" />}
               >
                 <Building2 className="w-4 h-4 mr-2" />
                 {t('mkt.teachers.ft.pricing.school.cta')}

@@ -276,12 +276,12 @@ export default async function IeltsHubPage() {
           <div className="flex flex-col items-center gap-6 rounded-2xl border border-sky-500/30 bg-sky-500/[0.06] p-8 text-center sm:flex-row sm:text-left">
             <div className="flex-1">
               <h2 className="text-2xl font-semibold tracking-tight text-sky-600 dark:text-sky-300">
-                Unlimited AI band feedback — {PRICING.CURRENCY}
+                AI band feedback — {PRICING.CURRENCY}
                 {PRICING.IELTS_MONTHLY}/month
               </h2>
               <p className="mt-2 leading-relaxed text-muted-foreground">
-                Unlimited examiner-calibrated feedback on every Writing and Speaking answer. Start
-                with a {PRICING.TRIAL_DAYS}-day free trial — cancel anytime.
+                Examiner-calibrated feedback on your Writing and Speaking answers, every day of your
+                preparation. Start with a {PRICING.TRIAL_DAYS}-day free trial — cancel anytime.
               </p>
             </div>
             <Button

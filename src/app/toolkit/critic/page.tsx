@@ -140,7 +140,7 @@ export default function CriticSimulatorPage() {
           variant="ghost"
           size="sm"
           className="-ml-2 text-muted-foreground"
-          render={<Link href="/toolkit" />}
+          render={<Link href="/revision" />}
         >
           <ArrowLeft className="size-3.5" />
           Back to Toolkit

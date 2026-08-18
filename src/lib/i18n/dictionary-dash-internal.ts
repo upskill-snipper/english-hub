@@ -659,7 +659,7 @@ export const DASH_INTERNAL_DICTIONARY: Dictionary = {
     es: 'Guía de diferenciación para English',
   },
   'dashboard.tr.diff.intro': {
-    en: 'Practical strategies for differentiating English lessons by ability, need, and learning style. Includes PP, SEND, and EAL guidance aligned to Ofsted expectations.',
+    en: 'Practical strategies for differentiating English lessons by ability, need, and learning style. Includes PP, SEND, and EAL guidance.',
     ar: 'استراتيجيات عملية لتمييز دروس الإنجليزي حسب القدرة والاحتياج وأسلوب التعلّم. تشمل إرشادات PP و SEND و EAL متماشية مع متطلبات Ofsted.',
     es: 'Estrategias prácticas para diferenciar las clases de English según la capacidad, las necesidades y el estilo de aprendizaje. Incluye orientación sobre PP, SEND y EAL alineada con las expectativas de Ofsted.',
   },

@@ -39,10 +39,10 @@ export const metadata: Metadata = {
       'How to help your child with GCSE or IGCSE English revision - from picking the right exam board to AI essay feedback they can trust.',
     images: [
       {
-        url: '/api/og?title=Help+your+child+pass+GCSE+English&subtitle=Without+being+an+English+teacher',
+        url: '/api/og?title=Help+your+child+succeed+in+GCSE+English&subtitle=Without+being+an+English+teacher',
         width: 1200,
         height: 630,
-        alt: 'Help your child pass GCSE English - without being an English teacher',
+        alt: 'Help your child succeed in GCSE English - without being an English teacher',
       },
     ],
   },
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     description:
       'How to help your child with GCSE or IGCSE English revision - from picking the right exam board to AI essay feedback they can trust.',
     images: [
-      '/api/og?title=Help+your+child+pass+GCSE+English&subtitle=Without+being+an+English+teacher',
+      '/api/og?title=Help+your+child+succeed+in+GCSE+English&subtitle=Without+being+an+English+teacher',
     ],
   },
 }
@@ -252,7 +252,7 @@ export default async function ForParentsPage() {
               {
                 icon: BookOpen,
                 color: 'text-blue-400 bg-blue-500/10',
-                value: '6',
+                value: '5',
                 label: 'Exam boards covered',
               },
               {
@@ -458,9 +458,9 @@ export default async function ForParentsPage() {
 
               <ul className="space-y-3 mb-8">
                 {[
-                  'Full access to all 13 courses',
-                  '40+ exam-style practice questions',
-                  '295 revision flashcards',
+                  'Full access to every course, KS3 to IGCSE',
+                  'Exam-style practice questions and mock papers',
+                  '2,000+ revision flashcards',
                   'Parent progress dashboard',
                   'Weekly email progress reports',
                   'Weak area alerts & recommendations',
@@ -487,7 +487,7 @@ export default async function ForParentsPage() {
                 {ctaStartTrial}
               </Button>
               <p className="text-center text-xs text-muted-foreground mt-3">
-                Card required for 7-day trial &middot; 3 free demo uses without a card
+                No card required to start &middot; 3 free demo uses before signing up
               </p>
               <p className="text-center text-xs text-muted-foreground mt-2">
                 Or save with the annual plan: {PRICING.CURRENCY}

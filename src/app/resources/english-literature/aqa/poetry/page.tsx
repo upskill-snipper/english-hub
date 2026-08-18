@@ -469,7 +469,8 @@ export default async function AqaPoetryPage() {
           <div className="mt-6 space-y-3">
             {POWER_AND_CONFLICT_POEMS.map((poem) => (
               <div key={poem.slug} id={`pac-${poem.slug}`} className="scroll-mt-20">
-                <PoemRow poem={poem} clusterPath="/resources/poetry/power-and-conflict" />
+                {/* Per-poem analysis pages live under /revision/poetry, not /resources/poetry. */}
+                <PoemRow poem={poem} clusterPath="/revision/poetry/power-and-conflict" />
               </div>
             ))}
           </div>
@@ -489,7 +490,7 @@ export default async function AqaPoetryPage() {
           <div className="mt-6 space-y-3">
             {LOVE_AND_RELATIONSHIPS_POEMS.map((poem) => (
               <div key={poem.slug} id={`lar-${poem.slug}`} className="scroll-mt-20">
-                <PoemRow poem={poem} clusterPath="/resources/poetry/love-and-relationships" />
+                <PoemRow poem={poem} clusterPath="/revision/poetry/love-and-relationships" />
               </div>
             ))}
           </div>

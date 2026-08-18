@@ -1387,9 +1387,16 @@ import { expandedMockExams } from './mock-exams/index'
 import { aqaLitMockExams } from './mock-exams-aqa-lit'
 import { ialMockExams } from './mock-exams-ial'
 
-/** All mock exam papers - original 8 + 6 AQA Lit + 6 WJEC + 6 Edexcel + 6 CAIE + 120 expanded + 4 IAL = 156 total */
-
-export const allMockExamPapers: MockExamPaper[] = [
+/**
+ * All mock exam papers, deduplicated by id (first occurrence wins).
+ *
+ * The aqa-lit-p2-* papers reach this list twice - once via
+ * `aqaLitMockExams` and again inside `expandedMockExams` - which doubled
+ * three cards on /mock-exams and made /mock-exams/[id] ambiguous. Sources
+ * may legitimately overlap as banks grow, so dedupe here at the
+ * aggregation point rather than chasing the import graph.
+ */
+const allSources: MockExamPaper[] = [
   ...mockExamPapers,
   ...aqaLitMockExams,
   ...wjecMockExams,
@@ -1398,6 +1405,17 @@ export const allMockExamPapers: MockExamPaper[] = [
   ...expandedMockExams,
   ...ialMockExams,
 ]
+
+export const allMockExamPapers: MockExamPaper[] = (() => {
+  const seen = new Set<string>()
+  const unique: MockExamPaper[] = []
+  for (const paper of allSources) {
+    if (seen.has(paper.id)) continue
+    seen.add(paper.id)
+    unique.push(paper)
+  }
+  return unique
+})()
 
 // ─── Helper Functions ────────────────────────────────────────────────────────
 

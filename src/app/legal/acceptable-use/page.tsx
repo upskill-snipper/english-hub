@@ -293,7 +293,7 @@ export default async function AcceptableUsePolicyPage() {
 
       <p className="text-sm text-muted-foreground italic">
         This Acceptable Use Policy should be read alongside our{' '}
-        <Link href="/privacy-policy">{_tr(`Privacy Policy`)}</Link>,{' '}
+        <Link href="/legal/privacy">{_tr(`Privacy Policy`)}</Link>,{' '}
         <Link href="/terms">{_tr(`Terms and Conditions`)}</Link>, and{' '}
         <Link href="/cookie-policy">Cookie Policy</Link>.
       </p>

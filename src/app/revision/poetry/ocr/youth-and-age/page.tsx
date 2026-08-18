@@ -14,6 +14,10 @@ interface Poem {
   slug: string
   publicDomain: boolean
   hook: string
+  // Full study page for this poem, verified to exist. Some public-domain
+  // poems have no page in this cluster, so they borrow the same poem's page
+  // elsewhere on the site; poems with no page anywhere stay unlinked.
+  studyHref?: string
 }
 
 const POEMS: Poem[] = [
@@ -36,6 +40,7 @@ const POEMS: Poem[] = [
     poet: 'Alfred Lord Tennyson',
     slug: 'crossing-the-bar',
     publicDomain: true,
+    studyHref: '/revision/poetry/ocr/youth-and-age/crossing-the-bar',
     hook: "Tennyson's calm meditation on death as a peaceful sea voyage out to meet his Pilot.",
   },
   {
@@ -43,6 +48,7 @@ const POEMS: Poem[] = [
     poet: 'John Keats',
     slug: 'when-i-have-fears',
     publicDomain: true,
+    studyHref: '/revision/poetry/ocr/youth-and-age/when-i-have-fears',
     hook: 'Keats confronts his terror of dying before he can write all the poetry inside him.',
   },
   {
@@ -57,6 +63,7 @@ const POEMS: Poem[] = [
     poet: 'D.H. Lawrence',
     slug: 'piano',
     publicDomain: true,
+    studyHref: '/igcse/edexcel/poetry/piano',
     hook: "A song carries the speaker back to the lost intimacy of childhood by his mother's knee.",
   },
   {
@@ -193,18 +200,18 @@ export default function OCRYouthAndAgePage() {
           {POEMS.map((poem) => (
             <Link
               key={poem.slug}
-              href={poem.publicDomain ? `/revision/poetry/ocr/youth-and-age/${poem.slug}` : '#'}
+              href={poem.studyHref ?? '#'}
               className={`group relative flex flex-col rounded-2xl border border-border/60 bg-card p-5 transition-all duration-200 ${
-                poem.publicDomain
+                poem.studyHref
                   ? 'hover:border-border hover:shadow-card-hover'
                   : 'cursor-not-allowed opacity-70'
               }`}
               onClick={(e) => {
-                if (!poem.publicDomain) e.preventDefault()
+                if (!poem.studyHref) e.preventDefault()
               }}
             >
               <div className="absolute right-4 top-4">
-                {poem.publicDomain ? (
+                {poem.studyHref ? (
                   <CheckCircle2 className="size-4 text-emerald-400" />
                 ) : (
                   <Lock className="size-4 text-muted-foreground/50" />
@@ -221,7 +228,7 @@ export default function OCRYouthAndAgePage() {
 
               <div className="mt-3">
                 <Badge variant="outline" className="text-[0.65rem]">
-                  {poem.publicDomain
+                  {poem.studyHref
                     ? t('poetry_hub.ocr.full_study')
                     : t('poetry_hub.ocr.quotes_only')}
                 </Badge>

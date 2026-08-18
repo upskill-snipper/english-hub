@@ -956,7 +956,7 @@ function RegisterForm() {
                 </Link>{' '}
                 {t('auth.register.terms_and')}{' '}
                 <Link
-                  href="/privacy-policy"
+                  href="/legal/privacy"
                   className="underline underline-offset-2 hover:text-foreground transition-colors"
                 >
                   {t('legal.privacy_policy')}

@@ -90,7 +90,7 @@ export default function PersonalisedRevisionPage() {
         <div className="border-b border-border bg-card">
           <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
             <Link
-              href="/toolkit"
+              href="/revision"
               className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary mb-6"
             >
               <ArrowLeft className="h-4 w-4" />
@@ -133,7 +133,7 @@ export default function PersonalisedRevisionPage() {
       <section className="border-b border-border bg-card">
         <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
           <Link
-            href="/toolkit"
+            href="/revision"
             className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary mb-6"
           >
             <ArrowLeft className="h-4 w-4" />

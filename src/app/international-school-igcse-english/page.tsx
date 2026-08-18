@@ -329,13 +329,13 @@ export default async function InternationalSchoolIgcsePage() {
 
           <div className="mt-7 flex flex-wrap gap-3">
             <Link
-              href="/for-schools"
+              href="/schools"
               className="inline-flex items-center gap-2 rounded-2xl bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               {ctaLicence} <span aria-hidden="true">&rarr;</span>
             </Link>
             <Link
-              href="/for-teachers"
+              href="/teachers"
               className="inline-flex items-center gap-2 rounded-2xl border border-border bg-card px-5 py-3 text-sm font-medium text-foreground transition-colors hover:bg-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               {ctaTeachers}
@@ -461,13 +461,13 @@ export default async function InternationalSchoolIgcsePage() {
 
         <div className="mt-8 flex flex-wrap gap-3">
           <Link
-            href="/for-schools"
+            href="/schools"
             className="inline-flex items-center gap-2 rounded-2xl bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
             {startCta1} <span aria-hidden="true">&rarr;</span>
           </Link>
           <Link
-            href="/for-teachers"
+            href="/teachers"
             className="inline-flex items-center gap-2 rounded-2xl border border-border bg-card px-5 py-3 text-sm font-medium text-foreground transition-colors hover:bg-muted"
           >
             {startCta2}
@@ -488,7 +488,7 @@ export default async function InternationalSchoolIgcsePage() {
               {multiBody3Link1}
             </Link>
             {multiBody3Mid}
-            <Link href="/for-schools" className="underline underline-offset-4 hover:text-clay-300">
+            <Link href="/schools" className="underline underline-offset-4 hover:text-clay-300">
               {multiBody3Link2}
             </Link>
             {multiBody3End}
@@ -522,17 +522,11 @@ export default async function InternationalSchoolIgcsePage() {
             <Prose>
               <p>
                 {ctaFinalBodyPre}
-                <Link
-                  href="/for-schools"
-                  className="underline underline-offset-4 hover:text-clay-300"
-                >
+                <Link href="/schools" className="underline underline-offset-4 hover:text-clay-300">
                   {ctaFinalLink1}
                 </Link>
                 {ctaFinalBodyMid}
-                <Link
-                  href="/for-teachers"
-                  className="underline underline-offset-4 hover:text-clay-300"
-                >
+                <Link href="/teachers" className="underline underline-offset-4 hover:text-clay-300">
                   {ctaFinalLink2}
                 </Link>
                 .

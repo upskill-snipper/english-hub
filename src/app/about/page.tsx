@@ -219,7 +219,7 @@ export default async function AboutPage() {
           <h2 className="text-xl font-semibold text-foreground">{glanceH2}</h2>
           <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
             {[
-              { stat: '15+', label: statCoursesLabel },
+              { stat: '80+', label: statCoursesLabel },
               { stat: '5', label: statBoardsLabel },
               { stat: statAiValue, label: statAiLabel },
               { stat: statMockValue, label: statMockLabel },

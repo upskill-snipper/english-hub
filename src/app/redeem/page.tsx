@@ -295,7 +295,7 @@ export default function RedeemPage() {
             {t('redeem.legal.terms')}
           </Link>{' '}
           {t('redeem.legal.and')}{' '}
-          <Link href="/privacy-policy" className="underline">
+          <Link href="/legal/privacy" className="underline">
             {t('redeem.legal.privacy')}
           </Link>
           .

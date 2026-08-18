@@ -36,7 +36,9 @@
 // grade_predict.*, essay_check.*) - see ./dictionary-toolkit.ts for
 // the full set. Consulted by lookup() as a fallback after DICTIONARY.
 import { TOOLKIT_DICTIONARY } from './dictionary-toolkit'
-import { SCHOOL_COMP_DICTIONARY } from './dictionary-school-comp'
+// dictionary-school-comp was deleted 2026-08-18: zero render sites consumed
+// its school_comp.* keys, and its dead strings carried banned claims
+// ("Ofsted-ready reporting", dated price-increase urgency).
 import { LEGAL_LONG_DICTIONARY } from './dictionary-legal-long'
 import { DASH_INTERNAL_DICTIONARY } from './dictionary-dash-internal'
 import { DEMO_PAGES_DICTIONARY } from './dictionary-demo-pages'
@@ -1176,9 +1178,9 @@ export const DICTIONARY: Dictionary = {
 
   // ─── Homepage hero / marketing additions ─────────────────────────
   'home.hero.badge': {
-    en: 'First Month Free - No Card Required',
-    ar: 'أول شهر ببلاش - من غير بطاقة',
-    es: 'Primer mes gratis - sin tarjeta',
+    en: '7-Day Free Trial - No Card Required',
+    ar: 'تجربة مجانية ٧ أيام - من غير بطاقة',
+    es: 'Prueba gratuita de 7 días - sin tarjeta',
   },
   'home.hero.title_line1': {
     en: 'Master English.',
@@ -1374,9 +1376,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Su confianza, en un panel que puedes entender.',
   },
   'home.cin.parents.desc': {
-    en: 'Weekly progress summaries. Streaks, focus areas and predicted grades in plain English. 7-day free trial on any paid plan - card required, cancel before day 7.',
-    ar: 'ملخصات أسبوعية للتقدّم. سلاسل الأيام ومجالات التركيز والدرجات المتوقّعة بلغة واضحة. تجربة ٧ أيام ببلاش على أي باقة مدفوعة - البطاقة مطلوبة، ألغِ قبل اليوم السابع.',
-    es: 'Resúmenes de progreso semanales. Rachas, áreas de enfoque y notas previstas en lenguaje claro. Prueba gratuita de 7 días en cualquier plan de pago - se requiere tarjeta, cancela antes del día 7.',
+    en: 'Weekly progress summaries. Streaks, focus areas and predicted grades in plain English. 7-day free trial · no card required to start.',
+    ar: 'ملخصات أسبوعية للتقدّم. سلاسل الأيام ومجالات التركيز والدرجات المتوقّعة بلغة واضحة. تجربة مجانية ٧ أيام · ما تحتاج بطاقة للبداية.',
+    es: 'Resúmenes de progreso semanales. Rachas, áreas de enfoque y notas previstas en lenguaje claro. Prueba gratuita de 7 días · sin tarjeta para empezar.',
   },
   'home.cin.parents.cta_trial': {
     en: 'Start 7-day trial',
@@ -1923,9 +1925,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Para padres y tutores',
   },
   'audience.parents.hero.title': {
-    en: 'Help your child pass GCSE or',
+    en: 'Help your child succeed in GCSE or',
     ar: 'ساعد طفلك ينجح في GCSE أو',
-    es: 'Ayuda a tu hijo a aprobar el GCSE o',
+    es: 'Ayuda a tu hijo a tener éxito en el GCSE o',
   },
   'audience.parents.hero.title_emphasis': {
     en: 'IGCSE English',
@@ -2305,9 +2307,9 @@ export const DICTIONARY: Dictionary = {
     es: '3 usos gratuitos de cada herramienta de IA (corrección, planes de clase y más)',
   },
   'auth.register.included_upgrade': {
-    en: "Upgrade when you're ready - 7-day free trial (card required)",
-    ar: 'اشترك لما تكون جاهز - تجربة مجانية ٧ أيام (تحتاج بطاقة)',
-    es: 'Mejora tu plan cuando estés listo - prueba gratuita de 7 días (se requiere tarjeta)',
+    en: "Upgrade when you're ready - paid plans start with 7 free days",
+    ar: 'اشترك لما تكون جاهز - الباقات المدفوعة تبدأ بـ ٧ أيام مجانية',
+    es: 'Mejora tu plan cuando estés listo - los planes de pago empiezan con 7 días gratis',
   },
   'auth.register.i_am_a': { en: 'I am a', ar: 'أنا', es: 'Soy' },
   'auth.register.student': { en: 'Student', ar: 'طالب', es: 'Estudiante' },
@@ -2385,9 +2387,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Ahorra más de 5 horas a la semana con la planificación de clases y la corrección con IA. 3 usos gratuitos de cada herramienta de IA. Mejora tu plan para uso ilimitado.',
   },
   'auth.teacher.pricing_line': {
-    en: 'From £7.99/month - 7-day free trial, card required, cancel before day 7',
-    ar: 'من ٧٫٩٩ جنيه بالشهر - تجربة مجانية ٧ أيام، تحتاج بطاقة، ألغِ قبل اليوم السابع',
-    es: 'Desde £7.99/mes - prueba gratuita de 7 días, se requiere tarjeta, cancela antes del día 7',
+    en: 'From £6.99/month - 7-day free trial, no card required to start',
+    ar: 'من ٦٫٩٩ جنيه بالشهر - تجربة مجانية ٧ أيام، ما تحتاج بطاقة للبداية',
+    es: 'Desde £6.99/mes - prueba gratuita de 7 días, sin tarjeta para empezar',
   },
   'auth.teacher.signup_takes': {
     en: 'Sign-up takes under a minute. No card required.',
@@ -2451,9 +2453,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Acceso a la demo listo.',
   },
   'auth.teacher.demo_ready_body': {
-    en: "You have 3 free uses of every premium feature - AI marking, lesson plans, and more. When you're ready, start a 7-day free trial from £7.99/month (card required, cancel before day 7).",
-    ar: 'عندك ٣ استخدامات مجانية لكل ميزة بريميوم - التصحيح بالذكاء الاصطناعي وخطط الدروس وأكثر. لما تكون جاهز، ابدأ تجربة مجانية ٧ أيام من ٧٫٩٩ جنيه بالشهر (تحتاج بطاقة، ألغِ قبل اليوم السابع).',
-    es: 'Tienes 3 usos gratuitos de cada función premium - corrección con IA, planes de clase y más. Cuando estés listo, empieza una prueba gratuita de 7 días desde £7.99/mes (se requiere tarjeta, cancela antes del día 7).',
+    en: "You have 3 free uses of every premium feature - AI marking, lesson plans, and more. When you're ready, start a 7-day free trial from £6.99/month - no card required to start.",
+    ar: 'عندك ٣ استخدامات مجانية لكل ميزة بريميوم - التصحيح بالذكاء الاصطناعي وخطط الدروس وأكثر. لما تكون جاهز، ابدأ تجربة مجانية ٧ أيام من ٦٫٩٩ جنيه بالشهر - ما تحتاج بطاقة للبداية.',
+    es: 'Tienes 3 usos gratuitos de cada función premium - corrección con IA, planes de clase y más. Cuando estés listo, empieza una prueba gratuita de 7 días desde £6.99/mes - sin tarjeta para empezar.',
   },
   'auth.teacher.open_preview': {
     en: 'Open the teacher dashboard preview',
@@ -3975,9 +3977,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Precios sencillos y honestos',
   },
   'pricing.subtitle_demo_uses': {
-    en: 'Demo 3 free uses per feature (no card) before you commit. Every paid plan starts with a 7-day free trial - card required, cancel before day 7.',
-    ar: 'جرّب ٣ استخدامات ببلاش لكل ميزة (من غير بطاقة) قبل ما تلتزم. كل خطة مدفوعة تبدأ بتجربة مجانية ٧ أيام - البطاقة مطلوبة، ألغِ قبل اليوم ٧.',
-    es: 'Prueba 3 usos gratuitos por función (sin tarjeta) antes de comprometerte. Todo plan de pago comienza con una prueba gratuita de 7 días - se requiere tarjeta, cancela antes del día 7.',
+    en: 'Demo 3 free uses per feature (no card) before you commit. 7-day free trial - no card required to start. Paid plans begin with 7 free days - cancel before day 7 and you are not charged.',
+    ar: 'جرّب ٣ استخدامات ببلاش لكل ميزة (من غير بطاقة) قبل ما تلتزم. تجربة مجانية ٧ أيام - ما تحتاج بطاقة للبداية. الباقات المدفوعة تبدأ بـ ٧ أيام مجانية - ألغِ قبل اليوم ٧ وما ينسحب منك شي.',
+    es: 'Prueba 3 usos gratuitos por función (sin tarjeta) antes de comprometerte. Prueba gratuita de 7 días - sin tarjeta para empezar. Los planes de pago comienzan con 7 días gratis - cancela antes del día 7 y no se te cobrará.',
   },
   'pricing.badge.most_popular': { en: 'Most Popular', ar: 'الأكثر طلباً', es: 'Más popular' },
   'pricing.badge.for_educators': { en: 'For Educators', ar: 'للمعلمين', es: 'Para educadores' },
@@ -3992,9 +3994,9 @@ export const DICTIONARY: Dictionary = {
   'pricing.save_label': { en: 'Save', ar: 'وفّر', es: 'Guardar' },
   'pricing.save_label_lower': { en: 'save', ar: 'وفّر', es: 'ahorra' },
   'pricing.card_cancel': {
-    en: 'card required · cancel before day 7',
-    ar: 'البطاقة مطلوبة · ألغِ قبل اليوم ٧',
-    es: 'se requiere tarjeta · cancela antes del día 7',
+    en: 'no card required to start',
+    ar: 'ما تحتاج بطاقة للبداية',
+    es: 'sin tarjeta para empezar',
   },
   'pricing.use_code_prefix': { en: 'Use code', ar: 'استخدم الكود', es: 'Usa el código' },
   'pricing.use_code_or_affiliate': {
@@ -4091,14 +4093,14 @@ export const DICTIONARY: Dictionary = {
     es: 'Sé uno de los primeros 10 colegios en sumarse. Precios con grandes descuentos, funciones anticipadas, participación directa en el producto y tarifas preferentes fijas.',
   },
   'pricing.footer_demo_note': {
-    en: "Every feature includes 3 free uses - no card required for the demo. Every paid plan starts with a 7-day free trial (card required). Cancel before day 7 and you won't be charged.",
-    ar: 'كل ميزة فيها ٣ استخدامات ببلاش - ما تحتاج بطاقة للتجربة. كل خطة مدفوعة تبدأ بتجربة مجانية ٧ أيام (البطاقة مطلوبة). ألغِ قبل اليوم ٧ وما بنخصم شي.',
-    es: 'Cada función incluye 3 usos gratuitos - sin tarjeta para la demo. Todo plan de pago comienza con una prueba gratuita de 7 días (se requiere tarjeta). Cancela antes del día 7 y no se te cobrará.',
+    en: "Every feature includes 3 free uses - no card required for the demo, and no card required to start your 7-day free trial. Paid plans begin with 7 free days - cancel before day 7 and you won't be charged.",
+    ar: 'كل ميزة فيها ٣ استخدامات ببلاش - ما تحتاج بطاقة للتجربة، وما تحتاج بطاقة لبدء تجربتك المجانية ٧ أيام. الباقات المدفوعة تبدأ بـ ٧ أيام مجانية - ألغِ قبل اليوم ٧ وما بنخصم شي.',
+    es: 'Cada función incluye 3 usos gratuitos - sin tarjeta para la demo, y sin tarjeta para empezar tu prueba gratuita de 7 días. Los planes de pago comienzan con 7 días gratis - cancela antes del día 7 y no se te cobrará.',
   },
   'pricing.student.feat.trial': {
-    en: '7-day free trial on any paid plan (card required)',
-    ar: 'تجربة مجانية ٧ أيام على أي خطة مدفوعة (البطاقة مطلوبة)',
-    es: 'Prueba gratuita de 7 días en cualquier plan de pago (se requiere tarjeta)',
+    en: '7-day free trial · no card required to start',
+    ar: 'تجربة مجانية ٧ أيام · ما تحتاج بطاقة للبداية',
+    es: 'Prueba gratuita de 7 días · sin tarjeta para empezar',
   },
   'pricing.student.feat.demo_uses': {
     en: '3 free uses per feature - demo without a card',
@@ -4146,9 +4148,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Cancela cuando quieras - sin contratos',
   },
   'pricing.teacher.feat.trial': {
-    en: '7-day free trial on any paid plan (card required)',
-    ar: 'تجربة مجانية ٧ أيام على أي خطة مدفوعة (البطاقة مطلوبة)',
-    es: 'Prueba gratuita de 7 días en cualquier plan de pago (se requiere tarjeta)',
+    en: '7-day free trial · no card required to start',
+    ar: 'تجربة مجانية ٧ أيام · ما تحتاج بطاقة للبداية',
+    es: 'Prueba gratuita de 7 días · sin tarjeta para empezar',
   },
   'pricing.teacher.feat.demo_uses': {
     en: '3 free uses per feature - demo without a card',
@@ -4234,9 +4236,9 @@ export const DICTIONARY: Dictionary = {
   'pricing.anth.headline_emphasis': { en: 'honest', ar: 'صريحة', es: 'honestos' },
   'pricing.anth.headline_suffix': { en: 'pricing', ar: 'وبسيطة', es: 'precios' },
   'pricing.anth.trial_blurb_prefix': {
-    en: '7-day free trial on every plan - card required, cancel before day 7. Students save £',
-    ar: 'تجربة مجانية ٧ أيام على كل خطة - البطاقة مطلوبة، ألغِ قبل اليوم ٧. الطلاب يوفّرون £',
-    es: 'Prueba gratuita de 7 días en cada plan - se requiere tarjeta, cancela antes del día 7. Los estudiantes ahorran £',
+    en: '7-day free trial - no card required to start. Students save £',
+    ar: 'تجربة مجانية ٧ أيام - ما تحتاج بطاقة للبداية. الطلاب يوفّرون £',
+    es: 'Prueba gratuita de 7 días - sin tarjeta para empezar. Los estudiantes ahorran £',
   },
   'pricing.anth.trial_blurb_suffix': {
     en: 'on annual with any affiliate code or',
@@ -4570,9 +4572,9 @@ export const DICTIONARY: Dictionary = {
     es: '¡Te damos la bienvenida a The English Hub!',
   },
   'dash.welcome.body': {
-    en: "You have 3 free uses of every premium feature. Try AI marking, lesson plans, and more. When you're ready, start a 7-day free trial - card required, cancel before day 7.",
-    ar: 'عندك ٣ استخدامات ببلاش لكل ميزة بريميوم. جرّب التصحيح بالذكاء الاصطناعي وخطط الدروس وأكثر. لمّن تكون جاهز، ابدأ تجربة ٧ أيام ببلاش - تحتاج بطاقة، وألغِ قبل اليوم السابع.',
-    es: 'Tienes 3 usos gratuitos de cada función premium. Prueba la corrección con IA, los planes de clase y más. Cuando estés listo, empieza una prueba gratuita de 7 días - se requiere tarjeta, cancela antes del día 7.',
+    en: "You have 3 free uses of every premium feature. Try AI marking, lesson plans, and more. When you're ready, paid plans start with 7 free days - cancel before day 7 and you are not charged.",
+    ar: 'عندك ٣ استخدامات ببلاش لكل ميزة بريميوم. جرّب التصحيح بالذكاء الاصطناعي وخطط الدروس وأكثر. لمّن تكون جاهز، الباقات المدفوعة تبدأ بـ ٧ أيام مجانية - ألغِ قبل اليوم السابع وما ينخصم منك شي.',
+    es: 'Tienes 3 usos gratuitos de cada función premium. Prueba la corrección con IA, los planes de clase y más. Cuando estés listo, los planes de pago empiezan con 7 días gratis - cancela antes del día 7 y no se te cobrará.',
   },
   'dash.welcome.dismiss': {
     en: 'Dismiss welcome banner',
@@ -5359,9 +5361,9 @@ export const DICTIONARY: Dictionary = {
   },
   'upgrade.premium_plan': { en: 'Premium Plan', ar: 'خطة بريميوم', es: 'Plan Premium' },
   'upgrade.unlimited_access': {
-    en: 'Unlimited access to all features',
-    ar: 'استخدام بلا حدود لكل الميزات',
-    es: 'Acceso ilimitado a todas las funciones',
+    en: 'Full access to all features',
+    ar: 'وصول كامل لكل الميزات',
+    es: 'Acceso completo a todas las funciones',
   },
   'upgrade.seven_day_trial': {
     en: '7-day free trial',
@@ -5369,9 +5371,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Prueba gratuita de 7 días',
   },
   'upgrade.benefit.ai_marking': {
-    en: 'Unlimited AI marking and feedback',
-    ar: 'تصحيح وملاحظات بالذكاء الاصطناعي بلا حدود',
-    es: 'Corrección y feedback con IA ilimitados',
+    en: 'AI marking and feedback on your essays',
+    ar: 'تصحيح وملاحظات بالذكاء الاصطناعي على مقالاتك',
+    es: 'Corrección y feedback con IA en tus redacciones',
   },
   'upgrade.benefit.mock_exams': {
     en: 'Full mock exams and analytics',
@@ -5415,9 +5417,9 @@ export const DICTIONARY: Dictionary = {
     es: 'tus envíos gratuitos.',
   },
   'upgrade.trial_card_required': {
-    en: '7-day free trial · card required',
-    ar: 'تجربة ٧ أيام ببلاش · تحتاج بطاقة',
-    es: 'Prueba gratuita de 7 días · se requiere tarjeta',
+    en: '7-day free trial · no card required to start',
+    ar: 'تجربة ٧ أيام ببلاش · ما تحتاج بطاقة للبداية',
+    es: 'Prueba gratuita de 7 días · sin tarjeta para empezar',
   },
   'upgrade.start_trial': {
     en: 'Start 7-day trial',
@@ -6164,9 +6166,9 @@ export const DICTIONARY: Dictionary = {
   },
   'mock.sign_in': { en: 'Sign In', ar: 'تسجيل الدخول', es: 'Iniciar sesión' },
   'mock.trial_terms': {
-    en: '7-day free trial (card required) · Cancel before day 7 · No lock-in',
-    ar: 'تجربة مجانية ٧ أيام (يبغى بطاقة) · ألغِ قبل اليوم السابع · ما في التزام',
-    es: 'Prueba gratuita de 7 días (se requiere tarjeta) · Cancela antes del día 7 · Sin permanencia',
+    en: '7-day free trial · no card required to start · No lock-in',
+    ar: 'تجربة مجانية ٧ أيام · ما تحتاج بطاقة للبداية · ما في التزام',
+    es: 'Prueba gratuita de 7 días · sin tarjeta para empezar · Sin permanencia',
   },
   'mock.explorations_in': { en: 'Explorations in', ar: 'استكشافات في', es: 'Exploraciones de' },
   'mock.theme_creative_reading': {
@@ -6541,9 +6543,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Empieza la prueba gratuita de 7 días',
   },
   'course.per_month_after_trial': {
-    en: '/mo after trial · Card required',
-    ar: '/شهرياً بعد التجربة · يبغى بطاقة',
-    es: '/mes tras la prueba · Se requiere tarjeta',
+    en: '/mo after trial',
+    ar: '/شهرياً بعد التجربة',
+    es: '/mes tras la prueba',
   },
   'course.includes_heading': {
     en: 'This course includes',
@@ -8813,9 +8815,9 @@ export const DICTIONARY: Dictionary = {
   },
   'about.offer.h2': { en: 'What We Offer', ar: 'وش نقدّم', es: 'Lo que ofrecemos' },
   'about.offer.body': {
-    en: 'We provide 15+ structured courses covering KS3, GCSE, and IGCSE English Language and Literature. Our content is tailored to five major exam boards - AQA, Edexcel, OCR, WJEC Eduqas, and Cambridge IGCSE - so students always study material aligned to the exam board they are sitting. Each course is broken down into clear, manageable topics with lessons, practice activities, and revision resources designed to build confidence from the first lesson through to exam day.',
-    ar: 'إحنا نقدّم أكثر من ١٥ كورس منظَّم تغطي KS3 وGCSE وIGCSE في English Language و Literature. محتوانا مفصَّل لخمس بوردات رئيسية - AQA, Edexcel, OCR, WJEC Eduqas, و Cambridge IGCSE - عشان الطالب يدرس مادة متطابقة دايماً مع البورد اللي بيمتحن فيه. كل كورس مقسَّم لمواضيع واضحة وسهلة، فيها دروس وأنشطة تدريب وموارد مراجعة تبني الثقة من أول درس لين يوم الامتحان.',
-    es: 'Ofrecemos más de 15 cursos estructurados que cubren English Language y Literature de KS3, GCSE e IGCSE. Nuestro contenido está adaptado a cinco grandes juntas examinadoras - AQA, Edexcel, OCR, WJEC Eduqas y Cambridge IGCSE - para que los estudiantes estudien siempre material alineado con la junta examinadora a la que se presentan. Cada curso se divide en temas claros y manejables con lecciones, actividades de práctica y recursos de repaso diseñados para generar confianza desde la primera lección hasta el día del examen.',
+    en: 'We provide 80+ structured courses covering KS3, GCSE, and IGCSE English Language and Literature. Our content is tailored to five major exam boards - AQA, Edexcel, OCR, WJEC Eduqas, and Cambridge IGCSE - so students always study material aligned to the exam board they are sitting. Each course is broken down into clear, manageable topics with lessons, practice activities, and revision resources designed to build confidence from the first lesson through to exam day.',
+    ar: 'إحنا نقدّم أكثر من ٨٠ كورس منظَّم تغطي KS3 وGCSE وIGCSE في English Language و Literature. محتوانا مفصَّل لخمس بوردات رئيسية - AQA, Edexcel, OCR, WJEC Eduqas, و Cambridge IGCSE - عشان الطالب يدرس مادة متطابقة دايماً مع البورد اللي بيمتحن فيه. كل كورس مقسَّم لمواضيع واضحة وسهلة، فيها دروس وأنشطة تدريب وموارد مراجعة تبني الثقة من أول درس لين يوم الامتحان.',
+    es: 'Ofrecemos más de 80 cursos estructurados que cubren English Language y Literature de KS3, GCSE e IGCSE. Nuestro contenido está adaptado a cinco grandes juntas examinadoras - AQA, Edexcel, OCR, WJEC Eduqas y Cambridge IGCSE - para que los estudiantes estudien siempre material alineado con la junta examinadora a la que se presentan. Cada curso se divide en temas claros y manejables con lecciones, actividades de práctica y recursos de repaso diseñados para generar confianza desde la primera lección hasta el día del examen.',
   },
   'about.approach.h2': { en: 'Our Approach', ar: 'منهجنا', es: 'Nuestro enfoque' },
   'about.approach.intro': {
@@ -14753,9 +14755,9 @@ export const DICTIONARY: Dictionary = {
     es: '¿Hay una prueba gratuita?',
   },
   'student.faq.trial.a': {
-    en: 'Yes. You can start a 7-day free trial with a card on file, and even without a trial you get three free uses of every premium feature.',
-    ar: 'إيه. تقدر تبدأ تجربة ٧ أيام ببلاش مع كرت محفوظ، وحتى بدون التجربة عندك ثلاث استخدامات ببلاش لكل ميزة بريميوم.',
-    es: 'Sí. Puedes empezar una prueba gratuita de 7 días con una tarjeta registrada, e incluso sin prueba obtienes tres usos gratuitos de cada función premium.',
+    en: 'Yes. Creating an account starts a 7-day free trial with no card needed, and you also get three free uses of every premium feature.',
+    ar: 'إيه. لما تسوي حساب تبدأ تجربة ٧ أيام ببلاش بدون بطاقة، وبعد عندك ثلاث استخدامات ببلاش لكل ميزة بريميوم.',
+    es: 'Sí. Al crear una cuenta empieza una prueba gratuita de 7 días sin tarjeta, y además obtienes tres usos gratuitos de cada función premium.',
   },
   'student.faq.ai.q': {
     en: 'Do you mark my essays with AI?',
@@ -14779,9 +14781,9 @@ export const DICTIONARY: Dictionary = {
   },
   'student.faq.cost.q': { en: 'How much does it cost?', ar: 'كم السعر؟', es: '¿Cuánto cuesta?' },
   'student.faq.cost.a': {
-    en: 'Student plans start at £3.49 per month, or £29.99 if you pay annually.',
-    ar: 'باقات الطلاب تبدأ من £3.49 بالشهر، أو £29.99 لو دفعت سنوي.',
-    es: 'Los planes de estudiante empiezan en £3.49 al mes, o £29.99 si pagas anualmente.',
+    en: 'Student plans start at £3.99 per month, or £29.99 if you pay annually.',
+    ar: 'باقات الطلاب تبدأ من £3.99 بالشهر، أو £29.99 لو دفعت سنوي.',
+    es: 'Los planes de estudiante empiezan en £3.99 al mes, o £29.99 si pagas anualmente.',
   },
   'student.bottom.title': {
     en: 'Ready to level up your English?',
@@ -14994,9 +14996,9 @@ export const DICTIONARY: Dictionary = {
     es: '¿Hay una prueba gratuita? ¿Necesito tarjeta?',
   },
   'help.gs.q4.a': {
-    en: "Two things. Every paid plan starts with a 7-day free trial - that requires full sign-up with a valid card. Cancel before day 7 and you won't be charged. Separately, every registered account gets 3 free uses of most premium features (AI marking, mock exams, lesson plans, etc.) with no card required, so you can demo the product first.",
-    ar: 'شيئين. كل خطة مدفوعة تبدأ بتجربة مجانية ٧ أيام - تتطلب تسجيل كامل ببطاقة. ألغِ قبل اليوم السابع وما تنحاسب. وبشكل منفصل، كل حساب مسجل ياخذ ٣ استخدامات مجانية لأغلب المميزات (التصحيح بالـ AI، الامتحانات التجريبية، خطط الدروس...) بدون بطاقة، عشان تجرّب الأول.',
-    es: 'Dos cosas. Todo plan de pago comienza con una prueba gratuita de 7 días - eso requiere un registro completo con una tarjeta válida. Cancela antes del día 7 y no se te cobrará. Por separado, cada cuenta registrada recibe 3 usos gratuitos de la mayoría de las funciones premium (corrección con IA, exámenes de prueba, planes de clase, etc.) sin necesidad de tarjeta, para que puedas probar el producto primero.',
+    en: "Yes, and no card is needed to start. Creating an account begins a 7-day free trial of the full product with no payment details taken. If you later start a paid plan at checkout, the plan's first 7 days are free with your card on file - cancel before day 7 and you won't be charged. Every registered account also gets 3 free uses of most premium features (AI marking, mock exams, lesson plans, etc.).",
+    ar: 'إيه، وما تحتاج بطاقة للبداية. لما تسوي حساب تبدأ تجربة مجانية ٧ أيام للمنتج كامل بدون أي بيانات دفع. وإذا بديت خطة مدفوعة من صفحة الدفع بعدين، أول ٧ أيام من الخطة مجانية مع بطاقتك المحفوظة - ألغِ قبل اليوم السابع وما تنحاسب. وكل حساب مسجل ياخذ كمان ٣ استخدامات مجانية لأغلب المميزات (التصحيح بالـ AI، الامتحانات التجريبية، خطط الدروس...).',
+    es: 'Sí, y no necesitas tarjeta para empezar. Al crear una cuenta comienza una prueba gratuita de 7 días del producto completo sin datos de pago. Si más tarde inicias un plan de pago en el checkout, los primeros 7 días del plan son gratuitos con tu tarjeta registrada - cancela antes del día 7 y no se te cobrará. Cada cuenta registrada también recibe 3 usos gratuitos de la mayoría de las funciones premium (corrección con IA, exámenes de prueba, planes de clase, etc.).',
   },
   'help.co.q1.q': {
     en: 'What courses are available?',
@@ -15124,9 +15126,9 @@ export const DICTIONARY: Dictionary = {
     es: '¿Cuánto cuesta The English Hub?',
   },
   'help.ab.q1.a': {
-    en: 'Early Access / Founding pricing (locked until August 2026): Students £3.99/month or £29.99/year - and £20/year with any affiliate code or the public code 2026ENGLISH (save £9.99). Teachers £6.99/month or £67.99/year. Standard pricing from August 2026: Students £7.99/month or £69.99/year. Teachers £11.99/month or £99/year. Every paid plan starts with a 7-day free trial (card required). You also get 3 free uses of most premium features before the paywall, no card required. Cancel anytime. Prices shown in GBP.',
-    ar: 'أسعار Early Access / Founding (مثبتة حتى أغسطس ٢٠٢٦): الطلاب £3.99/شهر أو £29.99/سنة - و£20/سنة مع أي كود شريك أو الكود العام 2026ENGLISH (وفّر £9.99). المعلمين £6.99/شهر أو £67.99/سنة. الأسعار العادية من أغسطس ٢٠٢٦: الطلاب £7.99/شهر أو £69.99/سنة. المعلمين £11.99/شهر أو £99/سنة. كل خطة مدفوعة تبدأ بتجربة مجانية ٧ أيام (بطاقة مطلوبة). كمان تاخذ ٣ استخدامات مجانية لأغلب المميزات قبل جدار الدفع، بدون بطاقة. ألغِ متى ما تبغى. الأسعار بـ GBP.',
-    es: 'Precios de Acceso anticipado / Fundador (fijos hasta agosto de 2026): Estudiantes £3.99/mes o £29.99/año - y £20/año con cualquier código de afiliado o el código público 2026ENGLISH (ahorra £9.99). Profesores £6.99/mes o £67.99/año. Precios estándar a partir de agosto de 2026: Estudiantes £7.99/mes o £69.99/año. Profesores £11.99/mes o £99/año. Todo plan de pago comienza con una prueba gratuita de 7 días (se requiere tarjeta). También obtienes 3 usos gratuitos de la mayoría de las funciones premium antes del muro de pago, sin necesidad de tarjeta. Cancela cuando quieras. Precios mostrados en GBP.',
+    en: 'Early Access / Founding pricing, available now: Students £3.99/month or £29.99/year - and £20/year with any affiliate code or the public code 2026ENGLISH (save £9.99). Teachers £6.99/month or £67.99/year. Planned standard pricing once the founding period closes: Students £7.99/month or £69.99/year. Teachers £11.99/month or £99/year. Your rate is locked from the day you subscribe. Every account starts with a 7-day free trial, no card required. You also get 3 free uses of most premium features before the paywall. Cancel anytime. Prices shown in GBP.',
+    ar: 'أسعار Early Access / Founding متاحة الآن: الطلاب £3.99/شهر أو £29.99/سنة - و£20/سنة مع أي كود شريك أو الكود العام 2026ENGLISH (وفّر £9.99). المعلمين £6.99/شهر أو £67.99/سنة. الأسعار العادية المخطط لها بعد إغلاق فترة التأسيس: الطلاب £7.99/شهر أو £69.99/سنة. المعلمين £11.99/شهر أو £99/سنة. سعرك مثبت من يوم اشتراكك. كل حساب يبدأ بتجربة مجانية ٧ أيام بدون بطاقة. كمان تاخذ ٣ استخدامات مجانية لأغلب المميزات قبل جدار الدفع. ألغِ متى ما تبغى. الأسعار بـ GBP.',
+    es: 'Precios de Acceso anticipado / Fundador, disponibles ahora: Estudiantes £3.99/mes o £29.99/año - y £20/año con cualquier código de afiliado o el código público 2026ENGLISH (ahorra £9.99). Profesores £6.99/mes o £67.99/año. Precios estándar previstos cuando cierre el periodo fundacional: Estudiantes £7.99/mes o £69.99/año. Profesores £11.99/mes o £99/año. Tu tarifa queda fijada desde el día en que te suscribes. Cada cuenta comienza con una prueba gratuita de 7 días, sin tarjeta. También obtienes 3 usos gratuitos de la mayoría de las funciones premium antes del muro de pago. Cancela cuando quieras. Precios mostrados en GBP.',
   },
   'help.ab.q2.q': {
     en: 'Can I cancel my subscription?',
@@ -15164,9 +15166,9 @@ export const DICTIONARY: Dictionary = {
     es: '¿Ofrecéis planes para colegios?',
   },
   'help.st.q1.a': {
-    en: 'Yes! Our Founding Schools Programme is a strategic partnership limited to the first 10 schools. Founding rate: £4,000/year - anchored against projected Standard Pricing of £8,000/year from August 2026. Schools that joined in wave 1 at £3,000 are grandfathered at that rate. Founding schools receive full platform access, priority onboarding, early features, and locked preferential pricing. Visit our For Schools page or contact info@Upskillenergy.com to learn more.',
-    ar: 'إيه! برنامج المدارس المؤسسة Founding Schools Programme شراكة استراتيجية محدودة لأول ١٠ مدارس. سعر التأسيس: £4,000/سنة - مرتبط بالأسعار العادية المتوقعة £8,000/سنة من أغسطس ٢٠٢٦. المدارس اللي انضمت في الموجة ١ بـ£3,000 محتفظة بسعرها. مدارس التأسيس تستلم وصول كامل، تأهيل بالأولوية، مميزات مبكرة، وأسعار تفضيلية مثبتة. شوف صفحة For Schools أو راسلنا على info@Upskillenergy.com.',
-    es: '¡Sí! Nuestro Programa de Colegios Fundadores es una alianza estratégica limitada a los primeros 10 colegios. Tarifa de fundador: £4,000/año - referenciada frente al precio estándar previsto de £8,000/año a partir de agosto de 2026. Los colegios que se sumaron en la primera oleada a £3,000 conservan esa tarifa. Los colegios fundadores reciben acceso completo a la plataforma, incorporación prioritaria, funciones anticipadas y precios preferentes fijos. Visita nuestra página For Schools o contacta con info@Upskillenergy.com para más información.',
+    en: 'Yes! Our Founding Schools Programme is a strategic partnership limited to the first 10 schools. Founding rate: £4,000/year, against a planned standard price of £8,000/year once the founding cohort is full. Founding schools receive full platform access, priority onboarding, early features, and locked preferential pricing. Visit our For Schools page or contact support@theenglishhub.app to learn more.',
+    ar: 'إيه! برنامج المدارس المؤسسة Founding Schools Programme شراكة استراتيجية محدودة لأول ١٠ مدارس. سعر التأسيس: £4,000/سنة، مقابل سعر عادي مخطط له £8,000/سنة بعد اكتمال دفعة التأسيس. مدارس التأسيس تستلم وصول كامل، تأهيل بالأولوية، مميزات مبكرة، وأسعار تفضيلية مثبتة. شوف صفحة For Schools أو راسلنا على support@theenglishhub.app.',
+    es: '¡Sí! Nuestro Programa de Colegios Fundadores es una alianza estratégica limitada a los primeros 10 colegios. Tarifa de fundador: £4,000/año, frente a un precio estándar previsto de £8,000/año una vez completada la promoción fundadora. Los colegios fundadores reciben acceso completo a la plataforma, incorporación prioritaria, funciones anticipadas y precios preferentes fijos. Visita nuestra página For Schools o contacta con support@theenglishhub.app para más información.',
   },
   'help.st.q2.q': {
     en: 'Is there a teacher dashboard?',
@@ -15760,9 +15762,9 @@ export const DICTIONARY: Dictionary = {
     es: '¿Hay una prueba gratuita? ¿Necesito tarjeta?',
   },
   'faqs.p2.a': {
-    en: 'Yes. Every paid plan starts with a 7-day free trial. The trial requires full sign-up with a valid payment method - so the subscription can convert automatically if you do not cancel before day 7. Separately, you can demo most premium features for 3 free uses without a card.',
-    ar: 'إيه. كل خطة مدفوعة تبدأ بتجربة مجانية ٧ أيام. التجربة تتطلب تسجيل كامل بطريقة دفع صالحة - عشان الاشتراك يتحوّل تلقائياً إذا ما ألغيت قبل اليوم ٧. وبشكل منفصل، تقدر تجرّب أغلب المميزات ٣ مرات مجاناً بدون بطاقة.',
-    es: 'Sí. Todo plan de pago comienza con una prueba gratuita de 7 días. La prueba requiere un registro completo con un método de pago válido - de modo que la suscripción puede activarse automáticamente si no cancelas antes del día 7. Por separado, puedes probar la mayoría de las funciones premium durante 3 usos gratuitos sin tarjeta.',
+    en: 'Yes, and you do not need a card to start. Creating an account begins a 7-day free trial of the full product with no payment details taken. If you later start a paid plan at checkout, the plan begins with 7 free days with your card on file - cancel before day 7 and you are not charged; otherwise it converts automatically. You can also demo most premium features for 3 free uses.',
+    ar: 'إيه، وما تحتاج بطاقة للبداية. لما تسوي حساب تبدأ تجربة مجانية ٧ أيام للمنتج كامل بدون أي بيانات دفع. وإذا بديت خطة مدفوعة من صفحة الدفع بعدين، تبدأ الخطة بـ ٧ أيام مجانية مع بطاقتك المحفوظة - ألغِ قبل اليوم السابع وما تنحاسب؛ وإلا تتحوّل تلقائياً. وتقدر كمان تجرّب أغلب المميزات ٣ مرات مجاناً.',
+    es: 'Sí, y no necesitas tarjeta para empezar. Al crear una cuenta comienza una prueba gratuita de 7 días del producto completo sin datos de pago. Si más tarde inicias un plan de pago en el checkout, el plan comienza con 7 días gratuitos con tu tarjeta registrada - cancela antes del día 7 y no se te cobra; de lo contrario se convierte automáticamente. También puedes probar la mayoría de las funciones premium durante 3 usos gratuitos.',
   },
   'faqs.p3.q': {
     en: 'What happens after my 7-day trial ends?',
@@ -15770,9 +15772,9 @@ export const DICTIONARY: Dictionary = {
     es: '¿Qué ocurre cuando termina mi prueba de 7 días?',
   },
   'faqs.p3.a': {
-    en: 'We send you a reminder email a couple of days before the trial ends. If you do nothing, your chosen subscription activates and your card is charged the plan price. Cancel any time before day 7 from your account settings and you will not be charged at all.',
-    ar: 'نرسل لك إيميل تذكير قبل انتهاء التجربة بيومين. إذا ما سويت شي، يتفعّل اشتراكك وتنحاسب بطاقتك بسعر الخطة. ألغِ أي وقت قبل اليوم ٧ من إعدادات الحساب، وما تنحاسب أبد.',
-    es: 'Te enviamos un correo recordatorio un par de días antes de que termine la prueba. Si no haces nada, tu suscripción elegida se activa y se cobra a tu tarjeta el precio del plan. Cancela en cualquier momento antes del día 7 desde la configuración de tu cuenta y no se te cobrará nada.',
+    en: 'We send you a reminder email before the trial ends. If you signed up without a card, nothing is ever charged: premium features simply pause until you choose a plan, and the free revision content stays available. If you started a paid plan at checkout, it converts to your chosen plan at the end of the free week unless you cancel first from account settings.',
+    ar: 'نرسل لك إيميل تذكير قبل انتهاء التجربة. إذا سجّلت بدون بطاقة، ما تنحاسب أبد: المميزات البريميوم بس تتوقف مؤقتاً لين تختار خطة، ومحتوى المراجعة المجاني يظل متاح. وإذا بديت خطة مدفوعة من صفحة الدفع، تتحوّل للخطة اللي اخترتها بنهاية الأسبوع المجاني إلا إذا ألغيت قبلها من إعدادات الحساب.',
+    es: 'Te enviamos un correo recordatorio antes de que termine la prueba. Si te registraste sin tarjeta, nunca se te cobra nada: las funciones premium simplemente se pausan hasta que elijas un plan, y el contenido de repaso gratuito sigue disponible. Si iniciaste un plan de pago en el checkout, se convierte en tu plan elegido al final de la semana gratuita salvo que canceles antes desde la configuración de tu cuenta.',
   },
   'faqs.p4.q': {
     en: 'Can I cancel my subscription?',
@@ -16738,9 +16740,9 @@ export const DICTIONARY: Dictionary = {
     es: '4. Planes de suscripción',
   },
   'terms.s4.p_intro': {
-    en: 'The English Hub offers the following subscription plans for individual users (as of 21 April 2026). All plans renew automatically until cancelled. The prices listed below are "Early Access / Founding" rates and apply to all new sign-ups until 31 July 2026. From August 2026 the Standard rates shown in parentheses become the advertised price; existing subscribers who joined on an Early Access rate keep their rate until the subscription is cancelled or lapses.',
-    ar: 'يُقدّم The English Hub خطط الاشتراك التالية للمستخدمين الأفراد (اعتباراً من ٢١ أبريل ٢٠٢٦). وتتجدّد جميع الخطط تلقائياً حتى إلغائها. والأسعار المُدرَجة أدناه هي أسعار "Early Access / Founding" وتنطبق على جميع المُسجَّلين الجدد حتى ٣١ يوليو ٢٠٢٦. واعتباراً من أغسطس ٢٠٢٦، تُصبح الأسعار العادية المُدرَجة بين قوسين هي السعر المُعلَن؛ ويحتفظ المشتركون الحاليون الذين انضمّوا بسعر Early Access بسعرهم حتى إلغاء الاشتراك أو انقضائه.',
-    es: 'The English Hub ofrece los siguientes planes de suscripción para usuarios individuales (a fecha de 21 de abril de 2026). Todos los planes se renuevan automáticamente hasta su cancelación. Los precios que se indican abajo son tarifas de "Acceso anticipado / Fundador" y se aplican a todos los nuevos registros hasta el 31 de julio de 2026. A partir de agosto de 2026, las tarifas estándar mostradas entre paréntesis pasan a ser el precio anunciado; los suscriptores existentes que se sumaron con una tarifa de Acceso anticipado conservan su tarifa hasta que la suscripción se cancele o caduque.',
+    en: 'The English Hub offers the following subscription plans for individual users (as of 18 August 2026). All plans renew automatically until cancelled. The prices listed below are "Early Access / Founding" rates and are the current advertised prices for new sign-ups. The Standard rates shown in parentheses are the planned prices that will apply to new sign-ups once the founding period closes; any change will be announced on the pricing page before it takes effect. Existing subscribers who joined on an Early Access rate keep their rate until the subscription is cancelled or lapses.',
+    ar: 'يُقدّم The English Hub خطط الاشتراك التالية للمستخدمين الأفراد (اعتباراً من ١٨ أغسطس ٢٠٢٦). وتتجدّد جميع الخطط تلقائياً حتى إلغائها. والأسعار المُدرَجة أدناه هي أسعار "Early Access / Founding" وهي الأسعار المُعلَنة حالياً للمُسجَّلين الجدد. أمّا الأسعار العادية المُدرَجة بين قوسين فهي الأسعار المخطط لها التي ستنطبق على المُسجَّلين الجدد بعد إغلاق فترة التأسيس؛ وسيُعلَن عن أي تغيير في صفحة الأسعار قبل سريانه. ويحتفظ المشتركون الحاليون الذين انضمّوا بسعر Early Access بسعرهم حتى إلغاء الاشتراك أو انقضائه.',
+    es: 'The English Hub ofrece los siguientes planes de suscripción para usuarios individuales (a fecha de 18 de agosto de 2026). Todos los planes se renuevan automáticamente hasta su cancelación. Los precios que se indican abajo son tarifas de "Acceso anticipado / Fundador" y son los precios anunciados actualmente para los nuevos registros. Las tarifas estándar mostradas entre paréntesis son los precios previstos que se aplicarán a los nuevos registros cuando cierre el periodo fundacional; cualquier cambio se anunciará en la página de precios antes de entrar en vigor. Los suscriptores existentes que se sumaron con una tarifa de Acceso anticipado conservan su tarifa hasta que la suscripción se cancele o caduque.',
   },
   'terms.s4.li_sm_strong': {
     en: 'Student Plan - Monthly:',
@@ -16748,9 +16750,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Plan de estudiante - Mensual:',
   },
   'terms.s4.li_sm_text': {
-    en: ' £3.99 per month, billed monthly on a recurring basis (Standard from August 2026: £7.99 per month). Full access to every feature on the platform.',
-    ar: ' £3.99 شهرياً، تُحتسَب شهرياً على أساس متكرر (السعر العادي من أغسطس ٢٠٢٦: £7.99 شهرياً). صلاحية وصول كاملة لكل ميزة على المنصة.',
-    es: ' £3.99 al mes, facturados mensualmente de forma recurrente (Estándar a partir de agosto de 2026: £7.99 al mes). Acceso completo a todas las funciones de la plataforma.',
+    en: ' £3.99 per month, billed monthly on a recurring basis (planned standard rate: £7.99 per month). Full access to every feature on the platform.',
+    ar: ' £3.99 شهرياً، تُحتسَب شهرياً على أساس متكرر (السعر العادي المخطط له: £7.99 شهرياً). صلاحية وصول كاملة لكل ميزة على المنصة.',
+    es: ' £3.99 al mes, facturados mensualmente de forma recurrente (tarifa estándar prevista: £7.99 al mes). Acceso completo a todas las funciones de la plataforma.',
   },
   'terms.s4.li_sa_strong': {
     en: 'Student Plan - Annual:',
@@ -16758,9 +16760,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Plan de estudiante - Anual:',
   },
   'terms.s4.li_sa_text': {
-    en: ' £29.99 per year, billed annually on a recurring basis (Standard from August 2026: £69.99 per year). Full access to every feature on the platform.',
-    ar: ' £29.99 سنوياً، تُحتسَب سنوياً على أساس متكرر (السعر العادي من أغسطس ٢٠٢٦: £69.99 سنوياً). صلاحية وصول كاملة لكل ميزة على المنصة.',
-    es: ' £29.99 al año, facturados anualmente de forma recurrente (Estándar a partir de agosto de 2026: £69.99 al año). Acceso completo a todas las funciones de la plataforma.',
+    en: ' £29.99 per year, billed annually on a recurring basis (planned standard rate: £69.99 per year). Full access to every feature on the platform.',
+    ar: ' £29.99 سنوياً، تُحتسَب سنوياً على أساس متكرر (السعر العادي المخطط له: £69.99 سنوياً). صلاحية وصول كاملة لكل ميزة على المنصة.',
+    es: ' £29.99 al año, facturados anualmente de forma recurrente (tarifa estándar prevista: £69.99 al año). Acceso completo a todas las funciones de la plataforma.',
   },
   'terms.s4.li_sa_promo_strong': {
     en: 'Student Plan - Annual with affiliate or promo code:',
@@ -16783,9 +16785,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Plan de profesor - Mensual:',
   },
   'terms.s4.li_tm_text': {
-    en: ' £6.99 per month, billed monthly on a recurring basis (Standard from August 2026: £11.99 per month). Includes AI lesson planning, worksheet builder, bulk essay marking, and class analytics in addition to all student features.',
-    ar: ' £6.99 شهرياً، تُحتسَب شهرياً على أساس متكرر (السعر العادي من أغسطس ٢٠٢٦: £11.99 شهرياً). تشمل تخطيط الدروس بالذكاء الاصطناعي، وبناء أوراق العمل، وتصحيح المقالات بالجملة، وتحليلات الفصل، إضافةً إلى جميع ميزات الطالب.',
-    es: ' £6.99 al mes, facturados mensualmente de forma recurrente (Estándar a partir de agosto de 2026: £11.99 al mes). Incluye planificación de clases con IA, generador de fichas, corrección masiva de redacciones y analíticas de clase, además de todas las funciones de estudiante.',
+    en: ' £6.99 per month, billed monthly on a recurring basis (planned standard rate: £11.99 per month). Includes AI lesson planning, worksheet builder, bulk essay marking, and class analytics in addition to all student features.',
+    ar: ' £6.99 شهرياً، تُحتسَب شهرياً على أساس متكرر (السعر العادي المخطط له: £11.99 شهرياً). تشمل تخطيط الدروس بالذكاء الاصطناعي، وبناء أوراق العمل، وتصحيح المقالات بالجملة، وتحليلات الفصل، إضافةً إلى جميع ميزات الطالب.',
+    es: ' £6.99 al mes, facturados mensualmente de forma recurrente (tarifa estándar prevista: £11.99 al mes). Incluye planificación de clases con IA, generador de fichas, corrección masiva de redacciones y analíticas de clase, además de todas las funciones de estudiante.',
   },
   'terms.s4.li_ta_strong': {
     en: 'Teacher Plan - Annual:',
@@ -16793,9 +16795,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Plan de profesor - Anual:',
   },
   'terms.s4.li_ta_text': {
-    en: ' £67.99 per year, billed annually on a recurring basis (Standard from August 2026: £99 per year). Same feature set as the Teacher Monthly plan.',
-    ar: ' £67.99 سنوياً، تُحتسَب سنوياً على أساس متكرر (السعر العادي من أغسطس ٢٠٢٦: £99 سنوياً). نفس مجموعة الميزات الموجودة في خطة المعلم الشهرية.',
-    es: ' £67.99 al año, facturados anualmente de forma recurrente (Estándar a partir de agosto de 2026: £99 al año). El mismo conjunto de funciones que el plan de profesor mensual.',
+    en: ' £67.99 per year, billed annually on a recurring basis (planned standard rate: £99 per year). Same feature set as the Teacher Monthly plan.',
+    ar: ' £67.99 سنوياً، تُحتسَب سنوياً على أساس متكرر (السعر العادي المخطط له: £99 سنوياً). نفس مجموعة الميزات الموجودة في خطة المعلم الشهرية.',
+    es: ' £67.99 al año, facturados anualmente de forma recurrente (tarifa estándar prevista: £99 al año). El mismo conjunto de funciones que el plan de profesor mensual.',
   },
   'terms.s4.li_fs_strong': {
     en: 'Founding Schools Programme:',
@@ -16803,9 +16805,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Programa de Colegios Fundadores:',
   },
   'terms.s4.li_fs_text': {
-    en: ' £4,000 per year (Standard from August 2026: £8,000 per year). Strictly limited to the first 10 schools. Includes whole-school licence, bulk onboarding, teacher dashboards, and locked preferential pricing for 2-3 years. Schools who joined the programme in wave 1 at £3,000 per year are grandfathered at that rate.',
-    ar: ' £4,000 سنوياً (السعر العادي من أغسطس ٢٠٢٦: £8,000 سنوياً). يقتصر بشكل صارم على أول ١٠ مدارس. ويشمل ترخيصاً للمدرسة بأكملها، وتأهيلاً جماعياً، ولوحات للمعلمين، وأسعاراً تفضيلية مثبتة لمدة ٢-٣ سنوات. وتحتفظ المدارس التي انضمّت إلى البرنامج في الموجة الأولى بسعر £3,000 سنوياً بذلك السعر.',
-    es: ' £4,000 al año (Estándar a partir de agosto de 2026: £8,000 al año). Estrictamente limitado a los primeros 10 colegios. Incluye licencia para todo el colegio, alta masiva, paneles para profesores y precios preferentes fijos durante 2-3 años. Los colegios que se sumaron al programa en la primera oleada a £3,000 al año conservan esa tarifa.',
+    en: ' £4,000 per year (planned standard rate: £8,000 per year). Strictly limited to the first 10 schools. Includes whole-school licence, bulk onboarding, teacher dashboards, and locked preferential pricing for 2-3 years.',
+    ar: ' £4,000 سنوياً (السعر العادي المخطط له: £8,000 سنوياً). يقتصر بشكل صارم على أول ١٠ مدارس. ويشمل ترخيصاً للمدرسة بأكملها، وتأهيلاً جماعياً، ولوحات للمعلمين، وأسعاراً تفضيلية مثبتة لمدة ٢-٣ سنوات. ',
+    es: ' £4,000 al año (tarifa estándar prevista: £8,000 al año). Estrictamente limitado a los primeros 10 colegios. Incluye licencia para todo el colegio, alta masiva, paneles para profesores y precios preferentes fijos durante 2-3 años.',
   },
   'terms.s4.p_vat_strong': { en: 'VAT.', ar: 'ضريبة القيمة المضافة.', es: 'IVA.' },
   'terms.s4.p_vat_text': {
@@ -16819,9 +16821,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Prueba gratuita de 7 días.',
   },
   'terms.s4.p_trial_text': {
-    en: ' New subscribers are eligible for a single 7-day free trial on their first paid plan. The trial requires full sign-up with a valid payment method. During the trial period you will have full access to the platform. If you do not cancel before the trial ends, your chosen subscription plan activates automatically and your payment method is charged the applicable plan price. You will receive a reminder email at least two days before the trial expires. Cancel any time before the end of day seven from your account settings and you will not be charged.',
-    ar: ' يحقّ للمشتركين الجدد الاستفادة من تجربة مجانية واحدة لمدة ٧ أيام عند أول خطة مدفوعة. وتتطلّب التجربة تسجيلاً كاملاً بطريقة دفع صالحة. وستحظى خلال فترة التجربة بصلاحية وصول كاملة إلى المنصة. وإذا لم تُلغِ قبل انتهاء التجربة، فستُفعَّل خطة الاشتراك التي اخترتها تلقائياً، وتُحتسَب على طريقة الدفع لديك قيمة الخطة المعمول بها. وستستلم بريداً إلكترونياً للتذكير قبل انقضاء التجربة بيومَين على الأقل. ويمكنك الإلغاء في أي وقت قبل نهاية اليوم السابع من إعدادات حسابك، ولن تتم محاسبتك.',
-    es: ' Los nuevos suscriptores tienen derecho a una única prueba gratuita de 7 días en su primer plan de pago. La prueba requiere un registro completo con un método de pago válido. Durante el periodo de prueba tendrás acceso completo a la plataforma. Si no cancelas antes de que termine la prueba, tu plan de suscripción elegido se activa automáticamente y se cobra a tu método de pago el precio del plan correspondiente. Recibirás un correo recordatorio al menos dos días antes de que caduque la prueba. Cancela en cualquier momento antes del final del día siete desde la configuración de tu cuenta y no se te cobrará.',
+    en: ' Two free-trial mechanisms exist. (a) Account trial: creating an account starts a single 7-day free trial of the platform. No payment method is required; when it ends, premium features pause and nothing is charged. (b) Plan trial: when you start your first paid plan at checkout, the plan begins with a 7-day free period and requires a valid payment method. If you do not cancel before that free period ends, your chosen subscription plan activates automatically and your payment method is charged the applicable plan price. You will receive a reminder email at least two days before it expires. Cancel any time before the end of day seven from your account settings and you will not be charged.',
+    ar: ' توجد آليتان للتجربة المجانية. (أ) تجربة الحساب: يؤدي إنشاء حساب إلى بدء تجربة مجانية واحدة للمنصة لمدة ٧ أيام. ولا يُشترط لها أي طريقة دفع؛ وعند انتهائها تتوقف الميزات المدفوعة مؤقتاً ولا تُحتسَب أي مبالغ. (ب) تجربة الخطة: عند بدء أول خطة مدفوعة عبر صفحة الدفع، تبدأ الخطة بفترة مجانية لمدة ٧ أيام وتتطلّب طريقة دفع صالحة. وإذا لم تُلغِ قبل انتهاء تلك الفترة المجانية، فستُفعَّل خطة الاشتراك التي اخترتها تلقائياً، وتُحتسَب على طريقة الدفع لديك قيمة الخطة المعمول بها. وستستلم بريداً إلكترونياً للتذكير قبل انقضائها بيومَين على الأقل. ويمكنك الإلغاء في أي وقت قبل نهاية اليوم السابع من إعدادات حسابك، ولن تتم محاسبتك.',
+    es: ' Existen dos mecanismos de prueba gratuita. (a) Prueba de cuenta: al crear una cuenta comienza una única prueba gratuita de la plataforma de 7 días. No se requiere método de pago; cuando termina, las funciones premium se pausan y no se cobra nada. (b) Prueba del plan: al iniciar tu primer plan de pago en el checkout, el plan comienza con un periodo gratuito de 7 días y requiere un método de pago válido. Si no cancelas antes de que termine ese periodo gratuito, tu plan de suscripción elegido se activa automáticamente y se cobra a tu método de pago el precio del plan correspondiente. Recibirás un correo recordatorio al menos dos días antes de que caduque. Cancela en cualquier momento antes del final del día siete desde la configuración de tu cuenta y no se te cobrará.',
   },
   'terms.s4.p_demo_strong': {
     en: 'Pre-paywall demo.',
@@ -16976,9 +16978,9 @@ export const DICTIONARY: Dictionary = {
     es: 'La cancelación fuera del periodo legal de 14 días no te da derecho, por sí sola, a un reembolso del periodo de facturación actual; tu acceso continúa hasta el final del periodo que ya has pagado. Nuestra Política de Reembolsos completa establece las condiciones de reembolso completas - incluido cómo se gestionan las cancelaciones, las pruebas gratuitas y las compras de cursos de pago único - y es la única fuente de los detalles de reembolso. Cuando esta sección y la Política de Reembolsos difieran, prevalecerá la Política de Reembolsos.',
   },
   'terms.s10.p4': {
-    en: 'The 7-day free trial requires a valid payment method and converts automatically to your chosen paid plan unless you cancel before it ends. If your trial converts and you did not intend to continue, the eligibility and timeframe for a refund of that first charge are governed by the Refund Policy. Refunds are processed to the original payment method and typically take 5 to 10 business days to appear.',
-    ar: 'تتطلّب التجربة المجانية لمدة ٧ أيام طريقة دفع صالحة، وتتحوّل تلقائياً إلى الخطة المدفوعة التي اخترتها ما لم تُلغِها قبل انتهائها. وإذا تحوّلت تجربتك ولم تكن تعتزم الاستمرار، فإنّ أهلية استرداد تلك الدفعة الأولى ومدّتها تخضعان لسياسة استرداد الأموال. وتتم معالجة المبالغ المُستردَّة إلى طريقة الدفع الأصلية، وعادةً ما يستغرق ظهورها من ٥ إلى ١٠ أيام عمل.',
-    es: 'La prueba gratuita de 7 días requiere un método de pago válido y se convierte automáticamente en el plan de pago que hayas elegido salvo que canceles antes de que termine. Si tu prueba se convierte y no tenías intención de continuar, las condiciones y el plazo para reembolsar ese primer cargo se rigen por la Política de Reembolsos. Los reembolsos se tramitan al método de pago original y suelen tardar de 5 a 10 días hábiles en aparecer.',
+    en: 'Where a paid plan is started at checkout, its 7-day free period requires a valid payment method and converts automatically to your chosen paid plan unless you cancel before it ends. (The account trial started at sign-up takes no payment method and never converts or charges.) If your plan converts and you did not intend to continue, the eligibility and timeframe for a refund of that first charge are governed by the Refund Policy. Refunds are processed to the original payment method and typically take 5 to 10 business days to appear.',
+    ar: 'عند بدء خطة مدفوعة عبر صفحة الدفع، تتطلّب فترتها المجانية البالغة ٧ أيام طريقة دفع صالحة، وتتحوّل تلقائياً إلى الخطة المدفوعة التي اخترتها ما لم تُلغِها قبل انتهائها. (أمّا تجربة الحساب التي تبدأ عند التسجيل فلا تتطلّب أي طريقة دفع ولا تتحوّل ولا تُحتسَب عليها أي مبالغ.) وإذا تحوّلت خطتك ولم تكن تعتزم الاستمرار، فإنّ أهلية استرداد تلك الدفعة الأولى ومدّتها تخضعان لسياسة استرداد الأموال. وتتم معالجة المبالغ المُستردَّة إلى طريقة الدفع الأصلية، وعادةً ما يستغرق ظهورها من ٥ إلى ١٠ أيام عمل.',
+    es: 'Cuando se inicia un plan de pago en el checkout, su periodo gratuito de 7 días requiere un método de pago válido y se convierte automáticamente en el plan de pago elegido salvo que canceles antes de que termine. (La prueba de cuenta que comienza al registrarse no requiere método de pago y nunca se convierte ni genera cargos.) Si tu plan se convierte y no tenías intención de continuar, las condiciones y el plazo para reembolsar ese primer cargo se rigen por la Política de Reembolsos. Los reembolsos se tramitan al método de pago original y suelen tardar de 5 a 10 días hábiles en aparecer.',
   },
   'terms.s11.h2': {
     en: '11. Limitation of Liability',
@@ -20240,9 +20242,9 @@ export const DICTIONARY: Dictionary = {
     es: 'frente al mensual',
   },
   'pricing.trial_line_card_required': {
-    en: 'card required · cancel before day 7',
-    ar: 'يلزم كارت · ألغِ قبل اليوم السابع',
-    es: 'se requiere tarjeta · cancela antes del día 7',
+    en: 'no card required to start',
+    ar: 'ما يلزم كارت للبداية',
+    es: 'sin tarjeta para empezar',
   },
   'pricing.with_any_code_prefix': {
     en: 'With any affiliate code or',
@@ -20346,9 +20348,9 @@ export const DICTIONARY: Dictionary = {
   },
   'pricing.step.3.title': { en: 'Upgrade', ar: 'رقّي', es: 'Mejorar el plan' },
   'pricing.step.3.desc': {
-    en: 'When you’re ready, start a 7-day free trial. Card required - cancel before day 7 at no cost, or it converts automatically.',
-    ar: 'لمّا تكون جاهز، ابدأ تجربة ٧ أيام مجانية. يلزم كارت - ألغِ قبل اليوم السابع بدون تكلفة، أو تنتقل تلقائياً.',
-    es: 'Cuando estés listo, empieza una prueba gratuita de 7 días. Se requiere tarjeta - cancela antes del día 7 sin coste, o se convierte automáticamente.',
+    en: 'When you’re ready, choose a plan. It begins with 7 free days with your card on file - cancel before day 7 at no cost, or it converts automatically.',
+    ar: 'لمّا تكون جاهز، اختر خطة. تبدأ بـ ٧ أيام مجانية مع كارتك المحفوظ - ألغِ قبل اليوم السابع بدون تكلفة، أو تنتقل تلقائياً.',
+    es: 'Cuando estés listo, elige un plan. Comienza con 7 días gratuitos con tu tarjeta registrada - cancela antes del día 7 sin coste, o se convierte automáticamente.',
   },
   'pricing.faq.q1': {
     en: 'What do I get for free before I subscribe?',
@@ -20366,9 +20368,9 @@ export const DICTIONARY: Dictionary = {
     es: '¿Necesito una tarjeta de crédito para empezar la prueba de 7 días?',
   },
   'pricing.faq.a2': {
-    en: 'Yes. The 7-day free trial requires full sign-up with a valid payment method. Cancel any time before day 7 and you will not be charged. If you do nothing, the subscription activates automatically and your card is charged.',
-    ar: 'إي. التجربة المجانية ٧ أيام تتطلب تسجيل كامل بطريقة دفع صالحة. ألغِ بأي وقت قبل اليوم السابع وما رح تتحاسب. إذا ما سويت شي، الاشتراك يتفعّل تلقائياً وكارتك يتحاسب.',
-    es: 'Sí. La prueba gratuita de 7 días requiere un registro completo con un método de pago válido. Cancela en cualquier momento antes del día 7 y no se te cobrará. Si no haces nada, la suscripción se activa automáticamente y se cobra a tu tarjeta.',
+    en: 'No. Creating an account starts your 7-day free trial with no payment details taken. If you later begin a paid plan at checkout, that plan starts with 7 free days with your card on file - cancel before day 7 and you will not be charged; otherwise it converts automatically.',
+    ar: 'لا. لما تسوي حساب تبدأ تجربتك المجانية ٧ أيام بدون أي بيانات دفع. وإذا بديت خطة مدفوعة من صفحة الدفع بعدين، الخطة تبدأ بـ ٧ أيام مجانية مع كارتك المحفوظ - ألغِ قبل اليوم السابع وما رح تتحاسب؛ وإلا تنتقل تلقائياً.',
+    es: 'No. Al crear una cuenta empieza tu prueba gratuita de 7 días sin datos de pago. Si más tarde inicias un plan de pago en el checkout, ese plan comienza con 7 días gratuitos con tu tarjeta registrada - cancela antes del día 7 y no se te cobrará; de lo contrario se convierte automáticamente.',
   },
   'pricing.faq.q3': {
     en: 'What does the Student plan cost?',
@@ -24291,9 +24293,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Cancela cuando quieras',
   },
   'home.features.cancel_desc': {
-    en: 'No lock-in contracts. Start with a 7-day free trial (card required) and cancel anytime - no questions asked.',
-    ar: 'ما في عقود مقفّلة. ابدأ بتجربة ٧ أيام ببلاش (مع بطاقة) وألغ في أي وقت - من غير ما نسألك.',
-    es: 'Sin contratos de permanencia. Empieza con una prueba gratuita de 7 días (se requiere tarjeta) y cancela cuando quieras - sin preguntas.',
+    en: 'No lock-in contracts. Start with a 7-day free trial (no card required) and cancel anytime - no questions asked.',
+    ar: 'ما في عقود مقفّلة. ابدأ بتجربة ٧ أيام ببلاش (بدون بطاقة) وألغ في أي وقت - من غير ما نسألك.',
+    es: 'Sin contratos de permanencia. Empieza con una prueba gratuita de 7 días (sin tarjeta) y cancela cuando quieras - sin preguntas.',
   },
 
   // BentoFeatures
@@ -24489,83 +24491,11 @@ export const DICTIONARY: Dictionary = {
     es: 'Aprende jugando',
   },
 
-  // AnthologyTestimonials + TestimonialsSection
-  'home.anth_testimonials.h2': {
-    en: "What they're saying.",
-    ar: 'شنو يقولون.',
-    es: 'Lo que dicen.',
-  },
-  'home.testimonials.h2': {
-    en: 'What Our Students Say',
-    ar: 'شنو يقولون طلابنا',
-    es: 'Lo que dicen nuestros estudiantes',
-  },
-  'home.testimonials.sophie.quote': {
-    en: 'I went from a Grade 4 to a 7 in six months. The structured courses and model answers made everything click.',
-    ar: 'انتقلت من Grade 4 إلى 7 خلال ست شهور. الكورسات المنظّمة والإجابات النموذجية خلّت كل شي يتضح.',
-    es: 'Pasé de un Grade 4 a un 7 en seis meses. Los cursos estructurados y las respuestas modelo hicieron que todo encajara.',
-  },
-  'home.testimonials.sophie.name': { en: 'Sophie T.', ar: 'Sophie T.', es: 'Sophie T.' },
-  'home.testimonials.sophie.role': {
-    en: 'Year 11 - AQA',
-    ar: 'السنة ١١ - AQA',
-    es: 'Year 11 - AQA',
-  },
-  'home.testimonials.mark.quote': {
-    en: "My daughter's confidence has completely changed. She actually wants to revise now and her mock results have gone up two grades.",
-    ar: 'ثقة بنتي تغيّرت تماماً. صارت تبغى تراجع، وموكاتها ارتفعت درجتين.',
-    es: 'La confianza de mi hija ha cambiado por completo. Ahora de verdad quiere repasar y sus resultados en los exámenes de prueba han subido dos notas.',
-  },
-  'home.testimonials.mark.name': { en: 'Mark H.', ar: 'Mark H.', es: 'Mark H.' },
-  'home.testimonials.mark.role': { en: 'Parent', ar: 'ولي أمر', es: 'Padre o madre' },
-  'home.testimonials.james.quote': {
-    en: 'The AI essay feedback is like having a tutor available 24/7. It spotted weaknesses my teacher missed.',
-    ar: 'التغذية الراجعة بالذكاء الاصطناعي كأنها مدرّس متاح ٢٤/٧. اكتشفت نقاط ضعف فاتت معلّمي.',
-    es: 'El feedback de redacciones con IA es como tener un tutor disponible 24/7. Detectó debilidades que a mi profesor se le pasaron.',
-  },
-  'home.testimonials.james.name': { en: 'James R.', ar: 'James R.', es: 'James R.' },
-  'home.testimonials.james.role': {
-    en: 'Year 11 - Edexcel',
-    ar: 'السنة ١١ - Edexcel',
-    es: 'Year 11 - Edexcel',
-  },
-  'home.testimonials.patterson.quote': {
-    en: 'As a Head of English, the analytics dashboard alone saves me hours each week. We can track every student across all year groups.',
-    ar: 'كرئيسة قسم إنجليزي، لوحة التحليلات وحدها توفّر علي ساعات كل أسبوع. نقدر نتابع كل طالب في كل سنة.',
-    es: 'Como jefa de inglés, solo el panel de analíticas me ahorra horas cada semana. Podemos hacer seguimiento de cada estudiante en todos los años escolares.',
-  },
-  'home.testimonials.patterson.name': {
-    en: 'Mrs Patterson',
-    ar: 'Mrs Patterson',
-    es: 'Mrs Patterson',
-  },
-  'home.testimonials.patterson.role': {
-    en: 'Head of English',
-    ar: 'رئيسة قسم إنجليزي',
-    es: 'Jefa de inglés',
-  },
-  'home.testimonials.priya.quote': {
-    en: 'The mock exams with grade boundaries are exactly like the real thing. I felt so prepared walking into my actual exam.',
-    ar: 'الموكات بحدود الدرجات مطابقة للحقيقي. حسّيت بجاهزية كاملة قبل امتحاني الفعلي.',
-    es: 'Los exámenes de prueba con notas de corte son exactamente como el examen real. Me sentí muy preparado al entrar a mi examen de verdad.',
-  },
-  'home.testimonials.priya.name': { en: 'Priya K.', ar: 'Priya K.', es: 'Priya K.' },
-  'home.testimonials.priya.role': {
-    en: 'Year 11 - OCR',
-    ar: 'السنة ١١ - OCR',
-    es: 'Year 11 - OCR',
-  },
-  'home.testimonials.davies.quote': {
-    en: 'Finally an English resource that covers all the boards properly. The lesson builder has halved my planning time.',
-    ar: 'أخيراً مصدر إنجليزي يغطي كل البوردات صح. باني الدروس قلّل وقت التخطيط للنص.',
-    es: 'Por fin un recurso de inglés que cubre todas las juntas como es debido. El generador de clases ha reducido a la mitad mi tiempo de planificación.',
-  },
-  'home.testimonials.davies.name': { en: 'Mr Davies', ar: 'Mr Davies', es: 'Mr Davies' },
-  'home.testimonials.davies.role': {
-    en: 'English Teacher',
-    ar: 'معلّم إنجليزي',
-    es: 'Profesor de inglés',
-  },
+  // Invented homepage testimonials (Sophie T., Mark H., James R.,
+  // Mrs Patterson, Priya K., Mr Davies) deleted 2026-08-18 along with the
+  // dead TestimonialsSection/AnthologyTestimonials components. This product
+  // bans fabricated testimonials - reinstate a testimonials surface only
+  // with real, consented quotes.
 }
 
 /**
@@ -24599,7 +24529,6 @@ export function lookup(key: string, locale: Locale): string {
   const entry =
     DICTIONARY[key] ??
     TOOLKIT_DICTIONARY[key] ??
-    SCHOOL_COMP_DICTIONARY[key] ??
     LEGAL_LONG_DICTIONARY[key] ??
     DASH_INTERNAL_DICTIONARY[key] ??
     DEMO_PAGES_DICTIONARY[key] ??

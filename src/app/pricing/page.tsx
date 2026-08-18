@@ -1191,7 +1191,7 @@ function PricingContent() {
                 icon: Zap,
                 color: 'text-emerald-600 bg-emerald-500/10 border-emerald-500/20',
                 title: 'Upgrade',
-                desc: 'When you\u2019re ready, start a 7-day free trial. Card required - cancel before day 7 at no cost, or it converts automatically.',
+                desc: 'When you\u2019re ready, choose a plan. It begins with 7 free days with your card on file - cancel before day 7 at no cost, or it converts automatically.',
               },
             ].map((item) => (
               <Card key={item.step} className="p-6 text-center border-border/40">
@@ -1253,7 +1253,7 @@ function PricingContent() {
             <Link href="/contact" className="text-primary hover:underline font-medium">
               Get in touch
             </Link>{' '}
-            and we will get back to you within 24 hours.
+            and we aim to reply within one UK working day.
           </p>
         </div>
       </section>

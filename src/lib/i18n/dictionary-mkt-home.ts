@@ -538,9 +538,9 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: '¿Cuánto cuesta?',
   },
   'mkt.teachers.ft.faq.cost.a': {
-    en: 'Every feature is free to try -- you get 3 free uses per tool with no card required. When you are ready to upgrade, the Teacher plan is £6.99/month or £67.99/year at the Early Access / Founding rate (locked until August 2026; Standard pricing from August 2026 is £11.99/month or £99/year). Every paid plan starts with a 7-day free trial (card required, cancel before day 7). School plans are available through our Founding Schools Programme -- £4,000/year for the first 10 schools, anchored against projected Standard Pricing of £8,000/year. Book a call to discuss.',
-    ar: 'كل ميزة تقدر تجرّبها ببلاش -- تحصل 3 استخدامات مجانية لكل أداة بدون بطاقة. لمّا تكون جاهز للترقية، خطة المعلّم بـ £6.99 بالشهر أو £67.99 بالسنة بسعر الـ Early Access / Founding (مثبّت لين أغسطس 2026؛ السعر العادي من أغسطس 2026 هو £11.99 بالشهر أو £99 بالسنة). كل خطة مدفوعة تبدأ بتجربة مجانية 7 أيام (تحتاج بطاقة، سكّر الاشتراك قبل اليوم السابع). خطط المدارس متوفّرة عبر برنامج المدارس المؤسِّسة -- £4,000 بالسنة لأول 10 مدارس، مقابل سعر عادي متوقّع £8,000 بالسنة. احجز مكالمة عشان نتناقش.',
-    es: 'Todas las funciones se pueden probar gratis: dispones de 3 usos gratuitos por herramienta sin necesidad de tarjeta. Cuando estés listo para mejorar, el plan Profesor cuesta £6.99/mes o £67.99/año con la tarifa Early Access / Founding (fija hasta agosto de 2026; el precio estándar a partir de agosto de 2026 es £11.99/mes o £99/año). Todos los planes de pago empiezan con una prueba gratuita de 7 días (se requiere tarjeta, cancela antes del día 7). Los planes para colegios están disponibles a través de nuestro Programa de Colegios Fundadores: £4,000/año para los primeros 10 colegios, anclado frente al precio estándar previsto de £8,000/año. Reserva una llamada para hablarlo.',
+    en: 'Every feature is free to try -- you get 3 free uses per tool with no card required. When you are ready to upgrade, the Teacher plan is £6.99/month or £67.99/year at the Early Access / Founding rate (planned standard pricing is £11.99/month or £99/year, and your rate is locked from the day you subscribe). Paid plans begin with 7 free days -- cancel before day 7 and you are not charged. School plans are available through our Founding Schools Programme -- £4,000/year for the first 10 schools, against a planned standard price of £8,000/year. Book a call to discuss.',
+    ar: 'كل ميزة تقدر تجرّبها ببلاش -- تحصل 3 استخدامات مجانية لكل أداة بدون بطاقة. لمّا تكون جاهز للترقية، خطة المعلّم بـ £6.99 بالشهر أو £67.99 بالسنة بسعر الـ Early Access / Founding (السعر العادي المخطط له £11.99 بالشهر أو £99 بالسنة، وسعرك مثبّت من يوم اشتراكك). الخطط المدفوعة تبدأ بـ 7 أيام مجانية -- ألغِ قبل اليوم السابع وما تنحاسب. خطط المدارس متوفّرة عبر برنامج المدارس المؤسِّسة -- £4,000 بالسنة لأول 10 مدارس، مقابل سعر عادي مخطط له £8,000 بالسنة. احجز مكالمة عشان نتناقش.',
+    es: 'Todas las funciones se pueden probar gratis: dispones de 3 usos gratuitos por herramienta sin necesidad de tarjeta. Cuando estés listo para mejorar, el plan Profesor cuesta £6.99/mes o £67.99/año con la tarifa Early Access / Founding (el precio estándar previsto es £11.99/mes o £99/año, y tu tarifa queda fijada desde el día en que te suscribes). Los planes de pago comienzan con 7 días gratuitos: cancela antes del día 7 y no se te cobra. Los planes para colegios están disponibles a través de nuestro Programa de Colegios Fundadores: £4,000/año para los primeros 10 colegios, frente a un precio estándar previsto de £8,000/año. Reserva una llamada para hablarlo.',
   },
   'mkt.teachers.ft.faq.features.q': {
     en: 'What features are included?',
@@ -588,9 +588,9 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: '¿Qué ocurre cuando uso mis pruebas gratuitas?',
   },
   'mkt.teachers.ft.faq.free_tries.a': {
-    en: 'You get 3 free uses per tool -- AI Lesson Plans, AI Marking, and Worksheet Builder. Once you have used them, you can upgrade to the Premium plan at any time. Every paid plan starts with a 7-day free trial (card required). Cancel any time from your account settings -- no hidden fees, no awkward cancellation calls.',
-    ar: 'تحصل 3 استخدامات مجانية لكل أداة -- خطط الدروس بالـ AI، التصحيح بالـ AI، وبنّاء أوراق العمل. أول ما تستخدمها، تقدر تترقّى لخطة Premium في أي وقت. كل خطة مدفوعة تبدأ بتجربة مجانية 7 أيام (تحتاج بطاقة). سكّر الاشتراك في أي وقت من إعدادات حسابك -- بدون رسوم مخفية، وبدون مكالمات إلغاء محرجة.',
-    es: 'Dispones de 3 usos gratuitos por herramienta: planes de lección con IA, corrección con IA y constructor de fichas de trabajo. Una vez los hayas usado, puedes pasar al plan Premium en cualquier momento. Todos los planes de pago empiezan con una prueba gratuita de 7 días (se requiere tarjeta). Cancela cuando quieras desde la configuración de tu cuenta: sin cargos ocultos ni incómodas llamadas de cancelación.',
+    en: 'You get 3 free uses per tool -- AI Lesson Plans, AI Marking, and Worksheet Builder. Once you have used them, you can upgrade to the Premium plan at any time. Paid plans begin with 7 free days -- cancel before day 7 and you are not charged. Cancel any time from your account settings -- no hidden fees, no awkward cancellation calls.',
+    ar: 'تحصل 3 استخدامات مجانية لكل أداة -- خطط الدروس بالـ AI، التصحيح بالـ AI، وبنّاء أوراق العمل. أول ما تستخدمها، تقدر تترقّى لخطة Premium في أي وقت. الخطط المدفوعة تبدأ بـ 7 أيام مجانية -- ألغِ قبل اليوم السابع وما تنحاسب. سكّر الاشتراك في أي وقت من إعدادات حسابك -- بدون رسوم مخفية، وبدون مكالمات إلغاء محرجة.',
+    es: 'Dispones de 3 usos gratuitos por herramienta: planes de lección con IA, corrección con IA y constructor de fichas de trabajo. Una vez los hayas usado, puedes pasar al plan Premium en cualquier momento. Los planes de pago comienzan con 7 días gratuitos: cancela antes del día 7 y no se te cobra. Cancela cuando quieras desde la configuración de tu cuenta: sin cargos ocultos ni incómodas llamadas de cancelación.',
   },
 
   // ── Hero "Start Free" extras + section copy ────────────────────────
@@ -645,9 +645,9 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: '3 usos gratuitos',
   },
   'mkt.teachers.ft.upgrade_note': {
-    en: 'Upgrade when you are ready. Every paid plan starts with a 7-day free trial (card required, cancel before day 7).',
-    ar: 'ترقّى لمّا تكون جاهز. كل خطة مدفوعة تبدأ بتجربة مجانية 7 أيام (تحتاج بطاقة، سكّر قبل اليوم السابع).',
-    es: 'Mejora cuando estés listo. Todos los planes de pago empiezan con una prueba gratuita de 7 días (se requiere tarjeta, cancela antes del día 7).',
+    en: 'Upgrade when you are ready. Paid plans begin with 7 free days - cancel before day 7 and you are not charged.',
+    ar: 'ترقّى لمّا تكون جاهز. الخطط المدفوعة تبدأ بـ 7 أيام مجانية - ألغِ قبل اليوم السابع وما تنحاسب.',
+    es: 'Mejora cuando estés listo. Los planes de pago comienzan con 7 días gratuitos: cancela antes del día 7 y no se te cobra.',
   },
   'mkt.teachers.ft.cta.start_free': {
     en: 'Start Free',
@@ -1169,9 +1169,9 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Estándar',
   },
   'mkt.teachers.ft.pricing.premium.standard_post': {
-    en: 'from August 2026',
-    ar: 'من أغسطس 2026',
-    es: 'a partir de agosto de 2026',
+    en: 'pricing (planned)',
+    ar: '(السعر المخطط له)',
+    es: '(precio previsto)',
   },
   'mkt.teachers.ft.pricing.premium.year_pre': {
     en: 'or £67.99/year (Standard',
@@ -1179,29 +1179,29 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'o £67.99/año (Estándar',
   },
   'mkt.teachers.ft.pricing.premium.year_post': {
-    en: 'from Aug 2026)',
-    ar: 'من أغسطس 2026)',
-    es: 'a partir de ago. de 2026)',
+    en: 'planned)',
+    ar: 'مخطط له)',
+    es: 'previsto)',
   },
   'mkt.teachers.ft.pricing.premium.increase': {
-    en: '⚡ Prices increasing August 2026',
-    ar: '⚡ الأسعار بترتفع في أغسطس 2026',
-    es: '⚡ Los precios suben en agosto de 2026',
+    en: '⚡ Founding-member pricing - lock in your rate',
+    ar: '⚡ سعر الأعضاء المؤسسين - ثبّت سعرك',
+    es: '⚡ Precio de miembro fundador - asegura tu tarifa',
   },
   'mkt.teachers.ft.pricing.premium.feat.1': {
-    en: 'Unlimited AI Lesson Plans',
-    ar: 'خطط دروس بالـ AI بلا حدود',
-    es: 'Planes de lección con IA ilimitados',
+    en: 'AI Lesson Plans',
+    ar: 'خطط دروس بالـ AI',
+    es: 'Planes de lección con IA',
   },
   'mkt.teachers.ft.pricing.premium.feat.2': {
-    en: 'Unlimited AI Marking',
-    ar: 'تصحيح بالـ AI بلا حدود',
-    es: 'Corrección con IA ilimitada',
+    en: 'AI Essay Marking',
+    ar: 'تصحيح المقالات بالـ AI',
+    es: 'Corrección de redacciones con IA',
   },
   'mkt.teachers.ft.pricing.premium.feat.3': {
-    en: 'Unlimited Worksheet Builder',
-    ar: 'بنّاء أوراق عمل بلا حدود',
-    es: 'Constructor de fichas de trabajo ilimitado',
+    en: 'Worksheet Builder',
+    ar: 'بنّاء أوراق العمل',
+    es: 'Constructor de fichas de trabajo',
   },
   'mkt.teachers.ft.pricing.premium.feat.4': {
     en: 'Student Progress Analytics',
@@ -1234,9 +1234,9 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Cancela cuando quieras',
   },
   'mkt.teachers.ft.pricing.premium.note': {
-    en: 'Demo 3 free uses without a card. Paid plans start with a 7-day free trial (card required, cancel before day 7).',
-    ar: 'جرّب 3 استخدامات مجانية بدون بطاقة. الخطط المدفوعة تبدأ بتجربة مجانية 7 أيام (تحتاج بطاقة، سكّر قبل اليوم السابع).',
-    es: 'Prueba 3 usos gratuitos sin tarjeta. Los planes de pago empiezan con una prueba gratuita de 7 días (se requiere tarjeta, cancela antes del día 7).',
+    en: 'Demo 3 free uses without a card. Paid plans begin with 7 free days - cancel before day 7 and you are not charged.',
+    ar: 'جرّب 3 استخدامات مجانية بدون بطاقة. الخطط المدفوعة تبدأ بـ 7 أيام مجانية - ألغِ قبل اليوم السابع وما تنحاسب.',
+    es: 'Prueba 3 usos gratuitos sin tarjeta. Los planes de pago comienzan con 7 días gratuitos: cancela antes del día 7 y no se te cobra.',
   },
   'mkt.teachers.ft.pricing.school.label': {
     en: 'School / Department',
@@ -1259,9 +1259,9 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Estándar',
   },
   'mkt.teachers.ft.pricing.school.standard_post': {
-    en: 'from August 2026',
-    ar: 'من أغسطس 2026',
-    es: 'a partir de agosto de 2026',
+    en: 'pricing (planned)',
+    ar: '(السعر المخطط له)',
+    es: '(precio previsto)',
   },
   'mkt.teachers.ft.pricing.school.sub': {
     en: 'Founding Schools Programme -- first 10 schools only',
@@ -1366,9 +1366,9 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Empieza gratis',
   },
   'mkt.teachers.ft.signup.terms': {
-    en: 'By signing up you agree to our Terms of Service and Privacy Policy. Free tier includes 3 uses per tool. Premium: £6.99/month or £67.99/year (Early Access - Standard £11.99/£99 from August 2026). 7-day free trial, card required.',
-    ar: 'بالتسجيل انت توافق على شروط الخدمة وسياسة الخصوصية حقّنا. الباقة المجانية تشمل 3 استخدامات لكل أداة. Premium: £6.99 بالشهر أو £67.99 بالسنة (Early Access - العادي £11.99/£99 من أغسطس 2026). تجربة مجانية 7 أيام، تحتاج بطاقة.',
-    es: 'Al registrarte aceptas nuestras Condiciones del Servicio y nuestra Política de Privacidad. El nivel gratuito incluye 3 usos por herramienta. Premium: £6.99/mes o £67.99/año (Early Access - Estándar £11.99/£99 a partir de agosto de 2026). Prueba gratuita de 7 días, se requiere tarjeta.',
+    en: 'By signing up you agree to our Terms of Service and Privacy Policy. Free tier includes 3 uses per tool. Premium: £6.99/month or £67.99/year (Early Access - planned standard £11.99/£99). 7-day free trial, no card required to start.',
+    ar: 'بالتسجيل انت توافق على شروط الخدمة وسياسة الخصوصية حقّنا. الباقة المجانية تشمل 3 استخدامات لكل أداة. Premium: £6.99 بالشهر أو £67.99 بالسنة (Early Access - العادي المخطط له £11.99/£99). تجربة مجانية 7 أيام، ما تحتاج بطاقة للبداية.',
+    es: 'Al registrarte aceptas nuestras Condiciones del Servicio y nuestra Política de Privacidad. El nivel gratuito incluye 3 usos por herramienta. Premium: £6.99/mes o £67.99/año (Early Access - estándar previsto £11.99/£99). Prueba gratuita de 7 días, sin tarjeta para empezar.',
   },
 
   // ── FAQ section heading ────────────────────────────────────────────
@@ -1421,19 +1421,19 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: '(Estándar',
   },
   'mkt.teachers.ft.final.price.standard_post': {
-    en: 'from August 2026)',
-    ar: 'من أغسطس 2026)',
-    es: 'a partir de agosto de 2026)',
+    en: 'planned)',
+    ar: 'مخطط له)',
+    es: 'previsto)',
   },
   'mkt.teachers.ft.final.price.trial': {
-    en: '- 7-day free trial, card required.',
-    ar: '- تجربة مجانية 7 أيام، تحتاج بطاقة.',
-    es: '- prueba gratuita de 7 días, se requiere tarjeta.',
+    en: '- 7-day free trial, no card required to start.',
+    ar: '- تجربة مجانية 7 أيام، ما تحتاج بطاقة للبداية.',
+    es: '- prueba gratuita de 7 días, sin tarjeta para empezar.',
   },
   'mkt.teachers.ft.final.price.increase': {
-    en: '⚡ Prices increasing August 2026 - lock in Early Access today.',
-    ar: '⚡ الأسعار بترتفع في أغسطس 2026 - ثبّت Early Access اليوم.',
-    es: '⚡ Los precios suben en agosto de 2026: asegura el Early Access hoy.',
+    en: '⚡ Founding-member pricing - lock in Early Access today.',
+    ar: '⚡ سعر الأعضاء المؤسسين - ثبّت Early Access اليوم.',
+    es: '⚡ Precio de miembro fundador: asegura el Early Access hoy.',
   },
 
   /* ══════════════ FOR SCHOOLS (src/app/for-schools/page.tsx) ══════════════ */
@@ -1477,9 +1477,9 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Panel de analíticas del departamento',
   },
   'mkt.schools.fs.feat.analytics.desc': {
-    en: 'Real-time progress across every year group. Spot at-risk students early, compare class performance, and generate department reports aligned to common Ofsted English subject deep-dive criteria - ready to share at your next inspection.',
-    ar: 'تقدّم لحظة بلحظة عبر كل السنوات الدراسية. اكتشف الطلاب المعرّضين للخطر بدري، قارن أداء الصفوف، وجهّز تقارير القسم متوافقة مع معايير Ofsted للتعمّق في مادة الإنجليزي - جاهزة للمشاركة في تفتيشك الجاي.',
-    es: 'Progreso en tiempo real en todos los cursos. Detecta pronto a los estudiantes en riesgo, compara el rendimiento de las clases y genera informes del departamento alineados con los criterios habituales de la inspección detallada de la asignatura de inglés de Ofsted, listos para compartir en tu próxima inspección.',
+    en: 'Real-time progress across every year group. Spot at-risk students early, compare class performance, and generate downloadable department reports that give leaders the evidence trail they need.',
+    ar: 'تقدّم لحظة بلحظة عبر كل السنوات الدراسية. اكتشف الطلاب المعرّضين للخطر بدري، قارن أداء الصفوف، وجهّز تقارير قسم قابلة للتحميل تعطي القادة سجل الأدلة اللي يحتاجونه.',
+    es: 'Progreso en tiempo real en todos los cursos. Detecta pronto a los estudiantes en riesgo, compara el rendimiento de las clases y genera informes del departamento descargables que dan a los responsables el rastro de evidencias que necesitan.',
   },
   'mkt.schools.fs.feat.lesson.title': {
     en: 'Lesson Builder & Resource Library',
@@ -1539,9 +1539,9 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Planes de lección',
   },
   'mkt.schools.fs.content.lesson_plans.desc': {
-    en: 'Full lesson plans mapped to your exam board specification, generated in under 30 seconds.',
-    ar: 'خطط دروس كاملة مربوطة بمنهج بوردك، تُجهّز بأقل من 30 ثانية.',
-    es: 'Planes de lección completos mapeados al temario de tu junta examinadora, generados en menos de 30 segundos.',
+    en: 'Full lesson plans mapped to your exam board specification, generated in moments.',
+    ar: 'خطط دروس كاملة مربوطة بمنهج بوردك، تُجهّز في لحظات.',
+    es: 'Planes de lección completos mapeados al temario de tu junta examinadora, generados en un momento.',
   },
   'mkt.schools.fs.content.worksheets.label': {
     en: 'Worksheets',
@@ -1643,9 +1643,9 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Informes de progreso',
   },
   'mkt.schools.fs.compare.ofsted': {
-    en: 'Ofsted-aligned department reporting',
-    ar: 'تقارير القسم متوافقة مع Ofsted',
-    es: 'Informes del departamento alineados con Ofsted',
+    en: 'Whole-department progress reporting',
+    ar: 'تقارير تقدّم على مستوى القسم كامل',
+    es: 'Informes de progreso de todo el departamento',
   },
   'mkt.schools.fs.compare.ai_feedback': {
     en: 'AI essay feedback',
@@ -1680,9 +1680,9 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: '¿Cuánto cuesta?',
   },
   'mkt.schools.fs.faq.cost.a': {
-    en: 'Founding Schools Programme pricing starts at £4,000 per year for the first 10 schools only -- heavily anchored against our projected Standard Pricing of £8,000 per year from August 2026. Exact package scales with department size and is agreed during your onboarding call. Schools that joined in wave 1 at £3,000 are grandfathered at that rate. Book a call to lock in your founding price before the cohort closes.',
-    ar: 'أسعار برنامج المدارس المؤسِّسة تبدأ من £4,000 بالسنة لأول 10 مدارس بس -- بخصم كبير مقابل سعرنا العادي المتوقّع £8,000 بالسنة من أغسطس 2026. الباقة بالضبط تكبر مع حجم القسم وتُتّفق عليها أثناء مكالمة الإعداد. المدارس اللي انضمّت في الموجة الأولى بـ £3,000 تبقى محتفظة بذاك السعر. احجز مكالمة عشان تثبّت سعرك المؤسِّس قبل ما تسكّر الدفعة.',
-    es: 'Los precios del Programa de Colegios Fundadores empiezan en £4,000 al año solo para los primeros 10 colegios, fuertemente anclados frente a nuestro precio estándar previsto de £8,000 al año a partir de agosto de 2026. El paquete exacto escala con el tamaño del departamento y se acuerda durante tu llamada de incorporación. Los colegios que se unieron en la ola 1 a £3,000 conservan esa tarifa. Reserva una llamada para fijar tu precio fundador antes de que se cierre la promoción.',
+    en: 'Founding Schools Programme pricing starts at £4,000 per year for the first 10 schools only, against a planned standard price of £8,000 per year once the founding cohort is full. Exact package scales with department size and is agreed during your onboarding call. Book a call to lock in your founding price before the cohort closes.',
+    ar: 'أسعار برنامج المدارس المؤسِّسة تبدأ من £4,000 بالسنة لأول 10 مدارس بس، مقابل سعر عادي مخطط له £8,000 بالسنة بعد اكتمال دفعة التأسيس. الباقة بالضبط تكبر مع حجم القسم وتُتّفق عليها أثناء مكالمة الإعداد. احجز مكالمة عشان تثبّت سعرك المؤسِّس قبل ما تسكّر الدفعة.',
+    es: 'Los precios del Programa de Colegios Fundadores empiezan en £4,000 al año solo para los primeros 10 colegios, frente a un precio estándar previsto de £8,000 al año una vez completada la promoción fundadora. El paquete exacto escala con el tamaño del departamento y se acuerda durante tu llamada de incorporación. Reserva una llamada para fijar tu precio fundador antes de que se cierre la promoción.',
   },
   'mkt.schools.fs.faq.access.q': {
     en: 'How do students and teachers get access?',
@@ -1757,9 +1757,9 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Ahorro de tiempo considerable en planificación y corrección',
   },
   'mkt.schools.fs.hero.pill.3': {
-    en: 'Ofsted-aligned department reporting',
-    ar: 'تقارير القسم متوافقة مع Ofsted',
-    es: 'Informes del departamento alineados con Ofsted',
+    en: 'Whole-department progress reporting',
+    ar: 'تقارير تقدّم على مستوى القسم كامل',
+    es: 'Informes de progreso de todo el departamento',
   },
 
   // ── Try before you buy (demo) section ──────────────────────────────
@@ -2067,9 +2067,9 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Todos los cursos -- datos en directo',
   },
   'mkt.schools.fs.analytics.live': {
-    en: 'Live',
-    ar: 'مباشر',
-    es: 'En directo',
+    en: 'Sample',
+    ar: 'عينة',
+    es: 'Ejemplo',
   },
   'mkt.schools.fs.analytics.metric.y11_avg.label': {
     en: 'Year 11 Avg Score',
@@ -2127,9 +2127,9 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Progreso en tiempo real en cada curso',
   },
   'mkt.schools.fs.analytics.body': {
-    en: 'School admins and heads of department get a live overview of progress across all classes and year groups. Identify at-risk students before results day. Compare class performance. Generate department reports aligned to common Ofsted English subject deep-dive criteria.',
-    ar: 'مدراء المدرسة ورؤساء الأقسام يحصلون نظرة حيّة على التقدّم عبر كل الصفوف والسنوات الدراسية. اكتشف الطلاب المعرّضين للخطر قبل يوم النتائج. قارن أداء الصفوف. جهّز تقارير القسم متوافقة مع معايير Ofsted للتعمّق في مادة الإنجليزي.',
-    es: 'Los administradores escolares y los jefes de departamento obtienen una vista en directo del progreso en todas las clases y cursos. Identifica a los estudiantes en riesgo antes del día de resultados. Compara el rendimiento de las clases. Genera informes del departamento alineados con los criterios habituales de la inspección detallada de la asignatura de inglés de Ofsted.',
+    en: 'School admins and heads of department get a live overview of progress across all classes and year groups. Identify at-risk students before results day. Compare class performance. Generate downloadable department reports for leadership and governors.',
+    ar: 'مدراء المدرسة ورؤساء الأقسام يحصلون نظرة حيّة على التقدّم عبر كل الصفوف والسنوات الدراسية. اكتشف الطلاب المعرّضين للخطر قبل يوم النتائج. قارن أداء الصفوف. جهّز تقارير قسم قابلة للتحميل للإدارة ومجلس الأمناء.',
+    es: 'Los administradores escolares y los jefes de departamento obtienen una vista en directo del progreso en todas las clases y cursos. Identifica a los estudiantes en riesgo antes del día de resultados. Compara el rendimiento de las clases. Genera informes del departamento descargables para la dirección y el consejo escolar.',
   },
   'mkt.schools.fs.analytics.point.1': {
     en: 'Live dashboard across all year groups and classes',
@@ -2147,9 +2147,9 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Análisis detallado clase por clase y estudiante por estudiante',
   },
   'mkt.schools.fs.analytics.point.4': {
-    en: 'Department reports aligned to Ofsted English subject deep-dive criteria',
-    ar: 'تقارير القسم متوافقة مع معايير Ofsted للتعمّق في مادة الإنجليزي',
-    es: 'Informes del departamento alineados con los criterios de la inspección detallada de la asignatura de inglés de Ofsted',
+    en: 'Downloadable department reports for leadership and governors',
+    ar: 'تقارير قسم قابلة للتحميل للإدارة ومجلس الأمناء',
+    es: 'Informes del departamento descargables para la dirección y el consejo escolar',
   },
   'mkt.schools.fs.analytics.point.5': {
     en: 'Comparison against previous cohorts and national averages',

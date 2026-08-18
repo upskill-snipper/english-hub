@@ -28,7 +28,7 @@
  *   AQA / Edexcel / OCR / WJEC / Cambridge IGCSE coverage,
  *   AI essay marking, mock exams, revision notes, flashcards.
  *   Pricing: £3.99/mo or £29.99/yr (or £20/yr with an affiliate code).
- *   7-day free trial, card required, cancel anytime.
+ *   7-day free trial - no card needed to start. Cancel anytime.
  *
  * If you're tempted to add a feature not in that list - don't. Affiliates who
  * post fabricated benefits get refund spikes and ASA complaints, and we eat
@@ -79,7 +79,7 @@ This is the bit students hate doing alone - and the bit teachers don't have time
 
 5/ The platform I've been pointing students at is The English Hub - AQA, Edexcel, OCR, WJEC and Cambridge IGCSE coverage with AI essay marking, mock papers, revision notes and flashcards in one place.
 
-There's a 7-day free trial (card required, cancel before day 7 if it's not for you).
+There's a 7-day free trial (no card needed to start).
 
 6/ Pricing is £3.99/month or £29.99/year normally. With my code {CODE} the annual plan drops to £20 - a £9.99 saving. Annual only - the monthly plan isn't discounted.
 
@@ -139,7 +139,7 @@ Happy to answer specific questions about your paper if it helps.`,
     format: 'photo caption (3 lines)',
     title: 'Photo caption - desk shot, revision setup, etc.',
     text: `Trying to revise GCSE English without feedback on your essays is like training in the dark.
-The English Hub marks your essays against AQA/Edexcel/OCR/WJEC mark schemes - annual plan £20 with my code (normally £29.99, saves £9.99, annual only). 7-day free trial, card required.
+The English Hub marks your essays against AQA/Edexcel/OCR/WJEC mark schemes - annual plan £20 with my code (normally £29.99, saves £9.99, annual only). 7-day free trial - no card needed to start.
 Link in bio ({URL}) · code {CODE} · #ad`,
     hashtags: ['#GCSE', '#GCSEEnglish', '#Revision', '#StudyGram', '#Year11'],
     bestFor: 'Static posts: revision desk photos, book stacks, study aesthetic shots.',
@@ -180,7 +180,7 @@ FRAME 3:
 [Question sticker: "Which exam board are you sitting?"]
 
 FRAME 4:
-"Annual plan is £29.99 - code {CODE} drops it to £20 (annual only, monthly isn't discounted). 7-day free trial, card required, cancel before day 7 if it's not for you."
+"Annual plan is £29.99 - code {CODE} drops it to £20 (annual only, monthly isn't discounted). 7-day free trial - no card needed to start."
 [Link sticker → {URL}]
 [Sticker text: "Tap for the link"]`,
     bestFor:
@@ -208,7 +208,7 @@ FRAME 4:
 "The English Hub is the one I keep recommending. AI essay marking against the actual AQA, Edexcel, OCR and WJEC mark schemes - you paste your essay, it gives you a band, comments and what to fix. Plus mock papers, revision notes, flashcards, all in one place."
 
 (30-45s, offer)
-"Pricing - £29.99 a year normally, or £3.99 a month. My code {CODE} drops the annual plan to £20, so a £9.99 saving. The discount is annual only, monthly isn't discounted. There's a 7-day free trial - card required, but cancel before day 7 and you won't be charged."
+"Pricing - £29.99 a year normally, or £3.99 a month. My code {CODE} drops the annual plan to £20, so a £9.99 saving. The discount is annual only, monthly isn't discounted. There's a 7-day free trial - no card needed to start, so you won't be charged unless you subscribe."
 
 (45-55s, CTA + disclosure)
 "Link's in my bio with the code attached. AD - I'm an affiliate, I get a small commission if you sign up through my link, costs you nothing extra. Comment your exam board if you want me to make a board-specific breakdown."
@@ -216,7 +216,7 @@ FRAME 4:
 [ON SCREEN throughout: "#ad" / code {CODE} / link in bio]
 
 [Caption below the video]:
-#ad - code {CODE} · {URL} · annual plan £20 (annual only · normally £29.99) · 7-day free trial (card required, cancel before day 7)`,
+#ad - code {CODE} · {URL} · annual plan £20 (annual only · normally £29.99) · 7-day free trial (no card needed to start)`,
     hashtags: ['#GCSE', '#GCSEEnglish', '#Revision', '#StudyTok', '#Year11', '#fyp'],
     bestFor:
       'Creators with a student or teacher audience. Works for both "as a teacher" and "as a recent ex-student" angles.',
@@ -248,10 +248,10 @@ TEXT: "Where were you in 2019"
 
 (18-25s, CTA)
 TEXT ON SCREEN: "Code {CODE} · link in bio · 7-day free trial"
-VOICEOVER: "AD - affiliate link, code {CODE}, link in my bio. Annual plan £20 instead of £29.99. Seven-day free trial, card required, cancel before day 7."
+VOICEOVER: "AD - affiliate link, code {CODE}, link in my bio. Annual plan £20 instead of £29.99. Seven-day free trial, no card needed to start."
 
 [Caption below the video]:
-#ad - code {CODE} · {URL} · annual plan only · 7-day free trial (card required, cancel before day 7)`,
+#ad - code {CODE} · {URL} · annual plan only · 7-day free trial (no card needed to start)`,
     hashtags: ['#GCSE', '#GCSEEnglish', '#StudyTok', '#Revision', '#Year11', '#fyp'],
     bestFor: 'Creators with a comedic / Gen Z student audience. Works best at <25s.',
     note: "Comedy POVs date fast - the format is replaceable but the disclosure rules aren't. Keep #ad on screen for the full duration, not just at the end.",
@@ -271,7 +271,7 @@ Hi all,
 
 A few of you have asked what I use to set extra GCSE English practice. I've been pointing students at The English Hub - it covers AQA, Edexcel, OCR, WJEC and Cambridge IGCSE, with AI essay marking against the real mark schemes, mock papers, revision notes and flashcards.
 
-There's a 7-day free trial (card required, cancel before day 7 with no charge). The annual plan is £29.99, but my affiliate code {CODE} drops it to £20 - annual subscriptions only, the monthly plan isn't discounted.
+There's a 7-day free trial (no card needed to start). The annual plan is £29.99, but my affiliate code {CODE} drops it to £20 - annual subscriptions only, the monthly plan isn't discounted.
 
 Link: {URL}
 
@@ -298,7 +298,7 @@ The bit that breaks most people's revision isn't time. It's that you write pract
 
 I've been recommending The English Hub. It marks your essays with AI against the actual AQA, Edexcel, OCR and WJEC mark schemes - band, comments, and what to fix next. You also get mock papers, revision notes and flashcards alongside. Cambridge IGCSE is in there too if you're sitting those.
 
-Pricing: £3.99/month or £29.99/year. Use my code {CODE} and the annual plan drops to £20 - a £9.99 saving. Annual subscriptions only - the monthly plan isn't discounted. There's a 7-day free trial, card required, cancel before day 7 and you won't be charged a penny.
+Pricing: £3.99/month or £29.99/year. Use my code {CODE} and the annual plan drops to £20 - a £9.99 saving. Annual subscriptions only - the monthly plan isn't discounted. There's a 7-day free trial - no card needed to start, so you won't be charged a penny unless you subscribe.
 
 Link with the code applied: {URL}
 
@@ -322,7 +322,7 @@ AD / disclosure: I'm an affiliate for The English Hub. If you sign up through th
 
 If you're revising GCSE English at home and your school can't mark essays as often as you'd like, The English Hub is worth a serious look. It covers all the major boards - AQA, Edexcel, OCR, WJEC and Cambridge IGCSE - and the AI essay marker scores your work against the actual mark schemes, with band, comments and what to fix next. Alongside that you get mock papers, revision notes and flashcards in one place, so you're not stitching three subscriptions together.
 
-Pricing is straightforward: £3.99 a month or £29.99 a year. Using my affiliate code {CODE}, the annual plan drops to £20 - a £9.99 saving. Worth flagging: the discount applies to annual subscriptions only, the monthly plan isn't discounted. There's a 7-day free trial with card required, and you can cancel any time before day 7 without being charged.
+Pricing is straightforward: £3.99 a month or £29.99 a year. Using my affiliate code {CODE}, the annual plan drops to £20 - a £9.99 saving. Worth flagging: the discount applies to annual subscriptions only, the monthly plan isn't discounted. There's a 7-day free trial with no card needed to start, and you can walk away at any time without being charged.
 
 Link with the code applied: {URL}
 
@@ -360,7 +360,7 @@ Link with the code applied: {URL}
 
 The English Hub is £3.99 a month or £29.99 a year on standard pricing. With my code {CODE} the annual plan drops to £20 - a £9.99 saving against the standard annual rate. The discount applies to annual subscriptions only; the monthly plan isn't discounted.
 
-There's a 7-day free trial. A valid payment method is required to start the trial; cancel any time before day 7 and you won't be charged. Cancellations are straightforward in the account settings.
+There's a 7-day free trial with no card needed to start. Nothing is charged unless you choose a plan, and cancellations are straightforward in the account settings.
 
 [Link with the code applied: {URL}]
 
@@ -395,7 +395,7 @@ AQA, Edexcel, OCR, WJEC and Cambridge IGCSE.`,
 
 "Quick one before you go - if you're revising GCSE English and your school can't mark every practice essay you write, the platform I keep recommending is The English Hub. AI essay marking against the real AQA, Edexcel, OCR and WJEC mark schemes, plus mock papers, revision notes and flashcards in one place.
 
-There's a 7-day free trial - card required, cancel before day 7 and you won't be charged. Annual plan is £29.99 normally, or £20 with my code {CODE}. Worth flagging: the discount is annual only, the monthly plan isn't discounted.
+There's a 7-day free trial - no card needed to start. Annual plan is £29.99 normally, or £20 with my code {CODE}. Worth flagging: the discount is annual only, the monthly plan isn't discounted.
 
 Link's in the description with the code attached. AD - I'm an affiliate, I earn a small commission if you sign up through it. Costs you nothing extra. Cheers for watching."
 
@@ -422,7 +422,7 @@ AD / Affiliate disclosure: this video includes a paid promotion for The English 
 
 The English Hub - GCSE English revision platform covering AQA, Edexcel, OCR, WJEC and Cambridge IGCSE. AI essay marking, mock papers, revision notes and flashcards.
 
-· 7-day free trial (card required, cancel before day 7 to avoid charge)
+· 7-day free trial (no card needed to start)
 · £3.99/month or £29.99/year standard pricing
 · Use code {CODE} for the annual plan at £20 - saves £9.99
 · Discount applies to annual subscriptions only; monthly plan isn't discounted
@@ -439,7 +439,7 @@ For anyone asking about the platform I mentioned - it's The English Hub, link an
 Quick recap on the offer:
 · Annual plan £20 with code {CODE} (normally £29.99 - saves £9.99)
 · Annual only - the monthly plan isn't discounted
-· 7-day free trial, card required, cancel before day 7 if it isn't for you
+· 7-day free trial, no card needed to start
 
 {URL}
 

@@ -82,7 +82,7 @@ const navCards = [
   {
     title: 'Full syllabus',
     description: 'Complete 0990 specification breakdown and assessment objectives.',
-    href: '/igcse/cambridge/0990/syllabus',
+    href: '/igcse/cambridge/0990',
     icon: FileText,
   },
 ]
@@ -168,7 +168,7 @@ const studyTools = [
   {
     title: 'AI Toolkit',
     description: 'AI test builder and revision notes',
-    href: '/toolkit',
+    href: '/revision',
     icon: Wrench,
   },
   {

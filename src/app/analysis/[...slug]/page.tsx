@@ -29,7 +29,12 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const canonical = `https://theenglishhub.app/analysis/${key}`
 
   return {
-    title: entry.title,
+    // Document <title> must be brandless: ~88 analysis records bake
+    // " | The English Hub" into `entry.title`, and the root layout's title
+    // template appends " - The English Hub" again, double-branding every
+    // SERP snippet. cleanTitle() strips the baked suffix; OG/Twitter keep
+    // the raw branded form because those fields are NOT templated.
+    title: cleanTitle(entry.title),
     description: entry.description,
     alternates: { canonical },
     openGraph: {

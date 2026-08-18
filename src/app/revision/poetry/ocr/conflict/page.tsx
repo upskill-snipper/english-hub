@@ -14,6 +14,10 @@ interface Poem {
   slug: string
   publicDomain: boolean
   hook: string
+  // Full study page for this poem, verified to exist. This cluster has no
+  // per-poem pages of its own, so public-domain poems borrow the same poem's
+  // page elsewhere on the site; poems with no page anywhere stay unlinked.
+  studyHref?: string
 }
 
 const POEMS: Poem[] = [
@@ -22,6 +26,7 @@ const POEMS: Poem[] = [
     poet: 'Lord Byron',
     slug: 'the-destruction-of-sennacherib',
     publicDomain: true,
+    studyHref: '/revision/poetry/edexcel/conflict/the-destruction-of-sennacherib',
     hook: 'A galloping retelling of an Old Testament story in which an invading army is annihilated overnight.',
   },
   {
@@ -29,6 +34,7 @@ const POEMS: Poem[] = [
     poet: 'Thomas Hardy',
     slug: 'the-man-he-killed',
     publicDomain: true,
+    studyHref: '/igcse/edexcel/poetry/the-man-he-killed',
     hook: 'A soldier struggles to justify killing a man who, in different circumstances, could have been his friend.',
   },
   {
@@ -36,6 +42,7 @@ const POEMS: Poem[] = [
     poet: 'Christina Rossetti',
     slug: 'cousin-kate',
     publicDomain: true,
+    studyHref: '/revision/poetry/eduqas/cousin-kate',
     hook: 'A betrayed woman accuses her cousin and the lord who used and abandoned her.',
   },
   {
@@ -50,6 +57,7 @@ const POEMS: Poem[] = [
     poet: 'Wilfred Owen',
     slug: 'exposure',
     publicDomain: true,
+    studyHref: '/revision/poetry/power-and-conflict/exposure',
     hook: 'Soldiers slowly freeze to death in the trenches while nothing happens on the front line.',
   },
   {
@@ -57,6 +65,7 @@ const POEMS: Poem[] = [
     poet: 'Alfred Lord Tennyson',
     slug: 'the-charge-of-the-light-brigade',
     publicDomain: true,
+    studyHref: '/revision/poetry/power-and-conflict/the-charge-of-the-light-brigade',
     hook: 'Six hundred soldiers ride into certain death with unwavering duty.',
   },
   {
@@ -193,18 +202,18 @@ export default function OCRConflictPage() {
           {POEMS.map((poem) => (
             <Link
               key={poem.slug}
-              href={poem.publicDomain ? `/revision/poetry/ocr/conflict/${poem.slug}` : '#'}
+              href={poem.studyHref ?? '#'}
               className={`group relative flex flex-col rounded-2xl border border-border/60 bg-card p-5 transition-all duration-200 ${
-                poem.publicDomain
+                poem.studyHref
                   ? 'hover:border-border hover:shadow-card-hover'
                   : 'cursor-not-allowed opacity-70'
               }`}
               onClick={(e) => {
-                if (!poem.publicDomain) e.preventDefault()
+                if (!poem.studyHref) e.preventDefault()
               }}
             >
               <div className="absolute right-4 top-4">
-                {poem.publicDomain ? (
+                {poem.studyHref ? (
                   <CheckCircle2 className="size-4 text-emerald-400" />
                 ) : (
                   <Lock className="size-4 text-muted-foreground/50" />
@@ -221,7 +230,7 @@ export default function OCRConflictPage() {
 
               <div className="mt-3">
                 <Badge variant="outline" className="text-[0.65rem]">
-                  {poem.publicDomain
+                  {poem.studyHref
                     ? t('poetry_hub.ocr.full_study')
                     : t('poetry_hub.ocr.quotes_only')}
                 </Badge>

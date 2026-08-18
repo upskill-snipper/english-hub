@@ -15,7 +15,6 @@ import { FAQItem } from '@/components/for-schools/FAQItem'
 import { BookCallForm } from '@/components/for-schools/BookCallForm'
 import { VAT_LABEL } from '@/lib/copy/pricing'
 import { PRICING } from '@/constants/pricing'
-import { InfographicBanner } from '@/components/marketing/InfographicBanner'
 import { BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/json-ld'
 import { t, tMany } from '@/lib/i18n/t'
 import {
@@ -372,13 +371,11 @@ export default async function ForSchoolsPage() {
           { name: 'For Schools', url: 'https://theenglishhub.app/for-schools' },
         ]}
       />
-      {/* ════════════════ INFOGRAPHIC BANNER ════════════════
-          Whole-school overview: students-on-track, YoY uplift,
-          AI-identified focus areas, time saved, on-demand reports */}
-      <InfographicBanner
-        src="/infographics/for-schools.png"
-        alt="Infographic: whole-school insight, smarter decisions, stronger outcomes. Shows 68% of students on track, predicted +5-15% YoY improvement, AI-identified focus areas (analysing language, structuring writing, vocabulary range, reading inference, spelling), 4.5+ teacher hours and 12+ school hours saved per week, and on-demand reports for classes, year groups, students."
-      />
+      {/* Infographic banner removed 2026-08-18: the PNG baked in unevidenced
+          outcome stats (68% on track, +5-15% YoY, hours saved) - fabricated
+          numbers are banned on this product. Reinstate only with a
+          regenerated image whose every number is real or clearly labelled
+          sample data. */}
 
       {/* ════════════════ HERO ════════════════ */}
       <section className="relative overflow-hidden pt-24 pb-28 sm:pt-32 sm:pb-36">
@@ -894,6 +891,9 @@ export default async function ForSchoolsPage() {
                     {await t('mkt.schools.fs.analytics.live')}
                   </Badge>
                 </div>
+                <p className="text-[11px] text-muted-foreground/70 mb-3">
+                  Illustrative sample data - not a real school.
+                </p>
                 <div className="grid grid-cols-2 gap-3 mb-5">
                   {analyticsMetrics.map((metric) => (
                     <div
@@ -1503,7 +1503,7 @@ export default async function ForSchoolsPage() {
             </div>
             <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
               {[
-                { label: await t('mkt.schools.fs.footer.link.schools'), href: '/for-schools' },
+                { label: await t('mkt.schools.fs.footer.link.schools'), href: '/schools' },
                 { label: await t('mkt.schools.fs.footer.link.courses'), href: '/courses' },
                 { label: await t('mkt.schools.fs.footer.link.practice'), href: '/practice' },
                 { label: await t('mkt.schools.fs.footer.link.revision'), href: '/revision' },

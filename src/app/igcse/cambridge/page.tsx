@@ -69,7 +69,7 @@ const syllabuses = [
       },
       {
         label: 'Full syllabus breakdown',
-        href: '/igcse/cambridge/0500/syllabus',
+        href: '/igcse/cambridge/0500',
       },
     ],
   },
@@ -148,7 +148,7 @@ const studyTools = [
   {
     titleKey: 'igcse.tool.toolkit.title',
     descKey: 'igcse.tool.toolkit.desc',
-    href: '/toolkit',
+    href: '/revision',
     icon: Wrench,
   },
 ]

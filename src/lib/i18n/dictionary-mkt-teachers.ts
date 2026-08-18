@@ -272,9 +272,9 @@ export const MKT_TEACHERS_DICTIONARY: Record<string, { en: string; ar: string; e
     es: 'Repaso específico',
   },
   'mkt.teachers.features.targeted_revision.body': {
-    en: 'Point students at the practice that will move their grade.',
-    ar: 'وجّه الطلاب للتمارين اللي تحرّك درجتهم.',
-    es: 'Dirige a los estudiantes a la práctica que mejorará su nota.',
+    en: 'Point students at the practice their marking shows they need.',
+    ar: 'وجّه الطلاب للتمارين اللي يبيّن تصحيحهم إنهم يحتاجونها.',
+    es: 'Dirige a los estudiantes a la práctica que su corrección muestra que necesitan.',
   },
 
   // Trust statement card

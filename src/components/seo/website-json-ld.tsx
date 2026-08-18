@@ -46,7 +46,7 @@ export async function WebsiteJsonLd({ nonce }: { nonce?: string } = {}) {
       {
         '@type': 'Offer',
         name: studentMonthly,
-        price: '3.49',
+        price: '3.99',
         priceCurrency: 'GBP',
         availability: 'https://schema.org/InStock',
         priceValidUntil: '2028-01-01',

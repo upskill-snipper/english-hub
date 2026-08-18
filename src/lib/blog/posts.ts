@@ -11,7 +11,7 @@
 
 import readingTime from 'reading-time'
 
-import { listMdxSlugs, readAllMdxFiles, readMdxFile } from '@/lib/mdx'
+import { listMdxSlugs, mdxFileExists, readAllMdxFiles, readMdxFile } from '@/lib/mdx'
 
 const BLOG_DIR = 'blog'
 
@@ -141,9 +141,20 @@ export function getBlogPost(slug: string, locale: 'en' | 'ar' | 'es' = 'en'): Bl
 /**
  * Returns the slugs of every blog post, sorted alphabetically.
  *
- * Used by `generateStaticParams` and the sitemap - both of those care
+ * Used by the slug-existence guard and the sitemap - both of those care
  * about coverage, not order, so we keep this lightweight (no MDX parse).
+ * Locale variants (`<slug>.ar.mdx`) are excluded by `listMdxSlugs`.
  */
 export function getBlogSlugs(): string[] {
   return listMdxSlugs(BLOG_DIR)
+}
+
+/**
+ * True when `content/blog/<slug>.ar.mdx` exists - i.e. the post has a
+ * human-reviewed Arabic translation servable at `/ar/blog/<slug>`.
+ * Cheap existence probe (no parse) so metadata/hreflang can call it
+ * per-request without cost.
+ */
+export function hasArabicVariant(slug: string): boolean {
+  return mdxFileExists(BLOG_DIR, `${slug}.ar`)
 }

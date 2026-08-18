@@ -66,16 +66,16 @@ export const FAQ_SECTIONS: FaqSection[] = [
     items: [
       {
         question: 'How much does The English Hub cost?',
-        answer: `Early Access / Founding pricing - locked until ${PRICING.PRICE_INCREASE_DATE}: Students £${PRICING.STUDENT_MONTHLY}/month or £${PRICING.STUDENT_ANNUAL}/year (or £${PRICING.STUDENT_ANNUAL_WITH_CODE}/year with any affiliate code or the public code ${PRICING.AFFILIATE_PROMO_CODE} - save £${PRICING.STUDENT_ANNUAL_SAVINGS}). Teachers £${PRICING.TEACHER_MONTHLY}/month or £${PRICING.TEACHER_ANNUAL}/year (includes lesson planning, AI marking, worksheet builder, class analytics). Schools: Founding Schools Programme £${PRICING.FOUNDER_SCHOOL_MIN.toLocaleString('en-GB')} per year - first ${PRICING.FOUNDER_SCHOOL_LIMIT} schools only. Standard pricing from ${PRICING.PRICE_INCREASE_DATE}: Students £${PRICING.STUDENT_MONTHLY_STANDARD}/month or £${PRICING.STUDENT_ANNUAL_STANDARD}/year. Teachers £${PRICING.TEACHER_MONTHLY_STANDARD}/month or £${PRICING.TEACHER_ANNUAL_STANDARD}/year. Schools £${PRICING.SCHOOL_STANDARD.toLocaleString('en-GB')}/year. Every plan starts with a ${PRICING.TRIAL_TEXT} - no card required to start; you only add payment when the trial ends and you choose to continue. You can also browse all revision content before signing up. Prices shown in GBP.`,
+        answer: `Early Access / Founding pricing, available now: Students £${PRICING.STUDENT_MONTHLY}/month or £${PRICING.STUDENT_ANNUAL}/year (or £${PRICING.STUDENT_ANNUAL_WITH_CODE}/year with any affiliate code or the public code ${PRICING.AFFILIATE_PROMO_CODE} - save £${PRICING.STUDENT_ANNUAL_SAVINGS}). Teachers £${PRICING.TEACHER_MONTHLY}/month or £${PRICING.TEACHER_ANNUAL}/year (includes lesson planning, AI marking, worksheet builder, class analytics). Schools: Founding Schools Programme £${PRICING.FOUNDER_SCHOOL_MIN.toLocaleString('en-GB')} per year - first ${PRICING.FOUNDER_SCHOOL_LIMIT} schools only. Planned standard pricing, which will apply to new signups ${PRICING.PRICE_INCREASE_DATE}: Students £${PRICING.STUDENT_MONTHLY_STANDARD}/month or £${PRICING.STUDENT_ANNUAL_STANDARD}/year. Teachers £${PRICING.TEACHER_MONTHLY_STANDARD}/month or £${PRICING.TEACHER_ANNUAL_STANDARD}/year. Schools £${PRICING.SCHOOL_STANDARD.toLocaleString('en-GB')}/year. Your rate is locked from the day you subscribe. Every plan starts with a ${PRICING.TRIAL_TEXT} - no card required to start; you only add payment when the trial ends and you choose to continue. You can also browse all revision content before signing up. Prices shown in GBP.`,
       },
       {
         question: 'Is there a free trial? Do I need a card?',
-        answer: `Yes. Every paid plan starts with a ${PRICING.TRIAL_TEXT}. The trial requires full sign-up with a valid payment method - so the subscription can convert automatically if you do not cancel before day 7. Separately, you can demo most premium features for ${PRICING.FREE_USES_PER_FEATURE} free uses without a card.`,
+        answer: `Yes, and you do not need a card to start. Creating an account gives you a ${PRICING.TRIAL_TEXT} of the full product with no payment details taken. If you later choose a paid plan at checkout, that subscription also begins with ${PRICING.TRIAL_DAYS} free days with your card on file - cancel before day ${PRICING.TRIAL_DAYS} and you are not charged. You also get ${PRICING.FREE_USES_PER_FEATURE} free demo uses of most premium tools.`,
       },
       {
         question: 'What happens after my 7-day trial ends?',
         answer:
-          'We send you a reminder email a couple of days before the trial ends. If you do nothing, your chosen subscription activates and your card is charged the plan price. Cancel any time before day 7 from your account settings and you will not be charged at all.',
+          'We send you a reminder email before the trial ends. If you signed up without a card, nothing is ever charged: premium features simply pause until you choose a plan, and all the free revision content stays available. If you started a paid plan at checkout, the subscription converts to your chosen plan at the end of the free week unless you cancel first from account settings.',
       },
       {
         question: 'Can I cancel my subscription?',
@@ -223,7 +223,7 @@ export const FAQ_SECTIONS: FaqSection[] = [
       },
       {
         question: 'How does the Founding Schools Programme work?',
-        answer: `Our Founding Schools Programme is a strategic partnership limited to the first ${PRICING.FOUNDER_SCHOOL_LIMIT} schools. Founding rate is £${PRICING.FOUNDER_SCHOOL_MIN.toLocaleString('en-GB')} per year - anchored against our projected Standard Pricing of £${PRICING.SCHOOL_STANDARD.toLocaleString('en-GB')} per year from ${PRICING.PRICE_INCREASE_DATE}. Founding schools receive full platform access, priority onboarding, early features, and locked preferential pricing for 2-3 years. Schools that joined in wave 1 at £${PRICING.FOUNDER_SCHOOL_LEGACY.toLocaleString('en-GB')} are grandfathered at that rate. Visit our For Schools page or contact info@upskillenergy.com for details.`,
+        answer: `Our Founding Schools Programme is a strategic partnership limited to the first ${PRICING.FOUNDER_SCHOOL_LIMIT} schools. Founding rate is £${PRICING.FOUNDER_SCHOOL_MIN.toLocaleString('en-GB')} per year, against a planned standard price of £${PRICING.SCHOOL_STANDARD.toLocaleString('en-GB')} per year once the founding cohort is full. Founding schools receive full platform access, priority onboarding, early features, and locked preferential pricing for 2-3 years. Visit our For Schools page or contact support@theenglishhub.app for details.`,
       },
       {
         question: 'What does the teacher dashboard include?',

@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     template: '%s - The English Hub',
   },
   description:
-    'Pick your exam board and revise GCSE or IGCSE English with AI marking against the AO rubric. Six boards covered.',
+    'Pick your exam board and revise GCSE or IGCSE English with AI marking against the AO rubric. AQA, Edexcel, OCR, Eduqas and Cambridge covered.',
   alternates: {
     canonical: 'https://theenglishhub.app',
     // hreflang alternates - canonical English at root only. There is no
@@ -97,7 +97,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'The English Hub - GCSE & IGCSE English revision, AI marked',
     description:
-      'Pick your exam board and revise GCSE or IGCSE English with AI marking against the AO rubric. Six boards covered.',
+      'Pick your exam board and revise GCSE or IGCSE English with AI marking against the AO rubric. AQA, Edexcel, OCR, Eduqas and Cambridge covered.',
     url: 'https://theenglishhub.app',
     siteName: 'The English Hub',
     type: 'website',
@@ -115,7 +115,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'The English Hub - GCSE & IGCSE English revision, AI marked',
     description:
-      'Pick your exam board and revise GCSE or IGCSE English with AI marking against the AO rubric. Six boards covered.',
+      'Pick your exam board and revise GCSE or IGCSE English with AI marking against the AO rubric. AQA, Edexcel, OCR, Eduqas and Cambridge covered.',
     images: ['/api/og'],
   },
 }

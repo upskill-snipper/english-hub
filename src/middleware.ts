@@ -460,6 +460,22 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL(retiredTarget, request.url))
   }
 
+  // ── Phantom `.ar` blog URLs → canonical Arabic surface ─────────────
+  //
+  // Until Aug 2026, `listMdxSlugs()` listed the `<slug>.ar.mdx` translation
+  // files as standalone slugs, so Google indexed ~40 `/blog/<slug>.ar`
+  // URLs (Arabic body inside English chrome). Those slugs no longer exist;
+  // permanently redirect them to the real Arabic surface `/ar/blog/<slug>`
+  // (served via the `/ar` rewrite below) so link equity and bookmarks
+  // survive instead of 404ing.
+  const phantomArMatch = pathname.match(/^\/blog\/(.+)\.ar$/)
+  if (phantomArMatch) {
+    const target = request.nextUrl.clone()
+    target.pathname = `/ar/blog/${phantomArMatch[1]}`
+    target.search = ''
+    return NextResponse.redirect(target, 308)
+  }
+
   // ── CSRF: Origin header validation for API mutations ─────────────
   if (pathname.startsWith('/api/') && request.method !== 'GET' && request.method !== 'HEAD') {
     // Stripe + RevenueCat webhooks come from third-party servers - skip origin check.

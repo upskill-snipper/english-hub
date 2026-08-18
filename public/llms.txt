@@ -2,7 +2,7 @@
 
 > The English Hub is an independent GCSE, IGCSE, KS3, IELTS and EAL English learning platform for students, parents, teachers and schools. It provides exam-board-aligned revision (AQA, Pearson Edexcel, OCR, WJEC Eduqas, Cambridge IGCSE), AI-assisted essay feedback against real mark schemes, exam-style practice, mock exams, teacher tools and school-level analytics. The interface is available in English, Gulf Arabic and Spanish; study content is English. The platform is exam-board aligned, not exam-board endorsed. Content accuracy is governed by a published content-verification methodology with human review of high-stakes material.
 
-Last generated: 2026-06-10. Canonical host: https://theenglishhub.app
+Last generated: 2026-08-18. Canonical host: https://theenglishhub.app
 
 This file follows the llms.txt convention so AI answer engines can cite accurate, exam-board-specific English education content. The English Hub is independent and exam-board aligned, not endorsed.
 
@@ -678,10 +678,13 @@ This file follows the llms.txt convention so AI answer engines can cite accurate
 - [Resources › Revision Notes › Blood Brothers](https://theenglishhub.app/resources/revision-notes/blood-brothers)
 - [Resources › Revision Notes › Christmas Carol](https://theenglishhub.app/resources/revision-notes/christmas-carol)
 - [Resources › Revision Notes › Curious Incident](https://theenglishhub.app/resources/revision-notes/curious-incident)
+- [Resources › Revision Notes › Do Not Go Gentle Into That Good Night](https://theenglishhub.app/resources/revision-notes/do-not-go-gentle-into-that-good-night)
 - [Resources › Revision Notes › Frankenstein](https://theenglishhub.app/resources/revision-notes/frankenstein)
 - [Resources › Revision Notes › Great Expectations](https://theenglishhub.app/resources/revision-notes/great-expectations)
+- [Resources › Revision Notes › Half Past Two](https://theenglishhub.app/resources/revision-notes/half-past-two)
 - [Resources › Revision Notes › Hamlet](https://theenglishhub.app/resources/revision-notes/hamlet)
 - [Resources › Revision Notes › Henry V](https://theenglishhub.app/resources/revision-notes/henry-v)
+- [Resources › Revision Notes › Hide And Seek](https://theenglishhub.app/resources/revision-notes/hide-and-seek)
 - [Resources › Revision Notes › Inspector Calls](https://theenglishhub.app/resources/revision-notes/inspector-calls)
 - [Resources › Revision Notes › Jane Eyre](https://theenglishhub.app/resources/revision-notes/jane-eyre)
 - [Resources › Revision Notes › Jekyll And Hyde](https://theenglishhub.app/resources/revision-notes/jekyll-and-hyde)
@@ -701,13 +704,16 @@ This file follows the llms.txt convention so AI answer engines can cite accurate
 - [Resources › Revision Notes › Sign Of Four](https://theenglishhub.app/resources/revision-notes/sign-of-four)
 - [Resources › Revision Notes › Silas Marner](https://theenglishhub.app/resources/revision-notes/silas-marner)
 - [Resources › Revision Notes › The Crucible](https://theenglishhub.app/resources/revision-notes/the-crucible)
+- [Resources › Revision Notes › The Door](https://theenglishhub.app/resources/revision-notes/the-door)
 - [Resources › Revision Notes › The Great Gatsby](https://theenglishhub.app/resources/revision-notes/the-great-gatsby)
 - [Resources › Revision Notes › The Handmaids Tale](https://theenglishhub.app/resources/revision-notes/the-handmaids-tale)
 - [Resources › Revision Notes › The Tempest](https://theenglishhub.app/resources/revision-notes/the-tempest)
+- [Resources › Revision Notes › The Yellow Wallpaper](https://theenglishhub.app/resources/revision-notes/the-yellow-wallpaper)
 - [Resources › Revision Notes › Things Fall Apart](https://theenglishhub.app/resources/revision-notes/things-fall-apart)
 - [Resources › Revision Notes › To Kill A Mockingbird](https://theenglishhub.app/resources/revision-notes/to-kill-a-mockingbird)
 - [Resources › Revision Notes › Twelfth Night](https://theenglishhub.app/resources/revision-notes/twelfth-night)
 - [Resources › Revision Notes › View From The Bridge](https://theenglishhub.app/resources/revision-notes/view-from-the-bridge)
+- [Resources › Revision Notes › When Greek Meets Greek](https://theenglishhub.app/resources/revision-notes/when-greek-meets-greek)
 - [Resources › Revision Notes › Woman In Black](https://theenglishhub.app/resources/revision-notes/woman-in-black)
 - [Resources › Spoken Language](https://theenglishhub.app/resources/spoken-language)
 - [Resources › Spoken Language › Topics](https://theenglishhub.app/resources/spoken-language/topics)
@@ -894,7 +900,6 @@ This file follows the llms.txt convention so AI answer engines can cite accurate
 - [For Teachers › Free Resources](https://theenglishhub.app/for-teachers/free-resources)
 - [Help](https://theenglishhub.app/help)
 - [Help › Contact](https://theenglishhub.app/help/contact)
-- [Help › Faq](https://theenglishhub.app/help/faq)
 - [Help › Report](https://theenglishhub.app/help/report)
 - [Help › Suggestions](https://theenglishhub.app/help/suggestions)
 - [Sitemap Html](https://theenglishhub.app/sitemap-html)

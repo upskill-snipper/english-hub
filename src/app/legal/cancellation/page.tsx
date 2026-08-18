@@ -70,8 +70,8 @@ export default async function CancellationPolicyPage() {
           <li>
             <strong>{tr(`If you consent and then cancel within 14 days:`)}</strong> You will receive
             a refund minus a proportionate charge for the days you used the service. For example, if
-            you have the Student Monthly plan at &pound;3.49 and cancel after 5 days, we deduct 5/30
-            of &pound;3.49 (&pound;0.58) and refund &pound;2.91.
+            you have the Student Monthly plan at &pound;3.99 and cancel after 5 days, we deduct 5/30
+            of &pound;3.99 (&pound;0.67) and refund &pound;3.32.
           </li>
           <li>
             <strong>{tr(`If you do not consent:`)}</strong> Your access begins after the 14-day

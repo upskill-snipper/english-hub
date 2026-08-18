@@ -208,7 +208,7 @@ export default async function SchoolPilotPackPage() {
               variant="outline"
               size="lg"
               className="text-base px-8 h-12 border-border/60 gap-2"
-              render={<Link href="/for-schools" />}
+              render={<Link href="/schools" />}
             >
               <Printer className="w-4 h-4" />
               {await t('mkt.schools.pilot.hero.cta_back')}

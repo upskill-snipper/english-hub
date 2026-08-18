@@ -499,7 +499,7 @@ export default function TeacherResourcesPage() {
             <Lock className="h-4 w-4 text-clay-600 dark:text-clay-400 shrink-0" />
             <span>{toast}</span>
             <Link
-              href="/for-teachers"
+              href="/teachers"
               className="ml-2 font-semibold text-clay-600 dark:text-clay-400 hover:text-amber-700 dark:text-amber-300 underline underline-offset-2"
             >
               Subscribe
@@ -768,7 +768,7 @@ export default function TeacherResourcesPage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Button
-              render={<Link href="/for-teachers" />}
+              render={<Link href="/teachers" />}
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8"
             >

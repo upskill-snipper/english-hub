@@ -400,8 +400,7 @@ export default function BillingPage() {
                     <span className="line-through">
                       {PRICING.STUDENT_ANNUAL_STANDARD}
                       {t('account.billing.per_year')}
-                    </span>{' '}
-                    {t('account.billing.from_date_prefix')} {PRICING.PRICE_INCREASE_DATE}
+                    </span>
                   </p>
                   <p className="text-sm text-emerald-500 font-semibold mb-2">
                     {PRICING.TRIAL_TEXT}
@@ -469,8 +468,7 @@ export default function BillingPage() {
                     <span className="line-through">
                       {PRICING.TEACHER_ANNUAL_STANDARD}
                       {t('account.billing.per_year')}
-                    </span>{' '}
-                    {t('account.billing.from_date_prefix')} {PRICING.PRICE_INCREASE_DATE}
+                    </span>
                   </p>
                   <p className="text-sm text-emerald-500 font-semibold mb-2">
                     {PRICING.TRIAL_TEXT}

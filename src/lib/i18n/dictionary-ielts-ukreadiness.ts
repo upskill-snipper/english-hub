@@ -249,14 +249,14 @@ export const IELTS_UKREADINESS_DICTIONARY: Record<
   },
   'pricing.ielts.included': { en: "What's included", ar: 'شنو يشمل', es: 'Qué incluye' },
   'pricing.ielts.feat.writing': {
-    en: 'Unlimited AI Writing band feedback',
-    ar: 'تقييم Band غير محدود لـ Writing بالذكاء الاصطناعي',
-    es: 'Feedback de Band de Writing con IA ilimitado',
+    en: 'AI Writing band feedback - up to 10 assessed essays a day',
+    ar: 'تقييم Band لـ Writing بالذكاء الاصطناعي - لغاية ١٠ مقالات مقيَّمة باليوم',
+    es: 'Feedback de Band de Writing con IA - hasta 10 redacciones evaluadas al día',
   },
   'pricing.ielts.feat.speaking': {
-    en: 'Unlimited AI Speaking band feedback',
-    ar: 'تقييم Band غير محدود لـ Speaking بالذكاء الاصطناعي',
-    es: 'Feedback de Band de Speaking con IA ilimitado',
+    en: 'AI Speaking band feedback - up to 30 responses a day',
+    ar: 'تقييم Band لـ Speaking بالذكاء الاصطناعي - لغاية ٣٠ إجابة باليوم',
+    es: 'Feedback de Band de Speaking con IA - hasta 30 respuestas al día',
   },
   'pricing.ielts.feat.calibrated': {
     en: 'Examiner-calibrated to IELTS band descriptors',

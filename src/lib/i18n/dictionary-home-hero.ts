@@ -19,9 +19,9 @@ export const HOME_LP_DICTIONARY: Dictionary = {
     es: 'Personalizado, alineado con el examen y asistido por IA: desde los años 7-9 hasta GCSE, IGCSE e IELTS, además de apoyo estructurado de inglés para estudiantes EAL. Elige tu itinerario y explora la demo en vivo.',
   },
   'home.lp.track.ielts.sub': {
-    en: 'Master English and ace your exam',
-    ar: 'أتقن الإنجليزي وانجح في امتحانك',
-    es: 'Domina el inglés y aprueba tu examen con nota',
+    en: 'Prepare with confidence for IELTS',
+    ar: 'استعد بثقة لامتحان IELTS',
+    es: 'Prepárate con confianza para el IELTS',
   },
   'home.lp.track.eal.sub': {
     en: 'Master English with bilingual support',
@@ -29,19 +29,19 @@ export const HOME_LP_DICTIONARY: Dictionary = {
     es: 'Domina el inglés con apoyo bilingüe',
   },
   'home.lp.track.ks3.sub': {
-    en: 'Build the foundation for top GCSE grades',
-    ar: 'ابنِ الأساس لأعلى درجات الـ GCSE',
-    es: 'Construye la base para las mejores notas de GCSE',
+    en: 'Build strong foundations for GCSE English',
+    ar: 'ابنِ أساسًا قويًا لإنجليزي الـ GCSE',
+    es: 'Construye una base sólida para el inglés de GCSE',
   },
   'home.lp.track.gcse.sub': {
-    en: 'Hit your top grade, every board',
-    ar: 'حقّق أعلى درجة في كل هيئات الامتحان',
-    es: 'Consigue tu mejor nota, en cualquier junta examinadora',
+    en: 'Exam-board-exact revision with examiner-style feedback',
+    ar: 'مراجعة مطابقة لهيئة امتحانك مع ملاحظات بأسلوب المصحّح',
+    es: 'Repaso fiel a tu junta examinadora, con feedback estilo examinador',
   },
   'home.lp.track.igcse.sub': {
-    en: 'Excel at international English, fast',
-    ar: 'تميّز في الإنجليزي الدولي، وبسرعة',
-    es: 'Destaca en el inglés internacional, y rápido',
+    en: 'Structured IGCSE English preparation',
+    ar: 'تحضير منظّم لإنجليزي الـ IGCSE',
+    es: 'Preparación estructurada para el inglés de IGCSE',
   },
   'home.lp.track.teachers.label': {
     en: 'Teachers',

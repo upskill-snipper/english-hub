@@ -52,11 +52,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           &pound;6.99/month
         </Link>{' '}
         <span className="hidden sm:inline text-muted-foreground/70">
-          (Standard <span className="line-through">&pound;11.99</span> from August 2026)
+          (planned standard <span className="line-through">&pound;11.99</span>)
         </span>{' '}
         <span className="mx-1 text-muted-foreground/50">·</span>{' '}
         <Link
-          href="/for-schools"
+          href="/schools"
           className="font-medium text-foreground underline underline-offset-2 hover:opacity-80"
         >
           Founding Schools &pound;4,000/year

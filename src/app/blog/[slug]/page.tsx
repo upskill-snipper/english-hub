@@ -1,22 +1,35 @@
 /**
  * /blog/[slug] - individual blog article.
  *
- * Server component. Looks the post up by slug at build time
- * (`generateStaticParams` enumerates every MDX file under `content/blog/`
- * so each article ships as a static page), compiles the MDX body via
- * `compileMDX` from `next-mdx-remote/rsc`, and renders the article shell
- * with breadcrumbs, prose styles, an email-capture lead magnet at the
- * bottom and two pieces of structured data:
+ * Server component. Compiles the MDX body via `compileMDX` from
+ * `next-mdx-remote/rsc` and renders the article shell with breadcrumbs,
+ * prose styles and two pieces of structured data:
  *
  *   1. BreadcrumbList - Home → Blog → {Title}
  *   2. Article - headline, description, dates, author, publisher
  *
- * The route is kept fully statically rendered (no `headers()`, no `cookies()`)
- * so that `dynamicParams = false` actually short-circuits unknown slugs to
- * a real 404 at the framework level. Calling `headers()` from this page
- * silently opts the entire route into dynamic rendering, which makes the
- * dynamicParams gate a no-op and the framework stamps 200 on the
- * not-found render instead.
+ * RENDERING MODEL (honest version, Aug 2026): this route is DYNAMICALLY
+ * rendered by design. The site's i18n works by cookie/URL → middleware →
+ * `x-lang` request header, and both this page and the root layout read
+ * `headers()`, so posts compile per request. Two consequences, both
+ * handled explicitly:
+ *
+ *   - Unknown slugs cannot rely on `dynamicParams = false` (that gate is
+ *     only meaningful for statically-rendered routes; here it stamped a
+ *     200 on the not-found shell). Instead we check the slug against the
+ *     catalogue and call `notFound()`, which returns a real HTTP 404 on
+ *     a dynamic render.
+ *   - A post that fails MDX compilation would throw per-request and
+ *     collapse the page to an empty shell WITHOUT failing the build (19
+ *     posts shipped broken this way until Aug 2026 - HTML `<!-- -->`
+ *     comments are invalid MDX). `scripts/check-mdx-compile.mjs` now runs
+ *     in `prebuild` and fails the build on any uncompilable MDX file.
+ *
+ * Arabic: `/ar/blog/<slug>` is rewritten by middleware to this route with
+ * `x-lang: ar`; `getBlogPost(slug, 'ar')` then serves the `<slug>.ar.mdx`
+ * sibling when it exists (EN fallback otherwise). Metadata is locale-aware
+ * and posts with an AR variant emit hreflang alternates + a visible
+ * cross-language link.
  */
 
 import type { Metadata } from 'next'
@@ -28,31 +41,50 @@ import { compileMDX } from 'next-mdx-remote/rsc'
 
 import { AIContentLabel } from '@/components/ai/ai-content-label'
 import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
-import { getAllBlogPosts, getBlogPost, getBlogSlugs, type BlogPost } from '@/lib/blog/posts'
+import {
+  getAllBlogPosts,
+  getBlogPost,
+  getBlogSlugs,
+  hasArabicVariant,
+  type BlogPost,
+} from '@/lib/blog/posts'
 import { tSync } from '@/lib/i18n/t'
+import type { Locale } from '@/lib/i18n/dictionary'
 
 const SITE_URL = 'https://theenglishhub.app'
 const BLOG_URL = `${SITE_URL}/blog`
 
 type Params = { slug: string }
 
-/**
- * Static slugs only. Without this, unknown slugs at runtime render
- * `not-found.tsx` with HTTP 200, which lets Google index empty "Article
- * not found" pages and wastes crawl budget. Setting `dynamicParams = false`
- * makes Next.js return a hard 404 for any slug not in generateStaticParams.
- */
-export const dynamicParams = false
-
-export function generateStaticParams(): Params[] {
-  return getBlogSlugs().map((slug) => ({ slug }))
+/** Resolve the request locale the middleware stamped (see file header). */
+async function resolveLocale(): Promise<{ locale: Locale; viaArUrl: boolean }> {
+  const h = await headers()
+  const lang = h.get('x-lang')
+  return {
+    locale: lang === 'ar' ? 'ar' : 'en',
+    // 'url' means the visitor is on the canonical /ar/... surface (as
+    // opposed to the eh-lang cookie toggling an /blog/... URL).
+    viaArUrl: lang === 'ar' && h.get('x-lang-source') === 'url',
+  }
 }
 
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { slug } = await params
-  const post = getBlogPost(slug)
+  const { locale, viaArUrl } = await resolveLocale()
+  const post = getBlogPost(slug, locale)
 
   if (!post) {
+    // Unknown slugs on this route CANNOT return a real HTTP 404: the route
+    // is dynamically rendered (cookie i18n reads headers()) and Next 15
+    // streams the shell - and, since 15.2, the metadata too - with a
+    // committed 200 before the page body (or even this function) can
+    // change the status. Verified against both the built server and dev
+    // (notFound() here or in the body still yields 200 + not-found UI).
+    // So we ship the next-best thing Google fully respects: an explicit
+    // noindex on the streamed metadata, plus the body-level notFound() UI.
+    // The June 2026 de-index audit confirmed GSC treats these as benign
+    // soft-404s. A true 404 would need a blog-slug manifest consulted in
+    // middleware - revisit post-launch if GSC ever complains.
     return {
       title: 'Article not found',
       description: 'The article you are looking for could not be found.',
@@ -60,7 +92,14 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     }
   }
 
-  const url = `${BLOG_URL}/${post.slug}`
+  const enUrl = `${BLOG_URL}/${post.slug}`
+  const arUrl = `${SITE_URL}/ar/blog/${post.slug}`
+  const hasAr = hasArabicVariant(post.slug)
+  // Canonical: the /ar/... surface is its own canonical URL when the post
+  // really has an Arabic variant; everything else canonicalises to the EN
+  // URL (cookie-toggled Arabic on /blog/... is invisible to cookieless
+  // crawlers, so the EN canonical is the truthful one there).
+  const url = viaArUrl && hasAr ? arUrl : enUrl
   // Document <title> must be brandless: the root layout's title template
   // (`%s - The English Hub`) appends the brand. Baking it in here too produced
   // a DOUBLED suffix ("Post - The English Hub - The English Hub") in SERPs on
@@ -72,7 +111,10 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   return {
     title: post.title,
     description: post.description,
-    alternates: { canonical: url },
+    alternates: {
+      canonical: url,
+      ...(hasAr ? { languages: { 'en-GB': enUrl, ar: arUrl, 'x-default': enUrl } } : {}),
+    },
     openGraph: {
       title: brandedTitle,
       description: post.description,
@@ -160,23 +202,17 @@ function getRelatedPosts(current: BlogPost, limit = 3): BlogPost[] {
 
 export default async function BlogArticlePage({ params }: { params: Promise<Params> }) {
   const { slug } = await params
-  // Read the locale stamped by middleware (x-lang). When the visitor
-  // hits `/ar/blog/...`, middleware rewrites internally to `/blog/...`
-  // and stamps x-lang=ar; getBlogPost then serves the AR variant if
-  // a sibling `<slug>.ar.mdx` exists, falling back to EN otherwise.
-  const lang = (await headers()).get('x-lang')
-  const locale: 'en' | 'ar' | 'es' = lang === 'ar' ? 'ar' : 'en'
+  // Hard 404 for slugs outside the catalogue. On this dynamically-rendered
+  // route `notFound()` returns a real HTTP 404 status (unlike the old
+  // `dynamicParams = false` gate, which only works for static renders and
+  // stamped 200 on the not-found shell here).
+  if (!getBlogSlugs().includes(slug)) notFound()
+
+  const { locale } = await resolveLocale()
   const post = getBlogPost(slug, locale)
   if (!post) notFound()
 
-  // NOTE: We deliberately do NOT call `headers()` here. Reading per-request
-  // headers opts the route into fully-dynamic rendering, which neutralises
-  // `dynamicParams = false` (unknown slugs would still get rendered and the
-  // framework would stamp a 200 on the not-found page instead of a real
-  // 404). The CSP no longer carries a `'nonce-…'` source (see middleware
-  // notes from 02 May 2026), so passing the nonce to JSON-LD scripts is
-  // ceremonial - dropping it lets this whole route stay statically
-  // pre-rendered and forces the framework to hard-404 unknown slugs.
+  const hasAr = hasArabicVariant(post.slug)
   const url = `${BLOG_URL}/${post.slug}`
   const ogImage = buildOgImage(post)
 
@@ -260,6 +296,29 @@ export default async function BlogArticlePage({ params }: { params: Promise<Para
                 point of consumption. Blog posts in this site are drafted
                 by the agent pipeline and human-reviewed before publish. */}
             <AIContentLabel variant="inline" />
+            {hasAr ? (
+              <>
+                <span aria-hidden="true">·</span>
+                {locale === 'ar' ? (
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="underline underline-offset-4 hover:text-foreground"
+                    lang="en"
+                  >
+                    Read in English
+                  </Link>
+                ) : (
+                  <Link
+                    href={`/ar/blog/${post.slug}`}
+                    className="underline underline-offset-4 hover:text-foreground"
+                    lang="ar"
+                    dir="rtl"
+                  >
+                    اقرأ بالعربية
+                  </Link>
+                )}
+              </>
+            ) : null}
           </div>
         </header>
 

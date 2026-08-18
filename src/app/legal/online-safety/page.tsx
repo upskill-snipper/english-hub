@@ -347,7 +347,7 @@ export default function OnlineSafetyPage() {
           <h2 className="text-base font-semibold text-foreground mb-2">Related policies</h2>
           <ul className="list-disc pl-6 text-sm text-muted-foreground space-y-1">
             <li>
-              <Link href="/privacy-policy" className="underline text-foreground">
+              <Link href="/legal/privacy" className="underline text-foreground">
                 Privacy Policy
               </Link>
             </li>

@@ -127,7 +127,7 @@ const quickLinks = [
   {
     title: 'Full syllabus',
     description: 'Complete 0500 specification breakdown.',
-    href: '/igcse/cambridge/0500/syllabus',
+    href: '/igcse/cambridge/0500',
     icon: FileText,
   },
 ]
@@ -160,7 +160,7 @@ const studyTools = [
   {
     title: 'AI Toolkit',
     description: 'AI test builder and revision notes',
-    href: '/toolkit',
+    href: '/revision',
     icon: Wrench,
   },
   {

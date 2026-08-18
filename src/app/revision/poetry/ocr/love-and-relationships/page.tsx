@@ -14,6 +14,10 @@ interface Poem {
   slug: string
   publicDomain: boolean
   hook: string
+  // Full study page for this poem, verified to exist. Some public-domain
+  // poems have no page in this cluster, so they borrow the same poem's page
+  // elsewhere on the site; poems with no page anywhere stay unlinked.
+  studyHref?: string
 }
 
 const POEMS: Poem[] = [
@@ -22,6 +26,7 @@ const POEMS: Poem[] = [
     poet: 'Lord Byron',
     slug: 'she-walks-in-beauty',
     publicDomain: true,
+    studyHref: '/revision/poetry/ocr/love-and-relationships/she-walks-in-beauty',
     hook: 'A celebration of harmonious beauty that combines outer grace with inner virtue.',
   },
   {
@@ -36,6 +41,7 @@ const POEMS: Poem[] = [
     poet: 'William Wordsworth',
     slug: 'she-dwelt-among-the-untrodden-ways',
     publicDomain: true,
+    studyHref: '/revision/poetry/ocr/love-and-relationships/she-dwelt-among-the-untrodden-ways',
     hook: 'An elegy for an unknown country girl whose death moves only the speaker.',
   },
   {
@@ -50,6 +56,7 @@ const POEMS: Poem[] = [
     poet: 'Thomas Hardy',
     slug: 'neutral-tones',
     publicDomain: true,
+    studyHref: '/revision/poetry/ocr/love-and-relationships/neutral-tones',
     hook: 'A bleak winter scene mirrors the death of a relationship.',
   },
   {
@@ -71,6 +78,7 @@ const POEMS: Poem[] = [
     poet: 'Elizabeth Barrett Browning',
     slug: 'sonnet-43',
     publicDomain: true,
+    studyHref: '/revision/poetry/eduqas/sonnet-43',
     hook: '"How do I love thee? Let me count the ways" -- one of English literature\'s most famous declarations of love.',
   },
   {
@@ -113,6 +121,7 @@ const POEMS: Poem[] = [
     poet: 'Charlotte Mew',
     slug: 'the-farmers-bride',
     publicDomain: true,
+    studyHref: '/revision/poetry/love-and-relationships/the-farmers-bride',
     hook: "A frustrated farmer narrates his wife's flight from him in a chilling rural monologue.",
   },
   {
@@ -195,20 +204,18 @@ export default function OCRLoveAndRelationshipsPage() {
           {POEMS.map((poem) => (
             <Link
               key={poem.slug}
-              href={
-                poem.publicDomain ? `/revision/poetry/ocr/love-and-relationships/${poem.slug}` : '#'
-              }
+              href={poem.studyHref ?? '#'}
               className={`group relative flex flex-col rounded-2xl border border-border/60 bg-card p-5 transition-all duration-200 ${
-                poem.publicDomain
+                poem.studyHref
                   ? 'hover:border-border hover:shadow-card-hover'
                   : 'cursor-not-allowed opacity-70'
               }`}
               onClick={(e) => {
-                if (!poem.publicDomain) e.preventDefault()
+                if (!poem.studyHref) e.preventDefault()
               }}
             >
               <div className="absolute right-4 top-4">
-                {poem.publicDomain ? (
+                {poem.studyHref ? (
                   <CheckCircle2 className="size-4 text-emerald-400" />
                 ) : (
                   <Lock className="size-4 text-muted-foreground/50" />
@@ -224,7 +231,7 @@ export default function OCRLoveAndRelationshipsPage() {
               </p>
 
               <div className="mt-3">
-                {poem.publicDomain ? (
+                {poem.studyHref ? (
                   <Badge variant="outline" className="text-[0.65rem]">
                     Full study page
                   </Badge>

@@ -921,8 +921,8 @@ export default function StudentDemoPage() {
                 </span>
               </div>
               <p className="mt-3 text-[11px] text-muted-foreground">
-                Baseline grade {STUDENT.baselineGrade} → target {STUDENT.targetGrade}. You have
-                moved up two grades in two years.
+                Baseline grade {STUDENT.baselineGrade} → target {STUDENT.targetGrade}. Sample data -
+                your own dashboard tracks your real progress.
               </p>
             </GlassPanel>
 

@@ -643,7 +643,7 @@ export default function TeacherRegisterPage() {
                       <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
                         {t('form.read_and_accept_the')}{' '}
                         <Link
-                          href="/privacy-policy"
+                          href="/legal/privacy"
                           className="underline underline-offset-2 hover:text-foreground transition-colors"
                         >
                           {t('legal.privacy_policy')}
@@ -673,7 +673,7 @@ export default function TeacherRegisterPage() {
                 <p className="text-xs text-muted-foreground text-center border-t border-border pt-4 w-full">
                   {t('auth.teacher.school_interested_before')}{' '}
                   <Link
-                    href="/for-schools"
+                    href="/schools"
                     className="underline underline-offset-2 hover:text-foreground transition-colors"
                   >
                     {t('auth.teacher.founding_schools_link')}

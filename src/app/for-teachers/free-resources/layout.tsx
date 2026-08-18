@@ -21,7 +21,7 @@ export default function FreeResourcesLayout({ children }: { children: React.Reac
             <span className="font-semibold text-lg text-foreground">The English Hub</span>
           </Link>
           <Link
-            href="/for-teachers"
+            href="/teachers"
             className="text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             &larr; Back to For Teachers

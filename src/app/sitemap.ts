@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 import { ANALYSIS_PAGES } from '@/data/analysis'
 import { allCourses } from '@/data/courses'
-import { getBlogSlugs } from '@/lib/blog/posts'
+import { getBlogSlugs, hasArabicVariant } from '@/lib/blog/posts'
 import { SET_TEXTS } from '@/lib/board/set-texts'
 import { EAL } from '@/lib/eal/curriculum'
 import { ALL_LESSONS } from '@/lib/ielts/lessons'
@@ -117,8 +117,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // 2. Dynamic routes from their data sources.
   for (const course of allCourses) add(`/courses/${course.id}`, { priority: 0.8 })
-  for (const slug of getBlogSlugs())
+  for (const slug of getBlogSlugs()) {
     add(`/blog/${slug}`, { priority: 0.6, changeFrequency: 'monthly' })
+    // Arabic surface: /ar/blog/<slug> is served via the middleware rewrite
+    // and the article page emits a self-canonical + hreflang pair when the
+    // <slug>.ar.mdx translation exists (40 posts). Listing the AR URL here
+    // makes the Arabic articles discoverable to crawlers - previously the
+    // AR corpus was invisible (or, worse, indexed as phantom /blog/<slug>.ar
+    // English pages before the Aug 2026 fix).
+    if (hasArabicVariant(slug)) {
+      add(`/ar/blog/${slug}`, { priority: 0.4, changeFrequency: 'monthly' })
+    }
+  }
 
   // Set texts: /revision/texts/[slug] serves any SET_TEXTS slug that has no
   // dedicated static page. NOTE: /resources/revision-notes/[slug] is a

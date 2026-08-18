@@ -174,7 +174,7 @@ export default function TestBuilderPage() {
       <section className="border-b border-border bg-card">
         <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
           <Link
-            href="/toolkit"
+            href="/revision"
             className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-4"
           >
             <ArrowLeft className="h-3.5 w-3.5" />

@@ -37,6 +37,25 @@ import {
   ArrowRight,
 } from 'lucide-react'
 import { useT } from '@/lib/i18n/use-t'
+import { TEXT_SUBPAGE_ROUTES } from '@/lib/revision/text-subpages.generated'
+
+// ─── Marking destinations ──────────────────────────────────────────────────
+
+// Sample marking walkthroughs exist only for these four texts
+// (src/app/marking/sample/<slug>/page.tsx), and their route slugs differ
+// from the slug derived from textName. Every other text goes straight to
+// the marking tool at /marking/submit instead of a 404ing sample page.
+const MARKING_SAMPLE_SLUGS: Record<string, string> = {
+  macbeth: 'macbeth',
+  'dr-jekyll-and-mr-hyde': 'jekyll-hyde',
+  'an-inspector-calls': 'inspector-calls',
+  'a-christmas-carol': 'christmas-carol',
+}
+
+function markingHrefFor(textName: string): string {
+  const sampleSlug = MARKING_SAMPLE_SLUGS[textName.toLowerCase().replace(/\s+/g, '-')]
+  return sampleSlug ? `/marking/sample/${sampleSlug}` : '/marking/submit'
+}
 
 // ─── Types ─────────────────────────────────────────────────────────────────
 
@@ -254,7 +273,7 @@ function QuickQuiz({
 
 // ─── Essay Prompt Generator ────────────────────────────────────────────────
 
-function EssayPrompt({ questions, textName }: { questions: string[]; textName: string }) {
+function EssayPrompt({ questions, markingHref }: { questions: string[]; markingHref: string }) {
   const t = useT()
   const [currentIdx, setCurrentIdx] = useState(0)
   const [revealed, setRevealed] = useState(false)
@@ -287,7 +306,7 @@ function EssayPrompt({ questions, textName }: { questions: string[]; textName: s
           {t('text_hub.new_question')}
         </button>
         <Link
-          href={`/marking/sample/${textName.toLowerCase().replace(/\s+/g, '-')}?q=${encodeURIComponent(question)}`}
+          href={`${markingHref}?q=${encodeURIComponent(question)}`}
           className="flex-1 rounded-lg bg-clay-500 py-2 text-xs font-medium text-cream-50 hover:bg-clay-400 transition-colors text-center"
         >
           {t('text_hub.write_and_mark')}
@@ -354,6 +373,12 @@ export default function TextStudyHub({
   className = '',
 }: TextStudyHubProps) {
   const t = useT()
+  const markingHref = markingHrefFor(textName)
+  // Only render tiles whose target page actually exists - several texts list
+  // sub-pages (read/acts/themes/...) that were never built.
+  const availableSubPages = subPages.filter(
+    (page) => !page.href.startsWith('/revision/texts/') || TEXT_SUBPAGE_ROUTES.has(page.href),
+  )
   return (
     <div className={`space-y-6 ${className}`}>
       {/* ── Study This Text: Navigation Grid ────────────────────────────── */}
@@ -370,7 +395,7 @@ export default function TextStudyHub({
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-0 divide-x divide-y divide-ink-100">
-          {subPages.map((page) => {
+          {availableSubPages.map((page) => {
             const Icon = iconMap[page.icon] || BookOpen
             const colors = colorMap[page.icon] || colorMap.read
             return (
@@ -430,7 +455,7 @@ export default function TextStudyHub({
             )}
 
             {essayQuestions && essayQuestions.length > 0 && (
-              <EssayPrompt questions={essayQuestions} textName={textName} />
+              <EssayPrompt questions={essayQuestions} markingHref={markingHref} />
             )}
 
             {flashcards && flashcards.length > 0 && <FlashcardDrill cards={flashcards} />}
@@ -454,7 +479,7 @@ export default function TextStudyHub({
               {t('text_hub.build_test')}
             </Link>
             <Link
-              href={`/marking/sample/${textName.toLowerCase().replace(/\s+/g, '-')}`}
+              href={markingHref}
               className="inline-flex items-center gap-1.5 rounded-full bg-teal-800 px-4 py-2 text-xs font-medium text-cream-50 hover:bg-teal-700 transition-colors"
             >
               <PenLine className="size-3.5" />

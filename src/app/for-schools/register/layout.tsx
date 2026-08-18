@@ -21,7 +21,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <Link href="/" className="text-xl font-bold text-foreground">
             The English Hub
           </Link>
-          <Link href="/for-schools" className="text-sm text-muted-foreground hover:text-foreground">
+          <Link href="/schools" className="text-sm text-muted-foreground hover:text-foreground">
             &larr; Back to school plans
           </Link>
         </div>

@@ -22,10 +22,17 @@ export type Role = 'student' | 'teacher'
 
 // ─── Rollover date ─────────────────────────────────────────────────────
 //
-// Canonical source of truth for when Standard pricing takes effect. The
-// copy string `PRICING.PRICE_INCREASE_DATE` is "August 2026" - we pin
-// the first of that month, 00:00 UTC, for comparisons.
-export const PRICE_INCREASE_DATE: Date = new Date('2026-08-01T00:00:00.000Z')
+// Canonical source of truth for when Standard pricing takes effect.
+//
+// MUST TRACK THE REAL STRIPE ROLLOVER. This date decides which tier and
+// price webhooks RECORD on a new Subscription row - the customer is
+// CHARGED whatever the STRIPE_PRICE_* env vars point at. From 2026-08-01
+// to 2026-08-18 this was set to 2026-08-01 while checkout still charged
+// early-access prices, so ~18 days of signups (if any) were recorded as
+// `standard` / £7.99-equivalent while actually paying £3.99 - check and
+// backfill via /api/admin/pricing/backfill. Do not move this date again
+// until the checkout price env vars actually change on the same day.
+export const PRICE_INCREASE_DATE: Date = new Date('2027-08-01T00:00:00.000Z')
 
 // ─── poundsToMinor ─────────────────────────────────────────────────────
 //

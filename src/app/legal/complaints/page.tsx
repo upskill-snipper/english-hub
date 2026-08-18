@@ -131,7 +131,8 @@ export default async function ComplaintsProcedurePage() {
           <p className="font-semibold">{_tr(`Safeguarding Concerns`)}</p>
           <p className="mb-2">
             Safeguarding complaints are treated with the highest priority and follow a separate,
-            accelerated process. Response within <strong>24 hours</strong> is guaranteed.
+            accelerated process. We aim to respond within <strong>24 hours</strong>, and
+            safeguarding reports are always escalated ahead of every other queue.
           </p>
           <ul className="list-disc pl-6 space-y-1">
             <li>

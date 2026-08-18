@@ -5,19 +5,19 @@ import { usePathname } from 'next/navigation'
 
 const legalPages = [
   { href: '/terms', label: 'Terms & Conditions' },
-  { href: '/privacy-policy', label: 'Privacy Policy' },
+  { href: '/legal/privacy', label: 'Privacy Policy' },
   { href: '/cookie-policy', label: 'Cookie Policy' },
   { href: '/refund-policy', label: 'Refund Policy' },
   { href: '/legal/cancellation', label: 'Cancellation Policy' },
   { href: '/legal/acceptable-use', label: 'Acceptable Use Policy' },
   { href: '/legal/ai-transparency', label: 'AI Transparency' },
   { href: '/legal/ai-governance', label: 'AI Governance & Ethics' },
-  { href: '/legal/safeguarding', label: 'Safeguarding Policy' },
+  { href: '/safeguarding', label: 'Safeguarding Policy' },
   { href: '/accessibility', label: 'Accessibility Statement' },
   { href: '/legal/complaints', label: 'Complaints Procedure' },
   { href: '/data-processing', label: 'Data Processing' },
   { href: '/legal/privacy-qatar', label: 'Qatar Privacy Notice' },
-  { href: '/legal/privacy-qatar-supplement', label: 'Qatar Privacy Supplement' },
+  { href: '/legal/privacy-qatar', label: 'Qatar Privacy Supplement' },
   { href: '/legal/disclaimer', label: 'Full Disclaimer' },
   { href: '/legal/rights', label: 'Rights & Permissions' },
 ]

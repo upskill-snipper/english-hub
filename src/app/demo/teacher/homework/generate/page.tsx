@@ -966,11 +966,11 @@ export default function HomeworkGeneratorDemo() {
               </p>
               <p className="text-muted-foreground text-sm mb-5">
                 Start a 7-day free trial to access the full homework generator -- every assignment
-                uniquely created, with mark schemes and extension tasks included. Card required,
-                cancel before day 7.
+                uniquely created, with mark schemes and extension tasks included. No card required
+                to start.
               </p>
               <button className="rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-3 px-8 transition-colors text-sm">
-                Start Free Month
+                Start 7-Day Free Trial
               </button>
             </div>
           </>
