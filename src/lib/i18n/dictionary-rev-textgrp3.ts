@@ -127,12 +127,12 @@ export const REV_TEXTGRP3_DICTIONARY: Dictionary = {
 
   // ─── A View from the Bridge — context page chrome ────────────────────────
   'rev.texts.avftb.context.title': {
-    en: 'A View from the Bridge — Context',
+    en: 'A View from the Bridge - Context',
     ar: 'A View from the Bridge — السياق',
     es: 'A View from the Bridge: Contexto',
   },
   'rev.texts.avftb.context.byline': {
-    en: 'by Arthur Miller — 1955/1956',
+    en: 'by Arthur Miller - 1955/1956',
     ar: 'تأليف Arthur Miller — 1955/1956',
     es: 'por Arthur Miller, 1955/1956',
   },
@@ -142,17 +142,17 @@ export const REV_TEXTGRP3_DICTIONARY: Dictionary = {
     es: 'Los antecedentes esenciales que necesitas para el examen: el Red Hook de Brooklyn de los años 50, la inmigración italiana, la cultura portuaria, la tragedia griega, el macartismo, los códigos de honor y el sueño americano.',
   },
   'rev.texts.avftb.context.ao3_badge': {
-    en: 'AO3 — Context',
+    en: 'AO3 - Context',
     ar: 'AO3 — السياق',
     es: 'AO3: Contexto',
   },
   'rev.texts.avftb.context.examiners_want_h': {
-    en: 'AO3 — What examiners want',
+    en: 'AO3 - What examiners want',
     ar: 'AO3 — شنو يبغون المصححون',
     es: 'AO3: Qué quieren los examinadores',
   },
   'rev.texts.avftb.context.examiners_want_body': {
-    en: 'AO3 rewards you for showing how context shapes meaning. Do not simply list historical facts — explain how the 1950s setting, Italian immigration and McCarthyism affect the audience’s response to the play. The best answers explain why Miller made specific choices, not just when things happened.',
+    en: 'AO3 rewards you for showing how context shapes meaning. Do not simply list historical facts - explain how the 1950s setting, Italian immigration and McCarthyism affect the audience’s response to the play. The best answers explain why Miller made specific choices, not just when things happened.',
     ar: 'AO3 يكافئك لمّا تبيّن كيف السياق يشكّل المعنى. لا تكتفي بسرد الحقائق التاريخية — اشرح كيف تؤثّر أجواء الخمسينات والهجرة الإيطالية والمكارثية على ردّة فعل الجمهور تجاه المسرحية. أفضل الإجابات تشرح سبب اختيار Miller لخيارات معيّنة، مو بس متى صارت الأمور.',
     es: 'AO3 te premia por mostrar cómo el contexto da forma al significado. No te limites a enumerar hechos históricos: explica cómo el ambiente de los años 50, la inmigración italiana y el macartismo afectan la respuesta del público a la obra. Las mejores respuestas explican por qué Miller tomó decisiones concretas, no solo cuándo ocurrieron las cosas.',
   },

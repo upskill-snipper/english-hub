@@ -146,12 +146,12 @@ export const REV_TEXTGRP4_DICTIONARY: Dictionary = {
     es: 'Volver a Jane Eyre',
   },
   'rev.texts.jane-eyre.chapters.title': {
-    en: 'Jane Eyre -- Key Chapters',
+    en: 'Jane Eyre - Key Chapters',
     ar: 'Jane Eyre -- الفصول المفتاحية',
     es: 'Jane Eyre -- Capítulos clave',
   },
   'rev.texts.jane-eyre.chapters.byline': {
-    en: 'by Charlotte Bronte -- published 1847',
+    en: 'by Charlotte Bronte - published 1847',
     ar: 'تأليف Charlotte Bronte -- نُشرت 1847',
     es: 'por Charlotte Bronte -- publicada en 1847',
   },
@@ -173,12 +173,12 @@ export const REV_TEXTGRP4_DICTIONARY: Dictionary = {
     es: 'Volver a Jane Eyre',
   },
   'rev.texts.jane-eyre.quotes.title': {
-    en: 'Jane Eyre -- 25 Key Quotes',
+    en: 'Jane Eyre - 25 Key Quotes',
     ar: 'Jane Eyre -- 25 اقتباس مفتاحي',
     es: 'Jane Eyre -- 25 citas clave',
   },
   'rev.texts.jane-eyre.quotes.byline': {
-    en: 'by Charlotte Bronte -- published 1847',
+    en: 'by Charlotte Bronte - published 1847',
     ar: 'تأليف Charlotte Bronte -- نُشرت 1847',
     es: 'por Charlotte Bronte -- publicada en 1847',
   },

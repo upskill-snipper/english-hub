@@ -352,12 +352,12 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
 
   // ─── An Inspector Calls themes page chrome (rev.texts.aic.themes.*) ─────
   'rev.texts.aic.themes.title': {
-    en: 'An Inspector Calls — Themes',
+    en: 'An Inspector Calls - Themes',
     ar: 'An Inspector Calls — المحاور',
     es: 'An Inspector Calls: Temas',
   },
   'rev.texts.aic.themes.byline': {
-    en: 'by J.B. Priestley — 1945',
+    en: 'by J.B. Priestley - 1945',
     ar: 'تأليف J.B. Priestley — 1945',
     es: 'por J.B. Priestley, 1945',
   },
@@ -394,7 +394,7 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
     es: 'Las 5 citas que debes conocer para AO2',
   },
   'rev.texts.macbeth.top5_sub': {
-    en: 'Five exam-essential quotations with focused AO2 readings. Memorise the wording exactly — precise quotation is the foundation of Grade 7+ analysis.',
+    en: 'Five exam-essential quotations with focused AO2 readings. Memorise the wording exactly - precise quotation is the foundation of Grade 7+ analysis.',
     ar: 'خمسة اقتباسات أساسية للامتحان مع قراءات AO2 مركّزة. احفظ الصياغة بالضبط — الاقتباس الدقيق هو أساس تحليل Grade 7+.',
     es: 'Cinco citas esenciales para el examen con lecturas AO2 enfocadas. Memoriza la redacción exacta: la cita precisa es la base del análisis de Grade 7+.',
   },
@@ -553,7 +553,7 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
     es: 'Contexto histórico y social',
   },
   'rev.texts.acc.context.intro': {
-    en: "Understanding the world Dickens was writing about -- and writing FOR. Seven sections covering Victorian social conditions, the Poor Law, Dickens's own experience of poverty, publication context, the Industrial Revolution, the class system, and the novella's reception and lasting impact.",
+    en: "Understanding the world Dickens was writing about - and writing FOR. Seven sections covering Victorian social conditions, the Poor Law, Dickens's own experience of poverty, publication context, the Industrial Revolution, the class system, and the novella's reception and lasting impact.",
     ar: 'فهم العالم اللي كان يكتب عنه Dickens — واللي كان يكتب له. سبعة أقسام تغطّي الأوضاع الاجتماعية الفيكتورية، وthe Poor Law، وتجربة Dickens الشخصية مع الفقر، وسياق النشر، وthe Industrial Revolution، والنظام الطبقي، وتلقّي الرواية القصيرة وأثرها الباقي.',
     es: 'Comprender el mundo sobre el que escribía Dickens, y PARA el que escribía. Siete secciones que cubren las condiciones sociales victorianas, the Poor Law, la propia experiencia de pobreza de Dickens, el contexto de publicación, the Industrial Revolution, el sistema de clases y la recepción e impacto duradero de la novela corta.',
   },
@@ -644,12 +644,12 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
     es: 'Consejo de examen: ',
   },
   'rev.texts.common.ao2_language_analysis': {
-    en: 'AO2 — Language Analysis',
+    en: 'AO2 - Language Analysis',
     ar: 'AO2 — تحليل اللغة',
     es: 'AO2: Análisis del lenguaje',
   },
   'rev.texts.common.ao3_context_link_dash': {
-    en: 'AO3 — Context Link',
+    en: 'AO3 - Context Link',
     ar: 'AO3 — رابط السياق',
     es: 'AO3: Vínculo de contexto',
   },
@@ -697,7 +697,7 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
     es: 'Volver a A Christmas Carol',
   },
   'rev.texts.acc.staves.title': {
-    en: 'A Christmas Carol -- All Five Staves',
+    en: 'A Christmas Carol - All Five Staves',
     ar: 'A Christmas Carol -- كل الـ staves الخمسة',
     es: 'A Christmas Carol -- Los cinco staves',
   },
@@ -707,7 +707,7 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
     es: 'Análisis a fondo de cada stave: argumento, lenguaje, citas clave y comentario listo para el examen',
   },
   'rev.texts.acc.staves.intro': {
-    en: 'Dickens called the chapters of his novella “staves” -- a musical term meaning the lines on which notes are written. This choice reflects the structure of a carol: each stave builds on the last to form a harmonious whole, with a message of redemption and joy.',
+    en: 'Dickens called the chapters of his novella “staves” - a musical term meaning the lines on which notes are written. This choice reflects the structure of a carol: each stave builds on the last to form a harmonious whole, with a message of redemption and joy.',
     ar: 'سمّى Dickens فصول روايته القصيرة “staves” -- وهو مصطلح موسيقي يعني الأسطر اللي تتكتب عليها النوتات. هذا الاختيار يعكس بنية الـ carol: كل stave يبني على اللي قبله عشان يكوّن كلًّا متناغماً، برسالة خلاص وفرح.',
     es: 'Dickens llamó “staves” a los capítulos de su novela corta, un término musical que designa las líneas sobre las que se escriben las notas. Esta elección refleja la estructura de un carol: cada stave se apoya en el anterior para formar un todo armonioso, con un mensaje de redención y alegría.',
   },
@@ -890,22 +890,22 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
     es: 'Seis temas principales explorados a fondo: resumen, puntos clave, cómo presenta Orwell cada tema mediante recursos literarios, citas relevantes y vínculos con preguntas de examen.',
   },
   'rev.texts.af.context.title': {
-    en: 'Animal Farm — Context',
+    en: 'Animal Farm - Context',
     ar: 'Animal Farm — السياق',
     es: 'Animal Farm: Contexto',
   },
   'rev.texts.af.context.byline': {
-    en: 'by George Orwell — 1945',
+    en: 'by George Orwell - 1945',
     ar: 'تأليف George Orwell — 1945',
     es: 'por George Orwell, 1945',
   },
   'rev.texts.af.context.ao3_badge': {
-    en: 'AO3 — Context',
+    en: 'AO3 - Context',
     ar: 'AO3 — السياق',
     es: 'AO3: Contexto',
   },
   'rev.texts.af.context.ao3_want_h': {
-    en: 'AO3 — What examiners want',
+    en: 'AO3 - What examiners want',
     ar: 'AO3 — شنو يبغى المصححون',
     es: 'AO3: Qué quieren los examinadores',
   },
@@ -915,7 +915,7 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
     es: 'Contexto histórico y social para GCSE literature. Cubre the Russian Revolution, Stalin frente a Trotsky, el socialismo democrático de Orwell, the Spanish Civil War, la alegoría y la sátira, las dificultades de publicación y la relevancia en the Cold War.',
   },
   'rev.texts.af.context.ao3_want_body': {
-    en: 'AO3 rewards you for showing how context shapes meaning. Do not simply list facts about the Russian Revolution — explain how the allegorical parallels affect the reader’s understanding of Orwell’s purpose. The best answers show why Orwell chose to tell this story through animals on a farm.',
+    en: 'AO3 rewards you for showing how context shapes meaning. Do not simply list facts about the Russian Revolution - explain how the allegorical parallels affect the reader’s understanding of Orwell’s purpose. The best answers show why Orwell chose to tell this story through animals on a farm.',
     ar: 'AO3 يكافئك لمّا تبيّن كيف السياق يشكّل المعنى. لا تسرد حقائق عن the Russian Revolution وبس — اشرح كيف التوازيات الرمزية تأثّر على فهم القارئ لهدف Orwell. أفضل الإجابات تبيّن ليش اختار Orwell يحكي هذي القصة من خلال حيوانات في مزرعة.',
     es: 'AO3 te premia por mostrar cómo el contexto da forma al significado. No te limites a enumerar hechos sobre the Russian Revolution: explica cómo los paralelismos alegóricos afectan la comprensión del lector del propósito de Orwell. Las mejores respuestas muestran por qué Orwell eligió contar esta historia a través de animales en una granja.',
   },
@@ -930,12 +930,12 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
     es: 'Explora los personajes, los temas, las citas clave y los planes de ensayo de Animal Farm.',
   },
   'rev.texts.af.quotes.title': {
-    en: 'Animal Farm — Key Quotes',
+    en: 'Animal Farm - Key Quotes',
     ar: 'Animal Farm — الاقتباسات المفتاحية',
     es: 'Animal Farm: Citas clave',
   },
   'rev.texts.af.quotes.byline': {
-    en: 'by George Orwell — 1945',
+    en: 'by George Orwell - 1945',
     ar: 'تأليف George Orwell — 1945',
     es: 'por George Orwell, 1945',
   },
@@ -1123,7 +1123,7 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
     es: 'Papel alegórico: ',
   },
   'rev.texts.common.paragraph_n_dash': {
-    en: 'Paragraph {n} — ',
+    en: 'Paragraph {n} - ',
     ar: 'الفقرة {n} — ',
     es: 'Párrafo {n}: ',
   },
@@ -1287,7 +1287,7 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
     es: 'Volver a Lord of the Flies',
   },
   'rev.texts.lotf.byline': {
-    en: 'by William Golding -- published 1954',
+    en: 'by William Golding - published 1954',
     ar: 'تأليف William Golding -- نُشرت 1954',
     es: 'por William Golding -- publicada en 1954',
   },
@@ -1302,12 +1302,12 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
     es: 'Temas y simbolismo',
   },
   'rev.texts.lotf.themes.title': {
-    en: 'Lord of the Flies -- Themes & Symbolism',
+    en: 'Lord of the Flies - Themes & Symbolism',
     ar: 'Lord of the Flies -- المحاور والرمزية',
     es: 'Lord of the Flies -- Temas y simbolismo',
   },
   'rev.texts.lotf.themes.intro': {
-    en: "Detailed analysis of the novel's key themes -- civilisation vs savagery, power, innocence and fear -- plus the four central symbols: the conch, the signal fire, the beast and the pig's head.",
+    en: "Detailed analysis of the novel's key themes - civilisation vs savagery, power, innocence and fear - plus the four central symbols: the conch, the signal fire, the beast and the pig's head.",
     ar: "تحليل مفصّل لمحاور الرواية المفتاحية -- الحضارة مقابل الهمجية، والسلطة، والبراءة، والخوف -- زائد الرموز الأربعة المركزية: the conch، وthe signal fire، وthe beast، وthe pig's head.",
     es: "Análisis detallado de los temas clave de la novela -- civilización frente a salvajismo, poder, inocencia y miedo -- más los cuatro símbolos centrales: the conch, the signal fire, the beast y the pig's head.",
   },
@@ -1317,7 +1317,7 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
     es: 'Desarrollo a lo largo de la novela',
   },
   'rev.texts.lotf.chapters.title': {
-    en: 'Lord of the Flies -- Chapters',
+    en: 'Lord of the Flies - Chapters',
     ar: 'Lord of the Flies -- الفصول',
     es: 'Lord of the Flies -- Capítulos',
   },
@@ -1332,7 +1332,7 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
     es: 'Análisis de personajes',
   },
   'rev.texts.lotf.characters.title': {
-    en: 'Lord of the Flies -- Characters',
+    en: 'Lord of the Flies - Characters',
     ar: 'Lord of the Flies -- الشخصيات',
     es: 'Lord of the Flies -- Personajes',
   },
@@ -1352,22 +1352,22 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
     es: 'Citas breves (≤15 palabras cada una) reproducidas conforme a la disposición de uso legítimo de la Copyright, Designs and Patents Act 1988 con fines de crítica, reseña y estudio educativo. Lord of the Flies de William Golding está publicada por Faber and Faber. Texto completo disponible en tu colegio o biblioteca local.',
   },
   'rev.texts.lotf.context.title': {
-    en: 'Lord of the Flies — Context',
+    en: 'Lord of the Flies - Context',
     ar: 'Lord of the Flies — السياق',
     es: 'Lord of the Flies: Contexto',
   },
   'rev.texts.lotf.context.byline': {
-    en: 'by William Golding — 1954',
+    en: 'by William Golding - 1954',
     ar: 'تأليف William Golding — 1954',
     es: 'por William Golding, 1954',
   },
   'rev.texts.lotf.context.ao3_badge': {
-    en: 'AO3 — Context',
+    en: 'AO3 - Context',
     ar: 'AO3 — السياق',
     es: 'AO3: Contexto',
   },
   'rev.texts.lotf.context.ao3_want_h': {
-    en: 'AO3 — What examiners want',
+    en: 'AO3 - What examiners want',
     ar: 'AO3 — شنو يبغى المصححون',
     es: 'AO3: Qué quieren los examinadores',
   },
@@ -1377,7 +1377,7 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
     es: 'Contexto histórico y social para GCSE literature. Cubre la Gran Bretaña de posguerra, la experiencia bélica de Golding, la era atómica, The Coral Island, el pecado original, the Cold War y el Nobel Prize.',
   },
   'rev.texts.lotf.context.ao3_want_body': {
-    en: 'AO3 rewards you for showing how context shapes meaning. Do not simply list facts about WWII — explain how Golding’s war experience and the atomic age shape his view of human nature and the novel’s argument. The best answers show why Golding chose to challenge Victorian optimism about childhood innocence.',
+    en: 'AO3 rewards you for showing how context shapes meaning. Do not simply list facts about WWII - explain how Golding’s war experience and the atomic age shape his view of human nature and the novel’s argument. The best answers show why Golding chose to challenge Victorian optimism about childhood innocence.',
     ar: 'AO3 يكافئك لمّا تبيّن كيف السياق يشكّل المعنى. لا تسرد حقائق عن الحرب العالمية الثانية وبس — اشرح كيف تجربة Golding في الحرب والعصر الذري تشكّلان نظرته للطبيعة البشرية وحجّة الرواية. أفضل الإجابات تبيّن ليش اختار Golding يتحدّى التفاؤل الفيكتوري حول براءة الطفولة.',
     es: 'AO3 te premia por mostrar cómo el contexto da forma al significado. No te limites a enumerar hechos sobre la Segunda Guerra Mundial: explica cómo la experiencia bélica de Golding y la era atómica moldean su visión de la naturaleza humana y el argumento de la novela. Las mejores respuestas muestran por qué Golding eligió desafiar el optimismo victoriano sobre la inocencia de la infancia.',
   },
@@ -1387,12 +1387,12 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
     es: 'Explora los personajes, los temas, las citas clave y los planes de ensayo de Lord of the Flies.',
   },
   'rev.texts.lotf.essays.title': {
-    en: 'Lord of the Flies — Essay Plans',
+    en: 'Lord of the Flies - Essay Plans',
     ar: 'Lord of the Flies — خطط المقالات',
     es: 'Lord of the Flies: Planes de ensayo',
   },
   'rev.texts.lotf.essays.byline': {
-    en: 'by William Golding — 1954',
+    en: 'by William Golding - 1954',
     ar: 'تأليف William Golding — 1954',
     es: 'por William Golding, 1954',
   },
@@ -1407,12 +1407,12 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
     es: 'Explora los personajes, los temas, el contexto y las citas clave de Lord of the Flies.',
   },
   'rev.texts.lotf.quotes.title': {
-    en: 'Lord of the Flies — Key Quotes',
+    en: 'Lord of the Flies - Key Quotes',
     ar: 'Lord of the Flies — الاقتباسات المفتاحية',
     es: 'Lord of the Flies: Citas clave',
   },
   'rev.texts.lotf.quotes.byline': {
-    en: 'by William Golding — 1954',
+    en: 'by William Golding - 1954',
     ar: 'تأليف William Golding — 1954',
     es: 'por William Golding, 1954',
   },
@@ -1529,7 +1529,7 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
 
   // ─── An Inspector Calls — shared chrome (rev.texts.aic.*) ───────────────
   'rev.texts.aic.byline': {
-    en: 'by J.B. Priestley — 1945',
+    en: 'by J.B. Priestley - 1945',
     ar: 'تأليف J.B. Priestley — 1945',
     es: 'por J.B. Priestley, 1945',
   },
@@ -1556,17 +1556,17 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
     es: 'Análisis detallado de los tres actos con citas clave, técnicas lingüísticas y recursos dramáticos. Cada cita tiene 15 palabras o menos.',
   },
   'rev.texts.aic.acts.language_techniques_act': {
-    en: 'Language Techniques — Act {n}',
+    en: 'Language Techniques - Act {n}',
     ar: 'الأساليب اللغوية — الفصل {n}',
     es: 'Técnicas lingüísticas: Acto {n}',
   },
   'rev.texts.aic.acts.dramatic_techniques_act': {
-    en: 'Dramatic Techniques — Act {n}',
+    en: 'Dramatic Techniques - Act {n}',
     ar: 'الوسائل الدرامية — الفصل {n}',
     es: 'Recursos dramáticos: Acto {n}',
   },
   'rev.texts.aic.acts.key_quotes_act': {
-    en: 'Key Quotes — Act {n}',
+    en: 'Key Quotes - Act {n}',
     ar: 'الاقتباسات المفتاحية — الفصل {n}',
     es: 'Citas clave: Acto {n}',
   },
@@ -1583,7 +1583,7 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
 
   // AIC characters page
   'rev.texts.aic.characters.title': {
-    en: 'An Inspector Calls — Characters',
+    en: 'An Inspector Calls - Characters',
     ar: 'An Inspector Calls — الشخصيات',
     es: 'An Inspector Calls: Personajes',
   },
@@ -1605,7 +1605,7 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
 
   // AIC context page
   'rev.texts.aic.context.title': {
-    en: 'An Inspector Calls — Context',
+    en: 'An Inspector Calls - Context',
     ar: 'An Inspector Calls — السياق',
     es: 'An Inspector Calls: Contexto',
   },
@@ -1642,7 +1642,7 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
 
   // AIC key-quotes page
   'rev.texts.aic.quotes.title': {
-    en: 'An Inspector Calls — Key Quotes',
+    en: 'An Inspector Calls - Key Quotes',
     ar: 'An Inspector Calls — الاقتباسات المفتاحية',
     es: 'An Inspector Calls: Citas clave',
   },
@@ -1659,7 +1659,7 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
 
   // AIC essay-plans page
   'rev.texts.aic.essays.title': {
-    en: 'An Inspector Calls — Essay Plans',
+    en: 'An Inspector Calls - Essay Plans',
     ar: 'An Inspector Calls — خطط المقالات',
     es: 'An Inspector Calls: Planes de ensayo',
   },
@@ -1686,12 +1686,12 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
     es: 'Recorrido por el extracto',
   },
   'rev.texts.aic.extract.title': {
-    en: 'The Inspector’s Final Speech — A Close Reading',
+    en: 'The Inspector’s Final Speech - A Close Reading',
     ar: 'خطبة المفتش الختامية — قراءة متأنّية',
     es: 'El discurso final del Inspector: Una lectura atenta',
   },
   'rev.texts.aic.extract.byline': {
-    en: 'An Inspector Calls, Act 3 — J.B. Priestley',
+    en: 'An Inspector Calls, Act 3 - J.B. Priestley',
     ar: 'An Inspector Calls، الفصل 3 — J.B. Priestley',
     es: 'An Inspector Calls, Acto 3: J.B. Priestley',
   },
@@ -1706,32 +1706,32 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
     es: 'Fragmento {n} de {total}',
   },
   'rev.texts.aic.extract.quote_caption': {
-    en: 'Inspector Goole, Act 3 — {n} words (fair dealing)',
+    en: 'Inspector Goole, Act 3 - {n} words (fair dealing)',
     ar: 'Inspector Goole، الفصل 3 — {n} كلمة (استخدام عادل)',
     es: 'Inspector Goole, Acto 3: {n} palabras (uso legítimo)',
   },
   'rev.texts.aic.extract.notice_h': {
-    en: 'Notice — what the words do',
+    en: 'Notice - what the words do',
     ar: 'لاحظ — شنو تسوّي الكلمات',
     es: 'Observa: qué hacen las palabras',
   },
   'rev.texts.aic.extract.say_h': {
-    en: 'Say — your AO2 argument',
+    en: 'Say - your AO2 argument',
     ar: 'قُل — حجّتك في AO2',
     es: 'Di: tu argumento de AO2',
   },
   'rev.texts.aic.extract.zoom_h': {
-    en: 'Zoom out — AO3 context',
+    en: 'Zoom out - AO3 context',
     ar: 'وسّع الصورة — سياق AO3',
     es: 'Amplía: contexto de AO3',
   },
   'rev.texts.aic.extract.model_para_label': {
-    en: 'Model paragraph — ~250 words',
+    en: 'Model paragraph - ~250 words',
     ar: 'فقرة نموذجية — ~250 كلمة',
     es: 'Párrafo modelo: ~250 palabras',
   },
   'rev.texts.aic.extract.intro': {
-    en: 'A fragment-by-fragment walkthrough of the play’s didactic climax. We work through the speech in short, fair-dealing extracts — each followed by notice, say, and zoom-out cards that mirror the moves a strong AQA / Edexcel essay must make.',
+    en: 'A fragment-by-fragment walkthrough of the play’s didactic climax. We work through the speech in short, fair-dealing extracts - each followed by notice, say, and zoom-out cards that mirror the moves a strong AQA / Edexcel essay must make.',
     ar: 'شرح مقتطف-بمقتطف لذروة المسرحية التعليمية. نشتغل على الخطبة في مقتطفات قصيرة ضمن الاستخدام العادل — كل واحد يتبعه بطاقات notice وsay وzoom-out اللي تحاكي الخطوات اللي لازم يسوّيها مقال AQA / Edexcel القوي.',
     es: 'Un recorrido fragmento por fragmento del clímax didáctico de la obra. Trabajamos el discurso en extractos breves de uso legítimo, cada uno seguido de tarjetas notice, say y zoom-out que reflejan los movimientos que debe hacer un buen ensayo de AQA / Edexcel.',
   },

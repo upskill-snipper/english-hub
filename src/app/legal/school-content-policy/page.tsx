@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     'How The English Hub selects, frames and gates set-text content for GCSE, IGCSE and KS3 English — including content-guidance practice for international and culturally-sensitive markets such as the GCC.',
   alternates: { canonical: 'https://theenglishhub.app/legal/school-content-policy' },
   openGraph: {
-    title: 'School content policy — The English Hub',
+    title: 'School content policy - The English Hub',
     description:
       'How The English Hub selects, frames and gates set-text content. Cultural-review practice for international and GCC-region schools.',
   },

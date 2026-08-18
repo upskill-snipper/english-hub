@@ -216,7 +216,7 @@ export const STUDY_SKILLS_DICTIONARY: Record<string, { en: string; ar?: string; 
     es: 'Comentarios con IA integrados en cada respuesta',
   },
   'study.skills.ws.ai.body': {
-    en: 'Every practice question comes with instant, personalised AI feedback. Submit your response and receive detailed commentary on your vocabulary choices, sentence structures, technique usage, and SPaG -- with actionable suggestions to push your writing into the top band.',
+    en: 'Every practice question comes with instant, personalised AI feedback. Submit your response and receive detailed commentary on your vocabulary choices, sentence structures, technique usage, and SPaG - with actionable suggestions to push your writing into the top band.',
     ar: 'كل سؤال تدريب يايه تغذية راجعة فورية ومخصصة بالذكاء الاصطناعي. أرسل إجابتك وبتوصلك ملاحظات مفصّلة عن اختياراتك للمفردات وبناء الجمل واستخدام التقنيات و SPaG، مع اقتراحات عملية تدفع كتابتك للباند الأعلى.',
     es: 'Cada pregunta de práctica incluye comentarios con IA instantáneos y personalizados. Envía tu respuesta y recibe comentarios detallados sobre tus elecciones de vocabulario, las estructuras de tus oraciones, el uso de técnicas y SPaG, con sugerencias prácticas para llevar tu escritura a la banda más alta.',
   },
@@ -303,7 +303,7 @@ export const STUDY_SKILLS_DICTIONARY: Record<string, { en: string; ar?: string; 
     es: 'Ejemplos reales',
   },
   'study.skills.ws.why.examples.body': {
-    en: 'Every technique is illustrated with genuine examples you can model in your own work. No vague advice -- just concrete, usable demonstrations.',
+    en: 'Every technique is illustrated with genuine examples you can model in your own work. No vague advice - just concrete, usable demonstrations.',
     ar: 'كل تقنية موضّحة بأمثلة حقيقية تقدر تحاكيها بشغلك. ما في نصايح غامضة، بس أمثلة ملموسة وقابلة للاستخدام.',
     es: 'Cada técnica se ilustra con ejemplos auténticos que puedes imitar en tu propio trabajo. Sin consejos vagos, solo demostraciones concretas y aplicables.',
   },

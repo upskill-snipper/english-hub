@@ -44,7 +44,7 @@ export const REV_MISC_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Basado en {count} respuesta real que has dado en los cuestionarios.',
   },
   'rev.misc.analytics.subtitle_empty': {
-    en: 'Your personal performance dashboard -- powered by the quizzes you take on this site.',
+    en: 'Your personal performance dashboard - powered by the quizzes you take on this site.',
     ar: 'لوحة أدائك الشخصية — مدعومة بالاختبارات اللي تسوّيها في هالموقع.',
     es: 'Tu panel de rendimiento personal, impulsado por los cuestionarios que haces en este sitio.',
   },
@@ -139,7 +139,7 @@ export const REV_MISC_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Temas donde tu tasa de aciertos es más baja, según al menos 2 intentos.',
   },
   'rev.misc.analytics.weak.empty': {
-    en: "Keep answering quiz questions -- we'll surface weak spots once you have at least 2 attempts in a topic.",
+    en: "Keep answering quiz questions - we'll surface weak spots once you have at least 2 attempts in a topic.",
     ar: 'كمّل تجاوب على أسئلة الاختبار — بنطلّع لك نقاط الضعف أول ما يصير عندك محاولتين على الأقل في موضوع.',
     es: 'Sigue respondiendo preguntas: mostraremos tus puntos débiles cuando tengas al menos 2 intentos en un tema.',
   },
@@ -218,17 +218,17 @@ export const REV_MISC_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Aciertas estas alrededor del 80% de las veces.',
   },
   'rev.misc.analytics.diff.medium_hint': {
-    en: '50-79% correct -- room to grow.',
+    en: '50-79% correct - room to grow.',
     ar: '50-79% صحيحة — في مجال للتحسّن.',
     es: '50-79% correctas: hay margen de mejora.',
   },
   'rev.misc.analytics.diff.hard_hint': {
-    en: '25-49% correct -- focus area.',
+    en: '25-49% correct - focus area.',
     ar: '25-49% صحيحة — منطقة تركيز.',
     es: '25-49% correctas: área de enfoque.',
   },
   'rev.misc.analytics.diff.very_hard_hint': {
-    en: 'Below 25% correct -- needs dedicated revision.',
+    en: 'Below 25% correct - needs dedicated revision.',
     ar: 'أقل من 25% صحيحة — يحتاج مراجعة مخصّصة.',
     es: 'Menos del 25% correctas: necesita repaso dedicado.',
   },
@@ -607,7 +607,7 @@ export const REV_MISC_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Responde {count} preguntas rápidas y generaremos un plan de repaso semana a semana adaptado a tu fecha de examen, tu nota objetivo y tu área más débil. Tu plan se guarda en este dispositivo para que puedas volver cuando quieras.',
   },
   'rev.misc.plan.intro_body_board': {
-    en: 'Answer {count} quick questions and we will generate a week-by-week revision plan tailored to your exam date, target grade, and weakest area -- using {board} texts and links throughout. Your plan is saved on this device so you can come back any time.',
+    en: 'Answer {count} quick questions and we will generate a week-by-week revision plan tailored to your exam date, target grade, and weakest area - using {board} texts and links throughout. Your plan is saved on this device so you can come back any time.',
     ar: 'جاوب على {count} أسئلة سريعة وبنطلّع لك خطة مراجعة أسبوع بأسبوع مفصّلة على تاريخ امتحانك ودرجتك المستهدفة وأضعف منطقة عندك — باستخدام نصوص وروابط {board} طوال الخطة. خطتك محفوظة على هالجهاز عشان ترجع أي وقت.',
     es: 'Responde {count} preguntas rápidas y generaremos un plan de repaso semana a semana adaptado a tu fecha de examen, tu nota objetivo y tu área más débil, usando textos y enlaces de {board} en todo momento. Tu plan se guarda en este dispositivo para que puedas volver cuando quieras.',
   },

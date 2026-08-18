@@ -526,7 +526,7 @@ export const REV_POETRY_LANG_DICTIONARY: Dictionary = {
     es: 'La precisión técnica que gana (y pierde) puntos en cada prueba',
   },
   'rev.lang.spag.igcse_banner_title': {
-    en: 'SPaG is universal -- every board rewards it',
+    en: 'SPaG is universal - every board rewards it',
     ar: 'SPaG واحد عند الكل - كل بورد يكافئ عليه',
     es: 'SPaG es universal: todas las juntas lo premian',
   },
@@ -566,7 +566,7 @@ export const REV_POETRY_LANG_DICTIONARY: Dictionary = {
     es: 'La precisión es un hábito, no un arreglo de último minuto',
   },
   'rev.lang.spag.footer_body': {
-    en: 'The best way to improve your SPaG is to practise it in every piece of writing you do -- homework, notes, and timed essays. If you only think about accuracy in the exam, it will feel unnatural. Make it second nature now.',
+    en: 'The best way to improve your SPaG is to practise it in every piece of writing you do - homework, notes, and timed essays. If you only think about accuracy in the exam, it will feel unnatural. Make it second nature now.',
     ar: 'أحسن طريقة تطوّر SPaG مالك هي إنك تتدرّب عليها في كل شي تكتبه - الواجبات والملاحظات والمقالات المؤقّتة. لو بس تفكّر في الدقة وقت الامتحان، بتحسّها غير طبيعية. خلّيها عادة من الحين.',
     es: 'La mejor forma de mejorar tu SPaG es practicarlo en todo lo que escribas: deberes, apuntes y redacciones cronometradas. Si solo piensas en la precisión durante el examen, te resultará forzada. Conviértela en algo natural desde ya.',
   },
@@ -732,7 +732,7 @@ export const REV_POETRY_LANG_DICTIONARY: Dictionary = {
     es: 'Vocabulario avanzado',
   },
   'rev.lang.vocab.subtitle_suffix': {
-    en: 'words organised by purpose -- describe, argue, analyse, and evaluate',
+    en: 'words organised by purpose - describe, argue, analyse, and evaluate',
     ar: 'كلمة منظّمة حسب الغرض - الوصف والحجاج والتحليل والتقييم',
     es: 'palabras organizadas por propósito: describir, argumentar, analizar y evaluar',
   },
@@ -754,25 +754,25 @@ export const REV_POETRY_LANG_DICTIONARY: Dictionary = {
   'rev.lang.vocab.words_label': { en: 'words', ar: 'كلمات', es: 'palabras' },
   'rev.lang.vocab.cat.describe.title': { en: 'Describe', ar: 'الوصف', es: 'Describir' },
   'rev.lang.vocab.cat.describe.desc': {
-    en: 'Words for creative and descriptive writing -- building atmosphere, setting, and character.',
+    en: 'Words for creative and descriptive writing - building atmosphere, setting, and character.',
     ar: 'كلمات للكتابة الإبداعية والوصفية - لبناء الأجواء والمكان والشخصية.',
     es: 'Palabras para la escritura creativa y descriptiva: crear atmósfera, ambientación y personaje.',
   },
   'rev.lang.vocab.cat.argue.title': { en: 'Argue', ar: 'الحجاج', es: 'Argumentar' },
   'rev.lang.vocab.cat.argue.desc': {
-    en: 'Words for persuasive and argumentative writing -- building a case, countering objections, and influencing readers.',
+    en: 'Words for persuasive and argumentative writing - building a case, countering objections, and influencing readers.',
     ar: 'كلمات للكتابة الإقناعية والحجاجية - لبناء حجة، والرد على الاعتراضات، والتأثير في القرّاء.',
     es: 'Palabras para la escritura persuasiva y argumentativa: construir un caso, rebatir objeciones e influir en los lectores.',
   },
   'rev.lang.vocab.cat.analyse.title': { en: 'Analyse', ar: 'التحليل', es: 'Analizar' },
   'rev.lang.vocab.cat.analyse.desc': {
-    en: 'Words for reading responses -- discussing writer methods, language effects, and structural choices.',
+    en: 'Words for reading responses - discussing writer methods, language effects, and structural choices.',
     ar: 'كلمات لإجابات القراءة - لمناقشة أساليب الكاتب وآثار اللغة والخيارات البنيوية.',
     es: 'Palabras para respuestas de lectura: comentar los métodos del escritor, los efectos del lenguaje y las decisiones estructurales.',
   },
   'rev.lang.vocab.cat.evaluate.title': { en: 'Evaluate', ar: 'التقييم', es: 'Evaluar' },
   'rev.lang.vocab.cat.evaluate.desc': {
-    en: 'Words for evaluation questions and comparison -- weighing arguments, making judgements, and expressing degree.',
+    en: 'Words for evaluation questions and comparison - weighing arguments, making judgements, and expressing degree.',
     ar: 'كلمات لأسئلة التقييم والمقارنة - لموازنة الحجج، وإصدار الأحكام، والتعبير عن الدرجة.',
     es: 'Palabras para preguntas de evaluación y comparación: sopesar argumentos, emitir juicios y expresar grado.',
   },
@@ -835,7 +835,7 @@ export const REV_POETRY_LANG_DICTIONARY: Dictionary = {
     es: 'Cómo usar estas respuestas modelo:',
   },
   'rev.lang.model.how_body': {
-    en: 'Read the Grade 5 answer first, then the Grade 7 and 9 versions of the same question. Pay attention to the annotations -- they show exactly what pushes a response into a higher band. Try rewriting the Grade 5 answer using the techniques from the Grade 9.',
+    en: 'Read the Grade 5 answer first, then the Grade 7 and 9 versions of the same question. Pay attention to the annotations - they show exactly what pushes a response into a higher band. Try rewriting the Grade 5 answer using the techniques from the Grade 9.',
     ar: 'اقرا إجابة Grade 5 أول، بعدين نسخ Grade 7 و 9 لنفس السؤال. انتبه للشروحات - تبيّن بالضبط شنو اللي يرفع الإجابة لفئة أعلى. حاول تعيد كتابة إجابة Grade 5 باستخدام أساليب Grade 9.',
     es: 'Lee primero la respuesta de Grade 5, luego las versiones de Grade 7 y 9 de la misma pregunta. Fíjate en las anotaciones: muestran exactamente qué eleva una respuesta a una banda superior. Intenta reescribir la respuesta de Grade 5 usando las técnicas de la de Grade 9.',
   },

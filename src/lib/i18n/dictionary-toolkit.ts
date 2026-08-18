@@ -437,7 +437,7 @@ export const TOOLKIT_DICTIONARY: Dictionary = {
     es: 'puntuaciones con una media de',
   },
   'grade_predict.predictor.equivalent_note': {
-    en: 'equivalent -- take more quizzes for a more accurate prediction',
+    en: 'equivalent - take more quizzes for a more accurate prediction',
     ar: 'مُكافِئ -- سوِّ كويزات أكثر عشان توقّع أدقّ',
     es: 'equivalente -- haz más cuestionarios para obtener una predicción más precisa',
   },

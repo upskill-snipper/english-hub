@@ -211,7 +211,7 @@ const PERMISSION_CARDS = [
   {
     role: 'admin' as Role,
     label: 'School Admin',
-    description: 'Full access -- manage all users, view all analytics, edit school settings',
+    description: 'Full access - manage all users, view all analytics, edit school settings',
     icon: Shield,
     colorClass: 'text-rose-400',
     bgClass: 'bg-rose-500/10',

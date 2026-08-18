@@ -290,7 +290,7 @@ export const CONVENTIONS: MarkingConvention[] = [
   },
   {
     id: 'conv.lexis.reward-flexibility-not-showpieces',
-    title: 'Reward flexible, precise vocabulary — not inserted "big words"',
+    title: 'Reward flexible, precise vocabulary - not inserted "big words"',
     criteria: ['lexical_resource'],
     guidance:
       'Lexical Resource credits range, precision and natural collocation. ' +
@@ -457,7 +457,7 @@ const GENERIC_PITFALLS: Pitfall[] = [
 const ARABIC_L1_PITFALLS: Pitfall[] = [
   {
     id: 'pitfall.ar.articles.indefinite-omission',
-    title: 'Article use — omitted indefinite article ("a/an")',
+    title: 'Article use - omitted indefinite article ("a/an")',
     criteria: ['grammatical_range_and_accuracy'],
     description:
       'Arabic has no indefinite article, so "a/an" is frequently omitted ' +
@@ -489,7 +489,7 @@ const ARABIC_L1_PITFALLS: Pitfall[] = [
   },
   {
     id: 'pitfall.ar.wordorder.vso-and-adj',
-    title: 'Word order — verb-first clauses and noun–adjective order',
+    title: 'Word order - verb-first clauses and noun–adjective order',
     criteria: ['grammatical_range_and_accuracy', 'coherence_and_cohesion'],
     description:
       'Arabic permits verb–subject–object order and places adjectives AFTER ' +
@@ -520,7 +520,7 @@ const ARABIC_L1_PITFALLS: Pitfall[] = [
   },
   {
     id: 'pitfall.ar.tense.aspect-mapping',
-    title: 'Tense / aspect mapping — perfect and continuous',
+    title: 'Tense / aspect mapping - perfect and continuous',
     criteria: ['grammatical_range_and_accuracy'],
     description:
       'The Arabic verb system marks aspect (completed vs. ongoing) more than ' +
@@ -554,7 +554,7 @@ const ARABIC_L1_PITFALLS: Pitfall[] = [
   },
   {
     id: 'pitfall.ar.prepositions.collocation',
-    title: 'Prepositions — non-matching collocations',
+    title: 'Prepositions - non-matching collocations',
     criteria: ['lexical_resource', 'grammatical_range_and_accuracy'],
     description:
       'Preposition–verb and preposition–noun collocations differ between ' +
@@ -586,7 +586,7 @@ const ARABIC_L1_PITFALLS: Pitfall[] = [
   },
   {
     id: 'pitfall.ar.cohesion.run-on-coordination',
-    title: 'Cohesion — long coordinated run-ons ("and"/"so" chaining)',
+    title: 'Cohesion - long coordinated run-ons ("and"/"so" chaining)',
     criteria: ['coherence_and_cohesion', 'grammatical_range_and_accuracy'],
     description:
       'Classical/written Arabic favours long, additively coordinated sentences ' +
@@ -625,7 +625,7 @@ const ARABIC_L1_PITFALLS: Pitfall[] = [
   },
   {
     id: 'pitfall.ar.cohesion.repetition-for-emphasis',
-    title: 'Cohesion — lexical repetition / parallelism for emphasis',
+    title: 'Cohesion - lexical repetition / parallelism for emphasis',
     criteria: ['coherence_and_cohesion', 'lexical_resource'],
     description:
       'Arabic rhetoric values emphatic repetition and parallel restatement. ' +
@@ -653,7 +653,7 @@ const ARABIC_L1_PITFALLS: Pitfall[] = [
   },
   {
     id: 'pitfall.ar.plurals.agreement',
-    title: 'Number / agreement — plural and subject–verb agreement',
+    title: 'Number / agreement - plural and subject–verb agreement',
     criteria: ['grammatical_range_and_accuracy'],
     description:
       'Arabic plural and agreement rules (including broken plurals and ' +
@@ -682,7 +682,7 @@ const ARABIC_L1_PITFALLS: Pitfall[] = [
   },
   {
     id: 'pitfall.ar.spelling.phonology',
-    title: 'Spelling — vowel and consonant phonology transfer',
+    title: 'Spelling - vowel and consonant phonology transfer',
     criteria: ['lexical_resource'],
     description:
       'Arabic orthography under-represents short vowels and lacks some English ' +

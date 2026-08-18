@@ -353,7 +353,7 @@ export const REV_TEXTGRP1_DICTIONARY: Dictionary = {
     es: 'Estilo AQA',
   },
   'rev.texts.macbeth.extract.title': {
-    en: 'Macbeth’s “If it were done” soliloquy — line-by-line walkthrough',
+    en: 'Macbeth’s “If it were done” soliloquy - line-by-line walkthrough',
     ar: 'مناجاة Macbeth “If it were done” — شرح سطراً بسطر',
     es: 'El soliloquio “If it were done” de Macbeth: recorrido línea por línea',
   },
@@ -398,7 +398,7 @@ export const REV_TEXTGRP1_DICTIONARY: Dictionary = {
     es: 'Di (AO2)',
   },
   'rev.texts.macbeth.extract.model_para_h': {
-    en: 'Model paragraph — how this extract reveals ambition',
+    en: 'Model paragraph - how this extract reveals ambition',
     ar: 'فقرة نموذجية — كيف يكشف هذا المقتطف الطموح',
     es: 'Párrafo modelo: cómo este extracto revela la ambición',
   },

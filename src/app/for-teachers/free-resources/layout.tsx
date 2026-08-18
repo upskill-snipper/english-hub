@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'Free Teaching Resources -- An Inspector Calls',
+  title: 'Free Teaching Resources - An Inspector Calls',
   description:
     'Download a complete free lesson plan, worksheet, and teaching guide for An Inspector Calls. See the quality of English Hub resources before subscribing.',
   alternates: {

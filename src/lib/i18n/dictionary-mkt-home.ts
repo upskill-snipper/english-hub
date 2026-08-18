@@ -454,7 +454,7 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Analíticas del progreso del estudiante',
   },
   'mkt.teachers.ft.feat.analytics.desc': {
-    en: 'Track every student in real time. Spot who is falling behind, who is excelling, and where the whole class needs extra support -- all in one dashboard.',
+    en: 'Track every student in real time. Spot who is falling behind, who is excelling, and where the whole class needs extra support - all in one dashboard.',
     ar: 'تابع كل طالب لحظة بلحظة. شوف منو متأخّر، منو متميّز، ووين الصف كله يحتاج دعم زيادة -- كله في لوحة وحدة.',
     es: 'Sigue a cada estudiante en tiempo real. Detecta quién se está quedando atrás, quién destaca y dónde toda la clase necesita más apoyo, todo en un solo panel.',
   },
@@ -484,7 +484,7 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Tu junta examinadora, tu contenido',
   },
   'mkt.teachers.ft.feat.board.desc': {
-    en: 'We support AQA, Edexcel, OCR, WJEC, and IGCSE/CAIE. Your school selects one board during setup and every lesson, resource, and mark scheme is tailored to that specification -- so nothing is wasted.',
+    en: 'We support AQA, Edexcel, OCR, WJEC, and IGCSE/CAIE. Your school selects one board during setup and every lesson, resource, and mark scheme is tailored to that specification - so nothing is wasted.',
     ar: 'ندعم AQA و Edexcel و OCR و WJEC و IGCSE/CAIE. مدرستك تختار بورد واحد عند الإعداد وكل درس ومورد ومعيار تصحيح يتفصّل على ذاك المنهج -- عشان ما يضيع شي.',
     es: 'Damos soporte a AQA, Edexcel, OCR, WJEC e IGCSE/CAIE. Tu colegio selecciona una junta durante la configuración y cada lección, recurso y esquema de calificación se adapta a ese temario, para que no se desperdicie nada.',
   },
@@ -538,7 +538,7 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: '¿Cuánto cuesta?',
   },
   'mkt.teachers.ft.faq.cost.a': {
-    en: 'Every feature is free to try -- you get 3 free uses per tool with no card required. When you are ready to upgrade, the Teacher plan is £6.99/month or £67.99/year at the Early Access / Founding rate (planned standard pricing is £11.99/month or £99/year, and your rate is locked from the day you subscribe). Paid plans begin with 7 free days -- cancel before day 7 and you are not charged. School plans are available through our Founding Schools Programme -- £4,000/year for the first 10 schools, against a planned standard price of £8,000/year. Book a call to discuss.',
+    en: 'Every feature is free to try - you get 3 free uses per tool with no card required. When you are ready to upgrade, the Teacher plan is £6.99/month or £67.99/year at the Early Access / Founding rate (planned standard pricing is £11.99/month or £99/year, and your rate is locked from the day you subscribe). Paid plans begin with 7 free days - cancel before day 7 and you are not charged. School plans are available through our Founding Schools Programme - £4,000/year for the first 10 schools, against a planned standard price of £8,000/year. Book a call to discuss.',
     ar: 'كل ميزة تقدر تجرّبها ببلاش -- تحصل 3 استخدامات مجانية لكل أداة بدون بطاقة. لمّا تكون جاهز للترقية، خطة المعلّم بـ £6.99 بالشهر أو £67.99 بالسنة بسعر الـ Early Access / Founding (السعر العادي المخطط له £11.99 بالشهر أو £99 بالسنة، وسعرك مثبّت من يوم اشتراكك). الخطط المدفوعة تبدأ بـ 7 أيام مجانية -- ألغِ قبل اليوم السابع وما تنحاسب. خطط المدارس متوفّرة عبر برنامج المدارس المؤسِّسة -- £4,000 بالسنة لأول 10 مدارس، مقابل سعر عادي مخطط له £8,000 بالسنة. احجز مكالمة عشان نتناقش.',
     es: 'Todas las funciones se pueden probar gratis: dispones de 3 usos gratuitos por herramienta sin necesidad de tarjeta. Cuando estés listo para mejorar, el plan Profesor cuesta £6.99/mes o £67.99/año con la tarifa Early Access / Founding (el precio estándar previsto es £11.99/mes o £99/año, y tu tarifa queda fijada desde el día en que te suscribes). Los planes de pago comienzan con 7 días gratuitos: cancela antes del día 7 y no se te cobra. Los planes para colegios están disponibles a través de nuestro Programa de Colegios Fundadores: £4,000/año para los primeros 10 colegios, frente a un precio estándar previsto de £8,000/año. Reserva una llamada para hablarlo.',
   },
@@ -548,7 +548,7 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: '¿Qué funciones se incluyen?',
   },
   'mkt.teachers.ft.faq.features.a': {
-    en: 'Every feature is available on the free tier with 3 uses per tool -- AI Lesson Plans, AI Marking, Worksheet Builder, Student Progress Analytics, and more. The Premium plan removes all limits and gives you full access to the ready resources library, predicted grades, and complete exam board coverage. There are no add-on charges.',
+    en: 'Every feature is available on the free tier with 3 uses per tool - AI Lesson Plans, AI Marking, Worksheet Builder, Student Progress Analytics, and more. The Premium plan removes all limits and gives you full access to the ready resources library, predicted grades, and complete exam board coverage. There are no add-on charges.',
     ar: 'كل ميزة متوفّرة في الباقة المجانية مع 3 استخدامات لكل أداة -- خطط دروس بالـ AI، تصحيح بالـ AI، بنّاء أوراق العمل، تحليلات تقدّم الطلاب، وأكثر. خطة Premium تشيل كل الحدود وتعطيك وصول كامل لمكتبة الموارد الجاهزة، الدرجات المتوقّعة، وتغطية كاملة لبوردات الامتحان. ما فيه رسوم إضافية.',
     es: 'Todas las funciones están disponibles en el nivel gratuito con 3 usos por herramienta: planes de lección con IA, corrección con IA, constructor de fichas de trabajo, analíticas del progreso del estudiante y más. El plan Premium elimina todos los límites y te da acceso completo a la biblioteca de recursos lista para usar, las notas previstas y la cobertura completa de las juntas examinadoras. No hay cargos adicionales.',
   },
@@ -558,7 +558,7 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: '¿Qué juntas examinadoras cubrís?',
   },
   'mkt.teachers.ft.faq.boards.a': {
-    en: "We support all major boards: AQA, Edexcel, OCR, WJEC Eduqas, and IGCSE/CAIE. Your school selects one exam board during setup and all content -- lessons, resources, mark schemes, and AI feedback -- is tailored to that board's specification. You only ever see what is relevant to your students' exams.",
+    en: "We support all major boards: AQA, Edexcel, OCR, WJEC Eduqas, and IGCSE/CAIE. Your school selects one exam board during setup and all content - lessons, resources, mark schemes, and AI feedback - is tailored to that board's specification. You only ever see what is relevant to your students' exams.",
     ar: 'ندعم كل البوردات الرئيسية: AQA و Edexcel و OCR و WJEC Eduqas و IGCSE/CAIE. مدرستك تختار بورد واحد عند الإعداد وكل المحتوى -- الدروس، الموارد، معايير التصحيح، وتغذية الـ AI الراجعة -- يتفصّل على منهج ذاك البورد. ما تشوف إلا اللي يخص امتحانات طلابك.',
     es: 'Damos soporte a todas las juntas principales: AQA, Edexcel, OCR, WJEC Eduqas e IGCSE/CAIE. Tu colegio selecciona una junta examinadora durante la configuración y todo el contenido (lecciones, recursos, esquemas de calificación y comentarios de IA) se adapta al temario de esa junta. Solo ves lo que es relevante para los exámenes de tus estudiantes.',
   },
@@ -588,7 +588,7 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: '¿Qué ocurre cuando uso mis pruebas gratuitas?',
   },
   'mkt.teachers.ft.faq.free_tries.a': {
-    en: 'You get 3 free uses per tool -- AI Lesson Plans, AI Marking, and Worksheet Builder. Once you have used them, you can upgrade to the Premium plan at any time. Paid plans begin with 7 free days -- cancel before day 7 and you are not charged. Cancel any time from your account settings -- no hidden fees, no awkward cancellation calls.',
+    en: 'You get 3 free uses per tool - AI Lesson Plans, AI Marking, and Worksheet Builder. Once you have used them, you can upgrade to the Premium plan at any time. Paid plans begin with 7 free days - cancel before day 7 and you are not charged. Cancel any time from your account settings - no hidden fees, no awkward cancellation calls.',
     ar: 'تحصل 3 استخدامات مجانية لكل أداة -- خطط الدروس بالـ AI، التصحيح بالـ AI، وبنّاء أوراق العمل. أول ما تستخدمها، تقدر تترقّى لخطة Premium في أي وقت. الخطط المدفوعة تبدأ بـ 7 أيام مجانية -- ألغِ قبل اليوم السابع وما تنحاسب. سكّر الاشتراك في أي وقت من إعدادات حسابك -- بدون رسوم مخفية، وبدون مكالمات إلغاء محرجة.',
     es: 'Dispones de 3 usos gratuitos por herramienta: planes de lección con IA, corrección con IA y constructor de fichas de trabajo. Una vez los hayas usado, puedes pasar al plan Premium en cualquier momento. Los planes de pago comienzan con 7 días gratuitos: cancela antes del día 7 y no se te cobra. Cancela cuando quieras desde la configuración de tu cuenta: sin cargos ocultos ni incómodas llamadas de cancelación.',
   },
@@ -615,7 +615,7 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Planes de lección con IA',
   },
   'mkt.teachers.ft.tool.lesson_plans.desc': {
-    en: 'Generate complete, exam-board-aligned lessons in seconds. Starter, main tasks, plenary -- all done.',
+    en: 'Generate complete, exam-board-aligned lessons in seconds. Starter, main tasks, plenary - all done.',
     ar: 'جهّز دروس كاملة متوافقة مع البورد بثواني. افتتاحية، مهام رئيسية، ختام -- كله جاهز.',
     es: 'Genera lecciones completas y alineadas con la junta examinadora en segundos. Inicio, tareas principales, cierre: todo listo.',
   },
@@ -635,7 +635,7 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Constructor de fichas de trabajo',
   },
   'mkt.teachers.ft.tool.worksheet.desc': {
-    en: 'Create differentiated worksheets with model answers at multiple levels -- ready to print or share digitally.',
+    en: 'Create differentiated worksheets with model answers at multiple levels - ready to print or share digitally.',
     ar: 'سوِّ أوراق عمل متفاوتة المستوى مع إجابات نموذجية بمستويات متعدّدة -- جاهزة للطباعة أو المشاركة رقمياً.',
     es: 'Crea fichas de trabajo diferenciadas con respuestas modelo en varios niveles, listas para imprimir o compartir digitalmente.',
   },
@@ -714,7 +714,7 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Demo interactiva',
   },
   'mkt.teachers.ft.demo.title': {
-    en: 'Try the Platform -- No Signup Required',
+    en: 'Try the Platform - No Signup Required',
     ar: 'جرّب المنصّة -- بدون تسجيل',
     es: 'Prueba la plataforma: sin necesidad de registro',
   },
@@ -783,7 +783,7 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Planes de lección completos en segundos, no en horas',
   },
   'mkt.teachers.ft.content.body': {
-    en: 'Tell the Lesson Builder what you are teaching and it generates a complete, structured lesson aligned to your exam board specification -- including starter activities, main tasks, differentiation suggestions, and a plenary. You review, adjust if needed, and share.',
+    en: 'Tell the Lesson Builder what you are teaching and it generates a complete, structured lesson aligned to your exam board specification - including starter activities, main tasks, differentiation suggestions, and a plenary. You review, adjust if needed, and share.',
     ar: 'قول لبنّاء الدروس شنو تدرّس وبيجهّز لك درس كامل ومنظّم متوافق مع منهج بوردك -- يشمل أنشطة افتتاحية، مهام رئيسية، اقتراحات للتفاوت، وختام. وانت تراجع، تعدّل لو لزم، وتشارك.',
     es: 'Dile al Constructor de lecciones qué vas a enseñar y generará una lección completa y estructurada alineada con el temario de tu junta examinadora, incluyendo actividades de inicio, tareas principales, sugerencias de diferenciación y un cierre. Tú revisas, ajustas si hace falta y compartes.',
   },
@@ -824,12 +824,12 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Lección generada',
   },
   'mkt.teachers.ft.content.mock.lesson_title': {
-    en: "An Inspector Calls -- Act 1: Birling's Monologue",
+    en: "An Inspector Calls - Act 1: Birling's Monologue",
     ar: 'An Inspector Calls -- Act 1: مونولوج Birling',
     es: 'An Inspector Calls -- Act 1: el monólogo de Birling',
   },
   'mkt.teachers.ft.content.mock.lesson_meta': {
-    en: 'Year 11 -- 60 min lesson -- AQA English Literature',
+    en: 'Year 11 - 60 min lesson - AQA English Literature',
     ar: 'Year 11 -- درس 60 دقيقة -- AQA English Literature',
     es: 'Year 11 -- lección de 60 min -- AQA English Literature',
   },
@@ -906,7 +906,7 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
 
   // ── Analytics preview section ──────────────────────────────────────
   'mkt.teachers.ft.analytics.class_progress': {
-    en: 'Class Progress -- Year 11 Set 1',
+    en: 'Class Progress - Year 11 Set 1',
     ar: 'تقدّم الصف -- Year 11 Set 1',
     es: 'Progreso de la clase -- Year 11 Set 1',
   },
@@ -966,7 +966,7 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Conoce el progreso de cada estudiante de un vistazo',
   },
   'mkt.teachers.ft.analytics.body': {
-    en: 'Stop waiting for the end-of-term report. The analytics dashboard gives you a live view of class and individual student performance -- so you can intervene early, celebrate progress, and direct your energy where it will make the biggest difference.',
+    en: 'Stop waiting for the end-of-term report. The analytics dashboard gives you a live view of class and individual student performance - so you can intervene early, celebrate progress, and direct your energy where it will make the biggest difference.',
     ar: 'بطّل تنتظر تقرير نهاية الفصل. لوحة التحليلات تعطيك عرض حي لأداء الصف وكل طالب على حدة -- عشان تتدخّل بدري، تحتفي بالتقدّم، وتوجّه طاقتك وين بتفرق أكثر.',
     es: 'Deja de esperar al informe de fin de trimestre. El panel de analíticas te ofrece una vista en directo del rendimiento de la clase y de cada estudiante, para que puedas intervenir pronto, celebrar el progreso y dirigir tu energía allí donde marcará la mayor diferencia.',
   },
@@ -1037,12 +1037,12 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Descarga materiales de enseñanza gratuitos',
   },
   'mkt.teachers.ft.free.body': {
-    en: 'Get a complete lesson pack for An Inspector Calls -- free, no signup required. See the quality of our resources.',
+    en: 'Get a complete lesson pack for An Inspector Calls - free, no signup required. See the quality of our resources.',
     ar: 'احصل على حزمة دروس كاملة لمسرحية An Inspector Calls -- ببلاش، بدون تسجيل. شوف جودة مواردنا.',
     es: 'Consigue un pack de lecciones completo de An Inspector Calls, gratis y sin registro. Comprueba la calidad de nuestros recursos.',
   },
   'mkt.teachers.ft.free.pack_title': {
-    en: 'An Inspector Calls -- Free Lesson Pack',
+    en: 'An Inspector Calls - Free Lesson Pack',
     ar: 'An Inspector Calls -- حزمة دروس مجانية',
     es: 'An Inspector Calls -- pack de lecciones gratuito',
   },
@@ -1109,17 +1109,17 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: '3 usos gratuitos por herramienta',
   },
   'mkt.teachers.ft.pricing.free.feat.1': {
-    en: 'AI Lesson Plans -- 3 uses',
+    en: 'AI Lesson Plans - 3 uses',
     ar: 'خطط دروس بالـ AI -- 3 استخدامات',
     es: 'Planes de lección con IA -- 3 usos',
   },
   'mkt.teachers.ft.pricing.free.feat.2': {
-    en: 'AI Marking -- 3 uses',
+    en: 'AI Marking - 3 uses',
     ar: 'تصحيح بالـ AI -- 3 استخدامات',
     es: 'Corrección con IA -- 3 usos',
   },
   'mkt.teachers.ft.pricing.free.feat.3': {
-    en: 'Worksheet Builder -- 3 uses',
+    en: 'Worksheet Builder - 3 uses',
     ar: 'بنّاء أوراق العمل -- 3 استخدامات',
     es: 'Constructor de fichas de trabajo -- 3 usos',
   },
@@ -1224,7 +1224,7 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Notas previstas e intervenciones',
   },
   'mkt.teachers.ft.pricing.premium.feat.8': {
-    en: 'All boards -- content tailored to yours',
+    en: 'All boards - content tailored to yours',
     ar: 'كل البوردات -- محتوى مفصّل على بوردك',
     es: 'Todas las juntas -- contenido adaptado a la tuya',
   },
@@ -1264,7 +1264,7 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: '(precio previsto)',
   },
   'mkt.teachers.ft.pricing.school.sub': {
-    en: 'Founding Schools Programme -- first 10 schools only',
+    en: 'Founding Schools Programme - first 10 schools only',
     ar: 'برنامج المدارس المؤسِّسة -- أول 10 مدارس بس',
     es: 'Programa de Colegios Fundadores -- solo los primeros 10 colegios',
   },
@@ -1326,7 +1326,7 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Empieza en 30 segundos',
   },
   'mkt.teachers.ft.signup.body': {
-    en: 'Create your free account and try every feature -- 3 free uses per tool, no card required.',
+    en: 'Create your free account and try every feature - 3 free uses per tool, no card required.',
     ar: 'سوِّ حسابك المجاني وجرّب كل ميزة -- 3 استخدامات مجانية لكل أداة، بدون بطاقة.',
     es: 'Crea tu cuenta gratuita y prueba todas las funciones: 3 usos gratuitos por herramienta, sin necesidad de tarjeta.',
   },
@@ -1395,7 +1395,7 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: '¿Listo para recuperar tus tardes?',
   },
   'mkt.teachers.ft.final.body': {
-    en: 'Join the founding teachers using The English Hub to spend less time on routine planning and marking. Try every feature free -- upgrade when you are ready.',
+    en: 'Join the founding teachers using The English Hub to spend less time on routine planning and marking. Try every feature free - upgrade when you are ready.',
     ar: 'انضمّ للمعلّمين المؤسِّسين اللي يستخدمون The English Hub عشان وقت أقل على التحضير والتصحيح الروتيني. جرّب كل ميزة ببلاش -- وترقّى لمّا تكون جاهز.',
     es: 'Únete a los profesores fundadores que usan The English Hub para dedicar menos tiempo a la planificación y la corrección rutinarias. Prueba todas las funciones gratis y mejora cuando estés listo.',
   },
@@ -1450,7 +1450,7 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Acceso anticipado a las nuevas funciones antes del lanzamiento general',
   },
   'mkt.schools.fs.founding.benefit.3': {
-    en: 'Direct product input -- help shape the platform',
+    en: 'Direct product input - help shape the platform',
     ar: 'تأثير مباشر على المنتج -- ساعد في تشكيل المنصّة',
     es: 'Aportación directa al producto -- ayuda a dar forma a la plataforma',
   },
@@ -1670,7 +1670,7 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: '¿Qué es el Programa de Colegios Fundadores?',
   },
   'mkt.schools.fs.faq.programme.a': {
-    en: 'The Founding Schools Programme is a strategic partnership for the 2026 academic year. The first 10 schools to sign are designated as founding partners and receive early features, direct product input, priority onboarding, founding partner recognition, and locked preferential pricing for 2-3 years. Additional schools are welcome on the platform at standard rates once the founding cohort closes. This is not a free trial -- it is a discounted, long-term partnership tailored to your department size.',
+    en: 'The Founding Schools Programme is a strategic partnership for the 2026 academic year. The first 10 schools to sign are designated as founding partners and receive early features, direct product input, priority onboarding, founding partner recognition, and locked preferential pricing for 2-3 years. Additional schools are welcome on the platform at standard rates once the founding cohort closes. This is not a free trial - it is a discounted, long-term partnership tailored to your department size.',
     ar: 'برنامج المدارس المؤسِّسة هو شراكة استراتيجية للسنة الدراسية 2026. أول 10 مدارس توقّع تنحدّد كشركاء مؤسِّسين وتحصل مزايا مبكّرة، تأثير مباشر على المنتج، إعداد بأولوية، تكريم كشريك مؤسِّس، وسعر تفضيلي مثبّت لمدة 2-3 سنوات. المدارس الإضافية مرحّب فيها على المنصّة بالأسعار العادية بعد ما تسكّر دفعة المؤسِّسين. هذي مو تجربة مجانية -- هي شراكة طويلة الأمد بسعر مخفّض ومفصّلة على حجم قسمك.',
     es: 'El Programa de Colegios Fundadores es una alianza estratégica para el curso académico 2026. Los primeros 10 colegios en firmar quedan designados como socios fundadores y reciben funciones anticipadas, aportación directa al producto, incorporación prioritaria, reconocimiento como socio fundador y precio preferente fijado durante 2-3 años. Los colegios adicionales son bienvenidos en la plataforma a tarifas estándar una vez se cierre la promoción fundadora. No es una prueba gratuita: es una alianza a largo plazo con descuento y adaptada al tamaño de tu departamento.',
   },
@@ -1720,7 +1720,7 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: '¿Qué juntas examinadoras cubrís?',
   },
   'mkt.schools.fs.faq.boards.a': {
-    en: "We support all major boards: AQA, Edexcel, OCR, WJEC/Eduqas, and IGCSE/CAIE. Your school selects one exam board during setup and all content -- lessons, resources, mark schemes, and AI feedback -- is tailored to that board's specification.",
+    en: "We support all major boards: AQA, Edexcel, OCR, WJEC/Eduqas, and IGCSE/CAIE. Your school selects one exam board during setup and all content - lessons, resources, mark schemes, and AI feedback - is tailored to that board's specification.",
     ar: 'ندعم كل البوردات الرئيسية: AQA و Edexcel و OCR و WJEC/Eduqas و IGCSE/CAIE. مدرستك تختار بورد واحد عند الإعداد وكل المحتوى -- الدروس، الموارد، معايير التصحيح، وتغذية الـ AI الراجعة -- يتفصّل على منهج ذاك البورد.',
     es: 'Damos soporte a todas las juntas principales: AQA, Edexcel, OCR, WJEC/Eduqas e IGCSE/CAIE. Tu colegio selecciona una junta examinadora durante la configuración y todo el contenido (lecciones, recursos, esquemas de calificación y comentarios de IA) se adapta al temario de esa junta.',
   },
@@ -1769,7 +1769,7 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Demo interactiva',
   },
   'mkt.schools.fs.demo.title': {
-    en: 'Explore the Full Platform -- No Signup Required',
+    en: 'Explore the Full Platform - No Signup Required',
     ar: 'استكشف المنصّة كاملة -- بدون تسجيل',
     es: 'Explora la plataforma completa: sin necesidad de registro',
   },
@@ -1841,7 +1841,7 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Por qué los colegios se unen al Programa Fundador',
   },
   'mkt.schools.fs.value.body': {
-    en: 'Founding schools get more than a platform -- they get a partnership that shapes the future of English teaching.',
+    en: 'Founding schools get more than a platform - they get a partnership that shapes the future of English teaching.',
     ar: 'المدارس المؤسِّسة تحصل أكثر من منصّة -- تحصل شراكة تشكّل مستقبل تدريس الإنجليزي.',
     es: 'Los colegios fundadores obtienen más que una plataforma: obtienen una alianza que da forma al futuro de la enseñanza del inglés.',
   },
@@ -1856,7 +1856,7 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Programa de Colegios Fundadores',
   },
   'mkt.schools.fs.value.programme_sub': {
-    en: 'First 10 schools -- 2026 founding rate',
+    en: 'First 10 schools - 2026 founding rate',
     ar: 'أول 10 مدارس -- سعر التأسيس 2026',
     es: 'Primeros 10 colegios -- tarifa fundadora 2026',
   },
@@ -1881,7 +1881,7 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Tarifa fundadora fijada durante 2-3 años. Adaptada al tamaño de tu departamento y tratada durante tu llamada de incorporación.',
   },
   'mkt.schools.fs.value.feat.1': {
-    en: 'Full platform access -- all features, all students, all teachers',
+    en: 'Full platform access - all features, all students, all teachers',
     ar: 'وصول كامل للمنصّة -- كل المزايا، كل الطلاب، كل المعلّمين',
     es: 'Acceso completo a la plataforma -- todas las funciones, todos los estudiantes, todos los profesores',
   },
@@ -1981,7 +1981,7 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Acceso completo a la plataforma',
   },
   'mkt.schools.fs.value.reserved_note': {
-    en: 'Founding partner pricing is reserved for the first 10 schools to sign. Book a call to secure your founding place -- later schools are welcome at standard rates.',
+    en: 'Founding partner pricing is reserved for the first 10 schools to sign. Book a call to secure your founding place - later schools are welcome at standard rates.',
     ar: 'سعر الشريك المؤسِّس محجوز لأول 10 مدارس توقّع. احجز مكالمة عشان تأمّن مكانك المؤسِّس -- المدارس المتأخّرة مرحّب فيها بالأسعار العادية.',
     es: 'El precio de socio fundador está reservado para los primeros 10 colegios en firmar. Reserva una llamada para asegurar tu plaza de fundador: los colegios posteriores son bienvenidos a tarifas estándar.',
   },
@@ -2005,7 +2005,7 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Genera lecciones, fichas de trabajo y presentaciones al instante',
   },
   'mkt.schools.fs.content.body': {
-    en: 'Stop spending evenings making resources. Teachers on The English Hub can instantly generate fully-formed lesson plans, printable worksheets, and classroom presentations from the platform -- all mapped to your exam board specification.',
+    en: 'Stop spending evenings making resources. Teachers on The English Hub can instantly generate fully-formed lesson plans, printable worksheets, and classroom presentations from the platform - all mapped to your exam board specification.',
     ar: 'بطّل تضيّع أمسياتك في تجهيز الموارد. المعلّمون على The English Hub يقدرون يجهّزون على طول خطط دروس متكاملة، أوراق عمل للطباعة، وعروض صفّية من المنصّة -- كلها مربوطة بمنهج بوردك.',
     es: 'Deja de pasar las tardes creando recursos. Los profesores de The English Hub pueden generar al instante planes de lección completos, fichas de trabajo imprimibles y presentaciones para el aula desde la plataforma, todo mapeado al temario de tu junta examinadora.',
   },
@@ -2045,7 +2045,7 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Genera un plan de lección para...',
   },
   'mkt.schools.fs.content.gen.example': {
-    en: '"AQA Language Paper 2 -- Viewpoints & Perspectives, Year 11"',
+    en: '"AQA Language Paper 2 - Viewpoints & Perspectives, Year 11"',
     ar: '"AQA Language Paper 2 -- Viewpoints & Perspectives, Year 11"',
     es: '"AQA Language Paper 2 -- Viewpoints & Perspectives, Year 11"',
   },
@@ -2062,7 +2062,7 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Vista general del departamento',
   },
   'mkt.schools.fs.analytics.all_groups': {
-    en: 'All Year Groups -- Live Data',
+    en: 'All Year Groups - Live Data',
     ar: 'كل السنوات الدراسية -- بيانات حيّة',
     es: 'Todos los cursos -- datos en directo',
   },
@@ -2162,7 +2162,7 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Una estimación interna del progreso a partir de la actividad de práctica y simulacros para ayudar a orientar el apoyo en la enseñanza',
   },
   'mkt.schools.fs.analytics.disclaimer': {
-    en: 'The platform produces an internal progress estimate from a student’s practice and mock activity to help teachers see where to focus support. This is a teaching aid only — not a predicted grade for any awarding body, not a substitute for any exam-board or centre-assessment process, and not used to determine results when a student misses an exam (those are decided solely by the awarding body).',
+    en: 'The platform produces an internal progress estimate from a student’s practice and mock activity to help teachers see where to focus support. This is a teaching aid only - not a predicted grade for any awarding body, not a substitute for any exam-board or centre-assessment process, and not used to determine results when a student misses an exam (those are decided solely by the awarding body).',
     ar: 'المنصّة تطلّع تقدير تقدّم داخلي من نشاط التدريب والاختبارات التجريبية حق الطالب عشان تساعد المعلّمين يشوفون وين يركّزون الدعم. هذي أداة تدريسية بس — مو درجة متوقّعة لأي جهة منح، ومو بديل عن أي عملية بورد امتحان أو تقييم مركز، وما تُستخدم لتحديد النتائج لمّا يفوت الطالب امتحان (هذي تقرّرها جهة المنح وحدها).',
     es: 'La plataforma produce una estimación interna del progreso a partir de la actividad de práctica y simulacros del estudiante para ayudar a los profesores a ver dónde centrar el apoyo. Es únicamente una ayuda docente, no una nota prevista para ningún organismo de titulación, ni un sustituto de ningún proceso de junta examinadora o de evaluación del centro, ni se usa para determinar resultados cuando un estudiante falta a un examen (esos los decide exclusivamente el organismo de titulación).',
   },
@@ -2229,7 +2229,7 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Añade nombres, correos y cursos',
   },
   'mkt.schools.fs.users.excel.point.3': {
-    en: 'Upload once -- all accounts created instantly',
+    en: 'Upload once - all accounts created instantly',
     ar: 'ارفع مرة وحدة -- كل الحسابات تُنشأ على طول',
     es: 'Sube una sola vez -- todas las cuentas se crean al instante',
   },
@@ -2355,7 +2355,7 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Alianza escolar frente a suscripciones individuales',
   },
   'mkt.schools.fs.compare.body': {
-    en: 'The school partnership is not just better value -- it unlocks features that individual subscriptions simply do not include.',
+    en: 'The school partnership is not just better value - it unlocks features that individual subscriptions simply do not include.',
     ar: 'شراكة المدرسة مو بس قيمة أفضل -- تفتح مزايا الاشتراكات الفردية ما تشملها أصلاً.',
     es: 'La alianza escolar no solo ofrece mejor valor: desbloquea funciones que las suscripciones individuales simplemente no incluyen.',
   },

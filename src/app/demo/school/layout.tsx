@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   // title + description + canonical + OG + Twitter — this is one of
   // the top conversion surfaces for Qatar / GCC school sales now that
   // /demo/ is no longer blocked in robots.txt.
-  title: 'School portal demo — English department analytics & intervention',
+  title: 'School portal demo - English department analytics & intervention',
   description:
     'Explore the full English Hub school portal with synthetic department data: class analytics, intervention insights, AI marking workflow and student progress. No signup required.',
   alternates: { canonical: 'https://theenglishhub.app/demo/school' },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     'IGCSE English platform demo',
   ],
   openGraph: {
-    title: 'School portal demo — The English Hub',
+    title: 'School portal demo - The English Hub',
     description:
       'Interactive demo of the English Hub school portal: department analytics, intervention insights, AI marking. Synthetic data, no signup.',
     url: 'https://theenglishhub.app/demo/school',
@@ -33,13 +33,13 @@ export const metadata: Metadata = {
         url: 'https://theenglishhub.app/api/og?title=School+portal+demo&subtitle=English+department+analytics+%26+intervention',
         width: 1200,
         height: 630,
-        alt: 'The English Hub — interactive school portal demo',
+        alt: 'The English Hub - interactive school portal demo',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'School portal demo — The English Hub',
+    title: 'School portal demo - The English Hub',
     description:
       'Interactive demo: department analytics, intervention insights, AI marking. No signup.',
     images: [

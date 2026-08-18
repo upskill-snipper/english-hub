@@ -151,7 +151,7 @@ export const REV_POETRY2_DICTIONARY: Record<string, { en: string; ar?: string; e
     es: '10 planes de redacción de comparación totalmente desarrollados para AQA Paper 2 Section B. Cada plan incluye una tesis de Grade 9, tres párrafos comparativos point-by-point con citas y una conclusión. Úsalos como modelos para estructurar tus propias respuestas.',
   },
   'rev.poetry2.lr.ep.copyright_title': {
-    en: 'Key quotations only -- read the full poems',
+    en: 'Key quotations only - read the full poems',
     ar: 'اقتباسات أساسية بس: اقرا القصائد كاملة',
     es: 'Solo citas clave: lee los poemas completos',
   },

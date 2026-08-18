@@ -227,7 +227,7 @@ export const B15_DEMO_DICTIONARY: Record<string, { en: string; ar: string; es?: 
     es: 'Genera deberes automáticamente con IA',
   },
   'demo.b15.teacher_hw.ai_card_body': {
-    en: 'Select a topic, type, and grade level -- get a complete homework assignment with mark scheme, success criteria, and extension tasks in seconds.',
+    en: 'Select a topic, type, and grade level - get a complete homework assignment with mark scheme, success criteria, and extension tasks in seconds.',
     ar: 'اختر موضوع ونوع ومستوى - تأخذ واجب كامل مع جدول التصحيح ومعايير النجاح ومهام إضافية خلال ثواني.',
     es: 'Selecciona un tema, un tipo y un nivel: obtén unos deberes completos con esquema de corrección, criterios de éxito y tareas de ampliación en segundos.',
   },

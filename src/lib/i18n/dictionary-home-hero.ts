@@ -14,7 +14,7 @@ export const HOME_LP_DICTIONARY: Dictionary = {
     es: 'Aprendizaje de inglés inteligente para todos',
   },
   'home.lp.subtitle': {
-    en: 'Personalised, exam-aligned and AI-assisted — from Years 7–9 through GCSE, IGCSE and IELTS, and structured English support for EAL learners. Pick your track to explore the live demo.',
+    en: 'Personalised, exam-aligned and AI-assisted - from Years 7–9 through GCSE, IGCSE and IELTS, and structured English support for EAL learners. Pick your track to explore the live demo.',
     ar: 'مُخصّص ومتوافق مع الامتحان ومدعوم بالذكاء الاصطناعي: من السنوات 7-9 مرورًا بـ GCSE وIGCSE وIELTS، مع دعم منظّم للإنجليزي لطلاب EAL. اختر مسارك وجرّب العرض المباشر.',
     es: 'Personalizado, alineado con el examen y asistido por IA: desde los años 7-9 hasta GCSE, IGCSE e IELTS, además de apoyo estructurado de inglés para estudiantes EAL. Elige tu itinerario y explora la demo en vivo.',
   },

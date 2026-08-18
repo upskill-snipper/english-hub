@@ -46,7 +46,7 @@ export const IELTS_READINESS_UI_DICTIONARY: Record<
     es: 'Preparación global para el Reino Unido',
   },
   'ielts.readiness.overall.lead': {
-    en: 'A combined view of how ready you are to study in the UK — across your English, your application, visa & finance, and the move itself.',
+    en: 'A combined view of how ready you are to study in the UK - across your English, your application, visa & finance, and the move itself.',
     ar: 'نظرة شاملة لمدى جاهزيتك للدراسة في UK — على مستوى إنجليزيك، وتقديمك، والـ visa والتمويل، والانتقال نفسه.',
     es: 'Una visión combinada de tu preparación para estudiar en el Reino Unido: tu inglés, tu solicitud, el visado y las finanzas, y la propia mudanza.',
   },
@@ -64,12 +64,12 @@ export const IELTS_READINESS_UI_DICTIONARY: Record<
     es: 'Desbloquea tu informe completo de preparación para el Reino Unido',
   },
   'ielts.readiness.locked.body': {
-    en: 'See your overall traffic-light score, every domain’s sub-score, your red flags and a 7/30/60-day action plan — and export it to PDF. Part of the IELTS plan.',
+    en: 'See your overall traffic-light score, every domain’s sub-score, your red flags and a 7/30/60-day action plan - and export it to PDF. Part of the IELTS plan.',
     ar: 'شوف درجتك الكلية بنظام الإشارة الضوئية، ودرجة كل مجال، والإنذارات الحمراء حقّتك، وخطة عمل لـ 7/30/60 يوم — وصدّرها PDF. جزء من خطة IELTS.',
     es: 'Consulta tu puntuación global tipo semáforo, la subpuntuación de cada ámbito, tus señales de alerta y un plan de acción a 7/30/60 días, y expórtalo a PDF. Forma parte del plan IELTS.',
   },
   'ielts.readiness.locked.cta': {
-    en: 'See IELTS plans — {currency}{price}/month',
+    en: 'See IELTS plans - {currency}{price}/month',
     ar: 'شوف خطط IELTS — {currency}{price}/شهر',
     es: 'Ver planes de IELTS: {currency}{price}/mes',
   },
@@ -81,7 +81,7 @@ export const IELTS_READINESS_UI_DICTIONARY: Record<
     es: 'Tu banda objetivo',
   },
   'ielts.readiness.target.body': {
-    en: 'Set the overall band your course requires — English readiness is scored against it.',
+    en: 'Set the overall band your course requires - English readiness is scored against it.',
     ar: 'حدّد الـ Band الكلي اللي يطلبه تخصصك — جاهزية الإنجليزي تتقيّم مقابله.',
     es: 'Fija la banda global que exige tu curso: la preparación de inglés se puntúa con respecto a ella.',
   },
@@ -230,7 +230,7 @@ export const IELTS_READINESS_UI_DICTIONARY: Record<
     es: 'Pregunta 3 de UCAS redactada',
   },
   'ielts.readiness.f.ps_note': {
-    en: 'Tip: run the Personal-Statement Coach to turn your drafts into scored feedback — that lifts this domain further than drafting alone.',
+    en: 'Tip: run the Personal-Statement Coach to turn your drafts into scored feedback - that lifts this domain further than drafting alone.',
     ar: 'نصيحة: شغّل مدرّب الـ Personal Statement عشان يحوّل مسوّداتك لتقييم بدرجات — هذا يرفع هذا المجال أكثر من المسودّة لحالها.',
     es: 'Consejo: usa el Asesor de Personal Statement para convertir tus borradores en feedback con puntuación; eso eleva este ámbito más que solo redactar.',
   },
@@ -278,7 +278,7 @@ export const IELTS_READINESS_UI_DICTIONARY: Record<
   },
 
   'ielts.readiness.tools_note': {
-    en: 'Want to go deeper? The interactive Visa & Finance checklist and Academic-transition modules feed these scores automatically — work through them to upgrade these domains from self-report to tool-driven.',
+    en: 'Want to go deeper? The interactive Visa & Finance checklist and Academic-transition modules feed these scores automatically - work through them to upgrade these domains from self-report to tool-driven.',
     ar: 'تبغى تتعمّق أكثر؟ checklist الـ Visa والتمويل التفاعلية ووحدات الانتقال الأكاديمي تغذّي هالدرجات تلقائياً — اشتغل عليها عشان ترقّي هالمجالات من تقرير ذاتي إلى مبني على الأدوات.',
     es: '¿Quieres profundizar más? La lista de comprobación interactiva de visado y finanzas y los módulos de transición académica alimentan estas puntuaciones automáticamente: complétalos para mejorar estos ámbitos pasando del autoinforme a algo basado en herramientas.',
   },
@@ -427,7 +427,7 @@ export const IELTS_READINESS_UI_DICTIONARY: Record<
     es: 'Repasa las normas de dinero y documentos de la ruta Student del Reino Unido para obtener un estado claro de si puedes solicitarlo.',
   },
   'ielts.visa.disclaimer': {
-    en: 'This is preparation guidance only, not immigration advice, and not affiliated with UK Visas & Immigration. Rules and amounts change — always check the current requirements on ',
+    en: 'This is preparation guidance only, not immigration advice, and not affiliated with UK Visas & Immigration. Rules and amounts change - always check the current requirements on ',
     ar: 'هذا إرشاد تحضيري بس، مو استشارة هجرة، ومو تابع لـ UK Visas & Immigration. القواعد والمبالغ تتغيّر — دايم تأكّد من المتطلبات الحالية على ',
     es: 'Esto es solo una guía de preparación, no asesoramiento de inmigración, y no está afiliado a UK Visas & Immigration. Las normas y los importes cambian: comprueba siempre los requisitos actuales en ',
   },
@@ -449,7 +449,7 @@ export const IELTS_READINESS_UI_DICTIONARY: Record<
     es: 'Tus elementos básicos de visado y finanzas están en orden. Confirma las fechas de tu CAS y luego reserva tu cita para el visado.',
   },
   'ielts.visa.status.notyet.label': {
-    en: 'Not yet — items outstanding',
+    en: 'Not yet - items outstanding',
     ar: 'مو بعد — في بنود متبقّية',
     es: 'Todavía no: hay elementos pendientes',
   },
@@ -459,7 +459,7 @@ export const IELTS_READINESS_UI_DICTIONARY: Record<
     es: 'Vas por buen camino, pero aún faltan algunos elementos por terminar antes de poder presentar una solicitud de visado sólida.',
   },
   'ielts.visa.status.blocked.label': {
-    en: 'Blocked — must resolve first',
+    en: 'Blocked - must resolve first',
     ar: 'متوقّف — لازم تحلّه أول',
     es: 'Bloqueado: hay que resolverlo primero',
   },
@@ -482,27 +482,27 @@ export const IELTS_READINESS_UI_DICTIONARY: Record<
 
   // ══ computeStatus() messages (keys resolved at render) ═════════════════════
   'ielts.visa.msg.passport.invalid': {
-    en: 'Passport is not valid — you cannot apply without one.',
+    en: 'Passport is not valid - you cannot apply without one.',
     ar: 'جواز السفر مو ساري — ما تقدر تقدّم من دونه.',
     es: 'El pasaporte no es válido: no puedes solicitarlo sin uno.',
   },
   'ielts.visa.msg.passport.expiring': {
-    en: 'Passport is expiring / being renewed — make sure it covers your whole course.',
+    en: 'Passport is expiring / being renewed - make sure it covers your whole course.',
     ar: 'جواز السفر قارب ينتهي / قيد التجديد — تأكّد إنه يغطّي فترة تخصصك كاملة.',
     es: 'El pasaporte está caducando / en renovación: asegúrate de que cubra todo tu curso.',
   },
   'ielts.visa.msg.funds.none': {
-    en: 'No maintenance-funds evidence yet — this is the top visa-refusal cause.',
+    en: 'No maintenance-funds evidence yet - this is the top visa-refusal cause.',
     ar: 'ما في إثبات أموال معيشة بعد — هذا أكثر سبب لرفض الـ visa.',
     es: 'Aún no hay prueba de fondos de manutención: esta es la principal causa de denegación del visado.',
   },
   'ielts.visa.msg.funds.gathering': {
-    en: 'Still gathering funds evidence — finish before the 28-day clock can be relied on.',
+    en: 'Still gathering funds evidence - finish before the 28-day clock can be relied on.',
     ar: 'لسّا تجمّع إثبات الأموال — خلّصه قبل ما تعتمد على عدّاد الـ 28 يوم.',
     es: 'Todavía reuniendo la prueba de fondos: termínala antes de poder contar con el plazo de 28 días.',
   },
   'ielts.visa.msg.held.no': {
-    en: 'Funds have not been held for 28 consecutive days — the balance must not dip below the required amount.',
+    en: 'Funds have not been held for 28 consecutive days - the balance must not dip below the required amount.',
     ar: 'الأموال ما انحفظت 28 يوم متتالية — الرصيد لازم ما ينزل تحت المبلغ المطلوب أبداً.',
     es: 'Los fondos no se han mantenido durante 28 días consecutivos: el saldo no debe bajar del importe requerido.',
   },
@@ -512,7 +512,7 @@ export const IELTS_READINESS_UI_DICTIONARY: Record<
     es: 'Confirma que tus fondos se mantendrán durante 28 días consecutivos antes de solicitarlo.',
   },
   'ielts.visa.msg.statement.stale': {
-    en: 'Your closing statement is older than 31 days — get a fresh statement dated within 31 days of applying.',
+    en: 'Your closing statement is older than 31 days - get a fresh statement dated within 31 days of applying.',
     ar: 'كشف الرصيد الختامي حقّك أقدم من 31 يوم — جيب كشف جديد بتاريخ خلال 31 يوم من التقديم.',
     es: 'Tu extracto de cierre tiene más de 31 días: consigue un extracto reciente con fecha dentro de los 31 días previos a la solicitud.',
   },
@@ -522,32 +522,32 @@ export const IELTS_READINESS_UI_DICTIONARY: Record<
     es: 'Asegúrate de que tu extracto bancario tenga una fecha de no más de 31 días antes de solicitarlo.',
   },
   'ielts.visa.msg.cas.notstarted': {
-    en: 'No university application started — you need an offer and a CAS before you can apply for the visa.',
+    en: 'No university application started - you need an offer and a CAS before you can apply for the visa.',
     ar: 'ما بدأت أي تقديم جامعي — تحتاج عرض قبول و CAS قبل ما تقدر تقدّم على الـ visa.',
     es: 'No has iniciado ninguna solicitud universitaria: necesitas una oferta y un CAS antes de poder solicitar el visado.',
   },
   'ielts.visa.msg.cas.pending': {
-    en: 'CAS not yet received — you cannot submit the visa application until your university issues it.',
+    en: 'CAS not yet received - you cannot submit the visa application until your university issues it.',
     ar: 'الـ CAS ما تم استلامه بعد — ما تقدر تقدّم طلب الـ visa لين جامعتك تصدره.',
     es: 'CAS aún no recibido: no puedes presentar la solicitud de visado hasta que tu universidad lo emita.',
   },
   'ielts.visa.msg.sponsor.unknown': {
-    en: 'Funding source unconfirmed — confirm whether you are self-funded, sponsored or applying for a scholarship.',
+    en: 'Funding source unconfirmed - confirm whether you are self-funded, sponsored or applying for a scholarship.',
     ar: 'مصدر التمويل مو مؤكّد — أكّد إذا إنت تمويل ذاتي، أو عندك راعي، أو تقدّم على منحة.',
     es: 'Fuente de financiación sin confirmar: confirma si te autofinancias, tienes patrocinador o estás solicitando una beca.',
   },
   'ielts.visa.msg.sponsor.applying': {
-    en: 'Scholarship / sponsor application pending — have a self-funded backup ready in case it is unsuccessful.',
+    en: 'Scholarship / sponsor application pending - have a self-funded backup ready in case it is unsuccessful.',
     ar: 'طلب المنحة / الراعي معلّق — خلّ عندك خطة تمويل ذاتي احتياطية إذا ما نجح.',
     es: 'Solicitud de beca / patrocinador pendiente: ten preparado un plan de autofinanciación de respaldo por si no prospera.',
   },
   'ielts.visa.msg.tb.outstanding': {
-    en: 'TB test outstanding — if required for your country it must be done before you apply.',
+    en: 'TB test outstanding - if required for your country it must be done before you apply.',
     ar: 'الـ TB test متبقّي — إذا مطلوب لبلدك لازم يتسوّى قبل ما تقدّم.',
     es: 'TB test pendiente: si se requiere para tu país, debe realizarse antes de solicitarlo.',
   },
   'ielts.visa.msg.atas.outstanding': {
-    en: 'ATAS clearance outstanding — if required for your course it must be granted before your CAS is used.',
+    en: 'ATAS clearance outstanding - if required for your course it must be granted before your CAS is used.',
     ar: 'تصريح الـ ATAS متبقّي — إذا مطلوب لتخصصك لازم يتمنح قبل ما يُستخدم الـ CAS حقّك.',
     es: 'Aprobación ATAS pendiente: si se requiere para tu curso, debe concederse antes de usar tu CAS.',
   },
@@ -588,7 +588,7 @@ export const IELTS_READINESS_UI_DICTIONARY: Record<
     es: '£{rate}/mes × {months} meses (el saldo de las tasas del curso se suma aparte).',
   },
   'ielts.visa.funds.note': {
-    en: 'Official-financial-sponsor and Student-loan cases follow different evidence rules — check gov.uk.',
+    en: 'Official-financial-sponsor and Student-loan cases follow different evidence rules - check gov.uk.',
     ar: 'حالات الراعي المالي الرسمي و Student loan تتبع قواعد إثبات مختلفة — راجع gov.uk.',
     es: 'Los casos de patrocinador financiero oficial y de Student loan siguen normas de prueba distintas: consulta gov.uk.',
   },
@@ -615,7 +615,7 @@ export const IELTS_READINESS_UI_DICTIONARY: Record<
     es: 'Tu extracto de cierre no debe tener más de 31 días cuando solicites.',
   },
   'ielts.visa.tri.held': {
-    en: 'Yes — held 28 days',
+    en: 'Yes - held 28 days',
     ar: 'إي — محفوظة 28 يوم',
     es: 'Sí, mantenidos 28 días',
   },
@@ -626,7 +626,7 @@ export const IELTS_READINESS_UI_DICTIONARY: Record<
     es: 'No estoy seguro / planificando',
   },
   'ielts.visa.tri.fresh': {
-    en: 'Yes — within 31 days',
+    en: 'Yes - within 31 days',
     ar: 'إي — خلال 31 يوم',
     es: 'Sí, dentro de 31 días',
   },
@@ -670,7 +670,7 @@ export const IELTS_READINESS_UI_DICTIONARY: Record<
     es: 'Documentos y fase de la solicitud',
   },
   'ielts.visa.docs.body': {
-    en: 'Work through each item. TB test and ATAS only apply to some countries / courses — mark “Not applicable” if so.',
+    en: 'Work through each item. TB test and ATAS only apply to some countries / courses - mark “Not applicable” if so.',
     ar: 'اشتغل على كل بند. الـ TB test والـ ATAS ينطبقون بس على بعض الدول / التخصصات — حدّد ”لا ينطبق“ إذا كذا.',
     es: 'Repasa cada elemento. El TB test y el ATAS solo se aplican a algunos países / cursos: marca "No aplicable" si es tu caso.',
   },
@@ -707,7 +707,7 @@ export const IELTS_READINESS_UI_DICTIONARY: Record<
   'ielts.visa.opt.na': { en: 'Not applicable', ar: 'لا ينطبق', es: 'No aplicable' },
   'ielts.visa.opt.tb.yes': { en: 'Done', ar: 'تم', es: 'Hecho' },
   'ielts.visa.opt.tb.no': {
-    en: 'Required — outstanding',
+    en: 'Required - outstanding',
     ar: 'مطلوب — متبقّي',
     es: 'Requerido: pendiente',
   },
@@ -718,7 +718,7 @@ export const IELTS_READINESS_UI_DICTIONARY: Record<
   },
   'ielts.visa.opt.atas.yes': { en: 'Granted', ar: 'تم منحه', es: 'Concedido' },
   'ielts.visa.opt.atas.no': {
-    en: 'Required — outstanding',
+    en: 'Required - outstanding',
     ar: 'مطلوب — متبقّي',
     es: 'Requerido: pendiente',
   },
@@ -730,7 +730,7 @@ export const IELTS_READINESS_UI_DICTIONARY: Record<
     es: 'Requisito de inglés (CEFR B2)',
   },
   'ielts.visa.english.body': {
-    en: 'Degree-level study generally needs CEFR B2, which usually maps to around IELTS 6.0–6.5 overall (with minimum component scores set by each university). Check your offer letter for the exact band — your English readiness is scored separately in your Readiness Report.',
+    en: 'Degree-level study generally needs CEFR B2, which usually maps to around IELTS 6.0–6.5 overall (with minimum component scores set by each university). Check your offer letter for the exact band - your English readiness is scored separately in your Readiness Report.',
     ar: 'الدراسة على مستوى الدرجة الجامعية تحتاج عادةً CEFR B2، اللي يقابل تقريباً IELTS 6.0–6.5 كلي (مع حد أدنى لدرجات كل مهارة تحدّده كل جامعة). شوف رسالة العرض حقّتك للـ Band المضبوط — جاهزية إنجليزيك تتقيّم بشكل منفصل في تقرير الجاهزية.',
     es: 'Los estudios de nivel universitario suelen requerir CEFR B2, que normalmente equivale a alrededor de IELTS 6.0–6.5 en total (con puntuaciones mínimas por componente fijadas por cada universidad). Consulta tu carta de oferta para la banda exacta: tu preparación de inglés se puntúa por separado en tu informe de preparación.',
   },
@@ -759,7 +759,7 @@ export const IELTS_READINESS_UI_DICTIONARY: Record<
     es: 'Desbloquea la lista de comprobación de visado y finanzas',
   },
   'ielts.visa.locked.body': {
-    en: 'Work through the UK Student-route money and document rules — maintenance funds, the 28-day rule, CAS, TB test and ATAS — and get a clear can-apply / not-yet / blocked status that feeds your Readiness Report. Part of the IELTS plan.',
+    en: 'Work through the UK Student-route money and document rules - maintenance funds, the 28-day rule, CAS, TB test and ATAS - and get a clear can-apply / not-yet / blocked status that feeds your Readiness Report. Part of the IELTS plan.',
     ar: 'اشتغل على قواعد الأموال والمستندات لمسار الـ Student visa في UK — أموال المعيشة، وقاعدة الـ 28 يوم، والـ CAS، والـ TB test، والـ ATAS — وخذ حالة واضحة تقدر تقدّم / مو بعد / متوقّف تغذّي تقرير جاهزيتك. جزء من خطة IELTS.',
     es: 'Repasa las normas de dinero y documentos de la ruta Student del Reino Unido (fondos de manutención, la regla de 28 días, CAS, TB test y ATAS) y obtén un estado claro de puedes-solicitar / todavía-no / bloqueado que alimenta tu informe de preparación. Forma parte del plan IELTS.',
   },

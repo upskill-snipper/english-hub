@@ -71,12 +71,12 @@ export const REV_MISC2_DICTIONARY: Record<string, { en: string; ar?: string; es?
     es: 'La mentalidad del Grade 9',
   },
   'rev.misc2.g9.overview.heading': {
-    en: 'It is not about knowing more -- it is about thinking differently',
+    en: 'It is not about knowing more - it is about thinking differently',
     ar: 'مو القضية إنك تعرف أكثر: القضية إنك تفكّر بشكل مختلف',
     es: 'No se trata de saber más: se trata de pensar de forma distinta',
   },
   'rev.misc2.g9.overview.body': {
-    en: 'Grade 7 students know the texts well and can write clear, supported paragraphs. Grade 9 students do something more: they treat literature as a set of deliberate choices made by a writer for a purpose, offer multiple interpretations, and connect every detail to a bigger argument. The jump from 7 to 9 is not about learning more quotes -- it is about upgrading how you think and write about them.',
+    en: 'Grade 7 students know the texts well and can write clear, supported paragraphs. Grade 9 students do something more: they treat literature as a set of deliberate choices made by a writer for a purpose, offer multiple interpretations, and connect every detail to a bigger argument. The jump from 7 to 9 is not about learning more quotes - it is about upgrading how you think and write about them.',
     ar: 'طلاب Grade 7 يعرفون النصوص زين ويقدرون يكتبون فقرات واضحة ومدعومة. طلاب Grade 9 يسوّون شي أكثر: يتعاملون مع الأدب كمجموعة خيارات مقصودة سوّاها الكاتب لغرض، ويقدّمون تفسيرات متعددة، ويربطون كل تفصيلة بحجّة أكبر. القفزة من 7 إلى 9 مو عن حفظ اقتباسات أكثر: هي عن تطوير طريقة تفكيرك وكتابتك عنها.',
     es: 'Los estudiantes de Grade 7 conocen bien los textos y pueden escribir párrafos claros y fundamentados. Los estudiantes de Grade 9 hacen algo más: tratan la literatura como un conjunto de decisiones deliberadas que el autor toma con un propósito, ofrecen varias interpretaciones y conectan cada detalle con un argumento mayor. El salto del 7 al 9 no consiste en aprender más citas: consiste en mejorar cómo piensas y escribes sobre ellas.',
   },
@@ -148,7 +148,7 @@ export const REV_MISC2_DICTIONARY: Record<string, { en: string; ar?: string; es?
     es: 'Los 20 errores más comunes en GCSE English',
   },
   'rev.misc2.cm.subtitle': {
-    en: 'What goes wrong and exactly how to fix it -- with wrong vs right examples for every mistake',
+    en: 'What goes wrong and exactly how to fix it - with wrong vs right examples for every mistake',
     ar: 'شنو اللي يصير غلط وكيف تصلّحه بالضبط: مع أمثلة غلط مقابل صح لكل خطأ',
     es: 'Qué sale mal y cómo corregirlo exactamente, con ejemplos de incorrecto frente a correcto para cada error',
   },
@@ -163,7 +163,7 @@ export const REV_MISC2_DICTIONARY: Record<string, { en: string; ar?: string; es?
     es: 'La mayoría de los puntos se pierden, no se ganan',
   },
   'rev.misc2.cm.overview.body': {
-    en: 'The difference between a Grade 5 and a Grade 7 is rarely about knowing more content -- it is about avoiding the habits that cap your marks. Every mistake below is something examiners see hundreds of times a day. Eliminating even three or four of them can push your grade up significantly.',
+    en: 'The difference between a Grade 5 and a Grade 7 is rarely about knowing more content - it is about avoiding the habits that cap your marks. Every mistake below is something examiners see hundreds of times a day. Eliminating even three or four of them can push your grade up significantly.',
     ar: 'الفرق بين Grade 5 و Grade 7 نادراً يكون عن معرفة محتوى أكثر: هو عن تجنّب العادات اللي تحدّ من درجاتك. كل خطأ تحت هذا شي يشوفه المصحّحون مئات المرات باليوم. لو تشيل حتى ثلاثة أو أربعة منها ممكن ترفع درجتك بشكل واضح.',
     es: 'La diferencia entre un Grade 5 y un Grade 7 rara vez consiste en saber más contenido: consiste en evitar los hábitos que limitan tus puntos. Cada error de abajo es algo que los examinadores ven cientos de veces al día. Eliminar incluso tres o cuatro de ellos puede subir tu nota de forma notable.',
   },

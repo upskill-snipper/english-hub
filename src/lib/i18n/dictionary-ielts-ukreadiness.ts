@@ -27,7 +27,7 @@ export const IELTS_UKREADINESS_DICTIONARY: Record<
     es: 'Tu ruta para estudiar en el Reino Unido, en cuatro partes',
   },
   'ielts.ukread.intro': {
-    en: 'Getting to a UK university is more than an IELTS score. This programme breaks readiness into four domains — your English, your application, your visa & finance, and the move itself — and gives you a tool for each. Work through them in order, then pull everything together into one Readiness Report.',
+    en: 'Getting to a UK university is more than an IELTS score. This programme breaks readiness into four domains - your English, your application, your visa & finance, and the move itself - and gives you a tool for each. Work through them in order, then pull everything together into one Readiness Report.',
     ar: 'الوصول لجامعة في UK أكثر من مجرد درجة IELTS. هالبرنامج يقسّم جاهزيتك على أربع مجالات — لغتك الإنجليزية، طلبك للجامعة، الـ visa والتمويل، والانتقال نفسه — ويعطيك أداة لكل واحد منها. روح فيها بالترتيب، وبعدها اجمع كل شي بتقرير Readiness واحد.',
     es: 'Llegar a una universidad del Reino Unido es más que una puntuación de IELTS. Este programa divide la preparación en cuatro ámbitos (tu inglés, tu solicitud, tu visado y financiación, y la propia mudanza) y te da una herramienta para cada uno. Recórrelos en orden y luego reúnelo todo en un único Readiness Report.',
   },
@@ -39,7 +39,7 @@ export const IELTS_UKREADINESS_DICTIONARY: Record<
     es: 'Preparación de inglés',
   },
   'ielts.ukread.english.summary': {
-    en: 'Can your English meet the band your course and visa require — across all four skills, not just on average?',
+    en: 'Can your English meet the band your course and visa require - across all four skills, not just on average?',
     ar: 'هل لغتك الإنجليزية توصل للـ Band اللي يطلبه تخصصك والـ visa — بكل المهارات الأربع، مو بس بالمعدل؟',
     es: '¿Puede tu inglés alcanzar la Band que exigen tu curso y tu visado, en las cuatro destrezas, no solo de media?',
   },
@@ -54,7 +54,7 @@ export const IELTS_UKREADINESS_DICTIONARY: Record<
     es: 'Alcanzas (o superas) la Band global que pide tu oferta, Y ninguna destreza baja del mínimo por destreza que fija la universidad o UKVI.',
   },
   'ielts.ukread.english.ready.1': {
-    en: 'Your bands are consistent across attempts, not a lucky one-off — Writing and Speaking are usually the deciding skills.',
+    en: 'Your bands are consistent across attempts, not a lucky one-off - Writing and Speaking are usually the deciding skills.',
     ar: 'درجاتك في الـ Band ثابتة بكل المحاولات، مو ضربة حظ مرة وحدة — عادةً Writing وSpeaking هي المهارات اللي تحسم.',
     es: 'Tus Band son consistentes entre intentos, no un golpe de suerte puntual; Writing y Speaking suelen ser las destrezas decisivas.',
   },
@@ -91,7 +91,7 @@ export const IELTS_UKREADINESS_DICTIONARY: Record<
     es: 'Preparación de la solicitud',
   },
   'ielts.ukread.application.summary': {
-    en: 'Is your UCAS application — personal statement, references and choices — strong enough to convert offers?',
+    en: 'Is your UCAS application - personal statement, references and choices - strong enough to convert offers?',
     ar: 'هل طلبك في UCAS — الـ personal statement والتزكيات والاختيارات — قوي كفاية عشان يحوّل العروض لقبول؟',
     es: '¿Es tu solicitud de UCAS (personal statement, referencias y elecciones) lo bastante sólida para convertir ofertas?',
   },
@@ -106,7 +106,7 @@ export const IELTS_UKREADINESS_DICTIONARY: Record<
     es: 'Tu personal statement empieza con una motivación concreta y demostrada por la materia, no con entusiasmo genérico.',
   },
   'ielts.ukread.application.ready.1': {
-    en: 'Every claim is backed by something concrete — a project, a book, work experience, a result.',
+    en: 'Every claim is backed by something concrete - a project, a book, work experience, a result.',
     ar: 'كل ادّعاء مدعوم بشي ملموس — مشروع، كتاب، خبرة عمل، نتيجة.',
     es: 'Cada afirmación está respaldada por algo concreto: un proyecto, un libro, experiencia laboral, un resultado.',
   },
@@ -153,7 +153,7 @@ export const IELTS_UKREADINESS_DICTIONARY: Record<
     es: 'Preparación de visado y finanzas',
   },
   'ielts.ukread.visa.summary': {
-    en: 'Can you actually apply for the Student visa — maintenance funds, the 28-day rule, CAS, TB test and ATAS?',
+    en: 'Can you actually apply for the Student visa - maintenance funds, the 28-day rule, CAS, TB test and ATAS?',
     ar: 'هل تقدر فعلاً تقدّم على Student visa — أموال الإعاشة، قاعدة الـ 28 يوم، CAS، TB test وATAS؟',
     es: '¿Puedes realmente solicitar la Student visa: fondos de manutención, la regla de los 28 días, CAS, TB test y ATAS?',
   },
@@ -170,7 +170,7 @@ export const IELTS_UKREADINESS_DICTIONARY: Record<
     es: 'Preparación para la transición académica',
   },
   'ielts.ukread.transition.summary': {
-    en: 'Are you ready for how UK study actually works — academic writing, lectures, independent study, budgeting and living away?',
+    en: 'Are you ready for how UK study actually works - academic writing, lectures, independent study, budgeting and living away?',
     ar: 'هل أنت مستعد لطريقة الدراسة في UK فعلاً — الكتابة الأكاديمية، المحاضرات، الدراسة المستقلة، الميزانية، والعيش بعيد عن البيت؟',
     es: '¿Estás listo para cómo funciona realmente el estudio en el Reino Unido: escritura académica, clases magistrales, estudio independiente, presupuesto y vivir fuera de casa?',
   },
@@ -195,7 +195,7 @@ export const IELTS_UKREADINESS_DICTIONARY: Record<
     es: 'Tu siguiente paso: ',
   },
   'ielts.ukread.fallback': {
-    en: 'This domain has its own guided tool — open it above to work through the checks step by step. Your progress there feeds straight into your Readiness Report.',
+    en: 'This domain has its own guided tool - open it above to work through the checks step by step. Your progress there feeds straight into your Readiness Report.',
     ar: 'هالمجال له أداة موجّهة خاصة فيه — افتحها فوق عشان تمشي على الفحوصات خطوة بخطوة. تقدّمك هناك يروح مباشرة لتقرير Readiness حقك.',
     es: 'Este ámbito tiene su propia herramienta guiada: ábrela arriba para repasar las comprobaciones paso a paso. Tu progreso allí alimenta directamente tu Readiness Report.',
   },
@@ -274,12 +274,12 @@ export const IELTS_UKREADINESS_DICTIONARY: Record<
     es: 'prueba gratuita de {days} días, cancela cuando quieras',
   },
   'pricing.ielts.cta.monthly': {
-    en: 'Start free trial — {currency}{price}/mo',
+    en: 'Start free trial - {currency}{price}/mo',
     ar: 'ابدأ التجربة ببلاش — {currency}{price}/شهر',
     es: 'Empieza la prueba gratuita: {currency}{price}/mes',
   },
   'pricing.ielts.cta.annual': {
-    en: 'Or pay annually — {currency}{price}/year',
+    en: 'Or pay annually - {currency}{price}/year',
     ar: 'أو ادفع سنوي — {currency}{price}/سنة',
     es: 'O paga anualmente: {currency}{price}/año',
   },

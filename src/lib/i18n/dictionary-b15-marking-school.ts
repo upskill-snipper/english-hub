@@ -610,7 +610,7 @@ export const B15_MARKING_SCHOOL_DICTIONARY: Record<
     es: 'Administrador del centro',
   },
   'school.b15.users.perm_admin_desc': {
-    en: 'Full access -- manage all users, view all analytics, edit school settings',
+    en: 'Full access - manage all users, view all analytics, edit school settings',
     ar: 'وصول كامل - تنظيم كل المستخدمين وعرض كل التحليلات وتعديل إعدادات المدرسة',
     es: 'Acceso completo: gestionar todos los usuarios, ver todas las analíticas y editar los ajustes del centro',
   },

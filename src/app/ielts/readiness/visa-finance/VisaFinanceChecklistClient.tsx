@@ -77,14 +77,14 @@ const STATUS_META: Record<
     dot: 'bg-emerald-500',
   },
   not_yet: {
-    label: 'ielts.visa.status.notyet.label', // 'Not yet — items outstanding'
+    label: 'ielts.visa.status.notyet.label', // 'Not yet - items outstanding'
     blurb: 'ielts.visa.status.notyet.blurb',
     text: 'text-amber-600 dark:text-amber-400',
     bg: 'bg-amber-500/10 border-amber-500/30',
     dot: 'bg-amber-500',
   },
   blocked: {
-    label: 'ielts.visa.status.blocked.label', // 'Blocked — must resolve first'
+    label: 'ielts.visa.status.blocked.label', // 'Blocked - must resolve first'
     blurb: 'ielts.visa.status.blocked.blurb',
     text: 'text-rose-600 dark:text-rose-400',
     bg: 'bg-rose-500/10 border-rose-500/30',

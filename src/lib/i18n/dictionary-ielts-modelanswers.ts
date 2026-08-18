@@ -36,7 +36,7 @@ export const IELTS_MODELANSWERS_DICTIONARY: Record<
     es: 'Writing Task 1 · Academic',
   },
   'ielts.modelans.wt1a.promptNote': {
-    en: 'Self-authored data: National Gallery — 2.0m (2010), 3.2m (2015), 4.5m (2020). Science Centre — 1.5m (2010), 2.8m (2015), 3.0m (2020). History Museum — 3.5m (2010), 3.1m (2015), 2.4m (2020).',
+    en: 'Self-authored data: National Gallery - 2.0m (2010), 3.2m (2015), 4.5m (2020). Science Centre - 1.5m (2010), 2.8m (2015), 3.0m (2020). History Museum - 3.5m (2010), 3.1m (2015), 2.4m (2020).',
     ar: 'بيانات من إعدادنا: National Gallery — 2.0m (2010)، 3.2m (2015)، 4.5m (2020). Science Centre — 1.5m (2010)، 2.8m (2015)، 3.0m (2020). History Museum — 3.5m (2010)، 3.1m (2015)، 2.4m (2020).',
     es: 'Datos de elaboración propia: National Gallery: 2.0m (2010), 3.2m (2015), 4.5m (2020). Science Centre: 1.5m (2010), 2.8m (2015), 3.0m (2020). History Museum: 3.5m (2010), 3.1m (2015), 2.4m (2020).',
   },
@@ -71,7 +71,7 @@ export const IELTS_MODELANSWERS_DICTIONARY: Record<
     es: 'Sólido (≈ Band 8)',
   },
   'ielts.modelans.wt1a.s1.why.0': {
-    en: 'The overview is placed second, is fully separate, and captures the single most important idea — the reversal in ranking — which is exactly what lifts the task-response mark.',
+    en: 'The overview is placed second, is fully separate, and captures the single most important idea - the reversal in ranking - which is exactly what lifts the task-response mark.',
     ar: 'النظرة العامة جت ثاني، ومنفصلة تمام، وتمسك الفكرة الأهم — انقلاب الترتيب — وهذا بالضبط اللي يرفع درجة الاستجابة للمهمة.',
     es: 'El resumen general aparece en segundo lugar, está totalmente separado y capta la idea más importante (la inversión del orden), que es exactamente lo que eleva la nota de respuesta a la tarea.',
   },
@@ -108,7 +108,7 @@ export const IELTS_MODELANSWERS_DICTIONARY: Record<
     es: 'Se cubren ambas posturas y se da una opinión clara, así que el ensayo cumple lo que pide la pregunta.',
   },
   'ielts.modelans.wt2.s0.why.1': {
-    en: 'Paragraphing is logical, but ideas are stated rather than fully developed — each point needs an example or a "so what" to feel convincing.',
+    en: 'Paragraphing is logical, but ideas are stated rather than fully developed - each point needs an example or a "so what" to feel convincing.',
     ar: 'تقسيم الفقرات منطقي، بس الأفكار مذكورة مو متطوّرة تمام — كل نقطة تحتاج مثال أو "وش يعني هذا" عشان تقنع.',
     es: 'La división en párrafos es lógica, pero las ideas se enuncian en lugar de desarrollarse del todo: cada punto necesita un ejemplo o un "y qué" para resultar convincente.',
   },
@@ -128,7 +128,7 @@ export const IELTS_MODELANSWERS_DICTIONARY: Record<
     es: 'Sólido (≈ Band 8)',
   },
   'ielts.modelans.wt2.s1.why.0': {
-    en: 'The position is clear from the introduction and is sustained consistently — the writer argues the two aims are complementary, then proves it.',
+    en: 'The position is clear from the introduction and is sustained consistently - the writer argues the two aims are complementary, then proves it.',
     ar: 'الموقف واضح من المقدمة وثابت طول المقال — الكاتب يجادل إن الهدفين مكمّلين لبعض، وبعدها يثبتها.',
     es: 'La postura queda clara desde la introducción y se mantiene de forma coherente: el autor argumenta que los dos objetivos son complementarios y luego lo demuestra.',
   },
@@ -155,7 +155,7 @@ export const IELTS_MODELANSWERS_DICTIONARY: Record<
     es: 'Speaking Part 1',
   },
   'ielts.modelans.sp1.promptNote': {
-    en: 'Part 1 answers should be a couple of sentences — enough to give a reason and a small detail, without turning into a speech.',
+    en: 'Part 1 answers should be a couple of sentences - enough to give a reason and a small detail, without turning into a speech.',
     ar: 'أجوبة Part 1 لازم تكون جملتين ثلاث — تكفي تعطي سبب وتفصيلة صغيرة، بدون ما تتحوّل لخطبة.',
     es: 'Las respuestas de la Part 1 deben ser un par de frases: lo suficiente para dar una razón y un pequeño detalle, sin convertirse en un discurso.',
   },
@@ -279,7 +279,7 @@ export const IELTS_MODELANSWERS_DICTIONARY: Record<
     es: 'Speaking Part 3',
   },
   'ielts.modelans.sp3.promptNote': {
-    en: 'Part 3 expects a fuller, more analytical answer — give a view, explain it, and consider more than one side.',
+    en: 'Part 3 expects a fuller, more analytical answer - give a view, explain it, and consider more than one side.',
     ar: 'Part 3 يتوقّع جواب أوفى وأكثر تحليلاً — اعطِ رأي، واشرحه، وفكّر بأكثر من جهة.',
     es: 'La Part 3 espera una respuesta más completa y analítica: da un punto de vista, explícalo y considera más de una perspectiva.',
   },
@@ -314,7 +314,7 @@ export const IELTS_MODELANSWERS_DICTIONARY: Record<
     es: 'Sólido (≈ Band 8)',
   },
   'ielts.modelans.sp3.s1.why.0': {
-    en: 'The answer is analytical and nuanced — it qualifies the question ("depends on the type of skill") instead of giving a flat yes or no.',
+    en: 'The answer is analytical and nuanced - it qualifies the question ("depends on the type of skill") instead of giving a flat yes or no.',
     ar: 'الجواب تحليلي ودقيق — يقيّد السؤال ("depends on the type of skill") بدل ما يعطي نعم أو لا مباشرة.',
     es: 'La respuesta es analítica y matizada: matiza la pregunta ("depends on the type of skill") en lugar de dar un sí o un no tajante.',
   },
@@ -351,7 +351,7 @@ export const IELTS_MODELANSWERS_DICTIONARY: Record<
     es: 'Modelos de respuesta de IELTS, calificados banda por banda',
   },
   'ielts.modelans.hero.subtitle': {
-    en: '{count} self-authored sample answers for Writing and Speaking, each written to a target band — a developing answer (around 6.5) and a strong answer (around 8) for the same question — with a plain-English note on exactly what moves the answer up the scale.',
+    en: '{count} self-authored sample answers for Writing and Speaking, each written to a target band - a developing answer (around 6.5) and a strong answer (around 8) for the same question - with a plain-English note on exactly what moves the answer up the scale.',
     ar: '{count} نموذج إجابة من إعدادنا للكتابة والمحادثة، كل وحدة مكتوبة لـ Band مستهدف — إجابة في طور التطور (حوالي 6.5) وإجابة قوية (حوالي 8) لنفس السؤال — مع ملاحظة بإنجليزي بسيط عن وش بالضبط يطلّع الإجابة فوق بالسلّم.',
     es: '{count} modelos de respuesta de elaboración propia para Writing y Speaking, cada uno escrito para una banda objetivo, una respuesta en desarrollo (en torno a 6.5) y una respuesta sólida (en torno a 8) para la misma pregunta, con una nota en inglés sencillo sobre qué hace exactamente que la respuesta suba en la escala.',
   },
@@ -401,7 +401,7 @@ export const IELTS_MODELANSWERS_DICTIONARY: Record<
     es: 'Desbloquea todos los modelos de respuesta',
   },
   'ielts.modelans.upsell.body': {
-    en: 'The full library — and unlimited AI band feedback on your own Writing and Speaking — is part of the IELTS plan.',
+    en: 'The full library - and unlimited AI band feedback on your own Writing and Speaking - is part of the IELTS plan.',
     ar: 'المكتبة الكاملة — وتقييم Band بالـ AI بلا حدود على كتابتك ومحادثتك أنت — جزء من خطة IELTS.',
     es: 'La biblioteca completa (y feedback de banda ilimitado con IA sobre tu propio Writing y Speaking) forma parte del plan IELTS.',
   },

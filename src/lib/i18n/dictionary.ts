@@ -1858,7 +1858,7 @@ export const DICTIONARY: Dictionary = {
     es: 'Todo lo que necesita tu departamento',
   },
   'audience.schools.demo.title': {
-    en: 'Explore the Full Platform -- No Signup Required',
+    en: 'Explore the Full Platform - No Signup Required',
     ar: 'استكشف المنصة كاملة - بلا تسجيل',
     es: 'Explora toda la plataforma -- sin registro',
   },
@@ -1908,12 +1908,12 @@ export const DICTIONARY: Dictionary = {
     es: 'Herramientas de departamento de inglés para profesores de AQA, Edexcel, OCR y WJEC',
   },
   'audience.teachers.hero.sub': {
-    en: 'Premium academic infrastructure, not a cheap app. AI-powered lesson building, instant essay marking, and real-time progress analytics -- built specifically for English teachers.',
+    en: 'Premium academic infrastructure, not a cheap app. AI-powered lesson building, instant essay marking, and real-time progress analytics - built specifically for English teachers.',
     ar: 'بنية تحتية أكاديمية متقدّمة، مو تطبيق رخيص. بناء دروس بالذكاء الاصطناعي، تصحيح فوري للمقال، وتحليلات تقدّم لحظية - مصمَّم خصيصاً لمعلمي English.',
     es: 'Infraestructura académica premium, no una app barata. Creación de clases con IA, corrección instantánea de redacciones y analíticas de progreso en tiempo real -- creadas específicamente para profesores de inglés.',
   },
   'audience.teachers.hero.demo_note': {
-    en: 'Every feature available to try -- 3 free uses per tool. No credit card required.',
+    en: 'Every feature available to try - 3 free uses per tool. No credit card required.',
     ar: 'كل ميزة متاحة للتجربة - ٣ استخدامات ببلاش لكل أداة. ما تحتاج بطاقة ائتمان.',
     es: 'Todas las funciones disponibles para probar -- 3 usos gratuitos por herramienta. Sin tarjeta de crédito.',
   },
@@ -15264,7 +15264,7 @@ export const DICTIONARY: Dictionary = {
   // ─── Help / Contact (/help/contact) ───────────────────────────────────
   'help.contact.title': { en: 'Get in Touch', ar: 'تواصل معانا', es: 'Ponte en contacto' },
   'help.contact.lead': {
-    en: 'Whether you have a question, a problem, or just want to say hi -- pick the right channel below and we will get back to you as quickly as we can.',
+    en: 'Whether you have a question, a problem, or just want to say hi - pick the right channel below and we will get back to you as quickly as we can.',
     ar: 'لو عندك سؤال أو مشكلة أو بس تبغى تسلّم -- اختر القناة المناسبة تحت، ونرد عليك بأسرع ما يمكن.',
     es: 'Tanto si tienes una pregunta, un problema o simplemente quieres saludar -- elige el canal adecuado abajo y te responderemos lo antes posible.',
   },
@@ -15375,7 +15375,7 @@ export const DICTIONARY: Dictionary = {
     es: 'Protección de menores:',
   },
   'help.contact.rt.safeguarding_value': {
-    en: 'prioritised -- we aim to respond within 24 hours',
+    en: 'prioritised - we aim to respond within 24 hours',
     ar: 'بالأولوية -- نهدف للرد خلال ٢٤ ساعة',
     es: 'priorizado -- aspiramos a responder en un plazo de 24 horas',
   },
@@ -18459,7 +18459,7 @@ export const DICTIONARY: Dictionary = {
     es: 'Section B - Escritura descriptiva',
   },
   'igcse.cambridge.p2_models.desc_intro': {
-    en: 'Section B offers a choice between descriptive and narrative writing. Descriptive compositions are marked on the quality of your imagery, vocabulary, sentence variety, and structural control. The best descriptive writing creates atmosphere through precise, original sensory detail -- not through plot.',
+    en: 'Section B offers a choice between descriptive and narrative writing. Descriptive compositions are marked on the quality of your imagery, vocabulary, sentence variety, and structural control. The best descriptive writing creates atmosphere through precise, original sensory detail - not through plot.',
     ar: 'Section B يعطيك خيار بين الكتابة الوصفية والسردية. الإنشاء الوصفي يتقيّم على جودة الصور، المفردات، تنوّع الجمل، والسيطرة على البناء. أفضل كتابة وصفية تخلق الأجواء عن طريق تفاصيل حسية دقيقة وأصيلة - مو عن طريق الحبكة.',
     es: 'La Section B ofrece elegir entre escritura descriptiva y narrativa. Las composiciones descriptivas se puntúan por la calidad de tus imágenes, el vocabulario, la variedad de frases y el control estructural. La mejor escritura descriptiva crea atmósfera mediante un detalle sensorial preciso y original -- no mediante la trama.',
   },

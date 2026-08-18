@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   // 2026-06-08 — SEO audit fix. Title was "About" (5 chars), too short
   // and too generic to rank or earn an AI Overview citation. Now reads
   // as a full descriptive title with the primary keyword.
-  title: 'About The English Hub — GCSE & IGCSE English revision platform',
+  title: 'About The English Hub - GCSE & IGCSE English revision platform',
   description:
     'How The English Hub works, who built it, and why it focuses on GCSE and IGCSE English revision — including the exam boards covered and the school audience served.',
   alternates: { canonical: 'https://theenglishhub.app/about' },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     'Upskill Energy Limited',
   ],
   openGraph: {
-    title: 'About The English Hub — GCSE & IGCSE English revision platform',
+    title: 'About The English Hub - GCSE & IGCSE English revision platform',
     description:
       'How The English Hub works, who built it, and why it focuses on GCSE and IGCSE English revision.',
     url: 'https://theenglishhub.app/about',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About The English Hub — GCSE & IGCSE English revision',
+    title: 'About The English Hub - GCSE & IGCSE English revision',
     description:
       'How The English Hub works, who built it, and why it focuses on GCSE and IGCSE English revision.',
     images: [

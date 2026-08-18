@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   // saw a blank head. The layout-client.tsx file holds the existing
   // sidebar/navigation; this server layout supplies the metadata +
   // structured data wrapper.
-  title: 'Student dashboard demo — revision, AI feedback and progress',
+  title: 'Student dashboard demo - revision, AI feedback and progress',
   description:
     'Explore the English Hub student dashboard with sample work: revision, AI essay feedback, flashcards, practice quizzes and progress tracking. No signup required.',
   alternates: { canonical: 'https://theenglishhub.app/demo/student' },
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     'KS3 English platform demo',
   ],
   openGraph: {
-    title: 'Student dashboard demo — The English Hub',
+    title: 'Student dashboard demo - The English Hub',
     description:
       'Interactive demo of the English Hub student dashboard: revision, AI essay feedback, flashcards, practice and progress tracking. Synthetic data, no signup.',
     url: 'https://theenglishhub.app/demo/student',
@@ -34,13 +34,13 @@ export const metadata: Metadata = {
         url: 'https://theenglishhub.app/api/og?title=Student+dashboard+demo&subtitle=Revision%2C+AI+feedback+and+progress',
         width: 1200,
         height: 630,
-        alt: 'The English Hub — interactive student dashboard demo',
+        alt: 'The English Hub - interactive student dashboard demo',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Student dashboard demo — The English Hub',
+    title: 'Student dashboard demo - The English Hub',
     description: 'Interactive demo: revision, AI essay feedback, flashcards, practice. No signup.',
     images: [
       'https://theenglishhub.app/api/og?title=Student+dashboard+demo&subtitle=Revision%2C+AI+feedback+and+progress',

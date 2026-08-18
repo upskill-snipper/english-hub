@@ -66,7 +66,7 @@ const RESOURCES: TeachingResource[] = [
   {
     id: 'lp-aic-context',
     type: 'Lesson Plan',
-    title: "An Inspector Calls: Context -- 1912 vs 1945 and Priestley's Message",
+    title: "An Inspector Calls: Context - 1912 vs 1945 and Priestley's Message",
     yearGroup: 'Year 10',
     examBoard: 'AQA',
     duration: '60 min',
@@ -130,7 +130,7 @@ const RESOURCES: TeachingResource[] = [
   {
     id: 'lp-romeo-prologue',
     type: 'Lesson Plan',
-    title: 'Romeo and Juliet: Prologue and Fate -- Examining the Sonnet Prologue',
+    title: 'Romeo and Juliet: Prologue and Fate - Examining the Sonnet Prologue',
     yearGroup: 'Year 9',
     examBoard: 'AQA',
     duration: '55 min',
@@ -178,7 +178,7 @@ const RESOURCES: TeachingResource[] = [
   {
     id: 'lp-creative-openings',
     type: 'Lesson Plan',
-    title: 'Creative Writing: Narrative Openings -- Hooking the Reader',
+    title: 'Creative Writing: Narrative Openings - Hooking the Reader',
     yearGroup: 'Year 9',
     examBoard: 'AQA',
     duration: '55 min',
