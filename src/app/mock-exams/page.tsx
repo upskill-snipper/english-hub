@@ -496,7 +496,7 @@ function GradeBoundariesTable({
   totalMarks: number
 }) {
   return (
-    <div className="grid grid-cols-9 gap-1">
+    <div className="grid grid-cols-3 sm:grid-cols-9 gap-1">
       {boundaries.map(({ grade, minMarks }) => (
         <div
           key={grade}
@@ -639,7 +639,9 @@ function ExamPaperCard({ exam }: { exam: ExamCardData }) {
 
         {/* Expandable details */}
         <button
+          type="button"
           onClick={() => setShowDetails(!showDetails)}
+          aria-expanded={showDetails}
           className="flex items-center gap-1.5 text-sm text-primary hover:text-primary/80 mt-4 transition-colors"
         >
           {showDetails ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}

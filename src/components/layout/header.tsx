@@ -305,7 +305,7 @@ export function Header() {
             render={
               <button
                 type="button"
-                className="inline-flex items-center justify-center h-9 w-9 rounded-full text-[#B5B8B3] hover:text-[#FBF7F0] hover:bg-white/10 transition-colors duration-200 lg:hidden"
+                className="inline-flex items-center justify-center h-9 w-9 rounded-full text-[#B5B8B3] hover:text-[#FBF7F0] hover:bg-white/10 transition-colors duration-200 lg:hidden justify-self-end"
                 aria-label={t('header.action.open_menu')}
               />
             }

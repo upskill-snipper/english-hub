@@ -560,7 +560,7 @@ export default function SubmitEssayPage() {
                       setQuestion('')
                     }}
                     required
-                    className="h-10 w-full rounded-lg border border-border bg-input px-3 text-sm text-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
+                    className="h-10 w-full rounded-lg border border-input bg-transparent px-3 text-sm text-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/25"
                   >
                     <option value="" disabled>
                       {tx('marking.submit.select_board')}
@@ -602,7 +602,7 @@ export default function SubmitEssayPage() {
                     }}
                     required
                     disabled={!selectedBoard?.available}
-                    className="h-10 w-full rounded-lg border border-border bg-input px-3 text-sm text-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30 disabled:opacity-50"
+                    className="h-10 w-full rounded-lg border border-input bg-transparent px-3 text-sm text-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/25 disabled:opacity-50"
                   >
                     <option value="" disabled>
                       {selectedBoard?.available
@@ -629,7 +629,7 @@ export default function SubmitEssayPage() {
                   onChange={(e) => setQuestion(e.target.value)}
                   required
                   disabled={!selectedPaper}
-                  className="h-10 w-full rounded-lg border border-border bg-input px-3 text-sm text-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30 disabled:opacity-50"
+                  className="h-10 w-full rounded-lg border border-input bg-transparent px-3 text-sm text-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/25 disabled:opacity-50"
                 >
                   <option value="" disabled>
                     {selectedPaper
@@ -664,7 +664,7 @@ export default function SubmitEssayPage() {
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   placeholder={tx('marking.submit.title_placeholder')}
-                  className="h-10 w-full rounded-lg border border-border bg-input px-3 text-sm text-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
+                  className="h-10 w-full rounded-lg border border-input bg-transparent px-3 text-sm text-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/25"
                 />
               </div>
 
@@ -686,7 +686,7 @@ export default function SubmitEssayPage() {
                   placeholder={tx('marking.submit.essay_placeholder')}
                   required
                   rows={14}
-                  className="w-full resize-y rounded-lg border border-border bg-input px-3 py-2.5 text-sm leading-relaxed text-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
+                  className="w-full resize-y rounded-lg border border-input bg-transparent px-3 py-2.5 text-sm leading-relaxed text-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/25"
                 />
                 <div className="flex items-center justify-between text-xs text-muted-foreground">
                   <span>

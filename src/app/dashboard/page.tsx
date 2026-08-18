@@ -360,7 +360,7 @@ export default function DashboardPage() {
       label: t('dash.qa.reading_assessment'),
       href: '/assessment/reading',
       icon: BookOpen,
-      color: 'text-teal-700',
+      color: 'text-emerald-600',
       bg: 'bg-emerald-500/10',
     },
     {

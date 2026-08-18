@@ -51,14 +51,7 @@ const EXAM_BOARD_LABEL_KEYS: Record<(typeof EXAM_BOARDS)[number], string> = {
   WJEC: 'exam_board.wjec',
   Other: 'exam_board.other',
 }
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardFooter,
-} from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardDescription, CardFooter } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -488,13 +481,13 @@ function RegisterForm() {
 
         <Card>
           <CardHeader className="text-center">
-            <CardTitle className="text-2xl">
+            <h1 className="text-2xl font-semibold leading-none tracking-tight">
               {accountType === 'teacher'
                 ? t('auth.register.teacher_title')
                 : accountType === 'parent'
                   ? t('auth.register.parent_title')
                   : t('auth.register.student_title')}
-            </CardTitle>
+            </h1>
             <CardDescription>
               {accountType === 'teacher'
                 ? t('auth.register.teacher_subtitle')
@@ -574,41 +567,51 @@ function RegisterForm() {
               {/* Account type toggle */}
               <div className="space-y-1.5">
                 <Label>{t('auth.register.i_am_a')}</Label>
-                <div className="grid grid-cols-3 gap-2">
+                <div
+                  role="radiogroup"
+                  aria-label={t('auth.register.i_am_a')}
+                  className="grid grid-cols-3 gap-2"
+                >
                   <button
                     type="button"
+                    role="radio"
+                    aria-checked={accountType === 'student'}
                     onClick={() => setAccountType('student')}
-                    className={`flex items-center justify-center gap-2 rounded-lg border-2 px-2 py-3 text-sm font-medium transition-all ${
+                    className={`flex flex-col items-center justify-center gap-1 rounded-lg border-2 px-2 py-3 text-sm font-medium transition-all ${
                       accountType === 'student'
                         ? 'border-primary bg-primary/5 text-primary'
                         : 'border-border text-muted-foreground hover:border-primary/40'
                     }`}
                   >
-                    <GraduationCap className="w-5 h-5" />
+                    <GraduationCap className="w-5 h-5" aria-hidden="true" />
                     {t('auth.register.student')}
                   </button>
                   <button
                     type="button"
+                    role="radio"
+                    aria-checked={accountType === 'teacher'}
                     onClick={() => setAccountType('teacher')}
-                    className={`flex items-center justify-center gap-2 rounded-lg border-2 px-2 py-3 text-sm font-medium transition-all ${
+                    className={`flex flex-col items-center justify-center gap-1 rounded-lg border-2 px-2 py-3 text-sm font-medium transition-all ${
                       accountType === 'teacher'
                         ? 'border-primary bg-primary/5 text-primary'
                         : 'border-border text-muted-foreground hover:border-primary/40'
                     }`}
                   >
-                    <School className="w-5 h-5" />
+                    <School className="w-5 h-5" aria-hidden="true" />
                     {t('auth.register.teacher')}
                   </button>
                   <button
                     type="button"
+                    role="radio"
+                    aria-checked={accountType === 'parent'}
                     onClick={() => setAccountType('parent')}
-                    className={`flex items-center justify-center gap-2 rounded-lg border-2 px-2 py-3 text-sm font-medium transition-all ${
+                    className={`flex flex-col items-center justify-center gap-1 rounded-lg border-2 px-2 py-3 text-sm font-medium transition-all ${
                       accountType === 'parent'
                         ? 'border-primary bg-primary/5 text-primary'
                         : 'border-border text-muted-foreground hover:border-primary/40'
                     }`}
                   >
-                    <Users className="w-5 h-5" />
+                    <Users className="w-5 h-5" aria-hidden="true" />
                     {t('auth.register.parent')}
                   </button>
                 </div>
@@ -655,7 +658,7 @@ function RegisterForm() {
                         id="dobDay"
                         value={dobDay}
                         onChange={(e) => setDobDay(e.target.value)}
-                        className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
+                        className="flex h-10 w-full rounded-lg border border-input bg-transparent px-3.5 py-2 text-sm transition-all duration-200 outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/25 disabled:cursor-not-allowed disabled:opacity-50 appearance-none"
                         required
                         aria-label={t('form.day')}
                         aria-invalid={!!fieldErrors.dob}
@@ -671,7 +674,7 @@ function RegisterForm() {
                         id="dobMonth"
                         value={dobMonth}
                         onChange={(e) => setDobMonth(e.target.value)}
-                        className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
+                        className="flex h-10 w-full rounded-lg border border-input bg-transparent px-3.5 py-2 text-sm transition-all duration-200 outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/25 disabled:cursor-not-allowed disabled:opacity-50 appearance-none"
                         required
                         aria-label={t('form.month')}
                         aria-invalid={!!fieldErrors.dob}
@@ -702,7 +705,7 @@ function RegisterForm() {
                         id="dobYear"
                         value={dobYear}
                         onChange={(e) => setDobYear(e.target.value)}
-                        className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
+                        className="flex h-10 w-full rounded-lg border border-input bg-transparent px-3.5 py-2 text-sm transition-all duration-200 outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/25 disabled:cursor-not-allowed disabled:opacity-50 appearance-none"
                         required
                         aria-label={t('form.year')}
                         aria-invalid={!!fieldErrors.dob}
@@ -887,7 +890,7 @@ function RegisterForm() {
                       id="yearGroup"
                       value={yearGroup}
                       onChange={(e) => setYearGroup(e.target.value)}
-                      className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 pl-11 text-base shadow-xs transition-[color,box-shadow] outline-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
+                      className="flex h-10 w-full rounded-lg border border-input bg-transparent px-3.5 py-2 pl-11 text-sm transition-all duration-200 outline-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/25 disabled:cursor-not-allowed disabled:opacity-50 appearance-none"
                     >
                       <option value="">{t('form.select_year_group')}</option>
                       {YEAR_GROUPS.map((yg) => (
@@ -909,7 +912,7 @@ function RegisterForm() {
                       id="examBoard"
                       value={examBoard}
                       onChange={(e) => setExamBoard(e.target.value)}
-                      className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 pl-11 text-base shadow-xs transition-[color,box-shadow] outline-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
+                      className="flex h-10 w-full rounded-lg border border-input bg-transparent px-3.5 py-2 pl-11 text-sm transition-all duration-200 outline-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/25 disabled:cursor-not-allowed disabled:opacity-50 appearance-none"
                     >
                       <option value="">{t('form.select_exam_board')}</option>
                       {EXAM_BOARDS.map((board) => (
@@ -933,7 +936,7 @@ function RegisterForm() {
                   id="country"
                   value={country}
                   onChange={(e) => setCountry(e.target.value as 'UK' | 'QA' | 'OTHER' | '')}
-                  className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 md:text-sm appearance-none"
+                  className="flex h-10 w-full rounded-lg border border-input bg-transparent px-3.5 py-2 text-sm outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/25 appearance-none"
                   aria-invalid={!!fieldErrors.country}
                   aria-describedby={fieldErrors.country ? 'country-error' : undefined}
                   required

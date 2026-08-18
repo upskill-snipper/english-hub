@@ -20452,6 +20452,12 @@ export const DICTIONARY: Dictionary = {
     es: 'Duración de la prueba gratuita',
   },
   'pricing.compare.value.partial': { en: 'Partial', ar: 'جزئي', es: 'Parcial' },
+  'pricing.compare.value.included': { en: 'Included', ar: 'مشمول', es: 'Incluido' },
+  'pricing.compare.value.not_included': {
+    en: 'Not included',
+    ar: 'غير مشمول',
+    es: 'No incluido',
+  },
   'pricing.compare.value.no_trial': { en: 'No trial', ar: 'ما في تجربة', es: 'Sin prueba' },
   'pricing.compare.value.na': { en: 'n/a', ar: 'ما ينطبق', es: 'n/d' },
   'pricing.compare.value.7_days': { en: '7 days', ar: '٧ أيام', es: '7 días' },

@@ -225,12 +225,35 @@ function PremiumFeatureRow({ feature, icon: Icon }: { feature: string; icon: Rea
   )
 }
 
+// Icon-only yes/no cell in the competitor comparison table. The tick / cross
+// carries the meaning visually; the sr-only label carries it for screen
+// readers and any context where the icon alone is ambiguous (a bare cell would
+// otherwise read as empty). The icon itself is aria-hidden so the label is not
+// announced twice.
+function StatusCell({ included }: { included: boolean }) {
+  const t = useT()
+  return (
+    <div className="flex justify-center">
+      {included ? (
+        <CheckCircle className="w-5 h-5 text-emerald-600" aria-hidden="true" />
+      ) : (
+        <X className="w-5 h-5 text-red-500" aria-hidden="true" />
+      )}
+      <span className="sr-only">
+        {included ? t('pricing.compare.value.included') : t('pricing.compare.value.not_included')}
+      </span>
+    </div>
+  )
+}
+
 function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false)
   return (
     <div className="border-b border-border/40 last:border-0">
       <button
+        type="button"
         onClick={() => setOpen(!open)}
+        aria-expanded={open}
         className="flex items-center justify-between w-full py-5 text-left group"
       >
         <span className="font-semibold text-foreground text-sm sm:text-base pr-4">{q}</span>
@@ -563,24 +586,16 @@ function PricingContent() {
                     {t('pricing.compare.row.ai_marking')}
                   </td>
                   <td className="px-4 py-3 align-middle">
-                    <div className="flex justify-center">
-                      <CheckCircle className="w-5 h-5 text-emerald-600" />
-                    </div>
+                    <StatusCell included />
                   </td>
                   <td className="px-4 py-3 align-middle">
-                    <div className="flex justify-center">
-                      <X className="w-5 h-5 text-red-500" />
-                    </div>
+                    <StatusCell included={false} />
                   </td>
                   <td className="px-4 py-3 align-middle">
-                    <div className="flex justify-center">
-                      <X className="w-5 h-5 text-red-500" />
-                    </div>
+                    <StatusCell included={false} />
                   </td>
                   <td className="px-4 py-3 align-middle">
-                    <div className="flex justify-center">
-                      <X className="w-5 h-5 text-red-500" />
-                    </div>
+                    <StatusCell included={false} />
                   </td>
                 </tr>
                 <tr>
@@ -599,9 +614,7 @@ function PricingContent() {
                     {t('pricing.compare.value.partial')}
                   </td>
                   <td className="px-4 py-3 align-middle">
-                    <div className="flex justify-center">
-                      <X className="w-5 h-5 text-red-500" />
-                    </div>
+                    <StatusCell included={false} />
                   </td>
                   <td className="px-4 py-3 text-center text-muted-foreground text-xs align-middle">
                     {t('pricing.compare.value.partial')}
@@ -615,19 +628,13 @@ function PricingContent() {
                     172+
                   </td>
                   <td className="px-4 py-3 align-middle">
-                    <div className="flex justify-center">
-                      <X className="w-5 h-5 text-red-500" />
-                    </div>
+                    <StatusCell included={false} />
                   </td>
                   <td className="px-4 py-3 align-middle">
-                    <div className="flex justify-center">
-                      <CheckCircle className="w-5 h-5 text-emerald-600" />
-                    </div>
+                    <StatusCell included />
                   </td>
                   <td className="px-4 py-3 align-middle">
-                    <div className="flex justify-center">
-                      <X className="w-5 h-5 text-red-500" />
-                    </div>
+                    <StatusCell included={false} />
                   </td>
                 </tr>
                 <tr>
@@ -643,19 +650,13 @@ function PricingContent() {
                     </div>
                   </td>
                   <td className="px-4 py-3 align-middle">
-                    <div className="flex justify-center">
-                      <X className="w-5 h-5 text-red-500" />
-                    </div>
+                    <StatusCell included={false} />
                   </td>
                   <td className="px-4 py-3 align-middle">
-                    <div className="flex justify-center">
-                      <X className="w-5 h-5 text-red-500" />
-                    </div>
+                    <StatusCell included={false} />
                   </td>
                   <td className="px-4 py-3 align-middle">
-                    <div className="flex justify-center">
-                      <X className="w-5 h-5 text-red-500" />
-                    </div>
+                    <StatusCell included={false} />
                   </td>
                 </tr>
                 <tr>
@@ -748,7 +749,7 @@ function PricingContent() {
 
                 {/* Early-access label above the price */}
                 <div className="mb-2 flex items-center gap-2">
-                  <span className="inline-flex items-center rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-amber-700">
+                  <span className="inline-flex items-center rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-amber-700 dark:text-amber-300">
                     {PRICING.EARLY_ACCESS_LABEL}
                   </span>
                   <span className="text-[10px] font-medium text-muted-foreground">
@@ -794,7 +795,7 @@ function PricingContent() {
 
                 {/* ONE upgrade callout - affiliate code */}
                 <div className="rounded-lg border border-emerald-500/25 bg-emerald-500/5 px-3 py-2 mb-3">
-                  <p className="text-xs font-semibold text-emerald-700">
+                  <p className="text-xs font-semibold text-emerald-700 dark:text-emerald-300">
                     {t('pricing.with_any_code_prefix')}{' '}
                     <code className="font-mono bg-emerald-500/15 px-1.5 py-0.5 rounded">
                       {PRICING.AFFILIATE_PROMO_CODE}
@@ -862,7 +863,7 @@ function PricingContent() {
                   {t('pricing.prefer_monthly_suffix')}
                 </button>
                 {studentError && (
-                  <p className="mt-3 text-center text-xs text-red-600">{studentError}</p>
+                  <p className="mt-3 text-center text-xs text-destructive">{studentError}</p>
                 )}
               </div>
             </Card>
@@ -887,7 +888,7 @@ function PricingContent() {
 
                 {/* Early-access label above the price */}
                 <div className="mb-2 flex items-center gap-2">
-                  <span className="inline-flex items-center rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-amber-700">
+                  <span className="inline-flex items-center rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-amber-700 dark:text-amber-300">
                     {PRICING.EARLY_ACCESS_LABEL}
                   </span>
                   <span className="text-[10px] font-medium text-muted-foreground">
@@ -941,7 +942,7 @@ function PricingContent() {
                     surface. Both plans honour 2026ENGLISH and any
                     active affiliate code for a flat £9.99 saving. */}
                 <div className="rounded-lg border border-emerald-500/25 bg-emerald-500/5 px-3 py-2 mb-6">
-                  <p className="text-xs font-semibold text-emerald-700">
+                  <p className="text-xs font-semibold text-emerald-700 dark:text-emerald-300">
                     {t('pricing.with_any_code_prefix')}{' '}
                     <code className="font-mono bg-emerald-500/15 px-1.5 py-0.5 rounded">
                       {PRICING.AFFILIATE_PROMO_CODE}
@@ -1009,7 +1010,7 @@ function PricingContent() {
                   {t('pricing.prefer_monthly_suffix')}
                 </button>
                 {teacherError && (
-                  <p className="mt-3 text-center text-xs text-red-600">{teacherError}</p>
+                  <p className="mt-3 text-center text-xs text-destructive">{teacherError}</p>
                 )}
               </div>
             </Card>
@@ -1118,7 +1119,7 @@ function PricingContent() {
                   {t('pricing.ielts.footer')}
                 </p>
                 {ieltsError && (
-                  <p className="mt-3 text-center text-xs text-red-600">{ieltsError}</p>
+                  <p className="mt-3 text-center text-xs text-destructive">{ieltsError}</p>
                 )}
               </div>
             </Card>
