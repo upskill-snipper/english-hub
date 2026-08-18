@@ -21,7 +21,7 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import type Anthropic from '@anthropic-ai/sdk'
-import { getAnthropicClient } from '@/lib/anthropic-client'
+import { getAnthropicClient, ANTHROPIC_MODEL } from '@/lib/anthropic-client'
 import { filterAIResponse, type UserCountry } from '@/lib/content-filter'
 import { rateLimit } from '@/lib/rate-limit'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
@@ -142,7 +142,7 @@ async function generateSpeakingFeedback(systemPrompt: string, transcript: string
 
   const message = await anthropic.messages.create(
     {
-      model: 'claude-sonnet-4-20250514',
+      model: ANTHROPIC_MODEL,
       max_tokens: 1536,
       system: systemPrompt,
       messages: [{ role: 'user', content: transcript }],

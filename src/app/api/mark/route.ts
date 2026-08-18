@@ -13,7 +13,7 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import type Anthropic from '@anthropic-ai/sdk'
-import { getAnthropicClient } from '@/lib/anthropic-client'
+import { getAnthropicClient, ANTHROPIC_MODEL } from '@/lib/anthropic-client'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { rateLimit } from '@/lib/rate-limit'
 import { hasActiveSubscription } from '@/lib/course-access'
@@ -197,7 +197,7 @@ export async function POST(request: NextRequest) {
     try {
       message = await anthropic.messages.create(
         {
-          model: 'claude-sonnet-4-20250514',
+          model: ANTHROPIC_MODEL,
           max_tokens: 4_096,
           system: withArabicDirective(prompt.systemPrompt, request),
           messages: [{ role: 'user', content: prompt.userMessage }],

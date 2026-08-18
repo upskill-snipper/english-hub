@@ -235,7 +235,9 @@ async function HomeHero() {
     {
       label: 'KS3',
       sub: await t('home.lp.track.ks3.sub'),
-      href: '/demo/student?setBoard=ks3',
+      // Real KS3 hub (the full Year 7-9 curriculum tree), not the demo -
+      // consistent with the IELTS and EAL cards either side of it.
+      href: '/ks3?setBoard=ks3',
       icon: BookOpen,
       card: 'bg-gradient-to-br from-clay-500/15 via-clay-500/8 to-clay-500/[0.03] border-clay-500/30 hover:border-clay-500/55',
       iconBg: 'bg-clay-500/20 ring-1 ring-clay-500/35',
@@ -284,20 +286,29 @@ async function HomeHero() {
   const ctaPilot = await t('home.lp.cta_pilot')
   const specNote = await t('home.lp.spec_note')
 
-  // GCSE / IGCSE board pickers — clicking a board sets the board cookie
-  // via the middleware then redirects to the clean /demo/student URL so
-  // the visitor lands in the student demo dashboard with their board
-  // context primed for the real product later.
+  // GCSE / IGCSE board pickers - clicking a board sets the board cookie via
+  // the middleware, then lands the visitor on the real revision hub filtered
+  // to that board.
+  //
+  // 2026-08-18: these pointed at /demo/student, a synthetic-data dashboard.
+  // One page offered the same "pick your board" choice three different ways:
+  // the IELTS and EAL cards beside them went to the real product, these went
+  // to the demo, and BoardPickerSection further down the SAME page went to
+  // /revision. A student picking "AQA" wants AQA revision material, and the
+  // hub is free to browse without an account, so the real product is both
+  // the more useful and the more honest destination. The demo remains
+  // reachable from the Teachers and Schools cards, where there is no free
+  // signed-out surface to show instead.
   const GCSE_BOARDS = [
-    { name: 'AQA', href: '/demo/student?setBoard=aqa' },
-    { name: 'Pearson Edexcel', href: '/demo/student?setBoard=edexcel' },
-    { name: 'OCR', href: '/demo/student?setBoard=ocr' },
-    { name: 'WJEC Eduqas', href: '/demo/student?setBoard=eduqas' },
+    { name: 'AQA', href: '/revision?setBoard=aqa' },
+    { name: 'Pearson Edexcel', href: '/revision?setBoard=edexcel' },
+    { name: 'OCR', href: '/revision?setBoard=ocr' },
+    { name: 'WJEC Eduqas', href: '/revision?setBoard=eduqas' },
   ]
   const IGCSE_BOARDS = [
-    { name: 'Cambridge IGCSE (0500 / 0990)', href: '/demo/student?setBoard=cambridge-0500' },
-    { name: 'Pearson Edexcel IGCSE Literature', href: '/demo/student?setBoard=edexcel-igcse' },
-    { name: 'Pearson Edexcel IGCSE Language A', href: '/demo/student?setBoard=edexcel-igcse-lang' },
+    { name: 'Cambridge IGCSE (0500 / 0990)', href: '/revision?setBoard=cambridge-0500' },
+    { name: 'Pearson Edexcel IGCSE Literature', href: '/revision?setBoard=edexcel-igcse' },
+    { name: 'Pearson Edexcel IGCSE Language A', href: '/revision?setBoard=edexcel-igcse-lang' },
   ]
 
   return (

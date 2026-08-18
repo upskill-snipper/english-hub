@@ -212,6 +212,12 @@ export async function POST(request: NextRequest) {
     // Check if Anthropic API key is available
     const anthropicKey = process.env.ANTHROPIC_API_KEY
     let notes: string
+    // True ONLY when the served text actually came from the model. The
+    // metadata used to report `aiGenerated: !!anthropicKey`, which claimed
+    // AI authorship for every deterministic-template fallback (model error,
+    // OFF_TOPIC, timeout) as long as a key existed - during the retired-
+    // model outage that mislabelled 100% of responses.
+    let aiAuthored = false
 
     if (anthropicKey) {
       // Use Claude for AI-generated notes
@@ -348,6 +354,7 @@ Be specific, include example quotations, and give practical exam advice.`
               },
             })
             notes = rawText
+            aiAuthored = true
           }
         } else {
           void logAiDecision({
@@ -390,7 +397,7 @@ Be specific, include example quotations, and give practical exam advice.`
         board: board || 'aqa',
         targetGrade: grade,
         generatedAt: new Date().toISOString(),
-        aiGenerated: !!anthropicKey,
+        aiGenerated: aiAuthored,
       },
     })
   } catch {

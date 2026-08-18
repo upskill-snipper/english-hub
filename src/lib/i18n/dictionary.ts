@@ -175,6 +175,12 @@ export const DICTIONARY: Dictionary = {
   'header.nav.pricing': { en: 'Pricing', ar: 'الأسعار', es: 'Precios' },
   'header.nav.ks3': { en: 'KS3', ar: 'KS3', es: 'KS3' },
   'header.nav.your_hub': { en: 'Your Hub', ar: 'Hub مالك', es: 'Tu Hub' },
+  'header.nav.marking': { en: 'Mark an essay', ar: 'صحّح مقالة', es: 'Corregir redacción' },
+  'header.nav.mock_exams': {
+    en: 'Mock exams',
+    ar: 'الامتحانات التجريبية',
+    es: 'Exámenes de prueba',
+  },
   'header.nav.dashboard': { en: 'Dashboard', ar: 'لوحتك', es: 'Panel' },
   'header.nav.affiliates': { en: 'Affiliates', ar: 'الشراكات', es: 'Afiliados' },
   'header.nav.try_demo': { en: 'Try Demo', ar: 'جرّب الديمو', es: 'Probar la demo' },
@@ -3601,6 +3607,16 @@ export const DICTIONARY: Dictionary = {
     en: 'Pick your board so we can show you the right set texts, poems, and past papers. You can change it any time from settings.',
     ar: 'اختر الهيئة عشان نورّيك النصوص والقصايد والامتحانات الصح. تقدر تغيّرها أي وقت من الإعدادات.',
     es: 'Elige tu junta para que podamos mostrarte los textos fijados, poemas y exámenes anteriores correctos. Puedes cambiarla cuando quieras desde los ajustes.',
+  },
+  'board.gate.browse_without': {
+    en: 'Not sure yet? Browse without choosing',
+    ar: 'ما قررت بعد؟ تصفّح بدون اختيار',
+    es: '¿Aún no lo sabes? Explora sin elegir',
+  },
+  'board.gate.dismiss_aria': {
+    en: 'Close the exam board picker',
+    ar: 'إغلاق مُحدِّد هيئة الامتحان',
+    es: 'Cerrar el selector de junta examinadora',
   },
   'board.mismatch.body_before': {
     en: "You're viewing",

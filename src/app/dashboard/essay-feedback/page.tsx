@@ -125,6 +125,10 @@ export default function EssayFeedbackPage() {
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [feedback, setFeedback] = useState<FeedbackData | null>(null)
+  // Server id of the persisted Essay row (2026-08-18: feedback is now
+  // stored, so a human-review request can reference the actual work
+  // instead of the old 'unknown-essay-feedback' placeholder).
+  const [essayId, setEssayId] = useState<string | null>(null)
   const [remaining, setRemaining] = useState<number | null>(null)
 
   // Auto-populate board from global board-gate selection (skip KS3 as essay feedback is GCSE-only)
@@ -203,6 +207,7 @@ export default function EssayFeedbackPage() {
     setSubmitting(true)
     setError(null)
     setFeedback(null)
+    setEssayId(null)
 
     try {
       const res = await fetch('/api/essay-feedback', {
@@ -225,6 +230,9 @@ export default function EssayFeedbackPage() {
       }
 
       setFeedback(data.feedback)
+      if (typeof data.essayId === 'string') {
+        setEssayId(data.essayId)
+      }
       if (typeof data.remaining === 'number') {
         setRemaining(data.remaining)
       }
@@ -312,6 +320,7 @@ export default function EssayFeedbackPage() {
         {feedback ? (
           <FeedbackResults
             feedback={feedback}
+            essayId={essayId}
             board={board!}
             paper={paper!}
             questionType={questionType!}
@@ -524,12 +533,15 @@ export default function EssayFeedbackPage() {
 
 function FeedbackResults({
   feedback,
+  essayId,
   board,
   paper,
   questionType,
   onTryAgain,
 }: {
   feedback: FeedbackData
+  /** Persisted Essay row id - lets a human-review request name the work. */
+  essayId: string | null
   board: string
   paper: string
   questionType: string
@@ -705,7 +717,7 @@ function FeedbackResults({
       {/* Human oversight (EU AI Act Art 14) - request a person to
           review this AI-generated, predicted (not official) feedback. */}
       <div className="border-t pt-6">
-        <RequestHumanReviewButton context="essay-feedback" />
+        <RequestHumanReviewButton context="essay-feedback" submissionRef={essayId ?? undefined} />
       </div>
 
       {/* Actions */}

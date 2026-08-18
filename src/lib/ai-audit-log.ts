@@ -38,6 +38,8 @@
 
 import { createHash } from 'crypto'
 
+import { ANTHROPIC_MODEL } from '@/lib/anthropic-client'
+
 // ─── Configuration ───────────────────────────────────────────────────────────
 
 /**
@@ -49,8 +51,13 @@ import { createHash } from 'crypto'
  */
 export const AI_AUDIT_STORE_RAW_INPUT: boolean = process.env.AI_AUDIT_STORE_RAW_INPUT === 'true'
 
-/** The single Anthropic model these routes call. Logged on every record. */
-export const AI_AUDIT_MODEL = 'claude-sonnet-4-20250514' as const
+/**
+ * The single Anthropic model these routes call. Logged on every record.
+ * Re-exported from the client so the audit trail can never disagree with
+ * what was actually called (it did until 2026-08-18, when routes still
+ * logged a model that had been retired).
+ */
+export const AI_AUDIT_MODEL: string = ANTHROPIC_MODEL
 
 /** Marker so an AI decision can be filtered out of the generic AuditLog feed. */
 export const AI_DECISION_ACTION = 'ai_decision' as const

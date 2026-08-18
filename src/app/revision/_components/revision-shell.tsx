@@ -78,7 +78,14 @@ const LIT_BOARDS: ExamBoard[] = ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igc
 const NAV_ITEMS: NavItem[] = [
   // Top tier - always visible above the collapsible groups.
   { labelKey: 'revision.shell.nav.your_hub',           href: '/revision',                                            icon: Home,           colour: 'text-primary',     group: 'top' },
-  { labelKey: 'revision.shell.nav.full_dashboard',     href: '/demo/student',                                        icon: LayoutDashboard, colour: 'text-primary',    group: 'top' },
+  // 2026-08-18: AI marking is the flagship paid feature and had NO entry in
+  // any navigation surface - header, footer, this sidebar or the hub tiles.
+  // A subscriber could only reach it by typing the URL.
+  { labelKey: 'revision.shell.nav.mark_essay',         href: '/marking',                                             icon: PenTool,        colour: 'text-emerald-400',  group: 'top' },
+  // 2026-08-18: pointed at /demo/student - a synthetic-data demo - so a real
+  // signed-in student clicking "Full Dashboard" landed on someone else's
+  // fake progress. Now the real dashboard.
+  { labelKey: 'revision.shell.nav.full_dashboard',     href: '/dashboard',                                           icon: LayoutDashboard, colour: 'text-primary',    group: 'top' },
   { labelKey: 'revision.shell.nav.analytics',          href: '/revision/analytics',                                  icon: BarChart3,      colour: 'text-primary',     group: 'top' },
   { labelKey: 'revision.shell.nav.study_plan',         href: '/revision/study-plan',                                 icon: CalendarDays,   colour: 'text-primary',     group: 'top' },
   // Content & texts.
@@ -103,7 +110,10 @@ const NAV_ITEMS: NavItem[] = [
   { labelKey: 'revision.shell.nav.revision_notes',     href: '/resources/revision-notes',                            icon: StickyNote,     colour: 'text-blue-400',                                         group: 'resources' },
   { labelKey: 'revision.shell.nav.model_answers',      href: '/resources/model-answers',                             icon: CheckSquare,    colour: 'text-emerald-400',                                       group: 'resources' },
   { labelKey: 'revision.shell.nav.my_papers',          href: '/dashboard/papers',                                    icon: Files,          colour: 'text-primary',                                          group: 'resources' },
-  { labelKey: 'revision.shell.nav.study_tools',        href: '/revision#toolkit',                                    icon: Wrench,         colour: 'text-primary',                                          group: 'resources' },
+  // 2026-08-18: "Study tools" (/revision#toolkit) and "Toolkit" (/toolkit)
+  // were two entries, same icon, effectively the same destination - the
+  // anchor just scrolls to a section that links onward to /toolkit. Kept the
+  // real destination only.
   { labelKey: 'revision.shell.nav.toolkit',            href: '/toolkit',                                             icon: Wrench,         colour: 'text-primary',                                          group: 'resources' },
   // Your board - board-specific deep-links.
   { labelKey: 'revision.shell.nav.ial_guide',          href: '/revision/ial',                                        icon: GraduationCap,  colour: 'text-primary',     boards: ['ial-edexcel'],             group: 'board' },
@@ -268,10 +278,10 @@ function useRevisionProgress(items: NavItem[]): ProgressSnapshot {
 
 // ─── Sidebar content (shared between desktop & mobile) ──────────────────────
 
-// Resolve a nav-item label, special-casing the Full Dashboard entry which
-// has no dictionary key (avoids growing the i18n catalogue for one item).
+// 2026-08-18: this used to hard-code the English string "Full Dashboard",
+// so Arabic and Spanish users saw one untranslated Latin item in an
+// otherwise localised sidebar. The key now exists in all three locales.
 function navLabel(item: NavItem, t: ReturnType<typeof useT>): string {
-  if (item.labelKey === 'revision.shell.nav.full_dashboard') return 'Full Dashboard'
   return t(item.labelKey)
 }
 

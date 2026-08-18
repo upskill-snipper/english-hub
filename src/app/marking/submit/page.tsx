@@ -268,17 +268,39 @@ export default function SubmitEssayPage() {
       }
       if (!submissionId) return { unavailable: true }
 
-      // Fire the AI mark. A failure here is non-fatal for navigation - the
-      // results page polls status and shows an "awaiting"/"in progress"
-      // state, and the human-review path is always available there.
+      // Fire the AI mark. 2026-08-18: this used to swallow EVERY outcome
+      // (it never checked res.ok), then navigate to the results page, whose
+      // waiting state tells the student their essay is "waiting for your
+      // teacher to review it". A self-study student has no teacher, the
+      // results page never polls, and the failed attempt still counted
+      // against their 10-a-day cap - a 403 (lapsed trial), 429 (cap hit) or
+      // 503 (AI down; the exact state production was in) stranded them on
+      // that screen forever. A failed mark now surfaces as a real error on
+      // THIS page, before navigation.
       try {
-        await fetch('/api/marking/run', {
+        const runRes = await fetch('/api/marking/run', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ submissionId }),
         })
+        if (!runRes.ok) {
+          let message = ''
+          try {
+            const body = await runRes.json()
+            message = body?.error ?? body?.message ?? ''
+          } catch {
+            /* non-JSON */
+          }
+          return { failed: friendlyError(runRes.status, message) }
+        }
       } catch {
-        /* non-fatal - results page handles a not-yet-marked submission */
+        // Network failure between create and run: the submission exists but
+        // is unmarked. Be honest about it rather than parking the student
+        // on a teacher-review screen.
+        return {
+          failed:
+            'Your essay was saved, but marking could not start because the connection dropped. Check your connection and submit again - saved essays are listed under My marked essays.',
+        }
       }
 
       return { submissionId }

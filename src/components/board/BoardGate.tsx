@@ -5,133 +5,31 @@ import { usePathname } from 'next/navigation'
 
 import { BoardSelectorSection } from '@/components/board/BoardSelectorSection'
 import { useBoard } from '@/lib/board/board-store'
+import { isBoardSpecificPath } from '@/lib/board/gated-paths'
 import { cn } from '@/lib/utils'
 import { useT } from '@/lib/i18n/use-t'
 
 /**
- * Paths where the board gate is *not* enforced. Visitors may browse these
- * without picking a board - the modal will not appear on them, and if it is
- * open it can be dismissed with Escape.
+ * Board nudge - offers the exam-board picker on routes whose content is
+ * filtered by board, for a visitor who has not chosen one yet.
  *
- * Entries ending in `/*` match the prefix (e.g. `/auth/*` matches `/auth/login`).
+ * 2026-08-18: this was an ALLOW-list of ~60 paths where the modal must not
+ * appear, which meant every route the author forgot was gated by default.
+ * /blog (the main organic entry point) and /ielts (a top-level nav item)
+ * were both missing, so visitors landing from Google met a full-screen
+ * modal with no close button - Escape and backdrop-click were deliberately
+ * disabled on exactly the paths where it was blocking - and an IELTS
+ * learner had no correct answer to give, because IELTS is not a board.
  *
- * This list MUST stay in sync with `BOARD_ALLOWLIST_EXACT` and
- * `BOARD_ALLOWLIST_PREFIX` in `src/middleware.ts`. The middleware handles the
- * server-side redirect; this component handles the client-side modal.
+ * Now inverted: gate only the board-specific trees listed in
+ * `@/lib/board/gated-paths` (shared with the middleware so the two cannot
+ * drift), and always let the visitor out. A forgotten route now fails open.
  *
- * Philosophy: ONLY gate content that materially changes by exam board
- * (revision/*, practice, mock-exams, games, assessment/*, courses, igcse/*).
- * Marketing, policy, compliance, demo, and account pages are crawlable
- * without a board cookie - Googlebot, social unfurlers, diligence reviewers,
- * school DPOs, and paid-ad landers must see real content.
- *
- * Commercial note: extending this list to /revision/*, /games, /mock-exams,
- * /practice, /igcse (previously gated) unlocks Google indexing of ~200
- * long-tail content pages. Each page has its own client-side board-aware
- * filter; visitors without a board see the board-agnostic version with a
- * soft "pick your board" nudge baked into the page content.
+ * The modal is a NUDGE, never a wall: Escape, the backdrop and an explicit
+ * "Browse without choosing" control all dismiss it on every path. Every
+ * board-filtered page already renders a board-agnostic version for visitors
+ * who decline, so nothing is lost by dismissing.
  */
-const ALLOWLISTED_PATHS = [
-  // Root + board selector
-  '/',
-  '/board-select',
-  '/board-select/*',
-
-  // Auth flows
-  '/auth/*',
-
-  // Marketing / conversion surfaces
-  '/pricing',
-  '/about',
-  '/contact',
-  '/for-schools',
-  '/for-schools/*',
-  '/for-teachers',
-  '/for-teachers/*',
-  '/for-parents',
-  '/for-parents/*',
-  // 2026-05-20: institutional repositioning canonical URLs.
-  '/schools',
-  '/school-pilot',
-  '/teachers',
-  '/students',
-  '/eal',
-  '/eal/*',
-  '/affiliates',
-  '/affiliates/*',
-  '/creators',
-  '/creators/*',
-  '/resources',
-  '/resources/*',
-  '/help',
-  '/faqs',
-
-  // Legal / compliance
-  '/terms',
-  '/privacy',
-  '/privacy-policy',
-  '/cookie-policy',
-  '/refund-policy',
-  '/accessibility',
-  '/safeguarding',
-  '/data-processing',
-  '/legal',
-  '/legal/*',
-
-  // Account-adjacent
-  '/verify',
-  '/consent',
-  '/certificate',
-
-  // School flows (board chosen via school code)
-  '/school/*',
-
-  // Demo - must be public
-  '/demo/*',
-
-  // Content surfaces previously gated - now crawlable for SEO.
-  // Each page has its own board-aware filter; no-board visitors see the
-  // generic version. Both the root (`/games`) AND the prefix (`/games/*`)
-  // entries are required - the prefix matcher doesn't match the exact root.
-  '/analysis',
-  '/analysis/*',
-  '/revision',
-  '/revision/*',
-  '/practice',
-  '/practice/*',
-  '/games',
-  '/games/*',
-  '/assessment',
-  '/assessment/*',
-  '/mock-exams',
-  '/mock-exams/*',
-  '/courses',
-  '/courses/*',
-  '/igcse',
-  '/igcse/*',
-  '/learn',
-  '/learn/*',
-  '/marking',
-  '/marking/*',
-  '/toolkit',
-  '/toolkit/*',
-
-  // API + internals
-  '/api/*',
-] as const
-
-function isAllowlisted(pathname: string | null): boolean {
-  if (!pathname) return true
-  for (const entry of ALLOWLISTED_PATHS) {
-    if (entry.endsWith('/*')) {
-      const prefix = entry.slice(0, -2)
-      if (pathname === prefix || pathname.startsWith(`${prefix}/`)) return true
-    } else if (pathname === entry) {
-      return true
-    }
-  }
-  return false
-}
 
 /** Read the `english-hub-board` cookie (client side) as a fallback pre-hydration. */
 function readBoardCookie(): string | null {
@@ -149,7 +47,7 @@ type BoardGateProps = {
 export function BoardGate({ children }: BoardGateProps) {
   const pathname = usePathname()
   const { board, isHydrated } = useBoard()
-  const onAllowlist = isAllowlisted(pathname)
+  const isBoardRoute = isBoardSpecificPath(pathname)
   const t = useT()
 
   // Pre-hydration fallback: read the cookie directly so we don't flash the
@@ -159,26 +57,24 @@ export function BoardGate({ children }: BoardGateProps) {
     setCookieBoard(readBoardCookie())
   }, [])
 
-  // Dismissal state - reset on every navigation. Dismissal is only honoured on
-  // allowlisted paths; on gated paths the modal is re-shown until a board is
-  // chosen.
+  // Dismissal resets on navigation, so the nudge can reappear when the
+  // visitor moves to a different board-filtered page - but it is always
+  // dismissible, on every path.
   const [dismissed, setDismissed] = React.useState(false)
   React.useEffect(() => {
     setDismissed(false)
   }, [pathname])
 
   React.useEffect(() => {
-    if (!onAllowlist) return
     const handler = (event: KeyboardEvent) => {
       if (event.key === 'Escape') setDismissed(true)
     }
     window.addEventListener('keydown', handler)
     return () => window.removeEventListener('keydown', handler)
-  }, [onAllowlist])
+  }, [])
 
   const resolvedBoard = board ?? cookieBoard
-  const needsGate = !resolvedBoard && !onAllowlist
-  const showModal = needsGate && isHydrated && !dismissed
+  const showModal = !resolvedBoard && isBoardRoute && isHydrated && !dismissed
 
   // Lock background scroll while the modal is open.
   React.useEffect(() => {
@@ -205,10 +101,7 @@ export function BoardGate({ children }: BoardGateProps) {
             'animate-in fade-in-0 duration-200',
           )}
           onClick={(event) => {
-            // Allowlisted paths: clicking the backdrop dismisses.
-            if (onAllowlist && event.target === event.currentTarget) {
-              setDismissed(true)
-            }
+            if (event.target === event.currentTarget) setDismissed(true)
           }}
         >
           <div
@@ -217,6 +110,24 @@ export function BoardGate({ children }: BoardGateProps) {
               'animate-in zoom-in-95 fade-in-0 duration-200',
             )}
           >
+            <button
+              type="button"
+              onClick={() => setDismissed(true)}
+              aria-label={t('board.gate.dismiss_aria')}
+              className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+            >
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 20 20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.75"
+                className="h-4 w-4"
+              >
+                <path d="M5 5l10 10M15 5L5 15" strokeLinecap="round" />
+              </svg>
+            </button>
+
             <div className="flex flex-col gap-2 text-center">
               <span className="mx-auto inline-flex items-center gap-2 rounded-full border border-border/60 bg-primary/10 px-3 py-1 text-[0.6875rem] font-semibold uppercase tracking-wide text-primary">
                 {t('board.gate.eyebrow')}
@@ -236,6 +147,16 @@ export function BoardGate({ children }: BoardGateProps) {
             </div>
 
             <BoardSelectorSection disableRedirect compact onSelected={() => setDismissed(true)} />
+
+            {/* Explicit way out for anyone who does not know their board yet,
+                or is here for IELTS/EAL where no board applies. */}
+            <button
+              type="button"
+              onClick={() => setDismissed(true)}
+              className="mx-auto text-sm text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground"
+            >
+              {t('board.gate.browse_without')}
+            </button>
           </div>
         </div>
       )}

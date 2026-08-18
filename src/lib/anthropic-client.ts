@@ -53,13 +53,24 @@
 import Anthropic from '@anthropic-ai/sdk'
 
 /**
- * The single Claude model every route uses. Kept here so the model string,
- * the audit-log model constant (`src/lib/ai-audit-log.ts` `AI_AUDIT_MODEL`)
- * and the compliance docs can be reconciled from one place. (This constant is
- * exported for reference/tests; routes still pass the model explicitly so the
- * refactor stays mechanical and per-route request bodies are unchanged.)
+ * The single Claude model every route uses - THE swap point.
+ *
+ * 2026-08-18 INCIDENT: this was pinned to `claude-sonnet-4-20250514`, whose
+ * published retirement date (15 June 2026) had passed. Ten routes carried the
+ * same literal inline, so every AI feature - marking, essay feedback, all
+ * four IELTS routes, CEFR assessment - had been answering 503 "temporarily
+ * unavailable" in production (confirmed live against the free IELTS
+ * diagnostic on 18 Aug). The default is now `claude-sonnet-4-6`, the newest
+ * Sonnet the production key was probe-confirmed to serve (see
+ * src/lib/marking/engine/models.ts, probe of 2026-05-29), and the inline
+ * literals are gone: every route imports this constant.
+ *
+ * Env-overridable (`ANTHROPIC_MODEL`) so a future retirement is a Vercel
+ * env change, not a deploy. After changing it, re-record the eval fixtures
+ * (they key on the model id - see evals/fixtures/README.md) and re-run
+ * `npm run eval:marking` before trusting marks.
  */
-export const ANTHROPIC_MODEL = 'claude-sonnet-4-20250514' as const
+export const ANTHROPIC_MODEL: string = process.env.ANTHROPIC_MODEL || 'claude-sonnet-4-6'
 
 /**
  * Hard request timeout (ms) applied at the client level. The SDK default is

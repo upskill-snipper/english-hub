@@ -80,6 +80,16 @@ export const B1_REVISION_DICTIONARY: Record<string, { en: string; ar: string; es
     ar: 'Hub مالك',
     es: 'Tu Hub',
   },
+  'revision.shell.nav.mark_essay': {
+    en: 'Mark an essay',
+    ar: 'صحّح مقالة',
+    es: 'Corregir una redacción',
+  },
+  'revision.shell.nav.full_dashboard': {
+    en: 'Full dashboard',
+    ar: 'اللوحة الكاملة',
+    es: 'Panel completo',
+  },
   'revision.shell.nav.analytics': {
     en: 'Your Analytics',
     ar: 'تحليلاتك',

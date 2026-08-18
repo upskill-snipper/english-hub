@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getAnthropicClient } from '@/lib/anthropic-client'
+import { getAnthropicClient, ANTHROPIC_MODEL } from '@/lib/anthropic-client'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { rateLimit } from '@/lib/rate-limit'
 import { formatMarkSchemeForPrompt } from '@/data/mark-schemes'
@@ -19,8 +19,30 @@ import { hasActiveSubscription } from '@/lib/course-access'
 import { isAiOptedOutServer } from '@/lib/ai-preferences'
 import { withArabicDirective, resolveLocaleFromRequest } from '@/lib/i18n/ai-language-directive'
 import { logAiDecision } from '@/lib/ai-audit-log'
+import { prisma } from '@/lib/prisma'
+import type { ExamBoard, Subject } from '@prisma/client'
 
 export const maxDuration = 60
+
+// ── Persistence helpers ──────────────────────────────────────────────────────
+
+/** Map the client's free-text board label onto the strict Prisma enum. */
+function toExamBoardEnum(label: string): ExamBoard {
+  const l = label.toLowerCase()
+  if (l.includes('0500')) return 'CAMBRIDGE_0500'
+  if (l.includes('0990')) return 'CAMBRIDGE_0990'
+  if (l.includes('cambridge')) return 'CAMBRIDGE_0500'
+  if (l.includes('igcse')) return 'EDEXCEL_IGCSE'
+  if (l.includes('edexcel') || l.includes('pearson')) return 'EDEXCEL'
+  if (l.includes('ocr')) return 'OCR'
+  if (l.includes('eduqas') || l.includes('wjec')) return 'EDUQAS'
+  return 'AQA'
+}
+
+function toSubjectEnum(paper: string, questionType: string): Subject {
+  const combined = `${paper} ${questionType}`.toLowerCase()
+  return combined.includes('literature') ? 'LITERATURE' : 'LANGUAGE'
+}
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -230,7 +252,7 @@ export async function POST(request: NextRequest) {
     try {
       message = await anthropic.messages.create(
         {
-          model: 'claude-sonnet-4-20250514',
+          model: ANTHROPIC_MODEL,
           max_tokens: 4096,
           system: systemPrompt,
           messages: [{ role: 'user', content: userMessage }],
@@ -401,9 +423,83 @@ export async function POST(request: NextRequest) {
       },
     })
 
-    // 10. Return structured feedback
+    // 10. Persist the essay + feedback (best-effort - the response NEVER
+    //     fails because a write did). Until 2026-08-18 nothing here was
+    //     persisted at all: a student's feedback vanished on navigation,
+    //     there was no essay history, nothing fed the grades page, and a
+    //     human-review request could not name the work it disputed
+    //     (RequestHumanReviewButton sent the literal 'unknown-essay-feedback').
+    //     The Prisma Essay + AIFeedback models existed, fully shaped, with
+    //     zero writers. The AO scores map onto AIFeedback's fixed columns;
+    //     the full structured payload is preserved in `criteria` so the
+    //     history UI can rebuild the exact cards without a schema change.
+    let essayId: string | null = null
+    try {
+      const dbUser =
+        (await prisma.user.findUnique({
+          where: { supabaseUserId: user.id },
+          select: { id: true },
+        })) ??
+        (user.email
+          ? await prisma.user.findUnique({
+              where: { email: user.email.toLowerCase() },
+              select: { id: true },
+            })
+          : null)
+
+      if (dbUser) {
+        const totalScore = feedback.aoScores.reduce((s, ao) => s + (ao.score ?? 0), 0)
+        const totalMax = feedback.aoScores.reduce((s, ao) => s + (ao.maxScore ?? 0), 0)
+        const overall = totalMax > 0 ? Math.round((totalScore / totalMax) * 100) : 0
+        const aoByIndex = (i: number) => {
+          const ao = feedback.aoScores[i]
+          return ao && ao.maxScore > 0 ? Math.round((ao.score / ao.maxScore) * 100) : 0
+        }
+        const essay = await prisma.essay.create({
+          data: {
+            userId: dbUser.id,
+            title: body.questionText.slice(0, 180) || 'Essay feedback',
+            content: body.essay,
+            subject: toSubjectEnum(body.paper, body.questionType),
+            examBoard: toExamBoardEnum(body.board),
+            aiFeedback: {
+              create: {
+                overallScore: overall,
+                // Column names predate the AO model; stored in AO order so
+                // the mapping is stable: AO1, AO2, AO3, AO4.
+                argumentScore: aoByIndex(0),
+                structureScore: aoByIndex(1),
+                vocabularyScore: aoByIndex(2),
+                grammarScore: aoByIndex(3),
+                feedbackText: feedback.annotatedFeedback,
+                criteria: JSON.stringify({
+                  gradeBand: feedback.gradeBand,
+                  gradeJustification: feedback.gradeJustification,
+                  aoScores: feedback.aoScores,
+                  strengths: feedback.strengths,
+                  improvements: feedback.improvements,
+                }),
+                limitations:
+                  'AI-generated feedback against the selected mark scheme; a predicted indication, not a moderated exam mark.',
+                modelVersion: ANTHROPIC_MODEL,
+              },
+            },
+          },
+          select: { id: true },
+        })
+        essayId = essay.id
+      }
+    } catch (persistError) {
+      console.error(
+        '[api/essay-feedback] persistence failed (response still served):',
+        persistError,
+      )
+    }
+
+    // 11. Return structured feedback
     return NextResponse.json({
       feedback,
+      essayId,
       remaining: rl.remaining,
     })
   } catch (err) {

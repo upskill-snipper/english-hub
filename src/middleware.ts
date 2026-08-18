@@ -3,6 +3,7 @@ import { applyAffiliateTracking } from '@/middleware-affiliate'
 import { NextResponse, type NextRequest } from 'next/server'
 import { computeJsonLdHashes, extractAnalysisSlugKey } from '@/lib/seo/json-ld-hashes'
 import { BOARDS } from '@/lib/board/board-config'
+import { BOARD_SPECIFIC_PREFIXES } from '@/lib/board/gated-paths'
 // Note: the previous `import crypto from 'crypto'` worked on Vercel but
 // trips an edge-runtime warning in dev. We use the Web Crypto API
 // (`globalThis.crypto.randomUUID()` / `crypto.subtle.digest`) instead -
@@ -180,32 +181,11 @@ const BOARD_ALLOWLIST_PREFIX: string[] = [
 // Only paths inside this allowlist should ever bounce to /board-select.
 // Anything else falls through and Next.js can return a proper 404 via
 // `src/app/not-found.tsx`.
-const BOARD_REQUIRED_PREFIXES: string[] = [
-  '/revision/',
-  '/revision',
-  '/practice/',
-  '/practice',
-  '/mock-exams/',
-  '/mock-exams',
-  '/games/',
-  '/games',
-  '/assessment/',
-  '/assessment',
-  '/courses/',
-  '/courses',
-  '/igcse/',
-  '/igcse',
-  '/a-level/',
-  '/a-level',
-  '/learn/',
-  '/learn',
-  '/marking/',
-  '/marking',
-  '/toolkit/',
-  '/toolkit',
-  '/dashboard',
-  '/dashboard/',
-]
+// Derived from the shared registry so the server-side redirect and the
+// client-side BoardGate modal can never disagree about which routes are
+// board-specific. Both the bare root and the trailing-slash prefix are
+// needed by `isBoardRequired` below.
+const BOARD_REQUIRED_PREFIXES: string[] = BOARD_SPECIFIC_PREFIXES.flatMap((p) => [p, `${p}/`])
 
 export function getBoardRequiredPaths(): readonly string[] {
   return BOARD_REQUIRED_PREFIXES

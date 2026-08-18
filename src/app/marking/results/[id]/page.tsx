@@ -45,64 +45,24 @@ interface StoredResult {
   summary?: string
 }
 
-/* ─── Fallback mock so the page always renders ─────────────── */
-
-const FALLBACK: StoredResult = {
-  id: 'sample',
-  title: 'Sample - Macbeth ambition',
-  board: 'AQA',
-  paper: 'English Literature - Paper 1',
-  question: 'How does Shakespeare present ambition in Macbeth?',
-  wordCount: 612,
-  grade: 7,
-  scorePercent: 82,
-  submittedAt: new Date().toISOString(),
-  aos: [
-    {
-      code: 'AO1',
-      label: 'Read, understand, respond',
-      score: 10,
-      max: 12,
-    },
-    {
-      code: 'AO2',
-      label: 'Analyse language, form and structure',
-      score: 9,
-      max: 12,
-    },
-    {
-      code: 'AO3',
-      label: 'Context',
-      score: 4,
-      max: 6,
-    },
-    {
-      code: 'AO4',
-      label: 'Accuracy of SPaG',
-      score: 3,
-      max: 4,
-    },
-  ],
-  essay:
-    "Shakespeare presents ambition in Macbeth as a destructive and corrupting force that ultimately leads to the downfall of those who pursue it without moral restraint. From the outset, Macbeth is described as 'brave Macbeth', a loyal soldier whose reputation is built on heroism. However, once the witches plant the seed of prophecy, his 'vaulting ambition' quickly overwhelms his better judgement.\n\nShakespeare uses the metaphor of 'vaulting ambition, which o'erleaps itself' to suggest that ambition, when unchecked, becomes self-defeating. The equestrian imagery implies a rider attempting to mount a horse with too much force, only to fall on the other side. This foreshadows Macbeth's eventual downfall and positions ambition as inherently dangerous when divorced from virtue.\n\nContextually, a Jacobean audience would have read Macbeth's ambition through the lens of the divine right of kings. Regicide was not just treason but a sin against God's order. Shakespeare, writing during the reign of James I-himself the target of the Gunpowder Plot-deliberately uses Macbeth to reinforce the idea that usurping a divinely-appointed monarch leads to chaos and damnation.\n\nBy the end of the play, Macbeth's ambition has hollowed him out. His famous 'tomorrow and tomorrow and tomorrow' soliloquy reveals a man whose pursuit of power has robbed life of meaning. The repetition mirrors the monotony of a life devoid of purpose, and the metaphor of the 'walking shadow' reduces his existence to something insubstantial. Shakespeare thus uses Macbeth's tragic arc to warn that unrestrained ambition does not elevate-it erodes.",
-}
-
-// Fallback feedback for legacy entries that don't have AI feedback stored
-const FALLBACK_STRENGTHS = [
-  'Clear thesis sustained across the response',
-  'Judicious use of embedded quotations supporting AO1',
-  'Relevant contextual links to Jacobean politics (AO3)',
-]
-const FALLBACK_IMPROVEMENTS = [
-  'Push analytical vocabulary beyond general description',
-  'Zoom in on individual word choices for deeper AO2',
-  'Maintain consistent formality in phrasing',
-]
-const FALLBACK_NEXT_STEPS = [
-  'Develop conceptualised arguments - show the marker what the writer is DOING',
-  'Integrate methods analysis at word/phrase level, not just metaphor-level',
-  "Link context to the writer's intention, not just background facts",
-]
+/* ─── No fallback data. Ever. ────────────────────────────────
+ *
+ * Until 2026-08-18 this file carried a complete fabricated result - a
+ * Grade 7 / 82% Macbeth essay with AO scores - that rendered as the
+ * student's own work whenever an id could not be resolved (second
+ * device, cleared storage, stale link, or simply being signed out:
+ * the 401 from the API fell through to it too). Three arrays of
+ * generic Macbeth advice were likewise substituted into the
+ * strengths / improvements / next-steps cards of REAL results that
+ * lacked stored feedback, and fed to the read-aloud feature as if
+ * the model had written them about the student's essay.
+ *
+ * On a children's product that is a fabricated attainment record.
+ * Unresolvable ids now render an explicit not-found (or sign-in)
+ * state, and missing feedback renders an honest note - never
+ * invented praise for "contextual links to Jacobean politics" on an
+ * essay about a different text.
+ */
 
 /** Find the paragraph index that contains the given quote substring. */
 function findParagraphForQuote(paragraphs: string[], quote: string): number {
@@ -317,11 +277,13 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
   const [loaded, setLoaded] = useState(false)
   /** Set when the server says this is a teacher-linked row not yet approved. */
   const [awaiting, setAwaiting] = useState<{ title: string; meta: string } | null>(null)
+  /** Terminal resolution failures get their own honest screens. */
+  const [failure, setFailure] = useState<'not_found' | 'signin' | null>(null)
 
   useEffect(() => {
     let cancelled = false
 
-    /** Legacy path: resolve from localStorage, else the sample fallback. */
+    /** Legacy path: resolve from localStorage, else an explicit not-found. */
     function resolveFromLocalStorage() {
       if (cancelled) return
       try {
@@ -340,13 +302,13 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
       } catch {
         /* ignore */
       }
-      setResult(FALLBACK)
+      setFailure('not_found')
       setLoaded(true)
     }
 
     async function resolve() {
       // 1. Try the server marking spine first. Legacy localStorage ids
-      //    (mk_…, "sample") will simply 404 here and fall through.
+      //    (mk_…) will simply 404 here and fall through.
       try {
         const res = await fetch(`/api/marking/${encodeURIComponent(id)}`, {
           headers: { Accept: 'application/json' },
@@ -355,6 +317,17 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
         if (res.status === 404 || res.status === 405) {
           // Not a server submission (or spine not deployed) → legacy path.
           resolveFromLocalStorage()
+          return
+        }
+
+        if (res.status === 401 || res.status === 403) {
+          // A signed-out (or wrong-account) viewer must get a sign-in
+          // prompt - NOT a localStorage lookup that used to end in a
+          // fabricated sample result.
+          if (!cancelled) {
+            setFailure('signin')
+            setLoaded(true)
+          }
           return
         }
 
@@ -408,10 +381,38 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
     return <AwaitingReviewState tx={tx} title={awaiting.title} meta={awaiting.meta} />
   }
 
-  if (!result) {
+  if (failure || !result) {
+    const signin = failure === 'signin'
     return (
-      <div className="mx-auto max-w-4xl px-4 py-16 text-center text-sm text-muted-foreground">
-        {tx('marking.results.loading')}
+      <div className="mx-auto max-w-2xl px-4 py-16 text-center">
+        <h1 className="text-2xl font-bold tracking-tight text-foreground">
+          {tx(signin ? 'marking.results.signin_title' : 'marking.results.not_found_title')}
+        </h1>
+        <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground">
+          {tx(signin ? 'marking.results.signin_body' : 'marking.results.not_found_body')}
+        </p>
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          {signin ? (
+            <Button
+              render={
+                <Link
+                  href={`/auth/login?redirect=${encodeURIComponent(`/marking/results/${id}`)}`}
+                />
+              }
+            >
+              {tx('header.cta.login')}
+            </Button>
+          ) : (
+            <>
+              <Button variant="outline" render={<Link href="/marking/history" />}>
+                {tx('marking.results.btn_history')}
+              </Button>
+              <Button render={<Link href="/marking/submit" />}>
+                {tx('marking.results.btn_new')}
+              </Button>
+            </>
+          )}
+        </div>
       </div>
     )
   }
@@ -438,17 +439,17 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
     })
     .filter((a) => a.paragraphIndex >= 0 && a.paragraphIndex < paragraphs.length)
 
-  // Use real AI feedback when available, fall back to the hardcoded defaults
-  // only if the stored result doesn't include AI feedback (e.g. old entries)
-  const strengths: string[] = result.strengths?.length
-    ? result.strengths.map((s) => s.point)
-    : FALLBACK_STRENGTHS
-  const improvements: string[] = result.improvements?.length
-    ? result.improvements.map((s) => s.point)
-    : FALLBACK_IMPROVEMENTS
-  const nextGradeAdvice: string[] = result.nextStepsToNextGrade?.length
-    ? result.nextStepsToNextGrade
-    : FALLBACK_NEXT_STEPS
+  // Real AI feedback only. Legacy entries with none stored render an honest
+  // note (below) instead of the generic Macbeth advice that used to be
+  // substituted here - confidently wrong praise is worse than an empty card.
+  const strengths: string[] = result.strengths?.map((s) => s.point) ?? []
+  const improvements: string[] = result.improvements?.map((s) => s.point) ?? []
+  const nextGradeAdvice: string[] = result.nextStepsToNextGrade ?? []
+  const hasAnyFeedback =
+    strengths.length > 0 ||
+    improvements.length > 0 ||
+    nextGradeAdvice.length > 0 ||
+    !!result.summary
 
   // Combined feedback text for free browser read-aloud (accessibility / EAL).
   const feedbackToRead = [
@@ -490,9 +491,11 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
       <AiMarkingNotice className="mb-6" />
 
       {/* Listen to feedback - free browser read-aloud (helpful for EAL learners). */}
-      <div className="mb-6 flex justify-end">
-        <ReadAloudButton text={feedbackToRead} label="Listen to feedback" lang="en-GB" />
-      </div>
+      {hasAnyFeedback && (
+        <div className="mb-6 flex justify-end">
+          <ReadAloudButton text={feedbackToRead} label="Listen to feedback" lang="en-GB" />
+        </div>
+      )}
 
       {/* ── Grade + AO side-by-side ───────────────────────── */}
       <div className="grid gap-6 lg:grid-cols-[1fr_1fr]">
@@ -505,7 +508,18 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
       </div>
 
       {/* ── Feedback columns ──────────────────────────────── */}
-      <div className="mt-6 grid gap-6 md:grid-cols-3">
+      {/* Legacy entries with no stored AI feedback get an honest note, not
+          three cards of substituted generic advice (removed 2026-08-18). */}
+      {!hasAnyFeedback && (
+        <Card className="mt-6 border-border/60 bg-muted/30">
+          <CardContent className="py-5">
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              {tx('marking.results.no_feedback_note')}
+            </p>
+          </CardContent>
+        </Card>
+      )}
+      <div className={hasAnyFeedback ? 'mt-6 grid gap-6 md:grid-cols-3' : 'hidden'}>
         <Card>
           <CardHeader>
             <CardTitle>{tx('marking.results.card_strengths')}</CardTitle>

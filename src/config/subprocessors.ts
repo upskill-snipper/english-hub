@@ -188,7 +188,7 @@ export const SUBPROCESSORS: readonly SubProcessor[] = [
     // option (see src/lib/anthropic-client.ts ANTHROPIC_DATA_POLICY).
     name: 'Anthropic (Claude)',
     purpose:
-      'AI-assisted essay marking, predicted grade, essay feedback, CEFR assessment and study-material generation (model claude-sonnet-4-20250514)',
+      'AI-assisted essay marking, predicted grade, essay feedback, CEFR assessment and study-material generation (Claude Sonnet family; the exact model id is the ANTHROPIC_MODEL constant in src/lib/anthropic-client.ts)',
     dataCategories: [
       'learner essay / response free text',
       'question text',

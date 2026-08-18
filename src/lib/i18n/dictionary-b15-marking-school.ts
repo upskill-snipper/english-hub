@@ -216,6 +216,41 @@ export const B15_MARKING_SCHOOL_DICTIONARY: Record<
     ar: 'ارجع للسجل',
     es: 'Volver al historial',
   },
+  'marking.results.not_found_title': {
+    en: "We couldn't find that marked essay",
+    ar: 'ما قدرنا نلقى المقالة المصحّحة هذي',
+    es: 'No hemos encontrado esa redacción corregida',
+  },
+  'marking.results.not_found_body': {
+    en: 'It may have been marked on another device or browser, or the link has expired. Your marked essays are saved on the device you submitted them from.',
+    ar: 'يمكن انصحّحت على جهاز أو متصفح ثاني، أو انتهت صلاحية الرابط. مقالاتك المصحّحة محفوظة على الجهاز اللي أرسلتها منه.',
+    es: 'Puede que se corrigiera en otro dispositivo o navegador, o que el enlace haya caducado. Tus redacciones corregidas se guardan en el dispositivo desde el que las enviaste.',
+  },
+  'marking.results.btn_history': {
+    en: 'See my marked essays',
+    ar: 'شوف مقالاتي المصحّحة',
+    es: 'Ver mis redacciones corregidas',
+  },
+  'marking.results.btn_new': {
+    en: 'Mark a new essay',
+    ar: 'صحّح مقالة جديدة',
+    es: 'Corregir una redacción nueva',
+  },
+  'marking.results.signin_title': {
+    en: 'Sign in to see this result',
+    ar: 'سجّل الدخول عشان تشوف النتيجة',
+    es: 'Inicia sesión para ver este resultado',
+  },
+  'marking.results.signin_body': {
+    en: 'Marked essays are private. Sign in with the account that submitted this essay to view its feedback.',
+    ar: 'المقالات المصحّحة خاصة. سجّل الدخول بالحساب اللي أرسل المقالة عشان تشوف الملاحظات.',
+    es: 'Las redacciones corregidas son privadas. Inicia sesión con la cuenta que envió esta redacción para ver sus comentarios.',
+  },
+  'marking.results.no_feedback_note': {
+    en: 'Detailed feedback is not available for this submission. Submit the essay again to get a full AO breakdown with strengths and next steps.',
+    ar: 'ما فيه ملاحظات مفصّلة لهذا التسليم. أرسل المقالة مرة ثانية عشان تحصل على تحليل كامل للـ AOs مع نقاط القوة والخطوات الجاية.',
+    es: 'No hay comentarios detallados para este envío. Envía la redacción de nuevo para obtener un desglose completo por AO con puntos fuertes y próximos pasos.',
+  },
   'marking.results.btn_another': {
     en: 'Mark another essay',
     ar: 'صحّح مقالة ثانية',

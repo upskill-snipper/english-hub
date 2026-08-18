@@ -48,14 +48,17 @@ function getNavForBoardType(
 ): NavLink[] {
   if (type) {
     void board
-    // KS3 and EAL are full hubs in their own right, reached from the
-    // homepage and in-context links - they are deliberately NOT
-    // top-level nav headings.
+    // A visitor who has chosen a board is here to study, so this set is
+    // learner-first. 2026-08-18: "Mark an essay" added - the flagship paid
+    // feature previously had no nav entry anywhere in the product. "Schools"
+    // and "Demo" dropped from the learner nav: a student who has picked a
+    // board does not need the B2B pitch or a synthetic demo in their primary
+    // navigation, and both remain in the footer.
     return [
       { href: '/revision', labelKey: 'header.nav.your_hub' },
+      { href: '/marking', labelKey: 'header.nav.marking' },
+      { href: '/mock-exams', labelKey: 'header.nav.mock_exams' },
       { href: '/ielts', labelKey: 'ielts.nav' },
-      { href: '/schools', labelKey: 'header.nav.schools' },
-      { href: '/demo', labelKey: 'header.nav.demo' },
       { href: '/pricing', labelKey: 'header.nav.pricing' },
     ]
   }
@@ -104,7 +107,7 @@ export function Header() {
   const pathname = usePathname()
   const [mobileOpen, setMobileOpen] = useState(false)
   const [isSchoolMember, setIsSchoolMember] = useState(false)
-  const { board, isHydrated: isBoardHydrated } = useBoard()
+  const { board, isHydrated: isBoardHydrated, clearBoard } = useBoard()
   const t = useT()
 
   const isPremium = profile?.subscription_status === 'pro'
@@ -135,7 +138,13 @@ export function Header() {
           .eq('invite_status', 'accepted')
           .single()
 
-        if (!cancelled && data) {
+        // 2026-08-18: this used to set the flag for ANY accepted member, so
+        // teachers and students saw a "School dashboard" link that
+        // src/app/school/layout.tsx immediately redirects to /auth/login -
+        // signed-in users bounced to a sign-in page with no explanation, as
+        // though their session had broken. Only the two roles the portal
+        // actually admits get the link.
+        if (!cancelled && (data?.role === 'admin' || data?.role === 'head_of_department')) {
           setIsSchoolMember(true)
         }
       } catch {
@@ -341,9 +350,19 @@ export function Header() {
                       >
                         {t('header.board.change')}
                       </Link>
+                      {/* 2026-08-18: this linked to the same ?change=1 URL as
+                          "Change", so mobile Reset never cleared anything -
+                          the desktop BoardSwitcher got the clearBoard() fix
+                          on 2026-05-20 but the drawer was missed. clearBoard
+                          wipes both the cookie and the persisted localStorage
+                          value (required: rehydration repairs the cookie from
+                          localStorage if only the cookie were cleared). */}
                       <Link
-                        href="/board-select?change=1"
-                        onClick={() => setMobileOpen(false)}
+                        href="/board-select"
+                        onClick={() => {
+                          clearBoard()
+                          setMobileOpen(false)
+                        }}
                         className="inline-flex items-center justify-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium text-red-400 transition-colors hover:bg-red-400/10"
                       >
                         <RefreshCw className="h-3 w-3" aria-hidden="true" />

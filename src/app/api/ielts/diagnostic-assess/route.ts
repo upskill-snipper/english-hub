@@ -16,7 +16,7 @@
 // hasIeltsAccess - those routes are untouched.
 //
 // It REUSES the same Anthropic model + scoring approach as the paid routes:
-//   • the shared getAnthropicClient() + model constant 'claude-sonnet-4-20250514'
+//   • the shared getAnthropicClient() + the ANTHROPIC_MODEL constant
 //   • the same band-descriptor anchoring (concise, in-prompt) and roundToBand
 //   • the same compliance helpers where they apply: contentSafetyCheck (misuse /
 //     safeguarding pre-screen), filterAIResponse (output filter), withArabic
@@ -27,7 +27,7 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import type Anthropic from '@anthropic-ai/sdk'
-import { getAnthropicClient } from '@/lib/anthropic-client'
+import { getAnthropicClient, ANTHROPIC_MODEL } from '@/lib/anthropic-client'
 import { filterAIResponse, type UserCountry } from '@/lib/content-filter'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
@@ -133,7 +133,7 @@ async function generateAssessment(systemPrompt: string, response: string): Promi
 
   const message = await anthropic.messages.create(
     {
-      model: 'claude-sonnet-4-20250514',
+      model: ANTHROPIC_MODEL,
       max_tokens: 512,
       system: systemPrompt,
       messages: [{ role: 'user', content: response }],
