@@ -5,7 +5,7 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   title: 'School content policy',
   description:
-    'How The English Hub selects, frames and gates set-text content for GCSE, IGCSE and KS3 English — including content-guidance practice for international and culturally-sensitive markets such as the GCC.',
+    'How The English Hub selects, frames and gates set-text content for GCSE, IGCSE and KS3 English - including content-guidance practice for international and culturally-sensitive markets such as the GCC.',
   alternates: { canonical: 'https://theenglishhub.app/legal/school-content-policy' },
   openGraph: {
     title: 'School content policy - The English Hub',
@@ -78,7 +78,7 @@ export default function SchoolContentPolicyPage() {
           teachers see at a glance whether a given text is right for their cohort.
         </p>
         <p className="leading-relaxed text-muted-foreground">
-          Where a text contains themes that require cultural review — for example violence,
+          Where a text contains themes that require cultural review - for example violence,
           mortality, intimate-relationship content, supernatural elements, political allegory or
           religious imagery — the content guidance block lists those themes specifically.
         </p>
@@ -89,7 +89,7 @@ export default function SchoolContentPolicyPage() {
           International and GCC schools
         </h2>
         <p className="leading-relaxed text-muted-foreground">
-          For international schools — including those in Qatar, Saudi Arabia, the United Arab
+          For international schools - including those in Qatar, Saudi Arabia, the United Arab
           Emirates, Kuwait, Bahrain, Oman and the wider region — we recommend{' '}
           <strong className="text-foreground">Cambridge IGCSE English Language</strong>{' '}
           (specifications 0500 and 0990) as the starting point. Cambridge IGCSE English Language is{' '}

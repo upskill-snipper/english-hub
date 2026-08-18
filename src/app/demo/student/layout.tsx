@@ -62,7 +62,7 @@ export default async function StudentDemoLayout({ children }: { children: React.
       />
       <SoftwareApplicationJsonLd
         nonce={nonce}
-        name="The English Hub — student dashboard demo"
+        name="The English Hub - student dashboard demo"
         description="Interactive demo of the English Hub student dashboard with sample work: revision, AI essay feedback, flashcards, practice quizzes and progress tracking."
         url="https://theenglishhub.app/demo/student"
         audience="GCSE, IGCSE and KS3 English students"

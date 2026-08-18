@@ -106,7 +106,7 @@ const YEAR_GROUPS: YearGroupData[] = [
     interventions: [
       '20 students flagged for literacy intervention -- schedule small group sessions',
       '7C English underperforming: review seating plan and differentiation strategy',
-      'Grammar & Punctuation module behind target -- consider additional homework tasks',
+      'Grammar & Punctuation module behind target - consider additional homework tasks',
     ],
   },
   {
@@ -144,7 +144,7 @@ const YEAR_GROUPS: YearGroupData[] = [
     interventions: [
       '18 at-risk students need structured reading support programme',
       '8C English: consider teacher CPD on engagement strategies',
-      'Debate & Rhetoric module lagging -- integrate into cross-curricular activities',
+      'Debate & Rhetoric module lagging - integrate into cross-curricular activities',
     ],
   },
   {
@@ -182,7 +182,7 @@ const YEAR_GROUPS: YearGroupData[] = [
     interventions: [
       '17 students at risk ahead of GCSE option choices -- arrange parents evening',
       '9C English below expected progress: review scheme of work alignment',
-      'Poetry Anthology completion low -- deploy targeted revision resources',
+      'Poetry Anthology completion low - deploy targeted revision resources',
     ],
   },
   {
@@ -221,7 +221,7 @@ const YEAR_GROUPS: YearGroupData[] = [
     interventions: [
       '16 at-risk students: deploy exam technique intervention programme',
       '10C English Lang: below target -- arrange departmental support observation',
-      'Poetry Anthology completion critically low -- introduce weekly poetry sessions',
+      'Poetry Anthology completion critically low - introduce weekly poetry sessions',
       'Schedule mock exam preparation workshops for borderline C/D students',
     ],
   },
@@ -261,8 +261,8 @@ const YEAR_GROUPS: YearGroupData[] = [
     interventions: [
       '12 at-risk students: intensive revision timetable with after-school sessions',
       '11C English Lit below expected: deploy targeted intervention for Lit texts',
-      'Unseen Poetry confidence low -- arrange weekly practice sessions',
-      'URGENT: 5 students with attendance below 85% -- involve pastoral team',
+      'Unseen Poetry confidence low - arrange weekly practice sessions',
+      'URGENT: 5 students with attendance below 85% - involve pastoral team',
     ],
   },
   {
@@ -298,8 +298,8 @@ const YEAR_GROUPS: YearGroupData[] = [
     ],
     interventions: [
       '6 at-risk students: arrange 1:1 mentoring with subject lead',
-      'NEA coursework behind schedule -- set interim deadlines with progress checks',
-      'Poetry Pre-1900 engagement low -- introduce seminar-style discussions',
+      'NEA coursework behind schedule - set interim deadlines with progress checks',
+      'Poetry Pre-1900 engagement low - introduce seminar-style discussions',
     ],
   },
   {
@@ -335,7 +335,7 @@ const YEAR_GROUPS: YearGroupData[] = [
     ],
     interventions: [
       '4 at-risk students: urgent intervention -- mock results below C grade',
-      'NEA Final Draft submissions overdue for 8 students -- chase with deadlines',
+      'NEA Final Draft submissions overdue for 8 students - chase with deadlines',
       'Arrange A-Level revision bootcamp during Easter break',
     ],
   },

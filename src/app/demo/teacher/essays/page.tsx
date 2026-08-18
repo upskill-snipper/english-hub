@@ -51,7 +51,7 @@ const SAMPLE_ESSAYS: SampleEssay[] = [
 
 Mr Birling is presented as irresponsible from the outset. His dismissal of Eva Smith's request for higher wages reveals his prioritisation of profit over people. Priestley uses dramatic irony when Birling declares the Titanic is "unsinkable," undermining his authority and suggesting that those who reject social responsibility are fundamentally misguided.
 
-In contrast, Sheila represents hope for change. Her immediate guilt upon learning of her role in Eva's death -- "I'll never, never do it again" -- shows genuine remorse. The repetition of "never" emphasises her determination to change, and Priestley uses her as a mouthpiece for socialist values.
+In contrast, Sheila represents hope for change. Her immediate guilt upon learning of her role in Eva's death - "I'll never, never do it again" - shows genuine remorse. The repetition of "never" emphasises her determination to change, and Priestley uses her as a mouthpiece for socialist values.
 
 The Inspector himself functions as a moral authority. His final speech warning that "we are members of one body" echoes socialist principles and serves as a direct address to the audience. Priestley deliberately breaks the fourth wall to challenge the audience's own sense of responsibility.
 
@@ -75,7 +75,7 @@ Ultimately, Priestley suggests that responsibility cannot be avoided. The cyclic
       'Strong paragraph organisation with clear topic sentences',
     ],
     improvements: [
-      'Develop AO3 contextual links more fully -- the 1912/1945 contrast needs deeper exploration',
+      'Develop AO3 contextual links more fully - the 1912/1945 contrast needs deeper exploration',
       'Include alternative interpretations to access the highest mark bands',
       "Analyse individual word choices more closely for AO2 (e.g. 'body' as metaphor)",
       "Consider the audience's perspective and how Priestley manipulates their response",
@@ -94,7 +94,7 @@ Macbeth's ambition is first revealed through his reaction to the witches' prophe
 
 Lady Macbeth's ambition initially appears even stronger than her husband's. Her invocation to "unsex me here" and fill her "from the crown to the toe top-full of direst cruelty" reveals her willingness to reject her femininity to achieve power. The imperative verbs and violent imagery demonstrate her ruthless determination.
 
-However, Shakespeare shows that ambition ultimately leads to destruction. Macbeth's paranoia after becoming king -- "full of scorpions is my mind" -- uses a metaphor of internal torment to show how ambition has poisoned his mental state. Similarly, Lady Macbeth's sleepwalking in Act 5 reveals that her ambition has been replaced by overwhelming guilt.
+However, Shakespeare shows that ambition ultimately leads to destruction. Macbeth's paranoia after becoming king - "full of scorpions is my mind" - uses a metaphor of internal torment to show how ambition has poisoned his mental state. Similarly, Lady Macbeth's sleepwalking in Act 5 reveals that her ambition has been replaced by overwhelming guilt.
 
 Shakespeare's message is clear: ambition that overrides morality leads to inevitable downfall, reflecting the Jacobean belief in the Divine Right of Kings.`,
     grade: '7',
@@ -116,7 +116,7 @@ Shakespeare's message is clear: ambition that overrides morality leads to inevit
       "Effective use of the word 'yield' analysis showing individual word-level focus",
     ],
     improvements: [
-      'AO3 context could be developed further -- explore Gunpowder Plot and regicide fears',
+      'AO3 context could be developed further - explore Gunpowder Plot and regicide fears',
       'Consider structural choices: why does Shakespeare reveal ambition gradually?',
       'Include a counter-argument or alternative reading for top marks',
       "The conclusion could be more nuanced rather than stating Shakespeare's message is 'clear'",
@@ -133,7 +133,7 @@ Shakespeare's message is clear: ambition that overrides morality leads to inevit
 
 At the beginning, Scrooge is described as "a squeezing, wrenching, grasping, scraping, clutching, covetous old sinner." The list of adjectives emphasises his greed, and the harsh sounds create an unpleasant impression. Dickens wants the reader to dislike Scrooge so that his later transformation feels more powerful.
 
-The Ghost of Christmas Past begins Scrooge's change by showing him memories of his lonely childhood. When Scrooge sees his younger self "a solitary child, neglected by his friends," he begins to cry. This is significant because it shows that Scrooge was not always cold -- he was shaped by his experiences, which makes him more sympathetic.
+The Ghost of Christmas Past begins Scrooge's change by showing him memories of his lonely childhood. When Scrooge sees his younger self "a solitary child, neglected by his friends," he begins to cry. This is significant because it shows that Scrooge was not always cold - he was shaped by his experiences, which makes him more sympathetic.
 
 By the end of the story, Scrooge has completely changed. He buys the biggest turkey for the Cratchit family and raises Bob Cratchit's salary. Dickens writes that Scrooge "knew how to keep Christmas well." This simple statement contrasts with the complex list of negative adjectives at the start, showing that goodness is straightforward while greed is complicated.
 
@@ -157,7 +157,7 @@ Dickens uses Scrooge's transformation to argue that anyone can change and that t
       "Awareness of Dickens' purpose in writing the novella",
     ],
     improvements: [
-      'Analysis needs more depth -- move beyond identifying techniques to explaining their effects',
+      'Analysis needs more depth - move beyond identifying techniques to explaining their effects',
       'Explore the role of all three ghosts, not just Christmas Past',
       'Develop contextual understanding: link to Poor Law, workhouses, and Malthusian economics',
       "Use more analytical vocabulary: 'presents', 'conveys', 'implies' rather than 'shows' and 'wants'",

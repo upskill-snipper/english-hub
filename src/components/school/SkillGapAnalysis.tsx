@@ -87,21 +87,24 @@ const EXAM_IMPORTANCE: Record<SkillCategory, string> = {
   'Quote Integration':
     'Required across all analytical responses. Examiners penalise responses that paraphrase instead of quoting directly.',
   'Comparison Skills':
-    'Paper 2 Q4 is a comparison question worth 16 marks. Students must compare writers\' methods explicitly.',
+    "Paper 2 Q4 is a comparison question worth 16 marks. Students must compare writers' methods explicitly.",
   Evaluation:
     'Paper 1 Q4 requires evaluation with a critical stance. Higher-band responses need nuanced judgement.',
-  SPaG:
-    'SPaG marks are awarded in Paper 1 Q5 and Paper 2 Q5. Consistent errors cap students at Grade 5.',
+  SPaG: 'SPaG marks are awarded in Paper 1 Q5 and Paper 2 Q5. Consistent errors cap students at Grade 5.',
 }
 
 // ── Suggested resources per skill ─────────────────────────────────────────────
 
 function getSkillResources(
-  skill: SkillCategory
+  skill: SkillCategory,
 ): { type: 'flashcards' | 'practice' | 'module'; label: string; href: string }[] {
   const slug = skill.toLowerCase().replace(/\s+/g, '-')
   return [
-    { type: 'flashcards', label: `${skill} Flashcards`, href: `/resources/study-tools/flashcards?skill=${slug}` },
+    {
+      type: 'flashcards',
+      label: `${skill} Flashcards`,
+      href: `/resources/study-tools/flashcards?skill=${slug}`,
+    },
     { type: 'practice', label: `${skill} Practice Qs`, href: `/practice?skill=${slug}` },
     { type: 'module', label: `${skill} Module`, href: `/courses?focus=${slug}` },
   ]
@@ -190,7 +193,7 @@ function findNextBoundary(avg: number): number | null {
 function exportCSV(
   skillScores: StudentSkillScore[],
   students: StudentAnalytics[],
-  summaries: SkillSummary[]
+  summaries: SkillSummary[],
 ) {
   const studentMap = new Map(students.map((s) => [s.student_id, s]))
   const lines: string[] = []
@@ -207,10 +210,7 @@ function exportCSV(
 
   for (const [studentId, skills] of byStudent) {
     const name = studentMap.get(studentId)?.student_name ?? studentId
-    const row = [
-      `"${name}"`,
-      ...SKILL_CATEGORIES.map((skill) => String(skills.get(skill) ?? '')),
-    ]
+    const row = [`"${name}"`, ...SKILL_CATEGORIES.map((skill) => String(skills.get(skill) ?? ''))]
     lines.push(row.join(','))
   }
 
@@ -218,7 +218,7 @@ function exportCSV(
   lines.push('')
   lines.push(['Class Average', ...summaries.map((s) => String(s.classAvg))].join(','))
   lines.push(
-    ['Students Below 50%', ...summaries.map((s) => String(s.studentsBelowThreshold))].join(',')
+    ['Students Below 50%', ...summaries.map((s) => String(s.studentsBelowThreshold))].join(','),
   )
 
   const blob = new Blob([lines.join('\n')], { type: 'text/csv;charset=utf-8;' })
@@ -253,7 +253,8 @@ export const SkillGapAnalysis = memo(function SkillGapAnalysis({
     return SKILL_CATEGORIES.map((skill) => {
       const forSkill = skillScores.filter((s) => s.skill === skill)
       const scores = forSkill.map((s) => s.score)
-      const avg = scores.length > 0 ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) : 0
+      const avg =
+        scores.length > 0 ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) : 0
       const below40 = scores.filter((s) => s < 40).length
       const between40_60 = scores.filter((s) => s >= 40 && s <= 60).length
       const above60 = scores.filter((s) => s > 60).length
@@ -295,7 +296,7 @@ export const SkillGapAnalysis = memo(function SkillGapAnalysis({
 
         // Count students within 5 points below the boundary
         const studentsNear = skillScores.filter(
-          (ss) => ss.skill === s.skill && ss.score >= boundary - 5 && ss.score < boundary
+          (ss) => ss.skill === s.skill && ss.score >= boundary - 5 && ss.score < boundary,
         ).length
 
         if (studentsNear === 0) return null
@@ -333,7 +334,7 @@ export const SkillGapAnalysis = memo(function SkillGapAnalysis({
       <div
         className={cn(
           'flex items-center justify-center py-12 text-muted-foreground text-sm',
-          className
+          className,
         )}
       >
         No student data available for skill gap analysis.
@@ -388,7 +389,7 @@ export const SkillGapAnalysis = memo(function SkillGapAnalysis({
                   <span
                     className={cn(
                       'text-sm font-bold tabular-nums w-12 text-right shrink-0',
-                      avgTextColor(s.classAvg)
+                      avgTextColor(s.classAvg),
                     )}
                   >
                     {s.classAvg}%
@@ -427,7 +428,9 @@ export const SkillGapAnalysis = memo(function SkillGapAnalysis({
                     <span
                       className={cn(
                         'text-xs tabular-nums',
-                        s.studentsBelowThreshold > 0 ? 'text-red-400 font-semibold' : 'text-muted-foreground'
+                        s.studentsBelowThreshold > 0
+                          ? 'text-red-400 font-semibold'
+                          : 'text-muted-foreground',
                       )}
                     >
                       {s.studentsBelowThreshold} below 50%
@@ -462,7 +465,7 @@ export const SkillGapAnalysis = memo(function SkillGapAnalysis({
         <CardHeader>
           <CardTitle className="text-base">Student &times; Skill Heat Map</CardTitle>
           <CardDescription>
-            Color-coded performance grid. Red &lt; 40%, Amber 40-60%, Green &gt; 60%.
+            Colour-coded performance grid. Red &lt; 40%, Amber 40-60%, Green &gt; 60%.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -499,7 +502,7 @@ export const SkillGapAnalysis = memo(function SkillGapAnalysis({
                             className={cn(
                               'rounded-md border px-2 py-1.5 font-semibold tabular-nums transition-colors',
                               cellColor(score),
-                              cellBorder(score)
+                              cellBorder(score),
                             )}
                           >
                             G{percentageToGCSEGrade(score)}
@@ -520,7 +523,7 @@ export const SkillGapAnalysis = memo(function SkillGapAnalysis({
                         className={cn(
                           'rounded-md border px-2 py-1.5 font-bold tabular-nums',
                           cellColor(s.classAvg),
-                          cellBorder(s.classAvg)
+                          cellBorder(s.classAvg),
                         )}
                       >
                         {s.classAvg}%
@@ -554,7 +557,7 @@ export const SkillGapAnalysis = memo(function SkillGapAnalysis({
                   'rounded-lg border p-5',
                   ps.avg < 40
                     ? 'border-red-500/30 bg-red-500/5'
-                    : 'border-amber-500/30 bg-amber-500/5'
+                    : 'border-amber-500/30 bg-amber-500/5',
                 )}
               >
                 <div className="flex items-start justify-between gap-4 mb-3">
@@ -565,11 +568,14 @@ export const SkillGapAnalysis = memo(function SkillGapAnalysis({
                     <div>
                       <h3 className="font-semibold text-foreground">{ps.skill}</h3>
                       <div className="flex items-center gap-2 mt-0.5">
-                        <span className={cn('text-sm font-bold tabular-nums', avgTextColor(ps.avg))}>
+                        <span
+                          className={cn('text-sm font-bold tabular-nums', avgTextColor(ps.avg))}
+                        >
                           {ps.avg}% avg
                         </span>
                         <span className="text-xs text-muted-foreground">
-                          &middot; {ps.studentsBelowThreshold} student{ps.studentsBelowThreshold !== 1 ? 's' : ''} below 50%
+                          &middot; {ps.studentsBelowThreshold} student
+                          {ps.studentsBelowThreshold !== 1 ? 's' : ''} below 50%
                         </span>
                       </div>
                     </div>
@@ -580,7 +586,7 @@ export const SkillGapAnalysis = memo(function SkillGapAnalysis({
                       'text-[10px] uppercase shrink-0',
                       ps.avg < 40
                         ? 'text-red-400 border-red-500/30'
-                        : 'text-clay-600 border-amber-500/30'
+                        : 'text-clay-600 border-amber-500/30',
                     )}
                   >
                     {ps.avg < 40 ? 'Critical' : 'Priority'}
@@ -660,7 +666,8 @@ export const SkillGapAnalysis = memo(function SkillGapAnalysis({
               <CardTitle className="text-base">Quick Wins</CardTitle>
             </div>
             <CardDescription>
-              Skills where students are close to the next grade boundary -- small improvements yield big results
+              Skills where students are close to the next grade boundary - small improvements yield
+              big results
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -686,9 +693,8 @@ export const SkillGapAnalysis = memo(function SkillGapAnalysis({
                     <span className="font-semibold text-foreground">{qw.studentsNearBoundary}</span>{' '}
                     student{qw.studentsNearBoundary !== 1 ? 's' : ''} within{' '}
                     <span className="font-semibold text-foreground">5 marks</span> of the boundary.
-                    Just{' '}
-                    <span className="font-semibold text-emerald-400">+{qw.gap} marks</span> needed
-                    on average.
+                    Just <span className="font-semibold text-emerald-400">+{qw.gap} marks</span>{' '}
+                    needed on average.
                   </p>
                   <Link href={`/school/lessons/${qw.skill.toLowerCase().replace(/\s+/g, '-')}`}>
                     <Button variant="outline" size="sm" className="mt-3 w-full text-xs gap-1.5">

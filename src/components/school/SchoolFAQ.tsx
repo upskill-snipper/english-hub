@@ -13,7 +13,7 @@ const faqs: FAQItem[] = [
   {
     question: 'What is the Founding Schools Programme?',
     answer:
-      'The Founding Schools Programme is a strategic partnership: the first 10 schools to sign for the 2026 academic year receive founding-partner status with full platform access, early features, direct product input, priority onboarding, and locked preferential pricing for 2-3 years. Additional schools are welcome on the platform at standard rates after the founding cohort closes. This is not a free trial -- it is a discounted, long-term partnership tailored to your department size.',
+      'The Founding Schools Programme is a strategic partnership: the first 10 schools to sign for the 2026 academic year receive founding-partner status with full platform access, early features, direct product input, priority onboarding, and locked preferential pricing for 2-3 years. Additional schools are welcome on the platform at standard rates after the founding cohort closes. This is not a free trial - it is a discounted, long-term partnership tailored to your department size.',
   },
   {
     question: 'How much does it cost?',

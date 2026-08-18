@@ -291,7 +291,7 @@ const LESSON_PLANS: LessonPlan[] = [
             'Provide a PEEL paragraph frame with sentence openers for each stage and a bank of three quotations to choose from.',
           core: 'Students write two independent PEEL paragraphs selecting their own quotations from the text.',
           stretch:
-            'Students write a third paragraph that considers an alternative reading of the Inspector -- is he a ghost, a time traveller, or a collective conscience?',
+            'Students write a third paragraph that considers an alternative reading of the Inspector - is he a ghost, a time traveller, or a collective conscience?',
         },
         resources: [
           'Exam question displayed on board',
@@ -364,9 +364,9 @@ const LESSON_PLANS: LessonPlan[] = [
       "The ambiguity question in the worksheet is an excellent stretch task -- encourage students to consider multiple interpretations without insisting on one 'correct' answer.",
     ],
     targetedSkills: [
-      'AO1 -- Personal response supported by textual reference',
-      'AO2 -- Analysis of language, form, and structure',
-      'AO3 -- Understanding of context and its influence on the text',
+      'AO1 - Personal response supported by textual reference',
+      'AO2 - Analysis of language, form, and structure',
+      'AO3 - Understanding of context and its influence on the text',
       'Comparative analysis between characters',
       'Exam-style paragraph writing using PEEL',
     ],
@@ -514,13 +514,13 @@ const LESSON_PLANS: LessonPlan[] = [
     teacherNotes: [
       "The anonymous starter works best with a strict 'no judgement' rule -- students engage more freely when they know their response is genuinely private.",
       "Reading the soliloquy aloud is essential. Many students struggle with Shakespeare's syntax on first reading; hearing it spoken with dramatic emphasis unlocks meaning.",
-      'The support annotation sheet should highlight specific words rather than whole lines -- this prevents overwhelm and teaches students to zoom in on individual word choices.',
+      'The support annotation sheet should highlight specific words rather than whole lines - this prevents overwhelm and teaches students to zoom in on individual word choices.',
       'The sympathy spectrum is a powerful formative assessment tool: photograph the board and return to it after Act 5 to track how opinions have shifted.',
     ],
     targetedSkills: [
-      'AO1 -- Critical response to Shakespeare',
-      'AO2 -- Analysis of language imagery and dramatic devices',
-      'AO3 -- Jacobean context and its influence on audience reception',
+      'AO1 - Critical response to Shakespeare',
+      'AO2 - Analysis of language imagery and dramatic devices',
+      'AO3 - Jacobean context and its influence on audience reception',
       'Close reading and annotation skills',
       'Paragraph writing with embedded quotation',
     ],
@@ -667,14 +667,14 @@ const LESSON_PLANS: LessonPlan[] = [
       },
     ],
     teacherNotes: [
-      'The semantic field starter is quick and effective -- students enjoy the detective element of finding patterns, and it introduces a transferable skill they can apply to any text.',
+      'The semantic field starter is quick and effective - students enjoy the detective element of finding patterns, and it introduces a transferable skill they can apply to any text.',
       "Be prepared for students who have seen film adaptations: their image of Scrooge may be more comedic than Dickens's text warrants.",
       "The Malthusian reference in the charity collector scene is worth explaining in full: 'surplus population' is a direct echo of Thomas Malthus's Essay on the Principle of Population (1798).",
       'The defence lawyer plenary generates excellent discussion and can be extended into a full debate activity in a subsequent lesson.',
     ],
     targetedSkills: [
-      'AO1 -- Critical response supported by textual reference',
-      'AO2 -- Analysis of language including semantic fields and simile',
+      'AO1 - Critical response supported by textual reference',
+      'AO2 - Analysis of language including semantic fields and simile',
       "AO3 -- Victorian context and Dickens's social purpose",
       'Exam paragraph writing with integrated AOs',
       'Close reading and annotation',
@@ -828,9 +828,9 @@ const LESSON_PLANS: LessonPlan[] = [
       'The cyclical structure question is an excellent gateway to discussing AO2 (form and structure) beyond language analysis.',
     ],
     targetedSkills: [
-      'AO1 -- Personal and critical response to the novel',
-      'AO2 -- Analysis of language, form, and structure',
-      'AO3 -- Context of the Great Depression and the American Dream',
+      'AO1 - Personal and critical response to the novel',
+      'AO2 - Analysis of language, form, and structure',
+      'AO3 - Context of the Great Depression and the American Dream',
       'Comparative character analysis',
       'Thematic essay writing',
     ],
@@ -919,7 +919,7 @@ const LESSON_PLANS: LessonPlan[] = [
       title: 'Which Tyrant Wins?',
       duration: '5 minutes',
       instructions:
-        'Class debate: who is the more dangerous figure -- Ozymandias or the Duke? Students vote with hands, then three students from each side give a 20-second argument. Teacher concludes: Shelley shows us power destroyed by time; Browning shows us power that continues to destroy.',
+        'Class debate: who is the more dangerous figure - Ozymandias or the Duke? Students vote with hands, then three students from each side give a 20-second argument. Teacher concludes: Shelley shows us power destroyed by time; Browning shows us power that continues to destroy.',
       differentiation: {
         support: 'Vote and give one reason for your choice.',
         core: 'Support your vote with a quotation.',
@@ -971,12 +971,12 @@ const LESSON_PLANS: LessonPlan[] = [
       'Students frequently struggle with comparison, reverting to writing about each poem separately. The framework is essential scaffolding.',
       'The A3 side-by-side annotation is significantly more effective than working with separate sheets.',
       "Be prepared to explain the Duke of Ferrara's historical context -- students are often shocked to learn the poem is based on real events.",
-      'The debate plenary works best when students cannot sit on the fence -- force a choice and defend it.',
+      'The debate plenary works best when students cannot sit on the fence - force a choice and defend it.',
     ],
     targetedSkills: [
-      'AO1 -- Comparative personal response',
-      'AO2 -- Analysis of language, form, and structure across two poems',
-      'AO3 -- Contextual understanding of Romantic and Victorian poetry',
+      'AO1 - Comparative personal response',
+      'AO2 - Analysis of language, form, and structure across two poems',
+      'AO3 - Contextual understanding of Romantic and Victorian poetry',
       'Comparative paragraph writing',
       'Poetry annotation skills',
     ],
@@ -1068,7 +1068,7 @@ const LESSON_PLANS: LessonPlan[] = [
           "What does Lady Macbeth mean when she says 'unsex me here'? How does this relate to Jacobean gender expectations?",
         lines: 5,
         modelAnswer:
-          'Lady Macbeth is asking supernatural spirits to strip away her femininity so she can carry out the murder without compassion. In Jacobean society, women were expected to be obedient and nurturing. Her request is deeply transgressive -- Shakespeare presents her as willing to reject her own nature to achieve power.',
+          'Lady Macbeth is asking supernatural spirits to strip away her femininity so she can carry out the murder without compassion. In Jacobean society, women were expected to be obedient and nurturing. Her request is deeply transgressive - Shakespeare presents her as willing to reject her own nature to achieve power.',
         marks: 5,
       },
       {
@@ -1105,16 +1105,16 @@ const LESSON_PLANS: LessonPlan[] = [
       },
     ],
     teacherNotes: [
-      'This is a timed practice lesson -- resist the urge to over-scaffold. Students need exam pressure in a supportive environment.',
+      'This is a timed practice lesson - resist the urge to over-scaffold. Students need exam pressure in a supportive environment.',
       'The planning stage is critical: enforce the 5-minute planning time strictly.',
       'When marking, focus feedback on one or two actionable targets rather than comprehensive annotation.',
       'The myth-busting starter is worth returning to periodically: students frequently revert to formulaic approaches under pressure.',
     ],
     targetedSkills: [
-      'AO1 -- Critical response to an extract and the whole play',
+      'AO1 - Critical response to an extract and the whole play',
       "AO2 -- Analysis of Shakespeare's language and dramatic techniques",
-      'AO3 -- Contextual integration in essay writing',
-      'AO4 -- Written accuracy under timed conditions',
+      'AO3 - Contextual integration in essay writing',
+      'AO4 - Written accuracy under timed conditions',
       'Exam technique: planning, timing, and self-assessment',
     ],
   },
@@ -1199,7 +1199,7 @@ const LESSON_PLANS: LessonPlan[] = [
       title: 'Best Line Share',
       duration: '5 minutes',
       instructions:
-        'Each student underlines their single best sentence and reads it aloud. No explanation needed -- just the sentence. Teacher notes effective examples and explains what makes them work.',
+        'Each student underlines their single best sentence and reads it aloud. No explanation needed - just the sentence. Teacher notes effective examples and explains what makes them work.',
       differentiation: {
         support: 'Read your best sentence to a partner first for confidence.',
         core: 'Read your best sentence aloud and identify the technique you used.',
@@ -1252,7 +1252,7 @@ const LESSON_PLANS: LessonPlan[] = [
     teacherNotes: [
       'This lesson bridges reading Dickens and preparing for the creative writing paper.',
       'The imitation activity is key: students who copy then rewrite internalise techniques more effectively than those who merely identify them.',
-      'Keep atmospheric music subtle -- ambient soundscapes work well.',
+      'Keep atmospheric music subtle - ambient soundscapes work well.',
       "The 'Best Line Share' plenary builds classroom community. Students begin crafting sentences with this moment in mind.",
     ],
     targetedSkills: [
@@ -1387,9 +1387,9 @@ const LESSON_PLANS: LessonPlan[] = [
       'This activity can be adapted for formal S&L assessment if recorded. Ensure students consent to recording.',
     ],
     targetedSkills: [
-      'Speaking and Listening -- sustained dramatic performance',
+      'Speaking and Listening - sustained dramatic performance',
       'Character analysis through empathy and inference',
-      'Questioning skills -- factual, inferential, and evaluative',
+      'Questioning skills - factual, inferential, and evaluative',
       'Self-assessment and peer evaluation',
       'Register and vocabulary appropriate to character',
     ],
@@ -1662,11 +1662,11 @@ const LESSON_PLANS: LessonPlan[] = [
     teacherNotes: [
       'The six-word story starter is consistently one of the most engaging activities across year groups.',
       "The 'mentor text' approach is more effective than teaching techniques in isolation.",
-      'Resist correcting poems during drafting -- creative writing needs space and safety.',
+      'Resist correcting poems during drafting - creative writing needs space and safety.',
       'The poetry slam builds confidence over time. Start with volunteers and gradually encourage wider participation.',
     ],
     targetedSkills: [
-      'Creative writing -- poetry composition',
+      'Creative writing - poetry composition',
       'Technique application from reading to writing',
       'Understanding of poetic form and structure',
       'Peer assessment and constructive feedback',
@@ -1780,7 +1780,7 @@ const LESSON_PLANS: LessonPlan[] = [
         question: "Do you think Scrooge's transformation is realistic? Explain your view.",
         lines: 6,
         modelAnswer:
-          'The transformation is psychologically unrealistic -- a lifetime of misanthropy reversed in one night. However, Dickens is writing a moral fable, not a psychological novel. The rapid change is deliberate: it shows that goodness exists within everyone, needing only the right catalyst. The supernatural framework signals fairy tale logic, not realism.',
+          'The transformation is psychologically unrealistic - a lifetime of misanthropy reversed in one night. However, Dickens is writing a moral fable, not a psychological novel. The rapid change is deliberate: it shows that goodness exists within everyone, needing only the right catalyst. The supernatural framework signals fairy tale logic, not realism.',
         marks: 6,
       },
       {
@@ -1806,8 +1806,8 @@ const LESSON_PLANS: LessonPlan[] = [
       "Dickens's own public readings of A Christmas Carol were enormously popular -- mentioning this helps students understand the novella as a performance piece.",
     ],
     targetedSkills: [
-      'AO1 -- Evaluative personal response',
-      'AO2 -- Analysis of language, tone, and structure across staves',
+      'AO1 - Evaluative personal response',
+      'AO2 - Analysis of language, tone, and structure across staves',
       "AO3 -- Victorian context and Dickens's moral purpose",
       'Evaluative essay writing',
       'Comparing different sections of a text',

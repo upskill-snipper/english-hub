@@ -878,7 +878,7 @@ export default function MarkerConsolePage() {
                   {tt(
                     t,
                     'marker.apply.consent',
-                    'I consent to The English Hub using my marking performance, feedback and qualifications to improve quality and for marketing / proof-of-quality purposes. (Optional — you can apply without ticking this.)',
+                    'I consent to The English Hub using my marking performance, feedback and qualifications to improve quality and for marketing / proof-of-quality purposes. (Optional - you can apply without ticking this.)',
                   )}
                 </span>
               </label>
@@ -1146,7 +1146,7 @@ export default function MarkerConsolePage() {
                       {tt(
                         t,
                         'marker.blind.hidden',
-                        'AI draft hidden — set your mark first, then reveal to compare.',
+                        'AI draft hidden - set your mark first, then reveal to compare.',
                       )}
                     </span>
                     <Button

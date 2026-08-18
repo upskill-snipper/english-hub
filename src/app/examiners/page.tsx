@@ -119,7 +119,7 @@ const HOW_IT_WORKS: { icon: typeof PencilLine; title: string; body: string }[] =
   {
     icon: ShieldCheck,
     title: 'Your corrections train the model',
-    body: 'Where you change the draft, you note why. That signal trains the board-specific marking model — your expertise makes every future draft sharper.',
+    body: 'Where you change the draft, you note why. That signal trains the board-specific marking model - your expertise makes every future draft sharper.',
   },
 ]
 
@@ -190,7 +190,7 @@ export default function ExaminersPage() {
             Review, correct, improve
           </h2>
           <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-muted-foreground">
-            You are an experienced examiner doing what you do best — applying the mark scheme — with
+            You are an experienced examiner doing what you do best - applying the mark scheme - with
             an AI draft taking care of the first pass.
           </p>
         </div>

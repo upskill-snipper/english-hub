@@ -42,9 +42,9 @@ interface Comparison {
 }
 
 const VERDICT: Record<Comparison['verdict'], { label: string; cls: string }> = {
-  exact: { label: 'Spot on — exact match', cls: 'text-green-700' },
-  close: { label: 'Close — within 1 mark', cls: 'text-amber-700' },
-  off: { label: 'Off — review the mark scheme', cls: 'text-red-700' },
+  exact: { label: 'Spot on - exact match', cls: 'text-green-700' },
+  close: { label: 'Close - within 1 mark', cls: 'text-amber-700' },
+  off: { label: 'Off - review the mark scheme', cls: 'text-red-700' },
   unknown: { label: 'Could not compare', cls: 'text-muted-foreground' },
 }
 

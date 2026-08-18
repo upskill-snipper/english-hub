@@ -62,7 +62,7 @@ export default async function DemoSchoolLayout({ children }: { children: React.R
       />
       <SoftwareApplicationJsonLd
         nonce={nonce}
-        name="The English Hub — school portal demo"
+        name="The English Hub - school portal demo"
         description="Interactive demo of the English Hub school portal with synthetic department data: class analytics, intervention insights, AI marking workflow and student progress."
         url="https://theenglishhub.app/demo/school"
         audience="Heads of English, school leaders, MAT leads"

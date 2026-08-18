@@ -65,7 +65,7 @@ const teachingGuide = {
     'An Inspector Calls was written by J.B. Priestley in 1945 but set in 1912, creating a deliberate dual time frame that generates dramatic irony throughout the play.',
     'Priestley was a committed democratic socialist. His wartime BBC Postscripts broadcasts reached audiences of over 16 million and called for a more just, equal post-war society.',
     'The play was first performed in Moscow in 1945 before its London premiere in 1946. Its socialist message was better received by Soviet audiences initially.',
-    'The 1912 setting places the play in the Edwardian era -- a period of rigid class hierarchy, no welfare state, no NHS, and no votes for women. The Titanic sank in April 1912, weeks after the play is set.',
+    'The 1912 setting places the play in the Edwardian era - a period of rigid class hierarchy, no welfare state, no NHS, and no votes for women. The Titanic sank in April 1912, weeks after the play is set.',
     'By 1945, Britain had endured two World Wars. The Labour landslide victory of that year and the creation of the welfare state are the political context in which Priestley wrote.',
   ],
   themes: [
@@ -156,7 +156,7 @@ const teachingGuide = {
       significance: "Sheila's moral awakening and generational shift",
     },
     {
-      quote: 'The Titanic -- she sails next week... absolutely unsinkable.',
+      quote: 'The Titanic - she sails next week... absolutely unsinkable.',
       speaker: 'Mr Birling',
       significance: "Dramatic irony that undermines Birling's authority",
     },

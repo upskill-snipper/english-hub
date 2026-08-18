@@ -97,19 +97,19 @@ const termTrend = [
 
 const recommendations = [
   {
-    text: 'Year 10 writing is closest to national average -- consider targeted intervention',
+    text: 'Year 10 writing is closest to national average - consider targeted intervention',
     type: 'warning' as const,
   },
   {
-    text: 'Year 7 reading is a strength -- maintain current approach',
+    text: 'Year 7 reading is a strength - maintain current approach',
     type: 'success' as const,
   },
   {
-    text: 'Exam Technique gap is narrowest across all subjects -- allocate additional practice sessions',
+    text: 'Exam Technique gap is narrowest across all subjects - allocate additional practice sessions',
     type: 'warning' as const,
   },
   {
-    text: 'Completion rate is 13% above national average -- strong engagement culture to build on',
+    text: 'Completion rate is 13% above national average - strong engagement culture to build on',
     type: 'success' as const,
   },
 ]

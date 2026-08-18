@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Contact The English Hub - support, school enquiries, partnerships',
     description:
-      'Get in touch with The English Hub. Support, school enquiries, partnerships and feedback — we reply within one UK working day.',
+      'Get in touch with The English Hub. Support, school enquiries, partnerships and feedback - we reply within one UK working day.',
     url: 'https://theenglishhub.app/contact',
     type: 'website',
     siteName: 'The English Hub',

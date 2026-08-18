@@ -20678,7 +20678,7 @@ export const DICTIONARY: Dictionary = {
     es: 'Organizar automáticamente',
   },
   'school.seating.color_code_by': {
-    en: 'Color Code By',
+    en: 'Colour Code By',
     ar: 'لوّن حسب',
     es: 'Codificar por color según',
   },

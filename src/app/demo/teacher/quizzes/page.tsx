@@ -326,7 +326,7 @@ export default function QuizBuilderDemoPage() {
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
                 <h2 className="text-xl font-medium text-foreground">
-                  An Inspector Calls -- Knowledge Quiz
+                  An Inspector Calls - Knowledge Quiz
                 </h2>
                 <p className="text-xs text-muted-foreground mt-1">
                   Year {yearGroup} | {difficulty} | {GENERATED_QUESTIONS.length} questions

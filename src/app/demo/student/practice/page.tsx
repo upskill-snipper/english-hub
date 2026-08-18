@@ -155,7 +155,7 @@ export default function StudentPracticeDemoPage() {
     return (
       <div className="min-h-screen bg-background text-foreground">
         <div className="max-w-4xl mx-auto px-6 py-8">
-          <DemoBanner message="Practice mode demo -- answers are not saved." />
+          <DemoBanner message="Practice mode demo - answers are not saved." />
 
           {/* Back button & timer */}
           <div className="mt-6 flex items-center justify-between">
@@ -341,7 +341,7 @@ export default function StudentPracticeDemoPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="max-w-6xl mx-auto px-6 py-8">
-        <DemoBanner message="Practice mode demo -- answers are not saved." />
+        <DemoBanner message="Practice mode demo - answers are not saved." />
 
         {/* Header */}
         <div className="mt-6 mb-8">

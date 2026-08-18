@@ -1473,7 +1473,7 @@ export default function StudentDrilldownPage() {
                 </div>
               ) : (
                 <p className="text-sm text-muted-foreground">
-                  Complete more activities to receive personalized recommendations.
+                  Complete more activities to receive personalised recommendations.
                 </p>
               )}
             </>

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   // as a full descriptive title with the primary keyword.
   title: 'About The English Hub - GCSE & IGCSE English revision platform',
   description:
-    'How The English Hub works, who built it, and why it focuses on GCSE and IGCSE English revision — including the exam boards covered and the school audience served.',
+    'How The English Hub works, who built it, and why it focuses on GCSE and IGCSE English revision - including the exam boards covered and the school audience served.',
   alternates: { canonical: 'https://theenglishhub.app/about' },
   keywords: [
     'about The English Hub',

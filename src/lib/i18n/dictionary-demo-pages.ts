@@ -910,7 +910,7 @@ export const DEMO_PAGES_DICTIONARY: Dictionary = {
     es: 'por repasar',
   },
   'demo_student.flashcards.end.keep_practicing': {
-    en: 'Keep practicing the ones you missed!',
+    en: 'Keep practising the ones you missed!',
     ar: 'كمّل تدرّب على اللي فاتك!',
     es: '¡Sigue practicando las que fallaste!',
   },

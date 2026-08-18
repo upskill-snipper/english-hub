@@ -79,11 +79,23 @@ const AMERICANISMS = [
   [/\btravel(ing|ed)\b/i, 'travelling / travelled'],
   [/\bcancel(ing|ed)\b/i, 'cancelling / cancelled'],
   [/\benrollment\b/i, 'enrolment'],
-  [/\bfulfill(s|ed|ing)?\b/i, 'fulfil / fulfils / fulfilled'],
+  // Only the base/agentive forms differ: US "fulfill/fulfills/fulfillment"
+  // vs UK "fulfil/fulfils/fulfilment". "fulfilled" and "fulfilling" double the
+  // l in BOTH dialects, so they must NOT be flagged.
+  [/\bfulfill(s|ment|ments)?\b/i, 'fulfil / fulfils / fulfilment'],
   [/\bskillful\b/i, 'skilful'],
   [/\bgotten\b/i, 'got'],
   [/\b(freshman|sophomore|middle school)\b/i, 'UK school terminology'],
   [/\bgrade (?:9th|10th|11th|12th)\b/i, 'UK year groups (Year 10, Year 11)'],
+]
+
+// Strings where an American spelling is deliberate and correct - typically
+// prose that QUOTES the American form to contrast it with the British one.
+// Kept deliberately narrow so it can never mask a genuine slip.
+const AMERICANISM_ALLOW = [
+  // The marking FAQ explains that both "colour" and "color" are accepted; it
+  // must quote both spellings to make the point.
+  /['"]colou?r['"][^.]*['"]colou?r['"]/i,
 ]
 
 const BANNED_HYPE = [
@@ -139,7 +151,7 @@ const RULES = [
     id: 'americanism',
     chrome: 'error',
     content: 'warn', // may be inside a quotation from a US text
-    test: (s) => AMERICANISMS.some(([re]) => re.test(s)),
+    test: (s) => !AMERICANISM_ALLOW.some((re) => re.test(s)) && AMERICANISMS.some(([re]) => re.test(s)),
     detail: (s) => {
       const hit = AMERICANISMS.find(([re]) => re.test(s))
       return hit ? `use "${hit[1]}"` : ''

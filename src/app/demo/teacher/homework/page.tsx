@@ -610,7 +610,7 @@ export default function HomeworkDemoPage() {
                     play.
                   </p>
                   <p>
-                    To improve: develop contextual links more fully -- the Jacobean reference needs
+                    To improve: develop contextual links more fully - the Jacobean reference needs
                     expansion. Consider the audience&apos;s reaction and explore alternative
                     interpretations to reach the top band.
                   </p>

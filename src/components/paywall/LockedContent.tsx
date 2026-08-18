@@ -46,7 +46,7 @@ export function LockedContent({
             href="/auth/register"
             className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary/90"
           >
-            Sign up free — 7-day trial, no card
+            Sign up free - 7-day trial, no card
             <ArrowRight className="size-4" aria-hidden />
           </Link>
           <Link

@@ -79,7 +79,7 @@ const TOPICS: Topic[] = [
       {
         term: 'Motif',
         definition:
-          'A recurring element -- image, idea, or symbol -- that develops or informs the major themes of a work.',
+          'A recurring element - image, idea, or symbol - that develops or informs the major themes of a work.',
       },
       {
         term: 'Denouement',
@@ -297,7 +297,7 @@ const TOPICS: Topic[] = [
       {
         term: 'Hyperbole',
         definition:
-          'Deliberate exaggeration for emphasis or dramatic effect. Not meant literally -- used to intensify emotions or make a point.',
+          'Deliberate exaggeration for emphasis or dramatic effect. Not meant literally - used to intensify emotions or make a point.',
       },
       {
         term: 'Oxymoron',
@@ -499,7 +499,7 @@ export default function StudentFlashcardsDemoPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="max-w-3xl mx-auto px-6 py-8">
-        <DemoBanner message="Flashcard demo -- progress is not saved." />
+        <DemoBanner message="Flashcard demo - progress is not saved." />
 
         {/* Header */}
         <div className="mt-6 mb-8">

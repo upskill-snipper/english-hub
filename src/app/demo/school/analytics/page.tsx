@@ -567,7 +567,7 @@ export default function AnalyticsPage() {
                       ),
                     },
                     {
-                      text: 'Year 9 engagement dipping -- review needed',
+                      text: 'Year 9 engagement dipping - review needed',
                       icon: <AlertTriangle className="w-4 h-4 text-red-400 shrink-0" />,
                     },
                   ].map((t, i) => (

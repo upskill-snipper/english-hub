@@ -80,15 +80,15 @@ const weeklyActivity = [
 ]
 
 const strengths = [
-  'Creative Writing -- students consistently outperform across all year groups',
-  'Poetry Analysis -- Year 11 and Year 13 showing strong exam-ready skills',
-  'Reading Comprehension -- Year 10 cohort achieving above national average',
+  'Creative Writing - students consistently outperform across all year groups',
+  'Poetry Analysis - Year 11 and Year 13 showing strong exam-ready skills',
+  'Reading Comprehension - Year 10 cohort achieving above national average',
 ]
 
 const improvements = [
-  'Non-fiction Writing -- Year 9 significantly below target across all classes',
-  'Shakespeare modules -- engagement dropping in Year 10, needs intervention',
-  'Grammar and Punctuation -- Years 7-8 foundation skills need reinforcement',
+  'Non-fiction Writing - Year 9 significantly below target across all classes',
+  'Shakespeare modules - engagement dropping in Year 10, needs intervention',
+  'Grammar and Punctuation - Years 7-8 foundation skills need reinforcement',
 ]
 
 const recommendations = [
@@ -96,9 +96,9 @@ const recommendations = [
     atRiskCount +
     ' at-risk students identified -- schedule 1:1 check-ins within the next week',
   'Introduce peer-tutoring for Year 9 non-fiction writing using Year 11 mentors to boost engagement and outcomes',
-  'Schedule a department CPD session on Shakespeare engagement strategies -- gamification and multimedia approaches recommended',
-  'Review homework completion patterns for Year 10B and 10D -- consider restructuring assignment deadlines',
-  'Celebrate Year 11 cohort progress publicly -- recognition drives continued engagement',
+  'Schedule a department CPD session on Shakespeare engagement strategies - gamification and multimedia approaches recommended',
+  'Review homework completion patterns for Year 10B and 10D - consider restructuring assignment deadlines',
+  'Celebrate Year 11 cohort progress publicly - recognition drives continued engagement',
 ]
 
 // Helpers
@@ -922,7 +922,7 @@ export default function ReportsPage() {
                               checked
                                 ? `${schedule.title} scheduling enabled`
                                 : `${schedule.title} scheduling disabled`,
-                              { description: 'Demo only -- no actual scheduling occurs.' },
+                              { description: 'Demo only - no actual scheduling occurs.' },
                             )
                           }}
                         />
@@ -1301,14 +1301,14 @@ export default function ReportsPage() {
                 <ul className="space-y-3 mb-6">
                   {(selectedYear <= 9
                     ? [
-                        'Non-fiction writing skills -- particularly structuring arguments and using persuasive techniques',
-                        'Spelling and vocabulary range -- below expected level for key stage transition',
-                        'Extended response stamina -- students struggling with longer written tasks',
+                        'Non-fiction writing skills - particularly structuring arguments and using persuasive techniques',
+                        'Spelling and vocabulary range - below expected level for key stage transition',
+                        'Extended response stamina - students struggling with longer written tasks',
                       ]
                     : [
-                        'Analytical essay technique -- students need more practice with PEE/PEAL paragraphs',
-                        'Unseen poetry confidence -- timed response quality drops significantly',
-                        'Exam time management -- many students not completing final questions',
+                        'Analytical essay technique - students need more practice with PEE/PEAL paragraphs',
+                        'Unseen poetry confidence - timed response quality drops significantly',
+                        'Exam time management - many students not completing final questions',
                       ]
                   ).map((w, i) => (
                     <li key={i} className="flex items-start gap-3 text-sm text-foreground/80">

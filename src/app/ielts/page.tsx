@@ -342,7 +342,7 @@ export default async function IeltsHubPage() {
             </span>
             <div className="flex-1">
               <h3 className="font-serif text-lg font-semibold text-foreground">
-                The UK Readiness programme — overview
+                The UK Readiness programme - overview
               </h3>
               <p className="mt-1 max-w-2xl text-sm leading-relaxed text-muted-foreground">
                 One page that ties the four domains together — English, application, visa &amp;
@@ -367,7 +367,7 @@ export default async function IeltsHubPage() {
                 Visa &amp; finance checklist
               </h3>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
-                Work through the UK Student-route money and document rules — maintenance funds, the
+                Work through the UK Student-route money and document rules - maintenance funds, the
                 28-day rule, CAS, TB test and ATAS — for a clear can-apply status that feeds your
                 Readiness Report.
               </p>

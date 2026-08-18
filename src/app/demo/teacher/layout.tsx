@@ -63,7 +63,7 @@ export default async function TeacherDemoLayout({ children }: { children: React.
       />
       <SoftwareApplicationJsonLd
         nonce={nonce}
-        name="The English Hub — teacher portal demo"
+        name="The English Hub - teacher portal demo"
         description="Interactive demo of the English Hub teacher portal with synthetic class data: AI-assisted essay feedback, class weaknesses analysis, homework setting and student reports."
         url="https://theenglishhub.app/demo/teacher"
         audience="English teachers, Heads of English, English department leads"

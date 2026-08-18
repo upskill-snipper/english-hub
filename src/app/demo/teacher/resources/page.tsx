@@ -519,7 +519,7 @@ export default function TeacherResourcesPage() {
             Teaching Resources Library
           </h1>
           <p className="text-muted-foreground text-lg max-w-2xl">
-            Lesson plans, worksheets, teaching guides, presentations, and mock papers -- all aligned
+            Lesson plans, worksheets, teaching guides, presentations, and mock papers - all aligned
             to UK exam boards and ready to use.
           </p>
         </div>
@@ -772,7 +772,7 @@ export default function TeacherResourcesPage() {
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8"
             >
-              Subscribe -- First Month Free
+              Subscribe - First Month Free
             </Button>
             <Button
               render={<Link href="/for-teachers/free-resources" />}

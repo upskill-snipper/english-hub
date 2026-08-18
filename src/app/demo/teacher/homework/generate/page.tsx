@@ -138,7 +138,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
       'I can use subject terminology accurately (soliloquy, metaphor, imperative, etc.)',
     ],
     extensionTasks: [
-      'Choose one quotation and write a paragraph exploring an alternative interpretation -- how might a modern audience respond differently from a Jacobean one?',
+      'Choose one quotation and write a paragraph exploring an alternative interpretation - how might a modern audience respond differently from a Jacobean one?',
       'Research the historical context of the Gunpowder Plot (1605) and write three sentences explaining how it connects to the themes of treason and deception in Macbeth.',
       'Create a quotation map for Act 1, linking five key quotes with arrows showing how they connect thematically.',
     ],
@@ -317,7 +317,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
         marks: 10,
         lines: 20,
         modelAnswer:
-          'Fog crept through the alleyways like a living thing, curling around lamp posts and smothering the weak gaslight until the street existed only as a series of amber halos suspended in grey nothing. The cobblestones glistened with frost, each one a small, treacherous mirror reflecting the darkness above. A man hurried past, his collar turned up, his breath hanging in the air like speech bubbles emptied of words. From somewhere beyond the fog, a church bell tolled -- a single, solemn note that seemed to freeze in the air before dissolving. The smell of coal smoke and something sharper -- perhaps gin, perhaps despair -- drifted from the doorways where shadows huddled. A child, barefoot, pressed against a bakery window. Inside, the warm glow of an oven. Outside, nothing but the cold, which was not merely a temperature but a presence, a companion that walked beside the poor and never left them.',
+          'Fog crept through the alleyways like a living thing, curling around lamp posts and smothering the weak gaslight until the street existed only as a series of amber halos suspended in grey nothing. The cobblestones glistened with frost, each one a small, treacherous mirror reflecting the darkness above. A man hurried past, his collar turned up, his breath hanging in the air like speech bubbles emptied of words. From somewhere beyond the fog, a church bell tolled - a single, solemn note that seemed to freeze in the air before dissolving. The smell of coal smoke and something sharper - perhaps gin, perhaps despair - drifted from the doorways where shadows huddled. A child, barefoot, pressed against a bakery window. Inside, the warm glow of an oven. Outside, nothing but the cold, which was not merely a temperature but a presence, a companion that walked beside the poor and never left them.',
       },
       {
         question:
@@ -325,7 +325,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
         marks: 10,
         lines: 20,
         modelAnswer:
-          'The room told you everything about its occupant before you met him. A single chair, positioned precisely in front of a fireplace that held no fire. A table set for one, with a plate so clean it might never have been used. The curtains, once burgundy, had faded to the colour of old wounds. Mr Hartwell sat in his chair as he sat every Christmas Day -- upright, still, and utterly alone. His hands, thin as the legs of winter birds, rested on the arms of the chair. His eyes, which had once been the blue of summer, were now grey, washed out by years of looking at nothing worth seeing. On the mantelpiece, a clock ticked. It was the loudest sound in the house. It was the only sound. Somewhere in the street below, children were singing.',
+          'The room told you everything about its occupant before you met him. A single chair, positioned precisely in front of a fireplace that held no fire. A table set for one, with a plate so clean it might never have been used. The curtains, once burgundy, had faded to the colour of old wounds. Mr Hartwell sat in his chair as he sat every Christmas Day - upright, still, and utterly alone. His hands, thin as the legs of winter birds, rested on the arms of the chair. His eyes, which had once been the blue of summer, were now grey, washed out by years of looking at nothing worth seeing. On the mantelpiece, a clock ticked. It was the loudest sound in the house. It was the only sound. Somewhere in the street below, children were singing.',
       },
       {
         question:
@@ -344,7 +344,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
       'I can write 250-350 words that demonstrate control and craftsmanship',
     ],
     extensionTasks: [
-      'Rewrite your opening paragraph in a completely different tone -- transform a gloomy scene into a joyful one, or vice versa. Annotate the changes you made and explain the effect.',
+      'Rewrite your opening paragraph in a completely different tone - transform a gloomy scene into a joyful one, or vice versa. Annotate the changes you made and explain the effect.',
       'Write a paragraph in the style of Dickens that describes your own school. Use his techniques of exaggeration, listing, and vivid characterisation.',
       'Read the opening of Stave 1 of A Christmas Carol. Identify three techniques Dickens uses that you did not include in your own writing. Write a sentence for each, applying the technique to your scene.',
     ],
@@ -379,7 +379,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
       },
       {
         question:
-          "Match each quotation to the correct character and explain what the quotation reveals about their personality or situation: (a) 'A guy needs somebody -- to be near him.' (b) 'I could get you strung up on a tree so easy.' (c) 'I ought to of shot that dog myself.' (d) 'I could live so easy and maybe have a girl.'",
+          "Match each quotation to the correct character and explain what the quotation reveals about their personality or situation: (a) 'A guy needs somebody - to be near him.' (b) 'I could get you strung up on a tree so easy.' (c) 'I ought to of shot that dog myself.' (d) 'I could live so easy and maybe have a girl.'",
         marks: 4,
         lines: 8,
         modelAnswer:
@@ -492,7 +492,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
       'I can integrate contextual understanding naturally within my analysis',
     ],
     extensionTasks: [
-      'Write a second exam paragraph answering the same question from a different angle -- choose a different key moment and analyse different methods.',
+      'Write a second exam paragraph answering the same question from a different angle - choose a different key moment and analyse different methods.',
       'Create a revision timeline of the play, plotting how the theme of guilt develops scene by scene. Use quotations at each key point.',
       "Compare Macbeth's guilt with Lady Macbeth's. Write a paragraph arguing who Shakespeare presents as more consumed by guilt, and why.",
     ],
@@ -965,7 +965,7 @@ export default function HomeworkGeneratorDemo() {
                 Generate unlimited homework in seconds.
               </p>
               <p className="text-muted-foreground text-sm mb-5">
-                Start a 7-day free trial to access the full homework generator -- every assignment
+                Start a 7-day free trial to access the full homework generator - every assignment
                 uniquely created, with mark schemes and extension tasks included. No card required
                 to start.
               </p>
