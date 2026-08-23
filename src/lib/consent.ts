@@ -1,6 +1,49 @@
 import { ConsentType, ConsentMethod } from '@prisma/client'
 import { prisma } from '@/lib/prisma'
 
+// ─── Identity resolution ────────────────────────────────────────────────
+
+/**
+ * Resolve a caller-supplied id to the Prisma `User.id` the Consent table
+ * actually references.
+ *
+ * DEFECT this fixes (2026-08-23): `Consent.userId` is a foreign key to
+ * `User.id`, but every caller - /api/consent and the signup flows - passes
+ * the SUPABASE AUTH UUID. For a Supabase-native account those are different
+ * values, so consent rows could not be written (FK violation) or read back.
+ * The practical consequence was severe: a 13-15 year-old whose guardian had
+ * approved parental consent was STILL denied AI marking, because
+ * checkMinorAIConsent also requires an AI_PROCESSING row that the ledger
+ * could never hold. checkMinorAIConsent already compensated on the READ side
+ * by trying both ids; this makes the ledger genuinely writable so the
+ * compensation is no longer load-bearing.
+ *
+ * Returns null when no ACTIVE user matches either id, so callers can fail
+ * loudly rather than writing an orphaned row.
+ */
+async function resolveUserId(userIdOrSupabaseUuid: string): Promise<string | null> {
+  // Correct column first: the Supabase uuid lives on User.supabaseUserId.
+  // findFirst (not findUnique) because that column is nullable-unique and
+  // findUnique throws when handed null/undefined.
+  try {
+    const byUuid = await prisma.user.findFirst({
+      where: { supabaseUserId: userIdOrSupabaseUuid },
+      select: { id: true },
+    })
+    if (byUuid) return byUuid.id
+  } catch {
+    // Fall through to the legacy lookup.
+  }
+
+  // Legacy/seeded rows whose primary key IS the value we were handed
+  // (e.g. the synthetic App Review account 'usr_apple_reviewer').
+  const byId = await prisma.user.findUnique({
+    where: { id: userIdOrSupabaseUuid },
+    select: { id: true },
+  })
+  return byId?.id ?? null
+}
+
 // ─── Constants ──────────────────────────────────────────────────────────
 
 export const CONSENT_TYPES = {
@@ -69,9 +112,17 @@ export async function recordConsent(
   method: ConsentMethod,
   ipAddress: string,
 ): Promise<ConsentRecordResult> {
+  const resolvedUserId = await resolveUserId(userId)
+  if (!resolvedUserId) {
+    // Fail loudly. Silently dropping a consent record would leave the user
+    // believing they had granted consent while the ledger held nothing -
+    // the exact failure mode that blocked minors from AI marking.
+    throw new Error(`Cannot record consent: no user matches id "${userId}".`)
+  }
+
   const record = await prisma.consent.create({
     data: {
-      userId,
+      userId: resolvedUserId,
       consentType,
       version,
       granted,
@@ -83,7 +134,7 @@ export async function recordConsent(
   // Write audit log
   await prisma.auditLog.create({
     data: {
-      userId,
+      userId: resolvedUserId,
       action: granted ? 'CONSENT_GRANTED' : 'CONSENT_RECORDED_NOT_GRANTED',
       resource: 'consent',
       resourceId: record.id,
@@ -113,10 +164,15 @@ export async function withdrawConsent(
     )
   }
 
+  const resolvedUserId = await resolveUserId(userId)
+  if (!resolvedUserId) {
+    throw new Error(`Cannot withdraw consent: no user matches id "${userId}".`)
+  }
+
   // Create a new withdrawal record (append-only, never update)
   const record = await prisma.consent.create({
     data: {
-      userId,
+      userId: resolvedUserId,
       consentType,
       version: POLICY_VERSIONS.TERMS, // version at time of withdrawal
       granted: false,
@@ -129,7 +185,7 @@ export async function withdrawConsent(
   // Write audit log
   await prisma.auditLog.create({
     data: {
-      userId,
+      userId: resolvedUserId,
       action: 'CONSENT_WITHDRAWN',
       resource: 'consent',
       resourceId: record.id,
@@ -148,9 +204,13 @@ export async function withdrawConsent(
  * This represents the user's current consent state.
  */
 export async function getConsents(userId: string): Promise<ConsentRecordResult[]> {
+  // Resolve to the id the Consent FK actually uses (see resolveUserId).
+  // Reading under the raw Supabase uuid silently returned an empty list.
+  const resolvedUserId = (await resolveUserId(userId)) ?? userId
+
   // Get all consent records, ordered by date descending
   const allRecords = await prisma.consent.findMany({
-    where: { userId },
+    where: { userId: resolvedUserId },
     orderBy: { grantedAt: 'desc' },
   })
 
@@ -173,8 +233,12 @@ export async function getConsents(userId: string): Promise<ConsentRecordResult[]
  * of the given type. Looks at the most recent record for that type.
  */
 export async function hasConsent(userId: string, consentType: ConsentType): Promise<boolean> {
+  // Resolve first: callers pass the Supabase auth uuid, but Consent.userId
+  // is a FK to User.id. Without this, an existing consent read as absent.
+  const resolvedUserId = (await resolveUserId(userId)) ?? userId
+
   const latestRecord = await prisma.consent.findFirst({
-    where: { userId, consentType },
+    where: { userId: resolvedUserId, consentType },
     orderBy: { grantedAt: 'desc' },
   })
 
@@ -188,8 +252,9 @@ export async function hasConsent(userId: string, consentType: ConsentType): Prom
  * ordered chronologically (oldest first). This is the full audit trail.
  */
 export async function getConsentHistory(userId: string): Promise<ConsentRecordResult[]> {
+  const resolvedUserId = (await resolveUserId(userId)) ?? userId
   return prisma.consent.findMany({
-    where: { userId },
+    where: { userId: resolvedUserId },
     orderBy: { grantedAt: 'asc' },
   })
 }

@@ -3,14 +3,12 @@
 import { useEffect, useState, useMemo } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
-import { loadAllCourses } from '@/data/course-loader'
-import type {
-  Enrolment,
-  ModuleProgress,
-  AssessmentAttempt,
-  Certificate,
-  CourseData,
-} from '@/lib/types'
+// Analytics reads course titles and module lists to label progress bars,
+// activity rows and "continue" links. It used to call `loadAllCourses()`,
+// downloading ~7.2 MB of lesson content and quiz banks on mount for that.
+import { loadCourseIndex } from '@/data/course-loader'
+import type { CourseIndexEntry } from '@/data/course-index'
+import type { Enrolment, ModuleProgress, AssessmentAttempt, Certificate } from '@/lib/types'
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -42,7 +40,8 @@ export interface WeeklyDay {
 
 export interface CourseProgress {
   courseId: string
-  course: CourseData
+  /** Metadata only - consumers render title/level/colour, never lesson bodies. */
+  course: CourseIndexEntry
   totalModules: number
   completedModules: number
   percentage: number
@@ -211,7 +210,7 @@ function calculateExamReadiness(
 
 export function useAnalytics(): AnalyticsData {
   const { user } = useAuthStore()
-  const [allCourses, setAllCourses] = useState<CourseData[]>([])
+  const [allCourses, setAllCourses] = useState<CourseIndexEntry[]>([])
   const [enrolments, setEnrolments] = useState<Enrolment[]>([])
   const [moduleProgress, setModuleProgress] = useState<ModuleProgress[]>([])
   const [assessments, setAssessments] = useState<AssessmentAttempt[]>([])
@@ -221,12 +220,12 @@ export function useAnalytics(): AnalyticsData {
   const [error, setError] = useState<string | null>(null)
 
   const courseMap = useMemo(
-    () => new Map<string, CourseData>(allCourses.map((c) => [c.id, c])),
+    () => new Map<string, CourseIndexEntry>(allCourses.map((c) => [c.id, c])),
     [allCourses],
   )
 
   useEffect(() => {
-    loadAllCourses().then(setAllCourses)
+    loadCourseIndex().then(setAllCourses)
   }, [])
 
   useEffect(() => {
@@ -326,7 +325,7 @@ export function useAnalytics(): AnalyticsData {
     let total = 0
     for (const e of enrolments) {
       const course = courseMap.get(e.course_id)
-      if (course) total += course.moduleList.length
+      if (course) total += course.moduleCount
     }
     return total
   }, [enrolments, courseMap])
@@ -379,7 +378,7 @@ export function useAnalytics(): AnalyticsData {
         const course = courseMap.get(e.course_id)
         if (!course) return null
 
-        const totalMods = course.moduleList.length
+        const totalMods = course.moduleCount
         const completedMods = moduleProgress.filter(
           (mp) => mp.course_id === e.course_id && mp.completed,
         ).length

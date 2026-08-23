@@ -25,7 +25,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { toast } from 'sonner'
-import { DEMO_STUDENTS, DEMO_CLASSES } from '@/data/demo-data'
 import DemoBanner from '@/components/demo/DemoBanner'
 import { percentageToGCSEGrade, gcseGradeColor, predictedGradeColor } from '@/lib/grades'
 import { RankBars, RadialScore, ChartFrame, GlassTooltip, GRID, AXIS } from '@/components/dataviz'
@@ -104,7 +103,7 @@ const YEAR_GROUPS: YearGroupData[] = [
       { name: 'Speaking & Listening', completionRate: 45 },
     ],
     interventions: [
-      '20 students flagged for literacy intervention -- schedule small group sessions',
+      '20 students flagged for literacy intervention - schedule small group sessions',
       '7C English underperforming: review seating plan and differentiation strategy',
       'Grammar & Punctuation module behind target - consider additional homework tasks',
     ],
@@ -180,7 +179,7 @@ const YEAR_GROUPS: YearGroupData[] = [
       { name: 'Poetry Anthology', completionRate: 44 },
     ],
     interventions: [
-      '17 students at risk ahead of GCSE option choices -- arrange parents evening',
+      '17 students at risk ahead of GCSE option choices - arrange parents evening',
       '9C English below expected progress: review scheme of work alignment',
       'Poetry Anthology completion low - deploy targeted revision resources',
     ],
@@ -220,7 +219,7 @@ const YEAR_GROUPS: YearGroupData[] = [
     ],
     interventions: [
       '16 at-risk students: deploy exam technique intervention programme',
-      '10C English Lang: below target -- arrange departmental support observation',
+      '10C English Lang: below target - arrange departmental support observation',
       'Poetry Anthology completion critically low - introduce weekly poetry sessions',
       'Schedule mock exam preparation workshops for borderline C/D students',
     ],
@@ -334,7 +333,7 @@ const YEAR_GROUPS: YearGroupData[] = [
       { name: 'Exam Technique', completionRate: 72 },
     ],
     interventions: [
-      '4 at-risk students: urgent intervention -- mock results below C grade',
+      '4 at-risk students: urgent intervention - mock results below C grade',
       'NEA Final Draft submissions overdue for 8 students - chase with deadlines',
       'Arrange A-Level revision bootcamp during Easter break',
     ],
@@ -777,7 +776,7 @@ export default function SchoolProgressPage() {
               <CardHeader className="pb-3">
                 <CardTitle className="text-sm font-medium text-muted-foreground flex items-center gap-2">
                   <Target className="h-4 w-4 text-amber-700 dark:text-amber-300" />
-                  Predicted Grades -- {activeYearData.label}
+                  Predicted Grades - {activeYearData.label}
                 </CardTitle>
               </CardHeader>
               <CardContent>

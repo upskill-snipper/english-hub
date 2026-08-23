@@ -4,7 +4,10 @@
 // Component 1: 20th Century Literature Reading + Creative Prose Writing
 // Component 2: 19th/21st Century Non-Fiction Reading + Transactional Writing
 
-import type { MockExamPaper } from './mock-exams'
+// QA 2026-08-23: repointed from the aggregator to the type-only leaf so this
+// lazy loader source cannot reach `src/data/mock-exams.ts` (which statically
+// imports every bank) if the `type` keyword is ever dropped here.
+import type { MockExamPaper } from './mock-exams/types'
 
 // ─── Component 1 Literary Extracts ────────────────────────────────────────────
 

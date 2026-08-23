@@ -1,5 +1,5 @@
 // @ts-nocheck
-import type { MockExamPaper } from '../mock-exams'
+import type { MockExamPaper } from './types'
 
 // ─── WJEC Component 2 Source Texts ──────────────────────────────────────────
 

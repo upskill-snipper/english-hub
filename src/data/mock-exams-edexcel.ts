@@ -4,7 +4,16 @@
 // 3x Paper 2 (Fiction & Imaginative Writing)
 // Code: 1EN0/01 (Paper 1) and 1EN0/02 (Paper 2)
 
-import { MockExamPaper, MockExamQuestion, MockExamSection } from './mock-exams'
+// QA 2026-08-23: this module is one of the loader's lazy sources
+// (`edexcel` in SOURCE_LOADERS). It imported its shapes from the AGGREGATOR
+// with a value-form `import { ... }`, not `import type`, so nothing but SWC's
+// type-elision stopped the "lazy" edexcel chunk re-importing
+// `src/data/mock-exams.ts` - which statically pulls every other bank, i.e. the
+// entire ~2.8 MB paper set the split was meant to remove. The file also
+// carries `// @ts-nocheck`, so tsc would never have flagged it. Point at the
+// type-only leaf module and mark it `import type` so the aggregator is
+// unreachable from this chunk by construction.
+import type { MockExamPaper, MockExamQuestion, MockExamSection } from './mock-exams/types'
 
 // ═══════════════════════════════════════════════════════════════════════════
 // PAPER 1 EXTRACTS: Non-Fiction & Transactional Writing (1EN0/01)

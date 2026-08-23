@@ -27,8 +27,6 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import DemoBanner from '@/components/demo/DemoBanner'
-import { DEMO_STUDENTS, DEMO_CLASSES } from '@/data/demo-data'
-
 // -- At-Risk Students data ---------------------------------------------------
 
 type RiskLevel = 'High' | 'Medium' | 'Low'

@@ -18,7 +18,10 @@ import {
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
-import { loadAllCourses } from '@/data/course-loader'
+// This page only needs each enrolled course's module count. It used to call
+// `loadAllCourses()`, downloading ~7.2 MB of lesson content and quiz banks on
+// mount to read `moduleList.length`.
+import { loadCourseIndex } from '@/data/course-loader'
 import { formatDuration, formatDate, cn } from '@/lib/utils'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -28,7 +31,7 @@ import { Skeleton } from '@/components/ui/skeleton'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Input } from '@/components/ui/input'
 import { ProgressBar } from '@/components/analytics/ProgressBar'
-import type { CourseData } from '@/lib/types'
+import type { CourseIndexEntry } from '@/data/course-index'
 import { useT } from '@/lib/i18n/use-t'
 
 // ── Types ────────────────────────────────────────────────────────────────────
@@ -54,7 +57,7 @@ interface ClassStats {
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
-// courseMap is built dynamically inside the component - see useMemo below
+// courseMap is built inside the data fetch, from the metadata-only course index
 
 function formatStudyTime(seconds: number): string {
   if (seconds < 60) return '<1m'
@@ -72,20 +75,9 @@ type SortDir = 'asc' | 'desc'
 export default function ClassAnalyticsPage() {
   const t = useT()
   const { user, profile, isLoading: authLoading } = useAuthStore()
-  const [allCourses, setAllCourses] = useState<CourseData[]>([])
   const [students, setStudents] = useState<StudentSummary[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-
-  const courseMap = useMemo(
-    () => new Map<string, CourseData>(allCourses.map((c) => [c.id, c])),
-    [allCourses],
-  )
-
-  // Load course data dynamically
-  useEffect(() => {
-    loadAllCourses().then(setAllCourses)
-  }, [])
   const [searchQuery, setSearchQuery] = useState('')
   const [sortField, setSortField] = useState<SortField>('name')
   const [sortDir, setSortDir] = useState<SortDir>('asc')
@@ -126,11 +118,18 @@ export default function ClassAnalyticsPage() {
 
         const studentIds = profiles.map((p) => p.id)
 
-        // Fetch all enrolments, progress for these students
-        const [enrolRes, progressRes] = await Promise.all([
+        // Course metadata is awaited alongside the queries rather than held in
+        // component state. It was previously loaded by a separate mount effect
+        // and read here via a memo, so whenever the course data resolved after
+        // this fetch every student's "total modules" was computed as 0 and the
+        // whole class showed 0% progress.
+        const [enrolRes, progressRes, courseIndex] = await Promise.all([
           supabase.from('enrolments').select('*').in('user_id', studentIds),
           supabase.from('module_progress').select('*').in('user_id', studentIds),
+          loadCourseIndex(),
         ])
+
+        const courseMap = new Map<string, CourseIndexEntry>(courseIndex.map((c) => [c.id, c]))
 
         const enrolments = enrolRes.data ?? []
         const progress = progressRes.data ?? []
@@ -145,7 +144,7 @@ export default function ClassAnalyticsPage() {
           let totalModules = 0
           for (const e of studentEnrolments) {
             const course = courseMap.get(e.course_id)
-            if (course) totalModules += course.moduleList.length
+            if (course) totalModules += course.moduleCount
           }
 
           const scores = studentProgress

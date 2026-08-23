@@ -13,7 +13,10 @@
 // Treat the extracts as fabricated stimuli; do NOT cite them as authentic
 // quotation. Re-source from primary texts before any classroom use.
 
-import type { MockExamPaper } from './mock-exams'
+// QA 2026-08-23: repointed from the aggregator to the type-only leaf so this
+// lazy loader source cannot reach `src/data/mock-exams.ts` (which statically
+// imports every bank) if the `type` keyword is ever dropped here.
+import type { MockExamPaper } from './mock-exams/types'
 
 // ─────────────────────────────────────────────────────────────────────────────
 // SHAKESPEARE & 19TH CENTURY NOVEL EXTRACTS (PAPER 1)

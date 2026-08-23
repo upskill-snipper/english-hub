@@ -444,7 +444,7 @@ export default function HomeworkDemoPage() {
                       {a.title}
                     </h3>
                     <p className="text-xs text-muted-foreground mt-0.5">
-                      {a.className} -- {a.type} -- Due: {a.dueDate}
+                      {a.className} - {a.type} - Due: {a.dueDate}
                     </p>
                   </div>
                   <ChevronRight className="h-4 w-4 text-muted-foreground group-hover:text-muted-foreground transition-colors" />

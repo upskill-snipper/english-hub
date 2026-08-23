@@ -8,7 +8,10 @@
 // pre-1900 prose) or concise placeholder summaries of copyrighted source
 // material - the mock engine uses them for practice, not republication.
 
-import type { MockExamPaper } from './mock-exams'
+// QA 2026-08-23: repointed from the aggregator to the type-only leaf so this
+// lazy loader source cannot reach `src/data/mock-exams.ts` (which statically
+// imports every bank) if the `type` keyword is ever dropped here.
+import type { MockExamPaper } from './mock-exams/types'
 
 // ─── WET01 - Poetry and Drama (AS, 2h 15m) ────────────────────────────────
 

@@ -120,7 +120,13 @@ export default function EALHubPage() {
   const baseT = useT()
   const tx = (key: string): string => {
     const entry = MKT_EAL_DICTIONARY[key]
-    if (entry) return locale === 'ar' && entry.ar ? entry.ar : entry.en
+    // 2026-08-23: the Spanish branch was missing, so a Spanish visitor got
+    // English while the es translations sat unused in the shard.
+    if (entry) {
+      if (locale === 'ar' && entry.ar) return entry.ar
+      if (locale === 'es' && entry.es) return entry.es
+      return entry.en
+    }
     return baseT(key)
   }
 

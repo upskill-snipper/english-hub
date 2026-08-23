@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { tMany } from '@/lib/i18n/t'
+import { getLocale, tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   title: 'Cookie Policy',
@@ -19,7 +19,6 @@ export default async function CookiePolicyPage() {
     'legal.cookie_policy',
     'legal.operated_by',
     'page.last_updated',
-    'cookie_policy.last_updated_value',
     'cookie_policy.s1.h2',
     'cookie_policy.s1.p1',
     'cookie_policy.s1.p2',
@@ -30,16 +29,11 @@ export default async function CookiePolicyPage() {
     'cookie_policy.s3.essential.p',
     'cookie_policy.s3.essential.li1_strong',
     'cookie_policy.s3.essential.li1_text',
-    'cookie_policy.s3.essential.li2_strong',
-    'cookie_policy.s3.essential.li2_text',
     'cookie_policy.s3.functional.h3',
     'cookie_policy.s3.functional.p',
     'cookie_policy.s3.functional.li1_strong',
     'cookie_policy.s3.functional.li1_text',
-    'cookie_policy.s3.functional.li2_strong',
-    'cookie_policy.s3.functional.li2_text',
     'cookie_policy.s3.analytics.h3',
-    'cookie_policy.s3.analytics.p',
     'cookie_policy.s3.third_party.h3',
     'cookie_policy.s3.third_party.p',
     'cookie_policy.s3.third_party.li1_strong',
@@ -67,12 +61,7 @@ export default async function CookiePolicyPage() {
     'cookie_policy.s4.dur_60d',
     'cookie_policy.s4.purp_sb_auth',
     'cookie_policy.s4.purp_sb_pkce',
-    'cookie_policy.s4.purp_csrf',
     'cookie_policy.s4.purp_board',
-    'cookie_policy.s4.purp_theme',
-    'cookie_policy.s4.purp_sentry',
-    'cookie_policy.s4.purp_ga',
-    'cookie_policy.s4.purp_ga_session',
     'cookie_policy.s4.purp_stripe_mid',
     'cookie_policy.s4.purp_stripe_sid',
     'cookie_policy.s4.purp_rewardful',
@@ -121,7 +110,6 @@ export default async function CookiePolicyPage() {
   const title = next()
   const operatedBy = next()
   const lastUpdatedLabel = next()
-  const lastUpdatedValue = next()
   const s1H2 = next()
   const s1P1 = next()
   const s1P2 = next()
@@ -132,16 +120,11 @@ export default async function CookiePolicyPage() {
   const s3EssP = next()
   const s3EssLi1S = next()
   const s3EssLi1T = next()
-  const s3EssLi2S = next()
-  const s3EssLi2T = next()
   const s3FuncH3 = next()
   const s3FuncP = next()
   const s3FuncLi1S = next()
   const s3FuncLi1T = next()
-  const s3FuncLi2S = next()
-  const s3FuncLi2T = next()
   const s3AnaH3 = next()
-  const s3AnaP = next()
   const s3TpH3 = next()
   const s3TpP = next()
   const s3TpLi1S = next()
@@ -169,12 +152,7 @@ export default async function CookiePolicyPage() {
   const dur60d = next()
   const purpSbAuth = next()
   const purpSbPkce = next()
-  const purpCsrf = next()
   const purpBoard = next()
-  const purpTheme = next()
-  const purpSentry = next()
-  const purpGa = next()
-  const purpGaSession = next()
   const purpStripeMid = next()
   const purpStripeSid = next()
   const purpRewardful = next()
@@ -200,7 +178,11 @@ export default async function CookiePolicyPage() {
   const s7Li1S = next()
   const s7Li1T = next()
   const s7Li2S = next()
-  const s7Li2T = next()
+  // Superseded by s7Li2TOverride below (the dictionary copy names a `theme`
+  // cookie that does not exist). The next() call must stay - this reader is
+  // positional, so dropping it would shift every key after it.
+  const _s7Li2T = next()
+  void _s7Li2T
   const s7Li3S = next()
   const s7Li3T = next()
   const s7Li4S = next()
@@ -209,13 +191,157 @@ export default async function CookiePolicyPage() {
   const s8P1 = next()
   const s8P2Pre = next()
   const s8P2S = next()
-  const s8P2Post = next()
+  // Superseded by s8P2PostOverride below (the dictionary copy asserts prior
+  // consent for cookies the code sets without it). The next() call must stay -
+  // this reader is positional.
+  const _s8P2Post = next()
+  void _s8P2Post
   const s8P3Pre = next()
   const s9H2 = next()
   const s9P = next()
   const s10H2 = next()
   const s10PPre = next()
   const s10PLink = next()
+
+  // ── Trilingual copy for the cookies the master dictionary does not cover ──
+  //
+  // WHY: the published policy documented cookies this application no longer
+  // sets, and hid every cookie it does set. Verified against the code:
+  //   • `_ga` / `_ga_*` - gone. src/lib/gtag.ts no longer injects gtag.js;
+  //     GA4 now runs through a server-side Measurement Protocol relay
+  //     (src/app/api/ga4/track/route.ts) which sets our own `eh_ga_cid`.
+  //   • `csrf_token` - never existed as a cookie. CSRF is enforced by the
+  //     Origin / Sec-Fetch-Site checks in src/middleware.ts; the HMAC helper
+  //     in src/lib/security.ts has no caller outside its own test.
+  //   • `theme` - next-themes persists to localStorage, not a cookie
+  //     (src/components/theme/theme-provider.tsx).
+  //   • `sentryReplaySession` - replay is off: instrumentation-client.ts sets
+  //     replaysSessionSampleRate and replaysOnErrorSampleRate to 0.
+  //   • `board-preference` - the cookie is actually named `english-hub-board`
+  //     (src/middleware.ts, src/app/api/board/route.ts).
+  // Undisclosed cookies we do set: `eh-cookie-consent`, `eh_ga_cid`,
+  // `eh-lang`, `teh_aff`. Documenting phantom cookies while concealing real
+  // ones is a UK PECR reg. 6 / UK GDPR Art. 13 transparency failure, and this
+  // is a product used by 13-18 year olds.
+  //
+  // These replacement strings live here rather than in the i18n dictionary
+  // because dictionary.ts is being rewritten by a parallel workstream and no
+  // cookie-specific shard exists to extend. They still resolve per locale so
+  // Arabic and Spanish readers are not dropped back to English on a legal
+  // page. Lift them into the dictionary once it is free.
+  const locale = await getLocale()
+  const pick = (m: Record<'en' | 'ar' | 'es', string>) => m[locale]
+
+  // WHY: the dictionary still carries "March 2026" for this policy's revision
+  // date, but the cookie table below was rebuilt today against the code. A
+  // legal notice that has materially changed must not advertise a stale
+  // revision date, so the shown date is set here alongside the new copy.
+  // Move it back to `cookie_policy.last_updated_value` when dictionary.ts is
+  // free, and keep the two in step on the next revision.
+  const lastUpdatedValue = pick({
+    en: 'August 2026',
+    ar: 'أغسطس ٢٠٢٦',
+    es: 'Agosto de 2026',
+  })
+
+  const purpConsent = pick({
+    en: 'Records the choice you made in the cookie banner, so the banner is not shown again and our server can tell whether analytics are allowed to run',
+    ar: 'يسجّل الاختيار اللي سويته في إشعار الكوكيز، عشان ما يطلع لك مرة ثانية وعشان السيرفر يعرف إذا مسموح للتحليلات تشتغل',
+    es: 'Registra la elección que hiciste en el aviso de cookies, para no volver a mostrarlo y para que nuestro servidor sepa si la analítica puede ejecutarse',
+  })
+  const purpLang = pick({
+    en: 'Remembers whether you are reading the site in English, Arabic or Spanish',
+    ar: 'يتذكّر إذا كنت تقرأ الموقع بالإنجليزي أو العربي أو الإسباني',
+    es: 'Recuerda si estás leyendo el sitio en inglés, árabe o español',
+  })
+  const purpGaCid = pick({
+    en: 'Randomly generated visitor identifier. Our server relays it to Google Analytics 4 so repeat visits are counted once. Set only after you accept analytics cookies, and it contains no personal data',
+    ar: 'معرّف زائر عشوائي. سيرفرنا يمرّره لـ Google Analytics 4 عشان الزيارات المتكررة تنحسب مرة وحدة. ما ينحط إلا بعد ما توافق على كوكيز التحليلات، وما فيه أي بيانات شخصية',
+    es: 'Identificador de visitante generado al azar. Nuestro servidor lo transmite a Google Analytics 4 para que las visitas repetidas se cuenten una sola vez. Solo se establece después de que aceptes las cookies de analítica y no contiene datos personales',
+  })
+  const purpAffiliate = pick({
+    en: 'Records which partner link brought you to the site, so that partner can be credited if you later subscribe',
+    ar: 'يسجّل أي رابط شريك جابك للموقع، عشان الشريك ياخذ حقه لو اشتركت بعدين',
+    es: 'Registra qué enlace de socio te trajo al sitio, para que ese socio reciba el crédito si más adelante te suscribes',
+  })
+  const dur30d = pick({ en: '30 days', ar: '30 يوم', es: '30 días' })
+  const typeMarketing = pick({ en: 'Marketing', ar: 'تسويق', es: 'Marketing' })
+
+  const s3EssLi2S = pick({
+    en: 'Cookie consent record',
+    ar: 'سجل الموافقة على الكوكيز',
+    es: 'Registro de consentimiento de cookies',
+  })
+  const s3EssLi2T = pick({
+    en: ' - stores the choice you made in the cookie banner so we can tell, on the server, whether analytics may run. Without it we would have to ask you on every page.',
+    ar: ' - يحفظ الاختيار اللي سويته في إشعار الكوكيز عشان نعرف من السيرفر إذا مسموح تشتغل التحليلات. لولاه چان لازم نسألك في كل صفحة.',
+    es: ' - guarda la elección que hiciste en el aviso de cookies para que podamos saber, en el servidor, si la analítica puede ejecutarse. Sin ella tendríamos que preguntártelo en cada página.',
+  })
+  const s3FuncLi2S = pick({
+    en: 'Language preference',
+    ar: 'تفضيل اللغة',
+    es: 'Preferencia de idioma',
+  })
+  const s3FuncLi2T = pick({
+    en: ' - remembers whether you read the site in English, Arabic or Spanish so pages load in your language.',
+    ar: ' - يتذكّر إذا كنت تقرأ الموقع بالإنجليزي أو العربي أو الإسباني عشان الصفحات تفتح بلغتك.',
+    es: ' - recuerda si lees el sitio en inglés, árabe o español para que las páginas se carguen en tu idioma.',
+  })
+  const s3AnaP = pick({
+    en: "We use Google Analytics 4 to understand how visitors use the site, such as which pages are most popular. Google's own tracking script is not loaded on this site. Instead, once you accept analytics cookies, our server sends the events to Google Analytics using a first-party identifier we set ourselves (eh_ga_cid), and we do not pass on your IP address. We also use Sentry to record application errors so we can fix them; the Sentry browser client sets no cookies here and session replay is switched off. Neither service uses this information for advertising.",
+    ar: 'نستخدم Google Analytics 4 عشان نفهم كيف الزوار يستخدمون الموقع، مثلاً أي صفحات هي الأكثر زيارة. سكربت التتبع الخاص بـ Google ما ينحمّل في هالموقع. بدال ذلك، بعد ما توافق على كوكيز التحليلات، سيرفرنا يرسل الأحداث لـ Google Analytics عن طريق معرّف من عندنا نحطه إحنا (eh_ga_cid)، وما نمرّر عنوان الـ IP حقك. ونستخدم بعد Sentry عشان نسجّل أخطاء التطبيق ونقدر نصلحها؛ عميل Sentry في المتصفح ما يحط أي كوكيز هنا، وإعادة تشغيل الجلسة مطفية. ولا وحدة من الخدمتين تستخدم هالمعلومات للإعلانات.',
+    es: 'Usamos Google Analytics 4 para entender cómo se utiliza el sitio, por ejemplo qué páginas son más visitadas. El script de seguimiento de Google no se carga en este sitio. En su lugar, una vez que aceptas las cookies de analítica, nuestro servidor envía los eventos a Google Analytics usando un identificador propio que establecemos nosotros (eh_ga_cid), y no transmitimos tu dirección IP. También usamos Sentry para registrar errores de la aplicación y poder corregirlos; el cliente de Sentry en el navegador no establece ninguna cookie aquí y la repetición de sesión está desactivada. Ninguno de los dos servicios usa esta información con fines publicitarios.',
+  })
+  const s3AffH3 = pick({
+    en: '3.5 Our own affiliate cookie',
+    ar: '3.5 كوكي الشركاء حقنا',
+    es: '3.5 Nuestra propia cookie de afiliados',
+  })
+  const s3AffP = pick({
+    en: 'Some people find The English Hub through a partner link. When you arrive on a link that carries a partner code, we set our own first-party cookie, teh_aff, so that partner can be credited if you later subscribe. It records the partner code and when you arrived. It is not used for advertising and we do not use it to build a profile of you.',
+    ar: 'في ناس توصل The English Hub عن طريق رابط شريك. لما تدخل من رابط فيه كود شريك، نحط كوكي من عندنا اسمه teh_aff عشان الشريك ياخذ حقه لو اشتركت بعدين. يسجّل كود الشريك ووقت دخولك. ما نستخدمه للإعلانات ولا نبني فيه ملف عنك.',
+    es: 'Algunas personas llegan a The English Hub a través del enlace de un socio. Cuando entras por un enlace que lleva un código de socio, establecemos nuestra propia cookie de origen, teh_aff, para que ese socio reciba el crédito si más adelante te suscribes. Registra el código del socio y el momento en que llegaste. No se usa con fines publicitarios ni para crear un perfil sobre ti.',
+  })
+  // WHY (QA 2026-08-23): `cookie_policy.s7.li2_text` still said blocking
+  // functional cookies loses "your exam board and theme preferences". Theme is
+  // persisted to localStorage by next-themes, not to a cookie, so that claim
+  // was wrong AND it directly contradicted the local-storage note added lower
+  // down on this same page. The functional cookies we actually set are
+  // `english-hub-board` and `eh-lang`, so the sentence now names those.
+  const s7Li2TOverride = pick({
+    en: ' means your exam board and language choices will not be saved between visits, so you will have to set them again each time.',
+    ar: ' يعني اختيارك للمنهج ولغة الموقع ما راح ينحفظ بين الزيارات، فلازم تختارهم من جديد كل مرة.',
+    es: ' significa que tu elección de junta examinadora y de idioma no se guardará entre visitas, así que tendrás que seleccionarlas de nuevo cada vez.',
+  })
+
+  // WHY (QA 2026-08-23): `cookie_policy.s8.p2_post` claimed "For all other
+  // cookies - including functional, analytics, and third-party cookies - we
+  // obtain your consent before placing them on your device." The code does not
+  // do that for every one of them. Verified:
+  //   • analytics (`eh_ga_cid`) IS consent-gated - src/app/api/ga4/track/route.ts
+  //     returns 204 unless `eh-cookie-consent=all`, and the Rewardful script
+  //     only mounts inside ConsentGatedAnalytics.
+  //   • `english-hub-board` / `eh-lang` are written at the moment the visitor
+  //     makes that choice (src/middleware.ts, language-toggle.tsx).
+  //   • `teh_aff` is written by applyAffiliateTracking() on any `?ref=` request
+  //     with NO consent check at all (src/middleware-affiliate.ts), so it can
+  //     land before the banner is answered.
+  // Asserting blanket prior consent on a legal page for a children's product,
+  // when the code sets a marketing cookie without it, is a false compliance
+  // claim. The replacement states what the code actually does. The underlying
+  // gap (gating teh_aff on consent) is reported to the lead - it lives in
+  // middleware files outside this change's ownership.
+  const s8P2PostOverride = pick({
+    en: " (essential cookies) without asking first, because they are needed for the service you asked for. Analytics cookies are only set after you accept them in the cookie banner. Our own exam board and language cookies are written at the moment you make that choice. The affiliate cookie, teh_aff, is set as soon as you arrive on a link carrying a partner code, which can happen before you have answered the banner; you can block or delete it in your browser at any time. You can change your analytics choice at any time by clearing this site's cookies.",
+    ar: ' (الكوكيز الضرورية) من دون ما نسألك أول، لأنها لازمة للخدمة اللي طلبتها. كوكيز التحليلات ما تنحط إلا بعد ما توافق عليها في إشعار الكوكيز. وكوكيز المنهج واللغة حقنا تنكتب بنفس اللحظة اللي تختار فيها. أما كوكي الشركاء teh_aff فينحط أول ما تدخل من رابط فيه كود شريك، وهذا ممكن يصير قبل ما ترد على الإشعار؛ تقدر تمنعه أو تمسحه من المتصفح في أي وقت. وتقدر تغيّر اختيارك للتحليلات في أي وقت بمسح كوكيز الموقع.',
+    es: ' (cookies esenciales) sin preguntarte antes, porque son necesarias para el servicio que has solicitado. Las cookies de analítica solo se establecen después de que las aceptes en el aviso de cookies. Nuestras propias cookies de junta examinadora e idioma se escriben en el momento en que haces esa elección. La cookie de afiliados, teh_aff, se establece en cuanto llegas por un enlace que lleva un código de socio, lo que puede ocurrir antes de que hayas respondido al aviso; puedes bloquearla o eliminarla en tu navegador en cualquier momento. Puedes cambiar tu elección sobre la analítica en cualquier momento borrando las cookies de este sitio.',
+  })
+
+  const noteLocalStorage = pick({
+    en: 'Two further choices are kept in your browser local storage rather than in a cookie: your light or dark mode setting, and a copy of your cookie preferences. Local storage is not sent to our servers, and clearing your site data removes both.',
+    ar: 'في اختيارين ثانيين محفوظين في التخزين المحلي للمتصفح مو في كوكي: إعداد الوضع الفاتح أو الداكن، ونسخة من تفضيلاتك للكوكيز. التخزين المحلي ما ينرسل لسيرفراتنا، ولو مسحت بيانات الموقع بينمسحون الاثنين.',
+    es: 'Otras dos opciones se guardan en el almacenamiento local de tu navegador y no en una cookie: tu ajuste de modo claro u oscuro y una copia de tus preferencias de cookies. El almacenamiento local no se envía a nuestros servidores y, si borras los datos del sitio, se eliminan ambos.',
+  })
 
   return (
     <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
@@ -307,6 +433,12 @@ export default async function CookiePolicyPage() {
               .
             </li>
           </ul>
+
+          {/* Our own affiliate cookie. WHY: teh_aff is first-party (we set it
+              in src/middleware-affiliate.ts), so it does not belong under
+              "third-party cookies" and was previously not disclosed at all. */}
+          <h3 className="mt-4 text-lg font-medium text-foreground">{s3AffH3}</h3>
+          <p className="mt-2 text-muted-foreground leading-relaxed">{s3AffP}</p>
         </section>
 
         {/* Cookie table */}
@@ -339,47 +471,51 @@ export default async function CookiePolicyPage() {
                   <td className="px-4 py-3">{durSession}</td>
                   <td className="px-4 py-3">{typeEss}</td>
                 </tr>
+                {/* eh-cookie-consent: src/lib/gtag.ts:91, Max-Age 60*60*24*365. */}
                 <tr>
-                  <td className="px-4 py-3 font-mono text-xs">csrf_token</td>
+                  <td className="px-4 py-3 font-mono text-xs">eh-cookie-consent</td>
                   <td className="px-4 py-3">The English Hub</td>
-                  <td className="px-4 py-3">{purpCsrf}</td>
-                  <td className="px-4 py-3">{durSession}</td>
+                  <td className="px-4 py-3">{purpConsent}</td>
+                  <td className="px-4 py-3">{dur1y}</td>
                   <td className="px-4 py-3">{typeEss}</td>
                 </tr>
+                {/* Real name is english-hub-board, not "board-preference":
+                    src/middleware.ts:407 and src/app/api/board/route.ts:25,
+                    maxAge 60*60*24*365. */}
                 <tr>
-                  <td className="px-4 py-3 font-mono text-xs">board-preference</td>
+                  <td className="px-4 py-3 font-mono text-xs">english-hub-board</td>
                   <td className="px-4 py-3">The English Hub</td>
                   <td className="px-4 py-3">{purpBoard}</td>
                   <td className="px-4 py-3">{dur1y}</td>
                   <td className="px-4 py-3">{typeFunc}</td>
                 </tr>
+                {/* eh-lang: src/components/layout/language-toggle.tsx:68,
+                    max-age 60*60*24*365. */}
                 <tr>
-                  <td className="px-4 py-3 font-mono text-xs">theme</td>
+                  <td className="px-4 py-3 font-mono text-xs">eh-lang</td>
                   <td className="px-4 py-3">The English Hub</td>
-                  <td className="px-4 py-3">{purpTheme}</td>
+                  <td className="px-4 py-3">{purpLang}</td>
                   <td className="px-4 py-3">{dur1y}</td>
                   <td className="px-4 py-3">{typeFunc}</td>
                 </tr>
+                {/* eh_ga_cid replaces the _ga / _ga_* rows: the GA4 relay in
+                    src/app/api/ga4/track/route.ts:164 sets it with
+                    CID_MAX_AGE = 60*60*24*365*2 (2 years). */}
                 <tr>
-                  <td className="px-4 py-3 font-mono text-xs">sentryReplaySession</td>
-                  <td className="px-4 py-3">Sentry</td>
-                  <td className="px-4 py-3">{purpSentry}</td>
-                  <td className="px-4 py-3">{durSession}</td>
-                  <td className="px-4 py-3">{typeAna}</td>
-                </tr>
-                <tr>
-                  <td className="px-4 py-3 font-mono text-xs">_ga</td>
-                  <td className="px-4 py-3">Google Analytics</td>
-                  <td className="px-4 py-3">{purpGa}</td>
+                  <td className="px-4 py-3 font-mono text-xs">eh_ga_cid</td>
+                  <td className="px-4 py-3">The English Hub</td>
+                  <td className="px-4 py-3">{purpGaCid}</td>
                   <td className="px-4 py-3">{dur2y}</td>
                   <td className="px-4 py-3">{typeAna}</td>
                 </tr>
+                {/* teh_aff: src/lib/affiliate/tracking-cookie.ts:19-20,
+                    maxAge 60*60*24*30 (30 days). */}
                 <tr>
-                  <td className="px-4 py-3 font-mono text-xs">_ga_*</td>
-                  <td className="px-4 py-3">Google Analytics</td>
-                  <td className="px-4 py-3">{purpGaSession}</td>
-                  <td className="px-4 py-3">{dur2y}</td>
-                  <td className="px-4 py-3">{typeAna}</td>
+                  <td className="px-4 py-3 font-mono text-xs">teh_aff</td>
+                  <td className="px-4 py-3">The English Hub</td>
+                  <td className="px-4 py-3">{purpAffiliate}</td>
+                  <td className="px-4 py-3">{dur30d}</td>
+                  <td className="px-4 py-3">{typeMarketing}</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3 font-mono text-xs">__stripe_mid</td>
@@ -406,6 +542,10 @@ export default async function CookiePolicyPage() {
             </table>
           </div>
           <p className="mt-2 text-sm text-muted-foreground">{noteWildcard}</p>
+          {/* WHY: the table previously listed `theme` as a cookie. next-themes
+              persists to localStorage, so it is disclosed here as storage
+              rather than being claimed as a cookie that does not exist. */}
+          <p className="mt-2 text-sm text-muted-foreground">{noteLocalStorage}</p>
         </section>
 
         {/* Cookie duration */}
@@ -484,7 +624,7 @@ export default async function CookiePolicyPage() {
             </li>
             <li>
               <strong>{s7Li2S}</strong>
-              {s7Li2T}
+              {s7Li2TOverride}
             </li>
             <li>
               <strong>{s7Li3S}</strong>
@@ -504,7 +644,7 @@ export default async function CookiePolicyPage() {
           <p className="mt-2 text-muted-foreground leading-relaxed">
             {s8P2Pre}
             <strong>{s8P2S}</strong>
-            {s8P2Post}
+            {s8P2PostOverride}
           </p>
           <p className="mt-2 text-muted-foreground leading-relaxed">
             {s8P3Pre}

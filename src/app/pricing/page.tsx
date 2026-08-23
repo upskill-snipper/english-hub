@@ -13,7 +13,7 @@ import { TrustBox } from '@/components/trustpilot/TrustBox'
 import { VAT_LABEL } from '@/lib/copy/pricing'
 import { TrackEvent } from '@/components/analytics/TrackEvent'
 import { AffiliateCodeField, useAffiliateCodeField } from '@/components/billing/AffiliateCodeField'
-import { FAQPageJsonLd } from '@/components/seo/json-ld'
+import { BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/json-ld'
 import { useT } from '@/lib/i18n/use-t'
 import {
   CheckCircle,
@@ -502,6 +502,16 @@ function PricingContent() {
           Client component, so no nonce is passed (nonce prop is optional;
           middleware handles per-request CSP nonces on the response). */}
       <FAQPageJsonLd faqs={faqItems.map((i) => ({ question: i.q, answer: i.a }))} />
+      {/* BreadcrumbList - /pricing carried no breadcrumb structured data, so
+          it declared no position in the site hierarchy (the /schools page
+          already follows this Home -> Section pattern). Names stay canonical
+          English so they match the URLs they point at. */}
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Pricing', url: 'https://theenglishhub.app/pricing' },
+        ]}
+      />
       {/* Background gradient effects */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-primary/5 rounded-full blur-3xl" />

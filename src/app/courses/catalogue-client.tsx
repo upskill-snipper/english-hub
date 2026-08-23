@@ -14,8 +14,11 @@ import {
   Star,
   ArrowUpDown,
 } from 'lucide-react'
-import { loadAllCourses } from '@/data/course-loader'
-import type { CourseData } from '@/data/courses'
+// Cards need titles, boards, tiers, colours and counts - never lesson bodies.
+// This island used to call `loadAllCourses()`, which downloaded every module's
+// full lesson content and quiz bank (~7.2 MB) to render ~87 cards.
+import { loadCourseIndex } from '@/data/course-loader'
+import type { CourseIndexEntry } from '@/data/course-index'
 import { useAuthStore } from '@/store/auth-store'
 import { useBoard } from '@/hooks/useBoard'
 import type { ExamBoard } from '@/hooks/useBoard'
@@ -77,7 +80,7 @@ const COURSES_PER_PAGE = 9
    Helpers
    ================================================================ */
 
-function deriveCategory(course: CourseData): CategoryId {
+function deriveCategory(course: CourseIndexEntry): CategoryId {
   const id = course.id.toLowerCase()
   const title = course.title.toLowerCase()
 
@@ -129,7 +132,7 @@ function deriveCategory(course: CourseData): CategoryId {
   return 'language'
 }
 
-function extractBoards(courses: CourseData[]): string[] {
+function extractBoards(courses: CourseIndexEntry[]): string[] {
   const boards = new Set<string>()
   for (const c of courses) if (c.board) boards.add(c.board)
   return Array.from(boards).sort()
@@ -167,7 +170,7 @@ function boardSlugToDisplayNames(board: ExamBoard): string[] {
 export default function CourseCatalogueClient({
   initialCourses = [],
 }: {
-  initialCourses?: CourseData[]
+  initialCourses?: CourseIndexEntry[]
 } = {}) {
   const t = useT()
   const { user } = useAuthStore()
@@ -211,7 +214,7 @@ export default function CourseCatalogueClient({
 
   // Seeded from the server render so the first paint shows real content
   // (SEO item #23 - no more "Loading..." flash for crawlers or humans).
-  const [courses, setCourses] = useState<CourseData[]>(initialCourses)
+  const [courses, setCourses] = useState<CourseIndexEntry[]>(initialCourses)
   const [isLoading, setIsLoading] = useState(initialCourses.length === 0)
 
   const boardType = getBoardType(userBoard)
@@ -226,15 +229,14 @@ export default function CourseCatalogueClient({
   const hasManuallySelectedBoard = useRef(false)
 
   useEffect(() => {
-    // If the server already seeded us with courses, we still call
-    // loadAllCourses() - it's memoised, so this is effectively a no-op at
-    // runtime but ensures parity with any late-registering course modules
-    // on the client.
+    // The server seeds `initialCourses` on /courses, so this fallback only
+    // fires if the island is rendered without them. It loads the metadata-only
+    // index, not full course data.
     if (initialCourses.length > 0) {
       setIsLoading(false)
       return
     }
-    loadAllCourses().then((data) => {
+    loadCourseIndex().then((data) => {
       setCourses(data)
       setIsLoading(false)
     })
@@ -306,7 +308,7 @@ export default function CourseCatalogueClient({
         sorted.sort((a, b) => b.title.localeCompare(a.title))
         break
       case 'modules':
-        sorted.sort((a, b) => b.moduleList.length - a.moduleList.length)
+        sorted.sort((a, b) => b.moduleCount - a.moduleCount)
         break
     }
     return sorted
@@ -323,7 +325,7 @@ export default function CourseCatalogueClient({
   /* ── grouped by category ───────────────────────────────────── */
 
   const groupedByCategory = useMemo(() => {
-    const g: Record<CategoryId, CourseData[]> = {
+    const g: Record<CategoryId, CourseIndexEntry[]> = {
       all: [],
       language: [],
       literature: [],
@@ -663,7 +665,7 @@ export default function CourseCatalogueClient({
 interface CategorySectionProps {
   category: (typeof CATEGORIES)[number]
   categoryLabel: string
-  courses: CourseData[]
+  courses: CourseIndexEntry[]
   expanded: boolean
   onToggle: () => void
   showAll?: boolean
@@ -725,12 +727,14 @@ function CategorySection({
    ================================================================ */
 
 interface CourseCardProps {
-  course: CourseData
+  course: CourseIndexEntry
 }
 
 const CourseCard = memo(function CourseCard({ course }: CourseCardProps) {
   const t = useT()
-  const totalLessons = course.moduleList.reduce((sum, mod) => sum + (mod.quiz?.length ?? 0), 0)
+  // Previously summed `mod.quiz.length` across every module, which is only
+  // possible if the full quiz banks are in memory. The index precomputes it.
+  const totalLessons = course.quizCount
   const categoryId = deriveCategory(course)
   const categoryLabel =
     categoryId === 'language'
@@ -791,7 +795,7 @@ const CourseCard = memo(function CourseCard({ course }: CourseCardProps) {
             <div className="mt-3 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs text-muted-foreground">
               <span className="inline-flex items-center gap-1">
                 <BookOpen className="h-3 w-3 shrink-0" />
-                {course.moduleList.length} {t('course.modules')}
+                {course.moduleCount} {t('course.modules')}
               </span>
               <span className="inline-flex items-center gap-1">
                 <Clock className="h-3 w-3 shrink-0" />

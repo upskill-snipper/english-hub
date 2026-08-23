@@ -17,8 +17,12 @@ import { Separator } from '@/components/ui/separator'
 import { useT } from '@/lib/i18n/use-t'
 
 interface ConsentDetails {
-  student_name: string
-  school_name: string
+  /** Null when the student's profile could not be read - the row is then hidden. */
+  student_name: string | null
+  /** Null for a direct signup: there is no school to name. */
+  school_name: string | null
+  /** 'school' = a school asked; 'self_serve' = the student signed up directly. */
+  context?: 'school' | 'self_serve'
   parent_email: string
   status: string
 }
@@ -147,6 +151,12 @@ export default function ConsentPage() {
 
   if (!details) return null
 
+  // A self-serve request comes from a student who signed up directly, so
+  // every school-specific line below has to be swapped out. `context` is
+  // authoritative; the school_name check keeps older links (issued before
+  // the field existed) rendering the school wording they were written for.
+  const isSelfServe = details.context === 'self_serve' || (!details.context && !details.school_name)
+
   return (
     <div className="min-h-screen flex items-center justify-center px-4 py-12 bg-background">
       <div className="w-full max-w-2xl">
@@ -159,7 +169,7 @@ export default function ConsentPage() {
             </div>
             <CardTitle className="text-2xl">{t('consent.form.page_title')}</CardTitle>
             <CardDescription>
-              {t('brand.name')} &mdash; {t('consent.form.subtitle')}
+              {t('brand.name')} - {t('consent.form.subtitle')}
             </CardDescription>
           </CardHeader>
 
@@ -170,17 +180,27 @@ export default function ConsentPage() {
               </Alert>
             )}
 
-            {/* Student & School Info */}
-            <div className="rounded-lg border border-border p-4 space-y-2">
-              <div className="flex justify-between text-sm">
-                <span className="text-muted-foreground">{t('consent.form.student_label')}</span>
-                <span className="font-medium text-foreground">{details.student_name}</span>
+            {/* Student & school info. Each row renders only when we hold the
+                value: a student who signed up directly has no school, and the
+                page previously printed the invented label "Unknown School" for
+                them - fabricated detail on a consent form a parent is being
+                asked to rely on. */}
+            {(details.student_name || details.school_name) && (
+              <div className="rounded-lg border border-border p-4 space-y-2">
+                {details.student_name && (
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">{t('consent.form.student_label')}</span>
+                    <span className="font-medium text-foreground">{details.student_name}</span>
+                  </div>
+                )}
+                {details.school_name && (
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">{t('consent.form.school_label')}</span>
+                    <span className="font-medium text-foreground">{details.school_name}</span>
+                  </div>
+                )}
               </div>
-              <div className="flex justify-between text-sm">
-                <span className="text-muted-foreground">{t('consent.form.school_label')}</span>
-                <span className="font-medium text-foreground">{details.school_name}</span>
-              </div>
-            </div>
+            )}
 
             <Separator />
 
@@ -204,7 +224,10 @@ export default function ConsentPage() {
               </h3>
               <ul className="text-sm text-muted-foreground space-y-1.5 pl-6 list-disc">
                 <li>{t('consent.form.use_item_personalise')}</li>
-                <li>{t('consent.form.use_item_teacher_monitor')}</li>
+                {/* Teacher/administrator monitoring only happens when a school
+                    asked for the consent. A direct signup has no teacher, so
+                    listing it would describe processing that does not occur. */}
+                {!isSelfServe && <li>{t('consent.form.use_item_teacher_monitor')}</li>}
                 <li>{t('consent.form.use_item_anon_analytics')}</li>
                 <li>{t('legal.no_sell_data')}</li>
               </ul>
@@ -216,27 +239,25 @@ export default function ConsentPage() {
               </h3>
               <ul className="text-sm text-muted-foreground space-y-1.5 pl-6 list-disc">
                 <li>
-                  <strong>{t('legal.right_access')}</strong> &mdash;{' '}
-                  {t('consent.form.right_access_desc')}
+                  <strong>{t('legal.right_access')}</strong> - {t('consent.form.right_access_desc')}
                 </li>
                 <li>
-                  <strong>{t('legal.right_correct')}</strong> &mdash;{' '}
+                  <strong>{t('legal.right_correct')}</strong> -{' '}
                   {t('consent.form.right_correct_desc')}
                 </li>
                 <li>
-                  <strong>{t('legal.right_delete')}</strong> &mdash;{' '}
-                  {t('consent.form.right_delete_desc')}
+                  <strong>{t('legal.right_delete')}</strong> - {t('consent.form.right_delete_desc')}
                 </li>
                 <li>
-                  <strong>{t('legal.right_withdraw')}</strong> &mdash;{' '}
+                  <strong>{t('legal.right_withdraw')}</strong> -{' '}
                   {t('consent.form.right_withdraw_desc')}
                 </li>
                 <li>
-                  <strong>{t('consent.form.right_portability')}</strong> &mdash;{' '}
+                  <strong>{t('consent.form.right_portability')}</strong> -{' '}
                   {t('consent.form.right_portability_desc')}
                 </li>
                 <li>
-                  <strong>{t('legal.right_complain')}</strong> &mdash;{' '}
+                  <strong>{t('legal.right_complain')}</strong> -{' '}
                   {t('consent.form.right_complain_desc')}
                 </li>
               </ul>
@@ -244,7 +265,11 @@ export default function ConsentPage() {
 
             <div className="rounded-lg border border-border bg-muted/30 p-4">
               <p className="text-sm text-muted-foreground">
-                {t('consent.form.retention_note')}{' '}
+                {/* The school-flow retention note talks about enrolment at a
+                    school, which is not true of a direct signup. */}
+                {isSelfServe
+                  ? t('legal_long.consent_self_serve.retention_note')
+                  : t('consent.form.retention_note')}{' '}
                 <span className="text-foreground font-medium">support@theenglishhub.app</span>.
               </p>
             </div>
@@ -281,7 +306,9 @@ export default function ConsentPage() {
               </Button>
             </div>
             <p className="text-xs text-muted-foreground text-center">
-              {t('consent.form.footer_disclaimer')}
+              {isSelfServe
+                ? t('legal_long.consent_self_serve.footer_disclaimer')
+                : t('consent.form.footer_disclaimer')}
             </p>
           </CardFooter>
         </Card>

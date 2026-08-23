@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import Link from "next/link"
+import { useState } from 'react'
+import Link from 'next/link'
 import {
   Upload,
   Download,
@@ -13,26 +13,74 @@ import {
   Copy,
   Check,
   Sparkles,
-} from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { useToast } from "@/components/ui/Toast"
+} from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
+import { useToast } from '@/components/ui/Toast'
 
 const MOCK_IMPORT_RESULTS = [
-  { name: "Alice Cooper", email: "acooper@riverside.demo", password: "Sunset42!", yearGroup: 10, status: "created" as const },
-  { name: "Ben Harris", email: "bharris@riverside.demo", password: "Mountain7#", yearGroup: 10, status: "created" as const },
-  { name: "Charlotte Adams", email: "cadams@riverside.demo", password: "River99$", yearGroup: 11, status: "created" as const },
-  { name: "David Wong", email: "dwong@riverside.demo", password: "Castle55@", yearGroup: 9, status: "created" as const },
-  { name: "Eleanor Park", email: "epark@riverside.demo", password: "Breeze33!", yearGroup: 10, status: "created" as const },
-  { name: "Freddie Scott", email: "fscott@riverside.demo", password: "Leaf88#", yearGroup: 11, status: "created" as const },
-  { name: "Grace Patel", email: "gpatel@riverside.demo", password: "Cloud27$", yearGroup: 9, status: "created" as const },
-  { name: "Harry Thompson", email: "hthompson@riverside.demo", password: "Stone44@", yearGroup: 10, status: "created" as const },
+  {
+    name: 'Alice Cooper',
+    email: 'acooper@riverside.demo',
+    password: 'Sunset42!',
+    yearGroup: 10,
+    status: 'created' as const,
+  },
+  {
+    name: 'Ben Harris',
+    email: 'bharris@riverside.demo',
+    password: 'Mountain7#',
+    yearGroup: 10,
+    status: 'created' as const,
+  },
+  {
+    name: 'Charlotte Adams',
+    email: 'cadams@riverside.demo',
+    password: 'River99$',
+    yearGroup: 11,
+    status: 'created' as const,
+  },
+  {
+    name: 'David Wong',
+    email: 'dwong@riverside.demo',
+    password: 'Castle55@',
+    yearGroup: 9,
+    status: 'created' as const,
+  },
+  {
+    name: 'Eleanor Park',
+    email: 'epark@riverside.demo',
+    password: 'Breeze33!',
+    yearGroup: 10,
+    status: 'created' as const,
+  },
+  {
+    name: 'Freddie Scott',
+    email: 'fscott@riverside.demo',
+    password: 'Leaf88#',
+    yearGroup: 11,
+    status: 'created' as const,
+  },
+  {
+    name: 'Grace Patel',
+    email: 'gpatel@riverside.demo',
+    password: 'Cloud27$',
+    yearGroup: 9,
+    status: 'created' as const,
+  },
+  {
+    name: 'Harry Thompson',
+    email: 'hthompson@riverside.demo',
+    password: 'Stone44@',
+    yearGroup: 10,
+    status: 'created' as const,
+  },
 ]
 
 const MOCK_ERRORS = [
-  { row: 12, name: "J. Smith", reason: "Duplicate email address" },
-  { row: 25, name: "K. Brown", reason: "Missing year group" },
-  { row: 38, name: "L. Taylor", reason: "Invalid email format" },
+  { row: 12, name: 'J. Smith', reason: 'Duplicate email address' },
+  { row: 25, name: 'K. Brown', reason: 'Missing year group' },
+  { row: 38, name: 'L. Taylor', reason: 'Invalid email format' },
 ]
 
 export default function DemoImportPage() {
@@ -53,11 +101,11 @@ export default function DemoImportPage() {
   function handleDrop(e: React.DragEvent) {
     e.preventDefault()
     setIsDragOver(false)
-    toast("info", "Import is available with a registered school account")
+    toast('info', 'Import is available with a registered school account')
   }
 
   function handleFileClick() {
-    toast("info", "Import is available with a registered school account")
+    toast('info', 'Import is available with a registered school account')
   }
 
   function handleCopyCredentials(index: number) {
@@ -75,7 +123,8 @@ export default function DemoImportPage() {
       <div>
         <h1 className="text-2xl font-bold tracking-tight">Bulk Import</h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          Import students and teachers from a spreadsheet. Accounts are created automatically with access to AQA GCSE English content.
+          Import students and teachers from a spreadsheet. Accounts are created automatically with
+          access to AQA GCSE English content.
         </p>
       </div>
 
@@ -88,12 +137,12 @@ export default function DemoImportPage() {
           <h2 className="text-base font-semibold">Download Template</h2>
         </div>
         <p className="mb-4 text-sm text-muted-foreground">
-          Download the CSV template, fill it with your student or teacher data, then upload it below.
-          Imported students will be enrolled with your school's AQA specification.
+          Download the CSV template, fill it with your student or teacher data, then upload it
+          below. Imported students will be enrolled with your school's AQA specification.
         </p>
         <Button variant="outline" render={<a href="/api/school/export/template" download />}>
-            <FileSpreadsheet className="h-4 w-4" />
-            Download CSV Template
+          <FileSpreadsheet className="h-4 w-4" />
+          Download CSV Template
         </Button>
       </section>
 
@@ -113,17 +162,13 @@ export default function DemoImportPage() {
           onClick={handleFileClick}
           className={`cursor-pointer rounded-lg border-2 border-dashed p-10 text-center transition-colors ${
             isDragOver
-              ? "border-primary bg-primary/5"
-              : "border-border hover:border-muted-foreground/40"
+              ? 'border-primary bg-primary/5'
+              : 'border-border hover:border-muted-foreground/40'
           }`}
         >
           <Upload className="mx-auto h-10 w-10 text-muted-foreground/50" />
-          <p className="mt-3 text-sm font-medium">
-            Drop your CSV file here or click to browse
-          </p>
-          <p className="mt-1 text-xs text-muted-foreground">
-            Supports .csv files up to 5MB
-          </p>
+          <p className="mt-3 text-sm font-medium">Drop your CSV file here or click to browse</p>
+          <p className="mt-1 text-xs text-muted-foreground">Supports .csv files up to 5MB</p>
         </div>
       </section>
 
@@ -178,17 +223,9 @@ export default function DemoImportPage() {
         {/* Credentials Table */}
         <div className="mb-4 flex items-center justify-between">
           <h3 className="text-sm font-semibold">Created Accounts (showing 8 of 47)</h3>
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => setShowPasswords(!showPasswords)}
-          >
-            {showPasswords ? (
-              <EyeOff className="h-3.5 w-3.5" />
-            ) : (
-              <Eye className="h-3.5 w-3.5" />
-            )}
-            {showPasswords ? "Hide Passwords" : "Show Passwords"}
+          <Button variant="ghost" size="sm" onClick={() => setShowPasswords(!showPasswords)}>
+            {showPasswords ? <EyeOff className="h-3.5 w-3.5" /> : <Eye className="h-3.5 w-3.5" />}
+            {showPasswords ? 'Hide Passwords' : 'Show Passwords'}
           </Button>
         </div>
 
@@ -198,9 +235,13 @@ export default function DemoImportPage() {
               <tr className="border-b border-border bg-muted/50">
                 <th className="px-4 py-2.5 text-left font-medium text-muted-foreground">Name</th>
                 <th className="px-4 py-2.5 text-left font-medium text-muted-foreground">Email</th>
-                <th className="px-4 py-2.5 text-left font-medium text-muted-foreground">Password</th>
+                <th className="px-4 py-2.5 text-left font-medium text-muted-foreground">
+                  Password
+                </th>
                 <th className="px-4 py-2.5 text-left font-medium text-muted-foreground">Year</th>
-                <th className="px-4 py-2.5 text-right font-medium text-muted-foreground">Actions</th>
+                <th className="px-4 py-2.5 text-right font-medium text-muted-foreground">
+                  Actions
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -209,15 +250,11 @@ export default function DemoImportPage() {
                   <td className="px-4 py-2.5 font-medium">{student.name}</td>
                   <td className="px-4 py-2.5 text-muted-foreground">{student.email}</td>
                   <td className="px-4 py-2.5 font-mono text-xs">
-                    {showPasswords ? student.password : "************"}
+                    {showPasswords ? student.password : '************'}
                   </td>
                   <td className="px-4 py-2.5 text-muted-foreground">Y{student.yearGroup}</td>
                   <td className="px-4 py-2.5 text-right">
-                    <Button
-                      variant="ghost"
-                      size="icon-xs"
-                      onClick={() => handleCopyCredentials(i)}
-                    >
+                    <Button variant="ghost" size="icon-xs" onClick={() => handleCopyCredentials(i)}>
                       {copiedRow === i ? (
                         <Check className="h-3.5 w-3.5 text-green-500" />
                       ) : (
@@ -236,9 +273,7 @@ export default function DemoImportPage() {
           <p className="text-xs text-muted-foreground">
             Passwords are auto-generated. Students can change them after first login.
           </p>
-          <Button
-            onClick={() => toast("info", "Register to use import")}
-          >
+          <Button onClick={() => toast('info', 'Register to use import')}>
             <Download className="h-4 w-4" />
             Download Login Details
           </Button>
@@ -249,11 +284,18 @@ export default function DemoImportPage() {
       <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 p-6 text-center">
         <Sparkles className="mx-auto h-6 w-6 text-clay-600" />
         <h3 className="mt-2 text-base font-semibold">Ready to import your students?</h3>
+        {/* Honesty fix (2026-08-23 QA): this promised "Register Your School"
+            and linked to /for-schools/register, which is only a redirect.
+            Schools cannot self-register - a school is provisioned by an
+            operator after a signed deal - so the CTA was selling a form that
+            does not exist. Same correction already applied to /demo,
+            /demo/school and the demo school sidebar; this surface was missed. */}
         <p className="mt-1 text-sm text-muted-foreground">
-          Register your school to bulk-import students and teachers with automatic account creation.
+          Bulk import of students and teachers is set up with you once your school is on board. Book
+          a call and we will get your school started.
         </p>
-        <Button render={<Link href="/for-schools/register" />} className="mt-4">
-            Register Your School
+        <Button render={<Link href="/school-pilot" />} className="mt-4">
+          Book a Call
         </Button>
       </div>
     </div>

@@ -50,15 +50,21 @@ import {
   isGCSEYearGroup,
   formatScoreForYearGroup,
 } from '@/lib/grades'
-import {
-  DEMO_STUDENTS,
-  type DemoStudent,
-  type DemoModuleProgress,
-  type DemoMockExam,
-  type DemoEssay,
-  type DemoQuizAttempt,
-  type DemoActivity,
-} from '@/data/demo-data'
+import type {
+  DemoStudent,
+  DemoModuleProgress,
+  DemoMockExam,
+  DemoEssay,
+  DemoQuizAttempt,
+  DemoActivity,
+} from '@/data/demo/types'
+// This screen renders a student's modules, mocks, essays, quizzes and activity,
+// so it needs the full roster - but the roster is ~320 KB, and importing it at
+// module scope used to put all of it into this route's First Load JS (and into
+// the ~19 other demo routes that never render any of it). It is now loaded as a
+// separate async chunk once the page mounts.
+import { useDemoStudents } from '@/data/demo/use-demo-students'
+import { DemoRosterGate } from '@/app/demo/_components/DemoRosterGate'
 import ReadingProfileCard from '@/components/ReadingProfileCard'
 
 // ---------------------------------------------------------------------------
@@ -485,26 +491,29 @@ function generateStudentFromId(id: string): DemoStudent {
 // All student IDs for prev/next navigation
 // ---------------------------------------------------------------------------
 
-function getAllStudentIds(): string[] {
-  const ids = DEMO_STUDENTS.map((s) => s.id)
-  const extraCount = 342 - DEMO_STUDENTS.length
+// Takes the roster as an argument rather than reading a module-scope import, so
+// the data can arrive lazily instead of being bundled into this route.
+function getAllStudentIds(roster: DemoStudent[]): string[] {
+  const ids = roster.map((s) => s.id)
+  const extraCount = 342 - roster.length
   for (let i = 0; i < extraCount; i++) {
-    ids.push('s-' + String(DEMO_STUDENTS.length + i + 1).padStart(3, '0'))
+    ids.push('s-' + String(roster.length + i + 1).padStart(3, '0'))
   }
   return ids
 }
 
 // ---------------------------------------------------------------------------
-// Compute class average from DEMO_STUDENTS
+// Compute class average across the roster
 // ---------------------------------------------------------------------------
 
-function getClassAverage() {
-  const n = DEMO_STUDENTS.length
+function getClassAverage(roster: DemoStudent[]) {
+  const n = roster.length
   return {
-    progress: Math.round(DEMO_STUDENTS.reduce((a, s) => a + s.overallProgress, 0) / n),
-    score: Math.round(DEMO_STUDENTS.reduce((a, s) => a + s.averageScore, 0) / n),
-    assignments: Math.round(DEMO_STUDENTS.reduce((a, s) => a + s.assignmentsCompleted, 0) / n),
-    modules: Math.round(DEMO_STUDENTS.reduce((a, s) => a + s.modulesCompleted, 0) / n),
+    progress: Math.round(roster.reduce((a, s) => a + s.overallProgress, 0) / n),
+    score: Math.round(roster.reduce((a, s) => a + s.averageScore, 0) / n),
+    assignments: Math.round(roster.reduce((a, s) => a + s.assignmentsCompleted, 0) / n),
+    modules: Math.round(roster.reduce((a, s) => a + s.modulesCompleted, 0) / n),
+    workingAtGrade: Math.round(roster.reduce((a, s) => a + s.workingAtGrade, 0) / n),
   }
 }
 
@@ -599,14 +608,21 @@ export default function SchoolStudentDetailPage() {
   const params = useParams()
   const studentId = params.id as string
 
-  const allIds = useMemo(() => getAllStudentIds(), [])
-  const classAvg = useMemo(() => getClassAverage(), [])
+  const { students: roster, failed } = useDemoStudents()
 
-  const student: DemoStudent = useMemo(() => {
-    const found = DEMO_STUDENTS.find((s) => s.id === studentId)
+  const allIds = useMemo(() => (roster ? getAllStudentIds(roster) : []), [roster])
+  const classAvg = useMemo(() => (roster ? getClassAverage(roster) : null), [roster])
+
+  const student: DemoStudent | null = useMemo(() => {
+    if (!roster) return null
+    const found = roster.find((s) => s.id === studentId)
     if (found) return found
     return generateStudentFromId(studentId)
-  }, [studentId])
+  }, [roster, studentId])
+
+  // Every hook above runs unconditionally; the roster arrives as a lazy chunk, so
+  // the gate has to sit after them and before anything that dereferences it.
+  if (!student || !classAvg) return <DemoRosterGate failed={failed} />
 
   const currentIndex = allIds.indexOf(studentId)
   const prevId = currentIndex > 0 ? allIds[currentIndex - 1] : null
@@ -1729,9 +1745,7 @@ export default function SchoolStudentDetailPage() {
                 {
                   label: 'Working At Grade',
                   studentVal: student.workingAtGrade,
-                  avg: Math.round(
-                    DEMO_STUDENTS.reduce((a, s) => a + s.workingAtGrade, 0) / DEMO_STUDENTS.length,
-                  ),
+                  avg: classAvg.workingAtGrade,
                   unit: '',
                 },
                 {

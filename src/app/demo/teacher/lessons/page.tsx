@@ -248,7 +248,7 @@ const LESSON_PLANS: LessonPlan[] = [
       title: "Inspector's Greatest Hits: Quote Ranking",
       duration: '8 minutes',
       instructions:
-        "Display six key Inspector quotations on the board. Students rank them from most to least powerful in pairs, justifying their top choice to the class. Teacher uses responses to establish the Inspector's rhetorical range -- from calm questioning to passionate moral pronouncement. Discuss: does the Inspector speak like a real police officer or something else entirely?",
+        "Display six key Inspector quotations on the board. Students rank them from most to least powerful in pairs, justifying their top choice to the class. Teacher uses responses to establish the Inspector's rhetorical range - from calm questioning to passionate moral pronouncement. Discuss: does the Inspector speak like a real police officer or something else entirely?",
       differentiation: {
         support:
           'Provide a glossary card defining key terms (rhetorical question, imperative, declarative) alongside the quotations so students can label techniques as they rank.',
@@ -337,7 +337,7 @@ const LESSON_PLANS: LessonPlan[] = [
           "Explain why Priestley might have chosen to make the Inspector's identity ambiguous. How does this ambiguity serve the play's message?",
         lines: 5,
         modelAnswer:
-          "By leaving the Inspector's identity unresolved, Priestley prevents the audience from dismissing him as merely a police officer doing his job. His supernatural quality transforms him into something larger -- a collective conscience, a moral force, or even a divine judge. This ambiguity reinforces Priestley's socialist message: responsibility cannot be confined to a legal framework; it is a moral imperative that transcends ordinary authority.",
+          "By leaving the Inspector's identity unresolved, Priestley prevents the audience from dismissing him as merely a police officer doing his job. His supernatural quality transforms him into something larger - a collective conscience, a moral force, or even a divine judge. This ambiguity reinforces Priestley's socialist message: responsibility cannot be confined to a legal framework; it is a moral imperative that transcends ordinary authority.",
         marks: 5,
       },
       {
@@ -361,7 +361,7 @@ const LESSON_PLANS: LessonPlan[] = [
       "Students often describe the Inspector as 'mysterious' without analysing how Priestley creates that mystery through language choices. Push them towards specific technique identification.",
       'The comparison activity works best when students physically place the two extracts side by side and draw arrows between contrasting features.',
       "If time allows, show a short clip from the 2015 BBC adaptation to compare how different actors interpret the Inspector's tone.",
-      "The ambiguity question in the worksheet is an excellent stretch task -- encourage students to consider multiple interpretations without insisting on one 'correct' answer.",
+      "The ambiguity question in the worksheet is an excellent stretch task - encourage students to consider multiple interpretations without insisting on one 'correct' answer.",
     ],
     targetedSkills: [
       'AO1 - Personal response supported by textual reference',
@@ -423,7 +423,7 @@ const LESSON_PLANS: LessonPlan[] = [
         title: "Close Reading: 'If it were done when 'tis done' (Act 1, Scene 7)",
         duration: '25 minutes',
         instructions:
-          "Teacher reads the soliloquy aloud twice -- once for understanding, once for effect. Students follow with annotated copies. Teacher models annotation of the first four lines, identifying: conditional language ('if'), euphemism ('it' for murder), the imagery of consequence ('trammel up'), and the fear of divine judgement ('judgement here'). Students then work in pairs to annotate the remainder, focusing on: imagery of ambition ('vaulting ambition, which o'erleaps itself'), religious language ('angels, trumpet-tongued'), and the metaphor of the poisoned chalice. Class shares annotations; teacher builds a collective annotated version on the board.",
+          "Teacher reads the soliloquy aloud twice - once for understanding, once for effect. Students follow with annotated copies. Teacher models annotation of the first four lines, identifying: conditional language ('if'), euphemism ('it' for murder), the imagery of consequence ('trammel up'), and the fear of divine judgement ('judgement here'). Students then work in pairs to annotate the remainder, focusing on: imagery of ambition ('vaulting ambition, which o'erleaps itself'), religious language ('angels, trumpet-tongued'), and the metaphor of the poisoned chalice. Class shares annotations; teacher builds a collective annotated version on the board.",
         differentiation: {
           support:
             'Provide a guided annotation sheet with numbered lines, pre-highlighted key phrases, and prompt questions beside each highlight.',
@@ -483,7 +483,7 @@ const LESSON_PLANS: LessonPlan[] = [
           "Analyse the image of 'vaulting ambition, which o'erleaps itself / And falls on the other'. What does this reveal about Macbeth's self-awareness?",
         lines: 5,
         modelAnswer:
-          "The metaphor of 'vaulting ambition' presents ambition as a horse that jumps too high and falls. The verb 'o'erleaps' suggests excess -- ambition that goes beyond reasonable limits. Crucially, Macbeth recognises this danger in himself, demonstrating a tragic self-awareness: he knows his ambition will destroy him, yet he proceeds regardless. This makes his downfall more poignant because it is not born of ignorance but of a conscious surrender to desire.",
+          "The metaphor of 'vaulting ambition' presents ambition as a horse that jumps too high and falls. The verb 'o'erleaps' suggests excess - ambition that goes beyond reasonable limits. Crucially, Macbeth recognises this danger in himself, demonstrating a tragic self-awareness: he knows his ambition will destroy him, yet he proceeds regardless. This makes his downfall more poignant because it is not born of ignorance but of a conscious surrender to desire.",
         marks: 5,
       },
       {
@@ -491,7 +491,7 @@ const LESSON_PLANS: LessonPlan[] = [
           'How does Shakespeare use religious imagery in the soliloquy to create a sense of moral horror?',
         lines: 5,
         modelAnswer:
-          "Shakespeare fills the soliloquy with religious imagery -- 'angels, trumpet-tongued', 'heaven's cherubin' -- to frame Duncan's murder as a sin against divine order. For a Jacobean audience who believed in the Divine Right of Kings, this imagery would have intensified the horror: Macbeth is not merely killing a man but defying God. The image of 'tears shall drown the wind' suggests cosmic grief, as if nature itself will weep at the transgression.",
+          "Shakespeare fills the soliloquy with religious imagery - 'angels, trumpet-tongued', 'heaven's cherubin' - to frame Duncan's murder as a sin against divine order. For a Jacobean audience who believed in the Divine Right of Kings, this imagery would have intensified the horror: Macbeth is not merely killing a man but defying God. The image of 'tears shall drown the wind' suggests cosmic grief, as if nature itself will weep at the transgression.",
         marks: 5,
       },
       {
@@ -507,12 +507,12 @@ const LESSON_PLANS: LessonPlan[] = [
           'How would a Jacobean audience have responded differently to this soliloquy compared with a modern audience? Use your knowledge of context to explain.',
         lines: 6,
         modelAnswer:
-          "A Jacobean audience, who believed in the Divine Right of Kings and the literal reality of divine punishment, would have experienced genuine dread during this soliloquy. Macbeth's contemplation of regicide was not merely a dramatic plot point but a violation of sacred order. A modern audience, less bound by these beliefs, might focus more on the psychological realism of Macbeth's conflict -- seeing him as a study in ambition and moral weakness rather than a sinner inviting divine wrath.",
+          "A Jacobean audience, who believed in the Divine Right of Kings and the literal reality of divine punishment, would have experienced genuine dread during this soliloquy. Macbeth's contemplation of regicide was not merely a dramatic plot point but a violation of sacred order. A modern audience, less bound by these beliefs, might focus more on the psychological realism of Macbeth's conflict - seeing him as a study in ambition and moral weakness rather than a sinner inviting divine wrath.",
         marks: 5,
       },
     ],
     teacherNotes: [
-      "The anonymous starter works best with a strict 'no judgement' rule -- students engage more freely when they know their response is genuinely private.",
+      "The anonymous starter works best with a strict 'no judgement' rule - students engage more freely when they know their response is genuinely private.",
       "Reading the soliloquy aloud is essential. Many students struggle with Shakespeare's syntax on first reading; hearing it spoken with dramatic emphasis unlocks meaning.",
       'The support annotation sheet should highlight specific words rather than whole lines - this prevents overwhelm and teaches students to zoom in on individual word choices.',
       'The sympathy spectrum is a powerful formative assessment tool: photograph the board and return to it after Act 5 to track how opinions have shifted.',
@@ -615,7 +615,7 @@ const LESSON_PLANS: LessonPlan[] = [
       title: "Scrooge's Defence Lawyer",
       duration: '5 minutes',
       instructions:
-        "One student is appointed Scrooge's defence lawyer. They must argue in 60 seconds that Scrooge is a product of his society, not inherently evil. Class votes: guilty or not guilty? Teacher links this to Dickens's ultimate message -- if Scrooge can change, anyone can.",
+        "One student is appointed Scrooge's defence lawyer. They must argue in 60 seconds that Scrooge is a product of his society, not inherently evil. Class votes: guilty or not guilty? Teacher links this to Dickens's ultimate message - if Scrooge can change, anyone can.",
       differentiation: {
         support: 'Provide two defence arguments on cards for the volunteer to use.',
         core: 'The volunteer prepares their own 60-second defence.',
@@ -630,7 +630,7 @@ const LESSON_PLANS: LessonPlan[] = [
           'What is a semantic field? Identify the dominant semantic field in the opening description of Scrooge and explain its effect.',
         lines: 5,
         modelAnswer:
-          "A semantic field is a group of words related to the same theme or concept. In the opening description of Scrooge, Dickens uses a semantic field of cold and winter: 'cold', 'froze', 'icy', 'nipped'. This creates the impression that Scrooge is emotionally frozen -- incapable of warmth, compassion, or human connection.",
+          "A semantic field is a group of words related to the same theme or concept. In the opening description of Scrooge, Dickens uses a semantic field of cold and winter: 'cold', 'froze', 'icy', 'nipped'. This creates the impression that Scrooge is emotionally frozen - incapable of warmth, compassion, or human connection.",
         marks: 4,
       },
       {
@@ -638,7 +638,7 @@ const LESSON_PLANS: LessonPlan[] = [
           "Analyse the simile 'hard and sharp as flint'. What does this reveal about Scrooge's character?",
         lines: 5,
         modelAnswer:
-          "The simile compares Scrooge to flint, a stone that is both hard and capable of producing sparks when struck. 'Hard' suggests emotional rigidity and a refusal to feel compassion, while 'sharp' implies he is cutting and unpleasant. However, the fact that flint produces fire when struck could foreshadow Scrooge's capacity for transformation -- he needs the right catalyst to ignite change.",
+          "The simile compares Scrooge to flint, a stone that is both hard and capable of producing sparks when struck. 'Hard' suggests emotional rigidity and a refusal to feel compassion, while 'sharp' implies he is cutting and unpleasant. However, the fact that flint produces fire when struck could foreshadow Scrooge's capacity for transformation - he needs the right catalyst to ignite change.",
         marks: 4,
       },
       {
@@ -675,7 +675,7 @@ const LESSON_PLANS: LessonPlan[] = [
     targetedSkills: [
       'AO1 - Critical response supported by textual reference',
       'AO2 - Analysis of language including semantic fields and simile',
-      "AO3 -- Victorian context and Dickens's social purpose",
+      "AO3 - Victorian context and Dickens's social purpose",
       'Exam paragraph writing with integrated AOs',
       'Close reading and annotation',
     ],
@@ -717,7 +717,7 @@ const LESSON_PLANS: LessonPlan[] = [
       title: 'Dream Board: What Does Success Look Like?',
       duration: '7 minutes',
       instructions:
-        "Students write or draw their personal vision of 'success' on a card in 90 seconds. Teacher collects and displays a selection. Discuss: do all of these dreams require the same resources? Are some people's dreams harder to achieve than others, and why? Bridge to the novel: in 1930s America, the American Dream promised that anyone could succeed through hard work -- Steinbeck questions whether this was ever true.",
+        "Students write or draw their personal vision of 'success' on a card in 90 seconds. Teacher collects and displays a selection. Discuss: do all of these dreams require the same resources? Are some people's dreams harder to achieve than others, and why? Bridge to the novel: in 1930s America, the American Dream promised that anyone could succeed through hard work - Steinbeck questions whether this was ever true.",
       differentiation: {
         support:
           "Provide a prompt list: 'Success could mean: a home, a job, freedom, family, money, safety, respect.'",
@@ -793,7 +793,7 @@ const LESSON_PLANS: LessonPlan[] = [
           "How does Steinbeck use George and Lennie's dream of the farm to create emotional impact?",
         lines: 5,
         modelAnswer:
-          "Steinbeck uses the repeated telling of the dream as a ritual between George and Lennie, building emotional investment in both the characters and the reader. The dream is described in sensory detail -- rabbits, a garden, living 'off the fatta the lan'' -- making it feel tangible. By making the dream so vivid and then destroying it, Steinbeck maximises the emotional devastation.",
+          "Steinbeck uses the repeated telling of the dream as a ritual between George and Lennie, building emotional investment in both the characters and the reader. The dream is described in sensory detail - rabbits, a garden, living 'off the fatta the lan'' - making it feel tangible. By making the dream so vivid and then destroying it, Steinbeck maximises the emotional devastation.",
         marks: 5,
       },
       {
@@ -817,14 +817,14 @@ const LESSON_PLANS: LessonPlan[] = [
           'Is Steinbeck criticising the American Dream itself, or the society that makes it impossible? Justify your answer.',
         lines: 6,
         modelAnswer:
-          "Steinbeck appears to critique the society rather than the dream itself. The dream of the farm is presented as genuinely beautiful and humanising -- it gives George and Lennie purpose, companionship, and hope. What destroys it is not the dream's inherent impossibility but the economic structures of the Great Depression and the violence of men like Curley.",
+          "Steinbeck appears to critique the society rather than the dream itself. The dream of the farm is presented as genuinely beautiful and humanising - it gives George and Lennie purpose, companionship, and hope. What destroys it is not the dream's inherent impossibility but the economic structures of the Great Depression and the violence of men like Curley.",
         marks: 6,
       },
     ],
     teacherNotes: [
-      "Students often romanticise the dream without recognising Steinbeck's critique. Push them to consider why the dream fails -- the answer is always social and economic, not personal.",
+      "Students often romanticise the dream without recognising Steinbeck's critique. Push them to consider why the dream fails - the answer is always social and economic, not personal.",
       'The character grid activity generates excellent comparative material that students can return to when revising.',
-      "Crooks's monologue in Chapter 4 is the most powerful evidence that Steinbeck sees the dream as illusory -- use it as extension reading.",
+      "Crooks's monologue in Chapter 4 is the most powerful evidence that Steinbeck sees the dream as illusory - use it as extension reading.",
       'The cyclical structure question is an excellent gateway to discussing AO2 (form and structure) beyond language analysis.',
     ],
     targetedSkills: [
@@ -949,7 +949,7 @@ const LESSON_PLANS: LessonPlan[] = [
         question: 'Compare how the form of each poem contributes to its message about power.',
         lines: 6,
         modelAnswer:
-          "Shelley's disrupted sonnet form mirrors the destruction of Ozymandias's ordered empire. Browning's unbroken dramatic monologue, with relentless enjambment, mirrors the Duke's controlling personality -- he never pauses or allows interruption. Both poets use form to embody their theme.",
+          "Shelley's disrupted sonnet form mirrors the destruction of Ozymandias's ordered empire. Browning's unbroken dramatic monologue, with relentless enjambment, mirrors the Duke's controlling personality - he never pauses or allows interruption. Both poets use form to embody their theme.",
         marks: 6,
       },
       {
@@ -970,7 +970,7 @@ const LESSON_PLANS: LessonPlan[] = [
     teacherNotes: [
       'Students frequently struggle with comparison, reverting to writing about each poem separately. The framework is essential scaffolding.',
       'The A3 side-by-side annotation is significantly more effective than working with separate sheets.',
-      "Be prepared to explain the Duke of Ferrara's historical context -- students are often shocked to learn the poem is based on real events.",
+      "Be prepared to explain the Duke of Ferrara's historical context - students are often shocked to learn the poem is based on real events.",
       'The debate plenary works best when students cannot sit on the fence - force a choice and defend it.',
     ],
     targetedSkills: [
@@ -1076,7 +1076,7 @@ const LESSON_PLANS: LessonPlan[] = [
           "How does Shakespeare use imperative verbs in Lady Macbeth's soliloquy to convey her determination?",
         lines: 4,
         modelAnswer:
-          "Shakespeare fills the soliloquy with imperatives -- 'Come', 'unsex', 'fill', 'stop up', 'take' -- creating a commanding, ritualistic tone. These contrast sharply with Macbeth's uncertain conditional language, establishing her as the more decisive partner at this stage.",
+          "Shakespeare fills the soliloquy with imperatives - 'Come', 'unsex', 'fill', 'stop up', 'take' - creating a commanding, ritualistic tone. These contrast sharply with Macbeth's uncertain conditional language, establishing her as the more decisive partner at this stage.",
         marks: 4,
       },
       {
@@ -1112,7 +1112,7 @@ const LESSON_PLANS: LessonPlan[] = [
     ],
     targetedSkills: [
       'AO1 - Critical response to an extract and the whole play',
-      "AO2 -- Analysis of Shakespeare's language and dramatic techniques",
+      "AO2 - Analysis of Shakespeare's language and dramatic techniques",
       'AO3 - Contextual integration in essay writing',
       'AO4 - Written accuracy under timed conditions',
       'Exam technique: planning, timing, and self-assessment',
@@ -1229,7 +1229,7 @@ const LESSON_PLANS: LessonPlan[] = [
           "Identify two techniques in: 'The cold within him froze his old features, nipped his pointed nose, shrivelled his cheek, stiffened his gait.'",
         lines: 5,
         modelAnswer:
-          "Dickens uses listing (froze, nipped, shrivelled, stiffened) to create cumulative effect. He also uses the metaphor 'the cold within him' to suggest Scrooge's coldness is internal rather than external -- it comes from his character, not the weather.",
+          "Dickens uses listing (froze, nipped, shrivelled, stiffened) to create cumulative effect. He also uses the metaphor 'the cold within him' to suggest Scrooge's coldness is internal rather than external - it comes from his character, not the weather.",
         marks: 4,
       },
       {
@@ -1245,7 +1245,7 @@ const LESSON_PLANS: LessonPlan[] = [
           "Explain the difference between 'The room was scary' and using techniques to show the room is frightening.",
         lines: 5,
         modelAnswer:
-          "'The room was scary' tells the reader how to feel without evidence. Using techniques -- sensory details, metaphor, varied sentences -- shows the reader the room and lets them feel the fear themselves. 'Show, don't tell' creates an immersive experience.",
+          "'The room was scary' tells the reader how to feel without evidence. Using techniques - sensory details, metaphor, varied sentences - shows the reader the room and lets them feel the fear themselves. 'Show, don't tell' creates an immersive experience.",
         marks: 4,
       },
     ],
@@ -1352,7 +1352,7 @@ const LESSON_PLANS: LessonPlan[] = [
           'Write three questions you would ask Mr Birling. Explain what each is designed to reveal.',
         lines: 6,
         modelAnswer:
-          "(1) 'Do you believe Eva Smith's death was your fault?' -- reveals whether he accepts responsibility. (2) 'If Eva came today, would you re-employ her?' -- tests whether the Inspector changed his attitude. (3) 'What would Sheila say about your behaviour?' -- forces him to confront how his actions appear to someone who has accepted responsibility.",
+          "(1) 'Do you believe Eva Smith's death was your fault?' - reveals whether he accepts responsibility. (2) 'If Eva came today, would you re-employ her?' - tests whether the Inspector changed his attitude. (3) 'What would Sheila say about your behaviour?' - forces him to confront how his actions appear to someone who has accepted responsibility.",
         marks: 5,
       },
       {
@@ -1360,7 +1360,7 @@ const LESSON_PLANS: LessonPlan[] = [
           'How should a student sustain character voice during hot-seating? Give two strategies.',
         lines: 4,
         modelAnswer:
-          "First, maintain the character's register throughout -- if playing Mr Birling, use formal, self-important language. Second, respond to unexpected questions by asking 'What would this character genuinely think?' rather than breaking character.",
+          "First, maintain the character's register throughout - if playing Mr Birling, use formal, self-important language. Second, respond to unexpected questions by asking 'What would this character genuinely think?' rather than breaking character.",
         marks: 4,
       },
       {
@@ -1449,7 +1449,7 @@ const LESSON_PLANS: LessonPlan[] = [
           support: 'Provide a planning template with three suggested paragraph focuses.',
           core: 'Students plan and write independently.',
           stretch:
-            "Students include a paragraph on Steinbeck's structural choices -- why is Crooks's chapter placed where it is?",
+            "Students include a paragraph on Steinbeck's structural choices - why is Crooks's chapter placed where it is?",
         },
         resources: [
           "Printed extract: Crooks's room",
@@ -1515,7 +1515,7 @@ const LESSON_PLANS: LessonPlan[] = [
       },
     ],
     teacherNotes: [
-      "Crooks's chapter is ideal for exam practice -- rich in methods and connects to multiple themes.",
+      "Crooks's chapter is ideal for exam practice - rich in methods and connects to multiple themes.",
       "Remind students that 'methods' includes structural choices and narrative perspective, not just language techniques.",
       'The self-assessment phase is crucial: students who can accurately identify weaknesses improve faster.',
       'Consider photographing a selection of student plans to discuss effective planning strategies.',
@@ -1803,12 +1803,12 @@ const LESSON_PLANS: LessonPlan[] = [
       'The evaluative question is the heart of this lesson. Many students confuse evaluation with description. Emphasise that evaluation requires a personal position supported by evidence.',
       'The fairy tale / realism debate prepares students for unseen prose questions where they may need to evaluate narrative choices.',
       'If students are strongly divided, consider a brief formal debate in the next lesson.',
-      "Dickens's own public readings of A Christmas Carol were enormously popular -- mentioning this helps students understand the novella as a performance piece.",
+      "Dickens's own public readings of A Christmas Carol were enormously popular - mentioning this helps students understand the novella as a performance piece.",
     ],
     targetedSkills: [
       'AO1 - Evaluative personal response',
       'AO2 - Analysis of language, tone, and structure across staves',
-      "AO3 -- Victorian context and Dickens's moral purpose",
+      "AO3 - Victorian context and Dickens's moral purpose",
       'Evaluative essay writing',
       'Comparing different sections of a text',
     ],
@@ -2190,7 +2190,7 @@ export default function LessonBuilderDemo() {
       showToast('Lesson plan downloaded as PowerPoint')
     } catch (err) {
       console.error('PPTX download failed:', err)
-      showToast('Failed to download PowerPoint -- please try again')
+      showToast('Failed to download PowerPoint - please try again')
     }
   }, [generatedPlan])
 
@@ -2202,7 +2202,7 @@ export default function LessonBuilderDemo() {
       showToast('Copied to clipboard')
       setTimeout(() => setCopied(false), 2000)
     } catch {
-      showToast('Failed to copy -- try again')
+      showToast('Failed to copy - try again')
     }
   }, [generatedPlan])
 
@@ -2471,7 +2471,7 @@ export default function LessonBuilderDemo() {
               </div>
             </div>
 
-            {/* Action Buttons -- wrapped in an error boundary so the whole
+            {/* Action Buttons - wrapped in an error boundary so the whole
                 lesson-builder page never disappears behind a "Something went
                 wrong" screen if a download menu or generator misbehaves. */}
             <ErrorBoundary

@@ -237,12 +237,13 @@ export default function DemoHub() {
           </h2>
           <p className="text-muted-foreground mb-8 max-w-lg mx-auto">{t('demo.bottom.sub')}</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button
-              render={<Link href="/for-schools/register" />}
-              size="lg"
-              className="w-full sm:w-auto"
-            >
-              {t('demo.bottom.cta_school')}
+            {/* Honesty fix (2026-08-23): "Register School" linked to
+                /for-schools/register, which is a redirect - there is no
+                self-registration form and no public code path that creates a
+                school. Schools start at the enquiry flow and are provisioned
+                by an operator once the deal is signed. */}
+            <Button render={<Link href="/school-pilot" />} size="lg" className="w-full sm:w-auto">
+              {t('demo.banner.cta_book_call')}
               <Badge
                 variant="secondary"
                 className="ml-2 bg-primary/10 text-primary text-[10px] border-0"

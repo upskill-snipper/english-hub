@@ -1,9 +1,22 @@
 /**
- * Dynamic course data loader - loads full course data on demand.
- * Use `getCourseIndex()` for listing/cards, and `loadCourseById()` for full content.
+ * Dynamic course data loader.
+ *
+ * Two tiers, and picking the wrong one is expensive:
+ *
+ *  - `loadCourseIndex()` returns metadata only (titles, colours, module lists,
+ *    counts) from the prebuilt ./course-index module. ~107 KB of JSON for all
+ *    87 courses. Use this for every card, list, filter, chart label and course
+ *    map - anything that is not rendering a lesson.
+ *  - `loadCourseById()` / `loadCoursesByBoard()` / `loadAllCourses()` pull full
+ *    lesson bodies and quizzes. `loadAllCourses()` alone is ~7.2 MB. Use only
+ *    where a lesson or an assessment is actually being rendered.
+ *
+ * Both tiers load through `import()` so neither lands in a route's first-load
+ * bundle; the index is one small shared chunk, fetched once and cached.
  */
 
 import type { CourseData } from './courses'
+import type { CourseIndexEntry } from './course-index'
 
 // Board -> module mapping for dynamic imports
 const BOARD_LOADERS: Record<string, () => Promise<Record<string, unknown>>> = {
@@ -39,9 +52,19 @@ const BOARD_LOADERS: Record<string, () => Promise<Record<string, unknown>>> = {
   'ial-y12-13': () => import('./ial-year12-13-courses'),
 }
 
-// Course ID prefix -> board mapping
-function getBoardForCourse(courseId: string): string {
+/**
+ * Fallback course ID prefix -> board mapping.
+ *
+ * Only used for ids that are not in COURSE_BOARD_KEYS (i.e. ids that do not
+ * exist, or a course added without regenerating the index). The prefix rules
+ * below are order-sensitive and were mis-routing 13 of the 87 real courses, so
+ * `resolveBoard()` consults the generated map first and treats this as a guess.
+ */
+function getBoardForCourseByPrefix(courseId: string): string {
   // Specific matches first (longer prefixes before shorter ones)
+  if (courseId.startsWith('ks3-y7-')) return 'ks3-y7'
+  if (courseId.startsWith('ks3-y8-')) return 'ks3-y8'
+  if (courseId.startsWith('ks3-y9-')) return 'ks3-y9'
   if (courseId.startsWith('ks3-')) return 'ks3'
   if (courseId.startsWith('wjec-')) return 'wjec'
   if (courseId.startsWith('ocr-')) return 'ocr'
@@ -61,13 +84,21 @@ function getBoardForCourse(courseId: string): string {
   if (courseId === 'gcse-lit-lord-of-flies') return 'lord-of-flies'
   if (courseId === 'gcse-lit-animal-farm') return 'animal-farm'
 
-  // IGCSE Literature sub-courses (new poetry/prose/drama/classics)
+  // IGCSE Literature sub-courses (new poetry/prose/drama/classics).
+  // `igcse-lit-classic-` must be tested before `igcse-lit-drama-` and the
+  // generic `igcse-lit-` rule below, otherwise the three classics courses
+  // route to the wrong board file and the course player 404s.
+  if (courseId.startsWith('igcse-lit-classic-') || courseId.startsWith('igcse-classic-'))
+    return 'igcse-classics'
   if (courseId.startsWith('igcse-lit-poem-')) return 'igcse-poetry-1'
   if (courseId.startsWith('igcse-lit-prose-')) return 'igcse-prose'
+  // `igcse-lit-drama-prose` is the combined overview course and lives in
+  // igcse-lit-courses, not in the individual drama-text file - exclude it
+  // before the drama-text prefix rule claims it.
+  if (courseId === 'igcse-lit-drama-prose') return 'igcse-lit'
   if (courseId.startsWith('igcse-lit-drama-')) return 'igcse-drama'
-  if (courseId.startsWith('igcse-classic-')) return 'igcse-classics'
 
-  // IGCSE Literature (drama-prose & poetry overview courses)
+  // IGCSE Literature (poetry overview course)
   if (courseId.startsWith('igcse-lit-')) return 'igcse-lit'
 
   // Edexcel Literature
@@ -81,11 +112,6 @@ function getBoardForCourse(courseId: string): string {
 
   // Edexcel Language
   if (courseId.startsWith('edexcel-')) return 'edexcel'
-
-  // KS3 year-group curriculum courses
-  if (courseId.startsWith('ks3-y7-')) return 'ks3-y7'
-  if (courseId.startsWith('ks3-y8-')) return 'ks3-y8'
-  if (courseId.startsWith('ks3-y9-')) return 'ks3-y9'
 
   // IGCSE year 10-11 curriculum courses
   if (courseId.startsWith('igcse-y10-') || courseId.startsWith('igcse-y11-')) return 'igcse-y10-11'
@@ -105,11 +131,65 @@ const boardCache = new Map<string, Promise<CourseData[]>>()
 // Poetry courses are split across two files with the same ID prefix
 const POETRY_FALLBACK = ['igcse-poetry-1', 'igcse-poetry-2'] as const
 
+// ── Lightweight index ──────────────────────────────────────────────────────
+//
+// The index module is only ever reached through `import()`, never a static
+// import. A static import would pull all 87 courses' metadata into the
+// first-load bundle of every route that touches this loader; as a dynamic
+// import it is one shared chunk, fetched on demand and cached thereafter.
+
+let indexCache: Promise<typeof import('./course-index')> | null = null
+
+function loadIndexModule(): Promise<typeof import('./course-index')> {
+  if (!indexCache) indexCache = import('./course-index')
+  return indexCache
+}
+
+/**
+ * Every course as metadata only - no lesson bodies, no quiz questions.
+ *
+ * This is what list/browse/dashboard surfaces should use. Calling
+ * `loadAllCourses()` for a course map costs ~7.2 MB of lesson content the
+ * caller then throws away; this costs ~107 KB.
+ */
+export async function loadCourseIndex(): Promise<CourseIndexEntry[]> {
+  const mod = await loadIndexModule()
+  return mod.COURSE_INDEX
+}
+
+/** Metadata for one course, or undefined if the ID is unknown. */
+export async function loadCourseIndexEntry(
+  courseId: string,
+): Promise<CourseIndexEntry | undefined> {
+  const index = await loadCourseIndex()
+  return index.find((c) => c.id === courseId)
+}
+
+/**
+ * Resolve the board data file that actually contains a course.
+ *
+ * Prefers the generated COURSE_BOARD_KEYS map, which is derived from the board
+ * modules themselves. The prefix heuristic is only a fallback for ids added
+ * since the index was last regenerated - on its own it silently mis-routed 13
+ * of the 87 real courses, and a mis-route makes `loadCourseById` return
+ * undefined rather than fail loudly.
+ */
+async function resolveBoard(courseId: string): Promise<string> {
+  try {
+    const { COURSE_BOARD_KEYS } = await loadIndexModule()
+    const known = COURSE_BOARD_KEYS[courseId]
+    if (known) return known
+  } catch (err) {
+    console.error('Failed to load the course index for board resolution:', err)
+  }
+  return getBoardForCourseByPrefix(courseId)
+}
+
 /**
  * Load a single course by ID. Only imports the relevant board's data file.
  */
 export async function loadCourseById(courseId: string): Promise<CourseData | undefined> {
-  const board = getBoardForCourse(courseId)
+  const board = await resolveBoard(courseId)
 
   const courses = await loadCoursesByBoard(board)
   const found = courses.find((c) => c.id === courseId)
@@ -167,6 +247,55 @@ export async function loadAllCourses(): Promise<CourseData[]> {
   })()
 
   return allCoursesCache
+}
+
+/**
+ * Development-only guard against a stale ./course-index.
+ *
+ * The index is generated data. If someone adds a course (or renames one, or
+ * changes a module list) without regenerating it, the catalogue and dashboards
+ * would quietly show the old set - a silent wrong-content bug rather than a
+ * crash. This compares the index against the real course data and logs exactly
+ * what drifted.
+ *
+ * Call it from a server component behind a `NODE_ENV !== 'production'` check
+ * only: it loads all 7.2 MB of course data, so it must never run in a browser
+ * or in production.
+ */
+export async function verifyCourseIndex(): Promise<string[]> {
+  const [courses, index] = await Promise.all([loadAllCourses(), loadCourseIndex()])
+  const problems: string[] = []
+
+  const indexById = new Map(index.map((c) => [c.id, c]))
+  for (const course of courses) {
+    const entry = indexById.get(course.id)
+    if (!entry) {
+      problems.push(`missing from index: ${course.id}`)
+      continue
+    }
+    if (entry.title !== course.title) {
+      problems.push(`title drift for ${course.id}: index has "${entry.title}"`)
+    }
+    if (entry.moduleCount !== course.moduleList.length) {
+      problems.push(
+        `module count drift for ${course.id}: index has ${entry.moduleCount}, data has ${course.moduleList.length}`,
+      )
+    }
+  }
+
+  const dataIds = new Set(courses.map((c) => c.id))
+  for (const entry of index) {
+    if (!dataIds.has(entry.id)) problems.push(`stale entry in index: ${entry.id}`)
+  }
+
+  if (problems.length > 0) {
+    console.error(
+      `[course-index] ${problems.length} problem(s) - regenerate src/data/course-index.ts:\n  ` +
+        problems.join('\n  '),
+    )
+  }
+
+  return problems
 }
 
 function extractCourses(mod: Record<string, unknown>): CourseData[] {

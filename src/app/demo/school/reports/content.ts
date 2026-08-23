@@ -91,8 +91,8 @@ export const STRINGS: Record<string, Bi> = {
   s38: { en: `Class Average`, ar: `متوسط الفصل` },
   s39: { en: `School Average`, ar: `متوسط المدرسة` },
   s40: {
-    en: `Student Progress -- RAG Status`,
-    ar: `حالة تقدم الطالب -- حالة راج (أحمر، أصفر،أخضر)`,
+    en: `Student Progress - RAG Status`,
+    ar: `حالة تقدم الطالب - حالة راج (أحمر، أصفر،أخضر)`,
   },
   s41: {
     en: `Red: below 50% | Amber: 50-69% | Green: 70%+`,

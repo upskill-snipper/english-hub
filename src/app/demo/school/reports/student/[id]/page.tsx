@@ -12,7 +12,12 @@ import {
 } from '@/lib/grades'
 import GradeProgressCard from '@/components/GradeProgressCard'
 import { toast } from 'sonner'
-import { DEMO_STUDENTS } from '@/data/demo-data'
+// This report prints the pupil's modules, mocks, essays and quiz history, so it
+// needs the full roster. The roster is ~320 KB and was a module-scope import,
+// which put all of it into this route's First Load JS (and into ~19 other demo
+// routes that never render any of it). It now loads as a separate async chunk.
+import { useDemoStudents } from '@/data/demo/use-demo-students'
+import { DemoRosterGate } from '@/app/demo/_components/DemoRosterGate'
 import { TrendArea, SERIES } from '@/components/dataviz'
 
 function scoreToGrade(score: number): string {
@@ -95,8 +100,14 @@ function getScoreTrend(scores: number[]): { label: string; description: string }
 
 export default function StudentReportPage() {
   const params = useParams()
-  const student = DEMO_STUDENTS.find((s) => s.id === params.id)
+  const { students: roster, failed } = useDemoStudents()
   const [teacherNotes, setTeacherNotes] = useState('')
+
+  // Gate before the not-found branch: the roster arrives lazily, so without this
+  // the report would flash "student not found" on every cold load.
+  if (!roster) return <DemoRosterGate failed={failed} />
+
+  const student = roster.find((s) => s.id === params.id)
 
   if (!student) {
     return (
@@ -826,7 +837,7 @@ export default function StudentReportPage() {
               &quot;
             </p>
             <p className="text-sm text-muted-foreground print:text-neutral-500 mt-3 text-right">
-              -- {student.teacherName}, {student.className}
+              - {student.teacherName}, {student.className}
             </p>
           </div>
         </div>
@@ -952,7 +963,7 @@ export default function StudentReportPage() {
 
         {/* Footer */}
         <div className="text-center text-xs text-muted-foreground print:text-neutral-500 pt-4 border-t border-border print:border-neutral-300">
-          <p>The English Hub -- Student Progress Report -- Confidential</p>
+          <p>The English Hub - Student Progress Report - Confidential</p>
           <p className="mt-1">
             Generated on{' '}
             {new Date().toLocaleDateString('en-GB', {

@@ -136,7 +136,7 @@ const TOPICS: Topic[] = [
       {
         term: 'Collective Responsibility',
         definition:
-          "Priestley's central message: we are all responsible for each other. The Inspector's final speech -- 'We are members of one body' -- embodies this.",
+          "Priestley's central message: we are all responsible for each other. The Inspector's final speech - 'We are members of one body' - embodies this.",
       },
       {
         term: 'The Younger vs Older Generation',
@@ -151,7 +151,7 @@ const TOPICS: Topic[] = [
       {
         term: 'The Final Phone Call',
         definition:
-          "The play's cyclical ending -- a real inspector is coming -- suggests that those who refuse to learn will be forced to face consequences.",
+          "The play's cyclical ending - a real inspector is coming - suggests that those who refuse to learn will be forced to face consequences.",
       },
     ],
   },
@@ -163,7 +163,7 @@ const TOPICS: Topic[] = [
       {
         term: 'Hamartia',
         definition:
-          "Macbeth's fatal flaw -- his 'vaulting ambition' -- which leads to his downfall, following the conventions of a tragic hero.",
+          "Macbeth's fatal flaw - his 'vaulting ambition' - which leads to his downfall, following the conventions of a tragic hero.",
       },
       {
         term: 'The Witches',

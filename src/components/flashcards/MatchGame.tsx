@@ -7,7 +7,10 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { cn, shuffleArray } from '@/lib/utils'
 import { useT } from '@/lib/i18n/use-t'
-import type { FlashcardDeck, FlashCard } from '@/data/flashcard-data'
+// QA 2026-08-23: '@/data/flashcard-data' is the 1.2 MB corpus barrel. These are
+// 'use client' components, so a type import there is one dropped `type` keyword
+// away from re-shipping every deck. Point at the type-only module instead.
+import type { FlashcardDeck, FlashCard } from '@/data/flashcards/types'
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 

@@ -161,6 +161,7 @@ export function ArticleJsonLd({
   dateModified,
   authorName,
   authorUrl,
+  inLanguage,
   url,
   nonce,
 }: {
@@ -175,6 +176,14 @@ export function ArticleJsonLd({
   /** Author's display name. Defaults to "The English Hub" if undefined. */
   authorName?: string
   authorUrl?: string
+  /**
+   * BCP 47 language tag of the article BODY, e.g. "en-GB" or "ar". Defaults
+   * to "en-GB". Added 2026-08-23: on the Arabic surface (/ar/blog/<slug>)
+   * the Article node silently claimed English, contradicting the page's own
+   * `lang`/hreflang and the Arabic canonical - callers on trilingual routes
+   * must pass the locale they actually rendered.
+   */
+  inLanguage?: string
   /** Canonical URL of the article. */
   url: string
   nonce?: string
@@ -205,6 +214,7 @@ export function ArticleJsonLd({
     datePublished,
     author,
     publisher,
+    inLanguage: inLanguage ?? 'en-GB',
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
   }
   if (dateModified) jsonLd.dateModified = dateModified

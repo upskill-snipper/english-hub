@@ -26,7 +26,10 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { DEMO_SCHOOL, DEMO_STUDENTS, DEMO_CLASSES, DEMO_YEAR_GROUPS } from '@/data/demo-data'
+import { DEMO_SCHOOL } from '@/data/demo/school'
+import { DEMO_CLASSES } from '@/data/demo/classes'
+import { DEMO_STUDENT_INDEX } from '@/data/demo/students-index'
+import { DEMO_YEAR_GROUPS } from '@/data/demo/aggregates'
 import { GradeDistributionChart } from '@/components/analytics/GradeDistributionChart'
 import { gcseGradeColor, gcseGradeBg } from '@/lib/grades'
 import { RadialScore, RankBars } from '@/components/dataviz'
@@ -35,7 +38,7 @@ import { InterventionInsightsPanel } from '@/components/school/InterventionInsig
 
 // ── Computed student-level data ─────────────────────────────────────────────
 
-function computeStudentMetrics(students: typeof DEMO_STUDENTS) {
+function computeStudentMetrics(students: typeof DEMO_STUDENT_INDEX) {
   if (students.length === 0)
     return {
       total: 0,
@@ -46,9 +49,9 @@ function computeStudentMetrics(students: typeof DEMO_STUDENTS) {
       offTrackCount: 0,
       onTrackPct: 0,
       gradeDistribution: {} as Record<number, number>,
-      atRiskStudents: [] as typeof DEMO_STUDENTS,
-      topImproving: [] as typeof DEMO_STUDENTS,
-      needingIntervention: [] as typeof DEMO_STUDENTS,
+      atRiskStudents: [] as typeof DEMO_STUDENT_INDEX,
+      topImproving: [] as typeof DEMO_STUDENT_INDEX,
+      needingIntervention: [] as typeof DEMO_STUDENT_INDEX,
     }
 
   const total = students.length
@@ -107,7 +110,7 @@ export default function DemoSchoolDashboardPage() {
 
   // Filter students based on selections
   const filteredStudents = useMemo(() => {
-    let students = DEMO_STUDENTS
+    let students = DEMO_STUDENT_INDEX
     if (selectedYear !== 'all') {
       students = students.filter((s) => s.yearGroup === selectedYear)
     }
@@ -146,13 +149,18 @@ export default function DemoSchoolDashboardPage() {
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-start gap-3">
             <GraduationCap className="mt-0.5 h-5 w-5 shrink-0 text-teal-700" />
+            {/* Honesty fix (2026-08-23): this said "Register your school" and
+                pointed at /for-schools/register, which is a redirect, not a
+                registration form. Schools cannot self-register - a school is
+                provisioned by an operator after a signed deal - so the CTA now
+                sends heads of department to the real enquiry flow. */}
             <p className="text-sm text-blue-300">
-              You are viewing an interactive demo with sample data. Register your school to use with
-              your own students.
+              You are viewing an interactive demo with sample data. Book a call and we will set your
+              school up with your own students.
             </p>
           </div>
-          <Button size="sm" className="shrink-0" render={<Link href="/for-schools/register" />}>
-            Register Your School
+          <Button size="sm" className="shrink-0" render={<Link href="/school-pilot" />}>
+            {t('demo.banner.cta_book_call')}
             <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
           </Button>
         </div>
@@ -453,7 +461,7 @@ export default function DemoSchoolDashboardPage() {
               <CardContent>
                 <div className="space-y-2">
                   {DEMO_YEAR_GROUPS.slice(0, 5).map((yg: any) => {
-                    const ygStudents = DEMO_STUDENTS.filter((s) => s.yearGroup === yg.label)
+                    const ygStudents = DEMO_STUDENT_INDEX.filter((s) => s.yearGroup === yg.label)
                     const avgWAG =
                       ygStudents.length > 0
                         ? Math.round(

@@ -262,6 +262,134 @@ export const B15_MARKING_SCHOOL_DICTIONARY: Record<
     es: 'Corregir otra redacción',
   },
 
+  // ─── /marking/results/[id] - act on the feedback (2026-08-23) ────────────
+  // DEFECT being fixed: the AI marking loop dead-ended. A student was told
+  // which Assessment Objective was weakest and then offered nothing but
+  // "back to history" / "mark another essay". These keys back the
+  // act-on-feedback block: redraft the same essay, or revise the objective
+  // that scored lowest. No progress or grade claims - the only figures shown
+  // are the marks the model already awarded.
+  'marking.results.next.heading': {
+    en: 'What to do next',
+    ar: 'شنو تسوي بعدين',
+    es: 'Qué hacer ahora',
+  },
+  'marking.results.next.subheading': {
+    en: 'Act on this feedback while it is fresh.',
+    ar: 'استفد من الملاحظات هذي وهي طازجة.',
+    es: 'Aprovecha estos comentarios mientras están frescos.',
+  },
+  'marking.results.next.redraft_title': {
+    en: 'Redraft this essay',
+    ar: 'أعد كتابة المقالة',
+    es: 'Reescribe esta redacción',
+  },
+  'marking.results.next.redraft_body': {
+    // Says "choose the same board, paper and question" on purpose: the submit
+    // form has no prefill, so promising an automatic like-for-like remark
+    // would be a claim the product does not keep.
+    en: 'Rewrite the parts the feedback picks out, then submit the new version. Choose the same board, paper and question to be marked against the same mark scheme.',
+    ar: 'أعد كتابة الأجزاء اللي أشارت لها الملاحظات، وبعدين سلّم النسخة الجديدة. اختر نفس البورد والورقة والسؤال عشان تنصحّح على نفس دليل التصحيح.',
+    es: 'Reescribe las partes que señalan los comentarios y envía la nueva versión. Elige el mismo consejo examinador, examen y pregunta para que se corrija con el mismo esquema de corrección.',
+  },
+  'marking.results.next.copy_cta': {
+    en: 'Copy my essay',
+    ar: 'انسخ مقالتي',
+    es: 'Copiar mi redacción',
+  },
+  'marking.results.next.copy_done': {
+    en: 'Copied to your clipboard',
+    ar: 'انتسخت للحافظة',
+    es: 'Copiado al portapapeles',
+  },
+  'marking.results.next.copy_failed': {
+    en: 'Copying did not work in this browser. You can select the essay text further down the page.',
+    ar: 'النسخ ما اشتغل في هذا المتصفح. تقدر تحدد نص المقالة تحت في الصفحة.',
+    es: 'La copia no ha funcionado en este navegador. Puedes seleccionar el texto de la redacción más abajo.',
+  },
+  'marking.results.next.redraft_cta': {
+    en: 'Submit a new version',
+    ar: 'سلّم نسخة جديدة',
+    es: 'Enviar una versión nueva',
+  },
+  'marking.results.next.practise_title': {
+    en: 'Practise your lowest-scoring objective',
+    ar: 'تمرّن على الهدف اللي درجتك فيه أقل',
+    es: 'Practica el objetivo con menor puntuación',
+  },
+  'marking.results.next.practise_scored': {
+    en: 'Your lowest mark in this essay was {ao}: {score} out of {max}.',
+    ar: 'أقل درجة لك في هذي المقالة كانت {ao}: {score} من {max}.',
+    es: 'Tu nota más baja en esta redacción fue {ao}: {score} de {max}.',
+  },
+  'marking.results.next.practise_generic_title': {
+    en: 'Practise your exam technique',
+    ar: 'تمرّن على تقنيات الامتحان',
+    es: 'Practica tu técnica de examen',
+  },
+  'marking.results.next.practise_generic_body': {
+    en: 'No assessment objective breakdown was stored for this submission, so there is no single weakness to target. These guides cover every objective.',
+    ar: 'ما فيه تحليل لأهداف التقييم محفوظ لهذا التسليم، فما نقدر نحدد نقطة ضعف وحدة. الأدلة هذي تغطي كل الأهداف.',
+    es: 'No se guardó el desglose por objetivos de evaluación de este envío, así que no hay una debilidad concreta a la que apuntar. Estas guías cubren todos los objetivos.',
+  },
+  'marking.results.next.dest.context': {
+    en: 'Revise historical context',
+    ar: 'راجع السياق التاريخي',
+    es: 'Repasa el contexto histórico',
+  },
+  'marking.results.next.dest.spag': {
+    en: 'Practise spelling, punctuation and grammar',
+    ar: 'تمرّن على الإملاء وعلامات الترقيم والقواعد',
+    es: 'Practica ortografía, puntuación y gramática',
+  },
+  'marking.results.next.dest.techniques': {
+    en: 'Revise language and structure techniques',
+    ar: 'راجع أساليب اللغة والبناء',
+    es: 'Repasa las técnicas de lenguaje y estructura',
+  },
+  'marking.results.next.dest.writing': {
+    en: 'Work on content and organisation',
+    ar: 'اشتغل على المحتوى والتنظيم',
+    es: 'Trabaja el contenido y la organización',
+  },
+  'marking.results.next.dest.reading': {
+    en: 'Practise reading and evaluation skills',
+    ar: 'تمرّن على مهارات القراءة والتقييم',
+    es: 'Practica las destrezas de lectura y evaluación',
+  },
+  'marking.results.next.dest.question_types': {
+    en: 'Revise what each question is asking',
+    ar: 'راجع شنو يطلبه كل سؤال',
+    es: 'Repasa qué pide cada pregunta',
+  },
+  'marking.results.next.dest.essay_structure': {
+    en: 'Revise essay structure',
+    ar: 'راجع هيكل المقالة',
+    es: 'Repasa la estructura de la redacción',
+  },
+  'marking.results.next.dest.exam_technique': {
+    en: 'Open the exam technique guides',
+    ar: 'افتح أدلة تقنيات الامتحان',
+    es: 'Abre las guías de técnica de examen',
+  },
+  'marking.results.next.dest.model_answers': {
+    en: 'See model answers',
+    ar: 'شوف نماذج الإجابات',
+    es: 'Ver respuestas modelo',
+  },
+
+  // ─── /revision hub primary action (2026-08-23) ──────────────────────────
+  // Lives in this shard, not a revision one, because the revision shards are
+  // being rewritten by another agent today and every shard shares one lookup
+  // chain, so the namespace of the file does not affect resolution. The
+  // fallback label reuses the existing 'revision_page.sections.start_revising'
+  // key - only the resolved-history variant is new.
+  'revision_page.action.continue_named': {
+    en: 'Continue: {title}',
+    ar: 'كمّل: {title}',
+    es: 'Continuar: {title}',
+  },
+
   // ─── /marking/ai-explainer ───────────────────────────────────────────────
   'marking.ai_explainer.breadcrumb': {
     en: 'How AI Marking Works',

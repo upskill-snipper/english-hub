@@ -94,7 +94,7 @@ const MODEL_ANSWER = {
     "Use more subject terminology (e.g., 'mouthpiece', 'didactic', 'allegory')",
   ],
   modelResponse:
-    'Priestley presents Mr Birling as a symbol of capitalist self-interest to criticise the failures of individualism. In Act 1, Birling declares that a man should look after "himself and his own" -- a philosophy Priestley systematically dismantles through the Inspector\'s investigation. The dramatic irony of Birling\'s confident prediction that the Titanic is "unsinkable" would have been painfully obvious to a 1945 audience who had witnessed two world wars, exposing Birling\'s judgement as dangerously flawed. Priestley uses Birling as a dramatic device -- almost a caricature of capitalism -- to show the audience the consequences of ignoring collective responsibility.',
+    'Priestley presents Mr Birling as a symbol of capitalist self-interest to criticise the failures of individualism. In Act 1, Birling declares that a man should look after "himself and his own" - a philosophy Priestley systematically dismantles through the Inspector\'s investigation. The dramatic irony of Birling\'s confident prediction that the Titanic is "unsinkable" would have been painfully obvious to a 1945 audience who had witnessed two world wars, exposing Birling\'s judgement as dangerously flawed. Priestley uses Birling as a dramatic device - almost a caricature of capitalism - to show the audience the consequences of ignoring collective responsibility.',
   markScheme: [
     'AO1: Perceptive, detailed response with well-integrated textual references (up to 4 marks)',
     "AO2: Analyses effects of writer's methods using subject terminology (up to 2 marks)",
@@ -176,7 +176,7 @@ export default function StudentPracticeDemoPage() {
           <div className="mt-6 mb-8">
             <h1 className="text-2xl font-light tracking-tight text-foreground">{paper?.name}</h1>
             <p className="text-muted-foreground text-sm mt-1">
-              Sample Question -- {SAMPLE_QUESTION.topic}
+              Sample Question - {SAMPLE_QUESTION.topic}
             </p>
           </div>
 

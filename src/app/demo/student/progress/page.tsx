@@ -361,7 +361,7 @@ export default function StudentProgressPage() {
               {t('demo.b15.student_prog.title')}
             </h1>
             <p className="mt-1 text-muted-foreground">
-              {STUDENT.name} -- {STUDENT.yearGroup}
+              {STUDENT.name} - {STUDENT.yearGroup}
             </p>
           </div>
         </div>
@@ -424,7 +424,7 @@ export default function StudentProgressPage() {
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 text-green-600 dark:text-green-400" />
                   <span className="text-sm text-green-700 dark:text-green-300 font-medium">
-                    On Track -- {100 - OVERALL_PERCENT}% to go
+                    On Track - {100 - OVERALL_PERCENT}% to go
                   </span>
                 </div>
                 <p className="text-xs text-muted-foreground">
@@ -615,7 +615,7 @@ export default function StudentProgressPage() {
                 <ul className="sr-only">
                   {mod.topics.map((t) => (
                     <li key={t.name}>
-                      {t.name}: {t.mastery}% -- {masteryLabel(t.status)}
+                      {t.name}: {t.mastery}% - {masteryLabel(t.status)}
                     </li>
                   ))}
                 </ul>

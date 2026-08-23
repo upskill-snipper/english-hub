@@ -5,14 +5,17 @@
 // other glass panels on the school demo page.
 //
 // Server component - no client hooks. Reads from DEMO_AT_RISK_STUDENTS and
-// DEMO_STUDENTS only (extra structure is hardcoded inline). All figures are
+// DEMO_STUDENT_INDEX only (extra structure is hardcoded inline). All figures are
 // synthetic and clearly labelled as demo data.
 // ──────────────────────────────────────────────────────────────────────────────
 
 import { AlertTriangle, HeartHandshake, Users, Globe2, Calendar, UserSquare2 } from 'lucide-react'
 import { GlassPanel, PanelEyebrow } from '@/components/dataviz/GlassPanel'
-import { DEMO_AT_RISK_STUDENTS, DEMO_STUDENTS } from '@/data/demo-data'
-
+// Reads the compact student index, not the full roster. This panel renders on
+// /demo/school, and importing the ~320 KB roster here put all of it into that
+// route's client bundle for the sake of one name and year group.
+import { DEMO_STUDENT_INDEX } from '@/data/demo/students-index'
+import { DEMO_AT_RISK_STUDENTS } from '@/data/demo/at-risk'
 // ─── Intervention taxonomy (hardcoded - no new exports assumed) ─────────────
 
 interface InterventionType {
@@ -112,8 +115,8 @@ export function InterventionInsightsPanel() {
 
   // Pad with a friendly anonymised demo entry so the list reads as 6 rows
   const sixthStudent: MonitoredStudent = {
-    name: DEMO_STUDENTS[10]?.name ?? 'Reece Anderson',
-    yearGroup: DEMO_STUDENTS[10]?.yearGroup ?? 'Year 8',
+    name: DEMO_STUDENT_INDEX[10]?.name ?? 'Reece Anderson',
+    yearGroup: DEMO_STUDENT_INDEX[10]?.yearGroup ?? 'Year 8',
     interventionType: 'Small-group catch-up',
     started: '11 days ago',
     ledBy: 'Emma Thornton',

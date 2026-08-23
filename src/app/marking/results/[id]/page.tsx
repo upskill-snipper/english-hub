@@ -70,6 +70,292 @@ function findParagraphForQuote(paragraphs: string[], quote: string): number {
   return paragraphs.findIndex((p) => p.toLowerCase().replace(/['']/g, "'").includes(normalised))
 }
 
+/* ─── Act on the feedback (2026-08-23) ───────────────────────
+ *
+ * DEFECT: the marking loop dead-ended here. The student was shown a
+ * weakest Assessment Objective and then offered nothing but "back to
+ * history" and "mark another essay" - no route from "here is your
+ * weakness" to "do something about it".
+ *
+ * Everything below turns the feedback into concrete destinations that
+ * were checked to exist in src/app (none of them subscription-gated:
+ * only /revision/study-plan, /revision/analytics and /mock-exams/[id]
+ * sit behind requireSubscription). No progress claim, no predicted
+ * improvement - the only figures shown are the marks already awarded.
+ */
+
+interface PractiseTarget {
+  href: string
+  /** Dictionary key for the link label. */
+  key: string
+  /** English text used until the generated locale maps are rebuilt by prebuild. */
+  fallback: string
+}
+
+/**
+ * Resolve a key, falling back to English while the key is not yet in the
+ * pre-generated locale maps that useT() reads (scripts/generate-i18n-locales
+ * runs in `prebuild`). Same defensive pattern as AwaitingReviewState above.
+ */
+function withFallback(tx: (k: string) => string, key: string, fallback: string): string {
+  const value = tx(key)
+  return value === `[[${key}]]` ? fallback : value
+}
+
+/**
+ * Pick the revision destination for one Assessment Objective.
+ *
+ * Routed on the AO LABEL, never on the code: AO numbering is not stable
+ * across specifications - on AQA Literature AO4 is technical accuracy, on
+ * AQA Language AO4 is evaluating texts critically - so mapping "AO4" to a
+ * fixed page would send half of students to the wrong guide. An unmatched
+ * label falls back to the exam technique hub, which covers every objective.
+ */
+function practiseTargetForAo(ao: AOScore): PractiseTarget {
+  const label = `${ao.code ?? ''} ${ao.label ?? ''}`.toLowerCase()
+
+  if (label.includes('context')) {
+    return {
+      href: '/resources/context',
+      key: 'marking.results.next.dest.context',
+      fallback: 'Revise historical context',
+    }
+  }
+  if (/technical accuracy|spelling|punctuation|grammar/.test(label)) {
+    return {
+      href: '/revision/language/spag',
+      key: 'marking.results.next.dest.spag',
+      fallback: 'Practise spelling, punctuation and grammar',
+    }
+  }
+  if (/content and organisation|creative|communicat/.test(label)) {
+    return {
+      href: '/resources/writing-skills',
+      key: 'marking.results.next.dest.writing',
+      fallback: 'Work on content and organisation',
+    }
+  }
+  if (/evaluat/.test(label)) {
+    return {
+      href: '/revision/language/reading',
+      key: 'marking.results.next.dest.reading',
+      fallback: 'Practise reading and evaluation skills',
+    }
+  }
+  if (/compar|contrast|relate texts/.test(label)) {
+    return {
+      href: '/revision/exam-technique/question-types',
+      key: 'marking.results.next.dest.question_types',
+      fallback: 'Revise what each question is asking',
+    }
+  }
+  if (/read, understand|respond|reference|quotation/.test(label)) {
+    return {
+      href: '/revision/exam-technique/essay-structure',
+      key: 'marking.results.next.dest.essay_structure',
+      fallback: 'Revise essay structure',
+    }
+  }
+  if (/identify|interpret|synthes|summaris|retriev/.test(label)) {
+    return {
+      href: '/revision/language/reading',
+      key: 'marking.results.next.dest.reading',
+      fallback: 'Practise reading and evaluation skills',
+    }
+  }
+  if (/analys|language|structure|form|terminology/.test(label)) {
+    return {
+      href: '/resources/techniques',
+      key: 'marking.results.next.dest.techniques',
+      fallback: 'Revise language and structure techniques',
+    }
+  }
+  return {
+    href: '/revision/exam-technique',
+    key: 'marking.results.next.dest.exam_technique',
+    fallback: 'Open the exam technique guides',
+  }
+}
+
+/**
+ * The AO with the lowest proportion of its available marks, or null when the
+ * submission carries no usable AO breakdown. Never guesses: an entry with no
+ * max marks is skipped rather than treated as zero.
+ */
+function weakestAo(aos: AOScore[]): AOScore | null {
+  const scored = aos.filter(
+    (ao) => ao && Number.isFinite(ao.max) && ao.max > 0 && Number.isFinite(ao.score),
+  )
+  if (scored.length === 0) return null
+  return scored.reduce((worst, ao) => (ao.score / ao.max < worst.score / worst.max ? ao : worst))
+}
+
+/**
+ * Leading "AOn - " that model output often repeats inside the AO label.
+ * Built from a string so the en/em dashes stay as unicode escapes rather
+ * than literal characters, which keeps a repo-wide dash sweep clean.
+ */
+const AO_CODE_PREFIX = new RegExp('^AO\\s*\\d+\\s*[-:\\u2013\\u2014]\\s*', 'i')
+
+/** "AO2 (Analyse language, form and structure)" without repeating the code. */
+function aoDisplayName(ao: AOScore): string {
+  const label = (ao.label ?? '').trim()
+  // Model output often repeats the code inside the label ("AO2 - Analyse ...").
+  const stripped = label.replace(AO_CODE_PREFIX, '').trim()
+  if (!stripped) return ao.code
+  return ao.code ? `${ao.code} (${stripped})` : stripped
+}
+
+/**
+ * Copies the student's own essay so they can paste it into a redraft.
+ * /marking/submit has no prefill parameter, so this is the honest way to
+ * carry the text across without claiming the form will be pre-populated.
+ */
+function CopyEssayButton({ essay, tx }: { essay: string; tx: (k: string) => string }) {
+  const [state, setState] = useState<'idle' | 'copied' | 'failed'>('idle')
+
+  async function copy() {
+    try {
+      await navigator.clipboard.writeText(essay)
+      setState('copied')
+    } catch {
+      // Clipboard API is unavailable in insecure contexts and some in-app
+      // browsers. Say so rather than silently doing nothing.
+      setState('failed')
+    }
+  }
+
+  return (
+    <div className="flex flex-col gap-1.5">
+      <Button variant="outline" onClick={() => void copy()}>
+        {withFallback(tx, 'marking.results.next.copy_cta', 'Copy my essay')}
+      </Button>
+      <p aria-live="polite" className="text-xs text-muted-foreground">
+        {state === 'copied' &&
+          withFallback(tx, 'marking.results.next.copy_done', 'Copied to your clipboard')}
+        {state === 'failed' &&
+          withFallback(
+            tx,
+            'marking.results.next.copy_failed',
+            'Copying did not work in this browser. You can select the essay text further down the page.',
+          )}
+      </p>
+    </div>
+  )
+}
+
+/** The act-on-feedback block: redraft the essay, or practise the weakest AO. */
+function NextStepsSection({
+  tx,
+  essay,
+  aos,
+}: {
+  tx: (k: string) => string
+  essay: string
+  aos: AOScore[]
+}) {
+  const weakest = weakestAo(aos)
+  const target = weakest ? practiseTargetForAo(weakest) : null
+
+  return (
+    <section aria-labelledby="next-steps-heading" className="mt-8">
+      <h2
+        id="next-steps-heading"
+        className="font-heading text-xl font-bold tracking-tight text-foreground"
+      >
+        {withFallback(tx, 'marking.results.next.heading', 'What to do next')}
+      </h2>
+      <p className="mt-1 text-sm text-muted-foreground">
+        {withFallback(
+          tx,
+          'marking.results.next.subheading',
+          'Act on this feedback while it is fresh.',
+        )}
+      </p>
+
+      <div className="mt-4 grid gap-4 md:grid-cols-2">
+        {/* Redraft and resubmit */}
+        <Card className="border-primary/30 bg-primary/5">
+          <CardHeader>
+            <CardTitle>
+              {withFallback(tx, 'marking.results.next.redraft_title', 'Redraft this essay')}
+            </CardTitle>
+            <CardDescription>
+              {withFallback(
+                tx,
+                'marking.results.next.redraft_body',
+                'Rewrite the parts the feedback picks out, then submit the new version. Choose the same board, paper and question to be marked against the same mark scheme.',
+              )}
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-start">
+              {essay.trim() ? <CopyEssayButton essay={essay} tx={tx} /> : null}
+              <Button render={<Link href="/marking/submit" />}>
+                {withFallback(tx, 'marking.results.next.redraft_cta', 'Submit a new version')}
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Targeted practice for the weakest AO (or an honest generic card) */}
+        <Card>
+          <CardHeader>
+            <CardTitle>
+              {weakest
+                ? withFallback(
+                    tx,
+                    'marking.results.next.practise_title',
+                    'Practise your lowest-scoring objective',
+                  )
+                : withFallback(
+                    tx,
+                    'marking.results.next.practise_generic_title',
+                    'Practise your exam technique',
+                  )}
+            </CardTitle>
+            <CardDescription>
+              {weakest
+                ? withFallback(
+                    tx,
+                    'marking.results.next.practise_scored',
+                    'Your lowest mark in this essay was {ao}: {score} out of {max}.',
+                  )
+                    .replace('{ao}', aoDisplayName(weakest))
+                    .replace('{score}', String(weakest.score))
+                    .replace('{max}', String(weakest.max))
+                : withFallback(
+                    tx,
+                    'marking.results.next.practise_generic_body',
+                    'No assessment objective breakdown was stored for this submission, so there is no single weakness to target. These guides cover every objective.',
+                  )}
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Button
+                render={<Link href={target ? target.href : '/revision/exam-technique'} />}
+                variant="outline"
+              >
+                {target
+                  ? withFallback(tx, target.key, target.fallback)
+                  : withFallback(
+                      tx,
+                      'marking.results.next.dest.exam_technique',
+                      'Open the exam technique guides',
+                    )}
+              </Button>
+              <Button variant="outline" render={<Link href="/resources/model-answers" />}>
+                {withFallback(tx, 'marking.results.next.dest.model_answers', 'See model answers')}
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </section>
+  )
+}
+
 /* ─── Server submission (Smart IP spine) ───────────────────── */
 
 /**
@@ -594,6 +880,11 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
           </CardContent>
         </Card>
       )}
+
+      {/* ── Act on this feedback ──────────────────────────────
+          Closes the marking loop: before this the page ended at the
+          feedback with no way to act on it. */}
+      <NextStepsSection tx={tx} essay={result.essay} aos={result.aos} />
 
       {/* ── Annotated essay ───────────────────────────────── */}
       <div className="mt-6">

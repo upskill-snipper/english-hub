@@ -23,13 +23,10 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { toast } from 'sonner'
-import {
-  DEMO_SCHOOL,
-  DEMO_TEACHERS,
-  DEMO_CLASSES,
-  DEMO_YEAR_GROUPS,
-  DEMO_STUDENTS,
-} from '@/data/demo-data'
+import { DEMO_SCHOOL } from '@/data/demo/school'
+import { DEMO_TEACHERS } from '@/data/demo/teachers'
+import { DEMO_CLASSES } from '@/data/demo/classes'
+import { DEMO_STUDENT_INDEX } from '@/data/demo/students-index'
 import DemoBanner from '@/components/demo/DemoBanner'
 import { openPrintableDocument } from '@/lib/generate-download'
 import { percentageToGCSEGrade } from '@/lib/grades'
@@ -68,7 +65,7 @@ const DEPT_TEACHERS: DeptTeacher[] = [
       tc.length > 0 ? Math.round(tc.reduce((a, c) => a + c.avgScore, 0) / tc.length) : 0
     const completionRate =
       tc.length > 0 ? Math.round(tc.reduce((a, c) => a + c.completionRate, 0) / tc.length) : 0
-    const atRisk = DEMO_STUDENTS.filter(
+    const atRisk = DEMO_STUDENT_INDEX.filter(
       (s) => s.teacherName === t.name && s.status === 'at-risk',
     ).length
     return {

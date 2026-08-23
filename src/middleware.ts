@@ -550,13 +550,33 @@ export async function middleware(request: NextRequest) {
   if (pathname.startsWith('/ar/') || pathname === '/ar') {
     lang = 'ar'
     const rewriteUrl = request.nextUrl.clone()
-    rewriteUrl.pathname = pathname === '/ar' ? '/' : pathname.slice(3) // strip leading '/ar'
+    const strippedPath = pathname === '/ar' ? '/' : pathname.slice(3) // strip leading '/ar'
+    rewriteUrl.pathname = strippedPath
     // Rewrite preserves the URL the browser sees while serving the
     // underlying page from the language-neutral route. Stamp x-lang
     // BEFORE the rewrite so server components see the right locale.
     request.headers.set('x-lang', 'ar')
     request.headers.set('x-lang-source', 'url')
+
+    // SECURITY (2026-08-23): this branch used to `return` here without ever
+    // calling updateSession, so the Arabic URL surface skipped the Supabase
+    // session refresh, the forced-password-rotation gate AND the
+    // protected-route auth wall - `/ar/dashboard`, `/ar/account`,
+    // `/ar/school` and `/ar/admin` were reachable by simply prefixing the
+    // URL. Run the session logic against the STRIPPED path (the route the
+    // rewrite actually serves), and honour any redirect it returns.
+    const sessionRes = await updateSession(request, strippedPath)
+    if (sessionRes.status >= 300 && sessionRes.status < 400) {
+      return sessionRes
+    }
+
     const res = NextResponse.rewrite(rewriteUrl, { request: { headers: request.headers } })
+    // Carry any refreshed auth cookies onto the rewrite, otherwise a token
+    // refresh performed during this request is lost and the next request
+    // looks unauthenticated.
+    for (const cookie of sessionRes.cookies.getAll()) {
+      res.cookies.set(cookie)
+    }
     res.headers.set('Content-Language', 'ar')
     return res
   } else {

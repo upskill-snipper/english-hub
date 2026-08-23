@@ -39,6 +39,13 @@ const REDIRECT_SOURCES = new Set([
   // In-page redirect() stubs (return 307 with no body).
   '/ks3/ilowersecondary/reading', '/ks3/ilowersecondary/writing',
   '/ks3/ilowersecondary/writing-forms',
+  // Added 2026-08-23: /for-schools/register used to be a real self-registration
+  // page, but schools cannot self-register (a tenant is provisioned by an
+  // operator from /admin/school-provisioning after a deal is signed), so its
+  // page.tsx is now a bare redirect() to /school-pilot. It was still being
+  // emitted here, so the sitemap advertised a 3xx URL - see the NOTE below,
+  // which this entry supersedes.
+  '/for-schools/register',
 ])
 
 // Noindex surfaces — user-specific tools, auth-gated portals and internal
@@ -60,9 +67,12 @@ const NOINDEX_PREFIXES = [
   '/board-select', // page carries robots noindex (utility chooser)
   '/legal/cancellation-form', // page carries robots noindex (form step)
 ]
-// NOTE: /assessment/reading/test, /resources/study-tools/tester and
-// /for-schools/register ship their own SEO layouts with self-canonicals —
-// they are intentionally indexable and stay in the sitemap.
+// NOTE: /assessment/reading/test and /resources/study-tools/tester ship their
+// own SEO layouts with self-canonicals — they are intentionally indexable and
+// stay in the sitemap. /for-schools/register was in this list too, but it
+// became a redirect() stub on 2026-08-23 and now sits in REDIRECT_SOURCES
+// above; its layout still carries a self-canonical, which never ships because
+// the page 307s before rendering.
 
 // /marking root is a client-side tool hub (no metadata) — excluded from the
 // sitemap, but /marking/sample/** and /marking/ai-explainer are public

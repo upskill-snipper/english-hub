@@ -125,7 +125,7 @@ const RESOURCES: TeachingResource[] = [
       "Link Scrooge's characterisation to Dickens' social purpose",
     ],
     firstActivity:
-      "Word Association -- Cold: students brainstorm connotations of coldness in 60 seconds, then compare their ideas to Dickens' opening description of Scrooge.",
+      "Word Association - Cold: students brainstorm connotations of coldness in 60 seconds, then compare their ideas to Dickens' opening description of Scrooge.",
   },
   {
     id: 'lp-romeo-prologue',
@@ -479,12 +479,12 @@ export default function TeacherResourcesPage() {
         }
       } catch (err) {
         console.error('Download failed:', err)
-        setToast('Download failed -- please try again')
+        setToast('Download failed - please try again')
         setTimeout(() => setToast(null), 3000)
       }
       return
     }
-    setToast('Subscribe to download -- 7-day free trial')
+    setToast('Subscribe to download - 7-day free trial')
     setTimeout(() => setToast(null), 3000)
   }
 

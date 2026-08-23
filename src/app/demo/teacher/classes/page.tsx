@@ -13,7 +13,9 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { TEACHER_DEMO_CLASSES, DEMO_TEACHER, DEMO_STUDENTS, type DemoClass } from '@/data/demo-data'
+import { DEMO_TEACHER } from '@/data/demo/teachers'
+import { TEACHER_DEMO_CLASSES } from '@/data/demo/classes'
+import { DEMO_STUDENT_INDEX } from '@/data/demo/students-index'
 import { useT } from '@/lib/i18n/use-t'
 
 function scoreColor(score: number) {
@@ -29,8 +31,8 @@ function progressBarColor(pct: number) {
 }
 
 function trendIcon(cls: (typeof TEACHER_DEMO_CLASSES)[number]) {
-  // Derive trend from DEMO_STUDENTS matched by class name
-  const students = DEMO_STUDENTS.filter((s) => s.className === cls.name)
+  // Derive trend from DEMO_STUDENT_INDEX matched by class name
+  const students = DEMO_STUDENT_INDEX.filter((s) => s.className === cls.name)
   if (students.length === 0) return <Minus className="h-3.5 w-3.5 text-muted-foreground" />
   const avgScore = Math.round(
     students.reduce((sum, s) => sum + s.averageScore, 0) / students.length,
@@ -49,7 +51,7 @@ export default function TeacherClassesPage() {
         {/* Demo banner */}
         <div className="mb-6 rounded-lg border border-amber-500/20 bg-amber-500/5 px-4 py-3">
           <p className="text-sm text-clay-600 dark:text-clay-400">
-            <span className="font-semibold">{t('demo_teacher.classes.banner_eyebrow')}</span> --{' '}
+            <span className="font-semibold">{t('demo_teacher.classes.banner_eyebrow')}</span> -{' '}
             {t('demo_teacher.classes.banner_suffix')} {DEMO_TEACHER.name}
           </p>
         </div>
@@ -61,7 +63,7 @@ export default function TeacherClassesPage() {
               {t('demo_teacher.classes.title')}
             </h1>
             <p className="text-sm text-muted-foreground">
-              {TEACHER_DEMO_CLASSES.length} {t('demo_teacher.classes.subtitle_classes_suffix')} --{' '}
+              {TEACHER_DEMO_CLASSES.length} {t('demo_teacher.classes.subtitle_classes_suffix')} -{' '}
               {DEMO_TEACHER.department} {t('demo_teacher.classes.subtitle_dept_suffix')}
             </p>
           </div>
@@ -218,7 +220,7 @@ export default function TeacherClassesPage() {
 
         {/* Footer */}
         <p className="mt-10 text-center text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-          {t('demo_teacher.classes.footer.demo_data')} -- {DEMO_TEACHER.name} --{' '}
+          {t('demo_teacher.classes.footer.demo_data')} - {DEMO_TEACHER.name} -{' '}
           {TEACHER_DEMO_CLASSES.length} {t('demo_teacher.classes.footer.classes_suffix')}
         </p>
       </div>

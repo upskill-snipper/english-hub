@@ -16,9 +16,16 @@
  *     guidance and we suppress them entirely for under-18s).
  *   • Recommendations - only when `PrivacySettings.aiOptOut === false`.
  *   • Delivery - Resend, batches of 50, 1s spacing between batches.
+ *   • Idempotency - one `WeeklyStudentDigest` row per (student, week),
+ *     checked BEFORE generating and written only after a confirmed send.
  *
- * Returns `{ sent, skipped, errors }` (HTTP 200 even on partial failures -
- * caller can introspect `errors[]` for follow-up).
+ * Returns `{ ok, durationMs, candidates, sent, skipped, alreadySent, failed,
+ * unrecorded, errors }`. HTTP 200 on partial failures (a single bad row must
+ * never abort the batch); `errors[]` carries a capped sample for follow-up
+ * while the counters are always exact. A run where every attempted send
+ * failed throws, so `runCron` reports it to Sentry and Vercel retries - which
+ * is now safe, because the ledger stops already-delivered students being
+ * sent to twice.
  *
  * Suggested Vercel Cron entry (orchestrator owns vercel.json):
  *
@@ -35,6 +42,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import crypto from 'crypto'
 
 import { prisma } from '@/lib/prisma'
+import { runCron } from '@/lib/cron/observability'
 import { sendViaResend } from '@/lib/email/resend'
 import {
   renderWeeklyStudentEmail,
@@ -49,13 +57,36 @@ const BATCH_SIZE = 50
 const BATCH_SPACING_MS = 1000
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://theenglishhub.app'
 
+// An unbounded errors[] would put one line per student into the cron response
+// (and into the Sentry breadcrumb) during an outage. Counters stay exact; the
+// array is a sample.
+const MAX_REPORTED_ERRORS = 20
+
 // ─── Types ───────────────────────────────────────────────────────────────
 
-interface CronResult {
+// Deliberately a type alias, not an interface: `runCron<T extends
+// Record<string, unknown>>` cannot accept an interface (interfaces have no
+// implicit index signature).
+type CronResult = {
+  /** Students matching the audience filter before any per-student gating. */
+  candidates: number
   sent: number
+  /** Ineligible this week (no email, opted out, no activity). Not a failure. */
   skipped: number
+  /** Already had a ledger row for this week - the double-send guard firing. */
+  alreadySent: number
+  /** Per-student errors during prep or send. Non-fatal to the rest of the batch. */
+  failed: number
+  /** Email went out but the ledger write failed - a retry may duplicate it. */
+  unrecorded: number
+  /** Capped sample of the above; `failed`/`unrecorded` carry the true totals. */
   errors: string[]
 }
+
+type SendOutcome =
+  | { kind: 'sent'; userId: string }
+  | { kind: 'unrecorded'; userId: string; error: string }
+  | { kind: 'failed'; userId: string; error: string }
 
 export const dynamic = 'force-dynamic'
 
@@ -95,173 +126,223 @@ export async function POST(request: NextRequest): Promise<Response> {
     return NextResponse.json({ error: 'Unauthorised' }, { status: 401 })
   }
 
-  const result: CronResult = { sent: 0, skipped: 0, errors: [] }
-  const startedAt = Date.now()
+  // Defect being fixed (2026-08 reliability audit): this was one of only two
+  // cron routes outside runCron(), so an exception or a slow run never
+  // reached Sentry and no duration was ever recorded - failures were
+  // completely invisible. Auth stays outside the wrapper so a 401 is not
+  // logged as a cron failure (matches weekly-parent-reports).
+  return runCron('weekly-student-reports', executeWeeklyStudentReports)
+}
 
-  try {
-    // ── Pull candidate students ──────────────────────────────────────
-    //
-    // We require:
-    //   • role === STUDENT
-    //   • accountStatus ACTIVE
-    //   • not soft-deleted
-    //   • PrivacySettings.marketingEnabled = true (this is OFF by default
-    //     for children per Children's Code, so the same filter naturally
-    //     excludes under-13s without explicit consent).
-    const students = await prisma.user.findMany({
-      where: {
-        role: 'STUDENT',
-        accountStatus: 'ACTIVE',
-        deletedAt: null,
-        privacySettings: { marketingEnabled: true },
-      },
-      select: {
-        id: true,
-        email: true,
-        firstName: true,
-        dateOfBirth: true,
-        isMinor: true,
-        privacySettings: {
-          select: {
-            aiOptOut: true,
-            marketingEnabled: true,
-          },
+// ─── Cron body ───────────────────────────────────────────────────────────
+
+async function executeWeeklyStudentReports(): Promise<CronResult> {
+  const result: CronResult = {
+    candidates: 0,
+    sent: 0,
+    skipped: 0,
+    alreadySent: 0,
+    failed: 0,
+    unrecorded: 0,
+    errors: [],
+  }
+
+  // ── Pull candidate students ────────────────────────────────────────
+  //
+  // We require:
+  //   • role === STUDENT
+  //   • accountStatus ACTIVE
+  //   • not soft-deleted
+  //   • PrivacySettings.marketingEnabled = true (this is OFF by default
+  //     for children per Children's Code, so the same filter naturally
+  //     excludes under-13s without explicit consent).
+  const students = await prisma.user.findMany({
+    where: {
+      role: 'STUDENT',
+      accountStatus: 'ACTIVE',
+      deletedAt: null,
+      privacySettings: { marketingEnabled: true },
+    },
+    select: {
+      id: true,
+      email: true,
+      firstName: true,
+      dateOfBirth: true,
+      isMinor: true,
+      privacySettings: {
+        select: {
+          aiOptOut: true,
+          marketingEnabled: true,
         },
       },
+    },
+  })
+  result.candidates = students.length
+
+  // ── Build digests in series, send in batches ───────────────────────
+  const sendable: Array<{
+    to: string
+    subject: string
+    html: string
+    text: string
+    userId: string
+  }> = []
+
+  const now = new Date()
+  const windowStart = new Date(now.getTime() - SEVEN_DAYS_MS)
+  const weekStarting = weekStartingFor(now)
+
+  // ── Idempotency: who already had this week's digest? ───────────────
+  //
+  // Defect being fixed: the route had no send ledger of any kind, so any
+  // re-invocation (manual retry, Vercel cron retry after a timeout, a
+  // duplicated schedule) re-sent the digest to every eligible student. One
+  // query up front rather than one per student keeps this off the N+1 path;
+  // the unique index on (student_id, week_starting) is the real guarantee.
+  const alreadySentIds = new Set<string>()
+  if (students.length > 0) {
+    const ledgerRows = await prisma.weeklyStudentDigest.findMany({
+      where: { weekStarting, studentId: { in: students.map((s) => s.id) } },
+      select: { studentId: true },
     })
+    for (const row of ledgerRows) {
+      alreadySentIds.add(row.studentId)
+    }
+  }
 
-    // ── Build digests in series, send in batches ─────────────────────
-    const sendable: Array<{
-      to: string
-      subject: string
-      html: string
-      text: string
-      userId: string
-    }> = []
+  for (const student of students) {
+    try {
+      if (alreadySentIds.has(student.id)) {
+        result.alreadySent++
+        continue
+      }
 
-    const now = new Date()
-    const windowStart = new Date(now.getTime() - SEVEN_DAYS_MS)
+      // Belt-and-braces email check (PrivacySettings could be null in
+      // theory if seed data is incomplete).
+      if (!student.email) {
+        result.skipped++
+        continue
+      }
+      if (!student.privacySettings?.marketingEnabled) {
+        result.skipped++
+        continue
+      }
 
-    for (const student of students) {
-      try {
-        // Belt-and-braces email check (PrivacySettings could be null in
-        // theory if seed data is incomplete).
-        if (!student.email) {
-          result.skipped++
-          continue
-        }
-        if (!student.privacySettings?.marketingEnabled) {
-          result.skipped++
-          continue
-        }
+      const ageYears = ageInYears(student.dateOfBirth, now)
+      const isChild = ageYears < 13 || student.isMinor
 
-        const ageYears = ageInYears(student.dateOfBirth, now)
-        const isChild = ageYears < 13 || student.isMinor
+      // Children's Code: under-13 marketing is OFF by default. The
+      // marketingEnabled gate above already enforces this - if a child
+      // has it on, their guardian explicitly opted in. We still suppress
+      // streaks and limit suggestion text for any minor.
+      const streaksEnabled = !isChild
+      const recommendationsEnabled = !student.privacySettings.aiOptOut && !isChild
 
-        // Children's Code: under-13 marketing is OFF by default. The
-        // marketingEnabled gate above already enforces this - if a child
-        // has it on, their guardian explicitly opted in. We still suppress
-        // streaks and limit suggestion text for any minor.
-        const streaksEnabled = !isChild
-        const recommendationsEnabled = !student.privacySettings.aiOptOut && !isChild
-
-        // ── Activity check: at least one essay in the last 7 days ────
-        const recentEssays = await prisma.essay.findMany({
-          where: {
-            userId: student.id,
-            deletedAt: null,
-            createdAt: { gte: windowStart, lt: now },
-          },
-          select: {
-            id: true,
-            title: true,
-            subject: true,
-            createdAt: true,
-            aiFeedback: {
-              select: {
-                overallScore: true,
-                grammarScore: true,
-                structureScore: true,
-                argumentScore: true,
-                vocabularyScore: true,
-              },
+      // ── Activity check: at least one essay in the last 7 days ──────
+      const recentEssays = await prisma.essay.findMany({
+        where: {
+          userId: student.id,
+          deletedAt: null,
+          createdAt: { gte: windowStart, lt: now },
+        },
+        select: {
+          id: true,
+          title: true,
+          subject: true,
+          createdAt: true,
+          aiFeedback: {
+            select: {
+              overallScore: true,
+              grammarScore: true,
+              structureScore: true,
+              argumentScore: true,
+              vocabularyScore: true,
             },
           },
-          orderBy: { createdAt: 'desc' },
-        })
+        },
+        orderBy: { createdAt: 'desc' },
+      })
 
-        if (recentEssays.length === 0) {
-          result.skipped++
-          continue
-        }
-
-        // ── Streak: count distinct active days (UTC) in the window ───
-        let streakDays: number | null = null
-        if (streaksEnabled) {
-          const days = new Set<string>()
-          for (const e of recentEssays) {
-            days.add(e.createdAt.toISOString().slice(0, 10))
-          }
-          streakDays = days.size
-        }
-
-        // ── Top 3 "quiz" scores - until a Quiz model lands, AIFeedback
-        // overall scores are the closest signal of scored activity.
-        const topQuizzes: WeeklyStudentQuizScore[] = recentEssays
-          .filter((e) => typeof e.aiFeedback?.overallScore === 'number')
-          .map((e) => ({
-            title: e.title || `${e.subject} essay`,
-            score: e.aiFeedback!.overallScore,
-            takenAt: e.createdAt.toISOString(),
-          }))
-          .sort((a, b) => b.score - a.score)
-          .slice(0, 3)
-
-        // ── Focus recommendation: pick the lowest AO-aligned subscore
-        // across the week and surface a generic prompt. We deliberately
-        // avoid grade predictions (Children's Code data minimisation).
-        const focusRecommendation = recommendationsEnabled
-          ? deriveFocusRecommendation(recentEssays)
-          : null
-
-        const dashboardUrl = `${SITE_URL}/dashboard`
-        const unsubscribeUrl = `${SITE_URL}/dashboard/settings`
-
-        const html = await renderWeeklyStudentEmail({
-          firstName: student.firstName,
-          streakDays,
-          topQuizzes,
-          focusRecommendation,
-          dashboardUrl,
-          unsubscribeUrl,
-        })
-        const text = renderWeeklyStudentText({
-          firstName: student.firstName,
-          streakDays,
-          topQuizzes,
-          focusRecommendation,
-          dashboardUrl,
-          unsubscribeUrl,
-        })
-
-        sendable.push({
-          to: student.email,
-          subject: 'Your week on The English Hub',
-          html,
-          text,
-          userId: student.id,
-        })
-      } catch (perStudentErr) {
-        result.errors.push(`prep ${student.id}: ${errMessage(perStudentErr)}`)
+      if (recentEssays.length === 0) {
         result.skipped++
+        continue
       }
-    }
 
-    // ── Dispatch in batches of 50 with 1s spacing ────────────────────
-    for (let i = 0; i < sendable.length; i += BATCH_SIZE) {
-      const batch = sendable.slice(i, i + BATCH_SIZE)
-      const outcomes = await Promise.all(
-        batch.map(async (msg) => {
+      // ── Streak: count distinct active days (UTC) in the window ─────
+      let streakDays: number | null = null
+      if (streaksEnabled) {
+        const days = new Set<string>()
+        for (const e of recentEssays) {
+          days.add(e.createdAt.toISOString().slice(0, 10))
+        }
+        streakDays = days.size
+      }
+
+      // ── Top 3 "quiz" scores - until a Quiz model lands, AIFeedback
+      // overall scores are the closest signal of scored activity.
+      const topQuizzes: WeeklyStudentQuizScore[] = recentEssays
+        .filter((e) => typeof e.aiFeedback?.overallScore === 'number')
+        .map((e) => ({
+          title: e.title || `${e.subject} essay`,
+          score: e.aiFeedback!.overallScore,
+          takenAt: e.createdAt.toISOString(),
+        }))
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 3)
+
+      // ── Focus recommendation: pick the lowest AO-aligned subscore
+      // across the week and surface a generic prompt. We deliberately
+      // avoid grade predictions (Children's Code data minimisation).
+      const focusRecommendation = recommendationsEnabled
+        ? deriveFocusRecommendation(recentEssays)
+        : null
+
+      const dashboardUrl = `${SITE_URL}/dashboard`
+      const unsubscribeUrl = `${SITE_URL}/dashboard/settings`
+
+      const html = await renderWeeklyStudentEmail({
+        firstName: student.firstName,
+        streakDays,
+        topQuizzes,
+        focusRecommendation,
+        dashboardUrl,
+        unsubscribeUrl,
+      })
+      const text = renderWeeklyStudentText({
+        firstName: student.firstName,
+        streakDays,
+        topQuizzes,
+        focusRecommendation,
+        dashboardUrl,
+        unsubscribeUrl,
+      })
+
+      sendable.push({
+        to: student.email,
+        subject: 'Your week on The English Hub',
+        html,
+        text,
+        userId: student.id,
+      })
+    } catch (perStudentErr) {
+      // Non-fatal by design: a single malformed row (missing feedback,
+      // template throw, essay query failure) must not abort the run for
+      // everyone else. Counted in `failed`, not buried in `skipped`.
+      result.failed++
+      pushError(result, `prep ${student.id}: ${errMessage(perStudentErr)}`)
+    }
+  }
+
+  // ── Dispatch in batches of 50 with 1s spacing ──────────────────────
+  for (let i = 0; i < sendable.length; i += BATCH_SIZE) {
+    const batch = sendable.slice(i, i + BATCH_SIZE)
+    const outcomes: SendOutcome[] = await Promise.all(
+      batch.map(async (msg): Promise<SendOutcome> => {
+        // Every failure mode is caught inside the map. Previously a throw
+        // from any single send rejected the Promise.all, aborting this and
+        // every remaining batch and losing the whole run's counts - one bad
+        // row silently killed the digest.
+        try {
           const r = await sendViaResend({
             to: msg.to,
             subject: msg.subject,
@@ -272,43 +353,100 @@ export async function POST(request: NextRequest): Promise<Response> {
               { name: 'event', value: 'weekly-digest' },
             ],
           })
-          return { msg, r }
-        }),
-      )
-      for (const { msg, r } of outcomes) {
-        if (r.sent) {
-          result.sent++
-        } else {
-          result.skipped++
-          result.errors.push(`send ${msg.userId}: ${r.reason}${r.detail ? ` - ${r.detail}` : ''}`)
+
+          if (!r.sent) {
+            return {
+              kind: 'failed',
+              userId: msg.userId,
+              error: `send ${msg.userId}: ${r.reason}${r.detail ? ` - ${r.detail}` : ''}`,
+            }
+          }
+
+          // Record only after a confirmed send: a ledger row written before
+          // dispatch would permanently suppress the digest for anyone whose
+          // send then failed.
+          try {
+            await prisma.weeklyStudentDigest.create({
+              data: { studentId: msg.userId, weekStarting },
+            })
+          } catch (ledgerErr) {
+            return {
+              kind: 'unrecorded',
+              userId: msg.userId,
+              error: `ledger ${msg.userId}: ${errMessage(ledgerErr)}`,
+            }
+          }
+
+          return { kind: 'sent', userId: msg.userId }
+        } catch (sendErr) {
+          return {
+            kind: 'failed',
+            userId: msg.userId,
+            error: `send ${msg.userId}: ${errMessage(sendErr)}`,
+          }
         }
-      }
-      const isLastBatch = i + BATCH_SIZE >= sendable.length
-      if (!isLastBatch) {
-        await sleep(BATCH_SPACING_MS)
+      }),
+    )
+
+    for (const outcome of outcomes) {
+      if (outcome.kind === 'sent') {
+        result.sent++
+      } else if (outcome.kind === 'unrecorded') {
+        // The student did receive the email, so it counts as sent. The
+        // separate counter flags the duplicate risk on the next invocation.
+        result.sent++
+        result.unrecorded++
+        pushError(result, outcome.error)
+      } else {
+        result.failed++
+        pushError(result, outcome.error)
       }
     }
 
-    console.info('[weekly-student-reports] complete', {
-      durationMs: Date.now() - startedAt,
-      candidates: students.length,
-      ...result,
-      errorSample: result.errors.slice(0, 5),
-    })
-
-    return NextResponse.json(result, { status: 200 })
-  } catch (err) {
-    // Surface the failure to the caller but preserve any partial work.
-    result.errors.push(`fatal: ${errMessage(err)}`)
-    console.error('[weekly-student-reports] FAILED', {
-      durationMs: Date.now() - startedAt,
-      error: err,
-    })
-    return NextResponse.json(result, { status: 500 })
+    const isLastBatch = i + BATCH_SIZE >= sendable.length
+    if (!isLastBatch) {
+      await sleep(BATCH_SPACING_MS)
+    }
   }
+
+  // ── Escalate a total delivery failure ──────────────────────────────
+  //
+  // Individual failures stay non-fatal, but a run where every attempted
+  // send failed is an outage (missing Resend key, provider down), not a
+  // partial success. Throwing hands it to runCron, which captures to
+  // Sentry and returns 500 so Vercel retries - safe now that the ledger
+  // stops already-delivered students being sent to twice.
+  if (sendable.length > 0 && result.sent === 0) {
+    throw new Error(
+      `all ${sendable.length} student digest sends failed (first: ${result.errors[0] ?? 'unknown'})`,
+    )
+  }
+
+  return result
 }
 
 // ─── Helpers ─────────────────────────────────────────────────────────────
+
+/**
+ * Start of the Sunday-to-Sunday UTC week the digest reports on - the ledger
+ * key. Derived exactly as weekly-parent-reports derives `weekStartsAt`, so
+ * the two crons agree on which week a given run belongs to, and every
+ * re-invocation within the same week resolves to the same key.
+ */
+function weekStartingFor(now: Date): Date {
+  const weekEndsAt = new Date(now.getTime())
+  weekEndsAt.setUTCHours(0, 0, 0, 0)
+  const dayOfWeek = weekEndsAt.getUTCDay() // 0 = Sunday
+  weekEndsAt.setUTCDate(weekEndsAt.getUTCDate() - dayOfWeek)
+  return new Date(weekEndsAt.getTime() - SEVEN_DAYS_MS)
+}
+
+/** Append to the capped error sample. Counters remain exact regardless. */
+function pushError(result: CronResult, message: string): void {
+  if (result.errors.length < MAX_REPORTED_ERRORS) {
+    result.errors.push(message)
+  }
+}
 
 function ageInYears(dob: Date, now: Date): number {
   let years = now.getUTCFullYear() - dob.getUTCFullYear()

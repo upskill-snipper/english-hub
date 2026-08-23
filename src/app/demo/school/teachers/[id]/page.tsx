@@ -3,7 +3,9 @@
 import { useParams } from 'next/navigation'
 import { useT } from '@/lib/i18n/use-t'
 import Link from 'next/link'
-import { DEMO_TEACHERS, DEMO_CLASSES, DEMO_STUDENTS } from '@/data/demo-data'
+import { DEMO_TEACHERS } from '@/data/demo/teachers'
+import { DEMO_CLASSES } from '@/data/demo/classes'
+import { DEMO_STUDENT_INDEX } from '@/data/demo/students-index'
 import DemoBanner from '@/components/demo/DemoBanner'
 import { percentageToGCSEGrade } from '@/lib/grades'
 
@@ -21,7 +23,7 @@ function getTeacherClasses(teacherId: string) {
 }
 
 function getClassStudents(classId: string) {
-  return DEMO_STUDENTS.filter((s) => s.classId === classId)
+  return DEMO_STUDENT_INDEX.filter((s) => s.classId === classId)
 }
 
 function getProgressColor(value: number): string {
@@ -371,7 +373,7 @@ export default function TeacherDetailPage() {
           <div className="rounded-xl border border-border bg-card overflow-hidden mb-10">
             <div className="px-5 py-4 border-b border-border bg-gradient-to-r from-primary/5 to-transparent">
               <h2 className="text-base font-medium text-foreground">
-                {reportClass.name} &mdash; {teacher.name}&apos;s Report
+                {reportClass.name} - {teacher.name}&apos;s Report
               </h2>
               <p className="text-[11px] text-muted-foreground mt-0.5">
                 {tx('demo.b15.school_teachers.report_subtitle')}

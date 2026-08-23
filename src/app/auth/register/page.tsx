@@ -330,21 +330,25 @@ function RegisterForm() {
         // fallback. The profile row can be reconciled later.
       }
 
-      // Send parental consent email if under-16 student provided a parent email.
-      // NOTE: with Supabase email-confirmation ON there is no session yet here,
-      // so this POST is unauthenticated and parent-notify returns 401 - the
-      // guardian email does not send. The durable fix (trigger server-side on
-      // first verified sign-in + unify the consent-token store) is tracked
-      // separately; this at least stops the failure being invisible and lets
-      // the confirmation-OFF path (session present) work.
-      if (parentGuardianEmail) {
+      // Guardian consent email for under-16 students.
+      //
+      // This used to fire unconditionally, and with Supabase email
+      // confirmation ON there is no session at this point: the POST went out
+      // unauthenticated, parent-notify answered 401, and no guardian was ever
+      // emailed for a direct signup. We now only call it when signUp()
+      // actually returned a session (confirmation OFF, or an already-confirmed
+      // identity). Where there is no session, the request is raised
+      // server-side instead - see the AI-gate trigger in
+      // src/lib/consent-check.ts and the manual control at /consent/status.
+      // The guardian address is persisted on the profile above, so nothing is
+      // lost by deferring.
+      if (parentGuardianEmail && data.session) {
         try {
           const res = await fetch('/api/auth/parent-notify', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
               parentEmail: parentGuardianEmail,
-              studentName: fullName,
               studentId: data.user.id,
             }),
           })
@@ -364,6 +368,13 @@ function RegisterForm() {
       // is a lagging index used by dormancy-check, data-retention, DSAR, and
       // weekly-report features that query Prisma (see /api/auth/register
       // route.ts header). Must not block the user's signup/verification flow.
+      //
+      // Same session caveat as the guardian email above: /api/auth/register
+      // requires a verified session and answers 403 without one, so with
+      // email confirmation ON this call cannot succeed here. It is left in
+      // place for the confirmation-OFF path; the durable fix is to call the
+      // same endpoint once from the authenticated post-confirmation landing
+      // (auth callback or first dashboard load), which is outside this file.
       if (dobYear && dobMonth && dobDay) {
         const [firstName, ...rest] = fullName.trim().split(/\s+/)
         const lastName = rest.join(' ') || firstName
@@ -440,6 +451,23 @@ function RegisterForm() {
               {accountType === 'parent' && (
                 <p className="text-sm text-muted-foreground mb-4">
                   {t('auth.register.parent_after_verify')}
+                </p>
+              )}
+              {/* Under-16s are told at sign-up that we will email their
+                  guardian. The email is raised once they are signed in (it
+                  cannot be sent before Supabase issues a session), so give
+                  them the page that raises and tracks it rather than leaving
+                  the promise hanging. */}
+              {accountType === 'student' && isUnder16 && (
+                <p className="text-sm text-muted-foreground mb-4">
+                  {t('form.under_16_guardian_consent_help')}{' '}
+                  <Link
+                    href="/consent/status"
+                    className="font-medium text-foreground underline underline-offset-2 hover:no-underline"
+                  >
+                    {t('consent.guardian.send_request_short')}
+                  </Link>
+                  .
                 </p>
               )}
               <p className="text-sm text-muted-foreground mb-4">

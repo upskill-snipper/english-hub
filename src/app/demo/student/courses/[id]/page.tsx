@@ -58,7 +58,7 @@ const COURSES: Record<string, CourseData> = {
         quizMaxScore: 5,
         revisionNeeded: false,
         lessonContent:
-          "When approaching a reading passage in Paper 1, your first task is to read the entire text carefully. Look for the writer's purpose, audience, and tone. Underline key phrases that convey meaning. Pay attention to structural choices -- why does the writer begin or end in a particular way?\n\nKey skills:\n- Skimming for gist (what is the passage about?)\n- Scanning for specific details\n- Identifying explicit and implicit meaning\n- Recognising how writers use language for effect\n\nPractice reading a variety of text types: articles, reports, letters, speeches, and diary entries. Each has its own conventions and expected register.",
+          "When approaching a reading passage in Paper 1, your first task is to read the entire text carefully. Look for the writer's purpose, audience, and tone. Underline key phrases that convey meaning. Pay attention to structural choices - why does the writer begin or end in a particular way?\n\nKey skills:\n- Skimming for gist (what is the passage about?)\n- Scanning for specific details\n- Identifying explicit and implicit meaning\n- Recognising how writers use language for effect\n\nPractice reading a variety of text types: articles, reports, letters, speeches, and diary entries. Each has its own conventions and expected register.",
         quiz: [
           {
             question: 'What is the first step when approaching a reading passage?',
@@ -115,7 +115,7 @@ const COURSES: Record<string, CourseData> = {
         quizMaxScore: 5,
         revisionNeeded: false,
         lessonContent:
-          'Summary writing requires you to identify key points from a passage and present them in your own words. You must be concise and avoid copying large chunks of the original text.\n\nStep-by-step approach:\n1. Read the question carefully -- what are you summarising?\n2. Identify relevant points from the passage\n3. List them in a logical order\n4. Rewrite using your own words\n5. Check you have not exceeded the word limit\n\nCommon mistakes to avoid:\n- Copying directly from the passage\n- Including irrelevant details\n- Writing in bullet points instead of continuous prose\n- Exceeding the word limit',
+          'Summary writing requires you to identify key points from a passage and present them in your own words. You must be concise and avoid copying large chunks of the original text.\n\nStep-by-step approach:\n1. Read the question carefully - what are you summarising?\n2. Identify relevant points from the passage\n3. List them in a logical order\n4. Rewrite using your own words\n5. Check you have not exceeded the word limit\n\nCommon mistakes to avoid:\n- Copying directly from the passage\n- Including irrelevant details\n- Writing in bullet points instead of continuous prose\n- Exceeding the word limit',
         quiz: [
           {
             question: 'What is the most important first step in summary writing?',
@@ -330,7 +330,7 @@ const COURSES: Record<string, CourseData> = {
         revisionTip:
           'Focus on reading between the lines. Practise with short extracts: for each paragraph, write down what the writer implies but does not state directly.',
         lessonContent:
-          'Inference means reading between the lines -- understanding what a writer means without them stating it directly. Deduction is drawing logical conclusions from evidence in the text.\n\nTo practise inference:\n- Ask yourself: what is the writer NOT saying directly?\n- Look at character actions and dialogue for hidden feelings\n- Consider the mood and atmosphere created\n- Think about what the reader is meant to feel\n\nExample: "She gripped the edge of the table, her knuckles white." The writer does not say the character is scared or angry, but we can infer strong emotion from the physical description.',
+          'Inference means reading between the lines - understanding what a writer means without them stating it directly. Deduction is drawing logical conclusions from evidence in the text.\n\nTo practise inference:\n- Ask yourself: what is the writer NOT saying directly?\n- Look at character actions and dialogue for hidden feelings\n- Consider the mood and atmosphere created\n- Think about what the reader is meant to feel\n\nExample: "She gripped the edge of the table, her knuckles white." The writer does not say the character is scared or angry, but we can infer strong emotion from the physical description.',
         quiz: [
           {
             question: 'What does inference mean?',
@@ -387,7 +387,7 @@ const COURSES: Record<string, CourseData> = {
         quizMaxScore: 5,
         revisionNeeded: false,
         lessonContent:
-          "When responding to descriptive writing, focus on how the writer creates vivid imagery and atmosphere. Look for sensory details -- what can you see, hear, smell, taste, or touch in the passage?\n\nKey techniques to identify:\n- Similes and metaphors\n- Personification\n- Pathetic fallacy (weather reflecting mood)\n- Sensory imagery (the five senses)\n- Colour imagery\n- Sound devices (onomatopoeia, alliteration)\n\nAlways connect the technique to its effect. Do not simply identify a simile -- explain what picture it creates in the reader's mind and what mood or feeling it establishes.",
+          "When responding to descriptive writing, focus on how the writer creates vivid imagery and atmosphere. Look for sensory details - what can you see, hear, smell, taste, or touch in the passage?\n\nKey techniques to identify:\n- Similes and metaphors\n- Personification\n- Pathetic fallacy (weather reflecting mood)\n- Sensory imagery (the five senses)\n- Colour imagery\n- Sound devices (onomatopoeia, alliteration)\n\nAlways connect the technique to its effect. Do not simply identify a simile - explain what picture it creates in the reader's mind and what mood or feeling it establishes.",
         quiz: [
           {
             question: 'What are sensory details?',
@@ -583,7 +583,7 @@ const COURSES: Record<string, CourseData> = {
         quizScore: null,
         quizMaxScore: 5,
         lessonContent:
-          'A strong vocabulary helps you understand complex texts and write more sophisticated analyses. Focus on learning words commonly found in AQA English passages.\n\nStrategies for building vocabulary:\n- Read widely -- newspapers, novels, non-fiction\n- Keep a vocabulary journal with new words and their meanings\n- Learn word roots, prefixes, and suffixes\n- Practise using new words in your own writing\n- Use context clues to work out unfamiliar words\n\nHigh-frequency analytical vocabulary:\n- Juxtaposition: placing contrasting ideas side by side\n- Ambiguity: having more than one possible meaning\n- Connotation: the associations a word carries beyond its dictionary definition\n- Register: the level of formality in language',
+          'A strong vocabulary helps you understand complex texts and write more sophisticated analyses. Focus on learning words commonly found in AQA English passages.\n\nStrategies for building vocabulary:\n- Read widely - newspapers, novels, non-fiction\n- Keep a vocabulary journal with new words and their meanings\n- Learn word roots, prefixes, and suffixes\n- Practise using new words in your own writing\n- Use context clues to work out unfamiliar words\n\nHigh-frequency analytical vocabulary:\n- Juxtaposition: placing contrasting ideas side by side\n- Ambiguity: having more than one possible meaning\n- Connotation: the associations a word carries beyond its dictionary definition\n- Register: the level of formality in language',
         quiz: [
           {
             question: 'What is a connotation?',
@@ -802,7 +802,7 @@ const COURSES: Record<string, CourseData> = {
         quizScore: null,
         quizMaxScore: 5,
         lessonContent:
-          'This is your final module -- a full mock exam experience. You will practise answering all question types under timed conditions.\n\nBefore you begin:\n- Find a quiet space with no distractions\n- Set a timer for 1 hour 45 minutes (reading + writing)\n- Have a pen, highlighter, and the passage ready\n- Read the passage twice before answering\n\nMark scheme reminders:\n- Short answers: Be precise and use evidence\n- Language analysis: Use PEE paragraphs with embedded quotations\n- Summary: Own words, relevant points, continuous prose\n- Directed writing: Correct format, appropriate register, use passage content\n\nGood luck! Remember to manage your time carefully.',
+          'This is your final module - a full mock exam experience. You will practise answering all question types under timed conditions.\n\nBefore you begin:\n- Find a quiet space with no distractions\n- Set a timer for 1 hour 45 minutes (reading + writing)\n- Have a pen, highlighter, and the passage ready\n- Read the passage twice before answering\n\nMark scheme reminders:\n- Short answers: Be precise and use evidence\n- Language analysis: Use PEE paragraphs with embedded quotations\n- Summary: Own words, relevant points, continuous prose\n- Directed writing: Correct format, appropriate register, use passage content\n\nGood luck! Remember to manage your time carefully.',
         quiz: [
           {
             question: 'How long is the full Paper 1 exam?',
@@ -848,13 +848,13 @@ function getGenericCourse(id: string): CourseData {
       moduleCount: 12,
     },
     'aqa-lit-inspector': {
-      title: 'AQA Literature -- Inspector Calls',
+      title: 'AQA Literature - Inspector Calls',
       description: 'Character analysis, themes, and essay writing for An Inspector Calls.',
       progress: 80,
       moduleCount: 10,
     },
     'aqa-lit-poetry': {
-      title: 'AQA Literature -- Poetry',
+      title: 'AQA Literature - Poetry',
       description: 'Poetry analysis, comparison essays, and unseen poetry techniques.',
       progress: 30,
       moduleCount: 8,
@@ -1104,7 +1104,7 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
           {/* Demo banner */}
           <div className="mb-6 rounded-lg border border-primary/20 bg-primary/5 px-4 py-3">
             <p className="text-sm text-primary">
-              <span className="font-semibold">{t('demo.b15.student_course.demo_label')}</span> --{' '}
+              <span className="font-semibold">{t('demo.b15.student_course.demo_label')}</span> -{' '}
               {t('demo.b15.student_course.demo_explore')}
             </p>
           </div>
@@ -1297,7 +1297,7 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
         {/* Demo banner */}
         <div className="mb-6 rounded-lg border border-primary/20 bg-primary/5 px-4 py-3">
           <p className="text-sm text-primary">
-            <span className="font-semibold">{t('demo.b15.student_course.demo_label')}</span> --{' '}
+            <span className="font-semibold">{t('demo.b15.student_course.demo_label')}</span> -{' '}
             {t('demo.b15.student_course.demo_lesson')}
           </p>
         </div>
@@ -1358,7 +1358,7 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
               </span>
               {quizPct < 60 && (
                 <span className="text-[10px] text-red-700/70 dark:text-red-300/70 ml-1">
-                  -- {t('demo.b15.student_course.retake_recommended')}
+                  - {t('demo.b15.student_course.retake_recommended')}
                 </span>
               )}
             </div>

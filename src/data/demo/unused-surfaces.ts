@@ -1,0 +1,1336 @@
+// ─── Demo Surfaces With No Current Consumer ───────────────────────────────────
+// Everything in here is authored demo data that no page imports today. It was
+// parked in its own module rather than deleted so the data is not lost, and so
+// that it costs nothing: nothing imports this file, so none of it reaches a
+// client bundle. If you wire one of these up, import it from here directly.
+//
+// Keep this module free of any static import of ./students-detail. Everything
+// below is derived from the compact index instead, so wiring one of these
+// surfaces up cannot accidentally drag the ~320 KB roster into a page.
+// ──────────────────────────────────────────────────────────────────────────────
+
+import type {
+  DemoWeeklyActivity,
+  DemoResourceUsage,
+  DemoAssignmentOverview,
+  DemoInterventionLog,
+  DemoMockAttempt,
+} from './types'
+import { DEMO_STUDENT_INDEX } from './students-index'
+import { DEMO_TEACHERS } from './teachers'
+import { DEMO_CLASSES } from './classes'
+
+export const DEMO_WEEKLY_ACTIVITY: DemoWeeklyActivity[] = [
+  // Spring term begins - slow ramp post-Christmas
+  {
+    week: '6 Jan',
+    lessonsAccessed: 198,
+    quizzesCompleted: 92,
+    essaysSubmitted: 22,
+    mockExamsTaken: 4,
+    averageSessionMinutes: 16,
+    activeStudents: 245,
+  },
+  {
+    week: '13 Jan',
+    lessonsAccessed: 235,
+    quizzesCompleted: 118,
+    essaysSubmitted: 30,
+    mockExamsTaken: 8,
+    averageSessionMinutes: 20,
+    activeStudents: 274,
+  },
+  {
+    week: '20 Jan',
+    lessonsAccessed: 268,
+    quizzesCompleted: 132,
+    essaysSubmitted: 34,
+    mockExamsTaken: 10,
+    averageSessionMinutes: 22,
+    activeStudents: 286,
+  },
+  {
+    week: '27 Jan',
+    lessonsAccessed: 292,
+    quizzesCompleted: 148,
+    essaysSubmitted: 38,
+    mockExamsTaken: 12,
+    averageSessionMinutes: 24,
+    activeStudents: 304,
+  },
+  {
+    week: '3 Feb',
+    lessonsAccessed: 296,
+    quizzesCompleted: 150,
+    essaysSubmitted: 38,
+    mockExamsTaken: 14,
+    averageSessionMinutes: 23,
+    activeStudents: 302,
+  },
+  {
+    week: '10 Feb',
+    lessonsAccessed: 285,
+    quizzesCompleted: 142,
+    essaysSubmitted: 38,
+    mockExamsTaken: 12,
+    averageSessionMinutes: 22,
+    activeStudents: 298,
+  },
+  // Pre-mock surge (Mock 1 window)
+  {
+    week: '17 Feb',
+    lessonsAccessed: 310,
+    quizzesCompleted: 156,
+    essaysSubmitted: 42,
+    mockExamsTaken: 18,
+    averageSessionMinutes: 25,
+    activeStudents: 312,
+  },
+  // February half-term dip
+  {
+    week: '24 Feb',
+    lessonsAccessed: 145,
+    quizzesCompleted: 68,
+    essaysSubmitted: 15,
+    mockExamsTaken: 6,
+    averageSessionMinutes: 18,
+    activeStudents: 180,
+  },
+  // Post-half-term recovery and building toward mocks
+  {
+    week: '3 Mar',
+    lessonsAccessed: 335,
+    quizzesCompleted: 178,
+    essaysSubmitted: 48,
+    mockExamsTaken: 22,
+    averageSessionMinutes: 28,
+    activeStudents: 320,
+  },
+  {
+    week: '10 Mar',
+    lessonsAccessed: 348,
+    quizzesCompleted: 185,
+    essaysSubmitted: 52,
+    mockExamsTaken: 25,
+    averageSessionMinutes: 30,
+    activeStudents: 328,
+  },
+  {
+    week: '17 Mar',
+    lessonsAccessed: 362,
+    quizzesCompleted: 192,
+    essaysSubmitted: 56,
+    mockExamsTaken: 28,
+    averageSessionMinutes: 32,
+    activeStudents: 332,
+  },
+  {
+    week: '24 Mar',
+    lessonsAccessed: 375,
+    quizzesCompleted: 198,
+    essaysSubmitted: 60,
+    mockExamsTaken: 30,
+    averageSessionMinutes: 31,
+    activeStudents: 335,
+  },
+  // End of Spring term
+  {
+    week: '31 Mar',
+    lessonsAccessed: 358,
+    quizzesCompleted: 190,
+    essaysSubmitted: 54,
+    mockExamsTaken: 26,
+    averageSessionMinutes: 29,
+    activeStudents: 330,
+  },
+  // Easter holiday - sharp drop
+  {
+    week: '7 Apr',
+    lessonsAccessed: 168,
+    quizzesCompleted: 78,
+    essaysSubmitted: 18,
+    mockExamsTaken: 4,
+    averageSessionMinutes: 19,
+    activeStudents: 196,
+  },
+  // Summer term begins - final mock window for GCSE/A-Level
+  {
+    week: '14 Apr',
+    lessonsAccessed: 392,
+    quizzesCompleted: 210,
+    essaysSubmitted: 64,
+    mockExamsTaken: 34,
+    averageSessionMinutes: 33,
+    activeStudents: 338,
+  },
+  {
+    week: '21 Apr',
+    lessonsAccessed: 410,
+    quizzesCompleted: 224,
+    essaysSubmitted: 70,
+    mockExamsTaken: 38,
+    averageSessionMinutes: 35,
+    activeStudents: 340,
+  },
+  // Post-mock dip then revision drive
+  {
+    week: '28 Apr',
+    lessonsAccessed: 388,
+    quizzesCompleted: 206,
+    essaysSubmitted: 60,
+    mockExamsTaken: 28,
+    averageSessionMinutes: 32,
+    activeStudents: 334,
+  },
+  {
+    week: '5 May',
+    lessonsAccessed: 425,
+    quizzesCompleted: 238,
+    essaysSubmitted: 72,
+    mockExamsTaken: 40,
+    averageSessionMinutes: 36,
+    activeStudents: 342,
+  },
+]
+
+export const DEMO_RESOURCE_USAGE: DemoResourceUsage[] = [
+  {
+    resourceId: 'r1',
+    title: 'Macbeth Key Quotes Revision',
+    type: 'revision-guide',
+    accessCount: 245,
+    averageScore: null,
+    yearGroup: 'Year 11',
+    examBoard: 'AQA',
+  },
+  {
+    resourceId: 'r2',
+    title: 'AQA Language Paper 1 Mock Exam Set 1',
+    type: 'mock-exam',
+    accessCount: 218,
+    averageScore: 68,
+    yearGroup: 'Year 11',
+    examBoard: 'AQA',
+  },
+  {
+    resourceId: 'r3',
+    title: 'An Inspector Calls - Themes and Context',
+    type: 'lesson',
+    accessCount: 198,
+    averageScore: null,
+    yearGroup: 'Year 10',
+    examBoard: 'AQA',
+  },
+  {
+    resourceId: 'r4',
+    title: 'Poetry Anthology Comparison Practice',
+    type: 'quiz',
+    accessCount: 186,
+    averageScore: 72,
+    yearGroup: 'Year 11',
+    examBoard: 'AQA',
+  },
+  {
+    resourceId: 'r5',
+    title: 'AQA Language Paper 1 Practice Exam',
+    type: 'mock-exam',
+    accessCount: 175,
+    averageScore: 70,
+    yearGroup: 'Year 10',
+    examBoard: 'AQA',
+  },
+  {
+    resourceId: 'r6',
+    title: 'Descriptive Writing Masterclass',
+    type: 'lesson',
+    accessCount: 168,
+    averageScore: null,
+    yearGroup: 'Year 7',
+    examBoard: 'AQA',
+  },
+  {
+    resourceId: 'r7',
+    title: 'Romeo and Juliet Context Cards',
+    type: 'revision-guide',
+    accessCount: 155,
+    averageScore: null,
+    yearGroup: 'Year 9',
+    examBoard: 'AQA',
+  },
+  {
+    resourceId: 'r8',
+    title: 'Gothic Writing Essay Prompt',
+    type: 'essay-prompt',
+    accessCount: 142,
+    averageScore: 66,
+    yearGroup: 'Year 8',
+    examBoard: 'AQA',
+  },
+  {
+    resourceId: 'r9',
+    title: 'AQA A-Level Language Unit 1 Practice Paper',
+    type: 'mock-exam',
+    accessCount: 128,
+    averageScore: 74,
+    yearGroup: 'Year 12',
+    examBoard: 'AQA',
+  },
+  {
+    resourceId: 'r10',
+    title: 'Figurative Language Quiz',
+    type: 'quiz',
+    accessCount: 120,
+    averageScore: 78,
+    yearGroup: 'Year 7',
+    examBoard: 'AQA',
+  },
+  {
+    resourceId: 'r11',
+    title: 'Language Paper 2 Viewpoint Writing',
+    type: 'lesson',
+    accessCount: 115,
+    averageScore: null,
+    yearGroup: 'Year 11',
+    examBoard: 'AQA',
+  },
+  {
+    resourceId: 'r12',
+    title: 'AQA Literature Paper 1 Mock',
+    type: 'mock-exam',
+    accessCount: 108,
+    averageScore: 72,
+    yearGroup: 'Year 11',
+    examBoard: 'AQA',
+  },
+  {
+    resourceId: 'r13',
+    title: 'Unseen Poetry Method Guide',
+    type: 'revision-guide',
+    accessCount: 98,
+    averageScore: null,
+    yearGroup: 'Year 11',
+    examBoard: 'AQA',
+  },
+  {
+    resourceId: 'r14',
+    title: 'Creative Writing - Sentence Craft',
+    type: 'lesson',
+    accessCount: 92,
+    averageScore: null,
+    yearGroup: 'Year 10',
+    examBoard: 'AQA',
+  },
+  {
+    resourceId: 'r15',
+    title: 'A-Level Language Investigation Exemplars',
+    type: 'revision-guide',
+    accessCount: 85,
+    averageScore: null,
+    yearGroup: 'Year 13',
+    examBoard: 'AQA',
+  },
+]
+
+export const DEMO_ASSIGNMENT_OVERVIEW: DemoAssignmentOverview[] = [
+  {
+    classId: 'c1',
+    className: '7A English',
+    teacher: 'Priya Sharma',
+    totalAssignments: 16,
+    completed: 13,
+    inProgress: 2,
+    notStarted: 1,
+    overdue: 0,
+    averageScore: 75,
+  },
+  {
+    classId: 'c2',
+    className: '7B English',
+    teacher: 'Emma Thornton',
+    totalAssignments: 16,
+    completed: 13,
+    inProgress: 2,
+    notStarted: 1,
+    overdue: 0,
+    averageScore: 70,
+  },
+  {
+    classId: 'c3',
+    className: '7C English',
+    teacher: 'James Patterson',
+    totalAssignments: 16,
+    completed: 8,
+    inProgress: 4,
+    notStarted: 2,
+    overdue: 2,
+    averageScore: 62,
+  },
+  {
+    classId: 'c6',
+    className: '8A English',
+    teacher: 'James Patterson',
+    totalAssignments: 20,
+    completed: 19,
+    inProgress: 1,
+    notStarted: 0,
+    overdue: 0,
+    averageScore: 78,
+  },
+  {
+    classId: 'c7',
+    className: '8B English',
+    teacher: 'Priya Sharma',
+    totalAssignments: 20,
+    completed: 12,
+    inProgress: 4,
+    notStarted: 2,
+    overdue: 2,
+    averageScore: 58,
+  },
+  {
+    classId: 'c8',
+    className: '8C English',
+    teacher: 'Michael Chen',
+    totalAssignments: 20,
+    completed: 16,
+    inProgress: 3,
+    notStarted: 1,
+    overdue: 0,
+    averageScore: 74,
+  },
+  {
+    classId: 'c11',
+    className: '9A English',
+    teacher: 'David Okonkwo',
+    totalAssignments: 22,
+    completed: 14,
+    inProgress: 5,
+    notStarted: 2,
+    overdue: 1,
+    averageScore: 68,
+  },
+  {
+    classId: 'c12',
+    className: '9B English',
+    teacher: 'James Patterson',
+    totalAssignments: 22,
+    completed: 17,
+    inProgress: 3,
+    notStarted: 1,
+    overdue: 1,
+    averageScore: 76,
+  },
+  {
+    classId: 'c13',
+    className: '9C English',
+    teacher: 'Emma Thornton',
+    totalAssignments: 22,
+    completed: 10,
+    inProgress: 5,
+    notStarted: 4,
+    overdue: 3,
+    averageScore: 55,
+  },
+  {
+    classId: 'c16',
+    className: '10A English',
+    teacher: 'Sarah Mitchell',
+    totalAssignments: 24,
+    completed: 18,
+    inProgress: 4,
+    notStarted: 1,
+    overdue: 1,
+    averageScore: 74,
+  },
+  {
+    classId: 'c17',
+    className: '10B English',
+    teacher: 'Priya Sharma',
+    totalAssignments: 24,
+    completed: 11,
+    inProgress: 5,
+    notStarted: 4,
+    overdue: 4,
+    averageScore: 50,
+  },
+  {
+    classId: 'c18',
+    className: '10C English',
+    teacher: 'Emma Thornton',
+    totalAssignments: 24,
+    completed: 23,
+    inProgress: 1,
+    notStarted: 0,
+    overdue: 0,
+    averageScore: 88,
+  },
+  {
+    classId: 'c20',
+    className: '10E English Lang',
+    teacher: 'Hannah Lewis',
+    totalAssignments: 24,
+    completed: 17,
+    inProgress: 4,
+    notStarted: 2,
+    overdue: 1,
+    averageScore: 72,
+  },
+  {
+    classId: 'c22',
+    className: '11A English',
+    teacher: 'David Okonkwo',
+    totalAssignments: 28,
+    completed: 23,
+    inProgress: 3,
+    notStarted: 1,
+    overdue: 1,
+    averageScore: 78,
+  },
+  {
+    classId: 'c23',
+    className: '11B English',
+    teacher: 'Sarah Mitchell',
+    totalAssignments: 28,
+    completed: 19,
+    inProgress: 4,
+    notStarted: 3,
+    overdue: 2,
+    averageScore: 66,
+  },
+  {
+    classId: 'c24',
+    className: '11C English',
+    teacher: 'Michael Chen',
+    totalAssignments: 28,
+    completed: 28,
+    inProgress: 0,
+    notStarted: 0,
+    overdue: 0,
+    averageScore: 90,
+  },
+  {
+    classId: 'c26',
+    className: '11E English Lang',
+    teacher: 'Robert Patel',
+    totalAssignments: 28,
+    completed: 22,
+    inProgress: 4,
+    notStarted: 1,
+    overdue: 1,
+    averageScore: 76,
+  },
+  {
+    classId: 'c28',
+    className: '12 AQA Lang',
+    teacher: 'Fatima Al-Hassan',
+    totalAssignments: 16,
+    completed: 12,
+    inProgress: 3,
+    notStarted: 1,
+    overdue: 0,
+    averageScore: 76,
+  },
+  {
+    classId: 'c30',
+    className: '12 A-Level Lang',
+    teacher: 'Laura Simpson',
+    totalAssignments: 16,
+    completed: 15,
+    inProgress: 1,
+    notStarted: 0,
+    overdue: 0,
+    averageScore: 86,
+  },
+  {
+    classId: 'c33',
+    className: '13 A-Level Lang',
+    teacher: 'Sarah Mitchell',
+    totalAssignments: 18,
+    completed: 16,
+    inProgress: 1,
+    notStarted: 1,
+    overdue: 0,
+    averageScore: 82,
+  },
+  {
+    classId: 'c34',
+    className: '13 A-Level Lit',
+    teacher: 'Christopher Bell',
+    totalAssignments: 18,
+    completed: 15,
+    inProgress: 2,
+    notStarted: 1,
+    overdue: 0,
+    averageScore: 78,
+  },
+  {
+    classId: 'c35',
+    className: '13 AQA Lang',
+    teacher: 'Nathan Brooks',
+    totalAssignments: 18,
+    completed: 12,
+    inProgress: 3,
+    notStarted: 2,
+    overdue: 1,
+    averageScore: 62,
+  },
+  {
+    classId: 'c36',
+    className: '13 AQA Lit',
+    teacher: 'Nathan Brooks',
+    totalAssignments: 18,
+    completed: 13,
+    inProgress: 3,
+    notStarted: 1,
+    overdue: 1,
+    averageScore: 66,
+  },
+]
+
+export const DEMO_CLASS_SKILL_BREAKDOWN: Record<string, Record<string, number>> = {
+  // High-performing classes
+  c18: {
+    'Reading Comprehension': 88,
+    'Language Analysis': 86,
+    'Structural Analysis': 84,
+    'Creative Writing': 90,
+    'Analytical Writing': 88,
+    'Quote Integration': 86,
+    'Comparison Skills': 82,
+    Evaluation: 84,
+    SPaG: 90,
+  },
+  c24: {
+    'Reading Comprehension': 92,
+    'Language Analysis': 90,
+    'Structural Analysis': 88,
+    'Creative Writing': 89,
+    'Analytical Writing': 92,
+    'Quote Integration': 94,
+    'Comparison Skills': 88,
+    Evaluation: 90,
+    SPaG: 91,
+  },
+  c33: {
+    'Reading Comprehension': 86,
+    'Language Analysis': 88,
+    'Structural Analysis': 82,
+    'Creative Writing': 80,
+    'Analytical Writing': 88,
+    'Quote Integration': 84,
+    'Comparison Skills': 82,
+    Evaluation: 86,
+    SPaG: 88,
+  },
+  c30: {
+    'Reading Comprehension': 88,
+    'Language Analysis': 90,
+    'Structural Analysis': 84,
+    'Creative Writing': 86,
+    'Analytical Writing': 90,
+    'Quote Integration': 86,
+    'Comparison Skills': 84,
+    Evaluation: 88,
+    SPaG: 88,
+  },
+  // Typical classes
+  c1: {
+    'Reading Comprehension': 76,
+    'Language Analysis': 72,
+    'Structural Analysis': 70,
+    'Creative Writing': 78,
+    'Analytical Writing': 72,
+    'Quote Integration': 68,
+    'Comparison Skills': 66,
+    Evaluation: 70,
+    SPaG: 74,
+  },
+  c11: {
+    'Reading Comprehension': 70,
+    'Language Analysis': 68,
+    'Structural Analysis': 66,
+    'Creative Writing': 72,
+    'Analytical Writing': 68,
+    'Quote Integration': 64,
+    'Comparison Skills': 62,
+    Evaluation: 66,
+    SPaG: 70,
+  },
+  c16: {
+    'Reading Comprehension': 76,
+    'Language Analysis': 74,
+    'Structural Analysis': 72,
+    'Creative Writing': 74,
+    'Analytical Writing': 74,
+    'Quote Integration': 72,
+    'Comparison Skills': 70,
+    Evaluation: 72,
+    SPaG: 74,
+  },
+  c22: {
+    'Reading Comprehension': 80,
+    'Language Analysis': 78,
+    'Structural Analysis': 76,
+    'Creative Writing': 76,
+    'Analytical Writing': 80,
+    'Quote Integration': 78,
+    'Comparison Skills': 76,
+    Evaluation: 78,
+    SPaG: 78,
+  },
+  c20: {
+    'Reading Comprehension': 74,
+    'Language Analysis': 76,
+    'Structural Analysis': 72,
+    'Creative Writing': 70,
+    'Analytical Writing': 74,
+    'Quote Integration': 70,
+    'Comparison Skills': 68,
+    Evaluation: 72,
+    SPaG: 72,
+  },
+  c21: {
+    'Reading Comprehension': 82,
+    'Language Analysis': 80,
+    'Structural Analysis': 78,
+    'Creative Writing': 76,
+    'Analytical Writing': 82,
+    'Quote Integration': 80,
+    'Comparison Skills': 78,
+    Evaluation: 80,
+    SPaG: 78,
+  },
+  // Weaker classes - show the gaps the dashboards need to surface
+  c3: {
+    'Reading Comprehension': 62,
+    'Language Analysis': 58,
+    'Structural Analysis': 56,
+    'Creative Writing': 64,
+    'Analytical Writing': 58,
+    'Quote Integration': 54,
+    'Comparison Skills': 52,
+    Evaluation: 56,
+    SPaG: 58,
+  },
+  c7: {
+    'Reading Comprehension': 60,
+    'Language Analysis': 56,
+    'Structural Analysis': 54,
+    'Creative Writing': 62,
+    'Analytical Writing': 56,
+    'Quote Integration': 52,
+    'Comparison Skills': 50,
+    Evaluation: 54,
+    SPaG: 56,
+  },
+  c13: {
+    'Reading Comprehension': 56,
+    'Language Analysis': 54,
+    'Structural Analysis': 52,
+    'Creative Writing': 58,
+    'Analytical Writing': 52,
+    'Quote Integration': 48,
+    'Comparison Skills': 46,
+    Evaluation: 52,
+    SPaG: 56,
+  },
+  c17: {
+    'Reading Comprehension': 52,
+    'Language Analysis': 48,
+    'Structural Analysis': 46,
+    'Creative Writing': 54,
+    'Analytical Writing': 48,
+    'Quote Integration': 44,
+    'Comparison Skills': 42,
+    Evaluation: 46,
+    SPaG: 50,
+  },
+  c27: {
+    'Reading Comprehension': 60,
+    'Language Analysis': 56,
+    'Structural Analysis': 54,
+    'Creative Writing': 58,
+    'Analytical Writing': 56,
+    'Quote Integration': 52,
+    'Comparison Skills': 50,
+    Evaluation: 54,
+    SPaG: 58,
+  },
+  c35: {
+    'Reading Comprehension': 64,
+    'Language Analysis': 62,
+    'Structural Analysis': 60,
+    'Creative Writing': 62,
+    'Analytical Writing': 64,
+    'Quote Integration': 60,
+    'Comparison Skills': 58,
+    Evaluation: 62,
+    SPaG: 62,
+  },
+  c40: {
+    'Reading Comprehension': 62,
+    'Language Analysis': 60,
+    'Structural Analysis': 58,
+    'Creative Writing': 62,
+    'Analytical Writing': 58,
+    'Quote Integration': 56,
+    'Comparison Skills': 54,
+    Evaluation: 58,
+    SPaG: 60,
+  },
+  c43: {
+    'Reading Comprehension': 70,
+    'Language Analysis': 66,
+    'Structural Analysis': 62,
+    'Creative Writing': 64,
+    'Analytical Writing': 64,
+    'Quote Integration': 60,
+    'Comparison Skills': 58,
+    Evaluation: 62,
+    SPaG: 56,
+  },
+  c44: {
+    'Reading Comprehension': 74,
+    'Language Analysis': 72,
+    'Structural Analysis': 68,
+    'Creative Writing': 66,
+    'Analytical Writing': 70,
+    'Quote Integration': 66,
+    'Comparison Skills': 64,
+    Evaluation: 68,
+    SPaG: 60,
+  },
+  c45: {
+    'Reading Comprehension': 56,
+    'Language Analysis': 50,
+    'Structural Analysis': 46,
+    'Creative Writing': 58,
+    'Analytical Writing': 48,
+    'Quote Integration': 42,
+    'Comparison Skills': 40,
+    Evaluation: 46,
+    SPaG: 48,
+  },
+}
+
+/**
+ * Intervention log - actions taken for specific students. Powers an
+ * intervention-insights panel on the demo dashboard.
+ */
+
+export const DEMO_INTERVENTIONS: DemoInterventionLog[] = [
+  {
+    id: 'i1',
+    studentId: 's55',
+    studentName: 'Oscar Bramwell',
+    yearGroup: 7,
+    type: 'reading-support',
+    startedAt: '2026-02-12',
+    status: 'active',
+    note: 'Weekly Reading Recovery sessions; SENCO assessment booked. Mock 1 -> Mock 2 trend flat; continuing.',
+    ledBy: 'Marcus Lindqvist',
+  },
+  {
+    id: 'i2',
+    studentId: 's62',
+    studentName: 'Lily Fairbairn',
+    yearGroup: 7,
+    type: 'reading-support',
+    startedAt: '2026-02-20',
+    status: 'active',
+    note: 'Reading Recovery weekly; visual stress screening complete; coloured overlays issued.',
+    ledBy: 'Marcus Lindqvist',
+  },
+  {
+    id: 'i3',
+    studentId: 's51',
+    studentName: 'Hassan Ali',
+    yearGroup: 7,
+    type: 'eal-support',
+    startedAt: '2026-01-22',
+    status: 'monitoring',
+    note: 'EAL B2 - strong reading; production lagging. Reduced sessions from 2x to 1x weekly given trend.',
+    ledBy: 'Helena Ng',
+  },
+  {
+    id: 'i4',
+    studentId: 's78',
+    studentName: 'Finlay McEwan',
+    yearGroup: 8,
+    type: 'parental-contact',
+    startedAt: '2026-03-04',
+    status: 'active',
+    note: 'Home visit completed by Family Liaison Officer. Multi-agency planning in place.',
+    ledBy: 'Aisha Begum',
+  },
+  {
+    id: 'i5',
+    studentId: 's95',
+    studentName: 'Bea Cartwright',
+    yearGroup: 9,
+    type: 'reading-support',
+    startedAt: '2026-02-26',
+    status: 'active',
+    note: 'Reading Recovery + writing scaffolds. Investigating possible dyslexic profile.',
+    ledBy: 'Marcus Lindqvist',
+  },
+  {
+    id: 'i6',
+    studentId: 's98',
+    studentName: 'Caleb Sinclair',
+    yearGroup: 9,
+    type: 'parental-contact',
+    startedAt: '2026-02-05',
+    status: 'active',
+    note: 'Multi-agency meetings active. Alternative provision being explored. DSL involved.',
+    ledBy: 'David Okonkwo',
+  },
+  {
+    id: 'i7',
+    studentId: 's117',
+    studentName: 'Connor Whitehead',
+    yearGroup: 10,
+    type: 'one-to-one',
+    startedAt: '2026-02-19',
+    status: 'active',
+    note: 'Weekly 1:1 with form tutor; access arrangements (extra time) approved. Trend slightly improving.',
+    ledBy: 'Sarah Mitchell',
+  },
+  {
+    id: 'i8',
+    studentId: 's148',
+    studentName: 'Dominic Halliwell',
+    yearGroup: 11,
+    type: 'one-to-one',
+    startedAt: '2026-03-18',
+    status: 'active',
+    note: 'Daily check-ins; emergency intervention plan ahead of GCSEs. Did not attend Final Mock - urgent escalation.',
+    ledBy: 'Sarah Mitchell',
+  },
+  {
+    id: 'i9',
+    studentId: 's163',
+    studentName: 'Daniel Marsden',
+    yearGroup: 11,
+    type: 'small-group',
+    startedAt: '2026-02-12',
+    status: 'active',
+    note: 'After-school AO2/AO3 group (4 students). Mock 1 -> Mock 2 trend +4 marks.',
+    ledBy: 'Robert Patel',
+  },
+  {
+    id: 'i10',
+    studentId: 's165',
+    studentName: 'Mason Ashworth',
+    yearGroup: 11,
+    type: 'parental-contact',
+    startedAt: '2026-03-11',
+    status: 'active',
+    note: 'Home visit and multi-agency meeting held. DSL aware. Exam access arrangements applied.',
+    ledBy: 'Aisha Begum',
+  },
+  {
+    id: 'i11',
+    studentId: 's167',
+    studentName: 'Caleb Wormsley',
+    yearGroup: 11,
+    type: 'small-group',
+    startedAt: '2026-01-29',
+    status: 'active',
+    note: 'Y11 Booster class twice weekly. Showing modest improvement (Mock 1 to Mock 2: +6).',
+    ledBy: 'Aisha Begum',
+  },
+  {
+    id: 'i12',
+    studentId: 's199',
+    studentName: 'Oluwafemi Adeoye',
+    yearGroup: 13,
+    type: 'one-to-one',
+    startedAt: '2026-02-26',
+    status: 'active',
+    note: 'Weekly meeting with personal tutor; coursework deadline extension granted.',
+    ledBy: 'Owen Pritchard',
+  },
+  {
+    id: 'i13',
+    studentId: 's115',
+    studentName: 'Ahmed Mahmood',
+    yearGroup: 10,
+    type: 'eal-support',
+    startedAt: '2026-02-05',
+    status: 'monitoring',
+    note: 'EAL C1; article use and SPaG steady improvement. Moved from weekly to fortnightly.',
+    ledBy: 'Helena Ng',
+  },
+  {
+    id: 'i14',
+    studentId: 's137',
+    studentName: 'Jakub Wozniak',
+    yearGroup: 10,
+    type: 'eal-support',
+    startedAt: '2026-02-12',
+    status: 'active',
+    note: 'EAL B2; engaged with idiom and AO2 work. Mock trend +4 marks.',
+    ledBy: 'Helena Ng',
+  },
+  {
+    id: 'i15',
+    studentId: 's23',
+    studentName: 'Marcus Thompson',
+    yearGroup: 10,
+    type: 'one-to-one',
+    startedAt: '2026-01-22',
+    status: 'active',
+    note: 'Weekly support sessions; structured GCSE catch-up plan; parent meetings held.',
+    ledBy: 'Priya Sharma',
+  },
+  {
+    id: 'i16',
+    studentId: 's9',
+    studentName: 'Daniel Kowalski',
+    yearGroup: 8,
+    type: 'parental-contact',
+    startedAt: '2026-02-19',
+    status: 'active',
+    note: 'Multiple home contact attempts; safeguarding referral active. SEND-adapted pathway in place.',
+    ledBy: 'Priya Sharma',
+  },
+  {
+    id: 'i17',
+    studentId: 's31',
+    studentName: 'Nathan Wright',
+    yearGroup: 11,
+    type: 'small-group',
+    startedAt: '2026-02-26',
+    status: 'active',
+    note: 'Emergency intervention sessions before GCSEs. Targeted revision timetable.',
+    ledBy: 'Sarah Mitchell',
+  },
+  {
+    id: 'i18',
+    studentId: 's3',
+    studentName: 'Ethan Clarke',
+    yearGroup: 7,
+    type: 'reading-support',
+    startedAt: '2026-01-29',
+    status: 'active',
+    note: 'Reading Recovery + differentiated reading materials. SENCO assessment underway.',
+    ledBy: 'Marcus Lindqvist',
+  },
+]
+
+/**
+ * Headline KPIs used by AnalyticsDashboardDemo's top stat row when refactored
+ * to import from this file. Derived from the current cohort but exposed as a
+ * stable constant for direct binding.
+ */
+export const DEMO_DEPT_HEADLINE_KPIS = {
+  students: DEMO_STUDENT_INDEX.length,
+  teachers: DEMO_TEACHERS.length,
+  classes: DEMO_CLASSES.length,
+  weeklyActivePct: 89,
+  /** Percentage-point change in average grade vs. previous half-term. */
+  avgGradeChange: 3.2,
+} as const
+
+/** Aggregated completion rates shown as donut rings on the demo dashboard. */
+export const DEMO_COMPLETION_RATES = {
+  essays: 91,
+  worksheets: 87,
+  quizzes: 94,
+  reading: 78,
+} as const
+
+/**
+ * Compact at-risk panel feed used by AnalyticsDashboardDemo. Drawn from
+ * DEMO_AT_RISK_STUDENTS but reshaped to the panel's display format. Anonymised
+ * to first name + surname initial.
+ */
+export const DEMO_AT_RISK_PANEL: {
+  name: string
+  year: string
+  issue: string
+  severity: 'high' | 'medium' | 'low'
+  class: string
+}[] = [
+  {
+    name: 'Marcus T.',
+    year: 'Y10',
+    issue: 'No activity in 6 days; mock declining',
+    severity: 'high',
+    class: '10B English',
+  },
+  {
+    name: 'Nathan W.',
+    year: 'Y11',
+    issue: 'Mock dropped 4 to 3; GCSEs imminent',
+    severity: 'high',
+    class: '11B English',
+  },
+  {
+    name: 'Dominic H.',
+    year: 'Y11',
+    issue: 'Did not sit Final Mock; attendance 67%',
+    severity: 'high',
+    class: '11B English',
+  },
+  {
+    name: 'Mason A.',
+    year: 'Y11',
+    issue: 'Attendance 64%; missed Final Mock',
+    severity: 'high',
+    class: '11F English Lit',
+  },
+  {
+    name: 'Amelia T-B.',
+    year: 'Y13',
+    issue: 'Coursework critically behind; U grade',
+    severity: 'high',
+    class: '13 AQA Lang',
+  },
+  {
+    name: 'Daniel K.',
+    year: 'Y8',
+    issue: 'Attendance 8-day gap; 35% assignments',
+    severity: 'high',
+    class: '8B English',
+  },
+  {
+    name: 'Caleb S.',
+    year: 'Y9',
+    issue: 'Attendance 68%; multi-agency active',
+    severity: 'high',
+    class: '9D English',
+  },
+  {
+    name: 'Finlay M.',
+    year: 'Y8',
+    issue: 'Pastoral concerns; attendance 71%',
+    severity: 'high',
+    class: '8D English',
+  },
+  {
+    name: 'Connor W.',
+    year: 'Y10',
+    issue: 'Attendance 72%; mock grade 2',
+    severity: 'medium',
+    class: '10B English',
+  },
+  {
+    name: 'Ethan C.',
+    year: 'Y7',
+    issue: 'Possible literacy needs; SENCO booked',
+    severity: 'medium',
+    class: '7C English',
+  },
+  {
+    name: 'Oscar B.',
+    year: 'Y7',
+    issue: 'Reading age 18m below; decoding issue',
+    severity: 'medium',
+    class: '7C English',
+  },
+  {
+    name: 'Bea C.',
+    year: 'Y9',
+    issue: 'Reading age 18m behind; writing brief',
+    severity: 'medium',
+    class: '9C English',
+  },
+  {
+    name: 'Daniel M.',
+    year: 'Y11',
+    issue: 'Recall only; no AO2/AO3',
+    severity: 'medium',
+    class: '11F English Lit',
+  },
+  {
+    name: 'Ruby K.',
+    year: 'Y10',
+    issue: 'AO2 weak; mock grade 3',
+    severity: 'medium',
+    class: '10B English',
+  },
+  {
+    name: 'Charlie B.',
+    year: 'Y10',
+    issue: 'AO5 SPaG; engagement variable',
+    severity: 'medium',
+    class: '10D English',
+  },
+  {
+    name: 'Oluwafemi A.',
+    year: 'Y13',
+    issue: 'Coursework behind; mock grade D',
+    severity: 'medium',
+    class: '13 A-Level Lit',
+  },
+  {
+    name: 'Lily F.',
+    year: 'Y7',
+    issue: 'Reading Recovery - small gains',
+    severity: 'low',
+    class: '7F English',
+  },
+  {
+    name: 'Bobby G.',
+    year: 'Y9',
+    issue: 'Writing stamina; Reading Recovery',
+    severity: 'low',
+    class: '9F English',
+  },
+  {
+    name: 'Jenson B.',
+    year: 'Y11',
+    issue: 'AO5 SPaG; improving via booster',
+    severity: 'low',
+    class: '11D English',
+  },
+  {
+    name: 'Caleb W.',
+    year: 'Y11',
+    issue: 'Booster trend +6 over mock cycle',
+    severity: 'low',
+    class: '11G Booster',
+  },
+]
+
+/** Top-performing classes - compact view for the dashboard "leaderboard". */
+export const DEMO_TOP_CLASSES: {
+  name: string
+  teacher: string
+  avgScore: number
+  studentCount: number
+  trend: string
+}[] = [
+  { name: '11C English', teacher: 'Michael Chen', avgScore: 90, studentCount: 14, trend: '+4%' },
+  { name: '10C English', teacher: 'Emma Thornton', avgScore: 88, studentCount: 14, trend: '+3%' },
+  {
+    name: '12 A-Level Lang',
+    teacher: 'Laura Simpson',
+    avgScore: 86,
+    studentCount: 8,
+    trend: '+5%',
+  },
+  {
+    name: '13 A-Level Lang',
+    teacher: 'Sarah Mitchell',
+    avgScore: 82,
+    studentCount: 8,
+    trend: '+2%',
+  },
+  { name: '9E English', teacher: 'Sophie Durand', avgScore: 82, studentCount: 13, trend: '+6%' },
+  {
+    name: '10F English Lit',
+    teacher: 'Hannah Lewis',
+    avgScore: 80,
+    studentCount: 12,
+    trend: '+4%',
+  },
+  { name: '11A English', teacher: 'David Okonkwo', avgScore: 78, studentCount: 16, trend: '+3%' },
+  {
+    name: '13 A-Level Lit',
+    teacher: 'Christopher Bell',
+    avgScore: 78,
+    studentCount: 8,
+    trend: '+1%',
+  },
+  { name: '12 English Lit', teacher: 'William Hart', avgScore: 78, studentCount: 8, trend: '+2%' },
+  { name: '8A English', teacher: 'James Patterson', avgScore: 78, studentCount: 15, trend: '+4%' },
+  {
+    name: '11 Cambridge IGCSE',
+    teacher: 'Fatima Al-Hassan',
+    avgScore: 74,
+    studentCount: 10,
+    trend: '+2%',
+  },
+  {
+    name: '10E English Lang',
+    teacher: 'Hannah Lewis',
+    avgScore: 72,
+    studentCount: 12,
+    trend: '+1%',
+  },
+]
+
+/**
+ * EAL cohort snapshot. Derived counters surfaced as a constant so the
+ * dashboards can display them without re-aggregating.
+ */
+export const DEMO_EAL_COHORT = {
+  totalLearners: DEMO_STUDENT_INDEX.filter((s) => s.isEal === true).length,
+  byYearGroup: {
+    7: DEMO_STUDENT_INDEX.filter((s) => s.isEal === true && s.yearGroup === 'Year 7').length,
+    8: DEMO_STUDENT_INDEX.filter((s) => s.isEal === true && s.yearGroup === 'Year 8').length,
+    9: DEMO_STUDENT_INDEX.filter((s) => s.isEal === true && s.yearGroup === 'Year 9').length,
+    10: DEMO_STUDENT_INDEX.filter((s) => s.isEal === true && s.yearGroup === 'Year 10').length,
+    11: DEMO_STUDENT_INDEX.filter((s) => s.isEal === true && s.yearGroup === 'Year 11').length,
+    12: DEMO_STUDENT_INDEX.filter((s) => s.isEal === true && s.yearGroup === 'Year 12').length,
+    13: DEMO_STUDENT_INDEX.filter((s) => s.isEal === true && s.yearGroup === 'Year 13').length,
+  },
+  byProficiency: {
+    A2: DEMO_STUDENT_INDEX.filter((s) => s.ealProficiency === 'A2').length,
+    B1: DEMO_STUDENT_INDEX.filter((s) => s.ealProficiency === 'B1').length,
+    B2: DEMO_STUDENT_INDEX.filter((s) => s.ealProficiency === 'B2').length,
+    C1: DEMO_STUDENT_INDEX.filter((s) => s.ealProficiency === 'C1').length,
+  },
+  interventionsThisTerm: DEMO_INTERVENTIONS.filter((i) => i.type === 'eal-support').length,
+} as const
+
+/**
+ * Per-student mock-exam attempt history. Extends each student's
+ * mockExamResults with longer trajectories for trend visualisations.
+ */
+export const DEMO_MOCK_ATTEMPTS: DemoMockAttempt[] = (() => {
+  // Build trajectories for the first ~80 students. Each gets 3-4 attempts.
+  // We mix improving, declining and flat trajectories.
+  const attempts: DemoMockAttempt[] = []
+  const dates = ['2025-11-12', '2026-01-22', '2026-03-05', '2026-04-15']
+  const studentsForAttempts = DEMO_STUDENT_INDEX.slice(0, 80)
+  for (let i = 0; i < studentsForAttempts.length; i++) {
+    const s = studentsForAttempts[i]
+    const baseScore = s.averageScore
+    const trajectoryType = i % 3 // 0 = improving, 1 = flat, 2 = declining
+    const paper =
+      s.yearGroup.startsWith('Year 1') || s.yearGroup === 'Year 12' || s.yearGroup === 'Year 13'
+        ? 'GCSE/A-Level Mock'
+        : 'KS3 Assessment'
+    const numAttempts = i % 2 === 0 ? 4 : 3
+    for (let a = 0; a < numAttempts; a++) {
+      let scoreOffset = 0
+      if (trajectoryType === 0)
+        scoreOffset = (a - (numAttempts - 1)) * 3 // improving (negative -> positive)
+      else if (trajectoryType === 2) scoreOffset = -(a - (numAttempts - 1)) * 3 // declining
+      // flat: 0
+      // small wiggle
+      const wiggle = ((i + a) % 5) - 2
+      const score = Math.max(20, Math.min(100, baseScore + scoreOffset + wiggle))
+      const grade =
+        score >= 90
+          ? 9
+          : score >= 80
+            ? 8
+            : score >= 70
+              ? 7
+              : score >= 60
+                ? 6
+                : score >= 50
+                  ? 5
+                  : score >= 40
+                    ? 4
+                    : score >= 30
+                      ? 3
+                      : score >= 20
+                        ? 2
+                        : 1
+      attempts.push({
+        studentId: s.id,
+        date: dates[a + (4 - numAttempts)],
+        paper,
+        score,
+        grade,
+      })
+    }
+  }
+  return attempts
+})()

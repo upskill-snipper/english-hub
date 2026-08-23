@@ -359,7 +359,7 @@ export function Footer() {
                 URL. Surfacing safeguarding and the DPA in the footer makes the
                 buying journey checkable. */}
             <Link
-              href="/legal/safeguarding"
+              href="/safeguarding"
               className="text-[#B5B8B3]/60 hover:text-[#FBF7F0] transition-colors"
             >
               {t('footer.bottom.safeguarding')}

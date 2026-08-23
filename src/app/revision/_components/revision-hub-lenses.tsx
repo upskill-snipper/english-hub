@@ -70,7 +70,35 @@ function readInProgress(): InProgressItem[] {
           seen.add(parsed.href)
         }
       } catch {
-        // ignore
+        // 2026-08-23: VisitTracker writes a BARE PATHNAME string to this key,
+        // not JSON, so the parse above always threw and this fallback source
+        // contributed nothing. Recover the path instead of dropping it, so
+        // the lens still shows the last page when the recently-studied list
+        // has been cleared or corrupted. Title is derived from the slug, the
+        // same way VisitTracker derives it.
+        if (
+          lastVisited.startsWith('/') &&
+          !lastVisited.startsWith('//') &&
+          !seen.has(lastVisited)
+        ) {
+          const slug = lastVisited.split('/').filter(Boolean).pop() ?? ''
+          const title =
+            slug
+              .split('-')
+              .filter(Boolean)
+              .map((w) => (w.length <= 2 ? w : w.charAt(0).toUpperCase() + w.slice(1)))
+              .join(' ') || 'Revision'
+          const section = lastVisited.split('/').filter(Boolean)[1] ?? 'Revision'
+          merged.push({
+            title,
+            href: lastVisited,
+            section: section.charAt(0).toUpperCase() + section.slice(1).replace(/-/g, ' '),
+            // No stored time for this key: sort it last rather than invent a
+            // "just now" timestamp that would outrank real entries.
+            timestamp: 0,
+          })
+          seen.add(lastVisited)
+        }
       }
     }
   } catch {

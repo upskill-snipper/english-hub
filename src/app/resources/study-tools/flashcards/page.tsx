@@ -20,7 +20,18 @@ import {
   Clock,
   Sparkles,
 } from 'lucide-react'
-import { flashcardDecks, type FlashcardDeck, type FlashCard } from '@/data/flashcard-data'
+// PERF: this page previously imported `flashcardDecks` from '@/data/flashcard-data',
+// which pulled ~1.2 MB of card text (45 decks, 2,093 cards) into this route's client
+// bundle before a student had opened a single deck. It now imports only the small
+// static index (labels + card ids) and fetches a deck's cards on demand.
+import { flashcardDeckIndex } from '@/data/flashcards/deck-index'
+import { loadFlashcardDeck } from '@/data/flashcards/deck-loaders'
+import type {
+  FlashcardDeck,
+  FlashcardDeckSummary,
+  FlashcardIdRef,
+  FlashCard,
+} from '@/data/flashcards/types'
 import { cn } from '@/lib/utils'
 import {
   useFlashcardStore,
@@ -72,8 +83,18 @@ const CATEGORY_ORDER = [
   'Exam Technique',
 ]
 type StudyMode = 'browse' | 'study' | 'difficult'
-function getDeckCategory(deck: FlashcardDeck): string {
+function getDeckCategory(deck: { category: string }): string {
   return deck.category || 'General'
+}
+
+// The spaced-repetition helpers only ever read `card.id`, so deck progress can be
+// worked out from the index alone. Building the id references once at module scope
+// keeps the browse grid from re-allocating them on every render.
+const DECK_CARD_REFS: Record<string, FlashcardIdRef[]> = Object.fromEntries(
+  flashcardDeckIndex.map((deck) => [deck.id, deck.cardIds.map((id) => ({ id }))]),
+)
+function cardRefs(deckId: string): FlashcardIdRef[] {
+  return DECK_CARD_REFS[deckId] ?? []
 }
 const QUALITY_COLORS: Record<string, string> = {
   destructive: 'bg-red-500/15 text-red-400 hover:bg-red-500/25 border-red-500/30',
@@ -98,24 +119,59 @@ export default function FlashcardsPage() {
   const [currentCardIndex, setCurrentCardIndex] = useState(0)
   const [isFlipped, setIsFlipped] = useState(false)
   const [studyQueue, setStudyQueue] = useState<FlashCard[]>([])
+  // Cards for the open deck are fetched on demand, so the page has to model the
+  // three real outcomes: still loading, loaded, or failed. It must never fall back
+  // to placeholder cards - a student would have no way of telling revision content
+  // from filler.
+  const [selectedDeck, setSelectedDeck] = useState<FlashcardDeck | null>(null)
+  const [deckLoading, setDeckLoading] = useState(false)
+  const [deckError, setDeckError] = useState(false)
+  const [deckLoadAttempt, setDeckLoadAttempt] = useState(0)
   useEffect(() => {
     setMounted(true)
   }, [])
+  useEffect(() => {
+    if (!selectedDeckId) {
+      setSelectedDeck(null)
+      setDeckLoading(false)
+      setDeckError(false)
+      return
+    }
+    let cancelled = false
+    setSelectedDeck(null)
+    setDeckError(false)
+    setDeckLoading(true)
+    loadFlashcardDeck(selectedDeckId)
+      .then((deck) => {
+        if (cancelled) return
+        if (deck) setSelectedDeck(deck)
+        else setDeckError(true)
+      })
+      .catch(() => {
+        if (!cancelled) setDeckError(true)
+      })
+      .finally(() => {
+        if (!cancelled) setDeckLoading(false)
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [selectedDeckId, deckLoadAttempt])
   // Filter decks down to those relevant for the user's chosen board.
   // Until the board store has hydrated we keep the full list to avoid a flash
   // of "no decks" on first paint.
   const allDecks = useMemo(() => {
-    if (!isBoardHydrated || !board) return flashcardDecks
-    return flashcardDecks.filter((d) => deckMatchesBoard(d.id, board))
+    if (!isBoardHydrated || !board) return flashcardDeckIndex
+    return flashcardDeckIndex.filter((d) => deckMatchesBoard(d.id, board))
   }, [board, isBoardHydrated])
   const categories = useMemo(() => {
-    const cats = new Map<string, FlashcardDeck[]>()
+    const cats = new Map<string, FlashcardDeckSummary[]>()
     for (const deck of allDecks) {
       const cat = getDeckCategory(deck)
       if (!cats.has(cat)) cats.set(cat, [])
       cats.get(cat)!.push(deck)
     }
-    const sorted = new Map<string, FlashcardDeck[]>()
+    const sorted = new Map<string, FlashcardDeckSummary[]>()
     for (const cat of CATEGORY_ORDER) {
       if (cats.has(cat)) sorted.set(cat, cats.get(cat)!)
     }
@@ -131,18 +187,19 @@ export default function FlashcardsPage() {
         : allDecks.filter((d) => getDeckCategory(d) === selectedCategory),
     [allDecks, selectedCategory],
   )
-  const selectedDeck = useMemo(
+  const selectedSummary = useMemo(
     () => allDecks.find((d) => d.id === selectedDeckId) ?? null,
     [allDecks, selectedDeckId],
   )
   const getDeckStats = useCallback(
-    (deck: FlashcardDeck) => {
+    (deck: FlashcardDeckSummary) => {
       if (!mounted) return { mastery: 0, due: 0, newCount: 0, grade: 1, difficult: 0 }
-      const mastery = getMasteryPercentage(deck.cards, store.reviewStates)
-      const due = getDueCards(deck.cards, store.reviewStates).length
-      const newCount = getNewCards(deck.cards, store.reviewStates, 999).length
+      const cards = cardRefs(deck.id)
+      const mastery = getMasteryPercentage(cards, store.reviewStates)
+      const due = getDueCards(cards, store.reviewStates).length
+      const newCount = getNewCards(cards, store.reviewStates, 999).length
       const grade = percentageToGCSEGrade(mastery)
-      const difficult = deck.cards.filter((c) => {
+      const difficult = cards.filter((c) => {
         const s = store.reviewStates[c.id]
         return s && s.easinessFactor < 2.0
       }).length
@@ -152,7 +209,7 @@ export default function FlashcardsPage() {
   )
   const overallStats = useMemo(() => {
     if (!mounted) return { totalCards: 0, mastered: 0, due: 0, mastery: 0, grade: 1 }
-    const allCards = allDecks.flatMap((d) => d.cards)
+    const allCards = allDecks.flatMap((d) => cardRefs(d.id))
     const mastery = getMasteryPercentage(allCards, store.reviewStates)
     const due = getDueCards(allCards, store.reviewStates).length
     const mastered = allCards.filter((c) => {
@@ -203,10 +260,12 @@ export default function FlashcardsPage() {
     },
     [currentCardIndex, studyQueue, store],
   )
+  // Resets work off the index rather than the loaded deck, so progress can be
+  // cleared using card ids we already hold without waiting on a chunk fetch.
   const handleResetDeck = useCallback(
-    (deck: FlashcardDeck) => {
+    (deckId: string) => {
       if (confirm('Reset all progress for this deck? This cannot be undone.'))
-        store.resetDeck(deck.cards.map((c) => c.id))
+        store.resetDeck(cardRefs(deckId).map((c) => c.id))
     },
     [store],
   )
@@ -251,7 +310,7 @@ export default function FlashcardsPage() {
             <div>
               <h1 className="text-2xl font-bold text-foreground">{selectedDeck.title}</h1>
               <p className="mt-1 text-sm text-muted-foreground">
-                {studyMode === 'difficult' ? 'Difficult cards' : 'Study session'} -- Card{' '}
+                {studyMode === 'difficult' ? 'Difficult cards' : 'Study session'} - Card{' '}
                 {currentCardIndex + 1} of {studyQueue.length}
               </p>
             </div>
@@ -501,14 +560,18 @@ export default function FlashcardsPage() {
           )
         })}
       </div>
-      {selectedDeck ? (
-        <DeckDetail
+      {selectedSummary ? (
+        <DeckLoadState
+          summary={selectedSummary}
           deck={selectedDeck}
-          stats={getDeckStats(selectedDeck)}
+          loading={deckLoading}
+          failed={deckError}
+          stats={getDeckStats(selectedSummary)}
           reviewStates={store.reviewStates}
           onBack={() => setSelectedDeckId(null)}
-          onStudy={(mode) => startStudy(selectedDeck, mode)}
-          onReset={() => handleResetDeck(selectedDeck)}
+          onRetry={() => setDeckLoadAttempt((n) => n + 1)}
+          onStudy={(mode) => selectedDeck && startStudy(selectedDeck, mode)}
+          onReset={() => handleResetDeck(selectedSummary.id)}
         />
       ) : (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -519,6 +582,10 @@ export default function FlashcardsPage() {
               <button
                 key={deck.id}
                 onClick={() => setSelectedDeckId(deck.id)}
+                // Warm the deck's chunk on hover/focus so opening it usually feels
+                // instant despite the cards no longer being in the page bundle.
+                onMouseEnter={() => void loadFlashcardDeck(deck.id).catch(() => {})}
+                onFocus={() => void loadFlashcardDeck(deck.id).catch(() => {})}
                 className="group relative flex flex-col overflow-hidden rounded-xl border border-border bg-card text-left shadow-sm transition-all hover:shadow-md hover:border-primary/30"
               >
                 <div className="h-1 w-full bg-muted">
@@ -544,7 +611,7 @@ export default function FlashcardsPage() {
                   <div className="mt-auto flex items-center gap-3 pt-4 text-xs text-muted-foreground">
                     <span className="flex items-center gap-1">
                       <Layers className="h-3 w-3" />
-                      {deck.cards.length} cards
+                      {deck.cardCount} cards
                     </span>
                     {stats.due > 0 && (
                       <span className="flex items-center gap-1 text-clay-600">
@@ -623,6 +690,101 @@ export default function FlashcardsPage() {
   )
 }
 
+/* --- DeckLoadState sub-component -------------------------------- */
+
+type DeckStats = {
+  mastery: number
+  due: number
+  newCount: number
+  grade: number
+  difficult: number
+}
+
+/**
+ * Renders the open deck once its cards have been fetched, and honest loading and
+ * failure states until then. Card text lives in a separate chunk now, so the open
+ * action is asynchronous and can fail (a dropped connection, a chunk that 404s
+ * after a deploy). It deliberately renders nothing card-shaped on failure: filler
+ * cards on a revision tool would be indistinguishable from real revision content.
+ */
+function DeckLoadState({
+  summary,
+  deck,
+  loading,
+  failed,
+  stats,
+  reviewStates,
+  onBack,
+  onRetry,
+  onStudy,
+  onReset,
+}: {
+  summary: FlashcardDeckSummary
+  deck: FlashcardDeck | null
+  loading: boolean
+  failed: boolean
+  stats: DeckStats
+  reviewStates: Record<string, CardReviewState>
+  onBack: () => void
+  onRetry: () => void
+  onStudy: (mode: StudyMode) => void
+  onReset: () => void
+}) {
+  if (deck)
+    return (
+      <DeckDetail
+        deck={deck}
+        stats={stats}
+        reviewStates={reviewStates}
+        onBack={onBack}
+        onStudy={onStudy}
+        onReset={onReset}
+      />
+    )
+
+  return (
+    <div>
+      <button
+        onClick={onBack}
+        className="mb-4 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+      >
+        <ChevronLeft className="h-4 w-4" />
+        Back to all decks
+      </button>
+      <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
+        <Badge variant="secondary" className="mb-2">
+          {getDeckCategory(summary)}
+        </Badge>
+        <h2 className="text-2xl font-bold text-foreground">{summary.title}</h2>
+        <p className="mt-1 text-sm text-muted-foreground">{summary.description}</p>
+        {failed && !loading ? (
+          <div className="mt-6">
+            <p className="text-sm font-semibold text-foreground">
+              We could not load the cards for this deck.
+            </p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Your progress is safe. Check your connection and try again.
+            </p>
+            <Button variant="outline" size="sm" className="mt-4" onClick={onRetry}>
+              <RotateCcw className="mr-1.5 h-4 w-4" />
+              Try again
+            </Button>
+          </div>
+        ) : (
+          <div
+            className="mt-6 flex min-h-[160px] items-center justify-center gap-3 text-sm text-muted-foreground"
+            role="status"
+            aria-live="polite"
+          >
+            <div className="h-5 w-5 animate-spin rounded-full border-2 border-primary border-t-transparent" />
+            Loading {summary.cardCount} cards
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
 /* --- DeckDetail sub-component ---------------------------------- */
 
 function DeckDetail({
@@ -634,7 +796,7 @@ function DeckDetail({
   onReset,
 }: {
   deck: FlashcardDeck
-  stats: { mastery: number; due: number; newCount: number; grade: number; difficult: number }
+  stats: DeckStats
   reviewStates: Record<string, CardReviewState>
   onBack: () => void
   onStudy: (mode: StudyMode) => void

@@ -15,6 +15,7 @@
  * without dragging a server-only dependency along.
  */
 import { tMany } from '@/lib/i18n/t'
+import { PRICING } from '@/constants/pricing'
 
 export async function WebsiteJsonLd({ nonce }: { nonce?: string } = {}) {
   const [siteDescription, studentMonthly, studentAnnual, teacherMonthly, teacherAnnual] =
@@ -27,6 +28,34 @@ export async function WebsiteJsonLd({ nonce }: { nonce?: string } = {}) {
     ])
 
   const ORG_ID = 'https://theenglishhub.app/#organisation'
+  const PRICING_URL = 'https://theenglishhub.app/pricing'
+
+  // Offer prices are DERIVED from the canonical PRICING constants, never
+  // retyped. Defect fixed 2026-08-23 (SEO structured-data audit): the
+  // Teacher Monthly offer was hard-coded to '7.99' while the real price -
+  // and the price visibly rendered on /pricing - is PRICING.TEACHER_MONTHLY
+  // (£6.99). Structured data that contradicts the visible page is exactly
+  // what Google penalises, and £1/month of drift on a children's product is
+  // a claims-honesty defect regardless. Deriving from the constant means the
+  // JSON-LD can never silently diverge from checkout again.
+  //
+  // No `priceValidUntil` is emitted. It used to assert '2028-01-01', which
+  // was an invented deadline: the 2026-08-18 honesty pass deliberately made
+  // the standard-pricing rollover undated (PRICING.PRICE_INCREASE_DATE =
+  // 'when the founding period closes'), so no date here can be evidenced.
+  const offers = [
+    { name: studentMonthly, price: PRICING.STUDENT_MONTHLY },
+    { name: studentAnnual, price: PRICING.STUDENT_ANNUAL },
+    { name: teacherMonthly, price: PRICING.TEACHER_MONTHLY },
+    { name: teacherAnnual, price: PRICING.TEACHER_ANNUAL },
+  ].map(({ name, price }) => ({
+    '@type': 'Offer',
+    name,
+    price: price.toFixed(2),
+    priceCurrency: 'GBP',
+    availability: 'https://schema.org/InStock',
+    url: PRICING_URL,
+  }))
 
   const orgJsonLd = {
     '@context': 'https://schema.org',
@@ -42,40 +71,11 @@ export async function WebsiteJsonLd({ nonce }: { nonce?: string } = {}) {
       suggestedMinAge: 14,
       suggestedMaxAge: 18,
     },
-    offers: [
-      {
-        '@type': 'Offer',
-        name: studentMonthly,
-        price: '3.99',
-        priceCurrency: 'GBP',
-        availability: 'https://schema.org/InStock',
-        priceValidUntil: '2028-01-01',
-      },
-      {
-        '@type': 'Offer',
-        name: studentAnnual,
-        price: '29.99',
-        priceCurrency: 'GBP',
-        availability: 'https://schema.org/InStock',
-        priceValidUntil: '2028-01-01',
-      },
-      {
-        '@type': 'Offer',
-        name: teacherMonthly,
-        price: '7.99',
-        priceCurrency: 'GBP',
-        availability: 'https://schema.org/InStock',
-        priceValidUntil: '2028-01-01',
-      },
-      {
-        '@type': 'Offer',
-        name: teacherAnnual,
-        price: '67.99',
-        priceCurrency: 'GBP',
-        availability: 'https://schema.org/InStock',
-        priceValidUntil: '2028-01-01',
-      },
-    ],
+    // `makesOffer`, not `offers`: schema.org Organization has no `offers`
+    // property (that belongs to Product / Service / Event), so the previous
+    // markup was invalid and validators dropped the whole branch.
+    // `makesOffer` is the Organization-level equivalent.
+    makesOffer: offers,
   }
 
   // WebSite node for GEO / AI answer engines. `publisher` references the

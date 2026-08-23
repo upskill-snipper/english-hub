@@ -281,6 +281,12 @@ export async function POST(request: NextRequest) {
             school_id: schoolId,
             year_group: yearGroup || null,
             class_name: className || null,
+            // SECURITY: this password is auto-generated, emailed in plaintext
+            // and downloadable by school admins as a CSV, so it must not stay
+            // valid indefinitely on a child's account. The flag holds the user
+            // on /auth/set-password after sign-in until they rotate it
+            // (enforced in src/lib/supabase/middleware.ts).
+            needs_password_change: true,
           },
         })
 

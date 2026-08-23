@@ -42,6 +42,7 @@ import { getBoardConfig, type ExamBoard } from '@/lib/board/board-config'
 import { isIgcseBoard } from '@/lib/board/board-filter'
 import { getSetTextsForBoard } from '@/lib/board/set-texts'
 import { RecentlyStudied } from './_components/recently-studied'
+import { ContinueRevisingButton } from './_components/continue-revising-button'
 import { RevisionHubLenses, type RecommendedItem } from './_components/revision-hub-lenses'
 import { FavouriteToggle } from './_components/favourite-toggle'
 import { HeroStatPills } from './_components/hero-stat-pills'
@@ -365,9 +366,31 @@ export default async function RevisionHubPage() {
     motivationBody: await t('revision_page.motivation.body'),
     motivationCta: await t('revision_page.motivation.cta'),
     actionStudyPlan: await t('revision_page.action.study_plan'),
-    actionExamTechnique: await t('revision_page.action.exam_technique'),
+    // 2026-08-23: was 'revision_page.action.exam_technique', whose English is
+    // "AI focus this week". Nothing about /revision/exam-technique is AI
+    // generated or weekly - it is a static guide hub - so the label promised
+    // a personalisation that does not exist. Reuses the section's own title.
+    actionExamTechnique: await t('revision_page.section.exam_technique.title'),
     actionDashboard: await t('revision_page.action.dashboard'),
+    actionContinueNamed: await t('revision_page.action.continue_named'),
   }
+
+  // Destination for the primary action when the student has no history yet.
+  // Deliberately NOT /revision/study-plan: that route is behind
+  // requireSubscription, so a lapsed-trial student would be bounced to
+  // /pricing by the hub's most prominent button. Picks the first free section
+  // that survives board filtering, so the link is always valid for the
+  // student's board (Cambridge boards, for example, have no set-texts or
+  // poetry section and land on /revision/language).
+  const CONTINUE_FALLBACK_PREFERENCE = [
+    '/revision/texts',
+    '/revision/poetry',
+    '/revision/language',
+    '/revision/flashcards',
+  ]
+  const continueFallbackHref =
+    CONTINUE_FALLBACK_PREFERENCE.find((href) => sections.some((s) => s.href === href)) ??
+    '/revision/flashcards'
 
   const featuredBy = featuredText
     ? (await t('revision_page.featured.by')).replace('{author}', featuredText.author)
@@ -466,17 +489,30 @@ export default async function RevisionHubPage() {
         aria-label="Primary actions"
         className="flex flex-col gap-2 sm:flex-row sm:flex-wrap"
       >
-        {/* 2026-08-23: "Continue last lesson" implied resumable state that
-            nothing tracks; relabelled to what the link actually opens. And
-            "Open full dashboard" pointed real signed-in students at
-            /demo/student - the seeded demo with invented pupils - instead of
-            their own dashboard. */}
-        <Button variant="default" size="lg" render={<Link href="/revision/study-plan" />}>
+        {/* 2026-08-23: the primary action opened the study plan, which sits
+            behind requireSubscription - so the hub's most prominent button
+            sent a lapsed-trial student to /pricing. It now resolves the
+            student's real last revision page client-side (the VisitTracker
+            writes that history) and degrades to an honest "Start revising"
+            link to a free section when there is nothing to continue. The
+            study plan keeps a secondary slot.
+            Earlier the same day: "Open full dashboard" pointed real signed-in
+            students at /demo/student - the seeded demo with invented pupils -
+            instead of their own dashboard. */}
+        <ContinueRevisingButton
+          fallbackHref={continueFallbackHref}
+          fallbackLabel={i18n.startRevising}
+          continueTemplate={i18n.actionContinueNamed}
+        />
+        <Button variant="outline" size="lg" render={<Link href="/revision/study-plan" />}>
           {i18n.actionStudyPlan}
           <ArrowRight className="size-4" />
         </Button>
+        {/* Icon swapped from Sparkles to Target with the label: a sparkle
+            carried over the old "AI focus this week" framing, and this hub
+            is a static set of guides, not an AI feature. */}
         <Button variant="outline" size="lg" render={<Link href="/revision/exam-technique" />}>
-          <Sparkles className="size-4" aria-hidden="true" />
+          <Target className="size-4" aria-hidden="true" />
           {i18n.actionExamTechnique}
         </Button>
         <Button variant="outline" size="lg" render={<Link href="/dashboard" />}>

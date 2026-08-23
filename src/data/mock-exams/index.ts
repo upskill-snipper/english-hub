@@ -1,7 +1,13 @@
 // ─── Mock Exam Chunk Aggregator ─────────────────────────────────────────────
 // Combines all 120 exam papers from 24 chunk files into a single export.
+//
+// DO NOT IMPORT THIS FROM A 'use client' PAGE, and do not dynamic-import it
+// either: because every chunk is a static import here, reaching one paper
+// through this file downloads all 24 chunks (~2.3 MB). Client code should use
+// '@/data/mock-exams/paper-index' for listings and `loadMockExamPaper` in
+// '@/data/mock-exam-loader' for a single paper, which imports one chunk.
 
-import type { MockExamPaper } from '../mock-exams'
+import type { MockExamPaper } from './types'
 
 // AQA Paper 1 (15 papers)
 import { aqaP1A } from './aqa-p1-a'

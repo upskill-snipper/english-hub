@@ -22,7 +22,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { toast } from 'sonner'
-import { DEMO_STUDENTS, DEMO_CLASSES } from '@/data/demo-data'
+import { DEMO_STUDENT_INDEX } from '@/data/demo/students-index'
 import { Heatmap, RankBars } from '@/components/dataviz'
 
 // -- Seeded random helper -------------------------------------------------------
@@ -200,7 +200,7 @@ export default function EngagementPage() {
   const t = useT()
   const [remindersSent, setRemindersSent] = useState<Set<string>>(new Set())
 
-  const totalStudents = DEMO_STUDENTS.length > 0 ? DEMO_STUDENTS.length : 342
+  const totalStudents = DEMO_STUDENT_INDEX.length > 0 ? DEMO_STUDENT_INDEX.length : 342
 
   function handleSendReminder(studentId: string, studentName: string) {
     setRemindersSent((prev) => new Set(prev).add(studentId))

@@ -18,7 +18,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { DEMO_STUDENTS, DEMO_CLASSES } from '@/data/demo-data'
+import { DEMO_CLASSES } from '@/data/demo/classes'
+import { DEMO_STUDENT_INDEX } from '@/data/demo/students-index'
 import { ReadingAgeInline } from '@/components/ReadingProfileCard'
 import { useScrollRestore } from '@/hooks/useScrollRestore'
 import {
@@ -232,7 +233,7 @@ function generateExtraStudents(): EnrichedStudent[] {
   ]
 
   const extras: EnrichedStudent[] = []
-  const needed = 342 - DEMO_STUDENTS.length
+  const needed = 342 - DEMO_STUDENT_INDEX.length
 
   for (let i = 0; i < needed; i++) {
     const seed = i * 16807 + 12345
@@ -248,7 +249,7 @@ function generateExtraStudents(): EnrichedStudent[] {
     const cId = classIds[r3 % classIds.length]
     const cls = classMap[cId]
     const progress = r4 % 101
-    const id = `s-${String(DEMO_STUDENTS.length + i + 1).padStart(3, '0')}`
+    const id = `s-${String(DEMO_STUDENT_INDEX.length + i + 1).padStart(3, '0')}`
 
     let status: StudentStatus
     const statusRoll = r5 % 100
@@ -292,7 +293,7 @@ function generateExtraStudents(): EnrichedStudent[] {
 }
 
 const ALL_STUDENTS = [
-  ...DEMO_STUDENTS.map(
+  ...DEMO_STUDENT_INDEX.map(
     (s): EnrichedStudent => ({
       id: s.id,
       name: s.name,

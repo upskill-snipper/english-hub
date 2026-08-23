@@ -1,22 +1,18 @@
 /**
  * Parental Consent API - GDPR-compliant consent management for students aged 14-16 (UK).
  *
- * Required database migration:
+ * Schema: supabase/migrations/20260322_new_features.sql creates
+ * `parental_consents`; 20260823_self_serve_parental_consent.sql makes
+ * `school_id` NULLABLE (NULL = a direct signup with no school) and adds
+ * expires_at / last_sent_at / send_count;
+ * 20260823_parental_consent_token_column_privileges.sql takes `consent_token`
+ * out of the `authenticated` role's SELECT grant.
  *
- * CREATE TABLE parental_consents (
- *   id            uuid PRIMARY KEY DEFAULT gen_random_uuid(),
- *   student_user_id uuid NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,
- *   school_id     uuid NOT NULL REFERENCES schools(id) ON DELETE CASCADE,
- *   parent_email  text NOT NULL,
- *   consent_token text NOT NULL UNIQUE,
- *   status        text NOT NULL DEFAULT 'pending' CHECK (status IN ('pending', 'approved', 'denied')),
- *   consented_at  timestamptz,
- *   created_at    timestamptz NOT NULL DEFAULT now(),
- *   UNIQUE (student_user_id, school_id)
- * );
- *
- * CREATE INDEX idx_parental_consents_token ON parental_consents(consent_token);
- * CREATE INDEX idx_parental_consents_student ON parental_consents(student_user_id);
+ * This block used to inline a CREATE TABLE that declared school_id NOT NULL
+ * and consent_token NOT NULL. Both are wrong now, and a maintainer trusting
+ * it would reintroduce the NOT NULL that blocks self-serve consent and break
+ * the token-clearing on decision below. The migrations are the schema; do not
+ * restate them here.
  */
 
 import { NextRequest, NextResponse } from 'next/server'
@@ -110,21 +106,81 @@ async function sendConsentRequestEmail(args: {
 }
 
 /**
+ * Post-decision confirmation for a SELF-SERVE consent (school_id NULL).
+ *
+ * The shared templates in src/lib/email-templates/parent-consent.ts are
+ * written around a school ("...to use The English Hub at <school>", "as
+ * part of their schoolwork"). A student who signed up on their own has no
+ * school, so reusing those templates would have meant inventing one. This
+ * builds the same confirmation without any school claim.
+ */
+function buildSelfServeDecisionEmail(args: {
+  studentName: string
+  decision: 'approved' | 'denied'
+}): { subject: string; html: string; text: string } {
+  const safeStudent = args.studentName
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+
+  if (args.decision === 'approved') {
+    return {
+      subject: 'Consent recorded - The English Hub',
+      html: [
+        `<h2>Consent recorded</h2>`,
+        `<p>Dear parent or guardian,</p>`,
+        `<p>Thank you. You have given consent for <strong>${safeStudent}</strong> to use the AI marking and feedback features on The English Hub.</p>`,
+        `<p>You can withdraw consent at any time by emailing support@theenglishhub.app. We will action a withdrawal promptly and delete their data within 30 days unless we are required by law to keep it.</p>`,
+        `<p>The English Hub<br />A trading name of Upskill Energy Limited</p>`,
+      ].join('\n'),
+      text: [
+        'Consent recorded',
+        '',
+        `Thank you. You have given consent for ${args.studentName} to use the AI marking and feedback features on The English Hub.`,
+        '',
+        'You can withdraw consent at any time by emailing support@theenglishhub.app. We will action a withdrawal promptly and delete their data within 30 days unless we are required by law to keep it.',
+        '',
+        'The English Hub, a trading name of Upskill Energy Limited',
+      ].join('\n'),
+    }
+  }
+
+  return {
+    subject: 'Consent declined - The English Hub',
+    html: [
+      `<h2>Consent declined</h2>`,
+      `<p>Dear parent or guardian,</p>`,
+      `<p>You have declined consent for <strong>${safeStudent}</strong>. The AI marking and feedback features stay switched off for their account.</p>`,
+      `<p>If you change your mind, they can send you a new request from their account. To ask us to delete their account entirely, email support@theenglishhub.app.</p>`,
+      `<p>The English Hub<br />A trading name of Upskill Energy Limited</p>`,
+    ].join('\n'),
+    text: [
+      'Consent declined',
+      '',
+      `You have declined consent for ${args.studentName}. The AI marking and feedback features stay switched off for their account.`,
+      '',
+      'If you change your mind, they can send you a new request from their account. To ask us to delete their account entirely, email support@theenglishhub.app.',
+      '',
+      'The English Hub, a trading name of Upskill Energy Limited',
+    ].join('\n'),
+  }
+}
+
+/**
  * Send the post-decision confirmation email (approve or deny). Non-fatal.
+ * `schoolName` is null for a self-serve consent, which selects the
+ * school-free wording above.
  */
 async function sendConsentDecisionEmail(args: {
   parentEmail: string
   studentName: string
-  schoolName: string
+  schoolName: string | null
   decision: 'approved' | 'denied'
 }): Promise<void> {
-  if (!process.env.SMTP_HOST) {
-    console.warn('[consent] SMTP_HOST not configured - skipping decision email')
-    return
-  }
-  try {
-    const built =
-      args.decision === 'approved'
+  const built =
+    args.schoolName === null
+      ? buildSelfServeDecisionEmail({ studentName: args.studentName, decision: args.decision })
+      : args.decision === 'approved'
         ? buildParentConsentApprovedEmail({
             studentName: args.studentName,
             schoolName: args.schoolName,
@@ -133,6 +189,38 @@ async function sendConsentDecisionEmail(args: {
             studentName: args.studentName,
             schoolName: args.schoolName,
           })
+
+  // Self-serve requests are sent through Resend-then-SMTP, so the
+  // confirmation follows the same path. The school flow keeps its SMTP-only
+  // behaviour and its "not configured" warning.
+  if (args.schoolName === null) {
+    try {
+      const { deliverGuardianEmail } = await import('@/lib/parental-consent')
+      const delivered = await deliverGuardianEmail(
+        args.parentEmail,
+        built.subject,
+        built.html,
+        built.text,
+      )
+      if (!delivered) {
+        console.warn(
+          `[consent] Failed to send ${args.decision} confirmation to ${maskEmail(args.parentEmail)}`,
+        )
+      }
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'unknown error'
+      console.warn(
+        `[consent] Error sending ${args.decision} confirmation to ${maskEmail(args.parentEmail)}: ${message}`,
+      )
+    }
+    return
+  }
+
+  if (!process.env.SMTP_HOST) {
+    console.warn('[consent] SMTP_HOST not configured - skipping decision email')
+    return
+  }
+  try {
     const result = await sendEmail(args.parentEmail, built.subject, built.html, built.text)
     if (!result.success) {
       console.warn(
@@ -412,12 +500,26 @@ export async function PUT(request: NextRequest) {
     // Look up the consent record by token
     const { data: consent, error: lookupError } = await admin
       .from('parental_consents')
-      .select('id, status, student_user_id, school_id, parent_email')
+      .select('id, status, student_user_id, school_id, parent_email, expires_at')
       .eq('consent_token', token)
       .single()
 
     if (lookupError || !consent) {
       return NextResponse.json({ error: 'Invalid or expired consent token.' }, { status: 404 })
+    }
+
+    // Self-serve links promise a 7-day life in the email, so honour it here
+    // as well as in the details endpoint - otherwise an expired link would
+    // still record a decision from the button on an already-open tab.
+    // School rows have expires_at NULL (no expiry) and are unaffected.
+    if (consent.expires_at && new Date(consent.expires_at).getTime() < Date.now()) {
+      return NextResponse.json(
+        {
+          error:
+            'This consent link has expired. Ask your child to send a new request from their account.',
+        },
+        { status: 410 },
+      )
     }
 
     // Idempotency guard: a parent clicking their link twice (or a replayed
@@ -451,29 +553,49 @@ export async function PUT(request: NextRequest) {
       return NextResponse.json({ error: 'Failed to process consent.' }, { status: 500 })
     }
 
-    // Fetch student + school names for the confirmation email. If either
-    // lookup fails we still send with safe fallbacks - the email is
-    // notification-only and must never block the happy path.
-    const [{ data: studentProfile }, { data: school }] = await Promise.all([
-      admin.from('profiles').select('full_name').eq('id', consent.student_user_id).single(),
-      admin.from('schools').select('name').eq('id', consent.school_id).single(),
-    ])
+    // Fetch the student's name for the confirmation email, and the school's
+    // name only when there is a school. A self-serve consent (school_id
+    // NULL) must not be told about a school that does not exist, so its
+    // schoolName stays null and selects the school-free wording.
+    const { data: studentProfile } = await admin
+      .from('profiles')
+      .select('full_name')
+      .eq('id', consent.student_user_id)
+      .single()
+
+    let schoolName: string | null = null
+    if (consent.school_id) {
+      const { data: school } = await admin
+        .from('schools')
+        .select('name')
+        .eq('id', consent.school_id)
+        .single()
+      // Fallback wording only ever applies to a request that really did come
+      // from a school.
+      schoolName = school?.name ?? 'their school'
+    }
 
     // Fire the post-decision confirmation email (non-fatal).
     await sendConsentDecisionEmail({
       parentEmail: consent.parent_email,
       studentName: studentProfile?.full_name ?? 'your child',
-      schoolName: school?.name ?? 'their school',
+      schoolName,
       decision: newStatus,
     })
+
+    const isSelfServe = consent.school_id === null
 
     return NextResponse.json({
       success: true,
       status: newStatus,
       message:
         action === 'approve'
-          ? 'Thank you. You have granted consent for your child to use The English Hub at their school.'
-          : "You have denied consent. Your child's data will not be processed for school features.",
+          ? isSelfServe
+            ? 'Thank you. You have given consent for your child to use the AI marking and feedback features on The English Hub.'
+            : 'Thank you. You have granted consent for your child to use The English Hub at their school.'
+          : isSelfServe
+            ? "You have declined consent. The AI marking and feedback features stay switched off for your child's account."
+            : "You have denied consent. Your child's data will not be processed for school features.",
     })
   } catch (error) {
     console.error('Consent confirm error:', error)

@@ -659,6 +659,14 @@ export function teacherInviteEmail(params: {
 
   const subject = `You have been added to The English Hub - ${schoolName}`
 
+  // QA 2026-08-23: the temporary-password paragraph below (and its plain-text
+  // twin) previously said "one-time password". Nothing in the code makes it
+  // single use: the rotation gate in src/lib/supabase/middleware.ts holds the
+  // account on /auth/set-password until a new password is chosen, but the
+  // temporary password itself keeps working until that happens, so it can be
+  // used to sign in more than once. A false single-use assurance in a
+  // school-issued credential email is a claims-honesty defect, so the copy now
+  // says "temporary" and describes what actually happens.
   const html = layout(
     subject,
     `<h2 style="color:${BRAND_COLOR};margin:0 0 16px 0;">Welcome to The English Hub, ${teacherName}!</h2>
@@ -679,7 +687,7 @@ export function teacherInviteEmail(params: {
   </table>
 </div>
 <p style="font-size:16px;line-height:1.6;">
-  For your security, please change your password the first time you log in.
+  This password is temporary. The first time you log in we will ask you to choose your own password before you can use your account, so please do not share or store the one above.
 </p>
 ${ctaButton('Log in to The English Hub', loginUrl)}
 <p style="font-size:16px;line-height:1.6;font-weight:600;">What you can do as a teacher</p>
@@ -703,7 +711,8 @@ ${ctaButton('Log in to The English Hub', loginUrl)}
     `  Email: ${loginEmail}`,
     `  Temporary password: ${temporaryPassword}`,
     '',
-    'Please change your password when you first log in.',
+    // QA 2026-08-23: was "one-time password" - see the note above `const html`.
+    'This password is temporary. We will ask you to choose your own password the first time you log in, so please do not share or store the one above.',
     '',
     `Log in here: ${loginUrl}`,
     '',
@@ -726,6 +735,11 @@ export function studentWelcomeEmail(params: {
 
   const subject = `Your English Hub account is ready - ${schoolName}`
 
+  // QA 2026-08-23: the temporary-password paragraph below (and its plain-text
+  // twin) previously said the password "only works once". It does not - see
+  // the note in teacherInviteEmail above. Corrected to "temporary", which is
+  // what the rotation gate actually enforces. This one goes to a pupil, so a
+  // false security assurance here matters most.
   const html = layout(
     subject,
     `<h2 style="color:${BRAND_COLOR};margin:0 0 16px 0;">Hi ${studentName}, your account is ready!</h2>
@@ -746,7 +760,7 @@ export function studentWelcomeEmail(params: {
   </table>
 </div>
 <p style="font-size:16px;line-height:1.6;">
-  Please change your password after your first login to keep your account secure.
+  The password above is temporary. When you log in, we will ask you to choose your own password before you can use your account. Keep it private and do not share it with anyone.
 </p>
 ${ctaButton('Log in and get started', loginUrl)}
 <p style="font-size:16px;line-height:1.6;font-weight:600;">What you can do</p>
@@ -771,7 +785,8 @@ ${ctaButton('Log in and get started', loginUrl)}
     `  Email: ${loginEmail}`,
     `  Temporary password: ${temporaryPassword}`,
     '',
-    'Please change your password after your first login.',
+    // QA 2026-08-23: was "only works once" - see the note above `const html`.
+    'The password above is temporary. When you log in we will ask you to choose your own password before you can use your account. Keep it private and do not share it with anyone.',
     '',
     `Log in here: ${loginUrl}`,
     '',

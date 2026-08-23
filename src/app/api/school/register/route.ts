@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServiceRoleClient } from '@/lib/supabase/server'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
+import { verifyAdmin } from '@/lib/admin-auth'
 
 export const dynamic = 'force-dynamic'
 
@@ -92,10 +93,35 @@ async function resolvePromoCode(
 // ---------------------------------------------------------------------------
 
 export async function POST(request: NextRequest): Promise<NextResponse> {
-  // ── Rate limit: 3 registrations per IP per hour ──────────────────────────
+  // ── Site-admin gate ─────────────────────────────────────────────────────
+  // DEFECT (2026-08-23): this endpoint was public, protected only by an IP
+  // rate limit. It creates a `schools` tenant row AND an email-confirmed
+  // Supabase auth user carrying role: 'school_admin', so any anonymous
+  // visitor could mint a privileged account plus a paying-school record.
+  // No customer-facing UI calls it - schools are provisioned by an operator
+  // after a signed deal (/admin/school-provisioning) and prospective schools
+  // go through the enquiry flow at /school-pilot. It is now gated behind the
+  // same site-admin check that guards /api/admin/*. The auth check runs
+  // before the rate limiter so anonymous traffic is rejected without
+  // consuming a rate-limit slot, and gets an accurate 401 rather than a 429.
+  // Named siteAdminAuthError, not authError: `authError` is already taken
+  // further down by the Supabase createUser destructure.
+  const { user: actingAdmin, error: siteAdminAuthError } = await verifyAdmin()
+  if (siteAdminAuthError === 'Unauthorized') {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  }
+  if (siteAdminAuthError === 'Forbidden') {
+    return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
+  }
+
+  // ── Rate limit: 20 provisioning calls per IP per hour ───────────────────
+  // Raised from 3/hour: that ceiling existed to slow down anonymous abuse,
+  // which the site-admin gate above now removes. Three was too tight for a
+  // real operator session (onboarding a multi-academy trust means creating
+  // several schools back to back). Kept as defence in depth.
   const ip = getClientIp(request.headers)
   const rl = await rateLimit(`school-register:${ip}`, {
-    limit: 3,
+    limit: 20,
     windowSeconds: 3600,
   })
   if (!rl.success) {
@@ -239,16 +265,6 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   const normalizedEmail = email!.toLowerCase().trim()
   const admin = createServiceRoleClient()
 
-  // ── Check email not already registered ──────────────────────────────────
-  const { data: existingUsers } = await admin.auth.admin.listUsers()
-  const emailTaken = existingUsers?.users?.some((u) => u.email?.toLowerCase() === normalizedEmail)
-  if (emailTaken) {
-    return NextResponse.json(
-      { error: 'An account with this email address already exists.' },
-      { status: 409 },
-    )
-  }
-
   // ── Validate promo code ──────────────────────────────────────────────────
   let promoResult: PromoResult | null = null
   if (promoCode && promoCode.trim()) {
@@ -314,8 +330,35 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 
   if (authError || !authData?.user) {
     console.error('[school/register] Auth user creation failed:', authError)
+
+    // DEFECT (2026-08-23 QA): the duplicate-email check used to run before
+    // this, as `admin.auth.admin.listUsers()` followed by a `.some()` over
+    // the result. listUsers() is paginated and returns only the first page
+    // (50 users) unless a page is asked for, so on any real deployment the
+    // scan looked at an arbitrary 50 accounts, missed the clash, and the
+    // operator got "Failed to create admin account. Please try again." -
+    // advice that can never work. It also pulled the whole first page of the
+    // auth user list on every provisioning call. GoTrue is the authority on
+    // whether an email is taken, so the answer now comes from createUser
+    // itself and is reported as a 409 the operator can act on.
+    const code = (authError as { code?: string } | null)?.code ?? ''
+    const message = authError?.message ?? ''
+    const emailTaken =
+      code === 'email_exists' || /already been registered|already exists/i.test(message)
+    if (emailTaken) {
+      return NextResponse.json(
+        { error: 'An account with this email address already exists.' },
+        { status: 409 },
+      )
+    }
+
     return NextResponse.json(
-      { error: 'Failed to create admin account. Please try again.' },
+      {
+        error: 'Failed to create admin account. Please try again.',
+        // Same reasoning as the schools/school_members inserts below: this
+        // endpoint is site-admin only, and an operator needs the real reason.
+        detail: message || null,
+      },
       { status: 500 },
     )
   }
@@ -361,8 +404,16 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     // Roll back: delete the auth user we just created
     await admin.auth.admin.deleteUser(adminUserId)
     console.error('[school/register] School creation failed:', schoolError)
+    // `detail` carries the Postgres/PostgREST message through to the caller.
+    // "Please try again" is useless advice for a schema or constraint failure,
+    // and an operator provisioning a signed school needs to know which column
+    // or CHECK rejected the row. Safe to expose now the endpoint is
+    // site-admin only; it was not safe when this route was public.
     return NextResponse.json(
-      { error: 'Failed to create school record. Please try again.' },
+      {
+        error: 'Failed to create school record. Please try again.',
+        detail: schoolError?.message ?? null,
+      },
       { status: 500 },
     )
   }
@@ -386,8 +437,13 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     await admin.from('schools').delete().eq('id', schoolId)
     await admin.auth.admin.deleteUser(adminUserId)
     console.error('[school/register] school_members insert failed:', memberError)
+    // See the note on the schools insert above: the underlying DB message is
+    // returned so the provisioning operator can act on it.
     return NextResponse.json(
-      { error: 'Failed to create school membership. Please try again.' },
+      {
+        error: 'Failed to create school membership. Please try again.',
+        detail: memberError.message ?? null,
+      },
       { status: 500 },
     )
   }
@@ -434,8 +490,10 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   }
 
   // ── Send welcome email (log only - no sendEmail utility found) ───────────
+  // The acting operator is logged too: now that provisioning is site-admin
+  // only, "who created this school" needs to be answerable from the logs.
   console.info(
-    `[school/register] New school registered: ${schoolName} (${slug}) | admin: ${normalizedEmail} | access: ${accessType}`,
+    `[school/register] New school registered: ${schoolName} (${slug}) | admin: ${normalizedEmail} | access: ${accessType} | provisioned by: ${actingAdmin?.email ?? 'unknown'}`,
   )
 
   // ── Return success ───────────────────────────────────────────────────────

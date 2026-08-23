@@ -2,16 +2,21 @@
  * /courses - server-rendered catalogue (SEO item #23).
  *
  * This page used to be 'use client' with a `useEffect(loadAllCourses)`, which
- * meant crawlers and first-paint users saw "Loading...". Now the course list
- * is fetched on the server via `loadAllCourses()` (a memoised dynamic-import
- * aggregator - see `@/data/course-loader`) and handed to the client island as
- * `initialCourses`, so the rendered HTML contains real category + course
- * content on first byte. Interactive filters, search and board-hydration
- * still live in the client island.
+ * meant crawlers and first-paint users saw "Loading...". The course list is now
+ * fetched on the server and handed to the client island as `initialCourses`, so
+ * the rendered HTML contains real category + course content on first byte.
+ * Interactive filters, search and board-hydration still live in the client
+ * island.
+ *
+ * It fetches `loadCourseIndex()`, not `loadAllCourses()`. The catalogue renders
+ * cards, and every card field is metadata - but `loadAllCourses()` returns full
+ * lesson bodies and quiz banks (~7.2 MB), all of which was being serialised
+ * into the RSC payload as `initialCourses` and shipped to every visitor. The
+ * index carries the same card fields in ~107 KB.
  */
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { loadAllCourses } from '@/data/course-loader'
+import { loadCourseIndex, verifyCourseIndex } from '@/data/course-loader'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { selfCanonical } from '@/lib/seo/canonical'
 import { t } from '@/lib/i18n/t'
@@ -47,7 +52,16 @@ const SEO_CATEGORIES = [
 ] as const
 
 export default async function CoursesPage() {
-  const courses = await loadAllCourses()
+  const courses = await loadCourseIndex()
+
+  // src/data/course-index.ts is generated, so it can go stale silently if a
+  // course is added without regenerating it. This is the one place in the app
+  // that renders the catalogue from the server, so it is where we check. Server
+  // side and development only - the check reads all 7.2 MB of course data.
+  if (process.env.NODE_ENV !== 'production') {
+    await verifyCourseIndex()
+  }
+
   // Top 6 - crawlers + the above-the-fold paint get real course titles + links
   // as static HTML without waiting for the client island to hydrate.
   const topSix = courses.slice(0, 6)

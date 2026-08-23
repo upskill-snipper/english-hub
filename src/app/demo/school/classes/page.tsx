@@ -4,7 +4,8 @@ import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import { BookOpen, Users, Plus, Search, X, GraduationCap } from 'lucide-react'
 import { toast } from 'sonner'
-import { DEMO_CLASSES, DEMO_STUDENTS } from '@/data/demo-data'
+import { DEMO_CLASSES } from '@/data/demo/classes'
+import { DEMO_STUDENT_INDEX } from '@/data/demo/students-index'
 import { ReadingAgeInline } from '@/components/ReadingProfileCard'
 import { useScrollRestore } from '@/hooks/useScrollRestore'
 import { percentageToGCSEGrade } from '@/lib/grades'
@@ -42,7 +43,7 @@ export default function DemoClassesPage() {
 
   const classesWithStats = useMemo(() => {
     return DEMO_CLASSES.map((cls) => {
-      const students = DEMO_STUDENTS.filter((s) => s.classId === cls.id)
+      const students = DEMO_STUDENT_INDEX.filter((s) => s.classId === cls.id)
       const actualStudentCount = students.length > 0 ? students.length : cls.studentCount
       const avgScore =
         students.length > 0

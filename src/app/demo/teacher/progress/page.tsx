@@ -20,7 +20,6 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { DEMO_STUDENTS } from '@/data/demo-data'
 import {
   percentageToGCSEGrade,
   percentageToGCSEGradeLabel,
@@ -559,7 +558,7 @@ export default function TeacherProgressPage() {
             <div className="text-left">
               <div className="text-sm font-medium text-foreground">{selectedClass.name}</div>
               <div className="text-xs text-muted-foreground">
-                Year {selectedClass.yearGroup} -- {selectedClass.examBoard}
+                Year {selectedClass.yearGroup} - {selectedClass.examBoard}
               </div>
             </div>
             <ChevronDown
@@ -582,7 +581,7 @@ export default function TeacherProgressPage() {
                 >
                   <div className="text-sm font-medium text-foreground">{cls.name}</div>
                   <div className="text-xs text-muted-foreground">
-                    Year {cls.yearGroup} -- {cls.examBoard} --{' '}
+                    Year {cls.yearGroup} - {cls.examBoard} -{' '}
                     {CLASS_STUDENTS.filter((s) => s.classId === cls.id).length} students
                   </div>
                 </button>
@@ -650,7 +649,7 @@ export default function TeacherProgressPage() {
           <CardHeader className="pb-3">
             <CardTitle className="text-sm font-medium text-muted-foreground flex items-center gap-2">
               <Users className="h-4 w-4 text-primary" />
-              Student Progress -- {selectedClass.name}
+              Student Progress - {selectedClass.name}
               <div className="ml-auto flex items-center gap-3 text-xs">
                 <span className="flex items-center gap-1">
                   <div className="h-2 w-2 rounded-full bg-primary" /> {greenCount}
@@ -816,7 +815,7 @@ export default function TeacherProgressPage() {
                             {student.name}
                           </div>
                           <div className="text-xs text-muted-foreground">
-                            {percentageToGCSEGradeLabel(student.score)} -- Last active:{' '}
+                            {percentageToGCSEGradeLabel(student.score)} - Last active:{' '}
                             {student.lastActive}
                           </div>
                         </div>
@@ -895,7 +894,7 @@ export default function TeacherProgressPage() {
                 <div>
                   <h2 className="text-xl font-bold">Class Report: {selectedClass.name}</h2>
                   <p className="text-sm text-muted-foreground">
-                    Mrs Mitchell -- Generated {new Date().toLocaleDateString('en-GB')}
+                    Mrs Mitchell - Generated {new Date().toLocaleDateString('en-GB')}
                   </p>
                 </div>
                 <button
@@ -1017,7 +1016,7 @@ export default function TeacherProgressPage() {
                     <ul className="list-disc list-inside space-y-1 text-muted-foreground">
                       {needsAttention.map((s) => (
                         <li key={s.id}>
-                          <span className="font-medium">{s.name}</span> --{' '}
+                          <span className="font-medium">{s.name}</span> -{' '}
                           {percentageToGCSEGradeLabel(s.score)}, Progress: {s.progress}%, Last
                           active: {s.lastActive}
                         </li>

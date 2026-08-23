@@ -151,3 +151,112 @@ Quick index of what was decided + what still ships in production today:
 DBS / Prevent / whistleblowing / legal-framework / safer-recruitment
 content from `/legal/safeguarding` into the authoritative `/safeguarding`
 page, with `/legal/safeguarding` reduced to a redirect-only shim.
+
+---
+
+## B16-B19 — Sub-processor register: four decisions needed before the public pages can be reconciled (raised 2026-08-23)
+
+The agency review confirmed that `src/config/subprocessors.ts` (the carefully
+reconciled register) and the public pages **disagree with each other**, and the
+register's own header carries a `TODO(founder/legal)` saying it must not be
+wired into the public legal pages until these are closed. A sub-processor list
+is a contractual data-protection disclosure, so this is **not** something to
+change unilaterally in code - it needs your sign-off as DPO.
+
+**Current disagreement, verified in the code:**
+
+| Surface                                             | Lists                                                                                                                                               |
+| --------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `src/config/subprocessors.ts` (register)            | Supabase, Vercel, Cloudflare, Microsoft Azure, Anthropic, Stripe, _email provider (UNCONFIRMED)_, Sentry, Vercel Analytics, GA4, Rewardful, PostHog |
+| `/data-processing` (the DPA schools are pointed at) | Cloudflare, PostHog, GA4, Rewardful, Vercel Analytics                                                                                               |
+| `/legal/privacy`                                    | **omits Cloudflare and PostHog entirely** (zero mentions)                                                                                           |
+
+### B16 — Which transactional email provider(s) do we name?
+
+**Finding: the code uses TWO paths, so naming only one would be inaccurate.**
+
+- `src/lib/email.ts` sends via **nodemailer over SMTP**, with the host taken
+  from the `SMTP_HOST` environment variable. The actual company receiving that
+  data is whatever is configured in Vercel - I cannot read it from the repo.
+- Six routes call the **Resend HTTP API** directly
+  (`api/contact`, `api/school-inquiry`, `api/auth/parent-notify`,
+  `api/stripe/webhook`, `api/admin/email-status`, `lib/email/resend.ts`).
+
+`package.json` contains **neither** `resend` nor `postmark` as a dependency
+(Resend is called over plain HTTPS), which is why the register was left
+UNCONFIRMED.
+
+**Decision needed:** confirm the value of `SMTP_HOST` in production, then
+confirm whether we disclose _both_ providers. Guardian-consent emails and
+school-report emails carry children's personal data, so this disclosure matters.
+
+### B17 — Is PostHog live in production?
+
+`posthog-js` is a dependency and the client initialises only when
+`NEXT_PUBLIC_POSTHOG_KEY` is set. If it is set in Vercel, PostHog is a live
+sub-processor processing children's event data and **must** appear on
+`/legal/privacy` (it currently does not). If it is not set, it should be
+removed from `/data-processing`.
+
+**Decision needed:** is `NEXT_PUBLIC_POSTHOG_KEY` set in production - yes or no?
+
+### B18 — How do we describe GA4 now that gtag.js is gone?
+
+`src/lib/gtag.ts` no longer loads gtag.js; GA4 data goes via a **server-side
+Measurement Protocol relay**. GA4 remains a sub-processor, but the description
+and the cookie table are both out of date (this also drives the cookie-policy
+correction: the `_ga` / `_ga_*` rows describe cookies the site no longer sets,
+while the first-party `eh_ga_cid` it _does_ set is undisclosed).
+
+**Decision needed:** approve describing GA4 as "aggregate usage analytics,
+transmitted server-side; no Google cookies set in the browser", and approve the
+corrected cookie table.
+
+### B19 — Approve publishing the reconciled register
+
+Once B16-B18 are closed, the single register in `subprocessors.ts` should
+become the one source of truth rendered by `/data-processing` **and**
+`/legal/privacy`, so the two can never drift again.
+
+**Decision needed:** approve, and confirm whether Cloudflare should also be
+named on `/legal/privacy` (it is a live edge/DNS processor and is currently
+absent there).
+
+> **Why this is not already fixed in code:** every other finding from the
+> review was remediated directly. This one is deliberately held because the
+> register's own header requires founder/DPO approval before the public
+> contractual pages change, and because B16 depends on a production environment
+> value that is not in the repository.
+
+## B20 — "Students aged 11 to 18" is published, but signup blocks under-13s (raised 2026-08-23)
+
+`dictionary-press-verified.ts:177` and `dictionary-trust.ts:178` both state the
+audience is **"Students aged 11 to 18 studying KS3, GCSE, IGCSE or EAL English"**.
+
+The code enforces **13+** for self-signup:
+
+- `src/app/api/auth/register/route.ts:109` — `const MIN_AGE = 13`
+- `src/app/api/auth/validate-age/route.ts:39` — under-13 blocked outright
+  ("You must be at least 13 years old"), per UK GDPR digital consent age.
+
+So an 11 or 12 year-old (or their parent) reading the public pages is told they
+are the intended audience, then hard-blocked at signup. Note this is _partly_
+reconcilable — a Year 7 pupil can be enrolled **by their school**, and the KS3
+content genuinely serves them — but nothing on those pages says so.
+
+This is the unfinished half of decision **B5**, where you chose to lower the age
+to 11 with verifiable parental consent for 11-12 under UK GDPR Article 8. The
+copy was updated to 11; the enforcement was not.
+
+**Decision needed — pick one:**
+
+1. **Build it** (honours B5): implement Article 8 verifiable parental consent
+   for 11-12 self-signup. This is a substantial compliance build and should
+   follow the parental-consent loop repair, not precede it.
+2. **Correct the copy for now**: state 13-18 for self-signup and note that
+   younger KS3 pupils join through their school. Accurate today, reversible
+   when option 1 ships.
+
+I have **not** changed this unilaterally: option 2 would contradict a decision
+you have already recorded, and option 1 is a compliance build that needs your
+sign-off on the verification method.

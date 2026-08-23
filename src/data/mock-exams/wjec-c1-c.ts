@@ -1,5 +1,5 @@
 // @ts-nocheck
-import type { MockExamPaper } from '../mock-exams'
+import type { MockExamPaper } from './types'
 
 // ─── Extracts ──────────────────────────────────────────────────────────────────
 

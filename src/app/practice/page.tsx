@@ -22,9 +22,15 @@ import { useAuthStore } from '@/store/auth-store'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-config'
 import { matchesPracticeBoard } from '@/lib/board-filter'
-import { practiceQuestions, type PracticeQuestion } from '@/data/practice-data'
+// PERF (Aug 2026): both the question bank and the exam guides are now pulled in
+// on demand rather than at module scope. The type imports below are erased at
+// compile time, so they cost this client bundle nothing. See the header comments
+// in `@/data/practice/load` and `@/data/exam-guides/load-guide` for the defect.
+import type { PracticeQuestion } from '@/data/practice/types'
+import { loadPracticeQuestions, questionTypesFor } from '@/data/practice/load'
 import { cn, formatTime } from '@/lib/utils'
-import { getGuideByBoard } from '@/data/exam-guides'
+import type { BoardExamGuide } from '@/data/exam-guides/types'
+import { loadGuideByBoard } from '@/data/exam-guides/load-guide'
 import Link from 'next/link'
 
 import EssayFeedbackInline from '@/components/EssayFeedbackInline'
@@ -50,13 +56,11 @@ import { LearningTip } from '@/components/ui/learning-tip'
 
 const GRADE_TABS = ['Grade 4-5', 'Grade 6-7', 'Grade 8-9'] as const
 
-// Derive unique question types from the data
-function getUniqueQuestionTypes(): string[] {
-  const types = new Set(
-    practiceQuestions.map((q) => q.questionType || q.type || 'Other').filter(Boolean),
-  )
-  return ['All', ...Array.from(types).sort()]
-}
+// NOTE: the question-type filter used to be derived here, at module scope, from
+// the whole cross-board bank. That single line was enough to keep every board's
+// question module in this route's import graph, so it has moved into the
+// component and now reads only the slice the student actually loaded
+// (`questionTypesFor` in @/data/practice/load).
 
 // ─── Contextual Tip Helper ──────────────────────────────────────────────────
 
@@ -116,13 +120,74 @@ export default function PracticePage() {
   const [saveError, setSaveError] = useState<string | null>(null)
 
   const { user } = useAuthStore()
-  const questionTypes = useMemo(() => getUniqueQuestionTypes(), [])
 
-  // Board exam guide for contextual tips
-  const boardGuide = useMemo(
-    () => (selectedBoard ? getGuideByBoard(selectedBoard) : undefined),
-    [selectedBoard],
-  )
+  // ── Lazily loaded question bank ────────────────────────────────────────
+  //
+  // `null` means "still fetching"; an empty array means "fetched, nothing for
+  // this board". The two must stay distinguishable or the page flashes the
+  // "no questions found" empty state on every load.
+  const [questions, setQuestions] = useState<PracticeQuestion[] | null>(null)
+  const [bankFailed, setBankFailed] = useState(false)
+  // Bumped by the retry button so a failed chunk fetch can be re-attempted
+  // without a full page reload.
+  const [reloadKey, setReloadKey] = useState(0)
+
+  useEffect(() => {
+    let cancelled = false
+    setQuestions(null)
+    setBankFailed(false)
+    loadPracticeQuestions(selectedBoard)
+      .then((loaded) => {
+        if (!cancelled) setQuestions(loaded)
+      })
+      .catch(() => {
+        // A chunk that fails to download must surface as an error, never as a
+        // placeholder question - students would revise against invented content.
+        if (cancelled) return
+        setQuestions([])
+        setBankFailed(true)
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [selectedBoard, reloadKey])
+
+  const questionTypes = useMemo(() => questionTypesFor(questions ?? []), [questions])
+
+  // If the student's saved type filter does not exist in the newly loaded
+  // slice (e.g. they had an AQA-only question type selected and switched to
+  // Cambridge), fall back to "All". Otherwise the Select shows a value that is
+  // not in its own option list and the pool is stuck empty.
+  useEffect(() => {
+    if (questions && questionType !== 'All' && !questionTypes.includes(questionType)) {
+      setQuestionType('All')
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [questionTypes, questions])
+
+  // ── Lazily loaded board exam guide (contextual examiner tips) ──────────
+
+  const [boardGuide, setBoardGuide] = useState<BoardExamGuide | undefined>(undefined)
+
+  useEffect(() => {
+    let cancelled = false
+    if (!selectedBoard) {
+      setBoardGuide(undefined)
+      return
+    }
+    loadGuideByBoard(selectedBoard)
+      .then((guide) => {
+        if (!cancelled) setBoardGuide(guide)
+      })
+      .catch(() => {
+        // The examiner tip is a bonus, not the feature. If its chunk fails we
+        // simply omit the callout rather than blocking practice.
+        if (!cancelled) setBoardGuide(undefined)
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [selectedBoard])
 
   const contextualTip = useMemo(
     () =>
@@ -138,14 +203,17 @@ export default function PracticePage() {
 
   // ── Filtered questions ─────────────────────────────────────────────────
 
+  // `matchesPracticeBoard` still runs even though the loader already narrows by
+  // board: it is the authoritative syllabus gate, so a mis-tagged question can
+  // never reach a student on the wrong specification.
   const filtered = useMemo(
     () =>
-      practiceQuestions.filter((q) => {
+      (questions ?? []).filter((q) => {
         if (!matchesPracticeBoard(q, selectedBoard)) return false
         if (questionType !== 'All' && (q.questionType || q.type) !== questionType) return false
         return true
       }),
-    [selectedBoard, questionType],
+    [questions, selectedBoard, questionType],
   )
 
   // ── Pick random question ───────────────────────────────────────────────
@@ -296,7 +364,14 @@ export default function PracticePage() {
             <div className="space-y-1.5">
               <Label htmlFor="question-type-filter">{t('marking.question_type')}</Label>
               <Select value={questionType} onValueChange={(v) => v && setQuestionType(v)}>
-                <SelectTrigger id="question-type-filter" className="w-full sm:max-w-xs">
+                {/* Disabled until the board's slice has arrived - the type list
+                    is derived from the loaded questions, so before then it holds
+                    "All" only and would look like a broken filter. */}
+                <SelectTrigger
+                  id="question-type-filter"
+                  className="w-full sm:max-w-xs"
+                  disabled={questions === null}
+                >
                   <SelectValue placeholder={t('marking.select_type')} />
                 </SelectTrigger>
                 <SelectContent>
@@ -310,11 +385,19 @@ export default function PracticePage() {
             </div>
             <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
               <div className="flex items-center gap-3">
+                {/* Never claim "0 questions available" while the bank is still
+                    downloading - that reads as an empty product, not a wait. */}
                 <span className="text-sm text-muted-foreground">
-                  {filtered.length}{' '}
-                  {filtered.length !== 1
-                    ? t('marking.questions_available_plural')
-                    : t('marking.questions_available_singular')}
+                  {questions === null ? (
+                    t('action.loading')
+                  ) : (
+                    <>
+                      {filtered.length}{' '}
+                      {filtered.length !== 1
+                        ? t('marking.questions_available_plural')
+                        : t('marking.questions_available_singular')}
+                    </>
+                  )}
                 </span>
               </div>
               <div className="flex items-center gap-3">
@@ -329,7 +412,12 @@ export default function PracticePage() {
                   {timedMode ? t('marking.timed') : t('marking.untimed')}
                 </Button>
                 {/* New random question */}
-                <Button variant="ghost" size="sm" onClick={handleNext}>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={handleNext}
+                  disabled={questions === null}
+                >
                   <Shuffle className="h-4 w-4" />
                   {t('marking.random_question')}
                 </Button>
@@ -339,7 +427,25 @@ export default function PracticePage() {
         </Card>
 
         {/* ── Question Area ───────────────────────────────────────────── */}
-        {currentQuestion ? (
+        {questions === null ? (
+          /* Bank still downloading. Deliberately renders no question content -
+             an error or waiting state must never show placeholder questions. */
+          <Card className="flex flex-col items-center justify-center p-12 text-center">
+            <Loader2 className="mb-4 h-8 w-8 animate-spin text-primary" />
+            <p className="text-sm text-muted-foreground">{t('action.loading')}</p>
+          </Card>
+        ) : bankFailed ? (
+          /* The question chunk failed to download (offline, cache miss after a
+             deploy). Say so plainly and offer a retry rather than showing an
+             empty pool, which reads as "this board has no questions". */
+          <Card className="flex flex-col items-center justify-center p-12 text-center">
+            <BookOpen className="mb-4 h-12 w-12 text-border" />
+            <h2 className="text-lg font-semibold text-foreground">{t('action.error_generic')}</h2>
+            <Button variant="default" className="mt-6" onClick={() => setReloadKey((k) => k + 1)}>
+              {t('action.retry')}
+            </Button>
+          </Card>
+        ) : currentQuestion ? (
           <div className="space-y-6">
             {/* Timer display */}
             {timedMode && (

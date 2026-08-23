@@ -37,6 +37,11 @@ export default async function Layout({ children }: { children: React.ReactNode }
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    // 2026-08-23: without this @id, /contact declared a SECOND, competing
+    // Organization entity for the same brand, so the contactPoint attached to
+    // an orphan node instead of the canonical organisation that
+    // WebsiteJsonLd emits site-wide. Matching @id merges the two.
+    '@id': 'https://theenglishhub.app/#organisation',
     name: 'The English Hub',
     url: 'https://theenglishhub.app',
     contactPoint: [

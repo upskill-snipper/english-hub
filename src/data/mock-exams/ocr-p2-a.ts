@@ -2,7 +2,7 @@
 // ─── OCR Paper 2 Mock Exams - Exploring Effects and Impact (J351/02) ────────
 // Five unique papers with fiction/literary non-fiction extracts.
 
-import type { MockExamPaper } from '../mock-exams'
+import type { MockExamPaper } from './types'
 
 // ─── Extracts ───────────────────────────────────────────────────────────────
 

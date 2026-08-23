@@ -37,6 +37,16 @@ export function applyAffiliateTracking(request: NextRequest, response: NextRespo
 
   if (!REF_REGEX.test(ref)) return response
 
+  // PECR reg. 6 (2026-08-23): affiliate attribution is a MARKETING purpose,
+  // so its cookie needs consent before it is set - it is not strictly
+  // necessary to deliver the service the user requested. Every other
+  // non-essential tracker on the site is already gated this way (the GA4
+  // relay refuses unless eh-cookie-consent is 'all'; ConsentGatedAnalytics
+  // checks hasAnalyticsConsent). This one was writing a 30-day identifier on
+  // any ?ref= link with no check at all, on a product used by children.
+  // Without consent we simply do not persist the click.
+  if (request.cookies.get('eh-cookie-consent')?.value !== 'all') return response
+
   const linkParam = searchParams.get(LINK_PARAM) ?? undefined
 
   const existing = readAffiliateCookieFromRequest(request)

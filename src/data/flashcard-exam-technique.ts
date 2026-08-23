@@ -1,5 +1,7 @@
 // @ts-nocheck
-import type { FlashcardDeck } from './flashcard-data'
+// Types come from the tiny ./flashcards/types module, not from flashcard-data.ts:
+// importing them from the aggregate created a cycle back into the ~1.2 MB corpus.
+import type { FlashcardDeck } from './flashcards/types'
 
 export const examTechniqueDecks: FlashcardDeck[] = [
   // ─── 1. AQA Exam Technique ────────────────────────────────────────

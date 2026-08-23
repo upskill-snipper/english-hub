@@ -28,6 +28,7 @@ import {
   UserCheck,
   Settings,
   Wrench,
+  School,
 } from 'lucide-react'
 
 interface AdminStats {
@@ -370,6 +371,15 @@ export default function AdminPage() {
                   icon={<UserCheck className="h-5 w-5 text-primary" />}
                   title="Verify user"
                   desc="Look up and verify a user account."
+                />
+                {/* Schools cannot self-register, so this is the only route into
+                    the product for a signed school. Without it the school
+                    portal had no way to acquire a tenant at all. */}
+                <AdminToolCard
+                  href="/admin/school-provisioning"
+                  icon={<School className="h-5 w-5 text-primary" />}
+                  title="School provisioning"
+                  desc="Create a school and invite its first admin after a deal is signed."
                 />
                 <AdminToolCard
                   href="/admin/email-diagnostics"

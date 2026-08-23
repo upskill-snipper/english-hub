@@ -199,6 +199,7 @@ model User {
   suggestions            Suggestion[]
   weeklyReportsAsParent  WeeklyReport[]          @relation("ParentReports")
   weeklyReportsAsStudent WeeklyReport[]          @relation("StudentReports")
+  weeklyStudentDigests   WeeklyStudentDigest[]   @relation("StudentWeeklyDigests")
   parentInvitesSent      ParentInvite[]          @relation("StudentInvites")
   parentInvitesUsed      ParentInvite[]          @relation("ParentInviteUsed")
   mobileDevices          MobileDevice[]
@@ -611,6 +612,34 @@ model WeeklyReport {
   @@index([studentId])
   @@index([weekStarting])
   @@index([parentId, weekStarting])
+}
+
+// Send ledger for the weekly STUDENT digest (`/api/cron/weekly-student-reports`).
+//
+// Defect being fixed (2026-08 reliability audit): that cron had no
+// idempotency record at all, so any re-invocation - a manual retry, a Vercel
+// cron retry after a timeout, or a duplicated schedule - re-sent the digest
+// to every eligible student. WeeklyReport cannot be reused for this: it is
+// parent-shaped (it requires a non-null parentId and carries a report body),
+// and the student digest goes to the student directly whether or not they
+// have a linked parent. Hence a purpose-built, minimal ledger: one row per
+// (student, week), written only after a confirmed successful send.
+//
+// Deliberately minimal (Children's Code §8 data minimisation): it records
+// THAT a digest was sent, never the contents. Cascade-deletes with the user.
+model WeeklyStudentDigest {
+  id           String   @id @default(cuid())
+  studentId    String   @map("student_id")
+  weekStarting DateTime @map("week_starting") @db.Timestamptz(6)
+  sentAt       DateTime @default(now()) @map("sent_at") @db.Timestamptz(6)
+
+  student User @relation("StudentWeeklyDigests", fields: [studentId], references: [id], onDelete: Cascade)
+
+  // The unique constraint is the real guarantee - the cron's pre-check is
+  // only a cheap fast path; two concurrent runs still cannot double-record.
+  @@unique([studentId, weekStarting])
+  @@index([weekStarting])
+  @@map("WeeklyStudentDigest")
 }
 
 // ──────────────────────────────────────────────

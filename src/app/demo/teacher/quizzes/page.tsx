@@ -199,7 +199,7 @@ export default function QuizBuilderDemoPage() {
         {/* Demo banner */}
         <div className="mb-6 rounded-lg border border-amber-500/20 bg-amber-500/5 px-4 py-3">
           <p className="text-sm text-clay-600 dark:text-clay-400">
-            <span className="font-semibold">Teacher Demo</span> -- Try the Quiz Builder with sample
+            <span className="font-semibold">Teacher Demo</span> - Try the Quiz Builder with sample
             data. No account needed.
           </p>
         </div>
@@ -412,7 +412,7 @@ export default function QuizBuilderDemoPage() {
         <div className="fixed bottom-6 right-6 z-50 animate-in slide-in-from-bottom-4 fade-in duration-300">
           <div className="rounded-lg border border-border/60 bg-muted px-5 py-3 shadow-xl">
             <p className="text-sm text-foreground">
-              Available with full account --{' '}
+              Available with full account -{' '}
               <Link href="/auth/teacher-register" className="text-primary hover:underline">
                 Start free trial
               </Link>

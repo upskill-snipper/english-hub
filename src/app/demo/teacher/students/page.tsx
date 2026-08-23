@@ -4,7 +4,7 @@ export const dynamic = 'force-dynamic'
 import { useState } from 'react'
 import Link from 'next/link'
 import { percentageToGCSEGrade, gcseGradeColor, predictedGradeColor } from '@/lib/grades'
-import { DEMO_STUDENTS } from '@/data/demo-data'
+import { DEMO_STUDENT_INDEX } from '@/data/demo/students-index'
 import DemoBanner from '@/components/demo/DemoBanner'
 import { useScrollRestore } from '@/hooks/useScrollRestore'
 import { useT } from '@/lib/i18n/use-t'
@@ -18,23 +18,23 @@ const MITCHELL_CLASSES = [
 
 type MitchellClassId = (typeof MITCHELL_CLASSES)[number]['id']
 
-// Map DEMO_STUDENTS onto Mrs Mitchell's classes for the teacher view
+// Map DEMO_STUDENT_INDEX onto Mrs Mitchell's classes for the teacher view
 const MITCHELL_STUDENTS = [
-  { ...DEMO_STUDENTS[0], className: '10A English', classId: 'mc-001', score: 74 },
-  { ...DEMO_STUDENTS[1], className: '10A English', classId: 'mc-001', score: 39 },
-  { ...DEMO_STUDENTS[4], className: '10A English', classId: 'mc-001', score: 68 },
-  { ...DEMO_STUDENTS[6], className: '10A English', classId: 'mc-001', score: 31 },
-  { ...DEMO_STUDENTS[12], className: '10A English', classId: 'mc-001', score: 66 },
-  { ...DEMO_STUDENTS[2], className: '11B English', classId: 'mc-002', score: 88 },
-  { ...DEMO_STUDENTS[8], className: '11B English', classId: 'mc-002', score: 91 },
-  { ...DEMO_STUDENTS[13], className: '11B English', classId: 'mc-002', score: 42 },
-  { ...DEMO_STUDENTS[5], className: '11B English', classId: 'mc-002', score: 82 },
-  { ...DEMO_STUDENTS[10], className: '11B English', classId: 'mc-002', score: 79 },
-  { ...DEMO_STUDENTS[9], className: '13 A-Level Lang', classId: 'mc-003', score: 28 },
-  { ...DEMO_STUDENTS[3], className: '13 A-Level Lang', classId: 'mc-003', score: 35 },
-  { ...DEMO_STUDENTS[7], className: '13 A-Level Lang', classId: 'mc-003', score: 63 },
-  { ...DEMO_STUDENTS[11], className: '13 A-Level Lang', classId: 'mc-003', score: 59 },
-  { ...DEMO_STUDENTS[14], className: '13 A-Level Lang', classId: 'mc-003', score: 72 },
+  { ...DEMO_STUDENT_INDEX[0], className: '10A English', classId: 'mc-001', score: 74 },
+  { ...DEMO_STUDENT_INDEX[1], className: '10A English', classId: 'mc-001', score: 39 },
+  { ...DEMO_STUDENT_INDEX[4], className: '10A English', classId: 'mc-001', score: 68 },
+  { ...DEMO_STUDENT_INDEX[6], className: '10A English', classId: 'mc-001', score: 31 },
+  { ...DEMO_STUDENT_INDEX[12], className: '10A English', classId: 'mc-001', score: 66 },
+  { ...DEMO_STUDENT_INDEX[2], className: '11B English', classId: 'mc-002', score: 88 },
+  { ...DEMO_STUDENT_INDEX[8], className: '11B English', classId: 'mc-002', score: 91 },
+  { ...DEMO_STUDENT_INDEX[13], className: '11B English', classId: 'mc-002', score: 42 },
+  { ...DEMO_STUDENT_INDEX[5], className: '11B English', classId: 'mc-002', score: 82 },
+  { ...DEMO_STUDENT_INDEX[10], className: '11B English', classId: 'mc-002', score: 79 },
+  { ...DEMO_STUDENT_INDEX[9], className: '13 A-Level Lang', classId: 'mc-003', score: 28 },
+  { ...DEMO_STUDENT_INDEX[3], className: '13 A-Level Lang', classId: 'mc-003', score: 35 },
+  { ...DEMO_STUDENT_INDEX[7], className: '13 A-Level Lang', classId: 'mc-003', score: 63 },
+  { ...DEMO_STUDENT_INDEX[11], className: '13 A-Level Lang', classId: 'mc-003', score: 59 },
+  { ...DEMO_STUDENT_INDEX[14], className: '13 A-Level Lang', classId: 'mc-003', score: 72 },
 ]
 
 function StatusBadge({ atRisk }: { atRisk: boolean }) {

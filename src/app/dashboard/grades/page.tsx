@@ -21,9 +21,14 @@ import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
 import { useBoard } from '@/hooks/useBoard'
 import { matchesBoard } from '@/lib/board-filter'
-import { loadAllCourses } from '@/data/course-loader'
+// This page reads course titles, boards, levels, subtitles and colours only.
+// It used to call `loadAllCourses()`, downloading ~7.2 MB of lesson content and
+// quiz banks on mount to look up a handful of titles and to list three
+// recommended courses.
+import { loadCourseIndex } from '@/data/course-loader'
+import type { CourseIndexEntry } from '@/data/course-index'
 import { formatDate } from '@/lib/utils'
-import type { AssessmentAttempt, CourseData } from '@/lib/types'
+import type { AssessmentAttempt } from '@/lib/types'
 import {
   percentageToGCSEGrade,
   gcseGradeColor,
@@ -143,20 +148,20 @@ export default function GradeDashboardPage() {
   const { user, isLoading } = useAuthStore()
   const router = useRouter()
   const { board: selectedBoard } = useBoard()
-  const [allCourses, setAllCourses] = useState<CourseData[]>([])
+  const [allCourses, setAllCourses] = useState<CourseIndexEntry[]>([])
   const [assessments, setAssessments] = useState<AssessmentAttempt[]>([])
   const [practiceSessions, setPracticeSessions] = useState<PracticeSession[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
   const courseMap = useMemo(
-    () => new Map<string, CourseData>(allCourses.map((c) => [c.id, c])),
+    () => new Map<string, CourseIndexEntry>(allCourses.map((c) => [c.id, c])),
     [allCourses],
   )
 
-  // Load course data dynamically
+  // Load course metadata dynamically (index only - see the import note above)
   useEffect(() => {
-    loadAllCourses().then(setAllCourses)
+    loadCourseIndex().then(setAllCourses)
   }, [])
 
   // Auth redirect guard
@@ -239,7 +244,12 @@ export default function GradeDashboardPage() {
       }
     }
     return best
-  }, [assessments])
+    // `courseMap` was missing from this list. Course metadata loads
+    // asynchronously, so whenever it arrived after the assessments this memo
+    // never recomputed: every board came back undefined and the predicted
+    // grade was calculated against the generic default boundaries instead of
+    // the student's actual board.
+  }, [assessments, courseMap])
 
   const predictedGrade = useMemo(
     () => scoreToGrade(averageScore, dominantBoard),
@@ -281,7 +291,10 @@ export default function GradeDashboardPage() {
         count,
       }))
       .sort((a, b) => b.average - a.average)
-  }, [assessments])
+    // Same missing `courseMap` dependency as `dominantBoard` above: without it
+    // the strengths/weaknesses lists kept the raw course id as the label
+    // ("aqa-lit-romeo-juliet") instead of the course title.
+  }, [assessments, courseMap])
 
   const strengths = courseScores.slice(0, 3)
   const weaknesses =
@@ -318,9 +331,9 @@ export default function GradeDashboardPage() {
     // Recommend courses from allCourses that relate to weak areas or grade level
     // Filter by selected board (KS3/generic content always shows)
     const boardCourses = allCourses.filter((c) => matchesBoard(c.board, selectedBoard))
-    const recs: CourseData[] = []
+    const recs: CourseIndexEntry[] = []
 
-    const isGcseLevel = (c: CourseData) => c.level === 'GCSE' || c.tier === 'IGCSE'
+    const isGcseLevel = (c: CourseIndexEntry) => c.level === 'GCSE' || c.tier === 'IGCSE'
 
     if (averageScore < 50) {
       // Below Grade 5: recommend foundation/KS3 courses
@@ -348,7 +361,11 @@ export default function GradeDashboardPage() {
     }
 
     return recs.slice(0, 3)
-  }, [averageScore, weaknesses, selectedBoard])
+    // `allCourses` arrives asynchronously and was missing from this list, so
+    // the memo only recomputed because `weaknesses` is a fresh array each
+    // render. Depending on that accident would leave recommendations empty the
+    // moment `weaknesses` is ever memoised.
+  }, [averageScore, weaknesses, selectedBoard, allCourses])
 
   // ── Auth guard renders ─────────────────────────────────────────────────
 

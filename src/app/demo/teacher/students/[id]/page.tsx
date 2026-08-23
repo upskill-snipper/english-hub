@@ -29,7 +29,13 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { DEMO_STUDENTS, type DemoStudent } from '@/data/demo-data'
+import type { DemoStudent } from '@/data/demo/types'
+// This profile renders the student's modules, mocks, essays, quizzes and activity
+// timeline, so it needs the full roster. That roster is ~320 KB; importing it at
+// module scope put all of it into this route's First Load JS (and into ~19 other
+// demo routes that never render any of it), so it now arrives as a lazy chunk.
+import { useDemoStudents } from '@/data/demo/use-demo-students'
+import { DemoRosterGate } from '@/app/demo/_components/DemoRosterGate'
 import {
   percentageToGCSEGrade,
   percentageToGCSEGradeLabel,
@@ -88,8 +94,14 @@ export default function TeacherStudentProfilePage() {
   const studentId = params.id as string
   const [comment, setComment] = useState('')
 
-  const studentIdx = DEMO_STUDENTS.findIndex((s: DemoStudent) => s.id === studentId)
-  const student = DEMO_STUDENTS[studentIdx]
+  const { students: roster, failed } = useDemoStudents()
+
+  // The roster arrives lazily, so the gate must come before the not-found branch:
+  // without it the page would flash "student not found" on every cold load.
+  if (!roster) return <DemoRosterGate failed={failed} />
+
+  const studentIdx = roster.findIndex((s: DemoStudent) => s.id === studentId)
+  const student = roster[studentIdx]
 
   if (!student) {
     return (
@@ -113,7 +125,7 @@ export default function TeacherStudentProfilePage() {
   }
 
   // Class average calculations
-  const classmates = DEMO_STUDENTS.filter((s: DemoStudent) => s.classId === student.classId)
+  const classmates = roster.filter((s: DemoStudent) => s.classId === student.classId)
   const classAvgScore =
     classmates.length > 0
       ? Math.round(
@@ -136,8 +148,8 @@ export default function TeacherStudentProfilePage() {
         )
       : 0
 
-  const prevStudent = studentIdx > 0 ? DEMO_STUDENTS[studentIdx - 1] : null
-  const nextStudent = studentIdx < DEMO_STUDENTS.length - 1 ? DEMO_STUDENTS[studentIdx + 1] : null
+  const prevStudent = studentIdx > 0 ? roster[studentIdx - 1] : null
+  const nextStudent = studentIdx < roster.length - 1 ? roster[studentIdx + 1] : null
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -145,7 +157,7 @@ export default function TeacherStudentProfilePage() {
         {/* Demo banner */}
         <div className="mb-6 rounded-lg border border-amber-500/20 bg-amber-500/5 px-4 py-3">
           <p className="text-sm text-clay-600 dark:text-clay-400">
-            <span className="font-semibold">{t('demo.b15.teacher_student.demo_label')}</span> --{' '}
+            <span className="font-semibold">{t('demo.b15.teacher_student.demo_label')}</span> -{' '}
             {t('demo.b15.teacher_student.demo_desc')}
           </p>
         </div>
@@ -200,7 +212,7 @@ export default function TeacherStudentProfilePage() {
               {student.name}
             </h1>
             <p className="text-muted-foreground text-sm mt-1">
-              {student.yearGroup} -- {student.className} -- {student.teacherName}
+              {student.yearGroup} - {student.className} - {student.teacherName}
             </p>
           </div>
           <Badge className={`${statusBadge(student.status)} border text-xs`}>
@@ -1376,7 +1388,7 @@ export default function TeacherStudentProfilePage() {
                         >
                           {item.action}
                         </span>
-                        {' -- '}
+                        {' - '}
                         {item.detail}
                       </p>
                       <p className="text-[11px] text-muted-foreground">{item.date}</p>
@@ -1443,7 +1455,7 @@ export default function TeacherStudentProfilePage() {
 
         {/* Footer */}
         <p className="mt-8 text-center text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-          Demo data -- {student.name} -- {student.className}
+          Demo data - {student.name} - {student.className}
         </p>
       </div>
 

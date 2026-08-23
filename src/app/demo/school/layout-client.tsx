@@ -109,9 +109,13 @@ export default function DemoSchoolLayoutClient({ children }: { children: React.R
       </nav>
 
       <div className="border-t border-border px-3 py-4 space-y-3">
-        <Button render={<Link href="/for-schools/register" />} className="w-full font-semibold">
+        {/* Honesty fix (2026-08-23): the sidebar CTA promised school
+            registration and linked to /for-schools/register, a redirect with
+            no form behind it. No public code path can create a school; the
+            enquiry flow at /school-pilot is what actually starts the process. */}
+        <Button render={<Link href="/school-pilot" />} className="w-full font-semibold">
           <Sparkles className="h-4 w-4 mr-1.5" />
-          {t('demo_school.chrome.register_school')}
+          {t('demo.banner.cta_book_call')}
         </Button>
         <Link
           href="/demo"

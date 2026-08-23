@@ -2971,4 +2971,31 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
     ar: 'تُراجَع هذه الصفحة وتُحدَّث كل ستة أشهر على الأقل.',
     es: 'Esta página se revisa y actualiza al menos cada 6 meses.',
   },
+
+  // ────────────────────────────────────────────────────────────────
+  // /consent - self-serve variant of the parental consent form
+  //
+  // The existing consent.form.* copy is written for the school flow
+  // ("...at their school", "while your child is enrolled at the
+  // school"). A 13-15 year-old who signs up directly has no school,
+  // so showing them that text would state something untrue on the
+  // very form a guardian is being asked to rely on. These two keys
+  // are the school-free equivalents; the page picks between them on
+  // the `context` field returned by /api/school/consent/details.
+  // ────────────────────────────────────────────────────────────────
+  'legal_long.consent_self_serve.retention_note': {
+    en: 'Data is stored securely and kept only while the account is open. If the account is closed, all personal data is deleted within 30 days unless the law requires us to keep it. For questions, email',
+    ar: 'تُخزَّن البيانات بشكل آمن ولا يُحتفظ بها إلا طوال مدة بقاء الحساب مفتوحاً. وعند إغلاق الحساب، تُحذف جميع البيانات الشخصية خلال ثلاثين يوماً ما لم يُلزمنا القانون بالاحتفاظ بها. وللاستفسار، يُرجى مراسلتنا على',
+    es: 'Los datos se almacenan de forma segura y solo se conservan mientras la cuenta esté abierta. Si la cuenta se cierra, todos los datos personales se eliminan en un plazo de 30 días, salvo que la ley exija conservarlos. Para cualquier consulta, escriba a',
+  },
+  'legal_long.consent_self_serve.not_required': {
+    en: 'Your account does not need parental consent.',
+    ar: 'حسابك لا يحتاج إلى موافقة ولي الأمر.',
+    es: 'Tu cuenta no necesita consentimiento parental.',
+  },
+  'legal_long.consent_self_serve.footer_disclaimer': {
+    en: 'By choosing "I Consent", you agree to the processing of your child\'s data as described above so that they can use The English Hub.',
+    ar: 'باختيارك "أوافق"، فإنك توافق على معالجة بيانات طفلك على النحو الموضَّح أعلاه لتمكينه من استخدام The English Hub.',
+    es: 'Al elegir «Doy mi consentimiento», usted acepta el tratamiento de los datos de su hijo o hija tal como se describe anteriormente para que pueda utilizar The English Hub.',
+  },
 }

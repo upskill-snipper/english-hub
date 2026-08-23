@@ -20,7 +20,31 @@ import { NextResponse, type NextRequest } from 'next/server'
  * chunked-cookie edge cases and was the suspected root cause of
  * intermittent "logged out after sign-in" reports.
  */
-export async function updateSession(request: NextRequest) {
+// Static files that must never be 307'd to an HTML page by the forced
+// password-rotation gate below. The root middleware matcher already excludes
+// /_next/static, favicon.ico and common image types; this covers the rest
+// (manifest.json, web fonts, audio, .txt / .xml) so a gated pupil's browser
+// still loads the shell it needs to render the rotation page.
+const ROTATION_ASSET_PATTERN =
+  /\.(?:json|webmanifest|txt|xml|css|js|map|woff|woff2|ttf|otf|eot|mp3|mp4|webm|wav|ogg|pdf|ico|svg|png|jpe?g|gif|webp)$/i
+
+/**
+ * @param effectivePathname The route to evaluate gates against. Defaults to
+ *   the request path, but the `/ar/...` locale surface rewrites to the
+ *   language-neutral route, so it passes the STRIPPED path here.
+ *
+ *   DEFECT this fixes (2026-08-23): src/middleware.ts returned the Arabic
+ *   rewrite BEFORE calling updateSession, so `/ar/dashboard`, `/ar/account`,
+ *   `/ar/school` and `/ar/admin` skipped this function entirely - no session
+ *   refresh, no forced-password-rotation gate, and no protected-route
+ *   redirect. The auth wall could be walked around simply by prefixing a URL
+ *   with `/ar`. Even once called, the raw path `/ar/dashboard` would not have
+ *   matched `/dashboard`, hence this parameter.
+ */
+export async function updateSession(
+  request: NextRequest,
+  effectivePathname: string = request.nextUrl.pathname,
+) {
   let response = NextResponse.next({ request: { headers: request.headers } })
 
   const supabase = createServerClient(
@@ -64,6 +88,61 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
+  // ── Forced rotation of school-issued temporary passwords ──────────
+  //
+  // SECURITY (Aug 2026): bulk-provisioned school accounts are created with an
+  // auto-generated temporary password (src/app/api/school/import/route.ts and
+  // src/app/api/school/bulk-upload/commit/route.ts). That password is emailed
+  // in plaintext and downloadable by school admins as a CSV, and until now
+  // nothing ever forced the pupil to change it - so a credential that had
+  // travelled through email and a spreadsheet stayed valid indefinitely on a
+  // CHILD's account.
+  //
+  // Those accounts now carry `user_metadata.needs_password_change: true`.
+  // While the flag is set we hold every signed-in navigation on
+  // /auth/set-password, which clears the flag as part of the password update.
+  // This runs before the protected-route and auth-page rules below so it wins
+  // over every other post-login destination, whichever way the user signed in
+  // (password form, OAuth, or the /auth/callback token flows).
+  //
+  // Exemptions: the rotation page itself (would loop), /auth/callback (the
+  // session is still being established there), /api + /_next, and static
+  // files, which serve JSON and assets - redirecting those to an HTML page
+  // would break the caller rather than gate it. The flag is a UI gate, not an
+  // API authorisation check; API-level enforcement is tracked separately.
+  //
+  // KNOWN LIMITS of this gate, recorded here (QA 2026-08-23) so nobody mistakes
+  // it for an access control:
+  //   1. `user_metadata` is writable by the signed-in user themselves, so a
+  //      pupil could clear the flag from the browser without setting a new
+  //      password. That only lets the account holder skip their own rotation
+  //      prompt - anyone else would need the password to have a session at all
+  //      - but a hard enforcement would need the flag in `app_metadata`
+  //      (service-role only) plus a server route to clear it.
+  //   2. src/middleware.ts returns the `/ar/...` locale rewrite BEFORE calling
+  //      updateSession(), so nothing in this function - this gate, the
+  //      protected-route rule, or the session refresh - runs on the Arabic URL
+  //      surface. Pre-existing (the auth gate has the same hole), but it means
+  //      a flagged pupil browsing /ar/... is not held here.
+  const needsPasswordChange = user?.user_metadata?.needs_password_change === true
+  if (needsPasswordChange) {
+    const path = effectivePathname
+    const rotationExempt =
+      path === '/auth/set-password' ||
+      path.startsWith('/auth/set-password/') ||
+      path.startsWith('/auth/callback') ||
+      path.startsWith('/api/') ||
+      path.startsWith('/_next/') ||
+      ROTATION_ASSET_PATTERN.test(path)
+
+    if (!rotationExempt) {
+      const url = request.nextUrl.clone()
+      url.pathname = '/auth/set-password'
+      url.search = ''
+      return copyAuthCookies(NextResponse.redirect(url), response)
+    }
+  }
+
   // /learn is NOT listed here - it handles its own access control so preview modules stay public.
   //
   // /revision is NOT listed here either - pages in /revision/** are pure server components that
@@ -97,31 +176,37 @@ export async function updateSession(request: NextRequest) {
     '/revision/study-plan',
     '/revision/analytics',
     '/toolkit',
+    // Forced first-login password rotation. Listed here so a visitor who
+    // carries the needs_password_change flag but has NO live session (expired
+    // cookie, shared link, signed out mid-flow) is sent to /auth/login rather
+    // than stranded on a page that cannot do anything for them.
+    '/auth/set-password',
   ]
   // Segment-aware matching: a bare startsWith('/school') also captured the
   // PUBLIC marketing pages /schools and /school-pilot, auth-walling them for
   // every anonymous visitor and for Googlebot (they 307'd to /auth/login).
   const isProtected = protectedRoutes.some(
-    (route) =>
-      request.nextUrl.pathname === route || request.nextUrl.pathname.startsWith(route + '/'),
+    (route) => effectivePathname === route || effectivePathname.startsWith(route + '/'),
   )
 
   // Allow unauthenticated access to invite pages so users can see invite details before logging in
   const publicSchoolRoutes = ['/school/invite']
   const isPublicSchoolRoute = publicSchoolRoutes.some((route) =>
-    request.nextUrl.pathname.startsWith(route),
+    effectivePathname.startsWith(route),
   )
 
   if (isProtected && !isPublicSchoolRoute && !user) {
     const url = request.nextUrl.clone()
     url.pathname = '/auth/login'
+    // Send them back to the URL they actually asked for (keeps the /ar
+    // prefix, so an Arabic visitor stays on the Arabic surface).
     url.searchParams.set('redirect', request.nextUrl.pathname)
     return copyAuthCookies(NextResponse.redirect(url), response)
   }
 
   // Redirect authenticated users away from auth pages
   const authRoutes = ['/auth/login', '/auth/register']
-  const isAuthPage = authRoutes.some((route) => request.nextUrl.pathname === route)
+  const isAuthPage = authRoutes.some((route) => effectivePathname === route)
   if (isAuthPage && user) {
     return copyAuthCookies(NextResponse.redirect(new URL('/dashboard', request.url)), response)
   }

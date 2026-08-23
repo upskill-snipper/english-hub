@@ -1,5 +1,5 @@
 // @ts-nocheck
-import type { MockExamPaper } from '../mock-exams'
+import type { MockExamPaper } from './types'
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // AQA English Literature Paper 2: Modern Texts and Poetry (8702/2)

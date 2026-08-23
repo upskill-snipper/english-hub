@@ -103,7 +103,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
         marks: 5,
         lines: 8,
         modelAnswer:
-          "Shakespeare uses apostrophe as Macbeth addresses the stars, personifying them as witnesses to his guilt. The imperative 'hide' reveals his desire to conceal his ambition. The metaphor of 'black and deep desires' uses colour symbolism -- black connoting evil -- and the adjective 'deep' suggests these desires are buried within him, fundamental to his character. The juxtaposition of 'light' and 'black' reinforces the play's thematic contrast between good and evil. This soliloquy reveals Macbeth is already contemplating regicide but is ashamed of his ambition.",
+          "Shakespeare uses apostrophe as Macbeth addresses the stars, personifying them as witnesses to his guilt. The imperative 'hide' reveals his desire to conceal his ambition. The metaphor of 'black and deep desires' uses colour symbolism - black connoting evil - and the adjective 'deep' suggests these desires are buried within him, fundamental to his character. The juxtaposition of 'light' and 'black' reinforces the play's thematic contrast between good and evil. This soliloquy reveals Macbeth is already contemplating regicide but is ashamed of his ambition.",
       },
       {
         question:
@@ -111,7 +111,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
         marks: 5,
         lines: 8,
         modelAnswer:
-          "Lady Macbeth uses a simile comparing Macbeth to both a flower and a serpent, instructing him to hide his murderous intent behind a pleasant exterior. The serpent image carries biblical connotations of the devil in the Garden of Eden, linking Lady Macbeth to temptation and the Fall. This connects to Jacobean beliefs about equivocation and the dangers of deception. A Jacobean audience would recognise the serpent as Satan's form, making Lady Macbeth's instruction doubly transgressive -- she is actively encouraging evil.",
+          "Lady Macbeth uses a simile comparing Macbeth to both a flower and a serpent, instructing him to hide his murderous intent behind a pleasant exterior. The serpent image carries biblical connotations of the devil in the Garden of Eden, linking Lady Macbeth to temptation and the Fall. This connects to Jacobean beliefs about equivocation and the dangers of deception. A Jacobean audience would recognise the serpent as Satan's form, making Lady Macbeth's instruction doubly transgressive - she is actively encouraging evil.",
       },
       {
         question:
@@ -119,7 +119,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
         marks: 6,
         lines: 10,
         modelAnswer:
-          "Shakespeare uses conditional language ('If') to show Macbeth's uncertainty. The euphemism 'it' for murder reveals his inability to name the act directly, suggesting moral discomfort. The repetition of 'done' creates a restless, circular rhythm that mirrors his conflicted mind. The soliloquy is significant because it occurs just before the murder, placing the audience in Macbeth's psychological turmoil. He recognises that actions have consequences beyond the immediate moment, yet his 'vaulting ambition' will ultimately override his conscience -- establishing him as a tragic hero who knowingly chooses his destruction.",
+          "Shakespeare uses conditional language ('If') to show Macbeth's uncertainty. The euphemism 'it' for murder reveals his inability to name the act directly, suggesting moral discomfort. The repetition of 'done' creates a restless, circular rhythm that mirrors his conflicted mind. The soliloquy is significant because it occurs just before the murder, placing the audience in Macbeth's psychological turmoil. He recognises that actions have consequences beyond the immediate moment, yet his 'vaulting ambition' will ultimately override his conscience - establishing him as a tragic hero who knowingly chooses his destruction.",
       },
       {
         question:
@@ -169,7 +169,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
         marks: 4,
         lines: 6,
         modelAnswer:
-          "Collective responsibility is the idea that everyone in society is responsible for the welfare of others, not just themselves. The Inspector represents this through his final speech where he warns that 'We are responsible for each other.' The first-person plural pronoun 'we' includes the audience, making Priestley's socialist message direct. The Inspector functions as Priestley's mouthpiece, using his authority to challenge the Birlings' -- and by extension the audience's -- individualism.",
+          "Collective responsibility is the idea that everyone in society is responsible for the welfare of others, not just themselves. The Inspector represents this through his final speech where he warns that 'We are responsible for each other.' The first-person plural pronoun 'we' includes the audience, making Priestley's socialist message direct. The Inspector functions as Priestley's mouthpiece, using his authority to challenge the Birlings' - and by extension the audience's - individualism.",
       },
       {
         question:
@@ -177,7 +177,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
         marks: 5,
         lines: 8,
         modelAnswer:
-          "Priestley presents Sheila as the character most capable of moral growth. Initially described as 'a pretty girl in her early twenties, very pleased with life', she transforms through the course of the play into someone who accepts responsibility. Her admission that getting Eva fired was motivated by jealousy shows self-awareness. By the end, she recognises that 'these girls aren't cheap labour -- they're people', directly opposing her father's capitalist values. Priestley uses Sheila to suggest that the younger generation can learn and change, embodying his hope for post-war Britain.",
+          "Priestley presents Sheila as the character most capable of moral growth. Initially described as 'a pretty girl in her early twenties, very pleased with life', she transforms through the course of the play into someone who accepts responsibility. Her admission that getting Eva fired was motivated by jealousy shows self-awareness. By the end, she recognises that 'these girls aren't cheap labour - they're people', directly opposing her father's capitalist values. Priestley uses Sheila to suggest that the younger generation can learn and change, embodying his hope for post-war Britain.",
       },
       {
         question:
@@ -185,7 +185,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
         marks: 5,
         lines: 8,
         modelAnswer:
-          "Priestley sets the play in 1912 -- before two world wars -- so that the audience in 1945 can see the dramatic irony in Mr Birling's confident predictions that there will be no war and that the Titanic is 'absolutely unsinkable'. The audience knows Birling is catastrophically wrong, undermining his credibility and his capitalist philosophy. This technique encourages the 1945 audience, emerging from World War II, to reject Birling's selfishness and embrace the collective responsibility Priestley advocates through the Inspector.",
+          "Priestley sets the play in 1912 - before two world wars - so that the audience in 1945 can see the dramatic irony in Mr Birling's confident predictions that there will be no war and that the Titanic is 'absolutely unsinkable'. The audience knows Birling is catastrophically wrong, undermining his credibility and his capitalist philosophy. This technique encourages the 1945 audience, emerging from World War II, to reject Birling's selfishness and embrace the collective responsibility Priestley advocates through the Inspector.",
       },
       {
         question:
@@ -201,7 +201,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
         marks: 6,
         lines: 10,
         modelAnswer:
-          "There is strong evidence that the Inspector is not real: he knows events before they happen, his name 'Goole' sounds like 'ghoul', and no Inspector Goole exists at the local police station. However, his knowledge of Eva Smith's life is detailed and accurate. Priestley deliberately leaves the question unanswered because the Inspector's identity is less important than his message. If he were simply a policeman, his authority would be legal and limited. By making him potentially supernatural, Priestley gives him moral authority that transcends ordinary power. The ambiguity forces the audience to focus on the message -- collective responsibility -- rather than dismissing it as merely a police investigation.",
+          "There is strong evidence that the Inspector is not real: he knows events before they happen, his name 'Goole' sounds like 'ghoul', and no Inspector Goole exists at the local police station. However, his knowledge of Eva Smith's life is detailed and accurate. Priestley deliberately leaves the question unanswered because the Inspector's identity is less important than his message. If he were simply a policeman, his authority would be legal and limited. By making him potentially supernatural, Priestley gives him moral authority that transcends ordinary power. The ambiguity forces the audience to focus on the message - collective responsibility - rather than dismissing it as merely a police investigation.",
       },
     ],
     successCriteria: [
@@ -259,7 +259,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
         marks: 6,
         lines: 14,
         modelAnswer:
-          "Both poets use art as a symbol of power's attempt to outlast mortality. Shelley describes a 'shattered visage' lying in the desert, the damaged statue symbolising the inevitable decay of even the greatest empires. Browning, by contrast, presents the painting of the Duchess as a possession the Duke controls from behind a curtain. While Ozymandias's art has been destroyed by nature, the Duke's art remains intact -- but this is more disturbing, as it represents his ability to control his wife even after her death. The 'curtain' becomes a metaphor for his absolute authority over others.",
+          "Both poets use art as a symbol of power's attempt to outlast mortality. Shelley describes a 'shattered visage' lying in the desert, the damaged statue symbolising the inevitable decay of even the greatest empires. Browning, by contrast, presents the painting of the Duchess as a possession the Duke controls from behind a curtain. While Ozymandias's art has been destroyed by nature, the Duke's art remains intact - but this is more disturbing, as it represents his ability to control his wife even after her death. The 'curtain' becomes a metaphor for his absolute authority over others.",
       },
       {
         question:
@@ -333,7 +333,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
         marks: 10,
         lines: 20,
         modelAnswer:
-          "It began with the knocker. That is a fact that must be established before anything else, because without the knocker, none of what followed could have occurred. The knocker was brass, shaped like a lion's head, and it had hung on the front door of 14 Marsh Street for forty-seven years without incident. But on Christmas Eve, at precisely eleven minutes past midnight, the knocker moved. Not as knockers are supposed to move -- struck by a human hand -- but slowly, deliberately, as though pushed by invisible fingers. The door did not open. Nothing entered. But inside the house, the temperature dropped by six degrees in four seconds. A glass of water on the hallway table began to freeze from the edges inward. And from the top of the stairs, where nobody stood, came the sound of breathing.",
+          "It began with the knocker. That is a fact that must be established before anything else, because without the knocker, none of what followed could have occurred. The knocker was brass, shaped like a lion's head, and it had hung on the front door of 14 Marsh Street for forty-seven years without incident. But on Christmas Eve, at precisely eleven minutes past midnight, the knocker moved. Not as knockers are supposed to move - struck by a human hand - but slowly, deliberately, as though pushed by invisible fingers. The door did not open. Nothing entered. But inside the house, the temperature dropped by six degrees in four seconds. A glass of water on the hallway table began to freeze from the edges inward. And from the top of the stairs, where nobody stood, came the sound of breathing.",
       },
     ],
     successCriteria: [
@@ -383,7 +383,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
         marks: 4,
         lines: 8,
         modelAnswer:
-          "(a) Crooks -- reveals his isolation and desperate need for companionship; the word 'needs' suggests loneliness is a psychological necessity. (b) Curley's wife -- reveals her awareness of racial power dynamics; she threatens Crooks, showing how even the most powerless white person holds power over Black Americans. (c) Candy -- reveals his guilt about allowing someone else to kill his dog; this foreshadows George's decision to shoot Lennie himself. (d) Lennie -- reveals his childlike simplicity; the 'girl' and 'easy' life represent an innocent, unrealistic version of the American Dream.",
+          "(a) Crooks - reveals his isolation and desperate need for companionship; the word 'needs' suggests loneliness is a psychological necessity. (b) Curley's wife - reveals her awareness of racial power dynamics; she threatens Crooks, showing how even the most powerless white person holds power over Black Americans. (c) Candy - reveals his guilt about allowing someone else to kill his dog; this foreshadows George's decision to shoot Lennie himself. (d) Lennie - reveals his childlike simplicity; the 'girl' and 'easy' life represent an innocent, unrealistic version of the American Dream.",
       },
       {
         question:
@@ -391,7 +391,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
         marks: 5,
         lines: 10,
         modelAnswer:
-          '(1) Steinbeck portrays the proletariat -- the working class -- as exploited by ranch owners who profit from their labour. (2) The itinerant workers move from ranch to ranch, never able to settle or build lasting relationships. (3) Crooks experiences racial segregation, forced to live apart from the other workers in a separate room. (4) The ranch operates within a strict hierarchy, with the boss at the top, Slim commanding respect, and Crooks and Lennie at the bottom. (5) The cyclical structure of the novel reinforces the futility of the American Dream for men like George and Lennie.',
+          '(1) Steinbeck portrays the proletariat - the working class - as exploited by ranch owners who profit from their labour. (2) The itinerant workers move from ranch to ranch, never able to settle or build lasting relationships. (3) Crooks experiences racial segregation, forced to live apart from the other workers in a separate room. (4) The ranch operates within a strict hierarchy, with the boss at the top, Slim commanding respect, and Crooks and Lennie at the bottom. (5) The cyclical structure of the novel reinforces the futility of the American Dream for men like George and Lennie.',
       },
       {
         question:
@@ -399,7 +399,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
         marks: 4,
         lines: 8,
         modelAnswer:
-          "'Bindle' -- a bundle carried by migrant workers, connoting poverty, impermanence, and rootlessness. It symbolises the itinerant lifestyle forced on the proletariat. 'Solitary' -- used to describe workers, connoting isolation and loneliness as a fundamental condition of their existence. 'Tart' -- used by the men to describe Curley's wife, connoting sexualised judgment and revealing the misogynistic attitudes of the ranch workers. Steinbeck's decision to have multiple characters use this word exposes how endemic sexism is.",
+          "'Bindle' - a bundle carried by migrant workers, connoting poverty, impermanence, and rootlessness. It symbolises the itinerant lifestyle forced on the proletariat. 'Solitary' - used to describe workers, connoting isolation and loneliness as a fundamental condition of their existence. 'Tart' - used by the men to describe Curley's wife, connoting sexualised judgment and revealing the misogynistic attitudes of the ranch workers. Steinbeck's decision to have multiple characters use this word exposes how endemic sexism is.",
       },
       {
         question:
@@ -407,7 +407,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
         marks: 5,
         lines: 10,
         modelAnswer:
-          "Example: Front: 'Guys like us, that work on ranches, are the loneliest guys in the world.' Back: Technique: Superlative ('loneliest'). Theme: Loneliness and isolation. Analysis: George's recognition that ranch workers are defined by their loneliness makes the dream farm -- a place of belonging -- all the more poignant and its loss all the more tragic.",
+          "Example: Front: 'Guys like us, that work on ranches, are the loneliest guys in the world.' Back: Technique: Superlative ('loneliest'). Theme: Loneliness and isolation. Analysis: George's recognition that ranch workers are defined by their loneliness makes the dream farm - a place of belonging - all the more poignant and its loss all the more tragic.",
       },
     ],
     successCriteria: [
@@ -457,7 +457,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
         marks: 6,
         lines: 10,
         modelAnswer:
-          "Blood evolves from a symbol of honour to one of guilt. In Act 1, Macbeth is praised for being covered in blood from battle -- it represents loyalty. After Duncan's murder, blood becomes guilt: Macbeth's 'bloody hands' horrify him, and he asks whether 'all great Neptune's ocean' could wash them clean. The hyperbole reveals his psychological torment. Lady Macbeth initially dismisses guilt ('a little water clears us of this deed') but in Act 5, she compulsively washes her hands, crying 'Out, damned spot.' The blood motif comes full circle: what she dismissed becomes inescapable. Shakespeare uses this development to show that guilt, like blood, stains permanently.",
+          "Blood evolves from a symbol of honour to one of guilt. In Act 1, Macbeth is praised for being covered in blood from battle - it represents loyalty. After Duncan's murder, blood becomes guilt: Macbeth's 'bloody hands' horrify him, and he asks whether 'all great Neptune's ocean' could wash them clean. The hyperbole reveals his psychological torment. Lady Macbeth initially dismisses guilt ('a little water clears us of this deed') but in Act 5, she compulsively washes her hands, crying 'Out, damned spot.' The blood motif comes full circle: what she dismissed becomes inescapable. Shakespeare uses this development to show that guilt, like blood, stains permanently.",
       },
       {
         question:
@@ -465,7 +465,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
         marks: 6,
         lines: 10,
         modelAnswer:
-          "Macbeth is both villain and victim, which is the source of his tragic power. He is a victim of the witches' manipulation and Lady Macbeth's goading, and his soliloquies reveal genuine moral torment that prevents the audience from viewing him as purely evil. However, he is a villain in that he chooses to act: nobody forces his hand, and his murders escalate from necessity to paranoia. Shakespeare constructs him as a tragic hero whose hamartia -- ambition -- makes his downfall inevitable. The play is most effective because Macbeth is not simply one or the other; his complexity forces the audience to wrestle with questions of free will, fate, and moral responsibility.",
+          "Macbeth is both villain and victim, which is the source of his tragic power. He is a victim of the witches' manipulation and Lady Macbeth's goading, and his soliloquies reveal genuine moral torment that prevents the audience from viewing him as purely evil. However, he is a villain in that he chooses to act: nobody forces his hand, and his murders escalate from necessity to paranoia. Shakespeare constructs him as a tragic hero whose hamartia - ambition - makes his downfall inevitable. The play is most effective because Macbeth is not simply one or the other; his complexity forces the audience to wrestle with questions of free will, fate, and moral responsibility.",
       },
       {
         question:
@@ -473,7 +473,7 @@ const HOMEWORK_TEMPLATES: GeneratedHomework[] = [
         marks: 5,
         lines: 8,
         modelAnswer:
-          "In Act 1, Lady Macbeth holds power: she commands, plans, and manipulates her husband. The imperative 'leave all the rest to me' establishes her dominance. However, after the murder, their relationship inverts. Macbeth becomes increasingly secretive, planning Banquo's murder without consulting her. By Act 5, they are entirely disconnected -- her death barely registers for him. Shakespeare uses their deteriorating relationship to show that power gained through violence destroys intimacy. Their partnership, built on shared ambition, cannot survive the guilt that follows.",
+          "In Act 1, Lady Macbeth holds power: she commands, plans, and manipulates her husband. The imperative 'leave all the rest to me' establishes her dominance. However, after the murder, their relationship inverts. Macbeth becomes increasingly secretive, planning Banquo's murder without consulting her. By Act 5, they are entirely disconnected - her death barely registers for him. Shakespeare uses their deteriorating relationship to show that power gained through violence destroys intimacy. Their partnership, built on shared ambition, cannot survive the guilt that follows.",
       },
       {
         question:
@@ -668,7 +668,7 @@ export default function HomeworkGeneratorDemo() {
       showToast('Copied to clipboard')
       setTimeout(() => setCopied(false), 2000)
     } catch {
-      showToast('Failed to copy -- try again')
+      showToast('Failed to copy - try again')
     }
   }, [generatedHomework])
 

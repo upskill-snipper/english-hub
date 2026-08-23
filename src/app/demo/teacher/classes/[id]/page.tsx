@@ -22,12 +22,14 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import {
-  TEACHER_DEMO_CLASSES,
-  DEMO_STUDENTS,
-  type DemoClass,
-  type DemoStudent,
-} from '@/data/demo-data'
+import { TEACHER_DEMO_CLASSES } from '@/data/demo/classes'
+import type { DemoStudent } from '@/data/demo/types'
+// The class analytics below read each pupil's essays, quiz attempts and mock
+// results, which only exist on the full roster. That roster is ~320 KB and used
+// to be a module-scope import, so it shipped in this route's First Load JS along
+// with ~19 other demo routes that never rendered any of it. It is now lazy.
+import { useDemoStudents } from '@/data/demo/use-demo-students'
+import { DemoRosterGate } from '@/app/demo/_components/DemoRosterGate'
 import { AnimatedNumber, RankBars } from '@/components/dataviz'
 
 function ragDot(status: 'green' | 'amber' | 'red') {
@@ -80,7 +82,12 @@ export default function TeacherClassDetailPage() {
   const t = useT()
   const params = useParams()
   const classId = params.id as string
+  const { students: roster, failed } = useDemoStudents()
   const cls = TEACHER_DEMO_CLASSES.find((c: any) => c.id === classId)
+
+  // Gate before the not-found branch: the roster arrives as a lazy chunk, and
+  // without this the class analytics would render empty on the first paint.
+  if (!roster) return <DemoRosterGate failed={failed} />
 
   if (!cls) {
     return (
@@ -107,8 +114,8 @@ export default function TeacherClassDetailPage() {
     return b.overallScore - a.overallScore
   })
 
-  // Full student data from DEMO_STUDENTS for deeper analytics
-  const fullClassStudents = DEMO_STUDENTS.filter((s: DemoStudent) => s.className === cls.name)
+  // Full student records for the deeper analytics further down this page.
+  const fullClassStudents = roster.filter((s: DemoStudent) => s.className === cls.name)
 
   const avgScore = cls.avgScore
   const avgCompletion = cls.completionRate
@@ -702,7 +709,7 @@ export default function TeacherClassDetailPage() {
 
         {/* Footer */}
         <p className="mt-8 text-center text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-          Demo data -- {cls.name} -- {cls.studentCount} students
+          Demo data - {cls.name} - {cls.studentCount} students
         </p>
       </div>
     </div>

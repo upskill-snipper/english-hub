@@ -16,8 +16,9 @@ import {
   BarChart3,
 } from 'lucide-react'
 import { toast } from 'sonner'
-import { DEMO_CLASSES, DEMO_STUDENTS } from '@/data/demo-data'
-import type { DemoStudent } from '@/data/demo-data'
+import { DEMO_CLASSES } from '@/data/demo/classes'
+import { DEMO_STUDENT_INDEX } from '@/data/demo/students-index'
+import type { DemoStudentSummary } from '@/data/demo/types'
 import { percentageToGCSEGrade } from '@/lib/grades'
 import { GlassPanel, PanelEyebrow, TrendArea, RankBars, SERIES, pct } from '@/components/dataviz'
 
@@ -48,7 +49,10 @@ function progressBarColor(pct: number): string {
   return 'bg-red-500'
 }
 
-function statusBadgeStyle(status: DemoStudent['status']): { label: string; className: string } {
+function statusBadgeStyle(status: DemoStudentSummary['status']): {
+  label: string
+  className: string
+} {
   switch (status) {
     case 'excelling':
       return {
@@ -93,7 +97,7 @@ export default function DemoClassDetailPage() {
   const [search, setSearch] = useState('')
 
   const cls = DEMO_CLASSES.find((c) => c.id === classId)
-  const students = useMemo(() => DEMO_STUDENTS.filter((s) => s.classId === classId), [classId])
+  const students = useMemo(() => DEMO_STUDENT_INDEX.filter((s) => s.classId === classId), [classId])
 
   const filteredStudents = useMemo(() => {
     if (!search.trim()) return students

@@ -67,8 +67,13 @@ const TEMP_PASSWORD_CHARSET = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23
 
 /**
  * Cryptographically-secure 10-char temporary password. Displayed once in the
- * welcome email; the learner is required to change it on first login (same
- * convention as the legacy /api/school/import endpoint).
+ * welcome email; the learner is required to change it on first login.
+ *
+ * "Required" was aspirational until Aug 2026 - the account carried no flag and
+ * nothing stopped the pupil using the emailed password forever. Rotation is
+ * now enforced via `user_metadata.needs_password_change` (set below) plus the
+ * /auth/set-password gate in src/lib/supabase/middleware.ts. The same flag is
+ * set by the legacy /api/school/import endpoint.
  */
 function generateTempPassword(length = 10): string {
   const bytes = randomBytes(length)
@@ -79,6 +84,15 @@ function generateTempPassword(length = 10): string {
   return out
 }
 
+/**
+ * QA 2026-08-23: the password paragraph in this email said "This password works
+ * once." Nothing makes it single use - the rotation gate in
+ * src/lib/supabase/middleware.ts holds the account on /auth/set-password until
+ * a new password is chosen, but the temporary password stays valid until that
+ * happens and can be used to sign in repeatedly. A false single-use assurance
+ * in a pupil's welcome email is a claims-honesty defect, so the copy now says
+ * "temporary" and states what the gate actually does.
+ */
 function welcomeEmailHtml(params: {
   firstName: string
   tempPassword: string
@@ -89,7 +103,7 @@ function welcomeEmailHtml(params: {
     <p>Your school has created an English Hub account for you.</p>
     <p>Sign in here: <a href="${params.loginUrl}">${params.loginUrl}</a></p>
     <p>Temporary password: <code>${escapeHtml(params.tempPassword)}</code></p>
-    <p>You will be prompted to set a new password on first sign-in.</p>
+    <p>This password is temporary. You will be asked to choose your own password before you can use your account, so please keep it private and do not share it.</p>
     <p>- The English Hub team</p>
   `
 }
@@ -274,6 +288,15 @@ export async function POST(request: NextRequest) {
               role: 'STUDENT',
               school_id: schoolId,
               bulk_upload_job_id: job.id,
+              // SECURITY: the temporary password below travels through email
+              // (and the admin-facing credential export), so it must be
+              // rotated on first use rather than remaining a permanent
+              // credential for a pupil's account. The flag holds the user on
+              // /auth/set-password after sign-in until they change it
+              // (enforced in src/lib/supabase/middleware.ts). The welcome
+              // email already promises this; before this change nothing
+              // actually enforced it.
+              needs_password_change: true,
             },
           })
           if (authErr || !authData?.user) {

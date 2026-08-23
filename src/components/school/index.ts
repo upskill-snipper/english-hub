@@ -24,7 +24,10 @@ export { WeakAreaHeatMap } from './WeakAreaHeatMap'
 // Tracking & analysis
 export { GradeTracker } from './GradeTracker'
 export type { GradeTrackerStudent } from './GradeTracker'
-export { SkillGapAnalysis } from './SkillGapAnalysis'
+// SkillGapAnalysis removed: it was rendered by no route (this barrel was its only
+// referent) and its deriveStudentSkillScores() invented per-student, per-skill
+// scores with Math.random(). Fabricated attainment data must never be reachable
+// from the paid school portal, so the component was deleted rather than parked.
 export { InterventionPlanner } from './InterventionPlanner'
 export type { InterventionPlan, InterventionType, InterventionStatus } from './InterventionPlanner'
 export { ReportGenerator } from './ReportGenerator'

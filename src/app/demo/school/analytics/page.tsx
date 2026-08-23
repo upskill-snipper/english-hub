@@ -27,14 +27,11 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import { toast } from 'sonner'
 import { openPrintableDocument } from '@/lib/generate-download'
 import { DownloadMenu } from '@/components/DownloadMenu'
-import {
-  DEMO_SCHOOL,
-  DEMO_STUDENTS,
-  DEMO_CLASSES,
-  DEMO_TEACHERS,
-  DEMO_YEAR_GROUPS,
-  DEMO_STATS,
-} from '@/data/demo-data'
+import { DEMO_SCHOOL } from '@/data/demo/school'
+import { DEMO_TEACHERS } from '@/data/demo/teachers'
+import { DEMO_CLASSES } from '@/data/demo/classes'
+import { DEMO_STUDENT_INDEX } from '@/data/demo/students-index'
+import { DEMO_YEAR_GROUPS, DEMO_STATS } from '@/data/demo/aggregates'
 import {
   percentageToGCSEGrade,
   gcseGradeColor,
@@ -200,9 +197,9 @@ export default function AnalyticsPage() {
   const [yearFilter, setYearFilter] = useState<number | null>(null)
   const [studentSearch, setStudentSearch] = useState('')
 
-  const atRiskStudents = DEMO_STUDENTS.filter((s) => s.atRisk)
+  const atRiskStudents = DEMO_STUDENT_INDEX.filter((s) => s.atRisk)
 
-  const filteredStudents = DEMO_STUDENTS.filter((s) => {
+  const filteredStudents = DEMO_STUDENT_INDEX.filter((s) => {
     if (yearFilter && s.yearGroup !== `Year ${yearFilter}`) return false
     if (studentSearch) {
       const q = studentSearch.toLowerCase()
@@ -222,7 +219,9 @@ export default function AnalyticsPage() {
 
   // Year-group at-risk counts
   const yearGroupAtRisk = DEMO_YEAR_GROUPS.map((yg: any) => {
-    const count = DEMO_STUDENTS.filter((s) => s.yearGroup === `Year ${yg.year}` && s.atRisk).length
+    const count = DEMO_STUDENT_INDEX.filter(
+      (s) => s.yearGroup === `Year ${yg.year}` && s.atRisk,
+    ).length
     return { ...yg, atRiskCount: count || Math.round(yg.studentCount * 0.06) }
   })
 
@@ -248,7 +247,7 @@ export default function AnalyticsPage() {
 
   // Weakness analysis
   const allWeaknesses: Record<string, number> = {}
-  DEMO_STUDENTS.forEach((s) => {
+  DEMO_STUDENT_INDEX.forEach((s) => {
     s.weaknesses.forEach((w) => {
       const name = typeof w === 'string' ? w : w.name
       allWeaknesses[name] = (allWeaknesses[name] || 0) + 1
@@ -261,9 +260,13 @@ export default function AnalyticsPage() {
 
   // Grade distribution
   const gradeBuckets: Record<string, number> = { '8-9': 0, '6-7': 0, '4-5': 0, '2-3': 0 }
-  DEMO_STUDENTS.forEach((s) => {
-    s.mockExamResults.forEach((r) => {
-      const g = parseInt(r.grade, 10)
+  // Reads mockGrades from the compact student index rather than the full
+  // mockExamResults records: this chart only ever needed the grade from each
+  // mock, and importing the full roster put ~320 KB of unused detail into this
+  // route's client bundle.
+  DEMO_STUDENT_INDEX.forEach((s) => {
+    s.mockGrades.forEach((grade) => {
+      const g = parseInt(grade, 10)
       if (g >= 8) gradeBuckets['8-9']++
       else if (g >= 6) gradeBuckets['6-7']++
       else if (g >= 4) gradeBuckets['4-5']++
@@ -294,7 +297,7 @@ export default function AnalyticsPage() {
     const body = `
       <h2>School Overview</h2>
       <table>
-        <tr><th>Total Students</th><td>${DEMO_STUDENTS.length}</td><th>Total Classes</th><td>${DEMO_CLASSES.length}</td></tr>
+        <tr><th>Total Students</th><td>${DEMO_STUDENT_INDEX.length}</td><th>Total Classes</th><td>${DEMO_CLASSES.length}</td></tr>
       </table>
       <h2>Teacher Performance</h2>
       <table>

@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { useState, useMemo } from "react"
+import { useState, useMemo } from 'react'
 import {
   Search,
   UserPlus,
@@ -12,61 +12,57 @@ import {
   GraduationCap,
   Users,
   AlertTriangle,
-} from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
-import { useToast } from "@/components/ui/Toast"
-import {
-  DEMO_TEACHERS,
-  DEMO_STUDENTS,
-  type DemoTeacher,
-  type DemoStudent,
-} from "@/data/demo-data"
-
+} from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Badge } from '@/components/ui/badge'
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
+import { useToast } from '@/components/ui/Toast'
+import type { DemoTeacher, DemoStudentSummary } from '@/data/demo/types'
+import { DEMO_TEACHERS } from '@/data/demo/teachers'
+import { DEMO_STUDENT_INDEX } from '@/data/demo/students-index'
 type UserRow =
-  | { type: "teacher"; data: DemoTeacher }
-  | { type: "student"; data: DemoStudent }
+  | { type: 'teacher'; data: DemoTeacher }
+  // DemoStudentSummary, not DemoStudent: this table only shows name, email, year
+  // group, class and progress, so it reads the compact student index. Widening
+  // this back to DemoStudent would pull the ~320 KB roster into the bundle.
+  | { type: 'student'; data: DemoStudentSummary }
 
-function demoToast(toast: ReturnType<typeof useToast>["toast"]) {
-  toast("info", "Available with full account")
+function demoToast(toast: ReturnType<typeof useToast>['toast']) {
+  toast('info', 'Available with full account')
 }
 
 export default function DemoUsersPage() {
   const { toast } = useToast()
-  const [search, setSearch] = useState("")
-  const [activeTab, setActiveTab] = useState("all")
+  const [search, setSearch] = useState('')
+  const [activeTab, setActiveTab] = useState('all')
 
   const allUsers: UserRow[] = useMemo(() => {
-    const teachers: UserRow[] = DEMO_TEACHERS.map((t) => ({ type: "teacher", data: t }))
-    const students: UserRow[] = DEMO_STUDENTS.map((s) => ({ type: "student", data: s }))
+    const teachers: UserRow[] = DEMO_TEACHERS.map((t) => ({ type: 'teacher', data: t }))
+    const students: UserRow[] = DEMO_STUDENT_INDEX.map((s) => ({ type: 'student', data: s }))
     return [...teachers, ...students]
   }, [])
 
   const filteredUsers = useMemo(() => {
     let users = allUsers
 
-    if (activeTab === "teachers") {
-      users = users.filter((u) => u.type === "teacher")
-    } else if (activeTab === "students") {
-      users = users.filter((u) => u.type === "student")
+    if (activeTab === 'teachers') {
+      users = users.filter((u) => u.type === 'teacher')
+    } else if (activeTab === 'students') {
+      users = users.filter((u) => u.type === 'student')
     }
 
     if (search.trim()) {
       const q = search.toLowerCase()
       users = users.filter((u) => {
-        if (u.type === "teacher") {
+        if (u.type === 'teacher') {
           return (
             u.data.name.toLowerCase().includes(q) ||
             u.data.email.toLowerCase().includes(q) ||
             u.data.department.toLowerCase().includes(q)
           )
         }
-        return (
-          u.data.name.toLowerCase().includes(q) ||
-          u.data.className.toLowerCase().includes(q)
-        )
+        return u.data.name.toLowerCase().includes(q) || u.data.className.toLowerCase().includes(q)
       })
     }
 
@@ -74,7 +70,7 @@ export default function DemoUsersPage() {
   }, [allUsers, activeTab, search])
 
   const teacherCount = DEMO_TEACHERS.length
-  const studentCount = DEMO_STUDENTS.length
+  const studentCount = DEMO_STUDENT_INDEX.length
 
   return (
     <div className="space-y-6">
@@ -170,7 +166,7 @@ function UserTable({
   toast,
 }: {
   rows: UserRow[]
-  toast: ReturnType<typeof useToast>["toast"]
+  toast: ReturnType<typeof useToast>['toast']
 }) {
   const [openMenu, setOpenMenu] = useState<string | null>(null)
 
@@ -200,23 +196,30 @@ function UserTable({
             </tr>
           )}
           {rows.map((row) => {
-            const id = row.type === "teacher" ? row.data.id : row.data.id
+            const id = row.type === 'teacher' ? row.data.id : row.data.id
             const name = row.data.name
-            const isTeacher = row.type === "teacher"
+            const isTeacher = row.type === 'teacher'
             const teacher = isTeacher ? (row.data as DemoTeacher) : null
-            const student = !isTeacher ? (row.data as DemoStudent) : null
+            const student = !isTeacher ? (row.data as DemoStudentSummary) : null
 
             return (
-              <tr key={`${row.type}-${id}`} className="border-b border-border last:border-0 hover:bg-muted/30 transition-colors">
+              <tr
+                key={`${row.type}-${id}`}
+                className="border-b border-border last:border-0 hover:bg-muted/30 transition-colors"
+              >
                 {/* Name */}
                 <td className="px-4 py-3">
                   <div className="flex items-center gap-3">
-                    <div className={`flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold ${
-                      isTeacher
-                        ? "bg-teal-800/10 text-teal-700"
-                        : "bg-primary/10 text-primary"
-                    }`}>
-                      {name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
+                    <div
+                      className={`flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold ${
+                        isTeacher ? 'bg-teal-800/10 text-teal-700' : 'bg-primary/10 text-primary'
+                      }`}
+                    >
+                      {name
+                        .split(' ')
+                        .map((n) => n[0])
+                        .join('')
+                        .slice(0, 2)}
                     </div>
                     <div>
                       <p className="font-medium">{name}</p>
@@ -229,22 +232,26 @@ function UserTable({
 
                 {/* Role */}
                 <td className="px-4 py-3">
-                  <Badge variant={isTeacher ? "outline" : "secondary"} className="gap-1">
+                  <Badge variant={isTeacher ? 'outline' : 'secondary'} className="gap-1">
                     {isTeacher ? (
                       <GraduationCap className="h-3 w-3" />
                     ) : (
                       <Users className="h-3 w-3" />
                     )}
-                    {isTeacher ? "Teacher" : "Student"}
+                    {isTeacher ? 'Teacher' : 'Student'}
                   </Badge>
                 </td>
 
                 {/* Details */}
                 <td className="px-4 py-3 text-muted-foreground">
                   {isTeacher ? (
-                    <span>{teacher!.department} -- {teacher!.classCount} classes</span>
+                    <span>
+                      {teacher!.department} - {teacher!.classCount} classes
+                    </span>
                   ) : (
-                    <span>{student!.className} -- {student!.overallProgress}% progress</span>
+                    <span>
+                      {student!.className} - {student!.overallProgress}% progress
+                    </span>
                   )}
                 </td>
 
@@ -275,10 +282,7 @@ function UserTable({
                     </Button>
                     {openMenu === id && (
                       <>
-                        <div
-                          className="fixed inset-0 z-40"
-                          onClick={() => setOpenMenu(null)}
-                        />
+                        <div className="fixed inset-0 z-40" onClick={() => setOpenMenu(null)} />
                         <div className="absolute right-0 top-full z-50 mt-1 w-44 rounded-lg border border-border bg-card py-1 shadow-lg">
                           <button
                             className="flex w-full items-center gap-2 px-3 py-2 text-sm hover:bg-muted/50 transition-colors"

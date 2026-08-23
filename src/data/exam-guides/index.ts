@@ -1,6 +1,13 @@
 // ─── Exam Guide Data Index ───────────────────────────────────────────────────
+//
+// WARNING: this barrel eagerly imports every guide (~349 KB). Importing it
+// from a 'use client' component puts all of that into the route's First Load
+// JS - which is exactly the defect fixed on /practice in Aug 2026. Client
+// components should import `loadGuideByBoard` from './load-guide' instead,
+// which dynamic-imports one board's guide on demand.
 
 import type { BoardExamGuide } from './types'
+import { resolveGuideKey } from './board-guide-map'
 import { aqaGuide } from './aqa-guide'
 import { edexcelGuide } from './edexcel-guide'
 import { ocrGuide } from './ocr-guide'
@@ -26,39 +33,14 @@ const guides: Record<string, BoardExamGuide> = {
   igcse: igcseGuide,
 }
 
-// Map current `ExamBoard` IDs (cookie values like 'cambridge-0990') onto the
-// short legacy guide keys above. Without this, a Pearson IGCSE / Cambridge /
-// Eduqas / IAL student gets `undefined` back from getGuideByBoard and silently
-// loses contextual examiner tips on /practice and any other page that calls
-// this helper.
-const BOARD_ID_TO_GUIDE_KEY: Record<string, string> = {
-  // GCSE
-  aqa: 'aqa',
-  edexcel: 'edexcel',
-  ocr: 'ocr',
-  eduqas: 'wjec',
-  // IGCSE
-  'edexcel-igcse': 'igcse',
-  'edexcel-igcse-lang': 'igcse',
-  'cambridge-0500': 'igcse',
-  'cambridge-0990': 'igcse',
-  'cambridge-0475': 'igcse',
-  // IAL / A-Level - fall back to the closest exam-board guide we have
-  'ial-edexcel': 'edexcel',
-  'aqa-a-level': 'aqa',
-  'edexcel-a-level': 'edexcel',
-  'ocr-a-level': 'ocr',
-  'eduqas-a-level': 'wjec',
-}
+// The board ID -> guide key mapping now lives in ./board-guide-map so the
+// lazy loader (./load-guide) and this eager barrel cannot drift apart.
+export { BOARD_ID_TO_GUIDE_KEY, resolveGuideKey } from './board-guide-map'
+export type { GuideKey } from './board-guide-map'
 
 export function getGuideByBoard(boardId: string): BoardExamGuide | undefined {
-  const id = boardId.toLowerCase()
-  // Direct hit on the old short keys (aqa, ocr, wjec, igcse).
-  if (guides[id]) return guides[id]
-  // Map newer ExamBoard IDs onto the short keys.
-  const mapped = BOARD_ID_TO_GUIDE_KEY[id]
-  if (mapped && guides[mapped]) return guides[mapped]
-  return undefined
+  const key = resolveGuideKey(boardId)
+  return key ? guides[key] : undefined
 }
 
 export function getAllGuides(): BoardExamGuide[] {

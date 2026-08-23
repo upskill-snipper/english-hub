@@ -24885,6 +24885,171 @@ export const DICTIONARY: Dictionary = {
 }
 
 /**
+ * Ordered precedence chain for `lookup()`.
+ *
+ * This was previously written inline in `lookup()` as a long
+ * `DICTIONARY[key] ?? TOOLKIT_DICTIONARY[key] ?? ...` expression. It was
+ * extracted into an array (2026-08-23) so that the build-time locale
+ * generator (scripts/generate-i18n-locales.mjs) can enumerate every key
+ * across every shard via `allDictionaryKeys()`. Walking this array and
+ * taking the first entry whose value is not null/undefined is exactly
+ * equivalent to the old `??` chain, because every value is an object.
+ *
+ * ORDER IS LOAD-BEARING - DO NOT REORDER.
+ *
+ * Master dictionary first; fall through to the toolkit-namespaced
+ * supplement (./dictionary-toolkit.ts) so /toolkit/* tool-page keys
+ * resolve without bloating the main dictionary surface. Master wins
+ * on collision - by convention toolkit keys live under the
+ * tools.*, quiz_build.*, lesson_build.*, grade_predict.*, essay_check.*
+ * namespaces so collisions shouldn't arise.
+ *
+ * CRITICAL ORDERING (fixed 2026-05-16): ALL hand-written override
+ * dictionaries MUST resolve BEFORE the auto-generated
+ * AUDIT_FIX_DICTIONARY. That file holds ~1,554 lazy placeholder values
+ * (Title-cased path segments like "Heading", "Name", "Desc", "Lead").
+ * Previously PLACEHOLDER_FIX_MAY15 and SCREENSHOT_FIX_DICTIONARY were
+ * listed AFTER AUDIT_FIX_DICTIONARY, so their real copy for ~80
+ * affiliate keys + 94 screenshot keys was permanently SHADOWED by
+ * junk - that is why /affiliate and /affiliates rendered placeholder
+ * text. Override precedence among the curated files is kept stable;
+ * only their position relative to AUDIT_FIX changed.
+ */
+export const DICTIONARY_CHAIN: Dictionary[] = [
+  DICTIONARY,
+  TOOLKIT_DICTIONARY,
+  LEGAL_LONG_DICTIONARY,
+  DASH_INTERNAL_DICTIONARY,
+  DEMO_PAGES_DICTIONARY,
+  POETRY_HUB_DICTIONARY,
+  HOMEPAGE_DICTIONARY,
+  // Curated bilingual /affiliates copy. Same tier as HOMEPAGE_DICTIONARY
+  // (curated overrides), placed BEFORE every placeholder/audit supplement
+  // so its genuine Khaleeji Arabic wins over the English-mirror
+  // REPORT_FIX_MAY16B / PLACEHOLDER_FIX_* and the junk AUDIT_FIX values.
+  AFF_PUBLIC_DICTIONARY,
+  // Bucket-A curated Khaleeji - Tier-1 public surfaces (press, about,
+  // accessibility, footer, exam-boards, free-resources, sitemap,
+  // redeem, join-school, brand, billing, resources, a-level,
+  // affiliate portal). Same curated-override tier - BEFORE every
+  // placeholder/audit supplement so genuine Arabic wins over the
+  // EN-mirror / junk-Ollama values these keys had.
+  TRUST_DICTIONARY,
+  PUBLIC_A_DICTIONARY,
+  CONVERT_DICTIONARY,
+  RESOURCES_A_DICTIONARY,
+  RESOURCES_B_DICTIONARY,
+  MISC_T1_DICTIONARY,
+  // Bucket-A Tier-2a curated Khaleeji - authed school + parent
+  // dashboards. PARENT_1 before PARENT_2 so the one shared key
+  // (parent.linked_child) resolves deterministically to PARENT_1.
+  SCHOOL_1_DICTIONARY,
+  SCHOOL_2_DICTIONARY,
+  PARENT_1_DICTIONARY,
+  PARENT_2_DICTIONARY,
+  // Bucket A Tier-2b - curated EN+AR for affiliate portal/components,
+  // teacher dashboard, analytics/marking/games, and the residual
+  // school.* gap. Curated tier: precedes all placeholder/junk fixes.
+  SCHOOL_3_DICTIONARY,
+  AFF_PORTAL_DICTIONARY,
+  AFF_COMP_DICTIONARY,
+  TEACHER_DICTIONARY,
+  AMG_DICTIONARY,
+  // Bucket B Phase B1 - instrumented shell + hub/index pages for the
+  // /ks3, /revision and /resources content families (curated EN +
+  // Khaleeji AR). Precedes all placeholder/audit supplements so the
+  // genuine Arabic wins over any junk/placeholder entry.
+  B1_KS3_DICTIONARY,
+  B1_REVISION_DICTIONARY,
+  B1_RESOURCES_DICTIONARY,
+  // Bucket B Phase B1.5 - curated EN + Khaleeji AR for app-surface
+  // product-UI pages: /marking + /school, /dashboard + /toolkit, and
+  // /demo. Curated tier: precedes all placeholder/audit supplements so
+  // genuine Arabic wins over any junk entry.
+  B15_MARKING_SCHOOL_DICTIONARY,
+  B15_DASHBOARD_DICTIONARY,
+  B15_DEMO_DICTIONARY,
+  // EU AI Act user-facing copy (Art 13/14/50) - curated tier.
+  AI_ACT_DICTIONARY,
+  // Platform-admin AI-marking surfaces (versioning / eval / model perf).
+  // Curated tier: precedes all placeholder/audit supplements.
+  ADMIN_AI_MARKING_DICTIONARY,
+  // Paid-marker-drive surfaces (/admin/marker-drive, /marker,
+  // /admin/marker-pay, /admin/marker-qa). Curated tier.
+  MARKER_DRIVE_DICTIONARY,
+  // Marketing pages (institutional repositioning, 2026-05-20):
+  // /schools · /school-pilot · /teachers · /students · /eal -
+  // curated EN + Khaleeji Gulf Arabic. Curated tier so genuine
+  // bilingual copy wins over any placeholder/audit supplement.
+  MKT_SCHOOLS_DICTIONARY,
+  MKT_SCHOOL_PILOT_DICTIONARY,
+  MKT_TEACHERS_DICTIONARY,
+  MKT_STUDENTS_DICTIONARY,
+  MKT_EAL_DICTIONARY,
+  MKT_HOME_DICTIONARY,
+  DASHBOARD_CHROME_DICTIONARY,
+  IELTS_DICTIONARY,
+  IELTS_READING_DICTIONARY,
+  IELTS_LISTENING_DICTIONARY,
+  IELTS_WRITING_DICTIONARY,
+  IELTS_SPEAKING_DICTIONARY,
+  IELTS_DIAGNOSTIC_DICTIONARY,
+  IELTS_HUBPROGRESS_DICTIONARY,
+  IELTS_GUIDE_DICTIONARY,
+  IELTS_ADMISSIONS_DICTIONARY,
+  IELTS_PARTNERS_DICTIONARY,
+  IELTS_CENTRE_DICTIONARY,
+  // 2026-06-01: IELTS UK-Readiness sweep (curated EN + Khaleeji).
+  IELTS_TRANSITION_DICTIONARY,
+  IELTS_MODELANSWERS_DICTIONARY,
+  IELTS_READINESS_UI_DICTIONARY,
+  IELTS_UKREADINESS_DICTIONARY,
+  SPEECH_DICTIONARY,
+  STUDY_LANG_LIT_DICTIONARY,
+  STUDY_REVNOTES_DICTIONARY,
+  STUDY_POETRY_CONTEXT_DICTIONARY,
+  STUDY_SKILLS_DICTIONARY,
+  // 2026-06-07: revision poetry + language chrome (rev.poetry.*/rev.lang.*).
+  REV_POETRY_LANG_DICTIONARY,
+  REV_TEXTS_DICTIONARY,
+  REV_TEXTS2_DICTIONARY,
+  REV_TEXTGRP1_DICTIONARY,
+  REV_TEXTGRP2_DICTIONARY,
+  REV_TEXTGRP3_DICTIONARY,
+  REV_TEXTGRP4_DICTIONARY,
+  REV_TEXTGRP5_DICTIONARY,
+  REV_TEXTGRP6_DICTIONARY,
+  REV_MISC2_DICTIONARY,
+  REV_MISC_DICTIONARY,
+  REV_POETRY2_DICTIONARY,
+  HOME_LP_DICTIONARY,
+  IGCSE_PAGES_DICTIONARY,
+  KS3_PAGES_DICTIONARY,
+  PRESS_AND_VERIFIED_FIX,
+  PLACEHOLDER_FIX_MAY16,
+  PLACEHOLDER_FIX_MAY15,
+  SCREENSHOT_FIX_DICTIONARY,
+  REPORT_FIX_MAY16B,
+  AUDIT_FIX_DICTIONARY,
+]
+
+/**
+ * Every key defined anywhere in the precedence chain, de-duplicated.
+ *
+ * Used by scripts/generate-i18n-locales.mjs to emit the flat per-locale
+ * maps that the client hook consumes. Insertion order follows the chain
+ * order, which keeps the generated files stable across runs (so a
+ * regeneration produces no spurious diff).
+ */
+export function allDictionaryKeys(): string[] {
+  const seen = new Set<string>()
+  for (const d of DICTIONARY_CHAIN) {
+    for (const key of Object.keys(d)) seen.add(key)
+  }
+  return [...seen]
+}
+
+/**
  * Resolve a key with a locale.
  *
  * Behaviour:
@@ -24894,140 +25059,24 @@ export const DICTIONARY: Dictionary = {
  *     by `[[…]]` so the missing string is obvious in dev but doesn't
  *     break the layout. Production builds should grep for `[[` to
  *     surface gaps before deploy.
+ *
+ * NOTE: this is now the SERVER-side path plus the build-time generator
+ * input. Client components go through useT() (./use-t.ts), which reads
+ * pre-resolved per-locale maps so that browsers no longer download all
+ * three locales on every route. The generator derives those maps by
+ * calling this function, so the two paths cannot drift.
  */
 export function lookup(key: string, locale: Locale): string {
-  // Master dictionary first; fall through to the toolkit-namespaced
-  // supplement (./dictionary-toolkit.ts) so /toolkit/* tool-page keys
-  // resolve without bloating the main dictionary surface. Master wins
-  // on collision - by convention toolkit keys live under the
-  // tools.*, quiz_build.*, lesson_build.*, grade_predict.*, essay_check.*
-  // namespaces so collisions shouldn't arise.
-  // CRITICAL ORDERING (fixed 2026-05-16): ALL hand-written override
-  // dictionaries MUST resolve BEFORE the auto-generated
-  // AUDIT_FIX_DICTIONARY. That file holds ~1,554 lazy placeholder values
-  // (Title-cased path segments like "Heading", "Name", "Desc", "Lead").
-  // Previously PLACEHOLDER_FIX_MAY15 and SCREENSHOT_FIX_DICTIONARY were
-  // listed AFTER AUDIT_FIX_DICTIONARY, so their real copy for ~80
-  // affiliate keys + 94 screenshot keys was permanently SHADOWED by
-  // junk - that is why /affiliate and /affiliates rendered placeholder
-  // text. Override precedence among the curated files is kept stable;
-  // only their position relative to AUDIT_FIX changed.
-  const entry =
-    DICTIONARY[key] ??
-    TOOLKIT_DICTIONARY[key] ??
-    LEGAL_LONG_DICTIONARY[key] ??
-    DASH_INTERNAL_DICTIONARY[key] ??
-    DEMO_PAGES_DICTIONARY[key] ??
-    POETRY_HUB_DICTIONARY[key] ??
-    HOMEPAGE_DICTIONARY[key] ??
-    // Curated bilingual /affiliates copy. Same tier as HOMEPAGE_DICTIONARY
-    // (curated overrides), placed BEFORE every placeholder/audit supplement
-    // so its genuine Khaleeji Arabic wins over the English-mirror
-    // REPORT_FIX_MAY16B / PLACEHOLDER_FIX_* and the junk AUDIT_FIX values.
-    AFF_PUBLIC_DICTIONARY[key] ??
-    // Bucket-A curated Khaleeji - Tier-1 public surfaces (press, about,
-    // accessibility, footer, exam-boards, free-resources, sitemap,
-    // redeem, join-school, brand, billing, resources, a-level,
-    // affiliate portal). Same curated-override tier - BEFORE every
-    // placeholder/audit supplement so genuine Arabic wins over the
-    // EN-mirror / junk-Ollama values these keys had.
-    TRUST_DICTIONARY[key] ??
-    PUBLIC_A_DICTIONARY[key] ??
-    CONVERT_DICTIONARY[key] ??
-    RESOURCES_A_DICTIONARY[key] ??
-    RESOURCES_B_DICTIONARY[key] ??
-    MISC_T1_DICTIONARY[key] ??
-    // Bucket-A Tier-2a curated Khaleeji - authed school + parent
-    // dashboards. PARENT_1 before PARENT_2 so the one shared key
-    // (parent.linked_child) resolves deterministically to PARENT_1.
-    SCHOOL_1_DICTIONARY[key] ??
-    SCHOOL_2_DICTIONARY[key] ??
-    PARENT_1_DICTIONARY[key] ??
-    PARENT_2_DICTIONARY[key] ??
-    // Bucket A Tier-2b - curated EN+AR for affiliate portal/components,
-    // teacher dashboard, analytics/marking/games, and the residual
-    // school.* gap. Curated tier: precedes all placeholder/junk fixes.
-    SCHOOL_3_DICTIONARY[key] ??
-    AFF_PORTAL_DICTIONARY[key] ??
-    AFF_COMP_DICTIONARY[key] ??
-    TEACHER_DICTIONARY[key] ??
-    AMG_DICTIONARY[key] ??
-    // Bucket B Phase B1 - instrumented shell + hub/index pages for the
-    // /ks3, /revision and /resources content families (curated EN +
-    // Khaleeji AR). Precedes all placeholder/audit supplements so the
-    // genuine Arabic wins over any junk/placeholder entry.
-    B1_KS3_DICTIONARY[key] ??
-    B1_REVISION_DICTIONARY[key] ??
-    B1_RESOURCES_DICTIONARY[key] ??
-    // Bucket B Phase B1.5 - curated EN + Khaleeji AR for app-surface
-    // product-UI pages: /marking + /school, /dashboard + /toolkit, and
-    // /demo. Curated tier: precedes all placeholder/audit supplements so
-    // genuine Arabic wins over any junk entry.
-    B15_MARKING_SCHOOL_DICTIONARY[key] ??
-    B15_DASHBOARD_DICTIONARY[key] ??
-    B15_DEMO_DICTIONARY[key] ??
-    // EU AI Act user-facing copy (Art 13/14/50) - curated tier.
-    AI_ACT_DICTIONARY[key] ??
-    // Platform-admin AI-marking surfaces (versioning / eval / model perf).
-    // Curated tier: precedes all placeholder/audit supplements.
-    ADMIN_AI_MARKING_DICTIONARY[key] ??
-    // Paid-marker-drive surfaces (/admin/marker-drive, /marker,
-    // /admin/marker-pay, /admin/marker-qa). Curated tier.
-    MARKER_DRIVE_DICTIONARY[key] ??
-    // Marketing pages (institutional repositioning, 2026-05-20):
-    // /schools · /school-pilot · /teachers · /students · /eal -
-    // curated EN + Khaleeji Gulf Arabic. Curated tier so genuine
-    // bilingual copy wins over any placeholder/audit supplement.
-    MKT_SCHOOLS_DICTIONARY[key] ??
-    MKT_SCHOOL_PILOT_DICTIONARY[key] ??
-    MKT_TEACHERS_DICTIONARY[key] ??
-    MKT_STUDENTS_DICTIONARY[key] ??
-    MKT_EAL_DICTIONARY[key] ??
-    MKT_HOME_DICTIONARY[key] ??
-    DASHBOARD_CHROME_DICTIONARY[key] ??
-    IELTS_DICTIONARY[key] ??
-    IELTS_READING_DICTIONARY[key] ??
-    IELTS_LISTENING_DICTIONARY[key] ??
-    IELTS_WRITING_DICTIONARY[key] ??
-    IELTS_SPEAKING_DICTIONARY[key] ??
-    IELTS_DIAGNOSTIC_DICTIONARY[key] ??
-    IELTS_HUBPROGRESS_DICTIONARY[key] ??
-    IELTS_GUIDE_DICTIONARY[key] ??
-    IELTS_ADMISSIONS_DICTIONARY[key] ??
-    IELTS_PARTNERS_DICTIONARY[key] ??
-    IELTS_CENTRE_DICTIONARY[key] ??
-    // 2026-06-01: IELTS UK-Readiness sweep (curated EN + Khaleeji).
-    IELTS_TRANSITION_DICTIONARY[key] ??
-    IELTS_MODELANSWERS_DICTIONARY[key] ??
-    IELTS_READINESS_UI_DICTIONARY[key] ??
-    IELTS_UKREADINESS_DICTIONARY[key] ??
-    SPEECH_DICTIONARY[key] ??
-    STUDY_LANG_LIT_DICTIONARY[key] ??
-    STUDY_REVNOTES_DICTIONARY[key] ??
-    STUDY_POETRY_CONTEXT_DICTIONARY[key] ??
-    STUDY_SKILLS_DICTIONARY[key] ??
-    // 2026-06-07: revision poetry + language chrome (rev.poetry.*/rev.lang.*).
-    REV_POETRY_LANG_DICTIONARY[key] ??
-    REV_TEXTS_DICTIONARY[key] ??
-    REV_TEXTS2_DICTIONARY[key] ??
-    REV_TEXTGRP1_DICTIONARY[key] ??
-    REV_TEXTGRP2_DICTIONARY[key] ??
-    REV_TEXTGRP3_DICTIONARY[key] ??
-    REV_TEXTGRP4_DICTIONARY[key] ??
-    REV_TEXTGRP5_DICTIONARY[key] ??
-    REV_TEXTGRP6_DICTIONARY[key] ??
-    REV_MISC2_DICTIONARY[key] ??
-    REV_MISC_DICTIONARY[key] ??
-    REV_POETRY2_DICTIONARY[key] ??
-    HOME_LP_DICTIONARY[key] ??
-    IGCSE_PAGES_DICTIONARY[key] ??
-    KS3_PAGES_DICTIONARY[key] ??
-    PRESS_AND_VERIFIED_FIX[key] ??
-    PLACEHOLDER_FIX_MAY16[key] ??
-    PLACEHOLDER_FIX_MAY15[key] ??
-    SCREENSHOT_FIX_DICTIONARY[key] ??
-    REPORT_FIX_MAY16B[key] ??
-    AUDIT_FIX_DICTIONARY[key]
+  // Walk the precedence chain (see DICTIONARY_CHAIN above for why the
+  // order matters). `!= null` reproduces `??` exactly.
+  let entry: Dictionary[string] | undefined
+  for (const d of DICTIONARY_CHAIN) {
+    const candidate = d[key]
+    if (candidate != null) {
+      entry = candidate
+      break
+    }
+  }
   if (!entry) return `[[${key}]]`
   if (locale === 'ar' && entry.ar) return entry.ar
   if (locale === 'es' && entry.es) return entry.es

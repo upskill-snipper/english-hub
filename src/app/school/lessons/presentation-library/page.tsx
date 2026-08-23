@@ -31,45 +31,19 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 
-import { y7Presentations } from '@/data/curriculum/y7-presentation-content'
-import { y8Presentations } from '@/data/curriculum/y8-presentation-content'
-import { y9Presentations } from '@/data/curriculum/y9-presentation-content'
-import { igcsePresentations } from '@/data/curriculum/igcse-presentation-content'
-import { ialPresentations } from '@/data/curriculum/ial-presentation-content'
-import { allTeacherPowerpointsComplete as teacherPowerpoints } from '@/data/teacher-powerpoints'
+// PERF DEFECT THIS FIXES: this client component used to statically import all
+// six full slide-content modules (y7/y8/y9/igcse/ial plus teacher-powerpoints,
+// about 575 KB of source) purely to render a browse list, so every slide body
+// and teacher note shipped in the route's first-load JS. It now reads the small
+// static index and pulls full slide content on demand at download time.
+import { presentationIndex, type PresentationIndexEntry } from '@/data/presentation-index'
+import { loadLessonPlanData, prefetchPresentationContent } from '@/data/presentation-content-loader'
 
-import {
-  toCatalogueEntry,
-  teacherToCatalogueEntry,
-  presentationToLessonPlan,
-  teacherPresentationToLessonPlan,
-  type PresentationCatalogueEntry,
-} from '@/lib/pptx/content-adapter'
-
-import type { LessonPresentation } from '@/data/curriculum/y7-presentation-content'
-import type { TeacherPresentation } from '@/lib/pptx/content-adapter'
 import { useT } from '@/lib/i18n/use-t'
 
-// ─── Build the full catalogue ───────────────────────────────────────────────
+// ─── Catalogue ──────────────────────────────────────────────────────────────
 
-const allCurriculumPresentations: LessonPresentation[] = [
-  ...y7Presentations,
-  ...y8Presentations,
-  ...y9Presentations,
-  ...igcsePresentations,
-  ...ialPresentations,
-]
-
-const catalogue: PresentationCatalogueEntry[] = [
-  ...allCurriculumPresentations.map(toCatalogueEntry),
-  ...teacherPowerpoints.map((tp) => teacherToCatalogueEntry(tp as unknown as TeacherPresentation)),
-]
-
-// Lookup maps keyed by id for quick access during download
-const curriculumById = new Map(allCurriculumPresentations.map((p) => [p.id, p]))
-const teacherById = new Map(
-  teacherPowerpoints.map((tp) => [tp.id, tp as unknown as TeacherPresentation]),
-)
+const catalogue: PresentationIndexEntry[] = presentationIndex
 
 // ─── Derive filter options ──────────────────────────────────────────────────
 
@@ -109,11 +83,11 @@ function sourceColour(source: string): string {
 
 interface YearGroupSection {
   label: string
-  entries: PresentationCatalogueEntry[]
+  entries: PresentationIndexEntry[]
 }
 
-function groupByYearGroup(entries: PresentationCatalogueEntry[]): YearGroupSection[] {
-  const groups = new Map<string, PresentationCatalogueEntry[]>()
+function groupByYearGroup(entries: PresentationIndexEntry[]): YearGroupSection[] {
+  const groups = new Map<string, PresentationIndexEntry[]>()
   for (const entry of entries) {
     const list = groups.get(entry.yearGroup) ?? []
     list.push(entry)
@@ -181,24 +155,22 @@ export default function PresentationLibraryPage() {
     })
   }, [])
 
-  const togglePreview = useCallback((id: string) => {
-    setPreviewId((prev) => (prev === id ? null : id))
+  const togglePreview = useCallback((entry: PresentationIndexEntry) => {
+    setPreviewId((prev) => {
+      if (prev === entry.id) return null
+      // Opening a preview usually precedes a download, so warm the slide-content
+      // chunk now rather than making the teacher wait for it after clicking.
+      prefetchPresentationContent(entry)
+      return entry.id
+    })
   }, [])
 
-  const handleDownload = useCallback(async (entry: PresentationCatalogueEntry) => {
+  const handleDownload = useCallback(async (entry: PresentationIndexEntry) => {
     setDownloadingId(entry.id)
     try {
-      // Build LessonPlanData via the adapter
-      let lessonPlanData
-      if (entry.source === 'curriculum') {
-        const presentation = curriculumById.get(entry.id)
-        if (!presentation) throw new Error('Presentation not found')
-        lessonPlanData = presentationToLessonPlan(presentation)
-      } else {
-        const tp = teacherById.get(entry.id)
-        if (!tp) throw new Error('Teacher presentation not found')
-        lessonPlanData = teacherPresentationToLessonPlan(tp)
-      }
+      // Slide bodies are no longer in this bundle: fetch the entry's content
+      // chunk and build LessonPlanData from it before calling the API.
+      const lessonPlanData = await loadLessonPlanData(entry)
 
       const response = await fetch('/api/generate-pptx', {
         method: 'POST',
@@ -465,7 +437,7 @@ export default function PresentationLibraryPage() {
                                 <Button
                                   size="sm"
                                   variant="outline"
-                                  onClick={() => togglePreview(entry.id)}
+                                  onClick={() => togglePreview(entry)}
                                   title={
                                     isPreviewing ? 'Hide slide preview' : 'Preview slide titles'
                                   }

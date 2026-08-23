@@ -22,14 +22,11 @@ import {
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { percentageToGCSEGrade } from '@/lib/grades'
-import {
-  DEMO_TEACHER,
-  TEACHER_DEMO_CLASSES,
-  TEACHER_DEMO_LESSONS,
-  TEACHER_DEMO_SUBMISSIONS,
-  DEMO_STUDENTS,
-  type DemoClass,
-} from '@/data/demo-data'
+import type { DemoClass } from '@/data/demo/types'
+import { DEMO_TEACHER } from '@/data/demo/teachers'
+import { TEACHER_DEMO_CLASSES } from '@/data/demo/classes'
+import { DEMO_STUDENT_INDEX } from '@/data/demo/students-index'
+import { TEACHER_DEMO_LESSONS, TEACHER_DEMO_SUBMISSIONS } from '@/data/demo/teacher-surfaces'
 import { useT } from '@/lib/i18n/use-t'
 import {
   GlassPanel,
@@ -54,7 +51,7 @@ function scoreBg(score: number) {
 }
 
 function ragBarSegments(cls: DemoClass) {
-  const students = DEMO_STUDENTS.filter((s) => s.className === cls.name)
+  const students = DEMO_STUDENT_INDEX.filter((s) => s.className === cls.name)
   const total = students.length || 1
   const green = students.filter((s) => s.status === 'on-track' || s.status === 'excelling').length
   const amber = students.filter((s) => s.status === 'needs-support').length
@@ -86,7 +83,7 @@ const avgClassScore = Math.round(
 
 // At-risk students across teacher's classes
 const atRiskStudents = TEACHER_DEMO_CLASSES.flatMap((cls: DemoClass) => {
-  const students = DEMO_STUDENTS.filter((s) => s.className === cls.name)
+  const students = DEMO_STUDENT_INDEX.filter((s) => s.className === cls.name)
   return students
     .filter((s) => s.atRisk)
     .map((s) => ({ ...s, className: cls.name, classId: cls.id }))
@@ -137,7 +134,7 @@ export default function TeacherDemoDashboard() {
         {/* Demo banner */}
         <div className="mb-6 rounded-lg border border-amber-500/20 bg-amber-500/5 px-4 py-3">
           <p className="text-sm text-clay-600 dark:text-clay-400">
-            <span className="font-semibold">{t('teacher_page.demo.banner_eyebrow')}</span> --{' '}
+            <span className="font-semibold">{t('teacher_page.demo.banner_eyebrow')}</span> -{' '}
             {t('teacher_page.demo.banner_body')}
           </p>
         </div>
@@ -268,7 +265,7 @@ export default function TeacherDemoDashboard() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {TEACHER_DEMO_CLASSES.map((cls: DemoClass) => {
               const rag = ragBarSegments(cls)
-              const atRiskCount = DEMO_STUDENTS.filter(
+              const atRiskCount = DEMO_STUDENT_INDEX.filter(
                 (s) => s.className === cls.name && s.atRisk,
               ).length
               return (
@@ -448,7 +445,7 @@ export default function TeacherDemoDashboard() {
                   {t('teacher_page.demo.needs_marking')}
                 </p>
                 {pendingMarking.map((item) => {
-                  const student = DEMO_STUDENTS.find((s) => s.name === item.studentName)
+                  const student = DEMO_STUDENT_INDEX.find((s) => s.name === item.studentName)
                   return (
                     <div
                       key={item.id}
@@ -458,7 +455,7 @@ export default function TeacherDemoDashboard() {
                       <div className="flex-1 min-w-0">
                         <p className="text-sm text-foreground truncate">{item.assignment}</p>
                         <p className="text-[11px] text-muted-foreground">
-                          {item.studentName} -- {t('teacher_page.demo.submitted_label')} {item.date}
+                          {item.studentName} - {t('teacher_page.demo.submitted_label')} {item.date}
                         </p>
                       </div>
                       {student && (
@@ -505,7 +502,7 @@ export default function TeacherDemoDashboard() {
             {/* Accessible / detail list equivalent */}
             <ul className="mt-4 space-y-2">
               {TEACHER_DEMO_CLASSES.map((cls: DemoClass) => {
-                const atRiskCount = DEMO_STUDENTS.filter(
+                const atRiskCount = DEMO_STUDENT_INDEX.filter(
                   (s) => s.className === cls.name && s.atRisk,
                 ).length
                 return (

@@ -30,6 +30,20 @@ interface PurgeError {
  * Auth: Bearer CRON_SECRET (Vercel Cron's standard pattern).
  * Returns: { purged: number, errors: PurgeError[] }
  */
+/**
+ * Vercel Cron entry point.
+ *
+ * DEFECT this fixes (2026-08-23): this route is scheduled weekly in
+ * vercel.json ("0 4 * * 0") but exported ONLY a POST handler. Vercel Cron
+ * issues a GET, so every scheduled run returned 405 and the child-account
+ * dormancy purge - a data-retention obligation, not an optional job - has
+ * never actually executed. Same defect class as the weekly-report crons
+ * fixed earlier. POST is retained for manual invocation.
+ */
+export async function GET(request: NextRequest) {
+  return POST(request)
+}
+
 export async function POST(request: NextRequest) {
   // ── Auth: verify CRON_SECRET (Bearer token) ───────────────────────
   const cronSecret = process.env.CRON_SECRET

@@ -37,14 +37,11 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Switch } from '@/components/ui/switch'
 import DemoBanner from '@/components/demo/DemoBanner'
-import {
-  DEMO_SCHOOL,
-  DEMO_TEACHERS,
-  DEMO_STUDENTS,
-  DEMO_CLASSES,
-  DEMO_YEAR_GROUPS,
-  DEMO_STATS,
-} from '@/data/demo-data'
+import { DEMO_SCHOOL } from '@/data/demo/school'
+import { DEMO_TEACHERS } from '@/data/demo/teachers'
+import { DEMO_CLASSES } from '@/data/demo/classes'
+import { DEMO_STUDENT_INDEX } from '@/data/demo/students-index'
+import { DEMO_YEAR_GROUPS, DEMO_STATS } from '@/data/demo/aggregates'
 import {
   percentageToGCSEGrade,
   percentageToGCSEGradeLabel,
@@ -66,7 +63,7 @@ const completionRate = Math.round(
     DEMO_CLASSES.reduce((sum, c) => sum + c.assignmentsSet, 0)) *
     100,
 )
-const atRiskCount = DEMO_STUDENTS.filter((s) => s.atRisk).length
+const atRiskCount = DEMO_STUDENT_INDEX.filter((s) => s.atRisk).length
 
 const weeklyActivity = [
   { week: 'W1', value: 62 },
@@ -94,7 +91,7 @@ const improvements = [
 const recommendations = [
   'Deploy targeted intervention programme for the ' +
     atRiskCount +
-    ' at-risk students identified -- schedule 1:1 check-ins within the next week',
+    ' at-risk students identified - schedule 1:1 check-ins within the next week',
   'Introduce peer-tutoring for Year 9 non-fiction writing using Year 11 mentors to boost engagement and outcomes',
   'Schedule a department CPD session on Shakespeare engagement strategies - gamification and multimedia approaches recommended',
   'Review homework completion patterns for Year 10B and 10D - consider restructuring assignment deadlines',
@@ -255,14 +252,14 @@ export default function ReportsPage() {
   const [activeTab, setActiveTab] = useState<ReportTab>('overview')
   const [selectedYear, setSelectedYear] = useState(DEMO_YEAR_GROUPS[0].year)
   const [selectedClassId, setSelectedClassId] = useState(DEMO_CLASSES[0].id)
-  const [selectedStudentId, setSelectedStudentId] = useState(DEMO_STUDENTS[0].id)
+  const [selectedStudentId, setSelectedStudentId] = useState(DEMO_STUDENT_INDEX[0].id)
   const [selectedTeacherId, setSelectedTeacherId] = useState(DEMO_TEACHERS[0].id)
 
   const selectedYearGroup = DEMO_YEAR_GROUPS.find((y: any) => y.year === selectedYear)!
   const yearClasses = DEMO_CLASSES.filter((c) => yearGroupNum(c.yearGroup) === selectedYear)
   const selectedClass = DEMO_CLASSES.find((c) => c.id === selectedClassId)!
-  const classStudents = DEMO_STUDENTS.filter((s) => s.classId === selectedClassId)
-  const selectedStudent = DEMO_STUDENTS.find((s) => s.id === selectedStudentId)!
+  const classStudents = DEMO_STUDENT_INDEX.filter((s) => s.classId === selectedClassId)
+  const selectedStudent = DEMO_STUDENT_INDEX.find((s) => s.id === selectedStudentId)!
   const selectedTeacher = DEMO_TEACHERS.find((t) => t.id === selectedTeacherId)!
   const teacherClasses = DEMO_CLASSES.filter((c) => c.teacherId === selectedTeacherId)
 
@@ -271,7 +268,7 @@ export default function ReportsPage() {
 
   const teacherRanking = getTeacherRanking()
 
-  const yearStudents = DEMO_STUDENTS.filter((s) => yearGroupNum(s.yearGroup) === selectedYear)
+  const yearStudents = DEMO_STUDENT_INDEX.filter((s) => yearGroupNum(s.yearGroup) === selectedYear)
 
   // Predicted grade distribution for year group
   const gradeDistribution = (() => {
@@ -348,7 +345,7 @@ export default function ReportsPage() {
           <div className="space-y-8">
             <div className="text-center py-6 border-b border-border">
               <h2 className="text-2xl font-bold">
-                {DEMO_SCHOOL.name} -- Performance Report 2025-2026
+                {DEMO_SCHOOL.name} - Performance Report 2025-2026
               </h2>
               <p className="text-muted-foreground mt-1">
                 {tr(`Generated 4 April 2026 | Academic Year to Date`)}
@@ -803,7 +800,9 @@ export default function ReportsPage() {
                       size="sm"
                       variant="outline"
                       className="w-full border-border/80 text-foreground hover:bg-muted gap-1.5"
-                      render={<Link href={`/demo/school/reports/student/${DEMO_STUDENTS[0].id}`} />}
+                      render={
+                        <Link href={`/demo/school/reports/student/${DEMO_STUDENT_INDEX[0].id}`} />
+                      }
                     >
                       <ExternalLink className="h-3.5 w-3.5" />
                       Generate
@@ -866,7 +865,7 @@ export default function ReportsPage() {
                     {
                       title: 'Termly Assessment Report',
                       description:
-                        "Generated automatically before Parents' Evening -- includes all student reports",
+                        "Generated automatically before Parents' Evening - includes all student reports",
                       recipient: 'Parents',
                       frequency: 'Termly',
                       icon: (
@@ -945,7 +944,7 @@ export default function ReportsPage() {
                           across all classes.
                         </p>
                         <p className="text-xs text-muted-foreground mt-1">
-                          {DEMO_STUDENTS.length} students across {DEMO_CLASSES.length} classes
+                          {DEMO_STUDENT_INDEX.length} students across {DEMO_CLASSES.length} classes
                         </p>
                       </div>
                     </div>
@@ -954,7 +953,7 @@ export default function ReportsPage() {
                       className="bg-primary hover:bg-primary/90 text-primary-foreground gap-1.5"
                       onClick={() => {
                         toast.info('Download All Student Reports', {
-                          description: `In production, this would generate ${DEMO_STUDENTS.length} individual student PDFs and bundle them into a single ZIP file for download. Register your school to enable this feature.`,
+                          description: `In production, this would generate ${DEMO_STUDENT_INDEX.length} individual student PDFs and bundle them into a single ZIP file for download. Register your school to enable this feature.`,
                         })
                       }}
                     >
@@ -997,7 +996,7 @@ export default function ReportsPage() {
             <Card className="bg-card border-border print-avoid-break">
               <CardHeader>
                 <CardTitle className="text-foreground text-xl">
-                  {selectedYearGroup.label} -- Performance Report
+                  {selectedYearGroup.label} - Performance Report
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
                   {selectedYearGroup.studentCount} students across {selectedYearGroup.classCount}{' '}
@@ -1372,7 +1371,7 @@ export default function ReportsPage() {
             <Card className="bg-card border-border print-avoid-break">
               <CardHeader>
                 <CardTitle className="text-foreground text-xl">
-                  {selectedClass.name} -- Class Report
+                  {selectedClass.name} - Class Report
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
                   Teacher: {selectedClass.teacher} | {selectedClass.yearGroup} |{' '}
@@ -1442,7 +1441,7 @@ export default function ReportsPage() {
             <Card className="bg-card border-border print-avoid-break">
               <CardHeader>
                 <CardTitle className="text-foreground">
-                  {tr(`Student Progress -- RAG Status`)}
+                  {tr(`Student Progress - RAG Status`)}
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
                   {tr(`Red: below 50% | Amber: 50-69% | Green: 70%+`)}
@@ -1579,9 +1578,9 @@ export default function ReportsPage() {
                 onChange={(e) => setSelectedStudentId(e.target.value)}
                 className="bg-card border border-border rounded-lg px-3 py-2 text-sm text-foreground focus:outline-none focus:border-ring"
               >
-                {DEMO_STUDENTS.map((s) => (
+                {DEMO_STUDENT_INDEX.map((s) => (
                   <option key={s.id} value={s.id}>
-                    {s.name} -- {s.className}
+                    {s.name} - {s.className}
                   </option>
                 ))}
               </select>
@@ -1596,7 +1595,7 @@ export default function ReportsPage() {
                 <div className="flex items-start justify-between">
                   <div>
                     <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">
-                      {DEMO_SCHOOL.name} -- Student Report Card
+                      {DEMO_SCHOOL.name} - Student Report Card
                     </p>
                     <h2 className="text-2xl font-bold text-foreground">{selectedStudent.name}</h2>
                     <p className="text-foreground/80 mt-1">
@@ -1651,7 +1650,7 @@ export default function ReportsPage() {
                     Last active: {selectedStudent.lastActive}
                     {selectedStudent.atRisk && (
                       <span className="text-red-700 dark:text-red-300 ml-3">
-                        -- At Risk: {selectedStudent.riskReason}
+                        - At Risk: {selectedStudent.riskReason}
                       </span>
                     )}
                   </p>
@@ -1821,7 +1820,7 @@ export default function ReportsPage() {
                           : `${selectedStudent.name} requires significant additional support to get back on track. Attendance and engagement have been concerns. A meeting with parents/carers is recommended to discuss an intervention plan.`}
                     </p>
                     <p className="text-xs text-muted-foreground/70 mt-3">
-                      -- {selectedStudent.teacherName}
+                      - {selectedStudent.teacherName}
                     </p>
                   </div>
                 </div>
@@ -1933,7 +1932,7 @@ export default function ReportsPage() {
               >
                 {DEMO_TEACHERS.map((t) => (
                   <option key={t.id} value={t.id}>
-                    {t.name} -- {t.department}
+                    {t.name} - {t.department}
                   </option>
                 ))}
               </select>
@@ -1943,7 +1942,7 @@ export default function ReportsPage() {
             <Card className="bg-card border-border print-avoid-break">
               <CardHeader>
                 <CardTitle className="text-foreground text-xl">
-                  {selectedTeacher.name} -- Performance Report
+                  {selectedTeacher.name} - Performance Report
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
                   {selectedTeacher.department} | {selectedTeacher.yearsExperience ?? 5} years
@@ -2084,7 +2083,7 @@ export default function ReportsPage() {
               </CardHeader>
               <CardContent>
                 {(() => {
-                  const teacherStudents = DEMO_STUDENTS.filter((s) =>
+                  const teacherStudents = DEMO_STUDENT_INDEX.filter((s) =>
                     teacherClasses.some((c) => c.id === s.classId),
                   )
                   if (teacherStudents.length === 0)

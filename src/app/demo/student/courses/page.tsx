@@ -26,14 +26,14 @@ const COURSES = [
   },
   {
     id: 'aqa-lit-inspector',
-    title: 'AQA Literature -- Inspector Calls',
+    title: 'AQA Literature - Inspector Calls',
     modules: 10,
     progress: 80,
     description: 'Character analysis, themes, and essay writing for An Inspector Calls.',
   },
   {
     id: 'aqa-lit-poetry',
-    title: 'AQA Literature -- Poetry',
+    title: 'AQA Literature - Poetry',
     modules: 8,
     progress: 30,
     description: 'Poetry analysis, comparison essays, and unseen poetry techniques.',
@@ -81,7 +81,7 @@ export default function StudentCoursesPage() {
             {t('demo_student.courses.title')}
           </h1>
           <p className="text-muted-foreground text-sm mt-1">
-            {STUDENT.name} -- {STUDENT.year}
+            {STUDENT.name} - {STUDENT.year}
           </p>
         </div>
 

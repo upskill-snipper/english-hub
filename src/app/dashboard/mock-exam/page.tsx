@@ -23,14 +23,21 @@ import {
   Loader2,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+// PERF: this page is 'use client'. Importing the paper helpers from
+// '@/data/mock-exams' pulled the whole ~2.8 MB paper bank (every extract,
+// question, model answer and mark scheme) into this route's First Load JS,
+// even though the config screen only lists paper titles, marks and durations.
+// The board/paper pickers now read the metadata index, and the full paper is
+// dynamic-imported once the student actually opens it.
+// `mockExamPapers` and `MockExamSection` were imported but never used.
 import {
-  mockExamPapers,
-  getMockExamsByBoard,
-  getMockExamById,
+  countMockExamsByBoard,
+  getMockExamSummariesByBoard,
+  getMockExamSummaryById,
   formatExamTime,
-  type MockExamPaper,
-  type MockExamSection,
-} from '@/data/mock-exams'
+} from '@/data/mock-exams/paper-index'
+import { loadMockExamPaper } from '@/data/mock-exam-loader'
+import type { MockExamPaper } from '@/data/mock-exams/types'
 import { useAuthUserLoading } from '@/store/auth-store'
 import {
   useExamStore,
@@ -76,6 +83,105 @@ function wordCountForAnswer(text: string): number {
   const trimmed = text.trim()
   if (!trimmed) return 0
   return trimmed.split(/\s+/).length
+}
+
+type PaperLoadStatus = 'loading' | 'ready' | 'missing' | 'error'
+
+/**
+ * Fetch one paper's full content (questions, extracts, model answers, mark
+ * schemes) on demand.
+ *
+ * PERF: the questions used to arrive with the page bundle, which is what made
+ * this route's First Load JS ~2.8 MB heavier than it needed to be. Paper
+ * metadata still resolves synchronously from the index, so callers can keep
+ * the timer, the header and auto-submit working while the questions arrive.
+ *
+ * On failure it reports `error`/`missing` and returns no paper. It must never
+ * fall back to placeholder questions: a student sitting a timed mock has to be
+ * told the paper did not load, not shown invented content.
+ */
+function useMockExamPaper(examId: string | null): {
+  paper: MockExamPaper | null
+  status: PaperLoadStatus
+} {
+  const [paper, setPaper] = useState<MockExamPaper | null>(null)
+  const [status, setStatus] = useState<PaperLoadStatus>('loading')
+
+  useEffect(() => {
+    if (!examId) {
+      setPaper(null)
+      setStatus('missing')
+      return
+    }
+
+    let cancelled = false
+    setStatus('loading')
+    loadMockExamPaper(examId)
+      .then((loaded) => {
+        if (cancelled) return
+        if (!loaded) {
+          setPaper(null)
+          setStatus('missing')
+          return
+        }
+        setPaper(loaded)
+        setStatus('ready')
+      })
+      .catch((error) => {
+        if (cancelled) return
+        console.error('[Mock Exam] Failed to load paper', examId, error)
+        setPaper(null)
+        setStatus('error')
+      })
+
+    return () => {
+      cancelled = true
+    }
+  }, [examId])
+
+  return { paper, status }
+}
+
+/** Shown while a paper's questions are downloading. */
+function PaperLoadingState({ label }: { label: string }) {
+  return (
+    <div className="flex min-h-[50vh] flex-col items-center justify-center gap-3 px-4 text-center">
+      <Loader2 className="h-6 w-6 animate-spin text-primary" />
+      <p className="text-sm text-muted-foreground">{label}</p>
+    </div>
+  )
+}
+
+/**
+ * Shown when a paper cannot be fetched. Deliberately offers a retry and a way
+ * out rather than rendering an empty exam.
+ */
+function PaperLoadErrorState({ status }: { status: 'missing' | 'error' }) {
+  return (
+    <div className="mx-auto max-w-lg px-4 py-16 text-center">
+      <AlertTriangle className="mx-auto mb-3 h-8 w-8 text-clay-600" />
+      <h2 className="mb-2 text-lg font-semibold text-foreground">
+        {status === 'missing' ? 'This paper is no longer available' : 'We could not load the paper'}
+      </h2>
+      <p className="mb-5 text-sm text-muted-foreground">
+        {status === 'missing'
+          ? 'The paper you selected has been moved or withdrawn. Please choose another paper.'
+          : 'Something went wrong fetching the questions. Check your connection and try again.'}
+      </p>
+      <div className="flex flex-wrap items-center justify-center gap-3">
+        {status === 'error' && (
+          <Button onClick={() => window.location.reload()}>
+            <RotateCcw className="h-4 w-4" />
+            Try again
+          </Button>
+        )}
+        <Button variant="outline" render={<Link href="/dashboard" />}>
+          <ChevronLeft className="h-4 w-4" />
+          Back to dashboard
+        </Button>
+      </div>
+    </div>
+  )
 }
 
 // ─── Board Config ────────────────────────────────────────────────────────────
@@ -225,11 +331,13 @@ function ExamConfigScreen() {
   // Aggregate every paper across every legacy name that maps to the user's
   // board. Important for IGCSE/IAL where papers may be tagged "IGCSE" or
   // "Edexcel" in the underlying data.
+  // Metadata only - the picker renders titles, marks and durations, so there
+  // is no reason for it to hold question text in memory.
   const availablePapers = useMemo(() => {
     if (!selectedBoard) return []
-    return allowedBoardNames.flatMap((name) => getMockExamsByBoard(name))
+    return allowedBoardNames.flatMap((name) => getMockExamSummariesByBoard(name))
   }, [selectedBoard, allowedBoardNames])
-  const selectedPaper = selectedExamId ? getMockExamById(selectedExamId) : null
+  const selectedPaper = selectedExamId ? getMockExamSummaryById(selectedExamId) : null
 
   const handleStart = () => {
     if (!selectedPaper) return
@@ -285,8 +393,8 @@ function ExamConfigScreen() {
                   {board}
                 </div>
                 <div className="mt-0.5 text-xs text-muted-foreground">
-                  {getMockExamsByBoard(board).length}{' '}
-                  {getMockExamsByBoard(board).length !== 1
+                  {countMockExamsByBoard(board)}{' '}
+                  {countMockExamsByBoard(board) !== 1
                     ? t('dashboard.mock.paper_avail_p')
                     : t('dashboard.mock.paper_avail_s')}
                 </div>
@@ -312,7 +420,17 @@ function ExamConfigScreen() {
               return (
                 <button
                   key={paper.id}
-                  onClick={() => setSelectedExamId(paper.id)}
+                  onClick={() => {
+                    setSelectedExamId(paper.id)
+                    // QA 2026-08-23: the questions are no longer in the page
+                    // bundle, so without this the chunk only starts downloading
+                    // AFTER "Start Mock Exam" - i.e. with the exam clock already
+                    // running. Warm it the moment a paper is picked; the loader
+                    // caches per source, so this costs at most one fetch.
+                    void loadMockExamPaper(paper.id).catch(() => {})
+                  }}
+                  onMouseEnter={() => void loadMockExamPaper(paper.id).catch(() => {})}
+                  onFocus={() => void loadMockExamPaper(paper.id).catch(() => {})}
                   className={cn(
                     'group relative rounded-xl border p-4 text-left transition-all duration-200',
                     'hover:border-border/80 hover:shadow-sm',
@@ -390,8 +508,9 @@ function ExamConfigScreen() {
                         : t('dashboard.mock.section_s')}
                     </div>
                     <div className="text-xs text-muted-foreground">
-                      {selectedPaper.sections.reduce((a, s) => a + s.questions.length, 0)}{' '}
-                      {t('dashboard.mock.questions_total')}
+                      {/* Pre-computed in the index so the summary card does not
+                          need the questions themselves. */}
+                      {selectedPaper.questionCount} {t('dashboard.mock.questions_total')}
                     </div>
                   </div>
                 </div>
@@ -447,7 +566,9 @@ function ExamConfigScreen() {
           </h2>
           <div className="space-y-2">
             {examHistory.slice(0, 5).map((attempt) => {
-              const paper = getMockExamById(attempt.examId)
+              // The attempt record already carries `paperTitle` and `board`;
+              // the old `getMockExamById(attempt.examId)` lookup here was
+              // never read, so it only served to keep the paper bank alive.
               const timeUsed = Math.round(attempt.timeSpentSeconds / 60)
               const answeredCount = Object.values(attempt.answers).filter(
                 (a) => a.trim().length > 0,
@@ -496,15 +617,20 @@ function ExamInProgress() {
   const { currentSectionIndex, setSection, nextSection, prevSection } = useExamNavigation()
   const { setAnswer, submitExam } = useExamActions()
 
-  const paper = currentExamId ? getMockExamById(currentExamId) : null
+  // Metadata resolves synchronously from the index, so the timer, the header
+  // and auto-submit stay correct while the questions are still downloading.
+  const summary = currentExamId ? getMockExamSummaryById(currentExamId) : null
+  const { paper, status: paperStatus } = useMockExamPaper(currentExamId)
   const [showSubmitDialog, setShowSubmitDialog] = useState(false)
   const [timerWarning, setTimerWarning] = useState<TimerWarning>('none')
 
   const handleTimeUp = useCallback(() => {
-    if (paper) {
-      submitExam(paper.board, paper.title)
+    // Driven by the summary, not the fetched paper: a student whose connection
+    // stalled must still have their attempt submitted when time runs out.
+    if (summary) {
+      submitExam(summary.board, summary.title)
     }
-  }, [paper, submitExam])
+  }, [summary, submitExam])
 
   const handleWarning = useCallback((warning: TimerWarning) => {
     setTimerWarning(warning)
@@ -524,7 +650,7 @@ function ExamInProgress() {
     percentRemaining,
     isExpired,
     tabSwitchCount,
-  } = useExamTimer(paper?.totalTimeMinutes ?? 0, {
+  } = useExamTimer(summary?.totalTimeMinutes ?? 0, {
     onTimeUp: handleTimeUp,
     onWarning: handleWarning,
     onTabSwitch: handleTabSwitch,
@@ -532,14 +658,20 @@ function ExamInProgress() {
 
   // Auto-submit if time expired on rehydration (e.g. user closed the tab and came back after time ran out)
   useEffect(() => {
-    if (isExpired && paper) {
-      submitExam(paper.board, paper.title)
+    if (isExpired && summary) {
+      submitExam(summary.board, summary.title)
     }
     // Only run when isExpired becomes true, not on every render
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isExpired])
 
-  if (!paper) return null
+  if (!summary) return null
+  if (paperStatus === 'loading') return <PaperLoadingState label="Loading your exam paper..." />
+  if (!paper) {
+    // Never render an exam shell with no questions - the student would sit a
+    // timed mock against an empty paper.
+    return <PaperLoadErrorState status={paperStatus === 'missing' ? 'missing' : 'error'} />
+  }
 
   const section = paper.sections[currentSectionIndex]
   const totalQuestions = paper.sections.reduce((a, s) => a + s.questions.length, 0)
@@ -943,8 +1075,15 @@ function ExamResults() {
   const [showModelAnswers, setShowModelAnswers] = useState<Record<string, boolean>>({})
   const [selectedGrade, setSelectedGrade] = useState<string>('Grade 6-7')
 
-  const paper = currentExamId ? getMockExamById(currentExamId) : null
+  // The results screen shows model answers and mark schemes, so it does need
+  // the full paper - but only now, after the student has finished, rather than
+  // in the page bundle.
+  const { paper, status: paperStatus } = useMockExamPaper(currentExamId)
   const latestAttempt = examHistory[0]
+
+  if (paperStatus === 'loading' && latestAttempt) {
+    return <PaperLoadingState label="Loading your results..." />
+  }
 
   if (!paper || !latestAttempt) {
     return (

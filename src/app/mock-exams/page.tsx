@@ -25,12 +25,12 @@ import {
   Layers,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import {
-  getMockExamsByBoard,
-  getAvailableBoards,
-  formatExamTime,
-  type MockExamPaper,
-} from '@/data/mock-exams'
+// PERF: this page is 'use client' and only needs board names and paper counts.
+// Importing them from '@/data/mock-exams' dragged the whole ~2.8 MB paper bank
+// (every extract, question and mark scheme) into this route's First Load JS.
+// The index carries metadata only; `formatExamTime` and `MockExamPaper` were
+// imported here but never used, so they are gone.
+import { getAvailableBoards, countMockExamsByBoard } from '@/data/mock-exams/paper-index'
 import { useBoard, getBoardConfig, type ExamBoard } from '@/hooks/useBoard'
 import { useT } from '@/lib/i18n/use-t'
 
@@ -806,7 +806,9 @@ export default function MockExamsPage() {
   const boardConfig = getBoardConfig(effectiveBoard)
 
   const totalPapers = useMemo(
-    () => allBoards.reduce((sum, b) => sum + getMockExamsByBoard(b).length, 0),
+    // Counts come from the metadata index now - `countMockExamsByBoard` also
+    // avoids allocating a filtered array per board just to read `.length`.
+    () => allBoards.reduce((sum, b) => sum + countMockExamsByBoard(b), 0),
     [allBoards],
   )
 

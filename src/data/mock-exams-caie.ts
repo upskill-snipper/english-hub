@@ -4,7 +4,10 @@
 // Paper 1: Reading Passages & Comprehension (96 marks, 2 hours)
 // Paper 2: Directed Writing & Composition (104 marks, 2 hours)
 
-import type { MockExamPaper } from './mock-exams'
+// QA 2026-08-23: repointed from the aggregator to the type-only leaf so this
+// lazy loader source cannot reach `src/data/mock-exams.ts` (which statically
+// imports every bank) if the `type` keyword is ever dropped here.
+import type { MockExamPaper } from './mock-exams/types'
 
 // ─── Paper 1: Reading Passages & Comprehension ────────────────────────────────
 

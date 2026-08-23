@@ -1,5 +1,5 @@
 // @ts-nocheck
-import type { MockExamPaper } from '../mock-exams'
+import type { MockExamPaper } from './types'
 
 // ─── OCR Paper 2 Mock Exams (Set B) ─────────────────────────────────────────
 // Component 02: Exploring Effects and Impact (J351/02)

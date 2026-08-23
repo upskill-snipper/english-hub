@@ -165,7 +165,7 @@ Dickens uses Scrooge's transformation to argue that anyone can change and that t
     ],
     feedback: [
       "A solid response that shows you understand Scrooge's journey from miser to generous benefactor. Your point about the contrast between complex negative adjectives and simple goodness is genuinely insightful and shows original thinking.",
-      "To improve, you need to develop your analytical skills. When you identify a technique, always explain WHY the writer has used it and WHAT effect it has on the reader. Your contextual knowledge also needs building -- research the conditions of the Victorian poor and Dickens' own experiences to strengthen your AO3 marks significantly.",
+      "To improve, you need to develop your analytical skills. When you identify a technique, always explain WHY the writer has used it and WHAT effect it has on the reader. Your contextual knowledge also needs building - research the conditions of the Victorian poor and Dickens' own experiences to strengthen your AO3 marks significantly.",
     ],
   },
 ]

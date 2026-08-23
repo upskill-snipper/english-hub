@@ -1,7 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { DEMO_TEACHERS, DEMO_CLASSES } from '@/data/demo-data'
+import { DEMO_TEACHERS } from '@/data/demo/teachers'
+import { DEMO_CLASSES } from '@/data/demo/classes'
 import DemoBanner from '@/components/demo/DemoBanner'
 import { useT } from '@/lib/i18n/use-t'
 

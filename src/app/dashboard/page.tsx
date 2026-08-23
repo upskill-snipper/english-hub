@@ -31,10 +31,15 @@ import { useSearchParams } from 'next/navigation'
 import { trackEvent } from '@/lib/gtag'
 import { capture as phCapture, EVENTS as PH_EVENTS } from '@/lib/posthog'
 import { useAuthStore } from '@/store/auth-store'
-import { loadAllCourses } from '@/data/course-loader'
+// The dashboard renders course cards and an activity feed: it needs titles,
+// colours, levels and module names, never lesson bodies. It used to call
+// `loadAllCourses()`, downloading ~7.2 MB of lesson content and quiz banks on
+// mount to build a course map of metadata.
+import { loadCourseIndex } from '@/data/course-loader'
+import type { CourseIndexEntry } from '@/data/course-index'
 import { cn, formatDate } from '@/lib/utils'
 import { percentageToGCSEGradeLabel } from '@/lib/grades'
-import type { Enrolment, ModuleProgress, Certificate, CourseData } from '@/lib/types'
+import type { Enrolment, ModuleProgress, Certificate } from '@/lib/types'
 import { DobNudge } from '@/components/profile/DobNudge'
 
 import {
@@ -146,7 +151,7 @@ export default function DashboardPage() {
   const { user, profile, isLoading } = useAuthStore()
   const router = useRouter()
   const searchParams = useSearchParams()
-  const [allCourses, setAllCourses] = useState<CourseData[]>([])
+  const [allCourses, setAllCourses] = useState<CourseIndexEntry[]>([])
   const [enrolments, setEnrolments] = useState<Enrolment[]>([])
   const [moduleProgress, setModuleProgress] = useState<ModuleProgress[]>([])
   const [certificates, setCertificates] = useState<Certificate[]>([])
@@ -157,13 +162,13 @@ export default function DashboardPage() {
   const [showWelcome, setShowWelcome] = useState(searchParams.get('welcome') === 'true')
 
   const courseMap = useMemo(
-    () => new Map<string, CourseData>(allCourses.map((c) => [c.id, c])),
+    () => new Map<string, CourseIndexEntry>(allCourses.map((c) => [c.id, c])),
     [allCourses],
   )
 
-  // Load course data dynamically
+  // Load course metadata dynamically (index only - see the import note above)
   useEffect(() => {
-    loadAllCourses().then(setAllCourses)
+    loadCourseIndex().then(setAllCourses)
   }, [])
 
   // Auth redirect guard
@@ -275,7 +280,7 @@ export default function DashboardPage() {
         const course = courseMap.get(courseId)
         if (!course) return null
 
-        const totalModules = course.moduleList.length
+        const totalModules = course.moduleCount
         const completedModuleIds = new Set(
           moduleProgress
             .filter((mp) => mp.course_id === courseId && mp.completed)
@@ -297,11 +302,11 @@ export default function DashboardPage() {
       .filter(Boolean) as Array<{
       id: string
       course_id: string
-      course: CourseData
+      course: CourseIndexEntry
       totalModules: number
       completedModules: number
       progress: number
-      nextModule: CourseData['moduleList'][number] | undefined
+      nextModule: CourseIndexEntry['moduleList'][number] | undefined
     }>
   }, [enrolments, moduleProgress, courseMap])
 
@@ -973,11 +978,11 @@ function CourseCard({
   ec: {
     id: string
     course_id: string
-    course: CourseData
+    course: CourseIndexEntry
     totalModules: number
     completedModules: number
     progress: number
-    nextModule: CourseData['moduleList'][number] | undefined
+    nextModule: CourseIndexEntry['moduleList'][number] | undefined
   }
   t: Translator
 }) {

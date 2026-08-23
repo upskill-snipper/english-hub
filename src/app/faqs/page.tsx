@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { ArrowRight, Mail } from 'lucide-react'
 import { tMany } from '@/lib/i18n/t'
-import { FAQ_JSON_LD_DATA } from './faq-data'
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 /**
  * /faqs - Server-rendered FAQs for SEO + rich results.
@@ -10,11 +10,15 @@ import { FAQ_JSON_LD_DATA } from './faq-data'
  * to read answers). Expand / collapse is handled by the native <details>
  * element, so crawlers and users with JS disabled still see everything.
  *
- * The page also emits inline FAQPage JSON-LD (in addition to the layout's
- * <FAQPageJsonLd /> helper) so the structured data travels with the page
- * document itself - belt and braces for rich-result eligibility. The
- * inline JSON-LD always uses the canonical English copy from faq-data.ts
- * so the structured-data feed stays stable across locales.
+ * STRUCTURED DATA: the FAQPage node is emitted ONCE, by `layout.tsx` via
+ * the shared <FAQPageJsonLd /> helper, from the canonical English copy in
+ * faq-data.ts (so the feed stays stable across locales). This page used to
+ * emit a SECOND, hand-rolled <script type="application/ld+json"> with the
+ * identical payload as "belt and braces" - that is not belt and braces, it
+ * is two FAQPage entities on one URL, which is a structured-data defect
+ * (Google picks one arbitrarily) and shipped the whole FAQ corpus twice in
+ * the HTML. Removed 2026-08-23. This page adds only the BreadcrumbList,
+ * which nothing else emits for /faqs.
  */
 export default async function FaqsPage() {
   const keys = [
@@ -218,27 +222,16 @@ export default async function FaqsPage() {
     },
   ]
 
-  // JSON-LD stays canonical English from faq-data.ts so structured-data
-  // feeds remain stable across locales.
-  const ldJson = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: FAQ_JSON_LD_DATA.map((f) => ({
-      '@type': 'Question',
-      name: f.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: f.answer,
-      },
-    })),
-  }
-
   return (
     <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
-      {/* Inline FAQPage JSON-LD - keeps structured data attached to the page document. */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(ldJson) }}
+      {/* BreadcrumbList - /faqs previously emitted no breadcrumb structured
+          data at all, so the page had no declared position in the site
+          hierarchy. Names stay canonical English to match the URLs. */}
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'FAQs', url: 'https://theenglishhub.app/faqs' },
+        ]}
       />
 
       {/* Header */}

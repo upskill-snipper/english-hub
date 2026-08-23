@@ -22,8 +22,7 @@ import { Input } from '@/components/ui/input'
 import { Switch } from '@/components/ui/switch'
 import { Badge } from '@/components/ui/badge'
 import { useToast } from '@/components/ui/Toast'
-import { DEMO_SCHOOL } from '@/data/demo-data'
-
+import { DEMO_SCHOOL } from '@/data/demo/school'
 const DEMO_ADMINS = [
   { name: 'Dr. Sarah Mitchell', email: 'mitchell@riverside.demo', role: 'Owner' },
   { name: 'Mr. James Ward', email: 'ward@riverside.demo', role: 'Admin' },

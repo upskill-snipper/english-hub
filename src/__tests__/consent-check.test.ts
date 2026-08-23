@@ -27,6 +27,17 @@ vi.mock('@/lib/supabase/server', () => ({
 
 const mockHasConsent = vi.fn()
 
+// The AI gate raises the guardian consent request as a side effect, via a
+// dynamic import. Mocked so the tests assert the trigger fires without
+// reaching Supabase, Upstash or an email provider.
+const mockSendGuardianConsentRequest = vi.fn()
+const mockGetGuardianConsentState = vi.fn()
+
+vi.mock('@/lib/parental-consent', () => ({
+  sendGuardianConsentRequest: (...args: unknown[]) => mockSendGuardianConsentRequest(...args),
+  getGuardianConsentState: (...args: unknown[]) => mockGetGuardianConsentState(...args),
+}))
+
 vi.mock('@/lib/consent', () => ({
   hasConsent: (...args: unknown[]) => mockHasConsent(...args),
   CONSENT_TYPES: {
@@ -54,6 +65,16 @@ function resetMocks() {
   mockLimit.mockReset()
   mockSingle.mockReset()
   mockHasConsent.mockReset()
+  mockSendGuardianConsentRequest.mockReset()
+  mockGetGuardianConsentState.mockReset()
+
+  // Default: nothing was sent and nothing is on record, which is the
+  // quietest outcome - a test that cares about the send says so explicitly.
+  mockSendGuardianConsentRequest.mockResolvedValue({
+    sent: false,
+    reason: 'no_guardian_email',
+  })
+  mockGetGuardianConsentState.mockResolvedValue({ lastSentAt: null, guardianEmailMasked: null })
 
   // Restore default chaining
   mockFrom.mockReturnValue({ select: mockSelect })
@@ -170,13 +191,40 @@ describe('checkMinorAIConsent', () => {
     expect(result.allowed).toBe(true)
   })
 
-  it('checks AI consent before parental consent (short-circuits)', async () => {
+  // Ordering changed 2026-08-23 (QA). The guardian consent request is raised
+  // from checkMinorAIConsent, and it used to sit after an early return on the
+  // AI_PROCESSING ledger check - a ledger that cannot hold a row for a
+  // Supabase-native account. For the 13-15 self-signup the loop was built for,
+  // the trigger therefore never fired. Parental consent is now evaluated
+  // first; these two tests pin that down so it is not silently reordered back.
+  it('evaluates parental consent before the AI-processing ledger', async () => {
     mockHasConsent.mockResolvedValue(false)
 
     const { checkMinorAIConsent } = await import('@/lib/consent-check')
     await checkMinorAIConsent('user-no-ai')
 
-    // Prisma should NOT have been called because AI consent check fails first
-    expect(mockFindUnique).not.toHaveBeenCalled()
+    // The parental leg runs first, so identity resolution has been attempted.
+    expect(mockFindUnique).toHaveBeenCalled()
+  })
+
+  it('raises the guardian consent request for a blocked minor even without AI consent', async () => {
+    mockHasConsent.mockResolvedValue(false)
+    mockFindUnique.mockResolvedValue({ id: 'child-1', isMinor: true, parentId: null })
+    mockSingle.mockResolvedValue({ data: null, error: { code: 'PGRST116' } })
+    mockSendGuardianConsentRequest.mockResolvedValue({
+      sent: true,
+      guardianEmailMasked: 'p***@e***.com',
+      expiresAt: '2026-08-30T00:00:00.000Z',
+    })
+
+    const { checkMinorAIConsent } = await import('@/lib/consent-check')
+    const result = await checkMinorAIConsent('child-blocked')
+
+    expect(mockSendGuardianConsentRequest).toHaveBeenCalledWith({
+      studentUserId: 'child-blocked',
+      trigger: 'ai_gate',
+    })
+    expect(result.allowed).toBe(false)
+    expect(result.reason).toMatch(/p\*\*\*@e\*\*\*\.com/)
   })
 })
