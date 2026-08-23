@@ -70,7 +70,7 @@ export const FAQ_SECTIONS: FaqSection[] = [
       },
       {
         question: 'Is there a free trial? Do I need a card?',
-        answer: `Yes, and you do not need a card to start. Creating an account gives you a ${PRICING.TRIAL_TEXT} of the full product with no payment details taken. If you later choose a paid plan at checkout, that subscription also begins with ${PRICING.TRIAL_DAYS} free days with your card on file - cancel before day ${PRICING.TRIAL_DAYS} and you are not charged. You also get ${PRICING.FREE_USES_PER_FEATURE} free demo uses of most premium tools.`,
+        answer: `Yes, and you do not need a card to start. Creating an account gives you a ${PRICING.TRIAL_TEXT} of the full product with no payment details taken. If you later choose a paid plan at checkout, that subscription also begins with ${PRICING.TRIAL_DAYS} free days with your card on file - cancel before day ${PRICING.TRIAL_DAYS} and you are not charged.`,
       },
       {
         question: 'What happens after my 7-day trial ends?',

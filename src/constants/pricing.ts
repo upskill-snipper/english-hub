@@ -123,7 +123,11 @@ export const PRICING = {
   STANDARD_PRICE_LABEL: 'Planned standard pricing',
 
   // ── Misc ────────────────────────────────────────────────────────────
-  FREE_USES_PER_FEATURE: 3,
+  // 2026-08-23: FREE_USES_PER_FEATURE removed. It fed "3 free uses" marketing
+  // copy for a per-feature demo-credit mechanic that was never implemented on
+  // the web (web gates are binary on subscription_status; demo credits exist
+  // only as a mobile concept). The real free offer - and the only one copy may
+  // claim - is the 7-day no-card trial provisioned at signup (Option C below).
   CURRENCY: '£',
   SCHOOL_CURRENCY: '£',
 

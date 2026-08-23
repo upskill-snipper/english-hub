@@ -487,7 +487,7 @@ export default async function ForParentsPage() {
                 {ctaStartTrial}
               </Button>
               <p className="text-center text-xs text-muted-foreground mt-3">
-                No card required to start &middot; 3 free demo uses before signing up
+                No card required to start &middot; 7-day free trial when you sign up
               </p>
               <p className="text-center text-xs text-muted-foreground mt-2">
                 Or save with the annual plan: {PRICING.CURRENCY}

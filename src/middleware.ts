@@ -289,7 +289,13 @@ function buildCsp(nonce: string, extraScriptHashes: string[] = []): string {
     //                          (eu-assets.i.posthog.com / us-assets.i.posthog.com)
     //   js.stripe.com        → Stripe Checkout SDK
     //   r.wdfl.co            → Rewardful affiliate tracker
-    `script-src 'self' 'unsafe-inline'${extraSrc} https://js.stripe.com https://r.wdfl.co https://www.googletagmanager.com https://*.i.posthog.com`,
+    //   widget.trustpilot.com    → TrustBox widget bootstrap (components/trustpilot)
+    //   invitejs.trustpilot.com  → Trustpilot InviteJS (root layout)
+    //   static.cloudflareinsights.com → Cloudflare Web Analytics beacon
+    //     (2026-08-23: all three were live in the page but silently BLOCKED by
+    //     this policy - the TrustBox rendered only its fallback, review
+    //     invitations never fired, and CF analytics collected nothing.)
+    `script-src 'self' 'unsafe-inline'${extraSrc} https://js.stripe.com https://r.wdfl.co https://www.googletagmanager.com https://*.i.posthog.com https://widget.trustpilot.com https://invitejs.trustpilot.com https://static.cloudflareinsights.com`,
     `style-src 'self' 'unsafe-inline'`, // Tailwind JIT inlines styles; acceptable.
     `img-src 'self' data: https:`,
     `font-src 'self' data:`,
@@ -303,8 +309,11 @@ function buildCsp(nonce: string, extraScriptHashes: string[] = []): string {
     //   *.googletagmanager.com      → GA4 server-side container fallback
     //   *.i.posthog.com             → PostHog capture (eu.i / us.i)
     //   *.posthog.com               → PostHog feature flags + decide endpoint
-    `connect-src 'self' https://*.supabase.co https://api.stripe.com https://r.wdfl.co https://*.ingest.sentry.io https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.i.posthog.com https://*.posthog.com`,
-    `frame-src https://js.stripe.com https://hooks.stripe.com`,
+    //   cloudflareinsights.com      → CF Web Analytics beacon POST (/cdn-cgi/rum)
+    //   invitejs.trustpilot.com     → Trustpilot invite event calls
+    `connect-src 'self' https://*.supabase.co https://api.stripe.com https://r.wdfl.co https://*.ingest.sentry.io https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.i.posthog.com https://*.posthog.com https://cloudflareinsights.com https://invitejs.trustpilot.com`,
+    // widget.trustpilot.com → the TrustBox renders inside an iframe
+    `frame-src https://js.stripe.com https://hooks.stripe.com https://widget.trustpilot.com`,
     `frame-ancestors 'self'`,
     `form-action 'self'`,
     `object-src 'none'`,

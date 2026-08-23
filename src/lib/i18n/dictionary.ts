@@ -1467,9 +1467,9 @@ export const DICTIONARY: Dictionary = {
     es: '¿Hay una prueba gratuita? ¿Necesito tarjeta?',
   },
   'home.faq_full.a_trial': {
-    en: 'Two things. Every paid plan starts with a 7-day free trial - that requires full sign-up with a valid card. Cancel before day 7 from your account settings and you won’t be charged. Separately, every registered account gets 3 free uses of most premium features (AI marking, mock exams, lesson plans, etc.) so you can demo the product before putting a card down.',
-    ar: 'شيئين. كل باقة مدفوعة تبدأ بتجربة ٧ أيام ببلاش - وهذي تحتاج تسجيل كامل ببطاقة شغّالة. ألغِ قبل اليوم السابع من إعدادات حسابك وما بنخصم شي. ومنفصل عن ذلك، كل حساب مسجَّل ياخذ ٣ استخدامات ببلاش لمعظم الميزات المميزة (تصحيح بالذكاء الاصطناعي، امتحانات تجريبية، خطط دروس، إلخ) عشان تجرّب المنتج قبل ما تدخل بطاقة.',
-    es: 'Dos cosas. Todo plan de pago comienza con una prueba gratuita de 7 días - eso requiere un registro completo con una tarjeta válida. Cancela antes del día 7 desde la configuración de tu cuenta y no se te cobrará. Por separado, cada cuenta registrada recibe 3 usos gratuitos de la mayoría de las funciones premium (corrección con IA, exámenes de prueba, planes de clase, etc.) para que puedas probar el producto antes de poner una tarjeta.',
+    en: 'Two things. Creating an account starts a 7-day free trial of the full product - no card needed. Separately, if you start a paid plan at checkout, the plan begins with 7 free days with your card on file - cancel before day 7 from your account settings and you won’t be charged.',
+    ar: 'شيئين. لما تسوي حساب تبدأ تجربة مجانية ٧ أيام للمنتج كامل - ما تحتاج بطاقة. ومنفصل عن ذلك، إذا بديت باقة مدفوعة من صفحة الدفع، تبدأ الباقة بـ ٧ أيام مجانية مع بطاقتك المحفوظة - ألغِ قبل اليوم السابع من إعدادات حسابك وما بنخصم شي.',
+    es: 'Dos cosas. Al crear una cuenta comienza una prueba gratuita de 7 días del producto completo - sin tarjeta. Por separado, si inicias un plan de pago en el checkout, el plan comienza con 7 días gratis con tu tarjeta registrada - cancela antes del día 7 desde la configuración de tu cuenta y no se te cobrará.',
   },
   'home.faq_full.q_boards': {
     en: 'What exam boards do you cover?',
@@ -1919,9 +1919,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Infraestructura académica premium, no una app barata. Creación de clases con IA, corrección instantánea de redacciones y analíticas de progreso en tiempo real -- creadas específicamente para profesores de inglés.',
   },
   'audience.teachers.hero.demo_note': {
-    en: 'Every feature available to try - 3 free uses per tool. No credit card required.',
-    ar: 'كل ميزة متاحة للتجربة - ٣ استخدامات ببلاش لكل أداة. ما تحتاج بطاقة ائتمان.',
-    es: 'Todas las funciones disponibles para probar -- 3 usos gratuitos por herramienta. Sin tarjeta de crédito.',
+    en: 'Every feature free to try for 7 days. No credit card required.',
+    ar: 'كل ميزة متاحة للتجربة ببلاش لمدة ٧ أيام. ما تحتاج بطاقة ائتمان.',
+    es: 'Todas las funciones gratis durante 7 días. Sin tarjeta de crédito.',
   },
   'audience.teachers.cta.start_free': { en: 'Start Free', ar: 'ابدأ ببلاش', es: 'Empieza gratis' },
   'audience.teachers.cta.try_demo': { en: 'Try the Demo', ar: 'جرّب الديمو', es: 'Prueba la demo' },
@@ -2308,9 +2308,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Cursos, apuntes de repaso, tarjetas de estudio (ilimitados)',
   },
   'auth.register.included_ai': {
-    en: '3 free uses of every AI tool (marking, lesson plans, and more)',
-    ar: '٣ استخدامات مجانية لكل أداة ذكاء اصطناعي (التصحيح وخطط الدروس وأكثر)',
-    es: '3 usos gratuitos de cada herramienta de IA (corrección, planes de clase y más)',
+    en: 'Every AI tool free for 7 days (marking, lesson plans, and more)',
+    ar: 'كل أدوات الذكاء الاصطناعي ببلاش لمدة ٧ أيام (التصحيح وخطط الدروس وأكثر)',
+    es: 'Todas las herramientas de IA gratis durante 7 días (corrección, planes de clase y más)',
   },
   'auth.register.included_upgrade': {
     en: "Upgrade when you're ready - paid plans start with 7 free days",
@@ -2341,9 +2341,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Tu prueba gratuita está lista.',
   },
   'auth.register.trial_ready_body': {
-    en: 'You have 3 free uses of every premium feature - AI marking, lesson plans, and more.',
-    ar: 'عندك ٣ استخدامات مجانية لكل ميزة بريميوم - التصحيح بالذكاء الاصطناعي وخطط الدروس وأكثر.',
-    es: 'Tienes 3 usos gratuitos de cada función premium - corrección con IA, planes de clase y más.',
+    en: 'Your 7-day free trial includes every premium feature - AI marking, lesson plans, and more.',
+    ar: 'تجربتك المجانية ٧ أيام تشمل كل ميزات البريميوم - التصحيح بالذكاء الاصطناعي وخطط الدروس وأكثر.',
+    es: 'Tu prueba gratuita de 7 días incluye todas las funciones premium - corrección con IA, planes de clase y más.',
   },
   'auth.register.teacher_after_verify': {
     en: "Once verified, you'll have access to the Teacher Dashboard with lesson planning, student analytics, and assessment tools.",
@@ -2429,9 +2429,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Crea tu cuenta gratuita de profesor',
   },
   'auth.teacher.subtitle': {
-    en: 'Save 5+ hours per week with AI lesson planning and marking. 3 free uses of every AI tool. Upgrade for unlimited.',
-    ar: 'وفّر ٥ ساعات أو أكثر بالأسبوع مع تخطيط الدروس والتصحيح بالذكاء الاصطناعي. ٣ استخدامات مجانية لكل أداة. اشترك للوصول بلا حدود.',
-    es: 'Ahorra más de 5 horas a la semana con la planificación de clases y la corrección con IA. 3 usos gratuitos de cada herramienta de IA. Mejora tu plan para uso ilimitado.',
+    en: 'Save 5+ hours per week with AI lesson planning and marking. Every tool free for 7 days. Upgrade for unlimited.',
+    ar: 'وفّر ٥ ساعات أو أكثر بالأسبوع مع تخطيط الدروس والتصحيح بالذكاء الاصطناعي. كل الأدوات ببلاش لمدة ٧ أيام. اشترك للوصول بلا حدود.',
+    es: 'Ahorra más de 5 horas a la semana con la planificación de clases y la corrección con IA. Todas las herramientas gratis durante 7 días. Mejora tu plan para uso ilimitado.',
   },
   'auth.teacher.pricing_line': {
     en: 'From £6.99/month - 7-day free trial, no card required to start',
@@ -2500,9 +2500,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Acceso a la demo listo.',
   },
   'auth.teacher.demo_ready_body': {
-    en: "You have 3 free uses of every premium feature - AI marking, lesson plans, and more. When you're ready, start a 7-day free trial from £6.99/month - no card required to start.",
-    ar: 'عندك ٣ استخدامات مجانية لكل ميزة بريميوم - التصحيح بالذكاء الاصطناعي وخطط الدروس وأكثر. لما تكون جاهز، ابدأ تجربة مجانية ٧ أيام من ٦٫٩٩ جنيه بالشهر - ما تحتاج بطاقة للبداية.',
-    es: 'Tienes 3 usos gratuitos de cada función premium - corrección con IA, planes de clase y más. Cuando estés listo, empieza una prueba gratuita de 7 días desde £6.99/mes - sin tarjeta para empezar.',
+    en: "Your 7-day free trial includes every premium feature - AI marking, lesson plans, and more. When you're ready to keep unlimited access, plans start from £6.99/month.",
+    ar: 'تجربتك المجانية ٧ أيام تشمل كل ميزات البريميوم - التصحيح بالذكاء الاصطناعي وخطط الدروس وأكثر. ولما تكون جاهز تكمّل بوصول بلا حدود، الباقات تبدأ من ٦٫٩٩ جنيه بالشهر.',
+    es: 'Tu prueba gratuita de 7 días incluye todas las funciones premium - corrección con IA, planes de clase y más. Cuando quieras mantener el acceso ilimitado, los planes empiezan desde £6.99/mes.',
   },
   'auth.teacher.open_preview': {
     en: 'Open the teacher dashboard preview',
@@ -2566,9 +2566,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Exámenes de prueba para todas las juntas',
   },
   'auth.teacher.benefit.free_ai_uses': {
-    en: '3 free uses of every AI tool',
-    ar: '٣ استخدامات مجانية لكل أداة ذكاء اصطناعي',
-    es: '3 usos gratuitos de cada herramienta de IA',
+    en: 'Every AI tool free for 7 days',
+    ar: 'كل أدوات الذكاء الاصطناعي ببلاش لمدة ٧ أيام',
+    es: 'Todas las herramientas de IA gratis durante 7 días',
   },
 
   // ─── Form additions (validation, placeholders, months) ───────────
@@ -4034,9 +4034,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Precios sencillos y honestos',
   },
   'pricing.subtitle_demo_uses': {
-    en: 'Demo 3 free uses per feature (no card) before you commit. 7-day free trial - no card required to start. Paid plans begin with 7 free days - cancel before day 7 and you are not charged.',
-    ar: 'جرّب ٣ استخدامات ببلاش لكل ميزة (من غير بطاقة) قبل ما تلتزم. تجربة مجانية ٧ أيام - ما تحتاج بطاقة للبداية. الباقات المدفوعة تبدأ بـ ٧ أيام مجانية - ألغِ قبل اليوم ٧ وما ينسحب منك شي.',
-    es: 'Prueba 3 usos gratuitos por función (sin tarjeta) antes de comprometerte. Prueba gratuita de 7 días - sin tarjeta para empezar. Los planes de pago comienzan con 7 días gratis - cancela antes del día 7 y no se te cobrará.',
+    en: 'Try the full product free for 7 days - no card required to start. Paid plans begin with 7 free days - cancel before day 7 and you are not charged.',
+    ar: 'جرّب المنتج كامل ببلاش لمدة ٧ أيام - ما تحتاج بطاقة للبداية. الباقات المدفوعة تبدأ بـ ٧ أيام مجانية - ألغِ قبل اليوم ٧ وما ينسحب منك شي.',
+    es: 'Prueba el producto completo gratis durante 7 días - sin tarjeta para empezar. Los planes de pago comienzan con 7 días gratis - cancela antes del día 7 y no se te cobrará.',
   },
   'pricing.badge.most_popular': { en: 'Most Popular', ar: 'الأكثر طلباً', es: 'Más popular' },
   'pricing.badge.for_educators': { en: 'For Educators', ar: 'للمعلمين', es: 'Para educadores' },
@@ -4150,9 +4150,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Sé uno de los primeros 10 colegios en sumarse. Precios con grandes descuentos, funciones anticipadas, participación directa en el producto y tarifas preferentes fijas.',
   },
   'pricing.footer_demo_note': {
-    en: "Every feature includes 3 free uses - no card required for the demo, and no card required to start your 7-day free trial. Paid plans begin with 7 free days - cancel before day 7 and you won't be charged.",
-    ar: 'كل ميزة فيها ٣ استخدامات ببلاش - ما تحتاج بطاقة للتجربة، وما تحتاج بطاقة لبدء تجربتك المجانية ٧ أيام. الباقات المدفوعة تبدأ بـ ٧ أيام مجانية - ألغِ قبل اليوم ٧ وما بنخصم شي.',
-    es: 'Cada función incluye 3 usos gratuitos - sin tarjeta para la demo, y sin tarjeta para empezar tu prueba gratuita de 7 días. Los planes de pago comienzan con 7 días gratis - cancela antes del día 7 y no se te cobrará.',
+    en: "Every feature is included in your 7-day free trial - no card required to start. Paid plans begin with 7 free days - cancel before day 7 and you won't be charged.",
+    ar: 'كل ميزة مشمولة بتجربتك المجانية ٧ أيام - ما تحتاج بطاقة للبداية. الباقات المدفوعة تبدأ بـ ٧ أيام مجانية - ألغِ قبل اليوم ٧ وما بنخصم شي.',
+    es: 'Todas las funciones están incluidas en tu prueba gratuita de 7 días - sin tarjeta para empezar. Los planes de pago comienzan con 7 días gratis - cancela antes del día 7 y no se te cobrará.',
   },
   'pricing.student.feat.trial': {
     en: '7-day free trial · no card required to start',
@@ -4160,9 +4160,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Prueba gratuita de 7 días · sin tarjeta para empezar',
   },
   'pricing.student.feat.demo_uses': {
-    en: '3 free uses per feature - demo without a card',
-    ar: '٣ استخدامات ببلاش لكل ميزة - جرّب من غير بطاقة',
-    es: '3 usos gratuitos por función - prueba sin tarjeta',
+    en: 'Every feature free for 7 days - no card required',
+    ar: 'كل ميزة ببلاش لمدة ٧ أيام - من غير بطاقة',
+    es: 'Todas las funciones gratis durante 7 días - sin tarjeta',
   },
   'pricing.student.feat.courses': {
     en: 'All 470+ courses included',
@@ -4210,9 +4210,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Prueba gratuita de 7 días · sin tarjeta para empezar',
   },
   'pricing.teacher.feat.demo_uses': {
-    en: '3 free uses per feature - demo without a card',
-    ar: '٣ استخدامات ببلاش لكل ميزة - جرّب من غير بطاقة',
-    es: '3 usos gratuitos por función - prueba sin tarjeta',
+    en: 'Every feature free for 7 days - no card required',
+    ar: 'كل ميزة ببلاش لمدة ٧ أيام - من غير بطاقة',
+    es: 'Todas las funciones gratis durante 7 días - sin tarjeta',
   },
   'pricing.teacher.feat.everything_student': {
     en: 'Everything in Student, plus:',
@@ -4493,19 +4493,23 @@ export const DICTIONARY: Dictionary = {
   },
   'pricing.start_free_eyebrow': { en: 'Start free', ar: 'ابدأ ببلاش', es: 'Empieza gratis' },
   'pricing.try_before_subscribe': {
-    en: 'Try before you subscribe. No card needed to demo.',
-    ar: 'جرّب قبل ما تشترك. ما تحتاج بطاقة عشان تجرّب.',
-    es: 'Pruébalo antes de suscribirte. No hace falta tarjeta para la demo.',
+    en: 'Try before you subscribe. No card needed to start.',
+    ar: 'جرّب قبل ما تشترك. ما تحتاج بطاقة للبداية.',
+    es: 'Pruébalo antes de suscribirte. No hace falta tarjeta para empezar.',
   },
-  'pricing.free_uses_blurb_prefix': {
-    en: 'Every registered account gets',
-    ar: 'كل حساب مسجَّل يحصل على',
-    es: 'Cada cuenta registrada obtiene',
+  // 2026-08-23: replaced the free_uses_blurb prefix/suffix pair. Those keys
+  // described a "3 free uses before the paywall" demo mechanic that was never
+  // built on the web - the real model since Option C is a 7-day no-card trial
+  // provisioned at signup.
+  'pricing.start_free_blurb': {
+    en: 'Creating an account starts a 7-day free trial of the full product - no payment details taken. A card is only needed if you continue on a paid plan.',
+    ar: 'لما تسوي حساب تبدأ تجربة مجانية ٧ أيام للمنتج كامل - بدون أي بيانات دفع. البطاقة تنطلب بس إذا كمّلت على باقة مدفوعة.',
+    es: 'Al crear una cuenta comienza una prueba gratuita de 7 días del producto completo - sin datos de pago. Solo se necesita una tarjeta si continúas con un plan de pago.',
   },
-  'pricing.free_uses_blurb_suffix': {
-    en: 'free uses of most premium features before the paywall. A card is only required when you start the',
-    ar: 'استخدامات مجانية لمعظم الميزات المدفوعة قبل الجدار. البطاقة مطلوبة بس لما تبدأ',
-    es: 'usos gratuitos de la mayoría de las funciones premium antes del muro de pago. Solo se requiere una tarjeta cuando inicias la',
+  'pricing.feat_chip_trial': {
+    en: 'Free trial',
+    ar: 'تجربة مجانية',
+    es: 'Prueba gratis',
   },
   'pricing.limited_10_schools': {
     en: 'Limited to 10 Schools',
@@ -4629,9 +4633,9 @@ export const DICTIONARY: Dictionary = {
     es: '¡Te damos la bienvenida a The English Hub!',
   },
   'dash.welcome.body': {
-    en: "You have 3 free uses of every premium feature. Try AI marking, lesson plans, and more. When you're ready, paid plans start with 7 free days - cancel before day 7 and you are not charged.",
-    ar: 'عندك ٣ استخدامات ببلاش لكل ميزة بريميوم. جرّب التصحيح بالذكاء الاصطناعي وخطط الدروس وأكثر. لمّن تكون جاهز، الباقات المدفوعة تبدأ بـ ٧ أيام مجانية - ألغِ قبل اليوم السابع وما ينخصم منك شي.',
-    es: 'Tienes 3 usos gratuitos de cada función premium. Prueba la corrección con IA, los planes de clase y más. Cuando estés listo, los planes de pago empiezan con 7 días gratis - cancela antes del día 7 y no se te cobrará.',
+    en: "Your 7-day free trial includes every premium feature. Try AI marking, lesson plans, and more. When you're ready, paid plans start with 7 free days - cancel before day 7 and you are not charged.",
+    ar: 'تجربتك المجانية ٧ أيام تشمل كل ميزات البريميوم. جرّب التصحيح بالذكاء الاصطناعي وخطط الدروس وأكثر. لمّن تكون جاهز، الباقات المدفوعة تبدأ بـ ٧ أيام مجانية - ألغِ قبل اليوم السابع وما ينخصم منك شي.',
+    es: 'Tu prueba gratuita de 7 días incluye todas las funciones premium. Prueba la corrección con IA, los planes de clase y más. Cuando estés listo, los planes de pago empiezan con 7 días gratis - cancela antes del día 7 y no se te cobrará.',
   },
   'dash.welcome.dismiss': {
     en: 'Dismiss welcome banner',
@@ -4995,9 +4999,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Todos los cursos incluidos',
   },
   'account.billing.feature_three_free_uses': {
-    en: '3 free uses per feature',
-    ar: '٣ استخدامات ببلاش لكل ميزة',
-    es: '3 usos gratuitos por función',
+    en: '7-day free trial of every feature',
+    ar: 'تجربة مجانية ٧ أيام لكل ميزة',
+    es: 'Prueba gratuita de 7 días de todas las funciones',
   },
   'account.billing.feature_cancel_anytime': {
     en: 'Cancel anytime',
@@ -14883,9 +14887,9 @@ export const DICTIONARY: Dictionary = {
     es: '¿Hay una prueba gratuita?',
   },
   'student.faq.trial.a': {
-    en: 'Yes. Creating an account starts a 7-day free trial with no card needed, and you also get three free uses of every premium feature.',
-    ar: 'إيه. لما تسوي حساب تبدأ تجربة ٧ أيام ببلاش بدون بطاقة، وبعد عندك ثلاث استخدامات ببلاش لكل ميزة بريميوم.',
-    es: 'Sí. Al crear una cuenta empieza una prueba gratuita de 7 días sin tarjeta, y además obtienes tres usos gratuitos de cada función premium.',
+    en: 'Yes. Creating an account starts a 7-day free trial of every premium feature, with no card needed.',
+    ar: 'إيه. لما تسوي حساب تبدأ تجربة ٧ أيام ببلاش لكل ميزات البريميوم، بدون بطاقة.',
+    es: 'Sí. Al crear una cuenta empieza una prueba gratuita de 7 días de todas las funciones premium, sin tarjeta.',
   },
   'student.faq.ai.q': {
     en: 'Do you mark my essays with AI?',
@@ -14919,9 +14923,9 @@ export const DICTIONARY: Dictionary = {
     es: '¿Listo para subir de nivel tu inglés?',
   },
   'student.bottom.body': {
-    en: 'Free trial, no card. Cancel any time. Unlimited courses, flashcards, and revision notes - 3 free uses of every AI tool before you decide.',
-    ar: 'تجربة ببلاش، بدون كرت. ألغ في أي وقت. دورات وبطاقات وملخّصات مراجعة بلا حدود - ٣ استخدامات ببلاش لكل أداة ذكاء اصطناعي قبل ما تقرّر.',
-    es: 'Prueba gratuita, sin tarjeta. Cancela cuando quieras. Cursos, tarjetas de estudio y apuntes de repaso ilimitados - 3 usos gratuitos de cada herramienta de IA antes de decidirte.',
+    en: 'Free trial, no card. Cancel any time. Unlimited courses, flashcards, and revision notes stay free - and every AI tool is included in your 7-day trial before you decide.',
+    ar: 'تجربة ببلاش، بدون كرت. ألغ في أي وقت. الدورات والبطاقات وملخّصات المراجعة تبقى ببلاش - وكل أدوات الذكاء الاصطناعي مشمولة بتجربتك ٧ أيام قبل ما تقرّر.',
+    es: 'Prueba gratuita, sin tarjeta. Cancela cuando quieras. Los cursos, tarjetas de estudio y apuntes de repaso siguen gratis - y todas las herramientas de IA están incluidas en tu prueba de 7 días antes de decidirte.',
   },
   'student.bottom.cta_create': {
     en: 'Create free account',
@@ -15124,9 +15128,9 @@ export const DICTIONARY: Dictionary = {
     es: '¿Hay una prueba gratuita? ¿Necesito tarjeta?',
   },
   'help.gs.q4.a': {
-    en: "Yes, and no card is needed to start. Creating an account begins a 7-day free trial of the full product with no payment details taken. If you later start a paid plan at checkout, the plan's first 7 days are free with your card on file - cancel before day 7 and you won't be charged. Every registered account also gets 3 free uses of most premium features (AI marking, mock exams, lesson plans, etc.).",
-    ar: 'إيه، وما تحتاج بطاقة للبداية. لما تسوي حساب تبدأ تجربة مجانية ٧ أيام للمنتج كامل بدون أي بيانات دفع. وإذا بديت خطة مدفوعة من صفحة الدفع بعدين، أول ٧ أيام من الخطة مجانية مع بطاقتك المحفوظة - ألغِ قبل اليوم السابع وما تنحاسب. وكل حساب مسجل ياخذ كمان ٣ استخدامات مجانية لأغلب المميزات (التصحيح بالـ AI، الامتحانات التجريبية، خطط الدروس...).',
-    es: 'Sí, y no necesitas tarjeta para empezar. Al crear una cuenta comienza una prueba gratuita de 7 días del producto completo sin datos de pago. Si más tarde inicias un plan de pago en el checkout, los primeros 7 días del plan son gratuitos con tu tarjeta registrada - cancela antes del día 7 y no se te cobrará. Cada cuenta registrada también recibe 3 usos gratuitos de la mayoría de las funciones premium (corrección con IA, exámenes de prueba, planes de clase, etc.).',
+    en: "Yes, and no card is needed to start. Creating an account begins a 7-day free trial of the full product with no payment details taken. If you later start a paid plan at checkout, the plan's first 7 days are free with your card on file - cancel before day 7 and you won't be charged.",
+    ar: 'إيه، وما تحتاج بطاقة للبداية. لما تسوي حساب تبدأ تجربة مجانية ٧ أيام للمنتج كامل بدون أي بيانات دفع. وإذا بديت خطة مدفوعة من صفحة الدفع بعدين، أول ٧ أيام من الخطة مجانية مع بطاقتك المحفوظة - ألغِ قبل اليوم السابع وما تنحاسب.',
+    es: 'Sí, y no necesitas tarjeta para empezar. Al crear una cuenta comienza una prueba gratuita de 7 días del producto completo sin datos de pago. Si más tarde inicias un plan de pago en el checkout, los primeros 7 días del plan son gratuitos con tu tarjeta registrada - cancela antes del día 7 y no se te cobrará.',
   },
   'help.co.q1.q': {
     en: 'What courses are available?',
@@ -15254,9 +15258,9 @@ export const DICTIONARY: Dictionary = {
     es: '¿Cuánto cuesta The English Hub?',
   },
   'help.ab.q1.a': {
-    en: 'Early Access / Founding pricing, available now: Students £3.99/month or £29.99/year - and £20/year with any affiliate code or the public code 2026ENGLISH (save £9.99). Teachers £6.99/month or £67.99/year. Planned standard pricing once the founding period closes: Students £7.99/month or £69.99/year. Teachers £11.99/month or £99/year. Your rate is locked from the day you subscribe. Every account starts with a 7-day free trial, no card required. You also get 3 free uses of most premium features before the paywall. Cancel anytime. Prices shown in GBP.',
-    ar: 'أسعار Early Access / Founding متاحة الآن: الطلاب £3.99/شهر أو £29.99/سنة - و£20/سنة مع أي كود شريك أو الكود العام 2026ENGLISH (وفّر £9.99). المعلمين £6.99/شهر أو £67.99/سنة. الأسعار العادية المخطط لها بعد إغلاق فترة التأسيس: الطلاب £7.99/شهر أو £69.99/سنة. المعلمين £11.99/شهر أو £99/سنة. سعرك مثبت من يوم اشتراكك. كل حساب يبدأ بتجربة مجانية ٧ أيام بدون بطاقة. كمان تاخذ ٣ استخدامات مجانية لأغلب المميزات قبل جدار الدفع. ألغِ متى ما تبغى. الأسعار بـ GBP.',
-    es: 'Precios de Acceso anticipado / Fundador, disponibles ahora: Estudiantes £3.99/mes o £29.99/año - y £20/año con cualquier código de afiliado o el código público 2026ENGLISH (ahorra £9.99). Profesores £6.99/mes o £67.99/año. Precios estándar previstos cuando cierre el periodo fundacional: Estudiantes £7.99/mes o £69.99/año. Profesores £11.99/mes o £99/año. Tu tarifa queda fijada desde el día en que te suscribes. Cada cuenta comienza con una prueba gratuita de 7 días, sin tarjeta. También obtienes 3 usos gratuitos de la mayoría de las funciones premium antes del muro de pago. Cancela cuando quieras. Precios mostrados en GBP.',
+    en: 'Early Access / Founding pricing, available now: Students £3.99/month or £29.99/year - and £20/year with any affiliate code or the public code 2026ENGLISH (save £9.99). Teachers £6.99/month or £67.99/year. Planned standard pricing once the founding period closes: Students £7.99/month or £69.99/year. Teachers £11.99/month or £99/year. Your rate is locked from the day you subscribe. Every account starts with a 7-day free trial, no card required. Cancel anytime. Prices shown in GBP.',
+    ar: 'أسعار Early Access / Founding متاحة الآن: الطلاب £3.99/شهر أو £29.99/سنة - و£20/سنة مع أي كود شريك أو الكود العام 2026ENGLISH (وفّر £9.99). المعلمين £6.99/شهر أو £67.99/سنة. الأسعار العادية المخطط لها بعد إغلاق فترة التأسيس: الطلاب £7.99/شهر أو £69.99/سنة. المعلمين £11.99/شهر أو £99/سنة. سعرك مثبت من يوم اشتراكك. كل حساب يبدأ بتجربة مجانية ٧ أيام بدون بطاقة. ألغِ متى ما تبغى. الأسعار بـ GBP.',
+    es: 'Precios de Acceso anticipado / Fundador, disponibles ahora: Estudiantes £3.99/mes o £29.99/año - y £20/año con cualquier código de afiliado o el código público 2026ENGLISH (ahorra £9.99). Profesores £6.99/mes o £67.99/año. Precios estándar previstos cuando cierre el periodo fundacional: Estudiantes £7.99/mes o £69.99/año. Profesores £11.99/mes o £99/año. Tu tarifa queda fijada desde el día en que te suscribes. Cada cuenta comienza con una prueba gratuita de 7 días, sin tarjeta. Cancela cuando quieras. Precios mostrados en GBP.',
   },
   'help.ab.q2.q': {
     en: 'Can I cancel my subscription?',
@@ -15890,9 +15894,9 @@ export const DICTIONARY: Dictionary = {
     es: '¿Hay una prueba gratuita? ¿Necesito tarjeta?',
   },
   'faqs.p2.a': {
-    en: 'Yes, and you do not need a card to start. Creating an account begins a 7-day free trial of the full product with no payment details taken. If you later start a paid plan at checkout, the plan begins with 7 free days with your card on file - cancel before day 7 and you are not charged; otherwise it converts automatically. You can also demo most premium features for 3 free uses.',
-    ar: 'إيه، وما تحتاج بطاقة للبداية. لما تسوي حساب تبدأ تجربة مجانية ٧ أيام للمنتج كامل بدون أي بيانات دفع. وإذا بديت خطة مدفوعة من صفحة الدفع بعدين، تبدأ الخطة بـ ٧ أيام مجانية مع بطاقتك المحفوظة - ألغِ قبل اليوم السابع وما تنحاسب؛ وإلا تتحوّل تلقائياً. وتقدر كمان تجرّب أغلب المميزات ٣ مرات مجاناً.',
-    es: 'Sí, y no necesitas tarjeta para empezar. Al crear una cuenta comienza una prueba gratuita de 7 días del producto completo sin datos de pago. Si más tarde inicias un plan de pago en el checkout, el plan comienza con 7 días gratuitos con tu tarjeta registrada - cancela antes del día 7 y no se te cobra; de lo contrario se convierte automáticamente. También puedes probar la mayoría de las funciones premium durante 3 usos gratuitos.',
+    en: 'Yes, and you do not need a card to start. Creating an account begins a 7-day free trial of the full product with no payment details taken. If you later start a paid plan at checkout, the plan begins with 7 free days with your card on file - cancel before day 7 and you are not charged; otherwise it converts automatically.',
+    ar: 'إيه، وما تحتاج بطاقة للبداية. لما تسوي حساب تبدأ تجربة مجانية ٧ أيام للمنتج كامل بدون أي بيانات دفع. وإذا بديت خطة مدفوعة من صفحة الدفع بعدين، تبدأ الخطة بـ ٧ أيام مجانية مع بطاقتك المحفوظة - ألغِ قبل اليوم السابع وما تنحاسب؛ وإلا تتحوّل تلقائياً.',
+    es: 'Sí, y no necesitas tarjeta para empezar. Al crear una cuenta comienza una prueba gratuita de 7 días del producto completo sin datos de pago. Si más tarde inicias un plan de pago en el checkout, el plan comienza con 7 días gratuitos con tu tarjeta registrada - cancela antes del día 7 y no se te cobra; de lo contrario se convierte automáticamente.',
   },
   'faqs.p3.q': {
     en: 'What happens after my 7-day trial ends?',
@@ -20273,9 +20277,9 @@ export const DICTIONARY: Dictionary = {
   'pricing.always_free_label': { en: 'Always free', ar: 'ببلاش دايماً', es: 'Siempre gratis' },
   'pricing.premium_label': { en: 'Premium', ar: 'بريميوم', es: 'Premium' },
   'pricing.premium_then_unlimited_prefix': {
-    en: '- {n} free, then unlimited',
-    ar: '- {n} ببلاش، وبعدين بلا حدود',
-    es: '- {n} gratis, luego ilimitado',
+    en: '- free for 7 days, then unlimited with a plan',
+    ar: '- ببلاش لمدة ٧ أيام، وبعدين بلا حدود مع الباقة',
+    es: '- gratis durante 7 días, luego ilimitado con un plan',
   },
   'pricing.school_receives.heading': {
     en: 'What your school receives',
@@ -20481,9 +20485,9 @@ export const DICTIONARY: Dictionary = {
   },
   'pricing.step.2.title': { en: 'Explore', ar: 'استكشف', es: 'Explorar' },
   'pricing.step.2.desc': {
-    en: 'Every premium feature includes {n} free uses. Try AI marking, mock exams, lesson plans, and more.',
-    ar: 'كل ميزة بريميوم تتضمن {n} استخدامات مجانية. جرّب التصحيح الذكي والامتحانات التجريبية وخطط الدروس وأكثر.',
-    es: 'Cada función premium incluye {n} usos gratuitos. Prueba la corrección con IA, los exámenes de prueba, los planes de clase y más.',
+    en: 'Your 7-day free trial includes every premium feature. Try AI marking, mock exams, lesson plans, and more.',
+    ar: 'تجربتك المجانية ٧ أيام تشمل كل ميزات البريميوم. جرّب التصحيح الذكي والامتحانات التجريبية وخطط الدروس وأكثر.',
+    es: 'Tu prueba gratuita de 7 días incluye todas las funciones premium. Prueba la corrección con IA, los exámenes de prueba, los planes de clase y más.',
   },
   'pricing.step.3.title': { en: 'Upgrade', ar: 'رقّي', es: 'Mejorar el plan' },
   'pricing.step.3.desc': {
@@ -20497,9 +20501,9 @@ export const DICTIONARY: Dictionary = {
     es: '¿Qué obtengo gratis antes de suscribirme?',
   },
   'pricing.faq.a1': {
-    en: 'Every visitor and registered user gets {n} free uses of most premium features (AI essay marking, mock exams, lesson plans, etc.) before the paywall. Exam-board aligned courses, revision notes, and flashcards remain free with a registered account.',
-    ar: 'كل زائر ومستخدم مسجّل يحصل على {n} استخدامات مجانية لأغلب ميزات البريميوم (التصحيح الذكي، الامتحانات التجريبية، خطط الدروس، وغيرها) قبل جدار الدفع. وكورسات بورد الامتحان وملخصات المراجعة والبطاقات تبقى ببلاش مع حساب مسجّل.',
-    es: 'Cada visitante y usuario registrado obtiene {n} usos gratuitos de la mayoría de las funciones premium (corrección de redacciones con IA, exámenes de prueba, planes de clase, etc.) antes del muro de pago. Los cursos alineados con la junta examinadora, los apuntes de repaso y las tarjetas de estudio siguen siendo gratuitos con una cuenta registrada.',
+    en: 'Creating a free account starts a 7-day trial of the full product - AI essay marking, mock exams, lesson plans and more - with no card needed. Exam-board aligned courses, revision notes, and flashcards remain free with a registered account even after the trial ends.',
+    ar: 'لما تسوي حساب مجاني تبدأ تجربة ٧ أيام للمنتج كامل - التصحيح الذكي والامتحانات التجريبية وخطط الدروس وغيرها - بدون بطاقة. وكورسات بورد الامتحان وملخصات المراجعة والبطاقات تبقى ببلاش مع حساب مسجّل حتى بعد انتهاء التجربة.',
+    es: 'Al crear una cuenta gratuita comienza una prueba de 7 días del producto completo - corrección de redacciones con IA, exámenes de prueba, planes de clase y más - sin tarjeta. Los cursos alineados con la junta examinadora, los apuntes de repaso y las tarjetas de estudio siguen siendo gratuitos con una cuenta registrada incluso después de la prueba.',
   },
   'pricing.faq.q2': {
     en: 'Do I need a credit card to start the 7-day trial?',

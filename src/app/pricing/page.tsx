@@ -102,7 +102,6 @@ const FAQ_KEY_PAIRS = [
 ]
 
 function buildFaqItems(t: (k: string) => string): { q: string; a: string }[] {
-  const freeUses = PRICING.FREE_USES_PER_FEATURE
   const studentMonthly = PRICING.STUDENT_MONTHLY
   const studentAnnual = PRICING.STUDENT_ANNUAL
   const teacherMonthly = PRICING.TEACHER_MONTHLY
@@ -115,9 +114,7 @@ function buildFaqItems(t: (k: string) => string): { q: string; a: string }[] {
 
   return FAQ_KEY_PAIRS.map(({ q, a }, i) => {
     let answer = t(a)
-    if (i === 0) {
-      answer = answer.replace('{n}', String(freeUses))
-    } else if (i === 2) {
+    if (i === 2) {
       answer = answer
         .replace('{monthly}', String(studentMonthly))
         .replace('{annual}', String(studentAnnual))
@@ -209,17 +206,22 @@ function FeatureRow({
 }
 
 function PremiumFeatureRow({ feature, icon: Icon }: { feature: string; icon: React.ElementType }) {
+  const t = useT()
   return (
     <li className="flex items-center gap-2.5 text-sm">
       <div className="w-4 h-4 flex items-center justify-center shrink-0">
         <Icon className="w-3.5 h-3.5 text-primary" />
       </div>
       <span className="text-foreground/90">{feature}</span>
+      {/* 2026-08-23: was a hardcoded "3 free" chip. The 3-free-uses demo
+          mechanic was never built on the web - since the 2026-06-08 Option C
+          paywall the real model is a 7-day no-card trial at signup - so the
+          chip now states that truthfully. */}
       <Badge
         variant="outline"
         className="text-[10px] px-1.5 py-0 border-primary/30 text-primary/80 ml-auto whitespace-nowrap"
       >
-        3 free
+        {t('pricing.feat_chip_trial')}
       </Badge>
     </li>
   )
@@ -700,8 +702,7 @@ function PricingContent() {
               {t('pricing.try_before_subscribe')}
             </p>
             <p className="text-muted-foreground text-sm sm:text-base max-w-xl mx-auto mb-6">
-              {t('pricing.free_uses_blurb_prefix')} {PRICING.FREE_USES_PER_FEATURE}{' '}
-              {t('pricing.free_uses_blurb_suffix')} {PRICING.TRIAL_TEXT}.
+              {t('pricing.start_free_blurb')}
             </p>
             <Button
               variant="default"
@@ -826,10 +827,7 @@ function PricingContent() {
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
                     {t('pricing.premium_label')}
                     <span className="text-primary/70 normal-case ml-1">
-                      {t('pricing.premium_then_unlimited_prefix').replace(
-                        '{n}',
-                        String(PRICING.FREE_USES_PER_FEATURE),
-                      )}
+                      {t('pricing.premium_then_unlimited_prefix')}
                     </span>
                   </p>
                   <ul className="space-y-2.5">
@@ -973,10 +971,7 @@ function PricingContent() {
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
                     {t('pricing.premium_label')}
                     <span className="text-purple-600/70 normal-case ml-1">
-                      {t('pricing.premium_then_unlimited_prefix').replace(
-                        '{n}',
-                        String(PRICING.FREE_USES_PER_FEATURE),
-                      )}
+                      {t('pricing.premium_then_unlimited_prefix')}
                     </span>
                   </p>
                   <ul className="space-y-2.5">
@@ -1185,7 +1180,7 @@ function PricingContent() {
                 icon: Sparkles,
                 color: 'text-purple-600 bg-purple-500/10 border-purple-500/20',
                 title: 'Explore',
-                desc: `Every premium feature includes ${PRICING.FREE_USES_PER_FEATURE} free uses. Try AI marking, mock exams, lesson plans, and more.`,
+                desc: `Your 7-day free trial includes every premium feature. Try AI marking, mock exams, lesson plans, and more.`,
               },
               {
                 step: '3',

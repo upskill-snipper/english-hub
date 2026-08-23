@@ -538,9 +538,9 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: '¿Cuánto cuesta?',
   },
   'mkt.teachers.ft.faq.cost.a': {
-    en: 'Every feature is free to try - you get 3 free uses per tool with no card required. When you are ready to upgrade, the Teacher plan is £6.99/month or £67.99/year at the Early Access / Founding rate (planned standard pricing is £11.99/month or £99/year, and your rate is locked from the day you subscribe). Paid plans begin with 7 free days - cancel before day 7 and you are not charged. School plans are available through our Founding Schools Programme - £4,000/year for the first 10 schools, against a planned standard price of £8,000/year. Book a call to discuss.',
-    ar: 'كل ميزة تقدر تجرّبها ببلاش -- تحصل 3 استخدامات مجانية لكل أداة بدون بطاقة. لمّا تكون جاهز للترقية، خطة المعلّم بـ £6.99 بالشهر أو £67.99 بالسنة بسعر الـ Early Access / Founding (السعر العادي المخطط له £11.99 بالشهر أو £99 بالسنة، وسعرك مثبّت من يوم اشتراكك). الخطط المدفوعة تبدأ بـ 7 أيام مجانية -- ألغِ قبل اليوم السابع وما تنحاسب. خطط المدارس متوفّرة عبر برنامج المدارس المؤسِّسة -- £4,000 بالسنة لأول 10 مدارس، مقابل سعر عادي مخطط له £8,000 بالسنة. احجز مكالمة عشان نتناقش.',
-    es: 'Todas las funciones se pueden probar gratis: dispones de 3 usos gratuitos por herramienta sin necesidad de tarjeta. Cuando estés listo para mejorar, el plan Profesor cuesta £6.99/mes o £67.99/año con la tarifa Early Access / Founding (el precio estándar previsto es £11.99/mes o £99/año, y tu tarifa queda fijada desde el día en que te suscribes). Los planes de pago comienzan con 7 días gratuitos: cancela antes del día 7 y no se te cobra. Los planes para colegios están disponibles a través de nuestro Programa de Colegios Fundadores: £4,000/año para los primeros 10 colegios, frente a un precio estándar previsto de £8,000/año. Reserva una llamada para hablarlo.',
+    en: 'Every feature is free to try for 7 days with no card required. When you are ready to upgrade, the Teacher plan is £6.99/month or £67.99/year at the Early Access / Founding rate (planned standard pricing is £11.99/month or £99/year, and your rate is locked from the day you subscribe). Paid plans begin with 7 free days - cancel before day 7 and you are not charged. School plans are available through our Founding Schools Programme - £4,000/year for the first 10 schools, against a planned standard price of £8,000/year. Book a call to discuss.',
+    ar: 'كل ميزة تقدر تجرّبها ببلاش لمدة 7 أيام بدون بطاقة. لمّا تكون جاهز للترقية، خطة المعلّم بـ £6.99 بالشهر أو £67.99 بالسنة بسعر الـ Early Access / Founding (السعر العادي المخطط له £11.99 بالشهر أو £99 بالسنة، وسعرك مثبّت من يوم اشتراكك). الخطط المدفوعة تبدأ بـ 7 أيام مجانية -- ألغِ قبل اليوم السابع وما تنحاسب. خطط المدارس متوفّرة عبر برنامج المدارس المؤسِّسة -- £4,000 بالسنة لأول 10 مدارس، مقابل سعر عادي مخطط له £8,000 بالسنة. احجز مكالمة عشان نتناقش.',
+    es: 'Todas las funciones se pueden probar gratis durante 7 días sin necesidad de tarjeta. Cuando estés listo para mejorar, el plan Profesor cuesta £6.99/mes o £67.99/año con la tarifa Early Access / Founding (el precio estándar previsto es £11.99/mes o £99/año, y tu tarifa queda fijada desde el día en que te suscribes). Los planes de pago comienzan con 7 días gratuitos: cancela antes del día 7 y no se te cobra. Los planes para colegios están disponibles a través de nuestro Programa de Colegios Fundadores: £4,000/año para los primeros 10 colegios, frente a un precio estándar previsto de £8,000/año. Reserva una llamada para hablarlo.',
   },
   'mkt.teachers.ft.faq.features.q': {
     en: 'What features are included?',
@@ -588,9 +588,9 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: '¿Qué ocurre cuando uso mis pruebas gratuitas?',
   },
   'mkt.teachers.ft.faq.free_tries.a': {
-    en: 'You get 3 free uses per tool - AI Lesson Plans, AI Marking, and Worksheet Builder. Once you have used them, you can upgrade to the Premium plan at any time. Paid plans begin with 7 free days - cancel before day 7 and you are not charged. Cancel any time from your account settings - no hidden fees, no awkward cancellation calls.',
-    ar: 'تحصل 3 استخدامات مجانية لكل أداة -- خطط الدروس بالـ AI، التصحيح بالـ AI، وبنّاء أوراق العمل. أول ما تستخدمها، تقدر تترقّى لخطة Premium في أي وقت. الخطط المدفوعة تبدأ بـ 7 أيام مجانية -- ألغِ قبل اليوم السابع وما تنحاسب. سكّر الاشتراك في أي وقت من إعدادات حسابك -- بدون رسوم مخفية، وبدون مكالمات إلغاء محرجة.',
-    es: 'Dispones de 3 usos gratuitos por herramienta: planes de lección con IA, corrección con IA y constructor de fichas de trabajo. Una vez los hayas usado, puedes pasar al plan Premium en cualquier momento. Los planes de pago comienzan con 7 días gratuitos: cancela antes del día 7 y no se te cobra. Cancela cuando quieras desde la configuración de tu cuenta: sin cargos ocultos ni incómodas llamadas de cancelación.',
+    en: 'Your 7-day free trial includes every tool - AI Lesson Plans, AI Marking, and Worksheet Builder. After the trial you can upgrade to the Premium plan at any time. Paid plans begin with 7 free days - cancel before day 7 and you are not charged. Cancel any time from your account settings - no hidden fees, no awkward cancellation calls.',
+    ar: 'تجربتك المجانية 7 أيام تشمل كل الأدوات -- خطط الدروس بالـ AI، التصحيح بالـ AI، وبنّاء أوراق العمل. بعد التجربة تقدر تترقّى لخطة Premium في أي وقت. الخطط المدفوعة تبدأ بـ 7 أيام مجانية -- ألغِ قبل اليوم السابع وما تنحاسب. سكّر الاشتراك في أي وقت من إعدادات حسابك -- بدون رسوم مخفية، وبدون مكالمات إلغاء محرجة.',
+    es: 'Tu prueba gratuita de 7 días incluye todas las herramientas: planes de lección con IA, corrección con IA y constructor de fichas de trabajo. Después de la prueba puedes pasar al plan Premium en cualquier momento. Los planes de pago comienzan con 7 días gratuitos: cancela antes del día 7 y no se te cobra. Cancela cuando quieras desde la configuración de tu cuenta: sin cargos ocultos ni incómodas llamadas de cancelación.',
   },
 
   // ── Hero "Start Free" extras + section copy ────────────────────────
@@ -640,9 +640,9 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Crea fichas de trabajo diferenciadas con respuestas modelo en varios niveles, listas para imprimir o compartir digitalmente.',
   },
   'mkt.teachers.ft.tool.free_uses': {
-    en: '3 free uses',
-    ar: '3 استخدامات مجانية',
-    es: '3 usos gratuitos',
+    en: 'Free for 7 days',
+    ar: 'ببلاش لمدة 7 أيام',
+    es: 'Gratis durante 7 días',
   },
   'mkt.teachers.ft.upgrade_note': {
     en: 'Upgrade when you are ready. Paid plans begin with 7 free days - cancel before day 7 and you are not charged.',
@@ -1104,9 +1104,9 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: '/para siempre',
   },
   'mkt.teachers.ft.pricing.free.sub': {
-    en: '3 free uses per tool',
-    ar: '3 استخدامات مجانية لكل أداة',
-    es: '3 usos gratuitos por herramienta',
+    en: '7-day free trial of every tool',
+    ar: 'تجربة مجانية 7 أيام لكل الأدوات',
+    es: 'Prueba gratuita de 7 días de todas las herramientas',
   },
   'mkt.teachers.ft.pricing.free.feat.1': {
     en: 'AI Lesson Plans - 3 uses',
@@ -1234,9 +1234,9 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Cancela cuando quieras',
   },
   'mkt.teachers.ft.pricing.premium.note': {
-    en: 'Demo 3 free uses without a card. Paid plans begin with 7 free days - cancel before day 7 and you are not charged.',
-    ar: 'جرّب 3 استخدامات مجانية بدون بطاقة. الخطط المدفوعة تبدأ بـ 7 أيام مجانية - ألغِ قبل اليوم السابع وما تنحاسب.',
-    es: 'Prueba 3 usos gratuitos sin tarjeta. Los planes de pago comienzan con 7 días gratuitos: cancela antes del día 7 y no se te cobra.',
+    en: 'Try everything free for 7 days without a card. Paid plans begin with 7 free days - cancel before day 7 and you are not charged.',
+    ar: 'جرّب كل شي ببلاش لمدة 7 أيام بدون بطاقة. الخطط المدفوعة تبدأ بـ 7 أيام مجانية - ألغِ قبل اليوم السابع وما تنحاسب.',
+    es: 'Pruébalo todo gratis durante 7 días sin tarjeta. Los planes de pago comienzan con 7 días gratuitos: cancela antes del día 7 y no se te cobra.',
   },
   'mkt.teachers.ft.pricing.school.label': {
     en: 'School / Department',
@@ -1326,9 +1326,9 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Empieza en 30 segundos',
   },
   'mkt.teachers.ft.signup.body': {
-    en: 'Create your free account and try every feature - 3 free uses per tool, no card required.',
-    ar: 'سوِّ حسابك المجاني وجرّب كل ميزة -- 3 استخدامات مجانية لكل أداة، بدون بطاقة.',
-    es: 'Crea tu cuenta gratuita y prueba todas las funciones: 3 usos gratuitos por herramienta, sin necesidad de tarjeta.',
+    en: 'Create your free account and try every feature free for 7 days - no card required.',
+    ar: 'سوِّ حسابك المجاني وجرّب كل ميزة ببلاش لمدة 7 أيام -- بدون بطاقة.',
+    es: 'Crea tu cuenta gratuita y prueba todas las funciones gratis durante 7 días: sin necesidad de tarjeta.',
   },
   'mkt.teachers.ft.signup.name_label': {
     en: 'Full Name',
@@ -1406,9 +1406,9 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
   },
   // Final-CTA price line broken into composable spans
   'mkt.teachers.ft.final.price.pre': {
-    en: '3 free uses per tool. Early Access Premium from',
-    ar: '3 استخدامات مجانية لكل أداة. Early Access Premium من',
-    es: '3 usos gratuitos por herramienta. Premium Early Access desde',
+    en: 'Every tool free for 7 days. Early Access Premium from',
+    ar: 'كل الأدوات ببلاش لمدة 7 أيام. Early Access Premium من',
+    es: 'Todas las herramientas gratis durante 7 días. Premium Early Access desde',
   },
   'mkt.teachers.ft.final.price.amount': {
     en: '£6.99/month or £67.99/year',

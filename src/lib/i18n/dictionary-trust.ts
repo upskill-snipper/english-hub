@@ -204,9 +204,9 @@ export const TRUST_DICTIONARY: Record<string, { en: string; ar: string; es?: str
   },
   'press.product.pricing.teacher_strong': { en: 'Teachers', ar: 'المعلّمون', es: 'Profesores' },
   'press.product.pricing.teacher_body': {
-    en: 'Early Access £6.99/month or £67.99/year (planned standard £11.99/month or £99/year). 3 free uses per premium tool with no card required.',
-    ar: 'الوصول المبكّر £6.99/شهر أو £67.99/سنة (العادي المخطط له £11.99/شهر أو £99/سنة). ٣ استخدامات مجانية لكل أداة مميّزة بدون بطاقة.',
-    es: 'Acceso anticipado £6.99/mes o £67.99/año (estándar previsto £11.99/mes o £99/año). 3 usos gratuitos por herramienta premium sin necesidad de tarjeta.',
+    en: 'Early Access £6.99/month or £67.99/year (planned standard £11.99/month or £99/year). 7-day free trial with no card required.',
+    ar: 'الوصول المبكّر £6.99/شهر أو £67.99/سنة (العادي المخطط له £11.99/شهر أو £99/سنة). تجربة مجانية ٧ أيام بدون بطاقة.',
+    es: 'Acceso anticipado £6.99/mes o £67.99/año (estándar previsto £11.99/mes o £99/año). Prueba gratuita de 7 días sin necesidad de tarjeta.',
   },
   'press.product.pricing.founding_strong': { en: 'Schools', ar: 'المدارس', es: 'Centros' },
   'press.product.pricing.founding_body': {
