@@ -1180,6 +1180,12 @@ export const DICTIONARY: Dictionary = {
   },
   'footer.bottom.privacy': { en: 'Privacy', ar: 'الخصوصية', es: 'Privacidad' },
   'footer.bottom.terms': { en: 'Terms', ar: 'الشروط', es: 'Términos' },
+  'footer.bottom.safeguarding': {
+    en: 'Safeguarding',
+    ar: 'حماية الطلاب',
+    es: 'Protección del menor',
+  },
+  'footer.bottom.dpa': { en: 'Data processing', ar: 'معالجة البيانات', es: 'Tratamiento de datos' },
   'footer.bottom.contact': { en: 'Contact', ar: 'تواصل', es: 'Contacto' },
 
   // ─── Homepage hero / marketing additions ─────────────────────────
@@ -6236,10 +6242,15 @@ export const DICTIONARY: Dictionary = {
     ar: 'مستعد تفوز بامتحان GCSE إنجليزي؟',
     es: '¿Listo para aprobar tu inglés de GCSE con sobresaliente?',
   },
+  // 2026-08-23: was "Join thousands of students preparing for their GCSEs" -
+  // an unevidenced scale claim on a product the pricing page itself describes
+  // as at launch stage, onboarding its first Founding Schools. Replaced with
+  // what the page actually delivers (no invented user count, no unverified
+  // paper count either).
   'mock.cta_body': {
-    en: 'Join thousands of students preparing for their GCSEs. Get access to all mock papers, AI essay feedback, model answers, and detailed grade tracking.',
-    ar: 'انضم لآلاف الطلاب اللي يستعدون لامتحان GCSE. احصل على كل الامتحانات التجريبية وملاحظات الذكاء الاصطناعي والإجابات النموذجية ومتابعة الدرجات بالتفصيل.',
-    es: 'Únete a miles de estudiantes que se preparan para sus GCSE. Obtén acceso a todos los exámenes de prueba, feedback de redacciones con IA, respuestas modelo y seguimiento detallado de notas.',
+    en: 'Practise under exam conditions, then get AI essay feedback, model answers, and grade tracking as you go.',
+    ar: 'تدرّب بظروف الامتحان، وبعدها احصل على ملاحظات الذكاء الاصطناعي والإجابات النموذجية ومتابعة درجاتك أول بأول.',
+    es: 'Practica en condiciones de examen y obtén feedback de redacciones con IA, respuestas modelo y seguimiento de notas sobre la marcha.',
   },
   'mock.start_trial': {
     en: 'Start Free Trial',

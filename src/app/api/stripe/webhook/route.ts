@@ -549,15 +549,30 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // Record processed event for idempotency (non-fatal if table doesn't exist)
-    try {
-      await supabase.from('webhook_events').insert({
-        event_id: event.id,
-        event_type: event.type,
-        processed_at: new Date().toISOString(),
+    // Record processed event for idempotency (non-fatal if the table is
+    // missing). supabase-js does NOT throw on a database error - it returns
+    // { error } - so the old bare try/catch could never see an RLS change,
+    // schema drift or exhausted connection. A persistently failing insert
+    // silently disables replay protection: Stripe retries would reprocess
+    // paid events. Check the returned error and report it.
+    const { error: idempotencyError } = await supabase.from('webhook_events').insert({
+      event_id: event.id,
+      event_type: event.type,
+      processed_at: new Date().toISOString(),
+    })
+    if (idempotencyError) {
+      console.error(
+        `[stripe-webhook] idempotency record failed for ${event.id} (${event.type}): ${idempotencyError.message}`,
+      )
+      Sentry.captureMessage('Stripe webhook idempotency record failed', {
+        level: 'warning',
+        tags: { surface: 'stripe-webhook' },
+        extra: {
+          eventId: event.id,
+          eventType: event.type,
+          dbError: idempotencyError.message,
+        },
       })
-    } catch {
-      // Non-fatal
     }
 
     return NextResponse.json({ received: true })

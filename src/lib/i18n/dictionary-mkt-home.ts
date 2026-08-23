@@ -397,6 +397,11 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     ar: 'اطلب أسعار المدارس',
     es: 'Solicita los precios para colegios',
   },
+  'home.pricing.cta_start': {
+    en: 'Start your free trial',
+    ar: 'ابدأ تجربتك المجانية',
+    es: 'Empieza tu prueba gratuita',
+  },
 
   // ── Home FAQ heading + Final CTA ───────────────────────────────────
   'home.faq.school_leaders': {

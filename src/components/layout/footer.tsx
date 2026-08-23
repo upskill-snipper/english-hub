@@ -354,6 +354,22 @@ export function Footer() {
             >
               {t('footer.bottom.terms')}
             </Link>
+            {/* 2026-08-23: the compliance evidence a school DPO/DSL must see
+                before signing existed but was reachable only by typing the
+                URL. Surfacing safeguarding and the DPA in the footer makes the
+                buying journey checkable. */}
+            <Link
+              href="/legal/safeguarding"
+              className="text-[#B5B8B3]/60 hover:text-[#FBF7F0] transition-colors"
+            >
+              {t('footer.bottom.safeguarding')}
+            </Link>
+            <Link
+              href="/data-processing"
+              className="text-[#B5B8B3]/60 hover:text-[#FBF7F0] transition-colors"
+            >
+              {t('footer.bottom.dpa')}
+            </Link>
             <a
               href="mailto:info@upskillenergy.com"
               className="text-[#B5B8B3]/60 hover:text-[#FBF7F0] transition-colors"

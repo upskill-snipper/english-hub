@@ -28,10 +28,13 @@ export const MKT_SCHOOLS_DICTIONARY: Record<string, { en: string; ar: string; es
   // ───────────────────────────────────────────────────────────────────
   // Metadata (title / description) - used by generateMetadata()
   // ───────────────────────────────────────────────────────────────────
+  // 2026-08-23: the brand was stripped from all three locales. The root
+  // layout applies the '%s - The English Hub' title template, so leading with
+  // the brand produced an 85-character SERP title containing it twice.
   'mkt.schools.meta.title': {
-    en: 'The English Hub for Schools - assessment, intervention & reporting',
-    ar: 'The English Hub للمدارس - تقييم وتدخّل وتقارير',
-    es: 'The English Hub para colegios: evaluación, intervención e informes',
+    en: 'English assessment, intervention and reporting for schools',
+    ar: 'تقييم الإنجليزي والتدخّل والتقارير للمدارس',
+    es: 'Evaluación, intervención e informes de inglés para colegios',
   },
   'mkt.schools.meta.description': {
     en: 'A school-ready English platform helping teachers save time, students get more practice with instant feedback and leaders understand where support is needed across English Language, Literature and EAL.',

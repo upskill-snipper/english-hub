@@ -734,14 +734,22 @@ async function PricingPreviewSection() {
           </p>
         </Card>
       </div>
-      <div className="mt-8 text-center">
-        <Button size="lg" className="h-12" render={<Link href="/pricing" />}>
+      {/* 2026-08-23: this section shows Student and Teacher prices but its
+          only button said "Request School Pricing", and every other homepage
+          CTA is B2B - a learner or teacher reading their own price had no way
+          to sign up. Primary is now the learner/teacher action; the schools
+          route keeps its own secondary button. */}
+      <div className="mt-8 flex flex-col items-center justify-center gap-3 text-center sm:flex-row">
+        <Button size="lg" className="h-12" render={<Link href="/auth/register" />}>
+          {await t('home.pricing.cta_start')}
+        </Button>
+        <Button size="lg" variant="outline" className="h-12" render={<Link href="/pricing" />}>
           {await t('home.pricing.cta')}
         </Button>
-        <p className="mx-auto mt-4 max-w-xl text-xs text-muted-foreground">
-          {PRICING_DISPLAY.schoolPricingCaveat}
-        </p>
       </div>
+      <p className="mx-auto mt-4 max-w-xl text-center text-xs text-muted-foreground">
+        {PRICING_DISPLAY.schoolPricingCaveat}
+      </p>
     </section>
   )
 }

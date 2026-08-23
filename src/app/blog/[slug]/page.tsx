@@ -208,12 +208,18 @@ export default async function BlogArticlePage({ params }: { params: Promise<Para
   // stamped 200 on the not-found shell here).
   if (!getBlogSlugs().includes(slug)) notFound()
 
-  const { locale } = await resolveLocale()
+  const { locale, viaArUrl } = await resolveLocale()
   const post = getBlogPost(slug, locale)
   if (!post) notFound()
 
   const hasAr = hasArabicVariant(post.slug)
-  const url = `${BLOG_URL}/${post.slug}`
+  // On the canonical Arabic surface the structured data must point at the
+  // Arabic URL too. It previously always used the English URL, so
+  // ArticleJsonLd's mainEntityOfPage and the breadcrumbs contradicted the
+  // (correct) Arabic canonical that generateMetadata emits.
+  const arUrl = `${SITE_URL}/ar/blog/${post.slug}`
+  const enUrl = `${BLOG_URL}/${post.slug}`
+  const url = viaArUrl && hasAr ? arUrl : enUrl
   const ogImage = buildOgImage(post)
 
   // `compileMDX` runs server-side and returns a React element ready to

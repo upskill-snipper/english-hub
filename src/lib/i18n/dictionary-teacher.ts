@@ -71,10 +71,14 @@ export const TEACHER_DICTIONARY: Dictionary = {
     ar: `ما زلت غير مرتبط بمدرسة`,
     es: `Aún sin conexión con un colegio`,
   },
+  // 2026-08-23: previously claimed "All the tools below work for you either
+  // way", but the three AI tools require an active plan (or the 7-day trial),
+  // so a teacher whose trial had lapsed hit a paywall on a page telling them
+  // it would work.
   'teacher.hub.school.none_desc': {
-    en: `Join with the code from your school admin, or talk to us about setting your school up. All the tools below work for you either way.`,
-    ar: `انضم بالكود من إدارة مدرستك، أو كلّمنا عشان نجهّز مدرستك. كل الأدوات تحت تشتغل لك بالحالتين.`,
-    es: `Únete con el código de tu administrador escolar, o habla con nosotros para configurar tu colegio. Todas las herramientas de abajo funcionan igualmente.`,
+    en: `Join with the code from your school admin, or talk to us about setting your school up. The tools below are yours to use - the AI ones need an active plan or your free trial.`,
+    ar: `انضم بالكود من إدارة مدرستك، أو كلّمنا عشان نجهّز مدرستك. الأدوات تحت متاحة لك - وأدوات الذكاء الاصطناعي تحتاج اشتراك فعّال أو تجربتك المجانية.`,
+    es: `Únete con el código de tu administrador escolar, o habla con nosotros para configurar tu colegio. Las herramientas de abajo son tuyas - las de IA requieren un plan activo o tu prueba gratuita.`,
   },
   'teacher.hub.school.join_code': {
     en: `Join with a school code`,

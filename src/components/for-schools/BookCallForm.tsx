@@ -34,6 +34,20 @@ const STUDENT_COUNT_OPTIONS = [
   { value: 'mat', key: 'book_call.student_count.mat' },
 ] as const
 
+/**
+ * This form's own ranges onto the whitelist /api/school-inquiry accepts
+ * (['1-30','31-50','51-100','101-200','201-500','500+']). The display options
+ * are kept as-is so the page copy does not change.
+ */
+const STUDENT_COUNT_TO_API: Record<string, string> = {
+  under_100: '51-100',
+  '100_300': '101-200',
+  '300_600': '201-500',
+  '600_1000': '500+',
+  over_1000: '500+',
+  mat: '500+',
+}
+
 export function BookCallForm() {
   const t = useT()
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
@@ -45,12 +59,18 @@ export function BookCallForm() {
     setErrorMsg('')
 
     const fd = new FormData(e.currentTarget)
+    // 2026-08-23: this form could NEVER submit. It posted `contact_name` and
+    // `student_count` with values like 'under_100', but /api/school-inquiry
+    // requires `teacher_name` and a `num_students` value from its own
+    // whitelist - so every submission was rejected with a 400 and every lead
+    // from this page was lost. Map to the API's contract here rather than
+    // changing the API, which the working /schools form already satisfies.
     const data = {
       school_name: fd.get('school_name') as string,
-      contact_name: fd.get('contact_name') as string,
+      teacher_name: fd.get('contact_name') as string,
       email: fd.get('email') as string,
       role: fd.get('role') as string,
-      student_count: fd.get('student_count') as string,
+      num_students: STUDENT_COUNT_TO_API[(fd.get('student_count') as string) ?? ''] ?? '1-30',
       message: fd.get('message') as string,
     }
 
