@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthActions } from '@/store/auth-store'
+import { setMinorFlag } from '@/lib/posthog'
 import type { Profile } from '@/lib/types'
 
 export function SupabaseProvider({ children }: { children: React.ReactNode }) {
@@ -16,11 +17,7 @@ export function SupabaseProvider({ children }: { children: React.ReactNode }) {
     const supabase = createClient()
 
     async function fetchProfile(userId: string) {
-      const { data, error } = await supabase
-        .from('profiles')
-        .select('*')
-        .eq('id', userId)
-        .single()
+      const { data, error } = await supabase.from('profiles').select('*').eq('id', userId).single()
 
       if (error) {
         console.error('Failed to fetch profile:', error.message)
@@ -28,7 +25,18 @@ export function SupabaseProvider({ children }: { children: React.ReactNode }) {
         return
       }
 
-      setProfile(data as Profile)
+      const profile = data as Profile
+      setProfile(profile)
+
+      // Children's Code analytics gate. setMinorFlag() drives
+      // canCaptureAnalytics() in lib/posthog, but nothing ever called it, so
+      // 'eh-is-minor' was never set and every signed-in minor was tracked in
+      // full - the profile-level analytics_opt_in=false written at
+      // registration only governs server-side reads, not the client SDK.
+      // This is the one place every authenticated session hydrates, so it is
+      // the correct single call site. Explicitly clears the flag for
+      // confirmed non-minors so a shared device cannot leave it stuck on.
+      setMinorFlag(profile.is_minor === true)
     }
 
     // Get the initial user via getUser() which validates with the server,
@@ -63,6 +71,9 @@ export function SupabaseProvider({ children }: { children: React.ReactNode }) {
       if (user) {
         fetchProfile(user.id).finally(() => setLoading(false))
       } else {
+        // Sign-out: drop the minor flag too, so a shared device does not carry
+        // one account's child status into the next person's session.
+        setMinorFlag(false)
         clear()
       }
     })

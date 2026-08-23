@@ -66,6 +66,7 @@ type SubmissionStatus =
   | 'teacher_reviewed'
   | 'approved'
   | 'rejected'
+  | 'returned'
   | 'training_ready'
   | 'excluded_from_training'
 
@@ -134,6 +135,7 @@ const STATUS_OPTIONS: { value: SubmissionStatus | 'all'; label: string }[] = [
   { value: 'teacher_review_required', label: 'Needs review' },
   { value: 'teacher_reviewed', label: 'Teacher reviewed' },
   { value: 'approved', label: 'Approved' },
+  { value: 'returned', label: 'Returned to student' },
   { value: 'rejected', label: 'Rejected' },
 ]
 
@@ -174,6 +176,15 @@ function statusBadge(status: SubmissionStatus) {
       return (
         <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
           Teacher reviewed
+        </Badge>
+      )
+    case 'returned':
+      return (
+        <Badge
+          variant="outline"
+          className="border-sky-500/20 bg-sky-500/10 text-sky-700 dark:text-sky-300"
+        >
+          Returned to student
         </Badge>
       )
     case 'ai_marked':

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { RevisionShell } from './_components/revision-shell'
+import { VisitTracker } from './_components/visit-tracker'
 import { LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { GeoFaq, REVISION_FAQS } from '@/components/seo/GeoFaq'
 import { t } from '@/lib/i18n/t'
@@ -35,6 +36,10 @@ export default async function RevisionLayout({ children }: { children: React.Rea
         about="English revision"
         audienceRole="student"
       />
+      {/* Records which revision pages the student opens, so the hub's
+          "In Progress" lens and RecentlyStudied panel have data to show.
+          Nothing wrote those keys before, so both were always empty. */}
+      <VisitTracker />
       <RevisionShell>
         {children}
         <div className="mx-auto w-full max-w-5xl px-4 pb-12 sm:px-6">

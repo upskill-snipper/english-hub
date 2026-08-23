@@ -503,6 +503,17 @@ function DataPrivacyTab() {
             <span>Consent Management</span>
             <ChevronRightIcon />
           </Link>
+          {/* 2026-08-23: /dashboard/settings/parent-link is the ONLY place a
+              student can generate a parent invite code, and nothing in the app
+              linked to it - the parent dashboard told parents to ask their
+              child for a code the child had no way to produce. */}
+          <Link
+            href="/dashboard/settings/parent-link"
+            className="flex items-center justify-between rounded-lg border border-border px-4 py-3 text-sm text-foreground hover:border-accent/40 hover:bg-muted transition-colors"
+          >
+            <span>Parent access</span>
+            <ChevronRightIcon />
+          </Link>
         </nav>
       </div>
 

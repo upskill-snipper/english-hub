@@ -7,7 +7,7 @@
 //       approve   → approved   (+ approved_by / approved_at)
 //       reject    → rejected
 //       correct   → teacher_review_required
-//       send_back → teacher_review_required
+//       send_back → returned  (visible to the student, with feedback)
 //   • API verb → past-tense teacher_moderations.decision:
 //       approve→approved, reject→rejected, correct→corrected, send_back→sent_back
 //   • the immutable teacher_moderations row is INSERTed BEFORE the spine UPDATE
@@ -276,7 +276,13 @@ describe('review - decision → status transition table', () => {
     ['approve', 'approved', 'approved'],
     ['reject', 'rejected', 'rejected'],
     ['correct', 'teacher_review_required', 'corrected'],
-    ['send_back', 'teacher_review_required', 'sent_back'],
+    // 2026-08-23: send_back now transitions to 'returned', not
+    // 'teacher_review_required'. Sharing the latter with `correct` meant the
+    // student read route (which reveals feedback only for 'approved') could
+    // never show work a teacher had sent back, so "send back to student" was
+    // invisible to the student. 'returned' is the status the student route
+    // now unlocks.
+    ['send_back', 'returned', 'sent_back'],
   ])(
     'verb %s ⇒ spine status %s AND teacher_moderations.decision %s',
     async (verb, expectedStatus, expectedModDecision) => {

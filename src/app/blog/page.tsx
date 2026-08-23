@@ -30,7 +30,32 @@ const PAGE_TITLE = 'Blog - The English Hub'
 const PAGE_DESCRIPTION =
   'GCSE and IGCSE English revision tips, exam-technique guides, and study advice. Calibrated to mark schemes.'
 
-export const metadata: Metadata = {
+// The Arabic blog was an orphan island: /ar/blog rewrites to this page, but
+// the metadata was a static export whose canonical always pointed at the
+// English /blog and carried no hreflang, and every card linked to the English
+// URL - so the 40 Arabic articles had effectively one inbound link each (the
+// cross-language link on their English sibling) and Google saw the Arabic
+// index as a duplicate of the English one. generateMetadata now self-
+// canonicalises the Arabic surface and declares the language alternates.
+// Mirrors blog/[slug]/page.tsx: only 'url'-sourced Arabic is the canonical
+// Arabic surface; a cookie-toggled /blog keeps the English canonical.
+export async function generateMetadata(): Promise<Metadata> {
+  const h = await headers()
+  const viaArUrl = h.get('x-lang') === 'ar' && h.get('x-lang-source') === 'url'
+  const canonical = viaArUrl ? `${SITE_URL}/ar/blog` : PAGE_URL
+  return {
+    ...BASE_METADATA,
+    alternates: {
+      canonical,
+      languages: {
+        en: PAGE_URL,
+        ar: `${SITE_URL}/ar/blog`,
+      },
+    },
+  }
+}
+
+const BASE_METADATA: Metadata = {
   title: 'Blog',
   description: PAGE_DESCRIPTION,
   alternates: { canonical: PAGE_URL },
@@ -79,6 +104,10 @@ export default async function BlogIndexPage() {
   const h = await headers()
   const nonce = h.get('x-nonce') ?? undefined
   const locale: Locale = h.get('x-lang') === 'ar' ? 'ar' : 'en'
+  // On the canonical Arabic surface every card must link to the Arabic
+  // article, otherwise an Arabic reader is bounced back into the English
+  // tree and the 40 AR posts stay unreachable by internal linking.
+  const viaArUrl = locale === 'ar' && h.get('x-lang-source') === 'url'
   const posts = getAllBlogPosts()
 
   const [tEyebrow, tHeading, tLead, tEmptyTitle, tEmptyLead, tBrowseResources, tInMeantime] =
@@ -152,7 +181,7 @@ export default async function BlogIndexPage() {
         <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
             <li key={post.slug}>
-              <PostCard post={post} locale={locale} />
+              <PostCard post={post} locale={locale} viaArUrl={viaArUrl} />
             </li>
           ))}
         </ul>
@@ -186,7 +215,15 @@ function EmptyState({
   )
 }
 
-function PostCard({ post, locale }: { post: BlogPost; locale: Locale }) {
+function PostCard({
+  post,
+  locale,
+  viaArUrl = false,
+}: {
+  post: BlogPost
+  locale: Locale
+  viaArUrl?: boolean
+}) {
   // `blog.reading_time` contains an `{n}` placeholder so AR/EN can position
   // the number naturally (e.g. "5 min read" vs "٥ دقائق قراءة").
   const readingTimeLabel = tSync('blog.reading_time', locale).replace(
@@ -195,7 +232,7 @@ function PostCard({ post, locale }: { post: BlogPost; locale: Locale }) {
   )
   return (
     <Link
-      href={`/blog/${post.slug}`}
+      href={viaArUrl ? `/ar/blog/${post.slug}` : `/blog/${post.slug}`}
       className="group block h-full rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary"
     >
       <Card className="h-full overflow-hidden transition-all group-hover:border-primary/40">

@@ -501,9 +501,15 @@ export async function GET(request: NextRequest) {
     const totals = {
       submissions: submissions.length,
       aiMarked: submissions.filter((s) =>
-        ['ai_marked', 'teacher_review_required', 'teacher_reviewed', 'approved'].includes(
-          s.status ?? '',
-        ),
+        // 'returned' has been marked AND handed back to the student, so it
+        // belongs in the marked total (and NOT in awaitingReview below).
+        [
+          'ai_marked',
+          'teacher_review_required',
+          'teacher_reviewed',
+          'approved',
+          'returned',
+        ].includes(s.status ?? ''),
       ).length,
       teacherReviewed: submissions.filter((s) =>
         ['teacher_reviewed', 'approved', 'rejected'].includes(s.status ?? ''),

@@ -90,11 +90,17 @@ const MODERATION_DECISION: Record<ReviewDecision, string> = {
 //   reject    → rejected                   (final)
 //   correct   → teacher_review_required    (stays in queue, correction saved)
 //   send_back → teacher_review_required    (returned to student, stays in queue)
+// 2026-08-23: send_back previously also mapped to teacher_review_required -
+// the same status "correct" uses to keep an item mid-review in the queue.
+// Because the student read route only reveals teacher/AI fields for
+// 'approved', the feedback a teacher wrote when returning work could never
+// reach the student: the loop dead-ended at the teacher. 'returned' separates
+// "given back to the student with feedback" from "still mid-review".
 const STATUS_AFTER: Record<ReviewDecision, string> = {
   approve: 'approved',
   reject: 'rejected',
   correct: 'teacher_review_required',
-  send_back: 'teacher_review_required',
+  send_back: 'returned',
 }
 
 interface AoCorrection {

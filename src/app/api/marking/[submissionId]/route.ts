@@ -115,14 +115,20 @@ export async function GET(
 
     if (isOwningStudent) {
       if (row.source === 'b2c_self') {
-        // Self-study: AI fields only once marked or approved.
-        const canSeeResult = row.status === 'ai_marked' || row.status === 'approved'
+        // Self-study: AI fields only once marked, approved, or returned.
+        const canSeeResult =
+          row.status === 'ai_marked' || row.status === 'approved' || row.status === 'returned'
         return successResponse({
           submission: canSeeResult ? row : stripResultFields(row),
         })
       }
-      // b2b_class student: feedback ONLY when a teacher has approved it.
-      const canSeeResult = row.status === 'approved'
+      // b2b_class student: feedback when a teacher has approved it, OR when a
+      // teacher has explicitly returned the work to them with feedback.
+      // 'returned' is teacher-initiated and always carries their comments, so
+      // withholding it was the bug: it made "send back to student" a no-op
+      // from the student's side. 'teacher_review_required' stays hidden - that
+      // is an in-progress correction, not something shared yet.
+      const canSeeResult = row.status === 'approved' || row.status === 'returned'
       return successResponse({
         submission: canSeeResult ? row : stripResultFields(row),
       })

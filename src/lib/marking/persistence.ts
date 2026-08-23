@@ -28,6 +28,12 @@ export type SubmissionStatus =
   | 'teacher_reviewed'
   | 'approved'
   | 'rejected'
+  /**
+   * Teacher has sent the work back to the student WITH feedback. Distinct
+   * from 'teacher_review_required' (still mid-review in the queue): the
+   * student may see the teacher's feedback for this status.
+   */
+  | 'returned'
   | 'training_ready'
   | 'excluded_from_training'
 

@@ -358,8 +358,13 @@ export default function SubmitEssayPage() {
             question: questionLabel,
             essay,
             wordCount,
-            grade: 0,
-            scorePercent: 0,
+            // null = not marked yet. This used to be 0, which /marking/history
+            // rendered as a real Grade 0 tile and averaged into the student's
+            // "average grade" and improvement trend - every AI-marked essay
+            // looked like a zero. The history page hydrates the real grade
+            // from the server and treats null as "awaiting mark".
+            grade: null,
+            scorePercent: null,
             aos: [],
             serverBacked: true,
             submittedAt: new Date().toISOString(),

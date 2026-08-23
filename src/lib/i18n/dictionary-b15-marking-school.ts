@@ -138,6 +138,11 @@ export const B15_MARKING_SCHOOL_DICTIONARY: Record<
 
   // ─── /marking/history ────────────────────────────────────────────────────
   'marking.history.breadcrumb': { en: 'History', ar: 'السجل', es: 'Historial' },
+  'marking.history.awaiting': {
+    en: 'Awaiting mark',
+    ar: 'بانتظار التصحيح',
+    es: 'Pendiente de nota',
+  },
   'marking.history.title': {
     en: 'Marking history',
     ar: 'سجل التصحيح',

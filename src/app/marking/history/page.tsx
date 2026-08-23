@@ -13,9 +13,12 @@ interface HistoryEntry {
   title: string
   board: string
   paper: string
-  grade: number
+  /** null while the submission has not been marked (or the mark is not yet visible). */
+  grade: number | null
   wordCount: number
   submittedAt: string
+  /** true for submissions marked server-side, whose grade we can hydrate. */
+  serverBacked?: boolean
 }
 
 export default function MarkingHistoryPage() {
@@ -24,27 +27,84 @@ export default function MarkingHistoryPage() {
   const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
+    let stored: HistoryEntry[] = []
     try {
       const raw = localStorage.getItem('english-hub-marking-history')
-      if (raw) setEntries(JSON.parse(raw))
+      if (raw) stored = JSON.parse(raw) as HistoryEntry[]
     } catch {
       /* ignore */
     }
+    setEntries(stored)
     setLoaded(true)
+
+    // Hydrate real grades for server-marked submissions. The local stub is
+    // written at submit time before marking finishes, so without this the
+    // entry stays unmarked forever even after the AI has graded it.
+    const pending = stored.filter(
+      (e) => e.serverBacked && (e.grade === null || e.grade === undefined),
+    )
+    if (pending.length === 0) return
+
+    let cancelled = false
+    ;(async () => {
+      const resolved = await Promise.all(
+        pending.map(async (e) => {
+          try {
+            const res = await fetch(`/api/marking/${encodeURIComponent(e.id)}`)
+            if (!res.ok) return null
+            const body = (await res.json()) as {
+              data?: { submission?: { teacher_grade?: number | null; ai_grade?: number | null } }
+              submission?: { teacher_grade?: number | null; ai_grade?: number | null }
+            }
+            const row = body.data?.submission ?? body.submission
+            const grade = row?.teacher_grade ?? row?.ai_grade ?? null
+            return typeof grade === 'number' ? { id: e.id, grade } : null
+          } catch {
+            return null
+          }
+        }),
+      )
+      if (cancelled) return
+      const updates = new Map(
+        resolved
+          .filter((r): r is { id: string; grade: number } => r !== null)
+          .map((r) => [r.id, r.grade]),
+      )
+      if (updates.size === 0) return
+      setEntries((prev) => {
+        const next = prev.map((e) => (updates.has(e.id) ? { ...e, grade: updates.get(e.id)! } : e))
+        try {
+          localStorage.setItem('english-hub-marking-history', JSON.stringify(next))
+        } catch {
+          /* ignore */
+        }
+        return next
+      })
+    })()
+
+    return () => {
+      cancelled = true
+    }
   }, [])
 
+  // Only genuinely marked essays contribute to the trend and the aggregates -
+  // an unmarked submission must never be counted as a zero.
+  const marked = entries.filter(
+    (e): e is HistoryEntry & { grade: number } => typeof e.grade === 'number',
+  )
+
   // Build trend points oldest → newest
-  const trendPoints: TrendPoint[] = [...entries].reverse().map((e) => ({
+  const trendPoints: TrendPoint[] = [...marked].reverse().map((e) => ({
     date: e.submittedAt,
     grade: e.grade,
     label: e.title,
   }))
 
   const averageGrade =
-    entries.length > 0
-      ? (entries.reduce((sum, e) => sum + e.grade, 0) / entries.length).toFixed(1)
+    marked.length > 0
+      ? (marked.reduce((sum, e) => sum + e.grade, 0) / marked.length).toFixed(1)
       : '-'
-  const highestGrade = entries.length > 0 ? Math.max(...entries.map((e) => e.grade)) : '-'
+  const highestGrade = marked.length > 0 ? Math.max(...marked.map((e) => e.grade)) : '-'
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
@@ -122,9 +182,15 @@ export default function MarkingHistoryPage() {
                 <Link href={`/marking/results/${e.id}`} className="block group">
                   <Card className="transition-colors group-hover:border-primary/40">
                     <CardContent className="flex items-center gap-4 py-4">
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/15 font-heading text-xl font-extrabold text-primary">
-                        {e.grade}
-                      </div>
+                      {typeof e.grade === 'number' ? (
+                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/15 font-heading text-xl font-extrabold text-primary">
+                          {e.grade}
+                        </div>
+                      ) : (
+                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-muted text-center text-[10px] font-medium leading-tight text-muted-foreground">
+                          {tx('marking.history.awaiting')}
+                        </div>
+                      )}
                       <div className="min-w-0 flex-1">
                         <p className="truncate font-semibold text-foreground">{e.title}</p>
                         <div className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground">
