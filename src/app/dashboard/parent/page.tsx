@@ -123,6 +123,23 @@ export default function ParentDashboardPage() {
     load()
   }, [load])
 
+  // Prefill the invite code when a parent arrives from an /invite/<code>
+  // link: the landing page carries it via ?code= and also stashes it in
+  // localStorage so it survives the sign-up / sign-in round-trip.
+  useEffect(() => {
+    try {
+      const fromUrl = new URLSearchParams(window.location.search).get('code')
+      const fromStore = window.localStorage.getItem('eh-parent-invite-code')
+      const code = (fromUrl || fromStore || '').trim().toUpperCase()
+      if (code) {
+        setInviteCode(code)
+        window.localStorage.removeItem('eh-parent-invite-code')
+      }
+    } catch {
+      // no-op
+    }
+  }, [])
+
   async function handleLink(e: React.FormEvent) {
     e.preventDefault()
     setLinkError('')

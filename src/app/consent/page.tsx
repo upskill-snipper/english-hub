@@ -245,7 +245,7 @@ export default function ConsentPage() {
             <div className="rounded-lg border border-border bg-muted/30 p-4">
               <p className="text-sm text-muted-foreground">
                 {t('consent.form.retention_note')}{' '}
-                <span className="text-foreground font-medium">info@Upskillenergy.com</span>.
+                <span className="text-foreground font-medium">support@theenglishhub.app</span>.
               </p>
             </div>
           </CardContent>

@@ -18,7 +18,6 @@ import {
   BookText,
   Zap,
   BarChart3,
-  CalendarDays,
   FolderOpen,
   ClipboardList,
   Timer,
@@ -45,6 +44,7 @@ import { getSetTextsForBoard } from '@/lib/board/set-texts'
 import { RecentlyStudied } from './_components/recently-studied'
 import { RevisionHubLenses, type RecommendedItem } from './_components/revision-hub-lenses'
 import { FavouriteToggle } from './_components/favourite-toggle'
+import { HeroStatPills } from './_components/hero-stat-pills'
 import { TrialCountdownBannerServer } from '@/components/billing/TrialCountdownBannerServer'
 import { t } from '@/lib/i18n/t'
 
@@ -364,6 +364,9 @@ export default async function RevisionHubPage() {
     motivationTitle: await t('revision_page.motivation.title'),
     motivationBody: await t('revision_page.motivation.body'),
     motivationCta: await t('revision_page.motivation.cta'),
+    actionStudyPlan: await t('revision_page.action.study_plan'),
+    actionExamTechnique: await t('revision_page.action.exam_technique'),
+    actionDashboard: await t('revision_page.action.dashboard'),
   }
 
   const featuredBy = featuredText
@@ -452,21 +455,10 @@ export default async function RevisionHubPage() {
           {i18n.heroBlurb}
         </h1>
 
-        {/* Plain stat pills */}
-        <div className="mt-4 flex flex-wrap gap-2">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-border/40 bg-background/50 px-3 py-1 text-xs">
-            <Target className="size-3 text-emerald-400" aria-hidden="true" />
-            <span className="font-semibold text-foreground">Target G7</span>
-          </span>
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-border/40 bg-background/50 px-3 py-1 text-xs">
-            <TrendingUp className="size-3 text-cyan-400" aria-hidden="true" />
-            <span className="font-semibold text-foreground">Predicted G6</span>
-          </span>
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-border/40 bg-background/50 px-3 py-1 text-xs">
-            <CalendarDays className="size-3 text-primary" aria-hidden="true" />
-            <span className="font-semibold text-foreground">9-day streak</span>
-          </span>
-        </div>
+        {/* Honest, data-backed target-grade pill (or a prompt to set one).
+            Replaced three hardcoded pills that showed an invented predicted
+            grade and streak to every visitor. */}
+        <HeroStatPills />
       </section>
 
       {/* ── Primary actions row ──────────────────────────────────── */}
@@ -474,18 +466,24 @@ export default async function RevisionHubPage() {
         aria-label="Primary actions"
         className="flex flex-col gap-2 sm:flex-row sm:flex-wrap"
       >
+        {/* 2026-08-23: "Continue last lesson" implied resumable state that
+            nothing tracks; relabelled to what the link actually opens. And
+            "Open full dashboard" pointed real signed-in students at
+            /demo/student - the seeded demo with invented pupils - instead of
+            their own dashboard. */}
         <Button variant="default" size="lg" render={<Link href="/revision/study-plan" />}>
-          Continue last lesson
+          {i18n.actionStudyPlan}
           <ArrowRight className="size-4" />
         </Button>
         <Button variant="outline" size="lg" render={<Link href="/revision/exam-technique" />}>
           <Sparkles className="size-4" aria-hidden="true" />
-          AI focus this week
+          {i18n.actionExamTechnique}
         </Button>
-        <Button variant="outline" size="lg" render={<Link href="/demo/student" />}>
-          Open full dashboard
+        <Button variant="outline" size="lg" render={<Link href="/dashboard" />}>
+          {i18n.actionDashboard}
           <ArrowRight className="size-4" />
         </Button>
+        {/* labels resolved in the i18n block above */}
       </section>
 
       {/* ── 3-lens grid (In Progress / Recommended / Favourites) ─── */}

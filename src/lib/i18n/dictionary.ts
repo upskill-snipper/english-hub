@@ -14218,6 +14218,86 @@ export const DICTIONARY: Dictionary = {
     ar: 'ابدأ جلسة سريعة',
     es: 'Empezar una sesión rápida',
   },
+  'invite.checking': {
+    en: 'Checking your invitation...',
+    ar: 'نتحقق من دعوتك...',
+    es: 'Comprobando tu invitación...',
+  },
+  'invite.error.generic': {
+    en: 'This invite link is invalid or has expired.',
+    ar: 'رابط الدعوة غير صالح أو انتهت صلاحيته.',
+    es: 'Este enlace de invitación no es válido o ha caducado.',
+  },
+  'invite.invalid.title': {
+    en: 'Invitation not found',
+    ar: 'الدعوة غير موجودة',
+    es: 'Invitación no encontrada',
+  },
+  'invite.go_home': {
+    en: 'Go to the home page',
+    ar: 'اذهب للصفحة الرئيسية',
+    es: 'Ir a la página de inicio',
+  },
+  'invite.valid.title': {
+    en: 'Link to your child',
+    ar: 'اربط حساب طفلك',
+    es: 'Vincula a tu hijo/a',
+  },
+  'invite.valid.for_student': {
+    en: 'Invitation from',
+    ar: 'دعوة من',
+    es: 'Invitación de',
+  },
+  'invite.benefit.progress': {
+    en: 'Follow your child’s English revision progress in one place.',
+    ar: 'تابع تقدّم طفلك في مراجعة الإنجليزي بمكان واحد.',
+    es: 'Sigue el progreso de repaso de inglés de tu hijo/a en un solo lugar.',
+  },
+  'invite.benefit.reports': {
+    en: 'Receive clear weekly summaries of what they have practised.',
+    ar: 'استلم ملخصات أسبوعية واضحة لما تدرّبوا عليه.',
+    es: 'Recibe resúmenes semanales claros de lo que han practicado.',
+  },
+  'invite.benefit.free': {
+    en: 'A parent account is free - no payment details needed.',
+    ar: 'حساب ولي الأمر مجاني - ما تحتاج بيانات دفع.',
+    es: 'Una cuenta de padre/madre es gratis - sin datos de pago.',
+  },
+  'invite.cta.create': {
+    en: 'Create your free parent account',
+    ar: 'أنشئ حساب ولي الأمر المجاني',
+    es: 'Crea tu cuenta gratuita de padre/madre',
+  },
+  'invite.cta.signin': {
+    en: 'I already have an account - link now',
+    ar: 'عندي حساب - اربط الآن',
+    es: 'Ya tengo una cuenta - vincular ahora',
+  },
+  'revision_page.action.study_plan': {
+    en: 'Open your study plan',
+    ar: 'افتح خطة مذاكرتك',
+    es: 'Abre tu plan de estudio',
+  },
+  'revision_page.action.exam_technique': {
+    en: 'AI focus this week',
+    ar: 'تركيز الذكاء الاصطناعي هذا الأسبوع',
+    es: 'Enfoque con IA esta semana',
+  },
+  'revision_page.action.dashboard': {
+    en: 'Open your dashboard',
+    ar: 'افتح لوحة تحكمك',
+    es: 'Abre tu panel',
+  },
+  'revision_page.pill.target_grade': {
+    en: 'Target grade',
+    ar: 'الدرجة المستهدفة',
+    es: 'Nota objetivo',
+  },
+  'revision_page.pill.set_target': {
+    en: 'Set your target grade',
+    ar: 'حدّد درجتك المستهدفة',
+    es: 'Fija tu nota objetivo',
+  },
   'revision_page.section.poetry.title': { en: 'Poetry', ar: 'الشعر', es: 'Poesía' },
   'revision_page.section.poetry.desc': {
     en: 'Interactive analysis of every anthology poem. Annotations, comparisons, and practice questions.',

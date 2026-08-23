@@ -318,10 +318,16 @@ function RegisterForm() {
         // fallback. The profile row can be reconciled later.
       }
 
-      // Send parental consent email if under-16 student provided a parent email
+      // Send parental consent email if under-16 student provided a parent email.
+      // NOTE: with Supabase email-confirmation ON there is no session yet here,
+      // so this POST is unauthenticated and parent-notify returns 401 - the
+      // guardian email does not send. The durable fix (trigger server-side on
+      // first verified sign-in + unify the consent-token store) is tracked
+      // separately; this at least stops the failure being invisible and lets
+      // the confirmation-OFF path (session present) work.
       if (parentGuardianEmail) {
         try {
-          await fetch('/api/auth/parent-notify', {
+          const res = await fetch('/api/auth/parent-notify', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -330,6 +336,11 @@ function RegisterForm() {
               studentId: data.user.id,
             }),
           })
+          if (!res.ok) {
+            console.error(
+              `Parent notification failed (${res.status}) - guardian consent email not sent for ${data.user.id}`,
+            )
+          }
         } catch (err) {
           // Non-blocking - don't fail signup for parent notification error
           console.error('Parent notification error:', err)

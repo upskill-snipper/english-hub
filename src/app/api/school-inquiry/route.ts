@@ -1,6 +1,23 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServiceRoleClient } from '@/lib/supabase/server'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
+import { escapeHtml } from '@/lib/email/resend'
+
+// Where school-pilot leads are emailed. Set SCHOOL_INQUIRY_EMAIL in production
+// to the address that handles school enquiries; defaults to the monitored
+// interim inbox so leads are never silently dropped.
+const SCHOOL_INQUIRY_EMAIL = process.env.SCHOOL_INQUIRY_EMAIL || 'cj@upskillenergy.com'
+
+const ROLE_LABELS: Record<string, string> = {
+  head_of_english: 'Head of English',
+  english_teacher: 'English Teacher',
+  head_of_department: 'Head of Department',
+  assistant_head: 'Assistant Head',
+  deputy_head: 'Deputy Head',
+  headteacher: 'Headteacher',
+  mat_leader: 'MAT Leader',
+  other: 'Other',
+}
 
 interface SchoolInquiryBody {
   school_name: string
@@ -91,32 +108,75 @@ export async function POST(request: NextRequest) {
     })
 
     if (insertError) {
+      // The table is created by supabase/migrations/20260823_school_inquiries.sql,
+      // applied at build time. If it is somehow still missing (42P01) we do NOT
+      // pretend success - the lead would be lost; the email below is the safety
+      // net, so fall through to send it and only 500 if the email also fails.
       console.error('Failed to insert school inquiry:', insertError)
-      // If the table doesn't exist yet, still return success
-      // but log the error for the developer to create the table
-      if (insertError.code === '42P01') {
-        console.error(
-          'school_inquiries table does not exist. Create it with:\n' +
-            'CREATE TABLE school_inquiries (\n' +
-            '  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,\n' +
-            '  school_name TEXT NOT NULL,\n' +
-            '  teacher_name TEXT NOT NULL,\n' +
-            '  email TEXT NOT NULL,\n' +
-            '  role TEXT NOT NULL,\n' +
-            '  num_students TEXT NOT NULL,\n' +
-            '  message TEXT,\n' +
-            "  status TEXT DEFAULT 'new',\n" +
-            '  created_at TIMESTAMPTZ DEFAULT now()\n' +
-            ');',
-        )
+    }
+
+    // ── Notify the schools team + confirm to the teacher (Resend) ──────────
+    // The insert alone is not enough: nothing reads the table on a schedule,
+    // and the form promises "we reply within one UK working day". Email is
+    // what actually makes a lead actionable today.
+    let emailed = false
+    const resendApiKey = process.env.RESEND_API_KEY
+    if (!resendApiKey) {
+      console.error('[school-inquiry] RESEND_API_KEY is not configured - lead not emailed')
+    } else {
+      const fromAddress = 'The English Hub <noreply@theenglishhub.app>'
+      const roleLabel = ROLE_LABELS[body.role] ?? body.role
+      const results = await Promise.allSettled([
+        fetch('https://api.resend.com/emails', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${resendApiKey}` },
+          body: JSON.stringify({
+            from: fromAddress,
+            to: SCHOOL_INQUIRY_EMAIL,
+            reply_to: body.email.trim(),
+            subject: `[School pilot] ${body.school_name.trim()} - ${roleLabel}`,
+            html: [
+              `<h2>New school pilot enquiry</h2>`,
+              `<p><strong>School:</strong> ${escapeHtml(body.school_name.trim())}</p>`,
+              `<p><strong>Contact:</strong> ${escapeHtml(body.teacher_name.trim())} (${escapeHtml(roleLabel)})</p>`,
+              `<p><strong>Email:</strong> ${escapeHtml(body.email.trim())}</p>`,
+              `<p><strong>Students:</strong> ${escapeHtml(body.num_students)}</p>`,
+              `<hr />`,
+              `<p>${escapeHtml(body.message?.trim() || 'No message provided.').replace(/\n/g, '<br />')}</p>`,
+            ].join('\n'),
+          }),
+        }),
+        fetch('https://api.resend.com/emails', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${resendApiKey}` },
+          body: JSON.stringify({
+            from: fromAddress,
+            to: body.email.trim(),
+            subject: 'We received your enquiry - The English Hub for Schools',
+            html: [
+              `<h2>Thank you, ${escapeHtml(body.teacher_name.trim())}</h2>`,
+              `<p>We have received your enquiry about a pilot for <strong>${escapeHtml(body.school_name.trim())}</strong> and will reply within one UK working day.</p>`,
+              `<br />`,
+              `<p>Best regards,<br />The English Hub Team</p>`,
+            ].join('\n'),
+          }),
+        }),
+      ])
+      const notify = results[0]
+      emailed = notify.status === 'fulfilled' && notify.value.ok
+      if (!emailed) {
+        console.error('[school-inquiry] notification email failed', notify)
       }
+    }
+
+    // Only fail the request if BOTH the DB row and the notification failed -
+    // otherwise the lead is captured somewhere a human will see it.
+    if (insertError && !emailed) {
       return NextResponse.json(
         { error: 'Failed to submit inquiry. Please try again.' },
         { status: 500 },
       )
     }
-
-    // TODO(Phase-5): Send notification email to admin and confirmation email to the teacher via Resend
 
     return NextResponse.json({ success: true })
   } catch (error) {
