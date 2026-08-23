@@ -225,7 +225,7 @@ export function RevisionHubLenses({
         </ul>
 
         <Link
-          href="/demo/student"
+          href="/dashboard/analytics"
           className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-clay-600 hover:gap-1.5 transition-all"
         >
           {t('rev.misc2.lenses.view_all')} <ArrowRight className="size-3" aria-hidden="true" />

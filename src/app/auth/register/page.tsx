@@ -63,6 +63,18 @@ function RegisterForm() {
   const searchParams = useSearchParams()
   const { board: selectedBoard } = useBoard()
   const t = useT()
+
+  // Post-auth destination carried from a gated page (e.g. the /pricing
+  // "Start 7-day free trial" 401 redirect sends the visitor to
+  // register?next=/pricing?plan=student_annual). Without this the checkout
+  // intent was dropped and every new signup landed on /dashboard instead of
+  // the plan they were trying to buy. Sanitise to a local path to avoid an
+  // open-redirect (must start with a single '/', carry no protocol).
+  const rawNext = searchParams.get('next')
+  const safeNext =
+    rawNext && rawNext.startsWith('/') && !rawNext.startsWith('//') && !rawNext.includes(':')
+      ? rawNext
+      : null
   // Three public account types. `?role=parent` (used by the /for-parents
   // CTAs) selects the parent variant; `?type=teacher` keeps its historic
   // meaning. Parent accounts are for adults only - they skip the
@@ -232,7 +244,7 @@ function RegisterForm() {
             utm_content: utmParams.utm_content,
           }),
         },
-        emailRedirectTo: `${siteUrl}/auth/callback`,
+        emailRedirectTo: `${siteUrl}/auth/callback${safeNext ? `?next=${encodeURIComponent(safeNext)}` : ''}`,
       },
     })
 
@@ -386,11 +398,11 @@ function RegisterForm() {
     // session, fall back to the verification-pending success card.
     // When Supabase email-confirmation is OFF, signUp() returns a session and we go straight to /dashboard. When confirmation is ON, no session → fall through to the verification-pending success card below.
     if (data.session) {
-      // Parents land on the parent dashboard, where the link-your-child
-      // panel is the first thing they see. Students and teachers keep the
-      // welcome-flagged student dashboard.
+      // Honour an explicit post-signup destination (e.g. the plan the visitor
+      // was trying to buy) when present; otherwise parents land on the parent
+      // dashboard and students/teachers on the welcome-flagged dashboard.
       window.location.assign(
-        accountType === 'parent' ? '/dashboard/parent' : '/dashboard?welcome=true',
+        safeNext ?? (accountType === 'parent' ? '/dashboard/parent' : '/dashboard?welcome=true'),
       )
       return
     }

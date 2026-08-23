@@ -25,6 +25,7 @@
 // ────────────────────────────────────────────────────────────────────────────
 
 import { NextRequest, NextResponse } from 'next/server'
+import * as Sentry from '@sentry/nextjs'
 import type Anthropic from '@anthropic-ai/sdk'
 import { getAnthropicClient, ANTHROPIC_MODEL } from '@/lib/anthropic-client'
 import { filterAIResponse, type UserCountry } from '@/lib/content-filter'
@@ -706,8 +707,9 @@ export async function POST(request: NextRequest) {
       disclaimer:
         'This is an AI-generated predicted band for IELTS preparation only. It is not an official IELTS result, and your score on test day may differ.',
     } satisfies { feedback: TaskFeedback; disclaimer: string })
-  } catch {
-    console.error('[IELTS Writing Feedback API] Unexpected error')
+  } catch (err) {
+    console.error('[IELTS Writing Feedback API] Unexpected error', err)
+    Sentry.captureException(err, { tags: { route: 'ielts/writing-feedback' } })
     return serverErrorResponse('An unexpected error occurred. Please try again.')
   }
 }

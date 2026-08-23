@@ -20,6 +20,7 @@
 // ────────────────────────────────────────────────────────────────────────────
 
 import { NextRequest, NextResponse } from 'next/server'
+import * as Sentry from '@sentry/nextjs'
 import type Anthropic from '@anthropic-ai/sdk'
 import { getAnthropicClient, ANTHROPIC_MODEL } from '@/lib/anthropic-client'
 import { filterAIResponse, type UserCountry } from '@/lib/content-filter'
@@ -537,8 +538,9 @@ export async function POST(request: NextRequest) {
       disclaimer:
         'This is an AI-generated practice estimate based on a typed transcript, not an official IELTS score. Pronunciation is approximated from your words (audio is not assessed in this version), and fluency is inferred from the transcript. Use it as practice guidance, not a guarantee.',
     })
-  } catch {
-    console.error('[IELTS Speaking Feedback API] Unexpected error')
+  } catch (err) {
+    console.error('[IELTS Speaking Feedback API] Unexpected error', err)
+    Sentry.captureException(err, { tags: { route: 'ielts/speaking-feedback' } })
     return serverErrorResponse('An unexpected error occurred. Please try again.')
   }
 }

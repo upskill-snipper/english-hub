@@ -20692,9 +20692,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Algo salió mal al aplicar el código. Inténtalo de nuevo.',
   },
   'pricing.err.missing_priceids': {
-    en: "We couldn't start checkout because the live Stripe price IDs aren't yet wired up in Vercel. The site team needs to add STRIPE_PRICE_STUDENT_MONTHLY / STUDENT_ANNUAL / TEACHER_MONTHLY / TEACHER_ANNUAL to Vercel Production env vars and redeploy.",
-    ar: 'ما قدرنا نبدأ الدفع لأن معرّفات أسعار Stripe الحيّة ما هي موصولة في Vercel. فريق الموقع يحتاج يضيف STRIPE_PRICE_STUDENT_MONTHLY / STUDENT_ANNUAL / TEACHER_MONTHLY / TEACHER_ANNUAL لمتغيرات بيئة الإنتاج في Vercel ويعيد النشر.',
-    es: 'No pudimos iniciar el pago porque los IDs de precio en vivo de Stripe aún no están configurados en Vercel. El equipo del sitio necesita añadir STRIPE_PRICE_STUDENT_MONTHLY / STUDENT_ANNUAL / TEACHER_MONTHLY / TEACHER_ANNUAL a las variables de entorno de Vercel Production y volver a desplegar.',
+    en: "Checkout for this plan is not available just yet. Please try again shortly, or contact support@theenglishhub.app and we'll help you get started.",
+    ar: 'الدفع لهذه الباقة غير متاح حالياً. جرّب بعد شوي، أو تواصل مع support@theenglishhub.app ونساعدك تبدأ.',
+    es: 'El pago de este plan aún no está disponible. Vuelve a intentarlo en breve o escribe a support@theenglishhub.app y te ayudaremos a empezar.',
   },
   'pricing.err.invalid_priceid': {
     en: "We couldn't start checkout - the configured Stripe price ID isn't valid in this Stripe account. Check the env vars match LIVE-mode price IDs and redeploy.",

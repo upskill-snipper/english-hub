@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import * as Sentry from '@sentry/nextjs'
 import Stripe from 'stripe'
 import { stripe, isIeltsPriceId } from '@/lib/stripe'
 import { createServiceRoleClient } from '@/lib/supabase/server'
@@ -570,6 +571,13 @@ export async function POST(request: NextRequest) {
     }
 
     console.error(`Error handling webhook event ${event.type}:`, error)
+    // The money path had zero error reporting - every webhook failure was
+    // console-only. Capture to Sentry so a broken subscription lifecycle
+    // (checkout, renewal, cancellation) surfaces instead of silently dropping.
+    Sentry.captureException(error, {
+      tags: { surface: 'stripe-webhook' },
+      extra: { eventType: event.type, eventId: event.id },
+    })
     return NextResponse.json({ error: 'Webhook handler failed' }, { status: 500 })
   }
 }

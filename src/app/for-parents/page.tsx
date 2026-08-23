@@ -83,7 +83,7 @@ const faqs = [
   {
     question: "Can I see my child's progress?",
     answer:
-      "Yes. The parent or guardian email on the account receives the consent confirmation when your child signs up, and a weekly progress summary covering modules completed, quiz scores, study time, and weak areas identified by the platform. You will not see the text of your child's written answers.",
+      "Yes. Once you link to your child from your parent dashboard, you can see modules completed, quiz scores, study time, and the weak areas the platform has identified. You will not see the text of your child's written answers. (Weekly email summaries are being finalised and are not sent yet.)",
   },
   {
     question: 'What data can I see as a parent?',
@@ -312,7 +312,7 @@ export default async function ForParentsPage() {
                 step: 3,
                 icon: BarChart3,
                 title: 'See their progress dashboard',
-                desc: 'View modules completed, practice scores, time spent, weak areas, and exam readiness. Get weekly email reports delivered straight to your inbox.',
+                desc: 'View modules completed, practice scores, time spent, and the weak areas the platform has identified - all in your parent dashboard.',
               },
             ].map((item) => (
               <Card
@@ -353,10 +353,10 @@ export default async function ForParentsPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
               {
-                icon: Mail,
+                icon: BarChart3,
                 color: 'text-primary bg-primary/10',
-                title: 'Weekly Email Progress Reports',
-                desc: 'A clear summary of what your child studied this week, their scores, and how they compare to the previous week. Delivered every Sunday evening.',
+                title: 'Progress you can follow',
+                desc: 'A clear view of what your child has studied, their scores, and where they are improving - updated as they work, in your parent dashboard.',
               },
               {
                 icon: Target,
@@ -462,8 +462,7 @@ export default async function ForParentsPage() {
                   'Exam-style practice questions and mock papers',
                   '2,000+ revision flashcards',
                   'Parent progress dashboard',
-                  'Weekly email progress reports',
-                  'Weak area alerts & recommendations',
+                  'Weak area visibility & recommendations',
                   'Exam readiness score',
                   'Verifiable completion certificates',
                   `${PRICING.TRIAL_DAYS}-day free trial`,
