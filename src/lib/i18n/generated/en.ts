@@ -6912,9 +6912,9 @@ export const EN_MESSAGES: Record<string, string> = {
   'creators.benefits.codes.title': 'Custom discount codes',
   'creators.benefits.codes.desc':
     'Give your audience exclusive discount codes to boost conversions.',
-  'creators.benefits.payout.title': 'Monthly payouts',
+  'creators.benefits.payout.title': 'Getting paid',
   'creators.benefits.payout.desc':
-    'Confirmed commissions are paid via PayPal or bank transfer. Your dashboard shows your real verified earnings.',
+    'Confirmed commissions are paid via BACS or PayPal once your balance passes the £20 threshold. Your dashboard shows your real verified earnings.',
   'creators.benefits.support.title': 'Dedicated support',
   'creators.benefits.support.desc':
     'Get direct access to our team for content ideas, assets, and promotional support.',

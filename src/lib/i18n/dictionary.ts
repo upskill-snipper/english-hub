@@ -23233,12 +23233,18 @@ export const DICTIONARY: Dictionary = {
     es: 'Ofrece a tu audiencia códigos de descuento exclusivos para impulsar las conversiones.',
   },
   'creators.benefits.payout.title': {
-    en: 'Monthly payouts',
+    en: 'Getting paid',
     ar: 'دفعات شهرية',
     es: 'Pagos mensuales',
   },
   'creators.benefits.payout.desc': {
-    en: 'Confirmed commissions are paid via PayPal or bank transfer. Your dashboard shows your real verified earnings.',
+    // 2026-08-25: the heading above this said "Monthly payouts" while the
+    // affiliate dashboard tells an affiliate "payouts run bi-monthly". Two
+    // different promises about when someone gets paid. The dashboard is the
+    // surface an affiliate actually manages their money on, so the cadence
+    // claim is removed from here rather than guessed at; restore it once the
+    // real cadence is confirmed.
+    en: 'Confirmed commissions are paid via BACS or PayPal once your balance passes the £20 threshold. Your dashboard shows your real verified earnings.',
     ar: 'العمولات المؤكّدة تتدفع عبر PayPal ولا تحويل بنكي. لوحتك تبيّن أرباحك الحقيقية المؤكّدة.',
     es: 'Las comisiones confirmadas se pagan mediante PayPal o transferencia bancaria. Tu panel muestra tus ganancias reales verificadas.',
   },
