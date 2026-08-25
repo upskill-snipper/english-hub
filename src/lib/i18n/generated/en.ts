@@ -2006,6 +2006,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'school.sidebar.import_users': 'Import Users',
   'school.sidebar.invite_teachers': 'Invite Teachers',
   'school.sidebar.analytics': 'Analytics',
+  'school.sidebar.marking_insight': 'Marking insight',
   'school.sidebar.billing': 'Billing',
   'school.sidebar.permissions': 'Permissions',
   'school.sidebar.setup_guide': 'Setup Guide',

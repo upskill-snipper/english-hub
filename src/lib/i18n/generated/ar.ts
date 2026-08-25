@@ -1967,6 +1967,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'school.sidebar.import_users': 'استورد المستخدمين',
   'school.sidebar.invite_teachers': 'ادعُ المعلمين',
   'school.sidebar.analytics': 'التحليلات',
+  'school.sidebar.marking_insight': 'رؤى التصحيح',
   'school.sidebar.billing': 'الفواتير',
   'school.sidebar.permissions': 'الصلاحيات',
   'school.sidebar.setup_guide': 'دليل الإعداد',

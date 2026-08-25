@@ -2075,6 +2075,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'school.sidebar.import_users': 'Importar usuarios',
   'school.sidebar.invite_teachers': 'Invitar a profesores',
   'school.sidebar.analytics': 'Analíticas',
+  'school.sidebar.marking_insight': 'Análisis de corrección',
   'school.sidebar.billing': 'Facturación',
   'school.sidebar.permissions': 'Permisos',
   'school.sidebar.setup_guide': 'Guía de configuración',

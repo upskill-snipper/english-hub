@@ -10,6 +10,7 @@ import {
   Mail,
   BookOpen,
   BarChart3,
+  Target,
   CreditCard,
   Shield,
   HelpCircle,
@@ -46,6 +47,12 @@ const NAV_ITEMS = [
   { labelKey: 'school.sidebar.invite_teachers', href: '/school/invite', icon: Mail },
   { labelKey: 'school.sidebar.classes', href: '/school/classes', icon: BookOpen },
   { labelKey: 'school.sidebar.analytics', href: '/school/analytics', icon: BarChart3 },
+  // 2026-08-25: the marking-analytics API (assessment objectives teachers
+  // adjust most, by school and by class) had been complete and correctly
+  // authorised for months with NO consumer anywhere in the codebase - the
+  // department-level insight schools pay for was unreachable. Page and nav
+  // entry added together, deliberately: an unlinked page is the same defect.
+  { labelKey: 'school.sidebar.marking_insight', href: '/school/analytics/marking', icon: Target },
   { labelKey: 'school.sidebar.billing', href: '/school/billing', icon: CreditCard },
   { labelKey: 'school.sidebar.permissions', href: '/school/permissions', icon: Shield },
   { labelKey: 'school.sidebar.setup_guide', href: '/school/guide', icon: HelpCircle },

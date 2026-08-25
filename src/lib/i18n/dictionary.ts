@@ -6730,6 +6730,11 @@ export const DICTIONARY: Dictionary = {
     es: 'Invitar a profesores',
   },
   'school.sidebar.analytics': { en: 'Analytics', ar: 'التحليلات', es: 'Analíticas' },
+  'school.sidebar.marking_insight': {
+    en: 'Marking insight',
+    ar: 'رؤى التصحيح',
+    es: 'Análisis de corrección',
+  },
   'school.sidebar.billing': { en: 'Billing', ar: 'الفواتير', es: 'Facturación' },
   'school.sidebar.permissions': { en: 'Permissions', ar: 'الصلاحيات', es: 'Permisos' },
   'school.sidebar.setup_guide': {
