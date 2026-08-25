@@ -6859,7 +6859,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'creators.badge': 'Creator Partners',
   'creators.h1': 'Earn Money Sharing Education',
   'creators.subtitle':
-    'Join The English Hub’s affiliate program. Earn 20% recurring commission on every student you refer.',
+    'Join The English Hub affiliate programme. Earn £5 for every student who subscribes through your link, rising as you refer more.',
   'creators.cta.apply': 'Apply to Become a Partner',
   'creators.cta.contact': 'Already an affiliate? Contact us',
   'creators.how.h2': 'How It Works',
@@ -6869,18 +6869,19 @@ export const EN_MESSAGES: Record<string, string> = {
   'creators.how.step2.desc': 'Once approved, you get a personal link and tracking dashboard.',
   'creators.how.step3.title': 'Share with your audience',
   'creators.how.step3.desc': 'Post on TikTok, YouTube, Instagram, or any platform you use.',
-  'creators.how.step4.title': 'Earn 20% recurring monthly',
+  'creators.how.step4.title': 'Earn £5 or more per subscriber',
   'creators.how.step4.desc':
-    'Earn 20% of every subscription - paid every month they stay subscribed.',
+    'A flat £5 for each confirmed subscriber, rising to £6 after 100 referrals, £7 after 250, £8 after 500 and £10 beyond 1,000.',
   'creators.how.step_label': 'Step',
   'creators.calc.h2': 'Earning Calculator',
-  'creators.calc.intro': 'An illustrative example of recurring commission earnings on the',
+  'creators.calc.intro':
+    'What you would have earned in total across that many confirmed subscribers, on the',
   'creators.calc.plan_suffix': '/mo plan.',
   'creators.calc.footnote_prefix': 'Based on',
   'creators.calc.footnote_suffix':
     '/mo subscription price. Illustrative only - one programme, one set of terms; your dashboard shows your real verified earnings.',
   'creators.calc.students_referred': 'students referred',
-  'creators.calc.per_month': 'per month, recurring',
+  'creators.calc.per_month': 'total, across those referrals',
   'creators.ideas.h2': 'Content Ideas That Convert',
   'creators.ideas.hacks.title': '"English exam hacks"',
   'creators.ideas.hacks.desc':

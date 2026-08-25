@@ -23028,10 +23028,17 @@ export const DICTIONARY: Dictionary = {
     ar: 'اكسب فلوس وأنت تنشر التعليم',
     es: 'Gana dinero compartiendo educación',
   },
+  // 2026-08-25: this said "Earn 20% recurring commission on every student you
+  // refer". The programme was rewritten on 19 April 2026 (see
+  // src/lib/affiliate/tiers.ts) from percentage-based tiers to a FLAT ladder
+  // paid per confirmed signup: £5, rising to £6 after 100, £7 after 250, £8
+  // after 500 and £10 beyond 1,000. So the page was promising creators a
+  // commission model the code does not operate - a false promise about money,
+  // which is the most serious kind. It also used the Americanism "program".
   'creators.subtitle': {
-    en: 'Join The English Hub’s affiliate program. Earn 20% recurring commission on every student you refer.',
-    ar: 'انضم لبرنامج الشراكة مالنا. اكسب ٢٠٪ عمولة متكرّرة على كل طالب توصّله.',
-    es: 'Únete al programa de afiliados de The English Hub. Gana un 20% de comisión recurrente por cada estudiante que refieras.',
+    en: 'Join The English Hub affiliate programme. Earn £5 for every student who subscribes through your link, rising as you refer more.',
+    ar: 'انضم لبرنامج الشراكة مالنا. اكسب ٥ جنيه عن كل طالب يشترك عن طريق رابطك، والمبلغ يزيد كل ما وصّلت أكثر.',
+    es: 'Únete al programa de afiliados de The English Hub. Gana 5 GBP por cada estudiante que se suscriba con tu enlace, y más a medida que refieras más.',
   },
   'creators.cta.apply': {
     en: 'Apply to Become a Partner',
@@ -23075,14 +23082,14 @@ export const DICTIONARY: Dictionary = {
     es: 'Publica en TikTok, YouTube, Instagram o cualquier plataforma que uses.',
   },
   'creators.how.step4.title': {
-    en: 'Earn 20% recurring monthly',
-    ar: 'اكسب ٢٠٪ متكرّر شهرياً',
-    es: 'Gana un 20% recurrente al mes',
+    en: 'Earn £5 or more per subscriber',
+    ar: 'اكسب ٥ جنيه أو أكثر عن كل مشترك',
+    es: 'Gana 5 GBP o más por suscriptor',
   },
   'creators.how.step4.desc': {
-    en: 'Earn 20% of every subscription - paid every month they stay subscribed.',
-    ar: 'اكسب ٢٠٪ من كل اشتراك - يتدفع كل شهر مادام مشترك.',
-    es: 'Gana el 20% de cada suscripción - pagado cada mes que sigan suscritos.',
+    en: 'A flat £5 for each confirmed subscriber, rising to £6 after 100 referrals, £7 after 250, £8 after 500 and £10 beyond 1,000.',
+    ar: 'مبلغ ثابت ٥ جنيه عن كل مشترك مؤكّد، يصير ٦ بعد ١٠٠ إحالة، و٧ بعد ٢٥٠، و٨ بعد ٥٠٠، و١٠ بعد ١٠٠٠.',
+    es: 'Una tarifa fija de 5 GBP por cada suscriptor confirmado, que sube a 6 GBP tras 100 referidos, 7 GBP tras 250, 8 GBP tras 500 y 10 GBP a partir de 1.000.',
   },
   'creators.how.step_label': { en: 'Step', ar: 'الخطوة', es: 'Paso' },
   'creators.calc.h2': {
@@ -23090,10 +23097,13 @@ export const DICTIONARY: Dictionary = {
     ar: 'حاسبة الأرباح',
     es: 'Calculadora de ganancias',
   },
+  // 2026-08-25: the calculator described "recurring commission" on a
+  // percentage of the plan price. The programme pays a flat amount per
+  // confirmed signup, so both the maths and this wording were wrong.
   'creators.calc.intro': {
-    en: 'An illustrative example of recurring commission earnings on the',
-    ar: 'مثال توضيحي لأرباح العمولة المتكرّرة على',
-    es: 'Un ejemplo ilustrativo de las ganancias por comisión recurrente en el plan',
+    en: 'What you would have earned in total across that many confirmed subscribers, on the',
+    ar: 'كم كنت بتكسب بالمجموع عن هذا العدد من المشتركين المؤكّدين، على',
+    es: 'Lo que habrías ganado en total con ese número de suscriptores confirmados, en el plan',
   },
   'creators.calc.plan_suffix': { en: '/mo plan.', ar: 'باقة شهرية.', es: '/mes.' },
   'creators.calc.footnote_prefix': { en: 'Based on', ar: 'بناءً على', es: 'Basado en' },
@@ -23108,9 +23118,9 @@ export const DICTIONARY: Dictionary = {
     es: 'estudiantes referidos',
   },
   'creators.calc.per_month': {
-    en: 'per month, recurring',
-    ar: 'بالشهر، متكرّر',
-    es: 'al mes, recurrente',
+    en: 'total, across those referrals',
+    ar: 'بالمجموع، عن هذي الإحالات',
+    es: 'en total, por esos referidos',
   },
   'creators.ideas.h2': {
     en: 'Content Ideas That Convert',

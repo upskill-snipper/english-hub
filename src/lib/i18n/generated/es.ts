@@ -7025,7 +7025,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'creators.badge': 'Creadores asociados',
   'creators.h1': 'Gana dinero compartiendo educación',
   'creators.subtitle':
-    'Únete al programa de afiliados de The English Hub. Gana un 20% de comisión recurrente por cada estudiante que refieras.',
+    'Únete al programa de afiliados de The English Hub. Gana 5 GBP por cada estudiante que se suscriba con tu enlace, y más a medida que refieras más.',
   'creators.cta.apply': 'Solicita ser socio',
   'creators.cta.contact': '¿Ya eres afiliado? Contáctanos',
   'creators.how.h2': 'Cómo funciona',
@@ -7038,19 +7038,19 @@ export const ES_MESSAGES: Record<string, string> = {
   'creators.how.step3.title': 'Compártelo con tu audiencia',
   'creators.how.step3.desc':
     'Publica en TikTok, YouTube, Instagram o cualquier plataforma que uses.',
-  'creators.how.step4.title': 'Gana un 20% recurrente al mes',
+  'creators.how.step4.title': 'Gana 5 GBP o más por suscriptor',
   'creators.how.step4.desc':
-    'Gana el 20% de cada suscripción - pagado cada mes que sigan suscritos.',
+    'Una tarifa fija de 5 GBP por cada suscriptor confirmado, que sube a 6 GBP tras 100 referidos, 7 GBP tras 250, 8 GBP tras 500 y 10 GBP a partir de 1.000.',
   'creators.how.step_label': 'Paso',
   'creators.calc.h2': 'Calculadora de ganancias',
   'creators.calc.intro':
-    'Un ejemplo ilustrativo de las ganancias por comisión recurrente en el plan',
+    'Lo que habrías ganado en total con ese número de suscriptores confirmados, en el plan',
   'creators.calc.plan_suffix': '/mes.',
   'creators.calc.footnote_prefix': 'Basado en',
   'creators.calc.footnote_suffix':
     'el precio de suscripción de /mes. Solo a modo ilustrativo - un único programa, un único conjunto de condiciones; tu panel muestra tus ganancias reales verificadas.',
   'creators.calc.students_referred': 'estudiantes referidos',
-  'creators.calc.per_month': 'al mes, recurrente',
+  'creators.calc.per_month': 'en total, por esos referidos',
   'creators.ideas.h2': 'Ideas de contenido que convierten',
   'creators.ideas.hacks.title': '"Trucos para el examen de inglés"',
   'creators.ideas.hacks.desc':

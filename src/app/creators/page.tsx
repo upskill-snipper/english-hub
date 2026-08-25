@@ -21,7 +21,22 @@ import {
   Loader2,
 } from 'lucide-react'
 import { PRICING } from '@/constants/pricing'
+import { getTierForSignupNumber } from '@/lib/affiliate/tiers'
 import { useT } from '@/lib/i18n/use-t'
+
+/**
+ * Total earned across the first `signups` confirmed referrals, using the SAME
+ * ladder the payout code uses (src/lib/affiliate/tiers.ts). Each signup is paid
+ * at the rate for its own position in the sequence, so the figure is cumulative
+ * lifetime earnings, not a monthly recurring amount.
+ */
+function cumulativeAffiliateEarnings(signups: number): number {
+  let total = 0
+  for (let n = 1; n <= signups; n++) {
+    total += getTierForSignupNumber(n).commissionGbp
+  }
+  return total
+}
 
 export default function CreatorsPage() {
   const t = useT()
@@ -107,26 +122,24 @@ export default function CreatorsPage() {
             {PRICING.MONTHLY}
             {t('creators.calc.plan_suffix')}
           </p>
+          {/* 2026-08-25: these cards multiplied the monthly plan price by 0.2
+              and labelled the result "per month, recurring". The affiliate
+              programme has paid a FLAT per-confirmed-signup ladder since the
+              19 April 2026 rewrite (src/lib/affiliate/tiers.ts), so those were
+              specific, false, forward-looking earnings figures - the most
+              damaging form the error could take, because a creator could plan
+              around them. Now computed from the real ladder. */}
           <div className="grid sm:grid-cols-3 gap-6">
-            <EarningCard
-              students={100}
-              monthly={Number((100 * PRICING.MONTHLY * 0.2).toFixed(2))}
-              studentsReferred={t('creators.calc.students_referred')}
-              perMonth={t('creators.calc.per_month')}
-            />
-            <EarningCard
-              students={500}
-              monthly={Number((500 * PRICING.MONTHLY * 0.2).toFixed(2))}
-              highlighted
-              studentsReferred={t('creators.calc.students_referred')}
-              perMonth={t('creators.calc.per_month')}
-            />
-            <EarningCard
-              students={1000}
-              monthly={Number((1000 * PRICING.MONTHLY * 0.2).toFixed(2))}
-              studentsReferred={t('creators.calc.students_referred')}
-              perMonth={t('creators.calc.per_month')}
-            />
+            {[100, 500, 1000].map((students) => (
+              <EarningCard
+                key={students}
+                students={students}
+                monthly={cumulativeAffiliateEarnings(students)}
+                highlighted={students === 500}
+                studentsReferred={t('creators.calc.students_referred')}
+                perMonth={t('creators.calc.per_month')}
+              />
+            ))}
           </div>
           <p className="text-muted-foreground text-xs text-center mt-4">
             {t('creators.calc.footnote_prefix')} {PRICING.CURRENCY}
