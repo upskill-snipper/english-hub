@@ -65,12 +65,28 @@ import Anthropic from '@anthropic-ai/sdk'
  * src/lib/marking/engine/models.ts, probe of 2026-05-29), and the inline
  * literals are gone: every route imports this constant.
  *
+ * 2026-09-17 INCIDENT (the SECOND one, same shape): `claude-sonnet-4-6` was
+ * itself rejected with HTTP 400 and the whole AI product was answering 503
+ * again. Confirmed from the deployed runtime log
+ * `[ielts/diagnostic-assess] AI call failed: class=error status=400
+ * model=claude-sonnet-4-6`. Default is now `claude-sonnet-5`.
+ *
+ * TWO LESSONS, both now addressed:
+ *   1. The August fix made THIS constant env-overridable but left the marking
+ *      engine's three tier constants hard-coded, so the core product still
+ *      needed a deploy to recover. All four are env-overridable now.
+ *   2. Nothing detected either outage - both were found by hand, the first
+ *      after ~10 weeks. Every AI route catches provider errors as a generic
+ *      "temporarily unavailable" 503, which is right for the learner and
+ *      invisible to us. `GET /api/health/ai` now exercises a real AI call so a
+ *      scheduled check can fail loudly. Wire it to a cron/monitor.
+ *
  * Env-overridable (`ANTHROPIC_MODEL`) so a future retirement is a Vercel
  * env change, not a deploy. After changing it, re-record the eval fixtures
  * (they key on the model id - see evals/fixtures/README.md) and re-run
  * `npm run eval:marking` before trusting marks.
  */
-export const ANTHROPIC_MODEL: string = process.env.ANTHROPIC_MODEL || 'claude-sonnet-4-6'
+export const ANTHROPIC_MODEL: string = process.env.ANTHROPIC_MODEL || 'claude-sonnet-5'
 
 /**
  * Hard request timeout (ms) applied at the client level. The SDK default is

@@ -26,9 +26,15 @@ describe('MARKING_MODELS', () => {
     expect(MARKING_MODELS.marker).toBe(MARKER_MODEL)
     expect(MARKING_MODELS.escalation).toBe(ESCALATION_MODEL)
     expect(MARKING_MODELS.classifier).toBe(CLASSIFIER_MODEL)
-    expect(MARKER_MODEL).toBe('claude-sonnet-4-6')
-    expect(ESCALATION_MODEL).toBe('claude-opus-4-8')
-    expect(CLASSIFIER_MODEL).toBe('claude-haiku-4-5')
+    // Exact ids are asserted deliberately: changing a marking model must be a
+    // conscious act with the eval fixtures re-recorded, not something that
+    // drifts in. Updated 2026-09-17 when claude-sonnet-4-6 started returning
+    // HTTP 400 (the second retirement outage). If this fails, that is the
+    // tripwire doing its job - update it WITH the defaults, and re-run
+    // `npm run eval:marking`.
+    expect(MARKER_MODEL).toBe('claude-sonnet-5')
+    expect(ESCALATION_MODEL).toBe('claude-opus-5')
+    expect(CLASSIFIER_MODEL).toBe('claude-haiku-4-5-20251001')
   })
 
   it('does not use the bare family `-latest` aliases (they 404 on this account)', () => {
