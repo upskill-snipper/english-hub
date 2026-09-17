@@ -60,8 +60,9 @@ Scope column key: **P** = Production, **Pv** = Preview, **D** = Development. "Al
 | `AFFILIATE_IP_HASH_SECRET` | 🟢 | All | Y | `<GENERATE: openssl rand -hex 32>` | Generate locally | Affiliate click dedupe HMAC | Click fraud dedupe weakened but not broken |
 | `CONSENT_IP_HASH_SECRET` | 🟢 | All | Y | `<GENERATE: openssl rand -hex 32>` | Generate locally | Cookie-consent IP hash | Consent ledger less robust |
 | `CRON_SECRET` | 🟠 | P | Y | *(auto-set by Vercel Pro)* — or `<GENERATE: openssl rand -hex 32>` | Vercel auto / generate for local | Bearer-token auth on `/api/cron/*` | Weekly reports, dormancy warnings, Trustpilot cron never run |
-| `UPSTASH_REDIS_REST_URL` | 🟠 | All | N | `<SET_FROM_UPSTASH>` | console.upstash.com → database → REST API | Rate limiting backend | API rate limiting disabled; abuse-vulnerable |
-| `UPSTASH_REDIS_REST_TOKEN` | 🟠 | All | Y | `<SET_FROM_UPSTASH>` | Same | Upstash bearer token | Same |
+| `UPSTASH_REDIS_REST_URL` | 🔴 | All | N | `<SET_FROM_UPSTASH>` | console.upstash.com → database → REST API | Rate limiting backend | **Currently unset in production. Every API rate limit is therefore unenforced** (counted per serverless instance). Compliance statement: `business-docs/compliance/controls/rate-limiting-control-status.md` |
+| `UPSTASH_REDIS_REST_TOKEN` | 🔴 | All | Y | `<SET_FROM_UPSTASH>` | Same | Upstash bearer token | Same |
+| `RATE_LIMIT_REQUIRE_REDIS` | 🟢 | P | N | *(leave unset until the two Upstash variables are set and verified)* | Set by hand | Deploy gate: when true, the app fails at startup if Upstash is not configured, instead of serving traffic with an unenforced limiter | Off by default. Set it to `true` only after `getRateLimitHealth()` reports `status: ok` in production |
 | `ADMIN_EMAILS` | 🟢 | All | N | `cj@upskillenergy.com` | Known | Comma-separated admin access list | Admin dashboard blocked to founder |
 | `SITE_ADMIN_EMAILS` | 🟢 | All | N | `cj@upskillenergy.com` | Known | Super-admin list | Super-admin surfaces blocked |
 | `REWARDFUL_API_SECRET` | 🟢 | P | Y | `<SET_FROM_REWARDFUL>` if live | Rewardful dashboard | Server-side affiliate sync | Affiliate tracking inert — acceptable until affiliate programme launches |

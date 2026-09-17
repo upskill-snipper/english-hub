@@ -88,7 +88,7 @@ const faqs = [
   {
     question: 'What data can I see as a parent?',
     answer:
-      'You can see modules completed, quiz scores, time spent studying, course progress, weak areas identified by our system, and a weekly activity summary. You cannot see the content of any written answers your child submits.',
+      'You can see modules completed, quiz scores, time spent studying, course progress and weak areas identified by our system. You cannot see the content of any written answers your child submits. (Weekly activity summaries are being finalised and are not produced yet.)',
   },
   {
     question: 'Can my child see that I am monitoring their progress?',

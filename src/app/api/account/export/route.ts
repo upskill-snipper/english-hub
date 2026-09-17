@@ -3,6 +3,7 @@ import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { rateLimit } from '@/lib/rate-limit'
 import { prisma } from '@/lib/prisma'
 import { compileUserData } from '@/lib/dsar'
+import { compileSupabaseNativeSubjectData } from '@/lib/data-retention'
 
 /**
  * POST /api/account/export
@@ -70,9 +71,23 @@ export async function POST(request: NextRequest) {
     }
 
     if (!prismaUser) {
-      // No matching application-side row. The auth user exists but has no
-      // profile yet (e.g. signup mid-flow). Nothing to export.
-      return NextResponse.json({ error: 'No account data found to export.' }, { status: 404 })
+      // No Prisma row. That does NOT mean we hold nothing: most accounts
+      // exist only in Supabase, as an `auth.users` row and a
+      // `public.profiles` row holding email, full name, date of birth,
+      // year group and guardian email. Answering "no account data found"
+      // to those people was a refusal of an Art.15 request for data we
+      // demonstrably hold. Export the store the data is actually in.
+      const nativePayload = await compileSupabaseNativeSubjectData(authUser.id)
+      const nativeDate = new Date().toISOString().slice(0, 10)
+
+      return new NextResponse(JSON.stringify(nativePayload, null, 2), {
+        status: 200,
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8',
+          'Content-Disposition': `attachment; filename="english-hub-data-${nativeDate}.json"`,
+          'Cache-Control': 'no-store, max-age=0',
+        },
+      })
     }
 
     // 4. Compile the export payload using the shared DSAR helper. This

@@ -1,7 +1,7 @@
-import { NextRequest, NextResponse } from "next/server";
-import { rateLimit, getClientIp } from "@/lib/rate-limit";
-import { prisma } from "@/lib/prisma";
-import { requireAdmin, AdminAuthError } from "@/lib/admin";
+import { NextRequest, NextResponse } from 'next/server'
+import { rateLimit, getClientIp } from '@/lib/rate-limit'
+import { prisma } from '@/lib/prisma'
+import { requireAdmin, AdminAuthError } from '@/lib/admin'
 
 // ─── GET /api/admin/users ───────────────────────────────────────────────
 // Lists users with filtering, search, and pagination.
@@ -10,59 +10,59 @@ import { requireAdmin, AdminAuthError } from "@/lib/admin";
 export async function GET(request: NextRequest) {
   try {
     // ── Rate limit: 30 per IP per minute ───────────────────
-    const ip = getClientIp(request.headers);
-    const rl = await rateLimit(`admin-users:${ip}`, { limit: 30, windowSeconds: 60 });
+    const ip = getClientIp(request.headers)
+    const rl = await rateLimit(`admin-users:${ip}`, { limit: 30, windowSeconds: 60 })
     if (!rl.success) {
       return NextResponse.json(
-        { error: "Too many requests. Please try again later." },
-        { status: 429, headers: { "Retry-After": String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
-      );
+        { error: 'Too many requests. Please try again later.' },
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+        },
+      )
     }
 
-    await requireAdmin();
+    await requireAdmin()
 
-    const { searchParams } = new URL(request.url);
+    const { searchParams } = new URL(request.url)
 
     // Pagination
-    const page = Math.max(1, parseInt(searchParams.get("page") ?? "1", 10));
-    const pageSize = Math.min(
-      100,
-      Math.max(1, parseInt(searchParams.get("pageSize") ?? "25", 10))
-    );
-    const skip = (page - 1) * pageSize;
+    const page = Math.max(1, parseInt(searchParams.get('page') ?? '1', 10))
+    const pageSize = Math.min(100, Math.max(1, parseInt(searchParams.get('pageSize') ?? '25', 10)))
+    const skip = (page - 1) * pageSize
 
     // Search
-    const search = searchParams.get("search")?.trim() ?? "";
+    const search = searchParams.get('search')?.trim() ?? ''
 
     // Filters
-    const role = searchParams.get("role") ?? "";
-    const status = searchParams.get("status") ?? "";
-    const isMinor = searchParams.get("isMinor") ?? "";
+    const role = searchParams.get('role') ?? ''
+    const status = searchParams.get('status') ?? ''
+    const isMinor = searchParams.get('isMinor') ?? ''
 
     // Build where clause
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const where: any = {};
+    const where: any = {}
 
     if (search) {
       where.OR = [
-        { firstName: { contains: search, mode: "insensitive" } },
-        { lastName: { contains: search, mode: "insensitive" } },
-        { email: { contains: search, mode: "insensitive" } },
-      ];
+        { firstName: { contains: search, mode: 'insensitive' } },
+        { lastName: { contains: search, mode: 'insensitive' } },
+        { email: { contains: search, mode: 'insensitive' } },
+      ]
     }
 
-    if (role && ["STUDENT", "ADMIN", "REVIEWER"].includes(role)) {
-      where.role = role;
+    if (role && ['STUDENT', 'ADMIN', 'REVIEWER'].includes(role)) {
+      where.role = role
     }
 
-    if (status && ["ACTIVE", "SUSPENDED", "DELETED"].includes(status)) {
-      where.accountStatus = status;
+    if (status && ['ACTIVE', 'SUSPENDED', 'DELETED'].includes(status)) {
+      where.accountStatus = status
     }
 
-    if (isMinor === "true") {
-      where.isMinor = true;
-    } else if (isMinor === "false") {
-      where.isMinor = false;
+    if (isMinor === 'true') {
+      where.isMinor = true
+    } else if (isMinor === 'false') {
+      where.isMinor = false
     }
 
     // Query
@@ -88,21 +88,23 @@ export async function GET(request: NextRequest) {
             select: { essays: { where: { deletedAt: null } } },
           },
         },
-        orderBy: { createdAt: "desc" },
+        orderBy: { createdAt: 'desc' },
         skip,
         take: pageSize,
       }),
       prisma.user.count({ where }),
-    ]);
+    ])
 
-    const totalPages = Math.max(1, Math.ceil(total / pageSize));
+    const totalPages = Math.max(1, Math.ceil(total / pageSize))
 
     const formattedUsers = users.map((u) => ({
       id: u.id,
       email: u.email,
       firstName: u.firstName,
       lastName: u.lastName,
-      dateOfBirth: u.dateOfBirth.toISOString(),
+      // null means NOT HELD (the column was widened 2026-09-17). An admin
+      // list must show the absence, not a stand-in date.
+      dateOfBirth: u.dateOfBirth?.toISOString() ?? null,
       country: u.country,
       role: u.role,
       isMinor: u.isMinor,
@@ -111,7 +113,7 @@ export async function GET(request: NextRequest) {
       createdAt: u.createdAt.toISOString(),
       subscriptionStatus: u.subscription?.status ?? null,
       essayCount: u._count.essays,
-    }));
+    }))
 
     return NextResponse.json({
       users: formattedUsers,
@@ -121,18 +123,12 @@ export async function GET(request: NextRequest) {
         total,
         totalPages,
       },
-    });
+    })
   } catch (error) {
     if (error instanceof AdminAuthError) {
-      return NextResponse.json(
-        { error: error.message },
-        { status: error.statusCode }
-      );
+      return NextResponse.json({ error: error.message }, { status: error.statusCode })
     }
-    console.error("GET /api/admin/users error:", error);
-    return NextResponse.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    console.error('GET /api/admin/users error:', error)
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }

@@ -1,7 +1,7 @@
 {
   "v": 1,
-  "key": "f340611d10cc618442a92ad5a3bba4ce2d9d3e33c3f4facd02b5df93373c4238",
-  "model": "claude-sonnet-4-20250514",
+  "key": "7a593489f730ebf5ef2b27d3c85d5b87f1147d484ff4cd73cb70a1fde82a5da0",
+  "model": "claude-sonnet-5",
   "caseId": "ocr-lit-c01-secB-syn-27",
   "markSchemeId": "ocr-lit-component01",
   "questionId": "Section B",

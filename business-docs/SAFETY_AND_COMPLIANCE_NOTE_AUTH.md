@@ -27,7 +27,7 @@ This is a Supabase dashboard toggle plus a new policy module. It is not a wholes
 - **Under-16s require a parent-guardian email.** A parental notification email is sent via `/api/auth/parent-notify` at sign-up time, and the under-16 account is created with high-privacy defaults applied automatically.
 - **Password rules.** Minimum 8 characters, enforced server-side.
 - **Account-enumeration defences.** The login, signup, and resend-verification endpoints are written to avoid leaking whether an email is registered (see the `P1-SEC-5` and `P1-SEC-6` review comments in the auth route handlers). Error messages are deliberately generic.
-- **Rate-limiting on `/api/auth/resend-verification`.** Currently 3 requests per IP per hour and 5 per email address per day. Prevents using the resend endpoint as an email-bomb relay.
+- **Rate-limiting on `/api/auth/resend-verification` is configured but NOT ENFORCED.** The code sets 3 requests per IP per hour and 5 per email address per day, but the limiter has no shared backend in production, so counts are per serverless instance and do not hold (`business-docs/compliance/controls/rate-limiting-control-status.md`). Corrected 17 September 2026: this endpoint has no working brake in our code, and nothing here should be read as preventing its use as an email-bomb relay. This is the highest-exposure consequence of the limiter gap and should be closed first.
 - **Children's Code high-privacy defaults at sign-up.** Under-16 profiles are created with analytics off, marketing off, profile visibility off, and other privacy-by-default settings without requiring the user or guardian to opt out.
 - **Verified email REQUIRED before sensitive actions.** The `email-verification-policy.ts` module enforces that the user's email must be verified before:
   - Stripe checkout
@@ -69,9 +69,9 @@ Stripe does not require verified email at account sign-up but does require accur
 
 | Risk | Likelihood | Impact | Mitigation |
 |---|---|---|---|
-| Spam sign-ups inflate user count | Medium | Low | Rate-limiting on auth endpoints; optional CAPTCHA on `/auth/register` if abuse is detected |
+| Spam sign-ups inflate user count | Medium | Low | **No working mitigation today.** Rate limiting on auth endpoints is configured but not enforced (`business-docs/compliance/controls/rate-limiting-control-status.md`). CAPTCHA on `/auth/register` is an option if abuse is detected |
 | Typo'd email leaves account unrecoverable | Low | Medium | Google OAuth available; resend-verification page; `founder@theenglishhub.app` rescue path; soft-verification gate at checkout prevents payment from a typo'd account |
-| Email-bombing (someone signs another person up) | Low | Low | Per-email rate limit on the verification-email send; the verification-pending state is not claimed unless the user logs in, so typing a victim's email into our form does nothing harmful to them |
+| Email-bombing (someone signs another person up) | Low | **Medium until the limiter is enforced** | The per-email rate limit on the verification-email send is configured but not enforced (`business-docs/compliance/controls/rate-limiting-control-status.md`), so the only remaining points are that the verification-pending state is not claimed unless the user logs in, and whatever the email provider applies at its own edge, which is not evidenced here |
 | Phishing pretending to be us | Same as before | Same as before | DKIM and DMARC configured on the Resend sending domain; users are told we never ask for a password by email |
 
 ## 7. Rollback plan

@@ -1,7 +1,7 @@
 {
   "v": 1,
-  "key": "eed7f0dc660f55212c05c6b7ab0c4f422da72f7c2cbc1b44cb7ea10ed2213994",
-  "model": "claude-sonnet-4-20250514",
+  "key": "51c6d9982fcd1e3f1e7b704dbe430e49bc585035dbbb09064a0d7514bc652bb0",
+  "model": "claude-sonnet-5",
   "caseId": "cambridge-0500-p1-q1f-syn-20",
   "markSchemeId": "cambridge-0500-paper1",
   "questionId": "Q1f",

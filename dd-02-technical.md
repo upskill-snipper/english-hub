@@ -59,12 +59,12 @@ A **backend directory** (`/backend/`) also exists, containing what appears to be
 
 ### Rendering Strategy
 
-| Strategy | Usage |
-|---|---|
-| SSG (static) | Default for ~600+ page routes (content pages, revision notes, poetry analysis) |
-| ISR | `/analysis/*` subtree (via `revalidate` in layout + page), `/api/analytics/aggregate` |
-| Dynamic SSR | 51 files declare `export const dynamic` (API routes, affiliate layout, school analytics) |
-| Client-side | Interactive components (board selector, quiz engine, games, marking flow) |
+| Strategy     | Usage                                                                                    |
+| ------------ | ---------------------------------------------------------------------------------------- |
+| SSG (static) | Default for ~600+ page routes (content pages, revision notes, poetry analysis)           |
+| ISR          | `/analysis/*` subtree (via `revalidate` in layout + page), `/api/analytics/aggregate`    |
+| Dynamic SSR  | 51 files declare `export const dynamic` (API routes, affiliate layout, school analytics) |
+| Client-side  | Interactive components (board selector, quiz engine, games, marking flow)                |
 
 The heavy static page count (~617 `page.tsx` files) is the primary driver of build-time resource consumption and the root cause of the OOM mitigations documented in the commit history.
 
@@ -129,30 +129,30 @@ RUNBOOK.md            379-line operational runbook
 
 ## 3. Tech Stack
 
-| Layer | Technology | Version | Status |
-|---|---|---|---|
-| Framework | Next.js App Router | `^14.2.35` | Yellow -- Next 15 available |
-| Language | TypeScript (strict mode) | `^5.9.3` | Green |
-| UI | React + Tailwind + `@base-ui/react` + shadcn | React `^18`, Tailwind `3.4.19` | Yellow -- React 19, TW 4 available |
-| Database | Supabase PostgreSQL | `@supabase/ssr ^0.9.0`, `@supabase/supabase-js ^2.99.2` | Green |
-| ORM | Prisma | `^6.19.2` | Green |
-| Auth | **Supabase SSR (sole system)** | via `@supabase/ssr` | **Green** |
-| Payments | Stripe | Server `^20.4.1`, Client `^8.11.0` | Green |
-| State | Zustand | `^5.0.12` | Green |
-| AI | Anthropic Claude SDK | `^0.80.0` | Green |
-| Rate Limiting | Upstash Redis | `@upstash/ratelimit ^2.0.8`, `@upstash/redis ^1.37.0` | Green |
-| Error Tracking | Sentry | `@sentry/nextjs ^10.44.0` | Green (build-time upload disabled; CLI path documented) |
-| Sentry CLI | `@sentry/cli` | `^2.42.2` | **Green (NEW)** |
-| Bundle Analysis | `@next/bundle-analyzer` | `^14.2.35` | **Green (NEW)** |
-| Analytics | Vercel Analytics + Speed Insights, GA4 | `^2.0.1`, `^2.0.0` | Green |
-| Email | Nodemailer (Resend) | `^7.0.13` | Green |
-| Validation | Zod | `^4.3.6` | Green |
-| Testing (Unit) | Vitest + Testing Library + jsdom | `^4.1.0`, `^16.3.2` | Green |
-| Testing (E2E) | Playwright | `^1.52.0` | Green |
-| Pre-commit | Husky + lint-staged | `^9.1.0`, `^15.4.0` | Green |
-| SBOM | CycloneDX | `@cyclonedx/cyclonedx-npm ^1.20.0` | Green |
-| Export | docx (Word), pptxgenjs (PowerPoint) | `^9.6.1`, `^4.0.1` | Green |
-| Hosting | Vercel, region `lhr1` (London) | -- | Green |
+| Layer           | Technology                                   | Version                                                 | Status                                                                                                                                                                                                                           |
+| --------------- | -------------------------------------------- | ------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Framework       | Next.js App Router                           | `^14.2.35`                                              | Yellow -- Next 15 available                                                                                                                                                                                                      |
+| Language        | TypeScript (strict mode)                     | `^5.9.3`                                                | Green                                                                                                                                                                                                                            |
+| UI              | React + Tailwind + `@base-ui/react` + shadcn | React `^18`, Tailwind `3.4.19`                          | Yellow -- React 19, TW 4 available                                                                                                                                                                                               |
+| Database        | Supabase PostgreSQL                          | `@supabase/ssr ^0.9.0`, `@supabase/supabase-js ^2.99.2` | Green                                                                                                                                                                                                                            |
+| ORM             | Prisma                                       | `^6.19.2`                                               | Green                                                                                                                                                                                                                            |
+| Auth            | **Supabase SSR (sole system)**               | via `@supabase/ssr`                                     | **Green**                                                                                                                                                                                                                        |
+| Payments        | Stripe                                       | Server `^20.4.1`, Client `^8.11.0`                      | Green                                                                                                                                                                                                                            |
+| State           | Zustand                                      | `^5.0.12`                                               | Green                                                                                                                                                                                                                            |
+| AI              | Anthropic Claude SDK                         | `^0.80.0`                                               | Green                                                                                                                                                                                                                            |
+| Rate Limiting   | Upstash Redis                                | `@upstash/ratelimit ^2.0.8`, `@upstash/redis ^1.37.0`   | **Red. Library present, service not provisioned:** the Upstash credentials are not set in production, so the limiter runs per instance and is not enforced (`business-docs/compliance/controls/rate-limiting-control-status.md`) |
+| Error Tracking  | Sentry                                       | `@sentry/nextjs ^10.44.0`                               | Green (build-time upload disabled; CLI path documented)                                                                                                                                                                          |
+| Sentry CLI      | `@sentry/cli`                                | `^2.42.2`                                               | **Green (NEW)**                                                                                                                                                                                                                  |
+| Bundle Analysis | `@next/bundle-analyzer`                      | `^14.2.35`                                              | **Green (NEW)**                                                                                                                                                                                                                  |
+| Analytics       | Vercel Analytics + Speed Insights, GA4       | `^2.0.1`, `^2.0.0`                                      | Green                                                                                                                                                                                                                            |
+| Email           | Nodemailer (Resend)                          | `^7.0.13`                                               | Green                                                                                                                                                                                                                            |
+| Validation      | Zod                                          | `^4.3.6`                                                | Green                                                                                                                                                                                                                            |
+| Testing (Unit)  | Vitest + Testing Library + jsdom             | `^4.1.0`, `^16.3.2`                                     | Green                                                                                                                                                                                                                            |
+| Testing (E2E)   | Playwright                                   | `^1.52.0`                                               | Green                                                                                                                                                                                                                            |
+| Pre-commit      | Husky + lint-staged                          | `^9.1.0`, `^15.4.0`                                     | Green                                                                                                                                                                                                                            |
+| SBOM            | CycloneDX                                    | `@cyclonedx/cyclonedx-npm ^1.20.0`                      | Green                                                                                                                                                                                                                            |
+| Export          | docx (Word), pptxgenjs (PowerPoint)          | `^9.6.1`, `^4.0.1`                                      | Green                                                                                                                                                                                                                            |
+| Hosting         | Vercel, region `lhr1` (London)               | --                                                      | Green                                                                                                                                                                                                                            |
 
 **Auth note:** `next-auth` was completely removed in Cycle 1. The application uses Supabase SSR auth exclusively for all user types (students, parents, teachers, admins). CSRF protection is handled via `CSRF_SECRET` with HMAC tokens.
 
@@ -166,23 +166,23 @@ RUNBOOK.md            379-line operational runbook
 
 ### Version Health
 
-| Package | Version | Assessment |
-|---|---|---|
-| `next` | `^14.2.35` | Yellow -- Next 15 GA, migration path available |
-| `react` / `react-dom` | `^18` | Yellow -- React 19 GA |
-| `@types/react` / `@types/react-dom` | `^18.3.0` | Green -- matches runtime |
-| `typescript` | `^5.9.3` | Green |
-| `@prisma/client` / `prisma` | `^6.19.2` | Green |
-| `tailwindcss` | `^3.4.19` | Yellow -- Tailwind 4 available |
-| `zod` | `^4.3.6` | Green -- recently upgraded to v4 |
-| `zustand` | `^5.0.12` | Green |
-| `@sentry/nextjs` | `^10.44.0` | Green |
-| `@sentry/cli` | `^2.42.2` | **Green (NEW)** |
-| `@next/bundle-analyzer` | `^14.2.35` | **Green (NEW)** |
-| `@playwright/test` | `^1.52.0` | Green |
-| `husky` | `^9.1.0` | Green |
-| `lint-staged` | `^15.4.0` | Green |
-| `@cyclonedx/cyclonedx-npm` | `^1.20.0` | Green |
+| Package                             | Version    | Assessment                                     |
+| ----------------------------------- | ---------- | ---------------------------------------------- |
+| `next`                              | `^14.2.35` | Yellow -- Next 15 GA, migration path available |
+| `react` / `react-dom`               | `^18`      | Yellow -- React 19 GA                          |
+| `@types/react` / `@types/react-dom` | `^18.3.0`  | Green -- matches runtime                       |
+| `typescript`                        | `^5.9.3`   | Green                                          |
+| `@prisma/client` / `prisma`         | `^6.19.2`  | Green                                          |
+| `tailwindcss`                       | `^3.4.19`  | Yellow -- Tailwind 4 available                 |
+| `zod`                               | `^4.3.6`   | Green -- recently upgraded to v4               |
+| `zustand`                           | `^5.0.12`  | Green                                          |
+| `@sentry/nextjs`                    | `^10.44.0` | Green                                          |
+| `@sentry/cli`                       | `^2.42.2`  | **Green (NEW)**                                |
+| `@next/bundle-analyzer`             | `^14.2.35` | **Green (NEW)**                                |
+| `@playwright/test`                  | `^1.52.0`  | Green                                          |
+| `husky`                             | `^9.1.0`   | Green                                          |
+| `lint-staged`                       | `^15.4.0`  | Green                                          |
+| `@cyclonedx/cyclonedx-npm`          | `^1.20.0`  | Green                                          |
 
 ### Licence Compliance
 
@@ -202,20 +202,21 @@ CI includes `npm audit --audit-level=high` as a dedicated job. Pre-commit hooks 
 
 ### Scale
 
-| Metric | Value |
-|---|---|
-| TS/TSX files | 1,620 |
-| Total LOC (all TS/TSX) | ~790,100 |
-| Page routes (`page.tsx`) | 617 |
-| API routes (`route.ts`) | 109 |
-| React components | 168 files in `src/components/` |
-| Zustand stores | 5 (auth, course, exam, flashcard, school) + unified board store in `src/lib/board/` |
+| Metric                   | Value                                                                               |
+| ------------------------ | ----------------------------------------------------------------------------------- |
+| TS/TSX files             | 1,620                                                                               |
+| Total LOC (all TS/TSX)   | ~790,100                                                                            |
+| Page routes (`page.tsx`) | 617                                                                                 |
+| API routes (`route.ts`)  | 109                                                                                 |
+| React components         | 168 files in `src/components/`                                                      |
+| Zustand stores           | 5 (auth, course, exam, flashcard, school) + unified board store in `src/lib/board/` |
 
-A significant portion of the LOC is hardcoded curriculum content (poem texts, analysis, flashcards, lesson plans, courses) embedded in `src/data/*` and `src/app/**/page.tsx`. The *functional code* LOC (non-content) is estimated at 80-120k.
+A significant portion of the LOC is hardcoded curriculum content (poem texts, analysis, flashcards, lesson plans, courses) embedded in `src/data/*` and `src/app/**/page.tsx`. The _functional code_ LOC (non-content) is estimated at 80-120k.
 
 ### TypeScript Strict Mode
 
 **Enabled.** `tsconfig.json`:
+
 ```json
 "strict": true,
 "noEmit": true,
@@ -230,6 +231,7 @@ A significant portion of the LOC is hardcoded curriculum content (poem texts, an
 **All three configured.** `eslint@^8.57.0` and `eslint-config-next@^14.2.35` are in devDependencies. `.prettierrc` exists with project-standard settings (no semicolons, single quotes, trailing commas, 100-char print width). CI runs both `next lint` and `prettier --check .` on every push/PR.
 
 **Pre-commit hooks:** Husky v9 + lint-staged are installed. The `.husky/pre-commit` hook runs `npx lint-staged`, which applies:
+
 - `eslint --fix` on `*.ts` and `*.tsx` files
 - `prettier --write` on `*.ts`, `*.tsx`, `*.json`, and `*.md` files
 
@@ -239,63 +241,63 @@ This closes the previously-flagged gap where developers could bypass linting by 
 
 **37 Vitest unit test files** (655 test cases) under `src/__tests__/`, all passing:
 
-| File | Test Cases | Purpose |
-|---|---|---|
-| `affiliate-tiers.test.ts` | 24 | Affiliate tier calculation |
-| `ai-preferences.test.ts` | 9 | AI opt-out logic |
-| `analytics-aggregate.test.ts` | 22 | Analytics aggregation logic |
-| `board-gate.test.ts` | 7 | Board selection guard |
-| `board-store.test.ts` | 10 | Board Zustand store **(NEW)** |
-| `board-system.test.ts` | 62 | Board store, config, filtering |
-| `checkout.test.ts` | 10 | Stripe checkout session creation |
-| `child-defaults.test.ts` | 19 | Child privacy defaults |
-| `consent-check.test.ts` | 10 | Consent flow validation |
-| `consent.test.ts` | 15 | Consent flow |
-| `content-safety.test.ts` | 29 | Content moderation + safeguarding signposting |
-| `cookie-consent-log.test.ts` | 7 | Cookie consent server logging |
-| `cookie-consent.test.ts` | 6 | Cookie consent UI logic |
-| `cron-auth.test.ts` | 7 | Cron authentication |
-| `data-integrity.test.ts` | 9 | Data integrity validation |
-| `data-retention-cron.test.ts` | 7 | Data retention cron endpoint **(NEW)** |
-| `data-retention.test.ts` | 17 | Data retention/cleanup logic |
-| `dormancy.test.ts` | 11 | Account dormancy detection |
-| `env-validation.test.ts` | 6 | Environment variable validation **(NEW)** |
-| `game-scoring.test.ts` | 24 | Game scoring logic |
-| `mark-schemes.test.ts` | 17 | Mark scheme parsing |
-| `marking-predictor.test.ts` | 35 | AI marking grade prediction |
-| `parent-link-codes.test.ts` | 21 | Parent invite/link code flow |
-| `prisma-board-map.test.ts` | 14 | Prisma enum to app enum bridging **(NEW)** |
-| `progress-sync.test.ts` | 9 | Progress synchronisation |
-| `quiz-data.test.ts` | 18 | Quiz data validation |
-| `rate-limit.test.ts` | 7 | In-memory fallback |
-| `reading-assessment.test.ts` | 39 | Reading assessment engine |
-| `recommendations-engine.test.ts` | 14 | Recommendation engine |
-| `security-headers.test.ts` | 25 | Security header validation |
-| `security.test.ts` | 33 | Security utilities |
-| `social-share.test.ts` | 10 | Social sharing |
-| `student-weekly-email.test.ts` | 25 | Student weekly email |
-| `subscription.test.ts` | 20 | Subscription logic |
-| `utils.test.ts` | 19 | Utility function tests |
-| `validate-request.test.ts` | 17 | Request validation |
-| `webhook.test.ts` | 21 | Stripe webhook handlers |
+| File                             | Test Cases | Purpose                                       |
+| -------------------------------- | ---------- | --------------------------------------------- |
+| `affiliate-tiers.test.ts`        | 24         | Affiliate tier calculation                    |
+| `ai-preferences.test.ts`         | 9          | AI opt-out logic                              |
+| `analytics-aggregate.test.ts`    | 22         | Analytics aggregation logic                   |
+| `board-gate.test.ts`             | 7          | Board selection guard                         |
+| `board-store.test.ts`            | 10         | Board Zustand store **(NEW)**                 |
+| `board-system.test.ts`           | 62         | Board store, config, filtering                |
+| `checkout.test.ts`               | 10         | Stripe checkout session creation              |
+| `child-defaults.test.ts`         | 19         | Child privacy defaults                        |
+| `consent-check.test.ts`          | 10         | Consent flow validation                       |
+| `consent.test.ts`                | 15         | Consent flow                                  |
+| `content-safety.test.ts`         | 29         | Content moderation + safeguarding signposting |
+| `cookie-consent-log.test.ts`     | 7          | Cookie consent server logging                 |
+| `cookie-consent.test.ts`         | 6          | Cookie consent UI logic                       |
+| `cron-auth.test.ts`              | 7          | Cron authentication                           |
+| `data-integrity.test.ts`         | 9          | Data integrity validation                     |
+| `data-retention-cron.test.ts`    | 7          | Data retention cron endpoint **(NEW)**        |
+| `data-retention.test.ts`         | 17         | Data retention/cleanup logic                  |
+| `dormancy.test.ts`               | 11         | Account dormancy detection                    |
+| `env-validation.test.ts`         | 6          | Environment variable validation **(NEW)**     |
+| `game-scoring.test.ts`           | 24         | Game scoring logic                            |
+| `mark-schemes.test.ts`           | 17         | Mark scheme parsing                           |
+| `marking-predictor.test.ts`      | 35         | AI marking grade prediction                   |
+| `parent-link-codes.test.ts`      | 21         | Parent invite/link code flow                  |
+| `prisma-board-map.test.ts`       | 14         | Prisma enum to app enum bridging **(NEW)**    |
+| `progress-sync.test.ts`          | 9          | Progress synchronisation                      |
+| `quiz-data.test.ts`              | 18         | Quiz data validation                          |
+| `rate-limit.test.ts`             | 7          | In-memory fallback                            |
+| `reading-assessment.test.ts`     | 39         | Reading assessment engine                     |
+| `recommendations-engine.test.ts` | 14         | Recommendation engine                         |
+| `security-headers.test.ts`       | 25         | Security header validation                    |
+| `security.test.ts`               | 33         | Security utilities                            |
+| `social-share.test.ts`           | 10         | Social sharing                                |
+| `student-weekly-email.test.ts`   | 25         | Student weekly email                          |
+| `subscription.test.ts`           | 20         | Subscription logic                            |
+| `utils.test.ts`                  | 19         | Utility function tests                        |
+| `validate-request.test.ts`       | 17         | Request validation                            |
+| `webhook.test.ts`                | 21         | Stripe webhook handlers                       |
 
 **13 Playwright E2E spec files** (45 test cases) under `e2e/`:
 
-| File | Test Cases | Purpose |
-|---|---|---|
-| `auth.spec.ts` | 4 | Authentication flows |
-| `board-select.spec.ts` | 3 | Board selection flow |
-| `for-schools.spec.ts` | 3 | School marketing page |
-| `games.spec.ts` | 3 | Games section |
-| `homepage.spec.ts` | 3 | Homepage rendering |
-| `igcse.spec.ts` | 4 | IGCSE section |
-| `legal.spec.ts` | 6 | Legal pages |
-| `marking.spec.ts` | 3 | Marking flow |
-| `parent.spec.ts` | 4 | Parent portal |
-| `pricing.spec.ts` | 3 | Pricing page |
-| `revision.spec.ts` | 4 | Revision section |
-| `safeguarding.spec.ts` | 3 | Safeguarding pages **(NEW)** |
-| `settings.spec.ts` | 2 | Settings page **(NEW)** |
+| File                   | Test Cases | Purpose                      |
+| ---------------------- | ---------- | ---------------------------- |
+| `auth.spec.ts`         | 4          | Authentication flows         |
+| `board-select.spec.ts` | 3          | Board selection flow         |
+| `for-schools.spec.ts`  | 3          | School marketing page        |
+| `games.spec.ts`        | 3          | Games section                |
+| `homepage.spec.ts`     | 3          | Homepage rendering           |
+| `igcse.spec.ts`        | 4          | IGCSE section                |
+| `legal.spec.ts`        | 6          | Legal pages                  |
+| `marking.spec.ts`      | 3          | Marking flow                 |
+| `parent.spec.ts`       | 4          | Parent portal                |
+| `pricing.spec.ts`      | 3          | Pricing page                 |
+| `revision.spec.ts`     | 4          | Revision section             |
+| `safeguarding.spec.ts` | 3          | Safeguarding pages **(NEW)** |
+| `settings.spec.ts`     | 2          | Settings page **(NEW)**      |
 
 **Total: 50 test files, 700 test cases (655 unit + 45 E2E). All passing. Zero failures.** This represents a 14% increase in test file count from v4 (was 44), a 2.5% increase in test case count (was 683), and continuation of the zero-failure state. The new test files target the Prisma board map (14 cases -- covering the Critical tech debt fix), env validation (6 cases), data retention cron endpoint (7 cases), board store (10 cases), safeguarding pages (3 E2E), and settings page (2 E2E). Structural coverage remains moderate (~6-7%) for a product of this scale, but the quality, targeting, and passing rate of tests is excellent.
 
@@ -350,24 +352,26 @@ Required environment variables: `SENTRY_AUTH_TOKEN`, `SENTRY_ORG`, `SENTRY_PROJE
 ### Vercel Configuration
 
 `vercel.json`:
+
 - **Region:** `lhr1` (London -- appropriate for UK market)
 - **Install:** `npm install`
 - **Cron jobs:** 6 scheduled endpoints:
 
-| Endpoint | Schedule | Purpose |
-|---|---|---|
-| `/api/cron/expire-invites` | 02:00 daily | Expire stale parent/teacher invites |
-| `/api/cron/affiliate-confirm` | 03:00 daily | Confirm pending affiliate conversions |
-| `/api/cron/dormancy-check` | 03:30 daily | Warn dormant accounts |
-| `/api/cron/data-retention` | 04:00 daily | UK GDPR data cleanup |
-| `/api/cron/school-access` | 05:00 daily | School access management |
-| `/api/cron/weekly-reports` | 07:00 Monday | Student/parent/teacher weekly reports |
+| Endpoint                      | Schedule     | Purpose                               |
+| ----------------------------- | ------------ | ------------------------------------- |
+| `/api/cron/expire-invites`    | 02:00 daily  | Expire stale parent/teacher invites   |
+| `/api/cron/affiliate-confirm` | 03:00 daily  | Confirm pending affiliate conversions |
+| `/api/cron/dormancy-check`    | 03:30 daily  | Warn dormant accounts                 |
+| `/api/cron/data-retention`    | 04:00 daily  | UK GDPR data cleanup                  |
+| `/api/cron/school-access`     | 05:00 daily  | School access management              |
+| `/api/cron/weekly-reports`    | 07:00 Monday | Student/parent/teacher weekly reports |
 
 All 6 cron handlers authenticate via `CRON_SECRET` with `timingSafeEqual` from Node's `crypto` module, preventing timing attacks on the bearer token comparison.
 
 ### CI/CD Pipeline
 
 `.github/workflows/ci.yml`:
+
 - **Trigger:** Push to `main` + PRs to `main`
 - **Jobs:**
   - `lint-and-typecheck`: `npx next lint` + `npx tsc --noEmit` + `npx prettier --check .`
@@ -380,6 +384,7 @@ Also present: `deploy.yml` and `backend-azure-deploy.yml` (for the secondary bac
 ### Pre-commit Hooks
 
 **Developer-local quality gate:**
+
 - **Husky v9** runs `.husky/pre-commit` on every `git commit`
 - **lint-staged v15** applies `eslint --fix` (TS/TSX) and `prettier --write` (TS/TSX/JSON/MD) to staged files only
 - **`"prepare": "husky"`** in `package.json` ensures hooks are installed on `npm install`
@@ -391,12 +396,16 @@ This creates a three-layer quality gate: (1) pre-commit hooks, (2) CI pipeline, 
 The following build-time disablements remain in `next.config.js`:
 
 ```js
-typescript: { ignoreBuildErrors: true }    // TS checking runs in CI + pre-commit
-eslint: { ignoreDuringBuilds: true }       // ESLint runs in CI + pre-commit
+typescript: {
+  ignoreBuildErrors: true
+} // TS checking runs in CI + pre-commit
+eslint: {
+  ignoreDuringBuilds: true
+} // ESLint runs in CI + pre-commit
 ```
 
 ```js
-disableServerWebpackPlugin: process.env.VERCEL === '1'   // Sentry source maps
+disableServerWebpackPlugin: process.env.VERCEL === '1' // Sentry source maps
 disableClientWebpackPlugin: process.env.VERCEL === '1'
 ```
 
@@ -461,6 +470,7 @@ Prisma is used for **type generation only** (`prisma generate`), not for schema 
 | `007_cycle_improvements.sql` | Child privacy columns, cookie_consent table, ai_opt_out column **(NEW)** | Yes |
 
 **Migration script (NEW):** `scripts/apply-pending-migrations.sh` provides a safe, documented migration workflow:
+
 - **Dry-run (default):** Lists all 7 pending migrations with descriptions and file sizes
 - **Apply all:** `--apply` runs all migrations in order with `ON_ERROR_STOP=1`
 - **Single migration:** `--apply --one 003` applies only the matching migration
@@ -483,15 +493,15 @@ All 7 migrations use IF NOT EXISTS / DO $$ guards for safe re-runs. The script v
 
 Configured in `next.config.js` for all routes:
 
-| Header | Value | Assessment |
-|---|---|---|
-| `X-Frame-Options` | `DENY` | Green -- prevents clickjacking |
-| `X-Content-Type-Options` | `nosniff` | Green |
-| `Referrer-Policy` | `strict-origin-when-cross-origin` | Green |
-| `X-XSS-Protection` | `0` | Green -- correct modern value |
-| `Permissions-Policy` | `camera=(), microphone=(), geolocation=()` | Green |
+| Header                      | Value                                          | Assessment                        |
+| --------------------------- | ---------------------------------------------- | --------------------------------- |
+| `X-Frame-Options`           | `DENY`                                         | Green -- prevents clickjacking    |
+| `X-Content-Type-Options`    | `nosniff`                                      | Green                             |
+| `Referrer-Policy`           | `strict-origin-when-cross-origin`              | Green                             |
+| `X-XSS-Protection`          | `0`                                            | Green -- correct modern value     |
+| `Permissions-Policy`        | `camera=(), microphone=(), geolocation=()`     | Green                             |
 | `Strict-Transport-Security` | `max-age=63072000; includeSubDomains; preload` | Green -- 2-year HSTS with preload |
-| `Content-Security-Policy` | See below | Yellow |
+| `Content-Security-Policy`   | See below                                      | Yellow                            |
 
 **CSP detail:** `default-src 'self'; script-src 'self' 'unsafe-inline' https://js.stripe.com https://r.wdfl.co https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://*.supabase.co https://api.stripe.com https://r.wdfl.co https://*.ingest.sentry.io; frame-src https://js.stripe.com https://hooks.stripe.com; object-src 'none'; base-uri 'self';`
 
@@ -507,7 +517,7 @@ The `'unsafe-inline'` in `script-src` weakens XSS protection. A TODO exists to r
 
 ### Rate Limiting
 
-**Redis-backed (Upstash) rate limiter** in `src/lib/rate-limit.ts`. Uses `Ratelimit.slidingWindow` with per-endpoint configuration and an in-memory fallback for local development. **~98 of 109 API routes** import or reference rate limiting -- excellent coverage.
+**Rate limiter** in `src/lib/rate-limit.ts`, written against Upstash Redis with an in-memory fallback. Coverage in code is broad: 208 awaited calls across 165 files. **Enforcement in production is nil.** The Upstash credentials are not set, so every call falls back to a process-local map, which on serverless counts per instance and therefore does not limit anything. Corrected 17 September 2026; the fix is a Vercel environment change, see `business-docs/compliance/controls/rate-limiting-control-status.md`. The usage caps that do hold are the database-backed allowance meters in `src/lib/usage/**`.
 
 ### Input Validation
 
@@ -518,6 +528,7 @@ The `'unsafe-inline'` in `script-src` weakens XSS protection. A TODO exists to r
 ### Content Safety (IMPROVED)
 
 `src/lib/content-safety.ts` provides multi-layer content safety for essay submissions:
+
 1. **Prompt injection detection:** 11 patterns blocking jailbreak/override attempts
 2. **Essay generation blocking:** Prevents use as a writing tool (feedback only)
 3. **Non-prose detection:** Code content, repeated words, keyboard mashing
@@ -528,12 +539,12 @@ The `'unsafe-inline'` in `script-src` weakens XSS protection. A TODO exists to r
 
 `src/lib/env-validation.ts` now provides a categorised validation system:
 
-| Category | Count | Behaviour |
-|---|---|---|
-| Required | 7 | Throws in production if missing; descriptive hints for each |
-| Recommended | 3 | Warning logged (CRON_SECRET, CSRF_SECRET, RESEND_API_KEY) |
-| Optional | 8 | Info-level log of missing vars |
-| Deprecated | 1 | Warning if still set (NEXTAUTH_URL) |
+| Category    | Count | Behaviour                                                   |
+| ----------- | ----- | ----------------------------------------------------------- |
+| Required    | 7     | Throws in production if missing; descriptive hints for each |
+| Recommended | 3     | Warning logged (CRON_SECRET, CSRF_SECRET, RESEND_API_KEY)   |
+| Optional    | 8     | Info-level log of missing vars                              |
+| Deprecated  | 1     | Warning if still set (NEXTAUTH_URL)                         |
 
 **URL format validation:** `NEXT_PUBLIC_SITE_URL` is validated against `^https?:\/\/.+` and checked for trailing slashes. Descriptive error messages include the current value and recommended fix.
 
@@ -558,6 +569,7 @@ All 6 cron endpoints verify the `CRON_SECRET` bearer token using `timingSafeEqua
 ### Bundle Optimisation
 
 `next.config.js` enables `optimizePackageImports` for:
+
 - `lucide-react` (icon library -- tree-shaking critical)
 - `date-fns`
 - `@supabase/supabase-js`
@@ -608,6 +620,7 @@ The route count (~617 pages + dynamic routes) remains the primary build bottlene
 ### RUNBOOK.md (EXPANDED)
 
 A **379-line** operational runbook (up from 276 in v4) provides comprehensive documentation covering:
+
 - Architecture overview and technology choices
 - Development setup (prerequisites, install, env vars, run locally, run tests, lint/typecheck)
 - Database layer (dual Prisma/Supabase pattern, migrations, pending migrations)
@@ -625,23 +638,23 @@ This significantly reduces the single-author bus factor risk. A new developer ca
 
 ### Error Boundary Coverage
 
-| Route Segment | `error.tsx` Present |
-|---|---|
-| Root (`/`) | Yes |
-| `/affiliate` | Yes |
-| `/assessment` | Yes |
-| `/board-select` | Yes |
-| `/courses` | Yes |
-| `/dashboard` | Yes |
-| `/games` | Yes |
-| `/igcse` | Yes |
-| `/marking` | Yes |
-| `/mock-exams` | Yes |
-| `/parent` | Yes |
-| `/resources` | Yes |
-| `/revision` | Yes |
-| `/school` | Yes |
-| `/settings` | Yes |
+| Route Segment   | `error.tsx` Present |
+| --------------- | ------------------- |
+| Root (`/`)      | Yes                 |
+| `/affiliate`    | Yes                 |
+| `/assessment`   | Yes                 |
+| `/board-select` | Yes                 |
+| `/courses`      | Yes                 |
+| `/dashboard`    | Yes                 |
+| `/games`        | Yes                 |
+| `/igcse`        | Yes                 |
+| `/marking`      | Yes                 |
+| `/mock-exams`   | Yes                 |
+| `/parent`       | Yes                 |
+| `/resources`    | Yes                 |
+| `/revision`     | Yes                 |
+| `/school`       | Yes                 |
+| `/settings`     | Yes                 |
 
 All 15 error boundaries use a consistent pattern: capture to Sentry, display a user-friendly error message with a retry button and support link.
 
@@ -653,18 +666,18 @@ All 15 error boundaries use a consistent pattern: capture to Sentry, display a u
 
 The **dual board store** -- the single biggest tech-debt item in v1 -- was resolved in v2 and remains clean. The unified board system lives entirely in `src/lib/board/`:
 
-| File | Purpose |
-|---|---|
-| `board-config.ts` | Server-safe ExamBoard type + BOARDS constant (7 boards) |
-| `board-store.ts` | Zustand store (client) that syncs to HTTP cookie on every write |
-| `board-filter.ts` | Content filtering by board |
-| `board-guard.ts` | Server-side board gate |
-| `get-server-board.ts` | Read board from cookie server-side |
-| `set-texts.ts` | Board-to-set-text mapping |
-| `content-maps.ts` | Board-to-content mapping |
-| `flashcard-deck-boards.ts` | Board-to-flashcard mapping |
-| `grade-boundaries.ts` | Board-specific grade boundaries |
-| `prisma-board-map.ts` | Prisma enum to app enum bridging **(FIXED)** |
+| File                       | Purpose                                                         |
+| -------------------------- | --------------------------------------------------------------- |
+| `board-config.ts`          | Server-safe ExamBoard type + BOARDS constant (7 boards)         |
+| `board-store.ts`           | Zustand store (client) that syncs to HTTP cookie on every write |
+| `board-filter.ts`          | Content filtering by board                                      |
+| `board-guard.ts`           | Server-side board gate                                          |
+| `get-server-board.ts`      | Read board from cookie server-side                              |
+| `set-texts.ts`             | Board-to-set-text mapping                                       |
+| `content-maps.ts`          | Board-to-content mapping                                        |
+| `flashcard-deck-boards.ts` | Board-to-flashcard mapping                                      |
+| `grade-boundaries.ts`      | Board-specific grade boundaries                                 |
+| `prisma-board-map.ts`      | Prisma enum to app enum bridging **(FIXED)**                    |
 
 The `board-store.ts` Zustand store syncs both `localStorage` (for client hydration) and the `english-hub-board` HTTP cookie (for middleware/server reads) on every `setBoard` call.
 
@@ -680,23 +693,23 @@ The `board-store.ts` Zustand store syncs both `localStorage` (for client hydrati
 
 The AI marking pipeline lives in `src/lib/marking/`:
 
-| Component | File | Purpose |
-|---|---|---|
-| Prompt Builder | `prompt-builder.ts` | Constructs system + user prompts grounded in real mark schemes |
-| Mark Scheme Parser | `mark-scheme-parser.ts` | Parses AO breakdowns from mark scheme definitions |
-| Grade Predictor | `grade-predictor.ts` | Maps raw scores to grade boundaries |
-| Feedback Generator | `feedback-generator.ts` | Generates structured feedback from AI output |
+| Component          | File                    | Purpose                                                        |
+| ------------------ | ----------------------- | -------------------------------------------------------------- |
+| Prompt Builder     | `prompt-builder.ts`     | Constructs system + user prompts grounded in real mark schemes |
+| Mark Scheme Parser | `mark-scheme-parser.ts` | Parses AO breakdowns from mark scheme definitions              |
+| Grade Predictor    | `grade-predictor.ts`    | Maps raw scores to grade boundaries                            |
+| Feedback Generator | `feedback-generator.ts` | Generates structured feedback from AI output                   |
 
 ### Mark Schemes
 
 **11 files** covering all 4 GCSE boards (AQA, Edexcel, Eduqas, OCR) for both Language and Literature:
 
-| Board | Language | Literature |
-|---|---|---|
-| AQA | `aqa-lang-paper1.ts`, `aqa-lang-paper2.ts` | `aqa-lit-paper1.ts` |
-| Edexcel | `edexcel-lang.ts` | `edexcel-lit.ts` |
-| Eduqas | `eduqas-lang.ts` | `eduqas-lit.ts` |
-| OCR | `ocr-lang.ts` | `ocr-lit.ts` |
+| Board   | Language                                   | Literature          |
+| ------- | ------------------------------------------ | ------------------- |
+| AQA     | `aqa-lang-paper1.ts`, `aqa-lang-paper2.ts` | `aqa-lit-paper1.ts` |
+| Edexcel | `edexcel-lang.ts`                          | `edexcel-lit.ts`    |
+| Eduqas  | `eduqas-lang.ts`                           | `eduqas-lit.ts`     |
+| OCR     | `ocr-lang.ts`                              | `ocr-lit.ts`        |
 
 Plus `types.ts` (shared type definitions) and `index.ts` (barrel export).
 
@@ -708,6 +721,7 @@ Plus `types.ts` (shared type definitions) and `index.ts` (barrel export).
 2. **`isAiOptedOutServer(userId)`** -- server-side authoritative check via `prisma.privacySettings.findUnique({ where: { userId }, select: { aiOptOut: true } })`
 
 The server-side function is enforced on **all 4 AI endpoints**:
+
 - `/api/mark` -- imports and checks `isAiOptedOutServer`
 - `/api/mark/stream` -- imports and checks `isAiOptedOutServer`
 - `/api/essay/feedback` -- imports and checks `isAiOptedOutServer`
@@ -758,43 +772,43 @@ The root layout (`src/app/layout.tsx`) declares `<html lang="en-GB">`, satisfyin
 
 ### Critical (fix before or at close)
 
-| # | Item | Location | Impact |
-|---|---|---|---|
-| 1 | 7 pending DB migrations not applied | `supabase/migrations-pending/` | ExamBoard enum mismatch between Prisma schema and deployed DB; progress/analytics/privacy tables missing. **MITIGATED** by migration script and IF NOT EXISTS guards. |
-| 2 | Single-author risk (~147 commits from one identity) | Repository-wide | Knowledge transfer dependency (MITIGATED by 379-line RUNBOOK.md + categorised env validation) |
+| #   | Item                                                | Location                       | Impact                                                                                                                                                                |
+| --- | --------------------------------------------------- | ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | 7 pending DB migrations not applied                 | `supabase/migrations-pending/` | ExamBoard enum mismatch between Prisma schema and deployed DB; progress/analytics/privacy tables missing. **MITIGATED** by migration script and IF NOT EXISTS guards. |
+| 2   | Single-author risk (~147 commits from one identity) | Repository-wide                | Knowledge transfer dependency (MITIGATED by 379-line RUNBOOK.md + categorised env validation)                                                                         |
 
 ### High (fix in first 4 weeks)
 
-| # | Item | Location | Impact |
-|---|---|---|---|
-| 3 | Sentry source maps not yet activated in production | `next.config.js` / Vercel build | Production errors show minified traces. **MITIGATED** by documented CLI upload path (`@sentry/cli`). |
-| 4 | CSP `unsafe-inline` in script-src | `next.config.js` | Weakened XSS protection. Documented in RUNBOOK.md with path to nonce-based CSP. |
+| #   | Item                                               | Location                        | Impact                                                                                               |
+| --- | -------------------------------------------------- | ------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| 3   | Sentry source maps not yet activated in production | `next.config.js` / Vercel build | Production errors show minified traces. **MITIGATED** by documented CLI upload path (`@sentry/cli`). |
+| 4   | CSP `unsafe-inline` in script-src                  | `next.config.js`                | Weakened XSS protection. Documented in RUNBOOK.md with path to nonce-based CSP.                      |
 
 ### Medium (fix in first 8 weeks)
 
-| # | Item | Location | Impact |
-|---|---|---|---|
-| 5 | 32 TODO/FIXME across production code | Distributed | Phase-tagged undone work backlog (73% reduced from v2) |
-| 6 | `target: "es5"` in tsconfig | `tsconfig.json` | Unnecessary downlevel compilation |
-| 7 | `asChild` prop remnant (1 file) | `src/components/` | Incomplete migration from Radix to @base-ui (down from 4 files) |
-| 8 | Duplicate essay feedback endpoints | `/api/essay/feedback` + `/api/essay-feedback` | Confusion over canonical endpoint |
-| 9 | React 19 / Next 15 / Tailwind 4 upgrade path | `package.json` | All major UI deps one version behind |
+| #   | Item                                         | Location                                      | Impact                                                          |
+| --- | -------------------------------------------- | --------------------------------------------- | --------------------------------------------------------------- |
+| 5   | 32 TODO/FIXME across production code         | Distributed                                   | Phase-tagged undone work backlog (73% reduced from v2)          |
+| 6   | `target: "es5"` in tsconfig                  | `tsconfig.json`                               | Unnecessary downlevel compilation                               |
+| 7   | `asChild` prop remnant (1 file)              | `src/components/`                             | Incomplete migration from Radix to @base-ui (down from 4 files) |
+| 8   | Duplicate essay feedback endpoints           | `/api/essay/feedback` + `/api/essay-feedback` | Confusion over canonical endpoint                               |
+| 9   | React 19 / Next 15 / Tailwind 4 upgrade path | `package.json`                                | All major UI deps one version behind                            |
 
 ### Low (track, fix opportunistically)
 
-| # | Item | Location | Impact |
-|---|---|---|---|
-| 10 | Recommendation engine uses localStorage only | `src/lib/recommendations/engine.ts` | No server-side persistence (pending migration 006) |
-| 11 | Mobile app is a thin WebView shell | `/mobile/` | Not a native experience; Expo SDK 51 |
-| 12 | Backend Fastify service (Azure) | `/backend/` | Secondary backend with unclear relationship to main app |
+| #   | Item                                         | Location                            | Impact                                                  |
+| --- | -------------------------------------------- | ----------------------------------- | ------------------------------------------------------- |
+| 10  | Recommendation engine uses localStorage only | `src/lib/recommendations/engine.ts` | No server-side persistence (pending migration 006)      |
+| 11  | Mobile app is a thin WebView shell           | `/mobile/`                          | Not a native experience; Expo SDK 51                    |
+| 12  | Backend Fastify service (Azure)              | `/backend/`                         | Secondary backend with unclear relationship to main app |
 
 **Items resolved since v4:**
 
-| Former # | Item | Resolution |
-|---|---|---|
-| v4 #2 | `prisma-board-map.ts` references stale enum values (CAMBRIDGE/CAIE) | **RESOLVED** -- Updated to CAMBRIDGE_0500/CAMBRIDGE_0990, EDUQAS, EDEXCEL_IGCSE. 14 test cases. |
-| v4 #11 | `student_email` in `ClassStudent` interface | **RESOLVED** -- Field fully removed. Zero PII email fields remain in any type. |
-| v4 Rec #14 | Set up bundle analysis | **RESOLVED** -- `@next/bundle-analyzer` integrated with `npm run analyze` script. |
+| Former #   | Item                                                                | Resolution                                                                                      |
+| ---------- | ------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| v4 #2      | `prisma-board-map.ts` references stale enum values (CAMBRIDGE/CAIE) | **RESOLVED** -- Updated to CAMBRIDGE_0500/CAMBRIDGE_0990, EDUQAS, EDEXCEL_IGCSE. 14 test cases. |
+| v4 #11     | `student_email` in `ClassStudent` interface                         | **RESOLVED** -- Field fully removed. Zero PII email fields remain in any type.                  |
+| v4 Rec #14 | Set up bundle analysis                                              | **RESOLVED** -- `@next/bundle-analyzer` integrated with `npm run analyze` script.               |
 
 ---
 
@@ -845,46 +859,46 @@ A React Native / Expo mobile app exists in `/mobile/`:
 
 ## Appendix A: Metrics Summary
 
-| Metric | DD-02 v1 (Apr 11) | DD-02 v2 (Apr 12) | DD-02 v3 (Apr 12) | DD-02 v4 (Apr 12) | DD-02 v5 (Apr 12) | Delta (v4 to v5) |
-|---|---|---|---|---|---|---|
-| Overall Grade | C+ | B- | B | B+ | **A-** | +1 notch |
-| TS/TSX Files | 1,508 | 1,591 | 1,606 | 1,616 | **1,620** | +4 |
-| Total LOC | ~422k | ~448k | ~790k | ~790k | ~790k | No change |
-| Page Routes | ~595 | 614 | 617 | 617 | 617 | No change |
-| API Routes | 104 | 106 | 108 | 109 | 109 | No change |
-| Unit Test Files | 8 | 15 | 24 | 33 | **37** | +4 |
-| Unit Test Cases | Not counted | Not counted | 509 | 643 | **655** | +12 |
-| E2E Test Files | 0 | 0 | 8 | 11 | **13** | +2 |
-| E2E Test Cases | 0 | 0 | 26 | 40 | **45** | +5 |
-| Total Test Files | 8 | 15 | 32 | 44 | **50** | +6 (14% increase) |
-| Total Test Cases | Not counted | Not counted | 535 | 683 | **700** | +17 (2.5% increase) |
-| Failing Tests | Not assessed | Not assessed | 2 files | 0 | **0** | Zero failures |
-| Error Boundaries | 0 | 15 | 15 | 15 | 15 | No change |
-| TODO/FIXME | 96 / 63 files | 118 / 75 files | 33 / 17 files | 32 / 16 files | 32 | Stable |
-| Board Stores | 2 (drifting) | 1 (unified) | 1 (unified) | 1 (unified) | 1 (unified) | No change |
-| Auth Systems | 2 (Supabase + next-auth) | 2 (Supabase + next-auth) | 1 (Supabase only) | 1 (Supabase only) | 1 (Supabase only) | No change |
-| Cron Endpoints | Not assessed | 4 (+1 orphan) | 6 | 6 | 6 | No change |
-| CI Jobs | None | 2 | 3 | 3 | 3 | No change |
-| Pre-commit Hooks | None | None | None | Husky + lint-staged | Husky + lint-staged | No change |
-| SBOM | None | None | None | CycloneDX | CycloneDX | No change |
-| Operational Docs | None | None | None | RUNBOOK.md (276 LOC) | **RUNBOOK.md (379 LOC)** | +103 LOC (37% growth) |
-| .env.example | Minimal | Minimal | Updated | 155 LOC, 14 categories | 155 LOC, 14 categories | No change |
-| AI Opt-Out | Client localStorage only | Client localStorage only | Client localStorage only | Server-side enforcement (Prisma) | Server-side enforcement (Prisma) | No change |
-| Cookie Consent | Client-side only | Client-side only | Client-side only | Server-side logging (Prisma) | Server-side logging (Prisma) | No change |
-| Dependencies | 52 | 52 | ~53 | 53 (28 prod + 25 dev) | **55** (28 prod + 27 dev) | +2 dev deps |
-| Bundle Analyzer | None | None | None | None | **@next/bundle-analyzer** | **Added** |
-| Sentry CLI | None | None | None | None | **@sentry/cli** | **Added** |
-| Env Validation | 7 required + 10 optional | 7 required + 10 optional | 7 required + 10 optional | 7 required + 10 optional | **7 req + 3 rec + 8 opt + 1 dep** | **Categorised** |
-| Prisma Board Map | Stale (CAMBRIDGE/CAIE) | Stale | Stale | Stale | **Fixed (7/7 mapped)** | **Resolved** |
-| Migration Script | None | None | None | None | **apply-pending-migrations.sh** | **Added** |
-| Pending Migrations | 6 | 6 | 6 | 6 | **7** | +1 (007_cycle_improvements) |
-| Self-harm Signposting | None | None | None | None | **Childline/NSPCC/Samaritans** | **Added** |
-| Accessibility (lang) | Not set | Not set | Not set | Not set | **lang="en-GB"** | **Added** |
-| student_email PII | Multiple types | Multiple types | Multiple types | ClassStudent only | **Zero fields** | **Fully removed** |
-| console.log (prod) | Not assessed | Not assessed | ~3 | ~28 | **~5** | -23 (82% reduction) |
-| Prisma Models | 19 | 19 | 19 | 17 | 17 | No change |
-| Prisma Enums | 19 | 19 | 19 | 20 | 20 | No change |
-| Prisma Schema LOC | 518 | 518 | 518 | 525 | 525 | No change |
+| Metric                | DD-02 v1 (Apr 11)        | DD-02 v2 (Apr 12)        | DD-02 v3 (Apr 12)        | DD-02 v4 (Apr 12)                | DD-02 v5 (Apr 12)                 | Delta (v4 to v5)            |
+| --------------------- | ------------------------ | ------------------------ | ------------------------ | -------------------------------- | --------------------------------- | --------------------------- |
+| Overall Grade         | C+                       | B-                       | B                        | B+                               | **A-**                            | +1 notch                    |
+| TS/TSX Files          | 1,508                    | 1,591                    | 1,606                    | 1,616                            | **1,620**                         | +4                          |
+| Total LOC             | ~422k                    | ~448k                    | ~790k                    | ~790k                            | ~790k                             | No change                   |
+| Page Routes           | ~595                     | 614                      | 617                      | 617                              | 617                               | No change                   |
+| API Routes            | 104                      | 106                      | 108                      | 109                              | 109                               | No change                   |
+| Unit Test Files       | 8                        | 15                       | 24                       | 33                               | **37**                            | +4                          |
+| Unit Test Cases       | Not counted              | Not counted              | 509                      | 643                              | **655**                           | +12                         |
+| E2E Test Files        | 0                        | 0                        | 8                        | 11                               | **13**                            | +2                          |
+| E2E Test Cases        | 0                        | 0                        | 26                       | 40                               | **45**                            | +5                          |
+| Total Test Files      | 8                        | 15                       | 32                       | 44                               | **50**                            | +6 (14% increase)           |
+| Total Test Cases      | Not counted              | Not counted              | 535                      | 683                              | **700**                           | +17 (2.5% increase)         |
+| Failing Tests         | Not assessed             | Not assessed             | 2 files                  | 0                                | **0**                             | Zero failures               |
+| Error Boundaries      | 0                        | 15                       | 15                       | 15                               | 15                                | No change                   |
+| TODO/FIXME            | 96 / 63 files            | 118 / 75 files           | 33 / 17 files            | 32 / 16 files                    | 32                                | Stable                      |
+| Board Stores          | 2 (drifting)             | 1 (unified)              | 1 (unified)              | 1 (unified)                      | 1 (unified)                       | No change                   |
+| Auth Systems          | 2 (Supabase + next-auth) | 2 (Supabase + next-auth) | 1 (Supabase only)        | 1 (Supabase only)                | 1 (Supabase only)                 | No change                   |
+| Cron Endpoints        | Not assessed             | 4 (+1 orphan)            | 6                        | 6                                | 6                                 | No change                   |
+| CI Jobs               | None                     | 2                        | 3                        | 3                                | 3                                 | No change                   |
+| Pre-commit Hooks      | None                     | None                     | None                     | Husky + lint-staged              | Husky + lint-staged               | No change                   |
+| SBOM                  | None                     | None                     | None                     | CycloneDX                        | CycloneDX                         | No change                   |
+| Operational Docs      | None                     | None                     | None                     | RUNBOOK.md (276 LOC)             | **RUNBOOK.md (379 LOC)**          | +103 LOC (37% growth)       |
+| .env.example          | Minimal                  | Minimal                  | Updated                  | 155 LOC, 14 categories           | 155 LOC, 14 categories            | No change                   |
+| AI Opt-Out            | Client localStorage only | Client localStorage only | Client localStorage only | Server-side enforcement (Prisma) | Server-side enforcement (Prisma)  | No change                   |
+| Cookie Consent        | Client-side only         | Client-side only         | Client-side only         | Server-side logging (Prisma)     | Server-side logging (Prisma)      | No change                   |
+| Dependencies          | 52                       | 52                       | ~53                      | 53 (28 prod + 25 dev)            | **55** (28 prod + 27 dev)         | +2 dev deps                 |
+| Bundle Analyzer       | None                     | None                     | None                     | None                             | **@next/bundle-analyzer**         | **Added**                   |
+| Sentry CLI            | None                     | None                     | None                     | None                             | **@sentry/cli**                   | **Added**                   |
+| Env Validation        | 7 required + 10 optional | 7 required + 10 optional | 7 required + 10 optional | 7 required + 10 optional         | **7 req + 3 rec + 8 opt + 1 dep** | **Categorised**             |
+| Prisma Board Map      | Stale (CAMBRIDGE/CAIE)   | Stale                    | Stale                    | Stale                            | **Fixed (7/7 mapped)**            | **Resolved**                |
+| Migration Script      | None                     | None                     | None                     | None                             | **apply-pending-migrations.sh**   | **Added**                   |
+| Pending Migrations    | 6                        | 6                        | 6                        | 6                                | **7**                             | +1 (007_cycle_improvements) |
+| Self-harm Signposting | None                     | None                     | None                     | None                             | **Childline/NSPCC/Samaritans**    | **Added**                   |
+| Accessibility (lang)  | Not set                  | Not set                  | Not set                  | Not set                          | **lang="en-GB"**                  | **Added**                   |
+| student_email PII     | Multiple types           | Multiple types           | Multiple types           | ClassStudent only                | **Zero fields**                   | **Fully removed**           |
+| console.log (prod)    | Not assessed             | Not assessed             | ~3                       | ~28                              | **~5**                            | -23 (82% reduction)         |
+| Prisma Models         | 19                       | 19                       | 19                       | 17                               | 17                                | No change                   |
+| Prisma Enums          | 19                       | 19                       | 19                       | 20                               | 20                                | No change                   |
+| Prisma Schema LOC     | 518                      | 518                      | 518                      | 525                              | 525                               | No change                   |
 
 ---
 

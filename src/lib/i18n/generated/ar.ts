@@ -7641,7 +7641,7 @@ export const AR_MESSAGES: Record<string, string> = {
     'تقليل تحليلات السلوك إلى أدنى حدّ على الحسابات المُؤكَّد أن أصحابها دون 18 عاماً، وتعطيل حزم التحليلات التابعة لأطراف ثالثة (GA4، وتسجيل جلسات PostHog) افتراضياً لهؤلاء المستخدمين.',
   'legal_long.ai_gov.s9.h2': '9. الإفصاح عن استخدام الذكاء الاصطناعي',
   'legal_long.ai_gov.s9.p1':
-    'نستخدم نماذج لغوية كبيرة تابعة لأطراف ثالثة (حالياً واجهتا OpenAI وAnthropic البرمجيتان، وذلك قابل للتغيير) لتوليد ما يلي:',
+    'نستخدم نموذجاً لغوياً كبيراً تابعاً لطرف ثالث (حالياً واجهة Anthropic Claude البرمجية، وذلك قابل للتغيير) لتوليد ما يلي:',
   'legal_long.ai_gov.s9.li_g1': 'التقييم المُولَّد للمقالات والتعليقات النموذجية',
   'legal_long.ai_gov.s9.li_g2': 'أسئلة التدريب والإجابات النموذجية',
   'legal_long.ai_gov.s9.li_g3': 'شروح المفردات والشروح النحوية المُفصَّلة',
@@ -15329,6 +15329,16 @@ export const AR_MESSAGES: Record<string, string> = {
   'dash.consent.withdrawn_success': 'تم سحب موافقة "{label}".',
   'dash.consent.active_title': 'الموافقات الفعّالة',
   'dash.consent.none_active': 'ما فيه موافقات فعّالة.',
+  'dash.consent.grant_title': 'موافقات تقدر تعطيها',
+  'dash.consent.grant_intro':
+    'تقدر تشغّلها أو تطفّيها أي وقت. التصحيح بالـ AI يحتاج موافقتك على معالجة الـ AI.',
+  'dash.consent.grant': 'أعطِ الموافقة',
+  'dash.consent.granting': 'لحظة، نحفظ...',
+  'dash.consent.grant_success': 'تسجّلت الموافقة على {label}.',
+  'dash.consent.err.grant': 'ما قدرنا نسجّل موافقتك. حاول مرة ثانية.',
+  'dash.consent.grant_note_minor':
+    'إذا عمرك أقل من 16، التصحيح بالـ AI يحتاج كمان موافقة ولي الأمر.',
+  'dash.consent.all_granted': 'عطيت كل الموافقات المتاحة هنا.',
   'dash.consent.badge_essential': 'أساسية',
   'dash.consent.badge_optional': 'اختيارية',
   'dash.consent.granted': 'تمت الموافقة:',

@@ -320,9 +320,33 @@ export async function processChildDormancy(prisma: PrismaClient): Promise<Dorman
  * to anyone who was a child when their data was collected.
  *
  * Used by `/api/cron/dormancy-purge` to drive `purgeDormantAccount`.
+ *
+ * WARNED-FIRST, ADDED 2026-09-17
+ * ------------------------------
+ * This function used to select on inactivity alone: no warned-status
+ * condition and no grace period, so `CHILD_DORMANCY.WARNING_GRACE_DAYS`
+ * never gated anything. The Sunday purge could therefore strip a child's
+ * account - anonymise their analytics, overwrite their email and name,
+ * delete their consents - without the 30-day warning the design promises
+ * and that `dormancy-check` exists to send, removing the child's and the
+ * parent's chance to log in or export their work first.
+ *
+ * It is latent today (the product was created in March 2026, so no account
+ * is yet 12 months dormant) and becomes live behaviour from about March
+ * 2027 with no further code change, which is why it is fixed now.
+ *
+ * The gate is the same warned proxy `findChildrenPastGracePeriod` uses:
+ * `accountStatus: 'SUSPENDED'` set by `sendDormancyWarning`, last touched
+ * at least WARNING_GRACE_DAYS ago. It is a proxy, not a fact: the schema
+ * still has no `dormancyWarnedAt` column, and until it does the two paths
+ * also read different inactivity clocks (`updatedAt` for the warning,
+ * `lastLoginAt` here). Both remain open items. This change is strictly
+ * fail-closed - it can only ever purge fewer accounts than before, never
+ * more - so it is safe ahead of that migration.
  */
 export async function findDormantChildAccounts(prisma: PrismaClient): Promise<string[]> {
   const cutoff = monthsAgo(CHILD_DORMANCY.INACTIVE_MONTHS)
+  const graceCutoff = daysAgo(CHILD_DORMANCY.WARNING_GRACE_DAYS)
 
   // Pull all candidates where lastLoginAt is past the 12-month threshold
   // (or is null AND createdAt is past the threshold - pre-migration rows
@@ -335,6 +359,11 @@ export async function findDormantChildAccounts(prisma: PrismaClient): Promise<st
           AND: [{ lastLoginAt: null }, { createdAt: { lte: cutoff } }],
         },
       ],
+      // A warning must have been sent, and the grace period must have run
+      // out. SUSPENDED is what sendDormancyWarning sets; `updatedAt` is
+      // when it set it.
+      accountStatus: 'SUSPENDED',
+      updatedAt: { lte: graceCutoff },
       // Skip already-purged rows (soft-delete marker)
       deletedAt: null,
     },
@@ -353,8 +382,12 @@ export async function findDormantChildAccounts(prisma: PrismaClient): Promise<st
   // protected by the Children's Code for data collected during minority.
   const dormantChildIds: string[] = []
   for (const u of candidates) {
-    const ageAtSignup = ageInYears(u.dateOfBirth, u.createdAt)
-    if (ageAtSignup < 18 || u.isMinor) {
+    // `dateOfBirth` is nullable from 2026-09-17: NULL means we hold no date,
+    // not that the account is an adult's. With no date there is no age to
+    // compute, so we defer to `isMinor`, which the identity projection sets
+    // to the protective `true` exactly when the date is unknown.
+    const ageAtSignup = u.dateOfBirth ? ageInYears(u.dateOfBirth, u.createdAt) : null
+    if ((ageAtSignup !== null && ageAtSignup < 18) || u.isMinor) {
       dormantChildIds.push(u.id)
     }
   }

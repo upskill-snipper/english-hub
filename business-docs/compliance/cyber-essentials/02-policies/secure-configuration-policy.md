@@ -190,7 +190,7 @@ The Company's own product platform is configured with:
 - Referrer-Policy: strict-origin-when-cross-origin
 - Subresource Integrity on third-party scripts where practical
 - Security headers monitored via Mozilla Observatory or similar (target grade A or better)
-- Rate limiting on auth endpoints
+- Rate limiting on auth endpoints: **implemented in code, not enforced in production.** The limiter has no shared backend configured, so limits are counted per serverless instance and do not hold. Corrected 17 September 2026; status and remediation in `business-docs/compliance/controls/rate-limiting-control-status.md`
 - Bot protection on signup/login via Cloudflare
 
 (Technical implementation details live in `src/` under the control of the engineering agent and are not modified by this compliance agent.)

@@ -12,7 +12,8 @@
 //     marks through the production `predictGrade`. Validates the grade-BOUNDARY
 //     model only; does NOT measure the LLM. Always CI-safe.
 //   • llm (EVAL_ADAPTER=llm): the EXACT production path
-//     (`buildMarkingPrompt` → claude-sonnet-4-20250514 → `generateFeedback`).
+//     (`buildMarkingPrompt` → ANTHROPIC_MODEL → `generateFeedback`) - the
+//     adapter imports the production model constant, it does not pin its own.
 //     OFFLINE by default via a recorded fixture cache; live Anthropic only with
 //     EVAL_LLM_LIVE=1. The only adapter that can produce an LLM-accuracy figure.
 //

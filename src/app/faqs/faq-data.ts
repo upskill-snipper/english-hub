@@ -194,17 +194,17 @@ export const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'What parental controls are available?',
         answer:
-          "Parents can link to their child's account to receive weekly progress reports. For students under 16, we require parental consent during registration. Parents can view their child's learning activity, and request data access or deletion at any time. See our Privacy Policy for full details on how we protect children's data.",
+          "Parents can link to their child's account from the parent dashboard and manage consent preferences there. (Weekly progress summaries are still being finalised: none are generated or emailed yet.) For students under 16, we require parental consent during registration. Parents can request data access or deletion at any time. See our Privacy Policy for full details on how we protect children's data.",
       },
       {
         question: "Can parents track their child's progress?",
         answer:
-          "Yes - parents get a weekly report and a child-linked dashboard. Parental controls and ICO Children's Code defaults apply throughout.",
+          "Once you link to your child, your parent dashboard shows the account you are linked to and will show weekly progress summaries as they are produced. Weekly summaries are still being finalised, so they are not being generated or emailed yet. Parental controls and ICO Children's Code defaults apply throughout.",
       },
       {
         question: "How do I link my parent account to my child's?",
         answer:
-          "Your child can send you a linking invitation from their account settings, or you can contact info@upskillenergy.com with your child's registered email. Once linked, you'll receive weekly progress reports and can manage consent preferences.",
+          "Your child can send you a linking invitation from their account settings, or you can contact info@upskillenergy.com with your child's registered email. Once linked, your parent dashboard shows the linked account and lets you manage consent preferences. Weekly progress summaries are still being finalised and are not sent yet.",
       },
     ],
   },

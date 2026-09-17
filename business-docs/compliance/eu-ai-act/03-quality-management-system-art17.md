@@ -83,7 +83,9 @@ micro-enterprise provider with a single founder-led engineering function.
   timeout (`src/app/api/mark/route.ts:154-160`;
   `src/app/api/toolkit/generate-notes/route.ts:235, 247-251`), per-user rate limits
   (10/day marking & CEFR; 5/hour notes — `src/app/api/mark/route.ts:91-95`;
-  `src/app/api/toolkit/generate-notes/route.ts:163-166`).
+  `src/app/api/toolkit/generate-notes/route.ts:163-166`). **Those figures are configured, not
+  enforced:** the limiter has no shared backend in production (`business-docs/compliance/controls/rate-limiting-control-status.md`).
+  The caps that do hold are the database-backed allowance meters in `src/lib/usage/**`.
 - **Status:** strategy **defined**; full spec consolidated in doc 04 (GAP).
 
 ## Art. 17(1)(f) — Data management procedures (acquisition, analysis, labelling, governance)

@@ -1,7 +1,7 @@
 {
   "v": 1,
-  "key": "345f9c68caa450120cccfb37a94d6c10671c88889b17f389a2c514380c44c8ed",
-  "model": "claude-sonnet-4-20250514",
+  "key": "f9707fbe388eb157c7355609fd1de5c51342c56ae5d5402b0726c53fbab86298",
+  "model": "claude-sonnet-5",
   "caseId": "aqa-lit-p1-secA-syn-01",
   "markSchemeId": "aqa-lit-paper1",
   "questionId": "Section A",

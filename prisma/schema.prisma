@@ -158,12 +158,24 @@ model User {
   passwordHash      String
   firstName         String
   lastName          String
-  dateOfBirth       DateTime
+  // dateOfBirth / country are NULLABLE (widened 2026-09-17, migration
+  // 20260917_identity_nullable_dob_country.sql).
+  //
+  // They were NOT NULL, which forced anything creating a row for an existing
+  // Supabase account to invent values. The 2026-04-20 backfill duly invented
+  // 2000-01-01 and 'GB': the date computed to age 26, wrote `isMinor: false`
+  // and switched the parental-consent gate OFF for children, and the country
+  // was returned to data subjects as fact in the Art.15 export. NULL is the
+  // honest representation of "not held", and src/lib/identity treats it as
+  // UNKNOWN - which blocks the AI gate rather than opening it.
+  //
+  // Consumers must render "not held" rather than substitute a value.
+  dateOfBirth       DateTime?
   school            String?
   role              Role          @default(STUDENT)
   selectedExamBoard ExamBoard?
   isMinor           Boolean       @default(false) @map("is_minor")
-  country           String
+  country           String?
   accountStatus     AccountStatus @default(ACTIVE)
   parentId          String?
   linkedTeacherId   String?

@@ -78,7 +78,7 @@ For every child account, the following defaults apply **at the point of account 
 | Setting | Default | Allowed changes |
 |---|---|---|
 | Precise geolocation | **Off and not requested** | Feature not offered |
-| Coarse IP-based country inference | **On, security-only** | Cannot be disabled because it is used for rate-limiting and fraud detection |
+| Coarse IP-based country inference | **On, security-only** | Cannot be disabled because it is used for rate-limit keying and fraud detection. Note: the rate limiter is implemented but not enforced in production (`business-docs/compliance/controls/rate-limiting-control-status.md`), so the necessity claim rests on fraud detection until that is fixed |
 
 ### 3.7 Privacy controls
 

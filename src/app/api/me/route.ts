@@ -152,7 +152,9 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
         firstName: profile.firstName,
         lastName: profile.lastName,
         role: profile.role,
-        dob: profile.dateOfBirth.toISOString(),
+        // null means we hold no date of birth for this account. The
+        // dashboard's date-of-birth prompt is what fills it in.
+        dob: profile.dateOfBirth?.toISOString() ?? null,
         school: profile.school,
         examBoard: profile.selectedExamBoard,
         createdAt: profile.createdAt.toISOString(),

@@ -151,11 +151,21 @@ async function executeWeeklyParentReports(expectedSecret: string): Promise<Respo
       parentMissing: 0,
       alreadySent: 0,
       noDelivery: 0,
+      dobUnknown: 0,
     }
 
     for (const child of parentChildPairs) {
       if (!child.parentId) {
         skipped.parentMissing++
+        continue
+      }
+
+      // `dateOfBirth` is nullable from 2026-09-17 and NULL means NOT HELD.
+      // generateWeeklyReport gates on age, and there is no honest age to
+      // give it, so skip the child rather than pass a substituted date or
+      // let a report about a child of unknown age go out.
+      if (!child.dateOfBirth) {
+        skipped.dobUnknown++
         continue
       }
 

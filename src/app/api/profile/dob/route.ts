@@ -2,6 +2,12 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { prisma } from '@/lib/prisma'
 import { rateLimit } from '@/lib/rate-limit'
+import {
+  tryPrismaUserId,
+  isMinorFromDob,
+  isPlaceholderDob,
+  PLACEHOLDER_DOB_ISO,
+} from '@/lib/identity'
 import { z } from 'zod'
 
 // POST /api/profile/dob - update the current user's Prisma User.dateOfBirth.
@@ -63,24 +69,35 @@ export async function POST(request: NextRequest) {
   }
 
   const newDob = new Date(parsed.data.dateOfBirth + 'T00:00:00Z')
-  const ageYears = (Date.now() - newDob.getTime()) / (365.25 * 24 * 3600 * 1000)
-  const MINOR_AGE_THRESHOLD = 16
-  const isMinor = ageYears < MINOR_AGE_THRESHOLD
 
-  // Match by supabaseUserId (preferred) OR email fallback - same pattern as
-  // Identity PR-3. updateMany so we never throw if the Prisma row is missing.
-  const result = await prisma.user.updateMany({
-    where: {
-      OR: [{ supabaseUserId: user.id }, { email: user.email.toLowerCase() }],
-    },
+  // One definition of isMinor, shared with the identity layer and the
+  // register route: UNDER 18, which is what the column means and what the
+  // Children's Code protections key on. This route used to use 16 and the
+  // backfill script used 16 as well, so the same column carried three
+  // different meanings depending on who wrote it last.
+  const isMinor = isMinorFromDob(newDob)
+
+  // Resolve through the identity module, which projects the Prisma row if
+  // this Supabase-native account has none. Without that, ~96% of accounts
+  // got a 404 here - and this endpoint is the control the AI gate now names
+  // when it blocks someone whose date of birth we do not hold.
+  const prismaUserId = await tryPrismaUserId(user.id)
+  if (!prismaUserId) {
+    return NextResponse.json(
+      {
+        error:
+          'We could not save your date of birth against your account. Please try again, and contact dpo@theenglishhub.app if it keeps happening.',
+      },
+      { status: 503 },
+    )
+  }
+
+  await prisma.user.update({
+    where: { id: prismaUserId },
     data: { dateOfBirth: newDob, isMinor },
   })
 
-  if (result.count === 0) {
-    return NextResponse.json({ error: 'Profile not found' }, { status: 404 })
-  }
-
-  return NextResponse.json({ ok: true, rows: result.count })
+  return NextResponse.json({ ok: true, rows: 1 })
 }
 
 // GET /api/profile/dob - returns { hasPlaceholderDob } for the current user.
@@ -95,20 +112,29 @@ export async function GET() {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
-  const row = await prisma.user.findFirst({
-    where: { OR: [{ supabaseUserId: user.id }, { email: user.email.toLowerCase() }] },
+  const prismaUserId = await tryPrismaUserId(user.id)
+
+  if (!prismaUserId) {
+    // We cannot address this account in Prisma at all, so we certainly do
+    // not hold a date of birth for it. Show the prompt: it is the only
+    // self-service way out of the AI gate's date-of-birth refusal.
+    return NextResponse.json({ hasPlaceholderDob: true })
+  }
+
+  const row = await prisma.user.findUnique({
+    where: { id: prismaUserId },
     select: { dateOfBirth: true },
   })
 
-  if (!row) {
-    // No Prisma row → nothing to nudge. Register handler should create it
-    // on next login, but don't surface that here.
-    return NextResponse.json({ hasPlaceholderDob: false })
-  }
-
-  // Placeholder sentinel from the 2026-04-20 backfill. Treat any DOB on
-  // 2000-01-01 as placeholder; if a real user genuinely has that DOB they
-  // can just re-confirm it via the nudge form (same-value update is a no-op).
-  const iso = row.dateOfBirth.toISOString().slice(0, 10)
-  return NextResponse.json({ hasPlaceholderDob: iso === '2000-01-01' })
+  // Two cases need the prompt, and both mean "we do not hold a usable date":
+  //   * NULL - the column is nullable from 2026-09-17 and a projected
+  //     account carries NULL rather than an invented date;
+  //   * 2000-01-01 - the placeholder the 2026-04-20 backfill invented. A
+  //     learner who genuinely has that date simply re-confirms it through
+  //     this form, which is a same-value no-op.
+  const dob = row?.dateOfBirth ?? null
+  return NextResponse.json({
+    hasPlaceholderDob: dob === null || isPlaceholderDob(dob),
+    placeholderDate: PLACEHOLDER_DOB_ISO,
+  })
 }

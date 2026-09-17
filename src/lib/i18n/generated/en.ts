@@ -7798,7 +7798,7 @@ export const EN_MESSAGES: Record<string, string> = {
     'Minimise behavioural analytics on confirmed under-18 accounts; disable third-party analytics SDKs (GA4, PostHog session replay) by default for these users.',
   'legal_long.ai_gov.s9.h2': '9. AI use disclosure',
   'legal_long.ai_gov.s9.p1':
-    'We use third-party large language models (currently OpenAI and Anthropic APIs, subject to change) to generate:',
+    'We use a third-party large language model (currently the Anthropic Claude API, subject to change) to generate:',
   'legal_long.ai_gov.s9.li_g1': 'Essay feedback and model annotations',
   'legal_long.ai_gov.s9.li_g2': 'Practice questions and model answers',
   'legal_long.ai_gov.s9.li_g3': 'Vocabulary explanations and grammar walkthroughs',
@@ -15721,6 +15721,16 @@ export const EN_MESSAGES: Record<string, string> = {
   'dash.consent.withdrawn_success': '"{label}" consent has been withdrawn.',
   'dash.consent.active_title': 'Active Consents',
   'dash.consent.none_active': 'No active consents found.',
+  'dash.consent.grant_title': 'Consents you can give',
+  'dash.consent.grant_intro':
+    'You can turn these on or off whenever you like. AI marking needs your consent for AI processing.',
+  'dash.consent.grant': 'Give consent',
+  'dash.consent.granting': 'Saving...',
+  'dash.consent.grant_success': 'Consent recorded for {label}.',
+  'dash.consent.err.grant': 'We could not record your consent. Please try again.',
+  'dash.consent.grant_note_minor':
+    'If you are under 16, AI marking also needs a parent or guardian to approve it.',
+  'dash.consent.all_granted': 'You have already given every consent that is available here.',
   'dash.consent.badge_essential': 'Essential',
   'dash.consent.badge_optional': 'Optional',
   'dash.consent.granted': 'Granted:',

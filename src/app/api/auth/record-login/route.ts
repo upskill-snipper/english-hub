@@ -1,8 +1,10 @@
 // Cycle 7 / Identity PR-3: lookups prefer supabaseUserId over email.
+// 2026-09-17: identity resolution delegated to src/lib/identity.
 import { NextResponse } from 'next/server'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { prisma } from '@/lib/prisma'
 import { rateLimit } from '@/lib/rate-limit'
+import { tryPrismaUserId } from '@/lib/identity'
 import type { NextRequest } from 'next/server'
 
 // POST /api/auth/record-login
@@ -15,9 +17,18 @@ import type { NextRequest } from 'next/server'
 // wrongful deletion of active accounts and false reprieve for
 // actually-dormant ones.
 //
-// The caller MUST be authenticated (we read the Supabase session and
-// match by email into Prisma - both identity systems link by email
-// until the larger identity convergence is shipped).
+// The caller MUST be authenticated.
+//
+// This is also the eager projection point. Only 8 of 200 real accounts had
+// a Prisma User row, so the updateMany below matched nothing for ~96% of
+// sign-ins and this endpoint quietly did nothing at all for them. Resolving
+// through the identity module creates the missing row here, which makes the
+// account addressable for consent, erasure and the AI decision log before
+// it needs to be. After one login cycle nearly every active account is
+// projected; just-in-time projection covers the rest.
+//
+// The projection is additive only: it grants no consent, links no parent
+// and creates no subscription. See src/lib/identity/projection.ts.
 export async function POST(_request: NextRequest) {
   const supabase = createServerSupabaseClient()
   const {
@@ -40,17 +51,20 @@ export async function POST(_request: NextRequest) {
   }
 
   try {
-    // updateMany avoids a throw when the Prisma User row doesn't exist
-    // for this email (e.g. a Supabase-only account that never hit Prisma
-    // for whatever reason). Best-effort - dormancy is a lagging signal.
-    // Match by supabaseUserId OR email so pre-backfill rows are still hit.
-    const result = await prisma.user.updateMany({
-      where: {
-        OR: [{ supabaseUserId: user.id }, { email: user.email.toLowerCase() }],
-      },
+    // Project first, then stamp. tryPrismaUserId rather than the throwing
+    // form: a login must not fail because identity could not be resolved,
+    // and dormancy is a lagging signal.
+    const prismaUserId = await tryPrismaUserId(user.id)
+    if (!prismaUserId) {
+      console.error('[record-login] could not resolve identity for', user.id)
+      return NextResponse.json({ ok: false, rows: 0 }, { status: 200 })
+    }
+
+    await prisma.user.update({
+      where: { id: prismaUserId },
       data: { lastLoginAt: new Date() },
     })
-    return NextResponse.json({ ok: true, rows: result.count })
+    return NextResponse.json({ ok: true, rows: 1 })
   } catch (err) {
     console.error('[record-login] failed:', err)
     // Non-fatal - do not block the user's login flow. The client calls

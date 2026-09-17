@@ -61,10 +61,12 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
     })
     const user =
       prismaUser ??
-      (await prisma.user.findUnique({
-        where: { email: sessionUser.email!.toLowerCase() },
-        select: { id: true, role: true },
-      }))
+      (sessionUser.email
+        ? await prisma.user.findUnique({
+            where: { email: sessionUser.email.toLowerCase() },
+            select: { id: true, role: true },
+          })
+        : null)
     if (user && !prismaUser) {
       console.warn('[identity] DSAR lookup fell back to email', {
         supabaseUserId: sessionUser.id,
@@ -121,10 +123,12 @@ export async function PATCH(request: NextRequest, { params }: { params: Promise<
     })
     const user =
       prismaUser ??
-      (await prisma.user.findUnique({
-        where: { email: sessionUser.email!.toLowerCase() },
-        select: { id: true, role: true },
-      }))
+      (sessionUser.email
+        ? await prisma.user.findUnique({
+            where: { email: sessionUser.email.toLowerCase() },
+            select: { id: true, role: true },
+          })
+        : null)
     if (user && !prismaUser) {
       console.warn('[identity] DSAR lookup fell back to email', {
         supabaseUserId: sessionUser.id,

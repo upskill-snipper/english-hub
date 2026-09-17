@@ -1,6 +1,12 @@
 import { prisma } from '@/lib/prisma'
 import { createServiceRoleClient } from '@/lib/supabase/server'
 import { hasConsent, CONSENT_TYPES } from '@/lib/consent'
+import {
+  resolveAgeBand,
+  requiresGuardianConsent,
+  tryPrismaUserId,
+  type AgeBand,
+} from '@/lib/identity'
 
 // ─── Types ──────────────────────────────────────────────────────────────
 
@@ -9,118 +15,28 @@ export interface ConsentCheckResult {
   reason?: string
 }
 
-interface ResolvedUser {
-  /** Prisma User.id (a cuid / synthetic id, NOT the Supabase auth uuid). */
-  id: string | null
-  isMinor: boolean
-  parentId: string | null
-}
-
 // ─── Identity resolution ────────────────────────────────────────────────
 
 /**
- * Callers pass the Supabase auth uuid (that is what `supabase.auth.getUser()`
- * returns and what every AI route hands us). The Prisma `User` row keys on
- * its own id and carries the Supabase uuid in `supabaseUserId`, so looking
- * the user up by `id` alone matched nothing for anyone who signed up through
- * Supabase Auth: `checkParentalConsent` answered "User not found." and the
- * approved `parental_consents` row below was never even consulted. That
- * meant a guardian could approve consent and the student would still be
- * blocked. We now try the correct column first and keep the legacy `id`
- * lookup as a fallback for seeded/synthetic rows (e.g. the App Review
- * account, whose id is 'usr_apple_reviewer').
+ * The one thing this gate still needs off the Prisma row: whether a parent
+ * is linked. Identity resolution itself belongs to src/lib/identity, which
+ * projects the account if it has no row yet, so a Supabase-native learner is
+ * no longer answered "User not found." and refused on that basis.
  *
- * `findFirst` rather than `findUnique` for the uuid lookup: `supabaseUserId`
- * is a NULLABLE unique column, and findUnique throws when handed a null or
- * undefined value for one.
+ * Returns null when the account cannot be resolved or is not ACTIVE. Null
+ * means "no linked parent", which is the fail-closed reading.
  */
-async function resolvePrismaUser(supabaseUserId: string): Promise<ResolvedUser | null> {
-  const select = { id: true, isMinor: true, parentId: true } as const
+async function linkedParentId(supabaseUserId: string): Promise<string | null> {
+  const prismaUserId = await tryPrismaUserId(supabaseUserId)
+  if (!prismaUserId) return null
 
   try {
-    const byUuid = await prisma.user.findFirst({
-      where: { supabaseUserId, accountStatus: 'ACTIVE' },
-      select,
+    const row = await prisma.user.findUnique({
+      where: { id: prismaUserId },
+      select: { parentId: true, accountStatus: true },
     })
-    if (byUuid) return byUuid
-  } catch {
-    // Fall through to the legacy lookup below.
-  }
-
-  const byId = await prisma.user.findUnique({
-    where: { id: supabaseUserId, accountStatus: 'ACTIVE' },
-    select,
-  })
-  return byId ?? null
-}
-
-/**
- * Fallback minor check for accounts that have no Prisma projection row.
- * The Prisma row is written by /api/auth/register, which needs a session -
- * with Supabase email confirmation ON there is none at signup, so a large
- * share of real accounts exist only in Supabase. `profiles` is written
- * during signup regardless, so it is the honest source for "is this a
- * minor" when the projection is missing. Returns null when we genuinely
- * cannot tell, so the caller can fail closed rather than guess.
- */
-async function isMinorFromProfile(supabaseUserId: string): Promise<boolean | null> {
-  const age = await ageFromProfile(supabaseUserId)
-  if (age === null) return null
-  return age.requiresParentalConsent
-}
-
-/**
- * The age signal the consent gate needs.
- *
- * DEFECT this fixes (2026-08-23): the gate required parental consent from
- * every `isMinor` account, and `isMinor` means UNDER 18. But the signup form
- * only collects a guardian email for 13-15 year-olds, and our published
- * privacy policy states plainly that "users aged 13-15 require" parental
- * consent. So 16 and 17 year-olds were blocked from AI marking with no way
- * to resolve it: we never asked for a guardian address, so the guardian
- * request could not even be raised. Under UK GDPR the digital consent age is
- * 13, so a 16-17 year-old consents for themselves.
- *
- * `requiresParentalConsent` is therefore UNDER 16 - matching the policy, the
- * signup form and the law. Under-18 status is still what drives the
- * Children's Code design protections (high-privacy defaults, analytics
- * suppression); that is a separate concern and is unchanged.
- *
- * Returns null when we genuinely cannot tell, so callers fail closed.
- */
-async function ageFromProfile(
-  supabaseUserId: string,
-): Promise<{ requiresParentalConsent: boolean } | null> {
-  try {
-    const admin = createServiceRoleClient()
-    const { data } = await admin
-      .from('profiles')
-      .select('date_of_birth, is_minor')
-      .eq('id', supabaseUserId)
-      .maybeSingle()
-
-    if (!data) return null
-
-    const profile = data as { date_of_birth: string | null; is_minor: boolean | null }
-    if (profile.date_of_birth) {
-      const dob = new Date(profile.date_of_birth)
-      if (!Number.isNaN(dob.getTime())) {
-        const today = new Date()
-        let age = today.getUTCFullYear() - dob.getUTCFullYear()
-        const monthDiff = today.getUTCMonth() - dob.getUTCMonth()
-        if (monthDiff < 0 || (monthDiff === 0 && today.getUTCDate() < dob.getUTCDate())) {
-          age--
-        }
-        return { requiresParentalConsent: age < 16 }
-      }
-    }
-    // No usable date of birth. `is_minor` only tells us under-18, which is
-    // too coarse to decide 16-17. Fail closed (treat as needing consent)
-    // rather than opening the AI gate on a guess.
-    if (typeof profile.is_minor === 'boolean') {
-      return { requiresParentalConsent: profile.is_minor }
-    }
-    return null
+    if (!row || row.accountStatus !== 'ACTIVE') return null
+    return row.parentId
   } catch {
     return null
   }
@@ -135,86 +51,89 @@ async function ageFromProfile(
  * /api/auth/parent-notify (school_id NULL).
  */
 async function hasApprovedParentalConsent(supabaseUserId: string): Promise<boolean> {
-  const admin = createServiceRoleClient()
-  const { data: approvedConsent } = await admin
-    .from('parental_consents')
-    .select('id')
-    .eq('student_user_id', supabaseUserId)
-    .eq('status', 'approved')
-    .limit(1)
-    .single()
+  try {
+    const admin = createServiceRoleClient()
+    const { data: approvedConsent } = await admin
+      .from('parental_consents')
+      .select('id')
+      .eq('student_user_id', supabaseUserId)
+      .eq('status', 'approved')
+      .limit(1)
+      .single()
 
-  return Boolean(approvedConsent)
+    return Boolean(approvedConsent)
+  } catch {
+    // A failed read is not an approval.
+    return false
+  }
 }
+
+// ─── Refusal messages ───────────────────────────────────────────────────
+//
+// Every message below has to name a control the learner can actually reach.
+// The previous AI-processing refusal said "update your consent preferences in
+// settings", and no such control existed anywhere in the product: the consent
+// page could only withdraw, and the ledger could not hold the row in any
+// case. A refusal that names nothing real is a dead end, not a gate.
 
 const PARENTAL_CONSENT_REQUIRED =
   'Parental consent is required before you can use this feature. Please ask your parent or guardian to complete the consent process.'
 
 const AI_PROCESSING_REQUIRED =
-  'You must consent to AI processing before using this feature. Please update your consent preferences in settings.'
+  'You have not given consent for AI processing yet. Open Manage Your Consents at /dashboard/consent, choose "Give consent" for AI processing, then try again.'
 
 /**
- * Sentinel reason for "we could not identify this account at all". It is
- * matched on in checkMinorAIConsent, so it has to be one constant rather
- * than a repeated literal.
+ * Sentinel reason for "we do not hold a date of birth". It is matched on in
+ * checkMinorAIConsent (an unknown age must not trigger a guardian email - we
+ * do not know there is a guardian to email), so it has to be one constant
+ * rather than a repeated literal.
  */
-const USER_NOT_FOUND = 'User not found.'
+export const DATE_OF_BIRTH_REQUIRED =
+  'We do not hold your date of birth, so we cannot tell whether this account needs a parent or guardian’s permission. Add it on your dashboard at /dashboard and we will tell you what, if anything, is still needed.'
 
 // ─── checkParentalConsent ───────────────────────────────────────────────
 
 /**
- * Checks whether a minor user has the required parental consent to access
- * a feature. A minor is considered to have parental consent if:
+ * Checks whether this account has the parental consent it needs.
  *
- * 1. They have a linked parent (via parentId in the User model), OR
- * 2. They have an approved record in the parental_consents table
- *    (written by either the school consent flow or the self-serve
- *    guardian flow).
+ * The age question is answered by resolveAgeBand (src/lib/identity/age.ts),
+ * NOT by `User.isMinor`. The old short-circuit here was
+ * `if (!user.isMinor) return { allowed: true }`, and `isMinor` is a boolean
+ * that three code paths write with three different meanings and that the
+ * 2026-04-20 backfill set to `false` from an invented date of birth. Any
+ * `false` in it was therefore capable of meaning "we never asked", and this
+ * gate read it as "adult".
  *
- * Non-minor users always pass this check.
+ * Bands and their consequences:
+ *   SIXTEEN_OR_OVER     consents for themselves (UK GDPR digital consent age
+ *                       is 13; our published policy requires guardian consent
+ *                       for 13-15 and the signup form only collects a
+ *                       guardian email for that band)
+ *   UNDER_16            guardian consent required
+ *   UNDER_18_IMPRECISE  a child, precision unknown - fail closed, guardian
+ *                       consent required
+ *   UNKNOWN             no date of birth held. NOT an adult: blocked, with
+ *                       the message that asks for the date.
  *
  * Takes the Supabase auth user id.
  */
 export async function checkParentalConsent(supabaseUserId: string): Promise<ConsentCheckResult> {
-  const user = await resolvePrismaUser(supabaseUserId)
+  const band: AgeBand = await resolveAgeBand(supabaseUserId)
 
-  if (!user) {
-    // No projection row. Decide from the Supabase profile rather than
-    // hard-failing every Supabase-native account with "User not found."
-    const minor = await isMinorFromProfile(supabaseUserId)
-    if (minor === null) {
-      return { allowed: false, reason: USER_NOT_FOUND }
-    }
-    if (!minor) {
-      return { allowed: true }
-    }
-    if (await hasApprovedParentalConsent(supabaseUserId)) {
-      return { allowed: true }
-    }
-    return { allowed: false, reason: PARENTAL_CONSENT_REQUIRED }
+  if (band === 'UNKNOWN') {
+    return { allowed: false, reason: DATE_OF_BIRTH_REQUIRED }
   }
 
-  // Users who do not require parental consent pass straight through.
-  //
-  // `user.isMinor` is UNDER 18, but only UNDER 16 requires parental consent
-  // (published policy: "users aged 13-15 require" it; the signup form only
-  // collects a guardian email for that band). Prefer the profile's date of
-  // birth, which can distinguish 16-17 from 13-15; fall back to isMinor when
-  // there is no usable date, which fails closed.
-  if (!user.isMinor) {
-    return { allowed: true }
-  }
-  const age = await ageFromProfile(supabaseUserId)
-  if (age && !age.requiresParentalConsent) {
+  if (!requiresGuardianConsent(band)) {
     return { allowed: true }
   }
 
-  // Check 1: User has a linked parent via the parent-linking system
-  if (user.parentId) {
+  // Check 1: a linked parent via the parent-linking system.
+  if (await linkedParentId(supabaseUserId)) {
     return { allowed: true }
   }
 
-  // Check 2: An approved parental consent record (school or self-serve)
+  // Check 2: an approved parental consent record (school or self-serve).
   if (await hasApprovedParentalConsent(supabaseUserId)) {
     return { allowed: true }
   }
@@ -270,39 +189,37 @@ async function raiseGuardianConsentRequest(supabaseUserId: string): Promise<stri
 // ─── checkMinorAIConsent ────────────────────────────────────────────────
 
 /**
- * Combined check for minor users accessing AI-powered features.
- * Verifies both:
- * 1. If the user is a minor, they have parental consent
- * 2. The user has AI_PROCESSING consent (required for all users)
+ * Combined check for accessing AI-powered features. Verifies both:
+ *   1. the account has whatever parental consent its age band requires, and
+ *   2. the account has AI_PROCESSING consent (required for everyone).
  *
  * Returns { allowed: true } if all checks pass, or { allowed: false, reason }
- * with a user-facing message if any check fails.
+ * with a user-facing message if any check fails. Every failure message names
+ * a control that exists.
  */
 export async function checkMinorAIConsent(supabaseUserId: string): Promise<ConsentCheckResult> {
   // ORDER IS LOAD-BEARING (changed 2026-08-23).
   //
   // DEFECT this fixes: the guardian consent request is raised from this
   // function, but the raise used to sit *after* an early return on the
-  // AI_PROCESSING ledger check. That ledger cannot hold a row for a
-  // Supabase-native account (see the note further down), so for exactly
-  // the population the self-serve guardian loop was built for - a 13-15
-  // year-old who signed up directly - this function answered "consent to
-  // AI processing" and returned before any guardian was emailed. The
-  // durable trigger fired for nobody.
+  // AI_PROCESSING ledger check - a ledger that could hold no row at all for
+  // a Supabase-native account. So for exactly the population the self-serve
+  // guardian loop was built for, a 13-15 year-old who signed up directly,
+  // this function answered "consent to AI processing" and returned before
+  // any guardian was emailed. The durable trigger fired for nobody.
   //
   // Parental consent is also the only leg with an off-platform dependency
-  // (a guardian's inbox and a 7-day link), so it must start at the
-  // student's first blocked attempt rather than after they have cleared a
-  // separate, self-service consent.
+  // (a guardian's inbox and a 7-day link), so it must start at the student's
+  // first blocked attempt rather than after they have cleared a separate,
+  // self-service consent.
   const parental = await checkParentalConsent(supabaseUserId)
 
-  // "User not found." means we could not identify the account at all, so we
-  // cannot know whether it belongs to a minor. Do not raise a guardian
-  // request on a guess, and do not let that message displace the
-  // AI-processing one that this branch has always returned.
-  const identityUnknown = !parental.allowed && parental.reason === USER_NOT_FOUND
+  if (!parental.allowed) {
+    // An unknown age must not raise a guardian request: we do not know the
+    // account belongs to a child, and we have no guardian address for it.
+    // Return the honest ask instead, which is self-service.
+    if (parental.reason === DATE_OF_BIRTH_REQUIRED) return parental
 
-  if (!parental.allowed && !identityUnknown) {
     const followUp = await raiseGuardianConsentRequest(supabaseUserId)
     return {
       allowed: false,
@@ -310,40 +227,19 @@ export async function checkMinorAIConsent(supabaseUserId: string): Promise<Conse
     }
   }
 
-  // AI processing consent (applies to all users).
+  // AI processing consent (applies to everyone).
   //
-  // KNOWN CROSS-FILE DEFECT (not fixable from this file): the Prisma
-  // `Consent.userId` column references `User.id`, but every writer
-  // (/api/consent, src/lib/consent.ts) passes the Supabase auth uuid, so
-  // consent rows for Supabase-native accounts cannot be written or read
-  // under that id. We look the ledger up under the Supabase id first
-  // (existing behaviour) and, failing that, under the resolved Prisma id
-  // so seeded/legacy rows are honoured. Making the ledger actually
-  // writable needs the same id resolution in src/lib/consent.ts and
-  // /api/consent - owned elsewhere, flagged to the lead.
-  let hasAIConsent = await hasConsent(supabaseUserId, CONSENT_TYPES.AI_PROCESSING)
-
-  if (!hasAIConsent) {
-    try {
-      const resolved = await prisma.user.findFirst({
-        where: { supabaseUserId, accountStatus: 'ACTIVE' },
-        select: { id: true },
-      })
-      if (resolved?.id && resolved.id !== supabaseUserId) {
-        hasAIConsent = await hasConsent(resolved.id, CONSENT_TYPES.AI_PROCESSING)
-      }
-    } catch {
-      // Leave hasAIConsent false - fail closed on the consent ledger.
-    }
-  }
+  // hasConsent resolves the Supabase uuid to the Prisma id through
+  // src/lib/identity, so the ledger this reads is the same one
+  // /api/consent writes. The old compensating second lookup by
+  // supabaseUserId has been removed: identity resolution lives in exactly
+  // one module now, and src/__tests__/identity-guard.test.ts fails the suite
+  // if a second copy appears here or anywhere else.
+  const hasAIConsent = await hasConsent(supabaseUserId, CONSENT_TYPES.AI_PROCESSING)
 
   if (!hasAIConsent) {
     return { allowed: false, reason: AI_PROCESSING_REQUIRED }
   }
-
-  // Only reachable when the account could not be identified at all: fail
-  // closed with the honest reason rather than letting it through.
-  if (!parental.allowed) return parental
 
   return { allowed: true }
 }

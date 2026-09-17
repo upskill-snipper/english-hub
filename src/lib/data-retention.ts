@@ -135,12 +135,301 @@ async function auditRetentionAction(
 async function deleteFreeAllowanceRows(
   userId: string,
   supabaseUserId: string | null,
-): Promise<void> {
+): Promise<number> {
   const keys = [userId, supabaseUserId].filter((k): k is string => Boolean(k))
-  if (keys.length === 0) return
-  await prisma.freeAllowanceUsage.deleteMany({
+  if (keys.length === 0) return 0
+  const result = await prisma.freeAllowanceUsage.deleteMany({
     where: { subjectType: 'user', subjectKey: { in: keys } },
   })
+  return result.count
+}
+
+// ─── Supabase-native identity ───────────────────────────────────────────
+//
+// Roughly 96% of real accounts exist only in Supabase: an `auth.users` row
+// and a `public.profiles` row, with no Prisma `User` row at all. Every
+// erasure and subject-access path in this repository used to key on the
+// Prisma row, so for those accounts erasure deleted nothing and access
+// returned "not found". The helpers below act on the identity that DOES
+// exist, and they verify rather than assume.
+
+/** Published data protection contact. Used wherever we have to refuse honestly. */
+export const DPO_EMAIL = 'dpo@theenglishhub.app'
+
+/**
+ * Supabase tables that hold records keyed on a subject's auth uuid.
+ *
+ * Every entry either cascades from `auth.users` / `public.profiles` on
+ * delete, or is nulled by the database (school and affiliate ledgers). The
+ * map exists so a subject-access export can enumerate what it read instead
+ * of implying a completeness it cannot prove.
+ */
+export const SUPABASE_SUBJECT_TABLES: ReadonlyArray<{ table: string; column: string }> = [
+  { table: 'enrolments', column: 'user_id' },
+  { table: 'module_progress', column: 'user_id' },
+  { table: 'assessment_attempts', column: 'user_id' },
+  { table: 'certificates', column: 'user_id' },
+  { table: 'practice_sessions', column: 'user_id' },
+  { table: 'parental_consents', column: 'student_user_id' },
+  { table: 'human_review_requests', column: 'user_id' },
+  { table: 'quiz_responses', column: 'user_id' },
+  { table: 'marking_submissions', column: 'student_id' },
+  { table: 'class_students', column: 'student_id' },
+  { table: 'school_members', column: 'user_id' },
+]
+
+/**
+ * Thrown when an erasure could not be carried out, or could not be proved
+ * to have been carried out. Callers must surface an honest failure and
+ * route the subject to {@link DPO_EMAIL} - never a purge date.
+ */
+export class ErasureIncompleteError extends Error {
+  readonly step: string
+  readonly supabaseUserId: string
+  /** True when part of the erasure did succeed before the failing step. */
+  readonly partial: boolean
+
+  constructor(params: { step: string; supabaseUserId: string; message: string; partial: boolean }) {
+    super(params.message)
+    this.name = 'ErasureIncompleteError'
+    this.step = params.step
+    this.supabaseUserId = params.supabaseUserId
+    this.partial = params.partial
+  }
+}
+
+export interface SupabaseIdentityErasureResult {
+  supabaseUserId: string
+  /** The `public.profiles` row is confirmed gone. */
+  profileRowDeleted: boolean
+  /** The `auth.users` row is confirmed gone. */
+  authUserDeleted: boolean
+  /** `free_allowance_usage` counters removed (no FK, so never cascades). */
+  freeAllowanceRowsDeleted: number
+  /**
+   * Things that could not be completed but that do not make the identity
+   * erasure itself untrue. Surfaced so nothing is quietly swallowed.
+   */
+  warnings: string[]
+}
+
+/** Supabase returns a "not found" shaped error when the row has already gone. */
+function isNotFoundError(error: { status?: number; message?: string } | null): boolean {
+  if (!error) return false
+  if (error.status === 404) return true
+  return /not found/i.test(error.message ?? '')
+}
+
+/**
+ * Erase a Supabase-native identity: the `public.profiles` row and the
+ * `auth.users` row, plus the free-allowance counters that have no foreign
+ * key and therefore never cascade.
+ *
+ * Deleting `auth.users` cascades `public.profiles` and every table in
+ * {@link SUPABASE_SUBJECT_TABLES} that is declared ON DELETE CASCADE. The
+ * profiles row is deleted first and explicitly so that a failure of the
+ * auth admin call still leaves the profile PII gone (the compliant
+ * direction) rather than relying on a cascade that never ran.
+ *
+ * Both deletions are VERIFIED by reading back. If either row survives, or
+ * cannot be proved to have gone, this throws {@link ErasureIncompleteError}
+ * so the caller reports a failure instead of a fabricated purge date.
+ */
+export async function eraseSupabaseIdentity(
+  supabaseUserId: string,
+): Promise<SupabaseIdentityErasureResult> {
+  const warnings: string[] = []
+  const admin = createServiceRoleClient()
+
+  // ── 1. public.profiles ───────────────────────────────────────────────
+  const { error: profileDeleteError } = await admin
+    .from('profiles')
+    .delete()
+    .eq('id', supabaseUserId)
+
+  if (profileDeleteError && !isNotFoundError(profileDeleteError)) {
+    throw new ErasureIncompleteError({
+      step: 'profiles_delete',
+      supabaseUserId,
+      partial: false,
+      message: `profiles row could not be deleted: ${profileDeleteError.message}`,
+    })
+  }
+
+  const { data: residualProfile, error: profileVerifyError } = await admin
+    .from('profiles')
+    .select('id')
+    .eq('id', supabaseUserId)
+    .maybeSingle()
+
+  if (profileVerifyError && !isNotFoundError(profileVerifyError)) {
+    throw new ErasureIncompleteError({
+      step: 'profiles_verify',
+      supabaseUserId,
+      partial: false,
+      message: `profiles deletion could not be verified: ${profileVerifyError.message}`,
+    })
+  }
+
+  if (residualProfile) {
+    throw new ErasureIncompleteError({
+      step: 'profiles_verify',
+      supabaseUserId,
+      partial: false,
+      message: 'profiles row still present after delete',
+    })
+  }
+
+  // ── 2. auth.users ────────────────────────────────────────────────────
+  const { error: authDeleteError } = await admin.auth.admin.deleteUser(supabaseUserId)
+
+  if (authDeleteError && !isNotFoundError(authDeleteError)) {
+    throw new ErasureIncompleteError({
+      step: 'auth_user_delete',
+      supabaseUserId,
+      // The profiles row has already gone at this point.
+      partial: true,
+      message: `auth.users row could not be deleted: ${authDeleteError.message}`,
+    })
+  }
+
+  const { data: residualAuth } = await admin.auth.admin.getUserById(supabaseUserId)
+  if (residualAuth?.user?.id === supabaseUserId) {
+    throw new ErasureIncompleteError({
+      step: 'auth_user_verify',
+      supabaseUserId,
+      partial: true,
+      message: 'auth.users row still present after delete',
+    })
+  }
+
+  // ── 3. free_allowance_usage (no FK - nothing cascades) ───────────────
+  // Last, because a counter failing to delete does not make the identity
+  // erasure above untrue. It is reported as a warning, never swallowed.
+  let freeAllowanceRowsDeleted = 0
+  try {
+    freeAllowanceRowsDeleted = await deleteFreeAllowanceRows(supabaseUserId, null)
+  } catch (err) {
+    warnings.push(
+      `free_allowance_usage counters could not be deleted: ${
+        err instanceof Error ? err.message : String(err)
+      }`,
+    )
+  }
+
+  return {
+    supabaseUserId,
+    profileRowDeleted: true,
+    authUserDeleted: true,
+    freeAllowanceRowsDeleted,
+    warnings,
+  }
+}
+
+// ─── Supabase-native subject data (Art.15 / Art.20) ─────────────────────
+
+export interface SupabaseNativeSubjectData {
+  exportedAt: string
+  dataController: { name: string; contact: string }
+  legalBasis: string
+  /** Names the store this export was compiled from, so nothing is implied. */
+  source: 'supabase-identity'
+  coverage: string
+  account: {
+    supabaseUserId: string
+    email: string | null
+    emailConfirmedAt: string | null
+    createdAt: string | null
+    lastSignInAt: string | null
+    signUpMetadata: Record<string, unknown>
+  }
+  profile: Record<string, unknown> | null
+  /** One entry per table in {@link SUPABASE_SUBJECT_TABLES}. */
+  records: Array<{
+    table: string
+    status: 'read' | 'could-not-be-read'
+    rowCount: number
+    rows: Record<string, unknown>[]
+    note?: string
+  }>
+}
+
+/**
+ * Compile everything we hold for an account that exists only in Supabase.
+ *
+ * `compileUserData()` in src/lib/dsar.ts reads the Prisma store and throws
+ * for these accounts, which is why both export routes used to answer "no
+ * account data found" to people whose data we hold. This reads the store
+ * the data is actually in.
+ *
+ * Every table is reported with its read status. A table we could not read
+ * is listed as such rather than omitted, so the export never implies we
+ * hold nothing where we simply failed to look.
+ */
+export async function compileSupabaseNativeSubjectData(
+  supabaseUserId: string,
+): Promise<SupabaseNativeSubjectData> {
+  const admin = createServiceRoleClient()
+
+  const { data: authData } = await admin.auth.admin.getUserById(supabaseUserId)
+  const authUser = authData?.user ?? null
+
+  const { data: profile } = await admin
+    .from('profiles')
+    .select('*')
+    .eq('id', supabaseUserId)
+    .maybeSingle()
+
+  const records: SupabaseNativeSubjectData['records'] = []
+
+  for (const { table, column } of SUPABASE_SUBJECT_TABLES) {
+    try {
+      const { data, error } = await admin.from(table).select('*').eq(column, supabaseUserId)
+      if (error) {
+        records.push({
+          table,
+          status: 'could-not-be-read',
+          rowCount: 0,
+          rows: [],
+          note: error.message,
+        })
+        continue
+      }
+      const rows = (data ?? []) as Record<string, unknown>[]
+      records.push({ table, status: 'read', rowCount: rows.length, rows })
+    } catch (err) {
+      records.push({
+        table,
+        status: 'could-not-be-read',
+        rowCount: 0,
+        rows: [],
+        note: err instanceof Error ? err.message : String(err),
+      })
+    }
+  }
+
+  return {
+    exportedAt: new Date().toISOString(),
+    dataController: { name: 'The English Hub', contact: DPO_EMAIL },
+    legalBasis:
+      'This data is provided under UK GDPR Article 15 (Right of Access) and/or Article 20 (Right to Data Portability).',
+    source: 'supabase-identity',
+    coverage: [
+      'This account is held in our sign-in and profile store, so this export covers',
+      'your sign-in record, your profile, and the tables listed under "records".',
+      `If you think something is missing, write to ${DPO_EMAIL} and we will check by hand.`,
+    ].join(' '),
+    account: {
+      supabaseUserId,
+      email: authUser?.email ?? null,
+      emailConfirmedAt: authUser?.email_confirmed_at ?? null,
+      createdAt: authUser?.created_at ?? null,
+      lastSignInAt: authUser?.last_sign_in_at ?? null,
+      signUpMetadata: (authUser?.user_metadata ?? {}) as Record<string, unknown>,
+    },
+    profile: (profile ?? null) as Record<string, unknown> | null,
+    records,
+  }
 }
 
 // ─── Main cleanup function ──────────────────────────────────────────────
@@ -557,10 +846,11 @@ export async function hardDeleteUser(userId: string): Promise<void> {
   // Prefer the canonical `supabaseUserId` (populated by PR-1/PR-2) so we
   // can target the auth.users row by UUID directly, avoiding the brittle
   // email-scan fallback that the Cycle 7 convergence plan is closing.
-  let supabaseUserId: string | null = null
-  let supabaseUserEmail: string | null = null
-
-  await prisma.$transaction(async (tx) => {
+  // Returned out of the transaction rather than assigned into outer
+  // `let`s: a variable only ever written inside a callback keeps its
+  // initialiser's narrowed type afterwards, which is how the email
+  // fallback below ended up needing a cast to compile.
+  const identity = await prisma.$transaction(async (tx) => {
     const user = await tx.user.findUnique({
       where: { id: userId },
       select: {
@@ -571,8 +861,6 @@ export async function hardDeleteUser(userId: string): Promise<void> {
         dateOfBirth: true,
       },
     })
-    supabaseUserId = user?.supabaseUserId ?? null
-    supabaseUserEmail = user?.email ?? null
 
     if (!user) {
       throw new Error(`User ${userId} not found`)
@@ -654,7 +942,14 @@ export async function hardDeleteUser(userId: string): Promise<void> {
         ipAddress: 'system',
       },
     })
+
+    return {
+      supabaseUserId: user.supabaseUserId ?? null,
+      supabaseUserEmail: user.email ?? null,
+    }
   })
+
+  const { supabaseUserId, supabaseUserEmail } = identity
 
   // 12b. Free-allowance counters. `free_allowance_usage` has NO foreign key to
   // `User` (by design - see src/lib/usage/free-allowance.ts), so nothing
@@ -689,34 +984,70 @@ export async function hardDeleteUser(userId: string): Promise<void> {
   // core bug this convergence plan closes.
   if (supabaseUserId || supabaseUserEmail) {
     try {
-      const admin = createServiceRoleClient()
-      if (supabaseUserId) {
-        // Direct UUID-based deletion - no listUsers scan needed.
-        await admin.auth.admin.deleteUser(supabaseUserId)
+      const targetUuid =
+        supabaseUserId ??
+        (supabaseUserEmail ? await findAuthUserIdByEmail(supabaseUserEmail) : null)
+
+      if (!targetUuid) {
+        // Nothing to erase on the Supabase side, or the scan could not
+        // find them. Record it: an unfound identity is not a completed
+        // erasure and must not be silently treated as one.
+        await auditRetentionAction('USER_SUPABASE_IDENTITY_NOT_FOUND', userId, {
+          reason: 'No auth.users row could be matched for this Prisma user',
+          hadSupabaseUserId: supabaseUserId !== null,
+        }).catch(() => {})
       } else {
-        // Legacy fallback: Prisma row had no supabaseUserId populated.
-        // Supabase uses its own UUID for auth.users; our Prisma User.id
-        // is a cuid. Find the matching Supabase user by email and delete.
-        const { data: authUsers } = await admin.auth.admin.listUsers()
-        const match = authUsers?.users.find(
-          (u) => u.email?.toLowerCase() === supabaseUserEmail!.toLowerCase(),
-        )
-        if (match) {
-          await admin.auth.admin.deleteUser(match.id)
-        }
+        // Verified erasure of profiles + auth.users. Throws if either
+        // survives, which is caught below and audited.
+        await eraseSupabaseIdentity(targetUuid)
       }
     } catch (err) {
       // Log but don't throw: Prisma data is already gone. Surface this
-      // to monitoring so an operator can finish the job.
+      // to monitoring AND to the audit log so an operator can finish the
+      // job - a failure that only ever reached stdout is a failure that
+      // nobody can evidence later.
       console.error(
-        `[hardDeleteUser] Prisma deletion succeeded but Supabase auth.users deletion failed for prisma.User.id=${userId}`,
+        `[hardDeleteUser] Prisma deletion succeeded but Supabase identity erasure failed for prisma.User.id=${userId}`,
         err,
       )
+      await auditRetentionAction('USER_SUPABASE_ERASURE_FAILED', userId, {
+        supabaseUserId,
+        error: err instanceof Error ? err.message : String(err),
+        step: err instanceof ErasureIncompleteError ? err.step : 'unknown',
+      }).catch(() => {})
       // Best-effort - swallow the error here so the enclosing cron
       // doesn't retry the whole thing (which would fail on the already
       // deleted Prisma row).
     }
   }
+}
+
+/**
+ * Resolve an `auth.users` id from an email address.
+ *
+ * The previous implementation called `listUsers()` with no arguments.
+ * Supabase pages that call at 50 rows by default, so on a project with
+ * 200 accounts it silently examined the first page and returned no match
+ * for everybody else - an erasure that reported success while leaving the
+ * auth identity in place. This pages through until it finds the address
+ * or runs out of pages.
+ */
+async function findAuthUserIdByEmail(email: string): Promise<string | null> {
+  const admin = createServiceRoleClient()
+  const target = email.toLowerCase()
+  const perPage = 1000
+  const maxPages = 50 // 50k accounts; far beyond current scale, and terminates.
+
+  for (let page = 1; page <= maxPages; page++) {
+    const { data, error } = await admin.auth.admin.listUsers({ page, perPage })
+    if (error) throw error
+    const users = data?.users ?? []
+    const match = users.find((u) => u.email?.toLowerCase() === target)
+    if (match) return match.id
+    if (users.length < perPage) return null
+  }
+
+  return null
 }
 
 // ─── Safeguarding retention check ───────────────────────────────────────
@@ -728,7 +1059,7 @@ export async function hardDeleteUser(userId: string): Promise<void> {
 async function checkSafeguardingRetention(
   tx: Parameters<Parameters<typeof prisma.$transaction>[0]>[0],
   userId: string,
-  dateOfBirth: Date,
+  dateOfBirth: Date | null,
 ): Promise<boolean> {
   const reports = await tx.safeguardingReport.findMany({
     where: { reporterId: userId },
@@ -738,6 +1069,11 @@ async function checkSafeguardingRetention(
   if (reports.length === 0) return false
 
   const now = new Date()
+
+  // No date of birth held. The "until 25" test cannot be evaluated, and an
+  // unevaluated test is not a passed test: hold the safeguarding records
+  // rather than delete a child's on an assumption about their age.
+  if (!dateOfBirth) return true
 
   // Check if user is under 25
   const age = Math.floor((now.getTime() - dateOfBirth.getTime()) / (365.25 * 24 * 60 * 60 * 1000))

@@ -4,7 +4,7 @@ import { Prisma } from '@prisma/client'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 import { verifyAdmin } from '@/lib/admin-auth'
 import { createServiceRoleClient } from '@/lib/supabase/server'
-import { prisma } from '@/lib/prisma'
+import { projectSupabaseUser } from '@/lib/identity'
 
 // ─── POST /api/admin/verify-user ────────────────────────────────────────
 //
@@ -28,8 +28,6 @@ import { prisma } from '@/lib/prisma'
 // ────────────────────────────────────────────────────────────────────────
 
 export const dynamic = 'force-dynamic'
-
-const SUPABASE_MANAGED_SENTINEL = 'SUPABASE_MANAGED'
 
 export async function POST(request: NextRequest) {
   try {
@@ -98,6 +96,8 @@ export async function POST(request: NextRequest) {
       id: string
       email?: string | null
       email_confirmed_at?: string | null
+      // Carried so the projection can keep the account's real creation date.
+      created_at?: string | null
     } | null = null
     let page = 1
     const perPage = 50
@@ -114,6 +114,7 @@ export async function POST(request: NextRequest) {
           id: match.id,
           email: match.email,
           email_confirmed_at: match.email_confirmed_at ?? null,
+          created_at: match.created_at ?? null,
         }
         break
       }
@@ -149,58 +150,42 @@ export async function POST(request: NextRequest) {
     }
 
     // ── Ensure Prisma User projection row exists ──────────────
-    // Same pattern as scripts/fix-reviewer-verification.sql: lookup by
-    // supabaseUserId, fall back to email, create a STUDENT row if neither
-    // exists. This is the projection /api/auth/register would normally
-    // create - without it, dormancy-check, DSAR, and weekly-report code
-    // paths silently no-op for this user.
+    // Delegated to the identity layer, which is the only place allowed to
+    // create or adopt a `User` row for a Supabase account.
+    //
+    // 2026-09-17: this route used to build the row itself, with
+    // `firstName: 'Pending'`, `lastName: 'Setup'`, `country: 'GB'`,
+    // `dateOfBirth: 2000-01-01` and `isMinor: false`, under a comment
+    // saying the default date of birth placed the holder "safely above"
+    // the minor threshold. It did the opposite of safe, twice over:
+    //
+    //   1. It invented personal data about a real person. `src/lib/dsar.ts`
+    //      returns the stored profile verbatim in an Article 15 response,
+    //      so a child verified this way would have been told, in writing,
+    //      that we hold a birth date and country that we made up.
+    //   2. A false `isMinor` is CONCLUSIVE in the consent gate. Stamping
+    //      `isMinor: false` on an account whose age we do not know switched
+    //      the parental-consent protections off for whoever holds it.
+    //
+    // `projectSupabaseUser` reads the real name, date of birth and country
+    // from the `profiles` row that signup actually writes, records "not
+    // held" rather than a placeholder when they are absent, and in that
+    // case takes the protective `isMinor: true` posture. A projection makes
+    // the account ADDRESSABLE; it must never make a gate PERMISSIVE.
     let prismaUserId: string | null = null
+    let dateOfBirthUnknown = false
     try {
-      const existing =
-        (await prisma.user.findUnique({
-          where: { supabaseUserId: foundAuthUser.id },
-          select: { id: true },
-        })) ??
-        (await prisma.user.findUnique({
-          where: { email },
-          select: { id: true },
-        }))
-
-      if (existing) {
-        prismaUserId = existing.id
-        // Ensure supabaseUserId is linked even if the row was originally
-        // matched by email (mirrors the ON CONFLICT DO UPDATE in the SQL).
-        await prisma.user.update({
-          where: { id: existing.id },
-          data: {
-            supabaseUserId: foundAuthUser.id,
-            updatedAt: new Date(),
-          },
-        })
-      } else {
-        // Create a minimal STUDENT projection row. firstName/lastName/DOB
-        // are placeholders - the user can fill these in via /onboarding
-        // or the founder can update them by hand. We do NOT set ADMIN or
-        // any elevated role here.
-        const created = await prisma.user.create({
-          data: {
-            supabaseUserId: foundAuthUser.id,
-            email,
-            passwordHash: SUPABASE_MANAGED_SENTINEL,
-            firstName: 'Pending',
-            lastName: 'Setup',
-            // Default DOB places the user safely above the 18 minor
-            // threshold; the real value should be collected at onboarding.
-            dateOfBirth: new Date(Date.UTC(2000, 0, 1)),
-            country: 'GB',
-            role: 'STUDENT',
-            isMinor: false,
-            accountStatus: 'ACTIVE',
-          },
-          select: { id: true },
-        })
-        prismaUserId = created.id
-      }
+      // Pass created_at through. projectSupabaseUser falls back to
+      // `new Date()` when it can find no date, which would stamp today as the
+      // account's creation date and quietly reset the retention and dormancy
+      // clocks that are measured from it.
+      const projected = await projectSupabaseUser({
+        id: foundAuthUser.id,
+        email: foundAuthUser.email ?? email,
+        created_at: foundAuthUser.created_at,
+      })
+      prismaUserId = projected.prismaUserId
+      dateOfBirthUnknown = projected.dateOfBirthUnknown
     } catch (dbError) {
       // Don't fail the whole operation just because the Prisma projection
       // could not be written - the auth.users row IS verified, the user
@@ -224,6 +209,7 @@ export async function POST(request: NextRequest) {
       targetEmail: email,
       supabaseUserId: foundAuthUser.id,
       prismaUserId,
+      dateOfBirthUnknown,
       wasAlreadyConfirmed: !!foundAuthUser.email_confirmed_at,
     })
 
@@ -232,6 +218,11 @@ export async function POST(request: NextRequest) {
       userId: foundAuthUser.id,
       email,
       prismaUserId: prismaUserId ?? undefined,
+      // Reported so the admin sees the row is incomplete rather than
+      // assuming a complete profile was created. When true, no date of
+      // birth is held for this account, the account is treated as a minor
+      // until one is supplied, and the holder must provide it themselves.
+      dateOfBirthUnknown,
       wasAlreadyConfirmed: !!foundAuthUser.email_confirmed_at,
     })
   } catch (error) {

@@ -80,6 +80,44 @@ export const DASHBOARD_CHROME_DICTIONARY: Record<string, { en: string; ar?: stri
       ar: 'ما فيه موافقات فعّالة.',
       es: 'No se encontraron consentimientos activos.',
     },
+    /* ─── Giving consent (added 2026-09-17) ──────────────────────────
+     * The page could only WITHDRAW. There was no control anywhere in the
+     * product for giving AI-processing consent, while the AI gate refused
+     * every learner for not having it and told them to change a setting
+     * that did not exist. These strings are the grant control.
+     */
+    'dash.consent.grant_title': {
+      en: 'Consents you can give',
+      ar: 'موافقات تقدر تعطيها',
+      es: 'Consentimientos que puedes dar',
+    },
+    'dash.consent.grant_intro': {
+      en: 'You can turn these on or off whenever you like. AI marking needs your consent for AI processing.',
+      ar: 'تقدر تشغّلها أو تطفّيها أي وقت. التصحيح بالـ AI يحتاج موافقتك على معالجة الـ AI.',
+      es: 'Puedes activarlos o desactivarlos cuando quieras. La corrección con IA necesita tu consentimiento para el procesamiento con IA.',
+    },
+    'dash.consent.grant': { en: 'Give consent', ar: 'أعطِ الموافقة', es: 'Dar consentimiento' },
+    'dash.consent.granting': { en: 'Saving...', ar: 'لحظة، نحفظ...', es: 'Guardando...' },
+    'dash.consent.grant_success': {
+      en: 'Consent recorded for {label}.',
+      ar: 'تسجّلت الموافقة على {label}.',
+      es: 'Consentimiento registrado para {label}.',
+    },
+    'dash.consent.err.grant': {
+      en: 'We could not record your consent. Please try again.',
+      ar: 'ما قدرنا نسجّل موافقتك. حاول مرة ثانية.',
+      es: 'No pudimos registrar tu consentimiento. Inténtalo de nuevo.',
+    },
+    'dash.consent.grant_note_minor': {
+      en: 'If you are under 16, AI marking also needs a parent or guardian to approve it.',
+      ar: 'إذا عمرك أقل من 16، التصحيح بالـ AI يحتاج كمان موافقة ولي الأمر.',
+      es: 'Si eres menor de 16 años, la corrección con IA también necesita la aprobación de tu madre, padre o tutor.',
+    },
+    'dash.consent.all_granted': {
+      en: 'You have already given every consent that is available here.',
+      ar: 'عطيت كل الموافقات المتاحة هنا.',
+      es: 'Ya has dado todos los consentimientos disponibles aquí.',
+    },
     'dash.consent.badge_essential': { en: 'Essential', ar: 'أساسية', es: 'Esencial' },
     'dash.consent.badge_optional': { en: 'Optional', ar: 'اختيارية', es: 'Opcional' },
     'dash.consent.granted': { en: 'Granted:', ar: 'تمت الموافقة:', es: 'Concedido:' },

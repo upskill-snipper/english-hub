@@ -727,9 +727,15 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
     es: '9. Divulgación del uso de IA',
   },
   'legal_long.ai_gov.s9.p1': {
-    en: 'We use third-party large language models (currently OpenAI and Anthropic APIs, subject to change) to generate:',
-    ar: 'نستخدم نماذج لغوية كبيرة تابعة لأطراف ثالثة (حالياً واجهتا OpenAI وAnthropic البرمجيتان، وذلك قابل للتغيير) لتوليد ما يلي:',
-    es: 'Utilizamos grandes modelos de lenguaje de terceros (actualmente las API de OpenAI y Anthropic, sujetas a cambios) para generar:',
+    // CORRECTED 2026-09-17: this said "currently OpenAI and Anthropic APIs".
+    // No OpenAI code path exists anywhere in src/ - there is no OpenAI SDK, no
+    // api.openai.com call and no GPT model string. The only LLM provider the
+    // product calls is Anthropic (see src/lib/anthropic-client.ts and the
+    // code-verified register in src/config/subprocessors.ts). A public legal
+    // page naming a provider we do not use is a false processing disclosure.
+    en: 'We use a third-party large language model (currently the Anthropic Claude API, subject to change) to generate:',
+    ar: 'نستخدم نموذجاً لغوياً كبيراً تابعاً لطرف ثالث (حالياً واجهة Anthropic Claude البرمجية، وذلك قابل للتغيير) لتوليد ما يلي:',
+    es: 'Utilizamos un gran modelo de lenguaje de terceros (actualmente la API de Anthropic Claude, sujeta a cambios) para generar:',
   },
   'legal_long.ai_gov.s9.li_g1': {
     en: 'Essay feedback and model annotations',

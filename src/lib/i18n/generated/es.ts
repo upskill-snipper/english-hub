@@ -7985,7 +7985,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'Minimizar la analítica de comportamiento en las cuentas confirmadas como de menores de 18 años; desactivar por defecto los SDK de analítica de terceros (GA4, repetición de sesiones de PostHog) para estos usuarios.',
   'legal_long.ai_gov.s9.h2': '9. Divulgación del uso de IA',
   'legal_long.ai_gov.s9.p1':
-    'Utilizamos grandes modelos de lenguaje de terceros (actualmente las API de OpenAI y Anthropic, sujetas a cambios) para generar:',
+    'Utilizamos un gran modelo de lenguaje de terceros (actualmente la API de Anthropic Claude, sujeta a cambios) para generar:',
   'legal_long.ai_gov.s9.li_g1': 'Retroalimentación de ensayos y anotaciones modelo',
   'legal_long.ai_gov.s9.li_g2': 'Preguntas de práctica y respuestas modelo',
   'legal_long.ai_gov.s9.li_g3': 'Explicaciones de vocabulario y recorridos gramaticales',
@@ -16144,6 +16144,16 @@ export const ES_MESSAGES: Record<string, string> = {
   'dash.consent.withdrawn_success': 'Se ha retirado el consentimiento de "{label}".',
   'dash.consent.active_title': 'Consentimientos activos',
   'dash.consent.none_active': 'No se encontraron consentimientos activos.',
+  'dash.consent.grant_title': 'Consentimientos que puedes dar',
+  'dash.consent.grant_intro':
+    'Puedes activarlos o desactivarlos cuando quieras. La corrección con IA necesita tu consentimiento para el procesamiento con IA.',
+  'dash.consent.grant': 'Dar consentimiento',
+  'dash.consent.granting': 'Guardando...',
+  'dash.consent.grant_success': 'Consentimiento registrado para {label}.',
+  'dash.consent.err.grant': 'No pudimos registrar tu consentimiento. Inténtalo de nuevo.',
+  'dash.consent.grant_note_minor':
+    'Si eres menor de 16 años, la corrección con IA también necesita la aprobación de tu madre, padre o tutor.',
+  'dash.consent.all_granted': 'Ya has dado todos los consentimientos disponibles aquí.',
   'dash.consent.badge_essential': 'Esencial',
   'dash.consent.badge_optional': 'Opcional',
   'dash.consent.granted': 'Concedido:',

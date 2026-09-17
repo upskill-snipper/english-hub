@@ -228,8 +228,11 @@ async function executeWeeklyStudentReports(): Promise<CronResult> {
         continue
       }
 
-      const ageYears = ageInYears(student.dateOfBirth, now)
-      const isChild = ageYears < 13 || student.isMinor
+      // No date of birth held (nullable from 2026-09-17) means we cannot
+      // establish the learner is an adult, so treat them as a child here:
+      // streaks and recommendations stay suppressed. Fail closed.
+      const ageYears = student.dateOfBirth ? ageInYears(student.dateOfBirth, now) : null
+      const isChild = ageYears === null || ageYears < 13 || student.isMinor
 
       // Children's Code: under-13 marketing is OFF by default. The
       // marketingEnabled gate above already enforces this - if a child

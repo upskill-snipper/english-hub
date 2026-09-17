@@ -5,6 +5,7 @@ import { processChildDormancy } from '@/lib/privacy/dormancy'
 import { sendEmail } from '@/lib/email'
 import { RETENTION_PERIODS } from '@/lib/data-retention'
 import { runCron } from '@/lib/cron/observability'
+import { measureRetentionCoverage } from '@/lib/cron/coverage'
 
 export const dynamic = 'force-dynamic'
 
@@ -53,6 +54,13 @@ export async function GET(request: NextRequest) {
   }
 
   return runCron('dormancy-check', async () => {
+    // ── 0. Coverage: how many accounts can this run even see? ─────────
+    // Both passes below enumerate prisma.user. Any account with no Prisma
+    // projection is invisible to them, so it can never be warned and never
+    // purged. Reported here so a run with low counts is not mistaken for a
+    // user base that is all active.
+    const coverage = await measureRetentionCoverage('dormancy-check')
+
     // ── 1. Child dormancy (12-month threshold) ────────────────────────
     // Uses the dedicated Children's Code Standard 8 logic which both
     // sends warnings and processes deletions for the grace period.
@@ -183,6 +191,7 @@ export async function GET(request: NextRequest) {
     })
 
     return {
+      coverage,
       childDormancy: childDormancy
         ? {
             warningsSent: childDormancy.warningsSent.length,

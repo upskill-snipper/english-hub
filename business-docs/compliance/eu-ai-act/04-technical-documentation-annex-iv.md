@@ -1,10 +1,10 @@
-# 04 — Technical Documentation (Annex IV Technical File)
+# 04 - Technical Documentation (Annex IV Technical File)
 
-**Regulation:** Regulation (EU) 2024/1689 — Article 11 and **Annex IV**
+**Regulation:** Regulation (EU) 2024/1689 - Article 11 and **Annex IV**
 **System:** The English Hub AI Marking & Assessment System
-**Provider:** The English Hub (operated by Upskill Energy / Calum Jardine — Provider accountable person, cj@upskillenergy.com)
-**Conformity route:** Annex VI — internal control
-**Document status:** v1.1 — ISSUED 2026-05-17 — *honest baseline; open items are recorded as GAPs with owner + date, never as implemented controls. v1.1 reconciles the file with in-flight remediation landed during drafting: Art. 12/19 inference logging (`src/lib/ai-audit-log.ts`) and the Art. 15 eval harness (`evals/`) now exist — gaps re-scoped accordingly and verified by `path:line`.*
+**Provider:** The English Hub (operated by Upskill Energy / Calum Jardine - Provider accountable person, cj@upskillenergy.com)
+**Conformity route:** Annex VI - internal control
+**Document status:** v1.1 - ISSUED 2026-05-17 - *honest baseline; open items are recorded as GAPs with owner + date, never as implemented controls. v1.1 reconciles the file with in-flight remediation landed during drafting: Art. 12/19 inference logging (`src/lib/ai-audit-log.ts`) and the Art. 15 eval harness (`evals/`) now exist - gaps re-scoped accordingly and verified by `path:line`.*
 **Document owner:** Founder + Engineering
 **Pack index:** see `00-README-index.md`
 
@@ -18,15 +18,15 @@
 
 ---
 
-## Annex IV(1) — General description of the AI system
+## Annex IV(1) - General description of the AI system
 
 ### 1(a) Intended purpose, provider, version
 
 | Attribute | Value | Evidence |
 |---|---|---|
-| AI system name | The English Hub AI Marking & Assessment System | — |
+| AI system name | The English Hub AI Marking & Assessment System | - |
 | Provider | The English Hub (sole provider; also operates the system for B2C learners) | `00-README-index.md` §4 |
-| Upstream GPAI provider | Anthropic PBC — model `claude-sonnet-4-20250514` | `src/app/api/mark/route.ts:154` |
+| Upstream GPAI provider | Anthropic PBC - model `claude-sonnet-4-20250514` | `src/app/api/mark/route.ts:154` |
 | SDK / integration | `@anthropic-ai/sdk` `^0.90.0` | `package.json:32` |
 | System version | Application repo `english-hub@0.0.1`; this technical file v1.0 | `package.json:3` |
 | **Intended purpose** | Formative, practice-only assessment of GCSE/IGCSE English essays against exam-board Assessment Objectives (AOs); production of an **indicative** predicted GCSE grade (1–9/U) and grade band; structured written feedback (strengths, improvements, next steps); and CEFR assessment (A2–C1) of EAL learners' productive writing/speaking | `src/lib/marking/prompt-builder.ts:70-127`; `src/lib/eal/assess.ts:122-189` |
@@ -44,12 +44,12 @@ The intended-purpose statement is reinforced to the user in product: the AI expl
 
 ### 1(b) How the system interacts with hardware/software not part of it
 
-The system is a server-side feature set inside a Next.js 15 application (`package.json:50`). It calls one external AI service — the Anthropic Messages API — over HTTPS. There is no on-device model, no hardware component, no plugin/extension surface. Integration points:
+The system is a server-side feature set inside a Next.js 15 application (`package.json:50`). It calls one external AI service - the Anthropic Messages API - over HTTPS. There is no on-device model, no hardware component, no plugin/extension surface. Integration points:
 
-- **Anthropic Messages API** — via `new Anthropic({ apiKey })` (`src/app/api/mark/route.ts:149`) and a direct `fetch('https://api.anthropic.com/v1/messages', …)` in the notes route (`src/app/api/toolkit/generate-notes/route.ts:239-253`).
-- **Supabase** — authentication and (for B2B) the `marking_submissions` table (`src/app/api/mark/route.ts:60`; `prisma/schema.prisma:712-737`).
-- **PostgreSQL via Prisma** — consent, privacy settings, essays/feedback models (`src/lib/consent-check.ts:1-2`; `prisma/schema.prisma`).
-- **Upstash Redis** — rate limiting (`src/lib/rate-limit.ts:9-25`).
+- **Anthropic Messages API** - via `new Anthropic({ apiKey })` (`src/app/api/mark/route.ts:149`) and a direct `fetch('https://api.anthropic.com/v1/messages', …)` in the notes route (`src/app/api/toolkit/generate-notes/route.ts:239-253`).
+- **Supabase** - authentication and (for B2B) the `marking_submissions` table (`src/app/api/mark/route.ts:60`; `prisma/schema.prisma:712-737`).
+- **PostgreSQL via Prisma** - consent, privacy settings, essays/feedback models (`src/lib/consent-check.ts:1-2`; `prisma/schema.prisma`).
+- **Upstash Redis** - rate limiting. **Code dependency only: not provisioned.** `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN` are not set in production, so no data reaches Upstash and the limiter runs on a process-local map (`src/lib/rate-limit.ts`). Status: `business-docs/compliance/controls/rate-limiting-control-status.md`.
 
 ### 1(c) Versions of relevant software/firmware
 
@@ -62,7 +62,7 @@ The system is a server-side feature set inside a Next.js 15 application (`packag
 | Prisma | `^6.19.2` | `package.json:34` |
 | Node runtime | `>=20` | `package.json:29` |
 
-> **GAP-IV-2 (version recording in inference records) — SUBSTANTIALLY CLOSED, narrow residual.**
+> **GAP-IV-2 (version recording in inference records) - SUBSTANTIALLY CLOSED, narrow residual.**
 > Per-inference model-version recording **now exists**: the Art. 12/19 logger stamps every
 > record with the constant `AI_AUDIT_MODEL = 'claude-sonnet-4-20250514'`, the SDK name and the
 > API version into the persisted `details` blob (`src/lib/ai-audit-log.ts:54,173-175,225-234`),
@@ -77,15 +77,15 @@ The system is a server-side feature set inside a Next.js 15 application (`packag
 
 ### 1(d) Form in which the system is placed on the market / put into service
 
-Software-as-a-service: a hosted web application (and a thin mobile wrapper, `mobile/`). The AI system is not distributed as a binary; deployers (schools) and B2C users access it over the web. Conformity route is Annex VI internal control (`00-README-index.md` §). Territorial/EU placing-on-market determination is pending counsel — see doc 01 (Art. 2).
+Software-as-a-service: a hosted web application (and a thin mobile wrapper, `mobile/`). The AI system is not distributed as a binary; deployers (schools) and B2C users access it over the web. Conformity route is Annex VI internal control (`00-README-index.md` §). Territorial/EU placing-on-market determination is pending counsel - see doc 01 (Art. 2).
 
 ### 1(e) Description of hardware on which the system runs
 
-Vercel serverless functions (Next.js route handlers, `export const maxDuration = 60`, e.g. `src/app/api/mark/route.ts:37`; `cefr-assess/route.ts:34`). No GPU/accelerator is operated by the provider — all model inference is performed by Anthropic's infrastructure. No special hardware requirement for users beyond a modern browser.
+Vercel serverless functions (Next.js route handlers, `export const maxDuration = 60`, e.g. `src/app/api/mark/route.ts:37`; `cefr-assess/route.ts:34`). No GPU/accelerator is operated by the provider - all model inference is performed by Anthropic's infrastructure. No special hardware requirement for users beyond a modern browser.
 
 ### 1(f) Photographs / illustrations of external features
 
-Not applicable — pure software service, no physical product. UI surfaces of record: the marking submit page (`src/app/marking/submit/page.tsx`), the results pages (`src/app/marking/results/`), and the AI explainer (`src/app/marking/ai-explainer/page.tsx`).
+Not applicable - pure software service, no physical product. UI surfaces of record: the marking submit page (`src/app/marking/submit/page.tsx`), the results pages (`src/app/marking/results/`), and the AI explainer (`src/app/marking/ai-explainer/page.tsx`).
 
 ### 1(g) Basic description of the user interface provided to the deployer
 
@@ -95,11 +95,11 @@ Not applicable — pure software service, no physical product. UI surfaces of re
 
 ### 1(h) Instructions for use for the deployer
 
-Tracked in **doc 08 (Instructions for Use)** and **doc 09 (deployer obligations + Art. 27 FRIA)** — currently **GAP** (not yet issued; see `00-README-index.md` §2 rows 08–09). The consumer-facing explanation that partially serves this purpose is `src/app/marking/ai-explainer/page.tsx`.
+Tracked in **doc 08 (Instructions for Use)** and **doc 09 (deployer obligations + Art. 27 FRIA)** - currently **GAP** (not yet issued; see `00-README-index.md` §2 rows 08–09). The consumer-facing explanation that partially serves this purpose is `src/app/marking/ai-explainer/page.tsx`.
 
 ---
 
-## Annex IV(2) — Detailed description of the elements of the system and its development
+## Annex IV(2) - Detailed description of the elements of the system and its development
 
 ### 2(a) Development methods and steps, third-party tools
 
@@ -176,18 +176,18 @@ Third-party tools: Anthropic SDK (`package.json:32`); Vitest for the (limited) t
 5. Single Claude call, 50 s client timeout, `max_tokens: 4096` (`src/app/api/mark/route.ts:152-160`).
 6. Deterministic normalisation: AO marks clamped to scheme maxima, suggestions truncated to 250 chars, quotes to 200 (`src/lib/marking/feedback-generator.ts:50-51,187-191,246`).
 7. Deterministic grade mapping: percentage → grade via the student's per-board verified boundary table, else a flagged AQA proxy (`src/lib/marking/grade-predictor.ts`; `src/lib/marking/grade-boundaries/`).
-8. JSON returned to client; **no server-side persistence** for `/api/mark` or `/api/essay-feedback` — output is written to browser `localStorage` (`src/app/marking/submit/page.tsx:285-293`).
+8. JSON returned to client; **no server-side persistence** for `/api/mark` or `/api/essay-feedback` - output is written to browser `localStorage` (`src/app/marking/submit/page.tsx:285-293`).
 
 **Computational resources for development:** none for model training (no training performed). Inference compute is Anthropic-side. Provider compute = Vercel serverless (60 s max duration, e.g. `src/app/api/mark/route.ts:37`).
 
-### 2(c) Data requirements — datasheets (training / validation / testing)
+### 2(c) Data requirements - datasheets (training / validation / testing)
 
 This is the most consequential Annex IV section for this system and is fully developed in **doc 05 (Art. 10 data governance)**. Summary for the technical file:
 
 - **Training data:** **None held or used by the provider.** The provider performs no training or fine-tuning. The foundation model's training data is Anthropic's; documented as an upstream GPAI dependency (doc 01, Art. 25; doc 05).
-- **Validation data:** **None exists.** There is no held-out validation set of marked scripts. **GAP** — see doc 06.
-- **Testing data:** Two layers now exist. (1) Unit tests `src/__tests__/marking-predictor.test.ts`, `src/__tests__/grade-boundaries.test.ts`, `mark-schemes.test.ts`, `mark-schemes-coverage.test.ts` exercise the deterministic `%→grade` mapping, the per-board boundary registry shape, the percentage-normalisation maths and the unverified-fallback gate (e.g. `marking-predictor.test.ts:14-225`; `grade-boundaries.test.ts`). (2) **An Art. 15 accuracy/robustness eval harness now exists** at `evals/` — `evals/run.ts` computes exact/adjacent agreement and Quadratic Weighted Kappa vs examiner grades, per board and overall, with enforced thresholds (`evals/run.ts:57-60`: exact ≥0.60, adjacent ≥0.95, QWK ≥0.70) and a CI-gating vitest wrapper (`npm run eval:marking`, `package.json:12`; `evals/vitest.eval.config.ts`). **Material residual:** the harness's default `examinerReplayAdapter` replays examiner AO marks through the production `predictGrade` and **deliberately does NOT call the LLM marker** (`evals/run.ts:143,234`; `evals/README.md:10-15,65-76`) — so it currently evidences the **boundary-model** validity, **not** the LLM's marking accuracy; and the shipped dataset `evals/datasets/gold-standard.example.jsonl` is **synthetic placeholders** (`evals/README.md:78-89`). The LLM-marker accuracy against real human-marked scripts therefore **remains unmeasured** — re-scoped as **GAP-IV-6** (no longer "no eval infrastructure"; now "eval infra exists, LLM adapter + real gold data not yet wired"). See doc 06 §A.
-- **Grade-boundary dataset provenance & known defect — per-board boundaries sourced; numeric correction delivered behind a human-verification gate.** The quantitative grade-boundary "dataset" has been **restructured from a single AQA-only table into a typed, source-traceable per-board registry** under `src/lib/marking/grade-boundaries/` (`index.ts` registry + one module per board: `aqa.ts`, `edexcel.ts`, `ocr.ts`, `eduqas.ts`, `cambridge.ts`; shape/normalisation in `types.ts`). Each table records `{ board, qualification, series, sourceUrl, retrievedAt, verified, thresholds }` where thresholds are the **official published raw boundaries normalised to a percentage of the published maximum** (so one curve generalises across the tool's arbitrary per-question totals), with the raw mark and raw max retained per grade for audit. Officially published **June 2024** boundaries were transcribed from each board's first-party PDF:
+- **Validation data:** **None exists.** There is no held-out validation set of marked scripts. **GAP** - see doc 06.
+- **Testing data:** Two layers now exist. (1) Unit tests `src/__tests__/marking-predictor.test.ts`, `src/__tests__/grade-boundaries.test.ts`, `mark-schemes.test.ts`, `mark-schemes-coverage.test.ts` exercise the deterministic `%→grade` mapping, the per-board boundary registry shape, the percentage-normalisation maths and the unverified-fallback gate (e.g. `marking-predictor.test.ts:14-225`; `grade-boundaries.test.ts`). (2) **An Art. 15 accuracy/robustness eval harness now exists** at `evals/` - `evals/run.ts` computes exact/adjacent agreement and Quadratic Weighted Kappa vs examiner grades, per board and overall, with enforced thresholds (`evals/run.ts:57-60`: exact ≥0.60, adjacent ≥0.95, QWK ≥0.70) and a CI-gating vitest wrapper (`npm run eval:marking`, `package.json:12`; `evals/vitest.eval.config.ts`). **Material residual:** the harness's default `examinerReplayAdapter` replays examiner AO marks through the production `predictGrade` and **deliberately does NOT call the LLM marker** (`evals/run.ts:143,234`; `evals/README.md:10-15,65-76`) - so it currently evidences the **boundary-model** validity, **not** the LLM's marking accuracy; and the shipped dataset `evals/datasets/gold-standard.example.jsonl` is **synthetic placeholders** (`evals/README.md:78-89`). The LLM-marker accuracy against real human-marked scripts therefore **remains unmeasured** - re-scoped as **GAP-IV-6** (no longer "no eval infrastructure"; now "eval infra exists, LLM adapter + real gold data not yet wired"). See doc 06 §A.
+- **Grade-boundary dataset provenance & known defect - per-board boundaries sourced; numeric correction delivered behind a human-verification gate.** The quantitative grade-boundary "dataset" has been **restructured from a single AQA-only table into a typed, source-traceable per-board registry** under `src/lib/marking/grade-boundaries/` (`index.ts` registry + one module per board: `aqa.ts`, `edexcel.ts`, `ocr.ts`, `eduqas.ts`, `cambridge.ts`; shape/normalisation in `types.ts`). Each table records `{ board, qualification, series, sourceUrl, retrievedAt, verified, thresholds }` where thresholds are the **official published raw boundaries normalised to a percentage of the published maximum** (so one curve generalises across the tool's arbitrary per-question totals), with the raw mark and raw max retained per grade for audit. Officially published **June 2024** boundaries were transcribed from each board's first-party PDF:
 
   | Board | Qualification (code) | Series | Official source URL | Status |
   |---|---|---|---|---|
@@ -195,10 +195,10 @@ This is the most consequential Annex IV section for this system and is fully dev
   | Pearson Edexcel | English Language 1EN0 / Literature 1ET0 | June 2024 | `https://qualifications.pearson.com/content/dam/pdf/Support/Grade-boundaries/GCSE/grade-boundaries-june-2024-gcse.pdf` | Transcribed, `verified:false` |
   | OCR | English Language J351 / Literature J352 | June 2024 | `https://www.ocr.org.uk/Images/714692-gcse-grade-boundaries-june-2024.pdf` | Transcribed, `verified:false` |
   | WJEC Eduqas | English Language C700 / Literature C720 | June 2024 | `https://www.eduqas.co.uk/media/giydmniq/eduqas-gcse-grade-points-june-2024.pdf` | Transcribed (200-max aggregate), `verified:false` |
-  | Cambridge IGCSE | First Language English 0990 (9-1) | June 2024 | `https://www.cambridgeinternational.org/Images/716171-first-language-english-9-1-0990-june-2024-grade-threshold-table.pdf` | **PROVISIONAL** — option/component-combination dependent; thresholds left `null`, official per-component figures recorded for the verifier, `verified:false` |
-  | Cambridge IGCSE | First Language English 0500 (A*-G) | June 2024 | `https://www.cambridgeinternational.org/Images/716122-first-language-english-oral-endorsement-0500-june-2024-grade-threshold-table.pdf` | **PROVISIONAL** — A*-G scale + option-combination dependent; thresholds left `null`, official per-component figures recorded, `verified:false` |
+  | Cambridge IGCSE | First Language English 0990 (9-1) | June 2024 | `https://www.cambridgeinternational.org/Images/716171-first-language-english-9-1-0990-june-2024-grade-threshold-table.pdf` | **PROVISIONAL** - option/component-combination dependent; thresholds left `null`, official per-component figures recorded for the verifier, `verified:false` |
+  | Cambridge IGCSE | First Language English 0500 (A*-G) | June 2024 | `https://www.cambridgeinternational.org/Images/716122-first-language-english-oral-endorsement-0500-june-2024-grade-threshold-table.pdf` | **PROVISIONAL** - A*-G scale + option-combination dependent; thresholds left `null`, official per-component figures recorded, `verified:false` |
 
-  **Mechanism (numeric defect now corrected end-to-end, behind a safety gate):** `predictGrade` resolves the board via `normaliseBoardId()` and `getUsableBoundaryTable()`. A board's real boundaries are used **only if** the table exists **and** `verified === true` **and** it has usable (non-null) thresholds. Otherwise the predictor falls back to the AQA five-year-average proxy curve and returns a **hard signal**: `boundarySource:'aqa-proxy-unverified'` and `indicativeOnly:true` (surfaced on `MarkingResult` as `gradeIsIndicativeOnly`/`boundarySource`/`boundaryDetail`) so the API/UI can suppress or clearly label the numeric grade. The production call site was fixed: `feedback-generator.ts` now passes `input.scheme.board` into `predictGrade`, so non-AQA submissions are routed through their own board's data — or, while unverified, are explicitly flagged indicative rather than silently mis-graded with AQA numbers. Cambridge intentionally stays gated (no defensible single normalised curve given the option-combination model). **All six tables ship `verified:false` by design.** The single remaining human step is **GAP-IV-3**: a person verifies each board's transcribed numbers against the official PDF in the table above (and, for Cambridge, chooses a representative component/option combination and the A*-G→9-1 mapping) and flips `verified` to `true` in that board's module. No code change is required to activate verified boundaries. See doc 06 §C.
+  **Mechanism (numeric defect now corrected end-to-end, behind a safety gate):** `predictGrade` resolves the board via `normaliseBoardId()` and `getUsableBoundaryTable()`. A board's real boundaries are used **only if** the table exists **and** `verified === true` **and** it has usable (non-null) thresholds. Otherwise the predictor falls back to the AQA five-year-average proxy curve and returns a **hard signal**: `boundarySource:'aqa-proxy-unverified'` and `indicativeOnly:true` (surfaced on `MarkingResult` as `gradeIsIndicativeOnly`/`boundarySource`/`boundaryDetail`) so the API/UI can suppress or clearly label the numeric grade. The production call site was fixed: `feedback-generator.ts` now passes `input.scheme.board` into `predictGrade`, so non-AQA submissions are routed through their own board's data - or, while unverified, are explicitly flagged indicative rather than silently mis-graded with AQA numbers. Cambridge intentionally stays gated (no defensible single normalised curve given the option-combination model). **All six tables ship `verified:false` by design.** The single remaining human step is **GAP-IV-3**: a person verifies each board's transcribed numbers against the official PDF in the table above (and, for Cambridge, chooses a representative component/option combination and the A*-G→9-1 mapping) and flips `verified` to `true` in that board's module. No code change is required to activate verified boundaries. See doc 06 §C.
 
 ### 2(d) Human-oversight assessment (Article 14)
 
@@ -206,30 +206,30 @@ Full design in **doc 07 (Art. 14 human oversight)**. Technical-file summary of *
 
 - The output is framed product-side as practice-only and non-official (`src/app/marking/ai-explainer/page.tsx:76-77,124-129`).
 - **B2C:** there is **no in-product human-review or contest control**. The policy text itself admits "That button does not yet exist on the student-facing feedback component" (`src/lib/i18n/dictionary-legal-long.ts:629`). Human review is requestable only by emailing `info@Upskillenergy.com` (`src/app/marking/ai-explainer/page.tsx:135-142`).
-- **B2B:** teacher-override columns exist (`prisma/schema.prisma:726-729`) but no AI route persists a `MarkingSubmission`, so the override cannot currently be exercised in the wired product (GAP — doc 07).
+- **B2B:** teacher-override columns exist (`prisma/schema.prisma:726-729`) but no AI route persists a `MarkingSubmission`, so the override cannot currently be exercised in the wired product (GAP - doc 07).
 - The `HumanReviewRequest` Prisma model exists (`prisma/schema.prisma:294-320`) but is not wired to any AI route.
 - Oversight-enabling design measures for deployers (schools): tracked in doc 07 §"measures enabling deployers" and doc 09.
 
 ### 2(e) Predetermined changes and continuous-learning behaviour
 
-The system does **not** learn online or continuously. The foundation model is a **pinned static version** (`claude-sonnet-4-20250514`, `src/app/api/mark/route.ts:154`) and the post-processing is deterministic code. No user input modifies model weights (the provider has no weights). Predetermined change vectors are: (i) Anthropic releasing a new model version (provider-controlled upgrade — change management §IV(8)); (ii) editing a mark scheme, a per-board boundary table under `src/lib/marking/grade-boundaries/`, or flipping a board's `verified` flag (code change, version-controlled); (iii) prompt changes. All three are governed by §IV(8) below and the QMS (doc 03).
+The system does **not** learn online or continuously. The foundation model is a **pinned static version** (`claude-sonnet-4-20250514`, `src/app/api/mark/route.ts:154`) and the post-processing is deterministic code. No user input modifies model weights (the provider has no weights). Predetermined change vectors are: (i) Anthropic releasing a new model version (provider-controlled upgrade - change management §IV(8)); (ii) editing a mark scheme, a per-board boundary table under `src/lib/marking/grade-boundaries/`, or flipping a board's `verified` flag (code change, version-controlled); (iii) prompt changes. All three are governed by §IV(8) below and the QMS (doc 03).
 
 ### 2(f) Risk-management system (Article 9)
 
-Documented in **doc 02 (Art. 9 risk management system)**. This technical file references doc 02 as the RMS of record; the residual technical risks it tracks (no accuracy eval, per-board grade boundaries sourced but pending human verification — see GAP-IV-3, no inference logging, no in-product human review, prompt-injection residual risk) are the same items recorded as GAPs throughout this document.
+Documented in **doc 02 (Art. 9 risk management system)**. This technical file references doc 02 as the RMS of record; the residual technical risks it tracks (no accuracy eval, per-board grade boundaries sourced but pending human verification - see GAP-IV-3, no inference logging, no in-product human review, prompt-injection residual risk) are the same items recorded as GAPs throughout this document.
 
 ### 2(g) Lifecycle changes (logging, versioning)
 
-> **GAP-IV-4 (automatic inference record-keeping — Art. 12 / Art. 19) — SUBSTANTIALLY CLOSED.**
+> **GAP-IV-4 (automatic inference record-keeping - Art. 12 / Art. 19) - SUBSTANTIALLY CLOSED.**
 > A dedicated Art. 12/19 inference logger now exists and is wired into **all six AI routes**:
-> - `src/lib/ai-audit-log.ts` — `logAiDecision()` writes one durable record per inference to the
+> - `src/lib/ai-audit-log.ts` - `logAiDecision()` writes one durable record per inference to the
 >   `AuditLog` model (`action='ai_decision'`, `src/lib/ai-audit-log.ts:217-240`). The `details`
 >   JSON captures: feature/route, model literal, SDK + API version, `isMinor`, locale, mark
 >   scheme / question / prompt-scheme id, request/response timestamps + latency, token usage,
 >   success flag, a compact non-PII output summary (e.g. predicted grade/band), error class,
 >   and a consent snapshot (`src/lib/ai-audit-log.ts:161-202`).
-> - **Data-minimisation for minors:** the learner's raw text is **not** persisted by default —
->   only a SHA-256 hash + length — and raw-text capture is gated behind a hard opt-in env flag
+> - **Data-minimisation for minors:** the learner's raw text is **not** persisted by default  - 
+>   only a SHA-256 hash + length - and raw-text capture is gated behind a hard opt-in env flag
 >   `AI_AUDIT_STORE_RAW_INPUT` (default off) (`src/lib/ai-audit-log.ts:18-25,50-51,186-189`).
 >   This is sufficient to correlate a contested decision (re-hash + compare) without retaining a
 >   child's essay (GDPR/Children's Code aligned; see doc 05 §8, doc 15).
@@ -240,22 +240,22 @@ Documented in **doc 02 (Art. 9 risk management system)**. This technical file re
 >   (`cefr-assess/route.ts:140,169,207,239`); `/api/toolkit/generate-notes`
 >   (`toolkit/generate-notes/route.ts:236,285,299,316`); `/api/essay/feedback` via
 >   `logToAuditTrail` → `logAiDecision` (no longer a stub) (`essay/feedback/route.ts:102-117`).
-> - Best-effort/non-blocking by contract — never throws into the request path
+> - Best-effort/non-blocking by contract - never throws into the request path
 >   (`src/lib/ai-audit-log.ts:27-31,217-239`).
 >
 > **Residual gaps (recorded, not closed):** (a) the B2C *user-facing result* is still only in
-> browser `localStorage` (`src/app/marking/submit/page.tsx:285-293`) — the durable record is now
+> browser `localStorage` (`src/app/marking/submit/page.tsx:285-293`) - the durable record is now
 > the server `AuditLog`, but there is no link from a learner's review/contest to its log entry
 > until the human-oversight wiring lands (doc 07 §2.5, GAP-HO-3); (b) the `auditBase`
 > `consentSnapshot` is hard-coded `{aiOptOut:false, aiProcessingConsentOk:true}` rather than the
-> live values (justified — the route 403s otherwise — but it asserts rather than captures the
+> live values (justified - the route 403s otherwise - but it asserts rather than captures the
 > gate result, and omits `aiTrainingOptIn`); (c) retention period for `AuditLog` AI records is
 > not yet codified (doc 05 §8, doc 11). Owner: Engineering. Target residuals: 2026-07-15.
 > Retention/PMM use of these logs: doc 11.
 
 ### 2(h) Validation and testing procedures
 
-Current procedures: (1) unit tests for the deterministic grade table and scheme shape (`src/__tests__/marking-predictor.test.ts`, `mark-schemes.test.ts`, `mark-schemes-coverage.test.ts`); CI lint/type/test via `npm test` (`package.json:10`). (2) **An Art. 15 accuracy/robustness eval harness now exists** (`evals/run.ts`, runner `npm run eval:marking` at `package.json:12`) producing exact/adjacent/QWK per board + overall with CI-enforced thresholds and a drift/ratchet policy (`evals/README.md:30-64`). **Residual:** it evaluates the boundary model offline (`examinerReplayAdapter`), not the live LLM marker, and runs on synthetic placeholder data — so examiner-agreement of the *LLM marking* is still unvalidated (GAP-IV-6). The full accuracy-evaluation methodology, the LLM-adapter requirement and the real-gold-data requirement are in **doc 06 §A** and summarised in Annex IV(3) below.
+Current procedures: (1) unit tests for the deterministic grade table and scheme shape (`src/__tests__/marking-predictor.test.ts`, `mark-schemes.test.ts`, `mark-schemes-coverage.test.ts`); CI lint/type/test via `npm test` (`package.json:10`). (2) **An Art. 15 accuracy/robustness eval harness now exists** (`evals/run.ts`, runner `npm run eval:marking` at `package.json:12`) producing exact/adjacent/QWK per board + overall with CI-enforced thresholds and a drift/ratchet policy (`evals/README.md:30-64`). **Residual:** it evaluates the boundary model offline (`examinerReplayAdapter`), not the live LLM marker, and runs on synthetic placeholder data - so examiner-agreement of the *LLM marking* is still unvalidated (GAP-IV-6). The full accuracy-evaluation methodology, the LLM-adapter requirement and the real-gold-data requirement are in **doc 06 §A** and summarised in Annex IV(3) below.
 
 ### 2(i) Cybersecurity measures
 
@@ -265,12 +265,12 @@ Detailed in **doc 06 §Cybersecurity (Art. 15)**. In-code measures of record:
 - API key from server-only env var `ANTHROPIC_API_KEY`, never client-exposed; absence fails closed (`src/app/api/mark/route.ts:140-146`); declared in `.env.example:109`.
 - TLS in transit to Anthropic (`https://api.anthropic.com/v1/messages`, `src/app/api/toolkit/generate-notes/route.ts:239`).
 - Prompt-injection input filtering (`src/lib/content-safety.ts:22-34`) and prompt-data fencing/instruction-hierarchy rules in system prompts (`src/lib/marking/prompt-builder.ts:86-91`; `src/lib/eal/assess.ts:164-168`).
-- Rate limiting (`src/lib/rate-limit.ts:100-135`) — with a documented production failure mode if Redis is unconfigured (`src/lib/rate-limit.ts:110-113`).
+- Rate limiting (`src/lib/rate-limit.ts`) - **implemented in code, NOT ENFORCED in production.** Redis is unconfigured, so limits are counted per serverless instance and do not hold. This is not a present mitigation. See `business-docs/compliance/controls/rate-limiting-control-status.md`.
 - Output hard-caps to prevent model-answer exfiltration (`src/lib/marking/feedback-generator.ts:50,246`).
 
 ---
 
-## Annex IV(3) — Monitoring, functioning and control; accuracy, robustness, cybersecurity
+## Annex IV(3) - Monitoring, functioning and control; accuracy, robustness, cybersecurity
 
 This section is the bridge to **doc 06 (Art. 15 dossier)**, which is authoritative. Technical-file summary:
 
@@ -278,11 +278,11 @@ This section is the bridge to **doc 06 (Art. 15 dossier)**, which is authoritati
 
 - **Capability:** rubric-grounded formative marking and indicative grade prediction for GCSE/IGCSE English; CEFR A2–C1 productive-skill banding for EAL learners.
 - **Stated limitation to users:** practice-only, not an official grade (`src/lib/ai-disclaimer.ts:4-7`; `src/app/marking/ai-explainer/page.tsx:124-129`).
-- **Declared accuracy level:** **NOT YET ESTABLISHED for the LLM marker — GAP (re-scoped).** The metric and harness now exist (`evals/run.ts`: exact/adjacent/QWK per board, thresholds 0.60/0.95/0.70), but they currently score the **deterministic boundary model** via examiner-mark replay on **synthetic** data, not the LLM marker on real human-marked scripts (`evals/README.md:10-15,78-89`). No sub-group (EAL/SEND/dialect/minor/board) accuracy has been measured. Annex IV(3) requires the metric and its known degradation per group; the system still cannot state a validated figure. Owner: Engineering + Founder. Target: LLM `MarkerAdapter` implemented + real per-board gold data loaded + first measured baseline by 2026-07-31 (methodology already defined, doc 06 §A).
+- **Declared accuracy level:** **NOT YET ESTABLISHED for the LLM marker - GAP (re-scoped).** The metric and harness now exist (`evals/run.ts`: exact/adjacent/QWK per board, thresholds 0.60/0.95/0.70), but they currently score the **deterministic boundary model** via examiner-mark replay on **synthetic** data, not the LLM marker on real human-marked scripts (`evals/README.md:10-15,78-89`). No sub-group (EAL/SEND/dialect/minor/board) accuracy has been measured. Annex IV(3) requires the metric and its known degradation per group; the system still cannot state a validated figure. Owner: Engineering + Founder. Target: LLM `MarkerAdapter` implemented + real per-board gold data loaded + first measured baseline by 2026-07-31 (methodology already defined, doc 06 §A).
 
 ### 3.2 "Confidence" mislabel (foreseeable misuse / accuracy transparency)
 
-The value surfaced to users as `confidence` is computed as `Math.round((result.totalMarks / result.maxMarks) * 100)` (`src/app/marking/submit/page.tsx:254`) — i.e. it is the **percentage score**, not a model-confidence/uncertainty estimate. The same conflation exists in the B2B schema column `aiConfidence` (`prisma/schema.prisma:721`). Presenting a percentage score as "confidence" risks over-reliance (Art. 14(4)(b)) and misstates accuracy under Art. 13/15. **GAP-IV-5** — rename/relabel and either remove or implement a genuine uncertainty signal. Owner: Product + Engineering. Target: 2026-06-30. Cross-ref doc 06 §accuracy and doc 07 §over-reliance.
+The value surfaced to users as `confidence` is computed as `Math.round((result.totalMarks / result.maxMarks) * 100)` (`src/app/marking/submit/page.tsx:254`) - i.e. it is the **percentage score**, not a model-confidence/uncertainty estimate. The same conflation exists in the B2B schema column `aiConfidence` (`prisma/schema.prisma:721`). Presenting a percentage score as "confidence" risks over-reliance (Art. 14(4)(b)) and misstates accuracy under Art. 13/15. **GAP-IV-5** - rename/relabel and either remove or implement a genuine uncertainty signal. Owner: Product + Engineering. Target: 2026-06-30. Cross-ref doc 06 §accuracy and doc 07 §over-reliance.
 
 ### 3.3 Foreseeable unintended outcomes and risk sources
 
@@ -298,13 +298,13 @@ See doc 07. Current state: practice-only framing in product; **no in-product rev
 
 ### 3.6 Robustness
 
-JSON-contract resilience: lenient JSON recovery (`feedback-generator.ts:144-167`), strict field/grade-band validation (`src/app/api/essay-feedback/route.ts:280-297`; `src/lib/eal/assess.ts:258-342`), graceful timeout/429 handling (`src/app/api/mark/route.ts:161-185`). Determinism of post-processing isolates grade output from model formatting noise. Adversarial/robustness test suite: **GAP** — doc 06.
+JSON-contract resilience: lenient JSON recovery (`feedback-generator.ts:144-167`), strict field/grade-band validation (`src/app/api/essay-feedback/route.ts:280-297`; `src/lib/eal/assess.ts:258-342`), graceful timeout/429 handling (`src/app/api/mark/route.ts:161-185`). Determinism of post-processing isolates grade output from model formatting noise. Adversarial/robustness test suite: **GAP** - doc 06.
 
-### 3.7 Accuracy metrics — declared methodology to be implemented
+### 3.7 Accuracy metrics - declared methodology to be implemented
 
 The planned, regulator-facing accuracy methodology (specified in full in **doc 06**):
 
-- **Primary metric:** examiner agreement between system grade and a gold standard of scripts marked by qualified examiners — reported as exact-agreement %, adjacent (±1) agreement %, and **Quadratic Weighted Kappa (QWK)**, computed **per exam board and per paper** (because the grade map is currently AQA-only — GAP-IV-3).
+- **Primary metric:** examiner agreement between system grade and a gold standard of scripts marked by qualified examiners - reported as exact-agreement %, adjacent (±1) agreement %, and **Quadratic Weighted Kappa (QWK)**, computed **per exam board and per paper** (because the grade map is currently AQA-only - GAP-IV-3).
 - **Secondary metrics:** AO-level mean absolute error vs examiner marks; grade-band confusion matrix; sub-group accuracy slices (EAL/Arabic-L1, SEND-proxy, dialect/non-standard English, minors by age band).
 - **Gold-standard set:** ≥150 human-marked scripts per board/paper, stratified across the grade range, dual-marked with disagreements resolved by a senior examiner.
 - **Acceptance thresholds:** to be ratified in doc 06 (proposed: exact agreement and QWK targets per board; non-AQA boards blocked from showing a numeric predicted grade until their own boundary table + eval pass).
@@ -312,19 +312,19 @@ The planned, regulator-facing accuracy methodology (specified in full in **doc 0
 
 ---
 
-## Annex IV(4) — Appropriateness of performance metrics
+## Annex IV(4) - Appropriateness of performance metrics
 
 The chosen metrics (exact/adjacent examiner agreement and QWK, plus AO-level MAE) are the standard, defensible metrics for ordinal automated-marking systems: QWK penalises larger grade disagreements more heavily, matching the educational harm gradient (a 9→7 error is worse than 9→8). Accuracy is decomposed by board/paper and by learner sub-group so that Annex IV(3)'s "accuracy for specific persons or groups" is measurable rather than aggregate. Until the eval set exists this section documents the *intended* metric rationale; the measured values are a GAP (doc 06).
 
 ---
 
-## Annex IV(5) — Risk-management system
+## Annex IV(5) - Risk-management system
 
-See **doc 02** (Art. 9). Not duplicated here. The technical residual risks enumerated in this file (GAP-IV-1 … GAP-IV-5, plus the pending per-board boundary verification step — GAP-IV-3 — and logging absence) feed doc 02's risk register and doc 16's roadmap.
+See **doc 02** (Art. 9). Not duplicated here. The technical residual risks enumerated in this file (GAP-IV-1 … GAP-IV-5, plus the pending per-board boundary verification step - GAP-IV-3 - and logging absence) feed doc 02's risk register and doc 16's roadmap.
 
 ---
 
-## Annex IV(6) — Lifecycle change management
+## Annex IV(6) - Lifecycle change management
 
 | Change type | Trigger | Control | Evidence / owner |
 |---|---|---|---|
@@ -338,12 +338,12 @@ Review cadence and triggers inherit `00-README-index.md` §5 (quarterly + on any
 
 ---
 
-## Annex IV(7) — Standards and specifications applied
+## Annex IV(7) - Standards and specifications applied
 
 | Standard / specification | Application | Status |
 |---|---|---|
 | Regulation (EU) 2024/1689, Annex VI (internal control) | Conformity route | Adopted (doc 01) |
-| Harmonised standards under Art. 40 (e.g. forthcoming CEN-CENELEC AI Act standards) | Not yet cited where adopted | **GAP/PENDING** — adopt and list specific harmonised standards (risk management, quality management, accuracy, robustness, cybersecurity, data governance) once published/applied; owner Founder |
+| Harmonised standards under Art. 40 (e.g. forthcoming CEN-CENELEC AI Act standards) | Not yet cited where adopted | **GAP/PENDING** - adopt and list specific harmonised standards (risk management, quality management, accuracy, robustness, cybersecurity, data governance) once published/applied; owner Founder |
 | ISO/IEC 42001 (AI management system) | Reference framework for the QMS | Referenced by doc 03 (not certified) |
 | ISO/IEC 23894 / NIST AI RMF | Risk-management informative reference | Referenced by doc 02 |
 | Cyber Essentials | Organisational security baseline | `business-docs/compliance/cyber-essentials/` (separate track) |
@@ -353,15 +353,15 @@ Where no harmonised standard has been applied, conformity is demonstrated direct
 
 ---
 
-## Annex IV(8) — EU Declaration of Conformity
+## Annex IV(8) - EU Declaration of Conformity
 
-A copy of the EU Declaration of Conformity (Art. 47, Annex V) is maintained as **doc 13**. Status: **GAP — not yet drafted** (`00-README-index.md` §2 row 13). This file must be cross-signed against doc 13 once issued; the DoC cannot be signed while the Annex IV(3)/Art. 15 accuracy GAPs remain open without an explicit, documented residual-risk acceptance by the Provider accountable person.
+A copy of the EU Declaration of Conformity (Art. 47, Annex V) is maintained as **doc 13**. Status: **GAP - not yet drafted** (`00-README-index.md` §2 row 13). This file must be cross-signed against doc 13 once issued; the DoC cannot be signed while the Annex IV(3)/Art. 15 accuracy GAPs remain open without an explicit, documented residual-risk acceptance by the Provider accountable person.
 
 ---
 
-## Annex IV(9) — Post-market monitoring plan
+## Annex IV(9) - Post-market monitoring plan
 
-The post-market monitoring system (Art. 72) is **doc 11**; serious-incident reporting (Art. 73) is **doc 12**. Status: **GAP — not yet drafted**. The technical pre-requisite for meaningful PMM — server-side inference logging — **now exists** and already captures the minimum inference record (timestamp, route, model version, scheme/board, input hash + length, output grade summary, error class, consent snapshot) at `src/lib/ai-audit-log.ts:161-202`. Doc 11 must now (a) define the retention period and query/monitoring procedures over these `AuditLog` `ai_decision` records, and (b) define the PMM signals (e.g. reject-rate, error-class trend, human-review/contest volume once GAP-HO-1 lands) and their thresholds.
+The post-market monitoring system (Art. 72) is **doc 11**; serious-incident reporting (Art. 73) is **doc 12**. Status: **GAP - not yet drafted**. The technical pre-requisite for meaningful PMM - server-side inference logging - **now exists** and already captures the minimum inference record (timestamp, route, model version, scheme/board, input hash + length, output grade summary, error class, consent snapshot) at `src/lib/ai-audit-log.ts:161-202`. Doc 11 must now (a) define the retention period and query/monitoring procedures over these `AuditLog` `ai_decision` records, and (b) define the PMM signals (e.g. reject-rate, error-class trend, human-review/contest volume once GAP-HO-1 lands) and their thresholds.
 
 ---
 
@@ -370,11 +370,11 @@ The post-market monitoring system (Art. 72) is **doc 11**; serious-incident repo
 | ID | Annex IV point | Gap | Owner | Target |
 |---|---|---|---|---|
 | GAP-IV-1 | 1(a), Art. 50/13 | Disclaimer only emitted by `/api/essay/feedback`; absent from the 5 primary AI routes | Product | 2026-06-30 |
-| GAP-IV-2 | 1(c), 2(g) | **Re-scoped — substantially closed.** Per-inference model version now logged (`ai-audit-log.ts:54,173`); residual = unused `AIFeedback.modelVersion` to populate or deprecate | Engineering | 2026-07-15 |
+| GAP-IV-2 | 1(c), 2(g) | **Re-scoped - substantially closed.** Per-inference model version now logged (`ai-audit-log.ts:54,173`); residual = unused `AIFeedback.modelVersion` to populate or deprecate | Engineering | 2026-07-15 |
 | GAP-IV-3 | 2(c), 3, 4 | **Persists.** AQA-only boundary table applied to ALL boards; provenance now tagged but `feedback-generator.ts:120` does not pass `board` so non-AQA grades still AQA-calibrated | Engineering | 2026-07-31 |
-| GAP-IV-4 | 2(g), Art. 12/19 | **Re-scoped — substantially closed.** `logAiDecision` wired into all 6 routes, hashed input, consent snapshot (`ai-audit-log.ts:217`); residuals = consent-snapshot hard-coded, retention uncodified, no review↔log link | Engineering | 2026-07-15 |
-| GAP-IV-5 | 3, Art. 13/15 | Score relabelled as "confidence" (`submit/page.tsx:254`, `schema.prisma:721`) — not a confidence measure | Product + Engineering | 2026-06-30 |
-| GAP-IV-6 | 3, 4, Art. 15 | **Re-scoped.** Eval harness + metrics exist (`evals/`), but evaluate boundary model on synthetic data — LLM-marker accuracy vs real human gold scripts still unmeasured | Engineering + Founder | baseline 2026-07-31 |
+| GAP-IV-4 | 2(g), Art. 12/19 | **Re-scoped - substantially closed.** `logAiDecision` wired into all 6 routes, hashed input, consent snapshot (`ai-audit-log.ts:217`); residuals = consent-snapshot hard-coded, retention uncodified, no review↔log link | Engineering | 2026-07-15 |
+| GAP-IV-5 | 3, Art. 13/15 | Score relabelled as "confidence" (`submit/page.tsx:254`, `schema.prisma:721`) - not a confidence measure | Product + Engineering | 2026-06-30 |
+| GAP-IV-6 | 3, 4, Art. 15 | **Re-scoped.** Eval harness + metrics exist (`evals/`), but evaluate boundary model on synthetic data - LLM-marker accuracy vs real human gold scripts still unmeasured | Engineering + Founder | baseline 2026-07-31 |
 | GAP-IV-7 | 7 | Harmonised standards not yet identified/cited | Founder | on publication |
 | GAP-IV-8 | 8, 9 | DoC (doc 13), PMM (doc 11), incident procedure (doc 12) not drafted | Founder | per doc 16 roadmap |
 

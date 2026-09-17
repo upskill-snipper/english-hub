@@ -34,7 +34,7 @@
 | D7 | Consent records | Prisma `Consent`, `parental_consents` | **NO** | No | `prisma/schema.prisma:217-233`; `src/lib/consent-check.ts:51-60` |
 | D8 | Privacy settings (`aiOptOut`, `aiTrainingOptIn`) | Prisma `PrivacySettings` | **NO** | No | `prisma/schema.prisma:441-455` |
 | D9 | AI output (predicted grade, AO scores, feedback) | response JSON; B2C → browser `localStorage`; B2B → `marking_submissions` | Output of Anthropic, returned to provider | Derived profiling of a minor's attainment | `src/app/marking/submit/page.tsx:285-293`; `prisma/schema.prisma:712-737` |
-| D10 | Rate-limit counters keyed by user id | Upstash Redis | **NO** | No | `src/lib/rate-limit.ts:100-135` |
+| D10 | Rate-limit counters keyed by user id or IP | **Process memory on the serverless instance** (Upstash Redis is the intended store but is not configured in production, so nothing is written to it) | **NO** | No | `src/lib/rate-limit.ts`; `business-docs/compliance/controls/rate-limiting-control-status.md` |
 
 **Profiling note.** D9 is automated evaluation of a child's educational attainment (a predicted GCSE grade). It is profiling of children and an Art. 22 GDPR–adjacent / Children's Code concern; the AI Act human-oversight (doc 07) and transparency (doc 10) obligations attach. Doc 15 reconciles this with the signed DPIA.
 

@@ -23,7 +23,7 @@
 - **Is the interest legitimate?** Yes — it is lawful, real, and specific. Recital 49 UK GDPR expressly acknowledges network and information security as a legitimate interest.
 
 ### Necessity test
-- **Does the processing actually achieve the purpose?** Yes — without logs and rate-limiting we cannot detect abuse.
+- **Does the processing actually achieve the purpose?** Partly, today. Logging achieves it. Rate limiting does not: it is implemented in code but not enforced in production because no shared backend is configured (`business-docs/compliance/controls/rate-limiting-control-status.md`), so the necessity argument currently rests on security logging alone. Reassess once the limiter is enforced.
 - **Is the processing proportionate?** Yes — we collect minimal data (IP, user agent, authentication events) and retain for 90 days.
 - **Is there a less intrusive way to achieve the purpose?** No. Consent is not workable because bad actors would opt out. Contract basis does not cover pre-authentication requests.
 

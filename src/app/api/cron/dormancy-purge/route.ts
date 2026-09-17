@@ -3,6 +3,7 @@ import { timingSafeEqual } from 'crypto'
 import { prisma } from '@/lib/prisma'
 import { findDormantChildAccounts, purgeDormantAccount } from '@/lib/privacy/dormancy'
 import { runCron } from '@/lib/cron/observability'
+import { measureRetentionCoverage } from '@/lib/cron/coverage'
 
 export const dynamic = 'force-dynamic'
 
@@ -61,6 +62,10 @@ export async function POST(request: NextRequest) {
   }
 
   return runCron('dormancy-purge', async () => {
+    // Candidates come from prisma.user, so an account with no projection
+    // is invisible here. Recorded per run rather than assumed away.
+    const coverage = await measureRetentionCoverage('dormancy-purge')
+
     const errors: PurgeError[] = []
     let purged = 0
 
@@ -72,7 +77,7 @@ export async function POST(request: NextRequest) {
         step: 'find_dormant_child_accounts',
         message: err instanceof Error ? err.message : String(err),
       })
-      return { purged, errors }
+      return { coverage, purged, errors }
     }
 
     for (const userId of dormantIds) {
@@ -114,6 +119,6 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    return { purged, errors }
+    return { coverage, purged, errors }
   })
 }

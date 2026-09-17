@@ -1,7 +1,7 @@
 {
   "v": 1,
-  "key": "b5f0fac5485ed516b436b5f80198e031890c522c057a7dc95dce30eb86c5c814",
-  "model": "claude-sonnet-4-20250514",
+  "key": "1ed65652f55c8832d7ec0dad76d42e9e65bdb14f8f00fe9f9358c5e6ee4991fa",
+  "model": "claude-sonnet-5",
   "caseId": "edexcel-lang-p1-q4-syn-09",
   "markSchemeId": "edexcel-lang-paper1",
   "questionId": "Q4",

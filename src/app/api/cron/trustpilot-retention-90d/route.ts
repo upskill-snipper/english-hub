@@ -9,29 +9,34 @@
  * Schedule: 04:00 UTC daily (see vercel.json). Dedup via the
  * `trustpilot_invite` UNIQUE(user_id, trigger) constraint is belt-and-braces.
  *
- * Auth: `x-cron-secret` header must match CRON_SECRET env var.
+ * Auth: `Authorization: Bearer $CRON_SECRET` (what Vercel Cron sends) or the
+ * legacy `x-cron-secret` header.
+ *
+ * 2026-09-17: as with `trustpilot-followup-7d`, this route exported only
+ * `POST` and read only `x-cron-secret`, so every scheduled `GET` since
+ * 19 April 2026 was answered `405` and no 90-day invite was ever sent by
+ * this path. (The newer `trustpilot-retention-invite` cron does fire and
+ * covers the subscription-period-keyed case, so the gap here is partial.)
  */
 
-import { NextRequest, NextResponse } from 'next/server'
-import crypto from 'crypto'
+import { NextRequest } from 'next/server'
 import { createServiceRoleClient } from '@/lib/supabase/server'
 import { prisma } from '@/lib/prisma'
 import { fireStudent90dRetention } from '@/lib/trustpilot/trigger-invite'
 import { runCron } from '@/lib/cron/observability'
+import { authoriseCronRequest } from '@/lib/cron/auth'
 
 export const maxDuration = 300
 
+/** Vercel Cron calls this with GET. */
+export async function GET(request: NextRequest) {
+  return POST(request)
+}
+
 export async function POST(request: NextRequest) {
   // ── Cron-secret gate ────────────────────────────────────────────────
-  const cronSecret = request.headers.get('x-cron-secret')
-  const expected = process.env.CRON_SECRET
-  if (!expected) {
-    console.error('[cron/trustpilot-90d] CRON_SECRET not set')
-    return NextResponse.json({ error: 'Server misconfiguration' }, { status: 500 })
-  }
-  if (!cronSecret || !crypto.timingSafeEqual(Buffer.from(cronSecret), Buffer.from(expected))) {
-    return NextResponse.json({ error: 'Unauthorised' }, { status: 401 })
-  }
+  const auth = authoriseCronRequest(request, 'trustpilot-retention-90d')
+  if (!auth.ok) return auth.response
 
   return runCron('trustpilot-retention-90d', async () => {
     const supabase = createServiceRoleClient()

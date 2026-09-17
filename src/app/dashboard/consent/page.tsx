@@ -17,6 +17,17 @@ interface ConsentRecord {
   isEssential: boolean
 }
 
+/**
+ * A consent the learner can switch on for themselves, as served by
+ * GET /api/consent. The version comes from the server (POLICY_VERSIONS) so
+ * the browser never records a grant against a version it made up.
+ */
+interface GrantableConsent {
+  consentType: string
+  version: string
+  granted: boolean
+}
+
 interface HistoryRecord {
   id: string
   consentType: string
@@ -67,10 +78,12 @@ function formatDate(iso: string): string {
 export default function ConsentManagementPage() {
   const t = useT()
   const [consents, setConsents] = useState<ConsentRecord[]>([])
+  const [grantable, setGrantable] = useState<GrantableConsent[]>([])
   const [history, setHistory] = useState<HistoryRecord[]>([])
   const [showHistory, setShowHistory] = useState(false)
   const [loading, setLoading] = useState(true)
   const [withdrawing, setWithdrawing] = useState<string | null>(null)
+  const [granting, setGranting] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [success, setSuccess] = useState<string | null>(null)
 
@@ -80,6 +93,9 @@ export default function ConsentManagementPage() {
       if (!res.ok) throw new Error('Failed to load consents')
       const data = await res.json()
       setConsents(data.consents)
+      // `grantable` was added with the grant control. Tolerate its absence so
+      // a cached older page does not break on an older response shape.
+      setGrantable(Array.isArray(data.grantable) ? data.grantable : [])
     } catch {
       setError(t('dash.consent.err.load'))
     } finally {
@@ -100,6 +116,47 @@ export default function ConsentManagementPage() {
       setShowHistory(true)
     } catch {
       setError(t('dash.consent.err.history'))
+    }
+  }
+
+  /**
+   * Gives a consent. Posts to the POST handler that /api/consent has always
+   * had and that this page never called: until now the page could only GET
+   * and DELETE, so there was no way for anyone to give AI-processing consent,
+   * while every AI route refused them for not having it.
+   */
+  async function handleGrant(consentType: string, version: string) {
+    setGranting(consentType)
+    setError(null)
+    setSuccess(null)
+
+    try {
+      const res = await fetch('/api/consent', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          consentType,
+          version,
+          granted: true,
+          // A deliberate click on a labelled button, not a pre-ticked box.
+          method: 'EXPLICIT',
+        }),
+      })
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => null)
+        throw new Error(data?.error ?? t('dash.consent.err.grant'))
+      }
+
+      // Re-read from the server rather than assuming. The success message
+      // must only claim what the ledger now actually holds.
+      await fetchConsents()
+      if (showHistory) await fetchHistory()
+      setSuccess(t('dash.consent.grant_success').replace('{label}', getLabel(consentType, t)))
+    } catch (err) {
+      setError(err instanceof Error ? err.message : t('dash.consent.err.grant'))
+    } finally {
+      setGranting(null)
     }
   }
 
@@ -198,6 +255,54 @@ export default function ConsentManagementPage() {
           {success}
         </div>
       )}
+
+      {/* Consents you can give */}
+      <section className="mt-8">
+        <h2 className="text-lg font-medium text-foreground">{t('dash.consent.grant_title')}</h2>
+        <p className="mt-1 text-sm text-muted-foreground">{t('dash.consent.grant_intro')}</p>
+
+        {grantable.filter((g) => !g.granted).length === 0 ? (
+          <p className="mt-4 text-sm text-muted-foreground">{t('dash.consent.all_granted')}</p>
+        ) : (
+          <div className="mt-4 space-y-4">
+            {grantable
+              .filter((g) => !g.granted)
+              .map((g) => (
+                <div
+                  key={g.consentType}
+                  className="rounded-lg border border-border bg-card p-4 shadow-sm"
+                >
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <h3 className="font-medium text-foreground">{getLabel(g.consentType, t)}</h3>
+                      <p className="mt-1 text-sm text-muted-foreground">
+                        {getDescription(g.consentType, t)}
+                      </p>
+                      <p className="mt-2 text-xs text-muted-foreground">
+                        {t('dash.consent.policy_version')} {g.version}
+                      </p>
+                      {g.consentType === 'AI_PROCESSING' && (
+                        <p className="mt-2 text-xs text-muted-foreground italic">
+                          {t('dash.consent.grant_note_minor')}
+                        </p>
+                      )}
+                    </div>
+
+                    <button
+                      onClick={() => handleGrant(g.consentType, g.version)}
+                      disabled={granting === g.consentType}
+                      className="ml-4 shrink-0 rounded-md border border-primary/40 bg-primary/10 px-3 py-1.5 text-sm font-medium text-primary hover:bg-primary/20 disabled:opacity-50 transition-colors"
+                    >
+                      {granting === g.consentType
+                        ? t('dash.consent.granting')
+                        : t('dash.consent.grant')}
+                    </button>
+                  </div>
+                </div>
+              ))}
+          </div>
+        )}
+      </section>
 
       {/* Active consents */}
       <section className="mt-8">

@@ -1,11 +1,11 @@
-# 11 — Post-Market Monitoring Plan (Art 72 EU AI Act)
+# 11 - Post-Market Monitoring Plan (Art 72 EU AI Act)
 
 **Regulation:** Regulation (EU) 2024/1689, Article 72 and Annex IV(8). A post-market monitoring (PMM) system is **mandatory** for a provider of a high-risk AI system, proportionate to the nature and risks of the system.
-**System:** "The English Hub" — high-risk, **Annex III(3)(b)**. **Provider:** The English Hub Ltd.
-**Document status:** v0.1 DRAFT — pending legal sign-off. Several data sources below are **not yet instrumented**; those are declared as gaps with an owner — no monitoring control is claimed that does not exist.
-**Cross-references:** doc 02 (RMS — this PMM feeds the RMS), doc 05 (logging), doc 06 (accuracy), doc 12 (serious-incident reporting — PMM is the detection layer for it), doc 15 (DPIA), doc 16 (roadmap).
+**System:** "The English Hub" - high-risk, **Annex III(3)(b)**. **Provider:** The English Hub Ltd.
+**Document status:** v0.1 DRAFT - pending legal sign-off. Several data sources below are **not yet instrumented**; those are declared as gaps with an owner - no monitoring control is claimed that does not exist.
+**Cross-references:** doc 02 (RMS - this PMM feeds the RMS), doc 05 (logging), doc 06 (accuracy), doc 12 (serious-incident reporting - PMM is the detection layer for it), doc 15 (DPIA), doc 16 (roadmap).
 
-> Honest baseline statement: today the codebase has **error monitoring (Sentry)** and **rate limiting** but **no model-quality, accuracy-drift, bias, or complaint-signal instrumentation**. The v1 DPIA's "weekly eval suite … <80% triggers feature pause" and "Sentry … not model-quality drift" — the latter admission is correct (`src/lib/i18n/dictionary-legal-long.ts:304-305`); the eval suite **does not exist** (doc 15). This plan therefore defines (a) the **target** PMM system and (b) the **interim manual** PMM operable before instrumentation lands.
+> Honest baseline statement: today the codebase has **error monitoring (Sentry)** and **database-backed usage metering (`src/lib/usage/**`)**. Rate limiting is written but not enforced in production (`business-docs/compliance/controls/rate-limiting-control-status.md`). It has **no model-quality, accuracy-drift, bias, or complaint-signal instrumentation**. The v1 DPIA's "weekly eval suite … <80% triggers feature pause" and "Sentry … not model-quality drift" - the latter admission is correct (`src/lib/i18n/dictionary-legal-long.ts:304-305`); the eval suite **does not exist** (doc 15). This plan therefore defines (a) the **target** PMM system and (b) the **interim manual** PMM operable before instrumentation lands.
 
 ---
 
@@ -21,25 +21,25 @@ Scope = all live AI functions: AI marking + predicted grade (`src/lib/marking/*`
 
 | ID | Metric | Definition | Target / threshold | Status |
 |---|---|---|---|---|
-| M1 | **Mark-band agreement** | % of sampled essays where AI AO band == human (teacher/examiner) band | Baseline TBD; alert if a measured period drops >5 percentage points vs rolling baseline | **GAP — no eval harness (doc 06); owner: Provider eng** |
-| M2 | **Predicted-grade error** | Mean absolute grade-point error AI vs teacher override, by board | Track per board; **expect larger error for non-AQA** (single AQA table — `src/lib/marking/grade-predictor.ts:99-109`, applied unconditionally `:183`; `boundarySource` proxy tag `:58-65` flags but does not fix this) | **GAP — needs override-vs-AI join (data exists: `marking_submissions.ai_grade` vs `teacher_grade`, `prisma/schema.prisma:720,726`)** |
-| M3 | **EAL/bias signal** | Mark/grade distribution split by EAL vs non-EAL and by board on matched tasks | No statistically significant adverse gap | **GAP — no bias eval (the v1 DPIA control does not exist, doc 15)** |
+| M1 | **Mark-band agreement** | % of sampled essays where AI AO band == human (teacher/examiner) band | Baseline TBD; alert if a measured period drops >5 percentage points vs rolling baseline | **GAP - no eval harness (doc 06); owner: Provider eng** |
+| M2 | **Predicted-grade error** | Mean absolute grade-point error AI vs teacher override, by board | Track per board; **expect larger error for non-AQA** (single AQA table - `src/lib/marking/grade-predictor.ts:99-109`, applied unconditionally `:183`; `boundarySource` proxy tag `:58-65` flags but does not fix this) | **GAP - needs override-vs-AI join (data exists: `marking_submissions.ai_grade` vs `teacher_grade`, `prisma/schema.prisma:720,726`)** |
+| M3 | **EAL/bias signal** | Mark/grade distribution split by EAL vs non-EAL and by board on matched tasks | No statistically significant adverse gap | **GAP - no bias eval (the v1 DPIA control does not exist, doc 15)** |
 | M4 | **Override rate & direction** | % of school submissions a teacher overrides; mean signed delta | Sustained high override rate or systematic upward correction = quality signal | Partially feasible now from `marking_submissions` (status `teacher_reviewed`, `override/route.ts:206`) |
-| M5 | **Human-review request rate & reasons** | Volume + reason mix of `HumanReviewRequest` (`prisma/schema.prisma:294-320`; `POST /api/review/route.ts`); reasons enum incl. `inaccurate`,`unfair-score` (`/api/review/route.ts:14`) | Spike or `inaccurate`/`unfair-score` dominance triggers review | Feasible now (B2C route exists; **B2C *entry UI* does not** — doc 10; under-counts until built) |
-| M6 | **Invalid/guard-trip rate** | % returning `INVALID_SUBMISSION`/`OFF_TOPIC` (`src/lib/marking/feedback-generator.ts:96-99`) | Sudden change = prompt/model regression | Feasible via logging (doc 05) — **not yet persisted (`essay/feedback/route.ts:101-105` audit log is a TODO stub)** |
+| M5 | **Human-review request rate & reasons** | Volume + reason mix of `HumanReviewRequest` (`prisma/schema.prisma:294-320`; `POST /api/review/route.ts`); reasons enum incl. `inaccurate`,`unfair-score` (`/api/review/route.ts:14`) | Spike or `inaccurate`/`unfair-score` dominance triggers review | Feasible now (B2C route exists; **B2C *entry UI* does not** - doc 10; under-counts until built) |
+| M6 | **Invalid/guard-trip rate** | % returning `INVALID_SUBMISSION`/`OFF_TOPIC` (`src/lib/marking/feedback-generator.ts:96-99`) | Sudden change = prompt/model regression | Feasible via logging (doc 05) - **not yet persisted (`essay/feedback/route.ts:101-105` audit log is a TODO stub)** |
 | M7 | **Upstream availability/latency** | Anthropic timeout/429 rate (`essay/feedback/route.ts:243-262`) | Track; sustained degradation = robustness issue | Partially via Sentry |
 | M8 | **Model/version change events** | Record every change of model id / provider (currently `claude-sonnet-4-20250514`) | Each change → re-baseline M1–M3, RMS + DPIA review | Manual change log |
-| M9 | **Complaint & safeguarding signals** | Support emails (`info@upskillenergy.com`), Deployer reports, any essay-disclosure incident (system does **not** auto-detect — doc 08 L6) | Any safeguarding miss = immediate review + doc 12 assessment | Manual intake |
+| M9 | **Complaint & safeguarding signals** | Support emails (`info@upskillenergy.com`), Deployer reports, any essay-disclosure incident (system does **not** auto-detect - doc 08 L6) | Any safeguarding miss = immediate review + doc 12 assessment | Manual intake |
 | M10 | **Transparency-defect recurrence** | Audit that no false "Reviewed by humans" claim is live (doc 10 §2) | Zero | Manual release check until automated test exists |
 
 ---
 
 ## 3. Data sources
 
-- **Database:** `marking_submissions` (AI vs teacher grade/comment/reviewer/timestamps — `prisma/schema.prisma:705-737`), `HumanReviewRequest` (`:294-320`), Supabase `human_review_requests`.
-- **Application logs / audit trail:** intended per doc 05; **currently the essay-feedback audit log is a non-persisted TODO** (`src/app/api/essay/feedback/route.ts:101-105`, `:286`) — **GAP — owner: Provider eng; persist to `audit_logs`.**
-- **Sentry:** errors, timeouts, upstream failures (no model-quality signal — confirmed limitation).
-- **Evaluation harness:** **does not exist** — to be built per doc 06 (gold-set of human-marked essays; periodic scoring for M1–M3).
+- **Database:** `marking_submissions` (AI vs teacher grade/comment/reviewer/timestamps - `prisma/schema.prisma:705-737`), `HumanReviewRequest` (`:294-320`), Supabase `human_review_requests`.
+- **Application logs / audit trail:** intended per doc 05; **currently the essay-feedback audit log is a non-persisted TODO** (`src/app/api/essay/feedback/route.ts:101-105`, `:286`) - **GAP - owner: Provider eng; persist to `audit_logs`.**
+- **Sentry:** errors, timeouts, upstream failures (no model-quality signal - confirmed limitation).
+- **Evaluation harness:** **does not exist** - to be built per doc 06 (gold-set of human-marked essays; periodic scoring for M1–M3).
 - **Human channels:** support inbox, Deployer malfunction reports (Art 26(4)/(5)), FRIA-driven Deployer feedback (doc 09).
 - **Deployer logs:** Deployers retain oversight/override logs ≥6 months (Art 26(5)) and report anomalies to the Provider.
 
@@ -50,7 +50,7 @@ Scope = all live AI functions: AI marking + predicted grade (`src/lib/marking/*`
 1. Establish a **measured baseline** for M1/M2/M3 per board using the doc 06 harness (**prerequisite gap**).
 2. Re-score the gold-set on a fixed cadence (target: monthly) and on every M8 event.
 3. **Drift alarm:** measured period worse than rolling baseline by the M1/M2 thresholds, or any adverse M3 gap → (a) RMS review (doc 02), (b) consider Art 20 corrective action / temporary feature suspension, (c) Deployer notification, (d) DPIA/FRIA re-trigger (doc 15 / doc 09).
-4. **Non-AQA caveat is a standing finding**, not a drift event — tracked continuously and disclosed (doc 08 L2) until the per-board boundary fix lands.
+4. **Non-AQA caveat is a standing finding**, not a drift event - tracked continuously and disclosed (doc 08 L2) until the per-board boundary fix lands.
 
 ---
 
@@ -66,7 +66,7 @@ Scope = all live AI functions: AI marking + predicted grade (`src/lib/marking/*`
 | Cadence | Activity | Owner |
 |---|---|---|
 | Continuous | Sentry alerts; upstream failure watch (M7) | Provider eng on-call |
-| Weekly | M4/M5/M6/M9 quick review | **Internal AI compliance owner** (to be appointed — `human-action-checklist.md`) |
+| Weekly | M4/M5/M6/M9 quick review | **Internal AI compliance owner** (to be appointed - `human-action-checklist.md`) |
 | Monthly | M1–M3 re-score (once harness exists); trend pack into RMS (doc 02) | AI compliance owner + eng |
 | Per release | M10 transparency-defect check; M8 change log | Eng lead |
 | On M8 / material change | Full re-baseline + DPIA/FRIA re-trigger | AI compliance owner + counsel |

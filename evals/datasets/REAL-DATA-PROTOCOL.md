@@ -128,7 +128,9 @@ npm run eval:marking
 ```
 
 - `EVAL_ADAPTER=llm` runs the **exact production path** (`buildMarkingPrompt` →
-  `claude-sonnet-4-20250514` → `generateFeedback` → `predictGrade`).
+  `ANTHROPIC_MODEL` → `generateFeedback` → `predictGrade`). The model is the
+  production constant from `src/lib/anthropic-client.ts`, imported by the
+  adapter, so a reported figure always names the model production calls.
 - `EVAL_LLM_LIVE=1` permits the network call (off by default; CI stays offline).
 - `EVAL_RUNS=3` re-runs each script 3× to measure grade instability
   (model sampling is not pinned in production — doc 06 §A2).

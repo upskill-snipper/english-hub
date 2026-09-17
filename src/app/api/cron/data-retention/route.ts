@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { timingSafeEqual } from 'crypto'
 import { cleanupExpiredData } from '@/lib/data-retention'
 import { runCron } from '@/lib/cron/observability'
+import { measureRetentionCoverage } from '@/lib/cron/coverage'
 
 export const dynamic = 'force-dynamic'
 
@@ -36,10 +37,18 @@ export async function GET(request: NextRequest) {
   }
 
   return runCron('data-retention', async () => {
+    // ── How much of the user base can this run actually see? ──────────
+    // Everything below enumerates prisma.user. When that table holds fewer
+    // rows than there are real accounts, low counts below mean "invisible",
+    // not "clean". Reported so a green run cannot be read as a discharged
+    // retention duty.
+    const coverage = await measureRetentionCoverage('data-retention')
+
     // ── Run the full cleanup cycle ────────────────────────────────────
     const summary = await cleanupExpiredData()
 
     return {
+      coverage,
       summary: {
         startedAt: summary.startedAt,
         completedAt: summary.completedAt,

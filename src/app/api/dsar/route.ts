@@ -9,6 +9,7 @@ import {
   type DSARType,
 } from '@/lib/dsar'
 import { sendEmail } from '@/lib/email'
+import { DPO_EMAIL } from '@/lib/data-retention'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 
@@ -18,6 +19,131 @@ const createDSARSchema = z.object({
   type: z.enum(['ACCESS', 'PORTABILITY', 'ERASURE', 'RECTIFICATION']),
   details: z.string().max(2000).optional(),
 })
+
+// ─── Supabase-native subjects ──────────────────────────────────────────
+
+/**
+ * Record a rights request from an account that has no Prisma `User` row.
+ *
+ * Roughly 96% of accounts are in this state. The route used to answer
+ * them with 404 "User not found", which is both wrong and, for an Art.17
+ * or Art.15 request, a refusal of a statutory right.
+ *
+ * We cannot create a `DataAccessRequest`: its `userId` is a required
+ * foreign key to `User.id`. What we can do is record the request in a
+ * place that is durable and auditable, put it in front of a human, and
+ * tell the subject precisely which of those two things succeeded. No
+ * claim is made that either happened unless it did.
+ */
+async function recordUnlinkedRequest(
+  request: NextRequest,
+  input: {
+    supabaseUserId: string
+    email: string | null
+    type: DSARType
+    details: string | null
+  },
+): Promise<NextResponse> {
+  const referenceNumber = generateDSARReference()
+  const now = new Date()
+  const deadline = calculateDeadline(now)
+  const ipAddress =
+    request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ??
+    request.headers.get('x-real-ip') ??
+    'unknown'
+
+  let loggedReference: string | null = null
+  try {
+    const row = await prisma.auditLog.create({
+      data: {
+        userId: null,
+        action: 'DSAR_CREATED_UNLINKED',
+        resource: 'DataAccessRequest',
+        resourceId: referenceNumber,
+        details: {
+          referenceNumber,
+          type: input.type,
+          requestDetails: input.details,
+          supabaseUserId: input.supabaseUserId,
+          email: input.email,
+          deadline: deadline.toISOString(),
+          reason: 'No Prisma User row exists for this Supabase account',
+        },
+        ipAddress,
+      },
+      select: { id: true },
+    })
+    loggedReference = row.id
+  } catch (err) {
+    console.error('[DSAR] Failed to log unlinked request:', err)
+  }
+
+  const dpoBody = [
+    `<p>A rights request was submitted by an account with no application-side user row.</p>`,
+    `<ul>`,
+    `<li>Reference: ${referenceNumber}</li>`,
+    `<li>Type: ${input.type}</li>`,
+    `<li>Supabase user id: ${input.supabaseUserId}</li>`,
+    `<li>Email: ${input.email ?? 'not held on the session'}</li>`,
+    `<li>Deadline: ${deadline.toISOString()}</li>`,
+    `<li>Details: ${input.details ?? 'none supplied'}</li>`,
+    `</ul>`,
+    `<p>This request could not be written to the DataAccessRequest table and must be actioned by hand.</p>`,
+  ].join('')
+
+  let dpoNotified = false
+  try {
+    const sent = await sendEmail(
+      DPO_EMAIL,
+      `[Action required] ${input.type} request ${referenceNumber}`,
+      dpoBody,
+    )
+    dpoNotified = sent.success
+  } catch (err) {
+    console.error('[DSAR] Failed to notify the DPO of an unlinked request:', err)
+  }
+
+  if (!loggedReference && !dpoNotified) {
+    // Neither durable record nor human hand-off. Saying anything other
+    // than "this did not work" would be a fabrication.
+    return NextResponse.json(
+      {
+        error:
+          `We could not record your request, so we are not going to tell you that we have. ` +
+          `Please email ${DPO_EMAIL} directly and we will handle it from there.`,
+        dpoEmail: DPO_EMAIL,
+      },
+      { status: 503 },
+    )
+  }
+
+  return NextResponse.json(
+    {
+      referenceNumber,
+      type: input.type,
+      status: 'RECEIVED',
+      requestedAt: now.toISOString(),
+      deadline: deadline.toISOString(),
+      deadlineFormatted: deadline.toLocaleDateString('en-GB', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      }),
+      recordedInAuditLog: loggedReference !== null,
+      dpoNotified,
+      loggedReference,
+      dpoEmail: DPO_EMAIL,
+      message: dpoNotified
+        ? `Your request has been recorded and sent to our data protection officer, who will ` +
+          `reply by ${deadline.toLocaleDateString('en-GB')}. Quote ${referenceNumber} if you contact us.`
+        : `Your request has been recorded, but we could not send it on to our data protection ` +
+          `officer automatically. Please email ${DPO_EMAIL} quoting ${referenceNumber} so we ` +
+          `can be certain it reaches a person.`,
+    },
+    { status: 202 },
+  )
+}
 
 // ─── POST /api/dsar - Create a new DSAR ────────────────────────────────
 
@@ -69,10 +195,12 @@ export async function POST(request: NextRequest) {
     })
     const profile =
       prismaUser ??
-      (await prisma.user.findUnique({
-        where: { email: sessionUser.email!.toLowerCase() },
-        select: { id: true, email: true, firstName: true, accountStatus: true },
-      }))
+      (sessionUser.email
+        ? await prisma.user.findUnique({
+            where: { email: sessionUser.email.toLowerCase() },
+            select: { id: true, email: true, firstName: true, accountStatus: true },
+          })
+        : null)
     if (profile && !prismaUser) {
       console.warn('[identity] DSAR lookup fell back to email', {
         supabaseUserId: sessionUser.id,
@@ -81,7 +209,18 @@ export async function POST(request: NextRequest) {
     }
 
     if (!profile) {
-      return NextResponse.json({ error: 'User not found' }, { status: 404 })
+      // The account exists - it just lives only in Supabase. Answering
+      // "User not found" refused rights requests from people whose data
+      // we hold. `DataAccessRequest.userId` is a required foreign key to
+      // `User.id`, so there is no row we can honestly create here.
+      // Record the request where it can be recorded (AuditLog.userId is
+      // nullable), hand it to the DPO, and say exactly what happened.
+      return recordUnlinkedRequest(request, {
+        supabaseUserId: sessionUser.id,
+        email: sessionUser.email ?? null,
+        type,
+        details: details ?? null,
+      })
     }
 
     // Prevent duplicate pending requests of the same type
@@ -192,10 +331,12 @@ export async function GET(request: NextRequest) {
     })
     const user =
       prismaUser ??
-      (await prisma.user.findUnique({
-        where: { email: sessionUser.email!.toLowerCase() },
-        select: { id: true },
-      }))
+      (sessionUser.email
+        ? await prisma.user.findUnique({
+            where: { email: sessionUser.email.toLowerCase() },
+            select: { id: true },
+          })
+        : null)
     if (user && !prismaUser) {
       console.warn('[identity] DSAR lookup fell back to email', {
         supabaseUserId: sessionUser.id,
@@ -204,7 +345,36 @@ export async function GET(request: NextRequest) {
     }
 
     if (!user) {
-      return NextResponse.json({ requests: [] })
+      // Supabase-native account. Its requests live in the audit log
+      // (see recordUnlinkedRequest), not in DataAccessRequest. Returning
+      // a bare empty list would make a submitted request look as though
+      // it had vanished.
+      const logged = await prisma.auditLog.findMany({
+        where: {
+          action: 'DSAR_CREATED_UNLINKED',
+          details: { path: ['supabaseUserId'], equals: sessionUser.id },
+        },
+        orderBy: { timestamp: 'desc' },
+        select: { id: true, resourceId: true, details: true, timestamp: true },
+      })
+
+      return NextResponse.json({
+        requests: logged.map((entry) => {
+          const detail = (entry.details ?? {}) as Record<string, unknown>
+          const deadline = calculateDeadline(entry.timestamp)
+          return {
+            id: entry.id,
+            referenceNumber: entry.resourceId,
+            type: typeof detail.type === 'string' ? detail.type : 'UNKNOWN',
+            status: 'RECEIVED',
+            requestedAt: entry.timestamp.toISOString(),
+            completedAt: null,
+            deadline: deadline.toISOString(),
+            daysRemaining: Math.ceil((deadline.getTime() - Date.now()) / (1000 * 60 * 60 * 24)),
+            handledBy: DPO_EMAIL,
+          }
+        }),
+      })
     }
 
     const dsars = await prisma.dataAccessRequest.findMany({

@@ -2,6 +2,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 import { compileUserData } from '@/lib/dsar'
+import { compileSupabaseNativeSubjectData } from '@/lib/data-retention'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 
@@ -46,10 +47,12 @@ export async function GET(request: NextRequest) {
     })
     const user =
       prismaUser ??
-      (await prisma.user.findUnique({
-        where: { email: sessionUser.email!.toLowerCase() },
-        select: { id: true, firstName: true, lastName: true },
-      }))
+      (sessionUser.email
+        ? await prisma.user.findUnique({
+            where: { email: sessionUser.email.toLowerCase() },
+            select: { id: true, firstName: true, lastName: true },
+          })
+        : null)
     if (user && !prismaUser) {
       console.warn('[identity] DSAR lookup fell back to email', {
         supabaseUserId: sessionUser.id,
@@ -58,7 +61,63 @@ export async function GET(request: NextRequest) {
     }
 
     if (!user) {
-      return NextResponse.json({ error: 'User not found' }, { status: 404 })
+      // Not "user not found": the account exists, it simply lives only in
+      // Supabase. Refusing an Art.15 request for data we hold is the
+      // defect, not the absence of a Prisma row. Export what we hold.
+      const nativePayload = await compileSupabaseNativeSubjectData(sessionUser.id)
+      const nativeDate = new Date().toISOString().slice(0, 10)
+
+      if (format === 'text') {
+        const nativeLines: string[] = [
+          'THE ENGLISH HUB - PERSONAL DATA EXPORT',
+          '='.repeat(50),
+          '',
+          `Exported: ${nativePayload.exportedAt}`,
+          `Data Controller: ${nativePayload.dataController.name}`,
+          `Contact: ${nativePayload.dataController.contact}`,
+          '',
+          nativePayload.legalBasis,
+          '',
+          nativePayload.coverage,
+          '',
+          '─── ACCOUNT ───',
+          ...Object.entries(nativePayload.account).map(
+            ([k, v]) => `  ${k}: ${typeof v === 'object' ? JSON.stringify(v) : String(v)}`,
+          ),
+          '',
+          '─── PROFILE ───',
+          ...(nativePayload.profile
+            ? Object.entries(nativePayload.profile).map(([k, v]) => `  ${k}: ${String(v)}`)
+            : ['  No profile record held']),
+          '',
+          '─── OTHER RECORDS ───',
+          ...nativePayload.records.map((r) =>
+            r.status === 'read'
+              ? `  ${r.table}: ${r.rowCount} record(s)`
+              : `  ${r.table}: could not be read (${r.note ?? 'no detail'})`,
+          ),
+          '',
+          'Full record contents are in the JSON version of this export.',
+        ]
+
+        return new NextResponse(nativeLines.join('\n'), {
+          status: 200,
+          headers: {
+            'Content-Type': 'text/plain; charset=utf-8',
+            'Content-Disposition': `attachment; filename="the-english-hub-data-export-${nativeDate}.txt"`,
+            'Cache-Control': 'no-store, max-age=0',
+          },
+        })
+      }
+
+      return new NextResponse(JSON.stringify(nativePayload, null, 2), {
+        status: 200,
+        headers: {
+          'Content-Type': 'application/json',
+          'Content-Disposition': `attachment; filename="the-english-hub-data-export-${nativeDate}.json"`,
+          'Cache-Control': 'no-store, max-age=0',
+        },
+      })
     }
 
     // Compile all user data

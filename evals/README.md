@@ -17,10 +17,10 @@ synthetic data**.
 
 `evals/adapters/`. The metrics/reporting code is adapter-agnostic.
 
-| Adapter                       | `EVAL_ADAPTER`    | Measures                                                                                                                                                                                             | Network                                                                    |
-| ----------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| **examiner-replay** (default) | `examiner-replay` | The deterministic **grade-boundary model** only (replays examiner AO marks through production `predictGrade`). Isolates the AQA cross-board proxy concern (doc 06 §C). **Does NOT measure the LLM.** | Never                                                                      |
-| **llm-marker**                | `llm`             | The **exact production marking path**: `buildMarkingPrompt` → `claude-sonnet-4-20250514` → `generateFeedback` → `predictGrade`. The only adapter that can produce an LLM-accuracy figure.            | **Offline by default** (fixture replay). Live only with `EVAL_LLM_LIVE=1`. |
+| Adapter                       | `EVAL_ADAPTER`    | Measures                                                                                                                                                                                                                                          | Network                                                                    |
+| ----------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| **examiner-replay** (default) | `examiner-replay` | The deterministic **grade-boundary model** only (replays examiner AO marks through production `predictGrade`). Isolates the AQA cross-board proxy concern (doc 06 §C). **Does NOT measure the LLM.**                                              | Never                                                                      |
+| **llm-marker**                | `llm`             | The **exact production marking path**: `buildMarkingPrompt` → `ANTHROPIC_MODEL` → `generateFeedback` → `predictGrade` (the production constant, imported - never a literal of its own). The only adapter that can produce an LLM-accuracy figure. | **Offline by default** (fixture replay). Live only with `EVAL_LLM_LIVE=1`. |
 
 ### Offline-CI ↔ live-LLM split (Art. 15 evidence must reproduce offline)
 
@@ -109,11 +109,17 @@ PR and **Provider sign-off** (cj@upskillenergy.com). To finalise: re-ratify
 
 - **CI gate:** fails the build below threshold on any gated slice. Release
   blocker for the marking feature.
-- **Re-eval triggers:** change of the pinned model literal
-  `claude-sonnet-4-20250514`; any prompt change (`prompt-builder.ts`); any
-  change to the boundary table or `mark-schemes/**`; scheduled quarterly;
-  a post-market signal. A model-literal change also invalidates all fixtures
-  (re-record required).
+- **Re-eval triggers:** any change to `ANTHROPIC_MODEL`
+  (`src/lib/anthropic-client.ts`, including via the env override); any prompt
+  change (`prompt-builder.ts`); any change to the boundary table or
+  `mark-schemes/**`; scheduled quarterly; a post-market signal. A model change
+  also invalidates every fixture (re-record required) - the fixture key folds
+  in the model id, and a fixture recorded under another model is rejected on
+  its `model` field.
+- **Why the adapter holds no model literal of its own:** it did until
+  2026-09-17, pinned to `claude-sonnet-4-20250514`, which was retired in June 2026. Production moved twice; the harness did not, and the offline run kept
+  replaying fixtures keyed on the retired id - reporting a figure for a model
+  production had not called since August.
 - **Drift watch:** a QWK drop **> 0.05** vs the previous recorded run on an
   unchanged dataset is a regression to investigate before merge.
 - **Provenance check:** the report prints how many cases used the **AQA

@@ -10,8 +10,12 @@ export interface AdminUserSummary {
   email: string
   firstName: string
   lastName: string
-  dateOfBirth: string
-  country: string
+  // NULL means NOT HELD. The `User.dateOfBirth` / `country` columns were
+  // widened on 2026-09-17 so a projected Supabase account no longer has to
+  // invent them; an admin screen must show "not held" rather than a date or
+  // a country we never collected.
+  dateOfBirth: string | null
+  country: string | null
   role: string
   isMinor: boolean
   accountStatus: string
@@ -26,8 +30,9 @@ export interface AdminUserDetail {
   email: string
   firstName: string
   lastName: string
-  dateOfBirth: string
-  country: string
+  /** NULL means NOT HELD - never a substituted value. */
+  dateOfBirth: string | null
+  country: string | null
   role: string
   isMinor: boolean
   accountStatus: string
@@ -35,7 +40,8 @@ export interface AdminUserDetail {
   createdAt: string
   updatedAt: string
   deletedAt: string | null
-  age: number
+  /** NULL when no date of birth is held, so no age can be stated. */
+  age: number | null
   subscription: {
     plan: string
     status: string
@@ -192,13 +198,17 @@ export async function getUserDetails(userId: string): Promise<AdminUserDetail> {
     throw new AdminAuthError('User not found', 404)
   }
 
-  // Calculate age
-  const today = new Date()
-  const dob = new Date(user.dateOfBirth)
-  let age = today.getFullYear() - dob.getFullYear()
-  const monthDiff = today.getMonth() - dob.getMonth()
-  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
-    age--
+  // Calculate age. No date of birth held means no age can be stated: report
+  // null rather than computing one from a substituted date.
+  let age: number | null = null
+  if (user.dateOfBirth) {
+    const today = new Date()
+    const dob = new Date(user.dateOfBirth)
+    age = today.getFullYear() - dob.getFullYear()
+    const monthDiff = today.getMonth() - dob.getMonth()
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+      age--
+    }
   }
 
   return {
@@ -206,7 +216,7 @@ export async function getUserDetails(userId: string): Promise<AdminUserDetail> {
     email: user.email,
     firstName: user.firstName,
     lastName: user.lastName,
-    dateOfBirth: user.dateOfBirth.toISOString(),
+    dateOfBirth: user.dateOfBirth?.toISOString() ?? null,
     country: user.country,
     role: user.role,
     isMinor: user.isMinor,

@@ -80,7 +80,7 @@ Host firewalls are **always on**, including at home. They provide the final line
 - **HSTS:** enabled with 1-year max-age
 - **WAF managed rules:** enabled (OWASP core rule set + Cloudflare managed rules)
 - **Bot fight mode:** enabled
-- **Rate limiting:** applied to auth endpoints (login, password reset) at a sensible threshold
+- **Rate limiting:** intended on auth endpoints (login, password reset). **Not evidenced.** No screenshot or export of the Cloudflare rule set has been filed, so this must not be relied on as an implemented control; and it is not a substitute for the application-layer limiter, which is itself not enforced (`business-docs/compliance/controls/rate-limiting-control-status.md`). Owner: Founder, to configure and file the evidence
 - **Country blocking:** not routinely applied, but enabled reactively in response to an incident
 - **Firewall rules:** block known bad IP ranges reported by Cloudflare's threat intelligence
 

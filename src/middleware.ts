@@ -4,6 +4,7 @@ import { NextResponse, type NextRequest } from 'next/server'
 import { computeJsonLdHashes, extractAnalysisSlugKey } from '@/lib/seo/json-ld-hashes'
 import { BOARDS } from '@/lib/board/board-config'
 import { BOARD_SPECIFIC_PREFIXES } from '@/lib/board/gated-paths'
+import { evaluateCsrfAttestation } from '@/lib/security/csrf-origin'
 // Note: the previous `import crypto from 'crypto'` worked on Vercel but
 // trips an edge-runtime warning in dev. We use the Web Crypto API
 // (`globalThis.crypto.randomUUID()` / `crypto.subtle.digest`) instead -
@@ -218,13 +219,8 @@ function isBoardAllowlisted(pathname: string): boolean {
   return false
 }
 
-// Allowed origins for mutation requests (CSRF mitigation via Origin check)
-const ALLOWED_ORIGINS = new Set([
-  'https://theenglishhub.app',
-  'https://www.theenglishhub.app',
-  ...(process.env.NEXT_PUBLIC_SITE_URL ? [process.env.NEXT_PUBLIC_SITE_URL] : []),
-  ...(process.env.NODE_ENV === 'development' ? ['http://localhost:3000'] : []),
-])
+// The allow-list of origins whose mutations we accept now lives beside the
+// rule that uses it, in `src/lib/security/csrf-origin.ts`.
 
 // ── CSP nonce generation (P1 #6 follow-up) ─────────────────────────────
 //
@@ -465,44 +461,26 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(target, 308)
   }
 
-  // ── CSRF: Origin header validation for API mutations ─────────────
-  if (pathname.startsWith('/api/') && request.method !== 'GET' && request.method !== 'HEAD') {
-    // Stripe + RevenueCat webhooks come from third-party servers - skip origin check.
-    // Both webhooks authenticate via their own bearer-token / signature mechanism
-    // (Stripe-Signature header, Authorization: Bearer for RC), so the same-origin
-    // attestation below would (correctly) reject them. Vercel cron jobs are also
-    // exempted because they originate inside Vercel's infrastructure.
-    if (
-      !pathname.startsWith('/api/stripe/webhook') &&
-      !pathname.startsWith('/api/revenuecat/webhook') &&
-      !pathname.startsWith('/api/cron/')
-    ) {
-      const origin = request.headers.get('origin')
-      const secFetchSite = request.headers.get('sec-fetch-site')
-
-      // P2-SEC-3: require a same-origin attestation for API mutations.
-      //
-      // Case 1 - Origin header present: it MUST be in the allow-list.
-      // Case 2 - Origin header absent: accept only if Sec-Fetch-Site
-      //   signals same-origin (set by all modern browsers on SPA fetches
-      //   and form submissions). Values 'same-origin' and 'none' are
-      //   safe; 'cross-site' / 'same-site' / missing are not.
-      //
-      // Previously the check passed silently when Origin was absent,
-      // which left a CSRF bypass for CLI-style requests. Known
-      // same-app callers (Stripe webhooks, Vercel cron) are exempted
-      // in the outer `if` above.
-      if (origin) {
-        if (!ALLOWED_ORIGINS.has(origin)) {
-          return NextResponse.json({ error: 'Forbidden: invalid origin' }, { status: 403 })
-        }
-      } else if (secFetchSite !== 'same-origin' && secFetchSite !== 'none') {
-        return NextResponse.json(
-          { error: 'Forbidden: missing same-origin attestation' },
-          { status: 403 },
-        )
-      }
-    }
+  // ── CSRF: same-origin attestation for API mutations ──────────────
+  //
+  // The rule, the threat model it covers, and the reason the previous
+  // version of this check was insufficient all live with the code, in
+  // `src/lib/security/csrf-origin.ts`. Read that before changing this.
+  //
+  // In short: `Origin` is mandatory and must be allow-listed. The previous
+  // check accepted a MISSING `Origin` whenever `Sec-Fetch-Site` was
+  // `same-origin` or `none`, so one forged header passed it - which was
+  // observed in production against the paid AI endpoint. It is a CSRF
+  // control only: it is not authentication and not an abuse cap, and
+  // nothing may claim otherwise.
+  const csrfDecision = evaluateCsrfAttestation({
+    pathname,
+    method: request.method,
+    origin: request.headers.get('origin'),
+    secFetchSite: request.headers.get('sec-fetch-site'),
+  })
+  if (!csrfDecision.allowed) {
+    return NextResponse.json({ error: csrfDecision.error }, { status: csrfDecision.status })
   }
 
   // Board gate: if no board cookie and path is not allowlisted, redirect to /board-select

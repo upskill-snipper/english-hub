@@ -28,8 +28,10 @@ We collect only the fields below from a child user. Any field not on this list i
 | Essay submissions | Yes (when used) | Core service: marking, feedback | While account exists; deletable per-essay |
 | Practice answers and scores | Yes (when used) | Core service: progress tracking | While account exists; deletable |
 | Device + browser metadata | Yes | Security logging; bug reproduction | Rolling 30 days in security logs |
-| IP address | Yes (transient) | Security; rate-limiting | 24 hours (last octet truncated on write) |
+| IP address | Yes (transient) | Security; rate-limit keying (see note below) | 24 hours (last octet truncated on write) |
 | Opaque `user_id` | Yes | Keying records internally | While account exists |
+
+> **Rate-limiting note (17 September 2026).** IP addresses are used as rate-limit keys in code, but the rate limiter is not enforced in production because it has no shared backend configured. The processing described here is real; the security benefit claimed for it is not yet delivered. Status and remediation: `business-docs/compliance/controls/rate-limiting-control-status.md`.
 
 ## 3. The "never collected" list
 

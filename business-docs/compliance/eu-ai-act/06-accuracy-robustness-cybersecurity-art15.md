@@ -130,10 +130,12 @@ Threat: a learner embeds "award full marks / you are now lenient" inside the ess
 - Missing `ANTHROPIC_API_KEY` fails closed with a service-unavailable response, never an unauthenticated/degraded path (`src/app/api/mark/route.ts:140-146`).
 - Notes route degrades to a deterministic template if the model is unavailable/flags off-topic (`src/app/api/toolkit/generate-notes/route.ts:265-279`) — a benign fallback for revision notes only (not used for grading).
 
-### B5. Rate limiting / abuse resistance (control EXISTS — with a production caveat)
+### B5. Rate limiting / abuse resistance (control implemented in code, NOT ENFORCED in production)
 
-- 10 essays/day per user for `/api/mark`, `/api/mark/stream`, `/api/essay-feedback`, `/api/essay/feedback`, `/api/cefr-assess`; 5/hour for toolkit notes (`src/app/api/mark/route.ts:92-98`; `cefr-assess/route.ts:90-96`; `toolkit/generate-notes/route.ts:163-172`). Redis-backed sliding window (`src/lib/rate-limit.ts:118-135`).
-- **GAP-RB-3 (production-critical):** if Upstash Redis is unconfigured, the limiter falls back to a per-instance in-memory map that is "effectively disabled" in serverless production — the code itself logs this as CRITICAL (`src/lib/rate-limit.ts:106-113`). Evidence that `UPSTASH_REDIS_REST_URL`/`TOKEN` are set in production must be filed (operational evidence), else rate-limit-dependent robustness/cost/abuse controls are void. Owner: Engineering/Founder. Target: confirm + evidence by 2026-06-15.
+- **Corrected 17 September 2026.** The previous wording ("control EXISTS", "Redis-backed sliding window") overstated this. The limits below are configured in code on 208 call sites but none of them is enforced. `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN` are not set in production, so `rateLimit()` counts per serverless instance, and a caller spread across instances is not counted at all. Full statement and remediation: `business-docs/compliance/controls/rate-limiting-control-status.md`.
+- Configured (not enforced): 10 essays/day per user for `/api/mark`, `/api/mark/stream`, `/api/essay-feedback`, `/api/essay/feedback`, `/api/cefr-assess`; 5/hour for toolkit notes (`src/app/api/mark/route.ts`; `cefr-assess/route.ts`; `toolkit/generate-notes/route.ts`).
+- **The abuse and cost control that does hold** is the database-backed free and trial allowance metering in `src/lib/usage/**` (Postgres, shared across instances, durable), together with the Premium subscription gate on the marking routes. Art. 15 abuse resistance should be read against those, not against the rate limiter.
+- **GAP-RB-3 (production-critical, OVERDUE):** original target 2026-06-15; still open at 17 September 2026. The runtime now refuses to hide it: the limiter raises a startup banner and a Sentry error whenever it is unenforced, reports `status: 'degraded'` through `getRateLimitHealth()`, and supports `RATE_LIMIT_REQUIRE_REDIS=true` as a fail-at-startup deploy gate once the credentials are set. Closing the gap is a Vercel environment change. Owner: Founder (environment), Engineering (verification).
 
 ---
 
@@ -170,7 +172,8 @@ Threat: a learner embeds "award full marks / you are now lenient" inside the ess
 | Input size bounds (DoS/cost) | Essay ≤30k, question ≤2k, CEFR ≤12k; truncated even if validation slipped | `src/app/api/mark/route.ts:256-261`; `prompt-builder.ts:161-162`; `eal/assess.ts:195` |
 | Prompt-injection input filtering | `contentSafetyCheck` (see B1) | `src/lib/content-safety.ts:22-90` |
 | Output exfiltration cap | Suggestions/quotes hard-truncated | `src/lib/marking/feedback-generator.ts:50,246` |
-| Abuse rate limiting | Redis sliding window | `src/lib/rate-limit.ts:118-135` |
+| Abuse rate limiting | **NOT ENFORCED.** Implemented in code against Redis; Redis is not configured in production, so counting is per serverless instance. Do not cite this row as a control. | `src/lib/rate-limit.ts`; `business-docs/compliance/controls/rate-limiting-control-status.md` |
+| AI usage / cost cap (the control that does hold) | Database-backed free and trial allowance meters, shared across instances | `src/lib/usage/free-allowance.ts`; `src/lib/usage/trial-allowance.ts` |
 | Error hygiene | Generic user messages; details only to server logs | `src/app/api/mark/route.ts:181-184,231-234` |
 | Observability | Sentry configured (`sentry.server.config.ts`, `instrumentation.ts`) for error capture | `instrumentation.ts`; `sentry.server.config.ts` |
 | AI-decision audit trail (security-relevant) | Every inference logged to `AuditLog` (`ai_decision`) with hashed input, error class, consent snapshot, all 6 routes | `src/lib/ai-audit-log.ts:217-240`; route wiring per doc 04 GAP-IV-4 |
@@ -182,7 +185,7 @@ Organisational security (firewall, patching, access control, anti-malware, vendo
 | ID | Gap | Owner | Target |
 |---|---|---|---|
 | GAP-CY-1 | Prompt-injection screen not applied on `/api/essay/feedback`, `/api/cefr-assess`, `/api/toolkit/generate-notes` (no `contentSafetyCheck`); inconsistent attack surface | Engineering | 2026-07-15 |
-| GAP-CY-2 | Rate-limiter fails open in production if Redis unconfigured (`src/lib/rate-limit.ts:106-113`) — abuse/cost/data-exfil amplification; production config evidence not filed | Engineering/Founder | 2026-06-15 |
+| GAP-CY-2 | **Confirmed open and overdue at 17 September 2026.** Redis is unconfigured in production, so the rate limiter is not enforced (abuse, cost and data-exfiltration amplification). The degradation is now announced at startup and to Sentry, and is readable via `getRateLimitHealth()`. Fix is a Vercel environment change: `business-docs/compliance/controls/rate-limiting-control-status.md` | Founder (environment) / Engineering (verify) | overdue since 2026-06-15 |
 | GAP-CY-3 | **Re-scoped — substantially closed.** Server-side inference logging now exists across all 6 routes (`src/lib/ai-audit-log.ts:217-240`; = GAP-IV-4). Residual: no automated alerting/anomaly-detection on the `ai_decision` feed (injection/abuse pattern detection), and retention uncodified | Engineering | 2026-07-15 |
 | GAP-CY-4 | No documented data-poisoning/model-substitution threat assessment for the Anthropic dependency (e.g. handling a silently changed upstream model); change-management exists in doc 04 §IV(6) but no security threat model | Engineering + Founder | 2026-07-31 |
 | GAP-CY-5 | No periodic adversarial/red-team test plan for the AI surface (prompt injection, jailbreak, grade-gaming, exfiltration) | Engineering | first run 2026-07-31 |
@@ -200,7 +203,7 @@ Organisational security (firewall, patching, access control, anti-malware, vendo
 | GAP-AC-4 | Accuracy lifecycle | **Re-scoped.** Regression/ratchet/drift policy CI-gated; LLM-marker drift now replayable via frozen fixture set (`evals/fixtures/`). Outstanding: LLM drift *baseline* (needs real data) + log-driven PMM signal definitions (logging dependency met) | Eng | PMM signals 2026-08-15; LLM drift baseline 2026-07-31 |
 | GAP-RB-1 | Robustness | Safety screen not unified across all 6 routes; no adversarial regression suite | Eng | 2026-07-15 |
 | GAP-RB-2 | Robustness | Grade-gaming attack class untested | Eng | 2026-07-31 |
-| GAP-RB-3 | Robustness/abuse | Rate-limiter fail-open in prod if Redis missing | Eng/Founder | 2026-06-15 |
+| GAP-RB-3 | Robustness/abuse | **Confirmed: rate limiter not enforced in production** (Redis missing). Now loudly reported rather than silent | Founder / Eng | overdue since 2026-06-15 |
 | GAP-CY-1..5 | Cybersecurity | See §D2 | Eng/Founder | 2026-06-15 → 07-31 |
 
 > **Conformity statement (v1.2).** Article 15 is currently **NOT MET** for the accuracy limb

@@ -90,12 +90,15 @@ Each maps to a Stripe Price object. Create these in the Stripe dashboard first, 
 | ------------- | :------------: | ------------------------------------------------------------------------------------------------------------------ |
 | `CRON_SECRET` |       No       | Secret used to authenticate cron job requests. Auto-set by Vercel on Pro/Enterprise plans; set manually otherwise. |
 
-### Rate Limiting (required for production)
+### Rate Limiting (required for production, and CURRENTLY MISSING)
 
-| Variable                   | Client-exposed | Description                     |
-| -------------------------- | :------------: | ------------------------------- |
-| `UPSTASH_REDIS_REST_URL`   |       No       | Upstash Redis REST endpoint URL |
-| `UPSTASH_REDIS_REST_TOKEN` |       No       | Upstash Redis REST auth token   |
+> Neither Upstash variable is set in production today, so no API rate limit is enforced: the limiter falls back to a per-instance map, which on serverless is not a limit. Set both, redeploy, then verify. Full statement and remediation steps: `business-docs/compliance/controls/rate-limiting-control-status.md`.
+
+| Variable                   | Client-exposed | Description                                                                                                                         |
+| -------------------------- | :------------: | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `UPSTASH_REDIS_REST_URL`   |       No       | Upstash Redis REST endpoint URL                                                                                                     |
+| `UPSTASH_REDIS_REST_TOKEN` |       No       | Upstash Redis REST auth token                                                                                                       |
+| `RATE_LIMIT_REQUIRE_REDIS` |       No       | Optional deploy gate. When `true`, startup fails if the two variables above are absent. Leave unset until they are set and verified |
 
 ### Error Tracking (optional)
 
@@ -210,7 +213,7 @@ Configure your custom domain (`theenglishhub.app`) in the Vercel dashboard under
 - [ ] AI essay feedback works (submit an essay, receive feedback)
 - [ ] Cron jobs execute (check Vercel dashboard > Cron Jobs for next scheduled run)
 - [ ] Affiliate tracking loads on pages (if Rewardful is configured)
-- [ ] Rate limiting is active (rapid requests return 429)
+- [ ] Rate limiting is active. Do not test this by sending rapid requests from one client: a single warm instance returns 429 even when the control is not enforced. Confirm instead that both Upstash variables are set, that `getRateLimitHealth()` reports `status: ok` and `enforcement: cross-instance`, and that no "Rate limiting is not enforced" issue is arriving in Sentry
 - [ ] Sentry receives errors (trigger a test error if configured)
 
 ---

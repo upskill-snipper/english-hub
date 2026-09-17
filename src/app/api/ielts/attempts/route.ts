@@ -3,35 +3,64 @@
 // instant store and fires a NON-BLOCKING POST here so attempts also land in the
 // DB - enabling cross-device continuity and B2B teacher analytics.
 //
-// Everything here is GRACEFUL and best-effort: if the user can't be resolved
-// (signed out / pre-supabaseUserId transition) or the `ielts_attempts` table
-// isn't migrated yet, we return a non-fatal `{ persisted: false }` (HTTP 200)
-// and the client is unaffected - localStorage already holds the attempt.
+// The POST is still best-effort by design: the learner must never lose an
+// attempt because a write failed, and localStorage already holds it.
+//
+// The GET is NOT best-effort any more. Until 2026-09-17 it answered
+// `200 { attempts: [] }` in three different situations - genuinely no
+// attempts, no session, and "we could not identify you" - and the last of
+// those was the common case, because only 8 of 200 accounts had a Prisma
+// `User` row. A fifteen-year-old who had completed practice tests was shown
+// an empty record as though it were a fact. An empty state asserted when the
+// truth is unknown is a claim the code cannot support, so the three cases are
+// now told apart: 401 when signed out, 503 when identity or the database
+// cannot answer, and an empty list only when the account really has none.
 // ────────────────────────────────────────────────────────────────────────────
 
 import { NextRequest, NextResponse } from 'next/server'
 import { Prisma } from '@prisma/client'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { prisma } from '@/lib/prisma'
+import { tryPrismaUserId } from '@/lib/identity'
 
 export const runtime = 'nodejs' // Prisma requires the Node.js runtime.
 
-/** Resolve the Prisma User.id for the current Supabase session, or null. */
-async function resolveDbUserId(): Promise<string | null> {
+type Resolution =
+  | { state: 'ok'; userId: string; supabaseUserId: string }
+  | { state: 'signed-out' }
+  | { state: 'unresolved'; supabaseUserId: string }
+
+/**
+ * Resolve the Prisma User.id for the current session, projecting the account
+ * just in time when it has no row yet. Distinguishes "not signed in" from
+ * "signed in but unidentifiable" so callers can answer honestly.
+ */
+async function resolveDbUser(): Promise<Resolution> {
+  let supabaseUserId: string | null = null
   try {
     const supabase = await createServerSupabaseClient()
     const {
       data: { user },
     } = await supabase.auth.getUser()
-    if (!user) return null
-    const dbUser = await prisma.user.findUnique({
-      where: { supabaseUserId: user.id },
-      select: { id: true },
-    })
-    return dbUser?.id ?? null
-  } catch {
-    return null
+    supabaseUserId = user?.id ?? null
+  } catch (err) {
+    console.error('[ielts/attempts] session lookup failed:', err)
+    return { state: 'signed-out' }
   }
+
+  if (!supabaseUserId) return { state: 'signed-out' }
+
+  const userId = await tryPrismaUserId(supabaseUserId)
+  if (!userId) {
+    // Counted, with the id, so the projection gap is measurable instead of
+    // hiding behind an empty array.
+    console.error(
+      `[ielts/attempts] signed-in user ${supabaseUserId} could not be resolved to a Prisma User row.`,
+    )
+    return { state: 'unresolved', supabaseUserId }
+  }
+
+  return { state: 'ok', userId, supabaseUserId }
 }
 
 const asStr = (v: unknown): string | null => (typeof v === 'string' ? v : null)
@@ -39,8 +68,14 @@ const asNum = (v: unknown): number | null =>
   typeof v === 'number' && Number.isFinite(v) ? v : null
 
 export async function POST(request: NextRequest) {
-  const userId = await resolveDbUserId()
-  if (!userId) return NextResponse.json({ persisted: false, reason: 'no-user' })
+  // Deliberately still non-fatal: the attempt is already in localStorage and
+  // the client fires this without awaiting it. The `reason` is specific so a
+  // failure to persist is diagnosable rather than uniform.
+  const resolution = await resolveDbUser()
+  if (resolution.state !== 'ok') {
+    return NextResponse.json({ persisted: false, reason: resolution.state })
+  }
+  const userId = resolution.userId
 
   let body: Record<string, unknown>
   try {
@@ -82,8 +117,23 @@ export async function POST(request: NextRequest) {
 }
 
 export async function GET() {
-  const userId = await resolveDbUserId()
-  if (!userId) return NextResponse.json({ attempts: [] })
+  const resolution = await resolveDbUser()
+
+  if (resolution.state === 'signed-out') {
+    return NextResponse.json({ error: 'Sign in to see your saved attempts.' }, { status: 401 })
+  }
+
+  if (resolution.state === 'unresolved') {
+    return NextResponse.json(
+      {
+        error:
+          'We could not load your attempt history. Your practice attempts on this device are safe. Please try again shortly.',
+      },
+      { status: 503 },
+    )
+  }
+
+  const userId = resolution.userId
 
   try {
     const rows = await prisma.iELTSAttempt.findMany({
@@ -114,7 +164,15 @@ export async function GET() {
           },
     )
     return NextResponse.json({ attempts })
-  } catch {
-    return NextResponse.json({ attempts: [] })
+  } catch (err) {
+    // A database failure is not an empty history. Say so.
+    console.error('[ielts/attempts] read failed:', err)
+    return NextResponse.json(
+      {
+        error:
+          'We could not load your attempt history. Your practice attempts on this device are safe. Please try again shortly.',
+      },
+      { status: 503 },
+    )
   }
 }

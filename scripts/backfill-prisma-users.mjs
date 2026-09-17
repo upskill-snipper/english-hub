@@ -14,14 +14,48 @@
 // reports, subscription linkage, `/api/auth/record-login`'s `updateMany` on
 // email, etc.).
 //
-// It mirrors the exact sentinel + field pattern used by
-// `src/app/api/auth/register/route.ts`:
+// ⚠ READ THIS BEFORE RUNNING - CORRECTED 17 SEPTEMBER 2026
+// --------------------------------------------------------
+// As originally written, THIS SCRIPT WOULD HAVE SWITCHED THE PARENTAL-CONSENT
+// GATE OFF FOR CHILDREN, across the whole user base, in one run.
+//
+// It read the date of birth from `user_metadata.dateOfBirth`. The signup page
+// never writes it there - it sends only full_name, role and the utm_* fields
+// to `signUp options.data`, and puts the real date of birth in
+// `profiles.date_of_birth`. So the lookup missed for essentially every
+// account, the script fell back to a placeholder of 2000-01-01, and derived
+// `isMinor = false` from it. `src/lib/consent-check.ts` treats a false
+// `isMinor` as conclusive, so every 13-year-old would have been recorded as
+// a 26-year-old adult with no guardian consent required, and the invented
+// date would have been returned to them as their real date of birth in any
+// GDPR export (src/lib/dsar.ts).
+//
+// The corrected script:
+//   - reads `profiles` (the row signup actually writes) for the name, date of
+//     birth, role and school;
+//   - NEVER writes a placeholder date of birth or an invented country - a
+//     value we do not hold is written as NULL;
+//   - takes the PROTECTIVE `isMinor: true` when no date of birth is known;
+//   - refuses to create a row at all when no `profiles` row can be read,
+//     because there would be no fact to project;
+//   - preserves the real signup timestamp, so the dormancy clock and the DSAR
+//     export are not reset to today.
+//
+// A projection makes an account ADDRESSABLE. It must never make a gate
+// PERMISSIVE. `src/lib/identity/projection.ts` is the authority on these
+// rules and projects accounts automatically at sign-in; this script exists
+// only for accounts that will not sign in again soon. Keep the two in step,
+// and prefer the identity layer.
+//
+// It mirrors the sentinel + field pattern used by the identity layer:
 //   - `passwordHash: 'SUPABASE_MANAGED'` (non-bcrypt sentinel; fails safe if
 //     ever fed into bcrypt.compare)
-//   - `isMinor` = (age < 16) per the MINOR_AGE_THRESHOLD in register/route.ts
-//   - `role` defaulted to `STUDENT` (schema default) — ADMIN/REVIEWER are
-//     out-of-band and never assignable here
-//   - `country` defaulted to `'GB'` when absent from user_metadata
+//   - `isMinor` = (age < 16) when a real date of birth is known, `true`
+//     otherwise
+//   - `role` from `profiles.role`, defaulted to `STUDENT`. ADMIN and
+//     REVIEWER are out-of-band and are never assignable here - see
+//     ASSIGNABLE_ROLES below for why that matters.
+//   - `country` NULL unless the account actually declared one
 //
 // FOR EACH SUPABASE USER, IN ORDER
 // --------------------------------
@@ -93,11 +127,13 @@
 //     Supabase. The email match in step 2 is exact (lowercased).
 //   - It does NOT flip `supabaseUserId` from NOT NULL — a follow-up migration
 //     should do that once counts are verified.
-//   - Placeholder DOBs (`2000-01-01`) are logged but not flagged otherwise.
-//     Before the dormancy-check cron relies on these rows, someone should
-//     prompt those users to confirm their real DOB, or the cron will use the
-//     placeholder. Audit via:
+//   - It does NOT repair rows an EARLIER run of this script may already have
+//     created with the 2000-01-01 placeholder and `isMinor: false`. Those
+//     accounts are recorded as adults on invented data and must be found and
+//     corrected by hand:
 //       SELECT id, email FROM "User" WHERE "dateOfBirth" = '2000-01-01';
+//     (The 8-row Prisma table observed on 2026-09-17 suggests this script has
+//     never in fact been run against production, but check before assuming.)
 //
 // ============================================================================
 
@@ -116,10 +152,21 @@ const SUPABASE_PAGE_SIZE = 1000
 // on backfilled rows and on rows created by the register handler.
 const SUPABASE_MANAGED_SENTINEL = 'SUPABASE_MANAGED'
 const MINOR_AGE_THRESHOLD = 16
-const DEFAULT_COUNTRY = 'GB'
 const DEFAULT_ROLE = 'STUDENT'
-const VALID_ROLES = new Set(['STUDENT', 'TEACHER', 'PARENT', 'ADMIN', 'REVIEWER'])
-const PLACEHOLDER_DOB = new Date('2000-01-01T00:00:00.000Z')
+// Roles this script may assign. ADMIN and REVIEWER are DELIBERATELY absent.
+// `profiles.role` is user-writable - the RLS policy "Users update own profile"
+// grants FOR UPDATE USING (auth.uid() = id) with no WITH CHECK and no column
+// restriction, and the column's CHECK constraint permits 'admin'. Projecting
+// that value straight through would let any learner who set their own
+// profiles.role = 'admin' become a Prisma ADMIN, which is the authorisation
+// check for the whole admin panel (every child's date of birth, consents and
+// DSARs) and for reading and assigning safeguarding reports about children.
+// Mirrors mapRole() in src/lib/identity/projection.ts, which does this right.
+const ASSIGNABLE_ROLES = new Set(['STUDENT', 'TEACHER', 'PARENT'])
+// The date this script used to stamp when it could find no date of birth.
+// Kept ONLY so a row already carrying it is recognised as "not held" rather
+// than read as a real birth date. It is never written any more.
+const PLACEHOLDER_DOB_ISO = '2000-01-01'
 
 // ── Env validation ──────────────────────────────────────────────────────────
 
@@ -210,6 +257,45 @@ function parseDateOfBirth(raw) {
   return Number.isNaN(parsed.getTime()) ? null : parsed
 }
 
+/** Parse an ISO timestamp, or null. Never a substituted "now". */
+function parseTimestamp(raw) {
+  if (!raw || typeof raw !== 'string') return null
+  const d = new Date(raw)
+  return Number.isNaN(d.getTime()) ? null : d
+}
+
+/**
+ * True for the 2000-01-01 placeholder this script used to stamp, so a row
+ * carrying it is treated as "date of birth not held" rather than as an
+ * adult's real birth date.
+ */
+function isPlaceholderDob(dob) {
+  return dob instanceof Date && dob.toISOString().slice(0, 10) === PLACEHOLDER_DOB_ISO
+}
+
+/**
+ * Read the Supabase `profiles` row for an auth user: the only place a
+ * Supabase-native account's declared name, date of birth, role and school
+ * actually exist. Returns null on a miss or on any read failure - the
+ * caller must treat null as "we do not know", never as "this is an adult".
+ *
+ * Mirrors readIdentityProfile() in src/lib/identity/profiles.ts. Keep the
+ * two in step; src/lib/identity is the authority.
+ */
+async function readProfile(supabaseUserId) {
+  try {
+    const { data, error } = await supabase
+      .from('profiles')
+      .select('id, email, full_name, date_of_birth, role, school_name, exam_board, created_at')
+      .eq('id', supabaseUserId)
+      .maybeSingle()
+    if (error || !data) return null
+    return data
+  } catch {
+    return null
+  }
+}
+
 /**
  * Normalise a metadata role string into a valid Prisma Role enum value, or
  * fall back to STUDENT.
@@ -217,7 +303,7 @@ function parseDateOfBirth(raw) {
 function normaliseRole(raw) {
   if (typeof raw !== 'string') return DEFAULT_ROLE
   const upper = raw.trim().toUpperCase()
-  return VALID_ROLES.has(upper) ? upper : DEFAULT_ROLE
+  return ASSIGNABLE_ROLES.has(upper) ? upper : DEFAULT_ROLE
 }
 
 /**
@@ -301,34 +387,62 @@ async function processUser(user) {
     }
 
     // Step 3: create a fresh projection row.
+    //
+    // The facts come from the `profiles` row, which is what Supabase signup
+    // actually writes (src/app/auth/register/page.tsx sends the date of
+    // birth to `profiles.date_of_birth`, and puts only full_name, role and
+    // the utm_* fields into user_metadata). This script previously read the
+    // date of birth from user_metadata alone, where it is never present, so
+    // every row it created would have taken the 2000-01-01 placeholder -
+    // see the header for what that does to a child's account.
     const metadata = user.user_metadata ?? {}
-    const { firstName, lastName } = splitFullName(metadata.full_name)
+    const profile = await readProfile(user.id)
 
-    let dateOfBirth = parseDateOfBirth(metadata.dateOfBirth)
-    if (!dateOfBirth) {
-      console.warn(
-        `[backfill] No dateOfBirth in user_metadata for ${email} (${user.id}). ` +
-          `Using placeholder ${PLACEHOLDER_DOB.toISOString().slice(0, 10)} — ` +
-          `row needs a real DOB to drive dormancy-check correctly. ` +
-          `Audit later with: SELECT id, email FROM "User" WHERE "dateOfBirth" = '2000-01-01';`,
+    if (!profile) {
+      // We could not establish any fact about this person. Creating a row
+      // now means inventing one. Refuse, and let the operator look.
+      console.error(
+        `[backfill] No profiles row for ${email} (${user.id}) - refusing to create a ` +
+          `projection from no facts. Investigate this account by hand. The account is ` +
+          `also projected automatically on its next sign-in by src/lib/identity.`,
       )
-      dateOfBirth = PLACEHOLDER_DOB
+      return 'errored'
     }
 
+    const { firstName, lastName } = splitFullName(profile.full_name ?? metadata.full_name)
+
+    // Learner's own declaration first, then the signup metadata. No
+    // fallback and no placeholder: a date of birth we do not hold is
+    // recorded as NULL (the column is nullable since 2026-09-17).
+    const parsedDob =
+      parseDateOfBirth(profile.date_of_birth) ?? parseDateOfBirth(metadata.dateOfBirth)
+    const dateOfBirth = parsedDob && !isPlaceholderDob(parsedDob) ? parsedDob : null
+
+    // Unknown age takes the PROTECTIVE value. `false` is permissive: it
+    // short-circuits the parental-consent gate in src/lib/consent-check.ts,
+    // which is how a 13-year-old would have been recorded as a 26-year-old
+    // adult by the previous version of this script.
+    const isMinor = dateOfBirth ? calculateAgeFromDate(dateOfBirth) < MINOR_AGE_THRESHOLD : true
+
+    // Never invent a country. NULL means "not held".
     const country =
       typeof metadata.country === 'string' && metadata.country.trim() !== ''
         ? metadata.country.trim()
-        : DEFAULT_COUNTRY
+        : null
 
-    const role = normaliseRole(metadata.role)
-    const age = calculateAgeFromDate(dateOfBirth)
-    const isMinor = age < MINOR_AGE_THRESHOLD
+    const role = normaliseRole(profile.role ?? metadata.role)
+
+    // Preserve the real signup date: letting @default(now()) fire would
+    // reset the 730-day dormancy clock and misdate the account in a DSAR
+    // export.
+    const createdAt = parseTimestamp(profile.created_at) ?? parseTimestamp(user.created_at)
 
     if (DRY_RUN) {
       console.log(
         `[backfill][dry-run] Would create Prisma row: { email=${email}, ` +
           `supabaseUserId=${user.id}, role=${role}, isMinor=${isMinor}, ` +
-          `country=${country}, dob=${dateOfBirth.toISOString().slice(0, 10)}, ` +
+          `country=${country ?? '(not held)'}, ` +
+          `dob=${dateOfBirth ? dateOfBirth.toISOString().slice(0, 10) : '(not held)'}, ` +
           `firstName="${firstName}", lastName="${lastName}" }`,
       )
       return 'createdNew'
@@ -343,9 +457,13 @@ async function processUser(user) {
         lastName,
         dateOfBirth,
         country,
+        school: profile.school_name ?? null,
         role,
         isMinor,
         accountStatus: 'ACTIVE',
+        ...(createdAt ? { createdAt } : {}),
+        // parentId is left NULL on purpose: writing it would record a
+        // guardian link, which is consent. A projection never grants it.
       },
     })
     return 'createdNew'
