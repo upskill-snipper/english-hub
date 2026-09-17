@@ -47,6 +47,20 @@ vi.mock('@/lib/ai-audit-log', () => ({
 }))
 
 // The engine facade — the model seam. Mocked so the route is exercised offline.
+// The no-card trial AI ceiling. These fixtures are subscribers, not no-card
+// trials, so the meter is a pass-through here - exactly as it is in production
+// for anyone who has paid. The meter itself is covered by
+// src/lib/usage/__tests__/free-allowance.test.ts.
+vi.mock('@/lib/usage/trial-allowance', () => ({
+  EMPTY_TRIAL_GATE: { response: null, consumed: null, state: null },
+  enforceTrialAllowance: vi.fn(async () => ({
+    response: null,
+    consumed: null,
+    state: null,
+  })),
+  refundTrialAllowance: vi.fn(async () => undefined),
+}))
+
 vi.mock('@/lib/marking/engine/mark', () => ({
   markSubmission: vi.fn(),
 }))

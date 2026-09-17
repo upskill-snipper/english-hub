@@ -3,6 +3,13 @@ import { rateLimit } from '@/lib/rate-limit'
 import { SET_TEXTS } from '@/lib/board/set-texts'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { hasActiveSubscription } from '@/lib/course-access'
+import {
+  enforceTrialAllowance,
+  refundTrialAllowance,
+  EMPTY_TRIAL_GATE,
+  type TrialAllowanceGate,
+} from '@/lib/usage/trial-allowance'
+import { applyAllowanceHeaders } from '@/lib/usage/free-allowance'
 import { logAiDecision } from '@/lib/ai-audit-log'
 import { checkMinorAIConsent } from '@/lib/consent-check'
 import { isAiOptedOutServer } from '@/lib/ai-preferences'
@@ -199,6 +206,10 @@ export async function POST(request: NextRequest) {
     )
   }
 
+  // The no-card trial AI ceiling. Declared here so every fallback branch
+  // below can give the allowance back - see src/lib/usage/trial-allowance.ts.
+  let trialGate: TrialAllowanceGate = EMPTY_TRIAL_GATE
+
   try {
     const body: RequestBody = await request.json()
     const { board, topic, targetGrade, weakAreas } = body
@@ -220,6 +231,14 @@ export async function POST(request: NextRequest) {
     let aiAuthored = false
 
     if (anthropicKey) {
+      // NO-CARD TRIAL AI CEILING. Gated INSIDE this branch on purpose: the
+      // deterministic-template fallback below costs nothing, so it must not
+      // consume a use. A trial signup carries `subscription_status = 'pro'`,
+      // the identical flag the paywall above reads, so without this a free
+      // account generates unlimited AI notes.
+      trialGate = await enforceTrialAllowance(request, user)
+      if (trialGate.response) return trialGate.response
+
       // Use Claude for AI-generated notes
       try {
         const text = SET_TEXTS.find(
@@ -337,6 +356,10 @@ Be specific, include example quotations, and give practical exam advice.`
               outputSummary: { rejected: 'OFF_TOPIC', fellBackToTemplate: true },
               errorClass: 'OFF_TOPIC',
             })
+            // The learner is served the deterministic template, not the model, so the
+            // use is given back. A silent allowance burn during a provider outage is
+            // the least visible way this feature can fail.
+            await refundTrialAllowance(trialGate)
             notes = generateTemplateNotes(topic, board || 'aqa', grade, weakAreas || [])
           } else {
             void logAiDecision({
@@ -366,6 +389,10 @@ Be specific, include example quotations, and give practical exam advice.`
             errorClass: `http_${response.status}`,
           })
           // Fallback to template
+          // The learner is served the deterministic template, not the model, so the
+          // use is given back. A silent allowance burn during a provider outage is
+          // the least visible way this feature can fail.
+          await refundTrialAllowance(trialGate)
           notes = generateTemplateNotes(topic, board || 'aqa', grade, weakAreas || [])
         }
       } catch {
@@ -383,24 +410,36 @@ Be specific, include example quotations, and give practical exam advice.`
           errorClass: 'NotesGenerationError',
           errorMessage: 'Anthropic fetch threw; deterministic template used',
         })
+        // The learner is served the deterministic template, not the model, so the
+        // use is given back. A silent allowance burn during a provider outage is
+        // the least visible way this feature can fail.
+        await refundTrialAllowance(trialGate)
         notes = generateTemplateNotes(topic, board || 'aqa', grade, weakAreas || [])
       }
     } else {
       // No API key -- use template-based notes
+      // The learner is served the deterministic template, not the model, so the
+      // use is given back. A silent allowance burn during a provider outage is
+      // the least visible way this feature can fail.
+      await refundTrialAllowance(trialGate)
       notes = generateTemplateNotes(topic, board || 'aqa', grade, weakAreas || [])
     }
 
-    return NextResponse.json({
-      notes,
-      metadata: {
-        topic,
-        board: board || 'aqa',
-        targetGrade: grade,
-        generatedAt: new Date().toISOString(),
-        aiGenerated: aiAuthored,
-      },
-    })
+    return applyAllowanceHeaders(
+      NextResponse.json({
+        notes,
+        metadata: {
+          topic,
+          board: board || 'aqa',
+          targetGrade: grade,
+          generatedAt: new Date().toISOString(),
+          aiGenerated: aiAuthored,
+        },
+      }),
+      trialGate.state,
+    )
   } catch {
+    await refundTrialAllowance(trialGate)
     return NextResponse.json(
       { error: 'Failed to generate notes. Please try again.' },
       { status: 500 },

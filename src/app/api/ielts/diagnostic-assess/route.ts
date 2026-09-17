@@ -8,8 +8,15 @@
 //   • returns ONLY a band estimate + a one-line justification (NOT the full
 //     per-criterion feedback / strengths / improvements the PAID writing- and
 //     speaking-feedback routes give), and
-//   • is rate-limited per user (or per IP when signed out) via the shared
-//     rateLimit() utility every other IELTS route uses.
+//   • is CAPPED by a free allowance held in Postgres
+//     (src/lib/usage/free-allowance.ts): a monthly bucket per signed-in user,
+//     or per salted IP hash when signed out. This replaced the old
+//     rateLimit(key, { limit: 12, windowSeconds: 86_400 }) call, which was
+//     NON-FUNCTIONAL in production - rate-limit.ts falls back to a
+//     process-local Map when Redis is absent, and Redis is absent, so every
+//     serverless instance had its own counter and the cap was no cap at all.
+//     The short-window rateLimit below is now only a burst guard and is NOT
+//     the cap.
 //
 // The detailed, unlimited Writing/Speaking feedback on the dedicated practice
 // pages (api/ielts/writing-feedback, api/ielts/speaking-feedback) stays gated by
@@ -40,6 +47,13 @@ import {
   serviceUnavailableResponse,
   serverErrorResponse,
 } from '@/lib/api-response'
+import {
+  enforceAllowance,
+  refundAllowance,
+  allowanceHeaders,
+  type UsageSubject,
+  type AllowanceState,
+} from '@/lib/usage/free-allowance'
 import { checkMinorAIConsent } from '@/lib/consent-check'
 import { isAiOptedOutServer } from '@/lib/ai-preferences'
 import { contentSafetyCheck } from '@/lib/content-safety'
@@ -261,6 +275,13 @@ function validateRequest(
 // ─── POST handler ───────────────────────────────────────────────────────────
 
 export async function POST(request: NextRequest) {
+  // Declared outside the try so the catch at the bottom can give the free use
+  // back. An unexpected error is still a request the learner got nothing from.
+  let allowanceSubject: UsageSubject | null = null
+  const giveAllowanceBack = async () => {
+    if (allowanceSubject) await refundAllowance(allowanceSubject, 'ielts_diagnostic')
+  }
+
   try {
     // 0. Content-Type
     const contentType = request.headers.get('content-type')
@@ -282,12 +303,15 @@ export async function POST(request: NextRequest) {
       userId = null
     }
 
-    // 2. Rate limit: keyed by user when signed in, else by client IP. A modest
-    //    cap per rolling 24h since each diagnostic only needs 1 writing + 1
-    //    speaking assessment (a couple of retakes are fine).
+    // 2. BURST GUARD ONLY - this is NOT the cap.
+    //    rateLimit() falls back to a per-process in-memory Map when Redis is
+    //    not configured, and Redis is not configured in production, so this
+    //    stops nothing today. It is kept at a short window so it becomes a
+    //    useful burst guard the moment Upstash is wired up. The real cap is the
+    //    free allowance in step 6b, which lives in Postgres.
     const ip = getClientIp(request.headers)
     const rlKey = `ielts-diagnostic-assess:${userId ?? `ip:${ip}`}`
-    const rl = await rateLimit(rlKey, { limit: 12, windowSeconds: 86_400 })
+    const rl = await rateLimit(rlKey, { limit: 6, windowSeconds: 60 })
     if (!rl.success) {
       return rateLimitResponse(rl.resetAt)
     }
@@ -344,6 +368,19 @@ export async function POST(request: NextRequest) {
 
     const systemPrompt = buildSystemPrompt(skill, promptText, request)
 
+    // 6b. FREE ALLOWANCE - the real cap, and the last gate before we spend
+    //     money. It sits here, immediately before the first model call and
+    //     after content-type / auth / consent / AI opt-out / validation /
+    //     content-safety, which is the same position checkMinorAIConsent and
+    //     isAiOptedOutServer occupy in every other AI route. A refusal is a 402
+    //     carrying code 'free_allowance_exhausted' (NOT a 403 or a 429 - see
+    //     allowanceExhaustedResponse). Everything from here on must refund on
+    //     any non-success exit.
+    const gate = await enforceAllowance(request, userId, 'ielts_diagnostic')
+    if (gate.response) return gate.response
+    allowanceSubject = gate.subject
+    const allowanceState = gate.state as AllowanceState
+
     // 7. Generate the assessment.
     let rawText: string
     try {
@@ -360,7 +397,12 @@ export async function POST(request: NextRequest) {
       // no access, 429 = provider overloaded. (No secrets or user text logged.)
       const errorClass = err.error?.type ?? (err.status ? `http_${err.status}` : 'anthropic_error')
       console.error(
-        `[ielts/diagnostic-assess] AI call failed: class=${errorClass} status=${err.status ?? 'n/a'} model=${ANTHROPIC_MODEL}`,
+        // The provider MESSAGE is the diagnostic: class and status alone could
+        // not distinguish "model retired" from "request invalid" during the
+        // 2026-09-17 outage, where two different model ids both returned 400.
+        // It carries no learner content - it is the provider's own description
+        // of what was wrong with OUR request - so it is safe in a server log.
+        `[ielts/diagnostic-assess] AI call failed: class=${errorClass} status=${err.status ?? 'n/a'} model=${ANTHROPIC_MODEL} message=${String((err as { message?: string }).message ?? '').slice(0, 300)}`,
       )
 
       void logAiDecision({
@@ -371,6 +413,11 @@ export async function POST(request: NextRequest) {
         errorClass,
         errorMessage: typeof err.message === 'string' ? err.message.slice(0, 300) : null,
       })
+
+      // The AI never ran, so the learner must not lose the use. Without this a
+      // provider outage silently eats a child's free allowance and nobody sees
+      // it happen.
+      await giveAllowanceBack()
 
       if (
         err.message?.includes('timeout') ||
@@ -401,6 +448,9 @@ export async function POST(request: NextRequest) {
         errorClass:
           parsed.reason === 'invalid_submission' ? 'INVALID_SUBMISSION' : 'unparseable_output',
       })
+
+      // Both exits below are failures for the learner - refund the use.
+      await giveAllowanceBack()
 
       if (parsed.reason === 'invalid_submission') {
         return badRequestResponse(
@@ -441,8 +491,10 @@ export async function POST(request: NextRequest) {
           : 'This is an AI placement estimate from a single short response, not an official IELTS result. Get unlimited detailed, per-criterion feedback in the Writing module.',
     }
 
-    return NextResponse.json(result)
+    // The UI meter updates from these headers, with no second request.
+    return NextResponse.json(result, { headers: allowanceHeaders(allowanceState) })
   } catch (err) {
+    await giveAllowanceBack()
     console.error('[IELTS Diagnostic Assess API] Unexpected error', err)
     Sentry.captureException(err, { tags: { route: 'ielts/diagnostic-assess' } })
     return serverErrorResponse('An unexpected error occurred. Please try again.')

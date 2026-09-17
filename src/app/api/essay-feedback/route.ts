@@ -16,6 +16,13 @@ import {
 } from '@/lib/api-response'
 import { checkMinorAIConsent } from '@/lib/consent-check'
 import { hasActiveSubscription } from '@/lib/course-access'
+import {
+  enforceTrialAllowance,
+  refundTrialAllowance,
+  EMPTY_TRIAL_GATE,
+  type TrialAllowanceGate,
+} from '@/lib/usage/trial-allowance'
+import { applyAllowanceHeaders } from '@/lib/usage/free-allowance'
 import { isAiOptedOutServer } from '@/lib/ai-preferences'
 import { withArabicDirective, resolveLocaleFromRequest } from '@/lib/i18n/ai-language-directive'
 import { logAiDecision } from '@/lib/ai-audit-log'
@@ -140,6 +147,12 @@ IMPORTANT: You MUST respond with ONLY a valid JSON object (no markdown, no code 
 // ── Handler ──────────────────────────────────────────────────────────────────
 
 export async function POST(request: NextRequest) {
+  // The no-card trial AI ceiling is held here rather than inside the try below,
+  // so the catch at the bottom can still give the allowance back. A paying
+  // subscriber and a card-on-file trial are never metered - see
+  // src/lib/usage/trial-allowance.ts.
+  let trialGate: TrialAllowanceGate = EMPTY_TRIAL_GATE
+
   try {
     // 0. Content-Type validation
     const contentType = request.headers.get('content-type')
@@ -209,10 +222,22 @@ export async function POST(request: NextRequest) {
       return badRequestResponse(safetyError)
     }
 
+    // NO-CARD TRIAL AI CEILING. This is the last gate before we spend money,
+    // and it sits in the same position as checkMinorAIConsent and
+    // isAiOptedOutServer: after content-type / auth / entitlement / consent /
+    // AI opt-out / validation / content-safety, immediately before the first
+    // model call. A trial signup carries `subscription_status = 'pro'`, the
+    // identical flag the paywall above reads, so without this a free account
+    // has the same unlimited AI access a paying one does. Refused with 402 and
+    // code 'free_allowance_exhausted', never 403 or 429.
+    trialGate = await enforceTrialAllowance(request, user)
+    if (trialGate.response) return trialGate.response
+
     // 6. Check for Anthropic API key
     const apiKey = process.env.ANTHROPIC_API_KEY
     if (!apiKey) {
       console.error('ANTHROPIC_API_KEY not configured')
+      await refundTrialAllowance(trialGate)
       return serviceUnavailableResponse(
         'Essay feedback is temporarily unavailable. Please try again later.',
       )
@@ -278,12 +303,14 @@ export async function POST(request: NextRequest) {
         err.error?.type === 'timeout_error'
       ) {
         console.error('[api/essay-feedback] Anthropic API timeout')
+        await refundTrialAllowance(trialGate)
         return serviceUnavailableResponse('The AI service timed out. Please try again.')
       }
 
       // Anthropic rate limit (upstream)
       if (err.status === 429) {
         console.error('[api/essay-feedback] Anthropic rate limit hit')
+        await refundTrialAllowance(trialGate)
         return serviceUnavailableResponse(
           'The AI service is temporarily overloaded. Please try again in a moment.',
         )
@@ -291,6 +318,7 @@ export async function POST(request: NextRequest) {
 
       // Other Anthropic errors are service errors
       console.error('[api/essay-feedback] Anthropic API error:', aiError)
+      await refundTrialAllowance(trialGate)
       return serviceUnavailableResponse(
         'The AI feedback service is currently unavailable. Please try again later.',
       )
@@ -329,6 +357,7 @@ export async function POST(request: NextRequest) {
           outputSummary: { rejected: 'INVALID_SUBMISSION' },
           errorClass: 'INVALID_SUBMISSION',
         })
+        await refundTrialAllowance(trialGate)
         return badRequestResponse(
           'Your submission does not appear to be an essay. Please paste your own written work for feedback.',
         )
@@ -346,6 +375,7 @@ export async function POST(request: NextRequest) {
           outputSummary: { rejected: 'OFF_TOPIC' },
           errorClass: 'OFF_TOPIC',
         })
+        await refundTrialAllowance(trialGate)
         return badRequestResponse(
           'This tool only provides feedback on GCSE English essays. Please submit English Language or Literature work.',
         )
@@ -362,11 +392,13 @@ export async function POST(request: NextRequest) {
         typeof parsed.annotatedFeedback !== 'string'
       ) {
         console.error('AI response missing required fields:', Object.keys(parsed))
+        await refundTrialAllowance(trialGate)
         return serverErrorResponse('The AI returned an incomplete response. Please try again.')
       }
 
       if (!VALID_GRADE_BANDS.includes(parsed.gradeBand)) {
         console.error('AI returned invalid grade band:', parsed.gradeBand)
+        await refundTrialAllowance(trialGate)
         return serverErrorResponse('The AI returned an invalid grade band. Please try again.')
       }
 
@@ -385,6 +417,7 @@ export async function POST(request: NextRequest) {
         errorMessage: 'Model response was not valid JSON',
       })
       console.error('Failed to parse Claude response:', parseError, responseText.slice(0, 500))
+      await refundTrialAllowance(trialGate)
       return serverErrorResponse('Failed to process feedback. Please try again.')
     }
 
@@ -497,13 +530,17 @@ export async function POST(request: NextRequest) {
     }
 
     // 11. Return structured feedback
-    return NextResponse.json({
-      feedback,
-      essayId,
-      remaining: rl.remaining,
-    })
+    return applyAllowanceHeaders(
+      NextResponse.json({
+        feedback,
+        essayId,
+        remaining: rl.remaining,
+      }),
+      trialGate.state,
+    )
   } catch (err) {
     console.error('[api/essay-feedback] Unexpected error:', err)
+    await refundTrialAllowance(trialGate)
     return serverErrorResponse('Something went wrong. Please try again later.')
   }
 }

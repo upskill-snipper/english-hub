@@ -47,6 +47,13 @@ import {
 } from '@/lib/api-response'
 import { checkMinorAIConsent } from '@/lib/consent-check'
 import { hasIeltsAccess } from '@/lib/course-access'
+import {
+  enforceTrialAllowance,
+  refundTrialAllowance,
+  EMPTY_TRIAL_GATE,
+  type TrialAllowanceGate,
+} from '@/lib/usage/trial-allowance'
+import { applyAllowanceHeaders } from '@/lib/usage/free-allowance'
 import { isAiOptedOutServer } from '@/lib/ai-preferences'
 import { contentSafetyCheck } from '@/lib/content-safety'
 import { withArabicDirective, resolveLocaleFromRequest } from '@/lib/i18n/ai-language-directive'
@@ -460,6 +467,12 @@ async function callModel(
 // ─── POST handler ───────────────────────────────────────────────────────────
 
 export async function POST(request: NextRequest) {
+  // The no-card trial AI ceiling is held here rather than inside the try below,
+  // so the catch at the bottom can still give the allowance back. A paying
+  // subscriber and a card-on-file trial are never metered - see
+  // src/lib/usage/trial-allowance.ts.
+  let trialGate: TrialAllowanceGate = EMPTY_TRIAL_GATE
+
   try {
     // 0. Content-Type validation
     const contentType = request.headers.get('content-type')
@@ -550,6 +563,17 @@ export async function POST(request: NextRequest) {
       ipAddress: request.headers.get('x-forwarded-for'),
     }
 
+    // NO-CARD TRIAL AI CEILING. This is the last gate before we spend money,
+    // and it sits in the same position as checkMinorAIConsent and
+    // isAiOptedOutServer: after content-type / auth / entitlement / consent /
+    // AI opt-out / validation / content-safety, immediately before the first
+    // model call. A trial signup carries `subscription_status = 'pro'`, the
+    // identical flag the paywall above reads, so without this a free account
+    // has the same unlimited AI access a paying one does. Refused with 402 and
+    // code 'free_allowance_exhausted', never 403 or 429.
+    trialGate = await enforceTrialAllowance(request, user)
+    if (trialGate.response) return trialGate.response
+
     // 5. Generate AI feedback: one model call per question, plus an overall
     // summary, all in parallel.
     const overallUserContent = UCAS_QUESTIONS.map(
@@ -593,13 +617,16 @@ export async function POST(request: NextRequest) {
         err.message?.includes('ETIMEDOUT') ||
         err.error?.type === 'timeout_error'
       ) {
+        await refundTrialAllowance(trialGate)
         return serviceUnavailableResponse('AI feedback service timed out. Please try again.')
       }
       if (err.status === 429) {
+        await refundTrialAllowance(trialGate)
         return serviceUnavailableResponse(
           'AI feedback service is temporarily overloaded. Please try again in a moment.',
         )
       }
+      await refundTrialAllowance(trialGate)
       return serviceUnavailableResponse(
         'AI feedback service is currently unavailable. Please try again later.',
       )
@@ -703,14 +730,18 @@ export async function POST(request: NextRequest) {
     })
 
     // 8. Return the validated feedback (plus a disclaimer for the UI).
-    return NextResponse.json({
-      feedback,
-      disclaimer:
-        'This is AI-generated guidance for IELTS / UK-study preparation only. It is not an official UCAS or university service, and it is not a prediction or guarantee of any admissions decision.',
-    } satisfies { feedback: StatementFeedback; disclaimer: string })
+    return applyAllowanceHeaders(
+      NextResponse.json({
+        feedback,
+        disclaimer:
+          'This is AI-generated guidance for IELTS / UK-study preparation only. It is not an official UCAS or university service, and it is not a prediction or guarantee of any admissions decision.',
+      } satisfies { feedback: StatementFeedback; disclaimer: string }),
+      trialGate.state,
+    )
   } catch (err) {
     console.error('[IELTS Statement Feedback API] Unexpected error', err)
     Sentry.captureException(err, { tags: { route: 'ielts/statement-feedback' } })
+    await refundTrialAllowance(trialGate)
     return serverErrorResponse('An unexpected error occurred. Please try again.')
   }
 }

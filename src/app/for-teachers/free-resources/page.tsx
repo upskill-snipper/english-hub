@@ -909,7 +909,7 @@ export default function FreeResourcesPage() {
           <h2 className="text-2xl font-bold mb-2">{tr(`Ready to Transform Your Teaching?`)}</h2>
           <p className="text-muted-foreground max-w-xl mx-auto mb-8">
             Get full access to every lesson plan, worksheet, teaching guide, AI essay marking, and
-            student progress tracking. Start a 7-day free trial — no card required — then continue
+            student progress tracking. Start a 7-day free trial - no card required - then continue
             for a small monthly or annual fee.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

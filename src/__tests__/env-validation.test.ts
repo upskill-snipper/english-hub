@@ -46,9 +46,7 @@ describe('validateEnv', () => {
     const { validateEnv } = await import('@/lib/env-validation')
     validateEnv()
 
-    expect(consoleSpy).toHaveBeenCalledWith(
-      expect.stringContaining('ANTHROPIC_API_KEY')
-    )
+    expect(consoleSpy).toHaveBeenCalledWith(expect.stringContaining('ANTHROPIC_API_KEY'))
     consoleSpy.mockRestore()
   })
 
@@ -68,7 +66,9 @@ describe('validateEnv', () => {
     vi.spyOn(console, 'error').mockImplementation(() => {})
 
     const { validateEnv } = await import('@/lib/env-validation')
-    expect(() => validateEnv()).toThrow(/STRIPE_SECRET_KEY.*ANTHROPIC_API_KEY|ANTHROPIC_API_KEY.*STRIPE_SECRET_KEY/)
+    expect(() => validateEnv()).toThrow(
+      /STRIPE_SECRET_KEY.*ANTHROPIC_API_KEY|ANTHROPIC_API_KEY.*STRIPE_SECRET_KEY/,
+    )
   })
 
   it('warns about missing optional vars', async () => {
@@ -78,18 +78,26 @@ describe('validateEnv', () => {
     validateEnv()
 
     // At least one recommended/optional var should be missing (we didn't set any)
-    expect(warnSpy).toHaveBeenCalledWith(
-      expect.stringContaining('[env-validation] Warnings')
-    )
+    expect(warnSpy).toHaveBeenCalledWith(expect.stringContaining('[env-validation] Warnings'))
     warnSpy.mockRestore()
   })
 
   it('does not warn when all optional vars are set', async () => {
     const optionalVars = [
-      'UPSTASH_REDIS_REST_URL', 'UPSTASH_REDIS_REST_TOKEN',
-      'REWARDFUL_API_SECRET', 'NEXT_PUBLIC_REWARDFUL_KEY',
-      'CRON_SECRET', 'CSRF_SECRET', 'NEXT_PUBLIC_SENTRY_DSN', 'SENTRY_DSN',
-      'NEXT_PUBLIC_GA4_ID', 'RESEND_API_KEY', 'ADMIN_EMAILS',
+      'UPSTASH_REDIS_REST_URL',
+      'UPSTASH_REDIS_REST_TOKEN',
+      'REWARDFUL_API_SECRET',
+      'NEXT_PUBLIC_REWARDFUL_KEY',
+      'CRON_SECRET',
+      'CSRF_SECRET',
+      'NEXT_PUBLIC_SENTRY_DSN',
+      'SENTRY_DSN',
+      'NEXT_PUBLIC_GA4_ID',
+      'RESEND_API_KEY',
+      'ADMIN_EMAILS',
+      // Required in production by the free-allowance meter: an unsalted or
+      // known-salt IP hash is reversible and would still be personal data.
+      'IP_HASH_SALT',
     ]
     for (const v of optionalVars) {
       vi.stubEnv(v, `test-value-${v}`)

@@ -111,6 +111,20 @@ const anthropicCreate = vi.fn(async (..._args: unknown[]) => ({
   content: [{ type: 'text', text: '{"ok":true}' }],
   usage: { input_tokens: 10, output_tokens: 20 },
 }))
+// The no-card trial AI ceiling. These fixtures are subscribers, not no-card
+// trials, so the meter is a pass-through here - exactly as it is in production
+// for anyone who has paid. The meter itself is covered by
+// src/lib/usage/__tests__/free-allowance.test.ts.
+vi.mock('@/lib/usage/trial-allowance', () => ({
+  EMPTY_TRIAL_GATE: { response: null, consumed: null, state: null },
+  enforceTrialAllowance: vi.fn(async () => ({
+    response: null,
+    consumed: null,
+    state: null,
+  })),
+  refundTrialAllowance: vi.fn(async () => undefined),
+}))
+
 vi.mock('@/lib/anthropic-client', () => ({
   getAnthropicClient: () => ({ messages: { create: (...a: unknown[]) => anthropicCreate(...a) } }),
   ANTHROPIC_MODEL: 'claude-test',

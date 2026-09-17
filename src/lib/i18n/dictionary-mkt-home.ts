@@ -609,10 +609,15 @@ export const MKT_HOME_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     ar: 'كل ميزة متاحة للتجربة',
     es: 'Todas las funciones disponibles para probar',
   },
+  // 2026-09-17: was 'No credit card. No time limit. Try each premium tool 3
+  // times free...'. Both claims were false: the 3-free-uses mechanic never
+  // existed on the web, and the no-card trial is time limited to 7 days. This
+  // is the /for-teachers hero body, so it was the most prominent surviving copy
+  // of the claim removed elsewhere on 2026-08-23.
   'mkt.teachers.ft.startfree.body': {
-    en: 'No credit card. No time limit. Try each premium tool 3 times free and see the results for yourself before you pay a penny.',
-    ar: 'بدون بطاقة. بدون حد زمني. جرّب كل أداة Premium 3 مرّات ببلاش وشوف النتائج بنفسك قبل ما تدفع ولا قرش.',
-    es: 'Sin tarjeta de crédito. Sin límite de tiempo. Prueba cada herramienta premium 3 veces gratis y comprueba los resultados por ti mismo antes de pagar un solo céntimo.',
+    en: 'No credit card. Your account starts a 7-day free trial of every premium tool, so you can see the results for yourself before you pay a penny.',
+    ar: 'بدون بطاقة. حسابك يبدأ بتجربة مجانية ٧ أيام لكل أداة Premium، عشان تشوف النتائج بنفسك قبل ما تدفع ولا قرش.',
+    es: 'Sin tarjeta de crédito. Tu cuenta comienza una prueba gratuita de 7 días de todas las herramientas premium, para que compruebes los resultados por ti mismo antes de pagar un solo céntimo.',
   },
   'mkt.teachers.ft.tool.lesson_plans.title': {
     en: 'AI Lesson Plans',

@@ -33,6 +33,13 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { hasIeltsAccess } from '@/lib/course-access'
+import {
+  enforceTrialAllowance,
+  refundTrialAllowance,
+  EMPTY_TRIAL_GATE,
+  type TrialAllowanceGate,
+} from '@/lib/usage/trial-allowance'
+import { applyAllowanceHeaders } from '@/lib/usage/free-allowance'
 import { rateLimit } from '@/lib/rate-limit'
 import { checkMinorAIConsent } from '@/lib/consent-check'
 import { contentSafetyCheck } from '@/lib/content-safety'
@@ -76,6 +83,12 @@ interface IeltsWt2RequestBody {
 // ─── Handler ─────────────────────────────────────────────────────────────────
 
 export async function POST(request: NextRequest) {
+  // The no-card trial AI ceiling is held here rather than inside the try below,
+  // so the catch at the bottom can still give the allowance back. A paying
+  // subscriber and a card-on-file trial are never metered - see
+  // src/lib/usage/trial-allowance.ts.
+  let trialGate: TrialAllowanceGate = EMPTY_TRIAL_GATE
+
   try {
     // 1. Content-Type — reject non-JSON early (mirrors /api/mark).
     const contentType = request.headers.get('content-type')
@@ -167,6 +180,17 @@ export async function POST(request: NextRequest) {
 
     // ── Past the gate: a green baseline is promoted AND the flag is on. ──────────
 
+    // NO-CARD TRIAL AI CEILING. This is the last gate before we spend money,
+    // and it sits in the same position as checkMinorAIConsent and
+    // isAiOptedOutServer: after content-type / auth / entitlement / consent /
+    // AI opt-out / validation / content-safety, immediately before the first
+    // model call. A trial signup carries `subscription_status = 'pro'`, the
+    // identical flag the paywall above reads, so without this a free account
+    // has the same unlimited AI access a paying one does. Refused with 402 and
+    // code 'free_allowance_exhausted', never 403 or 429.
+    trialGate = await enforceTrialAllowance(request, user)
+    if (trialGate.response) return trialGate.response
+
     // 9. Mark via the engine facade (Seam C). This is the FIRST model call in the
     //    request — everything above is non-model gating. Build the canonical
     //    EngineInput; the facade routes → resolves pack → retrieves → marks →
@@ -238,6 +262,7 @@ export async function POST(request: NextRequest) {
       // Fail-closed (doc 10 §1.2): NO_PACK / AMBIGUOUS_SUBMISSION / INVALID_METADATA
       // and any engine error surface as a service error rather than a guessed mark.
       console.error('[api/marking/ielts-writing-task2] engine error', err)
+      await refundTrialAllowance(trialGate)
       return serviceUnavailableResponse(
         'The AI marking service is currently unavailable. Please try again later.',
       )
@@ -253,6 +278,7 @@ export async function POST(request: NextRequest) {
     // POSITIVE discriminant unique to the finished-mark arm: only EngineMarkResult
     // carries `disposition`. Its ABSENCE means routing returned NeedsConfirmation.
     if (!('disposition' in outcome)) {
+      await refundTrialAllowance(trialGate)
       return badRequestResponse(
         'We could not confidently identify this as an IELTS Writing Task 2 response. Please resubmit.',
       )
@@ -274,6 +300,7 @@ export async function POST(request: NextRequest) {
     } catch (err) {
       // Persistence failure must not leak a mark that was never durably recorded.
       console.error('[api/marking/ielts-writing-task2] persist failed', err)
+      await refundTrialAllowance(trialGate)
       return serverErrorResponse('Failed to save your mark. Please try again.')
     }
 
@@ -293,13 +320,17 @@ export async function POST(request: NextRequest) {
     // 12. Return the OQ-5 disposition + the validated mark.
     //     `disposition === 'show_ai_practice_feedback'` ⇔ shown-eligible; otherwise
     //     `'needs_human_review'` — the client must NOT present it as a confident mark.
-    return NextResponse.json({
-      disposition,
-      result,
-      remaining: rl.remaining,
-    })
+    return applyAllowanceHeaders(
+      NextResponse.json({
+        disposition,
+        result,
+        remaining: rl.remaining,
+      }),
+      trialGate.state,
+    )
   } catch (err) {
     console.error('[api/marking/ielts-writing-task2] unexpected error', err)
+    await refundTrialAllowance(trialGate)
     return serverErrorResponse('Something went wrong. Please try again later.')
   }
 }

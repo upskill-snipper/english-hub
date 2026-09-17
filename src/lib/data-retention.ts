@@ -23,6 +23,16 @@ export const RETENTION_PERIODS = {
   /** Individual usage/analytics data: 12 months, then anonymised */
   USAGE_DATA_MONTHS: 12,
 
+  /**
+   * Free-allowance counters (`free_allowance_usage`): 90 days.
+   *
+   * Deliberately much shorter than USAGE_DATA_MONTHS. The 'ip' rows hold a
+   * salted sha256 of a client IP, which remains personal data under UK GDPR,
+   * and a counter is worthless once its window has closed. 90 days keeps a
+   * couple of monthly buckets for founder reporting and nothing more.
+   */
+  FREE_ALLOWANCE_DAYS: 90,
+
   /** Support communications: 2 years after resolution */
   SUPPORT_COMMS_YEARS: 2,
 
@@ -43,6 +53,8 @@ export interface CleanupSummary {
   inactiveWarningsSent: string[]
   inactiveSoftDeleted: string[]
   usageDataAnonymised: number
+  /** free_allowance_usage rows deleted by the 90-day sweep */
+  freeAllowanceRowsPurged: number
   supportTicketsArchived: number
   expiredMarketingConsents: number
   childrenPriorityCleanups: number
@@ -106,6 +118,31 @@ async function auditRetentionAction(
   })
 }
 
+// ─── Free-allowance deletion ────────────────────────────────────────────
+
+/**
+ * Delete this user's free-allowance counters.
+ *
+ * `free_allowance_usage` has NO foreign key to `User` by design (a large share
+ * of accounts exist only in Supabase and have no Prisma `User` row, and the
+ * 'ip' subject has no user at all - see src/lib/usage/free-allowance.ts), so
+ * nothing cascades. Erasure has to be wired by hand, here.
+ *
+ * The stored `subject_key` for a signed-in user is the SUPABASE auth uuid, not
+ * the Prisma cuid, so we delete on both: the uuid is the real key, and the cuid
+ * is a cheap guard against any caller that ever passes the wrong identifier.
+ */
+async function deleteFreeAllowanceRows(
+  userId: string,
+  supabaseUserId: string | null,
+): Promise<void> {
+  const keys = [userId, supabaseUserId].filter((k): k is string => Boolean(k))
+  if (keys.length === 0) return
+  await prisma.freeAllowanceUsage.deleteMany({
+    where: { subjectType: 'user', subjectKey: { in: keys } },
+  })
+}
+
 // ─── Main cleanup function ──────────────────────────────────────────────
 
 /**
@@ -128,6 +165,7 @@ export async function cleanupExpiredData(): Promise<CleanupSummary> {
     inactiveWarningsSent: [],
     inactiveSoftDeleted: [],
     usageDataAnonymised: 0,
+    freeAllowanceRowsPurged: 0,
     supportTicketsArchived: 0,
     expiredMarketingConsents: 0,
     childrenPriorityCleanups: 0,
@@ -328,6 +366,35 @@ export async function cleanupExpiredData(): Promise<CleanupSummary> {
   // ── 4. Anonymise usage/analytics data older than 12 months ─────────
   // [PHASE:schema-extension] Implement when UsageEvent model is added to Prisma schema.
 
+  // ── 4b. Purge expired free-allowance counters (90 days) ────────────
+  //
+  // These rows are what gives the salted IP hashes a retention story: a
+  // counter for a window that closed months ago has no purpose, and an 'ip'
+  // row holds a hash of a client IP. 90 days sits well inside the published
+  // 12-month usage-data policy.
+
+  try {
+    const allowanceCutoff = daysAgo(RETENTION_PERIODS.FREE_ALLOWANCE_DAYS)
+    const purged = await prisma.freeAllowanceUsage.deleteMany({
+      where: { lastUsedAt: { lte: allowanceCutoff } },
+    })
+
+    summary.freeAllowanceRowsPurged = purged.count
+
+    if (purged.count > 0) {
+      await auditRetentionAction('FREE_ALLOWANCE_COUNTERS_PURGED', null, {
+        recordsPurged: purged.count,
+        cutoffDate: allowanceCutoff.toISOString(),
+        retentionDays: RETENTION_PERIODS.FREE_ALLOWANCE_DAYS,
+      })
+    }
+  } catch (err) {
+    summary.errors.push({
+      step: 'free_allowance_cleanup',
+      message: err instanceof Error ? err.message : String(err),
+    })
+  }
+
   // ── 5. Archive/delete support tickets older than 2 years ───────────
   // [PHASE:schema-extension] Implement when SupportTicket model is added to Prisma schema.
 
@@ -376,6 +443,7 @@ export async function cleanupExpiredData(): Promise<CleanupSummary> {
       inactiveWarningsSent: summary.inactiveWarningsSent.length,
       inactiveSoftDeleted: summary.inactiveSoftDeleted.length,
       usageDataAnonymised: summary.usageDataAnonymised,
+      freeAllowanceRowsPurged: summary.freeAllowanceRowsPurged,
       supportTicketsArchived: summary.supportTicketsArchived,
       expiredMarketingConsents: summary.expiredMarketingConsents,
       childrenPriorityCleanups: summary.childrenPriorityCleanups,
@@ -395,6 +463,18 @@ export async function cleanupExpiredData(): Promise<CleanupSummary> {
  */
 export async function anonymiseUser(userId: string): Promise<void> {
   const anonymisedEmail = `deleted-${userId}@anonymised.invalid`
+
+  // Capture the Supabase uuid before the transaction: it is the key the
+  // free-allowance counters are stored under.
+  const identity = await prisma.user.findUnique({
+    where: { id: userId },
+    select: { supabaseUserId: true },
+  })
+
+  // 0. Free-allowance counters. Done outside the transaction because the
+  //    table has no FK to User and nothing cascades - see
+  //    deleteFreeAllowanceRows().
+  await deleteFreeAllowanceRows(userId, identity?.supabaseUserId ?? null)
 
   await prisma.$transaction(
     async (tx: Parameters<Parameters<typeof prisma.$transaction>[0]>[0]) => {
@@ -575,6 +655,20 @@ export async function hardDeleteUser(userId: string): Promise<void> {
       },
     })
   })
+
+  // 12b. Free-allowance counters. `free_allowance_usage` has NO foreign key to
+  // `User` (by design - see src/lib/usage/free-allowance.ts), so nothing
+  // cascades and this MUST be explicit or the salted IP/user counters outlive
+  // the erasure. Outside the transaction, same as the Supabase step below, and
+  // best-effort: the Prisma commit has already succeeded.
+  try {
+    await deleteFreeAllowanceRows(userId, supabaseUserId)
+  } catch (err) {
+    console.error(
+      `[hardDeleteUser] free_allowance_usage rows could not be deleted for prisma.User.id=${userId}`,
+      err,
+    )
+  }
 
   // 13. P1 (Cycle 2 security): also delete the Supabase auth.users row.
   // The Prisma transaction above only covers Prisma-owned tables; without

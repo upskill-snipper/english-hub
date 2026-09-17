@@ -674,7 +674,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'auth.register.student_title': 'Create your free account',
   'auth.register.teacher_title': 'Start your free teacher account',
   'auth.register.student_subtitle':
-    'No credit card required. Try every premium feature 3 times, free.',
+    'No credit card required. Your account starts a 7-day free trial of every premium feature.',
   'auth.register.teacher_subtitle': 'Save 5+ hours per week with AI lesson planning and marking.',
   'auth.register.whats_included': "What's included free",
   'auth.register.included_courses': 'Courses, revision notes, flashcards (unlimited)',
@@ -5157,9 +5157,9 @@ export const EN_MESSAGES: Record<string, string> = {
   'terms.s4.p_trial_strong': '7-day free trial.',
   'terms.s4.p_trial_text':
     ' Two free-trial mechanisms exist. (a) Account trial: creating an account starts a single 7-day free trial of the platform. No payment method is required; when it ends, premium features pause and nothing is charged. (b) Plan trial: when you start your first paid plan at checkout, the plan begins with a 7-day free period and requires a valid payment method. If you do not cancel before that free period ends, your chosen subscription plan activates automatically and your payment method is charged the applicable plan price. You will receive a reminder email at least two days before it expires. Cancel any time before the end of day seven from your account settings and you will not be charged.',
-  'terms.s4.p_demo_strong': 'Pre-paywall demo.',
+  'terms.s4.p_demo_strong': 'Free access and usage limits.',
   'terms.s4.p_demo_text':
-    ' Separately from the trial, every registered account may use most premium features up to three times without providing payment details so you can evaluate the product before committing.',
+    ' Separately from the trials, a large part of the site is free to use without an account, including revision notes, poetry guides, technique material and the IELTS placement test. No payment details are taken for any of it. Free access, including free AI checks, may be subject to reasonable usage limits so that the service stays available and affordable for everyone. Where a limit applies we show it to you before you reach it, and we may change it from time to time.',
   'terms.s4.p_codes_strong': 'Promotional and affiliate codes.',
   'terms.s4.p_codes_text_pre': ' Affiliate codes and the public code',
   'terms.s4.p_codes_text_post':
@@ -6040,7 +6040,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'pricing.feat.badge_n_free': '{n} free',
   'pricing.always_free_label': 'Always free',
   'pricing.premium_label': 'Premium',
-  'pricing.premium_then_unlimited_prefix': '- free for 7 days, then unlimited with a plan',
+  'pricing.premium_then_unlimited_prefix': '- free for 7 days, then included with a plan',
   'pricing.school_receives.heading': 'What your school receives',
   'pricing.school_receives.1': 'Full platform access for every teacher and student',
   'pricing.school_receives.2': 'Early access to new features before public release',
@@ -15015,7 +15015,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'mkt.teachers.ft.startfree.badge': 'Start Free',
   'mkt.teachers.ft.startfree.title': 'Every Feature Available to Try',
   'mkt.teachers.ft.startfree.body':
-    'No credit card. No time limit. Try each premium tool 3 times free and see the results for yourself before you pay a penny.',
+    'No credit card. Your account starts a 7-day free trial of every premium tool, so you can see the results for yourself before you pay a penny.',
   'mkt.teachers.ft.tool.lesson_plans.title': 'AI Lesson Plans',
   'mkt.teachers.ft.tool.lesson_plans.desc':
     'Generate complete, exam-board-aligned lessons in seconds. Starter, main tasks, plenary - all done.',
@@ -16303,6 +16303,13 @@ export const EN_MESSAGES: Record<string, string> = {
     'Read a short conversation transcript and answer 4 questions.',
   'ielts.diagnostic.intro.writing.body': 'Write one short essay and get an AI band estimate.',
   'ielts.diagnostic.intro.speaking.body': 'Answer one spoken question and get an AI band estimate.',
+  'ielts.diagnostic.usage.see_plans': 'See plans',
+  'ielts.diagnostic.usage.last_free_note':
+    'A plan adds unlimited AI checks, full per-criterion feedback and the mock exams.',
+  'ielts.diagnostic.usage.exhausted_title': 'Your free AI checks are used up for now',
+  'ielts.diagnostic.usage.exhausted_fallback':
+    'You can still finish the diagnostic - skip this task and we will estimate this band conservatively.',
+  'ielts.diagnostic.usage.renews_on': 'Your free checks renew on {date}.',
   'ielts.diagnostic.tag.auto_marked': 'Auto-marked',
   'ielts.diagnostic.tag.self_estimate': 'Self-estimate',
   'ielts.diagnostic.tag.ai_assessed': 'AI-assessed',
@@ -19774,6 +19781,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'ks3.page.writing_forms.letter_diary.bc': 'Letter & diary',
   'ks3.page.writing_forms.narrative_descriptive.bc': 'Narrative & descriptive',
   'ks3.page.writing_forms.recount_newsletter_biography.bc': 'Recount, newsletter & biography',
+  'billing.trial.ai_checks_used': '{used} of {total} AI checks used',
   'alevel.board.aqa.short': 'AQA',
   'alevel.board.edexcel.short': 'Edexcel',
   'alevel.board.ocr.short': 'OCR',

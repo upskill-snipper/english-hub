@@ -980,7 +980,7 @@ function PostTemplates({ code, referralUrl }: { code: string; referralUrl: strin
     },
     {
       platform: 'Instagram (caption)',
-      body: `If you're revising for GCSE English, stop scrolling 🧵\n\nThe English Hub lets you write an essay, submit it, and get a predicted grade + AO-level feedback in a minute. No teacher, no tutor - instant feedback, as many essays as you want.\n\nUse code ${code} for a 7-day free trial. Link: ${referralUrl}\n\n#GCSE #GCSEenglish #revision #TeamEnglish #ad`,
+      body: `If you're revising for GCSE English, stop scrolling 🧵\n\nThe English Hub lets you write an essay, submit it, and get a predicted grade + AO-level feedback in a minute. No teacher, no tutor - instant feedback on your essay in about a minute.\n\nUse code ${code} for a 7-day free trial. Link: ${referralUrl}\n\n#GCSE #GCSEenglish #revision #TeamEnglish #ad`,
     },
     {
       platform: 'X / Twitter',

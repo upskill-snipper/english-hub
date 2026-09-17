@@ -37,6 +37,14 @@ interface TrialCountdownBannerProps {
   trialEndsAt: Date | string | null
   /** True once the user converts to a paid plan - banner self-hides. */
   isPremium: boolean
+  /**
+   * AI checks used out of the trial ceiling, for a NO-CARD trial only.
+   * Null for a card-on-file trial, which is not metered - showing a ceiling
+   * to someone who paid for the plan would be a claim the code does not make.
+   * The numbers come from the same resolver the server enforces with, never
+   * from a hardcoded string.
+   */
+  aiChecks?: { used: number; limit: number } | null
   /** Optional className passthrough so callers can tweak spacing. */
   className?: string
 }
@@ -60,6 +68,7 @@ function diff(target: number, now: number): Remaining {
 export function TrialCountdownBanner({
   trialEndsAt,
   isPremium,
+  aiChecks = null,
   className,
 }: TrialCountdownBannerProps) {
   const t = useT()
@@ -148,6 +157,13 @@ export function TrialCountdownBanner({
           <p className="mt-0.5 text-xs text-ink-600 dark:text-muted-foreground sm:text-sm">
             {isLastDay ? t('billing.trial.subline_last_day') : t('billing.trial.subline_default')}
           </p>
+          {aiChecks && (
+            <p className="mt-0.5 text-xs tabular-nums text-ink-600 dark:text-muted-foreground">
+              {t('billing.trial.ai_checks_used')
+                .replace('{used}', String(aiChecks.used))
+                .replace('{total}', String(aiChecks.limit))}
+            </p>
+          )}
         </div>
       </div>
 

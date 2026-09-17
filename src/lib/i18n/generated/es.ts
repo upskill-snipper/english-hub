@@ -691,7 +691,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'auth.register.student_title': 'Crea tu cuenta gratuita',
   'auth.register.teacher_title': 'Crea tu cuenta gratuita de profesor',
   'auth.register.student_subtitle':
-    'Sin tarjeta de crédito. Prueba cada función premium 3 veces, gratis.',
+    'Sin tarjeta de crédito. Tu cuenta comienza una prueba gratuita de 7 días de todas las funciones premium.',
   'auth.register.teacher_subtitle':
     'Ahorra más de 5 horas a la semana con la planificación de clases y la corrección con IA.',
   'auth.register.whats_included': 'Qué se incluye gratis',
@@ -5284,9 +5284,9 @@ export const ES_MESSAGES: Record<string, string> = {
   'terms.s4.p_trial_strong': 'Prueba gratuita de 7 días.',
   'terms.s4.p_trial_text':
     ' Existen dos mecanismos de prueba gratuita. (a) Prueba de cuenta: al crear una cuenta comienza una única prueba gratuita de la plataforma de 7 días. No se requiere método de pago; cuando termina, las funciones premium se pausan y no se cobra nada. (b) Prueba del plan: al iniciar tu primer plan de pago en el checkout, el plan comienza con un periodo gratuito de 7 días y requiere un método de pago válido. Si no cancelas antes de que termine ese periodo gratuito, tu plan de suscripción elegido se activa automáticamente y se cobra a tu método de pago el precio del plan correspondiente. Recibirás un correo recordatorio al menos dos días antes de que caduque. Cancela en cualquier momento antes del final del día siete desde la configuración de tu cuenta y no se te cobrará.',
-  'terms.s4.p_demo_strong': 'Demo antes del muro de pago.',
+  'terms.s4.p_demo_strong': 'Acceso gratuito y límites de uso.',
   'terms.s4.p_demo_text':
-    ' Aparte de la prueba, cada cuenta registrada puede usar la mayoría de las funciones premium hasta tres veces sin facilitar datos de pago, para que puedas evaluar el producto antes de comprometerte.',
+    ' Aparte de las pruebas gratuitas, una gran parte del sitio es de uso gratuito sin cuenta, incluidos los apuntes de repaso, las guías de poesía, el material de técnica y la prueba de nivel de IELTS. No se piden datos de pago por nada de ello. El acceso gratuito, incluidas las revisiones gratuitas con IA, puede estar sujeto a límites de uso razonables para que el servicio siga estando disponible y sea asequible para todos. Cuando se aplique un límite te lo mostraremos antes de que lo alcances, y podremos modificarlo de vez en cuando.',
   'terms.s4.p_codes_strong': 'Códigos promocionales y de afiliado.',
   'terms.s4.p_codes_text_pre': ' Los códigos de afiliado y el código público',
   'terms.s4.p_codes_text_post':
@@ -6192,7 +6192,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'pricing.feat.badge_n_free': '{n} gratis',
   'pricing.always_free_label': 'Siempre gratis',
   'pricing.premium_label': 'Premium',
-  'pricing.premium_then_unlimited_prefix': '- gratis durante 7 días, luego ilimitado con un plan',
+  'pricing.premium_then_unlimited_prefix': '- gratis durante 7 días, luego incluido con un plan',
   'pricing.school_receives.heading': 'Lo que recibe tu colegio',
   'pricing.school_receives.1': 'Acceso completo a la plataforma para cada profesor y estudiante',
   'pricing.school_receives.2':
@@ -15399,7 +15399,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'mkt.teachers.ft.startfree.badge': 'Empieza gratis',
   'mkt.teachers.ft.startfree.title': 'Todas las funciones disponibles para probar',
   'mkt.teachers.ft.startfree.body':
-    'Sin tarjeta de crédito. Sin límite de tiempo. Prueba cada herramienta premium 3 veces gratis y comprueba los resultados por ti mismo antes de pagar un solo céntimo.',
+    'Sin tarjeta de crédito. Tu cuenta comienza una prueba gratuita de 7 días de todas las herramientas premium, para que compruebes los resultados por ti mismo antes de pagar un solo céntimo.',
   'mkt.teachers.ft.tool.lesson_plans.title': 'Planes de lección con IA',
   'mkt.teachers.ft.tool.lesson_plans.desc':
     'Genera lecciones completas y alineadas con la junta examinadora en segundos. Inicio, tareas principales, cierre: todo listo.',
@@ -16743,6 +16743,14 @@ export const ES_MESSAGES: Record<string, string> = {
     'Escribe un ensayo corto y obtén una estimación de banda con IA.',
   'ielts.diagnostic.intro.speaking.body':
     'Responde a una pregunta hablada y obtén una estimación de banda con IA.',
+  'ielts.diagnostic.usage.see_plans': 'Ver planes',
+  'ielts.diagnostic.usage.last_free_note':
+    'Un plan añade comprobaciones de IA ilimitadas, comentarios completos por criterio y los simulacros de examen.',
+  'ielts.diagnostic.usage.exhausted_title':
+    'Has agotado tus comprobaciones de IA gratuitas por ahora',
+  'ielts.diagnostic.usage.exhausted_fallback':
+    'Puedes terminar el diagnóstico: omite esta tarea y estimaremos esta banda de forma conservadora.',
+  'ielts.diagnostic.usage.renews_on': 'Tus comprobaciones gratuitas se renuevan el {date}.',
   'ielts.diagnostic.tag.auto_marked': 'Corrección automática',
   'ielts.diagnostic.tag.self_estimate': 'Autoestimación',
   'ielts.diagnostic.tag.ai_assessed': 'Evaluado con IA',
@@ -20274,6 +20282,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'ks3.page.writing_forms.letter_diary.bc': 'Carta y diario',
   'ks3.page.writing_forms.narrative_descriptive.bc': 'Narrativo y descriptivo',
   'ks3.page.writing_forms.recount_newsletter_biography.bc': 'Relato, boletín y biografía',
+  'billing.trial.ai_checks_used': '{used} de {total} comprobaciones de IA utilizadas',
   'alevel.board.aqa.short': 'AQA',
   'alevel.board.edexcel.short': 'Edexcel',
   'alevel.board.ocr.short': 'OCR',

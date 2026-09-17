@@ -663,7 +663,8 @@ export const AR_MESSAGES: Record<string, string> = {
   'auth.register.signup_takes_30s': 'التسجيل يستغرق ٣٠ ثانية. من غير بطاقة.',
   'auth.register.student_title': 'سوّ حسابك المجاني',
   'auth.register.teacher_title': 'ابدأ حساب المعلم المجاني',
-  'auth.register.student_subtitle': 'من غير بطاقة. جرّب كل ميزة بريميوم ٣ مرات ببلاش.',
+  'auth.register.student_subtitle':
+    'من غير بطاقة. حسابك يبدأ بتجربة مجانية ٧ أيام لكل ميزات البريميوم.',
   'auth.register.teacher_subtitle':
     'وفّر ٥ ساعات أو أكثر في الأسبوع مع تخطيط الدروس والتصحيح بالذكاء الاصطناعي.',
   'auth.register.whats_included': 'شنو يدخل ببلاش',
@@ -5058,9 +5059,9 @@ export const AR_MESSAGES: Record<string, string> = {
   'terms.s4.p_trial_strong': 'تجربة مجانية لمدة ٧ أيام.',
   'terms.s4.p_trial_text':
     ' توجد آليتان للتجربة المجانية. (أ) تجربة الحساب: يؤدي إنشاء حساب إلى بدء تجربة مجانية واحدة للمنصة لمدة ٧ أيام. ولا يُشترط لها أي طريقة دفع؛ وعند انتهائها تتوقف الميزات المدفوعة مؤقتاً ولا تُحتسَب أي مبالغ. (ب) تجربة الخطة: عند بدء أول خطة مدفوعة عبر صفحة الدفع، تبدأ الخطة بفترة مجانية لمدة ٧ أيام وتتطلّب طريقة دفع صالحة. وإذا لم تُلغِ قبل انتهاء تلك الفترة المجانية، فستُفعَّل خطة الاشتراك التي اخترتها تلقائياً، وتُحتسَب على طريقة الدفع لديك قيمة الخطة المعمول بها. وستستلم بريداً إلكترونياً للتذكير قبل انقضائها بيومَين على الأقل. ويمكنك الإلغاء في أي وقت قبل نهاية اليوم السابع من إعدادات حسابك، ولن تتم محاسبتك.',
-  'terms.s4.p_demo_strong': 'تجربة ما قبل جدار الدفع.',
+  'terms.s4.p_demo_strong': 'الوصول المجاني وحدود الاستخدام.',
   'terms.s4.p_demo_text':
-    ' بشكل مستقلّ عن التجربة، يُتاح لكل حساب مُسجَّل استخدام معظم الميزات المُتميّزة حتى ثلاث مرّات دون تقديم بيانات دفع، لتتمكّن من تقييم المنتج قبل الالتزام.',
+    ' بشكل مستقلّ عن التجارب، جزء كبير من الموقع متاح مجاناً بدون حساب، ويشمل ملخّصات المراجعة وأدلّة الشعر ومواد المهارات واختبار تحديد المستوى لـ IELTS. ولا تُؤخذ أي بيانات دفع مقابل ذلك. وقد يخضع الوصول المجاني، بما في ذلك الفحوصات المجانية بالذكاء الاصطناعي، لحدود استخدام معقولة حتى تبقى الخدمة متاحة وبتكلفة مناسبة للجميع. وحين ينطبق حدّ معيّن فإننا نعرضه لك قبل أن تصل إليه، وقد نغيّره من وقت لآخر.',
   'terms.s4.p_codes_strong': 'الأكواد الترويجية وأكواد الشركاء.',
   'terms.s4.p_codes_text_pre': ' تنطبق أكواد الشركاء والكود العام',
   'terms.s4.p_codes_text_post':
@@ -5913,7 +5914,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'pricing.feat.badge_n_free': '{n} ببلاش',
   'pricing.always_free_label': 'ببلاش دايماً',
   'pricing.premium_label': 'بريميوم',
-  'pricing.premium_then_unlimited_prefix': '- ببلاش لمدة ٧ أيام، وبعدين بلا حدود مع الباقة',
+  'pricing.premium_then_unlimited_prefix': '- ببلاش لمدة ٧ أيام، وبعدين مشمولة مع الباقة',
   'pricing.school_receives.heading': 'شنو بتحصل عليه مدرستك',
   'pricing.school_receives.1': 'صلاحية وصول كاملة للمنصة لكل معلم وطالب',
   'pricing.school_receives.2': 'وصول مبكر للميزات الجديدة قبل الإطلاق العام',
@@ -14650,7 +14651,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'mkt.teachers.ft.startfree.badge': 'ابدأ ببلاش',
   'mkt.teachers.ft.startfree.title': 'كل ميزة متاحة للتجربة',
   'mkt.teachers.ft.startfree.body':
-    'بدون بطاقة. بدون حد زمني. جرّب كل أداة Premium 3 مرّات ببلاش وشوف النتائج بنفسك قبل ما تدفع ولا قرش.',
+    'بدون بطاقة. حسابك يبدأ بتجربة مجانية ٧ أيام لكل أداة Premium، عشان تشوف النتائج بنفسك قبل ما تدفع ولا قرش.',
   'mkt.teachers.ft.tool.lesson_plans.title': 'خطط دروس بالـ AI',
   'mkt.teachers.ft.tool.lesson_plans.desc':
     'جهّز دروس كاملة متوافقة مع البورد بثواني. افتتاحية، مهام رئيسية، ختام -- كله جاهز.',
@@ -15883,6 +15884,13 @@ export const AR_MESSAGES: Record<string, string> = {
   'ielts.diagnostic.intro.writing.body': 'اكتب مقال قصير واحد وخذ تقدير Band بالذكاء الاصطناعي.',
   'ielts.diagnostic.intro.speaking.body':
     'جاوب على سؤال محكي واحد وخذ تقدير Band بالذكاء الاصطناعي.',
+  'ielts.diagnostic.usage.see_plans': 'شوف الخطط',
+  'ielts.diagnostic.usage.last_free_note':
+    'الخطة تعطيك فحوصات ذكاء اصطناعي بلا حدود وتغذية راجعة كاملة لكل معيار مع الاختبارات التجريبية.',
+  'ielts.diagnostic.usage.exhausted_title': 'خلصت فحوصات الذكاء الاصطناعي المجانية حالياً',
+  'ielts.diagnostic.usage.exhausted_fallback':
+    'تقدر تكمل التشخيص - تخطى هذي المهمة وبنقدر الـ Band بشكل متحفظ.',
+  'ielts.diagnostic.usage.renews_on': 'فحوصاتك المجانية تتجدد في {date}.',
   'ielts.diagnostic.tag.auto_marked': 'تصحيح تلقائي',
   'ielts.diagnostic.tag.self_estimate': 'تقدير ذاتي',
   'ielts.diagnostic.tag.ai_assessed': 'تقييم بالذكاء الاصطناعي',
@@ -19274,6 +19282,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'ks3.page.writing_forms.letter_diary.bc': 'الرسالة واليوميات',
   'ks3.page.writing_forms.narrative_descriptive.bc': 'السرد والوصف',
   'ks3.page.writing_forms.recount_newsletter_biography.bc': 'السرد الإخباري والنشرة والسيرة',
+  'billing.trial.ai_checks_used': 'استخدمت {used} من {total} فحص بالذكاء الاصطناعي',
   'alevel.board.aqa.short': 'AQA',
   'alevel.board.edexcel.short': 'Edexcel',
   'alevel.board.ocr.short': 'OCR',

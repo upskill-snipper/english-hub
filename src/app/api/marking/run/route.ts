@@ -25,6 +25,13 @@ import { getAnthropicClient, ANTHROPIC_MODEL } from '@/lib/anthropic-client'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { verifySchoolMember } from '@/lib/school-auth'
 import { hasActiveSubscription } from '@/lib/course-access'
+import {
+  enforceTrialAllowance,
+  refundTrialAllowance,
+  EMPTY_TRIAL_GATE,
+  type TrialAllowanceGate,
+} from '@/lib/usage/trial-allowance'
+import { applyAllowanceHeaders } from '@/lib/usage/free-allowance'
 import { rateLimit } from '@/lib/rate-limit'
 import {
   badRequestResponse,
@@ -53,6 +60,12 @@ interface RunRequestBody {
 }
 
 export async function POST(request: NextRequest) {
+  // The no-card trial AI ceiling is held here rather than inside the try below,
+  // so the catch at the bottom can still give the allowance back. A paying
+  // subscriber and a card-on-file trial are never metered - see
+  // src/lib/usage/trial-allowance.ts.
+  let trialGate: TrialAllowanceGate = EMPTY_TRIAL_GATE
+
   try {
     // 0. Content-Type
     const ctError = requireJsonContentType(request)
@@ -165,10 +178,22 @@ export async function POST(request: NextRequest) {
       return badRequestResponse(err instanceof Error ? err.message : 'Invalid question.')
     }
 
+    // NO-CARD TRIAL AI CEILING. This is the last gate before we spend money,
+    // and it sits in the same position as checkMinorAIConsent and
+    // isAiOptedOutServer: after content-type / auth / entitlement / consent /
+    // AI opt-out / validation / content-safety, immediately before the first
+    // model call. A trial signup carries `subscription_status = 'pro'`, the
+    // identical flag the paywall above reads, so without this a free account
+    // has the same unlimited AI access a paying one does. Refused with 402 and
+    // code 'free_allowance_exhausted', never 403 or 429.
+    trialGate = await enforceTrialAllowance(request, user)
+    if (trialGate.response) return trialGate.response
+
     // 8. Anthropic key
     const apiKey = process.env.ANTHROPIC_API_KEY
     if (!apiKey) {
       console.error('[api/marking/run] ANTHROPIC_API_KEY not configured')
+      await refundTrialAllowance(trialGate)
       return serviceUnavailableResponse(
         'AI marking is temporarily unavailable. Please try again later.',
       )
@@ -221,15 +246,18 @@ export async function POST(request: NextRequest) {
         err.error?.type === 'timeout_error'
       ) {
         console.error('[api/marking/run] Anthropic timeout')
+        await refundTrialAllowance(trialGate)
         return serviceUnavailableResponse('The AI service timed out. Please try again.')
       }
       if (err.status === 429) {
         console.error('[api/marking/run] Anthropic rate limit')
+        await refundTrialAllowance(trialGate)
         return serviceUnavailableResponse(
           'The AI service is temporarily overloaded. Please try again shortly.',
         )
       }
       console.error('[api/marking/run] Anthropic error', aiError)
+      await refundTrialAllowance(trialGate)
       return serviceUnavailableResponse(
         'The AI marking service is currently unavailable. Please try again later.',
       )
@@ -263,11 +291,13 @@ export async function POST(request: NextRequest) {
         errorMessage: 'reason' in feedback.error ? String(feedback.error.reason) : null,
       })
       if (feedback.error.type === 'INVALID_SUBMISSION') {
+        await refundTrialAllowance(trialGate)
         return badRequestResponse(
           'This submission does not appear to be an essay. It cannot be marked.',
         )
       }
       if (feedback.error.type === 'OFF_TOPIC') {
+        await refundTrialAllowance(trialGate)
         return badRequestResponse('This submission is not GCSE English work. It cannot be marked.')
       }
       console.error(
@@ -275,6 +305,7 @@ export async function POST(request: NextRequest) {
         feedback.error.reason,
         responseText.slice(0, 500),
       )
+      await refundTrialAllowance(trialGate)
       return serverErrorResponse('Failed to process the AI response. Please try again.')
     }
 
@@ -305,6 +336,7 @@ export async function POST(request: NextRequest) {
       })
     } catch (dbErr) {
       console.error('[api/marking/run] persist failed', dbErr)
+      await refundTrialAllowance(trialGate)
       return serverErrorResponse('Failed to save the marking result. Please try again.')
     }
 
@@ -334,9 +366,10 @@ export async function POST(request: NextRequest) {
 
     // The AI mark is a DRAFT - never presented as final. The caller/UI must
     // label it accordingly; B2B work is not student-visible until approved.
-    return successResponse({ result })
+    return applyAllowanceHeaders(successResponse({ result }), trialGate.state)
   } catch (err) {
     console.error('[api/marking/run] unexpected error', err)
+    await refundTrialAllowance(trialGate)
     return serverErrorResponse('Something went wrong. Please try again later.')
   }
 }

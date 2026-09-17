@@ -86,13 +86,22 @@ The English Hub has six codified revenue streams and one planned but unshipped s
 | Teacher           | **£12.99** | **£99.99** | £8.33             | ~36%            |
 | Parent (not live) | **£4.99**  | --         | --                | --              |
 
-Constants also set: `FREE_USES_PER_FEATURE = 3`, `TRIAL_DAYS = 7`, `FOUNDER_SCHOOL_LIMIT = 10`.
+Constants also set: `TRIAL_DAYS = 7`, `FOUNDER_SCHOOL_LIMIT = 10`. (`FREE_USES_PER_FEATURE = 3`
+was removed on 2026-08-23: it described a per-feature demo meter that was never built on the
+web. Free-usage limits are now resolved at call time by `src/lib/usage/limits.ts`, not from a
+source constant, so that they can be changed without a deployment.)
 
 **Free tier mechanics:**
 
 - Free forever: exam-board-aligned courses, revision notes, flashcards.
-- Freemium meter: 3 free uses of every premium feature (AI marking, mock exams, feedback reports, lesson plans, worksheet builder).
-- Trial: 7 days, credit-card-up-front (Stripe hosted checkout), `subscription_data.trial_period_days`.
+- Free AI allowance: a metered ceiling enforced by `src/lib/usage/limits.ts` and
+  `src/lib/usage/free-allowance.ts` - a monthly allowance on the signed-out IELTS diagnostic
+  (with a higher signed-in allowance) and an AI-call ceiling across the whole no-card trial
+  with a daily sub-cap. The numbers are database-overridable without a deploy, so this
+  document must not restate them; read them from `LIMIT_SPECS`.
+- Trial, two distinct offers: (a) creating an account starts a 7-day free trial of the full
+  product with NO card; (b) starting a paid plan at checkout gives the first 7 days free WITH
+  a card on file (`subscription_data.trial_period_days`). Only (a) is subject to the AI ceiling.
 - Marketing framing: "First month FREE" on the pricing page.
 
 ### 2b. B2B pricing (from sales materials and in-product billing page)
@@ -505,7 +514,7 @@ A parallel `business-docs/` directory contains 136 files across:
 | International (banded, USD)            | $9-$18/student/yr | International pricing                                 |
 | Stripe fees (UK default)               | ~1.5% + 20p       | Not coded (Stripe default)                            |
 | Trial length                           | 7 days            | `PRICING.TRIAL_DAYS`                                  |
-| Free premium uses                      | 3 per feature     | `FREE_USES_PER_FEATURE`                               |
+| Free AI allowance                      | database-resolved | `LIMIT_SPECS` in `src/lib/usage/limits.ts`            |
 | Affiliate commission (monthly, Tier 1) | £5.99             | `002_affiliate_system.sql`                            |
 | Affiliate commission (annual, Tier 1)  | £10.00            | `002_affiliate_system.sql`                            |
 

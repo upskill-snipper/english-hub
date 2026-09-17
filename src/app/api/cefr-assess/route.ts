@@ -16,6 +16,13 @@ import { getAnthropicClient, ANTHROPIC_MODEL } from '@/lib/anthropic-client'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { rateLimit } from '@/lib/rate-limit'
 import { hasActiveSubscription } from '@/lib/course-access'
+import {
+  enforceTrialAllowance,
+  refundTrialAllowance,
+  EMPTY_TRIAL_GATE,
+  type TrialAllowanceGate,
+} from '@/lib/usage/trial-allowance'
+import { applyAllowanceHeaders } from '@/lib/usage/free-allowance'
 import { checkMinorAIConsent } from '@/lib/consent-check'
 import { isAiOptedOutServer } from '@/lib/ai-preferences'
 import {
@@ -49,6 +56,12 @@ const VALID_BANDS = new Set<string>(CEFR_PRODUCT_BANDS)
 // ─── Handler ─────────────────────────────────────────────────────────────────
 
 export async function POST(request: NextRequest) {
+  // The no-card trial AI ceiling is held here rather than inside the try below,
+  // so the catch at the bottom can still give the allowance back. A paying
+  // subscriber and a card-on-file trial are never metered - see
+  // src/lib/usage/trial-allowance.ts.
+  let trialGate: TrialAllowanceGate = EMPTY_TRIAL_GATE
+
   try {
     // 1. Content-Type
     const contentType = request.headers.get('content-type')
@@ -125,10 +138,22 @@ export async function POST(request: NextRequest) {
       locale,
     })
 
+    // NO-CARD TRIAL AI CEILING. This is the last gate before we spend money,
+    // and it sits in the same position as checkMinorAIConsent and
+    // isAiOptedOutServer: after content-type / auth / entitlement / consent /
+    // AI opt-out / validation / content-safety, immediately before the first
+    // model call. A trial signup carries `subscription_status = 'pro'`, the
+    // identical flag the paywall above reads, so without this a free account
+    // has the same unlimited AI access a paying one does. Refused with 402 and
+    // code 'free_allowance_exhausted', never 403 or 429.
+    trialGate = await enforceTrialAllowance(request, user)
+    if (trialGate.response) return trialGate.response
+
     // 9. Anthropic API key
     const apiKey = process.env.ANTHROPIC_API_KEY
     if (!apiKey) {
       console.error('[api/cefr-assess] ANTHROPIC_API_KEY not configured')
+      await refundTrialAllowance(trialGate)
       return serviceUnavailableResponse(
         'AI assessment is temporarily unavailable. Please try again later.',
       )
@@ -182,15 +207,18 @@ export async function POST(request: NextRequest) {
         err.error?.type === 'timeout_error'
       ) {
         console.error('[api/cefr-assess] Anthropic timeout')
+        await refundTrialAllowance(trialGate)
         return serviceUnavailableResponse('The AI service timed out. Please try again.')
       }
       if (err.status === 429) {
         console.error('[api/cefr-assess] Anthropic rate limit')
+        await refundTrialAllowance(trialGate)
         return serviceUnavailableResponse(
           'The AI service is temporarily overloaded. Please try again shortly.',
         )
       }
       console.error('[api/cefr-assess] Anthropic error', aiError)
+      await refundTrialAllowance(trialGate)
       return serviceUnavailableResponse(
         'The AI assessment service is currently unavailable. Please try again later.',
       )
@@ -220,11 +248,13 @@ export async function POST(request: NextRequest) {
         errorMessage: outcome.reason ?? null,
       })
       if (outcome.error === 'INVALID_SUBMISSION') {
+        await refundTrialAllowance(trialGate)
         return badRequestResponse(
           'Your submission does not look like a genuine attempt at this task. Please write your own response for assessment.',
         )
       }
       if (outcome.error === 'OFF_TOPIC') {
+        await refundTrialAllowance(trialGate)
         return badRequestResponse(
           'This tool only assesses English-language learning work. Please submit a writing or speaking response.',
         )
@@ -234,6 +264,7 @@ export async function POST(request: NextRequest) {
         outcome.reason,
         responseText.slice(0, 500),
       )
+      await refundTrialAllowance(trialGate)
       return serverErrorResponse('Failed to process the AI response. Please try again.')
     }
 
@@ -256,12 +287,16 @@ export async function POST(request: NextRequest) {
       },
     })
 
-    return NextResponse.json({
-      result: outcome.result,
-      remaining: rl.remaining,
-    })
+    return applyAllowanceHeaders(
+      NextResponse.json({
+        result: outcome.result,
+        remaining: rl.remaining,
+      }),
+      trialGate.state,
+    )
   } catch (err) {
     console.error('[api/cefr-assess] unexpected error', err)
+    await refundTrialAllowance(trialGate)
     return serverErrorResponse('Something went wrong. Please try again later.')
   }
 }

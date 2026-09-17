@@ -2293,10 +2293,15 @@ export const DICTIONARY: Dictionary = {
     ar: 'ابدأ حساب المعلم المجاني',
     es: 'Crea tu cuenta gratuita de profesor',
   },
+  // 2026-09-17: was 'Try every premium feature 3 times, free.' The 3-free-uses
+  // mechanic never existed on the web and was removed from the rest of the site
+  // on 2026-08-23; this string survived the sweep and was still rendering on the
+  // signup page in all three locales. The real offer is the no-card 7-day trial
+  // that /api/auth/register actually provisions.
   'auth.register.student_subtitle': {
-    en: 'No credit card required. Try every premium feature 3 times, free.',
-    ar: 'من غير بطاقة. جرّب كل ميزة بريميوم ٣ مرات ببلاش.',
-    es: 'Sin tarjeta de crédito. Prueba cada función premium 3 veces, gratis.',
+    en: 'No credit card required. Your account starts a 7-day free trial of every premium feature.',
+    ar: 'من غير بطاقة. حسابك يبدأ بتجربة مجانية ٧ أيام لكل ميزات البريميوم.',
+    es: 'Sin tarjeta de crédito. Tu cuenta comienza una prueba gratuita de 7 días de todas las funciones premium.',
   },
   'auth.register.teacher_subtitle': {
     en: 'Save 5+ hours per week with AI lesson planning and marking.',
@@ -17053,15 +17058,22 @@ export const DICTIONARY: Dictionary = {
     ar: ' توجد آليتان للتجربة المجانية. (أ) تجربة الحساب: يؤدي إنشاء حساب إلى بدء تجربة مجانية واحدة للمنصة لمدة ٧ أيام. ولا يُشترط لها أي طريقة دفع؛ وعند انتهائها تتوقف الميزات المدفوعة مؤقتاً ولا تُحتسَب أي مبالغ. (ب) تجربة الخطة: عند بدء أول خطة مدفوعة عبر صفحة الدفع، تبدأ الخطة بفترة مجانية لمدة ٧ أيام وتتطلّب طريقة دفع صالحة. وإذا لم تُلغِ قبل انتهاء تلك الفترة المجانية، فستُفعَّل خطة الاشتراك التي اخترتها تلقائياً، وتُحتسَب على طريقة الدفع لديك قيمة الخطة المعمول بها. وستستلم بريداً إلكترونياً للتذكير قبل انقضائها بيومَين على الأقل. ويمكنك الإلغاء في أي وقت قبل نهاية اليوم السابع من إعدادات حسابك، ولن تتم محاسبتك.',
     es: ' Existen dos mecanismos de prueba gratuita. (a) Prueba de cuenta: al crear una cuenta comienza una única prueba gratuita de la plataforma de 7 días. No se requiere método de pago; cuando termina, las funciones premium se pausan y no se cobra nada. (b) Prueba del plan: al iniciar tu primer plan de pago en el checkout, el plan comienza con un periodo gratuito de 7 días y requiere un método de pago válido. Si no cancelas antes de que termine ese periodo gratuito, tu plan de suscripción elegido se activa automáticamente y se cobra a tu método de pago el precio del plan correspondiente. Recibirás un correo recordatorio al menos dos días antes de que caduque. Cancela en cualquier momento antes del final del día siete desde la configuración de tu cuenta y no se te cobrará.',
   },
+  // 2026-09-17: this paragraph previously promised that "every registered
+  // account may use most premium features up to three times without providing
+  // payment details". No such per-feature demo mechanic has ever existed on the
+  // web - the gates are binary on subscription_status - so the Terms were
+  // promising something the product did not do. Replaced with what is actually
+  // offered for free, plus an express reservation of reasonable usage limits so
+  // that a published free allowance is covered by the Terms.
   'terms.s4.p_demo_strong': {
-    en: 'Pre-paywall demo.',
-    ar: 'تجربة ما قبل جدار الدفع.',
-    es: 'Demo antes del muro de pago.',
+    en: 'Free access and usage limits.',
+    ar: 'الوصول المجاني وحدود الاستخدام.',
+    es: 'Acceso gratuito y límites de uso.',
   },
   'terms.s4.p_demo_text': {
-    en: ' Separately from the trial, every registered account may use most premium features up to three times without providing payment details so you can evaluate the product before committing.',
-    ar: ' بشكل مستقلّ عن التجربة، يُتاح لكل حساب مُسجَّل استخدام معظم الميزات المُتميّزة حتى ثلاث مرّات دون تقديم بيانات دفع، لتتمكّن من تقييم المنتج قبل الالتزام.',
-    es: ' Aparte de la prueba, cada cuenta registrada puede usar la mayoría de las funciones premium hasta tres veces sin facilitar datos de pago, para que puedas evaluar el producto antes de comprometerte.',
+    en: ' Separately from the trials, a large part of the site is free to use without an account, including revision notes, poetry guides, technique material and the IELTS placement test. No payment details are taken for any of it. Free access, including free AI checks, may be subject to reasonable usage limits so that the service stays available and affordable for everyone. Where a limit applies we show it to you before you reach it, and we may change it from time to time.',
+    ar: ' بشكل مستقلّ عن التجارب، جزء كبير من الموقع متاح مجاناً بدون حساب، ويشمل ملخّصات المراجعة وأدلّة الشعر ومواد المهارات واختبار تحديد المستوى لـ IELTS. ولا تُؤخذ أي بيانات دفع مقابل ذلك. وقد يخضع الوصول المجاني، بما في ذلك الفحوصات المجانية بالذكاء الاصطناعي، لحدود استخدام معقولة حتى تبقى الخدمة متاحة وبتكلفة مناسبة للجميع. وحين ينطبق حدّ معيّن فإننا نعرضه لك قبل أن تصل إليه، وقد نغيّره من وقت لآخر.',
+    es: ' Aparte de las pruebas gratuitas, una gran parte del sitio es de uso gratuito sin cuenta, incluidos los apuntes de repaso, las guías de poesía, el material de técnica y la prueba de nivel de IELTS. No se piden datos de pago por nada de ello. El acceso gratuito, incluidas las revisiones gratuitas con IA, puede estar sujeto a límites de uso razonables para que el servicio siga estando disponible y sea asequible para todos. Cuando se aplique un límite te lo mostraremos antes de que lo alcances, y podremos modificarlo de vez en cuando.',
   },
   'terms.s4.p_codes_strong': {
     en: 'Promotional and affiliate codes.',
@@ -20372,10 +20384,13 @@ export const DICTIONARY: Dictionary = {
   'pricing.feat.badge_n_free': { en: '{n} free', ar: '{n} ببلاش', es: '{n} gratis' },
   'pricing.always_free_label': { en: 'Always free', ar: 'ببلاش دايماً', es: 'Siempre gratis' },
   'pricing.premium_label': { en: 'Premium', ar: 'بريميوم', es: 'Premium' },
+  // 2026-09-17: dropped the word "unlimited". The key name is kept so the
+  // pricing page does not need a coordinated rename; the claim is now "included
+  // with a plan", which does not promise a volume the product does not meter.
   'pricing.premium_then_unlimited_prefix': {
-    en: '- free for 7 days, then unlimited with a plan',
-    ar: '- ببلاش لمدة ٧ أيام، وبعدين بلا حدود مع الباقة',
-    es: '- gratis durante 7 días, luego ilimitado con un plan',
+    en: '- free for 7 days, then included with a plan',
+    ar: '- ببلاش لمدة ٧ أيام، وبعدين مشمولة مع الباقة',
+    es: '- gratis durante 7 días, luego incluido con un plan',
   },
   'pricing.school_receives.heading': {
     en: 'What your school receives',

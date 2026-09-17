@@ -1098,3 +1098,73 @@ model TrainingData {
   @@index([createdAt(sort: Desc)])
   @@map("training_data")
 }
+
+// ──────────────────────────────────────────────
+// Free allowance metering (2026-09-17)
+// ──────────────────────────────────────────────
+//
+// WHY THIS TABLE EXISTS
+// The only throttle on the free IELTS diagnostic was
+// `rateLimit(key, { limit: 12, windowSeconds: 86_400 })`, and
+// `src/lib/rate-limit.ts` falls back to a per-process in-memory Map when Redis
+// is not configured. Redis IS NOT configured in production - the runtime logs
+// carry "[rate-limit] CRITICAL: Redis not configured - rate limiting is
+// non-functional in production". Every serverless instance therefore held its
+// own counter, so the cap was per-instance and effectively unlimited, and every
+// call cost real money. This table moves the count into Postgres, which every
+// instance already shares.
+//
+// See `src/lib/usage/free-allowance.ts` for the single helper that owns it.
+
+model FreeAllowanceUsage {
+  id           String   @id @default(cuid())
+  // 'user' | 'ip'. No FK to User BY DESIGN: a large share of accounts exist
+  // only in Supabase and have no Prisma User row (see src/lib/consent-check.ts),
+  // and the 'ip' subject has no user at all. An FK would silently fail to count
+  // exactly the accounts that matter. Deletion is wired explicitly into
+  // src/lib/data-retention.ts instead of relying on cascade.
+  subjectType  String   @map("subject_type") @db.VarChar(8)
+  // Supabase auth uuid (subjectType='user'), or the full 64-char
+  // sha256(IP_HASH_SALT + ':' + ip) digest (subjectType='ip'). NEVER a raw IP.
+  subjectKey   String   @map("subject_key") @db.VarChar(128)
+  // 'ielts_diagnostic' | 'trial_ai' | 'trial_ai_daily' | future meters.
+  meter        String   @db.VarChar(48)
+  // Window bucket: '2026-09' (monthly), '2026-09-17' (daily),
+  // 'trial:<subscriptionId>' (whole-trial). Computed per meter by the helper,
+  // so a new window shape needs no migration.
+  periodKey    String   @map("period_key") @db.VarChar(64)
+  count        Int      @default(0)
+  // The cap in force when this bucket opened. Evidence for "why was this user
+  // stopped at 4" after the founder changes a limit mid-month.
+  limitApplied Int      @map("limit_applied")
+  firstUsedAt  DateTime @default(now()) @map("first_used_at")
+  lastUsedAt   DateTime @default(now()) @updatedAt @map("last_used_at")
+
+  // Load-bearing: this is the ON CONFLICT target for the atomic increment.
+  // Without it the increment degrades to read-modify-write and the cap leaks
+  // under concurrency - the same class of bug as the per-instance Map.
+  // `map` pins the DATABASE index name to the one the hand-written migration
+  // creates, so the schema and supabase/migrations/20260917_free_allowance_usage.sql
+  // describe the same object. `name` is the client-side compound-key name.
+  @@unique([subjectType, subjectKey, meter, periodKey], name: "free_allowance_bucket", map: "free_allowance_bucket")
+  @@index([lastUsedAt])
+  @@index([meter, periodKey])
+  @@index([subjectType, subjectKey])
+  @@map("free_allowance_usage")
+}
+
+// Runtime-editable configuration. The layer that makes limits changeable
+// WITHOUT a deployment: changing a Vercel environment variable does not affect
+// an existing deployment until it is redeployed, so env vars alone cannot
+// deliver "change the number without shipping". Read through a 60-second
+// in-process cache by `src/lib/usage/limits.ts`.
+// Precedence: AppConfigSetting > env var > code default.
+model AppConfigSetting {
+  key       String   @id @db.VarChar(80)
+  value     String   @db.VarChar(200)
+  updatedAt DateTime @updatedAt @map("updated_at")
+  // Admin email, for audit.
+  updatedBy String?  @map("updated_by") @db.VarChar(128)
+
+  @@map("app_config_setting")
+}

@@ -201,7 +201,7 @@ export const RESOURCES_FAQS: GeoFaqItem[] = [
   {
     question: 'Are the resources on The English Hub free?',
     answer:
-      'The resources hub includes free revision notes, poetry guides, technique cheatsheets and study tools with no signup required for many of them. Premium tools (AI essay marking, unlimited practice) sit behind a plan, with a free trial.',
+      'The resources hub includes free revision notes, poetry guides, technique cheatsheets and study tools with no signup required for many of them. Premium tools (AI essay marking, the full practice libraries) sit behind a plan, which starts with a free trial.',
   },
   {
     question: 'Which exam boards do the English resources cover?',

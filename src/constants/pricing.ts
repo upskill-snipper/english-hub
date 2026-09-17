@@ -126,8 +126,24 @@ export const PRICING = {
   // 2026-08-23: FREE_USES_PER_FEATURE removed. It fed "3 free uses" marketing
   // copy for a per-feature demo-credit mechanic that was never implemented on
   // the web (web gates are binary on subscription_status; demo credits exist
-  // only as a mobile concept). The real free offer - and the only one copy may
-  // claim - is the 7-day no-card trial provisioned at signup (Option C below).
+  // only as a mobile concept).
+  //
+  // 2026-09-17: DO NOT reinstate a free-usage number here. A real free
+  // allowance now exists, but it deliberately does NOT live in this file,
+  // because a constant in the source is exactly what made the previous outage
+  // undeployable. The enforced numbers are resolved at call time by
+  // `src/lib/usage/limits.ts` with precedence AppConfigSetting (database, no
+  // deploy) > environment variable > code default, and are consumed by
+  // `src/lib/usage/free-allowance.ts`. There are three of them: a monthly free
+  // IELTS-diagnostic allowance (separate signed-out and signed-in numbers) and
+  // an AI-call ceiling on the no-card trial with a daily sub-cap.
+  //
+  // The rule for copy: user-facing pages must render the number from
+  // `getLimit()`, never from a literal in a string, or the pages and the gate
+  // drift apart the first time the founder changes a limit in the database.
+  // The two things below are still the whole of the free OFFER and may be
+  // stated as-is: the 7-day no-card trial provisioned at signup (Option C
+  // below), and the free content that needs no account at all.
   CURRENCY: '£',
   SCHOOL_CURRENCY: '£',
 

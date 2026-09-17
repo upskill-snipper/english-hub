@@ -18,6 +18,7 @@ import { rateLimit } from '@/lib/rate-limit'
 import { hasActiveSubscription } from '@/lib/course-access'
 import { checkMinorAIConsent } from '@/lib/consent-check'
 import { contentSafetyCheck } from '@/lib/content-safety'
+import { enforceTrialAllowance, refundTrialAllowance } from '@/lib/usage/trial-allowance'
 import {
   badRequestResponse,
   forbiddenResponse,
@@ -134,6 +135,16 @@ export async function POST(request: NextRequest) {
     )
   }
 
+  // 8b. NO-CARD TRIAL AI CEILING - consumed BEFORE the stream opens, because
+  //     once the SSE response is returned the status code is already 200 and a
+  //     402 can no longer be sent. A trial signup carries
+  //     `subscription_status = 'pro'`, the identical flag the paywall above
+  //     reads, so without this a free account streams unlimited AI marking.
+  //     Refunded below if the stream aborts before any content reaches the
+  //     learner.
+  const trialGate = await enforceTrialAllowance(request, user)
+  if (trialGate.response) return trialGate.response
+
   // 9. Spin up the stream (shared client - privacy posture documented in
   // src/lib/anthropic-client.ts; behaviour identical to new Anthropic()).
   const anthropic = getAnthropicClient(apiKey)
@@ -246,6 +257,12 @@ export async function POST(request: NextRequest) {
         })
         controller.close()
       } catch (err: unknown) {
+        // The learner got nothing, so they must not lose the use. We refund
+        // only when NO content was produced: a stream that broke halfway still
+        // delivered marking text and still cost a model call.
+        if (accumulated.length === 0) {
+          await refundTrialAllowance(trialGate)
+        }
         void logAiDecision({
           ...auditBase,
           requestStartedAt: aiRequestStartedAt,
@@ -272,6 +289,13 @@ export async function POST(request: NextRequest) {
       'Cache-Control': 'no-cache, no-transform',
       Connection: 'keep-alive',
       'X-Accel-Buffering': 'no',
+      ...(trialGate.state
+        ? {
+            'X-Free-Allowance-Limit': String(trialGate.state.limit),
+            'X-Free-Allowance-Remaining': String(trialGate.state.remaining),
+            'X-Free-Allowance-Reset': trialGate.state.resetsAt.toISOString(),
+          }
+        : {}),
     },
   })
 }

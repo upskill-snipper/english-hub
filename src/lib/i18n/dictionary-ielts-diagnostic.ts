@@ -64,6 +64,37 @@ export const IELTS_DIAGNOSTIC_DICTIONARY: Record<string, { en: string; ar?: stri
       es: 'Responde a una pregunta hablada y obtén una estimación de banda con IA.',
     },
 
+    // ─── Free AI allowance ──────────────────────────────────────────────
+    // The number itself is NEVER written into these strings. It is
+    // interpolated from the same resolver the server enforces with
+    // (src/lib/usage/limits.ts), so the rendered figure cannot drift away
+    // from the enforced one when the cap is changed in the database.
+    'ielts.diagnostic.usage.see_plans': {
+      en: 'See plans',
+      ar: 'شوف الخطط',
+      es: 'Ver planes',
+    },
+    'ielts.diagnostic.usage.last_free_note': {
+      en: 'A plan adds unlimited AI checks, full per-criterion feedback and the mock exams.',
+      ar: 'الخطة تعطيك فحوصات ذكاء اصطناعي بلا حدود وتغذية راجعة كاملة لكل معيار مع الاختبارات التجريبية.',
+      es: 'Un plan añade comprobaciones de IA ilimitadas, comentarios completos por criterio y los simulacros de examen.',
+    },
+    'ielts.diagnostic.usage.exhausted_title': {
+      en: 'Your free AI checks are used up for now',
+      ar: 'خلصت فحوصات الذكاء الاصطناعي المجانية حالياً',
+      es: 'Has agotado tus comprobaciones de IA gratuitas por ahora',
+    },
+    'ielts.diagnostic.usage.exhausted_fallback': {
+      en: 'You can still finish the diagnostic - skip this task and we will estimate this band conservatively.',
+      ar: 'تقدر تكمل التشخيص - تخطى هذي المهمة وبنقدر الـ Band بشكل متحفظ.',
+      es: 'Puedes terminar el diagnóstico: omite esta tarea y estimaremos esta banda de forma conservadora.',
+    },
+    'ielts.diagnostic.usage.renews_on': {
+      en: 'Your free checks renew on {date}.',
+      ar: 'فحوصاتك المجانية تتجدد في {date}.',
+      es: 'Tus comprobaciones gratuitas se renuevan el {date}.',
+    },
+
     // Marking tags
     'ielts.diagnostic.tag.auto_marked': {
       en: 'Auto-marked',

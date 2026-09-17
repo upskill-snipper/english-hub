@@ -651,10 +651,15 @@ Exam boards: AQA, Edexcel, OCR, WJEC, Cambridge IGCSE (0500 and 0990), Edexcel I
 Pricing
 Student: £3.49/month or £29.99/year. With creator code [YOURNAMEENGLISH]: £20/year.
 Teacher: £7.99/month or £67.99/year.
-7-day free trial (card required). 3 free uses of premium features without trial.
+Free trial, two separate things, do not merge them. (1) Creating an account starts a 7-day
+free trial of the full product with NO card. (2) Starting a paid plan at checkout gives the
+first 7 days free WITH a card on file. There is no "3 free uses" mechanic and there never
+was one on the web - that claim was withdrawn on 2026-08-23 and must not be reintroduced.
+Free AI use is subject to a published fair-use allowance; check the live limit before
+quoting any number in outbound copy.
 
 Current proof
-Teacher testimonials live at theenglishhub.app/for-schools (Birmingham, Kent, Manchester, Leeds — verify each is publishable before quoting).
+Teacher testimonials live at theenglishhub.app/for-schools (Birmingham, Kent, Manchester, Leeds - verify each is publishable before quoting).
 Built by a serving UK secondary English teacher.
 We are early in our journey and we say so plainly.
 

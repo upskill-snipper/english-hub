@@ -103,10 +103,34 @@ type ObjectiveAnswers = Record<string, string>
 
 // AI-assessed productive result for Writing/Speaking within the diagnostic.
 interface AssessState {
-  status: 'idle' | 'assessing' | 'done' | 'skipped' | 'error'
+  // 'exhausted' is NOT an error. The free AI allowance for this month is spent,
+  // which is a normal, expected state with an upsell attached - rendering it in
+  // red as a failure would tell a learner something went wrong when nothing did.
+  status: 'idle' | 'assessing' | 'done' | 'skipped' | 'error' | 'exhausted'
   band?: Band
   justification?: string
   error?: string
+  /** 'exhausted' only: when the free allowance renews (ISO string). */
+  resetsAt?: string
+  /** 'exhausted' only: the cap that was in force. */
+  limit?: number
+}
+
+/**
+ * The live free-allowance signal, read from the X-Free-Allowance-* headers on
+ * every assess response. Rendered as "N of M free AI checks remaining this
+ * month" from the SECOND use onward - a counter as a greeting is cold for a
+ * child, so the first use shows nothing.
+ *
+ * The numbers come from the server, never from a hardcoded string: the cap is
+ * changeable live from the database, and a rendered number that disagreed with
+ * the enforced one is exactly the copy-versus-code drift this product has been
+ * burned by before.
+ */
+interface AllowanceSignal {
+  remaining: number
+  limit: number
+  resetsAt: string | null
 }
 
 // Band used as a graceful fallback when a productive task is skipped. Deliberately
@@ -162,6 +186,7 @@ export default function IeltsDiagnosticPage() {
   const [speakingText, setSpeakingText] = useState('')
   const [writing, setWriting] = useState<AssessState>({ status: 'idle' })
   const [speaking, setSpeaking] = useState<AssessState>({ status: 'idle' })
+  const [allowance, setAllowance] = useState<AllowanceSignal | null>(null)
 
   const readingQs = DIAGNOSTIC_READING_QUESTIONS
   const listeningQs = DIAGNOSTIC_LISTENING_QUESTIONS
@@ -197,11 +222,41 @@ export default function IeltsDiagnosticPage() {
       })
       const data: unknown = await res.json().catch(() => null)
 
+      // Every response carries the live allowance, so the meter updates without
+      // a second request. Read it before branching so the wall state is shown
+      // with the right numbers too.
+      const limitHeader = Number(res.headers.get('X-Free-Allowance-Limit'))
+      const remainingHeader = Number(res.headers.get('X-Free-Allowance-Remaining'))
+      if (Number.isFinite(limitHeader) && Number.isFinite(remainingHeader) && limitHeader > 0) {
+        setAllowance({
+          remaining: remainingHeader,
+          limit: limitHeader,
+          resetsAt: res.headers.get('X-Free-Allowance-Reset'),
+        })
+      }
+
       if (!res.ok) {
+        const body = (data ?? {}) as {
+          error?: unknown
+          code?: unknown
+          limit?: unknown
+          resetsAt?: unknown
+        }
+
+        // Switch on the machine code, NEVER on the status. 402 is reserved
+        // rather than standardised, so the number alone means nothing.
+        if (body.code === 'free_allowance_exhausted') {
+          setState({
+            status: 'exhausted',
+            limit: typeof body.limit === 'number' ? body.limit : undefined,
+            resetsAt: typeof body.resetsAt === 'string' ? body.resetsAt : undefined,
+            error: typeof body.error === 'string' ? body.error : undefined,
+          })
+          return
+        }
+
         const message =
-          data && typeof data === 'object' && 'error' in data && typeof data.error === 'string'
-            ? data.error
-            : t('ielts.diagnostic.assess.error')
+          typeof body.error === 'string' ? body.error : t('ielts.diagnostic.assess.error')
         setState({ status: 'error', error: message })
         return
       }
@@ -388,6 +443,7 @@ export default function IeltsDiagnosticPage() {
             onSpeakingText={setSpeakingText}
             writing={writing}
             speaking={speaking}
+            allowance={allowance}
             onAssess={assess}
             onSkip={skip}
           />
@@ -497,6 +553,7 @@ function QuestionsPanel({
   onSpeakingText,
   writing,
   speaking,
+  allowance,
   onAssess,
   onSkip,
 }: {
@@ -515,6 +572,7 @@ function QuestionsPanel({
   onSpeakingText: (v: string) => void
   writing: AssessState
   speaking: AssessState
+  allowance: AllowanceSignal | null
   onAssess: (skill: 'writing' | 'speaking') => void
   onSkip: (skill: 'writing' | 'speaking') => void
 }) {
@@ -605,6 +663,7 @@ function QuestionsPanel({
           value={writingText}
           onChange={onWritingText}
           state={writing}
+          allowance={allowance}
           onAssess={() => onAssess('writing')}
           onSkip={() => onSkip('writing')}
         />
@@ -621,6 +680,7 @@ function QuestionsPanel({
           value={speakingText}
           onChange={onSpeakingText}
           state={speaking}
+          allowance={allowance}
           onAssess={() => onAssess('speaking')}
           onSkip={() => onSkip('speaking')}
         />
@@ -823,6 +883,7 @@ function WritingTaskBlock({
   value,
   onChange,
   state,
+  allowance,
   onAssess,
   onSkip,
 }: {
@@ -830,6 +891,7 @@ function WritingTaskBlock({
   value: string
   onChange: (v: string) => void
   state: AssessState
+  allowance: AllowanceSignal | null
   onAssess: () => void
   onSkip: () => void
 }) {
@@ -869,6 +931,7 @@ function WritingTaskBlock({
       <AssessControls
         t={t}
         state={state}
+        allowance={allowance}
         assessLabelKey="ielts.diagnostic.writing.assess"
         assessingLabelKey="ielts.diagnostic.writing.assessing"
         assessedLabelKey="ielts.diagnostic.writing.assessed"
@@ -895,6 +958,7 @@ function SpeakingTaskBlock({
   value,
   onChange,
   state,
+  allowance,
   onAssess,
   onSkip,
 }: {
@@ -902,6 +966,7 @@ function SpeakingTaskBlock({
   value: string
   onChange: (v: string) => void
   state: AssessState
+  allowance: AllowanceSignal | null
   onAssess: () => void
   onSkip: () => void
 }) {
@@ -955,6 +1020,7 @@ function SpeakingTaskBlock({
       <AssessControls
         t={t}
         state={state}
+        allowance={allowance}
         assessLabelKey="ielts.diagnostic.speaking.assess"
         assessingLabelKey="ielts.diagnostic.speaking.assessing"
         assessedLabelKey="ielts.diagnostic.speaking.assessed"
@@ -979,6 +1045,7 @@ function SpeakingTaskBlock({
 function AssessControls({
   t,
   state,
+  allowance,
   assessLabelKey,
   assessingLabelKey,
   assessedLabelKey,
@@ -989,6 +1056,7 @@ function AssessControls({
 }: {
   t: TFn
   state: AssessState
+  allowance: AllowanceSignal | null
   assessLabelKey: string
   assessingLabelKey: string
   assessedLabelKey: string
@@ -999,6 +1067,7 @@ function AssessControls({
 }) {
   const assessing = state.status === 'assessing'
   const done = state.status === 'done'
+  const exhausted = state.status === 'exhausted'
 
   if (done) {
     return (
@@ -1011,6 +1080,18 @@ function AssessControls({
     )
   }
 
+  // The wall is not a failure, so it does not get the red error treatment.
+  if (exhausted) {
+    return (
+      <div className="mt-4 space-y-3">
+        <UpsellCard t={t} state={state} />
+        <Button variant="ghost" className="text-muted-foreground" onClick={onSkip}>
+          {t(skipLabelKey)}
+        </Button>
+      </div>
+    )
+  }
+
   return (
     <div className="mt-4 space-y-3">
       {state.status === 'error' && state.error && (
@@ -1019,6 +1100,7 @@ function AssessControls({
           <span>{state.error}</span>
         </div>
       )}
+      <RemainingUsesLine t={t} allowance={allowance} />
       <div className="flex flex-wrap items-center gap-3">
         <Button onClick={onAssess} disabled={!canSubmit}>
           {assessing ? (
@@ -1041,6 +1123,90 @@ function AssessControls({
         >
           {t(skipLabelKey)}
         </Button>
+      </div>
+    </div>
+  )
+}
+
+/**
+ * "N of M free AI checks remaining this month".
+ *
+ * Shows NOTHING before the first use: a counter as a greeting is cold for a
+ * child, and the lead magnet has to feel free. From the second use it appears,
+ * and at one left it is joined by one calm sentence about what a plan adds.
+ *
+ * Both numbers come from the server response headers. They are never written
+ * into a string here, because the cap is changeable from the database and a
+ * hardcoded figure would drift away from the number actually enforced.
+ */
+function RemainingUsesLine({ t, allowance }: { t: TFn; allowance: AllowanceSignal | null }) {
+  if (!allowance) return null
+  const used = allowance.limit - allowance.remaining
+  if (used < 1 || allowance.remaining < 1) return null
+
+  const line =
+    allowance.remaining === 1
+      ? t('feature.usage.one_remaining', { total: allowance.limit })
+      : t('feature.usage.n_remaining', {
+          remaining: allowance.remaining,
+          total: allowance.limit,
+        })
+
+  return (
+    <div className="space-y-1">
+      <p className="text-xs tabular-nums text-muted-foreground">{line}</p>
+      {allowance.remaining === 1 && (
+        <p className="text-xs leading-relaxed text-muted-foreground">
+          {t('ielts.diagnostic.usage.last_free_note')}{' '}
+          <Link
+            href="/pricing"
+            className="font-medium text-primary underline-offset-2 hover:underline"
+          >
+            {t('ielts.diagnostic.usage.see_plans')}
+          </Link>
+        </p>
+      )}
+    </div>
+  )
+}
+
+/**
+ * The wall. An upsell, not an error: the learner did nothing wrong, the free AI
+ * checks for this window are simply used up. Carries the real reset date and a
+ * link to /pricing, plus the server message, which tells a signed-out learner
+ * that signing in gives a larger allowance - the honest way out for a whole
+ * classroom sharing one public IP address.
+ */
+function UpsellCard({ t, state }: { t: TFn; state: AssessState }) {
+  const resetLabel = state.resetsAt
+    ? new Date(state.resetsAt).toLocaleDateString('en-GB', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+      })
+    : null
+
+  return (
+    <div className="rounded-xl border border-primary/25 bg-primary/5 p-4">
+      <div className="flex items-start gap-3">
+        <Sparkles className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+        <div className="space-y-2">
+          <p className="text-sm font-medium">{t('ielts.diagnostic.usage.exhausted_title')}</p>
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            {state.error ?? t('ielts.diagnostic.usage.exhausted_fallback')}
+          </p>
+          {resetLabel && (
+            <p className="text-xs text-muted-foreground">
+              {t('ielts.diagnostic.usage.renews_on', { date: resetLabel })}
+            </p>
+          )}
+          <Link
+            href="/pricing"
+            className="inline-flex h-9 items-center justify-center rounded-lg bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+          >
+            {t('ielts.diagnostic.usage.see_plans')}
+          </Link>
+        </div>
       </div>
     </div>
   )

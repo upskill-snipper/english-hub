@@ -138,6 +138,15 @@ export const PLACEHOLDER_FIX_MAY16: Dictionary = {
     ar: 'آخر يوم في تجربتك المجانية، رقّي الحين عشان ما تفقد الوصول.',
     es: 'Último día de tu prueba gratuita: mejora ahora para no perder el acceso.',
   },
+  // The no-card trial carries an AI-call ceiling (src/lib/usage/limits.ts).
+  // Both numbers are interpolated from the live resolver the server enforces
+  // with - never written into this string, or the banner would keep showing an
+  // old figure the moment the cap is changed in the database.
+  'billing.trial.ai_checks_used': {
+    en: '{used} of {total} AI checks used',
+    ar: 'استخدمت {used} من {total} فحص بالذكاء الاصطناعي',
+    es: '{used} de {total} comprobaciones de IA utilizadas',
+  },
   'billing.trial.unit_day': { en: 'day', ar: 'يوم', es: 'día' },
   'billing.trial.unit_days': { en: 'days', ar: 'أيام', es: 'días' },
   'billing.trial.unit_h': { en: 'h', ar: 'س', es: 'h' },
