@@ -127,6 +127,54 @@ export class FreeAllowanceConfigError extends Error {
  *         the caller is anonymous. Failing here is the point: a known salt makes
  *         the stored hash reversible, so it would still be personal data.
  */
+/**
+ * The secret salt for anonymous IP hashing.
+ *
+ * 2026-09-17: this originally read IP_HASH_SALT and THREW in production when it
+ * was unset. That shipped, the variable was not set in Vercel, and the free
+ * IELTS diagnostic - the top-of-funnel lead magnet - began returning 503 to
+ * every signed-out visitor before it ever reached the model. A missing
+ * configuration value must not take a learner-facing feature down.
+ *
+ * The privacy requirement is unchanged and is NOT relaxed: the salt must be
+ * secret, because with a known salt the whole IPv4 space can be hashed in
+ * minutes and the stored digest would be reversible, so it would remain
+ * personal data under UK GDPR. What changes is where the secret may come from.
+ *
+ * Resolution order:
+ *   1. IP_HASH_SALT                - the dedicated variable, if set.
+ *   2. sha256('free-allowance-ip-salt:' + CRON_SECRET) - derived from a secret
+ *      that is already mandatory in production (every scheduled route rejects
+ *      without it), is high-entropy, and never leaves the server. Deriving
+ *      rather than using it directly means the salt cannot be used to
+ *      impersonate a cron caller even if a digest were somehow reversed.
+ *   3. Only if BOTH are absent in production do we refuse, because at that
+ *      point there is genuinely no secret to salt with.
+ *
+ * The derived salt is stable for a given deployment, which is what a counter
+ * needs. Rotating CRON_SECRET resets anonymous buckets; that is acceptable and
+ * is noted here so it is not a surprise.
+ */
+function resolveIpSalt(): string {
+  const explicit = process.env.IP_HASH_SALT
+  if (explicit && explicit.trim() !== '') return explicit
+
+  const cronSecret = process.env.CRON_SECRET
+  if (cronSecret && cronSecret.trim() !== '') {
+    console.warn(
+      '[free-allowance] IP_HASH_SALT is not set; deriving the anonymous salt from CRON_SECRET. Set IP_HASH_SALT to make anonymous buckets independent of cron-secret rotation.',
+    )
+    return createHash('sha256').update(`free-allowance-ip-salt:${cronSecret}`).digest('hex')
+  }
+
+  if (process.env.NODE_ENV === 'production') {
+    throw new FreeAllowanceConfigError(
+      'Neither IP_HASH_SALT nor CRON_SECRET is set. Anonymous usage cannot be metered without a secret salt, because an unsalted or known-salt IP hash is reversible and remains personal data.',
+    )
+  }
+  return 'the-english-hub-ip-salt-dev'
+}
+
 export function resolveUsageSubject(
   request: { headers: Headers },
   supabaseUserId: string | null | undefined,
@@ -135,20 +183,11 @@ export function resolveUsageSubject(
     return { subjectType: 'user', subjectKey: supabaseUserId }
   }
 
-  const salt = process.env.IP_HASH_SALT
-  if (!salt || salt.trim() === '') {
-    if (process.env.NODE_ENV === 'production') {
-      throw new FreeAllowanceConfigError(
-        'IP_HASH_SALT is not set. Anonymous usage cannot be metered without a secret salt, because an unsalted or known-salt IP hash is reversible and remains personal data.',
-      )
-    }
-  }
+  const salt = resolveIpSalt()
 
   const ip = getClientIp(request.headers)
   // Full 64-char digest (not the truncated hashIP() used for logs).
-  const subjectKey = createHash('sha256')
-    .update(`${salt ?? 'the-english-hub-ip-salt-dev'}:${ip}`)
-    .digest('hex')
+  const subjectKey = createHash('sha256').update(`${salt}:${ip}`).digest('hex')
 
   return { subjectType: 'ip', subjectKey }
 }
