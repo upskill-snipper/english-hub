@@ -29,6 +29,8 @@
 //        • marker      → claude-sonnet-4-6   (latest Sonnet, callable ✓)
 //        • escalation  → claude-opus-4-8     (latest Opus,   callable ✓)
 //        • classifier  → claude-haiku-4-5    (latest Haiku,  callable ✓)
+//      THOSE IDS ARE HISTORICAL. As of 2026-09-17 claude-sonnet-4-6 is
+//      rejected with HTTP 400 and the tiers are on the Claude 5 generation.
 //      These are the "latest the SDK resolves" in the only sense that is true
 //      on this account: the newest family ids the SDK exposes and the key
 //      serves. They are the SINGLE swap-point — no route, marker, judge, or
@@ -64,11 +66,20 @@
 import { ANTHROPIC_MODEL } from '@/lib/anthropic-client'
 
 /**
- * Latest Sonnet id the SDK resolves AND the prod key can call (confirmed
- * 2026-05-29) — the high-volume marker / feedback tier. WHY a concrete id and
- * not `claude-sonnet-latest`: that alias 404s on this account (see header).
+ * The high-volume marker / feedback tier: latest Sonnet.
+ *
+ * 2026-09-17 INCIDENT (the SECOND retirement outage): this was pinned to
+ * `claude-sonnet-4-6`, which the Anthropic API now rejects with HTTP 400, so
+ * every marking call failed. The August fix made `ANTHROPIC_MODEL` env-
+ * overridable but left THESE three constants hard-coded, which meant the
+ * marking engine - the core product - could not be recovered without a deploy.
+ * All three are now env-overridable too, so the next retirement is a Vercel
+ * env change.
+ *
+ * WHY a concrete id and not `claude-sonnet-latest`: that alias 404s on this
+ * account (see header).
  */
-export const MARKER_MODEL = 'claude-sonnet-4-6' as const
+export const MARKER_MODEL: string = process.env.MARKING_MARKER_MODEL || 'claude-sonnet-5'
 
 /**
  * Latest Opus id the SDK resolves AND the prod key can call (confirmed
@@ -76,14 +87,15 @@ export const MARKER_MODEL = 'claude-sonnet-4-6' as const
  * offline calibration judge. Only fires on the flagged minority of scripts
  * (doc 22 §1), so its higher cost is bounded.
  */
-export const ESCALATION_MODEL = 'claude-opus-4-8' as const
+export const ESCALATION_MODEL: string = process.env.MARKING_ESCALATION_MODEL || 'claude-opus-5'
 
 /**
  * Latest Haiku id the SDK resolves AND the prod key can call (confirmed
  * 2026-05-29) — the cheap routing/classifier tier ONLY. MUST NOT be used for
  * marking (IELTS §1; enforced by `assertNotHaiku`).
  */
-export const CLASSIFIER_MODEL = 'claude-haiku-4-5' as const
+export const CLASSIFIER_MODEL: string =
+  process.env.MARKING_CLASSIFIER_MODEL || 'claude-haiku-4-5-20251001'
 
 /**
  * The three model roles the marking engine uses, each pointed at the latest

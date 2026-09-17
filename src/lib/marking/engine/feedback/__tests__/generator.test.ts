@@ -25,6 +25,7 @@ import {
   type FeedbackToolPayload,
 } from '../generator'
 import type { MarkingResultV2, BandCriterionScore, MarkingError } from '../../result-schema'
+import { MARKING_MODELS } from '../../models'
 
 // ─── Fixtures ─────────────────────────────────────────────────────────────────
 
@@ -368,8 +369,11 @@ describe('prompt + routing', () => {
     expect(create).toHaveBeenCalledTimes(1)
     const body = create.mock.calls[0]?.[0]
     expect(body?.tool_choice).toEqual({ type: 'tool', name: FEEDBACK_TOOL_NAME })
-    // routed through MARKING_MODELS.marker (latest Sonnet) — never an inline id.
-    expect(body?.model).toBe('claude-sonnet-4-6')
+    // Routed through MARKING_MODELS.marker (latest Sonnet) - never an inline id.
+    // Asserted against the constant on purpose: this test is about ROUTING, and
+    // pinning a literal here made a model bump fail a test that has nothing to
+    // do with which model is current.
+    expect(body?.model).toBe(MARKING_MODELS.marker)
   })
 
   it('does not leak essay text into anything but the user message (outbound minimisation)', async () => {
