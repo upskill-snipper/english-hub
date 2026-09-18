@@ -184,7 +184,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body className="min-h-screen font-sans antialiased">
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:start-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md"
         >
           {skipToContent}
         </a>
@@ -196,7 +196,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
                   <BoardGate>{children}</BoardGate>
                 </RootLayoutShell>
               </PostHogProvider>
-              <Toaster richColors position="bottom-right" />
+              {/*
+                A11Y-10: was hard-coded to bottom-right, so in Arabic every
+                toast appeared on the far side of the screen from the content
+                that caused it - and, on a phone, over the primary action.
+                `dir` is already computed above.
+              */}
+              <Toaster richColors position={dir === 'rtl' ? 'bottom-left' : 'bottom-right'} />
               <CookieConsent />
               <UtmCapture />
             </TooltipProvider>

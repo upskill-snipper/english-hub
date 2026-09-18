@@ -15,9 +15,54 @@ export function formatDuration(seconds: number): string {
   return `${m}m`
 }
 
-/** Format a date as a localised UK string (e.g. "18 Mar 2026") */
-export function formatDate(date: string | Date): string {
-  return new Date(date).toLocaleDateString('en-GB', {
+/**
+ * The three locales the product ships. Declared INLINE, deliberately.
+ *
+ * Importing `Locale` from `@/lib/i18n/dictionary` would be the obvious thing
+ * and would be a repeat of a bug this repo has already paid for: that module
+ * is 1.5 MB with ~150 static sub-dictionary imports, `@/lib/i18n/t` adds
+ * `next/headers` on top, and `cn()` from THIS file is imported by the root
+ * layout, the header and BoardGate - so it is in every page's client graph. A
+ * value import here would drag the whole dictionary along behind it, exactly
+ * as `require('@/data/courses')` once dragged 7.6 MB onto 1,049 pages.
+ *
+ * The existing guard test for that regression only matches `@/data/...`, so it
+ * would not have fired. `no-course-corpus-in-shared-code.test.ts` now covers
+ * this module too.
+ */
+export type FormatLocale = 'en' | 'ar' | 'es'
+
+/**
+ * BCP-47 tags for date formatting, one per shipped locale.
+ *
+ * Arabic uses `ar-EG-u-ca-gregory-nu-latn`: Arabic month names, the Gregorian
+ * calendar (not Hijri - these are exam dates and subscription renewals), and
+ * LATIN digits. Arabic-Indic digits would be more idiomatic in prose but this
+ * product shows marks, grades and dates side by side, and mixing numeral
+ * systems within one interface is worse than either alone.
+ */
+const DATE_LOCALES: Record<FormatLocale, string> = {
+  en: 'en-GB',
+  ar: 'ar-EG-u-ca-gregory-nu-latn',
+  es: 'es-ES',
+}
+
+/**
+ * Format a date for display (e.g. "18 Sept 2026", "18 سبتمبر 2026").
+ *
+ * THE DEFECT (19 September 2026, A11Y-10). This hard-coded 'en-GB' with no way
+ * to pass anything else, across 130 call sites. An Arabic reader saw English
+ * month names embedded in Arabic sentences - "18 Sep 2026" inside a
+ * right-to-left paragraph, which is both wrong and, because Latin text inside
+ * RTL runs reorders, frequently unreadable.
+ *
+ * The parameter DEFAULTS to 'en', so every existing call site keeps its exact
+ * current behaviour and this change cannot regress the English product. Client
+ * components should prefer `useFormatDate()` from `@/lib/i18n/use-format-date`,
+ * which supplies the reader's own locale.
+ */
+export function formatDate(date: string | Date, locale: FormatLocale = 'en'): string {
+  return new Date(date).toLocaleDateString(DATE_LOCALES[locale] ?? DATE_LOCALES.en, {
     day: 'numeric',
     month: 'short',
     year: 'numeric',

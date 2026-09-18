@@ -61,14 +61,34 @@ function stripComments(source: string): string {
   return source.replace(/\/\*[\s\S]*?\*\//g, '').replace(/(^|[^:])\/\/.*$/gm, '$1')
 }
 
-/** Any static import or require of the course corpus, excluding the tiny map. */
+/**
+ * Any static import or require of a MEGABYTE-SCALE corpus, excluding the tiny
+ * generated map.
+ *
+ * Widened 19 September 2026 (A11Y-10) to cover `@/lib/i18n/dictionary` and
+ * `@/lib/i18n/t`. The guard previously matched `@/data/...` only, which is the
+ * shape the ORIGINAL defect happened to take - so it would not have fired on
+ * the next instance of the same bug through a different door.
+ *
+ * That door was about to be opened: the obvious way to give `formatDate()` a
+ * locale type is `import { type Locale } from '@/lib/i18n/dictionary'`, and
+ * that module is 1.5 MB with ~150 static sub-dictionary imports. `cn()` lives
+ * in the same file and is imported by the root layout, the header and
+ * BoardGate, so a value import there lands on every page - 7.6 MB on 1,049
+ * pages, all over again, with this test green.
+ *
+ * `import type` is not matched: it is erased at compile time and costs nothing.
+ */
 function corpusReferences(raw: string): string[] {
   const source = stripComments(raw)
   const hits: string[] = []
   const patterns = [
-    /import\s[^'"]*from\s+['"]@\/data\/(?!generated\/)[^'"]+['"]/g,
+    /import\s+(?!type\s)[^'"]*from\s+['"]@\/data\/(?!generated\/)[^'"]+['"]/g,
     /require\(\s*['"]@\/data\/(?!generated\/)[^'"]+['"]\s*\)/g,
     /from\s+['"]\.\.?\/[^'"]*\/data\/(?!generated\/)[^'"]+['"]/g,
+    // The i18n dictionary and the server-only translator built on it.
+    /import\s+(?!type\s)[^'"]*from\s+['"]@\/lib\/i18n\/(dictionary|t)['"]/g,
+    /require\(\s*['"]@\/lib\/i18n\/(dictionary|t)['"]\s*\)/g,
   ]
   for (const re of patterns) {
     for (const m of source.matchAll(re)) hits.push(m[0])
@@ -95,6 +115,16 @@ describe('code that ships in every page', () => {
       const hits = corpusReferences(readFileSync(file, 'utf8'))
       expect(hits, `${file} imports the course corpus:\n  ${hits.join('\n  ')}`).toEqual([])
     }
+  })
+
+  it('specifically never value-imports the 1.5 MB i18n dictionary', () => {
+    // The door that was about to be opened. `cn()` lives in this file and is
+    // in every page's graph; a value import of the dictionary here repeats the
+    // course-corpus defect exactly, through a module the old regex did not
+    // cover. A type-only import is fine and is what utils.ts actually uses.
+    const utils = stripComments(readFileSync(join(process.cwd(), 'src/lib/utils.ts'), 'utf8'))
+    expect(utils).not.toMatch(/import\s+(?!type\s)[^'"]*from\s+['"]@\/lib\/i18n\//)
+    expect(corpusReferences(utils)).toEqual([])
   })
 
   it('specifically never requires @/data/courses again', () => {
