@@ -109,11 +109,22 @@ export default function CancelSubscriptionPage() {
             <p className="text-muted-foreground mb-8">{t('dashboard.cancel.step1_desc')}</p>
 
             <div className="space-y-4 mb-8">
+              {/* What a cancelling customer actually loses.
+                  Corrected 19 September 2026. This list named two things that
+                  do not exist for them: "Human review request access" has no
+                  user-facing route anywhere in the product (the table holds 0
+                  rows and only an admin view reads it), and "Progress tracking
+                  and revision insights" was listed as a premium loss although
+                  it is not gated on the subscription. It also said "unlimited
+                  submissions" while every AI marking route is rate limited.
+
+                  Overstating what someone loses at the moment they cancel is
+                  the worst possible place to be caught doing it: they are
+                  already deciding whether this product was honest with them. */}
               {[
-                'AI-powered essay feedback on unlimited submissions',
-                'Detailed grammar, structure, and vocabulary analysis',
-                'Progress tracking and revision insights',
-                'Human review request access',
+                'AI marking on your essays, against your exam board&#39;s mark scheme',
+                'Detailed grammar, structure and vocabulary analysis',
+                'The examiner marking tool for full papers',
                 'Exam preparation resources and tools',
               ].map((feature, i) => (
                 <div key={i} className="flex items-start gap-3">

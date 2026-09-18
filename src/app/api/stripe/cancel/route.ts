@@ -39,7 +39,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
 import { stripe } from '@/lib/stripe'
-import { createServerSupabaseClient } from '@/lib/supabase/server'
+import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 
 interface CancelRequestBody {
@@ -216,11 +216,44 @@ export async function POST(request: NextRequest) {
       },
     })
 
+    const accessEndsAt = periodEndIso(updated) ?? periodEndIso(target)
+
+    // ── Keep the reason ──────────────────────────────────────────────────
+    //
+    // Until today the answer to "why are you leaving" went nowhere: the route
+    // could not succeed at all, and once it could, the reason was written only
+    // into Stripe subscription metadata, where it is capped, unqueryable and
+    // invisible unless someone opens each subscription by hand.
+    //
+    // Monthly GBP 3.99 and GBP 6.99 subscribers churn through this door and
+    // their reasons are the only churn data the business will have for months.
+    //
+    // Service-role write: the table grants `authenticated` SELECT only, so a
+    // customer can read back what they said and nothing else. Best-effort - a
+    // failure to record the reason must never stop someone cancelling.
+    if (reason || feedback) {
+      try {
+        const svc = createServiceRoleClient()
+        const { error: feedbackErr } = await svc.from('cancellation_feedback').insert({
+          user_id: user.id,
+          reason: reason ?? null,
+          feedback: feedback ? feedback.slice(0, 2000) : null,
+          stripe_subscription_id: target.id,
+          access_ends_at: accessEndsAt,
+        })
+        if (feedbackErr) {
+          console.error('[api/stripe/cancel] could not record the reason:', feedbackErr)
+        }
+      } catch (err) {
+        console.error('[api/stripe/cancel] cancellation_feedback write threw:', err)
+      }
+    }
+
     return NextResponse.json({
       referenceNumber: generateRefNumber(),
       // The page reads this to tell the customer when access ends. The old
       // route never returned it.
-      accessEndsAt: periodEndIso(updated) ?? periodEndIso(target),
+      accessEndsAt,
       message:
         'Your subscription has been scheduled for cancellation at the end of the current billing period.',
     })

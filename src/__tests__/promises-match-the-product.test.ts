@@ -191,3 +191,33 @@ describe('the pricing page follows the positioning house', () => {
     expect(lookup('pricing.faq.a5', 'en')).toMatch(/teacher/i)
   })
 })
+
+// ─── Hardcoded claims outside the dictionary ────────────────────────────
+
+describe('billing surfaces that hardcode their own copy', () => {
+  // The dictionary sweep above cannot see these: they are string literals
+  // inside page components. The cancel page listed "AI-powered essay feedback
+  // on unlimited submissions" and slipped through the checker for exactly that
+  // reason, alongside two features that do not exist for the customer at all.
+  const BILLING_PAGES = [
+    'src/app/dashboard/subscription/cancel/page.tsx',
+    'src/app/dashboard/subscription/page.tsx',
+  ]
+
+  function code(rel: string): string {
+    const raw = readFileSync(join(process.cwd(), rel), 'utf8')
+    // Comments explain the defect and quote the old wording, so strip them.
+    return raw.replace(/\/\*[\s\S]*?\*\//g, '').replace(/(^|[^:])\/\/.*$/gm, '$1')
+  }
+
+  it.each(BILLING_PAGES)('%s makes no unlimited claim', (rel) => {
+    expect(code(rel).toLowerCase()).not.toMatch(/unlimited/)
+  })
+
+  it('does not tell a cancelling customer they lose human review', () => {
+    // human_review_requests holds 0 rows in production and there is no
+    // user-facing route to create one. Listing it as a loss at the moment
+    // someone cancels is the worst place to overstate the product.
+    expect(code(BILLING_PAGES[0]!)).not.toMatch(/Human review request/i)
+  })
+})

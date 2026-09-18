@@ -34,7 +34,18 @@ vi.mock('@/lib/rate-limit', () => ({
 
 let authUser: { id: string } | null = { id: 'user-123' }
 let customerId: string | null = 'cus_123'
+const feedbackInserts: Record<string, unknown>[] = []
+let feedbackError: unknown = null
+
 vi.mock('@/lib/supabase/server', () => ({
+  createServiceRoleClient: () => ({
+    from: () => ({
+      insert: async (row: Record<string, unknown>) => {
+        feedbackInserts.push(row)
+        return { error: feedbackError }
+      },
+    }),
+  }),
   createServerSupabaseClient: () => ({
     auth: { getUser: async () => ({ data: { user: authUser }, error: null }) },
     from: () => ({
@@ -83,6 +94,8 @@ const PAGE_BODY = {
 
 beforeEach(() => {
   vi.clearAllMocks()
+  feedbackInserts.length = 0
+  feedbackError = null
   authUser = { id: 'user-123' }
   customerId = 'cus_123'
   mockRateLimit.mockResolvedValue({ success: true, resetAt: Date.now() + 1000 })
@@ -241,5 +254,57 @@ describe('guards', () => {
   it('400s on an over-long reason', async () => {
     const res = await POST(post({ reason: 'x'.repeat(2001) }))
     expect(res.status).toBe(400)
+  })
+})
+
+// ─── The reason is kept ─────────────────────────────────────────────────
+
+describe('recording why they left', () => {
+  it('writes the reason and feedback to the database', () => {
+    // Until now the answer went nowhere: the route could not succeed at all,
+    // and once it could, the reason lived only in Stripe metadata - capped,
+    // unqueryable, and invisible unless someone opened each subscription by
+    // hand. These reasons are the only churn data the business has.
+    return POST(post(PAGE_BODY)).then(() => {
+      expect(feedbackInserts).toHaveLength(1)
+      expect(feedbackInserts[0]).toMatchObject({
+        user_id: 'user-123',
+        reason: 'too-expensive',
+        feedback: 'Too pricey for me',
+        stripe_subscription_id: 'sub_1',
+      })
+    })
+  })
+
+  it('records when their access actually ends, for a later win-back', async () => {
+    await POST(post(PAGE_BODY))
+    expect(feedbackInserts[0]?.access_ends_at).toBe(PERIOD_END_ISO)
+  })
+
+  it('writes nothing when the customer said nothing', async () => {
+    await POST(post({}))
+    expect(feedbackInserts).toHaveLength(0)
+  })
+
+  it('never blocks a cancellation because the reason could not be stored', async () => {
+    feedbackError = { message: 'permission denied' }
+    const res = await POST(post(PAGE_BODY))
+    expect(res.status).toBe(200)
+    expect(mockUpdate).toHaveBeenCalled()
+  })
+
+  it('caps the free text so a paste cannot fill the table', async () => {
+    await POST(post({ ...PAGE_BODY, feedback: 'x'.repeat(1999) }))
+    expect(String(feedbackInserts[0]?.feedback).length).toBeLessThanOrEqual(2000)
+  })
+
+  it('stores no name, email or Stripe customer alongside the reason', async () => {
+    // A churn reason joined to an identity is more personal data than the
+    // question "why do people leave" requires.
+    await POST(post(PAGE_BODY))
+    const keys = Object.keys(feedbackInserts[0] ?? {})
+    expect(keys).not.toContain('email')
+    expect(keys).not.toContain('name')
+    expect(keys).not.toContain('stripe_customer_id')
   })
 })
