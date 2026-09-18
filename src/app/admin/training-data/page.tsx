@@ -22,7 +22,9 @@ import { revalidatePath } from 'next/cache'
 import { verifyAdmin } from '@/lib/admin-auth'
 import { createServiceRoleClient } from '@/lib/supabase/server'
 import { prepareTrainingRecord } from '@/lib/training/prepare'
-import { lookup } from '@/lib/i18n/dictionary'
+// Was `lookup` from '@/lib/i18n/dictionary' - 1.5 MB of trilingual source in
+// an admin page's server graph. See src/lib/i18n/server-messages.ts.
+import { preloadLocale, serverLookup } from '@/lib/i18n/server-messages'
 import { cookies } from 'next/headers'
 
 export const dynamic = 'force-dynamic'
@@ -50,7 +52,8 @@ async function getT(): Promise<(k: string) => string> {
   const store = await cookies()
   const raw = store.get('eh-lang')?.value
   const locale = raw === 'ar' ? 'ar' : 'en'
-  return (k: string) => lookup(k, locale)
+  await preloadLocale(locale)
+  return (k: string) => serverLookup(k, locale)
 }
 
 // ─── Server action: prepare every eligible submission ───────────────────────

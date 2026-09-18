@@ -55,7 +55,7 @@ import {
   hasArabicVariant,
   type BlogPost,
 } from '@/lib/blog/posts'
-import { tSync } from '@/lib/i18n/t'
+import { tSync, preloadLocale } from '@/lib/i18n/t'
 import type { Locale } from '@/lib/i18n/dictionary'
 
 const SITE_URL = 'https://theenglishhub.app'
@@ -67,8 +67,16 @@ type Params = { slug: string }
 async function resolveLocale(): Promise<{ locale: Locale; viaArUrl: boolean }> {
   const h = await headers()
   const lang = h.get('x-lang')
+  const locale: Locale = lang === 'ar' ? 'ar' : 'en'
+  // Load the messages here rather than at each tSync call. This file has three
+  // tSync sites inside synchronous components, which cannot await; putting the
+  // load in the one function both entry points already call means neither can
+  // forget it. Forgetting is invisible: the page renders, in English, for a
+  // reader who asked for Arabic. It is a dynamic import and does not read
+  // headers(), so it does not affect the static-render gate below.
+  await preloadLocale(locale)
   return {
-    locale: lang === 'ar' ? 'ar' : 'en',
+    locale,
     // 'url' means the visitor is on the canonical /ar/... surface (as
     // opposed to the eh-lang cookie toggling an /blog/... URL).
     viaArUrl: lang === 'ar' && h.get('x-lang-source') === 'url',

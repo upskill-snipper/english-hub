@@ -22,7 +22,11 @@
  */
 
 import { headers } from 'next/headers'
-import { lookup, type Locale } from './dictionary'
+// Not `./dictionary`: that is 1.5 MB of trilingual source and importing it
+// here put the whole thing in every server render's graph, because the root
+// layout calls t(). ./server-messages reads the generated flat maps, which
+// scripts/verify-i18n-locales.mjs asserts are identical to lookup()'s output.
+import { preloadLocale, serverLookup, type Locale } from './server-messages'
 
 async function resolveLocale(): Promise<Locale> {
   try {
@@ -56,7 +60,11 @@ export function pickLocaleField<T>(locale: Locale, en: T, ar: T | undefined): T 
 
 export async function t(key: string): Promise<string> {
   const locale = await resolveLocale()
-  return lookup(key, locale)
+  // Awaited here rather than at the call site. A design where the caller has
+  // to remember to preload is one where forgetting silently serves English to
+  // an Arabic reader, with nothing failing.
+  await preloadLocale(locale)
+  return serverLookup(key, locale)
 }
 
 /**
@@ -66,7 +74,8 @@ export async function t(key: string): Promise<string> {
  */
 export async function tMany(keys: string[]): Promise<string[]> {
   const locale = await resolveLocale()
-  return keys.map((k) => lookup(k, locale))
+  await preloadLocale(locale)
+  return keys.map((k) => serverLookup(k, locale))
 }
 
 /**
@@ -75,5 +84,16 @@ export async function tMany(keys: string[]): Promise<string[]> {
  * the headers() round-trip.
  */
 export function tSync(key: string, locale: Locale): string {
-  return lookup(key, locale)
+  return serverLookup(key, locale)
 }
+
+/**
+ * Re-exported so a synchronous `tSync` caller can load its locale from the
+ * enclosing async component. `t()` and `tMany()` do this themselves.
+ *
+ * Every file importing `tSync` must also call this - enforced by
+ * src/__tests__/no-dictionary-in-server-graph.test.ts, because forgetting is
+ * invisible: the page renders, in English, for a reader who asked for Arabic.
+ */
+export { preloadLocale } from './server-messages'
+export type { Locale } from './server-messages'

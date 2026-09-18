@@ -22,7 +22,14 @@
 
 import Link from 'next/link'
 import { headers } from 'next/headers'
-import { lookup, type Locale } from '@/lib/i18n/dictionary'
+// Was `lookup` from '@/lib/i18n/dictionary', which pulled 1.5 MB of
+// trilingual source into the graph of every page rendering this label. The
+// generated maps are the same data with the fallback chain resolved.
+//
+// resolveLang below is deliberately left alone: this is a PDPPL Remediation 6
+// compliance disclosure and it intentionally collapses es to en rather than
+// showing an untranslated notice.
+import { preloadLocale, serverLookup, type Locale } from '@/lib/i18n/server-messages'
 
 type Variant = 'inline' | 'panel' | 'footer'
 
@@ -53,10 +60,11 @@ export async function AIContentLabel({
   className?: string
 }) {
   const l = await resolveLang(lang)
-  const short = lookup('ai_label.short', l)
-  const linkLabel = lookup('ai_label.link', l)
-  const panelTitle = lookup('ai_label.panel_title', l)
-  const panelBody = lookup('ai_label.panel_body', l)
+  await preloadLocale(l)
+  const short = serverLookup('ai_label.short', l)
+  const linkLabel = serverLookup('ai_label.link', l)
+  const panelTitle = serverLookup('ai_label.panel_title', l)
+  const panelBody = serverLookup('ai_label.panel_body', l)
 
   if (variant === 'inline') {
     return (

@@ -16,7 +16,7 @@ import {
   type LessonPlanMetadata,
 } from '@/data/lesson-plans/metadata'
 import type { Locale } from '@/lib/i18n/dictionary'
-import { tSync } from '@/lib/i18n/t'
+import { tSync, preloadLocale } from '@/lib/i18n/t'
 
 // Pre-compute filter-dropdown option lists server-side so the client doesn't
 // need to scan the full array just to populate the <Select> components.
@@ -56,6 +56,9 @@ async function fetchRecommendations(): Promise<{
     // Resolve the active locale once so all reason strings render in the
     // same language. Middleware stamps `x-lang` on every request.
     const locale: Locale = h.get('x-lang') === 'ar' ? 'ar' : 'en'
+    // See the note in src/lib/i18n/server-messages.ts: tSync cannot load its
+    // own locale, so it is loaded here before the reason strings resolve.
+    await preloadLocale(locale)
     if (!host) return { recommended: [], reasons: {} }
 
     const res = await fetch(`${proto}://${host}/api/school/overview`, {

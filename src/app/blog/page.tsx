@@ -19,7 +19,7 @@ import Link from 'next/link'
 import { Card, CardContent } from '@/components/ui/card'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { getAllBlogPosts, type BlogPost } from '@/lib/blog/posts'
-import { tMany, tSync } from '@/lib/i18n/t'
+import { tMany, tSync, preloadLocale } from '@/lib/i18n/t'
 import type { Locale } from '@/lib/i18n/dictionary'
 
 const SITE_URL = 'https://theenglishhub.app'
@@ -104,6 +104,10 @@ export default async function BlogIndexPage() {
   const h = await headers()
   const nonce = h.get('x-nonce') ?? undefined
   const locale: Locale = h.get('x-lang') === 'ar' ? 'ar' : 'en'
+  // Load the locale's messages before any synchronous tSync below. t() and
+  // tMany() do this for themselves; tSync cannot, because it is called from a
+  // synchronous component.
+  await preloadLocale(locale)
   // On the canonical Arabic surface every card must link to the Arabic
   // article, otherwise an Arabic reader is bounced back into the English
   // tree and the 40 AR posts stay unreachable by internal linking.
