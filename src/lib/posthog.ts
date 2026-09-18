@@ -34,14 +34,37 @@ function hasAnalyticsCookieConsent(): boolean {
   }
 }
 
+/**
+ * True when we must NOT capture analytics for age reasons.
+ *
+ * THE DEFECT THIS FIXES (19 September 2026)
+ *
+ * This used to answer the question "is the flag literally set to 'true'",
+ * which quietly turned "we do not know how old this person is" into "adult".
+ * `profiles.is_minor` is NOT NULL DEFAULT false, and on 19 September
+ * production held 209 profiles of which 209 had a NULL date_of_birth and
+ * is_minor false. So on a product whose users are children, EVERY signed-in
+ * account was treated as an adult by this gate, and any of them who accepted
+ * analytics cookies was captured and identified.
+ *
+ * It now recognises three states. 'unknown' counts as not-capturable, which is
+ * the only defensible default under the Children's Code: an unverified age is
+ * not an adult age.
+ *
+ * The catch also returned false - fail OPEN - while the server-side branch
+ * directly above returned true. So a private window, where localStorage
+ * throws, tracked a child. Both now fail closed.
+ */
 function isMinorFlagged(): boolean {
   if (typeof window === 'undefined') return true
   try {
-    // Set by the auth/session boot code whenever a User row with
-    // isMinor=true is loaded. Defaults to absent for logged-out visitors.
-    return window.localStorage.getItem('eh-is-minor') === 'true'
+    const v = window.localStorage.getItem('eh-is-minor')
+    // Absent means a logged-out visitor, who has no profile and no age on
+    // record; the cookie-consent gate below is what governs them.
+    if (v === null) return false
+    return v !== 'adult'
   } catch {
-    return false
+    return true
   }
 }
 
@@ -134,14 +157,41 @@ export function reset(): void {
  * minor check used by canCaptureAnalytics(). Pass isMinor=true for any
  * account flagged as under 16.
  */
-export function setMinorFlag(isMinor: boolean): void {
+/**
+ * What we know about this account's age.
+ *
+ *   'minor'   - confirmed under 18. Never captured.
+ *   'unknown' - signed in, but no date of birth on record. Never captured:
+ *               an unverified age is not an adult age.
+ *   'adult'   - confirmed 18 or over. Capturable, subject to cookie consent.
+ *
+ * Was a boolean, where `false` meant both "confirmed adult" and "we have no
+ * idea" - see isMinorFlagged above for what that cost.
+ */
+export type AgeAssurance = 'minor' | 'unknown' | 'adult'
+
+export function setAgeAssurance(state: AgeAssurance): void {
   if (typeof window === 'undefined') return
   try {
-    if (isMinor) {
-      window.localStorage.setItem('eh-is-minor', 'true')
+    if (state === 'adult') {
+      // Written, not removed. An absent key means "logged out"; a signed-in
+      // adult is a different thing and must survive a shared-device sign-out
+      // being distinguishable from it.
+      window.localStorage.setItem('eh-is-minor', 'adult')
     } else {
-      window.localStorage.removeItem('eh-is-minor')
+      window.localStorage.setItem('eh-is-minor', state === 'minor' ? 'true' : 'unknown')
     }
+  } catch {
+    // no-op: isMinorFlagged fails closed if storage is unavailable.
+  }
+  refreshOptInState()
+}
+
+/** Clear the flag entirely, for sign-out. */
+export function clearAgeAssurance(): void {
+  if (typeof window === 'undefined') return
+  try {
+    window.localStorage.removeItem('eh-is-minor')
   } catch {
     // no-op
   }

@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthActions } from '@/store/auth-store'
-import { setMinorFlag } from '@/lib/posthog'
+import { setAgeAssurance, clearAgeAssurance } from '@/lib/posthog'
 import type { Profile } from '@/lib/types'
 
 export function SupabaseProvider({ children }: { children: React.ReactNode }) {
@@ -28,15 +28,23 @@ export function SupabaseProvider({ children }: { children: React.ReactNode }) {
       const profile = data as Profile
       setProfile(profile)
 
-      // Children's Code analytics gate. setMinorFlag() drives
-      // canCaptureAnalytics() in lib/posthog, but nothing ever called it, so
-      // 'eh-is-minor' was never set and every signed-in minor was tracked in
-      // full - the profile-level analytics_opt_in=false written at
-      // registration only governs server-side reads, not the client SDK.
-      // This is the one place every authenticated session hydrates, so it is
-      // the correct single call site. Explicitly clears the flag for
-      // confirmed non-minors so a shared device cannot leave it stuck on.
-      setMinorFlag(profile.is_minor === true)
+      // Children's Code analytics gate. This drives canCaptureAnalytics() in
+      // lib/posthog, and it is the one place every authenticated session
+      // hydrates, so it is the correct single call site.
+      //
+      // WHY THIS IS THREE STATES AND NOT A BOOLEAN (19 September 2026). It
+      // used to pass `profile.is_minor === true`. That column is NOT NULL
+      // DEFAULT false, and production held 209 profiles of which 209 had a
+      // NULL date_of_birth and is_minor false - so on a product whose users
+      // are children, every signed-in account was reported to the gate as an
+      // adult, and any of them who accepted analytics cookies was captured
+      // and identified.
+      //
+      // An account with no date of birth on record is 'unknown', not 'adult'.
+      // An unverified age is not an adult age.
+      setAgeAssurance(
+        profile.is_minor === true ? 'minor' : profile.date_of_birth ? 'adult' : 'unknown',
+      )
     }
 
     // Get the initial user via getUser() which validates with the server,
@@ -71,9 +79,11 @@ export function SupabaseProvider({ children }: { children: React.ReactNode }) {
       if (user) {
         fetchProfile(user.id).finally(() => setLoading(false))
       } else {
-        // Sign-out: drop the minor flag too, so a shared device does not carry
-        // one account's child status into the next person's session.
-        setMinorFlag(false)
+        // Sign-out: drop the flag entirely, so a shared device does not carry
+        // one account's age status into the next person's session. Cleared
+        // rather than set to 'adult' - nobody is signed in, so there is no
+        // age to assert.
+        clearAgeAssurance()
         clear()
       }
     })

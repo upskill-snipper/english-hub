@@ -9,6 +9,8 @@ import {
   PLACEHOLDER_DOB_ISO,
 } from '@/lib/identity'
 import { z } from 'zod'
+import { createServiceRoleClient } from '@/lib/supabase/server'
+import { applyChildDefaults } from '@/lib/privacy/apply-child-defaults'
 
 // POST /api/profile/dob - update the current user's Prisma User.dateOfBirth.
 //
@@ -96,6 +98,51 @@ export async function POST(request: NextRequest) {
     where: { id: prismaUserId },
     data: { dateOfBirth: newDob, isMinor },
   })
+
+  // ─── The profile, which is what everything else actually reads ─────────
+  //
+  // THE DEFECT (19 September 2026). This route wrote ONLY the Prisma User
+  // row. `profiles.date_of_birth` and `profiles.is_minor` are what the
+  // client-side analytics gate, the entitlement checks and the Children's
+  // Code defaults all read, and nothing here touched them. So a child could
+  // correct their date of birth and remain, as far as every one of those
+  // surfaces was concerned, an adult with no age on record.
+  //
+  // Production on 19 September: 209 profiles, 209 with a NULL date_of_birth
+  // and is_minor false.
+  //
+  // `user.id` is the Supabase auth uuid and IS profiles.id. Do NOT use
+  // prismaUserId here - that is a cuid and matches nothing in this table.
+  // See CLAUDE.md structural fact 1.
+  try {
+    const svc = createServiceRoleClient()
+    const { error: profileErr } = await svc
+      .from('profiles')
+      .update({ date_of_birth: parsed.data.dateOfBirth, is_minor: isMinor })
+      .eq('id', user.id)
+    if (profileErr) {
+      console.error('[api/profile/dob] profile write failed:', profileErr)
+    }
+
+    // applyChildDefaults() has existed since the Children's Code work and
+    // was called by NOTHING - a repo-wide grep found only its definition and
+    // a TODO in the register route. It writes the seven high-privacy child
+    // columns plus is_minor. It does not write date_of_birth, which is why
+    // the update above has to come first.
+    //
+    // Deliberately one-way: an adult date arriving does NOT loosen the flags
+    // back. A mistyped year must never be able to strip a child's privacy
+    // defaults, and the cost of the opposite error is only that an adult
+    // keeps settings they can change themselves.
+    if (isMinor) {
+      await applyChildDefaults(user.id)
+    }
+  } catch (err) {
+    // Never fail the correction itself: the Prisma row is already updated and
+    // a child re-submitting a date they have just corrected is worse than a
+    // retry of the defaults write.
+    console.error('[api/profile/dob] profile defaults write threw:', err)
+  }
 
   return NextResponse.json({ ok: true, rows: 1 })
 }
