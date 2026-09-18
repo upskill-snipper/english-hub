@@ -135,6 +135,42 @@ export type AiAuditFeature =
 export interface AiAuditTokenUsage {
   inputTokens?: number
   outputTokens?: number
+  /**
+   * Tokens served from an Anthropic prompt cache (billed at ~0.1x input).
+   *
+   * Recorded because prompt caching is NOT unconditionally cheaper: a cache
+   * write costs 1.25x and a read 0.1x, so the breakpoint the marking routes
+   * place on the mark-scheme prefix (see `@/lib/ai/cached-system`) only pays
+   * above roughly a 22% hit rate. Without these two fields that rate is
+   * unknowable after the fact and the optimisation can only be believed rather
+   * than checked. Null on paths that send no breakpoint.
+   */
+  cacheReadTokens?: number
+  /** Tokens written to a prompt cache on this request (billed at ~1.25x). */
+  cacheCreationTokens?: number
+}
+
+/**
+ * Map an Anthropic `message.usage` onto {@link AiAuditTokenUsage}, including
+ * the two cache counters.
+ *
+ * Structural rather than SDK-typed so the streaming paths - whose final usage
+ * arrives on a different event shape - can pass what they have without a cast,
+ * and so a provider that stops sending the cache fields degrades to undefined
+ * instead of throwing on a live marking request.
+ */
+export function aiAuditTokenUsage(usage: {
+  input_tokens?: number
+  output_tokens?: number
+  cache_read_input_tokens?: number | null
+  cache_creation_input_tokens?: number | null
+}): AiAuditTokenUsage {
+  return {
+    inputTokens: usage.input_tokens,
+    outputTokens: usage.output_tokens,
+    cacheReadTokens: usage.cache_read_input_tokens ?? undefined,
+    cacheCreationTokens: usage.cache_creation_input_tokens ?? undefined,
+  }
 }
 
 /**
@@ -356,6 +392,8 @@ function buildDetails(input: LogAiDecisionInput, subject: AiAuditSubject): Recor
       ? {
           inputTokens: input.tokenUsage.inputTokens ?? null,
           outputTokens: input.tokenUsage.outputTokens ?? null,
+          cacheReadTokens: input.tokenUsage.cacheReadTokens ?? null,
+          cacheCreationTokens: input.tokenUsage.cacheCreationTokens ?? null,
         }
       : null,
     success: input.success,

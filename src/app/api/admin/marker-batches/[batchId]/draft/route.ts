@@ -25,12 +25,13 @@ import { rateLimit, getClientIp } from '@/lib/rate-limit'
 import { createServiceRoleClient } from '@/lib/supabase/server'
 import { verifyAdmin } from '@/lib/admin-auth'
 import { getAnthropicClient, ANTHROPIC_MODEL } from '@/lib/anthropic-client'
+import { cachedSystemBlock } from '@/lib/ai/cached-system'
 import { getMarkScheme } from '@/lib/marking/mark-schemes'
 import { buildMarkingPrompt } from '@/lib/marking/prompt-builder'
 import { generateFeedback } from '@/lib/marking/feedback-generator'
 import { captureVersions } from '@/lib/marking/versioning-capture'
 import { applyAiResult, deriveUncertaintyFlags } from '@/lib/marking/persistence'
-import { logAiDecision } from '@/lib/ai-audit-log'
+import { logAiDecision, aiAuditTokenUsage } from '@/lib/ai-audit-log'
 
 export const dynamic = 'force-dynamic'
 export const maxDuration = 300
@@ -240,7 +241,10 @@ export async function POST(
           {
             model: ANTHROPIC_MODEL,
             max_tokens: 4_096,
-            system: prompt.systemPrompt,
+            // The highest-value cache case in the codebase: a batch marks many
+            // responses against ONE scheme and question in sequence, so every
+            // response after the first reads the prefix instead of re-billing it.
+            system: cachedSystemBlock(prompt.systemPrompt),
             messages: [{ role: 'user', content: prompt.userMessage }],
           },
           { timeout: 50_000 },
@@ -289,10 +293,7 @@ export async function POST(
           ...auditBase,
           requestStartedAt: startedAt,
           responseFinishedAt: finishedAt,
-          tokenUsage: {
-            inputTokens: message.usage?.input_tokens,
-            outputTokens: message.usage?.output_tokens,
-          },
+          tokenUsage: message.usage ? aiAuditTokenUsage(message.usage) : undefined,
           success: false,
           outputSummary: { rejected: feedback.error.type },
           errorClass: feedback.error.type,
@@ -339,10 +340,7 @@ export async function POST(
         ...auditBase,
         requestStartedAt: startedAt,
         responseFinishedAt: finishedAt,
-        tokenUsage: {
-          inputTokens: message.usage?.input_tokens,
-          outputTokens: message.usage?.output_tokens,
-        },
+        tokenUsage: message.usage ? aiAuditTokenUsage(message.usage) : undefined,
         success: true,
         outputSummary: {
           predictedGrade: result.predictedGrade,

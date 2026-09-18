@@ -104,6 +104,16 @@ vi.mock('@/lib/i18n/ai-language-directive', () => ({
   resolveLocaleFromRequest: () => 'en',
 }))
 vi.mock('@/lib/ai-audit-log', () => ({
+  // The real mapper, not a stub: the routes rely on it to carry the
+  // prompt-cache counters into the audit record, and a vi.fn() here would
+  // hide a regression in exactly the telemetry that decides whether
+  // caching pays (see src/lib/ai/cached-system.ts).
+  aiAuditTokenUsage: (u: Record<string, number | null | undefined>) => ({
+    inputTokens: u.input_tokens,
+    outputTokens: u.output_tokens,
+    cacheReadTokens: u.cache_read_input_tokens ?? undefined,
+    cacheCreationTokens: u.cache_creation_input_tokens ?? undefined,
+  }),
   logAiDecision: vi.fn(),
   hashAuditInput: (v: string) => `H(${v})`,
 }))

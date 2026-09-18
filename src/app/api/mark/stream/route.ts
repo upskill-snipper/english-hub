@@ -31,8 +31,9 @@ import { isAiOptedOutServer } from '@/lib/ai-preferences'
 import { getMarkScheme } from '@/lib/marking/mark-schemes'
 import { buildMarkingPrompt } from '@/lib/marking/prompt-builder'
 import { generateFeedback } from '@/lib/marking/feedback-generator'
-import { withArabicDirective, resolveLocaleFromRequest } from '@/lib/i18n/ai-language-directive'
-import { logAiDecision } from '@/lib/ai-audit-log'
+import { resolveLocaleFromRequest } from '@/lib/i18n/ai-language-directive'
+import { cachedSystemBlocks } from '@/lib/ai/cached-system'
+import { logAiDecision, aiAuditTokenUsage } from '@/lib/ai-audit-log'
 
 export const maxDuration = 60
 export const runtime = 'nodejs'
@@ -187,7 +188,8 @@ export async function POST(request: NextRequest) {
         const messageStream = anthropic.messages.stream({
           model: ANTHROPIC_MODEL,
           max_tokens: 4_096,
-          system: withArabicDirective(prompt.systemPrompt, request),
+          // See @/lib/ai/cached-system: cached prefix + uncached AR suffix.
+          system: cachedSystemBlocks(prompt.systemPrompt, request),
           messages: [{ role: 'user', content: prompt.userMessage }],
         })
 
@@ -197,6 +199,17 @@ export async function POST(request: NextRequest) {
             send({ type: 'token', text: event.delta.text })
           }
         }
+
+        // Usage is only knowable once the stream closes, and this route never
+        // captured it - so the spend of the busiest interactive AI path was
+        // invisible, including whether its new cache breakpoint is being hit at
+        // all. `finalMessage()` is already resolved by the time the event loop
+        // above drains, so this adds no latency; it is guarded because a usage
+        // read must never be able to fail a learner's marking response.
+        const finalUsage = await messageStream
+          .finalMessage()
+          .then((m) => m.usage)
+          .catch(() => undefined)
 
         // Finalisation: parse accumulated text into a MarkingResult.
         const feedback = generateFeedback({
@@ -211,6 +224,7 @@ export async function POST(request: NextRequest) {
             requestStartedAt: aiRequestStartedAt,
             responseFinishedAt: new Date(),
             success: false,
+            tokenUsage: finalUsage ? aiAuditTokenUsage(finalUsage) : undefined,
             outputSummary: { rejected: feedback.error.type },
             errorClass: feedback.error.type,
             errorMessage: 'reason' in feedback.error ? String(feedback.error.reason) : null,
@@ -243,6 +257,7 @@ export async function POST(request: NextRequest) {
           requestStartedAt: aiRequestStartedAt,
           responseFinishedAt: new Date(),
           success: true,
+          tokenUsage: finalUsage ? aiAuditTokenUsage(finalUsage) : undefined,
           outputSummary: {
             predictedGrade: feedback.result.predictedGrade,
             gradeBand: feedback.result.gradeBand,

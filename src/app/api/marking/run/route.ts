@@ -47,8 +47,9 @@ import {
 import { getMarkScheme } from '@/lib/marking/mark-schemes'
 import { buildMarkingPrompt } from '@/lib/marking/prompt-builder'
 import { generateFeedback } from '@/lib/marking/feedback-generator'
-import { withArabicDirective, resolveLocaleFromRequest } from '@/lib/i18n/ai-language-directive'
-import { logAiDecision } from '@/lib/ai-audit-log'
+import { resolveLocaleFromRequest } from '@/lib/i18n/ai-language-directive'
+import { cachedSystemBlocks } from '@/lib/ai/cached-system'
+import { logAiDecision, aiAuditTokenUsage } from '@/lib/ai-audit-log'
 import { captureVersions } from '@/lib/marking/versioning-capture'
 import { loadSubmission, applyAiResult, deriveUncertaintyFlags } from '@/lib/marking/persistence'
 
@@ -225,7 +226,10 @@ export async function POST(request: NextRequest) {
         {
           model: ANTHROPIC_MODEL,
           max_tokens: 4_096,
-          system: withArabicDirective(prompt.systemPrompt, request),
+          // Cache the mark-scheme prefix; the AR directive follows the
+          // breakpoint so both locales share one entry. Renders byte-identically
+          // to the old withArabicDirective() string - see @/lib/ai/cached-system.
+          system: cachedSystemBlocks(prompt.systemPrompt, request),
           messages: [{ role: 'user', content: prompt.userMessage }],
         },
         { timeout: 50_000 },
@@ -281,10 +285,7 @@ export async function POST(request: NextRequest) {
         ...auditBase,
         requestStartedAt: aiRequestStartedAt,
         responseFinishedAt: aiResponseFinishedAt,
-        tokenUsage: {
-          inputTokens: message.usage?.input_tokens,
-          outputTokens: message.usage?.output_tokens,
-        },
+        tokenUsage: message.usage ? aiAuditTokenUsage(message.usage) : undefined,
         success: false,
         outputSummary: { rejected: feedback.error.type },
         errorClass: feedback.error.type,
@@ -345,10 +346,7 @@ export async function POST(request: NextRequest) {
       ...auditBase,
       requestStartedAt: aiRequestStartedAt,
       responseFinishedAt: aiResponseFinishedAt,
-      tokenUsage: {
-        inputTokens: message.usage?.input_tokens,
-        outputTokens: message.usage?.output_tokens,
-      },
+      tokenUsage: message.usage ? aiAuditTokenUsage(message.usage) : undefined,
       success: true,
       outputSummary: {
         predictedGrade: result.predictedGrade,
