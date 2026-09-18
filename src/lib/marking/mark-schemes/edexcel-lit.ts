@@ -1,42 +1,87 @@
-// ─── Edexcel GCSE English Literature Mark Scheme ────────────────────────────
-// Paper 1: Shakespeare and Post-1914 Literature - 1h45, 80 marks.
-//   Section A - Shakespeare        (40 marks: AO1 12 + AO2 12 + AO3  8 + AO4  8)
-//   Section B - Post-1914 essay    (40 marks: AO1 16 + AO2 16 + AO3  8)
-// Paper 2: 19th Century Novel and Poetry Anthology - 2h15, 80 marks.
-//   Section A - 19th century novel (40 marks: AO1 16 + AO2 16 + AO3  8)
-//   Section B - Poetry comparison  (40 marks: AO1 10 + AO2 10 + AO3  4 + AO4 16)
-// Based on the Pearson Edexcel 1ET0 specification. Descriptors are summarised
-// from publicly-available Edexcel generic mark scheme grids.
+// ─── Edexcel GCSE English Literature (1ET0) ─────────────────────────────────
+//
+// REBUILT 19 September 2026. THE DEFECT THIS REPLACES
+//
+// The assessment-objective allocations were wrong in kind, not just in
+// quantity, and one objective did not exist. The file defined an
+// "AO4 - Comparison" worth 16 marks on Paper 2 Section B while, forty lines
+// away, defining AO4 correctly as spelling, punctuation and grammar. Pearson's
+// AO4 is "Use a range of vocabulary and sentence structures for clarity,
+// purpose and effect, with accurate spelling and punctuation", it is worth 8
+// marks in the whole qualification, and it appears on Paper 1 Section B only.
+// Comparison is AO3 and is never worth 16 marks in one place.
+//
+// The specification's breakdown by component:
+//
+//   Paper 1 (80)  Section A Shakespeare  (a) 20 AO2
+//                                        (b) 15 AO1 + 5 AO3
+//                 Section B Post-1914    16 AO1 + 16 AO3 + 8 AO4
+//   Paper 2 (80)  Section A 19c novel    (a) 20 AO2
+//                                        (b) 20 AO1
+//                 Section B Part 1       anthology: 15 AO2 + 5 AO3
+//                           Part 2       unseen poetry: 8 AO1 + 12 AO2
+//
+// Qualification totals, which reconcile exactly and are the check that this is
+// right: AO1 59, AO2 67, AO3 26, AO4 8 = 160.
+//
+//   AO1 59 = 15 + 16 + 20 + 8        AO2 67 = 20 + 20 + 15 + 12
+//   AO3 26 =  5 + 16 +  5            AO4  8 =  8 (Paper 1 Section B only)
+//
+// Note what this corrects beyond the invented objective: Paper 1 Section A had
+// AO1, AO2 and AO3 all assessed on both parts; in fact part (a) is AO2 alone
+// and part (b) is AO1 with AO3. Paper 2 Section A carried AO3, which is not
+// assessed there at all.
+//
+// WHAT IS AND IS NOT SOURCED: the structure and AO allocations are the
+// specification's own. The level descriptors are written in Pearson's ladder
+// lexis and are NOT transcribed verbatim from the four published mark schemes,
+// so this scheme is deliberately absent from
+// src/lib/marking/examiner/verification.ts and derives as `unverified-grid`.
 //
 // Sources:
 //   https://qualifications.pearson.com/en/qualifications/edexcel-gcses/english-literature-2015.html
-//   https://qualifications.pearson.com/content/dam/pdf/GCSE/English%20Literature/2015/specification-and-sample-assessments/GCSE-English-Literature-2015-Specification.pdf
+//   1ET0 specification Issue 2, "Breakdown of Assessment Objectives by
+//   component".
 // ────────────────────────────────────────────────────────────────────────────
 
 import type { MarkScheme, AssessmentObjective, BandDescriptor } from './types'
 
 /**
- * Scale a base AO (defined with full Level 1-6 band range, top band = 16) to a
- * smaller per-question allocation by proportionally rescaling the band ranges.
- * Without scaling, the mark-scheme coverage test sums the unscaled top-band
- * marks across questions and over-counts the paper total.
+ * Scale a base AO, defined with a full Level 1-6 ladder, down to a smaller
+ * per-question allocation.
+ *
+ * Rewritten 19 September 2026. The previous version rounded each band edge
+ * independently, which left gaps and overlaps: scaling the 16-mark AO2 ladder
+ * to 20 produced a band ending at 17 followed by one starting at 18, so a
+ * response worth 18 fell between two levels. Rounding is now applied to the
+ * upper edge only and each band starts one mark above the previous band's top,
+ * so the ladder is contiguous by construction, starts at 1 and always reaches
+ * `maxMarks`. A band squeezed out of existence by the rescale is dropped
+ * rather than left inverted.
  */
 function scaleAO(
   base: Omit<AssessmentObjective, 'maxMarks' | 'weighting'>,
   maxMarks: number,
   weighting: number,
 ): AssessmentObjective {
-  const originalMax = Math.max(...base.bands.map((b) => b.maxMarks))
-  if (originalMax === maxMarks) {
-    return { ...base, maxMarks, weighting }
-  }
+  const sorted = [...base.bands].sort((a, b) => a.minMarks - b.minMarks)
+  const originalMax = Math.max(...sorted.map((b) => b.maxMarks))
   const ratio = maxMarks / originalMax
-  const scaledBands: BandDescriptor[] = base.bands.map((b, i, arr) => ({
-    ...b,
-    minMarks: Math.max(1, Math.round(b.minMarks * ratio)),
-    maxMarks: i === arr.length - 1 ? maxMarks : Math.max(1, Math.round(b.maxMarks * ratio)),
-  }))
-  return { ...base, maxMarks, weighting, bands: scaledBands }
+
+  const scaled: BandDescriptor[] = []
+  let lo = 1
+  for (let i = 0; i < sorted.length; i++) {
+    const b = sorted[i]!
+    const hi = i === sorted.length - 1 ? maxMarks : Math.round(b.maxMarks * ratio)
+    if (hi < lo) continue // the rescale collapsed this level; drop it
+    scaled.push({ ...b, minMarks: lo, maxMarks: Math.min(hi, maxMarks) })
+    lo = Math.min(hi, maxMarks) + 1
+  }
+  // Guarantee the top mark is awardable even if rounding stopped short.
+  const last = scaled[scaled.length - 1]
+  if (last && last.maxMarks < maxMarks) last.maxMarks = maxMarks
+
+  return { ...base, maxMarks, weighting, bands: scaled }
 }
 
 // ─── Assessment Objectives ─────────────────────────────────────────────────
@@ -300,84 +345,54 @@ const ao3Base: Omit<AssessmentObjective, 'maxMarks' | 'weighting'> = {
   ],
 }
 
-const ao4Comparison: Omit<AssessmentObjective, 'maxMarks' | 'weighting'> = {
+// ─── Paper 1: Shakespeare and Post-1914 Literature ─────────────────────────
+
+/**
+ * AO4: spelling, punctuation and grammar. Pearson assesses it once in the whole
+ * qualification - Paper 1 Section B - and it is worth 8 marks. The file used to
+ * ALSO define an "AO4 - Comparison" worth 16 marks on Paper 2 Section B, which
+ * does not exist: comparison is AO3.
+ */
+const ao4Spag: Omit<AssessmentObjective, 'maxMarks' | 'weighting'> = {
   id: 'AO4',
-  label: 'AO4 - Comparison',
+  label: 'AO4 - Spelling, punctuation and grammar',
   description:
-    'Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation. (In Literature, AO4 is assessed as the ability to compare texts and ideas across poems.)',
+    'Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.',
   bands: [
     {
-      band: 'Level 1',
+      band: 'Threshold',
       minMarks: 1,
       maxMarks: 2,
-      label: 'Simple',
+      label: 'Threshold',
       descriptor:
-        'Simple, undeveloped comparison. Writes about texts separately with little or no linking.',
-      indicators: ['No explicit comparative language used', 'Discusses texts in isolation'],
+        'Reasonable accuracy in spelling, punctuation and grammar. Errors do not hinder meaning.',
+      indicators: ['Generally clear writing with some minor errors'],
     },
     {
-      band: 'Level 2',
+      band: 'Intermediate',
       minMarks: 3,
-      maxMarks: 4,
-      label: 'Some comparison',
-      descriptor: 'Some comparison attempted with some relevant cross-reference between texts.',
-      indicators: [
-        'Uses some comparative connectives',
-        'Begins to identify similarities or differences',
-      ],
+      maxMarks: 5,
+      label: 'Intermediate',
+      descriptor:
+        'Considerable accuracy in spelling, punctuation and grammar. Good range of vocabulary and sentence structures.',
+      indicators: ['Mostly accurate with varied sentence structures'],
     },
     {
-      band: 'Level 3',
-      minMarks: 5,
-      maxMarks: 7,
-      label: 'Clear comparison',
+      band: 'High',
+      minMarks: 6,
+      maxMarks: 8,
+      label: 'High',
       descriptor:
-        'Clear and structured comparison with relevant cross-references. Identifies similarities and differences in ideas and methods.',
+        'Consistently accurate spelling, punctuation and grammar. A wide range of vocabulary and sentence structures used to achieve effective control of meaning.',
       indicators: [
-        'Sustained comparative structure throughout',
-        'Both texts treated with equal attention',
-      ],
-    },
-    {
-      band: 'Level 4',
-      minMarks: 8,
-      maxMarks: 10,
-      label: 'Developed comparison',
-      descriptor:
-        "Developed and detailed comparison with well-chosen cross-references. Explores how writers' methods differ and similarities in approach.",
-      indicators: [
-        'Compares methods as well as ideas',
-        'Cross-references are precise and illuminating',
-      ],
-    },
-    {
-      band: 'Level 5',
-      minMarks: 11,
-      maxMarks: 13,
-      label: 'Exploratory comparison',
-      descriptor:
-        'Exploratory comparison that probes connections and differences in depth. Comparative analysis of methods is integrated and assured.',
-      indicators: [
-        'Comparison drives the argument rather than being added on',
-        'Considers why writers make different choices',
-      ],
-    },
-    {
-      band: 'Level 6',
-      minMarks: 14,
-      maxMarks: 16,
-      label: 'Convincing comparison',
-      descriptor:
-        'Convincing, analytical comparison fully integrated into a coherent response. Precise, discriminating comparison of ideas, themes and methods.',
-      indicators: [
-        'Comparison is fluent and enhances every point made',
-        'Insightful analysis of how different contexts shape different approaches',
+        'Consistently accurate and ambitious in expression',
+        'Precise vocabulary used with control',
       ],
     },
   ],
 }
 
-// ─── Paper 1: Shakespeare and Post-1914 Literature ─────────────────────────
+// ─── Paper 1: Shakespeare and Post-1914 Literature (80 marks) ───────────────
 
 export const edexcelLitPaper1: MarkScheme = {
   id: 'edexcel-lit-paper1',
@@ -392,210 +407,50 @@ export const edexcelLitPaper1: MarkScheme = {
     'https://qualifications.pearson.com/en/qualifications/edexcel-gcses/english-literature-2015.html',
   questions: [
     {
-      id: 'Section A',
-      questionType: 'Shakespeare extract + essay',
+      id: 'Section A (a)',
+      questionType: 'Shakespeare extract',
       taskDescription:
-        'Answer one question on a studied Shakespeare play. The question has two parts: (a) explore how Shakespeare presents a theme, character or idea in an extract (20 marks); (b) explore how Shakespeare presents the same theme, character or idea in the play as a whole (20 marks).',
-      totalMarks: 40,
-      assessmentObjectives: [
-        scaleAO(ao1Base, 12, 12 / 40),
-        scaleAO(ao2Base, 12, 12 / 40),
-        {
-          ...ao3Base,
-          maxMarks: 8,
-          weighting: 8 / 40,
-          bands:
-            ao3Base.bands.filter((b) => b.maxMarks <= 8).length > 0
-              ? ao3Base.bands
-                  .map((b) => ({
-                    ...b,
-                    minMarks: Math.max(1, Math.round(b.minMarks * (8 / 16))),
-                    maxMarks: Math.round(b.maxMarks * (8 / 16)),
-                  }))
-                  .filter((b) => b.maxMarks > 0)
-              : [
-                  {
-                    band: 'Level 1',
-                    minMarks: 1,
-                    maxMarks: 1,
-                    label: 'Simple awareness',
-                    descriptor:
-                      'Simple awareness of contextual factors. Context mentioned as isolated facts.',
-                    indicators: ['Bolt-on contextual facts', 'No link between context and meaning'],
-                  },
-                  {
-                    band: 'Level 2',
-                    minMarks: 2,
-                    maxMarks: 3,
-                    label: 'Some understanding',
-                    descriptor: 'Some understanding of context with some links to the text.',
-                    indicators: ['Some relevant contextual points linked to the text'],
-                  },
-                  {
-                    band: 'Level 3',
-                    minMarks: 4,
-                    maxMarks: 5,
-                    label: 'Clear understanding',
-                    descriptor:
-                      'Clear understanding of contextual factors with specific links to the text/task.',
-                    indicators: ['Context supports points about theme or character'],
-                  },
-                  {
-                    band: 'Level 4',
-                    minMarks: 6,
-                    maxMarks: 6,
-                    label: 'Developed understanding',
-                    descriptor:
-                      'Developed understanding with context integrated into interpretation.',
-                    indicators: ['Context woven into the argument throughout'],
-                  },
-                  {
-                    band: 'Level 5',
-                    minMarks: 7,
-                    maxMarks: 7,
-                    label: 'Exploration',
-                    descriptor:
-                      'Exploration of contextual factors with detailed links showing how context shapes meaning.',
-                    indicators: ['Context deepens interpretation throughout'],
-                  },
-                  {
-                    band: 'Level 6',
-                    minMarks: 8,
-                    maxMarks: 8,
-                    label: 'Convincing exploration',
-                    descriptor:
-                      'Convincing exploration of context fully integrated into a sophisticated interpretation.',
-                    indicators: ['Context seamlessly integrated as a critical lens'],
-                  },
-                ],
-        },
-        {
-          id: 'AO4',
-          label: 'AO4 - Spelling, punctuation and grammar',
-          description:
-            'Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.',
-          maxMarks: 8,
-          weighting: 8 / 40,
-          bands: [
-            {
-              band: 'Threshold',
-              minMarks: 1,
-              maxMarks: 2,
-              label: 'Threshold',
-              descriptor:
-                'Reasonable accuracy in spelling, punctuation and grammar. Errors do not hinder meaning.',
-              indicators: ['Generally clear writing with some minor errors'],
-            },
-            {
-              band: 'Intermediate',
-              minMarks: 3,
-              maxMarks: 5,
-              label: 'Intermediate',
-              descriptor:
-                'Considerable accuracy in spelling, punctuation and grammar. Good range of vocabulary and sentence structures.',
-              indicators: ['Mostly accurate with varied sentence structures'],
-            },
-            {
-              band: 'High',
-              minMarks: 6,
-              maxMarks: 8,
-              label: 'High',
-              descriptor:
-                'Consistently accurate spelling, punctuation and grammar. Wide range of vocabulary and sentence structures used to achieve effective control of meaning.',
-              indicators: [
-                'Consistently accurate and ambitious in expression',
-                'Precise vocabulary used with control',
-              ],
-            },
-          ],
-        },
-      ],
+        'Explore how Shakespeare presents a theme, character or idea in the printed extract. 20 marks, AO2 only.',
+      totalMarks: 20,
+      assessmentObjectives: [scaleAO(ao2Base, 20, 20 / 80)],
       examinerNotes:
-        'Part (a) is worth 20 marks and focuses on the extract. Part (b) is worth 20 marks and requires whole-text knowledge. AO4 (SPaG) is assessed across the whole response.',
+        'AO2 alone. Reward analysis of language, form and structure in the extract. Context and whole-text knowledge earn nothing here - they belong in part (b).',
+    },
+    {
+      id: 'Section A (b)',
+      questionType: 'Shakespeare whole text',
+      taskDescription:
+        'Explore how Shakespeare presents the same theme, character or idea in the play as a whole. 20 marks: AO1 15 and AO3 5.',
+      totalMarks: 20,
+      assessmentObjectives: [scaleAO(ao1Base, 15, 15 / 80), scaleAO(ao3Base, 5, 5 / 80)],
+      examinerNotes:
+        'AO1 carries the weight; AO3 context is worth 5 and is rewarded where it illuminates the text, not where it is bolted on.',
     },
     {
       id: 'Section B',
       questionType: 'Post-1914 literature essay',
       taskDescription:
-        'Answer one essay question on a studied post-1914 text (e.g. An Inspector Calls, Lord of the Flies, Animal Farm). Explore how a theme, character or idea is presented.',
+        'Answer one essay question on the studied post-1914 text. 40 marks: AO1 16, AO3 16 and AO4 8.',
       totalMarks: 40,
       assessmentObjectives: [
-        { ...ao1Base, maxMarks: 16, weighting: 16 / 40 },
-        { ...ao2Base, maxMarks: 16, weighting: 16 / 40 },
-        {
-          ...ao3Base,
-          maxMarks: 8,
-          weighting: 8 / 40,
-          bands: [
-            {
-              band: 'Level 1',
-              minMarks: 1,
-              maxMarks: 1,
-              label: 'Simple awareness',
-              descriptor:
-                'Simple awareness of contextual factors. Context mentioned as isolated facts.',
-              indicators: ['Bolt-on contextual facts', 'No link between context and meaning'],
-            },
-            {
-              band: 'Level 2',
-              minMarks: 2,
-              maxMarks: 3,
-              label: 'Some understanding',
-              descriptor: 'Some understanding of context with some links to the text.',
-              indicators: ['Some relevant contextual points linked to the text'],
-            },
-            {
-              band: 'Level 3',
-              minMarks: 4,
-              maxMarks: 5,
-              label: 'Clear understanding',
-              descriptor:
-                'Clear understanding of contextual factors with specific links to the text/task.',
-              indicators: ['Context supports points about theme or character'],
-            },
-            {
-              band: 'Level 4',
-              minMarks: 6,
-              maxMarks: 6,
-              label: 'Developed understanding',
-              descriptor: 'Developed understanding with context integrated into interpretation.',
-              indicators: ['Context woven into the argument throughout'],
-            },
-            {
-              band: 'Level 5',
-              minMarks: 7,
-              maxMarks: 7,
-              label: 'Exploration',
-              descriptor:
-                'Exploration of contextual factors with detailed links showing how context shapes meaning.',
-              indicators: ['Context deepens interpretation throughout'],
-            },
-            {
-              band: 'Level 6',
-              minMarks: 8,
-              maxMarks: 8,
-              label: 'Convincing exploration',
-              descriptor:
-                'Convincing exploration of context fully integrated into a sophisticated interpretation.',
-              indicators: ['Context seamlessly integrated as a critical lens'],
-            },
-          ],
-        },
+        scaleAO(ao1Base, 16, 16 / 80),
+        scaleAO(ao3Base, 16, 16 / 80),
+        scaleAO(ao4Spag, 8, 8 / 80),
       ],
       examinerNotes:
-        'No extract is provided for Section B. Students must use their knowledge of the whole text. AO4 is not assessed in Section B.',
+        'This is the only place in the qualification where AO4 (spelling, punctuation and grammar) is assessed, and it is worth 8 marks. AO2 is NOT assessed in this section.',
     },
   ],
 }
 
-// ─── Paper 2: 19th Century Novel and Poetry Anthology ──────────────────────
+// ─── Paper 2: 19th-Century Novel and Poetry (80 marks) ──────────────────────
 
 export const edexcelLitPaper2: MarkScheme = {
   id: 'edexcel-lit-paper2',
   board: 'Edexcel',
   subject: 'English Literature',
   paper: 'Paper 2',
-  title: '19th Century Novel and Poetry Anthology',
+  title: '19th-Century Novel and Poetry since 1789',
   totalMarks: 80,
   durationMinutes: 135,
   version: '1ET0/02',
@@ -603,133 +458,43 @@ export const edexcelLitPaper2: MarkScheme = {
     'https://qualifications.pearson.com/en/qualifications/edexcel-gcses/english-literature-2015.html',
   questions: [
     {
-      id: 'Section A',
-      questionType: '19th-century novel extract + essay',
+      id: 'Section A (a)',
+      questionType: '19th-century novel extract',
       taskDescription:
-        'Answer one question on a studied 19th-century novel (e.g. A Christmas Carol, Jekyll and Hyde, Frankenstein, Great Expectations). The question has two parts: (a) explore how a theme, character or idea is presented in an extract; (b) explore the same across the novel as a whole.',
-      totalMarks: 40,
-      assessmentObjectives: [
-        { ...ao1Base, maxMarks: 16, weighting: 16 / 40 },
-        { ...ao2Base, maxMarks: 16, weighting: 16 / 40 },
-        {
-          ...ao3Base,
-          maxMarks: 8,
-          weighting: 8 / 40,
-          bands: [
-            {
-              band: 'Level 1',
-              minMarks: 1,
-              maxMarks: 1,
-              label: 'Simple awareness',
-              descriptor:
-                'Simple awareness of contextual factors. Context mentioned as isolated facts.',
-              indicators: ['Bolt-on contextual facts', 'No link between context and meaning'],
-            },
-            {
-              band: 'Level 2',
-              minMarks: 2,
-              maxMarks: 3,
-              label: 'Some understanding',
-              descriptor: 'Some understanding of context with some links to the text.',
-              indicators: ['Some relevant contextual points linked to the text'],
-            },
-            {
-              band: 'Level 3',
-              minMarks: 4,
-              maxMarks: 5,
-              label: 'Clear understanding',
-              descriptor:
-                'Clear understanding of contextual factors with specific links to the text/task.',
-              indicators: ['Context supports points about theme or character'],
-            },
-            {
-              band: 'Level 4',
-              minMarks: 6,
-              maxMarks: 6,
-              label: 'Developed understanding',
-              descriptor: 'Developed understanding with context integrated into interpretation.',
-              indicators: ['Context woven into the argument throughout'],
-            },
-            {
-              band: 'Level 5',
-              minMarks: 7,
-              maxMarks: 7,
-              label: 'Exploration',
-              descriptor:
-                'Exploration of contextual factors with detailed links showing how context shapes meaning.',
-              indicators: ['Context deepens interpretation throughout'],
-            },
-            {
-              band: 'Level 6',
-              minMarks: 8,
-              maxMarks: 8,
-              label: 'Convincing exploration',
-              descriptor:
-                'Convincing exploration of context fully integrated into a sophisticated interpretation.',
-              indicators: ['Context seamlessly integrated as a critical lens'],
-            },
-          ],
-        },
-      ],
-      examinerNotes:
-        'Part (a) focuses on the extract. Part (b) requires whole-text knowledge. AO4 is not assessed in Paper 2.',
+        'Explore how the writer presents a theme, character or idea in the printed extract. 20 marks, AO2 only.',
+      totalMarks: 20,
+      assessmentObjectives: [scaleAO(ao2Base, 20, 20 / 80)],
+      examinerNotes: 'AO2 alone. AO3 is not assessed anywhere in Section A of this paper.',
     },
     {
-      id: 'Section B',
+      id: 'Section A (b)',
+      questionType: '19th-century novel whole text',
+      taskDescription:
+        'Explore how the writer presents the same theme, character or idea in the novel as a whole. 20 marks, AO1 only.',
+      totalMarks: 20,
+      assessmentObjectives: [scaleAO(ao1Base, 20, 20 / 80)],
+      examinerNotes:
+        'AO1 alone: response to the text supported by reference. Do not credit context here.',
+    },
+    {
+      id: 'Section B Part 1',
       questionType: 'Poetry anthology comparison',
       taskDescription:
-        "Compare how a theme is presented in one named poem from the Pearson Edexcel poetry anthology and one other poem of the student's choice from the same collection.",
-      totalMarks: 40,
-      assessmentObjectives: [
-        scaleAO(ao1Base, 10, 10 / 40),
-        scaleAO(ao2Base, 10, 10 / 40),
-        {
-          ...ao3Base,
-          maxMarks: 4,
-          weighting: 4 / 40,
-          bands: [
-            {
-              band: 'Level 1',
-              minMarks: 1,
-              maxMarks: 1,
-              label: 'Simple awareness',
-              descriptor: 'Simple awareness of contextual factors.',
-              indicators: ['Bolt-on context with no integration'],
-            },
-            {
-              band: 'Level 2',
-              minMarks: 2,
-              maxMarks: 2,
-              label: 'Some understanding',
-              descriptor: 'Some understanding of context linked to the poems.',
-              indicators: ['Some relevant contextual points'],
-            },
-            {
-              band: 'Level 3',
-              minMarks: 3,
-              maxMarks: 3,
-              label: 'Clear understanding',
-              descriptor: 'Clear understanding of context with specific links to interpretation.',
-              indicators: ['Context informs the reading of the poems'],
-            },
-            {
-              band: 'Level 4',
-              minMarks: 4,
-              maxMarks: 4,
-              label: 'Exploration',
-              descriptor: 'Exploration of context integrated into a nuanced interpretation.',
-              indicators: ['Context seamlessly shapes interpretation'],
-            },
-          ],
-        },
-        {
-          ...ao4Comparison,
-          maxMarks: 16,
-          weighting: 16 / 40,
-        },
-      ],
+        'Compare the presentation of a theme or idea in one named anthology poem and one other of your choice. 20 marks: AO2 15 and AO3 5.',
+      totalMarks: 20,
+      assessmentObjectives: [scaleAO(ao2Base, 15, 15 / 80), scaleAO(ao3Base, 5, 5 / 80)],
       examinerNotes:
-        'Students must compare two poems. The named poem is printed on the paper; the second poem is chosen by the student from the same cluster. AO4 (comparison) carries significant weight.',
+        'Comparison is rewarded under AO2 and AO3 here, not under a separate comparison objective. AO1 is not assessed in this part.',
+    },
+    {
+      id: 'Section B Part 2',
+      questionType: 'Unseen poetry',
+      taskDescription:
+        'Respond to one unseen poem, then compare it with a second unseen poem. 20 marks: AO1 8 and AO2 12.',
+      totalMarks: 20,
+      assessmentObjectives: [scaleAO(ao1Base, 8, 8 / 80), scaleAO(ao2Base, 12, 12 / 80)],
+      examinerNotes:
+        'Candidates have not studied these poems. Reward a defensible reading generously; do not require contextual knowledge, which is not assessed here.',
     },
   ],
 }

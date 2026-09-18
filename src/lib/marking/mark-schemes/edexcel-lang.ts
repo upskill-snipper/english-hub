@@ -1,365 +1,377 @@
-// ─── Edexcel GCSE English Language Mark Scheme ──────────────────────────────
-// Paper 1: Fiction and Imaginative Writing - 1h45, 64 marks.
-//   Q1 AO1 4 + Q2 AO2 8 + Q3 AO2 8 + Q4 AO4 20 + Q5 AO5 16 + AO6 8 = 64
-// Paper 2: Non-fiction and Transactional Writing - 2h05, 96 marks.
-//   Q1 AO1 4 + Q2 AO1 8 + Q3 AO2 12 + Q4 AO3 16 + Q5 (AO5 16 + AO6 12)
-//     + Q6 (AO5 16 + AO6 12) = 96
-// Based on the Pearson Edexcel 1EN0 specification. Descriptors are summarised
-// from publicly-available Edexcel generic mark scheme grids.
+// ─── Edexcel GCSE English Language (1EN0) ────────────────────────────────────
 //
-// Sources:
+// REBUILT 19 September 2026. THE DEFECT THIS REPLACES
+//
+// This file was AQA's paper with Edexcel's totals written on it. Its own header
+// said so:
+//
+//   Paper 1: Q1 AO1 4 + Q2 AO2 8 + Q3 AO2 8 + Q4 AO4 20 + Q5 AO5 16 + AO6 8
+//   Paper 2: Q1 4 + Q2 8 + Q3 12 + Q4 16 + Q5 (16+12) + Q6 (16+12)
+//
+// That is the AQA 8700 shape. Pearson's 1EN0 specification gives:
+//
+//   Paper 1 (Fiction and Imaginative Writing, 64 marks)
+//     Q1   1  AO1      Q2   2  AO1      Q3   6  AO2      Q4  15  AO4
+//     Q5 or Q6 (choice of one): 24 AO5 + 16 AO6 = 40
+//
+//   Paper 2 (Non-fiction and Transactional Writing, 96 marks)
+//     Q1   2  AO1      Q2   2  AO1      Q3  15  AO2      Q4   1  AO1
+//     Q5   1  AO1      Q6  15  AO4      Q7a  6  AO1      Q7b 14  AO3
+//     Q8 or Q9 (choice of one): 24 AO5 + 16 AO6 = 40
+//
+// Reading is 56 marks and writing 40 on Paper 2, not the other way round.
+//
+// The six qualification AO totals reconcile exactly against the specification's
+// own breakdown table, which is the check that this structure is right:
+//
+//   AO1 15 = 1 + 2 (P1) + 2 + 2 + 1 + 1 + 6 (P2)
+//   AO2 21 = 6 (P1 Q3) + 15 (P2 Q3)
+//   AO3 14 = 14 (P2 Q7b)
+//   AO4 30 = 15 (P1 Q4) + 15 (P2 Q6)
+//   AO5 48 = 24 + 24        AO6 32 = 16 + 16      TOTAL 160
+//
+// WHY IT MATTERED: Edexcel is the second GCSE cohort in England and the board
+// most often chosen by the academies a solo teacher works in. Until today the
+// product marked their students against 8-mark language questions that are 6
+// marks on their paper, and a 20-mark Q4 that is 15. The product's own public
+// pages already stated the correct Paper 1 tariffs (1, 2, 6, 15), so the site
+// contradicted its own marking engine.
+//
+// WHAT IS AND IS NOT SOURCED
+//
+// The question structure, tariffs and AO allocations above are the
+// specification's own and reconcile exactly. The level DESCRIPTORS below are
+// written in Pearson's ladder lexis but are not transcribed verbatim from the
+// published mark schemes, and the band widths follow Pearson's generic shapes
+// (Q3 three levels of two, the 15-mark questions five levels of three, AO5 and
+// AO6 five levels each) rather than a document checked line by line.
+//
+// So this scheme is deliberately NOT in src/lib/marking/examiner/verification.ts
+// and derives as `unverified-grid`: the examiner tool badges it red, the prompt
+// tells the model to disclose it, and the student picker warns before use.
+// Promoting it is EXAM-2's job and needs the four published mark schemes
+// (1EN0/01 and 1EN0/02) checked line by line by a person.
+//
+// Sources for the structure:
 //   https://qualifications.pearson.com/en/qualifications/edexcel-gcses/english-language-2015.html
-//   https://qualifications.pearson.com/content/dam/pdf/GCSE/English%20Language/2015/specification-and-sample-assessments/GCSE-English-Language-2015-Specification.pdf
+//   1EN0 specification Issue 6 (August 2024), "Breakdown of Assessment
+//   Objectives by component".
 // ────────────────────────────────────────────────────────────────────────────
 
-import type { MarkScheme, AssessmentObjective, BandDescriptor } from './types'
+import type { AssessmentObjective, BandDescriptor, MarkScheme } from './types'
 
 /**
- * Scale an AO's full-range bands proportionally to a per-question maxMarks.
+ * Build a contiguous level ladder over `max` marks.
  *
- * Used when the same base AO (e.g. p2Ao5Writing, defined with top band = 24)
- * is reused on a question with a smaller per-AO allocation (e.g. 16 marks on
- * Q5 / Q6 of Paper 2 where AO5 = 16 and AO6 = 12). Without scaling the bands,
- * the mark-scheme coverage test sums the unscaled top-band marks across
- * questions and over-counts the paper total.
+ * Pearson's generic grids divide the mark range into equal levels, so the
+ * ranges are computed rather than typed: a hand-typed ladder is how the
+ * corpus acquired overlapping and gapped bands elsewhere. The last level
+ * always ends on `max`, so the top mark is always awardable.
  */
-function scaleAO(
-  ao: AssessmentObjective,
-  maxMarks: number,
-  weighting: number,
-): AssessmentObjective {
-  const originalMax = Math.max(...ao.bands.map((b) => b.maxMarks))
-  if (originalMax === maxMarks) return { ...ao, maxMarks, weighting }
-  const ratio = maxMarks / originalMax
-  const scaledBands: BandDescriptor[] = ao.bands.map((b, i, arr) => ({
-    ...b,
-    minMarks: Math.max(1, Math.round(b.minMarks * ratio)),
-    maxMarks: i === arr.length - 1 ? maxMarks : Math.max(1, Math.round(b.maxMarks * ratio)),
-  }))
-  return { ...ao, maxMarks, weighting, bands: scaledBands }
+function ladder(
+  max: number,
+  levels: readonly { label: string; descriptor: string; indicators: readonly string[] }[],
+): BandDescriptor[] {
+  const n = levels.length
+  const out: BandDescriptor[] = []
+  let lo = 1
+  for (let i = 0; i < n; i++) {
+    // Spread any remainder across the lower levels, which is how Pearson's
+    // uneven grids (14 marks over five levels) actually sit.
+    const hi = i === n - 1 ? max : Math.round(((i + 1) * max) / n)
+    const l = levels[i]!
+    out.push({
+      band: `Level ${i + 1}`,
+      minMarks: lo,
+      maxMarks: hi,
+      label: l.label,
+      descriptor: l.descriptor,
+      indicators: l.indicators,
+    })
+    lo = hi + 1
+  }
+  return out
 }
 
-// ═══════════════════════════════════════════════════════════════════════════
-// PAPER 1 - Fiction and Imaginative Writing
-// ═══════════════════════════════════════════════════════════════════════════
+// ─── Reading objectives ─────────────────────────────────────────────────────
 
-// ─── Reading AOs (Section A) ───────────────────────────────────────────────
+const AO1_DESC =
+  'Identify and interpret explicit and implicit information and ideas; select and synthesise evidence from different texts.'
+const AO2_DESC =
+  'Explain, comment on and analyse how writers use language and structure to achieve effects and influence readers, using relevant subject terminology to support their views.'
+const AO3_DESC =
+  "Compare writers' ideas and perspectives, as well as how these are conveyed, across two or more texts."
+const AO4_DESC = 'Evaluate texts critically and support this with appropriate textual references.'
+const AO5_DESC =
+  'Communicate clearly, effectively and imaginatively, selecting and adapting tone, style and register for different forms, purposes and audiences; organise information and ideas, using structural and grammatical features to support coherence and cohesion.'
+const AO6_DESC =
+  'Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.'
 
-const p1Ao1: AssessmentObjective = {
-  id: 'AO1',
-  label: 'AO1 - Identify and interpret',
-  description:
-    'Identify and interpret explicit and implicit information and ideas. Select and synthesise evidence from different texts.',
-  maxMarks: 4,
-  weighting: 4 / 64,
-  bands: [
-    {
-      band: 'Level 1',
-      minMarks: 1,
-      maxMarks: 1,
-      label: 'Simple',
-      descriptor:
-        'Simple, limited comment with little textual reference. May be largely narrative or descriptive.',
-      indicators: ['Lists simple explicit details', 'Limited relevance to the question'],
-    },
-    {
-      band: 'Level 2',
-      minMarks: 2,
-      maxMarks: 2,
-      label: 'Some',
-      descriptor: 'Some relevant comments supported by some appropriate textual reference.',
-      indicators: ['Selects some relevant explicit and implicit detail'],
-    },
-    {
-      band: 'Level 3',
-      minMarks: 3,
-      maxMarks: 3,
-      label: 'Clear',
-      descriptor: 'Clear, relevant comments with clear and appropriate textual reference.',
-      indicators: ['Clear, focused identification of relevant information'],
-    },
-    {
-      band: 'Level 4',
-      minMarks: 4,
-      maxMarks: 4,
-      label: 'Perceptive',
-      descriptor:
-        'Perceptive, detailed comments showing assured identification of implicit meanings. Precise textual reference.',
-      indicators: ['Judicious, precise selection of evidence'],
-    },
-  ],
+/** AO1 short-answer retrieval. One object per question, because the tariffs differ. */
+function ao1Retrieval(max: number, paperMax: number): AssessmentObjective {
+  return {
+    id: 'AO1',
+    label: 'AO1 - Identify and interpret',
+    description: AO1_DESC,
+    maxMarks: max,
+    weighting: max / paperMax,
+    // One mark per acceptable point, so no levelled grid. Two bands keep the
+    // shape the type requires without implying a ladder that does not exist.
+    bands: [
+      {
+        band: 'Level 1',
+        minMarks: 1,
+        maxMarks: max,
+        label: 'Points credited',
+        descriptor: `One mark for each acceptable point drawn from the specified lines, to a maximum of ${max}.`,
+        indicators: [
+          'The point comes from the lines named in the question',
+          'The point is distinct from one already credited',
+        ],
+      },
+    ],
+  }
 }
 
-const p1Ao2Language: AssessmentObjective = {
-  id: 'AO2',
-  label: 'AO2 - Analyse language',
-  description:
-    'Explain, comment on and analyse how writers use language and structure to achieve effects and influence readers, using relevant subject terminology to support their views.',
-  maxMarks: 8,
-  weighting: 8 / 64,
-  bands: [
+/** AO2 language analysis. Paper 1 Q3 is 6 marks; Paper 2 Q3 is 15. */
+function ao2Language(max: number, paperMax: number, levels: 3 | 5): AssessmentObjective {
+  const three = [
     {
-      band: 'Level 1',
-      minMarks: 1,
-      maxMarks: 2,
-      label: 'Simple',
+      label: 'Basic',
       descriptor:
-        'Simple awareness of language features. Limited or inaccurate use of subject terminology.',
-      indicators: [
-        'Identifies a device without discussing its effect',
-        'Limited textual reference',
-      ],
+        'Basic identification of language features with little or no comment on effect. Little or no use of subject terminology.',
+      indicators: ['Names a device without explaining its effect', 'Textual reference is thin'],
     },
     {
-      band: 'Level 2',
-      minMarks: 3,
-      maxMarks: 4,
-      label: 'Some',
+      label: 'Some understanding',
       descriptor:
-        'Some understanding of language choices and effects. Some accurate use of subject terminology.',
-      indicators: [
-        'Names language methods and comments briefly on effect',
-        'Some relevant quotations used',
-      ],
+        'Some understanding of how language is used to achieve effects. Some accurate use of subject terminology.',
+      indicators: ['Comments briefly on the effect of a choice', 'Uses relevant quotation'],
     },
     {
-      band: 'Level 3',
-      minMarks: 5,
-      maxMarks: 6,
-      label: 'Clear',
+      label: 'Clear analysis',
       descriptor:
-        'Clear explanation of the effects of language choices. Accurate and relevant subject terminology.',
+        'Clear analysis of how language is used to achieve effects, supported by well-chosen references. Accurate and relevant subject terminology.',
       indicators: [
-        'Explains how language creates effects for the reader',
-        'Well-chosen quotations support points',
-      ],
-    },
-    {
-      band: 'Level 4',
-      minMarks: 7,
-      maxMarks: 8,
-      label: 'Perceptive',
-      descriptor:
-        'Perceptive, detailed analysis of language effects. Sophisticated and precise subject terminology.',
-      indicators: [
-        'Analyses layered meanings and connotations',
+        'Explains how the choice works on the reader',
         'Terminology is embedded and purposeful',
       ],
     },
-  ],
+  ]
+  const five = [
+    ...three.slice(0, 3),
+    {
+      label: 'Thorough analysis',
+      descriptor:
+        'Thorough analysis of language and structure, exploring how choices shape meaning across the text. Terminology is precise.',
+      indicators: [
+        'Connects choices across the whole text',
+        'Discriminates between similar techniques',
+      ],
+    },
+    {
+      label: 'Perceptive analysis',
+      descriptor:
+        'Perceptive, detailed analysis of layered meanings and the cumulative effect of the writer&#39;s choices. Terminology is used with precision throughout.',
+      indicators: [
+        'Analyses connotation and implication, not only device',
+        'References are exact and integrated',
+      ],
+    },
+  ]
+  return {
+    id: 'AO2',
+    label: 'AO2 - Analyse language and structure',
+    description: AO2_DESC,
+    maxMarks: max,
+    weighting: max / paperMax,
+    bands: ladder(max, levels === 3 ? three : five),
+  }
 }
 
-const p1Ao2Structure: AssessmentObjective = {
-  id: 'AO2',
-  label: 'AO2 - Analyse structure',
-  description:
-    'Explain, comment on and analyse how writers use structure to achieve effects and influence readers.',
-  maxMarks: 8,
-  weighting: 8 / 64,
-  bands: [
-    {
-      band: 'Level 1',
-      minMarks: 1,
-      maxMarks: 2,
-      label: 'Simple',
-      descriptor: 'Simple awareness of structural features. Limited comment on their effect.',
-      indicators: [
-        'Notes beginning, middle, end without analysis',
-        'Lists structural features without discussing effect',
-      ],
-    },
-    {
-      band: 'Level 2',
-      minMarks: 3,
-      maxMarks: 4,
-      label: 'Some',
-      descriptor:
-        'Some understanding of how structural features create effects. Identifies some structural choices.',
-      indicators: [
-        'Comments on shifts in focus or perspective',
-        'Some awareness of narrative structure',
-      ],
-    },
-    {
-      band: 'Level 3',
-      minMarks: 5,
-      maxMarks: 6,
-      label: 'Clear',
-      descriptor:
-        'Clear explanation of structural choices and their effects. Relevant examples from the text.',
-      indicators: ['Explains how pacing, openings, endings and perspective shifts shape meaning'],
-    },
-    {
-      band: 'Level 4',
-      minMarks: 7,
-      maxMarks: 8,
-      label: 'Perceptive',
-      descriptor:
-        'Perceptive analysis of structural features and their cumulative effect on the reader. Judicious examples.',
-      indicators: [
-        'Analyses whole-text structure and its relationship to meaning and reader response',
-      ],
-    },
-  ],
+/** AO3 comparison of ideas and perspectives across two texts. Paper 2 Q7b, 14 marks. */
+function ao3Comparison(max: number, paperMax: number): AssessmentObjective {
+  return {
+    id: 'AO3',
+    label: "AO3 - Compare writers' ideas and perspectives",
+    description: AO3_DESC,
+    maxMarks: max,
+    weighting: max / paperMax,
+    bands: ladder(max, [
+      {
+        label: 'Basic',
+        descriptor:
+          'Basic comparison of ideas or perspectives. Points are largely about one text at a time.',
+        indicators: ['Describes each text in turn', 'Little comparative language'],
+      },
+      {
+        label: 'Some comparison',
+        descriptor:
+          'Some comparison of ideas and perspectives, with some comment on how they are conveyed.',
+        indicators: ['Some linking of the two texts', 'Some supporting reference'],
+      },
+      {
+        label: 'Clear comparison',
+        descriptor:
+          'Clear comparison of ideas and perspectives and of the methods used to convey them, supported by relevant references from both texts.',
+        indicators: ['Sustains comparison across the response', 'Both texts are evidenced'],
+      },
+      {
+        label: 'Thorough comparison',
+        descriptor:
+          'Thorough comparison, examining similarity and difference in perspective and in the means of conveying it.',
+        indicators: ['Weighs the two perspectives against each other', 'References are apt'],
+      },
+      {
+        label: 'Perceptive comparison',
+        descriptor:
+          'Perceptive comparison that discriminates between the writers&#39; positions and the effects of their methods.',
+        indicators: ['Comparison drives the argument', 'Evidence is precise and integrated'],
+      },
+    ]),
+  }
 }
 
-const p1Ao4Evaluation: AssessmentObjective = {
-  id: 'AO4',
-  label: 'AO4 - Evaluate critically',
-  description: 'Evaluate texts critically and support this with appropriate textual references.',
-  maxMarks: 20,
-  weighting: 20 / 64,
-  bands: [
-    {
-      band: 'Level 1',
-      minMarks: 1,
-      maxMarks: 5,
-      label: 'Simple',
-      descriptor:
-        "Simple evaluative comment(s) with simple reference to writer's methods. Limited textual reference.",
-      indicators: ['Expresses a basic opinion with little support'],
-    },
-    {
-      band: 'Level 2',
-      minMarks: 6,
-      maxMarks: 10,
-      label: 'Some',
-      descriptor:
-        "Some evaluative comments with some reference to writer's methods. Some appropriate textual reference.",
-      indicators: ['Begins to justify an opinion with some reference to the text'],
-    },
-    {
-      band: 'Level 3',
-      minMarks: 11,
-      maxMarks: 15,
-      label: 'Clear',
-      descriptor:
-        "Clear, relevant evaluation of the text. Clear references to writer's methods and their effects. Well-chosen textual references.",
-      indicators: ['Clear, considered personal response tied to analysis of method'],
-    },
-    {
-      band: 'Level 4',
-      minMarks: 16,
-      maxMarks: 20,
-      label: 'Perceptive',
-      descriptor:
-        "Perceptive, detailed evaluation of the text. Judicious references to writer's methods. Convincing textual support.",
-      indicators: [
-        "Convincing, critical evaluation fully rooted in analysis of the writer's craft",
-      ],
-    },
-  ],
+/** AO4 critical evaluation. Paper 1 Q4 and Paper 2 Q6 are 15 marks each. */
+function ao4Evaluation(max: number, paperMax: number): AssessmentObjective {
+  return {
+    id: 'AO4',
+    label: 'AO4 - Evaluate critically',
+    description: AO4_DESC,
+    maxMarks: max,
+    weighting: max / paperMax,
+    bands: ladder(max, [
+      {
+        label: 'Basic',
+        descriptor:
+          'Basic evaluation of the text, with assertion rather than judgement. Textual reference is limited.',
+        indicators: ['Agrees or disagrees without reasons', 'Retells rather than evaluates'],
+      },
+      {
+        label: 'Some evaluation',
+        descriptor:
+          'Some evaluation supported by textual reference, with some awareness of the writer at work.',
+        indicators: ['Offers a view and part-supports it', 'Some relevant quotation'],
+      },
+      {
+        label: 'Clear evaluation',
+        descriptor:
+          'Clear and relevant evaluation of the text, supported by appropriate references, showing understanding of the writer&#39;s methods.',
+        indicators: [
+          'Responds to the statement in the question',
+          'References chosen to support judgement',
+        ],
+      },
+      {
+        label: 'Thorough evaluation',
+        descriptor:
+          'Thorough evaluation, sustained across the section named in the question, with well-selected references.',
+        indicators: ['Evaluates method as well as content', 'Judgement is consistent'],
+      },
+      {
+        label: 'Perceptive evaluation',
+        descriptor:
+          'Perceptive, critical evaluation of how the writer achieves effects, with precisely chosen references.',
+        indicators: [
+          'Discriminating judgement on the writer&#39;s choices',
+          'Argument is cumulative',
+        ],
+      },
+    ]),
+  }
 }
 
-// ─── Writing AOs (Section B) ──────────────────────────────────────────────
+// ─── Writing objectives ─────────────────────────────────────────────────────
 
-const p1Ao5Writing: AssessmentObjective = {
-  id: 'AO5',
-  label: 'AO5 - Content and organisation',
-  description:
-    'Communicate clearly, effectively and imaginatively, selecting and adapting tone, style and register for different forms, purposes and audiences. Organise information and ideas, using structural and grammatical features to support coherence and cohesion of texts.',
-  maxMarks: 16,
-  weighting: 16 / 64,
-  bands: [
-    {
-      band: 'Level 1',
-      minMarks: 1,
-      maxMarks: 4,
-      label: 'Simple',
-      descriptor:
-        'Simple communication of ideas. Simple awareness of the reader. Simple organisational features; paragraphs may be used.',
-      indicators: [
-        'Limited vocabulary and basic sentence forms',
-        'Tone is inconsistent or unclear',
-      ],
-    },
-    {
-      band: 'Level 2',
-      minMarks: 5,
-      maxMarks: 8,
-      label: 'Some',
-      descriptor:
-        'Some evidence of clear communication. Some awareness of audience. Paragraphs used with some discourse markers.',
-      indicators: ['Tone begins to match purpose', 'Some deliberate vocabulary choices'],
-    },
-    {
-      band: 'Level 3',
-      minMarks: 9,
-      maxMarks: 12,
-      label: 'Clear and consistent',
-      descriptor:
-        'Clear, effective communication. Matching of tone, style and register to purpose and audience. Well-structured paragraphs with effective discourse markers.',
-      indicators: [
-        'Engaging and well-sequenced writing',
-        'Imaginative or descriptive writing that creates effects',
-      ],
-    },
-    {
-      band: 'Level 4',
-      minMarks: 13,
-      maxMarks: 16,
-      label: 'Convincing, compelling',
-      descriptor:
-        'Convincing and compelling communication. Sophisticated matching of tone, style and register. Varied and inventive structural choices.',
-      indicators: [
-        'Distinctive voice and compelling narrative or description',
-        'Sophisticated structural choices (motifs, circularity, shifts in perspective)',
-      ],
-    },
-  ],
+/** AO5 communication and organisation. 24 marks on both papers. */
+function ao5Writing(max: number, paperMax: number): AssessmentObjective {
+  return {
+    id: 'AO5',
+    label: 'AO5 - Communicate and organise',
+    description: AO5_DESC,
+    maxMarks: max,
+    weighting: max / paperMax,
+    bands: ladder(max, [
+      {
+        label: 'Basic',
+        descriptor:
+          'Basic communication with limited awareness of purpose, form or audience. Little structural control.',
+        indicators: ['Register is not adapted', 'Ideas are listed rather than organised'],
+      },
+      {
+        label: 'Some control',
+        descriptor:
+          'Some communication of ideas with some awareness of purpose, form and audience. Some structural features used.',
+        indicators: ['Attempts the form asked for', 'Paragraphs are present but uneven'],
+      },
+      {
+        label: 'Clear control',
+        descriptor:
+          'Clear, effective communication, with tone, style and register adapted to purpose, form and audience. Coherent organisation.',
+        indicators: ['Form and register sustained', 'Paragraphing supports the argument'],
+      },
+      {
+        label: 'Thorough control',
+        descriptor:
+          'Thoroughly effective communication, with well-judged adaptation of tone and style and a clear structural design.',
+        indicators: ['Openings and endings are deliberate', 'Cohesive devices are varied'],
+      },
+      {
+        label: 'Perceptive control',
+        descriptor:
+          'Communication is convincing and consistently controlled; structure is shaped for effect throughout.',
+        indicators: ['Structure serves meaning', 'Voice is assured and sustained'],
+      },
+    ]),
+  }
 }
 
-const p1Ao6Technical: AssessmentObjective = {
-  id: 'AO6',
-  label: 'AO6 - Technical accuracy',
-  description:
-    'Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.',
-  maxMarks: 8,
-  weighting: 8 / 64,
-  bands: [
-    {
-      band: 'Level 1',
-      minMarks: 1,
-      maxMarks: 2,
-      label: 'Simple',
-      descriptor:
-        'Simple range of vocabulary. Simple sentence forms. Some accurate basic spelling and punctuation.',
-      indicators: ['Simple sentences dominate', 'Frequent technical errors'],
-    },
-    {
-      band: 'Level 2',
-      minMarks: 3,
-      maxMarks: 4,
-      label: 'Some',
-      descriptor:
-        'Some range of vocabulary. Some variety of sentence forms. Some accurate spelling and punctuation.',
-      indicators: ['Some variety in sentence structures'],
-    },
-    {
-      band: 'Level 3',
-      minMarks: 5,
-      maxMarks: 6,
-      label: 'Considerable',
-      descriptor:
-        'Considerable range of vocabulary used effectively. Varied sentence forms. Mostly accurate spelling and punctuation.',
-      indicators: ['Controlled variety of sentence types for effect'],
-    },
-    {
-      band: 'Level 4',
-      minMarks: 7,
-      maxMarks: 8,
-      label: 'Extensive',
-      descriptor:
-        'Extensive and ambitious vocabulary. Full range of sentence forms for effect. Consistently accurate spelling and punctuation.',
-      indicators: [
-        'Consistently accurate across ambitious constructions',
-        'Punctuation used to create precise effects',
-      ],
-    },
-  ],
+/** AO6 vocabulary, sentence structures and technical accuracy. 16 marks. */
+function ao6Technical(max: number, paperMax: number): AssessmentObjective {
+  return {
+    id: 'AO6',
+    label: 'AO6 - Vocabulary, sentences and accuracy',
+    description: AO6_DESC,
+    maxMarks: max,
+    weighting: max / paperMax,
+    bands: ladder(max, [
+      {
+        label: 'Basic',
+        descriptor:
+          'Simple vocabulary and sentence structures. Frequent errors in spelling and punctuation that impede meaning.',
+        indicators: ['Sentence demarcation is unreliable', 'Vocabulary is repetitive'],
+      },
+      {
+        label: 'Some range',
+        descriptor:
+          'Some range of vocabulary and sentence structures. Errors are noticeable but meaning is usually clear.',
+        indicators: ['Some variety of sentence opening', 'Common words mostly spelt correctly'],
+      },
+      {
+        label: 'Clear range',
+        descriptor:
+          'A clear range of vocabulary and sentence structures used for effect. Spelling and punctuation are generally accurate.',
+        indicators: ['Sentence forms are varied purposefully', 'Punctuation is mostly secure'],
+      },
+      {
+        label: 'Wide range',
+        descriptor:
+          'A wide range of vocabulary and sentence structures chosen for clarity, purpose and effect. Accuracy is secure.',
+        indicators: ['Ambitious vocabulary used precisely', 'A range of punctuation used well'],
+      },
+      {
+        label: 'Extensive range',
+        descriptor:
+          'Extensive and ambitious vocabulary and a full range of sentence structures, with consistently accurate spelling and punctuation.',
+        indicators: ['Errors are rare and do not impede', 'Choices are consistently deliberate'],
+      },
+    ]),
+  }
 }
 
-// ─── Paper 1 ────────────────────────────────────────────────────────────────
+// ─── Paper 1: Fiction and Imaginative Writing (64 marks) ─────────────────────
+
+const P1 = 64
 
 export const edexcelLangPaper1: MarkScheme = {
   id: 'edexcel-lang-paper1',
@@ -367,7 +379,7 @@ export const edexcelLangPaper1: MarkScheme = {
   subject: 'English Language',
   paper: 'Paper 1',
   title: 'Fiction and Imaginative Writing',
-  totalMarks: 64,
+  totalMarks: P1,
   durationMinutes: 105,
   version: '1EN0/01',
   sourceUrl:
@@ -375,357 +387,58 @@ export const edexcelLangPaper1: MarkScheme = {
   questions: [
     {
       id: 'Q1',
-      questionType: 'Information retrieval (short answer)',
+      questionType: 'Information retrieval',
       taskDescription:
-        'Read a 19th-century fiction extract and answer a short-answer question that tests understanding of explicit information.',
-      totalMarks: 4,
-      assessmentObjectives: [p1Ao1],
+        'From lines named in the question, identify one piece of explicit information. 1 mark.',
+      totalMarks: 1,
+      assessmentObjectives: [ao1Retrieval(1, P1)],
       examinerNotes:
-        'Award one mark for each valid identification. Accept direct quotation or paraphrase.',
+        'One mark for one acceptable point. Nothing is deducted for additional wrong material offered alongside a correct answer.',
     },
     {
       id: 'Q2',
-      questionType: 'Language analysis',
-      taskDescription:
-        'Analyse how the writer uses language to create effects in a specified section of the fiction extract.',
-      totalMarks: 8,
-      assessmentObjectives: [p1Ao2Language],
-      examinerNotes:
-        'Reward analysis of effect, not device-spotting. Precise quotation is essential at Level 3+.',
+      questionType: 'Information retrieval',
+      taskDescription: 'From the lines named in the question, give two pieces of information.',
+      totalMarks: 2,
+      assessmentObjectives: [ao1Retrieval(2, P1)],
+      examinerNotes: 'One mark per acceptable point. Points must be distinct from one another.',
     },
     {
       id: 'Q3',
-      questionType: 'Structure analysis',
-      taskDescription: 'Analyse how the writer has structured the text to interest the reader.',
-      totalMarks: 8,
-      assessmentObjectives: [p1Ao2Structure],
+      questionType: 'Language and structure analysis',
+      taskDescription:
+        'Analyse how the writer uses language and structure in the named lines to achieve effects.',
+      totalMarks: 6,
+      assessmentObjectives: [ao2Language(6, P1, 3)],
       examinerNotes:
-        'Students must consider whole-text structure. Reward awareness of shifts in focus, narrative perspective and pacing.',
+        'Three levels of two marks. Reward analysis of effect rather than identification of device.',
     },
     {
       id: 'Q4',
-      questionType: 'Evaluation',
+      questionType: 'Critical evaluation',
       taskDescription:
-        'Evaluate how successfully the writer achieves a particular effect. Support your views with textual references.',
-      totalMarks: 20,
-      assessmentObjectives: [p1Ao4Evaluation],
+        'Evaluate how successfully the writer achieves a stated effect in a named section of the text, supporting your views with detailed reference.',
+      totalMarks: 15,
+      assessmentObjectives: [ao4Evaluation(15, P1)],
       examinerNotes:
-        'Reward personal engagement supported by analysis of methods. Level 4 requires convincing, perceptive evaluation.',
+        'Five levels of three marks. The question names a section; material from outside it is not rewarded.',
     },
     {
-      id: 'Q5',
-      questionType: 'Imaginative Writing',
+      id: 'Q5/Q6',
+      questionType: 'Imaginative writing (choice of one)',
       taskDescription:
-        'Write imaginatively from a choice of tasks: narrative or descriptive writing linked to a stimulus (image or title). Approximately 45 minutes.',
-      totalMarks: 24,
-      assessmentObjectives: [p1Ao5Writing, p1Ao6Technical],
+        'Answer ONE of the two imaginative writing tasks. AO5 is marked out of 24 and AO6 out of 16, levelled separately and summed.',
+      totalMarks: 40,
+      assessmentObjectives: [ao5Writing(24, P1), ao6Technical(16, P1)],
       examinerNotes:
-        'AO5 is marked out of 16, AO6 out of 8. Reward deliberate crafting, distinctive voice and structural control.',
+        'The candidate answers one task, not both. Mark the one attempted; where both are attempted, mark the better and say so.',
     },
   ],
 }
 
-// ═══════════════════════════════════════════════════════════════════════════
-// PAPER 2 - Non-fiction and Transactional Writing
-// ═══════════════════════════════════════════════════════════════════════════
+// ─── Paper 2: Non-fiction and Transactional Writing (96 marks) ───────────────
 
-// ─── Reading AOs (Section A) ───────────────────────────────────────────────
-
-const p2Ao1Retrieval: AssessmentObjective = {
-  id: 'AO1',
-  label: 'AO1 - Identify and interpret',
-  description:
-    'Identify and interpret explicit and implicit information and ideas. Select and synthesise evidence from different texts.',
-  maxMarks: 4,
-  weighting: 4 / 96,
-  bands: [
-    {
-      band: 'Level 1',
-      minMarks: 1,
-      maxMarks: 1,
-      label: 'Simple',
-      descriptor: 'Simple, limited comment with little textual reference.',
-      indicators: ['Lists simple explicit details'],
-    },
-    {
-      band: 'Level 2',
-      minMarks: 2,
-      maxMarks: 2,
-      label: 'Some',
-      descriptor: 'Some relevant comments supported by some appropriate textual reference.',
-      indicators: ['Selects some relevant detail'],
-    },
-    {
-      band: 'Level 3',
-      minMarks: 3,
-      maxMarks: 3,
-      label: 'Clear',
-      descriptor: 'Clear, relevant comments with clear textual reference.',
-      indicators: ['Clear, focused selection of information'],
-    },
-    {
-      band: 'Level 4',
-      minMarks: 4,
-      maxMarks: 4,
-      label: 'Perceptive',
-      descriptor: 'Perceptive, detailed comments with precise textual reference.',
-      indicators: ['Judicious, precise selection of evidence'],
-    },
-  ],
-}
-
-const p2Ao1Synthesis: AssessmentObjective = {
-  id: 'AO1',
-  label: 'AO1 - Summarise and synthesise',
-  description:
-    'Select and synthesise evidence from different texts to summarise similarities or differences.',
-  maxMarks: 8,
-  weighting: 8 / 96,
-  bands: [
-    {
-      band: 'Level 1',
-      minMarks: 1,
-      maxMarks: 2,
-      label: 'Simple',
-      descriptor:
-        'Simple awareness of differences or similarities. Simple references. Simple inferences.',
-      indicators: ['Lists details without linking texts'],
-    },
-    {
-      band: 'Level 2',
-      minMarks: 3,
-      maxMarks: 4,
-      label: 'Some',
-      descriptor: 'Some summary attempted with some relevant quotation. Attempts inference.',
-      indicators: ['Begins to compare explicit information'],
-    },
-    {
-      band: 'Level 3',
-      minMarks: 5,
-      maxMarks: 6,
-      label: 'Clear',
-      descriptor:
-        'Clear, relevant summary with clear synthesis of evidence. Clear inferences drawn.',
-      indicators: ['Explicit comparison with quotations from both texts'],
-    },
-    {
-      band: 'Level 4',
-      minMarks: 7,
-      maxMarks: 8,
-      label: 'Perceptive',
-      descriptor:
-        'Perceptive summary with judicious synthesis of evidence from both texts. Perceptive inferences.',
-      indicators: ['Sophisticated inference and judicious synthesis'],
-    },
-  ],
-}
-
-const p2Ao2Language: AssessmentObjective = {
-  id: 'AO2',
-  label: 'AO2 - Analyse language',
-  description:
-    'Explain, comment on and analyse how writers use language to achieve effects and influence readers, using relevant subject terminology.',
-  maxMarks: 12,
-  weighting: 12 / 96,
-  bands: [
-    {
-      band: 'Level 1',
-      minMarks: 1,
-      maxMarks: 3,
-      label: 'Simple',
-      descriptor:
-        'Simple comment on the effect of language. Simple mention of methods. Simple use of terminology.',
-      indicators: ['Identifies devices without explaining effect'],
-    },
-    {
-      band: 'Level 2',
-      minMarks: 4,
-      maxMarks: 6,
-      label: 'Some',
-      descriptor:
-        'Some understanding of language effects. Identifies some methods. Some appropriate references and terminology.',
-      indicators: ['Some effect commentary with quotations'],
-    },
-    {
-      band: 'Level 3',
-      minMarks: 7,
-      maxMarks: 9,
-      label: 'Clear',
-      descriptor:
-        'Clear, relevant explanation of language effects. Range of relevant quotations. Accurate subject terminology.',
-      indicators: ['Explains layered effects with accurate terminology'],
-    },
-    {
-      band: 'Level 4',
-      minMarks: 10,
-      maxMarks: 12,
-      label: 'Perceptive',
-      descriptor:
-        'Perceptive analysis of language effects. Judicious range of quotations. Sophisticated use of terminology.',
-      indicators: [
-        'Perceptive analysis of connotation and nuance',
-        'Terminology is embedded and purposeful',
-      ],
-    },
-  ],
-}
-
-const p2Ao3Comparison: AssessmentObjective = {
-  id: 'AO3',
-  label: "AO3 - Compare writers' ideas and perspectives",
-  description:
-    "Compare writers' ideas and perspectives, as well as how these are conveyed, across two or more texts.",
-  maxMarks: 16,
-  weighting: 16 / 96,
-  bands: [
-    {
-      band: 'Level 1',
-      minMarks: 1,
-      maxMarks: 4,
-      label: 'Simple',
-      descriptor:
-        'Simple cross-reference of ideas and perspectives. Simple identification of methods. Simple textual references.',
-      indicators: ['Writes about texts separately with little comparison'],
-    },
-    {
-      band: 'Level 2',
-      minMarks: 5,
-      maxMarks: 8,
-      label: 'Some',
-      descriptor:
-        'Attempts to compare ideas and perspectives. Some comment on methods. Some relevant textual detail.',
-      indicators: ['Begins to compare using comparative connectives'],
-    },
-    {
-      band: 'Level 3',
-      minMarks: 9,
-      maxMarks: 12,
-      label: 'Clear',
-      descriptor:
-        'Clear comparison of ideas and perspectives. Clear explanation of methods. Clear references to textual detail.',
-      indicators: ['Sustained comparison with clear comparative connectives'],
-    },
-    {
-      band: 'Level 4',
-      minMarks: 13,
-      maxMarks: 16,
-      label: 'Perceptive',
-      descriptor:
-        'Perceptive analytical comparison of ideas and perspectives. Perceptive analysis of how these are conveyed. Judicious textual detail.',
-      indicators: ['Integrated, perceptive comparison with judicious detail'],
-    },
-  ],
-}
-
-// ─── Writing AOs (Section B) ──────────────────────────────────────────────
-
-const p2Ao5Writing: AssessmentObjective = {
-  id: 'AO5',
-  label: 'AO5 - Content and organisation',
-  description:
-    'Communicate clearly, effectively and imaginatively, selecting and adapting tone, style and register for different forms, purposes and audiences. Organise information and ideas, using structural and grammatical features to support coherence and cohesion of texts.',
-  maxMarks: 24,
-  weighting: 24 / 96,
-  bands: [
-    {
-      band: 'Level 1',
-      minMarks: 1,
-      maxMarks: 6,
-      label: 'Simple',
-      descriptor:
-        'Simple communication. Simple awareness of purpose and/or audience. Simple linking of ideas. Paragraphs may be used.',
-      indicators: [
-        'Limited awareness of form conventions (letter, article, speech, etc.)',
-        'Basic, often inconsistent tone',
-      ],
-    },
-    {
-      band: 'Level 2',
-      minMarks: 7,
-      maxMarks: 12,
-      label: 'Some',
-      descriptor:
-        'Some clear communication. Some adaptation for purpose and audience. Some use of structural features and discourse markers.',
-      indicators: ['Form conventions attempted', 'Some rhetorical devices used'],
-    },
-    {
-      band: 'Level 3',
-      minMarks: 13,
-      maxMarks: 18,
-      label: 'Clear and consistent',
-      descriptor:
-        'Clear, consistent communication. Clear matching of tone, style and register to purpose, audience and form. Effective use of structural features.',
-      indicators: [
-        'Clear argumentative voice and persuasive structure',
-        'Rhetorical devices used with awareness of effect',
-      ],
-    },
-    {
-      band: 'Level 4',
-      minMarks: 19,
-      maxMarks: 24,
-      label: 'Convincing and compelling',
-      descriptor:
-        'Convincing and compelling communication. Sophisticated matching of tone, style and register. Varied and inventive use of structural features.',
-      indicators: [
-        'Persuasive voice is distinctive and compelling',
-        'Structural control used for rhetorical effect',
-      ],
-    },
-  ],
-}
-
-const p2Ao6Technical: AssessmentObjective = {
-  id: 'AO6',
-  label: 'AO6 - Technical accuracy',
-  description:
-    'Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.',
-  maxMarks: 16,
-  weighting: 16 / 96,
-  bands: [
-    {
-      band: 'Level 1',
-      minMarks: 1,
-      maxMarks: 4,
-      label: 'Simple',
-      descriptor:
-        'Simple range of vocabulary. Simple sentence forms. Some accurate basic spelling and punctuation.',
-      indicators: ['Simple sentences dominate', 'Frequent technical errors'],
-    },
-    {
-      band: 'Level 2',
-      minMarks: 5,
-      maxMarks: 8,
-      label: 'Some',
-      descriptor:
-        'Some range of vocabulary with some ambition. Some variety of sentence forms. Some accurate spelling and punctuation.',
-      indicators: ['Some variety in sentence structures'],
-    },
-    {
-      band: 'Level 3',
-      minMarks: 9,
-      maxMarks: 12,
-      label: 'Considerable',
-      descriptor:
-        'Considerable range of vocabulary used effectively. Varied sentence forms. Mostly accurate spelling and punctuation.',
-      indicators: ['Controlled variety of sentence types for effect'],
-    },
-    {
-      band: 'Level 4',
-      minMarks: 13,
-      maxMarks: 16,
-      label: 'Extensive',
-      descriptor:
-        'Extensive and ambitious vocabulary. Full range of sentence forms. Consistently accurate spelling and punctuation.',
-      indicators: [
-        'Consistently accurate across ambitious constructions',
-        'Punctuation used to create precise effects',
-      ],
-    },
-  ],
-}
-
-// ─── Paper 2 ────────────────────────────────────────────────────────────────
+const P2 = 96
 
 export const edexcelLangPaper2: MarkScheme = {
   id: 'edexcel-lang-paper2',
@@ -733,7 +446,7 @@ export const edexcelLangPaper2: MarkScheme = {
   subject: 'English Language',
   paper: 'Paper 2',
   title: 'Non-fiction and Transactional Writing',
-  totalMarks: 96,
+  totalMarks: P2,
   durationMinutes: 125,
   version: '1EN0/02',
   sourceUrl:
@@ -741,151 +454,83 @@ export const edexcelLangPaper2: MarkScheme = {
   questions: [
     {
       id: 'Q1',
-      questionType: 'Information retrieval (short answer)',
-      taskDescription:
-        'Read a 19th-century non-fiction extract and answer a short-answer question testing understanding of explicit information.',
-      totalMarks: 4,
-      assessmentObjectives: [p2Ao1Retrieval],
-      examinerNotes: 'Award one mark per valid identification. Accept quotation or paraphrase.',
+      questionType: 'Information retrieval (Text 1)',
+      taskDescription: 'From the named lines of Text 1, give two pieces of information.',
+      totalMarks: 2,
+      assessmentObjectives: [ao1Retrieval(2, P2)],
+      examinerNotes: 'One mark per acceptable point.',
     },
     {
       id: 'Q2',
-      questionType: 'Summary and synthesis',
-      taskDescription:
-        'Summarise the differences or similarities between the ideas in two non-fiction sources.',
-      totalMarks: 8,
-      assessmentObjectives: [p2Ao1Synthesis],
-      examinerNotes: 'Reward inference and synthesis, not mere listing of details.',
+      questionType: 'Information retrieval (Text 1)',
+      taskDescription: 'From the named lines of Text 1, give two further pieces of information.',
+      totalMarks: 2,
+      assessmentObjectives: [ao1Retrieval(2, P2)],
+      examinerNotes: 'One mark per acceptable point.',
     },
     {
       id: 'Q3',
-      questionType: 'Language analysis',
+      questionType: 'Language and structure analysis (Text 1)',
       taskDescription:
-        'Analyse how the writer uses language to achieve effects in one of the non-fiction sources.',
-      totalMarks: 12,
-      assessmentObjectives: [p2Ao2Language],
-      examinerNotes:
-        'Reward analysis of effect with accurate terminology. Precise quotation expected at Level 3+.',
+        'Analyse how the writer of Text 1 uses language and structure to achieve effects.',
+      totalMarks: 15,
+      assessmentObjectives: [ao2Language(15, P2, 5)],
+      examinerNotes: 'Five levels of three marks.',
     },
     {
       id: 'Q4',
-      questionType: 'Comparing viewpoints and perspectives',
-      taskDescription:
-        'Compare how the writers of the two sources convey their different viewpoints and perspectives on a given topic.',
-      totalMarks: 16,
-      assessmentObjectives: [p2Ao3Comparison],
-      examinerNotes:
-        'Both ideas and methods must be compared. Sustained, integrated comparison required for Level 3+.',
+      questionType: 'Information retrieval (Text 2)',
+      taskDescription: 'From the named lines of Text 2, give one piece of information.',
+      totalMarks: 1,
+      assessmentObjectives: [ao1Retrieval(1, P2)],
+      examinerNotes: 'One mark for one acceptable point.',
     },
     {
       id: 'Q5',
-      questionType: 'Transactional Writing (Task 1)',
-      taskDescription:
-        'Write a text in a specified form (e.g. letter, article, speech, review) for a given purpose and audience.',
-      totalMarks: 28,
-      assessmentObjectives: [
-        scaleAO(p2Ao5Writing, 16, 16 / 28),
-        {
-          ...p2Ao6Technical,
-          maxMarks: 12,
-          weighting: 12 / 28,
-          bands: [
-            {
-              band: 'Level 1',
-              minMarks: 1,
-              maxMarks: 3,
-              label: 'Simple',
-              descriptor:
-                'Simple range of vocabulary. Simple sentence forms. Some accurate basic spelling and punctuation.',
-              indicators: ['Simple sentences dominate', 'Frequent errors'],
-            },
-            {
-              band: 'Level 2',
-              minMarks: 4,
-              maxMarks: 6,
-              label: 'Some',
-              descriptor:
-                'Some range of vocabulary. Some variety of sentence forms. Some accurate spelling and punctuation.',
-              indicators: ['Some variety in sentence structures'],
-            },
-            {
-              band: 'Level 3',
-              minMarks: 7,
-              maxMarks: 9,
-              label: 'Considerable',
-              descriptor:
-                'Considerable vocabulary range. Varied sentence forms. Mostly accurate spelling and punctuation.',
-              indicators: ['Controlled variety for effect'],
-            },
-            {
-              band: 'Level 4',
-              minMarks: 10,
-              maxMarks: 12,
-              label: 'Extensive',
-              descriptor:
-                'Extensive vocabulary. Full range of sentence forms. Consistently accurate spelling and punctuation.',
-              indicators: ['Consistently accurate and ambitious'],
-            },
-          ],
-        },
-      ],
-      examinerNotes:
-        'AO5 marked out of 16, AO6 out of 12. Reward awareness of form conventions and rhetorical techniques.',
+      questionType: 'Information retrieval (Text 2)',
+      taskDescription: 'From the named lines of Text 2, give one further piece of information.',
+      totalMarks: 1,
+      assessmentObjectives: [ao1Retrieval(1, P2)],
+      examinerNotes: 'One mark for one acceptable point.',
     },
     {
       id: 'Q6',
-      questionType: 'Transactional Writing (Task 2)',
+      questionType: 'Critical evaluation (Text 2)',
       taskDescription:
-        'Write a second text in a different specified form (e.g. letter, article, speech, review, essay) for a given purpose and audience.',
-      totalMarks: 28,
-      assessmentObjectives: [
-        scaleAO(p2Ao5Writing, 16, 16 / 28),
-        {
-          ...p2Ao6Technical,
-          maxMarks: 12,
-          weighting: 12 / 28,
-          bands: [
-            {
-              band: 'Level 1',
-              minMarks: 1,
-              maxMarks: 3,
-              label: 'Simple',
-              descriptor:
-                'Simple range of vocabulary. Simple sentence forms. Some accurate basic spelling and punctuation.',
-              indicators: ['Simple sentences dominate', 'Frequent errors'],
-            },
-            {
-              band: 'Level 2',
-              minMarks: 4,
-              maxMarks: 6,
-              label: 'Some',
-              descriptor:
-                'Some range of vocabulary. Some variety of sentence forms. Some accurate spelling and punctuation.',
-              indicators: ['Some variety in sentence structures'],
-            },
-            {
-              band: 'Level 3',
-              minMarks: 7,
-              maxMarks: 9,
-              label: 'Considerable',
-              descriptor:
-                'Considerable vocabulary range. Varied sentence forms. Mostly accurate spelling and punctuation.',
-              indicators: ['Controlled variety for effect'],
-            },
-            {
-              band: 'Level 4',
-              minMarks: 10,
-              maxMarks: 12,
-              label: 'Extensive',
-              descriptor:
-                'Extensive vocabulary. Full range of sentence forms. Consistently accurate spelling and punctuation.',
-              indicators: ['Consistently accurate and ambitious'],
-            },
-          ],
-        },
-      ],
+        'Evaluate how successfully the writer of Text 2 achieves a stated effect, supporting your views with detailed reference.',
+      totalMarks: 15,
+      assessmentObjectives: [ao4Evaluation(15, P2)],
+      examinerNotes: 'Five levels of three marks.',
+    },
+    {
+      id: 'Q7a',
+      questionType: 'Synthesis across both texts',
+      taskDescription:
+        'Using both texts, identify and synthesise the similarities or differences the question names.',
+      totalMarks: 6,
+      assessmentObjectives: [ao1Retrieval(6, P2)],
       examinerNotes:
-        'AO5 marked out of 16, AO6 out of 12. Reward different form conventions from Q5. Credit sustained and compelling voice.',
+        'Reward points drawn from both texts. A point supported from one text only is still creditable where the question allows.',
+    },
+    {
+      id: 'Q7b',
+      questionType: "Comparison of writers' ideas and perspectives",
+      taskDescription:
+        'Compare how the writers of Text 1 and Text 2 present their ideas and perspectives, and how these are conveyed.',
+      totalMarks: 14,
+      assessmentObjectives: [ao3Comparison(14, P2)],
+      examinerNotes:
+        'Both texts must be addressed. A response on one text alone is capped in the lowest level that its quality allows.',
+    },
+    {
+      id: 'Q8/Q9',
+      questionType: 'Transactional writing (choice of one)',
+      taskDescription:
+        'Answer ONE of the two transactional writing tasks. AO5 is marked out of 24 and AO6 out of 16, levelled separately and summed.',
+      totalMarks: 40,
+      assessmentObjectives: [ao5Writing(24, P2), ao6Technical(16, P2)],
+      examinerNotes:
+        'The candidate answers one task, not both. A response in the wrong form is not over-penalised: it loses the form marks within AO5 and nothing further.',
     },
   ],
 }
