@@ -6,8 +6,8 @@ import { SET_TEXTS } from '@/lib/board/set-texts'
 import { EAL } from '@/lib/eal/curriculum'
 import { ALL_LESSONS } from '@/lib/ielts/lessons'
 import { KS3 } from '@/lib/ks3/curriculum'
-import { getAllLessonPlans } from '@/lib/lesson-plans/list'
-import { getPrintableSlugs } from '@/lib/printables/list'
+import { getAllLessonPlans, isLessonPlanPublished } from '@/lib/lesson-plans/list'
+import { getAllPrintables, isPublished } from '@/lib/printables/list'
 import staticRoutes from '@/lib/seo/static-routes.json'
 import ROUTE_LASTMOD from '@/lib/seo/route-lastmod.json'
 
@@ -188,7 +188,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // topics (grammar topics), so the level variants stay out wholesale.
   for (const topic of EAL.topics) {
     add(`/eal/${topic.id}`, { priority: 0.6, changeFrequency: 'monthly' })
-    for (const skill of ['reading', 'writing', 'listening', 'speaking']) {
+    // CUI-7 (19 September 2026): `listening` and `reading` are UNBUILT - both
+    // render a "coming soon" card and nothing else. Listing 20 such pages
+    // invited Google to crawl 20 dead ends and judge the whole section thin.
+    // `writing` and `speaking` are real (they delegate to CEFRAssessClient)
+    // and stay listed.
+    for (const skill of ['writing', 'speaking']) {
       add(`/eal/${topic.id}/${skill}`, { priority: 0.5, changeFrequency: 'monthly' })
     }
   }
@@ -202,14 +207,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }
 
   // Teaching library: lesson plans + printables.
-  for (const plan of getAllLessonPlans()) {
+  // CUI-7: all 20 carried `status: 'coming-soon'` and all 20 were listed.
+  for (const plan of getAllLessonPlans().filter(isLessonPlanPublished)) {
     add(`/resources/teaching/lesson-plans/${plan.slug}`, {
       priority: 0.6,
       changeFrequency: 'monthly',
     })
   }
-  for (const slug of await getPrintableSlugs()) {
-    add(`/resources/teaching/printables/${slug}`, { priority: 0.6, changeFrequency: 'monthly' })
+  // CUI-7: all 20 were `coming-soon` and not one had a pdfUrl, yet every one
+  // was listed. `isPublished` is the same predicate the page badge and the
+  // robots tag use, so the sitemap cannot drift from what the page says.
+  for (const printable of (await getAllPrintables()).filter(isPublished)) {
+    add(`/resources/teaching/printables/${printable.slug}`, {
+      priority: 0.6,
+      changeFrequency: 'monthly',
+    })
   }
 
   return [...entries.values()]

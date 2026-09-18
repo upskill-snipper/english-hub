@@ -211,3 +211,15 @@ export function getLessonPlan(slug: string): LessonPlan | null {
 export function getLessonPlanSlugs(): string[] {
   return getAllLessonPlans().map((plan) => plan.slug)
 }
+
+/**
+ * Is this lesson plan actually usable?
+ *
+ * CUI-7 (19 September 2026): all 20 lesson plans carry `status: 'coming-soon'`
+ * and all 20 were in the sitemap and fully indexable, so every one was a
+ * crawlable dead end promising a plan that does not exist. One predicate, used
+ * by the robots tag and the sitemap, so they cannot disagree.
+ */
+export function isLessonPlanPublished(plan: Pick<LessonPlan, 'status'>): boolean {
+  return plan.status !== 'coming-soon'
+}

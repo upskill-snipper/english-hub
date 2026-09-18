@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import { compileMDX } from 'next-mdx-remote/rsc'
 import { Badge } from '@/components/ui/badge'
 import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
-import { getPrintable, getPrintableSlugs, type Printable } from '@/lib/printables/list'
+import { getPrintable, getPrintableSlugs, type Printable, isPublished } from '@/lib/printables/list'
 import { tMany } from '@/lib/i18n/t'
 
 const SITE_URL = 'https://theenglishhub.app'
@@ -34,6 +34,14 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     }
   }
 
+  // CUI-7 (19 September 2026). All 20 printables carried `status:
+  // 'coming-soon'` and not one had a pdfUrl, yet every one was fully
+  // indexable and in the sitemap - 20 crawlable dead ends offering a download
+  // that does not exist. A page with nothing to give should not be inviting
+  // search traffic; `isPublished` is the same predicate the badge and the
+  // sitemap use, so the three cannot disagree.
+  const published = isPublished(printable)
+
   const canonical = buildCanonical(printable.slug)
   const title = `${printable.title} - Free ${printable.educationalLevel} English printable`
   const description = printable.description
@@ -42,6 +50,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   return {
     title,
     description,
+    ...(published ? {} : { robots: { index: false, follow: false } }),
     alternates: { canonical },
     openGraph: {
       title,

@@ -233,3 +233,22 @@ export async function getAllPrintables(): Promise<Printable[]> {
 export async function getPrintable(slug: string): Promise<Printable | null> {
   return readPrintableFile(slug)
 }
+
+/**
+ * Is this printable actually available to download?
+ *
+ * THE DEFECT THIS EXISTS TO FIX (19 September 2026, CUI-7). Three places asked
+ * this question and two of them asked it differently. The detail page's badge
+ * required `status === 'available' && pdfUrl`; the index card at
+ * `printables/page.tsx` only checked `status === 'coming-soon'`. A printable
+ * flipped to `available` before its PDF landed therefore read "Available" on
+ * the index, "Coming soon" on its own page, and stayed out of the sitemap -
+ * and since printables are published one at a time, that is the NORMAL
+ * intermediate state, not an edge case.
+ *
+ * One predicate, used by the badge, the index card, the robots tag and the
+ * sitemap, so all four can never disagree again.
+ */
+export function isPublished(printable: Pick<Printable, 'status' | 'pdfUrl'>): boolean {
+  return printable.status === 'available' && Boolean(printable.pdfUrl)
+}

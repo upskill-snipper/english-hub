@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
-import { getAllPrintables, type Printable } from '@/lib/printables/list'
+import { getAllPrintables, type Printable, isPublished } from '@/lib/printables/list'
 import { tMany } from '@/lib/i18n/t'
 
 const SITE_URL = 'https://theenglishhub.app'
@@ -50,7 +50,11 @@ function PrintableCard({
   viewDetailsLabel: string
 }) {
   const href = `${INDEX_PATH}/${printable.slug}`
-  const comingSoon = printable.status === 'coming-soon'
+  // CUI-7: was `status === 'coming-soon'`, which is LOOSER than the detail
+  // page's check. A printable flipped to `available` before its PDF landed
+  // read "Available" here and "Coming soon" on its own page - and since
+  // printables ship one at a time, that is the normal intermediate state.
+  const comingSoon = !isPublished(printable)
 
   return (
     <Link

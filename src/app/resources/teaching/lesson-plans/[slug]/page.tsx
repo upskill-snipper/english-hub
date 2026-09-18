@@ -6,7 +6,12 @@ import { Clock, GraduationCap } from 'lucide-react'
 
 import { Card, CardContent } from '@/components/ui/card'
 import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
-import { getAllLessonPlans, getLessonPlan, type LessonPlan } from '@/lib/lesson-plans/list'
+import {
+  getAllLessonPlans,
+  getLessonPlan,
+  type LessonPlan,
+  isLessonPlanPublished,
+} from '@/lib/lesson-plans/list'
 import { tMany } from '@/lib/i18n/t'
 
 const SITE_URL = 'https://theenglishhub.app'
@@ -40,6 +45,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title,
     description,
+    // CUI-7 (19 September 2026). All 20 lesson plans carry
+    // `status: 'coming-soon'` and all 20 were indexable and sitemapped -
+    // crawlable dead ends offering a plan that does not exist. Same predicate
+    // as the sitemap, so the two cannot drift apart.
+    ...(isLessonPlanPublished(plan) ? {} : { robots: { index: false, follow: false } }),
     alternates: { canonical: url },
     openGraph: {
       type: 'article',
