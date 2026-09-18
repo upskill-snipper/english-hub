@@ -1,4 +1,5 @@
 import { updateSession } from '@/lib/supabase/middleware'
+import ROUTE_REDIRECTS from '@/lib/seo/route-redirects.json'
 import { applyAffiliateTracking } from '@/middleware-affiliate'
 import { NextResponse, type NextRequest } from 'next/server'
 import { computeJsonLdHashes, extractAnalysisSlugKey } from '@/lib/seo/json-ld-hashes'
@@ -367,6 +368,39 @@ const RETIRED_PAGE_REDIRECTS: Record<string, string> = {
   '/toolkit': '/revision',
 }
 
+/**
+ * The next.config.js redirect table, as a lookup.
+ *
+ * CUI-9 (19 September 2026). next.config redirects are matched against the
+ * REQUESTED url before middleware runs. The Arabic surface rewrites
+ * `/ar/<path>` to `<path>` INTERNALLY, and an internal rewrite does not
+ * re-enter that table - so all 21 rules were unreachable under /ar. Retired
+ * marketing pages still rendered in Arabic, and so did `/ar/privacy-policy`
+ * and `/ar/legal/safeguarding`, which are compliance URLs a regulator might
+ * follow.
+ *
+ * Read from the same JSON next.config.js reads, so a rule added in one place
+ * cannot go missing in the other.
+ */
+const CONFIG_REDIRECTS: Map<string, { destination: string; permanent: boolean }> = new Map(
+  ROUTE_REDIRECTS.redirects.map((r) => [
+    r.source,
+    { destination: r.destination, permanent: r.permanent },
+  ]),
+)
+
+/**
+ * Where should this path redirect to, if anywhere?
+ *
+ * Checks the retired-page table first (it is the more specific of the two),
+ * then the shared config table.
+ */
+function lookupRedirect(path: string): { destination: string; permanent: boolean } | null {
+  const retired = RETIRED_PAGE_REDIRECTS[path]
+  if (retired) return { destination: retired, permanent: true }
+  return CONFIG_REDIRECTS.get(path) ?? null
+}
+
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
@@ -481,9 +515,14 @@ export async function middleware(request: NextRequest) {
   }
 
   // ── Retired-page redirect (e.g. /toolkit → /revision) ──────────────
+  //
+  // CUI-9: this omitted the status argument, so Next defaulted to 307
+  // TEMPORARY. A retired page is not coming back - 308 is permanent, tells
+  // search engines to transfer the link equity rather than keep indexing the
+  // old URL, and preserves the request method like 307 does.
   const retiredTarget = RETIRED_PAGE_REDIRECTS[pathname]
   if (retiredTarget) {
-    return NextResponse.redirect(new URL(retiredTarget, request.url))
+    return NextResponse.redirect(new URL(retiredTarget, request.url), 308)
   }
 
   // ── Phantom `.ar` blog URLs → canonical Arabic surface ─────────────
@@ -614,6 +653,32 @@ export async function middleware(request: NextRequest) {
     lang = 'ar'
     const rewriteUrl = request.nextUrl.clone()
     const strippedPath = pathname === '/ar' ? '/' : pathname.slice(3) // strip leading '/ar'
+
+    // CUI-9 (19 September 2026). The redirect tables are matched against the
+    // REQUESTED path - next.config's before middleware runs, the retired-page
+    // one a few hundred lines above against `pathname`. Neither ever saw an
+    // Arabic URL, because /ar/<path> matches no rule and the rewrite to
+    // <path> is internal. All 22 rules were unreachable under /ar: retired
+    // marketing pages still rendered, and so did /ar/privacy-policy and
+    // /ar/legal/safeguarding.
+    //
+    // The redirect stays ON the Arabic surface - /ar/privacy-policy goes to
+    // /ar/legal/privacy, not /legal/privacy. Sending an Arabic reader to the
+    // English URL would be a second bug wearing the fix's clothes.
+    const arRedirect = lookupRedirect(strippedPath)
+    if (arRedirect) {
+      const target = arRedirect.destination.startsWith('/')
+        ? `/ar${arRedirect.destination}`
+        : arRedirect.destination
+      const redirectUrl = new URL(target, request.url)
+      // Carry the query through. The previous /ar defect in this branch
+      // dropped affiliate referrals; a redirect that discards `?ref=` would
+      // reintroduce exactly that, on the retired URLs most likely to be in an
+      // old campaign link.
+      redirectUrl.search = request.nextUrl.search
+      return NextResponse.redirect(redirectUrl, arRedirect.permanent ? 308 : 307)
+    }
+
     servedPath = strippedPath
     rewriteUrl.pathname = strippedPath
     // Rewrite preserves the URL the browser sees while serving the

@@ -1,4 +1,5 @@
 const { withSentryConfig } = require('@sentry/nextjs')
+const ROUTE_REDIRECTS = require('./src/lib/seo/route-redirects.json')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
@@ -51,160 +52,17 @@ const nextConfig = {
     ],
   },
   async redirects() {
-    return [
-      // Canonical www→apex host redirect lives in src/middleware.ts
-      // (a next.config `has:host` rule did not fire because the edge
-      // serves the www alias before the route layer — see middleware).
-
-      // ── 2026-05-19 institutional repositioning ───────────────────
-      // The /for-* marketing routes were consolidated onto cleaner
-      // canonical URLs. 308s preserve link equity from inbound links,
-      // the sitemap and prior SEO. More specific paths first.
-      // 2026-09-18: /growth was a public "live traction" dashboard reading
-      // Prisma User.lastLoginAt and Prisma Subscription. lastLoginAt is only
-      // written on password sign-in and the Stripe webhook never wrote a
-      // Subscription row for 96% of customers, so the page published a
-      // near-zero active-user and paying-student count to anyone who found
-      // it, including school buyers. Removed rather than corrected: the
-      // numbers it was built to show are not ones this stage of the business
-      // benefits from publishing. 307 so it can come back.
-      {
-        source: '/growth',
-        destination: '/about',
-        permanent: false,
-      },
-      {
-        source: '/for-schools/pilot',
-        destination: '/school-pilot',
-        permanent: true,
-      },
-      {
-        source: '/for-schools',
-        destination: '/schools',
-        permanent: true,
-      },
-      {
-        source: '/for-teachers',
-        destination: '/teachers',
-        permanent: true,
-      },
-      {
-        source: '/for-students',
-        destination: '/students',
-        permanent: true,
-      },
-
-      {
-        source: '/privacy-policy',
-        destination: '/legal/privacy',
-        permanent: true,
-      },
-      {
-        source: '/resources/revision',
-        destination: '/resources/revision-notes',
-        permanent: true,
-      },
-      {
-        source: '/resources/games',
-        destination: '/games',
-        permanent: true,
-      },
-      {
-        source: '/igcse/edexcel/syllabus',
-        destination: '/igcse/edexcel',
-        permanent: true,
-      },
-      {
-        source: '/igcse/cambridge/0500/syllabus',
-        destination: '/igcse/cambridge/0500',
-        permanent: true,
-      },
-      {
-        source: '/igcse/cambridge/0990/syllabus',
-        destination: '/igcse/cambridge/0990',
-        permanent: true,
-      },
-      // Aron Ralston's memoir is widely searched for as "127 Hours"
-      // (the 2010 Danny Boyle film adaptation). Students typing the
-      // film title hit a 404 because the canonical slug uses the book
-      // title. Redirect both the revision-text and revision-notes
-      // paths to the canonical entry.
-      {
-        source: '/revision/texts/127-hours',
-        destination: '/revision/texts/between-a-rock-and-a-hard-place',
-        permanent: true,
-      },
-      {
-        source: '/resources/revision-notes/127-hours',
-        destination: '/resources/revision-notes/between-a-rock-and-a-hard-place',
-        permanent: true,
-      },
-      // H1 I3: the AO5 blog post was retitled to focus on AO2. Blog slugs
-      // are file-derived (content/blog/<slug>.mdx) and `dynamicParams =
-      // false` hard-404s any slug without a backing file. The content file
-      // keeps its name (ao5-gcse-english-literature.mdx), so the original
-      // public URL must stay the canonical resolvable one. We add the
-      // ALIAS direction: the new corrected-title URL → the existing file
-      // slug, so inbound links using the new slug don't 404. Sitemap owner:
-      // canonical blog URL remains /blog/ao5-gcse-english-literature.
-      {
-        source: '/blog/the-methods-objective-ao2-gcse-english-literature',
-        destination: '/blog/ao5-gcse-english-literature',
-        permanent: true,
-      },
-      // Blog dedupe (2026-05-28): three near-identical "OCR Writing to Argue"
-      // posts and three "An Inspector Calls AQA" posts were consolidated to
-      // the single best/longest version of each (Google scaled-content-abuse
-      // defence). Blog slugs are file-derived and `dynamicParams = false`
-      // hard-404s any slug without a backing .mdx, so the removed slugs are
-      // 308-redirected to the kept canonical post to preserve any indexed or
-      // inbound links. Sitemap regenerates from the surviving files.
-      {
-        source: '/blog/ocr-writing-to-argue-gcse',
-        destination: '/blog/writing-to-argue-gcse-ocr-tips',
-        permanent: true,
-      },
-      {
-        source: '/blog/writing-to-argue-ocr-gcse-tips',
-        destination: '/blog/writing-to-argue-gcse-ocr-tips',
-        permanent: true,
-      },
-      {
-        source: '/blog/an-inspector-calls-aqa-character-analysis',
-        destination: '/blog/an-inspector-calls-gcse-aqa-analysis',
-        permanent: true,
-      },
-      {
-        source: '/blog/an-inspector-calls-gcse-aqa',
-        destination: '/blog/an-inspector-calls-gcse-aqa-analysis',
-        permanent: true,
-      },
-      // Orphaned 404 fix: the "IGCSE English Language exam strategies" post
-      // was retired with no redirect. Its topic is fully covered by the live
-      // igcse-english-language-exam-tips post (same scope; that page's H1 even
-      // reads "...Exam Strategies"). 308 to preserve any indexed/inbound links.
-      {
-        source: '/blog/igcse-english-language-exam-strategies',
-        destination: '/blog/igcse-english-language-exam-tips',
-        permanent: true,
-      },
-      // H1 H7: consolidate safeguarding onto the single authoritative
-      // policy at /safeguarding.
-      {
-        source: '/legal/safeguarding',
-        destination: '/safeguarding',
-        permanent: true,
-      },
-      // PDPPL gap-analysis remediation (G2, 2026-05-20): the Qatar
-      // Privacy Notice Supplement v1.0 is merged into the authoritative
-      // Qatar Privacy Notice v2.0 at /legal/privacy-qatar. Edge 308
-      // fires before the server-component redirect shim renders.
-      {
-        source: '/legal/privacy-qatar-supplement',
-        destination: '/legal/privacy-qatar',
-        permanent: true,
-      },
-    ]
+    // CUI-9 (19 September 2026): these used to be 21 inline literals here, and
+    // the middleware could not see them. The Arabic surface rewrites /ar/<path>
+    // to <path> internally, and an internal rewrite does not re-enter this
+    // table - so EVERY one of these rules was unreachable under /ar. Retired
+    // marketing pages still rendered in Arabic, and so did /ar/privacy-policy
+    // and /ar/legal/safeguarding, which are compliance URLs.
+    //
+    // The table now lives in src/lib/seo/route-redirects.json and is read by
+    // both this file and src/middleware.ts, so the two cannot drift. Add rules
+    // there.
+    return ROUTE_REDIRECTS.redirects
   },
   async headers() {
     return [

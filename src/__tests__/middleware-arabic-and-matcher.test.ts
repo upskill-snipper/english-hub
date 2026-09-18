@@ -48,10 +48,24 @@ describe('the Arabic branch', () => {
     const end = mw.indexOf('} else {', start)
     const branch = mw.slice(start, end)
     expect(start).toBeGreaterThan(-1)
-    // The one permitted return is the 3xx from updateSession - a redirect is
-    // a redirect and carries no page to protect.
-    const returns = branch.match(/^\s*return\b/gm) ?? []
-    expect(returns.length, `unexpected early return in the /ar branch:\n${branch}`).toBe(1)
+    // The rule, which this assertion now STATES rather than approximates: a
+    // return is permitted only when what it returns is a redirect. A redirect
+    // carries no page, so it needs no CSP nonce and no affiliate stamping.
+    // Anything returning a RENDERED response here skips the shared tail and
+    // reintroduces the August defect.
+    //
+    // This used to count returns and require exactly 1. That is a different
+    // rule, and a weaker one: CUI-9 added a second return - the redirect that
+    // makes retired URLs reachable under /ar - and the count tripped on a
+    // change the comment above it already permitted.
+    const returns = [...branch.matchAll(/^\s*return\s+([^\n]*)/gm)].map((m) => m[1].trim())
+    expect(returns.length, 'the branch returns nothing at all').toBeGreaterThan(0)
+    for (const returned of returns) {
+      expect(
+        /^sessionRes\b/.test(returned) || /^NextResponse\.redirect\(/.test(returned),
+        `the /ar branch returns something that is not a redirect: ${returned}`,
+      ).toBe(true)
+    }
     expect(branch).toContain('return sessionRes')
   })
 

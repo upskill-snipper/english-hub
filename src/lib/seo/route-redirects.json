@@ -1,0 +1,110 @@
+{
+  "$comment": "Generated from next.config.js on 19 September 2026 (CUI-9). Edit here, not there.",
+  "redirects": [
+    {
+      "source": "/growth",
+      "destination": "/about",
+      "permanent": false
+    },
+    {
+      "source": "/for-schools/pilot",
+      "destination": "/school-pilot",
+      "permanent": true
+    },
+    {
+      "source": "/for-schools",
+      "destination": "/schools",
+      "permanent": true
+    },
+    {
+      "source": "/for-teachers",
+      "destination": "/teachers",
+      "permanent": true
+    },
+    {
+      "source": "/for-students",
+      "destination": "/students",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/legal/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/resources/revision",
+      "destination": "/resources/revision-notes",
+      "permanent": true
+    },
+    {
+      "source": "/resources/games",
+      "destination": "/games",
+      "permanent": true
+    },
+    {
+      "source": "/igcse/edexcel/syllabus",
+      "destination": "/igcse/edexcel",
+      "permanent": true
+    },
+    {
+      "source": "/igcse/cambridge/0500/syllabus",
+      "destination": "/igcse/cambridge/0500",
+      "permanent": true
+    },
+    {
+      "source": "/igcse/cambridge/0990/syllabus",
+      "destination": "/igcse/cambridge/0990",
+      "permanent": true
+    },
+    {
+      "source": "/revision/texts/127-hours",
+      "destination": "/revision/texts/between-a-rock-and-a-hard-place",
+      "permanent": true
+    },
+    {
+      "source": "/resources/revision-notes/127-hours",
+      "destination": "/resources/revision-notes/between-a-rock-and-a-hard-place",
+      "permanent": true
+    },
+    {
+      "source": "/blog/the-methods-objective-ao2-gcse-english-literature",
+      "destination": "/blog/ao5-gcse-english-literature",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ocr-writing-to-argue-gcse",
+      "destination": "/blog/writing-to-argue-gcse-ocr-tips",
+      "permanent": true
+    },
+    {
+      "source": "/blog/writing-to-argue-ocr-gcse-tips",
+      "destination": "/blog/writing-to-argue-gcse-ocr-tips",
+      "permanent": true
+    },
+    {
+      "source": "/blog/an-inspector-calls-aqa-character-analysis",
+      "destination": "/blog/an-inspector-calls-gcse-aqa-analysis",
+      "permanent": true
+    },
+    {
+      "source": "/blog/an-inspector-calls-gcse-aqa",
+      "destination": "/blog/an-inspector-calls-gcse-aqa-analysis",
+      "permanent": true
+    },
+    {
+      "source": "/blog/igcse-english-language-exam-strategies",
+      "destination": "/blog/igcse-english-language-exam-tips",
+      "permanent": true
+    },
+    {
+      "source": "/legal/safeguarding",
+      "destination": "/safeguarding",
+      "permanent": true
+    },
+    {
+      "source": "/legal/privacy-qatar-supplement",
+      "destination": "/legal/privacy-qatar",
+      "permanent": true
+    }
+  ]
+}
