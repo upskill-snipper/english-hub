@@ -12,6 +12,9 @@ import { useT } from '@/lib/i18n/use-t'
 import { DictationButton } from '@/components/speech/DictationButton'
 import { InlineAIConsentPrompt } from '@/components/consent/InlineAIConsentPrompt'
 import { readConsentRefusal, type AIConsentRefusal } from '@/components/consent/ai-consent-refusal'
+import { markingBoardFor, readSiteBoardCookie } from '@/lib/board/marking-board-map'
+import { PRICING } from '@/constants/pricing'
+import { saveMarkingDraft, takeMarkingDraft } from '@/lib/marking/draft-store'
 
 /* ─── Board catalogue ──────────────────────────────────────── */
 
@@ -115,6 +118,13 @@ function buildPaperOptions(board: BoardOption | undefined): PaperOption[] {
     }))
 }
 
+/** "language-analysis" -> "Language analysis". Leaves prose labels alone. */
+function humanQuestionType(raw: string): string {
+  const spaced = raw.replace(/[-_]+/g, ' ').trim()
+  if (!spaced) return raw
+  return spaced.charAt(0).toUpperCase() + spaced.slice(1)
+}
+
 /**
  * Question dropdown options come straight from the chosen mark scheme so the
  * `questionId` we POST always matches a real `QuestionScheme.id` the API can
@@ -124,7 +134,11 @@ function buildQuestionOptions(scheme: MarkScheme | undefined): QuestionOption[] 
   if (!scheme) return []
   return scheme.questions.map((q) => ({
     value: q.id,
-    label: `${q.id} - ${q.questionType}`,
+    // `questionType` is authored in the mark schemes as a slug-ish label
+    // ("language-analysis"), which rendered as "Q2 - language-analysis" and
+    // read like a database row rather than a question. Title-case it and add
+    // the tariff, which is what a student actually needs to pick the right one.
+    label: `${q.id} - ${humanQuestionType(q.questionType)} (${q.totalMarks} marks)`,
   }))
 }
 
@@ -169,12 +183,45 @@ export default function SubmitEssayPage() {
   }, [])
 
   const [board, setBoard] = useState<string>('')
+  // Pre-select from the board the visitor already chose on /board-select.
+  // The middleware forces most of the product through that picker, so by the
+  // time anyone reaches here the site usually knows the answer and was asking
+  // again anyway. Set in an effect, not in useState's initialiser, because the
+  // server render has no cookie and a different first client render would be a
+  // hydration mismatch. It never overwrites a choice already made here.
+  useEffect(() => {
+    const mapped = markingBoardFor(readSiteBoardCookie())
+    if (mapped) setBoard((current) => current || mapped)
+  }, [])
+
+  // Restore an essay stashed before a sign-in round trip, once, on mount.
+  useEffect(() => {
+    const draft = takeMarkingDraft()
+    if (!draft) return
+    if (draft.board) setBoard(draft.board)
+    if (draft.paper) setPaper(draft.paper)
+    if (draft.question) setQuestion(draft.question)
+    if (draft.title) setTitle(draft.title)
+    if (draft.essay) setEssay(draft.essay)
+  }, [])
   const [paper, setPaper] = useState<string>('')
   const [question, setQuestion] = useState<string>('')
   const [title, setTitle] = useState<string>('')
   const [essay, setEssay] = useState<string>('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  /**
+   * What KIND of refusal, not just its sentence.
+   *
+   * THE DEFECT (19 September 2026): a 403 rendered the server's sentence
+   * ("AI marking is a Premium feature. Please upgrade to submit your work for
+   * marking") inside a plain text div with no link. This is the one screen
+   * where a trialist decides the product works, and when it refused them it
+   * offered no way to pay. A 401 was worse: /marking is not a protected route,
+   * so a signed-out visitor could type a 600-word essay and be told "You need
+   * to sign in" as text, with nothing carrying the essay through login.
+   */
+  const [refusalKind, setRefusalKind] = useState<'upgrade' | 'signin' | null>(null)
   // Refused for consent, as opposed to refused for anything else. Held
   // separately so the learner is offered the decision in place, with the
   // essay they just typed still in the form.
@@ -343,6 +390,7 @@ export default function SubmitEssayPage() {
       if (!canSubmit || isSubmitting || !selectedBoard || !selectedPaper) return
       setIsSubmitting(true)
       setError(null)
+      setRefusalKind(null)
       setConsentRefusal(null)
 
       const id = `mk_${Date.now().toString(36)}`
@@ -445,6 +493,14 @@ export default function SubmitEssayPage() {
             setIsSubmitting(false)
             return
           }
+          if (res.status === 403) setRefusalKind('upgrade')
+          if (res.status === 401) {
+            // Carry the work through the login round trip. Session storage,
+            // not local: a shared or school machine must not keep someone
+            // else's essay after the tab closes.
+            saveMarkingDraft({ board, paper, question, title, essay })
+            setRefusalKind('signin')
+          }
           setError(friendlyError(res.status, message))
           setIsSubmitting(false)
           return
@@ -516,6 +572,12 @@ export default function SubmitEssayPage() {
       }
     },
     [
+      // `board` and `paper` are the raw select values, not the resolved
+      // objects. They are here because saveMarkingDraft stashes them on a 401:
+      // a stale closure would restore the wrong board after sign-in, which is
+      // exactly the silent wrongness this page is being fixed for.
+      board,
+      paper,
       selectedBoard,
       selectedPaper,
       question,
@@ -783,13 +845,47 @@ export default function SubmitEssayPage() {
                 />
               )}
 
-              {/* ── Error banner ───────────────────────────── */}
+              {/* ── Error banner ─────────────────────────────
+                  A refusal a person can act on. Both branches carry the
+                  server's own sentence and add the route out of it, which the
+                  plain text div never did. */}
               {error && (
                 <div
                   role="alert"
-                  className="rounded-lg border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive"
+                  className={`rounded-lg border px-4 py-3 text-sm ${
+                    refusalKind
+                      ? 'border-primary/30 bg-primary/5 text-foreground'
+                      : 'border-destructive/30 bg-destructive/10 text-destructive'
+                  }`}
                 >
-                  {error}
+                  <p>{error}</p>
+                  {refusalKind === 'upgrade' && (
+                    <div className="mt-3 flex flex-wrap items-center gap-2">
+                      <Link
+                        href="/pricing?plan=student_monthly"
+                        className="inline-flex items-center rounded-lg bg-primary px-3.5 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90"
+                      >
+                        See plans
+                      </Link>
+                      <span className="text-xs text-muted-foreground">
+                        Student plans start at &pound;{PRICING.STUDENT_MONTHLY}/month, or &pound;
+                        {PRICING.STUDENT_ANNUAL}/year.
+                      </span>
+                    </div>
+                  )}
+                  {refusalKind === 'signin' && (
+                    <div className="mt-3 flex flex-wrap items-center gap-2">
+                      <Link
+                        href="/auth/login?redirect=%2Fmarking%2Fsubmit"
+                        className="inline-flex items-center rounded-lg bg-primary px-3.5 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90"
+                      >
+                        Sign in and come back
+                      </Link>
+                      <span className="text-xs text-muted-foreground">
+                        Your essay is saved on this device and will be here when you return.
+                      </span>
+                    </div>
+                  )}
                 </div>
               )}
 
