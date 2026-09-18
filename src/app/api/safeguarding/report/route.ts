@@ -3,6 +3,7 @@ import { z } from 'zod'
 import { Prisma } from '@prisma/client'
 import { prisma } from '@/lib/prisma'
 import { sendEmail } from '@/lib/email'
+import { sendViaResend } from '@/lib/email/resend'
 import { tryPrismaUserId } from '@/lib/identity'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
@@ -16,6 +17,34 @@ import { createServerSupabaseClient } from '@/lib/supabase/server'
 // primary send fails - it must always be a live, monitored inbox.
 const DSL_EMAIL = process.env.DSL_EMAIL || 'cj@upskillenergy.com'
 const FALLBACK_DSL_EMAIL = process.env.DSL_FALLBACK_EMAIL || 'cj@upskillenergy.com'
+
+// ─── Alert transport ────────────────────────────────────────────────────
+//
+// 18 September 2026: production has no SMTP_* variables, so the nodemailer
+// transport in src/lib/email.ts builds with host undefined and every send
+// returns { success: false }. That was the only route by which a safeguarding
+// report reached a human. Resend is configured in production and already
+// carries other transactional mail, so when SMTP is not configured the alert
+// goes through Resend instead. This is the one email in the codebase that must
+// not wait for an environment decision.
+async function deliverAlert(
+  to: string,
+  subject: string,
+  html: string,
+): Promise<{ success: boolean; error?: string }> {
+  if (process.env.SMTP_HOST) {
+    return sendEmail(to, subject, html)
+  }
+  const r = await sendViaResend({
+    to,
+    subject,
+    html,
+    tags: [{ name: 'category', value: 'safeguarding-alert' }],
+  })
+  return r.sent
+    ? { success: true }
+    : { success: false, error: `resend ${r.reason}: ${r.detail ?? ''}` }
+}
 
 // ─── Request validation ─────────────────────────────────────────────────
 
@@ -139,6 +168,14 @@ export async function POST(request: NextRequest) {
       data: { user: authUser },
     } = await supabase.auth.getUser()
     const sessionUserId = authUser?.id ?? null
+    // SafeguardingReport.reporterId and AuditLog.userId are foreign keys to
+    // Prisma User.id (a cuid). Until 18 September 2026 this route wrote the
+    // Supabase uuid into both, so with the constraints present in production
+    // a signed-in child's report failed at insert (P2003) and the child was
+    // told to call Childline instead. Resolve the Prisma id; null when the
+    // account has no projection row, which keeps the report anonymous rather
+    // than lost.
+    const prismaUserId = sessionUserId ? await tryPrismaUserId(sessionUserId) : null
 
     const referenceNumber = generateReferenceNumber()
 
@@ -152,7 +189,7 @@ export async function POST(request: NextRequest) {
     // Create the safeguarding report
     const report = await prisma.safeguardingReport.create({
       data: {
-        reporterId: sessionUserId || null,
+        reporterId: prismaUserId,
         reportType,
         description: fullDescription,
         severity: severity as 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL',
@@ -166,7 +203,7 @@ export async function POST(request: NextRequest) {
 
     await prisma.auditLog.create({
       data: {
-        userId: sessionUserId || null,
+        userId: prismaUserId,
         action: 'SAFEGUARDING_REPORT_CREATED',
         resource: 'safeguarding_report',
         resourceId: report.id,
@@ -203,11 +240,17 @@ export async function POST(request: NextRequest) {
 
       let delivered = false
       let lastError = ''
-      // Primary inbox twice (retry), then the fallback inbox.
+      // Primary inbox twice (retry), then the fallback inbox if it is
+      // actually a different address. With neither variable set both default
+      // to the same interim mailbox, and pretending that is a fallback hid
+      // the fact that there was none.
       const primaryInbox = DSL_EMAIL
-      const recipients = [primaryInbox, primaryInbox, FALLBACK_DSL_EMAIL]
+      const recipients =
+        FALLBACK_DSL_EMAIL === primaryInbox
+          ? [primaryInbox, primaryInbox]
+          : [primaryInbox, primaryInbox, FALLBACK_DSL_EMAIL]
       for (const recipient of recipients) {
-        const result = await sendEmail(recipient, subject, emailHtml)
+        const result = await deliverAlert(recipient, subject, emailHtml)
         if (result.success) {
           delivered = true
           break
@@ -225,7 +268,7 @@ export async function POST(request: NextRequest) {
         await prisma.auditLog
           .create({
             data: {
-              userId: sessionUserId || null,
+              userId: prismaUserId,
               action: 'SAFEGUARDING_ALERT_DELIVERY_FAILED',
               resource: 'safeguarding_report',
               resourceId: report.id,

@@ -295,3 +295,13 @@ Stated plainly so nobody has to rediscover them:
 7. The forced password-rotation flag lives in user-writable `user_metadata` (section 3).
 
 None of these is theoretical. Each one was found by reading the code against the database, which is the only method that works here: the repo's root markdown is largely April-May 2026 and several files contradict what is actually deployed. Trust the code, and verify the schema against `information_schema`.
+
+---
+
+## Correction, 18 September 2026: the signup profile write never succeeded
+
+Verified against production `information_schema` and row counts. Both signup pages (`src/app/auth/register/page.tsx`, `src/app/auth/teacher-register/page.tsx`) created the auth user and then upserted `public.profiles` from the browser. That upsert could not succeed: with email confirmation on there is no session yet (so `auth.uid()` is null under RLS), `profiles` has SELECT and UPDATE policies for the owner but no INSERT policy, and the student page also named ten columns that no migration had created. Every one of 206 accounts therefore held only what `handle_new_user()` inserted (id, email, full_name) plus defaults: `role = 'student'` for everyone including teachers, `date_of_birth` NULL, `is_minor` false, no guardian email, no attribution.
+
+The consequence for this chapter's model is the safe one described in §5: `resolveAgeBand()` returns `UNKNOWN` for almost every account, which blocks AI features until the learner supplies a date of birth at the point of use (`DATE_OF_BIRTH_REQUIRED`). Two things were still wrong: `UNKNOWN` does not trigger the guardian-consent requirement, and the Children's Code high-privacy defaults were never persisted for any minor.
+
+Fix (all additive, no RLS change): the trigger `handle_new_user()` now writes the whole profile from `auth.users.raw_user_meta_data`, which the pages populate through `src/lib/auth/signup-metadata.ts`, validating every field against the table's CHECK constraints and computing `is_minor` and the under-18 defaults itself so a client cannot supply adult defaults for a child (`supabase/migrations/20260918_handle_new_user_reads_signup_metadata.sql`). `src/__tests__/profiles-signup-columns.test.ts` asserts every column the trigger writes is declared by a migration. Roles and attribution were backfilled from the metadata for the accounts that carried them; dates of birth cannot be recovered.

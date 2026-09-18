@@ -255,3 +255,13 @@ In rough order of how much a regulator or a child would care:
 4. Give the breach register a table.
 5. Provision `dpo@` and `safeguarding@`, or change the copy to the address that works.
 6. Do not tidy the eighteen documents until §6 of the rate-limiting control file has been carried out.
+
+---
+
+## Correction, 18 September 2026
+
+Three things this chapter suspected are now confirmed and two are fixed.
+
+1. **Section 6 was right:** the Children's Code high-privacy defaults were never persisted for any account, because the signup profile write never succeeded (see chapter 05, correction of the same date). The trigger now computes and stores them for everyone under 18 at signup. Existing accounts have no stored date of birth and keep the adult defaults until a date of birth is supplied at the point of use; `PrivacySettings.marketingEnabled` (Prisma, default false) still governs digests independently.
+2. **Qatar Article 17 consent was not captured at all**, not merely unevidenced: the columns did not exist. They exist now and the trigger stores `country` and, for QA, the consent flag and timestamp. Until real signups carry it, `/legal/privacy-qatar` §6 still overstates what is held.
+3. **The safeguarding alert path failed at three layers** (section 4 and section 9): the route wrote a Supabase uuid into two Prisma foreign keys that exist in production (so a signed-in report would have failed at insert), all three delivery attempts used the unconfigured nodemailer transport, and the "fallback inbox" was the same address. Zero reports have ever been submitted, so nothing was lost. The route now resolves the Prisma id (null keeps a report anonymous rather than failing), sends the alert through Resend when `SMTP_HOST` is unset, and only tries the fallback when it differs. `DSL_EMAIL` is still unset in production, so alerts default to the founder's mailbox; naming the DSL inbox remains an owner action.

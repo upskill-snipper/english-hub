@@ -80,6 +80,45 @@ two for yourself. It is read-only.
 - The examiner marking tool shipped (chapter 04 §12). `/api/health/ai` now
   probes every configured model and runs daily from `vercel.json`.
 
+**Found and fixed later on 18 September (verified against production):**
+
+- **The signup profile write had never succeeded, for any account.** Both
+  signup pages upserted `profiles` from the browser after `signUp()`. With
+  email confirmation on there is no session at that moment, and `profiles`
+  has no INSERT policy for users in any case, so PostgREST refused every
+  upsert; the student page also named ten columns no migration had created.
+  Both pages logged it as non-blocking. Result on 206 of 206 accounts:
+  `role = 'student'` (teachers included), `date_of_birth` NULL, `is_minor`
+  false, no board, year group, school or guardian email, no attribution
+  although 11 auth users carried `utm_source` in their metadata. The age
+  system fails closed (`resolveAgeBand()` returns UNKNOWN and the AI gate asks
+  for a date of birth at the point of use), so no child was treated as an
+  adult, but the Children's Code defaults the page computed were never stored
+  and `UNKNOWN` does not summon a guardian. Fixed in three parts, all
+  additive: `20260918_profiles_signup_privacy_columns.sql` adds the ten
+  columns; `20260918_handle_new_user_reads_signup_metadata.sql` makes the
+  auth trigger write the whole profile from the signup metadata with
+  per-field validation and computes the under-18 defaults itself;
+  `20260918_profiles_year_group_check_widen.sql` lets the CHECK accept the
+  form's Year 13 and Other. Both pages now pass their fields in
+  `signUp({ options: { data } })` via `src/lib/auth/signup-metadata.ts` and
+  no longer write `profiles` at all. `src/__tests__/profiles-signup-columns.test.ts`
+  is the first schema-contract test: it fails if code names a `profiles`
+  column no migration declares. `scripts/backfill-profiles-from-auth-metadata.mjs`
+  (report-first) recovered 6 teachers, 1 parent and 11 attribution rows from
+  the auth metadata; dates of birth were never in the metadata and cannot be
+  recovered.
+- **A signed-in safeguarding report would have failed at insert.**
+  `SafeguardingReport.reporterId` and `AuditLog.userId` are foreign keys to
+  Prisma `User.id` and the constraints exist in production; the route wrote
+  the Supabase uuid into both. Zero reports have ever been submitted, so no
+  disclosure was lost. The route now resolves the Prisma id with
+  `tryPrismaUserId()` (null keeps the report anonymous rather than failing),
+  the alert email goes through Resend when `SMTP_HOST` is unset, and the
+  "fallback inbox" is only attempted when it is a different address.
+- **Attribution signal:** of the 11 recovered `utm_source` values, 9 are
+  `chatgpt.com`. AI assistants are already referring learners.
+
 ---
 
 ## 2. The product

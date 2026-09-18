@@ -26,7 +26,7 @@ import {
 } from 'lucide-react'
 
 import { getUtmParams } from '@/lib/utm'
-import { getChildDefaults, getChildProfileDefaults } from '@/lib/privacy/child-defaults'
+import { buildSignupMetadata } from '@/lib/auth/signup-metadata'
 import { trackEvent } from '@/lib/gtag'
 import { capture as phCapture, EVENTS as PH_EVENTS } from '@/lib/posthog'
 import { YEAR_GROUPS, EXAM_BOARDS } from '@/lib/utils'
@@ -226,24 +226,38 @@ function RegisterForm() {
 
     const siteUrl = window.location.origin
     const utmParams = getUtmParams()
+    const dateOfBirth =
+      dobYear && dobMonth && dobDay
+        ? `${dobYear}-${dobMonth.padStart(2, '0')}-${dobDay.padStart(2, '0')}`
+        : null
+
+    // Every profile field travels in the auth metadata. The database trigger
+    // handle_new_user() validates it and writes public.profiles inside the
+    // auth insert, with the right privileges. The profile upsert this page
+    // used to make from the browser after signUp() could never succeed: with
+    // email confirmation on there is no session yet, and profiles has no
+    // INSERT policy for users in any case, so on 18 September 2026 every one
+    // of 206 accounts held a default profile (teachers recorded as students,
+    // no date of birth, no attribution). See
+    // supabase/migrations/20260918_handle_new_user_reads_signup_metadata.sql.
     const { data, error: signUpError } = await supabase.auth.signUp({
       email,
       password,
       options: {
-        data: {
-          full_name: fullName,
-          // Identity convergence: write the role into user_metadata at
-          // sign-up so Supabase auth, the profiles row, and the Prisma
-          // projection all agree on the account type from day one.
+        data: buildSignupMetadata({
+          fullName,
           role: accountType,
-          ...(utmParams && {
-            utm_source: utmParams.utm_source,
-            utm_medium: utmParams.utm_medium,
-            utm_campaign: utmParams.utm_campaign,
-            utm_term: utmParams.utm_term,
-            utm_content: utmParams.utm_content,
-          }),
-        },
+          // Students and parents provide a date of birth (parents to evidence
+          // the 18+ rule); teachers do not.
+          dateOfBirth: accountType === 'teacher' ? null : dateOfBirth,
+          yearGroup: accountType === 'student' ? yearGroup : null,
+          examBoard: accountType === 'parent' ? null : examBoard,
+          schoolName: accountType === 'teacher' ? schoolName : null,
+          parentGuardianEmail: accountType === 'student' ? parentGuardianEmail : null,
+          country,
+          dataTransferConsentQa: country === 'QA' ? consentDataTransferQa : null,
+          utm: utmParams,
+        }),
         emailRedirectTo: `${siteUrl}/auth/callback${safeNext ? `?next=${encodeURIComponent(safeNext)}` : ''}`,
       },
     })
@@ -262,73 +276,11 @@ function RegisterForm() {
       return
     }
 
-    // Upsert profile data
     if (data.user) {
-      const dateOfBirth = `${dobYear}-${dobMonth.padStart(2, '0')}-${dobDay.padStart(2, '0')}`
-
-      // ICO Children's Code: apply high-privacy defaults for under-16 users
-      const isMinorUser = accountType === 'student' && userAge !== null && userAge < 18
-      const isChildUser = accountType === 'student' && userAge !== null && userAge < 16
-      // ICO Children's Code: use getChildProfileDefaults() for complete
-      // column mapping (includes social_share_nudge)
-      const childProfileDefaults = isChildUser ? getChildProfileDefaults() : null
-
-      const { error: profileError } = await supabase.from('profiles').upsert({
-        id: data.user.id,
-        email,
-        full_name: fullName,
-        role: accountType,
-        year_group: accountType === 'student' ? yearGroup || null : null,
-        exam_board: accountType === 'parent' ? null : examBoard || null,
-        school_name: accountType === 'teacher' ? schoolName || null : null,
-        // Students and parents both provide a date of birth (parents to
-        // evidence the 18+ rule); teachers do not.
-        date_of_birth: accountType === 'teacher' ? null : dateOfBirth,
-        parent_guardian_email: accountType === 'student' ? parentGuardianEmail || null : null,
-        is_minor: isMinorUser,
-        // Children's Code (GAP-5A / GAP-7A): high-privacy defaults for under-16s
-        ...(childProfileDefaults ?? {
-          streaks_enabled: true,
-          personalised_recommendations: true,
-          streak_notifications: true,
-          nudge_notifications: true,
-          analytics_opt_in: false,
-          marketing_opt_in: false,
-        }),
-        // PDPPL G7 (2026-05-20): persist declared country of residence and
-        // - for QA - the explicit Article 17 cross-border consent grant.
-        // Column names match the Supabase profiles schema; if the columns
-        // don't exist yet a non-blocking error is logged (see the
-        // diagnostic console.error below) and the signup still proceeds.
-        // A follow-up migration creates these columns formally; an
-        // additional follow-up writes the same consent into the Prisma
-        // Consent ledger via /api/auth/register so the append-only audit
-        // trail is preserved end-to-end.
-        country: country || null,
-        data_transfer_consent_qa: country === 'QA' ? consentDataTransferQa : null,
-        data_transfer_consent_qa_at:
-          country === 'QA' && consentDataTransferQa ? new Date().toISOString() : null,
-        utm_source: utmParams?.utm_source ?? null,
-        utm_medium: utmParams?.utm_medium ?? null,
-        utm_campaign: utmParams?.utm_campaign ?? null,
-      })
-
-      if (profileError) {
-        // Log every field Supabase returns so the error is actually
-        // diagnosable. Previously this rendered as "Profile upsert error:
-        // Object" in DevTools, hiding the message/code/details/hint that
-        // tells you whether it's an RLS denial, a schema mismatch, or a
-        // unique-constraint race with a server-side trigger.
-        console.error('Profile upsert error:', {
-          message: profileError.message,
-          code: profileError.code,
-          details: profileError.details,
-          hint: profileError.hint,
-        })
-        // Non-blocking: the server-side /api/auth/register also writes a
-        // Prisma User row, and the dashboard reads from there as a
-        // fallback. The profile row can be reconciled later.
-      }
+      // The profile row is written by the handle_new_user() trigger from the
+      // metadata passed to signUp() above, including the Children's Code
+      // high-privacy defaults, which the trigger computes from the date of
+      // birth for everyone under 18 rather than trusting a value from here.
 
       // Guardian consent email for under-16 students.
       //

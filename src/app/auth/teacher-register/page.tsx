@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
+import { buildSignupMetadata } from '@/lib/auth/signup-metadata'
 import { useT } from '@/lib/i18n/use-t'
 import {
   User,
@@ -129,7 +130,8 @@ export default function TeacherRegisterPage() {
         email: email.trim(),
         password,
         options: {
-          data: { full_name: fullName },
+          // Read by the handle_new_user() trigger, which writes the profile.
+          data: buildSignupMetadata({ fullName, role: 'teacher', schoolName }),
           emailRedirectTo: `${siteUrl}/auth/callback`,
         },
       })
@@ -142,18 +144,12 @@ export default function TeacherRegisterPage() {
 
       // Upsert teacher profile
       if (data.user) {
-        const { error: profileError } = await supabase.from('profiles').upsert({
-          id: data.user.id,
-          email: email.trim(),
-          full_name: fullName,
-          role: 'teacher',
-          school_name: schoolName.trim() || null,
-        })
-
-        if (profileError) {
-          console.error('Profile upsert error:', profileError)
-          // Don't block signup - profile can be updated later
-        }
+        // The profile row (role 'teacher', school name) is written by the
+        // handle_new_user() trigger from the metadata passed to signUp()
+        // above. The browser-side upsert this page used to make here could
+        // never succeed (no session yet, no INSERT policy for users), which is
+        // why every teacher who signed up before 18 September 2026 was
+        // recorded as a student.
 
         // Fire-and-forget: create the Prisma User projection row. Lagging
         // mirror of Supabase Auth; feeds dormancy/DSAR/retention features

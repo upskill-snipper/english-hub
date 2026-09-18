@@ -8,7 +8,14 @@ export interface Profile {
   year_group: string | null
   exam_board: string | null
   school_name: string | null
-  subscription_status: 'free' | 'pro' | 'cancelled' | 'past_due' | 'unpaid' | 'incomplete' | 'paused'
+  subscription_status:
+    | 'free'
+    | 'pro'
+    | 'cancelled'
+    | 'past_due'
+    | 'unpaid'
+    | 'incomplete'
+    | 'paused'
   subscription_end_date: string | null
   stripe_customer_id: string | null
   /** True when the user was under 18 at registration */
@@ -25,6 +32,18 @@ export interface Profile {
   analytics_opt_in?: boolean
   /** ICO Children's Code: marketing opt-in off for under-16s */
   marketing_opt_in?: boolean
+  /** ICO Children's Code: share prompts are opt-in for everyone */
+  social_share_nudge?: boolean
+  /** Declared country of residence, ISO 3166-1 alpha-2 */
+  country?: string | null
+  /** Qatar PDPPL Article 17 cross-border consent, only meaningful when country is QA */
+  data_transfer_consent_qa?: boolean | null
+  data_transfer_consent_qa_at?: string | null
+  date_of_birth?: string | null
+  parent_guardian_email?: string | null
+  utm_source?: string | null
+  utm_medium?: string | null
+  utm_campaign?: string | null
   created_at: string
   updated_at: string
 }
