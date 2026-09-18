@@ -159,7 +159,12 @@ export function Header() {
   }, [user])
 
   return (
-    <header className="sticky top-5 z-40 mx-4 sm:mx-6 lg:mx-8">
+    // An Arabic reader's screen reader announced these landmarks in English.
+    // The keys already existed and were simply never wired up.
+    <header
+      aria-label={t('layout.region.header')}
+      className="sticky top-5 z-40 mx-4 sm:mx-6 lg:mx-8"
+    >
       {/* Skip to content link for keyboard users */}
       <a
         href="#main-content"
@@ -197,7 +202,7 @@ export function Header() {
 
         {/* Desktop nav */}
         <nav
-          aria-label="Main navigation"
+          aria-label={t('nav.main')}
           className="hidden min-w-0 items-center gap-1 lg:flex justify-center"
         >
           {visibleNavLinks.map((link) => {
@@ -384,7 +389,7 @@ export function Header() {
               </div>
             )}
 
-            <nav aria-label="Mobile navigation" className="flex flex-col gap-1 pt-4">
+            <nav aria-label={t('nav.mobile')} className="flex flex-col gap-1 pt-4">
               {visibleNavLinks.map((link) => {
                 const isActive = pathname === link.href || pathname.startsWith(link.href + '/')
                 return (

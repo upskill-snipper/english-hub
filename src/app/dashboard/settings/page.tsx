@@ -269,6 +269,7 @@ function ProfileTab({
 // ═══════════════════════════════════════════════════════════════════════
 
 function PasswordTab() {
+  const t = useT()
   const { toast } = useToast()
   const [currentPassword, setCurrentPassword] = useState('')
   const [newPassword, setNewPassword] = useState('')
@@ -349,7 +350,7 @@ function PasswordTab() {
           autoComplete="new-password"
         />
         {newPassword.length > 0 && (
-          <ul className="mt-2 space-y-1" aria-label="Password requirements">
+          <ul className="mt-2 space-y-1" aria-label={t('settings.aria.password_requirements')}>
             {checks.map((check) => (
               <li
                 key={check.label}
@@ -414,6 +415,7 @@ function PasswordTab() {
 // ═══════════════════════════════════════════════════════════════════════
 
 function CommunicationTab() {
+  const t = useT()
   return (
     <div className="space-y-4 max-w-lg">
       <div>
@@ -424,7 +426,7 @@ function CommunicationTab() {
           and are recorded on your consent history.
         </p>
       </div>
-      <nav className="space-y-2" aria-label="Communication preferences navigation">
+      <nav className="space-y-2" aria-label={t('settings.aria.comms_nav')}>
         <Link
           href="/dashboard/consent"
           className="flex items-center justify-between rounded-lg border border-border px-4 py-3 text-sm text-foreground hover:border-accent/40 hover:bg-muted transition-colors"
@@ -442,6 +444,7 @@ function CommunicationTab() {
 // ═══════════════════════════════════════════════════════════════════════
 
 function SubscriptionTab() {
+  const t = useT()
   return (
     <div className="space-y-4 max-w-lg">
       <div>
@@ -451,7 +454,7 @@ function SubscriptionTab() {
           which always shows your real, up-to-date details.
         </p>
       </div>
-      <nav className="space-y-2" aria-label="Subscription navigation">
+      <nav className="space-y-2" aria-label={t('settings.aria.subscription_nav')}>
         <Link
           href="/dashboard/subscription"
           className="flex items-center justify-between rounded-lg border border-border px-4 py-3 text-sm text-foreground hover:border-accent/40 hover:bg-muted transition-colors"
@@ -476,12 +479,13 @@ function SubscriptionTab() {
 // ═══════════════════════════════════════════════════════════════════════
 
 function DataPrivacyTab() {
+  const t = useT()
   return (
     <div className="space-y-8 max-w-lg">
       {/* Links */}
       <div className="space-y-3">
         <h3 className="text-sm font-semibold text-foreground">Privacy management</h3>
-        <nav className="space-y-2" aria-label="Privacy settings navigation">
+        <nav className="space-y-2" aria-label={t('settings.aria.privacy_nav')}>
           <Link
             href="/dashboard/privacy"
             className="flex items-center justify-between rounded-lg border border-border px-4 py-3 text-sm text-foreground hover:border-accent/40 hover:bg-muted transition-colors"

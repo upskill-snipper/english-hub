@@ -35,6 +35,32 @@
  */
 
 export const CONVERT_DICTIONARY: Record<string, { en: string; ar: string; es?: string }> = {
+  // ─── Accessible names on the settings page ────────────────────────────
+  //
+  // Added 19 September 2026. These four were hard-coded English aria-labels on
+  // a page an Arabic reader can reach, in a file that already resolves every
+  // visible string through the dictionary. A screen reader announced the
+  // landmark names in English while reading the content in Arabic.
+  'settings.aria.password_requirements': {
+    en: 'Password requirements',
+    ar: 'متطلبات كلمة المرور',
+    es: 'Requisitos de la contraseña',
+  },
+  'settings.aria.comms_nav': {
+    en: 'Communication preferences navigation',
+    ar: 'تنقّل تفضيلات التواصل',
+    es: 'Navegación de preferencias de comunicación',
+  },
+  'settings.aria.subscription_nav': {
+    en: 'Subscription navigation',
+    ar: 'تنقّل الاشتراك',
+    es: 'Navegación de la suscripción',
+  },
+  'settings.aria.privacy_nav': {
+    en: 'Privacy settings navigation',
+    ar: 'تنقّل إعدادات الخصوصية',
+    es: 'Navegación de los ajustes de privacidad',
+  },
   // ─── Day 8: what a trialist is told when the countdown stops ──────────
   //
   // Added 19 September 2026 with NotOnProCard. The banner used to vanish the

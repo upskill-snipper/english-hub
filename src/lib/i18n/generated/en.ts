@@ -9709,6 +9709,10 @@ export const EN_MESSAGES: Record<string, string> = {
   'sitemap.section.help_faqs': 'Help and FAQs',
   'sitemap.section.legal': 'Legal and policies',
   'sitemap.section.other': 'Other',
+  'settings.aria.password_requirements': 'Password requirements',
+  'settings.aria.comms_nav': 'Communication preferences navigation',
+  'settings.aria.subscription_nav': 'Subscription navigation',
+  'settings.aria.privacy_nav': 'Privacy settings navigation',
   'billing.notpro.title': 'You are on the free plan',
   'billing.notpro.ended_title': 'Your free trial ended on {date}',
   'billing.notpro.body':

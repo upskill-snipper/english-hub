@@ -9520,6 +9520,10 @@ export const AR_MESSAGES: Record<string, string> = {
   'sitemap.section.help_faqs': 'المساعدة والأسئلة الشائعة',
   'sitemap.section.legal': 'القانونية والسياسات',
   'sitemap.section.other': 'أخرى',
+  'settings.aria.password_requirements': 'متطلبات كلمة المرور',
+  'settings.aria.comms_nav': 'تنقّل تفضيلات التواصل',
+  'settings.aria.subscription_nav': 'تنقّل الاشتراك',
+  'settings.aria.privacy_nav': 'تنقّل إعدادات الخصوصية',
   'billing.notpro.title': 'أنت على الخطة المجانية',
   'billing.notpro.ended_title': 'انتهت فترتك التجريبية المجانية في {date}',
   'billing.notpro.body':

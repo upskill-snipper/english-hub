@@ -9948,6 +9948,10 @@ export const ES_MESSAGES: Record<string, string> = {
   'sitemap.section.help_faqs': 'Ayuda y preguntas frecuentes',
   'sitemap.section.legal': 'Legal y políticas',
   'sitemap.section.other': 'Otros',
+  'settings.aria.password_requirements': 'Requisitos de la contraseña',
+  'settings.aria.comms_nav': 'Navegación de preferencias de comunicación',
+  'settings.aria.subscription_nav': 'Navegación de la suscripción',
+  'settings.aria.privacy_nav': 'Navegación de los ajustes de privacidad',
   'billing.notpro.title': 'Estás en el plan gratuito',
   'billing.notpro.ended_title': 'Tu prueba gratuita terminó el {date}',
   'billing.notpro.body':

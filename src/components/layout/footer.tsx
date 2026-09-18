@@ -204,7 +204,10 @@ export function Footer() {
   const columns = useMemo(() => groupIntoColumns(visibleSections), [visibleSections])
 
   return (
+    // The footer carried no accessible name at all, so a screen reader
+    // announced it only as "content information".
     <footer
+      aria-label={t('layout.region.footer')}
       className="border-t"
       style={{
         background: '#0F1411',
