@@ -21,9 +21,42 @@
  *   NEXT_PUBLIC_POSTHOG_HOST  - defaults to https://eu.i.posthog.com
  */
 
-import posthog from 'posthog-js'
+// NO top-level `import posthog from 'posthog-js'`.
+//
+// THE DEFECT (19 September 2026, PERF-7 phase B). This module was imported by
+// PostHogProvider, which the root layout renders, so ~185 KB of posthog-js was
+// downloaded, parsed and initialised in every visitor's browser on first paint
+// - before they had been asked whether they consent to analytics, and whether
+// or not they ever accepted.
+//
+// `opt_out_capturing_by_default: true` meant no EVENTS were sent pre-consent,
+// which is what made this look acceptable. But `persistence:
+// 'localStorage+cookie'` means `posthog.init()` itself writes a `distinct_id`
+// cookie the moment it runs. Setting a non-essential identifying cookie before
+// consent is a PECR reg. 6 problem regardless of what is later done with it.
+// So deferring the load is not only 185 KB - it closes that gap.
+//
+// The import is now dynamic and gated on `canCaptureAnalytics()`, so the SDK is
+// fetched at the moment a visitor accepts analytics cookies and never for
+// anyone who does not.
+type PostHogClient = typeof import('posthog-js').default
 
-let initialised = false
+/** Null until a consenting visitor has actually caused the SDK to load. */
+let ph: PostHogClient | null = null
+
+/** In-flight load, so concurrent callers share one import. */
+let loading: Promise<void> | null = null
+
+/**
+ * Events fired in the same tick as consent, before the chunk resolves.
+ *
+ * Without this queue the `pricing_viewed` and `signup_started` events that fire
+ * immediately after the Accept-all click are silently dropped - which are
+ * exactly the events the funnel exists to measure. Bounded so a
+ * never-consenting visitor cannot grow it without limit.
+ */
+const pending: { event: string; props?: CaptureProps }[] = []
+const PENDING_MAX = 20
 
 function hasAnalyticsCookieConsent(): boolean {
   if (typeof window === 'undefined') return false
@@ -80,39 +113,79 @@ export function canCaptureAnalytics(): boolean {
   return true
 }
 
-export function initPostHog(): void {
-  if (initialised) return
+/**
+ * Load and initialise PostHog - but only for a visitor who has affirmatively
+ * consented and is not flagged as a minor.
+ *
+ * The consent check happens BEFORE the dynamic import, so a non-consenting
+ * visitor never downloads the SDK and never gets its cookie. Safe to call
+ * repeatedly: concurrent callers share one in-flight load.
+ */
+export async function initPostHog(): Promise<void> {
+  if (ph) return
+  if (loading) return loading
   if (typeof window === 'undefined') return
 
   const key = process.env.NEXT_PUBLIC_POSTHOG_KEY
   if (!key) return // No-op in envs without a key (local dev, preview).
 
+  // The gate that makes this a consent-gated load rather than merely a lazy one.
+  if (!canCaptureAnalytics()) return
+
   const host = process.env.NEXT_PUBLIC_POSTHOG_HOST ?? 'https://eu.i.posthog.com'
 
-  posthog.init(key, {
-    api_host: host,
-    // EU region data residency - do not fall back to the US cluster.
-    ui_host: 'https://eu.posthog.com',
-    person_profiles: 'identified_only',
-    capture_pageview: false, // Handled manually in PostHogProvider on route change.
-    capture_pageleave: true,
-    autocapture: false, // We only want intentional, named events.
-    disable_session_recording: true,
-    // Default to OFF - every capture goes through canCaptureAnalytics().
-    // This also covers any accidental posthog.capture() call that bypasses
-    // the helper: if the user hasn't consented or is a minor, nothing ships.
-    opt_out_capturing_by_default: true,
-    persistence: 'localStorage+cookie',
-    loaded: (ph) => {
-      if (canCaptureAnalytics()) {
-        ph.opt_in_capturing()
-      } else {
-        ph.opt_out_capturing()
-      }
-    },
-  })
+  loading = (async () => {
+    const client = (await import('posthog-js')).default
 
-  initialised = true
+    client.init(key, {
+      api_host: host,
+      // EU region data residency - do not fall back to the US cluster.
+      ui_host: 'https://eu.posthog.com',
+      person_profiles: 'identified_only',
+      capture_pageview: false, // Handled manually in PostHogProvider on route change.
+      capture_pageleave: true,
+      autocapture: false, // We only want intentional, named events.
+      disable_session_recording: true,
+      // Still default-off, belt and braces: the load is already gated, but an
+      // accidental capture() that bypasses the helper must fail closed.
+      opt_out_capturing_by_default: true,
+      persistence: 'localStorage+cookie',
+      loaded: (loadedClient) => {
+        if (canCaptureAnalytics()) {
+          loadedClient.opt_in_capturing()
+        } else {
+          loadedClient.opt_out_capturing()
+        }
+      },
+    })
+
+    ph = client
+    flushPending()
+  })()
+
+  try {
+    await loading
+  } finally {
+    loading = null
+  }
+}
+
+/**
+ * Send anything queued while the SDK was loading.
+ *
+ * Consent is re-checked PER EVENT at flush time, not only when the event was
+ * queued. `setAgeAssurance()` is called from session boot, so a signed-in
+ * child's minor flag can land in the ~200ms between an event being queued and
+ * the chunk resolving. That window is the only way this deferred load could
+ * ship a child's event, and re-checking here closes it.
+ */
+function flushPending(): void {
+  const queued = pending.splice(0, pending.length)
+  if (!ph) return
+  for (const item of queued) {
+    if (!canCaptureAnalytics()) return
+    ph.capture(item.event, item.props)
+  }
 }
 
 /**
@@ -120,11 +193,18 @@ export function initPostHog(): void {
  * Called by PostHogProvider on the `cookie-consent-changed` event.
  */
 export function refreshOptInState(): void {
-  if (!initialised) return
+  // Not loaded yet. If consent has just been given, THIS is what starts the
+  // download - PostHogProvider calls us on `cookie-consent-changed` and on
+  // window focus. Without it a consenting visitor would be measured only from
+  // their next page load.
+  if (!ph) {
+    if (canCaptureAnalytics()) void initPostHog()
+    return
+  }
   if (canCaptureAnalytics()) {
-    posthog.opt_in_capturing()
+    ph.opt_in_capturing()
   } else {
-    posthog.opt_out_capturing()
+    ph.opt_out_capturing()
   }
 }
 
@@ -137,19 +217,32 @@ export type CaptureProps = Record<string, string | number | boolean | null | und
  */
 export function capture(event: string, props?: CaptureProps): void {
   if (!canCaptureAnalytics()) return
-  if (!initialised) return
-  posthog.capture(event, props)
+  if (!ph) {
+    // Consent passes but the chunk has not arrived. Queue rather than drop:
+    // the funnel events fire in the same tick as the Accept-all click.
+    if (pending.length < PENDING_MAX) pending.push({ event, props })
+    void initPostHog()
+    return
+  }
+  ph.capture(event, props)
 }
 
 export function identify(userId: string, props?: CaptureProps): void {
   if (!canCaptureAnalytics()) return
-  if (!initialised) return
-  posthog.identify(userId, props)
+  if (!ph) {
+    void initPostHog()
+    return
+  }
+  ph.identify(userId, props)
 }
 
 export function reset(): void {
-  if (!initialised) return
-  posthog.reset()
+  // Nothing loaded means nothing to reset - and must NOT trigger a load.
+  if (!ph) {
+    pending.length = 0
+    return
+  }
+  ph.reset()
 }
 
 /**

@@ -26,7 +26,7 @@ import { join, relative } from 'node:path'
  */
 
 /** Packages that must never be statically imported outside the allowlist. */
-const HEAVY_CLIENT_PACKAGES = ['@sentry/nextjs']
+const HEAVY_CLIENT_PACKAGES = ['@sentry/nextjs', 'posthog-js']
 
 /**
  * Files permitted to keep a static import, each for a stated reason.
@@ -42,6 +42,10 @@ const ALLOWLIST: Record<string, string> = {
   'src/lib/billing/subscription-sync.ts': 'server-only: Stripe reconciliation',
   'src/lib/cron/observability.ts': 'server-only: cron failure reporting',
   'src/lib/identity/profiles.ts': 'server-only: identity resolution',
+
+  // PERF-7 phase B closed the PostHog hole that used to be listed here:
+  // src/lib/posthog.ts now imports posthog-js dynamically, behind the consent
+  // check. Nothing should be added back without a reason as good.
 }
 
 function walk(dir: string, out: string[] = []): string[] {

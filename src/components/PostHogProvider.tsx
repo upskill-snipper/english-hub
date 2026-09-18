@@ -26,7 +26,9 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
   // One-time init on mount (client-only). Does not depend on search params,
   // so it can stay outside the Suspense boundary.
   useEffect(() => {
-    initPostHog()
+    // Returns a promise now: the SDK is fetched only once a visitor has
+    // consented, so for most visitors this resolves having done nothing.
+    void initPostHog()
 
     function onConsentChange() {
       refreshOptInState()
