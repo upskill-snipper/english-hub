@@ -69,6 +69,58 @@ export async function GET(request: NextRequest) {
     return response
   }
 
+  /**
+   * Where a freshly confirmed account should actually land, and with which
+   * board already chosen.
+   *
+   * THE DEFECT THIS FIXES (19 September 2026). Both signup branches sent
+   * everyone to /dashboard?welcome=true. The middleware then bounced any
+   * /dashboard request with no board cookie to /board-select?next=..., and
+   * /board-select never read `next` - every card linked to
+   * /revision?setBoard=<id>. So the destination and the welcome flag were
+   * both discarded and every new account, whatever its role, landed on the
+   * student revision hub.
+   *
+   * Teachers are the higher-value segment and the examiner tool is the reason
+   * they sign up. None of them saw the teacher hub on their first visit.
+   *
+   * Two writes here:
+   *   • route by profiles.role, which the 18 September trigger now populates
+   *     correctly (before it, every profile read 'student');
+   *   • seed the board cookie from profiles.exam_board when the signup form
+   *     captured one, so the middleware's board gate never fires at all.
+   *
+   * Best-effort throughout: a failure here must never cost someone the sign-in
+   * they just completed, so it falls back to /dashboard.
+   */
+  const landingFor = async (userId: string): Promise<string> => {
+    try {
+      const { data: profile } = await supabase
+        .from('profiles')
+        .select('role, exam_board')
+        .eq('id', userId)
+        .single()
+
+      if (profile?.exam_board) {
+        // Same attributes as every other writer of this cookie (middleware
+        // line ~445), so a later change to one is visible against the others.
+        response.cookies.set('english-hub-board', String(profile.exam_board), {
+          path: '/',
+          maxAge: 60 * 60 * 24 * 365,
+          sameSite: 'lax',
+        })
+      }
+
+      const role = String(profile?.role ?? '').toLowerCase()
+      if (role === 'teacher') return '/dashboard/teacher'
+      if (role === 'parent') return '/dashboard/parent'
+      return '/dashboard'
+    } catch (err) {
+      console.error('[auth/callback] could not resolve landing for', userId, err)
+      return '/dashboard'
+    }
+  }
+
   // Handle PKCE flow (code exchange) - covers email-confirmed signup,
   // OAuth, magic links and password reset when the project uses PKCE.
   if (code) {
@@ -94,9 +146,17 @@ export async function GET(request: NextRequest) {
         // written by /api/auth/register, whose session gate answered 403 on
         // every account ever created. Awaited, not fired and forgotten: the
         // page we are about to redirect to reads the entitlement.
-        if (data?.user?.id) await provisionSignupTrial(data.user.id)
-        const separator = safeNext.includes('?') ? '&' : '?'
-        return redirectTo(`${safeNext}${separator}welcome=true`)
+        let target = safeNext
+        if (data?.user?.id) {
+          await provisionSignupTrial(data.user.id)
+          // Only override the default. An explicit `next` was asked for by
+          // whoever built the confirmation link and must win.
+          if (rawNext === '/dashboard' || !searchParams.get('next')) {
+            target = await landingFor(data.user.id)
+          }
+        }
+        const separator = target.includes('?') ? '&' : '?'
+        return redirectTo(`${target}${separator}welcome=true`)
       }
       return redirectTo(safeNext)
     }
@@ -115,12 +175,18 @@ export async function GET(request: NextRequest) {
         return redirectTo('/auth/reset-password')
       }
       if (type === 'signup') {
-        // Same provisioning point, legacy non-PKCE flow. Supabase's own email
-        // templates still use this one, so both branches have to write it or
-        // half of confirmations would silently go without a trial.
-        if (data?.user?.id) await provisionSignupTrial(data.user.id)
-        const separator = safeNext.includes('?') ? '&' : '?'
-        return redirectTo(`${safeNext}${separator}welcome=true`)
+        // Same provisioning and routing, legacy non-PKCE flow. Supabase's own
+        // email templates still use this one, so both branches have to do it
+        // or half of confirmations would go without a trial and land wrong.
+        let target = safeNext
+        if (data?.user?.id) {
+          await provisionSignupTrial(data.user.id)
+          if (rawNext === '/dashboard' || !searchParams.get('next')) {
+            target = await landingFor(data.user.id)
+          }
+        }
+        const separator = target.includes('?') ? '&' : '?'
+        return redirectTo(`${target}${separator}welcome=true`)
       }
       return redirectTo(safeNext)
     }

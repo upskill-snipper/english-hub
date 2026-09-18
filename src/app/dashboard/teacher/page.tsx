@@ -113,6 +113,13 @@ export default function TeacherHubPage() {
     }
   }, [user])
 
+  // Read once on mount: useSearchParams would opt the whole route into a
+  // Suspense boundary for a single boolean.
+  const [showWelcome, setShowWelcome] = useState(false)
+  useEffect(() => {
+    setShowWelcome(new URLSearchParams(window.location.search).get('welcome') === 'true')
+  }, [])
+
   return (
     <div className="mx-auto max-w-5xl space-y-8">
       <div>
@@ -121,6 +128,27 @@ export default function TeacherHubPage() {
         </h1>
         <p className="mt-1 text-sm text-muted-foreground">{t('teacher.hub.subtitle')}</p>
       </div>
+
+      {/* First visit after confirming the account.
+          Until 19 September 2026 the auth callback sent every confirmed
+          account to /dashboard whatever its role, so no teacher ever arrived
+          here on their first visit and the welcome flag this reads was set on
+          a page that ignored it. Now that they land here, the first thing they
+          see is the tool most of them signed up for. */}
+      {showWelcome && (
+        <div className="rounded-xl border border-primary/30 bg-primary/5 p-5">
+          <h2 className="text-base font-semibold text-foreground">
+            {t('teacher.hub.welcome.title')}
+          </h2>
+          <p className="mt-1 text-sm text-muted-foreground">{t('teacher.hub.welcome.body')}</p>
+          <Link
+            href="/toolkit/examiner"
+            className="mt-3 inline-flex items-center gap-1.5 rounded-lg bg-primary px-3.5 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90"
+          >
+            {t('teacher.hub.welcome.cta')}
+          </Link>
+        </div>
+      )}
 
       {/* School connection state - the honest headline card. */}
       {membership === 'loading' ? (

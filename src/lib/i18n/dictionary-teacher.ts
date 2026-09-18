@@ -51,6 +51,24 @@ export const TEACHER_DICTIONARY: Dictionary = {
     ar: `أدواتك ومواردك، وطريقك لمساحة عمل مدرستك.`,
     es: `Tus herramientas, tus recursos y el acceso al espacio de tu colegio.`,
   },
+  // Shown once, on the first visit after confirming the account. Added
+  // 19 September 2026 with the callback fix that finally routes a teacher
+  // here; before that no teacher ever reached this page on a first visit.
+  'teacher.hub.welcome.title': {
+    en: `Welcome. Start with the examiner marking tool.`,
+    ar: `أهلاً بك. ابدأ بأداة التصحيح كالمُمتحن.`,
+    es: `Te damos la bienvenida. Empieza por la herramienta de corrección tipo examinador.`,
+  },
+  'teacher.hub.welcome.body': {
+    en: `Photograph a handwritten script, or paste a typed one, and get a mark against the paper's level grid with examiner-style commentary you can hand straight to the pupil.`,
+    ar: `صوّر ورقة مكتوبة بخط اليد، أو الصق نصاً مكتوباً، واحصل على درجة حسب جدول مستويات الورقة مع تعليق بأسلوب المُمتحن تقدر تعطيه للطالب مباشرة.`,
+    es: `Fotografía un examen manuscrito, o pega uno escrito a máquina, y obtén una nota según la tabla de niveles del examen, con comentarios en estilo de examinador que puedes entregar directamente al alumno.`,
+  },
+  'teacher.hub.welcome.cta': {
+    en: `Open the marking tool`,
+    ar: `افتح أداة التصحيح`,
+    es: `Abrir la herramienta de corrección`,
+  },
   'teacher.hub.school.connected_title': {
     en: `Your school workspace`,
     ar: `مساحة عمل مدرستك`,

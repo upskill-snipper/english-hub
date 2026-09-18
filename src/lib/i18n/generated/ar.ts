@@ -10923,6 +10923,10 @@ export const AR_MESSAGES: Record<string, string> = {
   'aff_comp.resources.bottom.view_dashboard': 'شوف لوحة التحكّم',
   'teacher.hub.title': 'Hub المعلّم',
   'teacher.hub.subtitle': 'أدواتك ومواردك، وطريقك لمساحة عمل مدرستك.',
+  'teacher.hub.welcome.title': 'أهلاً بك. ابدأ بأداة التصحيح كالمُمتحن.',
+  'teacher.hub.welcome.body':
+    'صوّر ورقة مكتوبة بخط اليد، أو الصق نصاً مكتوباً، واحصل على درجة حسب جدول مستويات الورقة مع تعليق بأسلوب المُمتحن تقدر تعطيه للطالب مباشرة.',
+  'teacher.hub.welcome.cta': 'افتح أداة التصحيح',
   'teacher.hub.school.connected_title': 'مساحة عمل مدرستك',
   'teacher.hub.school.connected_desc':
     'الصفوف وقائمة التصحيح وتحليلات القسم كلها في مساحة عمل مدرستك.',

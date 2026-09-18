@@ -4,6 +4,7 @@ import { Languages, Star, ArrowRight } from 'lucide-react'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { tMany } from '@/lib/i18n/t'
 import { isMuslimMajorityVisitor } from '@/lib/geo/gcc'
+import { validateRedirect } from '@/lib/utils'
 
 export const metadata: Metadata = {
   title: 'Choose your level or exam board',
@@ -115,7 +116,37 @@ const EAL_BOARDS: readonly Board[] = [
  * Page
  * ──────────────────────────────────────────────────────────────────────────── */
 
-export default async function BoardSelectPage() {
+/**
+ * THE DEFECT THIS FIXES (19 September 2026)
+ *
+ * The middleware redirects a board-gated request with no board cookie to
+ * /board-select?next=<where they were going>. This page never read that
+ * parameter, and every card linked to `/revision?setBoard=<id>`, so the
+ * destination was discarded and everyone landed on the revision hub.
+ *
+ * For a newly confirmed account that meant: confirm email, get sent to your
+ * dashboard, get bounced here by the board gate, pick a board, and arrive
+ * somewhere you did not ask for with the welcome state gone. A teacher who
+ * signed up for the examiner tool never saw the teacher hub.
+ *
+ * The parameter has to be moved onto the DESTINATION rather than kept here:
+ * the middleware reads `?setBoard=`, sets the cookie and redirects to the
+ * clean URL, so `/revision?setBoard=aqa&next=/dashboard` would strip setBoard
+ * and still land on /revision. Building the href as
+ * `<next>?setBoard=<id>` makes the clean-URL redirect land in the right place.
+ */
+export default async function BoardSelectPage({
+  searchParams,
+}: {
+  searchParams?: Promise<Record<string, string | string[] | undefined>>
+}) {
+  const params = searchParams ? await searchParams : {}
+  const rawNext = typeof params.next === 'string' ? params.next : null
+  // Same rule as validateRedirect in src/lib/utils.ts. Anything that is not a
+  // plain same-site path falls back to the previous behaviour.
+  const nextPath = validateRedirect(rawNext)
+  const destination = nextPath === '/dashboard' && !rawNext ? '/revision' : nextPath
+
   // Pre-resolve all visible strings on the server (one locale read for the
   // whole page). Order matches the keys array exactly.
   const descKeys = [
@@ -161,13 +192,37 @@ export default async function BoardSelectPage() {
   const igcseDescriptions = descResolved.slice(gcseEnd, igcseEnd)
   const ealDescriptions = descResolved.slice(igcseEnd)
 
-  const ks3Boards = KS3_BOARDS.map((b, i) => ({ ...b, description: ks3Descriptions[i] ?? '' }))
-  const gcseBoards = GCSE_BOARDS.map((b, i) => ({ ...b, description: gcseDescriptions[i] ?? '' }))
+  /**
+   * Point each card at where the visitor was actually going. The board id is
+   * taken from the card's own canonical href so there is still one source of
+   * board ids on this page.
+   */
+  const retarget = (href: string): string => {
+    const id = new URLSearchParams(href.split('?')[1] ?? '').get('setBoard')
+    if (!id) return href
+    return `${destination}?setBoard=${encodeURIComponent(id)}`
+  }
+
+  const ks3Boards = KS3_BOARDS.map((b, i) => ({
+    ...b,
+    href: retarget(b.href),
+    description: ks3Descriptions[i] ?? '',
+  }))
+  const gcseBoards = GCSE_BOARDS.map((b, i) => ({
+    ...b,
+    href: retarget(b.href),
+    description: gcseDescriptions[i] ?? '',
+  }))
   const igcseBoards = IGCSE_BOARDS.map((b, i) => ({
     ...b,
+    href: retarget(b.href),
     description: igcseDescriptions[i] ?? '',
   }))
-  const ealBoards = EAL_BOARDS.map((b, i) => ({ ...b, description: ealDescriptions[i] ?? '' }))
+  const ealBoards = EAL_BOARDS.map((b, i) => ({
+    ...b,
+    href: retarget(b.href),
+    description: ealDescriptions[i] ?? '',
+  }))
 
   return (
     <main className="min-h-screen bg-background">

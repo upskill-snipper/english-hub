@@ -11160,6 +11160,10 @@ export const EN_MESSAGES: Record<string, string> = {
   'aff_comp.resources.bottom.view_dashboard': 'View dashboard',
   'teacher.hub.title': 'Teacher hub',
   'teacher.hub.subtitle': 'Your tools, your resources, and the route into your school workspace.',
+  'teacher.hub.welcome.title': 'Welcome. Start with the examiner marking tool.',
+  'teacher.hub.welcome.body':
+    "Photograph a handwritten script, or paste a typed one, and get a mark against the paper's level grid with examiner-style commentary you can hand straight to the pupil.",
+  'teacher.hub.welcome.cta': 'Open the marking tool',
   'teacher.hub.school.connected_title': 'Your school workspace',
   'teacher.hub.school.connected_desc':
     'Classes, the marking queue and department analytics live in your school workspace.',

@@ -532,7 +532,31 @@ export async function middleware(request: NextRequest) {
   // we redirected any non-allowlisted path, which soft-404'd unknown URLs
   // (item #30). Genuinely unknown URLs now fall through to Next.js's
   // `not-found.tsx` with a real 404 status.
-  if (!hasBoardCookie && isBoardRequired(pathname) && !isBoardAllowlisted(pathname)) {
+  // A signed-in visitor is never bounced off their own dashboard.
+  //
+  // THE DEFECT (19 September 2026): /dashboard is board-gated, so a newly
+  // confirmed account - which has no board cookie yet - was redirected to
+  // /board-select before it ever saw the page it was sent to. /board-select
+  // discarded the `next`, so the welcome state was lost and everyone landed on
+  // /revision whatever their role. Teachers never saw the teacher hub.
+  //
+  // The gate runs before updateSession, so there is no verified user here;
+  // presence of the Supabase auth cookie is the strongest signal available and
+  // is the right one, because the cost of being wrong is only that a
+  // not-really-signed-in visitor reaches /dashboard and is bounced to login by
+  // the session check a few lines later. The dismissable BoardGate modal
+  // (src/lib/board/gated-paths.ts) still nudges them to choose a board.
+  const hasAuthCookie = request.cookies
+    .getAll()
+    .some((c) => /^sb-.*-auth-token(\.\d+)?$/.test(c.name))
+  const dashboardForSignedIn = hasAuthCookie && pathname.startsWith('/dashboard')
+
+  if (
+    !hasBoardCookie &&
+    !dashboardForSignedIn &&
+    isBoardRequired(pathname) &&
+    !isBoardAllowlisted(pathname)
+  ) {
     // Extra guard: never redirect if we're already on /board-select (would loop)
     if (!pathname.startsWith('/board-select')) {
       const url = request.nextUrl.clone()

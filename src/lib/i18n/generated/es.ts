@@ -11440,6 +11440,11 @@ export const ES_MESSAGES: Record<string, string> = {
   'aff_comp.resources.bottom.view_dashboard': 'Ver panel',
   'teacher.hub.title': 'Centro del profesor',
   'teacher.hub.subtitle': 'Tus herramientas, tus recursos y el acceso al espacio de tu colegio.',
+  'teacher.hub.welcome.title':
+    'Te damos la bienvenida. Empieza por la herramienta de corrección tipo examinador.',
+  'teacher.hub.welcome.body':
+    'Fotografía un examen manuscrito, o pega uno escrito a máquina, y obtén una nota según la tabla de niveles del examen, con comentarios en estilo de examinador que puedes entregar directamente al alumno.',
+  'teacher.hub.welcome.cta': 'Abrir la herramienta de corrección',
   'teacher.hub.school.connected_title': 'El espacio de trabajo de tu colegio',
   'teacher.hub.school.connected_desc':
     'Las clases, la cola de corrección y las analíticas del departamento están en el espacio de tu colegio.',
