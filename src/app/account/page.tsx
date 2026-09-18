@@ -51,10 +51,6 @@ export default function AccountPage() {
     text: string
   } | null>(null)
 
-  const [deleteConfirm, setDeleteConfirm] = useState('')
-  const [deleteLoading, setDeleteLoading] = useState(false)
-  const [deleteError, setDeleteError] = useState<string | null>(null)
-
   const [pageLoading, setPageLoading] = useState(true)
 
   useEffect(() => {
@@ -146,34 +142,6 @@ export default function AccountPage() {
     }
 
     setPasswordLoading(false)
-  }
-
-  async function handleDeleteAccount() {
-    if (deleteConfirm !== 'DELETE') {
-      setDeleteError(t('account.type_delete_to_confirm'))
-      return
-    }
-
-    setDeleteLoading(true)
-    setDeleteError(null)
-
-    try {
-      const res = await fetch('/api/account/delete', { method: 'POST' })
-      const data = await res.json()
-
-      if (!res.ok) {
-        setDeleteError(data.error || t('account.delete_failed'))
-        setDeleteLoading(false)
-        return
-      }
-
-      await supabase.auth.signOut()
-      useAuthStore.getState().clear()
-      router.push('/')
-    } catch {
-      setDeleteError(t('account.delete_error'))
-      setDeleteLoading(false)
-    }
   }
 
   if (pageLoading) {
@@ -457,47 +425,32 @@ export default function AccountPage() {
 
           <p className="text-muted-foreground text-sm mb-4">{t('account.delete_blurb')}</p>
 
-          {deleteError && (
-            <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3 mb-4 text-red-600 text-sm">
-              {deleteError}
-            </div>
-          )}
+          {/*
+            COMP-9 (19 September 2026). This was a confirm-and-delete form of
+            its own, and it could not work: it POSTed to /api/account/delete,
+            which exports only DELETE. Every attempt got Next's 405, whose body
+            is not JSON, so `await res.json()` threw into a bare catch and the
+            user was shown a generic "something went wrong".
 
-          <div className="space-y-3">
-            <div>
-              <label htmlFor="deleteConfirm" className="label">
-                {t('account.type_delete_prefix')}{' '}
-                <span className="font-mono font-bold text-red-600">DELETE</span>{' '}
-                {t('account.type_delete_suffix')}
-              </label>
-              <input
-                id="deleteConfirm"
-                type="text"
-                value={deleteConfirm}
-                onChange={(e) => setDeleteConfirm(e.target.value)}
-                placeholder="DELETE"
-                className="input-field"
-              />
-            </div>
+            It was the ONLY erasure control reachable from this page, so a user
+            exercising their right to erasure - a right this product owes to
+            children and their parents - clicked the button, saw an error, and
+            had no way to tell it was ours rather than theirs.
 
-            <button
-              onClick={handleDeleteAccount}
-              disabled={deleteLoading || deleteConfirm !== 'DELETE'}
-              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg font-medium text-sm bg-red-500/10 text-red-600 border border-red-500/30 hover:bg-red-500/20 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {deleteLoading ? (
-                <>
-                  <Loader2 className="w-4 h-4 animate-spin" />
-                  {t('account.deleting')}
-                </>
-              ) : (
-                <>
-                  <Trash2 className="w-4 h-4" />
-                  {t('account.delete_account')}
-                </>
-              )}
-            </button>
-          </div>
+            A working control already existed at /account/delete, with the
+            correct method, the confirmation body and the scheduled-purge
+            handling. It is linked rather than duplicated, which is what
+            /dashboard/settings and /legal/privacy already do. Two confirm
+            forms against one endpoint is how this drifted apart in the first
+            place.
+          */}
+          <Link
+            href="/account/delete"
+            className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg font-medium text-sm bg-red-500/10 text-red-600 border border-red-500/30 hover:bg-red-500/20 transition-colors"
+          >
+            <Trash2 className="w-4 h-4" />
+            {t('account.delete_account')}
+          </Link>
         </section>
       </div>
     </div>
