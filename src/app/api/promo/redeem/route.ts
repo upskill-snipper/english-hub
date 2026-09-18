@@ -43,6 +43,10 @@ import { PRICING } from '@/constants/pricing'
 import { getClientIp, rateLimit } from '@/lib/rate-limit'
 import { PRICE_IDS, stripe } from '@/lib/stripe'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
+import {
+  findDuplicateSubscription,
+  duplicateSubscriptionMessage,
+} from '@/lib/billing/duplicate-subscription-guard'
 
 /** Maximum permitted code length; matches the validate endpoint. */
 const MAX_CODE_LENGTH = 64
@@ -313,6 +317,29 @@ export async function POST(request: NextRequest) {
     const appUrl = process.env.NEXT_PUBLIC_APP_URL
     if (!appUrl) {
       return serverErrorResponse('App URL is not configured.')
+    }
+
+    // ── Do not sell them the same subscription twice ──────────────────────
+    // This route creates an annual subscription with no trial, so it charges
+    // immediately - a duplicate here takes real money the same day. It is
+    // matched on `basePriceId`, which is the catalogue price stamped onto the
+    // ad-hoc product below, so a customer who already bought this plan through
+    // standard checkout is recognised here and vice versa.
+    const duplicate = await findDuplicateSubscription(stripe, stripeCustomerId, priceId)
+    if (duplicate.duplicate) {
+      console.warn(
+        `[api/promo/redeem] DUPLICATE_SUBSCRIPTION_BLOCKED user=${user.id} ` +
+          `customer=${stripeCustomerId} basePrice=${priceId} ` +
+          `existing=${duplicate.existing?.id} status=${duplicate.existing?.status}`,
+      )
+      return NextResponse.json(
+        {
+          error: duplicateSubscriptionMessage(),
+          code: 'subscription_already_active',
+          existingSubscriptionId: duplicate.existing?.id ?? null,
+        },
+        { status: 409 },
+      )
     }
 
     const successUrl = `${appUrl}/redeem/success?session_id={CHECKOUT_SESSION_ID}&code=${encodeURIComponent(code)}`

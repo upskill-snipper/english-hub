@@ -11,6 +11,10 @@ import {
 } from '@/lib/auth/email-verification-policy'
 import { readAffiliateCookieFromRequest } from '@/lib/affiliate/tracking-cookie'
 import { resolveAttribution, DEFAULT_ATTRIBUTION } from '@/lib/affiliate/attribution-v2'
+import {
+  findDuplicateSubscription,
+  duplicateSubscriptionMessage,
+} from '@/lib/billing/duplicate-subscription-guard'
 
 /**
  * Recognised plan identifiers. The legacy `'monthly' | 'annual'` keys
@@ -273,6 +277,31 @@ export async function POST(request: NextRequest) {
       } catch (err) {
         // Never let an attribution lookup failure break checkout.
         console.error('[api/stripe/checkout] affiliate cookie attribution failed:', err)
+      }
+    }
+
+    // ── Do not sell them the same subscription twice ──────────────────────
+    // Nothing here used to check this, and on 18 September 2026 a customer
+    // was charged twice because of it. Only applies to `subscription` mode:
+    // one-off course purchases in `payment` mode are repeatable by design.
+    // Per price rather than per customer, because Pro and IELTS are separate
+    // subscriptions a learner may legitimately hold at the same time.
+    if (mode === 'subscription') {
+      const check = await findDuplicateSubscription(stripe, stripeCustomerId, priceId)
+      if (check.duplicate) {
+        console.warn(
+          `[api/stripe/checkout] DUPLICATE_SUBSCRIPTION_BLOCKED user=${user.id} ` +
+            `customer=${stripeCustomerId} price=${priceId} existing=${check.existing?.id} ` +
+            `status=${check.existing?.status}`,
+        )
+        return NextResponse.json(
+          {
+            error: duplicateSubscriptionMessage(),
+            code: 'subscription_already_active',
+            existingSubscriptionId: check.existing?.id ?? null,
+          },
+          { status: 409 },
+        )
       }
     }
 
