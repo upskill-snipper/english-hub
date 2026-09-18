@@ -1,5 +1,6 @@
 import { clsx, type ClassValue } from 'clsx'
 import { twMerge } from 'tailwind-merge'
+import courseNamesJson from '@/data/generated/course-names.json'
 
 /** Merge Tailwind CSS classes with clsx + tailwind-merge */
 export function cn(...inputs: ClassValue[]) {
@@ -28,18 +29,28 @@ export function formatPrice(pence: number): string {
   return `£${(pence / 100).toFixed(2)}`
 }
 
-/** Get course name by ID - lazy-loads course data to avoid pulling ~900KB into every import */
+/**
+ * Course title for an id.
+ *
+ * THE DEFECT THIS REPLACES (19 September 2026). This function's own comment
+ * said it "lazy-loads course data to avoid pulling ~900KB into every import",
+ * and then called `require('@/data/courses')`. webpack resolves a `require`
+ * with a static string at build time, so nothing was lazy. courses.ts
+ * aggregates 27 curriculum modules - about 7.6 MB of TypeScript - and because
+ * header.tsx, language-toggle.tsx and BoardGate.tsx all import `cn()` from
+ * this file, the whole corpus sat in the root layout's client graph on all
+ * 1,049 pages and in the server chunk every page bundle required.
+ *
+ * It has four production callers and needs one thing: a title for an id. That
+ * is 87 short strings. src/data/generated/course-names.json is built by
+ * scripts/generate-course-names.mjs during `prebuild`, so it cannot drift.
+ *
+ * src/__tests__/no-course-corpus-in-shared-code.test.ts fails if @/data comes
+ * back into this file or into the layout and board components.
+ */
+const COURSE_NAMES: Record<string, string> = courseNamesJson
 export function getCourseName(courseId: string): string {
-  // Dynamically import to avoid bundling all course data into every file that imports utils
-  try {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const { allCourses } = require('@/data/courses')
-    return (
-      allCourses.find((c: { id: string; title: string }) => c.id === courseId)?.title || courseId
-    )
-  } catch {
-    return courseId
-  }
+  return COURSE_NAMES[courseId] ?? courseId
 }
 
 /** Shuffle an array (Fisher-Yates) */
