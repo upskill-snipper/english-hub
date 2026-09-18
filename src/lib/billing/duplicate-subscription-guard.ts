@@ -5,15 +5,26 @@
  * ──────────────────────
  * Neither `/api/stripe/checkout` nor `/api/promo/redeem` looked at whether the
  * customer already held a live subscription. Nothing stopped a second checkout
- * for a plan they were already paying for, and on 18 September 2026 a customer
- * wrote in to say we had charged her twice. She was right. Two subscriptions
- * existed against her Stripe customer.
+ * for a plan they were already paying for, and on 8 September 2026 one customer
+ * acquired two Teachers Annual subscriptions half an hour apart.
  *
- * It was invisible from our side. `Subscription.userId` is `@unique`, so the
- * second subscription overwrote the same Prisma row instead of appearing as a
- * second one - there was no query anybody could have run that would have shown
- * two. The only signal was the customer's own bank statement, which is the
- * worst possible place for a billing defect to surface.
+ * Be precise about what followed, because the obvious summary is wrong. She was
+ * NOT charged twice. One subscription took GBP 67.99 and is the one she has.
+ * The other never succeeded: it failed on insufficient funds, retried, failed
+ * again, and was still retrying ten days later. No money was owed back. What
+ * was owed was cancelling it and voiding its open invoice - a different remedy
+ * that nobody would reach for from the words "charged twice".
+ *
+ * The damage was not the money, it was the entitlement. See
+ * `DUPLICATE_INVOICE_FAILED_IGNORED` in the Stripe webhook: every failure of
+ * the duplicate revoked the access the PAID subscription had bought, because
+ * `profiles.subscription_status` is one field per person and both revocation
+ * handlers keyed on the customer rather than the subscription.
+ *
+ * It was invisible from our side. Stripe listed both all along; nothing here
+ * asked. Our own records could not have held both in any case - a Prisma
+ * `Subscription` row is unique per user - and in that period the webhook was
+ * writing her no row at all. The first person to notice was the customer.
  *
  * WHY THE CHECK IS PER PRICE, NOT PER CUSTOMER
  * ────────────────────────────────────────────
@@ -28,7 +39,8 @@
  * ──────────────────────────────────
  * Deliberately not `profiles.subscription_status` and not the Prisma row. Both
  * are written by the webhook, and the whole reason this defect survived is that
- * the webhook's record of subscriptions was wrong for 96% of customers. A guard
+ * the webhook's record of subscriptions was wrong for 192 of our 200 accounts,
+ * and missing entirely for every paying customer checked. A guard
  * built on our own broken bookkeeping would have failed in exactly the case it
  * exists for. This asks Stripe, which is the only party that actually knows
  * what it is going to charge.
@@ -37,7 +49,13 @@
  * ──────────────────────
  * If Stripe cannot be reached the customer is allowed through. A blocked
  * checkout is lost revenue and a user who cannot buy the thing they came for;
- * the duplicate it would have prevented is rare, recoverable and refundable.
+ * a duplicate is recoverable - cancel the extra subscription, void any open
+ * invoice on it, and refund anything it actually took. Do not read "recoverable"
+ * as "cheap": the one duplicate we have found took no money at all, yet it
+ * revoked the customer's paid access four times over three days (see
+ * `subscriptionRevocationIsScoped` in the webhook). And do not read it as rare -
+ * it belonged to one of only four paying subscribers.
+ *
  * The failure is logged loudly so it is not silent, which is the habit that
  * created this whole class of bug.
  */
@@ -96,6 +114,7 @@ export async function findDuplicateSubscription(
   stripe: Stripe,
   customerId: string,
   priceIds: string | readonly string[],
+  options: { excludeSubscriptionId?: string } = {},
 ): Promise<DuplicateSubscriptionCheck> {
   const wanted = new Set((typeof priceIds === 'string' ? [priceIds] : priceIds).filter(Boolean))
   if (wanted.size === 0) return { duplicate: false, existing: null }
@@ -123,7 +142,10 @@ export async function findDuplicateSubscription(
 
     const existing =
       subscriptions.data.find(
-        (sub) => LIVE_SUBSCRIPTION_STATUSES.has(sub.status) && sub.items.data.some(matchesWanted),
+        (sub) =>
+          sub.id !== options.excludeSubscriptionId &&
+          LIVE_SUBSCRIPTION_STATUSES.has(sub.status) &&
+          sub.items.data.some(matchesWanted),
       ) ?? null
 
     return { duplicate: existing !== null, existing }
@@ -146,8 +168,42 @@ export async function findDuplicateSubscription(
  */
 export function duplicateSubscriptionMessage(): string {
   return (
-    'You already have an active subscription for this plan, so we have stopped before charging you ' +
-    'again. You can see it, change it or cancel it on your billing page. If that does not look right, ' +
-    'email support@theenglishhub.app and we will sort it out.'
+    'Our records show you already have a subscription for this plan, so we have stopped rather than ' +
+    'start a second one. You can see it, change it or cancel it on your billing page. If that does ' +
+    'not look right, email support@theenglishhub.app and we will sort it out.'
   )
+}
+
+/**
+ * The catalogue prices a subscription represents: its own price ids, plus the
+ * `basePriceId` recorded on the product for promo-built ad-hoc prices. Same
+ * two-way rule `findDuplicateSubscription` matches on, exported so callers do
+ * not reimplement half of it.
+ */
+export function pricesOnSubscription(subscription: Stripe.Subscription): string[] {
+  const out = new Set<string>()
+  for (const item of subscription.items?.data ?? []) {
+    if (item.price?.id) out.add(item.price.id)
+    const product = item.price?.product
+    if (product && typeof product === 'object' && !('deleted' in product && product.deleted)) {
+      const base = (product as Stripe.Product).metadata?.basePriceId
+      if (base) out.add(base)
+    }
+  }
+  return [...out]
+}
+
+/** The same, from an invoice's line items. */
+export function pricesOnInvoice(invoice: Stripe.Invoice): string[] {
+  const out = new Set<string>()
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  for (const line of ((invoice as any).lines?.data ?? []) as any[]) {
+    const priceId = line?.price?.id ?? line?.pricing?.price_details?.price
+    if (typeof priceId === 'string' && priceId) out.add(priceId)
+    const product = line?.price?.product
+    if (product && typeof product === 'object' && product.metadata?.basePriceId) {
+      out.add(product.metadata.basePriceId as string)
+    }
+  }
+  return [...out]
 }

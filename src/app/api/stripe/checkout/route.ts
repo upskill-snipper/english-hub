@@ -281,8 +281,11 @@ export async function POST(request: NextRequest) {
     }
 
     // ── Do not sell them the same subscription twice ──────────────────────
-    // Nothing here used to check this, and on 18 September 2026 a customer
-    // was charged twice because of it. Only applies to `subscription` mode:
+    // Nothing here used to check this. On 8 September 2026 one customer ended
+    // up with two subscriptions for the same plan: one took GBP 67.99, the
+    // other failed twice on insufficient funds and kept retrying - and each
+    // failure revoked the access the paid one had bought. She wrote in on
+    // 18 September. Only applies to `subscription` mode:
     // one-off course purchases in `payment` mode are repeatable by design.
     // Per price rather than per customer, because Pro and IELTS are separate
     // subscriptions a learner may legitimately hold at the same time.

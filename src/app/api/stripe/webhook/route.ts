@@ -8,6 +8,11 @@ import { calculateCommissionPence, getCurrentTierInfo } from '@/lib/affiliate/ti
 import { prisma } from '@/lib/prisma'
 import { captureGrandfatherFields, type Plan as PricingPlan } from '@/lib/pricing/grandfather'
 import { syncStripeSubscriptionToPrisma } from '@/lib/billing/subscription-sync'
+import {
+  findDuplicateSubscription,
+  pricesOnInvoice,
+  pricesOnSubscription,
+} from '@/lib/billing/duplicate-subscription-guard'
 
 // Disable body parsing - we need the raw body for signature verification
 export const runtime = 'nodejs'
@@ -247,6 +252,48 @@ export async function POST(request: NextRequest) {
             currency: invoice.currency,
           }),
         )
+
+        // ── Does another live subscription already cover this? ──────────────
+        // `profiles.subscription_status` is ONE field per person, and this
+        // handler used to write past_due on it for any failing invoice without
+        // asking which subscription failed. On 8 September 2026 a customer
+        // ended up with two subscriptions for the same annual plan. One was
+        // paid. The other failed, retried, and failed again - and each failure
+        // revoked the access she had paid GBP 67.99 for:
+        //
+        //   15 Sept 18:44  duplicate fails      -> past_due
+        //   16 Sept 21:15  real one pays        -> pro
+        //   17 Sept 20:44  duplicate retries    -> past_due
+        //   18 Sept 04:18  duplicate's dunning ends -> cancelled
+        //
+        // She wrote in saying she could not use what she had bought. We had
+        // also emailed her twice telling her to update her payment method.
+        //
+        // So: if the customer holds ANOTHER live subscription carrying the same
+        // price, this invoice is a duplicate's. Do not revoke, and do not send
+        // a dunning email about a subscription they did not knowingly buy.
+        // Asking Stripe, not our own records, for the reason given in
+        // `duplicate-subscription-guard.ts`.
+        const failedPrices = pricesOnInvoice(invoice)
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const failedSubId = (invoice as any).subscription as string | undefined
+        const covered = failedPrices.length
+          ? await findDuplicateSubscription(stripe, customerId, failedPrices, {
+              excludeSubscriptionId: failedSubId,
+            })
+          : { duplicate: false, existing: null }
+
+        if (covered.duplicate) {
+          console.warn(
+            `[stripe/webhook] DUPLICATE_INVOICE_FAILED_IGNORED customer=${customerId} ` +
+              `invoice=${invoice.id} failedSubscription=${failedSubId ?? 'unknown'} ` +
+              `coveredBy=${covered.existing?.id} status=${covered.existing?.status}. ` +
+              'Entitlement left intact and no dunning email sent: the customer holds another ' +
+              'live subscription for the same price, so this is a duplicate. Cancel it and void ' +
+              'its open invoice.',
+          )
+          break
+        }
 
         // Mark the profile past_due immediately. Stripe will eventually fire
         // a `customer.subscription.updated` with `status: 'past_due'`, but
@@ -978,11 +1025,48 @@ async function handleSubscriptionDeleted(
   // (via syncIeltsEntitlement below). Non-IELTS deletions still cancel globally.
   const ieltsOnly = isIeltsOnlySubscription(subscription)
 
+  // ── The same carve-out, generalised ──────────────────────────────────────
+  // The IELTS rule above exists because one person can hold two entitlements
+  // and `profiles.subscription_status` is a single field. The same is true of
+  // two subscriptions for the SAME product, which is not a hypothetical: on
+  // 8 September 2026 a customer acquired two Teachers Annual subscriptions.
+  // When the duplicate's dunning finished on 18 September this handler ran and
+  // wrote 'cancelled' over a subscription she had paid GBP 67.99 for and which
+  // Stripe still showed Active until 2027. She lost her access, and the only
+  // reason anybody found out is that she emailed us.
+  //
+  // So before cancelling globally, ask Stripe whether the customer still holds
+  // another live subscription for the same price. If they do, this deletion is
+  // a duplicate being cleaned up and must not touch the entitlement.
+  const cancelledPrices = pricesOnSubscription(subscription)
+  const stillCovered = cancelledPrices.length
+    ? await findDuplicateSubscription(stripe, subscription.customer as string, cancelledPrices, {
+        excludeSubscriptionId: subscription.id,
+      })
+    : { duplicate: false, existing: null }
+
+  if (stillCovered.duplicate) {
+    console.warn(
+      `[stripe/webhook] DUPLICATE_SUBSCRIPTION_DELETED_IGNORED customer=${subscription.customer} ` +
+        `deleted=${subscription.id} stillCoveredBy=${stillCovered.existing?.id} ` +
+        `status=${stillCovered.existing?.status}. Entitlement left intact: the customer holds ` +
+        'another live subscription for the same price.',
+    )
+  }
+
+  const revokeEntitlement = !ieltsOnly && !stillCovered.duplicate
+
   const { error } = await supabase
     .from('profiles')
     .update({
-      ...(ieltsOnly ? {} : { subscription_status: 'cancelled' }),
-      subscription_end_date: subscriptionEndDate,
+      ...(revokeEntitlement ? { subscription_status: 'cancelled' } : {}),
+      // The end date must not move either: it belongs to whichever subscription
+      // is actually granting access, and the stale-event guard on
+      // `customer.subscription.updated` refuses to re-grant Pro once this date
+      // has passed. Writing the duplicate's end date here is what made the
+      // obvious repair - touching the good subscription in the dashboard -
+      // silently fail with 'Refusing to re-grant Pro'.
+      ...(stillCovered.duplicate ? {} : { subscription_end_date: subscriptionEndDate }),
     })
     .eq('id', userId)
 
@@ -1038,12 +1122,16 @@ async function handleSubscriptionDeleted(
  * read it exactly that way and wrote in.
  *
  * The copy names the one payment THIS subscription takes and stops there. It
- * deliberately does NOT say the charge is not a duplicate of something else,
- * because nothing here checks that: neither checkout route looks at whether
- * the customer already holds a live subscription, so a genuine second
- * subscription is possible and this handler cannot see it. Asserting "not an
- * extra charge" would be reassuring exactly the customer we would be wrong
- * about. Instead the copy invites them to tell us, and promises the refund.
+ * deliberately does NOT say the charge is not a duplicate of something else.
+ * Both checkout routes now refuse a second subscription for a price the
+ * customer already holds (`findDuplicateSubscription`), but that guard fails
+ * open when Stripe is unreachable, it only shipped on 18 September 2026, and
+ * duplicates created before it are still live in Stripe. This handler checks
+ * none of that, so asserting "not an extra charge" would be reassuring exactly
+ * the customer we would be wrong about. Instead the copy invites them to tell
+ * us, and promises to put it right - including the case that actually happened,
+ * where nothing was taken twice and what was needed was cancelling a live
+ * subscription that kept retrying.
  *
  * Claims in this email and what supports them:
  *   - the trial end date: `subscription.trial_end` on the Stripe object.
@@ -1138,7 +1226,8 @@ async function handleTrialWillEnd(
     `<p>If you think you already hold another subscription with us, or anything on that page ` +
       `does not look right, email ` +
       `<a href="mailto:support@theenglishhub.app">support@theenglishhub.app</a>. We will check ` +
-      `it, and refund anything that has been taken twice.</p>`,
+      `it, cancel anything you should not be paying for, and refund anything that has been taken ` +
+      `twice.</p>`,
     `<br />`,
     `<p>Best regards,<br />The English Hub Team</p>`,
   ].join('\n')

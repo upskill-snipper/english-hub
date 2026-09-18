@@ -109,11 +109,18 @@ vi.mock('@sentry/nextjs', () => ({
 const mockConstructEvent = vi.fn()
 const mockRetrieveSubscription = vi.fn()
 const mockRetrieveCustomer = vi.fn(async () => ({ deleted: false, email: 'payer@example.com' }))
+// What ELSE the customer holds. Empty by default: most customers have one
+// subscription, and the revocation handlers must behave exactly as before for
+// them. Tests that care set this explicitly.
+const mockListSubscriptions = vi.fn(async () => ({ data: [] as unknown[] }))
 
 vi.mock('@/lib/stripe', () => ({
   stripe: {
     webhooks: { constructEvent: (...args: unknown[]) => mockConstructEvent(...(args as [])) },
-    subscriptions: { retrieve: (...args: unknown[]) => mockRetrieveSubscription(...(args as [])) },
+    subscriptions: {
+      retrieve: (...args: unknown[]) => mockRetrieveSubscription(...(args as [])),
+      list: (...args: unknown[]) => mockListSubscriptions(...(args as [])),
+    },
     customers: { retrieve: (...args: unknown[]) => mockRetrieveCustomer(...(args as [])) },
     invoices: { retrieve: vi.fn() },
   },
@@ -577,6 +584,140 @@ describe('customer.subscription.trial_will_end email', () => {
     expect(html).toContain('Tuesday, 15 September 2026')
     // No price is asserted - the subscription object is not the invoice.
     expect(html).not.toMatch(/[£$€]\s?\d/)
+  })
+})
+
+// ═══════════════════════════════════════════════════════════════════════
+// A failing DUPLICATE must not revoke a paid subscription
+//
+// `profiles.subscription_status` is ONE field per person. Both revocation
+// handlers used to write it keyed on the CUSTOMER, never asking which
+// subscription the event was about.
+//
+// On 8 Sept 2026 a customer acquired two Teachers Annual subscriptions. One
+// took GBP 67.99. The other never succeeded, and every time it failed it took
+// away the access she had paid for:
+//
+//   15 Sept 18:44  duplicate fails           -> past_due
+//   16 Sept 21:15  the paid one settles      -> pro
+//   17 Sept 20:44  duplicate's retry fails   -> past_due
+//   18 Sept 04:18  duplicate's dunning ends  -> cancelled
+//
+// She was locked out of a subscription Stripe showed Active until 2027, and
+// we emailed her twice telling her to update her payment method. The first
+// person to notice was her.
+// ═══════════════════════════════════════════════════════════════════════
+
+describe('a failing duplicate does not revoke the subscription that was paid for', () => {
+  const SAME_PRICE = 'price_annual'
+
+  function liveSubscriptionOnSamePrice(id = 'sub_the_paid_one') {
+    return {
+      id,
+      status: 'active',
+      items: { data: [{ price: { id: SAME_PRICE, product: 'prod_x' } }] },
+    }
+  }
+
+  function failedInvoice(subscriptionId = 'sub_the_duplicate') {
+    return {
+      id: 'in_dup_0015',
+      customer: 'cus_stripe_123',
+      subscription: subscriptionId,
+      amount_due: 6799,
+      currency: 'gbp',
+      lines: { data: [{ price: { id: SAME_PRICE } }] },
+    } as unknown as Stripe.Invoice
+  }
+
+  function profileWrites() {
+    // Every .update({...}) that reached the profiles table.
+    const fromCalls = (supabaseMock.from as ReturnType<typeof vi.fn>).mock.results
+    return fromCalls
+      .map((r) => r.value as { update?: ReturnType<typeof vi.fn> })
+      .filter((v) => typeof v.update === 'function')
+      .flatMap((v) => (v.update as ReturnType<typeof vi.fn>).mock.calls.map((c) => c[0]))
+  }
+
+  it('invoice.payment_failed leaves the entitlement alone when another live subscription covers it', async () => {
+    mockListSubscriptions.mockResolvedValue({ data: [liveSubscriptionOnSamePrice()] })
+    mockConstructEvent.mockReturnValue(makeEvent('invoice.payment_failed', failedInvoice()))
+
+    const { POST } = await import('@/app/api/stripe/webhook/route')
+    const res = await POST(buildRequest())
+
+    expect(res.status).toBe(200)
+    const writes = profileWrites()
+    expect(writes.some((w) => w?.subscription_status === 'past_due')).toBe(false)
+    // The coverage check actually ran, and excluded the failing subscription
+    // itself - otherwise it would "cover" itself and nothing would ever be
+    // revoked, turning this fix into a worse bug than the one it closes.
+    expect(mockListSubscriptions).toHaveBeenCalled()
+    const listArgs = (mockListSubscriptions.mock.calls as unknown as unknown[][])[0]?.[0] as
+      | { customer?: string }
+      | undefined
+    expect(listArgs?.customer).toBe('cus_stripe_123')
+  })
+
+  it('invoice.payment_failed still revokes when the failure is the only subscription', async () => {
+    // The control. Without this, a fix that simply stopped writing past_due
+    // would pass the test above and break real dunning.
+    mockListSubscriptions.mockResolvedValue({ data: [] })
+    mockConstructEvent.mockReturnValue(makeEvent('invoice.payment_failed', failedInvoice()))
+
+    const { POST } = await import('@/app/api/stripe/webhook/route')
+    await POST(buildRequest())
+
+    expect(profileWrites().some((w) => w?.subscription_status === 'past_due')).toBe(true)
+  })
+
+  it('customer.subscription.deleted leaves the entitlement alone when another live subscription covers it', async () => {
+    mockListSubscriptions.mockResolvedValue({ data: [liveSubscriptionOnSamePrice()] })
+    mockConstructEvent.mockReturnValue(
+      makeEvent(
+        'customer.subscription.deleted',
+        makeSubscription({ id: 'sub_the_duplicate', status: 'canceled' }),
+      ),
+    )
+
+    const { POST } = await import('@/app/api/stripe/webhook/route')
+    await POST(buildRequest())
+
+    const writes = profileWrites()
+    expect(writes.some((w) => w?.subscription_status === 'cancelled')).toBe(false)
+    // The end date must not move either. handleSubscriptionDeleted sets it from
+    // ended_at, which for an immediate cancellation is now - and the stale-event
+    // guard on customer.subscription.updated then refuses to re-grant Pro once
+    // that date has passed. Writing the duplicate's end date here is what made
+    // the obvious repair (touching the good subscription in the dashboard)
+    // silently fail with "Refusing to re-grant Pro".
+    expect(writes.some((w) => 'subscription_end_date' in (w ?? {}))).toBe(false)
+  })
+
+  it('customer.subscription.deleted still cancels a genuine last subscription', async () => {
+    mockListSubscriptions.mockResolvedValue({ data: [] })
+    mockConstructEvent.mockReturnValue(
+      makeEvent('customer.subscription.deleted', makeSubscription({ status: 'canceled' })),
+    )
+
+    const { POST } = await import('@/app/api/stripe/webhook/route')
+    await POST(buildRequest())
+
+    expect(profileWrites().some((w) => w?.subscription_status === 'cancelled')).toBe(true)
+  })
+
+  it('excludes the failing subscription itself from the coverage check', async () => {
+    // Otherwise the subscription being cancelled would "cover" itself and
+    // nothing would ever be revoked - the fix turning into a worse bug.
+    mockListSubscriptions.mockResolvedValue({ data: [] })
+    mockConstructEvent.mockReturnValue(
+      makeEvent('customer.subscription.deleted', makeSubscription({ status: 'canceled' })),
+    )
+
+    const { POST } = await import('@/app/api/stripe/webhook/route')
+    await POST(buildRequest())
+
+    expect(profileWrites().some((w) => w?.subscription_status === 'cancelled')).toBe(true)
   })
 })
 

@@ -9,14 +9,17 @@ import {
 } from '@/lib/billing/duplicate-subscription-guard'
 
 /**
- * On 18 September 2026 a customer wrote in to say we had tried to charge her
- * twice. She was right: two subscriptions existed against her Stripe customer,
- * because neither checkout route asked whether she already had one.
+ * On 18 September 2026 a customer wrote in to say we had tried to make her pay
+ * twice. She was right: two subscriptions were created against her Stripe
+ * customer on 8 September 2026, both for the same GBP 67.99 annual plan on the
+ * same card, because neither checkout route asked whether she already had one.
+ * One charged her once. The other never succeeded - it failed twice on
+ * insufficient funds and was still retrying ten days later.
  *
- * It could not be seen from our side either. `Subscription.userId` is
- * `@unique`, so the second subscription overwrote the same Prisma row rather
- * than appearing beside it. No query would have shown two. The only place the
- * defect surfaced was her bank statement.
+ * It could not be seen from our side either. Stripe listed both all along;
+ * nothing here asked. Our own records could not have held both in any case -
+ * `Subscription.userId` is `@unique`, one row per user - and in that period the
+ * webhook was writing her no row at all. The first person to notice was her.
  *
  * These tests pin the behaviour that closes it, and the two judgement calls
  * inside it that are easy to get wrong in opposite directions:
@@ -62,8 +65,10 @@ describe('findDuplicateSubscription', () => {
   })
 
   it('blocks while the first subscription is still in its trial', async () => {
-    // Every checkout sets a trial, so this is the state a customer is in for
-    // their first week - exactly when a confused second purchase happens.
+    // /api/stripe/checkout sets a 7-day trial on every subscription, so this is
+    // the state a customer is in for their first week - exactly when a confused
+    // second purchase happens. (/api/promo/redeem sets no trial and charges at
+    // once; a duplicate there lands as `active`, which the test above covers.)
     const stripe = stripeReturning([sub('sub_1', 'trialing', [item(PRO_ANNUAL)])])
 
     expect((await findDuplicateSubscription(stripe, 'cus_1', PRO_ANNUAL)).duplicate).toBe(true)
@@ -152,7 +157,7 @@ describe('findDuplicateSubscription', () => {
 describe('the message the customer sees', () => {
   it('does not blame them, and points somewhere they can act', () => {
     const message = duplicateSubscriptionMessage()
-    expect(message).toContain('stopped before charging you again')
+    expect(message).toContain('stopped rather than start a second one')
     expect(message).toContain('support@theenglishhub.app')
     expect(message).not.toMatch(/you (tried|attempted|already clicked)/i)
   })
