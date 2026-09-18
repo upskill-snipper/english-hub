@@ -22,6 +22,7 @@ import { useCallback, useEffect, useState, useTransition } from 'react'
 import { useRouter } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { useT } from '@/lib/i18n/use-t'
+import { readClientLocale } from '@/lib/i18n/read-client-locale'
 
 const COOKIE = 'eh-lang'
 const ONE_YEAR = 60 * 60 * 24 * 365
@@ -34,15 +35,11 @@ const MODE_DEFS: { value: Mode; label: string; tooltipKey: string }[] = [
   { value: 'es', label: 'Español', tooltipKey: 'lang.es.tooltip' },
 ]
 
-function readCookie(): Mode {
-  if (typeof document === 'undefined') return 'en'
-  // Accept legacy `bi` values and coerce to `en` so old sessions upgrade cleanly.
-  const match = document.cookie.match(/(?:^|;\s*)eh-lang=(en|bi|ar|es)\b/)
-  const raw = match?.[1]
-  if (raw === 'ar') return 'ar'
-  if (raw === 'es') return 'es'
-  return 'en'
-}
+// Was cookie-only, so on /ar with no cookie the toggle showed English as the
+// pressed option while the page around it was Arabic - the control told the
+// reader the opposite of what they were looking at. See
+// src/lib/i18n/read-client-locale.ts.
+const readCookie = readClientLocale as () => Mode
 
 export function LanguageToggle({ className }: { className?: string }) {
   // Initialise from cookie on the client only. SSR renders 'en' so the

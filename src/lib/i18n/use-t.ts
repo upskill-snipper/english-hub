@@ -52,6 +52,7 @@
 
 import { useCallback, useEffect, useReducer, useState } from 'react'
 import { EN_MESSAGES } from './generated/en'
+import { readClientLocale } from './read-client-locale'
 
 export type Locale = 'en' | 'ar' | 'es'
 
@@ -74,15 +75,10 @@ function notify() {
   for (const fn of subscribers) fn()
 }
 
-function readLocale(): Locale {
-  if (typeof document === 'undefined') return 'en'
-  // Match legacy 'bi' too so we can coerce it to 'en'.
-  const match = document.cookie.match(/(?:^|;\s*)eh-lang=(en|bi|ar|es)\b/)
-  const v = match?.[1]
-  if (v === 'ar') return 'ar'
-  if (v === 'es') return 'es'
-  return 'en'
-}
+// Was cookie-only, so a search visitor landing on /ar with no cookie got an
+// English header and an English cookie banner on an Arabic page. See
+// ./read-client-locale.ts for the live probe and the reasoning.
+const readLocale = readClientLocale
 
 function ensureLocale(locale: Locale): void {
   if (locale === 'en' || MESSAGES[locale] || inFlight.has(locale)) return

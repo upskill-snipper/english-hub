@@ -12,18 +12,13 @@
  * middleware on the next request.
  */
 import { useEffect, useState } from 'react'
+import { readClientLocale } from './read-client-locale'
 
 export type Locale = 'en' | 'ar' | 'es'
 
-function readCookie(): Locale {
-  if (typeof document === 'undefined') return 'en'
-  // Match legacy 'bi' too, then coerce - old sessions upgrade cleanly.
-  const m = document.cookie.match(/(?:^|;\s*)eh-lang=(en|bi|ar|es)\b/)
-  const raw = m?.[1]
-  if (raw === 'ar') return 'ar'
-  if (raw === 'es') return 'es'
-  return 'en'
-}
+// Was cookie-only; a /ar visitor with no cookie fell through to English.
+// The URL locale is already on <html data-lang>. See ./read-client-locale.ts.
+const readCookie = readClientLocale
 
 export function useLocale(): Locale {
   const [locale, setLocale] = useState<Locale>('en')
