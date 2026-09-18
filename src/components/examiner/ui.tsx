@@ -67,12 +67,23 @@ export function Notice({
 }
 
 export function CalibrationBadge({ calibration }: { calibration: ExaminerCalibration }) {
-  return calibration === 'exemplar-derived' ? (
-    <Badge className="border-emerald-500/30 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300">
-      Calibrated to exemplar commentaries
+  if (calibration === 'exemplar-derived') {
+    return (
+      <Badge className="border-emerald-500/30 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300">
+        Calibrated to exemplar commentaries
+      </Badge>
+    )
+  }
+  if (calibration === 'published-grid') {
+    return <Badge variant="outline">Checked against the board&apos;s spec</Badge>
+  }
+  // Unverified. Deliberately the loudest badge on the page: for nine of the
+  // twenty-one papers the grid has never been put beside the board's own
+  // specification, and a teacher must not read a mark from one as authoritative.
+  return (
+    <Badge className="border-destructive/40 bg-destructive/10 text-destructive">
+      Not verified against the board&apos;s spec
     </Badge>
-  ) : (
-    <Badge variant="outline">Published grid</Badge>
   )
 }
 

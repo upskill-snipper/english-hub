@@ -26,7 +26,15 @@
 // therefore use placeholders rendered by src/lib/marking/examiner/engine.ts.
 // ────────────────────────────────────────────────────────────────────────────
 
-export type ExaminerCalibration = 'exemplar-derived' | 'published-grid'
+// 'unverified-grid' is the honest default. A pack earns 'published-grid' only
+// when src/lib/marking/examiner/verification.ts holds a record that someone put
+// it side by side with the board's own published material. Before 18 September
+// 2026 every derived pack claimed 'published-grid' and the tool told teachers
+// its grids were "verbatim from the published scheme"; nine papers had never
+// been checked at all, and the first audit found a mislabelled assessment
+// objective on AQA Paper 1 and a five-mark shortfall on both Eduqas Language
+// components. Widening this union is what makes that state say its own name.
+export type ExaminerCalibration = 'exemplar-derived' | 'published-grid' | 'unverified-grid'
 
 /** One level (or band) of a levelled grid, with its inclusive mark range. */
 export interface ExaminerLevel {

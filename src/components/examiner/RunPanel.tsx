@@ -226,10 +226,18 @@ export function RunPanel(p: Props) {
           </Button>
         )}
       </div>
-      <p className="mt-2 text-xs text-muted-foreground">
+      <p
+        className={`mt-2 text-xs ${
+          p.pack && p.pack.calibration === 'unverified-grid'
+            ? 'font-medium text-destructive'
+            : 'text-muted-foreground'
+        }`}
+      >
         {p.pack?.calibration === 'exemplar-derived'
           ? 'Marks against the published grids and the exemplar-derived gates for this paper, plus the scheme you supplied.'
-          : 'Marks against the published grids for this paper plus the scheme you supplied. The result is a second opinion for you to check against the gates on the right, not the award.'}
+          : p.pack?.calibration === 'published-grid'
+            ? 'Marks against the grids for this paper, which have been checked against the board’s published specification, plus the scheme you supplied. The result is a second opinion for you to check against the gates on the right, not the award.'
+            : 'This paper’s structure and grids have NOT been checked against the board’s published specification, so the tariffs may not match the paper in front of you. Any mark is indicative only — check it against your own mark scheme before using it, and do not report it to a pupil as a grade.'}
       </p>
 
       {steps.length > 0 && (

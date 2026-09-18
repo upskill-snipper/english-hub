@@ -7,6 +7,7 @@ import { isAiOptedOut } from '@/lib/ai-preferences'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { MARK_SCHEMES, type MarkScheme } from '@/lib/marking/mark-schemes'
+import { isSpecVerified } from '@/lib/marking/examiner/verification'
 import { useT } from '@/lib/i18n/use-t'
 import { DictationButton } from '@/components/speech/DictationButton'
 import { InlineAIConsentPrompt } from '@/components/consent/InlineAIConsentPrompt'
@@ -107,7 +108,9 @@ function buildPaperOptions(board: BoardOption | undefined): PaperOption[] {
     })
     .map((scheme) => ({
       value: scheme.id,
-      label: `${scheme.subject} - ${scheme.paper}${scheme.title ? `: ${scheme.title}` : ''}`,
+      label: `${scheme.subject} - ${scheme.paper}${scheme.title ? `: ${scheme.title}` : ''}${
+        isSpecVerified(scheme.id) ? '' : ' (unverified - marks are indicative only)'
+      }`,
       scheme,
     }))
 }
@@ -664,6 +667,27 @@ export default function SubmitEssayPage() {
                   </select>
                 </div>
               </div>
+
+              {/* ── Unverified paper warning ────────────────
+                  Nine of the twenty-one papers in the corpus have never been
+                  checked against the board's published specification, and the
+                  first audit of them found a mislabelled assessment objective
+                  and a five-mark shortfall. The dropdown label says so, but a
+                  label in a select is easy to miss and the reader here is
+                  often a child, so the warning is repeated in the open. */}
+              {selectedPaper && !isSpecVerified(selectedPaper.scheme.id) && (
+                <div className="rounded-lg border border-destructive/40 bg-destructive/10 p-3 text-sm text-destructive">
+                  <p className="font-medium">
+                    This paper has not been checked against the exam board&apos;s published
+                    specification.
+                  </p>
+                  <p className="mt-1">
+                    The questions and mark ranges we hold may not match your real paper, so any mark
+                    you get back is a rough guide only. Check it against your own mark scheme, and
+                    do not treat it as your grade.
+                  </p>
+                </div>
+              )}
 
               {/* ── Question ───────────────────────────────── */}
               <div className="space-y-1.5">

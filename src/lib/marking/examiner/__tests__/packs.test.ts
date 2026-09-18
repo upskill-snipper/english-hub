@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { MARK_SCHEMES } from '@/lib/marking/mark-schemes'
 import { derivePack } from '../packs/derive'
+import { isSpecVerified } from '../verification'
 import { pearsonIgcseEnglishAPaper1 } from '../packs/pearson-igcse-english-a-paper1'
 import { EXAMINER_PACKS, getExaminerPack, listExaminerPacks } from '../registry'
 import type { ExaminerGrid, ExaminerPack } from '../types'
@@ -95,7 +96,14 @@ describe('derived packs', () => {
     for (const scheme of Object.values(MARK_SCHEMES)) {
       const pack = derivePack(scheme)
       expect(pack.id).toBe(scheme.id)
-      expect(pack.calibration).toBe('published-grid')
+      // Was `toBe('published-grid')` for every scheme. That assertion encoded
+      // the claim EXAM-1 removed: derivePack labelled all 21 papers as the
+      // board's published grid when nine had never been checked against a
+      // specification at all. A pack now earns 'published-grid' only via
+      // verification.ts, and says 'unverified-grid' otherwise.
+      expect(pack.calibration).toBe(
+        isSpecVerified(scheme.id) ? 'published-grid' : 'unverified-grid',
+      )
       expect(pack.questions.length).toBe(scheme.questions.length)
       checkPack(pack)
     }

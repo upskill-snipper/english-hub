@@ -176,7 +176,11 @@ export function ExaminerTool() {
                         <option key={p.id} value={p.id}>
                           {p.subject} · {p.paper} · {p.title}
                           {p.codes.length ? ` (${p.codes.join(', ')})` : ''}
-                          {p.calibration === 'exemplar-derived' ? ' · calibrated' : ''}
+                          {p.calibration === 'exemplar-derived'
+                            ? ' · calibrated'
+                            : p.calibration === 'unverified-grid'
+                              ? ' · NOT VERIFIED'
+                              : ''}
                         </option>
                       ))}
                     </optgroup>

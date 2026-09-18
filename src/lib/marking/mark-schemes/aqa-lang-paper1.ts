@@ -106,7 +106,12 @@ const ao2Language: AssessmentObjective = {
 }
 
 const ao2Structure: AssessmentObjective = {
-  id: 'AO3',
+  // AQA assesses structure under AO2, not AO3. This carried id 'AO3' while its
+  // own label said AO2, so every commentary on Paper 1 Question 3 ended
+  // "appropriate for AO3" — on a paper where AO3 (comparing writers' ideas
+  // across texts) is not assessed at all; it appears only on Paper 2 Q4. The
+  // label, description and 8-mark tariff were already correct.
+  id: 'AO2',
   label: 'AO2 - Analyse structure',
   description:
     'Explain, comment on and analyse how writers use structure to achieve effects and influence readers.',
