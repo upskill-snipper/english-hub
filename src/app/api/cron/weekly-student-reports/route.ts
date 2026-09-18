@@ -44,6 +44,7 @@ import crypto from 'crypto'
 import { prisma } from '@/lib/prisma'
 import { runCron } from '@/lib/cron/observability'
 import { sendViaResend } from '@/lib/email/resend'
+import { createUnsubscribeToken } from '@/lib/email/unsubscribe-token'
 import {
   renderWeeklyStudentEmail,
   renderWeeklyStudentText,
@@ -165,6 +166,11 @@ async function executeWeeklyStudentReports(): Promise<CronResult> {
     },
     select: {
       id: true,
+      // RET-7: needed to mint the unsubscribe token. NULLABLE by declaration -
+      // the backfill from the Supabase transition was never verified - so a
+      // null here means no token, which renders the tokenless
+      // manage-preferences page rather than a broken link.
+      supabaseUserId: true,
       email: true,
       firstName: true,
       dateOfBirth: true,
@@ -186,6 +192,8 @@ async function executeWeeklyStudentReports(): Promise<CronResult> {
     html: string
     text: string
     userId: string
+    /** null when the account has no Supabase id to sign (see the select). */
+    unsubscribeToken: string | null
   }> = []
 
   const now = new Date()
@@ -301,7 +309,14 @@ async function executeWeeklyStudentReports(): Promise<CronResult> {
         : null
 
       const dashboardUrl = `${SITE_URL}/dashboard`
-      const unsubscribeUrl = `${SITE_URL}/dashboard/settings`
+      // RET-7. This pointed at /dashboard/settings, whose communication tab
+      // has no toggle on it and instead links to the consent centre - a store
+      // no sending code reads. So the "unsubscribe" in every digest we have
+      // sent led to a page that could not unsubscribe anybody.
+      const unsubscribeToken = createUnsubscribeToken(student.supabaseUserId ?? '', Date.now())
+      const unsubscribeUrl = unsubscribeToken
+        ? `${SITE_URL}/unsubscribe?token=${encodeURIComponent(unsubscribeToken)}`
+        : `${SITE_URL}/unsubscribe`
 
       const html = await renderWeeklyStudentEmail({
         firstName: student.firstName,
@@ -321,6 +336,7 @@ async function executeWeeklyStudentReports(): Promise<CronResult> {
       })
 
       sendable.push({
+        unsubscribeToken,
         to: student.email,
         subject: 'Your week on The English Hub',
         html,
@@ -355,6 +371,18 @@ async function executeWeeklyStudentReports(): Promise<CronResult> {
               { name: 'category', value: 'student' },
               { name: 'event', value: 'weekly-digest' },
             ],
+            // RFC 8058 one-click unsubscribe. Without these, Gmail and Outlook
+            // show no unsubscribe control of their own and a reader who wants
+            // out has only "report spam" - which costs us domain reputation
+            // for every recipient, not just the one who clicked.
+            ...(msg.unsubscribeToken
+              ? {
+                  headers: {
+                    'List-Unsubscribe': `<${SITE_URL}/api/unsubscribe?token=${encodeURIComponent(msg.unsubscribeToken)}>`,
+                    'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
+                  },
+                }
+              : {}),
           })
 
           if (!r.sent) {

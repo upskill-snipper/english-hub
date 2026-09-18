@@ -26,6 +26,14 @@ export interface ResendSendOptions {
   /** Blind copies. Used by the Trustpilot invitation pipeline. */
   bcc?: string | string[]
   tags?: Array<{ name: string; value: string }>
+  /**
+   * Extra RFC 5322 headers. Added 19 September 2026 (RET-7) so marketing mail
+   * can carry `List-Unsubscribe` and `List-Unsubscribe-Post`: without them
+   * Gmail and Outlook show no unsubscribe control of their own, and a reader
+   * who wants out has only the "report spam" button - which costs us domain
+   * reputation for every recipient, not just the one who clicked it.
+   */
+  headers?: Record<string, string>
 }
 
 const DEFAULT_FROM = 'The English Hub <noreply@theenglishhub.app>'
@@ -56,6 +64,7 @@ export async function sendViaResend(opts: ResendSendOptions): Promise<ResendSend
         ...(opts.replyTo ? { reply_to: opts.replyTo } : {}),
         ...(opts.bcc && opts.bcc.length ? { bcc: opts.bcc } : {}),
         ...(opts.tags ? { tags: opts.tags } : {}),
+        ...(opts.headers && Object.keys(opts.headers).length ? { headers: opts.headers } : {}),
       }),
     })
 

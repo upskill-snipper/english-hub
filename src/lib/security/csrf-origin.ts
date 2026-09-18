@@ -116,12 +116,23 @@ export const ALLOWED_ORIGINS = new Set(
  * of these can be driven by a victim's browser, because the secret they
  * require is not in the browser - which is the whole test for whether CSRF
  * applies. Everything a session cookie can reach stays gated.
+ *
+ * `/api/unsubscribe` meets the same test, from the other direction. Gmail and
+ * Apple Mail issue the RFC 8058 one-click POST server-to-server with NO Origin
+ * header, so without this entry the `List-Unsubscribe-Post` header would be
+ * advertised on every email and then 403'd here before the handler ran - a
+ * dead unsubscribe link, which is the precise defect RET-7 exists to fix.
+ * The route carries no ambient cookie authority: it authenticates solely from
+ * an HMAC token a victim's browser cannot produce, and its only effect is to
+ * turn marketing email OFF. An attacker who could drive it gains nothing they
+ * could not get by simply not emailing the victim.
  */
 const CSRF_EXEMPT_PREFIXES = [
   '/api/stripe/webhook',
   '/api/revenuecat/webhook',
   '/api/cron/',
   '/api/push/send',
+  '/api/unsubscribe',
 ] as const
 
 /** Methods that cannot change state and so are not gated. */
@@ -146,8 +157,25 @@ export interface CsrfRequestFacts {
   secFetchSite: string | null
 }
 
+/**
+ * Whether this path is exempt from the same-origin gate.
+ *
+ * Matching is on a PATH-SEGMENT boundary, not a bare `startsWith`. A plain
+ * prefix test would exempt `/api/stripe/webhook-debug`, `/api/push/sendAll`
+ * and `/api/unsubscribe-everything` - routes nobody listed, that do not exist
+ * today, and that would silently arrive unprotected the moment somebody added
+ * one. The failure is invisible: the new route works, and the only difference
+ * is that a cross-site page can now drive it.
+ *
+ * A prefix ending in `/` (such as `/api/cron/`) is a directory match and
+ * intentionally covers everything beneath it. Anything else must match the
+ * whole path, or be followed by `/`.
+ */
 export function isCsrfExempt(pathname: string): boolean {
-  return CSRF_EXEMPT_PREFIXES.some((prefix) => pathname.startsWith(prefix))
+  return CSRF_EXEMPT_PREFIXES.some((prefix) => {
+    if (prefix.endsWith('/')) return pathname.startsWith(prefix)
+    return pathname === prefix || pathname.startsWith(`${prefix}/`)
+  })
 }
 
 /**
