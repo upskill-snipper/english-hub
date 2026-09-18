@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
+import { markSchemeAnchor } from '@/lib/marking/mark-scheme-anchor'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -16,7 +17,11 @@ interface MarkingHistoryEntry {
   title: string
   board: string
   paper: string
-  grade: number
+  /**
+   * UX-6: typed `number` while the submit page writes `grade: null` into the
+   * very same localStorage record. The type was not describing the data.
+   */
+  grade: number | null
   wordCount: number
   submittedAt: string
 }
@@ -37,41 +42,67 @@ type MarkSchemeGroupDef = {
   items: { labelKey: string; href: string }[]
 }
 
+/**
+ * UX-6 (19 September 2026): every one of these twelve hrefs was '#'.
+ *
+ * They looked like links and were styled like links, and clicking one did
+ * nothing whatsoever. With a board cookie set a student saw two to four of
+ * them - all dead - on the page they land on to have their work marked.
+ *
+ * The guides they promise do exist: the reference cards on
+ * /resources/teacher-library/mark-schemes. Each href is built with
+ * `markSchemeAnchor`, the same function that stamps the anchor onto the card,
+ * so a card renamed there cannot leave a link here pointing at nothing. A test
+ * asserts each of these resolves to a card that is actually on that page.
+ *
+ * OCR and Eduqas call their papers "Component 01/02" and "Component 1/2"
+ * respectively, which is why the titles below are not uniform - they match the
+ * board's own naming and the card titles exactly.
+ */
+const GUIDE = '/resources/teacher-library/mark-schemes'
+const guideHref = (cardTitle: string) => `${GUIDE}#${markSchemeAnchor(cardTitle)}`
+
 const MARK_SCHEME_DEFS: MarkSchemeGroupDef[] = [
   {
     board: 'AQA',
     boardIds: ['aqa'],
     items: [
-      { labelKey: 'marking.scheme.lit_p1', href: '#' },
-      { labelKey: 'marking.scheme.lit_p2', href: '#' },
-      { labelKey: 'marking.scheme.lang_p1', href: '#' },
-      { labelKey: 'marking.scheme.lang_p2', href: '#' },
+      { labelKey: 'marking.scheme.lit_p1', href: guideHref('AQA English Literature Paper 1') },
+      { labelKey: 'marking.scheme.lit_p2', href: guideHref('AQA English Literature Paper 2') },
+      { labelKey: 'marking.scheme.lang_p1', href: guideHref('AQA English Language Paper 1') },
+      { labelKey: 'marking.scheme.lang_p2', href: guideHref('AQA English Language Paper 2') },
     ],
   },
   {
     board: 'Edexcel',
     boardIds: ['edexcel', 'edexcel-igcse', 'edexcel-igcse-lang', 'ial-edexcel'],
     items: [
-      { labelKey: 'marking.scheme.lit_p1', href: '#' },
-      { labelKey: 'marking.scheme.lit_p2', href: '#' },
-      { labelKey: 'marking.scheme.lang_p1', href: '#' },
-      { labelKey: 'marking.scheme.lang_p2', href: '#' },
+      { labelKey: 'marking.scheme.lit_p1', href: guideHref('Edexcel English Literature Paper 1') },
+      { labelKey: 'marking.scheme.lit_p2', href: guideHref('Edexcel English Literature Paper 2') },
+      { labelKey: 'marking.scheme.lang_p1', href: guideHref('Edexcel English Language Paper 1') },
+      { labelKey: 'marking.scheme.lang_p2', href: guideHref('Edexcel English Language Paper 2') },
     ],
   },
   {
     board: 'OCR',
     boardIds: ['ocr'],
     items: [
-      { labelKey: 'marking.scheme.lit_p1', href: '#' },
-      { labelKey: 'marking.scheme.lit_p2', href: '#' },
+      { labelKey: 'marking.scheme.lit_p1', href: guideHref('OCR English Literature Component 01') },
+      { labelKey: 'marking.scheme.lit_p2', href: guideHref('OCR English Literature Component 02') },
     ],
   },
   {
     board: 'Eduqas',
     boardIds: ['eduqas'],
     items: [
-      { labelKey: 'marking.scheme.lit_p1', href: '#' },
-      { labelKey: 'marking.scheme.lit_p2', href: '#' },
+      {
+        labelKey: 'marking.scheme.lit_p1',
+        href: guideHref('Eduqas English Literature Component 1'),
+      },
+      {
+        labelKey: 'marking.scheme.lit_p2',
+        href: guideHref('Eduqas English Literature Component 2'),
+      },
     ],
   },
 ]
@@ -195,9 +226,23 @@ export default function MarkingHubPage() {
                   <CardHeader>
                     <div className="flex items-start justify-between gap-2">
                       <CardTitle className="line-clamp-2">{e.title}</CardTitle>
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/15 font-heading text-lg font-extrabold text-primary">
-                        {e.grade}
-                      </div>
+                      {/*
+                        UX-6: this printed `{e.grade}` straight out, so an
+                        essay still being marked showed an empty coloured
+                        square - which reads as a grade the page failed to
+                        load, not as work in progress. The history page has
+                        always said "Awaiting mark" here; the hub now says the
+                        same thing, in the same words.
+                      */}
+                      {typeof e.grade === 'number' ? (
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/15 font-heading text-lg font-extrabold text-primary">
+                          {e.grade}
+                        </div>
+                      ) : (
+                        <span className="shrink-0 rounded-lg bg-muted px-2 py-1 text-xs font-medium text-muted-foreground">
+                          {t('marking.history.awaiting')}
+                        </span>
+                      )}
                     </div>
                     <CardDescription>
                       {e.board} · {e.paper}

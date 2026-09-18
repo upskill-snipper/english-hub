@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { markSchemeAnchor } from '@/lib/marking/mark-scheme-anchor'
 import Link from 'next/link'
 import { TeacherResourceCard, TeacherResourceGrid } from '@/components/teacher/ResourceCard'
 import { getServerBoard } from '@/lib/board/get-server-board'
@@ -172,15 +173,21 @@ export default async function MarkSchemesPage() {
       <section className="mx-auto max-w-6xl px-6 py-12">
         <TeacherResourceGrid>
           {visible.map((m) => (
-            <TeacherResourceCard
-              key={m.title}
-              title={m.title}
-              description={m.description}
-              kind="Mark Scheme"
-              examBoard={m.examBoard}
-              tag="Reference card"
-              href="/resources/teacher-library/mark-schemes"
-            />
+            // UX-6 (19 September 2026): each card now has a stable anchor.
+            // The marking hub advertised twelve "mark scheme guide" links and
+            // every one of them was href="#" - they did nothing at all. The
+            // guides they promise are these cards, so the hub deep-links here.
+            // `scroll-mt-24` keeps the target clear of the sticky header.
+            <div key={m.title} id={markSchemeAnchor(m.title)} className="scroll-mt-24">
+              <TeacherResourceCard
+                title={m.title}
+                description={m.description}
+                kind="Mark Scheme"
+                examBoard={m.examBoard}
+                tag="Reference card"
+                href="/resources/teacher-library/mark-schemes"
+              />
+            </div>
           ))}
         </TeacherResourceGrid>
       </section>
