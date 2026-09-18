@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { isStubSetText } from '@/lib/seo/set-text-stubs'
 import { notFound, redirect } from 'next/navigation'
 import Link from 'next/link'
 import {
@@ -42,12 +43,27 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
       description: await t('analysis.deep.set_text.not_found_desc'),
     }
   }
+  // SEO-10 (19 September 2026). 20 of the 73 set texts have no dedicated page
+  // and land here, where the body is the text's one-line description, a row of
+  // theme chips, some links, and four paragraphs of study tips that are
+  // IDENTICAL on every one of them. Sixteen of the twenty compete with a real,
+  // substantial page we already publish - a-dolls-house at 1,314 lines,
+  // disabled at 855 - and until now both were in the sitemap, so the site was
+  // bidding against itself with the weaker page.
+  //
+  // The page still renders: it is reachable from the set-text index and is a
+  // reasonable landing spot from inside the product. It just stops asking to
+  // be ranked. `follow` stays on so the links out to the real guides still
+  // pass their signal.
+  const isStub = isStubSetText(text.slug)
+
   return {
     title: `${text.title} - Study Guide | The English Hub`,
     description: `In-depth study guide for ${text.title} by ${text.author}: characters, themes, key quotations and exam-ready analysis.`,
     alternates: {
       canonical: `https://theenglishhub.app/revision/texts/${text.slug}`,
     },
+    ...(isStub ? { robots: { index: false, follow: true } } : {}),
   }
 }
 

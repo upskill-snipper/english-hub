@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { isStubSetText } from '@/lib/seo/set-text-stubs'
 import { ANALYSIS_PAGES } from '@/data/analysis'
 import { allCourses } from '@/data/courses'
 import { getBlogSlugs, hasArabicVariant } from '@/lib/blog/posts'
@@ -159,14 +160,27 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // the dynamic route contributes nothing here — only the static
   // /resources/revision-notes/<dir> pages (already in static-routes.json)
   // are listed.
+  // SEO-10 (19 September 2026): 20 of the 73 have no dedicated page and fall
+  // through to a boilerplate stub, and SIXTEEN of those compete with a real
+  // page we already publish - both were in this sitemap at once, so the site
+  // was bidding against itself with the weaker page. The stubs still render;
+  // they are simply no longer submitted for ranking.
   for (const text of SET_TEXTS) {
+    if (isStubSetText(text.slug)) continue
     add(`/revision/texts/${text.slug}`, { priority: 0.7, changeFrequency: 'monthly' })
   }
 
   // Pearson IGCSE Language A poetry anthology (mirrors the page's
   // generateStaticParams filter).
+  //
+  // NOT filtered by isStubSetText, deliberately. All 15 Pearson anthology
+  // slugs are in that set, but this route is a different page: it branches to
+  // a real study guide for `the-bright-lights-of-sarajevo` and renders a
+  // placeholder for the other 14. Using the stub predicate here would drop the
+  // ONE Pearson URL worth indexing. The condition matches the render path's.
   for (const text of SET_TEXTS) {
     if (text.category === 'poetry-anthology' && text.boards.includes('edexcel-igcse-lang')) {
+      if (text.slug !== 'the-bright-lights-of-sarajevo') continue
       add(`/revision/poetry/pearson-igcse/${text.slug}`, {
         priority: 0.6,
         changeFrequency: 'monthly',
