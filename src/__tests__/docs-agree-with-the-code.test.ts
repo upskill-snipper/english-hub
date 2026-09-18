@@ -38,11 +38,12 @@ describe('numbers that came from somewhere real', () => {
     const doc = read('docs/system/09-scheduled-work.md')
     const cronRoutes = vercel.crons.filter((c) => c.path.startsWith('/api/cron/')).length
 
-    expect(vercel.crons.length).toBe(17)
+    expect(vercel.crons.length).toBe(18)
     expect(cronRoutes).toBe(16)
     // The words have to match the file, not a number from six months ago.
-    expect(doc).toMatch(/Seventeen Vercel Cron entries/)
+    expect(doc).toMatch(/Eighteen Vercel Cron entries/)
     expect(doc).not.toMatch(/Fifteen Vercel Cron entries/)
+    expect(doc).not.toMatch(/Seventeen Vercel Cron entries/)
   })
 
   it('the deployment guide does not hand out a four-migration list', () => {

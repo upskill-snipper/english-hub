@@ -243,6 +243,22 @@ export async function POST(request: NextRequest) {
             })
           } else {
             console.error('[api/mark/stream] failed to parse model response', feedback.error.reason)
+            // REL-9: this path reported to nothing. The catch refunded the
+            // trial use, wrote an audit row and told the learner "try again" -
+            // all correct, and all invisible to us. A parse failure here means
+            // the model stopped emitting the shape the prompt asks for, which
+            // breaks marking for EVERY learner at once, so it is exactly the
+            // thing worth waking someone for.
+            void import('@sentry/nextjs')
+              .then((Sentry) =>
+                Sentry.captureException(
+                  new Error(
+                    `mark/stream could not parse the model response: ${feedback.error.type}`,
+                  ),
+                  { tags: { feature: 'marking', route: 'mark/stream' } },
+                ),
+              )
+              .catch(() => {})
             send({
               type: 'error',
               message: 'Failed to process the AI response. Please try again.',
