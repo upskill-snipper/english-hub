@@ -17,6 +17,7 @@
 //   - not a noindex surface (user tools, portals, internal design demos).
 import { readdirSync, writeFileSync, mkdirSync } from 'node:fs'
 import { join } from 'node:path'
+import { writeRouteLastmod } from './lib/route-lastmod.mjs'
 
 // ── Exclusion policy ──────────────────────────────────────────────────
 // Robots-disallowed sections (see src/app/robots.ts).
@@ -94,12 +95,16 @@ function walk(d, acc) {
 
 const pages = walk('src/app', [])
 const routes = new Set()
+/** route -> the page.tsx that produces it, for the lastmod pass below. */
+const routeFile = new Map()
 for (const f of pages) {
-  let r = f.replaceAll('\\', '/').replace(/^src\/app/, '').replace(/\/page\.tsx$/, '')
+  const posix = f.replaceAll('\\', '/')
+  let r = posix.replace(/^src\/app/, '').replace(/\/page\.tsx$/, '')
   // Strip route groups — (group) segments don't appear in the URL.
   r = r.split('/').filter((s) => !(s.startsWith('(') && s.endsWith(')'))).join('/')
   if (r === '') r = '/'
   routes.add(r)
+  if (!routeFile.has(r)) routeFile.set(r, posix)
 }
 
 const included = [...routes]
@@ -116,3 +121,7 @@ writeFileSync(
   JSON.stringify(included, null, 2) + '\n',
 )
 console.log(`static-routes.json: ${included.length} routes (from ${routes.size} filesystem routes)`)
+
+// Per-route lastmod, so the sitemap stops claiming every page changed on every
+// deploy. Guarded against shallow clones - see the module header.
+writeRouteLastmod(included, routeFile)

@@ -9,6 +9,7 @@ import { KS3 } from '@/lib/ks3/curriculum'
 import { getAllLessonPlans } from '@/lib/lesson-plans/list'
 import { getPrintableSlugs } from '@/lib/printables/list'
 import staticRoutes from '@/lib/seo/static-routes.json'
+import ROUTE_LASTMOD from '@/lib/seo/route-lastmod.json'
 
 // ============================================================
 // Sitemap — filesystem-driven since 2026-06-10.
@@ -95,6 +96,28 @@ function defaults(route: string): { priority: number; changeFrequency: ChangeFre
   return { priority: 0.5, changeFrequency: 'monthly' }
 }
 
+/**
+ * When a route's own source last changed, from src/lib/seo/route-lastmod.json.
+ *
+ * THE DEFECT THIS FIXES (19 September 2026). Every entry in this file carried
+ * `new Date()`, so all 1,049 URLs shared the identical build timestamp and
+ * each deploy told Google the whole site had just changed. That is worthless
+ * as a crawl signal, and actively misleading on a site that is mostly stable
+ * reference content: the pages that genuinely did change are buried among
+ * hundreds that did not.
+ *
+ * The map is generated in prebuild from one git pass and committed, so a bare
+ * `next build` still ships real dates. `now` remains the fallback for a route
+ * the map does not cover - a dynamic entry, or a page added since the last
+ * generator run - because a missing date is worse than an imprecise one.
+ */
+function lastmodFor(route: string, fallback: Date): Date {
+  const iso = (ROUTE_LASTMOD as Record<string, string>)[route]
+  if (!iso) return fallback
+  const d = new Date(iso)
+  return Number.isNaN(d.getTime()) ? fallback : d
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date()
   const entries = new Map<string, Entry>()
@@ -105,7 +128,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const override = PRIORITY_OVERRIDES[route]
     entries.set(route, {
       url: route === '/' ? BASE : `${BASE}${route}`,
-      lastModified: now,
+      lastModified: opts.lastModified ?? lastmodFor(route, now),
       changeFrequency:
         demoted?.changeFrequency ?? (opts.changeFrequency as ChangeFreq) ?? d.changeFrequency,
       priority: demoted?.priority ?? override ?? opts.priority ?? d.priority,
