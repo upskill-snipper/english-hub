@@ -1,11 +1,11 @@
-# Handover — The English Hub
+# Handover - The English Hub
 
 **Written 18 September 2026**, at the end of a week that started with the AI
 product being dead in production and ended with a customer discovering, on our
 behalf, that we had revoked the subscription she had paid for.
 
 Read this once, end to end, before your first change. It is long because the
-expensive things here are not in the code — they are in what the code _claims_
+expensive things here are not in the code - they are in what the code _claims_
 about itself, and in a database that does not match its own migration history.
 
 Everything below is either verified against production or attributed. Where
@@ -17,15 +17,15 @@ elsewhere in this repo as a hypothesis.
 ## 1. Status right now
 
 `main` is at the identity fix. Working tree clean apart from `public/llms.txt`,
-which is a build-generated date stamp — leave it.
+which is a build-generated date stamp - leave it.
 
 **What is healthy:**
 
 - AI marking and feedback work. Models are env-overridable
   (`ANTHROPIC_MODEL`, `MARKING_MARKER_MODEL`, `MARKING_ESCALATION_MODEL`,
   `MARKING_CLASSIFIER_MODEL`); the Anthropic account is in credit.
-- All four paying subscribers have `subscription_status = 'pro'`.
-- The AI-consent gate has a control that actually grants consent — until
+- All paying subscribers hold `subscription_status = 'pro'`.
+- The AI-consent gate has a control that actually grants consent - until
   18 September it told people to change a setting that did not exist anywhere.
 - `profiles.is_minor` now exists, so identity reads succeed.
 - `rate_limit_counter` exists in production and the Postgres rate-limit backend
@@ -35,7 +35,7 @@ which is a build-generated date stamp — leave it.
 
 - **Four `progress_*` tables do not exist** (`progress_poems`, `progress_games`,
   `progress_quizzes`, `progress_reading_age`), while eight files read and write
-  them — including the `/api/progress/*` routes the mobile app calls. Progress
+  them - including the `/api/progress/*` routes the mobile app calls. Progress
   tracking is silently dead.
 - **Six `marking_submissions` columns do not exist**
   (`needs_human_review`, `proposed_overall_band`, `pack_version`, `band_range`,
@@ -43,7 +43,7 @@ which is a build-generated date stamp — leave it.
   escalation path.
 - **Rate limiting is deployed but unproven.** `getRateLimitHealth()` reports
   `'unproven'` until a decision has genuinely come back enforced, and it has no
-  caller and no route — so you cannot read it against production without
+  caller and no route - so you cannot read it against production without
   shipping something first.
 
 Run `node --env-file=.env.local scripts/check-schema-drift.mjs` to see the first
@@ -58,7 +58,7 @@ signed-out IELTS diagnostic at the top of the funnel; a paid tier
 (`profiles.subscription_status = 'pro'`) for AI marking and premium material.
 Separate IELTS entitlement (`profiles.ielts_status`). Schools, teachers and
 parent-linked accounts exist. There is a **live mobile app** in a different
-repo, `D:\Coding\english-hub-mobile`, which calls this one's API — treat
+repo, `D:\Coding\english-hub-mobile`, which calls this one's API - treat
 `/api/me/entitlements`, `/api/mark/stream`, `/api/progress`, `/api/flags` and
 `/api/revenuecat/webhook` as a published contract with a client you cannot see.
 The `mobile/` folder _inside_ this repo is a dead prototype; do not develop in it.
@@ -78,7 +78,7 @@ the fail-closed defaults exist for that reason.
 
 Supabase `auth.users` and `profiles` are keyed on a **uuid**. Prisma `User.id`
 is a **cuid**, and every Prisma foreign key references it. Email confirmation is
-on, so most signups never reached `/api/auth/register` and have no Prisma row —
+on, so most signups never reached `/api/auth/register` and have no Prisma row -
 **200 auth users, 200 profiles rows, 8 Prisma User rows** when this was found.
 
 Five subsystems keyed on `User.id` while every caller passed the uuid. All five
@@ -86,7 +86,7 @@ addressed nothing, and all five failed quietly:
 
 - the consent ledger could not be written, so every signed-in user was locked
   out of every AI feature;
-- account deletion returned `{ success: true }` having deleted nothing — an
+- account deletion returned `{ success: true }` having deleted nothing - an
   Art.17 erasure that erased nothing;
 - DSAR export refused Art.15 requests for data demonstrably held;
 - the AI decision log could never write a row, which is why two model outages
@@ -94,15 +94,15 @@ addressed nothing, and all five failed quietly:
 - the Stripe webhook never wrote a `Subscription` row for any paying customer.
 
 **The rule:** routes pass the Supabase uuid and never handle a cuid. Anything
-needing a Prisma row calls `requirePrismaUserId()` (throws — use where failure
-must block) or `tryPrismaUserId()` (returns null — read paths only), both from
+needing a Prisma row calls `requirePrismaUserId()` (throws - use where failure
+must block) or `tryPrismaUserId()` (returns null - read paths only), both from
 `@/lib/identity`. `projectSupabaseUser()` is the only function permitted to
 create or adopt a `User` row, and projection is additive-only: no Consent row,
 no `parentId` (writing `parentId` _is_ granting parental consent), no
 Subscription, no invented date of birth.
 
-**The exception you must not "tidy":** tables referencing `profiles(id)` —
-notably `parental_consents.student_user_id` — are keyed on the **Supabase uuid**.
+**The exception you must not "tidy":** tables referencing `profiles(id)` -
+notably `parental_consents.student_user_id` - are keyed on the **Supabase uuid**.
 Swapping in the Prisma id there breaks the parental gate.
 
 ### 3.2 One entitlement field, one person, several subscriptions
@@ -131,7 +131,7 @@ before touching the entitlement, via `findDuplicateSubscription` in
 **Two traps in the same area.** `handleSubscriptionDeleted` also writes
 `subscription_end_date` from `ended_at`, and the stale-event guard on
 `customer.subscription.updated` then refuses to re-grant Pro once that date has
-passed — so repairing a locked-out customer by touching their good subscription
+passed - so repairing a locked-out customer by touching their good subscription
 in the Stripe dashboard **fails silently**, logging `Refusing to re-grant Pro`
 while the dashboard shows Active and paid. And there are **two** entitlement
 sources: the web gates read `profiles.subscription_status`, while `/api/me` and
@@ -150,7 +150,7 @@ At least one had never actually run. `20260512_user_is_minor.sql` creates
 [`src/lib/identity/profiles.ts`](../src/lib/identity/profiles.ts) selects it on
 every identity read, so every read returned Postgres `42703`, the caller
 discarded the error, and `resolveAgeBand()` degraded to `UNKNOWN` for all 206
-accounts — blocking every consent-gated AI route, on a children's product, for
+accounts - blocking every consent-gated AI route, on a children's product, for
 four months, in silence. The tracker said applied. Checking the tracker, which
 is the obvious thing to do, confirmed the wrong answer.
 
@@ -158,7 +158,7 @@ is the obvious thing to do, confirmed the wrong answer.
 `_migrations_applied`.** `scripts/check-schema-drift.mjs` does exactly that.
 
 The runner also **skips silently when no database URL is in the environment**,
-which is why a local build cannot touch production — useful, but it means a
+which is why a local build cannot touch production - useful, but it means a
 local build proves nothing about migrations.
 
 ---
@@ -178,7 +178,7 @@ Five shapes, every one of them found in production code here:
    the table does.
 
 Nothing here crashes. Things fail and report success, and **the customer is the
-detection mechanism** — which is how a paying subscriber came to tell us that
+detection mechanism** - which is how a paying subscriber came to tell us that
 her account had been cut off.
 
 **Two live examples of shape 5 to fix, not admire:**
@@ -186,14 +186,14 @@ her account had been cut off.
 - `/api/health` is a hardcoded 200 with no dependency check. Pointing an uptime
   monitor at it buys a monitor that stays green through a total database outage.
 - `/api/health/ai` was built so a third model retirement would be a next-morning
-  alert. **Nothing calls it** — it is not in `vercel.json`'s 15 crons. It also
+  alert. **Nothing calls it** - it is not in `vercel.json`'s 15 crons. It also
   probes `ANTHROPIC_MODEL` only, so if `MARKING_MARKER_MODEL` is retired while
   `ANTHROPIC_MODEL` still resolves, it returns `status: 'ok'` while core marking
   is dead. _(Agent-reported, file:line cited, not personally re-verified.)_
 
 ---
 
-## 5. Open items — code
+## 5. Open items - code
 
 Ordered by what I would do first.
 
@@ -205,7 +205,7 @@ Ordered by what I would do first.
    schedule them deliberately and verify RLS afterwards. Do not run them
    casually mid-task.
 3. **Add a schema-contract test.** `npm test` is 2,265 tests in ten seconds and
-   mocks every database call — it passed throughout the outage in §3.3. A test
+   mocks every database call - it passed throughout the outage in §3.3. A test
    asserting that each selected column list exists would have caught it.
 4. **Prove rate limiting.** Expose `describeRateLimitHealth()` or write a probe
    that exercises a limited endpoint twice and reads the counter back. Only then
@@ -220,28 +220,40 @@ Ordered by what I would do first.
    no financial records. Needs a deliberate decision, not an invented counter.
 7. `/api/profile/dob` overwrites an existing date of birth unconditionally, so a
    minor can raise their own age by calling it directly.
-8. No `/es` route, deliberately — the decision and the five preconditions are
+8. No `/es` route, deliberately - the decision and the five preconditions are
    recorded in `src/middleware.ts`. Do not route it until Spanish study content
    exists.
 
-## 6. Open items — founder only
+## 6. What only the account owner can do
 
-You cannot do these. Only `sk_test_` Stripe keys are on this machine.
+Not a to-do list - a standing boundary. These are outside what you should do
+even when you can see exactly what needs doing, and the right output is a
+precise set of steps handed over, not an action taken.
 
-- **Void invoice `CIDZO9GL-0015`** and cancel `sub_1UDQF9KGB7EkqbaRCgC51ASA` if
-  still live (Fiona Ave). No refund — the duplicate never took money.
-- Run `scripts/find-duplicate-stripe-subscriptions.mjs` with live keys to find
-  anyone else. Read-only; it cannot charge, refund or cancel.
-- Check Edd Nicholls' failed £6.99 of 16 September.
-- Apply the goodwill free month to all four subscribers, **then** send the four
-  drafted emails in
-  `Desktop\The English Hub - Business\14 Customer Emails - Sept 2026`.
-  The briefing page there carries the gates — each email states things as
-  already done.
-- `UPSTASH_REDIS_REST_URL` / `_TOKEN` in Vercel. Optional now that Postgres
-  backs the limiter, but Redis remains the preferred backend.
+**Money.** Only `sk_test_` Stripe keys are on this machine, but the rule is not
+about keys. Never cancel, refund, charge, extend or void anything. Prepare the
+exact dashboard steps, say what you verified and what you could not, and hand it
+over. The same applies to anything that changes what a customer is billed.
 
----
+**Production environment variables.** Vercel settings are the owner's. Where a
+missing variable would break a feature, the code should degrade loudly rather
+than wait for the setting - see `resolveIpSalt()` in
+[`src/lib/usage/free-allowance.ts`](../src/lib/usage/free-allowance.ts), written
+after a missing `IP_HASH_SALT` took the top-of-funnel lead magnet offline.
+
+**Anything that sends to a real customer.** Drafts are yours; sending is not.
+Every claim in a customer email must be true at the moment it arrives, which
+usually means something has to be done in Stripe or deployed first. Say what the
+gates are.
+
+**Schema changes on live tables carrying RLS policies.** Adding a column is one
+thing; dropping and recreating row-level security on a table holding children's
+data is another. Those get scheduled deliberately, with the owner, and verified
+afterwards.
+
+**Publishing or altering compliance and sales collateral.** `business-docs/`
+contains statements handed to schools during procurement. Some are already wrong
+(see §7). Correcting them is real work with a real audience, not tidying.
 
 ## 7. Which documents to trust
 
@@ -249,9 +261,9 @@ You cannot do these. Only `sk_test_` Stripe keys are on this machine.
 
 | Question                          | Read                                                                                            |
 | --------------------------------- | ----------------------------------------------------------------------------------------------- |
-| Pricing                           | `src/constants/pricing.ts` — the source of truth. Every price in every `.md` has drifted.       |
+| Pricing                           | `src/constants/pricing.ts` - the source of truth. Every price in every `.md` has drifted.       |
 | Deploying                         | `DEPLOYMENT.md` sections 1, 2, 4, 6                                                             |
-| Rate limiting / compliance status | `business-docs/compliance/controls/rate-limiting-control-status.md` — declares itself canonical |
+| Rate limiting / compliance status | `business-docs/compliance/controls/rate-limiting-control-status.md` - declares itself canonical |
 | What is outstanding               | `LAUNCH-READINESS-2026-08-18.md` section C                                                      |
 | Decisions needing a human         | `BUSINESS-DECISIONS-NEEDED.md`                                                                  |
 | AI accuracy position              | `evals/README.md`, `evals/datasets/REAL-DATA-PROTOCOL.md`                                       |
@@ -259,21 +271,21 @@ You cannot do these. Only `sk_test_` Stripe keys are on this machine.
 **Known contradictions** _(agent-reported with file:line; spot-check before
 acting):_
 
-- `MONITORING.md` is wrong in most of its specifics — cron count, Sentry config
+- `MONITORING.md` is wrong in most of its specifics - cron count, Sentry config
   files, PostHog. Its one true line is that there is no external uptime monitor.
 - `DEPLOYMENT.md` section 3 lists four migrations; there are 81.
 - **Thirteen marketing documents promise creators 20% recurring commission.**
   The product pays a flat £5–£10 ladder per confirmed signup
   (`src/lib/affiliate/tiers.ts`) and has since April. The site copy was
-  corrected; the documents were not. A recent timestamp is not currency —
+  corrected; the documents were not. A recent timestamp is not currency -
   `CAMPAIGN_PACKS_v1.md` and `OUTREACH_MESSAGES_v2.md` were regenerated on
   17 September from a stale claim sheet and still carry both the 20% and a
   £3.49 price scrubbed from the site in August.
 - A customer-facing information security statement in
   `business-docs/sales-collateral/deployment-pack/` claims Redis-backed rate
   limiting and per-request CSP nonces. Neither is true, and a PDF of it already
-  exists in `dist/`. Check section 5 of the rate-limiting control document — it
-  has a "may not be said" table — before quoting any control to a school.
+  exists in `dist/`. Check section 5 of the rate-limiting control document - it
+  has a "may not be said" table - before quoting any control to a school.
 
 **Do not tidy the eighteen compliance documents** that say rate limiting is not
 enforced. The blocker sentence is stale; the status is correct. Section 9 of the
@@ -287,12 +299,12 @@ was wrong in the dangerous direction.
 1. `git log --oneline -5`, `git status --short`. Expect a clean tree apart from
    `public/llms.txt`.
 2. `npx tsc --noEmit` and `npx vitest run`. Expect 0 and ~2,265 passing. This is
-   your baseline for telling your breakage from inherited breakage — and
+   your baseline for telling your breakage from inherited breakage - and
    remember it proves nothing about production.
 3. `node --env-file=.env.local scripts/check-schema-drift.mjs`. Expect the
    `progress_*` tables and `marking_submissions` columns from §1. If anything
    else appears, that is new and worth raising immediately.
-4. Read `.env.local` — **variable names only, never echo values**. It points at
+4. Read `.env.local` - **variable names only, never echo values**. It points at
    the production Supabase project with the **service-role key**, so RLS does
    not apply to anything you run.
 5. Before running any script, check whether it writes:
@@ -304,7 +316,7 @@ was wrong in the dangerous direction.
    `src/lib/course-access.ts`, `src/lib/billing/duplicate-subscription-guard.ts`,
    `src/middleware.ts`. Together they are the actual architecture. The README
    still says Next.js 14; it is 15.5.
-7. `cat vercel.json` — 15 crons, region `lhr1`. Note which ones delete data.
+7. `cat vercel.json` - 15 crons, region `lhr1`. Note which ones delete data.
 8. Write to the owner before writing code. Tell him what you found that this
    document got wrong.
 
