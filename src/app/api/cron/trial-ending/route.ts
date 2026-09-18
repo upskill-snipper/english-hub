@@ -71,7 +71,8 @@ export const dynamic = 'force-dynamic'
  * derivable rather than a sentinel value stuffed into a column.
  *
  * The ledger row is written BEFORE the send and deleted again if the send
- * fails. That way a re-run (manual curl, Vercel retry, double schedule)
+ * fails. That way a re-run (a manual curl, a double schedule, or simply the
+ * next nightly firing - Vercel does not retry a failed cron: REL-6)
  * can never re-send, while a genuine delivery failure is still retried on
  * the next nightly run rather than being silently dropped.
  *

@@ -20,7 +20,9 @@ import * as Sentry from '@sentry/nextjs'
  *
  * On success: returns `200` with `{ ...result, durationMs }`.
  * On failure: captures to Sentry with tag `cron: <name>`, logs, and
- *             returns `500`. Vercel's cron retry will fire.
+ *             returns `500`, which is visible in the Vercel log and in
+ *             Sentry. NOTE: Vercel cron jobs are NOT retried on failure -
+ *             the next attempt is the next scheduled run (REL-6).
  */
 export async function runCron<T extends Record<string, unknown>>(
   name: string,
@@ -46,7 +48,9 @@ export async function runCron<T extends Record<string, unknown>>(
       extra: { durationMs },
     })
     console.error(`[cron:${name}] FAILED`, { durationMs, error: err })
-    // 500 so Vercel retries per its cron policy.
+    // 500 so the failure is visible in the Vercel log and in Sentry.
+    // It is NOT retried: Vercel cron jobs fire on schedule and a failed run
+    // is simply a missed run until the next one (REL-6, 19 September 2026).
     return Response.json(
       {
         ok: false,

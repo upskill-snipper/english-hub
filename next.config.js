@@ -242,9 +242,25 @@ const nextConfig = {
     ]
   },
 }
-module.exports = withBundleAnalyzer(withSentryConfig(nextConfig, {
-  silent: true,
-  hideSourceMaps: true,
-  disableServerWebpackPlugin: process.env.VERCEL === '1',
-  disableClientWebpackPlugin: process.env.VERCEL === '1',
-}))
+// REL-6 (19 September 2026): `hideSourceMaps`, `disableServerWebpackPlugin` and
+// `disableClientWebpackPlugin` were removed here. They were NOT doing what they
+// said. All three were dropped from @sentry/nextjs at v8 and this project is on
+// v10.55.0; they are absent from the SDK's own deprecated-option shim, so they
+// were silently ignored unknown keys.
+//
+// That matters because they read as a safety mechanism and were not one: the
+// comment said the webpack plugins were disabled on Vercel, and they were not
+// disabled at all. Anyone reasoning about the documented build hang would have
+// concluded a guard was in place. Deleting them changes no behaviour and stops
+// the file asserting something untrue.
+//
+// Source-map upload is deliberately NOT configured here. The documented route
+// is the CLI step already wired at package.json `sentry:sourcemaps` (see
+// RUNBOOK.md) - adding org/project/authToken here would activate the very
+// plugin recorded as hanging the build, with no working kill switch to fall
+// back on, because the keys that used to provide one no longer exist.
+module.exports = withBundleAnalyzer(
+  withSentryConfig(nextConfig, {
+    silent: true,
+  }),
+)

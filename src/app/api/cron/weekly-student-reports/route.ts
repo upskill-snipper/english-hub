@@ -23,7 +23,9 @@
  * unrecorded, errors }`. HTTP 200 on partial failures (a single bad row must
  * never abort the batch); `errors[]` carries a capped sample for follow-up
  * while the counters are always exact. A run where every attempted send
- * failed throws, so `runCron` reports it to Sentry and Vercel retries - which
+ * failed throws, so `runCron` reports it to Sentry. NOTE: Vercel does NOT
+ * retry a failed cron run (REL-6) - the ledger below is what makes the NEXT
+ * scheduled run safe, which
  * is now safe, because the ledger stops already-delivered students being
  * sent to twice.
  *
@@ -203,7 +205,7 @@ async function executeWeeklyStudentReports(): Promise<CronResult> {
   // ── Idempotency: who already had this week's digest? ───────────────
   //
   // Defect being fixed: the route had no send ledger of any kind, so any
-  // re-invocation (manual retry, Vercel cron retry after a timeout, a
+  // re-invocation (a manual curl, an overlapping schedule, a
   // duplicated schedule) re-sent the digest to every eligible student. One
   // query up front rather than one per student keeps this off the N+1 path;
   // the unique index on (student_id, week_starting) is the real guarantee.
@@ -445,7 +447,8 @@ async function executeWeeklyStudentReports(): Promise<CronResult> {
   // Individual failures stay non-fatal, but a run where every attempted
   // send failed is an outage (missing Resend key, provider down), not a
   // partial success. Throwing hands it to runCron, which captures to
-  // Sentry and returns 500 so Vercel retries - safe now that the ledger
+  // Sentry and returns 500 so the failure is visible. Vercel does not retry
+  // it (REL-6); the next scheduled run picks it up - safe now that the ledger
   // stops already-delivered students being sent to twice.
   if (sendable.length > 0 && result.sent === 0) {
     throw new Error(

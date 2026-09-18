@@ -115,7 +115,9 @@ export async function GET(request: NextRequest) {
     }
 
     // Throw if more than 10% of referrals failed so runCron returns 500 and
-    // Vercel cron retries (rather than silently succeeding with errors in the body).
+    // the failure is visible in Vercel's log and in Sentry (rather than
+    // silently succeeding with errors in the body). Vercel does not retry a
+    // failed cron run - the next scheduled firing is the next attempt (REL-6).
     const totalProcessed = pendingReferrals.length
     if (errors.length > 0 && errors.length > totalProcessed * 0.1) {
       const err = new Error(

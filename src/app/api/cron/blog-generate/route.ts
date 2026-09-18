@@ -376,7 +376,8 @@ function toBase64(s: string): string {
 /**
  * Open a PR: create a branch off base, write the .mdx and the updated queue on
  * that branch, then open the PR. Returns the PR URL. Throws on any API error so
- * runCron surfaces a 500 and Vercel retries.
+ * runCron surfaces a 500, which reaches Sentry. There is no retry: a failed
+ * Vercel cron run waits for the next scheduled firing (REL-6).
  */
 async function openBlogPr(
   env: GitHubEnv,
@@ -535,7 +536,8 @@ export async function GET(request: NextRequest) {
       const updated = queue.map((t, i) => (i === idx ? { ...t, status: 'needs-review' } : t))
       tryWriteQueueLocally(JSON.stringify(updated, null, 2) + '\n')
       // NOT an error: the gate did its job. Return 200 with the reasons so the
-      // run is visible in logs without triggering a Vercel retry storm.
+      // run is visible in logs. (There is no retry storm to trigger -
+      // Vercel cron does not retry a failed run at all: REL-6.)
       return {
         published: false,
         slug,

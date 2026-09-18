@@ -306,7 +306,8 @@ describe('cron /api/cron/weekly-student-reports', () => {
 
     sendViaResendMock.mockClear()
 
-    // Manual retry / Vercel cron retry / duplicated schedule.
+    // A manual curl, a duplicated schedule, or the next nightly firing.
+    // (Vercel does NOT retry a failed cron run - see REL-6.)
     const second = await runDigest()
     expect(second.status).toBe(200)
     expect(second.body.sent).toBe(0)
