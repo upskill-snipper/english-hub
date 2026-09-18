@@ -39,10 +39,20 @@ export const dynamic = 'force-dynamic'
  *     does not need this filter because `status = TRIALING` already
  *     excludes them; the follow-up query below keys on CANCELLED, which
  *     does not, so the filter is required here.
- *   • paymentCount = 0              - never taken a payment, so this can
- *                                     never reach a paying customer.
- * A paying or previously-paying customer can therefore never receive
- * either of these emails.
+ *   • paymentCount = 0              - no payment recorded on the row.
+ *
+ * A paying or previously-paying customer can therefore never receive either
+ * of these emails - but the guarantee rests on `stripeSubscriptionId = null`,
+ * NOT on `paymentCount`, and this comment used to say otherwise.
+ * `paymentCount` is incremented in exactly one place in the repository,
+ * `src/lib/revenuecat/reconcile.ts`, so it is 0 for every web customer no
+ * matter how many invoices Stripe has actually paid. Treat it as a
+ * RevenueCat-only counter and never as proof that nobody has paid. The
+ * filter is kept because it is correct for the mobile population and costs
+ * nothing, but the Stripe identity column is the load-bearing one: every
+ * row this repository writes for a Stripe subscription carries
+ * `subscription.id` there (see `src/lib/billing/subscription-sync.ts`), so
+ * a Stripe customer is structurally excluded from both queries.
  *
  * Idempotency ledger
  * ──────────────────

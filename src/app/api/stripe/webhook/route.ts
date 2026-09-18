@@ -7,6 +7,7 @@ import { attributeAffiliateReferral } from '@/lib/affiliate/attribution'
 import { calculateCommissionPence, getCurrentTierInfo } from '@/lib/affiliate/tiers'
 import { prisma } from '@/lib/prisma'
 import { captureGrandfatherFields, type Plan as PricingPlan } from '@/lib/pricing/grandfather'
+import { syncStripeSubscriptionToPrisma } from '@/lib/billing/subscription-sync'
 
 // Disable body parsing - we need the raw body for signature verification
 export const runtime = 'nodejs'
@@ -20,39 +21,20 @@ class WebhookMetadataError extends Error {
 }
 
 /**
- * Map a Stripe subscription `status` to our Prisma `SubscriptionStatus`
- * enum. Kept narrow on purpose - `incomplete` / `unpaid` etc. fall back
- * to `PAST_DUE` so the entitlement layer still revokes Pro access.
+ * ─── Identity note for every handler in this file ───────────────────────
+ *
+ * The `userId` a handler resolves - from `metadata.userId`, or from a
+ * `profiles` lookup by `stripe_customer_id` - is a SUPABASE auth uuid.
+ * `Subscription.userId` is a foreign key to the Prisma `User.id`, a cuid.
+ * Passing the uuid straight to Prisma is what silently dropped the
+ * subscription row for ~96% of customers. Every Prisma write keyed on a user
+ * goes through `syncStripeSubscriptionToPrisma`, which translates the uuid
+ * through the identity layer and reports loudly when it cannot.
+ *
+ * The Supabase `profiles` writes in these handlers keep using the uuid -
+ * that IS the primary key of `profiles`, and is correct there.
  */
-function mapStripeToPrismaStatus(
-  stripeStatus: Stripe.Subscription.Status,
-): 'ACTIVE' | 'CANCELLED' | 'PAST_DUE' | 'TRIALING' | 'PAUSED' {
-  switch (stripeStatus) {
-    case 'active':
-      return 'ACTIVE'
-    case 'trialing':
-      return 'TRIALING'
-    case 'past_due':
-    case 'unpaid':
-    case 'incomplete':
-    case 'incomplete_expired':
-      return 'PAST_DUE'
-    case 'canceled':
-      return 'CANCELLED'
-    case 'paused':
-      return 'PAUSED'
-    default:
-      return 'PAST_DUE'
-  }
-}
 
-/**
- * Upsert the public."Subscription" Prisma row that the rest of the app
- * (entitlements, renewal reminders, growth dashboard) reads from. The
- * Stripe webhook is the canonical point of truth for web-originated
- * subscriptions; without this call the row only existed for mobile
- * (RevenueCat) users.
- */
 /**
  * Sync the IELTS-specific entitlement (profiles.ielts_status) from a Stripe
  * subscription. IELTS is a STANDALONE product gated separately from the global
@@ -109,52 +91,32 @@ async function syncIeltsEntitlement(
   }
 }
 
-async function upsertStripeSubscriptionRow(
-  userId: string,
+/**
+ * Write the public."Subscription" Prisma row that the rest of the app
+ * (entitlements, trial lifecycle, renewal reminders, grandfathered pricing)
+ * reads from.
+ *
+ * `supabaseUserId` is the Supabase auth uuid this handler resolved. The
+ * translation to the Prisma `User.id` that the foreign key requires happens
+ * inside `syncStripeSubscriptionToPrisma`, which also does the reporting
+ * when the row cannot be written. Never throws.
+ *
+ * Returns the Prisma user id on success, or null - callers that need to
+ * touch the same row afterwards must check it rather than assume.
+ */
+async function recordSubscriptionRow(
+  supabaseUserId: string,
   subscription: Stripe.Subscription,
-): Promise<void> {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const sub = subscription as any
-  const periodStart = sub.current_period_start as number | undefined
-  const periodEnd = sub.current_period_end as number | undefined
-  // `items` is sometimes absent on test fixtures and on certain Stripe
-  // event shapes; tolerate that and default to MONTHLY.
-  const interval = subscription.items?.data?.[0]?.price?.recurring?.interval
-  const plan: 'MONTHLY' | 'ANNUAL' = interval === 'year' ? 'ANNUAL' : 'MONTHLY'
-  const status = mapStripeToPrismaStatus(subscription.status)
-  const cancelledAt =
-    subscription.status === 'canceled' && sub.ended_at ? new Date(sub.ended_at * 1000) : null
-
-  try {
-    await prisma.subscription.upsert({
-      where: { userId },
-      create: {
-        userId,
-        stripeCustomerId: subscription.customer as string,
-        stripeSubscriptionId: subscription.id,
-        plan,
-        status,
-        currentPeriodStart: periodStart ? new Date(periodStart * 1000) : new Date(),
-        currentPeriodEnd: periodEnd ? new Date(periodEnd * 1000) : new Date(),
-        cancelledAt,
-        platform: 'WEB',
-      },
-      update: {
-        stripeCustomerId: subscription.customer as string,
-        stripeSubscriptionId: subscription.id,
-        plan,
-        status,
-        ...(periodStart && { currentPeriodStart: new Date(periodStart * 1000) }),
-        ...(periodEnd && { currentPeriodEnd: new Date(periodEnd * 1000) }),
-        cancelledAt,
-      },
-    })
-  } catch (err) {
-    // Log but do not fail the webhook - the Supabase profile write is the
-    // load-bearing one for entitlement gating; the Prisma row is the
-    // canonical record for renewals / dashboards and can be back-filled.
-    console.error('[stripe/webhook] Failed to upsert Subscription row:', err)
-  }
+  source: string,
+  eventId?: string | null,
+): Promise<string | null> {
+  const result = await syncStripeSubscriptionToPrisma({
+    supabaseUserId,
+    subscription,
+    source,
+    eventId,
+  })
+  return result.ok ? result.prismaUserId : null
 }
 
 export async function POST(request: NextRequest) {
@@ -196,7 +158,7 @@ export async function POST(request: NextRequest) {
     switch (event.type) {
       case 'checkout.session.completed': {
         const session = event.data.object as Stripe.Checkout.Session
-        await handleCheckoutCompleted(session, supabase)
+        await handleCheckoutCompleted(session, supabase, event.id)
 
         // ── Affiliate attribution path 1: legacy Rewardful link-clicks ─
         // Cookie/link-based attribution from the older programme.
@@ -248,12 +210,20 @@ export async function POST(request: NextRequest) {
       }
 
       case 'customer.subscription.updated': {
-        await handleSubscriptionUpdated(event.data.object as Stripe.Subscription, supabase)
+        await handleSubscriptionUpdated(
+          event.data.object as Stripe.Subscription,
+          supabase,
+          event.id,
+        )
         break
       }
 
       case 'customer.subscription.deleted': {
-        await handleSubscriptionDeleted(event.data.object as Stripe.Subscription, supabase)
+        await handleSubscriptionDeleted(
+          event.data.object as Stripe.Subscription,
+          supabase,
+          event.id,
+        )
         break
       }
 
@@ -535,11 +505,11 @@ export async function POST(request: NextRequest) {
           throw error
         }
 
-        // Mirror to the Prisma `Subscription` row so entitlements,
-        // renewal reminders, and the growth dashboard see the new
-        // subscription. (Until now this row was only created by the
-        // RevenueCat mobile reconciler.)
-        await upsertStripeSubscriptionRow(userId, subscription)
+        // Mirror to the Prisma `Subscription` row so entitlements, the trial
+        // lifecycle, renewal reminders and the growth dashboard see the new
+        // subscription. `userId` here is a Supabase auth uuid - see the
+        // identity note at the top of this file.
+        await recordSubscriptionRow(userId, subscription, event.type, event.id)
         break
       }
 
@@ -744,7 +714,9 @@ async function recordCodeBasedConversion({
 async function handleCheckoutCompleted(
   session: Stripe.Checkout.Session,
   supabase: ReturnType<typeof createServiceRoleClient>,
+  eventId?: string | null,
 ) {
+  // Supabase auth uuid - `profiles.id`, NOT the Prisma `User.id`.
   const userId = session.metadata?.userId
   if (!userId) {
     throw new WebhookMetadataError(
@@ -791,36 +763,57 @@ async function handleCheckoutCompleted(
     // is the first event in the subscription lifecycle, so the rest of
     // the app sees the new subscription immediately rather than waiting
     // for the trailing `customer.subscription.created`.
-    await upsertStripeSubscriptionRow(userId, subscription)
+    const prismaUserId = await recordSubscriptionRow(
+      userId,
+      subscription,
+      'checkout.session.completed',
+      eventId,
+    )
 
     // Grandfathering capture (R-031). Lock the price + tier on the Prisma
     // Subscription row at signup so renewals after the Aug 2026 Standard
     // rollover still charge / display the Early Access price. Preserves any
     // pre-existing locked price on an existing row - never overwrites.
-    try {
-      const existingSub = await prisma.subscription.findUnique({ where: { userId } })
-      if (!existingSub?.grandfatheredPriceMinor) {
-        const isTeacherPlan = existingSub?.isTeacherPlan ?? false
-        const plan: PricingPlan =
-          existingSub?.plan === 'ANNUAL' ||
-          subscription.items.data[0]?.price?.recurring?.interval === 'year'
-            ? 'ANNUAL'
-            : 'MONTHLY'
-        const grandfather = captureGrandfatherFields(plan, isTeacherPlan ? 'teacher' : 'student')
-        if (existingSub) {
-          await prisma.subscription.update({
-            where: { userId },
-            data: {
-              grandfatheredPriceMinor: grandfather.grandfatheredPriceMinor,
-              grandfatheredCurrency: grandfather.grandfatheredCurrency,
-              pricingTier: grandfather.pricingTier,
-            },
-          })
+    //
+    // This block was querying `where: { userId }` with the SUPABASE uuid as
+    // well, so `existingSub` was always null and the `if (existingSub)` guard
+    // meant nothing was ever written: no web subscriber has a locked price
+    // recorded. It now uses the Prisma id the row was actually written
+    // against, and is skipped entirely when the row could not be written (the
+    // sync call above has already reported that).
+    if (!prismaUserId) {
+      console.error(
+        '[stripe/webhook] Skipping grandfather capture: no Subscription row for session',
+        { sessionId: session.id, supabaseUserId: userId },
+      )
+    } else {
+      try {
+        const existingSub = await prisma.subscription.findUnique({
+          where: { userId: prismaUserId },
+        })
+        if (!existingSub?.grandfatheredPriceMinor) {
+          const isTeacherPlan = existingSub?.isTeacherPlan ?? false
+          const plan: PricingPlan =
+            existingSub?.plan === 'ANNUAL' ||
+            subscription.items.data[0]?.price?.recurring?.interval === 'year'
+              ? 'ANNUAL'
+              : 'MONTHLY'
+          const grandfather = captureGrandfatherFields(plan, isTeacherPlan ? 'teacher' : 'student')
+          if (existingSub) {
+            await prisma.subscription.update({
+              where: { userId: prismaUserId },
+              data: {
+                grandfatheredPriceMinor: grandfather.grandfatheredPriceMinor,
+                grandfatheredCurrency: grandfather.grandfatheredCurrency,
+                pricingTier: grandfather.pricingTier,
+              },
+            })
+          }
         }
+      } catch (err) {
+        // Non-fatal - grandfathering capture must not break checkout.
+        console.error('[stripe/webhook] Grandfather capture failed (non-fatal):', err)
       }
-    } catch (err) {
-      // Non-fatal - grandfathering capture must not break checkout.
-      console.error('[stripe/webhook] Grandfather capture failed (non-fatal):', err)
     }
   }
 
@@ -852,7 +845,9 @@ async function handleCheckoutCompleted(
 async function handleSubscriptionUpdated(
   subscription: Stripe.Subscription,
   supabase: ReturnType<typeof createServiceRoleClient>,
+  eventId?: string | null,
 ) {
+  // Supabase auth uuid throughout - see the identity note at the top.
   let userId = subscription.metadata?.userId
   if (!userId) {
     // Fallback: look up user by stripe_customer_id
@@ -945,13 +940,15 @@ async function handleSubscriptionUpdated(
   await syncIeltsEntitlement(userId, subscription, supabase)
 
   // Keep the Prisma `Subscription` row in lock-step with the profile.
-  await upsertStripeSubscriptionRow(userId, subscription)
+  await recordSubscriptionRow(userId, subscription, 'customer.subscription.updated', eventId)
 }
 
 async function handleSubscriptionDeleted(
   subscription: Stripe.Subscription,
   supabase: ReturnType<typeof createServiceRoleClient>,
+  eventId?: string | null,
 ) {
+  // Supabase auth uuid throughout - see the identity note at the top.
   let userId = subscription.metadata?.userId
   if (!userId) {
     // Fallback: look up user by stripe_customer_id
@@ -999,7 +996,7 @@ async function handleSubscriptionDeleted(
   await syncIeltsEntitlement(userId, subscription, supabase)
 
   // Mirror cancellation onto the Prisma `Subscription` row.
-  await upsertStripeSubscriptionRow(userId, subscription)
+  await recordSubscriptionRow(userId, subscription, 'customer.subscription.deleted', eventId)
 
   // Void any pending/confirmed affiliate commissions for this subscription
   const { error: voidError, count: voidedCount } = await supabase
@@ -1019,6 +1016,47 @@ async function handleSubscriptionDeleted(
   }
 }
 
+/**
+ * `customer.subscription.trial_will_end` - Stripe fires this three days
+ * before `trial_end` on any subscription that has a trial.
+ *
+ * WHO RECEIVES THIS. A checkout started at /api/stripe/checkout always sets
+ * `subscription_data.trial_period_days = PRICING.TRIAL_DAYS`, so every
+ * subscriber who came through that route - monthly or annual - gets this
+ * email three days into their first week. It is not limited to people who
+ * have paid nothing: it is the card-on-file trial notice, and the customer
+ * has already entered payment details and chosen a plan.
+ *
+ * Not every web subscription comes through there. /api/promo/redeem creates
+ * an annual subscription with no trial, so Stripe fires no trial_will_end for
+ * it and those customers never see this email.
+ *
+ * That is why the copy below is careful about the charge. The previous
+ * wording said only that "your subscription will automatically begin", which
+ * an annual subscriber who believes they have already bought a year reads as
+ * "we are about to bill you a second time" - and at least one customer did
+ * read it exactly that way and wrote in.
+ *
+ * The copy names the one payment THIS subscription takes and stops there. It
+ * deliberately does NOT say the charge is not a duplicate of something else,
+ * because nothing here checks that: neither checkout route looks at whether
+ * the customer already holds a live subscription, so a genuine second
+ * subscription is possible and this handler cannot see it. Asserting "not an
+ * extra charge" would be reassuring exactly the customer we would be wrong
+ * about. Instead the copy invites them to tell us, and promises the refund.
+ *
+ * Claims in this email and what supports them:
+ *   - the trial end date: `subscription.trial_end` on the Stripe object.
+ *   - "the first payment for the plan you chose": every trial here is the
+ *     7-day trial attached at checkout, so the invoice at trial end is the
+ *     first one on this subscription.
+ *   - No amount is stated. The Stripe object in hand is the subscription,
+ *     not the upcoming invoice, so an amount here would be asserted rather
+ *     than read, and a wrong figure in a billing email is worse than none.
+ *   - "your billing page shows your plan and the date it renews" and the
+ *     Manage subscription button: both are rendered by
+ *     src/app/account/billing/page.tsx.
+ */
 async function handleTrialWillEnd(
   subscription: Stripe.Subscription,
   supabase: ReturnType<typeof createServiceRoleClient>,
@@ -1080,18 +1118,27 @@ async function handleTrialWillEnd(
     return
   }
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://theenglishhub.app'
+  const billingUrl = `${siteUrl}/account/billing`
   const fromAddress = 'The English Hub <noreply@theenglishhub.app>'
   const subject = 'Your free trial is ending soon - The English Hub'
+  const endingPhrase = trialEndFormatted === 'soon' ? 'soon' : `on ${trialEndFormatted}`
 
   const html = [
-    `<h2>Your trial is ending ${trialEndFormatted === 'soon' ? 'soon' : `on ${trialEndFormatted}`}</h2>`,
+    `<h2>Your trial is ending ${endingPhrase}</h2>`,
     `<p>Hi there,</p>`,
     `<p>Just a friendly heads-up that your free trial of <strong>The English Hub Premium</strong> ` +
-      `will end <strong>${trialEndFormatted === 'soon' ? 'soon' : `on ${trialEndFormatted}`}</strong>.</p>`,
-    `<p>After your trial ends, your subscription will automatically begin and you'll continue ` +
-      `to have full access to all Premium features.</p>`,
-    `<p>If you'd like to make changes to your plan or cancel before the trial ends, you can ` +
-      `manage your subscription from your account settings.</p>`,
+      `will end <strong>${endingPhrase}</strong>.</p>`,
+    `<p>When it does, this subscription starts and we take the first payment for the plan you ` +
+      `chose when you signed up. That is the only payment this subscription takes before it ` +
+      `renews.</p>`,
+    `<p>Your <a href="${billingUrl}">billing page</a> shows your plan and the date it renews, ` +
+      `and the Manage subscription button there opens your billing portal, where you can change ` +
+      `or cancel the plan before the trial ends.</p>`,
+    `<p>If you think you already hold another subscription with us, or anything on that page ` +
+      `does not look right, email ` +
+      `<a href="mailto:support@theenglishhub.app">support@theenglishhub.app</a>. We will check ` +
+      `it, and refund anything that has been taken twice.</p>`,
     `<br />`,
     `<p>Best regards,<br />The English Hub Team</p>`,
   ].join('\n')
