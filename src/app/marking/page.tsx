@@ -84,11 +84,45 @@ export default function MarkingHubPage() {
   const { board: userBoard, isHydrated: isBoardHydrated } = useBoard()
 
   useEffect(() => {
-    try {
-      const raw = localStorage.getItem('english-hub-marking-history')
-      if (raw) setHistory(JSON.parse(raw))
-    } catch {
-      /* ignore */
+    // SF-2: server first, localStorage as a merge fallback. This list used to
+    // come from this device only, so the "recent work" panel was empty for a
+    // student who had marked everything on a different one. See
+    // src/app/marking/history/page.tsx for the full note.
+    let cancelled = false
+
+    function readLocal(): MarkingHistoryEntry[] {
+      try {
+        const raw = localStorage.getItem('english-hub-marking-history')
+        return raw ? (JSON.parse(raw) as MarkingHistoryEntry[]) : []
+      } catch {
+        return []
+      }
+    }
+
+    const local = readLocal()
+    if (local.length > 0) setHistory(local)
+    ;(async () => {
+      try {
+        const res = await fetch('/api/submissions?limit=10')
+        if (!res.ok) throw new Error(String(res.status))
+        const body = (await res.json()) as {
+          data?: { submissions?: MarkingHistoryEntry[] }
+          submissions?: MarkingHistoryEntry[]
+        }
+        const server = body.data?.submissions ?? body.submissions ?? []
+        if (cancelled) return
+        const seen = new Set(server.map((e) => e.id))
+        const merged = [...server, ...readLocal().filter((e) => !seen.has(e.id))].sort((a, b) =>
+          (b.submittedAt ?? '').localeCompare(a.submittedAt ?? ''),
+        )
+        setHistory(merged)
+      } catch {
+        if (!cancelled) setHistory(readLocal())
+      }
+    })()
+
+    return () => {
+      cancelled = true
     }
   }, [])
 

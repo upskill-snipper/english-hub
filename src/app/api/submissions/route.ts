@@ -1,4 +1,4 @@
-// ─── POST /api/submissions ───────────────────────────────────────────────────
+// ─── GET + POST /api/submissions ─────────────────────────────────────────────
 // Unified submission INSERT path for the teacher-in-the-loop marking spine.
 //
 // Creates a `marking_submissions` row in status 'submitted'. It does NOT run
@@ -37,7 +37,9 @@ import {
 import { getMarkScheme } from '@/lib/marking/mark-schemes'
 import {
   insertSubmission,
+  listSubmissionsForStudent,
   resolveSubmissionContext,
+  studentCanSeeGrade,
   type SubmissionSource,
 } from '@/lib/marking/persistence'
 
@@ -147,6 +149,80 @@ function validateBody(
 }
 
 // ─── Handler ─────────────────────────────────────────────────────────────────
+
+/**
+ * GET /api/submissions - the signed-in student's own marking history.
+ *
+ * WHY THIS EXISTS (19 September 2026, SF-2). `/marking/history` and the
+ * `/marking` landing page read history from `localStorage` and nowhere else,
+ * and no list endpoint existed to read instead: `GET /api/marking/{id}` is
+ * per-id and this file exported only POST. A student who marked essays on the
+ * school desktop saw an empty history and an empty progress graph on their
+ * phone. The work was in `marking_submissions` the whole time; nothing could
+ * ask for it. Clearing browser data had the same effect, permanently.
+ *
+ * DELIBERATELY UNGATED. No subscription check and no consent check: this reads
+ * a student's OWN past work. Gating it would mean a learner whose subscription
+ * lapsed could no longer see the essays they already wrote, which is a
+ * data-access answer we should not give. The AI gates stay on POST, where the
+ * spend and the processing actually happen.
+ *
+ * SCOPED BY RLS, NOT BY ARGUMENT. Uses the request-scoped client, so
+ * `marking_submissions_students_select` (auth.uid() = student_id) decides what
+ * comes back. A mistake in the user id passed below cannot return another
+ * child's essays, because the database would refuse them.
+ */
+export async function GET(request: NextRequest) {
+  try {
+    // 1. Authenticate.
+    const supabase = createServerSupabaseClient()
+    const {
+      data: { user },
+      error: authError,
+    } = await supabase.auth.getUser()
+    if (authError || !user) {
+      return unauthorizedResponse('You must be signed in to view your marking history.')
+    }
+
+    // 2. Rate limit. Generous - this is a page load, not an AI call.
+    const rl = await rateLimit(`submissions-list:${user.id}`, {
+      limit: 60,
+      windowSeconds: 60,
+    })
+    if (!rl.success) {
+      return rateLimitResponse(rl.resetAt)
+    }
+
+    // 3. Bounded page size.
+    const rawLimit = Number(request.nextUrl.searchParams.get('limit') ?? '50')
+    const limit = Number.isFinite(rawLimit) ? Math.min(50, Math.max(1, Math.trunc(rawLimit))) : 50
+
+    // 4. Read through the AUTH client so RLS is the gate.
+    let submissions
+    try {
+      submissions = await listSubmissionsForStudent(supabase, user.id, limit)
+    } catch (dbErr) {
+      // Degrade to an empty history rather than a 500: the screen has a
+      // sensible empty state, and a student seeing "no essays yet" for one
+      // load is far better than an error page. The local fallback on the
+      // client still renders whatever that device knows about.
+      console.error('[api/submissions] list failed', dbErr)
+      return successResponse({ submissions: [] })
+    }
+
+    // 5. Apply the same visibility safeguard the per-id route uses. A mark
+    //    that a teacher has not yet approved must not reach a school pupil
+    //    through a list view just because the per-id route withholds it.
+    const visible = submissions.map((row) =>
+      studentCanSeeGrade(row.status, row.source) ? row : { ...row, grade: null, gradeBand: null },
+    )
+
+    return successResponse({ submissions: visible })
+  } catch (err) {
+    console.error('[api/submissions] GET failed', err)
+    return serverErrorResponse('Failed to load your marking history.')
+  }
+}
 
 export async function POST(request: NextRequest) {
   try {

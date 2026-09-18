@@ -348,3 +348,151 @@ export function deriveUncertaintyFlags(result: MarkingResult, extra?: readonly s
   }
   return flags
 }
+
+// ─── List (the student's own history) ────────────────────────────────────────
+//
+// WHY THIS EXISTS (19 September 2026, SF-2)
+// `/marking/history` and the `/marking` landing page read the student's
+// marking history from `localStorage` and nowhere else. The server had no list
+// endpoint at all: `GET /api/marking/{id}` is per-id, and
+// `/api/submissions` exported only `POST`.
+//
+// So a student who marked essays on the school desktop and then opened the
+// site on their phone saw an empty history and an empty progress graph. Their
+// work was safe in `marking_submissions` the whole time; nothing could ask for
+// it. Clearing browser data had the same effect, permanently.
+//
+// The list is deliberately NARROW. `SUBMISSION_SELECT` is the full row
+// including `essay_text` and `ai_result`; a history screen needs neither, and
+// shipping a child's essay bodies to render a list of titles would be a
+// gratuitous widening of what crosses the wire.
+
+/** One row of a student's marking history, as the history screens consume it. */
+export interface SubmissionListItem {
+  id: string
+  title: string
+  board: string
+  paper: string
+  markSchemeId: string | null
+  /** null when unmarked, or when the mark is not yet visible to the student. */
+  grade: number | null
+  gradeBand: string | null
+  wordCount: number
+  status: SubmissionStatus
+  source: string
+  submittedAt: string
+}
+
+/**
+ * Columns for the list view.
+ *
+ * `essay_text` is selected but NEVER returned - it is read only to compute a
+ * word count, then dropped in the mapper below.
+ *
+ * `teacher_grade` is here because the per-id hydration this replaces resolved
+ * the displayed mark as `teacher_grade ?? ai_grade`. Selecting only `ai_grade`
+ * would have quietly shown a school pupil the AI's draft mark in place of the
+ * teacher's approved one - a worse answer than the one being replaced.
+ */
+export const SUBMISSION_LIST_SELECT = `
+  id,
+  question_text,
+  essay_title,
+  exam_board,
+  paper,
+  mark_scheme_id,
+  ai_grade,
+  ai_grade_band,
+  ai_score,
+  ai_max_marks,
+  teacher_grade,
+  status,
+  source,
+  submitted_at,
+  essay_text
+`
+
+/**
+ * `ai_grade` and `teacher_grade` are TEXT in the table, not integers - GCSE
+ * grades are written like '7', 'Grade 7', '8/9'. The history screen needs a
+ * number to average and to plot.
+ *
+ * Returns the first standalone 1-9 found, or null. Anything unparseable
+ * becomes null rather than 0: an unmarked essay counted as a zero would drag
+ * a student's average down and show them a false decline on their progress
+ * graph, which is the one thing this screen must never do.
+ */
+export function parseGradeToNumber(value: unknown): number | null {
+  if (typeof value === 'number') {
+    return Number.isFinite(value) && value >= 1 && value <= 9 ? value : null
+  }
+  if (typeof value !== 'string') return null
+  const match = value.match(/\b([1-9])\b/)
+  return match ? Number(match[1]) : null
+}
+
+/** Word count from the essay body, which is then discarded. */
+function wordCountOf(essay: unknown): number {
+  if (typeof essay !== 'string') return 0
+  const trimmed = essay.trim()
+  if (!trimmed) return 0
+  return trimmed.split(/\s+/).length
+}
+
+/**
+ * List a student's own submissions, newest first.
+ *
+ * Pass the REQUEST-SCOPED client, not the service-role one: the RLS policy
+ * `marking_submissions_students_select` (auth.uid() = student_id) is then the
+ * only thing that decides what comes back, so a bug in the `studentId`
+ * argument cannot return another child's work.
+ */
+export async function listSubmissionsForStudent(
+  client: SupabaseClient,
+  studentId: string,
+  limit: number,
+): Promise<SubmissionListItem[]> {
+  const { data, error } = await client
+    .from(SUBMISSIONS_TABLE)
+    .select(SUBMISSION_LIST_SELECT)
+    .eq('student_id', studentId)
+    .order('submitted_at', { ascending: false })
+    .limit(limit)
+
+  if (error) throw error
+  if (!data) return []
+
+  return (data as Record<string, unknown>[]).map((row) => ({
+    id: String(row.id),
+    // `essay_title` is NULL on every row the spine writes - insertSubmission
+    // never sets it. Falling back to the question text keeps the list
+    // readable instead of rendering a column of blanks.
+    title: (row.essay_title as string | null) ?? (row.question_text as string | null) ?? 'Untitled',
+    board: (row.exam_board as string | null) ?? '',
+    paper: (row.paper as string | null) ?? '',
+    markSchemeId: (row.mark_scheme_id as string | null) ?? null,
+    grade: parseGradeToNumber(row.teacher_grade) ?? parseGradeToNumber(row.ai_grade),
+    gradeBand: (row.ai_grade_band as string | null) ?? null,
+    wordCount: wordCountOf(row.essay_text),
+    status: row.status as SubmissionStatus,
+    source: String(row.source ?? ''),
+    submittedAt: String(row.submitted_at ?? ''),
+  }))
+}
+
+/**
+ * Whether a student may see the mark on their own submission yet.
+ *
+ * Mirrors the per-id route's safeguard exactly (see
+ * `src/app/api/marking/[submissionId]/route.ts`). In particular 'returned' IS
+ * visible for school pupils: it is teacher-initiated and always carries their
+ * comments, and withholding it made "send back to student" a no-op from the
+ * student's side. That was a real bug once; it must not come back through the
+ * list endpoint.
+ */
+export function studentCanSeeGrade(status: SubmissionStatus, source: string): boolean {
+  if (source === 'b2b_class') {
+    return status === 'approved' || status === 'returned'
+  }
+  return status === 'ai_marked' || status === 'approved' || status === 'returned'
+}

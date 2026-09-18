@@ -21,65 +21,85 @@ interface HistoryEntry {
   serverBacked?: boolean
 }
 
+/** One row of `GET /api/submissions`. */
+interface ServerSubmission {
+  id: string
+  title: string
+  board: string
+  paper: string
+  grade: number | null
+  wordCount: number
+  submittedAt: string
+}
+
 export default function MarkingHistoryPage() {
   const tx = useT()
   const [entries, setEntries] = useState<HistoryEntry[]>([])
   const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
-    let stored: HistoryEntry[] = []
-    try {
-      const raw = localStorage.getItem('english-hub-marking-history')
-      if (raw) stored = JSON.parse(raw) as HistoryEntry[]
-    } catch {
-      /* ignore */
-    }
-    setEntries(stored)
-    setLoaded(true)
-
-    // Hydrate real grades for server-marked submissions. The local stub is
-    // written at submit time before marking finishes, so without this the
-    // entry stays unmarked forever even after the AI has graded it.
-    const pending = stored.filter(
-      (e) => e.serverBacked && (e.grade === null || e.grade === undefined),
-    )
-    if (pending.length === 0) return
-
+    // SF-2 (19 September 2026). This screen used to read `localStorage` and
+    // nothing else, so a student who marked essays on the school desktop saw
+    // an empty history - and an empty progress graph - on their phone. Their
+    // work was in the database the whole time; this page had no way to ask
+    // for it, because no list endpoint existed.
+    //
+    // The server is now the primary source. localStorage is kept as a MERGE
+    // fallback rather than deleted: legacy entries written by the older
+    // /api/mark path were never persisted server-side at all, and dropping
+    // them would delete history a student can currently see.
     let cancelled = false
+
+    function readLocal(): HistoryEntry[] {
+      try {
+        const raw = localStorage.getItem('english-hub-marking-history')
+        return raw ? (JSON.parse(raw) as HistoryEntry[]) : []
+      } catch {
+        return []
+      }
+    }
+
+    // Paint what this device knows immediately, so the screen is not blank
+    // while the request is in flight.
+    const local = readLocal()
+    if (local.length > 0) setEntries(local)
     ;(async () => {
-      const resolved = await Promise.all(
-        pending.map(async (e) => {
-          try {
-            const res = await fetch(`/api/marking/${encodeURIComponent(e.id)}`)
-            if (!res.ok) return null
-            const body = (await res.json()) as {
-              data?: { submission?: { teacher_grade?: number | null; ai_grade?: number | null } }
-              submission?: { teacher_grade?: number | null; ai_grade?: number | null }
-            }
-            const row = body.data?.submission ?? body.submission
-            const grade = row?.teacher_grade ?? row?.ai_grade ?? null
-            return typeof grade === 'number' ? { id: e.id, grade } : null
-          } catch {
-            return null
-          }
-        }),
-      )
-      if (cancelled) return
-      const updates = new Map(
-        resolved
-          .filter((r): r is { id: string; grade: number } => r !== null)
-          .map((r) => [r.id, r.grade]),
-      )
-      if (updates.size === 0) return
-      setEntries((prev) => {
-        const next = prev.map((e) => (updates.has(e.id) ? { ...e, grade: updates.get(e.id)! } : e))
-        try {
-          localStorage.setItem('english-hub-marking-history', JSON.stringify(next))
-        } catch {
-          /* ignore */
+      try {
+        const res = await fetch('/api/submissions?limit=50')
+        if (!res.ok) throw new Error(String(res.status))
+        const body = (await res.json()) as {
+          data?: { submissions?: ServerSubmission[] }
+          submissions?: ServerSubmission[]
         }
-        return next
-      })
+        const server = body.data?.submissions ?? body.submissions ?? []
+        if (cancelled) return
+
+        const serverEntries: HistoryEntry[] = server.map((row) => ({
+          id: row.id,
+          title: row.title,
+          board: row.board,
+          paper: row.paper,
+          grade: typeof row.grade === 'number' ? row.grade : null,
+          wordCount: row.wordCount ?? 0,
+          submittedAt: row.submittedAt,
+          serverBacked: true,
+        }))
+
+        // Server rows win on id. Local entries survive only when the server
+        // has never heard of them.
+        const seen = new Set(serverEntries.map((e) => e.id))
+        const localOnly = readLocal().filter((e) => !seen.has(e.id))
+        const merged = [...serverEntries, ...localOnly].sort((a, b) =>
+          (b.submittedAt ?? '').localeCompare(a.submittedAt ?? ''),
+        )
+        setEntries(merged)
+      } catch {
+        // Offline, signed out, or the endpoint failed: keep whatever this
+        // device has rather than showing nothing.
+        if (!cancelled) setEntries(readLocal())
+      } finally {
+        if (!cancelled) setLoaded(true)
+      }
     })()
 
     return () => {
