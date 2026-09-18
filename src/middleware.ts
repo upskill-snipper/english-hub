@@ -589,11 +589,32 @@ export async function middleware(request: NextRequest) {
   // duplicate every route - the page renders the same component, just
   // with `x-lang=ar` stamped on the request headers so localised copy
   // renders in Arabic and `<html dir="rtl">` is applied.
+  // ─── The Arabic surface used to skip every security header ────────────
+  //
+  // THE DEFECT (19 September 2026). This branch built its rewrite and
+  // `return`ed, so no /ar URL ever reached the shared tail below. That tail is
+  // where Content-Security-Policy, the per-request nonce, X-Content-Type-
+  // Options, Referrer-Policy, Permissions-Policy and affiliate tracking are
+  // applied. next.config.js carries no static CSP and its Permissions-Policy
+  // omits `payment`, so there was no fallback: the entire Arabic surface was
+  // served with no CSP at all, and any affiliate referral arriving on an /ar
+  // link was silently dropped.
+  //
+  // This is the second bug of exactly this shape in this branch - the comment
+  // below records the first, where returning early also skipped the auth wall.
+  // The fix this time is structural rather than another call bolted in: the
+  // branch now assigns to `response` and falls through, so anything added to
+  // the tail in future automatically covers Arabic.
+  // ──────────────────────────────────────────────────────────────────────
   let lang: string
+  let response: NextResponse
+  /** The route the rewrite actually serves. Equals `pathname` off /ar. */
+  let servedPath = pathname
   if (pathname.startsWith('/ar/') || pathname === '/ar') {
     lang = 'ar'
     const rewriteUrl = request.nextUrl.clone()
     const strippedPath = pathname === '/ar' ? '/' : pathname.slice(3) // strip leading '/ar'
+    servedPath = strippedPath
     rewriteUrl.pathname = strippedPath
     // Rewrite preserves the URL the browser sees while serving the
     // underlying page from the language-neutral route. Stamp x-lang
@@ -613,26 +634,30 @@ export async function middleware(request: NextRequest) {
       return sessionRes
     }
 
-    const res = NextResponse.rewrite(rewriteUrl, { request: { headers: request.headers } })
+    response = NextResponse.rewrite(rewriteUrl, { request: { headers: request.headers } })
     // Carry any refreshed auth cookies onto the rewrite, otherwise a token
     // refresh performed during this request is lost and the next request
     // looks unauthenticated.
     for (const cookie of sessionRes.cookies.getAll()) {
-      res.cookies.set(cookie)
+      response.cookies.set(cookie)
     }
-    res.headers.set('Content-Language', 'ar')
-    return res
+    response.headers.set('Content-Language', 'ar')
+    // Deliberately NOT returning. Falls through to the shared tail so the
+    // Arabic surface gets the same CSP, nonce, security headers and affiliate
+    // tracking as every other URL.
   } else {
     const rawLang = request.cookies.get(LANG_COOKIE)?.value
     // Coerce legacy 'bi' (bilingual, removed May 2026) to 'en' so old
     // sessions upgrade transparently. LANG_VALUES only contains 'en'|'ar'
     // now, so any unknown value also falls through to 'en'.
     lang = rawLang && LANG_VALUES.has(rawLang) ? rawLang : 'en'
-  }
-  request.headers.set('x-lang', lang)
+    request.headers.set('x-lang', lang)
 
-  // Preserve existing behaviour: supabase auth session refresh + affiliate tracking
-  const response = await updateSession(request)
+    // Preserve existing behaviour: supabase auth session refresh + affiliate
+    // tracking. The Arabic branch above has already run updateSession against
+    // its stripped path, so this must not run twice.
+    response = await updateSession(request)
+  }
 
   // For the `/analysis/[category]/[slug]` catch-all route we can't use the
   // nonce (the page is `force-static`), so we append content hashes of the
@@ -640,7 +665,11 @@ export async function middleware(request: NextRequest) {
   // first hit per slug, so the crypto work runs at most 2-3 SHA-256 digests
   // per cold slug and zero on warm paths.
   let scriptHashes: string[] = []
-  const analysisSlug = extractAnalysisSlugKey(pathname)
+  // `servedPath`, not `pathname`: on /ar/analysis/... the route that renders
+  // is the stripped one, so looking the slug up by the prefixed path would
+  // miss the JSON-LD hashes and fall back to 'unsafe-inline' on exactly the
+  // pages that are force-static.
+  const analysisSlug = extractAnalysisSlugKey(servedPath)
   if (analysisSlug) {
     try {
       scriptHashes = await computeJsonLdHashes(analysisSlug)
@@ -681,6 +710,27 @@ export async function middleware(request: NextRequest) {
   return applyAffiliateTracking(request, response)
 }
 
+// ─── What the middleware runs on ────────────────────────────────────────────
+//
+// PERF-3. The matcher excluded only _next/static, _next/image, favicon.ico and
+// six raster/vector extensions, so the full middleware - session refresh, CSRF
+// attestation, CSP construction, affiliate tracking - ran on manifest.json,
+// llms.txt, llms-full.txt, .well-known/security.txt, the PDF worker, the
+// self-hosted font and the generated robots.txt and sitemap.xml. None of those
+// has a session, a CSRF concern or a nonce to carry.
+//
+// WHAT IS DELIBERATELY NOT EXCLUDED, and why this list is shorter than the
+// obvious one: it is tempting to add generic extension classes such as
+// `ico|woff2?|mjs|pdf|mp3|map`. Do not. `src/app/parent/[[...slug]]`,
+// `src/app/analysis/[...slug]` and `src/app/certificate/[id]` are dot-tolerant
+// dynamic routes, so `/parent/report.pdf`, `/certificate/123.pdf` and
+// `/api/tts/x.mp3` would all match such a class and be excluded - losing the
+// auth wall and the CSRF check on exactly the routes that carry a child's own
+// report. Static paths are therefore named individually, and only the original
+// six image extensions remain as a class.
+// ────────────────────────────────────────────────────────────────────────────
 export const config = {
-  matcher: ['/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)'],
+  matcher: [
+    '/((?!_next/static|_next/image|favicon.ico|manifest.json|robots.txt|sitemap.xml|llms.txt|llms-full.txt|.well-known/|vendor/|fonts/|icons/|logos/|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
+  ],
 }
