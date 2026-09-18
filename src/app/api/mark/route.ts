@@ -93,7 +93,13 @@ export async function POST(request: NextRequest) {
     // 4. Parental consent (for minor users)
     const consentCheck = await checkMinorAIConsent(user.id)
     if (!consentCheck.allowed) {
-      return forbiddenResponse(consentCheck.reason ?? 'Consent is required to use this feature.')
+      // The `code` is what the browser switches on to offer the learner the
+      // inline consent panel. Omitted rather than guessed if the gate did
+      // not set one, so a client can never be told the wrong reason.
+      return forbiddenResponse(
+        consentCheck.reason ?? 'Consent is required to use this feature.',
+        consentCheck.code ? { code: consentCheck.code } : undefined,
+      )
     }
 
     // 4b. AI opt-out enforcement (Children's Code - GAP-12B)

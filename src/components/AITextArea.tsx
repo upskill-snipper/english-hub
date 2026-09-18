@@ -2,6 +2,8 @@
 
 import React, { useState, useCallback, useRef, useEffect } from 'react'
 import { useT } from '@/lib/i18n/use-t'
+import { InlineAIConsentPrompt } from '@/components/consent/InlineAIConsentPrompt'
+import { readConsentRefusal, type AIConsentRefusal } from '@/components/consent/ai-consent-refusal'
 
 // ─── Types ──────────────────────────────────────────────────────────────
 
@@ -211,6 +213,9 @@ function AITextArea({
   const [feedback, setFeedback] = useState<ParsedFeedback | null>(null)
   const [rawFeedback, setRawFeedback] = useState<AIFeedbackResult | null>(null)
   const [error, setError] = useState<string | null>(null)
+  // A consent block is not an error to be read and abandoned: it is a
+  // decision the learner can make right here, with their answer intact.
+  const [consentRefusal, setConsentRefusal] = useState<AIConsentRefusal | null>(null)
   const [showDetailed, setShowDetailed] = useState(false)
   const [feedbackVisible, setFeedbackVisible] = useState(false)
 
@@ -264,6 +269,7 @@ function AITextArea({
 
     setLoading(true)
     setError(null)
+    setConsentRefusal(null)
     setFeedback(null)
     setRawFeedback(null)
 
@@ -281,6 +287,17 @@ function AITextArea({
 
       if (!res.ok) {
         const data = await res.json().catch(() => ({}))
+
+        // Refused for consent: show the inline panel instead of a dead-end
+        // message. Switched on the machine-readable code, never the status,
+        // because 403 here also means "not a subscriber" and "AI switched
+        // off for this account".
+        const refusal = readConsentRefusal(res.status, data)
+        if (refusal) {
+          setConsentRefusal(refusal)
+          return
+        }
+
         throw new Error((data as { error?: string }).error ?? `Request failed (${res.status})`)
       }
 
@@ -468,6 +485,19 @@ function AITextArea({
           </div>
         </div>
       </div>
+
+      {/* Consent block - answerable in place */}
+      {consentRefusal && !loading && (
+        <InlineAIConsentPrompt
+          refusal={consentRefusal}
+          onResolved={() => {
+            setConsentRefusal(null)
+            void handleGetFeedback()
+          }}
+          onDismiss={() => setConsentRefusal(null)}
+          className="mt-3"
+        />
+      )}
 
       {/* Error message */}
       {error && (

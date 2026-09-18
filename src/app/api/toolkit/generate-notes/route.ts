@@ -77,7 +77,13 @@ export async function POST(request: NextRequest) {
   const consentCheck = await checkMinorAIConsent(user.id)
   if (!consentCheck.allowed) {
     return NextResponse.json(
-      { error: consentCheck.reason ?? 'Consent is required to use this feature.' },
+      {
+        error: consentCheck.reason ?? 'Consent is required to use this feature.',
+        // Machine-readable reason. The browser offers the inline consent
+        // panel on this code and on nothing else, because a 403 here also
+        // means "not a subscriber" and "AI switched off for this account".
+        ...(consentCheck.code ? { code: consentCheck.code } : {}),
+      },
       { status: 403 },
     )
   }

@@ -7,12 +7,23 @@ import {
   tryPrismaUserId,
   type AgeBand,
 } from '@/lib/identity'
+import { CONSENT_REFUSAL_CODES, type ConsentRefusalCode } from '@/lib/consent-codes'
 
 // ─── Types ──────────────────────────────────────────────────────────────
 
 export interface ConsentCheckResult {
   allowed: boolean
   reason?: string
+  /**
+   * The machine-readable reason, set on every refusal this module makes.
+   *
+   * `reason` is a sentence for a person; `code` is what a client switches
+   * on. Without it, a browser trying to offer the learner a way out had to
+   * match English prose against a 403 that also means "not a subscriber"
+   * and "AI switched off for this account". Callers must never infer a
+   * consent problem from the 403 alone.
+   */
+  code?: ConsentRefusalCode
 }
 
 // ─── Identity resolution ────────────────────────────────────────────────
@@ -121,7 +132,11 @@ export async function checkParentalConsent(supabaseUserId: string): Promise<Cons
   const band: AgeBand = await resolveAgeBand(supabaseUserId)
 
   if (band === 'UNKNOWN') {
-    return { allowed: false, reason: DATE_OF_BIRTH_REQUIRED }
+    return {
+      allowed: false,
+      reason: DATE_OF_BIRTH_REQUIRED,
+      code: CONSENT_REFUSAL_CODES.DATE_OF_BIRTH_REQUIRED,
+    }
   }
 
   if (!requiresGuardianConsent(band)) {
@@ -138,7 +153,11 @@ export async function checkParentalConsent(supabaseUserId: string): Promise<Cons
     return { allowed: true }
   }
 
-  return { allowed: false, reason: PARENTAL_CONSENT_REQUIRED }
+  return {
+    allowed: false,
+    reason: PARENTAL_CONSENT_REQUIRED,
+    code: CONSENT_REFUSAL_CODES.PARENTAL_CONSENT_REQUIRED,
+  }
 }
 
 // ─── Guardian consent request (side effect of a blocked minor) ──────────
@@ -224,6 +243,9 @@ export async function checkMinorAIConsent(supabaseUserId: string): Promise<Conse
     return {
       allowed: false,
       reason: `${parental.reason ?? PARENTAL_CONSENT_REQUIRED}${followUp}`,
+      // The guardian sentence is appended to the message, not to the code:
+      // the machine-readable reason stays the one the client switches on.
+      code: parental.code ?? CONSENT_REFUSAL_CODES.PARENTAL_CONSENT_REQUIRED,
     }
   }
 
@@ -238,7 +260,11 @@ export async function checkMinorAIConsent(supabaseUserId: string): Promise<Conse
   const hasAIConsent = await hasConsent(supabaseUserId, CONSENT_TYPES.AI_PROCESSING)
 
   if (!hasAIConsent) {
-    return { allowed: false, reason: AI_PROCESSING_REQUIRED }
+    return {
+      allowed: false,
+      reason: AI_PROCESSING_REQUIRED,
+      code: CONSENT_REFUSAL_CODES.AI_PROCESSING_REQUIRED,
+    }
   }
 
   return { allowed: true }

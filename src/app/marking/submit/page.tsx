@@ -9,6 +9,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { MARK_SCHEMES, type MarkScheme } from '@/lib/marking/mark-schemes'
 import { useT } from '@/lib/i18n/use-t'
 import { DictationButton } from '@/components/speech/DictationButton'
+import { InlineAIConsentPrompt } from '@/components/consent/InlineAIConsentPrompt'
+import { readConsentRefusal, type AIConsentRefusal } from '@/components/consent/ai-consent-refusal'
 
 /* ─── Board catalogue ──────────────────────────────────────── */
 
@@ -170,6 +172,10 @@ export default function SubmitEssayPage() {
   const [essay, setEssay] = useState<string>('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  // Refused for consent, as opposed to refused for anything else. Held
+  // separately so the learner is offered the decision in place, with the
+  // essay they just typed still in the form.
+  const [consentRefusal, setConsentRefusal] = useState<AIConsentRefusal | null>(null)
 
   // Derive every option from the live registry so newly added schemes
   // (e.g. Cambridge 0500/0990) appear without code changes here.
@@ -221,7 +227,12 @@ export default function SubmitEssayPage() {
       studentAnswer: string
       markSchemeId: string
       questionId: string
-    }): Promise<{ submissionId: string } | { unavailable: true } | { failed: string }> => {
+    }): Promise<
+      | { submissionId: string }
+      | { unavailable: true }
+      | { failed: string }
+      | { consentRefusal: AIConsentRefusal }
+    > => {
       let createRes: Response
       try {
         createRes = await fetch('/api/submissions', {
@@ -250,12 +261,21 @@ export default function SubmitEssayPage() {
 
       if (!createRes.ok) {
         let message = ''
+        let body: unknown = null
         try {
-          const body = await createRes.json()
-          message = body?.error ?? body?.message ?? ''
+          body = await createRes.json()
+          message =
+            (body as { error?: string; message?: string })?.error ??
+            (body as { error?: string; message?: string })?.message ??
+            ''
         } catch {
           /* non-JSON */
         }
+        // A consent block is not a dead end: hand it back so the page can
+        // offer the decision in place. Recognised by the machine-readable
+        // code, never by the 403 alone, which is also "not a subscriber".
+        const refusal = readConsentRefusal(createRes.status, body)
+        if (refusal) return { consentRefusal: refusal }
         return { failed: friendlyError(createRes.status, message) }
       }
 
@@ -285,12 +305,18 @@ export default function SubmitEssayPage() {
         })
         if (!runRes.ok) {
           let message = ''
+          let body: unknown = null
           try {
-            const body = await runRes.json()
-            message = body?.error ?? body?.message ?? ''
+            body = await runRes.json()
+            message =
+              (body as { error?: string; message?: string })?.error ??
+              (body as { error?: string; message?: string })?.message ??
+              ''
           } catch {
             /* non-JSON */
           }
+          const refusal = readConsentRefusal(runRes.status, body)
+          if (refusal) return { consentRefusal: refusal }
           return { failed: friendlyError(runRes.status, message) }
         }
       } catch {
@@ -309,11 +335,12 @@ export default function SubmitEssayPage() {
   )
 
   const handleSubmit = useCallback(
-    async (e: React.FormEvent) => {
-      e.preventDefault()
+    async (e?: React.FormEvent) => {
+      e?.preventDefault()
       if (!canSubmit || isSubmitting || !selectedBoard || !selectedPaper) return
       setIsSubmitting(true)
       setError(null)
+      setConsentRefusal(null)
 
       const id = `mk_${Date.now().toString(36)}`
       const boardLabel = selectedBoard.label
@@ -340,6 +367,11 @@ export default function SubmitEssayPage() {
         questionId: question,
       })
 
+      if ('consentRefusal' in spine) {
+        setConsentRefusal(spine.consentRefusal)
+        setIsSubmitting(false)
+        return
+      }
       if ('failed' in spine) {
         setError(spine.failed)
         setIsSubmitting(false)
@@ -394,11 +426,21 @@ export default function SubmitEssayPage() {
 
         if (!res.ok) {
           let message = ''
+          let errBody: unknown = null
           try {
-            const errBody = await res.json()
-            message = errBody?.error ?? errBody?.message ?? ''
+            errBody = await res.json()
+            message =
+              (errBody as { error?: string; message?: string })?.error ??
+              (errBody as { error?: string; message?: string })?.message ??
+              ''
           } catch {
             /* non-JSON body */
+          }
+          const refusal = readConsentRefusal(res.status, errBody)
+          if (refusal) {
+            setConsentRefusal(refusal)
+            setIsSubmitting(false)
+            return
           }
           setError(friendlyError(res.status, message))
           setIsSubmitting(false)
@@ -704,6 +746,18 @@ export default function SubmitEssayPage() {
                   <span>{tx('marking.submit.no_upper_limit')}</span>
                 </div>
               </div>
+
+              {/* ── Consent block, answerable in place ─────── */}
+              {consentRefusal && !isSubmitting && (
+                <InlineAIConsentPrompt
+                  refusal={consentRefusal}
+                  onResolved={() => {
+                    setConsentRefusal(null)
+                    void handleSubmit()
+                  }}
+                  onDismiss={() => setConsentRefusal(null)}
+                />
+              )}
 
               {/* ── Error banner ───────────────────────────── */}
               {error && (

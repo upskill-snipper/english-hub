@@ -17,6 +17,8 @@ import {
 import { cn } from '@/lib/utils'
 import { useT } from '@/lib/i18n/use-t'
 import { AiGeneratedNotice } from '@/components/ai/AiGeneratedNotice'
+import { InlineAIConsentPrompt } from '@/components/consent/InlineAIConsentPrompt'
+import { readConsentRefusal, type AIConsentRefusal } from '@/components/consent/ai-consent-refusal'
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -118,6 +120,9 @@ export default function EssayFeedbackInline({
   const [essay, setEssay] = useState('')
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  // A consent block is answerable here, with the essay still on screen,
+  // rather than being a message telling the learner to go elsewhere.
+  const [consentRefusal, setConsentRefusal] = useState<AIConsentRefusal | null>(null)
   const [feedback, setFeedback] = useState<FeedbackData | null>(null)
   const [remaining, setRemaining] = useState<number | null>(null)
   const autoSubmitTriggered = useRef(false)
@@ -139,6 +144,7 @@ export default function EssayFeedbackInline({
 
     setSubmitting(true)
     setError(null)
+    setConsentRefusal(null)
     setFeedback(null)
 
     try {
@@ -157,6 +163,14 @@ export default function EssayFeedbackInline({
       const data = await res.json()
 
       if (!res.ok) {
+        // Switched on the machine-readable code, never the status: a 403
+        // here also means "not a subscriber" and "AI switched off for this
+        // account", and the consent panel must not appear for those.
+        const refusal = readConsentRefusal(res.status, data)
+        if (refusal) {
+          setConsentRefusal(refusal)
+          return
+        }
         setError(data.error || t('action.error_generic'))
         return
       }
@@ -184,6 +198,7 @@ export default function EssayFeedbackInline({
   function handleReset() {
     setFeedback(null)
     setError(null)
+    setConsentRefusal(null)
     autoSubmitTriggered.current = false
     if (!existingAnswer) {
       setEssay('')
@@ -229,6 +244,17 @@ export default function EssayFeedbackInline({
                 </p>
               </div>
             </div>
+          )}
+
+          {consentRefusal && !submitting && (
+            <InlineAIConsentPrompt
+              refusal={consentRefusal}
+              onResolved={() => {
+                setConsentRefusal(null)
+                void handleSubmit()
+              }}
+              onDismiss={() => setConsentRefusal(null)}
+            />
           )}
 
           {error && (
@@ -357,6 +383,18 @@ export default function EssayFeedbackInline({
                     </span>
                   )}
                 </div>
+              )}
+
+              {/* Consent block - answerable in place */}
+              {consentRefusal && !submitting && (
+                <InlineAIConsentPrompt
+                  refusal={consentRefusal}
+                  onResolved={() => {
+                    setConsentRefusal(null)
+                    void handleSubmit()
+                  }}
+                  onDismiss={() => setConsentRefusal(null)}
+                />
               )}
 
               {/* Error */}

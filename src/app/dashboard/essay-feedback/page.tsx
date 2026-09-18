@@ -24,6 +24,8 @@ import { getQuestionsForType } from '@/data/exam-questions'
 import { cn } from '@/lib/utils'
 import { AiGeneratedNotice } from '@/components/ai/AiGeneratedNotice'
 import { RequestHumanReviewButton } from '@/components/ai/RequestHumanReviewButton'
+import { InlineAIConsentPrompt } from '@/components/consent/InlineAIConsentPrompt'
+import { readConsentRefusal, type AIConsentRefusal } from '@/components/consent/ai-consent-refusal'
 import { ReadAloudButton } from '@/components/speech/ReadAloudButton'
 import { DictationButton } from '@/components/speech/DictationButton'
 import { capture as phCapture, EVENTS as PH_EVENTS } from '@/lib/posthog'
@@ -124,6 +126,9 @@ export default function EssayFeedbackPage() {
   // Submission state
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  // A consent block is a decision the learner can make on this page, with
+  // their essay still in the box, rather than a message sending them away.
+  const [consentRefusal, setConsentRefusal] = useState<AIConsentRefusal | null>(null)
   const [feedback, setFeedback] = useState<FeedbackData | null>(null)
   // Server id of the persisted Essay row (2026-08-18: feedback is now
   // stored, so a human-review request can reference the actual work
@@ -193,8 +198,8 @@ export default function EssayFeedbackPage() {
   }
 
   // Submit essay
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault()
+  async function handleSubmit(e?: React.FormEvent) {
+    e?.preventDefault()
     if (!user) {
       setError('Please sign in to use essay feedback.')
       return
@@ -206,6 +211,7 @@ export default function EssayFeedbackPage() {
 
     setSubmitting(true)
     setError(null)
+    setConsentRefusal(null)
     setFeedback(null)
     setEssayId(null)
 
@@ -225,6 +231,13 @@ export default function EssayFeedbackPage() {
       const data = await res.json()
 
       if (!res.ok) {
+        // Switched on the machine-readable code, never the status: 403 is
+        // also "not a subscriber" and "AI switched off for this account".
+        const refusal = readConsentRefusal(res.status, data)
+        if (refusal) {
+          setConsentRefusal(refusal)
+          return
+        }
         setError(data.error || 'Something went wrong. Please try again.')
         return
       }
@@ -253,6 +266,7 @@ export default function EssayFeedbackPage() {
   function handleTryAgain() {
     setFeedback(null)
     setError(null)
+    setConsentRefusal(null)
     setEssay('')
     setQuestionText('')
     setSelectedQuestionId(null)
@@ -483,6 +497,18 @@ export default function EssayFeedbackPage() {
                 className="min-h-[200px] resize-y"
               />
             </div>
+
+            {/* Consent block - answerable in place */}
+            {consentRefusal && !submitting && (
+              <InlineAIConsentPrompt
+                refusal={consentRefusal}
+                onResolved={() => {
+                  setConsentRefusal(null)
+                  void handleSubmit()
+                }}
+                onDismiss={() => setConsentRefusal(null)}
+              />
+            )}
 
             {/* Error */}
             {error && (

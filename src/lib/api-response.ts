@@ -21,8 +21,18 @@ export function unauthorizedResponse(message = 'Unauthorized') {
   return errorResponse(message, 401)
 }
 
-export function forbiddenResponse(message = 'Forbidden') {
-  return errorResponse(message, 403)
+/**
+ * 403 Forbidden.
+ *
+ * `details` exists so a refusal can carry a machine-readable `code` beside
+ * the sentence. 403 is returned here for at least four different states
+ * (not a subscriber, no AI-processing consent, no guardian consent, AI
+ * switched off for the account), and a client that wants to help the
+ * learner out of one of them must not have to match English prose to tell
+ * them apart. CLIENTS SWITCH ON `code`, NEVER ON THE STATUS ALONE.
+ */
+export function forbiddenResponse(message = 'Forbidden', details?: Record<string, unknown>) {
+  return errorResponse(message, 403, undefined, details)
 }
 
 export function notFoundResponse(message = 'Not found') {
