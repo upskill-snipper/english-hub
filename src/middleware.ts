@@ -691,19 +691,25 @@ export async function middleware(request: NextRequest) {
   // securityheaders.com grade A and harden against MIME sniffing,
   // referrer leakage, and unwanted device-API access.
   //
-  // X-Frame-Options is intentionally omitted - the CSP above already sets
-  // `frame-ancestors 'self'`, which supersedes XFO in modern browsers.
-  // Adding XFO would be redundant (and can cause edge-case conflicts).
+  // SEC-10 (19 September 2026): X-Content-Type-Options, Referrer-Policy and
+  // Permissions-Policy used to be set here TOO, duplicating next.config.js.
+  // Two owners, and they disagreed: this copy added `payment=(self)` and the
+  // config copy did not, so which one shipped depended on which won. They are
+  // now set in next.config.js only, with `payment=(self)` carried across.
   //
-  // Permissions-Policy disables camera/microphone/geolocation outright,
-  // and restricts Payment Request API to same-origin so Stripe's
-  // Apple Pay / Google Pay flows continue to work from our own origin.
-  response.headers.set('X-Content-Type-Options', 'nosniff')
-  response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin')
-  response.headers.set(
-    'Permissions-Policy',
-    'camera=(), microphone=(), geolocation=(), payment=(self)',
-  )
+  // The comment that stood here claimed "X-Frame-Options is intentionally
+  // omitted". That was simply false about what ships: next.config.js sets
+  // `X-Frame-Options: DENY` and a live response carries it. A comment
+  // asserting the opposite of the deployed behaviour is worse than no comment,
+  // because the next reader trusts it.
+  //
+  // next.config.js applies to every route; this block did not. The middleware
+  // early-returns in nine places above this line - redirects, the CSRF 403,
+  // the /ar rewrite - so those responses never carried these headers at all.
+  // Moving ownership to the config widens coverage rather than narrowing it.
+  //
+  // The CSP stays here: it is built per request so each response can carry a
+  // fresh nonce, which a static header cannot do.
 
   // Annotate the response with affiliate tracking cookie if ?ref=… is present.
   // No-op when no ref param or when the response is a redirect we want to pass through.

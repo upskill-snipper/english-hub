@@ -215,7 +215,16 @@ const nextConfig = {
           { key: 'X-Content-Type-Options', value: 'nosniff' },
           { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
           { key: 'X-XSS-Protection', value: '0' },
-          { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
+          // SEC-10 (19 September 2026): `payment=(self)` was previously added
+          // ONLY by the middleware's own duplicate of this header, so Stripe's
+          // Apple Pay / Google Pay flows depended on that copy winning the
+          // race. The middleware's copies are gone and this value is now the
+          // one that ships - it must keep `payment=(self)` or wallet payments
+          // break on every route.
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=(), payment=(self)',
+          },
           // Cross-origin isolation (P1-SEC-7): COOP pops opener references for
           // cross-origin windows (mitigates Spectre-class leaks + tab-napping);
           // CORP prevents other origins from embedding our resources.

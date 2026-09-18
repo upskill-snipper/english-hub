@@ -34,8 +34,6 @@ const REQUIRED_VARS: Record<string, string> = {
 const RECOMMENDED_VARS: Record<string, string> = {
   CRON_SECRET:
     'Shared secret for authenticating /api/cron/* endpoints. Generate with: openssl rand -hex 32',
-  CSRF_SECRET:
-    'HMAC secret for CSRF token generation/validation. Generate with: openssl rand -hex 32',
   RESEND_API_KEY: 'Resend API key for transactional emails (weekly reports, parent invites).',
   IP_HASH_SALT:
     'Secret salt for hashing client IPs. REQUIRED in production: the free-allowance meter (src/lib/usage/free-allowance.ts) refuses to meter signed-out callers without it, which takes the free IELTS diagnostic offline, because a known or absent salt makes the stored hash reversible across the whole IPv4 space and it would still be personal data. Generate with: openssl rand -hex 32',

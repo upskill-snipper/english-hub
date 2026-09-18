@@ -1,242 +1,154 @@
 import { describe, it, expect } from 'vitest'
+import { readFileSync } from 'node:fs'
+import { join } from 'node:path'
 
-// ---------------------------------------------------------------------------
-// Security headers validation.
-//
-// Validates the security headers defined in next.config.js. This tests the
-// config object shape rather than runtime headers, ensuring that security
-// headers are not accidentally removed or weakened during config changes.
-// ---------------------------------------------------------------------------
+/**
+ * Security headers, asserted against the files that actually set them.
+ *
+ * THE DEFECT THIS REPLACES (19 September 2026, SEC-10). The previous version of
+ * this file declared its own `SECURITY_HEADERS` literal and then asserted
+ * against that literal. It never opened `next.config.js` and never opened the
+ * middleware. **It would have passed with the entire `headers()` block
+ * deleted.** Its own header comment said as much - "Instead, we define the
+ * expected headers here" - and nobody read it as the admission it was.
+ *
+ * It had already rotted: the CSP it enshrined carried no `frame-ancestors`, no
+ * `form-action`, and none of the Trustpilot or Cloudflare hosts the live
+ * policy has had since d7034547. So it was asserting a policy that had not
+ * shipped for months, in a file named for the thing it was not checking.
+ *
+ * This is the "fails and reports success" shape in its purest form: a green
+ * test, a real-looking name, and zero coupling to the artefact.
+ *
+ * WHAT CHANGED IN THE SAME COMMIT. The static headers had TWO owners that
+ * disagreed - `next.config.js` set `Permissions-Policy` without `payment`, the
+ * middleware set the same header WITH `payment=(self)`, and which one shipped
+ * depended on which won. Ownership is now `next.config.js` alone. Stripe's
+ * wallet flows depend on `payment=(self)`, so that value is asserted below
+ * rather than left to a comment.
+ */
 
-// We import the headers config by reading the file and extracting the
-// headers array, since next.config.js uses CommonJS and Sentry wrapping.
-// Instead, we define the expected headers here and validate the structure.
+const ROOT = process.cwd()
+const NEXT_CONFIG = readFileSync(join(ROOT, 'next.config.js'), 'utf8')
+const MIDDLEWARE = readFileSync(join(ROOT, 'src/middleware.ts'), 'utf8')
 
-/** Expected security headers from next.config.js headers() function. */
-const SECURITY_HEADERS = [
-  { key: 'X-Frame-Options', value: 'DENY' },
-  { key: 'X-Content-Type-Options', value: 'nosniff' },
-  { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
-  { key: 'X-XSS-Protection', value: '0' },
-  { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
-  {
-    key: 'Content-Security-Policy',
-    value:
-      "default-src 'self'; " +
-      "script-src 'self' 'unsafe-inline' https://js.stripe.com https://r.wdfl.co https://www.googletagmanager.com https://*.i.posthog.com; " +
-      "style-src 'self' 'unsafe-inline'; " +
-      "img-src 'self' data: https:; " +
-      "font-src 'self' data:; " +
-      "connect-src 'self' https://*.supabase.co https://api.stripe.com https://r.wdfl.co https://*.ingest.sentry.io https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.i.posthog.com https://*.posthog.com; " +
-      'frame-src https://js.stripe.com https://hooks.stripe.com; ' +
-      "object-src 'none'; " +
-      "base-uri 'self';",
-  },
-  { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' },
-]
+/**
+ * The middleware source, comments INCLUDED, and deliberately so.
+ *
+ * The first draft of this file stripped block comments before asserting. That
+ * broke on the middleware's own CSP: `https://*.supabase.co` contains a slash
+ * followed by an asterisk, so a naive stripper reads it as the start of a
+ * block comment and deletes everything up to the next comment close - which
+ * silently removed `buildCsp` itself and failed an assertion for a reason that
+ * had nothing to do with security headers.
+ *
+ * The assertions below are therefore written against distinctive CODE shapes
+ * that cannot appear in prose by accident, rather than against bare words that
+ * could.
+ */
+const MIDDLEWARE_CODE = MIDDLEWARE
 
-// ── Helpers ──────────────────────────────────────────────────────────────
+// ─── The real config, read from disk ────────────────────────────────────────
 
-function findHeader(key: string) {
-  return SECURITY_HEADERS.find((h) => h.key === key)
-}
+describe('next.config.js', () => {
+  it('actually has a headers() block', () => {
+    // The assertion the old file could not make, and the reason it was useless.
+    expect(NEXT_CONFIG).toMatch(/async headers\(\)/)
+    expect(NEXT_CONFIG).toMatch(/source: '\/\(\.\*\)'/)
+  })
 
-function parseCSP(cspValue: string): Record<string, string> {
-  const directives: Record<string, string> = {}
-  for (const directive of cspValue.split(';')) {
-    const trimmed = directive.trim()
-    if (!trimmed) continue
-    const spaceIdx = trimmed.indexOf(' ')
-    if (spaceIdx === -1) {
-      directives[trimmed] = ''
-    } else {
-      directives[trimmed.substring(0, spaceIdx)] = trimmed.substring(spaceIdx + 1)
+  it.each([
+    ['X-Frame-Options', 'DENY'],
+    ['X-Content-Type-Options', 'nosniff'],
+    ['Referrer-Policy', 'strict-origin-when-cross-origin'],
+    ['X-XSS-Protection', '0'],
+    ['Cross-Origin-Opener-Policy', 'same-origin'],
+    ['Cross-Origin-Resource-Policy', 'same-origin'],
+  ])('sets %s to %s', (key, value) => {
+    const re = new RegExp(`key: '${key}', value: '${value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}'`)
+    expect(NEXT_CONFIG).toMatch(re)
+  })
+
+  it('keeps HSTS long, with subdomains and preload', () => {
+    expect(NEXT_CONFIG).toMatch(/Strict-Transport-Security[\s\S]{0,80}max-age=63072000/)
+    expect(NEXT_CONFIG).toMatch(/includeSubDomains; preload/)
+  })
+
+  it('keeps payment=(self), without which wallet payments break', () => {
+    // This value used to exist ONLY in the middleware's duplicate. Now that the
+    // middleware no longer sets the header, dropping it here silently disables
+    // Apple Pay and Google Pay on every route.
+    expect(NEXT_CONFIG).toMatch(
+      /'Permissions-Policy'[\s\S]{0,120}camera=\(\), microphone=\(\), geolocation=\(\), payment=\(self\)/,
+    )
+  })
+})
+
+// ─── One owner, so they cannot disagree again ───────────────────────────────
+
+describe('the middleware', () => {
+  it.each(['X-Content-Type-Options', 'Referrer-Policy', 'Permissions-Policy'])(
+    'no longer duplicates %s',
+    (key) => {
+      expect(MIDDLEWARE_CODE).not.toContain(`response.headers.set('${key}'`)
+    },
+  )
+
+  it('no longer claims X-Frame-Options is omitted, because it is not', () => {
+    // next.config.js sets it to DENY and a live response carries it. The old
+    // comment asserted the opposite of the deployed behaviour, which is worse
+    // than no comment because the next reader believes it.
+    expect(MIDDLEWARE).not.toMatch(/X-Frame-Options is intentionally omitted/)
+  })
+
+  it('still owns the CSP, which cannot be static', () => {
+    // A per-request nonce is the whole reason the CSP is not in the config.
+    expect(MIDDLEWARE_CODE).toMatch(/Content-Security-Policy/)
+  })
+})
+
+// ─── The CSP that actually ships ────────────────────────────────────────────
+
+describe('the content security policy', () => {
+  it.each([
+    "default-src 'self'",
+    "object-src 'none'",
+    "base-uri 'self'",
+    "frame-ancestors 'self'",
+    "form-action 'self'",
+  ])('still contains %s', (directive) => {
+    expect(MIDDLEWARE).toContain(directive)
+  })
+
+  it('is built per request rather than pinned to a literal here', () => {
+    // The old test embedded a full CSP string and asserted against its own
+    // copy. That copy was already months stale. Assert the SHAPE and the
+    // load-bearing directives, and let the builder own the host allowlist -
+    // a list that changes legitimately whenever a vendor is added.
+    expect(MIDDLEWARE_CODE).toMatch(/function buildCsp/)
+  })
+})
+
+// ─── The dead module SEC-10 removed ─────────────────────────────────────────
+
+describe('the retired security module', () => {
+  it('is gone, along with its public fallback salt', () => {
+    // src/lib/security.ts had no non-test caller. Its hashIP() fell back to the
+    // literal 'the-english-hub-ip-salt' in production behind a console.warn -
+    // a known salt makes a hashed IP reversible across the whole IPv4 space.
+    // Latent, because nothing called it, but it was one import away from real.
+    let exists = true
+    try {
+      readFileSync(join(ROOT, 'src/lib/security.ts'), 'utf8')
+    } catch {
+      exists = false
     }
-  }
-  return directives
-}
-
-// ── Tests ────────────────────────────────────────────────────────────────
-
-describe('Security Headers - X-Frame-Options', () => {
-  it('is set to DENY to prevent clickjacking', () => {
-    const header = findHeader('X-Frame-Options')
-    expect(header).toBeDefined()
-    expect(header!.value).toBe('DENY')
-  })
-})
-
-describe('Security Headers - X-Content-Type-Options', () => {
-  it('is set to nosniff to prevent MIME type sniffing', () => {
-    const header = findHeader('X-Content-Type-Options')
-    expect(header).toBeDefined()
-    expect(header!.value).toBe('nosniff')
-  })
-})
-
-describe('Security Headers - Referrer-Policy', () => {
-  it('is set to strict-origin-when-cross-origin', () => {
-    const header = findHeader('Referrer-Policy')
-    expect(header).toBeDefined()
-    expect(header!.value).toBe('strict-origin-when-cross-origin')
-  })
-})
-
-describe('Security Headers - Content-Security-Policy', () => {
-  const cspHeader = findHeader('Content-Security-Policy')
-  const csp = cspHeader ? parseCSP(cspHeader.value) : {}
-
-  it('CSP header is present', () => {
-    expect(cspHeader).toBeDefined()
+    expect(exists).toBe(false)
   })
 
-  it('default-src is self only', () => {
-    expect(csp['default-src']).toBe("'self'")
-  })
-
-  it('script-src includes self and Stripe', () => {
-    expect(csp['script-src']).toContain("'self'")
-    expect(csp['script-src']).toContain('https://js.stripe.com')
-  })
-
-  it('script-src includes Google Tag Manager', () => {
-    expect(csp['script-src']).toContain('https://www.googletagmanager.com')
-  })
-
-  it('connect-src allows Supabase and Stripe API', () => {
-    expect(csp['connect-src']).toContain('https://*.supabase.co')
-    expect(csp['connect-src']).toContain('https://api.stripe.com')
-  })
-
-  it('connect-src allows Sentry ingest', () => {
-    expect(csp['connect-src']).toContain('https://*.ingest.sentry.io')
-  })
-
-  it('connect-src allows GA4 collection endpoints', () => {
-    // GA4 events POST to www.google-analytics.com/g/collect (and
-    // region-prefixed variants). Without these in connect-src the
-    // gtag/js script loads but every event is silently blocked by CSP.
-    expect(csp['connect-src']).toContain('https://*.google-analytics.com')
-    expect(csp['connect-src']).toContain('https://*.analytics.google.com')
-  })
-
-  it('connect-src allows PostHog capture + decide endpoints', () => {
-    // PostHog events POST to *.i.posthog.com (eu.i / us.i). Feature flag
-    // /decide endpoint sits at *.posthog.com. Both must be in connect-src.
-    expect(csp['connect-src']).toContain('https://*.i.posthog.com')
-    expect(csp['connect-src']).toContain('https://*.posthog.com')
-  })
-
-  it('script-src allows PostHog asset CDN', () => {
-    // PostHog SDK fetches its config bundle from *-assets.i.posthog.com,
-    // which loads as a script. Without this in script-src the SDK
-    // initialises but never receives its config (browser blocks the
-    // script load and PostHog stays inert).
-    expect(csp['script-src']).toContain('https://*.i.posthog.com')
-  })
-
-  it('frame-src restricts to Stripe only', () => {
-    expect(csp['frame-src']).toContain('https://js.stripe.com')
-    expect(csp['frame-src']).toContain('https://hooks.stripe.com')
-  })
-
-  it('object-src is none (blocks plugins)', () => {
-    expect(csp['object-src']).toBe("'none'")
-  })
-
-  it('base-uri is self (prevents base tag injection)', () => {
-    expect(csp['base-uri']).toBe("'self'")
-  })
-
-  it('img-src allows self, data URIs, and HTTPS', () => {
-    expect(csp['img-src']).toContain("'self'")
-    expect(csp['img-src']).toContain('data:')
-    expect(csp['img-src']).toContain('https:')
-  })
-
-  it('font-src allows self and data URIs', () => {
-    expect(csp['font-src']).toContain("'self'")
-    expect(csp['font-src']).toContain('data:')
-  })
-})
-
-describe('Security Headers - HSTS', () => {
-  const hsts = findHeader('Strict-Transport-Security')
-
-  it('HSTS header is present', () => {
-    expect(hsts).toBeDefined()
-  })
-
-  it('max-age is at least 1 year (31536000 seconds)', () => {
-    const maxAgeMatch = hsts!.value.match(/max-age=(\d+)/)
-    expect(maxAgeMatch).not.toBeNull()
-    const maxAge = parseInt(maxAgeMatch![1], 10)
-    expect(maxAge).toBeGreaterThanOrEqual(31536000)
-  })
-
-  it('includes includeSubDomains directive', () => {
-    expect(hsts!.value).toContain('includeSubDomains')
-  })
-
-  it('includes preload directive', () => {
-    expect(hsts!.value).toContain('preload')
-  })
-})
-
-describe('Security Headers - Permissions-Policy', () => {
-  const pp = findHeader('Permissions-Policy')
-
-  it('Permissions-Policy header is present', () => {
-    expect(pp).toBeDefined()
-  })
-
-  it('disables camera access', () => {
-    expect(pp!.value).toContain('camera=()')
-  })
-
-  it('disables microphone access', () => {
-    expect(pp!.value).toContain('microphone=()')
-  })
-
-  it('disables geolocation access', () => {
-    expect(pp!.value).toContain('geolocation=()')
-  })
-})
-
-describe('Security Headers - XSS Protection', () => {
-  it('X-XSS-Protection is set to 0 (modern best practice)', () => {
-    // The X-XSS-Protection: 0 header disables the legacy XSS filter in
-    // older browsers. Modern browsers have deprecated this filter as it
-    // could actually introduce XSS vulnerabilities. CSP provides the
-    // real protection.
-    const header = findHeader('X-XSS-Protection')
-    expect(header).toBeDefined()
-    expect(header!.value).toBe('0')
-  })
-})
-
-describe('Security Headers - completeness', () => {
-  it('has all required security headers (7 total)', () => {
-    expect(SECURITY_HEADERS).toHaveLength(7)
-  })
-
-  it('all headers have non-empty values', () => {
-    for (const header of SECURITY_HEADERS) {
-      expect(header.value.length).toBeGreaterThan(0)
-    }
-  })
-
-  const requiredHeaders = [
-    'X-Frame-Options',
-    'X-Content-Type-Options',
-    'Referrer-Policy',
-    'Content-Security-Policy',
-    'Strict-Transport-Security',
-    'Permissions-Policy',
-  ]
-
-  it.each(requiredHeaders)('includes required header "%s"', (headerName) => {
-    const found = findHeader(headerName)
-    expect(found).toBeDefined()
+  it('left no importers behind', () => {
+    // The real CSRF control is Origin attestation in lib/security/csrf-origin.
+    const middlewareImports = MIDDLEWARE_CODE.match(/from '@\/lib\/security'/g)
+    expect(middlewareImports).toBeNull()
   })
 })

@@ -157,7 +157,20 @@ import {
 } from '@/lib/usage/free-allowance'
 import { getLimit, resetConfigCache } from '@/lib/usage/limits'
 import { resolveNoCardTrial, enforceTrialAllowance } from '@/lib/usage/trial-allowance'
-import { hashIP } from '@/lib/security'
+import crypto from 'node:crypto'
+
+/**
+ * The 16-char truncated digest the deleted `@/lib/security` used for logging.
+ *
+ * Reproduced locally (SEC-10, 19 September 2026) so the assertion below keeps
+ * working after that module was removed. It exists ONLY to prove the
+ * free-allowance subject key is NOT this weaker value - it is not a hashing
+ * helper anyone should reach for.
+ */
+function truncatedLogHash(ip: string): string {
+  const salt = process.env.IP_HASH_SALT ?? ''
+  return crypto.createHash('sha256').update(`${salt}:${ip}`).digest('hex').slice(0, 16)
+}
 
 const TEST_SALT = 'unit-test-salt-not-the-production-one'
 const TEST_IP = '203.0.113.42'
@@ -199,7 +212,7 @@ describe('resolveUsageSubject', () => {
     expect(subject.subjectKey).not.toContain('203.0.113')
     // Full sha256 digest, not the 16-char truncation hashIP() uses for logs.
     expect(subject.subjectKey).toMatch(/^[0-9a-f]{64}$/)
-    expect(subject.subjectKey).not.toBe(hashIP(TEST_IP))
+    expect(subject.subjectKey).not.toBe(truncatedLogHash(TEST_IP))
   })
 
   it('gives different IPs different buckets and the same IP the same bucket', () => {
