@@ -7,6 +7,7 @@ import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 import { STRINGS } from './content'
 import { useLocale } from '@/lib/i18n/use-locale'
 import { useT } from '@/lib/i18n/use-t'
+import { GradeBoundaryTable } from '@/components/resources/GradeBoundaryTable'
 function Section({
   title,
   children,
@@ -118,93 +119,10 @@ export default function GradeBoundariesPage() {
           <p>
             The total number of marks across both papers is <strong>160</strong> (80 per paper).
             Your raw marks from both papers are combined to produce your overall grade. Below are
-            the approximate boundaries from recent exam series:
+            the boundaries AQA published for the most recent series we have transcribed:
           </p>
 
-          <div className="overflow-x-auto mt-4">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-border text-left text-muted-foreground">
-                  <th className="py-2 pr-4">Grade</th>
-                  <th className="py-2 pr-4">June 2023</th>
-                  <th className="py-2 pr-4">June 2024</th>
-                  <th className="py-2 pr-4">June 2025</th>
-                  <th className="py-2 pr-4">Approx. %</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border">
-                <tr className="bg-success-50">
-                  <td className="py-2 pr-4 font-bold text-success-700">9</td>
-                  <td className="py-2 pr-4">119</td>
-                  <td className="py-2 pr-4">121</td>
-                  <td className="py-2 pr-4">122</td>
-                  <td className="py-2 pr-4">~75%</td>
-                </tr>
-                <tr className="bg-success-50/50">
-                  <td className="py-2 pr-4 font-bold text-success-700">8</td>
-                  <td className="py-2 pr-4">108</td>
-                  <td className="py-2 pr-4">110</td>
-                  <td className="py-2 pr-4">111</td>
-                  <td className="py-2 pr-4">~69%</td>
-                </tr>
-                <tr>
-                  <td className="py-2 pr-4 font-bold text-primary">7</td>
-                  <td className="py-2 pr-4">97</td>
-                  <td className="py-2 pr-4">99</td>
-                  <td className="py-2 pr-4">100</td>
-                  <td className="py-2 pr-4">~62%</td>
-                </tr>
-                <tr>
-                  <td className="py-2 pr-4 font-bold text-primary">6</td>
-                  <td className="py-2 pr-4">84</td>
-                  <td className="py-2 pr-4">86</td>
-                  <td className="py-2 pr-4">87</td>
-                  <td className="py-2 pr-4">~54%</td>
-                </tr>
-                <tr>
-                  <td className="py-2 pr-4 font-bold text-primary">5</td>
-                  <td className="py-2 pr-4">70</td>
-                  <td className="py-2 pr-4">72</td>
-                  <td className="py-2 pr-4">73</td>
-                  <td className="py-2 pr-4">~45%</td>
-                </tr>
-                <tr>
-                  <td className="py-2 pr-4 font-bold text-yellow-600">4</td>
-                  <td className="py-2 pr-4">52</td>
-                  <td className="py-2 pr-4">54</td>
-                  <td className="py-2 pr-4">55</td>
-                  <td className="py-2 pr-4">~34%</td>
-                </tr>
-                <tr>
-                  <td className="py-2 pr-4 font-bold text-muted-foreground">3</td>
-                  <td className="py-2 pr-4">38</td>
-                  <td className="py-2 pr-4">40</td>
-                  <td className="py-2 pr-4">40</td>
-                  <td className="py-2 pr-4">~25%</td>
-                </tr>
-                <tr>
-                  <td className="py-2 pr-4 font-bold text-muted-foreground">2</td>
-                  <td className="py-2 pr-4">24</td>
-                  <td className="py-2 pr-4">25</td>
-                  <td className="py-2 pr-4">26</td>
-                  <td className="py-2 pr-4">~16%</td>
-                </tr>
-                <tr>
-                  <td className="py-2 pr-4 font-bold text-muted-foreground">1</td>
-                  <td className="py-2 pr-4">10</td>
-                  <td className="py-2 pr-4">10</td>
-                  <td className="py-2 pr-4">11</td>
-                  <td className="py-2 pr-4">~7%</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <p className="mt-4 text-sm text-muted-foreground">
-            Note: These boundaries are approximate and based on publicly available AQA data. The
-            &ldquo;Approx. %&rdquo; column shows roughly what percentage of the total 160 marks you
-            need.
-          </p>
+          <GradeBoundaryTable boardId="aqa" />
         </Section>
 
         {/* What each grade looks like */}

@@ -7,6 +7,7 @@ import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 import { STRINGS } from './content'
 import { useLocale } from '@/lib/i18n/use-locale'
 import { useT } from '@/lib/i18n/use-t'
+import { GradeBoundaryTable } from '@/components/resources/GradeBoundaryTable'
 /* ─── Collapsible section ───────────────────────────────────── */
 
 function Section({
@@ -120,7 +121,7 @@ export default function GradeBoundariesPage() {
               Pearson Edexcel website
             </a>{' '}
             for the most up-to-date boundaries after results day. The total mark for Edexcel English
-            Language is <strong>128</strong> (Paper 1: 64 + Paper 2: 64). The Spoken Language
+            Language is <strong>160</strong> (Paper 1: 64 + Paper 2: 96). The Spoken Language
             Endorsement is reported separately and does not contribute to the numerical grade.
           </p>
         </div>
@@ -128,235 +129,34 @@ export default function GradeBoundariesPage() {
         {/* ── Overall grade boundaries ──────────────────────────────── */}
         <Section title={tr(`Overall grade boundaries (combined Paper 1 + Paper 2)`)} defaultOpen>
           <p>
-            The total number of marks across both papers is <strong>128</strong> (64 per paper).
-            Your raw marks from both papers are combined to produce your overall grade. Below are
-            the approximate boundaries from recent exam series:
+            The total number of marks across both papers is <strong>160</strong>: Paper 1 is marked
+            out of 64 and Paper 2 out of 96. Your raw marks from both papers are combined to produce
+            your overall grade. Below are the boundaries Pearson published for the most recent
+            series we have transcribed:
           </p>
 
-          <div className="overflow-x-auto mt-4">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-border text-left text-muted-foreground">
-                  <th className="py-2 pr-4">Grade</th>
-                  <th className="py-2 pr-4">June 2023</th>
-                  <th className="py-2 pr-4">June 2024</th>
-                  <th className="py-2 pr-4">June 2025</th>
-                  <th className="py-2 pr-4">Approx. %</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border">
-                <tr className="bg-success-50">
-                  <td className="py-2 pr-4 font-bold text-success-700">9</td>
-                  <td className="py-2 pr-4">105</td>
-                  <td className="py-2 pr-4">107</td>
-                  <td className="py-2 pr-4">108</td>
-                  <td className="py-2 pr-4">~83%</td>
-                </tr>
-                <tr className="bg-success-50/50">
-                  <td className="py-2 pr-4 font-bold text-success-700">8</td>
-                  <td className="py-2 pr-4">94</td>
-                  <td className="py-2 pr-4">96</td>
-                  <td className="py-2 pr-4">97</td>
-                  <td className="py-2 pr-4">~75%</td>
-                </tr>
-                <tr>
-                  <td className="py-2 pr-4 font-bold text-primary">7</td>
-                  <td className="py-2 pr-4">83</td>
-                  <td className="py-2 pr-4">85</td>
-                  <td className="py-2 pr-4">86</td>
-                  <td className="py-2 pr-4">~66%</td>
-                </tr>
-                <tr>
-                  <td className="py-2 pr-4 font-bold text-primary">6</td>
-                  <td className="py-2 pr-4">72</td>
-                  <td className="py-2 pr-4">74</td>
-                  <td className="py-2 pr-4">75</td>
-                  <td className="py-2 pr-4">~58%</td>
-                </tr>
-                <tr>
-                  <td className="py-2 pr-4 font-bold text-primary">5</td>
-                  <td className="py-2 pr-4">61</td>
-                  <td className="py-2 pr-4">63</td>
-                  <td className="py-2 pr-4">64</td>
-                  <td className="py-2 pr-4">~49%</td>
-                </tr>
-                <tr>
-                  <td className="py-2 pr-4 font-bold text-yellow-600">4</td>
-                  <td className="py-2 pr-4">50</td>
-                  <td className="py-2 pr-4">52</td>
-                  <td className="py-2 pr-4">53</td>
-                  <td className="py-2 pr-4">~40%</td>
-                </tr>
-                <tr>
-                  <td className="py-2 pr-4 font-bold text-muted-foreground">3</td>
-                  <td className="py-2 pr-4">37</td>
-                  <td className="py-2 pr-4">39</td>
-                  <td className="py-2 pr-4">40</td>
-                  <td className="py-2 pr-4">~30%</td>
-                </tr>
-                <tr>
-                  <td className="py-2 pr-4 font-bold text-muted-foreground">2</td>
-                  <td className="py-2 pr-4">25</td>
-                  <td className="py-2 pr-4">26</td>
-                  <td className="py-2 pr-4">27</td>
-                  <td className="py-2 pr-4">~20%</td>
-                </tr>
-                <tr>
-                  <td className="py-2 pr-4 font-bold text-muted-foreground">1</td>
-                  <td className="py-2 pr-4">13</td>
-                  <td className="py-2 pr-4">13</td>
-                  <td className="py-2 pr-4">14</td>
-                  <td className="py-2 pr-4">~10%</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <p className="mt-4 text-sm text-muted-foreground">
-            Note: These boundaries are approximate and based on publicly available Pearson Edexcel
-            data. The &ldquo;Approx. %&rdquo; column shows roughly what percentage of the total 128
-            marks you need.
-          </p>
+          <GradeBoundaryTable boardId="edexcel" />
         </Section>
 
-        {/* ── Component boundaries ──────────────────────────────────── */}
-        <Section title={tr(`Component grade boundaries (per paper, out of 64)`)}>
+        {/* ── Per-paper boundaries ──────────────────────────────────
+            Was two tables of per-paper boundaries across June 2023, 2024 and
+            2025, headed "out of 64" for both papers. Paper 2 is out of 96, and
+            none of the 54 numbers was transcribed from a published source -
+            the claim sheet forbids invented statistics and this is an indexed
+            page a teacher may check against the board on results day. Removed
+            rather than replaced: we do not hold Pearson's per-paper figures,
+            and inventing them is the failure being fixed. */}
+        <Section title={tr(`Per-paper boundaries`)}>
           <p>
-            Individual paper boundaries help you identify your stronger paper and where to focus
-            your revision. Each paper is marked out of <strong>64</strong>.
+            We publish the subject-level boundaries above because we have transcribed them from
+            Pearson&apos;s own published table. We do not yet hold Pearson&apos;s per-paper
+            boundaries for these series, and we will not estimate them: a boundary you plan revision
+            around has to be the board&apos;s number, not ours.
           </p>
-
-          <div className="overflow-x-auto mt-4">
-            <h3 className="font-bold text-primary mb-3">
-              {tr(`Paper 1: Fiction and Imaginative Writing`)}
-            </h3>
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-border text-left text-muted-foreground">
-                  <th className="py-2 pr-4">Grade</th>
-                  <th className="py-2 pr-4">June 2023</th>
-                  <th className="py-2 pr-4">June 2024</th>
-                  <th className="py-2 pr-4">June 2025</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border">
-                <tr>
-                  <td className="py-2 pr-4 font-bold text-success-700">9</td>
-                  <td className="py-2 pr-4">
-                    53 <span className="text-xs text-muted-foreground">({pct(53, 64)})</span>
-                  </td>
-                  <td className="py-2 pr-4">
-                    54 <span className="text-xs text-muted-foreground">({pct(54, 64)})</span>
-                  </td>
-                  <td className="py-2 pr-4">
-                    55 <span className="text-xs text-muted-foreground">({pct(55, 64)})</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="py-2 pr-4 font-bold text-primary">7</td>
-                  <td className="py-2 pr-4">
-                    42 <span className="text-xs text-muted-foreground">({pct(42, 64)})</span>
-                  </td>
-                  <td className="py-2 pr-4">
-                    43 <span className="text-xs text-muted-foreground">({pct(43, 64)})</span>
-                  </td>
-                  <td className="py-2 pr-4">
-                    44 <span className="text-xs text-muted-foreground">({pct(44, 64)})</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="py-2 pr-4 font-bold text-primary">5</td>
-                  <td className="py-2 pr-4">
-                    30 <span className="text-xs text-muted-foreground">({pct(30, 64)})</span>
-                  </td>
-                  <td className="py-2 pr-4">
-                    31 <span className="text-xs text-muted-foreground">({pct(31, 64)})</span>
-                  </td>
-                  <td className="py-2 pr-4">
-                    32 <span className="text-xs text-muted-foreground">({pct(32, 64)})</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="py-2 pr-4 font-bold text-yellow-600">4</td>
-                  <td className="py-2 pr-4">
-                    25 <span className="text-xs text-muted-foreground">({pct(25, 64)})</span>
-                  </td>
-                  <td className="py-2 pr-4">
-                    26 <span className="text-xs text-muted-foreground">({pct(26, 64)})</span>
-                  </td>
-                  <td className="py-2 pr-4">
-                    27 <span className="text-xs text-muted-foreground">({pct(27, 64)})</span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div className="overflow-x-auto mt-6">
-            <h3 className="font-bold text-accent mb-3">
-              Paper 2: Non-Fiction and Writing for Real Purposes
-            </h3>
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-border text-left text-muted-foreground">
-                  <th className="py-2 pr-4">Grade</th>
-                  <th className="py-2 pr-4">June 2023</th>
-                  <th className="py-2 pr-4">June 2024</th>
-                  <th className="py-2 pr-4">June 2025</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border">
-                <tr>
-                  <td className="py-2 pr-4 font-bold text-success-700">9</td>
-                  <td className="py-2 pr-4">
-                    52 <span className="text-xs text-muted-foreground">({pct(52, 64)})</span>
-                  </td>
-                  <td className="py-2 pr-4">
-                    53 <span className="text-xs text-muted-foreground">({pct(53, 64)})</span>
-                  </td>
-                  <td className="py-2 pr-4">
-                    54 <span className="text-xs text-muted-foreground">({pct(54, 64)})</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="py-2 pr-4 font-bold text-primary">7</td>
-                  <td className="py-2 pr-4">
-                    41 <span className="text-xs text-muted-foreground">({pct(41, 64)})</span>
-                  </td>
-                  <td className="py-2 pr-4">
-                    42 <span className="text-xs text-muted-foreground">({pct(42, 64)})</span>
-                  </td>
-                  <td className="py-2 pr-4">
-                    43 <span className="text-xs text-muted-foreground">({pct(43, 64)})</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="py-2 pr-4 font-bold text-primary">5</td>
-                  <td className="py-2 pr-4">
-                    31 <span className="text-xs text-muted-foreground">({pct(31, 64)})</span>
-                  </td>
-                  <td className="py-2 pr-4">
-                    32 <span className="text-xs text-muted-foreground">({pct(32, 64)})</span>
-                  </td>
-                  <td className="py-2 pr-4">
-                    33 <span className="text-xs text-muted-foreground">({pct(33, 64)})</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="py-2 pr-4 font-bold text-yellow-600">4</td>
-                  <td className="py-2 pr-4">
-                    25 <span className="text-xs text-muted-foreground">({pct(25, 64)})</span>
-                  </td>
-                  <td className="py-2 pr-4">
-                    26 <span className="text-xs text-muted-foreground">({pct(26, 64)})</span>
-                  </td>
-                  <td className="py-2 pr-4">
-                    27 <span className="text-xs text-muted-foreground">({pct(27, 64)})</span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <p className="mt-3">
+            Pearson publishes per-paper boundaries alongside the subject-level table in the same
+            document, linked under the table above.
+          </p>
         </Section>
 
         {/* ── What each grade looks like ─────────────────────────────── */}
@@ -910,11 +710,12 @@ export default function GradeBoundariesPage() {
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                  You need roughly <strong>49-50%</strong> overall (~63/128)
+                  You need roughly <strong>59%</strong> overall (94 of 160)
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                  That is about <strong>31-32 out of 64</strong> on each paper
+                  Spread evenly that is about <strong>38 of 64</strong> on Paper 1 and{' '}
+                  <strong>56 of 96</strong> on Paper 2
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
@@ -928,11 +729,12 @@ export default function GradeBoundariesPage() {
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                  You need roughly <strong>66-67%</strong> overall (~85/128)
+                  You need roughly <strong>71%</strong> overall (114 of 160)
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                  That is about <strong>42-43 out of 64</strong> on each paper
+                  Spread evenly that is about <strong>46 of 64</strong> on Paper 1 and{' '}
+                  <strong>68 of 96</strong> on Paper 2
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
@@ -946,11 +748,12 @@ export default function GradeBoundariesPage() {
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-success" />
-                  You need roughly <strong>83-84%</strong> overall (~107/128)
+                  You need roughly <strong>83%</strong> overall (132 of 160)
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-success" />
-                  That is about <strong>53-55 out of 64</strong> on each paper
+                  Spread evenly that is about <strong>53 of 64</strong> on Paper 1 and{' '}
+                  <strong>79 of 96</strong> on Paper 2
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-success" />
