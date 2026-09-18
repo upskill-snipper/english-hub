@@ -1,0 +1,82 @@
+#!/usr/bin/env sh
+# ─── Pre-push gate ──────────────────────────────────────────────────────────
+#
+# WHY THIS EXISTS (19 September 2026, MAINT-4)
+# CLAUDE.md has said "Gates before every commit: npx tsc --noEmit, npx vitest
+# run, node scripts/verify-i18n-locales.mjs" for months. Nothing ran them.
+# `.husky/pre-commit` runs a placeholder check and lint-staged; lint-staged runs
+# eslint --fix and prettier --write. No typecheck, no tests, no i18n check
+# anywhere in the mechanical path. docs/system/01-architecture.md said so
+# plainly - "There is almost no pre-commit gate, whatever the convention says" -
+# and the written rule and the machine had simply disagreed since.
+#
+# Husky was already wired for this: `.husky/_/pre-push` exists and dispatches to
+# this file. Its line `[ ! -f "$s" ] && exit 0` is exactly why nothing ran -
+# the file it looks for was never created.
+#
+# WHY PUSH RATHER THAN COMMIT. These take about 20 seconds together, which is
+# too slow to pay on every commit during a debugging loop and is nothing at all
+# once per push. Commits stay cheap; main stays green.
+#
+#   tsc --noEmit             ~6s
+#   vitest run               ~13s
+#   verify-i18n-locales.mjs  ~1s
+#
+# ESCAPE HATCH: `HUSKY=0 git push`. Husky's own dispatcher honours it, so no
+# extra code is needed here. Use it when the remote matters more than the gate -
+# and expect to explain why.
+# ────────────────────────────────────────────────────────────────────────────
+
+echo "pre-push: typecheck, tests, i18n. HUSKY=0 to skip."
+
+npx tsc --noEmit || {
+  echo ""
+  echo "pre-push FAILED: tsc --noEmit"
+  exit 1
+}
+
+npx vitest run || {
+  echo ""
+  echo "pre-push FAILED: vitest run"
+  exit 1
+}
+
+node scripts/verify-i18n-locales.mjs || {
+  echo ""
+  echo "pre-push FAILED: verify-i18n-locales.mjs"
+  exit 1
+}
+
+# ─── Generated-dictionary size check ────────────────────────────────────────
+#
+# `src/lib/i18n/generated/{ar,en,es}.ts` are tracked and total 59,761 lines, so
+# a whole-file rewrite is a ~119,000-line diff that buries whatever else is in
+# the push. CLAUDE.md tells the reader to eyeball `git diff --stat` for this by
+# hand, which is not a gate.
+#
+# This does NOT claim to know the cause, and that matters. The obvious story -
+# "prettier reformats them" - is backwards: the generator emits double-quoted
+# keys via JSON.stringify, the committed files are single-quoted, and
+# `prettier --write` in lint-staged is what CONVERTS generator output back to
+# the committed form. Prettier is the repair, not the damage. So this reports a
+# size, asks a question, and gets out of the way rather than asserting a
+# diagnosis it cannot support.
+#
+# Warn only. A legitimate dictionary change (a new locale, a bulk key rename)
+# really is enormous, and a blocking gate that fires on correct work is a gate
+# people learn to bypass.
+
+I18N_LINES=$(git diff --numstat "@{push}" HEAD -- src/lib/i18n/generated/ 2>/dev/null |
+  awk '{ added += $1; removed += $2 } END { print added + removed + 0 }')
+
+if [ "${I18N_LINES:-0}" -gt 5000 ]; then
+  echo ""
+  echo "pre-push NOTE: this push rewrites ${I18N_LINES} lines of"
+  echo "  src/lib/i18n/generated/. That is a regeneration, not an edit."
+  echo "  If you only meant to change a handful of strings, stop and look:"
+  echo "    git diff --stat @{push} HEAD -- src/lib/i18n/generated/"
+  echo "  If it IS a real dictionary change, carry on - this is a note, not a gate."
+  echo ""
+fi
+
+echo "pre-push: all gates passed."

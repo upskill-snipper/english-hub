@@ -71,10 +71,23 @@ than a slow one.
 **Commit by explicit path. Never `git add -A`.** Doing so once pushed 2,404
 lines of unfinished work, including a migration, to production.
 
-**Gates before every commit:** `npx tsc --noEmit`, `npx vitest run`,
-`node scripts/verify-i18n-locales.mjs`. A pre-commit hook runs eslint, prettier
-and a placeholder gate. Check `git diff --stat src/lib/i18n/generated/` too - a
-failed formatting step turns a 3-line change into a 110,000-line diff.
+**Gates.** `npx tsc --noEmit`, `npx vitest run` and
+`node scripts/verify-i18n-locales.mjs` now run mechanically in `.husky/pre-push`
+(about 20 seconds). Until 19 September 2026 this paragraph asked for them and
+nothing ran them - `pre-commit` runs only a placeholder gate and lint-staged
+(eslint --fix, prettier --write), which is still the case, deliberately: commits
+stay cheap, push is where main gets protected. `HUSKY=0 git push` skips it.
+
+Run them yourself before committing anyway if the change is large; the hook is a
+backstop, not a substitute for knowing whether your own work passes.
+
+The pre-push hook also NOTES a push that rewrites more than 5,000 lines of
+`src/lib/i18n/generated/` - those three files are 59,761 lines, so a whole-file
+rewrite buries everything else in the diff. It warns rather than blocks, and it
+deliberately offers no diagnosis: the intuitive one is wrong. The generator
+emits double-quoted keys and the committed files are single-quoted, so
+`prettier --write` is what CONVERTS generator output into the committed form.
+Prettier is the repair, not the cause.
 
 **Money and live Stripe are the founder's.** Only `sk_test_` keys are on this
 machine. Never cancel, refund, charge or extend a subscription - prepare the
