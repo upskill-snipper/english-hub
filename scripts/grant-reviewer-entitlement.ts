@@ -49,7 +49,16 @@ import {
   ConsentMethod,
   ProfileVisibility,
 } from '@prisma/client'
+import { assertWritableTarget, describePlanMode } from './_guard.mjs'
 
+// MAINT-6 (19 September 2026): .env.local points at PRODUCTION and carries the
+// service-role key, so this script used to write there by default. Module scope,
+// above the client, because the client is constructed here and not in main().
+const __guard = assertWritableTarget({ script: 'scripts/grant-reviewer-entitlement.ts' })
+if (__guard.mode !== 'apply') {
+  console.error(describePlanMode(__guard, 'scripts/grant-reviewer-entitlement.ts'))
+  process.exit(1)
+}
 const prisma = new PrismaClient()
 
 // Live reviewer auth user (336b7666-...) was created on 2026-04-23 with

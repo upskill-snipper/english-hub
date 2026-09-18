@@ -32,6 +32,7 @@
 
 import { readFileSync } from 'node:fs'
 import { createClient } from '@supabase/supabase-js'
+import { assertWritableTarget, describePlanMode } from './_guard.mjs'
 
 const URL = process.env.NEXT_PUBLIC_SUPABASE_URL
 const KEY = process.env.SUPABASE_SERVICE_ROLE_KEY
@@ -54,6 +55,16 @@ try {
 }
 if (!Array.isArray(items) || items.length === 0) {
   console.error('Items file must be a non-empty JSON array.')
+  process.exit(1)
+}
+
+// MAINT-6 (19 September 2026): .env.local points at PRODUCTION and carries the
+// service-role key, so this script used to write there by default. Placed at
+// module scope above the client, because the client is constructed here and
+// not inside main(). Two keys required against anything not demonstrably local.
+const __guard = assertWritableTarget({ script: 'scripts/load-specimen-gold.mjs' })
+if (__guard.mode !== 'apply') {
+  console.error(describePlanMode(__guard, 'scripts/load-specimen-gold.mjs'))
   process.exit(1)
 }
 

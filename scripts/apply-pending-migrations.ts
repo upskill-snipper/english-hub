@@ -34,6 +34,7 @@ import { readFileSync, readdirSync } from 'fs'
 import { resolve, basename } from 'path'
 import { config as loadDotenv } from 'dotenv'
 import { PrismaClient } from '@prisma/client'
+import { assertWritableTarget, describePlanMode } from './_guard.mjs'
 
 // Load .env files Next.js-style — local first, then base. Honoured by both
 // `npx tsx` and `node`. Doesn't override existing env vars.
@@ -64,6 +65,16 @@ if (!DIRECT_URL) {
   console.warn('DIRECT_URL not set — falling back to DATABASE_URL.')
   console.warn('If migrations fail with "session pooler" errors, set DIRECT_URL too.')
   console.warn('')
+}
+
+// MAINT-6 (19 September 2026): .env.local points at PRODUCTION and carries the
+// service-role key, so this script used to write there by default. Placed at
+// module scope above the client, because the client is constructed here and
+// not inside main(). Two keys required against anything not demonstrably local.
+const __guard = assertWritableTarget({ script: 'scripts/apply-pending-migrations.ts' })
+if (__guard.mode !== 'apply') {
+  console.error(describePlanMode(__guard, 'scripts/apply-pending-migrations.ts'))
+  process.exit(1)
 }
 
 const prisma = new PrismaClient({

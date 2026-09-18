@@ -16,6 +16,7 @@ import { resolve } from 'path'
 import { readFileSync } from 'fs'
 import { config as loadDotenv } from 'dotenv'
 import { PrismaClient } from '@prisma/client'
+import { assertWritableTarget, describePlanMode } from './_guard.mjs'
 
 loadDotenv({ path: resolve(__dirname, '..', '.env.local') })
 loadDotenv({ path: resolve(__dirname, '..', '.env') })
@@ -25,6 +26,16 @@ if (!url) {
   console.error('DATABASE_URL / DIRECT_URL not set')
   process.exit(2)
 }
+// MAINT-6 (19 September 2026): .env.local points at PRODUCTION and carries the
+// service-role key, so this script used to write there by default. Placed at
+// module scope above the client, because the client is constructed here and
+// not inside main(). Two keys required against anything not demonstrably local.
+const __guard = assertWritableTarget({ script: 'scripts/apply-rls-migration.ts' })
+if (__guard.mode !== 'apply') {
+  console.error(describePlanMode(__guard, 'scripts/apply-rls-migration.ts'))
+  process.exit(1)
+}
+
 const prisma = new PrismaClient({ datasources: { db: { url } } })
 
 const SQL_PATH = resolve(

@@ -139,6 +139,7 @@
 
 import { createClient } from '@supabase/supabase-js'
 import { PrismaClient } from '@prisma/client'
+import { assertWritableTarget, describePlanMode } from './_guard.mjs'
 
 // ── Config / flags ──────────────────────────────────────────────────────────
 
@@ -188,6 +189,16 @@ if (missing.length > 0) {
 }
 
 // ── Clients ─────────────────────────────────────────────────────────────────
+
+// MAINT-6 (19 September 2026): .env.local points at PRODUCTION and carries the
+// service-role key, so this script used to write there by default. Placed at
+// module scope above the client, because the client is constructed here and
+// not inside main(). Two keys required against anything not demonstrably local.
+const __guard = assertWritableTarget({ script: 'scripts/backfill-prisma-users.mjs' })
+if (__guard.mode !== 'apply') {
+  console.error(describePlanMode(__guard, 'scripts/backfill-prisma-users.mjs'))
+  process.exit(1)
+}
 
 const prisma = new PrismaClient()
 const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, {
