@@ -1223,15 +1223,19 @@ export default function ForTeachersPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/[0.05] rounded-full blur-[140px] pointer-events-none" />
 
         <div className="relative max-w-3xl mx-auto px-6 text-center">
-          <Link href="/growth" className="inline-block mb-8">
+          {/* The badge used to link to /growth, a public traction dashboard
+              removed on 2026-09-18 because it published a near-zero paying
+              count from two broken data sources. The badge stays; the link
+              does not. */}
+          <div className="inline-block mb-8">
             <Badge
               variant="outline"
-              className="border-primary/20 bg-primary/[0.06] text-primary text-xs font-semibold gap-1.5 px-3 py-1 hover:bg-primary/[0.1] transition-colors"
+              className="border-primary/20 bg-primary/[0.06] text-primary text-xs font-semibold gap-1.5 px-3 py-1"
             >
               <Users className="w-3.5 h-3.5" />
               {t('mkt.teachers.ft.final.badge')}
             </Badge>
-          </Link>
+          </div>
 
           <h2 className="text-foreground mb-6">{t('mkt.teachers.ft.final.title')}</h2>
           <p className="text-muted-foreground text-xl max-w-xl mx-auto mb-10 leading-relaxed">

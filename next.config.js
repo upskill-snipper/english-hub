@@ -60,6 +60,19 @@ const nextConfig = {
       // The /for-* marketing routes were consolidated onto cleaner
       // canonical URLs. 308s preserve link equity from inbound links,
       // the sitemap and prior SEO. More specific paths first.
+      // 2026-09-18: /growth was a public "live traction" dashboard reading
+      // Prisma User.lastLoginAt and Prisma Subscription. lastLoginAt is only
+      // written on password sign-in and the Stripe webhook never wrote a
+      // Subscription row for 96% of customers, so the page published a
+      // near-zero active-user and paying-student count to anyone who found
+      // it, including school buyers. Removed rather than corrected: the
+      // numbers it was built to show are not ones this stage of the business
+      // benefits from publishing. 307 so it can come back.
+      {
+        source: '/growth',
+        destination: '/about',
+        permanent: false,
+      },
       {
         source: '/for-schools/pilot',
         destination: '/school-pilot',

@@ -3,7 +3,6 @@ import { z } from 'zod'
 import { Prisma } from '@prisma/client'
 import { prisma } from '@/lib/prisma'
 import { sendEmail } from '@/lib/email'
-import { sendViaResend } from '@/lib/email/resend'
 import { tryPrismaUserId } from '@/lib/identity'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
@@ -20,32 +19,11 @@ const FALLBACK_DSL_EMAIL = process.env.DSL_FALLBACK_EMAIL || 'cj@upskillenergy.c
 
 // ─── Alert transport ────────────────────────────────────────────────────
 //
-// 18 September 2026: production has no SMTP_* variables, so the nodemailer
-// transport in src/lib/email.ts builds with host undefined and every send
-// returns { success: false }. That was the only route by which a safeguarding
-// report reached a human. Resend is configured in production and already
-// carries other transactional mail, so when SMTP is not configured the alert
-// goes through Resend instead. This is the one email in the codebase that must
-// not wait for an environment decision.
-async function deliverAlert(
-  to: string,
-  subject: string,
-  html: string,
-): Promise<{ success: boolean; error?: string }> {
-  if (process.env.SMTP_HOST) {
-    return sendEmail(to, subject, html)
-  }
-  const r = await sendViaResend({
-    to,
-    subject,
-    html,
-    tags: [{ name: 'category', value: 'safeguarding-alert' }],
-  })
-  return r.sent
-    ? { success: true }
-    : { success: false, error: `resend ${r.reason}: ${r.detail ?? ''}` }
-}
-
+// This route used to carry its own Resend fallback, added on 18 September 2026
+// when production was found to have no SMTP settings. `sendEmail()` now makes
+// that choice for every caller (see src/lib/email.ts), so the special case is
+// gone and there is one transport rule for the whole codebase.
+//
 // ─── Request validation ─────────────────────────────────────────────────
 
 const reportSchema = z.object({
@@ -250,7 +228,7 @@ export async function POST(request: NextRequest) {
           ? [primaryInbox, primaryInbox]
           : [primaryInbox, primaryInbox, FALLBACK_DSL_EMAIL]
       for (const recipient of recipients) {
-        const result = await deliverAlert(recipient, subject, emailHtml)
+        const result = await sendEmail(recipient, subject, emailHtml)
         if (result.success) {
           delivered = true
           break

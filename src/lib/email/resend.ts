@@ -23,6 +23,8 @@ export interface ResendSendOptions {
   text?: string
   from?: string
   replyTo?: string
+  /** Blind copies. Used by the Trustpilot invitation pipeline. */
+  bcc?: string | string[]
   tags?: Array<{ name: string; value: string }>
 }
 
@@ -52,6 +54,7 @@ export async function sendViaResend(opts: ResendSendOptions): Promise<ResendSend
         html: opts.html,
         ...(opts.text ? { text: opts.text } : {}),
         ...(opts.replyTo ? { reply_to: opts.replyTo } : {}),
+        ...(opts.bcc && opts.bcc.length ? { bcc: opts.bcc } : {}),
         ...(opts.tags ? { tags: opts.tags } : {}),
       }),
     })
