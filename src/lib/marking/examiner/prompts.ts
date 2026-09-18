@@ -22,6 +22,7 @@
 import type Anthropic from '@anthropic-ai/sdk'
 import type { ExaminerPack, ExaminerQuestionSpec } from './types'
 import { transcriptStats } from './engine'
+import { buildCalibrationBlock } from './calibration'
 
 export const TRANSCRIBE_RULES = `You are transcribing photographed pages of a handwritten examination answer so that an examiner can mark it. The transcript will be marked for vocabulary, sentence structure, SPELLING and PUNCTUATION, so it must be a faithful mirror of the page, never a tidied version of it. A silently corrected spelling or an added comma changes the candidate's mark.
 
@@ -162,15 +163,38 @@ export function responseBlockText(response: string, pageCount: number, notes: st
   )
 }
 
+/**
+ * The marking message, ordered so the cache pays as much as possible.
+ *
+ * Block order is deliberate and is a prefix ladder, most stable first:
+ *   1. standardisation anchors  - identical for every teacher marking this
+ *      paper and question, so the prefix system + anchors is shared across
+ *      accounts, not just across one teacher's batch;
+ *   2. the question label and the teacher's own mark scheme - identical for
+ *      every candidate in one bulk run;
+ *   3. the candidate's response - the only part paid for in full each time.
+ *
+ * Blocks 1 and 2 carry a cache breakpoint. With the system block that is three
+ * of the four breakpoints a request may have.
+ */
 export function markingContent(
+  pack: ExaminerPack,
   question: ExaminerQuestionSpec,
   schemeText: string,
   response: string,
   pageCount: number,
   notes: string,
 ): Anthropic.ContentBlockParam[] {
-  return [
-    { type: 'text', text: schemeBlockText(question, schemeText), cache_control: EPHEMERAL },
-    { type: 'text', text: responseBlockText(response, pageCount, notes) },
-  ]
+  const blocks: Anthropic.ContentBlockParam[] = []
+  const calibration = buildCalibrationBlock(pack.id, question)
+  if (calibration) {
+    blocks.push({ type: 'text', text: calibration, cache_control: EPHEMERAL })
+  }
+  blocks.push({
+    type: 'text',
+    text: schemeBlockText(question, schemeText),
+    cache_control: EPHEMERAL,
+  })
+  blocks.push({ type: 'text', text: responseBlockText(response, pageCount, notes) })
+  return blocks
 }

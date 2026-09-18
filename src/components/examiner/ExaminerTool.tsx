@@ -71,7 +71,7 @@ export function ExaminerTool() {
   const { packs, error: packsError } = usePackList()
   const [packId, setPackId] = useState<string | null>(null)
   const [questionId, setQuestionId] = useState<string | null>(null)
-  const { pack, loading: packLoading, error: packError } = usePack(packId)
+  const { pack, calibration, loading: packLoading, error: packError } = usePack(packId)
   const schemes = useSchemes(packId)
   const runs = useRuns()
 
@@ -319,7 +319,7 @@ export function ExaminerTool() {
 
           <TabsContent value="reference" className="mt-4">
             {pack ? (
-              <ReferencePanel pack={pack} question={question} />
+              <ReferencePanel pack={pack} question={question} calibration={calibration} />
             ) : (
               <p className="text-sm italic text-muted-foreground">Loading the paper...</p>
             )}

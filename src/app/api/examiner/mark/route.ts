@@ -94,6 +94,7 @@ export async function POST(request: NextRequest) {
             {
               role: 'user',
               content: markingContent(
+                pack,
                 question,
                 body.schemeText,
                 body.response,

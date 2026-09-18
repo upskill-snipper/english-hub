@@ -113,6 +113,7 @@ async function main() {
       {
         role: 'user',
         content: markingContent(
+          pack,
           q4,
           'Q4: How does the writer use language and structure to show his feelings? (12 marks). Level 3 (5-7): clear understanding and explanation. Level 4 (8-10): thorough exploration.',
           s2.text,

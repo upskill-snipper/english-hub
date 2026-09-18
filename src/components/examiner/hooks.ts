@@ -4,6 +4,7 @@
 
 import { useCallback, useEffect, useState } from 'react'
 import type { ExaminerPack, ExaminerPackSummary } from '@/lib/marking/examiner/types'
+import type { ExaminerAnchor, CalibrationSummary } from '@/lib/marking/examiner/calibration'
 import { deleteJson, getJson, postJson } from './lib/sse'
 
 export function usePackList() {
@@ -22,34 +23,50 @@ export function usePackList() {
   return { packs, error }
 }
 
+/** The standardisation ladder a pack is calibrated on, as served by the API. */
+export interface PackCalibration {
+  sources: CalibrationSummary[]
+  /** Anchors by question id, lowest mark first. */
+  anchors: Record<string, ExaminerAnchor[]>
+}
+
 const packCache = new Map<string, ExaminerPack>()
+const calibrationCache = new Map<string, PackCalibration>()
 
 export function usePack(packId: string | null) {
   const [pack, setPack] = useState<ExaminerPack | null>(
     packId ? (packCache.get(packId) ?? null) : null,
+  )
+  const [calibration, setCalibration] = useState<PackCalibration | null>(
+    packId ? (calibrationCache.get(packId) ?? null) : null,
   )
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   useEffect(() => {
     if (!packId) {
       setPack(null)
+      setCalibration(null)
       return
     }
     const cached = packCache.get(packId)
     if (cached) {
       setPack(cached)
+      setCalibration(calibrationCache.get(packId) ?? null)
       return
     }
     const ctrl = new AbortController()
     setLoading(true)
     setError('')
-    getJson<{ pack: ExaminerPack }>(
+    getJson<{ pack: ExaminerPack; calibration?: PackCalibration }>(
       `/api/examiner/packs/${encodeURIComponent(packId)}`,
       ctrl.signal,
     )
       .then((r) => {
         packCache.set(packId, r.pack)
         setPack(r.pack)
+        const cal = r.calibration ?? null
+        if (cal) calibrationCache.set(packId, cal)
+        setCalibration(cal)
       })
       .catch((e) => {
         if (ctrl.signal.aborted) return
@@ -60,7 +77,7 @@ export function usePack(packId: string | null) {
       })
     return () => ctrl.abort()
   }, [packId])
-  return { pack, loading, error }
+  return { pack, calibration, loading, error }
 }
 
 export interface SavedScheme {

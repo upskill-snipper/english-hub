@@ -8,7 +8,80 @@ import type {
   ExaminerQuestionSpec,
   ExaminerTrigger,
 } from '@/lib/marking/examiner/types'
+import type { ExaminerAnchor } from '@/lib/marking/examiner/calibration'
+import type { PackCalibration } from './hooks'
 import { CalibrationBadge, Panel } from './ui'
+
+/**
+ * The standardisation ladder: what real examiners awarded on this paper and
+ * why. This is the same data the marking prompt is calibrated on, so what a
+ * teacher reads here is what the model was told, which is the transparency
+ * position the product takes everywhere else.
+ */
+function StandardisationLadder({
+  calibration,
+  question,
+}: {
+  calibration: PackCalibration
+  question: ExaminerQuestionSpec
+}) {
+  const anchors: ExaminerAnchor[] = calibration.anchors[question.id] ?? []
+  if (!anchors.length) return null
+  const award = (a: ExaminerAnchor) => {
+    if (a.award) {
+      const total = Object.values(a.award).reduce((s, v) => s + v, 0)
+      return `${Object.entries(a.award)
+        .map(([k, v]) => `${k} ${v}`)
+        .join(' · ')} = ${total}`
+    }
+    if (a.mark !== undefined) return `${a.mark} / ${question.max}`
+    return a.level ? `Level ${a.level}` : 'not stated'
+  }
+  return (
+    <Panel title="Standardisation: marks real examiners awarded on this paper">
+      <p className="text-sm text-muted-foreground">
+        Use this the way you would use standardisation scripts: to see where the boundaries actually
+        fall. The candidate wrote to a different task, so never expect the same content. No
+        candidate writing is reproduced; these are the examiners{"'"} own margin notes.
+      </p>
+      <div className="mt-3 space-y-2">
+        {anchors.map((a, i) => (
+          <div key={i} className="rounded-md border border-border p-3 text-sm">
+            <div className="flex flex-wrap items-baseline gap-2">
+              <span className="font-serif text-lg font-bold text-primary tabular-nums">
+                {award(a)}
+              </span>
+              {a.level && <span className="text-xs text-muted-foreground">level {a.level}</span>}
+              {a.sourceQuestion && a.sourceQuestion !== question.id && (
+                <span className="text-xs text-muted-foreground">on {a.sourceQuestion}</span>
+              )}
+              {a.inferred && (
+                <span className="rounded bg-amber-500/15 px-1.5 py-0.5 text-[11px] text-amber-700 dark:text-amber-300">
+                  mark derived from the note, not printed
+                </span>
+              )}
+            </div>
+            {a.decisive && <p className="mt-1 leading-relaxed">{a.decisive}</p>}
+            {a.notes.length > 0 && (
+              <ul className="mt-1 list-disc space-y-0.5 pl-4 text-xs italic text-muted-foreground">
+                {a.notes.map((n, k) => (
+                  <li key={k}>{n}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
+      </div>
+      <div className="mt-3 space-y-1 text-xs text-muted-foreground">
+        {calibration.sources.map((s, i) => (
+          <p key={i}>
+            <b>{s.series}</b>: {s.source}
+          </p>
+        ))}
+      </div>
+    </Panel>
+  )
+}
 
 function Grid({ grid }: { grid: ExaminerGrid }) {
   return (
@@ -137,9 +210,11 @@ function Question({ q }: { q: ExaminerQuestionSpec }) {
 export function ReferencePanel({
   pack,
   question,
+  calibration,
 }: {
   pack: ExaminerPack
   question: ExaminerQuestionSpec | null
+  calibration?: PackCalibration | null
 }) {
   return (
     <div className="space-y-6">
