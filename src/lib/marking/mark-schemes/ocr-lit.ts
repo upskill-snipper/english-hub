@@ -3,9 +3,27 @@
 // Based on the OCR J352 specification (9-1 GCSE).
 //
 // Source: https://www.ocr.org.uk/qualifications/gcse/english-literature-j352/
+//
+// ── THE TOP FOUR MARKS WERE UNAWARDABLE (fixed 19 September 2026, EXAM-7) ───
+// The 16-mark objectives were built as `{ ...ao1, maxMarks: 16 }`. That spread
+// overrode the declared total and left the base ladder, which tops out at 12,
+// completely untouched. So three sections told the marker the objective was
+// worth 16 marks and then handed it a grid whose highest level read
+// "11-12 marks": a candidate who deserved 16 could not be given more than 12.
+//
+// Nothing caught it because every total still added up - question and paper
+// totals are computed from `maxMarks`, which was right. Only the grid the model
+// actually marks against was short, and no test looked at the grid.
+//
+// The AOs now go through `scaleAO()`, which rescales the ladder with the
+// tariff. This needed no board document: the target is the objective's own
+// declared maxMarks, so what is being removed is an internal contradiction,
+// not a claim about OCR's published scheme. The tariffs themselves are still
+// UNVERIFIED - see ../examiner/verification.ts.
 // ────────────────────────────────────────────────────────────────────────────
 
 import type { MarkScheme, AssessmentObjective } from './types'
+import { scaleAO } from './scale-ao'
 
 // ─── Shared Assessment Objectives ─────────────────────────────────────────
 
@@ -237,9 +255,18 @@ const ao3: AssessmentObjective = {
 
 const ao4: AssessmentObjective = {
   id: 'AO4',
-  label: 'AO4 - Relate texts / compare',
+  // Was 'AO4 - Relate texts / compare' (fixed 19 September 2026, EXAM-7), with
+  // a description that opened on relationships between texts and then gave the
+  // real England GCSE Literature AO4 - technical accuracy - as its second
+  // sentence. The label and the first sentence contradicted the second.
+  //
+  // Same reasoning as the matching fix in eduqas-lit.ts: comparison is not a
+  // separate objective in GCSE Literature, and aqa-lit-paper1 and edexcel-lit
+  // both name AO4 as accuracy. The relationships sentence is removed rather
+  // than kept alongside, because the description is fed to the model verbatim.
+  label: 'AO4 - Technical accuracy',
   description:
-    'Show understanding of the relationships between texts and make connections between them. Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.',
+    'Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.',
   maxMarks: 4,
   weighting: 0.1,
   bands: [
@@ -311,21 +338,12 @@ export const ocrLitComponent01: MarkScheme = {
         'Answer one question on a studied modern prose or drama text. Use the extract as a starting point and refer to the text as a whole.',
       totalMarks: 40,
       assessmentObjectives: [
-        { ...ao1, maxMarks: 16, weighting: 16 / 40 },
-        { ...ao2, maxMarks: 16, weighting: 16 / 40 },
-        {
-          ...ao4,
-          maxMarks: 8,
-          weighting: 8 / 40,
-          bands: ao4.bands.map((b) => ({
-            ...b,
-            minMarks: b.minMarks * 2,
-            maxMarks: b.maxMarks * 2,
-          })),
-        },
+        scaleAO(ao1, 16, 16 / 40),
+        scaleAO(ao2, 16, 16 / 40),
+        scaleAO(ao4, 8, 8 / 40),
       ],
       examinerNotes:
-        'AO3 is not assessed in Section A. Reward sustained analysis that moves between the extract and the wider text. AO4 assesses comparative/relational skills and written accuracy.',
+        'AO3 is not assessed in Section A. Reward sustained analysis that moves between the extract and the wider text. AO4 assesses written accuracy - range of vocabulary and sentence structures, spelling and punctuation.',
     },
     {
       id: 'Section B',
@@ -334,18 +352,9 @@ export const ocrLitComponent01: MarkScheme = {
         'Answer one question on a studied literary heritage text (e.g. Great Expectations, Pride and Prejudice, Romeo and Juliet). Refer to the text as a whole.',
       totalMarks: 40,
       assessmentObjectives: [
-        { ...ao1, maxMarks: 16, weighting: 16 / 40 },
-        { ...ao2, maxMarks: 16, weighting: 16 / 40 },
-        {
-          ...ao3,
-          maxMarks: 8,
-          weighting: 8 / 40,
-          bands: ao3.bands.map((b) => ({
-            ...b,
-            minMarks: Math.ceil(b.minMarks * (8 / 6)),
-            maxMarks: Math.ceil(b.maxMarks * (8 / 6)),
-          })),
-        },
+        scaleAO(ao1, 16, 16 / 40),
+        scaleAO(ao2, 16, 16 / 40),
+        scaleAO(ao3, 8, 8 / 40),
       ],
       examinerNotes:
         'AO4 is not assessed in Section B. Context (AO3) should be integrated into the argument, not bolted on. Accept any valid interpretation supported by textual evidence.',
@@ -373,28 +382,10 @@ export const ocrLitComponent02: MarkScheme = {
         'Compare how poets present a theme in one named poem and one other poem from the anthology. You must compare the two poems.',
       totalMarks: 40,
       assessmentObjectives: [
-        { ...ao1, maxMarks: 12, weighting: 12 / 40 },
-        { ...ao2, maxMarks: 12, weighting: 12 / 40 },
-        {
-          ...ao3,
-          maxMarks: 8,
-          weighting: 8 / 40,
-          bands: ao3.bands.map((b) => ({
-            ...b,
-            minMarks: Math.ceil(b.minMarks * (8 / 6)),
-            maxMarks: Math.ceil(b.maxMarks * (8 / 6)),
-          })),
-        },
-        {
-          ...ao4,
-          maxMarks: 8,
-          weighting: 8 / 40,
-          bands: ao4.bands.map((b) => ({
-            ...b,
-            minMarks: b.minMarks * 2,
-            maxMarks: b.maxMarks * 2,
-          })),
-        },
+        scaleAO(ao1, 12, 12 / 40),
+        scaleAO(ao2, 12, 12 / 40),
+        scaleAO(ao3, 8, 8 / 40),
+        scaleAO(ao4, 8, 8 / 40),
       ],
       examinerNotes:
         'Reward genuine comparison, not sequential treatment of two poems. Context should illuminate the comparison. The named poem must be discussed.',
@@ -406,18 +397,9 @@ export const ocrLitComponent02: MarkScheme = {
         'Starting with an extract from a studied Shakespeare play, explore how a theme, character or relationship is presented in the extract and in the play as a whole.',
       totalMarks: 40,
       assessmentObjectives: [
-        { ...ao1, maxMarks: 16, weighting: 16 / 40 },
-        { ...ao2, maxMarks: 16, weighting: 16 / 40 },
-        {
-          ...ao3,
-          maxMarks: 8,
-          weighting: 8 / 40,
-          bands: ao3.bands.map((b) => ({
-            ...b,
-            minMarks: Math.ceil(b.minMarks * (8 / 6)),
-            maxMarks: Math.ceil(b.maxMarks * (8 / 6)),
-          })),
-        },
+        scaleAO(ao1, 16, 16 / 40),
+        scaleAO(ao2, 16, 16 / 40),
+        scaleAO(ao3, 8, 8 / 40),
       ],
       examinerNotes:
         'AO4 is not assessed in Section B. Reward candidates who move fluently between the extract and the rest of the play. Context should deepen interpretation.',

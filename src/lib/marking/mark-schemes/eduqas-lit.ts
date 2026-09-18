@@ -13,6 +13,7 @@
 // ────────────────────────────────────────────────────────────────────────────
 
 import type { MarkScheme, AssessmentObjective, BandDescriptor } from './types'
+import { scaleAO } from './scale-ao'
 
 /**
  * Scale an AO's full-range bands proportionally to a per-question maxMarks.
@@ -24,23 +25,6 @@ import type { MarkScheme, AssessmentObjective, BandDescriptor } from './types'
  * the mark-scheme coverage test sums the original (unscaled) top-band marks
  * across all questions and over-counts the paper total.
  */
-function scaleAO(
-  ao: AssessmentObjective,
-  maxMarks: number,
-  weighting: number,
-): AssessmentObjective {
-  const originalMax = Math.max(...ao.bands.map((b) => b.maxMarks))
-  const ratio = maxMarks / originalMax
-  const scaledBands: BandDescriptor[] = ao.bands.map((b, i, arr) => ({
-    ...b,
-    minMarks:
-      i === 0 ? Math.max(0, Math.round(b.minMarks * ratio)) : Math.round(b.minMarks * ratio),
-    // Pin the top band's maxMarks to the exact target so the per-question
-    // allocation is always reachable and the coverage test sums precisely.
-    maxMarks: i === arr.length - 1 ? maxMarks : Math.round(b.maxMarks * ratio),
-  }))
-  return { ...ao, maxMarks, weighting, bands: scaledBands }
-}
 
 // ─── Assessment Objectives ─────────────────────────────────────────────────
 
@@ -270,9 +254,24 @@ const ao3Lit: AssessmentObjective = {
 
 const ao4Lit: AssessmentObjective = {
   id: 'AO4',
-  label: 'AO4 - Compare and contrast',
+  // Was 'AO4 - Compare and contrast' (fixed 19 September 2026, EXAM-7). The
+  // label contradicted the description directly underneath it, which is - and
+  // was - the England GCSE Literature AO4: technical accuracy. Comparison is
+  // not a separate objective in GCSE Literature; it is assessed within AO1 and
+  // AO2. Told the objective was "compare and contrast", the model awarded
+  // these marks for comparison skill and never looked at accuracy at all.
+  //
+  // Corroborated inside the corpus rather than guessed: aqa-lit-paper1 calls it
+  // 'AO4 - Technical accuracy' and edexcel-lit - rebuilt against the published
+  // Pearson 1ET0 spec earlier the same night, where an invented AO4-Comparison
+  // was removed - calls it 'AO4 - Spelling, punctuation and grammar'.
+  //
+  // The parenthetical claiming AO4 measures comparison in poetry questions is
+  // deleted, not softened: this text is fed to the model verbatim, so a false
+  // sentence left in place keeps producing the same wrong marks.
+  label: 'AO4 - Technical accuracy',
   description:
-    'Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation. (In poetry comparison questions, AO4 measures the ability to make connections and comparisons between texts.)',
+    'Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.',
   maxMarks: 10,
   weighting: 0.15,
   bands: [

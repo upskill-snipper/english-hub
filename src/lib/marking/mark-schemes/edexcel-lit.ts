@@ -44,45 +44,8 @@
 //   component".
 // ────────────────────────────────────────────────────────────────────────────
 
-import type { MarkScheme, AssessmentObjective, BandDescriptor } from './types'
-
-/**
- * Scale a base AO, defined with a full Level 1-6 ladder, down to a smaller
- * per-question allocation.
- *
- * Rewritten 19 September 2026. The previous version rounded each band edge
- * independently, which left gaps and overlaps: scaling the 16-mark AO2 ladder
- * to 20 produced a band ending at 17 followed by one starting at 18, so a
- * response worth 18 fell between two levels. Rounding is now applied to the
- * upper edge only and each band starts one mark above the previous band's top,
- * so the ladder is contiguous by construction, starts at 1 and always reaches
- * `maxMarks`. A band squeezed out of existence by the rescale is dropped
- * rather than left inverted.
- */
-function scaleAO(
-  base: Omit<AssessmentObjective, 'maxMarks' | 'weighting'>,
-  maxMarks: number,
-  weighting: number,
-): AssessmentObjective {
-  const sorted = [...base.bands].sort((a, b) => a.minMarks - b.minMarks)
-  const originalMax = Math.max(...sorted.map((b) => b.maxMarks))
-  const ratio = maxMarks / originalMax
-
-  const scaled: BandDescriptor[] = []
-  let lo = 1
-  for (let i = 0; i < sorted.length; i++) {
-    const b = sorted[i]!
-    const hi = i === sorted.length - 1 ? maxMarks : Math.round(b.maxMarks * ratio)
-    if (hi < lo) continue // the rescale collapsed this level; drop it
-    scaled.push({ ...b, minMarks: lo, maxMarks: Math.min(hi, maxMarks) })
-    lo = Math.min(hi, maxMarks) + 1
-  }
-  // Guarantee the top mark is awardable even if rounding stopped short.
-  const last = scaled[scaled.length - 1]
-  if (last && last.maxMarks < maxMarks) last.maxMarks = maxMarks
-
-  return { ...base, maxMarks, weighting, bands: scaled }
-}
+import type { MarkScheme, AssessmentObjective } from './types'
+import { scaleAO } from './scale-ao'
 
 // ─── Assessment Objectives ─────────────────────────────────────────────────
 // Edexcel Literature uses AO1-AO4. Band descriptors use 6 levels for the main
