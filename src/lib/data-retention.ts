@@ -164,7 +164,23 @@ export const DPO_EMAIL = 'dpo@theenglishhub.app'
  * map exists so a subject-access export can enumerate what it read instead
  * of implying a completeness it cannot prove.
  */
-export const SUPABASE_SUBJECT_TABLES: ReadonlyArray<{ table: string; column: string }> = [
+export interface SubjectTable {
+  table: string
+  column: string
+  /**
+   * Explicit column projection. When absent the whole row is exported.
+   *
+   * REQUIRED for any table whose rows describe somebody OTHER than the
+   * subject. See the header above: the export runs with a service-role
+   * client, so RLS gives no protection and `select('*')` means exactly what
+   * it says.
+   */
+  columns?: readonly string[]
+  /** Why a projection is narrowed, surfaced in the export itself. */
+  note?: string
+}
+
+export const SUPABASE_SUBJECT_TABLES: ReadonlyArray<SubjectTable> = [
   { table: 'enrolments', column: 'user_id' },
   { table: 'module_progress', column: 'user_id' },
   { table: 'assessment_attempts', column: 'user_id' },
@@ -176,6 +192,87 @@ export const SUPABASE_SUBJECT_TABLES: ReadonlyArray<{ table: string; column: str
   { table: 'marking_submissions', column: 'student_id' },
   { table: 'class_students', column: 'student_id' },
   { table: 'school_members', column: 'user_id' },
+
+  // ── Added 19 September 2026 (PAY-9) ───────────────────────────────────────
+  // Seven further tables are keyed to auth.users and were absent from this
+  // list, so a subject-access export said nothing about them at all.
+
+  { table: 'school_students', column: 'user_id' },
+  { table: 'trustpilot_invite', column: 'user_id' },
+  {
+    table: 'examiner_mark_schemes',
+    column: 'owner_id',
+    columns: ['id', 'pack_id', 'name', 'char_count', 'source_kind', 'created_at', 'updated_at'],
+    note: 'The mark-scheme BODY is omitted: it is exam-board material the account uploaded, not personal data about the account holder, and it runs to hundreds of kilobytes. Available from the DPO on request.',
+  },
+
+  {
+    table: 'consent_tokens',
+    column: 'student_id',
+    columns: ['student_id', 'student_name', 'expires_at', 'status', 'created_at', 'acted_at'],
+    note: 'The token itself is omitted because it is a live credential - anyone holding it could grant or withdraw parental consent for this account. The parent email is omitted as the contact detail of another person.',
+  },
+
+  {
+    table: 'affiliate_accounts',
+    column: 'user_id',
+    columns: [
+      'id',
+      'user_id',
+      'code',
+      'full_name',
+      'email',
+      'website',
+      'social_handle',
+      'audience_size',
+      'audience_description',
+      'promo_strategy',
+      'status',
+      'tier',
+      'confirmed_referral_count',
+      'payout_method',
+      'payout_email',
+    ],
+    note: 'Bank account name, sort code and account number are held and are omitted from this self-service download. They are the data of the account holder and are available from the DPO on a verified request - a downloadable file is the wrong place to put a full account number.',
+  },
+
+  // ── Keyed to the subject, but ABOUT somebody else's child ─────────────────
+  // These two are the reason `columns` exists. Both are keyed on the TEACHER,
+  // and every substantive field in them describes a PUPIL's work: grades,
+  // corrections, feedback, and in the examiner tool an actual transcript of a
+  // child's handwriting plus a candidate label that may be their name.
+  //
+  // Exporting them whole, keyed on the reviewer, would send one child's marked
+  // work to a different person on request. UK GDPR Art. 15(4) and DPA 2018
+  // Sch. 2 para. 16 both say the subject's right of access does not extend to
+  // the data of another individual. So the projection carries only the fact that
+  // the teacher did the work, never its content.
+
+  {
+    table: 'teacher_moderations',
+    column: 'reviewer_user_id',
+    columns: ['id', 'submission_id', 'decision', 'created_at'],
+    note: 'Only the fact and outcome of each moderation is included. The grades, AO corrections, feedback and moderation notes all describe the submission of a pupil, not the reviewer, and are withheld under UK GDPR Art. 15(4).',
+  },
+
+  {
+    table: 'examiner_marking_runs',
+    column: 'owner_id',
+    columns: [
+      'id',
+      'pack_id',
+      'question_id',
+      'batch_id',
+      'page_count',
+      'mark',
+      'max_mark',
+      'model_transcribe',
+      'model_mark',
+      'expires_at',
+      'created_at',
+    ],
+    note: 'The transcript, transcript notes, commentary and candidate label are withheld: they are a transcription of the handwritten answer of a pupil, and possibly the name of that pupil, which is the data of another individual (UK GDPR Art. 15(4)).',
+  },
 ]
 
 /**
@@ -382,9 +479,13 @@ export async function compileSupabaseNativeSubjectData(
 
   const records: SupabaseNativeSubjectData['records'] = []
 
-  for (const { table, column } of SUPABASE_SUBJECT_TABLES) {
+  for (const { table, column, columns, note } of SUPABASE_SUBJECT_TABLES) {
     try {
-      const { data, error } = await admin.from(table).select('*').eq(column, supabaseUserId)
+      // `columns` is not decoration: this runs with a service-role client, so
+      // RLS gives no protection and `select('*')` on a table keyed to a teacher
+      // would return rows describing other people's children.
+      const projection = columns && columns.length > 0 ? columns.join(', ') : '*'
+      const { data, error } = await admin.from(table).select(projection).eq(column, supabaseUserId)
       if (error) {
         records.push({
           table,
@@ -395,8 +496,20 @@ export async function compileSupabaseNativeSubjectData(
         })
         continue
       }
-      const rows = (data ?? []) as Record<string, unknown>[]
-      records.push({ table, status: 'read', rowCount: rows.length, rows })
+      // supabase-js infers the row type from a LITERAL select string; ours is
+      // computed at runtime from the projection above, so its inference gives
+      // up and widens to GenericStringError[]. The double assertion is that
+      // loss of inference, not a claim about the data.
+      const rows = (data ?? []) as unknown as Record<string, unknown>[]
+      // The note travels with the data, so a narrowed export says so on its
+      // face rather than silently implying it is everything.
+      records.push({
+        table,
+        status: 'read',
+        rowCount: rows.length,
+        rows,
+        ...(note ? { note } : {}),
+      })
     } catch (err) {
       records.push({
         table,
