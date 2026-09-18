@@ -1,6 +1,41 @@
-// @ts-nocheck
 /**
  * GCSE English marking guide criteria by exam board.
+ *
+ * ─── READ THIS BEFORE TRUSTING ANYTHING BELOW (19 September 2026) ──────────
+ *
+ * THIS IS THE SECOND MARK-SCHEME CORPUS IN THIS REPOSITORY. The other is
+ * src/lib/marking/mark-schemes/, which the examiner tool and the GCSE marker
+ * use, and which now carries a verification registry
+ * (src/lib/marking/examiner/verification.ts) recording which papers have been
+ * checked against a board's published specification.
+ *
+ * Nothing connects the two. On 19 September that corpus was audited and two
+ * defects fixed - AQA Paper 1 coding structure as AO3 (AQA assesses it under
+ * AO2), and Edexcel being AQA's paper with Edexcel's totals. THIS file carried
+ * the identical AQA defect and was missed, because a grep of the corpus being
+ * audited does not reach a second copy under src/data.
+ *
+ * It also carried `// @ts-nocheck` on line 1, so it was opted out of type
+ * checking entirely. Removed: it compiles clean and always would have.
+ *
+ * WHAT HAS ACTUALLY BEEN VERIFIED HERE: AQA Paper 1 only, on 19 September,
+ * against the 8700 specification. Its objectives now read
+ * AO1 4 + AO2 8 (language) + AO2 8 (structure) + AO4 20 + AO5 24 + AO6 16 = 80.
+ * Question 4 was recorded as 4 marks; it is 20, the largest reading question
+ * on the paper.
+ *
+ * Everything else below is UNVERIFIED and some of it is visibly wrong: the
+ * Edexcel Literature entry gives AO1, AO2, AO3 and AO4 twenty marks each,
+ * where 1ET0's published breakdown is 59 / 67 / 26 / 8 across the
+ * qualification, and its AO4 is spelling, punctuation and grammar worth 8 -
+ * not the "Comparison" named here. Left rather than guessed at, and
+ * formatMarkSchemeForPrompt now tells the model so.
+ *
+ * THE REAL FIX is to retire this file and have /api/essay-feedback read the
+ * verified corpus. That is a shape change across two consumers, not a defect
+ * fix, and needs its own piece of work.
+ * ───────────────────────────────────────────────────────────────────────────
+ *
  * Each board defines Assessment Objectives (AOs) with descriptors per grade band.
  */
 
@@ -76,8 +111,14 @@ const aqaLanguage: PaperScheme[] = [
         },
       },
       {
-        id: 'AO3',
-        label: 'AO3 - Structure',
+        // Was id 'AO3', label 'AO3 - Structure'. AQA assesses structure under
+        // AO2; AO3 is comparison across texts and is not on Paper 1 at all.
+        // The same defect existed in the other mark-scheme corpus
+        // (src/lib/marking/mark-schemes/aqa-lang-paper1.ts) and was fixed
+        // there on 19 September - this file was missed because nothing
+        // connects the two.
+        id: 'AO2',
+        label: 'AO2 - Structure',
         description:
           'Analyse how writers use structural features to achieve effects and influence readers.',
         maxMarks: 8,
@@ -95,7 +136,10 @@ const aqaLanguage: PaperScheme[] = [
         label: 'AO4 - Evaluation',
         description:
           'Evaluate texts critically and support this with appropriate textual references.',
-        maxMarks: 4,
+        // Was 4. AQA Paper 1 Question 4 is worth 20 marks - the single
+        // largest reading question on the paper. A model told it was worth 4
+        // marks cannot place a response on the 20-mark grid at all.
+        maxMarks: 20,
         gradeBands: {
           'Grade 4-5':
             'Makes a clear personal response with some evaluation. Uses some relevant textual references to support opinions.',
@@ -1081,12 +1125,29 @@ export function getQuestionTypes(board: string, paper: string): string[] {
 }
 
 /** Format marking guide criteria as a string for use in AI prompts */
+/**
+ * The only board and paper in this file checked against a published
+ * specification. Widening this set is a claim about the real world - see the
+ * file header, and the equivalent registry at
+ * src/lib/marking/examiner/verification.ts.
+ */
+const VERIFIED_HERE = new Set(['AQA|Paper 1'])
+
 export function formatMarkSchemeForPrompt(board: string, paper: string): string {
   const scheme = getMarkScheme(board, paper)
   if (!scheme)
     return 'No specific marking guide found. Use general GCSE English assessment criteria.'
 
   let output = `${board} ${scheme.paper} - ${scheme.label}\n\n`
+
+  // Tell the model whether these figures have been checked. A model handed a
+  // tariff with no caveat will defend a mark computed from a wrong maximum -
+  // which is what happened here while Question 4 was recorded as 4 marks
+  // instead of 20.
+  output += VERIFIED_HERE.has(`${board}|${scheme.paper}`)
+    ? 'VERIFICATION: these objectives and tariffs were checked against the board’s published specification on 2026-09-19.\n\n'
+    : 'VERIFICATION: NOT VERIFIED. These objectives and tariffs have not been checked against the published specification and may not match the paper in front of you. Mark the response on its own merits, say in one short sentence that the tariffs here are unverified and should be checked against the real mark scheme, and do not report a grade.\n\n'
+
   output += 'Assessment Objectives:\n\n'
 
   for (const ao of scheme.assessmentObjectives) {
