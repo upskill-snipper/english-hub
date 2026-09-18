@@ -127,6 +127,60 @@
     @apply font-sans antialiased bg-background text-foreground;
   }
 
+  /* ─── Arabic typography ────────────────────────────────────────────────
+   *
+   * THE DEFECT THIS FIXES (19 September 2026)
+   *
+   * src/app/layout.tsx loads Noto Naskh Arabic (--font-arabic-serif) and
+   * IBM Plex Sans Arabic (--font-arabic-sans) and stamps dir="rtl" on the
+   * Arabic surface. Nothing in any stylesheet ever referenced either
+   * variable. So the product downloaded both Arabic families on every page
+   * and then rendered Arabic in whatever the reader's OS happened to
+   * default to - paying the bytes and getting none of the benefit. /ar is
+   * the only indexed Arabic entry point and feeds the highest-priced plan.
+   *
+   * THREE THINGS THAT LOOK RIGHT AND ARE NOT:
+   *
+   * 1. `[dir='rtl'] { font-family: ... }` alone does nothing. The attribute
+   *    sits on <html>, and the `body` rule above is a DIRECT font-family
+   *    declaration - a direct declaration beats an inherited one, so every
+   *    descendant would keep inheriting Geist from body. The selector has
+   *    to name body itself.
+   *
+   * 2. Arabic-first ordering is wrong. Both Arabic families ship
+   *    basic-Latin faces (u+00??), so naming them first repaints every
+   *    Latin character on the Arabic surface - the brand name, AQA,
+   *    Edexcel, Cambridge, every numeral, and the English passages an EAL
+   *    student is actually revising - in the Arabic fonts' Latin glyphs.
+   *    Latin-first is safe because Geist and Newsreader are subset to
+   *    ['latin'] and carry no Arabic codepoints, so Arabic falls straight
+   *    through to the next family.
+   *
+   * 3. Inheritance cannot reach an explicit Tailwind font utility, which is
+   *    also a direct declaration. `font-heading` appears in 415 components,
+   *    `font-serif` in 100. A <div className="font-heading"> on an Arabic
+   *    page would keep Newsreader and its Arabic would keep falling to the
+   *    OS default - the original defect, unfixed. Hence the utility
+   *    selectors below.
+   *
+   * font-mono is deliberately left alone: it marks exam codes and
+   * identifiers, which are Latin by definition.
+   * ──────────────────────────────────────────────────────────────────── */
+  [dir='rtl'],
+  [dir='rtl'] body,
+  [dir='rtl'] .font-sans {
+    font-family:
+      var(--font-geist), var(--font-arabic-sans), ui-sans-serif, system-ui, sans-serif;
+  }
+
+  [dir='rtl'] h1,
+  [dir='rtl'] h2,
+  [dir='rtl'] h3,
+  [dir='rtl'] .font-heading,
+  [dir='rtl'] .font-serif {
+    font-family: var(--font-newsreader), var(--font-arabic-serif), ui-serif, Georgia, serif;
+  }
+
   * {
     @apply border-border;
   }
