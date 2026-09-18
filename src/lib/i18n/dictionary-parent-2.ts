@@ -118,9 +118,12 @@ export const PARENT_2_DICTIONARY: Record<string, { en: string; ar: string; es?: 
     es: 'Novedades del producto',
   },
   'parent.notif_weekly_desc': {
-    en: "A summary of your child's week, emailed every Sunday.",
-    ar: 'ملخّص أسبوع طفلك، يوصلك بالإيميل كل يوم أحد.',
-    es: 'Un resumen de la semana de tu hijo, enviado por correo cada domingo.',
+    // Was an unqualified "emailed every Sunday". The cron is gated off in
+    // production and has never sent. The toggle stays so the preference is
+    // recorded, but it must not promise mail that does not leave.
+    en: "A summary of your child's week. Not being sent yet - turn this on and you will receive it from the first Sunday it starts.",
+    ar: 'ملخّص أسبوع طفلك. ما يُرسل حالياً - فعّله الآن وبيوصلك من أول يوم أحد يبدأ فيه.',
+    es: 'Un resumen de la semana de tu hijo. Todavía no se envía: actívalo y lo recibirás desde el primer domingo en que empiece.',
   },
   'parent.notif_weekly_label': {
     en: 'Weekly report email',
@@ -435,9 +438,10 @@ export const PARENT_2_DICTIONARY: Record<string, { en: string; ar: string; es?: 
     es: 'Informes semanales por correo',
   },
   'parent.weekly_email_reports_desc': {
-    en: "A summary of your child's week, sent every Sunday.",
-    ar: 'ملخّص أسبوع طفلك، يوصلك كل يوم أحد.',
-    es: 'Un resumen de la semana de tu hijo, enviado cada domingo.',
+    // Same correction as parent.notif_weekly_desc above.
+    en: "A summary of your child's week. Not being sent yet - turn this on and you will receive it from the first Sunday it starts.",
+    ar: 'ملخّص أسبوع طفلك. ما يُرسل حالياً - فعّله الآن وبيوصلك من أول يوم أحد يبدأ فيه.',
+    es: 'Un resumen de la semana de tu hijo. Todavía no se envía: actívalo y lo recibirás desde el primer domingo en que empiece.',
   },
   'parent.weekly_report_for': {
     en: 'weekly report for',

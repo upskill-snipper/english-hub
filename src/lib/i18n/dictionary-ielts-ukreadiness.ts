@@ -10,6 +10,8 @@
 // Wired into src/lib/i18n/dictionary.ts (import + one line in lookup()).
 // ────────────────────────────────────────────────────────────────────────────
 
+import { IELTS_LIMITS } from '@/constants/ielts-limits'
+
 export const IELTS_UKREADINESS_DICTIONARY: Record<
   string,
   { en: string; ar?: string; es?: string }
@@ -238,9 +240,13 @@ export const IELTS_UKREADINESS_DICTIONARY: Record<
     es: 'IELTS Band Booster',
   },
   'pricing.ielts.subtitle': {
-    en: 'Adult exam prep with unlimited examiner-calibrated AI band feedback',
-    ar: 'تحضير للامتحان للكبار مع تقييم Band غير محدود بالذكاء الاصطناعي معاير على المصححين',
-    es: 'Preparación de examen para adultos con feedback de Band con IA ilimitado y calibrado por examinadores',
+    // Was "unlimited examiner-calibrated". The routes enforce a daily cap, and
+    // "examiner-calibrated" also overshoots the claim sheet's permitted
+    // "calibrated to IELTS band descriptors". Numbers come from the same
+    // constants the rate limiters use.
+    en: `Adult exam prep with ${IELTS_LIMITS.WRITING_PER_DAY} Writing and ${IELTS_LIMITS.SPEAKING_PER_DAY} Speaking AI band assessments a day, calibrated to the IELTS band descriptors`,
+    ar: `تحضير للامتحان للكبار مع ${IELTS_LIMITS.WRITING_PER_DAY} تقييم كتابة و${IELTS_LIMITS.SPEAKING_PER_DAY} تقييم محادثة بالذكاء الاصطناعي يومياً، معايرة على واصفات درجات IELTS`,
+    es: `Preparación de examen para adultos con ${IELTS_LIMITS.WRITING_PER_DAY} evaluaciones de Writing y ${IELTS_LIMITS.SPEAKING_PER_DAY} de Speaking con IA al día, calibradas según los descriptores de banda del IELTS`,
   },
   'pricing.ielts.trial_line': {
     en: '{days}-day free trial · cancel anytime',

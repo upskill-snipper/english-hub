@@ -25,6 +25,8 @@
 // en-dashes – preserved exactly).
 // ────────────────────────────────────────────────────────────────────────────
 
+import { IELTS_LIMITS } from '@/constants/ielts-limits'
+
 export const IELTS_MODELANSWERS_DICTIONARY: Record<
   string,
   { en: string; ar?: string; es?: string }
@@ -401,9 +403,10 @@ export const IELTS_MODELANSWERS_DICTIONARY: Record<
     es: 'Desbloquea todos los modelos de respuesta',
   },
   'ielts.modelans.upsell.body': {
-    en: 'The full library - and unlimited AI band feedback on your own Writing and Speaking - is part of the IELTS plan.',
-    ar: 'المكتبة الكاملة — وتقييم Band بالـ AI بلا حدود على كتابتك ومحادثتك أنت — جزء من خطة IELTS.',
-    es: 'La biblioteca completa (y feedback de banda ilimitado con IA sobre tu propio Writing y Speaking) forma parte del plan IELTS.',
+    // Was "unlimited AI band feedback". See src/constants/ielts-limits.ts.
+    en: `The full library - and ${IELTS_LIMITS.WRITING_PER_DAY} Writing plus ${IELTS_LIMITS.SPEAKING_PER_DAY} Speaking AI band assessments a day on your own work - is part of the IELTS plan.`,
+    ar: `المكتبة الكاملة — و${IELTS_LIMITS.WRITING_PER_DAY} تقييم كتابة و${IELTS_LIMITS.SPEAKING_PER_DAY} تقييم محادثة بالذكاء الاصطناعي يومياً على شغلك أنت — جزء من خطة IELTS.`,
+    es: `La biblioteca completa (y ${IELTS_LIMITS.WRITING_PER_DAY} evaluaciones de Writing y ${IELTS_LIMITS.SPEAKING_PER_DAY} de Speaking con IA al día sobre tu propio trabajo) forma parte del plan IELTS.`,
   },
   'ielts.modelans.upsell.cta': {
     en: 'See IELTS plans',

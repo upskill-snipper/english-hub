@@ -345,8 +345,8 @@ export function BulkPanel(p: Props) {
             r.mark
               ? `${r.mark.mark}${r.mark.max ? ` / ${r.mark.max}` : ''}${r.mark.note ? `  (${r.mark.note})` : ''}`
               : r.status
-          }\n${'='.repeat(66)}\n\n${r.commentary || r.error}\n\n--- TRANSCRIPT ---\n${r.transcript}${
-            r.notes ? `\n\n--- TRANSCRIBER'S NOTES ---\n${r.notes}` : ''
+          }\n${'='.repeat(66)}\n\n${r.commentary || r.error}\n\n=== TRANSCRIPT ===\n${r.transcript}${
+            r.notes ? `\n\n=== TRANSCRIBER'S NOTES ===\n${r.notes}` : ''
           }\n`,
       )
       .join('\n\n')

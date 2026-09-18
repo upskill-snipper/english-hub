@@ -56,6 +56,7 @@ import { logAiDecision } from '@/lib/ai-audit-log'
 import { WRITING_TASK1_CRITERIA, WRITING_TASK2_CRITERIA } from '@/lib/ielts/band-descriptors'
 import { roundToBand } from '@/lib/ielts/bands'
 import type { Band, CriterionFeedback, TaskFeedback, WritingCriterion } from '@/lib/ielts/types'
+import { IELTS_LIMITS } from '@/constants/ielts-limits'
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -559,10 +560,13 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // 2. Rate limit: 10 writing assessments per rolling 24h per user.
+    // 2. Rate limit per rolling 24h per user. The number lives in
+    // src/constants/ielts-limits.ts and is read by the copy that advertises it
+    // too, so the pricing page cannot claim more than this enforces - which is
+    // exactly what it did until 18 September 2026.
     const rl = await rateLimit(`ielts-writing-feedback:${user.id}`, {
-      limit: 10,
-      windowSeconds: 86_400,
+      limit: IELTS_LIMITS.WRITING_PER_DAY,
+      windowSeconds: IELTS_LIMITS.WINDOW_SECONDS,
     })
     if (!rl.success) {
       return rateLimitResponse(rl.resetAt)

@@ -232,9 +232,11 @@ export const PARENT_1_DICTIONARY: Record<string, { en: string; ar: string; es?: 
 
   // ── Signup: header ────────────────────────────────────────────────────────
   'parent.create_account_subtitle': {
-    en: "Track your child's English progress with weekly reports and a clear view of how they're doing.",
-    ar: 'تابع تقدّم طفلك في الإنجليزي مع تقارير أسبوعية وعرض واضح لمستواه.',
-    es: 'Sigue el progreso de tu hijo en inglés con informes semanales y una visión clara de cómo le va.',
+    // Was "with weekly reports". No parent email has ever been sent; see
+    // faqs.pr4.a in dictionary.ts for the full note.
+    en: "Track your child's English progress with a clear view of how they're doing.",
+    ar: 'تابع تقدّم طفلك في الإنجليزي مع عرض واضح لمستواه.',
+    es: 'Sigue el progreso de tu hijo en inglés con una visión clara de cómo le va.',
   },
   'parent.create_account_title': {
     en: 'Create a parent account',

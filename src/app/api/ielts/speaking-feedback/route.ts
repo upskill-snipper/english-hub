@@ -51,6 +51,7 @@ import { logAiDecision } from '@/lib/ai-audit-log'
 import { SPEAKING_CRITERIA } from '@/lib/ielts/band-descriptors'
 import { roundToBand } from '@/lib/ielts/bands'
 import type { Band, CriterionFeedback, SpeakingCriterion, TaskFeedback } from '@/lib/ielts/types'
+import { IELTS_LIMITS } from '@/constants/ielts-limits'
 
 // ─── Request contract ───────────────────────────────────────────────────────
 
@@ -389,10 +390,11 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // 2. Rate limit - 30 speaking submissions per day per user.
+    // 2. Rate limit per rolling 24h per user. See src/constants/ielts-limits.ts:
+    // the same constant is rendered into the copy that advertises the allowance.
     const rl = await rateLimit(`ielts-speaking-feedback:${user.id}`, {
-      limit: 30,
-      windowSeconds: 86_400,
+      limit: IELTS_LIMITS.SPEAKING_PER_DAY,
+      windowSeconds: IELTS_LIMITS.WINDOW_SECONDS,
     })
     if (!rl.success) {
       return rateLimitResponse(rl.resetAt)

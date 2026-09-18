@@ -905,9 +905,10 @@ export const B15_DASHBOARD_DICTIONARY: Record<string, { en: string; ar: string; 
     es: 'Acceso gratuito para padres',
   },
   'dashboard.parent_settings.free_access_desc': {
-    en: "Your parent dashboard is completely free and comes included with your child's paid subscription. You can monitor progress, receive weekly reports, and set target grades at no additional cost.",
-    ar: 'لوحة تحكم ولي الأمر مجانية تماماً وتأتي مع اشتراك طفلك المدفوع. يمكنك متابعة التقدم وتلقي التقارير الأسبوعية وتحديد الدرجات المستهدفة بدون تكلفة إضافية.',
-    es: 'Tu panel de padres es completamente gratuito y se incluye con la suscripción de pago de tu hijo. Puedes supervisar el progreso, recibir informes semanales y establecer notas objetivo sin coste adicional.',
+    // Was "receive weekly reports". Not sent yet; see faqs.pr4.a.
+    en: "Your parent dashboard is completely free and comes included with your child's paid subscription. You can monitor progress and set target grades at no additional cost.",
+    ar: 'لوحة تحكم ولي الأمر مجانية تماماً وتأتي مع اشتراك طفلك المدفوع. يمكنك متابعة التقدم وتحديد الدرجات المستهدفة بدون تكلفة إضافية.',
+    es: 'Tu panel de padres es completamente gratuito y se incluye con la suscripción de pago de tu hijo. Puedes supervisar el progreso y establecer notas objetivo sin coste adicional.',
   },
   'dashboard.parent_settings.notifications_title': {
     en: 'Email Notifications',

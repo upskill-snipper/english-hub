@@ -16212,9 +16212,15 @@ export const DICTIONARY: Dictionary = {
     es: '¿Pueden los padres hacer seguimiento del progreso de su hijo?',
   },
   'faqs.pr4.a': {
-    en: "Yes - parents get a weekly report and a child-linked dashboard. Parental controls and ICO Children's Code defaults apply throughout.",
-    ar: "إيه - أولياء الأمور يستلمون تقرير أسبوعي ولوحة مرتبطة بالولد. تنطبق إعدادات الرقابة الأبوية ومعايير ICO Children's Code الافتراضية في كل مكان.",
-    es: "Sí - los padres reciben un informe semanal y un panel vinculado al hijo. Se aplican en todo momento los controles parentales y los ajustes predeterminados del Children's Code de la ICO.",
+    // Was "parents get a weekly report and a child-linked dashboard". The
+    // weekly report cron is gated on WEEKLY_PARENT_REPORTS_ENABLED, which is
+    // unset in production, so no parent email has ever been sent and the claim
+    // sheet lists weekly parent emails under "must NOT be advertised yet".
+    // /for-parents already hedged honestly, so the site contradicted itself.
+    // This now matches the /for-parents wording.
+    en: "Yes - parents get a child-linked dashboard showing modules completed, quiz scores, study time and weak areas. Weekly email summaries are being finalised and are not sent yet. Parental controls and ICO Children's Code defaults apply throughout.",
+    ar: "إيه - أولياء الأمور يحصلون على لوحة مرتبطة بالولد تعرض الوحدات المكتملة ودرجات الاختبارات ووقت الدراسة ونقاط الضعف. الملخّصات الأسبوعية بالإيميل قيد الإعداد وما تُرسل حالياً. تنطبق إعدادات الرقابة الأبوية ومعايير ICO Children's Code الافتراضية في كل مكان.",
+    es: "Sí - los padres reciben un panel vinculado al hijo con los módulos completados, las notas de los cuestionarios, el tiempo de estudio y las áreas débiles. Los resúmenes semanales por correo se están finalizando y todavía no se envían. Se aplican en todo momento los controles parentales y los ajustes predeterminados del Children's Code de la ICO.",
   },
   'faqs.pr5.q': {
     en: "How do I link my parent account to my child's?",

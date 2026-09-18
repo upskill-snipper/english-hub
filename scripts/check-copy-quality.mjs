@@ -159,6 +159,20 @@ const RULES = [
     message: 'Americanism - the site is British English',
   },
   {
+    // Added 18 September 2026. Three IELTS strings advertised "unlimited" AI
+    // band feedback while the routes enforced 10 Writing and 30 Speaking
+    // assessments per rolling 24 hours. The launch-readiness review had
+    // recorded "unlimited" as corrected and these three keys were missed, so
+    // the check is automated rather than left to the next review. The real
+    // allowances live in src/constants/ielts-limits.ts and are rendered into
+    // the copy from there.
+    id: 'unlimited-claim',
+    chrome: 'error',
+    content: 'off', // a literary text may legitimately use the word
+    test: (s) => /unlimited/i.test(s),
+    message: 'an "unlimited" claim - state the real allowance instead (every AI surface is capped)',
+  },
+  {
     id: 'banned-hype',
     chrome: 'error',
     content: 'off', // "revolutionary" is correct about Animal Farm
