@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerClient } from '@supabase/ssr'
+import { provisionSignupTrial } from '@/lib/billing/provision-signup-trial'
 
 export async function GET(request: NextRequest) {
   const { searchParams, origin } = new URL(request.url)
@@ -71,7 +72,7 @@ export async function GET(request: NextRequest) {
   // Handle PKCE flow (code exchange) - covers email-confirmed signup,
   // OAuth, magic links and password reset when the project uses PKCE.
   if (code) {
-    const { error } = await supabase.auth.exchangeCodeForSession(code)
+    const { data, error } = await supabase.auth.exchangeCodeForSession(code)
 
     if (!error) {
       // Password recovery via PKCE: Supabase tags the session as a
@@ -88,6 +89,12 @@ export async function GET(request: NextRequest) {
       }
       // For signup verification, add welcome flag so dashboard shows onboarding
       if (type === 'signup') {
+        // This is the first moment a session provably exists for a confirmed
+        // signup, which is why the trial is written here. It was previously
+        // written by /api/auth/register, whose session gate answered 403 on
+        // every account ever created. Awaited, not fired and forgotten: the
+        // page we are about to redirect to reads the entitlement.
+        if (data?.user?.id) await provisionSignupTrial(data.user.id)
         const separator = safeNext.includes('?') ? '&' : '?'
         return redirectTo(`${safeNext}${separator}welcome=true`)
       }
@@ -98,7 +105,7 @@ export async function GET(request: NextRequest) {
   // Handle token_hash flow (email verification, magic links, recovery via
   // the legacy non-PKCE flow that some Supabase email templates still use).
   if (token_hash && type) {
-    const { error } = await supabase.auth.verifyOtp({
+    const { data, error } = await supabase.auth.verifyOtp({
       token_hash,
       type: type as 'signup' | 'email' | 'recovery' | 'invite',
     })
@@ -108,6 +115,10 @@ export async function GET(request: NextRequest) {
         return redirectTo('/auth/reset-password')
       }
       if (type === 'signup') {
+        // Same provisioning point, legacy non-PKCE flow. Supabase's own email
+        // templates still use this one, so both branches have to write it or
+        // half of confirmations would silently go without a trial.
+        if (data?.user?.id) await provisionSignupTrial(data.user.id)
         const separator = safeNext.includes('?') ? '&' : '?'
         return redirectTo(`${safeNext}${separator}welcome=true`)
       }

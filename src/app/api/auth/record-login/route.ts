@@ -5,6 +5,7 @@ import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { prisma } from '@/lib/prisma'
 import { rateLimit } from '@/lib/rate-limit'
 import { tryPrismaUserId } from '@/lib/identity'
+import { provisionSignupTrial } from '@/lib/billing/provision-signup-trial'
 import type { NextRequest } from 'next/server'
 
 // POST /api/auth/record-login
@@ -64,6 +65,15 @@ export async function POST(_request: NextRequest) {
       where: { id: prismaUserId },
       data: { lastLoginAt: new Date() },
     })
+
+    // Second net for the trial. The auth callback is the primary provisioning
+    // point; this covers an account that confirmed while the callback was
+    // failing, or that confirmed before provisioning shipped and is still
+    // inside its first 7 days. `provisionSignupTrial` is idempotent and
+    // window-guarded, so a returning user from May gets nothing from this and
+    // a paying user is never touched. It cannot throw.
+    await provisionSignupTrial(user.id)
+
     return NextResponse.json({ ok: true, rows: 1 })
   } catch (err) {
     console.error('[record-login] failed:', err)
