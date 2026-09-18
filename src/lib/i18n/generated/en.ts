@@ -1266,7 +1266,7 @@ export const EN_MESSAGES: Record<string, string> = {
     'Exam-board aligned revision, AI marking, lesson planning, and analytics - built for results.',
   'pricing.compare.title': 'Compare to competitors',
   'pricing.compare.subtitle':
-    'See how The English Hub stacks up against Seneca, GCSEPod, and Tassomai.',
+    'Where The English Hub fits alongside the tools a department already runs.',
   'pricing.start_free_eyebrow': 'Start free',
   'pricing.try_before_subscribe': 'Try before you subscribe. No card needed to start.',
   'pricing.start_free_blurb':
@@ -4876,7 +4876,7 @@ export const EN_MESSAGES: Record<string, string> = {
     "Parents can link to their child's account to receive weekly progress reports. For students under 16, we require parental consent during registration. Parents can view their child's learning activity, and request data access or deletion at any time. See our Privacy Policy for full details on how we protect children's data.",
   'faqs.pr4.q': "Can parents track their child's progress?",
   'faqs.pr4.a':
-    "Yes - parents get a weekly report and a child-linked dashboard. Parental controls and ICO Children's Code defaults apply throughout.",
+    "Yes - parents get a child-linked dashboard showing modules completed, quiz scores, study time and weak areas. Weekly email summaries are being finalised and are not sent yet. Parental controls and ICO Children's Code defaults apply throughout.",
   'faqs.pr5.q': "How do I link my parent account to my child's?",
   'faqs.pr5.a':
     "Your child can send you a linking invitation from their account settings, or you can contact info@upskillenergy.com with your child's registered email. Once linked, you'll receive weekly progress reports and can manage consent preferences.",
@@ -6071,6 +6071,11 @@ export const EN_MESSAGES: Record<string, string> = {
   'pricing.save_vs_monthly_prefix': 'save',
   'pricing.save_vs_monthly_suffix': 'vs monthly',
   'pricing.trial_line_card_required': 'no card required to start',
+  'pricing.trial_line_card_on_file':
+    'Paid plans start with 7 free days, card on file - cancel before day 7 and you are not charged',
+  'pricing.alongside.title': 'How we sit alongside what you already use',
+  'pricing.alongside.body':
+    'Content libraries and quiz engines do a different job, and they do it well. We mark the writing. Most departments will run both.',
   'pricing.with_any_code_prefix': 'With any affiliate code or',
   'pricing.with_any_code_per_year_save': '{currency}{annual}/year - save {currency}{saving}.',
   'pricing.starting_checkout': 'Starting checkout…',
@@ -6121,7 +6126,7 @@ export const EN_MESSAGES: Record<string, string> = {
     '£{monthly} per month, or £{annual} per year. Teacher plans include everything in Student plus AI lesson planning, marking, analytics, and resource export.',
   'pricing.faq.q5': 'How does the affiliate code discount work?',
   'pricing.faq.a5':
-    'Enter any valid affiliate code at checkout to unlock the £{withCode}/year student rate. Or use the public code {code} - this works for everyone and applies the same discount. Only applies to annual student billing.',
+    'Enter any valid affiliate code at checkout to unlock the £{withCode}/year student rate. Or use the public code {code} - this works for everyone and applies the same discount. It applies to annual billing on the Student and Teacher plans, not to monthly.',
   'pricing.faq.q6': 'Can I switch between monthly and annual billing?',
   'pricing.faq.a6':
     'Yes. You can change your billing cycle at any time from your account settings. When switching to annual, the remaining balance on your monthly plan is pro-rated.',
@@ -10558,7 +10563,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'parent.confirm_new_password': 'Confirm new password',
   'parent.contact_support_prefix': 'Need to update these details? Contact us at',
   'parent.create_account_subtitle':
-    "Track your child's English progress with weekly reports and a clear view of how they're doing.",
+    "Track your child's English progress with a clear view of how they're doing.",
   'parent.create_account_title': 'Create a parent account',
   'parent.create_parent_account': 'Create parent account',
   'parent.creating_account': 'Creating account…',
@@ -10665,7 +10670,8 @@ export const EN_MESSAGES: Record<string, string> = {
   'parent.notif_inactivity_label': 'Inactivity reminders',
   'parent.notif_updates_desc': 'Occasional news about new features and improvements.',
   'parent.notif_updates_label': 'Product updates',
-  'parent.notif_weekly_desc': "A summary of your child's week, emailed every Sunday.",
+  'parent.notif_weekly_desc':
+    "A summary of your child's week. Not being sent yet - turn this on and you will receive it from the first Sunday it starts.",
   'parent.notif_weekly_label': 'Weekly report email',
   'parent.notification_settings': 'Notification settings',
   'parent.notifications_desc': 'Choose which emails you would like to receive.',
@@ -10744,7 +10750,8 @@ export const EN_MESSAGES: Record<string, string> = {
   'parent.week_ago_singular': 'week ago',
   'parent.week_by_week_activity': 'Week-by-week activity',
   'parent.weekly_email_reports': 'Weekly email reports',
-  'parent.weekly_email_reports_desc': "A summary of your child's week, sent every Sunday.",
+  'parent.weekly_email_reports_desc':
+    "A summary of your child's week. Not being sent yet - turn this on and you will receive it from the first Sunday it starts.",
   'parent.weekly_report_for': 'weekly report for',
   'parent.weekly_reports_subtitle_prefix': 'A preview of the report emailed to',
   'parent.weekly_reports_title': 'Weekly reports',
@@ -12786,7 +12793,7 @@ export const EN_MESSAGES: Record<string, string> = {
     'Manage your notifications, report preferences, and linked students.',
   'dashboard.parent_settings.free_access_title': 'Free Parent Access',
   'dashboard.parent_settings.free_access_desc':
-    "Your parent dashboard is completely free and comes included with your child's paid subscription. You can monitor progress, receive weekly reports, and set target grades at no additional cost.",
+    "Your parent dashboard is completely free and comes included with your child's paid subscription. You can monitor progress and set target grades at no additional cost.",
   'dashboard.parent_settings.notifications_title': 'Email Notifications',
   'dashboard.parent_settings.notifications_desc':
     'Choose which email notifications you would like to receive.',
@@ -16324,7 +16331,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'ielts.diagnostic.intro.speaking.body': 'Answer one spoken question and get an AI band estimate.',
   'ielts.diagnostic.usage.see_plans': 'See plans',
   'ielts.diagnostic.usage.last_free_note':
-    'A plan adds unlimited AI checks, full per-criterion feedback and the mock exams.',
+    'A plan adds 10 Writing and 30 Speaking AI checks a day, full per-criterion feedback and the mock exams.',
   'ielts.diagnostic.usage.exhausted_title': 'Your free AI checks are used up for now',
   'ielts.diagnostic.usage.exhausted_fallback':
     'You can still finish the diagnostic - skip this task and we will estimate this band conservatively.',
@@ -17385,7 +17392,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'ielts.modelans.practise_cta': 'Practise this with AI feedback',
   'ielts.modelans.upsell.title': 'Unlock every model answer',
   'ielts.modelans.upsell.body':
-    'The full library - and unlimited AI band feedback on your own Writing and Speaking - is part of the IELTS plan.',
+    'The full library - and 10 Writing plus 30 Speaking AI band assessments a day on your own work - is part of the IELTS plan.',
   'ielts.modelans.upsell.cta': 'See IELTS plans',
   'ielts.modelans.locked.body':
     'The full sample answers and scoring notes are part of the IELTS plan.',
@@ -17697,7 +17704,8 @@ export const EN_MESSAGES: Record<string, string> = {
     'Compare band-6.5 and band-8 model answers for Writing and Speaking, with notes on what lifts each one up the scale.',
   'ielts.ukread.cross.cta': 'View model answers',
   'pricing.ielts.title': 'IELTS Band Booster',
-  'pricing.ielts.subtitle': 'Adult exam prep with unlimited examiner-calibrated AI band feedback',
+  'pricing.ielts.subtitle':
+    'Adult exam prep with 10 Writing and 30 Speaking AI band assessments a day, calibrated to the IELTS band descriptors',
   'pricing.ielts.trial_line': '{days}-day free trial · cancel anytime',
   'pricing.ielts.included': "What's included",
   'pricing.ielts.feat.writing': 'AI Writing band feedback - up to 10 assessed essays a day',

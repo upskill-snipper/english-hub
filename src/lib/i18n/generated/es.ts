@@ -1311,7 +1311,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'Repaso alineado con la junta examinadora, corrección con IA, planificación de clases y analíticas - creado para obtener resultados.',
   'pricing.compare.title': 'Comparar con la competencia',
   'pricing.compare.subtitle':
-    'Descubre cómo se compara The English Hub con Seneca, GCSEPod y Tassomai.',
+    'Dónde encaja The English Hub junto a las herramientas que ya usa un departamento.',
   'pricing.start_free_eyebrow': 'Empieza gratis',
   'pricing.try_before_subscribe':
     'Pruébalo antes de suscribirte. No hace falta tarjeta para empezar.',
@@ -4999,7 +4999,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'Los padres pueden vincularse a la cuenta de su hijo para recibir informes de progreso semanales. Para los estudiantes menores de 16 años, exigimos el consentimiento parental durante el registro. Los padres pueden ver la actividad de aprendizaje de su hijo y solicitar el acceso o la eliminación de los datos en cualquier momento. Consulta nuestra Política de Privacidad para ver todos los detalles sobre cómo protegemos los datos de los menores.',
   'faqs.pr4.q': '¿Pueden los padres hacer seguimiento del progreso de su hijo?',
   'faqs.pr4.a':
-    "Sí - los padres reciben un informe semanal y un panel vinculado al hijo. Se aplican en todo momento los controles parentales y los ajustes predeterminados del Children's Code de la ICO.",
+    "Sí - los padres reciben un panel vinculado al hijo con los módulos completados, las notas de los cuestionarios, el tiempo de estudio y las áreas débiles. Los resúmenes semanales por correo se están finalizando y todavía no se envían. Se aplican en todo momento los controles parentales y los ajustes predeterminados del Children's Code de la ICO.",
   'faqs.pr5.q': '¿Cómo vinculo mi cuenta de padre con la de mi hijo?',
   'faqs.pr5.a':
     'Tu hijo puede enviarte una invitación de vinculación desde la configuración de su cuenta, o puedes contactar con info@upskillenergy.com indicando el correo registrado de tu hijo. Una vez vinculado, recibirás informes de progreso semanales y podrás gestionar las preferencias de consentimiento.',
@@ -6226,6 +6226,11 @@ export const ES_MESSAGES: Record<string, string> = {
   'pricing.save_vs_monthly_prefix': 'ahorra',
   'pricing.save_vs_monthly_suffix': 'frente al mensual',
   'pricing.trial_line_card_required': 'sin tarjeta para empezar',
+  'pricing.trial_line_card_on_file':
+    'Los planes de pago empiezan con 7 días gratis con tarjeta guardada: cancela antes del día 7 y no se te cobra',
+  'pricing.alongside.title': 'Cómo encajamos con lo que ya utilizas',
+  'pricing.alongside.body':
+    'Las bibliotecas de contenido y los motores de cuestionarios hacen un trabajo distinto, y lo hacen bien. Nosotros corregimos la escritura. La mayoría de los departamentos usarán ambos.',
   'pricing.with_any_code_prefix': 'Con cualquier código de afiliado o',
   'pricing.with_any_code_per_year_save': '{currency}{annual}/año - ahorra {currency}{saving}.',
   'pricing.starting_checkout': 'Iniciando el pago…',
@@ -6277,7 +6282,7 @@ export const ES_MESSAGES: Record<string, string> = {
     '£{monthly} al mes, o £{annual} al año. Los planes de profesor incluyen todo lo del plan de estudiante más planificación de clases con IA, corrección, analíticas y exportación de recursos.',
   'pricing.faq.q5': '¿Cómo funciona el descuento del código de afiliado?',
   'pricing.faq.a5':
-    'Introduce cualquier código de afiliado válido en el pago para desbloquear la tarifa de estudiante de £{withCode}/año. O usa el código público {code} - funciona para todo el mundo y aplica el mismo descuento. Solo se aplica a la facturación anual de estudiante.',
+    'Introduce cualquier código de afiliado válido en el pago para desbloquear la tarifa de estudiante de £{withCode}/año. O usa el código público {code} - funciona para todo el mundo y aplica el mismo descuento. Se aplica a la facturación anual de los planes de Estudiante y Profesor, no a la mensual.',
   'pricing.faq.q6': '¿Puedo alternar entre la facturación mensual y la anual?',
   'pricing.faq.a6':
     'Sí. Puedes cambiar tu ciclo de facturación en cualquier momento desde la configuración de tu cuenta. Al cambiar al anual, el saldo restante de tu plan mensual se prorratea.',
@@ -10823,7 +10828,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'parent.confirm_new_password': 'Confirmar la nueva contraseña',
   'parent.contact_support_prefix': '¿Necesitas actualizar estos datos? Escríbenos a',
   'parent.create_account_subtitle':
-    'Sigue el progreso de tu hijo en inglés con informes semanales y una visión clara de cómo le va.',
+    'Sigue el progreso de tu hijo en inglés con una visión clara de cómo le va.',
   'parent.create_account_title': 'Crea una cuenta de padre/madre',
   'parent.create_parent_account': 'Crear cuenta de padre/madre',
   'parent.creating_account': 'Creando cuenta…',
@@ -10936,7 +10941,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'parent.notif_updates_desc': 'Noticias ocasionales sobre nuevas funciones y mejoras.',
   'parent.notif_updates_label': 'Novedades del producto',
   'parent.notif_weekly_desc':
-    'Un resumen de la semana de tu hijo, enviado por correo cada domingo.',
+    'Un resumen de la semana de tu hijo. Todavía no se envía: actívalo y lo recibirás desde el primer domingo en que empiece.',
   'parent.notif_weekly_label': 'Correo de informe semanal',
   'parent.notification_settings': 'Ajustes de notificaciones',
   'parent.notifications_desc': 'Elige qué correos te gustaría recibir.',
@@ -11018,7 +11023,8 @@ export const ES_MESSAGES: Record<string, string> = {
   'parent.week_ago_singular': 'hace una semana',
   'parent.week_by_week_activity': 'Actividad semana a semana',
   'parent.weekly_email_reports': 'Informes semanales por correo',
-  'parent.weekly_email_reports_desc': 'Un resumen de la semana de tu hijo, enviado cada domingo.',
+  'parent.weekly_email_reports_desc':
+    'Un resumen de la semana de tu hijo. Todavía no se envía: actívalo y lo recibirás desde el primer domingo en que empiece.',
   'parent.weekly_report_for': 'informe semanal de',
   'parent.weekly_reports_subtitle_prefix': 'Una vista previa del informe enviado por correo a',
   'parent.weekly_reports_title': 'Informes semanales',
@@ -13111,7 +13117,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'Gestiona tus notificaciones, las preferencias de informes y los estudiantes vinculados.',
   'dashboard.parent_settings.free_access_title': 'Acceso gratuito para padres',
   'dashboard.parent_settings.free_access_desc':
-    'Tu panel de padres es completamente gratuito y se incluye con la suscripción de pago de tu hijo. Puedes supervisar el progreso, recibir informes semanales y establecer notas objetivo sin coste adicional.',
+    'Tu panel de padres es completamente gratuito y se incluye con la suscripción de pago de tu hijo. Puedes supervisar el progreso y establecer notas objetivo sin coste adicional.',
   'dashboard.parent_settings.notifications_title': 'Notificaciones por correo electrónico',
   'dashboard.parent_settings.notifications_desc':
     'Elige qué notificaciones por correo electrónico quieres recibir.',
@@ -16764,7 +16770,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'Responde a una pregunta hablada y obtén una estimación de banda con IA.',
   'ielts.diagnostic.usage.see_plans': 'Ver planes',
   'ielts.diagnostic.usage.last_free_note':
-    'Un plan añade comprobaciones de IA ilimitadas, comentarios completos por criterio y los simulacros de examen.',
+    'Un plan añade 10 comprobaciones de Writing y 30 de Speaking con IA al día, comentarios completos por criterio y los simulacros de examen.',
   'ielts.diagnostic.usage.exhausted_title':
     'Has agotado tus comprobaciones de IA gratuitas por ahora',
   'ielts.diagnostic.usage.exhausted_fallback':
@@ -17859,7 +17865,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'ielts.modelans.practise_cta': 'Practica esto con feedback de IA',
   'ielts.modelans.upsell.title': 'Desbloquea todos los modelos de respuesta',
   'ielts.modelans.upsell.body':
-    'La biblioteca completa (y feedback de banda ilimitado con IA sobre tu propio Writing y Speaking) forma parte del plan IELTS.',
+    'La biblioteca completa (y 10 evaluaciones de Writing y 30 de Speaking con IA al día sobre tu propio trabajo) forma parte del plan IELTS.',
   'ielts.modelans.upsell.cta': 'Ver planes de IELTS',
   'ielts.modelans.locked.body':
     'Los modelos de respuesta completos y las notas de calificación forman parte del plan IELTS.',
@@ -18176,7 +18182,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'ielts.ukread.cross.cta': 'Ver respuestas modelo',
   'pricing.ielts.title': 'IELTS Band Booster',
   'pricing.ielts.subtitle':
-    'Preparación de examen para adultos con feedback de Band con IA ilimitado y calibrado por examinadores',
+    'Preparación de examen para adultos con 10 evaluaciones de Writing y 30 de Speaking con IA al día, calibradas según los descriptores de banda del IELTS',
   'pricing.ielts.trial_line': 'prueba gratuita de {days} días · cancela cuando quieras',
   'pricing.ielts.included': 'Qué incluye',
   'pricing.ielts.feat.writing':

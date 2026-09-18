@@ -1240,7 +1240,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'pricing.hero.subtitle':
     'مراجعة متوافقة مع بورد الامتحان، تصحيح بالذكاء الاصطناعي، تخطيط دروس، وتحليلات - مصمَّمة للنتايج.',
   'pricing.compare.title': 'قارن مع المنافسين',
-  'pricing.compare.subtitle': 'شوف كيف The English Hub يقارن مع Seneca و GCSEPod و Tassomai.',
+  'pricing.compare.subtitle': 'وين يجي The English Hub جنب الأدوات اللي يستخدمها القسم أصلاً.',
   'pricing.start_free_eyebrow': 'ابدأ ببلاش',
   'pricing.try_before_subscribe': 'جرّب قبل ما تشترك. ما تحتاج بطاقة للبداية.',
   'pricing.start_free_blurb':
@@ -4786,7 +4786,7 @@ export const AR_MESSAGES: Record<string, string> = {
     'يستطيع أولياء الأمور ربط حسابهم بحساب الطفل لاستلام تقارير تقدم أسبوعية. للطلاب دون ١٦ سنة، نشترط موافقة ولي الأمر عند التسجيل. يمكن لولي الأمر الاطلاع على نشاط التعلّم، وطلب الوصول إلى البيانات أو حذفها في أي وقت. راجع سياسة الخصوصية للتفاصيل الكاملة حول كيفية حماية بيانات الأطفال.',
   'faqs.pr4.q': 'أولياء الأمور يقدرون يتابعون تقدم الولد؟',
   'faqs.pr4.a':
-    "إيه - أولياء الأمور يستلمون تقرير أسبوعي ولوحة مرتبطة بالولد. تنطبق إعدادات الرقابة الأبوية ومعايير ICO Children's Code الافتراضية في كل مكان.",
+    "إيه - أولياء الأمور يحصلون على لوحة مرتبطة بالولد تعرض الوحدات المكتملة ودرجات الاختبارات ووقت الدراسة ونقاط الضعف. الملخّصات الأسبوعية بالإيميل قيد الإعداد وما تُرسل حالياً. تنطبق إعدادات الرقابة الأبوية ومعايير ICO Children's Code الافتراضية في كل مكان.",
   'faqs.pr5.q': 'كيف أربط حسابي كولي أمر بحساب ولدي؟',
   'faqs.pr5.a':
     'ولدك يقدر يرسل لك دعوة ربط من إعدادات حسابه، أو تقدر تتواصل معانا على info@upskillenergy.com وتعطينا الإيميل المسجل لولدك. بعد الربط، بتستلم تقارير أسبوعية وتدير تفضيلات الموافقات.',
@@ -5944,6 +5944,11 @@ export const AR_MESSAGES: Record<string, string> = {
   'pricing.save_vs_monthly_prefix': 'وفّر',
   'pricing.save_vs_monthly_suffix': 'مقارنة بالشهري',
   'pricing.trial_line_card_required': 'ما يلزم كارت للبداية',
+  'pricing.trial_line_card_on_file':
+    'الخطط المدفوعة تبدأ بـ 7 أيام مجانية مع حفظ الكارت - ألغِ قبل اليوم السابع وما ينخصم منك شيء',
+  'pricing.alongside.title': 'كيف نشتغل جنب اللي تستخدمه حالياً',
+  'pricing.alongside.body':
+    'مكتبات المحتوى ومحركات الاختبارات تسوي شغل مختلف، وتسويه زين. إحنا نصحّح الكتابة. أغلب الأقسام بتستخدم الاثنين.',
   'pricing.with_any_code_prefix': 'مع أي كود شراكة أو',
   'pricing.with_any_code_per_year_save': '{currency}{annual} سنوياً - وفّر {currency}{saving}.',
   'pricing.starting_checkout': 'لحظة، بنبدأ الدفع…',
@@ -5993,7 +5998,7 @@ export const AR_MESSAGES: Record<string, string> = {
     '£{monthly} شهرياً، أو £{annual} سنوياً. خطط المعلم تشمل كل اللي في خطة الطالب بالإضافة للتخطيط الذكي للدروس والتصحيح والتحليلات وتصدير الموارد.',
   'pricing.faq.q5': 'شلون يشتغل خصم كود الشراكة؟',
   'pricing.faq.a5':
-    'ادخل أي كود شراكة صالح عند الدفع عشان تفتح سعر الطالب £{withCode} سنوياً. أو استخدم الكود العام {code} - يشتغل للكل ويطبّق نفس الخصم. ينطبق فقط على فوترة الطالب السنوية.',
+    'ادخل أي كود شراكة صالح عند الدفع عشان تفتح سعر الطالب £{withCode} سنوياً. أو استخدم الكود العام {code} - يشتغل للكل ويطبّق نفس الخصم. ينطبق على الفوترة السنوية لخطط الطالب والمعلم، مو على الشهرية.',
   'pricing.faq.q6': 'أقدر أبدّل بين الفوترة الشهرية والسنوية؟',
   'pricing.faq.a6':
     'إي. تقدر تغيّر دورة الفوترة بأي وقت من إعدادات حسابك. ولمّا تبدّل للسنوي، الرصيد المتبقي من خطتك الشهرية ينقسم بالنسبة.',
@@ -10334,8 +10339,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'parent.confirm_deletion_request': 'تأكيد طلب الحذف',
   'parent.confirm_new_password': 'أكّد الرمز السري الجديد',
   'parent.contact_support_prefix': 'تبي تعدّل هالتفاصيل؟ تواصل معنا على',
-  'parent.create_account_subtitle':
-    'تابع تقدّم طفلك في الإنجليزي مع تقارير أسبوعية وعرض واضح لمستواه.',
+  'parent.create_account_subtitle': 'تابع تقدّم طفلك في الإنجليزي مع عرض واضح لمستواه.',
   'parent.create_account_title': 'أنشئ حساب وليّ أمر',
   'parent.create_parent_account': 'إنشاء حساب وليّ الأمر',
   'parent.creating_account': 'جارٍ إنشاء الحساب…',
@@ -10436,7 +10440,8 @@ export const AR_MESSAGES: Record<string, string> = {
   'parent.notif_inactivity_label': 'تذكيرات عدم النشاط',
   'parent.notif_updates_desc': 'أخبار من وقت لوقت عن الميزات الجديدة والتحسينات.',
   'parent.notif_updates_label': 'تحديثات المنصّة',
-  'parent.notif_weekly_desc': 'ملخّص أسبوع طفلك، يوصلك بالإيميل كل يوم أحد.',
+  'parent.notif_weekly_desc':
+    'ملخّص أسبوع طفلك. ما يُرسل حالياً - فعّله الآن وبيوصلك من أول يوم أحد يبدأ فيه.',
   'parent.notif_weekly_label': 'إيميل التقرير الأسبوعي',
   'parent.notification_settings': 'إعدادات الإشعارات',
   'parent.notifications_desc': 'اختر الإيميلات اللي تحب توصلك.',
@@ -10515,7 +10520,8 @@ export const AR_MESSAGES: Record<string, string> = {
   'parent.week_ago_singular': 'أسبوع مضى',
   'parent.week_by_week_activity': 'النشاط أسبوعاً بأسبوع',
   'parent.weekly_email_reports': 'تقارير البريد الأسبوعية',
-  'parent.weekly_email_reports_desc': 'ملخّص أسبوع طفلك، يوصلك كل يوم أحد.',
+  'parent.weekly_email_reports_desc':
+    'ملخّص أسبوع طفلك. ما يُرسل حالياً - فعّله الآن وبيوصلك من أول يوم أحد يبدأ فيه.',
   'parent.weekly_report_for': 'التقرير الأسبوعي لـ',
   'parent.weekly_reports_subtitle_prefix': 'معاينة للتقرير اللي يوصل بالإيميل إلى',
   'parent.weekly_reports_title': 'التقارير الأسبوعية',
@@ -12483,7 +12489,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'dashboard.parent_settings.subtitle': 'أدِر إشعاراتك وتفضيلات التقارير والطلاب المرتبطين.',
   'dashboard.parent_settings.free_access_title': 'وصول ولي الأمر المجاني',
   'dashboard.parent_settings.free_access_desc':
-    'لوحة تحكم ولي الأمر مجانية تماماً وتأتي مع اشتراك طفلك المدفوع. يمكنك متابعة التقدم وتلقي التقارير الأسبوعية وتحديد الدرجات المستهدفة بدون تكلفة إضافية.',
+    'لوحة تحكم ولي الأمر مجانية تماماً وتأتي مع اشتراك طفلك المدفوع. يمكنك متابعة التقدم وتحديد الدرجات المستهدفة بدون تكلفة إضافية.',
   'dashboard.parent_settings.notifications_title': 'إشعارات البريد الإلكتروني',
   'dashboard.parent_settings.notifications_desc':
     'اختر إشعارات البريد الإلكتروني التي تريد استلامها.',
@@ -15905,7 +15911,7 @@ export const AR_MESSAGES: Record<string, string> = {
     'جاوب على سؤال محكي واحد وخذ تقدير Band بالذكاء الاصطناعي.',
   'ielts.diagnostic.usage.see_plans': 'شوف الخطط',
   'ielts.diagnostic.usage.last_free_note':
-    'الخطة تعطيك فحوصات ذكاء اصطناعي بلا حدود وتغذية راجعة كاملة لكل معيار مع الاختبارات التجريبية.',
+    'الخطة تعطيك 10 فحص كتابة و30 فحص محادثة بالذكاء الاصطناعي يومياً وتغذية راجعة كاملة لكل معيار مع الاختبارات التجريبية.',
   'ielts.diagnostic.usage.exhausted_title': 'خلصت فحوصات الذكاء الاصطناعي المجانية حالياً',
   'ielts.diagnostic.usage.exhausted_fallback':
     'تقدر تكمل التشخيص - تخطى هذي المهمة وبنقدر الـ Band بشكل متحفظ.',
@@ -16929,7 +16935,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'ielts.modelans.practise_cta': 'تمرّن على هذا مع تقييم AI',
   'ielts.modelans.upsell.title': 'افتح كل نموذج إجابة',
   'ielts.modelans.upsell.body':
-    'المكتبة الكاملة — وتقييم Band بالـ AI بلا حدود على كتابتك ومحادثتك أنت — جزء من خطة IELTS.',
+    'المكتبة الكاملة — و10 تقييم كتابة و30 تقييم محادثة بالذكاء الاصطناعي يومياً على شغلك أنت — جزء من خطة IELTS.',
   'ielts.modelans.upsell.cta': 'شوف خطط IELTS',
   'ielts.modelans.locked.body': 'نماذج الإجابات الكاملة وملاحظات التقييم جزء من خطة IELTS.',
   'ielts.modelans.locked.unlock': 'افتح',
@@ -17229,7 +17235,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'ielts.ukread.cross.cta': 'شوف نماذج الإجابات',
   'pricing.ielts.title': 'IELTS Band Booster',
   'pricing.ielts.subtitle':
-    'تحضير للامتحان للكبار مع تقييم Band غير محدود بالذكاء الاصطناعي معاير على المصححين',
+    'تحضير للامتحان للكبار مع 10 تقييم كتابة و30 تقييم محادثة بالذكاء الاصطناعي يومياً، معايرة على واصفات درجات IELTS',
   'pricing.ielts.trial_line': 'تجربة ببلاش {days} يوم · سكّر أي وقت',
   'pricing.ielts.included': 'شنو يشمل',
   'pricing.ielts.feat.writing':

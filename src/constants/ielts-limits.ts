@@ -16,10 +16,13 @@
 // to sell next, so an unlimited promise against a 10-a-day cap is a refund and
 // a CAP complaint waiting to happen on the first heavy user's first day.
 //
-// The numbers now live here and are read by BOTH the rate limiters that
-// enforce them and the copy that describes them, so the two cannot drift apart
-// again. Changing an allowance changes the sentence on the pricing page in the
-// same commit.
+// The numbers now live here and the rate limiters read them directly. The
+// dictionary shards cannot: scripts/generate-i18n-locales.mjs flattens every
+// `dictionary*.ts` into one temp directory and requires it, so a shard that
+// imports `@/constants/...` breaks `prebuild` and therefore the production
+// build. The copy carries the numbers literally, and
+// src/__tests__/promises-match-the-product.test.ts asserts the two agree — so
+// raising an allowance here fails the suite until the sentence is updated.
 // ────────────────────────────────────────────────────────────────────────────
 
 /** AI assessments a subscriber may run per rolling 24 hours, per user. */
@@ -31,10 +34,3 @@ export const IELTS_LIMITS = {
   /** The rolling window both limits use. */
   WINDOW_SECONDS: 86_400,
 } as const
-
-/**
- * The allowance as a phrase, for copy that must state it rather than imply it.
- * English only: the Arabic and Spanish strings interpolate the numbers
- * themselves, because the word order differs.
- */
-export const IELTS_ALLOWANCE_EN = `${IELTS_LIMITS.WRITING_PER_DAY} Writing and ${IELTS_LIMITS.SPEAKING_PER_DAY} Speaking AI assessments a day`

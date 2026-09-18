@@ -1,5 +1,8 @@
 import { describe, it, expect } from 'vitest'
+import { readFileSync } from 'node:fs'
+import { join } from 'node:path'
 import { lookup } from '@/lib/i18n/dictionary'
+import { EN_MESSAGES } from '@/lib/i18n/generated/en'
 import { IELTS_LIMITS } from '@/constants/ielts-limits'
 
 /**
@@ -123,5 +126,68 @@ describe('the weekly parent email is not promised while it does not send', () =>
     // it ships. The label stays; only the promise is qualified.
     expect(lookup('parent.notif_weekly_label', 'en')).toBeTruthy()
     expect(lookup('parent.weekly_email_reports', 'en')).toBeTruthy()
+  })
+})
+
+// ─── The pricing page ───────────────────────────────────────────────────
+
+describe('the pricing page follows the positioning house', () => {
+  const COMPETITORS = ['seneca', 'gcsepod', 'tassomai', 'quizlet', 'sparx', 'century tech']
+
+  it('names no competitor in pricing or marketing copy', () => {
+    // Section 5 of the positioning house forbids any comparison table carrying
+    // a competitor's name: naming one is disparaging, unverifiable and
+    // unnecessary. /pricing carried a "Compare to competitors" table naming
+    // three, with a hardcoded rival price and a footnote admitting the figures
+    // were "as of April 2026 - may be out of date" - screenshottable by a
+    // prospect or by the competitor.
+    // Scoped to the selling surfaces. Seneca is also a Roman tragedian who
+    // appears legitimately in the Hamlet and Romeo and Juliet revision notes,
+    // so a whole-dictionary sweep would flag the study content it is there to
+    // protect.
+    const SELLING_PREFIXES = ['pricing.', 'home.', 'teachers.', 'schools.', 'faqs.']
+    const offenders: string[] = []
+    for (const [key, value] of Object.entries(EN_MESSAGES)) {
+      if (typeof value !== 'string') continue
+      if (!SELLING_PREFIXES.some((p) => key.startsWith(p))) continue
+      const lower = value.toLowerCase()
+      for (const name of COMPETITORS) {
+        if (lower.includes(name)) offenders.push(`${key}: ${value.slice(0, 80)}`)
+      }
+    }
+    expect(offenders, 'a competitor is named in customer-facing copy').toEqual([])
+  })
+
+  it('applies no unevidenced urgency to the price', () => {
+    // "Early Access - Founding Price · limited time" on both cards. The offer
+    // architecture bans unevidenced pressure, and there is no date behind it.
+    const en = lookup('pricing.limited_time', 'en')
+    // The key may still exist; what matters is that the page stopped using it.
+    const page = readFileSync(join(process.cwd(), 'src/app/pricing/page.tsx'), 'utf8')
+    expect(page, `still renders "${en}" on the cards`).not.toContain("t('pricing.limited_time')")
+  })
+
+  it('does not print "no card required" above a button that takes a card', () => {
+    // The card trial line sat directly above "Start 7-day free trial", which
+    // POSTs /api/stripe/checkout with trial_period_days. The no-card trial is
+    // real - it is the one you get by creating an account - but it is not the
+    // one that button starts.
+    const page = readFileSync(join(process.cwd(), 'src/app/pricing/page.tsx'), 'utf8')
+    expect(page).not.toContain("t('pricing.trial_line_card_required')")
+    expect(lookup('pricing.trial_line_card_on_file', 'en')).toMatch(/card on file/i)
+  })
+
+  it('states the promo code applies to both annual plans, as the code allows', () => {
+    // faq.a5 said "Only applies to annual student billing" while the Teacher
+    // card on the same page offered the annual rate with the code, and
+    // /api/promo/redeem lists teacher_annual among the allowed products.
+    for (const locale of LOCALES) {
+      const a5 = lookup('pricing.faq.a5', locale)
+      expect(a5.toLowerCase(), `${locale}`).not.toMatch(
+        /only applies to annual student|solo se aplica a la facturación anual de estudiante/,
+      )
+      expect(a5, `${locale}`).not.toMatch(/ينطبق فقط على فوترة الطالب السنوية/)
+    }
+    expect(lookup('pricing.faq.a5', 'en')).toMatch(/teacher/i)
   })
 })

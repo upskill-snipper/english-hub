@@ -227,27 +227,6 @@ function PremiumFeatureRow({ feature, icon: Icon }: { feature: string; icon: Rea
   )
 }
 
-// Icon-only yes/no cell in the competitor comparison table. The tick / cross
-// carries the meaning visually; the sr-only label carries it for screen
-// readers and any context where the icon alone is ambiguous (a bare cell would
-// otherwise read as empty). The icon itself is aria-hidden so the label is not
-// announced twice.
-function StatusCell({ included }: { included: boolean }) {
-  const t = useT()
-  return (
-    <div className="flex justify-center">
-      {included ? (
-        <CheckCircle className="w-5 h-5 text-emerald-600" aria-hidden="true" />
-      ) : (
-        <X className="w-5 h-5 text-red-500" aria-hidden="true" />
-      )}
-      <span className="sr-only">
-        {included ? t('pricing.compare.value.included') : t('pricing.compare.value.not_included')}
-      </span>
-    </div>
-  )
-}
-
 function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false)
   return (
@@ -534,166 +513,24 @@ function PricingContent() {
         </div>
       </section>
 
-      {/* ───────── Competitor Comparison ───────── */}
+      {/* ───────── How we sit alongside other tools ─────────
+          Was a "Compare to competitors" table naming Seneca, GCSEPod and
+          Tassomai, with a hardcoded "172+" mock papers, a hardcoded "£3.00"
+          and a footnote admitting the figures were "as of April 2026 - may be
+          out of date". Section 5 of the positioning house forbids any
+          comparison table carrying a competitor's name: naming one is
+          disparaging, unverifiable and unnecessary, and the prices were
+          already five months stale and trivially screenshottable.
+
+          The replacement is the approved category line from section 8 of the
+          same document, which does the same job without the liability. */}
       <section className="relative pb-16 sm:pb-20">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">
-              {t('pricing.compare.title')}
-            </h2>
-            <p className="mt-2 text-muted-foreground text-sm sm:text-base">
-              {t('pricing.compare.subtitle')}
-            </p>
-          </div>
-
-          <div className="overflow-x-auto rounded-2xl border border-border/60 bg-card">
-            <table className="w-full text-sm min-w-[720px] table-fixed">
-              <colgroup>
-                <col className="w-[28%]" />
-                <col className="w-[18%]" />
-                <col className="w-[18%]" />
-                <col className="w-[18%]" />
-                <col className="w-[18%]" />
-              </colgroup>
-              <thead>
-                <tr className="border-b border-border/60 bg-muted/30">
-                  <th className="text-left font-semibold text-foreground px-4 py-3 align-middle">
-                    {t('pricing.compare.col.feature')}
-                  </th>
-                  <th className="text-center font-bold text-primary px-4 py-3 align-middle">
-                    {t('brand.name')}
-                  </th>
-                  <th className="text-center font-semibold text-muted-foreground px-4 py-3 align-middle">
-                    Seneca
-                  </th>
-                  <th className="text-center font-semibold text-muted-foreground px-4 py-3 align-middle">
-                    GCSEPod
-                  </th>
-                  <th className="text-center font-semibold text-muted-foreground px-4 py-3 align-middle">
-                    Tassomai
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="[&>tr]:border-b [&>tr]:border-border/40 [&>tr:last-child]:border-0">
-                <tr>
-                  <td className="px-4 py-3 font-medium text-foreground align-middle">
-                    {t('pricing.compare.row.price_per_student')}
-                  </td>
-                  <td className="px-4 py-3 text-center text-foreground font-semibold align-middle">
-                    {PRICING.CURRENCY}
-                    {PRICING.STUDENT_MONTHLY}
-                  </td>
-                  <td className="px-4 py-3 text-center text-muted-foreground align-middle">
-                    {t('pricing.compare.seneca_price')}
-                  </td>
-                  <td className="px-4 py-3 text-center text-muted-foreground align-middle">
-                    {t('pricing.compare.gcsepod_price')}
-                  </td>
-                  <td className="px-4 py-3 text-center text-muted-foreground align-middle">
-                    £3.00
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-4 py-3 font-medium text-foreground align-middle">
-                    {t('pricing.compare.row.ai_marking')}
-                  </td>
-                  <td className="px-4 py-3 align-middle">
-                    <StatusCell included />
-                  </td>
-                  <td className="px-4 py-3 align-middle">
-                    <StatusCell included={false} />
-                  </td>
-                  <td className="px-4 py-3 align-middle">
-                    <StatusCell included={false} />
-                  </td>
-                  <td className="px-4 py-3 align-middle">
-                    <StatusCell included={false} />
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-4 py-3 font-medium text-foreground align-middle">
-                    {t('pricing.compare.row.igcse_coverage')}
-                  </td>
-                  <td className="px-4 py-3 align-middle">
-                    <div className="flex justify-center items-center gap-1.5">
-                      <CheckCircle className="w-5 h-5 text-emerald-600 shrink-0" />
-                      <span className="text-xs text-foreground">
-                        {t('pricing.compare.value.aqa_cambridge')}
-                      </span>
-                    </div>
-                  </td>
-                  <td className="px-4 py-3 text-center text-muted-foreground text-xs align-middle">
-                    {t('pricing.compare.value.partial')}
-                  </td>
-                  <td className="px-4 py-3 align-middle">
-                    <StatusCell included={false} />
-                  </td>
-                  <td className="px-4 py-3 text-center text-muted-foreground text-xs align-middle">
-                    {t('pricing.compare.value.partial')}
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-4 py-3 font-medium text-foreground align-middle">
-                    {t('pricing.compare.row.mock_exam_bank')}
-                  </td>
-                  <td className="px-4 py-3 text-center font-semibold text-foreground align-middle">
-                    172+
-                  </td>
-                  <td className="px-4 py-3 align-middle">
-                    <StatusCell included={false} />
-                  </td>
-                  <td className="px-4 py-3 align-middle">
-                    <StatusCell included />
-                  </td>
-                  <td className="px-4 py-3 align-middle">
-                    <StatusCell included={false} />
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-4 py-3 font-medium text-foreground align-middle">
-                    {t('pricing.compare.row.calibrated_ms')}
-                  </td>
-                  <td className="px-4 py-3 align-middle">
-                    <div className="flex justify-center items-center gap-1.5">
-                      <CheckCircle className="w-5 h-5 text-emerald-600 shrink-0" />
-                      <span className="text-xs text-foreground">
-                        {t('pricing.compare.value.5_boards')}
-                      </span>
-                    </div>
-                  </td>
-                  <td className="px-4 py-3 align-middle">
-                    <StatusCell included={false} />
-                  </td>
-                  <td className="px-4 py-3 align-middle">
-                    <StatusCell included={false} />
-                  </td>
-                  <td className="px-4 py-3 align-middle">
-                    <StatusCell included={false} />
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-4 py-3 font-medium text-foreground align-middle">
-                    {t('pricing.compare.row.trial_length')}
-                  </td>
-                  <td className="px-4 py-3 text-center text-foreground font-semibold align-middle">
-                    {t('pricing.compare.value.7_days')}
-                  </td>
-                  <td className="px-4 py-3 text-center text-muted-foreground align-middle">
-                    {t('pricing.compare.value.no_trial')}
-                  </td>
-                  <td className="px-4 py-3 text-center text-muted-foreground align-middle">
-                    {t('pricing.compare.value.na')}
-                  </td>
-                  <td className="px-4 py-3 text-center text-muted-foreground align-middle">
-                    {t('pricing.compare.value.7_days')}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <p className="mt-4 text-center text-xs text-muted-foreground/80 max-w-2xl mx-auto">
-            {t('pricing.compare.footnote')}
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">
+            {t('pricing.alongside.title')}
+          </h2>
+          <p className="mt-3 text-muted-foreground text-sm sm:text-base leading-relaxed">
+            {t('pricing.alongside.body')}
           </p>
         </div>
       </section>
@@ -763,9 +600,6 @@ function PricingContent() {
                   <span className="inline-flex items-center rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-amber-700 dark:text-amber-300">
                     {PRICING.EARLY_ACCESS_LABEL}
                   </span>
-                  <span className="text-[10px] font-medium text-muted-foreground">
-                    · {t('pricing.limited_time')}
-                  </span>
                 </div>
 
                 {/* ONE primary price line - early-access monthly with standard anchor */}
@@ -800,8 +634,13 @@ function PricingContent() {
                 </p>
 
                 {/* ONE trial line */}
+                {/* Was "{TRIAL_TEXT} · no card required to start", printed
+                    directly above a button that POSTs /api/stripe/checkout
+                    with trial_period_days - which takes a card. The no-card
+                    trial is real, but it is the one you get by creating an
+                    account, not the one this button starts. */}
                 <p className="text-sm text-emerald-600 font-semibold mb-3">
-                  {PRICING.TRIAL_TEXT} · {t('pricing.trial_line_card_required')}
+                  {t('pricing.trial_line_card_on_file')}
                 </p>
 
                 {/* ONE upgrade callout - affiliate code */}
@@ -899,9 +738,6 @@ function PricingContent() {
                   <span className="inline-flex items-center rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-amber-700 dark:text-amber-300">
                     {PRICING.EARLY_ACCESS_LABEL}
                   </span>
-                  <span className="text-[10px] font-medium text-muted-foreground">
-                    · {t('pricing.limited_time')}
-                  </span>
                 </div>
 
                 {/* Price - early-access monthly with standard anchor */}
@@ -941,8 +777,10 @@ function PricingContent() {
                     </span>
                   )}
                 </p>
+                {/* Same correction as the Student card above: this sat over
+                    a button that takes a card. */}
                 <p className="text-sm text-emerald-600 font-semibold mb-3 mt-3">
-                  {PRICING.TRIAL_TEXT} · {t('pricing.trial_line_card_required')}
+                  {t('pricing.trial_line_card_on_file')}
                 </p>
 
                 {/* Affiliate / promo code callout - mirrors the Student

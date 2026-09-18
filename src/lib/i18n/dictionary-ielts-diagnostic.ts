@@ -25,8 +25,6 @@
 // dictionary.ts's lookup() chain by design.
 // ────────────────────────────────────────────────────────────────────────────
 
-import { IELTS_LIMITS } from '@/constants/ielts-limits'
-
 export const IELTS_DIAGNOSTIC_DICTIONARY: Record<string, { en: string; ar?: string; es?: string }> =
   {
     // ─── Shared: back link ──────────────────────────────────────────────
@@ -78,9 +76,9 @@ export const IELTS_DIAGNOSTIC_DICTIONARY: Record<string, { en: string; ar?: stri
     },
     'ielts.diagnostic.usage.last_free_note': {
       // Was "unlimited AI checks". See src/constants/ielts-limits.ts.
-      en: `A plan adds ${IELTS_LIMITS.WRITING_PER_DAY} Writing and ${IELTS_LIMITS.SPEAKING_PER_DAY} Speaking AI checks a day, full per-criterion feedback and the mock exams.`,
-      ar: `الخطة تعطيك ${IELTS_LIMITS.WRITING_PER_DAY} فحص كتابة و${IELTS_LIMITS.SPEAKING_PER_DAY} فحص محادثة بالذكاء الاصطناعي يومياً وتغذية راجعة كاملة لكل معيار مع الاختبارات التجريبية.`,
-      es: `Un plan añade ${IELTS_LIMITS.WRITING_PER_DAY} comprobaciones de Writing y ${IELTS_LIMITS.SPEAKING_PER_DAY} de Speaking con IA al día, comentarios completos por criterio y los simulacros de examen.`,
+      en: `A plan adds 10 Writing and 30 Speaking AI checks a day, full per-criterion feedback and the mock exams.`,
+      ar: `الخطة تعطيك 10 فحص كتابة و30 فحص محادثة بالذكاء الاصطناعي يومياً وتغذية راجعة كاملة لكل معيار مع الاختبارات التجريبية.`,
+      es: `Un plan añade 10 comprobaciones de Writing y 30 de Speaking con IA al día, comentarios completos por criterio y los simulacros de examen.`,
     },
     'ielts.diagnostic.usage.exhausted_title': {
       en: 'Your free AI checks are used up for now',

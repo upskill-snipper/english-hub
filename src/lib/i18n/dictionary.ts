@@ -4505,9 +4505,14 @@ export const DICTIONARY: Dictionary = {
     es: 'Comparar con la competencia',
   },
   'pricing.compare.subtitle': {
-    en: 'See how The English Hub stacks up against Seneca, GCSEPod, and Tassomai.',
-    ar: 'شوف كيف The English Hub يقارن مع Seneca و GCSEPod و Tassomai.',
-    es: 'Descubre cómo se compara The English Hub con Seneca, GCSEPod y Tassomai.',
+    // Named three competitors. Section 5 of the positioning house forbids it:
+    // naming a rival is disparaging, unverifiable and unnecessary, and the
+    // table this introduced carried five-month-old prices. The section was
+    // removed from /pricing; the key is neutralised so no other surface can
+    // resurrect the names.
+    en: 'Where The English Hub fits alongside the tools a department already runs.',
+    ar: 'وين يجي The English Hub جنب الأدوات اللي يستخدمها القسم أصلاً.',
+    es: 'Dónde encaja The English Hub junto a las herramientas que ya usa un departamento.',
   },
   'pricing.start_free_eyebrow': { en: 'Start free', ar: 'ابدأ ببلاش', es: 'Empieza gratis' },
   'pricing.try_before_subscribe': {
@@ -20502,10 +20507,33 @@ export const DICTIONARY: Dictionary = {
     ar: 'مقارنة بالشهري',
     es: 'frente al mensual',
   },
+  // Retained for any other caller; no longer used on the pricing cards. It sat
+  // directly above a button that POSTs /api/stripe/checkout with
+  // trial_period_days, which takes a card, so the card contradicted itself.
   'pricing.trial_line_card_required': {
     en: 'no card required to start',
     ar: 'ما يلزم كارت للبداية',
     es: 'sin tarjeta para empezar',
+  },
+  // What the paid cards actually do. The genuine no-card trial is the one you
+  // get by creating an account, and it is stated in the green banner above.
+  'pricing.trial_line_card_on_file': {
+    en: 'Paid plans start with 7 free days, card on file - cancel before day 7 and you are not charged',
+    ar: 'الخطط المدفوعة تبدأ بـ 7 أيام مجانية مع حفظ الكارت - ألغِ قبل اليوم السابع وما ينخصم منك شيء',
+    es: 'Los planes de pago empiezan con 7 días gratis con tarjeta guardada: cancela antes del día 7 y no se te cobra',
+  },
+  // Replaces the "Compare to competitors" table. Section 5 of the positioning
+  // house forbids any comparison table carrying a competitor's name; this is
+  // the approved category line from section 8 of the same document.
+  'pricing.alongside.title': {
+    en: 'How we sit alongside what you already use',
+    ar: 'كيف نشتغل جنب اللي تستخدمه حالياً',
+    es: 'Cómo encajamos con lo que ya utilizas',
+  },
+  'pricing.alongside.body': {
+    en: 'Content libraries and quiz engines do a different job, and they do it well. We mark the writing. Most departments will run both.',
+    ar: 'مكتبات المحتوى ومحركات الاختبارات تسوي شغل مختلف، وتسويه زين. إحنا نصحّح الكتابة. أغلب الأقسام بتستخدم الاثنين.',
+    es: 'Las bibliotecas de contenido y los motores de cuestionarios hacen un trabajo distinto, y lo hacen bien. Nosotros corregimos la escritura. La mayoría de los departamentos usarán ambos.',
   },
   'pricing.with_any_code_prefix': {
     en: 'With any affiliate code or',
@@ -20665,9 +20693,12 @@ export const DICTIONARY: Dictionary = {
     es: '¿Cómo funciona el descuento del código de afiliado?',
   },
   'pricing.faq.a5': {
-    en: 'Enter any valid affiliate code at checkout to unlock the £{withCode}/year student rate. Or use the public code {code} - this works for everyone and applies the same discount. Only applies to annual student billing.',
-    ar: 'ادخل أي كود شراكة صالح عند الدفع عشان تفتح سعر الطالب £{withCode} سنوياً. أو استخدم الكود العام {code} - يشتغل للكل ويطبّق نفس الخصم. ينطبق فقط على فوترة الطالب السنوية.',
-    es: 'Introduce cualquier código de afiliado válido en el pago para desbloquear la tarifa de estudiante de £{withCode}/año. O usa el código público {code} - funciona para todo el mundo y aplica el mismo descuento. Solo se aplica a la facturación anual de estudiante.',
+    // Was "Only applies to annual student billing", which the same page
+    // contradicted: the Teacher card offers the annual rate with the code, and
+    // /api/promo/redeem lists teacher_annual among the allowed products.
+    en: 'Enter any valid affiliate code at checkout to unlock the £{withCode}/year student rate. Or use the public code {code} - this works for everyone and applies the same discount. It applies to annual billing on the Student and Teacher plans, not to monthly.',
+    ar: 'ادخل أي كود شراكة صالح عند الدفع عشان تفتح سعر الطالب £{withCode} سنوياً. أو استخدم الكود العام {code} - يشتغل للكل ويطبّق نفس الخصم. ينطبق على الفوترة السنوية لخطط الطالب والمعلم، مو على الشهرية.',
+    es: 'Introduce cualquier código de afiliado válido en el pago para desbloquear la tarifa de estudiante de £{withCode}/año. O usa el código público {code} - funciona para todo el mundo y aplica el mismo descuento. Se aplica a la facturación anual de los planes de Estudiante y Profesor, no a la mensual.',
   },
   'pricing.faq.q6': {
     en: 'Can I switch between monthly and annual billing?',
