@@ -52,12 +52,12 @@ export function ProgressBar({
         <div className="mb-1.5 flex items-center justify-between">
           <div className="min-w-0">
             {label && <span className="truncate text-sm font-medium text-foreground">{label}</span>}
-            {sublabel && <span className="ml-2 text-xs text-muted-foreground">{sublabel}</span>}
+            {sublabel && <span className="ms-2 text-xs text-muted-foreground">{sublabel}</span>}
           </div>
           {showPercentage && (
             <span
               className={cn(
-                'ml-2 shrink-0 text-xs tabular-nums',
+                'ms-2 shrink-0 text-xs tabular-nums',
                 showAsGrade ? gcseGradeColor(grade) + ' font-semibold' : 'text-muted-foreground',
               )}
             >

@@ -128,7 +128,7 @@ export default async function VerifiedContentPage() {
         <section>
           <h2 className="text-xl font-semibold text-foreground">{sourcesH2}</h2>
           <p className="mt-2 text-muted-foreground leading-relaxed">{sourcesLede}</p>
-          <ul className="mt-4 list-disc space-y-2 pl-6 text-muted-foreground leading-relaxed">
+          <ul className="mt-4 list-disc space-y-2 ps-6 text-muted-foreground leading-relaxed">
             <li>
               <strong className="text-foreground">{sourceGutenbergStrong}</strong> -{' '}
               {sourceGutenbergBody}

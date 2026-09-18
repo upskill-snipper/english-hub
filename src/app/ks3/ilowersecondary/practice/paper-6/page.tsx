@@ -211,7 +211,7 @@ export default async function PracticePaper6Page() {
                   <table className="w-full border-collapse text-sm">
                     <thead>
                       <tr className="border-b border-border">
-                        <th className="p-2 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                        <th className="p-2 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                           Feature
                         </th>
                         <th className="p-2 text-center font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
@@ -399,13 +399,13 @@ export default async function PracticePaper6Page() {
           <table className="w-full border-collapse text-sm">
             <thead>
               <tr className="border-b border-border">
-                <th className="p-2 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="p-2 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Question type
                 </th>
-                <th className="p-2 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="p-2 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   AO
                 </th>
-                <th className="p-2 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="p-2 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   How to answer
                 </th>
               </tr>

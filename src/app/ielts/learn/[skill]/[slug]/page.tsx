@@ -250,7 +250,7 @@ export default function IeltsLessonPage() {
         {/* ── Mark complete ─────────────────────────────────────────── */}
         <div className="mt-10 rounded-2xl border border-border bg-card p-6 shadow-soft">
           {mounted && complete ? (
-            <div className="flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-between sm:text-left">
+            <div className="flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-between sm:text-start">
               <div className="flex items-center gap-3">
                 <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-500/10">
                   <CheckCircle2 className="h-5 w-5 text-emerald-500" aria-hidden />
@@ -286,7 +286,7 @@ export default function IeltsLessonPage() {
               )}
             </div>
           ) : (
-            <div className="flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-between sm:text-left">
+            <div className="flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-between sm:text-start">
               <div>
                 <p className="font-serif text-base font-semibold text-foreground">
                   {t('ielts.learn.complete.cta_title')}
@@ -332,7 +332,7 @@ export default function IeltsLessonPage() {
             {next ? (
               <Link
                 href={`/ielts/learn/${next.skill}/${next.slug}`}
-                className="group flex items-center justify-end gap-3 rounded-xl border border-border/60 bg-card p-4 text-right transition-colors hover:border-border"
+                className="group flex items-center justify-end gap-3 rounded-xl border border-border/60 bg-card p-4 text-end transition-colors hover:border-border"
               >
                 <span className="min-w-0">
                   <span className="block text-[11px] font-medium uppercase tracking-wide text-muted-foreground">

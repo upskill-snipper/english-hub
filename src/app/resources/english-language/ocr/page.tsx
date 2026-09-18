@@ -205,30 +205,30 @@ export default function OCREnglishLanguagePage() {
             <div className="overflow-x-auto">
               <table className="mt-4 w-full border-collapse text-sm">
                 <thead>
-                  <tr className="border-b-2 border-primary/20 text-left">
-                    <th className="py-3 pr-4 font-semibold text-foreground">Component</th>
-                    <th className="py-3 pr-4 font-semibold text-foreground">Title</th>
-                    <th className="py-3 pr-4 font-semibold text-foreground">Weighting</th>
+                  <tr className="border-b-2 border-primary/20 text-start">
+                    <th className="py-3 pe-4 font-semibold text-foreground">Component</th>
+                    <th className="py-3 pe-4 font-semibold text-foreground">Title</th>
+                    <th className="py-3 pe-4 font-semibold text-foreground">Weighting</th>
                     <th className="py-3 font-semibold text-foreground">Duration</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
                   <tr>
-                    <td className="py-3 pr-4 font-medium">01</td>
-                    <td className="py-3 pr-4">Communicating Information and Ideas</td>
-                    <td className="py-3 pr-4">50%</td>
+                    <td className="py-3 pe-4 font-medium">01</td>
+                    <td className="py-3 pe-4">Communicating Information and Ideas</td>
+                    <td className="py-3 pe-4">50%</td>
                     <td className="py-3">2 hours</td>
                   </tr>
                   <tr>
-                    <td className="py-3 pr-4 font-medium">02</td>
-                    <td className="py-3 pr-4">Exploring Effects and Impact</td>
-                    <td className="py-3 pr-4">50%</td>
+                    <td className="py-3 pe-4 font-medium">02</td>
+                    <td className="py-3 pe-4">Exploring Effects and Impact</td>
+                    <td className="py-3 pe-4">50%</td>
                     <td className="py-3">2 hours</td>
                   </tr>
                   <tr>
-                    <td className="py-3 pr-4 font-medium">03</td>
-                    <td className="py-3 pr-4">Spoken Language Endorsement</td>
-                    <td className="py-3 pr-4">Separate</td>
+                    <td className="py-3 pe-4 font-medium">03</td>
+                    <td className="py-3 pe-4">Spoken Language Endorsement</td>
+                    <td className="py-3 pe-4">Separate</td>
                     <td className="py-3">N/A</td>
                   </tr>
                 </tbody>

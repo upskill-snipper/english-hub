@@ -43,7 +43,7 @@ function Section({
     <div className="rounded-2xl border border-border/60 bg-card overflow-hidden">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between p-5 sm:p-6 text-left transition-colors hover:bg-accent/30"
+        className="flex w-full items-center justify-between p-5 sm:p-6 text-start transition-colors hover:bg-accent/30"
       >
         <div className="flex items-center gap-3">
           <h2 className="text-heading-md font-heading text-foreground">{title}</h2>
@@ -141,7 +141,7 @@ export default function TimeManagementView({
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/revision/exam-technique" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -164,9 +164,9 @@ export default function TimeManagementView({
 
       {/* ── Core principle ────────────────────────────────────── */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-amber-500/[0.04] p-6 sm:p-8">
-        <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-amber-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -end-16 -top-16 h-48 w-48 rounded-full bg-amber-500/5 blur-3xl" />
         <Badge variant="secondary" className="mb-3">
-          <Timer className="mr-1 size-3" />
+          <Timer className="me-1 size-3" />
           The Golden Rule
         </Badge>
         <h2 className="text-heading-md font-heading text-foreground mb-2">
@@ -226,10 +226,12 @@ export default function TimeManagementView({
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-border/40 bg-background/50">
-                <th className="px-4 py-3 text-left font-semibold text-foreground">Marks</th>
-                <th className="px-4 py-3 text-left font-semibold text-foreground">Writing time</th>
-                <th className="px-4 py-3 text-left font-semibold text-foreground">+ Planning</th>
-                <th className="px-4 py-3 text-left font-semibold text-foreground">What to write</th>
+                <th className="px-4 py-3 text-start font-semibold text-foreground">Marks</th>
+                <th className="px-4 py-3 text-start font-semibold text-foreground">Writing time</th>
+                <th className="px-4 py-3 text-start font-semibold text-foreground">+ Planning</th>
+                <th className="px-4 py-3 text-start font-semibold text-foreground">
+                  What to write
+                </th>
               </tr>
             </thead>
             <tbody className="text-muted-foreground">

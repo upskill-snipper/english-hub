@@ -427,21 +427,21 @@ export function DepartmentOverview({ school, classes, members }: DepartmentOverv
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="border-b border-border text-left">
-                        <th className="pb-3 pr-4 font-medium text-muted-foreground">Teacher</th>
-                        <th className="pb-3 pr-4 font-medium text-muted-foreground text-center">
+                      <tr className="border-b border-border text-start">
+                        <th className="pb-3 pe-4 font-medium text-muted-foreground">Teacher</th>
+                        <th className="pb-3 pe-4 font-medium text-muted-foreground text-center">
                           Classes
                         </th>
-                        <th className="pb-3 pr-4 font-medium text-muted-foreground text-center">
+                        <th className="pb-3 pe-4 font-medium text-muted-foreground text-center">
                           Students
                         </th>
-                        <th className="pb-3 pr-4 font-medium text-muted-foreground text-center">
+                        <th className="pb-3 pe-4 font-medium text-muted-foreground text-center">
                           Avg Score
                         </th>
-                        <th className="pb-3 pr-4 font-medium text-muted-foreground text-center">
+                        <th className="pb-3 pe-4 font-medium text-muted-foreground text-center">
                           Completion
                         </th>
-                        <th className="pb-3 pr-4 font-medium text-muted-foreground text-center">
+                        <th className="pb-3 pe-4 font-medium text-muted-foreground text-center">
                           At Risk
                         </th>
                         <th className="pb-3 font-medium text-muted-foreground text-center">
@@ -452,15 +452,15 @@ export function DepartmentOverview({ school, classes, members }: DepartmentOverv
                     <tbody className="divide-y divide-border">
                       {teacherSummaries.map((t) => (
                         <tr key={t.id} className="hover:bg-muted/30 transition-colors">
-                          <td className="py-3 pr-4">
+                          <td className="py-3 pe-4">
                             <div>
                               <p className="font-medium text-foreground">{t.name}</p>
                               <p className="text-xs text-muted-foreground">{t.email}</p>
                             </div>
                           </td>
-                          <td className="py-3 pr-4 text-center tabular-nums">{t.classCount}</td>
-                          <td className="py-3 pr-4 text-center tabular-nums">{t.totalStudents}</td>
-                          <td className="py-3 pr-4 text-center">
+                          <td className="py-3 pe-4 text-center tabular-nums">{t.classCount}</td>
+                          <td className="py-3 pe-4 text-center tabular-nums">{t.totalStudents}</td>
+                          <td className="py-3 pe-4 text-center">
                             <span
                               className={cn(
                                 'inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium tabular-nums',
@@ -474,7 +474,7 @@ export function DepartmentOverview({ school, classes, members }: DepartmentOverv
                               {t.avgScore}%
                             </span>
                           </td>
-                          <td className="py-3 pr-4 text-center">
+                          <td className="py-3 pe-4 text-center">
                             <div className="flex items-center gap-2 justify-center">
                               <Progress value={t.avgCompletion} className="h-1.5 w-16" />
                               <span className="text-xs tabular-nums text-muted-foreground">
@@ -482,7 +482,7 @@ export function DepartmentOverview({ school, classes, members }: DepartmentOverv
                               </span>
                             </div>
                           </td>
-                          <td className="py-3 pr-4 text-center">
+                          <td className="py-3 pe-4 text-center">
                             {t.studentsAtRisk > 0 ? (
                               <Badge variant="outline" className="border-red-500/30 text-red-400">
                                 {t.studentsAtRisk}
@@ -543,7 +543,7 @@ export function DepartmentOverview({ school, classes, members }: DepartmentOverv
                               {cls.student_count} students
                             </p>
                           </div>
-                          <div className="text-right">
+                          <div className="text-end">
                             <p
                               className={`text-sm font-semibold tabular-nums ${gcseGradeColor(percentageToGCSEGrade(cls.avg_score))}`}
                             >
@@ -589,7 +589,7 @@ export function DepartmentOverview({ school, classes, members }: DepartmentOverv
                               {cls.student_count} students · {cls.students_at_risk} at risk
                             </p>
                           </div>
-                          <div className="text-right">
+                          <div className="text-end">
                             <p
                               className={`text-sm font-semibold tabular-nums ${gcseGradeColor(percentageToGCSEGrade(cls.avg_score))}`}
                             >

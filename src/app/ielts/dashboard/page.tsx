@@ -294,7 +294,7 @@ export default function IeltsDashboardPage() {
         >
           <span
             aria-hidden
-            className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-primary/5 blur-3xl"
+            className="pointer-events-none absolute -end-16 -top-16 h-48 w-48 rounded-full bg-primary/5 blur-3xl"
           />
           <PanelEyebrow>{t('ielts.dashboard.hero.eyebrow')}</PanelEyebrow>
           <h1
@@ -685,7 +685,7 @@ export default function IeltsDashboardPage() {
                         {i === 0 && (
                           <Badge
                             variant="default"
-                            className="ml-2 align-middle text-[0.6rem] uppercase tracking-wider"
+                            className="ms-2 align-middle text-[0.6rem] uppercase tracking-wider"
                           >
                             {t('ielts.dashboard.study_next.start_here')}
                           </Badge>
@@ -696,7 +696,7 @@ export default function IeltsDashboardPage() {
                       </p>
                     </div>
                   </div>
-                  <div className="flex shrink-0 items-center gap-2 pl-10 sm:pl-0">
+                  <div className="flex shrink-0 items-center gap-2 ps-10 sm:ps-0">
                     {firstLesson && (
                       <Button
                         variant="outline"
@@ -839,7 +839,7 @@ function RecommendedNext({
           <p className="text-sm font-semibold text-foreground">
             {meta.label}
             {!isColdStart && band !== null && (
-              <span className={cn('ml-2 font-mono text-xs', bandColour(band))}>
+              <span className={cn('ms-2 font-mono text-xs', bandColour(band))}>
                 {t('ielts.dashboard.pill.band_value', { band: bandLabel(band) })}
               </span>
             )}

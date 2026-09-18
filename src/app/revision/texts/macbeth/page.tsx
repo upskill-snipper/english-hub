@@ -887,7 +887,7 @@ export default async function MacbethPage() {
         </p>
         <ol className="space-y-6">
           {TOP_FIVE_QUOTES.map((q, i) => (
-            <li key={q.character} className="border-l-4 border-primary/50 pl-4">
+            <li key={q.character} className="border-s-4 border-primary/50 ps-4">
               <div className="mb-2 flex items-baseline gap-3">
                 <span aria-hidden="true" className="font-mono text-xs font-semibold text-primary">
                   {String(i + 1).padStart(2, '0')}

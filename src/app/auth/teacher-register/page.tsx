@@ -202,7 +202,7 @@ export default function TeacherRegisterPage() {
                 <span className="text-foreground font-medium">{email}</span>{' '}
                 {t('auth.teacher.welcome_suffix')}
               </p>
-              <div className="rounded-lg border border-primary/20 bg-primary/5 p-3 mb-6 text-left">
+              <div className="rounded-lg border border-primary/20 bg-primary/5 p-3 mb-6 text-start">
                 <p className="text-sm text-muted-foreground">
                   <span className="font-medium text-foreground">
                     {t('auth.teacher.demo_ready_lead')}
@@ -306,14 +306,14 @@ export default function TeacherRegisterPage() {
                         {t('form.first_name')} <span className="text-destructive">*</span>
                       </Label>
                       <div className="relative">
-                        <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
+                        <User className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
                         <Input
                           id="firstName"
                           type="text"
                           value={firstName}
                           onChange={(e) => setFirstName(e.target.value)}
                           placeholder={t('form.first_name_placeholder')}
-                          className="pl-10"
+                          className="ps-10"
                           autoComplete="given-name"
                           aria-invalid={!!fieldErrors.firstName}
                         />
@@ -328,14 +328,14 @@ export default function TeacherRegisterPage() {
                         {t('form.last_name')} <span className="text-destructive">*</span>
                       </Label>
                       <div className="relative">
-                        <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
+                        <User className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
                         <Input
                           id="lastName"
                           type="text"
                           value={lastName}
                           onChange={(e) => setLastName(e.target.value)}
                           placeholder={t('form.last_name_placeholder')}
-                          className="pl-10"
+                          className="ps-10"
                           autoComplete="family-name"
                           aria-invalid={!!fieldErrors.lastName}
                         />
@@ -352,14 +352,14 @@ export default function TeacherRegisterPage() {
                       {t('form.email')} <span className="text-destructive">*</span>
                     </Label>
                     <div className="relative">
-                      <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
+                      <Mail className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
                       <Input
                         id="email"
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder={t('form.teacher_email_placeholder')}
-                        className="pl-10"
+                        className="ps-10"
                         autoComplete="email"
                         aria-invalid={!!fieldErrors.email}
                       />
@@ -378,14 +378,14 @@ export default function TeacherRegisterPage() {
                       </span>
                     </Label>
                     <div className="relative">
-                      <School className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
+                      <School className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
                       <Input
                         id="schoolName"
                         type="text"
                         value={schoolName}
                         onChange={(e) => setSchoolName(e.target.value)}
                         placeholder={t('form.school_placeholder')}
-                        className="pl-10"
+                        className="ps-10"
                         autoComplete="organization"
                       />
                     </div>
@@ -413,12 +413,12 @@ export default function TeacherRegisterPage() {
                       </span>
                     </Label>
                     <div className="relative">
-                      <BookOpen className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
+                      <BookOpen className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
                       <select
                         id="selectedExamBoard"
                         value={selectedExamBoard}
                         onChange={(e) => setSelectedExamBoard(e.target.value)}
-                        className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 pl-10 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
+                        className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 ps-10 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
                       >
                         <option value="">{t('form.select_exam_board')}</option>
                         <option value="AQA">AQA</option>
@@ -438,21 +438,21 @@ export default function TeacherRegisterPage() {
                       {t('form.password')} <span className="text-destructive">*</span>
                     </Label>
                     <div className="relative">
-                      <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
+                      <Lock className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
                       <Input
                         id="password"
                         type={showPassword ? 'text' : 'password'}
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder={t('form.at_least_8_chars')}
-                        className="pl-10 pr-10"
+                        className="ps-10 pe-10"
                         autoComplete="new-password"
                         aria-invalid={!!fieldErrors.password}
                       />
                       <button
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-muted-foreground transition-colors"
+                        className="absolute end-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-muted-foreground transition-colors"
                         aria-label={
                           showPassword ? t('form.hide_password') : t('form.show_password')
                         }
@@ -475,21 +475,21 @@ export default function TeacherRegisterPage() {
                       {t('form.confirm_password')} <span className="text-destructive">*</span>
                     </Label>
                     <div className="relative">
-                      <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
+                      <Lock className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
                       <Input
                         id="confirmPassword"
                         type={showConfirm ? 'text' : 'password'}
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
                         placeholder={t('form.repeat_password')}
-                        className="pl-10 pr-10"
+                        className="ps-10 pe-10"
                         autoComplete="new-password"
                         aria-invalid={!!fieldErrors.confirmPassword}
                       />
                       <button
                         type="button"
                         onClick={() => setShowConfirm(!showConfirm)}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-muted-foreground transition-colors"
+                        className="absolute end-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-muted-foreground transition-colors"
                         aria-label={showConfirm ? t('form.hide_password') : t('form.show_password')}
                       >
                         {showConfirm ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
@@ -509,8 +509,8 @@ export default function TeacherRegisterPage() {
                       {t('form.dob')} <span className="text-destructive">*</span>
                     </legend>
                     <div className="relative">
-                      <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
-                      <div className="flex gap-2 pl-10">
+                      <Calendar className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
+                      <div className="flex gap-2 ps-10">
                         <select
                           id="dobDay"
                           value={dobDay}
@@ -654,7 +654,7 @@ export default function TeacherRegisterPage() {
                   <Button type="submit" disabled={loading} className="w-full" size="lg">
                     {loading ? (
                       <>
-                        <Loader2 className="w-4 h-4 animate-spin mr-2" />
+                        <Loader2 className="w-4 h-4 animate-spin me-2" />
                         {t('auth.register.creating')}
                       </>
                     ) : (

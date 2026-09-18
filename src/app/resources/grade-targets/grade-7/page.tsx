@@ -216,7 +216,7 @@ export default function Grade7Page() {
             <span className="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-2xl font-bold text-white shadow-lg">
               7
             </span>
-            <div className="text-left">
+            <div className="text-start">
               <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Getting a Grade 7</h1>
               <p className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
                 Distinction
@@ -244,13 +244,13 @@ export default function Grade7Page() {
           <table className="w-full min-w-[600px] border-collapse">
             <thead>
               <tr>
-                <th className="border-b-2 border-border px-4 py-3 text-left text-sm font-semibold text-muted-foreground uppercase tracking-wide">
+                <th className="border-b-2 border-border px-4 py-3 text-start text-sm font-semibold text-muted-foreground uppercase tracking-wide">
                   Area
                 </th>
-                <th className="border-b-2 border-border px-4 py-3 text-left text-sm font-semibold text-emerald-600 uppercase tracking-wide">
+                <th className="border-b-2 border-border px-4 py-3 text-start text-sm font-semibold text-emerald-600 uppercase tracking-wide">
                   Grade 5/6
                 </th>
-                <th className="border-b-2 border-border px-4 py-3 text-left text-sm font-semibold text-primary uppercase tracking-wide">
+                <th className="border-b-2 border-border px-4 py-3 text-start text-sm font-semibold text-primary uppercase tracking-wide">
                   Grade 7
                 </th>
               </tr>

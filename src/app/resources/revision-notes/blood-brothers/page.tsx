@@ -37,7 +37,7 @@ function Section({
     <section id={id} className="border border-border rounded-lg bg-card shadow-md">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left"
+        className="flex w-full items-center justify-between px-5 py-4 text-start"
         aria-expanded={open}
       >
         <h2 className="text-xl font-bold text-foreground">{title}</h2>
@@ -620,7 +620,7 @@ export default function BloodBrothersStudyGuide() {
         </p>
         <div className="space-y-4">
           {keyQuotes.map((q, i) => (
-            <div key={i} className="rounded-lg border-l-4 border-primary bg-muted p-4">
+            <div key={i} className="rounded-lg border-s-4 border-primary bg-muted p-4">
               <blockquote className="text-base font-medium italic text-foreground">
                 &ldquo;{q.quote}&rdquo;
               </blockquote>
@@ -740,7 +740,7 @@ export default function BloodBrothersStudyGuide() {
             "The play's musical form is itself a political choice. Music democratises complex arguments: Russell uses melody and rhythm to communicate class critique to audiences who might resist it in prose or lecture form. The emotional accessibility of songs like 'Tell Me It's Not True' ensures that the political message is felt, not merely understood.",
             "Russell's decision to set the play in Liverpool is crucial. Liverpool in the 1980s was ground zero of Thatcher's Britain: mass unemployment, managed decline, and the systematic destruction of working-class communities. The play is not a universal fable but a specific historical argument about what happened when government policy abandoned an entire city and its people.",
           ].map((point, i) => (
-            <div key={i} className="rounded-lg border-l-4 border-accent bg-muted p-4">
+            <div key={i} className="rounded-lg border-s-4 border-accent bg-muted p-4">
               <p className="text-sm leading-relaxed text-muted-foreground">{point}</p>
             </div>
           ))}
@@ -816,7 +816,7 @@ export default function BloodBrothersStudyGuide() {
             <h3 className="font-bold text-foreground mb-1">Question 1</h3>
             <p className="text-sm text-muted-foreground mb-3">
               How does Russell present the effects of social class in <em>Blood Brothers</em>?
-              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
+              <span className="ms-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder={t('study.revnotes.common.essay_placeholder')}
@@ -834,7 +834,7 @@ export default function BloodBrothersStudyGuide() {
             <p className="text-sm text-muted-foreground mb-3">
               How does Russell use the Narrator to create dramatic tension in{' '}
               <em>Blood Brothers</em>?
-              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
+              <span className="ms-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder={t('study.revnotes.common.essay_placeholder')}
@@ -851,7 +851,7 @@ export default function BloodBrothersStudyGuide() {
             <h3 className="font-bold text-foreground mb-1">Question 3</h3>
             <p className="text-sm text-muted-foreground mb-3">
               How does Russell present the character of Mrs Johnstone in <em>Blood Brothers</em>?
-              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
+              <span className="ms-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder={t('study.revnotes.common.essay_placeholder')}
@@ -868,7 +868,7 @@ export default function BloodBrothersStudyGuide() {
             <h3 className="font-bold text-foreground mb-1">Question 4</h3>
             <p className="text-sm text-muted-foreground mb-3">
               How does Russell present the theme of nature versus nurture in <em>Blood Brothers</em>
-              ?<span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
+              ?<span className="ms-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder={t('study.revnotes.common.essay_placeholder')}

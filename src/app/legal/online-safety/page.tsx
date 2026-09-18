@@ -49,7 +49,7 @@ export default function OnlineSafetyPage() {
             The types of content that users can submit on our platform are limited and
             education-focused:
           </p>
-          <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1 mt-3">
+          <ul className="list-disc ps-6 text-muted-foreground leading-relaxed space-y-1 mt-3">
             <li>
               <strong className="text-foreground">Essay submissions</strong> &mdash; written
               responses submitted for AI marking feedback.
@@ -84,7 +84,7 @@ export default function OnlineSafetyPage() {
           <h3 className="text-lg font-medium text-foreground mt-5 mb-2">
             3.1 Automated safeguards
           </h3>
-          <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
+          <ul className="list-disc ps-6 text-muted-foreground leading-relaxed space-y-1">
             <li>
               Essay submissions are processed by our AI marking system, which is instructed to flag
               or decline to process content that is not a genuine educational essay response (for
@@ -99,7 +99,7 @@ export default function OnlineSafetyPage() {
           </ul>
 
           <h3 className="text-lg font-medium text-foreground mt-5 mb-2">3.2 Human review</h3>
-          <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
+          <ul className="list-disc ps-6 text-muted-foreground leading-relaxed space-y-1">
             <li>Flagged content is reviewed by a member of our team within 48 hours.</li>
             <li>
               If content is confirmed to be harmful or illegal, it is removed and the relevant
@@ -112,7 +112,7 @@ export default function OnlineSafetyPage() {
           <p className="text-muted-foreground leading-relaxed">
             The following categories of content are prohibited on The English Hub:
           </p>
-          <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1 mt-2">
+          <ul className="list-disc ps-6 text-muted-foreground leading-relaxed space-y-1 mt-2">
             <li>
               <strong className="text-foreground">Illegal content</strong> &mdash; including child
               sexual abuse material (CSAM), terrorism content, and content that incites violence.
@@ -203,57 +203,57 @@ export default function OnlineSafetyPage() {
             <table className="w-full text-sm border-collapse">
               <thead>
                 <tr className="border-b border-border">
-                  <th className="py-2 pr-4 text-left font-semibold text-foreground">Risk area</th>
-                  <th className="py-2 pr-4 text-left font-semibold text-foreground">Level</th>
-                  <th className="py-2 text-left font-semibold text-foreground">Mitigations</th>
+                  <th className="py-2 pe-4 text-start font-semibold text-foreground">Risk area</th>
+                  <th className="py-2 pe-4 text-start font-semibold text-foreground">Level</th>
+                  <th className="py-2 text-start font-semibold text-foreground">Mitigations</th>
                 </tr>
               </thead>
               <tbody className="text-muted-foreground">
                 <tr className="border-b border-border">
-                  <td className="py-3 pr-4 align-top font-medium text-foreground">
+                  <td className="py-3 pe-4 align-top font-medium text-foreground">
                     Illegal content in essays
                   </td>
-                  <td className="py-3 pr-4 align-top">Low</td>
+                  <td className="py-3 pe-4 align-top">Low</td>
                   <td className="py-3 align-top">
                     AI moderation flags non-educational content; human review of flagged items; no
                     user-to-user sharing of essays.
                   </td>
                 </tr>
                 <tr className="border-b border-border">
-                  <td className="py-3 pr-4 align-top font-medium text-foreground">
+                  <td className="py-3 pe-4 align-top font-medium text-foreground">
                     Content harmful to children
                   </td>
-                  <td className="py-3 pr-4 align-top">Low</td>
+                  <td className="py-3 pe-4 align-top">Low</td>
                   <td className="py-3 align-top">
                     Essay content is private to the submitting user; AI system declines to process
                     harmful prompts; no social features.
                   </td>
                 </tr>
                 <tr className="border-b border-border">
-                  <td className="py-3 pr-4 align-top font-medium text-foreground">
+                  <td className="py-3 pe-4 align-top font-medium text-foreground">
                     User-to-user contact
                   </td>
-                  <td className="py-3 pr-4 align-top">None</td>
+                  <td className="py-3 pe-4 align-top">None</td>
                   <td className="py-3 align-top">
                     No messaging, forums, or social features exist on the platform. Users cannot
                     contact one another.
                   </td>
                 </tr>
                 <tr className="border-b border-border">
-                  <td className="py-3 pr-4 align-top font-medium text-foreground">
+                  <td className="py-3 pe-4 align-top font-medium text-foreground">
                     Misuse of AI marking
                   </td>
-                  <td className="py-3 pr-4 align-top">Low</td>
+                  <td className="py-3 pe-4 align-top">Low</td>
                   <td className="py-3 align-top">
                     Rate limiting; AI prompt safety instructions; AI opt-out available for parents;
                     AI grades clearly labelled as non-official.
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-3 pr-4 align-top font-medium text-foreground">
+                  <td className="py-3 pe-4 align-top font-medium text-foreground">
                     Data protection (children)
                   </td>
-                  <td className="py-3 pr-4 align-top">Medium</td>
+                  <td className="py-3 pe-4 align-top">Medium</td>
                   <td className="py-3 align-top">
                     Privacy-by-default settings; parental consent for under-16s; data minimisation;
                     no personal data sent to AI provider; DPIA completed.
@@ -276,7 +276,7 @@ export default function OnlineSafetyPage() {
             The English Hub uses AI (provided by Anthropic) to generate essay feedback. We are
             transparent about this use:
           </p>
-          <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1 mt-3">
+          <ul className="list-disc ps-6 text-muted-foreground leading-relaxed space-y-1 mt-3">
             <li>
               AI-generated grades and feedback are clearly labelled as predictions, not official
               exam results.
@@ -320,7 +320,7 @@ export default function OnlineSafetyPage() {
           <p className="text-muted-foreground leading-relaxed">
             For any questions about this policy or online safety on The English Hub:
           </p>
-          <ul className="list-none pl-0 text-muted-foreground leading-relaxed space-y-1 mt-3">
+          <ul className="list-none ps-0 text-muted-foreground leading-relaxed space-y-1 mt-3">
             <li>
               <strong className="text-foreground">Safety reports:</strong>{' '}
               <a href="mailto:safety@theenglishhub.app" className="underline text-foreground">
@@ -345,7 +345,7 @@ export default function OnlineSafetyPage() {
         {/* Related policies */}
         <section className="rounded-lg border border-border bg-muted/50 p-5">
           <h2 className="text-base font-semibold text-foreground mb-2">Related policies</h2>
-          <ul className="list-disc pl-6 text-sm text-muted-foreground space-y-1">
+          <ul className="list-disc ps-6 text-sm text-muted-foreground space-y-1">
             <li>
               <Link href="/legal/privacy" className="underline text-foreground">
                 Privacy Policy

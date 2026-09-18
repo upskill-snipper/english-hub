@@ -67,7 +67,7 @@ export function Grade7VocabBank() {
           <button
             key={item.word}
             onClick={() => setExpanded(expanded === i ? null : i)}
-            className={`text-left rounded-xl border p-4 transition-all duration-200 ${
+            className={`text-start rounded-xl border p-4 transition-all duration-200 ${
               expanded === i
                 ? 'border-amber-500/30 bg-amber-500/[0.04]'
                 : 'border-border/40 bg-background/50 hover:border-border'

@@ -202,7 +202,7 @@ export default async function NarrativeDescriptivePage() {
             rewards correct demarcation; mishandled speech marks are a common reason strong stories
             slip a band.
           </p>
-          <ul className="list-disc space-y-2 pl-6 text-sm leading-relaxed text-muted-foreground">
+          <ul className="list-disc space-y-2 ps-6 text-sm leading-relaxed text-muted-foreground">
             {DIALOGUE_RULES.map((r) => (
               <li key={r}>{r}</li>
             ))}
@@ -211,7 +211,7 @@ export default async function NarrativeDescriptivePage() {
 
         <section
           aria-labelledby="openings"
-          className="mb-12 rounded-lg border-l-4 border-primary/40 bg-card p-6 sm:p-8"
+          className="mb-12 rounded-lg border-s-4 border-primary/40 bg-card p-6 sm:p-8"
         >
           <h2 id="openings" className="mb-3 font-heading text-2xl font-semibold text-foreground">
             Powerful opening techniques
@@ -220,7 +220,7 @@ export default async function NarrativeDescriptivePage() {
             The first two sentences decide whether the reader leans in. Choose one technique
             deliberately - never warm up with the weather or waking up.
           </p>
-          <ul className="list-disc space-y-2 pl-6 text-sm leading-relaxed text-muted-foreground">
+          <ul className="list-disc space-y-2 ps-6 text-sm leading-relaxed text-muted-foreground">
             <li>
               <strong>In medias res:</strong> open mid-action, then explain later. &ldquo;The rope
               slipped a second time, and this time my brother did not catch it.&rdquo;
@@ -292,11 +292,11 @@ export default async function NarrativeDescriptivePage() {
             </p>
           </div>
 
-          <div className="mt-5 rounded-lg border-l-4 border-primary/40 bg-card p-4">
+          <div className="mt-5 rounded-lg border-s-4 border-primary/40 bg-card p-4">
             <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
               Why this earns marks - mapped to {WAO1_GRID[3].level}/{WAO2_GRID[3].level} qualities
             </p>
-            <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted-foreground">
+            <ul className="list-disc space-y-2 ps-5 text-sm leading-relaxed text-muted-foreground">
               <li>
                 <strong>Form &amp; structure (WAO1):</strong> a clear arc - a return, a
                 confrontation withheld, a reconciliation - with a close that answers the opening
@@ -349,7 +349,7 @@ export default async function NarrativeDescriptivePage() {
 
         <section
           aria-labelledby="describe-warning"
-          className="mb-12 rounded-lg border-l-4 border-red-500/40 bg-red-500/10 p-6 sm:p-8"
+          className="mb-12 rounded-lg border-s-4 border-red-500/40 bg-red-500/10 p-6 sm:p-8"
         >
           <h2
             id="describe-warning"
@@ -426,11 +426,11 @@ export default async function NarrativeDescriptivePage() {
             </p>
           </div>
 
-          <div className="mt-5 rounded-lg border-l-4 border-primary/40 bg-card p-4">
+          <div className="mt-5 rounded-lg border-s-4 border-primary/40 bg-card p-4">
             <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
               Why this earns marks - mapped to {WAO1_GRID[3].level}/{WAO2_GRID[3].level} qualities
             </p>
-            <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted-foreground">
+            <ul className="list-disc space-y-2 ps-5 text-sm leading-relaxed text-muted-foreground">
               <li>
                 <strong>Structural movement (WAO1):</strong> the description travels - wide on the
                 cold platform, up to the roof, down the rails, in to one pigeon, then out as the
@@ -482,7 +482,7 @@ export default async function NarrativeDescriptivePage() {
                   <span className="font-mono text-sm font-semibold text-primary">{row.level}</span>
                   <span className="text-sm text-muted-foreground">{row.marks} marks</span>
                 </div>
-                <ul className="list-disc space-y-1 pl-5 text-sm leading-relaxed text-muted-foreground">
+                <ul className="list-disc space-y-1 ps-5 text-sm leading-relaxed text-muted-foreground">
                   {row.descriptors.map((d) => (
                     <li key={d}>{d}</li>
                   ))}
@@ -501,7 +501,7 @@ export default async function NarrativeDescriptivePage() {
                   <span className="font-mono text-sm font-semibold text-primary">{row.level}</span>
                   <span className="text-sm text-muted-foreground">{row.marks} marks</span>
                 </div>
-                <ul className="list-disc space-y-1 pl-5 text-sm leading-relaxed text-muted-foreground">
+                <ul className="list-disc space-y-1 ps-5 text-sm leading-relaxed text-muted-foreground">
                   {row.descriptors.map((d) => (
                     <li key={d}>{d}</li>
                   ))}
@@ -520,7 +520,7 @@ export default async function NarrativeDescriptivePage() {
             window. Apply the techniques above and self-check against both grids.
           </p>
           <div className="space-y-4">
-            <div className="rounded-lg border-l-4 border-primary/40 bg-card p-5">
+            <div className="rounded-lg border-s-4 border-primary/40 bg-card p-5">
               <p className="mb-1 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
                 Prompt 1 - narrative
               </p>
@@ -529,7 +529,7 @@ export default async function NarrativeDescriptivePage() {
                 aloud. End it before the secret is fully told.&rdquo;
               </p>
             </div>
-            <div className="rounded-lg border-l-4 border-primary/40 bg-card p-5">
+            <div className="rounded-lg border-s-4 border-primary/40 bg-card p-5">
               <p className="mb-1 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
                 Prompt 2 - descriptive
               </p>

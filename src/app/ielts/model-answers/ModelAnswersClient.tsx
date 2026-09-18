@@ -54,7 +54,7 @@ export function ModelAnswersClient({ hasAccess }: { hasAccess: boolean }) {
         <Button
           variant="ghost"
           size="sm"
-          className="-ml-2 text-muted-foreground"
+          className="-ms-2 text-muted-foreground"
           render={<Link href="/ielts" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -65,7 +65,7 @@ export function ModelAnswersClient({ hasAccess }: { hasAccess: boolean }) {
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-sky-500/[0.05] p-6 sm:p-8">
         <Badge variant="secondary" className="mb-3">
-          <BookOpenCheck className="mr-1 size-3" />
+          <BookOpenCheck className="me-1 size-3" />
           {t('ielts.modelans.hero.badge')}
         </Badge>
         <h1 className="text-display-sm font-heading text-foreground sm:text-display">
@@ -82,7 +82,7 @@ export function ModelAnswersClient({ hasAccess }: { hasAccess: boolean }) {
 
       {/* ── Skill filter ─────────────────────────────────────────────── */}
       <div className="flex flex-wrap items-center gap-2">
-        <span className="mr-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
+        <span className="me-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
           {t('ielts.modelans.filter.show')}
         </span>
         <FilterChip
@@ -153,7 +153,7 @@ function ModelAnswerCard({
       <div className="border-b border-border/60 bg-muted/30 p-5 sm:p-6">
         <div className="flex flex-wrap items-center gap-2">
           <Badge variant="secondary" className="text-[0.65rem] uppercase">
-            <Icon className="mr-1 size-3" />
+            <Icon className="me-1 size-3" />
             {t(item.section)}
           </Badge>
           {item.free && !hasAccess && (
@@ -214,7 +214,7 @@ function SampleBlock({
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        className="flex w-full items-center justify-between gap-3 p-4 text-left"
+        className="flex w-full items-center justify-between gap-3 p-4 text-start"
       >
         <span className="flex items-center gap-2">
           <span

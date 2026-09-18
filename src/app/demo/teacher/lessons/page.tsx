@@ -2215,7 +2215,7 @@ export default function LessonBuilderDemo() {
     <div className="min-h-screen bg-background text-foreground">
       {/* Toast */}
       {toast && (
-        <div className="fixed top-6 right-6 z-50 bg-primary text-primary-foreground px-5 py-3 rounded-xl shadow-lg text-sm font-medium animate-fade-in">
+        <div className="fixed top-6 end-6 z-50 bg-primary text-primary-foreground px-5 py-3 rounded-xl shadow-lg text-sm font-medium animate-fade-in">
           {toast}
         </div>
       )}
@@ -2327,10 +2327,10 @@ export default function LessonBuilderDemo() {
             <div className="space-y-2 font-mono text-xs">
               {TYPING_LINES.slice(0, typingIndex).map((line, i) => (
                 <div key={i} className="text-muted-foreground animate-fade-in">
-                  <span className="text-primary/60 mr-2">&gt;</span>
+                  <span className="text-primary/60 me-2">&gt;</span>
                   {line}
                   {i === typingIndex - 1 && (
-                    <span className="inline-block w-1.5 h-3.5 bg-primary ml-1 animate-pulse" />
+                    <span className="inline-block w-1.5 h-3.5 bg-primary ms-1 animate-pulse" />
                   )}
                 </div>
               ))}
@@ -2446,7 +2446,7 @@ export default function LessonBuilderDemo() {
                             <summary className="text-xs text-primary/70 cursor-pointer hover:text-primary transition-colors">
                               {t('demo.b15.lessons.show_model_answer')}
                             </summary>
-                            <p className="mt-2 text-xs text-muted-foreground leading-relaxed pl-4 border-l border-primary/20">
+                            <p className="mt-2 text-xs text-muted-foreground leading-relaxed ps-4 border-s border-primary/20">
                               {q.modelAnswer}
                             </p>
                           </details>

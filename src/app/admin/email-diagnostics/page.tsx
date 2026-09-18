@@ -202,17 +202,17 @@ export default function EmailDiagnosticsPage() {
                   <div className="overflow-x-auto mt-3">
                     <table className="w-full text-xs">
                       <thead>
-                        <tr className="border-b border-border text-left text-muted-foreground">
-                          <th className="pb-2 pr-3 font-medium">{t('admin.email.col.status')}</th>
-                          <th className="pb-2 pr-3 font-medium">{t('admin.email.col.type')}</th>
-                          <th className="pb-2 pr-3 font-medium">{t('admin.email.col.name')}</th>
-                          <th className="pb-2 pr-3 font-medium">{t('admin.email.col.value')}</th>
+                        <tr className="border-b border-border text-start text-muted-foreground">
+                          <th className="pb-2 pe-3 font-medium">{t('admin.email.col.status')}</th>
+                          <th className="pb-2 pe-3 font-medium">{t('admin.email.col.type')}</th>
+                          <th className="pb-2 pe-3 font-medium">{t('admin.email.col.name')}</th>
+                          <th className="pb-2 pe-3 font-medium">{t('admin.email.col.value')}</th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-border">
                         {target.records.map((r, i) => (
                           <tr key={i} className="text-foreground align-top">
-                            <td className="py-2 pr-3">
+                            <td className="py-2 pe-3">
                               <span
                                 className={`inline-block text-[10px] px-2 py-0.5 rounded-full ${
                                   r.status === 'verified'
@@ -223,9 +223,9 @@ export default function EmailDiagnosticsPage() {
                                 {r.status ?? t('admin.email.status_unknown')}
                               </span>
                             </td>
-                            <td className="py-2 pr-3 font-mono">{r.type}</td>
-                            <td className="py-2 pr-3 font-mono break-all">{r.name}</td>
-                            <td className="py-2 pr-3 font-mono break-all max-w-md">{r.value}</td>
+                            <td className="py-2 pe-3 font-mono">{r.type}</td>
+                            <td className="py-2 pe-3 font-mono break-all">{r.name}</td>
+                            <td className="py-2 pe-3 font-mono break-all max-w-md">{r.value}</td>
                           </tr>
                         ))}
                       </tbody>
@@ -368,7 +368,7 @@ export default function EmailDiagnosticsPage() {
             </li>
             <li>
               <strong>{t('admin.email.runbook.5_strong')}</strong> {t('admin.email.runbook.5_body')}
-              <span className="block ml-4 mt-1 font-mono text-xs text-muted-foreground">
+              <span className="block ms-4 mt-1 font-mono text-xs text-muted-foreground">
                 host=smtp.resend.com · port=587 · username=resend · sender=noreply@theenglishhub.app
               </span>
             </li>
@@ -403,47 +403,47 @@ export default function EmailDiagnosticsPage() {
           <div className="overflow-x-auto">
             <table className="w-full text-xs">
               <thead>
-                <tr className="border-b border-border text-left text-muted-foreground">
-                  <th className="pb-2 pr-3 font-medium">{t('admin.email.col.num')}</th>
-                  <th className="pb-2 pr-3 font-medium">{t('admin.email.col.type')}</th>
-                  <th className="pb-2 pr-3 font-medium">{t('admin.email.col.name')}</th>
-                  <th className="pb-2 pr-3 font-medium">{t('admin.email.col.value')}</th>
+                <tr className="border-b border-border text-start text-muted-foreground">
+                  <th className="pb-2 pe-3 font-medium">{t('admin.email.col.num')}</th>
+                  <th className="pb-2 pe-3 font-medium">{t('admin.email.col.type')}</th>
+                  <th className="pb-2 pe-3 font-medium">{t('admin.email.col.name')}</th>
+                  <th className="pb-2 pe-3 font-medium">{t('admin.email.col.value')}</th>
                   <th className="pb-2 font-medium">{t('admin.email.col.purpose')}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border text-foreground align-top">
                 <tr>
-                  <td className="py-2 pr-3">1</td>
-                  <td className="py-2 pr-3 font-mono">TXT</td>
-                  <td className="py-2 pr-3 font-mono">@</td>
-                  <td className="py-2 pr-3 font-mono break-all">
+                  <td className="py-2 pe-3">1</td>
+                  <td className="py-2 pe-3 font-mono">TXT</td>
+                  <td className="py-2 pe-3 font-mono">@</td>
+                  <td className="py-2 pe-3 font-mono break-all">
                     v=spf1 include:_spf.resend.com ~all
                   </td>
                   <td className="py-2 text-muted-foreground">{t('admin.email.dns.spf')}</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-3">2</td>
-                  <td className="py-2 pr-3 font-mono">CNAME</td>
-                  <td className="py-2 pr-3 font-mono">resend._domainkey</td>
-                  <td className="py-2 pr-3 font-mono break-all opacity-70">
+                  <td className="py-2 pe-3">2</td>
+                  <td className="py-2 pe-3 font-mono">CNAME</td>
+                  <td className="py-2 pe-3 font-mono">resend._domainkey</td>
+                  <td className="py-2 pe-3 font-mono break-all opacity-70">
                     {t('admin.email.dns.dkim_value_placeholder')}
                   </td>
                   <td className="py-2 text-muted-foreground">{t('admin.email.dns.dkim1')}</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-3">3</td>
-                  <td className="py-2 pr-3 font-mono">CNAME</td>
-                  <td className="py-2 pr-3 font-mono">resend2._domainkey</td>
-                  <td className="py-2 pr-3 font-mono break-all opacity-70">
+                  <td className="py-2 pe-3">3</td>
+                  <td className="py-2 pe-3 font-mono">CNAME</td>
+                  <td className="py-2 pe-3 font-mono">resend2._domainkey</td>
+                  <td className="py-2 pe-3 font-mono break-all opacity-70">
                     {t('admin.email.dns.dkim_value_placeholder')}
                   </td>
                   <td className="py-2 text-muted-foreground">{t('admin.email.dns.dkim2')}</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-3">4</td>
-                  <td className="py-2 pr-3 font-mono">TXT</td>
-                  <td className="py-2 pr-3 font-mono">_dmarc</td>
-                  <td className="py-2 pr-3 font-mono break-all">
+                  <td className="py-2 pe-3">4</td>
+                  <td className="py-2 pe-3 font-mono">TXT</td>
+                  <td className="py-2 pe-3 font-mono">_dmarc</td>
+                  <td className="py-2 pe-3 font-mono break-all">
                     v=DMARC1; p=none; rua=mailto:dmarc@theenglishhub.app
                   </td>
                   <td className="py-2 text-muted-foreground">{t('admin.email.dns.dmarc')}</td>

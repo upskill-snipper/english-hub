@@ -296,7 +296,7 @@ export default function IeltsSpeakingPage() {
         <Button
           variant="ghost"
           size="sm"
-          className="-ml-2 text-muted-foreground"
+          className="-ms-2 text-muted-foreground"
           render={<Link href="/ielts" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -307,7 +307,7 @@ export default function IeltsSpeakingPage() {
       {/* ── Hero ──────────────────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-rose-500/[0.04] p-6 sm:p-8">
         <Badge variant="secondary" className="mb-3">
-          <Mic className="mr-1 size-3" />
+          <Mic className="me-1 size-3" />
           {t('ielts.speaking.hero.eyebrow')}
         </Badge>
         <h1 className="text-display-sm font-heading text-foreground sm:text-display">
@@ -356,7 +356,7 @@ export default function IeltsSpeakingPage() {
                 type="button"
                 onClick={() => resetForCue(active ? null : c)}
                 className={cn(
-                  'group flex flex-col rounded-xl border p-4 text-left transition-all',
+                  'group flex flex-col rounded-xl border p-4 text-start transition-all',
                   active
                     ? 'border-rose-500/50 bg-rose-500/[0.04] shadow-card-hover'
                     : 'border-border/60 bg-card hover:border-rose-500/40 hover:shadow-card-hover',
@@ -403,7 +403,7 @@ export default function IeltsSpeakingPage() {
               {isPart2 ? (
                 <div className="space-y-2 text-sm text-foreground">
                   <p className="font-medium">{cue.prompts[0]}</p>
-                  <ul className="ml-1 space-y-1">
+                  <ul className="ms-1 space-y-1">
                     {cue.prompts.slice(1).map((p, i) => (
                       <li
                         key={i}
@@ -660,7 +660,7 @@ function SpeakingResults({
       {/* Overall band hero */}
       <Card className={cn('border', bandBgColour(overall))}>
         <CardContent className="py-6">
-          <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left">
+          <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-start">
             <div
               className={cn(
                 'flex size-16 items-center justify-center rounded-2xl border',

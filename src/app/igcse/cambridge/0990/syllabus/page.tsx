@@ -127,7 +127,7 @@ export default async function Cambridge0990SyllabusPage() {
         <div className="relative">
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="bg-primary/10 text-primary border-primary/20">
-              <Sparkles className="mr-1 size-3" />
+              <Sparkles className="me-1 size-3" />
               {await t('igcse.cambridge.badge.cambridge_lang_b')}
             </Badge>
             <Badge variant="secondary">Course overview</Badge>

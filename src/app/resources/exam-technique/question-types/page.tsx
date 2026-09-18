@@ -333,7 +333,7 @@ export default async function QuestionTypesPage() {
                 {/* Example */}
                 <div>
                   <h3 className="text-base font-bold text-foreground">Example response snippet</h3>
-                  <blockquote className="mt-3 rounded-lg border-l-4 border-primary bg-muted px-5 py-4 text-sm italic leading-relaxed text-muted-foreground">
+                  <blockquote className="mt-3 rounded-lg border-s-4 border-primary bg-muted px-5 py-4 text-sm italic leading-relaxed text-muted-foreground">
                     {qt.example}
                   </blockquote>
                 </div>

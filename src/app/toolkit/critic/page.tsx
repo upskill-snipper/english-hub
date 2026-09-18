@@ -139,7 +139,7 @@ export default function CriticSimulatorPage() {
         <Button
           variant="ghost"
           size="sm"
-          className="-ml-2 text-muted-foreground"
+          className="-ms-2 text-muted-foreground"
           render={<Link href="/revision" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -150,7 +150,7 @@ export default function CriticSimulatorPage() {
       {/* ── Hero ──────────────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-cyan-500/[0.04] p-6 sm:p-8">
         <Badge variant="secondary" className="mb-3">
-          <Brain className="mr-1 size-3" />
+          <Brain className="me-1 size-3" />
           AO5 Trainer - A-Level / IAL
         </Badge>
         <h1 className="text-display-sm font-heading text-foreground sm:text-display">
@@ -190,7 +190,7 @@ export default function CriticSimulatorPage() {
                   setSelected(p.key)
                   setPushbackIndex(0)
                 }}
-                className="group flex flex-col rounded-xl border border-border/60 bg-card p-5 text-left transition-all hover:border-cyan-500/40 hover:shadow-card-hover"
+                className="group flex flex-col rounded-xl border border-border/60 bg-card p-5 text-start transition-all hover:border-cyan-500/40 hover:shadow-card-hover"
               >
                 <div className="flex items-center gap-2">
                   <Sparkles className="size-4 text-cyan-400" />

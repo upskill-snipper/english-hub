@@ -218,7 +218,7 @@ export default async function AnalysisPage(props: Props) {
             <h2 className="text-xl font-semibold text-foreground">{tKeyQuotes}</h2>
             <div className="mt-4 space-y-5">
               {ctx.keyQuotes.map((q, i) => (
-                <blockquote key={i} className="border-l-2 border-primary/50 pl-4">
+                <blockquote key={i} className="border-s-2 border-primary/50 ps-4">
                   <p className="font-medium text-foreground">{q.quote}</p>
                   <p className="mt-1 text-sm italic">{q.source}</p>
                   <p className="mt-2 text-sm">{q.analysis}</p>
@@ -233,7 +233,7 @@ export default async function AnalysisPage(props: Props) {
             <h2 className="text-xl font-semibold text-foreground">
               {tExamTipsFor} {ctx.label}
             </h2>
-            <ol className="mt-4 list-decimal space-y-2 pl-6">
+            <ol className="mt-4 list-decimal space-y-2 ps-6">
               {ctx.examTips.map((tip, i) => (
                 <li key={i}>{tip}</li>
               ))}
@@ -244,7 +244,7 @@ export default async function AnalysisPage(props: Props) {
         {ctx?.grade9Indicators?.length ? (
           <section>
             <h2 className="text-xl font-semibold text-foreground">{tGrade9H2}</h2>
-            <ul className="mt-4 list-disc space-y-2 pl-6">
+            <ul className="mt-4 list-disc space-y-2 ps-6">
               {ctx.grade9Indicators.map((g, i) => (
                 <li key={i}>{g}</li>
               ))}

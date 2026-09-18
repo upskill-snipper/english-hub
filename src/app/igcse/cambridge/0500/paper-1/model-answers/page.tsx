@@ -206,11 +206,11 @@ export default async function Paper1ModelAnswersPage() {
 
       {/* ── Hero ──────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 lg:p-10">
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
+        <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
         <div className="relative">
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="bg-primary/10 text-primary border-primary/20">
-              <Sparkles className="mr-1 size-3" />
+              <Sparkles className="me-1 size-3" />
               Cambridge IGCSE 0500
             </Badge>
             <Badge variant="secondary">Paper 1 models</Badge>

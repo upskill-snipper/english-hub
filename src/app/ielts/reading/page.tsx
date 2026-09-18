@@ -192,7 +192,7 @@ export default function IeltsReadingPage() {
                     if (typeof window !== 'undefined')
                       window.scrollTo({ top: 0, behavior: 'smooth' })
                   }}
-                  className="group flex flex-col rounded-2xl border border-border/60 bg-card p-5 text-left transition-all hover:border-emerald-500/40 hover:shadow-card-hover"
+                  className="group flex flex-col rounded-2xl border border-border/60 bg-card p-5 text-start transition-all hover:border-emerald-500/40 hover:shadow-card-hover"
                 >
                   <div className="flex items-center gap-2">
                     <BookOpen className="size-4 shrink-0 text-emerald-500" />
@@ -330,7 +330,7 @@ export default function IeltsReadingPage() {
                           </span>
                           <span className="flex-1 font-medium text-foreground">{q.prompt}</span>
                         </summary>
-                        <div className="mt-2 space-y-1.5 pl-7">
+                        <div className="mt-2 space-y-1.5 ps-7">
                           {!correct && q.type !== 'matching' && (
                             <p className="text-sm text-red-500">
                               {t('ielts.reading.review.your_answer')}{' '}
@@ -534,7 +534,7 @@ function QuestionCard({
         </span>
         <div className="min-w-0 flex-1">
           <p className="text-sm font-medium leading-snug text-foreground">{question.prompt}</p>
-          <Badge variant="ghost" className="mt-1.5 -ml-1 text-[0.65rem] text-muted-foreground">
+          <Badge variant="ghost" className="mt-1.5 -ms-1 text-[0.65rem] text-muted-foreground">
             {t(QUESTION_TYPE_LABEL_KEY[question.type])}
           </Badge>
         </div>
@@ -550,7 +550,7 @@ function QuestionCard({
                 type="button"
                 onClick={() => onAnswer(question.id, String(i))}
                 aria-pressed={selected}
-                className={`rounded-xl border p-3 text-left text-sm transition-all duration-200 ${
+                className={`rounded-xl border p-3 text-start text-sm transition-all duration-200 ${
                   selected
                     ? 'border-primary/60 bg-primary/[0.06]'
                     : 'border-border/60 bg-card hover:border-primary/40 hover:bg-primary/[0.03]'

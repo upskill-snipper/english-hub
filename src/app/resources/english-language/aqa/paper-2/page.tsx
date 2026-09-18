@@ -21,7 +21,7 @@ function Section({
     <div className="rounded-xl border border-border bg-card">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-bold text-foreground hover:bg-muted transition-colors"
+        className="flex w-full items-center justify-between gap-4 px-6 py-5 text-start font-bold text-foreground hover:bg-muted transition-colors"
       >
         <span className="text-lg">{title}</span>
         <svg
@@ -133,42 +133,42 @@ export default function Paper2Page() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-border text-left text-muted-foreground">
-                  <th className="py-2 pr-4">Task</th>
-                  <th className="py-2 pr-4">Marks</th>
-                  <th className="py-2 pr-4">Time</th>
+                <tr className="border-b border-border text-start text-muted-foreground">
+                  <th className="py-2 pe-4">Task</th>
+                  <th className="py-2 pe-4">Marks</th>
+                  <th className="py-2 pe-4">Time</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
                 <tr>
-                  <td className="py-2 pr-4">{tr(`Read both texts carefully`)}</td>
-                  <td className="py-2 pr-4">-</td>
-                  <td className="py-2 pr-4">10-15 mins</td>
+                  <td className="py-2 pe-4">{tr(`Read both texts carefully`)}</td>
+                  <td className="py-2 pe-4">-</td>
+                  <td className="py-2 pe-4">10-15 mins</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4">{tr(`Question 1 (true/false)`)}</td>
-                  <td className="py-2 pr-4">4</td>
-                  <td className="py-2 pr-4">5 mins</td>
+                  <td className="py-2 pe-4">{tr(`Question 1 (true/false)`)}</td>
+                  <td className="py-2 pe-4">4</td>
+                  <td className="py-2 pe-4">5 mins</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4">{tr(`Question 2 (summary/synthesis)`)}</td>
-                  <td className="py-2 pr-4">8</td>
-                  <td className="py-2 pr-4">8-10 mins</td>
+                  <td className="py-2 pe-4">{tr(`Question 2 (summary/synthesis)`)}</td>
+                  <td className="py-2 pe-4">8</td>
+                  <td className="py-2 pe-4">8-10 mins</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4">{tr(`Question 3 (language analysis)`)}</td>
-                  <td className="py-2 pr-4">12</td>
-                  <td className="py-2 pr-4">12-15 mins</td>
+                  <td className="py-2 pe-4">{tr(`Question 3 (language analysis)`)}</td>
+                  <td className="py-2 pe-4">12</td>
+                  <td className="py-2 pe-4">12-15 mins</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4">{tr(`Question 4 (comparison)`)}</td>
-                  <td className="py-2 pr-4">16</td>
-                  <td className="py-2 pr-4">18-20 mins</td>
+                  <td className="py-2 pe-4">{tr(`Question 4 (comparison)`)}</td>
+                  <td className="py-2 pe-4">16</td>
+                  <td className="py-2 pe-4">18-20 mins</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4">{tr(`Question 5 (writing)`)}</td>
-                  <td className="py-2 pr-4">40</td>
-                  <td className="py-2 pr-4">45 mins</td>
+                  <td className="py-2 pe-4">{tr(`Question 5 (writing)`)}</td>
+                  <td className="py-2 pe-4">40</td>
+                  <td className="py-2 pe-4">45 mins</td>
                 </tr>
               </tbody>
             </table>
@@ -185,7 +185,7 @@ export default function Paper2Page() {
           </p>
 
           <h3 className="mt-4 font-bold text-primary">{tr(`How to answer`)}</h3>
-          <ul className="ml-5 list-disc space-y-2">
+          <ul className="ms-5 list-disc space-y-2">
             <li>
               {tr(
                 `Read the specified section of the text carefully before looking at the statements.`,
@@ -207,7 +207,7 @@ export default function Paper2Page() {
           </ul>
 
           <h3 className="mt-4 font-bold text-primary">{tr(`Common traps`)}</h3>
-          <ul className="ml-5 list-disc space-y-2">
+          <ul className="ms-5 list-disc space-y-2">
             <li>{tr(`Statements that are true in general but not supported by the text.`)}</li>
             <li>
               {tr(
@@ -241,38 +241,38 @@ export default function Paper2Page() {
           <div className="overflow-x-auto">
             <table className="mt-2 w-full text-sm">
               <thead>
-                <tr className="border-b border-border text-left text-muted-foreground">
-                  <th className="py-2 pr-4">Level</th>
-                  <th className="py-2 pr-4">Marks</th>
-                  <th className="py-2 pr-4">Descriptor</th>
+                <tr className="border-b border-border text-start text-muted-foreground">
+                  <th className="py-2 pe-4">Level</th>
+                  <th className="py-2 pe-4">Marks</th>
+                  <th className="py-2 pe-4">Descriptor</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 4</td>
-                  <td className="py-2 pr-4">7-8</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 4</td>
+                  <td className="py-2 pe-4">7-8</td>
+                  <td className="py-2 pe-4">
                     Perceptive synthesis and interpretation of both sources. Judicious references.
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 3</td>
-                  <td className="py-2 pr-4">5-6</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 3</td>
+                  <td className="py-2 pe-4">5-6</td>
+                  <td className="py-2 pe-4">
                     Clear synthesis and interpretation. Relevant references from both sources.
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 2</td>
-                  <td className="py-2 pr-4">3-4</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 2</td>
+                  <td className="py-2 pe-4">3-4</td>
+                  <td className="py-2 pe-4">
                     {tr(`Some ability to link ideas between sources. Some appropriate references.`)}
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 1</td>
-                  <td className="py-2 pr-4">1-2</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 1</td>
+                  <td className="py-2 pe-4">1-2</td>
+                  <td className="py-2 pe-4">
                     {tr(`Simple, limited cross-reference of ideas. Simple references.`)}
                   </td>
                 </tr>
@@ -281,7 +281,7 @@ export default function Paper2Page() {
           </div>
 
           <h3 className="mt-4 font-bold text-primary">{tr(`How to structure your answer`)}</h3>
-          <ul className="ml-5 list-disc space-y-2">
+          <ul className="ms-5 list-disc space-y-2">
             <li>
               Write <strong>3-4 comparative points</strong>. Each point should reference{' '}
               <em>both</em> sources.
@@ -335,44 +335,44 @@ export default function Paper2Page() {
           <div className="overflow-x-auto">
             <table className="mt-2 w-full text-sm">
               <thead>
-                <tr className="border-b border-border text-left text-muted-foreground">
-                  <th className="py-2 pr-4">Level</th>
-                  <th className="py-2 pr-4">Marks</th>
-                  <th className="py-2 pr-4">Descriptor</th>
+                <tr className="border-b border-border text-start text-muted-foreground">
+                  <th className="py-2 pe-4">Level</th>
+                  <th className="py-2 pe-4">Marks</th>
+                  <th className="py-2 pe-4">Descriptor</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 4</td>
-                  <td className="py-2 pr-4">10-12</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 4</td>
+                  <td className="py-2 pe-4">10-12</td>
+                  <td className="py-2 pe-4">
                     {tr(
                       `Perceptive, detailed analysis. Analyses effects of writer&rsquo;s language choices. Judicious examples. Sophisticated, accurate subject terminology.`,
                     )}
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 3</td>
-                  <td className="py-2 pr-4">7-9</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 3</td>
+                  <td className="py-2 pe-4">7-9</td>
+                  <td className="py-2 pe-4">
                     {tr(
                       `Clear, relevant explanation. Clearly explains effects. Relevant examples. Accurate subject terminology.`,
                     )}
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 2</td>
-                  <td className="py-2 pr-4">4-6</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 2</td>
+                  <td className="py-2 pe-4">4-6</td>
+                  <td className="py-2 pe-4">
                     {tr(
                       `Some understanding. Attempts to comment on effect. Some appropriate examples. Some subject terminology.`,
                     )}
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 1</td>
-                  <td className="py-2 pr-4">1-3</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 1</td>
+                  <td className="py-2 pe-4">1-3</td>
+                  <td className="py-2 pe-4">
                     {tr(`Simple, limited comment. Simple references. Simple subject terminology.`)}
                   </td>
                 </tr>
@@ -385,7 +385,7 @@ export default function Paper2Page() {
             Use the same <strong>{tr(`What &rarr; How &rarr; Why`)}</strong> approach as Paper 1 Q2.
             Aim for <strong>4-5 well-developed analytical points</strong>.
           </p>
-          <ul className="ml-5 list-disc space-y-2 mt-2">
+          <ul className="ms-5 list-disc space-y-2 mt-2">
             <li>
               {tr(
                 `Embed short quotations into your sentences rather than quoting large blocks of text.`,
@@ -404,7 +404,7 @@ export default function Paper2Page() {
 
           <h3 className="mt-4 font-bold text-primary">{tr(`Dealing with 19th-century texts`)}</h3>
           <p>Many students find the older source more challenging. Here are some tips:</p>
-          <ul className="ml-5 list-disc space-y-2 mt-2">
+          <ul className="ms-5 list-disc space-y-2 mt-2">
             <li>
               Do not panic if you do not understand every word. Focus on the words and phrases you{' '}
               <em>can</em> analyse.
@@ -445,44 +445,44 @@ export default function Paper2Page() {
           <div className="overflow-x-auto">
             <table className="mt-2 w-full text-sm">
               <thead>
-                <tr className="border-b border-border text-left text-muted-foreground">
-                  <th className="py-2 pr-4">Level</th>
-                  <th className="py-2 pr-4">Marks</th>
-                  <th className="py-2 pr-4">Descriptor</th>
+                <tr className="border-b border-border text-start text-muted-foreground">
+                  <th className="py-2 pe-4">Level</th>
+                  <th className="py-2 pe-4">Marks</th>
+                  <th className="py-2 pe-4">Descriptor</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 4</td>
-                  <td className="py-2 pr-4">13-16</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 4</td>
+                  <td className="py-2 pe-4">13-16</td>
+                  <td className="py-2 pe-4">
                     Perceptive understanding of both writers&rsquo; viewpoints. Detailed, perceptive
                     analysis of how methods are used. Perceptive comparison. Judicious references
                     from both texts.
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 3</td>
-                  <td className="py-2 pr-4">9-12</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 3</td>
+                  <td className="py-2 pe-4">9-12</td>
+                  <td className="py-2 pe-4">
                     {tr(
                       `Clear understanding of both viewpoints. Clear, relevant analysis of methods. Clear comparison. Relevant references from both texts.`,
                     )}
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 2</td>
-                  <td className="py-2 pr-4">5-8</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 2</td>
+                  <td className="py-2 pe-4">5-8</td>
+                  <td className="py-2 pe-4">
                     {tr(
                       `Some understanding of viewpoints. Some comment on methods. Some comparison. Some references.`,
                     )}
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 1</td>
-                  <td className="py-2 pr-4">1-4</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 1</td>
+                  <td className="py-2 pe-4">1-4</td>
+                  <td className="py-2 pe-4">
                     {tr(
                       `Simple, limited understanding. Simple identification of methods. Simple, limited comparison. Simple references.`,
                     )}
@@ -504,7 +504,7 @@ export default function Paper2Page() {
             <p className="mt-2 text-sm">
               Each paragraph discusses a shared point of comparison, referring to both sources:
             </p>
-            <ul className="mt-2 ml-5 list-disc space-y-1 text-sm">
+            <ul className="mt-2 ms-5 list-disc space-y-1 text-sm">
               <li>
                 Point about viewpoint/perspective &rarr; Source A evidence + method analysis &rarr;
                 Link to Source B with comparison connective &rarr; Source B evidence + method
@@ -545,7 +545,7 @@ export default function Paper2Page() {
           </p>
 
           <h3 className="mt-4 font-bold text-primary">{tr(`Common mistakes`)}</h3>
-          <ul className="ml-5 list-disc space-y-2">
+          <ul className="ms-5 list-disc space-y-2">
             <li>{tr(`Writing about each source separately without making direct comparisons.`)}</li>
             <li>{tr(`Summarising content instead of analysing methods.`)}</li>
             <li>
@@ -577,7 +577,7 @@ export default function Paper2Page() {
           <div className="space-y-3 mt-2">
             <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">{tr(`Article (newspaper/magazine)`)}</h4>
-              <ul className="mt-2 ml-5 list-disc space-y-1 text-sm">
+              <ul className="mt-2 ms-5 list-disc space-y-1 text-sm">
                 <li>{tr(`Include a headline (can be witty, provocative, or informative)`)}</li>
                 <li>{tr(`Optional subheading or strapline`)}</li>
                 <li>{tr(`Engaging opening that hooks the reader`)}</li>
@@ -588,7 +588,7 @@ export default function Paper2Page() {
             </div>
             <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">Letter (formal)</h4>
-              <ul className="mt-2 ml-5 list-disc space-y-1 text-sm">
+              <ul className="mt-2 ms-5 list-disc space-y-1 text-sm">
                 <li>
                   {tr(
                     `Include addresses (top right: yours; below left: recipient&rsquo;s) and date`,
@@ -605,7 +605,7 @@ export default function Paper2Page() {
             </div>
             <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">Speech</h4>
-              <ul className="mt-2 ml-5 list-disc space-y-1 text-sm">
+              <ul className="mt-2 ms-5 list-disc space-y-1 text-sm">
                 <li>
                   {tr(
                     `Address the audience directly: &ldquo;Ladies and gentlemen,&rdquo; or &ldquo;Fellow students,&rdquo;`,
@@ -622,7 +622,7 @@ export default function Paper2Page() {
             </div>
             <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">Essay</h4>
-              <ul className="mt-2 ml-5 list-disc space-y-1 text-sm">
+              <ul className="mt-2 ms-5 list-disc space-y-1 text-sm">
                 <li>Formal, measured tone</li>
                 <li>{tr(`Clear introduction stating your position`)}</li>
                 <li>{tr(`Well-developed paragraphs with topic sentences`)}</li>
@@ -637,7 +637,7 @@ export default function Paper2Page() {
             You should aim to use a range of rhetorical and persuasive techniques. Here are the key
             ones, with the mnemonic <strong>AFOREST</strong> plus additional devices:
           </p>
-          <ul className="ml-5 list-disc space-y-2 mt-2">
+          <ul className="ms-5 list-disc space-y-2 mt-2">
             <li>
               <strong>A &mdash; Alliteration:</strong> &ldquo;Dangerous, destructive, and deeply
               damaging.&rdquo;
@@ -688,7 +688,7 @@ export default function Paper2Page() {
           <h3 className="mt-4 font-bold text-primary">
             {tr(`Planning your response (5 minutes)`)}
           </h3>
-          <ol className="ml-5 list-decimal space-y-2 mt-2">
+          <ol className="ms-5 list-decimal space-y-2 mt-2">
             <li>{tr(`Decide your viewpoint &mdash; you must take a clear position.`)}</li>
             <li>Plan 4-5 paragraphs, each with a distinct argument or point.</li>
             <li>{tr(`Note the form and adapt your tone, layout, and register accordingly.`)}</li>
@@ -719,7 +719,7 @@ export default function Paper2Page() {
           </div>
 
           <h3 className="mt-4 font-bold text-primary">{tr(`Common mistakes`)}</h3>
-          <ul className="ml-5 list-disc space-y-2">
+          <ul className="ms-5 list-disc space-y-2">
             <li>
               {tr(
                 `Ignoring the form. If the question says &ldquo;Write a speech,&rdquo; your response must read like a speech, with direct address and rhetorical features.`,
@@ -747,51 +747,51 @@ export default function Paper2Page() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-border text-left text-muted-foreground">
-                  <th className="py-2 pr-4">Feature</th>
-                  <th className="py-2 pr-4">Paper 1</th>
-                  <th className="py-2 pr-4">Paper 2</th>
+                <tr className="border-b border-border text-start text-muted-foreground">
+                  <th className="py-2 pe-4">Feature</th>
+                  <th className="py-2 pe-4">Paper 1</th>
+                  <th className="py-2 pe-4">Paper 2</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Text type</td>
-                  <td className="py-2 pr-4">{tr(`Fiction (literary prose)`)}</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Text type</td>
+                  <td className="py-2 pe-4">{tr(`Fiction (literary prose)`)}</td>
+                  <td className="py-2 pe-4">
                     Non-fiction (articles, letters, speeches, essays, journals)
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">{tr(`Number of texts`)}</td>
-                  <td className="py-2 pr-4">One</td>
-                  <td className="py-2 pr-4">{tr(`Two (linked by theme)`)}</td>
+                  <td className="py-2 pe-4 font-semibold">{tr(`Number of texts`)}</td>
+                  <td className="py-2 pe-4">One</td>
+                  <td className="py-2 pe-4">{tr(`Two (linked by theme)`)}</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Period</td>
-                  <td className="py-2 pr-4">Post-1900</td>
-                  <td className="py-2 pr-4">{tr(`One 19th century + one 20th/21st century`)}</td>
+                  <td className="py-2 pe-4 font-semibold">Period</td>
+                  <td className="py-2 pe-4">Post-1900</td>
+                  <td className="py-2 pe-4">{tr(`One 19th century + one 20th/21st century`)}</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">{tr(`Writing task`)}</td>
-                  <td className="py-2 pr-4">{tr(`Descriptive or narrative`)}</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">{tr(`Writing task`)}</td>
+                  <td className="py-2 pe-4">{tr(`Descriptive or narrative`)}</td>
+                  <td className="py-2 pe-4">
                     {tr(`Persuasive, argumentative, or advisory (in a specified form)`)}
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Comparison</td>
-                  <td className="py-2 pr-4">{tr(`Not required`)}</td>
-                  <td className="py-2 pr-4">{tr(`Required in Q2 and Q4`)}</td>
+                  <td className="py-2 pe-4 font-semibold">Comparison</td>
+                  <td className="py-2 pe-4">{tr(`Not required`)}</td>
+                  <td className="py-2 pe-4">{tr(`Required in Q2 and Q4`)}</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">{tr(`Structure question`)}</td>
-                  <td className="py-2 pr-4">Q3 (8 marks)</td>
-                  <td className="py-2 pr-4">{tr(`No separate structure question`)}</td>
+                  <td className="py-2 pe-4 font-semibold">{tr(`Structure question`)}</td>
+                  <td className="py-2 pe-4">Q3 (8 marks)</td>
+                  <td className="py-2 pe-4">{tr(`No separate structure question`)}</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">{tr(`Evaluation question`)}</td>
-                  <td className="py-2 pr-4">Q4 (20 marks)</td>
-                  <td className="py-2 pr-4">{tr(`No separate evaluation question`)}</td>
+                  <td className="py-2 pe-4 font-semibold">{tr(`Evaluation question`)}</td>
+                  <td className="py-2 pe-4">Q4 (20 marks)</td>
+                  <td className="py-2 pe-4">{tr(`No separate evaluation question`)}</td>
                 </tr>
               </tbody>
             </table>

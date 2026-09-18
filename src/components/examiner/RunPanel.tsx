@@ -209,7 +209,7 @@ export function RunPanel(p: Props) {
   const costModel = models.mark ?? 'claude-opus-5'
 
   return (
-    <Panel title="3 · Run it" className="border-l-4 border-l-primary">
+    <Panel title="3 · Run it" className="border-s-4 border-s-primary">
       <div className="flex flex-wrap items-center gap-2">
         <Button size="lg" onClick={() => void run(false)} disabled={!canRun}>
           <Play className="h-4 w-4" />
@@ -250,7 +250,7 @@ export function RunPanel(p: Props) {
               <span className="w-4 text-center">{stepIcon(s.state)}</span>
               <span>
                 {s.label}
-                {s.detail && <span className="ml-1 text-xs text-muted-foreground">{s.detail}</span>}
+                {s.detail && <span className="ms-1 text-xs text-muted-foreground">{s.detail}</span>}
               </span>
             </li>
           ))}

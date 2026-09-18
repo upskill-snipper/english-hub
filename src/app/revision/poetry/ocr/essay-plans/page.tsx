@@ -494,13 +494,13 @@ function EssayPlanCard({ plan }: { plan: EssayPlan }) {
     <div className="rounded-2xl border border-border/60 bg-card transition-all duration-200 hover:border-border">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-start gap-4 p-5 text-left sm:p-6"
+        className="flex w-full items-start gap-4 p-5 text-start sm:p-6"
       >
         <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
           <PenLine className="size-5 text-primary" />
         </div>
         <div className="flex-1">
-          <h3 className="text-heading-md font-heading text-foreground pr-8">{plan.title}</h3>
+          <h3 className="text-heading-md font-heading text-foreground pe-8">{plan.title}</h3>
           <div className="mt-2 flex flex-wrap items-center gap-2">
             <span
               className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[0.65rem] font-medium ${
@@ -601,7 +601,7 @@ export default function OCREssayPlansPage() {
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/revision/poetry/ocr" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -611,13 +611,13 @@ export default function OCREssayPlansPage() {
 
       {/* ── Hero ──────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 lg:p-10">
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-16 -start-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl" />
 
         <div className="relative">
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
-              <Sparkles className="mr-1 size-3" />
+              <Sparkles className="me-1 size-3" />
               {t('poetry_hub.ocr.badge_anthology')}
             </Badge>
             <Badge className="bg-primary/10 text-primary border-primary/20">OCR</Badge>

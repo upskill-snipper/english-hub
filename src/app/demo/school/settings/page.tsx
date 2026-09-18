@@ -137,12 +137,12 @@ export default function DemoSettingsPage() {
               <select
                 defaultValue="2025-2026"
                 onChange={() => handleSave()}
-                className="w-full appearance-none rounded-md border border-border bg-background px-3 py-2 pr-8 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
+                className="w-full appearance-none rounded-md border border-border bg-background px-3 py-2 pe-8 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
               >
                 <option value="2025-2026">2025-2026</option>
                 <option value="2024-2025">2024-2025</option>
               </select>
-              <ChevronDown className="pointer-events-none absolute right-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+              <ChevronDown className="pointer-events-none absolute end-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             </div>
           </div>
         </div>

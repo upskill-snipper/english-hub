@@ -143,7 +143,7 @@ function GlassMeter({ value }: { value: number }) {
           style={{ width: `${clamped}%`, background: ragColor(clamped) }}
         />
       </div>
-      <span className="w-9 text-right text-xs tabular-nums text-muted-foreground">
+      <span className="w-9 text-end text-xs tabular-nums text-muted-foreground">
         {Math.round(value)}%
       </span>
     </div>
@@ -452,22 +452,22 @@ export default function SchoolAnalyticsPage() {
                       </caption>
                       <thead>
                         <tr className="border-b border-border/50">
-                          <th className="pb-3 text-left font-medium text-muted-foreground">
+                          <th className="pb-3 text-start font-medium text-muted-foreground">
                             {t('school.analytics.col.year_group')}
                           </th>
-                          <th className="pb-3 text-right font-medium text-muted-foreground">
+                          <th className="pb-3 text-end font-medium text-muted-foreground">
                             {t('school.analytics.col.students')}
                           </th>
                           <th className="pb-3 text-center font-medium text-muted-foreground">
                             {t('school.analytics.col.avg_working_at')}
                           </th>
-                          <th className="min-w-[180px] pb-3 pl-6 text-left font-medium text-muted-foreground">
+                          <th className="min-w-[180px] pb-3 ps-6 text-start font-medium text-muted-foreground">
                             {t('school.analytics.col.avg_progress')}
                           </th>
-                          <th className="pb-3 text-right font-medium text-muted-foreground">
+                          <th className="pb-3 text-end font-medium text-muted-foreground">
                             {t('school.analytics.col.assignments')}
                           </th>
-                          <th className="pb-3 text-right font-medium text-muted-foreground">
+                          <th className="pb-3 text-end font-medium text-muted-foreground">
                             {t('school.analytics.col.at_risk')}
                           </th>
                         </tr>
@@ -497,7 +497,7 @@ export default function SchoolAnalyticsPage() {
                                   <ChevronRight className="h-3 w-3 opacity-0 transition-opacity group-hover:opacity-100" />
                                 </span>
                               </td>
-                              <td className="py-3 text-right tabular-nums text-muted-foreground">
+                              <td className="py-3 text-end tabular-nums text-muted-foreground">
                                 {row.studentCount}
                               </td>
                               <td
@@ -506,13 +506,13 @@ export default function SchoolAnalyticsPage() {
                                 {t('school.analytics.grade_prefix')}{' '}
                                 {percentageToGCSEGrade(row.averageProgress)}
                               </td>
-                              <td className="py-3 pl-6">
+                              <td className="py-3 ps-6">
                                 <GlassMeter value={row.averageProgress} />
                               </td>
-                              <td className="py-3 text-right tabular-nums text-muted-foreground">
+                              <td className="py-3 text-end tabular-nums text-muted-foreground">
                                 {row.assignmentsCompleted.toLocaleString()}
                               </td>
-                              <td className="py-3 text-right">
+                              <td className="py-3 text-end">
                                 {row.atRiskCount > 0 ? (
                                   <Badge variant="destructive">{row.atRiskCount}</Badge>
                                 ) : (
@@ -552,19 +552,19 @@ export default function SchoolAnalyticsPage() {
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="border-b border-border/50">
-                        <th className="pb-3 text-left font-medium text-muted-foreground">
+                        <th className="pb-3 text-start font-medium text-muted-foreground">
                           {t('school.analytics.col.name')}
                         </th>
-                        <th className="pb-3 text-left font-medium text-muted-foreground">
+                        <th className="pb-3 text-start font-medium text-muted-foreground">
                           {t('school.analytics.col.year')}
                         </th>
-                        <th className="pb-3 text-left font-medium text-muted-foreground">
+                        <th className="pb-3 text-start font-medium text-muted-foreground">
                           {t('school.analytics.col.last_active')}
                         </th>
-                        <th className="pb-3 text-left font-medium text-muted-foreground">
+                        <th className="pb-3 text-start font-medium text-muted-foreground">
                           {t('school.analytics.col.issue')}
                         </th>
-                        <th className="pb-3 text-right font-medium text-muted-foreground">
+                        <th className="pb-3 text-end font-medium text-muted-foreground">
                           {t('school.analytics.col.action')}
                         </th>
                       </tr>
@@ -594,7 +594,7 @@ export default function SchoolAnalyticsPage() {
                               {student.issues.join(' · ')}
                             </span>
                           </td>
-                          <td className="py-3 text-right">
+                          <td className="py-3 text-end">
                             <Button
                               size="sm"
                               variant="outline"
@@ -747,13 +747,13 @@ export default function SchoolAnalyticsPage() {
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="border-b border-border/50">
-                        <th className="pb-3 text-left font-medium text-muted-foreground">
+                        <th className="pb-3 text-start font-medium text-muted-foreground">
                           Week beginning
                         </th>
-                        <th className="pb-3 text-right font-medium text-muted-foreground">
+                        <th className="pb-3 text-end font-medium text-muted-foreground">
                           {t('school.analytics.stat.active_students')}
                         </th>
-                        <th className="pb-3 text-right font-medium text-muted-foreground">
+                        <th className="pb-3 text-end font-medium text-muted-foreground">
                           {t('school.analytics.stat.assignments_submitted')}
                         </th>
                       </tr>
@@ -765,10 +765,10 @@ export default function SchoolAnalyticsPage() {
                           className="transition-colors hover:bg-foreground/[0.03]"
                         >
                           <td className="py-3 font-medium">{formatDate(week.weekStart)}</td>
-                          <td className="py-3 text-right tabular-nums text-muted-foreground">
+                          <td className="py-3 text-end tabular-nums text-muted-foreground">
                             {week.activeStudents}
                           </td>
-                          <td className="py-3 text-right tabular-nums text-muted-foreground">
+                          <td className="py-3 text-end tabular-nums text-muted-foreground">
                             {week.assignmentsSubmitted}
                           </td>
                         </tr>

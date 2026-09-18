@@ -41,7 +41,7 @@ function Section({
     <div className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left transition-colors hover:bg-muted"
+        className="flex w-full items-center justify-between px-5 py-4 text-start transition-colors hover:bg-muted"
         aria-expanded={open}
         aria-controls={`section-${id}`}
       >
@@ -115,7 +115,7 @@ function Quote({
   analysis: string
 }) {
   return (
-    <div className="rounded-lg border-l-4 border-accent bg-primary/5 p-4">
+    <div className="rounded-lg border-s-4 border-accent bg-primary/5 p-4">
       <p className="text-sm font-semibold italic text-foreground">&ldquo;{text}&rdquo;</p>
       <p className="mt-1 text-xs font-semibold text-primary">{technique}</p>
       <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{analysis}</p>
@@ -453,7 +453,7 @@ export default function LoveAndRelationshipsPage() {
           {/* Search bar */}
           <div className="relative">
             <svg
-              className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground pointer-events-none"
+              className="absolute start-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground pointer-events-none"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={2}
@@ -470,12 +470,12 @@ export default function LoveAndRelationshipsPage() {
               placeholder={t('study.poetry.search.placeholder')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full rounded-lg border border-border bg-card py-2.5 pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors"
+              className="w-full rounded-lg border border-border bg-card py-2.5 ps-10 pe-4 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-muted-foreground"
+                className="absolute end-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-muted-foreground"
                 aria-label={t('study.poetry.search.clear_aria')}
               >
                 <svg
@@ -2155,22 +2155,22 @@ export default function LoveAndRelationshipsPage() {
               <table className="min-w-full text-sm">
                 <thead>
                   <tr className="bg-primary text-white">
-                    <th className="px-4 py-3 text-left font-semibold">
+                    <th className="px-4 py-3 text-start font-semibold">
                       {t('study.poetry.cmp.col.poem')}
                     </th>
-                    <th className="px-4 py-3 text-left font-semibold">
+                    <th className="px-4 py-3 text-start font-semibold">
                       {t('study.poetry.cmp.col.poet')}
                     </th>
-                    <th className="px-4 py-3 text-left font-semibold">
+                    <th className="px-4 py-3 text-start font-semibold">
                       {t('study.poetry.cmp.col.period')}
                     </th>
-                    <th className="px-4 py-3 text-left font-semibold">
+                    <th className="px-4 py-3 text-start font-semibold">
                       {t('study.poetry.cmp.col.key_themes')}
                     </th>
-                    <th className="px-4 py-3 text-left font-semibold">
+                    <th className="px-4 py-3 text-start font-semibold">
                       {t('study.poetry.cmp.col.tone')}
                     </th>
-                    <th className="px-4 py-3 text-left font-semibold">
+                    <th className="px-4 py-3 text-start font-semibold">
                       {t('study.poetry.cmp.col.form')}
                     </th>
                   </tr>

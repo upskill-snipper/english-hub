@@ -65,24 +65,24 @@ export default async function OCRPaper2Page() {
             <div className="overflow-x-auto">
               <table className="mt-2 w-full border-collapse text-sm">
                 <thead>
-                  <tr className="border-b-2 border-primary/20 text-left">
-                    <th className="py-3 pr-4 font-semibold text-foreground">Section</th>
-                    <th className="py-3 pr-4 font-semibold text-foreground">Focus</th>
-                    <th className="py-3 pr-4 font-semibold text-foreground">Marks</th>
+                  <tr className="border-b-2 border-primary/20 text-start">
+                    <th className="py-3 pe-4 font-semibold text-foreground">Section</th>
+                    <th className="py-3 pe-4 font-semibold text-foreground">Focus</th>
+                    <th className="py-3 pe-4 font-semibold text-foreground">Marks</th>
                     <th className="py-3 font-semibold text-foreground">{tr(`Time Guide`)}</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
                   <tr>
-                    <td className="py-3 pr-4 font-medium">A &mdash; Reading</td>
-                    <td className="py-3 pr-4">{tr(`Fiction and literary texts`)}</td>
-                    <td className="py-3 pr-4">40 marks</td>
+                    <td className="py-3 pe-4 font-medium">A &mdash; Reading</td>
+                    <td className="py-3 pe-4">{tr(`Fiction and literary texts`)}</td>
+                    <td className="py-3 pe-4">40 marks</td>
                     <td className="py-3">1 hour</td>
                   </tr>
                   <tr>
-                    <td className="py-3 pr-4 font-medium">B &mdash; Writing</td>
-                    <td className="py-3 pr-4">{tr(`Imaginative / creative writing`)}</td>
-                    <td className="py-3 pr-4">40 marks</td>
+                    <td className="py-3 pe-4 font-medium">B &mdash; Writing</td>
+                    <td className="py-3 pe-4">{tr(`Imaginative / creative writing`)}</td>
+                    <td className="py-3 pe-4">40 marks</td>
                     <td className="py-3">1 hour</td>
                   </tr>
                 </tbody>
@@ -107,7 +107,7 @@ export default async function OCRPaper2Page() {
               <p className="mt-2">
                 Section A provides one unseen fiction extract. This could be taken from:
               </p>
-              <ul className="ml-6 mt-2 list-disc space-y-1">
+              <ul className="ms-6 mt-2 list-disc space-y-1">
                 <li>A novel (19th, 20th, or 21st century)</li>
                 <li>A short story</li>
                 <li>{tr(`Literary fiction from any period`)}</li>
@@ -134,7 +134,7 @@ export default async function OCRPaper2Page() {
               <div className="mt-4 space-y-4">
                 <div className="rounded-lg border border-border bg-muted p-5">
                   <h4 className="font-semibold text-foreground">{tr(`Word-Level Analysis`)}</h4>
-                  <ul className="ml-4 mt-2 list-disc space-y-1 text-sm">
+                  <ul className="ms-4 mt-2 list-disc space-y-1 text-sm">
                     <li>
                       <strong>Connotations</strong> &mdash; What associations does a particular word
                       carry? Consider the difference between &ldquo;house&rdquo; and
@@ -165,7 +165,7 @@ export default async function OCRPaper2Page() {
 
                 <div className="rounded-lg border border-border bg-muted p-5">
                   <h4 className="font-semibold text-foreground">{tr(`Sentence-Level Analysis`)}</h4>
-                  <ul className="ml-4 mt-2 list-disc space-y-1 text-sm">
+                  <ul className="ms-4 mt-2 list-disc space-y-1 text-sm">
                     <li>
                       <strong>{tr(`Short sentences`)}</strong> &mdash; Create tension, shock, or
                       emphasis. &ldquo;She stopped. The door was open.&rdquo;
@@ -198,7 +198,7 @@ export default async function OCRPaper2Page() {
                 Structure refers to the way the writer organises and shapes the whole text.
                 Consider:
               </p>
-              <ul className="ml-6 mt-2 list-disc space-y-2">
+              <ul className="ms-6 mt-2 list-disc space-y-2">
                 <li>
                   <strong>Opening</strong> &mdash; How does the extract begin? In medias res (in the
                   middle of action)? With setting? With dialogue? What effect does this create?
@@ -247,7 +247,7 @@ export default async function OCRPaper2Page() {
                 <p className="text-sm font-medium text-primary">
                   {tr(`How to structure an evaluation response`)}
                 </p>
-                <ol className="ml-4 mt-2 list-decimal space-y-1 text-sm text-primary">
+                <ol className="ms-4 mt-2 list-decimal space-y-1 text-sm text-primary">
                   <li>State your position clearly (agree, disagree, or partially agree)</li>
                   <li>{tr(`Select evidence from the text that supports your view`)}</li>
                   <li>{tr(`Analyse the language and/or structural choices in your evidence`)}</li>
@@ -300,7 +300,7 @@ export default async function OCRPaper2Page() {
                 <strong>one</strong> task from a selection. Tasks may be inspired by the reading
                 extract or may be standalone. You might be asked to:
               </p>
-              <ul className="ml-6 mt-2 list-disc space-y-1">
+              <ul className="ms-6 mt-2 list-disc space-y-1">
                 <li>{tr(`Write a descriptive piece based on an image or scenario`)}</li>
                 <li>{tr(`Write a narrative (short story or part of a story)`)}</li>
                 <li>{tr(`Write from a particular perspective or point of view`)}</li>
@@ -443,7 +443,7 @@ export default async function OCRPaper2Page() {
                   <h4 className="font-semibold text-foreground">
                     {tr(`Content and Organisation (24 marks)`)}
                   </h4>
-                  <ul className="ml-4 mt-2 list-disc space-y-1 text-sm">
+                  <ul className="ms-4 mt-2 list-disc space-y-1 text-sm">
                     <li>{tr(`Communication is convincing and compelling`)}</li>
                     <li>{tr(`Tone, style, and register match purpose and audience`)}</li>
                     <li>{tr(`Extensive, ambitious vocabulary`)}</li>
@@ -455,7 +455,7 @@ export default async function OCRPaper2Page() {
                   <h4 className="font-semibold text-foreground">
                     {tr(`Technical Accuracy (16 marks)`)}
                   </h4>
-                  <ul className="ml-4 mt-2 list-disc space-y-1 text-sm">
+                  <ul className="ms-4 mt-2 list-disc space-y-1 text-sm">
                     <li>{tr(`Wide range of sentence forms for effect`)}</li>
                     <li>{tr(`Accurate and varied punctuation`)}</li>
                     <li>Accurate spelling of ambitious vocabulary</li>

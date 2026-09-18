@@ -21,7 +21,7 @@ function Section({
     <div className="rounded-xl border border-border bg-card">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-bold text-foreground hover:bg-muted transition-colors"
+        className="flex w-full items-center justify-between gap-4 px-6 py-5 text-start font-bold text-foreground hover:bg-muted transition-colors"
       >
         <span className="text-lg">{title}</span>
         <svg
@@ -179,57 +179,57 @@ export default function WritingSkillsPage() {
           <div className="overflow-x-auto mt-3">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-border text-left text-muted-foreground">
-                  <th className="py-2 pr-4">{tr(`Opener type`)}</th>
-                  <th className="py-2 pr-4">Example</th>
+                <tr className="border-b border-border text-start text-muted-foreground">
+                  <th className="py-2 pe-4">{tr(`Opener type`)}</th>
+                  <th className="py-2 pe-4">Example</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Adverb</td>
-                  <td className="py-2 pr-4 italic">
+                  <td className="py-2 pe-4 font-semibold">Adverb</td>
+                  <td className="py-2 pe-4 italic">
                     &ldquo;Cautiously, she pushed open the door.&rdquo;
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">-ing verb (present participle)</td>
-                  <td className="py-2 pr-4 italic">
+                  <td className="py-2 pe-4 font-semibold">-ing verb (present participle)</td>
+                  <td className="py-2 pe-4 italic">
                     &ldquo;Trembling, he reached for the handle.&rdquo;
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">-ed verb (past participle)</td>
-                  <td className="py-2 pr-4 italic">
+                  <td className="py-2 pe-4 font-semibold">-ed verb (past participle)</td>
+                  <td className="py-2 pe-4 italic">
                     &ldquo;Abandoned by her friends, she walked home alone.&rdquo;
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">{tr(`Prepositional phrase`)}</td>
-                  <td className="py-2 pr-4 italic">
+                  <td className="py-2 pe-4 font-semibold">{tr(`Prepositional phrase`)}</td>
+                  <td className="py-2 pe-4 italic">
                     &ldquo;Beyond the rusted gate, the garden lay in ruins.&rdquo;
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">{tr(`Subordinate clause`)}</td>
-                  <td className="py-2 pr-4 italic">
+                  <td className="py-2 pe-4 font-semibold">{tr(`Subordinate clause`)}</td>
+                  <td className="py-2 pe-4 italic">
                     &ldquo;Although he smiled, his eyes betrayed nothing.&rdquo;
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">{tr(`Simile / comparison`)}</td>
-                  <td className="py-2 pr-4 italic">
+                  <td className="py-2 pe-4 font-semibold">{tr(`Simile / comparison`)}</td>
+                  <td className="py-2 pe-4 italic">
                     &ldquo;Like a caged animal, she paced the room.&rdquo;
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">{tr(`Time connective`)}</td>
-                  <td className="py-2 pr-4 italic">
+                  <td className="py-2 pe-4 font-semibold">{tr(`Time connective`)}</td>
+                  <td className="py-2 pe-4 italic">
                     &ldquo;Moments later, the sky erupted with colour.&rdquo;
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Pronoun</td>
-                  <td className="py-2 pr-4 italic">
+                  <td className="py-2 pe-4 font-semibold">Pronoun</td>
+                  <td className="py-2 pe-4 italic">
                     &ldquo;It was the kind of silence that pressed against your skin.&rdquo;
                   </td>
                 </tr>
@@ -246,7 +246,7 @@ export default function WritingSkillsPage() {
           <p className="mt-2">
             When writing about texts in the reading section, PEEL is a useful framework:
           </p>
-          <ul className="mt-2 ml-5 list-disc space-y-2">
+          <ul className="mt-2 ms-5 list-disc space-y-2">
             <li>
               <strong>P &mdash; Point:</strong> Make a clear point that answers the question.
             </li>
@@ -284,7 +284,7 @@ export default function WritingSkillsPage() {
           <h3 className="mt-6 font-bold text-primary">
             {tr(`Paragraph techniques for creative writing`)}
           </h3>
-          <ul className="mt-2 ml-5 list-disc space-y-2">
+          <ul className="mt-2 ms-5 list-disc space-y-2">
             <li>
               <strong>{tr(`Shift paragraphs:`)}</strong> Use a new paragraph to signal a change in
               time (&ldquo;Three hours later&hellip;&rdquo;), location
@@ -355,64 +355,64 @@ export default function WritingSkillsPage() {
           <div className="overflow-x-auto mt-3">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-border text-left text-muted-foreground">
-                  <th className="py-2 pr-4">{tr(`Instead of...`)}</th>
-                  <th className="py-2 pr-4">Try...</th>
-                  <th className="py-2 pr-4">{tr(`Why it works`)}</th>
+                <tr className="border-b border-border text-start text-muted-foreground">
+                  <th className="py-2 pe-4">{tr(`Instead of...`)}</th>
+                  <th className="py-2 pe-4">Try...</th>
+                  <th className="py-2 pe-4">{tr(`Why it works`)}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
                 <tr>
-                  <td className="py-2 pr-4">walked</td>
-                  <td className="py-2 pr-4">trudged, ambled, staggered, strode</td>
-                  <td className="py-2 pr-4">Each verb tells the reader HOW the person walked</td>
+                  <td className="py-2 pe-4">walked</td>
+                  <td className="py-2 pe-4">trudged, ambled, staggered, strode</td>
+                  <td className="py-2 pe-4">Each verb tells the reader HOW the person walked</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4">said</td>
-                  <td className="py-2 pr-4">murmured, snapped, pleaded, declared</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4">said</td>
+                  <td className="py-2 pe-4">murmured, snapped, pleaded, declared</td>
+                  <td className="py-2 pe-4">
                     {tr(`Reveals emotion and tone without needing adverbs`)}
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4">looked at</td>
-                  <td className="py-2 pr-4">scrutinised, surveyed, glanced at, fixated on</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4">looked at</td>
+                  <td className="py-2 pe-4">scrutinised, surveyed, glanced at, fixated on</td>
+                  <td className="py-2 pe-4">
                     {tr(`Conveys the intensity and purpose of the gaze`)}
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4">big</td>
-                  <td className="py-2 pr-4">vast, imposing, sprawling, cavernous</td>
-                  <td className="py-2 pr-4">{tr(`Creates a more specific visual impression`)}</td>
+                  <td className="py-2 pe-4">big</td>
+                  <td className="py-2 pe-4">vast, imposing, sprawling, cavernous</td>
+                  <td className="py-2 pe-4">{tr(`Creates a more specific visual impression`)}</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4">small</td>
-                  <td className="py-2 pr-4">cramped, diminutive, narrow, confined</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4">small</td>
+                  <td className="py-2 pe-4">cramped, diminutive, narrow, confined</td>
+                  <td className="py-2 pe-4">
                     {tr(`Suggests not just size but feeling and atmosphere`)}
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4">scary</td>
-                  <td className="py-2 pr-4">unnerving, sinister, foreboding, menacing</td>
-                  <td className="py-2 pr-4">{tr(`More specific shade of fear`)}</td>
+                  <td className="py-2 pe-4">scary</td>
+                  <td className="py-2 pe-4">unnerving, sinister, foreboding, menacing</td>
+                  <td className="py-2 pe-4">{tr(`More specific shade of fear`)}</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4">nice</td>
-                  <td className="py-2 pr-4">pleasant, charming, idyllic, serene</td>
-                  <td className="py-2 pr-4">{tr(`Much more descriptive and precise`)}</td>
+                  <td className="py-2 pe-4">nice</td>
+                  <td className="py-2 pe-4">pleasant, charming, idyllic, serene</td>
+                  <td className="py-2 pe-4">{tr(`Much more descriptive and precise`)}</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4">old</td>
-                  <td className="py-2 pr-4">weathered, ancient, dilapidated, decrepit</td>
-                  <td className="py-2 pr-4">{tr(`Implies condition, not just age`)}</td>
+                  <td className="py-2 pe-4">old</td>
+                  <td className="py-2 pe-4">weathered, ancient, dilapidated, decrepit</td>
+                  <td className="py-2 pe-4">{tr(`Implies condition, not just age`)}</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <div className="mt-4 rounded-lg border-l-4 border-warn-400 bg-warn-50 p-4 text-sm">
+          <div className="mt-4 rounded-lg border-s-4 border-warn-400 bg-warn-50 p-4 text-sm">
             <p className="font-bold text-warn-700">{tr(`Warning: do not overdo it`)}</p>
             <p className="mt-1 text-warn-700">
               Using complex vocabulary incorrectly is worse than using simple vocabulary correctly.
@@ -662,7 +662,7 @@ export default function WritingSkillsPage() {
 
           <div className="mt-4 space-y-3">
             <h3 className="font-bold text-primary">{tr(`Content and organisation`)}</h3>
-            <ul className="ml-5 space-y-2">
+            <ul className="ms-5 space-y-2">
               {[
                 'I have focused on DESCRIBING, not telling a story. The piece is driven by imagery and atmosphere, not plot.',
                 'I have used at least three of the five senses (sight, sound, smell, touch, taste).',
@@ -685,7 +685,7 @@ export default function WritingSkillsPage() {
             </ul>
 
             <h3 className="mt-6 font-bold text-primary">{tr(`Technical accuracy`)}</h3>
-            <ul className="ml-5 space-y-2">
+            <ul className="ms-5 space-y-2">
               {[
                 'I have varied my sentence structures (simple, compound, complex, minor).',
                 'I have varied my sentence openers (adverb, -ing, -ed, prepositional phrase, subordinate clause).',
@@ -713,7 +713,7 @@ export default function WritingSkillsPage() {
 
           <div className="mt-4 space-y-3">
             <h3 className="font-bold text-primary">{tr(`Content and organisation`)}</h3>
-            <ul className="ml-5 space-y-2">
+            <ul className="ms-5 space-y-2">
               {[
                 "My plot is simple and focused. One main event, one setting, 1-2 characters. I have NOT tried to fit in a whole novel's worth of plot.",
                 'I have a clear narrative arc: situation → complication → climax → resolution (or deliberate lack of resolution).',

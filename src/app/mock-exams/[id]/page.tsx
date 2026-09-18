@@ -711,7 +711,7 @@ function ExamIntro({ paper, onStart }: { paper: ExamPaperData; onStart: () => vo
   return (
     <div className="max-w-3xl mx-auto px-4 py-12 sm:py-16">
       <Button variant="ghost" size="sm" className="mb-6" render={<Link href="/mock-exams" />}>
-        <ArrowLeft className="h-4 w-4 mr-1.5" />
+        <ArrowLeft className="h-4 w-4 me-1.5" />
         {t('mock.back_to_mocks')}
       </Button>
 
@@ -831,11 +831,11 @@ function ExamIntro({ paper, onStart }: { paper: ExamPaperData; onStart: () => vo
 
         <CardFooter className="flex justify-between items-center flex-wrap gap-3">
           <Button variant="secondary" render={<Link href="/mock-exams" />}>
-            <ArrowLeft className="h-4 w-4 mr-1.5" />
+            <ArrowLeft className="h-4 w-4 me-1.5" />
             {t('action.back')}
           </Button>
           <Button size="lg" className="shadow-lg shadow-primary/20" onClick={onStart}>
-            <Play className="h-4 w-4 mr-1.5" />
+            <Play className="h-4 w-4 me-1.5" />
             {t('mock.start_exam')}
           </Button>
         </CardFooter>
@@ -932,7 +932,7 @@ function QuestionView({
                   onClick={() => !isDisabled && onOptionToggle(i)}
                   disabled={isDisabled}
                   className={cn(
-                    'w-full text-left p-3 rounded-lg border text-sm transition-all',
+                    'w-full text-start p-3 rounded-lg border text-sm transition-all',
                     isSelected
                       ? 'border-primary bg-primary/10 text-foreground'
                       : isDisabled
@@ -1108,7 +1108,7 @@ function ExamView({
               {t('mock.quit')}
             </Button>
             <Button size="sm" onClick={() => setShowConfirmSubmit(true)}>
-              <Send className="h-4 w-4 mr-1.5" />
+              <Send className="h-4 w-4 me-1.5" />
               {t('action.submit')}
             </Button>
           </div>
@@ -1127,7 +1127,7 @@ function ExamView({
               <h2 className="text-xl font-bold text-foreground mb-2">{t('mock.exam_paused')}</h2>
               <p className="text-sm text-muted-foreground mb-6">{t('mock.paused_body')}</p>
               <Button onClick={() => setIsPaused(false)}>
-                <Play className="h-4 w-4 mr-1.5" />
+                <Play className="h-4 w-4 me-1.5" />
                 {t('mock.resume_exam')}
               </Button>
             </CardContent>
@@ -1215,7 +1215,7 @@ function ExamView({
             disabled={currentQuestion === 0}
             onClick={() => setCurrentQuestion((prev) => Math.max(0, prev - 1))}
           >
-            <ChevronLeft className="h-4 w-4 mr-1" />
+            <ChevronLeft className="h-4 w-4 me-1" />
             {t('mock.previous')}
           </Button>
 
@@ -1230,11 +1230,11 @@ function ExamView({
               }
             >
               {t('action.next')}
-              <ChevronRight className="h-4 w-4 ml-1" />
+              <ChevronRight className="h-4 w-4 ms-1" />
             </Button>
           ) : (
             <Button onClick={() => setShowConfirmSubmit(true)}>
-              <Send className="h-4 w-4 mr-1.5" />
+              <Send className="h-4 w-4 me-1.5" />
               {t('mock.submit_exam')}
             </Button>
           )}
@@ -1449,11 +1449,11 @@ function ResultsView({
           {/* Actions */}
           <div className="flex gap-3 justify-center flex-wrap">
             <Button variant="secondary" render={<Link href="/mock-exams" />}>
-              <ArrowLeft className="h-4 w-4 mr-1.5" />
+              <ArrowLeft className="h-4 w-4 me-1.5" />
               {t('mock.all_exams')}
             </Button>
             <Button onClick={onRetry}>
-              <RotateCcw className="h-4 w-4 mr-1.5" />
+              <RotateCcw className="h-4 w-4 me-1.5" />
               {t('mock.retry_paper')}
             </Button>
           </div>
@@ -1475,7 +1475,7 @@ function PaperNotFound() {
       <h1 className="text-2xl font-bold text-foreground mb-3">{t('mock.paper_not_found')}</h1>
       <p className="text-muted-foreground mb-8">{t('mock.paper_not_found_body')}</p>
       <Button render={<Link href="/mock-exams" />}>
-        <ArrowLeft className="h-4 w-4 mr-1.5" />
+        <ArrowLeft className="h-4 w-4 me-1.5" />
         {t('mock.view_available_papers')}
       </Button>
     </div>

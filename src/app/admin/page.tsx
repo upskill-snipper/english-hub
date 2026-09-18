@@ -181,25 +181,25 @@ export default function AdminPage() {
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="border-b border-border text-left text-muted-foreground">
-                      <th className="pb-3 pr-4 font-medium">{t('admin.root.col.email')}</th>
-                      <th className="pb-3 pr-4 font-medium">{t('admin.root.col.name')}</th>
-                      <th className="pb-3 pr-4 font-medium">{t('admin.root.col.year')}</th>
-                      <th className="pb-3 pr-4 font-medium">{t('admin.root.col.plan')}</th>
+                    <tr className="border-b border-border text-start text-muted-foreground">
+                      <th className="pb-3 pe-4 font-medium">{t('admin.root.col.email')}</th>
+                      <th className="pb-3 pe-4 font-medium">{t('admin.root.col.name')}</th>
+                      <th className="pb-3 pe-4 font-medium">{t('admin.root.col.year')}</th>
+                      <th className="pb-3 pe-4 font-medium">{t('admin.root.col.plan')}</th>
                       <th className="pb-3 font-medium">{t('admin.root.col.joined')}</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-border">
                     {stats.recentUsers.map((u) => (
                       <tr key={u.id} className="text-foreground">
-                        <td className="py-3 pr-4 font-mono text-xs">{u.email}</td>
-                        <td className="py-3 pr-4">
+                        <td className="py-3 pe-4 font-mono text-xs">{u.email}</td>
+                        <td className="py-3 pe-4">
                           {u.full_name || <span className="text-muted-foreground">--</span>}
                         </td>
-                        <td className="py-3 pr-4">
+                        <td className="py-3 pe-4">
                           {u.year_group || <span className="text-muted-foreground">--</span>}
                         </td>
-                        <td className="py-3 pr-4">
+                        <td className="py-3 pe-4">
                           <span
                             className={`inline-block text-xs px-2 py-0.5 rounded-full ${
                               u.subscription_status === 'pro'
@@ -237,21 +237,21 @@ export default function AdminPage() {
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="border-b border-border text-left text-muted-foreground">
-                      <th className="pb-3 pr-4 font-medium">{t('admin.root.col.user_id')}</th>
-                      <th className="pb-3 pr-4 font-medium">{t('admin.root.col.course')}</th>
-                      <th className="pb-3 pr-4 font-medium">{t('admin.root.col.type')}</th>
+                    <tr className="border-b border-border text-start text-muted-foreground">
+                      <th className="pb-3 pe-4 font-medium">{t('admin.root.col.user_id')}</th>
+                      <th className="pb-3 pe-4 font-medium">{t('admin.root.col.course')}</th>
+                      <th className="pb-3 pe-4 font-medium">{t('admin.root.col.type')}</th>
                       <th className="pb-3 font-medium">{t('admin.root.col.date')}</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-border">
                     {stats.recentEnrolments.map((e) => (
                       <tr key={e.id} className="text-foreground">
-                        <td className="py-3 pr-4 font-mono text-xs truncate max-w-[120px]">
+                        <td className="py-3 pe-4 font-mono text-xs truncate max-w-[120px]">
                           {e.user_id.slice(0, 8)}...
                         </td>
-                        <td className="py-3 pr-4">{getCourseName(e.course_id)}</td>
-                        <td className="py-3 pr-4">
+                        <td className="py-3 pe-4">{getCourseName(e.course_id)}</td>
+                        <td className="py-3 pe-4">
                           <span
                             className={`inline-block text-xs px-2 py-0.5 rounded-full ${
                               e.payment_type === 'subscription'

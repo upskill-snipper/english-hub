@@ -354,13 +354,13 @@ export default function AdminAffiliatesPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-border text-left text-muted-foreground">
-                    <th className="pb-3 pr-4 font-medium">{t('admin.aff.col.name')}</th>
-                    <th className="pb-3 pr-4 font-medium">{t('admin.aff.col.status')}</th>
-                    <th className="pb-3 pr-4 font-medium">{t('admin.aff.col.tier')}</th>
-                    <th className="pb-3 pr-4 font-medium">{t('admin.aff.col.referrals')}</th>
-                    <th className="pb-3 pr-4 font-medium">{t('admin.aff.col.paid')}</th>
-                    <th className="pb-3 pr-4 font-medium">{t('admin.aff.col.pending')}</th>
+                  <tr className="border-b border-border text-start text-muted-foreground">
+                    <th className="pb-3 pe-4 font-medium">{t('admin.aff.col.name')}</th>
+                    <th className="pb-3 pe-4 font-medium">{t('admin.aff.col.status')}</th>
+                    <th className="pb-3 pe-4 font-medium">{t('admin.aff.col.tier')}</th>
+                    <th className="pb-3 pe-4 font-medium">{t('admin.aff.col.referrals')}</th>
+                    <th className="pb-3 pe-4 font-medium">{t('admin.aff.col.paid')}</th>
+                    <th className="pb-3 pe-4 font-medium">{t('admin.aff.col.pending')}</th>
                     <th className="pb-3 font-medium">{t('admin.aff.col.joined')}</th>
                   </tr>
                 </thead>
@@ -371,7 +371,7 @@ export default function AdminAffiliatesPage() {
                       className="text-foreground cursor-pointer hover:bg-card/50"
                       onClick={() => setExpandedId(expandedId === a.id ? null : a.id)}
                     >
-                      <td className="py-3 pr-4">
+                      <td className="py-3 pe-4">
                         <div className="flex items-center gap-2">
                           <ChevronDown
                             className={`w-3 h-3 text-muted-foreground transition-transform ${
@@ -386,13 +386,13 @@ export default function AdminAffiliatesPage() {
                           )}
                         </div>
                       </td>
-                      <td className="py-3 pr-4">
+                      <td className="py-3 pe-4">
                         <StatusBadge status={a.status} t={t} />
                       </td>
-                      <td className="py-3 pr-4">{a.tier}</td>
-                      <td className="py-3 pr-4">{a.stats.total_referrals}</td>
-                      <td className="py-3 pr-4">{formatGBP(a.stats.total_commission_paid)}</td>
-                      <td className="py-3 pr-4">{formatGBP(a.stats.pending_commission)}</td>
+                      <td className="py-3 pe-4">{a.tier}</td>
+                      <td className="py-3 pe-4">{a.stats.total_referrals}</td>
+                      <td className="py-3 pe-4">{formatGBP(a.stats.total_commission_paid)}</td>
+                      <td className="py-3 pe-4">{formatGBP(a.stats.pending_commission)}</td>
                       <td className="py-3 text-muted-foreground text-xs">
                         {formatDate(a.created_at)}
                       </td>
@@ -464,7 +464,7 @@ export default function AdminAffiliatesPage() {
                           <span className="text-sm text-foreground font-medium">
                             {t('admin.aff.payout.affiliate_prefix')} {p.affiliate_id.slice(0, 8)}...
                           </span>
-                          <span className="text-sm text-muted-foreground ml-3">
+                          <span className="text-sm text-muted-foreground ms-3">
                             {p.referral_count} {t('admin.aff.payout.referral_suffix')} ·{' '}
                             {formatGBP(p.gross_commission_gbp)}
                           </span>

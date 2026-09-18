@@ -363,7 +363,7 @@ export default function TeacherStudentProfilePage() {
             className="bg-primary/10 text-primary border-primary/20 hover:bg-primary/90/20"
             onClick={() => showToast('Available with full account')}
           >
-            <Target className="h-3.5 w-3.5 mr-1.5" />
+            <Target className="h-3.5 w-3.5 me-1.5" />
             {t('demo.b15.teacher_student.set_target')}
           </Button>
           <Button
@@ -372,7 +372,7 @@ export default function TeacherStudentProfilePage() {
             className="bg-red-500/10 text-red-600 dark:text-red-400 border-red-500/20 hover:bg-red-500/20"
             onClick={() => showToast('Available with full account')}
           >
-            <Flag className="h-3.5 w-3.5 mr-1.5" />
+            <Flag className="h-3.5 w-3.5 me-1.5" />
             {t('demo.b15.teacher_student.flag')}
           </Button>
           <Button
@@ -381,7 +381,7 @@ export default function TeacherStudentProfilePage() {
             className="bg-amber-500/10 text-clay-600 dark:text-clay-400 border-amber-500/20 hover:bg-amber-500/20"
             onClick={() => showToast('Available with full account')}
           >
-            <Send className="h-3.5 w-3.5 mr-1.5" />
+            <Send className="h-3.5 w-3.5 me-1.5" />
             {t('demo.b15.teacher_student.send_report')}
           </Button>
         </div>
@@ -708,7 +708,7 @@ export default function TeacherStudentProfilePage() {
           </CardHeader>
           <CardContent>
             <div className="relative">
-              <div className="absolute left-3 top-0 bottom-0 w-px bg-muted" />
+              <div className="absolute start-3 top-0 bottom-0 w-px bg-muted" />
               <div className="space-y-4">
                 {(() => {
                   // Combine all assessments into a timeline
@@ -754,7 +754,7 @@ export default function TeacherStudentProfilePage() {
                         : null
                     const change = prevPct !== null ? pct - prevPct : null
                     return (
-                      <div key={i} className="flex items-start gap-4 pl-1">
+                      <div key={i} className="flex items-start gap-4 ps-1">
                         <div
                           className={`relative z-10 w-6 h-6 rounded-full flex items-center justify-center shrink-0 ${
                             pct >= 70
@@ -1215,8 +1215,8 @@ export default function TeacherStudentProfilePage() {
           <div className="hidden sm:grid grid-cols-[1fr_160px_80px_80px] gap-4 px-5 py-2 border-b border-border/60 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
             <span>{t('demo.b15.teacher_student.col_module')}</span>
             <span>{t('demo.b15.teacher_student.col_progress')}</span>
-            <span className="text-right">{t('demo.b15.teacher_student.col_score')}</span>
-            <span className="text-right">{t('demo.b15.teacher_student.col_status')}</span>
+            <span className="text-end">{t('demo.b15.teacher_student.col_score')}</span>
+            <span className="text-end">{t('demo.b15.teacher_student.col_status')}</span>
           </div>
           {student.modules.map((mod: any, i: number) => (
             <div
@@ -1231,16 +1231,16 @@ export default function TeacherStudentProfilePage() {
                     style={{ width: `${mod.progress}%` }}
                   />
                 </div>
-                <span className="text-xs text-muted-foreground tabular-nums w-8 text-right">
+                <span className="text-xs text-muted-foreground tabular-nums w-8 text-end">
                   {mod.progress}%
                 </span>
               </div>
               <p
-                className={`text-sm tabular-nums text-right ${mod.score > 0 ? scoreColor(mod.score) : 'text-muted-foreground'}`}
+                className={`text-sm tabular-nums text-end ${mod.score > 0 ? scoreColor(mod.score) : 'text-muted-foreground'}`}
               >
                 {mod.score > 0 ? percentageToGCSEGradeLabel(mod.score) : '--'}
               </p>
-              <div className="text-right">
+              <div className="text-end">
                 <Badge
                   variant="outline"
                   className={`text-[10px] ${
@@ -1332,7 +1332,7 @@ export default function TeacherStudentProfilePage() {
           <div className="hidden sm:grid grid-cols-[1fr_100px_100px] gap-4 px-5 py-2 border-b border-border/60 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
             <span>{t('demo.b15.teacher_student.col_quiz')}</span>
             <span>{t('demo.b15.teacher_student.col_date')}</span>
-            <span className="text-right">{t('demo.b15.teacher_student.col_score')}</span>
+            <span className="text-end">{t('demo.b15.teacher_student.col_score')}</span>
           </div>
           {student.quizAttempts.map((quiz: any, i: number) => {
             const pct = Math.round((quiz.score / quiz.maxScore) * 100)
@@ -1343,7 +1343,7 @@ export default function TeacherStudentProfilePage() {
               >
                 <p className="text-sm text-foreground">{quiz.quiz}</p>
                 <p className="text-sm text-muted-foreground">{quiz.date}</p>
-                <p className={`text-sm tabular-nums text-right ${scoreColor(pct)}`}>
+                <p className={`text-sm tabular-nums text-end ${scoreColor(pct)}`}>
                   {quiz.score}/{quiz.maxScore} ({percentageToGCSEGradeLabel(pct)})
                 </p>
               </div>

@@ -168,7 +168,7 @@ export function Header() {
       {/* Skip to content link for keyboard users */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:left-4 focus:top-2 focus:rounded-full focus:bg-[#E8A382] focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-[#0F1411] focus:shadow-lg"
+        className="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:start-4 focus:top-2 focus:rounded-full focus:bg-[#E8A382] focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-[#0F1411] focus:shadow-lg"
       >
         Skip to main content
       </a>
@@ -274,7 +274,7 @@ export function Header() {
                   href="/school"
                   className="inline-flex items-center rounded-full px-3 py-1.5 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] transition-colors duration-200"
                 >
-                  <School className="mr-1.5 h-4 w-4" />
+                  <School className="me-1.5 h-4 w-4" />
                   {t('header.nav.school_dashboard')}
                 </Link>
               )}
@@ -318,7 +318,7 @@ export function Header() {
             <Menu className="h-5 w-5" />
           </SheetTrigger>
 
-          <SheetContent side="right" className="border-l-0 bg-[#0F1411] text-[#FBF7F0]">
+          <SheetContent side="right" className="border-s-0 bg-[#0F1411] text-[#FBF7F0]">
             <SheetHeader>
               <SheetTitle className="font-serif text-xl font-medium tracking-tight text-[#FBF7F0]">
                 The <em className="italic text-[#E8A382]">English</em> Hub
@@ -382,7 +382,7 @@ export function Header() {
                     className="flex items-center justify-center w-full rounded-full px-3 py-2 text-sm font-medium text-[#0F1411] transition-colors"
                     style={{ background: '#E8A382' }}
                   >
-                    <BookOpen className="mr-1.5 h-4 w-4" />
+                    <BookOpen className="me-1.5 h-4 w-4" />
                     {t('header.board.select_button')}
                   </Link>
                 )}
@@ -459,7 +459,7 @@ export function Header() {
                       onClick={() => setMobileOpen(false)}
                       className="inline-flex items-center w-full rounded-lg px-3 py-2 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] hover:bg-white/5 transition-colors"
                     >
-                      <School className="mr-1.5 h-4 w-4" />
+                      <School className="me-1.5 h-4 w-4" />
                       {t('header.nav.school_dashboard')}
                     </Link>
                   )}
@@ -472,7 +472,7 @@ export function Header() {
                     onClick={() => setMobileOpen(false)}
                     className="inline-flex items-center w-full rounded-lg px-3 py-2 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] hover:bg-white/5 transition-colors"
                   >
-                    <Sparkles className="mr-1.5 h-4 w-4" />
+                    <Sparkles className="me-1.5 h-4 w-4" />
                     {t('header.nav.try_demo')}
                   </Link>
                   {/* Examiner/marker recruitment entry point. Kept in the
@@ -484,7 +484,7 @@ export function Header() {
                     onClick={() => setMobileOpen(false)}
                     className="inline-flex items-center w-full rounded-lg px-3 py-2 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] hover:bg-white/5 transition-colors"
                   >
-                    <PencilLine className="mr-1.5 h-4 w-4" />
+                    <PencilLine className="me-1.5 h-4 w-4" />
                     {t('header.nav.examiners')}
                   </Link>
                   <Link
@@ -602,7 +602,7 @@ function BoardSwitcher({ board, isHydrated }: { board: ExamBoard | null; isHydra
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={handleChange}>{t('header.board.change')}</DropdownMenuItem>
         <DropdownMenuItem onClick={handleReset} className="text-destructive focus:text-destructive">
-          <RefreshCw className="mr-2 h-3.5 w-3.5" aria-hidden="true" />
+          <RefreshCw className="me-2 h-3.5 w-3.5" aria-hidden="true" />
           {t('header.board.reset')}
         </DropdownMenuItem>
       </DropdownMenuContent>
@@ -628,7 +628,7 @@ function SignOutButton() {
       onClick={handleSignOut}
       className="inline-flex items-center rounded-full px-3 py-1.5 text-sm text-[#B5B8B3] hover:text-red-400 transition-colors duration-200"
     >
-      <LogOut className="mr-1.5 h-4 w-4" />
+      <LogOut className="me-1.5 h-4 w-4" />
       {t('header.action.sign_out')}
     </button>
   )

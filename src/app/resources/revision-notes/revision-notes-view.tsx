@@ -611,7 +611,7 @@ export function RevisionNotesView({ board }: { board: ExamBoard | null }) {
       <div className="mb-8 space-y-4">
         {/* Search */}
         <div className="relative max-w-xl">
-          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
+          <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-4">
             <svg
               className="h-5 w-5 text-muted-foreground"
               fill="none"
@@ -631,7 +631,7 @@ export function RevisionNotesView({ board }: { board: ExamBoard | null }) {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder={tr('resources.rev_notes.hub.search_placeholder')}
-            className="w-full rounded-xl border border-border bg-card py-3 pl-11 pr-4 text-sm text-foreground shadow-md placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+            className="w-full rounded-xl border border-border bg-card py-3 ps-11 pe-4 text-sm text-foreground shadow-md placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
           />
         </div>
       </div>

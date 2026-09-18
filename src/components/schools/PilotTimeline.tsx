@@ -65,7 +65,7 @@ export function PilotTimeline({
           {i < phases.length - 1 && (
             <span
               aria-hidden
-              className="absolute left-[7px] top-6 hidden h-full w-px bg-border sm:block sm:left-[83px]"
+              className="absolute start-[7px] top-6 hidden h-full w-px bg-border sm:block sm:start-[83px]"
             />
           )}
           <div className="flex items-center gap-3 sm:flex-col sm:items-start">

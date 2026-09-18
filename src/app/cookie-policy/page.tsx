@@ -381,7 +381,7 @@ export default async function CookiePolicyPage() {
           {/* Essential */}
           <h3 className="mt-4 text-lg font-medium text-foreground">{s3EssH3}</h3>
           <p className="mt-2 text-muted-foreground leading-relaxed">{s3EssP}</p>
-          <ul className="mt-2 list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
+          <ul className="mt-2 list-disc ps-6 text-muted-foreground leading-relaxed space-y-1">
             <li>
               <strong>{s3EssLi1S}</strong>
               {s3EssLi1T}
@@ -395,7 +395,7 @@ export default async function CookiePolicyPage() {
           {/* Functional */}
           <h3 className="mt-4 text-lg font-medium text-foreground">{s3FuncH3}</h3>
           <p className="mt-2 text-muted-foreground leading-relaxed">{s3FuncP}</p>
-          <ul className="mt-2 list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
+          <ul className="mt-2 list-disc ps-6 text-muted-foreground leading-relaxed space-y-1">
             <li>
               <strong>{s3FuncLi1S}</strong>
               {s3FuncLi1T}
@@ -413,7 +413,7 @@ export default async function CookiePolicyPage() {
           {/* Third-party */}
           <h3 className="mt-4 text-lg font-medium text-foreground">{s3TpH3}</h3>
           <p className="mt-2 text-muted-foreground leading-relaxed">{s3TpP}</p>
-          <ul className="mt-2 list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
+          <ul className="mt-2 list-disc ps-6 text-muted-foreground leading-relaxed space-y-1">
             <li>
               <strong>{s3TpLi1S}</strong>
               {s3TpLi1TB}
@@ -454,7 +454,7 @@ export default async function CookiePolicyPage() {
           <h2 className="text-xl font-semibold text-foreground">{s4H2}</h2>
           <p className="mt-2 text-muted-foreground leading-relaxed">{s4P}</p>
           <div className="mt-4 overflow-x-auto rounded-lg border border-border">
-            <table className="w-full text-sm text-left">
+            <table className="w-full text-sm text-start">
               <thead className="bg-muted/50 text-foreground">
                 <tr>
                   <th className="px-4 py-3 font-semibold">{thName}</th>
@@ -570,14 +570,14 @@ export default async function CookiePolicyPage() {
         <section>
           <h2 className="text-xl font-semibold text-foreground">{s6H2}</h2>
           <p className="mt-2 text-muted-foreground leading-relaxed">{s6PIntro}</p>
-          <ul className="mt-2 list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
+          <ul className="mt-2 list-disc ps-6 text-muted-foreground leading-relaxed space-y-1">
             <li>{s6Li1}</li>
             <li>{s6Li2}</li>
             <li>{s6Li3}</li>
             <li>{s6Li4}</li>
           </ul>
           <p className="mt-2 text-muted-foreground leading-relaxed">{s6POutro}</p>
-          <ul className="mt-2 list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
+          <ul className="mt-2 list-disc ps-6 text-muted-foreground leading-relaxed space-y-1">
             <li>
               <a
                 href="https://support.google.com/chrome/answer/95647"
@@ -625,7 +625,7 @@ export default async function CookiePolicyPage() {
         <section>
           <h2 className="text-xl font-semibold text-foreground">{s7H2}</h2>
           <p className="mt-2 text-muted-foreground leading-relaxed">{s7PIntro}</p>
-          <ul className="mt-2 list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
+          <ul className="mt-2 list-disc ps-6 text-muted-foreground leading-relaxed space-y-1">
             <li>
               <strong>{s7Li1S}</strong>
               {s7Li1T}

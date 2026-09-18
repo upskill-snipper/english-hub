@@ -114,7 +114,7 @@ export function BoardGate({ children }: BoardGateProps) {
               type="button"
               onClick={() => setDismissed(true)}
               aria-label={t('board.gate.dismiss_aria')}
-              className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+              className="absolute end-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
             >
               <svg
                 aria-hidden="true"

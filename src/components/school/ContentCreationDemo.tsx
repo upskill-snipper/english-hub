@@ -400,7 +400,7 @@ function WorksheetCard({ idx }: { idx: number }) {
       </div>
 
       {/* Extract */}
-      <div className="rounded-lg border-l-2 border-blue-400 bg-blue-500/5 px-4 py-3">
+      <div className="rounded-lg border-s-2 border-blue-400 bg-blue-500/5 px-4 py-3">
         <p className="text-[11px] font-semibold uppercase tracking-widest text-blue-400 mb-2">
           Source Extract
         </p>
@@ -506,7 +506,7 @@ function HomeworkCard({ idx }: { idx: number }) {
       </div>
 
       {/* Task */}
-      <div className="rounded-lg border-l-2 border-rose-400 bg-rose-500/5 px-4 py-3">
+      <div className="rounded-lg border-s-2 border-rose-400 bg-rose-500/5 px-4 py-3">
         <p className="text-[11px] font-semibold uppercase tracking-widest text-rose-400 mb-1.5">
           The Task
         </p>
@@ -534,7 +534,7 @@ function HomeworkCard({ idx }: { idx: number }) {
         {ex.guidance.map((g, i) => (
           <p
             key={i}
-            className="text-xs text-white/50 leading-relaxed pl-3 border-l border-white/10"
+            className="text-xs text-white/50 leading-relaxed ps-3 border-s border-white/10"
           >
             {g}
           </p>
@@ -587,7 +587,7 @@ export function ContentCreationDemo() {
         <span className="h-3 w-3 rounded-full bg-red-500/80" />
         <span className="h-3 w-3 rounded-full bg-amber-400/80" />
         <span className="h-3 w-3 rounded-full bg-green-500/80" />
-        <div className="ml-4 flex items-center gap-1.5 rounded-md bg-white/5 px-3 py-1">
+        <div className="ms-4 flex items-center gap-1.5 rounded-md bg-white/5 px-3 py-1">
           <Brain className="h-3 w-3 text-white/30" />
           <span className="text-[11px] text-white/30 font-mono">
             englishhub.ai / content-creator
@@ -619,7 +619,7 @@ export function ContentCreationDemo() {
         })}
 
         {/* Generate button */}
-        <div className="ml-auto flex items-center px-3">
+        <div className="ms-auto flex items-center px-3">
           <button
             type="button"
             onClick={handleGenerate}

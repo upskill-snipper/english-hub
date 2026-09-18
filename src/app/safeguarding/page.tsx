@@ -143,7 +143,7 @@ export default async function SafeguardingPolicyPage() {
         {/* 2. Scope */}
         <PolicySection id="scope" number="2" title={await t('safeguard.s2.title')}>
           <p>{await t('safeguard.s2.intro')}</p>
-          <ul className="ml-4 list-disc space-y-1">
+          <ul className="ms-4 list-disc space-y-1">
             <li>{await t('safeguard.s2.item1')}</li>
             <li>{await t('safeguard.s2.item2')}</li>
             <li>{await t('safeguard.s2.item3')}</li>
@@ -249,7 +249,7 @@ export default async function SafeguardingPolicyPage() {
         {/* 4. Key Principles */}
         <PolicySection id="principles" number="4" title={await t('safeguard.s4.title')}>
           <p>{await t('safeguard.s4.intro')}</p>
-          <ul className="ml-4 list-disc space-y-2">
+          <ul className="ms-4 list-disc space-y-2">
             <li>
               <strong className="text-primary">{await t('safeguard.s4.bestint_term')}</strong>{' '}
               {await t('safeguard.s4.bestint_body')}
@@ -295,7 +295,7 @@ export default async function SafeguardingPolicyPage() {
 
           <h3 className="mt-4 text-sm font-semibold text-primary">{await t('safeguard.s5.h5')}</h3>
           <p>{await t('safeguard.s5.h5_body')}</p>
-          <ul className="ml-4 list-disc space-y-1">
+          <ul className="ms-4 list-disc space-y-1">
             <li>{await t('safeguard.s5.h5_li1')}</li>
             <li>{await t('safeguard.s5.h5_li2')}</li>
             <li>{await t('safeguard.s5.h5_li3')}</li>
@@ -308,7 +308,7 @@ export default async function SafeguardingPolicyPage() {
         {/* 6. Reporting Procedures */}
         <PolicySection id="reporting" number="6" title={await t('safeguard.s6.title')}>
           <p>{await t('safeguard.s6.intro')}</p>
-          <ul className="ml-4 list-disc space-y-1">
+          <ul className="ms-4 list-disc space-y-1">
             <li>
               <strong>{await t('safeguard.s6.li1_term')}</strong>{' '}
               <Link
@@ -331,7 +331,7 @@ export default async function SafeguardingPolicyPage() {
           </ul>
 
           <p className="mt-3">{await t('safeguard.s6.provide')}</p>
-          <ul className="ml-4 list-disc space-y-1">
+          <ul className="ms-4 list-disc space-y-1">
             <li>{await t('safeguard.s6.provide_li1')}</li>
             <li>{await t('safeguard.s6.provide_li2')}</li>
             <li>{await t('safeguard.s6.provide_li3')}</li>
@@ -342,7 +342,7 @@ export default async function SafeguardingPolicyPage() {
             <p className="text-sm font-semibold text-primary">
               {await t('safeguard.s6.flow_title')}
             </p>
-            <ol className="mt-2 ml-4 list-decimal space-y-1">
+            <ol className="mt-2 ms-4 list-decimal space-y-1">
               <li>{await t('safeguard.s6.flow_li1')}</li>
               <li>{await t('safeguard.s6.flow_li2')}</li>
               <li>{await t('safeguard.s6.flow_li3')}</li>
@@ -373,7 +373,7 @@ export default async function SafeguardingPolicyPage() {
             already taken. Refer to the user by their account ID, not by name, in any email subject
             line.
           </p>
-          <ul className="ml-4 list-disc space-y-1">
+          <ul className="ms-4 list-disc space-y-1">
             <li>Do not investigate or interview the child yourself.</li>
             <li>Do not promise confidentiality you cannot keep.</li>
             <li>Do not delete any evidence &mdash; preserve the record.</li>
@@ -387,7 +387,7 @@ export default async function SafeguardingPolicyPage() {
             On receiving a concern the DSL classifies severity and acts within the following
             timeframes:
           </p>
-          <ul className="ml-4 list-disc space-y-1">
+          <ul className="ms-4 list-disc space-y-1">
             <li>
               <strong className="text-primary">Immediate risk:</strong> act now; call 999 if life is
               threatened.
@@ -455,7 +455,7 @@ export default async function SafeguardingPolicyPage() {
         {/* 7. Data Protection in Safeguarding */}
         <PolicySection id="data-protection" number="7" title={await t('safeguard.s7.title')}>
           <p>{await t('safeguard.s7.intro')}</p>
-          <ul className="ml-4 list-disc space-y-2">
+          <ul className="ms-4 list-disc space-y-2">
             <li>
               <strong className="text-primary">{await t('safeguard.s7.lawful_term')}</strong>{' '}
               {await t('safeguard.s7.lawful_body')}
@@ -500,7 +500,7 @@ export default async function SafeguardingPolicyPage() {
         {/* 8. Staff and Contractor Training */}
         <PolicySection id="training" number="8" title={await t('safeguard.s8.title')}>
           <p>{await t('safeguard.s8.intro')}</p>
-          <ul className="ml-4 list-disc space-y-1">
+          <ul className="ms-4 list-disc space-y-1">
             <li>{await t('safeguard.s8.li1')}</li>
             <li>{await t('safeguard.s8.li2')}</li>
             <li>{await t('safeguard.s8.li3')}</li>
@@ -524,7 +524,7 @@ export default async function SafeguardingPolicyPage() {
             All staff and contractors who have access to children&rsquo;s data or to child-facing
             systems undergo:
           </p>
-          <ul className="ml-4 list-disc space-y-1">
+          <ul className="ms-4 list-disc space-y-1">
             <li>Identity verification and right-to-work checks</li>
             <li>Reference checks</li>
             <li>Enhanced DBS checks where required by role</li>
@@ -536,7 +536,7 @@ export default async function SafeguardingPolicyPage() {
         {/* 9. Review Schedule */}
         <PolicySection id="review" number="9" title={await t('safeguard.s9.title')}>
           <p>{await t('safeguard.s9.intro')}</p>
-          <ul className="ml-4 list-disc space-y-1">
+          <ul className="ms-4 list-disc space-y-1">
             <li>{await t('safeguard.s9.li1')}</li>
             <li>{await t('safeguard.s9.li2')}</li>
             <li>{await t('safeguard.s9.li3')}</li>
@@ -572,7 +572,7 @@ export default async function SafeguardingPolicyPage() {
             itself is being ignored or undermined &mdash; can raise the issue with any of the
             following, in any order:
           </p>
-          <ul className="ml-4 list-disc space-y-1">
+          <ul className="ms-4 list-disc space-y-1">
             <li>The DSL&rsquo;s line manager (the CEO)</li>
             <li>The board, or the nominated board-level safeguarding governor</li>
             <li>
@@ -615,7 +615,7 @@ export default async function SafeguardingPolicyPage() {
             This policy is written to be consistent with the following statutory guidance and
             legislation, to the extent that each applies to a digital publisher serving children:
           </p>
-          <ul className="ml-4 list-disc space-y-1">
+          <ul className="ms-4 list-disc space-y-1">
             <li>
               <strong className="text-primary">Keeping Children Safe in Education (KCSIE)</strong>{' '}
               &mdash; statutory guidance for organisations working with children in the English

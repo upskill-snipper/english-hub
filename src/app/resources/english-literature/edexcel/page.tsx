@@ -186,21 +186,21 @@ export default function EdexcelEnglishLiteraturePage() {
       <section className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
         <h2 className="text-2xl font-bold text-foreground">Key features of the Edexcel exam</h2>
         <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
-          <div className="rounded-lg border-l-4 border-primary bg-primary/5 p-4">
+          <div className="rounded-lg border-s-4 border-primary bg-primary/5 p-4">
             <h3 className="font-semibold text-foreground">Fully closed-book</h3>
             <p className="mt-1 text-sm">
               Both Edexcel papers are fully closed-book. You must memorise quotations for every text
               - no extracts are provided for Shakespeare or prose sections.
             </p>
           </div>
-          <div className="rounded-lg border-l-4 border-primary bg-primary/5 p-4">
+          <div className="rounded-lg border-s-4 border-primary bg-primary/5 p-4">
             <h3 className="font-semibold text-foreground">Poetry anthology clusters</h3>
             <p className="mt-1 text-sm">
               Edexcel uses Relationships and Conflict clusters (15 poems each). You will be given a
               named poem and must compare it with another of your choice from the same cluster.
             </p>
           </div>
-          <div className="rounded-lg border-l-4 border-primary bg-primary/5 p-4">
+          <div className="rounded-lg border-s-4 border-primary bg-primary/5 p-4">
             <h3 className="font-semibold text-foreground">Question structure</h3>
             <p className="mt-1 text-sm">
               Edexcel Shakespeare questions give a theme or character to discuss across the whole

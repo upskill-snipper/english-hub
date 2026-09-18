@@ -26,7 +26,7 @@ function Section({
     <div className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left transition-colors hover:bg-muted"
+        className="flex w-full items-center justify-between px-5 py-4 text-start transition-colors hover:bg-muted"
         aria-expanded={open}
         aria-controls={`section-${id}`}
       >
@@ -383,7 +383,7 @@ export default function RomanticContextPage() {
               <h3 className="text-base font-bold text-foreground pt-4">
                 Example: Ozymandias by Percy Bysshe Shelley
               </h3>
-              <div className="rounded-lg border-l-4 border-accent bg-primary/10/40 p-4">
+              <div className="rounded-lg border-s-4 border-accent bg-primary/10/40 p-4">
                 <p className="text-xs font-bold uppercase tracking-wider text-primary">
                   Poetry Anthology
                 </p>
@@ -404,7 +404,7 @@ export default function RomanticContextPage() {
               <h3 className="text-base font-bold text-foreground pt-4">
                 Example: The Prelude (Extract) by William Wordsworth (AQA: 1850, posthumous)
               </h3>
-              <div className="rounded-lg border-l-4 border-accent bg-primary/10/40 p-4">
+              <div className="rounded-lg border-s-4 border-accent bg-primary/10/40 p-4">
                 <p className="text-xs font-bold uppercase tracking-wider text-primary">
                   Poetry Anthology
                 </p>

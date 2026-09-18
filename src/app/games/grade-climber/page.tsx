@@ -2147,7 +2147,7 @@ export default function GradeClimberPage() {
                 <span className="text-xs text-muted-foreground">
                   {TYPE_LABELS[currentQuestion.type]}
                 </span>
-                <span className="ml-auto text-xs text-muted-foreground">
+                <span className="ms-auto text-xs text-muted-foreground">
                   Streak: {correctStreak}/{CORRECT_TO_ADVANCE} to advance
                 </span>
               </div>
@@ -2178,7 +2178,7 @@ export default function GradeClimberPage() {
                       onClick={() => handleSelect(i)}
                       disabled={showFeedback}
                       className={cn(
-                        'rounded-xl border px-4 py-3 text-left text-sm font-medium transition-all duration-200',
+                        'rounded-xl border px-4 py-3 text-start text-sm font-medium transition-all duration-200',
                         style,
                         !showFeedback && 'cursor-pointer active:translate-y-px',
                       )}

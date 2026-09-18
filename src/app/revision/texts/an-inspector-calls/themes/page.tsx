@@ -530,7 +530,7 @@ export default function ThemesPage() {
               </div>
               <h2 className="font-heading text-2xl font-bold text-foreground">{theme.title}</h2>
             </div>
-            <p className="ml-13 text-sm italic text-muted-foreground">{theme.overview}</p>
+            <p className="ms-13 text-sm italic text-muted-foreground">{theme.overview}</p>
 
             {/* Detailed analysis */}
             <div className="mt-4 rounded-xl border border-border/60 bg-muted p-5">

@@ -250,7 +250,7 @@ export default async function FormAudiencePurposePage() {
             <strong>who</strong> you are writing for, and <strong>why</strong> you are writing.
             Skill {SKILL.code}, &ldquo;{SKILL.title}&rdquo;, is about exactly this:
           </p>
-          <ul className="mt-4 list-disc space-y-2 pl-6 text-base leading-relaxed text-muted-foreground">
+          <ul className="mt-4 list-disc space-y-2 ps-6 text-base leading-relaxed text-muted-foreground">
             {SKILL.bullets.map((b) => (
               <li key={b}>{b}</li>
             ))}
@@ -327,7 +327,7 @@ export default async function FormAudiencePurposePage() {
                     {form}
                   </h3>
                   <p className="mb-3 text-sm italic text-muted-foreground">{f.summary}</p>
-                  <ul className="list-disc space-y-1 pl-5 text-sm leading-relaxed text-muted-foreground">
+                  <ul className="list-disc space-y-1 ps-5 text-sm leading-relaxed text-muted-foreground">
                     {f.conventions.map((c) => (
                       <li key={c}>{c}</li>
                     ))}
@@ -347,7 +347,7 @@ export default async function FormAudiencePurposePage() {
             reader. Borrow these signposts and adapt them to the theme you are given.
           </p>
           <div className="overflow-x-auto rounded-lg border border-border/60">
-            <table className="w-full border-collapse text-left text-sm">
+            <table className="w-full border-collapse text-start text-sm">
               <thead>
                 <tr className="bg-muted text-foreground">
                   <th className="p-3 font-semibold">Purpose</th>
@@ -421,7 +421,7 @@ export default async function FormAudiencePurposePage() {
                   <span className="font-mono text-sm font-semibold text-primary">{row.level}</span>
                   <span className="text-sm text-muted-foreground">{row.marks} marks</span>
                 </div>
-                <ul className="list-disc space-y-1 pl-5 text-sm leading-relaxed text-muted-foreground">
+                <ul className="list-disc space-y-1 ps-5 text-sm leading-relaxed text-muted-foreground">
                   {row.descriptors.map((d) => (
                     <li key={d}>{d}</li>
                   ))}
@@ -447,7 +447,7 @@ export default async function FormAudiencePurposePage() {
             that theme, decoded and answered.
           </p>
 
-          <div className="mb-6 rounded-lg border-l-4 border-primary/40 bg-card p-4">
+          <div className="mb-6 rounded-lg border-s-4 border-primary/40 bg-card p-4">
             <p className="mb-1 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
               Sample task (invented)
             </p>
@@ -461,7 +461,7 @@ export default async function FormAudiencePurposePage() {
           <h3 className="mb-2 font-heading text-lg font-semibold text-foreground">
             Step 1 - Decode it
           </h3>
-          <ul className="mb-6 list-disc space-y-1 pl-6 text-sm leading-relaxed text-muted-foreground">
+          <ul className="mb-6 list-disc space-y-1 ps-6 text-sm leading-relaxed text-muted-foreground">
             <li>
               <strong>Form:</strong> a letter - so it needs a formal greeting, clear paragraphs and
               a sign-off.
@@ -479,7 +479,7 @@ export default async function FormAudiencePurposePage() {
           <h3 className="mb-2 font-heading text-lg font-semibold text-foreground">
             Step 2 - A brief plan
           </h3>
-          <ol className="mb-6 list-decimal space-y-1 pl-6 text-sm leading-relaxed text-muted-foreground">
+          <ol className="mb-6 list-decimal space-y-1 ps-6 text-sm leading-relaxed text-muted-foreground">
             <li>Greeting + state the reason for writing.</li>
             <li>The meadow&rsquo;s value to students and families.</li>
             <li>Counter the council&rsquo;s likely argument (need for housing).</li>
@@ -506,11 +506,11 @@ export default async function FormAudiencePurposePage() {
             </p>
           </div>
 
-          <div className="mt-5 rounded-lg border-l-4 border-primary/40 bg-card p-4">
+          <div className="mt-5 rounded-lg border-s-4 border-primary/40 bg-card p-4">
             <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
               Why this earns marks - annotated
             </p>
-            <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted-foreground">
+            <ul className="list-disc space-y-2 ps-5 text-sm leading-relaxed text-muted-foreground">
               <li>
                 <strong>Form:</strong> &ldquo;Dear Members of the Council&rdquo; and the stated
                 reason for writing establish the letter form immediately.
@@ -537,7 +537,7 @@ export default async function FormAudiencePurposePage() {
           <h2 id="checklist" className="mb-4 font-heading text-2xl font-semibold text-foreground">
             Before you write - a 30-second checklist
           </h2>
-          <ul className="list-disc space-y-2 pl-6 text-base leading-relaxed text-muted-foreground">
+          <ul className="list-disc space-y-2 ps-6 text-base leading-relaxed text-muted-foreground">
             <li>
               I have underlined the words that name the <strong>form</strong>, the{' '}
               <strong>audience</strong> and the <strong>purpose</strong>.

@@ -149,7 +149,7 @@ function renderTrigger({
       <button
         type="button"
         className={cn(
-          'group flex w-full items-center justify-between gap-3 rounded-xl border border-border bg-card p-4 text-left transition-colors hover:border-primary/40 hover:bg-accent focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30',
+          'group flex w-full items-center justify-between gap-3 rounded-xl border border-border bg-card p-4 text-start transition-colors hover:border-primary/40 hover:bg-accent focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30',
           className,
         )}
       >

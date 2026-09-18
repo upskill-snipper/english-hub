@@ -102,7 +102,7 @@ export default function TeachersListPage() {
             <span>{t('demo_school.teachers.col.email')}</span>
             <span>{t('demo_school.teachers.col.role')}</span>
             <span className="text-center">{t('demo_school.teachers.col.classes')}</span>
-            <span className="text-right">{t('demo_school.teachers.col.last_active')}</span>
+            <span className="text-end">{t('demo_school.teachers.col.last_active')}</span>
           </div>
 
           {/* Teacher rows */}
@@ -159,7 +159,7 @@ export default function TeachersListPage() {
                 {/* Classes count */}
                 <div className="flex items-center sm:justify-center">
                   <span className="text-sm text-muted-foreground tabular-nums sm:text-center">
-                    <span className="sm:hidden text-muted-foreground text-[11px] mr-1">
+                    <span className="sm:hidden text-muted-foreground text-[11px] me-1">
                       {t('demo_school.teachers.row.classes_mobile')}
                     </span>
                     {classes.length}
@@ -173,7 +173,7 @@ export default function TeachersListPage() {
                       isInactive ? 'text-red-700 dark:text-red-300' : 'text-muted-foreground'
                     }`}
                   >
-                    <span className="sm:hidden text-muted-foreground text-[11px] mr-1">
+                    <span className="sm:hidden text-muted-foreground text-[11px] me-1">
                       {t('demo_school.teachers.row.active_mobile')}
                     </span>
                     {lastActive}

@@ -469,12 +469,12 @@ export default function ClassAnalyticsPage() {
                 </CardDescription>
               </div>
               <div className="relative w-full max-w-xs">
-                <Search className="absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                <Search className="absolute start-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                 <Input
                   placeholder={t('dash.class_analytics.search_ph')}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-9"
+                  className="ps-9"
                 />
               </div>
             </div>
@@ -578,7 +578,7 @@ export default function ClassAnalyticsPage() {
                           </div>
 
                           {/* Score */}
-                          <div className="w-20 text-right">
+                          <div className="w-20 text-end">
                             <Badge
                               variant="secondary"
                               className={cn(
@@ -597,12 +597,12 @@ export default function ClassAnalyticsPage() {
                           </div>
 
                           {/* Study Time */}
-                          <div className="w-24 text-right text-xs tabular-nums text-muted-foreground">
+                          <div className="w-24 text-end text-xs tabular-nums text-muted-foreground">
                             {formatStudyTime(student.totalStudySeconds)}
                           </div>
 
                           {/* Last Active */}
-                          <div className="w-24 text-right text-xs text-muted-foreground">
+                          <div className="w-24 text-end text-xs text-muted-foreground">
                             {student.lastActive
                               ? formatDate(student.lastActive)
                               : t('dash.class_analytics.never')}
@@ -639,12 +639,12 @@ export default function ClassAnalyticsPage() {
                       color="bg-primary"
                     />
                   </div>
-                  <div className="w-20 text-right">
+                  <div className="w-20 text-end">
                     <Badge variant="secondary" className="tabular-nums">
                       {classStats.avgScore > 0 ? `${classStats.avgScore}%` : '--'}
                     </Badge>
                   </div>
-                  <div className="w-24 text-right text-xs tabular-nums text-muted-foreground">
+                  <div className="w-24 text-end text-xs tabular-nums text-muted-foreground">
                     {formatStudyTime(classStats.avgStudyTimeSeconds)}
                   </div>
                   <div className="w-24" />

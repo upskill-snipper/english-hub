@@ -246,7 +246,7 @@ export default function SchoolDashboardPage() {
         </div>
         <div className="flex gap-2">
           <Button variant="outline" size="sm" render={<Link href="/school/analytics" />}>
-            <BarChart3 className="mr-1.5 h-3.5 w-3.5" />
+            <BarChart3 className="me-1.5 h-3.5 w-3.5" />
             {t('school.sidebar.analytics')}
           </Button>
           <Button variant="outline" size="sm" render={<Link href="/school/guide" />}>
@@ -486,7 +486,7 @@ export default function SchoolDashboardPage() {
                 render={<Link href="/school/import" />}
               >
                 <Upload className="h-4 w-4 shrink-0 text-primary" />
-                <div className="text-left">
+                <div className="text-start">
                   <p className="text-sm font-medium">{t('school.dash.quick_actions.import')}</p>
                   <p className="text-xs text-muted-foreground">
                     {t('school.dash.quick_actions.import_sub')}
@@ -500,7 +500,7 @@ export default function SchoolDashboardPage() {
                 render={<Link href="/school/classes" />}
               >
                 <BookOpen className="h-4 w-4 shrink-0 text-primary" />
-                <div className="text-left">
+                <div className="text-start">
                   <p className="text-sm font-medium">
                     {t('school.dash.quick_actions.manage_classes')}
                   </p>
@@ -516,7 +516,7 @@ export default function SchoolDashboardPage() {
                 render={<Link href="/school/analytics" />}
               >
                 <BarChart3 className="h-4 w-4 shrink-0 text-primary" />
-                <div className="text-left">
+                <div className="text-start">
                   <p className="text-sm font-medium">
                     {t('school.dash.quick_actions.view_analytics')}
                   </p>
@@ -532,7 +532,7 @@ export default function SchoolDashboardPage() {
                 render={<Link href="/school/import" />}
               >
                 <Download className="h-4 w-4 shrink-0 text-primary" />
-                <div className="text-left">
+                <div className="text-start">
                   <p className="text-sm font-medium">
                     {t('school.dash.quick_actions.download_logins')}
                   </p>
@@ -576,19 +576,19 @@ export default function SchoolDashboardPage() {
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="border-b border-border/60">
-                        <th className="pb-2 text-left font-medium text-muted-foreground">
+                        <th className="pb-2 text-start font-medium text-muted-foreground">
                           {t('school.dash.hardest.col.topic')}
                         </th>
-                        <th className="pb-2 text-right font-medium text-muted-foreground">
+                        <th className="pb-2 text-end font-medium text-muted-foreground">
                           {t('school.dash.hardest.col.correct')}
                         </th>
-                        <th className="pb-2 text-right font-medium text-muted-foreground">
+                        <th className="pb-2 text-end font-medium text-muted-foreground">
                           {t('school.dash.hardest.col.attempts')}
                         </th>
-                        <th className="pb-2 text-right font-medium text-muted-foreground">
+                        <th className="pb-2 text-end font-medium text-muted-foreground">
                           {t('school.dash.hardest.col.avg_time')}
                         </th>
-                        <th className="pb-2 pl-3 text-left font-medium text-muted-foreground">
+                        <th className="pb-2 ps-3 text-start font-medium text-muted-foreground">
                           {t('school.dash.hardest.col.difficulty')}
                         </th>
                       </tr>
@@ -607,14 +607,14 @@ export default function SchoolDashboardPage() {
                                 {topic || q.questionId}
                               </span>
                             </td>
-                            <td className="py-2 text-right tabular-nums">{q.correctRate}%</td>
-                            <td className="py-2 text-right tabular-nums text-muted-foreground">
+                            <td className="py-2 text-end tabular-nums">{q.correctRate}%</td>
+                            <td className="py-2 text-end tabular-nums text-muted-foreground">
                               {q.totalAttempts}
                             </td>
-                            <td className="py-2 text-right tabular-nums text-muted-foreground">
+                            <td className="py-2 text-end tabular-nums text-muted-foreground">
                               {q.avgTimeSeconds}s
                             </td>
-                            <td className="py-2 pl-3">
+                            <td className="py-2 ps-3">
                               <span
                                 className={`inline-flex items-center rounded-full px-2 py-0.5 text-[11px] font-semibold capitalize ${
                                   q.difficulty === 'very-hard'
@@ -653,7 +653,7 @@ export default function SchoolDashboardPage() {
                   {t('school.dash.reading_age.body')}
                 </p>
                 <Button variant="outline" size="sm" render={<Link href="/assessment/reading" />}>
-                  <BookOpenCheck className="mr-1.5 h-3.5 w-3.5" />
+                  <BookOpenCheck className="me-1.5 h-3.5 w-3.5" />
                   {t('school.dash.reading_age.cta')}
                 </Button>
               </CardContent>
@@ -811,7 +811,7 @@ export default function SchoolDashboardPage() {
                 render={<Link href="/demo/school" />}
               >
                 {t('school.dash.demo.cta')}
-                <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
+                <ArrowRight className="ms-1.5 h-3.5 w-3.5" />
               </Button>
             </CardContent>
           </Card>

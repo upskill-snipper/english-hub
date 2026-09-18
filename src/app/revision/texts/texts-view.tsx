@@ -312,7 +312,7 @@ export default function TextsRevisionView({ boardId, boardName, texts }: Props) 
           </div>
           {mounted && (
             <Badge variant="secondary" className="hidden sm:flex">
-              <CheckCircle2 className="mr-1 size-3" />
+              <CheckCircle2 className="me-1 size-3" />
               {studiedInCategory} / {cat.texts.length} studied
             </Badge>
           )}
@@ -330,14 +330,14 @@ export default function TextsRevisionView({ boardId, boardName, texts }: Props) 
       <Breadcrumb items={[{ label: 'Revision', href: '/revision' }, { label: 'Set Texts' }]} />
       {/* ── Hero ───────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-blue-500/[0.04] p-6 sm:p-8 lg:p-10">
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-blue-500/5 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-blue-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-16 -start-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl" />
 
         <div className="relative">
           <Button
             variant="ghost"
             size="sm"
-            className="mb-4 -ml-2 text-muted-foreground"
+            className="mb-4 -ms-2 text-muted-foreground"
             render={<Link href="/revision" />}
           >
             <ArrowLeft className="size-3.5" />
@@ -345,7 +345,7 @@ export default function TextsRevisionView({ boardId, boardName, texts }: Props) 
           </Button>
 
           <Badge variant="secondary" className="mb-4">
-            <Sparkles className="mr-1 size-3" />
+            <Sparkles className="me-1 size-3" />
             {boardName} Literature
           </Badge>
 
@@ -444,7 +444,7 @@ export default function TextsRevisionView({ boardId, boardName, texts }: Props) 
 
       {/* ── Search ─────────────────────────────────────────────────── */}
       <div className="relative max-w-xl">
-        <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
+        <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-4">
           <Search className="size-4 text-muted-foreground" />
         </div>
         <input
@@ -452,7 +452,7 @@ export default function TextsRevisionView({ boardId, boardName, texts }: Props) 
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search texts, authors, or themes..."
-          className="w-full rounded-xl border border-border bg-card py-3 pl-11 pr-4 text-sm text-foreground shadow-sm placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+          className="w-full rounded-xl border border-border bg-card py-3 ps-11 pe-4 text-sm text-foreground shadow-sm placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
         />
       </div>
 
@@ -507,7 +507,7 @@ export default function TextsRevisionView({ boardId, boardName, texts }: Props) 
                 type="button"
                 onClick={() => setOtherTextsOpen((o) => !o)}
                 aria-expanded={otherTextsOpen}
-                className="flex w-full items-center justify-between rounded-xl border border-border bg-card px-5 py-4 text-left transition-colors hover:border-border/80"
+                className="flex w-full items-center justify-between rounded-xl border border-border bg-card px-5 py-4 text-start transition-colors hover:border-border/80"
               >
                 <div className="flex items-center gap-3">
                   {otherTextsOpen ? (

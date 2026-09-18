@@ -130,7 +130,7 @@ export default function FrankensteinExtractWalkthroughPage() {
           href="/revision/texts/frankenstein"
           className="mb-6 inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
         >
-          <ArrowLeft className="mr-2 h-4 w-4" />
+          <ArrowLeft className="me-2 h-4 w-4" />
           {t('rev.texts.fr.back')}
         </Link>
 

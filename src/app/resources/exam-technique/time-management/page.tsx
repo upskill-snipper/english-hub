@@ -551,7 +551,7 @@ export default async function TimeManagementPage() {
                 <div className="hidden sm:block overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="border-b border-border text-left text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                      <tr className="border-b border-border text-start text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                         <th className="px-6 py-3">Question</th>
                         <th className="px-6 py-3">Marks</th>
                         <th className="px-6 py-3">Suggested Time</th>
@@ -738,7 +738,7 @@ export default async function TimeManagementPage() {
                 >
                   <div className="sm:w-48 shrink-0">
                     <span className="font-bold text-foreground">{row.phase}</span>
-                    <span className="ml-2 sm:ml-0 sm:mt-1 sm:block text-xs font-semibold text-primary">
+                    <span className="ms-2 sm:ms-0 sm:mt-1 sm:block text-xs font-semibold text-primary">
                       {row.duration}
                     </span>
                   </div>

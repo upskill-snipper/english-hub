@@ -156,7 +156,7 @@ export default async function StudentVisaBasicsPage() {
         <Button
           variant="ghost"
           size="sm"
-          className="-ml-2 text-muted-foreground"
+          className="-ms-2 text-muted-foreground"
           render={<Link href="/ielts/admissions" />}
         >
           <ArrowLeft className="size-3.5" />

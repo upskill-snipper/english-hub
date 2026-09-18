@@ -225,27 +225,27 @@ export default function AffiliatePayoutsClient({
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-border text-left text-muted-foreground">
-                    <th className="pb-3 pr-4 font-medium">Period</th>
-                    <th className="pb-3 pr-4 font-medium">Referrals</th>
-                    <th className="pb-3 pr-4 font-medium">Commission</th>
-                    <th className="pb-3 pr-4 font-medium">Status</th>
-                    <th className="pb-3 pr-4 font-medium">Reference</th>
+                  <tr className="border-b border-border text-start text-muted-foreground">
+                    <th className="pb-3 pe-4 font-medium">Period</th>
+                    <th className="pb-3 pe-4 font-medium">Referrals</th>
+                    <th className="pb-3 pe-4 font-medium">Commission</th>
+                    <th className="pb-3 pe-4 font-medium">Status</th>
+                    <th className="pb-3 pe-4 font-medium">Reference</th>
                     <th className="pb-3 font-medium">Date Paid</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
                   {sortedPayouts.map((p) => (
                     <tr key={p.id} className="text-foreground">
-                      <td className="py-3 pr-4 text-xs text-muted-foreground">
+                      <td className="py-3 pe-4 text-xs text-muted-foreground">
                         {formatPeriod(p.period_start, p.period_end)}
                       </td>
-                      <td className="py-3 pr-4">{p.referral_count}</td>
-                      <td className="py-3 pr-4 font-semibold">
+                      <td className="py-3 pe-4">{p.referral_count}</td>
+                      <td className="py-3 pe-4 font-semibold">
                         {formatGBP(p.gross_commission_gbp)}
                       </td>
-                      <td className="py-3 pr-4">{statusBadge(p.status)}</td>
-                      <td className="py-3 pr-4 text-xs text-muted-foreground font-mono">
+                      <td className="py-3 pe-4">{statusBadge(p.status)}</td>
+                      <td className="py-3 pe-4 text-xs text-muted-foreground font-mono">
                         {p.payment_reference ?? '-'}
                       </td>
                       <td className="py-3 text-xs text-muted-foreground">

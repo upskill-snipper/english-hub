@@ -353,7 +353,7 @@ export default async function LetterDiaryPage() {
                 <h3 className="mb-2 font-mono text-sm font-semibold text-primary">
                   Typical purposes
                 </h3>
-                <ul className="list-disc space-y-1 pl-4 text-sm capitalize leading-relaxed text-muted-foreground">
+                <ul className="list-disc space-y-1 ps-4 text-sm capitalize leading-relaxed text-muted-foreground">
                   {p.purposes.map((purpose) => (
                     <li key={purpose}>{purpose}</li>
                   ))}
@@ -363,7 +363,7 @@ export default async function LetterDiaryPage() {
                 <h3 className="mb-2 font-mono text-sm font-semibold text-primary">
                   Common audiences
                 </h3>
-                <ul className="list-disc space-y-1 pl-4 text-sm leading-relaxed text-muted-foreground">
+                <ul className="list-disc space-y-1 ps-4 text-sm leading-relaxed text-muted-foreground">
                   {p.audiences.map((a) => (
                     <li key={a}>{a}</li>
                   ))}
@@ -390,7 +390,7 @@ export default async function LetterDiaryPage() {
                   <span className="font-mono text-sm font-semibold text-primary">{row.level}</span>
                   <span className="text-sm text-muted-foreground">{row.marks} marks</span>
                 </div>
-                <ul className="list-disc space-y-1 pl-5 text-sm leading-relaxed text-muted-foreground">
+                <ul className="list-disc space-y-1 ps-5 text-sm leading-relaxed text-muted-foreground">
                   {row.descriptors.map((d) => (
                     <li key={d}>{d}</li>
                   ))}
@@ -425,7 +425,7 @@ export default async function LetterDiaryPage() {
             <p className="text-sm font-medium text-muted-foreground">{LETTER_MODEL.name}</p>
           </div>
 
-          <div className="mt-5 rounded-lg border-l-4 border-primary/40 bg-card p-4">
+          <div className="mt-5 rounded-lg border-s-4 border-primary/40 bg-card p-4">
             <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
               Why this earns marks - examiner annotations
             </p>
@@ -458,7 +458,7 @@ export default async function LetterDiaryPage() {
             ))}
           </div>
 
-          <div className="mt-5 rounded-lg border-l-4 border-primary/40 bg-card p-4">
+          <div className="mt-5 rounded-lg border-s-4 border-primary/40 bg-card p-4">
             <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
               Why this earns marks - examiner annotations
             </p>
@@ -481,7 +481,7 @@ export default async function LetterDiaryPage() {
             Run through this before you hand the paper in. Each line maps to a {WAO1.code}{' '}
             descriptor about form being established, maintained and controlled.
           </p>
-          <ul className="list-disc space-y-2 pl-6 text-base leading-relaxed text-muted-foreground">
+          <ul className="list-disc space-y-2 ps-6 text-base leading-relaxed text-muted-foreground">
             {CHECKLIST.map((c) => (
               <li key={c}>{c}</li>
             ))}
@@ -498,7 +498,7 @@ export default async function LetterDiaryPage() {
           </p>
           <div className="space-y-4">
             {PRACTICE_PROMPTS.map((p) => (
-              <div key={p.form} className="rounded-lg border-l-4 border-primary/40 bg-card p-5">
+              <div key={p.form} className="rounded-lg border-s-4 border-primary/40 bg-card p-5">
                 <p className="mb-1 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
                   {p.form}
                 </p>

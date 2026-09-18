@@ -289,7 +289,7 @@ export default function MarkingAnalyticsPage() {
                         <span className="sr-only">. {tone.label}.</span>
                       </span>
                       {thin ? (
-                        <Badge variant="outline" className="ml-auto text-[10px]">
+                        <Badge variant="outline" className="ms-auto text-[10px]">
                           Small sample
                         </Badge>
                       ) : null}

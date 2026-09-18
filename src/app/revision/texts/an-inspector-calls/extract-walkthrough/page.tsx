@@ -191,7 +191,7 @@ export default function ExtractWalkthroughPage() {
               </p>
 
               {/* Quotation */}
-              <blockquote className="mt-4 border-l-4 border-teal-500/40 bg-card p-4">
+              <blockquote className="mt-4 border-s-4 border-teal-500/40 bg-card p-4">
                 <p className="text-lg font-medium italic text-foreground">{f.quote}</p>
                 <p className="mt-1 text-xs text-muted-foreground">
                   {quoteCaptionTpl.replace('{n}', String(f.wordCount))}

@@ -464,13 +464,13 @@ export default function ThemesPage() {
 
       {/* Hero */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-clay-400/[0.06] p-6 sm:p-8 lg:p-10">
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-clay-400/5 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-ochre-400/5 blur-3xl" />
+        <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-clay-400/5 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-16 -start-16 h-48 w-48 rounded-full bg-ochre-400/5 blur-3xl" />
         <div className="relative">
           <Button
             variant="ghost"
             size="sm"
-            className="mb-4 -ml-2 text-muted-foreground"
+            className="mb-4 -ms-2 text-muted-foreground"
             render={<Link href="/revision/texts/things-fall-apart" />}
           >
             <ArrowLeft className="size-3.5" />
@@ -479,11 +479,11 @@ export default function ThemesPage() {
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
-              <BookOpen className="mr-1 size-3 text-clay-500" />
+              <BookOpen className="me-1 size-3 text-clay-500" />
               {tr('rev.texts.common.deep_study')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
-              <Sparkles className="mr-1 size-3" />
+              <Sparkles className="me-1 size-3" />
               IGCSE Edexcel
             </Badge>
           </div>
@@ -595,7 +595,7 @@ export default function ThemesPage() {
                 {theme.keyQuotes.map((q, i) => (
                   <div
                     key={i}
-                    className="rounded-lg border-l-4 border-l-clay-500 bg-muted p-4 dark:border-l-clay-400"
+                    className="rounded-lg border-s-4 border-s-clay-500 bg-muted p-4 dark:border-s-clay-400"
                   >
                     <p className="font-heading font-medium italic text-foreground">{q.text}</p>
                     <p className="mt-1 text-xs font-mono text-clay-600 dark:text-clay-300">
@@ -615,7 +615,7 @@ export default function ThemesPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="list-disc space-y-2 pl-4 text-body-sm text-muted-foreground">
+                <ul className="list-disc space-y-2 ps-4 text-body-sm text-muted-foreground">
                   {theme.contextLinks.map((c, i) => (
                     <li key={i}>{c}</li>
                   ))}
@@ -630,7 +630,7 @@ export default function ThemesPage() {
                   <Lightbulb className="size-4 text-amber-400" />
                   {tr('rev.texts.common.essay_planning_tips')}
                 </h4>
-                <ul className="list-disc space-y-2 pl-4 text-body-sm text-muted-foreground">
+                <ul className="list-disc space-y-2 ps-4 text-body-sm text-muted-foreground">
                   {theme.essayTips.map((t, i) => (
                     <li key={i}>{t}</li>
                   ))}

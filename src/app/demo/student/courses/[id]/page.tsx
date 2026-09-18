@@ -1018,14 +1018,14 @@ function QuizView({
                 <button
                   key={oi}
                   onClick={() => select(qi, oi)}
-                  className={`w-full text-left rounded-lg border px-4 py-2.5 text-sm text-foreground transition-all ${optStyle}`}
+                  className={`w-full text-start rounded-lg border px-4 py-2.5 text-sm text-foreground transition-all ${optStyle}`}
                 >
-                  <span className="text-muted-foreground mr-2">
+                  <span className="text-muted-foreground me-2">
                     {String.fromCharCode(65 + oi)}.
                   </span>
                   {opt}
                   {submitted && oi === q.answer && (
-                    <CheckCircle2 className="inline h-4 w-4 text-primary ml-2" />
+                    <CheckCircle2 className="inline h-4 w-4 text-primary ms-2" />
                   )}
                 </button>
               )
@@ -1216,7 +1216,7 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
                     setActiveModuleIdx(idx)
                     setShowQuiz(false)
                   }}
-                  className={`w-full group flex items-center gap-3 rounded-lg border px-4 py-3.5 text-left transition-all hover:bg-secondary ${
+                  className={`w-full group flex items-center gap-3 rounded-lg border px-4 py-3.5 text-start transition-all hover:bg-secondary ${
                     mod.revisionNeeded
                       ? 'border-red-500/15 bg-red-500/[0.03] hover:border-red-500/25'
                       : 'border-border/60 bg-card hover:border-border'
@@ -1357,7 +1357,7 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
                 {activeModule.quizMaxScore} ({quizPct}%)
               </span>
               {quizPct < 60 && (
-                <span className="text-[10px] text-red-700/70 dark:text-red-300/70 ml-1">
+                <span className="text-[10px] text-red-700/70 dark:text-red-300/70 ms-1">
                   - {t('demo.b15.student_course.retake_recommended')}
                 </span>
               )}

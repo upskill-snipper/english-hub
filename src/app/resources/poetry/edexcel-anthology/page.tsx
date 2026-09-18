@@ -980,7 +980,7 @@ export default function EdexcelAnthologyPage() {
 
           {/* Desktop table */}
           <div className="mt-6 hidden overflow-hidden rounded-xl border border-border bg-card shadow-md lg:block">
-            <table className="w-full text-left text-sm">
+            <table className="w-full text-start text-sm">
               <thead>
                 <tr className="bg-primary text-white">
                   <th className="px-5 py-3 font-semibold">Poem A</th>
@@ -1080,7 +1080,7 @@ function PoemSectionControlled({ poem, forceOpen }: { poem: Poem; forceOpen: boo
     <div className="rounded-xl border border-border bg-card shadow-md transition-shadow hover:shadow-md">
       <button
         onClick={() => setManualOpen(!manualOpen)}
-        className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-5"
+        className="flex w-full items-center justify-between gap-4 px-5 py-4 text-start sm:px-6 sm:py-5"
         aria-expanded={isOpen}
       >
         <div className="min-w-0">
@@ -1135,7 +1135,7 @@ function PoemSectionControlled({ poem, forceOpen }: { poem: Poem; forceOpen: boo
             </h4>
             <div className="space-y-4">
               {poem.quotes.map((q, i) => (
-                <div key={i} className="rounded-lg border-l-4 border-primary bg-muted p-4">
+                <div key={i} className="rounded-lg border-s-4 border-primary bg-muted p-4">
                   <p className="font-medium italic text-foreground">&ldquo;{q.text}&rdquo;</p>
                   <p className="mt-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
                     {q.technique}

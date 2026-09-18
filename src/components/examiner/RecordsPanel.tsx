@@ -92,38 +92,38 @@ export function RecordsPanel({ runs }: { runs: ReturnType<typeof useRuns> }) {
         ) : (
           <table className="mt-3 w-full text-sm">
             <thead>
-              <tr className="text-left text-xs uppercase tracking-wide text-muted-foreground">
-                <th className="py-1 pr-2">Saved</th>
-                <th className="py-1 pr-2">Paper</th>
-                <th className="py-1 pr-2">Q</th>
-                <th className="py-1 pr-2">Candidate</th>
-                <th className="py-1 pr-2 text-right">Mark</th>
-                <th className="py-1 pr-2 text-right">Flags</th>
+              <tr className="text-start text-xs uppercase tracking-wide text-muted-foreground">
+                <th className="py-1 pe-2">Saved</th>
+                <th className="py-1 pe-2">Paper</th>
+                <th className="py-1 pe-2">Q</th>
+                <th className="py-1 pe-2">Candidate</th>
+                <th className="py-1 pe-2 text-end">Mark</th>
+                <th className="py-1 pe-2 text-end">Flags</th>
                 <th className="py-1"></th>
               </tr>
             </thead>
             <tbody>
               {list.map((r) => (
                 <tr key={r.id} className="border-t border-border">
-                  <td className="py-2 pr-2 text-xs text-muted-foreground">
+                  <td className="py-2 pe-2 text-xs text-muted-foreground">
                     {new Date(r.created_at).toLocaleDateString('en-GB')}
                   </td>
-                  <td className="py-2 pr-2 text-xs">{r.pack_id}</td>
-                  <td className="py-2 pr-2">{r.question_id}</td>
-                  <td className="py-2 pr-2">
+                  <td className="py-2 pe-2 text-xs">{r.pack_id}</td>
+                  <td className="py-2 pe-2">{r.question_id}</td>
+                  <td className="py-2 pe-2">
                     {r.candidate_label || <span className="text-muted-foreground">-</span>}
                   </td>
-                  <td className="py-2 pr-2 text-right font-serif font-semibold text-primary">
+                  <td className="py-2 pe-2 text-end font-serif font-semibold text-primary">
                     {r.mark ?? '-'}
                     {r.max_mark !== null && (
                       <span className="text-muted-foreground"> / {r.max_mark}</span>
                     )}
                   </td>
-                  <td className="py-2 pr-2 text-right text-xs text-muted-foreground">
+                  <td className="py-2 pe-2 text-end text-xs text-muted-foreground">
                     {r.doubtful_readings ? `${r.doubtful_readings}? ` : ''}
                     {r.unreadable_stretches ? `${r.unreadable_stretches} illegible` : ''}
                   </td>
-                  <td className="py-2 text-right">
+                  <td className="py-2 text-end">
                     <Button size="sm" variant="ghost" onClick={() => void view(r.id)}>
                       View
                     </Button>
@@ -159,7 +159,7 @@ export function RecordsPanel({ runs }: { runs: ReturnType<typeof useRuns> }) {
               <span className="text-muted-foreground"> / {open.max_mark}</span>
             )}
             {open.mark_note && (
-              <span className="ml-2 text-sm font-normal text-muted-foreground">
+              <span className="ms-2 text-sm font-normal text-muted-foreground">
                 {open.mark_note}
               </span>
             )}

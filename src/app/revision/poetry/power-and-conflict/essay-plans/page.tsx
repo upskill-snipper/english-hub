@@ -686,7 +686,7 @@ export default async function EssayPlansPage() {
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/revision/poetry/power-and-conflict" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -696,12 +696,12 @@ export default async function EssayPlansPage() {
 
       {/* ── Hero ───────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-amber-500/[0.04] p-6 sm:p-8 lg:p-10">
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-amber-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-amber-500/5 blur-3xl" />
 
         <div className="relative">
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
-              <Sparkles className="mr-1 size-3" />
+              <Sparkles className="me-1 size-3" />
               {await t('rev.poetry2.pc.ep.badge_spec')}
             </Badge>
             <Badge className="bg-primary/10 text-primary border-primary/20">
@@ -815,7 +815,7 @@ export default async function EssayPlansPage() {
                   <p className="mb-1 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                     {plan.poemA}
                   </p>
-                  <blockquote className="mb-2 border-l-2 border-amber-500/40 pl-3 text-body-sm italic text-foreground">
+                  <blockquote className="mb-2 border-s-2 border-amber-500/40 ps-3 text-body-sm italic text-foreground">
                     {para.evidence1}
                   </blockquote>
                   <p className="text-body-sm text-muted-foreground leading-relaxed">
@@ -828,7 +828,7 @@ export default async function EssayPlansPage() {
                   <p className="mb-1 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                     {plan.poemB}
                   </p>
-                  <blockquote className="mb-2 border-l-2 border-blue-500/40 pl-3 text-body-sm italic text-foreground">
+                  <blockquote className="mb-2 border-s-2 border-blue-500/40 ps-3 text-body-sm italic text-foreground">
                     {para.evidence2}
                   </blockquote>
                   <p className="text-body-sm text-muted-foreground leading-relaxed">

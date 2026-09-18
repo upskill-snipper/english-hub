@@ -258,7 +258,7 @@ function PoemCard({ poem }: { poem: Poem }) {
 
         <button
           onClick={() => setOpen(!open)}
-          className="mt-4 flex w-full items-center justify-between rounded-xl border border-border/40 bg-background/50 p-4 text-left transition-colors hover:bg-accent/30"
+          className="mt-4 flex w-full items-center justify-between rounded-xl border border-border/40 bg-background/50 p-4 text-start transition-colors hover:bg-accent/30"
         >
           <span className="flex items-center gap-2 text-sm font-semibold text-foreground">
             <Sparkles className="size-4 text-primary" />
@@ -317,7 +317,7 @@ export default function UnseenPoetryPracticePage() {
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/igcse/edexcel/unseen-poetry" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -343,9 +343,9 @@ export default function UnseenPoetryPracticePage() {
 
       {/* ── Intro ───────────────────────────────────────────────── */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-rose-500/[0.04] p-6 sm:p-8">
-        <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-rose-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -end-16 -top-16 h-48 w-48 rounded-full bg-rose-500/5 blur-3xl" />
         <Badge variant="secondary" className="mb-3">
-          <Feather className="mr-1 size-3" />
+          <Feather className="me-1 size-3" />
           Read, annotate, then compare
         </Badge>
         <h2 className="text-heading-md font-heading text-foreground mb-2">

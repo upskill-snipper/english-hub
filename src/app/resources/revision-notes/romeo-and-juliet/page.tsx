@@ -23,7 +23,7 @@ function Section({
     <section id={id} aria-labelledby={`${id}-heading`} className="scroll-mt-20">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between rounded-lg border bg-primary/[0.08] px-5 py-3.5 text-left text-lg font-bold text-foreground transition hover:bg-primary/[0.12]"
+        className="flex w-full items-center justify-between rounded-lg border bg-primary/[0.08] px-5 py-3.5 text-start text-lg font-bold text-foreground transition hover:bg-primary/[0.12]"
         aria-expanded={open}
       >
         <span id={`${id}-heading`}>{title}</span>
@@ -63,7 +63,7 @@ function QuoteCard({
   analysis: string
 }) {
   return (
-    <div className="rounded-lg border-l-4 border-primary bg-card p-5 shadow-md">
+    <div className="rounded-lg border-s-4 border-primary bg-card p-5 shadow-md">
       <blockquote className="text-base font-medium italic text-foreground">
         &ldquo;{quote}&rdquo;
       </blockquote>
@@ -889,7 +889,7 @@ export default function RomeoAndJulietRevisionPage() {
             <p className="text-sm text-muted-foreground mb-3">
               How does Shakespeare present the theme of love in <em>{tr(`Romeo and Juliet`)}</em>?
               Refer to the whole play in your answer.
-              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
+              <span className="ms-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder={tr(`Write your essay response here...`)}
@@ -907,7 +907,7 @@ export default function RomeoAndJulietRevisionPage() {
             <p className="text-sm text-muted-foreground mb-3">
               How does Shakespeare use the character of Juliet to challenge patriarchal
               expectations?
-              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
+              <span className="ms-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder={tr(`Write your essay response here...`)}
@@ -925,7 +925,7 @@ export default function RomeoAndJulietRevisionPage() {
             <p className="text-sm text-muted-foreground mb-3">
               How does Shakespeare present conflict and violence in{' '}
               <em>{tr(`Romeo and Juliet`)}</em>? Refer to the whole play in your answer.
-              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
+              <span className="ms-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder={tr(`Write your essay response here...`)}
@@ -943,7 +943,7 @@ export default function RomeoAndJulietRevisionPage() {
             <p className="text-sm text-muted-foreground mb-3">
               How does Shakespeare present the theme of fate and destiny in{' '}
               <em>{tr(`Romeo and Juliet`)}</em>?
-              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
+              <span className="ms-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder={tr(`Write your essay response here...`)}

@@ -277,14 +277,14 @@ export default async function ModelEssayPage({
       <article className="space-y-10 pb-16">
         {/* ── Hero ──────────────────────────────────────────── */}
         <header className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-teal-500/[0.04] p-6 sm:p-8 lg:p-10">
-          <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-teal-500/5 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-clay-500/5 blur-3xl" />
+          <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-teal-500/5 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-16 -start-16 h-48 w-48 rounded-full bg-clay-500/5 blur-3xl" />
 
           <div className="relative">
             <Button
               variant="ghost"
               size="sm"
-              className="mb-4 -ml-2 text-muted-foreground"
+              className="mb-4 -ms-2 text-muted-foreground"
               render={<Link href="/revision/model-essays" />}
             >
               <ArrowLeft className="size-3.5" />
@@ -293,7 +293,7 @@ export default async function ModelEssayPage({
 
             <div className="mb-4 flex flex-wrap items-center gap-2">
               <Badge variant="secondary">
-                <Sparkles className="mr-1 size-3" />
+                <Sparkles className="me-1 size-3" />
                 {textLabel}
               </Badge>
               <Badge variant="default">
@@ -441,7 +441,7 @@ function ParagraphBody({ content }: { content: string }) {
           return (
             <blockquote
               key={i}
-              className="border-l-2 border-clay-500/60 pl-4 font-serif italic text-body text-foreground/90"
+              className="border-s-2 border-clay-500/60 ps-4 font-serif italic text-body text-foreground/90"
             >
               {trimmed}
             </blockquote>

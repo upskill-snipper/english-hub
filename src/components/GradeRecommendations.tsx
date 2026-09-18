@@ -134,7 +134,7 @@ export default function GradeRecommendations({
         <GradeChip grade={rec.from} />
         <ArrowRight className="h-4 w-4 text-muted-foreground shrink-0" />
         <GradeChip grade={rec.to} highlight />
-        <span className="ml-2 text-xs text-muted-foreground uppercase tracking-wider font-medium">
+        <span className="ms-2 text-xs text-muted-foreground uppercase tracking-wider font-medium">
           {t('grade.next_target')}
         </span>
       </div>

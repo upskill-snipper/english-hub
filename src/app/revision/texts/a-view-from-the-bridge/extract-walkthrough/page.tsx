@@ -99,7 +99,7 @@ export default function ExtractWalkthroughPage() {
             href="/revision/texts/a-view-from-the-bridge"
             className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            <ArrowLeft className="mr-2 h-4 w-4" />
+            <ArrowLeft className="me-2 h-4 w-4" />
             {t('rev.texts.avftb.back')}
           </Link>
         </div>
@@ -282,7 +282,7 @@ export default function ExtractWalkthroughPage() {
               </CardTitle>
               <CardDescription>
                 {t('rev.texts.avftb.extract.model_desc')}{' '}
-                <span className="ml-1 text-xs">
+                <span className="ms-1 text-xs">
                   {t('rev.texts.avftb.extract.model_words').replace(
                     '{n}',
                     String(MODEL_WORD_COUNT),
@@ -303,7 +303,7 @@ export default function ExtractWalkthroughPage() {
               <CardTitle>{t('rev.texts.avftb.extract.takeaways_h')}</CardTitle>
             </CardHeader>
             <CardContent>
-              <ul className="space-y-2 text-sm list-disc pl-5">
+              <ul className="space-y-2 text-sm list-disc ps-5">
                 <li>
                   Quote in fragments and analyse them. Long block quotation wastes time and drowns
                   the analysis the examiner is rewarding (AO2).

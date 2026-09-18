@@ -124,7 +124,7 @@ function FilterPanel({
           <Filter className="size-4 text-muted-foreground" />
           Filters
           {hasActiveFilters && (
-            <Badge variant="secondary" className="ml-1">
+            <Badge variant="secondary" className="ms-1">
               {matchCount} activit{matchCount === 1 ? 'y' : 'ies'}
             </Badge>
           )}
@@ -264,7 +264,7 @@ function TimerOverlay({
         <button
           type="button"
           onClick={onClose}
-          className="absolute right-4 top-4 rounded-full p-1.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+          className="absolute end-4 top-4 rounded-full p-1.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
         >
           <X className="size-5" />
         </button>
@@ -386,7 +386,7 @@ function FullscreenView({
             <Badge variant="outline">{activity.text}</Badge>
           )}
           <Badge variant="outline">
-            <Timer className="mr-1 size-3" />
+            <Timer className="me-1 size-3" />
             {activity.duration} min
           </Badge>
         </div>
@@ -460,7 +460,7 @@ function ActivityCard({
                 <Badge variant="outline">{activity.text}</Badge>
               )}
               <Badge variant="outline">
-                <Timer className="mr-1 size-3" />
+                <Timer className="me-1 size-3" />
                 {activity.duration} min
               </Badge>
             </div>
@@ -750,7 +750,7 @@ function BrowseAll({
               key={activity.id}
               type="button"
               onClick={() => onSelect(activity)}
-              className="group rounded-xl border border-border/60 bg-card p-4 text-left transition-all hover:border-primary/30 hover:shadow-md"
+              className="group rounded-xl border border-border/60 bg-card p-4 text-start transition-all hover:border-primary/30 hover:shadow-md"
             >
               <div className="mb-2 flex flex-wrap items-center gap-1.5">
                 <Badge variant="secondary" className="text-xs">

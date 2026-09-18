@@ -479,7 +479,7 @@ function ActionMenu({ user, onEdit, onRemove }: ActionMenuProps) {
       {open && (
         <>
           <div className="fixed inset-0 z-30" onClick={() => setOpen(false)} />
-          <div className="absolute right-0 z-40 mt-1 w-44 rounded-lg border border-border bg-popover py-1 shadow-lg ring-1 ring-foreground/10">
+          <div className="absolute end-0 z-40 mt-1 w-44 rounded-lg border border-border bg-popover py-1 shadow-lg ring-1 ring-foreground/10">
             <button
               className="flex w-full items-center gap-2.5 px-3 py-1.5 text-sm text-foreground hover:bg-accent"
               onClick={() => {
@@ -777,7 +777,7 @@ export default function UserManagementPage() {
                 ).map((tab) => (
                   <TabsTrigger key={tab.value} value={tab.value}>
                     {tab.label}
-                    <span className="ml-1 rounded-full bg-primary/10 px-1.5 py-px text-[10px] font-semibold tabular-nums text-muted-foreground">
+                    <span className="ms-1 rounded-full bg-primary/10 px-1.5 py-px text-[10px] font-semibold tabular-nums text-muted-foreground">
                       {tab.count}
                     </span>
                   </TabsTrigger>
@@ -787,16 +787,16 @@ export default function UserManagementPage() {
               {/* ── Search + Filters ── */}
               <div className="flex flex-wrap items-center gap-2">
                 <div className="relative">
-                  <Search className="pointer-events-none absolute left-2.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+                  <Search className="pointer-events-none absolute start-2.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
                   <Input
                     placeholder={tx('school.b15.users.search_placeholder')}
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
-                    className="h-8 w-56 pl-8 text-sm"
+                    className="h-8 w-56 ps-8 text-sm"
                   />
                   {search && (
                     <button
-                      className="absolute right-2.5 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                      className="absolute end-2.5 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
                       onClick={() => setSearch('')}
                       aria-label="Clear search"
                     >
@@ -854,7 +854,7 @@ export default function UserManagementPage() {
                 <span className="text-sm font-medium">
                   {selected.size} {tx('school.b15.users.bulk_selected')}
                 </span>
-                <div className="flex items-center gap-2 ml-auto">
+                <div className="flex items-center gap-2 ms-auto">
                   <Button size="xs" variant="outline" onClick={handleExportSelected}>
                     <Download className="size-3" />
                     {tx('school.b15.users.bulk_export')}
@@ -887,7 +887,7 @@ export default function UserManagementPage() {
                     <table className="w-full text-sm">
                       <thead>
                         <tr className="border-b border-white/5 bg-muted/30">
-                          <th className="w-10 px-4 py-3 text-left">
+                          <th className="w-10 px-4 py-3 text-start">
                             <input
                               type="checkbox"
                               checked={allPageSelected}
@@ -896,25 +896,25 @@ export default function UserManagementPage() {
                               aria-label="Select all on page"
                             />
                           </th>
-                          <th className="px-4 py-3 text-left font-medium text-muted-foreground">
+                          <th className="px-4 py-3 text-start font-medium text-muted-foreground">
                             {tx('school.b15.users.col_name')}
                           </th>
-                          <th className="px-4 py-3 text-left font-medium text-muted-foreground">
+                          <th className="px-4 py-3 text-start font-medium text-muted-foreground">
                             {tx('school.b15.users.col_email')}
                           </th>
-                          <th className="px-4 py-3 text-left font-medium text-muted-foreground">
+                          <th className="px-4 py-3 text-start font-medium text-muted-foreground">
                             {tx('school.b15.users.col_role')}
                           </th>
-                          <th className="px-4 py-3 text-left font-medium text-muted-foreground">
+                          <th className="px-4 py-3 text-start font-medium text-muted-foreground">
                             {tx('school.b15.users.col_year')}
                           </th>
-                          <th className="px-4 py-3 text-left font-medium text-muted-foreground">
+                          <th className="px-4 py-3 text-start font-medium text-muted-foreground">
                             {tx('school.b15.users.col_status')}
                           </th>
-                          <th className="px-4 py-3 text-left font-medium text-muted-foreground">
+                          <th className="px-4 py-3 text-start font-medium text-muted-foreground">
                             {tx('school.b15.users.col_last_active')}
                           </th>
-                          <th className="px-4 py-3 text-right font-medium text-muted-foreground">
+                          <th className="px-4 py-3 text-end font-medium text-muted-foreground">
                             {tx('school.b15.users.col_actions')}
                           </th>
                         </tr>
@@ -995,7 +995,7 @@ export default function UserManagementPage() {
                                   </span>
                                 )}
                               </td>
-                              <td className="px-4 py-3 text-right">
+                              <td className="px-4 py-3 text-end">
                                 <ActionMenu
                                   user={user}
                                   onEdit={setEditingUser}

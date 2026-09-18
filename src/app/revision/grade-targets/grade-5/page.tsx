@@ -134,7 +134,7 @@ export default async function Grade5Page() {
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/revision/grade-targets" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -367,7 +367,7 @@ export default async function Grade5Page() {
                 <XCircle className="size-4 shrink-0 text-red-400 mt-0.5" />
                 <h3 className="text-sm font-semibold text-red-400">{item.mistake}</h3>
               </div>
-              <div className="flex items-start gap-2 ml-6">
+              <div className="flex items-start gap-2 ms-6">
                 <CheckCircle2 className="size-4 shrink-0 text-emerald-400 mt-0.5" />
                 <p className="text-xs text-muted-foreground leading-relaxed">{item.fix}</p>
               </div>

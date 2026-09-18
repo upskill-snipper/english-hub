@@ -60,12 +60,12 @@ export default async function MacbethAct1Page() {
       />
       {/* Header */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-blue-500/[0.04] p-6 sm:p-8 lg:p-10">
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-blue-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-blue-500/5 blur-3xl" />
         <div className="relative">
           <Button
             variant="ghost"
             size="sm"
-            className="mb-4 -ml-2 text-muted-foreground"
+            className="mb-4 -ms-2 text-muted-foreground"
             render={<Link href="/revision/texts/macbeth" />}
           >
             <ArrowLeft className="size-3.5" />
@@ -73,7 +73,7 @@ export default async function MacbethAct1Page() {
           </Button>
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
-              <BookOpen className="mr-1 size-3 text-violet-400" />
+              <BookOpen className="me-1 size-3 text-violet-400" />
               {_tr(`Act 1 - Exposition &amp; Temptation`)}
             </Badge>
             <Badge variant="outline">7 scenes</Badge>
@@ -109,7 +109,7 @@ export default async function MacbethAct1Page() {
           </div>
           <div>
             <h4 className="font-semibold mb-1">{_tr(`Key Events &amp; Turning Points`)}</h4>
-            <ul className="list-disc pl-5 text-muted-foreground space-y-1">
+            <ul className="list-disc ps-5 text-muted-foreground space-y-1">
               <li>
                 {_tr(
                   `The play opens with disorder: thunder, lightning, and morally ambiguous beings rather than the court or king.`,
@@ -203,7 +203,7 @@ export default async function MacbethAct1Page() {
           </div>
           <div>
             <h4 className="font-semibold mb-1">{_tr(`Key Events &amp; Turning Points`)}</h4>
-            <ul className="list-disc pl-5 text-muted-foreground space-y-1">
+            <ul className="list-disc ps-5 text-muted-foreground space-y-1">
               <li>
                 {_tr(
                   `Macbeth is praised as &ldquo;brave Macbeth&rdquo; and &ldquo;Bellona&rsquo;s bridegroom&rdquo; before we meet him.`,
@@ -311,7 +311,7 @@ export default async function MacbethAct1Page() {
           </div>
           <div>
             <h4 className="font-semibold mb-1">{_tr(`Key Events &amp; Turning Points`)}</h4>
-            <ul className="list-disc pl-5 text-muted-foreground space-y-1">
+            <ul className="list-disc ps-5 text-muted-foreground space-y-1">
               <li>
                 {_tr(`The central prophecy is delivered, setting the entire plot in motion.`)}
               </li>
@@ -452,7 +452,7 @@ export default async function MacbethAct1Page() {
           </div>
           <div>
             <h4 className="font-semibold mb-1">{_tr(`Key Events &amp; Turning Points`)}</h4>
-            <ul className="list-disc pl-5 text-muted-foreground space-y-1">
+            <ul className="list-disc ps-5 text-muted-foreground space-y-1">
               <li>
                 {_tr(
                   `Duncan names Malcolm as his heir, blocking Macbeth&apos;s path to the throne and forcing him to consider active intervention rather than passive waiting.`,
@@ -567,7 +567,7 @@ export default async function MacbethAct1Page() {
           </div>
           <div>
             <h4 className="font-semibold mb-1">{_tr(`Key Events &amp; Turning Points`)}</h4>
-            <ul className="list-disc pl-5 text-muted-foreground space-y-1">
+            <ul className="list-disc ps-5 text-muted-foreground space-y-1">
               <li>
                 {_tr(
                   `Lady Macbeth is introduced as a force of will who immediately grasps the opportunity and its obstacles.`,
@@ -710,7 +710,7 @@ export default async function MacbethAct1Page() {
           </div>
           <div>
             <h4 className="font-semibold mb-1">{_tr(`Key Events &amp; Turning Points`)}</h4>
-            <ul className="list-disc pl-5 text-muted-foreground space-y-1">
+            <ul className="list-disc ps-5 text-muted-foreground space-y-1">
               <li>
                 {_tr(
                   `Duncan&apos;s praise of the castle is deeply ironic &mdash; he is entering the site of his murder.`,
@@ -800,7 +800,7 @@ export default async function MacbethAct1Page() {
           </div>
           <div>
             <h4 className="font-semibold mb-1">{_tr(`Key Events &amp; Turning Points`)}</h4>
-            <ul className="list-disc pl-5 text-muted-foreground space-y-1">
+            <ul className="list-disc ps-5 text-muted-foreground space-y-1">
               <li>
                 {_tr(
                   `Macbeth decides against the murder &mdash; then is persuaded back by Lady Macbeth.`,
@@ -945,7 +945,7 @@ export default async function MacbethAct1Page() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <ol className="list-decimal pl-5 space-y-3 text-muted-foreground">
+          <ol className="list-decimal ps-5 space-y-3 text-muted-foreground">
             <li>
               {_tr(
                 `Starting with the witches&apos; opening scene, explore how Shakespeare uses the supernatural to create a sense of moral disorder in Act 1. Refer closely to the language of the text in your answer.`,
@@ -968,10 +968,10 @@ export default async function MacbethAct1Page() {
       {/* Navigation */}
       <div className="flex justify-between items-center pt-4">
         <Button variant="outline" render={<Link href="/revision/texts/macbeth" />}>
-          <ArrowLeft className="size-4 mr-1" /> Overview
+          <ArrowLeft className="size-4 me-1" /> Overview
         </Button>
         <Button variant="outline" render={<Link href="/revision/texts/macbeth/act-2" />}>
-          Act 2 <ArrowRight className="size-4 ml-1" />
+          Act 2 <ArrowRight className="size-4 ms-1" />
         </Button>
       </div>
     </div>

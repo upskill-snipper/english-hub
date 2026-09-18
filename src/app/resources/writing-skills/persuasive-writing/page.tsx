@@ -285,7 +285,7 @@ export default async function PersuasiveWritingPage() {
                         <p className="mt-2 text-sm text-muted-foreground">
                           <span className="font-semibold text-accent">Effect:</span> {item.effect}
                         </p>
-                        <div className="mt-3 rounded-lg border-l-4 border-primary bg-primary/5 px-4 py-2">
+                        <div className="mt-3 rounded-lg border-s-4 border-primary bg-primary/5 px-4 py-2">
                           <p className="text-sm text-muted-foreground">
                             <span className="font-semibold text-foreground">Top Tip:</span>{' '}
                             {item.topTip}
@@ -448,10 +448,10 @@ export default async function PersuasiveWritingPage() {
                 <table className="w-full text-sm border-collapse">
                   <thead>
                     <tr className="bg-primary text-white">
-                      <th className="px-4 py-3 text-left font-semibold">Form</th>
-                      <th className="px-4 py-3 text-left font-semibold">Register</th>
-                      <th className="px-4 py-3 text-left font-semibold">{tr(`Typical Tone`)}</th>
-                      <th className="px-4 py-3 text-left font-semibold">{tr(`Key Features`)}</th>
+                      <th className="px-4 py-3 text-start font-semibold">Form</th>
+                      <th className="px-4 py-3 text-start font-semibold">Register</th>
+                      <th className="px-4 py-3 text-start font-semibold">{tr(`Typical Tone`)}</th>
+                      <th className="px-4 py-3 text-start font-semibold">{tr(`Key Features`)}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -512,7 +512,7 @@ export default async function PersuasiveWritingPage() {
                 </table>
               </div>
 
-              <div className="rounded-xl border-l-4 border-accent bg-accent/5 p-5">
+              <div className="rounded-xl border-s-4 border-accent bg-accent/5 p-5">
                 <p className="font-bold text-foreground">{tr(`Common Mistake: One-Note Tone`)}</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Weaker responses maintain the same angry or sarcastic tone throughout. Strong
@@ -669,7 +669,7 @@ export default async function PersuasiveWritingPage() {
                       </div>
                     ))}
                   </div>
-                  <div className="mt-4 rounded-lg border-l-4 border-primary bg-primary/5 px-4 py-2">
+                  <div className="mt-4 rounded-lg border-s-4 border-primary bg-primary/5 px-4 py-2">
                     <p className="text-sm text-muted-foreground">
                       <span className="font-semibold text-foreground">Best for:</span> Balanced
                       argument tasks, &ldquo;discuss both sides&rdquo; questions, and topics where
@@ -727,7 +727,7 @@ export default async function PersuasiveWritingPage() {
                       </div>
                     ))}
                   </div>
-                  <div className="mt-4 rounded-lg border-l-4 border-[success] bg-success/5 px-4 py-2">
+                  <div className="mt-4 rounded-lg border-s-4 border-[success] bg-success/5 px-4 py-2">
                     <p className="text-sm text-muted-foreground">
                       <span className="font-semibold text-foreground">Best for:</span> Speeches,
                       passionate opinion pieces, and tasks where you want to create an emotional
@@ -785,7 +785,7 @@ export default async function PersuasiveWritingPage() {
                       </div>
                     ))}
                   </div>
-                  <div className="mt-4 rounded-lg border-l-4 border-secondary bg-secondary/5 px-4 py-2">
+                  <div className="mt-4 rounded-lg border-s-4 border-secondary bg-secondary/5 px-4 py-2">
                     <p className="text-sm text-muted-foreground">
                       <span className="font-semibold text-foreground">Best for:</span> Newspaper
                       articles, reports, and any task where you want to establish authority from the
@@ -1106,7 +1106,7 @@ export default async function PersuasiveWritingPage() {
                         ))}
                       </ul>
                     </div>
-                    <div className="rounded-lg border-l-4 border-primary bg-primary/5 px-4 py-3">
+                    <div className="rounded-lg border-s-4 border-primary bg-primary/5 px-4 py-3">
                       <p className="font-semibold text-foreground text-sm">
                         {tr(`Example Opening Paragraph`)}
                       </p>
@@ -1132,7 +1132,7 @@ export default async function PersuasiveWritingPage() {
                   </div>
                   <div className="p-6 space-y-4">
                     <div className="rounded-lg bg-muted p-5 font-mono text-sm text-foreground space-y-3">
-                      <div className="text-right">
+                      <div className="text-end">
                         <p>[Your Address]</p>
                         <p>[Town/City]</p>
                         <p>[Postcode]</p>
@@ -1181,7 +1181,7 @@ export default async function PersuasiveWritingPage() {
                         ))}
                       </ul>
                     </div>
-                    <div className="rounded-lg border-l-4 border-[success] bg-success/5 px-4 py-3">
+                    <div className="rounded-lg border-s-4 border-[success] bg-success/5 px-4 py-3">
                       <p className="font-semibold text-foreground text-sm">
                         {tr(`Example Opening Paragraph`)}
                       </p>
@@ -1250,7 +1250,7 @@ export default async function PersuasiveWritingPage() {
                         ))}
                       </ul>
                     </div>
-                    <div className="rounded-lg border-l-4 border-accent bg-accent/5 px-4 py-3">
+                    <div className="rounded-lg border-s-4 border-accent bg-accent/5 px-4 py-3">
                       <p className="font-semibold text-foreground text-sm">
                         {tr(`Example Opening Paragraph`)}
                       </p>
@@ -1315,7 +1315,7 @@ export default async function PersuasiveWritingPage() {
                         ))}
                       </ul>
                     </div>
-                    <div className="rounded-lg border-l-4 border-secondary bg-secondary/5 px-4 py-3">
+                    <div className="rounded-lg border-s-4 border-secondary bg-secondary/5 px-4 py-3">
                       <p className="font-semibold text-foreground text-sm">
                         {tr(`Example Opening Paragraph`)}
                       </p>
@@ -1385,7 +1385,7 @@ export default async function PersuasiveWritingPage() {
                         ))}
                       </ul>
                     </div>
-                    <div className="rounded-lg border-l-4 border-[destructive] bg-destructive/5 px-4 py-3">
+                    <div className="rounded-lg border-s-4 border-[destructive] bg-destructive/5 px-4 py-3">
                       <p className="font-semibold text-foreground text-sm">
                         {tr(`Example Opening Paragraph`)}
                       </p>
@@ -1624,19 +1624,19 @@ export default async function PersuasiveWritingPage() {
                 </div>
               </div>
 
-              <div className="mt-6 rounded-xl border-l-4 border-accent bg-accent/5 p-5">
+              <div className="mt-6 rounded-xl border-s-4 border-accent bg-accent/5 p-5">
                 <p className="font-bold text-foreground">{tr(`Word Choice: Weak vs. Strong`)}</p>
                 <div className="mt-3 overflow-x-auto">
                   <table className="w-full text-sm border-collapse">
                     <thead>
                       <tr className="border-b border-border">
-                        <th className="px-4 py-2 text-left font-semibold text-destructive">
+                        <th className="px-4 py-2 text-start font-semibold text-destructive">
                           {tr(`Weak (avoid)`)}
                         </th>
-                        <th className="px-4 py-2 text-left font-semibold text-success">
+                        <th className="px-4 py-2 text-start font-semibold text-success">
                           {tr(`Strong (use instead)`)}
                         </th>
-                        <th className="px-4 py-2 text-left font-semibold text-foreground">
+                        <th className="px-4 py-2 text-start font-semibold text-foreground">
                           {tr(`Why it works`)}
                         </th>
                       </tr>
@@ -1837,7 +1837,7 @@ export default async function PersuasiveWritingPage() {
                 </p>
               </div>
 
-              <div className="mt-6 rounded-xl border-l-4 border-[success] bg-success/5 p-5">
+              <div className="mt-6 rounded-xl border-s-4 border-[success] bg-success/5 p-5">
                 <p className="font-bold text-foreground">{tr(`Why This Response Works`)}</p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground list-disc list-inside">
                   <li>
@@ -1974,7 +1974,7 @@ export default async function PersuasiveWritingPage() {
                 </p>
               </div>
 
-              <div className="mt-6 rounded-xl border-l-4 border-[success] bg-success/5 p-5">
+              <div className="mt-6 rounded-xl border-s-4 border-[success] bg-success/5 p-5">
                 <p className="font-bold text-foreground">{tr(`Why This Response Works`)}</p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground list-disc list-inside">
                   <li>
@@ -2079,7 +2079,7 @@ export default async function PersuasiveWritingPage() {
                       <div className="flex-1 p-5">
                         <h4 className="font-bold text-destructive">{item.mistake}</h4>
                         <p className="mt-1 text-sm text-muted-foreground">{item.explanation}</p>
-                        <div className="mt-3 rounded-lg border-l-4 border-[success] bg-success/5 px-4 py-2">
+                        <div className="mt-3 rounded-lg border-s-4 border-[success] bg-success/5 px-4 py-2">
                           <p className="text-sm text-muted-foreground">
                             <span className="font-semibold text-success">Fix:</span> {item.fix}
                           </p>

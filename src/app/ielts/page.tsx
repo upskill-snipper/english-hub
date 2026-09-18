@@ -222,11 +222,11 @@ export default async function IeltsHubPage() {
       <section className="relative overflow-hidden border-b border-border/60">
         <div
           aria-hidden
-          className="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl"
+          className="pointer-events-none absolute -start-32 -top-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-20 -bottom-24 h-80 w-80 rounded-full bg-sky-500/[0.06] blur-3xl"
+          className="pointer-events-none absolute -end-20 -bottom-24 h-80 w-80 rounded-full bg-sky-500/[0.06] blur-3xl"
         />
         <div className="relative mx-auto max-w-5xl px-4 py-20 text-center sm:px-6 sm:py-28">
           <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-clay-500">
@@ -273,7 +273,7 @@ export default async function IeltsHubPage() {
       {/* 1a. Subscription CTA banner - drives to the purchasable IELTS plan */}
       <section className="border-b border-border/60">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-          <div className="flex flex-col items-center gap-6 rounded-2xl border border-sky-500/30 bg-sky-500/[0.06] p-8 text-center sm:flex-row sm:text-left">
+          <div className="flex flex-col items-center gap-6 rounded-2xl border border-sky-500/30 bg-sky-500/[0.06] p-8 text-center sm:flex-row sm:text-start">
             <div className="flex-1">
               <h2 className="text-2xl font-semibold tracking-tight text-sky-600 dark:text-sky-300">
                 AI band feedback - {PRICING.CURRENCY}
@@ -472,7 +472,7 @@ export default async function IeltsHubPage() {
                 {i < loopSteps.length - 1 ? (
                   <ChevronRight
                     aria-hidden
-                    className="absolute -right-3 top-1/2 hidden h-5 w-5 -translate-y-1/2 text-border lg:block"
+                    className="absolute -end-3 top-1/2 hidden h-5 w-5 -translate-y-1/2 text-border lg:block"
                   />
                 ) : null}
               </div>

@@ -121,7 +121,7 @@ export default function JekyllExtractWalkthroughPage() {
                 </span>
               </div>
 
-              <blockquote className="border-l-4 border-primary/60 bg-muted/30 px-5 py-4 italic text-foreground/90 rounded-r-md">
+              <blockquote className="border-s-4 border-primary/60 bg-muted/30 px-5 py-4 italic text-foreground/90 rounded-e-md">
                 {chunk.text}
               </blockquote>
 

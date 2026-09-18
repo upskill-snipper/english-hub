@@ -157,7 +157,7 @@ export default async function AnalyticalWritingPage() {
               </p>
 
               <div className="grid gap-4 sm:grid-cols-2 mb-8">
-                <div className="rounded-xl border-l-4 border-[primary] bg-primary/5 p-5">
+                <div className="rounded-xl border-s-4 border-[primary] bg-primary/5 p-5">
                   <h4 className="font-bold text-foreground text-lg">P &mdash; Point</h4>
                   <p className="mt-2 text-sm text-muted-foreground">
                     Your topic sentence. It makes a clear, arguable claim that directly addresses
@@ -179,7 +179,7 @@ export default async function AnalyticalWritingPage() {
                   </div>
                 </div>
 
-                <div className="rounded-xl border-l-4 border-primary bg-primary/5 p-5">
+                <div className="rounded-xl border-s-4 border-primary bg-primary/5 p-5">
                   <h4 className="font-bold text-primary text-lg">E &mdash; Evidence</h4>
                   <p className="mt-2 text-sm text-muted-foreground">
                     A carefully selected quotation or reference from the text that directly supports
@@ -203,7 +203,7 @@ export default async function AnalyticalWritingPage() {
                   </div>
                 </div>
 
-                <div className="rounded-xl border-l-4 border-[primary] bg-primary/5 p-5">
+                <div className="rounded-xl border-s-4 border-[primary] bg-primary/5 p-5">
                   <h4 className="font-bold text-foreground text-lg">E &mdash; Explain</h4>
                   <p className="mt-2 text-sm text-muted-foreground">
                     The most important part. Analyse <strong>how</strong> and <strong>why</strong>{' '}
@@ -221,7 +221,7 @@ export default async function AnalyticalWritingPage() {
                   </div>
                 </div>
 
-                <div className="rounded-xl border-l-4 border-primary bg-primary/5 p-5">
+                <div className="rounded-xl border-s-4 border-primary bg-primary/5 p-5">
                   <h4 className="font-bold text-primary text-lg">L &mdash; Link</h4>
                   <p className="mt-2 text-sm text-muted-foreground">
                     Connect back to the question, to the wider text, or to relevant context. This
@@ -1257,7 +1257,7 @@ export default async function AnalyticalWritingPage() {
                   <p className="text-sm font-semibold text-amber-700">
                     {tr(`What keeps this at Grade 5:`)}
                   </p>
-                  <ul className="list-disc pl-5 text-sm text-amber-700 space-y-1">
+                  <ul className="list-disc ps-5 text-sm text-amber-700 space-y-1">
                     <li>{tr(`Makes a valid point and uses quotations`)}</li>
                     <li>{tr(`Some explanation of language, but stays surface-level`)}</li>
                     <li>
@@ -1304,7 +1304,7 @@ export default async function AnalyticalWritingPage() {
                   <p className="text-sm font-semibold text-blue-700 dark:text-blue-300">
                     {tr(`What makes this Grade 7:`)}
                   </p>
-                  <ul className="list-disc pl-5 text-sm text-blue-700 dark:text-blue-300 space-y-1">
+                  <ul className="list-disc ps-5 text-sm text-blue-700 dark:text-blue-300 space-y-1">
                     <li>{tr(`Clear, arguable topic sentence`)}</li>
                     <li>{tr(`Longer quotation that is embedded and analysed in detail`)}</li>
                     <li>
@@ -1359,7 +1359,7 @@ export default async function AnalyticalWritingPage() {
                   <p className="text-sm font-semibold text-purple-700 dark:text-purple-300">
                     {tr(`What makes this Grade 9:`)}
                   </p>
-                  <ul className="list-disc pl-5 text-sm text-purple-700 dark:text-purple-300 space-y-1">
+                  <ul className="list-disc ps-5 text-sm text-purple-700 dark:text-purple-300 space-y-1">
                     <li>Conceptualised argument (&ldquo;fundamentally transgressive&rdquo;)</li>
                     <li>{tr(`Analyses the writer&apos;s craft, not just the character`)}</li>
                     <li>
@@ -1388,10 +1388,10 @@ export default async function AnalyticalWritingPage() {
                 <table className="w-full text-sm border-collapse">
                   <thead>
                     <tr className="bg-primary text-white">
-                      <th className="px-4 py-3 text-left font-semibold">Skill</th>
-                      <th className="px-4 py-3 text-left font-semibold">Grade 5</th>
-                      <th className="px-4 py-3 text-left font-semibold">Grade 7</th>
-                      <th className="px-4 py-3 text-left font-semibold">Grade 9</th>
+                      <th className="px-4 py-3 text-start font-semibold">Skill</th>
+                      <th className="px-4 py-3 text-start font-semibold">Grade 5</th>
+                      <th className="px-4 py-3 text-start font-semibold">Grade 7</th>
+                      <th className="px-4 py-3 text-start font-semibold">Grade 9</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-border">

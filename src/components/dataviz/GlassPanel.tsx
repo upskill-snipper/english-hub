@@ -45,7 +45,7 @@ export function GlassPanel({
         <span
           aria-hidden
           className={cn(
-            'pointer-events-none absolute -right-16 -top-20 h-48 w-48 rounded-full blur-3xl',
+            'pointer-events-none absolute -end-16 -top-20 h-48 w-48 rounded-full blur-3xl',
             ACCENT_GLOW[accent],
           )}
         />

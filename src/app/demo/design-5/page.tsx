@@ -99,7 +99,7 @@ export default function DopamineDashboard() {
             <span className="text-7xl font-black bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
               {mockData.user.streak}
             </span>
-            <span className="text-2xl font-bold text-accent ml-3">days straight</span>
+            <span className="text-2xl font-bold text-accent ms-3">days straight</span>
           </div>
           <p className="text-accent text-sm mt-3">Keep it up! Your longest streak was 23 days.</p>
         </div>

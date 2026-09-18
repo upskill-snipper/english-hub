@@ -85,7 +85,7 @@ export function MockExamClient({ level }: { level: CEFRBand }) {
                       type="button"
                       disabled={answered}
                       onClick={() => setAnswers((a) => ({ ...a, [q.id]: i }))}
-                      className={`text-left text-sm rounded-lg border ${cls} px-3 py-2 transition-colors`}
+                      className={`text-start text-sm rounded-lg border ${cls} px-3 py-2 transition-colors`}
                     >
                       {t(opt)}
                     </button>

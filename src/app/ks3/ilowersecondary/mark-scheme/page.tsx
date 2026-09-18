@@ -131,13 +131,13 @@ export default async function MarkSchemePage() {
           <table className="w-full border-collapse text-sm">
             <thead>
               <tr className="border-b border-border">
-                <th className="p-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="p-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Level
                 </th>
-                <th className="p-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="p-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Marks
                 </th>
-                <th className="p-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="p-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Descriptors
                 </th>
               </tr>
@@ -150,7 +150,7 @@ export default async function MarkSchemePage() {
                     {row.marks}
                   </td>
                   <td className="p-3 text-muted-foreground">
-                    <ul className="list-disc space-y-1 pl-4">
+                    <ul className="list-disc space-y-1 ps-4">
                       {row.descriptors.map((d) => (
                         <li key={d}>{d}</li>
                       ))}
@@ -168,13 +168,13 @@ export default async function MarkSchemePage() {
           <table className="w-full border-collapse text-sm">
             <thead>
               <tr className="border-b border-border">
-                <th className="p-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="p-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Level
                 </th>
-                <th className="p-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="p-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Marks
                 </th>
-                <th className="p-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="p-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Descriptors
                 </th>
               </tr>
@@ -187,7 +187,7 @@ export default async function MarkSchemePage() {
                     {row.marks}
                   </td>
                   <td className="p-3 text-muted-foreground">
-                    <ul className="list-disc space-y-1 pl-4">
+                    <ul className="list-disc space-y-1 ps-4">
                       {row.descriptors.map((d) => (
                         <li key={d}>{d}</li>
                       ))}
@@ -216,13 +216,13 @@ export default async function MarkSchemePage() {
           <table className="w-full border-collapse text-sm">
             <thead>
               <tr className="border-b border-border">
-                <th className="p-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="p-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Level
                 </th>
-                <th className="p-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="p-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Marks
                 </th>
-                <th className="p-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="p-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Descriptor
                 </th>
               </tr>

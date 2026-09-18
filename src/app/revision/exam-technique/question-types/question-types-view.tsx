@@ -43,7 +43,7 @@ function Section({
     <div className="rounded-2xl border border-border/60 bg-card overflow-hidden">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between p-5 sm:p-6 text-left transition-colors hover:bg-accent/30"
+        className="flex w-full items-center justify-between p-5 sm:p-6 text-start transition-colors hover:bg-accent/30"
       >
         <div className="flex items-center gap-3">
           {Icon && <Icon className="size-5 text-violet-400" />}
@@ -129,7 +129,7 @@ export default function QuestionTypesView({
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/revision/exam-technique" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -166,7 +166,7 @@ export default function QuestionTypesView({
           {Object.entries(grouped).map(([paper, rows]) => (
             <div key={paper} className="space-y-2">
               <h3 className="text-sm font-semibold text-foreground">
-                <Badge variant="secondary" className="mr-2">
+                <Badge variant="secondary" className="me-2">
                   {paper}
                 </Badge>
                 {rows.length} question{rows.length === 1 ? '' : 's'}
@@ -175,14 +175,14 @@ export default function QuestionTypesView({
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-border/40 bg-background/50">
-                      <th className="px-4 py-3 text-left font-semibold text-foreground">
+                      <th className="px-4 py-3 text-start font-semibold text-foreground">
                         Question
                       </th>
-                      <th className="px-4 py-3 text-left font-semibold text-foreground">Marks</th>
-                      <th className="px-4 py-3 text-left font-semibold text-foreground">
+                      <th className="px-4 py-3 text-start font-semibold text-foreground">Marks</th>
+                      <th className="px-4 py-3 text-start font-semibold text-foreground">
                         What it asks
                       </th>
-                      <th className="px-4 py-3 text-left font-semibold text-foreground">
+                      <th className="px-4 py-3 text-start font-semibold text-foreground">
                         Approach
                       </th>
                     </tr>
@@ -543,9 +543,11 @@ export default function QuestionTypesView({
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-border/40 bg-background/50">
-                <th className="px-4 py-3 text-left font-semibold text-foreground">Command word</th>
-                <th className="px-4 py-3 text-left font-semibold text-foreground">What it means</th>
-                <th className="px-4 py-3 text-left font-semibold text-foreground">What to do</th>
+                <th className="px-4 py-3 text-start font-semibold text-foreground">Command word</th>
+                <th className="px-4 py-3 text-start font-semibold text-foreground">
+                  What it means
+                </th>
+                <th className="px-4 py-3 text-start font-semibold text-foreground">What to do</th>
               </tr>
             </thead>
             <tbody className="text-muted-foreground">

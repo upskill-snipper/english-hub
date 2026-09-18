@@ -150,7 +150,7 @@ export default function CertificatePage() {
               )}
             </button>
             <button onClick={handlePrint} className="btn-primary text-sm">
-              <Download className="w-4 h-4 mr-2" />
+              <Download className="w-4 h-4 me-2" />
               {t('certificate.download_pdf')}
             </button>
           </div>
@@ -162,10 +162,10 @@ export default function CertificatePage() {
           className="bg-card border-2 border-primary/30 rounded-2xl p-8 sm:p-12 relative overflow-hidden"
         >
           {/* Decorative corners */}
-          <div className="absolute top-0 left-0 w-24 h-24 border-t-2 border-l-2 border-primary/40 rounded-tl-2xl" />
-          <div className="absolute top-0 right-0 w-24 h-24 border-t-2 border-r-2 border-primary/40 rounded-tr-2xl" />
-          <div className="absolute bottom-0 left-0 w-24 h-24 border-b-2 border-l-2 border-primary/40 rounded-bl-2xl" />
-          <div className="absolute bottom-0 right-0 w-24 h-24 border-b-2 border-r-2 border-primary/40 rounded-br-2xl" />
+          <div className="absolute top-0 start-0 w-24 h-24 border-t-2 border-s-2 border-primary/40 rounded-ss-2xl" />
+          <div className="absolute top-0 end-0 w-24 h-24 border-t-2 border-e-2 border-primary/40 rounded-se-2xl" />
+          <div className="absolute bottom-0 start-0 w-24 h-24 border-b-2 border-s-2 border-primary/40 rounded-es-2xl" />
+          <div className="absolute bottom-0 end-0 w-24 h-24 border-b-2 border-e-2 border-primary/40 rounded-ee-2xl" />
 
           <div className="text-center relative z-10">
             {/* Logo / Header */}

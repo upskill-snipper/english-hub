@@ -23,7 +23,7 @@ function Section({
     <div className="mb-4 rounded-xl border border-border bg-card shadow-md overflow-hidden">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left hover:bg-muted transition-colors"
+        className="flex w-full items-center justify-between px-5 py-4 text-start hover:bg-muted transition-colors"
       >
         <span className="flex flex-col gap-0.5">
           <span className="text-lg font-bold text-foreground">{title}</span>
@@ -48,7 +48,7 @@ function Section({
 
 function TipCard({ heading, children }: { heading: string; children: React.ReactNode }) {
   return (
-    <div className="rounded-lg border-l-4 border-primary bg-primary/5 p-4 mb-3">
+    <div className="rounded-lg border-s-4 border-primary bg-primary/5 p-4 mb-3">
       <p className="text-sm font-semibold text-foreground mb-1">{heading}</p>
       <div className="text-sm text-muted-foreground leading-relaxed">{children}</div>
     </div>
@@ -154,36 +154,36 @@ export default function CAIEExamTechniquePage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-border text-left">
-                    <th className="py-2 pr-4 font-semibold text-foreground">Paper</th>
-                    <th className="py-2 pr-4 font-semibold text-foreground">Focus</th>
-                    <th className="py-2 pr-4 font-semibold text-foreground">Duration</th>
+                  <tr className="border-b border-border text-start">
+                    <th className="py-2 pe-4 font-semibold text-foreground">Paper</th>
+                    <th className="py-2 pe-4 font-semibold text-foreground">Focus</th>
+                    <th className="py-2 pe-4 font-semibold text-foreground">Duration</th>
                     <th className="py-2 font-semibold text-foreground">Marks</th>
                   </tr>
                 </thead>
                 <tbody className="text-muted-foreground">
                   <tr className="border-b border-border/50">
-                    <td className="py-2 pr-4 font-medium text-foreground">Paper 1</td>
-                    <td className="py-2 pr-4">{tr(`Poetry &amp; Prose`)}</td>
-                    <td className="py-2 pr-4">1 h 30 min</td>
+                    <td className="py-2 pe-4 font-medium text-foreground">Paper 1</td>
+                    <td className="py-2 pe-4">{tr(`Poetry &amp; Prose`)}</td>
+                    <td className="py-2 pe-4">1 h 30 min</td>
                     <td className="py-2">50</td>
                   </tr>
                   <tr className="border-b border-border/50">
-                    <td className="py-2 pr-4 font-medium text-foreground">Paper 2</td>
-                    <td className="py-2 pr-4">{tr(`Drama (closed text)`)}</td>
-                    <td className="py-2 pr-4">1 h 30 min</td>
+                    <td className="py-2 pe-4 font-medium text-foreground">Paper 2</td>
+                    <td className="py-2 pe-4">{tr(`Drama (closed text)`)}</td>
+                    <td className="py-2 pe-4">1 h 30 min</td>
                     <td className="py-2">50</td>
                   </tr>
                   <tr className="border-b border-border/50">
-                    <td className="py-2 pr-4 font-medium text-foreground">Paper 3</td>
-                    <td className="py-2 pr-4">{tr(`Drama (open text)`)}</td>
-                    <td className="py-2 pr-4">45 min</td>
+                    <td className="py-2 pe-4 font-medium text-foreground">Paper 3</td>
+                    <td className="py-2 pe-4">{tr(`Drama (open text)`)}</td>
+                    <td className="py-2 pe-4">45 min</td>
                     <td className="py-2">25</td>
                   </tr>
                   <tr>
-                    <td className="py-2 pr-4 font-medium text-foreground">Paper 4</td>
-                    <td className="py-2 pr-4">Unseen</td>
-                    <td className="py-2 pr-4">1 h 15 min</td>
+                    <td className="py-2 pe-4 font-medium text-foreground">Paper 4</td>
+                    <td className="py-2 pe-4">Unseen</td>
+                    <td className="py-2 pe-4">1 h 15 min</td>
                     <td className="py-2">25</td>
                   </tr>
                 </tbody>

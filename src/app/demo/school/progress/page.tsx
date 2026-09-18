@@ -469,7 +469,7 @@ export default function SchoolProgressPage() {
                 {YEAR_GROUPS.map((yg) => (
                   <div key={yg.year} className="flex items-center justify-between gap-2 text-xs">
                     <span className="text-muted-foreground font-mono">{yg.year}</span>
-                    <span className={`text-right font-mono ${gcseGradeColor(yg.avgWorkingAt)}`}>
+                    <span className={`text-end font-mono ${gcseGradeColor(yg.avgWorkingAt)}`}>
                       Grade {yg.avgWorkingAt}
                     </span>
                   </div>
@@ -624,7 +624,7 @@ export default function SchoolProgressPage() {
             <h2 className="text-xl font-semibold flex items-center gap-2">
               <GraduationCap className="h-5 w-5 text-primary" />
               {activeYearData.label} Progress
-              <Badge variant="secondary" className="ml-2">
+              <Badge variant="secondary" className="ms-2">
                 {activeYearData.totalStudents} students
               </Badge>
             </h2>
@@ -680,7 +680,7 @@ export default function SchoolProgressPage() {
                   <div key={cls.name} className="flex items-center justify-between gap-3 text-xs">
                     <div className="min-w-0 truncate">
                       <span className="text-sm font-medium text-foreground">{cls.name}</span>
-                      <span className="text-xs text-muted-foreground ml-2">({cls.teacher})</span>
+                      <span className="text-xs text-muted-foreground ms-2">({cls.teacher})</span>
                     </div>
                     <div className="flex shrink-0 items-center gap-3">
                       <span className="text-muted-foreground">
@@ -735,7 +735,7 @@ export default function SchoolProgressPage() {
                       <span className="text-muted-foreground">
                         {t('demo.b15.school_progress.on_track')}
                       </span>
-                      <span className="text-primary font-mono ml-auto">
+                      <span className="text-primary font-mono ms-auto">
                         {activeYearData.onTrack}
                       </span>
                     </div>
@@ -744,7 +744,7 @@ export default function SchoolProgressPage() {
                       <span className="text-muted-foreground">
                         {t('demo.b15.school_progress.above_target')}
                       </span>
-                      <span className="text-amber-700 dark:text-amber-300 font-mono ml-auto">
+                      <span className="text-amber-700 dark:text-amber-300 font-mono ms-auto">
                         {activeYearData.aboveTarget}
                       </span>
                     </div>
@@ -753,7 +753,7 @@ export default function SchoolProgressPage() {
                       <span className="text-muted-foreground">
                         {t('demo.b15.school_progress.below_target')}
                       </span>
-                      <span className="text-amber-700 dark:text-amber-300 font-mono ml-auto">
+                      <span className="text-amber-700 dark:text-amber-300 font-mono ms-auto">
                         {activeYearData.belowTarget}
                       </span>
                     </div>
@@ -762,7 +762,7 @@ export default function SchoolProgressPage() {
                       <span className="text-muted-foreground">
                         {t('demo.b15.school_progress.at_risk')}
                       </span>
-                      <span className="text-red-700 dark:text-red-300 font-mono ml-auto">
+                      <span className="text-red-700 dark:text-red-300 font-mono ms-auto">
                         {activeYearData.atRisk}
                       </span>
                     </div>
@@ -861,7 +861,7 @@ export default function SchoolProgressPage() {
           </Card>
 
           {/* Intervention Recommendations */}
-          <Card className="bg-card border-border/60 border-l-4 border-l-red-500/50">
+          <Card className="bg-card border-border/60 border-s-4 border-s-red-500/50">
             <CardHeader className="pb-3">
               <CardTitle className="text-sm font-medium text-red-700 dark:text-red-300 flex items-center gap-2">
                 <ShieldAlert className="h-4 w-4" />
@@ -934,13 +934,13 @@ export default function SchoolProgressPage() {
                   <h3 className="font-semibold text-lg mb-2">
                     {t('demo.b15.school_progress.report_summary')}
                   </h3>
-                  <table className="w-full text-left border-collapse">
+                  <table className="w-full text-start border-collapse">
                     <tbody>
                       <tr className="border-b">
                         <td className="py-1 text-muted-foreground">
                           {t('demo.b15.school_progress.report_total_students')}
                         </td>
-                        <td className="py-1 font-medium text-right">
+                        <td className="py-1 font-medium text-end">
                           {activeYearData.totalStudents}
                         </td>
                       </tr>
@@ -948,21 +948,19 @@ export default function SchoolProgressPage() {
                         <td className="py-1 text-muted-foreground">
                           {t('demo.b15.school_progress.report_avg_progress')}
                         </td>
-                        <td className="py-1 font-medium text-right">
-                          {activeYearData.avgProgress}%
-                        </td>
+                        <td className="py-1 font-medium text-end">{activeYearData.avgProgress}%</td>
                       </tr>
                       <tr className="border-b">
                         <td className="py-1 text-muted-foreground">
                           {t('demo.b15.school_progress.report_avg_score')}
                         </td>
-                        <td className="py-1 font-medium text-right">{activeYearData.avgScore}%</td>
+                        <td className="py-1 font-medium text-end">{activeYearData.avgScore}%</td>
                       </tr>
                       <tr className="border-b">
                         <td className="py-1 text-muted-foreground">
                           {t('demo.b15.school_progress.on_track')}
                         </td>
-                        <td className="py-1 font-medium text-right text-emerald-700 dark:text-emerald-300">
+                        <td className="py-1 font-medium text-end text-emerald-700 dark:text-emerald-300">
                           {activeYearData.onTrack} (
                           {Math.round(
                             (activeYearData.onTrack / activeYearData.totalStudents) * 100,
@@ -974,7 +972,7 @@ export default function SchoolProgressPage() {
                         <td className="py-1 text-muted-foreground">
                           {t('demo.b15.school_progress.above_target')}
                         </td>
-                        <td className="py-1 font-medium text-right text-amber-700 dark:text-amber-300">
+                        <td className="py-1 font-medium text-end text-amber-700 dark:text-amber-300">
                           {activeYearData.aboveTarget} (
                           {Math.round(
                             (activeYearData.aboveTarget / activeYearData.totalStudents) * 100,
@@ -986,7 +984,7 @@ export default function SchoolProgressPage() {
                         <td className="py-1 text-muted-foreground">
                           {t('demo.b15.school_progress.below_target')}
                         </td>
-                        <td className="py-1 font-medium text-right text-amber-700 dark:text-amber-300">
+                        <td className="py-1 font-medium text-end text-amber-700 dark:text-amber-300">
                           {activeYearData.belowTarget} (
                           {Math.round(
                             (activeYearData.belowTarget / activeYearData.totalStudents) * 100,
@@ -998,7 +996,7 @@ export default function SchoolProgressPage() {
                         <td className="py-1 text-muted-foreground">
                           {t('demo.b15.school_progress.at_risk')}
                         </td>
-                        <td className="py-1 font-medium text-right text-red-700 dark:text-red-300">
+                        <td className="py-1 font-medium text-end text-red-700 dark:text-red-300">
                           {activeYearData.atRisk} (
                           {Math.round((activeYearData.atRisk / activeYearData.totalStudents) * 100)}
                           %)
@@ -1013,7 +1011,7 @@ export default function SchoolProgressPage() {
                   <h3 className="font-semibold text-lg mb-2">
                     {t('demo.b15.school_progress.report_class_perf')}
                   </h3>
-                  <table className="w-full text-left border-collapse">
+                  <table className="w-full text-start border-collapse">
                     <thead>
                       <tr className="border-b text-muted-foreground">
                         <th className="py-1 font-medium">
@@ -1022,10 +1020,10 @@ export default function SchoolProgressPage() {
                         <th className="py-1 font-medium">
                           {t('demo.b15.school_progress.report_col_teacher')}
                         </th>
-                        <th className="py-1 font-medium text-right">
+                        <th className="py-1 font-medium text-end">
                           {t('demo.b15.school_progress.report_col_avg_score')}
                         </th>
-                        <th className="py-1 font-medium text-right">
+                        <th className="py-1 font-medium text-end">
                           {t('demo.b15.school_progress.report_col_completion')}
                         </th>
                       </tr>
@@ -1035,8 +1033,8 @@ export default function SchoolProgressPage() {
                         <tr key={cls.name} className="border-b">
                           <td className="py-1">{cls.name}</td>
                           <td className="py-1 text-muted-foreground">{cls.teacher}</td>
-                          <td className="py-1 text-right font-medium">{cls.avgScore}%</td>
-                          <td className="py-1 text-right font-medium">{cls.completionRate}%</td>
+                          <td className="py-1 text-end font-medium">{cls.avgScore}%</td>
+                          <td className="py-1 text-end font-medium">{cls.completionRate}%</td>
                         </tr>
                       ))}
                     </tbody>

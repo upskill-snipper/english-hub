@@ -550,7 +550,7 @@ export default function RevisionPlannerPage() {
                       className={`text-sm font-bold ${isActive ? 'text-primary' : 'text-muted-foreground'}`}
                     >
                       {isActive && (
-                        <span className="mr-2 inline-block rounded bg-primary px-2 py-0.5 text-[10px] font-bold uppercase text-white">
+                        <span className="me-2 inline-block rounded bg-primary px-2 py-0.5 text-[10px] font-bold uppercase text-white">
                           Current
                         </span>
                       )}

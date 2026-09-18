@@ -416,7 +416,7 @@ export default function AssessmentPage() {
               <span className="text-muted-foreground">
                 {t('learn.assessment.intro.grading_label')}
               </span>
-              <div className="text-right text-sm">
+              <div className="text-end text-sm">
                 <p className="text-brand-warning">{t('learn.assessment.intro.grade_band.low')}</p>
                 <p className="text-brand-blue">{t('learn.assessment.intro.grade_band.mid')}</p>
                 <p className="text-primary">{t('learn.assessment.intro.grade_band.high')}</p>
@@ -446,7 +446,7 @@ export default function AssessmentPage() {
                 onClick={() => router.push(`/learn/${courseId}/${course.moduleList[0]?.id ?? ''}`)}
                 className="btn-secondary w-full"
               >
-                <ArrowLeft size={16} className="mr-2" />
+                <ArrowLeft size={16} className="me-2" />
                 {t('learn.assessment.intro.back')}
               </button>
             </div>
@@ -527,7 +527,7 @@ export default function AssessmentPage() {
                           }))
                         }
                         disabled={phase === 'submitting'}
-                        className={`w-full text-left p-4 rounded-lg border transition-all duration-200 ${
+                        className={`w-full text-start p-4 rounded-lg border transition-all duration-200 ${
                           isSelected
                             ? 'border-primary bg-primary/10'
                             : 'border-border bg-card hover:border-primary/50'
@@ -709,7 +709,7 @@ export default function AssessmentPage() {
 
             {error && (
               <div className="mt-4 p-3 bg-destructive/10 border border-destructive/30 rounded-lg text-sm text-destructive">
-                <AlertTriangle size={16} className="inline mr-1" />
+                <AlertTriangle size={16} className="inline me-1" />
                 {error}
               </div>
             )}

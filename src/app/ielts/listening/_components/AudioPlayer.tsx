@@ -224,7 +224,7 @@ export default function AudioPlayer({ transcript, sectionTitle, resetKey }: Audi
           </div>
         </div>
 
-        <div className="ml-auto flex flex-wrap items-center gap-2">
+        <div className="ms-auto flex flex-wrap items-center gap-2">
           {state === 'idle' && (
             <Button variant="default" size="sm" onClick={play}>
               <Play className="size-3.5" />

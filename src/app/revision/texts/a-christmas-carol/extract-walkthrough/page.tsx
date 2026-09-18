@@ -273,13 +273,13 @@ export default function ExtractWalkthroughPage() {
 
       {/* Hero */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-blue-500/[0.04] p-6 sm:p-8 lg:p-10">
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-blue-500/5 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-blue-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-16 -start-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl" />
         <div className="relative">
           <Button
             variant="ghost"
             size="sm"
-            className="mb-4 -ml-2 text-muted-foreground"
+            className="mb-4 -ms-2 text-muted-foreground"
             render={<Link href="/revision/texts/a-christmas-carol" />}
           >
             <ArrowLeft className="size-3.5" />
@@ -288,11 +288,11 @@ export default function ExtractWalkthroughPage() {
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
-              <ScrollText className="mr-1 size-3 text-blue-400" />
+              <ScrollText className="me-1 size-3 text-blue-400" />
               {t('rev.texts.acc.extract.badge')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
-              <Sparkles className="mr-1 size-3" />
+              <Sparkles className="me-1 size-3" />
               AQA / Edexcel / Eduqas
             </Badge>
           </div>
@@ -359,7 +359,7 @@ export default function ExtractWalkthroughPage() {
                   <li key={line.number} className="grid grid-cols-[2.25rem_1fr] gap-3 py-0.5">
                     <span
                       aria-hidden="true"
-                      className="select-none text-right font-mono text-xs text-muted-foreground/70 pt-1"
+                      className="select-none text-end font-mono text-xs text-muted-foreground/70 pt-1"
                     >
                       {line.number}
                     </span>
@@ -398,21 +398,21 @@ export default function ExtractWalkthroughPage() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4 text-body-sm text-muted-foreground">
-              <div className="rounded-lg border-l-4 border-l-blue-400/60 bg-muted/30 p-4">
+              <div className="rounded-lg border-s-4 border-s-blue-400/60 bg-muted/30 p-4">
                 <h3 className="mb-1 flex items-center gap-2 text-sm font-semibold text-foreground">
                   <Eye className="size-4 text-blue-400" />
                   {t('rev.texts.common.notice')}
                 </h3>
                 <p>{chunk.notice}</p>
               </div>
-              <div className="rounded-lg border-l-4 border-l-violet-400/60 bg-muted/30 p-4">
+              <div className="rounded-lg border-s-4 border-s-violet-400/60 bg-muted/30 p-4">
                 <h3 className="mb-1 flex items-center gap-2 text-sm font-semibold text-foreground">
                   <PenLine className="size-4 text-violet-400" />
                   {t('rev.texts.common.say')}
                 </h3>
                 <p className="italic text-foreground/90">{chunk.say}</p>
               </div>
-              <div className="rounded-lg border-l-4 border-l-clay-500/60 bg-muted/30 p-4">
+              <div className="rounded-lg border-s-4 border-s-clay-500/60 bg-muted/30 p-4">
                 <h3 className="mb-1 flex items-center gap-2 text-sm font-semibold text-foreground">
                   <Telescope className="size-4 text-clay-600" />
                   {t('rev.texts.common.zoom_out')}
@@ -440,7 +440,7 @@ export default function ExtractWalkthroughPage() {
             <CardDescription>{t('rev.texts.acc.extract.model_para_desc')}</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="rounded-lg border-l-4 border-l-primary/40 bg-muted/30 p-5 text-body-md leading-relaxed text-foreground/90">
+            <div className="rounded-lg border-s-4 border-s-primary/40 bg-muted/30 p-5 text-body-md leading-relaxed text-foreground/90">
               <p>
                 Dickens characterises Scrooge in the opening of Stave 1 as a man whose entire moral
                 being has contracted around the act of accumulation, yet he plants, even in this

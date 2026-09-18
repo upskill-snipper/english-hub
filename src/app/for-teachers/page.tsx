@@ -123,9 +123,9 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         onClick={() => setOpen(!open)}
         aria-expanded={open}
         aria-controls={`faq-panel-${id}`}
-        className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-accent/30 transition-colors duration-200"
+        className="w-full flex items-center justify-between px-6 py-5 text-start hover:bg-accent/30 transition-colors duration-200"
       >
-        <span className="font-semibold text-foreground pr-4">{q}</span>
+        <span className="font-semibold text-foreground pe-4">{q}</span>
         <ChevronDown
           className={cn(
             'w-5 h-5 text-muted-foreground shrink-0 transition-transform duration-300',
@@ -187,7 +187,7 @@ export default function ForTeachersPage() {
       ================================================================ */}
       <section className="relative overflow-hidden pt-24 pb-28 sm:pt-32 sm:pb-36">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-primary/[0.06] rounded-full blur-[160px] pointer-events-none" />
-        <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-blue-500/[0.03] rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/3 start-1/4 w-[400px] h-[400px] bg-blue-500/[0.03] rounded-full blur-[120px] pointer-events-none" />
 
         <div className="relative max-w-4xl mx-auto px-6 text-center">
           <Badge
@@ -231,7 +231,7 @@ export default function ForTeachersPage() {
               className="text-base px-8 h-12"
               render={<Link href="/demo/teacher" />}
             >
-              <Play className="w-4 h-4 mr-2" />
+              <Play className="w-4 h-4 me-2" />
               {t('audience.teachers.cta.try_demo')}
             </Button>
           </div>
@@ -473,7 +473,7 @@ export default function ForTeachersPage() {
               className="text-base px-8 h-12 shadow-lg shadow-primary/20"
               render={<Link href="/demo/teacher" />}
             >
-              <Play className="w-4 h-4 mr-2" />
+              <Play className="w-4 h-4 me-2" />
               {t('mkt.teachers.ft.demo.launch')}
             </Button>
           </div>
@@ -559,7 +559,7 @@ export default function ForTeachersPage() {
                   className="text-base px-6 h-11"
                   render={<Link href="/demo/teacher/lessons" />}
                 >
-                  <Play className="w-4 h-4 mr-2" />
+                  <Play className="w-4 h-4 me-2" />
                   {t('mkt.teachers.ft.content.cta')}
                 </Button>
               </div>
@@ -575,7 +575,7 @@ export default function ForTeachersPage() {
                   <span className="text-xs font-semibold text-primary uppercase tracking-wide">
                     {t('mkt.teachers.ft.content.mock.generated')}
                   </span>
-                  <Badge className="ml-auto text-xs bg-emerald-500/10 text-teal-700 border-emerald-500/20">
+                  <Badge className="ms-auto text-xs bg-emerald-500/10 text-teal-700 border-emerald-500/20">
                     AQA
                   </Badge>
                 </div>
@@ -628,7 +628,7 @@ export default function ForTeachersPage() {
                   <span className="text-sm font-medium text-foreground">
                     {t('mkt.teachers.ft.content.mock.diff_worksheet')}
                   </span>
-                  <span className="ml-auto text-xs text-muted-foreground">
+                  <span className="ms-auto text-xs text-muted-foreground">
                     {t('mkt.teachers.ft.content.mock.levels')}
                   </span>
                 </div>
@@ -639,7 +639,7 @@ export default function ForTeachersPage() {
                   <span className="text-sm font-medium text-foreground">
                     {t('mkt.teachers.ft.content.mock.model_answer')}
                   </span>
-                  <span className="ml-auto text-xs text-muted-foreground">
+                  <span className="ms-auto text-xs text-muted-foreground">
                     {t('mkt.teachers.ft.content.mock.aqa_aligned')}
                   </span>
                 </div>
@@ -897,7 +897,7 @@ export default function ForTeachersPage() {
                 className="text-base h-12 flex-1 shadow-lg shadow-primary/20"
                 render={<Link href="/for-teachers/free-resources" />}
               >
-                <Download className="w-4 h-4 mr-2" />
+                <Download className="w-4 h-4 me-2" />
                 {t('mkt.teachers.ft.free.cta_download')}
               </Button>
               <Button
@@ -906,7 +906,7 @@ export default function ForTeachersPage() {
                 className="text-base h-12 flex-1"
                 render={<Link href="/auth/teacher-register" />}
               >
-                <Eye className="w-4 h-4 mr-2" />
+                <Eye className="w-4 h-4 me-2" />
                 {t('mkt.teachers.ft.free.cta_all')}
               </Button>
             </div>
@@ -979,7 +979,7 @@ export default function ForTeachersPage() {
 
             {/* Teacher Premium plan */}
             <Card className="p-8 border-primary/30 bg-primary/[0.03] relative overflow-hidden flex flex-col">
-              <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-semibold px-4 py-1.5 rounded-bl-lg">
+              <div className="absolute top-0 end-0 bg-primary text-primary-foreground text-xs font-semibold px-4 py-1.5 rounded-es-lg">
                 {t('mkt.teachers.ft.pricing.premium.trial_tag')}
               </div>
 
@@ -1099,7 +1099,7 @@ export default function ForTeachersPage() {
                 className="w-full text-base h-12"
                 render={<Link href="/schools" />}
               >
-                <Building2 className="w-4 h-4 mr-2" />
+                <Building2 className="w-4 h-4 me-2" />
                 {t('mkt.teachers.ft.pricing.school.cta')}
               </Button>
               <p className="text-xs text-muted-foreground mt-3 text-center">
@@ -1181,7 +1181,7 @@ export default function ForTeachersPage() {
                 render={<Link href="/auth/teacher-register" />}
               >
                 {t('mkt.teachers.ft.signup.submit')}
-                <ChevronRight className="w-4 h-4 ml-1" />
+                <ChevronRight className="w-4 h-4 ms-1" />
               </Button>
 
               <p className="text-xs text-muted-foreground text-center">
@@ -1265,7 +1265,7 @@ export default function ForTeachersPage() {
               className="text-base px-8 h-12"
               render={<Link href="/demo/teacher" />}
             >
-              <Play className="w-4 h-4 mr-2" />
+              <Play className="w-4 h-4 me-2" />
               {t('mkt.teachers.ft.final.try_demo')}
             </Button>
           </div>

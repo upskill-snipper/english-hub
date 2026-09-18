@@ -625,14 +625,14 @@ function RegisterForm() {
                   {t('form.full_name')} <span className="text-destructive">*</span>
                 </Label>
                 <div className="relative">
-                  <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                  <User className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                   <Input
                     id="fullName"
                     type="text"
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
                     placeholder={t('form.your_full_name')}
-                    className="pl-11"
+                    className="ps-11"
                     required
                     autoComplete="name"
                     aria-invalid={!!fieldErrors.fullName}
@@ -655,8 +655,8 @@ function RegisterForm() {
                     {t('form.dob')} <span className="text-destructive">*</span>
                   </legend>
                   <div className="relative">
-                    <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
-                    <div className="flex gap-2 pl-11">
+                    <Calendar className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                    <div className="flex gap-2 ps-11">
                       <select
                         id="dobDay"
                         value={dobDay}
@@ -739,14 +739,14 @@ function RegisterForm() {
                 <div className="space-y-1.5">
                   <Label htmlFor="schoolName">{t('form.school_name')}</Label>
                   <div className="relative">
-                    <School className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                    <School className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                     <Input
                       id="schoolName"
                       type="text"
                       value={schoolName}
                       onChange={(e) => setSchoolName(e.target.value)}
                       placeholder={t('form.school_placeholder')}
-                      className="pl-11"
+                      className="ps-11"
                       autoComplete="organization"
                     />
                   </div>
@@ -758,14 +758,14 @@ function RegisterForm() {
                   {t('form.email')} <span className="text-destructive">*</span>
                 </Label>
                 <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                  <Mail className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                   <Input
                     id="email"
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder={t('form.email_placeholder')}
-                    className="pl-11"
+                    className="ps-11"
                     required
                     autoComplete="email"
                     aria-invalid={!!fieldErrors.email}
@@ -784,14 +784,14 @@ function RegisterForm() {
                   {t('form.password')} <span className="text-destructive">*</span>
                 </Label>
                 <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                  <Lock className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                   <Input
                     id="password"
                     type={showPassword ? 'text' : 'password'}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder={t('form.at_least_8_chars')}
-                    className="pl-11 pr-11"
+                    className="ps-11 pe-11"
                     required
                     minLength={8}
                     autoComplete="new-password"
@@ -801,7 +801,7 @@ function RegisterForm() {
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-muted-foreground transition-colors"
+                    className="absolute end-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-muted-foreground transition-colors"
                     aria-label={showPassword ? t('form.hide_password') : t('form.show_password')}
                   >
                     {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
@@ -819,14 +819,14 @@ function RegisterForm() {
                   {t('form.confirm_password')} <span className="text-destructive">*</span>
                 </Label>
                 <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                  <Lock className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                   <Input
                     id="confirmPassword"
                     type={showConfirm ? 'text' : 'password'}
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                     placeholder={t('form.repeat_password')}
-                    className="pl-11 pr-11"
+                    className="ps-11 pe-11"
                     required
                     minLength={8}
                     autoComplete="new-password"
@@ -838,7 +838,7 @@ function RegisterForm() {
                   <button
                     type="button"
                     onClick={() => setShowConfirm(!showConfirm)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-muted-foreground transition-colors"
+                    className="absolute end-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-muted-foreground transition-colors"
                     aria-label={showConfirm ? t('form.hide_password') : t('form.show_password')}
                   >
                     {showConfirm ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
@@ -857,14 +857,14 @@ function RegisterForm() {
                     {t('form.guardian_email')} <span className="text-destructive">*</span>
                   </Label>
                   <div className="relative">
-                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                    <Mail className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                     <Input
                       id="parentGuardianEmail"
                       type="email"
                       value={parentGuardianEmail}
                       onChange={(e) => setParentGuardianEmail(e.target.value)}
                       placeholder={t('form.guardian_email_placeholder')}
-                      className="pl-11"
+                      className="ps-11"
                       required
                       autoComplete="email"
                       aria-invalid={!!fieldErrors.parentGuardianEmail}
@@ -888,12 +888,12 @@ function RegisterForm() {
                 <div className="space-y-1.5">
                   <Label htmlFor="yearGroup">{t('form.year_group')}</Label>
                   <div className="relative">
-                    <GraduationCap className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                    <GraduationCap className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                     <select
                       id="yearGroup"
                       value={yearGroup}
                       onChange={(e) => setYearGroup(e.target.value)}
-                      className="flex h-10 w-full rounded-lg border border-input bg-transparent px-3.5 py-2 pl-11 text-sm transition-all duration-200 outline-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/25 disabled:cursor-not-allowed disabled:opacity-50 appearance-none"
+                      className="flex h-10 w-full rounded-lg border border-input bg-transparent px-3.5 py-2 ps-11 text-sm transition-all duration-200 outline-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/25 disabled:cursor-not-allowed disabled:opacity-50 appearance-none"
                     >
                       <option value="">{t('form.select_year_group')}</option>
                       {YEAR_GROUPS.map((yg) => (
@@ -910,12 +910,12 @@ function RegisterForm() {
                 <div className="space-y-1.5">
                   <Label htmlFor="examBoard">{t('form.exam_board')}</Label>
                   <div className="relative">
-                    <BookOpen className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                    <BookOpen className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                     <select
                       id="examBoard"
                       value={examBoard}
                       onChange={(e) => setExamBoard(e.target.value)}
-                      className="flex h-10 w-full rounded-lg border border-input bg-transparent px-3.5 py-2 pl-11 text-sm transition-all duration-200 outline-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/25 disabled:cursor-not-allowed disabled:opacity-50 appearance-none"
+                      className="flex h-10 w-full rounded-lg border border-input bg-transparent px-3.5 py-2 ps-11 text-sm transition-all duration-200 outline-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/25 disabled:cursor-not-allowed disabled:opacity-50 appearance-none"
                     >
                       <option value="">{t('form.select_exam_board')}</option>
                       {EXAM_BOARDS.map((board) => (
@@ -966,7 +966,7 @@ function RegisterForm() {
                     your personal data outside Qatar to the following named destinations, in order
                     to deliver the service:
                   </p>
-                  <ul className="list-disc pl-5 text-sm">
+                  <ul className="list-disc ps-5 text-sm">
                     <li>
                       <strong>European Union (Frankfurt, Germany)</strong> - Supabase (account,
                       essays, marking results); PostHog (analytics, consented only); Sentry (error
@@ -1055,7 +1055,7 @@ function RegisterForm() {
               >
                 {loading ? (
                   <>
-                    <Loader2 className="w-5 h-5 animate-spin mr-2" />
+                    <Loader2 className="w-5 h-5 animate-spin me-2" />
                     {t('auth.register.creating')}
                   </>
                 ) : accountType === 'teacher' ? (

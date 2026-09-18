@@ -164,7 +164,7 @@ export default function TeacherDetailPage() {
             </p>
             <p className={`text-3xl font-light tabular-nums ${getProgressColor(avgStudentScore)}`}>
               {avgStudentScore}%
-              <span className="text-lg text-muted-foreground ml-1">
+              <span className="text-lg text-muted-foreground ms-1">
                 (Grade {percentageToGCSEGrade(avgStudentScore)})
               </span>
             </p>
@@ -327,12 +327,12 @@ export default function TeacherDetailPage() {
                         </div>
                       </div>
                       <div className="flex items-center gap-4 shrink-0">
-                        <div className="text-right">
+                        <div className="text-end">
                           <p
                             className={`text-sm tabular-nums ${getProgressColor(student.overallProgress)}`}
                           >
                             {student.overallProgress}%
-                            <span className="text-muted-foreground ml-1 text-xs">
+                            <span className="text-muted-foreground ms-1 text-xs">
                               (G{percentageToGCSEGrade(student.overallProgress)})
                             </span>
                           </p>

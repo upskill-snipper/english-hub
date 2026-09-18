@@ -42,7 +42,7 @@ function Section({
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center gap-3 p-5 text-left transition-colors hover:bg-accent/30"
+        className="flex w-full items-center gap-3 p-5 text-start transition-colors hover:bg-accent/30"
       >
         <div className="flex size-8 items-center justify-center rounded-lg bg-amber-500/10">
           <Icon className={`size-4 ${colour}`} />
@@ -125,7 +125,7 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/revision/language" />}
         >
           <ArrowLeft className="size-3.5" />

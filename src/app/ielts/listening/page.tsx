@@ -289,7 +289,7 @@ function TestPicker({ onPick }: { onPick: (testId: string) => void }) {
                 key={lt.id}
                 type="button"
                 onClick={() => onPick(lt.id)}
-                className="group flex flex-col rounded-2xl border border-border/60 bg-card p-5 text-left transition-all hover:border-sky-500/40 hover:shadow-card-hover"
+                className="group flex flex-col rounded-2xl border border-border/60 bg-card p-5 text-start transition-all hover:border-sky-500/40 hover:shadow-card-hover"
               >
                 <div className="flex items-center gap-2">
                   <Headphones className="size-4 shrink-0 text-sky-500" />
@@ -499,7 +499,7 @@ function QuestionCard({
                     type="button"
                     onClick={() => onPickMcq(question.id, i)}
                     aria-pressed={selected}
-                    className={`rounded-xl border p-3.5 text-left transition-all duration-200 ${
+                    className={`rounded-xl border p-3.5 text-start transition-all duration-200 ${
                       selected
                         ? 'border-primary/50 bg-primary/[0.06]'
                         : 'border-border/60 bg-card hover:border-primary/40 hover:bg-primary/[0.03]'
@@ -793,11 +793,11 @@ function ReviewItem({
           {isCorrect ? <Check className="size-3" /> : <X className="size-3" />}
         </span>
         <span className="flex-1 whitespace-pre-line font-medium text-foreground">
-          <span className="mr-1.5 text-muted-foreground tabular-nums">{number}.</span>
+          <span className="me-1.5 text-muted-foreground tabular-nums">{number}.</span>
           {question.prompt}
         </span>
       </summary>
-      <div className="mt-2 space-y-1.5 pl-7">
+      <div className="mt-2 space-y-1.5 ps-7">
         {!isCorrect && (
           <p className="text-sm text-red-500">
             {t('ielts.listening.review.your_answer')}:{' '}

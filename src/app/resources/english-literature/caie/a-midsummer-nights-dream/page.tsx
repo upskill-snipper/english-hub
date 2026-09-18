@@ -330,7 +330,7 @@ export default function MidsummerNightsDreamStudyGuide() {
                     {act.quotes.map((q, i) => (
                       <div
                         key={i}
-                        className="rounded-lg border-l-4 border-primary bg-primary/5 p-4"
+                        className="rounded-lg border-s-4 border-primary bg-primary/5 p-4"
                       >
                         <blockquote className="text-sm font-medium italic text-foreground">
                           &ldquo;{q.text}&rdquo;
@@ -469,7 +469,7 @@ export default function MidsummerNightsDreamStudyGuide() {
           <Card className="mt-6">
             <CardHeader>
               <CardTitle className="text-base">
-                <span className="mr-2 inline-block rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold text-foreground">
+                <span className="me-2 inline-block rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold text-foreground">
                   Essay Question
                 </span>
               </CardTitle>

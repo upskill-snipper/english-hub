@@ -385,23 +385,23 @@ export default function InterventionsPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-border/60 text-left">
-                    <th className="pb-3 pr-4 font-medium text-muted-foreground">
+                  <tr className="border-b border-border/60 text-start">
+                    <th className="pb-3 pe-4 font-medium text-muted-foreground">
                       {t('demo.b15.interventions.col_name')}
                     </th>
-                    <th className="pb-3 pr-4 font-medium text-muted-foreground">
+                    <th className="pb-3 pe-4 font-medium text-muted-foreground">
                       {t('demo.b15.interventions.col_year')}
                     </th>
-                    <th className="pb-3 pr-4 font-medium text-muted-foreground">
+                    <th className="pb-3 pe-4 font-medium text-muted-foreground">
                       {t('demo.b15.interventions.col_risk')}
                     </th>
-                    <th className="pb-3 pr-4 font-medium text-muted-foreground">
+                    <th className="pb-3 pe-4 font-medium text-muted-foreground">
                       {t('demo.b15.interventions.col_issue')}
                     </th>
-                    <th className="pb-3 pr-4 font-medium text-muted-foreground">
+                    <th className="pb-3 pe-4 font-medium text-muted-foreground">
                       {t('demo.b15.interventions.col_current')}
                     </th>
-                    <th className="pb-3 pr-4 font-medium text-muted-foreground">
+                    <th className="pb-3 pe-4 font-medium text-muted-foreground">
                       {t('demo.b15.interventions.col_assigned')}
                     </th>
                     <th className="pb-3 font-medium text-muted-foreground">
@@ -415,7 +415,7 @@ export default function InterventionsPage() {
                       key={student.id}
                       className="border-b border-border/40 hover:bg-muted/50 transition-colors"
                     >
-                      <td className="py-3 pr-4">
+                      <td className="py-3 pe-4">
                         <Link
                           href={`/demo/school/students/${student.id}`}
                           className="text-primary hover:text-primary/80 hover:underline font-medium"
@@ -423,10 +423,10 @@ export default function InterventionsPage() {
                           {student.name}
                         </Link>
                       </td>
-                      <td className="py-3 pr-4 text-muted-foreground">{student.yearGroup}</td>
-                      <td className="py-3 pr-4">{riskBadge(student.riskLevel)}</td>
-                      <td className="py-3 pr-4 text-muted-foreground">{student.issue}</td>
-                      <td className="py-3 pr-4">
+                      <td className="py-3 pe-4 text-muted-foreground">{student.yearGroup}</td>
+                      <td className="py-3 pe-4">{riskBadge(student.riskLevel)}</td>
+                      <td className="py-3 pe-4 text-muted-foreground">{student.issue}</td>
+                      <td className="py-3 pe-4">
                         {student.currentIntervention === 'None' ? (
                           <span className="text-muted-foreground italic">None</span>
                         ) : (
@@ -435,7 +435,7 @@ export default function InterventionsPage() {
                           </Badge>
                         )}
                       </td>
-                      <td className="py-3 pr-4 text-muted-foreground">{student.assignedTo}</td>
+                      <td className="py-3 pe-4 text-muted-foreground">{student.assignedTo}</td>
                       <td className="py-3">
                         <Button
                           size="sm"
@@ -448,7 +448,7 @@ export default function InterventionsPage() {
                             })
                           }}
                         >
-                          <ClipboardList className="h-3.5 w-3.5 mr-1.5" />
+                          <ClipboardList className="h-3.5 w-3.5 me-1.5" />
                           {t('demo.b15.interventions.plan_btn')}
                         </Button>
                       </td>
@@ -507,20 +507,20 @@ export default function InterventionsPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-border/60 text-left">
-                    <th className="pb-3 pr-4 font-medium text-muted-foreground">
+                  <tr className="border-b border-border/60 text-start">
+                    <th className="pb-3 pe-4 font-medium text-muted-foreground">
                       {t('demo.b15.interventions.col_student')}
                     </th>
-                    <th className="pb-3 pr-4 font-medium text-muted-foreground">
+                    <th className="pb-3 pe-4 font-medium text-muted-foreground">
                       {t('demo.b15.interventions.col_int_type')}
                     </th>
-                    <th className="pb-3 pr-4 font-medium text-muted-foreground">
+                    <th className="pb-3 pe-4 font-medium text-muted-foreground">
                       {t('demo.b15.interventions.col_start')}
                     </th>
-                    <th className="pb-3 pr-4 font-medium text-muted-foreground">
+                    <th className="pb-3 pe-4 font-medium text-muted-foreground">
                       {t('demo.b15.interventions.col_review')}
                     </th>
-                    <th className="pb-3 pr-4 font-medium text-muted-foreground">
+                    <th className="pb-3 pe-4 font-medium text-muted-foreground">
                       {t('demo.b15.interventions.col_notes')}
                     </th>
                     <th className="pb-3 font-medium text-muted-foreground">
@@ -534,27 +534,27 @@ export default function InterventionsPage() {
                       key={intervention.id}
                       className="border-b border-border/40 hover:bg-muted/50 transition-colors"
                     >
-                      <td className="py-3 pr-4 font-medium text-foreground">
+                      <td className="py-3 pe-4 font-medium text-foreground">
                         {intervention.studentName}
                       </td>
-                      <td className="py-3 pr-4">
+                      <td className="py-3 pe-4">
                         <Badge className="bg-primary/10 text-primary border-primary/30">
                           {intervention.interventionType}
                         </Badge>
                       </td>
-                      <td className="py-3 pr-4 text-muted-foreground">
+                      <td className="py-3 pe-4 text-muted-foreground">
                         <span className="flex items-center gap-1.5">
                           <Calendar className="h-3.5 w-3.5 text-muted-foreground" />
                           {intervention.startDate}
                         </span>
                       </td>
-                      <td className="py-3 pr-4 text-muted-foreground">
+                      <td className="py-3 pe-4 text-muted-foreground">
                         <span className="flex items-center gap-1.5">
                           <Calendar className="h-3.5 w-3.5 text-muted-foreground" />
                           {intervention.reviewDate}
                         </span>
                       </td>
-                      <td className="py-3 pr-4 text-muted-foreground max-w-xs">
+                      <td className="py-3 pe-4 text-muted-foreground max-w-xs">
                         <p className="line-clamp-2">{intervention.progressNotes}</p>
                       </td>
                       <td className="py-3">
@@ -568,7 +568,7 @@ export default function InterventionsPage() {
                             })
                           }}
                         >
-                          <MessageSquare className="h-3.5 w-3.5 mr-1.5" />
+                          <MessageSquare className="h-3.5 w-3.5 me-1.5" />
                           {t('demo.b15.interventions.update_btn')}
                         </Button>
                       </td>
@@ -658,7 +658,7 @@ export default function InterventionsPage() {
               })
             }}
           >
-            <Download className="h-4 w-4 mr-2" />
+            <Download className="h-4 w-4 me-2" />
             {t('demo.b15.interventions.export_btn')}
           </Button>
         </div>

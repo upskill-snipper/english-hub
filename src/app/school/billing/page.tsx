@@ -153,7 +153,7 @@ function FounderPlanCard({
             {t('school.billing.founder_access_heading')}
           </h2>
           <Badge className="w-fit border border-emerald-500/30 bg-emerald-500/15 text-emerald-400 text-xs">
-            <CheckCircle className="mr-1 h-3 w-3" />
+            <CheckCircle className="me-1 h-3 w-3" />
             {t('school.billing.active')}
           </Badge>
         </div>
@@ -164,14 +164,14 @@ function FounderPlanCard({
             <Calendar className="h-4 w-4 text-muted-foreground" />
             <span className="font-medium">{t('school.billing.free_until')}</span>
           </div>
-          <p className="text-sm text-muted-foreground pl-6">
+          <p className="text-sm text-muted-foreground ps-6">
             {t('school.billing.after_expiry_pre')}{' '}
             <span className="text-foreground font-medium">&pound;6/pupil/year</span>{' '}
             {t('school.billing.after_expiry_founder_suffix')}{' '}
             <span className="text-foreground font-medium">&pound;12/pupil/year</span>{' '}
             {t('school.billing.after_expiry_standard_suffix')}
           </p>
-          <div className="pl-6 pt-1">
+          <div className="ps-6 pt-1">
             <span className="inline-block rounded-md bg-muted/60 px-3 py-1 text-sm font-semibold text-foreground tabular-nums">
               {daysRemaining}{' '}
               {daysRemaining === 1
@@ -203,7 +203,7 @@ function FounderPlanCard({
             className="border-amber-500/40 text-clay-600 hover:bg-amber-500/10 hover:text-amber-700"
             render={<a href={buildRenewalMailto(access.schoolName)} />}
           >
-            <Mail className="mr-2 h-4 w-4" />
+            <Mail className="me-2 h-4 w-4" />
             {t('school.billing.contact_renew')}
           </Button>
           <Button
@@ -243,7 +243,7 @@ function PaidPlanCard({ access }: { access: SchoolAccessData }) {
           </h2>
           <div className="flex items-center gap-2">
             <Badge className="w-fit border border-emerald-500/30 bg-emerald-500/15 text-emerald-400 text-xs">
-              <CheckCircle className="mr-1 h-3 w-3" />
+              <CheckCircle className="me-1 h-3 w-3" />
               {t('school.billing.active')}
             </Badge>
             <span className="text-sm text-muted-foreground font-medium">
@@ -260,7 +260,7 @@ function PaidPlanCard({ access }: { access: SchoolAccessData }) {
               <span className="font-medium text-foreground">{formatDate(access.accessUntil)}</span>
             </div>
             {access.daysRemaining !== null && (
-              <p className="pl-6 text-xs text-muted-foreground">
+              <p className="ps-6 text-xs text-muted-foreground">
                 {access.daysRemaining} {t('school.billing.days_until_renewal')}
               </p>
             )}
@@ -293,7 +293,7 @@ function PaidPlanCard({ access }: { access: SchoolAccessData }) {
                   />
                 }
               >
-                <Mail className="mr-1.5 h-3.5 w-3.5" />
+                <Mail className="me-1.5 h-3.5 w-3.5" />
                 {t('school.billing.email_cancel')}
               </Button>
               <Button variant="ghost" size="sm" onClick={() => setShowCancelConfirm(false)}>
@@ -317,7 +317,7 @@ function PricingTierRow({ tier, isFounder }: { tier: PricingTier; isFounder: boo
         <p className="text-sm font-semibold text-foreground">{tier.name}</p>
         <p className="text-xs text-muted-foreground">{tier.yearGroups}</p>
       </div>
-      <div className="text-right">
+      <div className="text-end">
         <div className="flex items-baseline gap-1">
           <span className="text-lg font-bold text-foreground tabular-nums">
             &pound;{formattedPrice}
@@ -413,7 +413,7 @@ function PricingCard({ isFounder }: { isFounder: boolean }) {
             className="bg-primary hover:bg-primary/90"
             render={<a href={`mailto:${BILLING_EMAIL}?subject=Subscription%20Enquiry`} />}
           >
-            <Mail className="mr-2 h-4 w-4" />
+            <Mail className="me-2 h-4 w-4" />
             {t('school.billing.get_quote')}
           </Button>
           <Button
@@ -469,7 +469,7 @@ function UsageStatsCard({ stats, loading }: { stats: UsageStats; loading: boolea
                 <Icon className="h-4 w-4 text-muted-foreground" />
                 <span className="text-sm font-medium text-foreground">{label}</span>
               </div>
-              <div className="text-right">
+              <div className="text-end">
                 <span className="text-sm font-semibold text-foreground tabular-nums">{value}</span>
                 <span className="mx-1 text-xs text-muted-foreground">
                   {t('school.billing.usage.of')}
@@ -541,7 +541,7 @@ function RenewalCtaCard({
             size="sm"
             render={<a href={buildRenewalMailto(schoolName)} />}
           >
-            <Mail className="mr-2 h-4 w-4" />
+            <Mail className="me-2 h-4 w-4" />
             {t('school.billing.renewal_cta.button')}
           </Button>
         </div>

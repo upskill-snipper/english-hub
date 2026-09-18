@@ -284,12 +284,12 @@ export default function AccountPage() {
                 {t('account.year_group')}
               </label>
               <div className="relative">
-                <GraduationCap className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                <GraduationCap className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                 <select
                   id="yearGroup"
                   value={yearGroup}
                   onChange={(e) => setYearGroup(e.target.value)}
-                  className="input-field pl-11 appearance-none"
+                  className="input-field ps-11 appearance-none"
                 >
                   <option value="">{t('account.select_year_group')}</option>
                   {YEAR_GROUPS.map((yg) => (
@@ -306,12 +306,12 @@ export default function AccountPage() {
                 {t('account.exam_board')}
               </label>
               <div className="relative">
-                <BookOpen className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                <BookOpen className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                 <select
                   id="examBoard"
                   value={examBoard}
                   onChange={(e) => setExamBoard(e.target.value)}
-                  className="input-field pl-11 appearance-none"
+                  className="input-field ps-11 appearance-none"
                 >
                   <option value="">{t('account.select_exam_board')}</option>
                   {EXAM_BOARDS.map((eb) => (
@@ -326,12 +326,12 @@ export default function AccountPage() {
             <button type="submit" disabled={profileLoading} className="btn-primary">
               {profileLoading ? (
                 <>
-                  <Loader2 className="w-4 h-4 animate-spin mr-2" />
+                  <Loader2 className="w-4 h-4 animate-spin me-2" />
                   {t('account.saving')}
                 </>
               ) : (
                 <>
-                  <Save className="w-4 h-4 mr-2" />
+                  <Save className="w-4 h-4 me-2" />
                   {t('form.save_changes')}
                 </>
               )}
@@ -438,7 +438,7 @@ export default function AccountPage() {
             <button type="submit" disabled={passwordLoading} className="btn-primary">
               {passwordLoading ? (
                 <>
-                  <Loader2 className="w-4 h-4 animate-spin mr-2" />
+                  <Loader2 className="w-4 h-4 animate-spin me-2" />
                   {t('account.updating')}
                 </>
               ) : (

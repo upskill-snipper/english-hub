@@ -440,7 +440,7 @@ export default async function Paper2Page() {
 
           {/* Writing marking guide */}
           <div className="mt-8 overflow-x-auto rounded-xl border border-border bg-card shadow-md">
-            <table className="w-full text-left text-sm">
+            <table className="w-full text-start text-sm">
               <thead className="bg-accent text-white">
                 <tr>
                   <th className="px-4 py-3 font-semibold">Level</th>
@@ -536,7 +536,7 @@ export default async function Paper2Page() {
                 importance of travel.&rdquo;
               </p>
             </div>
-            <div className="mt-4 rounded-lg border-l-4 border-accent bg-primary/10 p-4">
+            <div className="mt-4 rounded-lg border-s-4 border-accent bg-primary/10 p-4">
               <p className="text-sm font-semibold text-primary">{tr(`Example paragraph:`)}</p>
               <div className="mt-2 text-sm text-foreground leading-relaxed">
                 <p>
@@ -591,7 +591,7 @@ export default async function Paper2Page() {
                 Write a speech to deliver at a school assembly arguing against this decision.&rdquo;
               </p>
             </div>
-            <div className="mt-4 rounded-lg border-l-4 border-accent bg-primary/10 p-4">
+            <div className="mt-4 rounded-lg border-s-4 border-accent bg-primary/10 p-4">
               <p className="text-sm font-semibold text-primary">{tr(`Example opening:`)}</p>
               <div className="mt-2 text-sm text-foreground leading-relaxed">
                 <p>
@@ -654,7 +654,7 @@ export default async function Paper2Page() {
             {tr(`Exam Strategy &amp; Timing`)}
           </h2>
           <div className="mt-6 overflow-x-auto rounded-xl border border-border bg-card shadow-md">
-            <table className="w-full text-left text-sm">
+            <table className="w-full text-start text-sm">
               <thead className="bg-accent text-white">
                 <tr>
                   <th className="px-4 py-3 font-semibold">Question</th>

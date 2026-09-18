@@ -552,7 +552,7 @@ export default function GradeDashboardPage() {
               <p className="text-2xl font-bold">
                 {t('dashboard.grades.predicted')}:{' '}
                 <span className={gradeTextClass(predictedGrade)}>{predictedGrade}</span>
-                <span className="ml-2 text-sm font-medium text-muted-foreground">
+                <span className="ms-2 text-sm font-medium text-muted-foreground">
                   ({gradeLabel(predictedGrade, t)})
                 </span>
               </p>
@@ -585,7 +585,7 @@ export default function GradeDashboardPage() {
             ) : (
               <div className="flex h-48 items-end gap-2">
                 {/* Y-axis labels */}
-                <div className="flex h-full flex-col justify-between text-xs text-muted-foreground pr-2 shrink-0">
+                <div className="flex h-full flex-col justify-between text-xs text-muted-foreground pe-2 shrink-0">
                   <span>100%</span>
                   <span>75%</span>
                   <span>50%</span>
@@ -644,7 +644,7 @@ export default function GradeDashboardPage() {
                           key={s.courseId}
                           className="flex items-center justify-between rounded-lg bg-green-500/10 border border-green-500/20 px-3 py-2"
                         >
-                          <span className="text-sm font-medium truncate mr-2">{s.courseName}</span>
+                          <span className="text-sm font-medium truncate me-2">{s.courseName}</span>
                           <span className="shrink-0 rounded-md bg-green-500/20 px-2 py-0.5 text-xs font-semibold text-green-700 dark:text-green-400">
                             {scoreLabel(s.average)} ({s.average}%)
                           </span>
@@ -671,7 +671,7 @@ export default function GradeDashboardPage() {
                           key={w.courseId}
                           className="flex items-center justify-between rounded-lg bg-amber-500/10 border border-amber-500/20 px-3 py-2"
                         >
-                          <span className="text-sm font-medium truncate mr-2">{w.courseName}</span>
+                          <span className="text-sm font-medium truncate me-2">{w.courseName}</span>
                           <span className="shrink-0 rounded-md bg-amber-500/20 px-2 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-300">
                             {scoreLabel(w.average)} ({w.average}%)
                           </span>
@@ -731,7 +731,7 @@ export default function GradeDashboardPage() {
           {/* ── d) Recommended Next Steps ──────────────────────────────── */}
           <div className="rounded-xl border border-border bg-card p-6 lg:col-span-3">
             <h2 className="mb-4 text-sm font-medium uppercase tracking-wider text-muted-foreground">
-              <Zap className="inline h-4 w-4 mr-1 text-primary" />
+              <Zap className="inline h-4 w-4 me-1 text-primary" />
               {t('dashboard.grades.recs')}
             </h2>
 

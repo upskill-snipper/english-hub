@@ -161,7 +161,7 @@ export function MyNotes({ slug, title }: MyNotesProps) {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex w-full items-center justify-between px-4 py-3 text-left text-foreground hover:bg-card/80 transition-colors"
+        className="flex w-full items-center justify-between px-4 py-3 text-start text-foreground hover:bg-card/80 transition-colors"
         aria-expanded={isOpen}
       >
         <span className="flex items-center gap-2 font-medium">

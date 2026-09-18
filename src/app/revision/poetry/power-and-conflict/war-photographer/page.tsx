@@ -786,7 +786,7 @@ export default function WarPhotographerPage() {
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/revision/poetry" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -855,7 +855,7 @@ export default function WarPhotographerPage() {
               <div className="flex items-baseline justify-between mb-2">
                 <div>
                   <span className="text-sm font-semibold text-foreground">{c.poem}</span>
-                  <span className="text-sm text-muted-foreground ml-1.5">by {c.poet}</span>
+                  <span className="text-sm text-muted-foreground ms-1.5">by {c.poet}</span>
                 </div>
                 <Button
                   variant="ghost"

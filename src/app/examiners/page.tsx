@@ -137,11 +137,11 @@ export default function ExaminersPage() {
       <section className="relative overflow-hidden border-b border-border/60">
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl"
+          className="pointer-events-none absolute -end-32 -top-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute -left-20 -bottom-32 h-72 w-72 rounded-full bg-clay-500/[0.05] blur-3xl"
+          className="pointer-events-none absolute -start-20 -bottom-32 h-72 w-72 rounded-full bg-clay-500/[0.05] blur-3xl"
         />
         <div className="relative mx-auto max-w-5xl px-4 py-20 text-center sm:px-6 sm:py-28">
           <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-primary">
@@ -157,7 +157,7 @@ export default function ExaminersPage() {
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button size="lg" className="h-12 px-7 text-base" render={<Link href="/marker" />}>
-              <PencilLine className="mr-1.5 h-4 w-4" />
+              <PencilLine className="me-1.5 h-4 w-4" />
               Apply to mark
             </Button>
             <Link
@@ -314,7 +314,7 @@ export default function ExaminersPage() {
         aria-labelledby="final-cta-heading"
         className="border-t border-border/60 bg-background"
       >
-        <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-6 px-4 py-14 text-center sm:px-6 md:flex-row md:text-left">
+        <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-6 px-4 py-14 text-center sm:px-6 md:flex-row md:text-start">
           <div>
             <h2
               id="final-cta-heading"
@@ -328,7 +328,7 @@ export default function ExaminersPage() {
           </div>
           <Button size="lg" className="h-12 px-7 text-base" render={<Link href="/marker" />}>
             Go to the marking console
-            <ArrowRight className="ml-1.5 h-4 w-4" />
+            <ArrowRight className="ms-1.5 h-4 w-4" />
           </Button>
         </div>
       </section>

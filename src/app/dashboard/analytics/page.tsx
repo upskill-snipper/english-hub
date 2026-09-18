@@ -281,7 +281,7 @@ export default function AnalyticsPage() {
               <>
                 {/* Study Time */}
                 <Tooltip>
-                  <TooltipTrigger className="text-left">
+                  <TooltipTrigger className="text-start">
                     <Card className="animate-fade-in">
                       <CardContent className="pt-5">
                         <div className="flex items-center gap-3">
@@ -309,7 +309,7 @@ export default function AnalyticsPage() {
 
                 {/* Modules Completed */}
                 <Tooltip>
-                  <TooltipTrigger className="text-left">
+                  <TooltipTrigger className="text-start">
                     <Card className="animate-fade-in">
                       <CardContent className="pt-5">
                         <div className="flex items-center gap-3">
@@ -339,7 +339,7 @@ export default function AnalyticsPage() {
 
                 {/* Average Score */}
                 <Tooltip>
-                  <TooltipTrigger className="text-left">
+                  <TooltipTrigger className="text-start">
                     <Card className="animate-fade-in">
                       <CardContent className="pt-5">
                         <div className="flex items-center gap-3">
@@ -387,7 +387,7 @@ export default function AnalyticsPage() {
 
                 {/* Streak */}
                 <Tooltip>
-                  <TooltipTrigger className="text-left">
+                  <TooltipTrigger className="text-start">
                     <Card className="animate-fade-in">
                       <CardContent className="pt-5">
                         <div className="flex items-center gap-3">
@@ -417,7 +417,7 @@ export default function AnalyticsPage() {
 
                 {/* Exam Readiness */}
                 <Tooltip>
-                  <TooltipTrigger className="text-left">
+                  <TooltipTrigger className="text-start">
                     <Card className="animate-fade-in">
                       <CardContent className="pt-5">
                         <div className="flex items-center gap-3">
@@ -627,7 +627,7 @@ export default function AnalyticsPage() {
             <Card>
               <CardHeader>
                 <CardTitle>
-                  <Lightbulb className="mr-1.5 inline-block h-4 w-4 text-clay-600" />
+                  <Lightbulb className="me-1.5 inline-block h-4 w-4 text-clay-600" />
                   {t('dashboard.analytics.recommendations_title')}
                 </CardTitle>
                 <CardDescription>{t('dashboard.analytics.recommendations_desc')}</CardDescription>
@@ -688,7 +688,7 @@ export default function AnalyticsPage() {
             <Card>
               <CardHeader>
                 <CardTitle>
-                  <Activity className="mr-1.5 inline-block h-4 w-4 text-blue-400" />
+                  <Activity className="me-1.5 inline-block h-4 w-4 text-blue-400" />
                   {t('dashboard.analytics.recent_activity_title')}
                 </CardTitle>
                 <CardDescription>{t('dashboard.analytics.recent_activity_desc')}</CardDescription>
@@ -724,7 +724,7 @@ export default function AnalyticsPage() {
                               </p>
                               <p className="truncate text-xs text-muted-foreground">
                                 {item.subtitle}
-                                <span className="ml-1.5 opacity-70">
+                                <span className="ms-1.5 opacity-70">
                                   · {formatRelativeDate(item.timestamp)}
                                 </span>
                               </p>

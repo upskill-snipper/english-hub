@@ -168,7 +168,7 @@ export default async function ExamFormatPage() {
           {SECTION_A_TIMING.map((step, i) => (
             <li key={step.label} className="rounded-xl border border-border/60 bg-card p-4">
               <p className="text-sm font-medium">
-                <span className="font-mono text-primary mr-2">{i + 1}.</span>
+                <span className="font-mono text-primary me-2">{i + 1}.</span>
                 {step.label}
               </p>
               <p className="text-xs text-muted-foreground leading-relaxed mt-1">{step.detail}</p>

@@ -322,7 +322,7 @@ export default function ProgressCardsPage() {
                       onClick={handlePrintAll}
                       disabled={!actionsReady}
                     >
-                      <Printer className="h-3.5 w-3.5 mr-1.5" />
+                      <Printer className="h-3.5 w-3.5 me-1.5" />
                       Print All ({students.length})
                     </Button>
                     <Button
@@ -331,7 +331,7 @@ export default function ProgressCardsPage() {
                       onClick={handlePrintSelected}
                       disabled={!actionsReady || selectedIds.size === 0}
                     >
-                      <FileText className="h-3.5 w-3.5 mr-1.5" />
+                      <FileText className="h-3.5 w-3.5 me-1.5" />
                       Print Selected ({selectedIds.size})
                     </Button>
                     <Button
@@ -340,7 +340,7 @@ export default function ProgressCardsPage() {
                       onClick={handleExport}
                       disabled={!actionsReady || selectedIds.size === 0}
                     >
-                      <Download className="h-3.5 w-3.5 mr-1.5" />
+                      <Download className="h-3.5 w-3.5 me-1.5" />
                       Export CSV
                     </Button>
                   </div>
@@ -427,7 +427,7 @@ export default function ProgressCardsPage() {
                   <button
                     onClick={() => toggleStudent(student.student_id)}
                     className={cn(
-                      'absolute top-3 right-3 z-10 flex h-6 w-6 items-center justify-center rounded-md border transition-colors',
+                      'absolute top-3 end-3 z-10 flex h-6 w-6 items-center justify-center rounded-md border transition-colors',
                       selectedIds.has(student.student_id)
                         ? 'border-primary bg-primary text-primary-foreground'
                         : 'border-border bg-card text-muted-foreground hover:border-primary/50',

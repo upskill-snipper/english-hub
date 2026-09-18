@@ -489,7 +489,7 @@ export default function PracticePage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="border-l-4 border-primary/40 pl-5 text-[0.95rem] italic leading-relaxed text-foreground/80">
+                  <div className="border-s-4 border-primary/40 ps-5 text-[0.95rem] italic leading-relaxed text-foreground/80">
                     {currentQuestion.extract.split('\n').map((para, i) => (
                       <p key={i} className={i > 0 ? 'mt-4' : ''}>
                         {para}
@@ -699,7 +699,7 @@ export default function PracticePage() {
                         </button>
                       ))}
                       {rating > 0 && (
-                        <span className="ml-3 text-sm text-muted-foreground">{rating}/5</span>
+                        <span className="ms-3 text-sm text-muted-foreground">{rating}/5</span>
                       )}
                     </div>
                   </CardContent>

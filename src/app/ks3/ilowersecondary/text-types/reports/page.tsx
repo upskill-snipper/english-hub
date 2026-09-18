@@ -214,43 +214,43 @@ export default async function ReportsTextTypePage() {
             accurate knowledge rather than to entertain or persuade. Look for these features:
           </p>
           <ul className="space-y-3 text-sm leading-relaxed text-muted-foreground">
-            <li className="border-l-4 border-primary/40 pl-4">
+            <li className="border-s-4 border-primary/40 ps-4">
               <span className="font-semibold text-foreground">Objective, impersonal tone.</span> The
               writer stays out of the text. There is little or no opinion, and emotive or persuasive
               language is avoided.
             </li>
-            <li className="border-l-4 border-primary/40 pl-4">
+            <li className="border-s-4 border-primary/40 ps-4">
               <span className="font-semibold text-foreground">Third person.</span> The subject is
               described using &ldquo;it&rdquo;, &ldquo;they&rdquo; or noun phrases, not
               &ldquo;I&rdquo; or &ldquo;you&rdquo;. The passive voice is common (&ldquo;a survey was
               carried out&rdquo;).
             </li>
-            <li className="border-l-4 border-primary/40 pl-4">
+            <li className="border-s-4 border-primary/40 ps-4">
               <span className="font-semibold text-foreground">
                 Present tense for general truths.
               </span>{' '}
               A report describes how things generally are (&ldquo;water boils at 100&deg;C&rdquo;),
               not a single past event.
             </li>
-            <li className="border-l-4 border-primary/40 pl-4">
+            <li className="border-s-4 border-primary/40 ps-4">
               <span className="font-semibold text-foreground">Headings and sub-headings.</span>{' '}
               Information is broken into labelled sections so a reader can find what they need.
             </li>
-            <li className="border-l-4 border-primary/40 pl-4">
+            <li className="border-s-4 border-primary/40 ps-4">
               <span className="font-semibold text-foreground">
                 Classification and factual organisation.
               </span>{' '}
               Content is grouped by topic (habitat, diet, findings) rather than ordered by time.
             </li>
-            <li className="border-l-4 border-primary/40 pl-4">
+            <li className="border-s-4 border-primary/40 ps-4">
               <span className="font-semibold text-foreground">Formal vocabulary.</span> Precise,
               often technical words are chosen for clarity, not for effect.
             </li>
-            <li className="border-l-4 border-primary/40 pl-4">
+            <li className="border-s-4 border-primary/40 ps-4">
               <span className="font-semibold text-foreground">Evidence and figures.</span> Claims
               are supported with data, examples or measurements.
             </li>
-            <li className="border-l-4 border-primary/40 pl-4">
+            <li className="border-s-4 border-primary/40 ps-4">
               <span className="font-semibold text-foreground">Conclusion or recommendations.</span>{' '}
               Many reports end by drawing a measured conclusion from the evidence, sometimes
               recommending action.
@@ -271,7 +271,7 @@ export default async function ReportsTextTypePage() {
           <div className="overflow-x-auto">
             <table className="w-full border-collapse text-sm">
               <thead>
-                <tr className="bg-muted text-left text-foreground">
+                <tr className="bg-muted text-start text-foreground">
                   <th className="border border-border/60 p-3 font-semibold">Feature</th>
                   <th className="border border-border/60 p-3 font-semibold">Report</th>
                   <th className="border border-border/60 p-3 font-semibold">Recount</th>
@@ -354,7 +354,7 @@ export default async function ReportsTextTypePage() {
           </div>
           <ol className="space-y-4">
             {INFORMATION_REPORT.annotations.map((a) => (
-              <li key={a.feature} className="border-l-4 border-primary/40 pl-4">
+              <li key={a.feature} className="border-s-4 border-primary/40 ps-4">
                 <p className="text-sm font-semibold text-foreground">{a.feature}</p>
                 <p className="text-sm leading-relaxed text-muted-foreground">{a.note}</p>
               </li>
@@ -391,7 +391,7 @@ export default async function ReportsTextTypePage() {
           </div>
           <ol className="space-y-4">
             {FINDINGS_REPORT.annotations.map((a) => (
-              <li key={a.feature} className="border-l-4 border-primary/40 pl-4">
+              <li key={a.feature} className="border-s-4 border-primary/40 ps-4">
                 <p className="text-sm font-semibold text-foreground">{a.feature}</p>
                 <p className="text-sm leading-relaxed text-muted-foreground">{a.note}</p>
               </li>
@@ -416,7 +416,7 @@ export default async function ReportsTextTypePage() {
                 <h3 className="mb-2 font-heading text-lg font-semibold text-foreground">
                   {heading}
                 </h3>
-                <ul className="list-disc space-y-1 pl-5 text-sm leading-relaxed text-muted-foreground">
+                <ul className="list-disc space-y-1 ps-5 text-sm leading-relaxed text-muted-foreground">
                   {prompts.map((p) => (
                     <li key={p}>{p}</li>
                   ))}

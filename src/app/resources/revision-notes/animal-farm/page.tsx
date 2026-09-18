@@ -38,7 +38,7 @@ function Section({
     <section id={id} className="border border-border rounded-lg bg-card shadow-md">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left"
+        className="flex w-full items-center justify-between px-5 py-4 text-start"
         aria-expanded={open}
       >
         <h2 className="text-xl font-bold text-foreground">{title}</h2>
@@ -578,7 +578,7 @@ export default function AnimalFarmStudyGuide() {
         </p>
         <div className="space-y-4">
           {keyQuotes.map((q, i) => (
-            <div key={i} className="rounded-lg border-l-4 border-primary bg-muted p-4">
+            <div key={i} className="rounded-lg border-s-4 border-primary bg-muted p-4">
               <blockquote className="text-base font-medium italic text-foreground">
                 &ldquo;{q.quote}&rdquo;
               </blockquote>
@@ -620,8 +620,8 @@ export default function AnimalFarmStudyGuide() {
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-border text-left">
-                <th className="pb-2 pr-4 font-semibold text-foreground">Character / Event</th>
+              <tr className="border-b border-border text-start">
+                <th className="pb-2 pe-4 font-semibold text-foreground">Character / Event</th>
                 <th className="pb-2 font-semibold text-foreground">Historical Parallel</th>
               </tr>
             </thead>
@@ -648,7 +648,7 @@ export default function AnimalFarmStudyGuide() {
                 ['The card game (final scene)', 'The Tehran Conference (1943)'],
               ].map(([farm, history], i) => (
                 <tr key={i}>
-                  <td className="py-2 pr-4 text-foreground">{farm}</td>
+                  <td className="py-2 pe-4 text-foreground">{farm}</td>
                   <td className="py-2 text-muted-foreground">{history}</td>
                 </tr>
               ))}
@@ -758,7 +758,7 @@ export default function AnimalFarmStudyGuide() {
             "The fact that the animals cannot distinguish between pigs and humans in the final scene suggests that power itself --- not the ideology of those who hold it --- is the corrupting force. Orwell's argument is not that communism is uniquely evil but that any system concentrating power in a small elite will produce tyranny.",
             "Moses the Raven's return in the later chapters suggests that religion is not simply a tool of the old regime but a permanent feature of any hierarchical society. Both Jones and Napoleon find religion useful because it redirects the animals' hope from material improvement to an afterlife, preventing present-tense resistance.",
           ].map((point, i) => (
-            <div key={i} className="rounded-lg border-l-4 border-accent bg-muted p-4">
+            <div key={i} className="rounded-lg border-s-4 border-accent bg-muted p-4">
               <p className="text-sm leading-relaxed text-muted-foreground">{point}</p>
             </div>
           ))}
@@ -838,7 +838,7 @@ export default function AnimalFarmStudyGuide() {
             <p className="text-sm text-muted-foreground mb-3">
               How does Orwell use the character of Napoleon to explore the corrupting nature of
               power in <em>Animal Farm</em>?
-              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
+              <span className="ms-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder={t('study.revnotes.common.essay_placeholder')}
@@ -856,7 +856,7 @@ export default function AnimalFarmStudyGuide() {
             <p className="text-sm text-muted-foreground mb-3">
               How does Orwell present the role of propaganda and language as tools of control in{' '}
               <em>Animal Farm</em>?
-              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
+              <span className="ms-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder={t('study.revnotes.common.essay_placeholder')}
@@ -874,7 +874,7 @@ export default function AnimalFarmStudyGuide() {
             <p className="text-sm text-muted-foreground mb-3">
               How does Orwell use the character of Boxer to explore the exploitation of the working
               class?
-              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
+              <span className="ms-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder={t('study.revnotes.common.essay_placeholder')}
@@ -891,7 +891,7 @@ export default function AnimalFarmStudyGuide() {
             <h3 className="font-bold text-foreground mb-1">Question 4</h3>
             <p className="text-sm text-muted-foreground mb-3">
               How does Orwell present the theme of equality and its betrayal in <em>Animal Farm</em>
-              ?<span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
+              ?<span className="ms-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder={t('study.revnotes.common.essay_placeholder')}

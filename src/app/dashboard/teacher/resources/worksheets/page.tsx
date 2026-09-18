@@ -118,12 +118,12 @@ export default async function WorksheetsPage() {
                   {actPrefix} {q.act.replace('Act ', '')}
                 </p>
               </div>
-              <span className="ml-auto inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
+              <span className="ms-auto inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
                 {q.theme}
               </span>
             </div>
 
-            <blockquote className="border-l-4 border-primary/30 pl-4 py-2 mb-3 bg-background rounded-r">
+            <blockquote className="border-s-4 border-primary/30 ps-4 py-2 mb-3 bg-background rounded-e">
               <p className="text-sm italic text-foreground">&ldquo;{q.quote}&rdquo;</p>
             </blockquote>
 

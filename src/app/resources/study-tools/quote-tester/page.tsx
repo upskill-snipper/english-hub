@@ -1189,7 +1189,7 @@ export default function QuoteTesterPage() {
                         )
                       })}
                     </div>
-                    <span className="ml-auto text-xs text-muted-foreground">{correctCount}/4</span>
+                    <span className="ms-auto text-xs text-muted-foreground">{correctCount}/4</span>
                   </div>
                 </div>
               )
@@ -1244,7 +1244,7 @@ export default function QuoteTesterPage() {
               </span>
             )}
           </div>
-          <div className="text-right">
+          <div className="text-end">
             <div className="text-sm font-semibold text-muted-foreground">
               Score: {sessionCorrect}/{sessionTotal}
             </div>

@@ -317,7 +317,7 @@ export default function TechniquesHubPage() {
           {/* Search bar */}
           <div className="mx-auto mt-8 max-w-lg">
             <div className="relative">
-              <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
+              <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-4">
                 <SearchIcon />
               </div>
               <input
@@ -325,7 +325,7 @@ export default function TechniquesHubPage() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder={tr('resources.techniques.hub.search_placeholder')}
-                className="w-full rounded-xl border-0 bg-card/95 py-3.5 pl-11 pr-4 text-sm text-foreground shadow-lg placeholder:text-muted-foreground focus:bg-card focus:outline-none focus:ring-2 focus:ring-primary/30"
+                className="w-full rounded-xl border-0 bg-card/95 py-3.5 ps-11 pe-4 text-sm text-foreground shadow-lg placeholder:text-muted-foreground focus:bg-card focus:outline-none focus:ring-2 focus:ring-primary/30"
               />
             </div>
           </div>

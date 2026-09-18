@@ -382,7 +382,7 @@ export default async function ContentVerificationMethodologyPage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Button size="lg" className="text-base px-8 h-12" render={<Link href="/help/report" />}>
-              <ArrowRight className="w-4 h-4 mr-2" />
+              <ArrowRight className="w-4 h-4 me-2" />
               {await t('about.cv.cta.report')}
             </Button>
             <Button
@@ -391,7 +391,7 @@ export default async function ContentVerificationMethodologyPage() {
               className="text-base px-8 h-12"
               render={<a href={`mailto:${COMPANY.legalEmail}`} />}
             >
-              <Mail className="w-4 h-4 mr-2" />
+              <Mail className="w-4 h-4 me-2" />
               {await t('about.cv.cta.email')} {COMPANY.legalEmail}
             </Button>
           </div>

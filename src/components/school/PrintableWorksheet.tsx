@@ -233,7 +233,7 @@ export const PrintableWorksheet = forwardRef<HTMLDivElement, PrintableWorksheetP
                   </span>
                 )}
               </div>
-              <div className="text-right text-sm text-muted-foreground shrink-0">
+              <div className="text-end text-sm text-muted-foreground shrink-0">
                 {className && <p>Class: {className}</p>}
                 {date && <p>Date: {date}</p>}
                 {computedTotalMarks > 0 && (
@@ -298,7 +298,7 @@ export const PrintableWorksheet = forwardRef<HTMLDivElement, PrintableWorksheetP
 
                         {/* Hint (Foundation scaffolding) */}
                         {q.hint && (
-                          <div className="worksheet-hint mt-2 border-l-2 border-blue-300 pl-3 dark:border-blue-700">
+                          <div className="worksheet-hint mt-2 border-s-2 border-blue-300 ps-3 dark:border-blue-700">
                             <p className="text-xs text-blue-700 italic dark:text-blue-400">
                               Hint: {q.hint}
                             </p>

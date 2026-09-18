@@ -318,7 +318,7 @@ export default function JoinCodesPage() {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="ml-auto shrink-0 text-zinc-400 hover:text-white px-1"
+                  className="ms-auto shrink-0 text-zinc-400 hover:text-white px-1"
                   onClick={() =>
                     copyToClipboard(
                       `${JOIN_BASE_URL}?code=${primaryCode.code}`,
@@ -415,25 +415,25 @@ export default function JoinCodesPage() {
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-zinc-800 text-xs text-zinc-500">
-                      <th className="px-4 py-3 text-left font-medium">
+                      <th className="px-4 py-3 text-start font-medium">
                         {tx('school.b15.join_codes.col_code')}
                       </th>
-                      <th className="px-4 py-3 text-left font-medium">
+                      <th className="px-4 py-3 text-start font-medium">
                         {tx('school.b15.join_codes.col_type')}
                       </th>
-                      <th className="px-4 py-3 text-left font-medium">
+                      <th className="px-4 py-3 text-start font-medium">
                         {tx('school.b15.join_codes.col_uses')}
                       </th>
-                      <th className="px-4 py-3 text-left font-medium">
+                      <th className="px-4 py-3 text-start font-medium">
                         {tx('school.b15.join_codes.col_expires')}
                       </th>
-                      <th className="px-4 py-3 text-left font-medium">
+                      <th className="px-4 py-3 text-start font-medium">
                         {tx('school.b15.join_codes.col_class')}
                       </th>
-                      <th className="px-4 py-3 text-left font-medium">
+                      <th className="px-4 py-3 text-start font-medium">
                         {tx('school.b15.join_codes.col_status')}
                       </th>
-                      <th className="px-4 py-3 text-right font-medium">
+                      <th className="px-4 py-3 text-end font-medium">
                         {tx('school.b15.join_codes.col_actions')}
                       </th>
                     </tr>
@@ -660,7 +660,7 @@ export default function JoinCodesPage() {
                 <div className="space-y-2">
                   <Label htmlFor="form-expires" className="text-zinc-300">
                     {tx('school.b15.join_codes.label_expires')}
-                    <span className="ml-1 text-zinc-500 font-normal">(optional)</span>
+                    <span className="ms-1 text-zinc-500 font-normal">(optional)</span>
                   </Label>
                   <Input
                     id="form-expires"
@@ -679,7 +679,7 @@ export default function JoinCodesPage() {
                 <div className="space-y-2">
                   <Label htmlFor="form-class" className="text-zinc-300">
                     {tx('school.b15.join_codes.label_class')}
-                    <span className="ml-1 text-zinc-500 font-normal">(optional)</span>
+                    <span className="ms-1 text-zinc-500 font-normal">(optional)</span>
                   </Label>
                   <select
                     id="form-class"
@@ -711,12 +711,12 @@ export default function JoinCodesPage() {
                 >
                   {creating ? (
                     <>
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      <Loader2 className="me-2 h-4 w-4 animate-spin" />
                       {tx('school.b15.join_codes.btn_generating')}
                     </>
                   ) : (
                     <>
-                      <Key className="mr-2 h-4 w-4" />
+                      <Key className="me-2 h-4 w-4" />
                       {tx('school.b15.join_codes.btn_generate')}
                     </>
                   )}

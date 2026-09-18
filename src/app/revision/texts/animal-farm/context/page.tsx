@@ -261,10 +261,10 @@ export default function AnimalFarmContextPage() {
               {t('rev.texts.common.key_timeline')}
             </h2>
           </div>
-          <div className="relative ml-4 border-l-2 border-border/60 pl-6 space-y-4">
+          <div className="relative ms-4 border-s-2 border-border/60 ps-6 space-y-4">
             {TIMELINE.map((item, i) => (
               <div key={i} className="relative">
-                <div className="absolute -left-[31px] top-1 size-3 rounded-full border-2 border-primary bg-background" />
+                <div className="absolute -start-[31px] top-1 size-3 rounded-full border-2 border-primary bg-background" />
                 <div className="rounded-lg border border-border/60 bg-card p-3">
                   <div className="flex items-baseline gap-2">
                     <span className="text-sm font-bold text-primary">{item.year}</span>
@@ -337,10 +337,10 @@ export default function AnimalFarmContextPage() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="bg-primary/[0.08]">
-                  <th className="px-4 py-3 text-left font-bold text-primary uppercase tracking-wider text-xs">
+                  <th className="px-4 py-3 text-start font-bold text-primary uppercase tracking-wider text-xs">
                     Character / Event
                   </th>
-                  <th className="px-4 py-3 text-left font-bold text-clay-700 dark:text-clay-300 uppercase tracking-wider text-xs">
+                  <th className="px-4 py-3 text-start font-bold text-clay-700 dark:text-clay-300 uppercase tracking-wider text-xs">
                     Historical Parallel
                   </th>
                 </tr>

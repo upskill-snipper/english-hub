@@ -120,7 +120,7 @@ export function ScriptPanel(p: Props) {
             onClick={() => p.onModeChange('text')}
             aria-pressed={p.mode === 'text'}
           >
-            <Type className="mr-1 inline h-3.5 w-3.5" /> Typed
+            <Type className="me-1 inline h-3.5 w-3.5" /> Typed
           </button>
           <button
             type="button"
@@ -128,7 +128,7 @@ export function ScriptPanel(p: Props) {
             onClick={() => p.onModeChange('photo')}
             aria-pressed={p.mode === 'photo'}
           >
-            <Camera className="mr-1 inline h-3.5 w-3.5" /> Photographs
+            <Camera className="me-1 inline h-3.5 w-3.5" /> Photographs
           </button>
         </div>
       }

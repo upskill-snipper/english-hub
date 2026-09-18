@@ -660,7 +660,7 @@ function LockedTeaser({ t, requiredFunds }: { t: (key: string) => string; requir
         </p>
       </div>
 
-      <div className="mx-auto mt-6 grid max-w-md gap-2 text-left">
+      <div className="mx-auto mt-6 grid max-w-md gap-2 text-start">
         {[
           t('ielts.visa.locked.item1') || 'Maintenance-funds calculator (London vs outside)',
           t('ielts.visa.locked.item2') || '28-day hold + 31-day statement checks',

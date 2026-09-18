@@ -343,7 +343,7 @@ export default function SafeguardingReportPage() {
             required
           />
           <p
-            className={`mt-1 text-right text-xs ${
+            className={`mt-1 text-end text-xs ${
               description.length >= DESCRIPTION_MAX
                 ? 'text-red-500 font-medium'
                 : 'text-muted-foreground'

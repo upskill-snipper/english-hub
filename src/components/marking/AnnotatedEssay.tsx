@@ -50,7 +50,7 @@ export function AnnotatedEssay({ paragraphs, annotations, className }: Annotated
         </article>
 
         {/* ── Comment rail ──────────────────────────────────────── */}
-        <aside className="space-y-3 lg:border-l lg:border-border lg:pl-4">
+        <aside className="space-y-3 lg:border-s lg:border-border lg:ps-4">
           <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
             {t('marking.marker_comments')}
           </p>
@@ -61,7 +61,7 @@ export function AnnotatedEssay({ paragraphs, annotations, className }: Annotated
                   type="button"
                   onClick={() => setActiveId((cur) => (cur === a.id ? null : a.id))}
                   className={cn(
-                    'w-full rounded-lg border border-border/60 bg-muted/40 p-3 text-left transition-colors hover:border-primary/40 hover:bg-muted',
+                    'w-full rounded-lg border border-border/60 bg-muted/40 p-3 text-start transition-colors hover:border-primary/40 hover:bg-muted',
                     activeId === a.id && 'border-primary/60 bg-primary/10',
                   )}
                 >

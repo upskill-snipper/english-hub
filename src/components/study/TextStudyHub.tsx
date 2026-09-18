@@ -180,10 +180,10 @@ function QuickQuiz({
     return (
       <button
         onClick={() => setStarted(true)}
-        className="flex w-full items-center gap-3 rounded-xl border border-teal-800/15 bg-teal-800/5 p-4 text-left transition-all hover:bg-teal-800/10 hover:border-teal-800/25"
+        className="flex w-full items-center gap-3 rounded-xl border border-teal-800/15 bg-teal-800/5 p-4 text-start transition-all hover:bg-teal-800/10 hover:border-teal-800/25"
       >
         <div className="flex size-10 items-center justify-center rounded-lg bg-teal-800/15">
-          <Play className="size-4 text-teal-700 ml-0.5" />
+          <Play className="size-4 text-teal-700 ms-0.5" />
         </div>
         <div>
           <p className="text-sm font-medium text-ink-900">{t('text_hub.quick_quote_quiz')}</p>
@@ -243,7 +243,7 @@ function QuickQuiz({
               key={i}
               onClick={() => handleAnswer(i)}
               disabled={answered}
-              className={`w-full flex items-center gap-2 rounded-lg border px-3 py-2 text-xs text-left transition-colors ${cls}`}
+              className={`w-full flex items-center gap-2 rounded-lg border px-3 py-2 text-xs text-start transition-colors ${cls}`}
             >
               {answered && i === q.correct && <Check className="size-3 text-teal-700 shrink-0" />}
               {answered && i === selectedAnswer && i !== q.correct && (
@@ -344,7 +344,7 @@ function FlashcardDrill({ cards }: { cards: { front: string; back: string }[] })
 
       <button
         onClick={() => setFlipped(!flipped)}
-        className="w-full min-h-[80px] rounded-lg border border-ink-100 bg-cream-50 p-4 text-left transition-all hover:bg-cream-100"
+        className="w-full min-h-[80px] rounded-lg border border-ink-100 bg-cream-50 p-4 text-start transition-all hover:bg-cream-100"
       >
         {!flipped ? (
           <p className="text-sm font-serif italic text-ink-800">&ldquo;{card.front}&rdquo;</p>

@@ -525,7 +525,7 @@ export default async function OCRInspectorCallsPage() {
           <div className="mt-6 space-y-6">
             {keyQuotations.map((q) => (
               <div key={q.quote} className="rounded-lg border border-border bg-card p-5 shadow-md">
-                <blockquote className="border-l-4 border-accent pl-4 text-lg font-medium italic text-foreground">
+                <blockquote className="border-s-4 border-accent ps-4 text-lg font-medium italic text-foreground">
                   &ldquo;{q.quote}&rdquo;
                 </blockquote>
                 <p className="mt-2 text-sm font-medium text-primary">{q.speaker}</p>

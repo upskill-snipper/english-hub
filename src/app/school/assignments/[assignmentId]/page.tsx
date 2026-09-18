@@ -463,17 +463,17 @@ export default function AssignmentDetailPage() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-border text-left">
-                  <th className="pb-3 pr-4 font-medium text-muted-foreground">
+                <tr className="border-b border-border text-start">
+                  <th className="pb-3 pe-4 font-medium text-muted-foreground">
                     {t('school.assignments.col.student')}
                   </th>
-                  <th className="pb-3 pr-4 font-medium text-muted-foreground">
+                  <th className="pb-3 pe-4 font-medium text-muted-foreground">
                     {t('school.assignments.col.status')}
                   </th>
-                  <th className="pb-3 pr-4 font-medium text-muted-foreground">
+                  <th className="pb-3 pe-4 font-medium text-muted-foreground">
                     {t('school.assignments.col.submitted')}
                   </th>
-                  <th className="pb-3 pr-4 font-medium text-muted-foreground">
+                  <th className="pb-3 pe-4 font-medium text-muted-foreground">
                     {t('school.assignments.col.score')}
                   </th>
                   <th className="pb-3 font-medium text-muted-foreground">
@@ -484,10 +484,10 @@ export default function AssignmentDetailPage() {
               <tbody>
                 {assignment.submissions.map((sub) => (
                   <tr key={sub.id} className="border-b border-border/50 last:border-0">
-                    <td className="py-3 pr-4">
+                    <td className="py-3 pe-4">
                       <span className="font-medium text-foreground">{sub.studentName}</span>
                     </td>
-                    <td className="py-3 pr-4">
+                    <td className="py-3 pe-4">
                       <Badge
                         variant="outline"
                         className={cn('text-xs', submissionStatusBadge(sub.status))}
@@ -495,7 +495,7 @@ export default function AssignmentDetailPage() {
                         {sub.status.charAt(0).toUpperCase() + sub.status.slice(1)}
                       </Badge>
                     </td>
-                    <td className="py-3 pr-4 text-muted-foreground">
+                    <td className="py-3 pe-4 text-muted-foreground">
                       {sub.submittedAt ? (
                         <span className="flex items-center gap-1">
                           <Clock className="h-3 w-3" />
@@ -505,7 +505,7 @@ export default function AssignmentDetailPage() {
                         <span className="text-xs">--</span>
                       )}
                     </td>
-                    <td className="py-3 pr-4">
+                    <td className="py-3 pe-4">
                       {sub.score !== null ? (
                         <span
                           className={cn(
@@ -524,7 +524,7 @@ export default function AssignmentDetailPage() {
                         <span className="flex items-center gap-1 text-xs text-muted-foreground max-w-[200px] truncate">
                           <MessageSquare className="h-3 w-3 shrink-0" />
                           {sub.feedback}
-                          <ReadAloudButton text={sub.feedback} iconOnly className="ml-1 shrink-0" />
+                          <ReadAloudButton text={sub.feedback} iconOnly className="ms-1 shrink-0" />
                         </span>
                       ) : (
                         <span className="text-xs text-muted-foreground">--</span>

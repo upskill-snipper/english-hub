@@ -137,7 +137,7 @@ export default async function Grade9Page() {
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/revision/grade-targets" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -580,7 +580,7 @@ export default async function Grade9Page() {
       {/* ── Bottom navigation ────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-primary/[0.06] via-card to-cyan-500/[0.04] p-6 sm:p-8">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="text-center sm:text-left">
+          <div className="text-center sm:text-start">
             <h2 className="text-heading-md font-heading text-foreground mb-1">
               Need to build foundations first?
             </h2>

@@ -127,7 +127,7 @@ function RecommendedSection({
                       variant="outline"
                       className="shrink-0 text-[10px] bg-amber-500/10 text-clay-600 border-amber-500/20"
                     >
-                      <Sparkles className="h-2.5 w-2.5 mr-0.5" />
+                      <Sparkles className="h-2.5 w-2.5 me-0.5" />
                       Recommended
                     </Badge>
                   </div>
@@ -196,7 +196,7 @@ function LessonCard({
                 variant="outline"
                 className="shrink-0 text-[10px] bg-amber-500/10 text-clay-600 border-amber-500/20"
               >
-                <Sparkles className="h-2.5 w-2.5 mr-0.5" />
+                <Sparkles className="h-2.5 w-2.5 me-0.5" />
                 Recommended
               </Badge>
             )}
@@ -245,7 +245,7 @@ function LessonCard({
               <GraduationCap className="h-3 w-3" />
               {lesson.yearGroup}
             </span>
-            <ArrowRight className="h-3 w-3 ml-auto text-primary" />
+            <ArrowRight className="h-3 w-3 ms-auto text-primary" />
           </div>
         </CardContent>
       </Card>
@@ -273,7 +273,7 @@ function CategorySection({
         <h2 className="text-lg font-bold text-foreground">
           {category === 'KS3 Skills' ? 'KS3 Skills Lessons' : `${category} Lessons`}
         </h2>
-        <span className="ml-2 text-sm text-muted-foreground">({lessons.length})</span>
+        <span className="ms-2 text-sm text-muted-foreground">({lessons.length})</span>
       </div>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {lessons.map((lesson) => (
@@ -427,17 +427,17 @@ export default function LessonsListClient({
 
         {/* Search */}
         <div className="mb-4 relative max-w-md">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+          <Search className="absolute start-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input
             placeholder="Search lessons by title, topic, skill, or keyword..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="pl-9"
+            className="ps-9"
           />
           {searchQuery && (
             <button
               onClick={() => setSearchQuery('')}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+              className="absolute end-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
             >
               <X className="h-3.5 w-3.5" />
             </button>
@@ -446,7 +446,7 @@ export default function LessonsListClient({
 
         {/* Filter bar */}
         <div className="mb-6 flex flex-wrap items-center gap-3">
-          <div className="flex items-center gap-1.5 text-sm text-muted-foreground mr-1">
+          <div className="flex items-center gap-1.5 text-sm text-muted-foreground me-1">
             <Filter className="h-3.5 w-3.5" />
             <span>Filters:</span>
           </div>
@@ -523,7 +523,7 @@ export default function LessonsListClient({
 
           {hasActiveFilters && (
             <Button variant="ghost" size="sm" onClick={clearAllFilters}>
-              <X className="h-3.5 w-3.5 mr-1" />
+              <X className="h-3.5 w-3.5 me-1" />
               Clear filters
             </Button>
           )}

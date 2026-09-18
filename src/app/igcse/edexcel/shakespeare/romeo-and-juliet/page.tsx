@@ -200,12 +200,12 @@ export default async function RomeoAndJulietHubPage() {
               className={buttonVariants({ variant: 'outline', size: 'sm' })}
             >
               Full themes guide
-              <ArrowRight className="ml-1 h-4 w-4" />
+              <ArrowRight className="ms-1 h-4 w-4" />
             </Link>
           </div>
           <div className="mt-6 space-y-4">
             {THEMES_PREVIEW.map((t) => (
-              <div key={t.theme} className="rounded-xl border-l-4 border-primary bg-muted p-5">
+              <div key={t.theme} className="rounded-xl border-s-4 border-primary bg-muted p-5">
                 <h3 className="text-base font-bold text-foreground">{t.theme}</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{t.text}</p>
               </div>

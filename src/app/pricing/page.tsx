@@ -196,7 +196,7 @@ function FeatureRow({
       {free && included && (
         <Badge
           variant="outline"
-          className="text-[10px] px-1.5 py-0 border-emerald-500/30 text-emerald-600 ml-auto"
+          className="text-[10px] px-1.5 py-0 border-emerald-500/30 text-emerald-600 ms-auto"
         >
           Free
         </Badge>
@@ -219,7 +219,7 @@ function PremiumFeatureRow({ feature, icon: Icon }: { feature: string; icon: Rea
           chip now states that truthfully. */}
       <Badge
         variant="outline"
-        className="text-[10px] px-1.5 py-0 border-primary/30 text-primary/80 ml-auto whitespace-nowrap"
+        className="text-[10px] px-1.5 py-0 border-primary/30 text-primary/80 ms-auto whitespace-nowrap"
       >
         {t('pricing.feat_chip_trial')}
       </Badge>
@@ -235,9 +235,9 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         type="button"
         onClick={() => setOpen(!open)}
         aria-expanded={open}
-        className="flex items-center justify-between w-full py-5 text-left group"
+        className="flex items-center justify-between w-full py-5 text-start group"
       >
-        <span className="font-semibold text-foreground text-sm sm:text-base pr-4">{q}</span>
+        <span className="font-semibold text-foreground text-sm sm:text-base pe-4">{q}</span>
         <ChevronDown
           className={`w-5 h-5 text-muted-foreground shrink-0 transition-transform duration-200 ${
             open ? 'rotate-180' : ''
@@ -494,7 +494,7 @@ function PricingContent() {
       {/* Background gradient effects */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute top-[60%] right-0 w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-[60%] end-0 w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-3xl" />
       </div>
 
       {/* ───────── Hero ───────── */}
@@ -558,7 +558,7 @@ function PricingContent() {
               render={<Link href="/auth/register" />}
             >
               {t('pricing.cta.create_free_account')}
-              <ArrowRight className="w-4 h-4 ml-1" />
+              <ArrowRight className="w-4 h-4 ms-1" />
             </Button>
           </div>
         </div>
@@ -583,7 +583,7 @@ function PricingContent() {
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
 
               <Badge className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold px-4 py-1 shadow-lg shadow-primary/25 whitespace-nowrap">
-                <GraduationCap className="w-3.5 h-3.5 mr-1" />
+                <GraduationCap className="w-3.5 h-3.5 me-1" />
                 {t('pricing.plan.student')}
               </Badge>
 
@@ -675,7 +675,7 @@ function PricingContent() {
                 <div className="mb-6">
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
                     {t('pricing.premium_label')}
-                    <span className="text-primary/70 normal-case ml-1">
+                    <span className="text-primary/70 normal-case ms-1">
                       {t('pricing.premium_then_unlimited_prefix')}
                     </span>
                   </p>
@@ -698,7 +698,7 @@ function PricingContent() {
                   {checkoutLoading === 'student_annual'
                     ? t('pricing.starting_checkout')
                     : t('pricing.start_7day_trial')}
-                  <ArrowRight className="w-4 h-4 ml-1" />
+                  <ArrowRight className="w-4 h-4 ms-1" />
                 </Button>
                 <button
                   onClick={() => handleCheckout('student_monthly')}
@@ -721,7 +721,7 @@ function PricingContent() {
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-purple-500/60 to-transparent" />
 
               <Badge className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-purple-500 text-white text-xs font-bold px-4 py-1 shadow-lg shadow-purple-500/25 whitespace-nowrap">
-                <BookOpen className="w-3.5 h-3.5 mr-1" />
+                <BookOpen className="w-3.5 h-3.5 me-1" />
                 {t('pricing.plan.teacher')}
               </Badge>
 
@@ -818,7 +818,7 @@ function PricingContent() {
                 <div className="mb-6">
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
                     {t('pricing.premium_label')}
-                    <span className="text-purple-600/70 normal-case ml-1">
+                    <span className="text-purple-600/70 normal-case ms-1">
                       {t('pricing.premium_then_unlimited_prefix')}
                     </span>
                   </p>
@@ -841,7 +841,7 @@ function PricingContent() {
                   {checkoutLoading === 'teacher_annual'
                     ? t('pricing.starting_checkout')
                     : t('pricing.start_7day_trial')}
-                  <ArrowRight className="w-4 h-4 ml-1" />
+                  <ArrowRight className="w-4 h-4 ms-1" />
                 </Button>
                 <button
                   onClick={() => handleCheckout('teacher_monthly')}
@@ -870,7 +870,7 @@ function PricingContent() {
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-sky-500/60 to-transparent" />
 
               <Badge className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-sky-600 text-white text-xs font-bold px-4 py-1 shadow-lg shadow-sky-500/25 whitespace-nowrap">
-                <Target className="w-3.5 h-3.5 mr-1" />
+                <Target className="w-3.5 h-3.5 me-1" />
                 IELTS
               </Badge>
 
@@ -945,7 +945,7 @@ function PricingContent() {
                     : t('pricing.ielts.cta.monthly')
                         .replace('{currency}', PRICING.CURRENCY)
                         .replace('{price}', String(PRICING.IELTS_MONTHLY))}
-                  <ArrowRight className="w-4 h-4 ml-1" />
+                  <ArrowRight className="w-4 h-4 ms-1" />
                 </Button>
                 <button
                   onClick={() => handleCheckout('ielts_annual')}
@@ -1064,7 +1064,7 @@ function PricingContent() {
               render={<Link href="/auth/register" />}
             >
               Create Free Account
-              <ArrowRight className="w-4 h-4 ml-1" />
+              <ArrowRight className="w-4 h-4 ms-1" />
             </Button>
           </div>
           <div className="md:hidden flex justify-center mt-8">
@@ -1075,7 +1075,7 @@ function PricingContent() {
               render={<Link href="/auth/register" />}
             >
               Create Free Account
-              <ArrowRight className="w-4 h-4 ml-1" />
+              <ArrowRight className="w-4 h-4 ms-1" />
             </Button>
           </div>
         </div>

@@ -320,14 +320,14 @@ export default async function CriticalResponsePage() {
         <div className="not-prose my-5 overflow-x-auto">
           <table className="w-full border-collapse text-sm">
             <thead>
-              <tr className="border-b border-border/60 text-left">
-                <th className="py-2 pr-4 font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+              <tr className="border-b border-border/60 text-start">
+                <th className="py-2 pe-4 font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Question type
                 </th>
-                <th className="py-2 pr-4 font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="py-2 pe-4 font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   AO
                 </th>
-                <th className="py-2 pr-4 font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="py-2 pe-4 font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Marks
                 </th>
                 <th className="py-2 font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
@@ -337,21 +337,21 @@ export default async function CriticalResponsePage() {
             </thead>
             <tbody className="text-muted-foreground">
               <tr className="border-b border-border/40 align-top">
-                <td className="py-3 pr-4 text-foreground">{SHORT_RETRIEVAL.name}</td>
-                <td className="py-3 pr-4">{SHORT_RETRIEVAL.ao}</td>
-                <td className="py-3 pr-4">{SHORT_RETRIEVAL.typicalMarks}</td>
+                <td className="py-3 pe-4 text-foreground">{SHORT_RETRIEVAL.name}</td>
+                <td className="py-3 pe-4">{SHORT_RETRIEVAL.ao}</td>
+                <td className="py-3 pe-4">{SHORT_RETRIEVAL.typicalMarks}</td>
                 <td className="py-3 leading-relaxed">{SHORT_RETRIEVAL.howToAnswer}</td>
               </tr>
               <tr className="border-b border-border/40 align-top">
-                <td className="py-3 pr-4 text-foreground">{INFERENCE.name}</td>
-                <td className="py-3 pr-4">{INFERENCE.ao}</td>
-                <td className="py-3 pr-4">{INFERENCE.typicalMarks}</td>
+                <td className="py-3 pe-4 text-foreground">{INFERENCE.name}</td>
+                <td className="py-3 pe-4">{INFERENCE.ao}</td>
+                <td className="py-3 pe-4">{INFERENCE.typicalMarks}</td>
                 <td className="py-3 leading-relaxed">{INFERENCE.howToAnswer}</td>
               </tr>
               <tr className="align-top">
-                <td className="py-3 pr-4 text-foreground">{MEANING_IMPACT.name}</td>
-                <td className="py-3 pr-4">{MEANING_IMPACT.ao}</td>
-                <td className="py-3 pr-4">{MEANING_IMPACT.typicalMarks}</td>
+                <td className="py-3 pe-4 text-foreground">{MEANING_IMPACT.name}</td>
+                <td className="py-3 pe-4">{MEANING_IMPACT.ao}</td>
+                <td className="py-3 pe-4">{MEANING_IMPACT.typicalMarks}</td>
                 <td className="py-3 leading-relaxed">{MEANING_IMPACT.howToAnswer}</td>
               </tr>
             </tbody>

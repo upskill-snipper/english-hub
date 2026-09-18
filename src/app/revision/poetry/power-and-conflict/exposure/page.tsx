@@ -899,7 +899,7 @@ export default function ExposurePage() {
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/revision/poetry" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -926,7 +926,7 @@ export default function ExposurePage() {
       <div className="flex flex-wrap gap-2">
         {THEMES.map((t) => (
           <Badge key={t.label} variant="secondary" className={t.color}>
-            <t.icon className="size-3 mr-1" />
+            <t.icon className="size-3 me-1" />
             {t.label}
           </Badge>
         ))}
@@ -935,7 +935,7 @@ export default function ExposurePage() {
       {/* ── Verified context block ── */}
       <aside className="rounded-xl border border-border/60 bg-card/50 p-5 space-y-2">
         <h2 className="text-sm font-semibold text-foreground">Context at a glance</h2>
-        <ul className="text-xs text-muted-foreground space-y-1 list-disc pl-4">
+        <ul className="text-xs text-muted-foreground space-y-1 list-disc ps-4">
           <li>
             <strong>Setting:</strong> WWI Western Front, winter 1917-18 (trenches near Beaumont
             Hamel).

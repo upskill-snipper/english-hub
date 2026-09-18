@@ -300,7 +300,7 @@ export default function IeltsWritingPage() {
       {/* ── Hero ──────────────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-violet-500/[0.05] p-6 sm:p-8">
         <Badge variant="secondary" className="mb-3">
-          <Sparkles className="mr-1 size-3" />
+          <Sparkles className="me-1 size-3" />
           {t('ielts.writing.hero.badge')}
         </Badge>
         <h1 className="text-display-sm font-heading text-foreground sm:text-display">
@@ -350,7 +350,7 @@ export default function IeltsWritingPage() {
                 <button
                   key={p.id}
                   onClick={() => resetForPrompt(p.id)}
-                  className="group flex flex-col rounded-xl border border-border/60 bg-card p-5 text-left transition-all hover:border-violet-500/40 hover:shadow-card-hover"
+                  className="group flex flex-col rounded-xl border border-border/60 bg-card p-5 text-start transition-all hover:border-violet-500/40 hover:shadow-card-hover"
                 >
                   <div className="flex items-center gap-2">
                     <PenLine className="size-4 text-violet-400" />
@@ -462,13 +462,13 @@ export default function IeltsWritingPage() {
                   ? t('ielts.writing.words.singular')
                   : t('ielts.writing.words.plural')}
                 {!meetsMin && (
-                  <span className="ml-1 text-muted-foreground">
+                  <span className="ms-1 text-muted-foreground">
                     · {t('ielts.writing.words.aim_for')} {minWords}+ (
                     {Math.max(0, minWords - wordCount)} {t('ielts.writing.words.to_go')})
                   </span>
                 )}
                 {meetsMin && (
-                  <span className="ml-1">· {t('ielts.writing.words.minimum_reached')}</span>
+                  <span className="ms-1">· {t('ielts.writing.words.minimum_reached')}</span>
                 )}
               </span>
               {wordCount > 0 && wordCount < 50 && (
@@ -549,7 +549,7 @@ function BackLink() {
     <Button
       variant="ghost"
       size="sm"
-      className="-ml-2 text-muted-foreground"
+      className="-ms-2 text-muted-foreground"
       render={<Link href="/ielts" />}
     >
       <ArrowLeft className="size-3.5" />

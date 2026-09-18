@@ -217,19 +217,19 @@ export default async function CaieEnglishLanguagePage() {
           {await t('study.shared.course_overview')}
         </h2>
         <div className="mt-6 overflow-x-auto">
-          <table className="w-full min-w-[600px] text-left text-sm">
+          <table className="w-full min-w-[600px] text-start text-sm">
             <thead>
               <tr className="border-b-2 border-primary/20">
-                <th className="py-3 pr-4 font-semibold text-foreground">
+                <th className="py-3 pe-4 font-semibold text-foreground">
                   {await t('study.shared.component')}
                 </th>
-                <th className="py-3 pr-4 font-semibold text-foreground">
+                <th className="py-3 pe-4 font-semibold text-foreground">
                   {await t('study.shared.paper')}
                 </th>
-                <th className="py-3 pr-4 font-semibold text-foreground">
+                <th className="py-3 pe-4 font-semibold text-foreground">
                   {await t('study.shared.duration')}
                 </th>
-                <th className="py-3 pr-4 font-semibold text-foreground">
+                <th className="py-3 pe-4 font-semibold text-foreground">
                   {await t('study.shared.marks')}
                 </th>
                 <th className="py-3 font-semibold text-foreground">
@@ -239,31 +239,31 @@ export default async function CaieEnglishLanguagePage() {
             </thead>
             <tbody className="divide-y divide-border text-muted-foreground">
               <tr>
-                <td className="py-3 pr-4 font-medium">Reading (Core)</td>
-                <td className="py-3 pr-4">Paper 1</td>
-                <td className="py-3 pr-4">1 hour 45 min</td>
-                <td className="py-3 pr-4">80</td>
+                <td className="py-3 pe-4 font-medium">Reading (Core)</td>
+                <td className="py-3 pe-4">Paper 1</td>
+                <td className="py-3 pe-4">1 hour 45 min</td>
+                <td className="py-3 pe-4">80</td>
                 <td className="py-3">50%</td>
               </tr>
               <tr>
-                <td className="py-3 pr-4 font-medium">Reading (Extended)</td>
-                <td className="py-3 pr-4">Paper 2</td>
-                <td className="py-3 pr-4">2 hours</td>
-                <td className="py-3 pr-4">80</td>
+                <td className="py-3 pe-4 font-medium">Reading (Extended)</td>
+                <td className="py-3 pe-4">Paper 2</td>
+                <td className="py-3 pe-4">2 hours</td>
+                <td className="py-3 pe-4">80</td>
                 <td className="py-3">50%</td>
               </tr>
               <tr>
-                <td className="py-3 pr-4 font-medium">Directed Writing &amp; Composition</td>
-                <td className="py-3 pr-4">Paper 1 (Core) / Paper 2 (Ext.)</td>
-                <td className="py-3 pr-4">2 hours</td>
-                <td className="py-3 pr-4">80</td>
+                <td className="py-3 pe-4 font-medium">Directed Writing &amp; Composition</td>
+                <td className="py-3 pe-4">Paper 1 (Core) / Paper 2 (Ext.)</td>
+                <td className="py-3 pe-4">2 hours</td>
+                <td className="py-3 pe-4">80</td>
                 <td className="py-3">50%</td>
               </tr>
               <tr>
-                <td className="py-3 pr-4 font-medium">Speaking &amp; Listening</td>
-                <td className="py-3 pr-4">Component 5 / 6</td>
-                <td className="py-3 pr-4">Varies</td>
-                <td className="py-3 pr-4">40</td>
+                <td className="py-3 pe-4 font-medium">Speaking &amp; Listening</td>
+                <td className="py-3 pe-4">Component 5 / 6</td>
+                <td className="py-3 pe-4">Varies</td>
+                <td className="py-3 pe-4">40</td>
                 <td className="py-3">Separately endorsed</td>
               </tr>
             </tbody>
@@ -307,7 +307,7 @@ export default async function CaieEnglishLanguagePage() {
                   {viewResourceLabel}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"
+                    className="ms-1 h-4 w-4 transition-transform group-hover:translate-x-1"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -328,7 +328,7 @@ export default async function CaieEnglishLanguagePage() {
           {await t('study.lang.caie.exam_tips_intl')}
         </h2>
         <div className="mt-6 grid gap-6 sm:grid-cols-2">
-          <div className="rounded-lg border border-border border-l-4 border-l-primary bg-card p-5 shadow-md">
+          <div className="rounded-lg border border-border border-s-4 border-s-primary bg-card p-5 shadow-md">
             <h3 className="font-semibold text-foreground">Time Management</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               In Paper 2 (Extended Reading), you have 2 hours for three questions. Allocate roughly
@@ -337,7 +337,7 @@ export default async function CaieEnglishLanguagePage() {
               your work.
             </p>
           </div>
-          <div className="rounded-lg border border-border border-l-4 border-l-primary bg-card p-5 shadow-md">
+          <div className="rounded-lg border border-border border-s-4 border-s-primary bg-card p-5 shadow-md">
             <h3 className="font-semibold text-foreground">Use the Passages</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               Cambridge markers reward candidates who engage closely with the text. Always refer to
@@ -345,7 +345,7 @@ export default async function CaieEnglishLanguagePage() {
               precise words and phrases that support your point.
             </p>
           </div>
-          <div className="rounded-lg border border-border border-l-4 border-l-primary bg-card p-5 shadow-md">
+          <div className="rounded-lg border border-border border-s-4 border-s-primary bg-card p-5 shadow-md">
             <h3 className="font-semibold text-foreground">Directed Writing Format</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               In directed writing, always adopt the correct format (letter, report, speech, etc.)
@@ -353,7 +353,7 @@ export default async function CaieEnglishLanguagePage() {
               your own ideas. This is where many students lose marks unnecessarily.
             </p>
           </div>
-          <div className="rounded-lg border border-border border-l-4 border-l-primary bg-card p-5 shadow-md">
+          <div className="rounded-lg border border-border border-s-4 border-s-primary bg-card p-5 shadow-md">
             <h3 className="font-semibold text-foreground">Vocabulary Building</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               Cambridge passages often use sophisticated vocabulary. Build your word bank by reading

@@ -505,14 +505,14 @@ export default function EduqasEssayPlansPage() {
     <div className="space-y-10 pb-16">
       {/* ── Hero ──────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 lg:p-10">
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-amber-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-16 -start-16 h-48 w-48 rounded-full bg-amber-500/5 blur-3xl" />
 
         <div className="relative">
           <Button
             variant="ghost"
             size="sm"
-            className="mb-4 -ml-2 text-muted-foreground"
+            className="mb-4 -ms-2 text-muted-foreground"
             render={<Link href="/revision/poetry/eduqas" />}
           >
             <ArrowLeft className="size-3.5" />
@@ -520,7 +520,7 @@ export default function EduqasEssayPlansPage() {
           </Button>
 
           <Badge variant="secondary" className="mb-4">
-            <PenLine className="mr-1 size-3" />
+            <PenLine className="me-1 size-3" />
             {t('rev.poetry2.eduqas.ep.badge')}
           </Badge>
 

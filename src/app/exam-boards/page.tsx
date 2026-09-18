@@ -374,8 +374,8 @@ function BoardSection({
                       : 'hover:border-clay-500/40 focus-visible:ring-clay-500'
                   }`}
                 >
-                  <LevelChip level={b.level} className="absolute right-4 top-4" />
-                  <div className="flex items-center gap-4 pr-16">
+                  <LevelChip level={b.level} className="absolute end-4 top-4" />
+                  <div className="flex items-center gap-4 pe-16">
                     <span
                       aria-hidden="true"
                       className={`inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full ring-1 ${b.discClass} font-mono text-xs sm:text-sm font-bold tracking-wide`}

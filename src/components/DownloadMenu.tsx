@@ -293,7 +293,7 @@ export function DownloadMenu({
               type="button"
               role="menuitem"
               onClick={() => handleClick(opt)}
-              className="flex w-full items-center gap-2 px-3 py-2 text-left text-sm text-ink-700 transition-colors hover:bg-cream-50 focus:bg-cream-50 focus:outline-none"
+              className="flex w-full items-center gap-2 px-3 py-2 text-start text-sm text-ink-700 transition-colors hover:bg-cream-50 focus:bg-cream-50 focus:outline-none"
             >
               {formatIcon(opt.format)}
               <span>{opt.label}</span>
@@ -339,7 +339,7 @@ function DownloadToast({ message, onDismiss }: { message: string; onDismiss: () 
   const lower = message.toLowerCase()
   const isError = lower.includes('failed') || (failedToken && lower.includes(failedToken))
   return (
-    <div className="fixed top-6 right-6 z-50">
+    <div className="fixed top-6 end-6 z-50">
       <div
         className={cn(
           'flex items-center gap-3 rounded-xl border px-5 py-3 text-sm shadow-lg backdrop-blur-sm',

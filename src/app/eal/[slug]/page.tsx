@@ -121,7 +121,7 @@ function ExerciseBlock({
               type="button"
               disabled={selected !== null}
               onClick={() => setSelected(i)}
-              className={`text-left text-sm rounded-lg border ${cls} px-3 py-2 transition-colors`}
+              className={`text-start text-sm rounded-lg border ${cls} px-3 py-2 transition-colors`}
             >
               {t(opt)}
             </button>

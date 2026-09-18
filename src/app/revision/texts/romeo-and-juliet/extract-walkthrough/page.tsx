@@ -122,13 +122,13 @@ export default function RomeoAndJulietExtractWalkthroughPage() {
       <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
         {/* Hero */}
         <section className="relative mt-2 overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-amber-500/[0.04] p-6 sm:p-8 lg:p-10">
-          <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-amber-500/5 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl" />
+          <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-amber-500/5 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-16 -start-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl" />
           <div className="relative">
             <Button
               variant="ghost"
               size="sm"
-              className="mb-4 -ml-2 text-muted-foreground"
+              className="mb-4 -ms-2 text-muted-foreground"
               render={<Link href="/revision/texts/romeo-and-juliet" />}
             >
               <ArrowLeft className="size-3.5" />
@@ -137,7 +137,7 @@ export default function RomeoAndJulietExtractWalkthroughPage() {
 
             <div className="mb-4 flex flex-wrap items-center gap-2">
               <Badge variant="secondary">
-                <ScrollText className="mr-1 size-3 text-clay-600 dark:text-clay-300" />
+                <ScrollText className="me-1 size-3 text-clay-600 dark:text-clay-300" />
                 {t('rev.texts.rj.extract.badge')}
               </Badge>
               <Badge variant="outline">{t('rev.texts.rj.extract.public_domain_badge')}</Badge>
@@ -166,7 +166,7 @@ export default function RomeoAndJulietExtractWalkthroughPage() {
               <p className="mb-3 text-sm text-muted-foreground">
                 {t('rev.texts.rj.extract.full_extract_source')}
               </p>
-              <blockquote className="rounded-lg border-l-4 border-amber-500/40 bg-amber-500/10 p-5 font-heading text-base leading-relaxed text-foreground sm:text-lg">
+              <blockquote className="rounded-lg border-s-4 border-amber-500/40 bg-amber-500/10 p-5 font-heading text-base leading-relaxed text-foreground sm:text-lg">
                 Two households, both alike in dignity,
                 <br />
                 In fair Verona, where we lay our scene,

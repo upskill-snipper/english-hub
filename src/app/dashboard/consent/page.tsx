@@ -291,7 +291,7 @@ export default function ConsentManagementPage() {
                     <button
                       onClick={() => handleGrant(g.consentType, g.version)}
                       disabled={granting === g.consentType}
-                      className="ml-4 shrink-0 rounded-md border border-primary/40 bg-primary/10 px-3 py-1.5 text-sm font-medium text-primary hover:bg-primary/20 disabled:opacity-50 transition-colors"
+                      className="ms-4 shrink-0 rounded-md border border-primary/40 bg-primary/10 px-3 py-1.5 text-sm font-medium text-primary hover:bg-primary/20 disabled:opacity-50 transition-colors"
                     >
                       {granting === g.consentType
                         ? t('dash.consent.granting')
@@ -353,7 +353,7 @@ export default function ConsentManagementPage() {
                     <button
                       onClick={() => handleWithdraw(consent.consentType)}
                       disabled={withdrawing === consent.consentType}
-                      className="ml-4 shrink-0 rounded-md border border-red-500/30 bg-card px-3 py-1.5 text-sm font-medium text-red-600 hover:bg-red-950/20 disabled:opacity-50 transition-colors"
+                      className="ms-4 shrink-0 rounded-md border border-red-500/30 bg-card px-3 py-1.5 text-sm font-medium text-red-600 hover:bg-red-950/20 disabled:opacity-50 transition-colors"
                     >
                       {withdrawing === consent.consentType
                         ? t('dash.consent.withdrawing')
@@ -409,7 +409,7 @@ export default function ConsentManagementPage() {
             <div className="mt-4 overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-border text-left text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                  <tr className="border-b border-border text-start text-xs font-medium uppercase tracking-wider text-muted-foreground">
                     <th className="px-3 py-2">{t('dash.consent.col_type')}</th>
                     <th className="px-3 py-2">{t('dash.consent.col_action')}</th>
                     <th className="px-3 py-2">{t('dash.consent.col_version')}</th>

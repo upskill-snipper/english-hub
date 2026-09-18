@@ -244,7 +244,7 @@ export default function TeacherDemoDashboard() {
                         {student.riskReason}
                       </p>
                     </div>
-                    <div className="text-right shrink-0">
+                    <div className="text-end shrink-0">
                       <p className={`text-sm font-semibold ${scoreColor(student.averageScore)}`}>
                         {student.averageScore}% (Grade {percentageToGCSEGrade(student.averageScore)}
                         )
@@ -293,7 +293,7 @@ export default function TeacherDemoDashboard() {
                     <span className={`text-2xl font-bold ${scoreColor(cls.avgScore)}`}>
                       {cls.avgScore}%
                     </span>
-                    <span className="text-xs text-muted-foreground ml-2">
+                    <span className="text-xs text-muted-foreground ms-2">
                       {t('teacher_page.demo.avg_score_label')} (
                       {t('teacher_page.demo.stat.grade_prefix')}{' '}
                       {percentageToGCSEGrade(cls.avgScore)})
@@ -343,7 +343,7 @@ export default function TeacherDemoDashboard() {
             <div className="rounded-xl border border-border/60 bg-card p-4">
               <div className="relative">
                 {/* Timeline line */}
-                <div className="absolute left-[18px] top-3 bottom-3 w-px bg-muted" />
+                <div className="absolute start-[18px] top-3 bottom-3 w-px bg-muted" />
                 <div className="space-y-4">
                   {TEACHER_DEMO_LESSONS.map((lesson, idx) => (
                     <div key={lesson.id} className="flex items-start gap-4 relative">
@@ -604,7 +604,7 @@ export default function TeacherDemoDashboard() {
               className="bg-primary hover:bg-primary/90 text-primary-foreground"
             >
               {t('teacher_page.demo.cta_btn')}
-              <ArrowRight className="ml-2 h-4 w-4" />
+              <ArrowRight className="ms-2 h-4 w-4" />
             </Button>
           </div>
         </section>

@@ -404,7 +404,7 @@ export default async function SynonymVocabularyPage() {
         {/* Strategy box */}
         <section
           aria-labelledby="strategy"
-          className="mb-10 rounded-lg border-l-4 border-primary/40 bg-card p-6 border border-border/60 sm:p-8"
+          className="mb-10 rounded-lg border-s-4 border-primary/40 bg-card p-6 border border-border/60 sm:p-8"
         >
           <h2 id="strategy" className="mb-2 font-heading text-2xl font-semibold text-foreground">
             Strategy box: five steps to the mark
@@ -469,7 +469,7 @@ export default async function SynonymVocabularyPage() {
           </p>
           <ol className="space-y-6">
             {TRICKY.map((t, i) => (
-              <li key={t.target} className="border-l-4 border-primary/40 pl-4">
+              <li key={t.target} className="border-s-4 border-primary/40 ps-4">
                 <p className="mb-2 font-mono text-xs font-semibold text-primary">
                   Example {i + 1} &middot; target word:{' '}
                   <span className="lowercase">{t.target}</span>
@@ -563,7 +563,7 @@ export default async function SynonymVocabularyPage() {
         {/* Quick recap */}
         <section
           aria-labelledby="recap"
-          className="mb-12 rounded-lg border-l-4 border-primary/40 bg-card p-6 border border-border/60 sm:p-8"
+          className="mb-12 rounded-lg border-s-4 border-primary/40 bg-card p-6 border border-border/60 sm:p-8"
         >
           <h2 id="recap" className="mb-3 font-heading text-2xl font-semibold text-foreground">
             Remember

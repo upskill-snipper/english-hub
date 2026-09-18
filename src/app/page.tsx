@@ -315,11 +315,11 @@ async function HomeHero() {
     <section className="relative overflow-hidden border-b border-border/60">
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl"
+        className="pointer-events-none absolute -end-32 -top-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-20 top-40 h-72 w-72 rounded-full bg-clay-500/[0.06] blur-3xl"
+        className="pointer-events-none absolute -start-20 top-40 h-72 w-72 rounded-full bg-clay-500/[0.06] blur-3xl"
       />
       <div className="relative mx-auto max-w-5xl px-4 py-16 text-center sm:px-6 sm:py-24">
         {/* Language toggle, surfaced in-hero so visitors can switch
@@ -384,7 +384,7 @@ async function HomeHero() {
                     <ChevronDown className="h-3.5 w-3.5" aria-hidden="true" />
                   </span>
                 </summary>
-                <ul className="space-y-1 border-t border-foreground/10 px-2 py-3 text-left">
+                <ul className="space-y-1 border-t border-foreground/10 px-2 py-3 text-start">
                   {boards.map((b) => (
                     <li key={b.href}>
                       <Link
@@ -414,7 +414,7 @@ async function HomeHero() {
             render={<Link href="/school-pilot" />}
           >
             {ctaPilot}
-            <ArrowRight className="ml-1 h-3.5 w-3.5" aria-hidden="true" />
+            <ArrowRight className="ms-1 h-3.5 w-3.5" aria-hidden="true" />
           </Button>
         </div>
 
@@ -826,11 +826,11 @@ async function FeatureRail() {
           >
             <span
               aria-hidden="true"
-              className="absolute right-4 top-4 inline-flex items-center rounded-full border border-sky-500/40 px-2 py-0.5 font-mono text-[10px] tracking-[0.12em] uppercase text-sky-600 dark:text-sky-300"
+              className="absolute end-4 top-4 inline-flex items-center rounded-full border border-sky-500/40 px-2 py-0.5 font-mono text-[10px] tracking-[0.12em] uppercase text-sky-600 dark:text-sky-300"
             >
               {c.ieltsBadge}
             </span>
-            <div className="flex items-center gap-4 pr-20">
+            <div className="flex items-center gap-4 pe-20">
               <span
                 aria-hidden="true"
                 className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full ring-1 bg-sky-500/15 text-sky-600 dark:text-sky-300 ring-sky-500/30 font-mono text-[11px] font-bold tracking-wide"
@@ -858,11 +858,11 @@ async function FeatureRail() {
           >
             <span
               aria-hidden="true"
-              className="absolute right-4 top-4 inline-flex items-center rounded-full border border-teal-500/40 px-2 py-0.5 font-mono text-[10px] tracking-[0.12em] uppercase text-teal-600 dark:text-teal-300"
+              className="absolute end-4 top-4 inline-flex items-center rounded-full border border-teal-500/40 px-2 py-0.5 font-mono text-[10px] tracking-[0.12em] uppercase text-teal-600 dark:text-teal-300"
             >
               {c.ealBadge}
             </span>
-            <div className="flex items-center gap-4 pr-20">
+            <div className="flex items-center gap-4 pe-20">
               <span
                 aria-hidden="true"
                 className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full ring-1 bg-teal-500/15 text-teal-600 dark:text-teal-300 ring-teal-500/30 font-mono text-sm font-bold tracking-wide"
@@ -1079,7 +1079,7 @@ async function BoardPickerSection({
               >
                 <span
                   aria-hidden="true"
-                  className={`absolute right-4 top-4 inline-flex items-center rounded-full border px-2 py-0.5 font-mono text-[10px] tracking-[0.12em] uppercase ${
+                  className={`absolute end-4 top-4 inline-flex items-center rounded-full border px-2 py-0.5 font-mono text-[10px] tracking-[0.12em] uppercase ${
                     b.level === 'gcse'
                       ? 'border-emerald-500/40 text-emerald-600 dark:text-emerald-300'
                       : b.level === 'ks3'
@@ -1089,7 +1089,7 @@ async function BoardPickerSection({
                 >
                   {b.level === 'gcse' ? 'GCSE' : b.level === 'ks3' ? 'KS3' : 'IGCSE'}
                 </span>
-                <div className="flex items-center gap-4 pr-16">
+                <div className="flex items-center gap-4 pe-16">
                   <span
                     aria-hidden="true"
                     className={`inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full ring-1 ${b.discClass} font-mono text-xs sm:text-sm font-bold tracking-wide`}

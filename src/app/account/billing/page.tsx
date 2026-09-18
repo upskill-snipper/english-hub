@@ -345,12 +345,12 @@ export default function BillingPage() {
             >
               {portalLoading ? (
                 <>
-                  <Loader2 className="w-4 h-4 animate-spin mr-2" />
+                  <Loader2 className="w-4 h-4 animate-spin me-2" />
                   {t('account.billing.loading')}
                 </>
               ) : (
                 <>
-                  <ExternalLink className="w-4 h-4 mr-2" />
+                  <ExternalLink className="w-4 h-4 me-2" />
                   {t('account.billing.manage_subscription')}
                 </>
               )}
@@ -426,7 +426,7 @@ export default function BillingPage() {
                   >
                     {checkoutLoading === 'student_monthly' ? (
                       <>
-                        <Loader2 className="w-4 h-4 animate-spin mr-2" />
+                        <Loader2 className="w-4 h-4 animate-spin me-2" />
                         {t('account.billing.loading')}
                       </>
                     ) : (
@@ -494,7 +494,7 @@ export default function BillingPage() {
                   >
                     {checkoutLoading === 'teacher_monthly' ? (
                       <>
-                        <Loader2 className="w-4 h-4 animate-spin mr-2" />
+                        <Loader2 className="w-4 h-4 animate-spin me-2" />
                         {t('account.billing.loading')}
                       </>
                     ) : (

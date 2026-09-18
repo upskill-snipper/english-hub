@@ -50,7 +50,7 @@ export default async function AcceptableUsePolicyPage() {
       {/* Section 2 */}
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4">2. Who This Applies To</h2>
-        <ul className="list-disc pl-6 space-y-1">
+        <ul className="list-disc ps-6 space-y-1">
           <li>{_tr(`All registered users (students, typically aged 14-18)`)}</li>
           <li>{_tr(`Parents or guardians managing accounts on behalf of a user`)}</li>
           <li>Teachers or school staff accessing through institutional licences</li>
@@ -64,7 +64,7 @@ export default async function AcceptableUsePolicyPage() {
         <p className="mb-3">
           You <strong>are</strong> welcome to use The English Hub for:
         </p>
-        <ul className="list-disc pl-6 space-y-2">
+        <ul className="list-disc ps-6 space-y-2">
           <li>
             <strong>{_tr(`Learning and revision`)}</strong> - studying for your GCSE or IGCSE
             English exams
@@ -95,7 +95,7 @@ export default async function AcceptableUsePolicyPage() {
         </p>
 
         <h3 className="text-lg font-semibold mb-2">4.1 Academic Dishonesty</h3>
-        <ul className="list-disc pl-6 space-y-2 mb-4">
+        <ul className="list-disc ps-6 space-y-2 mb-4">
           <li>
             <strong>{_tr(`Submitting someone else&apos;s work as your own.`)}</strong> Every essay
             you submit must be written by you.
@@ -107,7 +107,7 @@ export default async function AcceptableUsePolicyPage() {
         </ul>
 
         <h3 className="text-lg font-semibold mb-2">4.2 Misuse of the AI System</h3>
-        <ul className="list-disc pl-6 space-y-2 mb-4">
+        <ul className="list-disc ps-6 space-y-2 mb-4">
           <li>
             Attempting to manipulate or exploit the AI, including prompt injection or feeding
             nonsense inputs
@@ -116,14 +116,14 @@ export default async function AcceptableUsePolicyPage() {
         </ul>
 
         <h3 className="text-lg font-semibold mb-2">4.3 Account and Security Violations</h3>
-        <ul className="list-disc pl-6 space-y-2 mb-4">
+        <ul className="list-disc ps-6 space-y-2 mb-4">
           <li>{_tr(`Sharing your account credentials with others`)}</li>
           <li>{_tr(`Attempting to access other users&apos; data`)}</li>
           <li>Circumventing age verification or providing false identity information</li>
         </ul>
 
         <h3 className="text-lg font-semibold mb-2">4.4 Harmful Content and Behaviour</h3>
-        <ul className="list-disc pl-6 space-y-2 mb-4">
+        <ul className="list-disc ps-6 space-y-2 mb-4">
           <li>Uploading harmful, offensive, illegal, or sexually explicit content</li>
           <li>Bullying, intimidating, harassing, or threatening other users</li>
         </ul>
@@ -170,7 +170,7 @@ export default async function AcceptableUsePolicyPage() {
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4">6. Content Standards for Essay Submissions</h2>
         <p className="mb-3">When you submit an essay for AI feedback, your submission must:</p>
-        <ul className="list-disc pl-6 space-y-1">
+        <ul className="list-disc ps-6 space-y-1">
           <li>{_tr(`Be written in English`)}</li>
           <li>{_tr(`Be your own original work`)}</li>
           <li>{_tr(`Be relevant to English language or literature study`)}</li>
@@ -195,9 +195,9 @@ export default async function AcceptableUsePolicyPage() {
           <table className="min-w-full text-sm border border-border">
             <thead className="bg-muted">
               <tr>
-                <th className="text-left px-4 py-2 border-b font-semibold">Step</th>
-                <th className="text-left px-4 py-2 border-b font-semibold">Action</th>
-                <th className="text-left px-4 py-2 border-b font-semibold">
+                <th className="text-start px-4 py-2 border-b font-semibold">Step</th>
+                <th className="text-start px-4 py-2 border-b font-semibold">Action</th>
+                <th className="text-start px-4 py-2 border-b font-semibold">
                   When it typically applies
                 </th>
               </tr>
@@ -236,7 +236,7 @@ export default async function AcceptableUsePolicyPage() {
           If you see something that violates this Policy, or if you experience behaviour that makes
           you uncomfortable:
         </p>
-        <ul className="list-disc pl-6 space-y-1 mb-3">
+        <ul className="list-disc ps-6 space-y-1 mb-3">
           <li>
             <strong>In-platform:</strong> Use the &quot;Report&quot; button where available
           </li>

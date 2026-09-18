@@ -41,7 +41,7 @@ export default async function CancellationPolicyPage() {
       {/* In short */}
       <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 mb-8 text-sm">
         <h2 className="text-lg font-semibold mb-2">In Short</h2>
-        <ul className="list-disc pl-6 space-y-1">
+        <ul className="list-disc ps-6 space-y-1">
           <li>
             You have <strong>14 days</strong> to change your mind - no questions asked
           </li>
@@ -66,7 +66,7 @@ export default async function CancellationPolicyPage() {
           giving you immediate access during the cooling-off period. You must actively tick a
           checkbox to agree - we will never pre-tick it for you.
         </p>
-        <ul className="list-disc pl-6 space-y-2">
+        <ul className="list-disc ps-6 space-y-2">
           <li>
             <strong>{tr(`If you consent and then cancel within 14 days:`)}</strong> You will receive
             a refund minus a proportionate charge for the days you used the service. For example, if
@@ -87,11 +87,11 @@ export default async function CancellationPolicyPage() {
           <table className="min-w-full text-sm border border-border">
             <thead className="bg-muted">
               <tr>
-                <th className="text-left px-4 py-2 border-b font-semibold">Situation</th>
-                <th className="text-left px-4 py-2 border-b font-semibold">
+                <th className="text-start px-4 py-2 border-b font-semibold">Situation</th>
+                <th className="text-start px-4 py-2 border-b font-semibold">
                   {tr(`What you get back`)}
                 </th>
-                <th className="text-left px-4 py-2 border-b font-semibold">When</th>
+                <th className="text-start px-4 py-2 border-b font-semibold">When</th>
               </tr>
             </thead>
             <tbody>
@@ -144,7 +144,7 @@ export default async function CancellationPolicyPage() {
           We will send a renewal reminder at least <strong>30 days</strong> before the renewal date.
         </p>
         <p>{tr(`Every renewal reminder will include:`)}</p>
-        <ol className="list-decimal pl-6 space-y-1 mt-2">
+        <ol className="list-decimal ps-6 space-y-1 mt-2">
           <li>{tr(`The date your next payment will be taken`)}</li>
           <li>{tr(`The amount that will be charged`)}</li>
           <li>{tr(`Any price changes with old and new prices clearly stated`)}</li>
@@ -161,7 +161,7 @@ export default async function CancellationPolicyPage() {
         </p>
 
         <h3 className="text-lg font-semibold mb-2">{tr(`Option A - Cancel Online`)}</h3>
-        <ol className="list-decimal pl-6 space-y-1 mb-4">
+        <ol className="list-decimal ps-6 space-y-1 mb-4">
           <li>{tr(`Log in to your account`)}</li>
           <li>
             Go to <strong>{tr(`Account Settings`)}</strong>
@@ -185,7 +185,7 @@ export default async function CancellationPolicyPage() {
 
         <div className="bg-success/5 border border-success/20 rounded-lg p-4 text-sm">
           <p className="font-semibold mb-2">{tr(`We will never:`)}</p>
-          <ul className="list-disc pl-6 space-y-1">
+          <ul className="list-disc ps-6 space-y-1">
             <li>Require you to phone a premium-rate number</li>
             <li>{tr(`Ask you to navigate through multiple confusing screens`)}</li>
             <li>
@@ -200,7 +200,7 @@ export default async function CancellationPolicyPage() {
       {/* Section 5 */}
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4">5. Effect of Cancellation on Your Access</h2>
-        <ul className="list-disc pl-6 space-y-2">
+        <ul className="list-disc ps-6 space-y-2">
           <li>{tr(`Your access continues until the end of your current paid period`)}</li>
           <li>{tr(`On the day your paid period ends, premium content access will stop`)}</li>
           <li>{tr(`Any free features remain available to you`)}</li>
@@ -211,7 +211,7 @@ export default async function CancellationPolicyPage() {
       {/* Section 6 */}
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4">6. What Happens to Your Data After Cancellation</h2>
-        <ul className="list-disc pl-6 space-y-2">
+        <ul className="list-disc ps-6 space-y-2">
           <li>
             Your account and personal data will be kept for <strong>30 days</strong> in case you
             want to resubscribe. You can ask us to delete it sooner.

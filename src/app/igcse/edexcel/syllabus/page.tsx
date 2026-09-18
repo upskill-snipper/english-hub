@@ -114,7 +114,7 @@ export default async function EdexcelSyllabusPage() {
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/igcse/edexcel" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -139,13 +139,13 @@ export default async function EdexcelSyllabusPage() {
 
       {/* ── Hero ────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 lg:p-10">
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-primary/5 blur-3xl" />
+        <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-16 -start-16 h-48 w-48 rounded-full bg-primary/5 blur-3xl" />
 
         <div className="relative">
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
-              <Sparkles className="mr-1 size-3" />
+              <Sparkles className="me-1 size-3" />
               Syllabus breakdown
             </Badge>
             <Badge className="bg-primary/10 text-primary border-primary/20">
@@ -280,11 +280,11 @@ export default async function EdexcelSyllabusPage() {
               <table className="w-full text-body-sm">
                 <thead className="bg-muted/40 text-body-xs uppercase tracking-wide text-muted-foreground">
                   <tr>
-                    <th className="px-4 py-3 text-left">Section</th>
-                    <th className="px-4 py-3 text-left">Task</th>
-                    <th className="px-4 py-3 text-left">Marks</th>
-                    <th className="px-4 py-3 text-left">Skills tested</th>
-                    <th className="px-4 py-3 text-left">Suggested time</th>
+                    <th className="px-4 py-3 text-start">Section</th>
+                    <th className="px-4 py-3 text-start">Task</th>
+                    <th className="px-4 py-3 text-start">Marks</th>
+                    <th className="px-4 py-3 text-start">Skills tested</th>
+                    <th className="px-4 py-3 text-start">Suggested time</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border/60">
@@ -333,11 +333,11 @@ export default async function EdexcelSyllabusPage() {
               <table className="w-full text-body-sm">
                 <thead className="bg-muted/40 text-body-xs uppercase tracking-wide text-muted-foreground">
                   <tr>
-                    <th className="px-4 py-3 text-left">Section</th>
-                    <th className="px-4 py-3 text-left">Task</th>
-                    <th className="px-4 py-3 text-left">Marks</th>
-                    <th className="px-4 py-3 text-left">Skills tested</th>
-                    <th className="px-4 py-3 text-left">Suggested time</th>
+                    <th className="px-4 py-3 text-start">Section</th>
+                    <th className="px-4 py-3 text-start">Task</th>
+                    <th className="px-4 py-3 text-start">Marks</th>
+                    <th className="px-4 py-3 text-start">Skills tested</th>
+                    <th className="px-4 py-3 text-start">Suggested time</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border/60">

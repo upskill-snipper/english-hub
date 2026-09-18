@@ -44,7 +44,7 @@ function AccordionItem({ question, answer }: HelpItem) {
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between gap-4 py-4 text-left text-sm font-medium text-foreground transition-colors hover:text-primary"
+        className="flex w-full items-center justify-between gap-4 py-4 text-start text-sm font-medium text-foreground transition-colors hover:text-primary"
       >
         <span>{question}</span>
         <ChevronDown
@@ -199,13 +199,13 @@ export default function HelpCentrePage() {
 
       {/* Search */}
       <div className="relative mt-8">
-        <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
+        <Search className="absolute start-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
         <input
           type="text"
           placeholder={t('help.search_placeholder')}
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full rounded-lg border border-border bg-background px-4 py-3 pl-12 text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+          className="w-full rounded-lg border border-border bg-background px-4 py-3 ps-12 text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
         />
       </div>
 
@@ -256,7 +256,7 @@ export default function HelpCentrePage() {
       {/* Response times */}
       <section className="mt-12 rounded-xl border border-border bg-card p-8">
         <h2 className="text-xl font-semibold text-foreground">{t('help.response_times_h2')}</h2>
-        <ul className="mt-4 space-y-2 text-sm text-muted-foreground list-disc pl-5">
+        <ul className="mt-4 space-y-2 text-sm text-muted-foreground list-disc ps-5">
           <li>
             <strong className="text-foreground">{t('help.rt.student_label')}</strong>{' '}
             {t('help.rt.student_value')}

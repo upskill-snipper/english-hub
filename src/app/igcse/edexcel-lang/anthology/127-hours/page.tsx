@@ -254,7 +254,7 @@ export default async function OneHundredTwentySevenHoursPage() {
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/igcse/edexcel-lang/anthology" />}
         >
           <ArrowLeft className="size-3.5" />

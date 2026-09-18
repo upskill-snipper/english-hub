@@ -211,7 +211,7 @@ export default async function TermsPage() {
         <section>
           <h2 className="text-xl font-semibold text-foreground">{s4H2}</h2>
           <p className="mt-2 text-muted-foreground leading-relaxed">{s4PIntro}</p>
-          <ul className="mt-2 list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
+          <ul className="mt-2 list-disc ps-6 text-muted-foreground leading-relaxed space-y-1">
             <li>
               <strong>{liSmS}</strong>
               {liSmT}
@@ -281,7 +281,7 @@ export default async function TermsPage() {
         <section>
           <h2 className="text-xl font-semibold text-foreground">{s8H2}</h2>
           <p className="mt-2 text-muted-foreground leading-relaxed">{s8PIntro}</p>
-          <ul className="mt-2 list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
+          <ul className="mt-2 list-disc ps-6 text-muted-foreground leading-relaxed space-y-1">
             <li>{s8Li1}</li>
             <li>{s8Li2}</li>
             <li>{s8Li3}</li>

@@ -514,7 +514,7 @@ export default async function BlogsJournalsPage() {
           answer.
         </p>
         <div className="not-prose mt-4 overflow-x-auto rounded-xl border border-border/60 bg-card">
-          <table className="w-full text-left text-sm">
+          <table className="w-full text-start text-sm">
             <thead>
               <tr className="border-b border-border/60">
                 <th className="p-4 font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">

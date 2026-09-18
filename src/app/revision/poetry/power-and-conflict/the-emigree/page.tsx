@@ -674,7 +674,7 @@ export default function TheEmigreePage() {
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/revision/poetry" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -732,7 +732,7 @@ export default function TheEmigreePage() {
                 {c.points.map((p, i) => (
                   <li
                     key={i}
-                    className="text-sm text-card-foreground leading-relaxed pl-3 border-l-2 border-border"
+                    className="text-sm text-card-foreground leading-relaxed ps-3 border-s-2 border-border"
                   >
                     {p}
                   </li>

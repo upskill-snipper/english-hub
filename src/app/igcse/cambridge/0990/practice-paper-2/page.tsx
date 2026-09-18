@@ -48,7 +48,7 @@ export default async function PracticePaper2Page() {
         <div className="relative">
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="bg-primary/10 text-primary border-primary/20">
-              <Sparkles className="mr-1 size-3" />
+              <Sparkles className="me-1 size-3" />
               {await t('igcse.cambridge.badge.cambridge_lang_b')}
             </Badge>
             <Badge variant="secondary">Practice Paper</Badge>
@@ -154,7 +154,7 @@ export default async function PracticePaper2Page() {
               with you.
             </p>
             <p>You should:</p>
-            <ul className="space-y-1 pl-5 list-disc">
+            <ul className="space-y-1 ps-5 list-disc">
               <li>develop and evaluate the ideas in the text,</li>
               <li>use your own ideas and examples,</li>
               <li>speak in a persuasive but appropriate register.</li>

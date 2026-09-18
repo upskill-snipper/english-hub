@@ -37,7 +37,7 @@ function Section({
     <section id={id} className="border border-border rounded-lg bg-card shadow-md">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left"
+        className="flex w-full items-center justify-between px-5 py-4 text-start"
         aria-expanded={open}
       >
         <h2 className="text-xl font-bold text-foreground">{title}</h2>
@@ -570,7 +570,7 @@ export default function LordOfTheFliesStudyGuide() {
         </p>
         <div className="space-y-4">
           {keyQuotes.map((q, i) => (
-            <div key={i} className="rounded-lg border-l-4 border-primary bg-muted p-4">
+            <div key={i} className="rounded-lg border-s-4 border-primary bg-muted p-4">
               <blockquote className="text-base font-medium italic text-foreground">
                 &ldquo;{q.quote}&rdquo;
               </blockquote>
@@ -697,7 +697,7 @@ export default function LordOfTheFliesStudyGuide() {
             "Piggy's death and the conch's simultaneous destruction link the death of the intellectual to the death of democracy. Golding implies that democratic societies depend on their thinkers, and that when a society kills its intellectuals (literally or metaphorically), it destroys its capacity for self-governance. The rock that kills Piggy is wielded by Roger, the sadist --- tyranny's enforcement arm eliminating the voice of reason.",
             "The Lord of the Flies' statement --- 'I'm part of you' --- can be read as Golding's thesis statement for the entire novel. The beast is not an external threat but an internal reality. This insight has been available since Simon's earlier suggestion ('maybe it's only us'), but the boys' refusal to accept it is itself evidence of the beast's power: humanity's deepest evil is the refusal to acknowledge its own capacity for evil.",
           ].map((point, i) => (
-            <div key={i} className="rounded-lg border-l-4 border-accent bg-muted p-4">
+            <div key={i} className="rounded-lg border-s-4 border-accent bg-muted p-4">
               <p className="text-sm leading-relaxed text-muted-foreground">{point}</p>
             </div>
           ))}
@@ -775,7 +775,7 @@ export default function LordOfTheFliesStudyGuide() {
             <p className="text-sm text-muted-foreground mb-3">
               How does Golding present the conflict between civilisation and savagery in{' '}
               <em>Lord of the Flies</em>? Refer to the whole novel in your answer.
-              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
+              <span className="ms-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder={t('study.revnotes.common.essay_placeholder')}
@@ -792,7 +792,7 @@ export default function LordOfTheFliesStudyGuide() {
             <h3 className="font-bold text-foreground mb-1">Question 2</h3>
             <p className="text-sm text-muted-foreground mb-3">
               How does Golding use the character of Jack to explore the theme of power and tyranny?
-              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
+              <span className="ms-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder={t('study.revnotes.common.essay_placeholder')}
@@ -810,7 +810,7 @@ export default function LordOfTheFliesStudyGuide() {
             <p className="text-sm text-muted-foreground mb-3">
               How does Golding use symbolism in <em>Lord of the Flies</em>? You may wish to consider
               the conch, the beast, and Piggy&apos;s glasses in your answer.
-              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
+              <span className="ms-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder={t('study.revnotes.common.essay_placeholder')}
@@ -828,7 +828,7 @@ export default function LordOfTheFliesStudyGuide() {
             <p className="text-sm text-muted-foreground mb-3">
               How does Golding present the character of Ralph and his development throughout the
               novel?
-              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
+              <span className="ms-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder={t('study.revnotes.common.essay_placeholder')}

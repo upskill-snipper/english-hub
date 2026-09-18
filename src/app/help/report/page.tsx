@@ -136,7 +136,7 @@ export default function ReportIssuePage() {
                     key={type.value}
                     type="button"
                     onClick={() => setIssueType(type.value)}
-                    className={`text-left p-3 rounded-lg border transition-all ${
+                    className={`text-start p-3 rounded-lg border transition-all ${
                       issueType === type.value
                         ? 'border-primary bg-primary/5 ring-1 ring-primary/20'
                         : 'border-border hover:border-border'

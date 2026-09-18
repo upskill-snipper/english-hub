@@ -357,7 +357,7 @@ export default async function MeaningImpactPage() {
               <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground mb-2">
                 {item.source}
               </p>
-              <blockquote className="border-l-2 border-primary pl-4 text-sm text-foreground italic leading-relaxed">
+              <blockquote className="border-s-2 border-primary ps-4 text-sm text-foreground italic leading-relaxed">
                 {item.extract}
               </blockquote>
               <p className="text-sm font-semibold text-foreground mt-4">Q: {item.stem}</p>
@@ -409,7 +409,7 @@ export default async function MeaningImpactPage() {
           <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground mb-2">
             {HOW_ITEM.source}
           </p>
-          <blockquote className="border-l-2 border-primary pl-4 text-sm text-foreground italic leading-relaxed">
+          <blockquote className="border-s-2 border-primary ps-4 text-sm text-foreground italic leading-relaxed">
             {HOW_ITEM.extract}
           </blockquote>
           <p className="text-sm font-semibold text-foreground mt-4">Q: {HOW_ITEM.stem}</p>

@@ -22,7 +22,7 @@ function Section({
     <div className="mb-4 rounded-xl border border-border bg-card shadow-md overflow-hidden">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left hover:bg-muted transition-colors"
+        className="flex w-full items-center justify-between px-5 py-4 text-start hover:bg-muted transition-colors"
       >
         <span className="flex items-center gap-3">
           <span className="text-xl">{icon}</span>
@@ -55,10 +55,10 @@ function QuoteCard({
   paraphrase?: boolean
 }) {
   return (
-    <div className="rounded-lg border-l-4 border-violet-400 bg-violet-500/5 p-4 mb-3">
+    <div className="rounded-lg border-s-4 border-violet-400 bg-violet-500/5 p-4 mb-3">
       {paraphrase ? (
         <p className="text-sm font-semibold text-violet-800 dark:text-violet-200">
-          <span className="mr-2 rounded bg-violet-500/15 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-violet-600">
+          <span className="me-2 rounded bg-violet-500/15 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-violet-600">
             Paraphrase
           </span>
           {quote}

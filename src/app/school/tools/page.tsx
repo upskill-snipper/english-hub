@@ -190,11 +190,11 @@ function QuickTimer({ fullscreen = false }: { fullscreen?: boolean }) {
       {/* Controls */}
       <div className="flex items-center gap-3">
         <Button onClick={toggleRunning} size="lg" disabled={remaining === 0 && !running}>
-          {running ? <Pause className="mr-2 h-4 w-4" /> : <Play className="mr-2 h-4 w-4" />}
+          {running ? <Pause className="me-2 h-4 w-4" /> : <Play className="me-2 h-4 w-4" />}
           {running ? tx('school.b15.tools.btn_pause') : tx('school.b15.tools.btn_start')}
         </Button>
         <Button onClick={reset} variant="outline" size="lg">
-          <RotateCcw className="mr-2 h-4 w-4" />
+          <RotateCcw className="me-2 h-4 w-4" />
           {tx('school.b15.tools.btn_reset')}
         </Button>
         <Button
@@ -221,7 +221,7 @@ function FullscreenTimerDialog() {
       <DialogTrigger
         render={
           <Button variant="outline" size="sm">
-            <Maximize className="mr-2 h-4 w-4" />
+            <Maximize className="me-2 h-4 w-4" />
             {tx('school.b15.tools.btn_full_screen')}
           </Button>
         }

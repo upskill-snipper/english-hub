@@ -285,29 +285,29 @@ export default function AdminMarkerPayPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-border text-left text-muted-foreground">
-                    <th className="pb-3 pr-4 font-medium">
+                  <tr className="border-b border-border text-start text-muted-foreground">
+                    <th className="pb-3 pe-4 font-medium">
                       {tf('admin.marker_pay.col.marker', 'Marker')}
                     </th>
-                    <th className="pb-3 pr-4 font-medium">
+                    <th className="pb-3 pe-4 font-medium">
                       {tf('admin.marker_pay.col.email', 'Email')}
                     </th>
-                    <th className="pb-3 pr-4 font-medium">
+                    <th className="pb-3 pe-4 font-medium">
                       {tf('admin.marker_pay.col.status', 'Status')}
                     </th>
-                    <th className="pb-3 pr-4 font-medium text-right">
+                    <th className="pb-3 pe-4 font-medium text-end">
                       {tf('admin.marker_pay.col.rate', 'Rate (p/script)')}
                     </th>
-                    <th className="pb-3 pr-4 font-medium text-right">
+                    <th className="pb-3 pe-4 font-medium text-end">
                       {tf('admin.marker_pay.col.scripts', 'Approved')}
                     </th>
-                    <th className="pb-3 pr-4 font-medium text-right">
+                    <th className="pb-3 pe-4 font-medium text-end">
                       {tf('admin.marker_pay.col.gold', 'Gold')}
                     </th>
-                    <th className="pb-3 pr-4 font-medium text-right">
+                    <th className="pb-3 pe-4 font-medium text-end">
                       {tf('admin.marker_pay.col.nongold', 'Non-gold')}
                     </th>
-                    <th className="pb-3 font-medium text-right">
+                    <th className="pb-3 font-medium text-end">
                       {tf('admin.marker_pay.col.amount', 'Amount')}
                     </th>
                   </tr>
@@ -315,16 +315,16 @@ export default function AdminMarkerPayPage() {
                 <tbody className="divide-y divide-border">
                   {markers.map((m) => (
                     <tr key={m.markerId} className="text-foreground">
-                      <td className="py-3 pr-4 font-medium">{m.displayName}</td>
-                      <td className="py-3 pr-4 text-muted-foreground">
+                      <td className="py-3 pe-4 font-medium">{m.displayName}</td>
+                      <td className="py-3 pe-4 text-muted-foreground">
                         {m.email || <span className="text-muted-foreground">--</span>}
                       </td>
-                      <td className="py-3 pr-4">
+                      <td className="py-3 pe-4">
                         <span className="inline-block text-xs px-2 py-0.5 rounded-full bg-border text-muted-foreground">
                           {m.status || 'unknown'}
                         </span>
                       </td>
-                      <td className="py-3 pr-4 text-right">
+                      <td className="py-3 pe-4 text-end">
                         {m.rateMissing ? (
                           <span
                             className="text-clay-600"
@@ -339,22 +339,22 @@ export default function AdminMarkerPayPage() {
                           m.payRatePence
                         )}
                       </td>
-                      <td className="py-3 pr-4 text-right">{m.approvedScripts}</td>
-                      <td className="py-3 pr-4 text-right">{m.goldScripts}</td>
-                      <td className="py-3 pr-4 text-right">{m.nonGoldScripts}</td>
-                      <td className="py-3 text-right font-medium">{fmtGBP(m.amountPence)}</td>
+                      <td className="py-3 pe-4 text-end">{m.approvedScripts}</td>
+                      <td className="py-3 pe-4 text-end">{m.goldScripts}</td>
+                      <td className="py-3 pe-4 text-end">{m.nonGoldScripts}</td>
+                      <td className="py-3 text-end font-medium">{fmtGBP(m.amountPence)}</td>
                     </tr>
                   ))}
                 </tbody>
                 <tfoot>
                   <tr className="border-t-2 border-border text-foreground font-semibold">
-                    <td className="py-3 pr-4" colSpan={4}>
+                    <td className="py-3 pe-4" colSpan={4}>
                       {tf('admin.marker_pay.totals', 'Totals')}
                     </td>
-                    <td className="py-3 pr-4 text-right">{totals?.approvedScripts ?? 0}</td>
-                    <td className="py-3 pr-4 text-right">{totals?.goldScripts ?? 0}</td>
-                    <td className="py-3 pr-4 text-right">{totals?.nonGoldScripts ?? 0}</td>
-                    <td className="py-3 text-right">{fmtGBP(totals?.amountPence ?? 0)}</td>
+                    <td className="py-3 pe-4 text-end">{totals?.approvedScripts ?? 0}</td>
+                    <td className="py-3 pe-4 text-end">{totals?.goldScripts ?? 0}</td>
+                    <td className="py-3 pe-4 text-end">{totals?.nonGoldScripts ?? 0}</td>
+                    <td className="py-3 text-end">{fmtGBP(totals?.amountPence ?? 0)}</td>
                   </tr>
                 </tfoot>
               </table>

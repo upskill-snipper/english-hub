@@ -316,7 +316,7 @@ export default function FlashcardsPage() {
             </div>
             {studyMode === 'difficult' && (
               <Badge variant="destructive">
-                <Flame className="mr-1 h-3 w-3" />
+                <Flame className="me-1 h-3 w-3" />
                 Difficult mode
               </Badge>
             )}
@@ -347,7 +347,7 @@ export default function FlashcardsPage() {
             tabIndex={isFlipped ? undefined : 0}
             aria-label={isFlipped ? undefined : 'Reveal flashcard answer'}
           >
-            <div className="absolute top-4 right-4">
+            <div className="absolute top-4 end-4">
               <span className="text-xs text-muted-foreground">{formatNextReview(reviewState)}</span>
             </div>
             {!isFlipped ? (
@@ -407,7 +407,7 @@ export default function FlashcardsPage() {
               }}
               disabled={currentCardIndex === 0}
             >
-              <ChevronLeft className="mr-1 h-4 w-4" />
+              <ChevronLeft className="me-1 h-4 w-4" />
               Previous
             </Button>
             <span className="text-sm text-muted-foreground">
@@ -425,7 +425,7 @@ export default function FlashcardsPage() {
               disabled={currentCardIndex >= studyQueue.length - 1}
             >
               Skip
-              <ChevronRight className="ml-1 h-4 w-4" />
+              <ChevronRight className="ms-1 h-4 w-4" />
             </Button>
           </div>
         </div>
@@ -586,7 +586,7 @@ export default function FlashcardsPage() {
                 // instant despite the cards no longer being in the page bundle.
                 onMouseEnter={() => void loadFlashcardDeck(deck.id).catch(() => {})}
                 onFocus={() => void loadFlashcardDeck(deck.id).catch(() => {})}
-                className="group relative flex flex-col overflow-hidden rounded-xl border border-border bg-card text-left shadow-sm transition-all hover:shadow-md hover:border-primary/30"
+                className="group relative flex flex-col overflow-hidden rounded-xl border border-border bg-card text-start shadow-sm transition-all hover:shadow-md hover:border-primary/30"
               >
                 <div className="h-1 w-full bg-muted">
                   <div
@@ -649,7 +649,7 @@ export default function FlashcardsPage() {
           </div>
           <Button variant="outline" size="sm" render={<Link href="/revision/flashcards" />}>
             Revision flashcards
-            <ArrowRight className="ml-1 h-4 w-4" />
+            <ArrowRight className="ms-1 h-4 w-4" />
           </Button>
         </div>
       </div>
@@ -766,7 +766,7 @@ function DeckLoadState({
               Your progress is safe. Check your connection and try again.
             </p>
             <Button variant="outline" size="sm" className="mt-4" onClick={onRetry}>
-              <RotateCcw className="mr-1.5 h-4 w-4" />
+              <RotateCcw className="me-1.5 h-4 w-4" />
               Try again
             </Button>
           </div>
@@ -856,17 +856,17 @@ function DeckDetail({
         </div>
         <div className="mt-5 flex flex-wrap gap-3">
           <Button onClick={() => onStudy('study')}>
-            <BookOpen className="mr-1.5 h-4 w-4" />
+            <BookOpen className="me-1.5 h-4 w-4" />
             Study ({stats.due > 0 ? `${stats.due} due` : `${Math.min(10, stats.newCount)} new`})
           </Button>
           {stats.difficult > 0 && (
             <Button variant="outline" onClick={() => onStudy('difficult')}>
-              <Flame className="mr-1.5 h-4 w-4" />
+              <Flame className="me-1.5 h-4 w-4" />
               Difficult cards ({stats.difficult})
             </Button>
           )}
           <Button variant="ghost" size="sm" onClick={onReset}>
-            <RotateCcw className="mr-1.5 h-4 w-4" />
+            <RotateCcw className="me-1.5 h-4 w-4" />
             Reset progress
           </Button>
         </div>
@@ -906,7 +906,7 @@ function DeckDetail({
                       <Clock className="h-4 w-4 text-clay-600" />
                     )}
                     {isNew && <Star className="h-4 w-4 text-blue-400" />}
-                    <span className="w-16 text-right text-[10px] text-muted-foreground">
+                    <span className="w-16 text-end text-[10px] text-muted-foreground">
                       {formatNextReview(state)}
                     </span>
                   </div>

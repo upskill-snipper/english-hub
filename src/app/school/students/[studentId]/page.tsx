@@ -640,7 +640,7 @@ export default function StudentDrilldownPage() {
           {icon}
           <PanelEyebrow>{title}</PanelEyebrow>
           {count !== undefined && (
-            <span className="ml-1 rounded-full bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">
+            <span className="ms-1 rounded-full bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">
               {count}
             </span>
           )}
@@ -954,25 +954,25 @@ export default function StudentDrilldownPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-border text-left text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                    <th className="pb-3 pr-4">Module</th>
-                    <th className="pb-3 pr-4">Status</th>
-                    <th className="pb-3 pr-4">Quiz Score</th>
-                    <th className="pb-3 pr-4">Time</th>
+                  <tr className="border-b border-border text-start text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                    <th className="pb-3 pe-4">Module</th>
+                    <th className="pb-3 pe-4">Status</th>
+                    <th className="pb-3 pe-4">Quiz Score</th>
+                    <th className="pb-3 pe-4">Time</th>
                     <th className="pb-3">Attempts</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
                   {sortedModules.map((mod) => (
                     <tr key={mod.moduleId} className="group">
-                      <td className="py-3 pr-4">
+                      <td className="py-3 pe-4">
                         <div>
                           <p className="font-medium text-foreground">{mod.moduleName}</p>
                           <p className="text-xs text-muted-foreground">{mod.courseName}</p>
                         </div>
                       </td>
-                      <td className="py-3 pr-4">{statusBadge(mod.status, t)}</td>
-                      <td className="py-3 pr-4">
+                      <td className="py-3 pe-4">{statusBadge(mod.status, t)}</td>
+                      <td className="py-3 pe-4">
                         {mod.quizScore !== null ? (
                           <div className="flex items-center gap-2">
                             <div className="h-2 w-16 overflow-hidden rounded-full bg-muted">
@@ -991,7 +991,7 @@ export default function StudentDrilldownPage() {
                           <span className="text-xs text-muted-foreground">&mdash;</span>
                         )}
                       </td>
-                      <td className="py-3 pr-4">
+                      <td className="py-3 pe-4">
                         <span className="text-xs tabular-nums text-muted-foreground">
                           {mod.timeSpentMinutes}m
                         </span>
@@ -1136,15 +1136,15 @@ export default function StudentDrilldownPage() {
                   {/* Accessible / print table equivalent */}
                   <table className="mt-2 hidden w-full text-sm print:table">
                     <thead>
-                      <tr className="border-b border-border text-left text-xs uppercase text-muted-foreground">
-                        <th className="pb-2 pr-4">Attempt</th>
+                      <tr className="border-b border-border text-start text-xs uppercase text-muted-foreground">
+                        <th className="pb-2 pe-4">Attempt</th>
                         <th className="pb-2">Score</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-border">
                       {quizChartData.map((q, i) => (
                         <tr key={i}>
-                          <td className="py-1.5 pr-4">{q.label}</td>
+                          <td className="py-1.5 pe-4">{q.label}</td>
                           <td className="py-1.5 tabular-nums">{q.score}%</td>
                         </tr>
                       ))}
@@ -1183,17 +1183,17 @@ export default function StudentDrilldownPage() {
               {/* Accessible / print table equivalent */}
               <table className="mt-2 hidden w-full text-sm print:table">
                 <thead>
-                  <tr className="border-b border-border text-left text-xs uppercase text-muted-foreground">
-                    <th className="pb-2 pr-4">Week</th>
-                    <th className="pb-2 pr-4">Score</th>
+                  <tr className="border-b border-border text-start text-xs uppercase text-muted-foreground">
+                    <th className="pb-2 pe-4">Week</th>
+                    <th className="pb-2 pe-4">Score</th>
                     <th className="pb-2">Trend</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
                   {weeklyScores.map((w, i) => (
                     <tr key={i}>
-                      <td className="py-1.5 pr-4">{w.week}</td>
-                      <td className="py-1.5 pr-4 tabular-nums">
+                      <td className="py-1.5 pe-4">{w.week}</td>
+                      <td className="py-1.5 pe-4 tabular-nums">
                         {percentageToGCSEGradeLabel(w.score)} ({w.score}%)
                       </td>
                       <td className="py-1.5 capitalize">{w.trend}</td>
@@ -1224,11 +1224,11 @@ export default function StudentDrilldownPage() {
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="border-b border-border text-left text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                        <th className="pb-3 pr-4">Exam</th>
-                        <th className="pb-3 pr-4">Date</th>
-                        <th className="pb-3 pr-4">Score</th>
-                        <th className="pb-3 pr-4">Grade</th>
+                      <tr className="border-b border-border text-start text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                        <th className="pb-3 pe-4">Exam</th>
+                        <th className="pb-3 pe-4">Date</th>
+                        <th className="pb-3 pe-4">Score</th>
+                        <th className="pb-3 pe-4">Grade</th>
                         <th className="pb-3">Areas for Improvement</th>
                       </tr>
                     </thead>
@@ -1237,13 +1237,13 @@ export default function StudentDrilldownPage() {
                         const examPct = Math.round((exam.score / exam.maxScore) * 100)
                         return (
                           <tr key={exam.id}>
-                            <td className="py-3 pr-4 font-medium text-foreground">
+                            <td className="py-3 pe-4 font-medium text-foreground">
                               {exam.examName}
                             </td>
-                            <td className="py-3 pr-4 text-xs text-muted-foreground">
+                            <td className="py-3 pe-4 text-xs text-muted-foreground">
                               {formatDate(exam.date)}
                             </td>
-                            <td className="py-3 pr-4">
+                            <td className="py-3 pe-4">
                               <div className="flex items-center gap-2">
                                 <div className="h-2 w-16 overflow-hidden rounded-full bg-muted">
                                   <div
@@ -1258,7 +1258,7 @@ export default function StudentDrilldownPage() {
                                 </span>
                               </div>
                             </td>
-                            <td className="py-3 pr-4">
+                            <td className="py-3 pe-4">
                               <Badge
                                 variant="outline"
                                 className={`text-xs ${
@@ -1406,15 +1406,15 @@ export default function StudentDrilldownPage() {
                   {/* Accessible / print table equivalent */}
                   <table className="mt-2 hidden w-full text-sm print:table">
                     <thead>
-                      <tr className="border-b border-border text-left text-xs uppercase text-muted-foreground">
-                        <th className="pb-2 pr-4">Week</th>
+                      <tr className="border-b border-border text-start text-xs uppercase text-muted-foreground">
+                        <th className="pb-2 pe-4">Week</th>
                         <th className="pb-2">Hours</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-border">
                       {revisionChartData.map((r, i) => (
                         <tr key={i}>
-                          <td className="py-1.5 pr-4">{r.week}</td>
+                          <td className="py-1.5 pe-4">{r.week}</td>
                           <td className="py-1.5 tabular-nums">{r.hours}h</td>
                         </tr>
                       ))}
@@ -1566,7 +1566,7 @@ export default function StudentDrilldownPage() {
                                 setEditingNoteText((v) => (v ? v.trimEnd() + ' ' : '') + t)
                               }
                               iconOnly
-                              className="ml-auto"
+                              className="ms-auto"
                             />
                           </div>
                         </div>
@@ -1625,7 +1625,7 @@ export default function StudentDrilldownPage() {
             <>
               {student.recentActivity.length > 0 ? (
                 <div className="relative">
-                  <div className="absolute left-[11px] top-0 bottom-0 w-px bg-border" />
+                  <div className="absolute start-[11px] top-0 bottom-0 w-px bg-border" />
 
                   <div className="space-y-0">
                     {student.recentActivity.map((activity) => (

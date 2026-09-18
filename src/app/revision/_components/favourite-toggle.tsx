@@ -63,7 +63,7 @@ export function FavouriteToggle({ href, title }: { href: string; title: string }
     return (
       <span
         aria-hidden="true"
-        className="absolute right-3 top-3 inline-flex h-7 w-7 items-center justify-center rounded-full"
+        className="absolute end-3 top-3 inline-flex h-7 w-7 items-center justify-center rounded-full"
       >
         <Star className="size-4 text-muted-foreground/40" />
       </span>
@@ -82,7 +82,7 @@ export function FavouriteToggle({ href, title }: { href: string; title: string }
       }
       title={isFav ? t('rev.misc2.fav.remove_short') : t('rev.misc2.fav.add_short')}
       className={cn(
-        'absolute right-3 top-3 z-10 inline-flex h-7 w-7 items-center justify-center rounded-full border border-border/40 bg-background/80 backdrop-blur transition-colors',
+        'absolute end-3 top-3 z-10 inline-flex h-7 w-7 items-center justify-center rounded-full border border-border/40 bg-background/80 backdrop-blur transition-colors',
         'hover:border-amber-500/50 hover:bg-amber-500/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/50',
       )}
     >

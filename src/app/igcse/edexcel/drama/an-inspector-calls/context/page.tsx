@@ -92,7 +92,7 @@ export default async function InspectorCallsContextPage() {
         <div className="relative">
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="border-primary/20 bg-primary/10 text-primary">
-              <Sparkles className="mr-1 size-3" />
+              <Sparkles className="me-1 size-3" />
               {await t('igcse.page.badge_edexcel_lit')}
             </Badge>
             <Badge variant="secondary">{await t('anth_text.section.context')}</Badge>

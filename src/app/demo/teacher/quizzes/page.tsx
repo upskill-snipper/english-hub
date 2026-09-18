@@ -355,7 +355,7 @@ export default function QuizBuilderDemoPage() {
               {GENERATED_QUESTIONS.map((q) => (
                 <div key={q.id} className="rounded-xl border border-border/60 bg-card p-5">
                   <p className="text-sm font-medium text-foreground mb-3">
-                    <span className="text-primary mr-2">{q.id}.</span>
+                    <span className="text-primary me-2">{q.id}.</span>
                     {q.question}
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-3">
@@ -409,7 +409,7 @@ export default function QuizBuilderDemoPage() {
 
       {/* Toast */}
       {showToast && (
-        <div className="fixed bottom-6 right-6 z-50 animate-in slide-in-from-bottom-4 fade-in duration-300">
+        <div className="fixed bottom-6 end-6 z-50 animate-in slide-in-from-bottom-4 fade-in duration-300">
           <div className="rounded-lg border border-border/60 bg-muted px-5 py-3 shadow-xl">
             <p className="text-sm text-foreground">
               Available with full account -{' '}

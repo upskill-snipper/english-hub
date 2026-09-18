@@ -30,7 +30,12 @@ import type {
   StrengthWeakness,
 } from '@/lib/analytics-recommendations'
 import { analyzeClassPerformance } from '@/lib/analytics-recommendations'
-import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor, formatPercentageWithGrade } from '@/lib/grades'
+import {
+  percentageToGCSEGrade,
+  percentageToGCSEGradeLabel,
+  gcseGradeColor,
+  formatPercentageWithGrade,
+} from '@/lib/grades'
 
 // ── Props ────────────────────────────────────────────────────────────────────
 
@@ -44,13 +49,33 @@ interface ClassResultsAnalysisProps {
 function statusColor(status: SkillBreakdown['status']) {
   switch (status) {
     case 'below':
-      return { bg: 'bg-red-500/10', text: 'text-red-400', border: 'border-red-500/20', fill: '#ef4444' }
+      return {
+        bg: 'bg-red-500/10',
+        text: 'text-red-400',
+        border: 'border-red-500/20',
+        fill: '#ef4444',
+      }
     case 'approaching':
-      return { bg: 'bg-amber-500/10', text: 'text-clay-600', border: 'border-amber-500/20', fill: '#f59e0b' }
+      return {
+        bg: 'bg-amber-500/10',
+        text: 'text-clay-600',
+        border: 'border-amber-500/20',
+        fill: '#f59e0b',
+      }
     case 'meeting':
-      return { bg: 'bg-green-500/10', text: 'text-green-400', border: 'border-green-500/20', fill: '#22c55e' }
+      return {
+        bg: 'bg-green-500/10',
+        text: 'text-green-400',
+        border: 'border-green-500/20',
+        fill: '#22c55e',
+      }
     case 'exceeding':
-      return { bg: 'bg-emerald-500/10', text: 'text-emerald-400', border: 'border-emerald-500/20', fill: '#10b981' }
+      return {
+        bg: 'bg-emerald-500/10',
+        text: 'text-emerald-400',
+        border: 'border-emerald-500/20',
+        fill: '#10b981',
+      }
   }
 }
 
@@ -154,7 +179,14 @@ function SkillRadar({ skills }: { skills: SkillBreakdown[] }) {
 
           return (
             <g key={i}>
-              <circle cx={p.x} cy={p.y} r={4} fill={colors.fill} stroke="var(--background)" strokeWidth="2" />
+              <circle
+                cx={p.x}
+                cy={p.y}
+                r={4}
+                fill={colors.fill}
+                stroke="var(--background)"
+                strokeWidth="2"
+              />
               <text
                 x={labelP.x}
                 y={labelP.y}
@@ -172,13 +204,7 @@ function SkillRadar({ skills }: { skills: SkillBreakdown[] }) {
 
         {/* Level labels */}
         {gridCircles.map((r, i) => (
-          <text
-            key={i}
-            x={cx + 4}
-            y={cy - r + 3}
-            className="fill-muted-foreground"
-            fontSize="8"
-          >
+          <text key={i} x={cx + 4} y={cy - r + 3} className="fill-muted-foreground" fontSize="8">
             {Math.round(((i + 1) / levels) * 100)}%
           </text>
         ))}
@@ -252,11 +278,16 @@ export function ClassResultsAnalysis({ classId, className }: ClassResultsAnalysi
 
       // Overlay trend data from API if available
       if (data.trends && data.trends.length > 0) {
-        result.trends = data.trends.map((t: { week_start: string; avg_score: number; active_students: number }) => ({
-          label: new Date(t.week_start).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }),
-          avg_score: t.avg_score,
-          active_students: t.active_students,
-        }))
+        result.trends = data.trends.map(
+          (t: { week_start: string; avg_score: number; active_students: number }) => ({
+            label: new Date(t.week_start).toLocaleDateString('en-GB', {
+              day: 'numeric',
+              month: 'short',
+            }),
+            avg_score: t.avg_score,
+            active_students: t.active_students,
+          }),
+        )
       }
 
       // Use API averages when available (more accurate than reconstructed scores)
@@ -266,19 +297,28 @@ export function ClassResultsAnalysis({ classId, className }: ClassResultsAnalysi
 
       // Ensure weak areas from API are represented
       if (weakAreas.length > 0 && result.top_weaknesses.length === 0) {
-        result.top_weaknesses = weakAreas.slice(0, 3).map((wa: {
-          course_id: string; course_name: string; module_id?: string; module_name?: string;
-          avg_score: number; students_below_threshold: number; severity: 'critical' | 'warning' | 'minor'
-        }) => ({
-          area: wa.module_name ?? wa.course_name,
-          course_id: wa.course_id,
-          course_name: wa.course_name,
-          module_id: wa.module_id,
-          module_name: wa.module_name,
-          avg_score: wa.avg_score,
-          student_count: wa.students_below_threshold,
-          severity: wa.severity,
-        }))
+        result.top_weaknesses = weakAreas
+          .slice(0, 3)
+          .map(
+            (wa: {
+              course_id: string
+              course_name: string
+              module_id?: string
+              module_name?: string
+              avg_score: number
+              students_below_threshold: number
+              severity: 'critical' | 'warning' | 'minor'
+            }) => ({
+              area: wa.module_name ?? wa.course_name,
+              course_id: wa.course_id,
+              course_name: wa.course_name,
+              module_id: wa.module_id,
+              module_name: wa.module_name,
+              avg_score: wa.avg_score,
+              student_count: wa.students_below_threshold,
+              severity: wa.severity,
+            }),
+          )
       }
 
       setAnalysis(result)
@@ -302,8 +342,12 @@ export function ClassResultsAnalysis({ classId, className }: ClassResultsAnalysi
         <div className="grid gap-4 grid-cols-2 lg:grid-cols-4">
           {Array.from({ length: 4 }).map((_, i) => (
             <Card key={i}>
-              <CardHeader className="pb-2"><Skeleton className="h-3 w-20" /></CardHeader>
-              <CardContent><Skeleton className="h-8 w-14" /></CardContent>
+              <CardHeader className="pb-2">
+                <Skeleton className="h-3 w-20" />
+              </CardHeader>
+              <CardContent>
+                <Skeleton className="h-8 w-14" />
+              </CardContent>
             </Card>
           ))}
         </div>
@@ -343,18 +387,30 @@ export function ClassResultsAnalysis({ classId, className }: ClassResultsAnalysi
         <Card className="animate-fade-in">
           <CardHeader className="pb-2">
             <div className="flex items-center gap-2">
-              <div className={cn('flex h-8 w-8 items-center justify-center rounded-lg', avgColors.bg)}>
+              <div
+                className={cn('flex h-8 w-8 items-center justify-center rounded-lg', avgColors.bg)}
+              >
                 <BarChart3 className={cn('h-4 w-4', avgColors.text)} />
               </div>
-              <span className="text-xs uppercase tracking-wider text-muted-foreground">Class Average</span>
+              <span className="text-xs uppercase tracking-wider text-muted-foreground">
+                Class Average
+              </span>
             </div>
           </CardHeader>
           <CardContent>
-            <div className={cn('text-2xl font-bold tracking-tight', gcseGradeColor(percentageToGCSEGrade(analysis.class_avg_score)))}>
+            <div
+              className={cn(
+                'text-2xl font-bold tracking-tight',
+                gcseGradeColor(percentageToGCSEGrade(analysis.class_avg_score)),
+              )}
+            >
               {percentageToGCSEGradeLabel(analysis.class_avg_score)}
             </div>
             <span className="text-xs text-muted-foreground">{analysis.class_avg_score}%</span>
-            <Badge variant="outline" className={cn('mt-1 text-[10px]', avgColors.text, avgColors.border)}>
+            <Badge
+              variant="outline"
+              className={cn('mt-1 text-[10px]', avgColors.text, avgColors.border)}
+            >
               {avgStatus.label}
             </Badge>
           </CardContent>
@@ -383,7 +439,9 @@ export function ClassResultsAnalysis({ classId, className }: ClassResultsAnalysi
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-red-500/10">
                 <TrendingDown className="h-4 w-4 text-red-400" />
               </div>
-              <span className="text-xs uppercase tracking-wider text-muted-foreground">Weak Areas</span>
+              <span className="text-xs uppercase tracking-wider text-muted-foreground">
+                Weak Areas
+              </span>
             </div>
           </CardHeader>
           <CardContent>
@@ -399,7 +457,9 @@ export function ClassResultsAnalysis({ classId, className }: ClassResultsAnalysi
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-green-500/10">
                 <TrendingUp className="h-4 w-4 text-green-400" />
               </div>
-              <span className="text-xs uppercase tracking-wider text-muted-foreground">Strengths</span>
+              <span className="text-xs uppercase tracking-wider text-muted-foreground">
+                Strengths
+              </span>
             </div>
           </CardHeader>
           <CardContent>
@@ -547,7 +607,10 @@ export function ClassResultsAnalysis({ classId, className }: ClassResultsAnalysi
                 const colors = statusColor(skill.status)
                 return (
                   <div key={i} className="flex items-center gap-3">
-                    <span className="text-sm text-foreground w-36 truncate shrink-0" title={skill.skill}>
+                    <span
+                      className="text-sm text-foreground w-36 truncate shrink-0"
+                      title={skill.skill}
+                    >
                       {skill.skill}
                     </span>
                     <div className="flex-1 h-2.5 rounded-full bg-muted overflow-hidden">
@@ -559,14 +622,25 @@ export function ClassResultsAnalysis({ classId, className }: ClassResultsAnalysi
                         }}
                       />
                     </div>
-                    <span className={cn('text-sm font-semibold tabular-nums w-16 text-right', gcseGradeColor(percentageToGCSEGrade(skill.avg_score)))}>
+                    <span
+                      className={cn(
+                        'text-sm font-semibold tabular-nums w-16 text-end',
+                        gcseGradeColor(percentageToGCSEGrade(skill.avg_score)),
+                      )}
+                    >
                       G{percentageToGCSEGrade(skill.avg_score)}
                     </span>
                     <Badge
                       variant="outline"
                       className={cn('text-[10px] w-20 justify-center', colors.text, colors.border)}
                     >
-                      {skill.status === 'below' ? 'Below' : skill.status === 'approaching' ? 'Approaching' : skill.status === 'meeting' ? 'Meeting' : 'Exceeding'}
+                      {skill.status === 'below'
+                        ? 'Below'
+                        : skill.status === 'approaching'
+                          ? 'Approaching'
+                          : skill.status === 'meeting'
+                            ? 'Meeting'
+                            : 'Exceeding'}
                     </Badge>
                   </div>
                 )
@@ -604,9 +678,24 @@ export function ClassResultsAnalysis({ classId, className }: ClassResultsAnalysi
 
 function WeakAreaCard({ area, classId }: { area: StrengthWeakness; classId: string }) {
   const severityConfig = {
-    critical: { bg: 'bg-red-500/10', text: 'text-red-400', border: 'border-red-500/20', label: 'Critical' },
-    warning: { bg: 'bg-amber-500/10', text: 'text-clay-600', border: 'border-amber-500/20', label: 'Warning' },
-    minor: { bg: 'bg-blue-500/10', text: 'text-blue-400', border: 'border-blue-500/20', label: 'Minor' },
+    critical: {
+      bg: 'bg-red-500/10',
+      text: 'text-red-400',
+      border: 'border-red-500/20',
+      label: 'Critical',
+    },
+    warning: {
+      bg: 'bg-amber-500/10',
+      text: 'text-clay-600',
+      border: 'border-amber-500/20',
+      label: 'Warning',
+    },
+    minor: {
+      bg: 'bg-blue-500/10',
+      text: 'text-blue-400',
+      border: 'border-blue-500/20',
+      label: 'Minor',
+    },
   }
   const config = severityConfig[area.severity]
 

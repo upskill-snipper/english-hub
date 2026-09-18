@@ -287,7 +287,7 @@ export function Recorder({ maxSeconds, onRecordingChange, className }: RecorderP
         )}
 
         {/* Elapsed time / recording indicator */}
-        <div className="ml-auto flex items-center gap-2 text-sm tabular-nums text-muted-foreground">
+        <div className="ms-auto flex items-center gap-2 text-sm tabular-nums text-muted-foreground">
           {state === 'recording' && (
             <span
               className="inline-flex size-2.5 animate-pulse rounded-full bg-red-500"

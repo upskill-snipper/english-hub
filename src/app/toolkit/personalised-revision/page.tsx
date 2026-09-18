@@ -112,11 +112,11 @@ export default function PersonalisedRevisionPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button render={<Link href="/revision/quiz" />}>
-              <Zap className="h-4 w-4 mr-2" />
+              <Zap className="h-4 w-4 me-2" />
               Take a Quiz
             </Button>
             <Button variant="outline" render={<Link href="/marking" />}>
-              <BookOpen className="h-4 w-4 mr-2" />
+              <BookOpen className="h-4 w-4 me-2" />
               Submit an Essay
             </Button>
           </div>
@@ -300,7 +300,7 @@ export default function PersonalisedRevisionPage() {
             <div className="flex items-center gap-2 mb-6">
               <AlertTriangle className="h-5 w-5 text-red-500" />
               <h2 className="font-serif text-2xl font-medium tracking-tight">Close the Gaps</h2>
-              <Badge className="bg-red-100 text-red-700 border-red-200 dark:bg-red-950 dark:text-red-400 dark:border-red-900 text-xs font-mono ml-2">
+              <Badge className="bg-red-100 text-red-700 border-red-200 dark:bg-red-950 dark:text-red-400 dark:border-red-900 text-xs font-mono ms-2">
                 Priority 1
               </Badge>
             </div>
@@ -337,7 +337,7 @@ export default function PersonalisedRevisionPage() {
                       <h3 className="font-serif text-lg font-medium">
                         {gap.ao}: {gap.label}
                       </h3>
-                      <Badge className="bg-amber-100 text-amber-700 border-amber-200 dark:bg-amber-900 dark:text-clay-600 dark:border-amber-800 font-mono text-xs ml-auto">
+                      <Badge className="bg-amber-100 text-amber-700 border-amber-200 dark:bg-amber-900 dark:text-clay-600 dark:border-amber-800 font-mono text-xs ms-auto">
                         {gap.percentage}%
                       </Badge>
                     </div>
@@ -359,7 +359,7 @@ export default function PersonalisedRevisionPage() {
             <h2 className="font-serif text-2xl font-medium tracking-tight">
               Secure Grade {profile.predictedGrade}
             </h2>
-            <Badge className="bg-amber-100 text-amber-700 border-amber-200 dark:bg-amber-950 dark:text-clay-600 dark:border-amber-900 text-xs font-mono ml-2">
+            <Badge className="bg-amber-100 text-amber-700 border-amber-200 dark:bg-amber-950 dark:text-clay-600 dark:border-amber-900 text-xs font-mono ms-2">
               Priority 2
             </Badge>
           </div>
@@ -426,7 +426,7 @@ export default function PersonalisedRevisionPage() {
             <h2 className="font-serif text-2xl font-medium tracking-tight">
               Push for Grade {nextGrade}
             </h2>
-            <Badge className="bg-emerald-100 text-emerald-700 border-emerald-200 dark:bg-emerald-950 dark:text-emerald-400 dark:border-emerald-900 text-xs font-mono ml-2">
+            <Badge className="bg-emerald-100 text-emerald-700 border-emerald-200 dark:bg-emerald-950 dark:text-emerald-400 dark:border-emerald-900 text-xs font-mono ms-2">
               Priority 3
             </Badge>
           </div>
@@ -654,7 +654,7 @@ function StudyPlanCard({ item }: { item: StudyPlanItem }) {
         <p className="text-sm font-medium leading-relaxed mb-1">{item.task}</p>
         <div className="flex flex-wrap items-center gap-2">
           <Badge variant="outline" className="text-xs font-mono">
-            <Clock className="h-3 w-3 mr-1" />
+            <Clock className="h-3 w-3 me-1" />
             {item.timeEstimate}
           </Badge>
           <Badge className={`text-xs font-mono border ${impactColour}`}>{item.impact} impact</Badge>
@@ -683,7 +683,7 @@ function QuickLink({ href, icon: Icon, label }: { href: string; icon: typeof Zap
       <span className="text-sm font-medium group-hover:text-primary transition-colors">
         {label}
       </span>
-      <ChevronRight className="h-4 w-4 text-muted-foreground ml-auto" />
+      <ChevronRight className="h-4 w-4 text-muted-foreground ms-auto" />
     </Link>
   )
 }

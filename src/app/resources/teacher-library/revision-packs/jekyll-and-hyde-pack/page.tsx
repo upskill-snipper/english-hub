@@ -253,7 +253,7 @@ export default function JekyllAndHydePack() {
               <h3 className="font-semibold text-foreground">
                 Plan 1: How does Stevenson present duality?
               </h3>
-              <ol className="mt-2 list-decimal space-y-1 pl-5 text-sm text-muted-foreground">
+              <ol className="mt-2 list-decimal space-y-1 ps-5 text-sm text-muted-foreground">
                 <li>
                   Thesis: Stevenson presents duality as universal, not exceptional - a condition of
                   being human.
@@ -271,7 +271,7 @@ export default function JekyllAndHydePack() {
               <h3 className="font-semibold text-foreground">
                 Plan 2: How is Hyde presented as evil?
               </h3>
-              <ol className="mt-2 list-decimal space-y-1 pl-5 text-sm text-muted-foreground">
+              <ol className="mt-2 list-decimal space-y-1 ps-5 text-sm text-muted-foreground">
                 <li>
                   Thesis: Hyde is presented as pre-civilised evil - primal, animalistic, and
                   uncontrollable.
@@ -289,7 +289,7 @@ export default function JekyllAndHydePack() {
               <h3 className="font-semibold text-foreground">
                 Plan 3: How does Stevenson explore reputation?
               </h3>
-              <ol className="mt-2 list-decimal space-y-1 pl-5 text-sm text-muted-foreground">
+              <ol className="mt-2 list-decimal space-y-1 ps-5 text-sm text-muted-foreground">
                 <li>
                   Thesis: Reputation drives every major character&apos;s actions - and becomes a
                   force for destruction.

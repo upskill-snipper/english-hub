@@ -695,7 +695,7 @@ export default async function InspectorCallsPage() {
                   <p className="text-xs font-semibold uppercase tracking-wider text-accent">
                     Suggested Paragraph Plan
                   </p>
-                  <ol className="mt-3 space-y-2 text-sm text-muted-foreground list-decimal pl-5">
+                  <ol className="mt-3 space-y-2 text-sm text-muted-foreground list-decimal ps-5">
                     {eq.plan.map((p, j) => (
                       <li key={j} className="leading-relaxed">
                         {p}

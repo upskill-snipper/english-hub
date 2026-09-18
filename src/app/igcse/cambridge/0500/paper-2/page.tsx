@@ -81,7 +81,7 @@ export default async function Paper2HubPage() {
 
       {/* ── Hero ──────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 lg:p-10">
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
+        <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
 
         <div className="relative">
           <Badge className="mb-3 bg-primary/10 text-primary border-primary/20">

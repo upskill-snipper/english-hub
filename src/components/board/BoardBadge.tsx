@@ -64,7 +64,7 @@ export function BoardBadge({
           render={<Link href="/board-select?change=1" aria-label={t('board.change_aria')} />}
         >
           {t('board.change')}
-          <ChevronRight className="ml-0.5 h-3 w-3" />
+          <ChevronRight className="ms-0.5 h-3 w-3" />
         </Button>
       )}
     </div>

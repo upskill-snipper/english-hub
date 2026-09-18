@@ -295,7 +295,7 @@ export default function TestMode({ deck }: { deck: FlashcardDeck }) {
               onClick={() => handleOptionClick(i)}
               disabled={hasAnswered}
               className={cn(
-                'w-full rounded-lg border p-4 text-left text-sm transition-all duration-200',
+                'w-full rounded-lg border p-4 text-start text-sm transition-all duration-200',
                 // Default state
                 !hasAnswered &&
                   'border-border bg-card hover:border-primary/50 hover:bg-primary/5 cursor-pointer',

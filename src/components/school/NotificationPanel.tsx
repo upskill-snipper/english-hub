@@ -202,7 +202,7 @@ export function NotificationPanel({
       <PopoverTrigger className="relative inline-flex h-9 w-9 items-center justify-center rounded-md hover:bg-accent transition-colors">
         <Bell className="h-4.5 w-4.5 text-muted-foreground" />
         {unreadCount > 0 && (
-          <span className="absolute -top-0.5 -right-0.5 flex h-4.5 min-w-4.5 items-center justify-center rounded-full bg-destructive px-1 text-[10px] font-bold text-destructive-foreground">
+          <span className="absolute -top-0.5 -end-0.5 flex h-4.5 min-w-4.5 items-center justify-center rounded-full bg-destructive px-1 text-[10px] font-bold text-destructive-foreground">
             {unreadCount > 99 ? '99+' : unreadCount}
           </span>
         )}
@@ -225,7 +225,7 @@ export function NotificationPanel({
               className="h-7 text-xs text-muted-foreground"
               onClick={handleMarkAllRead}
             >
-              <CheckCheck className="mr-1 h-3.5 w-3.5" />
+              <CheckCheck className="me-1 h-3.5 w-3.5" />
               {t('school.notif.mark_all_read')}
             </Button>
           )}

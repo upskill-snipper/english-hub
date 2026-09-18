@@ -877,7 +877,7 @@ export default function ThePreludePage() {
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/revision/poetry" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -938,7 +938,7 @@ export default function ThePreludePage() {
                 {cmp.points.map((point, i) => (
                   <li
                     key={i}
-                    className="text-xs text-muted-foreground leading-relaxed pl-3 relative before:absolute before:left-0 before:top-1.5 before:size-1 before:rounded-full before:bg-muted-foreground/40"
+                    className="text-xs text-muted-foreground leading-relaxed ps-3 relative before:absolute before:start-0 before:top-1.5 before:size-1 before:rounded-full before:bg-muted-foreground/40"
                   >
                     {point}
                   </li>

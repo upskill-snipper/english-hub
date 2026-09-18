@@ -1157,7 +1157,7 @@ export default function AssessmentToolsPage() {
                           key={i}
                           onClick={() => !showAnswer && setSelectedAnswer(i)}
                           disabled={showAnswer}
-                          className={`flex w-full items-center gap-3 rounded-lg border-2 p-4 text-left text-sm transition ${optionClass}`}
+                          className={`flex w-full items-center gap-3 rounded-lg border-2 p-4 text-start text-sm transition ${optionClass}`}
                         >
                           <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-border text-xs font-bold">
                             {String.fromCharCode(65 + i)}
@@ -1234,7 +1234,7 @@ export default function AssessmentToolsPage() {
                   {quizQuestions.map((q, i) => (
                     <div key={i} className="px-5 py-4">
                       <p className="text-sm font-medium text-foreground">
-                        <span className="mr-2 font-bold text-primary">Q{i + 1}.</span>
+                        <span className="me-2 font-bold text-primary">Q{i + 1}.</span>
                         {q.question}
                       </p>
                       <p className="mt-1 text-sm text-green-700 dark:text-green-300">
@@ -1346,7 +1346,7 @@ export default function AssessmentToolsPage() {
                 >
                   <button
                     onClick={() => toggleMarkScheme(idx)}
-                    className="flex w-full items-center justify-between bg-primary px-5 py-3 text-left print:pointer-events-none"
+                    className="flex w-full items-center justify-between bg-primary px-5 py-3 text-start print:pointer-events-none"
                   >
                     <div className="flex items-center gap-3">
                       <h3 className="font-bold text-white">{template.title}</h3>
@@ -1435,7 +1435,7 @@ export default function AssessmentToolsPage() {
                           {tracker.columns.map((col) => (
                             <th
                               key={col}
-                              className="whitespace-nowrap border border-border px-3 py-2 text-left font-semibold text-muted-foreground"
+                              className="whitespace-nowrap border border-border px-3 py-2 text-start font-semibold text-muted-foreground"
                             >
                               {col}
                             </th>

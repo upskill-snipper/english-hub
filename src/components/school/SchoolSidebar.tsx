@@ -271,7 +271,7 @@ export function SchoolSidebar({ school, member, classes }: SchoolSidebarProps) {
                         >
                           <item.icon className="h-4 w-4" />
                           {item.badge && notificationCount > 0 && (
-                            <span className="absolute -right-0.5 -top-0.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-destructive px-1 text-[10px] font-bold text-destructive-foreground">
+                            <span className="absolute -end-0.5 -top-0.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-destructive px-1 text-[10px] font-bold text-destructive-foreground">
                               {notificationCount}
                             </span>
                           )}
@@ -346,7 +346,7 @@ export function SchoolSidebar({ school, member, classes }: SchoolSidebarProps) {
                       )}
                     >
                       <div className="overflow-hidden">
-                        <div className="ml-5 border-l border-border/60 pb-1 pl-3 pt-1">
+                        <div className="ms-5 border-s border-border/60 pb-1 ps-3 pt-1">
                           {subItems.map((child) => {
                             const childActive =
                               pathname === child.href || pathname.startsWith(child.href + '/')
@@ -430,7 +430,7 @@ export function SchoolSidebar({ school, member, classes }: SchoolSidebarProps) {
   return (
     <>
       {/* Mobile hamburger toggle */}
-      <div className="fixed left-0 top-[3.75rem] z-40 lg:hidden">
+      <div className="fixed start-0 top-[3.75rem] z-40 lg:hidden">
         <Button
           variant="ghost"
           size="icon"
@@ -453,7 +453,7 @@ export function SchoolSidebar({ school, member, classes }: SchoolSidebarProps) {
       {/* Mobile sidebar drawer */}
       <aside
         className={cn(
-          'fixed inset-y-0 left-0 z-30 w-full max-w-xs border-r border-border bg-card transition-transform duration-200 ease-in-out lg:hidden',
+          'fixed inset-y-0 start-0 z-30 w-full max-w-xs border-e border-border bg-card transition-transform duration-200 ease-in-out lg:hidden',
           mobileOpen ? 'translate-x-0' : '-translate-x-full',
         )}
       >
@@ -474,7 +474,7 @@ export function SchoolSidebar({ school, member, classes }: SchoolSidebarProps) {
       {/* Desktop sidebar */}
       <aside
         className={cn(
-          'hidden bg-card/30 transition-[width] duration-200 ease-in-out lg:flex lg:shrink-0 lg:flex-col lg:border-r lg:border-border',
+          'hidden bg-card/30 transition-[width] duration-200 ease-in-out lg:flex lg:shrink-0 lg:flex-col lg:border-e lg:border-border',
           collapsed ? 'lg:w-16' : 'lg:w-64',
         )}
       >

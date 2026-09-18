@@ -126,7 +126,7 @@ export default function PrivacyDashboard() {
     <div className="min-h-screen bg-background">
       {/* Toast */}
       {toast && (
-        <div className="fixed top-4 right-4 z-50 animate-fade-in rounded-lg bg-success px-5 py-3 text-sm font-medium text-white shadow-lg">
+        <div className="fixed top-4 end-4 z-50 animate-fade-in rounded-lg bg-success px-5 py-3 text-sm font-medium text-white shadow-lg">
           {toast}
         </div>
       )}
@@ -631,7 +631,7 @@ function DeleteTab({
                 <button
                   onClick={() => deleteEssay(essay.id)}
                   disabled={deletingEssay === essay.id}
-                  className="ml-3 shrink-0 rounded-lg border border-warn-200 bg-warn-50 px-3 py-1.5 text-xs font-medium text-warn hover:bg-warn-100 transition-colors disabled:opacity-50"
+                  className="ms-3 shrink-0 rounded-lg border border-warn-200 bg-warn-50 px-3 py-1.5 text-xs font-medium text-warn hover:bg-warn-100 transition-colors disabled:opacity-50"
                 >
                   {deletingEssay === essay.id
                     ? tx('dashboard.privacy.deleting')

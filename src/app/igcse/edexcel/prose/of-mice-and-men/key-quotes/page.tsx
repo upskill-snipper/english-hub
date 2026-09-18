@@ -192,7 +192,7 @@ export default async function OmamKeyQuotesPage() {
         <div className="relative">
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="border-primary/20 bg-primary/10 text-primary">
-              <Sparkles className="mr-1 size-3" />
+              <Sparkles className="me-1 size-3" />
               {await t('igcse.page.badge_edexcel_lit')}
             </Badge>
             <Badge variant="secondary">{await t('igcse.page.section.key_quotes')}</Badge>
@@ -231,7 +231,7 @@ export default async function OmamKeyQuotesPage() {
           <div className="grid gap-4 md:grid-cols-2">
             {group.quotes.map((q, i) => (
               <div key={i} className="rounded-xl border border-border/60 bg-card p-5">
-                <blockquote className="border-l-2 border-primary/40 pl-3 text-body-md italic text-foreground">
+                <blockquote className="border-s-2 border-primary/40 ps-3 text-body-md italic text-foreground">
                   &ldquo;{q.text}&rdquo;
                 </blockquote>
                 <p className="mt-2 text-body-xs font-medium text-primary">- {q.speaker}</p>

@@ -398,7 +398,7 @@ function LevelCard({
       onClick={onClick}
       disabled={loading}
       className={cn(
-        'group relative flex flex-col overflow-hidden rounded-3xl border border-border/60 bg-card/60 text-left',
+        'group relative flex flex-col overflow-hidden rounded-3xl border border-border/60 bg-card/60 text-start',
         'backdrop-blur-xl backdrop-saturate-150',
         'shadow-lg shadow-black/5 dark:shadow-black/20',
         'transition-all duration-300 ease-out outline-none',
@@ -678,7 +678,7 @@ function AwardingBodyStep({
           </button>
           <Breadcrumb parts={[levelLabel]} />
         </div>
-        <div className="flex flex-col gap-3 text-center sm:text-left">
+        <div className="flex flex-col gap-3 text-center sm:text-start">
           <span className="mx-auto inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary backdrop-blur-md sm:mx-0">
             {t('board.step_of')
               .replace('{current}', String(currentStep))
@@ -855,7 +855,7 @@ function PaperStep({
           </button>
           <Breadcrumb parts={breadcrumbParts} />
         </div>
-        <div className="flex flex-col gap-3 text-center sm:text-left">
+        <div className="flex flex-col gap-3 text-center sm:text-start">
           <span className="mx-auto inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary backdrop-blur-md sm:mx-0">
             {t('board.step_of').replace('{current}', '3').replace('{total}', '3')}
           </span>
@@ -958,7 +958,7 @@ function OptionCard({
       aria-checked={isSelected ?? false}
       aria-busy={isLoading ?? false}
       className={cn(
-        'group relative flex h-full flex-col overflow-hidden rounded-3xl border border-border/60 bg-card/60 text-left',
+        'group relative flex h-full flex-col overflow-hidden rounded-3xl border border-border/60 bg-card/60 text-start',
         'backdrop-blur-xl backdrop-saturate-150',
         'shadow-lg shadow-black/5 dark:shadow-black/20',
         'transition-all duration-300 ease-out outline-none',

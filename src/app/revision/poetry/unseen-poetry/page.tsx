@@ -556,7 +556,7 @@ export default async function UnseenPoetryGuidePage() {
         <Button
           variant="ghost"
           size="sm"
-          className="-ml-2 text-muted-foreground"
+          className="-ms-2 text-muted-foreground"
           render={<Link href="/revision/poetry" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -566,17 +566,17 @@ export default async function UnseenPoetryGuidePage() {
 
       {/* ── Hero ───────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-violet-500/[0.04] p-6 sm:p-8 lg:p-10">
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-violet-500/5 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-blue-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-violet-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-16 -start-16 h-48 w-48 rounded-full bg-blue-500/5 blur-3xl" />
 
         <div className="relative">
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
-              <Sparkles className="mr-1 size-3" />
+              <Sparkles className="me-1 size-3" />
               {await t('rev.poetry.unseen.badge_guide')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
-              <Eye className="mr-1 size-3" />
+              <Eye className="me-1 size-3" />
               {await t('rev.poetry.unseen.badge_all_boards')}
             </Badge>
           </div>
@@ -817,7 +817,7 @@ export default async function UnseenPoetryGuidePage() {
             <p className="text-sm font-semibold text-foreground mb-3">
               {await t('rev.poetry.unseen.full_example_title')}
             </p>
-            <blockquote className="border-l-2 border-emerald-500/40 pl-4 text-body-sm text-muted-foreground leading-relaxed">
+            <blockquote className="border-s-2 border-emerald-500/40 ps-4 text-body-sm text-muted-foreground leading-relaxed">
               Owen uses the simile &ldquo;like old beggars under sacks&rdquo; to describe soldiers
               returning from the front line. Beggars are associated with poverty, exhaustion, and
               social rejection &mdash; the complete opposite of the heroic, upright soldier
@@ -879,7 +879,7 @@ export default async function UnseenPoetryGuidePage() {
                     <MessageSquareQuote className="size-4 text-clay-600" />
                     {analysisQuestionsLabel}
                   </p>
-                  <ol className="list-decimal space-y-2 pl-5">
+                  <ol className="list-decimal space-y-2 ps-5">
                     {p.questions.map((q, idx) => (
                       <li key={idx} className="text-body-sm text-muted-foreground leading-relaxed">
                         {q}
@@ -956,7 +956,7 @@ export default async function UnseenPoetryGuidePage() {
             <p className="text-sm font-semibold text-foreground mb-3">
               {await t('rev.poetry.unseen.example_comparison_title')}
             </p>
-            <blockquote className="border-l-2 border-cyan-500/40 pl-4 text-body-sm text-muted-foreground leading-relaxed">
+            <blockquote className="border-s-2 border-cyan-500/40 ps-4 text-body-sm text-muted-foreground leading-relaxed">
               Both Shelley and Owen explore the destructive consequences of power, but they focus on
               different types of destruction. In &ldquo;Ozymandias,&rdquo; Shelley uses dramatic
               irony to show how political power is destroyed by time: the boastful inscription

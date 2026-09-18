@@ -375,7 +375,7 @@ function LinkChildCard(props: {
           <Button type="submit" disabled={props.linking || !props.inviteCode.trim()}>
             {props.linking ? (
               <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                <Loader2 className="me-2 h-4 w-4 animate-spin" />
                 {t('dashboard.parent.link_linking')}
               </>
             ) : (
@@ -424,7 +424,7 @@ function ChildCard(props: {
           disabled={props.unlinking}
           className="shrink-0"
         >
-          <Unlink className="mr-1.5 h-4 w-4" />
+          <Unlink className="me-1.5 h-4 w-4" />
           {props.unlinking ? t('dashboard.parent.unlinking') : t('dashboard.parent.unlink_btn')}
         </Button>
       </CardHeader>
@@ -487,7 +487,7 @@ function ReportList({ label, items }: { label: string; items: string[] }) {
   return (
     <div>
       <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">{label}</p>
-      <ul className="mt-1 list-disc pl-5 text-sm text-foreground space-y-0.5">
+      <ul className="mt-1 list-disc ps-5 text-sm text-foreground space-y-0.5">
         {items.map((item, i) => (
           <li key={i}>{item}</li>
         ))}

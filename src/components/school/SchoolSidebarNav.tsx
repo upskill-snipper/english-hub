@@ -102,7 +102,7 @@ export function SchoolSidebarNav({
           </div>
 
           {/* Subtitle */}
-          <p className="mt-0.5 pl-7 text-[11px] font-medium uppercase tracking-widest text-white/40">
+          <p className="mt-0.5 ps-7 text-[11px] font-medium uppercase tracking-widest text-white/40">
             {t('school.sidebar.admin_portal')}
           </p>
 
@@ -140,8 +140,8 @@ export function SchoolSidebarNav({
                 className={cn(
                   'group flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors',
                   active
-                    ? 'border-l-2 border-primary bg-primary/10 text-primary'
-                    : 'border-l-2 border-transparent text-white/60 hover:bg-white/5 hover:text-white',
+                    ? 'border-s-2 border-primary bg-primary/10 text-primary'
+                    : 'border-s-2 border-transparent text-white/60 hover:bg-white/5 hover:text-white',
                 )}
               >
                 <Icon
@@ -199,7 +199,7 @@ export function SchoolSidebarNav({
       {/* ── Mobile hamburger ──────────────────────────────────────────── */}
       <button
         type="button"
-        className="fixed left-4 top-4 z-50 flex h-9 w-9 items-center justify-center rounded-lg bg-sidebar text-sidebar-foreground shadow-md lg:hidden"
+        className="fixed start-4 top-4 z-50 flex h-9 w-9 items-center justify-center rounded-lg bg-sidebar text-sidebar-foreground shadow-md lg:hidden"
         onClick={() => setMobileOpen((prev) => !prev)}
         aria-label={mobileOpen ? t('school.sidebar.close_nav') : t('school.sidebar.open_nav')}
       >
@@ -218,7 +218,7 @@ export function SchoolSidebarNav({
       {/* ── Mobile drawer ─────────────────────────────────────────────── */}
       <aside
         className={cn(
-          'fixed inset-y-0 left-0 z-40 w-[240px] bg-sidebar transition-transform duration-200 ease-in-out lg:hidden',
+          'fixed inset-y-0 start-0 z-40 w-[240px] bg-sidebar transition-transform duration-200 ease-in-out lg:hidden',
           mobileOpen ? 'translate-x-0' : '-translate-x-full',
         )}
         aria-label={t('school.sidebar.nav_label')}

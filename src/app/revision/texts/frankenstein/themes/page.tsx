@@ -265,13 +265,13 @@ export default async function FrankensteinThemesPage() {
       />
       {/* Hero */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-amber-500/[0.04] p-6 sm:p-8 lg:p-10">
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-amber-500/5 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-amber-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-16 -start-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl" />
         <div className="relative">
           <Button
             variant="ghost"
             size="sm"
-            className="mb-4 -ml-2 text-muted-foreground"
+            className="mb-4 -ms-2 text-muted-foreground"
             render={<Link href="/revision/texts/frankenstein" />}
           >
             <ArrowLeft className="size-3.5" />
@@ -280,7 +280,7 @@ export default async function FrankensteinThemesPage() {
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
-              <Lightbulb className="mr-1 size-3 text-clay-600" />
+              <Lightbulb className="me-1 size-3 text-clay-600" />
               {await t('rev.texts.common.theme_analysis')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
@@ -344,7 +344,7 @@ export default async function FrankensteinThemesPage() {
             </Card>
 
             {/* Context link */}
-            <Card className="border-l-4 border-l-emerald-400">
+            <Card className="border-s-4 border-s-emerald-400">
               <CardContent className="p-5">
                 <p className="text-sm font-semibold text-foreground mb-1">{tContextLink}</p>
                 <p className="text-body-sm text-muted-foreground">{t.contextLink}</p>

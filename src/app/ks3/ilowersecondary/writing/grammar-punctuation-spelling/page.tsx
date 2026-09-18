@@ -443,15 +443,15 @@ export default async function GrammarPunctuationSpellingPage() {
         <div className="not-prose mt-6 overflow-x-auto">
           <table className="w-full border-collapse text-sm">
             <thead>
-              <tr className="border-b border-border text-left">
-                <th className="py-2 pr-4 font-semibold text-foreground">Purpose</th>
+              <tr className="border-b border-border text-start">
+                <th className="py-2 pe-4 font-semibold text-foreground">Purpose</th>
                 <th className="py-2 font-semibold text-foreground">Connectives to use</th>
               </tr>
             </thead>
             <tbody>
               {CONNECTIVES.map((c) => (
                 <tr key={c.group} className="border-b border-border/60">
-                  <td className="py-2 pr-4 font-medium text-foreground">{c.group}</td>
+                  <td className="py-2 pe-4 font-medium text-foreground">{c.group}</td>
                   <td className="py-2 text-foreground/90">{c.words}</td>
                 </tr>
               ))}
@@ -598,17 +598,17 @@ export default async function GrammarPunctuationSpellingPage() {
         <div className="not-prose mt-6 overflow-x-auto">
           <table className="w-full border-collapse text-sm">
             <thead>
-              <tr className="border-b border-border text-left">
-                <th className="py-2 pr-4 font-semibold text-foreground">Not&hellip;</th>
-                <th className="py-2 pr-4 font-semibold text-foreground">But&hellip;</th>
+              <tr className="border-b border-border text-start">
+                <th className="py-2 pe-4 font-semibold text-foreground">Not&hellip;</th>
+                <th className="py-2 pe-4 font-semibold text-foreground">But&hellip;</th>
                 <th className="py-2 font-semibold text-foreground">Memory tip</th>
               </tr>
             </thead>
             <tbody>
               {SPELLING_TRAPS.map((s) => (
                 <tr key={s.right} className="border-b border-border/60">
-                  <td className="py-2 pr-4 text-muted-foreground line-through">{s.wrong}</td>
-                  <td className="py-2 pr-4 font-medium text-foreground">{s.right}</td>
+                  <td className="py-2 pe-4 text-muted-foreground line-through">{s.wrong}</td>
+                  <td className="py-2 pe-4 font-medium text-foreground">{s.right}</td>
                   <td className="py-2 text-foreground/90">{s.tip}</td>
                 </tr>
               ))}

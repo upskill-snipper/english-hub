@@ -301,7 +301,7 @@ export default async function CreativeWritingPage() {
               <div className="mb-8 overflow-hidden rounded-xl border border-border">
                 <div className="grid grid-cols-2 text-sm font-bold bg-primary text-white">
                   <div className="px-4 py-3">{tr(`Telling (Weak)`)}</div>
-                  <div className="px-4 py-3 border-l border-border">{tr(`Showing (Strong)`)}</div>
+                  <div className="px-4 py-3 border-s border-border">{tr(`Showing (Strong)`)}</div>
                 </div>
                 {[
                   {
@@ -352,7 +352,7 @@ export default async function CreativeWritingPage() {
                     <div className="px-4 py-3 text-muted-foreground line-through decoration-red-400">
                       {row.tell}
                     </div>
-                    <div className="px-4 py-3 text-muted-foreground border-t sm:border-t-0 sm:border-l border-border">
+                    <div className="px-4 py-3 text-muted-foreground border-t sm:border-t-0 sm:border-s border-border">
                       {row.show}
                     </div>
                   </div>
@@ -1150,10 +1150,10 @@ export default async function CreativeWritingPage() {
                 <table className="w-full text-sm border-collapse">
                   <thead>
                     <tr className="bg-primary text-white">
-                      <th className="px-4 py-3 text-left font-semibold rounded-tl-lg">
+                      <th className="px-4 py-3 text-start font-semibold rounded-ss-lg">
                         {tr(`Instead of...`)}
                       </th>
-                      <th className="px-4 py-3 text-left font-semibold rounded-tr-lg">Try...</th>
+                      <th className="px-4 py-3 text-start font-semibold rounded-se-lg">Try...</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -1250,7 +1250,7 @@ export default async function CreativeWritingPage() {
                 </table>
               </div>
 
-              <div className="mt-6 rounded-xl border-l-4 border-primary bg-primary/5 p-5">
+              <div className="mt-6 rounded-xl border-s-4 border-primary bg-primary/5 p-5">
                 <p className="text-sm font-bold text-foreground">
                   {tr(`Top Tip: Precision Over Complexity`)}
                 </p>
@@ -1387,7 +1387,7 @@ export default async function CreativeWritingPage() {
                 </p>
               </div>
 
-              <div className="mt-6 rounded-xl border-l-4 border-success bg-success/5 p-5">
+              <div className="mt-6 rounded-xl border-s-4 border-success bg-success/5 p-5">
                 <p className="font-bold text-foreground">
                   {tr(`Why This Response Works (Marker Perspective)`)}
                 </p>
@@ -1543,7 +1543,7 @@ export default async function CreativeWritingPage() {
                 </p>
               </div>
 
-              <div className="mt-6 rounded-xl border-l-4 border-success bg-success/5 p-5">
+              <div className="mt-6 rounded-xl border-s-4 border-success bg-success/5 p-5">
                 <p className="font-bold text-foreground">
                   {tr(`Why This Response Works (Marker Perspective)`)}
                 </p>
@@ -1745,7 +1745,7 @@ export default async function CreativeWritingPage() {
               <h3 className="mb-4 text-lg font-bold text-foreground">
                 {tr(`Quick Planning Checklist`)}
               </h3>
-              <div className="rounded-xl border-l-4 border-primary bg-primary/5 p-5">
+              <div className="rounded-xl border-s-4 border-primary bg-primary/5 p-5">
                 <p className="text-sm text-muted-foreground mb-3">
                   Before you start writing, check these boxes:
                 </p>

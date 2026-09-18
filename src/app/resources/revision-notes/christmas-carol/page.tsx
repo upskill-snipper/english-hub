@@ -27,7 +27,7 @@ function Section({
     <div className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left transition-colors hover:bg-muted"
+        className="flex w-full items-center justify-between px-5 py-4 text-start transition-colors hover:bg-muted"
         aria-expanded={open}
         aria-controls={`section-${id}`}
       >
@@ -71,7 +71,7 @@ function Quote({
   analysis: string
 }) {
   return (
-    <div className="rounded-lg border-l-4 border-accent bg-primary/10 p-4">
+    <div className="rounded-lg border-s-4 border-accent bg-primary/10 p-4">
       <p className="text-sm font-semibold italic text-foreground">&ldquo;{text}&rdquo;</p>
       <p className="mt-1 text-xs text-muted-foreground">
         {speaker} &mdash; {act}
@@ -2108,7 +2108,7 @@ export default function ChristmasCarolRevisionPage() {
                 <p className="text-sm text-muted-foreground mb-3">
                   How does Dickens present Scrooge&apos;s transformation in{' '}
                   <em>A Christmas Carol</em>? Refer to the whole novella in your answer.
-                  <span className="ml-2 text-xs font-semibold text-muted-foreground">
+                  <span className="ms-2 text-xs font-semibold text-muted-foreground">
                     [30 marks]
                   </span>
                 </p>
@@ -2128,7 +2128,7 @@ export default function ChristmasCarolRevisionPage() {
                 <p className="text-sm text-muted-foreground mb-3">
                   How does Dickens use the character of the Ghost of Christmas Present to criticise
                   Victorian society?
-                  <span className="ml-2 text-xs font-semibold text-muted-foreground">
+                  <span className="ms-2 text-xs font-semibold text-muted-foreground">
                     [30 marks]
                   </span>
                 </p>
@@ -2148,7 +2148,7 @@ export default function ChristmasCarolRevisionPage() {
                 <p className="text-sm text-muted-foreground mb-3">
                   How does Dickens present the theme of poverty and social responsibility in{' '}
                   <em>A Christmas Carol</em>?
-                  <span className="ml-2 text-xs font-semibold text-muted-foreground">
+                  <span className="ms-2 text-xs font-semibold text-muted-foreground">
                     [30 marks]
                   </span>
                 </p>
@@ -2168,7 +2168,7 @@ export default function ChristmasCarolRevisionPage() {
                 <p className="text-sm text-muted-foreground mb-3">
                   How does Dickens use the Cratchit family to highlight the effects of inequality in
                   Victorian England?
-                  <span className="ml-2 text-xs font-semibold text-muted-foreground">
+                  <span className="ms-2 text-xs font-semibold text-muted-foreground">
                     [30 marks]
                   </span>
                 </p>

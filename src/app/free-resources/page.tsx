@@ -211,9 +211,9 @@ export default async function FreeResourcesPage() {
                   r.level === 'gcse' ? 'hover:border-emerald-500/40' : 'hover:border-clay-500/40'
                 }`}
               >
-                <LevelChip level={r.level} className="absolute right-4 top-4" />
+                <LevelChip level={r.level} className="absolute end-4 top-4" />
 
-                <div className="pr-16">
+                <div className="pe-16">
                   <h3 className="font-heading text-lg sm:text-xl font-semibold text-foreground leading-tight">
                     {r.title}
                   </h3>

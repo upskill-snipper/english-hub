@@ -102,16 +102,16 @@ async function PageHero({ snapshot }: { snapshot: LearnerSnapshot }) {
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl"
+        className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl"
+        className="pointer-events-none absolute -bottom-16 -start-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl"
       />
 
       <div className="relative">
         <Badge variant="secondary" className="mb-4">
-          <BarChart3 className="mr-1 size-3" aria-hidden="true" />
+          <BarChart3 className="me-1 size-3" aria-hidden="true" />
           {await t('rev.misc.analytics.badge')}
         </Badge>
         <h1
@@ -295,7 +295,7 @@ async function WeakTopicsCard({ snapshot }: { snapshot: LearnerSnapshot }) {
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="min-w-[3.5rem] text-right text-sm font-semibold tabular-nums text-foreground">
+                  <div className="min-w-[3.5rem] text-end text-sm font-semibold tabular-nums text-foreground">
                     {topic.correctRate}%
                   </div>
                   <TopicProgressBar percentage={topic.correctRate} />

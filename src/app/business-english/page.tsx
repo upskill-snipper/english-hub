@@ -171,11 +171,11 @@ export default async function BusinessEnglishPage() {
       >
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-24 -top-24 size-72 rounded-full bg-primary/[0.05] blur-3xl"
+          className="pointer-events-none absolute -end-24 -top-24 size-72 rounded-full bg-primary/[0.05] blur-3xl"
         />
         <div className="relative">
           <Badge variant="secondary" className="mb-4">
-            <Building2 className="mr-1 size-3" aria-hidden="true" />
+            <Building2 className="me-1 size-3" aria-hidden="true" />
             <span dir="auto">{copy.badge}</span>
           </Badge>
           <h1

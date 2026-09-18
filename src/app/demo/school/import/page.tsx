@@ -233,15 +233,13 @@ export default function DemoImportPage() {
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-border bg-muted/50">
-                <th className="px-4 py-2.5 text-left font-medium text-muted-foreground">Name</th>
-                <th className="px-4 py-2.5 text-left font-medium text-muted-foreground">Email</th>
-                <th className="px-4 py-2.5 text-left font-medium text-muted-foreground">
+                <th className="px-4 py-2.5 text-start font-medium text-muted-foreground">Name</th>
+                <th className="px-4 py-2.5 text-start font-medium text-muted-foreground">Email</th>
+                <th className="px-4 py-2.5 text-start font-medium text-muted-foreground">
                   Password
                 </th>
-                <th className="px-4 py-2.5 text-left font-medium text-muted-foreground">Year</th>
-                <th className="px-4 py-2.5 text-right font-medium text-muted-foreground">
-                  Actions
-                </th>
+                <th className="px-4 py-2.5 text-start font-medium text-muted-foreground">Year</th>
+                <th className="px-4 py-2.5 text-end font-medium text-muted-foreground">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -253,7 +251,7 @@ export default function DemoImportPage() {
                     {showPasswords ? student.password : '************'}
                   </td>
                   <td className="px-4 py-2.5 text-muted-foreground">Y{student.yearGroup}</td>
-                  <td className="px-4 py-2.5 text-right">
+                  <td className="px-4 py-2.5 text-end">
                     <Button variant="ghost" size="icon-xs" onClick={() => handleCopyCredentials(i)}>
                       {copiedRow === i ? (
                         <Check className="h-3.5 w-3.5 text-green-500" />

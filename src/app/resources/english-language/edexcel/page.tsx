@@ -224,7 +224,7 @@ export default function EdexcelEnglishLanguagePage() {
           </div>
 
           <div className="mt-8 overflow-x-auto rounded-xl border border-border bg-card shadow-md">
-            <table className="w-full text-left text-sm">
+            <table className="w-full text-start text-sm">
               <thead className="bg-primary text-white">
                 <tr>
                   <th className="px-4 py-3 font-semibold">Component</th>
@@ -296,7 +296,7 @@ export default function EdexcelEnglishLanguagePage() {
                 <span className="mt-4 inline-flex items-center text-sm font-semibold text-accent group-hover:text-primary">
                   View guide
                   <svg
-                    className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"
+                    className="ms-1 h-4 w-4 transition-transform group-hover:translate-x-1"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"

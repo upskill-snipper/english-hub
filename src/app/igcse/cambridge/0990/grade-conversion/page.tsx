@@ -103,7 +103,7 @@ export default async function GradeConversionPage() {
         <div className="relative">
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="bg-primary/10 text-primary border-primary/20">
-              <Sparkles className="mr-1 size-3" />
+              <Sparkles className="me-1 size-3" />
               {await t('igcse.cambridge.badge.cambridge_lang_b')}
             </Badge>
             <Badge variant="secondary">9-1 vs A*-G</Badge>
@@ -130,9 +130,9 @@ export default async function GradeConversionPage() {
             <table className="w-full text-body-sm">
               <thead className="border-b border-border/60 bg-muted/40 text-body-xs uppercase text-muted-foreground">
                 <tr>
-                  <th className="px-4 py-3 text-left">IGCSE Language B grade</th>
-                  <th className="px-4 py-3 text-left">Language A equivalent</th>
-                  <th className="px-4 py-3 text-left">What it represents</th>
+                  <th className="px-4 py-3 text-start">IGCSE Language B grade</th>
+                  <th className="px-4 py-3 text-start">Language A equivalent</th>
+                  <th className="px-4 py-3 text-start">What it represents</th>
                 </tr>
               </thead>
               <tbody>

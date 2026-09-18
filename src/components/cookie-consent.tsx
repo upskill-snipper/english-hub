@@ -185,7 +185,7 @@ export function CookieConsent() {
             type="button"
             onClick={handleDismiss}
             aria-label={t('consent.cookies.close_label')}
-            className="absolute right-3 top-3 rounded-md p-1 text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="absolute end-3 top-3 rounded-md p-1 text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -207,7 +207,7 @@ export function CookieConsent() {
           {!showPreferences ? (
             /* ── Main banner ────────────────────────────── */
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <div className="flex-1 space-y-1 pr-6">
+              <div className="flex-1 space-y-1 pe-6">
                 <p className="text-sm font-medium text-foreground">
                   {t('consent.cookies.banner_title')}
                 </p>
@@ -247,7 +247,7 @@ export function CookieConsent() {
           ) : (
             /* ── Preferences panel ─────────────────────── */
             <div className="space-y-4">
-              <div className="space-y-1 pr-6">
+              <div className="space-y-1 pe-6">
                 <p className="text-sm font-medium text-foreground">
                   {t('consent.cookies.prefs_title')}
                 </p>

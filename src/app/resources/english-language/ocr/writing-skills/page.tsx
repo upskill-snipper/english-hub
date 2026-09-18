@@ -129,7 +129,7 @@ export default async function OCRWritingSkillsPage() {
                 <h3 className="font-semibold text-success-700">
                   Top Band &mdash; Content and Organisation
                 </h3>
-                <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
+                <ul className="ms-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
                   <li>{tr(`Communication is convincing and compelling throughout`)}</li>
                   <li>
                     Tone, style, and register are assuredly matched to purpose, form, and audience
@@ -150,7 +150,7 @@ export default async function OCRWritingSkillsPage() {
                 <h3 className="font-semibold text-success-700">
                   Top Band &mdash; Technical Accuracy
                 </h3>
-                <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
+                <ul className="ms-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
                   <li>{tr(`Sentence demarcation is consistently secure and accurate`)}</li>
                   <li>{tr(`Wide range of punctuation used with a high level of accuracy`)}</li>
                   <li>{tr(`Full range of sentence forms used for effect`)}</li>
@@ -189,7 +189,7 @@ export default async function OCRWritingSkillsPage() {
                 Spend five minutes planning before you write. A planned response is always better
                 structured and more convincing.
               </p>
-              <ol className="ml-6 mt-3 list-decimal space-y-2">
+              <ol className="ms-6 mt-3 list-decimal space-y-2">
                 <li>
                   <strong>{tr(`Identify PAF`)}</strong> &mdash; Circle or underline the Purpose,
                   Audience, and Form in the question.
@@ -276,7 +276,7 @@ export default async function OCRWritingSkillsPage() {
                 Strong paragraphing is essential for content and organisation. Each paragraph
                 should:
               </p>
-              <ul className="ml-6 mt-2 list-disc space-y-2">
+              <ul className="ms-6 mt-2 list-disc space-y-2">
                 <li>
                   <strong>{tr(`Begin with a clear topic sentence`)}</strong> that introduces the
                   main idea of the paragraph.
@@ -334,7 +334,7 @@ export default async function OCRWritingSkillsPage() {
                 Top-band argumentative writing always addresses the opposing view. This shows
                 maturity, balance, and sophistication. Use this structure:
               </p>
-              <ol className="ml-6 mt-3 list-decimal space-y-2">
+              <ol className="ms-6 mt-3 list-decimal space-y-2">
                 <li>
                   <strong>Acknowledge</strong> the counter-argument fairly: &ldquo;Admittedly, some
                   would argue that&hellip;&rdquo;
@@ -435,8 +435,8 @@ export default async function OCRWritingSkillsPage() {
               <div className="mt-3 overflow-x-auto">
                 <table className="w-full border-collapse text-sm">
                   <thead>
-                    <tr className="border-b-2 border-primary/20 text-left">
-                      <th className="py-3 pr-4 font-semibold text-foreground">Generic</th>
+                    <tr className="border-b-2 border-primary/20 text-start">
+                      <th className="py-3 pe-4 font-semibold text-foreground">Generic</th>
                       <th className="py-3 font-semibold text-foreground">
                         {tr(`Precise Alternatives`)}
                       </th>
@@ -444,49 +444,49 @@ export default async function OCRWritingSkillsPage() {
                   </thead>
                   <tbody className="divide-y divide-border">
                     <tr>
-                      <td className="py-3 pr-4">Walked</td>
+                      <td className="py-3 pe-4">Walked</td>
                       <td className="py-3">
                         Trudged, ambled, strode, shuffled, marched, sauntered, crept
                       </td>
                     </tr>
                     <tr>
-                      <td className="py-3 pr-4">Said</td>
+                      <td className="py-3 pe-4">Said</td>
                       <td className="py-3">
                         Murmured, exclaimed, whispered, snapped, muttered, announced, stammered
                       </td>
                     </tr>
                     <tr>
-                      <td className="py-3 pr-4">Happy</td>
+                      <td className="py-3 pe-4">Happy</td>
                       <td className="py-3">
                         Elated, jubilant, content, euphoric, radiant, buoyant
                       </td>
                     </tr>
                     <tr>
-                      <td className="py-3 pr-4">Sad</td>
+                      <td className="py-3 pe-4">Sad</td>
                       <td className="py-3">
                         Melancholy, despondent, forlorn, wistful, desolate, bereft
                       </td>
                     </tr>
                     <tr>
-                      <td className="py-3 pr-4">Big</td>
+                      <td className="py-3 pe-4">Big</td>
                       <td className="py-3">
                         Vast, immense, towering, sprawling, colossal, cavernous
                       </td>
                     </tr>
                     <tr>
-                      <td className="py-3 pr-4">Small</td>
+                      <td className="py-3 pe-4">Small</td>
                       <td className="py-3">
                         {tr(`Cramped, diminutive, compact, minute, modest, poky`)}
                       </td>
                     </tr>
                     <tr>
-                      <td className="py-3 pr-4">Looked</td>
+                      <td className="py-3 pe-4">Looked</td>
                       <td className="py-3">
                         Glanced, peered, scrutinised, gazed, surveyed, squinted
                       </td>
                     </tr>
                     <tr>
-                      <td className="py-3 pr-4">Nice</td>
+                      <td className="py-3 pe-4">Nice</td>
                       <td className="py-3">
                         Delightful, charming, agreeable, idyllic, welcoming, inviting
                       </td>
@@ -656,7 +656,7 @@ export default async function OCRWritingSkillsPage() {
               Always leave 3&ndash;5 minutes at the end of each writing task to proofread. Check for
               the following:
             </p>
-            <ul className="ml-6 list-disc space-y-2">
+            <ul className="ms-6 list-disc space-y-2">
               <li>
                 {tr(`Every sentence ends with a full stop, question mark, or exclamation mark`)}
               </li>

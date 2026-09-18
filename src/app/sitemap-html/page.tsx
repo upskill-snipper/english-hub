@@ -237,7 +237,7 @@ export default async function SitemapHtmlPage() {
                       >
                         {labelForPath(path)}
                       </Link>
-                      <span className="ml-2 text-xs text-muted-foreground">{path}</span>
+                      <span className="ms-2 text-xs text-muted-foreground">{path}</span>
                     </li>
                   ))}
                 </ul>

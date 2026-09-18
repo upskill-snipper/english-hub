@@ -293,7 +293,7 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
                 <span className="text-sm font-medium text-foreground">
                   {t('course.try_it_free')}
                 </span>
-                <span className="ml-1.5 text-xs text-muted-foreground">
+                <span className="ms-1.5 text-xs text-muted-foreground">
                   {t('course.no_signup_needed')}
                 </span>
               </>

@@ -133,7 +133,7 @@ export default function DataExportPage() {
 
           <p className="text-sm text-muted-foreground mb-4">{t('account.export.bundle_intro')}</p>
 
-          <ul className="text-sm text-foreground space-y-2 mb-6 list-disc pl-5 marker:text-primary">
+          <ul className="text-sm text-foreground space-y-2 mb-6 list-disc ps-5 marker:text-primary">
             <li>{t('account.export.bullet_profile')}</li>
             <li>{t('account.export.bullet_board')}</li>
             <li>{t('account.export.bullet_scores')}</li>
@@ -167,12 +167,12 @@ export default function DataExportPage() {
           <button type="button" onClick={handleDownload} disabled={loading} className="btn-primary">
             {loading ? (
               <>
-                <Loader2 className="w-4 h-4 animate-spin mr-2" />
+                <Loader2 className="w-4 h-4 animate-spin me-2" />
                 {t('account.export.button_preparing')}
               </>
             ) : (
               <>
-                <Download className="w-4 h-4 mr-2" />
+                <Download className="w-4 h-4 me-2" />
                 {t('account.export.button')}
               </>
             )}

@@ -242,7 +242,7 @@ function TextPopularityBadge({ textId, data }: { textId: string; data: Aggregate
         <strong>{formatNumber(text.totalStudents)}</strong>{' '}
         {t('analytics.badge.students_studied_text')}
       </span>
-      <span className={`ml-1 text-xs ${getTrendColor(text.trendDirection)}`}>
+      <span className={`ms-1 text-xs ${getTrendColor(text.trendDirection)}`}>
         {getTrendIcon(text.trendDirection)}
       </span>
     </div>
@@ -406,23 +406,23 @@ function FullDashboard({ data }: { data: AggregateSnapshot }) {
           {t('analytics.widget.avg_scores_by_board')}
         </h3>
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-sm">
+          <table className="w-full text-start text-sm">
             <thead>
               <tr className="border-b border-border text-xs font-medium uppercase text-muted-foreground">
-                <th className="pb-2 pr-4">{t('analytics.col.board')}</th>
-                <th className="pb-2 pr-4">{t('analytics.col.students')}</th>
-                <th className="pb-2 pr-4">{t('analytics.col.avg_quiz')}</th>
-                <th className="pb-2 pr-4">{t('analytics.col.avg_assessment')}</th>
+                <th className="pb-2 pe-4">{t('analytics.col.board')}</th>
+                <th className="pb-2 pe-4">{t('analytics.col.students')}</th>
+                <th className="pb-2 pe-4">{t('analytics.col.avg_quiz')}</th>
+                <th className="pb-2 pe-4">{t('analytics.col.avg_assessment')}</th>
                 <th className="pb-2">{t('analytics.col.completion')}</th>
               </tr>
             </thead>
             <tbody>
               {data.scoresByBoard.map((board) => (
                 <tr key={board.examBoard} className="border-b border-border/40">
-                  <td className="py-2 pr-4 font-medium text-foreground">{board.examBoard}</td>
-                  <td className="py-2 pr-4 text-ink-600">{formatNumber(board.totalStudents)}</td>
-                  <td className="py-2 pr-4 text-ink-600">{board.avgQuizScore}%</td>
-                  <td className="py-2 pr-4 text-ink-600">{board.avgAssessmentScore}%</td>
+                  <td className="py-2 pe-4 font-medium text-foreground">{board.examBoard}</td>
+                  <td className="py-2 pe-4 text-ink-600">{formatNumber(board.totalStudents)}</td>
+                  <td className="py-2 pe-4 text-ink-600">{board.avgQuizScore}%</td>
+                  <td className="py-2 pe-4 text-ink-600">{board.avgAssessmentScore}%</td>
                   <td className="py-2 text-ink-600">{board.avgCompletionRate}%</td>
                 </tr>
               ))}

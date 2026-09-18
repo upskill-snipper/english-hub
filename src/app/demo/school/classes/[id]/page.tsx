@@ -221,7 +221,7 @@ export default function DemoClassDetailPage() {
               : 'text-muted-foreground hover:text-foreground'
           }`}
         >
-          <Users className="inline h-4 w-4 mr-1.5 -mt-0.5" />
+          <Users className="inline h-4 w-4 me-1.5 -mt-0.5" />
           Students
         </button>
         <button
@@ -232,7 +232,7 @@ export default function DemoClassDetailPage() {
               : 'text-muted-foreground hover:text-foreground'
           }`}
         >
-          <BarChart3 className="inline h-4 w-4 mr-1.5 -mt-0.5" />
+          <BarChart3 className="inline h-4 w-4 me-1.5 -mt-0.5" />
           Analytics
         </button>
       </div>
@@ -243,18 +243,18 @@ export default function DemoClassDetailPage() {
           {/* Search + Add */}
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-4">
             <div className="relative flex-1 max-w-sm">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+              <Search className="absolute start-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <input
                 type="text"
                 placeholder="Search students..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full rounded-lg border border-border bg-card pl-10 pr-10 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
+                className="w-full rounded-lg border border-border bg-card ps-10 pe-10 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
               />
               {search && (
                 <button
                   onClick={() => setSearch('')}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                  className="absolute end-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
                 >
                   <X className="h-4 w-4" />
                 </button>
@@ -289,19 +289,19 @@ export default function DemoClassDetailPage() {
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-border bg-muted/50">
-                      <th className="px-4 py-3 text-left font-medium text-muted-foreground">
+                      <th className="px-4 py-3 text-start font-medium text-muted-foreground">
                         Name
                       </th>
-                      <th className="px-4 py-3 text-left font-medium text-muted-foreground">
+                      <th className="px-4 py-3 text-start font-medium text-muted-foreground">
                         Progress
                       </th>
-                      <th className="px-4 py-3 text-left font-medium text-muted-foreground">
+                      <th className="px-4 py-3 text-start font-medium text-muted-foreground">
                         Score
                       </th>
-                      <th className="px-4 py-3 text-left font-medium text-muted-foreground">
+                      <th className="px-4 py-3 text-start font-medium text-muted-foreground">
                         Status
                       </th>
-                      <th className="px-4 py-3 text-left font-medium text-muted-foreground">
+                      <th className="px-4 py-3 text-start font-medium text-muted-foreground">
                         Last Active
                       </th>
                     </tr>

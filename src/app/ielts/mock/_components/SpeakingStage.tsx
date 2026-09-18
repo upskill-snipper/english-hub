@@ -291,7 +291,7 @@ export default function SpeakingStage({
           >
             <div className="mb-3 space-y-1.5 text-sm text-foreground">
               <p className="font-medium">{part2.prompts[0]}</p>
-              <ul className="ml-1 space-y-1">
+              <ul className="ms-1 space-y-1">
                 {part2.prompts.slice(1).map((p, i) => (
                   <li key={i} className="flex gap-2 text-muted-foreground">
                     {i > 0 && <span className="text-rose-400">•</span>}
@@ -315,7 +315,7 @@ export default function SpeakingStage({
                   {phase === 'done' && t('ielts.mock.speaking.longturn_done')}
                 </span>
               </div>
-              <div className="ml-auto flex gap-2">
+              <div className="ms-auto flex gap-2">
                 {phase === 'idle' && (
                   <Button type="button" size="sm" variant="outline" onClick={startPrep}>
                     <Timer className="size-3.5" />

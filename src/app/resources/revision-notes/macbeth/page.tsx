@@ -174,7 +174,7 @@ function Section({
     <div className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left transition-colors hover:bg-muted"
+        className="flex w-full items-center justify-between px-5 py-4 text-start transition-colors hover:bg-muted"
         aria-expanded={open}
         aria-controls={`section-${id}`}
       >
@@ -222,7 +222,7 @@ function SubSection({
     <div className="rounded-lg border border-border bg-muted/50 overflow-hidden">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center justify-between px-4 py-3 text-left transition-colors hover:bg-muted/60"
+        className="flex w-full items-center justify-between px-4 py-3 text-start transition-colors hover:bg-muted/60"
         aria-expanded={open}
         aria-controls={`sub-${id}`}
       >
@@ -258,7 +258,7 @@ function Quote({
   analysis: string
 }) {
   return (
-    <div className="rounded-lg border-l-4 border-accent bg-primary/10 p-4">
+    <div className="rounded-lg border-s-4 border-accent bg-primary/10 p-4">
       <p className="text-sm font-semibold italic text-foreground">&ldquo;{text}&rdquo;</p>
       <p className="mt-1 text-xs text-muted-foreground">
         {speaker} &mdash; {act}
@@ -282,7 +282,7 @@ function QuoteCompact({
   analysis: string
 }) {
   return (
-    <div className="rounded-lg border-l-4 border-accent bg-primary/10 p-4">
+    <div className="rounded-lg border-s-4 border-accent bg-primary/10 p-4">
       <p className="text-sm font-semibold italic text-foreground">&ldquo;{text}&rdquo;</p>
       <p className="mt-1 text-xs text-muted-foreground">
         {speaker} &mdash; {act}
@@ -1182,16 +1182,16 @@ export default function MacbethRevisionPage() {
               </h3>
               <div className="rounded-lg border border-border bg-muted p-4 overflow-x-auto">
                 <p className="text-sm text-muted-foreground mb-3">{p(QUOTES_CROSS_INTRO)}</p>
-                <table className="w-full text-sm text-left">
+                <table className="w-full text-sm text-start">
                   <thead>
                     <tr className="border-b border-border">
-                      <th className="py-2 pr-4 font-bold text-foreground">{p(QUOTES_COL_THEME)}</th>
+                      <th className="py-2 pe-4 font-bold text-foreground">{p(QUOTES_COL_THEME)}</th>
                       <th className="py-2 font-bold text-foreground">{p(QUOTES_COL_LIST)}</th>
                     </tr>
                   </thead>
                   <tbody className="text-muted-foreground">
                     <tr className="border-b border-border">
-                      <td className="py-2 pr-4 font-semibold text-red-700 dark:text-red-300 whitespace-nowrap">
+                      <td className="py-2 pe-4 font-semibold text-red-700 dark:text-red-300 whitespace-nowrap">
                         {p(THEME_AMBITION.title)}
                       </td>
                       <td className="py-2">
@@ -1202,7 +1202,7 @@ export default function MacbethRevisionPage() {
                       </td>
                     </tr>
                     <tr className="border-b border-border">
-                      <td className="py-2 pr-4 font-semibold text-amber-700 whitespace-nowrap">
+                      <td className="py-2 pe-4 font-semibold text-amber-700 whitespace-nowrap">
                         {p(THEME_POWER.title)}
                       </td>
                       <td className="py-2">
@@ -1213,7 +1213,7 @@ export default function MacbethRevisionPage() {
                       </td>
                     </tr>
                     <tr className="border-b border-border">
-                      <td className="py-2 pr-4 font-semibold text-indigo-700 whitespace-nowrap">
+                      <td className="py-2 pe-4 font-semibold text-indigo-700 whitespace-nowrap">
                         {p(THEME_GUILT.title)}
                       </td>
                       <td className="py-2">
@@ -1225,7 +1225,7 @@ export default function MacbethRevisionPage() {
                       </td>
                     </tr>
                     <tr className="border-b border-border">
-                      <td className="py-2 pr-4 font-semibold text-violet-700 dark:text-violet-300 whitespace-nowrap">
+                      <td className="py-2 pe-4 font-semibold text-violet-700 dark:text-violet-300 whitespace-nowrap">
                         {p(THEME_SUPERNATURAL.title)}
                       </td>
                       <td className="py-2">
@@ -1236,7 +1236,7 @@ export default function MacbethRevisionPage() {
                       </td>
                     </tr>
                     <tr className="border-b border-border">
-                      <td className="py-2 pr-4 font-semibold text-blue-700 dark:text-blue-300 whitespace-nowrap">
+                      <td className="py-2 pe-4 font-semibold text-blue-700 dark:text-blue-300 whitespace-nowrap">
                         {p(THEME_GENDER.title)}
                       </td>
                       <td className="py-2">
@@ -1247,7 +1247,7 @@ export default function MacbethRevisionPage() {
                       </td>
                     </tr>
                     <tr className="border-b border-border">
-                      <td className="py-2 pr-4 font-semibold text-teal-700 whitespace-nowrap">
+                      <td className="py-2 pe-4 font-semibold text-teal-700 whitespace-nowrap">
                         {p(THEME_LOYALTY.title)}
                       </td>
                       <td className="py-2">
@@ -1258,7 +1258,7 @@ export default function MacbethRevisionPage() {
                       </td>
                     </tr>
                     <tr className="border-b border-border">
-                      <td className="py-2 pr-4 font-semibold text-pink-700 dark:text-pink-300 whitespace-nowrap">
+                      <td className="py-2 pe-4 font-semibold text-pink-700 dark:text-pink-300 whitespace-nowrap">
                         {p(THEME_FATE.title)}
                       </td>
                       <td className="py-2">
@@ -1269,7 +1269,7 @@ export default function MacbethRevisionPage() {
                       </td>
                     </tr>
                     <tr>
-                      <td className="py-2 pr-4 font-semibold text-muted-foreground whitespace-nowrap">
+                      <td className="py-2 pe-4 font-semibold text-muted-foreground whitespace-nowrap">
                         {p(THEME_APPEARANCE.title)}
                       </td>
                       <td className="py-2">
@@ -1426,7 +1426,7 @@ export default function MacbethRevisionPage() {
                     <h3 className="font-bold text-foreground mb-1">{p(q.title)}</h3>
                     <p className="text-sm text-muted-foreground mb-3">
                       {p(q.body)}
-                      <span className="ml-2 text-xs font-semibold text-muted-foreground">
+                      <span className="ms-2 text-xs font-semibold text-muted-foreground">
                         {p(PRACTICE_MARKS)}
                       </span>
                     </p>

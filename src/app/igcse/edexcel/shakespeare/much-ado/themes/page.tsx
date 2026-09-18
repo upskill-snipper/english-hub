@@ -155,7 +155,7 @@ export default async function MuchAdoThemesPage() {
             <article
               key={t.theme}
               id={t.theme.toLowerCase().replace(/[^a-z]/g, '-')}
-              className="scroll-mt-20 rounded-2xl border-l-4 border-primary bg-muted p-6 sm:p-8"
+              className="scroll-mt-20 rounded-2xl border-s-4 border-primary bg-muted p-6 sm:p-8"
             >
               <h2 className="text-2xl font-bold text-foreground">{t.theme}</h2>
               <p

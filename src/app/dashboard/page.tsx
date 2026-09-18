@@ -464,7 +464,7 @@ export default function DashboardPage() {
               </AlertDescription>
               <button
                 onClick={() => setShowWelcome(false)}
-                className="absolute right-3 top-3 text-muted-foreground hover:text-foreground transition-colors"
+                className="absolute end-3 top-3 text-muted-foreground hover:text-foreground transition-colors"
                 aria-label={t('dash.welcome.dismiss')}
               >
                 <X className="h-4 w-4" />
@@ -498,7 +498,7 @@ export default function DashboardPage() {
                 <Button
                   variant="destructive"
                   size="sm"
-                  className="ml-4 shrink-0"
+                  className="ms-4 shrink-0"
                   onClick={() => {
                     setLoading(true)
                     setError(null)
@@ -648,7 +648,7 @@ export default function DashboardPage() {
                   >
                     {t('dash.continue_learning')}
                     {activeCourses.length > 0 && (
-                      <Badge variant="secondary" className="ml-1.5">
+                      <Badge variant="secondary" className="ms-1.5">
                         {activeCourses.length}
                       </Badge>
                     )}
@@ -659,7 +659,7 @@ export default function DashboardPage() {
                   >
                     {t('dash.completed')}
                     {completedCourses.length > 0 && (
-                      <Badge variant="secondary" className="ml-1.5">
+                      <Badge variant="secondary" className="ms-1.5">
                         {completedCourses.length}
                       </Badge>
                     )}
@@ -765,7 +765,7 @@ export default function DashboardPage() {
                                 <p className="truncate text-xs text-muted-foreground">
                                   {course?.title ?? t('dash.unknown_course')}
                                   {activity.completed_at && (
-                                    <span className="ml-1.5 opacity-70">
+                                    <span className="ms-1.5 opacity-70">
                                       · {formatRelativeDate(activity.completed_at, t)}
                                     </span>
                                   )}
@@ -891,7 +891,7 @@ function StatCard({
 }) {
   return (
     <Tooltip>
-      <TooltipTrigger className="text-left">
+      <TooltipTrigger className="text-start">
         <Card className="animate-fade-in">
           <CardHeader>
             <div className="flex items-center gap-3">
@@ -941,7 +941,7 @@ function SubscriptionBadge({ status }: { status: string }) {
       variant={variantMap[status] ?? 'secondary'}
       className={cn(status === 'pro' && 'bg-yellow-500/10 text-yellow-600 border-yellow-500/30')}
     >
-      {status === 'pro' && <Crown className="mr-1 h-3.5 w-3.5" />}
+      {status === 'pro' && <Crown className="me-1 h-3.5 w-3.5" />}
       {t(labelKeys[status] ?? 'sub.free')}
     </Badge>
   )
@@ -1005,7 +1005,7 @@ function CourseCard({
       </CardHeader>
       <CardContent>
         <Progress value={ec.progress} className="mb-1" />
-        <p className="text-xs text-muted-foreground text-right">{Math.round(ec.progress)}%</p>
+        <p className="text-xs text-muted-foreground text-end">{Math.round(ec.progress)}%</p>
       </CardContent>
       <CardFooter>
         {ec.nextModule ? (
@@ -1015,7 +1015,7 @@ function CourseCard({
           </Button>
         ) : (
           <Badge variant="secondary">
-            <CheckCircle className="h-3.5 w-3.5 mr-1" />
+            <CheckCircle className="h-3.5 w-3.5 me-1" />
             {t('dash.completed')}
           </Badge>
         )}

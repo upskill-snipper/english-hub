@@ -359,7 +359,7 @@ export default function SeatingPlanPage() {
 
         <div className="flex flex-wrap items-center gap-2">
           <Button variant="outline" size="sm" onClick={handlePrint}>
-            <Printer className="mr-1.5 h-3.5 w-3.5" />
+            <Printer className="me-1.5 h-3.5 w-3.5" />
             {t('school.seating.print')}
           </Button>
           <Button
@@ -368,11 +368,11 @@ export default function SeatingPlanPage() {
             onClick={() => setShowSaveDialog(true)}
             disabled={!selectedClassId}
           >
-            <Save className="mr-1.5 h-3.5 w-3.5" />
+            <Save className="me-1.5 h-3.5 w-3.5" />
             {t('school.seating.save')}
           </Button>
           <Button variant="outline" size="sm" onClick={() => setShowLoadDialog(true)}>
-            <FolderOpen className="mr-1.5 h-3.5 w-3.5" />
+            <FolderOpen className="me-1.5 h-3.5 w-3.5" />
             {t('school.seating.load')}
           </Button>
         </div>
@@ -415,7 +415,7 @@ export default function SeatingPlanPage() {
         {/* Grid size */}
         <div className="space-y-1.5">
           <Label className="text-xs font-medium">
-            <Grid3X3 className="mr-1 inline h-3.5 w-3.5" />
+            <Grid3X3 className="me-1 inline h-3.5 w-3.5" />
             {t('school.seating.grid_size')}
           </Label>
           <div className="flex items-center gap-2">
@@ -449,7 +449,7 @@ export default function SeatingPlanPage() {
         {/* Auto-arrange */}
         <div className="space-y-1.5">
           <Label className="text-xs font-medium">
-            <Shuffle className="mr-1 inline h-3.5 w-3.5" />
+            <Shuffle className="me-1 inline h-3.5 w-3.5" />
             {t('school.seating.auto_arrange')}
           </Label>
           <Select value={arrangeMode} onValueChange={(v) => handleAutoArrange(v as ArrangeMode)}>
@@ -469,7 +469,7 @@ export default function SeatingPlanPage() {
         {/* Color mode */}
         <div className="space-y-1.5">
           <Label className="text-xs font-medium">
-            <Palette className="mr-1 inline h-3.5 w-3.5" />
+            <Palette className="me-1 inline h-3.5 w-3.5" />
             {t('school.seating.color_code_by')}
           </Label>
           <Select value={colorMode} onValueChange={(v) => setColorMode(v as ColorMode)}>
@@ -502,10 +502,10 @@ export default function SeatingPlanPage() {
           <Button
             variant="ghost"
             size="sm"
-            className="ml-auto"
+            className="ms-auto"
             onClick={() => handleAutoArrange(arrangeMode)}
           >
-            <Shuffle className="mr-1 h-3 w-3" />
+            <Shuffle className="me-1 h-3 w-3" />
             {t('school.seating.reshuffle')}
           </Button>
         </div>

@@ -299,7 +299,7 @@ export default function PersonalStatementCoachPage() {
       {/* ── Hero ──────────────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-sky-500/[0.05] p-6 sm:p-8">
         <Badge variant="secondary" className="mb-3">
-          <Sparkles className="mr-1 size-3" />
+          <Sparkles className="me-1 size-3" />
           {t('ielts.admissions.ps.eyebrow') || 'AI feedback - UCAS personal statement'}
         </Badge>
         <h1 className="text-display-sm font-heading text-foreground sm:text-display">
@@ -445,7 +445,7 @@ function BackLink({ t }: { t: (key: string) => string }) {
     <Button
       variant="ghost"
       size="sm"
-      className="-ml-2 text-muted-foreground"
+      className="-ms-2 text-muted-foreground"
       render={<Link href="/ielts/admissions" />}
     >
       <ArrowLeft className="size-3.5" />

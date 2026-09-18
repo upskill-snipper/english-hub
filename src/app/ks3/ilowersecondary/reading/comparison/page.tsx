@@ -173,7 +173,7 @@ export default async function ComparisonPage() {
               <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-primary mb-2">
                 {c.group}
               </p>
-              <ul className="text-sm text-muted-foreground leading-relaxed list-disc pl-4 space-y-1">
+              <ul className="text-sm text-muted-foreground leading-relaxed list-disc ps-4 space-y-1">
                 {c.words.map((w) => (
                   <li key={w}>{w}</li>
                 ))}
@@ -204,13 +204,13 @@ export default async function ComparisonPage() {
           <table className="w-full border-collapse text-sm">
             <thead>
               <tr className="border-b border-border">
-                <th className="p-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="p-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Level
                 </th>
-                <th className="p-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="p-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Marks
                 </th>
-                <th className="p-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="p-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Descriptor
                 </th>
               </tr>
@@ -255,7 +255,7 @@ export default async function ComparisonPage() {
           <table className="w-full border-collapse text-sm">
             <thead>
               <tr className="border-b border-border">
-                <th className="p-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="p-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Feature
                 </th>
                 <th className="p-3 text-center font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">

@@ -629,13 +629,13 @@ export default async function GrammarTerminologyPage() {
           <table className="w-full border-collapse text-sm">
             <thead>
               <tr className="border-b border-border">
-                <th className="p-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="p-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   #
                 </th>
-                <th className="p-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="p-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Sentence
                 </th>
-                <th className="p-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="p-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Answer
                 </th>
               </tr>

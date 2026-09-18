@@ -402,7 +402,7 @@ export default async function InspectorCallsStudyGuide() {
           </p>
           <div className="mt-6 space-y-5">
             {keyQuotes.map((q, i) => (
-              <div key={i} className="rounded-lg border-l-4 border-primary bg-card p-5 shadow-md">
+              <div key={i} className="rounded-lg border-s-4 border-primary bg-card p-5 shadow-md">
                 <blockquote className="text-base font-medium italic text-foreground">
                   &ldquo;{q.quote}&rdquo;
                 </blockquote>

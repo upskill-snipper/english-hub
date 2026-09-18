@@ -290,7 +290,7 @@ export default async function IeltsAdmissionsHubPage() {
         <Button
           variant="ghost"
           size="sm"
-          className="-ml-2 text-muted-foreground"
+          className="-ms-2 text-muted-foreground"
           render={<Link href="/ielts" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -406,7 +406,7 @@ export default async function IeltsAdmissionsHubPage() {
             dangerouslySetInnerHTML={{ __html: englishIntro }}
           />
           <div className="mt-8 overflow-hidden rounded-2xl border border-border/60">
-            <table className="w-full border-collapse text-left">
+            <table className="w-full border-collapse text-start">
               <thead>
                 <tr className="bg-muted/40 text-xs uppercase tracking-wide text-muted-foreground">
                   <th className="px-4 py-3 font-semibold">{englishColBand}</th>

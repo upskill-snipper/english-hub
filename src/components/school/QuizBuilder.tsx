@@ -688,7 +688,7 @@ function QuestionEditor({
             <Label htmlFor={`q-text-${question.id}`}>
               Question Text
               {question.type === 'fill-in-blank' && (
-                <span className="ml-2 text-xs text-muted-foreground font-normal">
+                <span className="ms-2 text-xs text-muted-foreground font-normal">
                   Use ___ for blanks
                 </span>
               )}
@@ -1164,7 +1164,7 @@ function QuizPreview({ quiz, onClose }: { quiz: Quiz; onClose: () => void }) {
                   >
                     {q.difficulty}
                   </span>
-                  <span className="ml-auto text-xs text-muted-foreground">
+                  <span className="ms-auto text-xs text-muted-foreground">
                     {q.points} pt{q.points !== 1 ? 's' : ''}
                   </span>
                 </div>
@@ -1180,7 +1180,7 @@ function QuizPreview({ quiz, onClose }: { quiz: Quiz; onClose: () => void }) {
                         type="button"
                         onClick={() => handleAnswer(q.id, opt)}
                         className={cn(
-                          'flex w-full items-center gap-3 rounded-lg border p-3 text-left text-sm transition-all',
+                          'flex w-full items-center gap-3 rounded-lg border p-3 text-start text-sm transition-all',
                           answers[q.id] === opt
                             ? showFeedback[q.id]
                               ? opt === q.correctAnswer
@@ -1474,7 +1474,7 @@ function ResultsView({ quiz }: { quiz: Quiz }) {
                         />
                       </div>
                     </div>
-                    <div className="text-right shrink-0">
+                    <div className="text-end shrink-0">
                       <p className="text-sm font-semibold">{pct}%</p>
                       <p className="text-[10px] text-muted-foreground">
                         {result.score}/{result.totalPoints}
@@ -1958,7 +1958,7 @@ export function QuizBuilder() {
             <Library className="size-4" />
             My Quizzes
             {savedQuizzes.length > 0 && (
-              <Badge variant="secondary" className="ml-1 text-[10px]">
+              <Badge variant="secondary" className="ms-1 text-[10px]">
                 {savedQuizzes.length}
               </Badge>
             )}
@@ -2110,7 +2110,7 @@ export function QuizBuilder() {
 
                   {/* Add Question Bar */}
                   <div className="flex flex-wrap items-center gap-2 rounded-xl border border-dashed p-3">
-                    <span className="text-xs text-muted-foreground mr-1">Add:</span>
+                    <span className="text-xs text-muted-foreground me-1">Add:</span>
                     {(Object.keys(QUESTION_TYPE_LABELS) as QuestionType[]).map((type) => {
                       const Icon = QUESTION_TYPE_ICONS[type]
                       return (

@@ -2,14 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
-import {
-  BookOpen,
-  Search,
-  Clock,
-  ArrowRight,
-  GraduationCap,
-  Filter,
-} from 'lucide-react'
+import { BookOpen, Search, Clock, ArrowRight, GraduationCap, Filter } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
@@ -44,7 +37,8 @@ export default function GuidesListPage() {
   const filteredGuides = useMemo(() => {
     return allTeachingGuides.filter((guide) => {
       const categoryMatch = activeCategory === 'all' || guide.category === activeCategory
-      const searchMatch = search.trim() === '' || matchesSearch(search, guide.title, guide.description)
+      const searchMatch =
+        search.trim() === '' || matchesSearch(search, guide.title, guide.description)
       return categoryMatch && searchMatch
     })
   }, [search, activeCategory])
@@ -71,12 +65,12 @@ export default function GuidesListPage() {
       {/* ── Search & Filters ────────────────────────────────────────────── */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="relative max-w-sm flex-1">
-          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+          <Search className="absolute start-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <Input
             placeholder="Search guides..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="pl-9"
+            className="ps-9"
           />
         </div>
 
@@ -130,7 +124,7 @@ export default function GuidesListPage() {
                     <span
                       className={cn(
                         'inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold',
-                        categoryColors[guide.category]
+                        categoryColors[guide.category],
                       )}
                     >
                       {categoryLabels[guide.category]}

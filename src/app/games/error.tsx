@@ -31,10 +31,10 @@ export default function Error({
       </div>
       <div className="flex gap-3">
         <Button variant="outline" onClick={reset}>
-          <RotateCcw className="mr-2 size-4" /> {t('error.section.try_again')}
+          <RotateCcw className="me-2 size-4" /> {t('error.section.try_again')}
         </Button>
         <Button render={<Link href="/" />}>
-          <Home className="mr-2 size-4" /> {t('error.section.go_home')}
+          <Home className="me-2 size-4" /> {t('error.section.go_home')}
         </Button>
       </div>
     </div>

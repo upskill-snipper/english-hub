@@ -1,13 +1,7 @@
 'use client'
 
 import { useMemo } from 'react'
-import {
-  Clock,
-  CalendarDays,
-  AlertTriangle,
-  CheckCircle2,
-  Timer,
-} from 'lucide-react'
+import { Clock, CalendarDays, AlertTriangle, CheckCircle2, Timer } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -15,12 +9,7 @@ import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
 import { ScrollArea } from '@/components/ui/scroll-area'
 
-import {
-  type ExamDate,
-  getUpcomingExams,
-  daysUntil,
-  urgencyColor,
-} from '@/data/exam-dates'
+import { type ExamDate, getUpcomingExams, daysUntil, urgencyColor } from '@/data/exam-dates'
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -121,16 +110,12 @@ export function ExamCountdown({ board, variant = 'compact', className }: ExamCou
             )}
           </div>
           <div className="mt-1.5 flex items-baseline gap-2">
-            <span className={cn('text-2xl font-bold tabular-nums', styles.text)}>
-              {days}
-            </span>
+            <span className={cn('text-2xl font-bold tabular-nums', styles.text)}>{days}</span>
             <span className="text-xs text-muted-foreground">
               {days === 1 ? 'day' : 'days'} to go
             </span>
           </div>
-          <p className="mt-1 text-xs text-muted-foreground line-clamp-1">
-            {nextExam.paper}
-          </p>
+          <p className="mt-1 text-xs text-muted-foreground line-clamp-1">{nextExam.paper}</p>
         </div>
 
         {/* Quick list of next 3 exams */}
@@ -167,24 +152,18 @@ export function ExamCountdown({ board, variant = 'compact', className }: ExamCou
             <Timer className={cn('h-5 w-5', styles.text)} />
             Exam Countdown
             {board && (
-              <Badge variant="outline" className="ml-1 text-xs">
+              <Badge variant="outline" className="ms-1 text-xs">
                 {board}
               </Badge>
             )}
           </CardTitle>
           <div className="flex items-center gap-1.5">
             <AlertTriangle className={cn('h-4 w-4', days < 14 ? 'text-red-500' : 'hidden')} />
-            <span className={cn('text-3xl font-bold tabular-nums', styles.text)}>
-              {days}
-            </span>
-            <span className="text-sm text-muted-foreground">
-              {days === 1 ? 'day' : 'days'}
-            </span>
+            <span className={cn('text-3xl font-bold tabular-nums', styles.text)}>{days}</span>
+            <span className="text-sm text-muted-foreground">{days === 1 ? 'day' : 'days'}</span>
           </div>
         </div>
-        <p className="text-sm text-muted-foreground mt-1">
-          Next: {nextExam.paper}
-        </p>
+        <p className="text-sm text-muted-foreground mt-1">Next: {nextExam.paper}</p>
       </CardHeader>
 
       <CardContent className="p-0">

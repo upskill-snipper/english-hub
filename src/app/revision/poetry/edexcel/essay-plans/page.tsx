@@ -701,7 +701,7 @@ function EssayPlanCard({ plan }: { plan: EssayPlan }) {
       {/* Header (always visible) */}
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between gap-4 p-5 sm:p-6 text-left transition-colors hover:bg-accent/30"
+        className="flex w-full items-center justify-between gap-4 p-5 sm:p-6 text-start transition-colors hover:bg-accent/30"
       >
         <div className="min-w-0">
           <div className="mb-2 flex flex-wrap items-center gap-2">
@@ -709,9 +709,9 @@ function EssayPlanCard({ plan }: { plan: EssayPlan }) {
               className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[0.65rem] font-medium ${clusterColour}`}
             >
               {plan.cluster === 'Conflict' ? (
-                <Swords className="mr-1 size-3" />
+                <Swords className="me-1 size-3" />
               ) : (
-                <MapPin className="mr-1 size-3" />
+                <MapPin className="me-1 size-3" />
               )}
               {plan.cluster}
             </span>
@@ -765,7 +765,7 @@ function EssayPlanCard({ plan }: { plan: EssayPlan }) {
                 </div>
 
                 {/* Poem A */}
-                <div className="space-y-1 pl-8">
+                <div className="space-y-1 ps-8">
                   <p className="text-caption font-semibold text-foreground">{plan.poemA}</p>
                   <p className="text-body-sm text-muted-foreground">
                     <strong className="text-foreground">Point:</strong> {para.poemAPoint}
@@ -779,7 +779,7 @@ function EssayPlanCard({ plan }: { plan: EssayPlan }) {
                 </div>
 
                 {/* Poem B */}
-                <div className="space-y-1 pl-8">
+                <div className="space-y-1 ps-8">
                   <p className="text-caption font-semibold text-foreground">{plan.poemB}</p>
                   <p className="text-body-sm text-muted-foreground">
                     <strong className="text-foreground">Point:</strong> {para.poemBPoint}
@@ -793,7 +793,7 @@ function EssayPlanCard({ plan }: { plan: EssayPlan }) {
                 </div>
 
                 {/* Comparison */}
-                <div className="pl-8 rounded-lg border border-primary/20 bg-primary/[0.04] p-3">
+                <div className="ps-8 rounded-lg border border-primary/20 bg-primary/[0.04] p-3">
                   <p className="text-body-sm text-muted-foreground">
                     <strong className="text-primary">Compare:</strong> {para.comparison}
                   </p>
@@ -839,7 +839,7 @@ export default function EdexcelEssayPlansPage() {
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/revision/poetry/edexcel" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -849,13 +849,13 @@ export default function EdexcelEssayPlansPage() {
 
       {/* ── Hero ────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 lg:p-10">
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-primary/5 blur-3xl" />
+        <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-16 -start-16 h-48 w-48 rounded-full bg-primary/5 blur-3xl" />
 
         <div className="relative">
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
-              <Sparkles className="mr-1 size-3" />
+              <Sparkles className="me-1 size-3" />
               {t('poetry_hub.edexcel.badge_spec_short')}
             </Badge>
             <Badge className="bg-primary/10 text-primary border-primary/20">Edexcel</Badge>
@@ -898,11 +898,11 @@ export default function EdexcelEssayPlansPage() {
               t('rev.poetry2.edexcel.ep.filter_all')
             ) : f === 'Conflict' ? (
               <>
-                <Swords className="mr-1 size-3" /> {t('poetry_hub.edexcel.cluster.conflict.title')}
+                <Swords className="me-1 size-3" /> {t('poetry_hub.edexcel.cluster.conflict.title')}
               </>
             ) : (
               <>
-                <MapPin className="mr-1 size-3" /> {t('poetry_hub.edexcel.cluster.tp.title')}
+                <MapPin className="me-1 size-3" /> {t('poetry_hub.edexcel.cluster.tp.title')}
               </>
             )}
           </Button>

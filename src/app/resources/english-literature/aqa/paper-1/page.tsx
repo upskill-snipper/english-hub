@@ -336,7 +336,7 @@ export default function Paper1Page() {
                   Both sections give you an extract and ask you to write about it <em>and</em> the
                   wider text. Here is a reliable approach:
                 </p>
-                <ol className="list-decimal pl-5 space-y-2">
+                <ol className="list-decimal ps-5 space-y-2">
                   <li>
                     <span className="font-semibold">Read the extract twice.</span> First for
                     understanding, then to highlight key words, techniques, and anything that links

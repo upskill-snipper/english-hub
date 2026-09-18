@@ -203,7 +203,7 @@ function AgeInputPhase({ onSubmit }: { onSubmit: (years: number, months: number)
 
           <Button className="w-full" onClick={() => onSubmit(years, months)}>
             {t('assessment.reading.test.age.begin_cta')}
-            <ArrowRight className="h-4 w-4 ml-2" aria-hidden="true" />
+            <ArrowRight className="h-4 w-4 ms-2" aria-hidden="true" />
           </Button>
         </CardContent>
       </Card>
@@ -299,7 +299,7 @@ function PassagePhase({
         </div>
         <Button onClick={onFinishReading} disabled={!canFinish}>
           {t('assessment.reading.test.passage.finished_cta')}
-          <ArrowRight className="h-4 w-4 ml-2" aria-hidden="true" />
+          <ArrowRight className="h-4 w-4 ms-2" aria-hidden="true" />
         </Button>
       </div>
     </div>
@@ -378,7 +378,7 @@ function QuestionsPhase({
                 <button
                   key={option.id}
                   onClick={() => onAnswerChange(option.id)}
-                  className={`w-full text-left rounded-xl border p-4 text-sm transition-all duration-200 ${
+                  className={`w-full text-start rounded-xl border p-4 text-sm transition-all duration-200 ${
                     currentAnswer === option.id
                       ? 'border-emerald-500/40 bg-emerald-500/10 text-foreground'
                       : 'border-border bg-muted/50 text-muted-foreground hover:border-border/60 hover:bg-muted'
@@ -420,7 +420,7 @@ function QuestionsPhase({
           {isLast
             ? t('assessment.reading.test.question.next_section')
             : t('assessment.reading.test.question.next_question')}
-          <ArrowRight className="h-4 w-4 ml-2" aria-hidden="true" />
+          <ArrowRight className="h-4 w-4 ms-2" aria-hidden="true" />
         </Button>
       </div>
     </div>
@@ -478,7 +478,7 @@ function DecodingPhase({
                 className="min-w-[140px] border-emerald-500/30 hover:bg-emerald-500/10"
                 onClick={() => onAnswer(word.isReal === true)}
               >
-                <CheckCircle className="h-4 w-4 mr-2 text-emerald-400" aria-hidden="true" />
+                <CheckCircle className="h-4 w-4 me-2 text-emerald-400" aria-hidden="true" />
                 {t('assessment.reading.test.decoding.real_word')}
               </Button>
               <Button
@@ -486,7 +486,7 @@ function DecodingPhase({
                 className="min-w-[140px] border-red-500/30 hover:bg-red-500/10"
                 onClick={() => onAnswer(word.isReal === false)}
               >
-                <AlertTriangle className="h-4 w-4 mr-2 text-red-400" aria-hidden="true" />
+                <AlertTriangle className="h-4 w-4 me-2 text-red-400" aria-hidden="true" />
                 {t('assessment.reading.test.decoding.not_real_word')}
               </Button>
             </div>
@@ -552,7 +552,7 @@ function CeilingReachedPhase({ onContinue }: { onContinue: () => void }) {
 
           <Button className="w-full" onClick={onContinue}>
             {t('assessment.reading.test.ceiling.continue_cta')}
-            <ArrowRight className="h-4 w-4 ml-2" aria-hidden="true" />
+            <ArrowRight className="h-4 w-4 ms-2" aria-hidden="true" />
           </Button>
         </CardContent>
       </Card>

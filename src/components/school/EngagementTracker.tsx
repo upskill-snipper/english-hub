@@ -19,12 +19,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Switch } from '@/components/ui/switch'
 import { Progress } from '@/components/ui/progress'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 import type { StudentAnalytics } from '@/lib/types'
 import {
   calculateEngagementScore,
@@ -50,18 +45,18 @@ interface EngagementTrackerProps {
 
 const engagementColors: Record<EngagementLevel, string> = {
   'highly-engaged': 'text-emerald-500',
-  'engaged': 'text-green-500',
-  'moderate': 'text-amber-500',
+  engaged: 'text-green-500',
+  moderate: 'text-amber-500',
   'at-risk': 'text-orange-500',
-  'disengaged': 'text-red-500',
+  disengaged: 'text-red-500',
 }
 
 const engagementBadgeVariants: Record<EngagementLevel, string> = {
   'highly-engaged': 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20',
-  'engaged': 'bg-green-500/10 text-green-500 border-green-500/20',
-  'moderate': 'bg-amber-500/10 text-amber-500 border-amber-500/20',
+  engaged: 'bg-green-500/10 text-green-500 border-green-500/20',
+  moderate: 'bg-amber-500/10 text-amber-500 border-amber-500/20',
   'at-risk': 'bg-orange-500/10 text-orange-500 border-orange-500/20',
-  'disengaged': 'bg-red-500/10 text-red-500 border-red-500/20',
+  disengaged: 'bg-red-500/10 text-red-500 border-red-500/20',
 }
 
 function formatHour(hour: number): string {
@@ -73,11 +68,7 @@ function formatHour(hour: number): string {
 
 /* ── Component ─────────────────────────────────────────────────────────────── */
 
-export function EngagementTracker({
-  students,
-  sessions,
-  className,
-}: EngagementTrackerProps) {
+export function EngagementTracker({ students, sessions, className }: EngagementTrackerProps) {
   const [anonymousLeaderboard, setAnonymousLeaderboard] = useState(false)
 
   /* ── Derived data ────────────────────────────────────────────────────────── */
@@ -110,13 +101,7 @@ export function EngagementTracker({
 
   // Average sessions per student this week
   const avgSessionsThisWeek = useMemo(
-    () =>
-      avgSessionsPerStudentInRange(
-        sessions,
-        students.length,
-        thisWeekStart,
-        now,
-      ),
+    () => avgSessionsPerStudentInRange(sessions, students.length, thisWeekStart, now),
     [sessions, students.length, thisWeekStart, now],
   )
 
@@ -124,22 +109,14 @@ export function EngagementTracker({
   const classEngagement = useMemo(() => {
     if (students.length === 0) return { score: 0, trend: 'neutral' as const }
 
-    const thisWeekSessions = sessions.filter(
-      (s) => new Date(s.started_at) >= thisWeekStart,
-    )
+    const thisWeekSessions = sessions.filter((s) => new Date(s.started_at) >= thisWeekStart)
     const lastWeekSessions = sessions.filter((s) => {
       const d = new Date(s.started_at)
       return d >= lastWeekStart && d < thisWeekStart
     })
 
-    const totalModules = students.reduce(
-      (sum, st) => sum + st.modules_completed,
-      0,
-    )
-    const totalTime = students.reduce(
-      (sum, st) => sum + st.total_time_spent_seconds,
-      0,
-    )
+    const totalModules = students.reduce((sum, st) => sum + st.modules_completed, 0)
+    const totalTime = students.reduce((sum, st) => sum + st.total_time_spent_seconds, 0)
 
     // Simple streak approximation from total sessions
     const avgStreak = Math.min(thisWeekSessions.length / Math.max(students.length, 1), 14)
@@ -167,20 +144,14 @@ export function EngagementTracker({
   const engagementLevel = classifyEngagement(classEngagement.score)
 
   // Time of day distribution
-  const timeDistribution = useMemo(
-    () => getTimeOfDayDistribution(sessions),
-    [sessions],
-  )
+  const timeDistribution = useMemo(() => getTimeOfDayDistribution(sessions), [sessions])
   const maxHourCount = useMemo(
     () => Math.max(...timeDistribution.map((t) => t.count), 1),
     [timeDistribution],
   )
 
   // Day of week distribution
-  const dayDistribution = useMemo(
-    () => getDayOfWeekDistribution(sessions),
-    [sessions],
-  )
+  const dayDistribution = useMemo(() => getDayOfWeekDistribution(sessions), [sessions])
   const maxDayCount = useMemo(
     () => Math.max(...dayDistribution.map((d) => d.count), 1),
     [dayDistribution],
@@ -223,7 +194,7 @@ export function EngagementTracker({
       {/* ── Top Stats Row ──────────────────────────────────────────────────── */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {/* Class Engagement Score */}
-        <Card className="border-l-4 border-l-primary">
+        <Card className="border-s-4 border-s-primary">
           <CardContent>
             <div className="flex items-center justify-between">
               <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
@@ -232,7 +203,9 @@ export function EngagementTracker({
               <Activity className="h-4 w-4 text-muted-foreground" />
             </div>
             <div className="mt-2 flex items-end gap-2">
-              <span className={cn('text-3xl font-bold tabular-nums', engagementColors[engagementLevel])}>
+              <span
+                className={cn('text-3xl font-bold tabular-nums', engagementColors[engagementLevel])}
+              >
                 {classEngagement.score}
               </span>
               <span className="text-sm text-muted-foreground mb-1">/100</span>
@@ -240,7 +213,10 @@ export function EngagementTracker({
             </div>
             <Badge
               variant="outline"
-              className={cn('mt-2 text-[10px] capitalize', engagementBadgeVariants[engagementLevel])}
+              className={cn(
+                'mt-2 text-[10px] capitalize',
+                engagementBadgeVariants[engagementLevel],
+              )}
             >
               {engagementLevel.replace('-', ' ')}
             </Badge>
@@ -248,7 +224,7 @@ export function EngagementTracker({
         </Card>
 
         {/* Active Students */}
-        <Card className="border-l-4 border-l-blue-500">
+        <Card className="border-s-4 border-s-blue-500">
           <CardContent>
             <div className="flex items-center justify-between">
               <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
@@ -260,28 +236,22 @@ export function EngagementTracker({
               <span className="text-3xl font-bold tabular-nums text-foreground">
                 {activeThisWeek}
               </span>
-              <span className="text-sm text-muted-foreground mb-1">
-                / {students.length}
-              </span>
+              <span className="text-sm text-muted-foreground mb-1">/ {students.length}</span>
             </div>
             <p className="mt-1 text-xs text-muted-foreground">
               Last week: {activeLastWeek}
               {activeThisWeek > activeLastWeek && (
-                <span className="ml-1 text-green-500">
-                  (+{activeThisWeek - activeLastWeek})
-                </span>
+                <span className="ms-1 text-green-500">(+{activeThisWeek - activeLastWeek})</span>
               )}
               {activeThisWeek < activeLastWeek && (
-                <span className="ml-1 text-red-500">
-                  ({activeThisWeek - activeLastWeek})
-                </span>
+                <span className="ms-1 text-red-500">({activeThisWeek - activeLastWeek})</span>
               )}
             </p>
           </CardContent>
         </Card>
 
         {/* Avg Sessions */}
-        <Card className="border-l-4 border-l-purple-500">
+        <Card className="border-s-4 border-s-purple-500">
           <CardContent>
             <div className="flex items-center justify-between">
               <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
@@ -293,13 +263,13 @@ export function EngagementTracker({
               <span className="text-3xl font-bold tabular-nums text-foreground">
                 {avgSessionsThisWeek}
               </span>
-              <span className="text-sm text-muted-foreground ml-1">this week</span>
+              <span className="text-sm text-muted-foreground ms-1">this week</span>
             </div>
           </CardContent>
         </Card>
 
         {/* Needs Encouragement */}
-        <Card className="border-l-4 border-l-amber-500">
+        <Card className="border-s-4 border-s-amber-500">
           <CardContent>
             <div className="flex items-center justify-between">
               <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
@@ -311,11 +281,9 @@ export function EngagementTracker({
               <span className="text-3xl font-bold tabular-nums text-foreground">
                 {needsEncouragement.length}
               </span>
-              <span className="text-sm text-muted-foreground ml-1">students</span>
+              <span className="text-sm text-muted-foreground ms-1">students</span>
             </div>
-            <p className="mt-1 text-xs text-muted-foreground">
-              0 sessions in last 7 days
-            </p>
+            <p className="mt-1 text-xs text-muted-foreground">0 sessions in last 7 days</p>
           </CardContent>
         </Card>
       </div>
@@ -327,9 +295,7 @@ export function EngagementTracker({
           <CardContent>
             <div className="flex items-center gap-2 mb-4">
               <Clock className="h-4 w-4 text-muted-foreground" />
-              <h3 className="text-sm font-medium text-foreground">
-                Time of Day Distribution
-              </h3>
+              <h3 className="text-sm font-medium text-foreground">Time of Day Distribution</h3>
             </div>
             <div className="flex items-end gap-[3px] h-[120px]">
               {timeDistribution.map(({ hour, count }) => (
@@ -340,9 +306,7 @@ export function EngagementTracker({
                         <div
                           className={cn(
                             'w-full rounded-t transition-all duration-200',
-                            count > 0
-                              ? 'bg-primary/70 hover:bg-primary'
-                              : 'bg-muted',
+                            count > 0 ? 'bg-primary/70 hover:bg-primary' : 'bg-muted',
                           )}
                           style={{
                             height: `${Math.max((count / maxHourCount) * 100, 2)}%`,
@@ -374,9 +338,7 @@ export function EngagementTracker({
           <CardContent>
             <div className="flex items-center gap-2 mb-4">
               <BarChart3 className="h-4 w-4 text-muted-foreground" />
-              <h3 className="text-sm font-medium text-foreground">
-                Day of Week Distribution
-              </h3>
+              <h3 className="text-sm font-medium text-foreground">Day of Week Distribution</h3>
             </div>
             <div className="space-y-2">
               {dayDistribution.map(({ day, count }) => (
@@ -390,7 +352,7 @@ export function EngagementTracker({
                       className="h-5"
                     />
                   </div>
-                  <span className="w-8 text-right text-xs font-medium tabular-nums text-foreground">
+                  <span className="w-8 text-end text-xs font-medium tabular-nums text-foreground">
                     {count}
                   </span>
                 </div>
@@ -408,9 +370,7 @@ export function EngagementTracker({
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
                 <Trophy className="h-4 w-4 text-amber-500" />
-                <h3 className="text-sm font-medium text-foreground">
-                  Engagement Leaderboard
-                </h3>
+                <h3 className="text-sm font-medium text-foreground">Engagement Leaderboard</h3>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-[10px] text-muted-foreground">Anonymous</span>
@@ -442,10 +402,7 @@ export function EngagementTracker({
                   const medals = ['text-amber-500', 'text-zinc-400', 'text-amber-700']
 
                   return (
-                    <div
-                      key={student.student_id}
-                      className="flex items-center gap-3"
-                    >
+                    <div key={student.student_id} className="flex items-center gap-3">
                       <span
                         className={cn(
                           'w-5 text-center text-sm font-bold tabular-nums',
@@ -456,9 +413,7 @@ export function EngagementTracker({
                       </span>
                       <div className="flex-1 min-w-0">
                         <p className="text-sm font-medium text-foreground truncate">
-                          {anonymousLeaderboard
-                            ? `Student ${idx + 1}`
-                            : student.student_name}
+                          {anonymousLeaderboard ? `Student ${idx + 1}` : student.student_name}
                         </p>
                         <p className="text-[11px] text-muted-foreground">
                           {student.sessionCount} sessions
@@ -486,11 +441,9 @@ export function EngagementTracker({
           <CardContent>
             <div className="flex items-center gap-2 mb-4">
               <AlertTriangle className="h-4 w-4 text-amber-500" />
-              <h3 className="text-sm font-medium text-foreground">
-                Needs Encouragement
-              </h3>
+              <h3 className="text-sm font-medium text-foreground">Needs Encouragement</h3>
               {needsEncouragement.length > 0 && (
-                <Badge variant="destructive" className="ml-auto text-[10px]">
+                <Badge variant="destructive" className="ms-auto text-[10px]">
                   {needsEncouragement.length}
                 </Badge>
               )}

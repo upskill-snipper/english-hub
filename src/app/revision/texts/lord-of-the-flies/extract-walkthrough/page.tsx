@@ -189,7 +189,7 @@ export default function LordOfTheFliesExtractWalkthroughPage() {
           <div className="mt-5">
             <Link href="/revision/texts/lord-of-the-flies">
               <Button variant="outline" size="sm">
-                <ArrowLeft className="mr-2 size-4" />
+                <ArrowLeft className="me-2 size-4" />
                 {t('rev.texts.lotf.extract.back_to_guide')}
               </Button>
             </Link>
@@ -218,9 +218,9 @@ export default function LordOfTheFliesExtractWalkthroughPage() {
                 </div>
 
                 {card.fragment && (
-                  <blockquote className="mb-3 border-l-2 border-foreground/30 pl-3 text-sm italic text-foreground">
+                  <blockquote className="mb-3 border-s-2 border-foreground/30 ps-3 text-sm italic text-foreground">
                     &ldquo;{card.fragment}&rdquo;
-                    <span className="ml-2 not-italic text-xs text-muted-foreground">
+                    <span className="ms-2 not-italic text-xs text-muted-foreground">
                       {t('rev.texts.lotf.extract.attribution')}
                     </span>
                   </blockquote>
@@ -264,7 +264,7 @@ export default function LordOfTheFliesExtractWalkthroughPage() {
           </p>
           <div className="rounded-lg border bg-background p-5">
             <p className="whitespace-pre-line text-[0.95rem] leading-relaxed">{modelParagraph}</p>
-            <p className="mt-3 text-right text-xs text-muted-foreground">
+            <p className="mt-3 text-end text-xs text-muted-foreground">
               {t('rev.texts.lotf.extract.words_suffix').replace(
                 '{n}',
                 String(modelParagraph.split(/\s+/).filter(Boolean).length),

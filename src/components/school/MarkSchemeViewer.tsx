@@ -62,7 +62,7 @@ function QuestionDetail({ scheme }: { scheme: MarkScheme }) {
           </p>
         </div>
         <Badge variant="secondary" className="w-fit text-sm font-semibold">
-          <Target className="mr-1 h-3.5 w-3.5" />
+          <Target className="me-1 h-3.5 w-3.5" />
           {scheme.totalMarks} marks
         </Badge>
       </div>
@@ -190,7 +190,7 @@ function NativeSelect({
           onChange={(e) => onChange(e.target.value)}
           disabled={disabled}
           className={cn(
-            'h-9 w-full appearance-none rounded-lg border border-border bg-background px-3 pr-8 text-sm text-foreground shadow-sm transition-colors',
+            'h-9 w-full appearance-none rounded-lg border border-border bg-background px-3 pe-8 text-sm text-foreground shadow-sm transition-colors',
             'focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring/30',
             'disabled:cursor-not-allowed disabled:opacity-50',
             'print:hidden',
@@ -203,7 +203,7 @@ function NativeSelect({
             </option>
           ))}
         </select>
-        <ChevronDown className="pointer-events-none absolute right-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground print:hidden" />
+        <ChevronDown className="pointer-events-none absolute end-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground print:hidden" />
       </div>
     </div>
   )

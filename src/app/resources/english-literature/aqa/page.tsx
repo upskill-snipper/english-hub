@@ -273,47 +273,47 @@ export default async function AqaEnglishLiteraturePage() {
         </p>
 
         <div className="mt-8 overflow-x-auto">
-          <table className="w-full min-w-[600px] text-left text-sm">
+          <table className="w-full min-w-[600px] text-start text-sm">
             <thead>
               <tr className="border-b-2 border-border">
-                <th className="py-3 pr-4 font-semibold text-foreground">&nbsp;</th>
-                <th className="py-3 pr-4 font-semibold text-foreground">Paper 1</th>
+                <th className="py-3 pe-4 font-semibold text-foreground">&nbsp;</th>
+                <th className="py-3 pe-4 font-semibold text-foreground">Paper 1</th>
                 <th className="py-3 font-semibold text-foreground">Paper 2</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
               <tr>
-                <td className="py-3 pr-4 font-medium text-muted-foreground">Duration</td>
-                <td className="py-3 pr-4 text-muted-foreground">1 h 45 min</td>
+                <td className="py-3 pe-4 font-medium text-muted-foreground">Duration</td>
+                <td className="py-3 pe-4 text-muted-foreground">1 h 45 min</td>
                 <td className="py-3 text-muted-foreground">2 h 15 min</td>
               </tr>
               <tr>
-                <td className="py-3 pr-4 font-medium text-muted-foreground">Marks</td>
-                <td className="py-3 pr-4 text-muted-foreground">64 (40%)</td>
+                <td className="py-3 pe-4 font-medium text-muted-foreground">Marks</td>
+                <td className="py-3 pe-4 text-muted-foreground">64 (40%)</td>
                 <td className="py-3 text-muted-foreground">96 (60%)</td>
               </tr>
               <tr>
-                <td className="py-3 pr-4 font-medium text-muted-foreground">Section A</td>
-                <td className="py-3 pr-4 text-muted-foreground">Shakespeare (extract + essay)</td>
+                <td className="py-3 pe-4 font-medium text-muted-foreground">Section A</td>
+                <td className="py-3 pe-4 text-muted-foreground">Shakespeare (extract + essay)</td>
                 <td className="py-3 text-muted-foreground">Modern text (essay, no extract)</td>
               </tr>
               <tr>
-                <td className="py-3 pr-4 font-medium text-muted-foreground">Section B</td>
-                <td className="py-3 pr-4 text-muted-foreground">
+                <td className="py-3 pe-4 font-medium text-muted-foreground">Section B</td>
+                <td className="py-3 pe-4 text-muted-foreground">
                   19th-century novel (extract + essay)
                 </td>
                 <td className="py-3 text-muted-foreground">Poetry anthology comparison</td>
               </tr>
               <tr>
-                <td className="py-3 pr-4 font-medium text-muted-foreground">Section C</td>
-                <td className="py-3 pr-4 text-muted-foreground">&mdash;</td>
+                <td className="py-3 pe-4 font-medium text-muted-foreground">Section C</td>
+                <td className="py-3 pe-4 text-muted-foreground">&mdash;</td>
                 <td className="py-3 text-muted-foreground">
                   Unseen poetry (analysis + comparison)
                 </td>
               </tr>
               <tr>
-                <td className="py-3 pr-4 font-medium text-muted-foreground">Closed-book?</td>
-                <td className="py-3 pr-4 text-muted-foreground">Yes</td>
+                <td className="py-3 pe-4 font-medium text-muted-foreground">Closed-book?</td>
+                <td className="py-3 pe-4 text-muted-foreground">Yes</td>
                 <td className="py-3 text-muted-foreground">Yes</td>
               </tr>
             </tbody>

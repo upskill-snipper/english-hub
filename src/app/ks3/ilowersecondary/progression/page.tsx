@@ -106,10 +106,10 @@ export default async function ProgressionPage() {
         <table className="w-full border-collapse text-sm">
           <thead>
             <tr className="border-b border-border">
-              <th className="py-2 pr-4 text-left font-mono text-[10px] uppercase tracking-[0.12em] text-muted-foreground">
+              <th className="py-2 pe-4 text-start font-mono text-[10px] uppercase tracking-[0.12em] text-muted-foreground">
                 Code
               </th>
-              <th className="py-2 text-left font-mono text-[10px] uppercase tracking-[0.12em] text-muted-foreground">
+              <th className="py-2 text-start font-mono text-[10px] uppercase tracking-[0.12em] text-muted-foreground">
                 What it expects by the end of Year 9
               </th>
             </tr>
@@ -117,7 +117,7 @@ export default async function ProgressionPage() {
           <tbody>
             {YEAR9_CODES.map((c) => (
               <tr key={c.code} className="border-b border-border/50 align-top">
-                <td className="py-2 pr-4 font-mono text-xs font-semibold text-primary">{c.code}</td>
+                <td className="py-2 pe-4 font-mono text-xs font-semibold text-primary">{c.code}</td>
                 <td className="py-2 text-muted-foreground">{c.descriptor}</td>
               </tr>
             ))}
@@ -131,7 +131,7 @@ export default async function ProgressionPage() {
           <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
             Reading (skills 1.1-1.5)
           </p>
-          <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
+          <ul className="mt-2 list-disc space-y-1 ps-5 text-sm text-muted-foreground">
             {READING_SKILLS.map((s) => (
               <li key={s.code}>{s.title}</li>
             ))}
@@ -141,7 +141,7 @@ export default async function ProgressionPage() {
           <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
             Writing (skills 2.1-2.3)
           </p>
-          <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
+          <ul className="mt-2 list-disc space-y-1 ps-5 text-sm text-muted-foreground">
             {WRITING_SKILLS.map((s) => (
               <li key={s.code}>{s.title}</li>
             ))}

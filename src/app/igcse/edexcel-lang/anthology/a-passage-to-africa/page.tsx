@@ -370,7 +370,7 @@ export default async function APassageToAfricaPage() {
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/igcse/edexcel-lang/anthology" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -441,7 +441,7 @@ export default async function APassageToAfricaPage() {
           <h2 className="text-heading-sm font-heading text-foreground font-serif">
             {await t('anth_text.section.key_moments')}
           </h2>
-          <span className="font-mono text-body-xs text-muted-foreground ml-auto">
+          <span className="font-mono text-body-xs text-muted-foreground ms-auto">
             {await t('anth_text.use_with_anthology')}
           </span>
         </div>

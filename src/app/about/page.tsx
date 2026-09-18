@@ -172,7 +172,7 @@ export default async function AboutPage() {
         <section>
           <h2 className="text-xl font-semibold text-foreground">{approachH2}</h2>
           <p className="mt-2 text-muted-foreground leading-relaxed">{approachIntro}</p>
-          <ul className="mt-4 list-disc space-y-2 pl-6 text-muted-foreground leading-relaxed">
+          <ul className="mt-4 list-disc space-y-2 ps-6 text-muted-foreground leading-relaxed">
             <li>
               <strong className="text-foreground">{approachExamBoardName}</strong> -{' '}
               {approachExamBoardDesc}
@@ -198,7 +198,7 @@ export default async function AboutPage() {
         {/* Our Values */}
         <section>
           <h2 className="text-xl font-semibold text-foreground">{valuesH2}</h2>
-          <ul className="mt-4 list-disc space-y-2 pl-6 text-muted-foreground leading-relaxed">
+          <ul className="mt-4 list-disc space-y-2 ps-6 text-muted-foreground leading-relaxed">
             <li>
               <strong className="text-foreground">{valueQualityName}</strong> - {valueQualityDesc}
             </li>
@@ -246,7 +246,7 @@ export default async function AboutPage() {
         {/* Compliance */}
         <section id="compliance">
           <h2 className="text-xl font-semibold text-foreground">{complianceH2}</h2>
-          <ul className="mt-4 list-disc space-y-2 pl-6 text-muted-foreground leading-relaxed">
+          <ul className="mt-4 list-disc space-y-2 ps-6 text-muted-foreground leading-relaxed">
             <li>{compDpia}</li>
             <li>{compSafeguard}</li>
             <li>{compVpat}</li>

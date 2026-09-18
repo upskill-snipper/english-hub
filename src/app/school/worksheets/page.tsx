@@ -139,7 +139,7 @@ export default function WorksheetBrowserPage() {
                       setWorksheetType(type)
                       setShowPreview(false)
                     }}
-                    className={`flex items-start gap-2.5 rounded-lg border p-3 text-left transition-all ${
+                    className={`flex items-start gap-2.5 rounded-lg border p-3 text-start transition-all ${
                       isActive
                         ? 'border-primary bg-primary/5 ring-1 ring-primary/20'
                         : 'border-border bg-background hover:border-primary/30 hover:bg-primary/5'

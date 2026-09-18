@@ -221,7 +221,7 @@ export default function EssayFeedbackInline({
             <PenLine className="h-4 w-4 text-primary" />
             {t('marking.ai_feedback_title')}
             {remaining !== null && (
-              <span className="ml-1 text-xs font-normal text-muted-foreground">
+              <span className="ms-1 text-xs font-normal text-muted-foreground">
                 ({remaining}{' '}
                 {remaining !== 1
                   ? t('marking.reviews_remaining_plural')
@@ -296,7 +296,7 @@ export default function EssayFeedbackInline({
     <Collapsible open={open} onOpenChange={setOpen} className={className}>
       <CollapsibleTrigger
         className={cn(
-          'flex w-full items-center justify-between rounded-lg border px-4 py-3 text-left transition-colors',
+          'flex w-full items-center justify-between rounded-lg border px-4 py-3 text-start transition-colors',
           'hover:bg-accent/50',
           open ? 'border-primary/30 bg-primary/5' : 'border-border/50 bg-card',
         )}
@@ -310,7 +310,7 @@ export default function EssayFeedbackInline({
               {t('marking.essay_feedback_title')}
             </span>
             {remaining !== null && (
-              <span className="ml-2 text-xs text-muted-foreground">
+              <span className="ms-2 text-xs text-muted-foreground">
                 ({remaining}{' '}
                 {remaining !== 1
                   ? t('marking.reviews_remaining_plural')
@@ -534,7 +534,7 @@ function InlineFeedbackResults({
             {feedback.strengths.map((s, i) => (
               <li key={i} className="space-y-0.5">
                 <p className="text-xs font-medium text-foreground">{s.point}</p>
-                <blockquote className="border-l-2 border-green-500/30 pl-2 text-xs italic text-muted-foreground">
+                <blockquote className="border-s-2 border-green-500/30 ps-2 text-xs italic text-muted-foreground">
                   &ldquo;{s.quote}&rdquo;
                 </blockquote>
               </li>

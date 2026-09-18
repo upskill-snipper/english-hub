@@ -193,7 +193,7 @@ export default function DemoHub() {
                     className={`w-full ${styles.bg} ${styles.text} border ${styles.border} ${styles.hoverBg} bg-clip-padding`}
                   >
                     {t(demo.ctaKey)}
-                    <ArrowRight className="size-4 ml-1 transition-transform group-hover:translate-x-0.5" />
+                    <ArrowRight className="size-4 ms-1 transition-transform group-hover:translate-x-0.5" />
                   </Button>
                 </CardFooter>
               </Card>
@@ -205,7 +205,7 @@ export default function DemoHub() {
       {/* Free resources */}
       <section className="mx-auto max-w-5xl px-6 pb-20">
         <div className="rounded-2xl border border-border bg-card p-8 flex flex-col sm:flex-row items-center gap-6">
-          <div className="flex-1 text-center sm:text-left">
+          <div className="flex-1 text-center sm:text-start">
             <div className="flex items-center justify-center sm:justify-start gap-2 mb-2">
               <Sparkles className="size-5 text-accent" />
               <span className="text-sm font-medium text-accent uppercase tracking-wider">
@@ -223,7 +223,7 @@ export default function DemoHub() {
             size="lg"
             className="border-accent/30 text-accent hover:bg-accent/10 shrink-0"
           >
-            <Download className="size-4 mr-1.5" />
+            <Download className="size-4 me-1.5" />
             {t('demo.free_resources.cta')}
           </Button>
         </div>
@@ -246,7 +246,7 @@ export default function DemoHub() {
               {t('demo.banner.cta_book_call')}
               <Badge
                 variant="secondary"
-                className="ml-2 bg-primary/10 text-primary text-[10px] border-0"
+                className="ms-2 bg-primary/10 text-primary text-[10px] border-0"
               >
                 {t('demo.bottom.school_badge')}
               </Badge>

@@ -407,7 +407,7 @@ export default async function TechniquesPage() {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="mr-1 h-4 w-4"
+              className="me-1 h-4 w-4"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"

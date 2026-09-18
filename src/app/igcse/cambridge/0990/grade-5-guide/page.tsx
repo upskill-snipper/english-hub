@@ -103,11 +103,11 @@ export default async function Grade5GuidePage() {
         <div className="relative">
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="bg-primary/10 text-primary border-primary/20">
-              <Sparkles className="mr-1 size-3" />
+              <Sparkles className="me-1 size-3" />
               {await t('igcse.cambridge.badge.cambridge_lang_b')}
             </Badge>
             <Badge variant="secondary">
-              <Award className="mr-1 size-3" />
+              <Award className="me-1 size-3" />
               Grade 5
             </Badge>
           </div>

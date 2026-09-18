@@ -171,7 +171,7 @@ export default async function CreativeWritingPage() {
             {model.level}
           </span>
         </div>
-        <div className="rounded-lg bg-background p-5 border-l-4 border-primary/30">
+        <div className="rounded-lg bg-background p-5 border-s-4 border-primary/30">
           {model.text.split('\n\n').map((para, i) => (
             <p key={i} className="text-sm text-foreground leading-relaxed mb-3 last:mb-0 italic">
               {para}

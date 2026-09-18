@@ -214,7 +214,7 @@ export default function EngagementPage() {
       {/* Demo banner */}
       <div className="bg-amber-500/10 border-b border-amber-500/20 px-4 py-2.5 text-center">
         <p className="text-sm text-amber-700 dark:text-amber-300">
-          <Info className="inline-block w-4 h-4 mr-1.5 -mt-0.5" />
+          <Info className="inline-block w-4 h-4 me-1.5 -mt-0.5" />
           {t('demo.b15.engagement.banner')}{' '}
           <Link
             href="/for-schools/register"
@@ -407,19 +407,19 @@ export default function EngagementPage() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-border/60">
-                    <th className="text-left py-3 px-3 text-muted-foreground font-medium">
+                    <th className="text-start py-3 px-3 text-muted-foreground font-medium">
                       {t('demo.b15.engagement.col_year')}
                     </th>
-                    <th className="text-right py-3 px-3 text-muted-foreground font-medium">
+                    <th className="text-end py-3 px-3 text-muted-foreground font-medium">
                       {t('demo.b15.engagement.col_students')}
                     </th>
-                    <th className="text-right py-3 px-3 text-muted-foreground font-medium">
+                    <th className="text-end py-3 px-3 text-muted-foreground font-medium">
                       {t('demo.b15.engagement.col_active_pct')}
                     </th>
-                    <th className="text-right py-3 px-3 text-muted-foreground font-medium">
+                    <th className="text-end py-3 px-3 text-muted-foreground font-medium">
                       {t('demo.b15.engagement.col_avg_sessions')}
                     </th>
-                    <th className="text-right py-3 px-3 text-muted-foreground font-medium">
+                    <th className="text-end py-3 px-3 text-muted-foreground font-medium">
                       {t('demo.b15.engagement.col_avg_duration')}
                     </th>
                     <th className="text-center py-3 px-3 text-muted-foreground font-medium">
@@ -431,8 +431,8 @@ export default function EngagementPage() {
                   {YEAR_GROUP_ENGAGEMENT.map((yg) => (
                     <tr key={yg.year} className="border-b border-border/40 hover:bg-muted/50">
                       <td className="py-3 px-3 font-medium">{yg.year}</td>
-                      <td className="py-3 px-3 text-right text-muted-foreground">{yg.students}</td>
-                      <td className="py-3 px-3 text-right">
+                      <td className="py-3 px-3 text-end text-muted-foreground">{yg.students}</td>
+                      <td className="py-3 px-3 text-end">
                         <span
                           className={
                             yg.activePct >= 85
@@ -445,12 +445,8 @@ export default function EngagementPage() {
                           {yg.activePct}%
                         </span>
                       </td>
-                      <td className="py-3 px-3 text-right text-muted-foreground">
-                        {yg.avgSessions}
-                      </td>
-                      <td className="py-3 px-3 text-right text-muted-foreground">
-                        {yg.avgDuration}
-                      </td>
+                      <td className="py-3 px-3 text-end text-muted-foreground">{yg.avgSessions}</td>
+                      <td className="py-3 px-3 text-end text-muted-foreground">{yg.avgDuration}</td>
                       <td className="py-3 px-3 text-center">
                         {yg.trend === 'up' ? (
                           <TrendingUp className="w-4 h-4 text-primary inline-block" />
@@ -505,7 +501,7 @@ export default function EngagementPage() {
                         variant="outline"
                         className="border-amber-500/30 text-amber-700 dark:text-amber-300 text-xs"
                       >
-                        <Flame className="w-3 h-3 mr-1" />
+                        <Flame className="w-3 h-3 me-1" />
                         {student.streak}
                         {t('demo.b15.engagement.streak_suffix')}
                       </Badge>
@@ -596,7 +592,7 @@ export default function EngagementPage() {
                       <span className="text-xs font-bold text-muted-foreground w-4">{idx + 1}</span>
                       <span className="text-sm truncate">{course.name}</span>
                     </div>
-                    <div className="flex items-center gap-2 shrink-0 ml-2">
+                    <div className="flex items-center gap-2 shrink-0 ms-2">
                       <span className="text-xs text-muted-foreground">
                         {course.views} {t('demo.b15.engagement.views_suffix')}
                       </span>
@@ -624,7 +620,7 @@ export default function EngagementPage() {
                       <span className="text-xs font-bold text-muted-foreground w-4">{idx + 1}</span>
                       <span className="text-sm truncate">{quiz.name}</span>
                     </div>
-                    <div className="flex items-center gap-3 shrink-0 ml-2">
+                    <div className="flex items-center gap-3 shrink-0 ms-2">
                       <span className="text-xs text-muted-foreground">
                         {quiz.attempts} {t('demo.b15.engagement.attempts_suffix')}
                       </span>
@@ -655,7 +651,7 @@ export default function EngagementPage() {
                       <span className="text-xs font-bold text-muted-foreground w-4">{idx + 1}</span>
                       <span className="text-sm truncate">{resource.name}</span>
                     </div>
-                    <span className="text-xs text-muted-foreground shrink-0 ml-2">
+                    <span className="text-xs text-muted-foreground shrink-0 ms-2">
                       {resource.downloads} {t('demo.b15.engagement.downloads_suffix')}
                     </span>
                   </div>

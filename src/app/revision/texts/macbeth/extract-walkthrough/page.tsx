@@ -150,12 +150,12 @@ export default function MacbethExtractWalkthroughPage() {
 
         {/* Hero */}
         <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-violet-500/[0.04] p-6 sm:p-8 lg:p-10">
-          <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-violet-500/5 blur-3xl" />
+          <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-violet-500/5 blur-3xl" />
           <div className="relative">
             <Button
               variant="ghost"
               size="sm"
-              className="mb-4 -ml-2 text-muted-foreground"
+              className="mb-4 -ms-2 text-muted-foreground"
               render={<Link href="/revision/texts/macbeth" />}
             >
               <ArrowLeft className="size-3.5" />
@@ -163,7 +163,7 @@ export default function MacbethExtractWalkthroughPage() {
             </Button>
             <div className="mb-4 flex flex-wrap items-center gap-2">
               <Badge variant="secondary">
-                <ScrollText className="mr-1 size-3 text-violet-400" />
+                <ScrollText className="me-1 size-3 text-violet-400" />
                 {t('rev.texts.macbeth.extract.badge')}
               </Badge>
               <Badge variant="outline">
@@ -228,7 +228,7 @@ export default function MacbethExtractWalkthroughPage() {
               <ol className="space-y-1 font-heading text-base leading-loose sm:text-lg">
                 {EXTRACT_LINES.map((line) => (
                   <li key={line.n} className="flex gap-4 sm:gap-6">
-                    <span className="w-6 shrink-0 select-none text-right text-xs text-muted-foreground/60 tabular-nums">
+                    <span className="w-6 shrink-0 select-none text-end text-xs text-muted-foreground/60 tabular-nums">
                       {line.n}
                     </span>
                     <span>{line.text}</span>
@@ -268,7 +268,7 @@ export default function MacbethExtractWalkthroughPage() {
                   <ol className="space-y-1 font-heading text-base leading-loose">
                     {segLines.map((line) => (
                       <li key={line.n} className="flex gap-4">
-                        <span className="w-6 shrink-0 select-none text-right text-xs text-muted-foreground/60 tabular-nums">
+                        <span className="w-6 shrink-0 select-none text-end text-xs text-muted-foreground/60 tabular-nums">
                           {line.n}
                         </span>
                         <span>{line.text}</span>
@@ -349,10 +349,10 @@ export default function MacbethExtractWalkthroughPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center pt-4 pb-4">
           <Button variant="outline" render={<Link href="/revision/texts/macbeth/key-quotes" />}>
-            <ArrowLeft className="size-4 mr-1" /> {t('rev.texts.common.key_quotes')}
+            <ArrowLeft className="size-4 me-1" /> {t('rev.texts.common.key_quotes')}
           </Button>
           <Button variant="outline" render={<Link href="/revision/texts/macbeth/essay-plans" />}>
-            {t('rev.texts.common.essay_plans')} <BookOpen className="size-4 ml-1" />
+            {t('rev.texts.common.essay_plans')} <BookOpen className="size-4 ms-1" />
           </Button>
         </div>
 

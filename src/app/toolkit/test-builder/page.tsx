@@ -261,7 +261,7 @@ export default function TestBuilderPage() {
 
             {/* Generate */}
             <Button onClick={generateTest} className="w-full sm:w-auto" size="lg">
-              <Sparkles className="h-4 w-4 mr-2" />
+              <Sparkles className="h-4 w-4 me-2" />
               {tx('toolkit.test_builder.btn_generate')}
             </Button>
           </div>
@@ -316,13 +316,13 @@ export default function TestBuilderPage() {
                     <button
                       key={i}
                       onClick={() => setAnswers({ ...answers, [currentQuestion.id]: i })}
-                      className={`w-full text-left px-4 py-3 rounded-lg border transition-all duration-200 ${
+                      className={`w-full text-start px-4 py-3 rounded-lg border transition-all duration-200 ${
                         answers[currentQuestion.id] === i
                           ? 'border-primary bg-primary/5 text-foreground'
                           : 'border-border hover:border-muted-foreground/40 text-muted-foreground hover:text-foreground'
                       }`}
                     >
-                      <span className="font-mono text-xs mr-2 opacity-60">
+                      <span className="font-mono text-xs me-2 opacity-60">
                         {String.fromCharCode(65 + i)}.
                       </span>
                       {opt}
@@ -403,15 +403,15 @@ export default function TestBuilderPage() {
             {/* Actions */}
             <div className="flex flex-wrap gap-3 justify-center print:hidden">
               <Button variant="outline" onClick={downloadPDF}>
-                <Download className="h-4 w-4 mr-2" />
+                <Download className="h-4 w-4 me-2" />
                 {tx('toolkit.test_builder.btn_download_pdf')}
               </Button>
               <Button variant="outline" onClick={saveToMaterials}>
-                <Save className="h-4 w-4 mr-2" />
+                <Save className="h-4 w-4 me-2" />
                 {tx('toolkit.test_builder.btn_save_materials')}
               </Button>
               <Button onClick={resetTest}>
-                <RotateCcw className="h-4 w-4 mr-2" />
+                <RotateCcw className="h-4 w-4 me-2" />
                 {tx('toolkit.test_builder.btn_new_test')}
               </Button>
             </div>
@@ -447,7 +447,7 @@ export default function TestBuilderPage() {
                       </div>
                       <div className="flex-1">
                         <p className="font-medium mb-2">
-                          <span className="font-mono text-xs text-muted-foreground mr-2">
+                          <span className="font-mono text-xs text-muted-foreground me-2">
                             Q{i + 1}.
                           </span>
                           {q.question}

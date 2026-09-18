@@ -300,7 +300,7 @@ export default function CousinKateEduqasPage() {
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/revision/poetry/eduqas" />}
         >
           <ArrowLeft className="size-3.5" />

@@ -844,7 +844,7 @@ export default function SchoolStudentDetailPage() {
           </CardHeader>
           <CardContent>
             <div className="relative">
-              <div className="absolute left-5 top-0 bottom-0 w-px bg-muted" />
+              <div className="absolute start-5 top-0 bottom-0 w-px bg-muted" />
               <div className="space-y-3">
                 {(() => {
                   const allAssessments = [
@@ -939,7 +939,7 @@ export default function SchoolStudentDetailPage() {
             <CardTitle className="flex items-center gap-3 text-foreground">
               <BarChart3 className="w-5 h-5 text-primary" />
               Score Trend (Last 8 Scores)
-              <span className="ml-auto flex items-center gap-1.5 text-sm font-normal">
+              <span className="ms-auto flex items-center gap-1.5 text-sm font-normal">
                 {trend === 'up' && (
                   <Badge className="bg-primary/10 text-primary border-primary/30 gap-1">
                     <ArrowUp className="w-3 h-3" /> Improving
@@ -1150,10 +1150,10 @@ export default function SchoolStudentDetailPage() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-border">
-                    <th className="text-left py-3 px-4 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                    <th className="text-start py-3 px-4 text-xs font-medium text-muted-foreground uppercase tracking-wider">
                       Module
                     </th>
-                    <th className="text-left py-3 px-4 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                    <th className="text-start py-3 px-4 text-xs font-medium text-muted-foreground uppercase tracking-wider">
                       Progress
                     </th>
                     <th className="text-center py-3 px-4 text-xs font-medium text-muted-foreground uppercase tracking-wider">
@@ -1179,7 +1179,7 @@ export default function SchoolStudentDetailPage() {
                               style={{ width: `${mod.progress}%` }}
                             />
                           </div>
-                          <span className="text-xs text-muted-foreground w-10 text-right">
+                          <span className="text-xs text-muted-foreground w-10 text-end">
                             {mod.progress}%
                           </span>
                         </div>
@@ -1305,7 +1305,7 @@ export default function SchoolStudentDetailPage() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-border">
-                    <th className="text-left py-3 px-4 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                    <th className="text-start py-3 px-4 text-xs font-medium text-muted-foreground uppercase tracking-wider">
                       Exam
                     </th>
                     <th className="text-center py-3 px-4 text-xs font-medium text-muted-foreground uppercase tracking-wider">
@@ -1314,7 +1314,7 @@ export default function SchoolStudentDetailPage() {
                     <th className="text-center py-3 px-4 text-xs font-medium text-muted-foreground uppercase tracking-wider">
                       Grade
                     </th>
-                    <th className="text-right py-3 px-4 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                    <th className="text-end py-3 px-4 text-xs font-medium text-muted-foreground uppercase tracking-wider">
                       Date
                     </th>
                   </tr>
@@ -1338,7 +1338,7 @@ export default function SchoolStudentDetailPage() {
                           Grade {exam.grade}
                         </Badge>
                       </td>
-                      <td className="py-3 px-4 text-right text-muted-foreground">{exam.date}</td>
+                      <td className="py-3 px-4 text-end text-muted-foreground">{exam.date}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -1362,16 +1362,16 @@ export default function SchoolStudentDetailPage() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-border">
-                    <th className="text-left py-3 px-4 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                    <th className="text-start py-3 px-4 text-xs font-medium text-muted-foreground uppercase tracking-wider">
                       Title
                     </th>
                     <th className="text-center py-3 px-4 text-xs font-medium text-muted-foreground uppercase tracking-wider">
                       Score
                     </th>
-                    <th className="text-left py-3 px-4 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                    <th className="text-start py-3 px-4 text-xs font-medium text-muted-foreground uppercase tracking-wider">
                       Feedback
                     </th>
-                    <th className="text-right py-3 px-4 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                    <th className="text-end py-3 px-4 text-xs font-medium text-muted-foreground uppercase tracking-wider">
                       Date
                     </th>
                   </tr>
@@ -1406,7 +1406,7 @@ export default function SchoolStudentDetailPage() {
                       <td className="py-3 px-4 text-muted-foreground text-xs max-w-xs truncate">
                         {essay.feedback}
                       </td>
-                      <td className="py-3 px-4 text-right text-muted-foreground">{essay.date}</td>
+                      <td className="py-3 px-4 text-end text-muted-foreground">{essay.date}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -1430,7 +1430,7 @@ export default function SchoolStudentDetailPage() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-border">
-                    <th className="text-left py-3 px-4 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                    <th className="text-start py-3 px-4 text-xs font-medium text-muted-foreground uppercase tracking-wider">
                       Quiz
                     </th>
                     <th className="text-center py-3 px-4 text-xs font-medium text-muted-foreground uppercase tracking-wider">
@@ -1439,7 +1439,7 @@ export default function SchoolStudentDetailPage() {
                     <th className="text-center py-3 px-4 text-xs font-medium text-muted-foreground uppercase tracking-wider">
                       Percentage
                     </th>
-                    <th className="text-right py-3 px-4 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                    <th className="text-end py-3 px-4 text-xs font-medium text-muted-foreground uppercase tracking-wider">
                       Date
                     </th>
                   </tr>
@@ -1471,7 +1471,7 @@ export default function SchoolStudentDetailPage() {
                             </span>
                           </div>
                         </td>
-                        <td className="py-3 px-4 text-right text-muted-foreground">{quiz.date}</td>
+                        <td className="py-3 px-4 text-end text-muted-foreground">{quiz.date}</td>
                       </tr>
                     )
                   })}
@@ -1493,7 +1493,7 @@ export default function SchoolStudentDetailPage() {
           </CardHeader>
           <CardContent>
             <div className="relative">
-              <div className="absolute left-5 top-0 bottom-0 w-px bg-muted" />
+              <div className="absolute start-5 top-0 bottom-0 w-px bg-muted" />
               <div className="space-y-4">
                 {student.activityTimeline.map((activity, i) => (
                   <div key={i} className="flex items-start gap-4 relative">
@@ -1521,7 +1521,7 @@ export default function SchoolStudentDetailPage() {
         {/* ---------------------------------------------------------------- */}
         {/* 12. Personalised Recommendations                                 */}
         {/* ---------------------------------------------------------------- */}
-        <Card className="bg-card border-border border-l-4 border-l-primary">
+        <Card className="bg-card border-border border-s-4 border-s-primary">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-foreground">
               <Sparkles className="w-5 h-5 text-primary" />
@@ -1548,7 +1548,7 @@ export default function SchoolStudentDetailPage() {
         {/* ---------------------------------------------------------------- */}
         {/* 12b. Suggested Learning Paths                                    */}
         {/* ---------------------------------------------------------------- */}
-        <Card className="bg-card border-border border-l-4 border-l-blue-500">
+        <Card className="bg-card border-border border-s-4 border-s-blue-500">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-foreground">
               <BookOpen className="w-5 h-5 text-primary" />

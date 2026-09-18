@@ -438,7 +438,7 @@ export default function ToKillAMockingbirdStudyGuide() {
                   <h3 className="font-semibold text-foreground">{ch.title}</h3>
                 </div>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{ch.events}</p>
-                <div className="mt-3 rounded border-l-2 border-primary bg-primary/5 px-3 py-2">
+                <div className="mt-3 rounded border-s-2 border-primary bg-primary/5 px-3 py-2">
                   <p className="text-xs italic text-foreground">&ldquo;{ch.keyQuote}&rdquo;</p>
                   <p className="mt-1 text-xs text-muted-foreground">{ch.quoteContext}</p>
                 </div>
@@ -496,7 +496,7 @@ export default function ToKillAMockingbirdStudyGuide() {
           </p>
           <div className="mt-6 space-y-5">
             {keyQuotes.map((q, i) => (
-              <div key={i} className="rounded-lg border-l-4 border-primary bg-card p-5 shadow-md">
+              <div key={i} className="rounded-lg border-s-4 border-primary bg-card p-5 shadow-md">
                 <blockquote className="text-base font-medium italic text-foreground">
                   &ldquo;{q.quote}&rdquo;
                 </blockquote>

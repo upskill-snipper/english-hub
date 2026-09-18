@@ -386,35 +386,35 @@ export default function AnalyticsPage() {
               value="overview"
               className="px-4 py-2.5 text-sm data-active:text-primary text-muted-foreground hover:text-foreground rounded-none border-b-2 border-transparent data-active:border-emerald-400"
             >
-              <BarChart3 className="w-4 h-4 mr-1.5" />
+              <BarChart3 className="w-4 h-4 me-1.5" />
               Overview
             </TabsTrigger>
             <TabsTrigger
               value="year-groups"
               className="px-4 py-2.5 text-sm data-active:text-primary text-muted-foreground hover:text-foreground rounded-none border-b-2 border-transparent data-active:border-blue-400"
             >
-              <GraduationCap className="w-4 h-4 mr-1.5" />
+              <GraduationCap className="w-4 h-4 me-1.5" />
               Year Groups
             </TabsTrigger>
             <TabsTrigger
               value="teachers"
               className="px-4 py-2.5 text-sm data-active:text-primary text-muted-foreground hover:text-foreground rounded-none border-b-2 border-transparent data-active:border-cyan-400"
             >
-              <Users className="w-4 h-4 mr-1.5" />
+              <Users className="w-4 h-4 me-1.5" />
               Teachers
             </TabsTrigger>
             <TabsTrigger
               value="students"
               className="px-4 py-2.5 text-sm data-active:text-primary text-muted-foreground hover:text-foreground rounded-none border-b-2 border-transparent data-active:border-purple-400"
             >
-              <Users className="w-4 h-4 mr-1.5" />
+              <Users className="w-4 h-4 me-1.5" />
               Students
             </TabsTrigger>
             <TabsTrigger
               value="assessments"
               className="px-4 py-2.5 text-sm data-active:text-primary text-muted-foreground hover:text-foreground rounded-none border-b-2 border-transparent data-active:border-amber-400"
             >
-              <ClipboardList className="w-4 h-4 mr-1.5" />
+              <ClipboardList className="w-4 h-4 me-1.5" />
               Assessments
             </TabsTrigger>
           </TabsList>
@@ -648,7 +648,7 @@ export default function AnalyticsPage() {
                             {cls.teacher} &middot; {cls.studentCount} students
                           </p>
                         </div>
-                        <div className="text-right shrink-0">
+                        <div className="text-end shrink-0">
                           <p className={`text-sm font-bold ${progressTextColor(cls.avgProgress)}`}>
                             {vary(cls.avgProgress, dateRange)}%{' '}
                             <span className="text-xs font-normal text-muted-foreground">
@@ -713,7 +713,7 @@ export default function AnalyticsPage() {
                     onClick={handleDownloadReport}
                     className="bg-primary hover:bg-primary/90 text-primary-foreground"
                   >
-                    <Download className="w-4 h-4 mr-2" />
+                    <Download className="w-4 h-4 me-2" />
                     Download Full Report
                   </Button>
                 </div>
@@ -907,13 +907,13 @@ export default function AnalyticsPage() {
             {/* Filters */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mb-6">
               <div className="relative flex-1 max-w-sm">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
+                <Search className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
                 <input
                   type="text"
                   placeholder={_tr(`Search students...`)}
                   value={studentSearch}
                   onChange={(e) => setStudentSearch(e.target.value)}
-                  className="w-full pl-9 pr-4 py-2 text-sm rounded-lg bg-muted/50 border border-border text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-purple-500/50"
+                  className="w-full ps-9 pe-4 py-2 text-sm rounded-lg bg-muted/50 border border-border text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-purple-500/50"
                 />
               </div>
               <div className="flex items-center gap-1 rounded-lg bg-muted/50 border border-border p-1 overflow-x-auto max-w-full">
@@ -986,7 +986,7 @@ export default function AnalyticsPage() {
                       {student.yearGroup} &middot; {student.className}
                     </p>
                   </div>
-                  <div className="text-right shrink-0 space-y-0.5 max-w-[180px]">
+                  <div className="text-end shrink-0 space-y-0.5 max-w-[180px]">
                     <div className="flex items-center gap-1.5 justify-end flex-wrap">
                       <span className="text-[10px] text-muted-foreground/70 uppercase">WAG</span>
                       <span
@@ -1245,7 +1245,7 @@ export default function AnalyticsPage() {
                         key={lesson.title}
                         className="flex items-center justify-between gap-2 text-sm"
                       >
-                        <p className="text-foreground/80 truncate pr-4">{lesson.title}</p>
+                        <p className="text-foreground/80 truncate pe-4">{lesson.title}</p>
                         <span className="text-xs text-muted-foreground/70 shrink-0">
                           {vary(lesson.count, dateRange)} views
                         </span>
@@ -1281,7 +1281,7 @@ export default function AnalyticsPage() {
                         key={exam.title}
                         className="flex items-center justify-between gap-2 text-sm"
                       >
-                        <p className="text-foreground/80 truncate pr-4">{exam.title}</p>
+                        <p className="text-foreground/80 truncate pe-4">{exam.title}</p>
                         <span className="text-xs text-muted-foreground/70 shrink-0">
                           {vary(exam.count, dateRange)} taken
                         </span>
@@ -1305,9 +1305,9 @@ export default function AnalyticsPage() {
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="border-b border-border text-muted-foreground">
-                        <th className="text-left py-3 px-2 font-medium">Class</th>
-                        <th className="text-left py-3 px-2 font-medium">Teacher</th>
-                        <th className="text-left py-3 px-2 font-medium w-48">
+                        <th className="text-start py-3 px-2 font-medium">Class</th>
+                        <th className="text-start py-3 px-2 font-medium">Teacher</th>
+                        <th className="text-start py-3 px-2 font-medium w-48">
                           {_tr(`Completion Rate`)}
                         </th>
                         <th className="text-center py-3 px-2 font-medium">Overdue</th>
@@ -1337,7 +1337,7 @@ export default function AnalyticsPage() {
                                   />
                                 </div>
                                 <span
-                                  className={`text-xs font-medium w-10 text-right ${progressTextColor(completion)}`}
+                                  className={`text-xs font-medium w-10 text-end ${progressTextColor(completion)}`}
                                 >
                                   {completion}%
                                 </span>

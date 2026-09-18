@@ -409,16 +409,16 @@ export default async function StudyPlanPage() {
           <table className="w-full border-collapse text-sm">
             <thead>
               <tr className="bg-card">
-                <th className="px-4 py-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="px-4 py-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Priority
                 </th>
-                <th className="px-4 py-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="px-4 py-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Code
                 </th>
-                <th className="px-4 py-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="px-4 py-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Descriptor
                 </th>
-                <th className="px-4 py-3 text-right font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="px-4 py-3 text-end font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Weighting
                 </th>
               </tr>
@@ -431,7 +431,7 @@ export default async function StudyPlanPage() {
                     <td className="px-4 py-3 font-mono text-xs text-muted-foreground">{i + 1}</td>
                     <td className="px-4 py-3 font-mono text-xs text-primary">{ao.code}</td>
                     <td className="px-4 py-3 text-foreground leading-relaxed">{ao.descriptor}</td>
-                    <td className="px-4 py-3 text-right font-mono text-xs text-muted-foreground">
+                    <td className="px-4 py-3 text-end font-mono text-xs text-muted-foreground">
                       {ao.weightPct}%
                     </td>
                   </tr>
@@ -502,13 +502,13 @@ export default async function StudyPlanPage() {
           <table className="w-full border-collapse text-sm">
             <thead>
               <tr className="bg-card">
-                <th className="px-4 py-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="px-4 py-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Day
                 </th>
-                <th className="px-4 py-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="px-4 py-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Focus
                 </th>
-                <th className="px-4 py-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="px-4 py-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Study
                 </th>
               </tr>
@@ -566,13 +566,13 @@ export default async function StudyPlanPage() {
           <table className="w-full border-collapse text-sm">
             <thead>
               <tr className="bg-card">
-                <th className="px-4 py-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="px-4 py-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   If you struggle with…
                 </th>
-                <th className="px-4 py-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="px-4 py-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Objective
                 </th>
-                <th className="px-4 py-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="px-4 py-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Study these pages
                 </th>
               </tr>

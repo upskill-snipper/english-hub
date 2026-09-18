@@ -39,7 +39,7 @@ export function GradePredictionCard({
         className,
       )}
     >
-      <CardContent className="flex flex-col items-center gap-4 py-8 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
+      <CardContent className="flex flex-col items-center gap-4 py-8 text-center sm:flex-row sm:items-center sm:justify-between sm:text-start">
         <div className="space-y-1">
           <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
             {t('marking.predicted_grade')}

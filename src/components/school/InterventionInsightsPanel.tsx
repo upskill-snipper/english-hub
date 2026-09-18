@@ -185,7 +185,7 @@ export function InterventionInsightsPanel() {
                     <p className="text-sm font-semibold text-foreground">{t.label}</p>
                     <p className="shrink-0 text-xs tabular-nums text-muted-foreground">
                       <span className="font-semibold text-foreground">{t.count}</span>
-                      <span className="ml-1.5 opacity-70">· {pct}%</span>
+                      <span className="ms-1.5 opacity-70">· {pct}%</span>
                     </p>
                   </div>
                   <div className="h-2 w-full overflow-hidden rounded-full bg-foreground/[0.06]">

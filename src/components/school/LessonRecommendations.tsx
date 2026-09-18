@@ -2,14 +2,7 @@
 
 import { useMemo } from 'react'
 import Link from 'next/link'
-import {
-  Lightbulb,
-  Clock,
-  ArrowRight,
-  Sparkles,
-  BookOpen,
-  Target,
-} from 'lucide-react'
+import { Lightbulb, Clock, ArrowRight, Sparkles, BookOpen, Target } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import type { WeakArea } from '@/lib/types'
 import { percentageToGCSEGradeLabel } from '@/lib/grades'
@@ -178,7 +171,15 @@ const KEYWORD_MAP: Record<string, string[]> = {
   'unseen-poetry': ['poetry', 'unseen', 'poem', 'analysis'],
   'macbeth-ambition': ['macbeth', 'shakespeare', 'ambition', 'theme', 'drama'],
   'macbeth-extract': ['macbeth', 'shakespeare', 'extract', 'exam', 'timed'],
-  'inspector-calls-responsibility': ['inspector', 'calls', 'priestley', 'responsibility', 'modern', 'text', 'drama'],
+  'inspector-calls-responsibility': [
+    'inspector',
+    'calls',
+    'priestley',
+    'responsibility',
+    'modern',
+    'text',
+    'drama',
+  ],
   'language-paper1-q2': ['language', 'paper 1', 'analysis', 'q2', 'technique'],
   'language-paper1-q5': ['language', 'paper 1', 'creative', 'descriptive', 'writing', 'q5'],
   'language-paper2-q5': ['language', 'paper 2', 'persuasive', 'argument', 'writing', 'q5'],
@@ -216,7 +217,9 @@ function matchLessonsToWeakAreas(weakAreas: WeakArea[]): RecommendedLesson[] {
 
         if (areaScore > score) {
           score = areaScore
-          const pct = Math.round((area.students_below_threshold / Math.max(area.students_below_threshold + 5, 1)) * 100)
+          const pct = Math.round(
+            (area.students_below_threshold / Math.max(area.students_below_threshold + 5, 1)) * 100,
+          )
           bestReason = `${area.students_below_threshold} students scored below target on ${area.module_name ?? area.course_name} (avg ${percentageToGCSEGradeLabel(Math.round(area.avg_score))})`
         }
       }
@@ -298,15 +301,9 @@ export function LessonRecommendations({ analytics, className }: LessonRecommenda
               <Sparkles className="h-4 w-4 text-clay-600" />
               Suggested Lesson Plans
             </CardTitle>
-            <CardDescription>
-              Targeting identified gaps in class performance
-            </CardDescription>
+            <CardDescription>Targeting identified gaps in class performance</CardDescription>
           </div>
-          <Button
-            variant="outline"
-            size="sm"
-            render={<Link href="/school/lessons" />}
-          >
+          <Button variant="outline" size="sm" render={<Link href="/school/lessons" />}>
             View All
             <ArrowRight className="h-3.5 w-3.5" />
           </Button>
@@ -336,7 +333,7 @@ export function LessonRecommendations({ analytics, className }: LessonRecommenda
                       </div>
 
                       <p className="mt-1 text-xs text-muted-foreground">
-                        <Target className="inline h-3 w-3 mr-1 -mt-0.5" />
+                        <Target className="inline h-3 w-3 me-1 -mt-0.5" />
                         {lesson.reason}
                       </p>
 
@@ -344,7 +341,10 @@ export function LessonRecommendations({ analytics, className }: LessonRecommenda
                         <Badge variant="outline" className="text-[10px]">
                           {lesson.topic}
                         </Badge>
-                        <Badge variant="outline" className={cn('text-[10px]', difficultyColor(lesson.difficulty))}>
+                        <Badge
+                          variant="outline"
+                          className={cn('text-[10px]', difficultyColor(lesson.difficulty))}
+                        >
                           {lesson.difficulty}
                         </Badge>
                         <span className="flex items-center gap-1 text-[10px] text-muted-foreground">

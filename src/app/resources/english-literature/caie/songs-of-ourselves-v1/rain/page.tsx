@@ -54,7 +54,7 @@ export default function RainPage() {
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/resources/english-literature/caie/songs-of-ourselves-v1" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -122,7 +122,7 @@ export default function RainPage() {
         <Card>
           <CardContent className="space-y-4 pt-6 text-sm text-muted-foreground">
             <div>
-              <blockquote className="border-l-4 border-foreground/30 pl-4 italic">
+              <blockquote className="border-s-4 border-foreground/30 ps-4 italic">
                 &ldquo;Rain, midnight rain, nothing but the wild rain&rdquo;
               </blockquote>
               <p className="mt-2">
@@ -133,7 +133,7 @@ export default function RainPage() {
               </p>
             </div>
             <div>
-              <blockquote className="border-l-4 border-foreground/30 pl-4 italic">
+              <blockquote className="border-s-4 border-foreground/30 ps-4 italic">
                 &ldquo;the bleak hut, and solitude, and me&rdquo;
               </blockquote>
               <p className="mt-2">
@@ -143,7 +143,7 @@ export default function RainPage() {
               </p>
             </div>
             <div>
-              <blockquote className="border-l-4 border-foreground/30 pl-4 italic">
+              <blockquote className="border-s-4 border-foreground/30 ps-4 italic">
                 &ldquo;Remembering again that I shall die&rdquo;
               </blockquote>
               <p className="mt-2">

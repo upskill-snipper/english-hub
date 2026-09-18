@@ -662,7 +662,7 @@ function SlotEditDialog({
               }}
               className="flex-1"
             >
-              <CheckCircle2 className="h-4 w-4 mr-1.5" />
+              <CheckCircle2 className="h-4 w-4 me-1.5" />
               Save
             </Button>
             {slot?.lessonId && (
@@ -954,7 +954,7 @@ export function WeeklyPlanner() {
   return (
     <div className="flex h-full gap-0">
       {/* ── Main Planner Area ──────────────────────────────────────────────── */}
-      <div className={cn('flex-1 min-w-0 p-4 sm:p-6', sidebarOpen && 'lg:pr-0')}>
+      <div className={cn('flex-1 min-w-0 p-4 sm:p-6', sidebarOpen && 'lg:pe-0')}>
         {/* Header */}
         <div className="mb-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between animate-fade-in">
           <div className="flex items-center gap-3">
@@ -992,7 +992,7 @@ export function WeeklyPlanner() {
               variant="ghost"
               size="sm"
               onClick={goToPreviousWeek}
-              className="rounded-r-none h-8"
+              className="rounded-e-none h-8"
             >
               <ChevronLeft className="h-4 w-4" />
             </Button>
@@ -1004,7 +1004,7 @@ export function WeeklyPlanner() {
             >
               Today
             </Button>
-            <Button variant="ghost" size="sm" onClick={goToNextWeek} className="rounded-l-none h-8">
+            <Button variant="ghost" size="sm" onClick={goToNextWeek} className="rounded-s-none h-8">
               <ChevronRight className="h-4 w-4" />
             </Button>
           </div>
@@ -1108,7 +1108,7 @@ export function WeeklyPlanner() {
             variant="ghost"
             size="sm"
             onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="h-8 text-xs gap-1.5 ml-auto lg:hidden"
+            className="h-8 text-xs gap-1.5 ms-auto lg:hidden"
           >
             <BookOpen className="h-3.5 w-3.5" />
             Lessons
@@ -1191,10 +1191,10 @@ export function WeeklyPlanner() {
       {/* ── Sidebar: Available Lessons ─────────────────────────────────────── */}
       <div
         className={cn(
-          'border-l border-border bg-card/50 transition-all duration-200 overflow-hidden',
+          'border-s border-border bg-card/50 transition-all duration-200 overflow-hidden',
           sidebarOpen ? 'w-72 shrink-0' : 'w-0',
           // On mobile, overlay
-          'fixed right-0 top-14 bottom-0 z-30 lg:relative lg:top-0 lg:z-auto',
+          'fixed end-0 top-14 bottom-0 z-30 lg:relative lg:top-0 lg:z-auto',
           !sidebarOpen && 'lg:w-0',
         )}
       >
@@ -1216,17 +1216,17 @@ export function WeeklyPlanner() {
             </div>
 
             <div className="relative mb-2">
-              <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
+              <Search className="absolute start-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
               <Input
                 placeholder="Search lessons..."
                 value={sidebarSearch}
                 onChange={(e) => setSidebarSearch(e.target.value)}
-                className="pl-8 h-8 text-xs"
+                className="ps-8 h-8 text-xs"
               />
               {sidebarSearch && (
                 <button
                   onClick={() => setSidebarSearch('')}
-                  className="absolute right-2.5 top-1/2 -translate-y-1/2"
+                  className="absolute end-2.5 top-1/2 -translate-y-1/2"
                 >
                   <X className="h-3 w-3 text-muted-foreground" />
                 </button>
@@ -1235,7 +1235,7 @@ export function WeeklyPlanner() {
 
             <Select value={sidebarTopic} onValueChange={setSidebarTopic}>
               <SelectTrigger className="h-8 text-xs">
-                <Filter className="h-3 w-3 mr-1 text-muted-foreground" />
+                <Filter className="h-3 w-3 me-1 text-muted-foreground" />
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -1274,7 +1274,7 @@ export function WeeklyPlanner() {
 
       {/* Sidebar toggle for desktop when closed */}
       {!sidebarOpen && (
-        <div className="hidden lg:flex flex-col items-center py-4 px-1 border-l border-border">
+        <div className="hidden lg:flex flex-col items-center py-4 px-1 border-s border-border">
           <Button
             variant="ghost"
             size="sm"

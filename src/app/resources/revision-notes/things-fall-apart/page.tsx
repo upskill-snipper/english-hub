@@ -22,7 +22,7 @@ function Section({
     <div className="mb-4 rounded-xl border border-border bg-card shadow-md overflow-hidden">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left hover:bg-muted transition-colors"
+        className="flex w-full items-center justify-between px-5 py-4 text-start hover:bg-muted transition-colors"
       >
         <span className="flex items-center gap-3">
           <span className="text-xl">{icon}</span>
@@ -53,7 +53,7 @@ function QuoteCard({
   analysis: string
 }) {
   return (
-    <div className="rounded-lg border-l-4 border-violet-400 bg-violet-500/5 p-4 mb-3">
+    <div className="rounded-lg border-s-4 border-violet-400 bg-violet-500/5 p-4 mb-3">
       <p className="text-sm font-semibold text-violet-800 dark:text-violet-200 italic">
         &ldquo;{quote}&rdquo;
       </p>
@@ -165,7 +165,7 @@ export default function ThingsFallApartPage() {
             <h4 className="font-bold mt-4 mb-2 text-primary">
               Part One &mdash; Umuofia (chapters 1&ndash;13)
             </h4>
-            <ul className="space-y-2 text-sm leading-relaxed list-disc pl-5">
+            <ul className="space-y-2 text-sm leading-relaxed list-disc ps-5">
               <li>
                 <strong>{tr(`Chapter 1.`)}</strong> Okonkwo is introduced as a famous wrestler and
                 warrior whose fame &ldquo;rested on solid personal achievements&rdquo;. His father
@@ -228,7 +228,7 @@ export default function ThingsFallApartPage() {
             <h4 className="font-bold mt-6 mb-2 text-primary">
               Part Two &mdash; Mbanta and the missionaries (chapters 14&ndash;19)
             </h4>
-            <ul className="space-y-2 text-sm leading-relaxed list-disc pl-5">
+            <ul className="space-y-2 text-sm leading-relaxed list-disc ps-5">
               <li>
                 <strong>{tr(`Chapter 14.`)}</strong> Okonkwo&rsquo;s mother&rsquo;s kinsman
                 <em> Uchendu</em> receives him kindly but reminds him: &ldquo;Mother is
@@ -266,7 +266,7 @@ export default function ThingsFallApartPage() {
             <h4 className="font-bold mt-6 mb-2 text-primary">
               Part Three &mdash; Return and collapse (chapters 20&ndash;25)
             </h4>
-            <ul className="space-y-2 text-sm leading-relaxed list-disc pl-5">
+            <ul className="space-y-2 text-sm leading-relaxed list-disc ps-5">
               <li>
                 <strong>{tr(`Chapter 20.`)}</strong> Okonkwo returns to a transformed Umuofia. The
                 white government has built a court at Umuofia and a District Commissioner tries
@@ -782,7 +782,7 @@ export default function ThingsFallApartPage() {
         {/* ─── Grade 9 Points ─── */}
         <div id="grade-9-points">
           <Section title={tr(`Grade 9 / A* Points`)} icon="🌟">
-            <ul className="space-y-3 text-sm leading-relaxed list-disc pl-5">
+            <ul className="space-y-3 text-sm leading-relaxed list-disc ps-5">
               <li>
                 <strong>{tr(`The structural irony of the closing chapter.`)}</strong> Achebe spends
                 240 pages giving Okonkwo a full interior life, then jumps in the final pages into
@@ -847,7 +847,7 @@ export default function ThingsFallApartPage() {
         {/* ─── Practice Questions ─── */}
         <div id="practice-questions">
           <Section title={tr(`Practice Questions`)} icon="📝">
-            <ul className="space-y-3 text-sm leading-relaxed list-disc pl-5">
+            <ul className="space-y-3 text-sm leading-relaxed list-disc ps-5">
               <li>
                 &ldquo;Okonkwo is a victim of his society as much as of himself.&rdquo; Discuss.
               </li>
@@ -887,7 +887,7 @@ export default function ThingsFallApartPage() {
 
         {/* ─── Exam Tips ─── */}
         <Section title="Exam Tips" icon="🎯">
-          <ul className="space-y-2 text-sm leading-relaxed list-disc pl-5">
+          <ul className="space-y-2 text-sm leading-relaxed list-disc ps-5">
             <li>
               <strong>{tr(`Use Igbo terms accurately.`)}</strong> Examiners reward students who can
               name <em>chi</em>, <em>egwugwu</em>, <em>osu</em>, <em>ogbanje</em>,<em> obi</em>, and

@@ -201,7 +201,7 @@ export function GradeTargetsQuiz({
               <button
                 key={i}
                 onClick={() => handleAnswer(i)}
-                className="w-full text-left rounded-xl border border-border/60 bg-background/50 p-4 text-sm text-muted-foreground transition-all duration-200 hover:border-primary/40 hover:bg-primary/[0.04] hover:text-foreground"
+                className="w-full text-start rounded-xl border border-border/60 bg-background/50 p-4 text-sm text-muted-foreground transition-all duration-200 hover:border-primary/40 hover:bg-primary/[0.04] hover:text-foreground"
               >
                 {option}
               </button>
@@ -215,7 +215,7 @@ export function GradeTargetsQuiz({
           <div className="rounded-xl border border-border/40 bg-background/50 p-6 mb-5">
             <div className="flex items-center gap-3 mb-3">
               <Badge variant="secondary" className="text-sm">
-                <Star className="size-3 mr-1" />
+                <Star className="size-3 me-1" />
                 {t('rev.misc.gtquiz.your_result')}
               </Badge>
               <span className={`text-lg font-bold ${result.colour}`}>{result.grade}</span>

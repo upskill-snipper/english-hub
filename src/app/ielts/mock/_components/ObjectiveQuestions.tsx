@@ -97,7 +97,7 @@ function QuestionCard({
                 type="button"
                 onClick={() => onAnswer(question.id, String(i))}
                 aria-pressed={selected}
-                className={`rounded-xl border p-3 text-left text-sm transition-all duration-200 ${
+                className={`rounded-xl border p-3 text-start text-sm transition-all duration-200 ${
                   selected
                     ? 'border-primary/60 bg-primary/[0.06]'
                     : 'border-border/60 bg-card hover:border-primary/40 hover:bg-primary/[0.03]'

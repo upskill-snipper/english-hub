@@ -208,14 +208,14 @@ function InviteForm({ onInvitesSent }: InviteFormProps) {
               Email addresses
             </Label>
             <div className="relative">
-              <Mail className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+              <Mail className="pointer-events-none absolute start-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <Input
                 id="email-input"
                 type="text"
                 placeholder="alice@school.ac.uk, bob@school.ac.uk"
                 value={emailInput}
                 onChange={(e) => setEmailInput(e.target.value)}
-                className="pl-9 bg-background border-border text-foreground placeholder:text-muted-foreground"
+                className="ps-9 bg-background border-border text-foreground placeholder:text-muted-foreground"
                 disabled={sending}
               />
             </div>
@@ -259,18 +259,18 @@ function InviteForm({ onInvitesSent }: InviteFormProps) {
               disabled={sending}
               className="flex w-full rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground shadow-sm resize-none focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
             />
-            <p className="text-xs text-muted-foreground text-right">{message.length}/500</p>
+            <p className="text-xs text-muted-foreground text-end">{message.length}/500</p>
           </div>
 
           <Button type="submit" disabled={sending} className="w-full sm:w-auto">
             {sending ? (
               <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                <Loader2 className="me-2 h-4 w-4 animate-spin" />
                 Sending...
               </>
             ) : (
               <>
-                <Send className="mr-2 h-4 w-4" />
+                <Send className="me-2 h-4 w-4" />
                 Send Invites
               </>
             )}
@@ -349,7 +349,7 @@ function InviteRow({ invite, onRevoked }: InviteRowProps) {
             <Loader2 className="h-4 w-4 animate-spin" />
           ) : (
             <>
-              <X className="mr-1 h-4 w-4" />
+              <X className="me-1 h-4 w-4" />
               Revoke
             </>
           )}

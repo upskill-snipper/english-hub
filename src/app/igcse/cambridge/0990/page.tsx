@@ -223,13 +223,13 @@ export default async function Cambridge0990HubPage() {
 
       {/* Hero */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 lg:p-10">
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-primary/5 blur-3xl" />
+        <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-16 -start-16 h-48 w-48 rounded-full bg-primary/5 blur-3xl" />
 
         <div className="relative">
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="bg-primary/10 text-primary border-primary/20">
-              <Sparkles className="mr-1 size-3" />
+              <Sparkles className="me-1 size-3" />
               {await t('igcse.cambridge.badge.cambridge_igcse')}
             </Badge>
             <Badge variant="secondary">First Language English (9-1)</Badge>
@@ -431,10 +431,10 @@ export default async function Cambridge0990HubPage() {
             <table className="w-full text-body-sm">
               <thead className="border-b border-border/60 bg-muted/40 text-body-xs text-muted-foreground uppercase">
                 <tr>
-                  <th className="px-4 py-3 text-left">Grade</th>
-                  <th className="px-4 py-3 text-left">Paper 1 (of 80)</th>
-                  <th className="px-4 py-3 text-left">Paper 2 (of 80)</th>
-                  <th className="px-4 py-3 text-left">A*-G equivalent</th>
+                  <th className="px-4 py-3 text-start">Grade</th>
+                  <th className="px-4 py-3 text-start">Paper 1 (of 80)</th>
+                  <th className="px-4 py-3 text-start">Paper 2 (of 80)</th>
+                  <th className="px-4 py-3 text-start">A*-G equivalent</th>
                 </tr>
               </thead>
               <tbody>

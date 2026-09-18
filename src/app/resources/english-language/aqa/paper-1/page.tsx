@@ -23,7 +23,7 @@ function Section({
     <div className="rounded-xl border border-border bg-card">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-bold text-foreground hover:bg-muted transition-colors"
+        className="flex w-full items-center justify-between gap-4 px-6 py-5 text-start font-bold text-foreground hover:bg-muted transition-colors"
       >
         <span className="text-lg">{title}</span>
         <svg
@@ -142,42 +142,42 @@ export default function Paper1Page() {
           <div className="overflow-x-auto">
             <table className="mt-3 w-full text-sm">
               <thead>
-                <tr className="border-b border-border text-left text-muted-foreground">
-                  <th className="py-2 pr-4">Task</th>
-                  <th className="py-2 pr-4">Marks</th>
-                  <th className="py-2 pr-4">Time</th>
+                <tr className="border-b border-border text-start text-muted-foreground">
+                  <th className="py-2 pe-4">Task</th>
+                  <th className="py-2 pe-4">Marks</th>
+                  <th className="py-2 pe-4">Time</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
                 <tr>
-                  <td className="py-2 pr-4">Read the extract carefully</td>
-                  <td className="py-2 pr-4">-</td>
-                  <td className="py-2 pr-4">10-15 mins</td>
+                  <td className="py-2 pe-4">Read the extract carefully</td>
+                  <td className="py-2 pe-4">-</td>
+                  <td className="py-2 pe-4">10-15 mins</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4">{tr(`Question 1 (list 4 things)`)}</td>
-                  <td className="py-2 pr-4">4</td>
-                  <td className="py-2 pr-4">5 mins</td>
+                  <td className="py-2 pe-4">{tr(`Question 1 (list 4 things)`)}</td>
+                  <td className="py-2 pe-4">4</td>
+                  <td className="py-2 pe-4">5 mins</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4">{tr(`Question 2 (language analysis)`)}</td>
-                  <td className="py-2 pr-4">8</td>
-                  <td className="py-2 pr-4">8-10 mins</td>
+                  <td className="py-2 pe-4">{tr(`Question 2 (language analysis)`)}</td>
+                  <td className="py-2 pe-4">8</td>
+                  <td className="py-2 pe-4">8-10 mins</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4">{tr(`Question 3 (structure)`)}</td>
-                  <td className="py-2 pr-4">8</td>
-                  <td className="py-2 pr-4">8-10 mins</td>
+                  <td className="py-2 pe-4">{tr(`Question 3 (structure)`)}</td>
+                  <td className="py-2 pe-4">8</td>
+                  <td className="py-2 pe-4">8-10 mins</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4">{tr(`Question 4 (evaluation)`)}</td>
-                  <td className="py-2 pr-4">20</td>
-                  <td className="py-2 pr-4">20-25 mins</td>
+                  <td className="py-2 pe-4">{tr(`Question 4 (evaluation)`)}</td>
+                  <td className="py-2 pe-4">20</td>
+                  <td className="py-2 pe-4">20-25 mins</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4">{tr(`Question 5 (creative writing)`)}</td>
-                  <td className="py-2 pr-4">40</td>
-                  <td className="py-2 pr-4">45 mins</td>
+                  <td className="py-2 pe-4">{tr(`Question 5 (creative writing)`)}</td>
+                  <td className="py-2 pe-4">40</td>
+                  <td className="py-2 pe-4">45 mins</td>
                 </tr>
               </tbody>
             </table>
@@ -198,7 +198,7 @@ export default function Paper1Page() {
           </p>
 
           <h3 className="mt-4 font-bold text-primary">{tr(`How to answer`)}</h3>
-          <ul className="ml-5 list-disc space-y-2">
+          <ul className="ms-5 list-disc space-y-2">
             <li>
               Read the specified lines carefully. Only use information from those lines &mdash;
               using other parts of the text earns zero marks for that point.
@@ -218,7 +218,7 @@ export default function Paper1Page() {
           </ul>
 
           <h3 className="mt-4 font-bold text-primary">{tr(`Common mistakes`)}</h3>
-          <ul className="ml-5 list-disc space-y-2">
+          <ul className="ms-5 list-disc space-y-2">
             <li>{tr(`Using information from outside the specified lines.`)}</li>
             <li>
               {tr(
@@ -233,7 +233,7 @@ export default function Paper1Page() {
             <p className="font-semibold text-foreground">
               Q: List four things you learn about the house from lines 1-7.
             </p>
-            <ol className="mt-2 ml-5 list-decimal space-y-1">
+            <ol className="mt-2 ms-5 list-decimal space-y-1">
               <li>{tr(`The house is described as old and neglected.`)}</li>
               <li>{tr(`The front door has peeling paint.`)}</li>
               <li>{tr(`There is a broken window on the upper floor.`)}</li>
@@ -257,44 +257,44 @@ export default function Paper1Page() {
           <div className="overflow-x-auto">
             <table className="mt-2 w-full text-sm">
               <thead>
-                <tr className="border-b border-border text-left text-muted-foreground">
-                  <th className="py-2 pr-4">Level</th>
-                  <th className="py-2 pr-4">Marks</th>
-                  <th className="py-2 pr-4">Descriptor</th>
+                <tr className="border-b border-border text-start text-muted-foreground">
+                  <th className="py-2 pe-4">Level</th>
+                  <th className="py-2 pe-4">Marks</th>
+                  <th className="py-2 pe-4">Descriptor</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 4</td>
-                  <td className="py-2 pr-4">7-8</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 4</td>
+                  <td className="py-2 pe-4">7-8</td>
+                  <td className="py-2 pe-4">
                     <strong>{tr(`Perceptive, detailed analysis.`)}</strong> Analyses the effects of
                     the writer&rsquo;s choices of language. Selects judicious examples. Uses
                     sophisticated subject terminology accurately.
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 3</td>
-                  <td className="py-2 pr-4">5-6</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 3</td>
+                  <td className="py-2 pe-4">5-6</td>
+                  <td className="py-2 pe-4">
                     <strong>{tr(`Clear, relevant explanation.`)}</strong> Clearly explains the
                     effects of the writer&rsquo;s choices of language. Selects relevant examples.
                     Uses subject terminology accurately.
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 2</td>
-                  <td className="py-2 pr-4">3-4</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 2</td>
+                  <td className="py-2 pe-4">3-4</td>
+                  <td className="py-2 pe-4">
                     <strong>{tr(`Some understanding.`)}</strong> Attempts to comment on the effect
                     of language. Selects some appropriate examples. Uses some subject terminology,
                     not always accurately.
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 1</td>
-                  <td className="py-2 pr-4">1-2</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 1</td>
+                  <td className="py-2 pe-4">1-2</td>
+                  <td className="py-2 pe-4">
                     <strong>{tr(`Simple, limited comment.`)}</strong> Offers simple comment on the
                     effect of language. Selects simple references or examples. Uses simple subject
                     terminology.
@@ -308,7 +308,7 @@ export default function Paper1Page() {
           <p>
             Use a <strong>{tr(`What &rarr; How &rarr; Why`)}</strong> approach for each point:
           </p>
-          <ol className="ml-5 list-decimal space-y-2 mt-2">
+          <ol className="ms-5 list-decimal space-y-2 mt-2">
             <li>
               <strong>What:</strong> Identify the technique or language feature and embed a short
               quotation.
@@ -328,7 +328,7 @@ export default function Paper1Page() {
           </p>
 
           <h3 className="mt-4 font-bold text-primary">{tr(`Top tips from markers`)}</h3>
-          <ul className="ml-5 list-disc space-y-2">
+          <ul className="ms-5 list-disc space-y-2">
             <li>
               <strong>{tr(`Zoom in on individual words.`)}</strong> The best responses explore why a
               specific word was chosen over alternatives. For example, why &ldquo;crawled&rdquo;
@@ -383,7 +383,7 @@ export default function Paper1Page() {
           </p>
 
           <h3 className="mt-4 font-bold text-primary">{tr(`Structural features to look for`)}</h3>
-          <ul className="ml-5 list-disc space-y-2">
+          <ul className="ms-5 list-disc space-y-2">
             <li>
               <strong>{tr(`Opening / exposition:`)}</strong> How does the text begin? Does it start
               with dialogue, description, action, or in medias res (in the middle of events)?
@@ -454,7 +454,7 @@ export default function Paper1Page() {
           </div>
 
           <h3 className="mt-4 font-bold text-primary">{tr(`Common mistakes`)}</h3>
-          <ul className="ml-5 list-disc space-y-2">
+          <ul className="ms-5 list-disc space-y-2">
             <li>
               Writing about <em>language</em> instead of <em>structure</em>. Talking about metaphors
               or similes here will not earn marks.
@@ -473,44 +473,44 @@ export default function Paper1Page() {
           <div className="overflow-x-auto">
             <table className="mt-2 w-full text-sm">
               <thead>
-                <tr className="border-b border-border text-left text-muted-foreground">
-                  <th className="py-2 pr-4">Level</th>
-                  <th className="py-2 pr-4">Marks</th>
-                  <th className="py-2 pr-4">Descriptor</th>
+                <tr className="border-b border-border text-start text-muted-foreground">
+                  <th className="py-2 pe-4">Level</th>
+                  <th className="py-2 pe-4">Marks</th>
+                  <th className="py-2 pe-4">Descriptor</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 4</td>
-                  <td className="py-2 pr-4">7-8</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 4</td>
+                  <td className="py-2 pe-4">7-8</td>
+                  <td className="py-2 pe-4">
                     {tr(
                       `Perceptive, detailed analysis of structural features. Selects judicious examples. Sophisticated use of subject terminology.`,
                     )}
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 3</td>
-                  <td className="py-2 pr-4">5-6</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 3</td>
+                  <td className="py-2 pe-4">5-6</td>
+                  <td className="py-2 pe-4">
                     {tr(
                       `Clear, relevant explanation of structural features. Relevant examples. Accurate use of subject terminology.`,
                     )}
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 2</td>
-                  <td className="py-2 pr-4">3-4</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 2</td>
+                  <td className="py-2 pe-4">3-4</td>
+                  <td className="py-2 pe-4">
                     {tr(
                       `Some understanding of structural features. Some appropriate examples. Some subject terminology.`,
                     )}
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 1</td>
-                  <td className="py-2 pr-4">1-2</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 1</td>
+                  <td className="py-2 pe-4">1-2</td>
+                  <td className="py-2 pe-4">
                     {tr(
                       `Simple, limited comment on structural features. Simple references. Simple subject terminology.`,
                     )}
@@ -539,44 +539,44 @@ export default function Paper1Page() {
           <div className="overflow-x-auto">
             <table className="mt-2 w-full text-sm">
               <thead>
-                <tr className="border-b border-border text-left text-muted-foreground">
-                  <th className="py-2 pr-4">Level</th>
-                  <th className="py-2 pr-4">Marks</th>
-                  <th className="py-2 pr-4">Descriptor</th>
+                <tr className="border-b border-border text-start text-muted-foreground">
+                  <th className="py-2 pe-4">Level</th>
+                  <th className="py-2 pe-4">Marks</th>
+                  <th className="py-2 pe-4">Descriptor</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 4</td>
-                  <td className="py-2 pr-4">16-20</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 4</td>
+                  <td className="py-2 pe-4">16-20</td>
+                  <td className="py-2 pe-4">
                     Perceptive, detailed evaluation. Convincing, critical response to the statement.
                     Judicious textual references integrated into the response. Analysis of
                     writer&rsquo;s methods with subject terminology used judiciously.
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 3</td>
-                  <td className="py-2 pr-4">11-15</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 3</td>
+                  <td className="py-2 pe-4">11-15</td>
+                  <td className="py-2 pe-4">
                     {tr(
                       `Clear, relevant evaluation. Thoughtful response. Apt textual references. Clear understanding of writer&rsquo;s methods with subject terminology used accurately.`,
                     )}
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 2</td>
-                  <td className="py-2 pr-4">6-10</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 2</td>
+                  <td className="py-2 pe-4">6-10</td>
+                  <td className="py-2 pe-4">
                     {tr(
                       `Some evaluation. Some response to the statement. Some appropriate references. Some understanding of writer&rsquo;s methods.`,
                     )}
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 1</td>
-                  <td className="py-2 pr-4">1-5</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 1</td>
+                  <td className="py-2 pe-4">1-5</td>
+                  <td className="py-2 pe-4">
                     {tr(
                       `Simple, limited evaluation. Simple, limited response. Simple references. Limited awareness of writer&rsquo;s methods.`,
                     )}
@@ -591,7 +591,7 @@ export default function Paper1Page() {
             This is worth <strong>20 marks</strong> and should be your longest reading response. Aim
             for <strong>4-5 developed paragraphs</strong>.
           </p>
-          <ol className="ml-5 list-decimal space-y-2 mt-2">
+          <ol className="ms-5 list-decimal space-y-2 mt-2">
             <li>
               <strong>{tr(`Open with your position.`)}</strong> State whether you agree, partially
               agree, or disagree with the statement. You can agree with parts and disagree with
@@ -624,7 +624,7 @@ export default function Paper1Page() {
           </p>
 
           <h3 className="mt-4 font-bold text-primary">{tr(`Common mistakes`)}</h3>
-          <ul className="ml-5 list-disc space-y-2">
+          <ul className="ms-5 list-disc space-y-2">
             <li>Forgetting to refer back to the statement in the question.</li>
             <li>{tr(`Writing a Q2-style response (analysing language without evaluating).`)}</li>
             <li>Spending too long on this question and running out of time for Q5.</li>
@@ -641,7 +641,7 @@ export default function Paper1Page() {
             to complete <strong>one</strong>.
           </p>
           <p className="mt-2">{tr(`This question assesses:`)}</p>
-          <ul className="ml-5 list-disc space-y-1 mt-1">
+          <ul className="ms-5 list-disc space-y-1 mt-1">
             <li>
               <strong>{tr(`Content and organisation (AO5, 24 marks):`)}</strong> Communicate
               clearly, effectively and imaginatively, selecting and adapting tone, style and
@@ -661,44 +661,44 @@ export default function Paper1Page() {
           <div className="overflow-x-auto">
             <table className="mt-2 w-full text-sm">
               <thead>
-                <tr className="border-b border-border text-left text-muted-foreground">
-                  <th className="py-2 pr-4">Level</th>
-                  <th className="py-2 pr-4">Marks</th>
-                  <th className="py-2 pr-4">Descriptor</th>
+                <tr className="border-b border-border text-start text-muted-foreground">
+                  <th className="py-2 pe-4">Level</th>
+                  <th className="py-2 pe-4">Marks</th>
+                  <th className="py-2 pe-4">Descriptor</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 4</td>
-                  <td className="py-2 pr-4">19-24</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 4</td>
+                  <td className="py-2 pe-4">19-24</td>
+                  <td className="py-2 pe-4">
                     Compelling, convincing communication. Extensive, ambitious vocabulary with
                     sustained crafting of linguistic devices. Varied, inventive structural features.
                     Writing is compelling, incorporating a range of convincing ideas.
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 3</td>
-                  <td className="py-2 pr-4">13-18</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 3</td>
+                  <td className="py-2 pe-4">13-18</td>
+                  <td className="py-2 pe-4">
                     {tr(
                       `Consistent, clear communication. Increasingly sophisticated vocabulary and phrasing. Effective structural features. Writing is engaging with a range of connected ideas.`,
                     )}
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 2</td>
-                  <td className="py-2 pr-4">7-12</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 2</td>
+                  <td className="py-2 pe-4">7-12</td>
+                  <td className="py-2 pe-4">
                     {tr(
                       `Some successful communication. Vocabulary chosen for effect. Some structural features. Writing has some clear ideas.`,
                     )}
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 1</td>
-                  <td className="py-2 pr-4">1-6</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 1</td>
+                  <td className="py-2 pe-4">1-6</td>
+                  <td className="py-2 pe-4">
                     {tr(
                       `Simple, limited communication. Simple vocabulary. Limited structural features. One or two ideas.`,
                     )}
@@ -714,17 +714,17 @@ export default function Paper1Page() {
           <div className="overflow-x-auto">
             <table className="mt-2 w-full text-sm">
               <thead>
-                <tr className="border-b border-border text-left text-muted-foreground">
-                  <th className="py-2 pr-4">Level</th>
-                  <th className="py-2 pr-4">Marks</th>
-                  <th className="py-2 pr-4">Descriptor</th>
+                <tr className="border-b border-border text-start text-muted-foreground">
+                  <th className="py-2 pe-4">Level</th>
+                  <th className="py-2 pe-4">Marks</th>
+                  <th className="py-2 pe-4">Descriptor</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 4</td>
-                  <td className="py-2 pr-4">13-16</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 4</td>
+                  <td className="py-2 pe-4">13-16</td>
+                  <td className="py-2 pe-4">
                     Sentence demarcation is consistently secure and accurate. Wide range of
                     punctuation used with a high level of accuracy. Uses a full range of sentence
                     forms for effect. Spelling (including complex and irregular words) is
@@ -732,9 +732,9 @@ export default function Paper1Page() {
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 3</td>
-                  <td className="py-2 pr-4">9-12</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 3</td>
+                  <td className="py-2 pe-4">9-12</td>
+                  <td className="py-2 pe-4">
                     Sentence demarcation is mostly secure and accurate. Range of punctuation used,
                     mostly with success. Uses a variety of sentence forms for effect. Spelling
                     (including complex and irregular words) is mostly accurate. Increasingly
@@ -742,18 +742,18 @@ export default function Paper1Page() {
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 2</td>
-                  <td className="py-2 pr-4">5-8</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 2</td>
+                  <td className="py-2 pe-4">5-8</td>
+                  <td className="py-2 pe-4">
                     Sentence demarcation is mostly secure with occasional errors. Some control of a
                     range of punctuation. Attempts a variety of sentence forms. Some accurate
                     spelling of more complex words. Varied vocabulary.
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-semibold">Level 1</td>
-                  <td className="py-2 pr-4">1-4</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-2 pe-4 font-semibold">Level 1</td>
+                  <td className="py-2 pe-4">1-4</td>
+                  <td className="py-2 pe-4">
                     {tr(
                       `Sentence demarcation is occasionally secure. Some evidence of conscious punctuation. Simple range of sentence forms. Accurate basic spelling. Simple vocabulary.`,
                     )}
@@ -773,7 +773,7 @@ export default function Paper1Page() {
           <div className="mt-3 grid gap-4 sm:grid-cols-2">
             <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">{tr(`For descriptive writing`)}</h4>
-              <ul className="mt-2 ml-5 list-disc space-y-1 text-sm">
+              <ul className="mt-2 ms-5 list-disc space-y-1 text-sm">
                 <li>
                   {tr(
                     `Choose 4-5 &ldquo;zoom points&rdquo; &mdash; specific details you will describe in depth`,
@@ -791,7 +791,7 @@ export default function Paper1Page() {
             </div>
             <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">{tr(`For narrative writing`)}</h4>
-              <ul className="mt-2 ml-5 list-disc space-y-1 text-sm">
+              <ul className="mt-2 ms-5 list-disc space-y-1 text-sm">
                 <li>{tr(`Keep the plot simple &mdash; one event, one setting, 1-2 characters`)}</li>
                 <li>
                   {tr(
@@ -806,7 +806,7 @@ export default function Paper1Page() {
           </div>
 
           <h3 className="mt-4 font-bold text-primary">{tr(`What markers want to see`)}</h3>
-          <ul className="ml-5 list-disc space-y-2">
+          <ul className="ms-5 list-disc space-y-2">
             <li>
               <strong>{tr(`Crafted language:`)}</strong> Use of literary devices (metaphor, simile,
               personification, sensory imagery) that feel deliberate, not random. Quality over
@@ -884,7 +884,7 @@ export default function Paper1Page() {
 
         {/* ── General exam tips ──────────────────────────────────── */}
         <Section title={tr(`General exam tips for Paper 1`)}>
-          <ul className="ml-5 list-disc space-y-3">
+          <ul className="ms-5 list-disc space-y-3">
             <li>
               <strong>{tr(`Read the extract twice.`)}</strong> First for general understanding,
               second to annotate key language and structural features. This initial investment saves

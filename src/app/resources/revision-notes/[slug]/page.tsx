@@ -73,7 +73,7 @@ export default async function RevisionNotesPlaceholder({ params }: { params: Pro
       <Button
         variant="ghost"
         size="sm"
-        className="-ml-2 text-muted-foreground"
+        className="-ms-2 text-muted-foreground"
         render={<Link href="/resources/revision-notes" />}
       >
         <ArrowLeft className="size-3.5" />
@@ -84,7 +84,7 @@ export default async function RevisionNotesPlaceholder({ params }: { params: Pro
       <header className="space-y-3">
         <div className="flex flex-wrap items-center gap-2">
           <Badge variant="secondary" className="bg-amber-500/10 text-amber-700 border-amber-500/20">
-            <Construction className="mr-1 size-3" />
+            <Construction className="me-1 size-3" />
             {await t('study.revnotes.slug.in_production')}
           </Badge>
           {text && (

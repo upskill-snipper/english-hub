@@ -325,17 +325,17 @@ export default function AdminMarkerQaPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-border text-left text-muted-foreground">
-                    <th className="pb-3 pr-4 font-medium">
+                  <tr className="border-b border-border text-start text-muted-foreground">
+                    <th className="pb-3 pe-4 font-medium">
                       {tt('admin.mqa.col.marker', 'Marker')}
                     </th>
-                    <th className="pb-3 pr-4 font-medium">
+                    <th className="pb-3 pe-4 font-medium">
                       {tt('admin.mqa.col.scored', 'Scored')}
                     </th>
-                    <th className="pb-3 pr-4 font-medium">{tt('admin.mqa.col.exact', 'Exact')}</th>
-                    <th className="pb-3 pr-4 font-medium">{tt('admin.mqa.col.within1', '±1')}</th>
-                    <th className="pb-3 pr-4 font-medium">{tt('admin.mqa.col.mae', 'MAE')}</th>
-                    <th className="pb-3 pr-4 font-medium">
+                    <th className="pb-3 pe-4 font-medium">{tt('admin.mqa.col.exact', 'Exact')}</th>
+                    <th className="pb-3 pe-4 font-medium">{tt('admin.mqa.col.within1', '±1')}</th>
+                    <th className="pb-3 pe-4 font-medium">{tt('admin.mqa.col.mae', 'MAE')}</th>
+                    <th className="pb-3 pe-4 font-medium">
                       {tt('admin.mqa.col.qwk', 'Grade QWK')}
                     </th>
                     <th className="pb-3 font-medium">{tt('admin.mqa.col.status', 'Status')}</th>
@@ -346,10 +346,10 @@ export default function AdminMarkerQaPage() {
                     const drift = data.driftFlags.find((d) => d.markerId === m.markerId)
                     return (
                       <tr key={m.markerId} className="text-foreground">
-                        <td className="py-3 pr-4">{m.markerName}</td>
-                        <td className="py-3 pr-4">{m.gradedCount}</td>
+                        <td className="py-3 pe-4">{m.markerName}</td>
+                        <td className="py-3 pe-4">{m.gradedCount}</td>
                         <td
-                          className={`py-3 pr-4 ${
+                          className={`py-3 pe-4 ${
                             !m.insufficientData && t && m.exactRate < t.goldExactMin
                               ? 'text-red-400'
                               : ''
@@ -358,7 +358,7 @@ export default function AdminMarkerQaPage() {
                           {pct(m.exactRate)}
                         </td>
                         <td
-                          className={`py-3 pr-4 ${
+                          className={`py-3 pe-4 ${
                             !m.insufficientData && t && m.within1Rate < t.goldWithin1Min
                               ? 'text-red-400'
                               : ''
@@ -366,8 +366,8 @@ export default function AdminMarkerQaPage() {
                         >
                           {pct(m.within1Rate)}
                         </td>
-                        <td className="py-3 pr-4">{m.meanAbsError}</td>
-                        <td className="py-3 pr-4">{m.gradeQwk}</td>
+                        <td className="py-3 pe-4">{m.meanAbsError}</td>
+                        <td className="py-3 pe-4">{m.gradeQwk}</td>
                         <td className="py-3">
                           {m.insufficientData ? (
                             <Badge tone="muted">
@@ -427,29 +427,29 @@ export default function AdminMarkerQaPage() {
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="border-b border-border text-left text-muted-foreground">
-                      <th className="pb-3 pr-4 font-medium">
+                    <tr className="border-b border-border text-start text-muted-foreground">
+                      <th className="pb-3 pe-4 font-medium">
                         {tt('admin.mqa.col.pair', 'Marker pair')}
                       </th>
-                      <th className="pb-3 pr-4 font-medium">
+                      <th className="pb-3 pe-4 font-medium">
                         {tt('admin.mqa.col.shared', 'Shared')}
                       </th>
-                      <th className="pb-3 pr-4 font-medium">
+                      <th className="pb-3 pe-4 font-medium">
                         {tt('admin.mqa.col.exact', 'Exact')}
                       </th>
-                      <th className="pb-3 pr-4 font-medium">{tt('admin.mqa.col.within1', '±1')}</th>
+                      <th className="pb-3 pe-4 font-medium">{tt('admin.mqa.col.within1', '±1')}</th>
                       <th className="pb-3 font-medium">{tt('admin.mqa.col.qwk', 'Grade QWK')}</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-border">
                     {data.interMarker.pairs.map((p) => (
                       <tr key={`${p.markerAId}-${p.markerBId}`} className="text-foreground">
-                        <td className="py-3 pr-4">
+                        <td className="py-3 pe-4">
                           {p.markerAName} ↔ {p.markerBName}
                         </td>
-                        <td className="py-3 pr-4">{p.sharedScripts}</td>
-                        <td className="py-3 pr-4">{pct(p.exactRate)}</td>
-                        <td className="py-3 pr-4">{pct(p.within1Rate)}</td>
+                        <td className="py-3 pe-4">{p.sharedScripts}</td>
+                        <td className="py-3 pe-4">{pct(p.exactRate)}</td>
+                        <td className="py-3 pe-4">{pct(p.within1Rate)}</td>
                         <td className="py-3">{p.gradeQwk}</td>
                       </tr>
                     ))}
@@ -471,11 +471,11 @@ export default function AdminMarkerQaPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-border text-left text-muted-foreground">
-                    <th className="pb-3 pr-4 font-medium">
+                  <tr className="border-b border-border text-start text-muted-foreground">
+                    <th className="pb-3 pe-4 font-medium">
                       {tt('admin.mqa.col.marker', 'Marker')}
                     </th>
-                    <th className="pb-3 pr-4 font-medium">
+                    <th className="pb-3 pe-4 font-medium">
                       {tt('admin.mqa.col.approved', 'Approved')}
                     </th>
                     <th className="pb-3 font-medium">{tt('admin.mqa.col.assigned', 'Assigned')}</th>
@@ -484,8 +484,8 @@ export default function AdminMarkerQaPage() {
                 <tbody className="divide-y divide-border">
                   {data.throughput.map((tr) => (
                     <tr key={tr.markerId} className="text-foreground">
-                      <td className="py-3 pr-4">{tr.markerName}</td>
-                      <td className="py-3 pr-4">{tr.approved}</td>
+                      <td className="py-3 pe-4">{tr.markerName}</td>
+                      <td className="py-3 pe-4">{tr.approved}</td>
                       <td className="py-3">{tr.totalAssigned}</td>
                     </tr>
                   ))}
@@ -675,19 +675,19 @@ function SliceTable({
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-border text-left text-muted-foreground">
-                <th className="pb-2 pr-4 font-medium">{tt('admin.mqa.col.slice', 'Slice')}</th>
-                <th className="pb-2 pr-4 font-medium">{tt('admin.mqa.col.n', 'n')}</th>
-                <th className="pb-2 pr-4 font-medium">{tt('admin.mqa.col.exact', 'Exact')}</th>
+              <tr className="border-b border-border text-start text-muted-foreground">
+                <th className="pb-2 pe-4 font-medium">{tt('admin.mqa.col.slice', 'Slice')}</th>
+                <th className="pb-2 pe-4 font-medium">{tt('admin.mqa.col.n', 'n')}</th>
+                <th className="pb-2 pe-4 font-medium">{tt('admin.mqa.col.exact', 'Exact')}</th>
                 <th className="pb-2 font-medium">{tt('admin.mqa.col.within1', '±1')}</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
               {rows.map((s) => (
                 <tr key={s.slice} className="text-foreground">
-                  <td className="py-2 pr-4">{s.slice}</td>
-                  <td className="py-2 pr-4">{s.n}</td>
-                  <td className="py-2 pr-4">{pct(s.exactRate)}</td>
+                  <td className="py-2 pe-4">{s.slice}</td>
+                  <td className="py-2 pe-4">{s.n}</td>
+                  <td className="py-2 pe-4">{pct(s.exactRate)}</td>
                   <td className="py-2">{pct(s.within1Rate)}</td>
                 </tr>
               ))}

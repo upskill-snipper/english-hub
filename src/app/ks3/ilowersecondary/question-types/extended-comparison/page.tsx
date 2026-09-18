@@ -115,13 +115,13 @@ export default async function ExtendedComparisonPage() {
           <table className="w-full border-collapse text-sm">
             <thead>
               <tr className="border-b border-border">
-                <th className="p-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="p-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Level
                 </th>
-                <th className="p-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="p-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Marks
                 </th>
-                <th className="p-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="p-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Descriptor
                 </th>
               </tr>

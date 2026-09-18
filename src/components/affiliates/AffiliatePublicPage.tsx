@@ -93,7 +93,7 @@ function HeroSection({
               render={<a href="#apply" />}
             >
               {t('aff_comp.public.cta.get_code')}
-              <ArrowRight className="w-4 h-4 ml-1" />
+              <ArrowRight className="w-4 h-4 ms-1" />
             </Button>
             <Button
               variant="outline"
@@ -256,7 +256,7 @@ function HowItWorksSection() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
           {/* Connecting line (desktop) */}
-          <div className="hidden lg:block absolute top-10 left-[12.5%] right-[12.5%] h-px bg-border" />
+          <div className="hidden lg:block absolute top-10 start-[12.5%] end-[12.5%] h-px bg-border" />
 
           {steps.map((step, i) => (
             <div key={step.titleKey} className="relative text-center">
@@ -265,7 +265,7 @@ function HowItWorksSection() {
                 <div className="w-20 h-20 rounded-full bg-card border-2 border-primary/20 flex items-center justify-center mx-auto relative z-10">
                   <step.icon className="w-8 h-8 text-primary" />
                 </div>
-                <div className="absolute -top-1 -right-1 w-7 h-7 rounded-full bg-primary text-primary-foreground text-xs font-bold flex items-center justify-center z-20">
+                <div className="absolute -top-1 -end-1 w-7 h-7 rounded-full bg-primary text-primary-foreground text-xs font-bold flex items-center justify-center z-20">
                   {i + 1}
                 </div>
               </div>
@@ -498,9 +498,9 @@ function FAQ({ q, a }: { q: string; a: string }) {
     <div className="rounded-xl bg-card border border-border/40 overflow-hidden">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between p-5 text-left hover:bg-muted/30 transition-colors"
+        className="w-full flex items-center justify-between p-5 text-start hover:bg-muted/30 transition-colors"
       >
-        <span className="font-medium text-foreground pr-4">{q}</span>
+        <span className="font-medium text-foreground pe-4">{q}</span>
         {open ? (
           <ChevronUp className="w-4 h-4 text-muted-foreground shrink-0" />
         ) : (
@@ -647,7 +647,7 @@ function BottomCTA({
               render={<a href="#apply" />}
             >
               {t('aff_comp.public.bottom_cta.button')}
-              <ArrowRight className="w-4 h-4 ml-1" />
+              <ArrowRight className="w-4 h-4 ms-1" />
             </Button>
           </div>
         </Card>
@@ -909,7 +909,7 @@ function EnrolSuccessCard({ result }: { result: EnrolSuccess }) {
               render={<Link href={result.dashboard_url} />}
             >
               {t('aff_comp.enrol.success.go_dashboard')}
-              <ArrowRight className="w-4 h-4 ml-1" />
+              <ArrowRight className="w-4 h-4 ms-1" />
             </Button>
             <Button
               variant="outline"

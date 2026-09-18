@@ -214,7 +214,7 @@ export function SuggestedStudies({
                   <p className="text-sm text-muted-foreground mt-1">Class: {className}</p>
                 )}
               </div>
-              <div className="text-right text-sm text-muted-foreground shrink-0">
+              <div className="text-end text-sm text-muted-foreground shrink-0">
                 <p>Generated: {new Date().toLocaleDateString('en-GB')}</p>
                 <p>Duration: {weeks} weeks</p>
                 <p>Focus areas: {weakAreas.length}</p>
@@ -278,7 +278,7 @@ export function SuggestedStudies({
                           <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
                             {week.week}
                           </div>
-                          <div className="text-left">
+                          <div className="text-start">
                             <CardTitle className="text-sm">{week.theme}</CardTitle>
                             <CardDescription className="text-xs mt-0.5">
                               {week.resources.length} resource

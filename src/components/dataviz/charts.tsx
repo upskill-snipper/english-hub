@@ -65,7 +65,7 @@ export function GlassTooltip({
             style={{ background: p.color ?? SERIES[i % SERIES.length] }}
           />
           <span className="text-muted-foreground">{p.name}</span>
-          <span className="ml-auto font-semibold tabular-nums">
+          <span className="ms-auto font-semibold tabular-nums">
             {typeof p.value === 'number' ? p.value : p.value}
             {suffix}
           </span>
@@ -346,7 +346,7 @@ export function Heatmap({
         ))}
         {rows.map((r, ri) => (
           <React.Fragment key={r}>
-            <div className="flex items-center pr-2 text-xs text-foreground">{r}</div>
+            <div className="flex items-center pe-2 text-xs text-foreground">{r}</div>
             {cols.map((_, ci) => {
               const v = getValue(ri, ci)
               return (

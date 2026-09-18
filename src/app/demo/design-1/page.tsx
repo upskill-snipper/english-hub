@@ -111,7 +111,7 @@ export default function BentoBoxDashboard() {
           <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground">streak</p>
           <div>
             <span className="text-6xl font-light tracking-tight text-foreground">14</span>
-            <span className="text-lg font-light text-muted-foreground ml-1">days</span>
+            <span className="text-lg font-light text-muted-foreground ms-1">days</span>
           </div>
           <div className="flex gap-[3px]">
             {[...Array(7)].map((_, i) => (
@@ -201,7 +201,7 @@ export default function BentoBoxDashboard() {
 
         {/* Exam countdown - 1 col, 1 row */}
         <div className="col-span-1 rounded-3xl bg-gradient-to-br from-primary/[0.08] via-transparent to-transparent border border-border p-6 flex flex-col justify-between group hover:scale-[1.02] hover:border-border transition-all duration-500 cursor-default relative overflow-hidden">
-          <div className="absolute -bottom-6 -right-6 w-24 h-24 rounded-full bg-primary/5 blur-2xl" />
+          <div className="absolute -bottom-6 -end-6 w-24 h-24 rounded-full bg-primary/5 blur-2xl" />
           <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground relative z-10">
             exam in
           </p>
@@ -229,10 +229,10 @@ export default function BentoBoxDashboard() {
                     {item.action}
                   </span>
                 </div>
-                <p className="text-xs text-muted-foreground font-light leading-relaxed pl-3">
+                <p className="text-xs text-muted-foreground font-light leading-relaxed ps-3">
                   {item.detail}
                 </p>
-                <p className="text-[10px] text-muted-foreground/30 pl-3">{item.time}</p>
+                <p className="text-[10px] text-muted-foreground/30 ps-3">{item.time}</p>
               </div>
             ))}
           </div>

@@ -1,21 +1,11 @@
 'use client'
 
 import { useMemo, useState } from 'react'
-import {
-  ArrowUpDown,
-  GitCompareArrows,
-  Info,
-} from 'lucide-react'
+import { ArrowUpDown, GitCompareArrows, Info } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import type { Class, ClassAnalytics } from '@/lib/types'
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Progress } from '@/components/ui/progress'
 import {
@@ -83,10 +73,7 @@ function computeNormalisedData(
     ygAvgScore.set(yg, scores.reduce((a, b) => a + b, 0) / scores.length)
   }
   for (const [yg, completions] of ygCompletions.entries()) {
-    ygAvgCompletion.set(
-      yg,
-      completions.reduce((a, b) => a + b, 0) / completions.length,
-    )
+    ygAvgCompletion.set(yg, completions.reduce((a, b) => a + b, 0) / completions.length)
   }
 
   // Build normalised data per class
@@ -112,9 +99,7 @@ function computeNormalisedData(
         studentsAtRisk: analytics.students_at_risk,
         riskPercentage:
           analytics.student_count > 0
-            ? Math.round(
-                (analytics.students_at_risk / analytics.student_count) * 100,
-              )
+            ? Math.round((analytics.students_at_risk / analytics.student_count) * 100)
             : 0,
       }
     })
@@ -129,9 +114,7 @@ export function TeacherComparison({
   avgDeptScore,
 }: TeacherComparisonProps) {
   const [selectedClasses, setSelectedClasses] = useState<string[]>([])
-  const [sortBy, setSortBy] = useState<'valueAdded' | 'rawAvgScore' | 'rawCompletion'>(
-    'valueAdded',
-  )
+  const [sortBy, setSortBy] = useState<'valueAdded' | 'rawAvgScore' | 'rawCompletion'>('valueAdded')
 
   const normalisedData = useMemo(
     () => computeNormalisedData(classAnalytics, classes),
@@ -154,9 +137,7 @@ export function TeacherComparison({
 
   function toggleClass(classId: string) {
     setSelectedClasses((prev) =>
-      prev.includes(classId)
-        ? prev.filter((id) => id !== classId)
-        : [...prev, classId],
+      prev.includes(classId) ? prev.filter((id) => id !== classId) : [...prev, classId],
     )
   }
 
@@ -164,9 +145,7 @@ export function TeacherComparison({
     return (
       <Card>
         <CardContent className="py-10 text-center">
-          <p className="text-sm text-muted-foreground">
-            No class data available for comparison.
-          </p>
+          <p className="text-sm text-muted-foreground">No class data available for comparison.</p>
         </CardContent>
       </Card>
     )
@@ -182,8 +161,8 @@ export function TeacherComparison({
             Class Comparison
           </CardTitle>
           <CardDescription>
-            Side-by-side comparison normalised for year group. Value-added shows
-            performance relative to the year group average.
+            Side-by-side comparison normalised for year group. Value-added shows performance
+            relative to the year group average.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -217,9 +196,7 @@ export function TeacherComparison({
             <span className="text-xs text-muted-foreground">Sort by:</span>
             <Select
               value={sortBy}
-              onValueChange={(v) =>
-                setSortBy(v as 'valueAdded' | 'rawAvgScore' | 'rawCompletion')
-              }
+              onValueChange={(v) => setSortBy(v as 'valueAdded' | 'rawAvgScore' | 'rawCompletion')}
             >
               <SelectTrigger className="h-8 w-44 text-xs">
                 <SelectValue />
@@ -241,7 +218,7 @@ export function TeacherComparison({
             {/* Value-added indicator strip */}
             <div
               className={cn(
-                'absolute left-0 top-0 h-full w-1',
+                'absolute start-0 top-0 h-full w-1',
                 cls.valueAdded > 5
                   ? 'bg-green-500'
                   : cls.valueAdded >= -5
@@ -250,12 +227,10 @@ export function TeacherComparison({
               )}
             />
 
-            <CardHeader className="pb-3 pl-5">
+            <CardHeader className="pb-3 ps-5">
               <div className="flex items-start justify-between">
                 <div>
-                  <CardTitle className="text-sm font-semibold">
-                    {cls.className}
-                  </CardTitle>
+                  <CardTitle className="text-sm font-semibold">{cls.className}</CardTitle>
                   <CardDescription className="mt-0.5">
                     {cls.yearGroup} · {cls.examBoard} · {cls.studentCount} students
                   </CardDescription>
@@ -277,7 +252,7 @@ export function TeacherComparison({
               </div>
             </CardHeader>
 
-            <CardContent className="space-y-3 pl-5">
+            <CardContent className="space-y-3 ps-5">
               {/* Raw score */}
               <div className="space-y-1">
                 <div className="flex items-center justify-between text-xs">
@@ -285,9 +260,7 @@ export function TeacherComparison({
                   <span
                     className={cn(
                       'font-medium tabular-nums',
-                      cls.rawAvgScore >= avgDeptScore
-                        ? 'text-green-400'
-                        : 'text-red-400',
+                      cls.rawAvgScore >= avgDeptScore ? 'text-green-400' : 'text-red-400',
                     )}
                   >
                     {cls.rawAvgScore}%
@@ -305,7 +278,7 @@ export function TeacherComparison({
                     {cls.completionVA !== 0 && (
                       <span
                         className={cn(
-                          'ml-1',
+                          'ms-1',
                           cls.completionVA > 0 ? 'text-green-400' : 'text-red-400',
                         )}
                       >
@@ -338,11 +311,10 @@ export function TeacherComparison({
         <div className="text-xs text-muted-foreground">
           <p className="font-medium text-foreground">About Value Added (VA)</p>
           <p className="mt-1">
-            Value Added measures each class's performance relative to the average
-            for its year group. A positive VA means the class is outperforming
-            comparable classes; a negative VA means it is underperforming. This
-            normalises for different starting points and ability levels across year
-            groups.
+            Value Added measures each class's performance relative to the average for its year
+            group. A positive VA means the class is outperforming comparable classes; a negative VA
+            means it is underperforming. This normalises for different starting points and ability
+            levels across year groups.
           </p>
         </div>
       </div>

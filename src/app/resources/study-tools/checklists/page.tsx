@@ -601,7 +601,7 @@ export default function ChecklistsPage() {
               {b.label}
               {bChecked.size > 0 && (
                 <span
-                  className={`ml-2 rounded-full px-2 py-0.5 text-[10px] font-bold ${
+                  className={`ms-2 rounded-full px-2 py-0.5 text-[10px] font-bold ${
                     activeBoard === b.slug ? 'bg-card/20 text-white' : 'bg-primary/10 text-primary'
                   }`}
                 >
@@ -668,7 +668,7 @@ export default function ChecklistsPage() {
           return (
             <section
               key={section.title}
-              className={`overflow-hidden rounded-xl border-l-4 ${board.colour} border border-border bg-card shadow-md`}
+              className={`overflow-hidden rounded-xl border-s-4 ${board.colour} border border-border bg-card shadow-md`}
             >
               {/* Section header */}
               <div className="flex items-center justify-between border-b border-border px-5 py-4">

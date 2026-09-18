@@ -374,7 +374,7 @@ export default function MatchGame({ deck }: { deck: FlashcardDeck }) {
                 onClick={() => handleFrontClick(item)}
                 disabled={status === 'matched'}
                 className={cn(
-                  'w-full rounded-lg border p-3 text-left text-sm font-medium transition-all duration-200',
+                  'w-full rounded-lg border p-3 text-start text-sm font-medium transition-all duration-200',
                   status === 'idle' &&
                     'border-border bg-card hover:border-primary/50 hover:bg-primary/5 cursor-pointer',
                   status === 'selected' && 'border-primary bg-primary/10 ring-2 ring-primary/30',
@@ -403,7 +403,7 @@ export default function MatchGame({ deck }: { deck: FlashcardDeck }) {
                 onClick={() => handleBackClick(item)}
                 disabled={status === 'matched'}
                 className={cn(
-                  'w-full rounded-lg border p-3 text-left text-sm transition-all duration-200',
+                  'w-full rounded-lg border p-3 text-start text-sm transition-all duration-200',
                   status === 'idle' &&
                     'border-border bg-card hover:border-primary/50 hover:bg-primary/5 cursor-pointer',
                   status === 'selected' && 'border-primary bg-primary/10 ring-2 ring-primary/30',

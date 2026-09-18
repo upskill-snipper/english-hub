@@ -500,7 +500,7 @@ export default function DepartmentPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-border/60 text-left text-xs uppercase tracking-wider text-muted-foreground">
+                  <tr className="border-b border-border/60 text-start text-xs uppercase tracking-wider text-muted-foreground">
                     {(
                       [
                         ['name', tx('demo.b15.dept.col_teacher')],

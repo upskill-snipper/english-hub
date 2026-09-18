@@ -324,7 +324,7 @@ export default async function RecountNewsletterBiographyPage() {
                 <p className="mb-1 text-sm font-semibold text-foreground">
                   Structure &amp; layout conventions
                 </p>
-                <ul className="mb-3 list-disc space-y-1 pl-5 text-sm leading-relaxed text-muted-foreground">
+                <ul className="mb-3 list-disc space-y-1 ps-5 text-sm leading-relaxed text-muted-foreground">
                   {g.structure.map((s) => (
                     <li key={s}>{s}</li>
                   ))}
@@ -360,7 +360,7 @@ export default async function RecountNewsletterBiographyPage() {
                   <span className="font-mono text-sm font-semibold text-primary">{row.level}</span>
                   <span className="text-sm text-muted-foreground">{row.marks} marks</span>
                 </div>
-                <ul className="list-disc space-y-1 pl-5 text-sm leading-relaxed text-muted-foreground">
+                <ul className="list-disc space-y-1 ps-5 text-sm leading-relaxed text-muted-foreground">
                   {row.descriptors.map((d) => (
                     <li key={d}>{d}</li>
                   ))}
@@ -388,7 +388,7 @@ export default async function RecountNewsletterBiographyPage() {
                 <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
                   {m.formLabel}
                 </p>
-                <div className="mb-4 rounded-lg border-l-4 border-primary/40 bg-card p-4">
+                <div className="mb-4 rounded-lg border-s-4 border-primary/40 bg-card p-4">
                   <p className="mb-1 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
                     {m.taskLabel}
                   </p>
@@ -402,7 +402,7 @@ export default async function RecountNewsletterBiographyPage() {
                   </p>
                   <p className="text-base leading-relaxed text-foreground">{m.body}</p>
                 </div>
-                <div className="mt-4 rounded-lg border-l-4 border-primary/40 bg-card p-4">
+                <div className="mt-4 rounded-lg border-s-4 border-primary/40 bg-card p-4">
                   <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
                     Why this earns marks - annotated to WAO1 bands
                   </p>
@@ -434,7 +434,7 @@ export default async function RecountNewsletterBiographyPage() {
             plan a single line.
           </p>
           <div className="overflow-x-auto rounded-lg border border-border/60">
-            <table className="w-full border-collapse text-left text-sm">
+            <table className="w-full border-collapse text-start text-sm">
               <thead>
                 <tr className="bg-muted text-foreground">
                   <th className="p-3 font-semibold">If the task&hellip;</th>

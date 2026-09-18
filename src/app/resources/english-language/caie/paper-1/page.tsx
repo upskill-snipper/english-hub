@@ -51,7 +51,7 @@ export default async function Paper1ReadingPage() {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="mr-1 h-4 w-4"
+              className="me-1 h-4 w-4"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -81,41 +81,41 @@ export default async function Paper1ReadingPage() {
             Paper Structure
           </h2>
           <div className="mt-4 overflow-x-auto">
-            <table className="w-full min-w-[500px] text-left text-sm">
+            <table className="w-full min-w-[500px] text-start text-sm">
               <thead>
                 <tr className="border-b-2 border-primary/20">
-                  <th className="py-3 pr-4 font-semibold text-foreground">Section</th>
-                  <th className="py-3 pr-4 font-semibold text-foreground">{_tr(`What You Do`)}</th>
-                  <th className="py-3 pr-4 font-semibold text-foreground">Marks</th>
+                  <th className="py-3 pe-4 font-semibold text-foreground">Section</th>
+                  <th className="py-3 pe-4 font-semibold text-foreground">{_tr(`What You Do`)}</th>
+                  <th className="py-3 pe-4 font-semibold text-foreground">Marks</th>
                   <th className="py-3 font-semibold text-foreground">{_tr(`Suggested Time`)}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border text-muted-foreground">
                 <tr>
-                  <td className="py-3 pr-4 font-medium">{_tr(`Question 1`)}</td>
-                  <td className="py-3 pr-4">
+                  <td className="py-3 pe-4 font-medium">{_tr(`Question 1`)}</td>
+                  <td className="py-3 pe-4">
                     Detailed comprehension &mdash; factual retrieval, inference, vocabulary in
                     context
                   </td>
-                  <td className="py-3 pr-4">25</td>
+                  <td className="py-3 pe-4">25</td>
                   <td className="py-3">25 minutes</td>
                 </tr>
                 <tr>
-                  <td className="py-3 pr-4 font-medium">{_tr(`Question 2`)}</td>
-                  <td className="py-3 pr-4">
+                  <td className="py-3 pe-4 font-medium">{_tr(`Question 2`)}</td>
+                  <td className="py-3 pe-4">
                     {_tr(`Summary &mdash; select and organise ideas from one or both passages`)}
                   </td>
-                  <td className="py-3 pr-4">25</td>
+                  <td className="py-3 pe-4">25</td>
                   <td className="py-3">30 minutes</td>
                 </tr>
                 <tr>
-                  <td className="py-3 pr-4 font-medium">{_tr(`Question 3`)}</td>
-                  <td className="py-3 pr-4">
+                  <td className="py-3 pe-4 font-medium">{_tr(`Question 3`)}</td>
+                  <td className="py-3 pe-4">
                     {_tr(
                       `Language analysis &mdash; how the writer uses language to create effects`,
                     )}
                   </td>
-                  <td className="py-3 pr-4">25</td>
+                  <td className="py-3 pe-4">25</td>
                   <td className="py-3">55 minutes</td>
                 </tr>
               </tbody>

@@ -94,7 +94,7 @@ export default async function Paper1Page() {
         <div className="relative">
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="bg-primary/10 text-primary border-primary/20">
-              <Sparkles className="mr-1 size-3" />
+              <Sparkles className="me-1 size-3" />
               {await t('igcse.cambridge.badge.cambridge_lang_b')}
             </Badge>
             <Badge variant="secondary">Paper 1</Badge>
@@ -162,10 +162,10 @@ export default async function Paper1Page() {
             <table className="w-full text-body-sm">
               <thead className="border-b border-border/60 bg-muted/40 text-body-xs uppercase text-muted-foreground">
                 <tr>
-                  <th className="px-4 py-3 text-left">Grade</th>
-                  <th className="px-4 py-3 text-left">Mark (of 80)</th>
-                  <th className="px-4 py-3 text-left">Percentage</th>
-                  <th className="px-4 py-3 text-left">A*-G equivalent</th>
+                  <th className="px-4 py-3 text-start">Grade</th>
+                  <th className="px-4 py-3 text-start">Mark (of 80)</th>
+                  <th className="px-4 py-3 text-start">Percentage</th>
+                  <th className="px-4 py-3 text-start">A*-G equivalent</th>
                 </tr>
               </thead>
               <tbody>

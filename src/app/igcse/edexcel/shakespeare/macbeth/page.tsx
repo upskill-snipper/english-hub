@@ -212,7 +212,7 @@ export default async function MacbethHubPage() {
               className={buttonVariants({ variant: 'outline', size: 'sm' })}
             >
               See all 20
-              <ArrowRight className="ml-1 h-4 w-4" />
+              <ArrowRight className="ms-1 h-4 w-4" />
             </Link>
           </div>
           <div className="mt-6 space-y-3">

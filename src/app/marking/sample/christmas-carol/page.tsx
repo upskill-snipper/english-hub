@@ -524,7 +524,7 @@ export default async function ChristmasCarolEssayBankPage() {
                     {para.annotations.map((ann, ai) => (
                       <div
                         key={ai}
-                        className={`rounded-md border-l-4 p-3 ${ANNOTATION_COLOURS[ann.kind]}`}
+                        className={`rounded-md border-s-4 p-3 ${ANNOTATION_COLOURS[ann.kind]}`}
                       >
                         <p className="mb-1 text-xs font-bold uppercase tracking-wider">
                           {ANNOTATION_LABELS_I18N[ann.kind]}

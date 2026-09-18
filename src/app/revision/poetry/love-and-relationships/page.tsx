@@ -269,7 +269,7 @@ export default function LoveAndRelationshipsPage() {
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/revision/poetry" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -279,13 +279,13 @@ export default function LoveAndRelationshipsPage() {
 
       {/* ── Hero ────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-rose-500/[0.04] p-6 sm:p-8 lg:p-10">
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-rose-500/5 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-pink-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-rose-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-16 -start-16 h-48 w-48 rounded-full bg-pink-500/5 blur-3xl" />
 
         <div className="relative">
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
-              <Sparkles className="mr-1 size-3" />
+              <Sparkles className="me-1 size-3" />
               {t('poetry_hub.lr.badge_spec')}
             </Badge>
             <Badge className="bg-primary/10 text-primary border-primary/20">
@@ -352,7 +352,7 @@ export default function LoveAndRelationshipsPage() {
               {LR_THEME_LABEL_KEY[group.label] ? t(LR_THEME_LABEL_KEY[group.label]) : group.label}
             </h2>
             {mounted && (
-              <Badge variant="outline" className="ml-auto text-xs">
+              <Badge variant="outline" className="ms-auto text-xs">
                 {group.poems.filter((p) => studied.has(p.slug)).length}/{group.poems.length}{' '}
                 {t('poetry_hub.lr.studied')}
               </Badge>
@@ -370,7 +370,7 @@ export default function LoveAndRelationshipsPage() {
                 >
                   {/* Studied indicator */}
                   {mounted && (
-                    <div className="absolute right-4 top-4">
+                    <div className="absolute end-4 top-4">
                       {isStudied ? (
                         <CheckCircle2 className="size-5 text-emerald-400" />
                       ) : (
@@ -379,7 +379,7 @@ export default function LoveAndRelationshipsPage() {
                     </div>
                   )}
 
-                  <h3 className="pr-8 text-heading-md font-heading text-foreground group-hover:text-primary transition-colors">
+                  <h3 className="pe-8 text-heading-md font-heading text-foreground group-hover:text-primary transition-colors">
                     {poem.title}
                   </h3>
                   <p className="mt-0.5 text-caption text-muted-foreground">{poem.poet}</p>

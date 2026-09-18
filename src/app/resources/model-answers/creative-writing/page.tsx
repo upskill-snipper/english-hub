@@ -63,7 +63,7 @@ function Annotation({ children, note }: { children: React.ReactNode; note: strin
 
 function ExaminerComment({ children, label }: { children: React.ReactNode; label: string }) {
   return (
-    <div className="mt-4 rounded-lg border-l-4 border-primary bg-primary/5 p-4">
+    <div className="mt-4 rounded-lg border-s-4 border-primary bg-primary/5 p-4">
       <p className="mb-1 text-xs font-bold uppercase tracking-wider text-primary">{label}</p>
       <div className="text-sm leading-relaxed text-muted-foreground">{children}</div>
     </div>

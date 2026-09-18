@@ -313,7 +313,7 @@ export default async function Paper2Page() {
                   {'link' in p && (
                     <Link
                       href={p.link!}
-                      className="ml-2 text-sm font-medium text-primary underline underline-offset-2 hover:text-foreground"
+                      className="ms-2 text-sm font-medium text-primary underline underline-offset-2 hover:text-foreground"
                     >
                       Full study guide &rarr;
                     </Link>
@@ -354,7 +354,7 @@ export default async function Paper2Page() {
               <div key={d.title} className="rounded-lg border border-border bg-card p-5 shadow-md">
                 <h3 className="text-lg font-semibold text-foreground">
                   {d.title}
-                  <span className="ml-1 font-normal text-muted-foreground">&mdash; {d.author}</span>
+                  <span className="ms-1 font-normal text-muted-foreground">&mdash; {d.author}</span>
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{d.summary}</p>
                 <div className="mt-3">
@@ -391,7 +391,7 @@ export default async function Paper2Page() {
             {dramaticTechniques.map((dt) => (
               <div
                 key={dt.technique}
-                className="rounded-lg border-l-4 border-primary bg-card p-5 shadow-md"
+                className="rounded-lg border-s-4 border-primary bg-card p-5 shadow-md"
               >
                 <h3 className="font-semibold text-foreground">{dt.technique}</h3>
                 <p className="mt-1 text-sm text-muted-foreground">

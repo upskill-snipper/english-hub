@@ -696,12 +696,12 @@ function CollapsibleSection({
     <div className="rounded-lg border border-border bg-card shadow-md">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left font-semibold text-foreground transition hover:bg-muted/40"
+        className="flex w-full items-center justify-between px-5 py-4 text-start font-semibold text-foreground transition hover:bg-muted/40"
         aria-expanded={open}
       >
         <span>{title}</span>
         <span
-          className={`ml-2 text-muted-foreground transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
+          className={`ms-2 text-muted-foreground transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
         >
           &#9660;
         </span>
@@ -898,7 +898,7 @@ export default function MacbethStudyGuide() {
                       <ul className="mt-2 space-y-1">
                         {t.keyMoments.map((m, i) => (
                           <li key={i} className="flex text-sm text-muted-foreground">
-                            <span className="mr-2 text-primary">&bull;</span>
+                            <span className="me-2 text-primary">&bull;</span>
                             <span>{m}</span>
                           </li>
                         ))}
@@ -937,7 +937,7 @@ export default function MacbethStudyGuide() {
             </p>
             <div className="mt-6 space-y-5">
               {keyQuotes.map((q, i) => (
-                <div key={i} className="rounded-lg border-l-4 border-primary bg-card p-5 shadow-md">
+                <div key={i} className="rounded-lg border-s-4 border-primary bg-card p-5 shadow-md">
                   <blockquote className="text-base font-medium italic text-foreground">
                     &ldquo;{q.quote}&rdquo;
                   </blockquote>
@@ -978,7 +978,7 @@ export default function MacbethStudyGuide() {
                       <ul className="mt-2 space-y-1">
                         {item.examples.map((ex, i) => (
                           <li key={i} className="flex text-sm text-muted-foreground">
-                            <span className="mr-2 text-primary">&bull;</span>
+                            <span className="me-2 text-primary">&bull;</span>
                             <span>{ex}</span>
                           </li>
                         ))}
@@ -1085,14 +1085,14 @@ export default function MacbethStudyGuide() {
                     <h4 className="text-sm font-semibold text-foreground">How to Approach</h4>
                     <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
                       <li className="flex">
-                        <span className="mr-2 font-bold text-primary">1.</span>
+                        <span className="me-2 font-bold text-primary">1.</span>
                         <span>
                           <strong>Read the passage carefully twice.</strong> Underline key words,
                           images, and shifts in tone.
                         </span>
                       </li>
                       <li className="flex">
-                        <span className="mr-2 font-bold text-primary">2.</span>
+                        <span className="me-2 font-bold text-primary">2.</span>
                         <span>
                           <strong>Work through the passage sequentially</strong> - markers want to
                           see you engaging with the whole extract, not just cherry-picking one
@@ -1100,7 +1100,7 @@ export default function MacbethStudyGuide() {
                         </span>
                       </li>
                       <li className="flex">
-                        <span className="mr-2 font-bold text-primary">3.</span>
+                        <span className="me-2 font-bold text-primary">3.</span>
                         <span>
                           <strong>Analyse language closely (Interpretation).</strong> Identify
                           specific techniques: metaphor, simile, personification, imperative verbs,
@@ -1109,7 +1109,7 @@ export default function MacbethStudyGuide() {
                         </span>
                       </li>
                       <li className="flex">
-                        <span className="mr-2 font-bold text-primary">4.</span>
+                        <span className="me-2 font-bold text-primary">4.</span>
                         <span>
                           <strong>Consider form and structure.</strong> Is it a soliloquy (revealing
                           private thoughts)? Is it verse or prose (and what does that tell us)? Are
@@ -1117,7 +1117,7 @@ export default function MacbethStudyGuide() {
                         </span>
                       </li>
                       <li className="flex">
-                        <span className="mr-2 font-bold text-primary">5.</span>
+                        <span className="me-2 font-bold text-primary">5.</span>
                         <span>
                           <strong>Connect outward from the passage (briefly).</strong> Link to the
                           rest of the play: how does this passage relate to themes, character arcs,
@@ -1126,7 +1126,7 @@ export default function MacbethStudyGuide() {
                         </span>
                       </li>
                       <li className="flex">
-                        <span className="mr-2 font-bold text-primary">6.</span>
+                        <span className="me-2 font-bold text-primary">6.</span>
                         <span>
                           <strong>Include brief context (Writer's Methods)</strong> where relevant -
                           but only if it illuminates the passage. Do not write a history essay.
@@ -1170,7 +1170,7 @@ export default function MacbethStudyGuide() {
                     <h4 className="text-sm font-semibold text-foreground">How to Approach</h4>
                     <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
                       <li className="flex">
-                        <span className="mr-2 font-bold text-primary">1.</span>
+                        <span className="me-2 font-bold text-primary">1.</span>
                         <span>
                           <strong>Plan before you write.</strong> Spend 5 minutes identifying
                           3&ndash;4 key points with supporting quotations. Think about how your
@@ -1178,7 +1178,7 @@ export default function MacbethStudyGuide() {
                         </span>
                       </li>
                       <li className="flex">
-                        <span className="mr-2 font-bold text-primary">2.</span>
+                        <span className="me-2 font-bold text-primary">2.</span>
                         <span>
                           <strong>Structure your essay around the question.</strong> Every paragraph
                           should directly address the question. Avoid a &ldquo;everything I know
@@ -1186,7 +1186,7 @@ export default function MacbethStudyGuide() {
                         </span>
                       </li>
                       <li className="flex">
-                        <span className="mr-2 font-bold text-primary">3.</span>
+                        <span className="me-2 font-bold text-primary">3.</span>
                         <span>
                           <strong>Use the PEA/PEAL structure for each paragraph:</strong> Point,
                           Evidence (quotation), Analysis, Link (back to the question or to the next
@@ -1194,7 +1194,7 @@ export default function MacbethStudyGuide() {
                         </span>
                       </li>
                       <li className="flex">
-                        <span className="mr-2 font-bold text-primary">4.</span>
+                        <span className="me-2 font-bold text-primary">4.</span>
                         <span>
                           <strong>
                             Embed quotations (Textual Knowledge) and analyse them closely
@@ -1206,7 +1206,7 @@ export default function MacbethStudyGuide() {
                         </span>
                       </li>
                       <li className="flex">
-                        <span className="mr-2 font-bold text-primary">5.</span>
+                        <span className="me-2 font-bold text-primary">5.</span>
                         <span>
                           <strong>Track development across the play.</strong> Show how characters,
                           themes, or relationships change from beginning to end. Markers reward
@@ -1214,7 +1214,7 @@ export default function MacbethStudyGuide() {
                         </span>
                       </li>
                       <li className="flex">
-                        <span className="mr-2 font-bold text-primary">6.</span>
+                        <span className="me-2 font-bold text-primary">6.</span>
                         <span>
                           <strong>Offer personal response (Personal Response).</strong> Use phrases
                           like &ldquo;arguably&rdquo;, &ldquo;it could be interpreted that&rdquo;,
@@ -1338,7 +1338,7 @@ export default function MacbethStudyGuide() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="rounded-lg border-l-4 border-primary bg-muted/30 p-4">
+                  <div className="rounded-lg border-s-4 border-primary bg-muted/30 p-4">
                     <p className="text-sm font-semibold text-foreground">
                       Question: How does Shakespeare present the theme of guilt in Macbeth?
                     </p>
@@ -1460,7 +1460,7 @@ export default function MacbethStudyGuide() {
                         {ao.howToMeet}
                       </p>
                     </div>
-                    <div className="rounded-lg border-l-4 border-primary bg-muted/20 p-4">
+                    <div className="rounded-lg border-s-4 border-primary bg-muted/20 p-4">
                       <h4 className="text-xs font-semibold uppercase tracking-wider text-primary">
                         Example in Practice
                       </h4>

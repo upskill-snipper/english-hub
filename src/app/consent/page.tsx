@@ -210,7 +210,7 @@ export default function ConsentPage() {
                 <BookOpen className="h-4 w-4 text-primary" />
                 {t('consent.form.what_collected_title')}
               </h3>
-              <ul className="text-sm text-muted-foreground space-y-1.5 pl-6 list-disc">
+              <ul className="text-sm text-muted-foreground space-y-1.5 ps-6 list-disc">
                 <li>{t('consent.form.collected_item_identity')}</li>
                 <li>{t('consent.form.collected_item_academic')}</li>
                 <li>{t('consent.form.collected_item_progress')}</li>
@@ -222,7 +222,7 @@ export default function ConsentPage() {
               <h3 className="text-sm font-semibold text-foreground">
                 {t('consent.form.how_used_title')}
               </h3>
-              <ul className="text-sm text-muted-foreground space-y-1.5 pl-6 list-disc">
+              <ul className="text-sm text-muted-foreground space-y-1.5 ps-6 list-disc">
                 <li>{t('consent.form.use_item_personalise')}</li>
                 {/* Teacher/administrator monitoring only happens when a school
                     asked for the consent. A direct signup has no teacher, so
@@ -237,7 +237,7 @@ export default function ConsentPage() {
               <h3 className="text-sm font-semibold text-foreground">
                 {t('consent.form.rights_title')}
               </h3>
-              <ul className="text-sm text-muted-foreground space-y-1.5 pl-6 list-disc">
+              <ul className="text-sm text-muted-foreground space-y-1.5 ps-6 list-disc">
                 <li>
                   <strong>{t('legal.right_access')}</strong> - {t('consent.form.right_access_desc')}
                 </li>
@@ -284,9 +284,9 @@ export default function ConsentPage() {
                 onClick={() => handleAction('approve')}
               >
                 {submitting ? (
-                  <Loader2 className="h-4 w-4 animate-spin mr-2" />
+                  <Loader2 className="h-4 w-4 animate-spin me-2" />
                 ) : (
-                  <CheckCircle className="h-4 w-4 mr-2" />
+                  <CheckCircle className="h-4 w-4 me-2" />
                 )}
                 {t('consent.form.consent_cta')}
               </Button>
@@ -298,9 +298,9 @@ export default function ConsentPage() {
                 onClick={() => handleAction('deny')}
               >
                 {submitting ? (
-                  <Loader2 className="h-4 w-4 animate-spin mr-2" />
+                  <Loader2 className="h-4 w-4 animate-spin me-2" />
                 ) : (
-                  <XCircle className="h-4 w-4 mr-2" />
+                  <XCircle className="h-4 w-4 me-2" />
                 )}
                 {t('consent.form.deny_cta')}
               </Button>

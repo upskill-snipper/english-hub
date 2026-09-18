@@ -60,9 +60,21 @@ interface ExportDialogProps {
 }
 
 const EXPORT_TYPES: { value: ExportType; label: string; description: string }[] = [
-  { value: 'class-report', label: 'Class Report', description: 'Full class summary with all student data' },
-  { value: 'student-report', label: 'Student Report', description: 'Individual student progress data' },
-  { value: 'attendance', label: 'Engagement Data', description: 'Activity, streaks, and engagement levels' },
+  {
+    value: 'class-report',
+    label: 'Class Report',
+    description: 'Full class summary with all student data',
+  },
+  {
+    value: 'student-report',
+    label: 'Student Report',
+    description: 'Individual student progress data',
+  },
+  {
+    value: 'attendance',
+    label: 'Engagement Data',
+    description: 'Activity, streaks, and engagement levels',
+  },
   { value: 'grades', label: 'Grades & Targets', description: 'Grades with target grades and gaps' },
   { value: 'sims', label: 'SIMS Format', description: 'Compatible with SIMS school management' },
   { value: 'alps', label: 'ALPS Format', description: 'Compatible with ALPS grading system' },
@@ -123,20 +135,50 @@ export function ExportDialog({
   const previewData = useMemo(() => {
     if (!showPreview) return null
     try {
-      const csv = buildPreviewCsv(exportType, { classAnalytics, students, student, attendanceRows, targetGrades, classId })
+      const csv = buildPreviewCsv(exportType, {
+        classAnalytics,
+        students,
+        student,
+        attendanceRows,
+        targetGrades,
+        classId,
+      })
       if (!csv) return null
       return generatePreview(csv, 5)
     } catch {
       return null
     }
-  }, [showPreview, exportType, classAnalytics, students, student, attendanceRows, targetGrades, classId])
+  }, [
+    showPreview,
+    exportType,
+    classAnalytics,
+    students,
+    student,
+    attendanceRows,
+    targetGrades,
+    classId,
+  ])
 
   /** Handle the export action. */
   const handleExport = useCallback(() => {
     if (format === 'print') {
-      handlePrintExport(exportType, { classAnalytics, students, student, attendanceRows, targetGrades, classId })
+      handlePrintExport(exportType, {
+        classAnalytics,
+        students,
+        student,
+        attendanceRows,
+        targetGrades,
+        classId,
+      })
     } else {
-      handleCsvExport(exportType, { classAnalytics, students, student, attendanceRows, targetGrades, classId })
+      handleCsvExport(exportType, {
+        classAnalytics,
+        students,
+        student,
+        attendanceRows,
+        targetGrades,
+        classId,
+      })
     }
     setOpen(false)
   }, [format, exportType, classAnalytics, students, student, attendanceRows, targetGrades, classId])
@@ -221,7 +263,7 @@ export function ExportDialog({
                     'flex flex-1 items-center justify-center gap-2 rounded-lg border px-3 py-2 text-sm transition-colors',
                     format === f.value
                       ? 'border-primary bg-primary/5 text-primary'
-                      : 'border-border text-muted-foreground hover:bg-accent'
+                      : 'border-border text-muted-foreground hover:bg-accent',
                   )}
                 >
                   <f.icon className="size-4" />
@@ -248,7 +290,7 @@ export function ExportDialog({
                 <thead>
                   <tr className="border-b bg-muted/50">
                     {previewData.headers.map((h, i) => (
-                      <th key={i} className="px-2 py-1.5 text-left font-medium whitespace-nowrap">
+                      <th key={i} className="px-2 py-1.5 text-start font-medium whitespace-nowrap">
                         {h}
                       </th>
                     ))}
@@ -310,11 +352,21 @@ function buildPreviewCsv(type: ExportType, data: ExportDataSources): string | nu
     case 'class-report': {
       if (!data.classAnalytics || !data.students) return null
       // Build inline rather than triggering download
-      const headers = ['Student Name', 'Year Group', 'Avg Score', 'Completion %', 'Trajectory', 'Predicted Grade']
+      const headers = [
+        'Student Name',
+        'Year Group',
+        'Avg Score',
+        'Completion %',
+        'Trajectory',
+        'Predicted Grade',
+      ]
       const rows = data.students.map((s) => [
-        s.student_name, s.year_group ?? '',
-        String(Math.round(s.avg_quiz_score)), `${Math.round(s.completion_rate)}%`,
-        s.trajectory, s.predicted_grade ?? '',
+        s.student_name,
+        s.year_group ?? '',
+        String(Math.round(s.avg_quiz_score)),
+        `${Math.round(s.completion_rate)}%`,
+        s.trajectory,
+        s.predicted_grade ?? '',
       ])
       return buildCsvString(headers, rows)
     }
@@ -335,7 +387,10 @@ function buildPreviewCsv(type: ExportType, data: ExportDataSources): string | nu
       if (!data.students) return null
       const headers = ['Student Name', 'Predicted Grade', 'Avg Score', 'Trajectory']
       const rows = data.students.map((s) => [
-        s.student_name, s.predicted_grade ?? '', String(Math.round(s.avg_quiz_score)), s.trajectory,
+        s.student_name,
+        s.predicted_grade ?? '',
+        String(Math.round(s.avg_quiz_score)),
+        s.trajectory,
       ])
       return buildCsvString(headers, rows)
     }
@@ -351,7 +406,9 @@ function buildPreviewCsv(type: ExportType, data: ExportDataSources): string | nu
       if (!data.attendanceRows) return null
       const headers = ['Student Name', 'Last Active', 'Engagement Level']
       const rows = data.attendanceRows.map((r) => [
-        r.student_name, r.last_active_at ?? 'Never', r.engagement_level,
+        r.student_name,
+        r.last_active_at ?? 'Never',
+        r.engagement_level,
       ])
       return buildCsvString(headers, rows)
     }
@@ -408,11 +465,17 @@ function handlePrintExport(type: ExportType, data: ExportDataSources): void {
   if (!printWindow) return
 
   const tableRows = preview.rows
-    .map((row) => `<tr>${row.map((cell) => `<td style="border:1px solid #ddd;padding:6px 10px;font-size:13px">${escapeHtml(cell)}</td>`).join('')}</tr>`)
+    .map(
+      (row) =>
+        `<tr>${row.map((cell) => `<td style="border:1px solid #ddd;padding:6px 10px;font-size:13px">${escapeHtml(cell)}</td>`).join('')}</tr>`,
+    )
     .join('')
 
   const headerRow = preview.headers
-    .map((h) => `<th style="border:1px solid #ccc;padding:6px 10px;background:#f5f5f5;font-size:13px;text-align:left">${escapeHtml(h)}</th>`)
+    .map(
+      (h) =>
+        `<th style="border:1px solid #ccc;padding:6px 10px;background:#f5f5f5;font-size:13px;text-align:left">${escapeHtml(h)}</th>`,
+    )
     .join('')
 
   const typeLabel = EXPORT_TYPES.find((t) => t.value === type)?.label ?? type
@@ -445,5 +508,9 @@ function handlePrintExport(type: ExportType, data: ExportDataSources): void {
 }
 
 function escapeHtml(str: string): string {
-  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
 }

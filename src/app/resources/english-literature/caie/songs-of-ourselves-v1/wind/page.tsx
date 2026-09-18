@@ -54,7 +54,7 @@ export default function WindPage() {
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/resources/english-literature/caie/songs-of-ourselves-v1" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -147,7 +147,7 @@ export default function WindPage() {
         <h2 className="text-xl font-bold">Verified opening</h2>
         <Card>
           <CardContent className="space-y-3 pt-6 text-sm text-muted-foreground">
-            <blockquote className="border-l-4 border-foreground/30 pl-4 italic">
+            <blockquote className="border-s-4 border-foreground/30 ps-4 italic">
               &ldquo;This house has been far out at sea all night&rdquo;
             </blockquote>
             <p>

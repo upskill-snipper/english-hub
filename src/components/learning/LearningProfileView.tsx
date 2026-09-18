@@ -232,17 +232,17 @@ export default function LearningProfileView({
         <div className="overflow-x-auto">
           <table className="w-full border-collapse text-sm">
             <thead>
-              <tr className="border-b border-border text-left">
-                <th className="py-2 pr-3 font-mono text-[10px] uppercase tracking-[0.1em] text-muted-foreground">
+              <tr className="border-b border-border text-start">
+                <th className="py-2 pe-3 font-mono text-[10px] uppercase tracking-[0.1em] text-muted-foreground">
                   Skill
                 </th>
-                <th className="py-2 pr-3 font-mono text-[10px] uppercase tracking-[0.1em] text-muted-foreground">
+                <th className="py-2 pe-3 font-mono text-[10px] uppercase tracking-[0.1em] text-muted-foreground">
                   Mastery
                 </th>
-                <th className="py-2 pr-3 font-mono text-[10px] uppercase tracking-[0.1em] text-muted-foreground">
+                <th className="py-2 pe-3 font-mono text-[10px] uppercase tracking-[0.1em] text-muted-foreground">
                   Trend
                 </th>
-                <th className="py-2 pr-3 font-mono text-[10px] uppercase tracking-[0.1em] text-muted-foreground">
+                <th className="py-2 pe-3 font-mono text-[10px] uppercase tracking-[0.1em] text-muted-foreground">
                   Time
                 </th>
                 <th className="py-2 font-mono text-[10px] uppercase tracking-[0.1em] text-muted-foreground">
@@ -253,17 +253,17 @@ export default function LearningProfileView({
             <tbody>
               {skills.map((s) => (
                 <tr key={s.skill} className="border-b border-border/50">
-                  <td className="py-2 pr-3 text-foreground">{s.label}</td>
-                  <td className="py-2 pr-3">
+                  <td className="py-2 pe-3 text-foreground">{s.label}</td>
+                  <td className="py-2 pe-3">
                     <div className="flex items-center gap-2">
                       <span className="w-9 text-muted-foreground">{s.mastery}%</span>
                       <div className="w-24">{masteryBar(s.mastery)}</div>
                     </div>
                   </td>
-                  <td className="py-2 pr-3">
+                  <td className="py-2 pe-3">
                     <TrendIcon trend={s.trend} />
                   </td>
-                  <td className="py-2 pr-3 text-muted-foreground">
+                  <td className="py-2 pe-3 text-muted-foreground">
                     {formatDuration(s.totalTimeSeconds)}
                   </td>
                   <td className="py-2 text-muted-foreground">

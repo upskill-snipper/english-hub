@@ -179,7 +179,7 @@ export default function JoinSchoolPage() {
               >
                 {loading ? (
                   <>
-                    <Loader2 className="w-4 h-4 animate-spin mr-2" />
+                    <Loader2 className="w-4 h-4 animate-spin me-2" />
                     {t('join_school.joining')}
                   </>
                 ) : (

@@ -134,7 +134,7 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
         <Button
           variant="ghost"
           size="sm"
-          className="mb-1 -ml-2 text-muted-foreground"
+          className="mb-1 -ms-2 text-muted-foreground"
           onClick={handleRestart}
         >
           <ArrowLeft className="size-3.5" />
@@ -161,7 +161,7 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/revision" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -210,7 +210,7 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
               <button
                 key={topic}
                 onClick={() => toggleTopic(topic)}
-                className={`group flex items-center gap-3 rounded-xl border p-4 text-left transition-all duration-200 ${
+                className={`group flex items-center gap-3 rounded-xl border p-4 text-start transition-all duration-200 ${
                   isSelected
                     ? 'border-primary/50 bg-primary/[0.06] shadow-glow-sm'
                     : 'border-border/60 bg-card hover:border-border hover:shadow-card-hover'
@@ -266,7 +266,7 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
                 selectedTopics,
               )
             }
-            className="group flex flex-col rounded-2xl border border-border/60 bg-card p-5 text-left transition-all duration-200 hover:border-border hover:shadow-card-hover"
+            className="group flex flex-col rounded-2xl border border-border/60 bg-card p-5 text-start transition-all duration-200 hover:border-border hover:shadow-card-hover"
           >
             <div className="flex items-center gap-3 mb-3">
               <div className="flex size-10 items-center justify-center rounded-xl bg-emerald-500/10">
@@ -300,7 +300,7 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
                 selectedTopics,
               )
             }
-            className="group flex flex-col rounded-2xl border border-border/60 bg-card p-5 text-left transition-all duration-200 hover:border-border hover:shadow-card-hover"
+            className="group flex flex-col rounded-2xl border border-border/60 bg-card p-5 text-start transition-all duration-200 hover:border-border hover:shadow-card-hover"
           >
             <div className="flex items-center gap-3 mb-3">
               <div className="flex size-10 items-center justify-center rounded-xl bg-blue-500/10">
@@ -326,7 +326,7 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
           {/* Mixed topic - uses all available topics for the user's board */}
           <button
             onClick={() => startQuiz(15, 'Mixed Topics', availableTopics)}
-            className="group flex flex-col rounded-2xl border border-border/60 bg-card p-5 text-left transition-all duration-200 hover:border-border hover:shadow-card-hover"
+            className="group flex flex-col rounded-2xl border border-border/60 bg-card p-5 text-start transition-all duration-200 hover:border-border hover:shadow-card-hover"
           >
             <div className="flex items-center gap-3 mb-3">
               <div className="flex size-10 items-center justify-center rounded-xl bg-violet-500/10">
@@ -368,10 +368,10 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-border/60 bg-muted/30">
-                    <th className="px-4 py-3 text-left font-semibold text-muted-foreground">
+                    <th className="px-4 py-3 text-start font-semibold text-muted-foreground">
                       {t('rev.misc.quiz.col_date')}
                     </th>
-                    <th className="px-4 py-3 text-left font-semibold text-muted-foreground">
+                    <th className="px-4 py-3 text-start font-semibold text-muted-foreground">
                       {t('rev.misc.quiz.col_mode')}
                     </th>
                     <th className="px-4 py-3 text-center font-semibold text-muted-foreground">

@@ -171,7 +171,7 @@ export default function OfMiceAndMenExtractWalkthroughPage() {
 
       <section className="mb-10">
         <h2 className="mb-3 text-xl font-semibold">{tr('rev.texts2.common.practice_prompts')}</h2>
-        <ul className="list-disc space-y-2 pl-6 text-sm">
+        <ul className="list-disc space-y-2 ps-6 text-sm">
           <li>
             How does Steinbeck use the closing chapter to make Lennie&rsquo;s death feel inevitable?
           </li>

@@ -185,7 +185,7 @@ export default async function IeltsPartnersForAgenciesPage() {
       <section className="relative overflow-hidden border-b border-border/60">
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-sage-500/[0.07] blur-3xl"
+          className="pointer-events-none absolute -end-32 -top-32 h-96 w-96 rounded-full bg-sage-500/[0.07] blur-3xl"
         />
         <div className="relative mx-auto max-w-5xl px-4 py-20 text-center sm:px-6 sm:py-28">
           <p className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-clay-500">
@@ -237,7 +237,7 @@ export default async function IeltsPartnersForAgenciesPage() {
             {challenges.map(({ icon: Icon, accent, body }) => (
               <Card
                 key={body}
-                className={`flex items-start gap-4 border-l-4 ${accent} border-border/50 bg-card p-5 sm:p-6`}
+                className={`flex items-start gap-4 border-s-4 ${accent} border-border/50 bg-card p-5 sm:p-6`}
               >
                 <span className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-foreground/[0.05] text-muted-foreground">
                   <Icon className="h-4 w-4" aria-hidden />
@@ -365,7 +365,7 @@ export default async function IeltsPartnersForAgenciesPage() {
           <p className="mx-auto mt-4 max-w-xl leading-relaxed text-muted-foreground">
             {await t('ielts.partners.agencies.cta.lede')}
           </p>
-          <ul className="mx-auto mt-8 flex max-w-md flex-col gap-3 text-left text-sm text-muted-foreground">
+          <ul className="mx-auto mt-8 flex max-w-md flex-col gap-3 text-start text-sm text-muted-foreground">
             {[
               await t('ielts.partners.agencies.cta.bullet_bulk'),
               await t('ielts.partners.agencies.cta.bullet_evidence'),

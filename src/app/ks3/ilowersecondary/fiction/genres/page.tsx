@@ -385,7 +385,7 @@ export default async function FictionGenresPage() {
               Original extract
             </p>
             <h3 className="text-base font-semibold mb-3">{g.extract.title}</h3>
-            <div className="space-y-3 border-l-2 border-primary/30 pl-4 mb-5">
+            <div className="space-y-3 border-s-2 border-primary/30 ps-4 mb-5">
               {g.extract.lines.map((line, i) => (
                 <p key={i} className="text-sm leading-relaxed text-muted-foreground">
                   {line}
@@ -408,7 +408,7 @@ export default async function FictionGenresPage() {
             </div>
             <div className="rounded-lg border border-border/50 bg-background p-4">
               <p className="text-sm font-medium mb-2">
-                <span className="font-mono text-primary mr-2">Q.</span>
+                <span className="font-mono text-primary me-2">Q.</span>
                 {g.question.prompt}
               </p>
               <p className="text-xs text-muted-foreground leading-relaxed">

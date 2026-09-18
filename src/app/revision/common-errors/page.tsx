@@ -462,16 +462,16 @@ export default async function CommonErrorsPage() {
       >
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-rose-500/5 blur-3xl"
+          className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-rose-500/5 blur-3xl"
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-amber-500/5 blur-3xl"
+          className="pointer-events-none absolute -bottom-16 -start-16 h-48 w-48 rounded-full bg-amber-500/5 blur-3xl"
         />
 
         <div className="relative">
           <Badge variant="secondary" className="mb-4">
-            <ShieldAlert className="mr-1 size-3" aria-hidden="true" />
+            <ShieldAlert className="me-1 size-3" aria-hidden="true" />
             {heroBadge}
           </Badge>
           <h1
@@ -684,7 +684,7 @@ export default async function CommonErrorsPage() {
             </div>
             <div>
               <Badge variant="secondary" className="mb-2">
-                <Sparkles className="mr-1 size-3" aria-hidden="true" />
+                <Sparkles className="me-1 size-3" aria-hidden="true" />
                 {verificationBadge}
               </Badge>
               <h2 className="text-heading-md font-heading text-foreground">
@@ -771,7 +771,7 @@ export default async function CommonErrorsPage() {
         <Button
           variant="ghost"
           size="sm"
-          className="-ml-2 text-muted-foreground"
+          className="-ms-2 text-muted-foreground"
           render={<Link href="/revision" />}
         >
           <ArrowLeft className="size-3.5" aria-hidden="true" />

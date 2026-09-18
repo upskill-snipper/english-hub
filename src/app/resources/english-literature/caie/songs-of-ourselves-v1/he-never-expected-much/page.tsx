@@ -54,7 +54,7 @@ export default function HeNeverExpectedMuchPage() {
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/resources/english-literature/caie/songs-of-ourselves-v1" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -127,7 +127,7 @@ export default function HeNeverExpectedMuchPage() {
         <Card>
           <CardContent className="space-y-4 pt-6 text-sm text-muted-foreground">
             <div>
-              <blockquote className="border-l-4 border-foreground/30 pl-4 italic">
+              <blockquote className="border-s-4 border-foreground/30 ps-4 italic">
                 &ldquo;Well, World, you have kept faith with me&rdquo;
               </blockquote>
               <p className="mt-2">
@@ -138,7 +138,7 @@ export default function HeNeverExpectedMuchPage() {
               </p>
             </div>
             <div>
-              <blockquote className="border-l-4 border-foreground/30 pl-4 italic">
+              <blockquote className="border-s-4 border-foreground/30 ps-4 italic">
                 &ldquo;Twas then you said, and since have said&hellip;&rdquo;
               </blockquote>
               <p className="mt-2">
@@ -148,7 +148,7 @@ export default function HeNeverExpectedMuchPage() {
               </p>
             </div>
             <div>
-              <blockquote className="border-l-4 border-foreground/30 pl-4 italic">
+              <blockquote className="border-s-4 border-foreground/30 ps-4 italic">
                 &ldquo;Just neutral-tinted haps and such&rdquo;
               </blockquote>
               <p className="mt-2">
@@ -159,7 +159,7 @@ export default function HeNeverExpectedMuchPage() {
               </p>
             </div>
             <div>
-              <blockquote className="border-l-4 border-foreground/30 pl-4 italic">
+              <blockquote className="border-s-4 border-foreground/30 ps-4 italic">
                 &ldquo;Take what is given me here&rdquo;
               </blockquote>
               <p className="mt-2">

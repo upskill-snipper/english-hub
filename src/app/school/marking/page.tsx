@@ -435,12 +435,12 @@ export default function SchoolMarkingPage() {
         {/* Filters */}
         <div className="mb-4 flex flex-wrap items-center gap-3">
           <div className="relative flex-1 min-w-[12rem] max-w-sm">
-            <Search className="pointer-events-none absolute left-2.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-muted-foreground" />
+            <Search className="pointer-events-none absolute start-2.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-muted-foreground" />
             <Input
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search by student, title or text…"
-              className="pl-8"
+              className="ps-8"
             />
           </div>
 
@@ -525,7 +525,7 @@ export default function SchoolMarkingPage() {
           <div className="overflow-hidden rounded-xl border border-border bg-card">
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
-                <thead className="bg-muted/40 text-left text-xs uppercase tracking-wide text-muted-foreground">
+                <thead className="bg-muted/40 text-start text-xs uppercase tracking-wide text-muted-foreground">
                   <tr>
                     <th scope="col" className="px-3 py-2.5 font-medium">
                       Student
@@ -583,7 +583,7 @@ export default function SchoolMarkingPage() {
                         {s.teacher_grade ? (
                           <span className="text-primary">
                             {s.teacher_grade}
-                            <span className="ml-1 text-[10px] font-normal text-muted-foreground">
+                            <span className="ms-1 text-[10px] font-normal text-muted-foreground">
                               (override)
                             </span>
                           </span>

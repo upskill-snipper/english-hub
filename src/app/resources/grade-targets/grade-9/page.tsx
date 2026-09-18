@@ -269,7 +269,7 @@ export default function Grade9Page() {
             <span className="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-2xl font-bold text-white shadow-lg">
               9
             </span>
-            <div className="text-left">
+            <div className="text-start">
               <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Getting a Grade 9</h1>
               <p className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
                 Exceptional

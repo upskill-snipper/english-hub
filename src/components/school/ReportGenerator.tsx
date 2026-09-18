@@ -315,7 +315,7 @@ function ReportSectionView({ section }: { section: ReportSection | ReportTableSe
           {section.content.map((line, i) => (
             <li
               key={i}
-              className="report-list-item text-sm text-muted-foreground leading-relaxed pl-4 relative before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:h-1.5 before:w-1.5 before:rounded-full before:bg-muted-foreground/30"
+              className="report-list-item text-sm text-muted-foreground leading-relaxed ps-4 relative before:content-[''] before:absolute before:start-0 before:top-[0.6em] before:h-1.5 before:w-1.5 before:rounded-full before:bg-muted-foreground/30"
             >
               {line}
             </li>
@@ -348,7 +348,7 @@ function ReportPreview({ report }: { report: ReportData }) {
               </p>
             )}
           </div>
-          <div className="text-right text-xs text-muted-foreground shrink-0 space-y-0.5">
+          <div className="text-end text-xs text-muted-foreground shrink-0 space-y-0.5">
             <p>Generated: {report.header.generatedDate}</p>
             {report.header.teacherName && <p>Teacher: {report.header.teacherName}</p>}
             <p>Academic Year: {report.header.academicYear}</p>
@@ -523,7 +523,7 @@ export function ReportGenerator({
                         setEmailSent(false)
                       }}
                       className={cn(
-                        'flex flex-col items-start gap-1.5 rounded-xl border p-3 text-left transition-all duration-200',
+                        'flex flex-col items-start gap-1.5 rounded-xl border p-3 text-start transition-all duration-200',
                         isActive
                           ? 'border-primary bg-primary/5 ring-2 ring-primary/20'
                           : 'border-border/60 hover:border-border hover:bg-muted/30',

@@ -284,7 +284,7 @@ export function PoetryHubClient() {
             {t('resources.poetry.hero.subtitle')}
           </p>
           {isHydrated && noAnthology && (
-            <div className="mx-auto mt-5 flex items-start gap-2 rounded-lg border border-amber-500/20 bg-amber-500/5 p-4 max-w-2xl text-left">
+            <div className="mx-auto mt-5 flex items-start gap-2 rounded-lg border border-amber-500/20 bg-amber-500/5 p-4 max-w-2xl text-start">
               <svg
                 className="mt-0.5 h-4 w-4 shrink-0 text-clay-600"
                 fill="none"
@@ -334,7 +334,7 @@ export function PoetryHubClient() {
                   <span className="text-sm font-semibold text-foreground">
                     {section.poems} {t('resources.poetry.poems_suffix')}
                   </span>
-                  <span className="ml-auto rounded-full bg-primary/10 px-2 py-0.5 text-[0.65rem] font-semibold text-primary">
+                  <span className="ms-auto rounded-full bg-primary/10 px-2 py-0.5 text-[0.65rem] font-semibold text-primary">
                     {section.board}
                   </span>
                 </div>
@@ -380,7 +380,7 @@ export function PoetryHubClient() {
                   <span className="text-sm font-semibold text-foreground">
                     {section.poems} {t('resources.poetry.poems_suffix')}
                   </span>
-                  <span className="ml-auto rounded-full bg-primary/10 px-2 py-0.5 text-[0.65rem] font-semibold text-primary">
+                  <span className="ms-auto rounded-full bg-primary/10 px-2 py-0.5 text-[0.65rem] font-semibold text-primary">
                     {section.board}
                   </span>
                 </div>
@@ -426,7 +426,7 @@ export function PoetryHubClient() {
                   <span className="text-sm font-semibold text-foreground">
                     {section.poems} {t('resources.poetry.poems_suffix')}
                   </span>
-                  <span className="ml-auto rounded-full bg-primary/10 px-2 py-0.5 text-[0.65rem] font-semibold text-primary">
+                  <span className="ms-auto rounded-full bg-primary/10 px-2 py-0.5 text-[0.65rem] font-semibold text-primary">
                     {section.board}
                   </span>
                 </div>

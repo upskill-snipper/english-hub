@@ -23,7 +23,7 @@ function Section({
     <div className="rounded-xl border border-border bg-card">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-bold text-foreground hover:bg-muted transition-colors"
+        className="flex w-full items-center justify-between gap-4 px-6 py-5 text-start font-bold text-foreground hover:bg-muted transition-colors"
       >
         <span className="text-lg">{title}</span>
         <svg
@@ -244,7 +244,7 @@ export default function GradeBoundariesPage() {
               <p className="mt-1 text-sm font-medium text-muted-foreground">
                 Paper 2 (Reading) + Paper 4 (Directed Writing &amp; Composition)
               </p>
-              <ul className="mt-3 ml-5 list-disc space-y-1 text-sm">
+              <ul className="mt-3 ms-5 list-disc space-y-1 text-sm">
                 <li>
                   Grades available: <strong>A* &ndash; G</strong> (or 9&ndash;1 for the 9&ndash;1
                   grading variant)
@@ -262,7 +262,7 @@ export default function GradeBoundariesPage() {
               <p className="mt-1 text-sm font-medium text-muted-foreground">
                 {tr(`Paper 1 (Reading) + Paper 3 (Directed Writing &amp; Composition)`)}
               </p>
-              <ul className="mt-3 ml-5 list-disc space-y-1 text-sm">
+              <ul className="mt-3 ms-5 list-disc space-y-1 text-sm">
                 <li>
                   Grades available: <strong>C &ndash; G</strong> (or 4&ndash;1 for the 9&ndash;1
                   grading variant)
@@ -294,33 +294,33 @@ export default function GradeBoundariesPage() {
           <div className="overflow-x-auto mt-4">
             <table className="w-full min-w-[700px] text-sm">
               <thead>
-                <tr className="border-b-2 border-primary/20 text-left text-muted-foreground">
-                  <th className="py-3 pr-3">Series</th>
-                  <th className="py-3 pr-3 text-center bg-primary/10 font-semibold text-foreground">
+                <tr className="border-b-2 border-primary/20 text-start text-muted-foreground">
+                  <th className="py-3 pe-3">Series</th>
+                  <th className="py-3 pe-3 text-center bg-primary/10 font-semibold text-foreground">
                     A*
                   </th>
-                  <th className="py-3 pr-3 text-center">A</th>
-                  <th className="py-3 pr-3 text-center">B</th>
-                  <th className="py-3 pr-3 text-center">C</th>
-                  <th className="py-3 pr-3 text-center">D</th>
-                  <th className="py-3 pr-3 text-center">E</th>
-                  <th className="py-3 pr-3 text-center">F</th>
+                  <th className="py-3 pe-3 text-center">A</th>
+                  <th className="py-3 pe-3 text-center">B</th>
+                  <th className="py-3 pe-3 text-center">C</th>
+                  <th className="py-3 pe-3 text-center">D</th>
+                  <th className="py-3 pe-3 text-center">E</th>
+                  <th className="py-3 pe-3 text-center">F</th>
                   <th className="py-3 text-center">G</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
                 {EXTENDED_BOUNDARIES.map((row) => (
                   <tr key={row.series}>
-                    <td className="py-3 pr-3 font-medium">{row.series}</td>
-                    <td className="py-3 pr-3 text-center bg-primary/5 font-semibold text-primary">
+                    <td className="py-3 pe-3 font-medium">{row.series}</td>
+                    <td className="py-3 pe-3 text-center bg-primary/5 font-semibold text-primary">
                       {row.astar}
                     </td>
-                    <td className="py-3 pr-3 text-center">{row.a}</td>
-                    <td className="py-3 pr-3 text-center">{row.b}</td>
-                    <td className="py-3 pr-3 text-center">{row.c}</td>
-                    <td className="py-3 pr-3 text-center">{row.d}</td>
-                    <td className="py-3 pr-3 text-center">{row.e}</td>
-                    <td className="py-3 pr-3 text-center">{row.f}</td>
+                    <td className="py-3 pe-3 text-center">{row.a}</td>
+                    <td className="py-3 pe-3 text-center">{row.b}</td>
+                    <td className="py-3 pe-3 text-center">{row.c}</td>
+                    <td className="py-3 pe-3 text-center">{row.d}</td>
+                    <td className="py-3 pe-3 text-center">{row.e}</td>
+                    <td className="py-3 pe-3 text-center">{row.f}</td>
                     <td className="py-3 text-center">{row.g}</td>
                   </tr>
                 ))}
@@ -382,25 +382,25 @@ export default function GradeBoundariesPage() {
           <div className="overflow-x-auto mt-4">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b-2 border-border text-left text-muted-foreground">
-                  <th className="py-3 pr-3">Series</th>
-                  <th className="py-3 pr-3 text-center font-semibold text-muted-foreground">C</th>
-                  <th className="py-3 pr-3 text-center">D</th>
-                  <th className="py-3 pr-3 text-center">E</th>
-                  <th className="py-3 pr-3 text-center">F</th>
+                <tr className="border-b-2 border-border text-start text-muted-foreground">
+                  <th className="py-3 pe-3">Series</th>
+                  <th className="py-3 pe-3 text-center font-semibold text-muted-foreground">C</th>
+                  <th className="py-3 pe-3 text-center">D</th>
+                  <th className="py-3 pe-3 text-center">E</th>
+                  <th className="py-3 pe-3 text-center">F</th>
                   <th className="py-3 text-center">G</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
                 {CORE_BOUNDARIES.map((row) => (
                   <tr key={row.series}>
-                    <td className="py-3 pr-3 font-medium">{row.series}</td>
-                    <td className="py-3 pr-3 text-center font-semibold text-muted-foreground">
+                    <td className="py-3 pe-3 font-medium">{row.series}</td>
+                    <td className="py-3 pe-3 text-center font-semibold text-muted-foreground">
                       {row.c}
                     </td>
-                    <td className="py-3 pr-3 text-center">{row.d}</td>
-                    <td className="py-3 pr-3 text-center">{row.e}</td>
-                    <td className="py-3 pr-3 text-center">{row.f}</td>
+                    <td className="py-3 pe-3 text-center">{row.d}</td>
+                    <td className="py-3 pe-3 text-center">{row.e}</td>
+                    <td className="py-3 pe-3 text-center">{row.f}</td>
                     <td className="py-3 text-center">{row.g}</td>
                   </tr>
                 ))}
@@ -426,9 +426,9 @@ export default function GradeBoundariesPage() {
           <div className="mt-4 overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b-2 border-primary/20 text-left">
-                  <th className="py-3 pr-4 font-semibold text-foreground">9&ndash;1 Grade</th>
-                  <th className="py-3 pr-4 font-semibold text-foreground">
+                <tr className="border-b-2 border-primary/20 text-start">
+                  <th className="py-3 pe-4 font-semibold text-foreground">9&ndash;1 Grade</th>
+                  <th className="py-3 pe-4 font-semibold text-foreground">
                     Equivalent A*&ndash;G Grade
                   </th>
                   <th className="py-3 font-semibold text-foreground">Description</th>
@@ -436,58 +436,58 @@ export default function GradeBoundariesPage() {
               </thead>
               <tbody className="divide-y divide-border text-muted-foreground">
                 <tr className="bg-primary/5">
-                  <td className="py-3 pr-4 font-bold text-primary">9</td>
-                  <td className="py-3 pr-4">High A*</td>
+                  <td className="py-3 pe-4 font-bold text-primary">9</td>
+                  <td className="py-3 pe-4">High A*</td>
                   <td className="py-3">
                     {tr(`Exceptional &mdash; the very highest level of achievement`)}
                   </td>
                 </tr>
                 <tr className="bg-primary/5">
-                  <td className="py-3 pr-4 font-bold text-primary">8</td>
-                  <td className="py-3 pr-4">{tr(`Low A* / High A`)}</td>
+                  <td className="py-3 pe-4 font-bold text-primary">8</td>
+                  <td className="py-3 pe-4">{tr(`Low A* / High A`)}</td>
                   <td className="py-3">
                     {tr(`Outstanding performance with sophisticated analysis and writing`)}
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-3 pr-4 font-bold text-foreground">7</td>
-                  <td className="py-3 pr-4">A</td>
+                  <td className="py-3 pe-4 font-bold text-foreground">7</td>
+                  <td className="py-3 pe-4">A</td>
                   <td className="py-3">{tr(`Very strong performance across all components`)}</td>
                 </tr>
                 <tr>
-                  <td className="py-3 pr-4 font-bold text-foreground">6</td>
-                  <td className="py-3 pr-4">High B</td>
+                  <td className="py-3 pe-4 font-bold text-foreground">6</td>
+                  <td className="py-3 pe-4">High B</td>
                   <td className="py-3">Good performance with consistent quality</td>
                 </tr>
                 <tr>
-                  <td className="py-3 pr-4 font-bold">5</td>
-                  <td className="py-3 pr-4">{tr(`Low B / High C`)}</td>
+                  <td className="py-3 pe-4 font-bold">5</td>
+                  <td className="py-3 pe-4">{tr(`Low B / High C`)}</td>
                   <td className="py-3">
                     {tr(`Above average &mdash; solid understanding with some analysis`)}
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-3 pr-4 font-bold">4</td>
-                  <td className="py-3 pr-4">C</td>
+                  <td className="py-3 pe-4 font-bold">4</td>
+                  <td className="py-3 pe-4">C</td>
                   <td className="py-3">
                     {tr(`Standard pass &mdash; demonstrates basic competence`)}
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-3 pr-4 font-bold text-muted-foreground">3</td>
-                  <td className="py-3 pr-4">D / E</td>
+                  <td className="py-3 pe-4 font-bold text-muted-foreground">3</td>
+                  <td className="py-3 pe-4">D / E</td>
                   <td className="py-3">
                     {tr(`Below average &mdash; some understanding but inconsistent`)}
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-3 pr-4 font-bold text-muted-foreground">2</td>
-                  <td className="py-3 pr-4">E / F</td>
+                  <td className="py-3 pe-4 font-bold text-muted-foreground">2</td>
+                  <td className="py-3 pe-4">E / F</td>
                   <td className="py-3">{tr(`Limited understanding and weak expression`)}</td>
                 </tr>
                 <tr>
-                  <td className="py-3 pr-4 font-bold text-muted-foreground">1</td>
-                  <td className="py-3 pr-4">G</td>
+                  <td className="py-3 pe-4 font-bold text-muted-foreground">1</td>
+                  <td className="py-3 pe-4">G</td>
                   <td className="py-3">{tr(`Minimal evidence of understanding`)}</td>
                 </tr>
               </tbody>
@@ -509,7 +509,7 @@ export default function GradeBoundariesPage() {
           </p>
 
           <div className="mt-4 space-y-6">
-            <div className="rounded-lg border-l-4 border-primary bg-primary/5 p-5">
+            <div className="rounded-lg border-s-4 border-primary bg-primary/5 p-5">
               <h3 className="text-lg font-bold text-foreground">
                 {tr(`Grade A* (9) &mdash; Exceptional`)}
               </h3>
@@ -517,7 +517,7 @@ export default function GradeBoundariesPage() {
                 <p>
                   <strong>{tr(`Reading (Paper 2 / Paper 1):`)}</strong>
                 </p>
-                <ul className="ml-5 list-disc space-y-1">
+                <ul className="ms-5 list-disc space-y-1">
                   <li>
                     {tr(
                       `Perceptive, original analysis that goes beyond the surface meaning of the text.`,
@@ -546,7 +546,7 @@ export default function GradeBoundariesPage() {
                 <p className="mt-3">
                   <strong>{tr(`Writing (Paper 4 / Paper 3):`)}</strong>
                 </p>
-                <ul className="ml-5 list-disc space-y-1">
+                <ul className="ms-5 list-disc space-y-1">
                   <li>
                     {tr(
                       `Directed writing that is entirely convincing in its adopted voice and format, with ideas that go beyond the passage.`,
@@ -574,7 +574,7 @@ export default function GradeBoundariesPage() {
               </div>
             </div>
 
-            <div className="rounded-lg border-l-4 border-primary bg-primary/5 p-5">
+            <div className="rounded-lg border-s-4 border-primary bg-primary/5 p-5">
               <h3 className="text-lg font-bold text-foreground">
                 {tr(`Grades A&ndash;B (7&ndash;8) &mdash; Strong`)}
               </h3>
@@ -582,7 +582,7 @@ export default function GradeBoundariesPage() {
                 <p>
                   <strong>Reading:</strong>
                 </p>
-                <ul className="ml-5 list-disc space-y-1">
+                <ul className="ms-5 list-disc space-y-1">
                   <li>
                     {tr(
                       `Detailed, well-developed analysis with clear explanations of language effects.`,
@@ -599,7 +599,7 @@ export default function GradeBoundariesPage() {
                 <p className="mt-3">
                   <strong>Writing:</strong>
                 </p>
-                <ul className="ml-5 list-disc space-y-1">
+                <ul className="ms-5 list-disc space-y-1">
                   <li>
                     {tr(
                       `Engaging, well-crafted writing with a clear sense of purpose and audience.`,
@@ -617,7 +617,7 @@ export default function GradeBoundariesPage() {
               </div>
             </div>
 
-            <div className="rounded-lg border-l-4 border-primary/60 bg-primary/5 p-5">
+            <div className="rounded-lg border-s-4 border-primary/60 bg-primary/5 p-5">
               <h3 className="text-lg font-bold text-foreground/80">
                 {tr(`Grades C&ndash;D (4&ndash;5) &mdash; Competent`)}
               </h3>
@@ -625,7 +625,7 @@ export default function GradeBoundariesPage() {
                 <p>
                   <strong>Reading:</strong>
                 </p>
-                <ul className="ml-5 list-disc space-y-1">
+                <ul className="ms-5 list-disc space-y-1">
                   <li>
                     {tr(
                       `Some understanding of language effects, but explanations may be thin or general.`,
@@ -645,7 +645,7 @@ export default function GradeBoundariesPage() {
                 <p className="mt-3">
                   <strong>Writing:</strong>
                 </p>
-                <ul className="ml-5 list-disc space-y-1">
+                <ul className="ms-5 list-disc space-y-1">
                   <li>
                     {tr(
                       `Writing communicates with some clarity but may drift or lose focus in places.`,
@@ -671,7 +671,7 @@ export default function GradeBoundariesPage() {
               </div>
             </div>
 
-            <div className="rounded-lg border-l-4 border-yellow-400 bg-yellow-500/10/30 p-5">
+            <div className="rounded-lg border-s-4 border-yellow-400 bg-yellow-500/10/30 p-5">
               <h3 className="text-lg font-bold text-yellow-700">
                 {tr(`Grades E&ndash;F (2&ndash;3) &mdash; Developing`)}
               </h3>
@@ -679,7 +679,7 @@ export default function GradeBoundariesPage() {
                 <p>
                   <strong>Reading:</strong>
                 </p>
-                <ul className="ml-5 list-disc space-y-1">
+                <ul className="ms-5 list-disc space-y-1">
                   <li>
                     {tr(`Simple comments on language with limited or no analysis of effect.`)}
                   </li>
@@ -690,7 +690,7 @@ export default function GradeBoundariesPage() {
                 <p className="mt-3">
                   <strong>Writing:</strong>
                 </p>
-                <ul className="ml-5 list-disc space-y-1">
+                <ul className="ms-5 list-disc space-y-1">
                   <li>{tr(`Simple ideas with limited development.`)}</li>
                   <li>{tr(`Basic, everyday vocabulary with little variety.`)}</li>
                   <li>{tr(`Limited structural features; may lack clear paragraphing.`)}</li>
@@ -701,7 +701,7 @@ export default function GradeBoundariesPage() {
               </div>
             </div>
 
-            <div className="rounded-lg border-l-4 border-border bg-muted/50 p-5">
+            <div className="rounded-lg border-s-4 border-border bg-muted/50 p-5">
               <h3 className="text-lg font-bold text-muted-foreground">
                 {tr(`Grade G (1) &mdash; Elementary`)}
               </h3>
@@ -709,7 +709,7 @@ export default function GradeBoundariesPage() {
                 <p>
                   <strong>Reading:</strong>
                 </p>
-                <ul className="ml-5 list-disc space-y-1">
+                <ul className="ms-5 list-disc space-y-1">
                   <li>{tr(`Minimal engagement with the text; may misunderstand the question.`)}</li>
                   <li>Very few references to the passage, if any.</li>
                   <li>{tr(`Summary attempts may be largely copied or irrelevant.`)}</li>
@@ -717,7 +717,7 @@ export default function GradeBoundariesPage() {
                 <p className="mt-3">
                   <strong>Writing:</strong>
                 </p>
-                <ul className="ml-5 list-disc space-y-1">
+                <ul className="ms-5 list-disc space-y-1">
                   <li>{tr(`Very basic communication; meaning may be unclear in places.`)}</li>
                   <li>{tr(`Very limited vocabulary.`)}</li>
                   <li>{tr(`No clear structure; errors significantly hinder understanding.`)}</li>
@@ -735,39 +735,39 @@ export default function GradeBoundariesPage() {
               <div className="overflow-x-auto mt-3">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="border-b border-border text-left text-muted-foreground">
-                      <th className="py-2 pr-4">Component</th>
-                      <th className="py-2 pr-4">Content</th>
-                      <th className="py-2 pr-4">Marks</th>
-                      <th className="py-2 pr-4">Weighting</th>
+                    <tr className="border-b border-border text-start text-muted-foreground">
+                      <th className="py-2 pe-4">Component</th>
+                      <th className="py-2 pe-4">Content</th>
+                      <th className="py-2 pe-4">Marks</th>
+                      <th className="py-2 pe-4">Weighting</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-border">
                     <tr>
-                      <td className="py-2 pr-4 font-semibold">Paper 2 &mdash; Reading</td>
-                      <td className="py-2 pr-4">
+                      <td className="py-2 pe-4 font-semibold">Paper 2 &mdash; Reading</td>
+                      <td className="py-2 pe-4">
                         {tr(`Comprehension, language analysis, summary, writer&rsquo;s effect`)}
                       </td>
-                      <td className="py-2 pr-4">80</td>
-                      <td className="py-2 pr-4">50%</td>
+                      <td className="py-2 pe-4">80</td>
+                      <td className="py-2 pe-4">50%</td>
                     </tr>
                     <tr>
-                      <td className="py-2 pr-4 font-semibold">
+                      <td className="py-2 pe-4 font-semibold">
                         {tr(`Paper 4 &mdash; Directed Writing &amp; Composition`)}
                       </td>
-                      <td className="py-2 pr-4">
+                      <td className="py-2 pe-4">
                         {tr(
                           `Directed writing (from passage), narrative or descriptive composition`,
                         )}
                       </td>
-                      <td className="py-2 pr-4">80</td>
-                      <td className="py-2 pr-4">50%</td>
+                      <td className="py-2 pe-4">80</td>
+                      <td className="py-2 pe-4">50%</td>
                     </tr>
                     <tr className="font-bold">
-                      <td className="py-2 pr-4">Total</td>
-                      <td className="py-2 pr-4"></td>
-                      <td className="py-2 pr-4">160</td>
-                      <td className="py-2 pr-4">100%</td>
+                      <td className="py-2 pe-4">Total</td>
+                      <td className="py-2 pe-4"></td>
+                      <td className="py-2 pe-4">160</td>
+                      <td className="py-2 pe-4">100%</td>
                     </tr>
                   </tbody>
                 </table>
@@ -779,37 +779,37 @@ export default function GradeBoundariesPage() {
               <div className="overflow-x-auto mt-3">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="border-b border-border text-left text-muted-foreground">
-                      <th className="py-2 pr-4">Component</th>
-                      <th className="py-2 pr-4">Content</th>
-                      <th className="py-2 pr-4">Marks</th>
-                      <th className="py-2 pr-4">Weighting</th>
+                    <tr className="border-b border-border text-start text-muted-foreground">
+                      <th className="py-2 pe-4">Component</th>
+                      <th className="py-2 pe-4">Content</th>
+                      <th className="py-2 pe-4">Marks</th>
+                      <th className="py-2 pe-4">Weighting</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-border">
                     <tr>
-                      <td className="py-2 pr-4 font-semibold">{tr(`Paper 1 &mdash; Reading`)}</td>
-                      <td className="py-2 pr-4">
+                      <td className="py-2 pe-4 font-semibold">{tr(`Paper 1 &mdash; Reading`)}</td>
+                      <td className="py-2 pe-4">
                         {tr(`Comprehension, language analysis, summary`)}
                       </td>
-                      <td className="py-2 pr-4">60</td>
-                      <td className="py-2 pr-4">50%</td>
+                      <td className="py-2 pe-4">60</td>
+                      <td className="py-2 pe-4">50%</td>
                     </tr>
                     <tr>
-                      <td className="py-2 pr-4 font-semibold">
+                      <td className="py-2 pe-4 font-semibold">
                         {tr(`Paper 3 &mdash; Directed Writing &amp; Composition`)}
                       </td>
-                      <td className="py-2 pr-4">
+                      <td className="py-2 pe-4">
                         {tr(`Directed writing, narrative or descriptive composition`)}
                       </td>
-                      <td className="py-2 pr-4">60</td>
-                      <td className="py-2 pr-4">50%</td>
+                      <td className="py-2 pe-4">60</td>
+                      <td className="py-2 pe-4">50%</td>
                     </tr>
                     <tr className="font-bold">
-                      <td className="py-2 pr-4">Total</td>
-                      <td className="py-2 pr-4"></td>
-                      <td className="py-2 pr-4">120</td>
-                      <td className="py-2 pr-4">100%</td>
+                      <td className="py-2 pe-4">Total</td>
+                      <td className="py-2 pe-4"></td>
+                      <td className="py-2 pe-4">120</td>
+                      <td className="py-2 pe-4">100%</td>
                     </tr>
                   </tbody>
                 </table>
@@ -834,7 +834,7 @@ export default function GradeBoundariesPage() {
           <div className="mt-4 space-y-5">
             <div className="rounded-lg border border-border p-5">
               <h3 className="font-bold text-muted-foreground">{tr(`Grade D &rarr; Grade C`)}</h3>
-              <ul className="mt-2 ml-5 list-disc space-y-2 text-sm">
+              <ul className="mt-2 ms-5 list-disc space-y-2 text-sm">
                 <li>
                   <strong>Reading:</strong> Make sure you are answering the question asked, not
                   writing about the passage generally. Check how many marks each question is worth
@@ -860,7 +860,7 @@ export default function GradeBoundariesPage() {
 
             <div className="rounded-lg border border-border p-5">
               <h3 className="font-bold text-foreground">{tr(`Grade C &rarr; Grade B`)}</h3>
-              <ul className="mt-2 ml-5 list-disc space-y-2 text-sm">
+              <ul className="mt-2 ms-5 list-disc space-y-2 text-sm">
                 <li>
                   <strong>Reading:</strong> Start explaining the <em>effect</em> of language
                   choices, not just identifying them. Use the formula: identify the technique, quote
@@ -886,7 +886,7 @@ export default function GradeBoundariesPage() {
 
             <div className="rounded-lg border border-border p-5">
               <h3 className="font-bold text-foreground">{tr(`Grade B &rarr; Grade A`)}</h3>
-              <ul className="mt-2 ml-5 list-disc space-y-2 text-sm">
+              <ul className="mt-2 ms-5 list-disc space-y-2 text-sm">
                 <li>
                   <strong>Reading:</strong> Analyse connotations of individual words, not just whole
                   phrases. Discuss how multiple techniques work together to create an overall
@@ -913,7 +913,7 @@ export default function GradeBoundariesPage() {
 
             <div className="rounded-lg border-2 border-primary/30 bg-primary/5 p-5">
               <h3 className="font-bold text-primary">Grade A &rarr; Grade A*</h3>
-              <ul className="mt-2 ml-5 list-disc space-y-2 text-sm">
+              <ul className="mt-2 ms-5 list-disc space-y-2 text-sm">
                 <li>
                   <strong>Reading:</strong> Offer perceptive, original interpretations. Consider
                   alternative readings: &ldquo;While one interpretation of this image suggests X, it
@@ -955,7 +955,7 @@ export default function GradeBoundariesPage() {
               <h3 className="font-semibold text-red-700 dark:text-red-300">
                 {tr(`Reading responses`)}
               </h3>
-              <ul className="mt-2 ml-5 list-disc space-y-1 text-sm text-muted-foreground">
+              <ul className="mt-2 ms-5 list-disc space-y-1 text-sm text-muted-foreground">
                 <li>
                   <strong>Feature-spotting</strong> &mdash; naming a technique (e.g., &ldquo;The
                   writer uses a metaphor&rdquo;) without explaining its effect. Always follow up
@@ -981,7 +981,7 @@ export default function GradeBoundariesPage() {
               <h3 className="font-semibold text-red-700 dark:text-red-300">
                 {tr(`Summary responses`)}
               </h3>
-              <ul className="mt-2 ml-5 list-disc space-y-1 text-sm text-muted-foreground">
+              <ul className="mt-2 ms-5 list-disc space-y-1 text-sm text-muted-foreground">
                 <li>
                   <strong>{tr(`Copying from the passage`)}</strong> &mdash; lifting whole phrases
                   instead of using your own words. Markers specifically look for evidence of your
@@ -1002,7 +1002,7 @@ export default function GradeBoundariesPage() {
               <h3 className="font-semibold text-red-700 dark:text-red-300">
                 {tr(`Writing responses`)}
               </h3>
-              <ul className="mt-2 ml-5 list-disc space-y-1 text-sm text-muted-foreground">
+              <ul className="mt-2 ms-5 list-disc space-y-1 text-sm text-muted-foreground">
                 <li>
                   <strong>{tr(`Wrong format in directed writing`)}</strong> &mdash; writing a letter
                   when asked for a speech, or missing key features like addresses and sign-offs.

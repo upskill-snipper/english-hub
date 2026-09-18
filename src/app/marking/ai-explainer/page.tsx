@@ -105,7 +105,7 @@ export default async function AiExplainerPage() {
             <strong className="text-foreground">only the text of your essay</strong> and the
             question you chose to the AI. We do <em>not</em> send:
           </p>
-          <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1 mt-3">
+          <ul className="list-disc ps-6 text-muted-foreground leading-relaxed space-y-1 mt-3">
             <li>Your name or email address</li>
             <li>Your date of birth or age</li>
             <li>Your school name</li>
@@ -152,7 +152,7 @@ export default async function AiExplainerPage() {
           </p>
           <div className="mt-4 rounded-lg border border-border bg-muted/50 p-5">
             <p className="text-sm font-medium text-foreground mb-2">{optoutBoxHeading}</p>
-            <ol className="list-decimal pl-6 text-muted-foreground leading-relaxed space-y-1 text-sm">
+            <ol className="list-decimal ps-6 text-muted-foreground leading-relaxed space-y-1 text-sm">
               <li>
                 Go to{' '}
                 <Link href="/parent/settings" className="underline text-primary">
@@ -188,7 +188,7 @@ export default async function AiExplainerPage() {
             Under UK data protection law (the UK GDPR and the Children&apos;s Code), you have the
             right to:
           </p>
-          <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1 mt-3">
+          <ul className="list-disc ps-6 text-muted-foreground leading-relaxed space-y-1 mt-3">
             <li>Know that AI is being used to assess your work (this page tells you that).</li>
             <li>Opt out of AI-powered features at any time.</li>
             <li>Request that a human reviews any decision made by AI.</li>
@@ -209,7 +209,7 @@ export default async function AiExplainerPage() {
           <p className="text-muted-foreground leading-relaxed">
             If you have any questions about how AI is used on The English Hub, please contact us:
           </p>
-          <ul className="list-none pl-0 text-muted-foreground leading-relaxed space-y-1 mt-3">
+          <ul className="list-none ps-0 text-muted-foreground leading-relaxed space-y-1 mt-3">
             <li>
               <strong className="text-foreground">Email:</strong>{' '}
               <a href="mailto:info@Upskillenergy.com" className="underline text-foreground">

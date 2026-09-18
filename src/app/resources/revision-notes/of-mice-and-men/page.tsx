@@ -38,7 +38,7 @@ function Section({
     <section id={id} className="border border-border rounded-lg bg-card shadow-md">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left"
+        className="flex w-full items-center justify-between px-5 py-4 text-start"
         aria-expanded={open}
       >
         <h2 className="text-xl font-bold text-foreground">{title}</h2>
@@ -467,7 +467,7 @@ export default function OfMiceAndMenStudyGuide() {
         </p>
         <div className="space-y-4">
           {keyQuotes.map((q, i) => (
-            <div key={i} className="rounded-lg border-l-4 border-primary bg-muted p-4">
+            <div key={i} className="rounded-lg border-s-4 border-primary bg-muted p-4">
               {'quote' in q ? (
                 <blockquote className="text-base font-medium italic text-foreground">
                   &ldquo;{q.quote}&rdquo;
@@ -587,7 +587,7 @@ export default function OfMiceAndMenStudyGuide() {
             "Slim's closing reassurance to George - that he had no choice - functions as the novel's moral verdict, but its authority is compromised by the fact that only Slim understands. Carlson's bewildered closing question about what is troubling the two men is the novel's real ending: a world in which genuine moral understanding is the exception, not the rule.",
             "The parallel between Candy's dog and Lennie is not merely structural but philosophical: both deaths raise the question of who has the right to decide when a life is no longer worth living. Candy's regret at not shooting his own dog provides George with a moral framework, but Steinbeck leaves the ethical question unresolved. The novel asks whether mercy killing is ever truly merciful, or whether it merely makes the unbearable easier for those who survive.",
           ].map((point, i) => (
-            <div key={i} className="rounded-lg border-l-4 border-accent bg-muted p-4">
+            <div key={i} className="rounded-lg border-s-4 border-accent bg-muted p-4">
               <p className="text-sm leading-relaxed text-muted-foreground">{point}</p>
             </div>
           ))}
@@ -664,7 +664,7 @@ export default function OfMiceAndMenStudyGuide() {
             <h3 className="font-bold text-foreground mb-1">Question 1</h3>
             <p className="text-sm text-muted-foreground mb-3">
               How does Steinbeck present the theme of loneliness in <em>Of Mice and Men</em>?
-              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
+              <span className="ms-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder={t('study.revnotes.common.essay_placeholder')}
@@ -681,7 +681,7 @@ export default function OfMiceAndMenStudyGuide() {
             <h3 className="font-bold text-foreground mb-1">Question 2</h3>
             <p className="text-sm text-muted-foreground mb-3">
               How does Steinbeck present Curley&rsquo;s wife in <em>Of Mice and Men</em>?
-              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
+              <span className="ms-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder={t('study.revnotes.common.essay_placeholder')}
@@ -699,7 +699,7 @@ export default function OfMiceAndMenStudyGuide() {
             <p className="text-sm text-muted-foreground mb-3">
               How does Steinbeck use the dream farm to explore the American Dream in{' '}
               <em>Of Mice and Men</em>?
-              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
+              <span className="ms-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder={t('study.revnotes.common.essay_placeholder')}
@@ -717,7 +717,7 @@ export default function OfMiceAndMenStudyGuide() {
             <p className="text-sm text-muted-foreground mb-3">
               How does Steinbeck present the relationship between George and Lennie in{' '}
               <em>Of Mice and Men</em>?
-              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
+              <span className="ms-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder={t('study.revnotes.common.essay_placeholder')}

@@ -77,7 +77,7 @@ export default function EditorialDashboard() {
             </div>
 
             {/* Right stat */}
-            <div className="border-l border-border pl-12">
+            <div className="border-s border-border ps-12">
               <p className="text-[7rem] font-extralight leading-none tabular-nums text-foreground">
                 12
               </p>
@@ -125,7 +125,7 @@ export default function EditorialDashboard() {
 
         {/* Pull quote - motivational */}
         <section className="py-16">
-          <blockquote className="border-l-2 border-border pl-8 max-w-2xl">
+          <blockquote className="border-s-2 border-border ps-8 max-w-2xl">
             <p className="font-heading italic text-3xl leading-snug text-muted-foreground">
               The difference between the almost right word and the right word is the difference
               between the lightning bug and the{' '}
@@ -173,7 +173,7 @@ export default function EditorialDashboard() {
           <div className="space-y-6">
             {recentActivity.map((item, i) => (
               <div key={i} className="flex items-baseline gap-6">
-                <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground w-24 shrink-0 text-right tabular-nums">
+                <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground w-24 shrink-0 text-end tabular-nums">
                   {item.time}
                 </span>
                 <span className="text-base font-light text-muted-foreground leading-snug">

@@ -271,13 +271,13 @@ export default async function RecountPage() {
           <table className="w-full border-collapse text-sm">
             <thead>
               <tr className="bg-card">
-                <th className="px-4 py-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="px-4 py-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Form
                 </th>
-                <th className="px-4 py-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="px-4 py-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   What it shares with a recount
                 </th>
-                <th className="px-4 py-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="px-4 py-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   What it adds or changes
                 </th>
               </tr>

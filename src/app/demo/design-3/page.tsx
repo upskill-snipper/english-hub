@@ -57,15 +57,15 @@ export default function SoftAuroraPage() {
     <div className="relative min-h-screen overflow-hidden bg-background">
       {/* Aurora gradient blobs */}
       <div
-        className="pointer-events-none absolute -left-32 top-16 h-[500px] w-[500px] rounded-full bg-gradient-to-r from-primary/20 to-accent/10 blur-3xl"
+        className="pointer-events-none absolute -start-32 top-16 h-[500px] w-[500px] rounded-full bg-gradient-to-r from-primary/20 to-accent/10 blur-3xl"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute right-0 top-[400px] h-[600px] w-[600px] rounded-full bg-gradient-to-r from-chart-4/20 to-primary/10 blur-3xl"
+        className="pointer-events-none absolute end-0 top-[400px] h-[600px] w-[600px] rounded-full bg-gradient-to-r from-chart-4/20 to-primary/10 blur-3xl"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute bottom-0 left-1/3 h-[400px] w-[500px] rounded-full bg-gradient-to-r from-chart-3/15 to-chart-1/10 blur-3xl"
+        className="pointer-events-none absolute bottom-0 start-1/3 h-[400px] w-[500px] rounded-full bg-gradient-to-r from-chart-3/15 to-chart-1/10 blur-3xl"
         aria-hidden="true"
       />
 
@@ -95,7 +95,7 @@ export default function SoftAuroraPage() {
             <div key={stat.label} className="rounded-2xl bg-card p-8 shadow-soft">
               <p className="text-5xl font-light text-foreground">
                 {stat.value}
-                <span className="ml-1 text-lg font-normal text-muted-foreground">
+                <span className="ms-1 text-lg font-normal text-muted-foreground">
                   {stat.suffix}
                 </span>
               </p>
@@ -216,7 +216,7 @@ export default function SoftAuroraPage() {
                       <p className="text-sm font-medium text-foreground">{deadline.title}</p>
                       <p className="text-xs text-muted-foreground">{deadline.subject}</p>
                     </div>
-                    <div className="text-right">
+                    <div className="text-end">
                       <p className="text-sm font-medium text-muted-foreground">{deadline.date}</p>
                       <p
                         className={`text-xs ${

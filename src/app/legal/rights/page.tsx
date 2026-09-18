@@ -205,19 +205,19 @@ export default function RightsAndPermissionsPage() {
               <tr>
                 <th
                   scope="col"
-                  className="px-3 py-3 text-left font-semibold text-foreground border-b border-border whitespace-nowrap"
+                  className="px-3 py-3 text-start font-semibold text-foreground border-b border-border whitespace-nowrap"
                 >
                   Publisher / Agent
                 </th>
                 <th
                   scope="col"
-                  className="px-3 py-3 text-left font-semibold text-foreground border-b border-border"
+                  className="px-3 py-3 text-start font-semibold text-foreground border-b border-border"
                 >
                   Permissions Website
                 </th>
                 <th
                   scope="col"
-                  className="px-3 py-3 text-left font-semibold text-foreground border-b border-border"
+                  className="px-3 py-3 text-start font-semibold text-foreground border-b border-border"
                 >
                   Authors / Key Texts
                 </th>
@@ -228,7 +228,7 @@ export default function RightsAndPermissionsPage() {
                 <tr key={holder.publisher} className="border-b border-border last:border-b-0">
                   <th
                     scope="row"
-                    className="px-3 py-3 text-left align-top font-medium text-foreground whitespace-nowrap"
+                    className="px-3 py-3 text-start align-top font-medium text-foreground whitespace-nowrap"
                   >
                     {holder.publisher}
                   </th>
@@ -264,7 +264,7 @@ export default function RightsAndPermissionsPage() {
             <strong>in copyright in the United Kingdom</strong>. We treat the following as still
             requiring permission for any non-fair-dealing reproduction within the UK:
           </p>
-          <ul className="list-disc pl-6 space-y-1">
+          <ul className="list-disc ps-6 space-y-1">
             {US_PD_NOT_UK.map((entry) => (
               <li key={entry.author}>
                 <strong>{entry.author}</strong> (d.&nbsp;{entry.died}) - UK copyright expires{' '}
@@ -287,7 +287,7 @@ export default function RightsAndPermissionsPage() {
           If you wish to reproduce more than a fair-dealing extract - for example, a full poem, a
           long passage from a novel, or a scene from a play - please follow these steps:
         </p>
-        <ol className="list-decimal pl-6 space-y-2">
+        <ol className="list-decimal ps-6 space-y-2">
           <li>
             <strong>Identify the rights-holder.</strong> Locate the relevant publisher or literary
             agent in the directory above based on the author of the text you want to use.
@@ -331,7 +331,7 @@ export default function RightsAndPermissionsPage() {
       {/* ── Footer / cross-link ──────────────────────────────── */}
       <section className="mb-2">
         <h2 className="text-2xl font-bold mb-4">Related Pages</h2>
-        <ul className="list-disc pl-6 space-y-1">
+        <ul className="list-disc ps-6 space-y-1">
           <li>
             <Link href="/legal/disclaimer" className="text-foreground underline hover:no-underline">
               Full Disclaimer

@@ -608,36 +608,36 @@ export default async function Paper2Page() {
           <div className="mt-4 overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b-2 border-primary text-left">
-                  <th className="py-2 pr-4 font-semibold text-foreground">Section</th>
-                  <th className="py-2 pr-4 font-semibold text-foreground">Marks</th>
-                  <th className="py-2 pr-4 font-semibold text-foreground">Time</th>
+                <tr className="border-b-2 border-primary text-start">
+                  <th className="py-2 pe-4 font-semibold text-foreground">Section</th>
+                  <th className="py-2 pe-4 font-semibold text-foreground">Marks</th>
+                  <th className="py-2 pe-4 font-semibold text-foreground">Time</th>
                   <th className="py-2 font-semibold text-foreground">Tip</th>
                 </tr>
               </thead>
               <tbody className="text-muted-foreground">
                 <tr className="border-b border-border">
-                  <td className="py-3 pr-4 font-medium">A: 19th-Century Novel</td>
-                  <td className="py-3 pr-4">40</td>
-                  <td className="py-3 pr-4">~55 mins</td>
+                  <td className="py-3 pe-4 font-medium">A: 19th-Century Novel</td>
+                  <td className="py-3 pe-4">40</td>
+                  <td className="py-3 pe-4">~55 mins</td>
                   <td className="py-3">5 min plan + 4-5 paragraphs</td>
                 </tr>
                 <tr className="border-b border-border">
-                  <td className="py-3 pr-4 font-medium">B: Anthology Poetry</td>
-                  <td className="py-3 pr-4">24</td>
-                  <td className="py-3 pr-4">~40 mins</td>
+                  <td className="py-3 pe-4 font-medium">B: Anthology Poetry</td>
+                  <td className="py-3 pe-4">24</td>
+                  <td className="py-3 pe-4">~40 mins</td>
                   <td className="py-3">{_tr(`Compare named poem with your choice`)}</td>
                 </tr>
                 <tr className="border-b border-border">
-                  <td className="py-3 pr-4 font-medium">C(a): Unseen Poem 1</td>
-                  <td className="py-3 pr-4">8</td>
-                  <td className="py-3 pr-4">~20 mins</td>
+                  <td className="py-3 pe-4 font-medium">C(a): Unseen Poem 1</td>
+                  <td className="py-3 pe-4">8</td>
+                  <td className="py-3 pe-4">~20 mins</td>
                   <td className="py-3">{_tr(`Read twice, 3-4 PEA paragraphs`)}</td>
                 </tr>
                 <tr>
-                  <td className="py-3 pr-4 font-medium">C(b): Unseen Comparison</td>
-                  <td className="py-3 pr-4">8</td>
-                  <td className="py-3 pr-4">~15 mins</td>
+                  <td className="py-3 pe-4 font-medium">C(b): Unseen Comparison</td>
+                  <td className="py-3 pe-4">8</td>
+                  <td className="py-3 pe-4">~15 mins</td>
                   <td className="py-3">2-3 comparative paragraphs</td>
                 </tr>
               </tbody>

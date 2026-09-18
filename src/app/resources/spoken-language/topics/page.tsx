@@ -754,7 +754,7 @@ export default function SpokenLanguageTopicsPage() {
                         >
                           Key Points to Cover
                         </h4>
-                        <ul className="ml-4 mt-2 list-disc space-y-1.5 text-sm text-muted-foreground">
+                        <ul className="ms-4 mt-2 list-disc space-y-1.5 text-sm text-muted-foreground">
                           {topic.keyPoints.map((point, j) => (
                             <li key={j}>{point}</li>
                           ))}
@@ -768,7 +768,7 @@ export default function SpokenLanguageTopicsPage() {
                         >
                           Potential Audience Questions
                         </h4>
-                        <ul className="ml-4 mt-2 list-disc space-y-1.5 text-sm text-muted-foreground">
+                        <ul className="ms-4 mt-2 list-disc space-y-1.5 text-sm text-muted-foreground">
                           {topic.questions.map((q, j) => (
                             <li key={j}>{q}</li>
                           ))}
@@ -789,7 +789,7 @@ export default function SpokenLanguageTopicsPage() {
           </h2>
           <div className="mt-4 space-y-3 text-sm text-muted-foreground leading-relaxed">
             <p>The best topic is one that ticks all of these boxes:</p>
-            <ul className="ml-4 list-disc space-y-2">
+            <ul className="ms-4 list-disc space-y-2">
               <li>
                 <strong>You are genuinely interested in it</strong> &mdash; passion and enthusiasm
                 come across naturally when you speak and will engage your audience.

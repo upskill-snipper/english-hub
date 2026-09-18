@@ -284,7 +284,7 @@ export default function RevisionBuilderPage() {
             {/* Target Grade */}
             <div>
               <label className="block text-sm font-medium text-muted-foreground mb-2">
-                <Target className="h-3.5 w-3.5 inline mr-1" />
+                <Target className="h-3.5 w-3.5 inline me-1" />
                 Target Grade
               </label>
               <div className="flex gap-2 flex-wrap">
@@ -332,12 +332,12 @@ export default function RevisionBuilderPage() {
             >
               {loading ? (
                 <>
-                  <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                  <Loader2 className="h-4 w-4 me-2 animate-spin" />
                   Generating...
                 </>
               ) : (
                 <>
-                  <Sparkles className="h-4 w-4 mr-2" />
+                  <Sparkles className="h-4 w-4 me-2" />
                   Generate Revision Notes
                 </>
               )}
@@ -372,11 +372,11 @@ export default function RevisionBuilderPage() {
             {/* Actions */}
             <div className="flex flex-wrap gap-3 print:hidden">
               <Button variant="outline" size="sm" onClick={downloadPDF}>
-                <Download className="h-3.5 w-3.5 mr-1.5" />
+                <Download className="h-3.5 w-3.5 me-1.5" />
                 Download PDF
               </Button>
               <Button variant="outline" size="sm" onClick={saveToMaterials}>
-                <Save className="h-3.5 w-3.5 mr-1.5" />
+                <Save className="h-3.5 w-3.5 me-1.5" />
                 Save to Materials
               </Button>
               <Button

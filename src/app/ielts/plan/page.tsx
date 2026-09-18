@@ -269,7 +269,7 @@ export default function IeltsPlanPage() {
             {t('ielts.plan.empty.body')}
           </p>
           <Button size="lg" render={<Link href="/ielts/diagnostic" />}>
-            <Target className="mr-2 h-4 w-4" />
+            <Target className="me-2 h-4 w-4" />
             {t('ielts.plan.empty.cta')}
           </Button>
         </div>
@@ -390,16 +390,16 @@ export default function IeltsPlanPage() {
 
         <div className="flex flex-col gap-3 sm:flex-row">
           <Button render={<Link href="/ielts/planner" />}>
-            <CalendarDays className="mr-2 h-4 w-4" />
+            <CalendarDays className="me-2 h-4 w-4" />
             {t('ielts.plan.cta.dated_planner')}
           </Button>
           <Button variant="outline" render={<Link href="/ielts/diagnostic" />}>
-            <Target className="mr-2 h-4 w-4" />
+            <Target className="me-2 h-4 w-4" />
             {t('ielts.plan.cta.retake')}
           </Button>
           <Button variant="outline" render={<Link href="/ielts/progress" />}>
             {t('ielts.plan.cta.view_progress')}
-            <ArrowUpRight className="ml-2 h-4 w-4" />
+            <ArrowUpRight className="ms-2 h-4 w-4" />
           </Button>
         </div>
       </div>
@@ -473,7 +473,7 @@ function SkillGapRow({ t, row, target }: { t: TFn; row: SkillRow; target: Band }
           <span className="font-semibold text-foreground">{bandLabel(target)}</span>
         </p>
       </div>
-      <div className="shrink-0 text-right">
+      <div className="shrink-0 text-end">
         {row.current === null ? (
           <span className="text-xs font-medium text-muted-foreground">
             {t('ielts.plan.stand.no_data')}

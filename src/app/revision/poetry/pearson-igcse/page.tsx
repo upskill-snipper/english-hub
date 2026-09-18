@@ -44,7 +44,7 @@ export default async function PearsonIgcsePoetryHub() {
           <Button
             variant="ghost"
             size="sm"
-            className="mb-4 -ml-2 text-muted-foreground"
+            className="mb-4 -ms-2 text-muted-foreground"
             render={<Link href="/revision/poetry" />}
           >
             <ArrowLeft className="size-3.5" />
@@ -53,7 +53,7 @@ export default async function PearsonIgcsePoetryHub() {
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
-              <Sparkles className="mr-1 size-3" />
+              <Sparkles className="me-1 size-3" />
               {await t('rev.poetry2.pearson.badge_section_b')}
             </Badge>
             <Badge variant="secondary">
@@ -82,7 +82,7 @@ export default async function PearsonIgcsePoetryHub() {
           978-1-446-93108-0, Pearson Education). Material differences from Issue 1 and from
           freely-available online versions include:
         </p>
-        <ol className="mb-2 list-decimal space-y-1 pl-5 text-muted-foreground">
+        <ol className="mb-2 list-decimal space-y-1 ps-5 text-muted-foreground">
           <li>
             <em>Half-Caste</em> uses Agard&rsquo;s spelling &lsquo;yu&rsquo; (not
             &lsquo;you&rsquo;);

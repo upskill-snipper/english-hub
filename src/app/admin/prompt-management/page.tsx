@@ -301,27 +301,27 @@ export default function AdminPromptManagementPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-border text-left text-muted-foreground">
-                    <th className="pb-3 pr-4 font-medium">{t('admin.aim.pm.col.key')}</th>
-                    <th className="pb-3 pr-4 font-medium">{t('admin.aim.pm.col.scope')}</th>
-                    <th className="pb-3 pr-4 font-medium">{t('admin.aim.pm.col.hash')}</th>
-                    <th className="pb-3 pr-4 font-medium">{t('admin.aim.pm.col.active')}</th>
-                    <th className="pb-3 pr-4 font-medium">{t('admin.aim.pm.col.created')}</th>
+                  <tr className="border-b border-border text-start text-muted-foreground">
+                    <th className="pb-3 pe-4 font-medium">{t('admin.aim.pm.col.key')}</th>
+                    <th className="pb-3 pe-4 font-medium">{t('admin.aim.pm.col.scope')}</th>
+                    <th className="pb-3 pe-4 font-medium">{t('admin.aim.pm.col.hash')}</th>
+                    <th className="pb-3 pe-4 font-medium">{t('admin.aim.pm.col.active')}</th>
+                    <th className="pb-3 pe-4 font-medium">{t('admin.aim.pm.col.created')}</th>
                     <th className="pb-3 font-medium">{t('admin.aim.pm.col.action')}</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
                   {prompts.map((p) => (
                     <tr key={p.id} className="text-foreground align-top">
-                      <td className="py-3 pr-4 font-mono text-xs">{p.prompt_key}</td>
-                      <td className="py-3 pr-4 text-xs text-muted-foreground">
+                      <td className="py-3 pe-4 font-mono text-xs">{p.prompt_key}</td>
+                      <td className="py-3 pe-4 text-xs text-muted-foreground">
                         {[p.subject, p.exam_board, p.question_type].filter(Boolean).join(' · ') ||
                           '-'}
                       </td>
-                      <td className="py-3 pr-4 font-mono text-xs">
+                      <td className="py-3 pe-4 font-mono text-xs">
                         {p.content_hash.slice(0, 12)}…
                       </td>
-                      <td className="py-3 pr-4">
+                      <td className="py-3 pe-4">
                         {p.active ? (
                           <span className="inline-block text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary">
                             {t('admin.aim.pm.is_active')}
@@ -332,7 +332,7 @@ export default function AdminPromptManagementPage() {
                           </span>
                         )}
                       </td>
-                      <td className="py-3 pr-4 text-muted-foreground text-xs">
+                      <td className="py-3 pe-4 text-muted-foreground text-xs">
                         {new Date(p.created_at).toLocaleDateString('en-GB', {
                           day: 'numeric',
                           month: 'short',

@@ -196,7 +196,7 @@ export function Markdown({ source, className }: RenderProps): React.ReactElement
                 {header.map((cell, ci) => (
                   <th
                     key={ci}
-                    className="px-3 py-2 text-left font-semibold text-foreground"
+                    className="px-3 py-2 text-start font-semibold text-foreground"
                     scope="col"
                   >
                     {parseInline(cell)}
@@ -231,7 +231,7 @@ export function Markdown({ source, className }: RenderProps): React.ReactElement
       blocks.push(
         <blockquote
           key={k()}
-          className="my-5 border-l-2 border-primary/40 bg-muted/40 py-2 pl-4 pr-3 text-muted-foreground italic"
+          className="my-5 border-s-2 border-primary/40 bg-muted/40 py-2 ps-4 pe-3 text-muted-foreground italic"
         >
           {quoteLines.map((ql, qi) => (
             <p key={qi} className={qi > 0 ? 'mt-2' : undefined}>
@@ -253,10 +253,10 @@ export function Markdown({ source, className }: RenderProps): React.ReactElement
       blocks.push(
         <ol
           key={k()}
-          className="my-4 ml-5 list-decimal space-y-2 text-muted-foreground marker:text-muted-foreground"
+          className="my-4 ms-5 list-decimal space-y-2 text-muted-foreground marker:text-muted-foreground"
         >
           {items.map((it, ii) => (
-            <li key={ii} className="pl-1 leading-relaxed">
+            <li key={ii} className="ps-1 leading-relaxed">
               {parseInline(it)}
             </li>
           ))}
@@ -275,10 +275,10 @@ export function Markdown({ source, className }: RenderProps): React.ReactElement
       blocks.push(
         <ul
           key={k()}
-          className="my-4 ml-5 list-disc space-y-2 text-muted-foreground marker:text-muted-foreground/60"
+          className="my-4 ms-5 list-disc space-y-2 text-muted-foreground marker:text-muted-foreground/60"
         >
           {items.map((it, ii) => (
-            <li key={ii} className="pl-1 leading-relaxed">
+            <li key={ii} className="ps-1 leading-relaxed">
               {parseInline(it)}
             </li>
           ))}

@@ -243,7 +243,7 @@ export default async function IeltsGuidePage() {
         <Button
           variant="ghost"
           size="sm"
-          className="-ml-2 text-muted-foreground"
+          className="-ms-2 text-muted-foreground"
           render={<Link href="/ielts" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -390,7 +390,7 @@ export default async function IeltsGuidePage() {
             {scoringIntroLead} {SCORING_RULE}
           </p>
           <div className="mt-8 overflow-hidden rounded-2xl border border-border/60">
-            <table className="w-full border-collapse text-left">
+            <table className="w-full border-collapse text-start">
               <thead>
                 <tr className="bg-muted/40 text-xs uppercase tracking-wide text-muted-foreground">
                   <th className="px-4 py-3 font-semibold">{scoringColBand}</th>
@@ -465,7 +465,7 @@ export default async function IeltsGuidePage() {
                       {meta.label}
                     </h3>
                     {isHardest ? (
-                      <Badge variant="secondary" className="ml-auto">
+                      <Badge variant="secondary" className="ms-auto">
                         {struggleBadgeHardest}
                       </Badge>
                     ) : null}
@@ -500,7 +500,7 @@ export default async function IeltsGuidePage() {
             {requirementsIntroTail}
           </p>
           <div className="mt-8 overflow-hidden rounded-2xl border border-border/60">
-            <table className="w-full border-collapse text-left">
+            <table className="w-full border-collapse text-start">
               <thead>
                 <tr className="bg-muted/40 text-xs uppercase tracking-wide text-muted-foreground">
                   <th className="px-4 py-3 font-semibold">{requirementsColWhere}</th>

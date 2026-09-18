@@ -118,7 +118,7 @@ export function EngagementHeatmap({
         {/* Grid */}
         <div className="flex gap-[2px]">
           {/* Day labels column */}
-          <div className="flex flex-col gap-[2px] mr-1 pt-4">
+          <div className="flex flex-col gap-[2px] me-1 pt-4">
             {DAY_LABELS.map((label, i) => (
               <div
                 key={label}

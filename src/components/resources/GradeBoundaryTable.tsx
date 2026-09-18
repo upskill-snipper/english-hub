@@ -64,14 +64,14 @@ export function GradeBoundaryTable({ boardId }: { boardId: string }) {
             {table.qualification} grade boundaries, {table.series}
           </caption>
           <thead>
-            <tr className="border-b border-border text-left text-muted-foreground">
-              <th scope="col" className="py-2 pr-4">
+            <tr className="border-b border-border text-start text-muted-foreground">
+              <th scope="col" className="py-2 pe-4">
                 Grade
               </th>
-              <th scope="col" className="py-2 pr-4">
+              <th scope="col" className="py-2 pe-4">
                 {table.series} raw mark{rawMax ? ` (out of ${rawMax})` : ''}
               </th>
-              <th scope="col" className="py-2 pr-4">
+              <th scope="col" className="py-2 pe-4">
                 Approx. %
               </th>
             </tr>
@@ -80,12 +80,12 @@ export function GradeBoundaryTable({ boardId }: { boardId: string }) {
             {sourced.map((t) => (
               <tr key={t.grade} className={rowClass(t.grade)}>
                 <td
-                  className={`py-2 pr-4 ${GRADE_STYLES[t.grade] ?? 'font-bold text-muted-foreground'}`}
+                  className={`py-2 pe-4 ${GRADE_STYLES[t.grade] ?? 'font-bold text-muted-foreground'}`}
                 >
                   {t.grade}
                 </td>
-                <td className="py-2 pr-4">{t.rawMark}</td>
-                <td className="py-2 pr-4">{t.pct === null ? '-' : `~${Math.round(t.pct)}%`}</td>
+                <td className="py-2 pe-4">{t.rawMark}</td>
+                <td className="py-2 pe-4">{t.pct === null ? '-' : `~${Math.round(t.pct)}%`}</td>
               </tr>
             ))}
           </tbody>

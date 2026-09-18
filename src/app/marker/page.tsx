@@ -849,7 +849,7 @@ export default function MarkerConsolePage() {
                     const f = e.target.files?.[0]
                     if (f) void uploadCv(f)
                   }}
-                  className="block w-full text-sm text-muted-foreground file:mr-3 file:rounded-md file:border file:border-border file:bg-muted file:px-3 file:py-1.5 file:text-sm file:font-medium file:text-foreground hover:file:bg-muted/70"
+                  className="block w-full text-sm text-muted-foreground file:me-3 file:rounded-md file:border file:border-border file:bg-muted file:px-3 file:py-1.5 file:text-sm file:font-medium file:text-foreground hover:file:bg-muted/70"
                 />
                 {cvUploading && (
                   <p className="flex items-center gap-1.5 text-[11px] text-muted-foreground">
@@ -884,7 +884,7 @@ export default function MarkerConsolePage() {
               </label>
 
               {applyConsent && (
-                <label className="ml-6 flex cursor-pointer items-start gap-2 rounded-md border border-border p-3 text-xs leading-relaxed text-muted-foreground">
+                <label className="ms-6 flex cursor-pointer items-start gap-2 rounded-md border border-border p-3 text-xs leading-relaxed text-muted-foreground">
                   <input
                     type="checkbox"
                     className="mt-0.5"
@@ -1366,7 +1366,7 @@ export default function MarkerConsolePage() {
                     <Label htmlFor="adj-reason">
                       {tt(t, 'marker.field.reason', 'Adjustment reason')}
                       {(changedFromDraft || submitting === 'correct') && (
-                        <span className="ml-1 text-destructive">*</span>
+                        <span className="ms-1 text-destructive">*</span>
                       )}
                     </Label>
                     <DictationButton
@@ -1420,7 +1420,7 @@ export default function MarkerConsolePage() {
                       <CheckCircle2 className="h-4 w-4" />
                     )}
                     {tt(t, 'marker.action.approve', 'Approve & next')}
-                    <span className="ml-1 opacity-60">(A)</span>
+                    <span className="ms-1 opacity-60">(A)</span>
                   </Button>
                   <Button
                     type="button"
@@ -1435,7 +1435,7 @@ export default function MarkerConsolePage() {
                       <PencilLine className="h-4 w-4" />
                     )}
                     {tt(t, 'marker.action.correct', 'Correct & next')}
-                    <span className="ml-1 opacity-60">(C)</span>
+                    <span className="ms-1 opacity-60">(C)</span>
                   </Button>
                   <Button
                     type="button"
@@ -1450,7 +1450,7 @@ export default function MarkerConsolePage() {
                       <XCircle className="h-4 w-4" />
                     )}
                     {tt(t, 'marker.action.reject', 'Reject')}
-                    <span className="ml-1 opacity-60">(R)</span>
+                    <span className="ms-1 opacity-60">(R)</span>
                   </Button>
                   <Button
                     type="button"
@@ -1460,7 +1460,7 @@ export default function MarkerConsolePage() {
                   >
                     <SkipForward className="h-4 w-4" />
                     {tt(t, 'marker.action.skip', 'Skip')}
-                    <span className="ml-1 opacity-60">(S)</span>
+                    <span className="ms-1 opacity-60">(S)</span>
                   </Button>
                 </div>
                 <p className="mt-2 text-[11px] text-muted-foreground">

@@ -291,7 +291,7 @@ export default function StudentReportPage() {
                 Student Progress Report
               </h1>
             </div>
-            <div className="text-right text-sm text-muted-foreground print:text-neutral-500">
+            <div className="text-end text-sm text-muted-foreground print:text-neutral-500">
               <div className="w-16 h-16 border-2 border-dashed border-border print:border-neutral-400 rounded-lg flex items-center justify-center text-[10px] text-muted-foreground print:text-neutral-500 mb-1 font-medium">
                 LOGO
               </div>
@@ -440,7 +440,7 @@ export default function StudentReportPage() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-muted print:bg-neutral-200">
-                    <th className="text-left px-3 py-2.5 font-semibold text-muted-foreground print:text-black rounded-tl-lg print:rounded-none">
+                    <th className="text-start px-3 py-2.5 font-semibold text-muted-foreground print:text-black rounded-ss-lg print:rounded-none">
                       Assessment
                     </th>
                     <th className="text-center px-3 py-2.5 font-semibold text-muted-foreground print:text-black">
@@ -452,7 +452,7 @@ export default function StudentReportPage() {
                     <th className="text-center px-3 py-2.5 font-semibold text-muted-foreground print:text-black">
                       Score
                     </th>
-                    <th className="text-center px-3 py-2.5 font-semibold text-muted-foreground print:text-black rounded-tr-lg print:rounded-none">
+                    <th className="text-center px-3 py-2.5 font-semibold text-muted-foreground print:text-black rounded-se-lg print:rounded-none">
                       Grade
                     </th>
                   </tr>
@@ -601,7 +601,7 @@ export default function StudentReportPage() {
                       style={{ height: '70px' }}
                     >
                       <div
-                        className={`absolute bottom-0 left-0 right-0 rounded-t transition-all ${
+                        className={`absolute bottom-0 start-0 end-0 rounded-t transition-all ${
                           score >= 70
                             ? 'bg-primary print:bg-teal-800'
                             : score >= 50
@@ -645,7 +645,7 @@ export default function StudentReportPage() {
                       style={{ width: `${pct}%` }}
                     />
                   </div>
-                  <span className="text-sm text-muted-foreground print:text-black w-12 text-right font-semibold">
+                  <span className="text-sm text-muted-foreground print:text-black w-12 text-end font-semibold">
                     {mod.score > 0 ? percentageToGCSEGradeLabel(mod.score) : '--'}
                   </span>
                   <span
@@ -812,7 +812,7 @@ export default function StudentReportPage() {
           </h2>
           <ol className="list-decimal list-inside space-y-2 text-sm text-muted-foreground print:text-black">
             {student.recommendations.map((rec, i) => (
-              <li key={i} className="leading-relaxed pl-1">
+              <li key={i} className="leading-relaxed ps-1">
                 {rec}
               </li>
             ))}
@@ -836,7 +836,7 @@ export default function StudentReportPage() {
                     : 'potential in class discussions but this is not yet reflected in their written work. Consistent attendance, completion of set work, and engagement with support sessions are essential to make progress.'}
               &quot;
             </p>
-            <p className="text-sm text-muted-foreground print:text-neutral-500 mt-3 text-right">
+            <p className="text-sm text-muted-foreground print:text-neutral-500 mt-3 text-end">
               - {student.teacherName}, {student.className}
             </p>
           </div>
@@ -891,7 +891,7 @@ export default function StudentReportPage() {
                   </svg>
                   <div>
                     <span className="text-muted-foreground font-medium">{report.type}</span>
-                    <span className="text-muted-foreground ml-2">-- {report.term}</span>
+                    <span className="text-muted-foreground ms-2">-- {report.term}</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">

@@ -33,7 +33,7 @@ export default async function TextsRevisionPage() {
           <p className="mt-2 text-slate-600">{await t('texts.boardless.intro')}</p>
 
           <h3 className="mt-6 text-lg font-semibold">{await t('texts.section.shakespeare')}</h3>
-          <ul className="mt-2 list-disc space-y-1 pl-6 text-slate-700">
+          <ul className="mt-2 list-disc space-y-1 ps-6 text-slate-700">
             <li>
               <Link className="text-blue-700 hover:underline" href="/revision/texts/macbeth">
                 Macbeth
@@ -73,7 +73,7 @@ export default async function TextsRevisionPage() {
           </ul>
 
           <h3 className="mt-6 text-lg font-semibold">{await t('texts.section.c19_novel')}</h3>
-          <ul className="mt-2 list-disc space-y-1 pl-6 text-slate-700">
+          <ul className="mt-2 list-disc space-y-1 ps-6 text-slate-700">
             <li>
               <Link
                 className="text-blue-700 hover:underline"
@@ -130,7 +130,7 @@ export default async function TextsRevisionPage() {
           <h3 className="mt-6 text-lg font-semibold">
             {await t('texts.section.modern_prose_drama')}
           </h3>
-          <ul className="mt-2 list-disc space-y-1 pl-6 text-slate-700">
+          <ul className="mt-2 list-disc space-y-1 ps-6 text-slate-700">
             <li>
               <Link
                 className="text-blue-700 hover:underline"
@@ -172,7 +172,7 @@ export default async function TextsRevisionPage() {
             </li>
             <li>
               DNA{' '}
-              <span className="ml-1 inline-block rounded bg-slate-200 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-600">
+              <span className="ms-1 inline-block rounded bg-slate-200 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-600">
                 Coming soon
               </span>{' '}
               - responsibility, group dynamics, tragedy; AQA only
@@ -180,10 +180,10 @@ export default async function TextsRevisionPage() {
           </ul>
 
           <h3 className="mt-6 text-lg font-semibold">{await t('texts.section.igcse_a_level')}</h3>
-          <ul className="mt-2 list-disc space-y-1 pl-6 text-slate-700">
+          <ul className="mt-2 list-disc space-y-1 ps-6 text-slate-700">
             <li>
               The Kite Runner{' '}
-              <span className="ml-1 inline-block rounded bg-slate-200 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-600">
+              <span className="ms-1 inline-block rounded bg-slate-200 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-600">
                 Coming soon
               </span>{' '}
               - guilt, friendship, Afghan history; Cambridge IGCSE 0475
@@ -199,7 +199,7 @@ export default async function TextsRevisionPage() {
             </li>
             <li>
               Spies{' '}
-              <span className="ml-1 inline-block rounded bg-slate-200 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-600">
+              <span className="ms-1 inline-block rounded bg-slate-200 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-600">
                 Coming soon
               </span>{' '}
               - memory, wartime, narrative unreliability; Cambridge IGCSE 0475
@@ -212,7 +212,7 @@ export default async function TextsRevisionPage() {
           <p className="mt-1 text-sm text-slate-600">
             {await t('texts.section.pearson_anthology_note')}
           </p>
-          <ul className="mt-2 list-disc space-y-1 pl-6 text-slate-700">
+          <ul className="mt-2 list-disc space-y-1 ps-6 text-slate-700">
             <li>
               <strong>{await t('texts.label.non_fiction')}</strong>{' '}
               <Link

@@ -181,7 +181,7 @@ export default async function EssayStructurePage() {
             <div key={tech.title} className="rounded-xl border border-border bg-card p-6 shadow-md">
               <h3 className="font-bold text-foreground">{tech.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{tech.desc}</p>
-              <blockquote className="mt-4 rounded-lg border-l-4 border-primary bg-muted px-4 py-3 text-sm italic text-muted-foreground leading-relaxed">
+              <blockquote className="mt-4 rounded-lg border-s-4 border-primary bg-muted px-4 py-3 text-sm italic text-muted-foreground leading-relaxed">
                 {tech.example}
               </blockquote>
               <p className="mt-3 text-xs font-semibold text-primary">Best for: {tech.best}</p>
@@ -247,7 +247,7 @@ export default async function EssayStructurePage() {
                 <div className="min-w-0">
                   <h3 className="font-bold text-foreground">{step.label}</h3>
                   <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
-                  <blockquote className="mt-3 rounded-lg border-l-4 border-primary bg-muted px-4 py-3 text-sm italic text-muted-foreground leading-relaxed">
+                  <blockquote className="mt-3 rounded-lg border-s-4 border-primary bg-muted px-4 py-3 text-sm italic text-muted-foreground leading-relaxed">
                     {step.example}
                   </blockquote>
                 </div>
@@ -374,7 +374,7 @@ export default async function EssayStructurePage() {
                     </span>
                   ))}
                 </div>
-                <blockquote className="mt-4 rounded-lg border-l-4 border-primary bg-muted px-4 py-3 text-sm italic text-muted-foreground leading-relaxed">
+                <blockquote className="mt-4 rounded-lg border-s-4 border-primary bg-muted px-4 py-3 text-sm italic text-muted-foreground leading-relaxed">
                   {link.example}
                 </blockquote>
               </div>
@@ -396,7 +396,7 @@ export default async function EssayStructurePage() {
           <div className="hidden sm:block">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-border text-left text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                <tr className="border-b border-border text-start text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                   <th className="px-6 py-3">Mark allocation</th>
                   <th className="px-6 py-3">Suggested paragraphs</th>
                   <th className="px-6 py-3">Structure</th>
@@ -528,7 +528,7 @@ export default async function EssayStructurePage() {
               >
                 <h3 className="font-bold text-foreground">{tech.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{tech.desc}</p>
-                <blockquote className="mt-4 rounded-lg border-l-4 border-primary bg-muted px-4 py-3 text-sm italic text-muted-foreground leading-relaxed">
+                <blockquote className="mt-4 rounded-lg border-s-4 border-primary bg-muted px-4 py-3 text-sm italic text-muted-foreground leading-relaxed">
                   {tech.example}
                 </blockquote>
               </div>

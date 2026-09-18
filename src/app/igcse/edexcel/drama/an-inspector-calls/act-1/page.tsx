@@ -108,7 +108,7 @@ export default async function InspectorCallsAct1Page() {
         <div className="relative">
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="border-primary/20 bg-primary/10 text-primary">
-              <Sparkles className="mr-1 size-3" />
+              <Sparkles className="me-1 size-3" />
               {await t('igcse.page.badge_edexcel_lit')}
             </Badge>
             <Badge variant="secondary">Act 1 Analysis</Badge>
@@ -150,7 +150,7 @@ export default async function InspectorCallsAct1Page() {
               <p className="mt-3 text-body-sm leading-relaxed text-muted-foreground">
                 {s.analysis}
               </p>
-              <blockquote className="mt-3 border-l-2 border-primary/40 pl-3 text-body-sm italic text-foreground">
+              <blockquote className="mt-3 border-s-2 border-primary/40 ps-3 text-body-sm italic text-foreground">
                 {s.quote}
               </blockquote>
             </article>

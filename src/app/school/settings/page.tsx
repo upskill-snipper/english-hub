@@ -526,7 +526,7 @@ function JoinCodeSection() {
                 </p>
               </div>
               <Button variant="outline" size="sm" onClick={handleCopy} className="shrink-0">
-                <Copy className="mr-1.5 h-3.5 w-3.5" />
+                <Copy className="me-1.5 h-3.5 w-3.5" />
                 {copied ? t('school.settings.joincode.copied') : t('school.settings.joincode.copy')}
               </Button>
             </div>

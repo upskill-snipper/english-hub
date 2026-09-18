@@ -37,10 +37,10 @@ export function RouteError({
       </div>
       <div className="flex gap-3">
         <Button variant="outline" onClick={reset}>
-          <RotateCcw className="mr-2 size-4" /> {t('error.try_again')}
+          <RotateCcw className="me-2 size-4" /> {t('error.try_again')}
         </Button>
         <Button render={<Link href="/" />}>
-          <Home className="mr-2 size-4" /> {t('error.go_home')}
+          <Home className="me-2 size-4" /> {t('error.go_home')}
         </Button>
       </div>
     </div>

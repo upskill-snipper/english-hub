@@ -643,21 +643,21 @@ export default async function Paper1Page() {
           <div className="mt-4 overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b-2 border-primary text-left">
-                  <th className="py-2 pr-4 font-semibold text-foreground">Section</th>
-                  <th className="py-2 pr-4 font-semibold text-foreground">Time</th>
+                <tr className="border-b-2 border-primary text-start">
+                  <th className="py-2 pe-4 font-semibold text-foreground">Section</th>
+                  <th className="py-2 pe-4 font-semibold text-foreground">Time</th>
                   <th className="py-2 font-semibold text-foreground">Tip</th>
                 </tr>
               </thead>
               <tbody className="text-muted-foreground">
                 <tr className="border-b border-border">
-                  <td className="py-3 pr-4 font-medium">{_tr(`Section A: Shakespeare`)}</td>
-                  <td className="py-3 pr-4">~55 mins</td>
+                  <td className="py-3 pe-4 font-medium">{_tr(`Section A: Shakespeare`)}</td>
+                  <td className="py-3 pe-4">~55 mins</td>
                   <td className="py-3">{_tr(`Spend 5 mins planning. Write 4-5 paragraphs.`)}</td>
                 </tr>
                 <tr className="border-b border-border">
-                  <td className="py-3 pr-4 font-medium">{_tr(`Section B: Post-1914`)}</td>
-                  <td className="py-3 pr-4">~50 mins</td>
+                  <td className="py-3 pe-4 font-medium">{_tr(`Section B: Post-1914`)}</td>
+                  <td className="py-3 pe-4">~50 mins</td>
                   <td className="py-3">{_tr(`Spend 5 mins planning. Write 4-5 paragraphs.`)}</td>
                 </tr>
               </tbody>

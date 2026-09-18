@@ -312,7 +312,7 @@ export default function CancelSubscriptionPage() {
             </h1>
             <p className="text-muted-foreground mb-6">{t('dashboard.cancel.step4_desc')}</p>
 
-            <div className="bg-muted rounded-xl p-6 mb-8 text-left space-y-3">
+            <div className="bg-muted rounded-xl p-6 mb-8 text-start space-y-3">
               <div className="flex justify-between">
                 <span className="text-sm text-muted-foreground">Access until</span>
                 <span className="text-sm text-foreground font-medium">

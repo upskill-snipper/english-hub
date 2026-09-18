@@ -67,12 +67,9 @@ function scoreToTextColor(score: number): string {
 }
 
 function scoreToCellColor(score: number): string {
-  if (score < 40)
-    return 'bg-red-500/25 border-red-500/40 hover:bg-red-500/35'
-  if (score < 55)
-    return 'bg-orange-500/20 border-orange-500/35 hover:bg-orange-500/30'
-  if (score < 70)
-    return 'bg-amber-500/15 border-amber-500/30 hover:bg-amber-500/25'
+  if (score < 40) return 'bg-red-500/25 border-red-500/40 hover:bg-red-500/35'
+  if (score < 55) return 'bg-orange-500/20 border-orange-500/35 hover:bg-orange-500/30'
+  if (score < 70) return 'bg-amber-500/15 border-amber-500/30 hover:bg-amber-500/25'
   return 'bg-green-500/15 border-green-500/30 hover:bg-green-500/25'
 }
 
@@ -175,7 +172,7 @@ const GridHeatMap = memo(function GridHeatMap({
 
   const sortIndicator = (key: SortKey) => {
     if (sortKey !== key) return null
-    return <span className="ml-0.5 text-[10px]">{sortDir === 'asc' ? '\u25B2' : '\u25BC'}</span>
+    return <span className="ms-0.5 text-[10px]">{sortDir === 'asc' ? '\u25B2' : '\u25BC'}</span>
   }
 
   return (
@@ -208,7 +205,7 @@ const GridHeatMap = memo(function GridHeatMap({
           <thead>
             <tr className="border-b bg-muted/30">
               <th
-                className="sticky left-0 z-10 cursor-pointer bg-muted/30 px-3 py-2 text-left font-semibold text-muted-foreground hover:text-foreground"
+                className="sticky start-0 z-10 cursor-pointer bg-muted/30 px-3 py-2 text-start font-semibold text-muted-foreground hover:text-foreground"
                 onClick={() => handleSort('name')}
               >
                 Student{sortIndicator('name')}
@@ -241,11 +238,16 @@ const GridHeatMap = memo(function GridHeatMap({
               if (!hasWeakCell) return null
               return (
                 <tr key={student.studentId} className="border-b last:border-b-0 hover:bg-muted/20">
-                  <td className="sticky left-0 z-10 bg-background px-3 py-2 font-medium text-foreground whitespace-nowrap">
+                  <td className="sticky start-0 z-10 bg-background px-3 py-2 font-medium text-foreground whitespace-nowrap">
                     {student.studentName}
                   </td>
                   <td className="px-2 py-2 text-center">
-                    <span className={cn('font-semibold tabular-nums', scoreToTextColor(student.overallScore))}>
+                    <span
+                      className={cn(
+                        'font-semibold tabular-nums',
+                        scoreToTextColor(student.overallScore),
+                      )}
+                    >
                       {Math.round(student.overallScore)}%
                     </span>
                   </td>
@@ -264,9 +266,7 @@ const GridHeatMap = memo(function GridHeatMap({
                         )}
                         style={{
                           backgroundColor:
-                            score !== undefined && !dimmed
-                              ? scoreToInlineBg(score)
-                              : undefined,
+                            score !== undefined && !dimmed ? scoreToInlineBg(score) : undefined,
                         }}
                         onClick={() =>
                           score !== undefined &&
@@ -292,7 +292,8 @@ const GridHeatMap = memo(function GridHeatMap({
                           <div className="absolute -top-10 left-1/2 z-30 -translate-x-1/2 rounded-md bg-foreground px-2.5 py-1.5 text-[11px] text-background whitespace-nowrap shadow-lg">
                             <p className="font-semibold">{student.studentName}</p>
                             <p>
-                              {skill}: Grade {percentageToGCSEGrade(Math.round(score))} ({Math.round(score)}%)
+                              {skill}: Grade {percentageToGCSEGrade(Math.round(score))} (
+                              {Math.round(score)}%)
                               {isBelow && ' (below threshold)'}
                             </p>
                             <div className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-[var(--foreground)]" />
@@ -308,7 +309,7 @@ const GridHeatMap = memo(function GridHeatMap({
           {/* Column averages footer */}
           <tfoot>
             <tr className="border-t-2 bg-muted/40">
-              <td className="sticky left-0 z-10 bg-muted/40 px-3 py-2 text-xs font-bold text-muted-foreground">
+              <td className="sticky start-0 z-10 bg-muted/40 px-3 py-2 text-xs font-bold text-muted-foreground">
                 Class Average
               </td>
               <td className="px-2 py-2 text-center">
@@ -323,7 +324,12 @@ const GridHeatMap = memo(function GridHeatMap({
               </td>
               {skills.map((skill) => (
                 <td key={skill} className="px-2 py-2 text-center">
-                  <span className={cn('font-bold tabular-nums', scoreToTextColor(columnAverages[skill]))}>
+                  <span
+                    className={cn(
+                      'font-bold tabular-nums',
+                      scoreToTextColor(columnAverages[skill]),
+                    )}
+                  >
                     {columnAverages[skill]}
                   </span>
                 </td>
@@ -335,7 +341,7 @@ const GridHeatMap = memo(function GridHeatMap({
 
       {/* Legend */}
       <div className="mt-3 flex flex-wrap items-center gap-1 text-[10px] text-muted-foreground">
-        <span className="mr-1.5 font-medium">Score scale:</span>
+        <span className="me-1.5 font-medium">Score scale:</span>
         {[
           { bg: 'bg-red-500/30', label: '<30%' },
           { bg: 'bg-red-500/20', label: '30-40%' },
@@ -345,7 +351,7 @@ const GridHeatMap = memo(function GridHeatMap({
           { bg: 'bg-green-500/10', label: '70-80%' },
           { bg: 'bg-green-500/20', label: '80%+' },
         ].map((item) => (
-          <div key={item.label} className="flex items-center gap-0.5 ml-1">
+          <div key={item.label} className="flex items-center gap-0.5 ms-1">
             <div className={cn('h-3 w-5 rounded-sm', item.bg)} />
             <span>{item.label}</span>
           </div>
@@ -427,8 +433,8 @@ export const WeakAreaHeatMap = memo(function WeakAreaHeatMap({
               <div className="absolute -top-12 left-1/2 -translate-x-1/2 z-20 rounded-md bg-foreground px-3 py-1.5 text-xs text-background whitespace-nowrap shadow-lg">
                 <p className="font-medium">{area.module_name ?? area.course_name}</p>
                 <p>
-                  Avg: Grade {percentageToGCSEGrade(Math.round(area.avg_score))} ({Math.round(area.avg_score)}%) &middot;{' '}
-                  {area.students_below_threshold} student
+                  Avg: Grade {percentageToGCSEGrade(Math.round(area.avg_score))} (
+                  {Math.round(area.avg_score)}%) &middot; {area.students_below_threshold} student
                   {area.students_below_threshold !== 1 ? 's' : ''} struggling
                 </p>
                 <div className="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-x-4 border-x-transparent border-t-4 border-t-foreground" />
@@ -460,18 +466,13 @@ export const WeakAreaHeatMap = memo(function WeakAreaHeatMap({
               {area.module_name ?? area.course_name}
             </p>
             {area.module_name && (
-              <p className="text-xs text-muted-foreground truncate mt-0.5">
-                {area.course_name}
-              </p>
+              <p className="text-xs text-muted-foreground truncate mt-0.5">{area.course_name}</p>
             )}
 
             {/* Students struggling count */}
             <p className="mt-2 text-xs text-muted-foreground">
-              <span className="font-semibold text-foreground">
-                {area.students_below_threshold}
-              </span>{' '}
-              student{area.students_below_threshold !== 1 ? 's' : ''} below
-              threshold
+              <span className="font-semibold text-foreground">{area.students_below_threshold}</span>{' '}
+              student{area.students_below_threshold !== 1 ? 's' : ''} below threshold
             </p>
           </div>
         ))}
@@ -479,20 +480,20 @@ export const WeakAreaHeatMap = memo(function WeakAreaHeatMap({
 
       {/* Legend bar */}
       <div className="mt-4 flex items-center gap-1 text-xs text-muted-foreground">
-        <span className="mr-2">Score scale:</span>
+        <span className="me-2">Score scale:</span>
         <div className="flex items-center gap-1">
           <div className="h-3 w-8 rounded-sm bg-red-500/25" />
           <span>&lt;40%</span>
         </div>
-        <div className="flex items-center gap-1 ml-2">
+        <div className="flex items-center gap-1 ms-2">
           <div className="h-3 w-8 rounded-sm bg-orange-500/20" />
           <span>40-55%</span>
         </div>
-        <div className="flex items-center gap-1 ml-2">
+        <div className="flex items-center gap-1 ms-2">
           <div className="h-3 w-8 rounded-sm bg-amber-500/15" />
           <span>55-70%</span>
         </div>
-        <div className="flex items-center gap-1 ml-2">
+        <div className="flex items-center gap-1 ms-2">
           <div className="h-3 w-8 rounded-sm bg-green-500/15" />
           <span>&gt;70%</span>
         </div>

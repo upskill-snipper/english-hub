@@ -267,7 +267,7 @@ export default async function AITransparencyPage() {
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4">{s1H}</h2>
         <p className="mb-3">{s1P}</p>
-        <ul className="list-disc pl-6 space-y-2">
+        <ul className="list-disc ps-6 space-y-2">
           <li>
             <strong>{s1L1s}</strong>
             {s1L1t}
@@ -291,7 +291,7 @@ export default async function AITransparencyPage() {
       {/* Section 2 */}
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4">{s2H}</h2>
-        <ol className="list-decimal pl-6 space-y-3">
+        <ol className="list-decimal ps-6 space-y-3">
           <li>
             <strong>{s2L1s}</strong>
             {s2L1t}
@@ -318,7 +318,7 @@ export default async function AITransparencyPage() {
       {/* Section 3 */}
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4">{s3H}</h2>
-        <ul className="list-disc pl-6 space-y-2">
+        <ul className="list-disc ps-6 space-y-2">
           <li>
             <strong>{s3L1s}</strong>
             {s3L1t}
@@ -344,19 +344,19 @@ export default async function AITransparencyPage() {
         <h2 className="text-2xl font-bold mb-4">{s4H}</h2>
         <p className="mb-3">{s4P}</p>
         <div className="space-y-4">
-          <div className="border-l-4 border-primary pl-4">
+          <div className="border-s-4 border-primary ps-4">
             <h3 className="font-semibold">{s4R1h}</h3>
             <p className="text-sm">{s4R1p}</p>
           </div>
-          <div className="border-l-4 border-primary pl-4">
+          <div className="border-s-4 border-primary ps-4">
             <h3 className="font-semibold">{s4R2h}</h3>
             <p className="text-sm">{s4R2p}</p>
           </div>
-          <div className="border-l-4 border-primary pl-4">
+          <div className="border-s-4 border-primary ps-4">
             <h3 className="font-semibold">{s4R3h}</h3>
             <p className="text-sm">{s4R3p}</p>
           </div>
-          <div className="border-l-4 border-primary pl-4">
+          <div className="border-s-4 border-primary ps-4">
             <h3 className="font-semibold">{s4R4h}</h3>
             <p className="text-sm">
               {s4R4Pre}
@@ -371,7 +371,7 @@ export default async function AITransparencyPage() {
       {/* Section 5 */}
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4">{s5H}</h2>
-        <ol className="list-decimal pl-6 space-y-2 mb-4">
+        <ol className="list-decimal ps-6 space-y-2 mb-4">
           <li>
             <strong>{s5L1s}</strong>
             {s5L1Pre}
@@ -390,7 +390,7 @@ export default async function AITransparencyPage() {
         </ol>
         <div className="bg-muted rounded-lg p-4 text-sm">
           <p className="font-semibold mb-2">{s5Bh}</p>
-          <ul className="list-disc pl-6 space-y-1">
+          <ul className="list-disc ps-6 space-y-1">
             <li>
               {s5B1Pre}
               <strong>{s5B1s}</strong>
@@ -409,7 +409,7 @@ export default async function AITransparencyPage() {
       {/* Section 6 */}
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4">{s6H}</h2>
-        <ul className="list-disc pl-6 space-y-2">
+        <ul className="list-disc ps-6 space-y-2">
           <li>
             <strong>{s6L1s}</strong>
             {s6L1t}
@@ -434,14 +434,14 @@ export default async function AITransparencyPage() {
         <h2 className="text-2xl font-bold mb-4">{s7H}</h2>
 
         <h3 className="text-lg font-semibold mb-2">{s7Hc}</h3>
-        <ul className="list-disc pl-6 space-y-1 mb-4">
+        <ul className="list-disc ps-6 space-y-1 mb-4">
           <li>{s7C1}</li>
           <li>{s7C2}</li>
           <li>{s7C3}</li>
         </ul>
 
         <h3 className="text-lg font-semibold mb-2">{s7Hn}</h3>
-        <ul className="list-disc pl-6 space-y-1 mb-4">
+        <ul className="list-disc ps-6 space-y-1 mb-4">
           <li>
             {s7N1Pre}
             <strong>{s7N1s}</strong>
@@ -460,7 +460,7 @@ export default async function AITransparencyPage() {
         </ul>
 
         <h3 className="text-lg font-semibold mb-2">{s7Hk}</h3>
-        <ul className="list-disc pl-6 space-y-1 mb-4">
+        <ul className="list-disc ps-6 space-y-1 mb-4">
           <li>{s7K1}</li>
           <li>
             {s7K2Pre}
@@ -470,7 +470,7 @@ export default async function AITransparencyPage() {
         </ul>
 
         <h3 className="text-lg font-semibold mb-2">{s7Hki}</h3>
-        <ul className="list-disc pl-6 space-y-1">
+        <ul className="list-disc ps-6 space-y-1">
           <li>{s7Ki1}</li>
           <li>{s7Ki2}</li>
           <li>{s7Ki3}</li>

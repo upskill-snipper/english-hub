@@ -586,7 +586,7 @@ function Eyebrow({ children, tone }: { children: React.ReactNode; tone: 'emerald
 
 function Prose({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mt-4 space-y-4 text-sm sm:text-base text-muted-foreground leading-relaxed [&_strong]:text-foreground [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-2 [&_a]:underline [&_a]:underline-offset-4 [&_a:hover]:text-clay-600 dark:[&_a:hover]:text-clay-300">
+    <div className="mt-4 space-y-4 text-sm sm:text-base text-muted-foreground leading-relaxed [&_strong]:text-foreground [&_ul]:list-disc [&_ul]:ps-5 [&_ul]:space-y-2 [&_a]:underline [&_a]:underline-offset-4 [&_a:hover]:text-clay-600 dark:[&_a:hover]:text-clay-300">
       {children}
     </div>
   )

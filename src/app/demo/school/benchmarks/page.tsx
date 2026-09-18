@@ -171,7 +171,7 @@ export default function BenchmarksPage() {
           disabled={downloading}
           className="bg-primary hover:bg-primary/90 text-primary-foreground"
         >
-          <Download className="h-4 w-4 mr-2" />
+          <Download className="h-4 w-4 me-2" />
           {downloading ? tx('demo.b15.bench.downloading') : tx('demo.b15.bench.download_btn')}
         </Button>
       </div>
@@ -189,7 +189,7 @@ export default function BenchmarksPage() {
                     <Icon className="h-5 w-5 text-primary" />
                   </div>
                   <Badge className="bg-green-500/10 text-green-700 dark:text-green-300 border-green-500/30">
-                    <ArrowUpRight className="h-3 w-3 mr-1" />
+                    <ArrowUpRight className="h-3 w-3 me-1" />
                     {isAtRisk ? 'Better' : 'Above Avg'}
                   </Badge>
                 </div>
@@ -198,7 +198,7 @@ export default function BenchmarksPage() {
                   <span className="text-2xl font-bold text-foreground">
                     {card.school}%
                     {card.label === 'Average Score' && (
-                      <span className="text-base font-normal text-muted-foreground ml-1">
+                      <span className="text-base font-normal text-muted-foreground ms-1">
                         (Grade {percentageToGCSEGrade(card.school)})
                       </span>
                     )}
@@ -230,19 +230,19 @@ export default function BenchmarksPage() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-border text-muted-foreground">
-                  <th className="text-left py-3 px-4 font-medium">
+                  <th className="text-start py-3 px-4 font-medium">
                     {tx('demo.b15.bench.col_year')}
                   </th>
-                  <th className="text-right py-3 px-4 font-medium">
+                  <th className="text-end py-3 px-4 font-medium">
                     {tx('demo.b15.bench.col_school_avg')}
                   </th>
-                  <th className="text-right py-3 px-4 font-medium">
+                  <th className="text-end py-3 px-4 font-medium">
                     {tx('demo.b15.bench.col_national_avg')}
                   </th>
-                  <th className="text-right py-3 px-4 font-medium">
+                  <th className="text-end py-3 px-4 font-medium">
                     {tx('demo.b15.bench.col_diff')}
                   </th>
-                  <th className="text-right py-3 px-4 font-medium">
+                  <th className="text-end py-3 px-4 font-medium">
                     {tx('demo.b15.bench.col_percentile')}
                   </th>
                 </tr>
@@ -254,24 +254,24 @@ export default function BenchmarksPage() {
                     className="border-b border-border/60 hover:bg-muted/60 transition-colors"
                   >
                     <td className="py-3 px-4 text-foreground font-medium">{row.year}</td>
-                    <td className="text-right py-3 px-4 text-foreground">
+                    <td className="text-end py-3 px-4 text-foreground">
                       {row.school}%{' '}
                       <span className="text-foreground text-xs">
                         (G{percentageToGCSEGrade(row.school)})
                       </span>
                     </td>
-                    <td className="text-right py-3 px-4 text-muted-foreground">
+                    <td className="text-end py-3 px-4 text-muted-foreground">
                       {row.national}%{' '}
                       <span className="text-muted-foreground text-xs">
                         (G{percentageToGCSEGrade(row.national)})
                       </span>
                     </td>
-                    <td className="text-right py-3 px-4">
+                    <td className="text-end py-3 px-4">
                       <span className="text-green-700 dark:text-green-300 font-medium">
                         +{row.diff}%
                       </span>
                     </td>
-                    <td className="text-right py-3 px-4">
+                    <td className="text-end py-3 px-4">
                       <Badge
                         className={
                           row.percentile >= 75
@@ -394,7 +394,7 @@ export default function BenchmarksPage() {
             </RLineChart>
           </ChartFrame>
           <div className="flex items-center gap-4 text-xs text-foreground mt-2 pt-2 border-t border-border">
-            <span className="ml-auto text-foreground">+7% improvement over 4 terms</span>
+            <span className="ms-auto text-foreground">+7% improvement over 4 terms</span>
           </div>
         </CardContent>
       </Card>

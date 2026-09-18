@@ -96,7 +96,7 @@ export function SchoolComparison() {
       {/* CTA callout */}
       <div className="max-w-5xl mx-auto mb-8">
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 px-6 py-5">
-          <div className="text-center sm:text-left">
+          <div className="text-center sm:text-start">
             <p className="text-slate-300 text-sm font-medium uppercase tracking-widest mb-1">
               Founding Schools Programme
             </p>
@@ -120,7 +120,7 @@ export function SchoolComparison() {
         <table className="w-full min-w-[640px] border-collapse">
           <thead>
             <tr className="bg-slate-800">
-              <th className="px-6 py-4 text-left text-slate-400 text-sm font-semibold uppercase tracking-wider w-1/3">
+              <th className="px-6 py-4 text-start text-slate-400 text-sm font-semibold uppercase tracking-wider w-1/3">
                 Feature
               </th>
               <th className="px-6 py-4 text-center text-slate-300 text-sm font-semibold uppercase tracking-wider w-1/3">

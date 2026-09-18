@@ -307,7 +307,7 @@ export function ReadinessReportClient({ hasAccess }: { hasAccess: boolean }) {
                       {t('ielts.readiness.domain.weight_suffix') || 'of 100'}
                     </p>
                   </div>
-                  <div className="shrink-0 text-right">
+                  <div className="shrink-0 text-end">
                     <p className={cn('font-mono text-2xl font-bold', c.text, locked && 'blur-sm')}>
                       {Math.round(d.earned)}
                       <span className="text-sm text-muted-foreground">/{d.weight}</span>
@@ -360,7 +360,7 @@ export function ReadinessReportClient({ hasAccess }: { hasAccess: boolean }) {
                                 <span className={cn('font-mono', meta.colour)}>{meta.short}</span>
                                 {meta.label}
                               </span>
-                              <span className="text-right text-xs">
+                              <span className="text-end text-xs">
                                 <span className="font-semibold text-foreground">
                                   {bandLabel(row.current)}
                                 </span>
@@ -369,11 +369,11 @@ export function ReadinessReportClient({ hasAccess }: { hasAccess: boolean }) {
                                   / {bandLabel(row.target)}
                                 </span>
                                 {row.current !== null && !row.meetsTarget ? (
-                                  <span className="ml-1 font-semibold text-rose-500">
+                                  <span className="ms-1 font-semibold text-rose-500">
                                     +{Math.round(row.gap * 10) / 10}
                                   </span>
                                 ) : row.current !== null ? (
-                                  <CheckCircle2 className="ml-1 inline h-3 w-3 text-emerald-500" />
+                                  <CheckCircle2 className="ms-1 inline h-3 w-3 text-emerald-500" />
                                 ) : null}
                               </span>
                             </div>

@@ -249,15 +249,15 @@ export default async function TrainingDataAdminPage() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-border text-left text-muted-foreground">
-                  <th className="pb-3 pr-4 font-medium">{t('admin.training.col.anon_id')}</th>
-                  <th className="pb-3 pr-4 font-medium">{t('admin.training.col.board')}</th>
-                  <th className="pb-3 pr-4 font-medium">{t('admin.training.col.paper')}</th>
-                  <th className="pb-3 pr-4 font-medium">{t('admin.training.col.qtype')}</th>
-                  <th className="pb-3 pr-4 font-medium">{t('admin.training.col.ai')}</th>
-                  <th className="pb-3 pr-4 font-medium">{t('admin.training.col.teacher')}</th>
-                  <th className="pb-3 pr-4 font-medium">{t('admin.training.col.delta')}</th>
-                  <th className="pb-3 pr-4 font-medium">{t('admin.training.col.source')}</th>
+                <tr className="border-b border-border text-start text-muted-foreground">
+                  <th className="pb-3 pe-4 font-medium">{t('admin.training.col.anon_id')}</th>
+                  <th className="pb-3 pe-4 font-medium">{t('admin.training.col.board')}</th>
+                  <th className="pb-3 pe-4 font-medium">{t('admin.training.col.paper')}</th>
+                  <th className="pb-3 pe-4 font-medium">{t('admin.training.col.qtype')}</th>
+                  <th className="pb-3 pe-4 font-medium">{t('admin.training.col.ai')}</th>
+                  <th className="pb-3 pe-4 font-medium">{t('admin.training.col.teacher')}</th>
+                  <th className="pb-3 pe-4 font-medium">{t('admin.training.col.delta')}</th>
+                  <th className="pb-3 pe-4 font-medium">{t('admin.training.col.source')}</th>
                   <th className="pb-3 font-medium">{t('admin.training.col.created')}</th>
                 </tr>
               </thead>
@@ -265,27 +265,27 @@ export default async function TrainingDataAdminPage() {
                 {recent.map((r) => (
                   <tr key={r.anon_submission_id} className="text-foreground">
                     <td
-                      className="py-3 pr-4 font-mono text-xs truncate max-w-[140px]"
+                      className="py-3 pe-4 font-mono text-xs truncate max-w-[140px]"
                       title={r.anon_submission_id}
                     >
                       {r.anon_submission_id.slice(0, 12)}…
                     </td>
-                    <td className="py-3 pr-4">
+                    <td className="py-3 pe-4">
                       {r.exam_board || <span className="text-muted-foreground">--</span>}
                     </td>
-                    <td className="py-3 pr-4">
+                    <td className="py-3 pe-4">
                       {r.paper || <span className="text-muted-foreground">--</span>}
                     </td>
-                    <td className="py-3 pr-4">
+                    <td className="py-3 pe-4">
                       {r.question_type || <span className="text-muted-foreground">--</span>}
                     </td>
-                    <td className="py-3 pr-4">
+                    <td className="py-3 pe-4">
                       {r.ai_predicted_mark ?? <span className="text-muted-foreground">--</span>}
                     </td>
-                    <td className="py-3 pr-4">
+                    <td className="py-3 pe-4">
                       {r.teacher_final_mark ?? <span className="text-muted-foreground">--</span>}
                     </td>
-                    <td className="py-3 pr-4">
+                    <td className="py-3 pe-4">
                       {r.mark_delta === null ? (
                         <span className="text-muted-foreground">--</span>
                       ) : (
@@ -298,7 +298,7 @@ export default async function TrainingDataAdminPage() {
                         </span>
                       )}
                     </td>
-                    <td className="py-3 pr-4">
+                    <td className="py-3 pe-4">
                       <span className="inline-block text-xs px-2 py-0.5 rounded-full bg-border text-muted-foreground">
                         {r.source || 'unknown'}
                       </span>

@@ -42,7 +42,7 @@ function Section({
 
 function Tip({ children }: { children: React.ReactNode }) {
   return (
-    <div className="my-4 rounded-xl border-l-4 border-primary bg-primary/5 px-5 py-4">
+    <div className="my-4 rounded-xl border-s-4 border-primary bg-primary/5 px-5 py-4">
       <p className="text-sm font-semibold text-foreground mb-1">Exam Tip</p>
       <div className="text-sm text-muted-foreground leading-relaxed">{children}</div>
     </div>
@@ -53,7 +53,7 @@ function Tip({ children }: { children: React.ReactNode }) {
 
 function Warning({ children }: { children: React.ReactNode }) {
   return (
-    <div className="my-4 rounded-xl border-l-4 border-amber-500 bg-amber-500/10 px-5 py-4">
+    <div className="my-4 rounded-xl border-s-4 border-amber-500 bg-amber-500/10 px-5 py-4">
       <p className="text-sm font-semibold text-amber-700 mb-1">Common Mistake</p>
       <div className="text-sm text-muted-foreground leading-relaxed">{children}</div>
     </div>
@@ -493,7 +493,7 @@ export default async function UnseenPoetryPage() {
               <div className="mb-6 overflow-hidden rounded-xl border border-border">
                 <div className="grid grid-cols-2 text-sm font-bold bg-muted text-foreground">
                   <div className="px-4 py-3">{_tr(`Weak (Separate)`)}</div>
-                  <div className="px-4 py-3 border-l border-border">
+                  <div className="px-4 py-3 border-s border-border">
                     {_tr(`Strong (Integrated)`)}
                   </div>
                 </div>
@@ -502,7 +502,7 @@ export default async function UnseenPoetryPage() {
                     &ldquo;In Poem A, the poet uses metaphor to show anger. In Poem B, the poet uses
                     simile to show sadness.&rdquo;
                   </div>
-                  <div className="px-4 py-3 border-t border-l border-border text-muted-foreground">
+                  <div className="px-4 py-3 border-t border-s border-border text-muted-foreground">
                     &ldquo;Both poets use figurative language to convey intense emotion; however,
                     while Poem A&apos;s extended metaphor of fire suggests destructive rage, Poem
                     B&apos;s simile &lsquo;like water through cupped hands&rsquo; conveys a gentler
@@ -873,7 +873,7 @@ export default async function UnseenPoetryPage() {
               <div className="overflow-hidden rounded-xl border border-border">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="bg-muted text-foreground text-left">
+                    <tr className="bg-muted text-foreground text-start">
                       <th className="px-4 py-3 font-semibold">Phase</th>
                       <th className="px-4 py-3 font-semibold">Time</th>
                       <th className="px-4 py-3 font-semibold">{_tr(`What to Do`)}</th>

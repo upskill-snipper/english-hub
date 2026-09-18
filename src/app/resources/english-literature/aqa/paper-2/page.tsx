@@ -266,7 +266,7 @@ export default async function Paper2Page() {
             className="inline-flex items-center rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-md transition hover:bg-accent"
           >
             View Full Poetry Analysis Guide
-            <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="ms-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </Link>
@@ -354,7 +354,7 @@ export default async function Paper2Page() {
               <h3 className="text-lg font-bold text-primary">
                 Part 1: Analysing a Single Unseen Poem (24 marks)
               </h3>
-              <ol className="mt-4 space-y-3 text-sm text-muted-foreground list-decimal pl-5">
+              <ol className="mt-4 space-y-3 text-sm text-muted-foreground list-decimal ps-5">
                 <li>
                   <span className="font-semibold">{_tr(`Read the poem three times.`)}</span> First
                   for the overall gist, second to identify the speaker and situation, third to spot
@@ -395,7 +395,7 @@ export default async function Paper2Page() {
                   This is worth only 8 marks, so keep it concise. Write 2-3 comparative paragraphs
                   in about 15 minutes.
                 </p>
-                <ul className="space-y-2 list-disc pl-5">
+                <ul className="space-y-2 list-disc ps-5">
                   <li>
                     <span className="font-semibold">
                       {_tr(`Focus on similarities and differences`)}

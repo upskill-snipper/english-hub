@@ -130,7 +130,7 @@ export default function SuggestionsPage() {
                     key={cat.value}
                     type="button"
                     onClick={() => setCategory(cat.value)}
-                    className={`flex items-center gap-2 p-3 rounded-lg border text-left transition-all ${
+                    className={`flex items-center gap-2 p-3 rounded-lg border text-start transition-all ${
                       category === cat.value
                         ? 'border-primary bg-primary/5 ring-1 ring-primary/20'
                         : 'border-border hover:border-border'

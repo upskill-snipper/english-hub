@@ -244,7 +244,7 @@ export function Footer() {
         {/* Main 5-column grid: brand column + 4 link columns */}
         <div className="grid grid-cols-2 gap-x-8 gap-y-10 py-14 sm:grid-cols-3 lg:grid-cols-5">
           {/* Column 1 - Brand */}
-          <div className="col-span-2 sm:col-span-3 lg:col-span-1 lg:pr-4">
+          <div className="col-span-2 sm:col-span-3 lg:col-span-1 lg:pe-4">
             <Link href="/" className="inline-block">
               <span
                 className="font-serif text-3xl font-medium tracking-tight"
@@ -335,7 +335,7 @@ export function Footer() {
           className="border-t py-6 flex flex-col sm:flex-row items-center justify-between gap-4"
           style={{ borderColor: 'rgba(255,255,255,0.08)' }}
         >
-          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-start">
             <p className="font-mono text-[11px] tracking-wide text-[#B5B8B3]/60">
               &copy; 2024&ndash;{new Date().getFullYear()} {t('footer.copyright_suffix')}
             </p>

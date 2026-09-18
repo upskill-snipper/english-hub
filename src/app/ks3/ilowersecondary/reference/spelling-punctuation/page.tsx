@@ -205,13 +205,13 @@ export default async function SpellingPunctuationReference() {
         <table className="w-full border-collapse text-sm">
           <thead>
             <tr className="border-b border-border">
-              <th className="py-2 pr-4 text-left font-mono text-[10px] uppercase tracking-[0.12em] text-muted-foreground">
+              <th className="py-2 pe-4 text-start font-mono text-[10px] uppercase tracking-[0.12em] text-muted-foreground">
                 Word
               </th>
-              <th className="py-2 pr-4 text-left font-mono text-[10px] uppercase tracking-[0.12em] text-muted-foreground">
+              <th className="py-2 pe-4 text-start font-mono text-[10px] uppercase tracking-[0.12em] text-muted-foreground">
                 Why it’s tricky
               </th>
-              <th className="py-2 text-left font-mono text-[10px] uppercase tracking-[0.12em] text-muted-foreground">
+              <th className="py-2 text-start font-mono text-[10px] uppercase tracking-[0.12em] text-muted-foreground">
                 Memory tip
               </th>
             </tr>
@@ -219,8 +219,8 @@ export default async function SpellingPunctuationReference() {
           <tbody>
             {SPELLING.map((s) => (
               <tr key={s.word} className="border-b border-border/50 align-top">
-                <td className="py-2 pr-4 font-semibold text-foreground">{s.word}</td>
-                <td className="py-2 pr-4 text-muted-foreground">{s.why}</td>
+                <td className="py-2 pe-4 font-semibold text-foreground">{s.word}</td>
+                <td className="py-2 pe-4 text-muted-foreground">{s.why}</td>
                 <td className="py-2 text-muted-foreground">{s.tip}</td>
               </tr>
             ))}

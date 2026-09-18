@@ -89,28 +89,28 @@ export default async function QatarPrivacyNoticePage() {
         <h2 className="text-2xl font-bold mb-4">3. Types of Personal Data Collected</h2>
 
         <h3 className="text-lg font-semibold mb-2">Account and Identity Data</h3>
-        <ul className="list-disc pl-6 space-y-1 mb-3">
+        <ul className="list-disc ps-6 space-y-1 mb-3">
           <li>{tr(`Full name, email address, telephone number`)}</li>
           <li>{tr(`Date of birth, nationality, and country of residence`)}</li>
           <li>{tr(`Qatar ID number (where required for service delivery)`)}</li>
         </ul>
 
         <h3 className="text-lg font-semibold mb-2">{tr(`Educational and Professional Data`)}</h3>
-        <ul className="list-disc pl-6 space-y-1 mb-3">
+        <ul className="list-disc ps-6 space-y-1 mb-3">
           <li>{tr(`English language proficiency level`)}</li>
           <li>{tr(`Learning history, course enrolments, and progress records`)}</li>
           <li>{tr(`Assessment scores and certification records`)}</li>
         </ul>
 
         <h3 className="text-lg font-semibold mb-2">{tr(`Technical and Usage Data`)}</h3>
-        <ul className="list-disc pl-6 space-y-1 mb-3">
+        <ul className="list-disc ps-6 space-y-1 mb-3">
           <li>{tr(`IP address, device identifiers, browser type`)}</li>
           <li>{tr(`Platform usage data (pages visited, session duration)`)}</li>
           <li>Cookies and similar technologies (subject to consent)</li>
         </ul>
 
         <h3 className="text-lg font-semibold mb-2">{tr(`AI Interaction Data`)}</h3>
-        <ul className="list-disc pl-6 space-y-1 mb-3">
+        <ul className="list-disc ps-6 space-y-1 mb-3">
           <li>{tr(`Inputs provided to AI-powered learning tools`)}</li>
           <li>{tr(`AI-generated feedback and assessment outputs`)}</li>
           <li>
@@ -149,8 +149,8 @@ export default async function QatarPrivacyNoticePage() {
           <table className="min-w-full text-sm border border-border">
             <thead className="bg-muted">
               <tr>
-                <th className="text-left px-4 py-2 border-b font-semibold">Purpose</th>
-                <th className="text-left px-4 py-2 border-b font-semibold">Description</th>
+                <th className="text-start px-4 py-2 border-b font-semibold">Purpose</th>
+                <th className="text-start px-4 py-2 border-b font-semibold">Description</th>
               </tr>
             </thead>
             <tbody>
@@ -235,7 +235,7 @@ export default async function QatarPrivacyNoticePage() {
         </p>
 
         <h3 className="text-lg font-semibold mt-4 mb-2">By jurisdiction</h3>
-        <ul className="list-disc pl-6 space-y-2 text-sm">
+        <ul className="list-disc ps-6 space-y-2 text-sm">
           <li>
             <strong>European Union (Frankfurt, Germany).</strong> Supabase (Postgres + object
             storage - primary store for your account, essay submissions, marking results, consent
@@ -266,7 +266,7 @@ export default async function QatarPrivacyNoticePage() {
         </ul>
 
         <h3 className="text-lg font-semibold mt-5 mb-2">{tr(`Safeguards in Place`)}</h3>
-        <ul className="list-disc pl-6 space-y-1">
+        <ul className="list-disc ps-6 space-y-1">
           <li>
             <strong>Subprocessor‑specific Data Processing Agreements</strong> incorporating SCCs (or
             analogues) for every destination outside the EU/UK
@@ -307,10 +307,10 @@ export default async function QatarPrivacyNoticePage() {
           <table className="min-w-full text-sm border border-border">
             <thead className="bg-muted">
               <tr>
-                <th className="text-left px-4 py-2 border-b font-semibold">
+                <th className="text-start px-4 py-2 border-b font-semibold">
                   {tr(`Data Category`)}
                 </th>
-                <th className="text-left px-4 py-2 border-b font-semibold">
+                <th className="text-start px-4 py-2 border-b font-semibold">
                   {tr(`Retention Period`)}
                 </th>
               </tr>
@@ -387,7 +387,7 @@ export default async function QatarPrivacyNoticePage() {
               desc: 'Lodge a complaint with the NCGAA if your rights have been violated',
             },
           ].map((item) => (
-            <div key={item.right} className="border-l-4 border-primary pl-4">
+            <div key={item.right} className="border-s-4 border-primary ps-4">
               <h3 className="font-semibold text-sm">{item.right}</h3>
               <p className="text-sm text-muted-foreground">{item.desc}</p>
             </div>
@@ -401,7 +401,7 @@ export default async function QatarPrivacyNoticePage() {
         <p className="mb-3">
           {tr(`In the event of a personal data breach likely to affect your rights:`)}
         </p>
-        <ol className="list-decimal pl-6 space-y-1">
+        <ol className="list-decimal ps-6 space-y-1">
           <li>
             We will notify the <strong>NCGAA within 72 hours</strong>
           </li>
@@ -425,7 +425,7 @@ export default async function QatarPrivacyNoticePage() {
           English Hub's primary user base is GCSE/IGCSE students, the majority of whom are under 18
           - this section is therefore the most important on this page.
         </p>
-        <ul className="list-disc pl-6 space-y-2">
+        <ul className="list-disc ps-6 space-y-2">
           <li>{tr(`Users under 18 are considered minors under Qatari law`)}</li>
           <li>
             Our minimum age is <strong>11</strong> (lowered from 13 in May 2026 to accept Year 7 /
@@ -484,7 +484,7 @@ export default async function QatarPrivacyNoticePage() {
           PDPPL registration" because none exists to obtain. The specific NCGAA interactions we owe
           and maintain are:
         </p>
-        <ul className="list-disc pl-6 space-y-2 text-sm">
+        <ul className="list-disc ps-6 space-y-2 text-sm">
           <li>
             <strong>Article 16 permit application</strong> for processing personal data of minors
             (in preparation - see Section 10).
@@ -516,8 +516,8 @@ export default async function QatarPrivacyNoticePage() {
           <table className="min-w-full text-sm border border-border">
             <thead className="bg-muted">
               <tr>
-                <th className="text-left px-4 py-2 border-b font-semibold">{tr(`AI Feature`)}</th>
-                <th className="text-left px-4 py-2 border-b font-semibold">Purpose</th>
+                <th className="text-start px-4 py-2 border-b font-semibold">{tr(`AI Feature`)}</th>
+                <th className="text-start px-4 py-2 border-b font-semibold">Purpose</th>
               </tr>
             </thead>
             <tbody>
@@ -555,7 +555,7 @@ export default async function QatarPrivacyNoticePage() {
           </table>
         </div>
         <p className="mb-3">{tr(`Your rights regarding AI processing:`)}</p>
-        <ul className="list-disc pl-6 space-y-1">
+        <ul className="list-disc ps-6 space-y-1">
           <li>Right to be informed when AI is processing your data</li>
           <li>{tr(`Right to request human review of any AI-generated assessment`)}</li>
           <li>{tr(`Right to opt out of specific AI features`)}</li>

@@ -114,30 +114,30 @@ export default async function GradeBoundariesPage() {
             <div className="overflow-x-auto">
               <table className="w-full border-collapse text-body-sm">
                 <thead>
-                  <tr className="border-b border-border/60 text-left">
-                    <th className="py-2 pr-4 font-semibold text-foreground">Series</th>
-                    <th className="py-2 pr-4 font-semibold text-foreground">A*</th>
-                    <th className="py-2 pr-4 font-semibold text-foreground">A</th>
-                    <th className="py-2 pr-4 font-semibold text-foreground">B</th>
-                    <th className="py-2 pr-4 font-semibold text-foreground">C</th>
-                    <th className="py-2 pr-4 font-semibold text-foreground">D</th>
-                    <th className="py-2 pr-4 font-semibold text-foreground">E</th>
-                    <th className="py-2 pr-4 font-semibold text-foreground">F</th>
-                    <th className="py-2 pr-4 font-semibold text-foreground">G</th>
+                  <tr className="border-b border-border/60 text-start">
+                    <th className="py-2 pe-4 font-semibold text-foreground">Series</th>
+                    <th className="py-2 pe-4 font-semibold text-foreground">A*</th>
+                    <th className="py-2 pe-4 font-semibold text-foreground">A</th>
+                    <th className="py-2 pe-4 font-semibold text-foreground">B</th>
+                    <th className="py-2 pe-4 font-semibold text-foreground">C</th>
+                    <th className="py-2 pe-4 font-semibold text-foreground">D</th>
+                    <th className="py-2 pe-4 font-semibold text-foreground">E</th>
+                    <th className="py-2 pe-4 font-semibold text-foreground">F</th>
+                    <th className="py-2 pe-4 font-semibold text-foreground">G</th>
                   </tr>
                 </thead>
                 <tbody className="text-muted-foreground">
                   {boundaries.map((row) => (
                     <tr key={row.series} className="border-b border-border/40 last:border-0">
-                      <td className="py-2 pr-4 font-medium text-foreground">{row.series}</td>
-                      <td className="py-2 pr-4">{row.aStar}</td>
-                      <td className="py-2 pr-4">{row.a}</td>
-                      <td className="py-2 pr-4">{row.b}</td>
-                      <td className="py-2 pr-4">{row.c}</td>
-                      <td className="py-2 pr-4">{row.d}</td>
-                      <td className="py-2 pr-4">{row.e}</td>
-                      <td className="py-2 pr-4">{row.f}</td>
-                      <td className="py-2 pr-4">{row.g}</td>
+                      <td className="py-2 pe-4 font-medium text-foreground">{row.series}</td>
+                      <td className="py-2 pe-4">{row.aStar}</td>
+                      <td className="py-2 pe-4">{row.a}</td>
+                      <td className="py-2 pe-4">{row.b}</td>
+                      <td className="py-2 pe-4">{row.c}</td>
+                      <td className="py-2 pe-4">{row.d}</td>
+                      <td className="py-2 pe-4">{row.e}</td>
+                      <td className="py-2 pe-4">{row.f}</td>
+                      <td className="py-2 pe-4">{row.g}</td>
                     </tr>
                   ))}
                 </tbody>

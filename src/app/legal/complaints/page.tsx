@@ -53,19 +53,19 @@ export default async function ComplaintsProcedurePage() {
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4">2. How to Complain</h2>
         <div className="space-y-4 mb-4">
-          <div className="border-l-4 border-primary pl-4">
+          <div className="border-s-4 border-primary ps-4">
             <h3 className="font-semibold">By Email</h3>
             <p className="text-sm">
               Send an email to <a href="mailto:info@Upskillenergy.com">info@Upskillenergy.com</a>
             </p>
           </div>
-          <div className="border-l-4 border-primary pl-4">
+          <div className="border-s-4 border-primary ps-4">
             <h3 className="font-semibold">{_tr(`Using the In-Platform Form`)}</h3>
             <p className="text-sm">
               Log in and go to <strong>{_tr(`Help &gt; Make a Complaint`)}</strong>
             </p>
           </div>
-          <div className="border-l-4 border-primary pl-4">
+          <div className="border-s-4 border-primary ps-4">
             <h3 className="font-semibold">By Post</h3>
             <p className="text-sm">
               Write to: Complaints Team, Upskill Energy Limited, United Kingdom
@@ -73,7 +73,7 @@ export default async function ComplaintsProcedurePage() {
           </div>
         </div>
         <p className="mb-2 font-semibold text-sm">What to include in your complaint:</p>
-        <ul className="list-disc pl-6 space-y-1 text-sm">
+        <ul className="list-disc ps-6 space-y-1 text-sm">
           <li>{_tr(`Your name (or you can complain anonymously)`)}</li>
           <li>Your email address or username</li>
           <li>{_tr(`What happened - describe the problem in your own words`)}</li>
@@ -134,7 +134,7 @@ export default async function ComplaintsProcedurePage() {
             accelerated process. We aim to respond within <strong>24 hours</strong>, and
             safeguarding reports are always escalated ahead of every other queue.
           </p>
-          <ul className="list-disc pl-6 space-y-1">
+          <ul className="list-disc ps-6 space-y-1">
             <li>
               Email:{' '}
               <a href="mailto:safeguarding@theenglishhub.app">safeguarding@theenglishhub.app</a>
@@ -154,11 +154,11 @@ export default async function ComplaintsProcedurePage() {
         <h2 className="text-2xl font-bold mb-4">4. Complaints Process</h2>
 
         <div className="space-y-6">
-          <div className="border-l-4 border-primary pl-4">
+          <div className="border-s-4 border-primary ps-4">
             <h3 className="font-semibold text-lg">
               Stage 1: Initial Response - Within 3 Working Days
             </h3>
-            <ul className="list-disc pl-6 space-y-1 text-sm mt-2">
+            <ul className="list-disc ps-6 space-y-1 text-sm mt-2">
               <li>
                 Acknowledgement within <strong>1 working day</strong>
               </li>
@@ -170,11 +170,11 @@ export default async function ComplaintsProcedurePage() {
             </ul>
           </div>
 
-          <div className="border-l-4 border-primary pl-4">
+          <div className="border-s-4 border-primary ps-4">
             <h3 className="font-semibold text-lg">
               Stage 2: Investigation - Within 10 Working Days
             </h3>
-            <ul className="list-disc pl-6 space-y-1 text-sm mt-2">
+            <ul className="list-disc ps-6 space-y-1 text-sm mt-2">
               <li>Thorough investigation (system logs, staff interviews, content review)</li>
               <li>{_tr(`We may contact you for more information`)}</li>
               <li>
@@ -183,11 +183,11 @@ export default async function ComplaintsProcedurePage() {
             </ul>
           </div>
 
-          <div className="border-l-4 border-primary pl-4">
+          <div className="border-s-4 border-primary ps-4">
             <h3 className="font-semibold text-lg">
               Stage 3: Final Response - Within 20 Working Days
             </h3>
-            <ul className="list-disc pl-6 space-y-1 text-sm mt-2">
+            <ul className="list-disc ps-6 space-y-1 text-sm mt-2">
               <li>Senior review by a manager not involved in earlier stages</li>
               <li>
                 Final written response with full summary, findings, decision, remedies, and external
@@ -196,7 +196,7 @@ export default async function ComplaintsProcedurePage() {
             </ul>
           </div>
 
-          <div className="border-l-4 border-border pl-4">
+          <div className="border-s-4 border-border ps-4">
             <h3 className="font-semibold text-lg">Stage 4: External Escalation</h3>
             <p className="text-sm mt-2">
               If you remain dissatisfied, you can take your complaint to an external body (see
@@ -209,8 +209,8 @@ export default async function ComplaintsProcedurePage() {
           <table className="min-w-full text-sm border border-border">
             <thead className="bg-muted">
               <tr>
-                <th className="text-left px-4 py-2 border-b font-semibold">Stage</th>
-                <th className="text-left px-4 py-2 border-b font-semibold">Maximum Timeframe</th>
+                <th className="text-start px-4 py-2 border-b font-semibold">Stage</th>
+                <th className="text-start px-4 py-2 border-b font-semibold">Maximum Timeframe</th>
               </tr>
             </thead>
             <tbody>
@@ -292,7 +292,7 @@ export default async function ComplaintsProcedurePage() {
           Many of our users are aged 14 to 18. We are committed to making the complaints process
           accessible, supportive, and non-intimidating:
         </p>
-        <ul className="list-disc pl-6 space-y-2">
+        <ul className="list-disc ps-6 space-y-2">
           <li>
             <strong>{_tr(`Plain language:`)}</strong> All communications in clear, straightforward
             language
@@ -328,8 +328,8 @@ export default async function ComplaintsProcedurePage() {
           <table className="min-w-full text-sm border border-border">
             <thead className="bg-muted">
               <tr>
-                <th className="text-left px-4 py-2 border-b font-semibold">Action Type</th>
-                <th className="text-left px-4 py-2 border-b font-semibold">Example</th>
+                <th className="text-start px-4 py-2 border-b font-semibold">Action Type</th>
+                <th className="text-start px-4 py-2 border-b font-semibold">Example</th>
               </tr>
             </thead>
             <tbody>

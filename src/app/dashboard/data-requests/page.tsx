@@ -460,7 +460,7 @@ export default function DataRequestsPage() {
                       )}
                     </p>
                   </div>
-                  <div className="text-right">
+                  <div className="text-end">
                     {req.daysRemaining !== null && (
                       <p
                         className={`text-sm font-medium ${

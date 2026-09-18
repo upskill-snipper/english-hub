@@ -22,7 +22,7 @@ function Section({
     <div className="mb-4 rounded-xl border border-border bg-card shadow-md overflow-hidden">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left hover:bg-muted transition-colors"
+        className="flex w-full items-center justify-between px-5 py-4 text-start hover:bg-muted transition-colors"
       >
         <span className="flex items-center gap-3">
           <span className="text-xl">{icon}</span>
@@ -53,7 +53,7 @@ function QuoteCard({
   analysis: string
 }) {
   return (
-    <div className="rounded-lg border-l-4 border-primary bg-primary/5 p-4 mb-3">
+    <div className="rounded-lg border-s-4 border-primary bg-primary/5 p-4 mb-3">
       <p className="text-sm font-semibold text-foreground italic">&ldquo;{quote}&rdquo;</p>
       {speaker && <p className="mt-1 text-xs font-medium text-primary">&mdash; {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>

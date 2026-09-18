@@ -539,7 +539,7 @@ export default async function FeatureTablesPage() {
           {SCANNING_STEPS.map((step, i) => (
             <li key={step.label} className="rounded-xl border border-border/60 bg-card p-4">
               <p className="text-sm font-medium">
-                <span className="font-mono text-primary mr-2">{i + 1}.</span>
+                <span className="font-mono text-primary me-2">{i + 1}.</span>
                 {step.label}
               </p>
               <p className="text-xs text-muted-foreground leading-relaxed mt-1">{step.detail}</p>
@@ -596,16 +596,16 @@ export default async function FeatureTablesPage() {
               <table className="w-full border-collapse text-sm">
                 <thead>
                   <tr className="border-b border-border">
-                    <th className="text-left py-2 pr-3 font-medium">Feature</th>
-                    <th className="text-left py-2 pr-3 font-medium">Answer</th>
-                    <th className="text-left py-2 font-medium">Why</th>
+                    <th className="text-start py-2 pe-3 font-medium">Feature</th>
+                    <th className="text-start py-2 pe-3 font-medium">Answer</th>
+                    <th className="text-start py-2 font-medium">Why</th>
                   </tr>
                 </thead>
                 <tbody>
                   {set.rows.map((row) => (
                     <tr key={row.feature} className="border-b border-border/40 align-top">
-                      <td className="py-2 pr-3">{row.feature}</td>
-                      <td className="py-2 pr-3 font-medium text-primary whitespace-nowrap">
+                      <td className="py-2 pe-3">{row.feature}</td>
+                      <td className="py-2 pe-3 font-medium text-primary whitespace-nowrap">
                         {row.answer}
                       </td>
                       <td className="py-2 text-muted-foreground leading-relaxed">{row.why}</td>
@@ -633,7 +633,7 @@ export default async function FeatureTablesPage() {
           {ELIMINATION_STEPS.map((step, i) => (
             <li key={step.label} className="rounded-xl border border-border/60 bg-card p-4">
               <p className="text-sm font-medium">
-                <span className="font-mono text-primary mr-2">{i + 1}.</span>
+                <span className="font-mono text-primary me-2">{i + 1}.</span>
                 {step.label}
               </p>
               <p className="text-xs text-muted-foreground leading-relaxed mt-1">{step.detail}</p>
@@ -760,7 +760,7 @@ export default async function FeatureTablesPage() {
                 {a.pairing}
               </p>
               <p className="text-sm font-medium mb-2">{a.question}</p>
-              <p className="text-sm leading-relaxed mb-4 border-l-2 border-primary/40 pl-4">
+              <p className="text-sm leading-relaxed mb-4 border-s-2 border-primary/40 ps-4">
                 {a.answer}
               </p>
               <p className="font-mono text-[10px] tracking-[0.12em] uppercase text-muted-foreground mb-2">

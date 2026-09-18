@@ -1318,7 +1318,7 @@ export default function LessonDetailPage() {
                 <div className="flex items-center gap-2 mb-2 flex-wrap">
                   {isRecommended && (
                     <Badge className="bg-amber-500/10 text-clay-600 border-amber-500/20 text-xs">
-                      <Sparkles className="h-3 w-3 mr-1" />
+                      <Sparkles className="h-3 w-3 me-1" />
                       {t('school.lessons.suggested_by_analytics')}
                     </Badge>
                   )}
@@ -1335,11 +1335,11 @@ export default function LessonDetailPage() {
                     {lesson.difficulty}
                   </Badge>
                   <Badge variant="outline" className="text-xs">
-                    <BookOpen className="h-3 w-3 mr-1" />
+                    <BookOpen className="h-3 w-3 me-1" />
                     {lesson.topic}
                   </Badge>
                   <Badge variant="outline" className="text-xs">
-                    <Target className="h-3 w-3 mr-1" />
+                    <Target className="h-3 w-3 me-1" />
                     {lesson.skill}
                   </Badge>
                 </div>
@@ -1533,7 +1533,7 @@ export default function LessonDetailPage() {
                 {/* Timeline */}
                 <div className="relative">
                   {/* Vertical timeline line */}
-                  <div className="absolute left-[19px] top-4 bottom-4 w-0.5 bg-border timeline-line hidden sm:block" />
+                  <div className="absolute start-[19px] top-4 bottom-4 w-0.5 bg-border timeline-line hidden sm:block" />
 
                   <div className="space-y-3">
                     {lesson.timings.map((timing, i) => {
@@ -1541,11 +1541,11 @@ export default function LessonDetailPage() {
                       const colors = phaseColor(timing.phase)
 
                       return (
-                        <div key={i} className="relative sm:pl-12">
+                        <div key={i} className="relative sm:ps-12">
                           {/* Timeline dot */}
                           <div
                             className={cn(
-                              'absolute left-2.5 top-5 h-3 w-3 rounded-full border-2 bg-background hidden sm:block z-10',
+                              'absolute start-2.5 top-5 h-3 w-3 rounded-full border-2 bg-background hidden sm:block z-10',
                               colors.border,
                               colors.bg,
                             )}
@@ -1556,7 +1556,7 @@ export default function LessonDetailPage() {
                           >
                             <button
                               onClick={() => toggleTiming(i)}
-                              className="w-full text-left px-5 py-4 flex items-center gap-3 hover:bg-accent/30 transition-colors rounded-xl no-print"
+                              className="w-full text-start px-5 py-4 flex items-center gap-3 hover:bg-accent/30 transition-colors rounded-xl no-print"
                               data-print-hide
                             >
                               <Badge
@@ -1756,13 +1756,13 @@ export default function LessonDetailPage() {
                       <table className="assessment-table w-full text-sm">
                         <thead>
                           <tr className="border-b border-border">
-                            <th className="py-2 px-3 text-left text-xs font-semibold uppercase tracking-wider text-muted-foreground w-[140px]">
+                            <th className="py-2 px-3 text-start text-xs font-semibold uppercase tracking-wider text-muted-foreground w-[140px]">
                               Band
                             </th>
-                            <th className="py-2 px-3 text-left text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                            <th className="py-2 px-3 text-start text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                               Descriptor
                             </th>
-                            <th className="py-2 px-3 text-left text-xs font-semibold uppercase tracking-wider text-muted-foreground w-[80px]">
+                            <th className="py-2 px-3 text-start text-xs font-semibold uppercase tracking-wider text-muted-foreground w-[80px]">
                               Marks
                             </th>
                           </tr>
@@ -1798,10 +1798,10 @@ export default function LessonDetailPage() {
                       value="worksheet"
                       className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40"
                     >
-                      <FileText className="h-3.5 w-3.5 mr-1.5" />
+                      <FileText className="h-3.5 w-3.5 me-1.5" />
                       Worksheet
                       {totalMarks > 0 && (
-                        <Badge variant="secondary" className="ml-2 text-[10px]">
+                        <Badge variant="secondary" className="ms-2 text-[10px]">
                           {totalMarks} marks
                         </Badge>
                       )}
@@ -1810,7 +1810,7 @@ export default function LessonDetailPage() {
                       value="answers"
                       className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40"
                     >
-                      <GraduationCap className="h-3.5 w-3.5 mr-1.5" />
+                      <GraduationCap className="h-3.5 w-3.5 me-1.5" />
                       Model Answers
                     </TabsTrigger>
                   </TabsList>
@@ -2010,7 +2010,7 @@ export default function LessonDetailPage() {
               {nextLesson ? (
                 <Link
                   href={`/school/lessons/${nextLesson.id}`}
-                  className="group flex items-center gap-3 rounded-lg border border-border p-3 hover:bg-accent/30 transition-colors max-w-xs text-right"
+                  className="group flex items-center gap-3 rounded-lg border border-border p-3 hover:bg-accent/30 transition-colors max-w-xs text-end"
                 >
                   <div className="min-w-0">
                     <p className="text-[10px] uppercase tracking-wider text-muted-foreground">

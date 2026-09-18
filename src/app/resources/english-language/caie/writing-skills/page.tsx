@@ -78,7 +78,7 @@ export default async function WritingSkillsPage() {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="mr-1 h-4 w-4"
+              className="me-1 h-4 w-4"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -150,7 +150,7 @@ export default async function WritingSkillsPage() {
                 Template
               </p>
               <div className="space-y-2 text-sm text-muted-foreground font-mono">
-                <p className="text-right">
+                <p className="text-end">
                   Your Address Line 1<br />
                   Your Address Line 2<br />
                   Date
@@ -212,7 +212,7 @@ export default async function WritingSkillsPage() {
                 Template
               </p>
               <div className="space-y-2 text-sm text-muted-foreground font-mono">
-                <p className="text-right">Date</p>
+                <p className="text-end">Date</p>
                 <p className="mt-4">{_tr(`Dear [First name] / Hi [Name],`)}</p>
                 <p className="italic text-muted-foreground mt-2">
                   [Opening: reference to shared experience or reason for writing]

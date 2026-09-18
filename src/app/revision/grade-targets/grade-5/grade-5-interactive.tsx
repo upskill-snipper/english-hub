@@ -64,7 +64,7 @@ export function Grade5Checklist() {
           <button
             key={i}
             onClick={() => toggleItem(i)}
-            className={`w-full text-left flex items-start gap-3 rounded-lg border p-3.5 text-xs transition-all duration-200 ${
+            className={`w-full text-start flex items-start gap-3 rounded-lg border p-3.5 text-xs transition-all duration-200 ${
               checkedItems.has(i)
                 ? 'border-amber-500/30 bg-amber-500/[0.04] text-foreground'
                 : 'border-border/40 bg-background/50 text-muted-foreground hover:border-border'

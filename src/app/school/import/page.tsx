@@ -148,18 +148,18 @@ function PreviewTable({
       <table className="w-full text-sm">
         <thead>
           <tr className="border-b border-zinc-800 bg-zinc-900">
-            <th className="px-3 py-2.5 text-left text-xs font-semibold uppercase tracking-wider text-zinc-500 w-10">
+            <th className="px-3 py-2.5 text-start text-xs font-semibold uppercase tracking-wider text-zinc-500 w-10">
               #
             </th>
             {columns.map((col) => (
               <th
                 key={col}
-                className="px-3 py-2.5 text-left text-xs font-semibold uppercase tracking-wider text-zinc-500"
+                className="px-3 py-2.5 text-start text-xs font-semibold uppercase tracking-wider text-zinc-500"
               >
                 {col.replace(/_/g, ' ')}
               </th>
             ))}
-            <th className="px-3 py-2.5 text-left text-xs font-semibold uppercase tracking-wider text-zinc-500 w-10">
+            <th className="px-3 py-2.5 text-start text-xs font-semibold uppercase tracking-wider text-zinc-500 w-10">
               {tx('school.b15.import.preview_col_status')}
             </th>
           </tr>
@@ -218,16 +218,16 @@ function ResultsTable({ users }: { users: ImportResult['users'] }) {
       <table className="w-full text-sm">
         <thead>
           <tr className="border-b border-zinc-800 bg-zinc-900">
-            <th className="px-3 py-2.5 text-left text-xs font-semibold uppercase tracking-wider text-zinc-500">
+            <th className="px-3 py-2.5 text-start text-xs font-semibold uppercase tracking-wider text-zinc-500">
               {tx('school.b15.import.res_col_name')}
             </th>
-            <th className="px-3 py-2.5 text-left text-xs font-semibold uppercase tracking-wider text-zinc-500">
+            <th className="px-3 py-2.5 text-start text-xs font-semibold uppercase tracking-wider text-zinc-500">
               {tx('school.b15.import.res_col_email')}
             </th>
-            <th className="px-3 py-2.5 text-left text-xs font-semibold uppercase tracking-wider text-zinc-500">
+            <th className="px-3 py-2.5 text-start text-xs font-semibold uppercase tracking-wider text-zinc-500">
               {tx('school.b15.import.res_col_role_class')}
             </th>
-            <th className="px-3 py-2.5 text-left text-xs font-semibold uppercase tracking-wider text-zinc-500">
+            <th className="px-3 py-2.5 text-start text-xs font-semibold uppercase tracking-wider text-zinc-500">
               {tx('school.b15.import.res_col_temp_pw')}
             </th>
           </tr>
@@ -679,7 +679,7 @@ export default function ImportUsersPage() {
                   <span className="text-sm font-medium text-zinc-200">
                     {tx('school.b15.import.creating')}
                   </span>
-                  <span className="ml-auto text-sm tabular-nums text-zinc-500">
+                  <span className="ms-auto text-sm tabular-nums text-zinc-500">
                     {Math.round(importProgress)}%
                   </span>
                 </div>

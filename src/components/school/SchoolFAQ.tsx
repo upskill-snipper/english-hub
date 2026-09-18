@@ -73,9 +73,9 @@ function AccordionItem({ item, index, isOpen, onToggle }: AccordionItemProps) {
         onClick={onToggle}
         aria-expanded={isOpen}
         aria-controls={`faq-answer-${index}`}
-        className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 rounded-xl"
+        className="w-full flex items-center justify-between gap-4 px-6 py-5 text-start focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 rounded-xl"
       >
-        <span className="text-white font-semibold text-base leading-snug pr-2">
+        <span className="text-white font-semibold text-base leading-snug pe-2">
           {item.question}
         </span>
         <ChevronDown

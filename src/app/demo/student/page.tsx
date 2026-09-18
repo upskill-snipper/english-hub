@@ -1054,7 +1054,7 @@ export default function StudentDemoPage() {
                         >
                           {c.teacher.initials}
                         </span>
-                        <div className="text-right">
+                        <div className="text-end">
                           <p className="text-xs font-medium text-foreground">{c.teacher.name}</p>
                           <p className="text-[10px] text-muted-foreground">teacher</p>
                         </div>
@@ -1174,7 +1174,7 @@ export default function StudentDemoPage() {
                       </div>
                     </div>
                     <div className="flex flex-row items-center justify-between gap-4 sm:flex-col sm:items-end sm:justify-center">
-                      <div className="text-right">
+                      <div className="text-end">
                         <p className="text-sm font-semibold tabular-nums text-foreground">
                           {a.dueLabel}
                         </p>
@@ -1447,7 +1447,7 @@ export default function StudentDemoPage() {
                         className="border-primary/30 text-primary hover:bg-primary/10"
                         render={<Link href={i.href} />}
                       >
-                        Start now <ArrowRight className="ml-1 h-3 w-3" />
+                        Start now <ArrowRight className="ms-1 h-3 w-3" />
                       </Button>
                     </div>
                   </div>
@@ -1532,7 +1532,7 @@ export default function StudentDemoPage() {
                         className="text-teal-500 hover:bg-teal-500/10 hover:text-teal-500"
                         render={<Link href="/revision" />}
                       >
-                        <Play className="mr-1 h-3 w-3" /> Start
+                        <Play className="me-1 h-3 w-3" /> Start
                       </Button>
                     </div>
                   </li>
@@ -1579,7 +1579,7 @@ export default function StudentDemoPage() {
                     onClick={() => setOpenResultId(isOpen ? null : r.id)}
                     aria-expanded={isOpen}
                     aria-controls={`result-detail-${r.id}`}
-                    className="flex w-full items-center gap-4 p-5 text-left transition-colors hover:bg-muted/30"
+                    className="flex w-full items-center gap-4 p-5 text-start transition-colors hover:bg-muted/30"
                   >
                     <div className="hidden sm:block">
                       <GradePip grade={grade} size="md" />
@@ -1676,12 +1676,12 @@ export default function StudentDemoPage() {
                     </h4>
                     <p className="text-[11px] text-muted-foreground">{c.role}</p>
                   </div>
-                  <div className="text-right">
+                  <div className="text-end">
                     <p className="text-[11px] text-muted-foreground">{c.date}</p>
                   </div>
                 </header>
                 <p className="mt-3 text-[11px] text-muted-foreground">{c.context}</p>
-                <blockquote className="mt-2 border-l-2 border-primary/30 pl-4">
+                <blockquote className="mt-2 border-s-2 border-primary/30 ps-4">
                   <p className="text-sm italic leading-relaxed text-foreground">
                     &ldquo;{c.body}&rdquo;
                   </p>
@@ -1728,7 +1728,7 @@ export default function StudentDemoPage() {
                       onClick={() => setOpenSkillId(isOpen ? null : s.id)}
                       aria-expanded={isOpen}
                       aria-controls={`ao-detail-${s.id}`}
-                      className="flex w-full items-center gap-4 text-left"
+                      className="flex w-full items-center gap-4 text-start"
                     >
                       <div className="w-56 shrink-0">
                         <p className="text-sm font-medium text-foreground">{s.label}</p>
@@ -1963,7 +1963,7 @@ export default function StudentDemoPage() {
                   </div>
 
                   <div className="mt-4 flex items-center justify-end text-sm font-medium text-primary group-hover:translate-x-0.5">
-                    Continue <ArrowRight className="ml-1 h-3.5 w-3.5" />
+                    Continue <ArrowRight className="ms-1 h-3.5 w-3.5" />
                   </div>
                 </Link>
               )
@@ -2030,10 +2030,10 @@ export default function StudentDemoPage() {
                   className="border-primary/30 text-primary hover:bg-primary/10"
                   render={<Link href="/demo/school" />}
                 >
-                  See the school view <ArrowRight className="ml-1.5 h-4 w-4" />
+                  See the school view <ArrowRight className="ms-1.5 h-4 w-4" />
                 </Button>
                 <Button size="lg" render={<Link href="/school-pilot" />}>
-                  <Sparkles className="mr-1.5 h-4 w-4" /> Book a school pilot
+                  <Sparkles className="me-1.5 h-4 w-4" /> Book a school pilot
                 </Button>
               </div>
             </div>

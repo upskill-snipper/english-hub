@@ -425,7 +425,7 @@ export default async function WritingSkillsPage() {
       {/* ── AI Feedback Callout ─────────────────────────────────── */}
       <section className="px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl border-2 border-primary/20 bg-gradient-to-br from-primary/[0.03] to-primary/[0.06]">
-          <div className="flex flex-col items-center gap-6 p-8 text-center sm:p-12 md:flex-row md:text-left">
+          <div className="flex flex-col items-center gap-6 p-8 text-center sm:p-12 md:flex-row md:text-start">
             {/* Icon */}
             <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-primary/10">
               <svg

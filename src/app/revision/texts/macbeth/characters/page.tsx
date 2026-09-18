@@ -428,12 +428,12 @@ export default function MacbethCharactersPage() {
 
         {/* Header */}
         <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-violet-500/[0.04] p-6 sm:p-8 lg:p-10">
-          <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-violet-500/5 blur-3xl" />
+          <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-violet-500/5 blur-3xl" />
           <div className="relative">
             <Button
               variant="ghost"
               size="sm"
-              className="mb-4 -ml-2 text-muted-foreground"
+              className="mb-4 -ms-2 text-muted-foreground"
               render={<Link href="/revision/texts/macbeth" />}
             >
               <ArrowLeft className="size-3.5" />
@@ -441,7 +441,7 @@ export default function MacbethCharactersPage() {
             </Button>
             <div className="mb-4 flex flex-wrap items-center gap-2">
               <Badge variant="secondary">
-                <Users className="mr-1 size-3 text-violet-400" />
+                <Users className="me-1 size-3 text-violet-400" />
                 {tr('rev.texts.common.character_analysis')}
               </Badge>
               <Badge variant="outline">
@@ -527,10 +527,10 @@ export default function MacbethCharactersPage() {
         {/* Navigation */}
         <div className="flex justify-between items-center pt-4 pb-8">
           <Button variant="outline" render={<Link href="/revision/texts/macbeth" />}>
-            <ArrowLeft className="size-4 mr-1" /> {tr('rev.texts.common.overview')}
+            <ArrowLeft className="size-4 me-1" /> {tr('rev.texts.common.overview')}
           </Button>
           <Button variant="outline" render={<Link href="/revision/texts/macbeth/themes" />}>
-            {tr('rev.texts.common.themes')} <BookOpen className="size-4 ml-1" />
+            {tr('rev.texts.common.themes')} <BookOpen className="size-4 ms-1" />
           </Button>
         </div>
       </div>

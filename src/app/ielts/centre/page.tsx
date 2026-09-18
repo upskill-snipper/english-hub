@@ -329,7 +329,7 @@ async function StudentTable({
     <div className="hidden overflow-hidden rounded-2xl border border-border bg-card shadow-soft md:block">
       <table className="w-full text-sm">
         <thead>
-          <tr className="border-b border-border text-left">
+          <tr className="border-b border-border text-start">
             <th className="px-5 py-3 font-medium text-muted-foreground">{studentCol}</th>
             {IELTS_SKILLS.map((skill) => (
               <th
@@ -343,7 +343,7 @@ async function StudentTable({
             <th className="px-3 py-3 text-center font-medium text-muted-foreground">
               {overallCol}
             </th>
-            <th className="px-5 py-3 text-right font-medium text-muted-foreground">
+            <th className="px-5 py-3 text-end font-medium text-muted-foreground">
               {lastActiveCol}
             </th>
           </tr>
@@ -382,7 +382,7 @@ async function StudentTable({
                   {bandLabel(s.overall)}
                 </Badge>
               </td>
-              <td className="px-5 py-3.5 text-right font-mono text-xs text-muted-foreground">
+              <td className="px-5 py-3.5 text-end font-mono text-xs text-muted-foreground">
                 {formatDate(s.lastActive)}
               </td>
             </tr>
@@ -422,7 +422,7 @@ async function StudentCards({
                 </p>
               </div>
             </div>
-            <div className="shrink-0 text-right">
+            <div className="shrink-0 text-end">
               <p className="font-mono text-[10px] uppercase tracking-wide text-muted-foreground">
                 {overallLabel}
               </p>

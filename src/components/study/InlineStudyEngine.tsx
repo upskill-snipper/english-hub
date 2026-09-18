@@ -298,7 +298,7 @@ function QuizMode({
                     style={{ width: `${topicPct}%` }}
                   />
                 </div>
-                <span className="text-xs font-mono text-ink-500 w-12 text-right">
+                <span className="text-xs font-mono text-ink-500 w-12 text-end">
                   {result.correct}/{result.total}
                 </span>
               </div>
@@ -355,17 +355,17 @@ function QuizMode({
               key={i}
               onClick={() => handleSelect(i)}
               disabled={answered}
-              className={`w-full flex items-center gap-2.5 rounded-lg border px-3 py-2.5 text-xs text-left transition-all ${cls}`}
+              className={`w-full flex items-center gap-2.5 rounded-lg border px-3 py-2.5 text-xs text-start transition-all ${cls}`}
             >
               <span className="shrink-0 font-mono text-[10px] text-ink-400 w-4">
                 {String.fromCharCode(65 + i)}.
               </span>
               {opt}
               {answered && i === q.correctIndex && (
-                <Check className="size-3.5 text-teal-700 ml-auto shrink-0" />
+                <Check className="size-3.5 text-teal-700 ms-auto shrink-0" />
               )}
               {answered && i === selected && i !== q.correctIndex && (
-                <X className="size-3.5 text-clay-600 ml-auto shrink-0" />
+                <X className="size-3.5 text-clay-600 ms-auto shrink-0" />
               )}
             </button>
           )
@@ -387,7 +387,7 @@ function QuizMode({
           className="w-full rounded-lg bg-teal-800 py-2.5 text-xs font-medium text-cream-50 hover:bg-teal-700 transition-colors"
         >
           {currentIdx >= quizQuestions.length - 1 ? t('quiz.see_results') : t('quiz.next_question')}{' '}
-          <ChevronRight className="inline size-3 ml-1" />
+          <ChevronRight className="inline size-3 ms-1" />
         </button>
       )}
     </div>
@@ -411,7 +411,7 @@ function RevisionMode({
         <div key={i} className="rounded-lg border border-border bg-card overflow-hidden">
           <button
             onClick={() => setExpandedIdx(expandedIdx === i ? null : i)}
-            className="w-full flex items-center justify-between p-3 text-left hover:bg-cream-50 transition-colors"
+            className="w-full flex items-center justify-between p-3 text-start hover:bg-cream-50 transition-colors"
           >
             <span className="text-sm font-medium text-ink-900">{t.topic}</span>
             <ChevronRight

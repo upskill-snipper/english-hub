@@ -351,7 +351,7 @@ export default async function GccIgcseEnglishPage() {
               {helpH2}
             </h2>
             <p>{helpIntro}</p>
-            <ul className="list-disc space-y-2 pl-5 text-muted-foreground">
+            <ul className="list-disc space-y-2 ps-5 text-muted-foreground">
               <li>{renderBold(helpLi1)}</li>
               <li>{renderBold(helpLi2)}</li>
               <li>{renderBold(helpLi3)}</li>

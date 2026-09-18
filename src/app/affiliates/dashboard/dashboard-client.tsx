@@ -271,7 +271,7 @@ function WelcomeStrip({ account, referralUrl }: { account: AccountInfo; referral
 
   return (
     <div className="relative overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-primary/10 via-background to-background p-6 sm:p-8">
-      <div className="absolute top-0 right-0 h-60 w-60 -translate-y-12 translate-x-12 rounded-full bg-primary/5 blur-3xl" />
+      <div className="absolute top-0 end-0 h-60 w-60 -translate-y-12 translate-x-12 rounded-full bg-primary/5 blur-3xl" />
       <div className="relative flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <div className="flex items-center gap-3">
@@ -282,7 +282,7 @@ function WelcomeStrip({ account, referralUrl }: { account: AccountInfo; referral
               variant="secondary"
               className={cn('text-xs font-semibold uppercase tracking-wider', tierMeta.iconColour)}
             >
-              <Trophy className="mr-1 h-3 w-3" />
+              <Trophy className="me-1 h-3 w-3" />
               {tierMeta.label}
             </Badge>
           </div>
@@ -526,7 +526,7 @@ function TierProgressCard({ progress }: { progress: TierProgress }) {
             </p>
             <p className="mt-1 text-xl font-bold text-foreground">{tierMeta.label}</p>
           </div>
-          <div className="text-right">
+          <div className="text-end">
             <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
               Commission
             </p>
@@ -546,7 +546,7 @@ function TierProgressCard({ progress }: { progress: TierProgress }) {
               <div className="relative h-2 overflow-hidden rounded-full bg-muted">
                 <div
                   className={cn(
-                    'absolute inset-y-0 left-0 rounded-full bg-gradient-to-r',
+                    'absolute inset-y-0 start-0 rounded-full bg-gradient-to-r',
                     TIER_META[progress.nextTier].colour,
                   )}
                   style={{ width: `${progress.progressPct}%` }}
@@ -678,7 +678,7 @@ function TrackingExplainer({ code }: { code: string }) {
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-controls="tracking-explainer-body"
-          className="flex w-full items-center justify-between gap-3 px-5 py-4 text-left hover:bg-amber-500/10"
+          className="flex w-full items-center justify-between gap-3 px-5 py-4 text-start hover:bg-amber-500/10"
         >
           <div className="flex items-center gap-2">
             <Info className="h-4 w-4 text-amber-600" />
@@ -701,7 +701,7 @@ function TrackingExplainer({ code }: { code: string }) {
           >
             <section>
               <p className="font-semibold">{_tr(`Two ways your code earns commission:`)}</p>
-              <ol className="mt-2 list-decimal space-y-2 pl-5 text-muted-foreground">
+              <ol className="mt-2 list-decimal space-y-2 ps-5 text-muted-foreground">
                 <li>
                   <span className="font-medium text-foreground">
                     {_tr(`Someone clicks your link.`)}
@@ -833,7 +833,7 @@ function RecentConversions({ conversions }: { conversions: Conversion[] }) {
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-border text-left text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              <tr className="border-b border-border text-start text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                 <th className="pb-3">Date</th>
                 <th className="pb-3">Product</th>
                 <th className="pb-3">Order</th>
@@ -995,11 +995,11 @@ function LinksCard({ links, totalClicks }: { links: AffiliateLink[]; totalClicks
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-border text-left text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                <tr className="border-b border-border text-start text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                   <th className="pb-3">Campaign</th>
                   <th className="pb-3">Target</th>
-                  <th className="pb-3 text-right">Clicks</th>
-                  <th className="pb-3 text-right">Conversions</th>
+                  <th className="pb-3 text-end">Clicks</th>
+                  <th className="pb-3 text-end">Conversions</th>
                 </tr>
               </thead>
               <tbody>
@@ -1009,10 +1009,10 @@ function LinksCard({ links, totalClicks }: { links: AffiliateLink[]; totalClicks
                     <td className="py-3 font-mono text-xs text-muted-foreground">
                       {l.target_path}
                     </td>
-                    <td className="py-3 text-right text-foreground">
+                    <td className="py-3 text-end text-foreground">
                       {l.click_count.toLocaleString('en-GB')}
                     </td>
-                    <td className="py-3 text-right font-semibold text-foreground">
+                    <td className="py-3 text-end font-semibold text-foreground">
                       {l.conversion_count}
                     </td>
                   </tr>

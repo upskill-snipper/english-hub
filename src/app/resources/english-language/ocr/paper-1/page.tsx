@@ -65,24 +65,24 @@ export default async function OCRPaper1Page() {
             <div className="overflow-x-auto">
               <table className="mt-2 w-full border-collapse text-sm">
                 <thead>
-                  <tr className="border-b-2 border-primary/20 text-left">
-                    <th className="py-3 pr-4 font-semibold text-foreground">Section</th>
-                    <th className="py-3 pr-4 font-semibold text-foreground">Focus</th>
-                    <th className="py-3 pr-4 font-semibold text-foreground">Marks</th>
+                  <tr className="border-b-2 border-primary/20 text-start">
+                    <th className="py-3 pe-4 font-semibold text-foreground">Section</th>
+                    <th className="py-3 pe-4 font-semibold text-foreground">Focus</th>
+                    <th className="py-3 pe-4 font-semibold text-foreground">Marks</th>
                     <th className="py-3 font-semibold text-foreground">{tr(`Time Guide`)}</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
                   <tr>
-                    <td className="py-3 pr-4 font-medium">A &mdash; Reading</td>
-                    <td className="py-3 pr-4">{tr(`Non-fiction / literary non-fiction`)}</td>
-                    <td className="py-3 pr-4">40 marks</td>
+                    <td className="py-3 pe-4 font-medium">A &mdash; Reading</td>
+                    <td className="py-3 pe-4">{tr(`Non-fiction / literary non-fiction`)}</td>
+                    <td className="py-3 pe-4">40 marks</td>
                     <td className="py-3">1 hour</td>
                   </tr>
                   <tr>
-                    <td className="py-3 pr-4 font-medium">B &mdash; Writing</td>
-                    <td className="py-3 pr-4">{tr(`Writing to present information and ideas`)}</td>
-                    <td className="py-3 pr-4">40 marks</td>
+                    <td className="py-3 pe-4 font-medium">B &mdash; Writing</td>
+                    <td className="py-3 pe-4">{tr(`Writing to present information and ideas`)}</td>
+                    <td className="py-3 pe-4">40 marks</td>
                     <td className="py-3">1 hour</td>
                   </tr>
                 </tbody>
@@ -109,7 +109,7 @@ export default async function OCRPaper1Page() {
                 Section A presents you with two unseen non-fiction or literary non-fiction texts.
                 These could include:
               </p>
-              <ul className="ml-6 mt-2 list-disc space-y-1">
+              <ul className="ms-6 mt-2 list-disc space-y-1">
                 <li>{tr(`Newspaper and magazine articles (broadsheet and tabloid)`)}</li>
                 <li>{tr(`Travel writing, diaries, and journals`)}</li>
                 <li>{tr(`Autobiography and biography extracts`)}</li>
@@ -213,7 +213,7 @@ export default async function OCRPaper1Page() {
               <h3 className="text-xl font-semibold text-foreground">
                 Effective Reading Strategies
               </h3>
-              <ol className="ml-6 mt-2 list-decimal space-y-2">
+              <ol className="ms-6 mt-2 list-decimal space-y-2">
                 <li>
                   <strong>{tr(`Read the questions first`)}</strong> &mdash; this helps you know what
                   to look for when you read the texts.
@@ -284,7 +284,7 @@ export default async function OCRPaper1Page() {
                 writing for real purposes tasks where you write for a specific purpose, audience,
                 and form. You might be asked to write:
               </p>
-              <ul className="ml-6 mt-2 list-disc space-y-1">
+              <ul className="ms-6 mt-2 list-disc space-y-1">
                 <li>A letter (formal or informal)</li>
                 <li>{tr(`An article for a newspaper or magazine`)}</li>
                 <li>A speech or talk</li>
@@ -337,7 +337,7 @@ export default async function OCRPaper1Page() {
               <div className="mt-4 space-y-4">
                 <div className="rounded-lg border border-border bg-muted p-5">
                   <h4 className="font-semibold text-foreground">{tr(`Formal Letter`)}</h4>
-                  <ul className="ml-4 mt-2 list-disc space-y-1 text-sm">
+                  <ul className="ms-4 mt-2 list-disc space-y-1 text-sm">
                     <li>{tr(`Your address (top right), their address (left), date`)}</li>
                     <li>&ldquo;Dear Sir/Madam&rdquo; or &ldquo;Dear Mr/Mrs [Name]&rdquo;</li>
                     <li>{tr(`Formal register throughout`)}</li>
@@ -351,7 +351,7 @@ export default async function OCRPaper1Page() {
 
                 <div className="rounded-lg border border-border bg-muted p-5">
                   <h4 className="font-semibold text-foreground">Article</h4>
-                  <ul className="ml-4 mt-2 list-disc space-y-1 text-sm">
+                  <ul className="ms-4 mt-2 list-disc space-y-1 text-sm">
                     <li>{tr(`Engaging headline`)}</li>
                     <li>{tr(`Optional subheading or strapline`)}</li>
                     <li>{tr(`Opening hook to grab attention`)}</li>
@@ -362,7 +362,7 @@ export default async function OCRPaper1Page() {
 
                 <div className="rounded-lg border border-border bg-muted p-5">
                   <h4 className="font-semibold text-foreground">Speech</h4>
-                  <ul className="ml-4 mt-2 list-disc space-y-1 text-sm">
+                  <ul className="ms-4 mt-2 list-disc space-y-1 text-sm">
                     <li>
                       {tr(`Address the audience directly (&ldquo;Ladies and gentlemen&rdquo;)`)}
                     </li>
@@ -375,7 +375,7 @@ export default async function OCRPaper1Page() {
 
                 <div className="rounded-lg border border-border bg-muted p-5">
                   <h4 className="font-semibold text-foreground">Review</h4>
-                  <ul className="ml-4 mt-2 list-disc space-y-1 text-sm">
+                  <ul className="ms-4 mt-2 list-disc space-y-1 text-sm">
                     <li>Clear subject of the review stated early</li>
                     <li>{tr(`Balanced opinions (both positive and negative points)`)}</li>
                     <li>{tr(`Descriptive language to bring the experience alive`)}</li>
@@ -398,16 +398,16 @@ export default async function OCRPaper1Page() {
               <div className="mt-3 overflow-x-auto">
                 <table className="w-full border-collapse text-sm">
                   <thead>
-                    <tr className="border-b-2 border-primary/20 text-left">
-                      <th className="py-3 pr-4 font-semibold text-foreground">Technique</th>
-                      <th className="py-3 pr-4 font-semibold text-foreground">Definition</th>
+                    <tr className="border-b-2 border-primary/20 text-start">
+                      <th className="py-3 pe-4 font-semibold text-foreground">Technique</th>
+                      <th className="py-3 pe-4 font-semibold text-foreground">Definition</th>
                       <th className="py-3 font-semibold text-foreground">Example</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-border">
                     <tr>
-                      <td className="py-3 pr-4 font-medium">{tr(`Rhetorical question`)}</td>
-                      <td className="py-3 pr-4">
+                      <td className="py-3 pe-4 font-medium">{tr(`Rhetorical question`)}</td>
+                      <td className="py-3 pe-4">
                         A question asked for effect, not expecting an answer
                       </td>
                       <td className="py-3 italic">
@@ -415,8 +415,8 @@ export default async function OCRPaper1Page() {
                       </td>
                     </tr>
                     <tr>
-                      <td className="py-3 pr-4 font-medium">{tr(`Tricolon (rule of three)`)}</td>
-                      <td className="py-3 pr-4">
+                      <td className="py-3 pe-4 font-medium">{tr(`Tricolon (rule of three)`)}</td>
+                      <td className="py-3 pe-4">
                         {tr(`Three parallel words, phrases, or clauses`)}
                       </td>
                       <td className="py-3 italic">
@@ -424,8 +424,8 @@ export default async function OCRPaper1Page() {
                       </td>
                     </tr>
                     <tr>
-                      <td className="py-3 pr-4 font-medium">Anaphora</td>
-                      <td className="py-3 pr-4">
+                      <td className="py-3 pe-4 font-medium">Anaphora</td>
+                      <td className="py-3 pe-4">
                         {tr(`Repetition of a word or phrase at the start of successive clauses`)}
                       </td>
                       <td className="py-3 italic">
@@ -433,8 +433,8 @@ export default async function OCRPaper1Page() {
                       </td>
                     </tr>
                     <tr>
-                      <td className="py-3 pr-4 font-medium">{tr(`Direct address`)}</td>
-                      <td className="py-3 pr-4">
+                      <td className="py-3 pe-4 font-medium">{tr(`Direct address`)}</td>
+                      <td className="py-3 pe-4">
                         Speaking directly to the reader using &ldquo;you&rdquo;
                       </td>
                       <td className="py-3 italic">
@@ -442,15 +442,15 @@ export default async function OCRPaper1Page() {
                       </td>
                     </tr>
                     <tr>
-                      <td className="py-3 pr-4 font-medium">{tr(`Statistics / evidence`)}</td>
-                      <td className="py-3 pr-4">{tr(`Using data to support an argument`)}</td>
+                      <td className="py-3 pe-4 font-medium">{tr(`Statistics / evidence`)}</td>
+                      <td className="py-3 pe-4">{tr(`Using data to support an argument`)}</td>
                       <td className="py-3 italic">
                         &ldquo;Studies show that 73% of young people&hellip;&rdquo;
                       </td>
                     </tr>
                     <tr>
-                      <td className="py-3 pr-4 font-medium">Counter-argument</td>
-                      <td className="py-3 pr-4">
+                      <td className="py-3 pe-4 font-medium">Counter-argument</td>
+                      <td className="py-3 pe-4">
                         {tr(`Acknowledging the opposing view before dismissing it`)}
                       </td>
                       <td className="py-3 italic">
@@ -458,8 +458,8 @@ export default async function OCRPaper1Page() {
                       </td>
                     </tr>
                     <tr>
-                      <td className="py-3 pr-4 font-medium">{tr(`Emotive language`)}</td>
-                      <td className="py-3 pr-4">
+                      <td className="py-3 pe-4 font-medium">{tr(`Emotive language`)}</td>
+                      <td className="py-3 pe-4">
                         {tr(`Words chosen to provoke an emotional response`)}
                       </td>
                       <td className="py-3 italic">
@@ -480,7 +480,7 @@ export default async function OCRPaper1Page() {
                 Accurate SPaG is assessed as part of the technical accuracy skill. To reach the top
                 band:
               </p>
-              <ul className="ml-6 mt-2 list-disc space-y-1">
+              <ul className="ms-6 mt-2 list-disc space-y-1">
                 <li>
                   <strong>Vary your sentence structures</strong> &mdash; use simple, compound, and
                   complex sentences. Start some sentences with adverbials, subordinate clauses, or
@@ -514,30 +514,30 @@ export default async function OCRPaper1Page() {
               <div className="mt-3 overflow-x-auto">
                 <table className="w-full border-collapse text-sm">
                   <thead>
-                    <tr className="border-b-2 border-primary/20 text-left">
-                      <th className="py-3 pr-4 font-semibold text-foreground">Task</th>
+                    <tr className="border-b-2 border-primary/20 text-start">
+                      <th className="py-3 pe-4 font-semibold text-foreground">Task</th>
                       <th className="py-3 font-semibold text-foreground">{tr(`Suggested Time`)}</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-border">
                     <tr>
-                      <td className="py-3 pr-4">{tr(`Reading the texts and annotating`)}</td>
+                      <td className="py-3 pe-4">{tr(`Reading the texts and annotating`)}</td>
                       <td className="py-3">10&ndash;15 minutes</td>
                     </tr>
                     <tr>
-                      <td className="py-3 pr-4">{tr(`Section A: Reading questions`)}</td>
+                      <td className="py-3 pe-4">{tr(`Section A: Reading questions`)}</td>
                       <td className="py-3">45&ndash;50 minutes</td>
                     </tr>
                     <tr>
-                      <td className="py-3 pr-4">{tr(`Section B: Shorter writing task`)}</td>
+                      <td className="py-3 pe-4">{tr(`Section B: Shorter writing task`)}</td>
                       <td className="py-3">20&ndash;25 minutes</td>
                     </tr>
                     <tr>
-                      <td className="py-3 pr-4">{tr(`Section B: Longer writing task`)}</td>
+                      <td className="py-3 pe-4">{tr(`Section B: Longer writing task`)}</td>
                       <td className="py-3">30&ndash;35 minutes</td>
                     </tr>
                     <tr>
-                      <td className="py-3 pr-4">Proofreading</td>
+                      <td className="py-3 pe-4">Proofreading</td>
                       <td className="py-3">5 minutes</td>
                     </tr>
                   </tbody>
@@ -548,7 +548,7 @@ export default async function OCRPaper1Page() {
             {/* Common mistakes */}
             <div>
               <h3 className="text-xl font-semibold text-foreground">Common Mistakes to Avoid</h3>
-              <ul className="ml-6 mt-2 list-disc space-y-2">
+              <ul className="ms-6 mt-2 list-disc space-y-2">
                 <li>
                   <strong>{tr(`Feature-spotting without analysis`)}</strong> &mdash; naming a
                   technique without explaining its effect will not earn high marks. Always explain

@@ -100,7 +100,7 @@ function QuizCard({
               key={i}
               onClick={() => handleSelect(i)}
               disabled={submitted}
-              className={`w-full text-left p-4 rounded-lg border transition-all duration-200 ${borderClass} ${bgClass} ${
+              className={`w-full text-start p-4 rounded-lg border transition-all duration-200 ${borderClass} ${bgClass} ${
                 !submitted ? 'cursor-pointer' : 'cursor-default'
               }`}
             >
@@ -243,7 +243,7 @@ function Sidebar({
                     onSelectModule(mod.id)
                     onClose()
                   }}
-                  className={`w-full text-left flex items-start gap-3 px-3 py-3 rounded-lg transition-all duration-200 ${
+                  className={`w-full text-start flex items-start gap-3 px-3 py-3 rounded-lg transition-all duration-200 ${
                     isCurrent
                       ? 'bg-primary/10 border border-primary/30'
                       : 'hover:bg-background border border-transparent'
@@ -324,7 +324,7 @@ function Sidebar({
   return (
     <>
       {/* Desktop sidebar */}
-      <aside className="hidden md:flex md:flex-col w-[280px] flex-shrink-0 bg-card border-r border-border h-screen sticky top-0 overflow-hidden">
+      <aside className="hidden md:flex md:flex-col w-[280px] flex-shrink-0 bg-card border-e border-border h-screen sticky top-0 overflow-hidden">
         {sidebarContent}
       </aside>
 
@@ -338,7 +338,7 @@ function Sidebar({
 
       {/* Mobile drawer */}
       <aside
-        className={`md:hidden fixed inset-y-0 left-0 z-50 w-[280px] bg-card border-r border-border transform transition-transform duration-300 ${
+        className={`md:hidden fixed inset-y-0 start-0 z-50 w-[280px] bg-card border-e border-border transform transition-transform duration-300 ${
           open ? 'translate-x-0' : '-translate-x-full'
         }`}
       >

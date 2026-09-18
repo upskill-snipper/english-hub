@@ -31,7 +31,7 @@ function Section({
     <section id={id} className="border border-border rounded-lg bg-card shadow-md">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left"
+        className="flex w-full items-center justify-between px-5 py-4 text-start"
         aria-expanded={open}
       >
         <h2 className="text-xl font-bold text-foreground">{title}</h2>
@@ -555,7 +555,7 @@ export default function GreatExpectationsStudyGuide() {
         </p>
         <div className="space-y-4">
           {keyQuotes.map((q, i) => (
-            <div key={i} className="rounded-lg border-l-4 border-primary bg-muted p-4">
+            <div key={i} className="rounded-lg border-s-4 border-primary bg-muted p-4">
               <blockquote className="text-base font-medium italic text-foreground">
                 &ldquo;{q.quote}&rdquo;
               </blockquote>

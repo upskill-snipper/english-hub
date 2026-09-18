@@ -290,7 +290,7 @@ function ResultsDisplay({
       {/* Actions */}
       <div className="flex flex-wrap gap-3">
         <Button onClick={onRetake} variant="outline">
-          <RotateCcw className="h-4 w-4 mr-2" />
+          <RotateCcw className="h-4 w-4 me-2" />
           {t('assessment.reading.retake')}
         </Button>
         <Button
@@ -331,7 +331,7 @@ function ResultsDisplay({
             URL.revokeObjectURL(url)
           }}
         >
-          <Download className="h-4 w-4 mr-2" />
+          <Download className="h-4 w-4 me-2" />
           {t('assessment.reading.download_results')}
         </Button>
       </div>
@@ -350,7 +350,7 @@ function MethodologySection() {
       <CardHeader>
         <button
           onClick={() => setExpanded(!expanded)}
-          className="flex items-center justify-between w-full text-left"
+          className="flex items-center justify-between w-full text-start"
         >
           <CardTitle className="flex items-center gap-2">
             <Info className="h-5 w-5 text-muted-foreground" />
@@ -616,7 +616,7 @@ export default function ReadingAssessmentPage() {
             render={<Link href="/assessment/reading/test" />}
           >
             {t('assessment.reading.landing.start_cta')}
-            <ArrowRight className="h-4 w-4 ml-2" />
+            <ArrowRight className="h-4 w-4 ms-2" />
           </Button>
 
           {/* Methodology */}

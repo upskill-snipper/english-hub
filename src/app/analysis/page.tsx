@@ -157,11 +157,11 @@ export default async function AnalysisHubPage() {
   return (
     <div className="mx-auto max-w-6xl space-y-10 px-4 pb-16 pt-12 sm:px-6 lg:px-8">
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-blue-500/[0.04] p-6 sm:p-8 lg:p-10">
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-blue-500/5 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-blue-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-16 -start-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl" />
         <div className="relative">
           <Badge variant="secondary" className="mb-4">
-            <Sparkles className="mr-1 size-3" />
+            <Sparkles className="me-1 size-3" />
             {tEyebrow}
           </Badge>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">{tH1}</h1>

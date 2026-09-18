@@ -66,7 +66,7 @@ function StepRow({
       type="button"
       onClick={onToggle}
       className={cn(
-        'flex w-full items-center gap-3 rounded-lg border px-4 py-3 text-left transition-colors',
+        'flex w-full items-center gap-3 rounded-lg border px-4 py-3 text-start transition-colors',
         checked
           ? 'border-primary/30 bg-primary/5 text-muted-foreground line-through'
           : 'border-border bg-card hover:border-primary/40 hover:bg-primary/5',
@@ -95,7 +95,7 @@ function AccordionItem({ section }: { section: AccordionSection }) {
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="flex w-full items-center justify-between gap-3 bg-card px-5 py-4 text-left transition-colors hover:bg-muted/40"
+        className="flex w-full items-center justify-between gap-3 bg-card px-5 py-4 text-start transition-colors hover:bg-muted/40"
       >
         <div className="flex items-center gap-3 min-w-0">
           <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
@@ -151,7 +151,7 @@ function PermissionMatrix() {
       <table className="w-full text-sm">
         <thead>
           <tr className="border-b border-border bg-muted/40">
-            <th className="px-4 py-3 text-left font-semibold text-muted-foreground">Action</th>
+            <th className="px-4 py-3 text-start font-semibold text-muted-foreground">Action</th>
             <th className="px-4 py-3 text-center font-semibold text-muted-foreground">Admin</th>
             <th className="px-4 py-3 text-center font-semibold text-muted-foreground">Teacher</th>
             <th className="px-4 py-3 text-center font-semibold text-muted-foreground">Student</th>
@@ -252,7 +252,7 @@ function FaqItem({ question, answer }: { question: string; answer: React.ReactNo
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="flex w-full items-center justify-between gap-3 py-4 text-left text-sm font-medium hover:text-primary transition-colors"
+        className="flex w-full items-center justify-between gap-3 py-4 text-start text-sm font-medium hover:text-primary transition-colors"
       >
         {question}
         {open ? (

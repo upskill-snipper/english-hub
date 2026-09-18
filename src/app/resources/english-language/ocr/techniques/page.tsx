@@ -422,7 +422,7 @@ export default function OCRTechniquesPage() {
             </div>
 
             <h3 className="mt-8 text-lg font-semibold text-foreground">Common Analysis Mistakes</h3>
-            <ul className="ml-6 list-disc space-y-2">
+            <ul className="ms-6 list-disc space-y-2">
               <li>
                 <strong>Feature-spotting</strong> &mdash; Simply naming a technique without
                 explaining its effect. &ldquo;The writer uses a simile&rdquo; is not analysis.

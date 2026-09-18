@@ -370,7 +370,7 @@ export default async function RetrievalRAO1Page() {
 
             <ol className="mt-6 space-y-5">
               {p.questions.map((qa, i) => (
-                <li key={i} className="border-l-2 border-border pl-4">
+                <li key={i} className="border-s-2 border-border ps-4">
                   <p className="font-medium text-foreground">{qa.q}</p>
                   <p className="mt-2 text-sm text-muted-foreground">
                     <span className="font-semibold text-foreground">Model answer: </span>

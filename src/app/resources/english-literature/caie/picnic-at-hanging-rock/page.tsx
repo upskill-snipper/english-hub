@@ -142,7 +142,7 @@ export default function PicnicAtHangingRockPage() {
                   meaning for everyone who knew her. She represents the beauty and mystery that
                   cannot be contained by the rigid structures of Appleyard College.
                 </p>
-                <p className="text-sm italic border-l-2 border-primary/40 pl-3">
+                <p className="text-sm italic border-s-2 border-primary/40 ps-3">
                   Key quotation: &ldquo;Miranda was a doer, not a dreamer... she radiated happiness
                   as a candle does light.&rdquo;
                 </p>
@@ -167,7 +167,7 @@ export default function PicnicAtHangingRockPage() {
                   remaining girls, who demand answers she cannot give. This scene exposes the
                   community&rsquo;s desperation for closure and rational explanation.
                 </p>
-                <p className="text-sm italic border-l-2 border-primary/40 pl-3">
+                <p className="text-sm italic border-s-2 border-primary/40 ps-3">
                   Key quotation: &ldquo;The girl on the sofa had the languid elegance of a lazy
                   kitten... Irma Leopold had always been a beautiful girl.&rdquo;
                 </p>
@@ -192,7 +192,7 @@ export default function PicnicAtHangingRockPage() {
                   intuition can protect against the unknowable. Lindsay pairs opposites to emphasise
                   the Rock&rsquo;s indiscriminate, overwhelming force.
                 </p>
-                <p className="text-sm italic border-l-2 border-primary/40 pl-3">
+                <p className="text-sm italic border-s-2 border-primary/40 ps-3">
                   Key quotation: &ldquo;Marion with her plain intelligent face had no patience with
                   Miranda&rsquo;s vague gentle ways.&rdquo;
                 </p>
@@ -220,7 +220,7 @@ export default function PicnicAtHangingRockPage() {
                   with geological time &mdash; &ldquo;a million years&rdquo; &mdash; foreshadows her
                   absorption into the ancient landscape.
                 </p>
-                <p className="text-sm italic border-l-2 border-primary/40 pl-3">
+                <p className="text-sm italic border-s-2 border-primary/40 ps-3">
                   Key quotation: &ldquo;Miss McCraw... was seen by two of the girls... without her
                   skirt... apparently struggling through some dense bracken.&rdquo;
                 </p>
@@ -247,7 +247,7 @@ export default function PicnicAtHangingRockPage() {
                   the novel&rsquo;s most sympathetic victim: destroyed not by the Rock but by the
                   institutional system that was supposed to protect her.
                 </p>
-                <p className="text-sm italic border-l-2 border-primary/40 pl-3">
+                <p className="text-sm italic border-s-2 border-primary/40 ps-3">
                   Key quotation: &ldquo;Sara loved Miranda more than anyone else in the world... she
                   was the one human being who had ever loved her.&rdquo;
                 </p>
@@ -276,7 +276,7 @@ export default function PicnicAtHangingRockPage() {
                   at the Rock. She represents the failure of authoritarian structures when
                   confronted with forces beyond their control.
                 </p>
-                <p className="text-sm italic border-l-2 border-primary/40 pl-3">
+                <p className="text-sm italic border-s-2 border-primary/40 ps-3">
                   Key quotation: &ldquo;The Doyen of an exclusive Ladies&rsquo; College... was able
                   to command the instant obedience and respect of her subordinates.&rdquo;
                 </p>
@@ -304,7 +304,7 @@ export default function PicnicAtHangingRockPage() {
                   impenetrable mystery. He is eventually sent to England, unable to recover from his
                   experience.
                 </p>
-                <p className="text-sm italic border-l-2 border-primary/40 pl-3">
+                <p className="text-sm italic border-s-2 border-primary/40 ps-3">
                   Key quotation: &ldquo;He could think of nothing but the girl with the golden
                   hair... the unknown doings on the Rock filled his mind to the exclusion of all
                   else.&rdquo;
@@ -334,7 +334,7 @@ export default function PicnicAtHangingRockPage() {
                   a note of personal tragedy and highlights the class divisions that separate
                   families in colonial Australia.
                 </p>
-                <p className="text-sm italic border-l-2 border-primary/40 pl-3">
+                <p className="text-sm italic border-s-2 border-primary/40 ps-3">
                   Key quotation: &ldquo;Albert Crundall... was a rough diamond, shrewd and
                   dependable.&rdquo;
                 </p>
@@ -362,7 +362,7 @@ export default function PicnicAtHangingRockPage() {
                   mirrors the limits of colonial knowledge when confronted with the ancient
                   Australian landscape.
                 </p>
-                <p className="text-sm italic border-l-2 border-primary/40 pl-3">
+                <p className="text-sm italic border-s-2 border-primary/40 ps-3">
                   &ldquo;What we see and what we seem / Are but a dream, a dream within a
                   dream.&rdquo; (The Poe epigraph used within the novel reinforces this theme.)
                 </p>
@@ -382,7 +382,7 @@ export default function PicnicAtHangingRockPage() {
                   civilisation in Australia. The girls&rsquo; removal of gloves and the loosening of
                   corsets as they ascend symbolises the shedding of social constraints.
                 </p>
-                <p className="text-sm italic border-l-2 border-primary/40 pl-3">
+                <p className="text-sm italic border-s-2 border-primary/40 ps-3">
                   &ldquo;The hanging Rock itself had been a landmark for a million years... a
                   million years is quite a long time.&rdquo;
                 </p>
@@ -404,7 +404,7 @@ export default function PicnicAtHangingRockPage() {
                   that evoke both the womb and the phallus, adding a layer of sexual symbolism to
                   the disappearance.
                 </p>
-                <p className="text-sm italic border-l-2 border-primary/40 pl-3">
+                <p className="text-sm italic border-s-2 border-primary/40 ps-3">
                   &ldquo;On this Valentine&rsquo;s Day, the weights of destiny were already
                   loaded.&rdquo;
                 </p>
@@ -425,7 +425,7 @@ export default function PicnicAtHangingRockPage() {
                   geological deep time &mdash; which swallows the girls as European clock-time
                   literally ceases to function.
                 </p>
-                <p className="text-sm italic border-l-2 border-primary/40 pl-3">
+                <p className="text-sm italic border-s-2 border-primary/40 ps-3">
                   &ldquo;At twelve o&rsquo;clock... all the watches had stopped.&rdquo;
                 </p>
               </CardContent>
@@ -445,7 +445,7 @@ export default function PicnicAtHangingRockPage() {
                   course &mdash; there is no funeral, no burial, no closure. Lindsay shows how
                   unresolved loss corrodes individuals and communities alike.
                 </p>
-                <p className="text-sm italic border-l-2 border-primary/40 pl-3">
+                <p className="text-sm italic border-s-2 border-primary/40 ps-3">
                   &ldquo;The picnic... would be talked of for years to come... nobody would ever
                   forget that Saturday afternoon.&rdquo;
                 </p>
@@ -466,7 +466,7 @@ export default function PicnicAtHangingRockPage() {
                   colonial hubris &mdash; Europeans who believe they have tamed the landscape
                   discover they understand nothing about it.
                 </p>
-                <p className="text-sm italic border-l-2 border-primary/40 pl-3">
+                <p className="text-sm italic border-s-2 border-primary/40 ps-3">
                   &ldquo;The vast landscape of the Australian bush closed in about the little group
                   of humans.&rdquo;
                 </p>
@@ -586,12 +586,12 @@ export default function PicnicAtHangingRockPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3 text-muted-foreground leading-relaxed">
-                  <ul className="list-disc space-y-1.5 pl-5">
+                  <ul className="list-disc space-y-1.5 ps-5">
                     {ch.events.map((e, i) => (
                       <li key={i}>{e}</li>
                     ))}
                   </ul>
-                  <p className="text-sm italic border-l-2 border-primary/40 pl-3">{ch.quotation}</p>
+                  <p className="text-sm italic border-s-2 border-primary/40 ps-3">{ch.quotation}</p>
                 </CardContent>
               </Card>
             ))}
@@ -681,7 +681,7 @@ export default function PicnicAtHangingRockPage() {
                   bush reinforces the theme of civilisation&rsquo;s fragility. The Rock&rsquo;s
                   volcanic origins hint at subterranean forces that erupt into the human world.
                 </p>
-                <p className="text-sm italic border-l-2 border-primary/40 pl-3">
+                <p className="text-sm italic border-s-2 border-primary/40 ps-3">
                   &ldquo;Doomed and beautiful, the Rock towers above the plain, dwarfing the
                   insignificant human figures at its base.&rdquo;
                 </p>
@@ -725,7 +725,7 @@ export default function PicnicAtHangingRockPage() {
                   You will be given a printed extract and asked to analyse how Lindsay achieves
                   specific effects. Focus on:
                 </p>
-                <ul className="list-disc space-y-1.5 pl-5">
+                <ul className="list-disc space-y-1.5 ps-5">
                   <li>
                     <strong className="text-foreground">Language:</strong> imagery, metaphor,
                     simile, personification, sensory detail, diction choices.
@@ -762,7 +762,7 @@ export default function PicnicAtHangingRockPage() {
                   Essay questions ask you to discuss a theme, character, or aspect of the whole
                   novel. Ensure you:
                 </p>
-                <ul className="list-disc space-y-1.5 pl-5">
+                <ul className="list-disc space-y-1.5 ps-5">
                   <li>
                     <strong className="text-foreground">{tr(`Sustain a clear argument`)}</strong>{' '}
                     throughout &mdash; avoid simply narrating the plot.
@@ -804,13 +804,13 @@ export default function PicnicAtHangingRockPage() {
                 <table className="w-full text-sm text-muted-foreground">
                   <thead>
                     <tr className="border-b border-border/60">
-                      <th className="py-2 pr-4 text-left font-semibold text-foreground">Skill</th>
-                      <th className="py-2 text-left font-semibold text-foreground">Description</th>
+                      <th className="py-2 pe-4 text-start font-semibold text-foreground">Skill</th>
+                      <th className="py-2 text-start font-semibold text-foreground">Description</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-border/40">
                     <tr>
-                      <td className="py-2.5 pr-4 font-medium text-foreground whitespace-nowrap">
+                      <td className="py-2.5 pe-4 font-medium text-foreground whitespace-nowrap">
                         {tr(`Textual Knowledge`)}
                       </td>
                       <td className="py-2.5">
@@ -819,7 +819,7 @@ export default function PicnicAtHangingRockPage() {
                       </td>
                     </tr>
                     <tr>
-                      <td className="py-2.5 pr-4 font-medium text-foreground whitespace-nowrap">
+                      <td className="py-2.5 pe-4 font-medium text-foreground whitespace-nowrap">
                         {tr(`Writer's Methods`)}
                       </td>
                       <td className="py-2.5">
@@ -828,7 +828,7 @@ export default function PicnicAtHangingRockPage() {
                       </td>
                     </tr>
                     <tr>
-                      <td className="py-2.5 pr-4 font-medium text-foreground whitespace-nowrap">
+                      <td className="py-2.5 pe-4 font-medium text-foreground whitespace-nowrap">
                         Interpretation
                       </td>
                       <td className="py-2.5">
@@ -837,7 +837,7 @@ export default function PicnicAtHangingRockPage() {
                       </td>
                     </tr>
                     <tr>
-                      <td className="py-2.5 pr-4 font-medium text-foreground whitespace-nowrap">
+                      <td className="py-2.5 pe-4 font-medium text-foreground whitespace-nowrap">
                         {tr(`Personal Response`)}
                       </td>
                       <td className="py-2.5">
@@ -878,7 +878,7 @@ export default function PicnicAtHangingRockPage() {
                   <p>
                     Lindsay presents Hanging Rock not merely as a backdrop but as an active, almost
                     sentient force that drives the narrative&rsquo;s central crisis.
-                    <span className="text-xs text-primary ml-1">
+                    <span className="text-xs text-primary ms-1">
                       [Textual Knowledge - knowledge of text]
                     </span>{' '}
                     The Rock is described as having existed for &ldquo;a million years,&rdquo; a
@@ -887,7 +887,7 @@ export default function PicnicAtHangingRockPage() {
                     personification of the landscape &mdash; the Rock &ldquo;brooded in silence over
                     its own unfathomable secrets&rdquo; &mdash; grants it agency and consciousness,
                     transforming setting into character.
-                    <span className="text-xs text-primary ml-1">
+                    <span className="text-xs text-primary ms-1">
                       [Writer's Methods - language analysis: repetition, personification]
                     </span>
                   </p>
@@ -898,7 +898,7 @@ export default function PicnicAtHangingRockPage() {
                     between settler culture and the ancient Indigenous landscape; the Rock&rsquo;s
                     refusal to yield its secrets can be read as the land itself resisting colonial
                     possession.
-                    <span className="text-xs text-primary ml-1">
+                    <span className="text-xs text-primary ms-1">
                       [Interpretation - literary and historical context]
                     </span>
                   </p>
@@ -910,7 +910,7 @@ export default function PicnicAtHangingRockPage() {
                     human emotions &mdash; love, cruelty, desire &mdash; that the Rock merely
                     catalyses. The Rock provides the conditions for tragedy, but it is the
                     characters&rsquo; responses that give the novel its emotional power.
-                    <span className="text-xs text-primary ml-1">
+                    <span className="text-xs text-primary ms-1">
                       [Personal Response - personal response, alternative interpretation]
                     </span>
                   </p>

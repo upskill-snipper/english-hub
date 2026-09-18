@@ -458,7 +458,7 @@ export default function LordOfTheFliesPage() {
           <h2 className="text-2xl font-bold text-foreground">Key Themes</h2>
           <div className="mt-6 space-y-6">
             {THEMES.map((t) => (
-              <div key={t.theme} className="rounded-xl border-l-4 border-primary bg-muted p-6">
+              <div key={t.theme} className="rounded-xl border-s-4 border-primary bg-muted p-6">
                 <h3 className="text-lg font-bold text-foreground">{t.theme}</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   {t.description}

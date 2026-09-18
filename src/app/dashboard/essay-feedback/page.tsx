@@ -592,7 +592,7 @@ function FeedbackResults({
       {/* Grade Band Hero */}
       <Card className={cn('border', gradeStyle.border)}>
         <CardContent className="py-6">
-          <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left">
+          <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-start">
             <div
               className={cn(
                 'flex h-16 w-16 items-center justify-center rounded-2xl ring-4',
@@ -681,7 +681,7 @@ function FeedbackResults({
               {feedback.strengths.map((s, i) => (
                 <li key={i} className="space-y-1">
                   <p className="text-sm font-medium text-foreground">{s.point}</p>
-                  <blockquote className="border-l-2 border-green-500/30 pl-3 text-xs italic text-muted-foreground">
+                  <blockquote className="border-s-2 border-green-500/30 ps-3 text-xs italic text-muted-foreground">
                     &ldquo;{s.quote}&rdquo;
                   </blockquote>
                 </li>

@@ -331,7 +331,7 @@ export default function CalendarPage() {
         </div>
         <div className="flex items-center gap-2 print:hidden">
           <Button variant="outline" size="sm" onClick={handlePrint}>
-            <Printer className="h-4 w-4 mr-1.5" />
+            <Printer className="h-4 w-4 me-1.5" />
             {t('school.calendar.print')}
           </Button>
           <Button
@@ -339,7 +339,7 @@ export default function CalendarPage() {
             size="sm"
             onClick={() => setRevisionMode((v) => !v)}
           >
-            <Timer className="h-4 w-4 mr-1.5" />
+            <Timer className="h-4 w-4 me-1.5" />
             {t('school.calendar.revision_mode')}
           </Button>
         </div>
@@ -361,14 +361,14 @@ export default function CalendarPage() {
           <Button variant="outline" size="icon" onClick={() => navigate(1)}>
             <ChevronRight className="h-4 w-4" />
           </Button>
-          <h2 className="ml-2 text-lg font-semibold">{title}</h2>
+          <h2 className="ms-2 text-lg font-semibold">{title}</h2>
         </div>
 
         {/* Filters + view toggle */}
         <div className="flex items-center gap-2 flex-wrap">
           <Select value={boardFilter} onValueChange={(v) => setBoardFilter(v ?? 'all')}>
             <SelectTrigger className="w-[140px] h-8 text-xs">
-              <Filter className="h-3 w-3 mr-1" />
+              <Filter className="h-3 w-3 me-1" />
               <SelectValue placeholder={t('school.calendar.exam_board')} />
             </SelectTrigger>
             <SelectContent>
@@ -396,11 +396,11 @@ export default function CalendarPage() {
           <Tabs value={view} onValueChange={(v) => setView(v as 'month' | 'week')}>
             <TabsList className="h-8">
               <TabsTrigger value="month" className="text-xs px-2.5">
-                <LayoutGrid className="h-3 w-3 mr-1" />
+                <LayoutGrid className="h-3 w-3 me-1" />
                 {t('school.calendar.month')}
               </TabsTrigger>
               <TabsTrigger value="week" className="text-xs px-2.5">
-                <List className="h-3 w-3 mr-1" />
+                <List className="h-3 w-3 me-1" />
                 {t('school.calendar.week')}
               </TabsTrigger>
             </TabsList>
@@ -599,7 +599,7 @@ function MonthView({
         {DAY_LABELS.map((d) => (
           <div
             key={d}
-            className="py-2 text-center text-xs font-medium text-muted-foreground border-r border-border last:border-r-0"
+            className="py-2 text-center text-xs font-medium text-muted-foreground border-e border-border last:border-e-0"
           >
             {d}
           </div>
@@ -612,7 +612,7 @@ function MonthView({
             return (
               <div
                 key={`blank-${i}`}
-                className="border-r border-b border-border last:border-r-0 bg-muted/20"
+                className="border-e border-b border-border last:border-e-0 bg-muted/20"
               />
             )
           }
@@ -627,7 +627,7 @@ function MonthView({
             <div
               key={iso}
               className={cn(
-                'border-r border-b border-border last:border-r-0 p-1.5 overflow-hidden relative group',
+                'border-e border-b border-border last:border-e-0 p-1.5 overflow-hidden relative group',
                 isToday && 'bg-primary/5',
                 exams.length > 0 && 'bg-red-500/10/40 dark:bg-red-950/10',
               )}
@@ -671,7 +671,7 @@ function MonthView({
                   >
                     <span
                       className={cn(
-                        'inline-block w-1.5 h-1.5 rounded-full mr-1',
+                        'inline-block w-1.5 h-1.5 rounded-full me-1',
                         URGENCY_DOT[colour],
                       )}
                     />
@@ -711,7 +711,7 @@ function MonthView({
                   className="text-[10px] leading-tight px-1 py-0.5 rounded mb-0.5 truncate bg-purple-500/10 dark:bg-purple-950/30 text-purple-700 dark:text-purple-300"
                   title={`Due: ${a.title} (${a.className})`}
                 >
-                  <FileText className="inline h-2.5 w-2.5 mr-0.5" />
+                  <FileText className="inline h-2.5 w-2.5 me-0.5" />
                   {a.title}
                 </div>
               ))}
@@ -816,7 +816,7 @@ function WeekView({
                           {exam.time === 'morning' ? '9:00 AM' : '1:30 PM'} · {exam.duration} min
                         </p>
                       </div>
-                      <Badge className="shrink-0 ml-auto tabular-nums" variant="outline">
+                      <Badge className="shrink-0 ms-auto tabular-nums" variant="outline">
                         {d2 <= 0 ? 'Today' : `${d2}d`}
                       </Badge>
                     </div>

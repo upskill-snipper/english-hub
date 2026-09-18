@@ -156,7 +156,7 @@ export default function UnseenPoetryHubPage() {
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/igcse/edexcel" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -182,9 +182,9 @@ export default function UnseenPoetryHubPage() {
 
       {/* ── Overview banner ─────────────────────────────────────── */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-sky-500/[0.04] p-6 sm:p-8">
-        <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-sky-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -end-16 -top-16 h-48 w-48 rounded-full bg-sky-500/5 blur-3xl" />
         <Badge variant="secondary" className="mb-3">
-          <Sparkles className="mr-1 size-3" />
+          <Sparkles className="me-1 size-3" />
           {tr('igcse.page.badge_paper2_unseen')}
         </Badge>
         <h2 className="text-heading-md font-heading text-foreground mb-2">
@@ -216,7 +216,7 @@ export default function UnseenPoetryHubPage() {
               {guide.tag && (
                 <Badge
                   variant="default"
-                  className="absolute right-4 top-4 text-[0.65rem] uppercase tracking-wider"
+                  className="absolute end-4 top-4 text-[0.65rem] uppercase tracking-wider"
                 >
                   {guide.tag}
                 </Badge>

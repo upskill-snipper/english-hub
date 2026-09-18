@@ -26,7 +26,7 @@ function Section({
     <div className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left transition-colors hover:bg-muted"
+        className="flex w-full items-center justify-between px-5 py-4 text-start transition-colors hover:bg-muted"
         aria-expanded={open}
         aria-controls={`section-${id}`}
       >
@@ -70,7 +70,7 @@ function Quote({
   analysis: string
 }) {
   return (
-    <div className="rounded-lg border-l-4 border-accent bg-primary/10 p-4">
+    <div className="rounded-lg border-s-4 border-accent bg-primary/10 p-4">
       <p className="text-sm font-semibold italic text-foreground">&ldquo;{text}&rdquo;</p>
       <p className="mt-1 text-xs text-muted-foreground">
         {speaker} &mdash; {act}
@@ -1010,7 +1010,7 @@ export default function MerchantOfVeniceRevisionPage() {
               <div>
                 <h3 className="font-bold text-foreground mb-2">{tr(`Structure of the Scene`)}</h3>
                 <div className="overflow-x-auto">
-                  <table className="min-w-full text-sm text-left border border-border rounded-lg overflow-hidden">
+                  <table className="min-w-full text-sm text-start border border-border rounded-lg overflow-hidden">
                     <thead className="bg-muted">
                       <tr>
                         <th className="px-4 py-2 font-semibold text-muted-foreground border-b">

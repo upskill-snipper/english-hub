@@ -154,7 +154,7 @@ export default function OCRLoveAndRelationshipsPage() {
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/revision/poetry/ocr" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -164,13 +164,13 @@ export default function OCRLoveAndRelationshipsPage() {
 
       {/* ── Hero ────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-pink-500/[0.04] p-6 sm:p-8 lg:p-10">
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-pink-500/5 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-rose-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-pink-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-16 -start-16 h-48 w-48 rounded-full bg-rose-500/5 blur-3xl" />
 
         <div className="relative">
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
-              <Sparkles className="mr-1 size-3" />
+              <Sparkles className="me-1 size-3" />
               OCR Towards a World Unknown
             </Badge>
             <Badge className="bg-primary/10 text-primary border-primary/20">OCR</Badge>
@@ -214,7 +214,7 @@ export default function OCRLoveAndRelationshipsPage() {
                 if (!poem.studyHref) e.preventDefault()
               }}
             >
-              <div className="absolute right-4 top-4">
+              <div className="absolute end-4 top-4">
                 {poem.studyHref ? (
                   <CheckCircle2 className="size-4 text-emerald-400" />
                 ) : (
@@ -222,7 +222,7 @@ export default function OCRLoveAndRelationshipsPage() {
                 )}
               </div>
 
-              <h3 className="pr-8 text-heading-md font-heading text-foreground group-hover:text-primary transition-colors">
+              <h3 className="pe-8 text-heading-md font-heading text-foreground group-hover:text-primary transition-colors">
                 {poem.title}
               </h3>
               <p className="mt-0.5 text-caption text-muted-foreground">{poem.poet}</p>

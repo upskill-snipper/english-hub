@@ -108,19 +108,19 @@ function AccountsTable({ users }: { users: ImportUser[] }) {
       <table className="w-full text-sm">
         <thead>
           <tr className="border-b border-zinc-800 bg-zinc-900">
-            <th className="px-3 py-2.5 text-left text-xs font-semibold uppercase tracking-wider text-zinc-500">
+            <th className="px-3 py-2.5 text-start text-xs font-semibold uppercase tracking-wider text-zinc-500">
               {tx('school.b15.import_results.col_name')}
             </th>
-            <th className="px-3 py-2.5 text-left text-xs font-semibold uppercase tracking-wider text-zinc-500">
+            <th className="px-3 py-2.5 text-start text-xs font-semibold uppercase tracking-wider text-zinc-500">
               {tx('school.b15.import_results.col_email')}
             </th>
-            <th className="px-3 py-2.5 text-left text-xs font-semibold uppercase tracking-wider text-zinc-500">
+            <th className="px-3 py-2.5 text-start text-xs font-semibold uppercase tracking-wider text-zinc-500">
               {tx('school.b15.import_results.col_role')}
             </th>
-            <th className="px-3 py-2.5 text-left text-xs font-semibold uppercase tracking-wider text-zinc-500">
+            <th className="px-3 py-2.5 text-start text-xs font-semibold uppercase tracking-wider text-zinc-500">
               {tx('school.b15.import_results.col_year')}
             </th>
-            <th className="px-3 py-2.5 text-left text-xs font-semibold uppercase tracking-wider text-zinc-500">
+            <th className="px-3 py-2.5 text-start text-xs font-semibold uppercase tracking-wider text-zinc-500">
               {tx('school.b15.import_results.col_status')}
             </th>
           </tr>
@@ -402,7 +402,7 @@ export default function ImportResultsPage() {
                 : tx('school.b15.import_results.title_success')}
             </h1>
           </div>
-          <p className="text-zinc-400 text-sm pl-12">
+          <p className="text-zinc-400 text-sm ps-12">
             {tx('school.b15.import_results.completed_at')} {formatDateTime(job.completed_at)}
           </p>
         </div>

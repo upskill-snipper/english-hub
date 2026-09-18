@@ -175,7 +175,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
       {/* Toast container - bottom-right, stacked upward */}
       <div
         aria-label={t('ui.toast.region_label')}
-        className="fixed bottom-4 right-4 z-[9999] flex flex-col-reverse items-end gap-2 pointer-events-none"
+        className="fixed bottom-4 end-4 z-[9999] flex flex-col-reverse items-end gap-2 pointer-events-none"
       >
         {toasts.map((item) => (
           <ToastEntry key={item.id} item={item} onDismiss={dismiss} />

@@ -344,7 +344,7 @@ export default async function ShortAnswerPage() {
           {HABITS.map((h, i) => (
             <div key={h.title} className="rounded-xl border border-border/60 bg-card p-5">
               <p className="text-sm font-medium">
-                <span className="font-mono text-primary mr-2">{i + 1}.</span>
+                <span className="font-mono text-primary me-2">{i + 1}.</span>
                 {h.title}
               </p>
               <p className="text-xs text-muted-foreground leading-relaxed mt-1">{h.detail}</p>
@@ -356,7 +356,7 @@ export default async function ShortAnswerPage() {
       <section className="my-10">
         <h2>1-mark vs 2-mark: what changes</h2>
         <div className="not-prose my-6 overflow-x-auto rounded-xl border border-border/60 bg-card">
-          <table className="w-full text-left text-sm">
+          <table className="w-full text-start text-sm">
             <thead>
               <tr className="border-b border-border/60">
                 <th className="p-4 font-mono text-[10px] tracking-[0.12em] uppercase text-muted-foreground">
@@ -442,7 +442,7 @@ export default async function ShortAnswerPage() {
                   {ex.context}
                 </span>
               </div>
-              <blockquote className="border-l-2 border-primary/40 pl-4 text-sm leading-relaxed text-muted-foreground italic">
+              <blockquote className="border-s-2 border-primary/40 ps-4 text-sm leading-relaxed text-muted-foreground italic">
                 {ex.extract}
               </blockquote>
 
@@ -451,7 +451,7 @@ export default async function ShortAnswerPage() {
                   <div key={it.q} className="rounded-lg border border-border/50 p-4">
                     <p className="text-sm font-medium text-foreground">
                       {it.q}{' '}
-                      <span className="font-mono text-[10px] tracking-[0.12em] uppercase text-primary ml-1">
+                      <span className="font-mono text-[10px] tracking-[0.12em] uppercase text-primary ms-1">
                         {it.marks} mark{it.marks === 1 ? '' : 's'}
                       </span>
                     </p>

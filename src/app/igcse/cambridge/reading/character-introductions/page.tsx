@@ -94,7 +94,7 @@ export default async function CharacterIntroductionsPage() {
         </Button>
         <div className="flex flex-wrap items-center gap-2">
           <Badge className="bg-primary/10 text-primary border-primary/20">
-            <Sparkles className="mr-1 size-3" />
+            <Sparkles className="me-1 size-3" />
             {await t('igcse.cambridge.badge.cambridge_igcse')}
           </Badge>
           <Badge variant="secondary">{await t('igcse.page.reading.framework_badge')}</Badge>
@@ -170,7 +170,7 @@ export default async function CharacterIntroductionsPage() {
         </div>
         <Card>
           <CardContent className="pt-6">
-            <ol className="list-decimal space-y-3 pl-5 text-body-sm text-foreground">
+            <ol className="list-decimal space-y-3 ps-5 text-body-sm text-foreground">
               {comprehension.map((q) => (
                 <li key={q}>{q}</li>
               ))}
@@ -209,7 +209,7 @@ export default async function CharacterIntroductionsPage() {
               Summarise what the reader learns about the character in{' '}
               <strong>no more than 120 words</strong>.
             </p>
-            <ul className="list-disc space-y-2 pl-5">
+            <ul className="list-disc space-y-2 ps-5">
               <li>
                 <strong>Sentence 1:</strong> The character’s name, age and situation.
               </li>

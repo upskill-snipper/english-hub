@@ -567,7 +567,7 @@ export default function TechniquesPage() {
 
             <div className="rounded-xl border border-border bg-card p-6 shadow-md">
               <h3 className="text-lg font-bold text-foreground">Example Analytical Paragraph</h3>
-              <div className="mt-3 rounded-lg border-l-4 border-accent bg-primary/10 p-4">
+              <div className="mt-3 rounded-lg border-s-4 border-accent bg-primary/10 p-4">
                 <p className="text-sm text-foreground leading-relaxed">
                   The writer uses the <span className="font-semibold text-primary">[HOW]</span>{' '}
                   metaphor

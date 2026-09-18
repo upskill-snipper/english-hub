@@ -81,7 +81,7 @@ export default function ComparisonEssaysPage() {
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/igcse/edexcel/essay-technique" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -108,9 +108,9 @@ export default function ComparisonEssaysPage() {
 
       {/* ── Intro ───────────────────────────────────────────────── */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-violet-500/[0.04] p-6 sm:p-8">
-        <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -end-16 -top-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl" />
         <Badge variant="secondary" className="mb-3">
-          <Sparkles className="mr-1 size-3" />
+          <Sparkles className="me-1 size-3" />
           Comparison is the differentiator
         </Badge>
         <h2 className="text-heading-md font-heading text-foreground mb-2">

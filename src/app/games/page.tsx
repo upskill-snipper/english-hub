@@ -1489,7 +1489,7 @@ function WordScrambleGame({ onExit }: { onExit: () => void }) {
       <div className="flex flex-col items-center gap-6 py-8">
         <div className="relative">
           <Trophy className="size-16 text-clay-600 animate-bounce" />
-          <Sparkles className="size-6 text-amber-700 absolute -top-1 -right-1 animate-pulse" />
+          <Sparkles className="size-6 text-amber-700 absolute -top-1 -end-1 animate-pulse" />
         </div>
         <h3 className="text-2xl font-bold text-foreground">Game Over!</h3>
         <div className="text-center space-y-1">
@@ -1500,7 +1500,7 @@ function WordScrambleGame({ onExit }: { onExit: () => void }) {
         </div>
         <div className="flex gap-3">
           <Button variant="outline" onClick={onExit}>
-            <ArrowLeft className="size-4 mr-1" /> Back to Games
+            <ArrowLeft className="size-4 me-1" /> Back to Games
           </Button>
           <Button
             onClick={() => {
@@ -1521,7 +1521,7 @@ function WordScrambleGame({ onExit }: { onExit: () => void }) {
               }
             }}
           >
-            <RotateCcw className="size-4 mr-1" /> Play Again
+            <RotateCcw className="size-4 me-1" /> Play Again
           </Button>
         </div>
       </div>
@@ -1686,7 +1686,7 @@ function WordScrambleGame({ onExit }: { onExit: () => void }) {
           )}
           <Button onClick={nextWord} size="lg" className="mt-2">
             {wordsPlayed + 1 >= ROUND_LENGTH ? 'See Results' : 'Next Word'}{' '}
-            <ChevronRight className="size-4 ml-1" />
+            <ChevronRight className="size-4 ms-1" />
           </Button>
         </div>
       )}
@@ -1804,7 +1804,7 @@ function QuoteMatchGame({ onExit }: { onExit: () => void }) {
           </p>
         </div>
         <Button variant="outline" onClick={onExit}>
-          <ArrowLeft className="size-4 mr-1" /> Back to Games
+          <ArrowLeft className="size-4 me-1" /> Back to Games
         </Button>
       </div>
     )
@@ -1815,7 +1815,7 @@ function QuoteMatchGame({ onExit }: { onExit: () => void }) {
       <div className="flex flex-col items-center gap-6 py-8">
         <div className="relative">
           <Trophy className="size-16 text-clay-600 animate-bounce" />
-          <Sparkles className="size-6 text-violet-300 absolute -top-1 -right-1 animate-pulse" />
+          <Sparkles className="size-6 text-violet-300 absolute -top-1 -end-1 animate-pulse" />
         </div>
         <h3 className="text-2xl font-bold text-foreground">Game Over!</h3>
         <div className="text-center space-y-1">
@@ -1835,7 +1835,7 @@ function QuoteMatchGame({ onExit }: { onExit: () => void }) {
         )}
         <div className="flex gap-3">
           <Button variant="outline" onClick={onExit}>
-            <ArrowLeft className="size-4 mr-1" /> Back to Games
+            <ArrowLeft className="size-4 me-1" /> Back to Games
           </Button>
           <Button
             onClick={() => {
@@ -1846,7 +1846,7 @@ function QuoteMatchGame({ onExit }: { onExit: () => void }) {
               setGameState('playing')
             }}
           >
-            <RotateCcw className="size-4 mr-1" /> Play Again
+            <RotateCcw className="size-4 me-1" /> Play Again
           </Button>
         </div>
       </div>
@@ -1900,7 +1900,7 @@ function QuoteMatchGame({ onExit }: { onExit: () => void }) {
               onClick={() => handleAnswer(option)}
               disabled={gameState === 'answered'}
               className={cn(
-                'w-full text-left px-4 py-3 rounded-xl border-2 transition-all duration-200 text-sm font-medium',
+                'w-full text-start px-4 py-3 rounded-xl border-2 transition-all duration-200 text-sm font-medium',
                 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-1 focus-visible:ring-offset-background',
                 'disabled:cursor-default',
                 optionStyle,
@@ -1928,7 +1928,7 @@ function QuoteMatchGame({ onExit }: { onExit: () => void }) {
           className="mt-2 animate-in fade-in slide-in-from-bottom-2 duration-300"
         >
           {currentIndex + 1 >= questions.length ? 'See Results' : 'Next Quote'}{' '}
-          <ChevronRight className="size-4 ml-1" />
+          <ChevronRight className="size-4 ms-1" />
         </Button>
       )}
     </div>
@@ -2002,7 +2002,7 @@ function GrammarFixGame({ onExit }: { onExit: () => void }) {
       <div className="flex flex-col items-center gap-6 py-8">
         <div className="relative">
           <Trophy className="size-16 text-clay-600 animate-bounce" />
-          <Sparkles className="size-6 text-amber-700 absolute -top-1 -right-1 animate-pulse" />
+          <Sparkles className="size-6 text-amber-700 absolute -top-1 -end-1 animate-pulse" />
         </div>
         <h3 className="text-2xl font-bold text-foreground">Game Over!</h3>
         <div className="text-center space-y-1">
@@ -2018,7 +2018,7 @@ function GrammarFixGame({ onExit }: { onExit: () => void }) {
         {score < 5 && <p className="text-muted-foreground font-medium">Practice makes perfect!</p>}
         <div className="flex gap-3">
           <Button variant="outline" onClick={onExit}>
-            <ArrowLeft className="size-4 mr-1" /> Back to Games
+            <ArrowLeft className="size-4 me-1" /> Back to Games
           </Button>
           <Button
             onClick={() => {
@@ -2029,7 +2029,7 @@ function GrammarFixGame({ onExit }: { onExit: () => void }) {
               setGameState('playing')
             }}
           >
-            <RotateCcw className="size-4 mr-1" /> Play Again
+            <RotateCcw className="size-4 me-1" /> Play Again
           </Button>
         </div>
       </div>
@@ -2091,7 +2091,7 @@ function GrammarFixGame({ onExit }: { onExit: () => void }) {
                 onClick={() => handleAnswer(option)}
                 disabled={gameState === 'answered'}
                 className={cn(
-                  'w-full text-left px-4 py-3 rounded-xl border-2 transition-all duration-200 text-sm font-medium',
+                  'w-full text-start px-4 py-3 rounded-xl border-2 transition-all duration-200 text-sm font-medium',
                   'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-1 focus-visible:ring-offset-background',
                   'disabled:cursor-default',
                   optionStyle,
@@ -2132,7 +2132,7 @@ function GrammarFixGame({ onExit }: { onExit: () => void }) {
           <div className="flex justify-center">
             <Button onClick={nextQuestion} size="lg">
               {currentIndex + 1 >= questions.length ? 'See Results' : 'Next Sentence'}{' '}
-              <ChevronRight className="size-4 ml-1" />
+              <ChevronRight className="size-4 ms-1" />
             </Button>
           </div>
         </div>
@@ -2212,7 +2212,7 @@ const GameCard = memo(function GameCard({
           {game.href ? (
             <Button size="sm" className="w-full" render={<Link href={game.href} />}>
               {t('games_page.card.play_now')}
-              <Zap className="size-3.5 ml-1" />
+              <Zap className="size-3.5 ms-1" />
             </Button>
           ) : (
             <Button
@@ -2225,7 +2225,7 @@ const GameCard = memo(function GameCard({
               }}
             >
               {isActive ? t('games_page.card.playing') : t('games_page.card.play_now')}
-              {!isActive && <Zap className="size-3.5 ml-1" />}
+              {!isActive && <Zap className="size-3.5 ms-1" />}
             </Button>
           )}
         </CardContent>
@@ -2289,9 +2289,9 @@ export default function GamesPage() {
       <section className="relative overflow-hidden border-b border-border/40">
         {/* Animated background blobs */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-24 -left-24 size-96 rounded-full bg-emerald-500/10 blur-3xl animate-pulse" />
+          <div className="absolute -top-24 -start-24 size-96 rounded-full bg-emerald-500/10 blur-3xl animate-pulse" />
           <div
-            className="absolute -bottom-24 -right-24 size-96 rounded-full bg-violet-500/10 blur-3xl animate-pulse"
+            className="absolute -bottom-24 -end-24 size-96 rounded-full bg-violet-500/10 blur-3xl animate-pulse"
             style={{ animationDelay: '1s' }}
           />
           <div
@@ -2309,7 +2309,7 @@ export default function GamesPage() {
           </div>
 
           {boardConfig && (
-            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-1.5 mb-4 ml-2">
+            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-1.5 mb-4 ms-2">
               <Sparkles className="size-3.5 text-primary" />
               <span className="text-xs font-bold text-primary uppercase tracking-wider">
                 {t('games_page.eyebrow_for_board_prefix')} {boardConfig.shortName}

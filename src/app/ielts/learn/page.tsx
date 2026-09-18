@@ -264,7 +264,7 @@ export default function IeltsLearnHubPage() {
             {t('ielts.learn.filter.sr_heading')}
           </h2>
           <div className="flex flex-wrap items-center gap-2">
-            <span className="mr-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
+            <span className="me-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
               {t('ielts.learn.filter.label')}
             </span>
             <LevelChip

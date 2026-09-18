@@ -441,7 +441,7 @@ export default async function InstructionsPage() {
               {ex.questions.map((qa) => (
                 <div key={qa.q} className="rounded-xl border border-border/60 bg-card p-5">
                   <p className="text-sm font-medium mb-2">
-                    <span className="font-mono text-primary mr-2">Q</span>
+                    <span className="font-mono text-primary me-2">Q</span>
                     {qa.q}
                   </p>
                   <p className="text-xs text-muted-foreground leading-relaxed">
@@ -496,7 +496,7 @@ export default async function InstructionsPage() {
           ].map((step, i) => (
             <li key={step.label} className="rounded-xl border border-border/60 bg-card p-4">
               <p className="text-sm font-medium">
-                <span className="font-mono text-primary mr-2">{i + 1}.</span>
+                <span className="font-mono text-primary me-2">{i + 1}.</span>
                 {step.label}
               </p>
               <p className="text-xs text-muted-foreground leading-relaxed mt-1">{step.detail}</p>

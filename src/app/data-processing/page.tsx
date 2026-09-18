@@ -338,7 +338,7 @@ export default async function DataProcessingPage() {
           <p className="text-muted-foreground leading-relaxed">{s3P1}</p>
 
           <h3 className="text-lg font-medium text-foreground mt-5 mb-2">{s3HStu}</h3>
-          <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
+          <ul className="list-disc ps-6 text-muted-foreground leading-relaxed space-y-1">
             <li>{s3St1}</li>
             <li>{s3St2}</li>
             <li>{s3St3}</li>
@@ -349,7 +349,7 @@ export default async function DataProcessingPage() {
           </ul>
 
           <h3 className="text-lg font-medium text-foreground mt-5 mb-2">{s3HTc}</h3>
-          <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
+          <ul className="list-disc ps-6 text-muted-foreground leading-relaxed space-y-1">
             <li>{s3Tc1}</li>
             <li>{s3Tc2}</li>
             <li>{s3Tc3}</li>
@@ -362,7 +362,7 @@ export default async function DataProcessingPage() {
         <section>
           <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{s4H2}</h2>
           <p className="text-muted-foreground leading-relaxed">{s4P1}</p>
-          <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1 mt-2">
+          <ul className="list-disc ps-6 text-muted-foreground leading-relaxed space-y-1 mt-2">
             <li>{s4Li1}</li>
             <li>{s4Li2}</li>
             <li>{s4Li3}</li>
@@ -379,14 +379,14 @@ export default async function DataProcessingPage() {
           <p className="text-muted-foreground leading-relaxed">{s5P1}</p>
 
           <h3 className="text-lg font-medium text-foreground mt-5 mb-2">{s5HEnc}</h3>
-          <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
+          <ul className="list-disc ps-6 text-muted-foreground leading-relaxed space-y-1">
             <li>{s5Enc1}</li>
             <li>{s5Enc2}</li>
             <li>{s5Enc3}</li>
           </ul>
 
           <h3 className="text-lg font-medium text-foreground mt-5 mb-2">{s5HAcc}</h3>
-          <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
+          <ul className="list-disc ps-6 text-muted-foreground leading-relaxed space-y-1">
             <li>{s5Acc1}</li>
             <li>{s5Acc2}</li>
             <li>{s5Acc3}</li>
@@ -394,7 +394,7 @@ export default async function DataProcessingPage() {
           </ul>
 
           <h3 className="text-lg font-medium text-foreground mt-5 mb-2">{s5HInf}</h3>
-          <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
+          <ul className="list-disc ps-6 text-muted-foreground leading-relaxed space-y-1">
             <li>{s5Inf1}</li>
             <li>{s5Inf2}</li>
             <li>{s5Inf3}</li>
@@ -402,7 +402,7 @@ export default async function DataProcessingPage() {
           </ul>
 
           <h3 className="text-lg font-medium text-foreground mt-5 mb-2">{s5HOrg}</h3>
-          <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
+          <ul className="list-disc ps-6 text-muted-foreground leading-relaxed space-y-1">
             <li>{s5Org1}</li>
             <li>{s5Org2}</li>
             <li>{s5Org3}</li>
@@ -418,9 +418,9 @@ export default async function DataProcessingPage() {
             <table className="w-full text-sm text-muted-foreground border border-border rounded-lg">
               <thead>
                 <tr className="border-b border-border bg-muted/30">
-                  <th className="px-4 py-3 text-left font-semibold text-foreground">{s6Tc1}</th>
-                  <th className="px-4 py-3 text-left font-semibold text-foreground">{s6Tc2}</th>
-                  <th className="px-4 py-3 text-left font-semibold text-foreground">{s6Tc3}</th>
+                  <th className="px-4 py-3 text-start font-semibold text-foreground">{s6Tc1}</th>
+                  <th className="px-4 py-3 text-start font-semibold text-foreground">{s6Tc2}</th>
+                  <th className="px-4 py-3 text-start font-semibold text-foreground">{s6Tc3}</th>
                 </tr>
               </thead>
               <tbody>
@@ -470,7 +470,7 @@ export default async function DataProcessingPage() {
         <section>
           <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{s7H2}</h2>
           <p className="text-muted-foreground leading-relaxed">{s7P1}</p>
-          <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1 mt-2">
+          <ul className="list-disc ps-6 text-muted-foreground leading-relaxed space-y-1 mt-2">
             <li>
               <strong className="text-foreground">{s7Li1S}</strong>
               {s7Li1T}
@@ -495,7 +495,7 @@ export default async function DataProcessingPage() {
         <section>
           <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{s8H2}</h2>
           <p className="text-muted-foreground leading-relaxed">{s8P1}</p>
-          <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1 mt-2">
+          <ul className="list-disc ps-6 text-muted-foreground leading-relaxed space-y-1 mt-2">
             <li>
               {s8L1Pre}
               <strong className="text-foreground">{s8L1S}</strong>
@@ -512,7 +512,7 @@ export default async function DataProcessingPage() {
           <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{s9H2}</h2>
           <p className="text-muted-foreground leading-relaxed">{s9P1}</p>
           <p className="text-muted-foreground leading-relaxed mt-3">{s9P2}</p>
-          <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1 mt-2">
+          <ul className="list-disc ps-6 text-muted-foreground leading-relaxed space-y-1 mt-2">
             <li>
               <strong className="text-foreground">{s9L1S}</strong>
               {s9L1T}
@@ -539,7 +539,7 @@ export default async function DataProcessingPage() {
         <section>
           <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{s11H2}</h2>
           <p className="text-muted-foreground leading-relaxed">{s11P1}</p>
-          <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1 mt-2">
+          <ul className="list-disc ps-6 text-muted-foreground leading-relaxed space-y-1 mt-2">
             <li>{s11Li1}</li>
             <li>{s11Li2}</li>
             <li>{s11Li3}</li>
@@ -560,7 +560,7 @@ export default async function DataProcessingPage() {
         <section>
           <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{s12H2}</h2>
           <p className="text-muted-foreground leading-relaxed">{s12P1}</p>
-          <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1 mt-2">
+          <ul className="list-disc ps-6 text-muted-foreground leading-relaxed space-y-1 mt-2">
             <li>
               <strong className="text-foreground">{s12Li1S}</strong>
               <a href="mailto:info@Upskillenergy.com" className="underline text-foreground">

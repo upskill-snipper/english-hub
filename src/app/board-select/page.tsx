@@ -425,12 +425,12 @@ function BoardCard({
       {/* Level pill - top-right */}
       <span
         aria-hidden="true"
-        className={`absolute top-4 right-4 inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-mono font-semibold uppercase tracking-wider ring-1 ${pillClass}`}
+        className={`absolute top-4 end-4 inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-mono font-semibold uppercase tracking-wider ring-1 ${pillClass}`}
       >
         {board.level}
       </span>
 
-      <h3 className="font-heading text-xl sm:text-2xl font-semibold text-foreground leading-tight pr-16">
+      <h3 className="font-heading text-xl sm:text-2xl font-semibold text-foreground leading-tight pe-16">
         {board.name}
       </h3>
 
@@ -505,7 +505,7 @@ async function GccRecommendationBanner() {
           </Link>
           <Link
             href="/legal/school-content-policy"
-            className="text-center text-[11px] text-muted-foreground underline underline-offset-2 hover:text-foreground sm:text-right"
+            className="text-center text-[11px] text-muted-foreground underline underline-offset-2 hover:text-foreground sm:text-end"
           >
             School content policy
           </Link>

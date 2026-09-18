@@ -52,12 +52,12 @@ export default async function MacbethAct2Page() {
       />
       {/* Header */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-red-500/[0.04] p-6 sm:p-8 lg:p-10">
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-red-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-red-500/5 blur-3xl" />
         <div className="relative">
           <Button
             variant="ghost"
             size="sm"
-            className="mb-4 -ml-2 text-muted-foreground"
+            className="mb-4 -ms-2 text-muted-foreground"
             render={<Link href="/revision/texts/macbeth" />}
           >
             <ArrowLeft className="size-3.5" />
@@ -65,7 +65,7 @@ export default async function MacbethAct2Page() {
           </Button>
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
-              <BookOpen className="mr-1 size-3 text-red-400" />
+              <BookOpen className="me-1 size-3 text-red-400" />
               {_tr(`Act 2 - The Murder`)}
             </Badge>
             <Badge variant="outline">4 scenes</Badge>
@@ -106,7 +106,7 @@ export default async function MacbethAct2Page() {
           </div>
           <div>
             <h4 className="font-semibold mb-1">{_tr(`Key Events &amp; Turning Points`)}</h4>
-            <ul className="list-disc pl-5 text-muted-foreground space-y-1">
+            <ul className="list-disc ps-5 text-muted-foreground space-y-1">
               <li>
                 {_tr(
                   `Banquo&apos;s restlessness and dream about the witches show his moral awareness &mdash; he senses something wrong.`,
@@ -254,7 +254,7 @@ export default async function MacbethAct2Page() {
           </div>
           <div>
             <h4 className="font-semibold mb-1">{_tr(`Key Events &amp; Turning Points`)}</h4>
-            <ul className="list-disc pl-5 text-muted-foreground space-y-1">
+            <ul className="list-disc ps-5 text-muted-foreground space-y-1">
               <li>
                 {_tr(
                   `The murder of Duncan occurs offstage &mdash; Shakespeare focuses on psychological aftermath rather than physical act.`,
@@ -411,7 +411,7 @@ export default async function MacbethAct2Page() {
           </div>
           <div>
             <h4 className="font-semibold mb-1">{_tr(`Key Events &amp; Turning Points`)}</h4>
-            <ul className="list-disc pl-5 text-muted-foreground space-y-1">
+            <ul className="list-disc ps-5 text-muted-foreground space-y-1">
               <li>
                 {_tr(
                   `The Porter scene provides comic relief while deepening the theme of hell and damnation.`,
@@ -547,7 +547,7 @@ export default async function MacbethAct2Page() {
           </div>
           <div>
             <h4 className="font-semibold mb-1">{_tr(`Key Events &amp; Turning Points`)}</h4>
-            <ul className="list-disc pl-5 text-muted-foreground space-y-1">
+            <ul className="list-disc ps-5 text-muted-foreground space-y-1">
               <li>
                 {_tr(
                   `The natural world reflects the moral disorder caused by regicide &mdash; the Great Chain of Being is disrupted.`,
@@ -645,7 +645,7 @@ export default async function MacbethAct2Page() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <ol className="list-decimal pl-5 space-y-3 text-muted-foreground">
+          <ol className="list-decimal ps-5 space-y-3 text-muted-foreground">
             <li>
               {_tr(
                 `How does Shakespeare use the imagery of blood in Act 2 to explore ideas about guilt? Refer closely to the language of the text in your answer.`,
@@ -668,10 +668,10 @@ export default async function MacbethAct2Page() {
       {/* Navigation */}
       <div className="flex justify-between items-center pt-4">
         <Button variant="outline" render={<Link href="/revision/texts/macbeth/act-1" />}>
-          <ArrowLeft className="size-4 mr-1" /> Act 1
+          <ArrowLeft className="size-4 me-1" /> Act 1
         </Button>
         <Button variant="outline" render={<Link href="/revision/texts/macbeth/act-3" />}>
-          Act 3 <ArrowRight className="size-4 ml-1" />
+          Act 3 <ArrowRight className="size-4 ms-1" />
         </Button>
       </div>
     </div>

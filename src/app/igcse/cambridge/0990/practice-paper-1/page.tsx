@@ -47,7 +47,7 @@ export default async function PracticePaper1Page() {
         <div className="relative">
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="bg-primary/10 text-primary border-primary/20">
-              <Sparkles className="mr-1 size-3" />
+              <Sparkles className="me-1 size-3" />
               {await t('igcse.cambridge.badge.cambridge_lang_b')}
             </Badge>
             <Badge variant="secondary">Practice Paper</Badge>
@@ -211,25 +211,25 @@ export default async function PracticePaper1Page() {
             </CardHeader>
             <CardContent className="space-y-4 text-body-sm text-muted-foreground">
               <p>Re-read the description of the red-room in Text A.</p>
-              <ol className="space-y-2 pl-5 list-[lower-alpha]">
+              <ol className="space-y-2 ps-5 list-[lower-alpha]">
                 <li>
                   Identify two details that show how rarely the red-room is used.
-                  <span className="ml-2 italic text-body-xs">[2]</span>
+                  <span className="ms-2 italic text-body-xs">[2]</span>
                 </li>
                 <li>
                   Using your own words, explain why the narrator finds the room &ldquo;chill&rdquo;,
                   &ldquo;silent&rdquo; and &ldquo;solemn&rdquo;.
-                  <span className="ml-2 italic text-body-xs">[3]</span>
+                  <span className="ms-2 italic text-body-xs">[3]</span>
                 </li>
                 <li>
                   Explain how the writer creates a sense of grandeur in the first paragraph. Support
                   your answer with brief quotations.
-                  <span className="ml-2 italic text-body-xs">[5]</span>
+                  <span className="ms-2 italic text-body-xs">[5]</span>
                 </li>
                 <li>
                   Re-read the final paragraph. Explore how the writer conveys the narrator&apos;s
                   growing panic. Refer closely to language and structure.
-                  <span className="ml-2 italic text-body-xs">[15]</span>
+                  <span className="ms-2 italic text-body-xs">[15]</span>
                 </li>
               </ol>
             </CardContent>
@@ -249,7 +249,7 @@ export default async function PracticePaper1Page() {
                 atmosphere of mystery and unease.
               </p>
               <p>Support your points with short, well-chosen quotations. You should comment on:</p>
-              <ul className="space-y-1 pl-5 list-disc">
+              <ul className="space-y-1 ps-5 list-disc">
                 <li>the use of imagery and figurative language;</li>
                 <li>shifts in focus between the narrator, the sky and the city below;</li>
                 <li>the narrator&apos;s tone and the effect it has on the reader.</li>

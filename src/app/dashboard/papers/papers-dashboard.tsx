@@ -148,7 +148,7 @@ function PaperSectionCard({
     >
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center gap-3 px-5 py-4 text-left group"
+        className="w-full flex items-center gap-3 px-5 py-4 text-start group"
       >
         <span className={cn('w-2.5 h-2.5 rounded-full shrink-0', c.dotBg)} />
         <div className="flex-1 min-w-0">
@@ -242,7 +242,7 @@ function PaperCard({ paper, defaultExpanded }: { paper: Paper; defaultExpanded: 
               {paper.examCode}
             </Badge>
             <Badge variant="outline" className={cn('text-xs font-mono border', c.badge)}>
-              <Clock className="w-3 h-3 mr-1" />
+              <Clock className="w-3 h-3 me-1" />
               {paper.duration}
             </Badge>
             <Badge variant="outline" className={cn('text-xs font-mono border', c.badge)}>
@@ -340,7 +340,7 @@ export default function PapersDashboard({ board, boardName, boardFullName }: Pro
     <section className="relative overflow-x-hidden">
       {/* Background accents */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-primary/[0.04] rounded-full blur-[160px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-teal-600/[0.03] rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 end-1/4 w-[400px] h-[400px] bg-teal-600/[0.03] rounded-full blur-[120px] pointer-events-none" />
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 pt-10 pb-20 sm:pt-14 sm:pb-24">
         {/* Back link */}

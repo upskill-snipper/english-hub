@@ -304,12 +304,12 @@ function TableSpec({ spec }: { spec: TableChartSpec }) {
                   scope="col"
                   className={cn(
                     'px-3 py-2 font-semibold text-foreground',
-                    i === 0 ? 'text-left' : 'text-right',
+                    i === 0 ? 'text-start' : 'text-end',
                   )}
                 >
                   {c}
                   {i > 0 && spec.unit ? (
-                    <span className="ml-1 font-normal text-muted-foreground">({spec.unit})</span>
+                    <span className="ms-1 font-normal text-muted-foreground">({spec.unit})</span>
                   ) : null}
                 </th>
               ))}
@@ -318,11 +318,11 @@ function TableSpec({ spec }: { spec: TableChartSpec }) {
           <tbody>
             {spec.rows.map((row, ri) => (
               <tr key={ri} className="border-b border-border/50 last:border-0">
-                <th scope="row" className="px-3 py-2 text-left font-medium text-foreground">
+                <th scope="row" className="px-3 py-2 text-start font-medium text-foreground">
                   {row.label}
                 </th>
                 {row.cells.map((cell, ci) => (
-                  <td key={ci} className="px-3 py-2 text-right tabular-nums text-foreground/90">
+                  <td key={ci} className="px-3 py-2 text-end tabular-nums text-foreground/90">
                     {cell}
                   </td>
                 ))}

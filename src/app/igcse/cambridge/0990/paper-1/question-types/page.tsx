@@ -38,7 +38,7 @@ export default async function QuestionTypesPage() {
         <div className="relative">
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="bg-primary/10 text-primary border-primary/20">
-              <Sparkles className="mr-1 size-3" />
+              <Sparkles className="me-1 size-3" />
               {await t('igcse.cambridge.badge.cambridge_lang_b')}
             </Badge>
             <Badge variant="secondary">Paper 1</Badge>
@@ -80,7 +80,7 @@ export default async function QuestionTypesPage() {
                 <Lightbulb className="size-4 text-primary" />
                 <h3 className="text-body-sm font-semibold text-foreground">Technique</h3>
               </div>
-              <ol className="list-decimal space-y-1.5 pl-5 text-body-sm text-muted-foreground">
+              <ol className="list-decimal space-y-1.5 ps-5 text-body-sm text-muted-foreground">
                 <li>Re-read the paragraph the question points you to.</li>
                 <li>Underline any word that matches the question&apos;s focus.</li>
                 <li>Answer in short sentences or phrases - no need for full paragraphs.</li>
@@ -147,7 +147,7 @@ export default async function QuestionTypesPage() {
                   Technique: the three-step model
                 </h3>
               </div>
-              <ol className="list-decimal space-y-2 pl-5 text-body-sm text-muted-foreground">
+              <ol className="list-decimal space-y-2 ps-5 text-body-sm text-muted-foreground">
                 <li>
                   <strong className="text-foreground">Quote.</strong> A short, embedded phrase.
                 </li>
@@ -226,7 +226,7 @@ export default async function QuestionTypesPage() {
                 <Lightbulb className="size-4 text-primary" />
                 <h3 className="text-body-sm font-semibold text-foreground">Technique</h3>
               </div>
-              <ol className="list-decimal space-y-1.5 pl-5 text-body-sm text-muted-foreground">
+              <ol className="list-decimal space-y-1.5 ps-5 text-body-sm text-muted-foreground">
                 <li>
                   Re-read both texts with the summary topic in mind. Underline any relevant point -
                   aim for 15+ points.

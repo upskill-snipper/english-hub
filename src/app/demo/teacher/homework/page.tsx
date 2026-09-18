@@ -123,10 +123,10 @@ However, as the play progresses, Lady Macbeth's guilt overwhelms her. The sleepw
 
 function Toast({ message, onClose }: { message: string; onClose: () => void }) {
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3 rounded-lg bg-primary/10 border border-primary/30 px-4 py-3 text-sm text-primary shadow-xl animate-in slide-in-from-bottom-4">
+    <div className="fixed bottom-6 end-6 z-50 flex items-center gap-3 rounded-lg bg-primary/10 border border-primary/30 px-4 py-3 text-sm text-primary shadow-xl animate-in slide-in-from-bottom-4">
       <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
       <span>{message}</span>
-      <button onClick={onClose} className="ml-2 text-primary/60 hover:text-primary">
+      <button onClick={onClose} className="ms-2 text-primary/60 hover:text-primary">
         <X className="h-3.5 w-3.5" />
       </button>
     </div>
@@ -283,7 +283,7 @@ export default function HomeworkDemoPage() {
                     </p>
                   </div>
                 </div>
-                <ChevronRight className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors shrink-0 ml-4" />
+                <ChevronRight className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors shrink-0 ms-4" />
               </div>
             </Link>
 
@@ -436,7 +436,7 @@ export default function HomeworkDemoPage() {
               <button
                 key={a.id}
                 onClick={() => setSelectedAssignment(a)}
-                className="w-full text-left rounded-xl border border-border/60 bg-card p-5 hover:bg-card transition-colors group"
+                className="w-full text-start rounded-xl border border-border/60 bg-card p-5 hover:bg-card transition-colors group"
               >
                 <div className="flex items-center justify-between mb-3">
                   <div>

@@ -27,7 +27,7 @@ function Section({
     <div className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left transition-colors hover:bg-muted"
+        className="flex w-full items-center justify-between px-5 py-4 text-start transition-colors hover:bg-muted"
         aria-expanded={open}
         aria-controls={`section-${id}`}
       >
@@ -71,7 +71,7 @@ function Beat({
   analysis: string
 }) {
   return (
-    <div className="rounded-lg border-l-4 border-accent bg-primary/10 p-4">
+    <div className="rounded-lg border-s-4 border-accent bg-primary/10 p-4">
       <p className="text-sm font-semibold text-foreground">{moment}</p>
       <p className="mt-1 text-xs text-muted-foreground">{chapter}</p>
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>

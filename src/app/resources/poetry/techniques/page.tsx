@@ -848,7 +848,7 @@ function ExpandableSection({
     <div className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left hover:bg-muted transition-colors"
+        className="flex w-full items-center justify-between px-5 py-4 text-start hover:bg-muted transition-colors"
         aria-expanded={open}
       >
         <div className="flex items-center gap-3">
@@ -978,7 +978,7 @@ export default function PoetryTechniquesPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-4">
           {/* Search input */}
           <div className="relative">
-            <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+            <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
               <SearchIcon />
             </div>
             <input
@@ -986,12 +986,12 @@ export default function PoetryTechniquesPage() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search techniques, poems, or definitions..."
-              className="w-full rounded-lg border border-border bg-card py-2.5 pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+              className="w-full rounded-lg border border-border bg-card py-2.5 ps-10 pe-4 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
-                className="absolute inset-y-0 right-0 flex items-center pr-3 text-muted-foreground hover:text-muted-foreground"
+                className="absolute inset-y-0 end-0 flex items-center pe-3 text-muted-foreground hover:text-muted-foreground"
               >
                 <svg
                   className="h-4 w-4"

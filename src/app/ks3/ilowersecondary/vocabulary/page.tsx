@@ -203,13 +203,13 @@ export default async function VocabularyPage() {
           <table className="w-full border-collapse text-sm">
             <thead>
               <tr className="bg-card">
-                <th className="px-4 py-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="px-4 py-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Verb
                 </th>
-                <th className="px-4 py-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="px-4 py-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Meaning
                 </th>
-                <th className="px-4 py-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="px-4 py-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   How to use it
                 </th>
               </tr>
@@ -239,10 +239,10 @@ export default async function VocabularyPage() {
           <table className="w-full border-collapse text-sm">
             <thead>
               <tr className="bg-card">
-                <th className="px-4 py-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="px-4 py-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Weak word
                 </th>
-                <th className="px-4 py-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="px-4 py-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Precise alternatives (with nuance)
                 </th>
               </tr>

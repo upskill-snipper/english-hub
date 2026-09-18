@@ -123,7 +123,7 @@ export function ParentSidebar({ parentName, childName }: ParentSidebarProps) {
   return (
     <>
       {/* Desktop sidebar */}
-      <aside className="hidden w-64 shrink-0 border-r border-border bg-card lg:block">
+      <aside className="hidden w-64 shrink-0 border-e border-border bg-card lg:block">
         <div className="sticky top-0 h-screen overflow-y-auto">{sidebarContent}</div>
       </aside>
 
@@ -133,7 +133,7 @@ export function ParentSidebar({ parentName, childName }: ParentSidebarProps) {
           variant="ghost"
           size="icon"
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="mr-3"
+          className="me-3"
           aria-label={mobileOpen ? t('nav.close') : t('nav.open')}
         >
           {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -152,7 +152,7 @@ export function ParentSidebar({ parentName, childName }: ParentSidebarProps) {
             onClick={() => setMobileOpen(false)}
             aria-hidden="true"
           />
-          <aside className="fixed inset-y-0 left-0 z-50 w-64 border-r border-border bg-card shadow-lg lg:hidden">
+          <aside className="fixed inset-y-0 start-0 z-50 w-64 border-e border-border bg-card shadow-lg lg:hidden">
             {sidebarContent}
           </aside>
         </>

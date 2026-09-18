@@ -226,10 +226,10 @@ export default function PresentationLibraryPage() {
               {t('school.lessons.library.title')}
             </h1>
           </div>
-          <p className="text-muted-foreground mt-1 ml-8">{t('school.lessons.library.subtitle')}</p>
+          <p className="text-muted-foreground mt-1 ms-8">{t('school.lessons.library.subtitle')}</p>
 
           {/* Stats */}
-          <div className="mt-4 ml-8 flex flex-wrap gap-4 text-sm text-muted-foreground">
+          <div className="mt-4 ms-8 flex flex-wrap gap-4 text-sm text-muted-foreground">
             <span className="flex items-center gap-1.5">
               <Layers className="h-4 w-4" />
               {catalogue.length} {t('school.lessons.library.presentations_suffix')}
@@ -253,19 +253,19 @@ export default function PresentationLibraryPage() {
           <div className="flex flex-wrap items-center gap-3">
             {/* Search */}
             <div className="relative flex-1 min-w-[200px] max-w-md">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Search className="absolute start-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 placeholder={t('school.lessons.library.search_placeholder')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-9 bg-background"
+                className="ps-9 bg-background"
               />
             </div>
 
             {/* Year Group */}
             <Select value={yearFilter} onValueChange={(v) => setYearFilter(v ?? 'all')}>
               <SelectTrigger className="w-[140px] bg-background">
-                <GraduationCap className="h-4 w-4 mr-1.5 text-muted-foreground" />
+                <GraduationCap className="h-4 w-4 me-1.5 text-muted-foreground" />
                 <SelectValue placeholder={t('school.lessons.library.year_group')} />
               </SelectTrigger>
               <SelectContent>
@@ -281,7 +281,7 @@ export default function PresentationLibraryPage() {
             {/* Board */}
             <Select value={boardFilter} onValueChange={(v) => setBoardFilter(v ?? 'all')}>
               <SelectTrigger className="w-[140px] bg-background">
-                <Filter className="h-4 w-4 mr-1.5 text-muted-foreground" />
+                <Filter className="h-4 w-4 me-1.5 text-muted-foreground" />
                 <SelectValue placeholder={t('school.lessons.library.board')} />
               </SelectTrigger>
               <SelectContent>
@@ -330,7 +330,7 @@ export default function PresentationLibraryPage() {
                   {/* Group header */}
                   <button
                     onClick={() => toggleGroup(group.label)}
-                    className="flex items-center gap-2 mb-4 group w-full text-left"
+                    className="flex items-center gap-2 mb-4 group w-full text-start"
                   >
                     {isCollapsed ? (
                       <ChevronRight className="h-5 w-5 text-muted-foreground" />
@@ -424,12 +424,12 @@ export default function PresentationLibraryPage() {
                                 >
                                   {isDownloading ? (
                                     <>
-                                      <Loader2 className="h-4 w-4 mr-1.5 animate-spin" />
+                                      <Loader2 className="h-4 w-4 me-1.5 animate-spin" />
                                       Generating...
                                     </>
                                   ) : (
                                     <>
-                                      <Download className="h-4 w-4 mr-1.5" />
+                                      <Download className="h-4 w-4 me-1.5" />
                                       Download PPTX
                                     </>
                                   )}

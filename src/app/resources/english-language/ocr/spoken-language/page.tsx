@@ -130,7 +130,7 @@ export default async function OCRSpokenLanguagePage() {
             <p>
               You can choose any topic for your presentation, but the best topics are ones that:
             </p>
-            <ul className="ml-6 list-disc space-y-2">
+            <ul className="ms-6 list-disc space-y-2">
               <li>
                 <strong>{tr(`You are genuinely interested in`)}</strong> &mdash; passion and
                 enthusiasm come across when you speak and make your presentation more engaging.
@@ -156,7 +156,7 @@ export default async function OCRSpokenLanguagePage() {
                 <p className="text-sm font-medium text-primary">
                   {tr(`Persuasive / Argumentative`)}
                 </p>
-                <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
+                <ul className="ms-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
                   <li>Should school uniforms be abolished?</li>
                   <li>{tr(`The impact of social media on mental health`)}</li>
                   <li>{tr(`Should the voting age be lowered to 16?`)}</li>
@@ -168,7 +168,7 @@ export default async function OCRSpokenLanguagePage() {
                 <p className="text-sm font-medium text-primary">
                   {tr(`Informative / Explanatory`)}
                 </p>
-                <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
+                <ul className="ms-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
                   <li>{tr(`How climate change affects the UK`)}</li>
                   <li>{tr(`The history and impact of a cultural movement`)}</li>
                   <li>{tr(`How AI is changing education`)}</li>
@@ -193,7 +193,7 @@ export default async function OCRSpokenLanguagePage() {
               A strong presentation follows a clear structure. Use this framework as a starting
               point:
             </p>
-            <ol className="ml-6 list-decimal space-y-3">
+            <ol className="ms-6 list-decimal space-y-3">
               <li>
                 <strong>Introduction</strong> &mdash; Hook your audience with a compelling opening:
                 a question, a surprising fact, a quotation, or a bold statement. State your topic
@@ -305,7 +305,7 @@ export default async function OCRSpokenLanguagePage() {
               After your presentation, you will face questions from your teacher and/or classmates.
               This tests your listening and responding skills. Here are strategies for success:
             </p>
-            <ul className="ml-6 list-disc space-y-2">
+            <ul className="ms-6 list-disc space-y-2">
               <li>
                 <strong>{tr(`Listen to the full question`)}</strong> before you start answering.
                 Don&rsquo;t interrupt or jump in prematurely.
@@ -345,7 +345,7 @@ export default async function OCRSpokenLanguagePage() {
           <div className="mt-4 space-y-4">
             <div className="rounded-lg border border-success/30 bg-success-50 p-5">
               <h3 className="font-semibold text-success-700">Distinction</h3>
-              <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
+              <ul className="ms-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
                 <li>{tr(`Presentation is confidently and skillfully delivered`)}</li>
                 <li>{tr(`Content is challenging, well-researched, and compelling`)}</li>
                 <li>
@@ -358,7 +358,7 @@ export default async function OCRSpokenLanguagePage() {
 
             <div className="rounded-lg border border-accent/30 bg-primary/10 p-5">
               <h3 className="font-semibold text-primary">Merit</h3>
-              <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
+              <ul className="ms-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
                 <li>{tr(`Presentation is clearly and competently delivered`)}</li>
                 <li>{tr(`Content is well-organised and engaging`)}</li>
                 <li>{tr(`Uses rhetorical and presentational techniques with some success`)}</li>
@@ -369,7 +369,7 @@ export default async function OCRSpokenLanguagePage() {
 
             <div className="rounded-lg border border-border bg-muted p-5">
               <h3 className="font-semibold text-muted-foreground">Pass</h3>
-              <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
+              <ul className="ms-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
                 <li>{tr(`Presentation is delivered with basic competence`)}</li>
                 <li>{tr(`Content is understandable and has some structure`)}</li>
                 <li>{tr(`Some attempt to use presentational techniques`)}</li>
@@ -389,7 +389,7 @@ export default async function OCRSpokenLanguagePage() {
           </h2>
           <div className="mt-4 space-y-2 text-muted-foreground">
             <p>Use this checklist to prepare for your spoken language assessment:</p>
-            <ul className="ml-6 mt-3 list-disc space-y-2">
+            <ul className="ms-6 mt-3 list-disc space-y-2">
               <li>I have chosen a topic I am knowledgeable and passionate about</li>
               <li>{tr(`My presentation has a clear introduction, main body, and conclusion`)}</li>
               <li>I have included at least three strong, evidence-based points</li>

@@ -197,11 +197,11 @@ export default async function TeachersPage() {
       <section className="relative overflow-hidden border-b border-border/60">
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl"
+          className="pointer-events-none absolute -end-32 -top-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute -left-20 -bottom-32 h-72 w-72 rounded-full bg-clay-500/[0.05] blur-3xl"
+          className="pointer-events-none absolute -start-20 -bottom-32 h-72 w-72 rounded-full bg-clay-500/[0.05] blur-3xl"
         />
         <div className="relative mx-auto max-w-5xl px-4 py-20 text-center sm:px-6 sm:py-28">
           <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-primary">
@@ -264,7 +264,7 @@ export default async function TeachersPage() {
           <Card className="relative overflow-hidden p-6 sm:p-7">
             <span
               aria-hidden
-              className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-destructive/[0.06] blur-3xl"
+              className="pointer-events-none absolute -end-12 -top-12 h-40 w-40 rounded-full bg-destructive/[0.06] blur-3xl"
             />
             <div className="relative">
               <div className="flex items-center gap-2">
@@ -293,7 +293,7 @@ export default async function TeachersPage() {
           <Card className="relative overflow-hidden border-teal-500/30 p-6 sm:p-7">
             <span
               aria-hidden
-              className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-teal-500/[0.08] blur-3xl"
+              className="pointer-events-none absolute -end-12 -top-12 h-40 w-40 rounded-full bg-teal-500/[0.08] blur-3xl"
             />
             <div className="relative">
               <div className="flex items-center gap-2">
@@ -443,7 +443,7 @@ export default async function TeachersPage() {
                 className="h-12 px-7 text-base"
                 render={<Link href="/demo/teacher" />}
               >
-                <Sparkles className="mr-1 h-4 w-4" />
+                <Sparkles className="me-1 h-4 w-4" />
                 {await t('mkt.teachers.demo.cta_primary')}
               </Button>
               <Link
@@ -485,7 +485,7 @@ export default async function TeachersPage() {
         aria-labelledby="final-cta-heading"
         className="border-t border-border/60 bg-background"
       >
-        <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-6 px-4 py-12 text-center sm:px-6 sm:py-14 md:flex-row md:text-left">
+        <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-6 px-4 py-12 text-center sm:px-6 sm:py-14 md:flex-row md:text-start">
           <div>
             <h2
               id="final-cta-heading"

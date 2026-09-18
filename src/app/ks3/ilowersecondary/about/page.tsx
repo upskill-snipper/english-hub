@@ -82,7 +82,7 @@ export default async function AboutPage() {
           <tbody>
             {facts.map((f) => (
               <tr key={f.k} className="border-b border-border/50 align-top">
-                <td className="w-44 py-2 pr-4 font-mono text-[11px] uppercase tracking-[0.1em] text-muted-foreground">
+                <td className="w-44 py-2 pe-4 font-mono text-[11px] uppercase tracking-[0.1em] text-muted-foreground">
                   {f.k}
                 </td>
                 <td className="py-2 text-foreground">{f.v}</td>

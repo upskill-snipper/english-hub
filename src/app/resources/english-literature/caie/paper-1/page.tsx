@@ -255,7 +255,7 @@ export default async function Paper1Page() {
                 <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                   <h3 className="font-semibold text-foreground">
                     &ldquo;{p.title}&rdquo;
-                    <span className="ml-1 font-normal text-muted-foreground">&mdash; {p.poet}</span>
+                    <span className="ms-1 font-normal text-muted-foreground">&mdash; {p.poet}</span>
                   </h3>
                 </div>
                 <p className="mt-1 text-sm text-muted-foreground">
@@ -317,7 +317,7 @@ export default async function Paper1Page() {
                 <h3 className="font-semibold text-foreground">
                   {t.title}
                   {'author' in t && (
-                    <span className="ml-1 font-normal text-muted-foreground">
+                    <span className="ms-1 font-normal text-muted-foreground">
                       &mdash; {t.author}
                     </span>
                   )}

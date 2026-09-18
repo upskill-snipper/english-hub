@@ -252,7 +252,7 @@ export default function OCREnglishLiteraturePage() {
 
           <div className="mt-6 grid gap-5 sm:grid-cols-2">
             {/* Paper 01 */}
-            <div className="rounded-xl border-l-4 border-primary bg-card p-6 shadow-md">
+            <div className="rounded-xl border-s-4 border-primary bg-card p-6 shadow-md">
               <p className="text-xs font-bold uppercase tracking-wider text-primary">Paper 01</p>
               <h3 className="mt-1 text-lg font-semibold text-foreground">
                 Exploring Modern &amp; Literary Heritage Texts
@@ -274,7 +274,7 @@ export default function OCREnglishLiteraturePage() {
             </div>
 
             {/* Paper 02 */}
-            <div className="rounded-xl border-l-4 border-primary bg-card p-6 shadow-md">
+            <div className="rounded-xl border-s-4 border-primary bg-card p-6 shadow-md">
               <p className="text-xs font-bold uppercase tracking-wider text-primary">Paper 02</p>
               <h3 className="mt-1 text-lg font-semibold text-foreground">
                 Exploring Poetry &amp; Shakespeare
@@ -396,7 +396,7 @@ export default function OCREnglishLiteraturePage() {
             will help you target your revision effectively.
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-xl border-l-4 border-primary bg-card p-5 shadow-md">
+            <div className="rounded-xl border-s-4 border-primary bg-card p-5 shadow-md">
               <p className="font-bold text-primary">Reading and response</p>
               <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
                 Read, understand, and respond to texts. Maintain a critical style and develop an
@@ -404,21 +404,21 @@ export default function OCREnglishLiteraturePage() {
                 and illustrate interpretations.
               </p>
             </div>
-            <div className="rounded-xl border-l-4 border-primary bg-card p-5 shadow-md">
+            <div className="rounded-xl border-s-4 border-primary bg-card p-5 shadow-md">
               <p className="font-bold text-accent">Language, form and structure</p>
               <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
                 Analyse the language, form, and structure used by a writer to create meanings and
                 effects, using relevant subject terminology where appropriate.
               </p>
             </div>
-            <div className="rounded-xl border-l-4 border-primary bg-card p-5 shadow-md">
+            <div className="rounded-xl border-s-4 border-primary bg-card p-5 shadow-md">
               <p className="font-bold text-primary">Contextual understanding</p>
               <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
                 Show understanding of the relationships between texts and the contexts in which they
                 were written.
               </p>
             </div>
-            <div className="rounded-xl border-l-4 border-primary bg-card p-5 shadow-md">
+            <div className="rounded-xl border-s-4 border-primary bg-card p-5 shadow-md">
               <p className="font-bold text-accent">Written accuracy</p>
               <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
                 Use a range of vocabulary and sentence structures for clarity, purpose, and effect,

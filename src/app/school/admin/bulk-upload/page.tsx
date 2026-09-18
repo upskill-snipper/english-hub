@@ -376,7 +376,7 @@ export default function BulkUploadPage() {
                   </div>
                 </div>
                 <Button size="sm" variant="outline" onClick={downloadErrorsCsv}>
-                  <Download className="size-3.5 mr-1.5" />
+                  <Download className="size-3.5 me-1.5" />
                   Errors CSV
                 </Button>
               </div>
@@ -403,7 +403,7 @@ export default function BulkUploadPage() {
 
             <div className="flex items-center justify-between">
               <Button variant="outline" onClick={reset}>
-                <ArrowLeft className="size-4 mr-1.5" />
+                <ArrowLeft className="size-4 me-1.5" />
                 Start over
               </Button>
               <Button
@@ -412,7 +412,7 @@ export default function BulkUploadPage() {
                 className="bg-indigo-600 hover:bg-indigo-500"
               >
                 Review and confirm
-                <ArrowRight className="size-4 ml-1.5" />
+                <ArrowRight className="size-4 ms-1.5" />
               </Button>
             </div>
           </>
@@ -461,7 +461,7 @@ export default function BulkUploadPage() {
 
             <div className="flex items-center justify-between">
               <Button variant="outline" onClick={() => setStep('preview')}>
-                <ArrowLeft className="size-4 mr-1.5" />
+                <ArrowLeft className="size-4 me-1.5" />
                 Back to preview
               </Button>
               <Button
@@ -471,13 +471,13 @@ export default function BulkUploadPage() {
               >
                 {submitting ? (
                   <>
-                    <Loader2 className="size-4 mr-1.5 animate-spin" />
+                    <Loader2 className="size-4 me-1.5 animate-spin" />
                     Importing…
                   </>
                 ) : (
                   <>
                     Import {validRowCount} student{validRowCount !== 1 ? 's' : ''}
-                    <ArrowRight className="size-4 ml-1.5" />
+                    <ArrowRight className="size-4 ms-1.5" />
                   </>
                 )}
               </Button>
@@ -660,13 +660,13 @@ function PreviewTable({
       <table className="w-full text-sm">
         <thead>
           <tr className="border-b border-zinc-800 bg-zinc-900 text-xs uppercase text-zinc-500">
-            <th className="px-3 py-2 text-left w-12">#</th>
-            <th className="px-3 py-2 text-left">First</th>
-            <th className="px-3 py-2 text-left">Last</th>
-            <th className="px-3 py-2 text-left">Email</th>
-            <th className="px-3 py-2 text-left">Year</th>
-            <th className="px-3 py-2 text-left">Class</th>
-            <th className="px-3 py-2 text-left w-24">Status</th>
+            <th className="px-3 py-2 text-start w-12">#</th>
+            <th className="px-3 py-2 text-start">First</th>
+            <th className="px-3 py-2 text-start">Last</th>
+            <th className="px-3 py-2 text-start">Email</th>
+            <th className="px-3 py-2 text-start">Year</th>
+            <th className="px-3 py-2 text-start">Class</th>
+            <th className="px-3 py-2 text-start w-24">Status</th>
           </tr>
         </thead>
         <tbody>

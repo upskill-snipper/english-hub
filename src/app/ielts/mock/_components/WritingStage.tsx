@@ -299,7 +299,7 @@ export default function WritingStage({
                   ? t('ielts.mock.writing.word_one', { n: activeWords })
                   : t('ielts.mock.writing.word_other', { n: activeWords })}
                 {!meetsMin && (
-                  <span className="ml-1 text-muted-foreground">
+                  <span className="ms-1 text-muted-foreground">
                     {' '}
                     {t('ielts.mock.writing.aim_for', {
                       min: active.minWords,
@@ -308,7 +308,7 @@ export default function WritingStage({
                   </span>
                 )}
                 {meetsMin && (
-                  <span className="ml-1">{t('ielts.mock.writing.minimum_reached')}</span>
+                  <span className="ms-1">{t('ielts.mock.writing.minimum_reached')}</span>
                 )}
               </span>
             </div>

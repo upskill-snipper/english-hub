@@ -338,7 +338,7 @@ export default function StudentProgressPage() {
     <div className="min-h-screen bg-background text-foreground">
       {/* Demo Banner */}
       <div className="bg-gradient-to-r from-purple-600 to-indigo-600 px-4 py-2 text-center text-sm font-medium text-white">
-        <span className="mr-2">{t('demo.b15.student_prog.banner')}</span>
+        <span className="me-2">{t('demo.b15.student_prog.banner')}</span>
         <span className="text-white/80">
           {t('demo.b15.student_prog.viewing_as')} {STUDENT.name} ({STUDENT.yearGroup})
         </span>
@@ -711,7 +711,7 @@ export default function StudentProgressPage() {
                       <span className="text-sm text-muted-foreground">{m.score}%</span>
                     </div>
                     <div
-                      className={`ml-auto flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium ${trendBg} ${trendColor}`}
+                      className={`ms-auto flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium ${trendBg} ${trendColor}`}
                     >
                       {m.trend === 'up' ? (
                         <TrendingUp className="h-3.5 w-3.5" />

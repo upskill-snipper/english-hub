@@ -173,7 +173,7 @@ export default async function RefundPolicyPage() {
         <section>
           <h2 className="text-xl font-semibold text-foreground">{s3H2}</h2>
           <p className="mt-2 text-muted-foreground leading-relaxed">{s3PIntro}</p>
-          <ul className="mt-3 list-disc space-y-2 pl-6 text-muted-foreground leading-relaxed">
+          <ul className="mt-3 list-disc space-y-2 ps-6 text-muted-foreground leading-relaxed">
             <li>{s3Li1}</li>
             <li>{s3Li2}</li>
             <li>{s3Li3}</li>
@@ -185,7 +185,7 @@ export default async function RefundPolicyPage() {
         <section>
           <h2 className="text-xl font-semibold text-foreground">{s4H2}</h2>
           <p className="mt-2 text-muted-foreground leading-relaxed">{s4PIntro}</p>
-          <ul className="mt-3 list-disc space-y-2 pl-6 text-muted-foreground leading-relaxed">
+          <ul className="mt-3 list-disc space-y-2 ps-6 text-muted-foreground leading-relaxed">
             <li>{s4Li1}</li>
             <li>{s4Li2}</li>
             <li>{s4Li3}</li>
@@ -197,7 +197,7 @@ export default async function RefundPolicyPage() {
         <section>
           <h2 className="text-xl font-semibold text-foreground">{s5H2}</h2>
           <p className="mt-2 text-muted-foreground leading-relaxed">{s5PIntro}</p>
-          <ul className="mt-3 list-disc space-y-2 pl-6 text-muted-foreground leading-relaxed">
+          <ul className="mt-3 list-disc space-y-2 ps-6 text-muted-foreground leading-relaxed">
             <li>
               <strong className="text-foreground">{s5Li1S}</strong>
               {s5Li1T}
@@ -213,7 +213,7 @@ export default async function RefundPolicyPage() {
         <section>
           <h2 className="text-xl font-semibold text-foreground">{s6H2}</h2>
           <p className="mt-2 text-muted-foreground leading-relaxed">{s6PIntro}</p>
-          <ul className="mt-3 list-disc space-y-2 pl-6 text-muted-foreground leading-relaxed">
+          <ul className="mt-3 list-disc space-y-2 ps-6 text-muted-foreground leading-relaxed">
             <li>
               <strong className="text-foreground">{s6Li1S}</strong>
               {s6Li1TPre}
@@ -253,7 +253,7 @@ export default async function RefundPolicyPage() {
         <section>
           <h2 className="text-xl font-semibold text-foreground">{s9H2}</h2>
           <p className="mt-2 text-muted-foreground leading-relaxed">{s9PIntro}</p>
-          <ul className="mt-3 list-disc space-y-2 pl-6 text-muted-foreground leading-relaxed">
+          <ul className="mt-3 list-disc space-y-2 ps-6 text-muted-foreground leading-relaxed">
             <li>
               <strong className="text-foreground">{s9Li1S}</strong>
               {s9Li1T}
@@ -280,7 +280,7 @@ export default async function RefundPolicyPage() {
         <section>
           <h2 className="text-xl font-semibold text-foreground">{s11H2}</h2>
           <p className="mt-2 text-muted-foreground leading-relaxed">{s11PIntro}</p>
-          <ul className="mt-3 list-disc space-y-2 pl-6 text-muted-foreground leading-relaxed">
+          <ul className="mt-3 list-disc space-y-2 ps-6 text-muted-foreground leading-relaxed">
             <li>
               {s11EmailLabel}{' '}
               <a href="mailto:info@Upskillenergy.com" className="underline hover:text-foreground">

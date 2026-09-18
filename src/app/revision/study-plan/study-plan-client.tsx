@@ -609,7 +609,7 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
           <Button
             variant="ghost"
             size="sm"
-            className="mb-3 -ml-2 text-muted-foreground"
+            className="mb-3 -ms-2 text-muted-foreground"
             render={<Link href="/revision" />}
           >
             <ArrowLeft className="size-3.5" />
@@ -618,7 +618,7 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <Badge variant="secondary" className="mb-2">
-                <Sparkles className="mr-1 size-3" />
+                <Sparkles className="me-1 size-3" />
                 {t('rev.misc.plan.badge_saved')}
               </Badge>
               <h1 className="text-heading-lg font-heading text-foreground">
@@ -789,14 +789,14 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
           <Button
             variant="ghost"
             size="sm"
-            className="mb-3 -ml-2 text-muted-foreground"
+            className="mb-3 -ms-2 text-muted-foreground"
             render={<Link href="/revision" />}
           >
             <ArrowLeft className="size-3.5" />
             {t('rev.misc.plan.back_revision')}
           </Button>
           <Badge variant="secondary" className="mb-3">
-            <Sparkles className="mr-1 size-3" />
+            <Sparkles className="me-1 size-3" />
             {boardName
               ? t('rev.misc.plan.diagnostic_badge_board')
                   .replace('{count}', String(QUESTIONS.length))
@@ -842,14 +842,14 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
           <Button
             variant="ghost"
             size="sm"
-            className="mb-3 -ml-2 text-muted-foreground"
+            className="mb-3 -ms-2 text-muted-foreground"
             render={<Link href="/revision" />}
           >
             <ArrowLeft className="size-3.5" />
             {t('rev.misc.plan.back_revision')}
           </Button>
           <Badge variant="secondary" className="mb-3">
-            <Sparkles className="mr-1 size-3" />
+            <Sparkles className="me-1 size-3" />
             {boardName
               ? t('rev.misc.plan.building_badge_board').replace('{board}', boardName)
               : t('rev.misc.plan.building_badge')}
@@ -988,7 +988,7 @@ function DiagnosticStep<T extends string>({
               type="button"
               onClick={() => handleClick(opt)}
               aria-pressed={isMulti ? isSelected : undefined}
-              className={`group flex items-start gap-3 rounded-xl border p-4 text-left transition-all ${
+              className={`group flex items-start gap-3 rounded-xl border p-4 text-start transition-all ${
                 isSelected
                   ? 'border-primary/40 bg-primary/[0.06]'
                   : 'border-border/40 bg-background/50 hover:border-border hover:bg-background'

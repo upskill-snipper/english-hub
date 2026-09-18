@@ -279,10 +279,10 @@ export default function AVFTBContextPage() {
               {t('rev.texts.common.key_timeline')}
             </h2>
           </div>
-          <div className="relative ml-4 border-l-2 border-teal-400/20 pl-6 space-y-4">
+          <div className="relative ms-4 border-s-2 border-teal-400/20 ps-6 space-y-4">
             {TIMELINE.map((item, i) => (
               <div key={i} className="relative">
-                <div className="absolute -left-[31px] top-1 size-3 rounded-full border-2 border-teal-400 bg-background" />
+                <div className="absolute -start-[31px] top-1 size-3 rounded-full border-2 border-teal-400 bg-background" />
                 <div className="rounded-lg border border-border/60 bg-muted/50 p-3">
                   <div className="flex items-baseline gap-2">
                     <span className="text-sm font-bold text-teal-700 dark:text-teal-300">

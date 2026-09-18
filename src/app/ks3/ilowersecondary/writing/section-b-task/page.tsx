@@ -322,7 +322,7 @@ export default async function SectionBTaskPage() {
             teaching purposes. It is not taken from any past paper.
           </p>
 
-          <div className="mb-8 rounded-lg border-l-4 border-primary/40 bg-muted p-6">
+          <div className="mb-8 rounded-lg border-s-4 border-primary/40 bg-muted p-6">
             <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
               Section B-style task (invented example)
             </p>

@@ -34,10 +34,7 @@ interface ActivityFeedProps {
 
 /* ── Icons per type ────────────────────────────────────────────────────────── */
 
-const typeConfig: Record<
-  ActivityType,
-  { icon: LucideIcon; color: string; bg: string }
-> = {
+const typeConfig: Record<ActivityType, { icon: LucideIcon; color: string; bg: string }> = {
   lesson_completed: {
     icon: BookOpen,
     color: 'text-blue-400',
@@ -81,17 +78,14 @@ function formatRelativeTime(iso: string): string {
   if (diffHours < 24) return `${diffHours} hour${diffHours !== 1 ? 's' : ''} ago`
   if (diffDays === 1) return 'Yesterday'
   if (diffDays < 7) return `${diffDays} days ago`
-  if (diffDays < 30) return `${Math.floor(diffDays / 7)} week${Math.floor(diffDays / 7) !== 1 ? 's' : ''} ago`
+  if (diffDays < 30)
+    return `${Math.floor(diffDays / 7)} week${Math.floor(diffDays / 7) !== 1 ? 's' : ''} ago`
   return `${Math.floor(diffDays / 30)} month${Math.floor(diffDays / 30) !== 1 ? 's' : ''} ago`
 }
 
 /* ── Component ─────────────────────────────────────────────────────────────── */
 
-export function ActivityFeed({
-  activities,
-  maxItems,
-  className,
-}: ActivityFeedProps) {
+export function ActivityFeed({ activities, maxItems, className }: ActivityFeedProps) {
   const items = maxItems ? activities.slice(0, maxItems) : activities
 
   if (items.length === 0) {
@@ -109,9 +103,9 @@ export function ActivityFeed({
 
   return (
     <div className={cn('max-h-[400px] overflow-y-auto', className)}>
-      <div className="relative pl-6">
+      <div className="relative ps-6">
         {/* Vertical timeline line */}
-        <div className="absolute left-[9px] top-2 bottom-2 w-px bg-border" />
+        <div className="absolute start-[9px] top-2 bottom-2 w-px bg-border" />
 
         <div className="space-y-4">
           {items.map((activity, i) => {
@@ -123,7 +117,7 @@ export function ActivityFeed({
                 {/* Dot on timeline */}
                 <div
                   className={cn(
-                    'absolute -left-6 top-0.5 flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-full border-2 border-background',
+                    'absolute -start-6 top-0.5 flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-full border-2 border-background',
                     config.bg,
                   )}
                 >

@@ -214,7 +214,7 @@ export default async function UnseenAnalysisPage() {
             </p>
           </div>
 
-          <div className="mt-4 rounded-lg border-l-4 border-primary bg-card p-5 shadow-md">
+          <div className="mt-4 rounded-lg border-s-4 border-primary bg-card p-5 shadow-md">
             <p className="text-xs font-semibold uppercase tracking-wide text-foreground">
               Model paragraph
             </p>
@@ -270,7 +270,7 @@ export default async function UnseenAnalysisPage() {
             </p>
           </div>
 
-          <div className="mt-4 rounded-lg border-l-4 border-primary bg-card p-5 shadow-md">
+          <div className="mt-4 rounded-lg border-s-4 border-primary bg-card p-5 shadow-md">
             <p className="text-xs font-semibold uppercase tracking-wide text-foreground">
               Model paragraph
             </p>

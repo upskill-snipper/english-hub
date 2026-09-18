@@ -676,7 +676,7 @@ export default function CapitalLetterQuestPage() {
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="mb-6 flex items-center justify-between gap-4">
           <Button variant="ghost" size="sm" render={<Link href="/games" />}>
-            <ArrowLeft className="size-4 mr-1" />
+            <ArrowLeft className="size-4 me-1" />
             Back to Games
           </Button>
           {boardConfig && (
@@ -732,7 +732,7 @@ export default function CapitalLetterQuestPage() {
                       onClick={() => handleSelect(index)}
                       disabled={!!feedback}
                       className={cn(
-                        'flex items-center gap-3 rounded-lg border px-4 py-3 text-left text-base font-medium transition-all',
+                        'flex items-center gap-3 rounded-lg border px-4 py-3 text-start text-base font-medium transition-all',
                         'focus:outline-none focus:ring-2 focus:ring-primary/30',
                         !feedback &&
                           'border-border bg-card text-foreground hover:border-primary hover:bg-accent',

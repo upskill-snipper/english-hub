@@ -156,13 +156,13 @@ export default function MyMaterialsPage() {
             >
               {f === 'all' ? 'All' : TYPE_LABELS[f]}
               {f !== 'all' && (
-                <span className="font-mono text-xs opacity-60 ml-1">
+                <span className="font-mono text-xs opacity-60 ms-1">
                   ({materials.filter((m) => m.type === f).length})
                 </span>
               )}
             </button>
           ))}
-          <span className="ml-auto text-sm text-muted-foreground font-mono">
+          <span className="ms-auto text-sm text-muted-foreground font-mono">
             {materials.length} total
           </span>
         </div>
@@ -223,7 +223,7 @@ export default function MyMaterialsPage() {
                     questions.
                   </p>
                   <Link href="/toolkit/test-builder" className="btn-primary inline-flex">
-                    <RotateCcw className="h-4 w-4 mr-2" />
+                    <RotateCcw className="h-4 w-4 me-2" />
                     Take a New Test
                   </Link>
                 </div>
@@ -280,7 +280,7 @@ export default function MyMaterialsPage() {
                       onClick={() => setViewingMaterial(material)}
                       className="btn-ghost text-xs py-1.5 px-3 flex-1"
                     >
-                      <Eye className="h-3.5 w-3.5 mr-1" />
+                      <Eye className="h-3.5 w-3.5 me-1" />
                       View
                     </button>
                     {material.type === 'test' && (
@@ -288,7 +288,7 @@ export default function MyMaterialsPage() {
                         href="/toolkit/test-builder"
                         className="btn-ghost text-xs py-1.5 px-3 flex-1"
                       >
-                        <RotateCcw className="h-3.5 w-3.5 mr-1" />
+                        <RotateCcw className="h-3.5 w-3.5 me-1" />
                         Re-take
                       </Link>
                     )}
@@ -313,11 +313,11 @@ export default function MyMaterialsPage() {
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Link href="/toolkit/test-builder" className="btn-primary text-sm">
-                <PenTool className="h-4 w-4 mr-2" />
+                <PenTool className="h-4 w-4 me-2" />
                 Create a Test
               </Link>
               <Link href="/toolkit/revision-builder" className="btn-secondary text-sm">
-                <FileText className="h-4 w-4 mr-2" />
+                <FileText className="h-4 w-4 me-2" />
                 Generate Notes
               </Link>
             </div>

@@ -104,7 +104,7 @@ export default function TeacherLayout({ children }: { children: React.ReactNode 
         />
       )}
       <aside
-        className={`fixed inset-y-0 left-0 z-50 w-64 bg-primary text-white transform transition-transform duration-200 ease-in-out lg:translate-x-0 lg:static lg:z-auto ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
+        className={`fixed inset-y-0 start-0 z-50 w-64 bg-primary text-white transform transition-transform duration-200 ease-in-out lg:translate-x-0 lg:static lg:z-auto ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
       >
         <div className="flex items-center justify-between h-16 px-6 border-b border-white/10">
           <Link href="/dashboard/teacher" className="font-bold text-lg">
@@ -143,7 +143,7 @@ export default function TeacherLayout({ children }: { children: React.ReactNode 
             )
           })}
         </nav>
-        <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-white/10">
+        <div className="absolute bottom-0 start-0 end-0 p-4 border-t border-white/10">
           <Link
             href="/dashboard"
             className="flex items-center gap-2 text-white/60 hover:text-white text-sm transition-colors"
@@ -163,7 +163,7 @@ export default function TeacherLayout({ children }: { children: React.ReactNode 
       <div className="flex-1 flex flex-col min-w-0">
         <header className="h-16 bg-card border-b border-border flex items-center px-4 lg:px-8">
           <button
-            className="lg:hidden text-muted-foreground hover:text-foreground mr-4"
+            className="lg:hidden text-muted-foreground hover:text-foreground me-4"
             onClick={() => setSidebarOpen(true)}
             aria-label={t('teacher.layout.open_sidebar')}
           >

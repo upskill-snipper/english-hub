@@ -25,16 +25,14 @@ import {
   Sparkles,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { percentageToGCSEGrade, percentageToGCSEGradeLabel, formatPercentageWithGrade } from '@/lib/grades'
+import {
+  percentageToGCSEGrade,
+  percentageToGCSEGradeLabel,
+  formatPercentageWithGrade,
+} from '@/lib/grades'
 import type { Class, WeakArea, Recommendation } from '@/lib/types'
 
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Skeleton } from '@/components/ui/skeleton'
@@ -236,14 +234,10 @@ function generateInsights(classes: ClassWithAnalytics[], normalise: boolean): In
     if (trends.length >= 4) {
       const recent2 = trends.slice(-2)
       const previous2 = trends.slice(-4, -2)
-      const recentAvgActive =
-        recent2.reduce((s, t) => s + t.active_students, 0) / recent2.length
-      const prevAvgActive =
-        previous2.reduce((s, t) => s + t.active_students, 0) / previous2.length
+      const recentAvgActive = recent2.reduce((s, t) => s + t.active_students, 0) / recent2.length
+      const prevAvgActive = previous2.reduce((s, t) => s + t.active_students, 0) / previous2.length
       if (prevAvgActive > 0) {
-        const changePct = Math.round(
-          ((recentAvgActive - prevAvgActive) / prevAvgActive) * 100,
-        )
+        const changePct = Math.round(((recentAvgActive - prevAvgActive) / prevAvgActive) * 100)
         if (changePct <= -15) {
           insights.push({
             type: 'warning',
@@ -261,15 +255,17 @@ function generateInsights(classes: ClassWithAnalytics[], normalise: boolean): In
 
   // Skill-based comparison
   for (const skill of SKILL_CATEGORIES) {
-    const skillScores = classes.map((c) => {
-      const areas = c.analytics.weak_areas.filter(
-        (w) => w.course_name.toLowerCase().includes(skill.toLowerCase()),
-      )
-      return {
-        name: c.analytics.class_name,
-        score: areas.length > 0 ? areas[0].avg_score : null,
-      }
-    }).filter((s) => s.score !== null)
+    const skillScores = classes
+      .map((c) => {
+        const areas = c.analytics.weak_areas.filter((w) =>
+          w.course_name.toLowerCase().includes(skill.toLowerCase()),
+        )
+        return {
+          name: c.analytics.class_name,
+          score: areas.length > 0 ? areas[0].avg_score : null,
+        }
+      })
+      .filter((s) => s.score !== null)
 
     if (skillScores.length >= 2) {
       const best = skillScores.reduce((a, b) => ((a.score ?? 0) > (b.score ?? 0) ? a : b))
@@ -326,9 +322,10 @@ function generateSuggestions(
 
   // Compare engagement trends
   const lowEngagement = classes.filter((c) => {
-    const activeStudents = c.analytics.trends.length > 0
-      ? c.analytics.trends[c.analytics.trends.length - 1].active_students
-      : 0
+    const activeStudents =
+      c.analytics.trends.length > 0
+        ? c.analytics.trends[c.analytics.trends.length - 1].active_students
+        : 0
     return c.analytics.student_count > 0 && activeStudents / c.analytics.student_count < 0.6
   })
   if (lowEngagement.length > 0) {
@@ -439,24 +436,41 @@ function ComparisonBarChart({
 
   if (data.length === 0) {
     return (
-      <div className={cn('flex items-center justify-center text-sm text-muted-foreground', className)} style={{ height }}>
+      <div
+        className={cn('flex items-center justify-center text-sm text-muted-foreground', className)}
+        style={{ height }}
+      >
         No data available.
       </div>
     )
   }
 
   return (
-    <svg viewBox={`0 0 ${width} ${height}`} className={cn('w-full', className)} preserveAspectRatio="xMidYMid meet">
+    <svg
+      viewBox={`0 0 ${width} ${height}`}
+      className={cn('w-full', className)}
+      preserveAspectRatio="xMidYMid meet"
+    >
       {/* Grid */}
       {yTicks.map((tick) => (
         <g key={tick.value}>
           <line
-            x1={padding.left} x2={width - padding.right}
-            y1={tick.y} y2={tick.y}
-            stroke="currentColor" className="text-border"
-            strokeDasharray="4 4" strokeWidth="0.5"
+            x1={padding.left}
+            x2={width - padding.right}
+            y1={tick.y}
+            y2={tick.y}
+            stroke="currentColor"
+            className="text-border"
+            strokeDasharray="4 4"
+            strokeWidth="0.5"
           />
-          <text x={padding.left - 8} y={tick.y + 4} textAnchor="end" className="fill-muted-foreground" fontSize="10">
+          <text
+            x={padding.left - 8}
+            y={tick.y + 4}
+            textAnchor="end"
+            className="fill-muted-foreground"
+            fontSize="10"
+          >
             {tick.value}%
           </text>
         </g>
@@ -475,15 +489,23 @@ function ComparisonBarChart({
               return (
                 <g key={vi}>
                   <rect
-                    x={barX} y={barY}
-                    width={barWidth} height={barH}
-                    fill={v.color} rx="3" ry="3"
+                    x={barX}
+                    y={barY}
+                    width={barWidth}
+                    height={barH}
+                    fill={v.color}
+                    rx="3"
+                    ry="3"
                     className="transition-all duration-300"
                   />
                   <title>{`${v.name}: Grade ${percentageToGCSEGrade(Math.round(v.value))} (${Math.round(v.value)}%)`}</title>
                   <text
-                    x={barX + barWidth / 2} y={barY - 4}
-                    textAnchor="middle" className="fill-muted-foreground" fontSize="9" fontWeight="600"
+                    x={barX + barWidth / 2}
+                    y={barY - 4}
+                    textAnchor="middle"
+                    className="fill-muted-foreground"
+                    fontSize="9"
+                    fontWeight="600"
                   >
                     {Math.round(v.value)}
                   </text>
@@ -492,8 +514,11 @@ function ComparisonBarChart({
             })}
             {/* X label */}
             <text
-              x={groupX} y={height - 8}
-              textAnchor="middle" className="fill-muted-foreground" fontSize="9"
+              x={groupX}
+              y={height - 8}
+              textAnchor="middle"
+              className="fill-muted-foreground"
+              fontSize="9"
             >
               {group.label}
             </text>
@@ -537,7 +562,10 @@ function TrendLineOverlay({
 
   if (series.length === 0 || maxLen === 0) {
     return (
-      <div className={cn('flex items-center justify-center text-sm text-muted-foreground', className)} style={{ height }}>
+      <div
+        className={cn('flex items-center justify-center text-sm text-muted-foreground', className)}
+        style={{ height }}
+      >
         No trend data available.
       </div>
     )
@@ -554,17 +582,31 @@ function TrendLineOverlay({
           </div>
         ))}
       </div>
-      <svg viewBox={`0 0 ${width} ${height}`} className="w-full" preserveAspectRatio="xMidYMid meet">
+      <svg
+        viewBox={`0 0 ${width} ${height}`}
+        className="w-full"
+        preserveAspectRatio="xMidYMid meet"
+      >
         {/* Grid */}
         {yTicks.map((tick) => (
           <g key={tick.value}>
             <line
-              x1={padding.left} x2={width - padding.right}
-              y1={tick.y} y2={tick.y}
-              stroke="currentColor" className="text-border"
-              strokeDasharray="4 4" strokeWidth="0.5"
+              x1={padding.left}
+              x2={width - padding.right}
+              y1={tick.y}
+              y2={tick.y}
+              stroke="currentColor"
+              className="text-border"
+              strokeDasharray="4 4"
+              strokeWidth="0.5"
             />
-            <text x={padding.left - 8} y={tick.y + 4} textAnchor="end" className="fill-muted-foreground" fontSize="10">
+            <text
+              x={padding.left - 8}
+              y={tick.y + 4}
+              textAnchor="end"
+              className="fill-muted-foreground"
+              fontSize="10"
+            >
               {tick.value}%
             </text>
           </g>
@@ -579,10 +621,24 @@ function TrendLineOverlay({
           const path = pts.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`).join(' ')
           return (
             <g key={s.name}>
-              <path d={path} fill="none" stroke={s.color} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+              <path
+                d={path}
+                fill="none"
+                stroke={s.color}
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
               {pts.map((p, i) => (
                 <g key={i}>
-                  <circle cx={p.x} cy={p.y} r={3.5} fill={s.color} stroke="var(--background)" strokeWidth="2" />
+                  <circle
+                    cx={p.x}
+                    cy={p.y}
+                    r={3.5}
+                    fill={s.color}
+                    stroke="var(--background)"
+                    strokeWidth="2"
+                  />
                   <title>{`${s.name} - ${s.data[i].label}: Grade ${percentageToGCSEGrade(Math.round(s.data[i].value))} (${Math.round(s.data[i].value)}%)`}</title>
                 </g>
               ))}
@@ -596,7 +652,9 @@ function TrendLineOverlay({
             key={i}
             x={padding.left + (i / Math.max(labels.length - 1, 1)) * chartW}
             y={height - 6}
-            textAnchor="middle" className="fill-muted-foreground" fontSize="9"
+            textAnchor="middle"
+            className="fill-muted-foreground"
+            fontSize="9"
           >
             {label}
           </text>
@@ -629,15 +687,36 @@ function GradeDistributionChart({
   const barWidth = Math.min(groupWidth / distributions.length - 3, 28)
 
   return (
-    <svg viewBox={`0 0 ${width} ${height}`} className={cn('w-full', className)} preserveAspectRatio="xMidYMid meet">
+    <svg
+      viewBox={`0 0 ${width} ${height}`}
+      className={cn('w-full', className)}
+      preserveAspectRatio="xMidYMid meet"
+    >
       {/* Y axis */}
       {[0, 1, 2, 3, 4].map((i) => {
         const val = Math.round((maxValue / 4) * i)
         const y = padding.top + chartH - (val / maxValue) * chartH
         return (
           <g key={i}>
-            <line x1={padding.left} x2={width - padding.right} y1={y} y2={y} stroke="currentColor" className="text-border" strokeDasharray="4 4" strokeWidth="0.5" />
-            <text x={padding.left - 8} y={y + 4} textAnchor="end" className="fill-muted-foreground" fontSize="10">{val}</text>
+            <line
+              x1={padding.left}
+              x2={width - padding.right}
+              y1={y}
+              y2={y}
+              stroke="currentColor"
+              className="text-border"
+              strokeDasharray="4 4"
+              strokeWidth="0.5"
+            />
+            <text
+              x={padding.left - 8}
+              y={y + 4}
+              textAnchor="end"
+              className="fill-muted-foreground"
+              fontSize="10"
+            >
+              {val}
+            </text>
           </g>
         )
       })}
@@ -655,16 +734,38 @@ function GradeDistributionChart({
               const barY = padding.top + chartH - barH
               return (
                 <g key={di}>
-                  <rect x={barX} y={barY} width={barWidth} height={barH} fill={dist.color} rx="2" ry="2" />
+                  <rect
+                    x={barX}
+                    y={barY}
+                    width={barWidth}
+                    height={barH}
+                    fill={dist.color}
+                    rx="2"
+                    ry="2"
+                  />
                   {count > 0 && (
-                    <text x={barX + barWidth / 2} y={barY - 3} textAnchor="middle" className="fill-muted-foreground" fontSize="8" fontWeight="600">
+                    <text
+                      x={barX + barWidth / 2}
+                      y={barY - 3}
+                      textAnchor="middle"
+                      className="fill-muted-foreground"
+                      fontSize="8"
+                      fontWeight="600"
+                    >
                       {count}
                     </text>
                   )}
                 </g>
               )
             })}
-            <text x={groupX} y={height - 8} textAnchor="middle" className="fill-muted-foreground" fontSize="10" fontWeight="600">
+            <text
+              x={groupX}
+              y={height - 8}
+              textAnchor="middle"
+              className="fill-muted-foreground"
+              fontSize="10"
+              fontWeight="600"
+            >
               Grade {grade}
             </text>
           </g>
@@ -684,7 +785,9 @@ function exportReport(
 ) {
   const lines: string[] = []
   lines.push('CLASS COMPARISON REPORT')
-  lines.push(`Generated: ${new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}`)
+  lines.push(
+    `Generated: ${new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}`,
+  )
   lines.push(`Normalised for year groups: ${normalise ? 'Yes' : 'No'}`)
   lines.push('')
   lines.push('='.repeat(60))
@@ -744,7 +847,9 @@ export function ClassComparison() {
   const searchParams = useSearchParams()
 
   // Available classes
-  const [availableClasses, setAvailableClasses] = useState<(Class & { teacher_name?: string })[]>([])
+  const [availableClasses, setAvailableClasses] = useState<(Class & { teacher_name?: string })[]>(
+    [],
+  )
   const [loadingClasses, setLoadingClasses] = useState(true)
 
   // Selected class IDs (2-4)
@@ -766,7 +871,7 @@ export function ClassComparison() {
         const res = await fetch('/api/school/classes')
         if (!res.ok) throw new Error('Failed to load classes')
         const data = await res.json()
-        const list = Array.isArray(data) ? data : data.classes ?? []
+        const list = Array.isArray(data) ? data : (data.classes ?? [])
         setAvailableClasses(list)
 
         // Check URL params for pre-selected classes
@@ -825,9 +930,7 @@ export function ClassComparison() {
   // ── Derived data ────────────────────────────────────────────────────────
 
   const selectedClasses = useMemo(() => {
-    return selectedIds
-      .map((id) => classData.get(id))
-      .filter(Boolean) as ClassWithAnalytics[]
+    return selectedIds.map((id) => classData.get(id)).filter(Boolean) as ClassWithAnalytics[]
   }, [selectedIds, classData])
 
   const isReady = selectedClasses.length >= 2 && !loadingAnalytics
@@ -894,7 +997,10 @@ export function ClassComparison() {
         name: cls.analytics.class_name,
         color: CLASS_COLORS[i % CLASS_COLORS.length].hex,
         data: trends.map((t) => ({
-          label: new Date(t.week_start).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }),
+          label: new Date(t.week_start).toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'short',
+          }),
           value: t.avg_score,
         })),
       }
@@ -928,7 +1034,7 @@ export function ClassComparison() {
             </Link>
             <h1 className="text-2xl font-bold text-foreground">Class Comparison</h1>
           </div>
-          <p className="text-sm text-muted-foreground ml-11">
+          <p className="text-sm text-muted-foreground ms-11">
             Compare 2-4 classes side by side to identify patterns and opportunities.
           </p>
         </div>
@@ -938,7 +1044,7 @@ export function ClassComparison() {
             size="sm"
             onClick={() => exportReport(selectedClasses, insights, suggestions, normalise)}
           >
-            <Download className="mr-2 h-4 w-4" />
+            <Download className="me-2 h-4 w-4" />
             Export Report
           </Button>
         )}
@@ -974,7 +1080,7 @@ export function ClassComparison() {
                         {cls?.name ?? id}
                         <button
                           onClick={() => removeClassFromSelection(id)}
-                          className="ml-1 rounded-full p-0.5 hover:bg-background/50"
+                          className="ms-1 rounded-full p-0.5 hover:bg-background/50"
                         >
                           <X className="h-3 w-3" />
                         </button>
@@ -1007,7 +1113,7 @@ export function ClassComparison() {
               <div className="flex items-center gap-3 pt-2 border-t border-border">
                 <Switch id="normalise" checked={normalise} onCheckedChange={setNormalise} />
                 <Label htmlFor="normalise" className="text-sm text-muted-foreground cursor-pointer">
-                  <Scale className="inline-block h-3.5 w-3.5 mr-1 -mt-0.5" />
+                  <Scale className="inline-block h-3.5 w-3.5 me-1 -mt-0.5" />
                   Normalise for different year groups
                 </Label>
               </div>
@@ -1037,7 +1143,9 @@ export function ClassComparison() {
           <CardContent className="py-12">
             <div className="flex flex-col items-center text-center text-muted-foreground">
               <BarChart3 className="h-12 w-12 mb-3 opacity-30" />
-              <p className="text-sm font-medium">Select at least 2 classes above to start comparing.</p>
+              <p className="text-sm font-medium">
+                Select at least 2 classes above to start comparing.
+              </p>
             </div>
           </CardContent>
         </Card>
@@ -1047,7 +1155,10 @@ export function ClassComparison() {
       {isReady && (
         <>
           {/* Key Metrics Side by Side */}
-          <div className="grid gap-4" style={{ gridTemplateColumns: `repeat(${selectedClasses.length}, minmax(0, 1fr))` }}>
+          <div
+            className="grid gap-4"
+            style={{ gridTemplateColumns: `repeat(${selectedClasses.length}, minmax(0, 1fr))` }}
+          >
             {selectedClasses.map((cls, i) => {
               const a = cls.analytics
               const color = CLASS_COLORS[i % CLASS_COLORS.length]
@@ -1057,18 +1168,26 @@ export function ClassComparison() {
                 a.student_count > 0 ? Math.round((activeRecent / a.student_count) * 100) : 0
 
               return (
-                <Card key={a.class_id} className={cn('border-t-4')} style={{ borderTopColor: color.hex }}>
+                <Card
+                  key={a.class_id}
+                  className={cn('border-t-4')}
+                  style={{ borderTopColor: color.hex }}
+                >
                   <CardHeader className="pb-2">
                     <CardTitle className="text-sm truncate">{a.class_name}</CardTitle>
                     {cls.classInfo.year_group && (
-                      <p className="text-xs text-muted-foreground">Year {cls.classInfo.year_group}</p>
+                      <p className="text-xs text-muted-foreground">
+                        Year {cls.classInfo.year_group}
+                      </p>
                     )}
                   </CardHeader>
                   <CardContent className="space-y-3">
                     {/* Avg Score */}
                     <div className="flex items-center justify-between">
                       <span className="text-xs text-muted-foreground">Avg Score</span>
-                      <span className={cn('text-lg font-bold tabular-nums', scoreColor(getScore(cls)))}>
+                      <span
+                        className={cn('text-lg font-bold tabular-nums', scoreColor(getScore(cls)))}
+                      >
                         {Math.round(getScore(cls))}%
                       </span>
                     </div>
@@ -1076,7 +1195,9 @@ export function ClassComparison() {
                     {/* Completion */}
                     <div className="flex items-center justify-between">
                       <span className="text-xs text-muted-foreground">Completion</span>
-                      <span className="text-sm font-semibold tabular-nums">{Math.round(a.completion_rate)}%</span>
+                      <span className="text-sm font-semibold tabular-nums">
+                        {Math.round(a.completion_rate)}%
+                      </span>
                     </div>
                     <div className="h-1.5 w-full rounded-full bg-border overflow-hidden">
                       <div
@@ -1100,10 +1221,12 @@ export function ClassComparison() {
                     {/* At Risk */}
                     <div className="flex items-center justify-between">
                       <span className="text-xs text-muted-foreground">At Risk</span>
-                      <span className={cn(
-                        'text-sm font-semibold tabular-nums',
-                        a.students_at_risk.length > 0 ? 'text-red-400' : 'text-foreground',
-                      )}>
+                      <span
+                        className={cn(
+                          'text-sm font-semibold tabular-nums',
+                          a.students_at_risk.length > 0 ? 'text-red-400' : 'text-foreground',
+                        )}
+                      >
                         {a.students_at_risk.length}
                       </span>
                     </div>
@@ -1120,14 +1243,19 @@ export function ClassComparison() {
                 <BookOpen className="h-4 w-4 text-muted-foreground" />
                 Skill Breakdown Comparison
               </CardTitle>
-              <CardDescription>Average score per skill area across selected classes.</CardDescription>
+              <CardDescription>
+                Average score per skill area across selected classes.
+              </CardDescription>
             </CardHeader>
             <CardContent>
               {/* Legend */}
               <div className="mb-4 flex flex-wrap items-center gap-4 text-xs">
                 {selectedClasses.map((cls, i) => (
                   <div key={cls.analytics.class_id} className="flex items-center gap-1.5">
-                    <span className="h-2 w-2 rounded-full" style={{ backgroundColor: CLASS_COLORS[i % CLASS_COLORS.length].hex }} />
+                    <span
+                      className="h-2 w-2 rounded-full"
+                      style={{ backgroundColor: CLASS_COLORS[i % CLASS_COLORS.length].hex }}
+                    />
                     <span className="text-muted-foreground">{cls.analytics.class_name}</span>
                   </div>
                 ))}
@@ -1194,9 +1322,15 @@ export function ClassComparison() {
                         insight.type === 'info' && 'border-blue-500/20 bg-blue-500/5',
                       )}
                     >
-                      {insight.type === 'warning' && <AlertTriangle className="h-4 w-4 mt-0.5 shrink-0 text-clay-600" />}
-                      {insight.type === 'positive' && <TrendingUp className="h-4 w-4 mt-0.5 shrink-0 text-green-400" />}
-                      {insight.type === 'info' && <BarChart3 className="h-4 w-4 mt-0.5 shrink-0 text-blue-400" />}
+                      {insight.type === 'warning' && (
+                        <AlertTriangle className="h-4 w-4 mt-0.5 shrink-0 text-clay-600" />
+                      )}
+                      {insight.type === 'positive' && (
+                        <TrendingUp className="h-4 w-4 mt-0.5 shrink-0 text-green-400" />
+                      )}
+                      {insight.type === 'info' && (
+                        <BarChart3 className="h-4 w-4 mt-0.5 shrink-0 text-blue-400" />
+                      )}
                       <span className="text-muted-foreground">{insight.message}</span>
                     </div>
                   ))}
@@ -1218,7 +1352,10 @@ export function ClassComparison() {
               <CardContent>
                 <div className="space-y-4">
                   {suggestions.map((s, i) => (
-                    <div key={i} className="rounded-lg border border-purple-500/20 bg-purple-500/5 px-4 py-3">
+                    <div
+                      key={i}
+                      className="rounded-lg border border-purple-500/20 bg-purple-500/5 px-4 py-3"
+                    >
                       <p className="text-sm font-semibold text-foreground mb-1">{s.title}</p>
                       <p className="text-sm text-muted-foreground">{s.description}</p>
                     </div>

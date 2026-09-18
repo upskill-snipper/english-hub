@@ -358,7 +358,7 @@ export default async function IalHubPage() {
         <Button
           variant="ghost"
           size="sm"
-          className="-ml-2 text-muted-foreground"
+          className="-ms-2 text-muted-foreground"
           render={<Link href="/revision" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -368,11 +368,11 @@ export default async function IalHubPage() {
 
       {/* ── Hero ───────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 lg:p-10">
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-16 -start-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl" />
         <div className="relative">
           <Badge variant="secondary" className="mb-4">
-            <Sparkles className="mr-1 size-3" aria-hidden="true" />
+            <Sparkles className="me-1 size-3" aria-hidden="true" />
             {heroBadge}
           </Badge>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
@@ -419,7 +419,7 @@ export default async function IalHubPage() {
                       <span className="font-mono text-primary">{unit.code}</span> - {unit.name}
                     </CardTitle>
                   </div>
-                  <div className="text-right text-xs text-muted-foreground">
+                  <div className="text-end text-xs text-muted-foreground">
                     <p className="flex items-center gap-1 justify-end">
                       <Timer className="size-3" /> {unit.duration}
                     </p>
@@ -502,7 +502,7 @@ export default async function IalHubPage() {
                 >
                   {mock.difficulty}
                 </Badge>
-                <span className="ml-auto text-xs text-muted-foreground">{mock.duration}</span>
+                <span className="ms-auto text-xs text-muted-foreground">{mock.duration}</span>
               </div>
               <h3 className="text-sm font-semibold text-foreground group-hover:text-primary">
                 {mock.title}

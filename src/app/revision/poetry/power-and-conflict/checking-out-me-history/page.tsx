@@ -959,7 +959,7 @@ export default function CheckingOutMeHistoryPage() {
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/revision/poetry/power-and-conflict" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -1025,7 +1025,7 @@ export default function CheckingOutMeHistoryPage() {
                 {c.points.map((p, i) => (
                   <li
                     key={i}
-                    className="text-sm leading-relaxed text-card-foreground pl-4 relative before:absolute before:left-0 before:top-2 before:size-1.5 before:rounded-full before:bg-muted-foreground/30"
+                    className="text-sm leading-relaxed text-card-foreground ps-4 relative before:absolute before:start-0 before:top-2 before:size-1.5 before:rounded-full before:bg-muted-foreground/30"
                   >
                     {p}
                   </li>

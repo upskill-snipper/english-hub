@@ -421,11 +421,11 @@ function TechniqueCard({ t }: { t: Technique }) {
     <div className="rounded-xl border border-border bg-card">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left hover:bg-muted transition-colors"
+        className="flex w-full items-center justify-between gap-4 px-5 py-4 text-start hover:bg-muted transition-colors"
       >
         <div>
           <span className="font-bold text-foreground">{t.name}</span>
-          <span className="ml-3 rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary/70">
+          <span className="ms-3 rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary/70">
             {t.category}
           </span>
         </div>
@@ -519,7 +519,7 @@ export default function TechniquesPage() {
             <strong>15-20 key devices</strong> well enough that you can identify them in an unseen
             text and explain their effect. For each technique, we provide:
           </p>
-          <ul className="mt-3 ml-5 list-disc space-y-1 text-muted-foreground">
+          <ul className="mt-3 ms-5 list-disc space-y-1 text-muted-foreground">
             <li>
               A clear <strong>definition</strong>
             </li>
@@ -584,7 +584,7 @@ export default function TechniquesPage() {
           <p className="mt-2 text-muted-foreground">
             Use this three-step approach for every analytical point you make in a reading response:
           </p>
-          <ol className="mt-3 ml-5 list-decimal space-y-2 text-muted-foreground">
+          <ol className="mt-3 ms-5 list-decimal space-y-2 text-muted-foreground">
             <li>
               <strong>What:</strong> Identify the technique and embed a short quotation. Be
               specific: do not just name the device, point to the exact words.
@@ -673,7 +673,7 @@ export default function TechniquesPage() {
             >
               {cat}
               {cat !== 'All' && (
-                <span className="ml-1.5 text-xs opacity-70">
+                <span className="ms-1.5 text-xs opacity-70">
                   ({techniques.filter((t) => t.category === cat).length})
                 </span>
               )}

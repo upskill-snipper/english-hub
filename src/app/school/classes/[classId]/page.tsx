@@ -256,10 +256,10 @@ function AddStudentsModal({
         {/* Search */}
         <div className="px-5 py-3 border-b border-border/60">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <Search className="absolute start-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
               placeholder={t('school.classes.detail.add_modal.search_placeholder')}
-              className="pl-9"
+              className="ps-9"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
@@ -286,7 +286,7 @@ function AddStudentsModal({
                 key={s.student_id}
                 onClick={() => toggle(s.student_id)}
                 className={cn(
-                  'w-full flex items-center gap-3 rounded-lg px-3 py-2.5 text-left transition-colors',
+                  'w-full flex items-center gap-3 rounded-lg px-3 py-2.5 text-start transition-colors',
                   selected.has(s.student_id)
                     ? 'bg-primary/10 border border-primary/30'
                     : 'hover:bg-muted/50 border border-transparent',
@@ -753,7 +753,7 @@ export default function ClassDetailPage() {
             <Button
               variant="ghost"
               size="sm"
-              className="gap-1.5 text-muted-foreground hover:text-foreground -ml-2"
+              className="gap-1.5 text-muted-foreground hover:text-foreground -ms-2"
             >
               <ArrowLeft className="h-4 w-4" />
               {t('school.classes.detail.back')}
@@ -807,7 +807,7 @@ export default function ClassDetailPage() {
           <Button
             variant="ghost"
             size="sm"
-            className="gap-1.5 text-muted-foreground hover:text-foreground -ml-2"
+            className="gap-1.5 text-muted-foreground hover:text-foreground -ms-2"
           >
             <ArrowLeft className="h-4 w-4" />
             {t('school.classes.detail.back')}
@@ -818,7 +818,7 @@ export default function ClassDetailPage() {
         <GlassPanel accent="primary" className="p-6 sm:p-8" aria-labelledby="class-hero-heading">
           <span
             aria-hidden="true"
-            className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-teal-500/5 blur-3xl"
+            className="pointer-events-none absolute -bottom-16 -start-16 h-48 w-48 rounded-full bg-teal-500/5 blur-3xl"
           />
           <div className="relative">
             <PanelEyebrow>{t('school.classes.detail.tab.students')}</PanelEyebrow>
@@ -952,10 +952,10 @@ export default function ClassDetailPage() {
             {/* Toolbar */}
             <div className="flex flex-wrap items-center gap-3">
               <div className="relative flex-1 min-w-48">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Search className="absolute start-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <Input
                   placeholder={t('school.classes.detail.search_placeholder')}
-                  className="pl-9"
+                  className="ps-9"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                 />
@@ -989,22 +989,22 @@ export default function ClassDetailPage() {
                   </caption>
                   <thead>
                     <tr className="border-b border-border/60">
-                      <th className="px-4 py-3 text-left font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                      <th className="px-4 py-3 text-start font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
                         {t('school.classes.detail.col.name')}
                       </th>
-                      <th className="px-4 py-3 text-left font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                      <th className="px-4 py-3 text-start font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
                         {t('school.classes.detail.col.email')}
                       </th>
-                      <th className="px-4 py-3 text-left font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                      <th className="px-4 py-3 text-start font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
                         {t('school.classes.detail.col.year')}
                       </th>
-                      <th className="px-4 py-3 text-left font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                      <th className="px-4 py-3 text-start font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
                         {t('school.classes.detail.col.last_active')}
                       </th>
-                      <th className="px-4 py-3 text-left font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground min-w-36">
+                      <th className="px-4 py-3 text-start font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground min-w-36">
                         {t('school.classes.detail.col.progress')}
                       </th>
-                      <th className="px-4 py-3 text-left font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                      <th className="px-4 py-3 text-start font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
                         {t('school.classes.detail.col.done')}
                       </th>
                       <th className="px-4 py-3" />
@@ -1084,7 +1084,7 @@ export default function ClassDetailPage() {
                             </div>
                             <span
                               className={cn(
-                                'text-xs font-semibold tabular-nums w-8 shrink-0 text-right',
+                                'text-xs font-semibold tabular-nums w-8 shrink-0 text-end',
                                 scoreColor(s.avg_quiz_score),
                               )}
                             >

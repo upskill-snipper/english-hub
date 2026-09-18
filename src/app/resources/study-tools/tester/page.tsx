@@ -1252,7 +1252,7 @@ export default function QuoteTesterPage() {
                   <button
                     key={set.slug}
                     onClick={() => toggleText(set.slug)}
-                    className={`flex w-full items-center gap-3 rounded-lg border-2 px-4 py-3 text-left transition ${
+                    className={`flex w-full items-center gap-3 rounded-lg border-2 px-4 py-3 text-start transition ${
                       isActive ? 'border-primary bg-primary/5' : 'border-border hover:border-border'
                     }`}
                   >
@@ -1281,7 +1281,7 @@ export default function QuoteTesterPage() {
                       <div className="text-sm font-semibold text-foreground">{set.title}</div>
                       <div className="text-xs text-muted-foreground">{set.author}</div>
                     </div>
-                    <span className="ml-auto text-xs text-muted-foreground">
+                    <span className="ms-auto text-xs text-muted-foreground">
                       {set.cards.length} quotes
                     </span>
                   </button>
@@ -1298,7 +1298,7 @@ export default function QuoteTesterPage() {
                 <button
                   key={mode}
                   onClick={() => setSelectedMode(mode)}
-                  className={`flex w-full items-center gap-3 rounded-lg border-2 px-4 py-3 text-left transition ${
+                  className={`flex w-full items-center gap-3 rounded-lg border-2 px-4 py-3 text-start transition ${
                     selectedMode === mode
                       ? 'border-primary bg-primary/5'
                       : 'border-border hover:border-border'

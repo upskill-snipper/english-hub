@@ -333,7 +333,7 @@ export default function ClassReportPage() {
                 Class Progress Report
               </h1>
             </div>
-            <div className="text-right text-sm text-muted-foreground print:text-neutral-500">
+            <div className="text-end text-sm text-muted-foreground print:text-neutral-500">
               <div className="w-16 h-16 border-2 border-dashed border-border print:border-neutral-400 rounded-lg flex items-center justify-center text-[10px] text-muted-foreground print:text-neutral-500 mb-1 font-medium">
                 LOGO
               </div>
@@ -548,13 +548,13 @@ export default function ClassReportPage() {
                         </span>
                         <div className="flex-1 bg-muted print:bg-neutral-200 rounded-full h-5 overflow-hidden">
                           <div
-                            className={`${band.color} h-full rounded-full flex items-center justify-end pr-2 text-white text-[10px] font-medium min-w-[32px]`}
+                            className={`${band.color} h-full rounded-full flex items-center justify-end pe-2 text-white text-[10px] font-medium min-w-[32px]`}
                             style={{ width: `${Math.max(band.pct, 5)}%` }}
                           >
                             {band.count}
                           </div>
                         </div>
-                        <span className="text-sm text-muted-foreground print:text-neutral-500 w-10 text-right">
+                        <span className="text-sm text-muted-foreground print:text-neutral-500 w-10 text-end">
                           {band.pct}%
                         </span>
                       </div>
@@ -584,10 +584,10 @@ export default function ClassReportPage() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-muted print:bg-neutral-200">
-                    <th className="text-left px-3 py-2.5 font-semibold text-muted-foreground print:text-black rounded-tl-lg print:rounded-none">
+                    <th className="text-start px-3 py-2.5 font-semibold text-muted-foreground print:text-black rounded-ss-lg print:rounded-none">
                       #
                     </th>
-                    <th className="text-left px-3 py-2.5 font-semibold text-muted-foreground print:text-black">
+                    <th className="text-start px-3 py-2.5 font-semibold text-muted-foreground print:text-black">
                       Student
                     </th>
                     <th className="text-center px-3 py-2.5 font-semibold text-muted-foreground print:text-black">
@@ -605,7 +605,7 @@ export default function ClassReportPage() {
                     <th className="text-center px-3 py-2.5 font-semibold text-muted-foreground print:text-black">
                       Completed
                     </th>
-                    <th className="text-center px-3 py-2.5 font-semibold text-muted-foreground print:text-black rounded-tr-lg print:rounded-none">
+                    <th className="text-center px-3 py-2.5 font-semibold text-muted-foreground print:text-black rounded-se-lg print:rounded-none">
                       Status
                     </th>
                   </tr>
@@ -704,7 +704,7 @@ export default function ClassReportPage() {
                   </span>
                   <div className="flex-1 bg-muted print:bg-neutral-200 rounded-full h-4 overflow-hidden">
                     <div
-                      className={`h-full rounded-full flex items-center justify-end pr-2 text-white text-[10px] font-medium ${
+                      className={`h-full rounded-full flex items-center justify-end pe-2 text-white text-[10px] font-medium ${
                         mod.avgScore >= 70
                           ? 'bg-primary print:bg-teal-800'
                           : mod.avgScore >= 50
@@ -716,7 +716,7 @@ export default function ClassReportPage() {
                       {mod.avgScore}%
                     </div>
                   </div>
-                  <span className="text-xs text-muted-foreground print:text-neutral-500 w-20 text-right">
+                  <span className="text-xs text-muted-foreground print:text-neutral-500 w-20 text-end">
                     {mod.studentCount} student{mod.studentCount !== 1 ? 's' : ''}
                   </span>
                 </div>
@@ -879,12 +879,12 @@ export default function ClassReportPage() {
           {/* Visual bar comparison */}
           <div className="mt-4 space-y-2">
             <div className="flex items-center gap-3 text-xs">
-              <span className="w-24 text-muted-foreground print:text-neutral-500 text-right">
+              <span className="w-24 text-muted-foreground print:text-neutral-500 text-end">
                 Class
               </span>
               <div className="flex-1 bg-muted print:bg-neutral-200 rounded-full h-5 overflow-hidden">
                 <div
-                  className="bg-blue-500 print:bg-teal-800 h-full rounded-full flex items-center justify-end pr-2 text-white text-xs font-medium"
+                  className="bg-blue-500 print:bg-teal-800 h-full rounded-full flex items-center justify-end pe-2 text-white text-xs font-medium"
                   style={{ width: `${Math.min(classAvgScore, 100)}%` }}
                 >
                   {classAvgScore}%
@@ -892,12 +892,12 @@ export default function ClassReportPage() {
               </div>
             </div>
             <div className="flex items-center gap-3 text-xs">
-              <span className="w-24 text-muted-foreground print:text-neutral-500 text-right">
+              <span className="w-24 text-muted-foreground print:text-neutral-500 text-end">
                 School
               </span>
               <div className="flex-1 bg-muted print:bg-neutral-200 rounded-full h-5 overflow-hidden">
                 <div
-                  className="bg-muted-foreground/40 print:bg-neutral-400 h-full rounded-full flex items-center justify-end pr-2 text-white text-xs font-medium"
+                  className="bg-muted-foreground/40 print:bg-neutral-400 h-full rounded-full flex items-center justify-end pe-2 text-white text-xs font-medium"
                   style={{ width: `${Math.min(schoolAvg, 100)}%` }}
                 >
                   {schoolAvg}%
@@ -919,7 +919,7 @@ export default function ClassReportPage() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="bg-muted print:bg-neutral-200">
-                  <th className="text-left px-3 py-2.5 font-semibold text-muted-foreground print:text-black rounded-tl-lg print:rounded-none">
+                  <th className="text-start px-3 py-2.5 font-semibold text-muted-foreground print:text-black rounded-ss-lg print:rounded-none">
                     Metric
                   </th>
                   <th className="text-center px-3 py-2.5 font-semibold text-muted-foreground print:text-black">
@@ -928,7 +928,7 @@ export default function ClassReportPage() {
                   <th className="text-center px-3 py-2.5 font-semibold text-muted-foreground print:text-black">
                     This Term
                   </th>
-                  <th className="text-center px-3 py-2.5 font-semibold text-muted-foreground print:text-black rounded-tr-lg print:rounded-none">
+                  <th className="text-center px-3 py-2.5 font-semibold text-muted-foreground print:text-black rounded-se-lg print:rounded-none">
                     Change
                   </th>
                 </tr>
@@ -1022,49 +1022,49 @@ export default function ClassReportPage() {
           </h2>
           <ol className="list-decimal list-inside space-y-2 text-sm text-muted-foreground print:text-black">
             {classAvgScore < schoolAvg && (
-              <li className="leading-relaxed pl-1">
+              <li className="leading-relaxed ps-1">
                 Class average is {Math.abs(classVsSchool)}% below the school average. Review
                 teaching strategies and consider additional intervention sessions.
               </li>
             )}
             {ragCounts.atRisk > 0 && (
-              <li className="leading-relaxed pl-1">
+              <li className="leading-relaxed ps-1">
                 {ragCounts.atRisk} student{ragCounts.atRisk > 1 ? 's are' : ' is'} at risk.
                 Prioritise individual learning plans and arrange parent/carer meetings.
               </li>
             )}
             {ragCounts.needsSupport > 0 && (
-              <li className="leading-relaxed pl-1">
+              <li className="leading-relaxed ps-1">
                 {ragCounts.needsSupport} student{ragCounts.needsSupport > 1 ? 's need' : ' needs'}{' '}
                 additional support. Consider targeted small-group sessions focusing on key
                 weaknesses.
               </li>
             )}
             {classCompletionPct < 70 && (
-              <li className="leading-relaxed pl-1">
+              <li className="leading-relaxed ps-1">
                 Assignment completion rate is {classCompletionPct}%. Implement structured homework
                 monitoring and follow-up procedures.
               </li>
             )}
             {modulePerformance.length > 0 &&
               modulePerformance[modulePerformance.length - 1].avgScore < 60 && (
-                <li className="leading-relaxed pl-1">
+                <li className="leading-relaxed ps-1">
                   {modulePerformance[modulePerformance.length - 1].name} is the weakest module at{' '}
                   {modulePerformance[modulePerformance.length - 1].avgScore}%. Consider dedicated
                   revision sessions and supplementary resources for this area.
                 </li>
               )}
             {topPerformers.length > 0 && (
-              <li className="leading-relaxed pl-1">
+              <li className="leading-relaxed ps-1">
                 {topPerformers.length} top performer{topPerformers.length > 1 ? 's' : ''} should be
                 challenged with extension material and considered for peer mentoring roles.
               </li>
             )}
-            <li className="leading-relaxed pl-1">
+            <li className="leading-relaxed ps-1">
               Continue to track progress fortnightly and adjust intervention groups as needed before
               the end-of-term assessment window.
             </li>
-            <li className="leading-relaxed pl-1">
+            <li className="leading-relaxed ps-1">
               Share individual student reports with parents/carers at the upcoming Parents&apos;
               Evening to support home-school collaboration.
             </li>

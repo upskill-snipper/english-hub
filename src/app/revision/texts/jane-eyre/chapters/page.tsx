@@ -305,13 +305,13 @@ export default async function JaneEyreChaptersPage() {
 
       {/* Hero */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-emerald-500/[0.04] p-6 sm:p-8 lg:p-10">
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-emerald-500/5 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-emerald-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-16 -start-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl" />
         <div className="relative">
           <Button
             variant="ghost"
             size="sm"
-            className="mb-4 -ml-2 text-muted-foreground"
+            className="mb-4 -ms-2 text-muted-foreground"
             render={<Link href="/revision/texts/jane-eyre" />}
           >
             <ArrowLeft className="size-3.5" />
@@ -320,11 +320,11 @@ export default async function JaneEyreChaptersPage() {
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
-              <BookOpen className="mr-1 size-3 text-emerald-400" />
+              <BookOpen className="me-1 size-3 text-emerald-400" />
               {await t('rev.textgrp4.common.19c_novel')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
-              <Sparkles className="mr-1 size-3" />
+              <Sparkles className="me-1 size-3" />
               AQA / OCR
             </Badge>
           </div>
@@ -370,7 +370,7 @@ export default async function JaneEyreChaptersPage() {
                 <CardTitle className="text-heading-md font-heading">{keyEventsLabel}</CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="list-disc space-y-1.5 pl-5 text-body-sm text-muted-foreground">
+                <ul className="list-disc space-y-1.5 ps-5 text-body-sm text-muted-foreground">
                   {ch.keyEvents.map((event, j) => (
                     <li key={j}>{event}</li>
                   ))}

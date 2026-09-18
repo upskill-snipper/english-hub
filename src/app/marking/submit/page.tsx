@@ -826,7 +826,7 @@ export default function SubmitEssayPage() {
                     {wordCount}{' '}
                     {wordCount === 1 ? tx('marking.submit.word') : tx('marking.submit.words')}
                     {wordCount > 0 && wordCount < 50 && (
-                      <span className="ml-1 text-destructive">{tx('marking.submit.min_50')}</span>
+                      <span className="ms-1 text-destructive">{tx('marking.submit.min_50')}</span>
                     )}
                   </span>
                   <span>{tx('marking.submit.no_upper_limit')}</span>

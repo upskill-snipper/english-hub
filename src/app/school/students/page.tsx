@@ -289,7 +289,7 @@ function ActionMenu({ student, classes, t, onMoveToClass, onSuspend, onRemove }:
               setMoveOpen(false)
             }}
           />
-          <div className="absolute right-0 z-40 mt-1 w-48 rounded-lg border border-border bg-popover py-1 shadow-lg ring-1 ring-foreground/10">
+          <div className="absolute end-0 z-40 mt-1 w-48 rounded-lg border border-border bg-popover py-1 shadow-lg ring-1 ring-foreground/10">
             <Link
               href={`/school/students/${student.id}`}
               className="flex w-full items-center gap-2.5 px-3 py-1.5 text-sm text-foreground hover:bg-accent"
@@ -308,13 +308,13 @@ function ActionMenu({ student, classes, t, onMoveToClass, onSuspend, onRemove }:
                 {t('school.students.action.move_to_class')}
                 <ChevronDown
                   className={cn(
-                    'size-3 ml-auto text-muted-foreground transition-transform',
+                    'size-3 ms-auto text-muted-foreground transition-transform',
                     moveOpen && 'rotate-180',
                   )}
                 />
               </button>
               {moveOpen && (
-                <div className="absolute right-full top-0 mr-1 w-36 rounded-lg border border-border bg-popover py-1 shadow-lg ring-1 ring-foreground/10">
+                <div className="absolute end-full top-0 me-1 w-36 rounded-lg border border-border bg-popover py-1 shadow-lg ring-1 ring-foreground/10">
                   {classes.map((cls) => (
                     <button
                       key={cls}
@@ -720,16 +720,16 @@ export default function StudentsPage() {
         {/* Filter bar */}
         <div className="flex flex-wrap items-center gap-2">
           <div className="relative">
-            <Search className="pointer-events-none absolute left-2.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+            <Search className="pointer-events-none absolute start-2.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
             <Input
               placeholder={t('school.students.search_placeholder')}
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="h-8 w-64 pl-8 text-sm"
+              className="h-8 w-64 ps-8 text-sm"
             />
             {search && (
               <button
-                className="absolute right-2.5 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                className="absolute end-2.5 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
                 onClick={() => setSearch('')}
                 aria-label={t('school.students.aria.clear_search')}
               >
@@ -802,7 +802,7 @@ export default function StudentsPage() {
             <span className="text-sm font-medium">
               {selected.size} {t('school.students.selected_count')}
             </span>
-            <div className="ml-auto flex flex-wrap items-center gap-2">
+            <div className="ms-auto flex flex-wrap items-center gap-2">
               <Button size="xs" variant="outline" onClick={() => setMoveDialogOpen(true)}>
                 <MoveRight className="size-3" />
                 {t('school.students.action.move_to_class')}
@@ -851,7 +851,7 @@ export default function StudentsPage() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-white/5 bg-muted/30">
-                  <th className="w-10 px-4 py-3 text-left">
+                  <th className="w-10 px-4 py-3 text-start">
                     <input
                       type="checkbox"
                       checked={allPageSelected}
@@ -861,31 +861,31 @@ export default function StudentsPage() {
                       disabled={loading || paginated.length === 0}
                     />
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                  <th className="px-4 py-3 text-start text-xs font-medium uppercase tracking-wide text-muted-foreground">
                     {t('school.students.col.name')}
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                  <th className="px-4 py-3 text-start text-xs font-medium uppercase tracking-wide text-muted-foreground">
                     {t('school.students.col.email')}
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                  <th className="px-4 py-3 text-start text-xs font-medium uppercase tracking-wide text-muted-foreground">
                     {t('school.students.col.year')}
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                  <th className="px-4 py-3 text-start text-xs font-medium uppercase tracking-wide text-muted-foreground">
                     {t('school.students.col.class')}
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                  <th className="px-4 py-3 text-start text-xs font-medium uppercase tracking-wide text-muted-foreground">
                     {t('school.students.col.last_active')}
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                  <th className="px-4 py-3 text-start text-xs font-medium uppercase tracking-wide text-muted-foreground">
                     {t('school.students.col.progress')}
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                  <th className="px-4 py-3 text-start text-xs font-medium uppercase tracking-wide text-muted-foreground">
                     {t('school.students.col.working_at')}
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                  <th className="px-4 py-3 text-start text-xs font-medium uppercase tracking-wide text-muted-foreground">
                     {t('school.students.col.status')}
                   </th>
-                  <th className="px-4 py-3 text-right text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                  <th className="px-4 py-3 text-end text-xs font-medium uppercase tracking-wide text-muted-foreground">
                     {t('school.students.col.actions')}
                   </th>
                 </tr>
@@ -1028,7 +1028,7 @@ export default function StudentsPage() {
                       <td className="px-4 py-3">
                         <StatusBadge status={student.status} t={t} />
                       </td>
-                      <td className="px-4 py-3 text-right">
+                      <td className="px-4 py-3 text-end">
                         <ActionMenu
                           student={student}
                           classes={availableClasses}

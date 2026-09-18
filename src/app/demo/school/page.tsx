@@ -161,7 +161,7 @@ export default function DemoSchoolDashboardPage() {
           </div>
           <Button size="sm" className="shrink-0" render={<Link href="/school-pilot" />}>
             {t('demo.banner.cta_book_call')}
-            <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
+            <ArrowRight className="ms-1.5 h-3.5 w-3.5" />
           </Button>
         </div>
       </div>
@@ -178,7 +178,7 @@ export default function DemoSchoolDashboardPage() {
             {DEMO_SCHOOL.name}
             <Badge
               variant="secondary"
-              className="ml-1 border-amber-500/30 bg-amber-500/10 text-xs text-clay-600"
+              className="ms-1 border-amber-500/30 bg-amber-500/10 text-xs text-clay-600"
             >
               DEMO
             </Badge>
@@ -191,7 +191,7 @@ export default function DemoSchoolDashboardPage() {
           </p>
         </div>
         <Button variant="outline" size="sm" render={<Link href="/demo/school/analytics" />}>
-          <BarChart3 className="mr-1.5 h-3.5 w-3.5" />
+          <BarChart3 className="me-1.5 h-3.5 w-3.5" />
           Analytics
         </Button>
       </div>
@@ -277,7 +277,7 @@ export default function DemoSchoolDashboardPage() {
               render={<Link href="/demo/school/analytics?filter=at-risk" />}
             >
               Review Students
-              <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
+              <ArrowRight className="ms-1.5 h-3.5 w-3.5" />
             </Button>
           </div>
         </div>
@@ -476,7 +476,7 @@ export default function DemoSchoolDashboardPage() {
                           setSelectedYear(yg.label)
                           setSelectedClass('all')
                         }}
-                        className="flex w-full items-center gap-3 rounded-lg border border-border bg-background/50 px-3 py-2 text-left transition-colors hover:border-primary/30 hover:bg-primary/5"
+                        className="flex w-full items-center gap-3 rounded-lg border border-border bg-background/50 px-3 py-2 text-start transition-colors hover:border-primary/30 hover:bg-primary/5"
                       >
                         <div className="min-w-0 flex-1">
                           <p className="text-xs font-semibold text-foreground">{yg.label}</p>
@@ -484,7 +484,7 @@ export default function DemoSchoolDashboardPage() {
                             {yg.studentCount} students
                           </p>
                         </div>
-                        <div className="text-right">
+                        <div className="text-end">
                           <span className={`text-sm font-bold ${gcseGradeColor(avgWAG)}`}>
                             G{avgWAG}
                           </span>
@@ -529,19 +529,19 @@ export default function DemoSchoolDashboardPage() {
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="border-b border-border text-left text-xs text-muted-foreground">
-                        <th className="pb-2 pr-3 font-medium">Student</th>
-                        <th className="pb-2 pr-3 font-medium">Class</th>
-                        <th className="pb-2 pr-3 text-center font-medium">Working At</th>
-                        <th className="pb-2 pr-3 text-center font-medium">Predicted</th>
-                        <th className="pb-2 pr-3 text-center font-medium">Target</th>
+                      <tr className="border-b border-border text-start text-xs text-muted-foreground">
+                        <th className="pb-2 pe-3 font-medium">Student</th>
+                        <th className="pb-2 pe-3 font-medium">Class</th>
+                        <th className="pb-2 pe-3 text-center font-medium">Working At</th>
+                        <th className="pb-2 pe-3 text-center font-medium">Predicted</th>
+                        <th className="pb-2 pe-3 text-center font-medium">Target</th>
                         <th className="pb-2 font-medium">Status</th>
                       </tr>
                     </thead>
                     <tbody>
                       {metrics.needingIntervention.map((student) => (
                         <tr key={student.id} className="border-b border-border/50 last:border-0">
-                          <td className="py-2.5 pr-3">
+                          <td className="py-2.5 pe-3">
                             <Link
                               href={`/demo/school/students/${student.id}`}
                               className="font-medium text-foreground hover:text-primary hover:underline"
@@ -549,24 +549,24 @@ export default function DemoSchoolDashboardPage() {
                               {student.name}
                             </Link>
                           </td>
-                          <td className="py-2.5 pr-3 text-xs text-muted-foreground">
+                          <td className="py-2.5 pe-3 text-xs text-muted-foreground">
                             {student.className}
                           </td>
-                          <td className="py-2.5 pr-3 text-center">
+                          <td className="py-2.5 pe-3 text-center">
                             <span
                               className={`inline-flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold ${gcseGradeBg(student.workingAtGrade)} ${gcseGradeColor(student.workingAtGrade)}`}
                             >
                               {student.workingAtGrade}
                             </span>
                           </td>
-                          <td className="py-2.5 pr-3 text-center">
+                          <td className="py-2.5 pe-3 text-center">
                             <span
                               className={`inline-flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold ${gcseGradeBg(student.predictedGrade)} ${gcseGradeColor(student.predictedGrade)}`}
                             >
                               {student.predictedGrade}
                             </span>
                           </td>
-                          <td className="py-2.5 pr-3 text-center">
+                          <td className="py-2.5 pe-3 text-center">
                             <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-muted/50 text-xs font-bold text-muted-foreground">
                               {student.targetGrade}
                             </span>
@@ -795,7 +795,7 @@ export default function DemoSchoolDashboardPage() {
                   className="w-full"
                   render={<Link href="/assessment/reading" />}
                 >
-                  <BookOpenCheck className="mr-1.5 h-3.5 w-3.5" />
+                  <BookOpenCheck className="me-1.5 h-3.5 w-3.5" />
                   View Reading Assessment
                 </Button>
               </div>
@@ -870,10 +870,10 @@ export default function DemoSchoolDashboardPage() {
             <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
               <Button variant="default" size="lg" render={<Link href="/school-pilot" />}>
                 Start a free school pilot
-                <ArrowRight className="ml-1.5 h-4 w-4" />
+                <ArrowRight className="ms-1.5 h-4 w-4" />
               </Button>
               <Button variant="outline" size="lg" render={<Link href="/contact" />}>
-                <Mail className="mr-1.5 h-4 w-4" />
+                <Mail className="me-1.5 h-4 w-4" />
                 Talk to us
               </Button>
             </div>

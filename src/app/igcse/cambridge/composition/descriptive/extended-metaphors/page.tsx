@@ -67,11 +67,11 @@ export default async function ExtendedMetaphorsPage() {
       </Button>
 
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 lg:p-10">
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
+        <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
         <div className="relative">
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="bg-primary/10 text-primary border-primary/20">
-              <Sparkles className="mr-1 size-3" />
+              <Sparkles className="me-1 size-3" />
               {await t('igcse.cambridge.badge.cambridge_igcse')}
             </Badge>
             <Badge variant="secondary">Technique 2 of 5</Badge>
@@ -107,7 +107,7 @@ export default async function ExtendedMetaphorsPage() {
             <strong className="text-foreground">emotionally flexible</strong> (they can feel hopeful
             or sinister depending on how you steer them).
           </p>
-          <ul className="list-disc space-y-1 pl-5">
+          <ul className="list-disc space-y-1 ps-5">
             <li>A city as a living animal</li>
             <li>A beach as an abandoned room</li>
             <li>A storm as an orchestra</li>

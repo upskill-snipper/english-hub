@@ -445,7 +445,7 @@ export default function PhrasalVerbsMatchPage() {
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="mb-6 flex items-center justify-between gap-4">
           <Button variant="ghost" size="sm" render={<Link href="/games" />}>
-            <ArrowLeft className="size-4 mr-1" />
+            <ArrowLeft className="size-4 me-1" />
             Back to Games
           </Button>
           {boardConfig && (
@@ -501,7 +501,7 @@ export default function PhrasalVerbsMatchPage() {
                       onClick={() => handleAnswer(option)}
                       disabled={selected !== null}
                       className={cn(
-                        'flex items-center justify-between gap-3 rounded-lg border px-4 py-3 text-left text-sm font-medium transition-all',
+                        'flex items-center justify-between gap-3 rounded-lg border px-4 py-3 text-start text-sm font-medium transition-all',
                         'focus:outline-none focus:ring-2 focus:ring-primary/30',
                         selected === null &&
                           'border-border bg-card text-foreground hover:border-primary hover:bg-accent',

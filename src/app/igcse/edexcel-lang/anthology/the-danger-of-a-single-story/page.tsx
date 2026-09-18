@@ -255,7 +255,7 @@ export default async function TheDangerOfASingleStoryPage() {
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/igcse/edexcel-lang/anthology" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -307,7 +307,7 @@ export default async function TheDangerOfASingleStoryPage() {
           <h2 className="text-heading-sm font-heading text-foreground font-serif">
             {await t('igcse.page.anth.verified_ted_lines')}
           </h2>
-          <span className="font-mono text-body-xs text-muted-foreground ml-auto">
+          <span className="font-mono text-body-xs text-muted-foreground ms-auto">
             {await t('igcse.page.anth.fair_dealing_extracts')}
           </span>
         </div>
@@ -322,7 +322,7 @@ export default async function TheDangerOfASingleStoryPage() {
               <span className="font-mono text-body-xs text-amber-600 dark:text-clay-600 uppercase tracking-wider">
                 {extract.label}
               </span>
-              <blockquote className="mt-2 border-l-2 border-amber-500/40 pl-4 font-serif text-body text-foreground italic leading-relaxed">
+              <blockquote className="mt-2 border-s-2 border-amber-500/40 ps-4 font-serif text-body text-foreground italic leading-relaxed">
                 {extract.text}
               </blockquote>
               <p className="mt-2 text-body-sm text-muted-foreground">{extract.context}</p>

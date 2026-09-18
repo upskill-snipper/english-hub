@@ -478,7 +478,7 @@ export default function CaieEnglishLiteratureHub() {
                       View resource
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="ml-1 h-4 w-4"
+                        className="ms-1 h-4 w-4"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"

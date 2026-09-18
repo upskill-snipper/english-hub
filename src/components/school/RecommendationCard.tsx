@@ -2,10 +2,7 @@
 
 import { cn } from '@/lib/utils'
 import { AlertTriangle, AlertCircle, Info, ArrowRight } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-} from '@/components/ui/card'
+import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 
 /* ── Types ─────────────────────────────────────────────────────────────────── */
@@ -84,13 +81,7 @@ export function RecommendationCard({
   )
 
   return (
-    <Card
-      className={cn(
-        'border-l-4',
-        config.borderClass,
-        className,
-      )}
-    >
+    <Card className={cn('border-s-4', config.borderClass, className)}>
       <CardContent>
         {/* Header: priority badge + title */}
         <div className="flex items-start gap-3">
@@ -119,25 +110,18 @@ export function RecommendationCard({
             </div>
 
             {/* Description */}
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              {description}
-            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
 
             {/* Affected students */}
             <p className="mt-2 text-xs text-muted-foreground">
-              <span className="font-semibold text-foreground">
-                {affectedStudents}
-              </span>{' '}
-              student{affectedStudents !== 1 ? 's' : ''} affected
+              <span className="font-semibold text-foreground">{affectedStudents}</span> student
+              {affectedStudents !== 1 ? 's' : ''} affected
             </p>
 
             {/* Suggested action */}
             <div className="mt-2 rounded-md bg-muted/50 px-3 py-2">
               <p className="text-xs text-muted-foreground">
-                <span className="font-medium text-foreground">
-                  Suggested:
-                </span>{' '}
-                {suggestedAction}
+                <span className="font-medium text-foreground">Suggested:</span> {suggestedAction}
               </p>
             </div>
 

@@ -285,13 +285,13 @@ export default async function GreatExpectationsEssayPlansPage() {
     <div className="space-y-10 pb-16">
       {/* Hero */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-blue-500/[0.04] p-6 sm:p-8 lg:p-10">
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-blue-500/5 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-blue-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-16 -start-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl" />
         <div className="relative">
           <Button
             variant="ghost"
             size="sm"
-            className="mb-4 -ml-2 text-muted-foreground"
+            className="mb-4 -ms-2 text-muted-foreground"
             render={<Link href="/revision/texts/great-expectations" />}
           >
             <ArrowLeft className="size-3.5" />
@@ -300,7 +300,7 @@ export default async function GreatExpectationsEssayPlansPage() {
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
-              <BookOpen className="mr-1 size-3 text-emerald-400" />
+              <BookOpen className="me-1 size-3 text-emerald-400" />
               {await t('rev.texts2.common.c19_novel')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
@@ -327,7 +327,7 @@ export default async function GreatExpectationsEssayPlansPage() {
             <CardHeader className="border-b border-border/40 bg-muted/30">
               <div className="flex items-center gap-2 mb-1">
                 <Badge variant="outline" className="text-xs">
-                  <FileText className="mr-1 size-3" />
+                  <FileText className="me-1 size-3" />
                   {essayNTpl.replace('{n}', String(plan.id))}
                 </Badge>
               </div>
@@ -362,7 +362,7 @@ export default async function GreatExpectationsEssayPlansPage() {
                   </div>
                   <div className="rounded-lg border border-border/60 bg-muted/20 p-3">
                     <p className="mb-1 text-xs font-medium uppercase tracking-wide text-violet-400">
-                      <Quote className="mr-1 inline size-3" />
+                      <Quote className="me-1 inline size-3" />
                       {quotationLabel}
                     </p>
                     <p className="text-body-sm font-medium italic text-foreground">{para.quote}</p>

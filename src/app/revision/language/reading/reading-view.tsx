@@ -102,7 +102,7 @@ function Section({
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center gap-3 p-5 text-left transition-colors hover:bg-accent/30"
+        className="flex w-full items-center gap-3 p-5 text-start transition-colors hover:bg-accent/30"
       >
         <div className={`flex size-8 items-center justify-center rounded-lg bg-blue-500/10`}>
           <Icon className={`size-4 ${colour}`} />
@@ -178,7 +178,7 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/revision/language" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -282,7 +282,7 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
 
           <div className="space-y-3">
             <h3 className="text-sm font-semibold text-foreground">The Three-Read Method</h3>
-            <ol className="space-y-2 pl-1">
+            <ol className="space-y-2 ps-1">
               {[
                 {
                   step: 'Read 1 -- Skim for gist',
@@ -374,7 +374,7 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
 
           <div className="space-y-3">
             <h3 className="text-sm font-semibold text-foreground">How to Infer Effectively</h3>
-            <ol className="space-y-2 text-body-sm text-muted-foreground pl-1">
+            <ol className="space-y-2 text-body-sm text-muted-foreground ps-1">
               <li className="flex items-start gap-2">
                 <span className="font-bold text-foreground">1.</span>
                 Identify the connotations of specific word choices. Ask: what associations does this
@@ -604,7 +604,7 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
               Rather than writing about Source A and then Source B separately (which limits you to
               Grade 5), weave both sources together in every paragraph:
             </p>
-            <ol className="space-y-2 text-body-sm text-muted-foreground pl-1">
+            <ol className="space-y-2 text-body-sm text-muted-foreground ps-1">
               <li className="flex items-start gap-2">
                 <span className="font-bold text-foreground">1.</span>
                 Open with a comparative point: &ldquo;Both writers present [topic] as

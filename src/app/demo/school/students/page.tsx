@@ -536,12 +536,12 @@ export default function StudentsPage() {
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             {/* Search */}
             <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+              <Search className="absolute start-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <Input
                 placeholder={t('demo.b15.school_students.search_ph')}
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="pl-9"
+                className="ps-9"
               />
             </div>
 
@@ -639,7 +639,7 @@ export default function StudentsPage() {
             <CardTitle className="flex items-center gap-2">
               <GraduationCap className="h-5 w-5 text-muted-foreground" />
               {t('demo.b15.school_students.student_list')}
-              <Badge variant="secondary" className="ml-2 text-xs">
+              <Badge variant="secondary" className="ms-2 text-xs">
                 {filtered.length}
               </Badge>
             </CardTitle>
@@ -650,7 +650,7 @@ export default function StudentsPage() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-border bg-muted/30">
-                  <th className="w-10 px-4 py-3 text-left">
+                  <th className="w-10 px-4 py-3 text-start">
                     <input
                       type="checkbox"
                       checked={allOnPageSelected}
@@ -658,37 +658,37 @@ export default function StudentsPage() {
                       className="h-4 w-4 rounded border-input accent-primary"
                     />
                   </th>
-                  <th className="px-4 py-3 text-left font-medium text-muted-foreground">
+                  <th className="px-4 py-3 text-start font-medium text-muted-foreground">
                     {t('demo.b15.school_students.col_name')}
                   </th>
-                  <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden md:table-cell">
+                  <th className="px-4 py-3 text-start font-medium text-muted-foreground hidden md:table-cell">
                     {t('demo.b15.school_students.col_email')}
                   </th>
-                  <th className="px-4 py-3 text-left font-medium text-muted-foreground">
+                  <th className="px-4 py-3 text-start font-medium text-muted-foreground">
                     {t('demo.b15.school_students.col_year')}
                   </th>
-                  <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden lg:table-cell">
+                  <th className="px-4 py-3 text-start font-medium text-muted-foreground hidden lg:table-cell">
                     {t('demo.b15.school_students.col_class')}
                   </th>
-                  <th className="px-4 py-3 text-left font-medium text-muted-foreground">
+                  <th className="px-4 py-3 text-start font-medium text-muted-foreground">
                     {t('demo.b15.school_students.col_progress')}
                   </th>
-                  <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden sm:table-cell">
+                  <th className="px-4 py-3 text-start font-medium text-muted-foreground hidden sm:table-cell">
                     {t('demo.b15.school_students.col_working_at')}
                   </th>
-                  <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden md:table-cell">
+                  <th className="px-4 py-3 text-start font-medium text-muted-foreground hidden md:table-cell">
                     {t('demo.b15.school_students.col_predicted')}
                   </th>
-                  <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden lg:table-cell">
+                  <th className="px-4 py-3 text-start font-medium text-muted-foreground hidden lg:table-cell">
                     {t('demo.b15.school_students.col_target')}
                   </th>
-                  <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden xl:table-cell">
+                  <th className="px-4 py-3 text-start font-medium text-muted-foreground hidden xl:table-cell">
                     {t('demo.b15.school_students.col_reading_age')}
                   </th>
-                  <th className="px-4 py-3 text-left font-medium text-muted-foreground">
+                  <th className="px-4 py-3 text-start font-medium text-muted-foreground">
                     {t('demo.b15.school_students.col_status')}
                   </th>
-                  <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden xl:table-cell">
+                  <th className="px-4 py-3 text-start font-medium text-muted-foreground hidden xl:table-cell">
                     {t('demo.b15.school_students.col_last_active')}
                   </th>
                 </tr>
@@ -862,7 +862,7 @@ export default function StudentsPage() {
 
       {/* Toast notification */}
       {toastMessage && (
-        <div className="fixed bottom-6 right-6 z-50 animate-in slide-in-from-bottom-4 fade-in duration-300">
+        <div className="fixed bottom-6 end-6 z-50 animate-in slide-in-from-bottom-4 fade-in duration-300">
           <div className="flex items-center gap-3 rounded-xl border border-amber-500/30 bg-card px-5 py-3 shadow-lg">
             <GraduationCap className="h-5 w-5 text-amber-700 dark:text-amber-300" />
             <span className="text-sm font-medium text-foreground">{toastMessage}</span>

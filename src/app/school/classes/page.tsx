@@ -249,7 +249,7 @@ function ClassForm({
               <SelectItem key={tc.id} value={tc.id}>
                 {tc.full_name}
                 {tc.role === 'admin' && (
-                  <span className="ml-1 text-xs text-muted-foreground">
+                  <span className="ms-1 text-xs text-muted-foreground">
                     {t('school.classes.form.admin_suffix')}
                   </span>
                 )}

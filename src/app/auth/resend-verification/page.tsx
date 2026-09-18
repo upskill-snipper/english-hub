@@ -134,7 +134,7 @@ export default function ResendVerificationPage() {
                 <Label htmlFor="email">{t('form.email')}</Label>
                 <div className="relative">
                   <Mail
-                    className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70"
+                    className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70"
                     aria-hidden="true"
                   />
                   <Input
@@ -143,7 +143,7 @@ export default function ResendVerificationPage() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder={t('form.email_placeholder')}
-                    className="pl-11"
+                    className="ps-11"
                     required
                     autoComplete="email"
                     aria-invalid={!!error}
@@ -154,7 +154,7 @@ export default function ResendVerificationPage() {
               <Button type="submit" disabled={loading} className="w-full" size="lg">
                 {loading ? (
                   <>
-                    <Loader2 className="w-5 h-5 animate-spin mr-2" aria-hidden="true" />
+                    <Loader2 className="w-5 h-5 animate-spin me-2" aria-hidden="true" />
                     {t('auth.resend.sending')}
                   </>
                 ) : (

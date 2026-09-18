@@ -89,7 +89,7 @@ export default function UnseenPoetryPage() {
               <Card key={item.ao}>
                 <CardHeader>
                   <CardTitle>
-                    <span className="mr-2 inline-flex h-7 w-7 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
+                    <span className="me-2 inline-flex h-7 w-7 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
                       {item.ao}
                     </span>
                     {item.title}
@@ -463,7 +463,7 @@ export default function UnseenPoetryPage() {
               </CardContent>
             </Card>
 
-            <div className="rounded-lg border-l-4 border-primary bg-card p-5 shadow-md">
+            <div className="rounded-lg border-s-4 border-primary bg-card p-5 shadow-md">
               <p className="text-xs font-semibold uppercase tracking-wide text-foreground">
                 Marker tip
               </p>
@@ -613,7 +613,7 @@ the harbour holds its breath. And waits. For no one.`}
           </div>
 
           {/* Model response */}
-          <div className="mt-4 rounded-lg border-l-4 border-primary bg-card p-5 shadow-md">
+          <div className="mt-4 rounded-lg border-s-4 border-primary bg-card p-5 shadow-md">
             <p className="text-xs font-semibold uppercase tracking-wide text-foreground">
               Model critical commentary
             </p>
@@ -794,7 +794,7 @@ the harbour holds its breath. And waits. For no one.`}
             <Card className="border-green-500/30">
               <CardHeader>
                 <CardTitle>
-                  <span className="mr-2 inline-flex items-center rounded-full bg-green-500/10 px-2.5 py-0.5 text-xs font-bold text-green-400">
+                  <span className="me-2 inline-flex items-center rounded-full bg-green-500/10 px-2.5 py-0.5 text-xs font-bold text-green-400">
                     20&ndash;25 marks
                   </span>
                   Outstanding to Excellent
@@ -831,7 +831,7 @@ the harbour holds its breath. And waits. For no one.`}
             <Card className="border-yellow-500/30">
               <CardHeader>
                 <CardTitle>
-                  <span className="mr-2 inline-flex items-center rounded-full bg-yellow-500/10 px-2.5 py-0.5 text-xs font-bold text-clay-600">
+                  <span className="me-2 inline-flex items-center rounded-full bg-yellow-500/10 px-2.5 py-0.5 text-xs font-bold text-clay-600">
                     10&ndash;15 marks
                   </span>
                   Competent to Good
@@ -869,7 +869,7 @@ the harbour holds its breath. And waits. For no one.`}
             <Card className="border-red-500/30">
               <CardHeader>
                 <CardTitle>
-                  <span className="mr-2 inline-flex items-center rounded-full bg-red-500/10 px-2.5 py-0.5 text-xs font-bold text-red-400">
+                  <span className="me-2 inline-flex items-center rounded-full bg-red-500/10 px-2.5 py-0.5 text-xs font-bold text-red-400">
                     Under 10 marks
                   </span>
                   Limited to Basic
@@ -903,7 +903,7 @@ the harbour holds its breath. And waits. For no one.`}
             </Card>
           </div>
 
-          <div className="mt-6 rounded-lg border-l-4 border-primary bg-card p-5 shadow-md">
+          <div className="mt-6 rounded-lg border-s-4 border-primary bg-card p-5 shadow-md">
             <p className="text-xs font-semibold uppercase tracking-wide text-foreground">
               The key difference between bands
             </p>

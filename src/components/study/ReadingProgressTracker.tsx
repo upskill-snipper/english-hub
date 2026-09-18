@@ -131,7 +131,7 @@ function ReadingProgressTracker({
         {/* Bar track */}
         <div className="relative h-2 w-full overflow-hidden rounded-full bg-border">
           <div
-            className="absolute inset-y-0 left-0 rounded-full bg-brand-accent transition-all duration-500 ease-out"
+            className="absolute inset-y-0 start-0 rounded-full bg-brand-accent transition-all duration-500 ease-out"
             style={{ width: `${clamped}%` }}
           />
         </div>

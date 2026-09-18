@@ -391,7 +391,7 @@ export function BulkPanel(p: Props) {
   return (
     <div className="space-y-4">
       <Panel title="How to bulk-mark">
-        <ol className="list-decimal space-y-1 pl-5 text-sm">
+        <ol className="list-decimal space-y-1 ps-5 text-sm">
           <li>Load the scheme once on the Mark tab. It is used for every candidate here.</li>
           <li>
             Drop the scanned batch below: a multi-page PDF, or all the photographs at once, in
@@ -585,7 +585,7 @@ export function BulkPanel(p: Props) {
       </Panel>
 
       {pages.length > 0 && (
-        <Panel title="Mark the class" className="border-l-4 border-l-primary">
+        <Panel title="Mark the class" className="border-s-4 border-s-primary">
           <div className="flex flex-wrap items-center gap-2">
             <Button size="lg" onClick={() => void runBulk(false)} disabled={!ready}>
               <Play className="h-4 w-4" /> Mark {groups.length} candidate
@@ -629,12 +629,12 @@ export function BulkPanel(p: Props) {
             <>
               <table className="mt-4 w-full text-sm">
                 <thead>
-                  <tr className="text-left text-xs uppercase tracking-wide text-muted-foreground">
-                    <th className="py-1 pr-2">Candidate</th>
-                    <th className="py-1 pr-2">Pages</th>
-                    <th className="py-1 pr-2 text-right">Mark</th>
-                    <th className="py-1 pr-2 text-right">Flags</th>
-                    <th className="py-1 pr-2">Status</th>
+                  <tr className="text-start text-xs uppercase tracking-wide text-muted-foreground">
+                    <th className="py-1 pe-2">Candidate</th>
+                    <th className="py-1 pe-2">Pages</th>
+                    <th className="py-1 pe-2 text-end">Mark</th>
+                    <th className="py-1 pe-2 text-end">Flags</th>
+                    <th className="py-1 pe-2">Status</th>
                     <th className="py-1"></th>
                   </tr>
                 </thead>
@@ -647,9 +647,9 @@ export function BulkPanel(p: Props) {
                           key={r.index}
                           className={`border-t border-border ${r.status === 'running' ? 'bg-primary/5' : ''}`}
                         >
-                          <td className="py-2 pr-2 font-medium">{r.label}</td>
-                          <td className="py-2 pr-2 text-xs text-muted-foreground">{r.range}</td>
-                          <td className="py-2 pr-2 text-right font-serif text-lg font-bold text-primary">
+                          <td className="py-2 pe-2 font-medium">{r.label}</td>
+                          <td className="py-2 pe-2 text-xs text-muted-foreground">{r.range}</td>
+                          <td className="py-2 pe-2 text-end font-serif text-lg font-bold text-primary">
                             {r.mark ? (
                               <>
                                 {r.mark.mark}
@@ -664,11 +664,11 @@ export function BulkPanel(p: Props) {
                               '-'
                             )}
                           </td>
-                          <td className="py-2 pr-2 text-right text-xs text-muted-foreground">
+                          <td className="py-2 pe-2 text-end text-xs text-muted-foreground">
                             {st.doubtful ? `${st.doubtful}? ` : ''}
                             {st.illegible ? `${st.illegible} illegible` : ''}
                           </td>
-                          <td className="py-2 pr-2 text-xs">
+                          <td className="py-2 pe-2 text-xs">
                             {r.status === 'running' ? (
                               r.step
                             ) : r.status === 'failed' ? (
@@ -677,7 +677,7 @@ export function BulkPanel(p: Props) {
                               r.status
                             )}
                           </td>
-                          <td className="py-2 text-right">
+                          <td className="py-2 text-end">
                             {r.status === 'done' && (
                               <>
                                 <Button

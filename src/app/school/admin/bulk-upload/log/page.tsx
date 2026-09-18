@@ -71,13 +71,13 @@ export default async function BulkUploadLogPage() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-zinc-800 bg-zinc-900 text-xs uppercase text-zinc-500">
-                  <th className="px-3 py-2 text-left">When</th>
-                  <th className="px-3 py-2 text-left">File</th>
-                  <th className="px-3 py-2 text-left">Status</th>
-                  <th className="px-3 py-2 text-right">Rows</th>
-                  <th className="px-3 py-2 text-right">Created</th>
-                  <th className="px-3 py-2 text-right">Updated</th>
-                  <th className="px-3 py-2 text-right">Errors</th>
+                  <th className="px-3 py-2 text-start">When</th>
+                  <th className="px-3 py-2 text-start">File</th>
+                  <th className="px-3 py-2 text-start">Status</th>
+                  <th className="px-3 py-2 text-end">Rows</th>
+                  <th className="px-3 py-2 text-end">Created</th>
+                  <th className="px-3 py-2 text-end">Updated</th>
+                  <th className="px-3 py-2 text-end">Errors</th>
                 </tr>
               </thead>
               <tbody>
@@ -90,16 +90,14 @@ export default async function BulkUploadLogPage() {
                     <td className="px-3 py-2">
                       <StatusBadge status={j.status} />
                     </td>
-                    <td className="px-3 py-2 text-right tabular-nums">{j.rowCount}</td>
-                    <td className="px-3 py-2 text-right tabular-nums text-emerald-300">
+                    <td className="px-3 py-2 text-end tabular-nums">{j.rowCount}</td>
+                    <td className="px-3 py-2 text-end tabular-nums text-emerald-300">
                       {j.createdCount}
                     </td>
-                    <td className="px-3 py-2 text-right tabular-nums text-indigo-300">
+                    <td className="px-3 py-2 text-end tabular-nums text-indigo-300">
                       {j.updatedCount}
                     </td>
-                    <td className="px-3 py-2 text-right tabular-nums text-red-300">
-                      {j.errorCount}
-                    </td>
+                    <td className="px-3 py-2 text-end tabular-nums text-red-300">{j.errorCount}</td>
                   </tr>
                 ))}
               </tbody>

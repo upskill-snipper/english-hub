@@ -114,7 +114,7 @@ export default function DemoSchoolLayoutClient({ children }: { children: React.R
             no form behind it. No public code path can create a school; the
             enquiry flow at /school-pilot is what actually starts the process. */}
         <Button render={<Link href="/school-pilot" />} className="w-full font-semibold">
-          <Sparkles className="h-4 w-4 mr-1.5" />
+          <Sparkles className="h-4 w-4 me-1.5" />
           {t('demo.banner.cta_book_call')}
         </Button>
         <Link
@@ -132,12 +132,12 @@ export default function DemoSchoolLayoutClient({ children }: { children: React.R
     <ToastProvider>
       <Link
         href="/contact"
-        className="fixed top-20 right-4 z-40 rounded-full bg-primary text-primary-foreground px-4 py-2 shadow-lg hover:bg-primary/90 text-sm"
+        className="fixed top-20 end-4 z-40 rounded-full bg-primary text-primary-foreground px-4 py-2 shadow-lg hover:bg-primary/90 text-sm"
       >
         {t('demo_school.chrome.contact_about_demo')}
       </Link>
       <div className="flex min-h-screen bg-background">
-        <aside className="hidden w-60 shrink-0 border-r border-border bg-card lg:block">
+        <aside className="hidden w-60 shrink-0 border-e border-border bg-card lg:block">
           <div className="sticky top-0 h-screen overflow-y-auto">{sidebarContent}</div>
         </aside>
 
@@ -146,7 +146,7 @@ export default function DemoSchoolLayoutClient({ children }: { children: React.R
             variant="ghost"
             size="icon"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="mr-3"
+            className="me-3"
           >
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
@@ -168,7 +168,7 @@ export default function DemoSchoolLayoutClient({ children }: { children: React.R
               className="fixed inset-0 z-40 bg-foreground/30 lg:hidden"
               onClick={() => setMobileOpen(false)}
             />
-            <aside className="fixed inset-y-0 left-0 z-50 w-60 bg-card shadow-xl lg:hidden">
+            <aside className="fixed inset-y-0 start-0 z-50 w-60 bg-card shadow-xl lg:hidden">
               {sidebarContent}
             </aside>
           </>

@@ -108,7 +108,7 @@ export function RecommendationCard({ recommendation, onDismiss }: Recommendation
       <button
         type="button"
         onClick={handleDismiss}
-        className="absolute right-2 top-2 rounded-md p-1 text-muted-foreground opacity-0 transition-opacity hover:bg-background/80 hover:text-foreground group-hover:opacity-100"
+        className="absolute end-2 top-2 rounded-md p-1 text-muted-foreground opacity-0 transition-opacity hover:bg-background/80 hover:text-foreground group-hover:opacity-100"
         aria-label={`${dismissPrefix} ${recommendation.title}`}
       >
         <X className="size-3.5" />
@@ -123,7 +123,7 @@ export function RecommendationCard({ recommendation, onDismiss }: Recommendation
         </div>
 
         {/* Content */}
-        <div className="min-w-0 flex-1 pr-4">
+        <div className="min-w-0 flex-1 pe-4">
           <div className="mb-1 flex items-center gap-2">
             <h3 className="text-sm font-semibold text-foreground line-clamp-1">
               {recommendation.title}

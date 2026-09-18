@@ -347,7 +347,7 @@ export default function QuestionFormationPage() {
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="mb-6 flex items-center justify-between gap-4">
           <Button variant="ghost" size="sm" render={<Link href="/games" />}>
-            <ArrowLeft className="size-4 mr-1" />
+            <ArrowLeft className="size-4 me-1" />
             Back to Games
           </Button>
           {boardConfig && (
@@ -476,7 +476,7 @@ export default function QuestionFormationPage() {
               {!feedback && (
                 <div className="flex flex-wrap items-center justify-center gap-3">
                   <Button variant="ghost" onClick={resetCurrent} disabled={answer.length === 0}>
-                    <RotateCcw className="size-4 mr-1" />
+                    <RotateCcw className="size-4 me-1" />
                     Reset
                   </Button>
                   <Button onClick={handleCheck} disabled={pool.length > 0 || answer.length === 0}>

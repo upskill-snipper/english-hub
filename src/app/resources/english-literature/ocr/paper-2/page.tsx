@@ -64,30 +64,30 @@ export default async function OCRLitPaper2Page() {
             <div className="overflow-x-auto">
               <table className="mt-2 w-full border-collapse text-sm">
                 <thead>
-                  <tr className="border-b-2 border-primary/20 text-left">
-                    <th className="py-3 pr-4 font-semibold text-foreground">Section</th>
-                    <th className="py-3 pr-4 font-semibold text-foreground">Focus</th>
-                    <th className="py-3 pr-4 font-semibold text-foreground">Marks</th>
+                  <tr className="border-b-2 border-primary/20 text-start">
+                    <th className="py-3 pe-4 font-semibold text-foreground">Section</th>
+                    <th className="py-3 pe-4 font-semibold text-foreground">Focus</th>
+                    <th className="py-3 pe-4 font-semibold text-foreground">Marks</th>
                     <th className="py-3 font-semibold text-foreground">{_tr(`Time Guide`)}</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
                   <tr>
-                    <td className="py-3 pr-4 font-medium">A</td>
-                    <td className="py-3 pr-4">{_tr(`Shakespeare (extract-based + essay)`)}</td>
-                    <td className="py-3 pr-4">40 marks</td>
+                    <td className="py-3 pe-4 font-medium">A</td>
+                    <td className="py-3 pe-4">{_tr(`Shakespeare (extract-based + essay)`)}</td>
+                    <td className="py-3 pe-4">40 marks</td>
                     <td className="py-3">50 minutes</td>
                   </tr>
                   <tr>
-                    <td className="py-3 pr-4 font-medium">B</td>
-                    <td className="py-3 pr-4">{_tr(`Poetry anthology (comparison)`)}</td>
-                    <td className="py-3 pr-4">24 marks</td>
+                    <td className="py-3 pe-4 font-medium">B</td>
+                    <td className="py-3 pe-4">{_tr(`Poetry anthology (comparison)`)}</td>
+                    <td className="py-3 pe-4">24 marks</td>
                     <td className="py-3">40 minutes</td>
                   </tr>
                   <tr>
-                    <td className="py-3 pr-4 font-medium">C</td>
-                    <td className="py-3 pr-4">{_tr(`Unseen poetry`)}</td>
-                    <td className="py-3 pr-4">16 marks</td>
+                    <td className="py-3 pe-4 font-medium">C</td>
+                    <td className="py-3 pe-4">{_tr(`Unseen poetry`)}</td>
+                    <td className="py-3 pe-4">16 marks</td>
                     <td className="py-3">30 minutes</td>
                   </tr>
                 </tbody>
@@ -118,7 +118,7 @@ export default async function OCRLitPaper2Page() {
               <p className="mt-2">
                 OCR offers a choice of Shakespeare plays. Common choices include:
               </p>
-              <ul className="ml-6 mt-2 list-disc space-y-1">
+              <ul className="ms-6 mt-2 list-disc space-y-1">
                 <li>
                   <em>Macbeth</em>
                 </li>
@@ -148,7 +148,7 @@ export default async function OCRLitPaper2Page() {
                 theme or idea across the wider play.
               </p>
               <p className="mt-3">This means your response must do two things:</p>
-              <ol className="ml-6 mt-2 list-decimal space-y-2">
+              <ol className="ms-6 mt-2 list-decimal space-y-2">
                 <li>
                   <strong>{_tr(`Analyse the extract in detail`)}</strong> &mdash; close language
                   analysis of Shakespeare&rsquo;s words, imagery, and dramatic techniques in the
@@ -411,7 +411,7 @@ export default async function OCRLitPaper2Page() {
               <h3 className="text-xl font-semibold text-foreground">
                 Step-by-Step Approach to Unseen Poetry
               </h3>
-              <ol className="ml-6 mt-3 list-decimal space-y-3">
+              <ol className="ms-6 mt-3 list-decimal space-y-3">
                 <li>
                   <strong>{_tr(`Read the poem through twice`)}</strong> &mdash; First for overall
                   meaning and feeling. Second to notice specific language, imagery, and structural

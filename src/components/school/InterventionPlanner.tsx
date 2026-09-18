@@ -399,7 +399,7 @@ export function InterventionPlanner({ students, classId }: InterventionPlannerPr
               </CardDescription>
             </div>
             <Button size="sm" onClick={() => setShowCreateDialog(true)}>
-              <Plus className="mr-1.5 h-4 w-4" data-icon="inline-start" />
+              <Plus className="me-1.5 h-4 w-4" data-icon="inline-start" />
               Create Plan
             </Button>
           </CardHeader>
@@ -505,11 +505,11 @@ export function InterventionPlanner({ students, classId }: InterventionPlannerPr
             <h3 className="text-lg font-semibold">Intervention Plans</h3>
             <div className="flex gap-2">
               <Button variant="outline" size="sm" onClick={handlePrint}>
-                <Printer className="mr-1.5 h-4 w-4" data-icon="inline-start" />
+                <Printer className="me-1.5 h-4 w-4" data-icon="inline-start" />
                 Print
               </Button>
               <Button size="sm" onClick={() => setShowCreateDialog(true)}>
-                <Plus className="mr-1.5 h-4 w-4" data-icon="inline-start" />
+                <Plus className="me-1.5 h-4 w-4" data-icon="inline-start" />
                 New Plan
               </Button>
             </div>
@@ -638,12 +638,12 @@ export function InterventionPlanner({ students, classId }: InterventionPlannerPr
                               size="xs"
                               onClick={() => setSelectedPlan(plan)}
                             >
-                              <Eye className="mr-1 h-3 w-3" data-icon="inline-start" />
+                              <Eye className="me-1 h-3 w-3" data-icon="inline-start" />
                               Details
                             </Button>
                             {plan.status !== 'reviewed' && (
                               <Button size="xs" onClick={() => handleAdvanceStatus(plan.id)}>
-                                <ChevronRight className="mr-1 h-3 w-3" data-icon="inline-start" />
+                                <ChevronRight className="me-1 h-3 w-3" data-icon="inline-start" />
                                 {STATUS_ORDER[STATUS_ORDER.indexOf(plan.status) + 1]
                                   ? STATUS_CONFIG[
                                       STATUS_ORDER[STATUS_ORDER.indexOf(plan.status) + 1]
@@ -725,8 +725,8 @@ export function InterventionPlanner({ students, classId }: InterventionPlannerPr
                                   className={cn(
                                     'h-6 w-full',
                                     cfg.bg,
-                                    isStart && 'rounded-l-md',
-                                    isEnd && 'rounded-r-md',
+                                    isStart && 'rounded-s-md',
+                                    isEnd && 'rounded-e-md',
                                     !isStart && !isEnd && 'rounded-none',
                                   )}
                                   title={`${plan.title} (${cfg.label})`}
@@ -927,7 +927,7 @@ function CreatePlanDialog({
                         return <Icon className="h-3.5 w-3.5 text-muted-foreground" />
                       })()}
                       <span>{INTERVENTION_LABELS[type]}</span>
-                      <Badge variant="secondary" className="ml-1 text-xs">
+                      <Badge variant="secondary" className="ms-1 text-xs">
                         {ids.length}
                       </Badge>
                     </button>

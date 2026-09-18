@@ -199,7 +199,7 @@ function AIProcessingVariant({
         what turning it on means.
       </p>
 
-      <ul className="mt-3 list-disc space-y-1.5 pl-5 text-muted-foreground">
+      <ul className="mt-3 list-disc space-y-1.5 ps-5 text-muted-foreground">
         <li>
           <span className="font-medium text-foreground">What we use AI for:</span> marking the work
           you submit and writing feedback on it, including strengths, improvements and a predicted

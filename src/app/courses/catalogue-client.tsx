@@ -459,7 +459,7 @@ export default function CourseCatalogueClient({
               {categoryLabel(cat.id)}
               <span
                 className={cn(
-                  'ml-0.5 rounded-full px-1.5 py-0.5 text-[10px] font-bold tabular-nums leading-none',
+                  'ms-0.5 rounded-full px-1.5 py-0.5 text-[10px] font-bold tabular-nums leading-none',
                   activeCategory === cat.id
                     ? 'bg-primary-foreground/20 text-primary-foreground'
                     : 'bg-muted text-muted-foreground',
@@ -474,13 +474,13 @@ export default function CourseCatalogueClient({
         {/* Search / filter bar */}
         <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
           <div className="relative flex-1">
-            <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+            <Search className="pointer-events-none absolute start-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <Input
               type="search"
               placeholder={t('course.search_placeholder')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.currentTarget.value)}
-              className="pl-9"
+              className="ps-9"
             />
           </div>
 

@@ -1021,7 +1021,7 @@ export default async function GrammarPunctuationPage() {
               <div className="space-y-4">
                 <RuleCard title={tr(`What Markers Are Looking For`)}>
                   <div className="mt-2 space-y-4">
-                    <div className="rounded-lg border-l-4 border-red-400 bg-red-500/10 px-4 py-3">
+                    <div className="rounded-lg border-s-4 border-red-400 bg-red-500/10 px-4 py-3">
                       <p className="font-semibold text-red-700 dark:text-red-300 text-sm">
                         {tr(`Level 1 (1-4 marks) -- Limited`)}
                       </p>
@@ -1031,7 +1031,7 @@ export default async function GrammarPunctuationPage() {
                         <li>Some accuracy in basic punctuation (full stops, capital letters)</li>
                       </ul>
                     </div>
-                    <div className="rounded-lg border-l-4 border-yellow-400 bg-yellow-500/10 px-4 py-3">
+                    <div className="rounded-lg border-s-4 border-yellow-400 bg-yellow-500/10 px-4 py-3">
                       <p className="font-semibold text-yellow-700 text-sm">
                         {tr(`Level 2 (5-8 marks) -- Some Success`)}
                       </p>
@@ -1041,7 +1041,7 @@ export default async function GrammarPunctuationPage() {
                         <li>Some varied punctuation used, sometimes successfully</li>
                       </ul>
                     </div>
-                    <div className="rounded-lg border-l-4 border-blue-400 bg-blue-500/10 px-4 py-3">
+                    <div className="rounded-lg border-s-4 border-blue-400 bg-blue-500/10 px-4 py-3">
                       <p className="font-semibold text-blue-700 dark:text-blue-300 text-sm">
                         {tr(`Level 3 (9-12 marks) -- Consistent`)}
                       </p>
@@ -1057,7 +1057,7 @@ export default async function GrammarPunctuationPage() {
                         <li>{tr(`Range of punctuation used with general accuracy`)}</li>
                       </ul>
                     </div>
-                    <div className="rounded-lg border-l-4 border-green-400 bg-green-500/10 px-4 py-3">
+                    <div className="rounded-lg border-s-4 border-green-400 bg-green-500/10 px-4 py-3">
                       <p className="font-semibold text-green-700 dark:text-green-300 text-sm">
                         {tr(`Level 4 (13-16 marks) -- Compelling`)}
                       </p>

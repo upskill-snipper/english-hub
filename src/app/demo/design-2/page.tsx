@@ -110,7 +110,7 @@ export default function NeonBrutalistDashboard() {
         ].map((stat, i) => (
           <div
             key={i}
-            className={`flex-1 min-w-[140px] border-l-4 ${stat.border} border-r border-r-border px-4 py-5 hover:bg-muted transition-colors`}
+            className={`flex-1 min-w-[140px] border-s-4 ${stat.border} border-e border-e-border px-4 py-5 hover:bg-muted transition-colors`}
           >
             <div className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
               {stat.label}
@@ -130,7 +130,7 @@ export default function NeonBrutalistDashboard() {
         <div className="relative flex-1 p-6 lg:p-8">
           {/* Vertical rotated label */}
           <div
-            className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2"
+            className="hidden lg:block absolute start-0 top-1/2 -translate-y-1/2 -translate-x-2"
             style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg) translateX(50%)' }}
           >
             <span className="text-[10px] uppercase tracking-[0.4em] text-muted-foreground/60 font-bold">
@@ -142,7 +142,7 @@ export default function NeonBrutalistDashboard() {
             ACTIVE COURSES
           </h2>
 
-          <div className="space-y-4 lg:pl-6">
+          <div className="space-y-4 lg:ps-6">
             {COURSES.map((course) => {
               const isHovered = hoveredCourse === course.id
               const neon = NEON[course.neon]
@@ -163,7 +163,7 @@ export default function NeonBrutalistDashboard() {
                       </h3>
                       <span className="text-xs text-muted-foreground">{course.paper}</span>
                     </div>
-                    <div className="text-right">
+                    <div className="text-end">
                       <div
                         className={`text-2xl font-black font-sans ${neon.text} drop-shadow-[0_0_10px_currentColor]`}
                       >
@@ -188,7 +188,7 @@ export default function NeonBrutalistDashboard() {
 
           {/* ── ASYMMETRIC OVERLAP ELEMENT ── */}
           <div
-            className="mt-8 -mr-4 lg:-mr-12 border-2 border-yellow-400 rounded-none p-5 bg-background relative z-10"
+            className="mt-8 -me-4 lg:-me-12 border-2 border-yellow-400 rounded-none p-5 bg-background relative z-10"
             style={{ boxShadow: '8px 8px 0 #facc15' }}
           >
             <div className="flex items-center justify-between flex-wrap gap-3">
@@ -208,7 +208,7 @@ export default function NeonBrutalistDashboard() {
         </div>
 
         {/* ── RIGHT: ACTIVITY FEED ── */}
-        <div className="w-full lg:w-[420px] border-l-0 lg:border-l-2 border-t-2 lg:border-t-0 border-border p-6 lg:p-8">
+        <div className="w-full lg:w-[420px] border-s-0 lg:border-s-2 border-t-2 lg:border-t-0 border-border p-6 lg:p-8">
           <h2 className="text-4xl font-black font-sans uppercase tracking-tight mb-6 text-pink-500 drop-shadow-[0_0_25px_currentColor]">
             FEED
           </h2>
@@ -222,7 +222,7 @@ export default function NeonBrutalistDashboard() {
                   key={i}
                   onMouseEnter={() => setHoveredActivity(i)}
                   onMouseLeave={() => setHoveredActivity(null)}
-                  className={`border-b border-border py-3 px-3 -mx-3 transition-all duration-100 cursor-default border-l-[3px] ${isHovered ? `bg-muted ${neon.border}` : 'border-l-transparent'}`}
+                  className={`border-b border-border py-3 px-3 -mx-3 transition-all duration-100 cursor-default border-s-[3px] ${isHovered ? `bg-muted ${neon.border}` : 'border-s-transparent'}`}
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div>
@@ -256,7 +256,7 @@ export default function NeonBrutalistDashboard() {
               return (
                 <button
                   key={i}
-                  className={`block w-full text-left rounded-none border-2 px-4 py-3 font-black font-sans uppercase text-sm transition-all duration-100 hover:translate-x-[2px] hover:translate-y-[2px] ${neon.border} ${neon.text}`}
+                  className={`block w-full text-start rounded-none border-2 px-4 py-3 font-black font-sans uppercase text-sm transition-all duration-100 hover:translate-x-[2px] hover:translate-y-[2px] ${neon.border} ${neon.text}`}
                   style={{ boxShadow: `4px 4px 0 ${neon.hex}` }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.boxShadow = `1px 1px 0 ${neon.hex}`
@@ -311,7 +311,7 @@ export default function NeonBrutalistDashboard() {
       </div>
 
       {/* ── NOW STUDYING - TERMINAL BAR ── */}
-      <footer className="fixed bottom-0 left-0 right-0 border-t-2 border-lime-400 bg-background z-50">
+      <footer className="fixed bottom-0 start-0 end-0 border-t-2 border-lime-400 bg-background z-50">
         <div className="px-6 py-3 flex items-center gap-4 overflow-hidden">
           <span className="shrink-0 bg-lime-400 text-black text-[10px] font-black uppercase px-2 py-0.5 tracking-wider">
             NOW STUDYING
@@ -326,7 +326,7 @@ export default function NeonBrutalistDashboard() {
                   )}
                 </React.Fragment>
               ))}
-              <span className="animate-pulse text-lime-400 ml-1 text-base">{'│'}</span>
+              <span className="animate-pulse text-lime-400 ms-1 text-base">{'│'}</span>
             </div>
           </div>
           <div className="shrink-0 hidden sm:flex items-center gap-2">

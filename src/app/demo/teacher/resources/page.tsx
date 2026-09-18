@@ -494,13 +494,13 @@ export default function TeacherResourcesPage() {
 
       {/* Toast */}
       {toast && (
-        <div className="fixed top-6 right-6 z-50 animate-in slide-in-from-top-2 fade-in duration-300">
+        <div className="fixed top-6 end-6 z-50 animate-in slide-in-from-top-2 fade-in duration-300">
           <div className="flex items-center gap-3 rounded-xl border border-amber-500/30 bg-amber-500/10 backdrop-blur-sm px-5 py-3 text-sm text-amber-700 dark:text-amber-300 shadow-lg shadow-amber-500/5">
             <Lock className="h-4 w-4 text-clay-600 dark:text-clay-400 shrink-0" />
             <span>{toast}</span>
             <Link
               href="/teachers"
-              className="ml-2 font-semibold text-clay-600 dark:text-clay-400 hover:text-amber-700 dark:text-amber-300 underline underline-offset-2"
+              className="ms-2 font-semibold text-clay-600 dark:text-clay-400 hover:text-amber-700 dark:text-amber-300 underline underline-offset-2"
             >
               Subscribe
             </Link>
@@ -573,13 +573,13 @@ export default function TeacherResourcesPage() {
 
             {/* Search */}
             <div className="relative flex-1 min-w-[200px]">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Search className="absolute start-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 type="text"
                 placeholder="Search resources..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 bg-muted border-border/60 text-foreground placeholder:text-muted-foreground focus-visible:ring-blue-500/50"
+                className="ps-10 bg-muted border-border/60 text-foreground placeholder:text-muted-foreground focus-visible:ring-blue-500/50"
               />
             </div>
           </div>

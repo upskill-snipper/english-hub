@@ -64,24 +64,24 @@ export default async function OCRLitPaper1Page() {
             <div className="overflow-x-auto">
               <table className="mt-2 w-full border-collapse text-sm">
                 <thead>
-                  <tr className="border-b-2 border-primary/20 text-left">
-                    <th className="py-3 pr-4 font-semibold text-foreground">Section</th>
-                    <th className="py-3 pr-4 font-semibold text-foreground">Focus</th>
-                    <th className="py-3 pr-4 font-semibold text-foreground">Marks</th>
+                  <tr className="border-b-2 border-primary/20 text-start">
+                    <th className="py-3 pe-4 font-semibold text-foreground">Section</th>
+                    <th className="py-3 pe-4 font-semibold text-foreground">Focus</th>
+                    <th className="py-3 pe-4 font-semibold text-foreground">Marks</th>
                     <th className="py-3 font-semibold text-foreground">{tr(`Time Guide`)}</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
                   <tr>
-                    <td className="py-3 pr-4 font-medium">A</td>
-                    <td className="py-3 pr-4">{tr(`Modern prose or drama text (post-1914)`)}</td>
-                    <td className="py-3 pr-4">40 marks</td>
+                    <td className="py-3 pe-4 font-medium">A</td>
+                    <td className="py-3 pe-4">{tr(`Modern prose or drama text (post-1914)`)}</td>
+                    <td className="py-3 pe-4">40 marks</td>
                     <td className="py-3">1 hour</td>
                   </tr>
                   <tr>
-                    <td className="py-3 pr-4 font-medium">B</td>
-                    <td className="py-3 pr-4">19th-century prose (literary heritage)</td>
-                    <td className="py-3 pr-4">40 marks</td>
+                    <td className="py-3 pe-4 font-medium">B</td>
+                    <td className="py-3 pe-4">19th-century prose (literary heritage)</td>
+                    <td className="py-3 pe-4">40 marks</td>
                     <td className="py-3">1 hour</td>
                   </tr>
                 </tbody>
@@ -112,7 +112,7 @@ export default async function OCRLitPaper1Page() {
                 OCR offers a range of modern texts. Your school will have chosen one of the
                 following (or a similar approved text):
               </p>
-              <ul className="ml-6 mt-2 list-disc space-y-1">
+              <ul className="ms-6 mt-2 list-disc space-y-1">
                 <li>
                   <em>An Inspector Calls</em> by J.B. Priestley
                 </li>
@@ -271,7 +271,7 @@ export default async function OCRLitPaper1Page() {
                 OCR offers a range of 19th-century prose texts. Your school will have chosen one of
                 the following (or a similar approved text):
               </p>
-              <ul className="ml-6 mt-2 list-disc space-y-1">
+              <ul className="ms-6 mt-2 list-disc space-y-1">
                 <li>
                   <em>A Christmas Carol</em> by Charles Dickens
                 </li>
@@ -316,7 +316,7 @@ export default async function OCRLitPaper1Page() {
                     The 19th century was a period of enormous social change in Britain. Key
                     contextual areas to understand include:
                   </p>
-                  <ul className="ml-4 mt-2 list-disc space-y-1 text-sm">
+                  <ul className="ms-4 mt-2 list-disc space-y-1 text-sm">
                     <li>
                       <strong>Class and social hierarchy</strong> &mdash; Victorian society was
                       sharply divided by class, wealth, and birth. Many 19th-century writers
@@ -358,7 +358,7 @@ export default async function OCRLitPaper1Page() {
                     understanding the overall meaning first, then zoom into specific words for
                     analysis. Some tips:
                   </p>
-                  <ul className="ml-4 mt-2 list-disc space-y-1 text-sm">
+                  <ul className="ms-4 mt-2 list-disc space-y-1 text-sm">
                     <li>
                       {tr(`Read the text multiple times &mdash; familiarity reduces difficulty`)}
                     </li>
@@ -380,7 +380,7 @@ export default async function OCRLitPaper1Page() {
                   <p className="mt-2 text-sm">
                     Be aware of common narrative techniques in 19th-century prose:
                   </p>
-                  <ul className="ml-4 mt-2 list-disc space-y-1 text-sm">
+                  <ul className="ms-4 mt-2 list-disc space-y-1 text-sm">
                     <li>
                       <strong>{tr(`Omniscient narrator`)}</strong> &mdash; An all-knowing narrator
                       who can access the thoughts and feelings of all characters.
@@ -475,7 +475,7 @@ export default async function OCRLitPaper1Page() {
             Common Mistakes to Avoid
           </h2>
           <div className="mt-4">
-            <ul className="ml-6 list-disc space-y-3 text-muted-foreground leading-relaxed">
+            <ul className="ms-6 list-disc space-y-3 text-muted-foreground leading-relaxed">
               <li>
                 <strong>{tr(`Retelling the story`)}</strong> &mdash; The marker knows the plot.
                 Focus on analysis, not narration. Every sentence should analyse, not describe.

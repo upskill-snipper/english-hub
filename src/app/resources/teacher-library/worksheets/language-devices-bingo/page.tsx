@@ -113,7 +113,7 @@ export default function LanguageDevicesBingoWorksheet() {
       <article className="mx-auto max-w-4xl px-6 py-12">
         <section className="mb-10">
           <h2 className="text-2xl font-bold text-foreground">How to Play</h2>
-          <ol className="mt-4 list-decimal space-y-2 pl-6 text-foreground">
+          <ol className="mt-4 list-decimal space-y-2 ps-6 text-foreground">
             <li>
               Give each student (or pair) a bingo card with nine of the 24 devices (printable
               template on the PDF).
@@ -137,7 +137,7 @@ export default function LanguageDevicesBingoWorksheet() {
           <h2 className="text-2xl font-bold text-foreground">The 24 Devices</h2>
           <div className="mt-4 overflow-hidden rounded-2xl border border-border bg-card">
             <table className="w-full text-sm">
-              <thead className="bg-muted/50 text-left text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              <thead className="bg-muted/50 text-start text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                 <tr>
                   <th className="px-4 py-3">Device</th>
                   <th className="px-4 py-3">Definition</th>

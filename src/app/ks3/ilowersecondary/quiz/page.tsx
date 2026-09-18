@@ -148,7 +148,7 @@ export default function QuizPage() {
             <button
               type="button"
               onClick={() => start('mixed')}
-              className="rounded-xl border border-primary/40 bg-primary/5 p-5 text-left transition-colors hover:bg-primary/10"
+              className="rounded-xl border border-primary/40 bg-primary/5 p-5 text-start transition-colors hover:bg-primary/10"
             >
               <div className="flex items-baseline justify-between gap-3">
                 <h2 className="text-base font-semibold text-foreground">Mixed quiz</h2>
@@ -165,7 +165,7 @@ export default function QuizPage() {
                 key={cat.id}
                 type="button"
                 onClick={() => start(cat.id)}
-                className="rounded-xl border border-border/60 bg-card p-5 text-left transition-colors hover:border-primary/40"
+                className="rounded-xl border border-border/60 bg-card p-5 text-start transition-colors hover:border-primary/40"
               >
                 <div className="flex items-baseline justify-between gap-3">
                   <h2 className="text-base font-semibold text-foreground">{cat.label}</h2>
@@ -229,7 +229,7 @@ export default function QuizPage() {
                     onClick={() => handleAnswer(i)}
                     className={cls}
                   >
-                    <span className="font-mono text-xs text-muted-foreground mr-2">
+                    <span className="font-mono text-xs text-muted-foreground me-2">
                       {String.fromCharCode(65 + i)}
                     </span>
                     {option}

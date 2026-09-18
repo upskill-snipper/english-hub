@@ -189,7 +189,7 @@ export default async function ShakespeareHubPage() {
                     className={buttonVariants({ size: 'lg' })}
                   >
                     {play.cta}
-                    <ArrowRight className="ml-1 h-4 w-4" />
+                    <ArrowRight className="ms-1 h-4 w-4" />
                   </Link>
                 </div>
               </article>

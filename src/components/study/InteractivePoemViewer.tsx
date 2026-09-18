@@ -174,7 +174,7 @@ function LinePopover({
   return (
     <div
       ref={popoverRef}
-      className="absolute left-0 right-0 z-30 mt-1 animate-fade-in rounded-lg border border-border bg-popover p-3 shadow-elevated"
+      className="absolute start-0 end-0 z-30 mt-1 animate-fade-in rounded-lg border border-border bg-popover p-3 shadow-elevated"
     >
       <div className="flex items-center justify-between mb-2">
         <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
@@ -192,7 +192,7 @@ function LinePopover({
         {annotations.map((a, i) => (
           <div key={i} className="text-sm">
             <span
-              className="inline-block rounded px-1.5 py-0.5 text-xs font-medium mr-2"
+              className="inline-block rounded px-1.5 py-0.5 text-xs font-medium me-2"
               style={{
                 backgroundColor: a.color ? `${a.color}22` : 'hsl(var(--muted))',
                 color: a.color || 'hsl(var(--muted-foreground))',
@@ -399,7 +399,7 @@ export function InteractivePoemViewer({ poem }: { poem: PoemData }) {
         <div
           className={cn(
             'flex-1 overflow-x-auto px-4 py-5 sm:px-6',
-            hasAnyActive && 'lg:border-r lg:border-border',
+            hasAnyActive && 'lg:border-e lg:border-border',
           )}
         >
           <div className="font-serif">
@@ -437,7 +437,7 @@ export function InteractivePoemViewer({ poem }: { poem: PoemData }) {
                     )}
                   >
                     {/* Line number */}
-                    <span className="w-6 shrink-0 select-none text-right text-xs tabular-nums text-muted-foreground/50">
+                    <span className="w-6 shrink-0 select-none text-end text-xs tabular-nums text-muted-foreground/50">
                       {isBlank ? '' : idx + 1}
                     </span>
 
@@ -454,7 +454,7 @@ export function InteractivePoemViewer({ poem }: { poem: PoemData }) {
 
                     {/* Annotation indicator */}
                     {hasAnnotations && (
-                      <span className="ml-auto shrink-0 text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity">
+                      <span className="ms-auto shrink-0 text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity">
                         {line.annotations!.length}{' '}
                         {line.annotations!.length > 1
                           ? t('poem_viewer.note_plural')

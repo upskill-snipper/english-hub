@@ -304,7 +304,7 @@ function NavLink({
       onClick={onNavigate}
       aria-current={isActive ? 'page' : undefined}
       className={cn(
-        'group relative flex items-center gap-2.5 rounded-lg pl-2.5 pr-2 py-1.5 text-sm font-medium transition-all duration-150',
+        'group relative flex items-center gap-2.5 rounded-lg ps-2.5 pe-2 py-1.5 text-sm font-medium transition-all duration-150',
         isActive
           ? 'bg-primary/10 text-foreground ring-1 ring-primary/20 shadow-sm shadow-primary/5'
           : 'text-muted-foreground hover:bg-accent/60 hover:text-foreground',
@@ -315,7 +315,7 @@ function NavLink({
       {isActive && (
         <span
           aria-hidden="true"
-          className="absolute left-0 top-2 bottom-2 w-[3px] rounded-full bg-primary"
+          className="absolute start-0 top-2 bottom-2 w-[3px] rounded-full bg-primary"
         />
       )}
       {/* Icon tile - lifts every link into a uniform two-part composition
@@ -406,7 +406,7 @@ function SidebarNav({
       <div className="relative mb-4 overflow-hidden rounded-2xl border border-primary/25 bg-gradient-to-br from-primary/[0.06] via-card to-violet-500/[0.04] p-3.5">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-8 -top-8 h-20 w-20 rounded-full bg-primary/[0.07] blur-2xl"
+          className="pointer-events-none absolute -end-8 -top-8 h-20 w-20 rounded-full bg-primary/[0.07] blur-2xl"
         />
         <div className="relative">
           {boardName && (
@@ -594,7 +594,7 @@ export function RevisionShell({ children }: { children: React.ReactNode }) {
             by ~14px the moment the scrollbar appears. */}
         <aside className="hidden w-64 shrink-0 lg:block">
           <div
-            className="sticky top-24 max-h-[calc(100vh-7rem)] overflow-y-auto pb-6 pr-1"
+            className="sticky top-24 max-h-[calc(100vh-7rem)] overflow-y-auto pb-6 pe-1"
             style={{ scrollbarWidth: 'thin', scrollbarGutter: 'stable' }}
           >
             <div className="mb-4 flex items-center gap-2 px-1">
@@ -631,7 +631,7 @@ export function RevisionShell({ children }: { children: React.ReactNode }) {
                       {boardName && (
                         <Badge
                           variant="secondary"
-                          className="ml-1 text-[0.65rem] uppercase tracking-wider"
+                          className="ms-1 text-[0.65rem] uppercase tracking-wider"
                         >
                           {boardName}
                         </Badge>
@@ -659,7 +659,7 @@ export function RevisionShell({ children }: { children: React.ReactNode }) {
             <h2 className="text-heading-md font-heading text-foreground">
               {t('revision.shell.hub_title')}
               {boardName && (
-                <Badge variant="secondary" className="ml-2 text-[0.65rem] uppercase tracking-wider">
+                <Badge variant="secondary" className="ms-2 text-[0.65rem] uppercase tracking-wider">
                   {boardName}
                 </Badge>
               )}

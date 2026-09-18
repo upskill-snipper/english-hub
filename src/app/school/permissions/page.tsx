@@ -317,7 +317,7 @@ export default async function PermissionsPage() {
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-zinc-800">
-                      <th className="py-3 pl-6 pr-4 text-left font-semibold text-zinc-300">
+                      <th className="py-3 ps-6 pe-4 text-start font-semibold text-zinc-300">
                         {colFeature}
                       </th>
                       <th className="w-28 py-3 text-center font-semibold text-rose-400">
@@ -332,7 +332,7 @@ export default async function PermissionsPage() {
                           {colTeacher}
                         </div>
                       </th>
-                      <th className="w-28 py-3 pr-4 text-center font-semibold text-emerald-400">
+                      <th className="w-28 py-3 pe-4 text-center font-semibold text-emerald-400">
                         <div className="flex items-center justify-center gap-1.5">
                           <Users className="h-4 w-4" />
                           {colStudent}
@@ -350,14 +350,14 @@ export default async function PermissionsPage() {
                             : 'border-b border-zinc-800/60 bg-zinc-800/30'
                         }
                       >
-                        <td className="py-3 pl-6 pr-4 text-zinc-300">{row.feature}</td>
+                        <td className="py-3 ps-6 pe-4 text-zinc-300">{row.feature}</td>
                         <td className="py-3 text-center">
                           <PermCheck allowed={row.admin} />
                         </td>
                         <td className="py-3 text-center">
                           <PermCheck allowed={row.teacher} />
                         </td>
-                        <td className="py-3 pr-4 text-center">
+                        <td className="py-3 pe-4 text-center">
                           <PermCheck allowed={row.student} />
                         </td>
                       </tr>

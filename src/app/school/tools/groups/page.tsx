@@ -423,11 +423,11 @@ export default function GroupGeneratorPage() {
 
         <div className="flex flex-wrap items-center gap-2">
           <Button variant="outline" size="sm" onClick={handlePrint} disabled={groups.length === 0}>
-            <Printer className="mr-1.5 h-3.5 w-3.5" />
+            <Printer className="me-1.5 h-3.5 w-3.5" />
             {t('school.group_gen.print')}
           </Button>
           <Button variant="outline" size="sm" onClick={handleExport} disabled={groups.length === 0}>
-            <Download className="mr-1.5 h-3.5 w-3.5" />
+            <Download className="me-1.5 h-3.5 w-3.5" />
             {t('school.group_gen.export')}
           </Button>
         </div>
@@ -476,7 +476,7 @@ export default function GroupGeneratorPage() {
         {/* Number of groups */}
         <div className="space-y-1.5">
           <Label className="text-xs font-medium">
-            <Users className="mr-1 inline h-3.5 w-3.5" />
+            <Users className="me-1 inline h-3.5 w-3.5" />
             {t('school.group_gen.num_groups')}
           </Label>
           <Input
@@ -508,7 +508,7 @@ export default function GroupGeneratorPage() {
         {/* Regenerate */}
         <div className="flex items-end">
           <Button onClick={handleRegenerate} disabled={students.length === 0} className="w-full">
-            <Shuffle className="mr-1.5 h-3.5 w-3.5" />
+            <Shuffle className="me-1.5 h-3.5 w-3.5" />
             {t('school.group_gen.regenerate')}
           </Button>
         </div>
@@ -726,12 +726,12 @@ export default function GroupGeneratorPage() {
                     onClick={startTimer}
                     disabled={timerMinutes === 0 && timerSeconds === 0 && timerTotal === 0}
                   >
-                    <Play className="mr-1 h-3.5 w-3.5" />
+                    <Play className="me-1 h-3.5 w-3.5" />
                     {t('school.group_gen.timer.start')}
                   </Button>
                 ) : (
                   <Button size="sm" variant="outline" onClick={pauseTimer}>
-                    <Pause className="mr-1 h-3.5 w-3.5" />
+                    <Pause className="me-1 h-3.5 w-3.5" />
                     {t('school.group_gen.timer.pause')}
                   </Button>
                 )}

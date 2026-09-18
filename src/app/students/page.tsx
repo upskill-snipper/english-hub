@@ -253,11 +253,11 @@ export default async function StudentsPage() {
       <section className="relative overflow-hidden border-b border-border/60">
         <div
           aria-hidden
-          className="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl"
+          className="pointer-events-none absolute -start-32 -top-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute -bottom-20 -right-20 h-72 w-72 rounded-full bg-ochre-500/[0.06] blur-3xl"
+          className="pointer-events-none absolute -bottom-20 -end-20 h-72 w-72 rounded-full bg-ochre-500/[0.06] blur-3xl"
         />
         <div className="relative mx-auto max-w-5xl px-4 py-20 text-center sm:px-6 sm:py-28">
           <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-primary">
@@ -322,7 +322,7 @@ export default async function StudentsPage() {
             {/* Decorative connector line behind cards (lg+) */}
             <div
               aria-hidden
-              className="pointer-events-none absolute left-6 right-6 top-1/2 hidden h-px -translate-y-1/2 bg-gradient-to-r from-teal-500/0 via-teal-500/40 to-clay-500/40 lg:block"
+              className="pointer-events-none absolute start-6 end-6 top-1/2 hidden h-px -translate-y-1/2 bg-gradient-to-r from-teal-500/0 via-teal-500/40 to-clay-500/40 lg:block"
             />
 
             <ol className="relative flex flex-col gap-4 sm:gap-5 lg:flex-row lg:items-stretch lg:gap-2">

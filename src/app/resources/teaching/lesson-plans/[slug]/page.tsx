@@ -158,7 +158,7 @@ export default async function LessonPlanPage({ params }: PageProps) {
               >
                 {objectivesH2}
               </h2>
-              <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90">
+              <ul className="mt-3 list-disc space-y-1.5 ps-5 text-sm leading-relaxed text-foreground/90">
                 {plan.learningObjectives.map((objective) => (
                   <li key={objective}>{objective}</li>
                 ))}

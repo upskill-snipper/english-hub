@@ -23,7 +23,7 @@ function Section({
     <div className="mb-4 rounded-xl border border-border bg-card shadow-md overflow-hidden">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left hover:bg-muted transition-colors"
+        className="flex w-full items-center justify-between px-5 py-4 text-start hover:bg-muted transition-colors"
       >
         <span className="flex items-center gap-3">
           <span className="text-xl">{icon}</span>
@@ -54,7 +54,7 @@ function QuoteCard({
   analysis: string
 }) {
   return (
-    <div className="rounded-lg border-l-4 border-border bg-muted/50 p-4 mb-3">
+    <div className="rounded-lg border-s-4 border-border bg-muted/50 p-4 mb-3">
       <p className="text-sm font-semibold text-foreground italic">&ldquo;{quote}&rdquo;</p>
       {speaker && (
         <p className="mt-1 text-xs font-medium text-muted-foreground">&mdash; {speaker}</p>
@@ -940,7 +940,7 @@ export default function FrankensteinPage() {
             "The blind De Lacey is the only character who shows the Creature kindness, precisely because he cannot see him. Shelley uses this to argue that human prejudice is primarily visual: we judge by appearance and reject what we cannot assimilate aesthetically. The Creature's physical appearance is the sole barrier to his acceptance. Shelley's argument anticipates modern debates about prejudice and challenges the reader to examine their own responses to difference.",
             "The Creature's final words --- 'I shall ascend my funeral pile triumphantly and exult in the agony of the torturing flames' --- fuse suffering with triumph in a way that undermines any simple reading of his character. He is simultaneously victim and villain, destroyed by others and by himself, seeking peace through self-destruction. Shelley refuses to grant him either redemption or damnation, leaving the reader with the uncomfortable recognition that the most human response to an inhuman world may be self-annihilation.",
           ].map((point, i) => (
-            <div key={i} className="rounded-lg border-l-4 border-accent bg-muted p-4">
+            <div key={i} className="rounded-lg border-s-4 border-accent bg-muted p-4">
               <p className="text-sm leading-relaxed text-muted-foreground">{point}</p>
             </div>
           ))}
@@ -1019,7 +1019,7 @@ export default function FrankensteinPage() {
             <p className="text-sm text-muted-foreground mb-3">
               How does Shelley present the theme of ambition and its consequences in{' '}
               <em>Frankenstein</em>? Refer to the whole novel in your answer.
-              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
+              <span className="ms-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder={tr(`Write your essay response here...`)}
@@ -1036,7 +1036,7 @@ export default function FrankensteinPage() {
             <h3 className="font-bold text-foreground mb-1">{tr(`Question 2`)}</h3>
             <p className="text-sm text-muted-foreground mb-3">
               How does Shelley use the Creature to explore ideas about responsibility and rejection?
-              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
+              <span className="ms-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder={tr(`Write your essay response here...`)}
@@ -1054,7 +1054,7 @@ export default function FrankensteinPage() {
             <p className="text-sm text-muted-foreground mb-3">
               How does Shelley present the theme of isolation in <em>Frankenstein</em>? Consider
               both Victor and the Creature in your answer.
-              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
+              <span className="ms-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder={tr(`Write your essay response here...`)}
@@ -1072,7 +1072,7 @@ export default function FrankensteinPage() {
             <p className="text-sm text-muted-foreground mb-3">
               How does Shelley use Gothic conventions to explore what it means to be human in{' '}
               <em>Frankenstein</em>?
-              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
+              <span className="ms-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder={tr(`Write your essay response here...`)}

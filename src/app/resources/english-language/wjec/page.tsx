@@ -128,7 +128,7 @@ export default function WJECEnglishLanguagePage() {
           </div>
 
           <div className="mt-8 overflow-x-auto rounded-xl border border-border bg-card shadow-md">
-            <table className="w-full text-left text-sm">
+            <table className="w-full text-start text-sm">
               <thead className="bg-primary text-white">
                 <tr>
                   <th className="px-4 py-3 font-semibold">Component</th>
@@ -402,7 +402,7 @@ export default function WJECEnglishLanguagePage() {
             How WJEC Eduqas Differs from AQA &amp; Edexcel
           </h2>
           <div className="mt-8 space-y-4">
-            <div className="rounded-lg border-l-4 border-primary bg-blue-500/10 p-4">
+            <div className="rounded-lg border-s-4 border-primary bg-blue-500/10 p-4">
               <h3 className="font-semibold text-foreground">Components, not Papers</h3>
               <p className="mt-1 text-sm text-muted-foreground">
                 WJEC Eduqas uses the term &ldquo;Component&rdquo; rather than &ldquo;Paper.&rdquo;
@@ -410,7 +410,7 @@ export default function WJECEnglishLanguagePage() {
                 covers 19th and 21st-century non-fiction with writing for real purposes.
               </p>
             </div>
-            <div className="rounded-lg border-l-4 border-primary bg-blue-500/10 p-4">
+            <div className="rounded-lg border-s-4 border-primary bg-blue-500/10 p-4">
               <h3 className="font-semibold text-foreground">20th Century Literature Extract</h3>
               <p className="mt-1 text-sm text-muted-foreground">
                 Paper 1 reading uses a 20th-century literary prose extract &mdash; neither AQA
@@ -419,7 +419,7 @@ export default function WJECEnglishLanguagePage() {
                 between 1900 and 1999.
               </p>
             </div>
-            <div className="rounded-lg border-l-4 border-primary bg-blue-500/10 p-4">
+            <div className="rounded-lg border-s-4 border-primary bg-blue-500/10 p-4">
               <h3 className="font-semibold text-foreground">
                 Two Compulsory Writing Tasks in Paper 2
               </h3>
@@ -430,7 +430,7 @@ export default function WJECEnglishLanguagePage() {
                 exam sitting.
               </p>
             </div>
-            <div className="rounded-lg border-l-4 border-primary bg-blue-500/10 p-4">
+            <div className="rounded-lg border-s-4 border-primary bg-blue-500/10 p-4">
               <h3 className="font-semibold text-foreground">Creative Writing: Prose Only</h3>
               <p className="mt-1 text-sm text-muted-foreground">
                 Paper 1&apos;s creative writing section is strictly prose &mdash; narrative or
@@ -438,7 +438,7 @@ export default function WJECEnglishLanguagePage() {
                 broader imaginative writing options. WJEC provides a choice of four titles.
               </p>
             </div>
-            <div className="rounded-lg border-l-4 border-primary bg-blue-500/10 p-4">
+            <div className="rounded-lg border-s-4 border-primary bg-blue-500/10 p-4">
               <h3 className="font-semibold text-foreground">Weighting: 40/60 Split</h3>
               <p className="mt-1 text-sm text-muted-foreground">
                 Paper 1 is worth 40% and Paper 2 is worth 60%. This contrasts with AQA&apos;s 50/50

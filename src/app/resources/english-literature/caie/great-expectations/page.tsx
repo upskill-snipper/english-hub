@@ -275,7 +275,7 @@ export default function GreatExpectationsStudyGuide() {
                     {p.keyQuotations.map((q, i) => (
                       <div
                         key={i}
-                        className="rounded-lg border-l-4 border-purple-600 bg-primary/5 p-4"
+                        className="rounded-lg border-s-4 border-purple-600 bg-primary/5 p-4"
                       >
                         <blockquote className="text-sm font-medium italic text-foreground">
                           &ldquo;{q.quote}&rdquo;

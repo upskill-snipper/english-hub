@@ -248,7 +248,7 @@ export default function ReviewRequestPage() {
             required
           />
           <p
-            className={`mt-1 text-right text-xs ${
+            className={`mt-1 text-end text-xs ${
               detail.length >= DETAIL_MAX ? 'text-red-500 font-medium' : 'text-muted-foreground'
             }`}
           >
@@ -274,7 +274,7 @@ export default function ReviewRequestPage() {
             placeholder={t('dash.review_req.self_ph')}
           />
           <p
-            className={`mt-1 text-right text-xs ${
+            className={`mt-1 text-end text-xs ${
               selfAssessment.length >= SELF_ASSESSMENT_MAX
                 ? 'text-red-500 font-medium'
                 : 'text-muted-foreground'

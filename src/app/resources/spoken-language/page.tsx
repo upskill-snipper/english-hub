@@ -163,7 +163,7 @@ export default async function SpokenLanguagePage() {
             </p>
             <div className="rounded-lg border border-primary/20 bg-primary/5 p-5">
               <p className="text-sm font-semibold text-foreground">Key facts</p>
-              <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
+              <ul className="ms-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
                 <li>{tr(`Required for all GCSE English Language students`)}</li>
                 <li>
                   Reported separately &mdash; does <strong>not</strong> count towards your 9&ndash;1
@@ -304,7 +304,7 @@ export default async function SpokenLanguagePage() {
           </h2>
           <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <h3 className="text-lg font-semibold text-foreground">Step-by-Step Planning Process</h3>
-            <ol className="ml-6 list-decimal space-y-4">
+            <ol className="ms-6 list-decimal space-y-4">
               <li>
                 <strong>Choose your topic</strong> &mdash; Pick something you care about and can
                 speak on with authority. Ensure it has enough depth for 3&ndash;5 minutes of
@@ -340,7 +340,7 @@ export default async function SpokenLanguagePage() {
 
             <h3 className="mt-8 text-lg font-semibold text-foreground">Recommended Structure</h3>
             <div className="mt-3 space-y-3">
-              <div className="rounded-lg border-l-4 border-[primary] bg-muted p-4">
+              <div className="rounded-lg border-s-4 border-[primary] bg-muted p-4">
                 <p className="font-semibold text-foreground">
                   {tr(`Introduction (30&ndash;45 seconds)`)}
                 </p>
@@ -350,7 +350,7 @@ export default async function SpokenLanguagePage() {
                   main argument or position clearly.
                 </p>
               </div>
-              <div className="rounded-lg border-l-4 border-primary bg-muted p-4">
+              <div className="rounded-lg border-s-4 border-primary bg-muted p-4">
                 <p className="font-semibold text-primary">
                   {tr(`Main Points (2&ndash;3 minutes)`)}
                 </p>
@@ -360,7 +360,7 @@ export default async function SpokenLanguagePage() {
                   &ldquo;Furthermore&hellip;&rdquo;, &ldquo;Most importantly&hellip;&rdquo;
                 </p>
               </div>
-              <div className="rounded-lg border-l-4 border-amber-500 bg-muted p-4">
+              <div className="rounded-lg border-s-4 border-amber-500 bg-muted p-4">
                 <p className="font-semibold text-amber-700">
                   {tr(`Counter-Argument (30&ndash;45 seconds)`)}
                 </p>
@@ -370,7 +370,7 @@ export default async function SpokenLanguagePage() {
                   however&hellip;&rdquo;
                 </p>
               </div>
-              <div className="rounded-lg border-l-4 border-emerald-500 bg-muted p-4">
+              <div className="rounded-lg border-s-4 border-emerald-500 bg-muted p-4">
                 <p className="font-semibold text-emerald-700 dark:text-emerald-300">
                   {tr(`Conclusion (30&ndash;45 seconds)`)}
                 </p>
@@ -387,7 +387,7 @@ export default async function SpokenLanguagePage() {
               You may use brief notes or cue cards, but you should
               <strong> never read from a full script</strong>. Effective cue cards contain:
             </p>
-            <ul className="ml-6 list-disc space-y-2">
+            <ul className="ms-6 list-disc space-y-2">
               <li>{tr(`Key words and short phrases, not full sentences`)}</li>
               <li>Statistics or quotations you want to reference precisely</li>
               <li>{tr(`Clear numbering so you keep track of the order`)}</li>
@@ -587,7 +587,7 @@ export default async function SpokenLanguagePage() {
               This is a critical part of the assessment and tests your ability to think on your feet
               while maintaining formal spoken English. Here are key strategies:
             </p>
-            <ul className="ml-6 list-disc space-y-3">
+            <ul className="ms-6 list-disc space-y-3">
               <li>
                 <strong>{tr(`Listen to the full question`)}</strong> before you start answering. Do
                 not interrupt or jump in prematurely.
@@ -657,10 +657,10 @@ export default async function SpokenLanguagePage() {
               <table className="mt-3 w-full text-sm">
                 <thead>
                   <tr className="border-b-2 border-[primary]">
-                    <th className="px-4 py-3 text-left font-semibold text-foreground">
+                    <th className="px-4 py-3 text-start font-semibold text-foreground">
                       {tr(`Avoid (Non-Standard)`)}
                     </th>
-                    <th className="px-4 py-3 text-left font-semibold text-foreground">
+                    <th className="px-4 py-3 text-start font-semibold text-foreground">
                       {tr(`Use Instead (Standard English)`)}
                     </th>
                   </tr>
@@ -703,7 +703,7 @@ export default async function SpokenLanguagePage() {
                 </tbody>
               </table>
             </div>
-            <ul className="ml-6 mt-4 list-disc space-y-2">
+            <ul className="ms-6 mt-4 list-disc space-y-2">
               <li>
                 {tr(
                   `Use formal vocabulary: &ldquo;furthermore&rdquo; rather than &ldquo;also&rdquo;; &ldquo;however&rdquo; rather than &ldquo;but&rdquo;`,
@@ -763,7 +763,7 @@ export default async function SpokenLanguagePage() {
                 Example 1: &ldquo;Should the Voting Age Be Lowered to 16?&rdquo;
               </h3>
               <div className="mt-4 space-y-3">
-                <div className="rounded border-l-4 border-[primary] bg-muted p-3">
+                <div className="rounded border-s-4 border-[primary] bg-muted p-3">
                   <p className="text-sm font-semibold text-foreground">Introduction</p>
                   <p className="mt-1 text-sm">
                     Hook: &ldquo;In 2014, 75% of 16 and 17-year-olds voted in the Scottish
@@ -771,7 +771,7 @@ export default async function SpokenLanguagePage() {
                     shutting them out?&rdquo; State argument: voting age should be lowered to 16.
                   </p>
                 </div>
-                <div className="rounded border-l-4 border-primary bg-muted p-3">
+                <div className="rounded border-s-4 border-primary bg-muted p-3">
                   <p className="text-sm font-semibold text-primary">
                     {tr(`Point 1: Taxation and representation`)}
                   </p>
@@ -780,7 +780,7 @@ export default async function SpokenLanguagePage() {
                     representation&rdquo; demands they should have a vote.
                   </p>
                 </div>
-                <div className="rounded border-l-4 border-primary bg-muted p-3">
+                <div className="rounded border-s-4 border-primary bg-muted p-3">
                   <p className="text-sm font-semibold text-primary">
                     {tr(`Point 2: Legal responsibilities`)}
                   </p>
@@ -789,7 +789,7 @@ export default async function SpokenLanguagePage() {
                     these life-changing decisions, you should be trusted to vote.
                   </p>
                 </div>
-                <div className="rounded border-l-4 border-primary bg-muted p-3">
+                <div className="rounded border-s-4 border-primary bg-muted p-3">
                   <p className="text-sm font-semibold text-primary">
                     Point 3: Engagement and habit-forming
                   </p>
@@ -798,7 +798,7 @@ export default async function SpokenLanguagePage() {
                     Lowering the voting age could help combat declining voter turnout.
                   </p>
                 </div>
-                <div className="rounded border-l-4 border-amber-500 bg-muted p-3">
+                <div className="rounded border-s-4 border-amber-500 bg-muted p-3">
                   <p className="text-sm font-semibold text-amber-700">Counter-argument</p>
                   <p className="mt-1 text-sm">
                     &ldquo;Some argue that 16-year-olds lack the maturity and political knowledge to
@@ -806,7 +806,7 @@ export default async function SpokenLanguagePage() {
                     is the real barrier to informed voting.&rdquo;
                   </p>
                 </div>
-                <div className="rounded border-l-4 border-emerald-500 bg-muted p-3">
+                <div className="rounded border-s-4 border-emerald-500 bg-muted p-3">
                   <p className="text-sm font-semibold text-emerald-700 dark:text-emerald-300">
                     Conclusion
                   </p>
@@ -825,7 +825,7 @@ export default async function SpokenLanguagePage() {
                 Example 2: &ldquo;The Impact of Social Media on Mental Health&rdquo;
               </h3>
               <div className="mt-4 space-y-3">
-                <div className="rounded border-l-4 border-[primary] bg-muted p-3">
+                <div className="rounded border-s-4 border-[primary] bg-muted p-3">
                   <p className="text-sm font-semibold text-foreground">Introduction</p>
                   <p className="mt-1 text-sm">
                     Hook: &ldquo;The average teenager spends over seven hours a day on screens. But
@@ -833,7 +833,7 @@ export default async function SpokenLanguagePage() {
                     impact of social media on young people&rsquo;s mental health.
                   </p>
                 </div>
-                <div className="rounded border-l-4 border-primary bg-muted p-3">
+                <div className="rounded border-s-4 border-primary bg-muted p-3">
                   <p className="text-sm font-semibold text-primary">
                     {tr(`Point 1: Comparison culture and self-esteem`)}
                   </p>
@@ -842,7 +842,7 @@ export default async function SpokenLanguagePage() {
                     heavy social media use to lower self-esteem, particularly among teenage girls.
                   </p>
                 </div>
-                <div className="rounded border-l-4 border-primary bg-muted p-3">
+                <div className="rounded border-s-4 border-primary bg-muted p-3">
                   <p className="text-sm font-semibold text-primary">
                     {tr(`Point 2: Cyberbullying`)}
                   </p>
@@ -851,7 +851,7 @@ export default async function SpokenLanguagePage() {
                     report experiencing cyberbullying, with lasting psychological effects.
                   </p>
                 </div>
-                <div className="rounded border-l-4 border-primary bg-muted p-3">
+                <div className="rounded border-s-4 border-primary bg-muted p-3">
                   <p className="text-sm font-semibold text-primary">
                     {tr(`Point 3: Sleep disruption and anxiety`)}
                   </p>
@@ -861,7 +861,7 @@ export default async function SpokenLanguagePage() {
                     behaviour.
                   </p>
                 </div>
-                <div className="rounded border-l-4 border-amber-500 bg-muted p-3">
+                <div className="rounded border-s-4 border-amber-500 bg-muted p-3">
                   <p className="text-sm font-semibold text-amber-700">Counter-argument</p>
                   <p className="mt-1 text-sm">
                     &ldquo;Some argue that social media can be positive &mdash; connecting
@@ -869,7 +869,7 @@ export default async function SpokenLanguagePage() {
                     valid, but it does not negate the overwhelming evidence of harm.&rdquo;
                   </p>
                 </div>
-                <div className="rounded border-l-4 border-emerald-500 bg-muted p-3">
+                <div className="rounded border-s-4 border-emerald-500 bg-muted p-3">
                   <p className="text-sm font-semibold text-emerald-700 dark:text-emerald-300">
                     Conclusion
                   </p>
@@ -902,7 +902,7 @@ export default async function SpokenLanguagePage() {
               {/* Distinction */}
               <div className="rounded-lg border-2 border-primary bg-primary/10 p-5">
                 <h3 className="text-lg font-bold text-primary">Distinction</h3>
-                <ul className="ml-4 mt-3 list-disc space-y-2 text-sm text-muted-foreground">
+                <ul className="ms-4 mt-3 list-disc space-y-2 text-sm text-muted-foreground">
                   <li>
                     <strong>Presenting:</strong> The presentation is confidently, skilfully, and
                     engagingly delivered with a commanding presence. Content is challenging,
@@ -926,7 +926,7 @@ export default async function SpokenLanguagePage() {
               {/* Merit */}
               <div className="rounded-lg border-2 border-primary/60 bg-primary/5 p-5">
                 <h3 className="text-lg font-bold text-primary">Merit</h3>
-                <ul className="ml-4 mt-3 list-disc space-y-2 text-sm text-muted-foreground">
+                <ul className="ms-4 mt-3 list-disc space-y-2 text-sm text-muted-foreground">
                   <li>
                     <strong>Presenting:</strong> The presentation is clearly and competently
                     delivered with good audience engagement. Content is well-organised, relevant,
@@ -949,7 +949,7 @@ export default async function SpokenLanguagePage() {
               {/* Pass */}
               <div className="rounded-lg border-2 border-border bg-muted p-5">
                 <h3 className="text-lg font-bold text-foreground">Pass</h3>
-                <ul className="ml-4 mt-3 list-disc space-y-2 text-sm text-muted-foreground">
+                <ul className="ms-4 mt-3 list-disc space-y-2 text-sm text-muted-foreground">
                   <li>
                     <strong>Presenting:</strong> The presentation is delivered with basic
                     competence. Content is understandable and has some structure, though it may lack

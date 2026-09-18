@@ -51,12 +51,12 @@ export default async function MacbethAct3Page() {
       />
       {/* Header */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-amber-500/[0.04] p-6 sm:p-8 lg:p-10">
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-amber-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-amber-500/5 blur-3xl" />
         <div className="relative">
           <Button
             variant="ghost"
             size="sm"
-            className="mb-4 -ml-2 text-muted-foreground"
+            className="mb-4 -ms-2 text-muted-foreground"
             render={<Link href="/revision/texts/macbeth" />}
           >
             <ArrowLeft className="size-3.5" />
@@ -64,7 +64,7 @@ export default async function MacbethAct3Page() {
           </Button>
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
-              <BookOpen className="mr-1 size-3 text-clay-600" />
+              <BookOpen className="me-1 size-3 text-clay-600" />
               {_tr(`Act 3 - Paranoia &amp; Tyranny`)}
             </Badge>
             <Badge variant="outline">6 scenes</Badge>
@@ -105,7 +105,7 @@ export default async function MacbethAct3Page() {
           </div>
           <div>
             <h4 className="font-semibold mb-1">{_tr(`Key Events &amp; Turning Points`)}</h4>
-            <ul className="list-disc pl-5 text-muted-foreground space-y-1">
+            <ul className="list-disc ps-5 text-muted-foreground space-y-1">
               <li>
                 {_tr(
                   `Macbeth acts independently for the first time, ordering murder without Lady Macbeth&apos;s involvement.`,
@@ -240,7 +240,7 @@ export default async function MacbethAct3Page() {
           </div>
           <div>
             <h4 className="font-semibold mb-1">{_tr(`Key Events &amp; Turning Points`)}</h4>
-            <ul className="list-disc pl-5 text-muted-foreground space-y-1">
+            <ul className="list-disc ps-5 text-muted-foreground space-y-1">
               <li>
                 {_tr(
                   `Lady Macbeth&apos;s private admission of unhappiness shows the crown has brought no satisfaction.`,
@@ -363,7 +363,7 @@ export default async function MacbethAct3Page() {
           </div>
           <div>
             <h4 className="font-semibold mb-1">{_tr(`Key Events &amp; Turning Points`)}</h4>
-            <ul className="list-disc pl-5 text-muted-foreground space-y-1">
+            <ul className="list-disc ps-5 text-muted-foreground space-y-1">
               <li>
                 {_tr(`Banquo is murdered &mdash; Macbeth&apos;s descent into tyranny deepens.`)}
               </li>
@@ -448,7 +448,7 @@ export default async function MacbethAct3Page() {
           </div>
           <div>
             <h4 className="font-semibold mb-1">{_tr(`Key Events &amp; Turning Points`)}</h4>
-            <ul className="list-disc pl-5 text-muted-foreground space-y-1">
+            <ul className="list-disc ps-5 text-muted-foreground space-y-1">
               <li>
                 {_tr(
                   `Banquo&apos;s ghost appears &mdash; either supernatural visitation or Macbeth&apos;s guilt made visible.`,
@@ -691,7 +691,7 @@ export default async function MacbethAct3Page() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <ol className="list-decimal pl-5 space-y-3 text-muted-foreground">
+          <ol className="list-decimal ps-5 space-y-3 text-muted-foreground">
             <li>
               {_tr(
                 `How does Shakespeare present Macbeth as an increasingly isolated and paranoid ruler in Act 3? Refer closely to language, form, and structure in your answer.`,
@@ -714,10 +714,10 @@ export default async function MacbethAct3Page() {
       {/* Navigation */}
       <div className="flex justify-between items-center pt-4">
         <Button variant="outline" render={<Link href="/revision/texts/macbeth/act-2" />}>
-          <ArrowLeft className="size-4 mr-1" /> Act 2
+          <ArrowLeft className="size-4 me-1" /> Act 2
         </Button>
         <Button variant="outline" disabled aria-disabled="true" title={_tr(`Act 4 - coming soon`)}>
-          Act 4 (coming soon) <ArrowRight className="size-4 ml-1" />
+          Act 4 (coming soon) <ArrowRight className="size-4 ms-1" />
         </Button>
       </div>
     </div>

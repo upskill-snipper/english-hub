@@ -405,7 +405,7 @@ function SectionSidebar({
   const t = useT()
   return (
     <nav
-      className="hidden lg:flex flex-col gap-0.5 overflow-y-auto border-r border-border bg-card p-3"
+      className="hidden lg:flex flex-col gap-0.5 overflow-y-auto border-e border-border bg-card p-3"
       aria-label={t('text_viewer.section_nav_label')}
     >
       <h2 className="mb-2 px-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
@@ -420,7 +420,7 @@ function SectionSidebar({
             key={section.id}
             onClick={() => onSelect(section.id)}
             className={[
-              'flex items-center gap-2 rounded-lg px-3 py-2 text-left text-sm transition-colors',
+              'flex items-center gap-2 rounded-lg px-3 py-2 text-start text-sm transition-colors',
               isActive
                 ? 'bg-primary/10 text-primary font-medium'
                 : 'text-muted-foreground hover:bg-muted hover:text-foreground',
@@ -489,7 +489,7 @@ function SectionDropdown({
                   setOpen(false)
                 }}
                 className={[
-                  'flex w-full items-center gap-2 px-4 py-2.5 text-left text-sm transition-colors',
+                  'flex w-full items-center gap-2 px-4 py-2.5 text-start text-sm transition-colors',
                   isActive
                     ? 'bg-primary/10 text-primary font-medium'
                     : 'text-muted-foreground hover:bg-muted hover:text-foreground',
@@ -609,7 +609,7 @@ function InfoPanel({
       />
 
       {/* Panel */}
-      <div className="relative z-10 h-full w-full max-w-md overflow-y-auto border-l border-border bg-card p-6 shadow-elevated animate-slide-in-right">
+      <div className="relative z-10 h-full w-full max-w-md overflow-y-auto border-s border-border bg-card p-6 shadow-elevated animate-slide-in-right">
         <div className="mb-4 flex items-center justify-between">
           <h2 className="text-lg font-bold text-foreground">{panelTitle}</h2>
           <button
@@ -637,7 +637,7 @@ function InfoPanel({
                     {char.keyQuotes.map((q, i) => (
                       <blockquote
                         key={i}
-                        className="border-l-2 border-amber-500/40 pl-3 text-xs italic text-muted-foreground"
+                        className="border-s-2 border-amber-500/40 ps-3 text-xs italic text-muted-foreground"
                       >
                         {q}
                       </blockquote>

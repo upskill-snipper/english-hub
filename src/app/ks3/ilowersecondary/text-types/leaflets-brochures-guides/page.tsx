@@ -285,7 +285,7 @@ export default async function LeafletsBrochuresGuidesPage() {
             that is what the structure and organisation marks reward.
           </p>
           <div className="overflow-hidden rounded-lg border border-border/60">
-            <table className="w-full border-collapse text-left text-sm">
+            <table className="w-full border-collapse text-start text-sm">
               <thead className="bg-muted text-foreground">
                 <tr>
                   <th className="p-3 font-semibold">Feature</th>
@@ -328,7 +328,7 @@ export default async function LeafletsBrochuresGuidesPage() {
               {Object.entries(GUIDED_READING_PROMPTS.nonFiction).map(([heading, prompts]) => (
                 <div key={heading} className="mb-4 last:mb-0">
                   <h3 className="mb-2 font-semibold text-foreground">{heading}</h3>
-                  <ul className="list-disc space-y-1 pl-5 text-muted-foreground">
+                  <ul className="list-disc space-y-1 ps-5 text-muted-foreground">
                     {prompts.map((p) => (
                       <li key={p}>{p}</li>
                     ))}
@@ -358,7 +358,7 @@ export default async function LeafletsBrochuresGuidesPage() {
                 </h3>
                 <ol className="space-y-4">
                   {ex.blocks.map((b, i) => (
-                    <li key={i} className="border-l-4 border-primary/40 pl-4">
+                    <li key={i} className="border-s-4 border-primary/40 ps-4">
                       <p className="mb-1 font-heading text-base leading-relaxed text-foreground">
                         {b.text}
                       </p>

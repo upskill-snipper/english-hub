@@ -69,7 +69,7 @@ export default async function OCRPoetryPage() {
               The OCR anthology, <em>{tr(`Towards a World Unknown`)}</em> (J352, ISBN
               9781398384408), is divided into four thematic clusters of 15 poems each:
             </p>
-            <ul className="ml-6 list-disc space-y-1">
+            <ul className="ms-6 list-disc space-y-1">
               <li>
                 <strong>{tr(`Love and Relationships`)}</strong>
               </li>
@@ -138,7 +138,7 @@ export default async function OCRPoetryPage() {
                 This is where you earn most of your marks. Identify specific language techniques and
                 analyse their effects:
               </p>
-              <ul className="ml-4 mt-2 list-disc space-y-1 text-sm">
+              <ul className="ms-4 mt-2 list-disc space-y-1 text-sm">
                 <li>
                   <strong>Imagery</strong> &mdash; What pictures does the poet create? Are there
                   recurring images (motifs)? What do they symbolise?
@@ -174,7 +174,7 @@ export default async function OCRPoetryPage() {
                 Form and structure are often overlooked, but they are essential for top-band
                 answers:
               </p>
-              <ul className="ml-4 mt-2 list-disc space-y-1 text-sm">
+              <ul className="ms-4 mt-2 list-disc space-y-1 text-sm">
                 <li>
                   <strong>Form</strong> &mdash; Is it a sonnet, ballad, free verse, dramatic
                   monologue, or another form? Why has the poet chosen this form? How does the form
@@ -218,7 +218,7 @@ export default async function OCRPoetryPage() {
                 Context should be embedded in your analysis, not presented as a separate paragraph.
                 Consider:
               </p>
-              <ul className="ml-4 mt-2 list-disc space-y-1 text-sm">
+              <ul className="ms-4 mt-2 list-disc space-y-1 text-sm">
                 <li>{tr(`When was the poem written? What was happening historically?`)}</li>
                 <li>{tr(`What was the poet&rsquo;s background and experiences?`)}</li>
                 <li>{tr(`What literary movement or tradition does the poem belong to?`)}</li>
@@ -251,7 +251,7 @@ export default async function OCRPoetryPage() {
                 When you see the printed poem and the question, quickly decide which poem from your
                 cluster offers the best comparison. Consider:
               </p>
-              <ul className="ml-6 mt-2 list-disc space-y-2">
+              <ul className="ms-6 mt-2 list-disc space-y-2">
                 <li>
                   Which poem explores a <strong>similar theme</strong> but through{' '}
                   <strong>different methods</strong>? This gives you the richest comparison
@@ -573,7 +573,7 @@ export default async function OCRPoetryPage() {
             Common Mistakes to Avoid
           </h2>
           <div className="mt-4">
-            <ul className="ml-6 list-disc space-y-3 text-muted-foreground leading-relaxed">
+            <ul className="ms-6 list-disc space-y-3 text-muted-foreground leading-relaxed">
               <li>
                 <strong>{tr(`Writing about each poem separately`)}</strong> &mdash; This is the most
                 common mistake. You must compare throughout, not write about Poem A then Poem B.

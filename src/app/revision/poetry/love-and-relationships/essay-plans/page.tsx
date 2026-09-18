@@ -480,7 +480,7 @@ export default function EssayPlansPage() {
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/revision/poetry/love-and-relationships" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -490,13 +490,13 @@ export default function EssayPlansPage() {
 
       {/* ── Hero ──────────────────────────────────────────────── */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-rose-500/[0.04] p-6 sm:p-8 lg:p-10">
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-rose-500/5 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-pink-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-rose-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-16 -start-16 h-48 w-48 rounded-full bg-pink-500/5 blur-3xl" />
 
         <div className="relative">
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
-              <Sparkles className="mr-1 size-3" />
+              <Sparkles className="me-1 size-3" />
               {t('poetry_hub.lr.badge_spec')}
             </Badge>
             <Badge className="bg-primary/10 text-primary border-primary/20">
@@ -645,7 +645,7 @@ export default function EssayPlansPage() {
                         <p className="text-body-sm text-muted-foreground leading-relaxed mb-2">
                           {para.poemAPoint}
                         </p>
-                        <blockquote className="border-l-2 border-rose-500/30 pl-2.5 text-xs italic text-foreground/80">
+                        <blockquote className="border-s-2 border-rose-500/30 ps-2.5 text-xs italic text-foreground/80">
                           {para.poemAQuote}
                         </blockquote>
                       </div>
@@ -657,7 +657,7 @@ export default function EssayPlansPage() {
                         <p className="text-body-sm text-muted-foreground leading-relaxed mb-2">
                           {para.poemBPoint}
                         </p>
-                        <blockquote className="border-l-2 border-violet-500/30 pl-2.5 text-xs italic text-foreground/80">
+                        <blockquote className="border-s-2 border-violet-500/30 ps-2.5 text-xs italic text-foreground/80">
                           {para.poemBQuote}
                         </blockquote>
                       </div>

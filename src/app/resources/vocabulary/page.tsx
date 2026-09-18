@@ -270,7 +270,7 @@ export default function VocabularyHubPage() {
           <div className="mx-auto mt-8 max-w-md">
             <div className="relative">
               <svg
-                className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground"
+                className="absolute start-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
@@ -287,7 +287,7 @@ export default function VocabularyHubPage() {
                 placeholder={t('vocab.upgrade.search_placeholder')}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full rounded-xl border border-border bg-card py-3 pl-10 pr-4 text-sm shadow-md transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30"
+                className="w-full rounded-xl border border-border bg-card py-3 ps-10 pe-4 text-sm shadow-md transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30"
               />
             </div>
           </div>

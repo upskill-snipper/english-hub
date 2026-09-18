@@ -35,12 +35,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from '@/components/ui/dialog'
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 
 import {
   TEACHER_RESOURCES,
@@ -52,14 +47,7 @@ import {
 // ── Constants ─────────────────────────────────────────────────────────────────
 
 const EXAM_BOARDS = ['All', 'AQA', 'Edexcel', 'OCR', 'WJEC'] as const
-const YEAR_GROUPS = [
-  'All',
-  'Year 7',
-  'Year 8',
-  'Year 9',
-  'Year 10',
-  'Year 11',
-] as const
+const YEAR_GROUPS = ['All', 'Year 7', 'Year 8', 'Year 9', 'Year 10', 'Year 11'] as const
 
 const SAVED_KEY = 'english-hub-saved-resources'
 
@@ -175,12 +163,7 @@ function ResourceCard({
       <CardContent className="p-5 flex flex-col h-full">
         {/* Header */}
         <div className="flex items-start justify-between gap-3 mb-3">
-          <div
-            className={cn(
-              'flex-shrink-0 p-2 rounded-lg',
-              categoryIconBg(resource.category)
-            )}
-          >
+          <div className={cn('flex-shrink-0 p-2 rounded-lg', categoryIconBg(resource.category))}>
             <Icon className={cn('h-4 w-4', colorClass.split(' ')[1])} />
           </div>
           <button
@@ -203,9 +186,7 @@ function ResourceCard({
         <h3 className="text-sm font-semibold text-foreground leading-snug mb-1.5">
           {resource.title}
         </h3>
-        <p className="text-xs text-muted-foreground line-clamp-2 mb-3">
-          {resource.description}
-        </p>
+        <p className="text-xs text-muted-foreground line-clamp-2 mb-3">{resource.description}</p>
 
         {/* Spacer */}
         <div className="flex-1" />
@@ -313,18 +294,14 @@ function ResourcePreview({
               <div
                 className={cn(
                   'flex-shrink-0 p-2 rounded-lg mt-0.5',
-                  categoryIconBg(resource.category)
+                  categoryIconBg(resource.category),
                 )}
               >
                 <Icon className={cn('h-5 w-5', colorClass.split(' ')[1])} />
               </div>
               <div className="min-w-0">
-                <DialogTitle className="text-base leading-snug">
-                  {resource.title}
-                </DialogTitle>
-                <p className="text-sm text-muted-foreground mt-1">
-                  {resource.description}
-                </p>
+                <DialogTitle className="text-base leading-snug">{resource.title}</DialogTitle>
+                <p className="text-sm text-muted-foreground mt-1">{resource.description}</p>
               </div>
             </div>
           </div>
@@ -334,10 +311,7 @@ function ResourcePreview({
             <Badge variant="outline" className={cn('text-xs', colorClass)}>
               {resource.category}
             </Badge>
-            <Badge
-              variant="outline"
-              className="text-xs bg-muted/50 text-muted-foreground"
-            >
+            <Badge variant="outline" className="text-xs bg-muted/50 text-muted-foreground">
               {resource.subcategory}
             </Badge>
             {resource.examBoard.map((board) => (
@@ -364,7 +338,7 @@ function ResourcePreview({
           <div className="flex items-center gap-2 mt-3">
             {resource.printable && (
               <Button variant="outline" size="sm" onClick={handlePrint}>
-                <Printer className="h-4 w-4 mr-2" />
+                <Printer className="h-4 w-4 me-2" />
                 Print
               </Button>
             )}
@@ -375,12 +349,12 @@ function ResourcePreview({
             >
               {isSaved ? (
                 <>
-                  <BookmarkCheck className="h-4 w-4 mr-2" />
+                  <BookmarkCheck className="h-4 w-4 me-2" />
                   Saved
                 </>
               ) : (
                 <>
-                  <Bookmark className="h-4 w-4 mr-2" />
+                  <Bookmark className="h-4 w-4 me-2" />
                   Save
                 </>
               )}
@@ -421,19 +395,17 @@ function CategoryOverviewCard({
     <button
       onClick={onClick}
       className={cn(
-        'flex items-center gap-3 rounded-lg border p-3 text-left transition-all duration-200 hover:shadow-sm w-full',
+        'flex items-center gap-3 rounded-lg border p-3 text-start transition-all duration-200 hover:shadow-sm w-full',
         isActive
           ? 'border-foreground/20 bg-foreground/5 shadow-sm'
-          : 'border-border hover:border-foreground/10'
+          : 'border-border hover:border-foreground/10',
       )}
     >
       <div className={cn('p-2 rounded-lg', categoryIconBg(category))}>
         <Icon className={cn('h-4 w-4', colorClass.split(' ')[1])} />
       </div>
       <div className="min-w-0 flex-1">
-        <p className="text-sm font-medium text-foreground truncate">
-          {category}
-        </p>
+        <p className="text-sm font-medium text-foreground truncate">{category}</p>
         <p className="text-xs text-muted-foreground">
           {count} resource{count !== 1 ? 's' : ''}
         </p>
@@ -452,8 +424,7 @@ export default function ResourceLibraryPage() {
   const [yearFilter, setYearFilter] = useState<string>('All')
   const [showSavedOnly, setShowSavedOnly] = useState(false)
   const [savedIds, setSavedIdsState] = useState<string[]>([])
-  const [previewResource, setPreviewResource] =
-    useState<TeacherResource | null>(null)
+  const [previewResource, setPreviewResource] = useState<TeacherResource | null>(null)
   const [showFilters, setShowFilters] = useState(false)
 
   // Load saved IDs from localStorage on mount
@@ -465,13 +436,11 @@ export default function ResourceLibraryPage() {
 
   const toggleSave = useCallback(
     (id: string) => {
-      const next = savedIds.includes(id)
-        ? savedIds.filter((s) => s !== id)
-        : [...savedIds, id]
+      const next = savedIds.includes(id) ? savedIds.filter((s) => s !== id) : [...savedIds, id]
       setSavedIdsState(next)
       setSavedIds(next)
     },
-    [savedIds]
+    [savedIds],
   )
 
   const clearFilters = useCallback(() => {
@@ -499,16 +468,13 @@ export default function ResourceLibraryPage() {
       if (showSavedOnly && !savedIds.includes(r.id)) return false
 
       // Category filter
-      if (categoryFilter !== 'All' && r.category !== categoryFilter)
-        return false
+      if (categoryFilter !== 'All' && r.category !== categoryFilter) return false
 
       // Board filter
-      if (boardFilter !== 'All' && !r.examBoard.includes(boardFilter))
-        return false
+      if (boardFilter !== 'All' && !r.examBoard.includes(boardFilter)) return false
 
       // Year filter
-      if (yearFilter !== 'All' && !r.yearGroup.includes(yearFilter))
-        return false
+      if (yearFilter !== 'All' && !r.yearGroup.includes(yearFilter)) return false
 
       // Search
       if (lowerSearch) {
@@ -539,7 +505,7 @@ export default function ResourceLibraryPage() {
 
   const savedResources = useMemo(
     () => TEACHER_RESOURCES.filter((r) => savedIds.includes(r.id)),
-    [savedIds]
+    [savedIds],
   )
 
   // ── Render ────────────────────────────────────────────────────────────────
@@ -550,13 +516,11 @@ export default function ResourceLibraryPage() {
       <div>
         <div className="flex items-center gap-3 mb-1">
           <Library className="h-6 w-6 text-foreground/80" />
-          <h1 className="text-2xl font-bold text-foreground">
-            Teacher Resource Library
-          </h1>
+          <h1 className="text-2xl font-bold text-foreground">Teacher Resource Library</h1>
         </div>
         <p className="text-sm text-muted-foreground">
-          Model answers, mark schemes, writing frames, quote banks and more
-          &mdash; ready to preview, save and print.
+          Model answers, mark schemes, writing frames, quote banks and more &mdash; ready to
+          preview, save and print.
         </p>
       </div>
 
@@ -566,9 +530,7 @@ export default function ResourceLibraryPage() {
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
               <BookmarkCheck className="h-4 w-4 text-clay-600" />
-              <h2 className="text-sm font-semibold text-foreground">
-                My Saved Resources
-              </h2>
+              <h2 className="text-sm font-semibold text-foreground">My Saved Resources</h2>
               <Badge variant="outline" className="text-xs">
                 {savedResources.length}
               </Badge>
@@ -602,9 +564,7 @@ export default function ResourceLibraryPage() {
       {/* Category Overview Grid */}
       {!hasActiveFilters && (
         <section>
-          <h2 className="text-sm font-semibold text-foreground mb-3">
-            Browse by Category
-          </h2>
+          <h2 className="text-sm font-semibold text-foreground mb-3">Browse by Category</h2>
           <div className="grid gap-2 grid-cols-2 sm:grid-cols-4">
             {RESOURCE_CATEGORIES.map((cat) => (
               <CategoryOverviewCard
@@ -613,9 +573,7 @@ export default function ResourceLibraryPage() {
                 count={categoryCounts[cat]}
                 isActive={(categoryFilter as string) === cat}
                 onClick={() => {
-                  setCategoryFilter(
-                    (categoryFilter as string) === cat ? 'All' : cat
-                  )
+                  setCategoryFilter((categoryFilter as string) === cat ? 'All' : cat)
                 }}
               />
             ))}
@@ -627,17 +585,17 @@ export default function ResourceLibraryPage() {
       <div className="space-y-3">
         <div className="flex items-center gap-2">
           <div className="relative flex-1">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <Search className="absolute start-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
               placeholder="Search resources..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="pl-9 pr-9"
+              className="ps-9 pe-9"
             />
             {search && (
               <button
                 onClick={() => setSearch('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                className="absolute end-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -651,19 +609,14 @@ export default function ResourceLibraryPage() {
           >
             <SlidersHorizontal className="h-4 w-4" />
             <span className="hidden sm:inline">Filters</span>
-            {hasActiveFilters && (
-              <span className="flex h-2 w-2 rounded-full bg-blue-500" />
-            )}
+            {hasActiveFilters && <span className="flex h-2 w-2 rounded-full bg-blue-500" />}
           </Button>
         </div>
 
         {/* Expandable filter row */}
         {showFilters && (
           <div className="flex flex-wrap items-center gap-2 animate-in slide-in-from-top-2 duration-200">
-            <Select
-              value={categoryFilter}
-              onValueChange={setCategoryFilter}
-            >
+            <Select value={categoryFilter} onValueChange={setCategoryFilter}>
               <SelectTrigger className="w-[180px] h-9 text-xs">
                 <SelectValue placeholder="Category" />
               </SelectTrigger>
@@ -781,7 +734,7 @@ export default function ResourceLibraryPage() {
               <X className="h-3 w-3" />
             </Badge>
           )}
-          <span className="text-xs text-muted-foreground ml-1">
+          <span className="text-xs text-muted-foreground ms-1">
             {filtered.length} result{filtered.length !== 1 ? 's' : ''}
           </span>
         </div>
@@ -803,20 +756,12 @@ export default function ResourceLibraryPage() {
       ) : (
         <div className="flex flex-col items-center justify-center py-16 text-center">
           <Search className="h-10 w-10 text-muted-foreground/70 mb-3" />
-          <p className="text-sm font-medium text-foreground">
-            No resources found
-          </p>
+          <p className="text-sm font-medium text-foreground">No resources found</p>
           <p className="text-xs text-muted-foreground mt-1 max-w-sm">
-            Try adjusting your search or filters. We have{' '}
-            {TEACHER_RESOURCES.length} resources across{' '}
-            {RESOURCE_CATEGORIES.length} categories.
+            Try adjusting your search or filters. We have {TEACHER_RESOURCES.length} resources
+            across {RESOURCE_CATEGORIES.length} categories.
           </p>
-          <Button
-            variant="outline"
-            size="sm"
-            className="mt-4"
-            onClick={clearFilters}
-          >
+          <Button variant="outline" size="sm" className="mt-4" onClick={clearFilters}>
             Clear all filters
           </Button>
         </div>
@@ -827,9 +772,7 @@ export default function ResourceLibraryPage() {
         resource={previewResource}
         open={previewResource !== null}
         onClose={() => setPreviewResource(null)}
-        isSaved={
-          previewResource ? savedIds.includes(previewResource.id) : false
-        }
+        isSaved={previewResource ? savedIds.includes(previewResource.id) : false}
         onToggleSave={toggleSave}
       />
     </div>

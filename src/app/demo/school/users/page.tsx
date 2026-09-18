@@ -116,31 +116,31 @@ export default function DemoUsersPage() {
           <TabsList>
             <TabsTrigger value="all">
               All Users
-              <Badge variant="secondary" className="ml-1.5 h-5 px-1.5 text-[10px]">
+              <Badge variant="secondary" className="ms-1.5 h-5 px-1.5 text-[10px]">
                 {teacherCount + studentCount}
               </Badge>
             </TabsTrigger>
             <TabsTrigger value="teachers">
               Teachers
-              <Badge variant="secondary" className="ml-1.5 h-5 px-1.5 text-[10px]">
+              <Badge variant="secondary" className="ms-1.5 h-5 px-1.5 text-[10px]">
                 {teacherCount}
               </Badge>
             </TabsTrigger>
             <TabsTrigger value="students">
               Students
-              <Badge variant="secondary" className="ml-1.5 h-5 px-1.5 text-[10px]">
+              <Badge variant="secondary" className="ms-1.5 h-5 px-1.5 text-[10px]">
                 {studentCount}
               </Badge>
             </TabsTrigger>
           </TabsList>
 
           <div className="relative w-full sm:w-64">
-            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+            <Search className="absolute start-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <Input
               placeholder="Search users..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="pl-9"
+              className="ps-9"
             />
           </div>
         </div>
@@ -180,11 +180,11 @@ function UserTable({
       <table className="w-full text-sm">
         <thead>
           <tr className="border-b border-border bg-muted/50">
-            <th className="px-4 py-2.5 text-left font-medium text-muted-foreground">Name</th>
-            <th className="px-4 py-2.5 text-left font-medium text-muted-foreground">Role</th>
-            <th className="px-4 py-2.5 text-left font-medium text-muted-foreground">Details</th>
-            <th className="px-4 py-2.5 text-left font-medium text-muted-foreground">Status</th>
-            <th className="px-4 py-2.5 text-right font-medium text-muted-foreground">Actions</th>
+            <th className="px-4 py-2.5 text-start font-medium text-muted-foreground">Name</th>
+            <th className="px-4 py-2.5 text-start font-medium text-muted-foreground">Role</th>
+            <th className="px-4 py-2.5 text-start font-medium text-muted-foreground">Details</th>
+            <th className="px-4 py-2.5 text-start font-medium text-muted-foreground">Status</th>
+            <th className="px-4 py-2.5 text-end font-medium text-muted-foreground">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -271,7 +271,7 @@ function UserTable({
                 </td>
 
                 {/* Actions */}
-                <td className="px-4 py-3 text-right">
+                <td className="px-4 py-3 text-end">
                   <div className="relative inline-block">
                     <Button
                       variant="ghost"
@@ -283,7 +283,7 @@ function UserTable({
                     {openMenu === id && (
                       <>
                         <div className="fixed inset-0 z-40" onClick={() => setOpenMenu(null)} />
-                        <div className="absolute right-0 top-full z-50 mt-1 w-44 rounded-lg border border-border bg-card py-1 shadow-lg">
+                        <div className="absolute end-0 top-full z-50 mt-1 w-44 rounded-lg border border-border bg-card py-1 shadow-lg">
                           <button
                             className="flex w-full items-center gap-2 px-3 py-2 text-sm hover:bg-muted/50 transition-colors"
                             onClick={handleAction}

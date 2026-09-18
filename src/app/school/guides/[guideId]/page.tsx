@@ -31,7 +31,7 @@ function GuideSection({ section, index }: { section: TeachingGuideSection; index
       </div>
 
       {/* Content - render paragraphs from newline-separated text */}
-      <div className="prose prose-sm dark:prose-invert max-w-none pl-10">
+      <div className="prose prose-sm dark:prose-invert max-w-none ps-10">
         {section.content.split('\n\n').map((paragraph, i) => (
           <p key={i} className="leading-relaxed text-foreground/90">
             {paragraph}
@@ -41,7 +41,7 @@ function GuideSection({ section, index }: { section: TeachingGuideSection; index
 
       {/* Tips */}
       {section.tips.length > 0 && (
-        <Card className="ml-10 border-primary/20 bg-primary/[0.03]">
+        <Card className="ms-10 border-primary/20 bg-primary/[0.03]">
           <CardHeader className="pb-2">
             <CardTitle className="flex items-center gap-2 text-sm">
               <Lightbulb className="h-4 w-4 text-primary" />
@@ -63,7 +63,7 @@ function GuideSection({ section, index }: { section: TeachingGuideSection; index
 
       {/* Examples */}
       {section.examples && section.examples.length > 0 && (
-        <div className="ml-10 space-y-3">
+        <div className="ms-10 space-y-3">
           {section.examples.map((example, i) => (
             <Card key={i} className="border-amber-500/30/60 bg-amber-500/10/30/40">
               <CardHeader className="pb-2">
@@ -109,7 +109,7 @@ export default function GuideDetailPage() {
     <div className="space-y-8">
       {/* ── Back link ────────────────────────────────────────────────────── */}
       <Link href="/school/guides">
-        <Button variant="ghost" size="sm" className="gap-1.5 -ml-2 text-muted-foreground">
+        <Button variant="ghost" size="sm" className="gap-1.5 -ms-2 text-muted-foreground">
           <ArrowLeft className="h-4 w-4" />
           All Guides
         </Button>

@@ -126,9 +126,7 @@ export default function AcceptInvitePage() {
               <AlertCircle className="w-12 h-12 text-destructive mx-auto mb-4" />
               <h1 className="text-2xl font-bold text-foreground mb-2">Invalid Invite</h1>
               <p className="text-muted-foreground mb-6">{error}</p>
-              <Button render={<Link href="/dashboard" />}>
-                Go to Dashboard
-              </Button>
+              <Button render={<Link href="/dashboard" />}>Go to Dashboard</Button>
             </CardContent>
           </Card>
         </div>
@@ -153,7 +151,8 @@ export default function AcceptInvitePage() {
                 You have joined as{' '}
                 <span className="text-foreground font-medium">
                   {ROLE_LABELS[inviteInfo?.role ?? ''] ?? inviteInfo?.role}
-                </span>.
+                </span>
+                .
               </p>
               <p className="text-sm text-muted-foreground mb-4">
                 Redirecting to School Dashboard...
@@ -197,7 +196,9 @@ export default function AcceptInvitePage() {
             <div className="rounded-lg border border-border p-4 space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-sm text-muted-foreground">School</span>
-                <span className="text-sm font-medium text-foreground">{inviteInfo?.school_name}</span>
+                <span className="text-sm font-medium text-foreground">
+                  {inviteInfo?.school_name}
+                </span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-sm text-muted-foreground">Role</span>
@@ -212,20 +213,15 @@ export default function AcceptInvitePage() {
             </div>
 
             {user ? (
-              <Button
-                onClick={handleAccept}
-                disabled={accepting}
-                className="w-full"
-                size="lg"
-              >
+              <Button onClick={handleAccept} disabled={accepting} className="w-full" size="lg">
                 {accepting ? (
                   <>
-                    <Loader2 className="w-5 h-5 animate-spin mr-2" />
+                    <Loader2 className="w-5 h-5 animate-spin me-2" />
                     Accepting...
                   </>
                 ) : (
                   <>
-                    <CheckCircle className="w-5 h-5 mr-2" />
+                    <CheckCircle className="w-5 h-5 me-2" />
                     Accept Invite
                   </>
                 )}
@@ -239,16 +235,20 @@ export default function AcceptInvitePage() {
                   <Button
                     variant="outline"
                     className="flex-1"
-                    render={<Link href={`/auth/login?redirect=${encodeURIComponent(redirectPath)}`} />}
+                    render={
+                      <Link href={`/auth/login?redirect=${encodeURIComponent(redirectPath)}`} />
+                    }
                   >
-                    <LogIn className="w-4 h-4 mr-2" />
+                    <LogIn className="w-4 h-4 me-2" />
                     Log in
                   </Button>
                   <Button
                     className="flex-1"
-                    render={<Link href={`/auth/register?redirect=${encodeURIComponent(redirectPath)}`} />}
+                    render={
+                      <Link href={`/auth/register?redirect=${encodeURIComponent(redirectPath)}`} />
+                    }
                   >
-                    <UserPlus className="w-4 h-4 mr-2" />
+                    <UserPlus className="w-4 h-4 me-2" />
                     Register
                   </Button>
                 </div>

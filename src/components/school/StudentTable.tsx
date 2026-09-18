@@ -332,12 +332,12 @@ export function StudentTable({
     <div className={className}>
       {showSearch && (
         <div className="relative mb-4">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+          <Search className="absolute start-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input
             placeholder={t('school.student_table.search_placeholder')}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="pl-9"
+            className="ps-9"
           />
         </div>
       )}
@@ -353,7 +353,7 @@ export function StudentTable({
                     'px-3 py-2.5 font-medium text-muted-foreground cursor-pointer select-none hover:text-foreground transition-colors whitespace-nowrap',
                     compact ? 'px-2 py-2 text-xs' : '',
                     col.align === 'center' && 'text-center',
-                    col.align === 'right' && 'text-right',
+                    col.align === 'right' && 'text-end',
                   )}
                   role="columnheader"
                   tabIndex={0}

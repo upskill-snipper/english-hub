@@ -541,7 +541,7 @@ export default async function PrivacyPolicyPage() {
         <p className="mb-3">{s2P}</p>
 
         <h3 className="text-lg font-semibold mb-2">{s2HAcc}</h3>
-        <ul className="list-disc pl-6 space-y-1 mb-3">
+        <ul className="list-disc ps-6 space-y-1 mb-3">
           <li>{s2A1}</li>
           <li>{s2A2}</li>
           <li>{s2A3}</li>
@@ -549,7 +549,7 @@ export default async function PrivacyPolicyPage() {
         </ul>
 
         <h3 className="text-lg font-semibold mb-2">{s2HL}</h3>
-        <ul className="list-disc pl-6 space-y-1 mb-3">
+        <ul className="list-disc ps-6 space-y-1 mb-3">
           <li>{s2L1}</li>
           <li>{s2L2}</li>
           <li>{s2L3}</li>
@@ -557,13 +557,13 @@ export default async function PrivacyPolicyPage() {
         </ul>
 
         <h3 className="text-lg font-semibold mb-2">{s2HB}</h3>
-        <ul className="list-disc pl-6 space-y-1 mb-3">
+        <ul className="list-disc ps-6 space-y-1 mb-3">
           <li>{s2B1}</li>
           <li>{s2B2}</li>
         </ul>
 
         <h3 className="text-lg font-semibold mb-2">{s2HT}</h3>
-        <ul className="list-disc pl-6 space-y-1">
+        <ul className="list-disc ps-6 space-y-1">
           <li>{s2T1}</li>
           <li>{s2T2}</li>
           <li>{s2T3}</li>
@@ -573,7 +573,7 @@ export default async function PrivacyPolicyPage() {
       {/* Section 3: Legal bases */}
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4">{s3H2}</h2>
-        <ul className="list-disc pl-6 space-y-2">
+        <ul className="list-disc ps-6 space-y-2">
           <li>
             <strong>{s3L1S}</strong>
             {s3L1T}
@@ -756,7 +756,7 @@ export default async function PrivacyPolicyPage() {
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4">{s5H2}</h2>
         <p className="mb-3">{s5P1}</p>
-        <ul className="list-disc pl-6 space-y-2 mb-3">
+        <ul className="list-disc ps-6 space-y-2 mb-3">
           <li>
             <strong>{ageLi1Strong}</strong>
             {ageLi1Text}
@@ -788,8 +788,8 @@ export default async function PrivacyPolicyPage() {
           <table className="w-full text-sm border border-border">
             <thead>
               <tr className="bg-muted/40">
-                <th className="text-left font-semibold p-3 border-b border-border">{s5MxC1}</th>
-                <th className="text-left font-semibold p-3 border-b border-border">{s5MxC2}</th>
+                <th className="text-start font-semibold p-3 border-b border-border">{s5MxC1}</th>
+                <th className="text-start font-semibold p-3 border-b border-border">{s5MxC2}</th>
               </tr>
             </thead>
             <tbody>
@@ -869,7 +869,7 @@ export default async function PrivacyPolicyPage() {
       {/* Section 6: Retention */}
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4">{s6H2}</h2>
-        <ul className="list-disc pl-6 space-y-2 mb-3">
+        <ul className="list-disc ps-6 space-y-2 mb-3">
           <li>
             <strong>{s6L1S}</strong>
             {s6L1T}
@@ -901,7 +901,7 @@ export default async function PrivacyPolicyPage() {
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4">{s7H2}</h2>
         <p className="mb-3">{s7P}</p>
-        <ul className="list-disc pl-6 space-y-2 mb-3">
+        <ul className="list-disc ps-6 space-y-2 mb-3">
           <li>
             <strong>{s7L1S}</strong>
             <Link href="/account/data-export" className="underline">
@@ -940,7 +940,7 @@ export default async function PrivacyPolicyPage() {
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4">{s8H2}</h2>
         <p className="mb-3">{s8P}</p>
-        <ul className="list-disc pl-6 space-y-2 mb-3">
+        <ul className="list-disc ps-6 space-y-2 mb-3">
           <li>
             <strong>{s8L1S}</strong>
             {s8L1T}
@@ -965,7 +965,7 @@ export default async function PrivacyPolicyPage() {
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4">{s9H2}</h2>
         <p className="mb-3">{s9P}</p>
-        <ul className="list-disc pl-6 space-y-2 mb-3">
+        <ul className="list-disc ps-6 space-y-2 mb-3">
           <li>
             <strong>{s9L1S}</strong>
             {s9L1T}
@@ -986,7 +986,7 @@ export default async function PrivacyPolicyPage() {
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4">{s10H2}</h2>
         <p className="mb-3">{s10P}</p>
-        <ul className="list-disc pl-6 space-y-1 mb-3">
+        <ul className="list-disc ps-6 space-y-1 mb-3">
           <li>{s10L1}</li>
           <li>{s10L2}</li>
           <li>{s10L3}</li>

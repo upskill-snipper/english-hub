@@ -315,7 +315,7 @@ export default function WJECEnglishLiteraturePage() {
             Key features of the WJEC Eduqas exam
           </h2>
           <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
-            <div className="rounded-lg border-l-4 border-primary bg-primary/5 p-4">
+            <div className="rounded-lg border-s-4 border-primary bg-primary/5 p-4">
               <h3 className="font-semibold text-foreground">Both anthology poems are printed</h3>
               <p className="mt-1 text-sm">
                 WJEC Eduqas prints both anthology poems on the paper and asks you to compare them in
@@ -323,21 +323,21 @@ export default function WJECEnglishLiteraturePage() {
                 be ready to compare any pairing.
               </p>
             </div>
-            <div className="rounded-lg border-l-4 border-primary bg-primary/5 p-4">
+            <div className="rounded-lg border-s-4 border-primary bg-primary/5 p-4">
               <h3 className="font-semibold text-foreground">Unseen poetry carries heavy weight</h3>
               <p className="mt-1 text-sm">
                 Section C of Paper 2 is worth 40 marks (half of the paper, 25% of the total GCSE).
                 Strong unseen poetry skills are essential for a high grade.
               </p>
             </div>
-            <div className="rounded-lg border-l-4 border-primary bg-primary/5 p-4">
+            <div className="rounded-lg border-s-4 border-primary bg-primary/5 p-4">
               <h3 className="font-semibold text-foreground">Extract provided for Shakespeare</h3>
               <p className="mt-1 text-sm">
                 WJEC Eduqas provides a Shakespeare extract on the paper. The question is two-part:
                 part (i) focuses on the extract and part (ii) requires discussion of the whole play.
               </p>
             </div>
-            <div className="rounded-lg border-l-4 border-primary bg-primary/5 p-4">
+            <div className="rounded-lg border-s-4 border-primary bg-primary/5 p-4">
               <h3 className="font-semibold text-foreground">40/60 weighting between papers</h3>
               <p className="mt-1 text-sm">
                 Paper 2 (Post-1914, 19th century, and unseen poetry) is worth 60% of the GCSE,

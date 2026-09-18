@@ -207,7 +207,7 @@ export default function LanguageView({ boardId, boardName }: LanguageViewProps) 
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/revision" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -351,7 +351,7 @@ export default function LanguageView({ boardId, boardName }: LanguageViewProps) 
                     </button>
 
                     {tipsOpen && (
-                      <ul className="mt-2 space-y-1.5 pl-1">
+                      <ul className="mt-2 space-y-1.5 ps-1">
                         {section.tips.map((tip, i) => (
                           <li
                             key={i}

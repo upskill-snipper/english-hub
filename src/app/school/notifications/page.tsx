@@ -230,7 +230,7 @@ export default function NotificationsPage() {
           </div>
           {unreadCount > 0 && (
             <Button variant="outline" size="sm" onClick={handleMarkAllRead} className="text-xs">
-              <CheckCheck className="mr-1.5 h-3.5 w-3.5" />
+              <CheckCheck className="me-1.5 h-3.5 w-3.5" />
               {t('school.notif.mark_all_read')}
             </Button>
           )}

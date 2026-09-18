@@ -169,14 +169,14 @@ export default function DisclaimerPage() {
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-border">
-                <th className="pb-2 pr-4 text-left font-semibold text-foreground">Organisation</th>
-                <th className="pb-2 text-left font-semibold text-foreground">Trademark Notice</th>
+                <th className="pb-2 pe-4 text-start font-semibold text-foreground">Organisation</th>
+                <th className="pb-2 text-start font-semibold text-foreground">Trademark Notice</th>
               </tr>
             </thead>
             <tbody>
               {EXAM_BOARDS.map((board) => (
                 <tr key={board.name} className="border-b border-border">
-                  <td className="py-2 pr-4 font-medium text-foreground align-top whitespace-nowrap">
+                  <td className="py-2 pe-4 font-medium text-foreground align-top whitespace-nowrap">
                     {board.name}
                   </td>
                   <td className="py-2 text-muted-foreground">{board.trademark}</td>

@@ -283,7 +283,7 @@ export default async function PressPage() {
             className="h-12"
             render={<a href="mailto:press@theenglishhub.app" />}
           >
-            <Mail className="w-4 h-4 mr-2" />
+            <Mail className="w-4 h-4 me-2" />
             {contactCtaEmail}
           </Button>
           <Button variant="outline" size="lg" className="h-12" render={<Link href="/contact" />}>
@@ -327,7 +327,7 @@ export default async function PressPage() {
                     aria-disabled="true"
                     title={kitDownloadTitle}
                   >
-                    <Download className="w-4 h-4 mr-2" />
+                    <Download className="w-4 h-4 me-2" />
                     {kitDownloadDisabled}
                   </Button>
                 </div>
@@ -362,7 +362,7 @@ export default async function PressPage() {
                     rel="noopener noreferrer"
                   >
                     {awardsTrustpilot}
-                    <ExternalLink className="w-3.5 h-3.5 ml-1.5" />
+                    <ExternalLink className="w-3.5 h-3.5 ms-1.5" />
                   </a>
                 }
               />

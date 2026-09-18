@@ -733,7 +733,7 @@ export default function ApostropheAcePage() {
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="mb-6 flex items-center justify-between gap-4">
           <Button variant="ghost" size="sm" render={<Link href="/games" />}>
-            <ArrowLeft className="size-4 mr-1" />
+            <ArrowLeft className="size-4 me-1" />
             Back to Games
           </Button>
           {boardConfig && (
@@ -787,7 +787,7 @@ export default function ApostropheAcePage() {
                       onClick={() => handleSelect(idx)}
                       disabled={answered}
                       className={cn(
-                        'w-full rounded-lg border px-4 py-3 text-left text-base font-medium text-foreground transition-all',
+                        'w-full rounded-lg border px-4 py-3 text-start text-base font-medium text-foreground transition-all',
                         !answered &&
                           'border-border hover:border-primary hover:bg-accent cursor-pointer',
                         answered &&

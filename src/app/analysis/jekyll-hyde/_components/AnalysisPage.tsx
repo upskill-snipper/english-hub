@@ -106,7 +106,7 @@ export function Quote({
   chapter?: string
 }) {
   return (
-    <blockquote className="my-4 rounded-lg border-l-4 border-violet-400 bg-violet-500/5 p-4">
+    <blockquote className="my-4 rounded-lg border-s-4 border-violet-400 bg-violet-500/5 p-4">
       <p className="text-base italic text-foreground">&ldquo;{text}&rdquo;</p>
       {(speaker || chapter) && (
         <footer className="mt-2 text-xs text-muted-foreground">
@@ -205,7 +205,7 @@ export async function AnalysisPage({
       </header>
 
       {/* Body */}
-      <div className="prose prose-sm prose-invert max-w-none space-y-5 text-[15px] leading-relaxed text-foreground/90 [&_h2]:mb-3 [&_h2]:mt-8 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-foreground [&_h3]:mb-2 [&_h3]:mt-6 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-foreground [&_li]:my-1 [&_p]:my-3 [&_strong]:text-foreground [&_ul]:list-disc [&_ul]:space-y-1 [&_ul]:pl-5">
+      <div className="prose prose-sm prose-invert max-w-none space-y-5 text-[15px] leading-relaxed text-foreground/90 [&_h2]:mb-3 [&_h2]:mt-8 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-foreground [&_h3]:mb-2 [&_h3]:mt-6 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-foreground [&_li]:my-1 [&_p]:my-3 [&_strong]:text-foreground [&_ul]:list-disc [&_ul]:space-y-1 [&_ul]:ps-5">
         {children}
       </div>
 

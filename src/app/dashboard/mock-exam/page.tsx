@@ -380,7 +380,7 @@ function ExamConfigScreen() {
                   setSelectedExamId(null)
                 }}
                 className={cn(
-                  'group relative rounded-xl border p-4 text-left transition-all duration-200',
+                  'group relative rounded-xl border p-4 text-start transition-all duration-200',
                   'hover:border-border/80 hover:shadow-sm',
                   isSelected
                     ? `border-2 ${config.ring} ${config.bg} shadow-sm`
@@ -399,7 +399,7 @@ function ExamConfigScreen() {
                     : t('dashboard.mock.paper_avail_s')}
                 </div>
                 {isSelected && (
-                  <CheckCircle className={cn('absolute top-2 right-2 h-4 w-4', config.color)} />
+                  <CheckCircle className={cn('absolute top-2 end-2 h-4 w-4', config.color)} />
                 )}
               </button>
             )
@@ -432,7 +432,7 @@ function ExamConfigScreen() {
                   onMouseEnter={() => void loadMockExamPaper(paper.id).catch(() => {})}
                   onFocus={() => void loadMockExamPaper(paper.id).catch(() => {})}
                   className={cn(
-                    'group relative rounded-xl border p-4 text-left transition-all duration-200',
+                    'group relative rounded-xl border p-4 text-start transition-all duration-200',
                     'hover:border-border/80 hover:shadow-sm',
                     isSelected
                       ? `border-2 ${config.ring} ${config.bg} shadow-sm`
@@ -444,7 +444,7 @@ function ExamConfigScreen() {
                       {t('dashboard.mock.paper_label')} {paper.paperNumber}
                     </Badge>
                     <Badge variant="secondary" className="text-xs">
-                      <Clock className="mr-1 h-3 w-3" />
+                      <Clock className="me-1 h-3 w-3" />
                       {formatExamTime(paper.totalTimeMinutes)}
                     </Badge>
                   </div>
@@ -461,7 +461,7 @@ function ExamConfigScreen() {
                     {t('dashboard.mock.total')}: {paper.totalMarks} {t('dashboard.mock.marks')}
                   </div>
                   {isSelected && (
-                    <CheckCircle className={cn('absolute top-2 right-2 h-4 w-4', config.color)} />
+                    <CheckCircle className={cn('absolute top-2 end-2 h-4 w-4', config.color)} />
                   )}
                 </button>
               )
@@ -750,25 +750,25 @@ function ExamInProgress() {
         {/* Warning banners */}
         {warning === '5min' && !isPaused && (
           <div className="bg-yellow-500/10 border-b border-yellow-500/20 px-4 py-1.5 text-center text-sm font-medium text-clay-600">
-            <AlertTriangle className="mr-1.5 inline h-3.5 w-3.5" />5 minutes remaining! Consider
+            <AlertTriangle className="me-1.5 inline h-3.5 w-3.5" />5 minutes remaining! Consider
             finishing your current answer.
           </div>
         )}
         {warning === '1min' && !isPaused && (
           <div className="bg-red-500/10 border-b border-red-500/20 px-4 py-1.5 text-center text-sm font-medium text-red-400">
-            <AlertTriangle className="mr-1.5 inline h-3.5 w-3.5" />1 minute remaining! Your exam
+            <AlertTriangle className="me-1.5 inline h-3.5 w-3.5" />1 minute remaining! Your exam
             will be submitted automatically.
           </div>
         )}
         {isPaused && (
           <div className="bg-blue-500/10 border-b border-blue-500/20 px-4 py-1.5 text-center text-sm font-medium text-blue-400">
-            <Pause className="mr-1.5 inline h-3.5 w-3.5" />
+            <Pause className="me-1.5 inline h-3.5 w-3.5" />
             Timer paused. Click resume to continue.
           </div>
         )}
         {tabSwitchCount > 0 && (
           <div className="bg-orange-500/10 border-b border-orange-500/20 px-4 py-1.5 text-center text-sm font-medium text-clay-600">
-            <AlertTriangle className="mr-1.5 inline h-3.5 w-3.5" />
+            <AlertTriangle className="me-1.5 inline h-3.5 w-3.5" />
             You have left this tab {tabSwitchCount} time{tabSwitchCount !== 1 ? 's' : ''}. In a real
             exam, this would be flagged.
           </div>
@@ -777,7 +777,7 @@ function ExamInProgress() {
 
       <div className="mx-auto flex w-full max-w-6xl flex-1 gap-0">
         {/* Sidebar - Section Navigation */}
-        <aside className="hidden w-56 shrink-0 border-r bg-card/40 p-4 lg:block">
+        <aside className="hidden w-56 shrink-0 border-e bg-card/40 p-4 lg:block">
           <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
             Sections
           </h3>
@@ -792,7 +792,7 @@ function ExamInProgress() {
                   key={s.id}
                   onClick={() => setSection(i)}
                   className={cn(
-                    'w-full rounded-lg px-3 py-2 text-left text-sm transition-colors',
+                    'w-full rounded-lg px-3 py-2 text-start text-sm transition-colors',
                     isActive
                       ? 'bg-primary/10 text-primary font-medium'
                       : 'text-muted-foreground hover:text-foreground hover:bg-muted/50',
@@ -825,7 +825,7 @@ function ExamInProgress() {
                 />
               }
             >
-              <Send className="mr-1.5 inline h-3.5 w-3.5" />
+              <Send className="me-1.5 inline h-3.5 w-3.5" />
               Submit Exam
             </DialogTrigger>
             <SubmitConfirmDialog
@@ -846,7 +846,7 @@ function ExamInProgress() {
               </Badge>
               <Badge variant="secondary">{section.totalMarks} marks</Badge>
               <Badge variant="secondary">
-                <Clock className="mr-1 h-3 w-3" />~{section.suggestedTimeMinutes} min
+                <Clock className="me-1 h-3 w-3" />~{section.suggestedTimeMinutes} min
               </Badge>
             </div>
             <h2 className="text-xl font-bold text-foreground">{section.title}</h2>

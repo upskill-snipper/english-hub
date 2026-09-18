@@ -175,7 +175,7 @@ export default async function ForParentsPage() {
       <section className="relative overflow-hidden pt-24 pb-28 sm:pt-32 sm:pb-36">
         {/* Glow effects */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-primary/[0.06] rounded-full blur-[160px] pointer-events-none" />
-        <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-blue-500/[0.03] rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/3 start-1/4 w-[400px] h-[400px] bg-blue-500/[0.03] rounded-full blur-[120px] pointer-events-none" />
 
         <div className="relative max-w-4xl mx-auto px-6 text-center">
           <Badge
@@ -437,7 +437,7 @@ export default async function ForParentsPage() {
                   <p className="text-sm text-muted-foreground">{pricingPlanDesc}</p>
                 </div>
                 <Badge variant="outline" className="border-primary/30 text-primary">
-                  <Sparkles className="w-3.5 h-3.5 mr-1" />
+                  <Sparkles className="w-3.5 h-3.5 me-1" />
                   {pricingPopular}
                 </Badge>
               </div>
@@ -514,8 +514,8 @@ export default async function ForParentsPage() {
             {faqs.map((faq) => (
               <Card key={faq.question} className="overflow-hidden border-border/40">
                 <details className="group">
-                  <summary className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-accent/30 transition-colors duration-200 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                    <span className="font-semibold text-foreground pr-4">{faq.question}</span>
+                  <summary className="w-full flex items-center justify-between px-6 py-5 text-start hover:bg-accent/30 transition-colors duration-200 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    <span className="font-semibold text-foreground pe-4">{faq.question}</span>
                     <ChevronDown
                       className={cn(
                         'w-5 h-5 text-muted-foreground shrink-0 transition-transform duration-300 group-open:rotate-180',

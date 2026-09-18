@@ -857,7 +857,7 @@ export default function ChargeOfTheLightBrigadePage() {
               <ul className="mb-4 flex-1 space-y-2">
                 {c.points.map((p, i) => (
                   <li key={i} className="text-sm leading-relaxed text-card-foreground">
-                    <span className="mr-1.5 text-primary">&bull;</span>
+                    <span className="me-1.5 text-primary">&bull;</span>
                     {p}
                   </li>
                 ))}

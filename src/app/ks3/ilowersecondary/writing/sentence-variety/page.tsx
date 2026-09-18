@@ -410,7 +410,7 @@ export default async function SentenceVarietyPage() {
               {r.changes.map((c) => (
                 <li key={c.label} className="rounded-xl border border-border/60 bg-card p-4">
                   <p className="text-sm font-medium">
-                    <span className="font-mono text-primary mr-2">&rarr;</span>
+                    <span className="font-mono text-primary me-2">&rarr;</span>
                     {c.label}
                   </p>
                   <p className="text-xs text-muted-foreground leading-relaxed mt-1">{c.note}</p>

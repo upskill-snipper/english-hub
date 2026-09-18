@@ -339,7 +339,7 @@ function ClassDataBanner({ dist }: { dist: ClassDistribution }) {
             {dist.extension} students need Extension
           </Badge>
         </div>
-        <span className="ml-auto text-xs text-muted-foreground">{dist.total} students total</span>
+        <span className="ms-auto text-xs text-muted-foreground">{dist.total} students total</span>
       </CardContent>
     </Card>
   )
@@ -393,7 +393,7 @@ function TaskPreviewCard({ task }: { task: GeneratedTask }) {
           <div>
             <CardTitle className={`text-lg ${cfg.colour}`}>
               {cfg.label}
-              <Badge variant="secondary" className="ml-2 text-xs">
+              <Badge variant="secondary" className="ms-2 text-xs">
                 {cfg.tag}
               </Badge>
             </CardTitle>
@@ -448,7 +448,7 @@ function TaskPreviewCard({ task }: { task: GeneratedTask }) {
         {task.sentenceStarters.length > 0 && (
           <div>
             <p className="text-sm font-semibold">Sentence Starters</p>
-            <ul className="mt-1 list-disc pl-5 text-sm text-muted-foreground space-y-0.5">
+            <ul className="mt-1 list-disc ps-5 text-sm text-muted-foreground space-y-0.5">
               {task.sentenceStarters.map((s, i) => (
                 <li key={i}>{s}</li>
               ))}
@@ -496,7 +496,7 @@ function TaskPreviewCard({ task }: { task: GeneratedTask }) {
                   <p className="mt-0.5 text-xs text-muted-foreground">
                     {q.speaker && <span className="font-medium">{q.speaker} - </span>}
                     {q.context}
-                    {q.technique && <span className="ml-1 text-xs">({q.technique})</span>}
+                    {q.technique && <span className="ms-1 text-xs">({q.technique})</span>}
                   </p>
                 </div>
               ))}
@@ -508,7 +508,7 @@ function TaskPreviewCard({ task }: { task: GeneratedTask }) {
         {task.tips.length > 0 && (
           <div className="rounded-md border border-dashed p-3">
             <p className="text-sm font-semibold">Tips</p>
-            <ul className="mt-1 list-disc pl-5 text-sm text-muted-foreground space-y-0.5">
+            <ul className="mt-1 list-disc ps-5 text-sm text-muted-foreground space-y-0.5">
               {task.tips.map((t, i) => (
                 <li key={i}>{t}</li>
               ))}
@@ -661,7 +661,7 @@ export function DifferentiationBuilder() {
 
           {/* Generate button */}
           <Button onClick={handleGenerate} size="lg" className="w-full sm:w-auto">
-            <Sparkles className="mr-2 h-4 w-4" />
+            <Sparkles className="me-2 h-4 w-4" />
             Generate 3 Differentiated Versions
           </Button>
         </CardContent>
@@ -674,7 +674,7 @@ export function DifferentiationBuilder() {
             <h2 className="text-xl font-semibold">Preview</h2>
             <div className="flex gap-2">
               <Button variant="outline" size="sm" onClick={() => handlePrint(generated, 'all')}>
-                <Printer className="mr-2 h-4 w-4" />
+                <Printer className="me-2 h-4 w-4" />
                 Print All
               </Button>
               {LEVELS.map((level) => (
@@ -684,7 +684,7 @@ export function DifferentiationBuilder() {
                   size="sm"
                   onClick={() => handlePrint(generated, level)}
                 >
-                  <Printer className="mr-2 h-3 w-3" />
+                  <Printer className="me-2 h-3 w-3" />
                   {LEVEL_CONFIG[level].label}
                 </Button>
               ))}
@@ -776,7 +776,7 @@ export function DifferentiationBuilder() {
                           <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
                             {bank.skill}
                           </p>
-                          <ul className="mt-1 list-disc pl-4 text-sm space-y-0.5">
+                          <ul className="mt-1 list-disc ps-4 text-sm space-y-0.5">
                             {bank.starters.map((s, i) => (
                               <li key={i}>{s}</li>
                             ))}
@@ -854,7 +854,7 @@ export function DifferentiationBuilder() {
                                       {q.speaker && (
                                         <span className="font-medium">{q.speaker}</span>
                                       )}
-                                      {q.technique && <span className="ml-1">({q.technique})</span>}
+                                      {q.technique && <span className="ms-1">({q.technique})</span>}
                                     </p>
                                   </div>
                                 ))}

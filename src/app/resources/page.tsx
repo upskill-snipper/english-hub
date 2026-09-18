@@ -292,7 +292,7 @@ export default async function ResourcesPage() {
                 >
                   <Icon className="h-4 w-4 shrink-0 text-muted-foreground group-hover:text-primary transition-colors" />
                   <span className="text-sm font-medium text-foreground">{categoryNames[i]}</span>
-                  <ArrowRight className="ml-auto h-3.5 w-3.5 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
+                  <ArrowRight className="ms-auto h-3.5 w-3.5 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
                 </Link>
               )
             })}

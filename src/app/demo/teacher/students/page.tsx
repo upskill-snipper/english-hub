@@ -229,7 +229,7 @@ export default function TeacherStudentsPage() {
             <span className="text-center">{t('demo_teacher.students.col.predicted')}</span>
             <span className="text-center">{t('demo_teacher.students.col.target')}</span>
             <span className="text-center">{t('demo_teacher.students.col.status')}</span>
-            <span className="text-right">{t('demo_teacher.students.col.last_active')}</span>
+            <span className="text-end">{t('demo_teacher.students.col.last_active')}</span>
           </div>
 
           {/* Student rows */}

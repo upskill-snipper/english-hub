@@ -51,7 +51,7 @@ export default async function Paper2Page() {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="mr-1 h-4 w-4"
+              className="me-1 h-4 w-4"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -80,34 +80,34 @@ export default async function Paper2Page() {
             Paper Structure
           </h2>
           <div className="mt-4 overflow-x-auto">
-            <table className="w-full min-w-[500px] text-left text-sm">
+            <table className="w-full min-w-[500px] text-start text-sm">
               <thead>
                 <tr className="border-b-2 border-primary/20">
-                  <th className="py-3 pr-4 font-semibold text-foreground">Section</th>
-                  <th className="py-3 pr-4 font-semibold text-foreground">Task</th>
-                  <th className="py-3 pr-4 font-semibold text-foreground">Marks</th>
+                  <th className="py-3 pe-4 font-semibold text-foreground">Section</th>
+                  <th className="py-3 pe-4 font-semibold text-foreground">Task</th>
+                  <th className="py-3 pe-4 font-semibold text-foreground">Marks</th>
                   <th className="py-3 font-semibold text-foreground">{tr(`Suggested Time`)}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border text-muted-foreground">
                 <tr>
-                  <td className="py-3 pr-4 font-medium">Section 1</td>
-                  <td className="py-3 pr-4">
+                  <td className="py-3 pe-4 font-medium">Section 1</td>
+                  <td className="py-3 pe-4">
                     {tr(
                       `Directed Writing &mdash; write in a specified format using ideas from a passage and your own ideas`,
                     )}
                   </td>
-                  <td className="py-3 pr-4">40 (25 content + 15 language)</td>
+                  <td className="py-3 pe-4">40 (25 content + 15 language)</td>
                   <td className="py-3">45 minutes</td>
                 </tr>
                 <tr>
-                  <td className="py-3 pr-4 font-medium">Section 2</td>
-                  <td className="py-3 pr-4">
+                  <td className="py-3 pe-4 font-medium">Section 2</td>
+                  <td className="py-3 pe-4">
                     {tr(
                       `Composition &mdash; choose one from a selection of narrative OR descriptive titles`,
                     )}
                   </td>
-                  <td className="py-3 pr-4">40 (16 content/structure + 24 language/style)</td>
+                  <td className="py-3 pe-4">40 (16 content/structure + 24 language/style)</td>
                   <td className="py-3">60 minutes</td>
                 </tr>
               </tbody>

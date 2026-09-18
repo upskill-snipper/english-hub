@@ -166,7 +166,7 @@ function FlightPath({
   return (
     <div className="relative h-6 w-full min-w-[120px]">
       {/* Track */}
-      <div className="absolute top-1/2 left-0 right-0 -translate-y-1/2 h-1 rounded-full bg-border" />
+      <div className="absolute top-1/2 start-0 end-0 -translate-y-1/2 h-1 rounded-full bg-border" />
 
       {/* Starting grade marker */}
       {starting !== null && starting >= 1 && (
@@ -343,7 +343,7 @@ export function GradeTracker({ students, className }: GradeTrackerProps) {
         className={cn(
           'px-3 py-2.5 font-medium text-muted-foreground cursor-pointer select-none hover:text-foreground transition-colors whitespace-nowrap text-xs',
           align === 'center' && 'text-center',
-          align === 'right' && 'text-right',
+          align === 'right' && 'text-end',
         )}
         role="columnheader"
         tabIndex={0}

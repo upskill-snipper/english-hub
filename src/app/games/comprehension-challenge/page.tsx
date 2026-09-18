@@ -611,7 +611,7 @@ export default function ComprehensionChallengePage() {
                       onClick={() => handleSelect(i)}
                       disabled={showFeedback}
                       className={cn(
-                        'rounded-xl border px-4 py-3 text-left text-sm font-medium transition-all duration-200',
+                        'rounded-xl border px-4 py-3 text-start text-sm font-medium transition-all duration-200',
                         style,
                         !showFeedback && 'cursor-pointer active:translate-y-px',
                       )}

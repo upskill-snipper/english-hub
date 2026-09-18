@@ -394,13 +394,13 @@ export default function RomeoAndJulietCharactersPage() {
 
         {/* Hero */}
         <section className="relative mt-8 overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-rose-500/[0.04] p-6 sm:p-8 lg:p-10">
-          <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-rose-500/5 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl" />
+          <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-rose-500/5 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-16 -start-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl" />
           <div className="relative">
             <Button
               variant="ghost"
               size="sm"
-              className="mb-4 -ml-2 text-muted-foreground"
+              className="mb-4 -ms-2 text-muted-foreground"
               render={<Link href="/revision/texts/romeo-and-juliet" />}
             >
               <ArrowLeft className="size-3.5" />
@@ -409,7 +409,7 @@ export default function RomeoAndJulietCharactersPage() {
 
             <div className="mb-4 flex flex-wrap items-center gap-2">
               <Badge variant="secondary">
-                <Users className="mr-1 size-3 text-rose-400" />
+                <Users className="me-1 size-3 text-rose-400" />
                 {t('rev.texts.common.character_study_badge')}
               </Badge>
               <Badge variant="outline" className="text-muted-foreground">
@@ -488,7 +488,7 @@ export default function RomeoAndJulietCharactersPage() {
                 </Card>
 
                 {/* Theme links */}
-                <Card className="border-l-4 border-l-rose-400">
+                <Card className="border-s-4 border-s-rose-400">
                   <CardContent className="p-5">
                     <p className="text-sm font-semibold text-foreground mb-2">
                       {t('rev.texts.common.theme_links')}

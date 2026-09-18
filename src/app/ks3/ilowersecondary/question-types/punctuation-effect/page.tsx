@@ -345,7 +345,7 @@ export default async function PunctuationEffectPage() {
             {WORKED_EXAMPLES.map((ex, i) => (
               <li key={ex.id} className="rounded-lg bg-muted p-6 border border-border/60">
                 <p className="mb-3 font-mono text-xs font-semibold text-primary">Extract {i + 1}</p>
-                <p className="mb-4 border-l-4 border-primary/40 pl-4 font-heading text-base italic leading-relaxed text-foreground">
+                <p className="mb-4 border-s-4 border-primary/40 ps-4 font-heading text-base italic leading-relaxed text-foreground">
                   {ex.extract}
                 </p>
                 <p className="mb-4 text-sm font-semibold text-foreground">{ex.question}</p>
@@ -376,7 +376,7 @@ export default async function PunctuationEffectPage() {
                 Worked example of a feature-tick table comparing two original texts
               </caption>
               <thead>
-                <tr className="bg-card text-left">
+                <tr className="bg-card text-start">
                   <th scope="col" className="p-3 font-semibold text-foreground">
                     Feature
                   </th>

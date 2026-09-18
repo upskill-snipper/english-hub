@@ -41,7 +41,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         ]}
       />
       <div className="bg-muted text-muted-foreground border-b py-2 text-center text-sm">
-        <span className="inline-flex items-center gap-1 rounded-full bg-amber-500/10 px-2 py-0.5 text-[11px] font-medium uppercase tracking-wide text-amber-700 mr-1.5">
+        <span className="inline-flex items-center gap-1 rounded-full bg-amber-500/10 px-2 py-0.5 text-[11px] font-medium uppercase tracking-wide text-amber-700 me-1.5">
           Early Access
         </span>
         Teacher plans from{' '}

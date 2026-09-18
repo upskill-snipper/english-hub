@@ -302,7 +302,7 @@ function ResourcesContent({ lesson }: { lesson: LessonExample }) {
           <p className="text-sm text-white/70">{resource.title}</p>
           <button
             type="button"
-            className="ml-auto shrink-0 rounded px-2 py-0.5 text-[11px] text-white/30 hover:text-white/60 hover:bg-white/[0.06] transition-colors"
+            className="ms-auto shrink-0 rounded px-2 py-0.5 text-[11px] text-white/30 hover:text-white/60 hover:bg-white/[0.06] transition-colors"
           >
             View
           </button>

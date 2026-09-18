@@ -529,7 +529,7 @@ function IntroPanel({ t, onStart }: { t: TFn; onStart: () => void }) {
 
       <Button size="lg" className="w-full sm:w-auto" onClick={onStart}>
         {t('ielts.diagnostic.intro.start')}
-        <ArrowRight className="ml-2 h-4 w-4" />
+        <ArrowRight className="ms-2 h-4 w-4" />
       </Button>
     </div>
   )
@@ -701,7 +701,7 @@ function QuestionsPanel({
           </p>
         )}
         <Button size="lg" className="w-full sm:w-auto" onClick={onSubmit} disabled={!allAnswered}>
-          <Sparkles className="mr-2 h-4 w-4" />
+          <Sparkles className="me-2 h-4 w-4" />
           {t('ielts.diagnostic.cta.see_bands')}
         </Button>
       </div>
@@ -753,7 +753,7 @@ function TranscriptBlock({ t, title, body }: { t: TFn; title: string; body: stri
       <div className="mb-3 flex items-center gap-2">
         <Headphones className="h-4 w-4 text-muted-foreground" />
         <h3 className="font-serif text-lg font-medium">{title}</h3>
-        <Badge variant="outline" className="ml-auto text-xs">
+        <Badge variant="outline" className="ms-auto text-xs">
           {t('ielts.diagnostic.transcript')}
         </Badge>
       </div>
@@ -858,7 +858,7 @@ function OptionButton({
     <button
       type="button"
       onClick={onClick}
-      className={`flex w-full items-center gap-3 rounded-lg border px-3 py-2.5 text-left text-sm transition-colors ${
+      className={`flex w-full items-center gap-3 rounded-lg border px-3 py-2.5 text-start text-sm transition-colors ${
         selected
           ? 'border-primary bg-primary/10 text-primary'
           : 'border-border bg-background hover:border-primary/40 hover:bg-accent'
@@ -924,7 +924,7 @@ function WritingTaskBlock({
         disabled={done}
         className="min-h-[180px] resize-y"
       />
-      <div className="mt-1 text-right text-xs tabular-nums text-muted-foreground">
+      <div className="mt-1 text-end text-xs tabular-nums text-muted-foreground">
         {t('ielts.diagnostic.writing.words', { count: words })}
       </div>
 
@@ -1105,12 +1105,12 @@ function AssessControls({
         <Button onClick={onAssess} disabled={!canSubmit}>
           {assessing ? (
             <>
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              <Loader2 className="me-2 h-4 w-4 animate-spin" />
               {t(assessingLabelKey)}
             </>
           ) : (
             <>
-              <Sparkles className="mr-2 h-4 w-4" />
+              <Sparkles className="me-2 h-4 w-4" />
               {t(assessLabelKey)}
             </>
           )}
@@ -1322,10 +1322,10 @@ function ResultPanel({
       <div className="flex flex-col gap-3 sm:flex-row">
         <Button size="lg" render={<Link href="/ielts/plan" />}>
           {t('ielts.diagnostic.cta.build_plan')}
-          <ArrowRight className="ml-2 h-4 w-4" />
+          <ArrowRight className="ms-2 h-4 w-4" />
         </Button>
         <Button variant="outline" size="lg" onClick={onRetake}>
-          <RotateCcw className="mr-2 h-4 w-4" />
+          <RotateCcw className="me-2 h-4 w-4" />
           {t('ielts.diagnostic.cta.retake')}
         </Button>
       </div>

@@ -64,9 +64,7 @@ const SCHOOL_TYPES = [
   { value: 'other', label: 'Other' },
 ]
 
-const YEAR_GROUPS = [
-  'Year 7', 'Year 8', 'Year 9', 'Year 10', 'Year 11', 'Year 12', 'Year 13',
-]
+const YEAR_GROUPS = ['Year 7', 'Year 8', 'Year 9', 'Year 10', 'Year 11', 'Year 12', 'Year 13']
 
 const EXAM_BOARDS = [
   { value: 'aqa', label: 'AQA' },
@@ -220,28 +218,22 @@ export function OnboardingWizard() {
     <K extends keyof OnboardingData>(key: K, value: OnboardingData[K]) => {
       setData((prev) => ({ ...prev, [key]: value }))
     },
-    []
+    [],
   )
 
-  const updateSchool = useCallback(
-    (field: keyof OnboardingData['school'], value: string) => {
-      setData((prev) => ({
-        ...prev,
-        school: { ...prev.school, [field]: value },
-      }))
-    },
-    []
-  )
+  const updateSchool = useCallback((field: keyof OnboardingData['school'], value: string) => {
+    setData((prev) => ({
+      ...prev,
+      school: { ...prev.school, [field]: value },
+    }))
+  }, [])
 
-  const updateClass = useCallback(
-    (field: keyof OnboardingData['firstClass'], value: string) => {
-      setData((prev) => ({
-        ...prev,
-        firstClass: { ...prev.firstClass, [field]: value },
-      }))
-    },
-    []
-  )
+  const updateClass = useCallback((field: keyof OnboardingData['firstClass'], value: string) => {
+    setData((prev) => ({
+      ...prev,
+      firstClass: { ...prev.firstClass, [field]: value },
+    }))
+  }, [])
 
   const updateAnalytics = useCallback(
     (field: keyof OnboardingData['analytics'], value: string | boolean) => {
@@ -250,24 +242,21 @@ export function OnboardingWizard() {
         analytics: { ...prev.analytics, [field]: value },
       }))
     },
-    []
+    [],
   )
 
-  const animateTransition = useCallback(
-    (dir: 'forward' | 'backward', callback: () => void) => {
-      setDirection(dir)
-      setIsAnimating(true)
-      // Short delay for exit animation
-      setTimeout(() => {
-        callback()
-        // Allow enter animation
-        requestAnimationFrame(() => {
-          setIsAnimating(false)
-        })
-      }, 200)
-    },
-    []
-  )
+  const animateTransition = useCallback((dir: 'forward' | 'backward', callback: () => void) => {
+    setDirection(dir)
+    setIsAnimating(true)
+    // Short delay for exit animation
+    setTimeout(() => {
+      callback()
+      // Allow enter animation
+      requestAnimationFrame(() => {
+        setIsAnimating(false)
+      })
+    }, 200)
+  }, [])
 
   const goNext = useCallback(() => {
     if (currentStep < totalSteps - 1) {
@@ -294,7 +283,7 @@ export function OnboardingWizard() {
         })
       }
     },
-    [currentStep, totalSteps, animateTransition, updateData]
+    [currentStep, totalSteps, animateTransition, updateData],
   )
 
   const handleComplete = useCallback(() => {
@@ -331,8 +320,8 @@ export function OnboardingWizard() {
           Welcome to The English Hub
         </h2>
         <p className="text-muted-foreground max-w-lg mx-auto leading-relaxed">
-          We are glad you are here. Let us get you set up so you can start
-          making the most of your teaching experience.
+          We are glad you are here. Let us get you set up so you can start making the most of your
+          teaching experience.
         </p>
       </div>
       <Separator className="my-2" />
@@ -361,7 +350,7 @@ export function OnboardingWizard() {
         ].map(({ icon: Icon, title, desc }) => (
           <div
             key={title}
-            className="flex items-start gap-3 rounded-lg border border-border/60 p-3 text-left"
+            className="flex items-start gap-3 rounded-lg border border-border/60 p-3 text-start"
           >
             <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-primary/10">
               <Icon className="h-4 w-4 text-primary" />
@@ -382,9 +371,7 @@ export function OnboardingWizard() {
   const renderSchoolSetup = () => (
     <div className="space-y-6">
       <div className="text-center space-y-1">
-        <h2 className="text-xl font-bold tracking-tight sm:text-2xl">
-          Set Up Your School
-        </h2>
+        <h2 className="text-xl font-bold tracking-tight sm:text-2xl">Set Up Your School</h2>
         <p className="text-sm text-muted-foreground">
           Tell us about your school so we can personalise your experience.
         </p>
@@ -470,9 +457,7 @@ export function OnboardingWizard() {
   const renderCreateClass = () => (
     <div className="space-y-6">
       <div className="text-center space-y-1">
-        <h2 className="text-xl font-bold tracking-tight sm:text-2xl">
-          Create Your First Class
-        </h2>
+        <h2 className="text-xl font-bold tracking-tight sm:text-2xl">Create Your First Class</h2>
         <p className="text-sm text-muted-foreground">
           Set up a class to organise your students and assign work.
         </p>
@@ -548,9 +533,7 @@ export function OnboardingWizard() {
   const renderInviteStudents = () => (
     <div className="space-y-6">
       <div className="text-center space-y-1">
-        <h2 className="text-xl font-bold tracking-tight sm:text-2xl">
-          Invite Students
-        </h2>
+        <h2 className="text-xl font-bold tracking-tight sm:text-2xl">Invite Students</h2>
         <p className="text-sm text-muted-foreground">
           Share a join code with your students, or upload a student list.
         </p>
@@ -563,7 +546,7 @@ export function OnboardingWizard() {
             'cursor-pointer transition-all duration-200',
             data.students.method === 'code'
               ? 'border-primary/50 ring-2 ring-primary/20'
-              : 'hover:border-border'
+              : 'hover:border-border',
           )}
           onClick={handleGenerateCode}
         >
@@ -572,9 +555,7 @@ export function OnboardingWizard() {
               <ClipboardList className="h-5 w-5 text-primary" />
             </div>
             <CardTitle className="text-base">Generate Join Code</CardTitle>
-            <CardDescription>
-              Students enter the code to join your class instantly.
-            </CardDescription>
+            <CardDescription>Students enter the code to join your class instantly.</CardDescription>
           </CardHeader>
         </Card>
 
@@ -584,7 +565,7 @@ export function OnboardingWizard() {
             'cursor-pointer transition-all duration-200',
             data.students.method === 'upload'
               ? 'border-primary/50 ring-2 ring-primary/20'
-              : 'hover:border-border'
+              : 'hover:border-border',
           )}
           onClick={() =>
             setData((prev) => ({
@@ -627,8 +608,8 @@ export function OnboardingWizard() {
             </Button>
           </div>
           <p className="text-xs text-muted-foreground">
-            Share this code with your students. They can enter it at the join page
-            to connect to your class.
+            Share this code with your students. They can enter it at the join page to connect to
+            your class.
           </p>
         </div>
       )}
@@ -658,9 +639,7 @@ export function OnboardingWizard() {
     return (
       <div className="space-y-6">
         <div className="text-center space-y-1">
-          <h2 className="text-xl font-bold tracking-tight sm:text-2xl">
-            Explore Lesson Plans
-          </h2>
+          <h2 className="text-xl font-bold tracking-tight sm:text-2xl">Explore Lesson Plans</h2>
           <p className="text-sm text-muted-foreground">
             {board
               ? `Here are popular lessons for ${boardLabel}. You can browse more from the dashboard.`
@@ -693,9 +672,8 @@ export function OnboardingWizard() {
         <div className="rounded-lg bg-primary/5 border border-primary/10 p-4 text-center space-y-2">
           <Lightbulb className="h-5 w-5 mx-auto text-primary" />
           <p className="text-sm">
-            <span className="font-medium">Quick tip:</span> You can assign any
-            lesson directly to a class from the Lessons page. Students receive
-            it in their dashboard instantly.
+            <span className="font-medium">Quick tip:</span> You can assign any lesson directly to a
+            class from the Lessons page. Students receive it in their dashboard instantly.
           </p>
         </div>
       </div>
@@ -705,9 +683,7 @@ export function OnboardingWizard() {
   const renderAnalytics = () => (
     <div className="space-y-6">
       <div className="text-center space-y-1">
-        <h2 className="text-xl font-bold tracking-tight sm:text-2xl">
-          Set Up Analytics
-        </h2>
+        <h2 className="text-xl font-bold tracking-tight sm:text-2xl">Set Up Analytics</h2>
         <p className="text-sm text-muted-foreground">
           Understand what tracking is available and optionally set class targets.
         </p>
@@ -731,10 +707,7 @@ export function OnboardingWizard() {
             desc: 'Compare progress between classes and year groups.',
           },
         ].map(({ icon: Icon, title, desc }) => (
-          <div
-            key={title}
-            className="rounded-lg border border-border/60 p-4 space-y-2"
-          >
+          <div key={title} className="rounded-lg border border-border/60 p-4 space-y-2">
             <div className="flex h-9 w-9 items-center justify-center rounded-md bg-primary/10">
               <Icon className="h-4 w-4 text-primary" />
             </div>
@@ -809,12 +782,9 @@ export function OnboardingWizard() {
           <PartyPopper className="h-10 w-10 text-green-600 dark:text-green-400" />
         </div>
         <div className="space-y-2">
-          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
-            You are all set!
-          </h2>
+          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">You are all set!</h2>
           <p className="text-muted-foreground max-w-md mx-auto leading-relaxed">
-            Your account is ready to go. Here is a summary of what you have
-            configured.
+            Your account is ready to go. Here is a summary of what you have configured.
           </p>
         </div>
 
@@ -828,9 +798,7 @@ export function OnboardingWizard() {
                 <CheckCircle
                   className={cn(
                     'h-4 w-4',
-                    item.done
-                      ? 'text-green-600 dark:text-green-400'
-                      : 'text-muted-foreground/70'
+                    item.done ? 'text-green-600 dark:text-green-400' : 'text-muted-foreground/70',
                   )}
                 />
                 <span className="text-sm font-medium">{item.label}</span>
@@ -865,7 +833,7 @@ export function OnboardingWizard() {
 
         <Button size="lg" className="mt-2" onClick={handleComplete}>
           Go to Dashboard
-          <ArrowRight className="ml-2 h-4 w-4" />
+          <ArrowRight className="ms-2 h-4 w-4" />
         </Button>
       </div>
     )
@@ -917,7 +885,7 @@ export function OnboardingWizard() {
                   ? 'text-primary font-semibold'
                   : isCompleted
                     ? 'text-primary/60 cursor-pointer hover:text-primary'
-                    : 'text-muted-foreground/70 cursor-pointer hover:text-muted-foreground'
+                    : 'text-muted-foreground/70 cursor-pointer hover:text-muted-foreground',
               )}
               aria-label={`Go to step: ${step.label}`}
             >
@@ -928,18 +896,12 @@ export function OnboardingWizard() {
                     ? 'border-primary bg-primary/10'
                     : isCompleted
                       ? 'border-primary/40 bg-primary/5'
-                      : 'border-muted-foreground/20'
+                      : 'border-muted-foreground/20',
                 )}
               >
-                {isCompleted ? (
-                  <Check className="h-3.5 w-3.5" />
-                ) : (
-                  <Icon className="h-3.5 w-3.5" />
-                )}
+                {isCompleted ? <Check className="h-3.5 w-3.5" /> : <Icon className="h-3.5 w-3.5" />}
               </div>
-              <span className="hidden lg:inline max-w-[80px] truncate">
-                {step.label}
-              </span>
+              <span className="hidden lg:inline max-w-[80px] truncate">{step.label}</span>
             </button>
           )
         })}
@@ -955,7 +917,7 @@ export function OnboardingWizard() {
               ? direction === 'forward'
                 ? 'opacity-0 translate-x-4'
                 : 'opacity-0 -translate-x-4'
-              : 'opacity-100 translate-x-0'
+              : 'opacity-100 translate-x-0',
           )}
         >
           {stepRenderers[currentStep]()}
@@ -965,12 +927,7 @@ export function OnboardingWizard() {
       {/* ── Navigation ────────────────────────────────────────────────── */}
       {!isDone && (
         <div className="flex items-center justify-between gap-3">
-          <Button
-            variant="outline"
-            onClick={goBack}
-            disabled={currentStep === 0}
-            className="gap-2"
-          >
+          <Button variant="outline" onClick={goBack} disabled={currentStep === 0} className="gap-2">
             <ArrowLeft className="h-4 w-4" />
             Back
           </Button>

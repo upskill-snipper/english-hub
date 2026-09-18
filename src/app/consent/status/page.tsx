@@ -245,9 +245,9 @@ export default function ConsentStatusPage() {
                 <div className="flex flex-col gap-2">
                   <Button className="w-full" disabled={sending} onClick={handleSend}>
                     {sending ? (
-                      <Loader2 className="h-4 w-4 animate-spin mr-2" />
+                      <Loader2 className="h-4 w-4 animate-spin me-2" />
                     ) : (
-                      <Mail className="h-4 w-4 mr-2" />
+                      <Mail className="h-4 w-4 me-2" />
                     )}
                     {sending
                       ? t('consent.guardian.sending')

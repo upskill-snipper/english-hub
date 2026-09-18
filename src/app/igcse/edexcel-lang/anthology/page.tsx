@@ -142,7 +142,7 @@ export default async function AnthologyHubPage() {
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/igcse/edexcel-lang" />}
         >
           <ArrowLeft className="size-3.5" />
@@ -152,13 +152,13 @@ export default async function AnthologyHubPage() {
 
       {/* ── Hero ────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-amber-50/40 via-card to-primary/[0.04] p-6 sm:p-8 lg:p-10 dark:from-amber-950/20">
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-amber-500/5 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-primary/5 blur-3xl" />
+        <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-amber-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-16 -start-16 h-48 w-48 rounded-full bg-primary/5 blur-3xl" />
 
         <div className="relative">
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="bg-amber-500/10 text-amber-700 border-amber-500/20 dark:text-clay-600">
-              <Sparkles className="mr-1 size-3" />
+              <Sparkles className="me-1 size-3" />
               {await t('anth_page.badge_paper')}
             </Badge>
             <Badge variant="secondary">{await t('anth_page.badge_texts_count')}</Badge>
@@ -197,7 +197,7 @@ export default async function AnthologyHubPage() {
           <strong className="text-foreground">{await t('anth_page.version_warning_label')}</strong>{' '}
           {await t('anth_page.version_warning_body')}
         </p>
-        <ol className="mb-2 list-decimal space-y-1 pl-5 text-muted-foreground">
+        <ol className="mb-2 list-decimal space-y-1 ps-5 text-muted-foreground">
           <li>
             &lsquo;<em>Explorers or boys messing about?</em>&rsquo; by{' '}
             <strong className="text-foreground">Steven Morris</strong> &mdash; originally published
@@ -237,7 +237,7 @@ export default async function AnthologyHubPage() {
           <h2 className="text-heading-lg font-heading text-foreground">
             {await t('anth_page.texts_heading')}
           </h2>
-          <Badge variant="secondary" className="ml-auto">
+          <Badge variant="secondary" className="ms-auto">
             {await t('anth_page.badge_texts_count')}
           </Badge>
         </div>
@@ -303,7 +303,7 @@ export default async function AnthologyHubPage() {
         </div>
         <div className="space-y-4 text-body-sm text-foreground">
           <p>{await t('anth_page.expect_intro')}</p>
-          <ol className="list-decimal space-y-2 pl-5">
+          <ol className="list-decimal space-y-2 ps-5">
             <li>
               <strong>{await t('anth_page.expect_q1_label')}</strong>{' '}
               {await t('anth_page.expect_q1_body')}

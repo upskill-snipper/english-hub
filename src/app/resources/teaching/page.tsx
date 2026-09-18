@@ -262,7 +262,7 @@ export default function TeachingResourcesHub() {
                 }`}
               >
                 {section.comingSoon && (
-                  <span className="absolute right-4 top-4 rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
+                  <span className="absolute end-4 top-4 rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
                     {t('resources.teaching.cards.coming')}
                   </span>
                 )}
@@ -312,7 +312,7 @@ export default function TeachingResourcesHub() {
             {SPEC_LINKS.map((board) => (
               <div
                 key={board.board}
-                className={`rounded-xl border-l-4 ${board.color} bg-card p-5 shadow-md`}
+                className={`rounded-xl border-s-4 ${board.color} bg-card p-5 shadow-md`}
               >
                 <h3 className="font-bold text-foreground">{board.board}</h3>
                 <ul className="mt-3 space-y-2">

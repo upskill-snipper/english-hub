@@ -481,7 +481,7 @@ export default function AffiliateDashboard({
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="border-b border-border text-left text-muted-foreground bg-secondary/30">
+                    <tr className="border-b border-border text-start text-muted-foreground bg-secondary/30">
                       <th className="px-5 py-3 font-medium">
                         {t('aff_comp.dash.earnings.col_referral')}
                       </th>
@@ -766,7 +766,7 @@ export default function AffiliateDashboard({
                             : t('aff_comp.dash.activity.new_signup')
                           : t('aff_comp.dash.activity.payout_processed')}
                         {item.amount != null && (
-                          <span className="font-semibold text-primary ml-1">
+                          <span className="font-semibold text-primary ms-1">
                             {formatGBP(item.amount)}
                           </span>
                         )}

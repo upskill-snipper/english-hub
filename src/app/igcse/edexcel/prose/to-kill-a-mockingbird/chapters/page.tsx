@@ -929,7 +929,7 @@ export default async function TkamChaptersPage() {
         <div className="relative">
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="border-primary/20 bg-primary/10 text-primary">
-              <Sparkles className="mr-1 size-3" />
+              <Sparkles className="me-1 size-3" />
               {await t('igcse.page.badge_edexcel_lit')}
             </Badge>
             <Badge variant="secondary">{await t('igcse.page.section.chapter_analysis')}</Badge>
@@ -1018,11 +1018,11 @@ export default async function TkamChaptersPage() {
                   <div className="mt-2 space-y-3">
                     {ch.quotes.map((q, i) => (
                       <div key={i}>
-                        <blockquote className="border-l-2 border-primary/40 pl-3 text-body-sm italic text-foreground">
+                        <blockquote className="border-s-2 border-primary/40 ps-3 text-body-sm italic text-foreground">
                           &ldquo;{q.text}&rdquo;
                         </blockquote>
-                        <p className="mt-1 pl-3 text-body-xs text-muted-foreground">
-                          <Feather className="mr-1 inline size-3 text-primary/60" />
+                        <p className="mt-1 ps-3 text-body-xs text-muted-foreground">
+                          <Feather className="me-1 inline size-3 text-primary/60" />
                           {q.technique}
                         </p>
                       </div>
@@ -1094,11 +1094,11 @@ export default async function TkamChaptersPage() {
                   <div className="mt-2 space-y-3">
                     {ch.quotes.map((q, i) => (
                       <div key={i}>
-                        <blockquote className="border-l-2 border-primary/40 pl-3 text-body-sm italic text-foreground">
+                        <blockquote className="border-s-2 border-primary/40 ps-3 text-body-sm italic text-foreground">
                           &ldquo;{q.text}&rdquo;
                         </blockquote>
-                        <p className="mt-1 pl-3 text-body-xs text-muted-foreground">
-                          <Feather className="mr-1 inline size-3 text-primary/60" />
+                        <p className="mt-1 ps-3 text-body-xs text-muted-foreground">
+                          <Feather className="me-1 inline size-3 text-primary/60" />
                           {q.technique}
                         </p>
                       </div>

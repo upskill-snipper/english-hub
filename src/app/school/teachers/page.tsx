@@ -269,7 +269,7 @@ function ActionMenu({ teacher, t, onEdit, onSuspend, onRemove }: ActionMenuProps
       {open && (
         <>
           <div className="fixed inset-0 z-30" onClick={() => setOpen(false)} />
-          <div className="absolute right-0 z-40 mt-1 w-48 rounded-lg border border-border bg-popover py-1 shadow-lg ring-1 ring-foreground/10">
+          <div className="absolute end-0 z-40 mt-1 w-48 rounded-lg border border-border bg-popover py-1 shadow-lg ring-1 ring-foreground/10">
             <button
               className="flex w-full items-center gap-2.5 px-3 py-1.5 text-sm text-foreground hover:bg-accent"
               onClick={() => {
@@ -692,16 +692,16 @@ export default function TeachersPage() {
         {/* Filter bar */}
         <div className="flex flex-wrap items-center gap-2">
           <div className="relative">
-            <Search className="pointer-events-none absolute left-2.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+            <Search className="pointer-events-none absolute start-2.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
             <Input
               placeholder={t('school.teachers.search_placeholder')}
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="h-8 w-64 pl-8 text-sm"
+              className="h-8 w-64 ps-8 text-sm"
             />
             {search && (
               <button
-                className="absolute right-2.5 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                className="absolute end-2.5 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
                 onClick={() => setSearch('')}
                 aria-label={t('school.teachers.aria.clear_search')}
               >
@@ -759,7 +759,7 @@ export default function TeachersPage() {
             <span className="text-sm font-medium">
               {selected.size} {t('school.teachers.selected_count')}
             </span>
-            <div className="ml-auto flex flex-wrap items-center gap-2">
+            <div className="ms-auto flex flex-wrap items-center gap-2">
               <Button
                 size="xs"
                 variant="outline"
@@ -804,7 +804,7 @@ export default function TeachersPage() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-white/5 bg-muted/30">
-                  <th className="w-10 px-4 py-3 text-left">
+                  <th className="w-10 px-4 py-3 text-start">
                     <input
                       type="checkbox"
                       checked={allPageSelected}
@@ -814,25 +814,25 @@ export default function TeachersPage() {
                       disabled={loading || paginated.length === 0}
                     />
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                  <th className="px-4 py-3 text-start text-xs font-medium uppercase tracking-wide text-muted-foreground">
                     {t('school.teachers.col.name')}
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                  <th className="px-4 py-3 text-start text-xs font-medium uppercase tracking-wide text-muted-foreground">
                     {t('school.teachers.col.email')}
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                  <th className="px-4 py-3 text-start text-xs font-medium uppercase tracking-wide text-muted-foreground">
                     {t('school.teachers.col.role')}
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                  <th className="px-4 py-3 text-start text-xs font-medium uppercase tracking-wide text-muted-foreground">
                     {t('school.teachers.col.classes')}
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                  <th className="px-4 py-3 text-start text-xs font-medium uppercase tracking-wide text-muted-foreground">
                     {t('school.teachers.col.last_active')}
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                  <th className="px-4 py-3 text-start text-xs font-medium uppercase tracking-wide text-muted-foreground">
                     {t('school.teachers.col.status')}
                   </th>
-                  <th className="px-4 py-3 text-right text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                  <th className="px-4 py-3 text-end text-xs font-medium uppercase tracking-wide text-muted-foreground">
                     {t('school.teachers.col.actions')}
                   </th>
                 </tr>
@@ -956,7 +956,7 @@ export default function TeachersPage() {
                       <td className="px-4 py-3">
                         <StatusBadge status={teacher.status} t={t} />
                       </td>
-                      <td className="px-4 py-3 text-right">
+                      <td className="px-4 py-3 text-end">
                         <ActionMenu
                           teacher={teacher}
                           t={t}

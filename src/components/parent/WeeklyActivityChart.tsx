@@ -50,7 +50,7 @@ export function WeeklyActivityChart({ title, description, data }: WeeklyActivity
             <CardTitle className="text-base">{resolvedTitle}</CardTitle>
             <CardDescription>{resolvedDescription}</CardDescription>
           </div>
-          <div className="text-right">
+          <div className="text-end">
             <p className="text-xs text-muted-foreground">{t('parent.weekly.avg_per_week')}</p>
             <p className="text-sm font-bold text-foreground">
               {formatMinutes(averageMinutes, mShort, hShort, zero)}

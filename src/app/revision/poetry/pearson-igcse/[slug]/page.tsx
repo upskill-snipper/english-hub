@@ -84,7 +84,7 @@ async function BrightLightsOfSarajevoStudyGuide() {
           <Button
             variant="ghost"
             size="sm"
-            className="mb-4 -ml-2 text-muted-foreground"
+            className="mb-4 -ms-2 text-muted-foreground"
             render={<Link href="/revision/poetry/pearson-igcse" />}
           >
             <ArrowLeft className="size-3.5" />

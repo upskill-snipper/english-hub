@@ -235,7 +235,7 @@ export function CEFRProgressCard() {
                 )}
               </div>
             ) : (
-              <div className="text-center sm:text-right">
+              <div className="text-center sm:text-end">
                 <PanelEyebrow>Composite</PanelEyebrow>
                 <p className="font-heading text-2xl font-extrabold text-primary">-</p>
                 {latest.confidence != null && (

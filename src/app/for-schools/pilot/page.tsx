@@ -276,7 +276,7 @@ export default async function SchoolPilotPackPage() {
                     <h3 className="text-xl font-bold text-foreground">{phase.title}</h3>
                   </div>
                 </div>
-                <ul className="space-y-2.5 pl-1">
+                <ul className="space-y-2.5 ps-1">
                   {phase.points.map((p) => (
                     <li key={p} className="flex items-start gap-3 text-sm text-foreground/85">
                       <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
@@ -453,7 +453,7 @@ export default async function SchoolPilotPackPage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Button size="lg" className="text-base px-8 h-12" render={<Link href="/contact" />}>
-              <Mail className="w-4 h-4 mr-2" />
+              <Mail className="w-4 h-4 me-2" />
               {await t('mkt.schools.pilot.cta.request')}
             </Button>
             <Button

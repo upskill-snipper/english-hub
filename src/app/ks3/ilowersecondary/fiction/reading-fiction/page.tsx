@@ -297,7 +297,7 @@ export default async function ReadingFictionPage() {
           <h3 className="text-base font-semibold mb-3">
             Extract &mdash; &ldquo;The paler grey&rdquo;
           </h3>
-          <div className="space-y-3 border-l-2 border-primary/30 pl-4">
+          <div className="space-y-3 border-s-2 border-primary/30 ps-4">
             {EXTRACT_LINES.map((line, i) => (
               <p key={i} className="text-sm leading-relaxed text-muted-foreground">
                 {line}
@@ -347,7 +347,7 @@ export default async function ReadingFictionPage() {
                 <span className="text-destructive font-mono">×</span>
                 <span>{p.label}</span>
               </p>
-              <p className="text-xs text-muted-foreground leading-relaxed pl-6">{p.text}</p>
+              <p className="text-xs text-muted-foreground leading-relaxed ps-6">{p.text}</p>
             </div>
           ))}
         </div>

@@ -1,6 +1,6 @@
-"use client";
+'use client'
 
-import { useState } from "react";
+import { useState } from 'react'
 
 /* ─── Expandable Section Component ─────────────────────────── */
 
@@ -10,24 +10,24 @@ function Section({
   defaultOpen = false,
   children,
 }: {
-  title: string;
-  icon: string;
-  defaultOpen?: boolean;
-  children: React.ReactNode;
+  title: string
+  icon: string
+  defaultOpen?: boolean
+  children: React.ReactNode
 }) {
-  const [open, setOpen] = useState(defaultOpen);
+  const [open, setOpen] = useState(defaultOpen)
   return (
     <div className="mb-4 rounded-xl border border-border bg-card shadow-md overflow-hidden">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left hover:bg-muted transition-colors"
+        className="flex w-full items-center justify-between px-5 py-4 text-start hover:bg-muted transition-colors"
       >
         <span className="flex items-center gap-3">
           <span className="text-xl">{icon}</span>
           <span className="text-lg font-bold text-foreground">{title}</span>
         </span>
         <svg
-          className={`h-5 w-5 text-muted-foreground transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          className={`h-5 w-5 text-muted-foreground transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={2}
@@ -38,17 +38,25 @@ function Section({
       </button>
       {open && <div className="border-t border-border px-5 py-5">{children}</div>}
     </div>
-  );
+  )
 }
 
-function QuoteCard({ quote, speaker, analysis }: { quote: string; speaker?: string; analysis: string }) {
+function QuoteCard({
+  quote,
+  speaker,
+  analysis,
+}: {
+  quote: string
+  speaker?: string
+  analysis: string
+}) {
   return (
-    <div className="rounded-lg border-l-4 border-rose-400 bg-rose-500/5 p-4 mb-3">
+    <div className="rounded-lg border-s-4 border-rose-400 bg-rose-500/5 p-4 mb-3">
       <p className="text-sm font-semibold text-rose-900 italic">&ldquo;{quote}&rdquo;</p>
       {speaker && <p className="mt-1 text-xs font-medium text-rose-600">&mdash; {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
-  );
+  )
 }
 
 function CharacterCard({ name, description }: { name: string; description: string }) {
@@ -57,7 +65,7 @@ function CharacterCard({ name, description }: { name: string; description: strin
       <h4 className="font-bold text-primary">{name}</h4>
       <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{description}</p>
     </div>
-  );
+  )
 }
 
 function ThemeCard({ title, description }: { title: string; description: string }) {
@@ -66,7 +74,7 @@ function ThemeCard({ title, description }: { title: string; description: string 
       <h4 className="font-bold text-rose-800">{title}</h4>
       <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{description}</p>
     </div>
-  );
+  )
 }
 
 /* ─── Main Page ────────────────────────────────────────────── */
@@ -97,9 +105,9 @@ export default function PrideAndPrejudicePage() {
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
           A witty and incisive novel of manners exploring love, marriage, and social class in
           Regency England. Through the spirited Elizabeth Bennet and the proud Mr Darcy, Austen
-          examines how first impressions can be dangerously misleading, and how self-knowledge
-          is the foundation of genuine happiness. Beneath its sparkling surface, the novel offers
-          a sharp critique of a society where women&apos;s futures depend entirely on marriage.
+          examines how first impressions can be dangerously misleading, and how self-knowledge is
+          the foundation of genuine happiness. Beneath its sparkling surface, the novel offers a
+          sharp critique of a society where women&apos;s futures depend entirely on marriage.
         </p>
       </div>
 
@@ -107,62 +115,73 @@ export default function PrideAndPrejudicePage() {
       <Section title="Plot Summary by Key Events" icon="📖" defaultOpen>
         <div className="space-y-4">
           <div>
-            <h4 className="font-bold text-foreground">The Arrival of Bingley (Chapters 1&ndash;12)</h4>
+            <h4 className="font-bold text-foreground">
+              The Arrival of Bingley (Chapters 1&ndash;12)
+            </h4>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Mr Bingley, a wealthy young bachelor, rents Netherfield Park near the Bennet family
               home of Longbourn. Mrs Bennet is desperate to marry one of her five daughters to him.
               At a public ball, Bingley dances with Jane Bennet and they are clearly attracted to
               each other. His friend Mr Darcy refuses to dance with Elizabeth, calling her
-              &ldquo;tolerable, but not handsome enough to tempt me.&rdquo; Elizabeth is amused rather
-              than offended. Jane falls ill at Netherfield and Elizabeth walks three miles through
-              mud to nurse her, earning Darcy&apos;s grudging admiration and Miss Bingley&apos;s contempt.
+              &ldquo;tolerable, but not handsome enough to tempt me.&rdquo; Elizabeth is amused
+              rather than offended. Jane falls ill at Netherfield and Elizabeth walks three miles
+              through mud to nurse her, earning Darcy&apos;s grudging admiration and Miss
+              Bingley&apos;s contempt.
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-foreground">Wickham and Collins (Chapters 13&ndash;23)</h4>
+            <h4 className="font-bold text-foreground">
+              Wickham and Collins (Chapters 13&ndash;23)
+            </h4>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Mr Collins, a pompous clergyman who will inherit the Bennet estate through entailment,
-              arrives to find a wife. He proposes to Elizabeth, who firmly refuses despite her mother&apos;s
-              fury and the practical sense of accepting. Meanwhile, the charming officer George Wickham
-              tells Elizabeth that Darcy cheated him out of a promised inheritance. Elizabeth readily
-              believes Wickham because it confirms her prejudice against Darcy. Charlotte Lucas
-              pragmatically accepts Collins&apos;s proposal, shocking Elizabeth. Bingley abruptly leaves
-              Netherfield, devastating Jane.
+              arrives to find a wife. He proposes to Elizabeth, who firmly refuses despite her
+              mother&apos;s fury and the practical sense of accepting. Meanwhile, the charming
+              officer George Wickham tells Elizabeth that Darcy cheated him out of a promised
+              inheritance. Elizabeth readily believes Wickham because it confirms her prejudice
+              against Darcy. Charlotte Lucas pragmatically accepts Collins&apos;s proposal, shocking
+              Elizabeth. Bingley abruptly leaves Netherfield, devastating Jane.
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-foreground">Darcy&apos;s First Proposal (Chapters 24&ndash;36)</h4>
+            <h4 className="font-bold text-foreground">
+              Darcy&apos;s First Proposal (Chapters 24&ndash;36)
+            </h4>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Elizabeth visits Charlotte at Hunsford parsonage, near Rosings Park, the estate of
               Lady Catherine de Bourgh (Darcy&apos;s aunt). Darcy arrives and, to Elizabeth&apos;s
               astonishment, proposes. His proposal is insulting &mdash; he emphasises her inferior
               connections and says he has struggled against his feelings. Elizabeth rejects him
-              furiously, accusing him of ruining Jane&apos;s happiness (by separating her from Bingley)
-              and Wickham&apos;s prospects. Darcy writes her a letter explaining that he separated Bingley
-              from Jane because he thought Jane did not return Bingley&apos;s feelings, and that Wickham
-              is a liar who attempted to elope with Darcy&apos;s fifteen-year-old sister Georgiana for
-              her fortune.
+              furiously, accusing him of ruining Jane&apos;s happiness (by separating her from
+              Bingley) and Wickham&apos;s prospects. Darcy writes her a letter explaining that he
+              separated Bingley from Jane because he thought Jane did not return Bingley&apos;s
+              feelings, and that Wickham is a liar who attempted to elope with Darcy&apos;s
+              fifteen-year-old sister Georgiana for her fortune.
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-foreground">Elizabeth&apos;s Transformation (Chapters 37&ndash;42)</h4>
+            <h4 className="font-bold text-foreground">
+              Elizabeth&apos;s Transformation (Chapters 37&ndash;42)
+            </h4>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Elizabeth reads Darcy&apos;s letter and is forced to acknowledge her own prejudice. She
-              realises she judged Darcy harshly and Wickham favourably based on charm rather than
-              evidence. &ldquo;Till this moment I never knew myself,&rdquo; she admits. This is the
-              novel&apos;s turning point. She visits Pemberley, Darcy&apos;s estate, with the Gardiners
-              (her sensible uncle and aunt). The house and grounds impress her, and Darcy appears
-              unexpectedly, behaving with warmth and courtesy.
+              Elizabeth reads Darcy&apos;s letter and is forced to acknowledge her own prejudice.
+              She realises she judged Darcy harshly and Wickham favourably based on charm rather
+              than evidence. &ldquo;Till this moment I never knew myself,&rdquo; she admits. This is
+              the novel&apos;s turning point. She visits Pemberley, Darcy&apos;s estate, with the
+              Gardiners (her sensible uncle and aunt). The house and grounds impress her, and Darcy
+              appears unexpectedly, behaving with warmth and courtesy.
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-foreground">Lydia&apos;s Elopement (Chapters 43&ndash;50)</h4>
+            <h4 className="font-bold text-foreground">
+              Lydia&apos;s Elopement (Chapters 43&ndash;50)
+            </h4>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Lydia, the youngest Bennet sister, elopes with Wickham &mdash; a scandal that threatens
-              to ruin the entire family&apos;s reputation. If they are not married, all the Bennet
-              sisters will be socially disgraced. Darcy secretly finds the couple, pays Wickham&apos;s
-              debts, and ensures the marriage takes place. Elizabeth learns of Darcy&apos;s intervention
-              through Mrs Gardiner and is deeply moved by his generosity.
+              Lydia, the youngest Bennet sister, elopes with Wickham &mdash; a scandal that
+              threatens to ruin the entire family&apos;s reputation. If they are not married, all
+              the Bennet sisters will be socially disgraced. Darcy secretly finds the couple, pays
+              Wickham&apos;s debts, and ensures the marriage takes place. Elizabeth learns of
+              Darcy&apos;s intervention through Mrs Gardiner and is deeply moved by his generosity.
             </p>
           </div>
           <div>
@@ -375,12 +394,12 @@ export default function PrideAndPrejudicePage() {
             <h4 className="font-bold text-primary">Regency Era (1811&ndash;1820)</h4>
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               The Regency period, when the Prince of Wales ruled as regent for the incapacitated
-              George III, was a time of social elegance, rigid etiquette, and sharp class distinctions.
-              Austen&apos;s novels capture the world of the landed gentry &mdash; a class dependent on
-              inherited wealth, property, and social connections. Balls, visits, and letter-writing
-              were the main forms of social interaction. The Napoleonic Wars (1803&ndash;1815) form
-              the background to the novel &mdash; the militia officers stationed near Meryton
-              (including Wickham) are a direct consequence of the war effort.
+              George III, was a time of social elegance, rigid etiquette, and sharp class
+              distinctions. Austen&apos;s novels capture the world of the landed gentry &mdash; a
+              class dependent on inherited wealth, property, and social connections. Balls, visits,
+              and letter-writing were the main forms of social interaction. The Napoleonic Wars
+              (1803&ndash;1815) form the background to the novel &mdash; the militia officers
+              stationed near Meryton (including Wickham) are a direct consequence of the war effort.
             </p>
           </div>
           <div className="rounded-lg bg-primary/10 p-4">
@@ -390,8 +409,8 @@ export default function PrideAndPrejudicePage() {
               after marriage (everything transferred to the husband), could not vote, had limited
               access to education, and could not enter the professions. Marriage was the only
               respectable means of financial security for genteel women. This makes Charlotte&apos;s
-              pragmatic marriage to Collins entirely rational, and Elizabeth&apos;s refusals genuinely
-              courageous.
+              pragmatic marriage to Collins entirely rational, and Elizabeth&apos;s refusals
+              genuinely courageous.
             </p>
           </div>
           <div className="rounded-lg bg-primary/10 p-4">
@@ -399,32 +418,34 @@ export default function PrideAndPrejudicePage() {
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               The Bennet estate is &ldquo;entailed&rdquo; &mdash; legally restricted to pass only to
               male heirs. Since the Bennets have no sons, the estate will go to Mr Collins on Mr
-              Bennet&apos;s death, leaving Mrs Bennet and her daughters homeless. This legal mechanism
-              drives the entire plot: Mrs Bennet&apos;s desperation to marry her daughters is not
-              merely comic but a survival strategy. Entailment was a real and common practice
-              designed to keep estates intact across generations, but it systematically disadvantaged women.
+              Bennet&apos;s death, leaving Mrs Bennet and her daughters homeless. This legal
+              mechanism drives the entire plot: Mrs Bennet&apos;s desperation to marry her daughters
+              is not merely comic but a survival strategy. Entailment was a real and common practice
+              designed to keep estates intact across generations, but it systematically
+              disadvantaged women.
             </p>
           </div>
           <div className="rounded-lg bg-primary/10 p-4">
             <h4 className="font-bold text-primary">Class and Social Mobility</h4>
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Regency society had a clearly defined hierarchy: aristocracy, landed gentry, clergy,
-              military, professional classes, tradespeople, and servants. Social mobility was possible
-              but viewed with suspicion. Darcy&apos;s contempt for Elizabeth&apos;s &ldquo;connections&rdquo;
-              (her uncle is in trade) reflects real social prejudice. Bingley&apos;s wealth is &ldquo;new
-              money&rdquo; from trade, which his sisters try to disguise. Austen shows that class
-              distinctions are often arbitrary and that moral worth bears no relation to social rank.
+              military, professional classes, tradespeople, and servants. Social mobility was
+              possible but viewed with suspicion. Darcy&apos;s contempt for Elizabeth&apos;s
+              &ldquo;connections&rdquo; (her uncle is in trade) reflects real social prejudice.
+              Bingley&apos;s wealth is &ldquo;new money&rdquo; from trade, which his sisters try to
+              disguise. Austen shows that class distinctions are often arbitrary and that moral
+              worth bears no relation to social rank.
             </p>
           </div>
           <div className="rounded-lg bg-primary/10 p-4">
             <h4 className="font-bold text-primary">The Marriage Market</h4>
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Balls, assemblies, and social calls functioned as a marriage market where young women
-              were displayed and assessed. A woman&apos;s value was measured by her beauty, accomplishments
-              (music, drawing, languages), family connections, and dowry. Austen satirises this system
-              while acknowledging its power: characters who ignore it (Lydia) are ruined; those who
-              navigate it skillfully (Elizabeth, by being herself) triumph. The novel exposes the
-              economic transaction beneath the romantic surface of courtship.
+              were displayed and assessed. A woman&apos;s value was measured by her beauty,
+              accomplishments (music, drawing, languages), family connections, and dowry. Austen
+              satirises this system while acknowledging its power: characters who ignore it (Lydia)
+              are ruined; those who navigate it skillfully (Elizabeth, by being herself) triumph.
+              The novel exposes the economic transaction beneath the romantic surface of courtship.
             </p>
           </div>
         </div>
@@ -436,19 +457,31 @@ export default function PrideAndPrejudicePage() {
         <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-            <span><strong>Focus on Austen&apos;s irony.</strong> Almost every sentence operates on more than one level. Identify where Austen says one thing and means another.</span>
+            <span>
+              <strong>Focus on Austen&apos;s irony.</strong> Almost every sentence operates on more
+              than one level. Identify where Austen says one thing and means another.
+            </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-            <span><strong>Compare the two proposals.</strong> Darcy&apos;s first and second proposals reveal his transformation. Use specific language analysis to show this.</span>
+            <span>
+              <strong>Compare the two proposals.</strong> Darcy&apos;s first and second proposals
+              reveal his transformation. Use specific language analysis to show this.
+            </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-            <span><strong>Discuss the marriage spectrum.</strong> Use Charlotte/Collins, Lydia/Wickham, and Jane/Bingley as foils for Elizabeth/Darcy.</span>
+            <span>
+              <strong>Discuss the marriage spectrum.</strong> Use Charlotte/Collins, Lydia/Wickham,
+              and Jane/Bingley as foils for Elizabeth/Darcy.
+            </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-            <span><strong>Link to context carefully.</strong> Discuss entailment, women&apos;s limited options, and class hierarchy to show why characters behave as they do.</span>
+            <span>
+              <strong>Link to context carefully.</strong> Discuss entailment, women&apos;s limited
+              options, and class hierarchy to show why characters behave as they do.
+            </span>
           </li>
         </ul>
       </div>
@@ -456,10 +489,10 @@ export default function PrideAndPrejudicePage() {
       {/* Public-domain notice */}
       <footer className="mt-8 text-center text-xs text-muted-foreground">
         <p>
-          <em>Pride and Prejudice</em> by Jane Austen (first published 1813) is
-          in the public domain. All quotations are reproduced freely.
+          <em>Pride and Prejudice</em> by Jane Austen (first published 1813) is in the public
+          domain. All quotations are reproduced freely.
         </p>
       </footer>
     </>
-  );
+  )
 }

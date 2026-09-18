@@ -320,22 +320,22 @@ export default function TeacherClassDetailPage() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-border/60">
-                    <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground">
+                    <th className="text-start px-4 py-3 text-xs font-medium text-muted-foreground">
                       {t('demo.b15.teacher_cls.col_student')}
                     </th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground">
+                    <th className="text-start px-4 py-3 text-xs font-medium text-muted-foreground">
                       {t('demo.b15.teacher_cls.col_score')}
                     </th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground hidden md:table-cell">
+                    <th className="text-start px-4 py-3 text-xs font-medium text-muted-foreground hidden md:table-cell">
                       {t('demo.b15.teacher_cls.col_rag')}
                     </th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground hidden md:table-cell">
+                    <th className="text-start px-4 py-3 text-xs font-medium text-muted-foreground hidden md:table-cell">
                       {t('demo.b15.teacher_cls.col_trend')}
                     </th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground hidden lg:table-cell">
+                    <th className="text-start px-4 py-3 text-xs font-medium text-muted-foreground hidden lg:table-cell">
                       {t('demo.b15.teacher_cls.col_last_active')}
                     </th>
-                    <th className="text-right px-4 py-3 text-xs font-medium text-muted-foreground">
+                    <th className="text-end px-4 py-3 text-xs font-medium text-muted-foreground">
                       {t('demo.b15.teacher_cls.col_profile')}
                     </th>
                   </tr>
@@ -373,7 +373,7 @@ export default function TeacherClassDetailPage() {
                       <td className="px-4 py-3 hidden lg:table-cell text-xs text-muted-foreground">
                         {student.lastActive}
                       </td>
-                      <td className="px-4 py-3 text-right">
+                      <td className="px-4 py-3 text-end">
                         <Button
                           render={<Link href={`/demo/teacher/students/${student.id}`} />}
                           variant="ghost"
@@ -402,19 +402,19 @@ export default function TeacherClassDetailPage() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-border/60">
-                    <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground">
+                    <th className="text-start px-4 py-3 text-xs font-medium text-muted-foreground">
                       {t('demo.b15.teacher_cls.col_student')}
                     </th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground">
+                    <th className="text-start px-4 py-3 text-xs font-medium text-muted-foreground">
                       {t('demo.b15.teacher_cls.col_assessment')}
                     </th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground">
+                    <th className="text-start px-4 py-3 text-xs font-medium text-muted-foreground">
                       {t('demo.b15.teacher_cls.col_type')}
                     </th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground">
+                    <th className="text-start px-4 py-3 text-xs font-medium text-muted-foreground">
                       {t('demo.b15.teacher_cls.col_score')}
                     </th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground hidden md:table-cell">
+                    <th className="text-start px-4 py-3 text-xs font-medium text-muted-foreground hidden md:table-cell">
                       {t('demo.b15.teacher_cls.col_date')}
                     </th>
                   </tr>
@@ -456,7 +456,7 @@ export default function TeacherClassDetailPage() {
                           <span className={scoreColor(pct)}>
                             {item.score}/{item.maxScore}
                           </span>
-                          <span className="text-muted-foreground text-xs ml-1">({pct}%)</span>
+                          <span className="text-muted-foreground text-xs ms-1">({pct}%)</span>
                         </td>
                         <td className="px-4 py-3 text-muted-foreground text-xs hidden md:table-cell">
                           {item.date}
@@ -632,7 +632,7 @@ export default function TeacherClassDetailPage() {
                         <span className="text-sm font-medium text-foreground">
                           Focus: {weakness}
                         </span>
-                        <span className="text-[11px] text-muted-foreground ml-auto">
+                        <span className="text-[11px] text-muted-foreground ms-auto">
                           Affects {count}/{fullClassStudents.length} students
                         </span>
                       </div>
@@ -667,7 +667,7 @@ export default function TeacherClassDetailPage() {
                       {t('demo.b15.teacher_cls.report_strengths')}
                     </span>
                   </div>
-                  <ul className="text-xs text-muted-foreground space-y-1 pl-6">
+                  <ul className="text-xs text-muted-foreground space-y-1 ps-6">
                     <li>{t('demo.b15.teacher_cls.strength_1')}</li>
                     <li>{t('demo.b15.teacher_cls.strength_2')}</li>
                     <li>{t('demo.b15.teacher_cls.strength_3')}</li>
@@ -680,7 +680,7 @@ export default function TeacherClassDetailPage() {
                       {t('demo.b15.teacher_cls.report_focus')}
                     </span>
                   </div>
-                  <ul className="text-xs text-muted-foreground space-y-1 pl-6">
+                  <ul className="text-xs text-muted-foreground space-y-1 ps-6">
                     <li>
                       {decliningCount} student{decliningCount !== 1 ? 's' : ''} showing declining
                       engagement
@@ -696,7 +696,7 @@ export default function TeacherClassDetailPage() {
                       {t('demo.b15.teacher_cls.report_recommendations')}
                     </span>
                   </div>
-                  <ul className="text-xs text-muted-foreground space-y-1 pl-6">
+                  <ul className="text-xs text-muted-foreground space-y-1 ps-6">
                     <li>{t('demo.b15.teacher_cls.rec_1')}</li>
                     <li>{t('demo.b15.teacher_cls.rec_2')}</li>
                     <li>{t('demo.b15.teacher_cls.rec_3')}</li>

@@ -258,11 +258,11 @@ export default async function SchoolsPage() {
       <section className="relative overflow-hidden border-b border-border/60">
         <div
           aria-hidden
-          className="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl"
+          className="pointer-events-none absolute -start-32 -top-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-20 -bottom-20 h-80 w-80 rounded-full bg-clay-500/[0.06] blur-3xl"
+          className="pointer-events-none absolute -end-20 -bottom-20 h-80 w-80 rounded-full bg-clay-500/[0.06] blur-3xl"
         />
         <div className="relative mx-auto max-w-5xl px-4 py-20 text-center sm:px-6 sm:py-28">
           <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-primary">
@@ -308,7 +308,7 @@ export default async function SchoolsPage() {
       <section aria-labelledby="problem-heading" className="relative overflow-hidden">
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-24 top-10 h-72 w-72 rounded-full bg-clay-500/[0.05] blur-3xl"
+          className="pointer-events-none absolute -end-24 top-10 h-72 w-72 rounded-full bg-clay-500/[0.05] blur-3xl"
         />
         <div className="relative mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
           <div className="text-center">
@@ -329,7 +329,7 @@ export default async function SchoolsPage() {
             {PROBLEMS.map(({ icon: Icon, accent, body }) => (
               <Card
                 key={body}
-                className={`flex items-start gap-4 border-l-4 ${accent} border-border/50 bg-card p-5 sm:p-6`}
+                className={`flex items-start gap-4 border-s-4 ${accent} border-border/50 bg-card p-5 sm:p-6`}
               >
                 <span className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-foreground/[0.05] text-muted-foreground">
                   <Icon className="h-4 w-4" aria-hidden />
@@ -413,11 +413,11 @@ export default async function SchoolsPage() {
       >
         <div
           aria-hidden
-          className="pointer-events-none absolute -left-20 top-0 h-80 w-80 rounded-full bg-teal-500/[0.06] blur-3xl"
+          className="pointer-events-none absolute -start-20 top-0 h-80 w-80 rounded-full bg-teal-500/[0.06] blur-3xl"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-sage-500/[0.06] blur-3xl"
+          className="pointer-events-none absolute -end-24 bottom-0 h-80 w-80 rounded-full bg-sage-500/[0.06] blur-3xl"
         />
         <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
           <div className="text-center">
@@ -438,7 +438,7 @@ export default async function SchoolsPage() {
             {DEMO_CARDS.map(({ href, icon: Icon, accent, title, body }) => (
               <Card
                 key={href}
-                className={`flex flex-col gap-4 border-l-4 ${accent} border-border/50 bg-card p-6`}
+                className={`flex flex-col gap-4 border-s-4 ${accent} border-border/50 bg-card p-6`}
               >
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
                   <Icon className="h-5 w-5" aria-hidden />

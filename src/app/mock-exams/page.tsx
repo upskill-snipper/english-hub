@@ -688,7 +688,7 @@ function ExamPaperCard({ exam }: { exam: ExamCardData }) {
           {t('mock.paper')} {exam.paperNumber}
         </p>
         <Button size="default" render={<Link href={`/mock-exams/${exam.paperId}`} />}>
-          <Play className="h-4 w-4 mr-1.5" />
+          <Play className="h-4 w-4 me-1.5" />
           {t('mock.start_exam')}
         </Button>
       </CardFooter>
@@ -894,7 +894,7 @@ export default function MockExamsPage() {
 
           <div className="flex gap-3 justify-center flex-wrap">
             <Button size="lg" className="shadow-lg shadow-primary/20" render={<a href="#exams" />}>
-              {t('mock.view_papers')} <ArrowRight className="ml-2 h-4 w-4" />
+              {t('mock.view_papers')} <ArrowRight className="ms-2 h-4 w-4" />
             </Button>
             {/* Sample-paper PDF coming soon - see public/sample-papers/ */}
             <Button
@@ -971,7 +971,7 @@ export default function MockExamsPage() {
               {allBoards.length} {t('mock.more_papers_suffix')}
             </p>
             <Button variant="secondary" render={<Link href="/auth/register" />}>
-              {t('mock.signup_full_access')} <ArrowRight className="ml-2 h-4 w-4" />
+              {t('mock.signup_full_access')} <ArrowRight className="ms-2 h-4 w-4" />
             </Button>
           </div>
         )}
@@ -1079,7 +1079,7 @@ export default function MockExamsPage() {
                   className="shadow-lg shadow-primary/20"
                   render={<Link href="/auth/register" />}
                 >
-                  {t('mock.start_trial')} <ArrowRight className="ml-2 h-4 w-4" />
+                  {t('mock.start_trial')} <ArrowRight className="ms-2 h-4 w-4" />
                 </Button>
                 <Button variant="secondary" size="lg" render={<Link href="/auth/login" />}>
                   {t('mock.sign_in')}

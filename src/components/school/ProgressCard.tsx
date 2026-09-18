@@ -183,7 +183,7 @@ function RevisionBar({ actual, recommended }: { actual: number; recommended: num
             style={{ width: `${actualPct}%` }}
           />
         </div>
-        <span className="w-8 text-right tabular-nums text-foreground print:text-black">
+        <span className="w-8 text-end tabular-nums text-foreground print:text-black">
           {actual}h
         </span>
       </div>
@@ -192,7 +192,7 @@ function RevisionBar({ actual, recommended }: { actual: number; recommended: num
         <div className="h-2 flex-1 rounded-full bg-gray-700 print:bg-gray-200">
           <div className="h-full rounded-full bg-blue-500" style={{ width: `${recPct}%` }} />
         </div>
-        <span className="w-8 text-right tabular-nums text-foreground print:text-black">
+        <span className="w-8 text-end tabular-nums text-foreground print:text-black">
           {recommended}h
         </span>
       </div>

@@ -429,10 +429,10 @@ export default function ReportsPage() {
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="border-b border-border text-muted-foreground">
-                        <th className="text-left py-3 pr-4">Metric</th>
-                        <th className="text-left py-3 pr-4">2024-25</th>
-                        <th className="text-left py-3 pr-4">2025-26</th>
-                        <th className="text-left py-3">Change</th>
+                        <th className="text-start py-3 pe-4">Metric</th>
+                        <th className="text-start py-3 pe-4">2024-25</th>
+                        <th className="text-start py-3 pe-4">2025-26</th>
+                        <th className="text-start py-3">Change</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -450,12 +450,12 @@ export default function ReportsPage() {
                             key={row.metric}
                             className="border-b border-border/50 hover:bg-muted/50 transition-colors"
                           >
-                            <td className="py-3 pr-4 text-foreground font-medium">{row.metric}</td>
-                            <td className="py-3 pr-4 text-muted-foreground">
+                            <td className="py-3 pe-4 text-foreground font-medium">{row.metric}</td>
+                            <td className="py-3 pe-4 text-muted-foreground">
                               {row.prev}
                               {row.metric.includes('Count') ? '' : '%'}
                             </td>
-                            <td className="py-3 pr-4 text-foreground font-semibold">
+                            <td className="py-3 pe-4 text-foreground font-semibold">
                               {row.curr}
                               {row.metric.includes('Count') ? '' : '%'}
                             </td>
@@ -497,12 +497,12 @@ export default function ReportsPage() {
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="border-b border-border text-muted-foreground">
-                        <th className="text-left py-3 pr-4">{tr(`Year Group`)}</th>
-                        <th className="text-left py-3 pr-4">Students</th>
-                        <th className="text-left py-3 pr-4">Classes</th>
-                        <th className="text-left py-3 pr-4">{tr(`Avg Progress`)}</th>
-                        <th className="text-left py-3 pr-4 w-[200px]">{tr(`Progress Bar`)}</th>
-                        <th className="text-left py-3">vs School Avg</th>
+                        <th className="text-start py-3 pe-4">{tr(`Year Group`)}</th>
+                        <th className="text-start py-3 pe-4">Students</th>
+                        <th className="text-start py-3 pe-4">Classes</th>
+                        <th className="text-start py-3 pe-4">{tr(`Avg Progress`)}</th>
+                        <th className="text-start py-3 pe-4 w-[200px]">{tr(`Progress Bar`)}</th>
+                        <th className="text-start py-3">vs School Avg</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -513,16 +513,16 @@ export default function ReportsPage() {
                             key={yg.year}
                             className="border-b border-border/50 hover:bg-muted/50 transition-colors"
                           >
-                            <td className="py-3 pr-4 font-medium text-foreground">{yg.label}</td>
-                            <td className="py-3 pr-4 text-foreground/80">{yg.studentCount}</td>
-                            <td className="py-3 pr-4 text-foreground/80">{yg.classCount}</td>
-                            <td className="py-3 pr-4 text-foreground font-semibold">
+                            <td className="py-3 pe-4 font-medium text-foreground">{yg.label}</td>
+                            <td className="py-3 pe-4 text-foreground/80">{yg.studentCount}</td>
+                            <td className="py-3 pe-4 text-foreground/80">{yg.classCount}</td>
+                            <td className="py-3 pe-4 text-foreground font-semibold">
                               {yg.avgProgress}%{' '}
                               <span className="text-xs font-normal text-muted-foreground">
                                 (G{percentageToGCSEGrade(yg.avgProgress)})
                               </span>
                             </td>
-                            <td className="py-3 pr-4">
+                            <td className="py-3 pe-4">
                               <div className="w-full bg-muted rounded-full h-2.5">
                                 <div
                                   className={`h-2.5 rounded-full transition-all ${yg.avgProgress >= 75 ? 'bg-primary' : yg.avgProgress >= 60 ? 'bg-amber-500' : 'bg-red-500'}`}
@@ -567,11 +567,11 @@ export default function ReportsPage() {
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="border-b border-border text-muted-foreground">
-                        <th className="text-left py-3 pr-4">Department</th>
-                        <th className="text-left py-3 pr-4">Teachers</th>
-                        <th className="text-left py-3 pr-4">Students</th>
-                        <th className="text-left py-3 pr-4">{tr(`Avg Progress`)}</th>
-                        <th className="text-left py-3">Completion</th>
+                        <th className="text-start py-3 pe-4">Department</th>
+                        <th className="text-start py-3 pe-4">Teachers</th>
+                        <th className="text-start py-3 pe-4">Students</th>
+                        <th className="text-start py-3 pe-4">{tr(`Avg Progress`)}</th>
+                        <th className="text-start py-3">Completion</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -600,12 +600,12 @@ export default function ReportsPage() {
                             key={dept}
                             className="border-b border-border/50 hover:bg-muted/50 transition-colors"
                           >
-                            <td className="py-3 pr-4 font-medium text-foreground">{dept}</td>
-                            <td className="py-3 pr-4 text-foreground/80">{deptTeachers.length}</td>
-                            <td className="py-3 pr-4 text-foreground/80">
+                            <td className="py-3 pe-4 font-medium text-foreground">{dept}</td>
+                            <td className="py-3 pe-4 text-foreground/80">{deptTeachers.length}</td>
+                            <td className="py-3 pe-4 text-foreground/80">
                               {deptClasses.reduce((sum, c) => sum + c.studentCount, 0)}
                             </td>
-                            <td className="py-3 pr-4 text-foreground font-semibold">{dAvg}%</td>
+                            <td className="py-3 pe-4 text-foreground font-semibold">{dAvg}%</td>
                             <td className="py-3 text-foreground/80">{dComp}%</td>
                           </tr>
                         )
@@ -647,7 +647,7 @@ export default function ReportsPage() {
                         style={{ height: '160px' }}
                       >
                         <div
-                          className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-emerald-600 to-emerald-400/80 rounded-t-md transition-all"
+                          className="absolute bottom-0 start-0 end-0 bg-gradient-to-t from-emerald-600 to-emerald-400/80 rounded-t-md transition-all"
                           style={{ height: `${(w.value / 100) * 160}px` }}
                         />
                       </div>
@@ -889,11 +889,11 @@ export default function ReportsPage() {
                           </p>
                           <div className="flex items-center gap-2 mt-2">
                             <Badge className="bg-muted text-foreground/80 border-border text-[10px]">
-                              <Mail className="h-3 w-3 mr-1" />
+                              <Mail className="h-3 w-3 me-1" />
                               {schedule.recipient}
                             </Badge>
                             <Badge className="bg-muted text-foreground/80 border-border text-[10px]">
-                              <CalendarDays className="h-3 w-3 mr-1" />
+                              <CalendarDays className="h-3 w-3 me-1" />
                               {schedule.frequency}
                             </Badge>
                           </div>
@@ -1043,12 +1043,12 @@ export default function ReportsPage() {
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="border-b border-border text-muted-foreground">
-                        <th className="text-left py-3 pr-4">Class</th>
-                        <th className="text-left py-3 pr-4">Teacher</th>
-                        <th className="text-left py-3 pr-4">Students</th>
-                        <th className="text-left py-3 pr-4">{tr(`Avg Progress`)}</th>
-                        <th className="text-left py-3 pr-4">Completion</th>
-                        <th className="text-left py-3">Status</th>
+                        <th className="text-start py-3 pe-4">Class</th>
+                        <th className="text-start py-3 pe-4">Teacher</th>
+                        <th className="text-start py-3 pe-4">Students</th>
+                        <th className="text-start py-3 pe-4">{tr(`Avg Progress`)}</th>
+                        <th className="text-start py-3 pe-4">Completion</th>
+                        <th className="text-start py-3">Status</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -1062,13 +1062,13 @@ export default function ReportsPage() {
                             key={cls.id}
                             className="border-b border-border/50 hover:bg-muted/50 transition-colors"
                           >
-                            <td className="py-3 pr-4 font-medium text-foreground">{cls.name}</td>
-                            <td className="py-3 pr-4 text-foreground/80">{cls.teacher}</td>
-                            <td className="py-3 pr-4 text-foreground/80">{cls.studentCount}</td>
-                            <td className="py-3 pr-4 text-foreground font-semibold">
+                            <td className="py-3 pe-4 font-medium text-foreground">{cls.name}</td>
+                            <td className="py-3 pe-4 text-foreground/80">{cls.teacher}</td>
+                            <td className="py-3 pe-4 text-foreground/80">{cls.studentCount}</td>
+                            <td className="py-3 pe-4 text-foreground font-semibold">
                               {cls.avgProgress}%
                             </td>
-                            <td className="py-3 pr-4 text-foreground/80">{comp}%</td>
+                            <td className="py-3 pe-4 text-foreground/80">{comp}%</td>
                             <td className="py-3">
                               <Badge className={ragColors[rag]}>{rag.toUpperCase()}</Badge>
                             </td>
@@ -1149,7 +1149,7 @@ export default function ReportsPage() {
                               style={{ height: '100px' }}
                             >
                               <div
-                                className={`absolute bottom-0 left-0 right-0 ${barColor} rounded-t-md transition-all`}
+                                className={`absolute bottom-0 start-0 end-0 ${barColor} rounded-t-md transition-all`}
                                 style={{ height: `${heightPct}%` }}
                               />
                             </div>
@@ -1196,24 +1196,24 @@ export default function ReportsPage() {
                       <table className="w-full text-sm">
                         <thead>
                           <tr className="border-b border-border text-muted-foreground">
-                            <th className="text-left py-3 pr-4">Student</th>
-                            <th className="text-left py-3 pr-4">Class</th>
-                            <th className="text-left py-3 pr-4">Progress</th>
-                            <th className="text-left py-3 pr-4">{tr(`Last Active`)}</th>
-                            <th className="text-left py-3">{tr(`Risk Reason`)}</th>
+                            <th className="text-start py-3 pe-4">Student</th>
+                            <th className="text-start py-3 pe-4">Class</th>
+                            <th className="text-start py-3 pe-4">Progress</th>
+                            <th className="text-start py-3 pe-4">{tr(`Last Active`)}</th>
+                            <th className="text-start py-3">{tr(`Risk Reason`)}</th>
                           </tr>
                         </thead>
                         <tbody>
                           {atRisk.map((s) => (
                             <tr key={s.id} className="border-b border-border/50">
-                              <td className="py-3 pr-4 font-medium text-foreground">{s.name}</td>
-                              <td className="py-3 pr-4 text-foreground/80">{s.className}</td>
-                              <td className="py-3 pr-4">
+                              <td className="py-3 pe-4 font-medium text-foreground">{s.name}</td>
+                              <td className="py-3 pe-4 text-foreground/80">{s.className}</td>
+                              <td className="py-3 pe-4">
                                 <Badge className="bg-red-500/20 text-red-700 dark:text-red-300 border-red-500/30">
                                   {s.overallProgress}%
                                 </Badge>
                               </td>
-                              <td className="py-3 pr-4 text-muted-foreground">{s.lastActive}</td>
+                              <td className="py-3 pe-4 text-muted-foreground">{s.lastActive}</td>
                               <td className="py-3 text-foreground/80 text-xs">{s.riskReason}</td>
                             </tr>
                           ))}
@@ -1243,7 +1243,7 @@ export default function ReportsPage() {
                         <li key={s.id} className="flex items-center justify-between text-sm">
                           <div>
                             <span className="text-foreground font-medium">{s.name}</span>
-                            <span className="text-muted-foreground/70 ml-2">{s.className}</span>
+                            <span className="text-muted-foreground/70 ms-2">{s.className}</span>
                           </div>
                           <Badge className="bg-primary/10 text-primary border-primary/30">
                             {s.overallProgress}%
@@ -1274,7 +1274,7 @@ export default function ReportsPage() {
                         <li key={s.id} className="flex items-center justify-between text-sm">
                           <div>
                             <span className="text-foreground font-medium">{s.name}</span>
-                            <span className="text-muted-foreground/70 ml-2">{s.className}</span>
+                            <span className="text-muted-foreground/70 ms-2">{s.className}</span>
                           </div>
                           <Badge className={ragColors[getRagStatus(s.overallProgress)]}>
                             {s.overallProgress}%
@@ -1453,13 +1453,13 @@ export default function ReportsPage() {
                     <table className="w-full text-sm">
                       <thead>
                         <tr className="border-b border-border text-muted-foreground">
-                          <th className="text-left py-3 pr-4">Student</th>
-                          <th className="text-center py-3 pr-4">{tr(`Working At`)}</th>
-                          <th className="text-center py-3 pr-4">Predicted</th>
-                          <th className="text-center py-3 pr-4">Target</th>
-                          <th className="text-left py-3 pr-4">{tr(`Last Active`)}</th>
-                          <th className="text-left py-3 pr-4">At-Risk</th>
-                          <th className="text-left py-3">RAG</th>
+                          <th className="text-start py-3 pe-4">Student</th>
+                          <th className="text-center py-3 pe-4">{tr(`Working At`)}</th>
+                          <th className="text-center py-3 pe-4">Predicted</th>
+                          <th className="text-center py-3 pe-4">Target</th>
+                          <th className="text-start py-3 pe-4">{tr(`Last Active`)}</th>
+                          <th className="text-start py-3 pe-4">At-Risk</th>
+                          <th className="text-start py-3">RAG</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -1470,22 +1470,22 @@ export default function ReportsPage() {
                               key={s.id}
                               className="border-b border-border/50 hover:bg-muted/50 transition-colors"
                             >
-                              <td className="py-3 pr-4 font-medium text-foreground">{s.name}</td>
+                              <td className="py-3 pe-4 font-medium text-foreground">{s.name}</td>
                               <td
-                                className={`py-3 pr-4 text-center font-bold ${gcseGradeColor(s.workingAtGrade)}`}
+                                className={`py-3 pe-4 text-center font-bold ${gcseGradeColor(s.workingAtGrade)}`}
                               >
                                 {s.workingAtGrade}
                               </td>
                               <td
-                                className={`py-3 pr-4 text-center font-bold ${predictedGradeColor(s.predictedGrade, s.workingAtGrade)}`}
+                                className={`py-3 pe-4 text-center font-bold ${predictedGradeColor(s.predictedGrade, s.workingAtGrade)}`}
                               >
                                 {s.predictedGrade}
                               </td>
-                              <td className="py-3 pr-4 text-center font-bold text-primary">
+                              <td className="py-3 pe-4 text-center font-bold text-primary">
                                 {s.targetGrade}
                               </td>
-                              <td className="py-3 pr-4 text-muted-foreground">{s.lastActive}</td>
-                              <td className="py-3 pr-4">
+                              <td className="py-3 pe-4 text-muted-foreground">{s.lastActive}</td>
+                              <td className="py-3 pe-4">
                                 {s.atRisk ? (
                                   <Badge className="bg-red-500/20 text-red-700 dark:text-red-300 border-red-500/30">
                                     Yes
@@ -1602,7 +1602,7 @@ export default function ReportsPage() {
                       {selectedStudent.className} | {selectedStudent.yearGroup}
                     </p>
                   </div>
-                  <div className="text-right flex items-center gap-5">
+                  <div className="text-end flex items-center gap-5">
                     <div className="text-center">
                       <p className="text-xs text-muted-foreground">{tr(`Working At`)}</p>
                       <p
@@ -1642,14 +1642,14 @@ export default function ReportsPage() {
                         style={{ width: `${selectedStudent.overallProgress}%` }}
                       />
                     </div>
-                    <span className="text-xl font-bold text-foreground shrink-0 w-14 text-right">
+                    <span className="text-xl font-bold text-foreground shrink-0 w-14 text-end">
                       {selectedStudent.overallProgress}%
                     </span>
                   </div>
                   <p className="text-xs text-muted-foreground/70 mt-2">
                     Last active: {selectedStudent.lastActive}
                     {selectedStudent.atRisk && (
-                      <span className="text-red-700 dark:text-red-300 ml-3">
+                      <span className="text-red-700 dark:text-red-300 ms-3">
                         - At Risk: {selectedStudent.riskReason}
                       </span>
                     )}
@@ -1717,7 +1717,7 @@ export default function ReportsPage() {
                               style={{ width: `${mod.score}%` }}
                             />
                           </div>
-                          <span className="text-sm text-foreground font-semibold w-16 text-right">
+                          <span className="text-sm text-foreground font-semibold w-16 text-end">
                             G{percentageToGCSEGrade(mod.score)}
                           </span>
                           <Badge
@@ -1874,13 +1874,13 @@ export default function ReportsPage() {
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="border-b border-border text-muted-foreground">
-                        <th className="text-left py-3 pr-4 w-10">#</th>
-                        <th className="text-left py-3 pr-4">Teacher</th>
-                        <th className="text-left py-3 pr-4">Department</th>
-                        <th className="text-left py-3 pr-4">Classes</th>
-                        <th className="text-left py-3 pr-4">Students</th>
-                        <th className="text-left py-3 pr-4">{tr(`Avg Progress`)}</th>
-                        <th className="text-left py-3">Completion</th>
+                        <th className="text-start py-3 pe-4 w-10">#</th>
+                        <th className="text-start py-3 pe-4">Teacher</th>
+                        <th className="text-start py-3 pe-4">Department</th>
+                        <th className="text-start py-3 pe-4">Classes</th>
+                        <th className="text-start py-3 pe-4">Students</th>
+                        <th className="text-start py-3 pe-4">{tr(`Avg Progress`)}</th>
+                        <th className="text-start py-3">Completion</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -1890,20 +1890,20 @@ export default function ReportsPage() {
                           className={`border-b border-border/50 hover:bg-muted/50 transition-colors cursor-pointer ${selectedTeacherId === t.id ? 'bg-muted/50' : ''}`}
                           onClick={() => setSelectedTeacherId(t.id)}
                         >
-                          <td className="py-3 pr-4">
+                          <td className="py-3 pe-4">
                             <span
                               className={`inline-flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold ${i === 0 ? 'bg-amber-500/20 text-amber-700 dark:text-amber-300' : i === 1 ? 'bg-neutral-400/20 text-foreground/80' : i === 2 ? 'bg-orange-500/20 text-amber-700 dark:text-amber-300' : 'bg-muted/50 text-muted-foreground/70'}`}
                             >
                               {i + 1}
                             </span>
                           </td>
-                          <td className="py-3 pr-4 font-medium text-foreground">{t.name}</td>
-                          <td className="py-3 pr-4 text-foreground/80">{t.department}</td>
-                          <td className="py-3 pr-4 text-foreground/80">
+                          <td className="py-3 pe-4 font-medium text-foreground">{t.name}</td>
+                          <td className="py-3 pe-4 text-foreground/80">{t.department}</td>
+                          <td className="py-3 pe-4 text-foreground/80">
                             {t.classNames.join(', ')}
                           </td>
-                          <td className="py-3 pr-4 text-foreground/80">{t.totalStudents}</td>
-                          <td className="py-3 pr-4">
+                          <td className="py-3 pe-4 text-foreground/80">{t.totalStudents}</td>
+                          <td className="py-3 pe-4">
                             <span
                               className={`font-semibold ${t.avgProgress >= 75 ? 'text-primary' : t.avgProgress >= 60 ? 'text-amber-700 dark:text-amber-300' : 'text-red-700 dark:text-red-300'}`}
                             >
@@ -2002,13 +2002,13 @@ export default function ReportsPage() {
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="border-b border-border text-muted-foreground">
-                        <th className="text-left py-3 pr-4">Class</th>
-                        <th className="text-left py-3 pr-4">Year</th>
-                        <th className="text-left py-3 pr-4">Students</th>
-                        <th className="text-left py-3 pr-4">{tr(`Avg Progress`)}</th>
-                        <th className="text-left py-3 pr-4 w-[160px]">Progress</th>
-                        <th className="text-left py-3 pr-4">Assignments</th>
-                        <th className="text-left py-3">vs Dept Avg</th>
+                        <th className="text-start py-3 pe-4">Class</th>
+                        <th className="text-start py-3 pe-4">Year</th>
+                        <th className="text-start py-3 pe-4">Students</th>
+                        <th className="text-start py-3 pe-4">{tr(`Avg Progress`)}</th>
+                        <th className="text-start py-3 pe-4 w-[160px]">Progress</th>
+                        <th className="text-start py-3 pe-4">Assignments</th>
+                        <th className="text-start py-3">vs Dept Avg</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -2030,13 +2030,13 @@ export default function ReportsPage() {
                             key={cls.id}
                             className="border-b border-border/50 hover:bg-muted/50 transition-colors"
                           >
-                            <td className="py-3 pr-4 font-medium text-foreground">{cls.name}</td>
-                            <td className="py-3 pr-4 text-foreground/80">{cls.yearGroup}</td>
-                            <td className="py-3 pr-4 text-foreground/80">{cls.studentCount}</td>
-                            <td className="py-3 pr-4 text-foreground font-semibold">
+                            <td className="py-3 pe-4 font-medium text-foreground">{cls.name}</td>
+                            <td className="py-3 pe-4 text-foreground/80">{cls.yearGroup}</td>
+                            <td className="py-3 pe-4 text-foreground/80">{cls.studentCount}</td>
+                            <td className="py-3 pe-4 text-foreground font-semibold">
                               {cls.avgProgress}%
                             </td>
-                            <td className="py-3 pr-4">
+                            <td className="py-3 pe-4">
                               <div className="w-full bg-muted rounded-full h-2">
                                 <div
                                   className={`h-2 rounded-full ${cls.avgProgress >= 70 ? 'bg-primary' : cls.avgProgress >= 55 ? 'bg-amber-500' : 'bg-red-500'}`}
@@ -2044,7 +2044,7 @@ export default function ReportsPage() {
                                 />
                               </div>
                             </td>
-                            <td className="py-3 pr-4 text-foreground/80">
+                            <td className="py-3 pe-4 text-foreground/80">
                               {cls.assignmentsCompleted}/{cls.assignmentsSet}
                             </td>
                             <td className="py-3">

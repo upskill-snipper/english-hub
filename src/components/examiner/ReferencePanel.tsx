@@ -63,7 +63,7 @@ function StandardisationLadder({
             </div>
             {a.decisive && <p className="mt-1 leading-relaxed">{a.decisive}</p>}
             {a.notes.length > 0 && (
-              <ul className="mt-1 list-disc space-y-0.5 pl-4 text-xs italic text-muted-foreground">
+              <ul className="mt-1 list-disc space-y-0.5 ps-4 text-xs italic text-muted-foreground">
                 {a.notes.map((n, k) => (
                   <li key={k}>{n}</li>
                 ))}
@@ -121,7 +121,7 @@ function Triggers({ triggers }: { triggers: readonly ExaminerTrigger[] }) {
   return (
     <ul className="space-y-2">
       {triggers.map((t, i) => (
-        <li key={i} className={`rounded-md border-l-4 p-2.5 text-sm ${cls[t.t]}`}>
+        <li key={i} className={`rounded-md border-s-4 p-2.5 text-sm ${cls[t.t]}`}>
           <b>{t.h}.</b> {t.d}
         </li>
       ))}
@@ -139,21 +139,21 @@ function Question({ q }: { q: ExaminerQuestionSpec }) {
       {q.kind === 'count' && (
         <div className="grid gap-3 md:grid-cols-3">
           <Panel title="What opens marks">
-            <ul className="list-disc space-y-1 pl-4 text-sm">
+            <ul className="list-disc space-y-1 ps-4 text-sm">
               {q.openers.map((o, i) => (
                 <li key={i}>{o}</li>
               ))}
             </ul>
           </Panel>
           <Panel title="What kills an item">
-            <ul className="list-disc space-y-1 pl-4 text-sm">
+            <ul className="list-disc space-y-1 ps-4 text-sm">
               {q.caps.map((o, i) => (
                 <li key={i}>{o}</li>
               ))}
             </ul>
           </Panel>
           <Panel title="Never penalise">
-            <ul className="list-disc space-y-1 pl-4 text-sm">
+            <ul className="list-disc space-y-1 ps-4 text-sm">
               {q.neutrals.map((o, i) => (
                 <li key={i}>{o}</li>
               ))}

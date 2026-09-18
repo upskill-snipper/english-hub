@@ -529,12 +529,12 @@ export default function IeltsPlannerPage() {
         <PlannerCaveat t={t} />
         <div className="flex flex-col gap-3 sm:flex-row">
           <Button variant="outline" render={<Link href="/ielts/plan" />}>
-            <Target className="mr-2 h-4 w-4" />
+            <Target className="me-2 h-4 w-4" />
             {t('ielts.planner.cta.weakest_plan')}
           </Button>
           <Button variant="outline" render={<Link href="/ielts/diagnostic" />}>
             {t('ielts.planner.cta.placement')}
-            <ArrowUpRight className="ml-2 h-4 w-4" />
+            <ArrowUpRight className="ms-2 h-4 w-4" />
           </Button>
         </div>
       </div>
@@ -642,7 +642,7 @@ function Countdown({
             {examLabel}
           </p>
         </div>
-        <div className="shrink-0 text-left sm:text-right">
+        <div className="shrink-0 text-start sm:text-end">
           <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
             {t('ielts.planner.countdown.target_band')}
           </p>
@@ -829,7 +829,7 @@ function RightNowPanel({
           <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{action.body}</p>
           <Button size="sm" className="mt-3" render={<Link href={action.href} />}>
             {action.cta}
-            <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
+            <ArrowRight className="ms-1.5 h-3.5 w-3.5" />
           </Button>
         </div>
       </div>
@@ -936,7 +936,7 @@ function Milestones({ t, milestones, today }: { t: TFn; milestones: Milestone[];
                 {m.whenDays === 0 ? '0' : `${m.whenDays}d`}
               </span>
               <span className="text-foreground">{m.label}</span>
-              <span className="ml-auto shrink-0 font-mono text-[11px] text-muted-foreground">
+              <span className="ms-auto shrink-0 font-mono text-[11px] text-muted-foreground">
                 {dateLabel}
               </span>
             </li>
@@ -1047,7 +1047,7 @@ function EmptyPlanState({ t, hasGoals }: { t: TFn; hasGoals: boolean }) {
           : t('ielts.planner.empty.body_no_goals')}
       </p>
       <Button render={<Link href="/ielts/diagnostic" />}>
-        <Target className="mr-2 h-4 w-4" />
+        <Target className="me-2 h-4 w-4" />
         {t('ielts.planner.empty.cta')}
       </Button>
     </section>

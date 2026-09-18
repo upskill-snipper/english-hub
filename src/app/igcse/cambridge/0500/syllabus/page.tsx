@@ -127,7 +127,7 @@ export default async function SyllabusPage() {
             className="font-medium text-primary underline underline-offset-2 hover:text-primary/80"
           >
             Visit our IGCSE Language A hub
-            <ArrowRight className="ml-1 inline size-3.5" />
+            <ArrowRight className="ms-1 inline size-3.5" />
           </Link>
         </p>
       </div>

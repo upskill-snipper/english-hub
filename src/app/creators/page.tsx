@@ -375,9 +375,9 @@ function FAQ({ q, a }: { q: string; a: string }) {
     <div className="card">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between p-4 text-left"
+        className="w-full flex items-center justify-between p-4 text-start"
       >
-        <span className="font-medium text-foreground pr-4">{q}</span>
+        <span className="font-medium text-foreground pe-4">{q}</span>
         {open ? (
           <ChevronUp className="w-4 h-4 text-muted-foreground shrink-0" />
         ) : (
@@ -540,7 +540,7 @@ function CreatorApplicationForm() {
       <button type="submit" disabled={submitting} className="btn-primary w-full py-4">
         {submitting ? (
           <>
-            <Loader2 className="w-4 h-4 animate-spin mr-2 inline" />
+            <Loader2 className="w-4 h-4 animate-spin me-2 inline" />
             {t('creators.form.submitting')}
           </>
         ) : (

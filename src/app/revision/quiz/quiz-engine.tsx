@@ -520,7 +520,7 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
 
           {timerEnabled && totalTime > 0 && (
             <div className="mt-4 text-sm text-muted-foreground">
-              <Clock className="inline-block size-3.5 mr-1" />
+              <Clock className="inline-block size-3.5 me-1" />
               {t('rev.misc.quiz.time_remaining')
                 .replace('{left}', formatTime(timeLeft))
                 .replace('{total}', formatTime(totalTime))}
@@ -553,7 +553,7 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
                       style={{ width: `${pct}%` }}
                     />
                   </div>
-                  <span className="text-sm font-medium text-foreground w-20 text-right tabular-nums">
+                  <span className="text-sm font-medium text-foreground w-20 text-end tabular-nums">
                     {data.correct}/{data.total} ({pct}%)
                   </span>
                 </div>
@@ -645,7 +645,7 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
                       {meta.label}
                     </Badge>
                   </summary>
-                  <div className="mt-2 pl-7 space-y-1.5">
+                  <div className="mt-2 ps-7 space-y-1.5">
                     {userAnswer !== null && userAnswer !== correctValueForQ && (
                       <p className="text-sm text-red-400">
                         {t('rev.misc.quiz.your_answer').replace('{answer}', userAnswer)}
@@ -715,7 +715,7 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
               variant="outline"
               className={`tabular-nums ${timeLeft < 30 ? 'text-red-400 border-red-500/30' : 'text-muted-foreground'}`}
             >
-              <Clock className="size-3 mr-1" />
+              <Clock className="size-3 me-1" />
               {formatTime(timeLeft)}
             </Badge>
           )}

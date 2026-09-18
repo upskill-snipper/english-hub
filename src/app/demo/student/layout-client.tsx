@@ -20,7 +20,7 @@ export default function StudentDemoLayoutClient({ children }: { children: React.
   return (
     <div className="flex min-h-screen bg-background">
       {/* Sidebar */}
-      <aside className="hidden lg:flex w-64 flex-col border-r border-border/60 bg-background">
+      <aside className="hidden lg:flex w-64 flex-col border-e border-border/60 bg-background">
         {/* Logo */}
         <div className="flex items-center gap-3 px-6 py-5 border-b border-border/60">
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-clay-400 flex items-center justify-center">
@@ -73,7 +73,7 @@ export default function StudentDemoLayoutClient({ children }: { children: React.
       </aside>
 
       {/* Mobile header */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 py-3 bg-background/95 backdrop-blur border-b border-border/60">
+      <div className="lg:hidden fixed top-0 start-0 end-0 z-50 flex items-center justify-between px-4 py-3 bg-background/95 backdrop-blur border-b border-border/60">
         <div className="flex items-center gap-2">
           <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-violet-500 to-clay-400 flex items-center justify-center">
             <span className="text-[9px] font-bold text-primary-foreground">EH</span>

@@ -35,7 +35,7 @@ export default function StageHeader({
           <p className="truncate text-sm font-semibold text-foreground">{title}</p>
           <p className="text-xs text-muted-foreground">{stepLabel}</p>
         </div>
-        <div className="ml-auto flex items-center gap-3">
+        <div className="ms-auto flex items-center gap-3">
           <CountdownTimer seconds={seconds} onExpire={onExpire} paused={paused} warnAt={warnAt} />
           {action}
         </div>

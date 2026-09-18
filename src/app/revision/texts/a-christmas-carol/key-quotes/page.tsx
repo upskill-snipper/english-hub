@@ -405,13 +405,13 @@ export default function KeyQuotesPage() {
 
       {/* Hero */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-violet-500/[0.04] p-6 sm:p-8 lg:p-10">
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-violet-500/5 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-blue-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-violet-500/5 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-16 -start-16 h-48 w-48 rounded-full bg-blue-500/5 blur-3xl" />
         <div className="relative">
           <Button
             variant="ghost"
             size="sm"
-            className="mb-4 -ml-2 text-muted-foreground"
+            className="mb-4 -ms-2 text-muted-foreground"
             render={<Link href="/revision/texts/a-christmas-carol" />}
           >
             <ArrowLeft className="size-3.5" />
@@ -420,11 +420,11 @@ export default function KeyQuotesPage() {
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
-              <Quote className="mr-1 size-3 text-violet-400" />
+              <Quote className="me-1 size-3 text-violet-400" />
               {t('rev.texts.common.deep_study')}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
-              <Sparkles className="mr-1 size-3" />
+              <Sparkles className="me-1 size-3" />
               AQA / Edexcel / Eduqas
             </Badge>
           </div>
@@ -488,7 +488,7 @@ export default function KeyQuotesPage() {
                 <Card key={q.id}>
                   <CardContent className="space-y-4 p-5 sm:p-6">
                     {/* Quote */}
-                    <div className="rounded-lg border-l-4 border-l-primary/40 bg-muted/30 p-4">
+                    <div className="rounded-lg border-s-4 border-s-primary/40 bg-muted/30 p-4">
                       <p className="text-body-md font-medium italic text-foreground">{q.quote}</p>
                       <p className="mt-2 text-xs font-mono text-primary">
                         {q.speaker} -- {q.stave}

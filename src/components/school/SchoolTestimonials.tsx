@@ -47,8 +47,11 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
         <StarRow count={testimonial.stars} />
       </div>
       <div className="relative mb-6 flex-1">
-        <Quote className="absolute -left-1 -top-1 h-8 w-8 text-emerald-500/25" aria-hidden="true" />
-        <blockquote className="relative pl-6 text-slate-300 text-sm leading-relaxed">
+        <Quote
+          className="absolute -start-1 -top-1 h-8 w-8 text-emerald-500/25"
+          aria-hidden="true"
+        />
+        <blockquote className="relative ps-6 text-slate-300 text-sm leading-relaxed">
           {testimonial.quote}
         </blockquote>
       </div>

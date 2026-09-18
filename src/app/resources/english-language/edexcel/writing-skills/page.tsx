@@ -199,7 +199,7 @@ export default async function WritingSkillsPage() {
             </div>
           </div>
 
-          <div className="mt-6 rounded-xl border-l-4 border-accent bg-primary/10 p-6">
+          <div className="mt-6 rounded-xl border-s-4 border-accent bg-primary/10 p-6">
             <h3 className="font-bold text-primary">{tr(`Example Article Opening`)}</h3>
             <div className="mt-3 text-sm text-foreground leading-relaxed space-y-2">
               <p className="font-bold text-lg text-foreground">
@@ -297,7 +297,7 @@ export default async function WritingSkillsPage() {
             </div>
           </div>
 
-          <div className="mt-6 rounded-xl border-l-4 border-primary bg-primary/10 p-6">
+          <div className="mt-6 rounded-xl border-s-4 border-primary bg-primary/10 p-6">
             <h3 className="font-bold text-primary">{tr(`Example Formal Letter Opening`)}</h3>
             <div className="mt-3 text-sm text-foreground leading-relaxed space-y-2">
               <p>{tr(`Dear Ms Thornton,`)}</p>
@@ -376,7 +376,7 @@ export default async function WritingSkillsPage() {
             </div>
           </div>
 
-          <div className="mt-6 rounded-xl border-l-4 border-accent bg-primary/10 p-6">
+          <div className="mt-6 rounded-xl border-s-4 border-accent bg-primary/10 p-6">
             <h3 className="font-bold text-primary">{tr(`Example Speech Opening`)}</h3>
             <div className="mt-3 text-sm text-foreground leading-relaxed space-y-2">
               <p className="italic text-muted-foreground">
@@ -483,7 +483,7 @@ export default async function WritingSkillsPage() {
             </div>
           </div>
 
-          <div className="mt-6 rounded-xl border-l-4 border-primary bg-primary/10 p-6">
+          <div className="mt-6 rounded-xl border-s-4 border-primary bg-primary/10 p-6">
             <h3 className="font-bold text-primary">Example Review Opening</h3>
             <div className="mt-3 text-sm text-foreground leading-relaxed space-y-2">
               <p className="font-bold text-lg text-foreground">
@@ -552,7 +552,7 @@ export default async function WritingSkillsPage() {
             </div>
           </div>
 
-          <div className="mt-6 rounded-xl border-l-4 border-accent bg-primary/10 p-6">
+          <div className="mt-6 rounded-xl border-s-4 border-accent bg-primary/10 p-6">
             <h3 className="font-bold text-primary">{tr(`Example Essay Opening`)}</h3>
             <div className="mt-3 text-sm text-foreground leading-relaxed space-y-2">
               <p className="italic text-muted-foreground">

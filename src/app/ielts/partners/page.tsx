@@ -241,11 +241,11 @@ export default async function IeltsPartnersPage() {
       <section className="relative overflow-hidden border-b border-border/60">
         <div
           aria-hidden
-          className="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl"
+          className="pointer-events-none absolute -start-32 -top-32 h-96 w-96 rounded-full bg-primary/5 blur-3xl"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-20 -bottom-24 h-80 w-80 rounded-full bg-teal-500/[0.06] blur-3xl"
+          className="pointer-events-none absolute -end-20 -bottom-24 h-80 w-80 rounded-full bg-teal-500/[0.06] blur-3xl"
         />
         <div className="relative mx-auto max-w-5xl px-4 py-20 text-center sm:px-6 sm:py-28">
           <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-clay-500">
@@ -314,7 +314,7 @@ export default async function IeltsPartnersPage() {
             {offerings.map(({ icon: Icon, accent, title, body }) => (
               <Card
                 key={title}
-                className={`flex flex-col gap-4 border-l-4 ${accent} border-border/50 bg-card p-6`}
+                className={`flex flex-col gap-4 border-s-4 ${accent} border-border/50 bg-card p-6`}
               >
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
                   <Icon className="h-5 w-5" aria-hidden />
@@ -477,7 +477,7 @@ export default async function IeltsPartnersPage() {
           <p className="mx-auto mt-4 max-w-xl leading-relaxed text-muted-foreground">
             {await t('ielts.partners.overview.cta.lede')}
           </p>
-          <ul className="mx-auto mt-8 flex max-w-md flex-col gap-3 text-left text-sm text-muted-foreground">
+          <ul className="mx-auto mt-8 flex max-w-md flex-col gap-3 text-start text-sm text-muted-foreground">
             {[
               await t('ielts.partners.overview.cta.bullet_walkthrough'),
               await t('ielts.partners.overview.cta.bullet_bulk'),

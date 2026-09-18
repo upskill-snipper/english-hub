@@ -176,10 +176,10 @@ Dickens uses Scrooge's transformation to argue that anyone can change and that t
 
 function Toast({ message, onClose }: { message: string; onClose: () => void }) {
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3 rounded-lg bg-primary/10 border border-primary/30 px-4 py-3 text-sm text-primary shadow-xl animate-in slide-in-from-bottom-4">
+    <div className="fixed bottom-6 end-6 z-50 flex items-center gap-3 rounded-lg bg-primary/10 border border-primary/30 px-4 py-3 text-sm text-primary shadow-xl animate-in slide-in-from-bottom-4">
       <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
       <span>{message}</span>
-      <button onClick={onClose} className="ml-2 text-primary/60 hover:text-primary">
+      <button onClick={onClose} className="ms-2 text-primary/60 hover:text-primary">
         <X className="h-3.5 w-3.5" />
       </button>
     </div>

@@ -27,7 +27,7 @@ function Section({
     <div className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left transition-colors hover:bg-muted"
+        className="flex w-full items-center justify-between px-5 py-4 text-start transition-colors hover:bg-muted"
         aria-expanded={open}
         aria-controls={`section-${id}`}
       >
@@ -71,7 +71,7 @@ function Quote({
   analysis: string
 }) {
   return (
-    <div className="rounded-lg border-l-4 border-primary bg-primary/5 p-4">
+    <div className="rounded-lg border-s-4 border-primary bg-primary/5 p-4">
       <p className="text-sm font-semibold italic text-foreground">&ldquo;{text}&rdquo;</p>
       <p className="mt-1 text-xs text-muted-foreground">
         {speaker} &mdash; {act}
@@ -1762,7 +1762,7 @@ export default function InspectorCallsRevisionPage() {
                 <p className="text-sm text-muted-foreground mb-3">
                   How does Priestley use the character of Mr Birling to criticise capitalism and
                   social irresponsibility?
-                  <span className="ml-2 text-xs font-semibold text-muted-foreground">
+                  <span className="ms-2 text-xs font-semibold text-muted-foreground">
                     [30 marks]
                   </span>
                 </p>
@@ -1782,7 +1782,7 @@ export default function InspectorCallsRevisionPage() {
                 <p className="text-sm text-muted-foreground mb-3">
                   How does Priestley present the theme of responsibility in{' '}
                   <em>An Inspector Calls</em>? Refer to the whole play in your answer.
-                  <span className="ml-2 text-xs font-semibold text-muted-foreground">
+                  <span className="ms-2 text-xs font-semibold text-muted-foreground">
                     [30 marks]
                   </span>
                 </p>
@@ -1802,7 +1802,7 @@ export default function InspectorCallsRevisionPage() {
                 <p className="text-sm text-muted-foreground mb-3">
                   How does Priestley use the character of Sheila to represent hope for change in
                   society?
-                  <span className="ml-2 text-xs font-semibold text-muted-foreground">
+                  <span className="ms-2 text-xs font-semibold text-muted-foreground">
                     [30 marks]
                   </span>
                 </p>
@@ -1822,7 +1822,7 @@ export default function InspectorCallsRevisionPage() {
                 <p className="text-sm text-muted-foreground mb-3">
                   How does Priestley use the Inspector as a dramatic device to challenge the Birling
                   family and the audience?
-                  <span className="ml-2 text-xs font-semibold text-muted-foreground">
+                  <span className="ms-2 text-xs font-semibold text-muted-foreground">
                     [30 marks]
                   </span>
                 </p>

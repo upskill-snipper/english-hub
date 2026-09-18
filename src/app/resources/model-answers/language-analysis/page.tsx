@@ -63,7 +63,7 @@ function Annotation({ children, note }: { children: React.ReactNode; note: strin
 
 function ExaminerComment({ children, label }: { children: React.ReactNode; label: string }) {
   return (
-    <div className="mt-4 rounded-lg border-l-4 border-primary bg-primary/5 p-4">
+    <div className="mt-4 rounded-lg border-s-4 border-primary bg-primary/5 p-4">
       <p className="mb-1 text-xs font-bold uppercase tracking-wider text-primary">{label}</p>
       <p className="text-sm leading-relaxed text-muted-foreground">{children}</p>
     </div>
@@ -544,19 +544,19 @@ export default async function LanguageAnalysisPage() {
                 <table className="w-full border-collapse text-sm">
                   <thead>
                     <tr>
-                      <th className="border border-border bg-muted p-3 text-left font-bold text-foreground">
+                      <th className="border border-border bg-muted p-3 text-start font-bold text-foreground">
                         {tableSkill}
                       </th>
-                      <th className="border border-border bg-card p-3 text-left font-bold text-red-600">
+                      <th className="border border-border bg-card p-3 text-start font-bold text-red-600">
                         Grade 3
                       </th>
-                      <th className="border border-border bg-card p-3 text-left font-bold text-amber-600">
+                      <th className="border border-border bg-card p-3 text-start font-bold text-amber-600">
                         Grade 5
                       </th>
-                      <th className="border border-border bg-card p-3 text-left font-bold text-green-600">
+                      <th className="border border-border bg-card p-3 text-start font-bold text-green-600">
                         Grade 7
                       </th>
-                      <th className="border border-border bg-card p-3 text-left font-bold text-foreground">
+                      <th className="border border-border bg-card p-3 text-start font-bold text-foreground">
                         Grade 9
                       </th>
                     </tr>

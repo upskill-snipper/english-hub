@@ -136,7 +136,7 @@ export default function LiteraryDeviceSpeedRound() {
       <article className="mx-auto max-w-4xl px-6 py-12">
         <section className="mb-10">
           <h2 className="text-2xl font-bold text-foreground">How to Run</h2>
-          <ol className="mt-4 list-decimal space-y-2 pl-6 text-foreground">
+          <ol className="mt-4 list-decimal space-y-2 ps-6 text-foreground">
             <li>
               Project the title and a short instruction: &quot;10 devices, 10 clues, 5
               minutes.&quot;

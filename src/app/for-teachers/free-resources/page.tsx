@@ -311,7 +311,7 @@ export default function FreeResourcesPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-emerald-500/5" />
         <div className="relative mx-auto max-w-5xl px-6 py-20 text-center">
           <Badge variant="outline" className="mb-4 border-primary/40 text-primary">
-            <Star className="mr-1.5 h-3.5 w-3.5" />
+            <Star className="me-1.5 h-3.5 w-3.5" />
             100% Free -- No Account Required
           </Badge>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
@@ -426,7 +426,7 @@ export default function FreeResourcesPage() {
                   Starter
                 </Badge>
                 <span className="text-sm font-medium">{lesson.starterActivity.title}</span>
-                <span className="text-xs text-muted-foreground ml-auto">
+                <span className="text-xs text-muted-foreground ms-auto">
                   {lesson.starterActivity.duration}
                 </span>
               </div>
@@ -468,7 +468,7 @@ export default function FreeResourcesPage() {
                     Main {i + 1}
                   </Badge>
                   <span className="text-sm font-medium">{act.title}</span>
-                  <span className="text-xs text-muted-foreground ml-auto">{act.duration}</span>
+                  <span className="text-xs text-muted-foreground ms-auto">{act.duration}</span>
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed">{act.instructions}</p>
                 {act.differentiation && (
@@ -602,7 +602,7 @@ export default function FreeResourcesPage() {
                 <div key={i} className="rounded-lg border border-border/50 p-5 bg-muted/20">
                   <div className="flex items-start justify-between gap-4 mb-3">
                     <p className="text-sm font-medium">
-                      <span className="text-primary mr-2">Q{i + 1}.</span>
+                      <span className="text-primary me-2">Q{i + 1}.</span>
                       {q.question}
                     </p>
                     {q.marks && (
@@ -726,7 +726,7 @@ export default function FreeResourcesPage() {
               <h3 className="text-lg font-semibold mb-3">{tr(`Key Quotes`)}</h3>
               <div className="space-y-4">
                 {teachingGuide.keyQuotes.map((q, i) => (
-                  <div key={i} className="rounded-md border-l-2 border-primary/40 pl-4 py-2">
+                  <div key={i} className="rounded-md border-s-2 border-primary/40 ps-4 py-2">
                     <p className="text-sm italic text-foreground/90">&quot;{q.quote}&quot;</p>
                     <p className="text-xs text-primary mt-1">-- {q.speaker}</p>
                     <p className="text-xs text-muted-foreground mt-1">{q.significance}</p>
@@ -882,7 +882,7 @@ export default function FreeResourcesPage() {
                   key={feature.title}
                   className="relative overflow-hidden border-border/40 bg-card/50 p-5"
                 >
-                  <div className="absolute top-3 right-3">
+                  <div className="absolute top-3 end-3">
                     <Lock className="h-4 w-4 text-muted-foreground/40" />
                   </div>
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-muted/50 mb-3">

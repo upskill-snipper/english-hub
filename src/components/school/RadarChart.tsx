@@ -185,7 +185,7 @@ export const RadarChart = memo(function RadarChart({
         <table className="w-full text-xs">
           <thead>
             <tr className="border-b">
-              <th className="px-2 py-1.5 text-left font-medium text-muted-foreground">Skill</th>
+              <th className="px-2 py-1.5 text-start font-medium text-muted-foreground">Skill</th>
               {datasets.map((ds) => (
                 <th
                   key={ds.label}

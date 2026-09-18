@@ -389,7 +389,7 @@ export default function SongsOfOurselvesV2Page() {
                   <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
                     Themes
                   </h3>
-                  <ul className="mt-2 list-disc space-y-1.5 pl-5 text-muted-foreground leading-relaxed">
+                  <ul className="mt-2 list-disc space-y-1.5 ps-5 text-muted-foreground leading-relaxed">
                     {poem.themes.map((theme, i) => (
                       <li key={i}>{theme}</li>
                     ))}
@@ -465,7 +465,7 @@ export default function SongsOfOurselvesV2Page() {
             <CardTitle className="text-xl">Exam Strategy for Poetry Questions</CardTitle>
           </CardHeader>
           <CardContent>
-            <ul className="list-disc space-y-3 pl-5 text-muted-foreground leading-relaxed">
+            <ul className="list-disc space-y-3 ps-5 text-muted-foreground leading-relaxed">
               <li>
                 <strong className="text-foreground">Read the poem at least twice</strong> before you
                 begin writing. The first reading gives you the overall tone and subject; the second

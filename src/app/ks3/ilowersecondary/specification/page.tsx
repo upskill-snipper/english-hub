@@ -232,16 +232,16 @@ export default async function SpecificationPage() {
           <table className="w-full border-collapse text-sm">
             <thead>
               <tr className="bg-card">
-                <th className="px-4 py-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="px-4 py-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Code
                 </th>
-                <th className="px-4 py-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="px-4 py-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Strand
                 </th>
-                <th className="px-4 py-3 text-left font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="px-4 py-3 text-start font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Descriptor
                 </th>
-                <th className="px-4 py-3 text-right font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
+                <th className="px-4 py-3 text-end font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
                   Weighting
                 </th>
               </tr>
@@ -254,7 +254,7 @@ export default async function SpecificationPage() {
                     <td className="px-4 py-3 font-mono text-xs text-primary">{ao.code}</td>
                     <td className="px-4 py-3 capitalize text-muted-foreground">{ao.strand}</td>
                     <td className="px-4 py-3 text-foreground leading-relaxed">{ao.descriptor}</td>
-                    <td className="px-4 py-3 text-right font-mono text-xs text-muted-foreground">
+                    <td className="px-4 py-3 text-end font-mono text-xs text-muted-foreground">
                       {ao.weightPct}%
                     </td>
                   </tr>

@@ -2,10 +2,7 @@
 
 import { type LucideIcon, ArrowUp, ArrowDown, Minus } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import {
-  Card,
-  CardContent,
-} from '@/components/ui/card'
+import { Card, CardContent } from '@/components/ui/card'
 
 /* ── Types ─────────────────────────────────────────────────────────────────── */
 
@@ -65,13 +62,7 @@ export function StatCard({
   className,
 }: StatCardProps) {
   return (
-    <Card
-      className={cn(
-        'border-l-4',
-        borderColors[color],
-        className,
-      )}
-    >
+    <Card className={cn('border-s-4', borderColors[color], className)}>
       <CardContent className="flex items-start gap-4">
         {/* Icon */}
         {Icon && (
@@ -108,11 +99,7 @@ export function StatCard({
                 {trendValue && <span>{trendValue}</span>}
               </span>
             )}
-            {subtitle && (
-              <span className="text-xs text-muted-foreground truncate">
-                {subtitle}
-              </span>
-            )}
+            {subtitle && <span className="text-xs text-muted-foreground truncate">{subtitle}</span>}
           </div>
         </div>
       </CardContent>

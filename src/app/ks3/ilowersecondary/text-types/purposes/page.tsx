@@ -492,7 +492,7 @@ export default async function PurposesPage() {
           {SELF_TEST.map((q) => (
             <details key={q.id} className="rounded-xl border border-border/60 bg-card p-5">
               <summary className="cursor-pointer text-sm text-foreground leading-relaxed">
-                <span className="font-mono text-xs text-primary mr-2">
+                <span className="font-mono text-xs text-primary me-2">
                   {String(q.id).padStart(2, '0')}
                 </span>
                 &ldquo;{q.snippet}&rdquo;

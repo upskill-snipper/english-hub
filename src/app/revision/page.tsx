@@ -460,14 +460,14 @@ export default async function RevisionHubPage() {
       >
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-primary/5 blur-3xl"
+          className="pointer-events-none absolute -end-16 -top-16 h-48 w-48 rounded-full bg-primary/5 blur-3xl"
         />
         <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
           Your Hub
         </p>
         <div className="mt-1 flex flex-wrap items-center gap-2">
           <Badge variant="secondary">
-            <Sparkles className="mr-1 size-3" aria-hidden="true" />
+            <Sparkles className="me-1 size-3" aria-hidden="true" />
             {i18n.heroBadge}
           </Badge>
         </div>
@@ -569,7 +569,7 @@ export default async function RevisionHubPage() {
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <Badge variant="secondary" className="mb-2">
-                <BookText className="mr-1 size-3" aria-hidden="true" />
+                <BookText className="me-1 size-3" aria-hidden="true" />
                 {i18n.featuredBadge}
               </Badge>
               <h2 className="text-heading-md font-heading text-foreground">{featuredText.title}</h2>
@@ -602,7 +602,7 @@ export default async function RevisionHubPage() {
               >
                 Browse all sections
               </h2>
-              <Badge variant="outline" className="ml-1 text-xs">
+              <Badge variant="outline" className="ms-1 text-xs">
                 {allSections.length} items
               </Badge>
               {config && (
@@ -635,7 +635,7 @@ export default async function RevisionHubPage() {
                       {data.tag && (
                         <Badge
                           variant="default"
-                          className="absolute right-12 top-4 text-[0.65rem] uppercase tracking-wider"
+                          className="absolute end-12 top-4 text-[0.65rem] uppercase tracking-wider"
                         >
                           {data.tag}
                         </Badge>
@@ -647,7 +647,7 @@ export default async function RevisionHubPage() {
                         >
                           <section.icon className={`size-5 ${section.colour}`} aria-hidden="true" />
                         </div>
-                        <div className="min-w-0 pr-8">
+                        <div className="min-w-0 pe-8">
                           <h3 className="truncate text-heading-md font-heading text-foreground group-hover:text-primary transition-colors">
                             {data.title}
                           </h3>

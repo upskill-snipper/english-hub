@@ -176,7 +176,7 @@ export function TransitionModulesClient({ hasAccess }: { hasAccess: boolean }) {
                       type="button"
                       onClick={() => setOpen(isOpen ? null : m.id)}
                       aria-expanded={isOpen}
-                      className="flex w-full items-center gap-3 p-5 text-left transition-colors hover:bg-muted/30"
+                      className="flex w-full items-center gap-3 p-5 text-start transition-colors hover:bg-muted/30"
                     >
                       <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
                         <Icon className="h-5 w-5" aria-hidden />
@@ -237,7 +237,7 @@ export function TransitionModulesClient({ hasAccess }: { hasAccess: boolean }) {
                                   onClick={() => setField(m.field, o.value)}
                                   aria-pressed={selected}
                                   className={cn(
-                                    'flex items-center gap-2 rounded-lg border px-3 py-2 text-left text-sm transition-colors',
+                                    'flex items-center gap-2 rounded-lg border px-3 py-2 text-start text-sm transition-colors',
                                     selected
                                       ? 'border-primary bg-primary/10 text-foreground'
                                       : 'border-border bg-background text-muted-foreground hover:border-primary/40',
@@ -336,7 +336,7 @@ function LockedTeaser({ t }: { t: (key: string) => string }) {
           'Four short, self-guided modules — academic writing, lectures & independent study, budgeting, and accommodation — each with a quick self-check that feeds your Readiness Report. Part of the IELTS plan.'}
       </p>
 
-      <div className="mx-auto mt-6 grid max-w-md gap-2 text-left">
+      <div className="mx-auto mt-6 grid max-w-md gap-2 text-start">
         {TRANSITION_MODULES.map((m) => {
           const Icon = ICONS[m.icon]
           return (

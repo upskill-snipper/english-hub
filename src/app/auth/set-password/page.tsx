@@ -211,14 +211,14 @@ export default function SetPasswordPage() {
               <div className="space-y-1.5">
                 <Label htmlFor="password">{t('form.new_password')}</Label>
                 <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                  <Lock className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                   <Input
                     id="password"
                     type={showPassword ? 'text' : 'password'}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder={t('form.min_8_chars')}
-                    className="pl-11 pr-11"
+                    className="ps-11 pe-11"
                     required
                     minLength={8}
                     autoComplete="new-password"
@@ -227,7 +227,7 @@ export default function SetPasswordPage() {
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-muted-foreground transition-colors"
+                    className="absolute end-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-muted-foreground transition-colors"
                     aria-label={showPassword ? t('form.hide_password') : t('form.show_password')}
                   >
                     {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
@@ -238,14 +238,14 @@ export default function SetPasswordPage() {
               <div className="space-y-1.5">
                 <Label htmlFor="confirmPassword">{t('form.confirm_new_password')}</Label>
                 <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                  <Lock className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                   <Input
                     id="confirmPassword"
                     type={showConfirm ? 'text' : 'password'}
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                     placeholder={t('form.repeat_password')}
-                    className="pl-11 pr-11"
+                    className="ps-11 pe-11"
                     required
                     minLength={8}
                     autoComplete="new-password"
@@ -254,7 +254,7 @@ export default function SetPasswordPage() {
                   <button
                     type="button"
                     onClick={() => setShowConfirm(!showConfirm)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-muted-foreground transition-colors"
+                    className="absolute end-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-muted-foreground transition-colors"
                     aria-label={showConfirm ? t('form.hide_password') : t('form.show_password')}
                   >
                     {showConfirm ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
@@ -265,7 +265,7 @@ export default function SetPasswordPage() {
               <Button type="submit" disabled={saving} className="w-full" size="lg">
                 {saving ? (
                   <>
-                    <Loader2 className="w-5 h-5 animate-spin mr-2" />
+                    <Loader2 className="w-5 h-5 animate-spin me-2" />
                     {t('auth.reset.updating')}
                   </>
                 ) : (

@@ -101,7 +101,7 @@ export default function AffiliateLayoutClient({ children }: { children: React.Re
   return (
     <div className="flex min-h-screen bg-background">
       {/* Desktop sidebar */}
-      <aside className="hidden w-14 shrink-0 border-r border-border bg-card md:block lg:w-60">
+      <aside className="hidden w-14 shrink-0 border-e border-border bg-card md:block lg:w-60">
         <div className="sticky top-0 h-screen overflow-y-auto">{sidebarContent}</div>
       </aside>
 
@@ -111,7 +111,7 @@ export default function AffiliateLayoutClient({ children }: { children: React.Re
           variant="ghost"
           size="icon"
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="mr-3"
+          className="me-3"
         >
           {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </Button>
@@ -134,7 +134,7 @@ export default function AffiliateLayoutClient({ children }: { children: React.Re
             className="fixed inset-0 z-40 bg-black/50 md:hidden"
             onClick={() => setMobileOpen(false)}
           />
-          <aside className="fixed inset-y-0 left-0 z-50 w-60 bg-card shadow-xl md:hidden">
+          <aside className="fixed inset-y-0 start-0 z-50 w-60 bg-card shadow-xl md:hidden">
             {sidebarContent}
           </aside>
         </>

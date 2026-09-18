@@ -663,7 +663,7 @@ export default function SongsOfOurselvesV1Page() {
               <Card key={ao.code}>
                 <CardHeader>
                   <CardTitle>
-                    <span className="mr-2 inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
+                    <span className="me-2 inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
                       {ao.code}
                     </span>
                     {ao.title}
@@ -754,7 +754,7 @@ export default function SongsOfOurselvesV1Page() {
                       {poem.keyQuotations.map((q, qi) => (
                         <div
                           key={qi}
-                          className="rounded-lg border-l-4 border-primary/40 bg-muted p-3"
+                          className="rounded-lg border-s-4 border-primary/40 bg-muted p-3"
                         >
                           <p className="text-sm italic text-foreground">&ldquo;{q.quote}&rdquo;</p>
                           <p className="mt-1.5 text-sm text-muted-foreground">{q.analysis}</p>

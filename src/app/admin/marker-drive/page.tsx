@@ -474,18 +474,18 @@ export default function AdminMarkerDrivePage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-border text-left text-muted-foreground">
-                    <th className="pb-3 pr-4 font-medium">{tf('admin.md.col.label', 'Label')}</th>
-                    <th className="pb-3 pr-4 font-medium">{tf('admin.md.col.board', 'Board')}</th>
-                    <th className="pb-3 pr-4 font-medium">{tf('admin.md.col.source', 'Source')}</th>
-                    <th className="pb-3 pr-4 font-medium">{tf('admin.md.col.total', 'Total')}</th>
-                    <th className="pb-3 pr-4 font-medium">
+                  <tr className="border-b border-border text-start text-muted-foreground">
+                    <th className="pb-3 pe-4 font-medium">{tf('admin.md.col.label', 'Label')}</th>
+                    <th className="pb-3 pe-4 font-medium">{tf('admin.md.col.board', 'Board')}</th>
+                    <th className="pb-3 pe-4 font-medium">{tf('admin.md.col.source', 'Source')}</th>
+                    <th className="pb-3 pe-4 font-medium">{tf('admin.md.col.total', 'Total')}</th>
+                    <th className="pb-3 pe-4 font-medium">
                       {tf('admin.md.col.drafted', 'Drafted')}
                     </th>
-                    <th className="pb-3 pr-4 font-medium">
+                    <th className="pb-3 pe-4 font-medium">
                       {tf('admin.md.col.assigned', 'Assigned')}
                     </th>
-                    <th className="pb-3 pr-4 font-medium">
+                    <th className="pb-3 pe-4 font-medium">
                       {tf('admin.md.col.approved', 'Approved')}
                     </th>
                     <th className="pb-3 font-medium">{tf('admin.md.col.action', 'Action')}</th>
@@ -494,23 +494,23 @@ export default function AdminMarkerDrivePage() {
                 <tbody className="divide-y divide-border">
                   {batches.map((b) => (
                     <tr key={b.id} className="text-foreground">
-                      <td className="py-3 pr-4">
+                      <td className="py-3 pe-4">
                         <div className="font-medium">{b.label}</div>
                         <div className="text-xs text-muted-foreground">
                           {fmtDate(b.created_at)}
                           {b.paper ? ` · ${b.paper}` : ''}
                         </div>
                       </td>
-                      <td className="py-3 pr-4">{b.board}</td>
-                      <td className="py-3 pr-4">
+                      <td className="py-3 pe-4">{b.board}</td>
+                      <td className="py-3 pe-4">
                         <span className="text-xs px-2 py-0.5 rounded-full bg-background border border-border">
                           {tf(`admin.md.source.${b.source_type}`, b.source_type)}
                         </span>
                       </td>
-                      <td className="py-3 pr-4">{b.counts.total}</td>
-                      <td className="py-3 pr-4">{b.counts.ai_drafted}</td>
-                      <td className="py-3 pr-4">{b.counts.assigned}</td>
-                      <td className="py-3 pr-4">{b.counts.approved}</td>
+                      <td className="py-3 pe-4">{b.counts.total}</td>
+                      <td className="py-3 pe-4">{b.counts.ai_drafted}</td>
+                      <td className="py-3 pe-4">{b.counts.assigned}</td>
+                      <td className="py-3 pe-4">{b.counts.approved}</td>
                       <td className="py-3">
                         <button
                           onClick={() => draftNext(b.id)}
@@ -645,29 +645,29 @@ export default function AdminMarkerDrivePage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-border text-left text-muted-foreground">
-                    <th className="pb-3 pr-4 font-medium">{tf('admin.md.col.name', 'Name')}</th>
-                    <th className="pb-3 pr-4 font-medium">{tf('admin.md.col.email', 'Email')}</th>
-                    <th className="pb-3 pr-4 font-medium">{tf('admin.md.col.boards', 'Boards')}</th>
-                    <th className="pb-3 pr-4 font-medium">{tf('admin.md.col.status', 'Status')}</th>
-                    <th className="pb-3 pr-4 font-medium">{tf('admin.md.col.rate', 'Rate (p)')}</th>
+                  <tr className="border-b border-border text-start text-muted-foreground">
+                    <th className="pb-3 pe-4 font-medium">{tf('admin.md.col.name', 'Name')}</th>
+                    <th className="pb-3 pe-4 font-medium">{tf('admin.md.col.email', 'Email')}</th>
+                    <th className="pb-3 pe-4 font-medium">{tf('admin.md.col.boards', 'Boards')}</th>
+                    <th className="pb-3 pe-4 font-medium">{tf('admin.md.col.status', 'Status')}</th>
+                    <th className="pb-3 pe-4 font-medium">{tf('admin.md.col.rate', 'Rate (p)')}</th>
                     <th className="pb-3 font-medium">{tf('admin.md.col.docs', 'Docs')}</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
                   {markers.map((m) => (
                     <tr key={m.id} className="text-foreground">
-                      <td className="py-3 pr-4">{m.display_name}</td>
-                      <td className="py-3 pr-4 text-muted-foreground">{m.email ?? '-'}</td>
-                      <td className="py-3 pr-4">
+                      <td className="py-3 pe-4">{m.display_name}</td>
+                      <td className="py-3 pe-4 text-muted-foreground">{m.email ?? '-'}</td>
+                      <td className="py-3 pe-4">
                         {m.boards.length > 0 ? m.boards.join(', ') : '-'}
                       </td>
-                      <td className="py-3 pr-4">
+                      <td className="py-3 pe-4">
                         <span className="text-xs px-2 py-0.5 rounded-full bg-background border border-border">
                           {tf(`admin.md.mstatus.${m.status}`, m.status)}
                         </span>
                       </td>
-                      <td className="py-3 pr-4">{m.pay_rate_pence ?? '-'}</td>
+                      <td className="py-3 pe-4">{m.pay_rate_pence ?? '-'}</td>
                       <td className="py-3 text-xs text-muted-foreground">
                         {m.contract_signed_at
                           ? tf('admin.md.marker.contract_ok', 'Contract ✓')

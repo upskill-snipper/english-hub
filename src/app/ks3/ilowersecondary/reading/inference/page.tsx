@@ -410,7 +410,7 @@ export default async function InferencePage() {
                 {ex.kind}
               </p>
               <h3 className="text-base font-semibold mb-3">{ex.title}</h3>
-              <div className="space-y-3 border-l-2 border-primary/30 pl-4 mb-5">
+              <div className="space-y-3 border-s-2 border-primary/30 ps-4 mb-5">
                 {ex.lines.map((line, i) => (
                   <p key={i} className="text-sm leading-relaxed text-muted-foreground">
                     {line}
@@ -421,7 +421,7 @@ export default async function InferencePage() {
                 {ex.questions.map((q, qi) => (
                   <div key={qi} className="rounded-lg border border-border/50 bg-background p-4">
                     <p className="text-sm font-medium mb-2">
-                      <span className="font-mono text-primary mr-2">Q{qi + 1}.</span>
+                      <span className="font-mono text-primary me-2">Q{qi + 1}.</span>
                       {q.prompt}
                     </p>
                     <p className="text-xs text-muted-foreground leading-relaxed mb-2">
@@ -455,7 +455,7 @@ export default async function InferencePage() {
                 <span className="text-destructive font-mono">×</span>
                 <span>{p.label}</span>
               </p>
-              <p className="text-xs text-muted-foreground leading-relaxed pl-6">{p.text}</p>
+              <p className="text-xs text-muted-foreground leading-relaxed ps-6">{p.text}</p>
             </div>
           ))}
         </div>

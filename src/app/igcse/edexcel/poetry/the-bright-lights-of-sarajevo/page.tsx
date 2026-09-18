@@ -149,7 +149,7 @@ export default function BrightLightsOfSarajevoPage() {
         <Button
           variant="ghost"
           size="sm"
-          className="mb-3 -ml-2 text-muted-foreground"
+          className="mb-3 -ms-2 text-muted-foreground"
           render={<Link href="/igcse/edexcel/poetry" />}
         >
           <ArrowLeft className="size-3.5" />

@@ -539,7 +539,7 @@ export default function SchoolOnboardingPage() {
                 className="w-full bg-indigo-600 hover:bg-indigo-500 text-white"
               >
                 {t('onboarding.s1.cta')}
-                <ArrowRight className="w-4 h-4 ml-2" />
+                <ArrowRight className="w-4 h-4 ms-2" />
               </Button>
             </CardContent>
           </Card>
@@ -586,7 +586,7 @@ export default function SchoolOnboardingPage() {
                         className="mt-3 border-zinc-600 text-zinc-300 hover:bg-zinc-700"
                       >
                         {t('onboarding.s2.go_to_import')}
-                        <ArrowRight className="w-3 h-3 ml-1.5" />
+                        <ArrowRight className="w-3 h-3 ms-1.5" />
                       </Button>
                     </Link>
                   </div>
@@ -674,7 +674,7 @@ export default function SchoolOnboardingPage() {
                   size="sm"
                   className="border-zinc-700 text-zinc-400 hover:bg-zinc-800"
                 >
-                  <ArrowLeft className="w-3 h-3 mr-1.5" />
+                  <ArrowLeft className="w-3 h-3 me-1.5" />
                   {t('onboarding.nav.back')}
                 </Button>
                 <div className="flex gap-2">
@@ -692,7 +692,7 @@ export default function SchoolOnboardingPage() {
                     className="bg-indigo-600 hover:bg-indigo-500 text-white"
                   >
                     {t('onboarding.nav.continue')}
-                    <ArrowRight className="w-3 h-3 ml-1.5" />
+                    <ArrowRight className="w-3 h-3 ms-1.5" />
                   </Button>
                 </div>
               </div>
@@ -741,7 +741,7 @@ export default function SchoolOnboardingPage() {
                         className="mt-3 border-zinc-600 text-zinc-300 hover:bg-zinc-700"
                       >
                         {t('onboarding.s2.go_to_import')}
-                        <ArrowRight className="w-3 h-3 ml-1.5" />
+                        <ArrowRight className="w-3 h-3 ms-1.5" />
                       </Button>
                     </Link>
                   </div>
@@ -775,7 +775,7 @@ export default function SchoolOnboardingPage() {
                           variant="outline"
                           className="border-zinc-600 text-zinc-300 hover:bg-zinc-700 shrink-0"
                         >
-                          <Copy className="w-3.5 h-3.5 mr-1.5" />
+                          <Copy className="w-3.5 h-3.5 me-1.5" />
                           {codeCopied ? t('onboarding.s3.copied') : t('onboarding.s3.copy_btn')}
                         </Button>
                       </div>
@@ -808,7 +808,7 @@ export default function SchoolOnboardingPage() {
                   size="sm"
                   className="border-zinc-700 text-zinc-400 hover:bg-zinc-800"
                 >
-                  <ArrowLeft className="w-3 h-3 mr-1.5" />
+                  <ArrowLeft className="w-3 h-3 me-1.5" />
                   {t('onboarding.nav.back')}
                 </Button>
                 <div className="flex gap-2">
@@ -826,7 +826,7 @@ export default function SchoolOnboardingPage() {
                     className="bg-indigo-600 hover:bg-indigo-500 text-white"
                   >
                     {t('onboarding.nav.continue')}
-                    <ArrowRight className="w-3 h-3 ml-1.5" />
+                    <ArrowRight className="w-3 h-3 ms-1.5" />
                   </Button>
                 </div>
               </div>
@@ -975,7 +975,7 @@ export default function SchoolOnboardingPage() {
                   size="sm"
                   className="border-zinc-700 text-zinc-400 hover:bg-zinc-800"
                 >
-                  <ArrowLeft className="w-3 h-3 mr-1.5" />
+                  <ArrowLeft className="w-3 h-3 me-1.5" />
                   {t('onboarding.nav.back')}
                 </Button>
                 {classSuccess ? (
@@ -985,7 +985,7 @@ export default function SchoolOnboardingPage() {
                     className="bg-indigo-600 hover:bg-indigo-500 text-white"
                   >
                     {t('onboarding.nav.continue')}
-                    <ArrowRight className="w-3 h-3 ml-1.5" />
+                    <ArrowRight className="w-3 h-3 ms-1.5" />
                   </Button>
                 ) : (
                   <Button
@@ -1058,7 +1058,7 @@ export default function SchoolOnboardingPage() {
                     className="w-full border-zinc-700 text-zinc-300 hover:bg-zinc-800"
                     onClick={() => router.push('/school/import')}
                   >
-                    <Download className="w-4 h-4 mr-2" />
+                    <Download className="w-4 h-4 me-2" />
                     {t('onboarding.s5.download_logins')}
                   </Button>
                 )}
@@ -1068,7 +1068,7 @@ export default function SchoolOnboardingPage() {
                   className="w-full bg-indigo-600 hover:bg-indigo-500 text-white"
                 >
                   {t('onboarding.s5.go_dashboard')}
-                  <ArrowRight className="w-4 h-4 ml-2" />
+                  <ArrowRight className="w-4 h-4 ms-2" />
                 </Button>
 
                 <Link href="/school/guide">

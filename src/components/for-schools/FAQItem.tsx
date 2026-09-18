@@ -16,9 +16,9 @@ export function FAQItem({ q, a }: { q: string; a: string }) {
       <button
         onClick={() => setOpen(!open)}
         aria-expanded={open}
-        className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-accent/30 transition-colors duration-200"
+        className="w-full flex items-center justify-between px-6 py-5 text-start hover:bg-accent/30 transition-colors duration-200"
       >
-        <span className="font-semibold text-foreground pr-4">{q}</span>
+        <span className="font-semibold text-foreground pe-4">{q}</span>
         <ChevronDown
           className={cn(
             'w-5 h-5 text-muted-foreground shrink-0 transition-transform duration-300',

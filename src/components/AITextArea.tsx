@@ -364,7 +364,7 @@ function AITextArea({
               {wordCount}
               {maxWords ? ` / ${maxWords}` : ''} {t('marking.words_plural')}
               {wordCount < minWords && (
-                <span className="ml-1 text-muted-foreground">
+                <span className="ms-1 text-muted-foreground">
                   ({t('marking.min_label')} {minWords})
                 </span>
               )}

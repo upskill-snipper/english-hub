@@ -27,7 +27,7 @@ function Section({
     <div className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left transition-colors hover:bg-muted"
+        className="flex w-full items-center justify-between px-5 py-4 text-start transition-colors hover:bg-muted"
         aria-expanded={open}
         aria-controls={`section-${id}`}
       >
@@ -71,7 +71,7 @@ function Quote({
   analysis: string
 }) {
   return (
-    <div className="rounded-lg border-l-4 border-accent bg-primary/10/40 p-4">
+    <div className="rounded-lg border-s-4 border-accent bg-primary/10/40 p-4">
       <p className="text-sm font-semibold italic text-foreground">&ldquo;{text}&rdquo;</p>
       <p className="mt-1 text-xs text-muted-foreground">
         {speaker} &mdash; {act}
@@ -1131,7 +1131,7 @@ export default function OthelloRevisionPage() {
                 </div>
               </div>
 
-              <div className="rounded-lg border-l-4 border-red-400 bg-red-500/10 p-4 mt-4">
+              <div className="rounded-lg border-s-4 border-red-400 bg-red-500/10 p-4 mt-4">
                 <p className="text-sm font-semibold text-red-700 dark:text-red-300">Exam Tip</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   When writing about Iago, always consider Shakespeare&apos;s dramatic purpose.
@@ -1516,7 +1516,7 @@ export default function OthelloRevisionPage() {
                 <p className="text-sm text-muted-foreground mb-3">
                   How does Shakespeare present Othello as both a noble hero and a tragic victim?
                   Refer to the play as a whole.
-                  <span className="ml-2 text-xs font-semibold text-muted-foreground">
+                  <span className="ms-2 text-xs font-semibold text-muted-foreground">
                     [30 marks]
                   </span>
                 </p>
@@ -1536,7 +1536,7 @@ export default function OthelloRevisionPage() {
                 <p className="text-sm text-muted-foreground mb-3">
                   How does Shakespeare present the theme of jealousy in <em>Othello</em>? Consider
                   the role of Iago in your answer.
-                  <span className="ml-2 text-xs font-semibold text-muted-foreground">
+                  <span className="ms-2 text-xs font-semibold text-muted-foreground">
                     [30 marks]
                   </span>
                 </p>
@@ -1555,7 +1555,7 @@ export default function OthelloRevisionPage() {
                 <h3 className="font-bold text-foreground mb-1">{tr(`Question 3`)}</h3>
                 <p className="text-sm text-muted-foreground mb-3">
                   How does Shakespeare explore the theme of race and prejudice in <em>Othello</em>?
-                  <span className="ml-2 text-xs font-semibold text-muted-foreground">
+                  <span className="ms-2 text-xs font-semibold text-muted-foreground">
                     [30 marks]
                   </span>
                 </p>
@@ -1575,7 +1575,7 @@ export default function OthelloRevisionPage() {
                 <p className="text-sm text-muted-foreground mb-3">
                   How does Shakespeare present Desdemona as more than a passive victim? Consider her
                   role across the play.
-                  <span className="ml-2 text-xs font-semibold text-muted-foreground">
+                  <span className="ms-2 text-xs font-semibold text-muted-foreground">
                     [30 marks]
                   </span>
                 </p>

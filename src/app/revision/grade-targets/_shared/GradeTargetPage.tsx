@@ -368,7 +368,7 @@ export async function GradeTargetPage({ grade }: { grade: GradeKey }) {
       <Button
         variant="ghost"
         size="sm"
-        className="-ml-2 text-muted-foreground"
+        className="-ms-2 text-muted-foreground"
         render={<Link href="/revision/grade-targets" />}
       >
         <ArrowLeft className="size-3.5" />
@@ -511,7 +511,7 @@ export async function GradeTargetPage({ grade }: { grade: GradeKey }) {
             href={`/revision/grade-targets/grade-${data.next}`}
             className="group flex items-center gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-border sm:col-start-2"
           >
-            <div className="flex-1 text-right">
+            <div className="flex-1 text-end">
               <p className="text-xs text-muted-foreground">
                 {await t('rev.misc.grade.next_grade')}
               </p>

@@ -158,7 +158,7 @@ export default async function AIFeedbackHeadToHeadPage() {
         <p className="text-sm text-muted-foreground mb-4">
           <strong>Response:</strong> Year 10, 400 words, timed exam conditions.
         </p>
-        <blockquote className="border-l-2 border-primary/50 pl-5 py-2 text-muted-foreground italic space-y-3 leading-relaxed text-[15px]">
+        <blockquote className="border-s-2 border-primary/50 ps-5 py-2 text-muted-foreground italic space-y-3 leading-relaxed text-[15px]">
           <p>
             Shakespeare presents Macbeth as a tragic figure whose downfall is caused by his own
             ambition and the manipulation of others around him. At the start of the play, Macbeth is
@@ -293,7 +293,7 @@ export default async function AIFeedbackHeadToHeadPage() {
               <p className="text-sm font-semibold text-foreground mb-2">
                 {_tr(`Next moves for AQA:`)}
               </p>
-              <ol className="list-decimal pl-5 text-sm space-y-1">
+              <ol className="list-decimal ps-5 text-sm space-y-1">
                 <li>
                   Rewrite one paragraph applying the <strong>language + form + structure</strong>{' '}
                   checklist.
@@ -376,7 +376,7 @@ export default async function AIFeedbackHeadToHeadPage() {
               <p className="text-sm font-semibold text-foreground mb-2">
                 {_tr(`Next moves for Edexcel:`)}
               </p>
-              <ol className="list-decimal pl-5 text-sm space-y-1">
+              <ol className="list-decimal ps-5 text-sm space-y-1">
                 <li>
                   <strong>{_tr(`Do NOT add more context.`)}</strong> AO3 isn&rsquo;t assessed on
                   this question on Edexcel. The Jacobean detail suggested for AQA would waste time
@@ -465,7 +465,7 @@ export default async function AIFeedbackHeadToHeadPage() {
               <p className="text-sm font-semibold text-foreground mb-2">
                 {_tr(`Next moves for OCR:`)}
               </p>
-              <ol className="list-decimal pl-5 text-sm space-y-1">
+              <ol className="list-decimal ps-5 text-sm space-y-1">
                 <li>
                   <strong>{_tr(`Add a reader-effect sentence`)}</strong> after every language point.
                 </li>
@@ -495,39 +495,39 @@ export default async function AIFeedbackHeadToHeadPage() {
           <table className="w-full text-sm border-collapse">
             <thead>
               <tr className="border-b border-border">
-                <th className="text-left py-3 pr-4 font-semibold text-foreground">Dimension</th>
-                <th className="text-left py-3 pr-4 font-semibold text-foreground">AQA 8702</th>
-                <th className="text-left py-3 pr-4 font-semibold text-foreground">
+                <th className="text-start py-3 pe-4 font-semibold text-foreground">Dimension</th>
+                <th className="text-start py-3 pe-4 font-semibold text-foreground">AQA 8702</th>
+                <th className="text-start py-3 pe-4 font-semibold text-foreground">
                   {_tr(`Edexcel 1ET0`)}
                 </th>
-                <th className="text-left py-3 font-semibold text-foreground">OCR J352</th>
+                <th className="text-start py-3 font-semibold text-foreground">OCR J352</th>
               </tr>
             </thead>
             <tbody className="text-muted-foreground">
               <tr className="border-b border-border/50">
-                <td className="py-3 pr-4 font-medium text-foreground">
+                <td className="py-3 pe-4 font-medium text-foreground">
                   {_tr(`Grade on this answer`)}
                 </td>
-                <td className="py-3 pr-4">7</td>
-                <td className="py-3 pr-4">6</td>
+                <td className="py-3 pe-4">7</td>
+                <td className="py-3 pe-4">6</td>
                 <td className="py-3">7</td>
               </tr>
               <tr className="border-b border-border/50">
-                <td className="py-3 pr-4 font-medium text-foreground">{_tr(`Context (AO3)`)}</td>
-                <td className="py-3 pr-4">6 marks · assessed</td>
-                <td className="py-3 pr-4 text-primary font-semibold">{_tr(`NOT assessed`)}</td>
+                <td className="py-3 pe-4 font-medium text-foreground">{_tr(`Context (AO3)`)}</td>
+                <td className="py-3 pe-4">6 marks · assessed</td>
+                <td className="py-3 pe-4 text-primary font-semibold">{_tr(`NOT assessed`)}</td>
                 <td className="py-3">5 marks · literary-tradition bias</td>
               </tr>
               <tr className="border-b border-border/50">
-                <td className="py-3 pr-4 font-medium text-foreground">{_tr(`Top improvement`)}</td>
-                <td className="py-3 pr-4">{_tr(`Add form + structure`)}</td>
-                <td className="py-3 pr-4">{_tr(`Methods on every quote`)}</td>
+                <td className="py-3 pe-4 font-medium text-foreground">{_tr(`Top improvement`)}</td>
+                <td className="py-3 pe-4">{_tr(`Add form + structure`)}</td>
+                <td className="py-3 pe-4">{_tr(`Methods on every quote`)}</td>
                 <td className="py-3">{_tr(`Reader-effect on every method`)}</td>
               </tr>
               <tr className="border-b border-border/50">
-                <td className="py-3 pr-4 font-medium text-foreground">{_tr(`Mistake to avoid`)}</td>
-                <td className="py-3 pr-4">-</td>
-                <td className="py-3 pr-4 text-amber-500 font-semibold">
+                <td className="py-3 pe-4 font-medium text-foreground">{_tr(`Mistake to avoid`)}</td>
+                <td className="py-3 pe-4">-</td>
+                <td className="py-3 pe-4 text-amber-500 font-semibold">
                   {_tr(`Don&rsquo;t add context`)}
                 </td>
                 <td className="py-3">{_tr(`Don&rsquo;t over-historicise`)}</td>

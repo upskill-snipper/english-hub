@@ -245,19 +245,19 @@ export default function AdminModelPerformancePage() {
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="border-b border-border text-left text-muted-foreground">
-                        <th className="pb-3 pr-4 font-medium">{t('admin.aim.mp.col.bucket')}</th>
-                        <th className="pb-3 pr-4 font-medium">{t('admin.aim.mp.col.n')}</th>
-                        <th className="pb-3 pr-4 font-medium">{t('admin.aim.mp.mae')}</th>
+                      <tr className="border-b border-border text-start text-muted-foreground">
+                        <th className="pb-3 pe-4 font-medium">{t('admin.aim.mp.col.bucket')}</th>
+                        <th className="pb-3 pe-4 font-medium">{t('admin.aim.mp.col.n')}</th>
+                        <th className="pb-3 pe-4 font-medium">{t('admin.aim.mp.mae')}</th>
                         <th className="pb-3 font-medium">{t('admin.aim.mp.within1')}</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-border">
                       {perf!.confidenceReliability.map((b) => (
                         <tr key={b.bucket} className="text-foreground">
-                          <td className="py-3 pr-4">{b.bucket}</td>
-                          <td className="py-3 pr-4">{b.n}</td>
-                          <td className="py-3 pr-4">{b.meanAbsError.toFixed(2)}</td>
+                          <td className="py-3 pe-4">{b.bucket}</td>
+                          <td className="py-3 pe-4">{b.n}</td>
+                          <td className="py-3 pe-4">{b.meanAbsError.toFixed(2)}</td>
                           <td className="py-3">{pct(b.within1Pct)}</td>
                         </tr>
                       ))}
@@ -311,19 +311,19 @@ export default function AdminModelPerformancePage() {
               <div className="overflow-x-auto mb-5">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="border-b border-border text-left text-muted-foreground">
-                      <th className="pb-3 pr-4 font-medium">{t('admin.aim.ev.col.metric')}</th>
-                      <th className="pb-3 pr-4 font-medium">{t('admin.aim.ev.col.bar')}</th>
-                      <th className="pb-3 pr-4 font-medium">{t('admin.aim.ev.col.field')}</th>
+                    <tr className="border-b border-border text-start text-muted-foreground">
+                      <th className="pb-3 pe-4 font-medium">{t('admin.aim.ev.col.metric')}</th>
+                      <th className="pb-3 pe-4 font-medium">{t('admin.aim.ev.col.bar')}</th>
+                      <th className="pb-3 pe-4 font-medium">{t('admin.aim.ev.col.field')}</th>
                       <th className="pb-3 font-medium">{t('admin.aim.ev.col.value')}</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-border">
                     {evals.scorecard.map((s) => (
                       <tr key={s.metric} className="text-foreground">
-                        <td className="py-3 pr-4 font-mono text-xs">{s.metric}</td>
-                        <td className="py-3 pr-4">{s.threshold}</td>
-                        <td className="py-3 pr-4 text-muted-foreground">{s.fieldProxy}</td>
+                        <td className="py-3 pe-4 font-mono text-xs">{s.metric}</td>
+                        <td className="py-3 pe-4">{s.threshold}</td>
+                        <td className="py-3 pe-4 text-muted-foreground">{s.fieldProxy}</td>
                         <td className="py-3">
                           {s.fieldValue === null ? (
                             <span className="text-muted-foreground">{t('admin.aim.ev.na')}</span>
@@ -397,21 +397,21 @@ function SliceTable({
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-border text-left text-muted-foreground">
-                <th className="pb-3 pr-4 font-medium">{t('admin.aim.mp.col.slice')}</th>
-                <th className="pb-3 pr-4 font-medium">{t('admin.aim.mp.col.n')}</th>
-                <th className="pb-3 pr-4 font-medium">{t('admin.aim.mp.mae')}</th>
-                <th className="pb-3 pr-4 font-medium">{t('admin.aim.mp.within1')}</th>
+              <tr className="border-b border-border text-start text-muted-foreground">
+                <th className="pb-3 pe-4 font-medium">{t('admin.aim.mp.col.slice')}</th>
+                <th className="pb-3 pe-4 font-medium">{t('admin.aim.mp.col.n')}</th>
+                <th className="pb-3 pe-4 font-medium">{t('admin.aim.mp.mae')}</th>
+                <th className="pb-3 pe-4 font-medium">{t('admin.aim.mp.within1')}</th>
                 <th className="pb-3 font-medium">{t('admin.aim.mp.within2')}</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
               {rows.map((r) => (
                 <tr key={r.slice} className="text-foreground">
-                  <td className="py-3 pr-4">{r.slice}</td>
-                  <td className="py-3 pr-4">{r.n}</td>
-                  <td className="py-3 pr-4">{r.meanAbsError.toFixed(2)}</td>
-                  <td className="py-3 pr-4">{(r.within1Pct * 100).toFixed(1)}%</td>
+                  <td className="py-3 pe-4">{r.slice}</td>
+                  <td className="py-3 pe-4">{r.n}</td>
+                  <td className="py-3 pe-4">{r.meanAbsError.toFixed(2)}</td>
+                  <td className="py-3 pe-4">{(r.within1Pct * 100).toFixed(1)}%</td>
                   <td className="py-3">{(r.within2Pct * 100).toFixed(1)}%</td>
                 </tr>
               ))}

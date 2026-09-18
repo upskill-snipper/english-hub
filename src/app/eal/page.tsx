@@ -176,16 +176,16 @@ export default function EALHubPage() {
       >
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-teal-500/[0.05] blur-3xl"
+          className="pointer-events-none absolute -end-24 -top-24 h-72 w-72 rounded-full bg-teal-500/[0.05] blur-3xl"
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -bottom-16 -left-16 h-56 w-56 rounded-full bg-teal-500/[0.05] blur-3xl"
+          className="pointer-events-none absolute -bottom-16 -start-16 h-56 w-56 rounded-full bg-teal-500/[0.05] blur-3xl"
         />
 
         <div className="relative">
           <Badge variant="secondary" className="mb-4">
-            <GraduationCap className="mr-1 size-3" aria-hidden="true" />
+            <GraduationCap className="me-1 size-3" aria-hidden="true" />
             <span dir="auto">{tx('mkt.eal.inst.badge')}</span>
           </Badge>
           <h1
@@ -277,16 +277,16 @@ export default function EALHubPage() {
       >
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl"
+          className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl"
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl"
+          className="pointer-events-none absolute -bottom-16 -start-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl"
         />
 
         <div className="relative">
           <Badge variant="secondary" className="mb-4">
-            <Sparkles className="mr-1 size-3" aria-hidden="true" />
+            <Sparkles className="me-1 size-3" aria-hidden="true" />
             <span dir="auto">{tx('mkt.eal.hero.badge')}</span>
           </Badge>
           {/* Sub-hero (learner-facing). Demoted to <h2>: the institutional
@@ -332,7 +332,7 @@ export default function EALHubPage() {
             </div>
             <div>
               <Badge variant="secondary" className="mb-2">
-                <Sparkles className="mr-1 size-3" aria-hidden="true" />
+                <Sparkles className="me-1 size-3" aria-hidden="true" />
                 <span dir="auto">{tx('mkt.eal.cta.start_here_badge')}</span>
               </Badge>
               <h2 className="text-heading-md font-heading text-foreground" dir="auto">
@@ -395,7 +395,7 @@ export default function EALHubPage() {
                     >
                       <Badge
                         variant="outline"
-                        className="absolute right-4 top-4 text-[0.65rem] uppercase tracking-wider"
+                        className="absolute end-4 top-4 text-[0.65rem] uppercase tracking-wider"
                       >
                         {topic.cefr}
                       </Badge>
@@ -495,7 +495,7 @@ export default function EALHubPage() {
           >
             <Badge
               variant="default"
-              className="absolute right-4 top-4 text-[0.65rem] uppercase tracking-wider"
+              className="absolute end-4 top-4 text-[0.65rem] uppercase tracking-wider"
             >
               <span dir="auto">{tx('mkt.eal.practice.ai_badge')}</span>
             </Badge>
@@ -556,7 +556,7 @@ export default function EALHubPage() {
             </div>
             <div>
               <Badge variant="secondary" className="mb-2">
-                <Sparkles className="mr-1 size-3" aria-hidden="true" />
+                <Sparkles className="me-1 size-3" aria-hidden="true" />
                 <span dir="auto">{tx('mkt.eal.games.badge')}</span>
               </Badge>
               <h2

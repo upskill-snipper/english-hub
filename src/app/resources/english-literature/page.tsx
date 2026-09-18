@@ -553,7 +553,7 @@ export default async function EnglishLiteraturePage() {
             <p className="text-sm font-semibold text-primary">
               {exampleQLabel} {EXAMPLE_PARAGRAPH.question}
             </p>
-            <blockquote className="mt-4 border-l-4 border-primary/30 pl-4 text-sm leading-relaxed text-muted-foreground italic">
+            <blockquote className="mt-4 border-s-4 border-primary/30 ps-4 text-sm leading-relaxed text-muted-foreground italic">
               {EXAMPLE_PARAGRAPH.paragraph}
             </blockquote>
             <div className="mt-4 rounded-lg bg-primary/5 p-4">

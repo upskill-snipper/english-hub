@@ -125,14 +125,14 @@ function ForgotPasswordForm() {
               <div className="space-y-1.5">
                 <Label htmlFor="email">{t('form.email')}</Label>
                 <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                  <Mail className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                   <Input
                     id="email"
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder={t('form.email_placeholder')}
-                    className="pl-11"
+                    className="ps-11"
                     required
                     autoComplete="email"
                   />
@@ -142,7 +142,7 @@ function ForgotPasswordForm() {
               <Button type="submit" disabled={loading} className="w-full" size="lg">
                 {loading ? (
                   <>
-                    <Loader2 className="w-5 h-5 animate-spin mr-2" />
+                    <Loader2 className="w-5 h-5 animate-spin me-2" />
                     {t('auth.forgot.sending')}
                   </>
                 ) : (

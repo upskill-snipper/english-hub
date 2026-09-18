@@ -304,7 +304,7 @@ export default function RedeemPage() {
 
       <section className="mt-10 space-y-3 text-sm text-muted-foreground">
         <h2 className="text-base font-semibold text-foreground">{t('redeem.next.h2')}</h2>
-        <ol className="list-decimal space-y-2 pl-5">
+        <ol className="list-decimal space-y-2 ps-5">
           <li>{t('redeem.next.li1')}</li>
           <li>{t('redeem.next.li2')}</li>
           <li>{t('redeem.next.li3')}</li>

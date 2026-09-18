@@ -130,27 +130,27 @@ export default function AdminRubricManagementPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-border text-left text-muted-foreground">
-                    <th className="pb-3 pr-4 font-medium">{t('admin.aim.rm.col.scheme')}</th>
-                    <th className="pb-3 pr-4 font-medium">{t('admin.aim.rm.col.version')}</th>
-                    <th className="pb-3 pr-4 font-medium">{t('admin.aim.rm.col.board')}</th>
-                    <th className="pb-3 pr-4 font-medium">{t('admin.aim.rm.col.qual')}</th>
-                    <th className="pb-3 pr-4 font-medium">{t('admin.aim.rm.col.hash')}</th>
-                    <th className="pb-3 pr-4 font-medium">{t('admin.aim.rm.col.active')}</th>
+                  <tr className="border-b border-border text-start text-muted-foreground">
+                    <th className="pb-3 pe-4 font-medium">{t('admin.aim.rm.col.scheme')}</th>
+                    <th className="pb-3 pe-4 font-medium">{t('admin.aim.rm.col.version')}</th>
+                    <th className="pb-3 pe-4 font-medium">{t('admin.aim.rm.col.board')}</th>
+                    <th className="pb-3 pe-4 font-medium">{t('admin.aim.rm.col.qual')}</th>
+                    <th className="pb-3 pe-4 font-medium">{t('admin.aim.rm.col.hash')}</th>
+                    <th className="pb-3 pe-4 font-medium">{t('admin.aim.rm.col.active')}</th>
                     <th className="pb-3 font-medium">{t('admin.aim.rm.col.created')}</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
                   {rubrics.map((r) => (
                     <tr key={r.id} className="text-foreground">
-                      <td className="py-3 pr-4 font-mono text-xs">{r.mark_scheme_id}</td>
-                      <td className="py-3 pr-4">{r.scheme_version}</td>
-                      <td className="py-3 pr-4">{r.exam_board ?? '-'}</td>
-                      <td className="py-3 pr-4">{r.qualification ?? '-'}</td>
-                      <td className="py-3 pr-4 font-mono text-xs">
+                      <td className="py-3 pe-4 font-mono text-xs">{r.mark_scheme_id}</td>
+                      <td className="py-3 pe-4">{r.scheme_version}</td>
+                      <td className="py-3 pe-4">{r.exam_board ?? '-'}</td>
+                      <td className="py-3 pe-4">{r.qualification ?? '-'}</td>
+                      <td className="py-3 pe-4 font-mono text-xs">
                         {r.content_hash.slice(0, 16)}…
                       </td>
-                      <td className="py-3 pr-4">
+                      <td className="py-3 pe-4">
                         {r.is_active ? (
                           <span className="inline-block text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary">
                             {t('admin.aim.pm.is_active')}

@@ -349,7 +349,7 @@ export function AffiliateCodeField({
           <Button type="submit" disabled={validating || !code.trim()} className="whitespace-nowrap">
             {validating ? (
               <>
-                <Loader2 className="mr-1.5 h-4 w-4 animate-spin" />
+                <Loader2 className="me-1.5 h-4 w-4 animate-spin" />
                 {t('billing.affiliate.checking')}
               </>
             ) : (

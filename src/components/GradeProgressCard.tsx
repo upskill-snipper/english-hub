@@ -160,7 +160,7 @@ export default function GradeProgressCard({
           </div>
 
           {/* Gap */}
-          <div className={`ml-auto text-xs font-medium ${gapStatusColor(gap.status)}`}>
+          <div className={`ms-auto text-xs font-medium ${gapStatusColor(gap.status)}`}>
             {gapLabel}
           </div>
         </div>

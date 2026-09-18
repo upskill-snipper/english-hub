@@ -214,7 +214,7 @@ export function ExaminerTool() {
                 >
                   {q.label}
                   <span
-                    className={`ml-1.5 text-xs font-normal ${q.id === questionId ? 'opacity-80' : 'text-muted-foreground'}`}
+                    className={`ms-1.5 text-xs font-normal ${q.id === questionId ? 'opacity-80' : 'text-muted-foreground'}`}
                   >
                     {q.max} marks
                   </span>

@@ -109,7 +109,7 @@ export default function BoardAgreementPage() {
           ) : (
             <div className="overflow-hidden rounded-xl border border-border bg-card">
               <table className="w-full text-sm">
-                <thead className="border-b border-border bg-muted/40 text-left text-xs uppercase tracking-wide text-muted-foreground">
+                <thead className="border-b border-border bg-muted/40 text-start text-xs uppercase tracking-wide text-muted-foreground">
                   <tr>
                     <th className="px-4 py-2.5 font-medium">Board</th>
                     <th className="px-4 py-2.5 font-medium">Marked</th>

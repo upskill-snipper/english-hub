@@ -733,7 +733,7 @@ export default function PunctuationRepairPage() {
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="mb-6 flex items-center justify-between gap-4">
           <Button variant="ghost" size="sm" render={<Link href="/games" />}>
-            <ArrowLeft className="size-4 mr-1" />
+            <ArrowLeft className="size-4 me-1" />
             Back to Games
           </Button>
           {boardConfig && (
@@ -786,7 +786,7 @@ export default function PunctuationRepairPage() {
                       onClick={() => handleSelect(idx)}
                       disabled={!!feedback}
                       className={cn(
-                        'w-full rounded-lg border px-4 py-3 text-left text-base font-medium transition-all',
+                        'w-full rounded-lg border px-4 py-3 text-start text-base font-medium transition-all',
                         'focus:outline-none focus:ring-2 focus:ring-primary/20',
                         !feedback &&
                           'border-border bg-card text-foreground hover:border-primary hover:bg-accent',
@@ -800,7 +800,7 @@ export default function PunctuationRepairPage() {
                         feedback && !isAnswer && !isPicked && 'border-border opacity-50',
                       )}
                     >
-                      <span className="mr-2 font-bold text-muted-foreground">
+                      <span className="me-2 font-bold text-muted-foreground">
                         {String.fromCharCode(65 + idx)}.
                       </span>
                       {opt}
@@ -831,7 +831,7 @@ export default function PunctuationRepairPage() {
                       </>
                     )}
                   </div>
-                  <p className="mt-1.5 pl-6 text-xs text-muted-foreground">
+                  <p className="mt-1.5 ps-6 text-xs text-muted-foreground">
                     Rule: {currentQ.ruleTested}
                   </p>
                 </div>
