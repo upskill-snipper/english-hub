@@ -12,22 +12,63 @@ import { evaluateCsrfAttestation } from '@/lib/security/csrf-origin'
 
 const BOARD_COOKIE = 'english-hub-board'
 
-// ── Language mode cookie (en | ar) ──────────────────────────────────
+// ── Language mode cookie (en | ar | es) ─────────────────────────────
 //
-// Two-mode toggle surfaced in the site header:
-//   en  → English only (default; SEO-indexable content)
-//   ar  → Arabic only (RTL layout, Khaleeji)
+// Three-mode toggle surfaced in the site header
+// (`src/components/layout/language-toggle.tsx`, which writes this cookie):
+//   en  → English (default; SEO-indexable content)
+//   ar  → Arabic (RTL layout, Khaleeji)
+//   es  → Spanish (LTR, interface only - see the note below)
 //
 // Bilingual mode ('bi') was removed in May 2026 - the stacked EN+AR
 // layout didn't render reliably on dense pages and Arabic-speaking users
 // asked for a simpler toggle. Legacy `bi` cookie values are coerced to
 // 'en' so old sessions upgrade cleanly on next request.
 //
-// Cookie-based for the first iteration so the toggle is user-controlled
-// and persists across visits. SEO caveat is documented in the governance
-// page: Googlebot crawls cookieless, so a cookie-only AR mode is not
-// indexed for Arabic queries. Follow-up will mirror Arabic content under
-// `/ar/...` paths with hreflang alternates for actual Arabic indexing.
+// Cookie-based so the toggle is user-controlled and persists across
+// visits. SEO caveat: Googlebot crawls cookieless, so a cookie-only
+// mode is not indexed for that language. That is why Arabic ALSO has a
+// URL surface (`/ar/...`, handled below).
+//
+// ── Why there is no `/es` URL surface ───────────────────────────────
+//
+// Decided 2026-09-18. A `/es/...` branch here is cheap to write - it
+// would mirror the `/ar` branch a few dozen lines down - and it was
+// deliberately not written. A URL surface is an indexable, shareable,
+// hreflang-eligible promise that the page behind it is in that
+// language. `/ar` can keep that promise: the repo carries 40 `.ar.mdx`
+// blog translations, thousands of Arabic content fields
+// (`analysisAr`, `themesAr`, `effectAr`, `taskAr`, `successAr`, ...),
+// and `withArabicDirective()` makes AI marking answer in Arabic.
+// Spanish has none of that: zero `.es.mdx` files, zero `*Es` content
+// fields, and `resolveLocaleFromRequest()` has no `es` branch, so a
+// Spanish reader's essay feedback comes back in English. Routing `/es`
+// would put Spanish-labelled URLs into Google's Spanish index whose
+// study content - the actual product - is entirely English.
+//
+// What Spanish DOES do today, and what the cookie policy is therefore
+// allowed to say: the header toggle writes `eh-lang=es`, this file
+// stamps `x-lang=es`, the root layout renders `<html lang="es">`, and
+// the ~16.8k dictionary keys render the INTERFACE in Spanish. Verified
+// against production on 2026-09-18: `Cookie: eh-lang=es` on `/` returns
+// `<html lang="es">` with Spanish page copy. `/es` returns 404.
+//
+// To route `/es` later, all of these first:
+//   1. Spanish study content that actually exists (`.es.mdx` posts and
+//      `*Es` content fields, or a translation pipeline that fills them).
+//   2. An `es` branch in `src/lib/i18n/ai-language-directive.ts` so AI
+//      feedback is Spanish, matching the Khaleeji directive.
+//   3. A `/es` branch here that mirrors `/ar` EXACTLY, including the
+//      2026-08-23 fix: call `updateSession(request, strippedPath)` and
+//      honour a 3xx from it BEFORE returning the rewrite. Skipping that
+//      is what made `/ar/dashboard`, `/ar/account`, `/ar/school` and
+//      `/ar/admin` reachable without auth. Do not reintroduce it.
+//   4. hreflang alternates updated together (see `src/app/layout.tsx`,
+//      where the cluster was deliberately reduced to the English
+//      canonical) so the new URLs form a valid cluster.
+//   5. `src/__tests__/spanish-locale-claims.test.ts` revisited: it
+//      asserts the interface-only wording, and that wording becomes
+//      wrong the day Spanish content ships.
 const LANG_COOKIE = 'eh-lang'
 const LANG_VALUES = new Set(['en', 'ar', 'es'])
 

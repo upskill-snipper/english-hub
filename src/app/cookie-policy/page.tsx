@@ -282,10 +282,18 @@ export default async function CookiePolicyPage() {
     ar: 'تفضيل اللغة',
     es: 'Preferencia de idioma',
   })
+  // 2026-09-18: the English, Arabic and Spanish versions of this line all
+  // said pages load "in your language". The cookie is real and it does
+  // decide the site's language (the header toggle writes `eh-lang`, the
+  // middleware stamps `x-lang`, the layout sets `<html lang>`), but what
+  // changes is the INTERFACE. Revision notes, set-text analysis, blog posts
+  // and AI feedback are in English for a Spanish reader, and the set texts
+  // themselves stay in English for every reader - this is an English course.
+  // A cookie notice is the one page that must not round that up.
   const s3FuncLi2T = pick({
-    en: ' - remembers whether you read the site in English, Arabic or Spanish so pages load in your language.',
-    ar: ' - يتذكّر إذا كنت تقرأ الموقع بالإنجليزي أو العربي أو الإسباني عشان الصفحات تفتح بلغتك.',
-    es: ' - recuerda si lees el sitio en inglés, árabe o español para que las páginas se carguen en tu idioma.',
+    en: ' - remembers whether you read the site in English, Arabic or Spanish, so the site shows its own wording in that language. Study material is in English.',
+    ar: ' - يتذكّر إذا كنت تقرأ الموقع بالإنجليزي أو العربي أو الإسباني، عشان الموقع يعرض نصوصه بهاللغة. المواد الدراسية بالإنجليزي.',
+    es: ' - recuerda si lees el sitio en inglés, árabe o español, para que el sitio muestre sus propios textos en ese idioma. El material de estudio está en inglés.',
   })
   const s3AnaP = pick({
     en: "We use Google Analytics 4 to understand how visitors use the site, such as which pages are most popular. Google's own tracking script is not loaded on this site. Instead, once you accept analytics cookies, our server sends the events to Google Analytics using a first-party identifier we set ourselves (eh_ga_cid), and we do not pass on your IP address. We also use Sentry to record application errors so we can fix them; the Sentry browser client sets no cookies here and session replay is switched off. Neither service uses this information for advertising.",

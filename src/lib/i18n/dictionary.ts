@@ -229,10 +229,17 @@ export const DICTIONARY: Dictionary = {
     ar: 'الوضع العربي - المحتوى بالعربي (خليجي)',
     es: 'Modo árabe - contenido en árabe (golfo, khaleeji)',
   },
+  // 2026-09-18: this said "content in Spanish", which the product does not
+  // support. Spanish mode translates the INTERFACE only: there is no Spanish
+  // study content anywhere in the repo (0 `.es.mdx` posts against 40 `.ar.mdx`,
+  // and no `*Es` content fields against thousands of `*Ar` ones), and the AI
+  // feedback directive in `ai-language-directive.ts` has an Arabic branch only,
+  // so marking comes back in English. The tooltip now says what a learner
+  // actually gets. See the locale-surface note in `src/middleware.ts`.
   'lang.es.tooltip': {
-    en: 'Spanish mode - content in Spanish',
-    ar: 'الوضع الإسباني - المحتوى بالإسباني',
-    es: 'Modo español - contenido en español',
+    en: 'Spanish mode - interface in Spanish, study material in English',
+    ar: 'الوضع الإسباني - الواجهة بالإسباني، والمواد الدراسية بالإنجليزي',
+    es: 'Modo español - interfaz en español, material de estudio en inglés',
   },
   'lang.es': { en: 'Spanish mode', ar: 'الوضع الإسباني', es: 'Modo español' },
   'nav.main': { en: 'Main navigation', ar: 'القائمة الرئيسية', es: 'Navegación principal' },
