@@ -9948,6 +9948,13 @@ export const ES_MESSAGES: Record<string, string> = {
   'sitemap.section.help_faqs': 'Ayuda y preguntas frecuentes',
   'sitemap.section.legal': 'Legal y políticas',
   'sitemap.section.other': 'Otros',
+  'billing.notpro.title': 'Estás en el plan gratuito',
+  'billing.notpro.ended_title': 'Tu prueba gratuita terminó el {date}',
+  'billing.notpro.body':
+    'La corrección con IA de tus redacciones forma parte de un plan de pago. Todo lo que ya se te ha corregido sigue donde está.',
+  'billing.notpro.keeps':
+    'Los apuntes de repaso, las tarjetas y el contenido de los consejos examinadores siguen siendo gratuitos.',
+  'billing.notpro.cta': 'Ver planes',
   'redeem.h1': 'Canjea tu código',
   'redeem.lead':
     'Introduce tu código promocional abajo para desbloquear tu plan con descuento y continuar al pago seguro.',

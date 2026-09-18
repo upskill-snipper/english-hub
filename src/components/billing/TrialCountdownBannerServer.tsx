@@ -18,17 +18,32 @@ import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { peekAllowance, resolveUsageSubject } from '@/lib/usage/free-allowance'
 import { resolveNoCardTrial } from '@/lib/usage/trial-allowance'
 import { TrialCountdownBanner } from './TrialCountdownBanner'
+import { NotOnProCard } from './NotOnProCard'
 
 interface Props {
   className?: string
 }
 
 export async function TrialCountdownBannerServer({ className }: Props) {
-  const { trialEndsAt, isPremium } = await getTrialState()
-  // Fast-path: skip rendering the client component entirely when there's
-  // nothing to show. Saves a hydration boundary on every page load for
-  // free users and converted-premium users.
-  if (isPremium || !trialEndsAt) return null
+  const { trialEndsAt, isPremium, kind, trialEndedAt } = await getTrialState()
+
+  // A paying customer needs nothing here.
+  if (isPremium) return null
+
+  // Day 8 onwards. This used to return null, so at 04:15 the expiry cron
+  // flipped the account to free and the dashboard simply went quiet - no
+  // banner, no explanation, and the AI marking link still sitting there
+  // ungated - at the exact moment a trialist decides whether to pay.
+  //
+  // 'unknown' is deliberately excluded: it means the read failed, and telling
+  // somebody their trial ended because Prisma timed out would be worse than
+  // saying nothing.
+  if (!trialEndsAt) {
+    if (kind === 'trial-ended' || kind === 'never-trialed') {
+      return <NotOnProCard kind={kind} endedAt={trialEndedAt} className={className} />
+    }
+    return null
+  }
 
   // AI checks used, beside the days remaining. PEEK ONLY - this must never
   // consume, or simply loading a page would burn the allowance it reports.

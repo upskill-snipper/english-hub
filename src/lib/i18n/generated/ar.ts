@@ -9520,6 +9520,13 @@ export const AR_MESSAGES: Record<string, string> = {
   'sitemap.section.help_faqs': 'المساعدة والأسئلة الشائعة',
   'sitemap.section.legal': 'القانونية والسياسات',
   'sitemap.section.other': 'أخرى',
+  'billing.notpro.title': 'أنت على الخطة المجانية',
+  'billing.notpro.ended_title': 'انتهت فترتك التجريبية المجانية في {date}',
+  'billing.notpro.body':
+    'تصحيح المقالات بالذكاء الاصطناعي جزء من الخطة المدفوعة. كل ما صُحّح لك سابقاً يبقى في مكانه.',
+  'billing.notpro.keeps':
+    'ملاحظات المراجعة والبطاقات التعليمية ومحتوى مجالس الامتحانات تبقى مجانية.',
+  'billing.notpro.cta': 'شوف الخطط',
   'redeem.h1': 'استخدم كودك',
   'redeem.lead': 'حُطّ كود الخصم تحت عشان تفتح خطتك بالسعر المخفّض وتكمّل للدفع الآمن.',
   'redeem.cancelled': 'تم إلغاء الدفع - كودك لا زال صالح، تقدر تعيد المحاولة وقت ما تكون جاهز.',

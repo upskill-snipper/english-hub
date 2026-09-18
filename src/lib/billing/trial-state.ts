@@ -29,12 +29,65 @@
 import { prisma } from '@/lib/prisma'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 
+/**
+ * What this account's plan actually is.
+ *
+ * THE DEFECT THIS EXISTS FOR (19 September 2026). Every non-premium,
+ * non-trialing case collapsed to one EMPTY constant, so a caller could not
+ * tell "the trial ended two days ago" from "never had one" from "the database
+ * read failed". The countdown banner therefore renders nothing at all from day
+ * 8 onwards: the moment a trialist most needs a reason to pay, the product
+ * goes quiet.
+ *
+ * 'unknown' exists so a failed read is never mistaken for a definite answer.
+ * Telling somebody their trial has ended because Prisma timed out would be
+ * worse than saying nothing.
+ */
+export type PlanKind = 'pro' | 'trialing' | 'trial-ended' | 'never-trialed' | 'unknown'
+
 export interface TrialState {
   trialEndsAt: Date | null
   isPremium: boolean
+  kind: PlanKind
+  /** When the trial ended, for the "ended on {date}" card. Null unless kind is 'trial-ended'. */
+  trialEndedAt: Date | null
 }
 
-const EMPTY: TrialState = { trialEndsAt: null, isPremium: false }
+const EMPTY: TrialState = {
+  trialEndsAt: null,
+  isPremium: false,
+  kind: 'unknown',
+  trialEndedAt: null,
+}
+
+/** A definite "this person is not on a plan and never was". */
+const NEVER: TrialState = {
+  trialEndsAt: null,
+  isPremium: false,
+  kind: 'never-trialed',
+  trialEndedAt: null,
+}
+
+/**
+ * Was this a no-card signup trial, as opposed to a subscription somebody paid
+ * for?
+ *
+ * THE SAFETY DISCRIMINATOR, and the reason this is a separate function.
+ *
+ * Prisma's SubscriptionStatus is UPPERCASE (ACTIVE | CANCELLED | PAST_DUE |
+ * TRIALING | PAUSED) and subscription-sync maps Stripe's `canceled` to
+ * CANCELLED and `past_due` to PAST_DUE. So a lapsed or cancelled PAYER looks
+ * identical to an expired trialist on status and dates alone: not premium, and
+ * a period end in the past. Classifying on that would tell somebody who paid
+ * you money that their "free trial has ended".
+ *
+ * `stripeSubscriptionId === null` is what actually separates them - a no-card
+ * trial has no Stripe subscription behind it. It is the same discriminator the
+ * trial-expiry cron already relies on.
+ */
+function isNoCardTrial(stripeSubscriptionId: string | null): boolean {
+  return stripeSubscriptionId === null
+}
 
 /**
  * Fetches the trial state for the currently authenticated user.
@@ -84,7 +137,13 @@ export async function getTrialState(): Promise<TrialState> {
     const sub = profile
       ? await prisma.subscription.findUnique({
           where: { userId: profile.id },
-          select: { status: true, currentPeriodEnd: true, cancelledAt: true },
+          select: {
+            status: true,
+            currentPeriodEnd: true,
+            cancelledAt: true,
+            // The safety discriminator. See isNoCardTrial.
+            stripeSubscriptionId: true,
+          },
         })
       : null
 
@@ -109,17 +168,46 @@ export async function getTrialState(): Promise<TrialState> {
         const supabase = createServerSupabaseClient()
         const { data: p } = await supabase
           .from('profiles')
-          .select('subscription_status, subscription_end_date')
+          .select('subscription_status, subscription_end_date, stripe_customer_id')
           .eq('id', supabaseUserId)
           .single()
 
         const status = String(p?.subscription_status ?? '').toLowerCase()
+        // The fallback has no Prisma row to read stripeSubscriptionId from, so
+        // this stands in for it. Production holds 4 payers against 3 Prisma
+        // Subscription rows, so at least one payer DOES reach this path -
+        // anyone who has been through checkout must never be told their free
+        // trial ended.
+        const hasBeenThroughCheckout = Boolean(p?.stripe_customer_id)
         const endsAt = p?.subscription_end_date ? new Date(p.subscription_end_date) : null
         const live = endsAt ? endsAt.getTime() > Date.now() : false
 
-        if (!live) return EMPTY
-        if (status === 'trialing') return { trialEndsAt: endsAt, isPremium: false }
-        if (status === 'pro' || status === 'active') return { trialEndsAt: null, isPremium: true }
+        if (status === 'pro' || status === 'active') {
+          if (live) return { trialEndsAt: null, isPremium: true, kind: 'pro', trialEndedAt: null }
+          if (hasBeenThroughCheckout) return EMPTY
+          // 'pro' with a date in the past: the trial-expiry cron has not run
+          // yet, or the profile was never cleared. The cron deliberately leaves
+          // subscription_end_date in place, so the date is still the truth.
+          return { trialEndsAt: null, isPremium: false, kind: 'trial-ended', trialEndedAt: endsAt }
+        }
+        if (status === 'trialing') {
+          if (live) {
+            return { trialEndsAt: endsAt, isPremium: false, kind: 'trialing', trialEndedAt: null }
+          }
+          return hasBeenThroughCheckout
+            ? EMPTY
+            : { trialEndsAt: null, isPremium: false, kind: 'trial-ended', trialEndedAt: endsAt }
+        }
+        // 'free' with an end date behind it is an expired trial the cron HAS
+        // cleared. 'free' with no date at all never started one.
+        if (status === 'free' || status === '') {
+          if (hasBeenThroughCheckout) return EMPTY
+          return endsAt && !live
+            ? { trialEndsAt: null, isPremium: false, kind: 'trial-ended', trialEndedAt: endsAt }
+            : NEVER
+        }
+        // 'cancelled' and anything else: a person who paid. Never call that a
+        // finished trial.
         return EMPTY
       } catch (err) {
         console.error('[trial-state] profile fallback failed:', err)
@@ -130,22 +218,39 @@ export async function getTrialState(): Promise<TrialState> {
     const now = Date.now()
     const periodEnd = sub.currentPeriodEnd.getTime()
     const stillInPeriod = periodEnd > now
+    const status = sub.status.toUpperCase()
 
     // Trial state - only surfaced while the row is genuinely TRIALING and
-    // the trial end is still in the future. An expired trial reverts to
-    // EMPTY so the banner hides and we don't taunt the user.
-    const trialEndsAt = sub.status === 'TRIALING' && stillInPeriod ? sub.currentPeriodEnd : null
+    // the trial end is still in the future.
+    const trialEndsAt = status === 'TRIALING' && stillInPeriod ? sub.currentPeriodEnd : null
 
     // Premium = any access-granting state OTHER than TRIALING. We exclude
     // PAST_DUE (read-only grace) so we don't claim premium for users who
     // are technically losing access.
     const isPremium =
       stillInPeriod &&
-      (sub.status === 'ACTIVE' ||
-        sub.status === 'PAUSED' ||
-        (sub.status === 'CANCELLED' && sub.cancelledAt !== null))
+      (status === 'ACTIVE' ||
+        status === 'PAUSED' ||
+        (status === 'CANCELLED' && sub.cancelledAt !== null))
 
-    return { trialEndsAt, isPremium }
+    if (isPremium) return { trialEndsAt: null, isPremium: true, kind: 'pro', trialEndedAt: null }
+    if (trialEndsAt) return { trialEndsAt, isPremium: false, kind: 'trialing', trialEndedAt: null }
+
+    // Past the period and not premium. ONLY call this a finished trial when
+    // there was no Stripe subscription behind it - otherwise a lapsed or
+    // cancelled payer is told their "free trial has ended". See isNoCardTrial.
+    if (!stillInPeriod && status === 'TRIALING' && isNoCardTrial(sub.stripeSubscriptionId)) {
+      return {
+        trialEndsAt: null,
+        isPremium: false,
+        kind: 'trial-ended',
+        trialEndedAt: sub.currentPeriodEnd,
+      }
+    }
+
+    // A lapsed payer, a past-due row, or anything else we cannot name
+    // confidently. Say nothing rather than guess.
+    return EMPTY
   } catch (err) {
     console.error('[trial-state] prisma read failed:', err)
     return EMPTY

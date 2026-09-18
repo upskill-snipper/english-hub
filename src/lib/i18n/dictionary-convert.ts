@@ -35,6 +35,40 @@
  */
 
 export const CONVERT_DICTIONARY: Record<string, { en: string; ar: string; es?: string }> = {
+  // ─── Day 8: what a trialist is told when the countdown stops ──────────
+  //
+  // Added 19 September 2026 with NotOnProCard. The banner used to vanish the
+  // moment the trial ended, so the dashboard went quiet at the exact moment
+  // somebody decides whether to pay.
+  //
+  // No countdown, no "last chance", no scarcity: the offer architecture bans
+  // unevidenced urgency and there is no real deadline here. State what
+  // happened, what they keep, and what it costs.
+  'billing.notpro.title': {
+    en: 'You are on the free plan',
+    ar: 'أنت على الخطة المجانية',
+    es: 'Estás en el plan gratuito',
+  },
+  'billing.notpro.ended_title': {
+    en: 'Your free trial ended on {date}',
+    ar: 'انتهت فترتك التجريبية المجانية في {date}',
+    es: 'Tu prueba gratuita terminó el {date}',
+  },
+  'billing.notpro.body': {
+    en: 'AI marking on your essays is part of a paid plan. Everything you have already had marked stays where it is.',
+    ar: 'تصحيح المقالات بالذكاء الاصطناعي جزء من الخطة المدفوعة. كل ما صُحّح لك سابقاً يبقى في مكانه.',
+    es: 'La corrección con IA de tus redacciones forma parte de un plan de pago. Todo lo que ya se te ha corregido sigue donde está.',
+  },
+  'billing.notpro.keeps': {
+    en: 'Revision notes, flashcards and the exam-board content stay free.',
+    ar: 'ملاحظات المراجعة والبطاقات التعليمية ومحتوى مجالس الامتحانات تبقى مجانية.',
+    es: 'Los apuntes de repaso, las tarjetas y el contenido de los consejos examinadores siguen siendo gratuitos.',
+  },
+  'billing.notpro.cta': {
+    en: 'See plans',
+    ar: 'شوف الخطط',
+    es: 'Ver planes',
+  },
   // ════════════════════════════════════════════════════════════════════
   //  redeem.*  - /redeem promo-code redemption (public checkout surface)
   //  EN written fresh from src/app/redeem/page.tsx render points.

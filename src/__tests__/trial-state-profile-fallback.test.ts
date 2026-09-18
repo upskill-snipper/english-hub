@@ -41,6 +41,19 @@ vi.mock('@/lib/prisma', () => ({
 
 import { getTrialState } from '@/lib/billing/trial-state'
 
+/**
+ * "The banner renders nothing" - which is what these tests are actually about.
+ *
+ * They used to deep-equal the whole TrialState. SF-7 then widened it with
+ * `kind` and `trialEndedAt`, and eleven tests failed while the behaviour they
+ * describe was unchanged. Asserting the two fields the banner reads keeps them
+ * about the behaviour rather than the shape.
+ */
+async function showsNothing(): Promise<boolean> {
+  const s = await getTrialState()
+  return s.trialEndsAt === null && s.isPremium === false
+}
+
 const future = new Date(Date.now() + 5 * 24 * 60 * 60 * 1000)
 const past = new Date(Date.now() - 24 * 60 * 60 * 1000)
 
@@ -82,27 +95,27 @@ describe('an account with no Prisma row', () => {
 describe('what the fallback refuses', () => {
   it('shows nothing once the period has passed', async () => {
     profileRow = { subscription_status: 'pro', subscription_end_date: past.toISOString() }
-    expect(await getTrialState()).toEqual({ trialEndsAt: null, isPremium: false })
+    expect(await showsNothing()).toBe(true)
   })
 
   it('shows nothing with no end date, rather than guessing one', async () => {
     profileRow = { subscription_status: 'pro', subscription_end_date: null }
-    expect(await getTrialState()).toEqual({ trialEndsAt: null, isPremium: false })
+    expect(await showsNothing()).toBe(true)
   })
 
   it.each(['free', 'cancelled', 'past_due', ''])('shows nothing for a %s profile', async (s) => {
     profileRow = { subscription_status: s, subscription_end_date: future.toISOString() }
-    expect(await getTrialState()).toEqual({ trialEndsAt: null, isPremium: false })
+    expect(await showsNothing()).toBe(true)
   })
 
   it('shows nothing when there is no profile either', async () => {
     profileRow = null
-    expect(await getTrialState()).toEqual({ trialEndsAt: null, isPremium: false })
+    expect(await showsNothing()).toBe(true)
   })
 
   it('shows nothing when nobody is signed in', async () => {
     authUser = null
-    expect(await getTrialState()).toEqual({ trialEndsAt: null, isPremium: false })
+    expect(await showsNothing()).toBe(true)
   })
 })
 
@@ -133,7 +146,8 @@ describe('an account that does have a Prisma row', () => {
       cancelledAt: null,
     })
     const state = await getTrialState()
-    expect(state).toEqual({ trialEndsAt: null, isPremium: true })
+    expect(state.isPremium).toBe(true)
+    expect(state.trialEndsAt).toBeNull()
   })
 
   it('does not claim premium for PAST_DUE, which is losing access', async () => {
@@ -151,7 +165,7 @@ describe('an account that does have a Prisma row', () => {
       currentPeriodEnd: past,
       cancelledAt: null,
     })
-    expect(await getTrialState()).toEqual({ trialEndsAt: null, isPremium: false })
+    expect(await showsNothing()).toBe(true)
   })
 })
 
@@ -160,6 +174,9 @@ describe('an account that does have a Prisma row', () => {
 describe('failure', () => {
   it('returns empty rather than throwing when Prisma is unreachable', async () => {
     mockUserFindUnique.mockRejectedValue(new Error('connection refused'))
-    await expect(getTrialState()).resolves.toEqual({ trialEndsAt: null, isPremium: false })
+    expect(await showsNothing()).toBe(true)
+    // And it must report 'unknown', not a definite answer: telling somebody
+    // their trial ended because Prisma timed out is worse than saying nothing.
+    expect((await getTrialState()).kind).toBe('unknown')
   })
 })

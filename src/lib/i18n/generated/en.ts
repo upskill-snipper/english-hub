@@ -9709,6 +9709,12 @@ export const EN_MESSAGES: Record<string, string> = {
   'sitemap.section.help_faqs': 'Help and FAQs',
   'sitemap.section.legal': 'Legal and policies',
   'sitemap.section.other': 'Other',
+  'billing.notpro.title': 'You are on the free plan',
+  'billing.notpro.ended_title': 'Your free trial ended on {date}',
+  'billing.notpro.body':
+    'AI marking on your essays is part of a paid plan. Everything you have already had marked stays where it is.',
+  'billing.notpro.keeps': 'Revision notes, flashcards and the exam-board content stay free.',
+  'billing.notpro.cta': 'See plans',
   'redeem.h1': 'Redeem your code',
   'redeem.lead':
     'Enter your promo code below to unlock your discounted plan and continue to secure checkout.',
