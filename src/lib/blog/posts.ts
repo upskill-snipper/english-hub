@@ -15,6 +15,48 @@ import { listMdxSlugs, mdxFileExists, readAllMdxFiles, readMdxFile } from '@/lib
 
 const BLOG_DIR = 'blog'
 
+// ─── Memoisation ────────────────────────────────────────────────────────────
+//
+// THE DEFECT THIS FIXES (19 September 2026)
+//
+// `getAllBlogPosts()` called `readAllMdxFiles()`, which does a synchronous
+// `readdirSync` over content/blog (84 entries) and then a synchronous
+// `readFileSync` per slug, parsed the frontmatter with gray-matter, validated
+// it and ran `reading-time` over the full body of all 42 posts - on EVERY
+// call. Nothing cached: no `unstable_cache`, no React `cache`, and neither
+// blog route sets `revalidate` or `generateStaticParams`.
+//
+// The blog index calls it once per render and the post page calls it again for
+// its related-posts list, so a single cold request parsed the corpus twice on
+// a serverless function with no warm filesystem cache.
+//
+// WHY A MODULE-LEVEL MEMO IS THE RIGHT SCOPE. Blog content is files in the
+// repository: it can only change on deploy, and a deploy is a new process. A
+// new Vercel lambda starts with an empty memo and fills it on its first
+// request, which is exactly the desired behaviour. This is the same shape as
+// the existing import-job cache.
+//
+// It is deliberately NOT a time-based cache. A TTL would add a class of bug
+// (stale content for N seconds after a deploy) to solve a problem that does
+// not exist, because the input cannot change within a process lifetime.
+//
+// `__resetBlogMemoForTests` exists so a test can write a fixture and re-read
+// it; nothing in the application should call it.
+// ────────────────────────────────────────────────────────────────────────────
+
+let allPostsMemo: BlogPost[] | null = null
+let slugsMemo: string[] | null = null
+const postMemo = new Map<string, BlogPost | null>()
+const arVariantMemo = new Map<string, boolean>()
+
+/** Test seam. Drops every memo so a fixture change is picked up. */
+export function __resetBlogMemoForTests(): void {
+  allPostsMemo = null
+  slugsMemo = null
+  postMemo.clear()
+  arVariantMemo.clear()
+}
+
 /** Educational levels we support across the platform. */
 export type EducationalLevel = 'KS3' | 'GCSE' | 'IGCSE' | 'A-Level'
 
@@ -103,12 +145,19 @@ function toBlogPost(slug: string, data: BlogPostFrontmatter, content: string): B
   }
 }
 
-/** Returns every blog post, newest-first. */
+/**
+ * Returns every blog post, newest-first.
+ *
+ * The returned array is the memo itself, so callers must not mutate it. Every
+ * caller today either maps, filters or slices, all of which copy.
+ */
 export function getAllBlogPosts(): BlogPost[] {
+  if (allPostsMemo) return allPostsMemo
   const files = readAllMdxFiles<BlogPostFrontmatter>(BLOG_DIR)
-  return files
+  allPostsMemo = files
     .map((file) => toBlogPost(file.slug, file.data, file.content))
     .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0))
+  return allPostsMemo
 }
 
 /**
@@ -122,6 +171,18 @@ export function getAllBlogPosts(): BlogPost[] {
  * while translations are still landing one-by-one).
  */
 export function getBlogPost(slug: string, locale: 'en' | 'ar' | 'es' = 'en'): BlogPost | null {
+  // Keyed by locale as well as slug: the Arabic variant is a different post
+  // body under the same canonical slug, so a slug-only key would serve the
+  // wrong language to whichever caller arrived second.
+  const key = `${locale}:${slug}`
+  const cached = postMemo.get(key)
+  if (cached !== undefined) return cached
+  const resolved = resolveBlogPost(slug, locale)
+  postMemo.set(key, resolved)
+  return resolved
+}
+
+function resolveBlogPost(slug: string, locale: 'en' | 'ar' | 'es'): BlogPost | null {
   if (locale === 'ar') {
     const arFile = readMdxFile<BlogPostFrontmatter>(BLOG_DIR, `${slug}.ar`)
     if (arFile) {
@@ -146,7 +207,8 @@ export function getBlogPost(slug: string, locale: 'en' | 'ar' | 'es' = 'en'): Bl
  * Locale variants (`<slug>.ar.mdx`) are excluded by `listMdxSlugs`.
  */
 export function getBlogSlugs(): string[] {
-  return listMdxSlugs(BLOG_DIR)
+  if (!slugsMemo) slugsMemo = listMdxSlugs(BLOG_DIR)
+  return slugsMemo
 }
 
 /**
@@ -156,5 +218,9 @@ export function getBlogSlugs(): string[] {
  * per-request without cost.
  */
 export function hasArabicVariant(slug: string): boolean {
-  return mdxFileExists(BLOG_DIR, `${slug}.ar`)
+  const cached = arVariantMemo.get(slug)
+  if (cached !== undefined) return cached
+  const exists = mdxFileExists(BLOG_DIR, `${slug}.ar`)
+  arVariantMemo.set(slug, exists)
+  return exists
 }
