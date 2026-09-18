@@ -118,6 +118,21 @@ two for yourself. It is read-only.
   "fallback inbox" is only attempted when it is a different address.
 - **Attribution signal:** of the 11 recovered `utm_source` values, 9 are
   `chatgpt.com`. AI assistants are already referring learners.
+- **Five public forms wrote to tables that did not exist** and no migration
+  declared them: `creator_applications` (the /creators form), `school_contact_requests`
+  (the schools contact form), `waitlist`, `feedback_entries` and
+  `teacher_referrals`. Each route returned 500 on every submission (the
+  waitlist route caught the error and told the visitor they were on a list
+  that did not exist), so the creator programme had no working entry point
+  and no school enquiry or piece of feedback was ever stored. Created by
+  `20260918_public_form_tables.sql` from the routes' own insert payloads,
+  service-role only; every route's insert shape tested against production in
+  a rolled-back transaction. Still missing and deliberately not created here
+  because their contracts need a decision first: `student_progress` (mobile
+  `GET /api/progress`), `assignments`, `assignment_submissions`, `import_jobs`
+  (see chapter 02 §5.2 and the mobile and data-integrity items in the
+  improvement backlog). Follow-up: add the five new tables to the retention
+  cron on the two-year support-communications clock.
 
 ---
 

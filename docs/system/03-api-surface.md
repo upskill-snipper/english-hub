@@ -351,3 +351,9 @@ The `assignments` case is the nastier one. Prisma owns `Assignment` and `Assignm
 - **Whether both affiliate programmes are live**, which enrolment route the current signup page calls, and whether `affiliate_accounts` was created from `migrations-pending/002_affiliates.sql` or by hand.
 - **Real request volumes per route**, so "unreferenced" in 5.1 means "no static caller in this repo", not "no traffic".
 - **The contents of `english-hub-mobile/docs/API_SPEC.md`**, cited as the contract by nine routes here. I confirmed the call sites in that repo but did not read the spec, so section numbers quoted in route headers are unverified.
+
+---
+
+## Correction, 18 September 2026: the tables in §5.2 were verified absent, and five now exist
+
+A read-only `information_schema` check on 18 September found 78 live tables and none of the code-referenced tables that no migration declared. Five of them backed public forms and were created that day by `supabase/migrations/20260918_public_form_tables.sql`, with the column set taken from each route's own insert payload: `creator_applications` (`POST /api/creator-apply`), `school_contact_requests` (`POST /api/school/contact`), `waitlist` (`POST /api/waitlist`), `feedback_entries` (`/api/feedback`) and `teacher_referrals` (`POST /api/teacher-signup`). Until then every one of those routes answered 500 on every submission, except the waitlist route, which caught `42P01` and told the visitor they were on a list that did not exist. Still absent, and left absent until their contracts are decided: `student_progress` (which the mobile app's `GET /api/progress` reads), `assignments`, `assignment_submissions` and `import_jobs`.
