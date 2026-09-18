@@ -102,6 +102,23 @@ export const LIMIT_SPECS = {
     min: 0,
     max: 10000,
   },
+  /**
+   * Examiner marking tool: scripts a teacher may mark per rolling 30 days.
+   * One "script" is one call to /api/examiner/mark. Transcription calls are
+   * not counted here (they are hourly-limited) because a script is
+   * transcribed twice and the second pass is mostly cache reads. This is the
+   * number that bounds the tool's cost to the business - see
+   * src/lib/marking/examiner/models.ts for the per-script estimate - and it is
+   * changeable live so the founder can set it from observed usage rather than
+   * from this guess.
+   */
+  examinerScriptsMonthly: {
+    configKey: 'examiner.scripts_per_month',
+    envVar: 'EH_EXAMINER_SCRIPTS_PER_MONTH',
+    fallback: 150,
+    min: 0,
+    max: 100000,
+  },
 } as const satisfies Record<string, LimitSpec>
 
 export type LimitName = keyof typeof LIMIT_SPECS

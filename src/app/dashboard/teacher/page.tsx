@@ -34,6 +34,7 @@ import {
   Library,
   ArrowRight,
   Sparkles,
+  Stamp,
 } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -42,6 +43,12 @@ import { Skeleton } from '@/components/ui/skeleton'
 type SchoolMembership = { role: string } | null | 'loading'
 
 const TOOLS = [
+  {
+    href: '/toolkit/examiner',
+    icon: Stamp,
+    titleKey: 'teacher.hub.tool.examiner.title',
+    descKey: 'teacher.hub.tool.examiner.desc',
+  },
   {
     href: '/toolkit/revision-builder',
     icon: Sparkles,

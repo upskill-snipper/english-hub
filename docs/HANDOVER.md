@@ -49,6 +49,37 @@ which is a build-generated date stamp - leave it.
 Run `node --env-file=.env.local scripts/check-schema-drift.mjs` to see the first
 two for yourself. It is read-only.
 
+**Verified 18 September 2026, later the same day, by the incoming operator:**
+
+- `tsc` clean, 2,265 tests passing, schema drift exactly as above plus one
+  more: `email_subscribers` (from `20260504120000_email_subscribers.sql`) does
+  not exist either. Nothing in `src/` references it, so it is a dead
+  migration rather than a dead feature.
+- **Production has no `SMTP_HOST`** (checked with `vercel env ls production`,
+  names only). `sendEmail()` in `src/lib/email.ts` builds a nodemailer
+  transport at module load with `host: undefined`, so every message on that
+  path has been failing and returning `{ success: false }` to callers that
+  carry on regardless: safeguarding alerts, DSAR acknowledgements, school
+  invites, parent-link notices, dormancy and retention warnings. `RESEND_API_KEY`
+  is set, so the fix is to route `sendEmail` through Resend when SMTP is
+  unconfigured. Not yet done; highest-priority next change.
+- Production has no `SENTRY_DSN` or `NEXT_PUBLIC_SENTRY_DSN`. Sentry is a
+  silent no-op. No `DSL_EMAIL`, `SCHOOL_INQUIRY_EMAIL`, `IP_HASH_SALT`,
+  `CSRF_SECRET`, `UPSTASH_*`, `SENDGRID_API_KEY`, and no `TRIAL_LIFECYCLE_EMAILS_ENABLED`
+  or `WEEKLY_PARENT_REPORTS_ENABLED` (both crons therefore off).
+- `NEXT_PUBLIC_POSTHOG_KEY` IS set, so PostHog is a live sub-processor and
+  decision B17 in `BUSINESS-DECISIONS-NEEDED.md` is answered: yes. `/legal/privacy`
+  must name it.
+- `STRIPE_PRICE_IELTS_MONTHLY` and `STRIPE_PRICE_IELTS_ANNUAL` ARE set, which
+  contradicts `LAUNCH-READINESS-2026-08-18.md` item C3. The buy buttons have
+  not been exercised; do that before advertising IELTS.
+- The `ANTHROPIC_API_KEY` in `.env.local` was **not** the production key (the
+  provider returned 401 on it). It was replaced with the production value on
+  18 September; a backup of the old file is outside the repo. Everything else
+  in `.env.local` was left alone, including the test-mode Stripe keys.
+- The examiner marking tool shipped (chapter 04 §12). `/api/health/ai` now
+  probes every configured model and runs daily from `vercel.json`.
+
 ---
 
 ## 2. The product
@@ -197,9 +228,20 @@ her account had been cut off.
 
 Ordered by what I would do first.
 
-1. **Wire `/api/health/ai` to a cron** and make it probe all four model
-   constants. Two model outages have each cost roughly ten weeks; the detector
-   exists and is not plugged in.
+0. **Route `sendEmail()` through Resend when `SMTP_HOST` is unset.** See §1:
+   the nodemailer path is dead in production and carries the safeguarding
+   alerts. `src/lib/email/resend.ts` already has `sendViaResend()`.
+1. ~~**Wire `/api/health/ai` to a cron** and make it probe all four model
+   constants.~~ Done 18 September: it probes seven ids (shared, three marking
+   tiers, three examiner tiers) and runs at 06:30 UTC daily. What is still
+   missing is anyone being told: a failing run is a non-2xx in the Vercel cron
+   log and nowhere else. Point an external monitor at it with the
+   `CRON_SECRET` bearer, or add a Sentry DSN and raise from the route.
+   1b. **Examiner tool follow-ups.** Add `examiner_marking_runs` expiry to
+   `/api/cron/data-retention` and both examiner tables to the DSAR export;
+   promote AQA 8700 Paper 1 and Paper 2 to exemplar-derived packs (the
+   largest UK teacher segment); consider linking saved runs to
+   `marking_submissions` for school members so the AO analytics see them.
 2. **Apply `20260512_progress_tables.sql` and `20260529_marking_result_v2.sql`.**
    Both are additive but both drop and recreate RLS policies on live tables, so
    schedule them deliberately and verify RLS afterwards. Do not run them

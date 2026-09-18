@@ -110,6 +110,7 @@ before running anything.
 | Identity, age bands, consent | `docs/system/05`, then `src/lib/identity/`                                                                   |
 | Entitlements and billing     | `docs/system/06`. `src/lib/course-access.ts` gates the web; `src/lib/entitlements.ts` is the mobile contract |
 | How marking actually works   | `docs/system/04`                                                                                             |
+| The examiner marking tool    | `docs/system/04` §12, then `src/lib/marking/examiner/` (packs, gate, prompts) and `src/components/examiner/` |
 | What deletes data, and when  | `docs/system/09`                                                                                             |
 | Prices                       | `src/constants/pricing.ts`, never a markdown file                                                            |
 

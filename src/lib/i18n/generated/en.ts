@@ -7591,6 +7591,15 @@ export const EN_MESSAGES: Record<string, string> = {
     'Critic personas are authored practice prompts - they do not call a live AI. Use them to rehearse the rhythm; bring your own live feedback via',
   'essay_check.footnote.link': 'AI essay marking',
   'essay_check.footnote.suffix': 'after writing.',
+  'toolkit.ai.examiner.title': 'Examiner marking tool',
+  'toolkit.ai.examiner.desc':
+    "Photograph a handwritten script or paste the text, then mark it as a senior examiner would: best-fit levels, boundary triggers and commentary in the board's own voice. Mark a whole class from one scan.",
+  'teacher.hub.tool.examiner.title': 'Examiner marking tool',
+  'teacher.hub.tool.examiner.desc':
+    "Transcribe handwritten scripts and mark them against your board's level grids with examiner commentary. Whole classes from one scan.",
+  'school.b15.tools.tool_examiner_name': 'Examiner marking tool',
+  'school.b15.tools.tool_examiner_desc':
+    'Photograph handwritten scripts, transcribe them with doubtful readings flagged, and mark against the level grids with examiner commentary.',
   'legal_long.ai_gov.h1': 'AI Governance & Ethics',
   'legal_long.ai_gov.operator_pre': 'The English Hub',
   'legal_long.ai_gov.operator_mid': ' - operated by Upskill Energy Limited',

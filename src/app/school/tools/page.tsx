@@ -18,6 +18,7 @@ import {
   Maximize,
   Volume2,
   VolumeX,
+  Stamp,
 } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -274,6 +275,12 @@ export default function ToolsPage() {
       description: tx('school.b15.tools.tool_mark_scheme_desc'),
       href: '/school/tools/mark-schemes',
       icon: BookMarked,
+    },
+    {
+      name: tx('school.b15.tools.tool_examiner_name'),
+      description: tx('school.b15.tools.tool_examiner_desc'),
+      href: '/toolkit/examiner',
+      icon: Stamp,
     },
     {
       name: tx('school.b15.tools.tool_diff_name'),

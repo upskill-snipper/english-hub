@@ -11,6 +11,7 @@ import {
   FolderOpen,
   Target,
   Zap,
+  Stamp,
 } from 'lucide-react'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
@@ -75,6 +76,17 @@ const AI_TOOL_DEFS: ToolkitSectionDef[] = [
     colour: 'text-rose-500',
     bgColour: 'bg-rose-500/10',
     tagKey: 'toolkit.tag.data_driven',
+  },
+  // Teacher-facing. Genuinely calls a model (transcription and marking), so
+  // the AI tag is honest here.
+  {
+    titleKey: 'toolkit.ai.examiner.title',
+    descKey: 'toolkit.ai.examiner.desc',
+    href: '/toolkit/examiner',
+    icon: Stamp,
+    colour: 'text-emerald-600',
+    bgColour: 'bg-emerald-500/10',
+    tagKey: 'toolkit.tag.ai_powered',
   },
 ]
 

@@ -127,6 +127,9 @@ export type AiAuditFeature =
   | 'ielts/speaking-feedback'
   | 'ielts/diagnostic-assess'
   | 'ielts/statement-feedback'
+  | 'examiner/transcribe'
+  | 'examiner/mark'
+  | 'examiner/split'
 
 /** Token usage, when the SDK surfaces it (streaming/raw-fetch paths may not). */
 export interface AiAuditTokenUsage {

@@ -740,4 +740,39 @@ export const TOOLKIT_DICTIONARY: Dictionary = {
     ar: 'بعد الكتابة.',
     es: 'después de escribir.',
   },
+
+  // ─── Examiner marking tool (/toolkit/examiner) entry cards ───────────
+  // The tool itself is English-only (dense examiner vocabulary, adult users);
+  // only the cards that lead to it are translated. See the header of
+  // src/components/examiner/ExaminerTool.tsx.
+  'toolkit.ai.examiner.title': {
+    en: 'Examiner marking tool',
+    ar: 'أداة التصحيح بأسلوب المُمتحِن',
+    es: 'Herramienta de corrección de examinador',
+  },
+  'toolkit.ai.examiner.desc': {
+    en: "Photograph a handwritten script or paste the text, then mark it as a senior examiner would: best-fit levels, boundary triggers and commentary in the board's own voice. Mark a whole class from one scan.",
+    ar: 'صوّر الورقة المكتوبة بخط اليد أو الصق النص، وصحّحها كما يصحّح المُمتحِن الأول: مستويات best-fit، ومحفّزات الحدود، وتعليق بصوت الهيئة نفسها. صحّح صفاً كاملاً من مسح واحد.',
+    es: 'Fotografía un examen manuscrito o pega el texto y corrígelo como lo haría un examinador principal: niveles por mejor ajuste, detonantes de frontera y comentario con la voz de la junta. Corrige toda una clase desde un solo escaneo.',
+  },
+  'teacher.hub.tool.examiner.title': {
+    en: 'Examiner marking tool',
+    ar: 'أداة التصحيح بأسلوب المُمتحِن',
+    es: 'Herramienta de corrección de examinador',
+  },
+  'teacher.hub.tool.examiner.desc': {
+    en: "Transcribe handwritten scripts and mark them against your board's level grids with examiner commentary. Whole classes from one scan.",
+    ar: 'انسخ الأوراق المكتوبة بخط اليد وصحّحها على شبكات مستويات هيئتك مع تعليق المُمتحِن. صفوف كاملة من مسح واحد.',
+    es: 'Transcribe exámenes manuscritos y corrígelos según las rejillas de niveles de tu junta con comentario de examinador. Clases enteras desde un solo escaneo.',
+  },
+  'school.b15.tools.tool_examiner_name': {
+    en: 'Examiner marking tool',
+    ar: 'أداة التصحيح بأسلوب المُمتحِن',
+    es: 'Herramienta de corrección de examinador',
+  },
+  'school.b15.tools.tool_examiner_desc': {
+    en: 'Photograph handwritten scripts, transcribe them with doubtful readings flagged, and mark against the level grids with examiner commentary.',
+    ar: 'صوّر الأوراق المكتوبة بخط اليد، وانسخها مع تعليم القراءات المشكوك فيها، وصحّحها على شبكات المستويات مع تعليق المُمتحِن.',
+    es: 'Fotografía exámenes manuscritos, transcríbelos marcando las lecturas dudosas y corrígelos según las rejillas de niveles con comentario de examinador.',
+  },
 }

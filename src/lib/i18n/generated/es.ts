@@ -7769,6 +7769,15 @@ export const ES_MESSAGES: Record<string, string> = {
     'Las figuras críticas son ejercicios redactados de práctica: no invocan una IA en vivo. Úsalas para ensayar el ritmo; obtén tu propia retroalimentación en vivo mediante',
   'essay_check.footnote.link': 'corrección de redacciones con IA',
   'essay_check.footnote.suffix': 'después de escribir.',
+  'toolkit.ai.examiner.title': 'Herramienta de corrección de examinador',
+  'toolkit.ai.examiner.desc':
+    'Fotografía un examen manuscrito o pega el texto y corrígelo como lo haría un examinador principal: niveles por mejor ajuste, detonantes de frontera y comentario con la voz de la junta. Corrige toda una clase desde un solo escaneo.',
+  'teacher.hub.tool.examiner.title': 'Herramienta de corrección de examinador',
+  'teacher.hub.tool.examiner.desc':
+    'Transcribe exámenes manuscritos y corrígelos según las rejillas de niveles de tu junta con comentario de examinador. Clases enteras desde un solo escaneo.',
+  'school.b15.tools.tool_examiner_name': 'Herramienta de corrección de examinador',
+  'school.b15.tools.tool_examiner_desc':
+    'Fotografía exámenes manuscritos, transcríbelos marcando las lecturas dudosas y corrígelos según las rejillas de niveles con comentario de examinador.',
   'legal_long.ai_gov.h1': 'Gobernanza y ética de la IA',
   'legal_long.ai_gov.operator_pre': 'The English Hub',
   'legal_long.ai_gov.operator_mid': ' - operado por Upskill Energy Limited',

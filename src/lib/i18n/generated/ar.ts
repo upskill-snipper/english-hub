@@ -7424,6 +7424,15 @@ export const AR_MESSAGES: Record<string, string> = {
     'شخصيات الناقد هي مطالبات تمرين مكتوبة - ما تستدعي ذكاء اصطناعي حيّ. استخدمها عشان تتمرّن على الإيقاع؛ احصل على تغذية راجعة حيّة من',
   'essay_check.footnote.link': 'تصحيح المقال بالذكاء الاصطناعي',
   'essay_check.footnote.suffix': 'بعد الكتابة.',
+  'toolkit.ai.examiner.title': 'أداة التصحيح بأسلوب المُمتحِن',
+  'toolkit.ai.examiner.desc':
+    'صوّر الورقة المكتوبة بخط اليد أو الصق النص، وصحّحها كما يصحّح المُمتحِن الأول: مستويات best-fit، ومحفّزات الحدود، وتعليق بصوت الهيئة نفسها. صحّح صفاً كاملاً من مسح واحد.',
+  'teacher.hub.tool.examiner.title': 'أداة التصحيح بأسلوب المُمتحِن',
+  'teacher.hub.tool.examiner.desc':
+    'انسخ الأوراق المكتوبة بخط اليد وصحّحها على شبكات مستويات هيئتك مع تعليق المُمتحِن. صفوف كاملة من مسح واحد.',
+  'school.b15.tools.tool_examiner_name': 'أداة التصحيح بأسلوب المُمتحِن',
+  'school.b15.tools.tool_examiner_desc':
+    'صوّر الأوراق المكتوبة بخط اليد، وانسخها مع تعليم القراءات المشكوك فيها، وصحّحها على شبكات المستويات مع تعليق المُمتحِن.',
   'legal_long.ai_gov.h1': 'حوكمة الذكاء الاصطناعي والأخلاقيات',
   'legal_long.ai_gov.operator_pre': 'The English Hub',
   'legal_long.ai_gov.operator_mid': ' - تُشغّلها شركة Upskill Energy Limited',
