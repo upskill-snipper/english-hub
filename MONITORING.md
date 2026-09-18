@@ -1,108 +1,37 @@
-# Monitoring & Observability
+# Monitoring
 
-Overview of monitoring, error tracking, and analytics for **The English Hub** (`theenglishhub.app`).
+**This document was wrong in most of its specifics, and has been replaced with pointers to the chapters that are checked against the code.** Corrected 19 September 2026 (MAINT-5).
 
----
-
-## Services in Use
-
-### 1. Sentry (Error Tracking)
-
-**Status:** Installed and wired via `@sentry/nextjs` v10.44+
-
-- `next.config.js` wraps the config with `withSentryConfig()`.
-- Error boundaries in `src/app/global-error.tsx` and per-route `error.tsx` files (dashboard, courses, mock-exams, school) call `Sentry.captureException(error)`.
-- **No `sentry.client.config.ts`, `sentry.server.config.ts`, or `sentry.edge.config.ts` files exist.** Sentry SDK init relies on the DSN env var and `withSentryConfig` defaults.
-
-**Env vars:**
-
-| Variable | Scope | Required |
-|---|---|---|
-| `NEXT_PUBLIC_SENTRY_DSN` | Client-side | Optional (listed in env-validation) |
-| `SENTRY_DSN` | Server-side | Optional (listed in env-validation) |
-
-**Known limitation:** Source-map upload is disabled on Vercel builds. `next.config.js` sets `disableServerWebpackPlugin: true` and `disableClientWebpackPlugin: true` when `process.env.VERCEL === '1'`. This means Sentry stack traces in production will reference minified code. `hideSourceMaps: true` is also set to prevent public exposure.
-
-### 2. Google Analytics 4
-
-**Status:** Active
-
-- GA4 snippet injected in `src/app/layout.tsx` via inline `<script>` tags, conditional on `NEXT_PUBLIC_GA4_ID` being set.
-- Custom event helper at `src/lib/gtag.ts` exposes `trackEvent(action, params)`.
-
-**Env vars:**
-
-| Variable | Scope | Required |
-|---|---|---|
-| `NEXT_PUBLIC_GA4_ID` | Client-side | Optional |
-
-### 3. Vercel Analytics & Speed Insights
-
-**Status:** Active
-
-- `<Analytics />` from `@vercel/analytics/react` rendered in `src/app/layout.tsx`.
-- `<SpeedInsights />` from `@vercel/speed-insights/next` rendered in `src/app/layout.tsx`.
-- Zero-config; automatically active on Vercel deployments.
-
-### 4. PostHog
-
-**Status:** Not installed. No PostHog dependency, no `NEXT_PUBLIC_POSTHOG` env var, no PostHog provider component. If product analytics beyond GA4 are needed, PostHog would need to be added from scratch.
+It is kept as a file rather than deleted because four other documents link to it, one of them with a live relative link ([`docs/system/10-integrations-and-comms.md`](docs/system/10-integrations-and-comms.md)).
 
 ---
 
-## Environment Variables
+## Where the accurate answers are
 
-All monitoring-related env vars are listed in `.env.example` and validated at startup by `src/lib/env-validation.ts`:
-
-```
-# Sentry (error tracking)
-NEXT_PUBLIC_SENTRY_DSN=
-SENTRY_DSN=your_sentry_dsn_here
-
-# Analytics
-NEXT_PUBLIC_GA4_ID=G-XXXXXXXXXX
-```
-
-Sentry and GA4 vars are classified as **optional** in `env-validation.ts` -- the app will start without them but will log warnings.
+| Question                                                            | Read                                                                                   |
+| ------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| What runs on a schedule, what it writes, and which jobs delete data | [`docs/system/09-scheduled-work.md`](docs/system/09-scheduled-work.md)                 |
+| Sentry, PostHog, GA4, email, and every other third party            | [`docs/system/10-integrations-and-comms.md`](docs/system/10-integrations-and-comms.md) |
+| Current state, and what is genuinely wired versus merely present    | [`docs/HANDOVER.md`](docs/HANDOVER.md)                                                 |
 
 ---
 
-## Cron Jobs
+## What this file used to claim, and what is actually true
 
-Defined in `vercel.json` (4 jobs). All run in the `lhr1` (London) region.
+Recorded rather than silently deleted, because each of these was believable and some of them were acted on.
 
-| Path | Schedule | Source file exists? |
-|---|---|---|
-| `/api/cron/affiliate-confirm` | `0 3 * * *` (daily 03:00 UTC) | Yes -- `src/app/api/cron/affiliate-confirm/route.ts` |
-| `/api/cron/expire-invites` | `0 2 * * *` (daily 02:00 UTC) | Yes -- `src/app/api/cron/expire-invites/route.ts` |
-| `/api/cron/data-retention` | `0 4 * * *` (daily 04:00 UTC) | Yes -- `src/app/api/cron/data-retention/route.ts` |
-| `/api/cron/weekly-reports` | `0 7 * * 1` (Mondays 07:00 UTC) | Yes -- `src/app/api/cron/weekly-reports/route.ts` |
-
-All four cron routes are protected by `CRON_SECRET` (set automatically by Vercel, or manually for local testing).
-
-**Note:** A fifth cron route exists at `src/app/api/cron/school-access/route.ts` but is **not** registered in `vercel.json`, so it will not run automatically on Vercel.
+| It said                                                                                                      | Reality on 19 September 2026                                                                                                                                                                                                                                                                                          |
+| ------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Four cron routes, and a fifth "not registered in `vercel.json`"                                              | **Seventeen** entries in `vercel.json` — sixteen under `/api/cron/` plus the `/api/health/ai` probe. `school-access` is among them, and has been for months.                                                                                                                                                          |
+| `/api/cron/weekly-reports` exists and is scheduled                                                           | That route does not exist. The weekly jobs are `weekly-student-reports` and `weekly-parent-reports`.                                                                                                                                                                                                                  |
+| "PostHog: **Not installed.** No PostHog dependency, no `NEXT_PUBLIC_POSTHOG` env var, no provider component" | `posthog-js` is a dependency, `src/lib/posthog.ts` reads `NEXT_PUBLIC_POSTHOG_KEY`, and `src/components/PostHogProvider.tsx` is mounted in the root layout. Installed, wired, and now consent-gated.                                                                                                                  |
+| "No `sentry.client.config.ts`, `sentry.server.config.ts`, or `sentry.edge.config.ts` files exist"            | `sentry.server.config.ts` exists and is loaded by `src/instrumentation.ts`. The client is initialised in `instrumentation-client.ts`. (`sentry.edge.config.ts` also existed, imported by nothing, and was deleted on 19 September.)                                                                                   |
+| "Sentry source maps disabled on Vercel — both Webpack plugins are disabled when `VERCEL === '1'`"            | They were not disabled. `disableServerWebpackPlugin` and `disableClientWebpackPlugin` were removed from `@sentry/nextjs` at v8; this project is on v10, so both keys were silently ignored. They were deleted on 19 September because a setting that reads as a safety guard and is not one is worse than no setting. |
 
 ---
 
-## Known Limitations
+## The one thing worth carrying forward
 
-1. **Sentry source maps disabled on Vercel** -- both client and server Webpack plugins are disabled when `VERCEL === '1'`. Stack traces in production will reference minified code. To enable source maps, remove the `disableServerWebpackPlugin` / `disableClientWebpackPlugin` guards, but be aware this may increase build times.
+Sentry has **no DSN in production**, so client and server error reporting are configured and switched off. That is a decision for the owner, not a defect — see Block D of the operator priority list. Until a DSN is set, the `captureException` calls throughout the codebase do nothing.
 
-2. **No Sentry SDK init files** -- `sentry.client.config.ts`, `sentry.server.config.ts`, and `sentry.edge.config.ts` do not exist. The SDK initializes via env var defaults only. Adding these files would allow configuring sample rates, integrations, and environment tags.
-
-3. **No uptime monitoring** -- there is no external uptime check for `theenglishhub.app`.
-
-4. **Unregistered cron route** -- `school-access` has a route handler but no `vercel.json` entry.
-
----
-
-## Recommended: Uptime Monitoring
-
-Add [UptimeRobot](https://uptimerobot.com/) free-tier monitoring for `https://theenglishhub.app`:
-
-1. Create a free account at uptimerobot.com.
-2. Add an HTTP(S) monitor for `https://theenglishhub.app` with a 5-minute check interval.
-3. Configure alert contacts (email, Slack, or webhook).
-4. Optionally add a status page at a subdomain (e.g., `status.theenglishhub.app`).
-
-The free tier provides 50 monitors with 5-minute intervals, which is sufficient for a single-domain app.
+The client SDK is no longer downloaded by visitors while it is switched off; it is fetched only if an error is actually captured and a DSN exists.

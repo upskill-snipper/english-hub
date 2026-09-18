@@ -1,6 +1,6 @@
 # Cron jobs, background work and data lifecycle
 
-Fifteen Vercel Cron entries in [`vercel.json`](../../vercel.json) drive everything this product does when nobody is looking: ending trials, confirming affiliate commissions, expiring school invites, sending weekly digests, generating blog drafts, and - the part that deserves the most care - deleting people's accounts. Four of those jobs destroy data, three of them irreversibly, and two of the three target child accounts. This chapter tells you what each job does, what it writes, which ones delete, and where the deletion logic will fire on the wrong person.
+Seventeen Vercel Cron entries - sixteen `/api/cron/*` jobs plus the `/api/health/ai` probe - in [`vercel.json`](../../vercel.json) drive everything this product does when nobody is looking: ending trials, confirming affiliate commissions, expiring school invites, sending weekly digests, generating blog drafts, and - the part that deserves the most care - deleting people's accounts. Four of those jobs destroy data, three of them irreversibly, and two of the three target child accounts. This chapter tells you what each job does, what it writes, which ones delete, and where the deletion logic will fire on the wrong person.
 
 There is no queue, no worker process and no job table. A cron job here is an HTTP GET to a Next.js route handler, authenticated by a shared secret, running for at most a minute. If it fails, it fails quietly unless you go and look.
 

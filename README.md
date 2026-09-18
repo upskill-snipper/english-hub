@@ -3,7 +3,8 @@
 Professional KS3 and GCSE English tutoring platform.
 
 ## Tech Stack
-- Next.js 14 (App Router)
+
+- Next.js 15 (App Router)
 - TypeScript
 - Tailwind CSS
 - Supabase (database + auth)
@@ -11,9 +12,11 @@ Professional KS3 and GCSE English tutoring platform.
 - Vercel (hosting)
 
 ## Domain
+
 https://theenglishhub.app
 
 ## Development
+
 ```bash
 cp .env.example .env.local
 # Fill in env vars

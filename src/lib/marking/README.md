@@ -1,29 +1,38 @@
 # Marking Engine
 
-LLM-powered marking of GCSE English essays against real AQA mark schemes.
-This is a key differentiator for The English Hub: feedback is grounded in the
-exact AOs and band descriptors from the AQA 8700 (Language) and 8702
-(Literature) specifications, not in generic AI opinions.
+LLM-powered marking of GCSE English essays against mark schemes for **six
+boards**: AQA, Cambridge, Edexcel, Edexcel IGCSE, Eduqas and OCR. Fourteen
+scheme files live in `mark-schemes/`.
+
+Corrected 19 September 2026 (MAINT-5): this said "real AQA mark schemes" and
+listed only the three AQA files, which had been untrue for months and would
+lead a reader to think a non-AQA board was unsupported.
+
+**Read `../marking/examiner/verification.ts` before trusting any of it.** The
+corpus is hand-authored. Only three of the twenty-one registered papers have
+been checked against a board's published specification; the rest say so, on
+every surface a teacher can reach. "Grounded in the exact AOs and band
+descriptors" is the intent, and is true of the verified three.
 
 ## Files
 
-| File | Purpose |
-| --- | --- |
-| `mark-schemes/types.ts` | TypeScript interfaces (`MarkScheme`, `AssessmentObjective`, `BandDescriptor`, `MarkingResult` …) |
-| `mark-schemes/aqa-lit-paper1.ts` | AQA 8702 Paper 1 — Shakespeare + 19th-century novel |
-| `mark-schemes/aqa-lang-paper1.ts` | AQA 8700 Paper 1 — Creative reading and writing |
-| `mark-schemes/aqa-lang-paper2.ts` | AQA 8700 Paper 2 — Writers' viewpoints and perspectives |
-| `mark-schemes/index.ts` | Central registry + `getMarkScheme(id)` / `listMarkSchemeIds()` |
-| `mark-scheme-parser.ts` | Parse raw mark scheme text (e.g. copy-paste from a PDF) into `MarkScheme` |
-| `prompt-builder.ts` | Build Claude/OpenAI system + user prompts from a scheme + essay |
-| `grade-predictor.ts` | Map AO scores → indicative GCSE grade 1-9 using AQA boundary averages |
-| `feedback-generator.ts` | Parse the model's JSON into a structured `MarkingResult` |
+| File                              | Purpose                                                                                          |
+| --------------------------------- | ------------------------------------------------------------------------------------------------ |
+| `mark-schemes/types.ts`           | TypeScript interfaces (`MarkScheme`, `AssessmentObjective`, `BandDescriptor`, `MarkingResult` …) |
+| `mark-schemes/aqa-lit-paper1.ts`  | AQA 8702 Paper 1 — Shakespeare + 19th-century novel                                              |
+| `mark-schemes/aqa-lang-paper1.ts` | AQA 8700 Paper 1 — Creative reading and writing                                                  |
+| `mark-schemes/aqa-lang-paper2.ts` | AQA 8700 Paper 2 — Writers' viewpoints and perspectives                                          |
+| `mark-schemes/index.ts`           | Central registry + `getMarkScheme(id)` / `listMarkSchemeIds()`                                   |
+| `mark-scheme-parser.ts`           | Parse raw mark scheme text (e.g. copy-paste from a PDF) into `MarkScheme`                        |
+| `prompt-builder.ts`               | Build Claude/OpenAI system + user prompts from a scheme + essay                                  |
+| `grade-predictor.ts`              | Map AO scores → indicative GCSE grade 1-9 using AQA boundary averages                            |
+| `feedback-generator.ts`           | Parse the model's JSON into a structured `MarkingResult`                                         |
 
 HTTP surface:
 
-| Route | Purpose |
-| --- | --- |
-| `POST /api/mark` | Synchronous marking. Returns `{ result, remaining }`. |
+| Route                   | Purpose                                                       |
+| ----------------------- | ------------------------------------------------------------- |
+| `POST /api/mark`        | Synchronous marking. Returns `{ result, remaining }`.         |
 | `POST /api/mark/stream` | SSE streaming version. Emits `token`, `done`, `error` events. |
 
 ## Integration Checklist
@@ -35,7 +44,7 @@ Before wiring the engine into the UI (`src/app/marking/*`), confirm:
 - [ ] Supabase auth is configured — the routes depend on `createServerSupabaseClient()`.
 - [ ] The calling user has an active Pro subscription (checked via `hasActiveSubscription`).
 - [ ] Minor users have parental AI consent (checked via `checkMinorAIConsent`).
-- [ ] Upstash Redis (`UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN`) is configured for rate limiting. In local dev the in-memory fallback will kick in automatically.
+- [ ] Rate limiting has a backend. `src/lib/rate-limit.ts` supports three - Upstash Redis (`UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN`), a database-backed counter, and an in-memory fallback for local dev. Upstash is no longer the only option, which this line used to imply.
 - [ ] The client UI submits `markSchemeId` matching one of the ids in `MARK_SCHEMES` (`aqa-lit-paper1`, `aqa-lang-paper1`, `aqa-lang-paper2`).
 
 ## Request Shape
@@ -75,9 +84,9 @@ Response (200):
         "evidence": ["...some quote from the essay..."]
       }
     ],
-    "strengths": [ { "point": "...", "quote": "..." } ],
-    "improvements": [ { "point": "...", "suggestion": "..." } ],
-    "nextStepsToNextGrade": [ "..." ],
+    "strengths": [{ "point": "...", "quote": "..." }],
+    "improvements": [{ "point": "...", "suggestion": "..." }],
+    "nextStepsToNextGrade": ["..."],
     "summary": "This response sits at a predicted Grade 6 ..."
   },
   "remaining": 9
@@ -126,23 +135,25 @@ The prompt builder hard-codes several safety rules the model must obey:
 ## Extending the Engine
 
 ### Add a new mark scheme
+
 1. Create `mark-schemes/<id>.ts` exporting a `MarkScheme` constant.
 2. Register it in `mark-schemes/index.ts` inside `MARK_SCHEMES`.
 3. Add any new question types to the UI picker.
 
 ### Parse a scheme from raw text
+
 ```ts
-import { parseMarkScheme } from "@/lib/marking/mark-scheme-parser"
+import { parseMarkScheme } from '@/lib/marking/mark-scheme-parser'
 
 const { scheme, errors } = parseMarkScheme({
-  id: "edexcel-lit-paper1",
-  board: "Edexcel",
-  subject: "English Literature",
-  paper: "Paper 1",
-  title: "Shakespeare and Post-1914 Literature",
+  id: 'edexcel-lit-paper1',
+  board: 'Edexcel',
+  subject: 'English Literature',
+  paper: 'Paper 1',
+  title: 'Shakespeare and Post-1914 Literature',
   totalMarks: 80,
   durationMinutes: 105,
-  rawText: "...pasted mark scheme text...",
+  rawText: '...pasted mark scheme text...',
 })
 ```
 
@@ -151,6 +162,7 @@ min-max ranges. It is forgiving of whitespace and inconsistent punctuation but
 you should always inspect `errors` before trusting the output.
 
 ### Change the predicted grade thresholds
+
 Edit `grade-predictor.ts` → `AQA_ENGLISH_THRESHOLDS`. The values are a 5-year
 rolling average of the published AQA boundaries. If you add an Edexcel or OCR
 scheme, consider adding a board-specific threshold table.

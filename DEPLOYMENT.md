@@ -110,33 +110,50 @@ Each maps to a Stripe Price object. Create these in the Stripe dashboard first, 
 
 ## 3. Database Migrations
 
-Migrations live in `supabase/migrations/` and must be run **in order**.
+**Corrected 19 September 2026 (MAINT-5).** This section used to list four
+migrations and tell you to run `supabase db push`. There are **89** files in
+`supabase/migrations/`, and `supabase db push` is not how this project applies
+them. Following the old instructions against the live database would have been
+an unforced error at best.
 
-| #   | File                        | Description                                                                                                                                                                  |
-| --- | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | `001_initial_schema.sql`    | Core tables: profiles, courses, modules, quiz_questions, enrolments, module_progress, assessment_attempts, certificates, practice_sessions. RLS policies, triggers, indexes. |
-| 2   | `002_affiliate_system.sql`  | Affiliate programme: affiliates, affiliate_referrals, affiliate_payouts, affiliate_commission_defaults.                                                                      |
-| 3   | `003_school_analytics.sql`  | Schools platform: schools, school_members, classes, class_students, school_join_codes, analytics_snapshots.                                                                  |
-| 4   | `20260322_new_features.sql` | Parental consents (GDPR), invite expiration, contact submissions, date_of_birth on profiles.                                                                                 |
-
-### How to run
-
-**Supabase CLI (recommended):**
+### How migrations are actually applied
 
 ```bash
-supabase db push
+node --env-file=.env.local scripts/apply-migrations.mjs
 ```
 
-**SQL Editor:** Copy each `.sql` file into the Supabase dashboard SQL editor and execute in order.
+That script is the only supported path. It tracks what it has applied in
+`public._migrations_applied`, wraps each file in a transaction unless the file
+manages its own, and refuses to re-baseline unless `ALLOW_BASELINE=1` is set
+explicitly.
 
-**psql:**
+### Read this before you run it
+
+`_migrations_applied` records an INTENTION, not reality. The script has a
+`BASELINE_CUTOFF`, and on 30 May 2026 it inserted 66 files as "applied" without
+executing any of them — in four seconds. One of those created
+`profiles.is_minor`, and that column did not exist for four months while code
+selected it on every identity read.
+
+So **verify schema against `information_schema`, never against the tracker**:
 
 ```bash
-psql "$DATABASE_URL" -f supabase/migrations/001_initial_schema.sql
-psql "$DATABASE_URL" -f supabase/migrations/002_affiliate_system.sql
-psql "$DATABASE_URL" -f supabase/migrations/003_school_analytics.sql
-psql "$DATABASE_URL" -f supabase/migrations/20260322_new_features.sql
+node --env-file=.env.local scripts/check-schema-drift.mjs
 ```
+
+It still finds real drift. Note its own limit: it parses `supabase/migrations/`
+only, so anything declared exclusively in `prisma/migrations/` (the
+quoted-camelCase tables such as `"Assignment"`) is invisible to it and has to be
+checked by hand.
+
+### What you must not do
+
+- **Do not run `supabase db push`.** It reconciles against its own idea of
+  applied state, which is not the state this project tracks.
+- **Do not psql individual files by hand** to "catch up". Ordering and the
+  baseline interact; use the runner.
+- **Do not run anything that drops or recreates RLS** on a live table holding
+  children's data without the owner's sign-off.
 
 ---
 

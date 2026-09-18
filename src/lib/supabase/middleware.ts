@@ -119,11 +119,20 @@ export async function updateSession(
   //      prompt - anyone else would need the password to have a session at all
   //      - but a hard enforcement would need the flag in `app_metadata`
   //      (service-role only) plus a server route to clear it.
-  //   2. src/middleware.ts returns the `/ar/...` locale rewrite BEFORE calling
-  //      updateSession(), so nothing in this function - this gate, the
-  //      protected-route rule, or the session refresh - runs on the Arabic URL
-  //      surface. Pre-existing (the auth gate has the same hole), but it means
-  //      a flagged pupil browsing /ar/... is not held here.
+  //   2. (Was: "src/middleware.ts returns the /ar/... locale rewrite BEFORE
+  //      calling updateSession(), so nothing in this function runs on the
+  //      Arabic URL surface.") THAT IS NO LONGER TRUE and was corrected on
+  //      19 September 2026 (MAINT-5). src/middleware.ts calls
+  //      `await updateSession(request, strippedPath)` INSIDE the /ar branch,
+  //      and the header of that file documents the August 2026 fix that made
+  //      it do so. This gate, the protected-route rule and the session refresh
+  //      all run on /ar/... exactly as they do elsewhere.
+  //
+  //      Left as a correction rather than a deletion because the claim is the
+  //      kind a reader acts on: believing it would mean assuming every auth
+  //      rule has an Arabic-shaped hole in it, and either writing a second set
+  //      of guards that are not needed or treating the Arabic surface as
+  //      unprotected when it is not.
   const needsPasswordChange = user?.user_metadata?.needs_password_change === true
   if (needsPasswordChange) {
     const path = effectivePathname
