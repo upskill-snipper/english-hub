@@ -393,6 +393,25 @@ export async function POST(request: NextRequest) {
       }
 
       case 'invoice.paid': {
+        // ─── The IELTS hole (closed 18 September 2026) ────────────────────
+        //
+        // This handler used to write subscription_status = 'pro' for ANY
+        // subscription invoice on the customer, with no IELTS carve-out,
+        // although checkout.session.completed, customer.subscription.updated
+        // and customer.subscription.deleted all carry one.
+        //
+        // IELTS is a standalone product gated by profiles.ielts_status. An
+        // IELTS-only subscriber is a GBP 39/month customer, and the global
+        // 'pro' flag unlocks every GCSE, IGCSE and Teacher feature through
+        // hasActiveSubscription(). So the highest-priced SKU was handing out
+        // the entire catalogue — first on the GBP 0 trial invoice at checkout,
+        // then on every renewal. Worse: because .deleted also carves IELTS
+        // out, that 'pro' was never cleared, so an IELTS trial taken and
+        // cancelled inside 7 days left a permanently free Pro account.
+        //
+        // Both IELTS price ids are set in production and the roadmap is about
+        // to exercise the buy button, so this stopped being theoretical.
+        // ──────────────────────────────────────────────────────────────────
         const invoice = event.data.object as Stripe.Invoice
         const customerId = invoice.customer as string
 
@@ -402,12 +421,47 @@ export async function POST(request: NextRequest) {
           .eq('stripe_customer_id', customerId)
           .single()
 
-        // If this is a subscription invoice, ensure status is 'pro'
-        // (handles edge case where payment succeeds after past_due)
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const invoiceAny = invoice as any
-        if (paidProfile && invoiceAny.subscription) {
-          const periodEnd = invoiceAny.period_end as number | undefined
+        const paidSubscriptionId =
+          typeof invoiceAny.subscription === 'string'
+            ? (invoiceAny.subscription as string)
+            : (invoiceAny.subscription?.id as string | undefined)
+
+        if (paidProfile && paidSubscriptionId) {
+          // Retrieve the subscription rather than trusting the invoice: only
+          // the subscription carries the line items this decision needs, and
+          // only it carries the authoritative current_period_end.
+          let paidSubscription: Stripe.Subscription | null = null
+          try {
+            paidSubscription = await stripe.subscriptions.retrieve(paidSubscriptionId)
+          } catch (err) {
+            console.error('[stripe/webhook] invoice.paid could not retrieve subscription:', err)
+            // Fail closed. Granting 'pro' without being able to check whether
+            // this is IELTS-only is the exact defect being fixed, so do
+            // nothing and let the .updated event reconcile.
+            Sentry.captureException(err, {
+              tags: { surface: 'stripe-webhook', defect: 'invoice-paid-retrieve' },
+            })
+            break
+          }
+
+          if (isIeltsOnlySubscription(paidSubscription)) {
+            // IELTS-only: set the IELTS entitlement and leave the global flag
+            // exactly as it was. Never widen it here.
+            await syncIeltsEntitlement(paidProfile.id, paidSubscription, supabase)
+            break
+          }
+
+          // Not IELTS-only. Take the period end from the subscription, which
+          // is the renewal boundary entitlement should follow; the invoice's
+          // period_end is the billing line's window and can differ on
+          // proration, mid-cycle changes and trial conversion.
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const subAny = paidSubscription as any
+          const periodEnd =
+            (subAny.current_period_end as number | undefined) ??
+            (invoiceAny.period_end as number | undefined)
           const subscriptionEndDate = periodEnd ? new Date(periodEnd * 1000).toISOString() : null
 
           const { error } = await supabase
@@ -422,6 +476,10 @@ export async function POST(request: NextRequest) {
             console.error('Failed to update profile after invoice.paid:', error)
             throw error
           }
+
+          // A mixed subscription (IELTS + a non-IELTS price) keeps 'pro' AND
+          // needs its IELTS flag kept in step.
+          await syncIeltsEntitlement(paidProfile.id, paidSubscription, supabase)
         }
         break
       }
