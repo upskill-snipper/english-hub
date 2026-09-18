@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import * as Sentry from '@sentry/nextjs'
+import { captureClientException } from '@/lib/sentry-client'
 import { useAuthUser } from '@/store/auth-store'
 
 // ── Storage keys ─────────────────────────────────────────────────────────────
@@ -141,7 +141,7 @@ export function useProgressSync(): ProgressSyncState {
         }
       } catch (err) {
         try {
-          Sentry.captureException(err, {
+          captureClientException(err, {
             tags: { feature: 'progress-sync' },
           })
         } catch {

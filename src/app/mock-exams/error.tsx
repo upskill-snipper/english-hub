@@ -2,14 +2,14 @@
 
 import { useEffect } from 'react'
 import Link from 'next/link'
-import * as Sentry from '@sentry/nextjs'
+import { captureClientException } from '@/lib/sentry-client'
 import { useT } from '@/lib/i18n/use-t'
 
 export default function MockExamsError({ error, reset }: { error: Error; reset: () => void }) {
   const t = useT()
 
   useEffect(() => {
-    Sentry.captureException(error)
+    captureClientException(error)
   }, [error])
 
   return (

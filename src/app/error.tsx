@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
-import * as Sentry from '@sentry/nextjs'
+import { captureClientException } from '@/lib/sentry-client'
 import { useT } from '@/lib/i18n/use-t'
 // Note: @sentry/nextjs re-exports the correct client/server module based on context
 
@@ -9,7 +9,7 @@ export default function Error({ error, reset }: { error: Error; reset: () => voi
   const t = useT()
 
   useEffect(() => {
-    Sentry.captureException(error)
+    captureClientException(error)
   }, [error])
 
   return (
