@@ -3,6 +3,7 @@ import { z } from 'zod'
 import { Prisma } from '@prisma/client'
 import { prisma } from '@/lib/prisma'
 import { sendEmail } from '@/lib/email'
+import { tryPrismaUserId } from '@/lib/identity'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 
@@ -265,14 +266,36 @@ export async function GET(request: NextRequest) {
     if (authError || !authUser) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
-    const sessionUserId = authUser.id
-
-    const user = await prisma.user.findUnique({
-      where: { id: sessionUserId },
-      select: { role: true },
-    })
+    // ── Identity: the session gives a SUPABASE uuid, Prisma is keyed on a cuid
+    // This lookup used to be `prisma.user.findUnique({ where: { id: authUser.id } })`,
+    // passing the Supabase auth uuid as a Prisma primary key. It matched nothing,
+    // for anyone, ever - the same defect that silently broke the consent ledger,
+    // erasure, DSAR export and the Stripe subscription record. Here it meant the
+    // safeguarding queue answered 403 to every request including a genuine
+    // administrator's. See src/lib/identity/.
+    const prismaUserId = await tryPrismaUserId(authUser.id)
+    const user = prismaUserId
+      ? await prisma.user.findUnique({ where: { id: prismaUserId }, select: { role: true } })
+      : null
 
     if (!user || user.role !== 'ADMIN') {
+      // A safeguarding queue nobody can open is not a permissions outcome, it is
+      // an operational failure, and on a children's product it must not be
+      // silent. Reports still reach the DSL by email either way (see the POST
+      // handler) - this is about whether anyone can triage what has arrived.
+      const adminCount = await prisma.user
+        .count({ where: { role: 'ADMIN', accountStatus: 'ACTIVE' } })
+        .catch(() => -1)
+      if (adminCount === 0) {
+        console.error(
+          '[safeguarding] SAFEGUARDING_QUEUE_UNREACHABLE no active Prisma User has role ADMIN, ' +
+            'so this queue cannot be opened by anybody. Reports are still emailed to the DSL, but ' +
+            'nothing can be assigned, tracked or closed. Grant ADMIN to the designated safeguarding ' +
+            'lead, or decide deliberately that this surface authorises on ADMIN_EMAILS the way ' +
+            'src/lib/admin-auth.ts does - that is a widening of access to child safeguarding data ' +
+            'and is an owner decision, not a tidy-up.',
+        )
+      }
       return NextResponse.json({ error: 'Forbidden: Admin access required' }, { status: 403 })
     }
 
