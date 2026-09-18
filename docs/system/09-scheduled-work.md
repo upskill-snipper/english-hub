@@ -55,6 +55,16 @@ The header comment in `auth.ts` records why the helper exists. Two routes shippe
 
 `/api/push/send` is also `CRON_SECRET`-gated but is not itself scheduled - it is the internal fan-out endpoint the parent-report cron calls when that cron is enabled ([`push/send/route.ts:36-49`](../../src/app/api/push/send/route.ts)), and it reads only `x-cron-secret`.
 
+### Rotating `CRON_SECRET` breaks every outstanding unsubscribe link
+
+Added 19 September 2026 (RET-7). `CRON_SECRET` is no longer only a cron credential: it is also the HMAC key for unsubscribe tokens ([`src/lib/email/unsubscribe-token.ts`](../../src/lib/email/unsubscribe-token.ts)). Those tokens are embedded in the `List-Unsubscribe` header and the footer link of every marketing email we send, and they are valid for about thirteen months.
+
+**Rotating the secret invalidates all of them at once**, including links in mail that was delivered months ago and has not been opened yet. Nothing anywhere will report this.
+
+It was keyed this way deliberately - the alternative was a new production environment variable, which only the owner can set, and an unsubscribe route that waits on one is an unsubscribe route that does not exist. The consequence is survivable rather than harmless: an unverifiable token does **not** show an error, it renders the neutral "manage your preferences" page at `/unsubscribe`, which still lets a signed-in reader opt out by hand.
+
+If you rotate `CRON_SECRET` - after an incident, or on a schedule - assume every unsubscribe link in flight has silently degraded to that fallback. Giving the tokens their own key (`UNSUBSCRIBE_TOKEN_SECRET`, falling back to `CRON_SECRET` when unset) removes the coupling in about ten lines, and is the right fix the first time the secret genuinely needs rotating.
+
 ### Observability
 
 [`src/lib/cron/observability.ts`](../../src/lib/cron/observability.ts) is a 59-line wrapper. `runCron(name, body)` times the body, adds a Sentry breadcrumb and a `console.info` on success, and on a throw calls `Sentry.captureException` with tag `cron: <name>` and returns HTTP 500.
