@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { prisma } from '@/lib/prisma'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { verifySchoolMember } from '@/lib/school-auth'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
@@ -242,14 +243,31 @@ export async function GET(request: NextRequest) {
     // ── Assignments submitted this week ─────────────────────────────────────
     let assignmentsSubmittedThisWeek = 0
 
+    // DATA-9 (19 September 2026). This read `.from('assignments')` - a table
+    // that DOES NOT EXIST. No migration declares it, and a read-only
+    // information_schema probe against production confirms it is absent.
+    // supabase-js returns `{ error }` rather than throwing, the error was
+    // never destructured, and `count ?? 0` turned a missing relation into a
+    // confident zero. The tile has therefore read "0 assignments" since the
+    // day it shipped, and would have gone on doing so for ever.
+    //
+    // The real store is Prisma's `Assignment` (quoted camelCase, created by
+    // 0_init, verified present in production with 0 rows). Its column is
+    // `classId`, not `class_id`.
+    //
+    // Wrapped so a database problem cannot become a 500: this value feeds a
+    // dashboard tile, and `useSchool` turns any non-ok response from these
+    // routes into "you are not a school member" across four surfaces. A count
+    // is never worth an entitlement flip.
     if (classIds.length > 0) {
-      const { count: assignmentCount } = await admin
-        .from('assignments')
-        .select('id', { count: 'exact', head: true })
-        .in('class_id', classIds)
-        .gte('created_at', oneWeekAgo)
-
-      assignmentsSubmittedThisWeek = assignmentCount ?? 0
+      try {
+        assignmentsSubmittedThisWeek = await prisma.assignment.count({
+          where: { classId: { in: classIds }, createdAt: { gte: new Date(oneWeekAgo) } },
+        })
+      } catch (err) {
+        console.error('[api/school/analytics] assignment count failed', err)
+        assignmentsSubmittedThisWeek = 0
+      }
     }
 
     // ── Average score from module_progress ─────────────────────────────────
@@ -466,21 +484,43 @@ export async function GET(request: NextRequest) {
         .gte('completed_at', eightWeeksAgo)
         .not('completed_at', 'is', null)
 
-      // Also fetch assignment submissions if the table has submitted_at.
-      // Scoped to this school's students: without the .in filter this
-      // counted every school's submissions into this school's chart.
-      const { data: weeklyAssignRows } = await admin
-        .from('assignment_submissions')
-        .select('student_id, submitted_at')
-        .in('student_id', scopedStudentIds)
-        .gte('submitted_at', eightWeeksAgo)
-        .not('submitted_at', 'is', null)
+      // Also fetch assignment submissions. Scoped to this school's students:
+      // without the filter this counted every school's submissions into this
+      // school's chart.
+      //
+      // DATA-9: read `.from('assignment_submissions')`, which does not exist -
+      // no migration declares it and a read-only probe against production
+      // confirms it absent. The error was never destructured, so `?? []`
+      // turned a missing relation into an empty chart series.
+      //
+      // The real store is Prisma's `AssignmentSubmission`. Its `studentId`
+      // holds a SUPABASE uuid, not a Prisma cuid - the write path populates it
+      // from `class_students.student_id` - so `scopedStudentIds` is the right
+      // id space here. Worth stating explicitly, because the two-identity
+      // model makes the opposite assumption the usual one, and a mismatch
+      // would silently return nothing and look exactly like a fix.
+      let weeklyAssignRows: { studentId: string; submittedAt: Date | null }[] = []
+      try {
+        weeklyAssignRows = await prisma.assignmentSubmission.findMany({
+          where: {
+            studentId: { in: scopedStudentIds },
+            submittedAt: { gte: new Date(eightWeeksAgo), not: null },
+          },
+          select: { studentId: true, submittedAt: true },
+        })
+      } catch (err) {
+        console.error('[api/school/analytics] assignment submissions read failed', err)
+        weeklyAssignRows = []
+      }
 
       type ProgressRow = { user_id: string; completed_at: string }
       type AssignRow = { student_id: string; submitted_at: string }
 
       const progressRows = (weeklyProgressRows ?? []) as ProgressRow[]
-      const assignRows = (weeklyAssignRows ?? []) as AssignRow[]
+      // Map Prisma's camelCase back onto the shape the loop below expects.
+      const assignRows: AssignRow[] = weeklyAssignRows
+        .filter((r) => r.submittedAt !== null)
+        .map((r) => ({ student_id: r.studentId, submitted_at: r.submittedAt!.toISOString() }))
 
       for (let i = WEEKS - 1; i >= 0; i--) {
         const wStart = new Date(Date.now() - (i + 1) * 7 * 24 * 60 * 60 * 1000)

@@ -51,9 +51,9 @@ const KNOWN_UNDECLARED: Readonly<Record<string, string>> = {
   student_progress:
     'Queried by /api/progress and src/lib/progress/sync.ts. The progress_* tables created on 19 September cover per-activity progress; whether this aggregate table is still wanted is open.',
   assignments:
-    'Queried by /api/school/analytics and /school/dashboard. Part of the school workspace, which has no live customer yet.',
+    'Queried ONLY by the client component src/app/school/dashboard/page.tsx. The server routes were repointed to Prisma on 19 September (DATA-9) - the real store is the quoted-camelCase `Assignment` table from 0_init, verified present in production by a read-only information_schema probe. This snake_case table has never existed. The dashboard tile still reads it directly from the browser and so still shows 0; it cannot use Prisma from a client component and needs an API route of its own.',
   assignment_submissions:
-    'Queried by /api/school/analytics for completion and score roll-ups. Pairs with `assignments`; neither exists, so the school analytics page has never had data.',
+    'Same as `assignments`: no snake_case table has ever existed. The server-side roll-ups now read Prisma `AssignmentSubmission`, whose studentId holds a SUPABASE uuid (the write path fills it from class_students.student_id), so the id spaces match.',
   import_jobs:
     'Queried by /api/school/import, its [jobId] route and /api/school/export/logins. The bulk-import feature cannot work without it.',
   poems:
