@@ -81,13 +81,51 @@ export async function getTrialState(): Promise<TrialState> {
             select: { id: true },
           })
         : null)
-    if (!profile) return EMPTY
+    const sub = profile
+      ? await prisma.subscription.findUnique({
+          where: { userId: profile.id },
+          select: { status: true, currentPeriodEnd: true, cancelledAt: true },
+        })
+      : null
 
-    const sub = await prisma.subscription.findUnique({
-      where: { userId: profile.id },
-      select: { status: true, currentPeriodEnd: true, cancelledAt: true },
-    })
-    if (!sub) return EMPTY
+    // ── No Prisma row: read the profile instead ───────────────────────────
+    //
+    // THE DEFECT (19 September 2026). Both `if (!profile) return EMPTY` and
+    // `if (!sub) return EMPTY` were unconditional, so the countdown banner
+    // required a Prisma Subscription row to say anything at all. Production
+    // held 13 Prisma users against 206 profiles and ZERO TRIALING rows, so
+    // this banner had never rendered for a single person - and the four
+    // paying customers got no premium signal either.
+    //
+    // `profiles.subscription_status` and `subscription_end_date` are what the
+    // web entitlement gates actually read, so they are a sound fallback. The
+    // profile cannot distinguish a no-card trial from a paid plan (it writes
+    // 'pro' for both), so an account with only a profile is treated as
+    // premium rather than trialing: over-claiming a countdown that is not
+    // there would be worse than not showing one.
+    if (!sub) {
+      if (!supabaseUserId) return EMPTY
+      try {
+        const supabase = createServerSupabaseClient()
+        const { data: p } = await supabase
+          .from('profiles')
+          .select('subscription_status, subscription_end_date')
+          .eq('id', supabaseUserId)
+          .single()
+
+        const status = String(p?.subscription_status ?? '').toLowerCase()
+        const endsAt = p?.subscription_end_date ? new Date(p.subscription_end_date) : null
+        const live = endsAt ? endsAt.getTime() > Date.now() : false
+
+        if (!live) return EMPTY
+        if (status === 'trialing') return { trialEndsAt: endsAt, isPremium: false }
+        if (status === 'pro' || status === 'active') return { trialEndsAt: null, isPremium: true }
+        return EMPTY
+      } catch (err) {
+        console.error('[trial-state] profile fallback failed:', err)
+        return EMPTY
+      }
+    }
 
     const now = Date.now()
     const periodEnd = sub.currentPeriodEnd.getTime()
