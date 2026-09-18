@@ -1,12 +1,40 @@
 /**
  * Feature flags - MVP static config.
  *
- * This is the authoritative map of server-evaluated flags exposed to
- * authenticated clients via `GET /api/flags` (and embedded in `GET /me`).
- * For Wave 4 we do not yet wire a remote provider (PostHog, Statsig,
- * etc.); flags are baked in at build-time with a handful of values
- * derived from environment variables so we can flip them per
- * deployment without a code change.
+ * ── THESE ARE RELEASE SWITCHES. THEY ARE NOT AN EXPERIMENT SYSTEM. ─────────
+ *
+ * Recorded 19 September 2026 (ANA-10) because the name invites the opposite
+ * assumption, and a growth plan built on that assumption would be built on
+ * nothing.
+ *
+ * Every flag here is a single boolean with the SAME value for every user on a
+ * given deployment. There is no user id, no hash, no bucketing input of any
+ * kind reaching this module - `resolveFeatureFlags()` takes only two privacy
+ * opt-outs - so it cannot assign a variant even in principle. A repo-wide
+ * search for variant assignment (assignVariant, getVariant, abTest, split,
+ * experiment) returns nothing but framer-motion props and a badge-colour
+ * helper. There is no `src/lib/experiments`. PostHog is wired for event
+ * capture only; its feature-flag and experiment SDK surface is never touched.
+ *
+ * So: you can turn something on for everyone, or off for everyone, per
+ * deployment. You cannot run an A/B test, and no number produced while this is
+ * the whole system can be attributed to a variant, because there are no
+ * variants. Week-on-week movement is attributable only where a change log
+ * shows a single change to the relevant surface - see
+ * `10 Growth & Analytics/CHANGE-LOG.md` in the business folder.
+ *
+ * WIRING A REMOTE PROVIDER IS NOT A CODE DECISION. Variant assignment means
+ * bucketing identified users, most of whom here are children. Before any
+ * provider is introduced, its DPA status, its registered processing purpose
+ * and the consent position all have to be settled - `src/config/subprocessors.ts`
+ * currently records PostHog with purpose 'Product analytics (event-level)' and
+ * dpaStatus 'unconfirmed', and feature flagging is not that purpose. That is
+ * the owner's call and counsel's, not this file's.
+ *
+ * The previous version of this docblock said "For Wave 4 we do not yet wire a
+ * remote provider (PostHog, Statsig, etc.)", which reads as a scheduling note
+ * about something imminent rather than a statement that the capability is
+ * absent and gated on a compliance decision.
  *
  * Per-user overrides live in `PrivacySettings` and are applied on top
  * of this map by the flag resolver. Privacy-driven opt-outs win over
