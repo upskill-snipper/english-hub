@@ -112,7 +112,7 @@ export default async function RomeoAndJulietHubPage() {
   await requireIgcseBoard(['edexcel-igcse'])
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <CourseJsonLd
         name="Romeo and Juliet - Edexcel IGCSE Literature Study Guide"
         description="In-depth study guide for Romeo and Juliet for Edexcel IGCSE English Literature, covering plot, characters, themes, key quotations, context and exam essay plans."
@@ -304,6 +304,6 @@ export default async function RomeoAndJulietHubPage() {
         Romeo and Juliet by William Shakespeare is in the public domain. Quotations are reproduced
         freely.
       </p>
-    </main>
+    </div>
   )
 }

@@ -552,7 +552,7 @@ export default function AuthorsHubPage() {
     NON_FICTION_AUTHORS.length
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <section className="border-b border-border/40">
         <div className="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6 lg:px-8">
           <span className="inline-block rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
@@ -617,6 +617,6 @@ export default function AuthorsHubPage() {
           </p>
         </aside>
       </section>
-    </main>
+    </div>
   )
 }

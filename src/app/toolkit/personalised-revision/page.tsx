@@ -65,7 +65,7 @@ export default function PersonalisedRevisionPage() {
 
   if (!loaded) {
     return (
-      <main className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background">
         <div className="border-b border-border bg-card">
           <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
             <h1 className="font-serif text-3xl font-medium tracking-tight">
@@ -79,14 +79,14 @@ export default function PersonalisedRevisionPage() {
             <div className="mx-auto h-4 w-96 rounded bg-muted" />
           </div>
         </div>
-      </main>
+      </div>
     )
   }
 
   // No data fallback
   if (!profile || !profile.hasData) {
     return (
-      <main className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background">
         <div className="border-b border-border bg-card">
           <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
             <Link
@@ -121,14 +121,14 @@ export default function PersonalisedRevisionPage() {
             </Button>
           </div>
         </div>
-      </main>
+      </div>
     )
   }
 
   const nextGrade = Math.min(9, profile.predictedGrade + 1)
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       {/* ── Header ──────────────────────────────────────────────── */}
       <section className="border-b border-border bg-card">
         <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
@@ -507,7 +507,7 @@ export default function PersonalisedRevisionPage() {
           </div>
         </section>
       </div>
-    </main>
+    </div>
   )
 }
 

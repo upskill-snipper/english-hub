@@ -184,7 +184,7 @@ export function ReadinessReportClient({ hasAccess }: { hasAccess: boolean }) {
   // ── Pre-hydration skeleton ────────────────────────────────────────────────
   if (!mounted) {
     return (
-      <main id="main-content" className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background">
         <ReadinessHeader t={t} onPrint={handlePrint} showPrint={false} />
         <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
           <div className="h-44 animate-pulse rounded-2xl border border-border bg-card" />
@@ -197,14 +197,14 @@ export function ReadinessReportClient({ hasAccess }: { hasAccess: boolean }) {
             ))}
           </div>
         </div>
-      </main>
+      </div>
     )
   }
 
   const overallColour = COLOUR_CLASS[report.colour]
 
   return (
-    <main id="main-content" className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <ReadinessHeader t={t} onPrint={handlePrint} showPrint={hasAccess} />
 
       <div className="readiness-print-root mx-auto max-w-5xl space-y-8 px-4 py-8 sm:px-6">
@@ -587,7 +587,7 @@ export function ReadinessReportClient({ hasAccess }: { hasAccess: boolean }) {
           </>
         )}
       </div>
-    </main>
+    </div>
   )
 }
 

@@ -498,7 +498,7 @@ export default function AssessmentPage() {
         </header>
 
         {/* Question */}
-        <main className="flex-1 flex items-start justify-center px-4 py-8">
+        <div className="flex-1 flex items-start justify-center px-4 py-8">
           <div className="max-w-2xl w-full">
             {currentQ && (
               <>
@@ -621,7 +621,7 @@ export default function AssessmentPage() {
               </>
             )}
           </div>
-        </main>
+        </div>
       </div>
     )
   }

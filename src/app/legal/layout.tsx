@@ -147,14 +147,14 @@ export default function LegalLayout({ children }: { children: React.ReactNode })
           </div>
 
           {/* Main content */}
-          <main className="min-w-0">
+          <div className="min-w-0">
             <article className="bg-card rounded-lg shadow-md border border-border p-6 sm:p-8 lg:p-10">
               <div className="prose dark:prose-invert max-w-none prose-headings:text-foreground prose-a:text-foreground prose-a:underline">
                 {children}
               </div>
               <ExamBoardDisclaimer />
             </article>
-          </main>
+          </div>
         </div>
       </div>
     </div>

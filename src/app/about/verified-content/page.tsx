@@ -94,7 +94,7 @@ export default async function VerifiedContentPage() {
   ])
 
   return (
-    <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
       <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-mono uppercase tracking-[0.12em] text-emerald-800">
         <span aria-hidden="true">{'✓'}</span>
         <span>{badge}</span>
@@ -189,6 +189,6 @@ export default async function VerifiedContentPage() {
           </p>
         </section>
       </div>
-    </main>
+    </div>
   )
 }

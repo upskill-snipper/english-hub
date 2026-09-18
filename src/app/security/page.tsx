@@ -18,7 +18,7 @@ const LAST_REVIEWED = '2026-05-16'
 
 export default function SecurityPage() {
   return (
-    <main className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
       <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
         Security &amp; Vulnerability Disclosure
       </h1>
@@ -116,6 +116,6 @@ export default function SecurityPage() {
           {COMPANY.companyNumber}.
         </p>
       </div>
-    </main>
+    </div>
   )
 }

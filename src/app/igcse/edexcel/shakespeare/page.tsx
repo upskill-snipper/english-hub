@@ -70,7 +70,7 @@ export default async function ShakespeareHubPage() {
   await requireIgcseBoard(['edexcel-igcse'])
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -217,6 +217,6 @@ export default async function ShakespeareHubPage() {
       </div>
 
       <ExamBoardDisclaimer variant="content" className="mx-auto max-w-5xl px-4 py-8" />
-    </main>
+    </div>
   )
 }

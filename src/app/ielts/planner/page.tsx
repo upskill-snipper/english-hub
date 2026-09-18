@@ -470,7 +470,7 @@ export default function IeltsPlannerPage() {
 
   if (!loaded) {
     return (
-      <main className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background">
         <PlannerHeader t={t} />
         <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6">
           <div className="animate-pulse space-y-4">
@@ -478,12 +478,12 @@ export default function IeltsPlannerPage() {
             <div className="mx-auto h-4 w-96 rounded bg-muted" />
           </div>
         </div>
-      </main>
+      </div>
     )
   }
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <PlannerHeader t={t} />
 
       <div className="mx-auto max-w-4xl space-y-12 px-4 py-8 sm:px-6 sm:py-12">
@@ -538,7 +538,7 @@ export default function IeltsPlannerPage() {
           </Button>
         </div>
       </div>
-    </main>
+    </div>
   )
 }
 

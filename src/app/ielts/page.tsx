@@ -210,7 +210,7 @@ export default async function IeltsHubPage() {
   const ctaBody = await t('ielts.hubx.cta.body')
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -616,6 +616,6 @@ export default async function IeltsHubPage() {
           <p className="mt-6 font-mono text-xs text-muted-foreground">{estimateNote}</p>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

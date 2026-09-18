@@ -183,7 +183,7 @@ export default async function SectionBTaskPage() {
         ]}
       />
 
-      <main className="mx-auto max-w-3xl px-4 py-12">
+      <div className="mx-auto max-w-3xl px-4 py-12">
         <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
           <ol className="flex flex-wrap items-center gap-1">
             <li>
@@ -435,7 +435,7 @@ export default async function SectionBTaskPage() {
         <footer className="mt-16 border-t border-border/60 pt-6 text-xs leading-relaxed text-muted-foreground">
           {SPEC_ATTRIBUTION}
         </footer>
-      </main>
+      </div>
     </>
   )
 }

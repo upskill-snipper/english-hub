@@ -302,7 +302,7 @@ export default function PracticePage() {
   // ── Render ─────────────────────────────────────────────────────────────
 
   return (
-    <main className="min-h-screen pb-20">
+    <div className="min-h-screen pb-20">
       <QuizJsonLd
         name="GCSE and IGCSE English practice questions"
         description="Practice questions across GCSE and IGCSE English Language and Literature, calibrated to AO mark schemes."
@@ -759,6 +759,6 @@ export default function PracticePage() {
           </Card>
         )}
       </div>
-    </main>
+    </div>
   )
 }

@@ -263,7 +263,7 @@ export default function IeltsDashboardPage() {
   // ── Pre-hydration / loading skeleton ─────────────────────────────────────
   if (!mounted || !profile) {
     return (
-      <main id="main-content" className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background">
         <DashboardHeader t={t} />
         <div className="mx-auto max-w-6xl space-y-6 px-4 py-8 sm:px-6">
           <div className="h-44 animate-pulse rounded-2xl border border-border bg-card" />
@@ -276,14 +276,14 @@ export default function IeltsDashboardPage() {
             ))}
           </div>
         </div>
-      </main>
+      </div>
     )
   }
 
   const levelLabel = goals.level ? levelMeta(goals.level).label : null
 
   return (
-    <main id="main-content" className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <DashboardHeader t={t} />
 
       <div className="mx-auto max-w-6xl space-y-8 px-4 py-8 pb-16 sm:px-6">
@@ -801,7 +801,7 @@ export default function IeltsDashboardPage() {
           </p>
         </section>
       </div>
-    </main>
+    </div>
   )
 }
 

@@ -298,7 +298,7 @@ export default async function DataProcessingPage() {
     s12Li2S = n()
 
   return (
-    <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
       <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{h1}</h1>
       <p className="mt-2 text-sm text-muted-foreground">{updated}</p>
 
@@ -576,6 +576,6 @@ export default async function DataProcessingPage() {
           </ul>
         </section>
       </div>
-    </main>
+    </div>
   )
 }

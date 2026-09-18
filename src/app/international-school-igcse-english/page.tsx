@@ -291,7 +291,7 @@ export default async function InternationalSchoolIgcsePage() {
   ]
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         nonce={nonce}
         items={[
@@ -536,7 +536,7 @@ export default async function InternationalSchoolIgcsePage() {
           <div className="flex justify-center lg:justify-end"></div>
         </div>
       </Section>
-    </main>
+    </div>
   )
 }
 

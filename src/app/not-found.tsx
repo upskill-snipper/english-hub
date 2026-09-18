@@ -97,7 +97,7 @@ export default async function NotFound() {
   ])
 
   return (
-    <main className="min-h-screen bg-ink-950">
+    <div className="min-h-screen bg-ink-950">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 pt-12 pb-14 sm:pt-16 sm:pb-20">
         {/* Headline */}
         <header className="text-center mb-12 sm:mb-16">
@@ -140,7 +140,7 @@ export default async function NotFound() {
           {needHelpTail}
         </p>
       </div>
-    </main>
+    </div>
   )
 }
 

@@ -171,7 +171,7 @@ export default function TestBuilderPage() {
   const currentQuestion: GeneratedQuestion | undefined = test?.questions[currentQ]
 
   return (
-    <main id="main-content" className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       {/* ── Header ───────────────────────────────────────────────── */}
       <section className="border-b border-border bg-card">
         <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
@@ -478,6 +478,6 @@ export default function TestBuilderPage() {
           </div>
         )}
       </div>
-    </main>
+    </div>
   )
 }

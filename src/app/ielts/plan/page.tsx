@@ -243,7 +243,7 @@ export default function IeltsPlanPage() {
 
   if (!loaded) {
     return (
-      <main className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background">
         <PlanHeader t={t} />
         <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6">
           <div className="animate-pulse space-y-4">
@@ -251,14 +251,14 @@ export default function IeltsPlanPage() {
             <div className="mx-auto h-4 w-96 rounded bg-muted" />
           </div>
         </div>
-      </main>
+      </div>
     )
   }
 
   // ── Empty state: no diagnostic and no attempts yet ──
   if (!hasAnyData) {
     return (
-      <main className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background">
         <PlanHeader t={t} />
         <div className="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6">
           <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-muted/50">
@@ -273,14 +273,14 @@ export default function IeltsPlanPage() {
             {t('ielts.plan.empty.cta')}
           </Button>
         </div>
-      </main>
+      </div>
     )
   }
 
   const topGap = plan.find((s) => s.current !== null && s.gap > 0)
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <PlanHeader t={t} />
 
       <div className="mx-auto max-w-4xl space-y-12 px-4 py-8 sm:px-6 sm:py-12">
@@ -403,7 +403,7 @@ export default function IeltsPlanPage() {
           </Button>
         </div>
       </div>
-    </main>
+    </div>
   )
 }
 

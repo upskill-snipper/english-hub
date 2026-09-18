@@ -103,19 +103,19 @@ export function TransitionModulesClient({ hasAccess }: { hasAccess: boolean }) {
   // ── Pre-hydration skeleton ────────────────────────────────────────────────
   if (!mounted) {
     return (
-      <main id="main-content" className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background">
         <Header t={t} />
         <div className="mx-auto max-w-3xl space-y-3 px-4 py-8 sm:px-6">
           {[0, 1, 2, 3].map((i) => (
             <div key={i} className="h-24 animate-pulse rounded-2xl border border-border bg-card" />
           ))}
         </div>
-      </main>
+      </div>
     )
   }
 
   return (
-    <main id="main-content" className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <Header t={t} />
 
       <div className="mx-auto max-w-3xl space-y-6 px-4 py-8 pb-20 sm:px-6">
@@ -284,7 +284,7 @@ export function TransitionModulesClient({ hasAccess }: { hasAccess: boolean }) {
           <LockedTeaser t={t} />
         )}
       </div>
-    </main>
+    </div>
   )
 }
 

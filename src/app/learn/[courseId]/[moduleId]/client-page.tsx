@@ -639,7 +639,7 @@ export default function CoursePlayerPage() {
       />
 
       {/* Main Content */}
-      <main className="flex-1 flex flex-col min-w-0">
+      <div className="flex-1 flex flex-col min-w-0">
         {/* Top Bar */}
         <header className="sticky top-0 z-30 bg-background/95 backdrop-blur-sm border-b border-border">
           <div className="flex items-center gap-3 px-4 py-3 md:px-6">
@@ -852,7 +852,7 @@ export default function CoursePlayerPage() {
             </div>
           </div>
         </div>
-      </main>
+      </div>
     </div>
   )
 }

@@ -154,7 +154,7 @@ export default async function UkReadinessOverviewPage() {
   const crossCta = await t('ielts.ukread.cross.cta')
 
   return (
-    <main id="main-content" className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -273,7 +273,7 @@ export default async function UkReadinessOverviewPage() {
           </div>
         </section>
       </div>
-    </main>
+    </div>
   )
 }
 

@@ -610,7 +610,7 @@ export function RevisionShell({ children }: { children: React.ReactNode }) {
         </aside>
 
         {/* ── Main content ─────────────────────────────────────────── */}
-        <main className="min-w-0 flex-1">
+        <div className="min-w-0 flex-1">
           {/* Mobile header with menu button */}
           <div className="mb-4 flex items-center gap-3 lg:hidden">
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
@@ -672,7 +672,7 @@ export function RevisionShell({ children }: { children: React.ReactNode }) {
           <MobileScrollRail navItems={navItems} />
 
           {children}
-        </main>
+        </div>
       </div>
     </div>
   )

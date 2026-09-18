@@ -125,7 +125,7 @@ const HOW_IT_WORKS: { icon: typeof PencilLine; title: string; body: string }[] =
 
 export default function ExaminersPage() {
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -332,6 +332,6 @@ export default function ExaminersPage() {
           </Button>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

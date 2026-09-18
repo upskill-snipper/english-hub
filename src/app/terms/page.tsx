@@ -183,7 +183,7 @@ export default async function TermsPage() {
     s15P2L2 = next()
 
   return (
-    <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
       <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{title}</h1>
       <p className="mt-2 text-sm text-muted-foreground">
         {lastUpdatedLabel}: {lastUpdatedValue}
@@ -342,6 +342,6 @@ export default async function TermsPage() {
           </p>
         </section>
       </div>
-    </main>
+    </div>
   )
 }

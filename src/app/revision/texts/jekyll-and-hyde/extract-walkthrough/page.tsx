@@ -80,7 +80,7 @@ export default function JekyllExtractWalkthroughPage() {
         ]}
       />
 
-      <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
         <Link
           href="/revision/texts/jekyll-and-hyde"
           className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-6"
@@ -194,7 +194,7 @@ export default function JekyllExtractWalkthroughPage() {
           <em>The Strange Case of Dr Jekyll and Mr Hyde</em>
           {tr('rev.texts2.jh.extract.notice')}
         </p>
-      </main>
+      </div>
     </>
   )
 }

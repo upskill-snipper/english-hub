@@ -112,7 +112,7 @@ export default async function MuchAdoHubPage() {
   await requireIgcseBoard(['edexcel-igcse'])
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <CourseJsonLd
         name="Much Ado About Nothing - Edexcel IGCSE Literature Study Guide"
         description="In-depth study guide for Much Ado About Nothing for Edexcel IGCSE English Literature, covering plot, characters, themes, key quotations, context and exam essay plans."
@@ -303,6 +303,6 @@ export default async function MuchAdoHubPage() {
         Much Ado About Nothing by William Shakespeare is in the public domain. Quotations are
         reproduced freely.
       </p>
-    </main>
+    </div>
   )
 }

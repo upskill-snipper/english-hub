@@ -191,7 +191,7 @@ export default async function GccIgcseEnglishPage() {
   ]
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         nonce={nonce}
         items={[
@@ -492,6 +492,6 @@ export default async function GccIgcseEnglishPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

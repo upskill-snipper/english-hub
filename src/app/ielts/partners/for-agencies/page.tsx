@@ -170,7 +170,7 @@ export default async function IeltsPartnersForAgenciesPage() {
   const standardsBullets = await Promise.all(STANDARDS_BULLET_KEYS.map((k) => t(k)))
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -389,6 +389,6 @@ export default async function IeltsPartnersForAgenciesPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

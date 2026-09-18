@@ -105,7 +105,7 @@ export default function EALDiagnosticPage() {
   // ─── Intro ──────────────────────────────────────────────────────────
   if (phase === 'intro') {
     return (
-      <main className="mx-auto max-w-2xl px-6 py-12">
+      <div className="mx-auto max-w-2xl px-6 py-12">
         <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-teal-600 mb-3">
           <Link href="/eal">EAL · {isAr ? 'تحديد المستوى' : 'Placement'}</Link>
         </p>
@@ -129,7 +129,7 @@ export default function EALDiagnosticPage() {
         >
           {isAr ? 'ابدأ الاختبار' : 'Start the test'}
         </button>
-      </main>
+      </div>
     )
   }
 
@@ -138,7 +138,7 @@ export default function EALDiagnosticPage() {
     const q = questions[current]
     const pct = Math.round((current / questions.length) * 100)
     return (
-      <main className="mx-auto max-w-2xl px-6 py-12">
+      <div className="mx-auto max-w-2xl px-6 py-12">
         <div className="mb-6">
           <div className="flex items-center justify-between mb-2 font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
             <span>
@@ -179,14 +179,14 @@ export default function EALDiagnosticPage() {
             {isAr ? 'تخطّي السؤال' : 'Skip this question'}
           </button>
         </div>
-      </main>
+      </div>
     )
   }
 
   // ─── Result ─────────────────────────────────────────────────────────
   if (phase === 'result' && result) {
     return (
-      <main className="mx-auto max-w-2xl px-6 py-12">
+      <div className="mx-auto max-w-2xl px-6 py-12">
         <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-teal-600 mb-3">
           <Link href="/eal">EAL · {isAr ? 'النتيجة' : 'Result'}</Link>
         </p>
@@ -313,7 +313,7 @@ export default function EALDiagnosticPage() {
             {isAr ? 'كل المواضيع' : 'All topics'}
           </Link>
         </div>
-      </main>
+      </div>
     )
   }
 

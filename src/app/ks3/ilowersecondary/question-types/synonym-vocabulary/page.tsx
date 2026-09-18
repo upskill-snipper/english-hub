@@ -308,7 +308,7 @@ export default async function SynonymVocabularyPage() {
         ]}
       />
 
-      <main className="mx-auto max-w-3xl px-4 py-12">
+      <div className="mx-auto max-w-3xl px-4 py-12">
         <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
           <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
             <li>
@@ -580,7 +580,7 @@ export default async function SynonymVocabularyPage() {
         <footer className="border-t border-border/60 pt-6 text-xs leading-relaxed text-muted-foreground">
           {SPEC_ATTRIBUTION}
         </footer>
-      </main>
+      </div>
     </>
   )
 }

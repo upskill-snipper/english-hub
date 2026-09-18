@@ -213,7 +213,7 @@ export default async function ExamBoardsPage() {
   }
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         nonce={nonce}
         items={[
@@ -306,7 +306,7 @@ export default async function ExamBoardsPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }
 

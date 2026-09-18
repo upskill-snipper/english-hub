@@ -207,18 +207,18 @@ export default function ParentDashboardPage() {
 
   if (view === 'loading') {
     return (
-      <main className="mx-auto w-full max-w-3xl px-4 py-12">
+      <div className="mx-auto w-full max-w-3xl px-4 py-12">
         <div className="flex items-center justify-center gap-2 py-24 text-muted-foreground">
           <Loader2 className="h-5 w-5 animate-spin" />
           <span>{t('dashboard.parent.loading')}</span>
         </div>
-      </main>
+      </div>
     )
   }
 
   if (view === 'signedOut') {
     return (
-      <main className="mx-auto w-full max-w-3xl px-4 py-12">
+      <div className="mx-auto w-full max-w-3xl px-4 py-12">
         <Card className="text-center">
           <CardContent className="pt-8 pb-8 space-y-4">
             <LogIn className="mx-auto h-10 w-10 text-primary" />
@@ -236,13 +236,13 @@ export default function ParentDashboardPage() {
             </div>
           </CardContent>
         </Card>
-      </main>
+      </div>
     )
   }
 
   if (view === 'notParent') {
     return (
-      <main className="mx-auto w-full max-w-3xl px-4 py-12">
+      <div className="mx-auto w-full max-w-3xl px-4 py-12">
         <Card>
           <CardContent className="pt-8 pb-8 space-y-4 text-center">
             <ShieldAlert className="mx-auto h-10 w-10 text-primary" />
@@ -260,27 +260,27 @@ export default function ParentDashboardPage() {
             </div>
           </CardContent>
         </Card>
-      </main>
+      </div>
     )
   }
 
   if (view === 'error') {
     return (
-      <main className="mx-auto w-full max-w-3xl px-4 py-12">
+      <div className="mx-auto w-full max-w-3xl px-4 py-12">
         <Card className="text-center">
           <CardContent className="pt-8 pb-8 space-y-4">
             <p className="text-muted-foreground">{t('dashboard.parent.error_generic')}</p>
             <Button onClick={() => load()}>{t('dashboard.parent.retry')}</Button>
           </CardContent>
         </Card>
-      </main>
+      </div>
     )
   }
 
   // ─── Ready ────────────────────────────────────────────────────────────
 
   return (
-    <main className="mx-auto w-full max-w-3xl px-4 py-12 space-y-8">
+    <div className="mx-auto w-full max-w-3xl px-4 py-12 space-y-8">
       <header>
         <h1 className="text-3xl font-bold text-foreground">{t('dashboard.parent.h1')}</h1>
         <p className="mt-1 text-muted-foreground">{t('dashboard.parent.intro')}</p>
@@ -331,7 +331,7 @@ export default function ParentDashboardPage() {
           />
         </>
       )}
-    </main>
+    </div>
   )
 }
 

@@ -14,7 +14,7 @@ export default function PicnicAtHangingRockPage() {
   }
 
   return (
-    <main className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
       {/* Breadcrumb */}
       <nav className="mb-6 text-sm text-muted-foreground">
         <Link href="/resources" className="hover:text-foreground transition-colors">
@@ -930,6 +930,6 @@ export default function PicnicAtHangingRockPage() {
           </Link>
         </div>
       </div>
-    </main>
+    </div>
   )
 }

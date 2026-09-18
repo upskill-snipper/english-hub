@@ -100,7 +100,7 @@ export default function MockReport({
   const trackLabel = track === 'general' ? 'General Training' : 'Academic'
 
   return (
-    <main id="main-content" className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <section className="border-b border-border bg-card">
         <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
           <div className="flex items-center gap-3">
@@ -233,6 +233,6 @@ export default function MockReport({
           {t('ielts.mock.report.footer_disclaimer')}
         </p>
       </div>
-    </main>
+    </div>
   )
 }

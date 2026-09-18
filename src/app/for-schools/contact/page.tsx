@@ -374,16 +374,16 @@ export default function BookACallPage() {
 
   if (success) {
     return (
-      <main className="min-h-screen bg-background py-12 px-4">
+      <div className="min-h-screen bg-background py-12 px-4">
         <div className="mx-auto max-w-2xl">
           <SuccessScreen t={t} />
         </div>
-      </main>
+      </div>
     )
   }
 
   return (
-    <main className="min-h-screen bg-background py-12 px-4">
+    <div className="min-h-screen bg-background py-12 px-4">
       <div className="mx-auto max-w-6xl">
         {/* Header */}
         <div className="mb-10 text-center">
@@ -615,6 +615,6 @@ export default function BookACallPage() {
           </Link>
         </p>
       </div>
-    </main>
+    </div>
   )
 }

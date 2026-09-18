@@ -55,7 +55,7 @@ export default async function MacbethAmbitionLessonPlan() {
   ])
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       {/* Header */}
       <section className="border-b border-border bg-card">
         <div className="mx-auto max-w-4xl px-6 py-12">
@@ -310,6 +310,6 @@ export default async function MacbethAmbitionLessonPlan() {
           Macbeth by William Shakespeare is in the public domain. Quotations are reproduced freely.
         </p>
       </article>
-    </main>
+    </div>
   )
 }

@@ -123,7 +123,7 @@ export default async function PrintablePage({ params }: { params: Promise<Params
         isAccessibleForFree={true}
       />
 
-      <main className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
         <nav aria-label="Breadcrumb" className="mb-6 text-sm">
           <ol className="flex flex-wrap items-center gap-1.5 text-muted-foreground">
             <li>
@@ -178,7 +178,7 @@ export default async function PrintablePage({ params }: { params: Promise<Params
         <article className="prose prose-neutral dark:prose-invert max-w-none">{content}</article>
 
         <div className="mt-12 border-t border-border/60 pt-10 flex justify-center"></div>
-      </main>
+      </div>
     </>
   )
 }

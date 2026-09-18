@@ -176,7 +176,7 @@ export default function ForTeachersPage() {
   // Resolve FAQ copy at render so it flips AR/EN; also feeds JSON-LD.
   const resolvedFaqs = faqKeys.map((f) => ({ q: t(f.q), a: t(f.a) }))
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       {/* Infographic banner removed 2026-08-18: the PNG baked in unevidenced
           outcome stats ("4.5 hrs saved per week", cohort percentages) -
           fabricated numbers are banned on this product. Reinstate only with
@@ -1288,6 +1288,6 @@ export default function ForTeachersPage() {
           <p className="mt-3 text-xs text-muted-foreground/80 max-w-2xl mx-auto">{VAT_LABEL}</p>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

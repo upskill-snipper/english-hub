@@ -229,7 +229,7 @@ export default async function IeltsGuidePage() {
   const ctaCtaLearn = await t('ielts.guide.cta.cta_learn')
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -606,7 +606,7 @@ export default async function IeltsGuidePage() {
           </div>
         </section>
       </div>
-    </main>
+    </div>
   )
 }
 

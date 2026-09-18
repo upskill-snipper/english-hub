@@ -356,7 +356,7 @@ export default function CourseCatalogueClient({
   /* ── render ────────────────────────────────────────────────── */
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       {/* ── Breadcrumb ──────────────────────────────────────────── */}
       <nav className="mx-auto max-w-7xl px-4 pt-6 sm:px-6 lg:px-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -654,7 +654,7 @@ export default function CourseCatalogueClient({
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }
 

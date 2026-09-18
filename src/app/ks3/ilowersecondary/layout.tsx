@@ -18,7 +18,7 @@ export const metadata: Metadata = {
  * Standalone shell for the /ks3/ilowersecondary subtree.
  *
  * This layout nests inside the existing /ks3 layout, which already
- * supplies the outer <main> and the prose-eh <article> wrapper. To
+ * supplies the outer content wrapper and the prose-eh <article>. To
  * avoid double-wrapping we only add a compact in-section sub-nav and
  * then render {children}.
  */

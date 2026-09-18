@@ -180,7 +180,7 @@ export default async function ToolkitPage() {
   })
 
   return (
-    <main id="main-content" className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
           { name: tCrumbHome, url: 'https://theenglishhub.app' },
@@ -307,6 +307,6 @@ export default async function ToolkitPage() {
           </Link>
         </section>
       </div>
-    </main>
+    </div>
   )
 }

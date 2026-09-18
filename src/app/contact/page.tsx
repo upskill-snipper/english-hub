@@ -87,7 +87,7 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
       {/* ── Header ─────────────────────────────────────────── */}
       <div className="mb-10 text-center">
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -222,6 +222,6 @@ export default function ContactPage() {
           </div>
         </form>
       )}
-    </main>
+    </div>
   )
 }

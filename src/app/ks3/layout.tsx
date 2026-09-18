@@ -44,7 +44,7 @@ export default function KS3Layout({ children }: { children: React.ReactNode }) {
   // The page renders its own hub chrome (see src/app/ks3/page.tsx),
   // matching the /revision hub exactly.
   if (isHubIndex) {
-    return <main className="mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 lg:px-8">{children}</main>
+    return <div className="mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 lg:px-8">{children}</div>
   }
 
   // ── Every other /ks3/* route → existing sidebar + prose shell ─────
@@ -65,7 +65,7 @@ export default function KS3Layout({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <main className="mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 lg:px-8">
       <div className="grid gap-10 lg:grid-cols-[14rem_1fr]">
         {/* Sidebar nav */}
         <aside className="hidden lg:block">
@@ -117,6 +117,6 @@ export default function KS3Layout({ children }: { children: React.ReactNode }) {
           {children}
         </article>
       </div>
-    </main>
+    </div>
   )
 }

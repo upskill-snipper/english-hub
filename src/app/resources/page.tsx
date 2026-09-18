@@ -199,7 +199,7 @@ export default async function ResourcesPage() {
   const categoryNames = labels.slice(offset + quickTitleKeys.length + quickDescKeys.length)
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       {/* ── Hero Section ─────────────────────────────────────────── */}
       <section className="border-b border-border/40">
         <div className="mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 lg:px-8">
@@ -301,6 +301,6 @@ export default async function ResourcesPage() {
       </section>
       {/* GeoFaq now lives in resources/layout.tsx so it covers this hub
           AND all ~181 leaf pages without a duplicate FAQPage here. */}
-    </main>
+    </div>
   )
 }

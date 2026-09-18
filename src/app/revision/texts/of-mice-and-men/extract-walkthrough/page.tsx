@@ -94,7 +94,7 @@ function CardBlock({ card }: { card: WalkthroughCard }) {
 export default function OfMiceAndMenExtractWalkthroughPage() {
   const tr = useT()
   return (
-    <main className="mx-auto max-w-4xl px-4 py-10">
+    <div className="mx-auto max-w-4xl px-4 py-10">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -190,6 +190,6 @@ export default function OfMiceAndMenExtractWalkthroughPage() {
         <p className="font-semibold">{tr('rev.texts2.common.fair_dealing_notice_heading')}</p>
         <p className="mt-1">{tr('rev.texts2.omam.extract.fair_dealing_body')}</p>
       </footer>
-    </main>
+    </div>
   )
 }

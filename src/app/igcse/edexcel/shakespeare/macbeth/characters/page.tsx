@@ -106,7 +106,7 @@ export default async function MacbethCharactersPage() {
   await requireIgcseBoard(['edexcel-igcse'])
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -200,6 +200,6 @@ export default async function MacbethCharactersPage() {
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4 mx-auto max-w-5xl px-4 pb-8">
         Macbeth by William Shakespeare is in the public domain. Quotations are reproduced freely.
       </p>
-    </main>
+    </div>
   )
 }

@@ -123,7 +123,7 @@ export default async function AnalysisPage(props: Props) {
   const tBackToAll = await t('analysis.slug.back_to_all')
 
   return (
-    <main className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
@@ -319,6 +319,6 @@ export default async function AnalysisPage(props: Props) {
           </Link>
         </section>
       </article>
-    </main>
+    </div>
   )
 }

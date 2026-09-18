@@ -151,7 +151,7 @@ export default async function ReportsTextTypePage() {
         isAccessibleForFree={true}
       />
 
-      <main className="mx-auto my-12 max-w-3xl px-4">
+      <div className="mx-auto my-12 max-w-3xl px-4">
         <nav aria-label="Breadcrumb" className="mb-6 text-sm text-muted-foreground">
           <ol className="flex flex-wrap items-center gap-1">
             <li>
@@ -525,7 +525,7 @@ export default async function ReportsTextTypePage() {
           </p>
           <p>{SPEC_ATTRIBUTION}</p>
         </footer>
-      </main>
+      </div>
     </>
   )
 }

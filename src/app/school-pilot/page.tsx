@@ -234,7 +234,7 @@ export default async function SchoolPilotPage() {
   ])
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -535,6 +535,6 @@ export default async function SchoolPilotPage() {
         </h2>
         <SchoolFAQ />
       </section>
-    </main>
+    </div>
   )
 }

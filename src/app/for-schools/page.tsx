@@ -364,7 +364,7 @@ export default async function ForSchoolsPage() {
   const demoExplore = await t('mkt.schools.fs.demo.explore')
   const gettingStartedStep = await t('mkt.schools.fs.getting_started.step')
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -1535,6 +1535,6 @@ export default async function ForSchoolsPage() {
           </div>
         </div>
       </footer>
-    </main>
+    </div>
   )
 }

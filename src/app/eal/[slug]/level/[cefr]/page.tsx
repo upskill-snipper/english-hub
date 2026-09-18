@@ -50,7 +50,7 @@ export default async function EALLevelPage({
   const inDevelopment = !showsNativeBand
 
   return (
-    <main className="mx-auto max-w-3xl px-6 py-12">
+    <div className="mx-auto max-w-3xl px-6 py-12">
       <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-teal-600 mb-3">
         <Link href={`/eal/${slug}`}>EAL · {tr(topic.title)}</Link>
       </p>
@@ -159,7 +159,7 @@ export default async function EALLevelPage({
           ← {isAr ? 'كل مواضيع EAL' : 'All EAL topics'}
         </Link>
       </p>
-    </main>
+    </div>
   )
 }
 

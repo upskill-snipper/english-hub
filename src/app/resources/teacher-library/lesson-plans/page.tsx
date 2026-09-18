@@ -253,7 +253,7 @@ export default async function LessonPlansPage() {
       'resources.tl.lp.idx.intro_a',
     ])
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <section className="border-b border-border bg-card">
         <div className="mx-auto max-w-6xl px-6 py-12">
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -301,6 +301,6 @@ export default async function LessonPlansPage() {
           ))}
         </TeacherResourceGrid>
       </section>
-    </main>
+    </div>
   )
 }

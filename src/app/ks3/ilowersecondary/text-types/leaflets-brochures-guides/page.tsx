@@ -191,7 +191,7 @@ export default async function LeafletsBrochuresGuidesPage() {
         ]}
       />
 
-      <main className="mx-auto max-w-3xl px-4 py-12">
+      <div className="mx-auto max-w-3xl px-4 py-12">
         <nav aria-label="Breadcrumb" className="mb-6 text-sm text-muted-foreground">
           <ol className="flex flex-wrap items-center gap-1">
             <li>
@@ -454,7 +454,7 @@ export default async function LeafletsBrochuresGuidesPage() {
             and is not affiliated with or endorsed by Pearson.
           </p>
         </footer>
-      </main>
+      </div>
     </>
   )
 }

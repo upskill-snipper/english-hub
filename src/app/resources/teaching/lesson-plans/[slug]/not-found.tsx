@@ -26,7 +26,7 @@ export default async function LessonPlanNotFound() {
   )
 
   return (
-    <main className="min-h-screen px-4 py-16 sm:py-24">
+    <div className="min-h-screen px-4 py-16 sm:py-24">
       <div className="mx-auto max-w-2xl">
         <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
           {eyebrow}
@@ -78,6 +78,6 @@ export default async function LessonPlanNotFound() {
           </Link>
         </div>
       </div>
-    </main>
+    </div>
   )
 }

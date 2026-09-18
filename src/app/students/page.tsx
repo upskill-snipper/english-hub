@@ -241,7 +241,7 @@ export default async function StudentsPage() {
   ]
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
           { name: breadcrumbHome, url: 'https://theenglishhub.app' },
@@ -540,6 +540,6 @@ export default async function StudentsPage() {
           </div>
         </Card>
       </section>
-    </main>
+    </div>
   )
 }

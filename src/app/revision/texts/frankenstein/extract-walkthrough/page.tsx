@@ -125,7 +125,7 @@ export default function FrankensteinExtractWalkthroughPage() {
         ]}
       />
 
-      <main className="container mx-auto max-w-5xl px-4 py-10">
+      <div className="container mx-auto max-w-5xl px-4 py-10">
         <Link
           href="/revision/texts/frankenstein"
           className="mb-6 inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -275,7 +275,7 @@ export default function FrankensteinExtractWalkthroughPage() {
             </p>
           </CardContent>
         </Card>
-      </main>
+      </div>
     </>
   )
 }

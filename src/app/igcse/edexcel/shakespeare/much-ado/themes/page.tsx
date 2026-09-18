@@ -92,7 +92,7 @@ export default async function MuchAdoThemesPage() {
   await requireIgcseBoard(['edexcel-igcse'])
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -193,6 +193,6 @@ export default async function MuchAdoThemesPage() {
         Much Ado About Nothing by William Shakespeare is in the public domain. Quotations are
         reproduced freely.
       </p>
-    </main>
+    </div>
   )
 }

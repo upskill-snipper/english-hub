@@ -155,7 +155,7 @@ export default async function LanguagePaperAnalysisHub() {
   }
 
   return (
-    <main className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
       <script
         type="application/ld+json"
         nonce={nonce}
@@ -306,6 +306,6 @@ export default async function LanguagePaperAnalysisHub() {
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

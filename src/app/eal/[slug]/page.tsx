@@ -15,7 +15,7 @@ export default function EALTopicPage() {
   const t = (s: { en: string; ar?: string }) => loc(s, locale)
 
   return (
-    <main className="prose prose-stone mx-auto max-w-3xl px-6 py-12 dark:prose-invert">
+    <div className="prose prose-stone mx-auto max-w-3xl px-6 py-12 dark:prose-invert">
       <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
         <Link href="/eal" className="hover:text-foreground">
           EAL
@@ -76,7 +76,7 @@ export default function EALTopicPage() {
       <p className="text-sm text-muted-foreground">
         <Link href="/eal">← {locale === 'ar' ? 'كل المواضيع' : 'All topics'}</Link>
       </p>
-    </main>
+    </div>
   )
 }
 

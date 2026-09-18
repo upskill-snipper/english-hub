@@ -167,7 +167,7 @@ export default async function PressPage() {
   ])
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <PressHero eyebrow={heroEyebrow} title={heroTitle} lede={heroLede} />
 
       {/* 60-second overview */}
@@ -381,6 +381,6 @@ export default async function PressPage() {
           <p className="text-sm text-muted-foreground max-w-xl mx-auto">{footerBrandLine}</p>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

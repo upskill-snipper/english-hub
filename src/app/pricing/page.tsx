@@ -474,7 +474,7 @@ function PricingContent() {
   const faqItems = buildFaqItems(t)
 
   return (
-    <main className="relative overflow-hidden">
+    <div className="relative overflow-hidden">
       {/* Funnel: pricing_viewed (consent-gated in src/lib/posthog.ts) */}
       <TrackEvent event="pricing_viewed" />
       {/* FAQPage structured data - emitted as <script type="application/ld+json">.
@@ -1101,6 +1101,6 @@ function PricingContent() {
           </p>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

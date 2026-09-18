@@ -17,11 +17,8 @@ export const metadata: Metadata = {
 export default async function InvitePage({ params }: { params: Promise<{ code: string }> }) {
   const { code } = await params
   return (
-    <main
-      id="main-content"
-      className="mx-auto flex min-h-[70vh] w-full max-w-lg flex-col justify-center px-4 py-16"
-    >
+    <div className="mx-auto flex min-h-[70vh] w-full max-w-lg flex-col justify-center px-4 py-16">
       <InviteLanding code={code} />
-    </main>
+    </div>
   )
 }

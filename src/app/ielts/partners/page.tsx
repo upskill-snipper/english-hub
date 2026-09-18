@@ -227,7 +227,7 @@ export default async function IeltsPartnersPage() {
   const roadmapBadge = await t('ielts.partners.overview.roadmap.badge')
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -501,6 +501,6 @@ export default async function IeltsPartnersPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

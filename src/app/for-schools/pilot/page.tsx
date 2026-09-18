@@ -168,7 +168,7 @@ export default async function SchoolPilotPackPage() {
   )
   const phaseWord = await t('mkt.schools.pilot.phase_word')
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: COMPANY.websiteUrl },
@@ -473,6 +473,6 @@ export default async function SchoolPilotPackPage() {
           </p>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

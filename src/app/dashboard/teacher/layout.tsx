@@ -184,7 +184,7 @@ export default function TeacherLayout({ children }: { children: React.ReactNode 
             the sample data it disclosed - every surviving surface in this
             tree is real. It also pointed teachers at the operating
             company's energy-brand mailbox, which confused school staff. */}
-        <main className="flex-1 p-4 lg:p-8 overflow-auto">{children}</main>
+        <div className="flex-1 p-4 lg:p-8 overflow-auto">{children}</div>
       </div>
     </div>
   )

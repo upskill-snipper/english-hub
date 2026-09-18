@@ -276,7 +276,7 @@ export default async function IeltsAdmissionsHubPage() {
   ]
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
           { name: bcHome, url: 'https://theenglishhub.app' },
@@ -555,7 +555,7 @@ export default async function IeltsAdmissionsHubPage() {
           </div>
         </section>
       </div>
-    </main>
+    </div>
   )
 }
 

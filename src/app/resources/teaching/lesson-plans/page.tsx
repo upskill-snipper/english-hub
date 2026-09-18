@@ -54,7 +54,7 @@ export default async function LessonPlansIndexPage() {
   ])
 
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -112,7 +112,7 @@ export default async function LessonPlansIndexPage() {
           </ul>
         )}
       </section>
-    </main>
+    </div>
   )
 }
 

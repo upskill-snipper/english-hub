@@ -173,20 +173,20 @@ export default function ListeningPage() {
   // ─── SSR / first paint guard ──────────────────────────────────────────────
   if (!mounted) {
     return (
-      <main id="main-content" className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background">
         <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
           <div className="h-8 w-48 animate-pulse rounded-lg bg-muted" />
           <div className="mt-6 h-40 animate-pulse rounded-2xl border border-border/60 bg-card" />
           <div className="mt-4 h-64 animate-pulse rounded-2xl border border-border/60 bg-card" />
         </div>
-      </main>
+      </div>
     )
   }
 
   // Defensive: only if the bank is genuinely empty do we fail soft.
   if (LISTENING_TESTS.length === 0) {
     return (
-      <main id="main-content" className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background">
         <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
           <p className="text-sm text-muted-foreground">{t('ielts.listening.none_available')}</p>
           <Link
@@ -197,12 +197,12 @@ export default function ListeningPage() {
             {t('ielts.listening.back_to_ielts')}
           </Link>
         </div>
-      </main>
+      </div>
     )
   }
 
   return (
-    <main id="main-content" className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       {/* ── Header ─────────────────────────────────────────────────────── */}
       <section className="border-b border-border bg-card">
         <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
@@ -263,7 +263,7 @@ export default function ListeningPage() {
           />
         )}
       </div>
-    </main>
+    </div>
   )
 }
 

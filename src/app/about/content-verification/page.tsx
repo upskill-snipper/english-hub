@@ -101,7 +101,7 @@ export default async function ContentVerificationMethodologyPage() {
     })),
   )
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: COMPANY.websiteUrl },
@@ -405,6 +405,6 @@ export default async function ContentVerificationMethodologyPage() {
           </p>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

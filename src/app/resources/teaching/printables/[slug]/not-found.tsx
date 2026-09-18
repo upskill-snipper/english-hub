@@ -11,7 +11,7 @@ export default async function PrintableNotFound() {
   ])
 
   return (
-    <main className="mx-auto max-w-2xl px-4 py-20 sm:px-6 lg:px-8 text-center">
+    <div className="mx-auto max-w-2xl px-4 py-20 sm:px-6 lg:px-8 text-center">
       <p className="text-sm font-medium text-muted-foreground">404</p>
       <h1 className="mt-2 font-heading text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
         {title}
@@ -28,6 +28,6 @@ export default async function PrintableNotFound() {
           {teaching}
         </Link>
       </div>
-    </main>
+    </div>
   )
 }

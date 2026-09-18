@@ -156,7 +156,7 @@ export default async function FreeResourcesPage() {
   }))
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         nonce={nonce}
         items={[
@@ -268,6 +268,6 @@ export default async function FreeResourcesPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

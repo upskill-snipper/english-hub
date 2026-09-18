@@ -123,7 +123,7 @@ export default function IeltsProgressPage() {
   // ── Loading / pre-hydration skeleton ──────────────────────────────────────
   if (!mounted || !profile) {
     return (
-      <main id="main-content" className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background">
         <ProgressHeader t={t} />
         <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
           <div className="h-40 animate-pulse rounded-2xl border border-border bg-card" />
@@ -133,14 +133,14 @@ export default function IeltsProgressPage() {
             ))}
           </div>
         </div>
-      </main>
+      </div>
     )
   }
 
   // ── Empty state - no data yet ──────────────────────────────────────────────
   if (!profile.hasData) {
     return (
-      <main id="main-content" className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background">
         <ProgressHeader t={t} />
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6">
           <div className="rounded-2xl border border-border bg-card p-10 text-center shadow-soft">
@@ -173,7 +173,7 @@ export default function IeltsProgressPage() {
             </div>
           </div>
         </div>
-      </main>
+      </div>
     )
   }
 
@@ -181,7 +181,7 @@ export default function IeltsProgressPage() {
   const weakest = profile.weakestSkill
 
   return (
-    <main id="main-content" className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <ProgressHeader t={t} />
 
       <div className="mx-auto max-w-5xl space-y-8 px-4 py-8 sm:px-6">
@@ -331,7 +331,7 @@ export default function IeltsProgressPage() {
           </div>
         </section>
       </div>
-    </main>
+    </div>
   )
 }
 

@@ -177,7 +177,7 @@ export default async function QatarIgcseEnglishPage() {
   ]
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
           { name: bcHome, url: 'https://theenglishhub.app' },
@@ -454,6 +454,6 @@ export default async function QatarIgcseEnglishPage() {
       <section className="py-16 sm:py-20 border-t border-border/40 bg-card/20">
         <div className="max-w-md mx-auto px-6"></div>
       </section>
-    </main>
+    </div>
   )
 }

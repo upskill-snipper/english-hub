@@ -75,7 +75,7 @@ export default async function LessonPlanPage({ params }: PageProps) {
     ])
 
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: SITE_URL },
@@ -181,7 +181,7 @@ export default async function LessonPlanPage({ params }: PageProps) {
           <div className="mt-12 flex justify-center"></div>
         </div>
       </article>
-    </main>
+    </div>
   )
 }
 

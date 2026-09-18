@@ -46,7 +46,7 @@ export default function EditorialDashboard() {
         </span>
       </nav>
 
-      <main className="max-w-4xl mx-auto px-6">
+      <div className="max-w-4xl mx-auto px-6">
         {/* Hero greeting - extreme typography */}
         <section className="pt-12 pb-20">
           <h1 className="font-heading italic text-[6rem] leading-[0.95] tracking-tight text-foreground">
@@ -235,7 +235,7 @@ export default function EditorialDashboard() {
           </span>
           <span className="text-xs text-muted-foreground">Vol. I, No. 47</span>
         </footer>
-      </main>
+      </div>
     </div>
   )
 }

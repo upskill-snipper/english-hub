@@ -99,7 +99,7 @@ export default async function AIFeedbackHeadToHeadPage() {
   const tMethodology = await t('analysis.ai_feedback.methodology')
 
   return (
-    <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
       <script
         type="application/ld+json"
         nonce={nonce}
@@ -582,6 +582,6 @@ export default async function AIFeedbackHeadToHeadPage() {
           Written by GCSE markers credentialled across AQA, Edexcel, Cambridge, OCR and WJEC.
         </p>
       </section>
-    </main>
+    </div>
   )
 }

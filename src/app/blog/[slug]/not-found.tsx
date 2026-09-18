@@ -25,7 +25,7 @@ export default async function BlogArticleNotFound() {
   ])
 
   return (
-    <main className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8 text-center">
+    <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8 text-center">
       <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground mb-3">
         {eyebrow}
       </p>
@@ -45,6 +45,6 @@ export default async function BlogArticleNotFound() {
           {browseResources}
         </Link>
       </div>
-    </main>
+    </div>
   )
 }

@@ -146,7 +146,7 @@ export default async function AboutPage() {
   ])
 
   return (
-    <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
       <BreadcrumbJsonLd
         items={[
           { name: breadcrumbHome, url: 'https://theenglishhub.app' },
@@ -260,6 +260,6 @@ export default async function AboutPage() {
           </ul>
         </section>
       </div>
-    </main>
+    </div>
   )
 }

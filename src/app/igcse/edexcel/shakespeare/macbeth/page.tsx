@@ -108,7 +108,7 @@ export default async function MacbethHubPage() {
   await requireIgcseBoard(['edexcel-igcse'])
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <CourseJsonLd
         name="Macbeth - Edexcel IGCSE Literature Study Guide"
         description="In-depth study guide for Macbeth for Edexcel IGCSE English Literature, covering plot, characters, themes, key quotations, context and exam essay plans."
@@ -295,6 +295,6 @@ export default async function MacbethHubPage() {
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4 mx-auto max-w-5xl px-4 pb-8">
         Macbeth by William Shakespeare is in the public domain. Quotations are reproduced freely.
       </p>
-    </main>
+    </div>
   )
 }

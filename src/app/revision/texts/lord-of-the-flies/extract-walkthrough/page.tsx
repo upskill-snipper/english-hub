@@ -165,7 +165,7 @@ export default function LordOfTheFliesExtractWalkthroughPage() {
         ]}
       />
 
-      <main className="mx-auto w-full max-w-4xl px-4 py-8 md:py-12">
+      <div className="mx-auto w-full max-w-4xl px-4 py-8 md:py-12">
         <Breadcrumb
           items={[
             { label: t('rev.texts.common.crumb_revision'), href: '/revision' },
@@ -320,7 +320,7 @@ export default function LordOfTheFliesExtractWalkthroughPage() {
             {t('rev.texts.lotf.extract.copyright_p3_post')}
           </p>
         </footer>
-      </main>
+      </div>
     </>
   )
 }

@@ -837,7 +837,7 @@ function ExamInProgress() {
         </aside>
 
         {/* Main Content - Questions */}
-        <main className="flex-1 px-4 py-6 sm:px-6">
+        <div className="flex-1 px-4 py-6 sm:px-6">
           {/* Section Header */}
           <div className="mb-6">
             <div className="flex items-center gap-2 mb-1">
@@ -995,7 +995,7 @@ function ExamInProgress() {
               )
             })}
           </div>
-        </main>
+        </div>
       </div>
     </div>
   )

@@ -205,7 +205,7 @@ export default async function IeltsCentrePage() {
   ])
 
   return (
-    <main id="main-content" className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <CentreHeader />
 
       <div className="mx-auto max-w-6xl space-y-8 px-4 py-8 sm:px-6">
@@ -253,7 +253,7 @@ export default async function IeltsCentrePage() {
           </section>
         )}
       </div>
-    </main>
+    </div>
   )
 }
 

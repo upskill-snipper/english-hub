@@ -122,7 +122,7 @@ export default async function TeacherLibraryHub() {
     homework: { title: hwTitle, kind: hwKind, count: hwCount, desc: hwDesc },
   }
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       {/* Hero */}
       <section className="border-b border-border bg-card">
         <div className="mx-auto max-w-6xl px-6 py-16">
@@ -218,6 +218,6 @@ export default async function TeacherLibraryHub() {
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

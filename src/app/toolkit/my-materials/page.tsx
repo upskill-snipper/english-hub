@@ -95,7 +95,7 @@ export default function MyMaterialsPage() {
 
   if (!mounted) {
     return (
-      <main className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background">
         <section className="border-b border-border bg-card">
           <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
             <h1 className="font-serif text-2xl sm:text-3xl font-medium tracking-tight">
@@ -113,12 +113,12 @@ export default function MyMaterialsPage() {
             ))}
           </div>
         </div>
-      </main>
+      </div>
     )
   }
 
   return (
-    <main id="main-content" className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       {/* ── Header ───────────────────────────────────────────────── */}
       <section className="border-b border-border bg-card">
         <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
@@ -324,6 +324,6 @@ export default function MyMaterialsPage() {
           </div>
         )}
       </div>
-    </main>
+    </div>
   )
 }

@@ -118,13 +118,13 @@ export default function IeltsReadingPage() {
   // Defensive: if there are no tests at all for this track, fail gracefully.
   if (testsForTrack.length === 0) {
     return (
-      <main className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background">
         <div className="mx-auto max-w-2xl px-4 py-16 text-center sm:px-6">
           <AlertCircle className="mx-auto mb-4 size-10 text-muted-foreground" />
           <h1 className="font-serif text-2xl font-medium">{t('ielts.reading.empty.title')}</h1>
           <p className="mt-2 text-sm text-muted-foreground">{t('ielts.reading.empty.body')}</p>
         </div>
-      </main>
+      </div>
     )
   }
 
@@ -163,7 +163,7 @@ export default function IeltsReadingPage() {
   // tests per track, including ones with matching-headings / -features items).
   if (!started || !test) {
     return (
-      <main id="main-content" className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background">
         <Header />
         <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
           <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
@@ -218,14 +218,14 @@ export default function IeltsReadingPage() {
             {t('ielts.reading.marking.body')}
           </div>
         </div>
-      </main>
+      </div>
     )
   }
 
   // ─── Results screen ──────────────────────────────────────────────────────
   if (submitted) {
     return (
-      <main id="main-content" className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background">
         <Header />
         <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 space-y-6">
           {/* Band result */}
@@ -356,13 +356,13 @@ export default function IeltsReadingPage() {
             ))}
           </div>
         </div>
-      </main>
+      </div>
     )
   }
 
   // ─── Test runner ─────────────────────────────────────────────────────────
   return (
-    <main id="main-content" className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <Header />
 
       {/* Progress bar */}
@@ -425,7 +425,7 @@ export default function IeltsReadingPage() {
           </div>
         </div>
       </div>
-    </main>
+    </div>
   )
 }
 

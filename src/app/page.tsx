@@ -95,7 +95,7 @@ export default async function Home() {
     faqHeading: await t('homepage.faq.heading'),
   }
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       {/* Funnel: home_viewed (consent-gated in src/lib/posthog.ts) */}
       <TrackEvent event="home_viewed" />
 
@@ -166,7 +166,7 @@ export default async function Home() {
 
       {/* 9. Closing CTA */}
       {await FinalCtaSection()}
-    </main>
+    </div>
   )
 }
 

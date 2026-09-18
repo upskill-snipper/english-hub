@@ -150,7 +150,7 @@ export default function IeltsLessonPage() {
   // ── Not found (unknown skill or slug) ──────────────────────────────────────
   if (!lesson) {
     return (
-      <main id="main-content" className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background">
         <div className="mx-auto flex max-w-2xl flex-col items-center px-4 py-20 text-center sm:px-6">
           <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-muted">
             <Library className="h-7 w-7 text-muted-foreground" aria-hidden />
@@ -166,7 +166,7 @@ export default function IeltsLessonPage() {
             {t('ielts.learn.notfound.back')}
           </Button>
         </div>
-      </main>
+      </div>
     )
   }
 
@@ -182,7 +182,7 @@ export default function IeltsLessonPage() {
   }
 
   return (
-    <main id="main-content" className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       {/* ── Lesson header ───────────────────────────────────────────── */}
       <section className="border-b border-border bg-card">
         <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
@@ -373,6 +373,6 @@ export default function IeltsLessonPage() {
           </Button>
         </div>
       </article>
-    </main>
+    </div>
   )
 }

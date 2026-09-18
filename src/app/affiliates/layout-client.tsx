@@ -3,16 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import {
-  BarChart3,
-  FileText,
-  Wallet,
-  Settings,
-  ArrowLeft,
-  Handshake,
-  Menu,
-  X,
-} from 'lucide-react'
+import { BarChart3, FileText, Wallet, Settings, ArrowLeft, Handshake, Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -31,11 +22,7 @@ function isPublicPath(pathname: string) {
   return PUBLIC_PATHS.includes(pathname)
 }
 
-export default function AffiliateLayoutClient({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function AffiliateLayoutClient({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   const [mobileOpen, setMobileOpen] = useState(false)
 
@@ -59,9 +46,7 @@ export default function AffiliateLayoutClient({
           </div>
           <div className="hidden min-w-0 lg:block">
             <div className="flex items-center gap-2">
-              <p className="truncate text-sm font-bold text-foreground">
-                Partner Portal
-              </p>
+              <p className="truncate text-sm font-bold text-foreground">Partner Portal</p>
               <Badge
                 variant="secondary"
                 className="text-[10px] px-1.5 py-0 h-4 uppercase tracking-wider"
@@ -69,9 +54,7 @@ export default function AffiliateLayoutClient({
                 Affiliate
               </Badge>
             </div>
-            <p className="text-xs text-muted-foreground">
-              The English Hub
-            </p>
+            <p className="text-xs text-muted-foreground">The English Hub</p>
           </div>
         </div>
       </div>
@@ -91,7 +74,7 @@ export default function AffiliateLayoutClient({
                 'flex items-center justify-center gap-3 rounded-lg px-2 py-2.5 text-sm font-medium transition-colors lg:justify-start lg:px-3',
                 active
                   ? 'bg-primary/10 text-primary'
-                  : 'text-muted-foreground hover:bg-accent hover:text-foreground'
+                  : 'text-muted-foreground hover:bg-accent hover:text-foreground',
               )}
             >
               <Icon className="h-4 w-4 shrink-0" />
@@ -119,9 +102,7 @@ export default function AffiliateLayoutClient({
     <div className="flex min-h-screen bg-background">
       {/* Desktop sidebar */}
       <aside className="hidden w-14 shrink-0 border-r border-border bg-card md:block lg:w-60">
-        <div className="sticky top-0 h-screen overflow-y-auto">
-          {sidebarContent}
-        </div>
+        <div className="sticky top-0 h-screen overflow-y-auto">{sidebarContent}</div>
       </aside>
 
       {/* Mobile header */}
@@ -132,11 +113,7 @@ export default function AffiliateLayoutClient({
           onClick={() => setMobileOpen(!mobileOpen)}
           className="mr-3"
         >
-          {mobileOpen ? (
-            <X className="h-5 w-5" />
-          ) : (
-            <Menu className="h-5 w-5" />
-          )}
+          {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </Button>
         <div className="flex items-center gap-2">
           <Handshake className="h-5 w-5 text-primary" />
@@ -164,11 +141,9 @@ export default function AffiliateLayoutClient({
       )}
 
       {/* Main content */}
-      <main className="flex-1 pt-14 md:pt-0">
-        <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
-          {children}
-        </div>
-      </main>
+      <div className="flex-1 pt-14 md:pt-0">
+        <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8 lg:py-8">{children}</div>
+      </div>
     </div>
   )
 }

@@ -40,7 +40,7 @@ export default function SuggestionsPage() {
   if (submitted) {
     return (
       <>
-        <main className="min-h-screen bg-background flex items-center justify-center px-4">
+        <div className="min-h-screen bg-background flex items-center justify-center px-4">
           <div className="max-w-md w-full bg-card rounded-2xl shadow-md border border-border p-8 text-center">
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
               <span className="text-3xl">💡</span>
@@ -67,7 +67,7 @@ export default function SuggestionsPage() {
               </button>
             </div>
           </div>
-        </main>
+        </div>
       </>
     )
   }
@@ -107,7 +107,7 @@ export default function SuggestionsPage() {
 
   return (
     <>
-      <main className="min-h-screen bg-background py-12">
+      <div className="min-h-screen bg-background py-12">
         <div className="max-w-2xl mx-auto px-4 sm:px-6">
           <Link href="/help" className="text-sm text-primary hover:underline mb-4 inline-block">
             {t('help.report.back_to_help')}
@@ -237,7 +237,7 @@ export default function SuggestionsPage() {
             </div>
           </div>
         </div>
-      </main>
+      </div>
     </>
   )
 }

@@ -167,7 +167,7 @@ export default async function RomeoAndJulietQuotesPage() {
   await requireIgcseBoard(['edexcel-igcse'])
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -264,6 +264,6 @@ export default async function RomeoAndJulietQuotesPage() {
         Romeo and Juliet by William Shakespeare is in the public domain. Quotations are reproduced
         freely.
       </p>
-    </main>
+    </div>
   )
 }
