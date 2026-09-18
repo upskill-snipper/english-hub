@@ -39,6 +39,7 @@ export function ScriptPanel(p: Props) {
   const [dragging, setDragging] = useState(false)
   const [selected, setSelected] = useState(0)
   const fileRef = useRef<HTMLInputElement>(null)
+  const cameraRef = useRef<HTMLInputElement>(null)
   const stats = transcriptStats(p.response)
 
   async function addFiles(files: Iterable<File>) {
@@ -155,6 +156,33 @@ export function ScriptPanel(p: Props) {
                 e.target.value = ''
               }}
             />
+            {/*
+              UX-8 (19 September 2026). A SECOND input, not a `capture`
+              attribute on the first one.
+
+              `capture` tells the browser to go straight to the camera and,
+              on most mobile browsers, removes the file-picker option
+              entirely. Putting it on the only input would trade one missing
+              route for another: a teacher with a scanned PDF already on the
+              phone could no longer choose it. Two controls, two inputs.
+
+              On desktop this opens the ordinary file chooser, so it costs
+              nothing there. The demo the acceptance test is written around
+              is photograph-driven, and until now the product had no camera
+              control at all.
+            */}
+            <input
+              ref={cameraRef}
+              type="file"
+              accept="image/*"
+              capture="environment"
+              multiple
+              className="hidden"
+              onChange={(e) => {
+                if (e.target.files?.length) void addFiles(Array.from(e.target.files))
+                e.target.value = ''
+              }}
+            />
             <Button
               size="sm"
               variant="outline"
@@ -162,6 +190,14 @@ export function ScriptPanel(p: Props) {
               disabled={p.disabled || !!busy}
             >
               <ImagePlus className="h-3.5 w-3.5" /> Add pages
+            </Button>
+            <Button
+              size="sm"
+              variant="outline"
+              onClick={() => cameraRef.current?.click()}
+              disabled={p.disabled || !!busy}
+            >
+              <Camera className="h-3.5 w-3.5" /> Take a photo
             </Button>
             <label className="flex items-center gap-1.5 text-xs">
               <input

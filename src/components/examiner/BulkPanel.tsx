@@ -11,7 +11,7 @@
 // ────────────────────────────────────────────────────────────────────────────
 
 import { useRef, useState, type DragEvent } from 'react'
-import { Download, ImagePlus, Play, RotateCw, Square, Trash2 } from 'lucide-react'
+import { Camera, Download, ImagePlus, Play, RotateCw, Square, Trash2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { InlineAIConsentPrompt } from '@/components/consent/InlineAIConsentPrompt'
 import type {
@@ -126,6 +126,7 @@ export function BulkPanel(p: Props) {
   const cancelRef = useRef(false)
   const abortRef = useRef<AbortController | null>(null)
   const fileRef = useRef<HTMLInputElement>(null)
+  const cameraRef = useRef<HTMLInputElement>(null)
 
   const groups = groupsFrom(pages)
 
@@ -427,6 +428,24 @@ export function BulkPanel(p: Props) {
                 e.target.value = ''
               }}
             />
+            {/*
+              UX-8: a SECOND input rather than `capture` on the one above -
+              `capture` removes the file-picker option on most mobile
+              browsers, so a teacher with a scan already on the phone could no
+              longer choose it. See ScriptPanel for the full note.
+            */}
+            <input
+              ref={cameraRef}
+              type="file"
+              accept="image/*"
+              capture="environment"
+              multiple
+              className="hidden"
+              onChange={(e) => {
+                if (e.target.files?.length) void addFiles(Array.from(e.target.files))
+                e.target.value = ''
+              }}
+            />
             <Button
               size="sm"
               variant="outline"
@@ -434,6 +453,14 @@ export function BulkPanel(p: Props) {
               disabled={running || !!busy}
             >
               <ImagePlus className="h-3.5 w-3.5" /> Add the scan
+            </Button>
+            <Button
+              size="sm"
+              variant="outline"
+              onClick={() => cameraRef.current?.click()}
+              disabled={running || !!busy}
+            >
+              <Camera className="h-3.5 w-3.5" /> Take a photo
             </Button>
             {pages.length > 0 && (
               <Button
@@ -627,114 +654,130 @@ export function BulkPanel(p: Props) {
 
           {results.length > 0 && (
             <>
-              <table className="mt-4 w-full text-sm">
-                <thead>
-                  <tr className="text-start text-xs uppercase tracking-wide text-muted-foreground">
-                    <th className="py-1 pe-2">Candidate</th>
-                    <th className="py-1 pe-2">Pages</th>
-                    <th className="py-1 pe-2 text-end">Mark</th>
-                    <th className="py-1 pe-2 text-end">Flags</th>
-                    <th className="py-1 pe-2">Status</th>
-                    <th className="py-1"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {results.map((r, i) => {
-                    const st = transcriptStats(r.transcript)
-                    return (
-                      <>
-                        <tr
-                          key={r.index}
-                          className={`border-t border-border ${r.status === 'running' ? 'bg-primary/5' : ''}`}
-                        >
-                          <td className="py-2 pe-2 font-medium">{r.label}</td>
-                          <td className="py-2 pe-2 text-xs text-muted-foreground">{r.range}</td>
-                          <td className="py-2 pe-2 text-end font-serif text-lg font-bold text-primary">
-                            {r.mark ? (
-                              <>
-                                {r.mark.mark}
-                                {r.mark.max && (
-                                  <span className="text-sm font-normal text-muted-foreground">
-                                    {' '}
-                                    / {r.mark.max}
-                                  </span>
-                                )}
-                              </>
-                            ) : (
-                              '-'
-                            )}
-                          </td>
-                          <td className="py-2 pe-2 text-end text-xs text-muted-foreground">
-                            {st.doubtful ? `${st.doubtful}? ` : ''}
-                            {st.illegible ? `${st.illegible} illegible` : ''}
-                          </td>
-                          <td className="py-2 pe-2 text-xs">
-                            {r.status === 'running' ? (
-                              r.step
-                            ) : r.status === 'failed' ? (
-                              <span className="text-destructive">{r.error}</span>
-                            ) : (
-                              r.status
-                            )}
-                          </td>
-                          <td className="py-2 text-end">
-                            {r.status === 'done' && (
-                              <>
-                                <Button
-                                  size="sm"
-                                  variant="ghost"
-                                  onClick={() => setOpenRes(openRes === i ? null : i)}
-                                >
-                                  {openRes === i ? 'Hide' : 'View'}
-                                </Button>
-                                <Button
-                                  size="sm"
-                                  variant="ghost"
-                                  onClick={() =>
-                                    p.onOpen({
-                                      transcript: r.transcript,
-                                      notes: r.notes,
-                                      commentary: r.commentary,
-                                      mark: r.mark,
-                                    })
-                                  }
-                                >
-                                  Open in Mark
-                                </Button>
-                              </>
-                            )}
-                          </td>
-                        </tr>
-                        {openRes === i && (
-                          <tr key={`${r.index}-open`}>
-                            <td colSpan={6} className="bg-muted/30 p-3">
-                              <pre className="whitespace-pre-wrap font-serif text-sm leading-relaxed">
-                                {r.commentary}
-                              </pre>
-                              <div className="mt-2 flex gap-2">
-                                <Button
-                                  size="sm"
-                                  variant="outline"
-                                  onClick={() => copyText(r.commentary)}
-                                >
-                                  Copy commentary
-                                </Button>
-                                <Button
-                                  size="sm"
-                                  variant="outline"
-                                  onClick={() => copyText(r.transcript)}
-                                >
-                                  Copy transcript
-                                </Button>
-                              </div>
+              {/*
+                UX-8 (19 September 2026). Six columns at `w-full` with nothing
+                to scroll in pushed the whole page body sideways on a phone.
+                The wrapper bleeds to the panel edge (`-mx-4 ... px-4` matches
+                the Panel body's own `p-4`) so the table gets the full width
+                before it starts scrolling.
+
+                NO `min-w-` here, deliberately, unlike RecordsPanel. Row 707 is
+                the expanded result, a `colSpan={6}` cell holding the examiner
+                commentary in a `whitespace-pre-wrap` block. A width floor on
+                this table would force that commentary - the thing teachers
+                actually read - to scroll sideways at 375px, which is worse
+                than the crushed columns it would be fixing.
+              */}
+              <div className="-mx-4 overflow-x-auto px-4">
+                <table className="mt-4 w-full text-sm">
+                  <thead>
+                    <tr className="text-start text-xs uppercase tracking-wide text-muted-foreground">
+                      <th className="py-1 pe-2">Candidate</th>
+                      <th className="py-1 pe-2">Pages</th>
+                      <th className="py-1 pe-2 text-end">Mark</th>
+                      <th className="py-1 pe-2 text-end">Flags</th>
+                      <th className="py-1 pe-2">Status</th>
+                      <th className="py-1"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {results.map((r, i) => {
+                      const st = transcriptStats(r.transcript)
+                      return (
+                        <>
+                          <tr
+                            key={r.index}
+                            className={`border-t border-border ${r.status === 'running' ? 'bg-primary/5' : ''}`}
+                          >
+                            <td className="py-2 pe-2 font-medium">{r.label}</td>
+                            <td className="py-2 pe-2 text-xs text-muted-foreground">{r.range}</td>
+                            <td className="py-2 pe-2 text-end font-serif text-lg font-bold text-primary">
+                              {r.mark ? (
+                                <>
+                                  {r.mark.mark}
+                                  {r.mark.max && (
+                                    <span className="text-sm font-normal text-muted-foreground">
+                                      {' '}
+                                      / {r.mark.max}
+                                    </span>
+                                  )}
+                                </>
+                              ) : (
+                                '-'
+                              )}
+                            </td>
+                            <td className="py-2 pe-2 text-end text-xs text-muted-foreground">
+                              {st.doubtful ? `${st.doubtful}? ` : ''}
+                              {st.illegible ? `${st.illegible} illegible` : ''}
+                            </td>
+                            <td className="py-2 pe-2 text-xs">
+                              {r.status === 'running' ? (
+                                r.step
+                              ) : r.status === 'failed' ? (
+                                <span className="text-destructive">{r.error}</span>
+                              ) : (
+                                r.status
+                              )}
+                            </td>
+                            <td className="py-2 text-end">
+                              {r.status === 'done' && (
+                                <>
+                                  <Button
+                                    size="sm"
+                                    variant="ghost"
+                                    onClick={() => setOpenRes(openRes === i ? null : i)}
+                                  >
+                                    {openRes === i ? 'Hide' : 'View'}
+                                  </Button>
+                                  <Button
+                                    size="sm"
+                                    variant="ghost"
+                                    onClick={() =>
+                                      p.onOpen({
+                                        transcript: r.transcript,
+                                        notes: r.notes,
+                                        commentary: r.commentary,
+                                        mark: r.mark,
+                                      })
+                                    }
+                                  >
+                                    Open in Mark
+                                  </Button>
+                                </>
+                              )}
                             </td>
                           </tr>
-                        )}
-                      </>
-                    )
-                  })}
-                </tbody>
-              </table>
+                          {openRes === i && (
+                            <tr key={`${r.index}-open`}>
+                              <td colSpan={6} className="bg-muted/30 p-3">
+                                <pre className="whitespace-pre-wrap font-serif text-sm leading-relaxed">
+                                  {r.commentary}
+                                </pre>
+                                <div className="mt-2 flex gap-2">
+                                  <Button
+                                    size="sm"
+                                    variant="outline"
+                                    onClick={() => copyText(r.commentary)}
+                                  >
+                                    Copy commentary
+                                  </Button>
+                                  <Button
+                                    size="sm"
+                                    variant="outline"
+                                    onClick={() => copyText(r.transcript)}
+                                  >
+                                    Copy transcript
+                                  </Button>
+                                </div>
+                              </td>
+                            </tr>
+                          )}
+                        </>
+                      )
+                    })}
+                  </tbody>
+                </table>
+              </div>
               {doneCount > 0 && !running && (
                 <div className="mt-3 flex flex-wrap items-center gap-2">
                   <Button
