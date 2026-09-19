@@ -15,6 +15,9 @@ import { NextRequest, NextResponse } from 'next/server'
 import type Anthropic from '@anthropic-ai/sdk'
 import { getAnthropicClient, ANTHROPIC_MODEL } from '@/lib/anthropic-client'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
+import { createServiceRoleClient } from '@/lib/supabase/server'
+import { insertSubmission, applyAiResult, deriveUncertaintyFlags } from '@/lib/marking/persistence'
+import { captureVersions } from '@/lib/marking/versioning-capture'
 import { rateLimit } from '@/lib/rate-limit'
 import { hasActiveSubscription } from '@/lib/course-access'
 import { checkMinorAIConsent } from '@/lib/consent-check'
@@ -350,10 +353,75 @@ export async function POST(request: NextRequest) {
       console.warn('[api/mark] Trustpilot trigger dispatch failed', err),
     )
 
+    // ── Persist the submission (SF-2) ────────────────────────────────────
+    //
+    // THE DEFECT THIS FIXES (19 September 2026). This route marked an essay and
+    // persisted NOTHING. It is the mobile contract and the web's legacy
+    // fallback, so a mark made here existed only in the caller's own
+    // localStorage: it never reached `marking_submissions`, never appeared in
+    // /marking/history once that page started reading the server, and was
+    // invisible to every operator report that counts marked work.
+    //
+    // Two writes, the same pair the submission spine uses, so both paths
+    // produce rows of the same shape: insert the submission, then attach the AI
+    // result. Status 'ai_marked' because this route is self-study only - B2B
+    // class work goes through the spine and needs a teacher first.
+    //
+    // BEST EFFORT, BUT NOT SILENT. The student has already spent an allowance
+    // and has their marked essay in the response; losing that because a write
+    // failed would be the worse outcome. So a failure does not fail the
+    // request - but it is logged at error level and reported to the caller as
+    // `persisted: false`, because a save that fails quietly is the defect this
+    // repository keeps finding.
+    let submissionId: string | null = null
+    try {
+      const svc = createServiceRoleClient()
+      const created = await insertSubmission(svc, {
+        source: 'b2c_self',
+        studentId: user.id,
+        schoolId: null,
+        classId: null,
+        examBoard: scheme.board,
+        qualification: null,
+        paper: scheme.paper,
+        questionText: body.questionText,
+        questionType: null,
+        studiedText: body.studiedText ?? null,
+        targetGrade: null,
+        markSchemeId: scheme.id,
+        questionId: body.questionId,
+        studentAnswer: body.essay,
+      })
+      submissionId = created.id
+
+      const versions = await captureVersions(svc, {
+        promptText: `${prompt.systemPrompt}
+
+${prompt.userMessage}`,
+        markSchemeId: scheme.id,
+        schemeVersion: scheme.version ?? 'v1.0',
+        examBoard: scheme.board,
+        qualification: null,
+      })
+      await applyAiResult(svc, created.id, {
+        result: feedback.result,
+        uncertaintyFlags: deriveUncertaintyFlags(feedback.result),
+        modelVersionId: versions.modelVersionId,
+        promptVersionId: versions.promptVersionId,
+        rubricVersionId: versions.rubricVersionId,
+        status: 'ai_marked',
+      })
+    } catch (dbErr) {
+      console.error('[api/mark] could not persist the submission', dbErr)
+      submissionId = null
+    }
+
     return applyAllowanceHeaders(
       NextResponse.json({
         result: feedback.result,
         remaining: rl.remaining,
+        submissionId,
+        persisted: submissionId !== null,
       }),
       trialGate.state,
     )
