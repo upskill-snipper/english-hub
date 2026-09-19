@@ -28,11 +28,15 @@ import { SET_TEXTS } from '@/lib/board/set-texts'
  * link never says "all your set texts" while pointing at everyone's.
  */
 
-const RAIL = readFileSync(
-  join(process.cwd(), 'src/app/revision/_components/text-scoped-nav.tsx'),
-  'utf8',
-)
-const CODE = RAIL.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*/g, '')
+function sourceOf(rel: string): string {
+  return readFileSync(join(process.cwd(), rel), 'utf8')
+    .replace(/\/\*[\s\S]*?\*\//g, '')
+    .replace(/\/\/.*/g, '')
+}
+
+const CODE = sourceOf('src/app/revision/_components/text-scoped-nav.tsx')
+const SHELL = sourceOf('src/app/revision/_components/revision-shell.tsx')
+const PAGE = sourceOf('src/app/revision/texts/[slug]/page.tsx')
 
 describe('the rail', () => {
   it('no longer hard-codes the all-texts index as the way out', () => {
@@ -56,6 +60,40 @@ describe('the rail', () => {
     expect(CODE).toContain("t('textnav.back_to_board_shelf')")
     expect(CODE).toContain("t('textnav.back_to_shelf')")
     expect(CODE).toMatch(/board && isHydrated \? t\('textnav\.back_to_board_shelf'\)/)
+  })
+})
+
+describe('the other two ways out, which the first pass missed', () => {
+  // Found by opening the page in a browser with a board cookie set and listing
+  // every anchor. The rail was fixed and five links still went to the
+  // all-texts index. Reading the source would not have shown that; rendering it
+  // did.
+
+  it('the MOBILE rail goes to the board shelf too', () => {
+    // This is the rail most of these students actually use. It was missed on
+    // the first pass because the browser window was wide.
+    expect(SHELL).toContain('boardShelfHref(board)')
+    expect(SHELL).toMatch(
+      /href=\{board && isHydrated \? boardShelfHref\(board\) : '\/revision\/texts'\}/,
+    )
+  })
+
+  it('the mobile rail has the board hook it needs', () => {
+    const at = SHELL.indexOf('function MobileScrollRail')
+    expect(at).toBeGreaterThan(-1)
+    expect(SHELL.slice(at, at + 400)).toContain('useBoard()')
+  })
+
+  it('the text page back button goes to the board shelf', () => {
+    expect(PAGE).toContain("boardShelfHref(board) : '/revision/texts'")
+  })
+
+  it('and the page needs no hydration guard, because it renders on the server', () => {
+    // getServerBoard reads the cookie during the render, so unlike the rail
+    // there is no window where the board is unknown and no fallback flicker.
+    expect(PAGE).toContain('getServerBoard()')
+    const at = PAGE.indexOf('boardShelfHref(board)')
+    expect(PAGE.slice(Math.max(0, at - 120), at)).not.toContain('isHydrated')
   })
 })
 

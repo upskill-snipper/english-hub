@@ -571,6 +571,7 @@ function MobileChip({ href, label, isActive }: { href: string; label: string; is
 function MobileScrollRail({ navItems }: { navItems: NavItem[] }) {
   const pathname = usePathname()
   const t = useT()
+  const { board, isHydrated } = useBoard()
 
   // Inside a text, the chips must be that text's sections. Most of these
   // students revise on a phone, so leaving the global register here would have
@@ -587,12 +588,16 @@ function MobileScrollRail({ navItems }: { navItems: NavItem[] }) {
         aria-label={t('revision.shell.nav_aria')}
       >
         <div className="flex min-w-max gap-2">
+          {/* The mobile way out, to the student's OWN shelf - see the same fix
+              in text-scoped-nav.tsx. This is the rail most students actually
+              use, so it mattered more than the desktop one and was missed on
+              the first pass because the browser was wide. */}
           <Link
-            href="/revision/texts"
+            href={board && isHydrated ? boardShelfHref(board) : '/revision/texts'}
             className="flex shrink-0 items-center gap-1.5 rounded-full border border-border/60 bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-border hover:text-foreground"
           >
             <ChevronRight aria-hidden="true" className="size-3.5 shrink-0 rotate-180" />
-            {t('textnav.back_to_shelf')}
+            {board && isHydrated ? t('textnav.back_to_board_shelf') : t('textnav.back_to_shelf')}
           </Link>
           <MobileChip
             href={nav.hubHref}

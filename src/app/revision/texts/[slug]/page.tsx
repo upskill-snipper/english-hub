@@ -23,6 +23,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { SET_TEXTS, getSetText, textAvailableForBoard, type SetText } from '@/lib/board/set-texts'
 import { getServerBoard } from '@/lib/board/get-server-board'
+import { boardShelfHref } from '@/lib/board/board-landing'
 import { t } from '@/lib/i18n/t'
 
 // ─── Static params ──────────────────────────────────────────────────────────
@@ -217,6 +218,7 @@ export default async function TextStudyGuidePage({ params }: { params: Promise<P
   // quotations stay in source language - literary content per task scope.
   const tCategoryLabel = await t(category.labelKey)
   const tBackToTexts = await t('analysis.deep.set_text.back_to_texts')
+  const tBackToBoardTexts = await t('textnav.back_to_board_shelf')
   const tBackToAll = await t('analysis.deep.set_text.back_to_all_texts')
   const tBy = await t('analysis.deep.set_text.by_author')
   const tBoardsOne = await t('analysis.deep.set_text.boards_one')
@@ -248,14 +250,21 @@ export default async function TextStudyGuidePage({ params }: { params: Promise<P
         <div className="pointer-events-none absolute -bottom-16 -start-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl" />
 
         <div className="relative">
+          {/* Back to the student's OWN shelf where we know it.
+
+              This said "back to all texts" and meant all 108, across fifteen
+              specifications. Unlike the rail, this page renders on the server
+              and already reads the board, so there is no hydration window and
+              no fallback flicker - if `board` is set the destination is right
+              on the first byte. */}
           <Button
             variant="ghost"
             size="sm"
             className="mb-4 -ms-2 text-muted-foreground"
-            render={<Link href="/revision/texts" />}
+            render={<Link href={board ? boardShelfHref(board) : '/revision/texts'} />}
           >
             <ArrowLeft className="size-3.5" />
-            {tBackToTexts}
+            {board ? tBackToBoardTexts : tBackToTexts}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
