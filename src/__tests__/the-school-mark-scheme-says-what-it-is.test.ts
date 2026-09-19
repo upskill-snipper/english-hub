@@ -16,10 +16,13 @@ import { VERIFIED_SPECS } from '@/lib/marking/examiner/verification'
  *    unverified and says so, loudly, on every surface a teacher can reach."
  *
  * `src/data/mark-scheme-questions.ts` is the other one. It has never been
- * checked against any specification, it is opted out of type checking with
- * `@ts-nocheck`, and the September audit found entries filed under papers they
- * do not appear on - a "Q3 - Language analysis in detail" and a "Section C -
- * Unseen poetry" on AQA Paper 1 among them.
+ * checked against any specification, and the September audit found entries
+ * filed under papers they do not appear on - a "Q3 - Language analysis in
+ * detail" and a "Section C - Unseen poetry" on AQA Paper 1 among them.
+ *
+ * It also carried `@ts-nocheck` on line 1, opting the whole file out of type
+ * checking. That came off on 20 September 2026: removing it produces exactly
+ * zero errors, so it was hiding nothing and every future edit is now checked.
  *
  * `MarkSchemeViewer` renders it to teachers, with a Print button, and said
  * nothing. A teacher could print it and award marks from it.
@@ -47,8 +50,12 @@ describe('the corpus really is the unverified one', () => {
     }
   })
 
-  it('and it is still opted out of type checking, which is part of why', () => {
-    expect(DATA.startsWith('// @ts-nocheck')).toBe(true)
+  it('and it is no longer opted out of type checking', () => {
+    // It was, on line 1, which meant nothing in this 134KB file was checked.
+    // Removing the directive produced zero errors, so it had outlived whatever
+    // it was added for. Asserted here so it cannot quietly come back: a data
+    // file that feeds a teacher-facing view should not be exempt.
+    expect(DATA).not.toMatch(/^\/\/ @ts-nocheck/m)
   })
 
   it('and it still contains the entries the audit flagged', () => {
