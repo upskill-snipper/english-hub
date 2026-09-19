@@ -47,7 +47,7 @@ const sections = [
   {
     title: 'Paper 2: Non-Fiction & Writing for Real Purposes',
     description:
-      'Section A: Reading two linked non-fiction texts (19th & 21st century). Section B: Writing for real purposes. 2 hours 5 minutes, 64 marks.',
+      'Section A: Reading two linked non-fiction texts (19th & 21st century). Section B: Writing for real purposes. 2 hours 5 minutes, 96 marks.',
     href: '/resources/english-language/edexcel/paper-2',
     icon: (
       <svg

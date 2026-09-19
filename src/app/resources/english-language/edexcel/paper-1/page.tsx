@@ -258,40 +258,6 @@ export default async function Paper1Page() {
                   4
                 </span>
                 <h3 className="text-lg font-bold text-foreground">
-                  {tr(`Structural / Language Analysis (6 marks)`)}
-                </h3>
-              </div>
-              <p className="mt-2 text-sm text-muted-foreground">
-                <strong>{tr(`Language and structure analysis (AO2)`)}</strong> &mdash; Analyse how
-                the writer uses language and/or structure to achieve a specific effect in a
-                different section of the text.
-              </p>
-              <div className="mt-3 rounded-lg bg-muted p-4">
-                <p className="text-sm font-medium text-muted-foreground">
-                  {tr(`Example question:`)}
-                </p>
-                <p className="mt-1 text-sm italic text-foreground">
-                  &ldquo;In lines 26-39, how does the writer make the reader feel sympathy for the
-                  character?&rdquo;
-                </p>
-              </div>
-              <div className="mt-3 rounded-lg bg-primary/10 p-4">
-                <p className="text-sm font-medium text-primary">Top tip:</p>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Think about both language <em>and</em> structure here. Consider sentence lengths,
-                  paragraph structure, focus shifts, narrative perspective, and use of dialogue
-                  alongside language devices. Spend about 8-10 minutes.
-                </p>
-              </div>
-            </div>
-
-            {/* Q5 */}
-            <div className="rounded-xl border border-border bg-card p-6 shadow-md">
-              <div className="flex items-center gap-3">
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
-                  5
-                </span>
-                <h3 className="text-lg font-bold text-foreground">
                   {tr(`Critical Evaluation (15 marks)`)}
                 </h3>
               </div>
@@ -562,10 +528,10 @@ export default async function Paper1Page() {
             </div>
           </div>
 
-          {/* Q5 example */}
+          {/* Q4 example */}
           <div className="mt-8 rounded-xl border border-border bg-card p-6 shadow-md">
             <h3 className="text-lg font-bold text-foreground">
-              {tr(`Question 5 &mdash; Critical Evaluation (Level 4-5 / 13-15 marks)`)}
+              {tr(`Question 4 &mdash; Critical Evaluation (Level 4-5 / 13-15 marks)`)}
             </h3>
             <div className="mt-3 rounded-lg bg-muted p-4">
               <p className="text-sm font-medium text-muted-foreground">Question:</p>
@@ -722,14 +688,6 @@ export default async function Paper1Page() {
                 </tr>
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-medium text-foreground">Q4</td>
-                  <td className="px-4 py-3 text-muted-foreground">6</td>
-                  <td className="px-4 py-3 text-muted-foreground">8-10 min</td>
-                  <td className="px-4 py-3 text-muted-foreground">
-                    Consider both language and structure. Same approach as Q3.
-                  </td>
-                </tr>
-                <tr className="hover:bg-muted">
-                  <td className="px-4 py-3 font-medium text-foreground">Q5</td>
                   <td className="px-4 py-3 text-muted-foreground">15</td>
                   <td className="px-4 py-3 text-muted-foreground">20-25 min</td>
                   <td className="px-4 py-3 text-muted-foreground">
@@ -737,7 +695,9 @@ export default async function Paper1Page() {
                   </td>
                 </tr>
                 <tr className="hover:bg-muted">
-                  <td className="px-4 py-3 font-medium text-foreground">Q6 (Writing)</td>
+                  <td className="px-4 py-3 font-medium text-foreground">
+                    {tr(`Q5 or Q6 (Writing)`)}
+                  </td>
                   <td className="px-4 py-3 text-muted-foreground">40</td>
                   <td className="px-4 py-3 text-muted-foreground">45 min</td>
                   <td className="px-4 py-3 text-muted-foreground">

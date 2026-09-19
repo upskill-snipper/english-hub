@@ -54,7 +54,7 @@ export default async function Paper2Page() {
             Paper 2: Non-Fiction &amp; Writing for Real Purposes
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            2 hours 5 minutes &bull; 64 marks &bull; 60% of your GCSE
+            2 hours 5 minutes &bull; 96 marks &bull; 60% of your GCSE
           </p>
         </div>
       </section>
@@ -78,7 +78,7 @@ export default async function Paper2Page() {
                 A
               </div>
               <h3 className="mt-3 text-lg font-bold text-foreground">{tr(`Section A: Reading`)}</h3>
-              <p className="mt-1 text-sm text-muted-foreground">24 marks &bull; ~1 hr 15 min</p>
+              <p className="mt-1 text-sm text-muted-foreground">56 marks &bull; ~1 hr 15 min</p>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
@@ -147,17 +147,26 @@ export default async function Paper2Page() {
                   1
                 </span>
                 <h3 className="text-lg font-bold text-foreground">
-                  {tr(`Short Retrieval &mdash; Text 1 (1 mark)`)}
+                  {tr(`Short Retrieval &mdash; Text 1 (2 marks)`)}
                 </h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>{tr(`Reading and retrieval (AO1)`)}</strong> &mdash; Retrieve one piece of
-                explicit information from the 19th-century text.
+                <strong>{tr(`Reading and retrieval (AO1)`)}</strong> &mdash; From the lines named in
+                the question, give two pieces of information from Text 1.
               </p>
+              <div className="mt-3 rounded-lg bg-muted p-4">
+                <p className="text-sm font-medium text-muted-foreground">
+                  {tr(`Example question:`)}
+                </p>
+                <p className="mt-1 text-sm italic text-foreground">
+                  &ldquo;From lines 1-8, give two reasons the writer gives for leaving.&rdquo;
+                </p>
+              </div>
               <div className="mt-3 rounded-lg bg-primary/10 p-4">
                 <p className="text-sm font-medium text-primary">Top tip:</p>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Same as Paper 1 Q1. Copy the exact phrase. 1 minute maximum. Do not waste time.
+                  One mark per acceptable point, so give two distinct points and stop. Spend about
+                  two minutes.
                 </p>
               </div>
             </div>
@@ -169,17 +178,26 @@ export default async function Paper2Page() {
                   2
                 </span>
                 <h3 className="text-lg font-bold text-foreground">
-                  {tr(`Short Retrieval &mdash; Text 2 (2 marks)`)}
+                  {tr(`Short Retrieval &mdash; Text 1 (2 marks)`)}
                 </h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>{tr(`Reading and retrieval (AO1)`)}</strong> &mdash; Identify two things
-                from the 21st-century text.
+                <strong>{tr(`Reading and retrieval (AO1)`)}</strong> &mdash; From a further set of
+                named lines in Text 1, give two more pieces of information.
               </p>
+              <div className="mt-3 rounded-lg bg-muted p-4">
+                <p className="text-sm font-medium text-muted-foreground">
+                  {tr(`Example question:`)}
+                </p>
+                <p className="mt-1 text-sm italic text-foreground">
+                  &ldquo;From lines 9-15, give two things the writer says about the journey.&rdquo;
+                </p>
+              </div>
               <div className="mt-3 rounded-lg bg-primary/10 p-4">
                 <p className="text-sm font-medium text-primary">Top tip:</p>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Two clear, separate points. Keep it concise &mdash; no analysis needed.
+                  Same technique as Q1. Points must be distinct from one another, not the same idea
+                  twice.
                 </p>
               </div>
             </div>
@@ -191,39 +209,29 @@ export default async function Paper2Page() {
                   3
                 </span>
                 <h3 className="text-lg font-bold text-foreground">
-                  {tr(`Language Analysis &mdash; Text 1 (6 marks)`)}
+                  {tr(`Language and Structure &mdash; Text 1 (15 marks)`)}
                 </h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
                 <strong>{tr(`Language and structure analysis (AO2)`)}</strong> &mdash; Analyse how
-                the 19th-century writer uses language to convey a particular idea, feeling, or
-                impression.
+                the writer of Text 1 uses language and structure to achieve effects. This is one of
+                the three highest-tariff reading questions on the paper.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-4">
                 <p className="text-sm font-medium text-muted-foreground">
                   {tr(`Example question:`)}
                 </p>
                 <p className="mt-1 text-sm italic text-foreground">
-                  &ldquo;In lines 8-18 of Text 1, how does the writer use language to convey their
-                  feelings about city life?&rdquo;
+                  &ldquo;Analyse how the writer uses language and structure to interest and engage
+                  the reader.&rdquo;
                 </p>
               </div>
-              <div className="mt-4 rounded-lg border border-primary/20 bg-primary/10 p-4">
-                <p className="text-sm font-semibold text-primary">{tr(`Marking guide levels:`)}</p>
-                <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                  <li>
-                    <strong>{tr(`Level 1 (1-2):`)}</strong> Simple comments on language. Limited or
-                    no terminology.
-                  </li>
-                  <li>
-                    <strong>{tr(`Level 2 (3-4):`)}</strong> Some analysis of language with
-                    appropriate examples.
-                  </li>
-                  <li>
-                    <strong>{tr(`Level 3 (5-6):`)}</strong> Detailed, perceptive analysis. Precise
-                    terminology. Well-chosen examples with effect on reader.
-                  </li>
-                </ul>
+              <div className="mt-3 rounded-lg bg-primary/10 p-4">
+                <p className="text-sm font-medium text-primary">Top tip:</p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Marked on five levels of three marks. Analyse the effect rather than naming the
+                  device, and cover structure as well as language. Spend about twenty minutes.
+                </p>
               </div>
             </div>
 
@@ -234,19 +242,26 @@ export default async function Paper2Page() {
                   4
                 </span>
                 <h3 className="text-lg font-bold text-foreground">
-                  {tr(`Language Analysis &mdash; Text 2 (6 marks)`)}
+                  {tr(`Short Retrieval &mdash; Text 2 (1 mark)`)}
                 </h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>{tr(`Language and structure analysis (AO2)`)}</strong> &mdash; Analyse how
-                the 21st-century writer uses language in a specified section.
+                <strong>{tr(`Reading and retrieval (AO1)`)}</strong> &mdash; From the lines named in
+                the question, give one piece of information from Text 2.
               </p>
+              <div className="mt-3 rounded-lg bg-muted p-4">
+                <p className="text-sm font-medium text-muted-foreground">
+                  {tr(`Example question:`)}
+                </p>
+                <p className="mt-1 text-sm italic text-foreground">
+                  &ldquo;From lines 1-6, give one thing the writer finds surprising.&rdquo;
+                </p>
+              </div>
               <div className="mt-3 rounded-lg bg-primary/10 p-4">
-                <p className="text-sm font-medium text-primary">{tr(`Key difference from Q3:`)}</p>
+                <p className="text-sm font-medium text-primary">Top tip:</p>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  The 21st-century text may use more informal or modern language features:
-                  rhetorical questions, direct address, humour, colloquialisms, or statistics.
-                  Identify how these choices shape the reader&rsquo;s response.
+                  One mark, one point. Nothing is deducted for extra material offered alongside a
+                  correct answer, but do not spend time on it.
                 </p>
               </div>
             </div>
@@ -258,49 +273,27 @@ export default async function Paper2Page() {
                   5
                 </span>
                 <h3 className="text-lg font-bold text-foreground">
-                  {tr(`Critical Evaluation &mdash; Text 2 (15 marks)`)}
+                  {tr(`Short Retrieval &mdash; Text 2 (1 mark)`)}
                 </h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>{tr(`Critical evaluation (AO4)`)}</strong> &mdash; Evaluate how effectively
-                the 21st-century text achieves its purpose. You will be given a statement and asked
-                to what extent you agree.
+                <strong>{tr(`Reading and retrieval (AO1)`)}</strong> &mdash; From a further set of
+                named lines in Text 2, give one more piece of information.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-4">
                 <p className="text-sm font-medium text-muted-foreground">
                   {tr(`Example question:`)}
                 </p>
                 <p className="mt-1 text-sm italic text-foreground">
-                  &ldquo;A student said: &lsquo;The writer successfully persuades the reader that
-                  climate change is the most important issue of our time.&rsquo; To what extent do
-                  you agree? You should comment on the writer&rsquo;s use of language and
-                  structure.&rdquo;
+                  &ldquo;From lines 7-12, give one reason the writer gives for staying.&rdquo;
                 </p>
               </div>
-              <div className="mt-4 rounded-lg border border-primary/20 bg-primary/10 p-4">
-                <p className="text-sm font-semibold text-primary">{tr(`Marking guide levels:`)}</p>
-                <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                  <li>
-                    <strong>{tr(`Level 1 (1-3):`)}</strong> Limited evaluation with little reference
-                    to text.
-                  </li>
-                  <li>
-                    <strong>{tr(`Level 2 (4-6):`)}</strong> Some evaluation; attempts to respond to
-                    the statement.
-                  </li>
-                  <li>
-                    <strong>{tr(`Level 3 (7-9):`)}</strong> Clear evaluation with relevant examples
-                    and some analysis.
-                  </li>
-                  <li>
-                    <strong>{tr(`Level 4 (10-12):`)}</strong> Detailed, developed evaluation across
-                    the text.
-                  </li>
-                  <li>
-                    <strong>{tr(`Level 5 (13-15):`)}</strong> Perceptive, sophisticated evaluation
-                    with precisely selected evidence.
-                  </li>
-                </ul>
+              <div className="mt-3 rounded-lg bg-primary/10 p-4">
+                <p className="text-sm font-medium text-primary">Top tip:</p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  As Q4. Together Q1, Q2, Q4 and Q5 are worth six marks of ninety-six, so they
+                  should be quick.
+                </p>
               </div>
             </div>
 
@@ -311,77 +304,104 @@ export default async function Paper2Page() {
                   6
                 </span>
                 <h3 className="text-lg font-bold text-foreground">
-                  Comparison (10 marks) &mdash; UNIQUE TO PAPER 2
+                  {tr(`Critical Evaluation &mdash; Text 2 (15 marks)`)}
                 </h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>{tr(`Comparing writers (AO3)`)}</strong> &mdash; Compare the writers&rsquo;
-                viewpoints and perspectives across <em>both</em> texts. This is the only place in
-                the entire English Language GCSE where you must compare.
+                <strong>{tr(`Critical evaluation (AO4)`)}</strong> &mdash; Evaluate how successfully
+                the writer of Text 2 achieves a stated effect, supporting your views with detailed
+                reference to the text.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-4">
                 <p className="text-sm font-medium text-muted-foreground">
                   {tr(`Example question:`)}
                 </p>
                 <p className="mt-1 text-sm italic text-foreground">
-                  &ldquo;Compare how the writers of Text 1 and Text 2 present their ideas and
-                  perspectives about education.&rdquo;
+                  &ldquo;Evaluate how successfully the writer conveys the difficulty of the
+                  decision.&rdquo;
                 </p>
               </div>
               <div className="mt-3 rounded-lg bg-primary/10 p-4">
-                <p className="text-sm font-medium text-primary">
-                  How to structure your comparison:
+                <p className="text-sm font-medium text-primary">Top tip:</p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Marked on five levels of three marks. Engage with the statement rather than
+                  agreeing with it, and build a sustained argument from evidence. Spend about twenty
+                  minutes.
                 </p>
-                <ol className="mt-2 space-y-2 text-sm text-muted-foreground list-decimal list-inside">
-                  <li>
-                    {tr(
-                      `Identify each writer&rsquo;s viewpoint clearly (&ldquo;Writer 1 believes... whereas Writer 2 argues...&rdquo;)`,
-                    )}
-                  </li>
-                  <li>
-                    {tr(
-                      `Compare using connectives: &ldquo;Similarly,&rdquo; &ldquo;In contrast,&rdquo; &ldquo;However,&rdquo; &ldquo;Conversely&rdquo;`,
-                    )}
-                  </li>
-                  <li>
-                    Support each point with evidence from <em>both</em> texts
-                  </li>
-                  <li>
-                    {tr(
-                      `Analyse how each writer&rsquo;s methods differ (e.g., one uses emotive language while the other uses statistics)`,
-                    )}
-                  </li>
-                  <li>
-                    Consider the historical context &mdash; a 19th-century perspective vs a modern
-                    one
-                  </li>
-                </ol>
               </div>
-              <div className="mt-4 rounded-lg border border-primary/20 bg-primary/10 p-4">
-                <p className="text-sm font-semibold text-primary">{tr(`Marking guide levels:`)}</p>
-                <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                  <li>
-                    <strong>{tr(`Level 1 (1-2):`)}</strong> Simple, limited cross-reference. May
-                    only discuss one text.
-                  </li>
-                  <li>
-                    <strong>{tr(`Level 2 (3-4):`)}</strong> Some comparison with relevant references
-                    from both texts.
-                  </li>
-                  <li>
-                    <strong>{tr(`Level 3 (5-6):`)}</strong> Clear comparison of viewpoints with
-                    supporting evidence from both texts.
-                  </li>
-                  <li>
-                    <strong>{tr(`Level 4 (7-8):`)}</strong> Detailed comparison with analysis of how
-                    methods shape different perspectives.
-                  </li>
-                  <li>
-                    <strong>{tr(`Level 5 (9-10):`)}</strong> Perceptive comparison; sophisticated
-                    understanding of how context influences viewpoints.
-                  </li>
-                </ul>
+            </div>
+
+            {/* Q7(a) */}
+            <div className="rounded-xl border border-border bg-card p-6 shadow-md">
+              <div className="flex items-center gap-3">
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-accent text-sm font-bold text-white">
+                  7(a)
+                </span>
+                <h3 className="text-lg font-bold text-foreground">
+                  {tr(`Synthesis across both texts (6 marks)`)}
+                </h3>
               </div>
+              <p className="mt-2 text-sm text-muted-foreground">
+                <strong>{tr(`Reading and retrieval (AO1)`)}</strong> &mdash; Using both texts,
+                identify and synthesise the similarities or differences the question names.
+              </p>
+              <div className="mt-3 rounded-lg bg-muted p-4">
+                <p className="text-sm font-medium text-muted-foreground">
+                  {tr(`Example question:`)}
+                </p>
+                <p className="mt-1 text-sm italic text-foreground">
+                  &ldquo;Using both texts, identify three similarities between the two
+                  journeys.&rdquo;
+                </p>
+              </div>
+              <div className="mt-3 rounded-lg bg-primary/10 p-4">
+                <p className="text-sm font-medium text-primary">Top tip:</p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Points are rewarded from both texts. This is retrieval and synthesis, not
+                  analysis, so do not write about method here.
+                </p>
+              </div>
+            </div>
+
+            {/* Q7(b) */}
+            <div className="rounded-xl border border-border bg-card p-6 shadow-md">
+              <div className="flex items-center gap-3">
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-accent text-sm font-bold text-white">
+                  7(b)
+                </span>
+                <h3 className="text-lg font-bold text-foreground">
+                  {tr(`Comparison of ideas and perspectives (14 marks)`)}
+                </h3>
+              </div>
+              <p className="mt-2 text-sm text-muted-foreground">
+                <strong>{tr(`Compare writers&rsquo; ideas and perspectives (AO3)`)}</strong> &mdash;
+                Compare how the writers of Text 1 and Text 2 present their ideas and perspectives,
+                and how these are conveyed.
+              </p>
+              <div className="mt-3 rounded-lg bg-muted p-4">
+                <p className="text-sm font-medium text-muted-foreground">
+                  {tr(`Example question:`)}
+                </p>
+                <p className="mt-1 text-sm italic text-foreground">
+                  &ldquo;Compare how the writers present their attitudes to risk.&rdquo;
+                </p>
+              </div>
+              <div className="mt-3 rounded-lg bg-primary/10 p-4">
+                <p className="text-sm font-medium text-primary">Top tip:</p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Both texts must be addressed: a response on one text alone is capped. Use
+                  comparative connectives, support every point from both texts, and analyse how each
+                  writer&rsquo;s methods shape a different perspective.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-8 rounded-lg border border-border bg-card p-5">
+              <p className="text-sm text-muted-foreground">
+                {tr(
+                  `Section A is worth 56 of the 96 marks on this paper. The level descriptors used by the marking engine follow Pearson&rsquo;s published band structure, but for the exact wording of each level always work from the mark scheme for your own series.`,
+                )}
+              </p>
             </div>
           </div>
         </div>
@@ -524,10 +544,10 @@ export default async function Paper2Page() {
             {tr(`Example Responses`)}
           </h2>
 
-          {/* Q6 Comparison example */}
+          {/* Q7(b) Comparison example */}
           <div className="mt-8 rounded-xl border border-border bg-card p-6 shadow-md">
             <h3 className="text-lg font-bold text-foreground">
-              {tr(`Question 6 &mdash; Comparison (Level 4-5 / 9-10 marks)`)}
+              {tr(`Question 7(b) &mdash; Comparison (a high-level response)`)}
             </h3>
             <div className="mt-3 rounded-lg bg-muted p-4">
               <p className="text-sm font-medium text-muted-foreground">Question:</p>
@@ -748,8 +768,8 @@ export default async function Paper2Page() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-warn" />
-                <strong>Timing:</strong> Spending too long on Q1-Q2 (only 3 marks combined) and
-                rushing Q5-Q6 (25 marks combined).
+                <strong>Timing:</strong> Spending too long on the short retrievals Q1, Q2, Q4 and Q5
+                (six marks between them) and rushing Q3, Q6 and Q7(b), which are worth 44.
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-warn" />

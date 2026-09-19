@@ -444,10 +444,10 @@ export default function GradeBoundariesPage() {
                   several marks on content and organisation alone.
                 </li>
                 <li>
-                  <strong>{tr(`Paper 2 Q7 (summary):`)}</strong> Practise synthesising information
-                  from two texts. Use connectives like &ldquo;Both sources&hellip;&rdquo; and
-                  &ldquo;However, Source B differs&hellip;&rdquo; to show you can compare, not just
-                  list.
+                  <strong>{tr(`Paper 2 Q7(a) (summary):`)}</strong> Practise synthesising
+                  information from two texts. Use connectives like &ldquo;Both
+                  sources&hellip;&rdquo; and &ldquo;However, Source B differs&hellip;&rdquo; to show
+                  you can compare, not just list.
                 </li>
                 <li>
                   <strong>Timing:</strong> Make sure you attempt every question and complete the
@@ -467,7 +467,7 @@ export default function GradeBoundariesPage() {
                   show you are exploring layers of meaning.
                 </li>
                 <li>
-                  <strong>{tr(`Paper 1 Q4 (evaluation):`)}</strong> This is worth 20 marks &mdash;
+                  <strong>{tr(`Paper 1 Q4 (evaluation):`)}</strong> This is worth 15 marks &mdash;
                   engage critically with the statement given. Don&rsquo;t just agree; consider what
                   the writer does and why, and use the text as evidence for a sustained argument.
                 </li>
@@ -545,43 +545,45 @@ export default function GradeBoundariesPage() {
                 <tr>
                   <td className="py-2 pe-4 font-semibold">Q1</td>
                   <td className="py-2 pe-4">
-                    {tr(`Short response &mdash; identify explicit information from the extract`)}
+                    {tr(`Short response &mdash; identify one piece of explicit information`)}
                   </td>
-                  <td className="py-2 pe-4">4 marks</td>
+                  <td className="py-2 pe-4">1 mark</td>
                   <td className="py-2 pe-4">{tr(`Reading and retrieval (AO1)`)}</td>
                 </tr>
                 <tr>
                   <td className="py-2 pe-4 font-semibold">Q2</td>
                   <td className="py-2 pe-4">
-                    Language analysis &mdash; explain how language is used for effect
+                    {tr(`Short response &mdash; give two pieces of information from named lines`)}
                   </td>
-                  <td className="py-2 pe-4">8 marks</td>
-                  <td className="py-2 pe-4">{tr(`Language and structure analysis (AO2)`)}</td>
+                  <td className="py-2 pe-4">2 marks</td>
+                  <td className="py-2 pe-4">{tr(`Reading and retrieval (AO1)`)}</td>
                 </tr>
                 <tr>
                   <td className="py-2 pe-4 font-semibold">Q3</td>
                   <td className="py-2 pe-4">
-                    {tr(`Structure &mdash; explain how the writer structures the text for effect`)}
+                    {tr(
+                      `Language and structure &mdash; analyse how the writer achieves effects in the named lines`,
+                    )}
                   </td>
-                  <td className="py-2 pe-4">8 marks</td>
+                  <td className="py-2 pe-4">6 marks</td>
                   <td className="py-2 pe-4">{tr(`Language and structure analysis (AO2)`)}</td>
                 </tr>
                 <tr>
                   <td className="py-2 pe-4 font-semibold">Q4</td>
                   <td className="py-2 pe-4">
                     {tr(
-                      `Evaluation &mdash; critically evaluate the text with reference to a statement`,
+                      `Evaluation &mdash; evaluate how successfully the writer achieves a stated effect`,
                     )}
                   </td>
-                  <td className="py-2 pe-4">20 marks</td>
+                  <td className="py-2 pe-4">15 marks</td>
                   <td className="py-2 pe-4">{tr(`Critical evaluation (AO4)`)}</td>
                 </tr>
                 <tr className="bg-primary/10">
-                  <td className="py-2 pe-4 font-semibold">Q5</td>
-                  <td className="py-2 pe-4">{tr(`Imaginative / creative writing`)}</td>
-                  <td className="py-2 pe-4">24 marks</td>
+                  <td className="py-2 pe-4 font-semibold">{tr(`Q5 or Q6`)}</td>
+                  <td className="py-2 pe-4">{tr(`Imaginative writing &mdash; answer one task`)}</td>
+                  <td className="py-2 pe-4">40 marks</td>
                   <td className="py-2 pe-4">
-                    {tr(`Content and organisation (AO5, 16) + Technical accuracy (AO6, 8)`)}
+                    {tr(`Content and organisation (AO5, 24) + Technical accuracy (AO6, 16)`)}
                   </td>
                 </tr>
                 <tr className="font-bold">
@@ -611,81 +613,87 @@ export default function GradeBoundariesPage() {
                 <tr>
                   <td className="py-2 pe-4 font-semibold">Q1</td>
                   <td className="py-2 pe-4">
-                    {tr(`Short response &mdash; identify true statements from Source A`)}
+                    {tr(`Short response &mdash; two pieces of information from Text 1`)}
                   </td>
-                  <td className="py-2 pe-4">4 marks</td>
+                  <td className="py-2 pe-4">2 marks</td>
                   <td className="py-2 pe-4">{tr(`Reading and retrieval (AO1)`)}</td>
                 </tr>
                 <tr>
                   <td className="py-2 pe-4 font-semibold">Q2</td>
                   <td className="py-2 pe-4">
-                    Short response &mdash; identify true statements from Source B
+                    {tr(`Short response &mdash; two pieces of information from Text 1`)}
                   </td>
-                  <td className="py-2 pe-4">4 marks</td>
+                  <td className="py-2 pe-4">2 marks</td>
                   <td className="py-2 pe-4">{tr(`Reading and retrieval (AO1)`)}</td>
                 </tr>
                 <tr>
                   <td className="py-2 pe-4 font-semibold">Q3</td>
                   <td className="py-2 pe-4">
-                    {tr(`Short response &mdash; identify explicit information from one source`)}
+                    {tr(
+                      `Language and structure &mdash; analyse how the writer achieves effects in Text 1`,
+                    )}
                   </td>
-                  <td className="py-2 pe-4">4 marks</td>
-                  <td className="py-2 pe-4">{tr(`Reading and retrieval (AO1)`)}</td>
+                  <td className="py-2 pe-4">15 marks</td>
+                  <td className="py-2 pe-4">{tr(`Language and structure analysis (AO2)`)}</td>
                 </tr>
                 <tr>
                   <td className="py-2 pe-4 font-semibold">Q4</td>
                   <td className="py-2 pe-4">
-                    {tr(`Short response &mdash; identify explicit information from one source`)}
+                    {tr(`Short response &mdash; one piece of explicit information from Text 2`)}
                   </td>
-                  <td className="py-2 pe-4">4 marks</td>
+                  <td className="py-2 pe-4">1 mark</td>
                   <td className="py-2 pe-4">{tr(`Reading and retrieval (AO1)`)}</td>
                 </tr>
                 <tr>
                   <td className="py-2 pe-4 font-semibold">Q5</td>
                   <td className="py-2 pe-4">
-                    {tr(`Short response &mdash; identify explicit information from one source`)}
+                    {tr(`Short response &mdash; one piece of explicit information from Text 2`)}
                   </td>
-                  <td className="py-2 pe-4">4 marks</td>
+                  <td className="py-2 pe-4">1 mark</td>
                   <td className="py-2 pe-4">{tr(`Reading and retrieval (AO1)`)}</td>
                 </tr>
                 <tr>
                   <td className="py-2 pe-4 font-semibold">Q6</td>
                   <td className="py-2 pe-4">
-                    {tr(`Short response &mdash; identify explicit information from one source`)}
+                    {tr(
+                      `Evaluation &mdash; evaluate how successfully the writer achieves a stated effect in Text 2`,
+                    )}
                   </td>
-                  <td className="py-2 pe-4">4 marks</td>
+                  <td className="py-2 pe-4">15 marks</td>
+                  <td className="py-2 pe-4">{tr(`Critical evaluation (AO4)`)}</td>
+                </tr>
+                <tr>
+                  <td className="py-2 pe-4 font-semibold">Q7(a)</td>
+                  <td className="py-2 pe-4">
+                    {tr(`Summary &mdash; the ideas both texts present`)}
+                  </td>
+                  <td className="py-2 pe-4">6 marks</td>
                   <td className="py-2 pe-4">{tr(`Reading and retrieval (AO1)`)}</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pe-4 font-semibold">Q7</td>
+                  <td className="py-2 pe-4 font-semibold">Q7(b)</td>
                   <td className="py-2 pe-4">
-                    {tr(`Summary &mdash; synthesise and compare ideas from both sources`)}
+                    {tr(
+                      `Comparison &mdash; compare how the two writers present their ideas and perspectives`,
+                    )}
                   </td>
-                  <td className="py-2 pe-4">8 marks</td>
-                  <td className="py-2 pe-4">{tr(`Reading and retrieval (AO1)`)}</td>
-                </tr>
-                <tr>
-                  <td className="py-2 pe-4 font-semibold">Q8</td>
-                  <td className="py-2 pe-4">
-                    {tr(`Language analysis &mdash; analyse how language is used in one source`)}
-                  </td>
-                  <td className="py-2 pe-4">12 marks</td>
-                  <td className="py-2 pe-4">{tr(`Language and structure analysis (AO2)`)}</td>
+                  <td className="py-2 pe-4">14 marks</td>
+                  <td className="py-2 pe-4">{tr(`Comparison across texts (AO3)`)}</td>
                 </tr>
                 <tr className="bg-primary/10">
-                  <td className="py-2 pe-4 font-semibold">Q9</td>
+                  <td className="py-2 pe-4 font-semibold">Q8 or Q9</td>
                   <td className="py-2 pe-4">
-                    {tr(`Writing for real purposes (e.g., letter, article, speech, review)`)}
+                    {tr(`Transactional writing &mdash; answer one task`)}
                   </td>
-                  <td className="py-2 pe-4">24 marks</td>
+                  <td className="py-2 pe-4">40 marks</td>
                   <td className="py-2 pe-4">
-                    {tr(`Content and organisation (AO5, 16) + Technical accuracy (AO6, 8)`)}
+                    {tr(`Content and organisation (AO5, 24) + Technical accuracy (AO6, 16)`)}
                   </td>
                 </tr>
                 <tr className="font-bold">
                   <td className="py-2 pe-4">Total</td>
                   <td className="py-2 pe-4"></td>
-                  <td className="py-2 pe-4">64 marks</td>
+                  <td className="py-2 pe-4">96 marks</td>
                   <td className="py-2 pe-4"></td>
                 </tr>
               </tbody>
@@ -693,12 +701,13 @@ export default function GradeBoundariesPage() {
           </div>
 
           <p className="mt-4 text-sm text-muted-foreground">
-            Notice that the writing task on each paper is worth{' '}
-            <strong>24 marks (37.5% of the paper)</strong>. The reading questions in Paper 2 include
-            many short-response questions worth 4 marks each &mdash; these are &ldquo;quick
-            wins&rdquo; that reward careful reading. The two highest-tariff questions are Paper 1 Q4
-            (20 marks) and Paper 2 Q8 (12 marks) &mdash; these are where strong analytical skills
-            make the biggest difference.
+            Notice that the writing task on each paper is worth <strong>40 marks</strong>: that is
+            62.5% of Paper 1 and about 42% of Paper 2. Paper 2&rsquo;s short-response questions are
+            worth one or two marks each and come to six marks in total, so they are quick but they
+            are not where the paper is won. The three 15-mark questions &mdash; Paper 1 Q4, Paper 2
+            Q3 and Paper 2 Q6 &mdash; together with Paper 2 Q7(b) at 14 marks are the highest-tariff
+            reading questions, and they are where strong analytical skills make the biggest
+            difference.
           </p>
         </Section>
 
@@ -772,13 +781,13 @@ export default function GradeBoundariesPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-warn" />
-                  Paper 1 Q4 (20 marks) and Paper 2 Q8 (12 marks) are the highest-tariff reading
-                  questions &mdash; prioritise these in revision
+                  Paper 1 Q4, Paper 2 Q3 and Paper 2 Q6 (15 marks each) and Paper 2 Q7(b) (14 marks)
+                  are the highest-tariff reading questions &mdash; prioritise these in revision
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-warn" />
-                  The writing sections on both papers total <strong>48 marks</strong> (37.5% of the
-                  GCSE) &mdash; improving your writing is one of the fastest ways to raise your
+                  The writing sections on both papers total <strong>80 marks</strong>, exactly half
+                  the GCSE &mdash; improving your writing is one of the fastest ways to raise your
                   grade
                 </li>
               </ul>
