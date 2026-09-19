@@ -100,7 +100,13 @@ export function LanguageToggle({ className }: { className?: string }) {
               'rounded-full px-2.5 py-1 transition-colors',
               active
                 ? 'bg-primary text-primary-foreground'
-                : 'text-muted-foreground hover:bg-muted hover:text-foreground',
+                : // Inherits the wrapper's colour rather than setting its own (A11Y-8).
+                  // `text-muted-foreground` is a LIGHT-theme grey, and these toggles
+                  // sit in the dark glass header: measured at 2.27:1 in a browser on
+                  // 19 September 2026. The active option is already marked by a filled
+                  // pill and aria-pressed, so dimming the inactive label bought nothing
+                  // and cost the contrast.
+                  'text-current hover:bg-white/10',
             )}
           >
             {m.label}

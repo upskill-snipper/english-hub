@@ -166,7 +166,7 @@ export default function DemoImportPage() {
               : 'border-border hover:border-muted-foreground/40'
           }`}
         >
-          <Upload className="mx-auto h-10 w-10 text-muted-foreground/50" />
+          <Upload className="mx-auto h-10 w-10 text-muted-foreground-subtle" />
           <p className="mt-3 text-sm font-medium">Drop your CSV file here or click to browse</p>
           <p className="mt-1 text-xs text-muted-foreground">Supports .csv files up to 5MB</p>
         </div>

@@ -664,7 +664,7 @@ export default async function UnseenPoetryGuidePage() {
                 <p className="rounded-lg border border-border/40 bg-background/40 px-3 py-2 text-xs italic text-muted-foreground">
                   {t.example}
                 </p>
-                <p className="text-xs text-muted-foreground/80 leading-relaxed">
+                <p className="text-xs text-muted-foreground-subtle leading-relaxed">
                   <span className="font-medium text-muted-foreground">{effectLabel} </span>
                   {t.effect}
                 </p>

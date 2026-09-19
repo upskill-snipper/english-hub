@@ -442,7 +442,7 @@ function SidebarNav({
             <span className="text-primary">{labelRight}</span>
           </div>
           {!hasData && (
-            <p className="mt-2 text-[10px] italic text-muted-foreground/70">
+            <p className="mt-2 text-[10px] italic text-muted-foreground-subtle">
               {t('revision.shell.progress_hint')}
             </p>
           )}
@@ -484,7 +484,7 @@ function SidebarNav({
               <span className="flex-1">{t(label)}</span>
               <span
                 aria-hidden="true"
-                className="rounded-full bg-muted/50 px-1.5 py-px font-sans text-[10px] font-medium tracking-normal text-muted-foreground/80"
+                className="rounded-full bg-muted/50 px-1.5 py-px font-sans text-[10px] font-medium tracking-normal text-muted-foreground-subtle"
               >
                 {items.length}
               </span>

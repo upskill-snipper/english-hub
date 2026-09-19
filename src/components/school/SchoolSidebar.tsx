@@ -315,7 +315,7 @@ export function SchoolSidebar({ school, member, classes }: SchoolSidebarProps) {
                               e.stopPropagation()
                               toggleSection(item.labelKey)
                             }}
-                            className="flex h-5 w-5 items-center justify-center rounded text-muted-foreground/60 hover:text-foreground"
+                            className="flex h-5 w-5 items-center justify-center rounded text-muted-foreground-subtle hover:text-foreground"
                             aria-label={
                               isExpanded
                                 ? `${t('school.sidebar.collapse_section')} ${itemLabel}`

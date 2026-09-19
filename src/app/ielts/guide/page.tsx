@@ -281,7 +281,7 @@ export default async function IeltsGuidePage() {
               <ArrowRight className="size-4" />
             </Button>
           </div>
-          <p className="mt-5 max-w-2xl text-xs leading-relaxed text-muted-foreground/80">
+          <p className="mt-5 max-w-2xl text-xs leading-relaxed text-muted-foreground-subtle">
             {heroDisclaimer}
           </p>
         </section>

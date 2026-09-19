@@ -554,7 +554,7 @@ function LessonRow({ t, lesson, complete }: { t: LearnTFn; lesson: Lesson; compl
           />
         ) : (
           <Circle
-            className="h-5 w-5 text-muted-foreground/40 group-hover:text-muted-foreground/70"
+            className="h-5 w-5 text-muted-foreground/40 group-hover:text-muted-foreground-subtle"
             aria-hidden
           />
         )}

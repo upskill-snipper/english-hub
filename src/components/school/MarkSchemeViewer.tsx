@@ -339,7 +339,7 @@ export function MarkSchemeViewer() {
       ) : selectedBoard && !selectedPaper ? (
         <Card>
           <CardContent className="flex flex-col items-center justify-center py-12 text-center">
-            <FileText className="mb-3 h-10 w-10 text-muted-foreground/70" />
+            <FileText className="mb-3 h-10 w-10 text-muted-foreground-subtle" />
             <p className="text-sm text-muted-foreground">
               Select a paper to see available questions.
             </p>
@@ -348,7 +348,7 @@ export function MarkSchemeViewer() {
       ) : (
         <Card>
           <CardContent className="flex flex-col items-center justify-center py-12 text-center">
-            <BookOpen className="mb-3 h-10 w-10 text-muted-foreground/70" />
+            <BookOpen className="mb-3 h-10 w-10 text-muted-foreground-subtle" />
             <p className="font-medium text-foreground">Get started</p>
             <p className="mt-1 text-sm text-muted-foreground">
               Choose an exam board above to browse marking guides.

@@ -248,7 +248,7 @@ export default function MarkSchemePage() {
           and exactly what moves signal a top-band response lets you write with the examiner in
           mind. This guide translates the official mark scheme into practical advice.
         </p>
-        <p className="mt-3 text-body-xs text-muted-foreground/70 max-w-2xl leading-relaxed italic">
+        <p className="mt-3 text-body-xs text-muted-foreground-subtle max-w-2xl leading-relaxed italic">
           In official mark schemes these skills are called Assessment Objectives: AO1 =
           Understanding the text, AO2 = Language and structure, AO3 = Context, AO4 = Comparing
           texts.

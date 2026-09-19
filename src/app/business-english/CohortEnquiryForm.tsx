@@ -249,7 +249,7 @@ export function CohortEnquiryForm() {
           rows={3}
           maxLength={600}
           placeholder={tx('mkt.biz.form.needs_ph')}
-          className="w-full resize-none rounded-lg border border-input bg-transparent px-3.5 py-2.5 text-sm outline-none transition-all duration-200 placeholder:text-muted-foreground/60 focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/25 dark:bg-input/20"
+          className="w-full resize-none rounded-lg border border-input bg-transparent px-3.5 py-2.5 text-sm outline-none transition-all duration-200 placeholder:text-muted-foreground-subtle focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/25 dark:bg-input/20"
           dir="auto"
         />
       </div>

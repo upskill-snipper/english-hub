@@ -625,7 +625,7 @@ function RegisterForm() {
                   {t('form.full_name')} <span className="text-destructive">*</span>
                 </Label>
                 <div className="relative">
-                  <User className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                  <User className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground-subtle" />
                   <Input
                     id="fullName"
                     type="text"
@@ -655,7 +655,7 @@ function RegisterForm() {
                     {t('form.dob')} <span className="text-destructive">*</span>
                   </legend>
                   <div className="relative">
-                    <Calendar className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                    <Calendar className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground-subtle" />
                     <div className="flex gap-2 ps-11">
                       <select
                         id="dobDay"
@@ -739,7 +739,7 @@ function RegisterForm() {
                 <div className="space-y-1.5">
                   <Label htmlFor="schoolName">{t('form.school_name')}</Label>
                   <div className="relative">
-                    <School className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                    <School className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground-subtle" />
                     <Input
                       id="schoolName"
                       type="text"
@@ -758,7 +758,7 @@ function RegisterForm() {
                   {t('form.email')} <span className="text-destructive">*</span>
                 </Label>
                 <div className="relative">
-                  <Mail className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                  <Mail className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground-subtle" />
                   <Input
                     id="email"
                     type="email"
@@ -784,7 +784,7 @@ function RegisterForm() {
                   {t('form.password')} <span className="text-destructive">*</span>
                 </Label>
                 <div className="relative">
-                  <Lock className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                  <Lock className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground-subtle" />
                   <Input
                     id="password"
                     type={showPassword ? 'text' : 'password'}
@@ -801,7 +801,7 @@ function RegisterForm() {
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute end-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-muted-foreground transition-colors"
+                    className="absolute end-3 top-1/2 -translate-y-1/2 text-muted-foreground-subtle hover:text-muted-foreground transition-colors"
                     aria-label={showPassword ? t('form.hide_password') : t('form.show_password')}
                   >
                     {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
@@ -819,7 +819,7 @@ function RegisterForm() {
                   {t('form.confirm_password')} <span className="text-destructive">*</span>
                 </Label>
                 <div className="relative">
-                  <Lock className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                  <Lock className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground-subtle" />
                   <Input
                     id="confirmPassword"
                     type={showConfirm ? 'text' : 'password'}
@@ -838,7 +838,7 @@ function RegisterForm() {
                   <button
                     type="button"
                     onClick={() => setShowConfirm(!showConfirm)}
-                    className="absolute end-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-muted-foreground transition-colors"
+                    className="absolute end-3 top-1/2 -translate-y-1/2 text-muted-foreground-subtle hover:text-muted-foreground transition-colors"
                     aria-label={showConfirm ? t('form.hide_password') : t('form.show_password')}
                   >
                     {showConfirm ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
@@ -857,7 +857,7 @@ function RegisterForm() {
                     {t('form.guardian_email')} <span className="text-destructive">*</span>
                   </Label>
                   <div className="relative">
-                    <Mail className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                    <Mail className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground-subtle" />
                     <Input
                       id="parentGuardianEmail"
                       type="email"
@@ -888,7 +888,7 @@ function RegisterForm() {
                 <div className="space-y-1.5">
                   <Label htmlFor="yearGroup">{t('form.year_group')}</Label>
                   <div className="relative">
-                    <GraduationCap className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                    <GraduationCap className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground-subtle" />
                     <select
                       id="yearGroup"
                       value={yearGroup}
@@ -910,7 +910,7 @@ function RegisterForm() {
                 <div className="space-y-1.5">
                   <Label htmlFor="examBoard">{t('form.exam_board')}</Label>
                   <div className="relative">
-                    <BookOpen className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                    <BookOpen className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground-subtle" />
                     <select
                       id="examBoard"
                       value={examBoard}

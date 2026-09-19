@@ -229,7 +229,7 @@ export default function MockReport({
           </Button>
         </div>
 
-        <p className="pb-4 text-center text-[11px] text-muted-foreground/70">
+        <p className="pb-4 text-center text-[11px] text-muted-foreground-subtle">
           {t('ielts.mock.report.footer_disclaimer')}
         </p>
       </div>

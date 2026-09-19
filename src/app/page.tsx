@@ -650,13 +650,13 @@ async function PilotCtaSection() {
   return (
     <section className="border-y border-border/60 bg-primary text-primary-foreground">
       <div className="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6 sm:py-20">
-        <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-primary-foreground/70">
+        <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-primary-foreground/90">
           {await t('home.pilot.eyebrow')}
         </p>
         <h2 className="mx-auto mt-4 max-w-2xl font-serif text-3xl font-semibold tracking-tight sm:text-4xl">
           {await t('home.pilot.heading')}
         </h2>
-        <p className="mx-auto mt-4 max-w-xl leading-relaxed text-primary-foreground/80">
+        <p className="mx-auto mt-4 max-w-xl leading-relaxed text-primary-foreground/90">
           {await t('home.pilot.body')}
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">

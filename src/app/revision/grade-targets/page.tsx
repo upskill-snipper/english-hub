@@ -359,7 +359,7 @@ export default async function GradeTargetsPage() {
                   </h3>
                   <p className="text-caption text-muted-foreground">{card.subtitle}</p>
                   {card.letterEquivalent && (
-                    <p className="text-[10px] text-muted-foreground/80 italic mt-0.5">
+                    <p className="text-[10px] text-muted-foreground-subtle italic mt-0.5">
                       {card.letterEquivalent}
                     </p>
                   )}

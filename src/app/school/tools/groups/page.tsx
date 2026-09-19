@@ -527,7 +527,7 @@ export default function GroupGeneratorPage() {
             })()}
           </span>
           {strategy === 'custom' && (
-            <span className="text-xs text-muted-foreground/70">
+            <span className="text-xs text-muted-foreground-subtle">
               {t('school.group_gen.drag_hint')}
             </span>
           )}

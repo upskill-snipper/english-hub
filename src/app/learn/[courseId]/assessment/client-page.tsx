@@ -762,7 +762,7 @@ export default function AssessmentPage() {
                           </div>
                         )}
                         {q.explanation && (
-                          <p className="text-xs text-muted-foreground/70 mt-2 italic">
+                          <p className="text-xs text-muted-foreground-subtle mt-2 italic">
                             {q.explanation}
                           </p>
                         )}

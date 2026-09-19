@@ -1719,7 +1719,7 @@ export default function StructuralDevicesPage() {
                     ? 'bg-primary text-white'
                     : available
                       ? 'bg-muted text-muted-foreground hover:bg-muted/80'
-                      : 'bg-muted/50 text-muted-foreground/50 cursor-not-allowed'
+                      : 'bg-muted/50 text-muted-foreground-subtle cursor-not-allowed'
                 }`}
               >
                 {letter}

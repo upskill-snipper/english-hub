@@ -186,17 +186,17 @@ function FeatureRow({
   return (
     <li className="flex items-center gap-2.5 text-sm text-muted-foreground">
       {included ? (
-        <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
+        <CheckCircle className="w-4 h-4 text-emerald-700 shrink-0" />
       ) : (
         <X className="w-4 h-4 text-muted-foreground/40 shrink-0" />
       )}
-      <span className={included ? 'text-foreground/90' : 'text-muted-foreground/60'}>
+      <span className={included ? 'text-foreground/90' : 'text-muted-foreground-subtle'}>
         {feature}
       </span>
       {free && included && (
         <Badge
           variant="outline"
-          className="text-[10px] px-1.5 py-0 border-emerald-500/30 text-emerald-600 ms-auto"
+          className="text-[10px] px-1.5 py-0 border-emerald-500/30 text-emerald-700 ms-auto"
         >
           Free
         </Badge>
@@ -540,8 +540,8 @@ function PricingContent() {
         <div className="max-w-4xl mx-auto px-6">
           <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-6 sm:p-8 text-center">
             <div className="flex items-center justify-center gap-2 mb-3">
-              <Gift className="w-5 h-5 text-emerald-600" />
-              <span className="font-bold text-emerald-600 text-sm uppercase tracking-wider">
+              <Gift className="w-5 h-5 text-emerald-700" />
+              <span className="font-bold text-emerald-700 text-sm uppercase tracking-wider">
                 {t('pricing.start_free_eyebrow')}
               </span>
             </div>
@@ -624,7 +624,7 @@ function PricingContent() {
                     {t('pricing.per_year_long')}
                   </span>
                   {studentAnnualSavingsVsMonthly > 0 && (
-                    <span className="text-muted-foreground/80">
+                    <span className="text-muted-foreground-subtle">
                       {' '}
                       · {t('pricing.save_vs_monthly_prefix')} {PRICING.CURRENCY}
                       {studentAnnualSavingsVsMonthly.toFixed(2)}{' '}
@@ -639,7 +639,7 @@ function PricingContent() {
                     with trial_period_days - which takes a card. The no-card
                     trial is real, but it is the one you get by creating an
                     account, not the one this button starts. */}
-                <p className="text-sm text-emerald-600 font-semibold mb-3">
+                <p className="text-sm text-emerald-700 font-semibold mb-3">
                   {t('pricing.trial_line_card_on_file')}
                 </p>
 
@@ -720,7 +720,7 @@ function PricingContent() {
               {/* Gradient top edge */}
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-purple-500/60 to-transparent" />
 
-              <Badge className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-purple-500 text-white text-xs font-bold px-4 py-1 shadow-lg shadow-purple-500/25 whitespace-nowrap">
+              <Badge className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-purple-700 text-white text-xs font-bold px-4 py-1 shadow-lg shadow-purple-500/25 whitespace-nowrap">
                 <BookOpen className="w-3.5 h-3.5 me-1" />
                 {t('pricing.plan.teacher')}
               </Badge>
@@ -759,7 +759,7 @@ function PricingContent() {
                     {PRICING.TEACHER_ANNUAL}
                     {t('pricing.per_year_long')}
                   </span>{' '}
-                  <span className="text-muted-foreground/80">
+                  <span className="text-muted-foreground-subtle">
                     ({t('pricing.was_strikethrough_prefix')}{' '}
                     <span className="line-through decoration-amber-500/60">
                       {PRICING.CURRENCY}
@@ -769,7 +769,7 @@ function PricingContent() {
                     )
                   </span>
                   {teacherAnnualSavingsVsMonthly > 0 && (
-                    <span className="text-muted-foreground/80">
+                    <span className="text-muted-foreground-subtle">
                       {' '}
                       · {t('pricing.save_vs_monthly_prefix')} {PRICING.CURRENCY}
                       {teacherAnnualSavingsVsMonthly.toFixed(2)}{' '}
@@ -779,7 +779,7 @@ function PricingContent() {
                 </p>
                 {/* Same correction as the Student card above: this sat over
                     a button that takes a card. */}
-                <p className="text-sm text-emerald-600 font-semibold mb-3 mt-3">
+                <p className="text-sm text-emerald-700 font-semibold mb-3 mt-3">
                   {t('pricing.trial_line_card_on_file')}
                 </p>
 
@@ -818,7 +818,7 @@ function PricingContent() {
                 <div className="mb-6">
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
                     {t('pricing.premium_label')}
-                    <span className="text-purple-600/70 normal-case ms-1">
+                    <span className="text-purple-700 normal-case ms-1">
                       {t('pricing.premium_then_unlimited_prefix')}
                     </span>
                   </p>
@@ -833,7 +833,7 @@ function PricingContent() {
               <div className="mt-auto p-8 pt-0">
                 <Button
                   variant="default"
-                  className="w-full bg-purple-500 hover:bg-purple-500/85 shadow-lg shadow-purple-500/20 text-white"
+                  className="w-full bg-purple-700 hover:bg-purple-700/85 shadow-lg shadow-purple-500/20 text-white"
                   size="lg"
                   onClick={() => handleCheckout('teacher_annual')}
                   disabled={checkoutLoading !== null}
@@ -869,7 +869,7 @@ function PricingContent() {
               {/* Gradient top edge */}
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-sky-500/60 to-transparent" />
 
-              <Badge className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-sky-600 text-white text-xs font-bold px-4 py-1 shadow-lg shadow-sky-500/25 whitespace-nowrap">
+              <Badge className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-sky-700 text-white text-xs font-bold px-4 py-1 shadow-lg shadow-sky-500/25 whitespace-nowrap">
                 <Target className="w-3.5 h-3.5 me-1" />
                 IELTS
               </Badge>
@@ -899,14 +899,14 @@ function PricingContent() {
                     {PRICING.IELTS_ANNUAL}
                     {t('pricing.per_year_long')}
                   </span>{' '}
-                  <span className="text-muted-foreground/80">
+                  <span className="text-muted-foreground-subtle">
                     (~{PRICING.CURRENCY}
                     {PRICING.IELTS_ANNUAL_EFFECTIVE_MONTHLY}/mo)
                   </span>
                 </p>
 
                 {/* Trial line */}
-                <p className="text-sm text-emerald-600 font-semibold mb-3">
+                <p className="text-sm text-emerald-700 font-semibold mb-3">
                   {t('pricing.ielts.trial_line').replace('{days}', String(PRICING.TRIAL_DAYS))}
                 </p>
 
@@ -935,7 +935,7 @@ function PricingContent() {
               <div className="mt-auto p-8 pt-0">
                 <Button
                   variant="default"
-                  className="w-full bg-sky-600 hover:bg-sky-700 shadow-lg shadow-sky-500/20 text-white"
+                  className="w-full bg-sky-700 hover:bg-sky-800 shadow-lg shadow-sky-500/20 text-white"
                   size="lg"
                   onClick={() => handleCheckout('ielts_monthly')}
                   disabled={checkoutLoading !== null}
@@ -958,7 +958,7 @@ function PricingContent() {
                         .replace('{currency}', PRICING.CURRENCY)
                         .replace('{price}', String(PRICING.IELTS_ANNUAL))}
                 </button>
-                <p className="mt-3 text-center text-[11px] text-muted-foreground/80">
+                <p className="mt-3 text-center text-[11px] text-muted-foreground-subtle">
                   {t('pricing.ielts.footer')}
                 </p>
                 {ieltsError && (
@@ -968,7 +968,7 @@ function PricingContent() {
             </Card>
           </div>
 
-          <p className="mt-8 text-center text-xs text-muted-foreground/80 max-w-2xl mx-auto">
+          <p className="mt-8 text-center text-xs text-muted-foreground-subtle max-w-2xl mx-auto">
             {VAT_LABEL}
           </p>
         </div>
@@ -997,7 +997,7 @@ function PricingContent() {
 
           <SchoolPricingCards />
 
-          <p className="mt-8 text-center text-xs text-muted-foreground/80 max-w-2xl mx-auto">
+          <p className="mt-8 text-center text-xs text-muted-foreground-subtle max-w-2xl mx-auto">
             {VAT_LABEL}
           </p>
         </div>
@@ -1033,7 +1033,7 @@ function PricingContent() {
               {
                 step: '3',
                 icon: Zap,
-                color: 'text-emerald-600 bg-emerald-500/10 border-emerald-500/20',
+                color: 'text-emerald-700 bg-emerald-500/10 border-emerald-500/20',
                 title: 'Upgrade',
                 desc: 'When you\u2019re ready, choose a plan. It begins with 7 free days with your card on file - cancel before day 7 at no cost, or it converts automatically.',
               },

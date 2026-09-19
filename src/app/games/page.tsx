@@ -1610,7 +1610,7 @@ function WordScrambleGame({ onExit }: { onExit: () => void }) {
                   'inline-flex items-center justify-center size-9 sm:size-10 rounded-md border font-bold text-base sm:text-lg',
                   letter && letter !== ' '
                     ? 'bg-amber-500/10 border-amber-400/40 text-amber-200'
-                    : 'border-dashed border-border text-muted-foreground/60',
+                    : 'border-dashed border-border text-muted-foreground-subtle',
                 )}
               >
                 {letter === ' ' ? ' ' : (letter ?? '_')}

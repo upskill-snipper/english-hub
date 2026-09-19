@@ -328,7 +328,7 @@ export default async function IeltsAdmissionsHubPage() {
               <ArrowRight className="size-4" />
             </Button>
           </div>
-          <p className="mt-5 max-w-2xl text-xs leading-relaxed text-muted-foreground/80">
+          <p className="mt-5 max-w-2xl text-xs leading-relaxed text-muted-foreground-subtle">
             {heroDisclaimer}
           </p>
         </section>
@@ -395,7 +395,7 @@ export default async function IeltsAdmissionsHubPage() {
               </div>
             ))}
           </div>
-          <p className="mt-4 text-xs text-muted-foreground/80">{timelineNote}</p>
+          <p className="mt-4 text-xs text-muted-foreground-subtle">{timelineNote}</p>
         </section>
 
         {/* ── English-language requirements ─────────────────────────── */}
@@ -497,7 +497,7 @@ export default async function IeltsAdmissionsHubPage() {
                 {visaButton}
               </Button>
             </div>
-            <p className="mt-5 text-xs leading-relaxed text-muted-foreground/80">
+            <p className="mt-5 text-xs leading-relaxed text-muted-foreground-subtle">
               {visaDisclaimer}
             </p>
           </div>

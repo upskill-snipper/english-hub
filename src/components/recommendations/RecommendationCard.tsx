@@ -135,7 +135,7 @@ export function RecommendationCard({ recommendation, onDismiss }: Recommendation
 
           <p className="text-xs text-muted-foreground line-clamp-2">{recommendation.description}</p>
 
-          <p className="mt-1.5 text-[11px] italic text-muted-foreground/80">
+          <p className="mt-1.5 text-[11px] italic text-muted-foreground-subtle">
             {recommendation.reason}
           </p>
         </div>

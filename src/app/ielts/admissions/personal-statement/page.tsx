@@ -414,7 +414,7 @@ export default function PersonalStatementCoachPage() {
           )}
 
           {/* Privacy / guidance note */}
-          <p className="text-center text-[11px] text-muted-foreground/70">
+          <p className="text-center text-[11px] text-muted-foreground-subtle">
             {t('ielts.admissions.ps.privacy_note') ||
               'Your answers are sent only to generate feedback. This is guidance for UK-study preparation, not an official UCAS or university service.'}
           </p>

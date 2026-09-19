@@ -616,7 +616,7 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
                       </li>
                     ))}
                   </ul>
-                  <p className="mt-2 text-xs italic text-muted-foreground/80">{plan.best}</p>
+                  <p className="mt-2 text-xs italic text-muted-foreground-subtle">{plan.best}</p>
                 </div>
               ))}
             </div>
@@ -681,7 +681,9 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
                     ],
                   ].map(([basic, upgraded, why], i) => (
                     <tr key={i} className="border-b border-border/20 last:border-0">
-                      <td className="px-4 py-2 line-through text-muted-foreground/60">{basic}</td>
+                      <td className="px-4 py-2 line-through text-muted-foreground-subtle">
+                        {basic}
+                      </td>
                       <td className="px-4 py-2 font-medium text-foreground">{upgraded}</td>
                       <td className="px-4 py-2 hidden sm:table-cell">{why}</td>
                     </tr>

@@ -936,7 +936,7 @@ function QuestionView({
                     isSelected
                       ? 'border-primary bg-primary/10 text-foreground'
                       : isDisabled
-                        ? 'border-border/20 bg-muted/20 text-muted-foreground/50 cursor-not-allowed'
+                        ? 'border-border/20 bg-muted/20 text-muted-foreground-subtle cursor-not-allowed'
                         : 'border-border/40 bg-card hover:border-border text-foreground/80 cursor-pointer',
                   )}
                 >

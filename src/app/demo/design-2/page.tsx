@@ -133,7 +133,7 @@ export default function NeonBrutalistDashboard() {
             className="hidden lg:block absolute start-0 top-1/2 -translate-y-1/2 -translate-x-2"
             style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg) translateX(50%)' }}
           >
-            <span className="text-[10px] uppercase tracking-[0.4em] text-muted-foreground/60 font-bold">
+            <span className="text-[10px] uppercase tracking-[0.4em] text-muted-foreground-subtle font-bold">
               active modules
             </span>
           </div>

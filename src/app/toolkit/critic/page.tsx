@@ -313,7 +313,7 @@ export default function CriticSimulatorPage() {
       )}
 
       {/* ── Footnote ─────────────────────────────────────────────── */}
-      <p className="text-center text-[11px] text-muted-foreground/60">
+      <p className="text-center text-[11px] text-muted-foreground-subtle">
         Critic personas are authored practice prompts - they do not call a live AI. Use them to
         rehearse the rhythm; bring your own live feedback via{' '}
         <Link href="/dashboard/essay/new" className="text-primary underline">

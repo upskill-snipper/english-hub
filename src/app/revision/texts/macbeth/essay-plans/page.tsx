@@ -477,7 +477,7 @@ export default function MacbethEssayPlansPage() {
             <CardContent className="space-y-5">
               {/* Introduction */}
               <div>
-                <h4 className="mb-1 font-semibold text-sm uppercase tracking-wide text-muted-foreground/70">
+                <h4 className="mb-1 font-semibold text-sm uppercase tracking-wide text-muted-foreground-subtle">
                   {t('rev.texts.common.introduction')}
                 </h4>
                 <p className="text-muted-foreground leading-relaxed">{plan.introduction}</p>
@@ -498,7 +498,7 @@ export default function MacbethEssayPlansPage() {
                       {t('rev.texts.common.evidence')}
                     </span>
                     <p className="mt-1 font-medium">&ldquo;{p.quote}&rdquo;</p>
-                    <p className="mt-0.5 text-xs text-muted-foreground/70">{p.quoteSource}</p>
+                    <p className="mt-0.5 text-xs text-muted-foreground-subtle">{p.quoteSource}</p>
                   </div>
                   <div>
                     <span className="text-xs font-medium uppercase tracking-wide text-blue-500">
@@ -521,7 +521,7 @@ export default function MacbethEssayPlansPage() {
 
               {/* Conclusion */}
               <div>
-                <h4 className="mb-1 font-semibold text-sm uppercase tracking-wide text-muted-foreground/70">
+                <h4 className="mb-1 font-semibold text-sm uppercase tracking-wide text-muted-foreground-subtle">
                   {t('rev.texts.common.conclusion')}
                 </h4>
                 <p className="text-muted-foreground leading-relaxed">{plan.conclusion}</p>

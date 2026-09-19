@@ -691,7 +691,7 @@ export default async function IalHubPage() {
       </section>
 
       {/* ── Footnote ─────────────────────────────────────────────── */}
-      <p className="text-center text-[11px] text-muted-foreground/60">
+      <p className="text-center text-[11px] text-muted-foreground-subtle">
         {footnote} <TrendingUp className="inline size-3" />
       </p>
     </div>

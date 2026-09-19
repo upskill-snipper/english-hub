@@ -608,7 +608,7 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
                 <div key={item.type} className="rounded-lg border border-border/40 p-3">
                   <span className="text-xs font-semibold text-foreground">{item.type}</span>
                   <p className="mt-1 text-xs text-muted-foreground">{item.def}</p>
-                  <p className="mt-1 text-xs italic text-muted-foreground/80">
+                  <p className="mt-1 text-xs italic text-muted-foreground-subtle">
                     &ldquo;{item.example}&rdquo;
                   </p>
                 </div>

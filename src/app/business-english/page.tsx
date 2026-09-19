@@ -340,7 +340,7 @@ export default async function BusinessEnglishPage() {
                 className="flex items-start gap-3 rounded-xl border border-border/40 bg-background/40 px-4 py-3"
               >
                 <XCircle
-                  className="mt-0.5 size-4 shrink-0 text-muted-foreground/70"
+                  className="mt-0.5 size-4 shrink-0 text-muted-foreground-subtle"
                   aria-hidden="true"
                 />
                 <span className="text-body-sm text-muted-foreground" dir="auto">

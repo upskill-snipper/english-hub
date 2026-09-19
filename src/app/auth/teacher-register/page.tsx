@@ -306,7 +306,7 @@ export default function TeacherRegisterPage() {
                         {t('form.first_name')} <span className="text-destructive">*</span>
                       </Label>
                       <div className="relative">
-                        <User className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
+                        <User className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground-subtle" />
                         <Input
                           id="firstName"
                           type="text"
@@ -328,7 +328,7 @@ export default function TeacherRegisterPage() {
                         {t('form.last_name')} <span className="text-destructive">*</span>
                       </Label>
                       <div className="relative">
-                        <User className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
+                        <User className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground-subtle" />
                         <Input
                           id="lastName"
                           type="text"
@@ -352,7 +352,7 @@ export default function TeacherRegisterPage() {
                       {t('form.email')} <span className="text-destructive">*</span>
                     </Label>
                     <div className="relative">
-                      <Mail className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
+                      <Mail className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground-subtle" />
                       <Input
                         id="email"
                         type="email"
@@ -378,7 +378,7 @@ export default function TeacherRegisterPage() {
                       </span>
                     </Label>
                     <div className="relative">
-                      <School className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
+                      <School className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground-subtle" />
                       <Input
                         id="schoolName"
                         type="text"
@@ -413,7 +413,7 @@ export default function TeacherRegisterPage() {
                       </span>
                     </Label>
                     <div className="relative">
-                      <BookOpen className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
+                      <BookOpen className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground-subtle" />
                       <select
                         id="selectedExamBoard"
                         value={selectedExamBoard}
@@ -438,7 +438,7 @@ export default function TeacherRegisterPage() {
                       {t('form.password')} <span className="text-destructive">*</span>
                     </Label>
                     <div className="relative">
-                      <Lock className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
+                      <Lock className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground-subtle" />
                       <Input
                         id="password"
                         type={showPassword ? 'text' : 'password'}
@@ -452,7 +452,7 @@ export default function TeacherRegisterPage() {
                       <button
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
-                        className="absolute end-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-muted-foreground transition-colors"
+                        className="absolute end-3 top-1/2 -translate-y-1/2 text-muted-foreground-subtle hover:text-muted-foreground transition-colors"
                         aria-label={
                           showPassword ? t('form.hide_password') : t('form.show_password')
                         }
@@ -475,7 +475,7 @@ export default function TeacherRegisterPage() {
                       {t('form.confirm_password')} <span className="text-destructive">*</span>
                     </Label>
                     <div className="relative">
-                      <Lock className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
+                      <Lock className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground-subtle" />
                       <Input
                         id="confirmPassword"
                         type={showConfirm ? 'text' : 'password'}
@@ -489,7 +489,7 @@ export default function TeacherRegisterPage() {
                       <button
                         type="button"
                         onClick={() => setShowConfirm(!showConfirm)}
-                        className="absolute end-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-muted-foreground transition-colors"
+                        className="absolute end-3 top-1/2 -translate-y-1/2 text-muted-foreground-subtle hover:text-muted-foreground transition-colors"
                         aria-label={showConfirm ? t('form.hide_password') : t('form.show_password')}
                       >
                         {showConfirm ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
@@ -509,7 +509,7 @@ export default function TeacherRegisterPage() {
                       {t('form.dob')} <span className="text-destructive">*</span>
                     </legend>
                     <div className="relative">
-                      <Calendar className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
+                      <Calendar className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground-subtle" />
                       <div className="flex gap-2 ps-10">
                         <select
                           id="dobDay"

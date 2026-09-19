@@ -267,7 +267,7 @@ export default async function CambridgeHubPage() {
                             className="group/link flex items-center justify-between gap-2 rounded-lg border border-border/40 bg-muted/20 px-3 py-2 text-body-sm text-muted-foreground transition-all hover:border-primary/40 hover:bg-primary/[0.04] hover:text-foreground"
                           >
                             <span>{item.label}</span>
-                            <ChevronRight className="size-3.5 shrink-0 text-muted-foreground/60 transition-transform group-hover/link:translate-x-0.5 group-hover/link:text-primary" />
+                            <ChevronRight className="size-3.5 shrink-0 text-muted-foreground-subtle transition-transform group-hover/link:translate-x-0.5 group-hover/link:text-primary" />
                           </Link>
                         ))}
                       </div>

@@ -282,7 +282,7 @@ function ActionMenu({ teacher, t, onEdit, onSuspend, onRemove }: ActionMenuProps
             </button>
             {/* No password-reset endpoint exists yet - disabled, never a silent no-op */}
             <button
-              className="flex w-full cursor-not-allowed items-center gap-2.5 px-3 py-1.5 text-sm text-muted-foreground/50"
+              className="flex w-full cursor-not-allowed items-center gap-2.5 px-3 py-1.5 text-sm text-muted-foreground-subtle"
               disabled
               title="Password resets are issued from the Export logins flow"
             >
@@ -945,7 +945,7 @@ export default function TeachersPage() {
                             </span>
                           </div>
                         ) : (
-                          <span className="italic text-xs text-muted-foreground/50">
+                          <span className="italic text-xs text-muted-foreground-subtle">
                             {t('school.teachers.classes_none')}
                           </span>
                         )}

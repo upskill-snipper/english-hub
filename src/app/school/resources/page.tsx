@@ -755,7 +755,7 @@ export default function ResourceLibraryPage() {
         </div>
       ) : (
         <div className="flex flex-col items-center justify-center py-16 text-center">
-          <Search className="h-10 w-10 text-muted-foreground/70 mb-3" />
+          <Search className="h-10 w-10 text-muted-foreground-subtle mb-3" />
           <p className="text-sm font-medium text-foreground">No resources found</p>
           <p className="text-xs text-muted-foreground mt-1 max-w-sm">
             Try adjusting your search or filters. We have {TEACHER_RESOURCES.length} resources

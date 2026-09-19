@@ -602,7 +602,7 @@ function QuestionEditor({
               >
                 <ChevronUp className="size-3.5" />
               </button>
-              <GripVertical className="size-4 text-muted-foreground/70" />
+              <GripVertical className="size-4 text-muted-foreground-subtle" />
               <button
                 type="button"
                 onClick={(e) => {
@@ -619,7 +619,7 @@ function QuestionEditor({
               <CardTitle>
                 <span className="text-muted-foreground font-normal">Q{index + 1}.</span>{' '}
                 {question.text || (
-                  <span className="text-muted-foreground/60 italic">
+                  <span className="text-muted-foreground-subtle italic">
                     {_tr(`Untitled question`)}
                   </span>
                 )}

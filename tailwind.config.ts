@@ -92,6 +92,9 @@ const config: Config = {
         muted: {
           DEFAULT: 'hsl(var(--muted))',
           foreground: 'hsl(var(--muted-foreground))',
+          // A11Y-8: text-muted-foreground-subtle, the accessible
+          // replacement for text-muted-foreground/70, /60 and /50.
+          'foreground-subtle': 'hsl(var(--muted-foreground-subtle))',
         },
         accent: {
           DEFAULT: 'hsl(var(--accent))',

@@ -206,7 +206,7 @@ const printStyles = `
   [class*="text-foreground"],
   [class*="text-foreground/80"],
   [class*="text-muted-foreground"],
-  [class*="text-muted-foreground/70"],
+  [class*="text-muted-foreground-subtle"],
   [class*="text-blue-"],
   [class*="text-violet-"],
   [class*="text-cyan-"],
@@ -410,7 +410,7 @@ export default function ReportsPage() {
                   <CardContent className="pt-5">
                     <div className={`mb-2 ${metric.color}`}>{metric.icon}</div>
                     <p className="text-2xl font-bold text-foreground">{metric.value}</p>
-                    <p className="text-xs text-muted-foreground/70 mt-1">{metric.label}</p>
+                    <p className="text-xs text-muted-foreground-subtle mt-1">{metric.label}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -651,7 +651,7 @@ export default function ReportsPage() {
                           style={{ height: `${(w.value / 100) * 160}px` }}
                         />
                       </div>
-                      <span className="text-xs text-muted-foreground/70">{w.week}</span>
+                      <span className="text-xs text-muted-foreground-subtle">{w.week}</span>
                     </div>
                   ))}
                 </div>
@@ -737,7 +737,7 @@ export default function ReportsPage() {
                     <h4 className="text-sm font-semibold text-foreground mb-2">
                       {tr(`School Overview`)}
                     </h4>
-                    <p className="text-xs text-muted-foreground/70 mb-3">
+                    <p className="text-xs text-muted-foreground-subtle mb-3">
                       {tr(`Full school performance report with all year groups and departments.`)}
                     </p>
                     <Button
@@ -753,7 +753,7 @@ export default function ReportsPage() {
                     <h4 className="text-sm font-semibold text-foreground mb-2">
                       {tr(`Year Group`)}
                     </h4>
-                    <p className="text-xs text-muted-foreground/70 mb-3">
+                    <p className="text-xs text-muted-foreground-subtle mb-3">
                       {tr(`Performance breakdown by year group with class comparisons.`)}
                     </p>
                     <Button
@@ -772,7 +772,7 @@ export default function ReportsPage() {
                     <h4 className="text-sm font-semibold text-foreground mb-2">
                       {tr(`Class Report`)}
                     </h4>
-                    <p className="text-xs text-muted-foreground/70 mb-3">
+                    <p className="text-xs text-muted-foreground-subtle mb-3">
                       {tr(
                         `Detailed class report with student table, RAG status, and module analysis.`,
                       )}
@@ -791,7 +791,7 @@ export default function ReportsPage() {
                     <h4 className="text-sm font-semibold text-foreground mb-2">
                       {tr(`Student Report`)}
                     </h4>
-                    <p className="text-xs text-muted-foreground/70 mb-3">
+                    <p className="text-xs text-muted-foreground-subtle mb-3">
                       {tr(
                         `Individual student progress report with assessments and recommendations.`,
                       )}
@@ -812,7 +812,7 @@ export default function ReportsPage() {
 
                 {/* Download All */}
                 <div className="mt-4 pt-4 border-t border-border/50 flex items-center justify-between">
-                  <p className="text-xs text-muted-foreground/70">
+                  <p className="text-xs text-muted-foreground-subtle">
                     {tr(`Generate all class and student reports at once for the current term.`)}
                   </p>
                   <Button
@@ -884,7 +884,7 @@ export default function ReportsPage() {
                           <h4 className="text-sm font-semibold text-foreground">
                             {schedule.title}
                           </h4>
-                          <p className="text-xs text-muted-foreground/70 mt-0.5">
+                          <p className="text-xs text-muted-foreground-subtle mt-0.5">
                             {schedule.description}
                           </p>
                           <div className="flex items-center gap-2 mt-2">
@@ -939,7 +939,7 @@ export default function ReportsPage() {
                         <h4 className="text-sm font-semibold text-foreground">
                           Download All Student Reports
                         </h4>
-                        <p className="text-xs text-muted-foreground/70 mt-0.5">
+                        <p className="text-xs text-muted-foreground-subtle mt-0.5">
                           Generate a ZIP archive containing individual PDF reports for every student
                           across all classes.
                         </p>
@@ -1009,25 +1009,27 @@ export default function ReportsPage() {
                     <p className="text-2xl font-bold text-foreground">
                       {selectedYearGroup.studentCount}
                     </p>
-                    <p className="text-xs text-muted-foreground/70">Students</p>
+                    <p className="text-xs text-muted-foreground-subtle">Students</p>
                   </div>
                   <div className="bg-muted/50 rounded-lg p-4">
                     <p className="text-2xl font-bold text-foreground">
                       {selectedYearGroup.avgProgress}%
                     </p>
-                    <p className="text-xs text-muted-foreground/70">{tr(`Avg Progress`)}</p>
+                    <p className="text-xs text-muted-foreground-subtle">{tr(`Avg Progress`)}</p>
                   </div>
                   <div className="bg-muted/50 rounded-lg p-4">
                     <p className="text-2xl font-bold text-foreground">
                       {selectedYearGroup.classCount}
                     </p>
-                    <p className="text-xs text-muted-foreground/70">Classes</p>
+                    <p className="text-xs text-muted-foreground-subtle">Classes</p>
                   </div>
                   <div className="bg-muted/50 rounded-lg p-4">
                     <p className="text-2xl font-bold text-foreground">
                       {selectedYearGroup.avgProgress >= avgScore ? 'Above' : 'Below'}
                     </p>
-                    <p className="text-xs text-muted-foreground/70">vs School Avg ({avgScore}%)</p>
+                    <p className="text-xs text-muted-foreground-subtle">
+                      vs School Avg ({avgScore}%)
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -1077,7 +1079,7 @@ export default function ReportsPage() {
                       })}
                       {yearClasses.length === 0 && (
                         <tr>
-                          <td colSpan={6} className="py-4 text-muted-foreground/70 text-sm">
+                          <td colSpan={6} className="py-4 text-muted-foreground-subtle text-sm">
                             {tr(`No classes found for this year group in the demo data.`)}
                           </td>
                         </tr>
@@ -1162,7 +1164,7 @@ export default function ReportsPage() {
                     </div>
                   </>
                 ) : (
-                  <p className="text-muted-foreground/70 text-sm py-4">
+                  <p className="text-muted-foreground-subtle text-sm py-4">
                     {tr(`No individual student data available for this year group in the demo.`)}
                   </p>
                 )}
@@ -1185,7 +1187,7 @@ export default function ReportsPage() {
                   const atRisk = yearStudents.filter((s) => s.atRisk)
                   if (atRisk.length === 0)
                     return (
-                      <p className="text-muted-foreground/70 text-sm py-2">
+                      <p className="text-muted-foreground-subtle text-sm py-2">
                         {yearStudents.length > 0
                           ? 'No at-risk students in this year group.'
                           : 'No individual student data available for this year group in the demo.'}
@@ -1243,7 +1245,7 @@ export default function ReportsPage() {
                         <li key={s.id} className="flex items-center justify-between text-sm">
                           <div>
                             <span className="text-foreground font-medium">{s.name}</span>
-                            <span className="text-muted-foreground/70 ms-2">{s.className}</span>
+                            <span className="text-muted-foreground-subtle ms-2">{s.className}</span>
                           </div>
                           <Badge className="bg-primary/10 text-primary border-primary/30">
                             {s.overallProgress}%
@@ -1251,7 +1253,7 @@ export default function ReportsPage() {
                         </li>
                       ))}
                     {yearStudents.length === 0 && (
-                      <li className="text-sm text-muted-foreground/70">
+                      <li className="text-sm text-muted-foreground-subtle">
                         {tr(`No student data for this year group in the demo.`)}
                       </li>
                     )}
@@ -1274,7 +1276,7 @@ export default function ReportsPage() {
                         <li key={s.id} className="flex items-center justify-between text-sm">
                           <div>
                             <span className="text-foreground font-medium">{s.name}</span>
-                            <span className="text-muted-foreground/70 ms-2">{s.className}</span>
+                            <span className="text-muted-foreground-subtle ms-2">{s.className}</span>
                           </div>
                           <Badge className={ragColors[getRagStatus(s.overallProgress)]}>
                             {s.overallProgress}%
@@ -1282,7 +1284,7 @@ export default function ReportsPage() {
                         </li>
                       ))}
                     {yearStudents.length === 0 && (
-                      <li className="text-sm text-muted-foreground/70">
+                      <li className="text-sm text-muted-foreground-subtle">
                         {tr(`No student data for this year group in the demo.`)}
                       </li>
                     )}
@@ -1382,11 +1384,11 @@ export default function ReportsPage() {
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                   <div className="bg-muted/50 rounded-lg p-4">
                     <p className="text-2xl font-bold text-foreground">{classAvg}%</p>
-                    <p className="text-xs text-muted-foreground/70">{tr(`Class Average`)}</p>
+                    <p className="text-xs text-muted-foreground-subtle">{tr(`Class Average`)}</p>
                   </div>
                   <div className="bg-muted/50 rounded-lg p-4">
                     <p className="text-2xl font-bold text-foreground">{schoolAvg}%</p>
-                    <p className="text-xs text-muted-foreground/70">{tr(`School Average`)}</p>
+                    <p className="text-xs text-muted-foreground-subtle">{tr(`School Average`)}</p>
                   </div>
                   <div className="bg-muted/50 rounded-lg p-4">
                     <p
@@ -1395,7 +1397,7 @@ export default function ReportsPage() {
                       {classAvg >= schoolAvg ? '+' : ''}
                       {classAvg - schoolAvg}%
                     </p>
-                    <p className="text-xs text-muted-foreground/70">vs School Avg</p>
+                    <p className="text-xs text-muted-foreground-subtle">vs School Avg</p>
                   </div>
                   <div className="bg-muted/50 rounded-lg p-4">
                     <p className="text-2xl font-bold text-foreground">
@@ -1404,7 +1406,7 @@ export default function ReportsPage() {
                       )}
                       %
                     </p>
-                    <p className="text-xs text-muted-foreground/70">
+                    <p className="text-xs text-muted-foreground-subtle">
                       Completion ({selectedClass.assignmentsCompleted}/
                       {selectedClass.assignmentsSet})
                     </p>
@@ -1429,7 +1431,7 @@ export default function ReportsPage() {
                     <Card key={rag} className="bg-card border-border print-avoid-break">
                       <CardContent className="pt-5 text-center">
                         <Badge className={`${ragColors[rag]} text-lg px-3 py-1`}>{count}</Badge>
-                        <p className="text-xs text-muted-foreground/70 mt-2">{labels[rag]}</p>
+                        <p className="text-xs text-muted-foreground-subtle mt-2">{labels[rag]}</p>
                       </CardContent>
                     </Card>
                   )
@@ -1491,7 +1493,7 @@ export default function ReportsPage() {
                                     Yes
                                   </Badge>
                                 ) : (
-                                  <span className="text-muted-foreground/70">--</span>
+                                  <span className="text-muted-foreground-subtle">--</span>
                                 )}
                               </td>
                               <td className="py-3">
@@ -1504,7 +1506,7 @@ export default function ReportsPage() {
                     </table>
                   </div>
                 ) : (
-                  <p className="text-muted-foreground/70 text-sm py-4">
+                  <p className="text-muted-foreground-subtle text-sm py-4">
                     No individual student data available for this class in the demo. In a live
                     environment, all {selectedClass.studentCount} students would be listed here with
                     full RAG breakdowns.
@@ -1646,7 +1648,7 @@ export default function ReportsPage() {
                       {selectedStudent.overallProgress}%
                     </span>
                   </div>
-                  <p className="text-xs text-muted-foreground/70 mt-2">
+                  <p className="text-xs text-muted-foreground-subtle mt-2">
                     Last active: {selectedStudent.lastActive}
                     {selectedStudent.atRisk && (
                       <span className="text-red-700 dark:text-red-300 ms-3">
@@ -1668,7 +1670,9 @@ export default function ReportsPage() {
                       >
                         Grade {selectedStudent.workingAtGrade}
                       </p>
-                      <p className="text-xs text-muted-foreground/70">{tr(`Working At Grade`)}</p>
+                      <p className="text-xs text-muted-foreground-subtle">
+                        {tr(`Working At Grade`)}
+                      </p>
                     </div>
                     <div className="bg-muted/50 rounded-lg p-4 text-center">
                       <p
@@ -1676,19 +1680,21 @@ export default function ReportsPage() {
                       >
                         Grade {selectedStudent.predictedGrade}
                       </p>
-                      <p className="text-xs text-muted-foreground/70">{tr(`Predicted Grade`)}</p>
+                      <p className="text-xs text-muted-foreground-subtle">
+                        {tr(`Predicted Grade`)}
+                      </p>
                     </div>
                     <div className="bg-muted/50 rounded-lg p-4 text-center">
                       <p className="text-2xl font-bold text-primary">
                         Grade {selectedStudent.targetGrade}
                       </p>
-                      <p className="text-xs text-muted-foreground/70">{tr(`Target Grade`)}</p>
+                      <p className="text-xs text-muted-foreground-subtle">{tr(`Target Grade`)}</p>
                     </div>
                     <div className="bg-muted/50 rounded-lg p-4 text-center">
                       <p className="text-2xl font-bold text-foreground">
                         {selectedStudent.assignmentsCompleted}/{selectedStudent.assignmentsTotal}
                       </p>
-                      <p className="text-xs text-muted-foreground/70">Assignments</p>
+                      <p className="text-xs text-muted-foreground-subtle">Assignments</p>
                       {selectedStudent.readingAge && (
                         <p className="text-xs text-muted-foreground mt-1">
                           Reading Age: {formatReadingAge(selectedStudent.readingAge)}
@@ -1756,7 +1762,7 @@ export default function ReportsPage() {
                         ),
                       )}
                       {selectedStudent.strengths.length === 0 && (
-                        <li className="text-muted-foreground/70">
+                        <li className="text-muted-foreground-subtle">
                           {tr(`No strengths identified yet`)}
                         </li>
                       )}
@@ -1781,7 +1787,7 @@ export default function ReportsPage() {
                         ),
                       )}
                       {selectedStudent.weaknesses.length === 0 && (
-                        <li className="text-muted-foreground/70">
+                        <li className="text-muted-foreground-subtle">
                           {tr(`No areas of concern identified`)}
                         </li>
                       )}
@@ -1819,7 +1825,7 @@ export default function ReportsPage() {
                           ? `${selectedStudent.name} shows good potential but needs to improve consistency. Focus on completing assignments on time and engaging with feedback. Additional practice in weaker areas is recommended.`
                           : `${selectedStudent.name} requires significant additional support to get back on track. Attendance and engagement have been concerns. A meeting with parents/carers is recommended to discuss an intervention plan.`}
                     </p>
-                    <p className="text-xs text-muted-foreground/70 mt-3">
+                    <p className="text-xs text-muted-foreground-subtle mt-3">
                       - {selectedStudent.teacherName}
                     </p>
                   </div>
@@ -1892,7 +1898,7 @@ export default function ReportsPage() {
                         >
                           <td className="py-3 pe-4">
                             <span
-                              className={`inline-flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold ${i === 0 ? 'bg-amber-500/20 text-amber-700 dark:text-amber-300' : i === 1 ? 'bg-neutral-400/20 text-foreground/80' : i === 2 ? 'bg-orange-500/20 text-amber-700 dark:text-amber-300' : 'bg-muted/50 text-muted-foreground/70'}`}
+                              className={`inline-flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold ${i === 0 ? 'bg-amber-500/20 text-amber-700 dark:text-amber-300' : i === 1 ? 'bg-neutral-400/20 text-foreground/80' : i === 2 ? 'bg-orange-500/20 text-amber-700 dark:text-amber-300' : 'bg-muted/50 text-muted-foreground-subtle'}`}
                             >
                               {i + 1}
                             </span>
@@ -1953,13 +1959,13 @@ export default function ReportsPage() {
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                   <div className="bg-muted/50 rounded-lg p-4">
                     <p className="text-2xl font-bold text-foreground">{teacherClasses.length}</p>
-                    <p className="text-xs text-muted-foreground/70">{tr(`Active Classes`)}</p>
+                    <p className="text-xs text-muted-foreground-subtle">{tr(`Active Classes`)}</p>
                   </div>
                   <div className="bg-muted/50 rounded-lg p-4">
                     <p className="text-2xl font-bold text-foreground">
                       {teacherClasses.reduce((sum, c) => sum + c.studentCount, 0)}
                     </p>
-                    <p className="text-xs text-muted-foreground/70">{tr(`Total Students`)}</p>
+                    <p className="text-xs text-muted-foreground-subtle">{tr(`Total Students`)}</p>
                   </div>
                   <div className="bg-muted/50 rounded-lg p-4">
                     <p className="text-2xl font-bold text-foreground">
@@ -1971,7 +1977,9 @@ export default function ReportsPage() {
                         : 0}
                       %
                     </p>
-                    <p className="text-xs text-muted-foreground/70">{tr(`Avg Student Progress`)}</p>
+                    <p className="text-xs text-muted-foreground-subtle">
+                      {tr(`Avg Student Progress`)}
+                    </p>
                   </div>
                   <div className="bg-muted/50 rounded-lg p-4">
                     <p className="text-2xl font-bold text-foreground">
@@ -1984,7 +1992,7 @@ export default function ReportsPage() {
                         : 0}
                       %
                     </p>
-                    <p className="text-xs text-muted-foreground/70">
+                    <p className="text-xs text-muted-foreground-subtle">
                       {tr(`Assignment Completion`)}
                     </p>
                   </div>
@@ -2088,7 +2096,7 @@ export default function ReportsPage() {
                   )
                   if (teacherStudents.length === 0)
                     return (
-                      <p className="text-muted-foreground/70 text-sm py-4">
+                      <p className="text-muted-foreground-subtle text-sm py-4">
                         No individual student data available in the demo for {selectedTeacher.name}
                         &apos;s classes. In a live environment, all students would be listed with
                         full progress data.
@@ -2109,7 +2117,9 @@ export default function ReportsPage() {
                               />
                               <div>
                                 <p className="text-sm font-medium text-foreground">{s.name}</p>
-                                <p className="text-xs text-muted-foreground/70">{s.className}</p>
+                                <p className="text-xs text-muted-foreground-subtle">
+                                  {s.className}
+                                </p>
                               </div>
                             </div>
                             <div className="flex items-center gap-3">

@@ -194,7 +194,7 @@ export function InterventionInsightsPanel() {
                       style={{ width: `${pct}%` }}
                     />
                   </div>
-                  <p className="text-[11px] leading-tight text-muted-foreground/80">
+                  <p className="text-[11px] leading-tight text-muted-foreground-subtle">
                     {t.description}
                   </p>
                 </li>
@@ -222,7 +222,7 @@ export function InterventionInsightsPanel() {
                   <p className="mt-0.5 truncate text-xs text-muted-foreground">
                     {s.interventionType}
                   </p>
-                  <div className="mt-1.5 flex flex-wrap items-center gap-3 text-[11px] text-muted-foreground/80">
+                  <div className="mt-1.5 flex flex-wrap items-center gap-3 text-[11px] text-muted-foreground-subtle">
                     <span className="inline-flex items-center gap-1">
                       <Calendar className="h-3 w-3" aria-hidden="true" />
                       Started {s.started}
@@ -239,7 +239,7 @@ export function InterventionInsightsPanel() {
         </div>
 
         {/* ── 4. Synthetic-data footnote ──────────────────────────────────── */}
-        <p className="text-center text-[11px] italic text-muted-foreground/70">
+        <p className="text-center text-[11px] italic text-muted-foreground-subtle">
           Synthetic data - demo only. Intervention figures are illustrative and do not represent a
           real cohort.
         </p>

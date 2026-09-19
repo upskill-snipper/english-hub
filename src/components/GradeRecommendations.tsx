@@ -203,7 +203,7 @@ export default function GradeRecommendations({
                 >
                   <Icon className="h-3.5 w-3.5 text-teal-700/60 shrink-0" />
                   <span className="flex-1 truncate">{res.title}</span>
-                  <span className="text-[10px] uppercase tracking-wider text-muted-foreground/60">
+                  <span className="text-[10px] uppercase tracking-wider text-muted-foreground-subtle">
                     {res.type}
                   </span>
                 </div>

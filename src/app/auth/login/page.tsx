@@ -176,7 +176,7 @@ function LoginForm() {
               <div className="space-y-1.5">
                 <Label htmlFor="email">{t('form.email')}</Label>
                 <div className="relative">
-                  <Mail className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                  <Mail className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground-subtle" />
                   <Input
                     id="email"
                     type="email"
@@ -204,7 +204,7 @@ function LoginForm() {
                   </Button>
                 </div>
                 <div className="relative">
-                  <Lock className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                  <Lock className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground-subtle" />
                   <Input
                     id="password"
                     type={showPassword ? 'text' : 'password'}
@@ -219,7 +219,7 @@ function LoginForm() {
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute end-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-muted-foreground transition-colors"
+                    className="absolute end-3 top-1/2 -translate-y-1/2 text-muted-foreground-subtle hover:text-muted-foreground transition-colors"
                     aria-label={showPassword ? t('form.hide_password') : t('form.show_password')}
                   >
                     {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}

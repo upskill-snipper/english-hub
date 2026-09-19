@@ -533,7 +533,7 @@ function QuestionCard({
                 spellCheck={false}
                 placeholder={t('ielts.listening.question.gap_placeholder')}
                 aria-label={`${t('ielts.listening.question.gap_aria_prefix')} ${number}`}
-                className="w-full max-w-xs rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30"
+                className="w-full max-w-xs rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground-subtle focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30"
               />
             </div>
           )}

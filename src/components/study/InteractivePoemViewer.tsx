@@ -437,7 +437,7 @@ export function InteractivePoemViewer({ poem }: { poem: PoemData }) {
                     )}
                   >
                     {/* Line number */}
-                    <span className="w-6 shrink-0 select-none text-end text-xs tabular-nums text-muted-foreground/50">
+                    <span className="w-6 shrink-0 select-none text-end text-xs tabular-nums text-muted-foreground-subtle">
                       {isBlank ? '' : idx + 1}
                     </span>
 

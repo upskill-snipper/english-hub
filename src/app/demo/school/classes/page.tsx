@@ -119,7 +119,7 @@ export default function DemoClassesPage() {
       {/* Grid */}
       {filtered.length === 0 ? (
         <div className="flex flex-col items-center justify-center rounded-xl border border-border bg-card py-16 text-center">
-          <BookOpen className="h-10 w-10 text-muted-foreground/50 mb-3" />
+          <BookOpen className="h-10 w-10 text-muted-foreground-subtle mb-3" />
           <p className="text-sm text-muted-foreground">{t('demo_school.classes.empty')}</p>
         </div>
       ) : (

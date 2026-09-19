@@ -334,7 +334,7 @@ function ActionMenu({ student, classes, t, onMoveToClass, onSuspend, onRemove }:
 
             {/* No password-reset endpoint exists yet - disabled, never a silent no-op */}
             <button
-              className="flex w-full cursor-not-allowed items-center gap-2.5 px-3 py-1.5 text-sm text-muted-foreground/50"
+              className="flex w-full cursor-not-allowed items-center gap-2.5 px-3 py-1.5 text-sm text-muted-foreground-subtle"
               disabled
               title="Password resets are issued from the Export logins flow"
             >
@@ -985,7 +985,7 @@ export default function StudentsPage() {
                       </td>
                       <td className="px-4 py-3 text-muted-foreground">
                         {student.className ?? (
-                          <span className="italic text-muted-foreground/50">
+                          <span className="italic text-muted-foreground-subtle">
                             {t('school.students.unassigned')}
                           </span>
                         )}
@@ -1010,7 +1010,7 @@ export default function StudentsPage() {
                             </span>
                           </div>
                         ) : (
-                          <span className="text-xs text-muted-foreground/40">&mdash;</span>
+                          <span className="text-xs text-muted-foreground-subtle">&mdash;</span>
                         )}
                       </td>
                       <td className="px-4 py-3">
@@ -1022,7 +1022,7 @@ export default function StudentsPage() {
                             {percentageToGCSEGrade(student.progress)}
                           </span>
                         ) : (
-                          <span className="text-xs text-muted-foreground/40">&mdash;</span>
+                          <span className="text-xs text-muted-foreground-subtle">&mdash;</span>
                         )}
                       </td>
                       <td className="px-4 py-3">

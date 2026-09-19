@@ -225,7 +225,7 @@ export default function BentoBoxDashboard() {
                   <div
                     className={`w-1 h-1 rounded-full ${i === 0 ? 'bg-primary/60' : 'bg-muted'}`}
                   />
-                  <span className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground/50">
+                  <span className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground-subtle">
                     {item.action}
                   </span>
                 </div>

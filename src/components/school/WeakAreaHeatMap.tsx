@@ -279,13 +279,13 @@ const GridHeatMap = memo(function GridHeatMap({
                           <span
                             className={cn(
                               'text-xs font-medium',
-                              dimmed ? 'text-muted-foreground/70' : scoreToTextColor(score),
+                              dimmed ? 'text-muted-foreground-subtle' : scoreToTextColor(score),
                             )}
                           >
                             {Math.round(score)}
                           </span>
                         ) : (
-                          <span className="text-muted-foreground/20">-</span>
+                          <span className="text-muted-foreground-subtle">-</span>
                         )}
                         {/* Hover tooltip */}
                         {isHovered && score !== undefined && !dimmed && (

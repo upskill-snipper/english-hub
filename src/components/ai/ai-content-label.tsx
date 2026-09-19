@@ -83,7 +83,7 @@ export async function AIContentLabel({
 
   if (variant === 'footer') {
     return (
-      <p className={'text-[11px] tracking-wide text-muted-foreground/80 ' + (className ?? '')}>
+      <p className={'text-[11px] tracking-wide text-muted-foreground-subtle ' + (className ?? '')}>
         {short} ·{' '}
         <Link
           href="/legal/ai-governance"

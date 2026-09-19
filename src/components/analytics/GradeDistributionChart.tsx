@@ -290,7 +290,7 @@ export function GradeDistributionChart({
               </BarChart>
             </ChartFrame>
           </div>
-          <div className="mt-2 flex items-center justify-between text-[10px] text-muted-foreground/80">
+          <div className="mt-2 flex items-center justify-between text-[10px] text-muted-foreground-subtle">
             <span>{t('analytics.grade.bottom')}</span>
             <span>{t('analytics.grade.top_of_pass')}</span>
           </div>

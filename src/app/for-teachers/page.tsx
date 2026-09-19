@@ -751,7 +751,7 @@ export default function ForTeachersPage() {
 
               {/* Names and figures above are invented for illustration - a
                   marketing mockup must never read as real pupil data. */}
-              <p className="text-[11px] text-muted-foreground/70 text-center">
+              <p className="text-[11px] text-muted-foreground-subtle text-center">
                 Illustrative sample data - names and figures are not real pupils.
               </p>
             </div>
@@ -1108,7 +1108,7 @@ export default function ForTeachersPage() {
             </Card>
           </div>
 
-          <p className="text-center text-xs text-muted-foreground/80 mt-10 max-w-2xl mx-auto">
+          <p className="text-center text-xs text-muted-foreground-subtle mt-10 max-w-2xl mx-auto">
             {VAT_LABEL}
           </p>
         </div>
@@ -1275,7 +1275,7 @@ export default function ForTeachersPage() {
             <span className="font-semibold text-foreground">
               {t('mkt.teachers.ft.final.price.amount')}
             </span>{' '}
-            <span className="text-muted-foreground/80">
+            <span className="text-muted-foreground-subtle">
               {t('mkt.teachers.ft.final.price.standard_pre')}{' '}
               <span className="line-through">£11.99/month</span>{' '}
               {t('mkt.teachers.ft.final.price.standard_post')}
@@ -1285,7 +1285,7 @@ export default function ForTeachersPage() {
           <p className="mt-2 inline-flex items-center gap-1.5 text-xs font-medium text-amber-700">
             {t('mkt.teachers.ft.final.price.increase')}
           </p>
-          <p className="mt-3 text-xs text-muted-foreground/80 max-w-2xl mx-auto">{VAT_LABEL}</p>
+          <p className="mt-3 text-xs text-muted-foreground-subtle max-w-2xl mx-auto">{VAT_LABEL}</p>
         </div>
       </section>
     </div>

@@ -444,7 +444,7 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
               <div key={item.label} className={`rounded-xl border p-4 ${item.colour}`}>
                 <span className="text-xs font-bold uppercase tracking-wider">{item.label}</span>
                 <p className="mt-2 text-body-sm text-muted-foreground">{item.description}</p>
-                <p className="mt-2 text-xs italic text-muted-foreground/80">
+                <p className="mt-2 text-xs italic text-muted-foreground-subtle">
                   e.g. &ldquo;{item.example}&rdquo;
                 </p>
               </div>

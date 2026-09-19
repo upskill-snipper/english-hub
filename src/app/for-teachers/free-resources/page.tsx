@@ -321,7 +321,7 @@ export default function FreeResourcesPage() {
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             {t('for_teachers_free.intro')}
           </p>
-          <p className="mx-auto mt-2 max-w-2xl text-sm text-muted-foreground/80">
+          <p className="mx-auto mt-2 max-w-2xl text-sm text-muted-foreground-subtle">
             Resources available for all major exam boards (AQA, Edexcel, OCR, WJEC, IGCSE/CAIE).
             Your school&apos;s content is tailored to your chosen board.
           </p>
@@ -746,7 +746,7 @@ export default function FreeResourcesPage() {
                     </Badge>
                     <div>
                       <p className="text-muted-foreground">{ac.description}</p>
-                      <p className="text-xs text-muted-foreground/70 mt-0.5">
+                      <p className="text-xs text-muted-foreground-subtle mt-0.5">
                         Weighting: {ac.weighting}
                       </p>
                     </div>
@@ -886,12 +886,12 @@ export default function FreeResourcesPage() {
                     <Lock className="h-4 w-4 text-muted-foreground/40" />
                   </div>
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-muted/50 mb-3">
-                    <Icon className="h-5 w-5 text-muted-foreground/60" />
+                    <Icon className="h-5 w-5 text-muted-foreground-subtle" />
                   </div>
                   <h3 className="font-semibold text-sm mb-1">{feature.title}</h3>
                   <p className="text-xs text-muted-foreground">{feature.description}</p>
                   <div className="mt-3 h-20 rounded-md bg-muted/30 border border-border/30 flex items-center justify-center">
-                    <p className="text-xs text-muted-foreground/50 italic">
+                    <p className="text-xs text-muted-foreground-subtle italic">
                       Preview available with subscription
                     </p>
                   </div>

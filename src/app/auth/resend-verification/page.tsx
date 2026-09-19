@@ -134,7 +134,7 @@ export default function ResendVerificationPage() {
                 <Label htmlFor="email">{t('form.email')}</Label>
                 <div className="relative">
                   <Mail
-                    className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70"
+                    className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground-subtle"
                     aria-hidden="true"
                   />
                   <Input

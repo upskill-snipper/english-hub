@@ -218,7 +218,7 @@ export default async function SchoolPilotPackPage() {
               Pilot Pack and replace this with a real download link.
               Pages are print-friendly so Cmd/Ctrl+P → Save as PDF works
               in the meantime. */}
-          <p className="mt-4 text-xs text-muted-foreground/80">
+          <p className="mt-4 text-xs text-muted-foreground-subtle">
             {await t('mkt.schools.pilot.hero.pdf_note')}
           </p>
         </div>
@@ -421,7 +421,7 @@ export default async function SchoolPilotPackPage() {
                 </li>
               ))}
             </ul>
-            <p className="mt-5 text-xs text-muted-foreground/80">
+            <p className="mt-5 text-xs text-muted-foreground-subtle">
               {await t('mkt.schools.pilot.pricing.note')}
             </p>
           </div>
@@ -468,7 +468,7 @@ export default async function SchoolPilotPackPage() {
 
           <Separator className="my-10 opacity-40" />
 
-          <p className="text-xs text-muted-foreground/80 leading-relaxed">
+          <p className="text-xs text-muted-foreground-subtle leading-relaxed">
             {COMPANY.fullDisclosureLine}
           </p>
         </div>

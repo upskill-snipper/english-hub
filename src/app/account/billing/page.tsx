@@ -389,7 +389,7 @@ export default function BillingPage() {
                     {PRICING.STUDENT_ANNUAL}
                     {t('account.billing.per_year')}
                   </p>
-                  <p className="text-[11px] text-muted-foreground/80 mb-1">
+                  <p className="text-[11px] text-muted-foreground-subtle mb-1">
                     {t('account.billing.standard')}{' '}
                     <span className="line-through">
                       {PRICING.CURRENCY}
@@ -457,7 +457,7 @@ export default function BillingPage() {
                     {PRICING.TEACHER_ANNUAL}
                     {t('account.billing.per_year')}
                   </p>
-                  <p className="text-[11px] text-muted-foreground/80 mb-1">
+                  <p className="text-[11px] text-muted-foreground-subtle mb-1">
                     {t('account.billing.standard')}{' '}
                     <span className="line-through">
                       {PRICING.CURRENCY}
@@ -504,7 +504,7 @@ export default function BillingPage() {
                 </div>
               </div>
 
-              <p className="text-xs text-muted-foreground/80 mt-4">{VAT_LABEL}</p>
+              <p className="text-xs text-muted-foreground-subtle mt-4">{VAT_LABEL}</p>
             </div>
           )}
         </section>

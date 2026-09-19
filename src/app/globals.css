@@ -28,9 +28,16 @@
     /* Muted — ink-600 on cream-100 */
     --muted: 36 36% 86%;
     --muted-foreground: 150 6% 30%;
+    /* Low-emphasis text (A11Y-8). Replaces text-muted-foreground/70, /60
+       and /50, which composited to 3.46:1, 2.80:1 and 2.30:1 on the cream
+       background - all below the 4.5:1 the accessibility statement claims.
+       Lighter than --muted-foreground, so the hierarchy survives, and still
+       4.82:1 at its worst against a muted panel. */
+    --muted-foreground-subtle: 150 6% 36%;
 
     /* Accent — clay-500 */
-    --accent: 16 60% 49%;
+    /* Clay-500, darkened 3 points: white on the old 49% was 4.23:1. */
+    --accent: 16 60% 46%;
     --accent-foreground: 0 0% 100%;
 
     /* Destructive — warm red */
@@ -39,7 +46,9 @@
 
     /* Borders — ink-200 */
     --border: 60 4% 84%;
-    --input: 60 4% 84%;
+    /* Field outlines carry information (WCAG 1.4.11), so they are held to
+       3:1; --border above is decorative rule-work and is not. */
+    --input: 60 4% 52%;
     --ring: 177 47% 16%;
 
     /* Charts — Anthology palette */
@@ -74,22 +83,28 @@
     --popover-foreground: 37 47% 92%;
 
     --primary: 175 40% 35%;
-    --primary-foreground: 37 47% 92%;
+    /* White, not cream: cream on this teal was 4.14:1. Changing the TEXT
+       rather than the button colour keeps the focus ring at 3.92:1 - 
+       darkening --primary to fix the text would have dropped it to 3.07. */
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 155 10% 13%;
     --secondary-foreground: 50 18% 82%;
 
     --muted: 155 10% 13%;
-    --muted-foreground: 150 3% 50%;
+    /* 50% gave 4.06:1 on the muted panel. */
+    --muted-foreground: 150 3% 62%;
+    --muted-foreground-subtle: 150 3% 54%;
 
-    --accent: 16 60% 49%;
-    --accent-foreground: 37 47% 92%;
+    --accent: 16 60% 46%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 51%;
-    --destructive-foreground: 37 47% 92%;
+    /* Cream on this red was 4.12:1; white is 4.80:1. */
+    --destructive-foreground: 0 0% 100%;
 
     --border: 150 8% 17%;
-    --input: 150 8% 17%;
+    --input: 150 8% 40%;
     --ring: 175 40% 35%;
 
     --chart-1: 175 40% 35%;
@@ -103,7 +118,7 @@
     --sidebar: 160 18% 5%;
     --sidebar-foreground: 37 47% 92%;
     --sidebar-primary: 175 40% 35%;
-    --sidebar-primary-foreground: 37 47% 92%;
+    --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 160 12% 10%;
     --sidebar-accent-foreground: 37 47% 92%;
     --sidebar-border: 155 10% 12%;

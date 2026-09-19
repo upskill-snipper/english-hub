@@ -709,7 +709,7 @@ export default function ChecklistsPage() {
                           </span>
                           {item.detail && (
                             <p
-                              className={`mt-0.5 text-xs ${isChecked ? 'text-muted-foreground/50' : 'text-muted-foreground'}`}
+                              className={`mt-0.5 text-xs ${isChecked ? 'text-muted-foreground-subtle' : 'text-muted-foreground'}`}
                             >
                               {item.detail}
                             </p>

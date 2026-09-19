@@ -325,7 +325,7 @@ export function Footer() {
 
         {/* Responsible-use disclaimer (institutional positioning) */}
         <div className="border-t py-5" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
-          <p className="max-w-3xl text-[11px] leading-relaxed text-[#B5B8B3]/55">
+          <p className="max-w-3xl text-[11px] leading-relaxed text-[#B5B8B3]/75">
             {t('footer.disclaimer.responsible')}
           </p>
         </div>
@@ -336,24 +336,24 @@ export function Footer() {
           style={{ borderColor: 'rgba(255,255,255,0.08)' }}
         >
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-start">
-            <p className="font-mono text-[11px] tracking-wide text-[#B5B8B3]/60">
+            <p className="font-mono text-[11px] tracking-wide text-[#B5B8B3]/75">
               &copy; 2024&ndash;{new Date().getFullYear()} {t('footer.copyright_suffix')}
             </p>
             <span className="hidden sm:inline text-[#B5B8B3]/30">&middot;</span>
-            <p className="font-mono text-[11px] tracking-wide text-[#B5B8B3]/60">
+            <p className="font-mono text-[11px] tracking-wide text-[#B5B8B3]/75">
               {t('footer.company_registration')}
             </p>
           </div>
           <div className="flex items-center gap-4 text-[11px] font-mono tracking-wide">
             <Link
               href="/legal/privacy"
-              className="text-[#B5B8B3]/60 hover:text-[#FBF7F0] transition-colors"
+              className="text-[#B5B8B3]/75 hover:text-[#FBF7F0] transition-colors"
             >
               {t('footer.bottom.privacy')}
             </Link>
             <Link
               href="/terms"
-              className="text-[#B5B8B3]/60 hover:text-[#FBF7F0] transition-colors"
+              className="text-[#B5B8B3]/75 hover:text-[#FBF7F0] transition-colors"
             >
               {t('footer.bottom.terms')}
             </Link>
@@ -363,19 +363,19 @@ export function Footer() {
                 buying journey checkable. */}
             <Link
               href="/safeguarding"
-              className="text-[#B5B8B3]/60 hover:text-[#FBF7F0] transition-colors"
+              className="text-[#B5B8B3]/75 hover:text-[#FBF7F0] transition-colors"
             >
               {t('footer.bottom.safeguarding')}
             </Link>
             <Link
               href="/data-processing"
-              className="text-[#B5B8B3]/60 hover:text-[#FBF7F0] transition-colors"
+              className="text-[#B5B8B3]/75 hover:text-[#FBF7F0] transition-colors"
             >
               {t('footer.bottom.dpa')}
             </Link>
             <a
               href="mailto:info@upskillenergy.com"
-              className="text-[#B5B8B3]/60 hover:text-[#FBF7F0] transition-colors"
+              className="text-[#B5B8B3]/75 hover:text-[#FBF7F0] transition-colors"
             >
               {t('footer.bottom.contact')}
             </a>

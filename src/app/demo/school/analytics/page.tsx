@@ -149,7 +149,7 @@ function TrendBadge({ value, suffix = '%' }: { value: number; suffix?: string })
         {suffix}
       </span>
     )
-  return <span className="text-xs text-muted-foreground/70">No change</span>
+  return <span className="text-xs text-muted-foreground-subtle">No change</span>
 }
 
 // ── Horizontal bar ─────────────────────────────────────────
@@ -433,7 +433,7 @@ export default function AnalyticsPage() {
                       <p className="text-sm text-muted-foreground mb-1">{_tr(`Active Students`)}</p>
                       <p className="text-3xl font-bold text-foreground">
                         {vary(305, dateRange)}
-                        <span className="text-lg text-muted-foreground/70">
+                        <span className="text-lg text-muted-foreground-subtle">
                           /{vary(342, dateRange)}
                         </span>
                       </p>
@@ -635,7 +635,7 @@ export default function AnalyticsPage() {
                                 ? 'bg-muted text-foreground/80'
                                 : i === 2
                                   ? 'bg-orange-500/20 text-amber-700 dark:text-amber-300'
-                                  : 'bg-muted/50 text-muted-foreground/70'
+                                  : 'bg-muted/50 text-muted-foreground-subtle'
                           }`}
                         >
                           {i + 1}
@@ -644,7 +644,7 @@ export default function AnalyticsPage() {
                           <p className="font-medium text-foreground truncate group-hover:text-amber-700 transition-colors">
                             {cls.name}
                           </p>
-                          <p className="text-xs text-muted-foreground/70 truncate">
+                          <p className="text-xs text-muted-foreground-subtle truncate">
                             {cls.teacher} &middot; {cls.studentCount} students
                           </p>
                         </div>
@@ -670,7 +670,7 @@ export default function AnalyticsPage() {
                     <AlertTriangle className="w-5 h-5 text-red-400" />
                     School-Wide Weakness Analysis
                   </CardTitle>
-                  <CardDescription className="text-muted-foreground/70">
+                  <CardDescription className="text-muted-foreground-subtle">
                     Topics where students struggle most
                   </CardDescription>
                 </CardHeader>
@@ -689,7 +689,9 @@ export default function AnalyticsPage() {
                     {topWeaknesses.map(([name, count], i) => (
                       <div key={i} className="flex items-center justify-between gap-2 text-sm">
                         <span className="text-foreground/80">{name}</span>
-                        <span className="text-xs text-muted-foreground/70">{count} students</span>
+                        <span className="text-xs text-muted-foreground-subtle">
+                          {count} students
+                        </span>
                       </div>
                     ))}
                   </div>
@@ -705,7 +707,7 @@ export default function AnalyticsPage() {
                     <p className="font-semibold text-foreground">
                       {DEMO_SCHOOL.name} Performance Summary
                     </p>
-                    <p className="text-sm text-muted-foreground/70 mt-0.5">
+                    <p className="text-sm text-muted-foreground-subtle mt-0.5">
                       Spring Term 2026 &middot; Demo data
                     </p>
                   </div>
@@ -740,7 +742,7 @@ export default function AnalyticsPage() {
                       <div className="flex items-start justify-between mb-4">
                         <div>
                           <h3 className="text-lg font-bold text-foreground">{yg.label}</h3>
-                          <p className="text-xs text-muted-foreground/70">
+                          <p className="text-xs text-muted-foreground-subtle">
                             {yg.studentCount} students &middot; {yg.classCount} classes
                           </p>
                         </div>
@@ -847,7 +849,7 @@ export default function AnalyticsPage() {
                           <div className="flex items-start justify-between">
                             <div>
                               <p className="font-semibold text-foreground truncate">{t.name}</p>
-                              <p className="text-xs text-muted-foreground/70">
+                              <p className="text-xs text-muted-foreground-subtle">
                                 {t.department} &middot; {t.classCount} class
                                 {t.classCount !== 1 ? 'es' : ''}
                               </p>
@@ -865,13 +867,13 @@ export default function AnalyticsPage() {
                       <div className="grid grid-cols-3 gap-3 mb-4">
                         <div className="text-center p-2 rounded-lg bg-muted/30">
                           <p className="text-lg font-bold text-foreground">{t.studentCount}</p>
-                          <p className="text-[10px] text-muted-foreground/70">Students</p>
+                          <p className="text-[10px] text-muted-foreground-subtle">Students</p>
                         </div>
                         <div className="text-center p-2 rounded-lg bg-muted/30">
                           <p className={`text-lg font-bold ${progressTextColor(progress)}`}>
                             {progress}%
                           </p>
-                          <p className="text-[10px] text-muted-foreground/70">
+                          <p className="text-[10px] text-muted-foreground-subtle">
                             {_tr(`Avg Progress`)}
                           </p>
                         </div>
@@ -879,7 +881,7 @@ export default function AnalyticsPage() {
                           <p className={`text-lg font-bold ${progressTextColor(t.completionRate)}`}>
                             {t.completionRate}%
                           </p>
-                          <p className="text-[10px] text-muted-foreground/70">Completion</p>
+                          <p className="text-[10px] text-muted-foreground-subtle">Completion</p>
                         </div>
                       </div>
 
@@ -907,13 +909,13 @@ export default function AnalyticsPage() {
             {/* Filters */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mb-6">
               <div className="relative flex-1 max-w-sm">
-                <Search className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
+                <Search className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground-subtle" />
                 <input
                   type="text"
                   placeholder={_tr(`Search students...`)}
                   value={studentSearch}
                   onChange={(e) => setStudentSearch(e.target.value)}
-                  className="w-full ps-9 pe-4 py-2 text-sm rounded-lg bg-muted/50 border border-border text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-purple-500/50"
+                  className="w-full ps-9 pe-4 py-2 text-sm rounded-lg bg-muted/50 border border-border text-foreground placeholder:text-muted-foreground-subtle focus:outline-none focus:border-purple-500/50"
                 />
               </div>
               <div className="flex items-center gap-1 rounded-lg bg-muted/50 border border-border p-1 overflow-x-auto max-w-full">
@@ -982,25 +984,31 @@ export default function AnalyticsPage() {
                     <p className="font-medium text-foreground text-sm truncate group-hover:text-amber-700 dark:group-hover:text-amber-300 transition-colors">
                       {student.name}
                     </p>
-                    <p className="text-xs text-muted-foreground/70 truncate">
+                    <p className="text-xs text-muted-foreground-subtle truncate">
                       {student.yearGroup} &middot; {student.className}
                     </p>
                   </div>
                   <div className="text-end shrink-0 space-y-0.5 max-w-[180px]">
                     <div className="flex items-center gap-1.5 justify-end flex-wrap">
-                      <span className="text-[10px] text-muted-foreground/70 uppercase">WAG</span>
+                      <span className="text-[10px] text-muted-foreground-subtle uppercase">
+                        WAG
+                      </span>
                       <span
                         className={`text-sm font-bold ${gcseGradeColor(student.workingAtGrade)}`}
                       >
                         {student.workingAtGrade}
                       </span>
-                      <span className="text-[10px] text-muted-foreground/70 uppercase">Pred</span>
+                      <span className="text-[10px] text-muted-foreground-subtle uppercase">
+                        Pred
+                      </span>
                       <span
                         className={`text-sm font-bold ${predictedGradeColor(student.predictedGrade, student.workingAtGrade)}`}
                       >
                         {student.predictedGrade}
                       </span>
-                      <span className="text-[10px] text-muted-foreground/70 uppercase">Tgt</span>
+                      <span className="text-[10px] text-muted-foreground-subtle uppercase">
+                        Tgt
+                      </span>
                       <span className="text-sm font-bold text-primary">{student.targetGrade}</span>
                     </div>
                     {ragBadge(student.overallProgress)}
@@ -1010,7 +1018,7 @@ export default function AnalyticsPage() {
             </div>
 
             {filteredStudents.length > 30 && (
-              <p className="text-center text-sm text-muted-foreground/70 mt-4">
+              <p className="text-center text-sm text-muted-foreground-subtle mt-4">
                 Showing 30 of {filteredStudents.length} students. Use search or filters to narrow
                 results.
               </p>
@@ -1024,7 +1032,7 @@ export default function AnalyticsPage() {
                     <AlertTriangle className="w-5 h-5 text-red-400" />
                     At-Risk Students ({atRiskStudents.length})
                   </CardTitle>
-                  <CardDescription className="text-muted-foreground/70">
+                  <CardDescription className="text-muted-foreground-subtle">
                     Students requiring immediate attention
                   </CardDescription>
                 </CardHeader>
@@ -1049,7 +1057,7 @@ export default function AnalyticsPage() {
                             <p className="font-medium text-foreground group-hover:text-red-300 transition-colors truncate">
                               {student.name}
                             </p>
-                            <p className="text-xs text-muted-foreground/70 truncate">
+                            <p className="text-xs text-muted-foreground-subtle truncate">
                               {student.yearGroup} &middot; Last active: {student.lastActive}
                             </p>
                           </div>
@@ -1125,7 +1133,7 @@ export default function AnalyticsPage() {
                         {cat.avgs.map((val, mi) => (
                           <span
                             key={mi}
-                            className="flex-1 text-center text-[10px] text-muted-foreground/70"
+                            className="flex-1 text-center text-[10px] text-muted-foreground-subtle"
                           >
                             {months[mi]} {val}%
                           </span>
@@ -1246,7 +1254,7 @@ export default function AnalyticsPage() {
                         className="flex items-center justify-between gap-2 text-sm"
                       >
                         <p className="text-foreground/80 truncate pe-4">{lesson.title}</p>
-                        <span className="text-xs text-muted-foreground/70 shrink-0">
+                        <span className="text-xs text-muted-foreground-subtle shrink-0">
                           {vary(lesson.count, dateRange)} views
                         </span>
                       </div>
@@ -1282,7 +1290,7 @@ export default function AnalyticsPage() {
                         className="flex items-center justify-between gap-2 text-sm"
                       >
                         <p className="text-foreground/80 truncate pe-4">{exam.title}</p>
-                        <span className="text-xs text-muted-foreground/70 shrink-0">
+                        <span className="text-xs text-muted-foreground-subtle shrink-0">
                           {vary(exam.count, dateRange)} taken
                         </span>
                       </div>

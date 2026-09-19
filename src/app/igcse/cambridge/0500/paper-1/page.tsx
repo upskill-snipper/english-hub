@@ -249,7 +249,7 @@ export default async function Paper1HubPage() {
       </section>
 
       {/* ── Footer note ─────────────────────────────────────────────── */}
-      <p className="text-center text-body-xs text-muted-foreground/60">
+      <p className="text-center text-body-xs text-muted-foreground-subtle">
         Aligns with Cambridge syllabus 0500
       </p>
     </div>

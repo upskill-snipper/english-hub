@@ -275,7 +275,7 @@ export function Markdown({ source, className }: RenderProps): React.ReactElement
       blocks.push(
         <ul
           key={k()}
-          className="my-4 ms-5 list-disc space-y-2 text-muted-foreground marker:text-muted-foreground/60"
+          className="my-4 ms-5 list-disc space-y-2 text-muted-foreground marker:text-muted-foreground-subtle"
         >
           {items.map((it, ii) => (
             <li key={ii} className="ps-1 leading-relaxed">

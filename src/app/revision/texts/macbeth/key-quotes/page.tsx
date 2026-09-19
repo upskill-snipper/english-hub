@@ -428,7 +428,7 @@ export default function MacbethKeyQuotesPage() {
               {act.quotes.map((q, i) => (
                 <div key={i} className="rounded-lg border border-border/60 p-4 space-y-2">
                   <p className="text-lg font-medium leading-snug">&ldquo;{q.quote}&rdquo;</p>
-                  <p className="text-xs text-muted-foreground/70">
+                  <p className="text-xs text-muted-foreground-subtle">
                     {q.speaker} &mdash; {q.actScene}
                   </p>
                   <p className="text-sm text-muted-foreground leading-relaxed">

@@ -96,7 +96,7 @@ export async function MarkerByline() {
 export function Extract({ children }: { children: React.ReactNode }) {
   return (
     <blockquote className="flex gap-3 rounded-xl border border-border/60 bg-muted/40 p-4 sm:p-5">
-      <Quote className="mt-0.5 size-4 shrink-0 text-muted-foreground/70" />
+      <Quote className="mt-0.5 size-4 shrink-0 text-muted-foreground-subtle" />
       <p className="text-body-sm italic leading-relaxed text-foreground/90">{children}</p>
     </blockquote>
   )

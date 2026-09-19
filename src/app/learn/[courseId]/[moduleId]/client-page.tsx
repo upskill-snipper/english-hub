@@ -255,7 +255,7 @@ function Sidebar({
                     ) : (
                       <Circle
                         size={18}
-                        className={isCurrent ? 'text-primary' : 'text-muted-foreground/70'}
+                        className={isCurrent ? 'text-primary' : 'text-muted-foreground-subtle'}
                       />
                     )}
                   </span>
@@ -271,7 +271,7 @@ function Sidebar({
                     >
                       {i + 1}. {mod.title}
                     </span>
-                    <span className="flex items-center gap-1 text-xs text-muted-foreground/60 mt-1">
+                    <span className="flex items-center gap-1 text-xs text-muted-foreground-subtle mt-1">
                       <Clock size={11} />
                       {mod.duration}
                     </span>
@@ -303,7 +303,7 @@ function Sidebar({
               className={
                 completedCount === course.moduleList.length
                   ? 'text-primary'
-                  : 'text-muted-foreground/70'
+                  : 'text-muted-foreground-subtle'
               }
             />
             <span

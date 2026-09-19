@@ -359,7 +359,7 @@ export default async function StudentsPage() {
                         <span className="block h-4 w-px bg-gradient-to-b from-teal-500/40 to-clay-500/30 lg:hidden" />
                         {/* Desktop horizontal chevron */}
                         <ChevronRight
-                          className="hidden h-5 w-5 text-muted-foreground/60 lg:block"
+                          className="hidden h-5 w-5 text-muted-foreground-subtle lg:block"
                           aria-hidden
                         />
                       </div>

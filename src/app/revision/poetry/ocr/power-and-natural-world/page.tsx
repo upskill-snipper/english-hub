@@ -226,7 +226,7 @@ export default function OCRPowerAndNaturalWorldPage() {
                 {poem.studyHref ? (
                   <CheckCircle2 className="size-4 text-emerald-400" />
                 ) : (
-                  <Lock className="size-4 text-muted-foreground/50" />
+                  <Lock className="size-4 text-muted-foreground-subtle" />
                 )}
               </div>
 

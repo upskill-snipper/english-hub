@@ -228,7 +228,7 @@ export default function MacbethExtractWalkthroughPage() {
               <ol className="space-y-1 font-heading text-base leading-loose sm:text-lg">
                 {EXTRACT_LINES.map((line) => (
                   <li key={line.n} className="flex gap-4 sm:gap-6">
-                    <span className="w-6 shrink-0 select-none text-end text-xs text-muted-foreground/60 tabular-nums">
+                    <span className="w-6 shrink-0 select-none text-end text-xs text-muted-foreground-subtle tabular-nums">
                       {line.n}
                     </span>
                     <span>{line.text}</span>
@@ -236,7 +236,7 @@ export default function MacbethExtractWalkthroughPage() {
                 ))}
               </ol>
             </div>
-            <p className="mt-3 text-xs text-muted-foreground/70">
+            <p className="mt-3 text-xs text-muted-foreground-subtle">
               {t('rev.texts.macbeth.extract.text_pd_note')}
             </p>
           </CardContent>
@@ -268,7 +268,7 @@ export default function MacbethExtractWalkthroughPage() {
                   <ol className="space-y-1 font-heading text-base leading-loose">
                     {segLines.map((line) => (
                       <li key={line.n} className="flex gap-4">
-                        <span className="w-6 shrink-0 select-none text-end text-xs text-muted-foreground/60 tabular-nums">
+                        <span className="w-6 shrink-0 select-none text-end text-xs text-muted-foreground-subtle tabular-nums">
                           {line.n}
                         </span>
                         <span>{line.text}</span>
@@ -357,7 +357,7 @@ export default function MacbethExtractWalkthroughPage() {
         </div>
 
         {/* Fair-dealing footer */}
-        <p className="pb-8 text-xs text-muted-foreground/70 leading-relaxed">
+        <p className="pb-8 text-xs text-muted-foreground-subtle leading-relaxed">
           {t('rev.texts.macbeth.extract.fair_dealing')}
         </p>
       </div>

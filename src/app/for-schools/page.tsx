@@ -727,7 +727,7 @@ export default async function ForSchoolsPage() {
           <p className="text-center text-sm text-muted-foreground mt-8">
             {await t('mkt.schools.fs.value.reserved_note')}
           </p>
-          <p className="text-center text-xs text-muted-foreground/80 mt-4 max-w-2xl mx-auto">
+          <p className="text-center text-xs text-muted-foreground-subtle mt-4 max-w-2xl mx-auto">
             {VAT_LABEL}
           </p>
         </div>
@@ -891,7 +891,7 @@ export default async function ForSchoolsPage() {
                     {await t('mkt.schools.fs.analytics.live')}
                   </Badge>
                 </div>
-                <p className="text-[11px] text-muted-foreground/70 mb-3">
+                <p className="text-[11px] text-muted-foreground-subtle mb-3">
                   Illustrative sample data - not a real school.
                 </p>
                 <div className="grid grid-cols-2 gap-3 mb-5">
@@ -1265,7 +1265,7 @@ export default async function ForSchoolsPage() {
                 {await t('mkt.schools.fs.compare.col.school')}
                 <div className="text-xs font-normal text-muted-foreground">
                   {await t('mkt.schools.fs.compare.col.school_founding')}{' '}
-                  <span className="text-muted-foreground/60 line-through">£8,000</span>
+                  <span className="text-muted-foreground-subtle line-through">£8,000</span>
                 </div>
                 <div className="text-[10px] font-medium uppercase tracking-wide text-amber-600 mt-0.5">
                   {await t('mkt.schools.fs.compare.col.school_first10')}
@@ -1307,7 +1307,7 @@ export default async function ForSchoolsPage() {
             ))}
           </div>
 
-          <p className="text-center text-xs text-muted-foreground/80 mt-6 max-w-2xl mx-auto">
+          <p className="text-center text-xs text-muted-foreground-subtle mt-6 max-w-2xl mx-auto">
             {VAT_LABEL}
           </p>
         </div>
@@ -1334,31 +1334,31 @@ export default async function ForSchoolsPage() {
             <ul className="space-y-2 mb-4 text-muted-foreground">
               <li>
                 {await t('mkt.schools.fs.compliance.dpa')}{' '}
-                <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
+                <span className="text-xs uppercase tracking-wide text-muted-foreground-subtle">
                   {await t('mkt.schools.fs.compliance.dpa_note')}
                 </span>
               </li>
               <li>
                 {await t('mkt.schools.fs.compliance.dpia')}{' '}
-                <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
+                <span className="text-xs uppercase tracking-wide text-muted-foreground-subtle">
                   {await t('mkt.schools.fs.compliance.dpia_note')}
                 </span>
               </li>
               <li>
                 {await t('mkt.schools.fs.compliance.safeguard')}{' '}
-                <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
+                <span className="text-xs uppercase tracking-wide text-muted-foreground-subtle">
                   {await t('mkt.schools.fs.compliance.safeguard_note')}
                 </span>
               </li>
               <li>
                 {await t('mkt.schools.fs.compliance.cyber')}{' '}
-                <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
+                <span className="text-xs uppercase tracking-wide text-muted-foreground-subtle">
                   {await t('mkt.schools.fs.compliance.cyber_note')}
                 </span>
               </li>
               <li>
                 {await t('mkt.schools.fs.compliance.vpat')}{' '}
-                <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
+                <span className="text-xs uppercase tracking-wide text-muted-foreground-subtle">
                   {await t('mkt.schools.fs.compliance.vpat_note')}
                 </span>
               </li>
@@ -1475,8 +1475,8 @@ export default async function ForSchoolsPage() {
               {ctaViewDemo}
             </Button>
           </div>
-          <p className="text-xs text-muted-foreground/60 mt-6">{finalCtaNoObligation}</p>
-          <p className="text-xs text-muted-foreground/60 mt-2">
+          <p className="text-xs text-muted-foreground-subtle mt-6">{finalCtaNoObligation}</p>
+          <p className="text-xs text-muted-foreground-subtle mt-2">
             {finalCtaEmailDirect}{' '}
             <a href="mailto:info@Upskillenergy.com" className="text-primary hover:underline">
               info@Upskillenergy.com
@@ -1519,7 +1519,7 @@ export default async function ForSchoolsPage() {
               ))}
             </div>
           </div>
-          <div className="mt-10 pt-6 border-t border-border/40 text-center text-xs text-muted-foreground/70 space-y-1">
+          <div className="mt-10 pt-6 border-t border-border/40 text-center text-xs text-muted-foreground-subtle space-y-1">
             <p>
               &copy; {new Date().getFullYear()} The English Hub.{' '}
               {await t('mkt.schools.fs.footer.rights')}

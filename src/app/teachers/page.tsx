@@ -411,7 +411,7 @@ export default async function TeachersPage() {
               {i < weekSteps.length - 1 && (
                 <div
                   aria-hidden
-                  className="hidden items-center justify-center text-muted-foreground/50 md:flex"
+                  className="hidden items-center justify-center text-muted-foreground-subtle md:flex"
                 >
                   <ChevronRight className="h-5 w-5" />
                 </div>

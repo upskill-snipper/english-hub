@@ -252,7 +252,7 @@ export default function AccountPage() {
                 {t('account.year_group')}
               </label>
               <div className="relative">
-                <GraduationCap className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                <GraduationCap className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground-subtle" />
                 <select
                   id="yearGroup"
                   value={yearGroup}
@@ -274,7 +274,7 @@ export default function AccountPage() {
                 {t('account.exam_board')}
               </label>
               <div className="relative">
-                <BookOpen className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                <BookOpen className="absolute start-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground-subtle" />
                 <select
                   id="examBoard"
                   value={examBoard}

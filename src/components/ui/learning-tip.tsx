@@ -128,7 +128,7 @@ export function LearningTip({
       <Tooltip onOpenChange={handleOpenChange}>
         <TooltipTrigger
           className={cn(
-            'inline-flex items-center justify-center rounded-md text-muted-foreground/60 transition-colors hover:text-primary/80 focus-visible:outline-none',
+            'inline-flex items-center justify-center rounded-md text-muted-foreground-subtle transition-colors hover:text-primary/80 focus-visible:outline-none',
             size === 'sm' ? 'h-5 w-5' : 'h-6 w-6',
             className,
           )}

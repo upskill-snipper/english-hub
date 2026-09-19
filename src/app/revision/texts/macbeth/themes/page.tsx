@@ -474,7 +474,7 @@ export default function MacbethThemesPage() {
                   {theme.keyQuotes.map((q, i) => (
                     <div key={i} className="rounded-lg border border-border/60 p-3">
                       <p className="font-medium">&ldquo;{q.quote}&rdquo;</p>
-                      <p className="mt-0.5 text-xs text-muted-foreground/70">
+                      <p className="mt-0.5 text-xs text-muted-foreground-subtle">
                         {q.speaker} &mdash; {q.actScene}
                       </p>
                       <p className="mt-1.5 text-sm text-muted-foreground">

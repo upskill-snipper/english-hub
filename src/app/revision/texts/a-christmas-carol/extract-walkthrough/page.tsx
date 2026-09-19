@@ -359,7 +359,7 @@ export default function ExtractWalkthroughPage() {
                   <li key={line.number} className="grid grid-cols-[2.25rem_1fr] gap-3 py-0.5">
                     <span
                       aria-hidden="true"
-                      className="select-none text-end font-mono text-xs text-muted-foreground/70 pt-1"
+                      className="select-none text-end font-mono text-xs text-muted-foreground-subtle pt-1"
                     >
                       {line.number}
                     </span>

@@ -621,7 +621,7 @@ export default function IeltsSpeakingPage() {
       )}
 
       {/* ── Footnote ─────────────────────────────────────────────────── */}
-      <p className="text-center text-[11px] text-muted-foreground/60">
+      <p className="text-center text-[11px] text-muted-foreground-subtle">
         {t('ielts.speaking.footnote')}
       </p>
     </div>

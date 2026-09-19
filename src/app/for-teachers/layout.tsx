@@ -51,10 +51,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         >
           &pound;6.99/month
         </Link>{' '}
-        <span className="hidden sm:inline text-muted-foreground/70">
+        <span className="hidden sm:inline text-muted-foreground-subtle">
           (planned standard <span className="line-through">&pound;11.99</span>)
         </span>{' '}
-        <span className="mx-1 text-muted-foreground/50">·</span>{' '}
+        <span className="mx-1 text-muted-foreground-subtle">·</span>{' '}
         <Link
           href="/schools"
           className="font-medium text-foreground underline underline-offset-2 hover:opacity-80"

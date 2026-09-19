@@ -415,17 +415,17 @@ export default async function EdexcelPoetryAnthologyPage() {
                 <Link key={poem.number} href={poem.href!} className={sharedClassName}>
                   <div className="flex items-start justify-between gap-3 mb-2">
                     <div className="flex items-center gap-2">
-                      <span className="text-xs tabular-nums text-muted-foreground/60 font-medium">
+                      <span className="text-xs tabular-nums text-muted-foreground-subtle font-medium">
                         {poem.number.toString().padStart(2, '0')}
                       </span>
                       {poem.publicDomain ? (
                         <Unlock className="size-3 text-emerald-400" />
                       ) : (
-                        <Lock className="size-3 text-muted-foreground/70" />
+                        <Lock className="size-3 text-muted-foreground-subtle" />
                       )}
                     </div>
                     {poem.year && (
-                      <span className="text-[10px] text-muted-foreground/60 tabular-nums">
+                      <span className="text-[10px] text-muted-foreground-subtle tabular-nums">
                         {poem.year}
                       </span>
                     )}
@@ -468,17 +468,17 @@ export default async function EdexcelPoetryAnthologyPage() {
               <div key={poem.number} className={sharedClassName}>
                 <div className="flex items-start justify-between gap-3 mb-2">
                   <div className="flex items-center gap-2">
-                    <span className="text-xs tabular-nums text-muted-foreground/60 font-medium">
+                    <span className="text-xs tabular-nums text-muted-foreground-subtle font-medium">
                       {poem.number.toString().padStart(2, '0')}
                     </span>
                     {poem.publicDomain ? (
                       <Unlock className="size-3 text-emerald-400" />
                     ) : (
-                      <Lock className="size-3 text-muted-foreground/70" />
+                      <Lock className="size-3 text-muted-foreground-subtle" />
                     )}
                   </div>
                   {poem.year && (
-                    <span className="text-[10px] text-muted-foreground/60 tabular-nums">
+                    <span className="text-[10px] text-muted-foreground-subtle tabular-nums">
                       {poem.year}
                     </span>
                   )}
@@ -543,7 +543,7 @@ export default async function EdexcelPoetryAnthologyPage() {
               <ul className="space-y-2">
                 {cluster.pairs.map((p) => (
                   <li key={p} className="text-xs text-card-foreground leading-relaxed flex gap-2">
-                    <span className="text-muted-foreground/60 mt-0.5">-</span>
+                    <span className="text-muted-foreground-subtle mt-0.5">-</span>
                     <span>{p}</span>
                   </li>
                 ))}

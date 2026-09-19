@@ -476,7 +476,7 @@ function SlotCell({ slot, slotKey, lesson, colorMode, onDrop, onClick, onClear }
     >
       {isEmpty ? (
         <div className="flex h-full min-h-[88px] items-center justify-center p-2">
-          <span className="text-[11px] text-muted-foreground/70">Drop lesson here</span>
+          <span className="text-[11px] text-muted-foreground-subtle">Drop lesson here</span>
         </div>
       ) : (
         <div className="p-2.5">
@@ -508,7 +508,7 @@ function SlotCell({ slot, slotKey, lesson, colorMode, onDrop, onClick, onClear }
             </span>
           </div>
           {slot!.notes && (
-            <p className="mt-1.5 text-[9px] text-muted-foreground/70 line-clamp-1 italic flex items-center gap-0.5">
+            <p className="mt-1.5 text-[9px] text-muted-foreground-subtle line-clamp-1 italic flex items-center gap-0.5">
               <StickyNote className="h-2.5 w-2.5 shrink-0" />
               {slot!.notes}
             </p>
@@ -537,7 +537,7 @@ function SidebarLessonCard({ lesson }: SidebarLessonCardProps) {
       onDragStart={handleDragStart}
       className="flex items-start gap-2 rounded-lg border border-border/60 bg-card p-2.5 cursor-grab active:cursor-grabbing hover:border-primary/30 hover:shadow-sm transition-all"
     >
-      <GripVertical className="h-4 w-4 text-muted-foreground/70 mt-0.5 shrink-0" />
+      <GripVertical className="h-4 w-4 text-muted-foreground-subtle mt-0.5 shrink-0" />
       <div className="min-w-0 flex-1">
         <h4 className="text-xs font-semibold text-foreground leading-tight line-clamp-2">
           {lesson.title}

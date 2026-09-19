@@ -344,7 +344,7 @@ export default function WorksheetBrowserPage() {
             </div>
           ) : (
             <div className="flex flex-col items-center justify-center rounded-xl border-2 border-dashed border-border bg-muted/20 py-20 px-8 text-center">
-              <FileText className="h-12 w-12 text-muted-foreground/70 mb-4" />
+              <FileText className="h-12 w-12 text-muted-foreground-subtle mb-4" />
               <h3 className="text-lg font-semibold text-foreground mb-2">
                 {tx('school.b15.worksheets.no_worksheet_title')}
               </h3>

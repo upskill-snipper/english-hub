@@ -137,7 +137,7 @@ export default function AdminVerifyUserPage() {
                 {t('admin.verify.email_label')}
               </label>
               <div className="relative">
-                <Mail className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
+                <Mail className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground-subtle" />
                 <input
                   id="email"
                   type="email"

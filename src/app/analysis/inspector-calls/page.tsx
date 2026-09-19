@@ -294,7 +294,7 @@ export default async function InspectorCallsHubPage() {
         </Button>
       </section>
 
-      <p className="text-[0.7rem] leading-relaxed text-muted-foreground/80">{tRights}</p>
+      <p className="text-[0.7rem] leading-relaxed text-muted-foreground-subtle">{tRights}</p>
     </PageContainer>
   )
 }

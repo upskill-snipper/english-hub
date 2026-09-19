@@ -300,7 +300,7 @@ export default async function Cambridge0500HubPage() {
                       className="group/sec flex items-center justify-between gap-2 rounded-lg border border-border/40 bg-muted/20 px-3 py-2.5 text-body-sm text-muted-foreground transition-all hover:border-primary/40 hover:bg-primary/[0.04] hover:text-foreground"
                     >
                       <span>{section.label}</span>
-                      <ChevronRight className="size-3.5 shrink-0 text-muted-foreground/60 transition-transform group-hover/sec:translate-x-0.5 group-hover/sec:text-primary" />
+                      <ChevronRight className="size-3.5 shrink-0 text-muted-foreground-subtle transition-transform group-hover/sec:translate-x-0.5 group-hover/sec:text-primary" />
                     </Link>
                   ))}
                 </div>
@@ -477,7 +477,7 @@ export default async function Cambridge0500HubPage() {
       </section>
 
       {/* ── Footer note ─────────────────────────────────────────────── */}
-      <p className="text-center text-body-xs text-muted-foreground/60">
+      <p className="text-center text-body-xs text-muted-foreground-subtle">
         Aligns with Cambridge syllabus 0500
       </p>
     </div>

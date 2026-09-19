@@ -891,7 +891,7 @@ export default async function VocabularyPage() {
       </section>
 
       {/* ── Footer ────────────────────────────────────────────────────── */}
-      <p className="text-center text-body-xs text-muted-foreground/60">
+      <p className="text-center text-body-xs text-muted-foreground-subtle">
         Aligns with Cambridge syllabus 0500
       </p>
     </div>

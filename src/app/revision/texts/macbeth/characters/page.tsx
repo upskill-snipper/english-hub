@@ -483,7 +483,7 @@ export default function MacbethCharactersPage() {
                   {c.keyQuotes.map((q, i) => (
                     <div key={i} className="rounded-lg border border-border/60 p-3">
                       <p className="font-medium">&ldquo;{q.quote}&rdquo;</p>
-                      <p className="mt-0.5 text-xs text-muted-foreground/70">{q.context}</p>
+                      <p className="mt-0.5 text-xs text-muted-foreground-subtle">{q.context}</p>
                       <p className="mt-1.5 text-sm text-muted-foreground">
                         <span className="font-medium text-foreground">
                           {tr('rev.texts.common.analysis')}:{' '}

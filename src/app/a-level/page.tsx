@@ -155,7 +155,7 @@ export default async function ALevelHubPage() {
           AND every /a-level/* board sub-page from one source. */}
 
       {/* ── Footnote ───────────────────────────────────────────────── */}
-      <p className="text-center text-body-xs text-muted-foreground/60">{tFootnote}</p>
+      <p className="text-center text-body-xs text-muted-foreground-subtle">{tFootnote}</p>
     </div>
   )
 }
