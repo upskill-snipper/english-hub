@@ -168,3 +168,58 @@ describe('what the suite runs in', () => {
     ).toBeLessThanOrEqual(16)
   })
 })
+
+describe('regexes that can never match', () => {
+  /**
+   * A literal control character inside a regex literal.
+   *
+   * FOUND ON 19 SEPTEMBER 2026, by accident, while chasing my own instance of
+   * it. Writing a JavaScript regex from a script that interprets backslash-b
+   * produces a literal BACKSPACE (U+0008) where the word boundary was meant to
+   * be. The regex still compiles. It simply never matches anything, because no
+   * text contains a backspace character.
+   *
+   * Three live guards had it:
+   *
+   *   - `promises-match-the-product.test.ts` asserted the copy does not say
+   *     "unlimited" - and could not have failed if it did
+   *   - `rate-limit.test.ts` asserted a document does not claim limits are
+   *     "enforced across instances" - same
+   *   - `check-copy-quality.mjs`'s "unlimited" rule, in the gate that runs on
+   *     every commit, had never once fired
+   *
+   * All three passed for the right reason once repaired, so nothing was being
+   * hidden. That is luck, not design: each was a guard that could not fail,
+   * which is the exact shape this repository keeps finding.
+   */
+  const SOURCE_FILES = [
+    ...globSync(['src/**/*.ts', 'src/**/*.tsx'], { cwd: ROOT }),
+    ...globSync(['scripts/**/*.mjs'], { cwd: ROOT }),
+  ].map((f) => join(ROOT, f))
+
+  it('has files to check, or this assertion is vacuous in its own right', () => {
+    expect(SOURCE_FILES.length).toBeGreaterThan(200)
+  })
+
+  it('contains no literal backspace character', () => {
+    // U+0008 specifically, and only that. There is no legitimate use of a
+    // backspace in source, and it is the exact byte a mangled word-boundary escape leaves
+    // behind. U+0001 IS used deliberately in two places as a join delimiter
+    // (`tiles.join(...)` in the sentence builder, a composite key in
+    // check-eal-level-dupes), which is a real technique - so the rule is
+    // narrowed to the character that caused the defect rather than widened
+    // until it catches something innocent and gets relaxed.
+    const BACKSPACE = String.fromCharCode(8)
+    const offenders: string[] = []
+    for (const file of SOURCE_FILES) {
+      const text = readFileSync(file, 'utf8')
+      let at = text.indexOf(BACKSPACE)
+      while (at !== -1) {
+        const line = text.slice(0, at).split(String.fromCharCode(10)).length
+        offenders.push(`${file.replace(ROOT, '.')}:${line}`)
+        at = text.indexOf(BACKSPACE, at + 1)
+      }
+    }
+    expect(offenders).toEqual([])
+  })
+})

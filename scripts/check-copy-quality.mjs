@@ -169,7 +169,7 @@ const RULES = [
     id: 'unlimited-claim',
     chrome: 'error',
     content: 'off', // a literary text may legitimately use the word
-    test: (s) => /unlimited/i.test(s),
+    test: (s) => /\bunlimited\b/i.test(s),
     message: 'an "unlimited" claim - state the real allowance instead (every AI surface is capped)',
   },
   {

@@ -211,7 +211,7 @@ describe('billing surfaces that hardcode their own copy', () => {
   }
 
   it.each(BILLING_PAGES)('%s makes no unlimited claim', (rel) => {
-    expect(code(rel).toLowerCase()).not.toMatch(/unlimited/)
+    expect(code(rel).toLowerCase()).not.toMatch(/\bunlimited\b/)
   })
 
   it('does not tell a cancelling customer they lose human review', () => {

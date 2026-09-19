@@ -496,7 +496,7 @@ describe('a database fault fails OPEN, not closed', () => {
     const line = describeRateLimitHealth()
     expect(line).toContain('NOT PROVEN')
     expect(line).toContain('rate_limit_counter migration')
-    expect(line).not.toMatch(/enforced across instances/)
+    expect(line).not.toMatch(/\benforced across instances\b/)
   })
 
   it('reports cross-instance only after a decision has really been counted', async () => {
