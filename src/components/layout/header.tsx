@@ -165,13 +165,19 @@ export function Header() {
       aria-label={t('layout.region.header')}
       className="sticky top-5 z-40 mx-4 sm:mx-6 lg:mx-8"
     >
-      {/* Skip to content link for keyboard users */}
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:start-4 focus:top-2 focus:rounded-full focus:bg-[#E8A382] focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-[#0F1411] focus:shadow-lg"
-      >
-        Skip to main content
-      </a>
+      {/* THE SKIP LINK LIVES IN src/app/layout.tsx, NOT HERE (A11Y-7,
+          20 September 2026).
+
+          There used to be one in each, both pointing at #main-content, so a
+          keyboard user tabbed past two identical links before reaching the
+          page. Worse, this one was hard-coded English while the layout's is
+          translated, so on the Arabic surface the pair read as the Arabic skip
+          link followed by "Skip to main content".
+
+          The layout's is the one that survives: it is the first focusable
+          element in the body, which is where a skip link has to be, and it
+          goes through t(). This header renders inside that document, so a
+          second link here could only ever be the later of the two. */}
 
       {/* Pill-shaped floating navbar */}
       <div

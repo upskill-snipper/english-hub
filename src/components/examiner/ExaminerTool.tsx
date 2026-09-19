@@ -127,8 +127,18 @@ export function ExaminerTool() {
     setTab('mark')
   }
 
+  // A plain div, not `<main id="main-content">`, since A11Y-7 (20 September
+  // 2026). This component renders at /toolkit/examiner, a non-school route, so
+  // RootLayoutShell has already wrapped it in `<div id="main-content"
+  // role="main">`. A second one nested inside gave the page two main landmarks
+  // and two elements carrying the same id, so a screen reader offered "main"
+  // twice and the skip link's target was ambiguous.
+  //
+  // The school portal keeps its own <main> and is not a duplicate: the shell
+  // returns bare children for /school and /demo/school, so there it is the
+  // only one on the page.
   return (
-    <main id="main-content" className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <section className="border-b border-border bg-card">
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
           <Link
@@ -342,6 +352,6 @@ export function ExaminerTool() {
           provenance on the Grids and triggers tab before relying on a boundary.
         </p>
       </div>
-    </main>
+    </div>
   )
 }
