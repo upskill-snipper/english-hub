@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { readFileSync, existsSync } from 'node:fs'
+import { readFileSync, existsSync, globSync } from 'node:fs'
 import { join } from 'node:path'
 
 /**
@@ -27,6 +27,10 @@ import { join } from 'node:path'
  */
 
 const ROOT = process.cwd()
+/** Every test file in the repository, for the environment assertions below. */
+const ALL_TEST_FILES = globSync(['src/**/*.test.ts', 'src/**/*.test.tsx'], { cwd: ROOT }).map((f) =>
+  join(ROOT, f),
+)
 const HOOK_PATH = join(ROOT, '.husky/pre-push')
 const NEWLINE = String.fromCharCode(10)
 
@@ -136,5 +140,31 @@ describe('the documents that disagreed with the machine', () => {
     // It must go on to say where the gates DID end up, or it is still
     // describing a codebase with no gate at all.
     expect(arch.slice(at, at + 600)).toMatch(/pre-push/)
+  })
+})
+describe('what the suite runs in', () => {
+  const CONFIG = readFileSync(join(ROOT, 'vitest.config.ts'), 'utf8')
+
+  it('defaults to node, not jsdom', () => {
+    // MAINT-9. The default was jsdom for all 187 files while 13 use a DOM.
+    // Measured on 19 September 2026: cumulative environment setup fell from
+    // 200 seconds to 12, and the wall clock from 13.9 to 6.8. Flipping this
+    // back would undo that silently - every annotated file would still pass,
+    // so nothing else in the suite would notice.
+    expect(CONFIG).toMatch(/environment: 'node'/)
+  })
+
+  it('keeps the DOM annotation on the files that need one', () => {
+    // If the annotations were stripped, those files would fail outright, so
+    // this asserts the count has not GROWN - a DOM creeping into a file that
+    // does not need one is how the default became jsdom in the first place.
+    const annotated = ALL_TEST_FILES.filter((f) =>
+      readFileSync(f, 'utf8').includes('@vitest-environment jsdom'),
+    )
+    expect(annotated.length).toBeGreaterThan(0)
+    expect(
+      annotated.length,
+      'more files now claim to need a DOM - check each one',
+    ).toBeLessThanOrEqual(16)
   })
 })

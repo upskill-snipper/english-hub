@@ -1,3 +1,8 @@
+// @vitest-environment jsdom
+//
+// This file needs a DOM. The suite's default is `node` (MAINT-9): running
+// jsdom for all 187 files cost 148 seconds of environment setup against an
+// 11-second wall clock, for the 13 files that actually use one.
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { scoreToGrade, saveGameScore, getHighScore, getGameHistory } from '@/lib/game-scores'
 
@@ -115,10 +120,7 @@ describe('saveGameScore', () => {
   it('persists data to localStorage under the correct key', () => {
     saveGameScore('vocab-game', 7, 10)
 
-    expect(localStorageMock.setItem).toHaveBeenCalledWith(
-      'eh_game_vocab-game',
-      expect.any(String),
-    )
+    expect(localStorageMock.setItem).toHaveBeenCalledWith('eh_game_vocab-game', expect.any(String))
   })
 
   it('updates the high score when a higher percentage is achieved', () => {
@@ -178,8 +180,8 @@ describe('getHighScore', () => {
   })
 
   it('compares by percentage, not raw score', () => {
-    saveGameScore('quiz-1', 4, 5)   // 80%
-    saveGameScore('quiz-1', 7, 10)  // 70%
+    saveGameScore('quiz-1', 4, 5) // 80%
+    saveGameScore('quiz-1', 7, 10) // 70%
 
     const high = getHighScore('quiz-1')
     expect(high!.percentage).toBe(80)

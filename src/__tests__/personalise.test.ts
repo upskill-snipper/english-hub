@@ -1,3 +1,8 @@
+// @vitest-environment jsdom
+//
+// This file needs a DOM. The suite's default is `node` (MAINT-9): running
+// jsdom for all 187 files cost 148 seconds of environment setup against an
+// 11-second wall clock, for the 13 files that actually use one.
 // ─── Personalised revision profile: quiz-history schema regression tests ────
 // Guards the writer/reader contract for 'english-hub-quiz-history'. The
 // original bug: the quiz engine wrote RAW correct counts into `score` while

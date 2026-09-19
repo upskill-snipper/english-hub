@@ -418,6 +418,41 @@ was wrong in the dangerous direction.
 
 ---
 
+## 8a. What the suite proves, and what it costs
+
+**Measured 19 September 2026 (MAINT-9).**
+
+`npx vitest run` is 3,246 passing tests across 185 files in about **7 seconds**.
+It was 14 seconds until the default environment was changed from `jsdom` to
+`node`: jsdom was being built for all 187 files although 13 use a DOM, costing
+200 seconds of cumulative environment setup. Those 13 now carry
+`// @vitest-environment jsdom` at the top of the file. If you add a test that
+touches `document`, `window` or `localStorage`, add that line or it will fail
+immediately and loudly, which is the intended behaviour.
+
+**Statement coverage is 10.82%** (`npx vitest run --coverage`; branch 8.78%,
+functions 7%). Treat that as a ratchet, not a target: it should not go down.
+It is low because the suite is deliberately made of structural and contract
+tests aimed at specific defects rather than line-coverage tests, and because
+**every database call is mocked** - that is the limitation named in section 4,
+and it is why the suite passed throughout both model-retirement outages.
+
+Two things the suite still does not run, both blocked rather than forgotten:
+
+- **`npm run eval:marking`** makes real Anthropic calls. It needs an API key in
+  GitHub Actions secrets, which only the account owner can set.
+- **The seven Playwright specs in `e2e/`** run nowhere. Adding them - or the
+  evals - to `ci.yml` is pointless until the pipeline itself is repaired: it has
+  been failing at `npm ci` on every run and the failing log is not readable from
+  this machine (`gh` is not signed in here). See REL-10.
+
+`src/__tests__/TEST_PLAN.md` is from March and describes a much smaller suite.
+It carries a banner saying so. It is kept dated rather than refreshed, because
+the date is the only honest signal a reader has that it predates almost
+everything in the directory around it.
+
+---
+
 ## 9. How to work here
 
 - **Verify before you claim.** The single most costly habit in this project's
