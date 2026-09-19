@@ -17,9 +17,54 @@
 // The function returns at most 5 recommendations, sorted by priority
 // (1 = highest urgency). Each recommendation has a clear "Practise X"
 // CTA plus an `href` the UI can link to.
+//
+// ── WHERE THOSE hrefs USED TO GO ────────────────────────────────────────────
+// Nowhere. Checked against src/app on 20 September 2026: /poems/<slug>,
+// /texts/<slug>, /revision/quiz/<slug> and /reading/comprehension are not
+// routes this application has ever served, so heuristics 1 to 4 produced a
+// correctly prioritised list of 404s. Destinations now come from
+// `./hrefs`, which can only return a route that exists.
+//
+// ── AND WHICH OF THESE TABLES EXIST ─────────────────────────────────────────
+// Probed against production the same day, because the block below says it
+// will "tolerate any individual table miss" and `?? []` makes a missing table
+// indistinguishable from an empty one:
+//
+//   progress_poems        exists, 0 rows
+//   progress_games        exists, 0 rows
+//   progress_quizzes      exists, 0 rows
+//   progress_reading_age  exists, 0 rows
+//   reading_assessments   DOES NOT EXIST
+//   poems                 DOES NOT EXIST
+//
+// So heuristics 3 and 4 cannot fire at all today, and the other three have no
+// rows to fire on. The queries are kept because the logic is right and the
+// tables are the missing half, but a miss is now logged rather than swallowed:
+// silence is what let two absent tables read as "this student has done
+// nothing" for as long as anybody has been looking.
 // ─────────────────────────────────────────────────────────────────────────────
 
-import type { SupabaseClient } from '@supabase/supabase-js'
+import type { SupabaseClient, PostgrestError } from '@supabase/supabase-js'
+
+import { poemHref, textHref, quizHref, gamesHref, COMPREHENSION } from './hrefs'
+
+/**
+ * Report a query that failed, and say whether the table is simply absent.
+ *
+ * PostgREST answers PGRST205 for a table that is not in the schema cache,
+ * which is a different problem from a permissions or syntax error and wants a
+ * different fix. Returning the rows regardless keeps a new student working.
+ */
+function rowsOf<T>(table: string, res: { data: unknown; error: PostgrestError | null }): T[] {
+  if (res.error) {
+    const absent = res.error.code === 'PGRST205'
+    console.error(
+      `[recommendations] ${absent ? 'TABLE MISSING' : 'query failed'}: ${table} - ${res.error.message}`,
+    )
+    return []
+  }
+  return (res.data as T[] | null) ?? []
+}
 
 // ─── Public Types ───────────────────────────────────────────────────────────
 
@@ -176,10 +221,10 @@ export async function getFocusRecommendations(
     supabase.from('profiles').select('exam_board').eq('id', userId).maybeSingle<ProfileRow>(),
   ])
 
-  const poems: ProgressPoemRow[] = (poemsRes.data as ProgressPoemRow[] | null) ?? []
-  const games: ProgressGameRow[] = (gamesRes.data as ProgressGameRow[] | null) ?? []
-  const quizzes: ProgressQuizRow[] = (quizzesRes.data as ProgressQuizRow[] | null) ?? []
-  const readings: ReadingAssessmentRow[] = (readingRes.data as ReadingAssessmentRow[] | null) ?? []
+  const poems = rowsOf<ProgressPoemRow>('progress_poems', poemsRes)
+  const games = rowsOf<ProgressGameRow>('progress_games', gamesRes)
+  const quizzes = rowsOf<ProgressQuizRow>('progress_quizzes', quizzesRes)
+  const readings = rowsOf<ReadingAssessmentRow>('reading_assessments', readingRes)
   const board: string | null = profileRes.data?.exam_board ?? null
 
   const recs: FocusRecommendation[] = []
@@ -205,10 +250,10 @@ export async function getFocusRecommendations(
         action: {
           label: `Practise ${niceName}`,
           href: q.poem_slug
-            ? `/poems/${q.poem_slug}`
+            ? poemHref(q.poem_slug, board)
             : q.text_slug
-              ? `/texts/${q.text_slug}`
-              : `/revision/quiz/${q.quiz_slug}`,
+              ? textHref(q.text_slug)
+              : quizHref(q.quiz_slug),
         },
       },
       seen,
@@ -237,7 +282,7 @@ export async function getFocusRecommendations(
           )} days ago but haven't studied it yet.`,
           action: {
             label: `Practise ${prettySlug(p.poem_slug)}`,
-            href: `/poems/${p.poem_slug}`,
+            href: poemHref(p.poem_slug, board),
           },
         },
         seen,
@@ -269,7 +314,7 @@ export async function getFocusRecommendations(
           reason: `"${prettySlug(candidate.slug)}" is one of the most-studied poems on your board and you haven't started it yet.`,
           action: {
             label: `Practise ${prettySlug(candidate.slug)}`,
-            href: `/poems/${candidate.slug}`,
+            href: poemHref(candidate.slug, board),
           },
         },
         seen,
@@ -294,7 +339,7 @@ export async function getFocusRecommendations(
           reason: `Your reading age has been flat across your last ${series.length} sessions. A short comprehension challenge will push it up.`,
           action: {
             label: 'Practise comprehension',
-            href: '/reading/comprehension',
+            href: COMPREHENSION,
           },
         },
         seen,
@@ -339,20 +384,20 @@ export async function getFocusRecommendations(
       {
         priority: 3,
         reason: 'Try a fresh quiz to surface your next weak spot.',
-        action: { label: 'Practise a quiz', href: '/revision/quiz' },
+        action: { label: 'Practise a quiz', href: quizHref() },
       },
       {
         priority: 3,
         reason: 'A short comprehension exercise builds reading stamina.',
         action: {
           label: 'Practise comprehension',
-          href: '/reading/comprehension',
+          href: COMPREHENSION,
         },
       },
       {
         priority: 3,
         reason: 'Quick games help vocabulary stick.',
-        action: { label: 'Practise with a game', href: '/games' },
+        action: { label: 'Practise with a game', href: gamesHref() },
       },
     ]
     for (const f of fallbacks) {
