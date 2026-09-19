@@ -7,6 +7,7 @@ import { isAiOptedOut } from '@/lib/ai-preferences'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { MARK_SCHEMES, type MarkScheme } from '@/lib/marking/mark-schemes'
+import { resolvePrefill } from '@/lib/marking/submit-prefill'
 import { isSpecVerified } from '@/lib/marking/examiner/verification'
 import { useT } from '@/lib/i18n/use-t'
 import { DictationButton } from '@/components/speech/DictationButton'
@@ -218,6 +219,10 @@ export default function SubmitEssayPage() {
   const [paper, setPaper] = useState<string>('')
   const [question, setQuestion] = useState<string>('')
   const [title, setTitle] = useState<string>('')
+  // The text the answer is about. The marking API has accepted `studiedText`
+  // all along, persists it, and marker.ts injects it into the prompt as
+  // context - and this page never sent it. See the prefill effect below.
+  const [studiedText, setStudiedText] = useState<string>('')
   const [essay, setEssay] = useState<string>('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -255,6 +260,48 @@ export default function SubmitEssayPage() {
     [selectedPaper],
   )
 
+  /**
+   * Prefill the form from the URL, once, on mount.
+   *
+   * WHY `window.location` RATHER THAN `useSearchParams`. useSearchParams forces
+   * a Suspense boundary and opts the route out of static rendering. Reading the
+   * query on mount is exactly as correct here, because a prefill is a
+   * client-side convenience by definition, and it costs the route nothing.
+   *
+   * The resolution itself lives in resolvePrefill() so it can be tested without
+   * a browser, and so that everything is validated against the live registry in
+   * one pass rather than through the board -> paper -> question state chain,
+   * which needs three renders to settle and can half-apply. See that file for
+   * why nothing here is trusted.
+   *
+   * AN EXPLICIT LINK WINS, and this ordering was wrong on the first attempt.
+   * Two effects above already set the board: one from the site-wide board
+   * cookie, one restoring a draft stashed before a sign-in round trip. Guarding
+   * these setters with `current || ...` let a stale cookie beat the link, and a
+   * student clicking "get this marked" on an Edexcel IGCSE anthology page
+   * landed on an AQA paper. Verified against a production build: board came out
+   * AQA and paper aqa-lang-paper1 for an Edexcel IGCSE link.
+   *
+   * A URL is a more recent and more specific signal than a stored default, so
+   * it now sets outright. This cannot clobber anything the student has typed:
+   * the effect runs once on mount, before there is anything to clobber, and a
+   * URL with no parameters returns early and touches nothing.
+   */
+  useEffect(() => {
+    let params: URLSearchParams
+    try {
+      params = new URLSearchParams(window.location.search)
+    } catch {
+      return
+    }
+    const prefill = resolvePrefill(params, boardOptions, Object.values(MARK_SCHEMES))
+    if (prefill.board) setBoard(prefill.board)
+    if (prefill.paper) setPaper(prefill.paper)
+    if (prefill.question) setQuestion(prefill.question)
+    if (prefill.title) setTitle(prefill.title)
+    if (prefill.studiedText) setStudiedText(prefill.studiedText)
+  }, [boardOptions])
+
   const wordCount = countWords(essay)
   const canSubmit =
     Boolean(selectedBoard?.available) &&
@@ -285,6 +332,7 @@ export default function SubmitEssayPage() {
       paper: string
       questionText: string
       questionType?: string
+      studiedText?: string
       studentAnswer: string
       markSchemeId: string
       questionId: string
@@ -305,6 +353,7 @@ export default function SubmitEssayPage() {
             paper: args.paper,
             questionText: args.questionText,
             questionType: args.questionType,
+            studiedText: args.studiedText,
             studentAnswer: args.studentAnswer,
             markSchemeId: args.markSchemeId,
             questionId: args.questionId,
@@ -424,6 +473,7 @@ export default function SubmitEssayPage() {
         paper: paperLabel,
         questionText: questionLabel,
         questionType,
+        studiedText: studiedText.trim() || undefined,
         studentAnswer: essay,
         markSchemeId,
         questionId: question,
@@ -594,6 +644,13 @@ export default function SubmitEssayPage() {
       question,
       questionOptions,
       title,
+      // Added 19 September 2026, and caught by lint rather than by a test.
+      // `studiedText` is read inside this callback but is set by the URL
+      // prefill effect AFTER mount, so without it here the callback would
+      // close over the initial empty string and submit no studied text at
+      // all - silently, with the field visibly populated. The same class of
+      // stale-closure bug the comment above describes.
+      studiedText,
       essay,
       wordCount,
       canSubmit,

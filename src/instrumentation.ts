@@ -18,8 +18,46 @@
 // test asserting neither exists.
 
 export async function register() {
+  // ── PERF-3. Do not load the Sentry SDK when there is nowhere to send ───────
+  //
+  // Both branches used to import `../sentry.server.config` unconditionally, and
+  // that config calls `Sentry.init({ dsn: process.env.SENTRY_DSN })`. SENTRY_DSN
+  // is not set in this project - it is absent from `.env.local`, which IS
+  // production - so the edge runtime pulled in a 254 KB bundle on essentially
+  // every request in order to configure an error reporter with no address.
+  //
+  // Middleware runs on nearly everything, so this was not an occasional
+  // cold-start cost. It was paid on the JSON and asset requests a page makes
+  // after load as well.
+  //
+  // READ AT REQUEST TIME, NOT MODULE SCOPE. If Calum sets SENTRY_DSN in Vercel,
+  // reporting must start working without anyone editing this file. A
+  // module-scope constant would be evaluated once and could be inlined by the
+  // bundler, baking today's absence in permanently - a worse bug than the one
+  // being fixed, and an invisible one.
+  //
+  // WHAT THIS DOES AND DOES NOT BUY, MEASURED RATHER THAN ASSUMED. The backlog
+  // item proposed this so that "the edge bundle drops the SDK until the owner
+  // adds one". It does not, and two full production builds say so:
+  //
+  //   edge-instrumentation.js   before 260,543 bytes   after 260,567 bytes
+  //
+  // It grew by the 24 bytes of the guard, and the Sentry SDK is still in there.
+  // The reason is that plain SENTRY_DSN is NOT inlined at build time on the
+  // server, so webpack cannot prove this branch dead and keeps the import.
+  // The client side does get the bundle saving (instrumentation-client.ts)
+  // precisely because NEXT_PUBLIC_SENTRY_DSN is inlined.
+  //
+  // So what is fixed here is the WORK, not the bytes: Sentry.init() no longer
+  // runs on every edge invocation. Dropping the 254 KB as well would mean
+  // gating on a build-time-inlined variable, which buys the bytes at the cost
+  // of needing a redeploy before a newly set DSN takes effect. That is a
+  // trade-off for the owner to make, not one to slip in, and it is recorded in
+  // the work log rather than done here.
+  const hasDsn = Boolean(process.env.SENTRY_DSN)
+
   if (process.env.NEXT_RUNTIME === 'nodejs') {
-    await import('../sentry.server.config')
+    if (hasDsn) await import('../sentry.server.config')
 
     // Report missing/misconfigured environment variables at server startup.
     // validateEnv() was written for exactly this but was never wired in, so a
@@ -38,7 +76,7 @@ export async function register() {
   }
 
   if (process.env.NEXT_RUNTIME === 'edge') {
-    await import('../sentry.server.config')
+    if (hasDsn) await import('../sentry.server.config')
   }
 }
 
