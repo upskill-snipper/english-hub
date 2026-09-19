@@ -234,3 +234,122 @@ describe('question labels', () => {
     expect(page).toContain('marks)`')
   })
 })
+
+// ─── The funnel ─────────────────────────────────────────────────────────
+
+/**
+ * UX-2's last piece, added 19 September 2026.
+ *
+ * The board pre-select, the upgrade card and the draft store all landed. The
+ * analytics did not, and they are the half that answers the question the item
+ * was raised for: `marking_submissions` has never held a row, and nothing
+ * recorded whether visitors were being refused or were never reaching the
+ * button. Those need different fixes, and without an event you cannot tell
+ * them apart.
+ */
+describe('the conversion screen reports what happened', () => {
+  const posthog = readFileSync(join(process.cwd(), 'src/lib/posthog.ts'), 'utf8')
+
+  it('fires a success event', () => {
+    expect(page).toContain('PH_EVENTS.FIRST_ESSAY_SUBMITTED')
+  })
+
+  it('and a refusal event', () => {
+    expect(page).toContain('PH_EVENTS.MARKING_REFUSED')
+  })
+
+  it('both of which are real event names', () => {
+    // Asserted against the constants rather than the string, because an event
+    // fired under a name nothing else knows is a row no funnel will ever join.
+    expect(posthog).toContain("FIRST_ESSAY_SUBMITTED: 'first_essay_submitted'")
+    expect(posthog).toContain("MARKING_REFUSED: 'marking_refused'")
+  })
+
+  it('through the consent-gated wrapper, never posthog directly', () => {
+    // THE ASSERTION THAT MATTERS on a product with child users. `capture()`
+    // returns false for minors and for anyone who has not consented; importing
+    // posthog-js here would bypass both.
+    expect(page).toContain(
+      "import { capture as phCapture, EVENTS as PH_EVENTS } from '@/lib/posthog'",
+    )
+    expect(page).not.toMatch(/from 'posthog-js'/)
+  })
+
+  it('records the status code, so a 401 and a 403 are distinguishable', () => {
+    // The whole point of the refusal event. "Refused" without the code cannot
+    // tell a paywall from a signed-out visitor or a rate limit, and those need
+    // opposite fixes. Checked at every refusal site, not just the first.
+    const sites = page.split('PH_EVENTS.MARKING_REFUSED').slice(1)
+    expect(sites.length, 'expected a refusal event at create, at run and on the legacy path').toBe(
+      3,
+    )
+    for (const site of sites) {
+      const call = site.slice(0, 260)
+      expect(call, 'a refusal event without a status code').toMatch(/status: \w+\.status/)
+      expect(call, 'a refusal event without a consent code').toContain('consentCode')
+    }
+  })
+
+  it('and reports the consent refusals too, not only the ones that fall through', () => {
+    // THE ORDERING ASSERTION, and it has to be made at EVERY consent branch.
+    // Each one short-circuits: `return { consentRefusal }` in the spine, and a
+    // `setConsentRefusal(...); return` on the legacy path. A capture placed
+    // after any of them silently misses every consent-blocked attempt, which
+    // on a children's product is the population this item cares about most.
+    //
+    // A first version of this checked only the first occurrence of each, and a
+    // mutation that moved the legacy capture past its early return passed. So
+    // this walks every branch and asserts a capture sits just above it.
+    const branches = [
+      ...page.matchAll(/if \(refusal\) return \{ consentRefusal: refusal \}/g),
+      ...page.matchAll(/if \(refusal\) \{\s+setConsentRefusal\(refusal\)/g),
+    ].map((m) => m.index ?? -1)
+
+    expect(branches.length, 'expected three consent short-circuits').toBe(3)
+
+    for (const at of branches) {
+      const before = page.slice(Math.max(0, at - 500), at)
+      expect(
+        before,
+        'a consent refusal short-circuits with no MARKING_REFUSED above it, so it is never counted',
+      ).toContain('PH_EVENTS.MARKING_REFUSED')
+    }
+  })
+
+  it('fires success on BOTH submission paths, not just the fallback', () => {
+    // THE ASSERTION THAT CAUGHT THE FIRST ATTEMPT AT THIS. There are two
+    // success paths: the submission spine, and a legacy /api/mark fallback
+    // taken only when the spine is unavailable. The first version of this
+    // instrumented the fallback alone, which is the path almost nobody takes,
+    // so the funnel would have read as near-zero conversions and looked like
+    // confirmation of the very problem the item was raised about.
+    const fires = page.split('PH_EVENTS.FIRST_ESSAY_SUBMITTED').length - 1
+    expect(fires, 'expected a success event on the spine path and the legacy path').toBe(2)
+    expect(page).toContain("path: 'spine'")
+    expect(page).toContain("path: 'legacy'")
+  })
+
+  it('and fires each one before its own navigation, not after', () => {
+    // router.push unmounts this component, so a capture after it can be lost.
+    // Checked per path rather than once, because a single indexOf compares the
+    // second capture against the first push and passes for the wrong reason.
+    for (const [captureTag, pushExpr] of [
+      ["path: 'spine'", 'router.push(`/marking/results/${spine.submissionId}`)'],
+      ["path: 'legacy'", 'router.push(`/marking/results/${id}`)'],
+    ]) {
+      const captureAt = page.indexOf(captureTag)
+      const pushAt = page.indexOf(pushExpr)
+      expect(captureAt, `${captureTag} not found`).toBeGreaterThan(-1)
+      expect(pushAt, `${pushExpr} not found`).toBeGreaterThan(-1)
+      expect(captureAt, `${captureTag} fires after its navigation`).toBeLessThan(pushAt)
+    }
+  })
+
+  it('reports refusals at both stages, with the stage named', () => {
+    // A submission refused at create never existed; one refused at run is
+    // saved but unmarked, and the student has been charged an attempt. Those
+    // need different fixes, so the event has to say which happened.
+    expect(page).toContain("stage: 'create'")
+    expect(page).toContain("stage: 'run'")
+  })
+})

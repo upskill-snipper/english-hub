@@ -299,6 +299,13 @@ export const EVENTS = {
   SIGNUP_STARTED: 'signup_started',
   SIGNUP_COMPLETED: 'signup_completed',
   FIRST_ESSAY_SUBMITTED: 'first_essay_submitted',
+  /**
+   * A marking attempt the server refused. UX-2: /marking/submit is the screen
+   * where a trialist decides the product works, and `marking_submissions` has
+   * never held a row. Without this, a refusal is indistinguishable from a
+   * visitor who simply never tried, so the funnel cannot show which it was.
+   */
+  MARKING_REFUSED: 'marking_refused',
   SUBSCRIPTION_STARTED: 'subscription_started',
   SUBSCRIPTION_PAID_CONVERTED: 'subscription_paid_converted',
 } as const

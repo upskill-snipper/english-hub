@@ -16,6 +16,7 @@ import { readConsentRefusal, type AIConsentRefusal } from '@/components/consent/
 import { markingBoardFor, readSiteBoardCookie } from '@/lib/board/marking-board-map'
 import { PRICING } from '@/constants/pricing'
 import { saveMarkingDraft, takeMarkingDraft } from '@/lib/marking/draft-store'
+import { capture as phCapture, EVENTS as PH_EVENTS } from '@/lib/posthog'
 
 /* ─── Board catalogue ──────────────────────────────────────── */
 
@@ -413,6 +414,16 @@ export default function SubmitEssayPage() {
         // offer the decision in place. Recognised by the machine-readable
         // code, never by the 403 alone, which is also "not a subscriber".
         const refusal = readConsentRefusal(createRes.status, body)
+        // UX-2. Reported here rather than at the call site because `failed`
+        // carries only a friendly sentence: the status code, which is the
+        // thing that distinguishes a paywall from a signed-out visitor from a
+        // rate limit, does not survive the return.
+        phCapture(PH_EVENTS.MARKING_REFUSED, {
+          status: createRes.status,
+          consentCode: refusal?.code ?? null,
+          stage: 'create',
+          surface: 'marking/submit',
+        })
         if (refusal) return { consentRefusal: refusal }
         return { failed: friendlyError(createRes.status, message) }
       }
@@ -454,6 +465,15 @@ export default function SubmitEssayPage() {
             /* non-JSON */
           }
           const refusal = readConsentRefusal(runRes.status, body)
+          // The essay is saved by this point but unmarked, which is a
+          // different failure from being refused at the door and needs a
+          // different fix. Hence `stage`.
+          phCapture(PH_EVENTS.MARKING_REFUSED, {
+            status: runRes.status,
+            consentCode: refusal?.code ?? null,
+            stage: 'run',
+            surface: 'marking/submit',
+          })
           if (refusal) return { consentRefusal: refusal }
           return { failed: friendlyError(runRes.status, message) }
         }
@@ -551,6 +571,16 @@ export default function SubmitEssayPage() {
         } catch {
           /* ignore localStorage errors - server is the source of truth */
         }
+        // THE path this item is about: "fire first_essay_submitted on spine
+        // success". The legacy fallback below fires the same event, tagged
+        // differently, so the two can be told apart when the spine is down.
+        phCapture(PH_EVENTS.FIRST_ESSAY_SUBMITTED, {
+          board,
+          paper,
+          questionType: questionLabel,
+          surface: 'marking/submit',
+          path: 'spine',
+        })
         router.push(`/marking/results/${spine.submissionId}`)
         return
       }
@@ -581,6 +611,18 @@ export default function SubmitEssayPage() {
             /* non-JSON body */
           }
           const refusal = readConsentRefusal(res.status, errBody)
+          // UX-2. Every refusal is reported, including the consent one below,
+          // which returns early. Without this a refusal looks identical to a
+          // visitor who never tried: `marking_submissions` has never held a
+          // row, and nothing recorded whether people were being turned away or
+          // were not getting this far. `phCapture` is the consent-gated
+          // wrapper, so minors and non-consenting visitors send nothing.
+          phCapture(PH_EVENTS.MARKING_REFUSED, {
+            status: res.status,
+            consentCode: refusal?.code ?? null,
+            board,
+            paper,
+          })
           if (refusal) {
             setConsentRefusal(refusal)
             setIsSubmitting(false)
@@ -656,6 +698,18 @@ export default function SubmitEssayPage() {
         } catch {
           /* ignore localStorage errors */
         }
+
+        // The other half of the funnel. Fired on every success; PostHog's own
+        // once-per-user analysis is what makes it "first", which is cheaper and
+        // more reliable than deciding that here. Same event the essay-feedback
+        // page fires, so the two marking surfaces are comparable.
+        phCapture(PH_EVENTS.FIRST_ESSAY_SUBMITTED, {
+          board,
+          paper,
+          questionType: questionLabel,
+          surface: 'marking/submit',
+          path: 'legacy',
+        })
 
         router.push(`/marking/results/${id}`)
       } catch (err) {
