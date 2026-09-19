@@ -1,13 +1,40 @@
 // ─── 4EA1/01 Calibration Pack ────────────────────────────────────────────────
 // Standardised examiner judgements for Pearson Edexcel International GCSE English
-// Language A (4EA1) Paper 1, distilled from an official OLS standardisation pack
-// (Series 2606GQ): 5 standardised scripts per question (P1-P5) spanning the mark
-// range, each with the mark/level awarded and a short ORIGINAL paraphrase of the
-// examiner's reasoning. No candidate script text or verbatim board text is
-// reproduced - only the marks and a condensed rationale (derived analysis).
+// Language A (4EA1) Paper 1, distilled from the official OLS standardisation pack
+// for Series 2606GQ: 5 standardised scripts per question spanning the mark range,
+// each with the mark awarded and a short ORIGINAL paraphrase of the examiner's
+// reasoning. No candidate script text or verbatim board text is reproduced -
+// only the marks and a condensed rationale (derived analysis).
 //
 // Consumed by ../calibration/index.ts -> getCalibrationAnchor(), which injects a
 // compact anchor block into the marking system prompt for in-context calibration.
+//
+// ── 19 SEPTEMBER 2026: EIGHT OF THE TEN Q4/Q5 MARKS WERE WRONG ───────────────
+//
+// The Q4 and Q5 anchors did not match the standardisation pack they cited. The
+// pack was re-read from source (items 4EA1_01_Q04 and 4EA1_01_Q05, five
+// responses each) and the marks corrected:
+//
+//   Q4  was 1, 4, 6, 9, 11   is 3, 6, 7, 10, 11
+//   Q5  was 6, 11, 13, 16, 21   is 6, 10, 14, 18, 22
+//
+// Five of the corrections are stated in the standardisers' own words on the
+// script: "Top of level 3" (7), "So this scores 10", "just into the band above
+// for level 4 on 14", "Top of level 4" (18) and "This is full marks" (22). The
+// remainder are consistent with the level boundaries in the 4EA1/01 mark scheme
+// and with the annotation on each script.
+//
+// WHY IT MATTERED. These summaries go into the marking prompt as the model's
+// only concrete sense of what a given mark looks like. Every Q4 anchor was too
+// LOW by two or three marks, so the marker had been calibrated to under-mark
+// the analysis question on a paid feature used by children. Nothing failed and
+// nothing reported an error; the marks were simply a little mean, everywhere.
+//
+// The `rules` arrays now also carry the discriminators the standardisers
+// actually applied - missing references as the Level 3 ceiling, "explores
+// rather than analyses" as the Level 4 ceiling, and the number of comparisons
+// as the main driver on Q5. Those are what move a mark, and none of them is
+// deducible from the level descriptors alone.
 // ────────────────────────────────────────────────────────────────────────────
 
 import type { CalibrationPack } from './index'
@@ -89,32 +116,39 @@ export const EDEXCEL_IGCSE_LANG_PAPER1_CALIBRATION: CalibrationPack = {
     rules: [
       'Best-fit against the AO2 grid; reward analysis of BOTH language and structure and the effects created.',
       'Material analysed from outside the directed lines is not credited.',
+      // The three rules below are the discriminators the standardisers actually
+      // applied, taken from what they wrote next to each script rather than
+      // from the level descriptors. They are what moves a mark, and they are
+      // not obvious from the grid alone.
+      'REFERENCES ARE THE USUAL CEILING. A valid, even detailed, point made without a supporting quotation does not move beyond Level 3, however well expressed. The standardisers wrote some version of "needs a relevant reference" on almost every script below Level 4.',
+      'THE EFFECT MUST BE TIED TO THIS TEXT. Naming a device and attaching a generic effect is Level 3 at best; the response has to say what the device does here, in this passage.',
+      'LEVEL 4 EXPLORES, LEVEL 5 ANALYSES, AND SUSTAINS IT. "Explores rather than analyses" is the phrase that holds a strong response at the top of Level 4. Analysis that starts but is not maintained across the response sits at 11, not 12.',
     ],
     exemplars: [
       {
-        ref: 'Q4·P1',
+        ref: 'Q4·R1',
         summary:
-          '1/12 (Level 1): very brief; an example is selected but with no comment or understanding.',
+          '3/12 (Level 2): more secure than Level 1, but self-limiting - points are made and then left, without the development needed to rise.',
       },
       {
-        ref: 'Q4·P2',
+        ref: 'Q4·R2',
         summary:
-          '4/12 (Level 2): some understanding of the writer’s thoughts but not enough for Level 3; best fit at top of Level 2.',
+          '6/12 (Level 3): explains a language feature but does not apply it to the effect in this particular text, so the comment stays generic; not enough development for Level 4.',
       },
       {
-        ref: 'Q4·P3',
+        ref: 'Q4·R3',
         summary:
-          '6/12 (Level 3): clear understanding; a range of devices identified with examples and some explanation; secure mid-Level 3.',
+          '7/12 (top of Level 3): relevant, detailed points including some sense of a change in tone, but references are missing throughout; the absence of quotation is explicitly the limiting factor.',
       },
       {
-        ref: 'Q4·P4',
+        ref: 'Q4·R4',
         summary:
-          '9/12 (Level 4): articulate; explores language and structure but repeats points and is not always focused; best fit mid-Level 4.',
+          '10/12 (top of Level 4): relevant references with some drilling down, and a well-handled transition point; explores rather than analyses, and one point fails to show how the tension builds.',
       },
       {
-        ref: 'Q4·P5',
+        ref: 'Q4·R5',
         summary:
-          '11/12 (Level 5): a wide range of points with effective, thoughtful analysis of both language and structure.',
+          '11/12 (Level 5): begins to analyse, with strong focus on the text and a link to the reader’s reaction; perceptive but under-exemplified in one or two places, so the analysis is not sustained enough for full marks.',
       },
     ],
   },
@@ -123,32 +157,36 @@ export const EDEXCEL_IGCSE_LANG_PAPER1_CALIBRATION: CalibrationPack = {
     rules: [
       'Best-fit against the AO3 grid; reward balanced, well-referenced comparison of the writers’ ideas and perspectives.',
       'SINGLE-TEXT CAP: a response that addresses only one of the two texts can reach no higher than the top of Level 2 (8 marks).',
+      // As with Q4, these are the standardisers' own discriminators.
+      'THE RANGE OF COMPARISONS IS THE MAIN DRIVER. Three or four comparisons is "some range", which places a response in Level 3 or the lower half of Level 4 however well written it is. Level 5 requires a varied and comprehensive range, and a response with only three or four comparisons was held at the top of Level 4 for exactly this reason.',
+      'MOVING BEYOND THE OBVIOUS IS THE LEVEL 3 TO LEVEL 4 GATE. Obvious comparisons (both are about an accident, both use the present tense) are Level 2 to 3; noticing tone, rhythm, structure or the writers’ craft is what crosses into Level 4.',
+      'REFERENCES MUST BE BALANCED ACROSS BOTH TEXTS from Level 4 upwards, and discriminating at Level 5. A response weighted towards one text is capped below Level 4 even when its comparisons are good.',
     ],
     exemplars: [
       {
-        ref: 'Q5·P1',
+        ref: 'Q5·R1',
         summary:
-          '6/22 (Level 2): brief but focused; a few valid comparisons and some vocabulary identified.',
+          '6/22 (lower end of Level 2): basic comparison, enough to move out of Level 1; no explanation, weak comparisons, no range, and only slight exemplification. Not remotely analytical.',
       },
       {
-        ref: 'Q5·P2',
+        ref: 'Q5·R2',
         summary:
-          '11/22 (Level 3): obvious comparisons plus some more developed points; very little direct quotation, so points lack substantiation.',
+          '10/22 (Level 3): three or four comparisons so some range, touching on structure and attempting to explain effects, but with no real explanation and too short to be thorough.',
       },
       {
-        ref: 'Q5·P3',
+        ref: 'Q5·R3',
         summary:
-          '13/22 (Level 3): secure Level 3; a range of comparisons with appropriate references from both texts.',
+          '14/22 (bottom of Level 4): moves beyond the obvious, with a reference from each text and some precise, fine-grained exploration including a comparison of helplessness; effect on the reader present but not developed, and one impressive-sounding idea is not exemplified. Better than top of Level 3, so just into the band above.',
       },
       {
-        ref: 'Q5·P4',
+        ref: 'Q5·R4',
         summary:
-          '16/22 (Level 4): a wide range of comparisons; a strong first half that tails off towards the end.',
+          '18/22 (top of Level 4): real precision, critical vocabulary, references ranged across both texts and well balanced, thoughtful exploration of the writers’ craft; held below Level 5 because there are still only three or four comparisons, so the range is not comprehensive.',
       },
       {
-        ref: 'Q5·P5',
+        ref: 'Q5·R5',
         summary:
-          '21/22 (Level 5): a wide, comprehensive range of comparisons with analysis of ideas/perspectives and discriminating references.',
+          '22/22 (Level 5, full marks): references balanced across both texts and genuinely discriminating - nuanced and perceptive; ideas mature and analytical throughout, terminology correct and well developed, with no lapses and consistency maintained.',
       },
     ],
   },
