@@ -57,9 +57,22 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   // pass their signal.
   const isStub = isStubSetText(text.slug)
 
+  // The description has to match what the body actually renders. It used to
+  // promise "characters, themes, key quotations and exam-ready analysis" on
+  // every one of the 73 texts, including the ones where the body is a title, an
+  // author and a row of links - the body guards on `text.description` and
+  // `text.keyThemes`, and the metadata did not. Four rows added on
+  // 19 September 2026 (Blessing, Search For My Tongue, Poem at Thirty-Nine,
+  // Prayer Before Birth) carry neither, because writing seven summaries to make
+  // the cards look uniform would have been invention. So the sentence is now
+  // conditional on there being something to describe.
+  const hasWrittenContent = Boolean(text.description)
+
   return {
     title: `${text.title} - Study Guide | The English Hub`,
-    description: `In-depth study guide for ${text.title} by ${text.author}: characters, themes, key quotations and exam-ready analysis.`,
+    description: hasWrittenContent
+      ? `In-depth study guide for ${text.title} by ${text.author}: characters, themes, key quotations and exam-ready analysis.`
+      : `${text.title} by ${text.author} - set text details and revision resources on The English Hub.`,
     alternates: {
       canonical: `https://theenglishhub.app/revision/texts/${text.slug}`,
     },

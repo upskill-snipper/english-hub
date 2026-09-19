@@ -564,7 +564,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Do not go gentle into that good night',
     author: 'Dylan Thomas (1914-1953)',
     category: 'poetry-anthology',
-    boards: ['edexcel-igcse-lang'],
+    boards: ['edexcel-igcse'],
     copyrightStatus: 'copyright',
     year: '1951',
     keyThemes: ['Death', 'Defiance', 'Fatherhood', 'Grief'],
@@ -592,7 +592,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'War Photographer',
     author: 'Carol Ann Duffy (b. 1955)',
     category: 'poetry-anthology',
-    boards: ['edexcel-igcse-lang', 'edexcel-igcse'],
+    boards: ['edexcel-igcse'],
     copyrightStatus: 'copyright',
     year: '1985',
     keyThemes: ['War', 'Suffering', 'Moral responsibility', 'Detachment'],
@@ -606,7 +606,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'If-',
     author: 'Rudyard Kipling',
     category: 'poetry-anthology',
-    boards: ['edexcel-igcse-lang', 'edexcel-igcse'],
+    boards: ['edexcel-igcse'],
     copyrightStatus: 'public-domain',
     year: '1910',
     keyThemes: ['Stoicism', 'Identity', 'Growing up', 'Self-control'],
@@ -618,7 +618,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Prayer Before Birth',
     author: 'Louis MacNeice (1907-1963)',
     category: 'poetry-anthology',
-    boards: ['edexcel-igcse-lang'],
+    boards: ['edexcel-igcse'],
     copyrightStatus: 'copyright',
     year: '1944',
     keyThemes: ['Innocence', 'Fear of the world', 'War', 'Dehumanisation'],
@@ -632,7 +632,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Piano',
     author: 'D.H. Lawrence',
     category: 'poetry-anthology',
-    boards: ['edexcel-igcse-lang'],
+    boards: ['edexcel-igcse'],
     copyrightStatus: 'public-domain',
     year: '1918',
     keyThemes: ['Nostalgia', 'Memory', 'Motherhood', 'Loss of childhood'],
@@ -644,7 +644,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Hide and Seek',
     author: 'Vernon Scannell (1922-2007)',
     category: 'poetry-anthology',
-    boards: ['edexcel-igcse-lang'],
+    boards: ['edexcel-igcse'],
     copyrightStatus: 'copyright',
     year: '1984',
     keyThemes: ['Childhood', 'Isolation', 'Betrayal', 'Imagination'],
@@ -658,7 +658,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Half-past Two',
     author: 'U.A. Fanthorpe (1929-2009)',
     category: 'poetry-anthology',
-    boards: ['edexcel-igcse-lang'],
+    boards: ['edexcel-igcse'],
     copyrightStatus: 'copyright',
     year: '1992',
     keyThemes: ['Childhood', 'Time', 'Authority', 'Innocence'],
@@ -672,7 +672,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'My Last Duchess',
     author: 'Robert Browning',
     category: 'poetry-anthology',
-    boards: ['edexcel-igcse-lang'],
+    boards: ['edexcel-igcse'],
     copyrightStatus: 'public-domain',
     year: '1842',
     keyThemes: ['Power', 'Jealousy', 'Control', 'Possession'],
@@ -684,7 +684,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Sonnet 116',
     author: 'William Shakespeare',
     category: 'poetry-anthology',
-    boards: ['edexcel-igcse-lang', 'edexcel-igcse'],
+    boards: ['edexcel-igcse'],
     copyrightStatus: 'public-domain',
     year: '1609',
     keyThemes: ['Love', 'Constancy', 'Time', 'Faithfulness'],
@@ -824,6 +824,87 @@ export const SET_TEXTS: SetText[] = [
     keyThemes: ['Marriage', 'Female autonomy', 'Freedom', 'Irony'],
     description:
       'A woman is told her husband has been killed in a train accident and, alone in her room, slowly realises she feels free - until the door opens and her hour of liberty ends.',
+  },
+
+  // ── Edexcel International GCSE anthology, Part 3 ───────────────────────────
+  //
+  // ADDED 19 September 2026. These seven poems are prescribed for 4ET1 and were
+  // absent from this file entirely, so no shelf, index or search could reach
+  // them. Four of them - La Belle Dame sans Merci, The Tyger, Half-caste and
+  // Remember - already had a finished study guide written and published under
+  // /igcse/edexcel/poetry, unreachable because nothing in the data claimed the
+  // poem existed.
+  //
+  // Source: Pearson Edexcel International GCSE English Anthology, Issue 8,
+  // February 2026, ISBN 978 1 446 93108 0, Part 3, pages 53 to 70. See
+  // src/lib/board/edexcel-igcse-anthology.ts, which carries the full list and
+  // the citation.
+  //
+  // NO DESCRIPTION OR THEMES ARE RECORDED HERE, deliberately. Title, author,
+  // page and prescription are facts printed in the anthology. A summary and a
+  // theme list are editorial judgements, and inventing seven of them to make
+  // the cards look uniform would be exactly the kind of confident filler this
+  // product cannot afford. They are left empty until someone writes them.
+  {
+    slug: 'blessing',
+    title: 'Blessing',
+    author: 'Imtiaz Dharker (b. 1954)',
+    category: 'poetry-anthology',
+    boards: ['edexcel-igcse'],
+    copyrightStatus: 'copyright',
+  },
+  {
+    slug: 'search-for-my-tongue',
+    title: 'Search For My Tongue',
+    author: 'Sujata Bhatt (b. 1956)',
+    category: 'poetry-anthology',
+    boards: ['edexcel-igcse'],
+    copyrightStatus: 'copyright',
+  },
+  {
+    slug: 'la-belle-dame-sans-merci',
+    title: 'La Belle Dame sans Merci',
+    author: 'John Keats (1795-1821)',
+    category: 'poetry-anthology',
+    boards: ['edexcel-igcse'],
+    // Keats died 1821, so UK copyright (CDPA 1988 s12: life + 70) lapsed long
+    // ago. Publishable in full.
+    copyrightStatus: 'public-domain',
+    year: '1819',
+  },
+  {
+    slug: 'poem-at-thirty-nine',
+    title: 'Poem at Thirty-Nine',
+    author: 'Alice Walker (b. 1944)',
+    category: 'poetry-anthology',
+    boards: ['edexcel-igcse'],
+    copyrightStatus: 'copyright',
+  },
+  {
+    slug: 'the-tyger',
+    title: 'The Tyger',
+    author: 'William Blake (1757-1827)',
+    category: 'poetry-anthology',
+    boards: ['edexcel-igcse'],
+    copyrightStatus: 'public-domain',
+    year: '1794',
+  },
+  {
+    slug: 'half-caste',
+    title: 'Half-caste',
+    author: 'John Agard (b. 1949)',
+    category: 'poetry-anthology',
+    boards: ['edexcel-igcse'],
+    copyrightStatus: 'copyright',
+  },
+  {
+    slug: 'remember',
+    title: 'Remember',
+    author: 'Christina Rossetti (1830-1894)',
+    category: 'poetry-anthology',
+    boards: ['edexcel-igcse'],
+    copyrightStatus: 'public-domain',
+    year: '1862',
   },
 ]
 

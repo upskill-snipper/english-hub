@@ -60,6 +60,22 @@ export const STUB_SET_TEXT_SLUGS: ReadonlySet<string> = new Set([
   'half-past-two',
   'my-last-duchess',
   'sonnet-116',
+  // ── Added 19 September 2026 with the Part 3 correction ────────────────────
+  // Seven poems the Edexcel International GCSE anthology prescribes for 4ET1
+  // and our data did not hold at all. They have no page under
+  // /revision/texts, so they land here like the rest. Four of them -
+  // la-belle-dame-sans-merci, the-tyger, half-caste and remember - already
+  // have a real guide under /igcse/edexcel/poetry, which is why they were
+  // worth adding: the guides were written and unreachable. Being listed here
+  // keeps the thin catch-all page out of the sitemap while the shelf links
+  // past it to the guide. See src/lib/revision/guide-locations.generated.ts.
+  'blessing',
+  'search-for-my-tongue',
+  'la-belle-dame-sans-merci',
+  'poem-at-thirty-nine',
+  'the-tyger',
+  'half-caste',
+  'remember',
 ])
 
 /**

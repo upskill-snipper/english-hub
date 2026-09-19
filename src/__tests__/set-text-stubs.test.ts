@@ -58,8 +58,16 @@ describe('the stub list', () => {
 
   it('covers a meaningful share of the corpus, not a stray handful', () => {
     // Guards against the list being emptied and every assertion above passing
-    // vacuously.
-    expect(STUB_SET_TEXT_SLUGS.size).toBe(20)
+    // vacuously. Deliberately an exact number rather than a range, so the list
+    // cannot grow or shrink without someone saying why here.
+    //
+    // 20 -> 27 on 19 September 2026. Reading the Edexcel International GCSE
+    // anthology against our data found seven prescribed Part 3 poems missing
+    // from SET_TEXTS entirely. Adding the rows is what put them here: they have
+    // no page under /revision/texts, so they are stubs by the same definition
+    // as the other twenty. Four of the seven already had a real guide under
+    // /igcse/edexcel/poetry that nothing could reach.
+    expect(STUB_SET_TEXT_SLUGS.size).toBe(27)
     expect(SET_TEXTS.length).toBeGreaterThan(70)
   })
 })
