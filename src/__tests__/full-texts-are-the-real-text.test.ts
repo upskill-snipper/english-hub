@@ -56,7 +56,7 @@ const PROSE = [
   'the-scarlet-letter',
 ]
 /** The poems, which are one short block rather than chapters. */
-const POEMS = ['remember', 'if', 'disabled', 'sonnet-116']
+const POEMS = ['remember', 'if', 'disabled', 'sonnet-116', 'the-tyger', 'my-last-duchess']
 const PLAYS = ALL.filter((slug) => !PROSE.includes(slug) && !POEMS.includes(slug))
 
 /**
@@ -93,10 +93,10 @@ function dataFor(slug: string): string {
 }
 
 describe('the texts are there', () => {
-  it('has twelve plays, six prose works and four poems', () => {
+  it('has twelve plays, six prose works and six poems', () => {
     expect(PLAYS).toHaveLength(12)
     expect(PROSE).toHaveLength(6)
-    expect(POEMS).toHaveLength(4)
+    expect(POEMS).toHaveLength(6)
   })
 
   it.each(ALL)('%s has a read route wired to its data', (slug) => {
@@ -277,13 +277,22 @@ describe('the poems are whole, and are the poem', () => {
   it.each([
     ['remember', 14],
     ['sonnet-116', 14],
+    ['the-tyger', 24],
+    ['my-last-duchess', 56],
   ])('%s is exactly %i lines', (slug, count) => {
     // Counted from the file rather than by parsing the escaped JSON string out
     // of it: the data file holds exactly one poem, so every line break in it
     // belongs to that poem, and a regex over escaped content is one more thing
     // to get subtly wrong.
-    const breaks = (dataFor(slug).match(/<br \/>/g) ?? []).length
-    expect(breaks + 1).toBe(count)
+    //
+    // LINES = BREAKS + STANZAS, not breaks + 1. <br /> joins lines WITHIN a
+    // stanza, so each stanza contributes one line that no break precedes. The
+    // first version of this assumed one stanza and reported The Tyger, which
+    // has six, as 19 lines instead of 24.
+    const data = dataFor(slug)
+    const breaks = (data.match(/<br \/>/g) ?? []).length
+    const stanzas = (data.match(/<p>/g) ?? []).length
+    expect(breaks + stanzas).toBe(count)
   })
 
   it.each([
@@ -291,6 +300,14 @@ describe('the poems are whole, and are the poem', () => {
     ['sonnet-116', 'Let me not to the marriage of true minds', 'I never writ, nor no man ever'],
     ['if', 'If you can keep your head when all about you', 'be a Man, my son'],
     ['disabled', 'He sat in a wheeled chair, waiting for dark', 'Why don'],
+    ['the-tyger', 'Tyger, tyger, burning bright', 'Dare frame thy fearful symmetry'],
+    [
+      'my-last-duchess',
+      // Straight apostrophe: this edition uses one, as Gutenberg's Christmas
+      // Carol does. Asserting the curly form fails on a correct title.
+      "That's my last Duchess painted on the wall",
+      'Which Claus of Innsbruck cast in bronze for me',
+    ],
   ])('%s opens and closes with the real lines', (slug, first, last) => {
     const data = dataFor(slug)
     expect(data, `${slug} opening`).toContain(first)

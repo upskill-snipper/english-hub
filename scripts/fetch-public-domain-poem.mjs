@@ -22,12 +22,11 @@
  * contain La Belle Dame sans Merci. Neither is here, and neither is silently
  * missing - see NOT YET SOURCED below.
  *
- * NOT YET SOURCED. The Tyger (Blake) and La Belle Dame sans Merci (Keats) need
- * a text edition that has been checked. Do not go gentle into that good night
+ * NOT YET SOURCED. La Belle Dame sans Merci (Keats) and Piano (D H Lawrence)
+ * are UK public domain and still need an edition that has been checked. Do not go gentle into that good night
  * cannot come from Project Gutenberg at all: Dylan Thomas died in 1953, so the
  * poem is public domain in the UK since 1 January 2024 but remains in copyright
- * in the United States, where Gutenberg publishes. Piano (D H Lawrence) and My
- * Last Duchess (Browning) are UK public domain and simply not done yet.
+ * in the United States, where Gutenberg publishes.
  *
  *   node scripts/fetch-public-domain-poem.mjs [slug]
  */
@@ -83,6 +82,43 @@ const POEMS = [
     lines: 49,
   },
   {
+    slug: 'the-tyger',
+    id: 574,
+    collection: 'Poems of William Blake',
+    title: 'The Tyger',
+    author: 'William Blake',
+    year: '1794',
+    // NOT from Gutenberg 1934, Songs of Innocence and of Experience: that is an
+    // ILLUSTRATED edition whose poems are page images, so the poem cannot be
+    // taken from it at all.
+    //
+    // EDITIONS DIFFER ON THE OPENING LINE, and it is worth knowing which one we
+    // publish. This one prints "Tyger, tyger, burning bright" with a comma and
+    // lower case; others print Blake's plate spelling "Tyger Tyger, burning
+    // bright". Both are real published readings, and the file names its edition
+    // so a teacher comparing against the anthology can see which is which.
+    first: 'Tyger, tyger, burning bright',
+    last: 'Dare frame thy fearful symmetry?',
+    lines: 29,
+  },
+  {
+    slug: 'my-last-duchess',
+    id: 28041,
+    collection: 'Selections from the Poems and Plays of Robert Browning',
+    title: 'My Last Duchess',
+    author: 'Robert Browning',
+    year: '1842',
+    // NOT from Gutenberg 16376, Browning's Shorter Poems: that edition carries
+    // editorial gloss markers INSIDE the verse - "Which Claus of Innsbruck deg.
+    // cast in bronze for me!" - which are an editor's footnote marks and not
+    // Browning's line. This edition is clean apart from marginal line numbers,
+    // which stripMarginNumbers removes.
+    stripMarginNumbers: true,
+    first: "That's my last Duchess painted on the wall,",
+    last: 'Which Claus of Innsbruck cast in bronze for me!',
+    lines: 56,
+  },
+  {
     slug: 'sonnet-116',
     id: 1041,
     collection: "Shakespeare's Sonnets",
@@ -111,9 +147,17 @@ async function build(poem) {
     throw new Error(`Gutenberg marks id ${poem.id} as poorly proofed`)
   }
 
-  const lines = stripGutenberg(raw)
+  let lines = stripGutenberg(raw)
     .split('\n')
     .map((l) => l.replace(/\s+$/, ''))
+
+  if (poem.stripMarginNumbers) {
+    // Some editions print the line number in the right margin, separated from
+    // the verse by a wide run of spaces. Six or more spaces then digits at the
+    // end of a line is a margin number, not part of the poem; a line of verse
+    // does not end that way.
+    lines = lines.map((l) => l.replace(/\s{6,}\d+$/, ''))
+  }
 
   const start = lines.findIndex((l) => l.trim() === poem.first)
   if (start === -1) throw new Error(`opening line not found: "${poem.first}"`)
