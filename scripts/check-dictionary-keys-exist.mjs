@@ -82,12 +82,64 @@ function shardKeys(file) {
   return [...code.matchAll(/^\s+'([a-z][a-z0-9_.]*)'\s*:\s*\{/gm)].map((m) => m[1])
 }
 
-export async function findMissingKeys() {
+/** Every key the dictionary knows, including the four local-only shards. */
+async function knownKeys() {
   const { EN_MESSAGES } = await import('../src/lib/i18n/generated/en.ts')
   const known = new Set(Object.keys(EN_MESSAGES))
   for (const shard of LOCAL_SHARDS) {
     for (const key of shardKeys(shard)) known.add(key)
   }
+  return known
+}
+
+/** t(`prefix.${x}.suffix`) - a key assembled at runtime. */
+const TEMPLATE_CALL = /\b(?:t|tx|tr)\(\s*`([^`]*\$\{[^`]*)`/g
+
+/**
+ * Runtime-built keys that NO dictionary key could ever match.
+ *
+ * The literal check above cannot see these: the key does not exist until
+ * render. But the SHAPE is knowable, and a shape nothing matches is a
+ * guaranteed sentinel on every render, whatever the variable holds. So this
+ * reports something stronger than "might be missing": no key of this form
+ * exists at all.
+ *
+ * It found the seven affiliate template cards, every one of which rendered
+ * `[[aff_comp.resources.tpl.<id>.title]]` as its heading.
+ *
+ * Substitutions are matched with `.*`, never `[^.]*`, because a substituted
+ * variable can itself contain dots: `const base = \`ielts.ukread.${d.key}\`` is
+ * exactly that, and a dot-free pattern reported all four of its call sites as
+ * dead when every one resolves.
+ */
+export async function findDeadPatterns() {
+  const known = [...(await knownKeys())]
+  const dead = []
+  let checked = 0
+
+  for (const file of walk('src')) {
+    const source = readFileSync(file, 'utf8')
+    const code = source.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*/g, '')
+    for (const m of code.matchAll(TEMPLATE_CALL)) {
+      const template = m[1]
+      checked += 1
+      const parts = template.split(/\$\{[^}]*\}/)
+      // No literal text at all leaves nothing to anchor on, and a guess would
+      // be worse than an honest skip.
+      if (!parts.some((part) => part.length > 2)) continue
+      const escaped = parts.map((part) => part.replace(/[.*+?^${}()|[\]\\]/g, (c) => '\\' + c))
+      const pattern = new RegExp('^' + escaped.join('.*') + '$')
+      if (!known.some((key) => pattern.test(key))) {
+        dead.push({ file: file.split('\\').join('/'), template })
+      }
+    }
+  }
+
+  return { dead, checked }
+}
+
+export async function findMissingKeys() {
+  const known = await knownKeys()
 
   const missing = new Map()
   let literals = 0
@@ -139,5 +191,18 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     process.exitCode = 1
   } else {
     console.log('Every literal key resolves.')
+  }
+
+  const { dead, checked } = await findDeadPatterns()
+  console.log('')
+  if (dead.length) {
+    console.log(`${dead.length} runtime-built pattern(s) that NO key can match:`)
+    for (const d of dead) {
+      console.log(`  ${d.template}`)
+      console.log(`      ${d.file}`)
+    }
+    process.exitCode = 1
+  } else {
+    console.log(`${checked} runtime-built pattern(s) checked; every one can match a key.`)
   }
 }

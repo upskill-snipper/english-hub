@@ -11202,6 +11202,25 @@ export const EN_MESSAGES: Record<string, string> = {
   'aff_comp.resources.annual_lean_body':
     'Annual signups earn you the highest commission, so steer your audience towards them.',
   'aff_comp.resources.tpl.preview_prefix': 'Preview:',
+  'aff_comp.resources.tpl.tw-thread.title': 'Thread',
+  'aff_comp.resources.tpl.tw-thread.desc':
+    'A multi-post thread with room to explain what the product does.',
+  'aff_comp.resources.tpl.tw-short.title': 'Short post',
+  'aff_comp.resources.tpl.tw-short.desc': 'One post, for a quick recommendation with your code.',
+  'aff_comp.resources.tpl.tw-reply.title': 'Reply',
+  'aff_comp.resources.tpl.tw-reply.desc':
+    'A short reply for dropping into an existing conversation.',
+  'aff_comp.resources.tpl.ig-caption.title': 'Caption',
+  'aff_comp.resources.tpl.ig-caption.desc': 'A longer caption for a post or carousel.',
+  'aff_comp.resources.tpl.tt-caption.title': 'Caption',
+  'aff_comp.resources.tpl.tt-caption.desc':
+    'A short caption for a video, with the link in your bio.',
+  'aff_comp.resources.tpl.em-newsletter.title': 'Newsletter',
+  'aff_comp.resources.tpl.em-newsletter.desc':
+    'A full email with a subject line and the disclosure at the top.',
+  'aff_comp.resources.tpl.bg-review.title': 'Review post',
+  'aff_comp.resources.tpl.bg-review.desc':
+    'A long-form review, with the disclosure as the opening line.',
   'aff_comp.resources.bottom.headline': 'Ready to start sharing?',
   'aff_comp.resources.bottom.body': 'Copy your link and head to your dashboard to track results.',
   'aff_comp.resources.bottom.view_dashboard': 'View dashboard',

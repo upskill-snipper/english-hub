@@ -11484,6 +11484,27 @@ export const ES_MESSAGES: Record<string, string> = {
   'aff_comp.resources.annual_lean_body':
     'Los registros anuales te generan la comisión más alta, así que orienta a tu audiencia hacia ellos.',
   'aff_comp.resources.tpl.preview_prefix': 'Vista previa:',
+  'aff_comp.resources.tpl.tw-thread.title': 'Hilo',
+  'aff_comp.resources.tpl.tw-thread.desc':
+    'Un hilo de varias publicaciones con espacio para explicar qué hace el producto.',
+  'aff_comp.resources.tpl.tw-short.title': 'Publicación corta',
+  'aff_comp.resources.tpl.tw-short.desc':
+    'Una sola publicación, para una recomendación rápida con tu código.',
+  'aff_comp.resources.tpl.tw-reply.title': 'Respuesta',
+  'aff_comp.resources.tpl.tw-reply.desc':
+    'Una respuesta breve para añadir a una conversación existente.',
+  'aff_comp.resources.tpl.ig-caption.title': 'Pie de foto',
+  'aff_comp.resources.tpl.ig-caption.desc':
+    'Un pie de foto más largo para una publicación o carrusel.',
+  'aff_comp.resources.tpl.tt-caption.title': 'Pie de vídeo',
+  'aff_comp.resources.tpl.tt-caption.desc':
+    'Un pie breve para un vídeo, con el enlace en tu biografía.',
+  'aff_comp.resources.tpl.em-newsletter.title': 'Boletín',
+  'aff_comp.resources.tpl.em-newsletter.desc':
+    'Un correo completo con asunto y la divulgación al principio.',
+  'aff_comp.resources.tpl.bg-review.title': 'Entrada de reseña',
+  'aff_comp.resources.tpl.bg-review.desc':
+    'Una reseña extensa, con la divulgación en la primera línea.',
   'aff_comp.resources.bottom.headline': '¿Listo para empezar a compartir?',
   'aff_comp.resources.bottom.body': 'Copia tu enlace y ve a tu panel para seguir los resultados.',
   'aff_comp.resources.bottom.view_dashboard': 'Ver panel',

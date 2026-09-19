@@ -594,6 +594,72 @@ export const AFF_COMP_DICTIONARY: Record<string, { en: string; ar: string; es?: 
     es: `Los registros anuales te generan la comisión más alta, así que orienta a tu audiencia hacia ellos.`,
   },
   'aff_comp.resources.tpl.preview_prefix': { en: `Preview:`, ar: `معاينة:`, es: `Vista previa:` },
+
+  // ─── Added 19 September 2026 ──────────────────────────────────────────
+  //
+  // Every one of the seven template cards rendered
+  // `[[aff_comp.resources.tpl.<id>.title]]` as its heading: the component asks
+  // for a title and a desc per template id, and `preview_prefix` was the only
+  // key that existed under this prefix. Found by checking which runtime-built
+  // key patterns no dictionary key can match.
+  //
+  // These are FORMAT labels - what shape of post the template is. They make no
+  // claim about the product, which is what keeps them clear of the claim
+  // sheet; the template bodies, which do make claims, are untouched.
+  'aff_comp.resources.tpl.tw-thread.title': { en: `Thread`, ar: `سلسلة تغريدات`, es: `Hilo` },
+  'aff_comp.resources.tpl.tw-thread.desc': {
+    en: `A multi-post thread with room to explain what the product does.`,
+    ar: `سلسلة من عدة منشورات فيها مجال لشرح ما يقدّمه المنتج.`,
+    es: `Un hilo de varias publicaciones con espacio para explicar qué hace el producto.`,
+  },
+  'aff_comp.resources.tpl.tw-short.title': {
+    en: `Short post`,
+    ar: `منشور قصير`,
+    es: `Publicación corta`,
+  },
+  'aff_comp.resources.tpl.tw-short.desc': {
+    en: `One post, for a quick recommendation with your code.`,
+    ar: `منشور واحد، لتوصية سريعة مع رمزك.`,
+    es: `Una sola publicación, para una recomendación rápida con tu código.`,
+  },
+  'aff_comp.resources.tpl.tw-reply.title': { en: `Reply`, ar: `رد`, es: `Respuesta` },
+  'aff_comp.resources.tpl.tw-reply.desc': {
+    en: `A short reply for dropping into an existing conversation.`,
+    ar: `رد قصير تضيفه داخل محادثة قائمة.`,
+    es: `Una respuesta breve para añadir a una conversación existente.`,
+  },
+  'aff_comp.resources.tpl.ig-caption.title': { en: `Caption`, ar: `تعليق`, es: `Pie de foto` },
+  'aff_comp.resources.tpl.ig-caption.desc': {
+    en: `A longer caption for a post or carousel.`,
+    ar: `تعليق أطول لمنشور أو كاروسيل.`,
+    es: `Un pie de foto más largo para una publicación o carrusel.`,
+  },
+  'aff_comp.resources.tpl.tt-caption.title': { en: `Caption`, ar: `تعليق`, es: `Pie de vídeo` },
+  'aff_comp.resources.tpl.tt-caption.desc': {
+    en: `A short caption for a video, with the link in your bio.`,
+    ar: `تعليق قصير لمقطع فيديو، والرابط في البايو.`,
+    es: `Un pie breve para un vídeo, con el enlace en tu biografía.`,
+  },
+  'aff_comp.resources.tpl.em-newsletter.title': {
+    en: `Newsletter`,
+    ar: `نشرة بريدية`,
+    es: `Boletín`,
+  },
+  'aff_comp.resources.tpl.em-newsletter.desc': {
+    en: `A full email with a subject line and the disclosure at the top.`,
+    ar: `رسالة بريدية كاملة مع سطر موضوع والإفصاح في أعلاها.`,
+    es: `Un correo completo con asunto y la divulgación al principio.`,
+  },
+  'aff_comp.resources.tpl.bg-review.title': {
+    en: `Review post`,
+    ar: `مقال مراجعة`,
+    es: `Entrada de reseña`,
+  },
+  'aff_comp.resources.tpl.bg-review.desc': {
+    en: `A long-form review, with the disclosure as the opening line.`,
+    ar: `مراجعة مطوّلة، والإفصاح في سطرها الأول.`,
+    es: `Una reseña extensa, con la divulgación en la primera línea.`,
+  },
   'aff_comp.resources.bottom.headline': {
     en: `Ready to start sharing?`,
     ar: `جاهز تبدأ المشاركة؟`,

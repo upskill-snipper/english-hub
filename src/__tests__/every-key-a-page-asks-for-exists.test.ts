@@ -1,5 +1,7 @@
 import { describe, it, expect } from 'vitest'
-import { findMissingKeys } from '../../scripts/check-dictionary-keys-exist.mjs'
+import { readFileSync } from 'node:fs'
+import { join } from 'node:path'
+import { findMissingKeys, findDeadPatterns } from '../../scripts/check-dictionary-keys-exist.mjs'
 
 /**
  * A key that does not exist is rendered to the visitor as `[[key]]`.
@@ -90,6 +92,57 @@ describe('no page asks for a key that does not exist', () => {
       'breadcrumb.home',
     ]) {
       expect(missing.has(key), `${key} is missing again`).toBe(false)
+    }
+  })
+})
+
+// ─── Keys assembled at render time ──────────────────────────────────────
+
+/**
+ * The residual the check above names and cannot cover.
+ *
+ * `t(\`aff_comp.resources.tpl.${tpl.id}.title\`)` builds its key at render, so
+ * no literal check can resolve it. But the SHAPE is knowable, and a shape that
+ * NO dictionary key matches is a guaranteed sentinel on every render, whatever
+ * the variable holds.
+ *
+ * That found the seven affiliate template cards. The component asked for a
+ * title and a description per template id; `preview_prefix` was the only key
+ * that existed under the whole prefix, so every card rendered
+ * `[[aff_comp.resources.tpl.tw-thread.title]]` as its heading.
+ *
+ * NOT OBSERVED ON A RENDERED PAGE, and said so rather than implied:
+ * /affiliates/resources gates client-side and redirects to login, so
+ * confirming it on screen needs a signed-in affiliate account. The defect is
+ * verified in the code and against the dictionary, which is as far as I can
+ * honestly take it.
+ */
+describe('a runtime-built key can at least match something', () => {
+  it('checked a realistic number of template call sites', async () => {
+    // Vacuity guard: "0 dead patterns" from a walker that matched nothing is
+    // the failure mode this whole file exists to avoid.
+    const { checked } = await findDeadPatterns()
+    expect(checked).toBeGreaterThan(20)
+  })
+
+  it('no pattern is one that no key can match', async () => {
+    const { dead } = await findDeadPatterns()
+    const named = dead.map((d: { template: string; file: string }) => `${d.template}  (${d.file})`)
+    expect(
+      named,
+      'no dictionary key has this shape, so every render of it is a [[key]] sentinel',
+    ).toEqual([])
+  })
+
+  it('and the affiliate template cards, which is what it found, now resolve', async () => {
+    const { findMissingKeys: fm } = await import('../../scripts/check-dictionary-keys-exist.mjs')
+    const { known } = await fm()
+    expect(known).toBeGreaterThan(17_000)
+    // Named individually so a regression says which card lost its heading.
+    const en = readFileSync(join(process.cwd(), 'src/lib/i18n/generated/en.ts'), 'utf8')
+    for (const id of ['tw-thread', 'tw-short', 'tw-reply', 'ig-caption', 'em-newsletter']) {
+      expect(en, `${id} has no title`).toContain(`'aff_comp.resources.tpl.${id}.title'`)
+      expect(en, `${id} has no description`).toContain(`'aff_comp.resources.tpl.${id}.desc'`)
     }
   })
 })
