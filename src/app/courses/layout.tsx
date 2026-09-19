@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { CourseJsonLd } from '@/components/seo/json-ld'
-import { GeoFaq, REVISION_FAQS } from '@/components/seo/GeoFaq'
 
 export const metadata: Metadata = {
   title: 'Courses',
@@ -33,9 +32,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         url="https://theenglishhub.app/courses"
       />
       {children}
-      <div className="mx-auto w-full max-w-5xl px-4 pb-16 sm:px-6">
-        <GeoFaq faqs={REVISION_FAQS} heading="English courses: common questions" />
-      </div>
     </>
   )
 }

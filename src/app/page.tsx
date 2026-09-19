@@ -21,7 +21,6 @@ import {
   Compass,
 } from 'lucide-react'
 import { TrackEvent } from '@/components/analytics/TrackEvent'
-import { GeoFaq, GCSE_BOARD_FAQS } from '@/components/seo/GeoFaq'
 import { LanguageToggle } from '@/components/layout/language-toggle'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
@@ -92,7 +91,6 @@ export default async function Home() {
     ks3Subheading: await t('homepage.ks3.subheading'),
     igcseHeading: await t('homepage.igcse.heading'),
     igcseSubheading: await t('homepage.igcse.subheading'),
-    faqHeading: await t('homepage.faq.heading'),
   }
   return (
     <div className="min-h-screen bg-background">
@@ -141,17 +139,17 @@ export default async function Home() {
       {/* 6. Pricing preview */}
       {await PricingPreviewSection()}
 
-      {/* 7. Consumer board FAQ — emits the homepage's single
-             FAQPage JSON-LD (GCSE_BOARD_FAQS). Strong GEO signal:
-             question-shaped headings that AI engines extract. */}
-      <div className="mx-auto w-full max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
-        <GeoFaq faqs={GCSE_BOARD_FAQS} heading={copy.faqHeading} />
-      </div>
-
-      {/* 8. School-leader FAQ — visible B2B FAQ. emitJsonLd=false:
-             two FAQPage entities on one URL is invalid structured
-             data (was Google's "2 invalid items" on the homepage),
-             so the GeoFaq above owns the FAQPage slot. */}
+      {/* 7. School-leader FAQ - visible B2B FAQ, genuinely about this page.
+             emitJsonLd was false for one reason only: the generic GeoFaq board
+             wall that used to sit above it owned the homepage's single FAQPage
+             slot, and two FAQPage entities on one URL is invalid. That wall was
+             removed on 19 September 2026, so the reason went with it and the
+             flag is back on.
+             This is not an SEO gamble. The questions are already rendered on the
+             page directly below, which is exactly what Google requires of
+             FAQPage markup: the answer must be visible to the reader. The
+             alternative was a homepage carrying no structured data at all while
+             showing a real FAQ. */}
       <section aria-labelledby="home-faq-heading" className="border-t border-border/60">
         <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20">
           <h2
@@ -160,11 +158,11 @@ export default async function Home() {
           >
             {await t('home.faq.school_leaders')}
           </h2>
-          <SchoolFAQ emitJsonLd={false} />
+          <SchoolFAQ />
         </div>
       </section>
 
-      {/* 9. Closing CTA */}
+      {/* 8. Closing CTA */}
       {await FinalCtaSection()}
     </div>
   )

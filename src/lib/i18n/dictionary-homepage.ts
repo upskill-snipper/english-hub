@@ -70,8 +70,10 @@ export const HOMEPAGE_DICTIONARY: Record<string, { en: string; ar: string; es?: 
     es: 'Rutas internacionales para el mismo grupo de edad. Elige el programa en el que te inscribe tu escuela.',
   },
 
-  /* ── GeoFaq heading (the FAQ items themselves live in an out-of-scope
-       component and stay English-only - see report) ── */
+  /* ── ORPHANED 19 September 2026. This titled the homepage's generic
+       GeoFaq board wall, which was removed; nothing reads the key now.
+       Kept rather than deleted, because deleting it forces a regeneration
+       of the three files in ./generated/ (59,761 lines). ── */
   'homepage.faq.heading': {
     en: 'GCSE & IGCSE English: common questions',
     ar: 'إنجليزي GCSE و IGCSE: أسئلة شائعة',

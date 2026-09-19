@@ -2,8 +2,6 @@ import type { Metadata } from 'next'
 import { RevisionShell } from './_components/revision-shell'
 import { VisitTracker } from './_components/visit-tracker'
 import { LearningResourceJsonLd } from '@/components/seo/json-ld'
-import { GeoFaq, REVISION_FAQS } from '@/components/seo/GeoFaq'
-import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   title: 'Your Hub',
@@ -22,8 +20,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default async function RevisionLayout({ children }: { children: React.ReactNode }) {
-  const geoFaqHeading = await t('revision.layout.geo_faq_heading')
+export default function RevisionLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       {/* educationalLevel intentionally omitted - this tree spans KS3,
@@ -40,12 +37,7 @@ export default async function RevisionLayout({ children }: { children: React.Rea
           "In Progress" lens and RecentlyStudied panel have data to show.
           Nothing wrote those keys before, so both were always empty. */}
       <VisitTracker />
-      <RevisionShell>
-        {children}
-        <div className="mx-auto w-full max-w-5xl px-4 pb-12 sm:px-6">
-          <GeoFaq faqs={REVISION_FAQS} heading={geoFaqHeading} />
-        </div>
-      </RevisionShell>
+      <RevisionShell>{children}</RevisionShell>
     </>
   )
 }

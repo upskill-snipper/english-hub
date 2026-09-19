@@ -11,6 +11,10 @@
 export const B1_REVISION_DICTIONARY: Record<string, { en: string; ar: string; es?: string }> = {
   // ─── revision/layout.tsx ────────────────────────────────────────────────
 
+  // ORPHANED 19 September 2026: the generic GeoFaq wall was removed from
+  // revision/layout.tsx, so nothing reads this key. Kept rather than deleted
+  // because removing it forces a regeneration of the three files in
+  // ./generated/ (59,761 lines) and buries the change it belongs to.
   'revision.layout.geo_faq_heading': {
     en: 'English revision: common questions',
     ar: 'مراجعة الإنجليزي: أسئلة شائعة',
@@ -57,7 +61,8 @@ export const B1_REVISION_DICTIONARY: Record<string, { en: string; ar: string; es
   },
   'revision.shell.group.resources': { en: 'Resources', ar: 'المصادر', es: 'Recursos' },
   'revision.shell.group.board': { en: 'Your board', ar: 'البورد مالك', es: 'Tu junta' },
-  // IGCSE hub FAQ heading (igcse/layout.tsx).
+  // IGCSE hub FAQ heading. ORPHANED 19 September 2026 with the GeoFaq wall
+  // that igcse/layout.tsx used to mount; kept, see the note above.
   'revision.igcse.faq_heading': {
     en: 'IGCSE English: common questions',
     ar: 'IGCSE English: أسئلة شائعة',

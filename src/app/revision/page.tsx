@@ -735,9 +735,6 @@ export default async function RevisionHubPage() {
           <ArrowRight className="size-4" />
         </Button>
       </section>
-      {/* GeoFaq now lives in revision/layout.tsx so it covers this hub
-          AND every /revision/* sub-page (texts, poetry, exam-technique,
-          language, quiz, flashcards, common-errors) with one source. */}
     </div>
   )
 }

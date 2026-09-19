@@ -146,9 +146,6 @@ export function ALevelBoardHub({ boardName, examCode, hubSlug, summary }: ALevel
         </div>
       </section>
 
-      {/* GeoFaq lives in a-level/layout.tsx (covers every board page
-          including this one) - not here, to avoid a duplicate FAQPage. */}
-
       {/* ── Footer ──────────────────────────────────────────────────── */}
       <footer className="pt-4 text-center text-body-xs text-muted-foreground">
         Aligned with {boardName} specification ({examCode})

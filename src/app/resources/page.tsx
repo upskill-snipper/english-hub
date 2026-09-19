@@ -299,8 +299,6 @@ export default async function ResourcesPage() {
           </div>
         </div>
       </section>
-      {/* GeoFaq now lives in resources/layout.tsx so it covers this hub
-          AND all ~181 leaf pages without a duplicate FAQPage here. */}
     </div>
   )
 }

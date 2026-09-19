@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
-import { GeoFaq, REVISION_FAQS } from '@/components/seo/GeoFaq'
 
 export const metadata: Metadata = {
   title: 'Revision games',
@@ -25,9 +24,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         ]}
       />
       {children}
-      <div className="mx-auto w-full max-w-5xl px-4 pb-16 sm:px-6">
-        <GeoFaq faqs={REVISION_FAQS} heading="Revision games: common questions" />
-      </div>
     </>
   )
 }

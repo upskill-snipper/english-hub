@@ -202,9 +202,6 @@ export default async function IgcseHubPage() {
         </div>
       </section>
 
-      {/* GeoFaq now lives in igcse/layout.tsx so it covers this hub AND
-          every /igcse/* board sub-page from one source. */}
-
       {/* ── Footnote ───────────────────────────────────────────────── */}
       <p className="text-center text-body-xs text-muted-foreground-subtle">{tFootnote}</p>
     </div>

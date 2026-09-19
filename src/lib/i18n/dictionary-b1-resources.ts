@@ -3,7 +3,6 @@
  * Curated EN + Khaleeji (Gulf) Arabic for the /resources shell + hub pages.
  *
  * Covers:
- *   - resources/layout.tsx  (GeoFaq heading)
  *   - resources/english-language/layout.tsx  (generateMetadata)
  *   - resources/english-literature/layout.tsx  (generateMetadata)
  *   - resources/glossary/layout.tsx  (generateMetadata)
@@ -23,6 +22,10 @@
  */
 export const B1_RESOURCES_DICTIONARY: Record<string, { en: string; ar?: string; es?: string }> = {
   // ─── resources/layout.tsx ────────────────────────────────────────────
+  // ORPHANED 19 September 2026: the generic GeoFaq wall that this heading
+  // titled was removed from resources/layout.tsx, so nothing reads this key.
+  // Kept rather than deleted, because deleting it forces a regeneration of
+  // the three files in ./generated/ (59,761 lines).
   'resources.layout.faq_heading': {
     en: 'English resources: common questions',
     ar: 'مصادر الإنجليزي: أسئلة شائعة',

@@ -151,9 +151,6 @@ export default async function ALevelHubPage() {
         </div>
       </section>
 
-      {/* GeoFaq now lives in a-level/layout.tsx so it covers this hub
-          AND every /a-level/* board sub-page from one source. */}
-
       {/* ── Footnote ───────────────────────────────────────────────── */}
       <p className="text-center text-body-xs text-muted-foreground-subtle">{tFootnote}</p>
     </div>
