@@ -81,11 +81,23 @@ export const metadata: Metadata = {
     'Pick your exam board and revise GCSE or IGCSE English with AI marking against the AO rubric. AQA, Edexcel, OCR, Eduqas and Cambridge covered.',
   alternates: {
     canonical: 'https://theenglishhub.app',
-    // hreflang alternates - canonical English at root only. There is no
-    // /ar route directory and no /ar URLs in the sitemap, so an `ar`
-    // alternate would point at a non-existent, non-return-tagged page;
-    // it was removed to avoid an invalid hreflang cluster. Sub-route
-    // pages set per-page alternates via generateMetadata where they exist.
+    // hreflang alternates - canonical English at root only, because THIS page
+    // has no Arabic equivalent. An `ar` alternate here would point at a page
+    // that does not exist and could not return-tag back, which is an invalid
+    // hreflang cluster rather than a missing one.
+    //
+    // CORRECTED 20 September 2026 (SEO-6). This comment used to justify itself
+    // by saying there are "no /ar URLs in the sitemap". There are forty: the
+    // Arabic surface is the blog, served through the middleware rewrite rather
+    // than an /ar route directory, and sitemap.ts adds /ar/blog/<slug> for
+    // every post that has a variant. The conclusion above is unchanged and
+    // still right; the reason given for it had stopped being true, which is
+    // worse than no reason at all - the next person to add an Arabic page
+    // would have read this and believed the surface did not exist.
+    //
+    // Those forty pages carry their own alternates: src/app/blog/[slug] emits
+    // en-GB, ar and x-default from generateMetadata when a post has an Arabic
+    // variant, which is where per-page hreflang belongs.
     languages: {
       'en-GB': 'https://theenglishhub.app',
       'x-default': 'https://theenglishhub.app',

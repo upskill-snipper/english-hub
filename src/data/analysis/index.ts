@@ -36,7 +36,7 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
     title:
       'Climbing My Grandfather vs Follower: Admiration Across Generations | AQA Love and Relationships',
     description:
-      'Grade 9 comparison of Andrew Waterhouse\\u2019s Climbing My Grandfather and Seamus Heaney\\u2019s Follower. Both poems use extended metaphor to explore admiration for an older family figure. Written by GCSE markers.',
+      'Grade 9 comparison of Andrew Waterhouse’s Climbing My Grandfather and Seamus Heaney’s Follower. Both poems use extended metaphor to explore admiration for an older family figure. Written by GCSE markers.',
     category: 'aqa-love-relationships',
   },
   {
@@ -64,7 +64,7 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
     slug: ['aqa-love-relationships', 'eden-rock-vs-walking-away'],
     title: 'Eden Rock vs Walking Away: Memory of Parents Comparison | AQA Love and Relationships',
     description:
-      'Grade 9 comparison of Charles Causley\\u2019s Eden Rock and C. Day-Lewis\\u2019s Walking Away. Both poems use memory and the symbol of crossing to explore parental love. Written by GCSE markers.',
+      'Grade 9 comparison of Charles Causley’s Eden Rock and C. Day-Lewis’s Walking Away. Both poems use memory and the symbol of crossing to explore parental love. Written by GCSE markers.',
     category: 'aqa-love-relationships',
   },
   {
@@ -107,7 +107,7 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
     title:
       'Letters from Yorkshire vs Singh Song!: Love Across Distance and Culture | AQA Love and Relationships',
     description:
-      'Grade 9 comparison of Maura Dooley\\u2019s Letters from Yorkshire and Daljit Nagra\\u2019s Singh Song!. Both explore love that has to exist across some kind of distance. Written by GCSE markers.',
+      'Grade 9 comparison of Maura Dooley’s Letters from Yorkshire and Daljit Nagra’s Singh Song!. Both explore love that has to exist across some kind of distance. Written by GCSE markers.',
     category: 'aqa-love-relationships',
   },
   {
@@ -127,9 +127,9 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
   {
     slug: ['aqa-love-relationships', 'mother-any-distance-vs-follower'],
     title:
-      'Mother, Any Distance vs Follower: Parent\\u2013Child Love Comparison | AQA Love and Relationships',
+      'Mother, Any Distance vs Follower: Parent–Child Love Comparison | AQA Love and Relationships',
     description:
-      'Grade 9 comparison of Simon Armitage\\u2019s Mother, Any Distance and Seamus Heaney\\u2019s Follower. Thesis, paragraphs and context on parent\\u2013child love. Written by GCSE markers.',
+      'Grade 9 comparison of Simon Armitage’s Mother, Any Distance and Seamus Heaney’s Follower. Thesis, paragraphs and context on parent–child love. Written by GCSE markers.',
     category: 'aqa-love-relationships',
   },
   {
@@ -143,13 +143,13 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
     slug: ['aqa-love-relationships', 'neutral-tones-vs-when-we-two-parted'],
     title: 'Neutral Tones vs When We Two Parted: Lost Love Comparison | AQA Love and Relationships',
     description:
-      'Grade 9 comparison of Thomas Hardy\\u2019s Neutral Tones and Lord Byron\\u2019s When We Two Parted. Thesis, paragraphs, quotations and context. Written by GCSE markers.',
+      'Grade 9 comparison of Thomas Hardy’s Neutral Tones and Lord Byron’s When We Two Parted. Thesis, paragraphs, quotations and context. Written by GCSE markers.',
     category: 'aqa-love-relationships',
   },
   {
     slug: ['aqa-love-relationships', 'porphyrias-lover-vs-my-last-duchess'],
     title:
-      'Porphyria\\u2019s Lover vs My Last Duchess: Possessive Love Comparison | AQA Love and Relationships',
+      'Porphyria’s Lover vs My Last Duchess: Possessive Love Comparison | AQA Love and Relationships',
     description:
       'Grade 9 comparison of two Robert Browning dramatic monologues about possessive love. Thesis, three comparison paragraphs, quotations and context. Written by GCSE markers.',
     category: 'aqa-love-relationships',
@@ -170,17 +170,16 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
   },
   {
     slug: ['aqa-love-relationships', 'sonnet-29-vs-loves-philosophy'],
-    title: 'Sonnet 29 vs Love\\u2019s Philosophy: Comparison Analysis | AQA Love and Relationships',
+    title: 'Sonnet 29 vs Love’s Philosophy: Comparison Analysis | AQA Love and Relationships',
     description:
-      'Grade 9 comparison of Sonnet 29 by Elizabeth Barrett Browning and Love\\u2019s Philosophy by Percy Bysshe Shelley. Thesis, three comparison paragraphs, quotations and context. Written by GCSE markers.',
+      'Grade 9 comparison of Sonnet 29 by Elizabeth Barrett Browning and Love’s Philosophy by Percy Bysshe Shelley. Thesis, three comparison paragraphs, quotations and context. Written by GCSE markers.',
     category: 'aqa-love-relationships',
   },
   {
     slug: ['aqa-love-relationships', 'sonnet-29-vs-porphyrias-lover'],
-    title:
-      'Sonnet 29 vs Porphyria\\u2019s Lover: Obsessive Love Comparison | AQA Love and Relationships',
+    title: 'Sonnet 29 vs Porphyria’s Lover: Obsessive Love Comparison | AQA Love and Relationships',
     description:
-      'Grade 9 comparison of Elizabeth Barrett Browning\\u2019s Sonnet 29 and Robert Browning\\u2019s Porphyria\\u2019s Lover. Both poems stage obsessive thought about a beloved. Written by GCSE markers.',
+      'Grade 9 comparison of Elizabeth Barrett Browning’s Sonnet 29 and Robert Browning’s Porphyria’s Lover. Both poems stage obsessive thought about a beloved. Written by GCSE markers.',
     category: 'aqa-love-relationships',
   },
   {
@@ -195,7 +194,7 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
     title:
       'Walking Away vs Before You Were Mine: Parental Perspective Comparison | AQA Love and Relationships',
     description:
-      'Grade 9 comparison of C. Day-Lewis\\u2019s Walking Away and Carol Ann Duffy\\u2019s Before You Were Mine. Both poems are written from the adult perspective about a person they love. Written by GCSE markers.',
+      'Grade 9 comparison of C. Day-Lewis’s Walking Away and Carol Ann Duffy’s Before You Were Mine. Both poems are written from the adult perspective about a person they love. Written by GCSE markers.',
     category: 'aqa-love-relationships',
   },
   {
@@ -203,14 +202,14 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
     title:
       'Winter Swans vs Neutral Tones: Relationship Breakdown Comparison | AQA Love and Relationships',
     description:
-      'Grade 9 comparison of Owen Sheers\\u2019s Winter Swans and Thomas Hardy\\u2019s Neutral Tones. Both poems use a walk beside water to examine a relationship under strain. Written by GCSE markers.',
+      'Grade 9 comparison of Owen Sheers’s Winter Swans and Thomas Hardy’s Neutral Tones. Both poems use a walk beside water to examine a relationship under strain. Written by GCSE markers.',
     category: 'aqa-love-relationships',
   },
   {
     slug: ['aqa-power-conflict', 'bayonet-charge-vs-the-charge-of-the-light-brigade'],
     title: 'Bayonet Charge vs The Charge of the Light Brigade | AQA Power and Conflict',
     description:
-      'Grade 9 comparison of Hughes\\u2019 Bayonet Charge and Tennyson\\u2019s Charge of the Light Brigade. Glory, fear, patriotism and the reality of the charge. Written by GCSE markers.',
+      'Grade 9 comparison of Hughes’ Bayonet Charge and Tennyson’s Charge of the Light Brigade. Glory, fear, patriotism and the reality of the charge. Written by GCSE markers.',
     category: 'aqa-power-conflict',
   },
   {
@@ -224,7 +223,7 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
     slug: ['aqa-power-conflict', 'checking-out-me-history-vs-the-emigree'],
     title: 'Checking Out Me History vs The Émigrée: Comparison | AQA Power and Conflict',
     description:
-      'Grade 9 comparison of Agard\\u2019s Checking Out Me History and Rumens\\u2019s The Émigrée. Identity, memory, language and belonging. Written by GCSE markers.',
+      'Grade 9 comparison of Agard’s Checking Out Me History and Rumens’s The Émigrée. Identity, memory, language and belonging. Written by GCSE markers.',
     category: 'aqa-power-conflict',
   },
   {
@@ -252,7 +251,7 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
     slug: ['aqa-power-conflict', 'exposure-vs-storm-on-the-island'],
     title: 'Exposure vs Storm on the Island: Comparison | AQA Power and Conflict',
     description:
-      'Grade 9 comparison of Owen\\u2019s Exposure and Heaney\\u2019s Storm on the Island. Nature as enemy, sibilance, pararhyme and the futility of war. Written by GCSE markers.',
+      'Grade 9 comparison of Owen’s Exposure and Heaney’s Storm on the Island. Nature as enemy, sibilance, pararhyme and the futility of war. Written by GCSE markers.',
     category: 'aqa-power-conflict',
   },
   {
@@ -287,7 +286,7 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
     slug: ['aqa-power-conflict', 'kamikaze-vs-my-last-duchess'],
     title: 'Kamikaze vs My Last Duchess: Comparison | AQA Power and Conflict',
     description:
-      'Grade 9 comparison of Garland\\u2019s Kamikaze and Browning\\u2019s My Last Duchess. Power over others, silenced women, and the home as a site of control. Written by GCSE markers.',
+      'Grade 9 comparison of Garland’s Kamikaze and Browning’s My Last Duchess. Power over others, silenced women, and the home as a site of control. Written by GCSE markers.',
     category: 'aqa-power-conflict',
   },
   {
@@ -315,7 +314,7 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
     slug: ['aqa-power-conflict', 'ozymandias-vs-london'],
     title: 'Ozymandias vs London: Comparison | AQA Power and Conflict',
     description:
-      'Grade 9 comparison of Shelley\\u2019s Ozymandias and Blake\\u2019s London. Tyranny, decay, suffering and Romantic radical politics. Written by GCSE markers.',
+      'Grade 9 comparison of Shelley’s Ozymandias and Blake’s London. Tyranny, decay, suffering and Romantic radical politics. Written by GCSE markers.',
     category: 'aqa-power-conflict',
   },
   {
@@ -329,7 +328,7 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
     slug: ['aqa-power-conflict', 'poppies-vs-war-photographer'],
     title: 'Poppies vs War Photographer: Comparison | AQA Power and Conflict',
     description:
-      'Grade 9 comparison of Weir\\u2019s Poppies and Duffy\\u2019s War Photographer. Memory, grief, witnessing and the bystander\\u2019s guilt. Written by GCSE markers.',
+      'Grade 9 comparison of Weir’s Poppies and Duffy’s War Photographer. Memory, grief, witnessing and the bystander’s guilt. Written by GCSE markers.',
     category: 'aqa-power-conflict',
   },
   {
@@ -357,7 +356,7 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
     slug: ['aqa-power-conflict', 'remains-vs-war-photographer'],
     title: 'Remains vs War Photographer: Comparison | AQA Power and Conflict',
     description:
-      'Grade 9 comparison of Armitage\\u2019s Remains and Duffy\\u2019s War Photographer. Trauma, witnessing, PTSD and the reality of modern conflict. Written by GCSE markers.',
+      'Grade 9 comparison of Armitage’s Remains and Duffy’s War Photographer. Trauma, witnessing, PTSD and the reality of modern conflict. Written by GCSE markers.',
     category: 'aqa-power-conflict',
   },
   {
@@ -371,14 +370,14 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
     slug: ['aqa-power-conflict', 'the-prelude-vs-storm-on-the-island'],
     title: 'The Prelude vs Storm on the Island: Comparison | AQA Power and Conflict',
     description:
-      'Grade 9 comparison of Wordsworth\\u2019s Prelude (boat-stealing) and Heaney\\u2019s Storm on the Island. Nature as teacher versus nature as enemy. Written by GCSE markers.',
+      'Grade 9 comparison of Wordsworth’s Prelude (boat-stealing) and Heaney’s Storm on the Island. Nature as teacher versus nature as enemy. Written by GCSE markers.',
     category: 'aqa-power-conflict',
   },
   {
     slug: ['aqa-power-conflict', 'tissue-vs-ozymandias'],
     title: 'Tissue vs Ozymandias: Comparison | AQA Power and Conflict',
     description:
-      'Grade 9 comparison of Dharker\\u2019s Tissue and Shelley\\u2019s Ozymandias. Power of time, fragility of human authority, and the imagery of stone versus paper. Written by GCSE markers.',
+      'Grade 9 comparison of Dharker’s Tissue and Shelley’s Ozymandias. Power of time, fragility of human authority, and the imagery of stone versus paper. Written by GCSE markers.',
     category: 'aqa-power-conflict',
   },
   {
