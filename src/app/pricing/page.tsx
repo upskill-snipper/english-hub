@@ -261,6 +261,31 @@ type CheckoutPlan =
   | 'ielts_monthly'
   | 'ielts_annual'
 
+/**
+ * The same six, at runtime, so `?plan=` from a URL can be checked before it is
+ * trusted. Typed as CheckoutPlan[] so adding a member to the union without
+ * adding it here is a compile error rather than a plan that silently never
+ * resumes.
+ */
+const CHECKOUT_PLANS: readonly CheckoutPlan[] = [
+  'student_monthly',
+  'student_annual',
+  'teacher_monthly',
+  'teacher_annual',
+  'ielts_monthly',
+  'ielts_annual',
+]
+
+/** Wording for the resume banner. */
+const PLAN_LABELS: Record<CheckoutPlan, string> = {
+  student_monthly: 'Student, monthly',
+  student_annual: 'Student, annual',
+  teacher_monthly: 'Teacher, monthly',
+  teacher_annual: 'Teacher, annual',
+  ielts_monthly: 'IELTS, monthly',
+  ielts_annual: 'IELTS, annual',
+}
+
 // Wrapper page: useSearchParams() requires a Suspense boundary in Next 15.
 // The actual content lives in <PricingContent /> below.
 export default function PricingPage() {
@@ -278,6 +303,29 @@ function PricingContent() {
   // applied code already attached, so there's zero re-typing.
   const searchParams = useSearchParams()
   const initialCode = searchParams.get('code')
+
+  /**
+   * The plan they were part-way through buying.
+   *
+   * WHAT WAS DROPPED. When an anonymous visitor picks a plan, this page sends
+   * them to register with a return URL it builds itself, and the comment on
+   * that line says why: "send them to register with a return URL that brings
+   * them back here so they can complete the purchase." They come back to
+   * /pricing?plan=student_annual - and nothing here has ever read `plan`. The
+   * intent survived the round trip in the URL and was discarded on arrival, so
+   * a visitor who had already chosen and already registered had to find the
+   * plan and decide again.
+   *
+   * WHY THIS DOES NOT RESUME CHECKOUT BY ITSELF. It would be one line, and it
+   * would mean a page load sending somebody to a payment page without their
+   * having clicked anything on it. Restoring the choice and putting it one
+   * click away fixes the drop-off; deciding to start a purchase for somebody
+   * is not mine to make.
+   */
+  const rawPlan = searchParams.get('plan')
+  const resumePlan: CheckoutPlan | null = CHECKOUT_PLANS.includes(rawPlan as CheckoutPlan)
+    ? (rawPlan as CheckoutPlan)
+    : null
 
   // 21 April 2026 pricing pivot: two-tier Early Access / Standard with anchor.
   //   Students: Early Access £3.99/mo · £29.99/yr · £20/yr with affiliate code or 2026ENGLISH
@@ -477,6 +525,27 @@ function PricingContent() {
     <div className="relative overflow-hidden">
       {/* Funnel: pricing_viewed (consent-gated in src/lib/posthog.ts) */}
       <TrackEvent event="pricing_viewed" />
+
+      {/* Picking up where they left off. See `resumePlan` above for what was
+          being thrown away and why this stops short of starting the purchase. */}
+      {resumePlan && (
+        <div className="mx-auto mt-6 max-w-3xl px-4">
+          <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-primary/30 bg-primary/5 p-4">
+            <p className="text-sm text-foreground">
+              You were signing up for{' '}
+              <span className="font-semibold">{PLAN_LABELS[resumePlan]}</span>.
+            </p>
+            <button
+              type="button"
+              onClick={() => handleCheckout(resumePlan)}
+              disabled={checkoutLoading !== null}
+              className="inline-flex items-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-60"
+            >
+              {checkoutLoading === resumePlan ? 'Opening checkout...' : 'Continue'}
+            </button>
+          </div>
+        </div>
+      )}
       {/* FAQPage structured data - emitted as <script type="application/ld+json">.
           Client component, so no nonce is passed (nonce prop is optional;
           middleware handles per-request CSP nonces on the response). */}
