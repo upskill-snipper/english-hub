@@ -1,4 +1,4 @@
-import nodemailer from 'nodemailer'
+import nodemailer, { type Transporter } from 'nodemailer'
 import { prisma } from '@/lib/prisma'
 import { createServiceRoleClient } from '@/lib/supabase/server'
 import { shouldBccTrustpilot } from '@/lib/trustpilot/should-bcc'
@@ -32,14 +32,14 @@ function smtpConfigured(): boolean {
 
 // ─── SMTP Configuration ─────────────────────────────────────────────────
 
-let cachedTransporter: nodemailer.Transporter | null = null
+let cachedTransporter: Transporter | null = null
 
 /**
  * Built on first use rather than at module load, so importing this file in an
  * environment with no SMTP settings cannot construct a transport pointed at
  * `undefined`.
  */
-function getTransporter(): nodemailer.Transporter {
+function getTransporter(): Transporter {
   if (!cachedTransporter) {
     cachedTransporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,

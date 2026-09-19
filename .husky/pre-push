@@ -73,6 +73,27 @@ node scripts/check-route-conflicts.mjs || {
   exit 1
 }
 
+# ─── Production dependency advisories ───────────────────────────────────────
+#
+# SEC-1: two critical Next.js advisories sat unpatched because nothing looked.
+# A bare `npm audit` here would be worse than nothing - it exits non-zero on
+# three accepted residuals, so it would fail every push from day one and have a
+# `HUSKY=0` alias written for it by day two. The checker compares against
+# scripts/npm-audit-known.json and fails only on something NEW, with the reason
+# each residual is accepted recorded beside it.
+#
+# It is last because it is the only gate that needs the network, so an offline
+# machine still gets every local check first. Measured at about 1.3 seconds, and
+# it exits 0 when npm cannot run at all - saying why, rather than shrugging,
+# because a skip that always reads the same is indistinguishable from a check
+# that has been broken for months.
+
+node scripts/check-npm-audit.mjs || {
+  echo ""
+  echo "pre-push FAILED: a new production advisory."
+  exit 1
+}
+
 # ─── Generated-dictionary size check ────────────────────────────────────────
 #
 # `src/lib/i18n/generated/{ar,en,es}.ts` are tracked and total 59,761 lines, so

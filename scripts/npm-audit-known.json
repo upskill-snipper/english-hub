@@ -1,0 +1,43 @@
+{
+  "_comment": [
+    "Production advisories that are accepted, with the reason each is accepted.",
+    "scripts/check-npm-audit.mjs fails the push on anything NOT in this list, so a",
+    "red result always means something new. Same device as schema-drift-known.json",
+    "and the KNOWN map in e2e/accessibility.spec.ts.",
+    "",
+    "An entry is not a permanent excuse. When the fix lands, delete the entry: the",
+    "checker reports a pinned advisory that no longer fires, because an allowlist",
+    "that outlives its contents is how a checker starts lying.",
+    "",
+    "Reviewed 19 September 2026 (SEC-1)."
+  ],
+  "accepted": [
+    {
+      "id": "GHSA-w3rx-r6r6-pgpr",
+      "package": "image-size",
+      "via": "pptxgenjs",
+      "severity": "high",
+      "summary": "ICNS parser infinite loop",
+      "why": "Reached only when pptxgenjs parses an image a teacher has chosen to put in their own PowerPoint export, in their own session. The only npm-offered fix is pptxgenjs 2.2.0, a major downgrade that loses the export this product sells. Denial of service against the teacher's own request.",
+      "revisit": "When pptxgenjs ships a release depending on image-size > 2.0.2."
+    },
+    {
+      "id": "GHSA-5p2g-fcmc-qvqq",
+      "package": "image-size",
+      "via": "pptxgenjs",
+      "severity": "high",
+      "summary": "JXL and HEIF parser infinite loops",
+      "why": "Same path and same reasoning as GHSA-w3rx-r6r6-pgpr.",
+      "revisit": "When pptxgenjs ships a release depending on image-size > 2.0.2."
+    },
+    {
+      "id": "GHSA-ggr8-5vv4-36mx",
+      "package": "deepmerge-ts",
+      "via": "@prisma/config, from the prisma CLI",
+      "severity": "high",
+      "summary": "Stack exhaustion merging recursive object graphs",
+      "why": "Reached when the Prisma CLI merges its own configuration at build and migration time, from files in this repository. It is not on any request path. The fixes available are an override to a new major of Prisma's internals, or prisma 8, which is a release candidate. Migrations are the one place in this repository where a silent failure has already cost four months, so neither is worth doing for a build-time parser.",
+      "revisit": "When a stable prisma release depends on deepmerge-ts >= 8."
+    }
+  ]
+}
