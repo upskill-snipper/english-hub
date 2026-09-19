@@ -306,6 +306,14 @@ export const EVENTS = {
    * visitor who simply never tried, so the funnel cannot show which it was.
    */
   MARKING_REFUSED: 'marking_refused',
+  /**
+   * The day-8 card was rendered, and the upgrade button on it was clicked
+   * (SF-7). On a no-card trial this is the only moment the product asks for
+   * money, so without these two "nobody upgraded" and "nobody saw the card"
+   * are indistinguishable, and they need opposite fixes.
+   */
+  TRIAL_ENDED_SEEN: 'trial_ended_seen',
+  TRIAL_ENDED_UPGRADE_CLICKED: 'trial_ended_upgrade_clicked',
   SUBSCRIPTION_STARTED: 'subscription_started',
   SUBSCRIPTION_PAID_CONVERTED: 'subscription_paid_converted',
 } as const
