@@ -376,6 +376,11 @@ function SidebarNav({
   // Non-null while the reader is inside a set text, which switches this
   // sidebar from the site-wide register to that text's own sections.
   const textSlug = textSlugFromPath(pathname)
+  // Collapse the site-wide register ONLY when the text has its own sections
+  // to put in its place. 37 of the 53 texts have no sub-pages, and those
+  // would otherwise get a rail with a single link AND a folded-away site
+  // menu - less navigation than before this feature existed, not more.
+  const hasScopedSections = textSlug !== null && buildTextNav(textSlug).sectionCount > 0
   const { progress, target, hasData } = useRevisionProgress(navItems)
   const { board } = useBoard()
   const t = useT()
@@ -427,7 +432,7 @@ function SidebarNav({
   return (
     <nav className="flex flex-col gap-1">
       {textSlug && <TextScopedNav slug={textSlug} onNavigate={onNavigate} />}
-      <RestOfSite collapsed={Boolean(textSlug)} label={t('textnav.rest_of_site')}>
+      <RestOfSite collapsed={hasScopedSections} label={t('textnav.rest_of_site')}>
         {/* Status card - exam board + target-grade progress merged into a
           single richer panel. Visually anchors the top of the sidebar so
           the long nav list below feels organised rather than open-ended. */}

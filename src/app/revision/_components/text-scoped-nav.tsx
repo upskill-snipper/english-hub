@@ -42,6 +42,7 @@ import {
 import { useT } from '@/lib/i18n/use-t'
 import { buildTextNav, type TextNavIcon } from '@/lib/revision/text-nav'
 import { getSetText } from '@/lib/board/set-texts'
+import { PLACEHOLDER_TEXT_SLUGS } from '@/lib/revision/placeholder-texts.generated'
 
 import { SidebarLink } from './sidebar-link'
 
@@ -67,6 +68,20 @@ export function TextScopedNav({ slug, onNavigate }: { slug: string; onNavigate?:
   const t = useT()
   const nav = buildTextNav(slug)
   const text = getSetText(slug)
+
+  // THE REGRESSION THIS FIXES, shipped by me this morning and live for hours.
+  //
+  // The rail printed "This guide is still being written" whenever a text had no
+  // SUB-PAGES. Only 16 of 53 texts have any, so it said that on 37 hubs - and
+  // seventeen of those are finished guides of 700 to 750 lines. Hamlet, King
+  // Lear, The Great Gatsby, Othello, Twelfth Night, Julius Caesar, Henry V,
+  // Much Ado, Silas Marner and more were each telling the student their
+  // complete guide did not exist yet, while the site-wide register was folded
+  // away, so the page offered almost no navigation either.
+  //
+  // Having no sub-pages is not the same as being unwritten. The generated
+  // placeholder register is the only thing that actually knows, so it decides.
+  const isPlaceholder = PLACEHOLDER_TEXT_SLUGS.has(slug)
 
   // The title comes from the set-text register, which is the same source the
   // page headings use. Falling back to the slug would print "a-christmas-carol"
@@ -105,7 +120,9 @@ export function TextScopedNav({ slug, onNavigate }: { slug: string; onNavigate?:
         // Twenty of the fifty-three texts are placeholders. Saying so is better
         // than rendering an empty rail that looks broken, and better than
         // rendering links to pages that are not written.
-        <p className="px-2.5 text-xs text-muted-foreground">{t('textnav.no_sections')}</p>
+        isPlaceholder ? (
+          <p className="px-2.5 text-xs text-muted-foreground">{t('textnav.no_sections')}</p>
+        ) : null
       ) : (
         <nav className="flex flex-col gap-1" aria-label={title ?? undefined}>
           <SidebarLink
