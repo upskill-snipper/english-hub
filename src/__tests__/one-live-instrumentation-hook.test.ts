@@ -69,7 +69,9 @@ describe('the Sentry config files', () => {
   it('has no edge config that nothing imports', () => {
     // sentry.edge.config.ts duplicated the scrubbers and was imported by
     // nothing - src/instrumentation.ts loads ../sentry.server.config in BOTH
-    // the nodejs and edge branches.
+    // the nodejs and edge branches. Since PERF-3 both of those imports are
+    // guarded on a DSN being present, so with no SENTRY_DSN neither runs; the
+    // point stands that there is one server config file, not two.
     expect(existsSync(join(ROOT, 'sentry.edge.config.ts'))).toBe(false)
     expect(existsSync(join(ROOT, 'sentry.server.config.ts'))).toBe(true)
   })
