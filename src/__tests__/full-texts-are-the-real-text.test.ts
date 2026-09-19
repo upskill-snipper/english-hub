@@ -46,18 +46,36 @@ const ALL = readdirSync(DATA_DIR)
   .filter((f) => f.endsWith('.ts'))
   .map((f) => f.replace(/\.ts$/, ''))
 
+/**
+ * What kind of thing each text is, taken from the file's own declared type.
+ *
+ * THESE WERE TWO HARD-CODED LISTS, with PLAYS defined as everything that was in
+ * neither. That is a denominator that cannot fail: adding La Belle Dame sans
+ * Merci and Piano made them plays, and the suite then asserted that a
+ * twelve-stanza ballad has five acts. The lists did not notice because being a
+ * play required nothing except not being named elsewhere.
+ *
+ * `type` is the field the viewer itself uses to choose between scenes, chapters
+ * and stanzas, and a-poem-is-not-a-novella.test.ts holds it honest, so reading
+ * it here means a new text is classified by what it says it is rather than by
+ * whether somebody remembered to add it to a list.
+ */
+function declaredType(slug: string): string {
+  const src = readFileSync(join(DATA_DIR, `${slug}.ts`), 'utf8')
+  return src.match(/^ {2}type: '([^']+)',$/m)?.[1] ?? '(none)'
+}
+
+const BY_TYPE = new Map<string, string[]>()
+for (const slug of ALL) {
+  const t = declaredType(slug)
+  BY_TYPE.set(t, [...(BY_TYPE.get(t) ?? []), slug])
+}
+
 /** The prose works, which are chaptered rather than acted. */
-const PROSE = [
-  'a-christmas-carol',
-  'silas-marner',
-  'the-sign-of-four',
-  'jekyll-and-hyde',
-  'the-war-of-the-worlds',
-  'the-scarlet-letter',
-]
+const PROSE = [...(BY_TYPE.get('novel') ?? []), ...(BY_TYPE.get('novella') ?? [])].sort()
 /** The poems, which are one short block rather than chapters. */
-const POEMS = ['remember', 'if', 'disabled', 'sonnet-116', 'the-tyger', 'my-last-duchess']
-const PLAYS = ALL.filter((slug) => !PROSE.includes(slug) && !POEMS.includes(slug))
+const POEMS = (BY_TYPE.get('poem') ?? []).sort()
+const PLAYS = (BY_TYPE.get('play') ?? []).sort()
 
 /**
  * Match a section id in either the generated form or the committed one.
@@ -93,10 +111,17 @@ function dataFor(slug: string): string {
 }
 
 describe('the texts are there', () => {
-  it('has twelve plays, six prose works and six poems', () => {
+  it('has twelve plays, six prose works and eight poems', () => {
     expect(PLAYS).toHaveLength(12)
     expect(PROSE).toHaveLength(6)
-    expect(POEMS).toHaveLength(6)
+    expect(POEMS).toHaveLength(8)
+  })
+
+  it('and every file is classified, so none can sit in a default bucket', () => {
+    // The counterweight to deriving the groups: a file whose type is missing or
+    // misspelled would simply vanish from all three lists rather than be
+    // wrongly counted, and nothing else here would notice.
+    expect(PLAYS.length + PROSE.length + POEMS.length).toBe(ALL.length)
   })
 
   it.each(ALL)('%s has a read route wired to its data', (slug) => {

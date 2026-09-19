@@ -119,6 +119,49 @@ const POEMS = [
     lines: 56,
   },
   {
+    slug: 'la-belle-dame-sans-merci',
+    id: 36356,
+    collection: 'Life of John Keats: His Life and Poetry, His Friends, Critics and After-Fame',
+    title: 'La Belle Dame sans Merci',
+    author: 'John Keats',
+    year: '1819',
+    // WHY THE SOURCE IS A BIOGRAPHY, which is unusual and worth stating rather
+    // than hiding. Project Gutenberg has four Keats editions and NONE of them
+    // contains this poem: 23684 is the 1820 volume, 8209 is Poems 1817, 2490 is
+    // Lamia and 24280 is Endymion. La Belle Dame sans Merci was published in
+    // The Indicator in 1820 and appears in none of them. Each was fetched and
+    // searched before this one was chosen.
+    //
+    // Sidney Colvin's 1917 life of Keats prints it complete, and prints it for
+    // a reason he states on the page: "in some of the most accessible and
+    // authoritative recent editions it is unfortunately given with changes
+    // which rob it of half its magic". So this is the 1819 text with
+    // "knight-at-arms", not the 1820 Indicator revision with "wretched wight".
+    // Both are real, anthologies use the 1819, and the file names its edition so
+    // a teacher can see which is which.
+    first: 'O what can ail thee, knight-at-arms',
+    // The first stanza ends "And no birds sing!" with an exclamation mark and
+    // the twelfth ends "And no birds sing." with a full stop. The anchor is the
+    // full stop, so the extraction cannot stop after four lines.
+    last: 'And no birds sing.',
+    lines: 59,
+  },
+  {
+    slug: 'piano',
+    id: 22726,
+    collection: 'New Poems',
+    title: 'Piano',
+    author: 'D. H. Lawrence',
+    year: '1918',
+    // This edition hard-wraps long lines with an indented continuation, so
+    // without unwrapping it yields eighteen lines instead of twelve and the
+    // wrong lineation. See unwrapContinuations in build().
+    unwrapContinuations: true,
+    first: 'Softly, in the dusk, a woman is singing to me;',
+    last: 'Down in the flood of remembrance, I weep like a child for the past.',
+    lines: 14,
+  },
+  {
     slug: 'sonnet-116',
     id: 1041,
     collection: "Shakespeare's Sonnets",
@@ -150,6 +193,35 @@ async function build(poem) {
   let lines = stripGutenberg(raw)
     .split('\n')
     .map((l) => l.replace(/\s+$/, ''))
+
+  if (poem.unwrapContinuations) {
+    // SOME EDITIONS HARD-WRAP A LONG LINE and mark the continuation with a deep
+    // indent. Lawrence's New Poems does this throughout:
+    //
+    //   A child sitting under the piano, in the boom of the
+    //       tingling strings
+    //
+    // That is ONE line of verse, not two. Piano is three quatrains; taken
+    // literally this edition yields eighteen lines and the wrong lineation,
+    // which for a poem is not a cosmetic difference - enjambment and line
+    // endings are what a student is asked to analyse.
+    //
+    // OPT-IN PER POEM, and it has to be. In an edition that indents for rhythm
+    // rather than for wrapping - La Belle Dame sans Merci indents its second
+    // and fourth lines - this would fuse real lines together. The line count
+    // assertion below is what proves the choice was right for a given edition.
+    const joined = []
+    for (const line of lines) {
+      const isContinuation = /^\s{3,}\S/.test(line)
+      const previous = joined[joined.length - 1]
+      if (isContinuation && previous !== undefined && previous.trim().length > 0) {
+        joined[joined.length - 1] = previous.replace(/\s+$/, '') + ' ' + line.trim()
+      } else {
+        joined.push(line)
+      }
+    }
+    lines = joined
+  }
 
   if (poem.stripMarginNumbers) {
     // Some editions print the line number in the right margin, separated from
