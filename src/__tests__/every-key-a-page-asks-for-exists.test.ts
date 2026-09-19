@@ -8,10 +8,22 @@ import { findMissingKeys } from '../../scripts/check-dictionary-keys-exist.mjs'
  * and React renders it, so somebody reads "[[auth.apple.continue]]" where a
  * button label should be.
  *
- * FOUND 19 September 2026, and the button above is not hypothetical: it was the
- * label on the Apple sign-in button, on /auth/login, /auth/register and
- * /auth/teacher-register - the first screen a returning user sees. Seventeen
- * keys were in that state across four files.
+ * FOUND 19 September 2026. Seventeen keys were in that state across four files,
+ * and they were not equally live. Checked page by page against a running
+ * server AFTER the fix, which corrects an overstatement in the commit that
+ * introduced it:
+ *
+ *   LIVE. `breadcrumb.home` on /set-texts/<board> fed BreadcrumbJsonLd, so
+ *   Google was being served `"name":"[[breadcrumb.home]]"` in structured data.
+ *   The IELTS academic-transition page and the personal-statement tool both
+ *   render, and both showed their sentinels on the page.
+ *
+ *   LATENT. The five Apple sign-in keys. The button is gated on
+ *   NEXT_PUBLIC_APPLE_OAUTH_ENABLED, which is not set in production, so it does
+ *   not render today. The commit message called it "the first screen a
+ *   returning user sees", which was wrong: it would have been, the moment
+ *   Calum switched OAuth on, and that is the reason to have fixed it - not a
+ *   reason to have claimed it was already showing.
  *
  * ELEVEN OF THEM CARRIED A FALLBACK THAT COULD NOT WORK:
  *
