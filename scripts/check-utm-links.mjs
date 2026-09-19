@@ -99,9 +99,7 @@ function filesToCheck() {
   const args = process.argv.slice(2).filter((a) => !a.startsWith('--'))
   if (args.length) return args
 
-  const dirs = process.argv.includes('--all')
-    ? ['01 Drafts', '02 Approved']
-    : ['02 Approved']
+  const dirs = process.argv.includes('--all') ? ['01 Drafts', '02 Approved'] : ['02 Approved']
   const out = []
   for (const dir of dirs) {
     const full = join(QUEUE, dir)
@@ -273,6 +271,53 @@ for (const file of files) {
         url: raw,
         why: 'is not in Link-Register.csv - an unregistered link is an unattributable link (rule 5)',
       })
+    }
+  }
+}
+
+// ─── The calendar has somewhere to put the tagged URL ───────────────────────
+//
+// ANA-4 asked for a Tagged URL column on Posting-Calendar.csv, and the reason
+// is sequencing rather than tidiness: the calendar is what Calum works from
+// when posting, and a bio link or a pinned post is a PERMANENT placement. If
+// the column is not there when the first account goes live, the tagged URL
+// lives only in the register, the calendar shows an untagged one, and the
+// placement that cannot easily be changed is the one that gets it wrong.
+//
+// Checked here rather than in its own script because this is the thing that
+// already knows what a tagged link is, and a second script is a second thing
+// to remember to run.
+{
+  const calendar = join(BUSINESS, '03 Social Media/Posting-Calendar.csv')
+  if (existsSync(calendar)) {
+    const rows = readFileSync(calendar, 'utf8')
+      .replace(/^\uFEFF/, '')
+      .split(/\r?\n/)
+    const header = (rows[0] ?? '').split(',').map((h) => h.trim())
+    if (!header.includes('Tagged URL')) {
+      console.error('')
+      console.error('Posting-Calendar.csv has no "Tagged URL" column.')
+      console.error('  Posting from a calendar with no column for it is how an untagged bio link')
+      console.error('  becomes permanent. Add the column before the first account goes live.')
+      process.exit(1)
+    }
+
+    // A row naming a draft is a row about to be posted, so it needs its URL.
+    const iDraft = header.indexOf('Draft file')
+    const iTagged = header.indexOf('Tagged URL')
+    const untagged = []
+    for (const row of rows.slice(1)) {
+      if (!row.trim()) continue
+      const cells = row.split(',')
+      const draft = (cells[iDraft] ?? '').trim()
+      const tagged = (cells[iTagged] ?? '').trim()
+      if (draft && !tagged) untagged.push(draft)
+    }
+    if (untagged.length) {
+      console.error('')
+      console.error(`${untagged.length} calendar row(s) name a draft but carry no tagged URL:`)
+      for (const d of untagged.slice(0, 10)) console.error(`  ${d}`)
+      process.exit(1)
     }
   }
 }
