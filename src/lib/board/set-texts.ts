@@ -51,7 +51,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Much Ado About Nothing',
     author: 'William Shakespeare',
     category: 'shakespeare',
-    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
+    boards: ['aqa', 'edexcel', 'ocr', 'eduqas'],
     copyrightStatus: 'public-domain',
   },
   {
@@ -59,7 +59,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'The Merchant of Venice',
     author: 'William Shakespeare',
     category: 'shakespeare',
-    boards: ['aqa', 'edexcel', 'ocr', 'eduqas'],
+    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
     copyrightStatus: 'public-domain',
   },
   {
@@ -125,7 +125,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Great Expectations',
     author: 'Charles Dickens',
     category: '19th-century',
-    boards: ['aqa', 'edexcel', 'ocr', 'ial-edexcel'], // Prescribed by Edexcel and OCR as well; both were missing.
+    boards: ['aqa', 'edexcel', 'ocr', 'ial-edexcel', 'edexcel-igcse'], // Prescribed by Edexcel and OCR as well; both were missing.
     copyrightStatus: 'public-domain',
   },
   {
@@ -149,7 +149,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Pride and Prejudice',
     author: 'Jane Austen',
     category: '19th-century',
-    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'ial-edexcel'],
+    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'ial-edexcel', 'edexcel-igcse'],
     copyrightStatus: 'public-domain',
   },
   {
@@ -494,7 +494,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Disabled',
     author: 'Wilfred Owen',
     category: 'poetry-anthology',
-    boards: ['edexcel-igcse-lang', 'edexcel-igcse'],
+    boards: ['edexcel-igcse-lang'],
     copyrightStatus: 'public-domain',
     year: '1917',
     keyThemes: ['War', 'Loss of youth', 'Isolation', 'Disability'],
@@ -506,7 +506,7 @@ export const SET_TEXTS: SetText[] = [
     title: "'Out, Out-'",
     author: 'Robert Frost',
     category: 'poetry-anthology',
-    boards: ['edexcel-igcse-lang', 'edexcel-igcse'],
+    boards: ['edexcel-igcse-lang'],
     // Frost died 1963; UK copyright (CDPA 1988 §12: life + 70 years) expires
     // 31 December 2033. Public domain in the United States, but NOT in the UK.
     copyrightStatus: 'copyright',
@@ -522,7 +522,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'An Unknown Girl',
     author: 'Moniza Alvi (b. 1954)',
     category: 'poetry-anthology',
-    boards: ['edexcel-igcse-lang', 'edexcel-igcse'],
+    boards: ['edexcel-igcse-lang'],
     copyrightStatus: 'copyright',
     year: '1996',
     keyThemes: ['Identity', 'Heritage', 'Belonging', 'Cultural connection'],
@@ -536,7 +536,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'The Bright Lights of Sarajevo',
     author: 'Tony Harrison (b. 1937)',
     category: 'poetry-anthology',
-    boards: ['edexcel-igcse-lang', 'edexcel-igcse'],
+    boards: ['edexcel-igcse-lang'],
     copyrightStatus: 'copyright',
     year: '1995',
     keyThemes: ['War', 'Resilience', 'Love', 'Hope'],
@@ -550,7 +550,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Still I Rise',
     author: 'Maya Angelou (1928-2014)',
     category: 'poetry-anthology',
-    boards: ['edexcel-igcse-lang', 'edexcel-igcse'],
+    boards: ['edexcel-igcse-lang'],
     copyrightStatus: 'copyright',
     year: '1978',
     keyThemes: ['Defiance', 'Race', 'Resilience', 'Female strength'],
@@ -905,6 +905,83 @@ export const SET_TEXTS: SetText[] = [
     boards: ['edexcel-igcse'],
     copyrightStatus: 'public-domain',
     year: '1862',
+  },
+
+  // ── Edexcel International GCSE Literature 4ET1, whole texts ────────────────
+  //
+  // ADDED 19 September 2026. Seven texts the 4ET1 specification prescribes and
+  // this file did not hold at all, so no Edexcel IGCSE Literature student could
+  // see them listed as an option for their own paper. Two of them, Klara and
+  // the Sun and Western Lane, are the 2024 additions: first teaching September
+  // 2024, FIRST ASSESSMENT MAY 2026, so they are live for Summer 2026 and
+  // Summer 2027 and were not assessable before.
+  //
+  // Source: Pearson Edexcel International GCSE in English Literature (4ET1)
+  // Specification, Issue 3, August 2025, ISBN 978 1 446 95435 5. See
+  // src/lib/board/edexcel-igcse-literature.ts for the full structure and the
+  // citation.
+  //
+  // As with the anthology rows, no description and no themes: title, author and
+  // prescription are printed facts, a summary is an editorial judgement, and
+  // seven invented ones would be filler.
+  {
+    slug: 'the-whale-rider',
+    title: 'The Whale Rider',
+    author: 'Witi Ihimaera (b. 1944)',
+    category: 'modern',
+    boards: ['edexcel-igcse'],
+    copyrightStatus: 'copyright',
+  },
+  {
+    slug: 'the-joy-luck-club',
+    title: 'The Joy Luck Club',
+    author: 'Amy Tan (b. 1952)',
+    category: 'modern',
+    boards: ['edexcel-igcse'],
+    copyrightStatus: 'copyright',
+  },
+  {
+    slug: 'klara-and-the-sun',
+    title: 'Klara and the Sun',
+    author: 'Kazuo Ishiguro (b. 1954)',
+    category: 'modern',
+    boards: ['edexcel-igcse'],
+    copyrightStatus: 'copyright',
+  },
+  {
+    slug: 'western-lane',
+    title: 'Western Lane',
+    author: 'Chetna Maroo',
+    category: 'modern',
+    boards: ['edexcel-igcse'],
+    copyrightStatus: 'copyright',
+  },
+  {
+    slug: 'kindertransport',
+    title: 'Kindertransport',
+    author: 'Diane Samuels (b. 1960)',
+    category: 'modern',
+    boards: ['edexcel-igcse'],
+    copyrightStatus: 'copyright',
+  },
+  {
+    slug: 'death-and-the-kings-horseman',
+    title: "Death and the King's Horseman",
+    author: 'Wole Soyinka (b. 1934)',
+    category: 'modern',
+    boards: ['edexcel-igcse'],
+    copyrightStatus: 'copyright',
+  },
+  {
+    slug: 'the-scarlet-letter',
+    title: 'The Scarlet Letter',
+    author: 'Nathaniel Hawthorne (1804-1864)',
+    category: '19th-century',
+    boards: ['edexcel-igcse'],
+    // Hawthorne died 1864, so UK copyright (CDPA 1988 s12: life + 70) lapsed
+    // long ago. Publishable in full.
+    copyrightStatus: 'public-domain',
+    year: '1850',
   },
 ]
 

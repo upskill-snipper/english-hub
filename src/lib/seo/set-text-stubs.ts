@@ -76,6 +76,18 @@ export const STUB_SET_TEXT_SLUGS: ReadonlySet<string> = new Set([
   'the-tyger',
   'half-caste',
   'remember',
+  // ── Added 19 September 2026 with the 4ET1 whole-text correction ───────────
+  // Seven texts the Edexcel International GCSE Literature specification
+  // prescribes and our data did not hold, including both 2024 additions.
+  // None has a guide anywhere yet, so unlike the anthology seven these land on
+  // the catch-all and stay there until someone writes them.
+  'the-whale-rider',
+  'the-joy-luck-club',
+  'klara-and-the-sun',
+  'western-lane',
+  'kindertransport',
+  'death-and-the-kings-horseman',
+  'the-scarlet-letter',
 ])
 
 /**
