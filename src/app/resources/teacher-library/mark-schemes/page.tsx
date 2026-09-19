@@ -110,6 +110,36 @@ const MARK_SCHEMES = [
   },
 ]
 
+/**
+ * The cards themselves.
+ *
+ * Extracted so the two groups render identically. Each carries a stable anchor:
+ * the marking hub deep-links to all sixteen by title, and `scroll-mt-24` keeps
+ * the target clear of the sticky header. An anchor only exists on a card that
+ * renders, which is why nothing on this page is hidden any more.
+ */
+function MarkSchemeCards({
+  items,
+}: {
+  items: ReadonlyArray<{ title: string; description: string; examBoard: string }>
+}) {
+  return (
+    <TeacherResourceGrid>
+      {items.map((m) => (
+        <div key={m.title} id={markSchemeAnchor(m.title)} className="scroll-mt-24">
+          <TeacherResourceCard
+            title={m.title}
+            description={m.description}
+            kind="Mark Scheme"
+            examBoard={m.examBoard}
+            tag="Reference card"
+          />
+        </div>
+      ))}
+    </TeacherResourceGrid>
+  )
+}
+
 function markSchemeMatchesBoard(examBoard: string, board: ExamBoard | null): boolean {
   if (!board) return true
   const map: Record<ExamBoard, string> = {
@@ -133,10 +163,33 @@ function markSchemeMatchesBoard(examBoard: string, board: ExamBoard | null): boo
   return examBoard.toLowerCase().includes(label.toLowerCase())
 }
 
+/**
+ * WHAT THE BOARD FILTER DID, reported from the live site on 19 September 2026.
+ *
+ * It hid every card that did not match the reader's board. For four of the
+ * fifteen boards - KS3, and the three Cambridge syllabuses - nothing in the list
+ * matches at all, so the page rendered its heading, its promise of
+ * "quick-reference cards for every major GCSE English exam board", a badge
+ * reading "For KS3", and then an empty grid.
+ *
+ * It also broke twelve links. The marking hub deep-links to all sixteen cards
+ * by anchor, and an anchor only exists on a card that renders, so an AQA reader
+ * following an Edexcel link arrived at this page and jumped nowhere. The test
+ * for those links could not see it: it reads the MARK_SCHEMES array out of this
+ * file and checks the anchors against that, which proves the list is consistent
+ * and says nothing about what a reader is served.
+ *
+ * So nothing is hidden now. The reader's own board comes first, the rest follow
+ * under a heading that says what they are, and every anchor exists on every
+ * render whatever board is set.
+ */
 export default async function MarkSchemesPage() {
   const board = await getServerBoard()
   const boardConfig = getBoardConfig(board)
-  const visible = MARK_SCHEMES.filter((m) => markSchemeMatchesBoard(m.examBoard, board))
+  const mine = MARK_SCHEMES.filter((m) => markSchemeMatchesBoard(m.examBoard, board))
+  const others = MARK_SCHEMES.filter((m) => !mine.includes(m))
+  /** True only when the board genuinely narrows the list to some of it. */
+  const boardHasCards = Boolean(board) && mine.length > 0 && others.length > 0
   return (
     <div className="min-h-screen bg-background">
       <section className="border-b border-border bg-card">
@@ -152,7 +205,10 @@ export default async function MarkSchemesPage() {
             <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary ring-1 ring-inset ring-primary/20">
               For Teachers
             </span>
-            {boardConfig && (
+            {/* Only when we hold cards for that board. It read "For KS3" over an
+                empty page, which is a claim about relevance the page could not
+                keep. */}
+            {boardConfig && boardHasCards && (
               <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-xs font-semibold text-primary">
                 For {boardConfig.shortName}
               </span>
@@ -170,26 +226,36 @@ export default async function MarkSchemesPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-12">
-        <TeacherResourceGrid>
-          {visible.map((m) => (
-            // UX-6 (19 September 2026): each card now has a stable anchor.
-            // The marking hub advertised twelve "mark scheme guide" links and
-            // every one of them was href="#" - they did nothing at all. The
-            // guides they promise are these cards, so the hub deep-links here.
-            // `scroll-mt-24` keeps the target clear of the sticky header.
-            <div key={m.title} id={markSchemeAnchor(m.title)} className="scroll-mt-24">
-              <TeacherResourceCard
-                title={m.title}
-                description={m.description}
-                kind="Mark Scheme"
-                examBoard={m.examBoard}
-                tag="Reference card"
-                href="/resources/teacher-library/mark-schemes"
-              />
-            </div>
-          ))}
-        </TeacherResourceGrid>
+      <section className="mx-auto max-w-6xl space-y-12 px-6 py-12">
+        {boardHasCards && (
+          <div>
+            <h2 className="mb-4 text-xl font-semibold text-foreground">
+              For {boardConfig?.shortName}
+            </h2>
+            <MarkSchemeCards items={mine} />
+          </div>
+        )}
+
+        {!boardHasCards && mine.length === 0 && (
+          // A board we hold no card for: KS3 and the three Cambridge
+          // syllabuses. Saying so is the whole fix for the empty page - the
+          // reader now knows it is a gap in our library rather than a page that
+          // failed to load, and still gets the sixteen cards we do have.
+          <p className="rounded-lg border border-border/60 bg-card p-4 text-sm text-muted-foreground">
+            We do not have reference cards for{' '}
+            <span className="font-medium text-foreground">
+              {boardConfig?.shortName ?? 'your board'}
+            </span>{' '}
+            yet. Every card we do have is below.
+          </p>
+        )}
+
+        <div>
+          {boardHasCards && (
+            <h2 className="mb-4 text-xl font-semibold text-foreground">Other boards</h2>
+          )}
+          <MarkSchemeCards items={boardHasCards ? others : MARK_SCHEMES} />
+        </div>
       </section>
     </div>
   )

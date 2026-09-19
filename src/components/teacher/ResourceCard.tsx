@@ -17,7 +17,17 @@ type ResourceKind =
 interface TeacherResourceCardProps {
   title: string
   description: string
-  href: string
+  /**
+   * Where the card goes. OPTIONAL SINCE 19 September 2026.
+   *
+   * The sixteen mark-scheme cards are the reference itself - the descriptor
+   * summary is the content, and there is no deeper page - so every one of them
+   * was given `href` of the page it already sat on. Clicking a card reloaded
+   * the page you were on, under a label reading "Open" with an arrow. Omitting
+   * the href renders the same card as a plain block with no affordance,
+   * which is what it always was.
+   */
+  href?: string
   kind: ResourceKind
   yearGroup?: string
   duration?: string
@@ -77,19 +87,18 @@ export function TeacherResourceCard({
   className = '',
 }: TeacherResourceCardProps) {
   const t = useT()
-  return (
-    <Link
-      href={href}
-      className={[
-        'group relative flex flex-col rounded-2xl border border-border bg-card p-5 shadow-sm',
-        'transition-all duration-300 ease-out',
-        'hover:shadow-md hover:border-primary/30 hover:-translate-y-0.5',
-        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2',
-        className,
-      ]
-        .filter(Boolean)
-        .join(' ')}
-    >
+  const classes = [
+    'group relative flex flex-col rounded-2xl border border-border bg-card p-5 shadow-sm',
+    'transition-all duration-300 ease-out',
+    'hover:shadow-md hover:border-primary/30 hover:-translate-y-0.5',
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2',
+    className,
+  ]
+    .filter(Boolean)
+    .join(' ')
+
+  const body = (
+    <>
       <div className="flex items-start justify-between gap-2">
         <span
           className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold ring-1 ring-inset ${KIND_STYLES[kind]}`}
@@ -140,10 +149,19 @@ export function TeacherResourceCard({
           </div>
         )}
 
-        <span className="inline-flex items-center gap-1 text-sm font-semibold text-accent transition-colors duration-200 group-hover:text-primary">
-          {t('teacher.resource.open')} <ArrowRight />
-        </span>
+        {href && (
+          <span className="inline-flex items-center gap-1 text-sm font-semibold text-accent transition-colors duration-200 group-hover:text-primary">
+            {t('teacher.resource.open')} <ArrowRight />
+          </span>
+        )}
       </div>
+    </>
+  )
+
+  if (!href) return <div className={classes}>{body}</div>
+  return (
+    <Link href={href} className={classes}>
+      {body}
     </Link>
   )
 }
