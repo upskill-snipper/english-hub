@@ -1,15 +1,49 @@
 // ─── Edexcel International GCSE English Literature (4ET1) Mark Scheme ────────
-// Paper 1: Poetry and Prose - 1h45, 60 marks.
-//   Section A - Unseen poetry            (20 marks: AO1 10 + AO2 10)
-//   Section B - Anthology comparison     (20 marks: AO1  6 + AO2  6 + AO4  8)
-//   Section C - Modern prose (context)   (20 marks: AO1 10 + AO3 10)
-// Covers all four Edexcel IGCSE Literature assessment objectives (AO1-AO4)
-// within a single paper. Based on the Pearson Edexcel International GCSE
-// English Literature (4ET1) specification (first teaching 2016). Band
-// descriptors are summarised in our own words from the publicly available
-// Edexcel generic level grids.
+// Paper 1: Poetry and Modern Prose - 2h, 90 marks.
+//   Section A - Unseen poetry            (20 marks: AO2 20)
+//   Section B - Anthology poetry         (30 marks: AO2 15 + AO3 15)
+//   Section C - Modern prose             (40 marks: AO1 20 + AO4 20)
+//
+// CORRECTED 19 September 2026 (EXAM-5), against Pearson's own published mark
+// scheme for June 2024, Paper 1R. Every number and every objective in the
+// previous version was wrong, and two of them were wrong in the way that does
+// the most damage.
+//
+// THE TOTALS. The paper was declared as 60 marks in 1h45 across three equal
+// 20-mark sections. It is 90 marks in 2 hours, and the sections are 20, 30 and
+// 40. So a student whose essay the tool marked out of 20 was reading a site
+// page that told them Section C is worth 40, and the two disagreed by double.
+//
+// THE OBJECTIVES WERE SWAPPED, which is worse than a wrong total because the
+// feedback text is built from the objective. In 4ET1:
+//
+//   AO3  Explore links and connections between texts
+//   AO4  Show understanding of the relationships between texts and the
+//        contexts in which they were written
+//
+// The code had AO3 labelled "Context" and AO4 labelled "Explore connections" -
+// exactly the wrong way round. Section B, which is the comparison question,
+// was marked for context; Section C, which is the context question, was marked
+// for comparison. A student was told to compare texts on a question that does
+// not ask them to, and told to add context on the question that does not
+// credit it.
+//
+// Section A was also given an AO1 allocation it does not have. It is AO2 only.
+//
+// Band descriptors remain summarised in our own words from the publicly
+// available Edexcel generic level grids. Only the structure, the tariffs and
+// the objective labels changed here; no descriptor wording was copied.
+//
+// PAPER 2 IS STILL NOT HERE, deliberately. The backlog item proposed adding it
+// (60 marks: modern drama 30, literary heritage 30) but the only primary
+// document read was the Paper 1R mark scheme, which says nothing about Paper 2.
+// Adding a second paper on an unverified tariff would put the same class of
+// error back in, one paper along.
 //
 // Sources:
+//   Mark Scheme (Results) June 2024, Pearson Edexcel International GCSE in
+//   English Literature (4ET1) Paper 1R: Poetry and Modern Prose. Read
+//   19 September 2026.
 //   https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses/english-literature-2016.html
 // ────────────────────────────────────────────────────────────────────────────
 
@@ -310,7 +344,7 @@ function ao2(max: number, total: number): AssessmentObjective {
 function ao3(max: number, total: number): AssessmentObjective {
   return {
     id: 'AO3',
-    label: 'AO3 - Context',
+    label: 'AO3 - Explore links and connections between texts',
     description:
       'Show understanding of the relationships between texts and the contexts in which they were written, and how those contexts shape meaning.',
     maxMarks: max,
@@ -322,7 +356,7 @@ function ao3(max: number, total: number): AssessmentObjective {
 function ao4(max: number, total: number): AssessmentObjective {
   return {
     id: 'AO4',
-    label: 'AO4 - Explore connections',
+    label: 'AO4 - Relationships between texts and their contexts',
     description:
       'Explore connections across texts, comparing the ideas, themes and methods used by different writers and the effects these create for the reader.',
     maxMarks: max,
@@ -331,18 +365,18 @@ function ao4(max: number, total: number): AssessmentObjective {
   }
 }
 
-// ─── Paper: Poetry and Prose (4ET1/01) ─────────────────────────────────────
-// A single 60-mark paper that exercises all four IGCSE Literature assessment
-// objectives across three 20-mark sections.
+// ─── Paper: Poetry and Modern Prose (4ET1/01) ──────────────────────────────
+// A 90-mark paper of three unequal sections. Each section examines a different
+// pair of objectives; no section carries all four.
 
 export const edexcelIgcseLit: MarkScheme = {
   id: 'edexcel-igcse-lit',
   board: 'Edexcel IGCSE',
   subject: 'English Literature',
   paper: 'Paper 1',
-  title: 'Poetry and Prose',
-  totalMarks: 60,
-  durationMinutes: 105,
+  title: 'Poetry and Modern Prose',
+  totalMarks: 90,
+  durationMinutes: 120,
   version: '4ET1/01',
   sourceUrl:
     'https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses/english-literature-2016.html',
@@ -353,29 +387,29 @@ export const edexcelIgcseLit: MarkScheme = {
       taskDescription:
         'Read one previously unseen poem and explore how the poet presents a theme, feeling or idea, considering the use of language, form and structure.',
       totalMarks: 20,
-      assessmentObjectives: [ao1(10, 20), ao2(10, 20)],
+      assessmentObjectives: [ao2(20, 20)],
       examinerNotes:
-        'No context is required for the unseen poem. Reward a personal response (AO1) and analysis of method and effect (AO2) in equal measure.',
+        'AO2 only. No context is required and none is credited; reward analysis of language, form and structure and the effects they create.',
     },
     {
       id: 'Section B',
       questionType: 'Anthology poetry comparison',
       taskDescription:
         'Compare how a theme or idea is presented in one named poem from the Pearson Edexcel anthology and one other poem of your choice from the same collection.',
-      totalMarks: 20,
-      assessmentObjectives: [ao1(6, 20), ao2(6, 20), ao4(8, 20)],
+      totalMarks: 30,
+      assessmentObjectives: [ao2(15, 30), ao3(15, 30)],
       examinerNotes:
-        'The named poem is printed on the paper; the second poem is chosen by the student. AO4 (connections) carries the largest single allocation, so reward sustained, balanced comparison of ideas and methods.',
+        'The named poem is printed on the paper; the second poem is chosen by the student. AO2 and AO3 carry fifteen marks each, so analysis of method and sustained comparison are equally weighted. This is the comparison question, and AO3 is the comparison objective - it was previously marked for context, which is AO4 and is not assessed here.',
     },
     {
       id: 'Section C',
       questionType: 'Modern prose essay',
       taskDescription:
         'Answer one essay question on a studied modern prose text, exploring how a theme, character or idea is presented and how it relates to the context of the text.',
-      totalMarks: 20,
-      assessmentObjectives: [ao1(10, 20), ao3(10, 20)],
+      totalMarks: 40,
+      assessmentObjectives: [ao1(20, 40), ao4(20, 40)],
       examinerNotes:
-        'This is a closed-book, whole-text question. Balance the informed personal response (AO1) with secure, integrated use of context (AO3).',
+        'A closed-book, whole-text question and the largest on the paper. Balance the informed personal response (AO1) with secure, integrated understanding of the relationships between the text and its contexts (AO4).',
     },
   ],
 }

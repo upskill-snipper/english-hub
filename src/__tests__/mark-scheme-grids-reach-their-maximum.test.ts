@@ -260,16 +260,54 @@ describe('AO4 on the England GCSE Literature papers', () => {
     expect(offences).toEqual([])
   })
 
-  it('leaves the Pearson IGCSE alone, whose AO4 really is connections', () => {
-    // The guard against the allowlist being widened to `subject` later.
+  it('leaves the Pearson IGCSE alone, because its AO4 is not accuracy either', () => {
+    // The guard against the allowlist above being widened to `subject` later.
+    // The England GCSE rule - AO4 is technical accuracy - must not be applied
+    // to 4ET1, which does not assess accuracy as an objective at all.
     const igcse = getMarkScheme('edexcel-igcse-lit')
-    if (!igcse) return
-    const labels = igcse.questions
+    expect(igcse, 'the Pearson IGCSE scheme has gone, so this proves nothing').toBeTruthy()
+    const ao4 = (igcse?.questions ?? [])
       .flatMap((q) => q.assessmentObjectives)
       .filter((a) => a.id === 'AO4')
-      .map((a) => a.label)
-    if (labels.length > 0) {
-      expect(labels.some((l) => /connection/i.test(l))).toBe(true)
+      .map((a) => a.label + ' ' + a.description)
+    expect(ao4.length).toBeGreaterThan(0)
+    for (const text of ao4) {
+      expect(text, 'AO4 on 4ET1 is not technical accuracy').not.toMatch(
+        /spelling|punctuation|grammar/i,
+      )
     }
+  })
+
+  it('has 4ET1 the right way round: AO3 is connections, AO4 is context', () => {
+    // THIS ASSERTION USED TO SAY THE OPPOSITE. It required 4ET1's AO4 label to
+    // mention "connection", and it passed, because the scheme had AO3 labelled
+    // "Context" and AO4 labelled "Explore connections". Both were wrong.
+    //
+    // Pearson's own mark scheme for June 2024, Paper 1R, prints the objectives:
+    //
+    //   AO3  Explore links and connections between texts
+    //   AO4  Show understanding of the relationships between texts and the
+    //        contexts in which they were written
+    //
+    // The consequence was not cosmetic. The feedback text is built from the
+    // objective, so Section B - the comparison question - was marked for
+    // context, and Section C - the context question - was marked for
+    // comparison. Students were told to do the opposite of what each question
+    // asks on both.
+    const igcse = getMarkScheme('edexcel-igcse-lit')
+    const label = (id: string) =>
+      (igcse?.questions ?? [])
+        .flatMap((q) => q.assessmentObjectives)
+        .filter((a) => a.id === id)
+        .map((a) => a.label)
+
+    const ao3 = label('AO3')
+    const ao4 = label('AO4')
+    expect(ao3.length, 'no AO3 on 4ET1').toBeGreaterThan(0)
+    expect(ao4.length, 'no AO4 on 4ET1').toBeGreaterThan(0)
+    for (const l of ao3) expect(l).toMatch(/connection/i)
+    for (const l of ao3) expect(l).not.toMatch(/^AO3 - Context$/)
+    for (const l of ao4) expect(l).toMatch(/context/i)
+    for (const l of ao4) expect(l).not.toMatch(/explore connections/i)
   })
 })
