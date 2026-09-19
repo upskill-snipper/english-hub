@@ -22,9 +22,7 @@ export const STRINGS: Record<string, Bi> = {
   s9: { en: `The Role of Women`, ar: `دور المرأة` },
   s10: {
     en: `Rationalism vs the Supernatural`,
-    ar: `العقلانية مقابلsupernatural
-
-(Note: The word "supernatural" is kept in English as it's a specific term that may not have an exact equivalent or widely recognized translation in Khaleeji Arabic.)`,
+    ar: `العقلانية في مقابل ما وراء الطبيعة`,
   },
   s12: {
     en: `Structure Your Essay`,

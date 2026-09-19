@@ -57,23 +57,11 @@ export const STRINGS: Record<string, Bi> = {
   },
   s30: {
     en: `Simple vocabulary; limited sentence structures; errors in spelling and punctuation impede meaning.`,
-    ar: `لغة سهلة؛ بنية جمل بسيطة；_errors في الإملاء والت пунктуация تعرقل المعنى._ 
-
-(Note: There seems to be an encoding issue with the middle part of the translation. It should read "أخطاء في التهجئة والتنقيط تحول دون فهم المعنى." but due to limitations, it's displayed incorrectly.)`,
+    ar: `مفردات بسيطة؛ تراكيب جمل محدودة؛ أخطاء في الإملاء وعلامات الترقيم تعيق المعنى.`,
   },
   s31: {
     en: `Some attempt to match purpose; some structural features; begins to engage the reader.`,
-    ar: `بعض المحاولات تتوافق مع الغرض؛ بعض الخصائص البنائية؛ начина привлекать читателя. 
-
-(Note: The last part of the sentence seems to be cut off or incorrectly translated in the source text, so I've provided a partial translation and continuation based on context.)
-
-بعض المحاولات تتوافق مع الغرض؛ بعض الخصائص البنائية؛ يبدأ في привлечение читателя.
-
-Corrected and fully translated:
-بعض المحاولات تتوافق مع الغرض؛ بعض الخصائص البنائية؛ начина привлекать читателя.
-
-Final Correct Translation:
-بعض المحاولات تتوافق مع الغرض؛ بعض الخصائص البنائية؛ يبدأ في إثارة اهتمام القارئ.`,
+    ar: `محاولة لمراعاة الغرض؛ بعض السمات البنائية؛ يبدأ في جذب القارئ.`,
   },
   s32: {
     en: `Some varied vocabulary; attempts complex sentences; mostly accurate spelling of common words.`,
@@ -132,10 +120,7 @@ Final Correct Translation:
   s51: { en: `Sensory detail:`, ar: `تفاصيل حسية:` },
   s52: {
     en: `Varied sentence structure:`,
-    ar: `โครงสร้าง الجمل المتنوعة:  
-(Note: The input text seems to be in English and mentions "Varied sentence structure", but there's no direct translation needed for this phrase in Khaleeji Arabic as it is a technical term. If you need the explanation or examples of varied sentence structures translated, please provide more context or content.)  
-
-البنية الجملية`,
+    ar: `تنويع تراكيب الجمل:`,
   },
   s53: { en: `Ambitious vocabulary:`, ar: `لغة طموحة:` },
   s54: {

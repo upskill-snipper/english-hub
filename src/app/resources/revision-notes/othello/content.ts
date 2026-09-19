@@ -52,13 +52,7 @@ export const STRINGS: Record<string, Bi> = {
   s27: { en: `Top Exam Tips`, ar: `نصائح=top للامتحانات` },
   s28: {
     en: `Always use &ldquo;Shakespeare presents...&rdquo;`,
-    ar: `استخدم دائمًا &ldquo;شيكسبير ي presente...&rdquo;
-
-(Note: There seems to be a typo in "presents" which is not in Arabic. The correct translation should be "يشكspbir ي present..." but since it's an instruction and "presente" doesn't fit, I kept the English word as it was likely intended for clarity.) 
-
-For accuracy, let's correct that:
-
-استخدم دائمًا &ldquo;شيكسبير ي present...&rdquo;`,
+    ar: `استخدم دائما &ldquo;يعرض شكسبير...&rdquo;`,
   },
   s29: { en: `Embed short quotations`, ar: `ادمج استشهادات قصيرة` },
   s30: { en: `Link language to meaning`, ar: `اربط اللغة مع المعنى` },

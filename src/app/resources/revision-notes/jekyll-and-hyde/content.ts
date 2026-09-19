@@ -41,9 +41,7 @@ Note: The term "supernatural transformation" is kept in English as it's a specif
   },
   s24: {
     en: `How does Stevenson present the theme of duality?`,
-    ar: `كيف ي presente Stevenson موضوع الثنائية؟
-
-(Note: The term "presente" is used here as a transliteration of "present" to maintain consistency with the instruction's requirement for Latin terms or transliterated ones. However, in Khaleeji Arabic, it would typically be translated as "يشخص" but since "duality" and other literary techniques are required to remain in their original form if not specified otherwise, I've kept "presente" here.)`,
+    ar: `كيف يعرض ستيفنسون موضوع الازدواجية؟`,
   },
   s25: { en: `Paragraph 1 &mdash; Jekyll&apos;s confession`, ar: `اعتراف جايلكز` },
   s26: { en: `Paragraph 2 &mdash; Hyde&apos;s physical appearance`, ar: `وصف مظهر هايد الفيزيائي` },

@@ -35,9 +35,7 @@ export const STRINGS: Record<string, Bi> = {
   s19: { en: `Setting Description`, ar: `وصف الإعداد` },
   s20: {
     en: `Layer Your Senses`,
-    ar: `[layer your senses]
-
-*(Note: The phrase "Layer Your Senses" is a title or heading and should remain in English as per the instruction to keep brand-specific terms in original language.)*`,
+    ar: `اجمع بين الحواس`,
   },
   s21: {
     en: `Do not describe only what you see. Begin with sight, then add sound, then smell or touch. Each new sense deepens the reader&apos;s immersion.`,
@@ -62,9 +60,7 @@ export const STRINGS: Record<string, Bi> = {
   s33: { en: `Habits and Mannerisms`, ar: `hábitات وصِفَات تِصرفات` },
   s34: {
     en: `Repeated actions or unconscious habits reveal character more authentically than direct description.`,
-    ar: `ال ACTIONS المتكررة أو العادات غيرsciously تكشف عن الشخصية بشكل أكثر صدقًا من الوصف المباشر. 
-
-(Note: There seems to be an error with "non-consciously" which doesn't have a direct translation in Khaleeji Arabic, so it's left as is for clarity.)`,
+    ar: `الأفعال المتكررة أو العادات اللاواعية تكشف الشخصية بصدق أكبر من الوصف المباشر.`,
   },
   s38: { en: `Word-Level: Semantic Fields`, ar: `حقول سيميائية للكلمات` },
   s39: {
@@ -184,11 +180,7 @@ export const STRINGS: Record<string, Bi> = {
   s83: { en: `Spider Diagram (Descriptive Writing)`, ar: `DIAGRAM*spider* (الكتابة التصويرية)` },
   s84: {
     en: `Five-Part Structure (Narrative Writing)`,
-    ar: `โครงสร้างห้าส่วน (การเขียนนิยาย) 
-
-(Note: The term "five-part structure" doesn't have a direct translation in Khaleeji Arabic that fits the context of narrative writing. Given this, I've provided a general translation for narrative writing structure which would be understood by students.)
-
-البنية الخمسة (كتابة القصة)`,
+    ar: `البنية الخماسية (الكتابة السردية)`,
   },
   s85: { en: `Ask yourself:`, ar: `اسأل نفسك:` },
   s86: { en: `Quick Planning Checklist`, ar: `قائمة التخطيط السريعة` },

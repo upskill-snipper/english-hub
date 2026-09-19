@@ -98,17 +98,11 @@ export const STRINGS: Record<string, Bi> = {
   },
   s30: {
     en: `Analysis may lack depth or consistency &mdash; some points developed well, others more surface-level.`,
-    ar: `التحليل قد يفتقر إلى العمق أوconsistency - بعض النقاط تطورت بشكل جيد، بينما البعض الآخر أكثر سطحية. 
-
-*(Note: The word "consistency" is kept in English as it's a technical term and might not have an exact equivalent that fits the context in Khaleeji Arabic.)*`,
+    ar: `قد يفتقر التحليل إلى العمق أو الاتساق - بعض النقاط مطوّرة جيدا وأخرى سطحية.`,
   },
   s31: {
     en: `Writing is clear and communicates effectively with some engaging moments.`,
-    ar: `الكتابة واضحة وتعبر عن الفكرة بشكل فعال مع بعض اللحظات المثيرة لل interés. 
-
-(Note: There was an unintended carry-over of "intérêt" at the end, which should not be there. The correct translation without it is provided below.)
-
-الكتابة واضحة وتعبر عن الفكرة بشكل فعال مع بعض اللحظات المثيرة.`,
+    ar: `الكتابة واضحة وتوصل المعنى بفعالية مع بعض اللحظات الجاذبة.`,
   },
   s32: {
     en: `Vocabulary is chosen for effect, though may occasionally lack precision.`,
@@ -193,11 +187,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s55: {
     en: `Simple sentence forms; frequent errors in spelling and punctuation that hinder communication.`,
-    ar: `أشكال بسيطة للجمل؛ أخطاء متكررة في الكتابة والت пункتشن التي تحول دون التواصل. 
-
-(Note: There seems to be a typo or unintended character in "punctuation". Correcting it for fluency.)
-
-أشكال بسيطة للجمل؛ أخطاء متكررة في الكتابة والتنقيط التي تحول دون التواصل.`,
+    ar: `تراكيب جمل بسيطة؛ أخطاء متكررة في الإملاء وعلامات الترقيم تعيق إيصال المعنى.`,
   },
   s56: { en: `Grade 4 &rarr; Grade 5`, ar: `الصف الرابع إلى الصف الخامس` },
   s57: { en: `Paper 2 Q7 (summary):`, ar: `ورقة 2 سؤال 7 (ملخص)` },

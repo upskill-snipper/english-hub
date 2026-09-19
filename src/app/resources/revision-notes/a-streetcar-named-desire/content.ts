@@ -29,11 +29,7 @@ export const STRINGS: Record<string, Bi> = {
   s19: { en: `Quote precisely and economically.`, ar: `اقتبس بدقة واقتصادية.` },
   s20: {
     en: `Address the whole play.`,
-    ar: `ا.address the whole play. ا.read the entire play. 
-
-(Note: The initial "a." is a placeholder to maintain the instructional format requested. The actual translation focuses on the imperative verb form as per instructions.) 
-
-راجع المسرحية كلها.`,
+    ar: `تناول المسرحية كاملة.`,
   },
   s21: { en: `Scene-by-Scene Summary`, ar: `ملخص مشهدًا بعد مشهد` },
   s22: { en: `Character Profiles`, ar: `ملفات الشخصيات` },

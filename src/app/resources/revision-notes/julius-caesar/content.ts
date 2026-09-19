@@ -34,9 +34,7 @@ export const STRINGS: Record<string, Bi> = {
   s20: { en: `Use precise terminology.`, ar: `استخدم لغة دقيقة.` },
   s21: {
     en: `Address the whole play.`,
-    ar: `ا.address the whole play. ا.read the entire play. 
-
-(Note: The instruction seems to be incomplete or unclear in English. If "Address the whole play" is a command or directive, it would translate more appropriately as an instructional imperative verb like "اقرأ المسرحية كلها" which means "Read the entire play." Please`,
+    ar: `تناول المسرحية كاملة.`,
   },
   s22: { en: `Julius Caesar`, ar: `يوليوس قيصر` },
   s23: { en: `Act-by-Act Summary`, ar: `ملخص مشاهدًا مشاهدًا` },

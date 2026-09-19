@@ -83,7 +83,7 @@ export const STRINGS: Record<string, Bi> = {
   s42: { en: `Soliloquy and Aside`, ar: `منولوج وجانبي` },
   s43: {
     en: `Comic-Tragic Structure`,
-    ar: `โครงสร้างตลกโศกนาฏikal (Note: The term "comic-tragic" doesn't have a direct equivalent in Khaleeji Arabic that fits naturally into the context provided, and given the instruction to keep technical terms as Latin or transliterated, I've presented it phonetically. However, for a`,
+    ar: `البنية الكوميدية التراجيدية`,
   },
   s44: { en: `Patriarchal Language and Power`, ar: `لغة الأبوي والسلطة` },
   s45: {

@@ -19,9 +19,7 @@ export const STRINGS: Record<string, Bi> = {
   s7: { en: `Power and Conflict Poetry`, ar: `شعر عن القوة والصراع` },
   s8: {
     en: `Literary Techniques`,
-    ar: `TECHNIQUES litteraire (ال Tecnikat littéraire) 
-
-(Note: The term "literary techniques" is kept in English as it's a specific terminology and there isn't an exact equivalent phrase in Khaleeji Arabic that would be commonly used in educational contexts. However, the closest translation provided`,
+    ar: `الأساليب الأدبية`,
   },
   s9: { en: `Structural Devices`, ar: `الأدوات البنائية` },
   s10: { en: `Creative Writing`, ar: `الكتابة الإبداعية` },

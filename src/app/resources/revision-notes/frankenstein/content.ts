@@ -64,15 +64,7 @@ export const STRINGS: Record<string, Bi> = {
   s36: { en: `Paragraph 3 &mdash; The Creature&apos;s argument:`, ar: `.Argument الكائن:` },
   s37: {
     en: `Paragraph 4 &mdash; Walton as contrast:`,
-    ar: `параграф 4 &mdash; والتون ك CONTRAST:
-(_correction_: should be)
-
- параграф 4 &mdash; والتون كتباين:
-
-(Note: The system's formatting might not support the exact markdown, but "كتباين" conveys contrast in Khaleeji Arabic.) 
-
-For accurate translation without markdown issues:
- Walton كتباين في الفقرة 4`,
+    ar: `الفقرة 4 - والتون بوصفه نقيضا:`,
   },
   s38: { en: `Sample Question 2: Monstrosity`, ar: `سؤال عينة 2: الوحشية` },
   s39: { en: `Paragraph 1 &mdash; The Creature&apos;s appearance:`, ar: `مظهر الكائن` },
@@ -82,19 +74,11 @@ For accurate translation without markdown issues:
   },
   s41: {
     en: `Paragraph 3 &mdash; The Creature&apos;s transformation:`,
-    ar: `параграф 3 &mdash; تحول الكائن: 
-
-(Note: The above text is a direct translation but does not follow Khaleeji Arabic style as requested. Here's the corrected version following all rules provided):
-
-تحول الكائن: شلون تحولت شخصية الكائن في القصة؟ دوّر عن المعلومات اللي تساعدك على فهم التغيرات اللي حصلت معه. اقرأ المشاهد المهمة وحلِّل كيف أثرت هذه التحولات على قصته.`,
+    ar: `الفقرة 3 - تحول المخلوق:`,
   },
   s42: {
     en: `Paragraph 4 &mdash; Structural presentation:`,
-    ar: `параграф 4 &mdash; عرض الهيكلية: 
-
-(Note: The text provided is a placeholder instruction and does not require translation as it's already in Arabic with an English term. However, if you need the phrase "Structural presentation" translated to Khaleeji Arabic specifically for this context, it would be "عرض الهيكلية". Please let me know if you need any adjustments or further translations.) 
-
-Since the instruction is very brief and doesn't require a full translation but rather an explanation of what needs to happen next in the text (which seems to indicate a structural overview), I'll provide the direct translation for`,
+    ar: `الفقرة 4 - العرض البنائي:`,
   },
   s43: { en: `Sample Question 3: Isolation`, ar: `سُؤال عينة 3: العزلة` },
   s44: { en: `Paragraph 1 &mdash; Victor&apos;s self-imposed isolation:`, ar: `فكتور وحده نفسو:` },

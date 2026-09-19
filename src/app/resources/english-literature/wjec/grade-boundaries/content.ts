@@ -39,11 +39,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s9: {
     en: `Sophisticated exploration of unseen poetry, considering form, structure, and language with originality.`,
-    ar: `استكشاف متطور للشعر غير المعروف، مع مراعاة الشكل والโครง trúc واللغة بطريقة أصلية. 
-
-(Note: There was an error in the last word "โครง trúc" which is not Arabic but Thai. The correct translation should be without that term.)
-
-استكشاف متطور للشعر غير المعروف، مع مراعاة الشكل والبناء واللغة بطريقة أصلية.`,
+    ar: `استكشاف متطور للشعر غير المدروس يراعي الشكل والبنية واللغة بأصالة.`,
   },
   s10: { en: `Grades 7-8 &mdash; Strong`, ar: `المستوى seventh إلى eighth &mdash; قوي` },
   s11: {
@@ -70,14 +66,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s17: {
     en: `Confident analysis of unseen poetry exploring form, structure, and language choices.`,
-    ar: `تحليل ثقة للشعر غير المعلوم مستكشفًا الشكل والโครง trúc والاختيارات اللغوية. 
-
-(Note: There seems to be a typo in the last word "الاختيارات" which should be "الاختيارات". The correct translation is as follows)
-
-تحليل ثقة للشعر غير المعلوم مستكشفًا الشكل وال STRUCTURE والاختيارات اللغوية.
-
-Corrected:
-تحليل ثقة للشعر غير المعلوم مستكشفًا الشكل والبناء والاختيارات اللغوية.`,
+    ar: `تحليل واثق للشعر غير المدروس يستكشف الشكل والبنية والاختيارات اللغوية.`,
   },
   s18: { en: `Grades 5-6 &mdash; Secure`, ar: `الصفوف fifth إلى sixth &mdash; موثوق` },
   s19: {

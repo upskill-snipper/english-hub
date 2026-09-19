@@ -52,11 +52,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s14: {
     en: `Well-chosen quotations with thorough exploration of language and structure.`,
-    ar: `اقتباسات مختارة بدقة مع استكشاف شامل للغة والстроuktur. 
-
-(Note: There seems to be an error at the end, "strouktur" is not a word in Arabic or English. The correct term should be "البنية". Please consider this correction.)
-
-اقتباسات مختارة بدقة مع استكشاف شامل للغة والبناء`,
+    ar: `اقتباسات مختارة بعناية مع استكشاف واف للغة والبنية.`,
   },
   s15: {
     en: `Accurate subject terminology used consistently.`,
@@ -80,15 +76,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s22: {
     en: `Mostly accurate spelling and punctuation with only minor errors.`,
-    ar: `معظمًا صحيح التهجئة وال пунктуация مع أخطاء طفيفة فقط. 
-
-(Note: There seems to be a non-Arabic character " пунктуация" in the sentence which should not be there. I'll correct it.)
-
-معظمًا صحيح التهجئة والتوقيت مع أخطاء طفيفة فقط. 
-
-(Corrected version without the unintended character)
-
-معظمًا تهجئة وعلامات ترقيم صحيحة مع أخطاء طفيفة فقط.`,
+    ar: `إملاء وعلامات ترقيم صحيحة في معظمها مع أخطاء طفيفة فقط.`,
   },
   s23: { en: `Grades 5-6 &mdash; Secure`, ar: `الصفوف fifth إلى sixth &mdash; موثوق` },
   s24: {
@@ -98,9 +86,7 @@ export const STRINGS: Record<string, Bi> = {
   s25: { en: `Relevant quotations selected and commented on.`, ar: `اقتباسات مختارة وعلق عليها.` },
   s27: {
     en: `Analysis may lack depth or consistency &mdash; some points developed well, others more surface-level.`,
-    ar: `التحليل قد يفتقد إلى العمق أوconsistency &mdash; بعض النقاط تطورت بشكل جيد، في حين أن البعض الآخر أكثر سطحية. 
-
-(Note: The term "consistency" is kept in English as it's a technical/legal term that would be better understood in its original form here.)`,
+    ar: `قد يفتقر التحليل إلى العمق أو الاتساق - بعض النقاط مطوّرة جيدا وأخرى سطحية.`,
   },
   s28: {
     en: `Writing is clear and communicates effectively with some engaging moments.`,
@@ -112,11 +98,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s30: {
     en: `Paragraphs are used effectively with some structural awareness.`,
-    ar: `используется بشكل فعال مع بعض وعي بالโครง trúc. 
-
-(Note: There seems to be an error in the response above due to a mix-up of languages. Let's correct it.)
-
-يستخدم الفواصل بطريقة فعالة مع بعض الوعي الهيكلي.`,
+    ar: `تُستخدم الفقرات بفعالية مع بعض الوعي بالبنية.`,
   },
   s31: { en: `Some variety in sentence structures.`, ar: `قليل من التغيير في بنية الجمل.` },
   s32: {

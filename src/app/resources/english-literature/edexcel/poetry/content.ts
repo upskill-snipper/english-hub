@@ -33,11 +33,7 @@ export const STRINGS: Record<string, Bi> = {
   s14: { en: `Both poets present...`, ar: `يقدّم الشاعران...` },
   s15: {
     en: `Like [poem A], [poem B] also...`,
-    ar: `مثل [القصيدة أ], [القصيدة ب] тоже... 
-
-(Note: The phrase "ت тоже..." is not in Khaleeji Arabic, so I'll adjust it to fit the style.)
-
-مثل [القصيدة أ], [القصيدة ب] كمان...`,
+    ar: `مثل [القصيدة أ]، فإن [القصيدة ب] أيضا...`,
   },
   s16: { en: `In the same way...`, ar: `على نفس الطريقة...` },
   s18: { en: `In contrast, [poet]...`, ar: `في المقابل، [الشاعر]...` },

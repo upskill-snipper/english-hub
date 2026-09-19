@@ -43,11 +43,7 @@ export const STRINGS: Record<string, Bi> = {
   s26: { en: `Use precise dramatic terminology.`, ar: `استخدم مصطلحات درامية دقيقة.` },
   s27: {
     en: `Address the whole play.`,
-    ar: `ا.address the whole play. ا.read the entire play. 
-
-(Note: The instruction seems incomplete or out of context for a direct translation. The provided response attempts to offer an instructional command in line with given guidelines.) 
-
-For a more accurate translation, please provide additional context or clarify the full sentence or phrase you'd like translated.`,
+    ar: `تناول المسرحية كاملة.`,
   },
   s28: { en: `Twelfth Night, or What You Will`, ar: `العاشرة والنصف، أو كما تشاء` },
   s29: { en: `Act-by-Act Plot Summary`, ar: `ملخص القصة مشهداً مشهداً` },

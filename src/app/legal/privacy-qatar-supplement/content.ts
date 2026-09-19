@@ -30,9 +30,7 @@ export const STRINGS: Record<string, Bi> = {
   s14: { en: `Transfers to the United States.`, ar: `تحويلات إلى الولايات المتحدة الأمريكية.` },
   s15: {
     en: `Cloudflare global edge.`,
-    ar: `.cloudflare global edge. 
-
-*(Note: The term 'Cloudflare' is a brand name and should remain in English as per instructions.)*`,
+    ar: `شبكة Cloudflare العالمية.`,
   },
   s16: {
     en: `Right of access (PDPPL Article 13)`,

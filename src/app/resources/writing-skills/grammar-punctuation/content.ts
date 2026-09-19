@@ -14,9 +14,7 @@ export const STRINGS: Record<string, Bi> = {
   s0: { en: `Writing Skills`, ar: `مهارات الكتابة` },
   s1: {
     en: `Grammar &amp; Punctuation`,
-    ar: `النحو وال пунктуация
-
-(Note: There's an encoding issue with " Punktuātions" which seems to be a mix-up. The correct translation for "Punctuation" is "النقاط" or simply in the context, it can remain as "ال пунктуация" if referring to specific punctuation marks from English text. However, for general`,
+    ar: `القواعد وعلامات الترقيم`,
   },
   s2: {
     en: `Furthermore, Moreover, In addition, Similarly, Equally`,

@@ -86,9 +86,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s40: {
     en: `How does Achebe present the arrival and effect of Christianity in Umuofia?`,
-    ar: `كيف ي presente أتشيبي وصول ومفعول المسيحية في أموفيا؟
-
-(Note: There seems to be a slight issue with the verb "present" which doesn't directly translate well into Khaleeji Arabic while maintaining its instructional tone. The word "ي-presente" is used here as an approximation, but in a more natural context it would be better translated using a phrase like "كيف يصف أتشيبي وصول ومفعول المسيحية في أموفيا؟")`,
+    ar: `كيف يعرض أتشيبي وصول المسيحية وأثرها في أوموفيا؟`,
   },
   s41: {
     en: `How important is the relationship between Okonkwo and his son Nwoye?`,
@@ -106,12 +104,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s46: {
     en: `Don&rsquo;t idealise Igbo society.`,
-    ar: `ماتعمرش الأمة الإيبوidealistically.  
-
-(Note: The sentence structure is adjusted to fit natural Khaleeji Arabic expression while adhering to the guidelines provided. The direct translation might sound awkward, so "ماتعمرش" (don't idealize) and adding "بالطريقةidealistically" can be used for better understanding.) 
-
-Corrected version:
-لا تعمري الأمة الإيبوidealistically.`,
+    ar: `لا تصوّر مجتمع الإيغبو بصورة مثالية.`,
   },
   s47: { en: `Use Achebe&rsquo;s essays for AO3.`, ar: `` },
   s49: { en: `Copyright notice.`, ar: `الحقوق المحفوظة` },

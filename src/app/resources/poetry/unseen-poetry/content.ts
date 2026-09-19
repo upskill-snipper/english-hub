@@ -22,11 +22,7 @@ export const STRINGS: Record<string, Bi> = {
   s8: { en: `Similarly, both poets...`, ar: `بالمقابل، كلا الشاعرين...` },
   s9: {
     en: `In the same way, Poem B also...`,
-    ar: `على نفس الشاية، القصيدة ب тоже... 
-
-(Note: There's a small error in the Khaleeji Arabic phrase "القصيدة ب" which should be corrected to fit properly. The correct translation would be:)
-
-على نفس الشاية، القصيدة الثانية тоже...`,
+    ar: `وبالطريقة نفسها، فإن القصيدة ب أيضا...`,
   },
   s10: {
     en: `This idea is echoed in Poem B, where...`,
@@ -34,11 +30,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s11: {
     en: `Like Poem A, the second poem presents...`,
-    ar: `مثل القصيدة أ، ت présentent القصيدة الثانية... 
-
-(Note: There seems to be a French word "présentent" in the translation which should not be there. Let's correct it.)
-
-مثل القصيدة أ، القصيدة الثانية ت present...`,
+    ar: `مثل القصيدة أ، تعرض القصيدة الثانية...`,
   },
   s13: { en: `In contrast, Poem B...`, ar: `في المقابل، القصيدة ب...` },
   s16: {

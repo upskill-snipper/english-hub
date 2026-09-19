@@ -74,15 +74,7 @@ export const STRINGS: Record<string, Bi> = {
   s44: { en: `Honour and Reputation`, ar: `` },
   s45: {
     en: `Honour drives most of the play`,
-    ar: `الчесть هي ما ي_drive_most_of_the_play_في معظم مسرحية
-
-(Note: The word "drive" needs to be accurately translated in context which wasn't clear from the given instruction or phrase. If it's meant as a verb, it should be replaced with an appropriate Khaleeji Arabic equivalent.)
-
-Corrected and completed:
-
-الчесть هي ما يدفع معظم مسرحية
-
-For clarity and proper translation:`,
+    ar: `الشرف هو الدافع في معظم المسرحية`,
   },
   s46: { en: `Betrayal and Loyalty`, ar: `خيانة وولاء` },
   s47: {

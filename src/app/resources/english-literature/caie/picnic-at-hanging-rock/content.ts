@@ -43,7 +43,7 @@ export const STRINGS: Record<string, Bi> = {
   s24: { en: `Repression &amp; Sexuality`, ar: `القمع والجنسية` },
   s25: {
     en: `Time &amp; Timelessness`,
-    ar: `الزمن والخلودityEngineer: Please note that the term "Time &amp; Timelessness" has been directly translated to maintain its conceptual integrity without additional commentary or explanation as per your instructions. The phrase "الزمن والخلود" captures both temporal and eternal aspects implied in the original English title.`,
+    ar: `الزمن والخلود`,
   },
   s26: { en: `Loss &amp; Grief`, ar: `الخسارة والحزن` },
   s27: { en: `Colonialism &amp; Landscape`, ar: `الاستعمار والمنظر الطبيعي` },
@@ -53,11 +53,7 @@ export const STRINGS: Record<string, Bi> = {
   s31: { en: `The Unresolved Ending`, ar: `الending الغير منتهي` },
   s32: {
     en: `Part (a) &mdash; Passage-Based Questions`,
-    ar: `часть (أ)a &mdash; أسئلة مبنية على النص
-
-(Note: The formatting instruction "&mdash;" seems to be causing an issue in the translation output. Here's a revised version without it.)
-
-part (أ) - أسئلة مبنية على النص`,
+    ar: `الجزء (أ) - أسئلة مبنية على مقطع`,
   },
   s33: { en: `Narrative perspective:`, ar: `perspective القصة:` },
   s34: { en: `Part (b) &mdash; Essay Questions`, ar: `` },

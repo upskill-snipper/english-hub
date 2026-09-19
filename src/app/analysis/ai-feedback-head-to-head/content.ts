@@ -18,19 +18,7 @@ export const STRINGS: Record<string, Bi> = {
   s6: { en: `Technical accuracy`, ar: `دقة تقنية` },
   s8: {
     en: `Upgrade three informal phrases to academic register.`,
-    ar: `أحول ثلاث جمل غير رسمية إلى регистر الأكاديمي. 
-
-(Note: There seems to be a mix-up in the last part of the translation due to an untranslated phrase "academic register". Here is the corrected version without commentary or preamble as per your instructions.)
-
-تحويل ثلاث جمل غير رسمية إلى регистр الأكاديمي.
-
-Corrected and aligned with instruction format:
-
-تحويل ثلاث جمل غير رسمية إلى регистر الأكاديمي.
-
-(Note: The last part should be in proper Arabic. Here is the corrected version)
-
-تحويل ثلاث جمل غير رسمية إلى التعبير الأكاديمي.`,
+    ar: `حوّل ثلاث عبارات غير رسمية إلى أسلوب أكاديمي.`,
   },
   s9: { en: `AO3 is NOT assessed`, ar: `AO3 لا يُ	evaluated` },
   s10: { en: `To move into Level 5`, ar: `للوصول إلى المستوى الخامس` },

@@ -43,11 +43,7 @@ export const STRINGS: Record<string, Bi> = {
   s19: { en: `Read the passage three times:`, ar: `اقرأ النص ثلاث مرات:` },
   s20: {
     en: `Identify the big picture:`,
-    ar: `ا indentify الصورة الكبيرة: 
-
-(Note: "ا indentify" is kept as-is to reflect the original instruction format, but typically it would be "اشخص" or another appropriate Khaleeji Arabic verb for identifying/recognizing.) 
-
-الصورة الكبيرة يعني تفهم الموضوع كله من دون التركيز على التفاصيل الص`,
+    ar: `حدد الصورة الكاملة:`,
   },
   s21: {
     en: `Plan your response:`,

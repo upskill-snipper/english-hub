@@ -29,7 +29,7 @@ export const STRINGS: Record<string, Bi> = {
   s13: { en: `The Strange Case of Dr Jekyll and Mr Hyde`, ar: `حالة دكتور جيكل وسيد هايد الغريبة` },
   s14: {
     en: `Pride and Prejudice`,
-    ar: `فخر و Пред Jest (Note: There seems to be an error in the instruction regarding the handling of non-Arabic text like "Prejudice". Since a direct translation isn't provided for such cases, I've transliterated it as "Пред" which doesn't fit but is following the given pattern.`,
+    ar: `رواية Pride and Prejudice`,
   },
   s15: { en: `The War of the Worlds`, ar: `حرب العوالم` },
   s16: { en: `The Sign of Four`, ar: `dấu الأربعة` },

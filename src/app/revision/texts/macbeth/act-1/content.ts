@@ -54,11 +54,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s31: {
     en: `Her invocation of spirits parallels the witches, aligning her with supernatural evil.`,
-    ar: `نداءها لل духов يparalleled الشرirts، مما يربطها بالشر السupertatural. 
-
-(Note: There seems to be an issue with the translation of certain terms like "spirits" and "witches". I will correct it as follows for clarity and accuracy.)
-
-نداؤها للروح تparalleled نداء الشياطين، مما يربطها بالشر الغير طبيعي.`,
+    ar: `استدعاؤها للأرواح يوازي فعل الساحرات، مما يضعها في صف الشر الخارق للطبيعة.`,
   },
   s32: {
     en: `She takes charge of the murder plot, instructing Macbeth to &ldquo;look like th&rsquo; innocent flower, / But be the serpent under&rsquo;t.&rdquo;`,
@@ -91,11 +87,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s42: {
     en: `Lady Macbeth&apos;s manipulation of gender expectations is at its most powerful.`,
-    ar: `تReach the manipulation اللي لادى مكbeth ل género المتوقعاتها هي في أقوى حالاتها. 
-
-(Note: There seems to be a mix-up in the translation attempt above, let me correct it properly)
-
-تحايل لادى مكbeth على توقعات الجنس هي في أقوى حالاتها.`,
+    ar: `يبلغ تلاعب الليدي ماكبث بتوقعات النوع الاجتماعي أقوى صوره هنا.`,
   },
   s43: {
     en: `The practical plan for the murder is established.`,

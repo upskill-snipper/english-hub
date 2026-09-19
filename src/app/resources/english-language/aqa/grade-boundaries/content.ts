@@ -72,11 +72,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s22: {
     en: `Mostly accurate spelling and punctuation with only minor errors.`,
-    ar: `سبوتة في التهجئة والت пунктуация مع أخطاء طفيفة فقط. 
-
-(Note: There seems to be a leftover English word "punktuation". I'll correct it.)
-
-معظم التهجئة والإملأء صحيحة مع أخطاء طفيفة فقط.`,
+    ar: `إملاء وعلامات ترقيم صحيحة في معظمها مع أخطاء طفيفة فقط.`,
   },
   s23: { en: `Grades 5-6 &mdash; Secure`, ar: `الصفوف fifth إلى sixth &mdash; موثوق` },
   s24: {
@@ -86,26 +82,15 @@ export const STRINGS: Record<string, Bi> = {
   s25: { en: `Relevant quotations selected and commented on.`, ar: `اقتباسات مختارة وعلق عليها.` },
   s26: {
     en: `Subject terminology used, mostly accurately.`,
-    ar: `مصطلحات الموضوع مستخدمة بشكلmostly دقيق. (Note: "mostly" is kept in English as it's a common word to leave untranslated in such contexts.)
-
-(Note: The term "mostly" was left in English because it doesn't have an exact equivalent that sounds natural in Khaleeji Arabic, and leaving it in English maintains the original intent.) 
-
-For strict translation without notes:
-مصطلحات الموضوع مستخدمة بشكل دقيق.`,
+    ar: `استُخدمت المصطلحات المتخصصة بدقة في معظمها.`,
   },
   s27: {
     en: `Analysis may lack depth or consistency &mdash; some points developed well, others more surface-level.`,
-    ar: `التحليل قد يفتقر إلى العمق أوconsistency - بعض النقاط تطورت بشكل جيد، بينما أخرى على سطحية أكثر. 
-
-(Note: The word "consistency" is kept in English as it's a technical term and might not have an exact equivalent that fits the context in Khaleeji Arabic.)`,
+    ar: `قد يفتقر التحليل إلى العمق أو الاتساق - بعض النقاط مطوّرة جيدا وأخرى سطحية.`,
   },
   s28: {
     en: `Writing is clear and communicates effectively with some engaging moments.`,
-    ar: `الكتابة واضحة وتعبر عن الفكرة بشكل فعال مع بعض اللحظات المثيرة لل interés. 
-
-(Note: There was an unintended carry-over of "intérêt" at the end, which should not be there. The correct translation without it is as follows):
-
-الكتابة واضحة وتعبر عن الفكرة بشكل فعال مع بعض اللحظات المثيرة.`,
+    ar: `الكتابة واضحة وتوصل المعنى بفعالية مع بعض اللحظات الجاذبة.`,
   },
   s29: {
     en: `Vocabulary is chosen for effect, though may occasionally lack precision.`,

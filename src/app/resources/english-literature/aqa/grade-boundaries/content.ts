@@ -36,19 +36,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s9: {
     en: `Convincing, critical analysis and exploration in the Shakespeare extract and wider play.`,
-    ar: `تحليل مقنع وкритический استكشاف فيtract من شكسبير والمسرحية الشاملة. 
-
-(Note: There seems to be a typo or unintended word ".kr" in the middle of the translation which doesn't fit. The intended translation should read as follows without any interruptions):
-
-تحليل مقنع ونقدي واستكشافي فيtract من شكسبير والمسرحية الشاملة.
-
-For accuracy, here is the corrected version:
-
-تحليل مقنع ونقدي واستكشافي فيtract من شكسبير والمسرحية الشاملة.
-
-Since "tract" seems out of place and might be a typo for "النص", I'll correct it to fit context better:
-
-تحليل مقنع ونقدي واستكشافي للنص من شكسبير والمسرحية الشاملة.`,
+    ar: `تحليل نقدي مقنع واستكشاف في مقتطف شكسبير والمسرحية ككل.`,
   },
   s10: {
     en: `Sophisticated comparison of poems from the AQA anthology with a clear personal response.`,
@@ -103,11 +91,7 @@ Since "tract" seems out of place and might be a typo for "النص", I'll correc
   s27: { en: `Grade 4 &mdash; Standard pass`, ar: `الدرجة الرابعة &ndash; المعيار المعتمد للنجاح` },
   s28: {
     en: `Some explained response to texts, though may lack consistency.`,
-    ar: `بعض التفسيرات للمواضيع موضحة، لكنها قد تفتقر إلىconsistency. 
-
-(Note: The word "consistency" is kept as it's a key term and doesn't have a direct translation that fits the context better in Khaleeji Arabic without losing its meaning.)
-
-البعض من التفسيرات للمواضيع موضحة، لكنها قد تفتقر للدقة والثبات.`,
+    ar: `استجابة مشروحة إلى حد ما للنصوص، وإن كانت قد تفتقر إلى الاتساق.`,
   },
   s29: {
     en: `References used to support some points, though not always well-selected.`,

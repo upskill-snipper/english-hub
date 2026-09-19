@@ -85,12 +85,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s29: {
     en: `Macbeth resolves to visit the witches again, seeking security through deeper engagement with the supernatural.`,
-    ar: `ماكبث ي	resolve to visit the witches again، م SEEKING security THROUGH deeper engagement WITH the supernatural. 
-
-(Note: The verb "resolve" is kept in English as it's a specific term and might be memorization material for students.)
-
-التصحيح:
-ماكبث قرر زيارته للساحرات مرة أخرى، يبحث عن الأمان من خلال التعمق في العالم الغيبي.`,
+    ar: `يعقد ماكبث العزم على زيارة الساحرات مرة أخرى، ساعيا إلى الأمان عبر انخراط أعمق في ما وراء الطبيعة.`,
   },
   s31: { en: `Appearance vs Reality`, ar: `` },
   s32: { en: `Scene 5 - Hecate&apos;s Intervention`, ar: `مشهد 5 - تدخل هيكات` },

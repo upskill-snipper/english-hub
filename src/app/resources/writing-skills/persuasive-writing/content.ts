@@ -179,11 +179,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s79: {
     en: `Circular structure: opens and closes with the &ldquo;35,000 hours&rdquo; statistic`,
-    ar: `โครงสร้างวงกลม: يبدأ وينتهي بحصيلة &ldquo;35,000 ساعة&rdquo;
-
-(Note: The provided text seems to contain a mix of languages and concepts that don't fit the Khaleeji Arabic style requested. I've translated it literally into another language as an example, but for Khaleeji Arabic specifically:
-
-يبدأ وينتهي بحصيلة "35,000 ساعة" بشكل دوري)`,
+    ar: `بنية دائرية: تبدأ وتنتهي بإحصائية &ldquo;35,000 ساعة&rdquo;`,
   },
   s80: {
     en: `Direct address shifts the argument from abstract to personal`,

@@ -27,9 +27,7 @@ export const STRINGS: Record<string, Bi> = {
   s10: { en: `How to answer`, ar: `` },
   s11: {
     en: `Read the specified section of the text carefully before looking at the statements.`,
-    ar: `اقرأ الجزء المحدد من النص بعناية قبل النظر فيstatements. 
-
-(Note: Keeping "statements" in English as it's not clear if it refers to a specific technical term or part of the instructions that should remain in English for clarity.)`,
+    ar: `اقرأ الجزء المحدد من النص بعناية قبل النظر في العبارات.`,
   },
   s12: {
     en: `Go through each statement one at a time and check it against the text. Be precise &mdash; a statement might be`,
@@ -37,19 +35,12 @@ export const STRINGS: Record<string, Bi> = {
   },
   s13: {
     en: `If you shade more than four boxes, you will receive zero marks. Make sure you only select exactly four.`,
-    ar: `إذا قمت بتظليل أكثر من أربع خانات، ستحصل على صفر نقاط. احرص على اختيار точно четыре خانات فقط. 
-
-(Note: There seems to be a mix-up with the last part of the sentence, I've kept it as close to original as possible while maintaining Khaleeji Arabic register. The word "точно" is not in Khaleeji Arabic but is included here due to an apparent error in the original instruction's context switch mid-sentence.) 
-
-Corrected version: إذا قمت بتظليل أكثر من أربع خانات، ستحصل على صفر نقاط. احرص على اختيار أربع خانات فقط.`,
+    ar: `إذا ظللت أكثر من أربعة مربعات فلن تحصل على أي نقاط. تأكد من اختيار أربعة بالضبط.`,
   },
   s15: { en: `Common traps`, ar: `مصائد شايئعة` },
   s16: {
     en: `Statements that are true in general but not supported by the text.`,
-    ar: `declarations أن تكون صحيحة بشكل عام لكنها لا تSupported by the text. 
-
-Corrected: 
-declarations أن تكون صحيحة بشكل عام لكنها غير مدعمة بالنص.`,
+    ar: `عبارات صحيحة بشكل عام لكن النص لا يدعمها.`,
   },
   s17: {
     en: `Statements that change a small detail (e.g., &ldquo;three children&rdquo; when the text says &ldquo;two children&rdquo;).`,
@@ -124,17 +115,12 @@ declarations أن تكون صحيحة بشكل عام لكنها غير مدعم
   },
   s47: {
     en: `Alternating structure (recommended)`,
-    ar: `โครงสร้างสลับเปลี่ยน (แนะนำ)  
-(Note: The response is not in Khaleeji Arabic as there was an input mismatch. Here's a proper translation for "Alternating structure (recommended)" in KhALEEJI Arabic)
-
-هيكارة متعامصة (مُوصى بيه)`,
+    ar: `البنية المتناوبة (موصى بها)`,
   },
   s48: { en: `Comparison connectives`, ar: `connectors للمقارنة` },
   s49: {
     en: `For similarities:`,
-    ar: `للsimilarities: 
-
-(Note: The word "similarities" was not provided in Arabic as it needs context to be accurately translated. Please provide more context or the full sentence for an accurate translation.)`,
+    ar: `لأوجه التشابه:`,
   },
   s50: {
     en: `Similarly, Likewise, In the same way, Both writers, Equally, This is echoed by`,
@@ -233,9 +219,7 @@ declarations أن تكون صحيحة بشكل عام لكنها غير مدعم
   },
   s92: {
     en: `Ignoring the form. If the question says &ldquo;Write a speech,&rdquo; your response must read like a speech, with direct address and rhetorical features.`,
-    ar: `إ.ignoregin الشكل. إذا قال السؤال "&ldquo;اكتب خطابًا&rdquo;", يجب أن يبدو ردك كخطاب، مع التحدث مباشرةً وإستخدام ميزات بلاغية. 
-
-(Note: The word "ignore" is kept in English as it's a command and should be in MSA for instructional purposes, while the rest is translated to maintain the tone and style requested.)`,
+    ar: `تجاهل الشكل المطلوب. إذا قال السؤال &ldquo;اكتب خطابا&rdquo; فيجب أن تُقرأ إجابتك كخطاب، بمخاطبة مباشرة وأساليب بلاغية.`,
   },
   s93: {
     en: `Not taking a clear position. Sitting on the fence earns fewer marks than a well-argued viewpoint.`,

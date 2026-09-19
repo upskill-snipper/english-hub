@@ -110,11 +110,7 @@ For direct translation without context:
   },
   s38: {
     en: `Sample Question 3: How does Conan Doyle explore the theme of empire and colonialism?`,
-    ar: `كيف يستكشف دوران دويل темا الإمبراطورية وال колонialism؟
-
-(Note: The term "colonialism" is kept in its transliterated form as it's a technical term. However, the rest of the sentence follows the Khaleeji Arabic style with some adjustments to fit the requested tone and grammar.) 
-
-التصحيح: كيف يستكشف كونان دويل موضوع الإمبراطورية والمستعمرات؟`,
+    ar: `سؤال نموذجي 3: كيف يستكشف كونان دويل موضوع الإمبراطورية والاستعمار؟`,
   },
   s39: { en: `Paragraph 1 &mdash; The Agra treasure as symbol`, ar: `المال في أغرا كرمز` },
   s40: {

@@ -61,11 +61,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s17: {
     en: `Confident analysis of unseen poetry exploring form, structure, and language choices.`,
-    ar: `تحليل واثق للشعر غير المألف مستكشفًا الشكل والبنيةและการวิเคราะห์อย่างมั่นใจในบทกวีที่ไม่เคยเห็นโดยสำรวจรูปแบบ โครงสร้าง และการเลือกใช้ภาษา
-
-Translation note: There seems to be a mix-up in the previous response. Here is the corrected translation based on the instruction:
-
-تحليل واثق للشعر غير المألف مستكشفًا الشكل والبنية والتصرفات اللغوية.`,
+    ar: `تحليل واثق للشعر غير المدروس يستكشف الشكل والبنية والاختيارات اللغوية.`,
   },
   s18: { en: `Grades 5-6 &mdash; Secure`, ar: `الصفوف fifth إلى sixth &mdash; موثوق` },
   s19: {
@@ -152,11 +148,7 @@ Translation note: There seems to be a mix-up in the previous response. Here is t
   s51: { en: `Wider reading:`, ar: `قراءة أوسع:` },
   s52: {
     en: `Paper 1 &mdash; Shakespeare and Post-1914 Literature (50%)`,
-    ar: `الورقة الأولى - شكسبير والлитرatura المعاصرة بعد عام 1914 (50%) 
-
-(Note: The term "ال-literature" is transliterated as it's not a common Arabic word. I'll correct this to proper Arabic terminology.)
-
-الورقة الأولى - شكسبير والأدب الحديث بعد عام 1914 (50%)`,
+    ar: `الورقة 1 - شكسبير وأدب ما بعد 1914 (50%)`,
   },
   s53: { en: `Extract + essay`, ar: `استخرج واستعمرEssay` },
   s54: {

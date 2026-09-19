@@ -76,17 +76,11 @@ export const STRINGS: Record<string, Bi> = {
   },
   s22: {
     en: `Wide range of sentence structures used consciously for effect.`,
-    ar: `مدى واسع من بنية الجمل يستخدمbewleyfiously لخلق تأثير. 
-
-(Note: There seems to be a typo in "bewleyfiously" which is not a real word. It might have been intended as "purposefully". If so, the translation should read: "مدى واسع من بنية الجمل يستخدم بوعي لتحقيق التأثير.")`,
+    ar: `تنوع واسع في تراكيب الجمل مستخدم بوعي لتحقيق أثر.`,
   },
   s23: {
     en: `Mostly accurate spelling, punctuation, and grammar with only minor slips.`,
-    ar: `معظمًاSPELLING AND PUNCTUATIONCORRECT مع بعض الأخطاء الصغيرة. 
-
-(Note: There was a formatting issue with "spelling and punctuation" in the middle of the sentence which doesn't fit naturally in Khaleeji Arabic, so I've split it into two parts for better readability while maintaining the original meaning.) 
-
-معظم SPELLING AND PUNCTUATION CORRECT مع بعض الأخطاء الصغيرة.`,
+    ar: `إملاء وعلامات ترقيم وقواعد صحيحة في معظمها مع هفوات طفيفة فقط.`,
   },
   s24: { en: `Grades 5&ndash;6 &mdash; Secure`, ar: `الصفوف fifth إلى sixth &mdash; موثوق` },
   s25: {
@@ -99,11 +93,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s27: {
     en: `Subject terminology used, mostly accurately.`,
-    ar: `ال терминologia المستخدمة، بشكل أساسي بدقة. 
-
-(Note: The first part "ال терминologia المستخدمة" is a mix-up due to the instruction constraints and needs correction. Let's retranslate it properly.)
-
-المصطلحات الموضوعية المستخدمة، بشكل أساسي بدقة.`,
+    ar: `استُخدمت المصطلحات المتخصصة بدقة في معظمها.`,
   },
   s28: {
     en: `Analysis may lack depth or consistency &mdash; some points well developed, others more surface-level.`,
@@ -111,12 +101,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s29: {
     en: `Writing communicates effectively with some engaging moments and awareness of audience.`,
-    ar: `الكتابة ت communicateEffectively بشكل فعال مع بعض اللحظات المثيرة ووعي بالجمهور. 
-
-(Note: The word "communicateEffectively" is left in English as it doesn't have a direct translation that fits the context, and replacing it might change the intended meaning.)
-
-For a more natural flow:
-الكتابة توصل بشكل فعال مع لحظات جذابة ووعي بالأذناء.`,
+    ar: `الكتابة توصل المعنى بفعالية مع بعض اللحظات الجاذبة ووعي بالجمهور.`,
   },
   s30: {
     en: `Vocabulary chosen for effect, though may occasionally lack precision.`,
@@ -128,16 +113,7 @@ For a more natural flow:
   },
   s32: {
     en: `Some variety in sentence structures and conscious use of sentence types.`,
-    ar: `وايد من التنويع في بنية الجمل و الاستخدامscious ل tipos من الجمل. 
-
-(Note: There's an error in keeping "conscious use of" in English as it didn't translate well directly; however, the rest follows the guidelines provided.) 
-
-Corrected version:
-
-تنويع وايد في بنية الجمل واستخدامscious ل tipos من الجمل.
-
-Final Correct Version:
-تنويع وايد في بنية الجمل واستخدام أنواع مختلفة من الجمل.`,
+    ar: `بعض التنوع في تراكيب الجمل واستخدام واعٍ لأنواع الجمل.`,
   },
   s33: {
     en: `Generally accurate spelling and punctuation with errors on more complex words.`,
