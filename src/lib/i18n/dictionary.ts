@@ -9429,6 +9429,73 @@ export const DICTIONARY: Dictionary = {
   },
   'ielts.admissions.ps.fb.question_label': { en: 'Question', ar: 'سؤال', es: 'Pregunta' },
   'breadcrumb.home': { en: 'Home', ar: 'الرئيسية', es: 'Inicio' },
+
+  // ─── Added 19 September 2026: keys held in titleKey / descKey props ───
+  //
+  // None of these existed. A literal check cannot see them because the key
+  // lives in a property and only reaches t() at render.
+  //
+  // Confirmed in a browser with an AQA board cookie: /resources/poetry showed
+  // `[[resources.poetry.anth.pac.title]]` as the Power and Conflict card
+  // heading. The section is board-filtered, which is why an earlier look with
+  // a different board showed nothing at all.
+  //
+  // Descriptions are thematic only: no claim about how many poems are covered.
+  'resources.poetry.anth.pac.title': {
+    en: 'Power and Conflict',
+    ar: 'القوة والصراع',
+    es: 'Poder y conflicto',
+  },
+  'resources.poetry.anth.pac.desc': {
+    en: 'Poems about power, conflict and what they leave behind.',
+    ar: 'قصائد عن القوة والصراع وما يخلّفانه.',
+    es: 'Poemas sobre el poder, el conflicto y lo que dejan atrás.',
+  },
+  'resources.poetry.anth.lar.title': {
+    en: 'Love and Relationships',
+    ar: 'الحب والعلاقات',
+    es: 'Amor y relaciones',
+  },
+  'resources.poetry.anth.lar.desc': {
+    en: 'Poems about love, family and the shapes relationships take.',
+    ar: 'قصائد عن الحب والعائلة والأشكال التي تأخذها العلاقات.',
+    es: 'Poemas sobre el amor, la familia y las formas que toman las relaciones.',
+  },
+  'resources.poetry.anth.edex_conflict.title': { en: 'Conflict', ar: 'الصراع', es: 'Conflicto' },
+  'resources.poetry.anth.edex_conflict.desc': {
+    en: 'Poems about conflict and its cost, from the Edexcel collection.',
+    ar: 'قصائد عن الصراع وكلفته، من مجموعة Edexcel.',
+    es: 'Poemas sobre el conflicto y su coste, de la colección de Edexcel.',
+  },
+  'resources.poetry.anth.edex_tap.title': {
+    en: 'Time and Place',
+    ar: 'الزمان والمكان',
+    es: 'Tiempo y lugar',
+  },
+  'resources.poetry.anth.edex_tap.desc': {
+    en: 'Poems about places and the memories attached to them.',
+    ar: 'قصائد عن الأماكن والذكريات المرتبطة بها.',
+    es: 'Poemas sobre lugares y los recuerdos ligados a ellos.',
+  },
+  'resources.poetry.anth.eduqas.title': {
+    en: 'Eduqas anthology',
+    ar: 'مختارات Eduqas',
+    es: 'Antología de Eduqas',
+  },
+  'resources.poetry.anth.eduqas.desc': {
+    en: 'The Eduqas poetry anthology, poem by poem.',
+    ar: 'مختارات Eduqas الشعرية، قصيدة قصيدة.',
+    es: 'La antología poética de Eduqas, poema a poema.',
+  },
+  'aff_comp.resources.platform.twitter': { en: 'X (Twitter)', ar: 'X (تويتر)', es: 'X (Twitter)' },
+  'aff_comp.resources.platform.instagram': { en: 'Instagram', ar: 'Instagram', es: 'Instagram' },
+  'aff_comp.resources.platform.tiktok': { en: 'TikTok', ar: 'TikTok', es: 'TikTok' },
+  'aff_comp.resources.platform.email': {
+    en: 'Email',
+    ar: 'البريد الإلكتروني',
+    es: 'Correo electrónico',
+  },
+  'aff_comp.resources.platform.blog': { en: 'Blog', ar: 'مدونة', es: 'Blog' },
   'analysis.breadcrumb.analysis': { en: 'Analysis', ar: 'التحليل', es: 'Análisis' },
   'analysis.byline.markers': {
     en: 'Calibrated to GCSE markers',

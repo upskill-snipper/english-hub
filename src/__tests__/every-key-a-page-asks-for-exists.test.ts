@@ -1,7 +1,11 @@
 import { describe, it, expect } from 'vitest'
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
-import { findMissingKeys, findDeadPatterns } from '../../scripts/check-dictionary-keys-exist.mjs'
+import {
+  findMissingKeys,
+  findDeadPatterns,
+  findMissingKeyProps,
+} from '../../scripts/check-dictionary-keys-exist.mjs'
 
 /**
  * A key that does not exist is rendered to the visitor as `[[key]]`.
@@ -144,5 +148,75 @@ describe('a runtime-built key can at least match something', () => {
       expect(en, `${id} has no title`).toContain(`'aff_comp.resources.tpl.${id}.title'`)
       expect(en, `${id} has no description`).toContain(`'aff_comp.resources.tpl.${id}.desc'`)
     }
+  })
+})
+
+// ─── Keys held in a property ────────────────────────────────────────────
+
+/**
+ * The third way a key hides from a checker.
+ *
+ * `{ titleKey: 'resources.poetry.anth.pac.title' }` is passed later as
+ * `t(section.titleKey)`. The literal check cannot see it - the call site has no
+ * string - and the pattern check cannot either, because there is no template.
+ * But the value is a literal in the same file, so it can simply be looked up.
+ *
+ * Thirty were missing across three surfaces, all rendering sentinels:
+ *
+ *   The privacy dashboard's five tabs and five consent toggles - the screen
+ *   where a user manages consent and exercises data rights.
+ *
+ *   The poetry hub's five anthology cards. CONFIRMED IN A BROWSER: with an AQA
+ *   board cookie, /resources/poetry rendered
+ *   `[[resources.poetry.anth.pac.title]]` as the Power and Conflict card
+ *   heading. The section is board-filtered, which is why a first look with a
+ *   different board showed nothing and nearly filed this as latent.
+ *
+ *   The five affiliate platform names.
+ */
+describe('a key held in a property exists too', () => {
+  it('checked a realistic number of them', async () => {
+    const { checked } = await findMissingKeyProps()
+    expect(checked).toBeGreaterThan(500)
+  })
+
+  it('every one resolves', async () => {
+    const { missing } = await findMissingKeyProps()
+    const named = [...missing.entries()].map(
+      ([key, where]: [string, Set<string>]) => `${key}  (${[...where][0]})`,
+    )
+    expect(named, 'these render to the visitor as the literal text [[key]]').toEqual([])
+  })
+
+  it('and the three surfaces it found are named, so a regression says which broke', async () => {
+    const { missing } = await findMissingKeyProps()
+    for (const key of [
+      'dashboard.privacy.tab_settings',
+      'dashboard.privacy.toggle_ai_label',
+      'resources.poetry.anth.pac.title',
+      'aff_comp.resources.platform.twitter',
+    ]) {
+      expect(missing.has(key), `${key} is missing again`).toBe(false)
+    }
+  })
+
+  it('the AI consent toggle is described as TRAINING, not as marking', async () => {
+    // The distinction that matters on a consent screen. `aiTrainingOptIn` is
+    // its own field and `aiOptOut` is another; describing the training toggle
+    // with the sibling page's "AI-powered analysis of your essays to provide
+    // feedback" would tell a child that turning it off stops their work being
+    // marked. It does not.
+    // Read the VALUE, not the line: prettier wraps a long entry onto its own
+    // lines, so matching the key line alone tested nothing but the key name.
+    const en = readFileSync(join(process.cwd(), 'src/lib/i18n/generated/en.ts'), 'utf8')
+    const at = en.indexOf("'dashboard.privacy.toggle_ai_desc'")
+    expect(at, 'the AI training description is missing').toBeGreaterThan(-1)
+    const value = en.slice(at, en.indexOf(',\n', at))
+    // It must say what the toggle DOES control...
+    expect(value).toContain('improve the marking model')
+    // ...and, more importantly, what it does not. A child turning this off must
+    // not think their essays stop being marked.
+    expect(value).toContain('does not depend on this')
+    expect(value).not.toContain('provide feedback')
   })
 })

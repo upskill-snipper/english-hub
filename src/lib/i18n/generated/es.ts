@@ -2980,6 +2980,23 @@ export const ES_MESSAGES: Record<string, string> = {
   'ielts.admissions.ps.under_min': 'Se requieren al menos {min} caracteres en las tres respuestas.',
   'ielts.admissions.ps.fb.question_label': 'Pregunta',
   'breadcrumb.home': 'Inicio',
+  'resources.poetry.anth.pac.title': 'Poder y conflicto',
+  'resources.poetry.anth.pac.desc': 'Poemas sobre el poder, el conflicto y lo que dejan atrás.',
+  'resources.poetry.anth.lar.title': 'Amor y relaciones',
+  'resources.poetry.anth.lar.desc':
+    'Poemas sobre el amor, la familia y las formas que toman las relaciones.',
+  'resources.poetry.anth.edex_conflict.title': 'Conflicto',
+  'resources.poetry.anth.edex_conflict.desc':
+    'Poemas sobre el conflicto y su coste, de la colección de Edexcel.',
+  'resources.poetry.anth.edex_tap.title': 'Tiempo y lugar',
+  'resources.poetry.anth.edex_tap.desc': 'Poemas sobre lugares y los recuerdos ligados a ellos.',
+  'resources.poetry.anth.eduqas.title': 'Antología de Eduqas',
+  'resources.poetry.anth.eduqas.desc': 'La antología poética de Eduqas, poema a poema.',
+  'aff_comp.resources.platform.twitter': 'X (Twitter)',
+  'aff_comp.resources.platform.instagram': 'Instagram',
+  'aff_comp.resources.platform.tiktok': 'TikTok',
+  'aff_comp.resources.platform.email': 'Correo electrónico',
+  'aff_comp.resources.platform.blog': 'Blog',
   'analysis.breadcrumb.analysis': 'Análisis',
   'analysis.byline.markers': 'Calibrado según los correctores de GCSE',
   'analysis.byline.markers_short': 'Correctores de GCSE',
@@ -16291,6 +16308,24 @@ export const ES_MESSAGES: Record<string, string> = {
   'dash.consent.type.cooling.label': 'Renuncia al periodo de desistimiento',
   'dash.consent.type.cooling.desc':
     'Renuncia al periodo de desistimiento de 14 días para acceder de inmediato al servicio.',
+  'dashboard.privacy.tab_settings': 'Ajustes',
+  'dashboard.privacy.tab_data': 'Mis datos',
+  'dashboard.privacy.tab_download': 'Descargar',
+  'dashboard.privacy.tab_delete': 'Eliminar',
+  'dashboard.privacy.tab_rights': 'Tus derechos',
+  'dashboard.privacy.toggle_analytics_label': 'Analítica',
+  'dashboard.privacy.toggle_analytics_desc':
+    'Permitirnos ver cómo se usa el sitio para poder mejorarlo.',
+  'dashboard.privacy.toggle_marketing_label': 'Correos de marketing',
+  'dashboard.privacy.toggle_marketing_desc':
+    'Recibir correos sobre novedades y ofertas. Puedes desactivarlo cuando quieras.',
+  'dashboard.privacy.toggle_ai_label': 'Entrenamiento de IA',
+  'dashboard.privacy.toggle_ai_desc':
+    'Permitir que tu trabajo corregido ayude a mejorar el modelo de corrección. La corrección de tus redacciones no depende de esto.',
+  'dashboard.privacy.toggle_school_label': 'Compartir con el centro',
+  'dashboard.privacy.toggle_school_desc': 'Comparte tu trabajo y tu progreso con tu centro.',
+  'dashboard.privacy.toggle_research_label': 'Investigación',
+  'dashboard.privacy.toggle_research_desc': 'Permitir que tus datos se usen para investigación.',
   'dash.consent.type.cookie_analytics.label': 'Cookies de analítica',
   'dash.consent.type.cookie_analytics.desc':
     'Permitir cookies de analítica para ayudarnos a entender cómo usas el sitio.',

@@ -138,6 +138,46 @@ export async function findDeadPatterns() {
   return { dead, checked }
 }
 
+/**
+ * A property whose NAME says it holds a dictionary key, with a dotted literal
+ * value: `{ labelKey: 'header.nav.pricing' }`, later passed as `t(item.labelKey)`.
+ */
+const KEY_PROP =
+  /\b(labelKey|titleKey|descKey|bodyKey|headingKey|ariaKey|i18nKey|tKey|textKey)\s*:\s*'([a-z][a-z0-9_]*(?:\.[a-z0-9_]+)+)'/g
+
+/**
+ * Keys held in a property rather than written at the call site.
+ *
+ * The literal check cannot see these - the call is `t(section.titleKey)` - and
+ * the pattern check cannot either, because there is no template to match on.
+ * But the VALUE is a literal sitting in the same file, so it can simply be
+ * looked up.
+ *
+ * This found 30 across three surfaces, every one rendering a sentinel: the
+ * privacy dashboard's five tabs and five consent toggles, the poetry hub's five
+ * anthology cards, and the affiliate platform names.
+ */
+export async function findMissingKeyProps() {
+  const known = await knownKeys()
+  const missing = new Map()
+  let checked = 0
+
+  for (const file of walk('src')) {
+    const source = readFileSync(file, 'utf8')
+    const code = source.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*/g, '')
+    for (const m of code.matchAll(KEY_PROP)) {
+      const key = m[2]
+      checked += 1
+      if (known.has(key)) continue
+      const rel = file.split('\\').join('/')
+      if (!missing.has(key)) missing.set(key, new Set())
+      missing.get(key).add(rel)
+    }
+  }
+
+  return { missing, checked }
+}
+
 export async function findMissingKeys() {
   const known = await knownKeys()
 
@@ -204,5 +244,18 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     process.exitCode = 1
   } else {
     console.log(`${checked} runtime-built pattern(s) checked; every one can match a key.`)
+  }
+
+  const { missing: props, checked: propCount } = await findMissingKeyProps()
+  console.log('')
+  if (props.size) {
+    console.log(`${props.size} key-shaped propert(ies) that do not exist:`)
+    for (const [key, where] of props) {
+      console.log(`  ${key}`)
+      for (const f of where) console.log(`      ${f}`)
+    }
+    process.exitCode = 1
+  } else {
+    console.log(`${propCount} key-shaped propert(ies) checked; every one resolves.`)
   }
 }

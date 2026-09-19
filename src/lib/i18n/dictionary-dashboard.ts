@@ -247,6 +247,75 @@ export const DASHBOARD_CHROME_DICTIONARY: Record<string, { en: string; ar?: stri
       ar: 'تنازل عن فترة الإلغاء (14 يوم) عشان توصل للخدمة على طول.',
       es: 'Renuncia al periodo de desistimiento de 14 días para acceder de inmediato al servicio.',
     },
+    // ─── Added 19 September 2026 ────────────────────────────────────────
+    //
+    // The privacy dashboard holds these keys in labelKey / descKey properties
+    // rather than as literals, so no literal check saw them and not one of the
+    // fifteen existed. The page rendered [[dashboard.privacy.tab_settings]]
+    // across its tab bar and [[dashboard.privacy.toggle_ai_label]] beside each
+    // switch - on the screen where a user manages consent.
+    //
+    // Descriptions state the minimum the field name supports and no more. On a
+    // children’s product a consent description that overstates scope is worse
+    // than a short one. THEY HAVE NOT BEEN THROUGH THE DPO: the ROPA is the
+    // authority on processing purposes and these should be checked against it.
+    //
+    // `toggle_ai` is aiTrainingOptIn - TRAINING - and is deliberately not
+    // described with the sibling page’s "AI-powered analysis of your essays to
+    // provide feedback". That is a different consent (`aiOptOut` is its own
+    // field), and conflating the two is what a consent screen must not do.
+    'dashboard.privacy.tab_settings': { en: `Settings`, ar: `الإعدادات`, es: `Ajustes` },
+    'dashboard.privacy.tab_data': { en: `My data`, ar: `بياناتي`, es: `Mis datos` },
+    'dashboard.privacy.tab_download': { en: `Download`, ar: `تنزيل`, es: `Descargar` },
+    'dashboard.privacy.tab_delete': { en: `Delete`, ar: `حذف`, es: `Eliminar` },
+    'dashboard.privacy.tab_rights': { en: `Your rights`, ar: `حقوقك`, es: `Tus derechos` },
+    'dashboard.privacy.toggle_analytics_label': {
+      en: `Analytics`,
+      ar: `التحليلات`,
+      es: `Analítica`,
+    },
+    'dashboard.privacy.toggle_analytics_desc': {
+      en: `Allow us to see how the site is used, so we can improve it.`,
+      ar: `اسمح لنا نشوف كيف يُستخدم الموقع عشان نحسّنه.`,
+      es: `Permitirnos ver cómo se usa el sitio para poder mejorarlo.`,
+    },
+    'dashboard.privacy.toggle_marketing_label': {
+      en: `Marketing emails`,
+      ar: `الرسائل التسويقية`,
+      es: `Correos de marketing`,
+    },
+    'dashboard.privacy.toggle_marketing_desc': {
+      en: `Receive emails about new features and offers. You can turn this off at any time.`,
+      ar: `استقبل رسائل عن الميزات الجديدة والعروض. تقدر توقفها في أي وقت.`,
+      es: `Recibir correos sobre novedades y ofertas. Puedes desactivarlo cuando quieras.`,
+    },
+    'dashboard.privacy.toggle_ai_label': {
+      en: `AI training`,
+      ar: `تدريب الذكاء الاصطناعي`,
+      es: `Entrenamiento de IA`,
+    },
+    'dashboard.privacy.toggle_ai_desc': {
+      en: `Allow your marked work to help improve the marking model. Marking your essays does not depend on this.`,
+      ar: `اسمح باستخدام أعمالك المصحّحة لتحسين نموذج التصحيح. تصحيح مقالاتك ما يعتمد على هذا.`,
+      es: `Permitir que tu trabajo corregido ayude a mejorar el modelo de corrección. La corrección de tus redacciones no depende de esto.`,
+    },
+    'dashboard.privacy.toggle_school_label': {
+      en: `School sharing`,
+      ar: `المشاركة مع المدرسة`,
+      es: `Compartir con el centro`,
+    },
+    'dashboard.privacy.toggle_school_desc': {
+      en: `Share your work and progress with your school.`,
+      ar: `شارك أعمالك وتقدّمك مع مدرستك.`,
+      es: `Comparte tu trabajo y tu progreso con tu centro.`,
+    },
+    'dashboard.privacy.toggle_research_label': { en: `Research`, ar: `البحث`, es: `Investigación` },
+    'dashboard.privacy.toggle_research_desc': {
+      en: `Allow your data to be used for research.`,
+      ar: `اسمح باستخدام بياناتك لأغراض البحث.`,
+      es: `Permitir que tus datos se usen para investigación.`,
+    },
+
     'dash.consent.type.cookie_analytics.label': {
       en: 'Analytics Cookies',
       ar: 'كوكيز التحليلات',
