@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { getBoardConfig } from '@/lib/board/board-config'
-import { getSetTextsForBoard } from '@/lib/board/set-texts'
+import { getSetTextsForBoard, SET_TEXTS } from '@/lib/board/set-texts'
 import { t } from '@/lib/i18n/t'
 
 import TextsRevisionView from './texts-view'
@@ -17,6 +17,18 @@ export const metadata: Metadata = {
 
 export default async function TextsRevisionPage() {
   const board = await getServerBoard()
+  /**
+   * The texts this board prescribes - and every text on the site when it
+   * prescribes none.
+   *
+   * KS3 and the three Cambridge syllabuses set no literature texts, so this
+   * page rendered "Your KS3 Set Texts", promised "in-depth study guides for
+   * every set text on your KS3 exam board", and then showed a magnifying glass
+   * and "No texts found". A page can be accurate and still read as broken.
+   * Showing the whole library instead gives a KS3 student somewhere to go, and
+   * the heading below stops claiming the texts are theirs.
+   */
+  const boardOwnTexts = board ? getSetTextsForBoard(board) : []
 
   // SEO landing list: every set text on the platform, each entry labelled
   // with its board(s). Shown only when the visitor has not chosen a board
@@ -462,7 +474,8 @@ export default async function TextsRevisionPage() {
           boardName={
             getBoardConfig(board)?.shortName ?? getBoardConfig(board)?.name ?? 'Your Board'
           }
-          texts={getSetTextsForBoard(board)}
+          texts={boardOwnTexts.length > 0 ? boardOwnTexts : SET_TEXTS}
+          boardPrescribesNone={boardOwnTexts.length === 0}
         />
       ) : (
         <section className="mx-auto max-w-5xl px-4 pb-10 sm:px-6 lg:px-8">

@@ -102,9 +102,19 @@ type Props = {
   boardId: ExamBoard
   boardName: string
   texts: SetText[]
+  /**
+   * True when the board sets no literature texts at all, so `texts` is the
+   * whole library rather than theirs. KS3 and the three Cambridge syllabuses.
+   */
+  boardPrescribesNone?: boolean
 }
 
-export default function TextsRevisionView({ boardId, boardName, texts }: Props) {
+export default function TextsRevisionView({
+  boardId,
+  boardName,
+  texts,
+  boardPrescribesNone = false,
+}: Props) {
   const [studiedSlugs, setStudiedSlugs] = useState<Set<string>>(new Set())
   const [studyingSlugs, setStudyingSlugs] = useState<Set<string>>(new Set())
   const [mounted, setMounted] = useState(false)
@@ -351,12 +361,21 @@ export default function TextsRevisionView({ boardId, boardName, texts }: Props) 
           </Badge>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Your {boardName} Set Texts
+            {boardPrescribesNone ? 'Set Texts' : `Your ${boardName} Set Texts`}
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            In-depth study guides for every set text on your {boardName} exam board. Shakespeare
-            plays, 19th-century novels, and modern texts -- with character analysis, theme tracking,
-            and key quotations.
+            {boardPrescribesNone ? (
+              <>
+                {boardName} prescribes no set literature texts, so there is nothing here that is
+                specifically yours. Every text on the site is below, and you can read any of them.
+              </>
+            ) : (
+              <>
+                In-depth study guides for every set text on your {boardName} exam board. Shakespeare
+                plays, 19th-century novels, and modern texts -- with character analysis, theme
+                tracking, and key quotations.
+              </>
+            )}
           </p>
 
           {/* Progress tracker */}
@@ -488,7 +507,11 @@ export default function TextsRevisionView({ boardId, boardName, texts }: Props) 
           <h3 className="mt-4 text-lg font-semibold text-foreground">No texts found</h3>
           <p className="mt-2 text-sm text-muted-foreground">
             {texts.length === 0
-              ? `${boardName} has no prescribed literature texts in our database yet.`
+              ? // Not "we do not have them": KS3 and the Cambridge language
+                // syllabuses genuinely prescribe no set texts. Saying it is a
+                // gap in our data would be untrue and would also suggest
+                // waiting for something that is never coming.
+                `${boardName} prescribes no set literature texts.`
               : 'Try adjusting your search term.'}
           </p>
           {texts.length > 0 && (
