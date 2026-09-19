@@ -145,4 +145,49 @@ export const TEXT_NAV_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     ar: 'ملاحظات بالذكاء الاصطناعي حسب سكيم التصحيح الرسمي',
     es: 'Comentarios de IA según el baremo real',
   },
+
+  // ── Where this text sits on the exam ─────────────────────────────────────
+  // Added 19 September 2026, replacing four paragraphs of study tips that were
+  // byte-identical on all 108 set-text pages. For the 75 texts with no guide
+  // written, that boilerplate WAS the page.
+  'placement.h2': {
+    en: 'Where this text is on your exam',
+    ar: 'وين يجي هذا النص في امتحانك',
+    es: 'Dónde aparece este texto en tu examen',
+  },
+  'placement.intro': {
+    en: 'Read from the specification itself, not summarised from anywhere else.',
+    ar: 'مأخوذ من المنهج الرسمي نفسه، مو ملخّص من مكان ثاني.',
+    es: 'Tomado de la propia especificación, no resumido de otra fuente.',
+  },
+  'placement.assessed_in': {
+    en: 'Assessed in',
+    ar: 'يُقيَّم في',
+    es: 'Se evalúa en',
+  },
+  'placement.selection': {
+    en: 'Your choice',
+    ar: 'اختيارك',
+    es: 'Tu elección',
+  },
+  'placement.source': {
+    en: 'Source',
+    ar: 'المصدر',
+    es: 'Fuente',
+  },
+  'placement.exam_year': {
+    en: 'For the exam series',
+    ar: 'لدورة الامتحان',
+    es: 'Para la convocatoria',
+  },
+  'placement.read_on': {
+    en: 'read',
+    ar: 'قُرئ',
+    es: 'consultado',
+  },
+  'placement.none': {
+    en: 'We have not yet checked this text against a specification, so we are not going to tell you which paper it is on. When we have read the document, it will say so here.',
+    ar: 'ما راجعنا هذا النص مقابل المنهج الرسمي لين الحين، فما راح نقول لك في أي ورقة يجي. أول ما نقرأ الوثيقة بيظهر هنا.',
+    es: 'Todavía no hemos comprobado este texto con una especificación, así que no vamos a decirte en qué examen aparece. Cuando hayamos leído el documento, lo indicaremos aquí.',
+  },
 }

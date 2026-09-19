@@ -19179,6 +19179,15 @@ export const AR_MESSAGES: Record<string, string> = {
   'shelf.none.cta': 'روح لمركز المراجعة',
   'textnav.mark_essay': 'صحّح مقالي',
   'textnav.mark_essay_hint': 'ملاحظات بالذكاء الاصطناعي حسب سكيم التصحيح الرسمي',
+  'placement.h2': 'وين يجي هذا النص في امتحانك',
+  'placement.intro': 'مأخوذ من المنهج الرسمي نفسه، مو ملخّص من مكان ثاني.',
+  'placement.assessed_in': 'يُقيَّم في',
+  'placement.selection': 'اختيارك',
+  'placement.source': 'المصدر',
+  'placement.exam_year': 'لدورة الامتحان',
+  'placement.read_on': 'قُرئ',
+  'placement.none':
+    'ما راجعنا هذا النص مقابل المنهج الرسمي لين الحين، فما راح نقول لك في أي ورقة يجي. أول ما نقرأ الوثيقة بيظهر هنا.',
   'home.lp.h1': 'تعلُّم إنجليزي ذكي.. للجميع',
   'home.lp.subtitle':
     'مُخصّص ومتوافق مع الامتحان ومدعوم بالذكاء الاصطناعي: من السنوات 7-9 مرورًا بـ GCSE وIGCSE وIELTS، مع دعم منظّم للإنجليزي لطلاب EAL. اختر مسارك وجرّب العرض المباشر.',

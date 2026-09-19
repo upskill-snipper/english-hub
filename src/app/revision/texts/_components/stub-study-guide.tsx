@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import type { SetText } from '@/lib/board/set-texts'
 import { t } from '@/lib/i18n/t'
+import { ExamPlacementCard } from '@/components/revision/exam-placement-card'
 
 // Per-category dictionary keys. Looked up at render time via t() so the
 // AR toggle picks up the Khaleeji label without a separate prop change.
@@ -123,6 +124,17 @@ export async function StubStudyGuide({ text, backHref = '/revision/texts', backL
           </CardContent>
         </Card>
       )}
+
+      {/* Where this text sits on the exam.
+
+          ADDED 19 September 2026. These twenty pages said the guide was in
+          production and then offered two links away from the text. A student
+          who arrived here learned nothing about the text they came for. The
+          specification facts are the one thing we can give them honestly while
+          the guide is unwritten: which paper, which section, and whether they
+          had a choice. It renders its own "we have not checked" message when
+          there is nothing verified, so it is safe on all twenty. */}
+      <ExamPlacementCard slug={text.slug} />
 
       <Card className="border-amber-500/40 bg-amber-500/[0.04]">
         <CardHeader>

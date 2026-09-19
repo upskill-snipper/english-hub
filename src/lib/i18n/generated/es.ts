@@ -20181,6 +20181,15 @@ export const ES_MESSAGES: Record<string, string> = {
   'shelf.none.cta': 'Ir a tu centro de repaso',
   'textnav.mark_essay': 'Corregir mi redacción',
   'textnav.mark_essay_hint': 'Comentarios de IA según el baremo real',
+  'placement.h2': 'Dónde aparece este texto en tu examen',
+  'placement.intro': 'Tomado de la propia especificación, no resumido de otra fuente.',
+  'placement.assessed_in': 'Se evalúa en',
+  'placement.selection': 'Tu elección',
+  'placement.source': 'Fuente',
+  'placement.exam_year': 'Para la convocatoria',
+  'placement.read_on': 'consultado',
+  'placement.none':
+    'Todavía no hemos comprobado este texto con una especificación, así que no vamos a decirte en qué examen aparece. Cuando hayamos leído el documento, lo indicaremos aquí.',
   'home.lp.h1': 'Aprendizaje de inglés inteligente para todos',
   'home.lp.subtitle':
     'Personalizado, alineado con el examen y asistido por IA: desde los años 7-9 hasta GCSE, IGCSE e IELTS, además de apoyo estructurado de inglés para estudiantes EAL. Elige tu itinerario y explora la demo en vivo.',

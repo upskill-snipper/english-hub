@@ -19680,6 +19680,15 @@ export const EN_MESSAGES: Record<string, string> = {
   'shelf.none.cta': 'Go to your revision hub',
   'textnav.mark_essay': 'Mark my essay',
   'textnav.mark_essay_hint': 'AI feedback against the real mark scheme',
+  'placement.h2': 'Where this text is on your exam',
+  'placement.intro': 'Read from the specification itself, not summarised from anywhere else.',
+  'placement.assessed_in': 'Assessed in',
+  'placement.selection': 'Your choice',
+  'placement.source': 'Source',
+  'placement.exam_year': 'For the exam series',
+  'placement.read_on': 'read',
+  'placement.none':
+    'We have not yet checked this text against a specification, so we are not going to tell you which paper it is on. When we have read the document, it will say so here.',
   'home.lp.h1': 'Intelligent English Learning for Everyone',
   'home.lp.subtitle':
     'Personalised, exam-aligned and AI-assisted - from Years 7–9 through GCSE, IGCSE and IELTS, and structured English support for EAL learners. Pick your track to explore the live demo.',

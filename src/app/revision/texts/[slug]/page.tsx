@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { isStubSetText } from '@/lib/seo/set-text-stubs'
+import { ExamPlacementCard } from '@/components/revision/exam-placement-card'
 import { notFound, redirect } from 'next/navigation'
 import Link from 'next/link'
 import {
@@ -235,16 +236,6 @@ export default async function TextStudyGuidePage({ params }: { params: Promise<P
   const tQuizTitle = await t('analysis.deep.set_text.quiz_title')
   const tQuizDesc = await t('analysis.deep.set_text.quiz_desc')
   const tQuizCta = await t('analysis.deep.set_text.quiz_cta')
-  const tHowToRevise = await t('analysis.deep.set_text.how_to_revise_prefix')
-  const tHowToReviseIntro = await t('analysis.deep.set_text.how_to_revise_intro')
-  const tTip1H3 = await t('analysis.deep.set_text.tip1_h3')
-  const tTip1Body = await t('analysis.deep.set_text.tip1_body')
-  const tTip2H3 = await t('analysis.deep.set_text.tip2_h3')
-  const tTip2Body = await t('analysis.deep.set_text.tip2_body')
-  const tTip3H3 = await t('analysis.deep.set_text.tip3_h3')
-  const tTip3Body = await t('analysis.deep.set_text.tip3_body')
-  const tTip4H3 = await t('analysis.deep.set_text.tip4_h3')
-  const tTip4Body = await t('analysis.deep.set_text.tip4_body')
 
   const boardsLabel =
     text.boards.length === 1 ? tBoardsOne : `${text.boards.length} ${tBoardsManySuffix}`
@@ -417,39 +408,22 @@ export default async function TextStudyGuidePage({ params }: { params: Promise<P
         </div>
       </section>
 
-      {/* ── Study Tips ─────────────────────────────────────────────── */}
-      <section>
-        <div className="mb-5 flex items-center gap-3">
-          <Lightbulb className="size-5 text-clay-600" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            {tHowToRevise} {text.title}
-          </h2>
-        </div>
+      {/* ── Where this text is on your exam ────────────────────────── */}
+      {/*
+          REPLACED the "How to revise X" block on 19 September 2026. That block
+          was four study tips - memorise short quotations, read the whole text,
+          and two more of the same - rendered byte-identical on all 108 set-text
+          pages. For the 75 texts with no guide written, it WAS the page. It told
+          a student nothing they could not have guessed, and nothing whatever
+          about their own exam.
 
-        <Card>
-          <CardContent className="p-6 sm:p-8">
-            <p className="mb-5 max-w-2xl text-body-sm text-muted-foreground">{tHowToReviseIntro}</p>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="space-y-2 rounded-xl border border-border/60 bg-background/50 p-4">
-                <h3 className="text-sm font-semibold text-foreground">{tTip1H3}</h3>
-                <p className="text-xs text-muted-foreground">{tTip1Body}</p>
-              </div>
-              <div className="space-y-2 rounded-xl border border-border/60 bg-background/50 p-4">
-                <h3 className="text-sm font-semibold text-foreground">{tTip2H3}</h3>
-                <p className="text-xs text-muted-foreground">{tTip2Body}</p>
-              </div>
-              <div className="space-y-2 rounded-xl border border-border/60 bg-background/50 p-4">
-                <h3 className="text-sm font-semibold text-foreground">{tTip3H3}</h3>
-                <p className="text-xs text-muted-foreground">{tTip3Body}</p>
-              </div>
-              <div className="space-y-2 rounded-xl border border-border/60 bg-background/50 p-4">
-                <h3 className="text-sm font-semibold text-foreground">{tTip4H3}</h3>
-                <p className="text-xs text-muted-foreground">{tTip4Body}</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </section>
+          What replaces it is the thing a specification prints and almost nobody
+          publishes: which paper this text is on, which section, what it is
+          worth, and whether they chose it. 57 of the 108 texts have a verified
+          placement today. The rest render an honest sentence saying we have not
+          checked, rather than a hedge.
+      */}
+      <ExamPlacementCard slug={text.slug} />
 
       {/* ── Back to Hub ────────────────────────────────────────────── */}
       <div className="flex justify-center">
