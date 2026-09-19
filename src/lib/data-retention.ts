@@ -57,6 +57,8 @@ export interface CleanupSummary {
   freeAllowanceRowsPurged: number
   supportTicketsArchived: number
   expiredMarketingConsents: number
+  /** Expired examiner marking runs deleted. Children's handwriting (PAY-9). */
+  expiredExaminerRuns: number
   childrenPriorityCleanups: number
   /** Children's Code Standard 8 - dormant child account processing */
   childDormancy: DormancyResult | null
@@ -570,6 +572,7 @@ export async function cleanupExpiredData(): Promise<CleanupSummary> {
     freeAllowanceRowsPurged: 0,
     supportTicketsArchived: 0,
     expiredMarketingConsents: 0,
+    expiredExaminerRuns: 0,
     childrenPriorityCleanups: 0,
     childDormancy: null,
     errors: [],
@@ -630,6 +633,56 @@ export async function cleanupExpiredData(): Promise<CleanupSummary> {
   } catch (err) {
     summary.errors.push({
       step: 'child_dormancy_processing',
+      message: err instanceof Error ? err.message : String(err),
+    })
+  }
+
+  // ── 1c. Expired examiner marking runs ───────────────────────────────
+  //
+  // THE GAP THIS CLOSES (PAY-9). `examiner_marking_runs` holds TRANSCRIBED
+  // CHILDREN'S HANDWRITING - a pupil's exam script, typed out - with a 180-day
+  // `expires_at`. Nothing swept it on a schedule. The only sweep was lazy, in
+  // GET /api/examiner/runs, scoped to `owner_id`: it ran when the owning
+  // teacher next opened the list.
+  //
+  // So a teacher who marked a set of scripts in June and never came back kept
+  // those children's writing indefinitely, past its own stated expiry, and the
+  // product would have said 180 days while holding it for ever. On a product
+  // whose users are children that is a retention promise the code did not keep.
+  //
+  // The table is empty today - the examiner tool is new - which is the right
+  // moment to add this rather than the wrong one.
+  //
+  // Deletes by expiry only, never by owner: this is the unconditional sweep the
+  // lazy one is a convenience on top of.
+
+  try {
+    const admin = createServiceRoleClient()
+    const { data: expiredRuns, error: expiredErr } = await admin
+      .from('examiner_marking_runs')
+      .delete()
+      .lt('expires_at', new Date().toISOString())
+      .select('id')
+
+    if (expiredErr) {
+      summary.errors.push({ step: 'examiner_runs_expiry', message: expiredErr.message })
+    } else {
+      const removed = expiredRuns?.length ?? 0
+      summary.expiredExaminerRuns = removed
+      summary.childrenPriorityCleanups += removed
+      if (removed > 0) {
+        // An audit row, because a deletion of children's data that leaves no
+        // trace cannot be evidenced to a regulator asking whether the stated
+        // retention period was honoured.
+        await auditRetentionAction('EXAMINER_RUNS_EXPIRED', null, {
+          deleted: removed,
+          reason: 'past expires_at (180 days)',
+        })
+      }
+    }
+  } catch (err) {
+    summary.errors.push({
+      step: 'examiner_runs_expiry',
       message: err instanceof Error ? err.message : String(err),
     })
   }
