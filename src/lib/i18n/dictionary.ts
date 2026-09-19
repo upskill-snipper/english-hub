@@ -148,6 +148,8 @@ import { REV_MISC2_DICTIONARY } from './dictionary-rev-misc2'
 // and second poetry-hub shard (rev.poetry2.*). Curated EN + Khaleeji AR + ES.
 import { REV_MISC_DICTIONARY } from './dictionary-rev-misc'
 import { REV_POETRY2_DICTIONARY } from './dictionary-rev-poetry2'
+// Text-scoped sidebar labels (textnav.*). See src/lib/revision/text-nav.ts.
+import { TEXT_NAV_DICTIONARY } from './dictionary-text-nav'
 // 2026-06-08: landing-page hero rebuild chrome (home.lp.*).
 import { HOME_LP_DICTIONARY } from './dictionary-home-hero'
 
@@ -25123,6 +25125,7 @@ export const DICTIONARY_CHAIN: Dictionary[] = [
   REV_MISC2_DICTIONARY,
   REV_MISC_DICTIONARY,
   REV_POETRY2_DICTIONARY,
+  TEXT_NAV_DICTIONARY,
   HOME_LP_DICTIONARY,
   IGCSE_PAGES_DICTIONARY,
   KS3_PAGES_DICTIONARY,

@@ -2,7 +2,7 @@
 
 > The English Hub is an independent GCSE, IGCSE, KS3, IELTS and EAL English learning platform for students, parents, teachers and schools. It provides exam-board-aligned revision (AQA, Pearson Edexcel, OCR, WJEC Eduqas, Cambridge IGCSE), AI-assisted essay feedback against real mark schemes, exam-style practice, mock exams, teacher tools and school-level analytics. The interface is available in English, Gulf Arabic and Spanish; study content is English. The platform is exam-board aligned, not exam-board endorsed. Content accuracy is governed by a published content-verification methodology with human review of high-stakes material.
 
-Last generated: 2026-08-18. Canonical host: https://theenglishhub.app
+Last generated: 2026-09-18. Canonical host: https://theenglishhub.app
 
 This file follows the llms.txt convention so AI answer engines can cite accurate, exam-board-specific English education content. The English Hub is independent and exam-board aligned, not endorsed.
 
@@ -847,7 +847,6 @@ This file follows the llms.txt convention so AI answer engines can cite accurate
 - [Data Processing](https://theenglishhub.app/data-processing)
 - [Examiners](https://theenglishhub.app/examiners)
 - [Faqs](https://theenglishhub.app/faqs)
-- [Growth](https://theenglishhub.app/growth)
 - [Legal › Acceptable Use](https://theenglishhub.app/legal/acceptable-use)
 - [Legal › Ai Governance](https://theenglishhub.app/legal/ai-governance)
 - [Legal › Ai Transparency](https://theenglishhub.app/legal/ai-transparency)
@@ -869,6 +868,7 @@ This file follows the llms.txt convention so AI answer engines can cite accurate
 ## Other pages
 
 - [Blog](https://theenglishhub.app/blog)
+- [Business English](https://theenglishhub.app/business-english)
 - [Demo › School › Analytics](https://theenglishhub.app/demo/school/analytics)
 - [Demo › School › Benchmarks](https://theenglishhub.app/demo/school/benchmarks)
 - [Demo › School › Classes](https://theenglishhub.app/demo/school/classes)
@@ -896,7 +896,6 @@ This file follows the llms.txt convention so AI answer engines can cite accurate
 - [Demo › Teacher › Resources](https://theenglishhub.app/demo/teacher/resources)
 - [Demo › Teacher › Students](https://theenglishhub.app/demo/teacher/students)
 - [For Schools › Contact](https://theenglishhub.app/for-schools/contact)
-- [For Schools › Register](https://theenglishhub.app/for-schools/register)
 - [For Teachers › Free Resources](https://theenglishhub.app/for-teachers/free-resources)
 - [Help](https://theenglishhub.app/help)
 - [Help › Contact](https://theenglishhub.app/help/contact)

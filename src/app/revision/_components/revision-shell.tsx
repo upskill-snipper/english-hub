@@ -43,6 +43,10 @@ import { getBoardConfig, type ExamBoard } from '@/lib/board/board-store'
 import { isIgcseBoard, isGcseBoard } from '@/lib/board/board-filter'
 import { gradeDisplayLabel } from '@/lib/board/grade-boundaries'
 import { useT } from '@/lib/i18n/use-t'
+import { buildTextNav, textSlugFromPath } from '@/lib/revision/text-nav'
+
+import { SidebarLink } from './sidebar-link'
+import { TextScopedNav } from './text-scoped-nav'
 
 // ─── Nav items ──────────────────────────────────────────────────────────────
 
@@ -287,6 +291,10 @@ function navLabel(item: NavItem, t: ReturnType<typeof useT>): string {
 
 // Single nav-link row - shared between the top-tier list and the grouped
 // `<details>` lists so active styling stays in lockstep.
+//
+// The presentation moved to ./sidebar-link.tsx when the text-scoped navigation
+// was added, so a text's own sections and the site-wide register render as one
+// consistent column rather than two lists that look almost the same.
 function NavLink({
   item,
   isActive,
@@ -299,44 +307,47 @@ function NavLink({
   t: ReturnType<typeof useT>
 }) {
   return (
-    <Link
+    <SidebarLink
       href={item.href}
-      onClick={onNavigate}
-      aria-current={isActive ? 'page' : undefined}
-      className={cn(
-        'group relative flex items-center gap-2.5 rounded-lg ps-2.5 pe-2 py-1.5 text-sm font-medium transition-all duration-150',
-        isActive
-          ? 'bg-primary/10 text-foreground ring-1 ring-primary/20 shadow-sm shadow-primary/5'
-          : 'text-muted-foreground hover:bg-accent/60 hover:text-foreground',
-      )}
-    >
-      {/* Active left-edge accent bar - subtler than a full background flood
-          and helps the eye scan-locate the current page in a long list. */}
-      {isActive && (
-        <span
+      label={navLabel(item, t)}
+      icon={<item.icon className="size-3.5" aria-hidden="true" />}
+      iconColour={item.colour}
+      isActive={isActive}
+      onNavigate={onNavigate}
+    />
+  )
+}
+
+/**
+ * Wraps the site-wide register in a closed group when the reader is inside a
+ * text, and leaves it untouched everywhere else.
+ *
+ * Inside a text the text's own sections must come first, but the register is
+ * the only route back to marking, the dashboard and mock exams, so it is
+ * collapsed rather than removed. `<details>` gives that for free: no state, and
+ * the reader can open it and leave it open while they browse.
+ */
+function RestOfSite({
+  collapsed,
+  label,
+  children,
+}: {
+  collapsed: boolean
+  label: string
+  children: React.ReactNode
+}) {
+  if (!collapsed) return <>{children}</>
+  return (
+    <details className="mt-4 border-t border-border/60 pt-3 [&[open]>summary>svg.group-chevron]:rotate-90">
+      <summary className="flex cursor-pointer list-none items-center gap-2 rounded-md px-2.5 py-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:outline-none [&::-webkit-details-marker]:hidden">
+        <ChevronRight
           aria-hidden="true"
-          className="absolute start-0 top-2 bottom-2 w-[3px] rounded-full bg-primary"
+          className="group-chevron size-3 shrink-0 transition-transform duration-150"
         />
-      )}
-      {/* Icon tile - lifts every link into a uniform two-part composition
-          (tile + label) so the long list reads as a single column instead
-          of icon-text-icon-text noise. */}
-      <span
-        className={cn(
-          'flex size-7 shrink-0 items-center justify-center rounded-md transition-colors',
-          isActive ? 'bg-primary/15 ring-1 ring-primary/20' : 'bg-muted/30 group-hover:bg-accent',
-        )}
-      >
-        <item.icon
-          className={cn('size-3.5', isActive ? 'text-primary' : item.colour)}
-          aria-hidden="true"
-        />
-      </span>
-      <span className="flex-1 truncate">{navLabel(item, t)}</span>
-      {isActive && (
-        <ChevronRight aria-hidden="true" className="size-3.5 shrink-0 text-primary opacity-70" />
-      )}
-    </Link>
+        <span className="flex-1">{label}</span>
+      </summary>
+      <div className="mt-1 flex flex-col gap-1">{children}</div>
+    </details>
   )
 }
 
@@ -350,6 +361,9 @@ function SidebarNav({
   boardName: string | null
 }) {
   const pathname = usePathname()
+  // Non-null while the reader is inside a set text, which switches this
+  // sidebar from the site-wide register to that text's own sections.
+  const textSlug = textSlugFromPath(pathname)
   const { progress, target, hasData } = useRevisionProgress(navItems)
   const { board } = useBoard()
   const t = useT()
@@ -400,109 +414,114 @@ function SidebarNav({
 
   return (
     <nav className="flex flex-col gap-1">
-      {/* Status card - exam board + target-grade progress merged into a
+      {textSlug && <TextScopedNav slug={textSlug} onNavigate={onNavigate} />}
+      <RestOfSite collapsed={Boolean(textSlug)} label={t('textnav.rest_of_site')}>
+        {/* Status card - exam board + target-grade progress merged into a
           single richer panel. Visually anchors the top of the sidebar so
           the long nav list below feels organised rather than open-ended. */}
-      <div className="relative mb-4 overflow-hidden rounded-2xl border border-primary/25 bg-gradient-to-br from-primary/[0.06] via-card to-violet-500/[0.04] p-3.5">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -end-8 -top-8 h-20 w-20 rounded-full bg-primary/[0.07] blur-2xl"
-        />
-        <div className="relative">
-          {boardName && (
-            <div className="mb-3 flex items-center justify-between">
-              <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
-                {t('revision.shell.exam_board_label')}
-              </span>
-              <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
-                {boardName}
-              </Badge>
-            </div>
-          )}
+        <div className="relative mb-4 overflow-hidden rounded-2xl border border-primary/25 bg-gradient-to-br from-primary/[0.06] via-card to-violet-500/[0.04] p-3.5">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -end-8 -top-8 h-20 w-20 rounded-full bg-primary/[0.07] blur-2xl"
+          />
+          <div className="relative">
+            {boardName && (
+              <div className="mb-3 flex items-center justify-between">
+                <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
+                  {t('revision.shell.exam_board_label')}
+                </span>
+                <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
+                  {boardName}
+                </Badge>
+              </div>
+            )}
 
-          {/* Target-grade progress. Fill = student's weighted performance
+            {/* Target-grade progress. Fill = student's weighted performance
               score (quiz_responses correct rate + AIFeedback overallScore,
               server-aggregated at /api/profile/grade-progress) mapped onto
               the target-grade threshold. Falls back to a coverage proxy
               (sections visited / total visible) until there's real data. */}
-          <div className="flex items-center justify-between">
-            <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
-              {t('revision.shell.target_grade_label')}
-            </span>
-            <span className="font-heading text-base font-semibold text-primary">{labelRight}</span>
+            <div className="flex items-center justify-between">
+              <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
+                {t('revision.shell.target_grade_label')}
+              </span>
+              <span className="font-heading text-base font-semibold text-primary">
+                {labelRight}
+              </span>
+            </div>
+            <Progress value={progress} className="mt-2">
+              <ProgressTrack className="h-2 bg-border/40">
+                <ProgressIndicator className="rounded-full bg-gradient-to-r from-cyan-400 via-primary to-emerald-400" />
+              </ProgressTrack>
+            </Progress>
+            <div className="mt-1.5 flex justify-between text-[10px] font-medium text-muted-foreground">
+              <span>{labelLeft}</span>
+              <span>{labelMid}</span>
+              <span className="text-primary">{labelRight}</span>
+            </div>
+            {!hasData && (
+              <p className="mt-2 text-[10px] italic text-muted-foreground-subtle">
+                {t('revision.shell.progress_hint')}
+              </p>
+            )}
           </div>
-          <Progress value={progress} className="mt-2">
-            <ProgressTrack className="h-2 bg-border/40">
-              <ProgressIndicator className="rounded-full bg-gradient-to-r from-cyan-400 via-primary to-emerald-400" />
-            </ProgressTrack>
-          </Progress>
-          <div className="mt-1.5 flex justify-between text-[10px] font-medium text-muted-foreground">
-            <span>{labelLeft}</span>
-            <span>{labelMid}</span>
-            <span className="text-primary">{labelRight}</span>
-          </div>
-          {!hasData && (
-            <p className="mt-2 text-[10px] italic text-muted-foreground-subtle">
-              {t('revision.shell.progress_hint')}
-            </p>
-          )}
         </div>
-      </div>
 
-      {/* Top-tier nav - always-visible essentials (Your Hub, Full Dashboard,
+        {/* Top-tier nav - always-visible essentials (Your Hub, Full Dashboard,
           Analytics, Study Plan). Rendered flat above the collapsible groups
           so they read as the primary surface of the sidebar. */}
-      {topItems.map((item) => (
-        <NavLink
-          key={item.href}
-          item={item}
-          isActive={pathname === item.href}
-          onNavigate={onNavigate}
-          t={t}
-        />
-      ))}
+        {topItems.map((item) => (
+          <NavLink
+            key={item.href}
+            item={item}
+            isActive={pathname === item.href}
+            onNavigate={onNavigate}
+            t={t}
+          />
+        ))}
 
-      {/* Collapsible group sections. Each is a native <details> so SSR/CSR
+        {/* Collapsible group sections. Each is a native <details> so SSR/CSR
           stays clean - no React state, no hydration mismatch risk. The
           group whose href the user is currently inside opens by default;
           everything else stays tucked away. */}
-      {GROUPS.map(({ key, label }) => {
-        const items = groupedItems[key]
-        if (items.length === 0) return null
-        const open = groupIsActive(key)
-        return (
-          <details
-            key={key}
-            open={open}
-            className="mt-2.5 [&[open]>summary>svg.group-chevron]:rotate-90"
-          >
-            <summary className="flex cursor-pointer list-none items-center gap-2 rounded-md px-2.5 py-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:outline-none [&::-webkit-details-marker]:hidden">
-              <ChevronRight
-                aria-hidden="true"
-                className="group-chevron size-3 shrink-0 transition-transform duration-150"
-              />
-              <span className="flex-1">{t(label)}</span>
-              <span
-                aria-hidden="true"
-                className="rounded-full bg-muted/50 px-1.5 py-px font-sans text-[10px] font-medium tracking-normal text-muted-foreground-subtle"
-              >
-                {items.length}
-              </span>
-            </summary>
-            <div className="mt-1 flex flex-col gap-0.5">
-              {items.map((item) => (
-                <NavLink
-                  key={item.href}
-                  item={item}
-                  isActive={pathname === item.href}
-                  onNavigate={onNavigate}
-                  t={t}
+        {GROUPS.map(({ key, label }) => {
+          const items = groupedItems[key]
+          if (items.length === 0) return null
+          const open = groupIsActive(key)
+          return (
+            <details
+              key={key}
+              open={open}
+              className="mt-2.5 [&[open]>summary>svg.group-chevron]:rotate-90"
+            >
+              <summary className="flex cursor-pointer list-none items-center gap-2 rounded-md px-2.5 py-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:outline-none [&::-webkit-details-marker]:hidden">
+                <ChevronRight
+                  aria-hidden="true"
+                  className="group-chevron size-3 shrink-0 transition-transform duration-150"
                 />
-              ))}
-            </div>
-          </details>
-        )
-      })}
+                <span className="flex-1">{t(label)}</span>
+                <span
+                  aria-hidden="true"
+                  className="rounded-full bg-muted/50 px-1.5 py-px font-sans text-[10px] font-medium tracking-normal text-muted-foreground-subtle"
+                >
+                  {items.length}
+                </span>
+              </summary>
+              <div className="mt-1 flex flex-col gap-0.5">
+                {items.map((item) => (
+                  <NavLink
+                    key={item.href}
+                    item={item}
+                    isActive={pathname === item.href}
+                    onNavigate={onNavigate}
+                    t={t}
+                  />
+                ))}
+              </div>
+            </details>
+          )
+        })}
+      </RestOfSite>
     </nav>
   )
 }
@@ -514,9 +533,68 @@ function SidebarNav({
 // are visible on mobile and click through to the same routes. Grouping
 // would actively hurt here (a horizontal rail wants flat pills), so we
 // intentionally render the items un-grouped.
+/** One pill in the mobile rail. Shared by the scoped and site-wide variants. */
+function MobileChip({ href, label, isActive }: { href: string; label: string; isActive: boolean }) {
+  return (
+    <Link
+      href={href}
+      aria-current={isActive ? 'page' : undefined}
+      className={cn(
+        'flex shrink-0 items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-colors',
+        isActive
+          ? 'border-primary/60 bg-primary/10 text-primary'
+          : 'border-border/60 bg-card text-muted-foreground hover:border-border hover:text-foreground',
+      )}
+    >
+      {label}
+    </Link>
+  )
+}
+
 function MobileScrollRail({ navItems }: { navItems: NavItem[] }) {
   const pathname = usePathname()
   const t = useT()
+
+  // Inside a text, the chips must be that text's sections. Most of these
+  // students revise on a phone, so leaving the global register here would have
+  // meant the scoped navigation existed only on the surface the fewest of them
+  // ever see. The hamburger sheet renders SidebarNav and is already scoped.
+  const textSlug = textSlugFromPath(pathname)
+  if (textSlug) {
+    const nav = buildTextNav(textSlug)
+    const items = nav.groups.flatMap((g) => g.items)
+    return (
+      <div
+        className="-mx-4 mb-4 overflow-x-auto px-4 pb-1 lg:hidden"
+        role="navigation"
+        aria-label={t('revision.shell.nav_aria')}
+      >
+        <div className="flex min-w-max gap-2">
+          <Link
+            href="/revision/texts"
+            className="flex shrink-0 items-center gap-1.5 rounded-full border border-border/60 bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-border hover:text-foreground"
+          >
+            <ChevronRight aria-hidden="true" className="size-3.5 shrink-0 rotate-180" />
+            {t('textnav.back_to_shelf')}
+          </Link>
+          <MobileChip
+            href={nav.hubHref}
+            label={t('textnav.overview')}
+            isActive={pathname === nav.hubHref}
+          />
+          {items.map((item) => (
+            <MobileChip
+              key={item.href}
+              href={item.href}
+              label={t(item.labelKey)}
+              isActive={pathname === item.href}
+            />
+          ))}
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div
       className="-mx-4 mb-4 overflow-x-auto px-4 pb-1 lg:hidden"
