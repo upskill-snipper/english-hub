@@ -145,6 +145,6 @@ describe('the destination it points at when the board does hold the text', () =>
     // anthology texts. It simply does not have The Merchant of Venice.
     const lang = buildShelf('edexcel-igcse-lang')
     expect(lang.length).toBeGreaterThan(0)
-    expect(lang.some((t) => t.slug === 'the-merchant-of-venice')).toBe(false)
+    expect(lang.some((e) => e.text.slug === 'the-merchant-of-venice')).toBe(false)
   })
 })
