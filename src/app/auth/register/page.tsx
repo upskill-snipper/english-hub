@@ -70,7 +70,19 @@ function RegisterForm() {
   // intent was dropped and every new signup landed on /dashboard instead of
   // the plan they were trying to buy. Sanitise to a local path to avoid an
   // open-redirect (must start with a single '/', carry no protocol).
-  const rawNext = searchParams.get('next')
+  //
+  // TWO NAMES FOR ONE THING, and this page only answered to one of them.
+  // /auth/login reads `redirect`; this page read `next`. Two live links send
+  // people here with `redirect`: the school invite acceptance page and the
+  // affiliate application CTA. Both were dropped on arrival, so a teacher
+  // accepting an invite and an affiliate applying both landed on the default
+  // destination instead of the one the link asked for.
+  //
+  // Accepting both is the fix rather than renaming either, because `next` is
+  // what the middleware and the checkout flow already emit and `redirect` is
+  // what login has always taken. A rename would fix these two links and break
+  // whichever callers were not found.
+  const rawNext = searchParams.get('next') ?? searchParams.get('redirect')
   const safeNext =
     rawNext && rawNext.startsWith('/') && !rawNext.startsWith('//') && !rawNext.includes(':')
       ? rawNext

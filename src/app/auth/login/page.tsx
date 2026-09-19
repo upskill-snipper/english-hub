@@ -25,7 +25,11 @@ import AppleSignInButton from '@/components/auth/AppleSignInButton'
 function LoginForm() {
   const router = useRouter()
   const searchParams = useSearchParams()
-  const redirectTo = validateRedirect(searchParams.get('redirect'))
+  // `redirect` is this page's historic name for it and `next` is what the
+  // middleware and the register page emit. Taking both means a link that works
+  // on one auth page works on the other - see the register page's note for the
+  // two flows that were silently losing their destination.
+  const redirectTo = validateRedirect(searchParams.get('redirect') ?? searchParams.get('next'))
   const t = useT()
 
   const [email, setEmail] = useState('')
