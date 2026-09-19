@@ -85,9 +85,20 @@ function buildBoardOptions(): BoardOption[] {
     const schemes = allSchemes.filter((scheme) => {
       const normalised = scheme.board.trim().toLowerCase()
       if (matchSet.has(normalised)) return true
-      // Loose fallback: any match token contained in the scheme board string
-      // (e.g. "cambridge igcse 0500 first language" includes "0500").
-      return entry.match.some((token) => normalised.includes(token.toLowerCase()))
+      // Loose fallback: any match token contained in the scheme board string.
+      if (entry.match.some((token) => normalised.includes(token.toLowerCase()))) return true
+      // ...and in the scheme ID (SF-4, 19 September 2026).
+      //
+      // THE DEFECT THIS FIXES. The four Cambridge schemes carry `board:
+      // 'Cambridge'` and `'Cambridge (9-1)'`. Neither string contains "0500" or
+      // "0990", which are the only tokens that distinguish the two syllabuses,
+      // so BOTH Cambridge boards matched zero schemes, rendered `disabled`, and
+      // told the reader "mark schemes for Cambridge IGCSE 0500 are coming
+      // soon". They have existed all along. A Cambridge IGCSE student - the
+      // Gulf wedge this product is trying to win - could not pick their own
+      // board on the marking page.
+      const id = scheme.id.toLowerCase()
+      return entry.match.some((token) => id.includes(token.toLowerCase()))
     })
     return {
       value: entry.value,

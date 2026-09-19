@@ -4569,6 +4569,14 @@ export const DICTIONARY: Dictionary = {
   // ─── Blog chrome ─────────────────────────────────────────────────
   // SEO-5: shown beside the byline only when a post carries an `updated:`
   // field, so it is a claim the post was really revised, not a default.
+  // SF-4: on the mock results view, beside each written answer. The mock
+  // library was the biggest free surface in the product and every link on it
+  // went back to /mock-exams.
+  'mock.get_this_marked': {
+    en: 'Get this marked',
+    ar: 'صحّح هذي الإجابة',
+    es: 'Corregir esta respuesta',
+  },
   'blog.updated_on': {
     en: 'Updated',
     ar: 'محدَّث',

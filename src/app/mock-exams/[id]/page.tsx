@@ -26,6 +26,9 @@ import {
   PenLine,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { saveMarkingDraft } from '@/lib/marking/draft-store'
+import { resolveHandoffTarget } from '@/lib/marking/mock-handoff'
+import { useRouter } from 'next/navigation'
 import { useT } from '@/lib/i18n/use-t'
 
 import {
@@ -1260,6 +1263,39 @@ function ResultsView({
   onRetry: () => void
 }) {
   const t = useT()
+  const router = useRouter()
+
+  /**
+   * Hand one written answer to the marking page (SF-4).
+   *
+   * Reuses `saveMarkingDraft`, the sessionStorage handoff already built to
+   * carry an essay through a sign-in round trip: tab-scoped, consumed on read,
+   * because this is a child's schoolwork and the machine may be shared.
+   *
+   * `handoff.exact` is false when the mark scheme is the nearest available
+   * rather than this paper's own, or when the paper names more than one board.
+   * That is put in the `title` field, which /marking/submit shows back, rather
+   * than being silently pre-selected - a mark against the wrong paper is a
+   * number a student may act on.
+   */
+  const onGetMarked = useCallback(
+    (question: ExamQuestion, index: number) => {
+      const handoff = resolveHandoffTarget({
+        examBoard: paper.examBoard,
+        paperType: paper.paperType,
+        paperNumber: paper.paperNumber,
+      })
+      saveMarkingDraft({
+        board: handoff.board ?? '',
+        paper: handoff.schemeId ?? '',
+        question: question.prompt || question.label,
+        title: `${paper.paperName} - Q${question.number}${handoff.note ? ` (${handoff.note})` : ''}`,
+        essay: answers[index],
+      })
+      router.push('/marking/submit')
+    },
+    [answers, paper, router],
+  )
 
   // Neutral facts only: what the student did, never a mark for written work.
   const totalWords = useMemo(
@@ -1387,6 +1423,23 @@ function ResultsView({
                       {q.marks}{' '}
                       {q.marks === 1 ? t('marking.mark_singular') : t('marking.mark_plural')}
                     </Badge>
+                    {/* SF-4. A finished mock is the moment a student most wants
+                        a mark, and until now every link on this view went back
+                        to /mock-exams. Written answers only: a multiple-choice
+                        question is already marked above, and sending one to an
+                        essay marker would waste a trial use on a question that
+                        has an objective answer. */}
+                    {!q.isMultipleChoice && hasAnswer ? (
+                      <Button
+                        size="sm"
+                        variant="secondary"
+                        className="shrink-0"
+                        onClick={() => onGetMarked(q, i)}
+                      >
+                        <Sparkles className="h-3.5 w-3.5 me-1.5" />
+                        {t('mock.get_this_marked')}
+                      </Button>
+                    ) : null}
                   </div>
                 )
               })}
