@@ -79,14 +79,47 @@ export async function updateSession(
     },
   )
 
-  // IMPORTANT: keep this `getUser()` call here. The Supabase client uses
-  // lazy session initialisation - the cookies are not actually read or
-  // refreshed until the first auth call. Putting any logic between
-  // `createServerClient` and `getUser()` risks the session being
-  // committed to the response after the response has already been sent.
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
+  // IMPORTANT: keep this auth call here. The Supabase client uses lazy session
+  // initialisation - the cookies are not actually read or refreshed until the
+  // first auth call. Putting any logic between `createServerClient` and this
+  // line risks the session being committed to the response after the response
+  // has already been sent.
+  //
+  // WHY getClaims() AND NOT getUser() (PERF-5, 19 September 2026).
+  //
+  // `getUser()` is a network call to Supabase Auth in Mumbai, and this function
+  // runs on EVERY request - every page and all 199 API routes. A signed-in
+  // visitor paid that round trip before any render began, then paid it again
+  // inside the API route, and a third time in the browser on hydration.
+  //
+  // `getClaims()` verifies the access token locally against the project's
+  // published JWKS. Checked before changing this: the project publishes one
+  // ES256 P-256 verify key, and auth-js 2.106.2 takes the local path when the
+  // algorithm is asymmetric, the token carries a `kid`, and WebCrypto is
+  // available - all true here.
+  //
+  // THE TWO THINGS THAT MADE THIS SAFE, both read out of auth-js rather than
+  // assumed:
+  //
+  //   1. Cookie refresh is preserved. getClaims() with no argument calls
+  //      getSession() first, which is the call that reads the cookies and
+  //      refreshes an expired access token. That is the same mechanism
+  //      getUser() depended on, so the lazy-initialisation rule above still
+  //      holds and a refreshed session is still written to the response.
+  //
+  //   2. It degrades to the network rather than to trust. If the key were ever
+  //      symmetric, or the token carried no `kid`, or WebCrypto were missing,
+  //      auth-js calls getUser() itself and fails closed on error. There is no
+  //      path where an unverified token is treated as valid.
+  //
+  // WHAT THIS IS AND IS NOT. These claims decide routing - whether to hold a
+  // pupil on the password-rotation page, whether to send an anonymous visitor
+  // to login. They are a verified signature, not an authorisation decision.
+  // The 127 API routes keep their own `getUser()`, because they are the
+  // authorisation boundary and a revoked or deleted account must be caught
+  // there, where a locally-verified but not-yet-expired token would not show it.
+  const { data: claimsData } = await supabase.auth.getClaims()
+  const claims = claimsData?.claims ?? null
 
   // ── Forced rotation of school-issued temporary passwords ──────────
   //
@@ -133,7 +166,7 @@ export async function updateSession(
   //      rule has an Arabic-shaped hole in it, and either writing a second set
   //      of guards that are not needed or treating the Arabic surface as
   //      unprotected when it is not.
-  const needsPasswordChange = user?.user_metadata?.needs_password_change === true
+  const needsPasswordChange = claims?.user_metadata?.needs_password_change === true
   if (needsPasswordChange) {
     const path = effectivePathname
     const rotationExempt =
@@ -204,7 +237,7 @@ export async function updateSession(
     effectivePathname.startsWith(route),
   )
 
-  if (isProtected && !isPublicSchoolRoute && !user) {
+  if (isProtected && !isPublicSchoolRoute && !claims) {
     const url = request.nextUrl.clone()
     url.pathname = '/auth/login'
     // Send them back to the URL they actually asked for (keeps the /ar
@@ -216,7 +249,7 @@ export async function updateSession(
   // Redirect authenticated users away from auth pages
   const authRoutes = ['/auth/login', '/auth/register']
   const isAuthPage = authRoutes.some((route) => effectivePathname === route)
-  if (isAuthPage && user) {
+  if (isAuthPage && claims) {
     return copyAuthCookies(NextResponse.redirect(new URL('/dashboard', request.url)), response)
   }
 
