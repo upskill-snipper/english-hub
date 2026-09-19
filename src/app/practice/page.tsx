@@ -274,15 +274,42 @@ export default function PracticePage() {
     setSaveError(null)
     try {
       const supabase = createClient()
+      // ─── Column names, verified against the live table ───────────────────
+      //
+      // THE DEFECT THIS FIXES (19 September 2026). This insert named five
+      // columns that do not exist: question_id, board, answer, time_seconds
+      // and timed_mode. The live table has exam_board, user_answer,
+      // time_spent_seconds and a question_data JSONB, and has had since
+      // 001_initial_schema.sql. So every save on this page failed, the student
+      // saw "Could not save", and practice_sessions held 0 rows - ever.
+      //
+      // /dashboard/grades reads this table to count a student's practice, so
+      // that count has been zero for everyone since the page shipped.
+      //
+      // Checked against information_schema on the production database rather
+      // than against the migration, per CLAUDE.md structural fact 3: the
+      // tracker records an intention, not a reality. Here they agreed, and it
+      // was the CODE that had drifted.
       const { error } = await supabase.from('practice_sessions').insert({
         user_id: user.id,
-        question_id: currentQuestion.id,
-        board: currentQuestion.board,
-        question_type: currentQuestion.questionType || currentQuestion.type,
-        answer,
-        self_rating: rating,
-        time_seconds: elapsed,
-        timed_mode: timedMode,
+        exam_board: currentQuestion.board,
+        paper: currentQuestion.paper != null ? String(currentQuestion.paper) : null,
+        question_type: currentQuestion.questionType || currentQuestion.type || null,
+        // The three fields with no column of their own. question_data is JSONB
+        // and exists for exactly this, so nothing is silently dropped.
+        question_data: {
+          questionId: currentQuestion.id,
+          title: currentQuestion.title ?? null,
+          marks: currentQuestion.marks ?? null,
+          timedMode,
+        },
+        user_answer: answer,
+        // `rating` is 0 until the student picks a star, and the column is
+        // CHECK (self_rating BETWEEN 1 AND 5). Sending 0 would fail the insert
+        // for anyone who saved without rating themselves - a second, separate
+        // reason this never worked. The column is nullable; unrated means null.
+        self_rating: rating > 0 ? rating : null,
+        time_spent_seconds: elapsed,
       })
       if (error) throw error
       setSaved(true)

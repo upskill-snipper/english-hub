@@ -39,15 +39,27 @@ import { useT } from '@/lib/i18n/use-t'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
+/**
+ * The columns practice_sessions actually has.
+ *
+ * This interface previously named question_id, board, difficulty and
+ * time_seconds. None of them exists on the table, and difficulty never has.
+ * Nothing broke, because the page only reads `.length` off the array - which
+ * is exactly why it went unnoticed, and why the insert on /practice was
+ * written against the same imaginary columns and failed on every attempt.
+ *
+ * Verified against information_schema on production, 19 September 2026.
+ */
 interface PracticeSession {
   id: string
   user_id: string
-  question_id: string
-  board: string
-  question_type: string
-  difficulty: string
+  exam_board: string | null
+  paper: string | null
+  question_type: string | null
+  question_data: Record<string, unknown> | null
+  user_answer: string | null
   self_rating: number | null
-  time_seconds: number | null
+  time_spent_seconds: number | null
   created_at: string
 }
 
