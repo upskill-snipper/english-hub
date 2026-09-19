@@ -157,4 +157,38 @@ export const STRINGS: Record<string, Bi> = {
   },
   s67: { en: `Section B:`, ar: `قسم ب:` },
   s68: { en: `Continue studying`, ar: `استمر في الدراسة` },
+
+  // ─── Added 19 September 2026 with the EXAM-3 tariff corrections ───────────
+  //
+  // `tr()` on this page looks a string up by its own English text, so
+  // rewriting the question cards to the 1EN0 specification orphaned the Arabic
+  // for every one of them: the loop found no match, returned the English, and
+  // the Arabic page quietly lost the section. Nothing failed. These entries
+  // restore it for the corrected wording.
+  s69: { en: `Short Retrieval &mdash; Text 1 (2 marks)`, ar: `استرجاع قصير - النص 1 (نقطتان)` },
+  s70: {
+    en: `Language and Structure &mdash; Text 1 (15 marks)`,
+    ar: `تحليل اللغة والبنية - النص 1 (15 نقطة)`,
+  },
+  s71: {
+    en: `Short Retrieval &mdash; Text 2 (1 mark)`,
+    ar: `استرجاع قصير - النص 2 (نقطة واحدة)`,
+  },
+  s72: { en: `Synthesis across both texts (6 marks)`, ar: `التجميع من النصين (6 نقاط)` },
+  s73: {
+    en: `Comparison of ideas and perspectives (14 marks)`,
+    ar: `مقارنة الأفكار ووجهات النظر (14 نقطة)`,
+  },
+  s74: {
+    en: `Compare writers&rsquo; ideas and perspectives (AO3)`,
+    ar: `مقارنة أفكار الكاتبين ووجهات نظرهما (AO3)`,
+  },
+  s75: {
+    en: `Question 7(b) &mdash; Comparison (a high-level response)`,
+    ar: `السؤال 7(ب) - المقارنة (إجابة من مستوى عالٍ)`,
+  },
+  s76: {
+    en: `Section A is worth 56 of the 96 marks on this paper. The level descriptors used by the marking engine follow Pearson&rsquo;s published band structure, but for the exact wording of each level always work from the mark scheme for your own series.`,
+    ar: `القسم أ يساوي 56 نقطة من أصل 96 في هذه الورقة. تتبع أوصاف المستويات المستخدمة في محرك التصحيح بنية النطاقات المنشورة من Pearson، لكن للاطلاع على الصياغة الدقيقة لكل مستوى ارجع دائما إلى مخطط التصحيح الخاص بدورتك.`,
+  },
 }

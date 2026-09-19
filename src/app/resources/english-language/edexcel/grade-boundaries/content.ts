@@ -267,4 +267,67 @@ export const STRINGS: Record<string, Bi> = {
   s86: { en: `What each grade looks like in practice`, ar: `كيف تبدو كل درجة في الممارسة` },
   s88: { en: `Marks per question at a glance`, ar: `نقاط لكل سؤال في نظرة عامة` },
   s89: { en: `Key takeaways and quick targets`, ar: `نقاط رئيسية وأهداف سريعة` },
+
+  // ─── Added 19 September 2026 with the EXAM-3 tariff corrections ───────────
+  //
+  // Both question tables were rebuilt from the 1EN0 specification, and `tr()`
+  // keys on the English text itself, so every rewritten row lost its Arabic
+  // silently: no match, English returned, Arabic page short a table. These
+  // restore it. `Per-paper boundaries` was already orphaned before tonight.
+  s90: { en: `Per-paper boundaries`, ar: `حدود الدرجات لكل ورقة` },
+  s91: { en: `Paper 2 Q7(a) (summary):`, ar: `الورقة 2 السؤال 7(أ) (التلخيص):` },
+  s92: {
+    en: `Short response &mdash; identify one piece of explicit information`,
+    ar: `إجابة قصيرة - استخرج معلومة صريحة واحدة`,
+  },
+  s93: {
+    en: `Short response &mdash; give two pieces of information from named lines`,
+    ar: `إجابة قصيرة - اذكر معلومتين من الأسطر المحددة`,
+  },
+  s94: { en: `Q5 or Q6`, ar: `السؤال 5 أو 6` },
+  s95: {
+    en: `Imaginative writing &mdash; answer one task`,
+    ar: `الكتابة الإبداعية - أجب عن مهمة واحدة`,
+  },
+  s96: {
+    en: `Content and organisation (AO5, 24) + Technical accuracy (AO6, 16)`,
+    ar: `المحتوى والتنظيم (AO5، 24) + الدقة اللغوية (AO6، 16)`,
+  },
+  s97: {
+    en: `Short response &mdash; two pieces of information from Text 1`,
+    ar: `إجابة قصيرة - معلومتان من النص 1`,
+  },
+  s98: {
+    en: `Short response &mdash; one piece of explicit information from Text 2`,
+    ar: `إجابة قصيرة - معلومة صريحة واحدة من النص 2`,
+  },
+  s99: {
+    en: `Summary &mdash; the ideas both texts present`,
+    ar: `التلخيص - الأفكار التي يطرحها النصان`,
+  },
+  s100: { en: `Comparison across texts (AO3)`, ar: `المقارنة بين النصوص (AO3)` },
+  s101: {
+    en: `Transactional writing &mdash; answer one task`,
+    ar: `الكتابة الوظيفية - أجب عن مهمة واحدة`,
+  },
+  s102: {
+    en: `Language and structure &mdash; analyse how the writer achieves effects in the named lines`,
+    ar: `اللغة والبنية - حلل كيف يحقق الكاتب التأثيرات في الأسطر المحددة`,
+  },
+  s103: {
+    en: `Evaluation &mdash; evaluate how successfully the writer achieves a stated effect`,
+    ar: `التقييم - قيّم مدى نجاح الكاتب في تحقيق تأثير محدد`,
+  },
+  s104: {
+    en: `Language and structure &mdash; analyse how the writer achieves effects in Text 1`,
+    ar: `اللغة والبنية - حلل كيف يحقق الكاتب التأثيرات في النص 1`,
+  },
+  s105: {
+    en: `Evaluation &mdash; evaluate how successfully the writer achieves a stated effect in Text 2`,
+    ar: `التقييم - قيّم مدى نجاح الكاتب في تحقيق تأثير محدد في النص 2`,
+  },
+  s106: {
+    en: `Comparison &mdash; compare how the two writers present their ideas and perspectives`,
+    ar: `المقارنة - قارن كيف يعرض الكاتبان أفكارهما ووجهات نظرهما`,
+  },
 }

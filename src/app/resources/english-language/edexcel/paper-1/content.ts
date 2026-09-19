@@ -153,5 +153,16 @@ Final Correct Translation:
     en: `Mini-essay. Address statement. Evidence from whole text. Balanced.`,
     ar: `مقال صغير. أجب على	statement. استخدم أدلة من toàn النص. كن متوازنًا.`,
   },
-  s62: { en: `Continue studying`, ar: `استمر فيstudying (استمر في الدراسة)` },
+  s62: { en: `Continue studying`, ar: `استمر في الدراسة` },
+
+  // ─── Added 19 September 2026 with the EXAM-3 tariff corrections ───────────
+  //
+  // Paper 1 had an invented fifth reading question, so removing it renumbered
+  // the critical-evaluation card and the worked example. `tr()` keys on the
+  // English text itself, so both lost their Arabic until these were added.
+  s63: {
+    en: `Question 4 &mdash; Critical Evaluation (Level 4-5 / 13-15 marks)`,
+    ar: `السؤال 4 - التقييم النقدي (المستوى 4-5 / 13-15 نقطة)`,
+  },
+  s64: { en: `Q5 or Q6 (Writing)`, ar: `السؤال 5 أو 6 (الكتابة)` },
 }
