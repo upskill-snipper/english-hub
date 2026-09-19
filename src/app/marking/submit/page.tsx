@@ -218,6 +218,24 @@ export default function SubmitEssayPage() {
   }, [])
   const [paper, setPaper] = useState<string>('')
   const [question, setQuestion] = useState<string>('')
+  /**
+   * The actual wording of the question the student answered.
+   *
+   * WHAT WAS SENT BEFORE. The dropdown's own label, so the marker was asked to
+   * grade an essay against the string "Q2 - Language Analysis (8 marks)". That
+   * is a menu entry, not a question. Nothing in it says what the student was
+   * asked to do, which text, or about what - so the one thing every mark scheme
+   * leads with, whether the answer addresses the task, could not be assessed at
+   * all. Reported from the live site on a Merchant of Venice essay.
+   *
+   * `questionTextTouched` keeps the prefill from overwriting the student. The
+   * dropdown seeds this field with the scheme's task description, which is a
+   * template carrying [topic] placeholders, so it is a starting point and never
+   * an answer: the student has to replace them, and can paste their real
+   * question over the whole thing.
+   */
+  const [questionText, setQuestionText] = useState<string>('')
+  const [questionTextTouched, setQuestionTextTouched] = useState(false)
   const [title, setTitle] = useState<string>('')
   // The text the answer is about. The marking API has accepted `studiedText`
   // all along, persists it, and marker.ts injects it into the prompt as
@@ -302,11 +320,21 @@ export default function SubmitEssayPage() {
     if (prefill.studiedText) setStudiedText(prefill.studiedText)
   }, [boardOptions])
 
+  // Seed the question wording from the chosen question's task description, and
+  // stop as soon as the student types. A blank field would be the old defect
+  // with an extra click; a field that fights the student would be worse.
+  useEffect(() => {
+    if (questionTextTouched) return
+    const task = selectedPaper?.scheme.questions.find((q) => q.id === question)?.taskDescription
+    if (task) setQuestionText(task)
+  }, [question, selectedPaper, questionTextTouched])
+
   const wordCount = countWords(essay)
   const canSubmit =
     Boolean(selectedBoard?.available) &&
     Boolean(selectedPaper) &&
     question !== '' &&
+    questionText.trim().length > 0 &&
     essay.trim().length > 0 &&
     wordCount >= 50
 
@@ -457,7 +485,11 @@ export default function SubmitEssayPage() {
       const boardLabel = selectedBoard.label
       const paperLabel = selectedPaper.label
       const questionOption = questionOptions.find((q) => q.value === question)
+      // The wording the student actually answered, not the dropdown label. The
+      // label is kept for the title fallback and the history entry, where "Q2 -
+      // Language Analysis" is a useful short name; it is not a question.
       const questionLabel = questionOption?.label ?? question
+      const askedQuestion = questionText.trim() || questionLabel
       const markSchemeId = selectedPaper.scheme.id
       const questionType = selectedPaper.scheme.questions.find(
         (q) => q.id === question,
@@ -471,7 +503,7 @@ export default function SubmitEssayPage() {
       const spine = await trySubmissionSpine({
         examBoard: boardLabel,
         paper: paperLabel,
-        questionText: questionLabel,
+        questionText: askedQuestion,
         questionType,
         studiedText: studiedText.trim() || undefined,
         studentAnswer: essay,
@@ -531,7 +563,7 @@ export default function SubmitEssayPage() {
           body: JSON.stringify({
             markSchemeId,
             questionId: question,
-            questionText: questionLabel,
+            questionText: askedQuestion,
             essay,
           }),
         })
@@ -651,6 +683,14 @@ export default function SubmitEssayPage() {
       // all - silently, with the field visibly populated. The same class of
       // stale-closure bug the comment above describes.
       studiedText,
+      // The third of these, and caught the same way. `questionText` is seeded
+      // by an effect after the question is chosen, so a callback closing over
+      // the initial empty string would fall back to the dropdown label and
+      // send the marker "Section A - Shakespeare extract (34 marks)" while the
+      // student watched their own question sitting in the field. That is the
+      // exact defect this change exists to remove, restored by a missing
+      // dependency.
+      questionText,
       essay,
       wordCount,
       canSubmit,
@@ -843,6 +883,43 @@ export default function SubmitEssayPage() {
                     </option>
                   ))}
                 </select>
+              </div>
+
+              {/* ── The question itself ────────────────────── */}
+              {/* The dropdown says WHICH question. This says what it ASKED,
+                  which is the part a marker cannot work without. Seeded from
+                  the scheme's task description and editable over the top, so a
+                  student whose question is not in any scheme - a school's own
+                  wording, a past paper, a teacher's title - can simply paste
+                  it. */}
+              <div className="space-y-1.5">
+                <div className="flex items-center justify-between gap-2">
+                  <label htmlFor="questionText" className="text-sm font-medium text-foreground">
+                    {tx('marking.submit.label_question_text')}
+                  </label>
+                  <DictationButton
+                    onText={(t) => {
+                      setQuestionTextTouched(true)
+                      setQuestionText((v) => (v ? v.trimEnd() + ' ' : '') + t)
+                    }}
+                    iconOnly
+                  />
+                </div>
+                <textarea
+                  id="questionText"
+                  value={questionText}
+                  onChange={(e) => {
+                    setQuestionTextTouched(true)
+                    setQuestionText(e.target.value)
+                  }}
+                  required
+                  rows={2}
+                  placeholder={tx('marking.submit.question_text_placeholder')}
+                  className="w-full rounded-lg border border-input bg-transparent px-3 py-2 text-sm text-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/25"
+                />
+                <p className="text-xs text-muted-foreground">
+                  {tx('marking.submit.question_text_help')}
+                </p>
               </div>
 
               {/* ── Title ──────────────────────────────────── */}

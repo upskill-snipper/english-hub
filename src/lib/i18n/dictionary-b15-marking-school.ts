@@ -84,6 +84,21 @@ export const B15_MARKING_SCHOOL_DICTIONARY: Record<
     es: 'Elige primero un exam board',
   },
   'marking.submit.label_question': { en: 'Question', ar: 'السؤال', es: 'Pregunta' },
+  'marking.submit.label_question_text': {
+    en: 'The question you answered',
+    ar: 'السؤال الذي أجبت عنه',
+    es: 'La pregunta que respondiste',
+  },
+  'marking.submit.question_text_help': {
+    en: 'Paste the exact wording. A marker cannot judge whether an answer does what was asked without seeing the question.',
+    ar: 'الصق نص السؤال كما هو. لا يمكن للمصحح الحكم على مدى استجابة الإجابة للمطلوب دون رؤية السؤال.',
+    es: 'Pega el enunciado exacto. Un corrector no puede juzgar si la respuesta cumple lo pedido sin ver la pregunta.',
+  },
+  'marking.submit.question_text_placeholder': {
+    en: 'e.g. How does Shakespeare present Shylock as both villain and victim?',
+    ar: 'مثال: كيف يقدّم شكسبير شايلوك شريرًا وضحية في آن واحد؟',
+    es: 'p. ej. ¿Cómo presenta Shakespeare a Shylock como villano y víctima a la vez?',
+  },
   'marking.submit.select_question': {
     en: 'Select question',
     ar: 'اختر السؤال',

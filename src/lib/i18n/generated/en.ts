@@ -12036,6 +12036,11 @@ export const EN_MESSAGES: Record<string, string> = {
   'marking.submit.select_paper': 'Select paper',
   'marking.submit.choose_board_first': 'Choose a board first',
   'marking.submit.label_question': 'Question',
+  'marking.submit.label_question_text': 'The question you answered',
+  'marking.submit.question_text_help':
+    'Paste the exact wording. A marker cannot judge whether an answer does what was asked without seeing the question.',
+  'marking.submit.question_text_placeholder':
+    'e.g. How does Shakespeare present Shylock as both villain and victim?',
   'marking.submit.select_question': 'Select question',
   'marking.submit.choose_paper_first': 'Choose a paper first',
   'marking.submit.label_title': 'Title',

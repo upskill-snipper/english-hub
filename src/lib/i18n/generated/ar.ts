@@ -11778,6 +11778,11 @@ export const AR_MESSAGES: Record<string, string> = {
   'marking.submit.select_paper': 'اختر الورقة',
   'marking.submit.choose_board_first': 'اختر البورد أول',
   'marking.submit.label_question': 'السؤال',
+  'marking.submit.label_question_text': 'السؤال الذي أجبت عنه',
+  'marking.submit.question_text_help':
+    'الصق نص السؤال كما هو. لا يمكن للمصحح الحكم على مدى استجابة الإجابة للمطلوب دون رؤية السؤال.',
+  'marking.submit.question_text_placeholder':
+    'مثال: كيف يقدّم شكسبير شايلوك شريرًا وضحية في آن واحد؟',
   'marking.submit.select_question': 'اختر السؤال',
   'marking.submit.choose_paper_first': 'اختر الورقة أول',
   'marking.submit.label_title': 'العنوان',

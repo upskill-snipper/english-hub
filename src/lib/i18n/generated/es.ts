@@ -12352,6 +12352,11 @@ export const ES_MESSAGES: Record<string, string> = {
   'marking.submit.select_paper': 'Selecciona una prueba',
   'marking.submit.choose_board_first': 'Elige primero un exam board',
   'marking.submit.label_question': 'Pregunta',
+  'marking.submit.label_question_text': 'La pregunta que respondiste',
+  'marking.submit.question_text_help':
+    'Pega el enunciado exacto. Un corrector no puede juzgar si la respuesta cumple lo pedido sin ver la pregunta.',
+  'marking.submit.question_text_placeholder':
+    'p. ej. ¿Cómo presenta Shakespeare a Shylock como villano y víctima a la vez?',
   'marking.submit.select_question': 'Selecciona una pregunta',
   'marking.submit.choose_paper_first': 'Elige primero una prueba',
   'marking.submit.label_title': 'Título',
