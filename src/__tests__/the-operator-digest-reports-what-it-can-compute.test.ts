@@ -1,11 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { readFileSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
-import {
-  needsAttention,
-  renderDigestText,
-  type DigestFigures,
-} from '@/app/api/cron/operator-digest/route'
+import { needsAttention, renderDigestText, type DigestFigures } from '@/lib/ops/operator-digest'
 
 /**
  * REL-4. The failure signals nobody read.
@@ -34,6 +30,14 @@ import {
 
 const ROOT = process.cwd()
 const ROUTE = readFileSync(join(ROOT, 'src/app/api/cron/operator-digest/route.ts'), 'utf8')
+/**
+ * The logic lives outside the route because a Next App Router `route.ts` may
+ * export only its handlers - exporting `gatherDigest` for this test to import
+ * failed `next build` while `tsc --noEmit` stayed green. Both files are read
+ * here so an assertion lands wherever the line actually is.
+ */
+const LOGIC = readFileSync(join(ROOT, 'src/lib/ops/operator-digest.ts'), 'utf8')
+const BOTH = [ROUTE, LOGIC].join('\n')
 
 /** Every .ts/.tsx under src, for the "does anything write this?" checks. */
 function walkSrc(dir = join(ROOT, 'src'), out: string[] = []): string[] {
@@ -112,8 +116,8 @@ describe('the digest says what it does not cover', () => {
 describe('it asks the questions the schema can answer', () => {
   it('filters data requests on ERASURE, which is a real enum member', () => {
     // The bug that would have been silent. DataRequestType has no 'DELETION'.
-    expect(ROUTE).toContain("r.type === 'ERASURE'")
-    expect(ROUTE).not.toContain("r.type === 'DELETION'")
+    expect(BOTH).toContain("r.type === 'ERASURE'")
+    expect(BOTH).not.toContain("r.type === 'DELETION'")
   })
 
   it('and the enum really has that member and not the other', () => {
