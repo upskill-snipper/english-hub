@@ -1969,6 +1969,8 @@ export const ES_MESSAGES: Record<string, string> = {
   'mock.results_title': 'Examen terminado',
   'mock.minutes_short': 'min',
   'mock.time_taken': 'Tiempo empleado',
+  'mock.not_saved':
+    'No se ha podido guardar este intento en tu panel. Tus respuestas siguen en esta página.',
   'mock.self_mark_title': 'Cómo corregir este examen',
   'mock.self_mark_body':
     'Las respuestas escritas no se corrigen automáticamente, así que no se muestra ninguna nota. Usa la guía de corrección y las respuestas de ejemplo de abajo para autoevaluar cada respuesta según los descriptores de nivel, siendo sincero sobre el nivel que alcanza tu respuesta. Las preguntas de opción múltiple se corrigen automáticamente.',

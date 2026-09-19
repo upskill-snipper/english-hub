@@ -6468,6 +6468,11 @@ export const DICTIONARY: Dictionary = {
   'mock.results_title': { en: 'Paper Complete', ar: 'خلّصت الورقة', es: 'Examen terminado' },
   'mock.minutes_short': { en: 'min', ar: 'دقيقة', es: 'min' },
   'mock.time_taken': { en: 'Time taken', ar: 'الوقت المستغرق', es: 'Tiempo empleado' },
+  'mock.not_saved': {
+    en: 'This attempt could not be saved to your dashboard. Your answers are still on this page.',
+    ar: 'تعذّر حفظ هذه المحاولة في لوحتك. إجاباتك ما زالت موجودة في هذه الصفحة.',
+    es: 'No se ha podido guardar este intento en tu panel. Tus respuestas siguen en esta página.',
+  },
   'mock.self_mark_title': {
     en: 'How to mark this paper',
     ar: 'كيف تصحّح ورقتك',

@@ -28,6 +28,13 @@ import {
 import { cn } from '@/lib/utils'
 import { saveMarkingDraft } from '@/lib/marking/draft-store'
 import { resolveHandoffTarget } from '@/lib/marking/mock-handoff'
+import { createClient } from '@/lib/supabase/client'
+import { useAuthStore } from '@/store/auth-store'
+import {
+  persistMockAttempt,
+  type MockAttemptQuestion,
+  type PersistOutcome,
+} from '@/lib/mock-exams/persist-attempt'
 import { useRouter } from 'next/navigation'
 import { useT } from '@/lib/i18n/use-t'
 
@@ -1254,12 +1261,14 @@ function ResultsView({
   answers,
   mcSelections,
   elapsedSeconds,
+  saveOutcome,
   onRetry,
 }: {
   paper: ExamPaperData
   answers: string[]
   mcSelections: Record<number, number[]>
   elapsedSeconds: number
+  saveOutcome: PersistOutcome | null
   onRetry: () => void
 }) {
   const t = useT()
@@ -1341,6 +1350,18 @@ function ResultsView({
             <h2 className="text-2xl font-bold text-foreground mb-1">{t('mock.results_title')}</h2>
             <p className="text-muted-foreground">{paper.paperName}</p>
           </div>
+
+          {/* SF-4: say so when the attempt did not reach the dashboard.
+              A save that fails quietly is this codebase's commonest defect, and
+              the student would otherwise find an empty dashboard later with no
+              idea why. Only shown when a save was ATTEMPTED and failed, so a
+              signed-out visitor is not told something went wrong when nothing
+              did. */}
+          {saveOutcome?.attempted && !saveOutcome.saved && (
+            <p className="mb-8 rounded-lg border border-warn/40 bg-warn/10 px-4 py-3 text-center text-sm text-muted-foreground">
+              {t('mock.not_saved')}
+            </p>
+          )}
 
           <Separator className="mb-8" />
 
@@ -1545,6 +1566,8 @@ export default function ExamPage({ params }: { params: Promise<{ id: string }> }
   const [submittedAnswers, setSubmittedAnswers] = useState<string[]>([])
   const [submittedMcSelections, setSubmittedMcSelections] = useState<Record<number, number[]>>({})
   const [submittedElapsedSeconds, setSubmittedElapsedSeconds] = useState(0)
+  const [saveOutcome, setSaveOutcome] = useState<PersistOutcome | null>(null)
+  const user = useAuthStore((s) => s.user)
 
   if (!paper) {
     return <PaperNotFound />
@@ -1564,6 +1587,32 @@ export default function ExamPage({ params }: { params: Promise<{ id: string }> }
     setSubmittedElapsedSeconds(elapsedSeconds)
     setPhase('results')
     window.scrollTo({ top: 0, behavior: 'smooth' })
+
+    // SF-4: record the attempt where /dashboard/grades can see it. Nothing was
+    // persisted before, so a student could sit a whole paper and the dashboard
+    // would still say they had done no practice.
+    //
+    // Deliberately not awaited: the results screen is the reward and must not
+    // wait on a network round trip. The outcome is kept so the screen can say
+    // if it did not save, rather than swallowing it.
+    const questions: MockAttemptQuestion[] = paper.questions.map((q, i) => ({
+      number: q.number,
+      label: q.label,
+      marks: q.marks,
+      isMultipleChoice: q.isMultipleChoice,
+      earned: markMultipleChoice(q, mcSelections[i] ?? []),
+      answer: answers[i] ?? '',
+    }))
+
+    void persistMockAttempt(createClient(), user?.id, {
+      paperId: paper.id,
+      paperName: paper.paperName,
+      examBoard: paper.examBoard,
+      paperType: paper.paperType,
+      paperNumber: paper.paperNumber,
+      elapsedSeconds,
+      questions,
+    }).then(setSaveOutcome)
   }
 
   const handleRetry = () => {
@@ -1590,6 +1639,7 @@ export default function ExamPage({ params }: { params: Promise<{ id: string }> }
           answers={submittedAnswers}
           mcSelections={submittedMcSelections}
           elapsedSeconds={submittedElapsedSeconds}
+          saveOutcome={saveOutcome}
           onRetry={handleRetry}
         />
       )

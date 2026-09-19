@@ -1899,6 +1899,8 @@ export const EN_MESSAGES: Record<string, string> = {
   'mock.results_title': 'Paper Complete',
   'mock.minutes_short': 'min',
   'mock.time_taken': 'Time taken',
+  'mock.not_saved':
+    'This attempt could not be saved to your dashboard. Your answers are still on this page.',
   'mock.self_mark_title': 'How to mark this paper',
   'mock.self_mark_body':
     'Written answers are not marked automatically, so no grade is shown. Use the mark scheme and example responses below to self-assess each answer against the level descriptors, and be honest about the level your answer reaches. Multiple-choice answers are marked for you.',
