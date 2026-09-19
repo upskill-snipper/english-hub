@@ -39,8 +39,20 @@ function boardShelfRoutes() {
   const pairs = [...config.matchAll(/id: '([a-z0-9-]+)',\s*\n\s*name: '([^']*)',/g)]
   const named = new Map(pairs.map((m) => [m[1], m[2]]))
   const ordered = pairs.map((m) => m[1])
+  // Unverified shelves are cited to nobody, for the same reason they are not in
+  // the sitemap: the four A-Level lists are one list copied four times and the
+  // IAL list has never been read from its specification. An answer engine
+  // repeating an unverified set-text list as fact is worse than one that has
+  // nothing to repeat. Kept in step with src/lib/board/shelf-provenance.ts.
+  const UNVERIFIED = new Set([
+    'aqa-a-level',
+    'edexcel-a-level',
+    'ocr-a-level',
+    'eduqas-a-level',
+    'ial-edexcel',
+  ])
   return ordered
-    .filter((id) => tagged.has(id))
+    .filter((id) => tagged.has(id) && !UNVERIFIED.has(id))
     .map((id) => ({ route: `/set-texts/${id}`, name: named.get(id) }))
 }
 

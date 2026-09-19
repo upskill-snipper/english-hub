@@ -6,6 +6,7 @@ import { getBlogSlugs, hasArabicVariant } from '@/lib/blog/posts'
 import { SET_TEXTS } from '@/lib/board/set-texts'
 import { BOARDS } from '@/lib/board/board-config'
 import { buildShelf } from '@/lib/revision/shelf'
+import { shelfIsVerified } from '@/lib/board/shelf-provenance'
 import { EAL } from '@/lib/eal/curriculum'
 import { ALL_LESSONS } from '@/lib/ielts/lessons'
 import { KS3 } from '@/lib/ks3/curriculum'
@@ -195,8 +196,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // none, and Cambridge 0500 and 0990 prescribe none at all, which is their
   // specification rather than a gap - but an empty page is still not a page
   // worth ranking.
+  //
+  // AND ONLY WHERE THE LIST IS VERIFIED. This loop originally submitted every
+  // board with texts, which was wrong for five of them. The four A-Level boards
+  // carry a byte-identical nine-text list - one list copied four times, not
+  // four researched ones - and Edexcel IAL's twelve have never been read from
+  // its specification. Submitting those five asked Google for traffic to pages
+  // whose content we already knew was unverified, which is worse than not
+  // submitting them because it was introduced while fixing something else.
+  // The pages still render; we simply stop asking to rank them.
   for (const board of BOARDS) {
     if (buildShelf(board.id).length === 0) continue
+    if (!shelfIsVerified(board.id)) continue
     add(`/set-texts/${board.id}`, { priority: 0.9, changeFrequency: 'monthly' })
   }
 

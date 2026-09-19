@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { BOARDS } from '@/lib/board/board-config'
 import { buildShelf } from '@/lib/revision/shelf'
+import { shelfIsVerified, unverifiedShelves } from '@/lib/board/shelf-provenance'
 
 /**
  * The page every board picker points at, submitted to nobody.
@@ -35,11 +36,14 @@ import { buildShelf } from '@/lib/revision/shelf'
  * pins both halves.
  */
 
-describe('every board shelf with texts is submitted', () => {
-  const withTexts = BOARDS.filter((b) => buildShelf(b.id).length > 0)
+describe('every VERIFIED board shelf with texts is submitted', () => {
+  const withTexts = BOARDS.filter((b) => buildShelf(b.id).length > 0 && shelfIsVerified(b.id))
 
   it('there are enough of them for this to mean something', () => {
-    expect(withTexts.length).toBeGreaterThanOrEqual(10)
+    // Seven, not twelve: the four A-Level boards and Edexcel IAL are excluded
+    // because their set-text lists have never been read from a specification.
+    // If this number rises, somebody has read one - which is the point.
+    expect(withTexts.length).toBe(7)
   })
 
   it('lists each one', async () => {
@@ -60,6 +64,75 @@ describe('every board shelf with texts is submitted', () => {
     const shelf = entries.find((e) => e.url.endsWith('/set-texts/aqa'))
     expect(shelf?.priority).toBe(0.9)
   }, 30_000)
+})
+
+describe('an unverified shelf is not submitted, and that is a correction', () => {
+  // THIS LOOP ORIGINALLY SUBMITTED EVERY BOARD WITH TEXTS, including five whose
+  // lists nobody has read. The four A-Level boards carry a BYTE-IDENTICAL
+  // nine-text list - A Doll's House, A Streetcar Named Desire, Antony and
+  // Cleopatra, Hamlet, King Lear, Othello, The Great Gatsby, The Handmaid's
+  // Tale, The Waste Land - which is one list copied four times, not four
+  // researched ones. Edexcel IAL's twelve have never been read from its
+  // specification either.
+  //
+  // Asking Google to rank a page whose content we already know is unverified is
+  // worse than not asking, and worse still for having been introduced while
+  // fixing something else. The pages still render; we stop requesting traffic.
+
+  it('the five are still unverified, so this is not vacuous', () => {
+    expect(unverifiedShelves()).toHaveLength(5)
+    for (const board of unverifiedShelves()) {
+      expect(shelfIsVerified(board), `${board} is now verified`).toBe(false)
+    }
+  })
+
+  it('and the verified ones still pass, so it is not refusing everything', () => {
+    // The counterweight. A predicate that returned false for every board would
+    // satisfy every assertion in this block and empty the sitemap.
+    for (const board of ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'] as const) {
+      expect(shelfIsVerified(board), `${board} should be verified`).toBe(true)
+    }
+  })
+
+  it('and they really do carry the same nine texts', () => {
+    // The evidence for the claim above, asserted rather than asserted-in-prose.
+    const aLevel = ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level'] as const
+    const lists = aLevel.map((b) =>
+      buildShelf(b)
+        .map((e) => e.text.slug)
+        .sort()
+        .join(','),
+    )
+    expect(new Set(lists).size, 'the four A-Level lists differ, so re-check this').toBe(1)
+    expect(buildShelf('aqa-a-level')).toHaveLength(9)
+  })
+
+  it('none of them is in the sitemap', async () => {
+    const { default: sitemap } = await import('@/app/sitemap')
+    const paths = new Set(
+      (await sitemap()).map((e) => e.url.replace('https://theenglishhub.app', '')),
+    )
+    for (const board of unverifiedShelves()) {
+      expect(paths.has(`/set-texts/${board}`), `${board} is unverified but submitted`).toBe(false)
+    }
+  }, 30_000)
+
+  it('none of them is cited in llms.txt either', () => {
+    const llms = readFileSync(join(process.cwd(), 'public/llms.txt'), 'utf8')
+    for (const board of unverifiedShelves()) {
+      expect(llms, `${board} is unverified but cited`).not.toContain(
+        `https://theenglishhub.app/set-texts/${board}`,
+      )
+    }
+  })
+
+  it('but the pages are not deleted - they still have texts on them', () => {
+    // The correction is about what we ASK for, not about hiding the page from
+    // a student who lands on it.
+    for (const board of unverifiedShelves()) {
+      expect(buildShelf(board).length, `${board} shelf is empty`).toBeGreaterThan(0)
+    }
+  })
 })
 
 describe('a board with nothing on its shelf is not submitted', () => {
@@ -99,9 +172,10 @@ describe('llms.txt cites the board shelves too', () => {
     expect(LLMS).toContain('## Set texts by exam board')
   })
 
-  it('lists every board that has texts', () => {
+  it('lists every VERIFIED board that has texts', () => {
     for (const board of BOARDS) {
       if (buildShelf(board.id).length === 0) continue
+      if (!shelfIsVerified(board.id)) continue
       expect(LLMS, `${board.id} is missing from llms.txt`).toContain(
         `https://theenglishhub.app/set-texts/${board.id}`,
       )
