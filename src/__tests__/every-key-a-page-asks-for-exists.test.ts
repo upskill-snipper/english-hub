@@ -24,12 +24,17 @@ import {
  *   The IELTS academic-transition page and the personal-statement tool both
  *   render, and both showed their sentinels on the page.
  *
- *   LATENT. The five Apple sign-in keys. The button is gated on
- *   NEXT_PUBLIC_APPLE_OAUTH_ENABLED, which is not set in production, so it does
- *   not render today. The commit message called it "the first screen a
- *   returning user sees", which was wrong: it would have been, the moment
- *   Calum switched OAuth on, and that is the reason to have fixed it - not a
- *   reason to have claimed it was already showing.
+ *   ALSO LIVE, and this note corrects a correction. The five Apple sign-in
+ *   keys were first called live, then downgraded to "latent" on the grounds
+ *   that NEXT_PUBLIC_APPLE_OAUTH_ENABLED is not set. That downgrade was wrong.
+ *   The flag is absent from .env.local, which holds 22 names against the 88 the
+ *   code reads - it is the credentials needed to run scripts against
+ *   production, NOT a mirror of the Vercel environment. Checked against the
+ *   deployed site afterwards: theenglishhub.app/auth/login renders both OAuth
+ *   buttons, so the sign-in screen really was showing [[auth.apple.continue]].
+ *
+ *   The method that would have avoided both errors is the same one: look at the
+ *   deployed page, not at the local environment file.
  *
  * ELEVEN OF THEM CARRIED A FALLBACK THAT COULD NOT WORK:
  *

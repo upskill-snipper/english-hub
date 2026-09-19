@@ -102,6 +102,13 @@ anything you run. Several scripts in `scripts/` write; `scripts/seed.ts` would
 put an admin account with a published password into the live database. Grep
 before running anything.
 
+**It is not, however, a mirror of Vercel.** It carries 22 names; the code reads 88. So a variable missing from it may well be set in production, and its absence
+proves nothing. On 19 September 2026 that assumption produced a confidently
+wrong claim: `NEXT_PUBLIC_APPLE_OAUTH_ENABLED` is absent here, was therefore
+called unset, and the Apple sign-in button was reported as not rendering - while
+theenglishhub.app/auth/login was rendering it to every visitor. **To find out
+what production is configured to do, open the deployed page.**
+
 ## Local environment
 
 - **`npm run build` fails on Windows** - POSIX inline env syntax. Use
