@@ -5146,7 +5146,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'terms.s15.p1': 'إذا كانت لديك أي أسئلة بشأن شروط الخدمة هذه، فيُرجى التواصل معنا على:',
   'terms.s15.p2_l1': 'Upskill Energy Limited، تحت الاسم التجاري The English Hub',
   'terms.s15.p2_l2': 'البريد الإلكتروني: info@Upskillenergy.com',
-  'trustpilot.read_reviews': '',
+  'trustpilot.read_reviews': 'اقرأ تقييماتنا على Trustpilot',
   'trustpilot.brand': 'Trustpilot',
   'ui.error.retry': 'جرّب مرة ثانية',
   'ui.error.dismiss': 'سكّر الخطأ',

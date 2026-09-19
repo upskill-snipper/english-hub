@@ -467,7 +467,17 @@ function SidebarNav({
                 {labelRight}
               </span>
             </div>
-            <Progress value={progress} className="mt-2">
+            {/* aria-label since A11Y-7 (20 September 2026). The visible label
+                above is a separate element, so the bar itself announced as an
+                unnamed progressbar - axe reported it as a serious
+                aria-progressbar-name violation on every page inside the
+                revision shell. A screen reader read "x, progress bar" and no
+                indication of what was progressing. */}
+            <Progress
+              value={progress}
+              className="mt-2"
+              aria-label={t('revision.shell.target_grade_label')}
+            >
               <ProgressTrack className="h-2 bg-border/40">
                 <ProgressIndicator className="rounded-full bg-gradient-to-r from-cyan-400 via-primary to-emerald-400" />
               </ProgressTrack>

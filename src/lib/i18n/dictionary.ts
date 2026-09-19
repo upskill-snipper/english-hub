@@ -17355,10 +17355,14 @@ export const DICTIONARY: Dictionary = {
   // Unscored review CTA removed pending a genuine, scored review base.
   // Key + type preserved so TrustBox.tsx / TrustpilotReviewLink.tsx
   // consumers do not break; empty values render nothing.
+  // Was empty in all three locales, which rendered the Trustpilot fallback as
+  // a link with no text at all - a serious `link-name` violation on every page
+  // carrying it, found by the axe suite on 20 September 2026 (A11Y-7). The
+  // brand name stays Latin in Arabic per the brand-name policy.
   'trustpilot.read_reviews': {
-    en: '',
-    ar: '',
-    es: '',
+    en: 'Read our reviews on Trustpilot',
+    ar: 'اقرأ تقييماتنا على Trustpilot',
+    es: 'Lee nuestras opiniones en Trustpilot',
   },
   'trustpilot.brand': { en: 'Trustpilot', ar: 'Trustpilot', es: 'Trustpilot' },
 

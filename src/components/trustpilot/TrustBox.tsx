@@ -108,8 +108,21 @@ export function TrustBox({
       data-theme={theme}
     >
       {/* Brand name "Trustpilot" stays Latin even in AR - trademark, per
-          dictionary brand-name policy. */}
-      <a href={REVIEW_URL} target="_blank" rel="noopener noreferrer">
+          dictionary brand-name policy.
+
+          THE aria-label IS NOT BELT AND BRACES (A11Y-7, 20 September 2026).
+          Trustpilot's bootstrap script replaces the contents of
+          `.trustpilot-widget` with an iframe, which takes this link's text with
+          it. Once the widget loads, the link has no accessible name at all, and
+          axe reports it as a serious link-name violation on every page carrying
+          the widget. The visible text is only a name until the script runs; the
+          label is one afterwards. */}
+      <a
+        href={REVIEW_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={t('trustpilot.read_reviews')}
+      >
         {t('trustpilot.brand')}
       </a>
     </div>

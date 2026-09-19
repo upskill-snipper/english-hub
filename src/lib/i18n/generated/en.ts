@@ -5245,7 +5245,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'terms.s15.p1': 'If you have any questions about these Terms of Service, please contact us at:',
   'terms.s15.p2_l1': 'Upskill Energy Limited, trading as The English Hub',
   'terms.s15.p2_l2': 'Email: info@Upskillenergy.com',
-  'trustpilot.read_reviews': '',
+  'trustpilot.read_reviews': 'Read our reviews on Trustpilot',
   'trustpilot.brand': 'Trustpilot',
   'ui.error.retry': 'Retry',
   'ui.error.dismiss': 'Dismiss error',
