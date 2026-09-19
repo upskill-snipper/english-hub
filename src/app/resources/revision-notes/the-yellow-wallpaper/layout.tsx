@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { guardTextForBoard } from '../_guard'
 
 export const metadata: Metadata = {
   title: 'The Yellow Wallpaper Revision Notes',
@@ -8,7 +7,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/resources/revision-notes/the-yellow-wallpaper' },
 }
 
-export default async function Layout({ children }: { children: React.ReactNode }) {
-  await guardTextForBoard('the-yellow-wallpaper')
+export default function Layout({ children }: { children: React.ReactNode }) {
   return children
 }

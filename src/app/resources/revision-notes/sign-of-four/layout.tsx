@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { guardTextForBoard } from '../_guard'
 
 export const metadata: Metadata = {
   title: 'Sign Of Four Revision Notes',
@@ -13,7 +12,6 @@ export const metadata: Metadata = {
   },
 }
 
-export default async function Layout({ children }: { children: React.ReactNode }) {
-  await guardTextForBoard('sign-of-four')
+export default function Layout({ children }: { children: React.ReactNode }) {
   return children
 }

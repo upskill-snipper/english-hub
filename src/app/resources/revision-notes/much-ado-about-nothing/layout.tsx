@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { guardTextForBoard } from '../_guard'
 
 export const metadata: Metadata = {
   title: 'Much Ado About Nothing Revision Notes',
@@ -15,7 +14,6 @@ export const metadata: Metadata = {
   },
 }
 
-export default async function Layout({ children }: { children: React.ReactNode }) {
-  await guardTextForBoard('much-ado-about-nothing')
+export default function Layout({ children }: { children: React.ReactNode }) {
   return children
 }

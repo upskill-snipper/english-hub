@@ -2,6 +2,11 @@ import { describe, it, expect } from 'vitest'
 import { readFileSync, readdirSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { SET_TEXTS, textAvailableForBoard } from '@/lib/board/set-texts'
+import {
+  TEXT_SLUG_ALIASES,
+  canonicalTextSlug,
+  isKnownSetText,
+} from '@/lib/revision/text-slug-aliases'
 
 /**
  * Clicking a text and being thrown to a page about having no texts.
@@ -105,12 +110,19 @@ describe('the rail tells the reader instead of moving them', () => {
   const CODE = RAIL.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*/g, '')
 
   it('works out whether the text is on the reader’s course', () => {
-    expect(CODE).toContain('textAvailableForBoard(slug, board)')
+    // Against the CANONICAL slug, not the route segment - see the alias block
+    // below for the false claim that cost.
+    expect(CODE).toContain('textAvailableForBoard(canonical, board)')
     expect(CODE).toMatch(/const offBoard =/)
   })
 
   it('waits for hydration, so it cannot flash on a reader whose board is known', () => {
-    expect(CODE).toMatch(/isHydrated && !textAvailableForBoard\(slug, board\)/)
+    expect(CODE).toMatch(/isHydrated &&/)
+    expect(CODE).toMatch(/const offBoard =[\s\S]{0,160}isHydrated/)
+  })
+
+  it('and requires a text it actually recognises before saying anything', () => {
+    expect(CODE).toContain('isKnownSetText(slug)')
   })
 
   it('says so, and says they can still read it', () => {
@@ -122,6 +134,66 @@ describe('the rail tells the reader instead of moving them', () => {
     expect(CODE).toMatch(/\{offBoard && \(/)
     expect(CODE).not.toContain('router.replace')
     expect(CODE).not.toContain('redirect(')
+  })
+})
+
+describe('the revision-notes library had the same bounce', () => {
+  const NOTES = join(ROOT, 'src/app/resources/revision-notes')
+
+  it('no layout redirects on board any more', () => {
+    const layouts = readdirSync(NOTES, { withFileTypes: true })
+      .filter((d) => d.isDirectory())
+      .map((d) => join(NOTES, d.name, 'layout.tsx'))
+      .filter((p) => existsSync(p))
+    // 25 of them called guardTextForBoard. These are the pages the board
+    // shelves link to for nine set texts, so the bounce landed exactly where
+    // the shelf had just sent the reader.
+    expect(layouts.length).toBeGreaterThan(20)
+    for (const p of layouts) {
+      expect(readFileSync(p, 'utf8'), p.replace(ROOT, '')).not.toContain('guardTextForBoard')
+    }
+  })
+
+  it('and the guard itself is gone, not just unused', () => {
+    // Dead code that redirects is a loaded gun: the next person to see an
+    // unused guard is as likely to wire it back up as to delete it.
+    expect(existsSync(join(NOTES, '_guard.ts'))).toBe(false)
+  })
+})
+
+describe('the notice cannot fire on a text it simply does not recognise', () => {
+  // THE BUG THIS CAUGHT, in my own change, before it shipped. The
+  // revision-notes library uses shorter directory names than the set-text
+  // register - `christmas-carol` against `a-christmas-carol` - so resolving the
+  // route segment straight against SET_TEXTS finds nothing and
+  // textAvailableForBoard returns false. The rail was about to tell an AQA
+  // student that A Christmas Carol is not on their course. All four UK boards
+  // set it, and it is among the most studied texts on the site.
+
+  it.each(Object.entries(TEXT_SLUG_ALIASES))('%s resolves to %s', (local, canonical) => {
+    expect(canonicalTextSlug(local)).toBe(canonical)
+    expect(
+      SET_TEXTS.some((t) => t.slug === canonical),
+      `${canonical} is not a set text`,
+    ).toBe(true)
+  })
+
+  it('every alias target is a real set text, so none of them can mislead', () => {
+    for (const local of Object.keys(TEXT_SLUG_ALIASES)) {
+      expect(isKnownSetText(local), `${local} does not resolve to a known text`).toBe(true)
+    }
+  })
+
+  it('A Christmas Carol is on AQA under its short name too', () => {
+    // The specific false claim that was about to be printed.
+    expect(textAvailableForBoard(canonicalTextSlug('christmas-carol'), 'aqa')).toBe(true)
+  })
+
+  it('and an unknown slug is not treated as off-course', () => {
+    // "We have no record of this" and "your board does not set this" are
+    // different statements, and only one of them is safe to print.
+    expect(isKnownSetText('the-crucible')).toBe(false)
+    expect(isKnownSetText('not-a-text-at-all')).toBe(false)
   })
 })
 

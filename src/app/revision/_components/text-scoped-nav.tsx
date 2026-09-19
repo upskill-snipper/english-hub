@@ -43,6 +43,7 @@ import {
 import { useT } from '@/lib/i18n/use-t'
 import { buildTextNav, type TextNavIcon } from '@/lib/revision/text-nav'
 import { getSetText, textAvailableForBoard } from '@/lib/board/set-texts'
+import { canonicalTextSlug, isKnownSetText } from '@/lib/revision/text-slug-aliases'
 import { PLACEHOLDER_TEXT_SLUGS } from '@/lib/revision/placeholder-texts.generated'
 import { markingLink } from '@/lib/marking/submit-prefill'
 import { useBoard } from '@/hooks/useBoard'
@@ -101,7 +102,21 @@ export function TextScopedNav({ slug, onNavigate }: { slug: string; onNavigate?:
   //
   // A student who clicks a text should see the text. So they do, and this says
   // plainly that it is not on their course rather than silently moving them.
-  const offBoard = Boolean(board) && isHydrated && !textAvailableForBoard(slug, board)
+  //
+  // TWO CONDITIONS, AND THE SECOND ONE MATTERS. The revision-notes library uses
+  // shorter directory names than the set-text register - `christmas-carol`
+  // against `a-christmas-carol` - so resolving the route segment straight
+  // against SET_TEXTS finds nothing and `textAvailableForBoard` returns false.
+  // Without the alias and the known-text check, this rail was about to tell an
+  // AQA student that A Christmas Carol is not on their course. All four UK
+  // boards set it.
+  //
+  // So the notice needs a text we actually recognise AND a board that does not
+  // set it. "We have no record of this" and "your board does not set this" are
+  // different statements, and only one of them is safe to print.
+  const canonical = canonicalTextSlug(slug)
+  const offBoard =
+    Boolean(board) && isHydrated && isKnownSetText(slug) && !textAvailableForBoard(canonical, board)
 
   // The title comes from the set-text register, which is the same source the
   // page headings use. Falling back to the slug would print "a-christmas-carol"
