@@ -279,14 +279,40 @@ describe('set-texts', () => {
   })
 
   describe('SET_TEXTS data integrity', () => {
+    /**
+     * Texts allowed to carry no board, and why.
+     *
+     * A text with no board appears on no shelf, so the empty array has to be a
+     * decision rather than an oversight. Henry V was withdrawn by Eduqas after
+     * the summer 2024 series and replaced by Twelfth Night; no specification we
+     * cover examines it at GCSE. It may sit on an A-Level list, but that data is
+     * blanket-tagged and unverified, so guessing a board would repeat the exact
+     * mistake this correction was fixing. The page stays and remains reachable;
+     * it simply appears on no board's set-text list.
+     */
+    const MAY_HAVE_NO_BOARD = new Set(['henry-v'])
+
     it('every text has required fields', () => {
       for (const t of SET_TEXTS) {
         expect(t.slug).toBeTruthy()
         expect(t.title).toBeTruthy()
         expect(t.author).toBeTruthy()
         expect(t.category).toBeTruthy()
-        expect(t.boards.length).toBeGreaterThan(0)
+        if (!MAY_HAVE_NO_BOARD.has(t.slug)) {
+          expect(t.boards.length, `${t.slug} has no board`).toBeGreaterThan(0)
+        }
         expect(t.copyrightStatus).toMatch(/^(public-domain|copyright)$/)
+      }
+    })
+
+    it('the no-board exception list is not a place to hide texts', () => {
+      // One named exception, with a reason recorded above it. If this grows,
+      // someone is using it to avoid deciding which board a text belongs to.
+      expect(MAY_HAVE_NO_BOARD.size).toBeLessThanOrEqual(1)
+      for (const slug of MAY_HAVE_NO_BOARD) {
+        const text = SET_TEXTS.find((t) => t.slug === slug)
+        expect(text, `${slug} is listed as boardless but is not in SET_TEXTS`).toBeTruthy()
+        expect(text!.boards).toEqual([])
       }
     })
 

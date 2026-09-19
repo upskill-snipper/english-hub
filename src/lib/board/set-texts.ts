@@ -67,7 +67,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'The Tempest',
     author: 'William Shakespeare',
     category: 'shakespeare',
-    boards: ['aqa', 'ocr'],
+    boards: ['aqa', 'edexcel'], // OCR prescribes four Shakespeare plays and this is not one. Edexcel does prescribe it.
     copyrightStatus: 'public-domain',
   },
   {
@@ -91,7 +91,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Henry V',
     author: 'William Shakespeare',
     category: 'shakespeare',
-    boards: ['eduqas'],
+    boards: [], // Eduqas replaced it with Twelfth Night for assessment from 2025; no board we cover examines it at GCSE. Deliberately empty rather than guessed.
     copyrightStatus: 'public-domain',
   },
   {
@@ -99,7 +99,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Twelfth Night',
     author: 'William Shakespeare',
     category: 'shakespeare',
-    boards: ['edexcel'],
+    boards: ['edexcel', 'eduqas'], // Eduqas added it for assessment from 2025, replacing Henry V.
     copyrightStatus: 'public-domain',
   },
 
@@ -109,7 +109,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'A Christmas Carol',
     author: 'Charles Dickens',
     category: '19th-century',
-    boards: ['aqa', 'edexcel', 'eduqas'],
+    boards: ['aqa', 'edexcel', 'ocr', 'eduqas'], // OCR added it in August 2018 and we never picked it up.
     copyrightStatus: 'public-domain',
   },
   {
@@ -125,7 +125,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Great Expectations',
     author: 'Charles Dickens',
     category: '19th-century',
-    boards: ['aqa', 'ial-edexcel'],
+    boards: ['aqa', 'edexcel', 'ocr', 'ial-edexcel'], // Prescribed by Edexcel and OCR as well; both were missing.
     copyrightStatus: 'public-domain',
   },
   {
@@ -133,7 +133,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Jane Eyre',
     author: 'Charlotte Brontë',
     category: '19th-century',
-    boards: ['aqa', 'ocr', 'ial-edexcel'],
+    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'ial-edexcel'], // Prescribed by Edexcel and Eduqas as well; both were missing.
     copyrightStatus: 'public-domain',
   },
   {
@@ -141,7 +141,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Frankenstein',
     author: 'Mary Shelley',
     category: '19th-century',
-    boards: ['aqa', 'edexcel', 'ocr', 'ial-edexcel'],
+    boards: ['aqa', 'edexcel', 'ial-edexcel'], // Zero occurrences of Frankenstein in the OCR J352 specification.
     copyrightStatus: 'public-domain',
   },
   {
@@ -154,7 +154,7 @@ export const SET_TEXTS: SetText[] = [
   },
   {
     slug: 'the-sign-of-four',
-    title: 'The Sign of the Four',
+    title: 'The Sign of Four',
     author: 'Arthur Conan Doyle',
     category: '19th-century',
     boards: ['aqa'],
@@ -165,7 +165,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Silas Marner',
     author: 'George Eliot',
     category: '19th-century',
-    boards: ['aqa', 'edexcel', 'eduqas'],
+    boards: ['edexcel', 'eduqas'], // AQA does not prescribe it: the spec contains no occurrence of Silas or Eliot.
     copyrightStatus: 'public-domain',
   },
   {
@@ -191,7 +191,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Lord of the Flies',
     author: 'William Golding',
     category: 'modern',
-    boards: ['aqa', 'ocr', 'eduqas'],
+    boards: ['aqa', 'edexcel', 'eduqas'], // Zero occurrences of Golding in OCR J352. Edexcel does prescribe it, in the post-1914 list.
     copyrightStatus: 'copyright',
   },
   {
@@ -239,7 +239,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'The Curious Incident of the Dog in the Night-Time',
     author: 'Mark Haddon',
     category: 'modern',
-    boards: ['edexcel-igcse'],
+    boards: ['edexcel-igcse', 'eduqas'], // Eduqas prescribes the Simon Stephens play script (Bloomsbury, ISBN 978-1-4081-8521-6); the tag was missing.
     copyrightStatus: 'copyright',
   },
   {
@@ -247,7 +247,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Blood Brothers',
     author: 'Willy Russell (b. 1947)',
     category: 'modern',
-    boards: ['edexcel', 'eduqas'],
+    boards: ['aqa', 'edexcel', 'eduqas'], // AQA prescribes the musical version; the tag was missing.
     copyrightStatus: 'copyright',
     ukRightsNotice:
       'Rights notice: © Methuen Drama / Bloomsbury Publishing on behalf of Willy Russell. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Methuen Drama Modern Classics edition or the AQA / Eduqas board-licensed school edition.',
@@ -273,7 +273,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Never Let Me Go',
     author: 'Kazuo Ishiguro',
     category: 'modern',
-    boards: ['aqa'],
+    boards: ['ocr'], // AQA examined it for the last time in summer 2024. OCR does prescribe it, and we were not tagging the one board that still teaches it.
     copyrightStatus: 'copyright',
   },
 

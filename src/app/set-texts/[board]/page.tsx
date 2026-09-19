@@ -51,6 +51,23 @@ const SPEC_HUBS: Partial<Record<ExamBoard, string>> = {
 /** The four boards that prescribe no set texts, and why, so the page can say so. */
 const LANGUAGE_ONLY: ExamBoard[] = ['cambridge-0500', 'cambridge-0990']
 
+/**
+ * The board list is closed, so any other value must be a real 404.
+ *
+ * WITHOUT THIS the route soft-404s: `notFound()` renders the not-found UI but
+ * the response still carries HTTP 200, so /set-texts/anything-at-all becomes an
+ * indexable page and a crawler can mint unlimited junk URLs under this prefix.
+ * Verified against a production server: /set-texts/not-a-board returned 200 with
+ * the "Page not found" body until this line was added.
+ *
+ * That soft-404 is not unique to this route - /blog/<anything>,
+ * /eal/<anything> and /revision/texts/<anything> all behave the same way today,
+ * and only /learn returns a true 404. Fixing those is separate work; closing
+ * this route's parameter set is the correct fix HERE because the fifteen boards
+ * are a fixed, known set rather than a database lookup.
+ */
+export const dynamicParams = false
+
 export function generateStaticParams() {
   return BOARDS.map((b) => ({ board: b.id }))
 }

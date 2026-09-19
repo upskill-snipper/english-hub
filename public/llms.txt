@@ -2,7 +2,7 @@
 
 > The English Hub is an independent GCSE, IGCSE, KS3, IELTS and EAL English learning platform for students, parents, teachers and schools. It provides exam-board-aligned revision (AQA, Pearson Edexcel, OCR, WJEC Eduqas, Cambridge IGCSE), AI-assisted essay feedback against real mark schemes, exam-style practice, mock exams, teacher tools and school-level analytics. The interface is available in English, Gulf Arabic and Spanish; study content is English. The platform is exam-board aligned, not exam-board endorsed. Content accuracy is governed by a published content-verification methodology with human review of high-stakes material.
 
-Last generated: 2026-09-18. Canonical host: https://theenglishhub.app
+Last generated: 2026-09-19. Canonical host: https://theenglishhub.app
 
 This file follows the llms.txt convention so AI answer engines can cite accurate, exam-board-specific English education content. The English Hub is independent and exam-board aligned, not endorsed.
 
@@ -902,3 +902,4 @@ This file follows the llms.txt convention so AI answer engines can cite accurate
 - [Help › Report](https://theenglishhub.app/help/report)
 - [Help › Suggestions](https://theenglishhub.app/help/suggestions)
 - [Sitemap Html](https://theenglishhub.app/sitemap-html)
+- [Unsubscribe](https://theenglishhub.app/unsubscribe)

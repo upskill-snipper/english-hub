@@ -115,8 +115,17 @@ export default async function OCRLitPaper2Page() {
           <div className="mt-6 space-y-6 text-muted-foreground leading-relaxed">
             <div>
               <h3 className="text-xl font-semibold text-foreground">Set Plays</h3>
+              {/* 19 September 2026. This list carried six plays, described as
+                  "common choices". OCR J352 prescribes exactly four, and two of
+                  the six - A Midsummer Night's Dream and The Tempest - appear
+                  nowhere in the specification (v3.0, November 2025, checked by
+                  exhaustive search of all 32 pages: zero hits for "tempest",
+                  zero for "midsummer"). A student revising either would have
+                  revised a play they cannot be asked about. "Common choices
+                  include" was also wrong as framing: it is a closed list of
+                  four, not a sample of a wider one. */}
               <p className="mt-2">
-                OCR offers a choice of Shakespeare plays. Common choices include:
+                OCR prescribes four Shakespeare plays. You will study one of these:
               </p>
               <ul className="ms-6 mt-2 list-disc space-y-1">
                 <li>
@@ -130,12 +139,6 @@ export default async function OCRLitPaper2Page() {
                 </li>
                 <li>
                   <em>{_tr(`Much Ado About Nothing`)}</em>
-                </li>
-                <li>
-                  <em>A Midsummer Night&rsquo;s Dream</em>
-                </li>
-                <li>
-                  <em>{_tr(`The Tempest`)}</em>
                 </li>
               </ul>
             </div>
