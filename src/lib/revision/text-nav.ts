@@ -31,6 +31,7 @@
  */
 
 import { TEXT_SUBPAGE_ROUTES } from '@/lib/revision/text-subpages.generated'
+import { textGuideHref } from '@/lib/revision/guide-href'
 
 /** The five study objects a text page is organised around. */
 export type TextNavGroupKey = 'text' | 'characters' | 'ideas' | 'quotations' | 'exam'
@@ -185,22 +186,55 @@ export function buildTextNav(slug: string): TextNav {
 
   return {
     slug,
-    hubHref: `/revision/texts/${slug}`,
+    // Not the canonical URL unconditionally. For 28 set texts that page is a
+    // placeholder and the real guide is in another tree, so the rail's own
+    // "back to this text" link used to send the reader from the guide they were
+    // reading to an apology about it.
+    hubHref: textGuideHref(slug),
     groups,
     sectionCount: items.length,
   }
 }
 
 /**
+ * Every route prefix under which a set text's guide can live.
+ *
+ * WHY THERE ARE FIVE AND NOT ONE. /revision/texts is where a guide is supposed
+ * to be, and for 28 of the set texts it is not: their only real guide sits in
+ * the Edexcel anthology or poetry sets, the AQA Power and Conflict cluster, or
+ * the revision-notes library. The board shelves were corrected on 19 September
+ * 2026 to link to the guide that exists rather than to the placeholder.
+ *
+ * That left the reader on a real guide with no text-scoped navigation, because
+ * this resolver only recognised the canonical prefix. Studying The Yellow
+ * Wallpaper, they saw the site-wide menu and no way back to the text they were
+ * reading - which is how a founder clicking through IGCSE Language reported
+ * ending up "back on an overview page".
+ *
+ * Kept as an explicit list rather than a loose pattern: a prefix that is not
+ * here is not a guide, and a bare hub - /revision/texts, /resources/revision-
+ * notes - must not resolve to a text either.
+ */
+const TEXT_ROUTE_PREFIXES = [
+  '/revision/texts',
+  '/igcse/edexcel-lang/anthology',
+  '/igcse/edexcel/poetry',
+  '/revision/poetry/power-and-conflict',
+  '/resources/revision-notes',
+] as const
+
+/**
  * Pull the text slug out of a pathname, or null when the path is not inside a
  * text.
  *
- * Deliberately strict about the shape: `/revision/texts` is the shelf, not a
- * text, and `/revision/texts/[slug]` is the only depth that names one.
+ * Deliberately strict about the shape: a bare prefix is the shelf, not a text,
+ * and prefix + one segment is the only depth that names one.
  */
 export function textSlugFromPath(pathname: string | null | undefined): string | null {
   if (!pathname) return null
-  const match = /^\/revision\/texts\/([a-z0-9-]+)(?:\/|$)/.exec(pathname)
-  if (!match) return null
-  return match[1] ?? null
+  for (const prefix of TEXT_ROUTE_PREFIXES) {
+    const match = new RegExp(`^${prefix}/([a-z0-9-]+)(?:/|$)`).exec(pathname)
+    if (match?.[1]) return match[1]
+  }
+  return null
 }

@@ -289,8 +289,32 @@ describe('set-texts', () => {
      * blanket-tagged and unverified, so guessing a board would repeat the exact
      * mistake this correction was fixing. The page stays and remains reachable;
      * it simply appears on no board's set-text list.
+     *
+     * SIX MORE ADDED 19 September 2026, for the same reason and after the same
+     * test. They carried an `edexcel-igcse-lang` tag. They are verifiably not in
+     * the Pearson Edexcel International GCSE English Anthology, Issue 8,
+     * February 2026, whose three parts are now established in full; and the
+     * obvious alternative - that they were mis-tagged Cambridge texts - was
+     * tested against Cambridge 0475 for 2026, 2027 and 2028-2030 and falsified
+     * for every one of them. Where they belong is not established.
+     *
+     * The tag is removed rather than left pending. "We do not know where this
+     * belongs" and "this is on your exam" are different statements and only the
+     * first is true. The founder found The Yellow Wallpaper on the IGCSE
+     * Language shelf, followed it, and left the qualification entirely.
+     *
+     * This list growing IS a warning, and the cap below is the warning working.
+     * Each addition must name its evidence here, as these do.
      */
-    const MAY_HAVE_NO_BOARD = new Set(['henry-v'])
+    const MAY_HAVE_NO_BOARD = new Set([
+      'henry-v',
+      'refugee-blues',
+      'the-door',
+      'the-pedestrian',
+      'the-yellow-wallpaper',
+      'when-greek-meets-greek',
+      'the-man-who-loved-flowers',
+    ])
 
     it('every text has required fields', () => {
       for (const t of SET_TEXTS) {
@@ -306,13 +330,27 @@ describe('set-texts', () => {
     })
 
     it('the no-board exception list is not a place to hide texts', () => {
-      // One named exception, with a reason recorded above it. If this grows,
-      // someone is using it to avoid deciding which board a text belongs to.
-      expect(MAY_HAVE_NO_BOARD.size).toBeLessThanOrEqual(1)
+      // Named exceptions only, each with its evidence recorded above. If this
+      // grows without a reason beside it, someone is using it to avoid deciding
+      // which board a text belongs to. 1 -> 7 on 19 September 2026; the reason
+      // for the six is in the docblock and rests on two primary documents.
+      expect(MAY_HAVE_NO_BOARD.size).toBeLessThanOrEqual(7)
       for (const slug of MAY_HAVE_NO_BOARD) {
         const text = SET_TEXTS.find((t) => t.slug === slug)
         expect(text, `${slug} is listed as boardless but is not in SET_TEXTS`).toBeTruthy()
         expect(text!.boards).toEqual([])
+      }
+    })
+
+    it('a boardless text is still reachable, not orphaned', () => {
+      // The point of allowing no board is that the text stops making a false
+      // claim about somebody's exam - not that it disappears. Every one of
+      // these still has a row, so it is in the all-texts index and at
+      // /revision/texts/<slug>.
+      for (const slug of MAY_HAVE_NO_BOARD) {
+        const text = SET_TEXTS.find((t) => t.slug === slug)
+        expect(text?.title, `${slug} has no title`).toBeTruthy()
+        expect(text?.author, `${slug} has no author`).toBeTruthy()
       }
     })
 

@@ -585,7 +585,19 @@ export const SET_TEXTS: SetText[] = [
     title: 'Refugee Blues',
     author: 'W.H. Auden (1907-1973)',
     category: 'poetry-anthology',
-    boards: ['edexcel-igcse-lang'],
+    // NOT PRESCRIBED BY ANY SPECIFICATION WE HAVE READ. This text carried an
+    // `edexcel-igcse-lang` tag until 19 September 2026. It is verifiably not in
+    // the Pearson Edexcel International GCSE English Anthology, Issue 8,
+    // February 2026, whose three parts are established in full, and it is not in
+    // Cambridge 0475 for 2026, 2027 or 2028-2030 either - that hypothesis was
+    // tested and falsified. Where it does belong is not established.
+    //
+    // The tag is gone rather than left pending, because "we do not know where
+    // this belongs" and "this is on your exam" are different statements and only
+    // the first is true. A founder clicking through IGCSE Language found this
+    // text on the shelf and followed it out of the qualification entirely.
+    // The guide stays reachable at /revision/texts and from the all-texts index.
+    boards: [],
     copyrightStatus: 'copyright',
     year: '1939',
     keyThemes: ['Displacement', 'Persecution', 'Statelessness', 'Antisemitism'],
@@ -705,7 +717,19 @@ export const SET_TEXTS: SetText[] = [
     title: 'The Door',
     author: 'E.M. Forster (1879-1970)',
     category: 'prose',
-    boards: ['edexcel-igcse-lang'],
+    // NOT PRESCRIBED BY ANY SPECIFICATION WE HAVE READ. This text carried an
+    // `edexcel-igcse-lang` tag until 19 September 2026. It is verifiably not in
+    // the Pearson Edexcel International GCSE English Anthology, Issue 8,
+    // February 2026, whose three parts are established in full, and it is not in
+    // Cambridge 0475 for 2026, 2027 or 2028-2030 either - that hypothesis was
+    // tested and falsified. Where it does belong is not established.
+    //
+    // The tag is gone rather than left pending, because "we do not know where
+    // this belongs" and "this is on your exam" are different statements and only
+    // the first is true. A founder clicking through IGCSE Language found this
+    // text on the shelf and followed it out of the qualification entirely.
+    // The guide stays reachable at /revision/texts and from the all-texts index.
+    boards: [],
     copyrightStatus: 'copyright',
     year: '1911',
     keyThemes: ['Imagination', 'Reality vs fantasy', 'Office life', 'Escape'],
@@ -771,7 +795,19 @@ export const SET_TEXTS: SetText[] = [
     title: 'The Pedestrian',
     author: 'Ray Bradbury (1920-2012)',
     category: 'prose',
-    boards: ['edexcel-igcse-lang'],
+    // NOT PRESCRIBED BY ANY SPECIFICATION WE HAVE READ. This text carried an
+    // `edexcel-igcse-lang` tag until 19 September 2026. It is verifiably not in
+    // the Pearson Edexcel International GCSE English Anthology, Issue 8,
+    // February 2026, whose three parts are established in full, and it is not in
+    // Cambridge 0475 for 2026, 2027 or 2028-2030 either - that hypothesis was
+    // tested and falsified. Where it does belong is not established.
+    //
+    // The tag is gone rather than left pending, because "we do not know where
+    // this belongs" and "this is on your exam" are different statements and only
+    // the first is true. A founder clicking through IGCSE Language found this
+    // text on the shelf and followed it out of the qualification entirely.
+    // The guide stays reachable at /revision/texts and from the all-texts index.
+    boards: [],
     copyrightStatus: 'copyright',
     year: '1951',
     keyThemes: ['Conformity', 'Technology', 'Isolation', 'Dystopia'],
@@ -785,7 +821,19 @@ export const SET_TEXTS: SetText[] = [
     title: 'The Yellow Wall Paper',
     author: 'Charlotte Perkins Gilman',
     category: 'prose',
-    boards: ['edexcel-igcse-lang'],
+    // NOT PRESCRIBED BY ANY SPECIFICATION WE HAVE READ. This text carried an
+    // `edexcel-igcse-lang` tag until 19 September 2026. It is verifiably not in
+    // the Pearson Edexcel International GCSE English Anthology, Issue 8,
+    // February 2026, whose three parts are established in full, and it is not in
+    // Cambridge 0475 for 2026, 2027 or 2028-2030 either - that hypothesis was
+    // tested and falsified. Where it does belong is not established.
+    //
+    // The tag is gone rather than left pending, because "we do not know where
+    // this belongs" and "this is on your exam" are different statements and only
+    // the first is true. A founder clicking through IGCSE Language found this
+    // text on the shelf and followed it out of the qualification entirely.
+    // The guide stays reachable at /revision/texts and from the all-texts index.
+    boards: [],
     copyrightStatus: 'public-domain',
     year: '1892',
     keyThemes: ['Mental health', 'Patriarchy', 'Confinement', 'Female autonomy'],
@@ -797,7 +845,19 @@ export const SET_TEXTS: SetText[] = [
     title: 'When Greek Meets Greek',
     author: 'Sam Selvon (1923-1994)',
     category: 'prose',
-    boards: ['edexcel-igcse-lang'],
+    // NOT PRESCRIBED BY ANY SPECIFICATION WE HAVE READ. This text carried an
+    // `edexcel-igcse-lang` tag until 19 September 2026. It is verifiably not in
+    // the Pearson Edexcel International GCSE English Anthology, Issue 8,
+    // February 2026, whose three parts are established in full, and it is not in
+    // Cambridge 0475 for 2026, 2027 or 2028-2030 either - that hypothesis was
+    // tested and falsified. Where it does belong is not established.
+    //
+    // The tag is gone rather than left pending, because "we do not know where
+    // this belongs" and "this is on your exam" are different statements and only
+    // the first is true. A founder clicking through IGCSE Language found this
+    // text on the shelf and followed it out of the qualification entirely.
+    // The guide stays reachable at /revision/texts and from the all-texts index.
+    boards: [],
     copyrightStatus: 'copyright',
     year: '1957',
     keyThemes: ['Race', 'Migration', 'Prejudice', 'Survival in Britain'],
@@ -811,7 +871,19 @@ export const SET_TEXTS: SetText[] = [
     title: 'The Man Who Loved Flowers',
     author: 'Stephen King (b. 1947)',
     category: 'prose',
-    boards: ['edexcel-igcse-lang'],
+    // NOT PRESCRIBED BY ANY SPECIFICATION WE HAVE READ. This text carried an
+    // `edexcel-igcse-lang` tag until 19 September 2026. It is verifiably not in
+    // the Pearson Edexcel International GCSE English Anthology, Issue 8,
+    // February 2026, whose three parts are established in full, and it is not in
+    // Cambridge 0475 for 2026, 2027 or 2028-2030 either - that hypothesis was
+    // tested and falsified. Where it does belong is not established.
+    //
+    // The tag is gone rather than left pending, because "we do not know where
+    // this belongs" and "this is on your exam" are different statements and only
+    // the first is true. A founder clicking through IGCSE Language found this
+    // text on the shelf and followed it out of the qualification entirely.
+    // The guide stays reachable at /revision/texts and from the all-texts index.
+    boards: [],
     copyrightStatus: 'copyright',
     year: '1977',
     keyThemes: ['Romance and horror', 'Obsession', 'Mental illness', 'Mistaken identity'],

@@ -123,10 +123,22 @@ describe('a text whose guide is not written', () => {
     expect(nav.groups).toEqual([])
   })
 
-  it('still names the hub, so the breadcrumb works', () => {
+  it('still names the hub, and names the guide that exists', () => {
+    // CHANGED 19 September 2026. This asserted the canonical URL
+    // unconditionally, and for this text that URL is the placeholder. So the
+    // rail's own "back to this text" link sent a reader who was looking at the
+    // 523-line anthology guide to a page apologising for not having written it.
+    //
+    // The hub is now wherever the guide actually is. For a text with no guide
+    // anywhere it is still the canonical URL, because the catch-all serves that
+    // and says so, which is the honest destination.
     expect(buildTextNav('explorers-or-boys-messing-about').hubHref).toBe(
-      '/revision/texts/explorers-or-boys-messing-about',
+      '/igcse/edexcel-lang/anthology/explorers-or-boys-messing-about',
     )
+  })
+
+  it('falls back to the canonical URL when there is no guide anywhere', () => {
+    expect(buildTextNav('night').hubHref).toBe('/revision/texts/night')
   })
 
   it('returns nothing for a slug that is not a text at all', () => {
