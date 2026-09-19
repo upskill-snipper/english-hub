@@ -1277,6 +1277,13 @@ export const AR_MESSAGES: Record<string, string> = {
   'blog.copy_link_button': 'انسخ الرابط',
   'blog.copied': 'تم النسخ!',
   'dash.your_stats': 'إحصاءاتك',
+  'dash.first_week.title': 'أسبوعاك الأولان',
+  'dash.first_week.done': 'مكتملة',
+  'dash.first_week.step_board': 'اختر مجلس الامتحانات',
+  'dash.first_week.step_marking': 'صحّح مقالة',
+  'dash.first_week.step_result': 'افتح ملاحظاتك',
+  'dash.first_week.plan_trial': 'أنت على الفترة التجريبية المجانية.',
+  'dash.first_week.plan_active': 'اشتراكك فعّال حتى',
   'dash.your_hub.badge': 'مراجعة · أدوات · تحليلات',
   'dash.your_hub.blurb':
     'هذي صفحتك الموحَّدة للمراجعة وأدوات الدراسة ومتابعة تقدّمك وأسلوب الامتحان.',

@@ -1351,6 +1351,13 @@ export const ES_MESSAGES: Record<string, string> = {
   'blog.copy_link_button': 'Copiar enlace',
   'blog.copied': '¡Copiado!',
   'dash.your_stats': 'Tus estadísticas',
+  'dash.first_week.title': 'Tus dos primeras semanas',
+  'dash.first_week.done': 'completados',
+  'dash.first_week.step_board': 'Elige tu junta examinadora',
+  'dash.first_week.step_marking': 'Haz corregir una redacción',
+  'dash.first_week.step_result': 'Abre tus comentarios',
+  'dash.first_week.plan_trial': 'Estás en la prueba gratuita.',
+  'dash.first_week.plan_active': 'Tu plan está activo hasta el',
   'dash.your_hub.badge': 'Repaso · Herramientas · Analíticas',
   'dash.your_hub.blurb':
     'Tu espacio unificado para el repaso, las herramientas de estudio, el seguimiento del progreso y la técnica de examen.',

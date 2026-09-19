@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState, use } from 'react'
+import { markResultOpened } from '@/lib/dashboard/first-week'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -560,6 +561,20 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
   const tx = useT()
   const { id } = use(params)
   const [result, setResult] = useState<StoredResult | null>(null)
+
+  /**
+   * UX-4, step three of the first-fortnight checklist: the student has opened
+   * their feedback.
+   *
+   * Keyed off `result` rather than called at each `setResult` site, because
+   * there are two of them - a localStorage render and the server spine - and a
+   * marker added at one would quietly miss half the students. It deliberately
+   * does NOT fire for the awaiting state: work that is still queued for a
+   * teacher has not been read by anyone.
+   */
+  useEffect(() => {
+    if (result) markResultOpened()
+  }, [result])
   const [loaded, setLoaded] = useState(false)
   /** Set when the server says this is a teacher-linked row not yet approved. */
   const [awaiting, setAwaiting] = useState<{ title: string; meta: string } | null>(null)

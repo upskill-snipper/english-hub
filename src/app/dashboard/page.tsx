@@ -31,6 +31,8 @@ import { useSearchParams } from 'next/navigation'
 import { trackEvent } from '@/lib/gtag'
 import { capture as phCapture, EVENTS as PH_EVENTS } from '@/lib/posthog'
 import { useAuthStore } from '@/store/auth-store'
+import { FirstWeekCard } from '@/components/dashboard/FirstWeekCard'
+import { isFirstWeek } from '@/lib/dashboard/first-week'
 // The dashboard renders course cards and an activity feed: it needs titles,
 // colours, levels and module names, never lesson bodies. It used to call
 // `loadAllCourses()`, downloading ~7.2 MB of lesson content and quiz banks on
@@ -149,6 +151,18 @@ function ActivitySkeleton() {
 export default function DashboardPage() {
   const t = useT()
   const { user, profile, isLoading } = useAuthStore()
+
+  /**
+   * Inside the first fortnight, the checklist replaces nothing and sits above
+   * the stats row: the zeroes are still true, they are just no longer the only
+   * thing on the screen. Computed once on mount rather than per render so the
+   * card cannot appear and disappear as the clock ticks past the boundary
+   * mid-session.
+   */
+  const [showFirstWeek, setShowFirstWeek] = useState(false)
+  useEffect(() => {
+    setShowFirstWeek(isFirstWeek(user?.created_at, Date.now()))
+  }, [user?.created_at])
   const router = useRouter()
   const searchParams = useSearchParams()
   const [allCourses, setAllCourses] = useState<CourseIndexEntry[]>([])
@@ -550,6 +564,18 @@ export default function DashboardPage() {
             </div>
             <ArrowRight className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
           </Link>
+
+          {/* ── First fortnight, or the stats row ───────────────────────
+              UX-4: a new account met "0 courses, 0 modules, 0 certificates" on
+              the screen where somebody decides whether to pay. For two weeks
+              they get three steps that can be finished on day one instead. The
+              stats row is unchanged for everyone else. */}
+          {showFirstWeek ? (
+            <FirstWeekCard
+              subscriptionStatus={profile?.subscription_status}
+              subscriptionEndDate={profile?.subscription_end_date}
+            />
+          ) : null}
 
           {/* ── Stats Row ──────────────────────────────────────────────── */}
           <div className="mb-2 flex items-center gap-1.5">

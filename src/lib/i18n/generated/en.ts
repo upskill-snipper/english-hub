@@ -1303,6 +1303,13 @@ export const EN_MESSAGES: Record<string, string> = {
   'blog.copy_link_button': 'Copy Link',
   'blog.copied': 'Copied!',
   'dash.your_stats': 'Your Stats',
+  'dash.first_week.title': 'Your first two weeks',
+  'dash.first_week.done': 'done',
+  'dash.first_week.step_board': 'Choose your exam board',
+  'dash.first_week.step_marking': 'Get an essay marked',
+  'dash.first_week.step_result': 'Open your feedback',
+  'dash.first_week.plan_trial': 'You are on the free trial.',
+  'dash.first_week.plan_active': 'Your plan is active until',
   'dash.your_hub.badge': 'Revision · Toolkit · Analytics',
   'dash.your_hub.blurb':
     'Your unified home for revision, study tools, progress tracking, and exam technique.',

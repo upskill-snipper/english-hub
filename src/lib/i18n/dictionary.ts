@@ -4648,6 +4648,37 @@ export const DICTIONARY: Dictionary = {
 
   // ─── Dashboard / account / grade widgets / upgrade / parent ─────
   'dash.your_stats': { en: 'Your Stats', ar: 'إحصاءاتك', es: 'Tus estadísticas' },
+  'dash.first_week.title': {
+    en: 'Your first two weeks',
+    ar: 'أسبوعاك الأولان',
+    es: 'Tus dos primeras semanas',
+  },
+  'dash.first_week.done': { en: 'done', ar: 'مكتملة', es: 'completados' },
+  'dash.first_week.step_board': {
+    en: 'Choose your exam board',
+    ar: 'اختر مجلس الامتحانات',
+    es: 'Elige tu junta examinadora',
+  },
+  'dash.first_week.step_marking': {
+    en: 'Get an essay marked',
+    ar: 'صحّح مقالة',
+    es: 'Haz corregir una redacción',
+  },
+  'dash.first_week.step_result': {
+    en: 'Open your feedback',
+    ar: 'افتح ملاحظاتك',
+    es: 'Abre tus comentarios',
+  },
+  'dash.first_week.plan_trial': {
+    en: 'You are on the free trial.',
+    ar: 'أنت على الفترة التجريبية المجانية.',
+    es: 'Estás en la prueba gratuita.',
+  },
+  'dash.first_week.plan_active': {
+    en: 'Your plan is active until',
+    ar: 'اشتراكك فعّال حتى',
+    es: 'Tu plan está activo hasta el',
+  },
   'dash.your_hub.badge': {
     en: 'Revision · Toolkit · Analytics',
     ar: 'مراجعة · أدوات · تحليلات',
