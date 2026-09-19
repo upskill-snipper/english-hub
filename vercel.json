@@ -32,7 +32,7 @@
     },
     {
       "path": "/api/cron/expire-invites",
-      "schedule": "0 2 * * *"
+      "schedule": "20 2 * * *"
     },
     {
       "path": "/api/cron/dormancy-check",
@@ -40,7 +40,7 @@
     },
     {
       "path": "/api/cron/dormancy-purge",
-      "schedule": "0 4 * * 0"
+      "schedule": "0 6 * * 0"
     },
     {
       "path": "/api/cron/data-retention",
@@ -64,7 +64,7 @@
     },
     {
       "path": "/api/cron/trustpilot-retention-90d",
-      "schedule": "15 4 * * *"
+      "schedule": "30 4 * * *"
     },
     {
       "path": "/api/cron/trustpilot-retention-invite",

@@ -12,6 +12,16 @@ import { NextRequest } from 'next/server'
 
 // ── Mocks ────────────────────────────────────────────────────────────────
 
+// The run lock added in REL-8. These tests exercise the cron BODY; the lock's
+// own behaviour is covered in `cron-runs-once-at-a-time.test.ts`. Without this
+// the route correctly answers 500 - an unreachable lock is a fault, not a skip -
+// because vitest has no Supabase credentials.
+vi.mock('@/lib/cron/lock', async (orig) => ({
+  ...(await orig<Record<string, unknown>>()),
+  claimCronLock: async () => true,
+  releaseCronLock: async () => {},
+}))
+
 const mockCleanupResult = {
   startedAt: '2026-04-12T04:00:00Z',
   completedAt: '2026-04-12T04:00:05Z',

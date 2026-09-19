@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { timingSafeEqual } from 'crypto'
 import { prisma } from '@/lib/prisma'
 import { createServiceRoleClient } from '@/lib/supabase/server'
 import { runCron } from '@/lib/cron/observability'
+import { authoriseCronRequest } from '@/lib/cron/auth'
 
 export const dynamic = 'force-dynamic'
 
@@ -42,16 +42,8 @@ export const dynamic = 'force-dynamic'
  * Runs daily (configured in vercel.json). Protected by CRON_SECRET.
  */
 export async function GET(request: NextRequest) {
-  const cronSecret = process.env.CRON_SECRET
-  if (!cronSecret) {
-    return NextResponse.json({ error: 'Server misconfiguration' }, { status: 500 })
-  }
-  const authHeader = request.headers.get('authorization')
-  const incoming = Buffer.from(authHeader ?? '')
-  const expected = Buffer.from(`Bearer ${cronSecret}`)
-  if (incoming.length !== expected.length || !timingSafeEqual(incoming, expected)) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  }
+  const auth = authoriseCronRequest(request, 'trial-expiry')
+  if (!auth.ok) return auth.response
 
   return runCron('trial-expiry', async () => {
     const now = new Date()

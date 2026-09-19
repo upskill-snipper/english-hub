@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { timingSafeEqual } from 'crypto'
 import { prisma } from '@/lib/prisma'
 import { processChildDormancy } from '@/lib/privacy/dormancy'
 import { sendEmail } from '@/lib/email'
 import { RETENTION_PERIODS } from '@/lib/data-retention'
 import { runCron } from '@/lib/cron/observability'
 import { measureRetentionCoverage } from '@/lib/cron/coverage'
+import { authoriseCronRequest } from '@/lib/cron/auth'
 
 export const dynamic = 'force-dynamic'
 
@@ -41,17 +41,8 @@ function daysAgo(days: number): Date {
  * Protected by CRON_SECRET to prevent unauthorized invocation.
  */
 export async function GET(request: NextRequest) {
-  // ── Auth: verify CRON_SECRET ──────────────────────────────────────
-  const cronSecret = process.env.CRON_SECRET
-  if (!cronSecret) {
-    return NextResponse.json({ error: 'Server misconfiguration' }, { status: 500 })
-  }
-  const authHeader = request.headers.get('authorization')
-  const incoming = Buffer.from(authHeader ?? '')
-  const expected = Buffer.from(`Bearer ${cronSecret}`)
-  if (incoming.length !== expected.length || !timingSafeEqual(incoming, expected)) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  }
+  const auth = authoriseCronRequest(request, 'dormancy-check')
+  if (!auth.ok) return auth.response
 
   return runCron('dormancy-check', async () => {
     // ── 0. Coverage: how many accounts can this run even see? ─────────

@@ -21,7 +21,6 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server'
-import crypto from 'crypto'
 
 import { prisma } from '@/lib/prisma'
 import { sendEmail } from '@/lib/email'
@@ -35,6 +34,7 @@ import {
   type WeeklyReportPayload,
 } from '@/lib/parent-reports/generate'
 import { buildWeeklyParentReportEmail } from '@/emails/weekly-parent-report'
+import { authoriseCronRequest } from '@/lib/cron/auth'
 
 export const dynamic = 'force-dynamic'
 
@@ -53,37 +53,20 @@ const SEVEN_DAYS_MS = 7 * 24 * 60 * 60 * 1000
 // convention already used by internal callers.
 
 export async function GET(request: NextRequest): Promise<Response> {
-  const expectedSecret = process.env.CRON_SECRET
-  if (!expectedSecret) {
-    console.error('[weekly-parent-reports] CRON_SECRET is not configured')
-    return NextResponse.json({ error: 'Server misconfiguration' }, { status: 500 })
-  }
-  const authHeader = request.headers.get('authorization') ?? ''
-  const incoming = Buffer.from(authHeader)
-  const expected = Buffer.from(`Bearer ${expectedSecret}`)
-  if (incoming.length !== expected.length || !crypto.timingSafeEqual(incoming, expected)) {
-    return NextResponse.json({ error: 'Unauthorised' }, { status: 401 })
-  }
+  const auth = authoriseCronRequest(request, 'weekly-parent-reports')
+  if (!auth.ok) return auth.response
 
-  return executeWeeklyParentReports(expectedSecret)
+  return executeWeeklyParentReports(auth.secret)
 }
 
 export async function POST(request: NextRequest): Promise<Response> {
-  // ── CRON_SECRET gate (timing-safe) ─────────────────────────────────
-  const cronSecret = request.headers.get('x-cron-secret') ?? ''
-  const expectedSecret = process.env.CRON_SECRET
-  if (!expectedSecret) {
-    console.error('[weekly-parent-reports] CRON_SECRET is not configured')
-    return NextResponse.json({ error: 'Server misconfiguration' }, { status: 500 })
-  }
-  if (
-    cronSecret.length !== expectedSecret.length ||
-    !crypto.timingSafeEqual(Buffer.from(cronSecret), Buffer.from(expectedSecret))
-  ) {
-    return NextResponse.json({ error: 'Unauthorised' }, { status: 401 })
-  }
+  // The shared helper accepts both `Authorization: Bearer` and the
+  // `x-cron-secret` header this handler used to read by hand, so the internal
+  // callers that use the legacy header keep working unchanged.
+  const auth = authoriseCronRequest(request, 'weekly-parent-reports')
+  if (!auth.ok) return auth.response
 
-  return executeWeeklyParentReports(expectedSecret)
+  return executeWeeklyParentReports(auth.secret)
 }
 
 async function executeWeeklyParentReports(expectedSecret: string): Promise<Response> {
@@ -97,6 +80,10 @@ async function executeWeeklyParentReports(expectedSecret: string): Promise<Respo
   // List-Unsubscribe header exist. Set WEEKLY_PARENT_REPORTS_ENABLED=true
   // only once that opt-out path is built.
   if (process.env.WEEKLY_PARENT_REPORTS_ENABLED !== 'true') {
+    // Logged, not silent. Without this line a disabled run emits nothing
+    // at all and is indistinguishable in the Vercel log from a schedule
+    // that never fired (REL-8, and chapter 09 named it).
+    console.info('[cron:weekly-parent-reports] skipped - disabled - no unsubscribe mechanism yet')
     return NextResponse.json(
       { skipped: 'disabled - no unsubscribe mechanism yet' },
       { status: 200 },

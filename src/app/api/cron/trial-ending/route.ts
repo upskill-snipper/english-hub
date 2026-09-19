@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { timingSafeEqual } from 'crypto'
 import { ReminderType, SubscriptionPlatform, SubscriptionStatus } from '@prisma/client'
 
 import { prisma } from '@/lib/prisma'
 import { sendEmail } from '@/lib/email'
 import { runCron } from '@/lib/cron/observability'
 import { buildTrialEndingEmail, buildTrialEndedEmail } from '@/lib/email-templates/trial-lifecycle'
+import { authoriseCronRequest } from '@/lib/cron/auth'
 
 export const dynamic = 'force-dynamic'
 
@@ -103,18 +103,8 @@ const MIN_AGE_YEARS = 13
 // ─── Handlers ────────────────────────────────────────────────────────────
 
 export async function GET(request: NextRequest): Promise<Response> {
-  const cronSecret = process.env.CRON_SECRET
-  if (!cronSecret) {
-    console.error('[cron:trial-ending] CRON_SECRET is not configured')
-    return NextResponse.json({ error: 'Server misconfiguration' }, { status: 500 })
-  }
-
-  const authHeader = request.headers.get('authorization') ?? ''
-  const incoming = Buffer.from(authHeader)
-  const expected = Buffer.from(`Bearer ${cronSecret}`)
-  if (incoming.length !== expected.length || !timingSafeEqual(incoming, expected)) {
-    return NextResponse.json({ error: 'Unauthorised' }, { status: 401 })
-  }
+  const auth = authoriseCronRequest(request, 'trial-ending')
+  if (!auth.ok) return auth.response
 
   return executeTrialEndingCron()
 }
@@ -135,6 +125,12 @@ async function executeTrialEndingCron(): Promise<Response> {
   // that still returns 200, so the schedule can ship without sending
   // anything.
   if (process.env.TRIAL_LIFECYCLE_EMAILS_ENABLED !== 'true') {
+    // Logged, not silent. Without this line a disabled run emits nothing
+    // at all and is indistinguishable in the Vercel log from a schedule
+    // that never fired (REL-8, and chapter 09 named it).
+    console.info(
+      '[cron:trial-ending] skipped - disabled - set TRIAL_LIFECYCLE_EMAILS_ENABLED=true to enable',
+    )
     return NextResponse.json(
       { ok: true, skipped: 'disabled - set TRIAL_LIFECYCLE_EMAILS_ENABLED=true to enable' },
       { status: 200 },

@@ -27,8 +27,14 @@
 import { timingSafeEqual } from 'crypto'
 import { NextResponse } from 'next/server'
 
+/**
+ * `secret` is the verified value, handed back so a route that has to forward
+ * it (weekly-parent-reports calls an internal push endpoint with it) does not
+ * read `process.env` a second time and cannot end up forwarding a different
+ * value from the one it just authenticated against.
+ */
 export type CronAuthResult =
-  | { ok: true }
+  | { ok: true; secret: string }
   | { ok: false; response: NextResponse; reason: 'not-configured' | 'unauthorised' }
 
 /** Constant-time string compare that never throws on a length mismatch. */
@@ -81,5 +87,5 @@ export function authoriseCronRequest(
     }
   }
 
-  return { ok: true }
+  return { ok: true, secret: expected }
 }

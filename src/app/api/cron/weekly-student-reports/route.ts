@@ -41,7 +41,7 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server'
-import crypto from 'crypto'
+import { authoriseCronRequest } from '@/lib/cron/auth'
 
 import { prisma } from '@/lib/prisma'
 import { runCron } from '@/lib/cron/observability'
@@ -113,21 +113,8 @@ export async function GET(request: NextRequest): Promise<Response> {
 }
 
 export async function POST(request: NextRequest): Promise<Response> {
-  // ── Auth: Authorization: Bearer <CRON_SECRET> (timing-safe) ─────────
-  const expected = process.env.CRON_SECRET
-  if (!expected) {
-    console.error('[weekly-student-reports] CRON_SECRET is not configured')
-    return NextResponse.json({ error: 'Server misconfiguration' }, { status: 500 })
-  }
-
-  const auth = request.headers.get('authorization') ?? ''
-  const provided = auth.startsWith('Bearer ') ? auth.slice('Bearer '.length) : ''
-  if (
-    provided.length !== expected.length ||
-    !crypto.timingSafeEqual(Buffer.from(provided), Buffer.from(expected))
-  ) {
-    return NextResponse.json({ error: 'Unauthorised' }, { status: 401 })
-  }
+  const auth = authoriseCronRequest(request, 'weekly-student-reports')
+  if (!auth.ok) return auth.response
 
   // Defect being fixed (2026-08 reliability audit): this was one of only two
   // cron routes outside runCron(), so an exception or a slow run never

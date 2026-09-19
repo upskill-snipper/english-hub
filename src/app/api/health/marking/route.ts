@@ -26,24 +26,15 @@
 // ────────────────────────────────────────────────────────────────────────────
 
 import { NextRequest, NextResponse } from 'next/server'
-import { timingSafeEqual } from 'crypto'
 import { runMarkingProbe } from '@/lib/marking/health-probe'
+import { authoriseCronRequest } from '@/lib/cron/auth'
 
 export const dynamic = 'force-dynamic'
 export const maxDuration = 60
 
 export async function GET(request: NextRequest) {
-  const cronSecret = process.env.CRON_SECRET
-  if (!cronSecret) {
-    console.error('[health/marking] CRON_SECRET environment variable is not set')
-    return NextResponse.json({ error: 'Server misconfiguration' }, { status: 500 })
-  }
-
-  const incoming = Buffer.from(request.headers.get('authorization') ?? '')
-  const expected = Buffer.from(`Bearer ${cronSecret}`)
-  if (incoming.length !== expected.length || !timingSafeEqual(incoming, expected)) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  }
+  const auth = authoriseCronRequest(request, 'health/marking')
+  if (!auth.ok) return auth.response
 
   const result = await runMarkingProbe()
 

@@ -96,7 +96,7 @@ describe('Cron endpoint authentication', () => {
 
     expect(res.status).toBe(401)
     const json = await res.json()
-    expect(json.error).toMatch(/unauthorized/i)
+    expect(json.error).toMatch(/unauthoris|unauthoriz/i)
   })
 
   it('returns 401 for an incorrect secret', async () => {
@@ -105,7 +105,7 @@ describe('Cron endpoint authentication', () => {
 
     expect(res.status).toBe(401)
     const json = await res.json()
-    expect(json.error).toMatch(/unauthorized/i)
+    expect(json.error).toMatch(/unauthoris|unauthoriz/i)
   })
 
   it('returns 401 for a secret without Bearer prefix', async () => {

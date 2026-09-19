@@ -13,14 +13,14 @@ All times are UTC. Vercel cron never sends a body and never sends anything but `
 | Path                                    | Schedule                 | Deletes data          | Wrapped in `runCron` | What it writes                                 |
 | --------------------------------------- | ------------------------ | --------------------- | -------------------- | ---------------------------------------------- |
 | `/api/cron/affiliate-confirm-v2`        | `0 2 * * *` (02:00)      | no                    | yes                  | `affiliate_conversions.status`                 |
-| `/api/cron/expire-invites`              | `0 2 * * *` (02:00)      | no                    | yes                  | `school_members.invite_status`                 |
+| `/api/cron/expire-invites`              | `20 2 * * *` (02:20)     | no                    | yes                  | `school_members.invite_status`                 |
 | `/api/cron/affiliate-confirm`           | `0 3 * * *` (03:00)      | no                    | yes                  | `affiliate_referrals.commission_status`        |
 | `/api/cron/dormancy-check`              | `30 3 * * *` (03:30)     | **yes, indirectly**   | yes                  | `User.accountStatus`, `AuditLog`, emails       |
 | `/api/cron/trustpilot-followup-7d`      | `45 3 * * *` (03:45)     | no                    | yes                  | `trustpilot_invite`, emails                    |
 | `/api/cron/trial-expiry`                | `15 4 * * *` (04:15)     | no                    | yes                  | `profiles.subscription_status`, `Subscription` |
-| `/api/cron/trustpilot-retention-90d`    | `15 4 * * *` (04:15)     | no                    | yes                  | `trustpilot_invite`, emails                    |
+| `/api/cron/trustpilot-retention-90d`    | `30 4 * * *` (04:30)     | no                    | yes                  | `trustpilot_invite`, emails                    |
 | `/api/cron/data-retention`              | `0 4 * * *` (04:00)      | **yes, irreversibly** | yes                  | many; see below                                |
-| `/api/cron/dormancy-purge`              | `0 4 * * 0` (Sun 04:00)  | **yes, irreversibly** | yes                  | `User` PII overwrite, `Consent` delete         |
+| `/api/cron/dormancy-purge`              | `0 6 * * 0` (Sun 06:00)  | **yes, irreversibly** | yes                  | `User` PII overwrite, `Consent` delete         |
 | `/api/cron/school-access`               | `0 5 * * *` (05:00)      | no                    | yes                  | `schools.access_type`, emails                  |
 | `/api/cron/trial-ending`                | `0 9 * * *` (09:00)      | no                    | yes (after a flag)   | `RenewalReminder`, emails                      |
 | `/api/cron/trustpilot-retention-invite` | `0 15 * * *` (15:00)     | no                    | **no**               | `trustpilot_invite`, emails                    |
@@ -28,9 +28,11 @@ All times are UTC. Vercel cron never sends a body and never sends anything but `
 | `/api/cron/weekly-student-reports`      | `0 17 * * 0` (Sun 17:00) | no                    | yes                  | `WeeklyStudentDigest`, emails                  |
 | `/api/cron/blog-generate`               | `0 */12 * * *`           | no                    | yes                  | a GitHub branch and PR                         |
 
-Two docstrings disagree with the schedule they describe: [`trustpilot-followup-7d/route.ts:7`](../../src/app/api/cron/trustpilot-followup-7d/route.ts) says 03:30 (it is 03:45) and [`trustpilot-retention-90d/route.ts:9`](../../src/app/api/cron/trustpilot-retention-90d/route.ts) says 04:00 (it is 04:15). Trust `vercel.json`.
+Two docstrings disagree with the schedule they describe: [`trustpilot-followup-7d/route.ts:7`](../../src/app/api/cron/trustpilot-followup-7d/route.ts) says 03:30 (it is 03:45) and [`trustpilot-retention-90d/route.ts:9`](../../src/app/api/cron/trustpilot-retention-90d/route.ts) says 04:00 (it is 04:30). Trust `vercel.json`.
 
-`data-retention` and `dormancy-purge` both fire at 04:00 on Sundays and both touch child accounts. Nothing serialises them. I have not seen evidence of a collision in practice, but the two runs overlap by design and `purgeDormantAccount` uses a transaction while `processChildDormancy` does not.
+**Fixed 19 September 2026 (REL-8).** `data-retention` and `dormancy-purge` both fired at 04:00 on Sundays, both touched child accounts, and nothing serialised them - `purgeDormantAccount` uses a transaction while `processChildDormancy` does not. Two things changed: `dormancy-purge` moved to Sunday 06:00, and both now take the same run lock (`child-account-deletion`), so they cannot overlap even if one runs long. Three schedule collisions were resolved in total; the other two were `trial-expiry` against `trustpilot-retention-90d` at 04:15, and `affiliate-confirm-v2` against `expire-invites` at 02:00, which the item's own evidence had not noticed.
+
+The structural test asserts no two entries can fire in the same minute, comparing expanded cron fields rather than schedule strings - `0 4 * * *` and `0 4 * * 0` are different strings and collided every Sunday.
 
 ---
 
@@ -38,20 +40,13 @@ Two docstrings disagree with the schedule they describe: [`trustpilot-followup-7
 
 ### Authentication
 
-Every scheduled route checks `CRON_SECRET`, through **four** separate implementations of the same check, which is the residue of an audit rather than a design:
+Every scheduled route checks `CRON_SECRET` through **one** implementation, [`src/lib/cron/auth.ts`](../../src/lib/cron/auth.ts). It accepts `Authorization: Bearer <secret>` (what Vercel Cron sends) or `x-cron-secret: <secret>` (what the older hand-run scripts and internal callers send), length-checks before `timingSafeEqual`, returns 500 when `CRON_SECRET` is unset and 401 otherwise, and hands the verified secret back so a route that has to forward it does not read the environment a second time.
 
-1. **The shared helper**, [`src/lib/cron/auth.ts`](../../src/lib/cron/auth.ts). Accepts `Authorization: Bearer <secret>` or `x-cron-secret: <secret>`, length-checks before `timingSafeEqual`, returns 500 when `CRON_SECRET` is unset and 401 otherwise. Only two routes use it: `trustpilot-followup-7d` and `trustpilot-retention-90d`.
-2. **The whole-header compare**, copied into eleven routes: `affiliate-confirm`, `affiliate-confirm-v2`, `blog-generate`, `data-retention`, `dormancy-check`, `dormancy-purge`, `expire-invites`, `school-access`, `trial-ending`, `trial-expiry` and `weekly-parent-reports`'s `GET`. See [`expire-invites/route.ts:11-20`](../../src/app/api/cron/expire-invites/route.ts) for this variant's canonical shape. It builds `Buffer.from("Bearer " + secret)` and compares that against the entire `Authorization` header.
-3. **`weekly-student-reports`**, which slices the `Bearer` prefix off and compares the _token_ against the bare secret ([`route.ts:120-126`](../../src/app/api/cron/weekly-student-reports/route.ts)).
-4. **`trustpilot-retention-invite`**, which does the same slice but also accepts `x-cron-secret`, at [`route.ts:34-50`](../../src/app/api/cron/trustpilot-retention-invite/route.ts).
+Until 19 September 2026 there were **four** implementations - the helper on two routes, a whole-header compare copied into eleven, and two one-off slices. All four were correct; they were just duplicated, which meant a fix to one of them fixed one of them. `scripts/migrate-cron-auth.mjs` moved the remaining sixteen onto the helper in one pass (REL-8) and is idempotent, so it can be re-run to check.
 
-`weekly-parent-reports` additionally keeps a separate `x-cron-secret` `POST` path for manual invocation ([`route.ts:73-83`](../../src/app/api/cron/weekly-parent-reports/route.ts)), so that one route carries two of the shapes at once.
+**If you add a cron route, export `GET` and call `authoriseCronRequest`.** This is now enforced over every scheduled path rather than over two of them: [`src/__tests__/scheduled-work-has-one-shape.test.ts`](../../src/__tests__/scheduled-work-has-one-shape.test.ts) walks `vercel.json` and `src/app/api/cron/` in both directions and asserts each route exports `GET`, uses the helper, calls no `timingSafeEqual` of its own, and reports through `runCron`. The earlier guard covered only the two Trustpilot routes - two of sixteen - which is why the other fourteen drifted.
 
-All four length-check before `timingSafeEqual`, so all four are correct - they are just duplicated. If you are hardening or refactoring this, the count is four, not one canonical shape with exceptions.
-
-The header comment in `auth.ts` records why the helper exists. Two routes shipped with only a `POST` export and only an `x-cron-secret` read, so Vercel's `GET` was answered `405` by the framework and **every scheduled run between 19 April and 17 September 2026 sent nothing**. A 405 is produced before the handler is entered, so the observability wrapper never saw it and no alert fired. The same defect class hit `dormancy-purge` ([`route.ts:37-46`](../../src/app/api/cron/dormancy-purge/route.ts)) and both weekly report crons ([`weekly-parent-reports/route.ts:46-53`](../../src/app/api/cron/weekly-parent-reports/route.ts)). All are now fixed by exporting `GET` that delegates to `POST`.
-
-**If you add a cron route, export `GET`.** A test guards this, but only for the two Trustpilot routes: [`src/__tests__/cron-auth-shared.test.ts:128-148`](../../src/__tests__/cron-auth-shared.test.ts) asserts they export `GET` and use the shared helper. The other thirteen routes have no such guard.
+The header comment in `auth.ts` records why the helper exists. Two routes shipped with only a `POST` export and only an `x-cron-secret` read, so Vercel's `GET` was answered `405` by the framework and **every scheduled run between 19 April and 17 September 2026 sent nothing**. A 405 is produced before the handler is entered, so the observability wrapper never saw it and no alert fired.
 
 `/api/push/send` is also `CRON_SECRET`-gated but is not itself scheduled - it is the internal fan-out endpoint the parent-report cron calls when that cron is enabled ([`push/send/route.ts:36-49`](../../src/app/api/push/send/route.ts)), and it reads only `x-cron-secret`.
 
@@ -69,9 +64,17 @@ If you rotate `CRON_SECRET` - after an incident, or on a schedule - assume every
 
 [`src/lib/cron/observability.ts`](../../src/lib/cron/observability.ts) is a 59-line wrapper. `runCron(name, body)` times the body, adds a Sentry breadcrumb and a `console.info` on success, and on a throw calls `Sentry.captureException` with tag `cron: <name>` and returns HTTP 500.
 
-Fourteen of fifteen routes use it. **`trustpilot-retention-invite` does not.** It returns `NextResponse.json` directly from `handle()` at [`route.ts:122`](../../src/app/api/cron/trustpilot-retention-invite/route.ts), so it emits no breadcrumb, no duration, and an unhandled throw inside it reaches Next.js rather than Sentry. If that job stops working you will find out from Trustpilot review volume, not from monitoring.
+**All sixteen cron routes now use it.** `trustpilot-retention-invite` was the exception until 19 September 2026: it returned `NextResponse.json` directly from `handle()`, so it emitted no breadcrumb, no duration, and an unhandled throw inside it reached Next.js rather than Sentry. If that job had stopped working you would have found out from Trustpilot review volume.
 
-Two of the fourteen that do use it - `trial-ending` and `weekly-parent-reports` - only reach `runCron` past an env-var flag that is off by default. A disabled run of either emits no breadcrumb at all, so in the logs it is indistinguishable from a route that was never called.
+Two routes - `trial-ending` and `weekly-parent-reports` - only reach `runCron` past an env-var flag that is off by default. Both are deliberate and documented in place (`trial-ending` waits on the founder reviewing the copy; `weekly-parent-reports` waited on a real unsubscribe path, which RET-7 has since built, so that one is now waiting only on the environment variable). A disabled run used to emit nothing at all, making it indistinguishable in the log from a schedule that never fired; both now log one `[cron:<name>] skipped` line.
+
+### The run lock
+
+Added 19 September 2026 (REL-8). `runCron` claims a lease in `public.cron_runs` before entering the body and releases it on both paths. A contended run answers 200 with `skipped: 'already-running'` and a Sentry warning; a lock that cannot be reached at all answers **500**, because an unreachable lock must never be mistaken for a held one - that would stop every cron in the product and report success for ever.
+
+It is a lease row and not `pg_try_advisory_xact_lock`, which is what the proposal asked for. Measured against production: called through a bare `$queryRaw`, the second `pg_try_advisory_xact_lock` on the same key returns `true`, because the statement is its own implicit transaction and the transaction-scoped lock dies with it. The session-scoped variant is worse - `DATABASE_URL` is pgBouncer on 6543 in transaction pooling mode, so lock and unlock can land on different backends and the job wedges shut permanently. See [`supabase/migrations/20260919_cron_run_locks.sql`](../../supabase/migrations/20260919_cron_run_locks.sql).
+
+`data-retention` and `dormancy-purge` share the lock name `child-account-deletion` rather than each taking their own. The per-name lease stops Vercel running one job twice; only a shared name stops those two running at once, and they are the pair that delete dormant children's accounts - one of them inside a transaction, the other not. Their schedules were also moved apart, but moving schedules only narrows the window.
 
 Two things to understand about failure:
 

@@ -1,4 +1,5 @@
 import * as Sentry from '@sentry/nextjs'
+import { claimCronLock, releaseCronLock, LOCK_LEASE_SECONDS } from './lock'
 
 /**
  * Cron observability helper.
@@ -23,12 +24,61 @@ import * as Sentry from '@sentry/nextjs'
  *             returns `500`, which is visible in the Vercel log and in
  *             Sentry. NOTE: Vercel cron jobs are NOT retried on failure -
  *             the next attempt is the next scheduled run (REL-6).
+ *
+ * It also takes a run lock before entering the body (REL-8, 19 September
+ * 2026). Vercel can start a second instance of a schedule while the first is
+ * still running; two of these jobs delete children's accounts and one of them
+ * does not use a transaction. A contended run answers `200` with
+ * `skipped: 'already-running'` - it did not fail, it declined - while a lock
+ * that cannot be reached at all is a `500`, because an unreachable lock must
+ * never look like a held one. See `./lock`.
  */
 export async function runCron<T extends Record<string, unknown>>(
   name: string,
   body: () => Promise<T>,
+  options: { lockName?: string; leaseSeconds?: number } = {},
 ): Promise<Response> {
   const started = Date.now()
+  const lockName = options.lockName ?? name
+  const leaseSeconds = options.leaseSeconds ?? LOCK_LEASE_SECONDS
+
+  let held = false
+  try {
+    held = await claimCronLock(lockName, leaseSeconds)
+  } catch (err) {
+    // Not a skip. The storage behind the lock is broken, which is a fault in
+    // its own right and has to be reported as one.
+    Sentry.captureException(err, { tags: { cron: name, phase: 'lock' } })
+    console.error(`[cron:${name}] LOCK UNAVAILABLE`, { lockName, error: err })
+    return Response.json(
+      {
+        ok: false,
+        error: err instanceof Error ? err.message : 'Unknown error',
+        phase: 'lock',
+        durationMs: Date.now() - started,
+      },
+      { status: 500 },
+    )
+  }
+
+  if (!held) {
+    // A warning rather than an exception: one skip is the lock doing its job,
+    // but a weekly job that skips every week has silently stopped running, and
+    // only a countable signal makes that visible. `cron_runs.skip_count` holds
+    // the running total.
+    Sentry.captureMessage(`cron ${name} skipped: ${lockName} already held`, {
+      level: 'warning',
+      tags: { cron: name },
+    })
+    console.warn(`[cron:${name}] skipped - "${lockName}" is already held by a running instance`)
+    return Response.json({
+      ok: true,
+      skipped: 'already-running',
+      lock: lockName,
+      durationMs: Date.now() - started,
+    })
+  }
+
   try {
     const result = await body()
     const durationMs = Date.now() - started
@@ -59,5 +109,8 @@ export async function runCron<T extends Record<string, unknown>>(
       },
       { status: 500 },
     )
+  } finally {
+    // Both paths, so a failed run does not hold the lease until it expires.
+    await releaseCronLock(lockName)
   }
 }

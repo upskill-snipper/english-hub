@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { timingSafeEqual } from 'crypto'
 import { cleanupExpiredData } from '@/lib/data-retention'
 import { runCron } from '@/lib/cron/observability'
+import { CHILD_DELETION_LOCK } from '@/lib/cron/lock'
 import { measureRetentionCoverage } from '@/lib/cron/coverage'
+import { authoriseCronRequest } from '@/lib/cron/auth'
 
 export const dynamic = 'force-dynamic'
 
@@ -24,50 +25,51 @@ export const dynamic = 'force-dynamic'
  * Protected by CRON_SECRET (Vercel's standard Bearer token pattern).
  */
 export async function GET(request: NextRequest) {
-  // ── Auth: verify CRON_SECRET ──────────────────────────────────────
-  const cronSecret = process.env.CRON_SECRET
-  if (!cronSecret) {
-    return NextResponse.json({ error: 'Server misconfiguration' }, { status: 500 })
-  }
-  const authHeader = request.headers.get('authorization')
-  const incoming = Buffer.from(authHeader ?? '')
-  const expected = Buffer.from(`Bearer ${cronSecret}`)
-  if (incoming.length !== expected.length || !timingSafeEqual(incoming, expected)) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  }
+  const auth = authoriseCronRequest(request, 'data-retention')
+  if (!auth.ok) return auth.response
 
-  return runCron('data-retention', async () => {
-    // ── How much of the user base can this run actually see? ──────────
-    // Everything below enumerates prisma.user. When that table holds fewer
-    // rows than there are real accounts, low counts below mean "invisible",
-    // not "clean". Reported so a green run cannot be read as a discharged
-    // retention duty.
-    const coverage = await measureRetentionCoverage('data-retention')
+  return runCron(
+    'data-retention',
+    async () => {
+      // ── How much of the user base can this run actually see? ──────────
+      // Everything below enumerates prisma.user. When that table holds fewer
+      // rows than there are real accounts, low counts below mean "invisible",
+      // not "clean". Reported so a green run cannot be read as a discharged
+      // retention duty.
+      const coverage = await measureRetentionCoverage('data-retention')
 
-    // ── Run the full cleanup cycle ────────────────────────────────────
-    const summary = await cleanupExpiredData()
+      // ── Run the full cleanup cycle ────────────────────────────────────
+      const summary = await cleanupExpiredData()
 
-    return {
-      coverage,
-      summary: {
-        startedAt: summary.startedAt,
-        completedAt: summary.completedAt,
-        hardDeletedAccounts: summary.hardDeletedAccounts.length,
-        inactiveWarningsSent: summary.inactiveWarningsSent.length,
-        inactiveSoftDeleted: summary.inactiveSoftDeleted.length,
-        childrenPriorityCleanups: summary.childrenPriorityCleanups,
-        childDormancy: summary.childDormancy
-          ? {
-              warningsSent: summary.childDormancy.warningsSent.length,
-              deletions: summary.childDormancy.deletions.length,
-              errors: summary.childDormancy.errors.length,
-            }
-          : null,
-        usageDataAnonymised: summary.usageDataAnonymised,
-        supportTicketsArchived: summary.supportTicketsArchived,
-        expiredMarketingConsents: summary.expiredMarketingConsents,
-        errorCount: summary.errors.length,
-      },
-    }
-  })
+      return {
+        coverage,
+        summary: {
+          startedAt: summary.startedAt,
+          completedAt: summary.completedAt,
+          hardDeletedAccounts: summary.hardDeletedAccounts.length,
+          inactiveWarningsSent: summary.inactiveWarningsSent.length,
+          inactiveSoftDeleted: summary.inactiveSoftDeleted.length,
+          childrenPriorityCleanups: summary.childrenPriorityCleanups,
+          childDormancy: summary.childDormancy
+            ? {
+                warningsSent: summary.childDormancy.warningsSent.length,
+                deletions: summary.childDormancy.deletions.length,
+                errors: summary.childDormancy.errors.length,
+              }
+            : null,
+          usageDataAnonymised: summary.usageDataAnonymised,
+          supportTicketsArchived: summary.supportTicketsArchived,
+          expiredMarketingConsents: summary.expiredMarketingConsents,
+          errorCount: summary.errors.length,
+        },
+      }
+    },
+    {
+      // Shared with the other job that deletes dormant children's accounts.
+      // The per-name lease stops Vercel running THIS job twice; only a shared
+      // name stops the two of them running at once, and one of the two purge
+      // paths is not wrapped in a transaction. See `@/lib/cron/lock`.
+      lockName: CHILD_DELETION_LOCK,
+    },
+  )
 }

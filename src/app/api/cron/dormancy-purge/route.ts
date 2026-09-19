@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { timingSafeEqual } from 'crypto'
 import { prisma } from '@/lib/prisma'
 import { findDormantChildAccounts, purgeDormantAccount } from '@/lib/privacy/dormancy'
 import { runCron } from '@/lib/cron/observability'
+import { CHILD_DELETION_LOCK } from '@/lib/cron/lock'
 import { measureRetentionCoverage } from '@/lib/cron/coverage'
+import { authoriseCronRequest } from '@/lib/cron/auth'
 
 export const dynamic = 'force-dynamic'
 
@@ -46,79 +47,77 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
-  // ── Auth: verify CRON_SECRET (Bearer token) ───────────────────────
-  const cronSecret = process.env.CRON_SECRET
-  if (!cronSecret) {
-    console.error('[dormancy-purge] CRON_SECRET environment variable is not set')
-    return NextResponse.json({ error: 'Server misconfiguration' }, { status: 500 })
-  }
+  const auth = authoriseCronRequest(request, 'dormancy-purge')
+  if (!auth.ok) return auth.response
 
-  const authHeader = request.headers.get('authorization')
-  const incoming = Buffer.from(authHeader ?? '')
-  const expected = Buffer.from(`Bearer ${cronSecret}`)
+  return runCron(
+    'dormancy-purge',
+    async () => {
+      // Candidates come from prisma.user, so an account with no projection
+      // is invisible here. Recorded per run rather than assumed away.
+      const coverage = await measureRetentionCoverage('dormancy-purge')
 
-  if (incoming.length !== expected.length || !timingSafeEqual(incoming, expected)) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  }
+      const errors: PurgeError[] = []
+      let purged = 0
 
-  return runCron('dormancy-purge', async () => {
-    // Candidates come from prisma.user, so an account with no projection
-    // is invisible here. Recorded per run rather than assumed away.
-    const coverage = await measureRetentionCoverage('dormancy-purge')
-
-    const errors: PurgeError[] = []
-    let purged = 0
-
-    let dormantIds: string[] = []
-    try {
-      dormantIds = await findDormantChildAccounts(prisma)
-    } catch (err) {
-      errors.push({
-        step: 'find_dormant_child_accounts',
-        message: err instanceof Error ? err.message : String(err),
-      })
-      return { coverage, purged, errors }
-    }
-
-    for (const userId of dormantIds) {
+      let dormantIds: string[] = []
       try {
-        await purgeDormantAccount(prisma, userId)
-        purged += 1
+        dormantIds = await findDormantChildAccounts(prisma)
       } catch (err) {
         errors.push({
-          userId,
-          step: 'purge_dormant_account',
+          step: 'find_dormant_child_accounts',
+          message: err instanceof Error ? err.message : String(err),
+        })
+        return { coverage, purged, errors }
+      }
+
+      for (const userId of dormantIds) {
+        try {
+          await purgeDormantAccount(prisma, userId)
+          purged += 1
+        } catch (err) {
+          errors.push({
+            userId,
+            step: 'purge_dormant_account',
+            message: err instanceof Error ? err.message : String(err),
+          })
+        }
+      }
+
+      // Cycle-summary audit so DPO can verify weekly purge volume.
+      try {
+        await prisma.auditLog.create({
+          data: {
+            userId: null,
+            action: 'CHILD_DORMANCY_PURGE_CYCLE_COMPLETED',
+            resource: 'ChildDormancy',
+            resourceId: 'system',
+            details: {
+              automated: true,
+              candidates: dormantIds.length,
+              purged,
+              errors: errors.length,
+              timestamp: new Date().toISOString(),
+              complianceStandard: "Children's Code Standard 8 - Data Minimisation",
+            },
+            ipAddress: 'system',
+          },
+        })
+      } catch (err) {
+        errors.push({
+          step: 'audit_summary',
           message: err instanceof Error ? err.message : String(err),
         })
       }
-    }
 
-    // Cycle-summary audit so DPO can verify weekly purge volume.
-    try {
-      await prisma.auditLog.create({
-        data: {
-          userId: null,
-          action: 'CHILD_DORMANCY_PURGE_CYCLE_COMPLETED',
-          resource: 'ChildDormancy',
-          resourceId: 'system',
-          details: {
-            automated: true,
-            candidates: dormantIds.length,
-            purged,
-            errors: errors.length,
-            timestamp: new Date().toISOString(),
-            complianceStandard: "Children's Code Standard 8 - Data Minimisation",
-          },
-          ipAddress: 'system',
-        },
-      })
-    } catch (err) {
-      errors.push({
-        step: 'audit_summary',
-        message: err instanceof Error ? err.message : String(err),
-      })
-    }
-
-    return { coverage, purged, errors }
-  })
+      return { coverage, purged, errors }
+    },
+    {
+      // Shared with the other job that deletes dormant children's accounts.
+      // The per-name lease stops Vercel running THIS job twice; only a shared
+      // name stops the two of them running at once, and one of the two purge
+      // paths is not wrapped in a transaction. See `@/lib/cron/lock`.
+      lockName: CHILD_DELETION_LOCK,
+    },
+  )
 }

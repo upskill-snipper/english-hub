@@ -37,7 +37,6 @@
 // ────────────────────────────────────────────────────────────────────────────
 
 import { NextRequest, NextResponse } from 'next/server'
-import { timingSafeEqual } from 'crypto'
 import {
   getAnthropicClient,
   ANTHROPIC_MODEL,
@@ -45,6 +44,7 @@ import {
 } from '@/lib/anthropic-client'
 import { MARKING_MODELS } from '@/lib/marking/engine/models'
 import { EXAMINER_MODELS } from '@/lib/marking/examiner/models'
+import { authoriseCronRequest } from '@/lib/cron/auth'
 
 export const dynamic = 'force-dynamic'
 export const maxDuration = 60
@@ -75,17 +75,8 @@ function likelyCause(status: number | undefined, notConfigured: boolean): string
 }
 
 export async function GET(request: NextRequest) {
-  const cronSecret = process.env.CRON_SECRET
-  if (!cronSecret) {
-    console.error('[health/ai] CRON_SECRET environment variable is not set')
-    return NextResponse.json({ error: 'Server misconfiguration' }, { status: 500 })
-  }
-
-  const incoming = Buffer.from(request.headers.get('authorization') ?? '')
-  const expected = Buffer.from(`Bearer ${cronSecret}`)
-  if (incoming.length !== expected.length || !timingSafeEqual(incoming, expected)) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  }
+  const auth = authoriseCronRequest(request, 'health/ai')
+  if (!auth.ok) return auth.response
 
   // The configured ids are reported whether or not the calls succeed, so an
   // alert carries the thing you need in order to fix it.

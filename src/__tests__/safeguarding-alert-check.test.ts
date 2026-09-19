@@ -24,6 +24,16 @@ import { join } from 'node:path'
  */
 
 const mockFindMany = vi.fn()
+// The run lock added in REL-8. These tests exercise the cron BODY; the lock's
+// own behaviour is covered in `cron-runs-once-at-a-time.test.ts`. Without this
+// the route correctly answers 500 - an unreachable lock is a fault, not a skip -
+// because vitest has no Supabase credentials.
+vi.mock('@/lib/cron/lock', async (orig) => ({
+  ...(await orig<Record<string, unknown>>()),
+  claimCronLock: async () => true,
+  releaseCronLock: async () => {},
+}))
+
 vi.mock('@/lib/prisma', () => ({
   prisma: { auditLog: { findMany: (...a: unknown[]) => mockFindMany(...a) } },
 }))

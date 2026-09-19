@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { timingSafeEqual } from 'crypto'
 import fs from 'node:fs'
 import path from 'node:path'
 import Anthropic from '@anthropic-ai/sdk'
 
 import { getAnthropicClient, ANTHROPIC_MODEL } from '@/lib/anthropic-client'
 import { runCron } from '@/lib/cron/observability'
+import { authoriseCronRequest } from '@/lib/cron/auth'
 
 /**
  * GET /api/cron/blog-generate
@@ -81,16 +81,8 @@ type QueueTopic = {
 
 // ── Auth (mirrors src/app/api/cron/affiliate-confirm/route.ts) ───────────────
 function checkCronAuth(request: NextRequest): NextResponse | null {
-  const cronSecret = process.env.CRON_SECRET
-  if (!cronSecret) {
-    return NextResponse.json({ error: 'Server misconfiguration' }, { status: 500 })
-  }
-  const authHeader = request.headers.get('authorization')
-  const incoming = Buffer.from(authHeader ?? '')
-  const expected = Buffer.from(`Bearer ${cronSecret}`)
-  if (incoming.length !== expected.length || !timingSafeEqual(incoming, expected)) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  }
+  const auth = authoriseCronRequest(request, 'blog-generate')
+  if (!auth.ok) return auth.response
   return null
 }
 

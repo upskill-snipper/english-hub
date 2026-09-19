@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { timingSafeEqual } from 'crypto'
 
 import { prisma } from '@/lib/prisma'
 import { sendEmail } from '@/lib/email'
 import { runCron } from '@/lib/cron/observability'
+import { authoriseCronRequest } from '@/lib/cron/auth'
 
 export const dynamic = 'force-dynamic'
 
@@ -128,18 +128,8 @@ async function executeSafeguardingAlertCheck(): Promise<Response> {
 }
 
 export async function GET(request: NextRequest): Promise<Response> {
-  const cronSecret = process.env.CRON_SECRET
-  if (!cronSecret) {
-    console.error('[cron:safeguarding-alert-check] CRON_SECRET is not configured')
-    return NextResponse.json({ error: 'Server misconfiguration' }, { status: 500 })
-  }
-
-  const authHeader = request.headers.get('authorization') ?? ''
-  const incoming = Buffer.from(authHeader)
-  const expected = Buffer.from(`Bearer ${cronSecret}`)
-  if (incoming.length !== expected.length || !timingSafeEqual(incoming, expected)) {
-    return NextResponse.json({ error: 'Unauthorised' }, { status: 401 })
-  }
+  const auth = authoriseCronRequest(request, 'safeguarding-alert-check')
+  if (!auth.ok) return auth.response
 
   return executeSafeguardingAlertCheck()
 }
