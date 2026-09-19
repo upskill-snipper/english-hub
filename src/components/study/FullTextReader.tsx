@@ -6,6 +6,7 @@ import { InteractiveTextViewer, type TextData } from '@/components/study/Interac
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { useT } from '@/lib/i18n/use-t'
 import { textGuideHref } from '@/lib/revision/guide-href'
+import { TEXT_ANNOTATIONS } from '@/data/text-annotations.generated'
 
 /**
  * A complete public-domain text, with the guide it belongs to one click away.
@@ -22,6 +23,17 @@ import { textGuideHref } from '@/lib/revision/guide-href'
  * edition, never reproduced from memory - and the analysis is not written yet.
  * Filling those panels to make the page look complete is the one thing this
  * whole exercise exists to avoid.
+ *
+ * WHAT IT NOW DOES SHOW, and the distinction is the same one. Reported from the
+ * live site: the reader offers five annotation overlays and highlighted
+ * nothing, on every text, because not one of them carried an annotation. The
+ * key quotations were not missing - they have been written, with commentary,
+ * in each text's study guide - they simply had no connection to the place in
+ * the text where they occur. `scripts/generate-text-annotations.mjs` makes that
+ * connection and nothing else: it locates each authored quotation in our own
+ * edition and records the exact span. A quotation it cannot locate is left out
+ * rather than approximated, so an overlay still shows only what somebody
+ * actually wrote.
  */
 export function FullTextReader({
   data,
@@ -36,6 +48,21 @@ export function FullTextReader({
 }) {
   const t = useT()
   const guideHref = textGuideHref(slug)
+
+  // Merge the located quotations into the sections the viewer renders. The
+  // generated map is keyed by slug then section id, so a text with none is
+  // untouched and its overlays stay closed.
+  const located = TEXT_ANNOTATIONS[slug]
+  const annotated: TextData = located
+    ? {
+        ...data,
+        sections: data.sections.map((section) =>
+          located[section.id]?.length
+            ? { ...section, annotations: [...(section.annotations ?? []), ...located[section.id]] }
+            : section,
+        ),
+      }
+    : data
 
   return (
     <div className="mx-auto max-w-5xl px-4 pb-16 pt-8 sm:px-6">
@@ -70,7 +97,7 @@ export function FullTextReader({
       </p>
 
       <div className="mt-8">
-        <InteractiveTextViewer data={data} storageKey={slug} />
+        <InteractiveTextViewer data={annotated} storageKey={slug} />
       </div>
     </div>
   )

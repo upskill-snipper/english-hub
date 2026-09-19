@@ -520,41 +520,55 @@ function SectionDropdown({
 
 // ─── Overlay toggle pills ────────────────────────────────────────────────────
 
+/**
+ * Only the overlays this text can actually show.
+ *
+ * REPORTED FROM THE LIVE SITE. All five rendered on every text - Context, Key
+ * Quotes, Language, Themes, Characters - and every one of the twenty-six full
+ * texts carried zero annotations, so all five were controls for nothing. A
+ * toggle that highlights nothing when you press it is indistinguishable from a
+ * toggle that is broken.
+ *
+ * `available` is derived from the annotations present, so a text gains a pill
+ * when it gains the content behind it and never before.
+ */
 function OverlayToggles({
   activeOverlays,
+  available,
   onToggle,
 }: {
   activeOverlays: Set<OverlayType>
+  available: Set<OverlayType>
   onToggle: (type: OverlayType) => void
 }) {
   const t = useT()
   return (
     <div className="flex flex-wrap gap-1.5">
-      {(
-        Object.entries(OVERLAY_CONFIG) as [OverlayType, (typeof OVERLAY_CONFIG)[OverlayType]][]
-      ).map(([type, cfg]) => {
-        const isActive = activeOverlays.has(type)
-        return (
-          <button
-            key={type}
-            onClick={() => onToggle(type)}
-            className={[
-              'inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium transition-all',
-              isActive
-                ? `${cfg.bg} ${cfg.color} ring-1 ring-inset ${cfg.border}`
-                : 'bg-muted text-muted-foreground hover:text-foreground hover:bg-muted/80',
-            ].join(' ')}
-            aria-pressed={isActive}
-          >
-            <span
-              className={`h-2 w-2 rounded-full ${
-                isActive ? cfg.bg.replace('/20', '') : 'bg-muted-foreground/40'
-              }`}
-            />
-            {t(cfg.labelKey)}
-          </button>
-        )
-      })}
+      {(Object.entries(OVERLAY_CONFIG) as [OverlayType, (typeof OVERLAY_CONFIG)[OverlayType]][])
+        .filter(([type]) => available.has(type))
+        .map(([type, cfg]) => {
+          const isActive = activeOverlays.has(type)
+          return (
+            <button
+              key={type}
+              onClick={() => onToggle(type)}
+              className={[
+                'inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium transition-all',
+                isActive
+                  ? `${cfg.bg} ${cfg.color} ring-1 ring-inset ${cfg.border}`
+                  : 'bg-muted text-muted-foreground hover:text-foreground hover:bg-muted/80',
+              ].join(' ')}
+              aria-pressed={isActive}
+            >
+              <span
+                className={`h-2 w-2 rounded-full ${
+                  isActive ? cfg.bg.replace('/20', '') : 'bg-muted-foreground/40'
+                }`}
+              />
+              {t(cfg.labelKey)}
+            </button>
+          )
+        })}
     </div>
   )
 }
@@ -720,6 +734,13 @@ function InteractiveTextViewer({ data, storageKey, className = '' }: Interactive
 
   const contentRef = useRef<HTMLDivElement>(null)
   const sectionRefs = useRef<Map<string, HTMLElement>>(new Map())
+
+  /** Which overlay types this text has any annotation for. */
+  const availableOverlays = useMemo(
+    () =>
+      new Set<OverlayType>(data.sections.flatMap((s) => s.annotations ?? []).map((a) => a.type)),
+    [data.sections],
+  )
 
   // ── Derived overlays from reading mode ───────────────────────────────────
   const effectiveOverlays = useMemo(() => {
@@ -897,11 +918,16 @@ function InteractiveTextViewer({ data, storageKey, className = '' }: Interactive
         {/* Reading mode selector */}
         <ReadingModeSelector mode={readingMode} onChange={handleModeChange} />
 
-        {/* Overlay toggles (hidden in speed mode) */}
-        {readingMode !== 'speed' && (
+        {/* Overlay toggles (hidden in speed mode, and hidden entirely for a
+            text that carries no annotations - see OverlayToggles). */}
+        {readingMode !== 'speed' && availableOverlays.size > 0 && (
           <div className="flex items-center gap-2">
             <EyeIcon className="h-4 w-4 text-muted-foreground flex-shrink-0" />
-            <OverlayToggles activeOverlays={activeOverlays} onToggle={toggleOverlay} />
+            <OverlayToggles
+              activeOverlays={activeOverlays}
+              available={availableOverlays}
+              onToggle={toggleOverlay}
+            />
           </div>
         )}
       </div>
