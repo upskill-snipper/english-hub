@@ -11,7 +11,7 @@
 
 import readingTime from 'reading-time'
 
-import { listMdxSlugs, mdxFileExists, readAllMdxFiles, readMdxFile } from '@/lib/mdx'
+import { mdxFileExists, readAllMdxFiles, readMdxFile } from '@/lib/mdx'
 
 const BLOG_DIR = 'blog'
 
@@ -107,6 +107,23 @@ type BlogPostFrontmatter = {
   excerpt: string
   category: string
   educationalLevel: EducationalLevel
+  /**
+   * `true` keeps the post out of the site entirely (19 September 2026).
+   *
+   * There was no way to hold a post back. A file in `content/blog/` was
+   * published, full stop, and that is how
+   * `gcse-english-language-paper-1-transactional-writing.mdx` came to be live
+   * on theenglishhub.app carrying two visible
+   * "[HUMAN REVIEW REQUIRED ... before publication]" notes, under a title
+   * about transactional writing, over a body headed "Edexcel GCSE English
+   * Literature Revision Guide". Its own note said its AO labels used the
+   * wrong mapping and that the body retained them pending a check that never
+   * happened.
+   *
+   * A draft is unpublished in EVERY locale, so the flag is read from the base
+   * `<slug>.mdx` and a `<slug>.ar.mdx` cannot put it back on the site.
+   */
+  draft?: boolean
 }
 
 const VALID_LEVELS: readonly EducationalLevel[] = ['KS3', 'GCSE', 'IGCSE', 'A-Level']
@@ -167,6 +184,7 @@ export function getAllBlogPosts(): BlogPost[] {
   if (allPostsMemo) return allPostsMemo
   const files = readAllMdxFiles<BlogPostFrontmatter>(BLOG_DIR)
   allPostsMemo = files
+    .filter((file) => !file.data.draft)
     .map((file) => toBlogPost(file.slug, file.data, file.content))
     .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0))
   return allPostsMemo
@@ -195,6 +213,15 @@ export function getBlogPost(slug: string, locale: 'en' | 'ar' | 'es' = 'en'): Bl
 }
 
 function resolveBlogPost(slug: string, locale: 'en' | 'ar' | 'es'): BlogPost | null {
+  const file = readMdxFile<BlogPostFrontmatter>(BLOG_DIR, slug)
+  if (!file) return null
+  // The draft check comes first and reads the BASE file in every locale. A
+  // translation is the same post in another language, not a separate
+  // publication decision, so `<slug>.ar.mdx` cannot serve a post the English
+  // original is holding back. The post this was written for has an Arabic
+  // sibling carrying the same unreviewed body.
+  if (file.data.draft) return null
+
   if (locale === 'ar') {
     const arFile = readMdxFile<BlogPostFrontmatter>(BLOG_DIR, `${slug}.ar`)
     if (arFile) {
@@ -206,20 +233,30 @@ function resolveBlogPost(slug: string, locale: 'en' | 'ar' | 'es'): BlogPost | n
     // Fall through to English - graceful degradation while the AR
     // translation pipeline backfills the corpus.
   }
-  const file = readMdxFile<BlogPostFrontmatter>(BLOG_DIR, slug)
-  if (!file) return null
   return toBlogPost(file.slug, file.data, file.content)
 }
 
 /**
- * Returns the slugs of every blog post, sorted alphabetically.
+ * Returns the slugs of every PUBLISHED blog post, sorted alphabetically.
  *
- * Used by the slug-existence guard and the sitemap - both of those care
- * about coverage, not order, so we keep this lightweight (no MDX parse).
+ * Used by the slug-existence guard on `/blog/[slug]` and by the sitemap, so
+ * this one list decides both what returns a 404 and what Google is invited to
+ * crawl. That is why the draft filter belongs here and not at each call site:
+ * a post held back must leave both at once.
+ *
+ * It used to list the directory without parsing, which was cheaper and was
+ * correct only while "a file exists" and "the post is published" meant the
+ * same thing. They no longer do. `getAllBlogPosts()` is memoised per process
+ * and the article route already calls it on every render for related posts,
+ * so the extra parse falls on the sitemap alone.
+ *
  * Locale variants (`<slug>.ar.mdx`) are excluded by `listMdxSlugs`.
  */
 export function getBlogSlugs(): string[] {
-  if (!slugsMemo) slugsMemo = listMdxSlugs(BLOG_DIR)
+  if (!slugsMemo)
+    slugsMemo = getAllBlogPosts()
+      .map((post) => post.slug)
+      .sort()
   return slugsMemo
 }
 

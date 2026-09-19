@@ -89,10 +89,43 @@ describe('getAllBlogPosts', () => {
 })
 
 describe('getBlogSlugs', () => {
-  it('lists the directory once', () => {
+  /**
+   * This used to assert `listMdxSlugs` was called once, because `getBlogSlugs`
+   * listed the directory without parsing anything. It no longer can: a draft
+   * post is a file on disk that is not published, so the slug list has to come
+   * from parsed frontmatter (19 September 2026).
+   *
+   * The memo guarantee is unchanged and is what these still measure - the
+   * corpus is read once per process, however many callers ask. The sitemap is
+   * the only caller that now parses where it did not before; the article route
+   * already called `getAllBlogPosts()` on every render.
+   */
+  it('reads the corpus once, however often it is called', () => {
     getBlogSlugs()
     getBlogSlugs()
-    expect(listSlugs).toHaveBeenCalledTimes(1)
+    expect(readAll).toHaveBeenCalledTimes(1)
+  })
+
+  it('and shares that one read with the catalogue', () => {
+    getAllBlogPosts()
+    getBlogSlugs()
+    expect(readAll).toHaveBeenCalledTimes(1)
+  })
+
+  it('returns published slugs, alphabetically', () => {
+    expect(getBlogSlugs()).toEqual(['newer', 'older'])
+  })
+
+  it('and a draft is not among them', () => {
+    // The whole point of moving this off the directory listing. `held-back`
+    // exists on disk; it must not be a slug, because this one list decides
+    // both what /blog/<slug> serves and what goes in the sitemap.
+    readAll.mockReturnValue([
+      { slug: 'live', data: { ...FRONTMATTER }, content: 'Body.' },
+      { slug: 'held-back', data: { ...FRONTMATTER, draft: true }, content: 'Body.' },
+    ])
+    __resetBlogMemoForTests()
+    expect(getBlogSlugs()).toEqual(['live'])
   })
 })
 
