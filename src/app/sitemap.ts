@@ -4,6 +4,8 @@ import { ANALYSIS_PAGES } from '@/data/analysis'
 import { allCourses } from '@/data/courses'
 import { getBlogSlugs, hasArabicVariant } from '@/lib/blog/posts'
 import { SET_TEXTS } from '@/lib/board/set-texts'
+import { BOARDS } from '@/lib/board/board-config'
+import { buildShelf } from '@/lib/revision/shelf'
 import { EAL } from '@/lib/eal/curriculum'
 import { ALL_LESSONS } from '@/lib/ielts/lessons'
 import { KS3 } from '@/lib/ks3/curriculum'
@@ -168,6 +170,34 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   for (const text of SET_TEXTS) {
     if (isStubSetText(text.slug)) continue
     add(`/revision/texts/${text.slug}`, { priority: 0.7, changeFrequency: 'monthly' })
+  }
+
+  // The board shelves: /set-texts/<board>, one per specification.
+  //
+  // SEO-2 (19 September 2026). These are the pages a student actually lands on
+  // after answering "which board do you study?" - every picker on the site
+  // points at them - and not one of them was in this sitemap. Fifteen board
+  // hubs, each naming a specification and listing its set texts, invisible to
+  // search while "AQA English" and "Edexcel English" are the entry queries for
+  // our two largest cohorts.
+  //
+  // THE ITEM AS WRITTEN PROPOSED FOUR NEW PAGES - /gcse/aqa-english and
+  // siblings - because when it was written the board picker still went to
+  // /revision?setBoard=aqa, a query parameter the middleware strips, so the
+  // choice genuinely left no indexable URL behind. That changed earlier today.
+  // Building the four now would put a second board hub in front of Google
+  // against a first one that already has the texts, the breadcrumbs and the
+  // canonical, which is the SEO-10 defect - bidding against our own better
+  // page - committed deliberately. So the existing shelves are submitted
+  // instead.
+  //
+  // A board with no set texts is skipped rather than submitted empty. KS3 has
+  // none, and Cambridge 0500 and 0990 prescribe none at all, which is their
+  // specification rather than a gap - but an empty page is still not a page
+  // worth ranking.
+  for (const board of BOARDS) {
+    if (buildShelf(board.id).length === 0) continue
+    add(`/set-texts/${board.id}`, { priority: 0.9, changeFrequency: 'monthly' })
   }
 
   // Pearson IGCSE Language A poetry anthology (mirrors the page's

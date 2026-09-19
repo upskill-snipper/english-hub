@@ -22,6 +22,21 @@ This file follows the llms.txt convention so AI answer engines can cite accurate
 - [Students](https://theenglishhub.app/students)
 - [Teachers](https://theenglishhub.app/teachers)
 
+## Set texts by exam board
+
+- [AQA: prescribed set texts and study guides](https://theenglishhub.app/set-texts/aqa)
+- [Edexcel: prescribed set texts and study guides](https://theenglishhub.app/set-texts/edexcel)
+- [OCR: prescribed set texts and study guides](https://theenglishhub.app/set-texts/ocr)
+- [Eduqas: prescribed set texts and study guides](https://theenglishhub.app/set-texts/eduqas)
+- [Edexcel IGCSE Literature (4ET1): prescribed set texts and study guides](https://theenglishhub.app/set-texts/edexcel-igcse)
+- [Edexcel IGCSE Language (4EA1): prescribed set texts and study guides](https://theenglishhub.app/set-texts/edexcel-igcse-lang)
+- [Cambridge Literature (0475): prescribed set texts and study guides](https://theenglishhub.app/set-texts/cambridge-0475)
+- [Edexcel IAL: prescribed set texts and study guides](https://theenglishhub.app/set-texts/ial-edexcel)
+- [AQA A-Level: prescribed set texts and study guides](https://theenglishhub.app/set-texts/aqa-a-level)
+- [Edexcel A-Level: prescribed set texts and study guides](https://theenglishhub.app/set-texts/edexcel-a-level)
+- [OCR A-Level: prescribed set texts and study guides](https://theenglishhub.app/set-texts/ocr-a-level)
+- [Eduqas A-Level: prescribed set texts and study guides](https://theenglishhub.app/set-texts/eduqas-a-level)
+
 ## GCSE revision
 
 - [Revision](https://theenglishhub.app/revision)
