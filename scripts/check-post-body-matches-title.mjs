@@ -32,6 +32,21 @@
 // TWO. There is no borderline case to argue about, and no false positive to
 // teach people to ignore the check.
 //
+// DO NOT EXTEND THIS TO src/app, and here is the measurement rather than an
+// opinion. The same rule was run read-only over every page.tsx with a static
+// metadata title and a resolvable H1: 289 pages, 7 flagged, and all 7 were
+// false positives on inspection. Two were marketing headlines that legitimately
+// differ from a title ("Become an Examiner & Marker" over "Mark English scripts
+// for the board you know best"), three were this file's own generic-word list
+// eating the only shared words ("How to get a Grade 7" against "How to hit
+// Grade 7"), and two were the H1 extractor capturing JSX from a dynamic
+// heading. Zero real defects.
+//
+// So the blog fault does not generalise, and a 2.4% false-positive rate on
+// pages against 0% on posts is the difference between a check people trust and
+// one they learn to skip. A page's H1 is a headline; a post's H1 is its title
+// written twice. That is why the rule works on one and not the other.
+//
 // WHAT IT DOES NOT COVER, said plainly. Twenty-four posts have no H1 at all -
 // they open straight into prose - and this rule cannot see them. Their
 // openings were read by hand on 20 September and all twenty-four match their
