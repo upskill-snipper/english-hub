@@ -1,0 +1,18 @@
+# Line endings.
+#
+# WHY THIS FILE EXISTS (19 September 2026). A `.mjs` script checked out with
+# CRLF line endings CANNOT BE IMPORTED BY VITEST: the suite fails to collect the
+# importing test with "SyntaxError: Invalid or unexpected token", pointing at no
+# line and no file. esbuild and tsc both parse the same file happily, so nothing
+# else in the toolchain disagrees, which makes it very hard to attribute.
+#
+# It cost an hour after a routine merge normalised line endings and took
+# scripts/check-route-conflicts.mjs from LF to CRLF. Seven scripts under
+# scripts/ are imported directly by tests, so any of them can trip this, and it
+# recurs on any checkout that renormalises.
+#
+# Scoped deliberately to the extensions that have actually broken rather than a
+# blanket `* text=auto`, which would renormalise the whole repository in one
+# commit and bury everything else in the diff.
+*.mjs text eol=lf
+*.cjs text eol=lf

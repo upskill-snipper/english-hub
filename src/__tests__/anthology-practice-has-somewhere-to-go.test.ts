@@ -107,7 +107,11 @@ describe('every anthology page', () => {
 
   it.each(PAGES)('%s names the text it is about, cleanly', (name) => {
     const src = readFileSync(join(BASE, name, 'page.tsx'), 'utf8')
-    const m = /const ANTHOLOGY_TEXT_TITLE = (.+)\n/.exec(src)
+    // `\r?\n`, not `\n`. This repository carries mixed line endings and git
+    // normalises them on checkout, so on a CRLF file this matched NOTHING:
+    // JavaScript's `.` does not match `\r`, so `(.+)\n` can never reach the
+    // newline. It passed on LF and then failed for all ten pages after a merge.
+    const m = /const ANTHOLOGY_TEXT_TITLE = (.+?)\r?\n/.exec(src)
     expect(m, `${name} has no ANTHOLOGY_TEXT_TITLE`).toBeTruthy()
     const literal = m![1]!
     // The bug that was actually made: the title is lifted from the page's h1,
