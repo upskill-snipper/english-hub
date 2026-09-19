@@ -27,6 +27,7 @@ import { Button } from '@/components/ui/button'
 import { getBoardMismatchState } from '@/app/igcse/_lib/guard'
 import BoardMismatchBanner from '@/components/board/BoardMismatchBanner'
 import { getSetTextsForBoard } from '@/lib/board/set-texts'
+import { textGuideHref } from '@/lib/revision/guide-href'
 import { t } from '@/lib/i18n/t'
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
@@ -531,7 +532,7 @@ export default async function EdexcelIgcseHubPage() {
             {setTexts.map((text) => (
               <Link
                 key={text.slug}
-                href={`/revision/texts/${text.slug}`}
+                href={textGuideHref(text.slug, 'edexcel-igcse')}
                 className="group flex items-center gap-4 rounded-xl border border-border/60 bg-card p-4 transition-all duration-200 hover:border-primary/30 hover:bg-primary/[0.03] hover:shadow-card-hover"
               >
                 <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">

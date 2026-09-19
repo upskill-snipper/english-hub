@@ -48,6 +48,7 @@ import { FavouriteToggle } from './_components/favourite-toggle'
 import { HeroStatPills } from './_components/hero-stat-pills'
 import { TrialCountdownBannerServer } from '@/components/billing/TrialCountdownBannerServer'
 import { t } from '@/lib/i18n/t'
+import { textGuideHref } from '@/lib/revision/guide-href'
 
 // ─── Section data ──────────────────────────────────────────────────────────
 
@@ -578,7 +579,7 @@ export default async function RevisionHubPage() {
             <Button
               variant="outline"
               size="lg"
-              render={<Link href={`/revision/texts/${featuredText.slug}`} />}
+              render={<Link href={textGuideHref(featuredText.slug)} />}
             >
               {featuredCta}
               <ArrowRight className="size-4" />

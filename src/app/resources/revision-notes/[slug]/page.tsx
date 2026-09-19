@@ -14,6 +14,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { getSetText } from '@/lib/board/set-texts'
+import { textGuideHref } from '@/lib/revision/guide-href'
 import { t } from '@/lib/i18n/t'
 
 /**
@@ -66,6 +67,13 @@ export default async function RevisionNotesPlaceholder({ params }: { params: Pro
   const text = getSetText(slug)
   const title = text?.title ?? humanise(slug)
   const author = text?.author
+
+  // Where the full guide actually is. For nine of these texts it is this very
+  // page - the revision-notes library IS the guide - and a card inviting the
+  // reader to "read the full study guide" that reloads the page they are on is
+  // worse than no card. See src/lib/revision/guide-href.ts.
+  const resolved = text ? textGuideHref(text.slug) : null
+  const guideHref = resolved === `/resources/revision-notes/${slug}` ? null : resolved
 
   return (
     <div className="mx-auto max-w-3xl space-y-8 px-4 pb-16 pt-8 sm:px-6">
@@ -133,7 +141,7 @@ export default async function RevisionNotesPlaceholder({ params }: { params: Pro
           {await t('study.revnotes.slug.what_now')}
         </h2>
         <div className="grid gap-4 sm:grid-cols-2">
-          {text && (
+          {text && guideHref && (
             <Card className="group transition-all hover:border-border hover:shadow-card-hover">
               <CardHeader>
                 <div className="flex items-center gap-3">
@@ -153,7 +161,7 @@ export default async function RevisionNotesPlaceholder({ params }: { params: Pro
                   variant="outline"
                   size="sm"
                   className="w-full"
-                  render={<Link href={`/revision/texts/${text.slug}`} />}
+                  render={<Link href={guideHref} />}
                 >
                   {await t('study.revnotes.slug.card.guide.cta')}
                   <ArrowRight className="size-3.5" />

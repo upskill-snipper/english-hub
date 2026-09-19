@@ -20,6 +20,7 @@
 
 import type { ExamBoard } from '@/lib/board/board-config'
 import { getSetTextsForBoard, type SetText, type TextCategory } from '@/lib/board/set-texts'
+import { GUIDE_LOCATIONS } from '@/lib/revision/guide-locations.generated'
 import { PLACEHOLDER_TEXT_SLUGS } from '@/lib/revision/placeholder-texts.generated'
 import { buildTextNav, textSubpageExists } from '@/lib/revision/text-nav'
 import { isStubSetText } from '@/lib/seo/set-text-stubs'
@@ -50,17 +51,61 @@ export interface ShelfEntry {
   hasFullText: boolean
 }
 
-export function classifyReadiness(slug: string): { readiness: TextReadiness; sections: number } {
+/**
+ * Where a text's guide is, and how much of one it is.
+ *
+ * THE DEFECT THIS FIXES. The href was built as `/revision/texts/<slug>` for
+ * every card, and readiness was judged from that page alone. Eighteen texts
+ * keep their guide in another tree - nine anthology pieces under
+ * /igcse/edexcel-lang/anthology, nine poems under /igcse/edexcel/poetry, 344 to
+ * 856 lines each. The shelf sent students past all eighteen to a placeholder or
+ * a 404, and labelled the card "no guide yet" as it did so.
+ *
+ * ORDER MATTERS AND IT IS DELIBERATE. A real page under /revision/texts wins
+ * outright, so the canonical URL stays canonical and nothing that works today
+ * moves. The generated register is consulted only when that page is a
+ * placeholder or absent - the exact case that was broken.
+ */
+export function resolveGuide(
+  slug: string,
+  board?: ExamBoard,
+): {
+  readiness: TextReadiness
+  sections: number
+  href: string
+} {
+  const canonical = `/revision/texts/${slug}`
   const sections = buildTextNav(slug).sectionCount
+
   // A placeholder page and no page at all are the same thing to a reader: there
-  // is no guide here yet. `isStubSetText` covers the texts served by the
-  // catch-all route; PLACEHOLDER_TEXT_SLUGS covers the ones with a page that
-  // says it is not written.
-  if (PLACEHOLDER_TEXT_SLUGS.has(slug) || isStubSetText(slug)) {
-    return { readiness: 'none', sections: 0 }
+  // is no guide *here*. `isStubSetText` covers the texts served by the catch-all
+  // route; PLACEHOLDER_TEXT_SLUGS covers the ones with a page that says it is
+  // not written.
+  const hollow = PLACEHOLDER_TEXT_SLUGS.has(slug) || isStubSetText(slug)
+  if (!hollow) {
+    if (sections >= FULL_GUIDE_SECTIONS) return { readiness: 'full', sections, href: canonical }
+    return { readiness: 'partial', sections, href: canonical }
   }
-  if (sections >= FULL_GUIDE_SECTIONS) return { readiness: 'full', sections }
-  return { readiness: 'partial', sections }
+
+  // Nothing here, but the guide may exist elsewhere. Prefer one written for the
+  // board being drawn: War Photographer has an Edexcel IGCSE guide and an AQA
+  // Power and Conflict guide, and sending an AQA student to the Edexcel one
+  // would be a quieter version of the same bug.
+  const elsewhere = GUIDE_LOCATIONS.get(slug)
+  if (elsewhere && elsewhere.length > 0) {
+    const match = elsewhere.find((g) => g.board === board) ?? elsewhere[0]
+    // Those pages are single rich pages with no sub-pages of their own, so
+    // `partial` is the honest label: a real guide, but not a multi-section one.
+    return { readiness: 'partial', sections: 0, href: match.href }
+  }
+
+  return { readiness: 'none', sections: 0, href: canonical }
+}
+
+/** Readiness alone, for callers that do not need the destination. */
+export function classifyReadiness(slug: string): { readiness: TextReadiness; sections: number } {
+  const { readiness, sections } = resolveGuide(slug)
+  return { readiness, sections }
 }
 
 /** Display order for the shelf, following how a specification is usually set out. */
@@ -88,12 +133,12 @@ export function categoryLabelKey(category: TextCategory): string {
 
 export function buildShelf(board: ExamBoard): ShelfEntry[] {
   return getSetTextsForBoard(board).map((text) => {
-    const { readiness, sections } = classifyReadiness(text.slug)
+    const { readiness, sections, href } = resolveGuide(text.slug, board)
     return {
       text,
       readiness,
       sectionCount: sections,
-      href: `/revision/texts/${text.slug}`,
+      href,
       hasFullText: textSubpageExists(text.slug, 'read'),
     }
   })

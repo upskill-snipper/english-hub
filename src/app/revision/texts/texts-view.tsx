@@ -30,6 +30,7 @@ import { Breadcrumb } from '@/components/ui/breadcrumb'
 
 import type { ExamBoard } from '@/lib/board/board-store'
 import type { SetText, TextCategory } from '@/lib/board/set-texts'
+import { textGuideHref } from '@/lib/revision/guide-href'
 
 // ─── Category definitions ───────────────────────────────────────────────────
 
@@ -249,7 +250,7 @@ export default function TextsRevisionView({ boardId, boardName, texts }: Props) 
               variant="default"
               size="sm"
               className="w-full"
-              render={<Link href={`/revision/texts/${text.slug}`} />}
+              render={<Link href={textGuideHref(text.slug)} />}
             >
               Study guide
               <ArrowRight className="size-3.5" />

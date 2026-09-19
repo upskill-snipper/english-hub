@@ -1,8 +1,9 @@
 import { describe, it, expect } from 'vitest'
+import { existsSync, readFileSync } from 'node:fs'
+import { join } from 'node:path'
 import { buildShelf, groupShelf, classifyReadiness, CATEGORY_ORDER } from '@/lib/revision/shelf'
 import { BOARDS } from '@/lib/board/board-config'
 import { PLACEHOLDER_TEXT_SLUGS } from '@/lib/revision/placeholder-texts.generated'
-import { isStubSetText } from '@/lib/seo/set-text-stubs'
 import { SET_TEXTS } from '@/lib/board/set-texts'
 
 /**
@@ -21,22 +22,63 @@ import { SET_TEXTS } from '@/lib/board/set-texts'
  * So the invariant below is the point of the file: a card may never claim a
  * guide exists when the destination is a placeholder. Everything else here is
  * scaffolding around that one assertion.
+ *
+ * RESTATED 19 September 2026, AND MADE STRONGER. The invariant used to be
+ * checked against the SLUG: if the text was in PLACEHOLDER_TEXT_SLUGS the card
+ * had to say `none`. That was right only while every card linked to
+ * /revision/texts/<slug>. Twenty-eight texts keep their guide in another tree -
+ * the Edexcel anthology and poetry sets, the AQA Power and Conflict cluster,
+ * the revision-notes library - and for those the slug-based test was asserting
+ * the bug: it required the shelf to call an 856-line guide non-existent because
+ * the canonical page was a placeholder.
+ *
+ * It is now checked against the DESTINATION, on disk. A card that claims a
+ * guide must link to a page.tsx that exists and does not render the placeholder
+ * component. That covers the old case (a canonical placeholder is still caught)
+ * and the new one (a register entry that rots is caught too), and it cannot be
+ * satisfied by a lie in either direction.
  */
 
+/** The component a placeholder page renders. */
+const PLACEHOLDER_MARKER = 'StubStudyGuide'
+
+/** Is there a real, non-placeholder page behind this href? */
+function realPageAt(href: string): boolean {
+  const page = join(process.cwd(), 'src/app', href.replace(/^\//, ''), 'page.tsx')
+  if (!existsSync(page)) return false
+  return !readFileSync(page, 'utf8').includes(PLACEHOLDER_MARKER)
+}
+
 describe('the honesty invariant', () => {
-  it('never marks a placeholder as having a guide', () => {
-    // The assertion that makes the shelf safe to show a student.
+  it('never claims a guide that is not at the other end of the link', () => {
+    // The assertion that makes the shelf safe to show a student. Checked
+    // against the destination on disk, not against the slug - see the docblock.
     const liars: string[] = []
     for (const board of BOARDS) {
       for (const entry of buildShelf(board.id)) {
-        const isPlaceholder =
-          PLACEHOLDER_TEXT_SLUGS.has(entry.text.slug) || isStubSetText(entry.text.slug)
-        if (isPlaceholder && entry.readiness !== 'none') {
-          liars.push(`${board.id}/${entry.text.slug} claimed "${entry.readiness}"`)
+        if (entry.readiness === 'none') continue
+        if (!realPageAt(entry.href)) {
+          liars.push(`${board.id}/${entry.text.slug} claimed "${entry.readiness}" at ${entry.href}`)
         }
       }
     }
     expect(liars).toEqual([])
+  })
+
+  it('and never hides a guide that is there', () => {
+    // The other direction, which the slug-based version of this test used to
+    // REQUIRE. A card saying `none` while a real guide sits at its own href is
+    // the defect that stranded twenty-eight guides.
+    const hidden: string[] = []
+    for (const board of BOARDS) {
+      for (const entry of buildShelf(board.id)) {
+        if (entry.readiness !== 'none') continue
+        if (realPageAt(entry.href)) {
+          hidden.push(`${board.id}/${entry.text.slug} said "none" but ${entry.href} is real`)
+        }
+      }
+    }
+    expect(hidden).toEqual([])
   })
 
   it('finds placeholders to be honest about, so that is not vacuous', () => {
@@ -83,13 +125,26 @@ describe('classifyReadiness', () => {
   })
 
   it.each([
-    ['explorers-or-boys-messing-about', 'a placeholder page'],
-    ['a-passage-to-africa', 'a placeholder page'],
-    ['disabled', 'no page of its own'],
-    ['war-photographer', 'no page of its own'],
-  ])('%s is none (%s)', (slug) => {
-    expect(classifyReadiness(slug).readiness).toBe('none')
+    ['explorers-or-boys-messing-about', 'canonical page is a placeholder'],
+    ['a-passage-to-africa', 'canonical page is a placeholder'],
+    ['disabled', 'no canonical page at all'],
+    ['war-photographer', 'no canonical page at all'],
+  ])('%s is partial, because the guide is in another tree (%s)', (slug) => {
+    // These four were asserted as `none` until 19 September 2026. Each has a
+    // real guide of 344 to 856 lines somewhere else, so `none` was the wrong
+    // answer and the shelf was repeating it to students. `partial` is the
+    // honest label: a real guide, but a single page rather than a sectioned one.
+    expect(classifyReadiness(slug).readiness).toBe('partial')
     expect(classifyReadiness(slug).sections).toBe(0)
+  })
+
+  it.each([
+    ['night', 'a placeholder with no guide anywhere'],
+    ['the-necklace', 'a placeholder with no guide anywhere'],
+  ])('%s is still none (%s)', (slug) => {
+    // The counterweight. If everything became `partial` the invariant above
+    // would be satisfied by saying yes to everything.
+    expect(classifyReadiness(slug).readiness).toBe('none')
   })
 })
 

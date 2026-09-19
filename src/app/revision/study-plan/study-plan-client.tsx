@@ -27,6 +27,7 @@ import { Breadcrumb } from '@/components/ui/breadcrumb'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig, type ExamBoard } from '@/lib/board/board-store'
 import { getSetTextsForBoard } from '@/lib/board/set-texts'
+import { textGuideHref } from '@/lib/revision/guide-href'
 import { GRADE_SYSTEMS } from '@/lib/board/grade-boundaries'
 import { useT } from '@/lib/i18n/use-t'
 
@@ -246,7 +247,7 @@ function getTextsHref(board: ExamBoard | null, slug?: string): string {
   // (e.g. /igcse/edexcel/shakespeare/macbeth), not at /igcse/edexcel/[slug].
   // Until a flat [slug] resolver exists, fall back to the IGCSE hub.
   if (board === 'edexcel-igcse') return '/igcse/edexcel'
-  if (slug) return `/revision/texts/${slug}`
+  if (slug) return textGuideHref(slug)
   return '/revision/texts'
 }
 

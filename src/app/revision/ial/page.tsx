@@ -25,6 +25,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { getSetTextsForBoard } from '@/lib/board/set-texts'
+import { textGuideHref } from '@/lib/revision/guide-href'
 import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
@@ -593,7 +594,7 @@ export default async function IalHubPage() {
             {ialTexts.map((text) => (
               <Link
                 key={text.slug}
-                href={`/revision/texts/${text.slug}`}
+                href={textGuideHref(text.slug, 'ial-edexcel')}
                 className="group flex items-start gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-blue-500/30 hover:bg-background"
               >
                 <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-blue-500/10">
