@@ -23,7 +23,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { SET_TEXTS, getSetText, textAvailableForBoard, type SetText } from '@/lib/board/set-texts'
 import { getServerBoard } from '@/lib/board/get-server-board'
-import { boardShelfHref } from '@/lib/board/board-landing'
+import { textBackLink } from '@/lib/revision/text-back-href'
 import { t } from '@/lib/i18n/t'
 
 // ─── Static params ──────────────────────────────────────────────────────────
@@ -193,9 +193,14 @@ const IGCSE_PROSE_SLUG_MAP: Record<string, string> = {
 export default async function TextStudyGuidePage({ params }: { params: Promise<Params> }) {
   const { slug } = await params
 
-  // ── Board guard (STRICT) ────────────────────────────────────────────
-  // Redirect to the texts hub if the user's board does not study this text.
+  // ── The reader's board ──────────────────────────────────────────────
+  // This block used to be headed "Board guard (STRICT)" and redirected anyone
+  // whose board does not set this text. The redirect went on 19 September 2026
+  // along with the eighty-two copies of it; the heading outlived it by a day,
+  // which is how a comment ends up describing code that is not there. The board
+  // is read here to decide where "back" goes and nothing else.
   const board = await getServerBoard()
+  const back = textBackLink(slug, board)
 
   const text = getSetText(slug)
 
@@ -258,10 +263,10 @@ export default async function TextStudyGuidePage({ params }: { params: Promise<P
             variant="ghost"
             size="sm"
             className="mb-4 -ms-2 text-muted-foreground"
-            render={<Link href={board ? boardShelfHref(board) : '/revision/texts'} />}
+            render={<Link href={back.href} />}
           >
             <ArrowLeft className="size-3.5" />
-            {board ? tBackToBoardTexts : tBackToTexts}
+            {back.isBoardShelf ? tBackToBoardTexts : tBackToTexts}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">

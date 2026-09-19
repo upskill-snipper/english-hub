@@ -45,6 +45,7 @@ import { gradeDisplayLabel } from '@/lib/board/grade-boundaries'
 import { useT } from '@/lib/i18n/use-t'
 import { buildTextNav, textSlugFromPath } from '@/lib/revision/text-nav'
 import { boardShelfHref } from '@/lib/board/board-landing'
+import { textBackLink } from '@/lib/revision/text-back-href'
 
 import { SidebarLink } from './sidebar-link'
 import { TextScopedNav } from './text-scoped-nav'
@@ -593,11 +594,13 @@ function MobileScrollRail({ navItems }: { navItems: NavItem[] }) {
               use, so it mattered more than the desktop one and was missed on
               the first pass because the browser was wide. */}
           <Link
-            href={board && isHydrated ? boardShelfHref(board) : '/revision/texts'}
+            href={textBackLink(textSlug, isHydrated ? board : null).href}
             className="flex shrink-0 items-center gap-1.5 rounded-full border border-border/60 bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-border hover:text-foreground"
           >
             <ChevronRight aria-hidden="true" className="size-3.5 shrink-0 rotate-180" />
-            {board && isHydrated ? t('textnav.back_to_board_shelf') : t('textnav.back_to_shelf')}
+            {textBackLink(textSlug, isHydrated ? board : null).isBoardShelf
+              ? t('textnav.back_to_board_shelf')
+              : t('textnav.back_to_shelf')}
           </Link>
           <MobileChip
             href={nav.hubHref}

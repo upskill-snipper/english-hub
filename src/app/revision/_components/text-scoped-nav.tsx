@@ -47,7 +47,7 @@ import { canonicalTextSlug, isKnownSetText } from '@/lib/revision/text-slug-alia
 import { PLACEHOLDER_TEXT_SLUGS } from '@/lib/revision/placeholder-texts.generated'
 import { markingLink } from '@/lib/marking/submit-prefill'
 import { useBoard } from '@/hooks/useBoard'
-import { boardShelfHref } from '@/lib/board/board-landing'
+import { textBackLink } from '@/lib/revision/text-back-href'
 
 import { SidebarLink } from './sidebar-link'
 
@@ -88,7 +88,7 @@ export function TextScopedNav({ slug, onNavigate }: { slug: string; onNavigate?:
   // placeholder register is the only thing that actually knows, so it decides.
   const isPlaceholder = PLACEHOLDER_TEXT_SLUGS.has(slug)
   const { board, isHydrated } = useBoard()
-  const backHref = board && isHydrated ? boardShelfHref(board) : '/revision/texts'
+  const back = textBackLink(slug, isHydrated ? board : null)
 
   // Is this text on the student's own course?
   //
@@ -154,12 +154,12 @@ export function TextScopedNav({ slug, onNavigate }: { slug: string; onNavigate?:
             so before hydration it is null and linking to the all-texts index is
             correct rather than a guess at the wrong board. */}
         <Link
-          href={backHref}
+          href={back.href}
           onClick={onNavigate}
           className="mt-2 inline-flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
         >
           <ArrowLeft aria-hidden="true" className="size-3" />
-          {board && isHydrated ? t('textnav.back_to_board_shelf') : t('textnav.back_to_shelf')}
+          {back.isBoardShelf ? t('textnav.back_to_board_shelf') : t('textnav.back_to_shelf')}
         </Link>
       </div>
 
