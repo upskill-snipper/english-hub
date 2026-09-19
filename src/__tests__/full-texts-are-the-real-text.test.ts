@@ -46,6 +46,19 @@ const PLAYS = readdirSync(DATA_DIR)
   .filter((f) => f.endsWith('.ts'))
   .map((f) => f.replace(/\.ts$/, ''))
 
+/**
+ * Match a section id in either the generated form or the committed one.
+ *
+ * The generator emits JSON - `"id": "acti-scenei"` - and prettier rewrites it
+ * on commit to `id: 'acti-scenei'`. A test keyed on the generator's punctuation
+ * passed locally and then failed in the pre-push hook, against files it had
+ * just reformatted, reporting zero scenes in every play. The repo already
+ * documents this shape for the i18n generator: prettier is the step that turns
+ * generator output INTO the committed form, so assertions have to match the
+ * committed form or accept both.
+ */
+const SECTION_ID = /id:\s*['"]act([ivxlc]+)-scene[ivxlc]+['"]/g
+
 /** Scene counts, from the plays themselves. A wrong parse shows up here. */
 const EXPECTED_SCENES: Record<string, number> = {
   'romeo-and-juliet': 24,
@@ -88,14 +101,12 @@ describe('the plays are there', () => {
 
 describe('the parse matches the play', () => {
   it.each(Object.entries(EXPECTED_SCENES))('%s has %i scenes', (slug, count) => {
-    const scenes = (dataFor(slug).match(/"id": "act/g) ?? []).length
+    const scenes = [...dataFor(slug).matchAll(SECTION_ID)].length
     expect(scenes).toBe(count)
   })
 
   it.each(PLAYS)('%s has five acts and no orphan scenes', (slug) => {
-    const acts = new Set(
-      [...dataFor(slug).matchAll(/"id": "act([ivxlc]+)-scene/g)].map((m) => m[1]),
-    )
+    const acts = new Set([...dataFor(slug).matchAll(SECTION_ID)].map((m) => m[1]))
     expect(acts.size, `${slug} has acts: ${[...acts].join(', ')}`).toBe(5)
   })
 
