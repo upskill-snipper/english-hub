@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { readFileSync, readdirSync } from 'node:fs'
+import { readFileSync, readdirSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { STUB_SET_TEXT_SLUGS, isStubSetText } from '@/lib/seo/set-text-stubs'
 import { SET_TEXTS } from '@/lib/board/set-texts'
@@ -36,22 +36,35 @@ describe('the stub list', () => {
     // metadata agree exactly. This is what stops it drifting: add a real page
     // for one of these and forget to remove it here, and this fails rather
     // than quietly leaving a good page noindexed.
-    const dirs = readdirSync(join(ROOT, 'src/app/revision/texts'), { withFileTypes: true })
+    // A DIRECTORY IS NOT A PAGE, and that distinction became load-bearing on
+    // 19 September 2026. Twelve plays gained a full-text `read` sub-page, and
+    // two of them - A Midsummer Night's Dream and Antony and Cleopatra - had no
+    // directory at all before, so they now have `<slug>/read/page.tsx` and no
+    // `<slug>/page.tsx`. Both URLs still resolve (Next falls through to the
+    // catch-all, verified on a production build), so both texts are still
+    // served by the boilerplate page and still belong in the stub list. Keying
+    // on the directory would have quietly dropped them from it and put two thin
+    // pages back into the sitemap.
+    const withOwnPage = readdirSync(join(ROOT, 'src/app/revision/texts'), { withFileTypes: true })
       .filter((d) => d.isDirectory() && !d.name.startsWith('[') && !d.name.startsWith('_'))
       .map((d) => d.name)
+      .filter((name) => existsSync(join(ROOT, 'src/app/revision/texts', name, 'page.tsx')))
 
-    const computed = SET_TEXTS.map((t) => t.slug).filter((slug) => !dirs.includes(slug))
+    const computed = SET_TEXTS.map((t) => t.slug).filter((slug) => !withOwnPage.includes(slug))
 
     expect([...STUB_SET_TEXT_SLUGS].sort()).toEqual([...new Set(computed)].sort())
   })
 
-  it('leaves the 53 real pages alone', () => {
-    const dirs = readdirSync(join(ROOT, 'src/app/revision/texts'), { withFileTypes: true })
+  it('leaves the real pages alone', () => {
+    // Same correction: only a directory that actually holds a page.tsx has a
+    // real page. Two directories hold nothing but a full-text `read` sub-page.
+    const withOwnPage = readdirSync(join(ROOT, 'src/app/revision/texts'), { withFileTypes: true })
       .filter((d) => d.isDirectory() && !d.name.startsWith('[') && !d.name.startsWith('_'))
       .map((d) => d.name)
+      .filter((name) => existsSync(join(ROOT, 'src/app/revision/texts', name, 'page.tsx')))
 
-    expect(dirs.length).toBeGreaterThan(40)
-    for (const dir of dirs) {
+    expect(withOwnPage.length).toBeGreaterThan(40)
+    for (const dir of withOwnPage) {
       expect(isStubSetText(dir), `${dir} has a real page but is marked a stub`).toBe(false)
     }
   })

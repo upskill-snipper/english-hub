@@ -185,6 +185,23 @@ export const TEXT_NAV_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     ar: 'قُرئ',
     es: 'consultado',
   },
+  // ── Full public-domain texts ─────────────────────────────────────────────
+  'fulltext.crumb': {
+    en: 'Full text',
+    ar: 'النص الكامل',
+    es: 'Texto completo',
+  },
+  'fulltext.back_to_guide': {
+    en: 'Back to the study guide',
+    ar: 'رجوع لدليل الدراسة',
+    es: 'Volver a la guía de estudio',
+  },
+  'fulltext.public_domain': {
+    en: 'This work is out of copyright in the UK, so we can publish it in full. The text is a copy of a published modern-spelling edition, not a retyping.',
+    ar: 'هذا العمل خرج من حقوق النشر في بريطانيا، فنقدر ننشره كامل. النص منسوخ من طبعة منشورة بالإملاء الحديث، مو مكتوب من جديد.',
+    es: 'Esta obra está libre de derechos en el Reino Unido, así que podemos publicarla completa. El texto es una copia de una edición publicada con ortografía moderna, no una transcripción.',
+  },
+
   'placement.none': {
     en: 'We have not yet checked this text against a specification, so we are not going to tell you which paper it is on. When we have read the document, it will say so here.',
     ar: 'ما راجعنا هذا النص مقابل المنهج الرسمي لين الحين، فما راح نقول لك في أي ورقة يجي. أول ما نقرأ الوثيقة بيظهر هنا.',

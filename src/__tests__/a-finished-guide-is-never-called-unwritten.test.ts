@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { readFileSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { SET_TEXTS } from '@/lib/board/set-texts'
-import { buildTextNav } from '@/lib/revision/text-nav'
+import { buildTextNav, textSubpageExists } from '@/lib/revision/text-nav'
 import { PLACEHOLDER_TEXT_SLUGS } from '@/lib/revision/placeholder-texts.generated'
 
 /**
@@ -55,14 +55,39 @@ describe('the texts that were being libelled', () => {
     'silas-marner',
   ]
 
-  it.each(WRONGLY_CALLED_UNWRITTEN)('%s has a real guide and no sub-pages', (slug) => {
-    // Both halves of the trap: a substantial page, and zero sub-pages. This is
-    // the exact shape that produced the false message.
+  it.each(WRONGLY_CALLED_UNWRITTEN)('%s has a real guide and is never called unwritten', (slug) => {
+    // A substantial page that is not a placeholder. That is the invariant.
     const page = join(TEXTS, slug, 'page.tsx')
     expect(existsSync(page), `${slug} has no page`).toBe(true)
     expect(readFileSync(page, 'utf8').split('\n').length).toBeGreaterThan(400)
-    expect(buildTextNav(slug).sectionCount).toBe(0)
     expect(PLACEHOLDER_TEXT_SLUGS.has(slug)).toBe(false)
+  })
+
+  it('several of them now have a sub-page, which is why the shape changed', () => {
+    // THIS BLOCK USED TO REQUIRE sectionCount === 0 on every one of them,
+    // because zero sub-pages plus a real page was the exact shape that produced
+    // the false message. On 19 September 2026 seven of these plays gained a
+    // full-text `read` page, so the precondition stopped being true for them.
+    //
+    // The precondition changing is not the invariant weakening. The rule was
+    // never "these have no sub-pages", it was "a finished guide is never called
+    // unwritten" - asserted above, and generalised at the bottom of this file.
+    // Requiring zero here would leave a test actively resisting content.
+    const gained = WRONGLY_CALLED_UNWRITTEN.filter((s) => buildTextNav(s).sectionCount > 0)
+    expect(gained.length).toBeGreaterThanOrEqual(6)
+    for (const slug of gained) {
+      expect(textSubpageExists(slug, 'read'), `${slug} gained something other than read`).toBe(true)
+    }
+  })
+
+  it('and the ones that gained nothing are still the trap shape', () => {
+    // The original case has to survive somewhere, or the regression could come
+    // back unnoticed on the texts that still look like that.
+    const unchanged = WRONGLY_CALLED_UNWRITTEN.filter((s) => buildTextNav(s).sectionCount === 0)
+    expect(unchanged.length).toBeGreaterThan(0)
+    for (const slug of unchanged) {
+      expect(PLACEHOLDER_TEXT_SLUGS.has(slug)).toBe(false)
+    }
   })
 })
 

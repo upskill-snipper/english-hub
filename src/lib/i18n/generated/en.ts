@@ -19687,6 +19687,10 @@ export const EN_MESSAGES: Record<string, string> = {
   'placement.source': 'Source',
   'placement.exam_year': 'For the exam series',
   'placement.read_on': 'read',
+  'fulltext.crumb': 'Full text',
+  'fulltext.back_to_guide': 'Back to the study guide',
+  'fulltext.public_domain':
+    'This work is out of copyright in the UK, so we can publish it in full. The text is a copy of a published modern-spelling edition, not a retyping.',
   'placement.none':
     'We have not yet checked this text against a specification, so we are not going to tell you which paper it is on. When we have read the document, it will say so here.',
   'home.lp.h1': 'Intelligent English Learning for Everyone',

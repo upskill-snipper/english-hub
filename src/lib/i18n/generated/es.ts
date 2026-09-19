@@ -20188,6 +20188,10 @@ export const ES_MESSAGES: Record<string, string> = {
   'placement.source': 'Fuente',
   'placement.exam_year': 'Para la convocatoria',
   'placement.read_on': 'consultado',
+  'fulltext.crumb': 'Texto completo',
+  'fulltext.back_to_guide': 'Volver a la guía de estudio',
+  'fulltext.public_domain':
+    'Esta obra está libre de derechos en el Reino Unido, así que podemos publicarla completa. El texto es una copia de una edición publicada con ortografía moderna, no una transcripción.',
   'placement.none':
     'Todavía no hemos comprobado este texto con una especificación, así que no vamos a decirte en qué examen aparece. Cuando hayamos leído el documento, lo indicaremos aquí.',
   'home.lp.h1': 'Aprendizaje de inglés inteligente para todos',

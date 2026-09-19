@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react'
-import DOMPurify from 'dompurify'
+import { sanitiseHtml } from '@/lib/html/sanitise'
 import { ReadingProgressTracker } from './ReadingProgressTracker'
 import { useT } from '@/lib/i18n/use-t'
 
@@ -17,6 +17,8 @@ interface TextSection {
   id: string
   title: string
   content: string
+  /** The scene's setting line, where the edition prints one. */
+  setting?: string
   annotations?: Annotation[]
 }
 
@@ -37,9 +39,22 @@ interface TextData {
   author: string
   type: 'play' | 'novel' | 'novella'
   sections: TextSection[]
-  characters: CharacterInfo[]
-  themes: ThemeInfo[]
-  contextNotes: string
+  /**
+   * Authored analysis, all three OPTIONAL since 19 September 2026.
+   *
+   * WHY. Twelve public-domain plays were added as full text - the real text,
+   * copied from a published edition rather than reproduced from memory, because
+   * a model retyping Shakespeare would introduce errors no reviewer would
+   * catch. Character notes, theme notes and context are a different kind of
+   * thing: they are written by somebody, and generating twelve sets to fill a
+   * required field would be exactly the invention this work exists to avoid.
+   *
+   * So a text may carry the play and no commentary. The panels below render
+   * only what is actually there, and the tabs for what is not are not offered.
+   */
+  characters?: CharacterInfo[]
+  themes?: ThemeInfo[]
+  contextNotes?: string
 }
 
 type ReadingMode = 'close' | 'speed' | 'analytical'
@@ -319,10 +334,7 @@ function AnnotatedContent({
 
     if (active.length === 0) {
       return (
-        <div
-          className="prose-reader"
-          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(html) }}
-        />
+        <div className="prose-reader" dangerouslySetInnerHTML={{ __html: sanitiseHtml(html) }} />
       )
     }
 
@@ -623,7 +635,7 @@ function InfoPanel({
 
         {show === 'characters' && (
           <div className="flex flex-col gap-4">
-            {data.characters.map((char) => (
+            {(data.characters ?? []).map((char) => (
               <div key={char.name} className="rounded-xl border border-border bg-muted/30 p-4">
                 <h3 className="text-sm font-bold text-foreground">{char.name}</h3>
                 <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
@@ -651,7 +663,7 @@ function InfoPanel({
 
         {show === 'themes' && (
           <div className="flex flex-col gap-4">
-            {data.themes.map((theme) => (
+            {(data.themes ?? []).map((theme) => (
               <div key={theme.name} className="rounded-xl border border-border bg-muted/30 p-4">
                 <h3 className="text-sm font-bold text-emerald-700">{theme.name}</h3>
                 <p className="mt-1 text-xs leading-relaxed text-muted-foreground">

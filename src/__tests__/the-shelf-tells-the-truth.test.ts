@@ -3,6 +3,7 @@ import { existsSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { buildShelf, groupShelf, classifyReadiness, CATEGORY_ORDER } from '@/lib/revision/shelf'
 import { BOARDS } from '@/lib/board/board-config'
+import { textSubpageExists } from '@/lib/revision/text-nav'
 import { PLACEHOLDER_TEXT_SLUGS } from '@/lib/revision/placeholder-texts.generated'
 import { SET_TEXTS } from '@/lib/board/set-texts'
 
@@ -232,13 +233,43 @@ describe('groupShelf', () => {
 })
 
 describe('the full-text flag', () => {
-  it('is set only where we publish the complete work', () => {
-    // Only two texts have a `read` route today, both public domain. The flag
-    // drives a visible "Full text included" badge, so a false positive is a
-    // promise the page cannot keep.
-    const withFullText = SET_TEXTS.filter((t) =>
-      buildShelf('aqa').some((e) => e.hasFullText && e.text.slug === t.slug),
+  // WAS TWO, IS NOW FOURTEEN. Twelve public-domain Shakespeare plays were added
+  // in full on 19 September 2026 - the real text, copied from a published
+  // modern-spelling edition rather than reproduced from memory. The flag drives
+  // a visible "Full text included" badge, so a false positive is a promise the
+  // page cannot keep, and the assertion is that every flagged text really does
+  // have a `read` route rather than that the list is any particular length.
+  it('is set only where a read route actually exists', () => {
+    const flagged = BOARDS.flatMap((b) => buildShelf(b.id))
+      .filter((e) => e.hasFullText)
+      .map((e) => e.text.slug)
+    expect(flagged.length).toBeGreaterThan(0)
+    for (const slug of new Set(flagged)) {
+      expect(textSubpageExists(slug, 'read'), `${slug} claims a full text it does not have`).toBe(
+        true,
+      )
+    }
+  })
+
+  it('covers the plays added in full, and the two that already had one', () => {
+    const flagged = new Set(
+      BOARDS.flatMap((b) => buildShelf(b.id))
+        .filter((e) => e.hasFullText)
+        .map((e) => e.text.slug),
     )
-    expect(withFullText.map((t) => t.slug).sort()).toEqual(['frankenstein', 'macbeth'])
+    for (const slug of ['macbeth', 'frankenstein', 'romeo-and-juliet', 'hamlet', 'othello']) {
+      expect(flagged.has(slug), `${slug} has a full text but is not flagged`).toBe(true)
+    }
+  })
+
+  it('is not set on a text whose full text we may not publish', () => {
+    // Out, Out- is public domain in the United States and in UK copyright until
+    // 2033. American revision sites host it lawfully; we cannot.
+    const flagged = new Set(
+      BOARDS.flatMap((b) => buildShelf(b.id))
+        .filter((e) => e.hasFullText)
+        .map((e) => e.text.slug),
+    )
+    expect(flagged.has('out-out')).toBe(false)
   })
 })

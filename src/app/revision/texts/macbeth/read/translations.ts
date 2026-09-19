@@ -114,12 +114,12 @@ export function translateMacbethData(data: TextData, locale: Locale): TextData {
     title: tr(data.title),
     author: tr(data.author),
     sections: data.sections.map((s) => ({ ...s, title: tr(s.title) })),
-    characters: data.characters.map((c) => ({
+    characters: (data.characters ?? []).map((c) => ({
       ...c,
       name: tr(c.name),
       description: tr(c.description),
     })),
-    themes: data.themes.map((th) => ({
+    themes: (data.themes ?? []).map((th) => ({
       ...th,
       name: tr(th.name),
       description: tr(th.description),

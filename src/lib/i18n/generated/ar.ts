@@ -19186,6 +19186,10 @@ export const AR_MESSAGES: Record<string, string> = {
   'placement.source': 'المصدر',
   'placement.exam_year': 'لدورة الامتحان',
   'placement.read_on': 'قُرئ',
+  'fulltext.crumb': 'النص الكامل',
+  'fulltext.back_to_guide': 'رجوع لدليل الدراسة',
+  'fulltext.public_domain':
+    'هذا العمل خرج من حقوق النشر في بريطانيا، فنقدر ننشره كامل. النص منسوخ من طبعة منشورة بالإملاء الحديث، مو مكتوب من جديد.',
   'placement.none':
     'ما راجعنا هذا النص مقابل المنهج الرسمي لين الحين، فما راح نقول لك في أي ورقة يجي. أول ما نقرأ الوثيقة بيظهر هنا.',
   'home.lp.h1': 'تعلُّم إنجليزي ذكي.. للجميع',
