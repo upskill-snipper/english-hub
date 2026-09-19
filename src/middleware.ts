@@ -5,6 +5,7 @@ import { NextResponse, type NextRequest } from 'next/server'
 import { computeJsonLdHashes, extractAnalysisSlugKey } from '@/lib/seo/json-ld-hashes'
 import { BOARDS } from '@/lib/board/board-config'
 import { BOARD_SPECIFIC_PREFIXES } from '@/lib/board/gated-paths'
+import { boardToRememberFromPath } from '@/lib/board/remember-shelf-board'
 import { evaluateCsrfAttestation } from '@/lib/security/csrf-origin'
 // Note: the previous `import crypto from 'crypto'` worked on Vercel but
 // trips an edge-runtime warning in dev. We use the Web Crypto API
@@ -768,6 +769,44 @@ export async function middleware(request: NextRequest) {
       // carries old browsers, and we'd rather serve the page than 500.
       scriptHashes = []
     }
+  }
+
+  // ── Remember the board a /set-texts/<board> URL names ─────────────────────
+  //
+  // THE DEFECT (19 September 2026). Choosing a board sends the student to
+  // /set-texts/<id>?setBoard=<id>, and the handler above writes the cookie from
+  // that param. But arriving at /set-texts/aqa DIRECTLY - from Google, a shared
+  // link, a bookmark - carried no param, so no cookie was written. The student
+  // saw the right shelf, clicked a text, and was asked "which exam board do you
+  // study?" while looking at it.
+  //
+  // The URL names the board explicitly and the page is titled with it, so this
+  // is as clear a choice as clicking a card. The cookie is written from the path.
+  //
+  // THREE DELIBERATE LIMITS, because this area has a history.
+  //
+  // It does NOT redirect. The BOARD_LANDING_REDIRECTS map removed above did,
+  // and that was its bug: deep links got rewritten and the visitor lost the page
+  // they clicked. This attaches a cookie to the response for the page they asked
+  // for and nothing else.
+  //
+  // It only writes when there is NO cookie already. A student with AQA stored
+  // who opens a shared Edexcel shelf link keeps AQA; the page shows them a
+  // mismatch banner rather than silently reassigning the board their whole
+  // account is filtered by.
+  //
+  // It validates against the canonical BOARDS list, so a junk segment writes
+  // nothing.
+  const rememberBoard = boardToRememberFromPath(
+    servedPath,
+    request.cookies.get('english-hub-board')?.value,
+  )
+  if (rememberBoard) {
+    response.cookies.set('english-hub-board', rememberBoard, {
+      path: '/',
+      maxAge: 60 * 60 * 24 * 365,
+      sameSite: 'lax',
+    })
   }
 
   // Attach the per-request nonce + CSP to the response. Setting CSP here

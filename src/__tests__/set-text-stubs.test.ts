@@ -98,6 +98,12 @@ describe('the sitemap source', () => {
 })
 
 describe('the generated sitemap', () => {
+  // 30s, not the 5s default, and the reason is not that this test is slow.
+  // It imports @/app/sitemap, which walks every route, and takes about 1.2s
+  // on an idle machine. Under load - a parallel build, several agents - it
+  // crossed 5s and went red while asserting nothing about the code. A gate
+  // that fails from CPU contention teaches people to ignore gate failures,
+  // which is worse than a slow test.
   it('lists no stub, and still lists the real pages', async () => {
     const { default: sitemap } = await import('@/app/sitemap')
     const entries = await sitemap()
@@ -111,7 +117,7 @@ describe('the generated sitemap', () => {
       if (listed === isStubSetText(text.slug)) offenders.push(path)
     }
     expect(offenders).toEqual([])
-  })
+  }, 30_000)
 
   it('keeps the one Pearson page that has real content', () => {
     // The correction that mattered: the naive filter would have removed this.
