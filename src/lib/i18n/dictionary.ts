@@ -9348,6 +9348,87 @@ export const DICTIONARY: Dictionary = {
 
   // ─── Wave H additions: analysis / parent / teacher / demo_school / legal_banner ──
   'analysis.breadcrumb.home': { en: 'Home', ar: 'الرئيسية', es: 'Inicio' },
+
+  // ─── Added 19 September 2026: keys used but never defined ─────────────
+  //
+  // Each of these was reaching visitors as the literal text `[[key]]`.
+  // Eleven carried a `t(key) || 'fallback'` beside them, which cannot work:
+  // `t()` returns the sentinel `[[key]]` for a missing key, and a non-empty
+  // string is truthy, so the `||` never fired and the fallback was dead code.
+  // The English below IS that dead fallback - it is what the author meant.
+  'auth.apple.continue': {
+    en: 'Continue with Apple',
+    ar: 'كمّل مع Apple',
+    es: 'Continuar con Apple',
+  },
+  'auth.apple.aria_signin': {
+    en: 'Sign in with Apple',
+    ar: 'سجّل دخول بـ Apple',
+    es: 'Iniciar sesión con Apple',
+  },
+  'auth.apple.redirecting': { en: 'Redirecting…', ar: 'لحظة، نحوّلك…', es: 'Redirigiendo…' },
+  'auth.apple.error.generic': {
+    en: 'We could not start Apple sign-in. Please try again, or sign in with your email and password instead.',
+    ar: 'ما قدرنا نبدأ دخول Apple. جرّب مرة ثانية، أو سجّل دخول بالإيميل والرمز السري بدال.',
+    es: 'No pudimos iniciar el inicio de sesión con Apple. Inténtalo de nuevo o inicia sesión con tu correo y contraseña en su lugar.',
+  },
+  'auth.apple.error.not_enabled': {
+    en: 'Apple sign-in is not available right now. Please sign in with your email and password instead.',
+    ar: 'دخول Apple مو متاح الحين. لطفاً سجّل دخول بالإيميل والرمز السري بدال.',
+    es: 'El inicio de sesión con Apple no está disponible en este momento. Inicia sesión con tu correo y contraseña en su lugar.',
+  },
+  'ielts.transition.intro': {
+    en: 'Many international students arrive feeling underprepared for how UK university actually works - not the English, but the study habits, money and day-to-day life. These short modules close that gap. Read each one and answer a quick self-check; your answers feed the Academic-transition score in your Readiness Report.',
+    ar: 'وايد من الطلبة الدوليين يوصلون وهم حاسين إنهم مو مستعدين لطريقة الدراسة في الجامعة البريطانية - مو اللغة، بل عادات الدراسة والمصاريف والحياة اليومية. هذه الوحدات القصيرة تسدّ هذي الفجوة. اقرأ كل وحدة وجاوب على فحص ذاتي سريع؛ إجاباتك تغذّي درجة الانتقال الأكاديمي في تقرير جاهزيتك.',
+    es: 'Muchos estudiantes internacionales llegan sintiéndose poco preparados para cómo funciona realmente la universidad británica: no por el inglés, sino por los hábitos de estudio, el dinero y la vida diaria. Estos módulos breves cierran esa brecha. Lee cada uno y responde a una autoevaluación rápida; tus respuestas alimentan la puntuación de transición académica de tu Informe de preparación.',
+  },
+  'ielts.transition.progress.label': {
+    en: 'Your transition readiness',
+    ar: 'جاهزيتك للانتقال',
+    es: 'Tu preparación para la transición',
+  },
+  'ielts.transition.progress.synced': {
+    en: 'Saved on this device and feeding your Readiness Report’s Academic-transition domain.',
+    ar: 'محفوظ على هذا الجهاز ويغذّي مجال الانتقال الأكاديمي في تقرير جاهزيتك.',
+    es: 'Guardado en este dispositivo y alimentando el área de transición académica de tu Informe de preparación.',
+  },
+  'ielts.transition.cta.report': {
+    en: 'Back to Readiness Report',
+    ar: 'رجوع إلى تقرير الجاهزية',
+    es: 'Volver al Informe de preparación',
+  },
+  'ielts.transition.cta.visa': {
+    en: 'Visa & finance checklist',
+    ar: 'قائمة التأشيرة والتمويل',
+    es: 'Lista de visado y finanzas',
+  },
+  'ielts.transition.header.title': {
+    en: 'Academic-transition modules',
+    ar: 'وحدات الانتقال الأكاديمي',
+    es: 'Módulos de transición académica',
+  },
+  'ielts.transition.header.subtitle': {
+    en: 'Short reads + self-checks to get ready for studying and living in the UK.',
+    ar: 'قراءات قصيرة وفحوص ذاتية تجهّزك للدراسة والعيش في بريطانيا.',
+    es: 'Lecturas breves y autoevaluaciones para prepararte para estudiar y vivir en el Reino Unido.',
+  },
+  'ielts.transition.locked.title': {
+    en: 'Unlock the Academic-transition modules',
+    ar: 'افتح وحدات الانتقال الأكاديمي',
+    es: 'Desbloquea los módulos de transición académica',
+  },
+  'ielts.transition.locked.body': {
+    en: 'Four short, self-guided modules - academic writing, lectures and independent study, budgeting, and accommodation - each with a quick self-check that feeds your Readiness Report. Part of the IELTS plan.',
+    ar: 'أربع وحدات قصيرة ذاتية التوجيه - الكتابة الأكاديمية، المحاضرات والدراسة المستقلة، الميزانية، والسكن - كل وحدة معها فحص ذاتي سريع يغذّي تقرير جاهزيتك. ضمن خطة IELTS.',
+    es: 'Cuatro módulos breves y autoguiados: escritura académica, clases y estudio independiente, presupuesto y alojamiento, cada uno con una autoevaluación rápida que alimenta tu Informe de preparación. Incluido en el plan de IELTS.',
+  },
+  'ielts.admissions.ps.under_min': {
+    en: 'At least {min} characters required across all three answers.',
+    ar: 'مطلوب {min} حرفا على الأقل عبر الإجابات الثلاث.',
+    es: 'Se requieren al menos {min} caracteres en las tres respuestas.',
+  },
+  'ielts.admissions.ps.fb.question_label': { en: 'Question', ar: 'سؤال', es: 'Pregunta' },
+  'breadcrumb.home': { en: 'Home', ar: 'الرئيسية', es: 'Inicio' },
   'analysis.breadcrumb.analysis': { en: 'Analysis', ar: 'التحليل', es: 'Análisis' },
   'analysis.byline.markers': {
     en: 'Calibrated to GCSE markers',

@@ -2957,6 +2957,29 @@ export const ES_MESSAGES: Record<string, string> = {
   'accessibility.date.body':
     'Esta declaración de accesibilidad se preparó el 22 de marzo de 2026. Se revisará y actualizará periódicamente a medida que sigamos mejorando la accesibilidad en The English Hub.',
   'analysis.breadcrumb.home': 'Inicio',
+  'auth.apple.continue': 'Continuar con Apple',
+  'auth.apple.aria_signin': 'Iniciar sesión con Apple',
+  'auth.apple.redirecting': 'Redirigiendo…',
+  'auth.apple.error.generic':
+    'No pudimos iniciar el inicio de sesión con Apple. Inténtalo de nuevo o inicia sesión con tu correo y contraseña en su lugar.',
+  'auth.apple.error.not_enabled':
+    'El inicio de sesión con Apple no está disponible en este momento. Inicia sesión con tu correo y contraseña en su lugar.',
+  'ielts.transition.intro':
+    'Muchos estudiantes internacionales llegan sintiéndose poco preparados para cómo funciona realmente la universidad británica: no por el inglés, sino por los hábitos de estudio, el dinero y la vida diaria. Estos módulos breves cierran esa brecha. Lee cada uno y responde a una autoevaluación rápida; tus respuestas alimentan la puntuación de transición académica de tu Informe de preparación.',
+  'ielts.transition.progress.label': 'Tu preparación para la transición',
+  'ielts.transition.progress.synced':
+    'Guardado en este dispositivo y alimentando el área de transición académica de tu Informe de preparación.',
+  'ielts.transition.cta.report': 'Volver al Informe de preparación',
+  'ielts.transition.cta.visa': 'Lista de visado y finanzas',
+  'ielts.transition.header.title': 'Módulos de transición académica',
+  'ielts.transition.header.subtitle':
+    'Lecturas breves y autoevaluaciones para prepararte para estudiar y vivir en el Reino Unido.',
+  'ielts.transition.locked.title': 'Desbloquea los módulos de transición académica',
+  'ielts.transition.locked.body':
+    'Cuatro módulos breves y autoguiados: escritura académica, clases y estudio independiente, presupuesto y alojamiento, cada uno con una autoevaluación rápida que alimenta tu Informe de preparación. Incluido en el plan de IELTS.',
+  'ielts.admissions.ps.under_min': 'Se requieren al menos {min} caracteres en las tres respuestas.',
+  'ielts.admissions.ps.fb.question_label': 'Pregunta',
+  'breadcrumb.home': 'Inicio',
   'analysis.breadcrumb.analysis': 'Análisis',
   'analysis.byline.markers': 'Calibrado según los correctores de GCSE',
   'analysis.byline.markers_short': 'Correctores de GCSE',

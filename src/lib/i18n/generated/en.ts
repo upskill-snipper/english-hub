@@ -2872,6 +2872,29 @@ export const EN_MESSAGES: Record<string, string> = {
   'accessibility.date.body':
     'This accessibility statement was prepared on 22 March 2026. It will be reviewed and updated regularly as we continue to improve accessibility across The English Hub.',
   'analysis.breadcrumb.home': 'Home',
+  'auth.apple.continue': 'Continue with Apple',
+  'auth.apple.aria_signin': 'Sign in with Apple',
+  'auth.apple.redirecting': 'Redirecting…',
+  'auth.apple.error.generic':
+    'We could not start Apple sign-in. Please try again, or sign in with your email and password instead.',
+  'auth.apple.error.not_enabled':
+    'Apple sign-in is not available right now. Please sign in with your email and password instead.',
+  'ielts.transition.intro':
+    'Many international students arrive feeling underprepared for how UK university actually works - not the English, but the study habits, money and day-to-day life. These short modules close that gap. Read each one and answer a quick self-check; your answers feed the Academic-transition score in your Readiness Report.',
+  'ielts.transition.progress.label': 'Your transition readiness',
+  'ielts.transition.progress.synced':
+    'Saved on this device and feeding your Readiness Report’s Academic-transition domain.',
+  'ielts.transition.cta.report': 'Back to Readiness Report',
+  'ielts.transition.cta.visa': 'Visa & finance checklist',
+  'ielts.transition.header.title': 'Academic-transition modules',
+  'ielts.transition.header.subtitle':
+    'Short reads + self-checks to get ready for studying and living in the UK.',
+  'ielts.transition.locked.title': 'Unlock the Academic-transition modules',
+  'ielts.transition.locked.body':
+    'Four short, self-guided modules - academic writing, lectures and independent study, budgeting, and accommodation - each with a quick self-check that feeds your Readiness Report. Part of the IELTS plan.',
+  'ielts.admissions.ps.under_min': 'At least {min} characters required across all three answers.',
+  'ielts.admissions.ps.fb.question_label': 'Question',
+  'breadcrumb.home': 'Home',
   'analysis.breadcrumb.analysis': 'Analysis',
   'analysis.byline.markers': 'Calibrated to GCSE markers',
   'analysis.byline.markers_short': 'GCSE markers',

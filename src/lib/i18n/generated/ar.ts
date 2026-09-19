@@ -2815,6 +2815,28 @@ export const AR_MESSAGES: Record<string, string> = {
   'accessibility.date.body':
     'هذا البيان حُضِّر بتاريخ ٢٢ مارس ٢٠٢٦. بيتم مراجعته وتحديثه بانتظام مع استمرارنا في تحسين إمكانية الوصول في كل The English Hub.',
   'analysis.breadcrumb.home': 'الرئيسية',
+  'auth.apple.continue': 'كمّل مع Apple',
+  'auth.apple.aria_signin': 'سجّل دخول بـ Apple',
+  'auth.apple.redirecting': 'لحظة، نحوّلك…',
+  'auth.apple.error.generic':
+    'ما قدرنا نبدأ دخول Apple. جرّب مرة ثانية، أو سجّل دخول بالإيميل والرمز السري بدال.',
+  'auth.apple.error.not_enabled':
+    'دخول Apple مو متاح الحين. لطفاً سجّل دخول بالإيميل والرمز السري بدال.',
+  'ielts.transition.intro':
+    'وايد من الطلبة الدوليين يوصلون وهم حاسين إنهم مو مستعدين لطريقة الدراسة في الجامعة البريطانية - مو اللغة، بل عادات الدراسة والمصاريف والحياة اليومية. هذه الوحدات القصيرة تسدّ هذي الفجوة. اقرأ كل وحدة وجاوب على فحص ذاتي سريع؛ إجاباتك تغذّي درجة الانتقال الأكاديمي في تقرير جاهزيتك.',
+  'ielts.transition.progress.label': 'جاهزيتك للانتقال',
+  'ielts.transition.progress.synced':
+    'محفوظ على هذا الجهاز ويغذّي مجال الانتقال الأكاديمي في تقرير جاهزيتك.',
+  'ielts.transition.cta.report': 'رجوع إلى تقرير الجاهزية',
+  'ielts.transition.cta.visa': 'قائمة التأشيرة والتمويل',
+  'ielts.transition.header.title': 'وحدات الانتقال الأكاديمي',
+  'ielts.transition.header.subtitle': 'قراءات قصيرة وفحوص ذاتية تجهّزك للدراسة والعيش في بريطانيا.',
+  'ielts.transition.locked.title': 'افتح وحدات الانتقال الأكاديمي',
+  'ielts.transition.locked.body':
+    'أربع وحدات قصيرة ذاتية التوجيه - الكتابة الأكاديمية، المحاضرات والدراسة المستقلة، الميزانية، والسكن - كل وحدة معها فحص ذاتي سريع يغذّي تقرير جاهزيتك. ضمن خطة IELTS.',
+  'ielts.admissions.ps.under_min': 'مطلوب {min} حرفا على الأقل عبر الإجابات الثلاث.',
+  'ielts.admissions.ps.fb.question_label': 'سؤال',
+  'breadcrumb.home': 'الرئيسية',
   'analysis.breadcrumb.analysis': 'التحليل',
   'analysis.byline.markers': 'مُعاير على مصححي GCSE',
   'analysis.byline.markers_short': 'مصححي GCSE',
