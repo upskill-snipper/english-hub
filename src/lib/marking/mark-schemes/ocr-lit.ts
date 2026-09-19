@@ -276,8 +276,8 @@ const ao4: AssessmentObjective = {
       maxMarks: 1,
       label: 'Limited',
       descriptor:
-        'Limited ability to relate texts or make connections. Writing may hinder meaning with frequent technical errors.',
-      indicators: ['Simple or no connections between texts', 'Technical accuracy is weak'],
+        'Frequent errors in spelling and punctuation that hinder meaning. Simple vocabulary and repetitive sentence structures.',
+      indicators: ['Errors obscure meaning in places', 'Little variety in sentence structure'],
     },
     {
       band: 'Level 2',
@@ -285,11 +285,8 @@ const ao4: AssessmentObjective = {
       maxMarks: 2,
       label: 'Some',
       descriptor:
-        'Some ability to relate texts and make connections. Writing communicates with reasonable accuracy.',
-      indicators: [
-        'Some relevant connections identified',
-        'Writing is mostly clear with some errors',
-      ],
+        'Writing communicates with reasonable accuracy. Some variety of vocabulary and sentence structures, with errors that rarely hinder meaning.',
+      indicators: ['Some attempt at varied sentences', 'Writing is mostly clear with some errors'],
     },
     {
       band: 'Level 3',
@@ -297,11 +294,8 @@ const ao4: AssessmentObjective = {
       maxMarks: 3,
       label: 'Sound',
       descriptor:
-        'Sound ability to relate texts and make connections. Writing is clear and accurate.',
-      indicators: [
-        'Meaningful connections between texts explored',
-        'Writing is controlled and accurate',
-      ],
+        'Considerable accuracy in spelling and punctuation. A considerable range of vocabulary and sentence structures used with control.',
+      indicators: ['Errors are minor and infrequent', 'Writing is controlled and accurate'],
     },
     {
       band: 'Level 4',
@@ -309,9 +303,9 @@ const ao4: AssessmentObjective = {
       maxMarks: 4,
       label: 'Assured',
       descriptor:
-        'Assured ability to relate texts with well-developed connections. Writing is precise and consistently accurate.',
+        'Consistently accurate spelling and punctuation. An ambitious vocabulary and a full range of sentence structures used with effective control of meaning.',
       indicators: [
-        'Sophisticated connections enhance the argument',
+        'Ambitious vocabulary used with precision',
         'Writing is fluent, precise and ambitious',
       ],
     },

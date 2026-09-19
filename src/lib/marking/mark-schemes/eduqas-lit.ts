@@ -279,58 +279,48 @@ const ao4Lit: AssessmentObjective = {
       band: 'Band 1',
       minMarks: 0,
       maxMarks: 2,
-      label: 'Basic connections',
+      label: 'Basic accuracy',
       descriptor:
-        'Basic connections between texts. Simple awareness of similarities or differences.',
-      indicators: [
-        'Identifies surface-level similarities without development',
-        'Writes about texts separately with minimal comparison',
-      ],
+        'Frequent errors in spelling and punctuation that hinder meaning. Vocabulary is simple and sentence structures are repetitive.',
+      indicators: ['Errors obscure meaning in places', 'Little variety in sentence structure'],
     },
     {
       band: 'Band 2',
       minMarks: 3,
       maxMarks: 4,
-      label: 'Some connections',
-      descriptor: 'Some connections between texts. Some relevant comparative points made.',
-      indicators: [
-        'Begins to compare ideas and methods across texts',
-        'Some use of comparative connectives',
-      ],
+      label: 'Some accuracy',
+      descriptor:
+        'Writing communicates with reasonable accuracy. Some variety of vocabulary and sentence structures, with errors that rarely hinder meaning.',
+      indicators: ['Mostly readable despite technical errors', 'Some attempt at varied sentences'],
     },
     {
       band: 'Band 3',
       minMarks: 5,
       maxMarks: 6,
-      label: 'Sound comparison',
-      descriptor: 'Sound comparison between texts. Clear connections made in a structured way.',
-      indicators: [
-        'Sustained comparison with clear comparative points',
-        'Links ideas, themes and methods across texts',
-      ],
+      label: 'Considerable accuracy',
+      descriptor:
+        'Considerable accuracy in spelling and punctuation. A considerable range of vocabulary and sentence structures used with control.',
+      indicators: ['Errors are minor and infrequent', 'Vocabulary chosen with some precision'],
     },
     {
       band: 'Band 4',
       minMarks: 7,
       maxMarks: 8,
-      label: 'Thorough comparison',
+      label: 'High accuracy',
       descriptor:
-        'Thorough, developed comparison between texts. Well-integrated comparative discussion.',
-      indicators: [
-        'Detailed comparison of how writers use different methods to explore similar themes',
-        'Comparative argument is sustained and well-structured',
-      ],
+        'A high level of accuracy throughout. A wide range of vocabulary and sentence structures used to shape meaning for the reader.',
+      indicators: ['Accurate across complex structures', 'Sentence forms varied for effect'],
     },
     {
       band: 'Band 5',
       minMarks: 9,
       maxMarks: 10,
-      label: 'Perceptive comparison',
+      label: 'Consistently high accuracy',
       descriptor:
-        'Perceptive, assured comparison between texts. Sophisticated connections that illuminate both texts.',
+        'Consistently accurate spelling and punctuation. An ambitious vocabulary and a full range of sentence structures used with effective control of meaning.',
       indicators: [
-        'Insightful, evaluative comparison that deepens understanding of both texts',
-        'Explores how different contexts and methods create different effects',
+        'Virtually faultless technical accuracy',
+        'Ambitious vocabulary used with precision',
       ],
     },
   ],
@@ -375,7 +365,7 @@ export const eduqasLitComp1: MarkScheme = {
         scaleAO(ao4Lit, 10, 10 / 40),
       ],
       examinerNotes:
-        'Both poems must be discussed. AO4 rewards genuine comparison rather than sequential treatment. Reward exploration of methods and their effects on the reader.',
+        'Both poems must be discussed, and comparison is rewarded within AO1 and AO2 rather than as a separate objective. AO4 on this question assesses written accuracy - vocabulary, sentence structures, spelling and punctuation. Reward exploration of methods and their effects on the reader.',
     },
   ],
 }
