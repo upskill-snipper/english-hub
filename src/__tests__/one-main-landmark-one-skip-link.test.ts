@@ -122,3 +122,38 @@ describe('there is one skip link', () => {
     expect(linking).toEqual(['/src/app/layout.tsx'])
   })
 })
+
+describe('the examiner tool tells a screen reader what happened', () => {
+  // A11Y-7's third concrete defect. Marking runs as a sequence of stages and
+  // then streams a mark and several paragraphs of commentary into state. Every
+  // one of those was a purely visual change: a screen-reader user pressed Mark
+  // and got silence for as long as the model took, with no way to tell a slow
+  // run from a failed one.
+  const RUN = codeOf(join(SRC, 'components/examiner/RunPanel.tsx'))
+
+  it('announces the stages as they complete', () => {
+    expect(RUN).toContain('aria-live="polite"')
+  })
+
+  it('and reads only the line that changed', () => {
+    // Without aria-atomic={false} the whole list is re-read on every stage,
+    // which is four announcements of increasing length for one run.
+    expect(RUN).toContain('aria-atomic={false}')
+  })
+
+  it('announces the outcome', () => {
+    expect(RUN).toContain('role="status"')
+    expect(RUN).toContain('Marking finished.')
+  })
+
+  it('but does not read the commentary aloud as it streams', () => {
+    // The commentary can be several paragraphs. The live region says the mark
+    // and where to find the rest; it must not contain the commentary itself.
+    const status = RUN.slice(RUN.indexOf('role="status"'), RUN.indexOf('role="status"') + 700)
+    expect(status).not.toContain('{commentary}')
+  })
+
+  it('and says so politely rather than interrupting', () => {
+    expect(RUN).not.toContain('aria-live="assertive"')
+  })
+})

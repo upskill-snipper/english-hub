@@ -240,8 +240,20 @@ export function RunPanel(p: Props) {
             : 'This paper’s structure and grids have NOT been checked against the board’s published specification, so the tariffs may not match the paper in front of you. Any mark is indicative only — check it against your own mark scheme before using it, and do not report it to a pupil as a grade.'}
       </p>
 
+      {/* aria-live since A11Y-7 (20 September 2026).
+
+          Marking runs as a sequence of stages - preparing the pages, reading
+          the handwriting, checking the transcript, marking against the scheme -
+          and every one of them was a purely visual change. A screen-reader user
+          pressed Mark and then had silence for as long as the model took, with
+          no way to tell a slow run from a failed one.
+
+          `polite` rather than `assertive`: these are progress notes, and
+          interrupting whatever the reader is doing for each one would be worse
+          than the silence. `aria-atomic={false}` so only the line that changed
+          is read, not the whole list again on every stage. */}
       {steps.length > 0 && (
-        <ol className="mt-4 space-y-1.5 text-sm">
+        <ol aria-live="polite" aria-atomic={false} className="mt-4 space-y-1.5 text-sm">
           {steps.map((s) => (
             <li
               key={s.key}
@@ -299,6 +311,22 @@ export function RunPanel(p: Props) {
           <Notice kind="error">{failure.message}</Notice>
         </div>
       )}
+
+      {/* The outcome, announced once and briefly.
+
+          The commentary below can run to several paragraphs, and putting it
+          inside a live region would read the whole thing aloud as it streamed.
+          This says only what arrived and where it is; the reader then moves to
+          it in their own time. */}
+      <p role="status" aria-live="polite" className="sr-only">
+        {done && mark
+          ? `Marking finished. ${mark.mark ?? 'No mark'} out of ${mark.max ?? p.question?.max ?? 'unknown'}. Examiner commentary is below.`
+          : done
+            ? 'Marking finished. The mark could not be read from the commentary; the commentary is below.'
+            : active
+              ? 'Marking in progress.'
+              : ''}
+      </p>
 
       {(commentary || done) && (
         <div className="mt-4">
