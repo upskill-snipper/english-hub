@@ -1,6 +1,6 @@
 # Cron jobs, background work and data lifecycle
 
-Nineteen Vercel Cron entries - sixteen `/api/cron/*` jobs plus three health probes, `/api/health/ai`, `/api/health/marking` and `/api/health/schema` - in [`vercel.json`](../../vercel.json) drive everything this product does when nobody is looking: ending trials, confirming affiliate commissions, expiring school invites, sending weekly digests, generating blog drafts, and - the part that deserves the most care - deleting people's accounts. Four of those jobs destroy data, three of them irreversibly, and two of the three target child accounts. This chapter tells you what each job does, what it writes, which ones delete, and where the deletion logic will fire on the wrong person.
+Twenty Vercel Cron entries - seventeen `/api/cron/*` jobs plus three health probes, `/api/health/ai`, `/api/health/marking` and `/api/health/schema` - in [`vercel.json`](../../vercel.json) drive everything this product does when nobody is looking: ending trials, confirming affiliate commissions, expiring school invites, sending weekly digests, generating blog drafts, and - the part that deserves the most care - deleting people's accounts. Four of those jobs destroy data, three of them irreversibly, and two of the three target child accounts. This chapter tells you what each job does, what it writes, which ones delete, and where the deletion logic will fire on the wrong person.
 
 There is no queue, no worker process and no job table. A cron job here is an HTTP GET to a Next.js route handler, authenticated by a shared secret, running for at most a minute. If it fails, it fails quietly unless you go and look.
 
@@ -27,12 +27,42 @@ All times are UTC. Vercel cron never sends a body and never sends anything but `
 | `/api/cron/weekly-parent-reports`       | `0 16 * * 0` (Sun 16:00) | no                    | yes (after a flag)   | `WeeklyReport`, emails, push                   |
 | `/api/cron/weekly-student-reports`      | `0 17 * * 0` (Sun 17:00) | no                    | yes                  | `WeeklyStudentDigest`, emails                  |
 | `/api/cron/blog-generate`               | `0 */12 * * *`           | no                    | yes                  | a GitHub branch and PR                         |
+| `/api/cron/operator-digest`             | `0 7 * * *` (07:00)      | no                    | yes                  | a log line, and an email only if configured    |
 
 Two docstrings disagree with the schedule they describe: [`trustpilot-followup-7d/route.ts:7`](../../src/app/api/cron/trustpilot-followup-7d/route.ts) says 03:30 (it is 03:45) and [`trustpilot-retention-90d/route.ts:9`](../../src/app/api/cron/trustpilot-retention-90d/route.ts) says 04:00 (it is 04:30). Trust `vercel.json`.
 
 **Fixed 19 September 2026 (REL-8).** `data-retention` and `dormancy-purge` both fired at 04:00 on Sundays, both touched child accounts, and nothing serialised them - `purgeDormantAccount` uses a transaction while `processChildDormancy` does not. Two things changed: `dormancy-purge` moved to Sunday 06:00, and both now take the same run lock (`child-account-deletion`), so they cannot overlap even if one runs long. Three schedule collisions were resolved in total; the other two were `trial-expiry` against `trustpilot-retention-90d` at 04:15, and `affiliate-confirm-v2` against `expire-invites` at 02:00, which the item's own evidence had not noticed.
 
 The structural test asserts no two entries can fire in the same minute, comparing expanded cron fields rather than schedule strings - `0 4 * * *` and `0 4 * * 0` are different strings and collided every Sunday.
+
+### The operator digest
+
+Added 20 September 2026 (REL-4). `GET /api/cron/operator-digest` runs at 07:00,
+after the three health probes, and counts the things that previously existed
+only as rows nothing read: safeguarding reports still open and the age of the
+oldest, safeguarding alert deliveries that failed, erasures that failed, and
+data access requests still pending against the one-month statutory clock.
+
+`prisma.auditLog` is written by nineteen actions and read in two places, neither
+of which aggregates, so `USER_ERASURE_FAILED` was a GDPR obligation failing into
+a table nobody queries.
+
+**It does not check Stripe reconciliation, AI or marking health, or webhook
+freshness, and it says so in its own body.** The health probes already run and
+fail on their own; reconciliation needs live Stripe reads; there is no stored
+last-event timestamp to read for webhooks. A digest covering five things reads
+exactly like one covering everything when both say "nothing outstanding", so it
+names its own gaps every morning.
+
+**The email is opt-in.** It sends only when `OPERATOR_DIGEST_EMAIL` is set,
+following the safeguarding cron's precedent, and the route contains no address
+of any kind - a test asserts that, because a fallback would mean the product
+started emailing somebody nobody chose. Unset means the figures go to the log
+and nowhere else.
+
+Unlike the safeguarding cron it does not throw on findings. An open safeguarding
+report is normal operations, and a cron that ran red every morning is a cron
+nobody looks at. It throws only when it cannot gather the numbers.
 
 ---
 
@@ -64,7 +94,7 @@ If you rotate `CRON_SECRET` - after an incident, or on a schedule - assume every
 
 [`src/lib/cron/observability.ts`](../../src/lib/cron/observability.ts) is a 59-line wrapper. `runCron(name, body)` times the body, adds a Sentry breadcrumb and a `console.info` on success, and on a throw calls `Sentry.captureException` with tag `cron: <name>` and returns HTTP 500.
 
-**All sixteen cron routes now use it.** `trustpilot-retention-invite` was the exception until 19 September 2026: it returned `NextResponse.json` directly from `handle()`, so it emitted no breadcrumb, no duration, and an unhandled throw inside it reached Next.js rather than Sentry. If that job had stopped working you would have found out from Trustpilot review volume.
+**All seventeen cron routes now use it.** `trustpilot-retention-invite` was the exception until 19 September 2026: it returned `NextResponse.json` directly from `handle()`, so it emitted no breadcrumb, no duration, and an unhandled throw inside it reached Next.js rather than Sentry. If that job had stopped working you would have found out from Trustpilot review volume.
 
 Two routes - `trial-ending` and `weekly-parent-reports` - only reach `runCron` past an env-var flag that is off by default. Both are deliberate and documented in place (`trial-ending` waits on the founder reviewing the copy; `weekly-parent-reports` waited on a real unsubscribe path, which RET-7 has since built, so that one is now waiting only on the environment variable). A disabled run used to emit nothing at all, making it indistinguishable in the log from a schedule that never fired; both now log one `[cron:<name>] skipped` line.
 
