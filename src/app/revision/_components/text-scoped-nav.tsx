@@ -45,6 +45,8 @@ import { buildTextNav, type TextNavIcon } from '@/lib/revision/text-nav'
 import { getSetText } from '@/lib/board/set-texts'
 import { PLACEHOLDER_TEXT_SLUGS } from '@/lib/revision/placeholder-texts.generated'
 import { markingLink } from '@/lib/marking/submit-prefill'
+import { useBoard } from '@/hooks/useBoard'
+import { boardShelfHref } from '@/lib/board/board-landing'
 
 import { SidebarLink } from './sidebar-link'
 
@@ -84,6 +86,8 @@ export function TextScopedNav({ slug, onNavigate }: { slug: string; onNavigate?:
   // Having no sub-pages is not the same as being unwritten. The generated
   // placeholder register is the only thing that actually knows, so it decides.
   const isPlaceholder = PLACEHOLDER_TEXT_SLUGS.has(slug)
+  const { board, isHydrated } = useBoard()
+  const backHref = board && isHydrated ? boardShelfHref(board) : '/revision/texts'
 
   // The title comes from the set-text register, which is the same source the
   // page headings use. Falling back to the slug would print "a-christmas-carol"
@@ -108,13 +112,25 @@ export function TextScopedNav({ slug, onNavigate }: { slug: string; onNavigate?:
             {title}
           </Link>
         )}
+        {/* The way back out, to the student's OWN shelf.
+
+            It went to /revision/texts - every set text on the site, all 108 of
+            them across fifteen specifications. A student revising Edexcel IGCSE
+            Literature clicked "all set texts" and got the other seventy-four as
+            well, most of which their board does not examine. Once the board is
+            known, the shelf that means something is /set-texts/<board>, which
+            lists their thirty-four and nothing else.
+
+            `isHydrated` matters: the board is read from a cookie on the client,
+            so before hydration it is null and linking to the all-texts index is
+            correct rather than a guess at the wrong board. */}
         <Link
-          href="/revision/texts"
+          href={backHref}
           onClick={onNavigate}
           className="mt-2 inline-flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
         >
           <ArrowLeft aria-hidden="true" className="size-3" />
-          {t('textnav.back_to_shelf')}
+          {board && isHydrated ? t('textnav.back_to_board_shelf') : t('textnav.back_to_shelf')}
         </Link>
       </div>
 

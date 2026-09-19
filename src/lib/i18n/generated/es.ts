@@ -20188,6 +20188,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'placement.source': 'Fuente',
   'placement.exam_year': 'Para la convocatoria',
   'placement.read_on': 'consultado',
+  'textnav.back_to_board_shelf': 'Todos tus textos prescritos',
   'fulltext.crumb': 'Texto completo',
   'fulltext.back_to_guide': 'Volver a la guía de estudio',
   'fulltext.public_domain':

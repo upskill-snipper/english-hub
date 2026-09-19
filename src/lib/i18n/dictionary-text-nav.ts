@@ -185,6 +185,12 @@ export const TEXT_NAV_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     ar: 'قُرئ',
     es: 'consultado',
   },
+  'textnav.back_to_board_shelf': {
+    en: 'All your set texts',
+    ar: 'كل نصوصك المقررة',
+    es: 'Todos tus textos prescritos',
+  },
+
   // ── Full public-domain texts ─────────────────────────────────────────────
   'fulltext.crumb': {
     en: 'Full text',
