@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, Drama, Quote, Sparkles } from 'lucide-react'
 
@@ -222,10 +221,6 @@ const KEY_QUOTES: KeyQuote[] = [
 
 export default async function BloodBrothersKeyQuotesPage() {
   const board = await getServerBoard()
-  const allowedBoards = ['edexcel', 'eduqas']
-  if (board && !allowedBoards.includes(board)) {
-    redirect('/revision/texts')
-  }
 
   const backLabel = (await t('rev.texts.common.back_to_text')).replace('{text}', 'Blood Brothers')
 

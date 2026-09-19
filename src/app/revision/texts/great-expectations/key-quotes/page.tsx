@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { redirect } from 'next/navigation'
 import { ArrowLeft, BookOpen, Quote } from 'lucide-react'
 
 import { Card, CardContent } from '@/components/ui/card'
@@ -250,9 +249,6 @@ const KEY_QUOTES: KeyQuote[] = [
 
 export default async function GreatExpectationsKeyQuotesPage() {
   const board = await getServerBoard()
-  if (board && board !== 'aqa') {
-    redirect('/revision/texts')
-  }
 
   const analysisLabel = await t('rev.texts.common.analysis')
 

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, BookOpen, Quote, Sparkles } from 'lucide-react'
 
@@ -267,9 +266,6 @@ const quotes: KeyQuote[] = [
 
 export default async function JaneEyreKeyQuotesPage() {
   const board = await getServerBoard()
-  if (board && !['aqa', 'ocr'].includes(board)) {
-    redirect('/revision/texts')
-  }
 
   const contextLabel = await t('rev.textgrp4.common.context_label')
 

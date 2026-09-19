@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { redirect } from 'next/navigation'
 import { ArrowLeft, BookOpen, Users, Quote } from 'lucide-react'
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
@@ -214,10 +213,6 @@ const CHARACTERS: CharacterStudy[] = [
 
 export default async function FrankensteinCharactersPage() {
   const board = await getServerBoard()
-  const allowedBoards = ['aqa', 'edexcel', 'ocr']
-  if (board && !allowedBoards.includes(board)) {
-    redirect('/revision/texts')
-  }
 
   const tAnalysis = await t('rev.texts.common.analysis')
   const tKeyQuotations = await t('rev.texts.common.key_quotations')

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, Drama, Quote, Sparkles } from 'lucide-react'
 
@@ -223,10 +222,6 @@ const KEY_QUOTES: KeyQuote[] = [
 
 export default async function AViewFromTheBridgeKeyQuotesPage() {
   const board = await getServerBoard()
-  const allowedBoards = ['edexcel-igcse']
-  if (board && !allowedBoards.includes(board)) {
-    redirect('/revision/texts')
-  }
 
   return (
     <div className="space-y-10 pb-16">

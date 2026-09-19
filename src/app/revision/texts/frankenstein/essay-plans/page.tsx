@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { redirect } from 'next/navigation'
 import { ArrowLeft, BookOpen, FileText, Quote, Lightbulb } from 'lucide-react'
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -271,10 +270,6 @@ const ESSAY_PLANS: EssayPlan[] = [
 
 export default async function FrankensteinEssayPlansPage() {
   const board = await getServerBoard()
-  const allowedBoards = ['aqa', 'edexcel', 'ocr']
-  if (board && !allowedBoards.includes(board)) {
-    redirect('/revision/texts')
-  }
 
   const tEssayTpl = await t('rev.texts.common.essay_n')
   const tIntroduction = await t('rev.texts.common.introduction')

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, BookOpen, Quote, Users, Flame, Skull } from 'lucide-react'
 
@@ -354,10 +353,6 @@ const chapters: ChapterData[] = [
 
 export default async function LotFChaptersPage() {
   const board = await getServerBoard()
-  const allowedBoards = ['aqa', 'ocr', 'eduqas']
-  if (board && !allowedBoards.includes(board)) {
-    redirect('/revision/texts')
-  }
 
   const tChapterTpl = await t('rev.texts.common.chapter_n_colon')
   const tKeyEvents = await t('rev.texts.common.key_events')

@@ -19187,6 +19187,8 @@ export const AR_MESSAGES: Record<string, string> = {
   'placement.exam_year': 'لدورة الامتحان',
   'placement.read_on': 'قُرئ',
   'textnav.back_to_board_shelf': 'كل نصوصك المقررة',
+  'textnav.off_board': 'مو ضمن مقررك',
+  'textnav.off_board_hint': 'مجلسك ما يقرر هذا النص. تقدر تقراه على أي حال.',
   'fulltext.crumb': 'النص الكامل',
   'fulltext.back_to_guide': 'رجوع لدليل الدراسة',
   'fulltext.public_domain':

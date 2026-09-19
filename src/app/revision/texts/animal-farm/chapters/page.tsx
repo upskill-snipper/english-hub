@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import {
   ArrowLeft,
@@ -342,10 +341,6 @@ const chapters: ChapterData[] = [
 
 export default async function ChaptersPage() {
   const board = await getServerBoard()
-  const allowedBoards = ['aqa', 'edexcel', 'ocr']
-  if (board && !allowedBoards.includes(board)) {
-    redirect('/revision/texts')
-  }
 
   const tChapterTpl = await t('rev.texts.common.chapter_n_colon')
   const tKeyEvents = await t('rev.texts.common.key_events')

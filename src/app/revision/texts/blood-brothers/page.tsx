@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { redirect } from 'next/navigation'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { getBoardConfig } from '@/lib/board/board-config'
@@ -525,10 +524,6 @@ const ESSAY_PROMPTS = [
 
 export default async function BloodBrothersPage() {
   const board = await getServerBoard()
-  const allowedBoards = ['edexcel', 'eduqas']
-  if (board && !allowedBoards.includes(board)) {
-    redirect('/revision/texts')
-  }
   const userBoardLabel = board ? (getBoardConfig(board)?.shortName ?? 'Edexcel') : 'Edexcel'
 
   return (

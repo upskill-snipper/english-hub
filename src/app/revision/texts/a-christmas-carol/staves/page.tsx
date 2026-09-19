@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, BookOpen, Flame, Ghost, Sparkles, Quote, Lightbulb } from 'lucide-react'
 
@@ -454,10 +453,6 @@ const staves: StaveData[] = [
 
 export default async function StavesPage() {
   const board = await getServerBoard()
-  const allowedBoards = ['aqa', 'edexcel', 'eduqas']
-  if (board && !allowedBoards.includes(board)) {
-    redirect('/revision/texts')
-  }
 
   const tStaveTpl = await t('rev.texts.common.stave_n_colon')
   const tSummaryAnalysis = await t('rev.texts.common.summary_and_analysis')

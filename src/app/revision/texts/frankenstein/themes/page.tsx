@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { redirect } from 'next/navigation'
 import { ArrowLeft, BookOpen, Lightbulb, Quote } from 'lucide-react'
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -242,10 +241,6 @@ const THEMES: ThemeStudy[] = [
 
 export default async function FrankensteinThemesPage() {
   const board = await getServerBoard()
-  const allowedBoards = ['aqa', 'edexcel', 'ocr']
-  if (board && !allowedBoards.includes(board)) {
-    redirect('/revision/texts')
-  }
 
   const tDetailedAnalysis = await t('rev.texts.common.detailed_analysis')
   const tKeyQuotations = await t('rev.texts.common.key_quotations')

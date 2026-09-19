@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, BookOpen, FileText, Lightbulb } from 'lucide-react'
 
@@ -217,10 +216,6 @@ const essayPlans: EssayPlan[] = [
 
 export default async function EssayPlansPage() {
   const board = await getServerBoard()
-  const allowedBoards = ['aqa', 'edexcel', 'ocr']
-  if (board && !allowedBoards.includes(board)) {
-    redirect('/revision/texts')
-  }
 
   const tEssayTpl = await t('rev.texts.common.essay_n')
   const tQuestion = await t('rev.texts.common.question')

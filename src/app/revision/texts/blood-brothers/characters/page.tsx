@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, Drama, Quote, Sparkles, Users } from 'lucide-react'
 
@@ -215,10 +214,6 @@ const CHARACTERS: CharacterProfile[] = [
 
 export default async function BloodBrothersCharactersPage() {
   const board = await getServerBoard()
-  const allowedBoards = ['edexcel', 'eduqas']
-  if (board && !allowedBoards.includes(board)) {
-    redirect('/revision/texts')
-  }
 
   // Pre-resolve chrome labels used inside .map() callbacks.
   const overviewLabel = await t('rev.texts.common.overview')

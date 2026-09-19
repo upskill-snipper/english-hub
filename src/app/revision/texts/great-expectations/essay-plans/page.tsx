@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { redirect } from 'next/navigation'
 import { ArrowLeft, BookOpen, FileText, Lightbulb, Quote } from 'lucide-react'
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
@@ -266,9 +265,6 @@ const ESSAY_PLANS: EssayPlan[] = [
 
 export default async function GreatExpectationsEssayPlansPage() {
   const board = await getServerBoard()
-  if (board && board !== 'aqa') {
-    redirect('/revision/texts')
-  }
 
   // Pre-resolve chrome labels used inside .map() callbacks.
   const essayNTpl = await t('rev.texts2.common.essay_n')

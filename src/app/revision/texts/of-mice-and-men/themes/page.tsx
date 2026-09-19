@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, BookOpen, Lightbulb, Quote, Sparkles } from 'lucide-react'
 
@@ -228,10 +227,6 @@ const THEMES: ThemeData[] = [
 
 export default async function OfMiceAndMenThemesPage() {
   const board = await getServerBoard()
-  const allowedBoards = ['edexcel-igcse']
-  if (board && !allowedBoards.includes(board)) {
-    redirect('/revision/texts')
-  }
 
   // Pre-resolve chrome labels used inside .map() callbacks.
   const backLabel = (await tx('rev.texts.common.back_to_text')).replace('{text}', 'Of Mice and Men')

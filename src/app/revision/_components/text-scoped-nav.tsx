@@ -42,7 +42,7 @@ import {
 
 import { useT } from '@/lib/i18n/use-t'
 import { buildTextNav, type TextNavIcon } from '@/lib/revision/text-nav'
-import { getSetText } from '@/lib/board/set-texts'
+import { getSetText, textAvailableForBoard } from '@/lib/board/set-texts'
 import { PLACEHOLDER_TEXT_SLUGS } from '@/lib/revision/placeholder-texts.generated'
 import { markingLink } from '@/lib/marking/submit-prefill'
 import { useBoard } from '@/hooks/useBoard'
@@ -89,6 +89,20 @@ export function TextScopedNav({ slug, onNavigate }: { slug: string; onNavigate?:
   const { board, isHydrated } = useBoard()
   const backHref = board && isHydrated ? boardShelfHref(board) : '/revision/texts'
 
+  // Is this text on the student's own course?
+  //
+  // UNTIL 20 September 2026 THE ANSWER WAS A REDIRECT. Eighty-two text pages
+  // carried a hard-coded board allowlist and bounced anyone outside it to
+  // /revision/texts. A KS3 student clicking Macbeth was thrown to an index
+  // headed "Your KS3 Set Texts" - which is empty, because KS3 prescribes none -
+  // so the answer to "show me this text" was a page about having no texts.
+  // Several of those allowlists were wrong as well: the Great Expectations
+  // pages allowed AQA alone, and five boards set it.
+  //
+  // A student who clicks a text should see the text. So they do, and this says
+  // plainly that it is not on their course rather than silently moving them.
+  const offBoard = Boolean(board) && isHydrated && !textAvailableForBoard(slug, board)
+
   // The title comes from the set-text register, which is the same source the
   // page headings use. Falling back to the slug would print "a-christmas-carol"
   // in a sidebar, so we fall back to nothing and let the eyebrow carry it.
@@ -133,6 +147,13 @@ export function TextScopedNav({ slug, onNavigate }: { slug: string; onNavigate?:
           {board && isHydrated ? t('textnav.back_to_board_shelf') : t('textnav.back_to_shelf')}
         </Link>
       </div>
+
+      {offBoard && (
+        <p className="mb-3 rounded-2xl border border-amber-500/40 bg-amber-500/[0.06] p-3 text-xs leading-relaxed">
+          <span className="block font-medium text-foreground">{t('textnav.off_board')}</span>
+          <span className="block text-muted-foreground">{t('textnav.off_board_hint')}</span>
+        </p>
+      )}
 
       {/* The AI marker, scoped to this text.
 

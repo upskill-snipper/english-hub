@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { redirect } from 'next/navigation'
 import { ArrowLeft, BookOpen, Feather, Lightbulb, Quote, Target } from 'lucide-react'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
@@ -375,10 +374,6 @@ const essayPlans: EssayPlan[] = [
 
 export default async function JekyllEssayPlansPage() {
   const board = await getServerBoard()
-  const allowedBoards = ['aqa', 'edexcel', 'ocr', 'eduqas']
-  if (board && !allowedBoards.includes(board)) {
-    redirect('/revision/texts')
-  }
 
   // Pre-resolve chrome labels used inside .map() callbacks.
   const keyQuotationsLabel = await t('rev.texts.common.key_quotations')

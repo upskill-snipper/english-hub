@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { redirect } from 'next/navigation'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { getBoardConfig } from '@/lib/board/board-config'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
@@ -707,9 +706,6 @@ const ESSAY_PROMPTS = [
 
 export default async function MacbethPage() {
   const board = await getServerBoard()
-  if (board && !['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'].includes(board)) {
-    redirect('/revision/texts')
-  }
   const userBoardLabel = board ? (getBoardConfig(board)?.shortName ?? 'AQA') : 'AQA'
   const ao2ReadingLabel = await t('rev.texts.macbeth.ao2_reading_label')
   const openGuideLabel = await t('rev.texts.common.open_guide')

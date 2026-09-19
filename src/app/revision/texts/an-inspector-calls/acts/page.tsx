@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 import Link from 'next/link'
-import { redirect } from 'next/navigation'
 import {
   ArrowLeft,
   BookOpen,
@@ -391,10 +390,6 @@ const acts: ActData[] = [
 
 export default async function ActsPage() {
   const board = await getServerBoard()
-  const allowedBoards = ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse']
-  if (board && !allowedBoards.includes(board)) {
-    redirect('/revision/texts')
-  }
   const locale = await readServerLocale()
   const isAr = locale === 'ar'
   const pick = (en: string, ar?: string) => (isAr && ar ? ar : en)

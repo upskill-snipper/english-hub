@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, Drama, FileText, Quote, Sparkles } from 'lucide-react'
 
@@ -259,10 +258,6 @@ const ESSAY_PLANS: EssayPlan[] = [
 
 export default async function BloodBrothersEssayPlansPage() {
   const board = await getServerBoard()
-  const allowedBoards = ['edexcel', 'eduqas']
-  if (board && !allowedBoards.includes(board)) {
-    redirect('/revision/texts')
-  }
 
   // Pre-resolve chrome labels used inside .map() callbacks.
   const planNTpl = await t('rev.texts2.common.plan_n')

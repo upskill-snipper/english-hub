@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { redirect } from 'next/navigation'
 import { ArrowLeft, BookOpen, Sparkles } from 'lucide-react'
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -240,10 +239,6 @@ const CHAPTERS: ChapterAnalysis[] = [
 
 export default async function PrideAndPrejudiceChaptersPage() {
   const board = await getServerBoard()
-  const allowedBoards = ['aqa', 'edexcel', 'ocr', 'eduqas']
-  if (board && !allowedBoards.includes(board)) {
-    redirect('/revision/texts')
-  }
 
   const keyQuotationsLabel = await t('rev.textgrp4.common.key_quotations')
   const whyChapterMattersLabel = await t('rev.textgrp4.common.why_chapter_matters')

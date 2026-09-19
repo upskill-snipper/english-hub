@@ -191,6 +191,17 @@ export const TEXT_NAV_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Todos tus textos prescritos',
   },
 
+  'textnav.off_board': {
+    en: 'Not on your course',
+    ar: 'مو ضمن مقررك',
+    es: 'No está en tu curso',
+  },
+  'textnav.off_board_hint': {
+    en: 'Your board does not set this text. You can still read it.',
+    ar: 'مجلسك ما يقرر هذا النص. تقدر تقراه على أي حال.',
+    es: 'Tu junta no incluye este texto. Puedes leerlo igualmente.',
+  },
+
   // ── Full public-domain texts ─────────────────────────────────────────────
   'fulltext.crumb': {
     en: 'Full text',

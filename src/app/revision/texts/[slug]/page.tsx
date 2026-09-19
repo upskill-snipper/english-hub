@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { isStubSetText } from '@/lib/seo/set-text-stubs'
 import { ExamPlacementCard } from '@/components/revision/exam-placement-card'
-import { notFound, redirect } from 'next/navigation'
+import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import {
   ArrowLeft,
@@ -196,9 +196,6 @@ export default async function TextStudyGuidePage({ params }: { params: Promise<P
   // ── Board guard (STRICT) ────────────────────────────────────────────
   // Redirect to the texts hub if the user's board does not study this text.
   const board = await getServerBoard()
-  if (board && !textAvailableForBoard(slug, board)) {
-    redirect('/revision/texts')
-  }
 
   const text = getSetText(slug)
 

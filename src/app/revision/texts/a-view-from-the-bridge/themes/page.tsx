@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, Drama, Lightbulb, Quote, Sparkles } from 'lucide-react'
 
@@ -211,10 +210,6 @@ const THEMES: ThemeData[] = [
 
 export default async function AViewFromTheBridgeThemesPage() {
   const board = await getServerBoard()
-  const allowedBoards = ['edexcel-igcse']
-  if (board && !allowedBoards.includes(board)) {
-    redirect('/revision/texts')
-  }
 
   const overviewLabel = await t('rev.texts.common.overview')
   const howMillerLabel = await t('rev.texts.grp3.common.how_miller_presents_it_h')

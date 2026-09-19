@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, Lightbulb, Quote, Flame, Shield, Skull, Eye } from 'lucide-react'
 
@@ -253,10 +252,6 @@ const symbols: SymbolData[] = [
 
 export default async function LotFThemesPage() {
   const board = await getServerBoard()
-  const allowedBoards = ['aqa', 'ocr', 'eduqas']
-  if (board && !allowedBoards.includes(board)) {
-    redirect('/revision/texts')
-  }
 
   const tKeyPoints = await t('rev.texts.common.key_points')
   const tWritersMethods = await t('rev.texts.common.writers_methods')

@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { redirect } from 'next/navigation'
 import {
   ArrowLeft,
   ArrowRight,
@@ -274,10 +273,6 @@ const essayPlans: EssayPlan[] = [
 
 export default async function EssayPlansPage() {
   const board = await getServerBoard()
-  const allowedBoards = ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse']
-  if (board && !allowedBoards.includes(board)) {
-    redirect('/revision/texts')
-  }
 
   const tEssayTpl = await t('rev.texts.common.essay_n')
   const tThesis = await t('rev.texts.common.thesis')

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, BookOpen, Users } from 'lucide-react'
 
@@ -272,10 +271,6 @@ const characters: CharacterData[] = [
 
 export default async function CharactersPage() {
   const board = await getServerBoard()
-  const allowedBoards = ['aqa', 'edexcel', 'ocr']
-  if (board && !allowedBoards.includes(board)) {
-    redirect('/revision/texts')
-  }
 
   const tAllegoricalSig = await t('rev.texts.common.allegorical_significance')
   const tRoleInNovel = await t('rev.texts.common.role_in_novel')

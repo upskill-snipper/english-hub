@@ -20189,6 +20189,8 @@ export const ES_MESSAGES: Record<string, string> = {
   'placement.exam_year': 'Para la convocatoria',
   'placement.read_on': 'consultado',
   'textnav.back_to_board_shelf': 'Todos tus textos prescritos',
+  'textnav.off_board': 'No está en tu curso',
+  'textnav.off_board_hint': 'Tu junta no incluye este texto. Puedes leerlo igualmente.',
   'fulltext.crumb': 'Texto completo',
   'fulltext.back_to_guide': 'Volver a la guía de estudio',
   'fulltext.public_domain':

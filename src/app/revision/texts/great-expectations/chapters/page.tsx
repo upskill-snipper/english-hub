@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { redirect } from 'next/navigation'
 import { ArrowLeft, BookOpen, MapPin } from 'lucide-react'
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
@@ -161,9 +160,6 @@ const CHAPTERS: ChapterAnalysis[] = [
 
 export default async function GreatExpectationsChaptersPage() {
   const board = await getServerBoard()
-  if (board && board !== 'aqa') {
-    redirect('/revision/texts')
-  }
 
   // Pre-resolve chrome labels used inside .map() callbacks.
   const whatHappensLabel = await t('rev.texts2.common.what_happens')

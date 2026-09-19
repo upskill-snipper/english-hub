@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import {
   ArrowLeft,
@@ -264,10 +263,6 @@ const themes: ThemeData[] = [
 
 export default async function ThemesPage() {
   const board = await getServerBoard()
-  const allowedBoards = ['aqa', 'edexcel', 'ocr']
-  if (board && !allowedBoards.includes(board)) {
-    redirect('/revision/texts')
-  }
 
   const tOverview = await t('rev.texts.common.overview')
   const tKeyPoints = await t('rev.texts.common.key_points')

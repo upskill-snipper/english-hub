@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, Drama, Quote, Sparkles, Users } from 'lucide-react'
 
@@ -211,10 +210,6 @@ const CHARACTERS: CharacterProfile[] = [
 
 export default async function AViewFromTheBridgeCharactersPage() {
   const board = await getServerBoard()
-  const allowedBoards = ['edexcel-igcse']
-  if (board && !allowedBoards.includes(board)) {
-    redirect('/revision/texts')
-  }
 
   const overviewLabel = await t('rev.texts.common.overview')
   const characterArcLabel = await t('rev.texts.grp3.common.character_arc_h')

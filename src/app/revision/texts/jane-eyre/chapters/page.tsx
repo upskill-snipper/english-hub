@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, BookOpen, Sparkles, Quote } from 'lucide-react'
 
@@ -272,9 +271,6 @@ const chapters: ChapterAnalysis[] = [
 
 export default async function JaneEyreChaptersPage() {
   const board = await getServerBoard()
-  if (board && !['aqa', 'ocr'].includes(board)) {
-    redirect('/revision/texts')
-  }
 
   const significanceLabel = await t('rev.textgrp4.common.significance')
   const keyEventsLabel = await t('rev.textgrp4.common.key_events')

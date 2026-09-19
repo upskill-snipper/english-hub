@@ -1,7 +1,6 @@
 import { t as _trServer } from '@/lib/i18n/t'
 import { STRINGS as _EAL_STRINGS } from './content'
 import Link from 'next/link'
-import { redirect } from 'next/navigation'
 import { ArrowLeft, ArrowRight, BookOpen, MessageSquare, Sparkles } from 'lucide-react'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
@@ -35,9 +34,6 @@ export default async function MacbethAct2Page() {
   // server-side t() helper resolves the locale from the request header.
 
   const board = await getServerBoard()
-  if (board && !['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'].includes(board)) {
-    redirect('/revision/texts')
-  }
 
   return (
     <div className="space-y-10 pb-16">

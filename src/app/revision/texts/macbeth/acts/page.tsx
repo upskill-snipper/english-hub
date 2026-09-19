@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { redirect } from 'next/navigation'
 import { ArrowLeft, BookOpen, Drama, Feather, Quote, Sparkles } from 'lucide-react'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
@@ -1205,9 +1204,6 @@ const ACTS: Act[] = [
 
 export default async function MacbethActsPage() {
   const board = await getServerBoard()
-  if (board && !['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'].includes(board)) {
-    redirect('/revision/texts')
-  }
 
   const actNLabel = await t('rev.texts.common.act_n')
   const languageTechniquesLabel = await t('rev.texts.common.language_techniques')

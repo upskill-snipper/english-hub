@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { redirect } from 'next/navigation'
 import { ArrowLeft, BookOpen, Quote, Lightbulb } from 'lucide-react'
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
@@ -256,10 +255,6 @@ const CHAPTERS: ChapterAnalysis[] = [
 
 export default async function FrankensteinChaptersPage() {
   const board = await getServerBoard()
-  const allowedBoards = ['aqa', 'edexcel', 'ocr']
-  if (board && !allowedBoards.includes(board)) {
-    redirect('/revision/texts')
-  }
 
   const tSummaryAnalysis = await t('rev.texts.common.summary_and_analysis')
   const tKeyQuotations = await t('rev.texts.common.key_quotations')

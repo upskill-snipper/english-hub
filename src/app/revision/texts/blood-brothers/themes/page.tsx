@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, Drama, Lightbulb, Quote, Sparkles } from 'lucide-react'
 
@@ -210,10 +209,6 @@ const THEMES: ThemeData[] = [
 
 export default async function BloodBrothersThemesPage() {
   const board = await getServerBoard()
-  const allowedBoards = ['edexcel', 'eduqas']
-  if (board && !allowedBoards.includes(board)) {
-    redirect('/revision/texts')
-  }
 
   // Pre-resolve chrome labels used inside .map() callbacks.
   const overviewLabel = await tx('rev.texts.common.overview')

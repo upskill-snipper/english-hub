@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { redirect } from 'next/navigation'
 import { ArrowLeft, BookOpen, Sparkles, Users } from 'lucide-react'
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
@@ -264,10 +263,6 @@ const CHARACTERS: CharacterProfile[] = [
 
 export default async function PrideAndPrejudiceCharactersPage() {
   const board = await getServerBoard()
-  const allowedBoards = ['aqa', 'edexcel', 'ocr', 'eduqas']
-  if (board && !allowedBoards.includes(board)) {
-    redirect('/revision/texts')
-  }
 
   const characterDevelopmentLabel = await t('rev.textgrp4.common.character_development')
   const keyQuotationsLabel = await t('rev.textgrp4.common.key_quotations')

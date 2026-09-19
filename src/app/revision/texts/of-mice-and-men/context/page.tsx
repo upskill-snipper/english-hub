@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, BookOpen, Clock, Globe, Quote, Sparkles, Users } from 'lucide-react'
 
@@ -126,10 +125,6 @@ const ICON_MAP = {
 
 export default async function OfMiceAndMenContextPage() {
   const board = await getServerBoard()
-  const allowedBoards = ['edexcel-igcse']
-  if (board && !allowedBoards.includes(board)) {
-    redirect('/revision/texts')
-  }
 
   // Pre-resolve chrome labels used inside .map() callbacks.
   const backLabel = (await t('rev.texts.common.back_to_text')).replace('{text}', 'Of Mice and Men')

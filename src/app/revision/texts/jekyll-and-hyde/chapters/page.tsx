@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 import Link from 'next/link'
-import { redirect } from 'next/navigation'
 import { ArrowLeft, BookOpen, Feather, Users, Layers, Quote } from 'lucide-react'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
@@ -604,10 +603,6 @@ const chapters: ChapterData[] = [
 
 export default async function JekyllChaptersPage() {
   const board = await getServerBoard()
-  const allowedBoards = ['aqa', 'edexcel', 'ocr', 'eduqas']
-  if (board && !allowedBoards.includes(board)) {
-    redirect('/revision/texts')
-  }
   const h = await headers()
   const isAr = h.get('x-lang') === 'ar'
   const pickStr = (en: string, ar?: string) => (isAr && ar ? ar : en)

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, BookOpen, Drama, Quote, Sparkles } from 'lucide-react'
 
@@ -193,10 +192,6 @@ const ACT_2: SceneBlock[] = [
 
 export default async function BloodBrothersActsPage() {
   const board = await getServerBoard()
-  const allowedBoards = ['edexcel', 'eduqas']
-  if (board && !allowedBoards.includes(board)) {
-    redirect('/revision/texts')
-  }
 
   // Pre-resolve chrome labels used inside .map() callbacks.
   const examFocusLabel = await t('rev.texts2.common.exam_focus')

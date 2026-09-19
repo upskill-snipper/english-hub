@@ -1,6 +1,5 @@
 // DRAFT - AWAITING ENGLISH-TEACHER REVIEW
 import type { Metadata } from 'next'
-import { redirect } from 'next/navigation'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
@@ -162,10 +161,6 @@ const data: TextGuideData = {
 
 export default async function PigeonEnglishPage() {
   const board = await getServerBoard()
-  const allowedBoards = ['aqa']
-  if (board && !allowedBoards.includes(board)) {
-    redirect('/revision/texts')
-  }
 
   return (
     <>

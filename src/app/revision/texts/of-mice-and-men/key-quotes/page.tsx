@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, BookOpen, Quote, Sparkles } from 'lucide-react'
 
@@ -267,10 +266,6 @@ const KEY_QUOTES: KeyQuote[] = [
 
 export default async function OfMiceAndMenKeyQuotesPage() {
   const board = await getServerBoard()
-  const allowedBoards = ['edexcel-igcse']
-  if (board && !allowedBoards.includes(board)) {
-    redirect('/revision/texts')
-  }
 
   const backLabel = (await t('rev.texts.common.back_to_text')).replace('{text}', 'Of Mice and Men')
 

@@ -19688,6 +19688,8 @@ export const EN_MESSAGES: Record<string, string> = {
   'placement.exam_year': 'For the exam series',
   'placement.read_on': 'read',
   'textnav.back_to_board_shelf': 'All your set texts',
+  'textnav.off_board': 'Not on your course',
+  'textnav.off_board_hint': 'Your board does not set this text. You can still read it.',
   'fulltext.crumb': 'Full text',
   'fulltext.back_to_guide': 'Back to the study guide',
   'fulltext.public_domain':

@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { redirect } from 'next/navigation'
 import { ArrowLeft, BookOpen, Drama, MessageSquareQuote, Sparkles } from 'lucide-react'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
@@ -386,10 +385,6 @@ const acts: ActData[] = [
 
 export default async function RomeoAndJulietActsPage() {
   const board = await getServerBoard()
-  const allowedBoards = ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse']
-  if (board && !allowedBoards.includes(board)) {
-    redirect('/revision/texts')
-  }
 
   const actNLabel = await t('rev.texts.common.act_n')
   const actNSceneLabel = await t('rev.texts.common.act_n_scene_s')

@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { redirect } from 'next/navigation'
 import { ArrowLeft, BookOpen, Lightbulb, Quote } from 'lucide-react'
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -246,9 +245,6 @@ const THEMES: ThemeAnalysis[] = [
 
 export default async function GreatExpectationsThemesPage() {
   const board = await getServerBoard()
-  if (board && board !== 'aqa') {
-    redirect('/revision/texts')
-  }
 
   // Pre-resolve chrome labels used inside .map() callbacks.
   const howDickensLabel = await t('rev.texts2.ge.themes.how_dickens')
