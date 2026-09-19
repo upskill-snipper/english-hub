@@ -19,7 +19,7 @@
 // CTA plus an `href` the UI can link to.
 //
 // ── WHERE THOSE hrefs USED TO GO ────────────────────────────────────────────
-// Nowhere. Checked against src/app on 20 September 2026: /poems/<slug>,
+// Nowhere. Checked against src/app on 19 September 2026: /poems/<slug>,
 // /texts/<slug>, /revision/quiz/<slug> and /reading/comprehension are not
 // routes this application has ever served, so heuristics 1 to 4 produced a
 // correctly prioritised list of 404s. Destinations now come from

@@ -8,7 +8,7 @@
  * guard.
  *
  * That was fine while only the guard needed it. It stopped being fine on
- * 20 September 2026, when the text-scoped rail started rendering on those pages
+ * 19 September 2026, when the text-scoped rail started rendering on those pages
  * and answering "is this text on your course?". Resolving `christmas-carol`
  * against SET_TEXTS finds nothing, so the rail was about to tell an AQA student
  * that A Christmas Carol is not on their course - a text all four UK boards

@@ -92,7 +92,7 @@ export function TextScopedNav({ slug, onNavigate }: { slug: string; onNavigate?:
 
   // Is this text on the student's own course?
   //
-  // UNTIL 20 September 2026 THE ANSWER WAS A REDIRECT. Eighty-two text pages
+  // UNTIL 19 September 2026 THE ANSWER WAS A REDIRECT. Eighty-two text pages
   // carried a hard-coded board allowlist and bounced anyone outside it to
   // /revision/texts. A KS3 student clicking Macbeth was thrown to an index
   // headed "Your KS3 Set Texts" - which is empty, because KS3 prescribes none -

@@ -4,7 +4,7 @@
  *
  * WHAT BROKE. Every personalised recommendation the engine could produce
  * pointed at a route this application has never served. Verified against
- * `src/app` on 20 September 2026:
+ * `src/app` on 19 September 2026:
  *
  *   /poems/<slug>          there is no /poems tree at all. Poems live at
  *                          /revision/poetry/<cluster>/<slug>, and the cluster
