@@ -7,6 +7,7 @@ import { isAiOptedOut } from '@/lib/ai-preferences'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { MARK_SCHEMES, type MarkScheme } from '@/lib/marking/mark-schemes'
+import { resolvePrefill } from '@/lib/marking/submit-prefill'
 import { isSpecVerified } from '@/lib/marking/examiner/verification'
 import { useT } from '@/lib/i18n/use-t'
 import { DictationButton } from '@/components/speech/DictationButton'
@@ -218,6 +219,10 @@ export default function SubmitEssayPage() {
   const [paper, setPaper] = useState<string>('')
   const [question, setQuestion] = useState<string>('')
   const [title, setTitle] = useState<string>('')
+  // The text the answer is about. The marking API has accepted `studiedText`
+  // all along, persists it, and marker.ts injects it into the prompt as
+  // context - and this page never sent it. See the prefill effect below.
+  const [studiedText, setStudiedText] = useState<string>('')
   const [essay, setEssay] = useState<string>('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -255,6 +260,38 @@ export default function SubmitEssayPage() {
     [selectedPaper],
   )
 
+  /**
+   * Prefill the form from the URL, once, on mount.
+   *
+   * WHY `window.location` RATHER THAN `useSearchParams`. useSearchParams forces
+   * a Suspense boundary and opts the route out of static rendering. Reading the
+   * query on mount is exactly as correct here, because a prefill is a
+   * client-side convenience by definition, and it costs the route nothing.
+   *
+   * The resolution itself lives in resolvePrefill() so it can be tested without
+   * a browser, and so that everything is validated against the live registry in
+   * one pass rather than through the board -> paper -> question state chain,
+   * which needs three renders to settle and can half-apply. See that file for
+   * why nothing here is trusted.
+   *
+   * It never overwrites the student: each setter only fills a field that is
+   * still empty.
+   */
+  useEffect(() => {
+    let params: URLSearchParams
+    try {
+      params = new URLSearchParams(window.location.search)
+    } catch {
+      return
+    }
+    const prefill = resolvePrefill(params, boardOptions, Object.values(MARK_SCHEMES))
+    if (prefill.board) setBoard((current) => current || prefill.board!)
+    if (prefill.paper) setPaper((current) => current || prefill.paper!)
+    if (prefill.question) setQuestion((current) => current || prefill.question!)
+    if (prefill.title) setTitle((current) => current || prefill.title!)
+    if (prefill.studiedText) setStudiedText((current) => current || prefill.studiedText!)
+  }, [boardOptions])
+
   const wordCount = countWords(essay)
   const canSubmit =
     Boolean(selectedBoard?.available) &&
@@ -285,6 +322,7 @@ export default function SubmitEssayPage() {
       paper: string
       questionText: string
       questionType?: string
+      studiedText?: string
       studentAnswer: string
       markSchemeId: string
       questionId: string
@@ -305,6 +343,7 @@ export default function SubmitEssayPage() {
             paper: args.paper,
             questionText: args.questionText,
             questionType: args.questionType,
+            studiedText: args.studiedText,
             studentAnswer: args.studentAnswer,
             markSchemeId: args.markSchemeId,
             questionId: args.questionId,
@@ -424,6 +463,7 @@ export default function SubmitEssayPage() {
         paper: paperLabel,
         questionText: questionLabel,
         questionType,
+        studiedText: studiedText.trim() || undefined,
         studentAnswer: essay,
         markSchemeId,
         questionId: question,
