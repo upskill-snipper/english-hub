@@ -1,4 +1,27 @@
 // @ts-nocheck
+//
+// ── UNVERIFIED. NOT A MARK SCHEME. (EXAM-9, 20 September 2026) ──────────────
+//
+// This is the SECOND of two mark-scheme corpora in this repository. The other,
+// src/lib/marking/mark-schemes/, is what the AI marker and the examiner tool
+// read, and it carries a verification registry recording which papers have
+// been checked against a board's published specification.
+//
+// This file has never been checked against anything. It is hand-authored, it
+// is opted out of type checking by the line above, and the September audit
+// found entries filed under papers they do not appear on - among them a
+// "Q3 - Language analysis in detail" and a "Section C - Unseen poetry" on AQA
+// Paper 1. Level counts and tariffs disagree with the published papers in
+// several places.
+//
+// It is rendered to TEACHERS by src/components/school/MarkSchemeViewer.tsx,
+// which now says so on screen and on the printed copy. That notice is the only
+// reason this file is still safe to ship; if you remove it, remove this too.
+//
+// The standing intention (EXAM-9) is to retire this corpus and drive the
+// viewer from the verified registry. That is a larger change than a caveat,
+// and a caveat that is true today beats a rewrite that is half-finished.
+//
 /**
  * Question-level marking guide data for all GCSE English exam boards.
  * Each entry describes a single question with its level descriptors,

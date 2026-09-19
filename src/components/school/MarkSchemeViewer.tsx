@@ -269,6 +269,35 @@ export function MarkSchemeViewer() {
         )}
       </div>
 
+      {/* ── What this reference is, and is not (EXAM-9) ──────────────────────
+          NOT `print:hidden`. A teacher can print this and mark from the paper
+          afterwards, and the caveat has to survive that; it is on the printed
+          copy that it matters most.
+
+          `src/lib/marking/examiner/verification.ts` sets the rule for this
+          product: a scheme is verified only when someone has put it beside the
+          board's published material, and "everything else is unverified and
+          says so, loudly, on every surface a teacher can reach". This is such
+          a surface and it said nothing.
+
+          The data behind it, `src/data/mark-scheme-questions.ts`, is a
+          hand-authored second corpus that has never been checked against any
+          specification, carries `@ts-nocheck`, and the September audit found
+          entries in it that do not exist on the papers they are filed under.
+          The AI marker does not use this file - it reads the verified registry
+          - so the two can and do disagree. */}
+      <div className="rounded-lg border border-amber-500/40 bg-amber-500/[0.06] p-4">
+        <p className="flex items-start gap-2 text-sm font-medium text-foreground">
+          <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" aria-hidden="true" />
+          These criteria have not been checked against the boards&rsquo; published specifications.
+        </p>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Treat them as a teaching aid, not as a mark scheme. Some question numbers, tariffs and
+          level boundaries here are known not to match the real papers, so check the board&rsquo;s
+          own documents before awarding a mark. AI marking does not use this reference.
+        </p>
+      </div>
+
       {/* Filters */}
       <Card className="print:hidden">
         <CardContent className="pt-5">
