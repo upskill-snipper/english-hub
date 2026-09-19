@@ -20,6 +20,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'never-let-me-go',
   title: 'Never Let Me Go',
   author: 'Kazuo Ishiguro',
   year: 'published 2005',

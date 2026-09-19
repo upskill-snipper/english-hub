@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'othello',
   title: 'Othello',
   author: 'William Shakespeare',
   year: 'c. 1603',

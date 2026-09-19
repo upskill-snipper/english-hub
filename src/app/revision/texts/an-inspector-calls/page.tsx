@@ -57,6 +57,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'an-inspector-calls',
   title: 'An Inspector Calls',
   author: 'J.B. Priestley',
   year: 'Written 1944-45; first performed Moscow 1945; London premiere 1 Oct 1946',

@@ -57,6 +57,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'jekyll-and-hyde',
   title: 'Strange Case of Dr Jekyll and Mr Hyde',
   author: 'Robert Louis Stevenson',
   year: '1886',

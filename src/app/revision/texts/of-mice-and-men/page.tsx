@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'of-mice-and-men',
   title: 'Of Mice and Men',
   author: 'John Steinbeck',
   year: 'published 1937',

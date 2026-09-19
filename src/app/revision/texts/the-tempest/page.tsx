@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'the-tempest',
   title: 'The Tempest',
   author: 'William Shakespeare',
   year: 'c. 1610\u201311',

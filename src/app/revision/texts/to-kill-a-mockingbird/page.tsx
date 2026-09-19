@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'to-kill-a-mockingbird',
   title: 'To Kill a Mockingbird',
   author: 'Harper Lee',
   year: 'published 1960',

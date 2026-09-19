@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'animal-farm',
   title: 'Animal Farm',
   author: 'George Orwell',
   year: 'published 1945',

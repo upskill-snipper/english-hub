@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'the-sign-of-four',
   title: 'The Sign of the Four',
   author: 'Arthur Conan Doyle',
   year: '1890',

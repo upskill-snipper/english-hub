@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'julius-caesar',
   title: 'Julius Caesar',
   author: 'William Shakespeare',
   year: '1599',

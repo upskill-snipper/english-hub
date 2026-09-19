@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'great-expectations',
   title: 'Great Expectations',
   author: 'Charles Dickens',
   year: '1860\u201361',

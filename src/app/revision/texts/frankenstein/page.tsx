@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'frankenstein',
   title: 'Frankenstein',
   author: 'Mary Shelley',
   year: '1818',

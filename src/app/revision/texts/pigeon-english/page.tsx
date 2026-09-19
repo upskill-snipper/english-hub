@@ -20,6 +20,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'pigeon-english',
   title: 'Pigeon English',
   author: 'Stephen Kelman',
   year: 'published 2011',

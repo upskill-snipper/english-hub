@@ -20,6 +20,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'anita-and-me',
   title: 'Anita and Me',
   author: 'Meera Syal',
   year: 'published 1996',

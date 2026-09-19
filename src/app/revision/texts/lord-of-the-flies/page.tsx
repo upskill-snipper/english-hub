@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'lord-of-the-flies',
   title: 'Lord of the Flies',
   author: 'William Golding',
   year: 'published 1954',

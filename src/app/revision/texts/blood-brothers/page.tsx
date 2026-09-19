@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'blood-brothers',
   title: 'Blood Brothers',
   author: 'Willy Russell',
   year: 'first staged 1983',

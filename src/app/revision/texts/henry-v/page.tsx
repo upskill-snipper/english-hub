@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'henry-v',
   title: 'Henry V',
   author: 'William Shakespeare',
   year: 'c. 1599',

@@ -21,6 +21,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'the-merchant-of-venice',
   title: 'The Merchant of Venice',
   author: 'William Shakespeare',
   year: 'c. 1596\u201397',

@@ -24,6 +24,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'the-great-gatsby',
   title: 'The Great Gatsby',
   author: 'F. Scott Fitzgerald',
   year: '1925',

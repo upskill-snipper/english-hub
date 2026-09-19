@@ -21,6 +21,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'things-fall-apart',
   title: 'Things Fall Apart',
   author: 'Chinua Achebe',
   year: 'published 1958',

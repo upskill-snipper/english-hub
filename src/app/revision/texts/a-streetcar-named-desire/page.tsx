@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'a-streetcar-named-desire',
   title: 'A Streetcar Named Desire',
   author: 'Tennessee Williams',
   year: '1947',

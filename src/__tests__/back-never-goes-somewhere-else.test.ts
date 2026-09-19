@@ -177,3 +177,70 @@ describe('the board ids used here are real', () => {
     expect(readdirSync(join(ROOT, 'src/app/revision/texts')).length).toBeGreaterThan(50)
   })
 })
+
+describe('the thirty-three static guides, which had the same link hard-coded', () => {
+  // TextGuide renders every one of these and its back button was
+  // href="/revision/texts", board-unaware. That destination was honest, so this
+  // is not the reported defect - but it sat beside a rail offering the reader
+  // their own shelf, so one page gave two different answers to "how do I get
+  // out of here".
+  const DIR = join(ROOT, 'src/app/revision/texts')
+  const pages = readdirSync(DIR, { withFileTypes: true })
+    .filter((d) => d.isDirectory() && !d.name.startsWith('[') && !d.name.startsWith('_'))
+    .map((d) => ({ slug: d.name, file: join(DIR, d.name, 'page.tsx') }))
+    .filter((p) => {
+      try {
+        return readFileSync(p.file, 'utf8').includes('const data: TextGuideData = {')
+      } catch {
+        return false
+      }
+    })
+
+  it('there are enough of them for this to mean something', () => {
+    expect(pages.length).toBeGreaterThanOrEqual(30)
+  })
+
+  it.each(pages.map((p) => [p.slug, p.file]))(
+    '%s declares its OWN slug, not a copied one',
+    (slug, file) => {
+      // The real risk in a thirty-three file edit. A page carrying a
+      // neighbour's slug still compiles, still renders, and sends the reader to
+      // a shelf chosen for a different text - which is the defect this whole
+      // change is about, reintroduced one page at a time.
+      const declared = readFileSync(file, 'utf8').match(
+        /const data: TextGuideData = \{\s+slug: '([^']+)'/,
+      )
+      expect(declared?.[1], `${slug} declares ${declared?.[1]}`).toBe(slug)
+    },
+  )
+
+  it('and every declared slug is a real set text', () => {
+    const known = new Set(SET_TEXTS.map((t) => t.slug))
+    const unknown = pages.filter((p) => !known.has(p.slug)).map((p) => p.slug)
+    expect(unknown).toEqual([])
+  })
+
+  it('TextGuide resolves the destination rather than hard-coding it', () => {
+    const guide = readFileSync(
+      join(ROOT, 'src/app/revision/texts/_components/text-guide.tsx'),
+      'utf8',
+    )
+    // Comments stripped: the docblock quotes the old href in order to say it is
+    // gone, and a raw search finds the explanation rather than the defect. That
+    // has now cost two assertions in this change alone.
+    const code = guide.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*/g, '')
+    expect(code).toContain('textBackLink(data.slug, await getServerBoard())')
+    expect(code).not.toContain('href="/revision/texts"')
+  })
+
+  it('and the label follows the destination in all three locales', () => {
+    const guide = readFileSync(
+      join(ROOT, 'src/app/revision/texts/_components/text-guide.tsx'),
+      'utf8',
+    )
+    expect(guide).toMatch(/back\.isBoardShelf/)
+    // CHROME_ES is typed as `typeof CHROME_AR`, so a key missing from either
+    // map is a compile error rather than a silent English fallback.
+    expect((guide.match(/backToBoardTexts:/g) ?? []).length).toBe(2)
+  })
+})

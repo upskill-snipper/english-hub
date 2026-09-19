@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'twelfth-night',
   title: 'Twelfth Night',
   author: 'William Shakespeare',
   year: 'c. 1601\u201302',

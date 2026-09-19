@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'king-lear',
   title: 'King Lear',
   author: 'William Shakespeare',
   year: 'c. 1605\u201306',

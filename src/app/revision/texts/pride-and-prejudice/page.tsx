@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'pride-and-prejudice',
   title: 'Pride and Prejudice',
   author: 'Jane Austen',
   year: '1813',

@@ -57,6 +57,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'romeo-and-juliet',
   title: 'Romeo and Juliet',
   author: 'William Shakespeare',
   year: 'c. 1594-96',

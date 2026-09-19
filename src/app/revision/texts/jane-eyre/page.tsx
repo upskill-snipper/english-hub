@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'jane-eyre',
   title: 'Jane Eyre',
   author: 'Charlotte Bront\u00eb',
   year: '1847',

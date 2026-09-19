@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'a-view-from-the-bridge',
   title: 'A View from the Bridge',
   author: 'Arthur Miller',
   year: 'first staged 1955',

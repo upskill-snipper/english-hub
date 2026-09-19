@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'much-ado-about-nothing',
   title: 'Much Ado About Nothing',
   author: 'William Shakespeare',
   year: 'c. 1598\u201399',

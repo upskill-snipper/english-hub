@@ -57,6 +57,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'a-christmas-carol',
   title: 'A Christmas Carol',
   author: 'Charles Dickens',
   year: 'published 19 December 1843 (Chapman & Hall)',

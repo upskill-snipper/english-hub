@@ -83,6 +83,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'macbeth',
   title: 'Macbeth',
   author: 'William Shakespeare',
   year: '1606',

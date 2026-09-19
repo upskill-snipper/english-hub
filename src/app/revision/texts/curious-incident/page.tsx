@@ -20,6 +20,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'curious-incident',
   title: 'The Curious Incident of the Dog in the Night-Time',
   author: 'Mark Haddon',
   year: '2003',

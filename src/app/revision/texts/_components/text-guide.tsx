@@ -1,4 +1,6 @@
 import { headers } from 'next/headers'
+import { getServerBoard } from '@/lib/board/get-server-board'
+import { textBackLink } from '@/lib/revision/text-back-href'
 import Link from 'next/link'
 import { ContentAdvisory, type AdvisoryTheme } from '@/components/content/ContentAdvisory'
 import {
@@ -48,6 +50,14 @@ export type Theme = {
 }
 
 export type TextGuideData = {
+  /**
+   * The text's own slug, which is its directory name under
+   * /revision/texts. Required because the back link needs to know WHICH text
+   * it is leaving: see the `textBackLink` call below for the journey that made
+   * this necessary. Required rather than optional so the compiler, not a
+   * reviewer, catches the next page that forgets it.
+   */
+  slug: string
   title: string
   author: string
   year: string
@@ -117,6 +127,7 @@ const CHROME_AR = {
   quizHub: 'مركز الاختبارات',
   byAuthor: 'تأليف',
   backToTexts: 'رجوع لكل النصوص',
+  backToBoardTexts: 'رجوع لنصوصك المقررة',
   genre: 'النوع الأدبي',
   setting: 'مكان الأحداث',
   length: 'الطول',
@@ -141,6 +152,7 @@ const CHROME_ES: typeof CHROME_AR = {
   quizHub: 'Centro de cuestionarios',
   byAuthor: 'por',
   backToTexts: 'Volver a todos los textos',
+  backToBoardTexts: 'Volver a tus textos',
   genre: 'Género',
   setting: 'Ambientación',
   length: 'Extensión',
@@ -148,6 +160,14 @@ const CHROME_ES: typeof CHROME_AR = {
 }
 
 export async function TextGuide({ data }: { data: TextGuideData }) {
+  // Where "back" goes, and what it is called.
+  //
+  // This was `href="/revision/texts"`, hard-coded, on all thirty-three pages
+  // that render this component. That destination is honest - the index does
+  // hold every text - but it sat beside a rail offering the reader their own
+  // board shelf, so one page gave two different answers to "how do I get out of
+  // here". The resolver gives one, and it is the same one the rail uses.
+  const back = textBackLink(data.slug, await getServerBoard())
   const locale = await readServerLocale()
   const isAr = locale === 'ar'
   const isEs = locale === 'es'
@@ -172,10 +192,12 @@ export async function TextGuide({ data }: { data: TextGuideData }) {
             variant="ghost"
             size="sm"
             className="mb-4 -ms-2 text-muted-foreground"
-            render={<Link href="/revision/texts" />}
+            render={<Link href={back.href} />}
           >
             <ArrowLeft className="size-3.5" />
-            {c('backToTexts', 'Back to all texts')}
+            {back.isBoardShelf
+              ? c('backToBoardTexts', 'Back to your set texts')
+              : c('backToTexts', 'Back to all texts')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">

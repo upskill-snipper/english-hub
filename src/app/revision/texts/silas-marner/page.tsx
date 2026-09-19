@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 }
 
 const data: TextGuideData = {
+  slug: 'silas-marner',
   title: 'Silas Marner',
   author: 'George Eliot',
   year: '1861',
