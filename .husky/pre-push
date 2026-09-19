@@ -21,13 +21,14 @@
 #   tsc --noEmit             ~6s
 #   vitest run               ~13s
 #   verify-i18n-locales.mjs  ~1s
+#   check-route-conflicts.mjs  ~0.1s  (added 19 Sep 2026, see below)
 #
 # ESCAPE HATCH: `HUSKY=0 git push`. Husky's own dispatcher honours it, so no
 # extra code is needed here. Use it when the remote matters more than the gate -
 # and expect to explain why.
 # ────────────────────────────────────────────────────────────────────────────
 
-echo "pre-push: typecheck, tests, i18n. HUSKY=0 to skip."
+echo "pre-push: typecheck, tests, i18n, route conflicts. HUSKY=0 to skip."
 
 npx tsc --noEmit || {
   echo ""
@@ -44,6 +45,31 @@ npx vitest run || {
 node scripts/verify-i18n-locales.mjs || {
   echo ""
   echo "pre-push FAILED: verify-i18n-locales.mjs"
+  exit 1
+}
+
+# ─── Route conflicts ────────────────────────────────────────────────────────
+#
+# A sibling dynamic-segment collision (/ks3/[year]/[unit] next to
+# /ks3/[year]/[term]) took 257 of 871 production routes offline on 14 May 2026.
+# Nothing in this repository has checked for that class of fault since.
+#
+# IT IS HERE BECAUSE IT IS FREE. Measured at 92-98 ms wall on this machine,
+# node startup included, over 1,044 pages and 216 route handlers - a filesystem
+# walk that opens no files. Against the ~20 s the gate already costs, it does
+# not register. The brief was to add it only if it came in under about two
+# seconds; it came in under one tenth of one.
+#
+# ITS COMPANION IS DELIBERATELY NOT HERE. `npm run smoke:crawl` needs a built
+# and running server, which is a minute of build plus a minute of crawling, and
+# would turn every push into a coffee break. It is an operator gate: run it by
+# hand before a release, or against a Vercel preview URL. See the two commands
+# in the docblock of scripts/smoke-crawl.mjs.
+
+node scripts/check-route-conflicts.mjs || {
+  echo ""
+  echo "pre-push FAILED: check-route-conflicts.mjs"
+  echo "  Next.js fails the build on these. Pushing would break production routes."
   exit 1
 }
 

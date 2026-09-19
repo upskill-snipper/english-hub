@@ -53,3 +53,6 @@ external-audit-pack/
 __pycache__/
 *.pyc
 /*.py
+
+# Operator scratch space - dumps and one-off analysis scripts, never shipped.
+scratch/
