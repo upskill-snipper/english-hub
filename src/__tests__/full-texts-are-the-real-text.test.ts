@@ -42,9 +42,13 @@ const ROOT = process.cwd()
 const DATA_DIR = join(ROOT, 'src/data/full-texts')
 const TEXTS_DIR = join(ROOT, 'src/app/revision/texts')
 
-const PLAYS = readdirSync(DATA_DIR)
+const ALL = readdirSync(DATA_DIR)
   .filter((f) => f.endsWith('.ts'))
   .map((f) => f.replace(/\.ts$/, ''))
+
+/** The prose works, which are chaptered rather than acted. */
+const PROSE = ['a-christmas-carol', 'silas-marner', 'the-sign-of-four']
+const PLAYS = ALL.filter((slug) => !PROSE.includes(slug))
 
 /**
  * Match a section id in either the generated form or the committed one.
@@ -57,7 +61,7 @@ const PLAYS = readdirSync(DATA_DIR)
  * generator output INTO the committed form, so assertions have to match the
  * committed form or accept both.
  */
-const SECTION_ID = /id:\s*['"]act([ivxlc]+)-scene[ivxlc]+['"]/g
+const SECTION_ID = /["']?id["']?:\s*["']act([ivxlc]+)-scene[ivxlc]+["']/g
 
 /** Scene counts, from the plays themselves. A wrong parse shows up here. */
 const EXPECTED_SCENES: Record<string, number> = {
@@ -79,18 +83,19 @@ function dataFor(slug: string): string {
   return readFileSync(join(DATA_DIR, `${slug}.ts`), 'utf8')
 }
 
-describe('the plays are there', () => {
-  it('has twelve of them', () => {
+describe('the texts are there', () => {
+  it('has twelve plays and three prose works', () => {
     expect(PLAYS).toHaveLength(12)
+    expect(PROSE).toHaveLength(3)
   })
 
-  it.each(PLAYS)('%s has a read route wired to its data', (slug) => {
+  it.each(ALL)('%s has a read route wired to its data', (slug) => {
     const page = join(TEXTS_DIR, slug, 'read/page.tsx')
     expect(existsSync(page), `${slug} has data but no read page`).toBe(true)
     expect(readFileSync(page, 'utf8')).toContain(`@/data/full-texts/${slug}`)
   })
 
-  it.each(PLAYS)('%s is a set text we actually teach', (slug) => {
+  it.each(ALL)('%s is a set text we actually teach', (slug) => {
     // A full text nobody studies is work in the wrong place.
     expect(
       SET_TEXTS.some((t) => t.slug === slug),
@@ -110,7 +115,7 @@ describe('the parse matches the play', () => {
     expect(acts.size, `${slug} has acts: ${[...acts].join(', ')}`).toBe(5)
   })
 
-  it.each(PLAYS)('%s carries a substantial amount of text', (slug) => {
+  it.each(ALL)('%s carries a substantial amount of text', (slug) => {
     // A generator that writes an empty structure and reports success is the
     // failure this codebase is full of.
     expect(dataFor(slug).length).toBeGreaterThan(80_000)
@@ -144,7 +149,7 @@ describe('it is the real text, not a reproduction', () => {
   })
 
   it('carries no Project Gutenberg branding into what we publish', () => {
-    for (const slug of PLAYS) {
+    for (const slug of ALL) {
       const data = dataFor(slug)
       const body = data.slice(data.indexOf('sections:'))
       expect(body.toLowerCase(), `${slug} still carries the source branding`).not.toContain(
@@ -163,6 +168,55 @@ describe('it is the real text, not a reproduction', () => {
       expect(data, `${slug} has invented themes`).not.toMatch(/\bthemes:/)
       expect(data, `${slug} has invented context`).not.toMatch(/\bcontextNotes:/)
     }
+  })
+})
+
+describe('the prose works parse to their real chapter counts', () => {
+  // Counted in each edition's body before the fetcher was configured. Both
+  // Silas Marner and The Sign of the Four parsed at exactly DOUBLE on the first
+  // run, because each lists every chapter heading in a contents block that the
+  // heading rule matched. The count check refused to write them, which is why
+  // it is a refusal and not a warning.
+  it.each([
+    ['a-christmas-carol', 5],
+    ['silas-marner', 22],
+    ['the-sign-of-four', 12],
+  ])('%s has %i sections', (slug, count) => {
+    const sections = [...dataFor(slug).matchAll(/["']?id["']?:\s*["']section-\d+["']/g)].length
+    expect(sections).toBe(count)
+  })
+
+  it('keeps the Conclusion, which is part of Silas Marner', () => {
+    expect(dataFor('silas-marner')).toContain('Conclusion')
+  })
+
+  it('reads the stave titles as titles, not as shouting', () => {
+    // The edition prints "MARLEY'S GHOST". Small words stay lower case unless
+    // they open the title, so "The End of It" keeps its pronoun capitalised.
+    const data = dataFor('a-christmas-carol')
+    // Either apostrophe. Gutenberg's Romeo and Juliet uses the curly one and
+    // its Christmas Carol uses the straight one; asserting the wrong character
+    // fails on a title that is perfectly correct.
+    expect(data).toMatch(/Stave I: Marley['’]s Ghost/)
+    expect(data).toContain('Stave II: The First of the Three Spirits')
+    expect(data).toContain('Stave V: The End of It')
+    expect(data).not.toContain('The First Of The Three Spirits')
+  })
+
+  it.each([
+    ['a-christmas-carol', 'Marley was dead'],
+    ['silas-marner', 'In the days when the spinning-wheels hummed'],
+    ['the-sign-of-four', 'Sherlock Holmes'],
+  ])('%s opens with the real text', (slug, line) => {
+    expect(dataFor(slug).toLowerCase()).toContain(line.toLowerCase())
+  })
+
+  it('uses the title the specification prints, not the edition', () => {
+    // Gutenberg prints "The Sign of the Four"; the boards print "The Sign of
+    // Four", and that is the title a student is searching for.
+    // Either quoting: the generator emits JSON and prettier rewrites it on
+    // commit, and this test runs in both states.
+    expect(dataFor('the-sign-of-four')).toMatch(/["']?title["']?:\s*["']The Sign of Four["']/)
   })
 })
 
