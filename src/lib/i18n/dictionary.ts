@@ -224,10 +224,16 @@ export const DICTIONARY: Dictionary = {
     ar: 'الوضع ثنائي اللغة - إنجليزي وعربي مع بعض',
     es: 'Modo bilingüe - inglés y árabe juntos',
   },
+  // 2026-09-19 (CUI-10): this said "content in Arabic", which overstates what
+  // Arabic mode does in exactly the way the Spanish tooltip did before it was
+  // corrected yesterday. Arabic mode translates the INTERFACE; the study
+  // material - model answers, mark schemes, analysis - is English. There are 40
+  // `.ar.mdx` posts, so the Arabic content that exists is real, but a learner
+  // reading this tooltip would expect the revision material itself in Arabic.
   'lang.ar.tooltip': {
-    en: 'Arabic mode - content in Arabic (Gulf Khaleeji)',
-    ar: 'الوضع العربي - المحتوى بالعربي (خليجي)',
-    es: 'Modo árabe - contenido en árabe (golfo, khaleeji)',
+    en: 'Arabic mode - interface in Arabic (Gulf Khaleeji), study material in English',
+    ar: 'الوضع العربي - الواجهة بالعربي (خليجي)، والمواد الدراسية بالإنجليزي',
+    es: 'Modo árabe - interfaz en árabe (golfo, khaleeji), material de estudio en inglés',
   },
   // 2026-09-18: this said "content in Spanish", which the product does not
   // support. Spanish mode translates the INTERFACE only: there is no Spanish

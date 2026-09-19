@@ -43,7 +43,8 @@ export const ES_MESSAGES: Record<string, string> = {
   'lang.ar': 'Modo árabe',
   'lang.en.tooltip': 'Modo inglés - contenido en inglés',
   'lang.bi.tooltip': 'Modo bilingüe - inglés y árabe juntos',
-  'lang.ar.tooltip': 'Modo árabe - contenido en árabe (golfo, khaleeji)',
+  'lang.ar.tooltip':
+    'Modo árabe - interfaz en árabe (golfo, khaleeji), material de estudio en inglés',
   'lang.es.tooltip': 'Modo español - interfaz en español, material de estudio en inglés',
   'lang.es': 'Modo español',
   'nav.main': 'Navegación principal',

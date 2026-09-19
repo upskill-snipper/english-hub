@@ -126,7 +126,10 @@ describe('the matcher', () => {
     'llms-full.txt',
     '.well-known/security.txt',
     'vendor/pdf.worker.min.mjs',
-    'fonts/MonaSansVF.woff2',
+    // Any self-hosted face. MonaSansVF.woff2 was named here until CUI-10
+    // deleted it (517 KB that no CSS rule ever applied); the matcher rule it
+    // exercises is about the /fonts/ prefix, not about that one file.
+    'fonts/any-self-hosted.woff2',
     'icons/icon-192.png',
     '_next/static/chunks/main.js',
   ])('skips the middleware for /%s', (path) => {

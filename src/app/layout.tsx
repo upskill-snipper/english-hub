@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from 'next'
 import { headers } from 'next/headers'
-import localFont from 'next/font/local'
 import {
   Newsreader,
   Geist,
@@ -27,12 +26,10 @@ import { ThemeProvider } from '@/components/theme/theme-provider'
 import { t } from '@/lib/i18n/t'
 import './globals.css'
 
-const monaSans = localFont({
-  src: '../../public/fonts/MonaSansVF.woff2',
-  variable: '--font-mona',
-  display: 'swap',
-  weight: '200 900',
-})
+// Mona Sans was removed on 19 September 2026 (CUI-10). It was a 517 KB
+// variable font, loaded and stamped onto <html> as --font-mona on every page,
+// and NO CSS rule anywhere referenced that variable. Half a megabyte on every
+// mobile page view, for a typeface that never rendered a single character.
 
 const newsreader = Newsreader({
   subsets: ['latin'],
@@ -153,7 +150,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       dir={dir}
       data-lang={lang}
       suppressHydrationWarning
-      className={`${monaSans.variable} ${newsreader.variable} ${geist.variable} ${jetBrainsMono.variable} ${notoNaskhArabic.variable} ${plexSansArabic.variable}`}
+      className={`${newsreader.variable} ${geist.variable} ${jetBrainsMono.variable} ${notoNaskhArabic.variable} ${plexSansArabic.variable}`}
     >
       <head>
         <link rel="manifest" href="/manifest.json" />
