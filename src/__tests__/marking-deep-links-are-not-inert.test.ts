@@ -145,8 +145,32 @@ describe('the page actually consumes this', () => {
     expect(code).toMatch(/studiedText:\s*studiedText\.trim\(\)/)
   })
 
-  it('does not overwrite something the student has already typed', () => {
-    expect(code).toMatch(/setStudiedText\(\(current\) => current \|\|/)
-    expect(code).toMatch(/setPaper\(\(current\) => current \|\|/)
+  it('keeps studiedText in the submit callback dependencies', () => {
+    // Caught by lint, not by a test, which is why it is pinned here. The submit
+    // handler is a useCallback that READS studiedText, and the URL prefill sets
+    // it after mount. Without the dependency the callback closes over the
+    // initial empty string and submits no studied text at all - silently, with
+    // the field visibly populated on screen.
+    //
+    // Located by the LINE containing canSubmit rather than by a bracket regex.
+    // The first version used `/\},\s*\[([\s\S]*?)\],\s*\)/` and matched a span
+    // wide enough to swallow an earlier use of studiedText, so it passed with
+    // the dependency removed. It was found by mutation-checking it.
+    const lines = PAGE.split('\n')
+    const at = lines.findIndex((l) => l.trim() === 'canSubmit,')
+    expect(at, 'could not find the submit dependency array').toBeGreaterThan(-1)
+    const window = lines.slice(Math.max(0, at - 20), at + 6)
+    expect(window.some((l) => l.trim() === 'studiedText,')).toBe(true)
+  })
+
+  it('lets an explicit link beat the board cookie and the draft restore', () => {
+    // The ordering bug this replaces: two effects above the prefill already set
+    // the board, one from the site-wide cookie and one restoring a stashed
+    // draft. Guarding with `current || ...` let a stale cookie win, so a link
+    // from an Edexcel IGCSE anthology page opened an AQA paper. Confirmed
+    // against a production build before it was changed.
+    expect(code).toMatch(/setPaper\(prefill\.paper\)/)
+    expect(code).toMatch(/setBoard\(prefill\.board\)/)
+    expect(code).not.toMatch(/setPaper\(\(current\) => current \|\|/)
   })
 })

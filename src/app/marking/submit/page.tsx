@@ -274,8 +274,18 @@ export default function SubmitEssayPage() {
    * which needs three renders to settle and can half-apply. See that file for
    * why nothing here is trusted.
    *
-   * It never overwrites the student: each setter only fills a field that is
-   * still empty.
+   * AN EXPLICIT LINK WINS, and this ordering was wrong on the first attempt.
+   * Two effects above already set the board: one from the site-wide board
+   * cookie, one restoring a draft stashed before a sign-in round trip. Guarding
+   * these setters with `current || ...` let a stale cookie beat the link, and a
+   * student clicking "get this marked" on an Edexcel IGCSE anthology page
+   * landed on an AQA paper. Verified against a production build: board came out
+   * AQA and paper aqa-lang-paper1 for an Edexcel IGCSE link.
+   *
+   * A URL is a more recent and more specific signal than a stored default, so
+   * it now sets outright. This cannot clobber anything the student has typed:
+   * the effect runs once on mount, before there is anything to clobber, and a
+   * URL with no parameters returns early and touches nothing.
    */
   useEffect(() => {
     let params: URLSearchParams
@@ -285,11 +295,11 @@ export default function SubmitEssayPage() {
       return
     }
     const prefill = resolvePrefill(params, boardOptions, Object.values(MARK_SCHEMES))
-    if (prefill.board) setBoard((current) => current || prefill.board!)
-    if (prefill.paper) setPaper((current) => current || prefill.paper!)
-    if (prefill.question) setQuestion((current) => current || prefill.question!)
-    if (prefill.title) setTitle((current) => current || prefill.title!)
-    if (prefill.studiedText) setStudiedText((current) => current || prefill.studiedText!)
+    if (prefill.board) setBoard(prefill.board)
+    if (prefill.paper) setPaper(prefill.paper)
+    if (prefill.question) setQuestion(prefill.question)
+    if (prefill.title) setTitle(prefill.title)
+    if (prefill.studiedText) setStudiedText(prefill.studiedText)
   }, [boardOptions])
 
   const wordCount = countWords(essay)
@@ -634,6 +644,13 @@ export default function SubmitEssayPage() {
       question,
       questionOptions,
       title,
+      // Added 19 September 2026, and caught by lint rather than by a test.
+      // `studiedText` is read inside this callback but is set by the URL
+      // prefill effect AFTER mount, so without it here the callback would
+      // close over the initial empty string and submit no studied text at
+      // all - silently, with the field visibly populated. The same class of
+      // stale-closure bug the comment above describes.
+      studiedText,
       essay,
       wordCount,
       canSubmit,

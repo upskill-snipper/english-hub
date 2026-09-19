@@ -13,6 +13,7 @@ import {
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { PracticeMarkingButton } from '@/components/marking/PracticeMarkingButton'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { getLocale, t } from '@/lib/i18n/t'
 
@@ -111,6 +112,9 @@ const writersPurpose = {
   messageAr:
     'الحُجّة الضمنيّة أنّ الحظوة بإمكانيّة خوض مغامرةٍ قطبيّة لا تُعفي المرءَ من مسؤوليّة الاستعداد الجادّ - وأنّ احتفاءَ الإعلام بمثل هذه الإخفاقات يستحقّ التدقيق.',
 }
+
+/** The text these practice questions are about, sent to the marker as context. */
+const ANTHOLOGY_TEXT_TITLE = 'Explorers or Boys Messing About?'
 
 const examPractice = {
   q1: {
@@ -418,6 +422,11 @@ export default async function ExplorersOrBoysMessingAboutPage() {
             <p className="mt-2 text-body text-foreground font-medium">
               {ar ? examPractice.q1.questionAr : examPractice.q1.question}
             </p>
+            {await PracticeMarkingButton({
+              type: ar ? examPractice.q1.typeAr : examPractice.q1.type,
+              question: ar ? examPractice.q1.questionAr : examPractice.q1.question,
+              textTitle: ANTHOLOGY_TEXT_TITLE,
+            })}
           </div>
           <div className="rounded-xl border border-border/40 bg-muted/20 p-4">
             <span className="font-mono text-body-xs text-primary uppercase tracking-wider font-semibold">
@@ -426,6 +435,11 @@ export default async function ExplorersOrBoysMessingAboutPage() {
             <p className="mt-2 text-body text-foreground font-medium">
               {ar ? examPractice.q2.questionAr : examPractice.q2.question}
             </p>
+            {await PracticeMarkingButton({
+              type: ar ? examPractice.q2.typeAr : examPractice.q2.type,
+              question: ar ? examPractice.q2.questionAr : examPractice.q2.question,
+              textTitle: ANTHOLOGY_TEXT_TITLE,
+            })}
           </div>
           <div className="rounded-xl border border-border/40 bg-muted/20 p-4">
             <span className="font-mono text-body-xs text-primary uppercase tracking-wider font-semibold">
@@ -434,6 +448,11 @@ export default async function ExplorersOrBoysMessingAboutPage() {
             <p className="mt-2 text-body text-foreground font-medium">
               {ar ? examPractice.q3.questionAr : examPractice.q3.question}
             </p>
+            {await PracticeMarkingButton({
+              type: ar ? examPractice.q3.typeAr : examPractice.q3.type,
+              question: ar ? examPractice.q3.questionAr : examPractice.q3.question,
+              textTitle: ANTHOLOGY_TEXT_TITLE,
+            })}
           </div>
         </div>
       </section>
