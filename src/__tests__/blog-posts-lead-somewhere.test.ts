@@ -43,12 +43,23 @@ const ENGLISH_POSTS = readdirSync(join(ROOT, 'content/blog'))
     return {
       slug: String(data.slug ?? f),
       tags: ((data.tags as string[]) ?? []).map((t) => String(t).toLowerCase()),
+      draft: data.draft === true,
     }
   })
 
 describe('the corpus', () => {
-  it('is the 42 posts this item is about', () => {
+  it('is the 42 English post FILES this item is about', () => {
+    // Files on disk, not published posts. Since 20 September six of these are
+    // held back with `draft: true` and serve nobody, so 36 are live. Both
+    // numbers were "42" until then, and one number meaning two things is how a
+    // guard stops guarding without anybody noticing.
     expect(ENGLISH_POSTS.length).toBe(42)
+  })
+
+  it('and six of them are held back, so the live count is 36', () => {
+    const held = ENGLISH_POSTS.filter((p) => p.draft)
+    expect(held.length, 'a held-back post has been republished or deleted').toBe(6)
+    expect(ENGLISH_POSTS.length - held.length).toBe(36)
   })
 })
 
