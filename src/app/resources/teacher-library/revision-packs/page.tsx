@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { TeacherResourceCard, TeacherResourceGrid } from '@/components/teacher/ResourceCard'
+import { TeacherResourceCard } from '@/components/teacher/ResourceCard'
+import { BoardGroupedResources, groupForBoard } from '@/components/teacher/board-grouped'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { getBoardConfig, type ExamBoard } from '@/lib/board/board-config'
 import { textAvailableForBoard } from '@/lib/board/set-texts'
@@ -99,10 +100,20 @@ function packMatchesBoard(packId: string, board: ExamBoard | null): boolean {
   return textAvailableForBoard(slug, board)
 }
 
+/**
+ * WHAT THE BOARD FILTER DID, and it is the same defect reported on the
+ * mark-scheme library next door. It hid every pack that did not match the
+ * reader's board, and for KS3 and Cambridge 0500 that is all of them: the page
+ * rendered its heading, its promise of packs "for every major GCSE set text", a
+ * badge naming the board, and an empty grid. Found by looking for the reported
+ * defect on its siblings rather than waiting for it to be reported again.
+ *
+ * `groupForBoard` narrows without hiding. See its docblock for the rule.
+ */
 export default async function RevisionPacksPage() {
   const board = await getServerBoard()
   const boardConfig = getBoardConfig(board)
-  const visiblePacks = PACKS.filter((p) => packMatchesBoard(p.id, board))
+  const grouping = groupForBoard(PACKS, (p) => packMatchesBoard(p.id, board), board)
   return (
     <div className="min-h-screen bg-background">
       <section className="border-b border-border bg-card">
@@ -118,7 +129,9 @@ export default async function RevisionPacksPage() {
             <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary ring-1 ring-inset ring-primary/20">
               For Teachers
             </span>
-            {boardConfig && (
+            {/* Only when we hold packs for that board. It named the board over
+                an empty page, which is a claim the page could not keep. */}
+            {boardConfig && grouping.boardHasOwn && (
               <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-xs font-semibold text-primary">
                 For {boardConfig.shortName}
               </span>
@@ -133,22 +146,30 @@ export default async function RevisionPacksPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-12">
-        <TeacherResourceGrid>
-          {visiblePacks.map((p) => (
+        <BoardGroupedResources
+          grouping={grouping}
+          all={PACKS}
+          boardShortName={boardConfig?.shortName}
+          noun="revision packs"
+          renderItem={(p) => (
             <TeacherResourceCard
               key={p.id}
               title={p.title}
               description={p.description}
               kind="Revision Pack"
               tag={p.tag}
+              // Only one pack has a page of its own. The rest linked to the
+              // page they were already on, under a label reading "Open" with an
+              // arrow, so the click reloaded where the teacher stood. A card
+              // with nowhere to go is now a plain card.
               href={
                 p.id === 'jekyll-and-hyde-pack'
                   ? `/resources/teacher-library/revision-packs/${p.id}`
-                  : '/resources/teacher-library/revision-packs'
+                  : undefined
               }
             />
-          ))}
-        </TeacherResourceGrid>
+          )}
+        />
       </section>
     </div>
   )

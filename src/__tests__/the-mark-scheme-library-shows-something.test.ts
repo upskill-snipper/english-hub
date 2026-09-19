@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { BOARDS } from '@/lib/board/board-config'
 import { markSchemeAnchor } from '@/lib/marking/mark-scheme-anchor'
+import { groupForBoard } from '@/components/teacher/board-grouped'
 
 /**
  * The teacher mark-scheme library served four boards an empty page.
@@ -68,41 +69,96 @@ describe('the cards', () => {
   })
 })
 
-describe('nothing is hidden from the render any more', () => {
-  it('both groups together are the whole list', () => {
-    // `mine` and `others` partition MARK_SCHEMES, and the second group falls
-    // back to the whole list when the board matches none of it. Either way
-    // every card renders, so every anchor exists.
-    expect(CODE).toContain('const others = MARK_SCHEMES.filter((m) => !mine.includes(m))')
-    expect(CODE).toContain('items={boardHasCards ? others : MARK_SCHEMES}')
+describe('the rule itself, tested directly', () => {
+  const ITEMS = ['a1', 'a2', 'b1', 'b2', 'b3'] as const
+  const isA = (i: string) => i.startsWith('a')
+
+  it('splits the list when the board matches some of it', () => {
+    const g = groupForBoard(ITEMS, isA, 'aqa')
+    expect(g.mine).toEqual(['a1', 'a2'])
+    expect(g.others).toEqual(['b1', 'b2', 'b3'])
+    expect(g.boardHasOwn).toBe(true)
   })
 
-  it('and the old filtered render is gone', () => {
-    // The whole defect in one line: a single grid fed a board-filtered array.
-    expect(CODE).not.toMatch(/\{visible\.map\(/)
-    expect(CODE).not.toContain('const visible =')
+  it('does NOT claim a split when the board matches nothing', () => {
+    // The reported defect. KS3 matched none of the sixteen cards, and the page
+    // rendered a badge saying "For KS3" over an empty grid.
+    const g = groupForBoard(ITEMS, () => false, 'ks3')
+    expect(g.mine).toEqual([])
+    expect(g.boardHasOwn).toBe(false)
   })
 
-  it('every card still carries its anchor', () => {
-    expect(CODE).toContain('id={markSchemeAnchor(m.title)}')
-    expect(CODE).toContain('scroll-mt-24')
+  it('nor when it matches everything', () => {
+    // Nothing to separate, so no "Other boards" heading over an empty section.
+    const g = groupForBoard(ITEMS, () => true, 'aqa')
+    expect(g.others).toEqual([])
+    expect(g.boardHasOwn).toBe(false)
+  })
+
+  it('and treats no board as no split', () => {
+    const g = groupForBoard(ITEMS, isA, null)
+    expect(g.boardHasOwn).toBe(false)
+  })
+
+  it('every item lands in exactly one group, whatever the board', () => {
+    // The property that makes hiding impossible: mine and others partition the
+    // list, so rendering both renders all of it.
+    for (const predicate of [isA, () => true, () => false]) {
+      const g = groupForBoard(ITEMS, predicate, 'aqa')
+      expect([...g.mine, ...g.others].sort()).toEqual([...ITEMS].sort())
+    }
   })
 })
 
-describe('a board we hold no cards for is told so', () => {
-  it('the page says it rather than rendering an empty grid', () => {
-    expect(CODE).toMatch(/!boardHasCards && mine\.length === 0/)
-    expect(PAGE).toContain('We do not have reference cards for')
+describe('nothing is hidden from the render any more', () => {
+  const GROUPED = readFileSync(join(ROOT, 'src/components/teacher/board-grouped.tsx'), 'utf8')
+
+  it('the shared component renders everything when the board splits nothing', () => {
+    expect(GROUPED).toContain('(boardHasOwn ? others : all).map(renderItem)')
   })
 
-  it('and the "For <board>" badge only shows when it is true', () => {
-    // It read "For KS3" over an empty page. A badge is a claim about relevance
-    // and that one could not be kept.
-    expect(CODE).toMatch(/boardConfig && boardHasCards &&/)
+  it('and says so rather than rendering an empty grid', () => {
+    expect(GROUPED).toContain('We do not have')
+    expect(GROUPED).toMatch(/!boardHasOwn && mine\.length === 0/)
   })
 
-  it('boardHasCards requires the board to narrow the list, not just exist', () => {
-    expect(CODE).toContain('Boolean(board) && mine.length > 0 && others.length > 0')
+  it('every teacher-library page that filters by board uses it', () => {
+    // Two pages had this defect and three more could grow it. The rule lives in
+    // one place so the next one cannot get it wrong privately.
+    for (const page of ['mark-schemes', 'revision-packs', 'lesson-plans']) {
+      const src = readFileSync(
+        join(ROOT, 'src/app/resources/teacher-library', page, 'page.tsx'),
+        'utf8',
+      )
+      expect(src, `${page} does not use the shared grouping`).toContain('groupForBoard(')
+      expect(src, `${page} does not use the shared renderer`).toContain('BoardGroupedResources')
+    }
+  })
+
+  it('and none of them still filters into a single grid', () => {
+    for (const page of ['mark-schemes', 'revision-packs', 'lesson-plans']) {
+      const src = readFileSync(
+        join(ROOT, 'src/app/resources/teacher-library', page, 'page.tsx'),
+        'utf8',
+      )
+      const code = src.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*/g, '')
+      expect(code, `${page} still has a visible-only list`).not.toMatch(/const visible\w* =/)
+    }
+  })
+
+  it('the badge only shows when the board really has its own', () => {
+    for (const page of ['mark-schemes', 'revision-packs', 'lesson-plans']) {
+      const src = readFileSync(
+        join(ROOT, 'src/app/resources/teacher-library', page, 'page.tsx'),
+        'utf8',
+      )
+      expect(src, `${page} badge is unconditional`).toMatch(/boardConfig && grouping\.boardHasOwn/)
+    }
+  })
+
+  it('every mark-scheme card still carries its anchor', () => {
+    expect(CODE).toContain('id={markSchemeAnchor(m.title)}')
+    expect(CODE).toContain('scroll-mt-24')
   })
 })
 

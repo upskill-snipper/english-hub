@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { TeacherResourceCard, TeacherResourceGrid } from '@/components/teacher/ResourceCard'
+import { TeacherResourceCard } from '@/components/teacher/ResourceCard'
+import { BoardGroupedResources, groupForBoard } from '@/components/teacher/board-grouped'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { getBoardConfig, type ExamBoard } from '@/lib/board/board-config'
 import { tMany } from '@/lib/i18n/t'
@@ -242,7 +243,15 @@ function lessonPlanMatchesBoard(planExamBoard: string, board: ExamBoard | null):
 export default async function LessonPlansPage() {
   const board = await getServerBoard()
   const boardConfig = getBoardConfig(board)
-  const visiblePlans = LESSON_PLANS.filter((p) => lessonPlanMatchesBoard(p.examBoard, board))
+  // Grouped rather than filtered, for the reason set out in
+  // src/components/teacher/board-grouped.tsx: Cambridge 0500 matched two of the
+  // twenty plans, so a Cambridge teacher was shown two and told nothing about
+  // the other eighteen.
+  const grouping = groupForBoard(
+    LESSON_PLANS,
+    (p) => lessonPlanMatchesBoard(p.examBoard, board),
+    board,
+  )
   const [bcTeacherLibrary, bcLessonPlans, forTeachersLabel, forBoardLabel, h1, introTail] =
     await tMany([
       'resources.tl.lp.bc.teacher_library',
@@ -267,7 +276,7 @@ export default async function LessonPlansPage() {
             <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary ring-1 ring-inset ring-primary/20">
               {forTeachersLabel}
             </span>
-            {boardConfig && (
+            {boardConfig && grouping.boardHasOwn && (
               <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-xs font-semibold text-primary">
                 {forBoardLabel} {boardConfig.shortName}
               </span>
@@ -275,14 +284,18 @@ export default async function LessonPlansPage() {
           </div>
           <h1 className="mt-3 text-4xl font-bold tracking-tight text-foreground">{h1}</h1>
           <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
-            {visiblePlans.length} {introTail}
+            {LESSON_PLANS.length} {introTail}
           </p>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-12">
-        <TeacherResourceGrid>
-          {visiblePlans.map((plan) => (
+        <BoardGroupedResources
+          grouping={grouping}
+          all={LESSON_PLANS}
+          boardShortName={boardConfig?.shortName}
+          noun="lesson plans"
+          renderItem={(plan) => (
             <TeacherResourceCard
               key={plan.id}
               title={plan.title}
@@ -292,14 +305,17 @@ export default async function LessonPlansPage() {
               duration={plan.duration}
               examBoard={plan.examBoard}
               tag={HAS_DETAIL.has(plan.id) ? 'Full plan' : 'Coming soon'}
+              // A plan without a detail page used to link to this page, so the
+              // card said "Open" and reloaded where the teacher stood. It is
+              // already tagged "Coming soon"; it does not also need a link.
               href={
                 HAS_DETAIL.has(plan.id)
                   ? `/resources/teacher-library/lesson-plans/${plan.id}`
-                  : '/resources/teacher-library/lesson-plans'
+                  : undefined
               }
             />
-          ))}
-        </TeacherResourceGrid>
+          )}
+        />
       </section>
     </div>
   )

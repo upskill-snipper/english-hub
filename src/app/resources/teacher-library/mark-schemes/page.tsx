@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import { markSchemeAnchor } from '@/lib/marking/mark-scheme-anchor'
 import Link from 'next/link'
-import { TeacherResourceCard, TeacherResourceGrid } from '@/components/teacher/ResourceCard'
+import { TeacherResourceCard } from '@/components/teacher/ResourceCard'
+import { BoardGroupedResources, groupForBoard } from '@/components/teacher/board-grouped'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { getBoardConfig, type ExamBoard } from '@/lib/board/board-config'
 
@@ -110,36 +111,6 @@ const MARK_SCHEMES = [
   },
 ]
 
-/**
- * The cards themselves.
- *
- * Extracted so the two groups render identically. Each carries a stable anchor:
- * the marking hub deep-links to all sixteen by title, and `scroll-mt-24` keeps
- * the target clear of the sticky header. An anchor only exists on a card that
- * renders, which is why nothing on this page is hidden any more.
- */
-function MarkSchemeCards({
-  items,
-}: {
-  items: ReadonlyArray<{ title: string; description: string; examBoard: string }>
-}) {
-  return (
-    <TeacherResourceGrid>
-      {items.map((m) => (
-        <div key={m.title} id={markSchemeAnchor(m.title)} className="scroll-mt-24">
-          <TeacherResourceCard
-            title={m.title}
-            description={m.description}
-            kind="Mark Scheme"
-            examBoard={m.examBoard}
-            tag="Reference card"
-          />
-        </div>
-      ))}
-    </TeacherResourceGrid>
-  )
-}
-
 function markSchemeMatchesBoard(examBoard: string, board: ExamBoard | null): boolean {
   if (!board) return true
   const map: Record<ExamBoard, string> = {
@@ -186,10 +157,11 @@ function markSchemeMatchesBoard(examBoard: string, board: ExamBoard | null): boo
 export default async function MarkSchemesPage() {
   const board = await getServerBoard()
   const boardConfig = getBoardConfig(board)
-  const mine = MARK_SCHEMES.filter((m) => markSchemeMatchesBoard(m.examBoard, board))
-  const others = MARK_SCHEMES.filter((m) => !mine.includes(m))
-  /** True only when the board genuinely narrows the list to some of it. */
-  const boardHasCards = Boolean(board) && mine.length > 0 && others.length > 0
+  const grouping = groupForBoard(
+    MARK_SCHEMES,
+    (m) => markSchemeMatchesBoard(m.examBoard, board),
+    board,
+  )
   return (
     <div className="min-h-screen bg-background">
       <section className="border-b border-border bg-card">
@@ -208,7 +180,7 @@ export default async function MarkSchemesPage() {
             {/* Only when we hold cards for that board. It read "For KS3" over an
                 empty page, which is a claim about relevance the page could not
                 keep. */}
-            {boardConfig && boardHasCards && (
+            {boardConfig && grouping.boardHasOwn && (
               <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-xs font-semibold text-primary">
                 For {boardConfig.shortName}
               </span>
@@ -226,36 +198,24 @@ export default async function MarkSchemesPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl space-y-12 px-6 py-12">
-        {boardHasCards && (
-          <div>
-            <h2 className="mb-4 text-xl font-semibold text-foreground">
-              For {boardConfig?.shortName}
-            </h2>
-            <MarkSchemeCards items={mine} />
-          </div>
-        )}
-
-        {!boardHasCards && mine.length === 0 && (
-          // A board we hold no card for: KS3 and the three Cambridge
-          // syllabuses. Saying so is the whole fix for the empty page - the
-          // reader now knows it is a gap in our library rather than a page that
-          // failed to load, and still gets the sixteen cards we do have.
-          <p className="rounded-lg border border-border/60 bg-card p-4 text-sm text-muted-foreground">
-            We do not have reference cards for{' '}
-            <span className="font-medium text-foreground">
-              {boardConfig?.shortName ?? 'your board'}
-            </span>{' '}
-            yet. Every card we do have is below.
-          </p>
-        )}
-
-        <div>
-          {boardHasCards && (
-            <h2 className="mb-4 text-xl font-semibold text-foreground">Other boards</h2>
+      <section className="mx-auto max-w-6xl px-6 py-12">
+        <BoardGroupedResources
+          grouping={grouping}
+          all={MARK_SCHEMES}
+          boardShortName={boardConfig?.shortName}
+          noun="reference cards"
+          renderItem={(m) => (
+            <div key={m.title} id={markSchemeAnchor(m.title)} className="scroll-mt-24">
+              <TeacherResourceCard
+                title={m.title}
+                description={m.description}
+                kind="Mark Scheme"
+                examBoard={m.examBoard}
+                tag="Reference card"
+              />
+            </div>
           )}
-          <MarkSchemeCards items={boardHasCards ? others : MARK_SCHEMES} />
-        </div>
+        />
       </section>
     </div>
   )
