@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useCallback } from 'react'
+import { useTopicFromUrl } from '@/lib/toolkit/use-topic-from-url'
 import Link from 'next/link'
 import { useT } from '@/lib/i18n/use-t'
 import {
@@ -51,6 +52,12 @@ export default function TestBuilderPage() {
 
   // Config state
   const [topic, setTopic] = useState('')
+  // The set-text page linked here with ?text=<title>; honour it.
+  useTopicFromUrl(
+    texts.map((t) => t.title),
+    topic,
+    setTopic,
+  )
   const [questionCount, setQuestionCount] = useState(10)
 
   // Test state

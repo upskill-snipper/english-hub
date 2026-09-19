@@ -3,6 +3,7 @@
 import { STRINGS } from './content'
 import { useLocale } from '@/lib/i18n/use-locale'
 import { useState, useCallback } from 'react'
+import { useTopicFromUrl } from '@/lib/toolkit/use-topic-from-url'
 import Link from 'next/link'
 import DOMPurify from 'dompurify'
 import {
@@ -46,6 +47,12 @@ export default function RevisionBuilderPage() {
 
   // Config
   const [topic, setTopic] = useState('')
+  // The set-text page linked here with ?text=<title>; honour it.
+  useTopicFromUrl(
+    texts.map((t) => t.title),
+    topic,
+    setTopic,
+  )
   const [targetGrade, setTargetGrade] = useState(5)
 
   // State
