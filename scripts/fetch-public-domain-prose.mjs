@@ -6,11 +6,12 @@
  * these editions share one shape: ACT, then SCENE, then dialogue. Prose does
  * not. Of the works checked on 19 September 2026:
  *
- *   A Christmas Carol   STAVE I:  MARLEY'S GHOST
- *   Silas Marner        CHAPTER I.
- *   The Sign of the Four  Chapter I
- *   Jekyll and Hyde     bare capitalised titles, no chapter marker at all
- *   The War of the Worlds, The Scarlet Letter   neither form
+ *   A Christmas Carol      STAVE I:  MARLEY'S GHOST
+ *   Silas Marner           CHAPTER I.
+ *   The Sign of the Four   Chapter I
+ *   Jekyll and Hyde        bare capitalised titles, no chapter marker at all
+ *   War of the Worlds,     numeral on one line, title on the next; and the
+ *   The Scarlet Letter     numbering restarts at Book Two in the first
  *
  * A generic prose parser that guessed at this would fold chapters together
  * silently, which is exactly what the play fetcher did to Much Ado before its
@@ -18,12 +19,14 @@
  * and its own expected section count, both read off the edition first, and the
  * script refuses to write when the parse disagrees.
  *
- * WORKS NOT YET HERE, and why: Jekyll and Hyde, The War of the Worlds, The
- * Scarlet Letter, Jane Eyre, Great Expectations and Pride and Prejudice. The
- * first three need their editions read for a heading rule; the last three are
- * 120,000 to 185,000 words and would ship as a single client bundle, which
- * needs a per-chapter route before it is reasonable. Listing them here rather
- * than leaving them unmentioned.
+ * WORKS NOT YET HERE, and why: Jane Eyre, Great Expectations and Pride and
+ * Prejudice. All three are 120,000 to 185,000 words and would ship as a single
+ * client bundle, which wants a per-chapter route before it is reasonable.
+ * Listing them here rather than leaving them unmentioned.
+ *
+ * Jekyll and Hyde, The War of the Worlds and The Scarlet Letter were in that
+ * list until their editions were read. Each needed a heading rule none of the
+ * others uses, which is the whole argument for configuring per book.
  *
  * The text is copied, never reproduced from memory, for the same reason as the
  * plays: a model retyping Dickens would drop a clause and nobody would catch it
@@ -73,6 +76,55 @@ const BOOKS = [
     expect: 22,
   },
   {
+    slug: 'jekyll-and-hyde',
+    id: 43,
+    title: 'The strange case of Dr. Jekyll and Mr. Hyde',
+    displayTitle: 'The Strange Case of Dr Jekyll and Mr Hyde',
+    author: 'Robert Louis Stevenson',
+    type: 'novella',
+    // This edition numbers NOTHING - it prints the chapter titles alone. See
+    // parseSections for why they are named rather than pattern-matched.
+    titles: [
+      'STORY OF THE DOOR',
+      'SEARCH FOR MR. HYDE',
+      'DR. JEKYLL WAS QUITE AT EASE',
+      'THE CAREW MURDER CASE',
+      'INCIDENT OF THE LETTER',
+      'INCIDENT OF DR. LANYON',
+      'INCIDENT AT THE WINDOW',
+      'THE LAST NIGHT',
+      'DR. LANYON’S NARRATIVE',
+      'HENRY JEKYLL’S FULL STATEMENT OF THE CASE',
+    ],
+    label: (n) => titleCase(n),
+    expect: 10,
+  },
+  {
+    slug: 'the-war-of-the-worlds',
+    id: 36,
+    title: 'The war of the worlds',
+    displayTitle: 'The War of the Worlds',
+    author: 'H. G. Wells',
+    type: 'novel',
+    numeralThenTitle: true,
+    heading: /^([IVXLC]+)\.$/,
+    part: /^BOOK (ONE|TWO)$/,
+    label: (n, part) => (part ? `Book ${titleCase(part)}, Chapter ${n}` : `Chapter ${n}`),
+    expect: 27,
+  },
+  {
+    slug: 'the-scarlet-letter',
+    id: 33,
+    title: 'The Scarlet Letter',
+    displayTitle: 'The Scarlet Letter',
+    author: 'Nathaniel Hawthorne',
+    type: 'novel',
+    numeralThenTitle: true,
+    heading: /^([IVXLC]+)\.$/,
+    label: (n) => `Chapter ${n}`,
+    expect: 24,
+  },
+  {
     slug: 'the-sign-of-four',
     id: 2097,
     title: 'The Sign of the Four',
@@ -102,6 +154,25 @@ function stripGutenberg(raw) {
 /**
  * Split on this book's own heading rule.
  *
+ * THREE SHAPES, because these editions genuinely have three and a parser that
+ * guessed between them would fold chapters silently:
+ *
+ *   `heading`     one line carrying the numeral and any title
+ *                 (Silas Marner "CHAPTER I.", The Sign of the Four "Chapter I")
+ *   `titles`      an explicit list, for a book that numbers nothing. Jekyll and
+ *                 Hyde prints "STORY OF THE DOOR" and no chapter numbers at
+ *                 all, and an all-caps rule also matches "HASTIE LANYON." - the
+ *                 signature at the end of Lanyon's narrative - which would have
+ *                 produced an eleventh chapter one line long. The ten headings
+ *                 are named rather than pattern-matched.
+ *   `numeralThenTitle`  the numeral on one line, the title on the next
+ *                 (The War of the Worlds, The Scarlet Letter)
+ *
+ * `part` is optional and carries a division above the chapter. The War of the
+ * Worlds restarts its numbering at Book Two, so without it a reader would be
+ * offered two Chapter Is and the second ten chapters would carry the first
+ * book's numbers.
+ *
  * Anything before the FIRST heading is front matter - a contents list, a
  * preface, a transcriber's note - and is dropped rather than folded into
  * chapter one.
@@ -110,21 +181,57 @@ function parseSections(body, book) {
   const lines = body.split('\n')
   const out = []
   let current = null
-  for (const line of lines) {
-    const trimmed = line.trim()
-    const match = book.heading.exec(trimmed)
-    if (match) {
-      if (current) out.push(current)
-      const numeral = match[1] ?? match[2]
-      const rest = (match[3] ?? match[2] ?? '').trim()
-      current = {
-        numeral,
-        subtitle: numeral === rest ? '' : rest,
-        lines: [],
+  let part = null
+
+  const titleSet = book.titles ? new Set(book.titles) : null
+
+  for (let i = 0; i < lines.length; i++) {
+    const trimmed = lines[i].trim()
+
+    if (book.part) {
+      const partMatch = book.part.exec(trimmed)
+      if (partMatch) {
+        part = partMatch[1]
+        continue
       }
+    }
+
+    let numeral = null
+    let subtitle = ''
+    let consumed = 0
+
+    if (titleSet) {
+      if (titleSet.has(trimmed)) numeral = trimmed
+    } else if (book.numeralThenTitle) {
+      const m = book.heading.exec(trimmed)
+      // The title must be on the next non-blank line and must be capitalised.
+      // Requiring it means a stray numeral in the prose cannot open a chapter.
+      if (m) {
+        let j = i + 1
+        while (j < lines.length && !lines[j].trim()) j++
+        const next = (lines[j] ?? '').trim()
+        if (next && next === next.toUpperCase() && /[A-Z]/.test(next)) {
+          numeral = m[1]
+          subtitle = next
+          consumed = j - i
+        }
+      }
+    } else {
+      const m = book.heading.exec(trimmed)
+      if (m) {
+        numeral = m[1] ?? m[2]
+        const rest = (m[3] ?? m[2] ?? '').trim()
+        subtitle = numeral === rest ? '' : rest
+      }
+    }
+
+    if (numeral !== null) {
+      if (current) out.push(current)
+      current = { numeral, subtitle, part, lines: [] }
+      i += consumed
       continue
     }
-    if (current) current.lines.push(line)
+    if (current) current.lines.push(lines[i])
   }
   if (current) out.push(current)
   return out
@@ -186,7 +293,11 @@ async function build(book) {
 
   const sections = parsed.map((s, i) => ({
     id: `section-${i + 1}`,
-    title: book.label(s.numeral) + (s.subtitle ? `: ${titleCase(s.subtitle)}` : ''),
+    // The War of the Worlds prints its chapter titles with a closing full
+    // stop - "The Eve of the War." - which reads as a typo in a sidebar.
+    title:
+      book.label(s.numeral, s.part) +
+      (s.subtitle ? `: ${titleCase(s.subtitle).replace(/\.$/, '')}` : ''),
     content: toHtml(s.lines),
   }))
 
@@ -229,7 +340,7 @@ export const ${varName}: TextData = {
  * Small words stay lower case unless they open the title, so the staves read
  * "The First of the Three Spirits" rather than "The First Of The Three Spirits".
  */
-const SMALL_WORDS = new Set(['of', 'the', 'a', 'an', 'and', 'or', 'in', 'on', 'to', 'at'])
+const SMALL_WORDS = new Set(['of', 'the', 'a', 'an', 'and', 'or', 'in', 'on', 'to', 'at', 'for', 'with', 'from'])
 
 function titleCase(s) {
   if (s !== s.toUpperCase()) return s

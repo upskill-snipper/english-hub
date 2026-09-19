@@ -47,7 +47,14 @@ const ALL = readdirSync(DATA_DIR)
   .map((f) => f.replace(/\.ts$/, ''))
 
 /** The prose works, which are chaptered rather than acted. */
-const PROSE = ['a-christmas-carol', 'silas-marner', 'the-sign-of-four']
+const PROSE = [
+  'a-christmas-carol',
+  'silas-marner',
+  'the-sign-of-four',
+  'jekyll-and-hyde',
+  'the-war-of-the-worlds',
+  'the-scarlet-letter',
+]
 const PLAYS = ALL.filter((slug) => !PROSE.includes(slug))
 
 /**
@@ -84,9 +91,9 @@ function dataFor(slug: string): string {
 }
 
 describe('the texts are there', () => {
-  it('has twelve plays and three prose works', () => {
+  it('has twelve plays and six prose works', () => {
     expect(PLAYS).toHaveLength(12)
-    expect(PROSE).toHaveLength(3)
+    expect(PROSE).toHaveLength(6)
   })
 
   it.each(ALL)('%s has a read route wired to its data', (slug) => {
@@ -181,6 +188,9 @@ describe('the prose works parse to their real chapter counts', () => {
     ['a-christmas-carol', 5],
     ['silas-marner', 22],
     ['the-sign-of-four', 12],
+    ['jekyll-and-hyde', 10],
+    ['the-war-of-the-worlds', 27],
+    ['the-scarlet-letter', 24],
   ])('%s has %i sections', (slug, count) => {
     const sections = [...dataFor(slug).matchAll(/["']?id["']?:\s*["']section-\d+["']/g)].length
     expect(sections).toBe(count)
@@ -207,8 +217,39 @@ describe('the prose works parse to their real chapter counts', () => {
     ['a-christmas-carol', 'Marley was dead'],
     ['silas-marner', 'In the days when the spinning-wheels hummed'],
     ['the-sign-of-four', 'Sherlock Holmes'],
+    ['jekyll-and-hyde', 'Mr. Utterson the lawyer'],
+    ['the-war-of-the-worlds', 'no one would have believed'],
+    ['the-scarlet-letter', 'A throng of bearded men'],
   ])('%s opens with the real text', (slug, line) => {
     expect(dataFor(slug).toLowerCase()).toContain(line.toLowerCase())
+  })
+
+  it('names Jekyll by its ten chapter titles, not by a pattern', () => {
+    // This edition numbers nothing and prints chapter titles alone. An all-caps
+    // rule also matches "HASTIE LANYON.", the signature at the end of Lanyon's
+    // narrative, which would have produced an eleventh chapter of one line.
+    const data = dataFor('jekyll-and-hyde')
+    expect(data).toContain('Story of the Door')
+    expect(data).toContain('Search for Mr. Hyde')
+    expect(data).toContain('Henry Jekyll’s Full Statement of the Case')
+    expect(data).not.toContain('Hastie Lanyon')
+  })
+
+  it('carries the book division where the numbering restarts', () => {
+    // The War of the Worlds restarts at Book Two. Without the part marker a
+    // reader would be offered two Chapter Is and the second ten chapters would
+    // carry the first book's numbers.
+    const data = dataFor('the-war-of-the-worlds')
+    expect(data).toContain('Book One, Chapter I:')
+    expect(data).toContain('Book Two, Chapter I:')
+    expect(data).toContain('Book Two, Chapter X:')
+  })
+
+  it('strips the trailing stop from a chapter title', () => {
+    // The edition prints "The Eve of the War." - a full stop that reads as a
+    // typo in a sidebar.
+    expect(dataFor('the-war-of-the-worlds')).toContain('The Eve of the War')
+    expect(dataFor('the-war-of-the-worlds')).not.toContain('The Eve of the War.')
   })
 
   it('uses the title the specification prints, not the edition', () => {

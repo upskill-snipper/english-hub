@@ -104,13 +104,26 @@ describe('the three spellings of the same section', () => {
   })
 
   it('gives the structure entry to a text that has no readable full text', () => {
-    // Only macbeth and frankenstein have a `read` route. The other fifty-one
-    // must not lose their chapter navigation because of that.
-    const nav = buildTextNav('jekyll-and-hyde')
+    // THE EXAMPLE CHANGED, NOT THE RULE. This used Jekyll and Hyde and opened
+    // "only macbeth and frankenstein have a read route". Eighteen texts have
+    // one now, Jekyll among them, so it is no longer an example of a text
+    // WITHOUT a full text. An Inspector Calls still is - it is in copyright and
+    // always will be for our purposes - and the rule it demonstrates is
+    // unchanged: a text must not lose its chapter navigation for want of a
+    // readable text.
+    const nav = buildTextNav('an-inspector-calls')
     const textGroup = nav.groups.find((g) => g.key === 'text')
-    expect(textGroup?.items.map((i) => i.href)).toEqual([
-      '/revision/texts/jekyll-and-hyde/chapters',
-    ])
+    expect(textSubpageExists('an-inspector-calls', 'read')).toBe(false)
+    expect(textGroup?.items.map((i) => i.href)).toEqual(['/revision/texts/an-inspector-calls/acts'])
+  })
+
+  it('and a text that HAS one offers both', () => {
+    // The other half, which nothing asserted before because nothing had both.
+    const items = buildTextNav('jekyll-and-hyde')
+      .groups.find((g) => g.key === 'text')
+      ?.items.map((i) => i.href)
+    expect(items).toContain('/revision/texts/jekyll-and-hyde/chapters')
+    expect(items).toContain('/revision/texts/jekyll-and-hyde/read')
   })
 })
 
