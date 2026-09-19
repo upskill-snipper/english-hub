@@ -17744,6 +17744,8 @@ export const EN_MESSAGES: Record<string, string> = {
   'ielts.hub.more.modelanswers.body':
     'Band-6.5 and band-8 sample answers for Writing and Speaking, with notes on what lifts each one up the scale.',
   'speech.dictate': 'Dictate',
+  'speech.mic_blocked': 'Microphone blocked. Allow microphone access for this site and try again.',
+  'speech.mic_failed': 'Dictation could not start. You can still type.',
   'speech.listening': 'Listening…',
   'speech.read_aloud': 'Read aloud',
   'speech.stop': 'Stop',

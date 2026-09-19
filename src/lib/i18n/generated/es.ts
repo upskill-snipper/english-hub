@@ -18227,6 +18227,9 @@ export const ES_MESSAGES: Record<string, string> = {
   'ielts.hub.more.modelanswers.body':
     'Respuestas de ejemplo de Band 6.5 y Band 8 para Writing y Speaking, con notas sobre qué hace subir cada una en la escala.',
   'speech.dictate': 'Dictar',
+  'speech.mic_blocked':
+    'Micrófono bloqueado. Permite el acceso al micrófono para este sitio e inténtalo de nuevo.',
+  'speech.mic_failed': 'No se pudo iniciar el dictado. Aún puedes escribir.',
   'speech.listening': 'Escuchando…',
   'speech.read_aloud': 'Leer en voz alta',
   'speech.stop': 'Detener',

@@ -79,9 +79,23 @@ const nextConfig = {
           // race. The middleware's copies are gone and this value is now the
           // one that ships - it must keep `payment=(self)` or wallet payments
           // break on every route.
+          //
+          // `microphone=(self)` since 19 September 2026, and it is a bug fix
+          // rather than a relaxation for its own sake. The value was
+          // `microphone=()`, which disables the microphone for EVERY origin
+          // including our own, so the Web Speech API could not start. The
+          // product ships a dictation button on seven surfaces - the marking
+          // form, essay feedback, the marker, school marking, two IELTS pages -
+          // and every one of them rendered a microphone that did nothing when
+          // clicked. Reported from the live site.
+          //
+          // `(self)` is the minimum that makes it work: our own origin only,
+          // no third party, and the browser still asks the user for permission
+          // on first use. Camera and geolocation stay fully closed because
+          // nothing here uses them.
           {
             key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=(), payment=(self)',
+            value: 'camera=(), microphone=(self), geolocation=(), payment=(self)',
           },
           // Cross-origin isolation (P1-SEC-7): COOP pops opener references for
           // cross-origin windows (mitigates Spectre-class leaks + tab-napping);

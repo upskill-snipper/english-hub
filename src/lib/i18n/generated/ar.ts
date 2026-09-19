@@ -17276,6 +17276,9 @@ export const AR_MESSAGES: Record<string, string> = {
   'ielts.hub.more.modelanswers.body':
     'نماذج إجابات Band 6.5 وBand 8 لـ Writing وSpeaking، مع ملاحظات عن اللي يرفع كل وحدة بالسلّم.',
   'speech.dictate': 'تحدّث للكتابة',
+  'speech.mic_blocked':
+    'الميكروفون محظور. اسمح بالوصول إلى الميكروفون لهذا الموقع ثم أعد المحاولة.',
+  'speech.mic_failed': 'تعذّر بدء الإملاء. لا يزال بإمكانك الكتابة.',
   'speech.listening': 'نسمعك…',
   'speech.read_aloud': 'اسمعها بصوت',
   'speech.stop': 'وقّف',

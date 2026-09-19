@@ -10,6 +10,7 @@
 // field stays usable by typing. Free + client-side (Web Speech API).
 // ────────────────────────────────────────────────────────────────────────────
 
+import { useState } from 'react'
 import { Mic, MicOff } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useDictation } from '@/lib/speech/use-dictation'
@@ -35,9 +36,26 @@ export function DictationButton({
   className,
 }: DictationButtonProps) {
   const t = useT()
+  /**
+   * WHY THIS STATE EXISTS. The hook has always taken an `onError`, and not one
+   * of the seven call sites passed it, so every recognition failure was
+   * swallowed: the button stopped pulsing and nothing else happened. The
+   * failure everybody was hitting was `not-allowed`, because the site sent
+   * `Permissions-Policy: microphone=()` and blocked its own microphone. That is
+   * fixed in next.config.js, but a permission the USER denies produces exactly
+   * the same silence, and a mic that fails without saying so is indistinguishable
+   * from a mic that is broken.
+   */
+  const [error, setError] = useState<string | null>(null)
   const { supported, listening, interim, toggle } = useDictation({
     lang,
     onFinal: onText,
+    onError: (code) =>
+      setError(
+        code === 'not-allowed' || code === 'service-not-allowed'
+          ? t('speech.mic_blocked')
+          : t('speech.mic_failed'),
+      ),
   })
 
   // Graceful degradation: no mic where the browser can't do speech recognition.
@@ -47,26 +65,36 @@ export function DictationButton({
   const listeningLabel = t('speech.listening')
 
   return (
-    <button
-      type="button"
-      onClick={toggle}
-      aria-pressed={listening}
-      aria-label={listening ? t('speech.stop') : idleLabel}
-      title={listening ? (interim ? `${listeningLabel} ${interim}` : listeningLabel) : idleLabel}
-      className={cn(
-        'inline-flex items-center justify-center gap-1.5 rounded-full border px-3 py-1.5 text-sm font-medium transition-colors',
-        listening
-          ? 'animate-pulse border-red-500/40 bg-red-500/10 text-red-500'
-          : 'border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground',
-        className,
+    <span className="inline-flex flex-col items-start gap-1">
+      <button
+        type="button"
+        onClick={() => {
+          setError(null)
+          toggle()
+        }}
+        aria-pressed={listening}
+        aria-label={listening ? t('speech.stop') : idleLabel}
+        title={listening ? (interim ? `${listeningLabel} ${interim}` : listeningLabel) : idleLabel}
+        className={cn(
+          'inline-flex items-center justify-center gap-1.5 rounded-full border px-3 py-1.5 text-sm font-medium transition-colors',
+          listening
+            ? 'animate-pulse border-red-500/40 bg-red-500/10 text-red-500'
+            : 'border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground',
+          className,
+        )}
+      >
+        {listening ? (
+          <MicOff className="h-4 w-4" aria-hidden />
+        ) : (
+          <Mic className="h-4 w-4" aria-hidden />
+        )}
+        {!iconOnly && <span>{listening ? listeningLabel : idleLabel}</span>}
+      </button>
+      {error && (
+        <span role="status" className="text-xs leading-snug text-red-500">
+          {error}
+        </span>
       )}
-    >
-      {listening ? (
-        <MicOff className="h-4 w-4" aria-hidden />
-      ) : (
-        <Mic className="h-4 w-4" aria-hidden />
-      )}
-      {!iconOnly && <span>{listening ? listeningLabel : idleLabel}</span>}
-    </button>
+    </span>
   )
 }

@@ -78,9 +78,25 @@ describe('next.config.js', () => {
     // This value used to exist ONLY in the middleware's duplicate. Now that the
     // middleware no longer sets the header, dropping it here silently disables
     // Apple Pay and Google Pay on every route.
-    expect(NEXT_CONFIG).toMatch(
-      /'Permissions-Policy'[\s\S]{0,120}camera=\(\), microphone=\(\), geolocation=\(\), payment=\(self\)/,
-    )
+    expect(NEXT_CONFIG).toMatch(/'Permissions-Policy'[\s\S]{0,200}payment=\(self\)/)
+  })
+
+  it('and microphone=(self), without which dictation cannot start', () => {
+    // It was `microphone=()`, which closes the microphone to every origin
+    // INCLUDING our own. Seven surfaces ship a dictation button and all seven
+    // rendered a microphone that did nothing. Reported from the live site.
+    //
+    // Asserted as its own directive rather than as one long exact string,
+    // because the previous shape meant any change to any directive rewrote an
+    // assertion about all four and the diff said nothing about which one moved.
+    expect(NEXT_CONFIG).toMatch(/'Permissions-Policy'[\s\S]{0,200}microphone=\(self\)/)
+  })
+
+  it('while camera and geolocation stay closed, because nothing uses them', () => {
+    // The counterweight. Opening the microphone is not a reason to open
+    // anything else, and a blanket relaxation would pass the assertion above.
+    expect(NEXT_CONFIG).toMatch(/'Permissions-Policy'[\s\S]{0,200}camera=\(\)/)
+    expect(NEXT_CONFIG).toMatch(/'Permissions-Policy'[\s\S]{0,200}geolocation=\(\)/)
   })
 })
 
