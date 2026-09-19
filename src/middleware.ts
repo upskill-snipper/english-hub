@@ -292,6 +292,30 @@ function isBoardAllowlisted(pathname: string): boolean {
 // below the support floor.
 function buildCsp(nonce: string, extraScriptHashes: string[] = []): string {
   const extraSrc = extraScriptHashes.length ? ' ' + extraScriptHashes.join(' ') : ''
+
+  // ── 'unsafe-eval', IN DEVELOPMENT ONLY ────────────────────────────────────
+  //
+  // THE DEFECT (19 September 2026). This policy is applied on every response,
+  // including `next dev`, and it has no 'unsafe-eval'. Next's development client
+  // evaluates its hot-reload payload with eval, so the browser refused it and
+  // REACT NEVER HYDRATED. Every page rendered server-side and then sat there:
+  // no effect ran, no state updated, no click handler fired.
+  //
+  // That is 1,172 client components and 447 client page routes - the marking
+  // form, the toolkit, forty games, the dashboards, the whole school suite -
+  // none of which could be exercised locally by anybody. It is the most likely
+  // reason client-side defects keep reaching production here: they cannot be
+  // found by clicking, because clicking does nothing in development.
+  //
+  // Found while checking a deep link into /marking/submit: the form came up
+  // empty, the console carried CSP EvalErrors from main-app.js, and none of the
+  // page's three mount effects had run, two of which predate that change.
+  //
+  // PRODUCTION IS DELIBERATELY UNCHANGED. A production build contains no eval,
+  // so this costs nothing there and must never be allowed to leak: a test
+  // asserts the production policy is byte-identical to what it was, and that it
+  // still contains no 'unsafe-eval'.
+  const devEval = process.env.NODE_ENV === 'production' ? '' : " 'unsafe-eval'"
   // 02 May 2026 - dropped the `'nonce-${nonce}'` source from script-src.
   //
   // Modern browsers (Chrome, Firefox, Safari ≥15.4) ignore `'unsafe-inline'`
@@ -333,7 +357,7 @@ function buildCsp(nonce: string, extraScriptHashes: string[] = []): string {
     //     (2026-08-23: all three were live in the page but silently BLOCKED by
     //     this policy - the TrustBox rendered only its fallback, review
     //     invitations never fired, and CF analytics collected nothing.)
-    `script-src 'self' 'unsafe-inline'${extraSrc} https://js.stripe.com https://r.wdfl.co https://www.googletagmanager.com https://*.i.posthog.com https://widget.trustpilot.com https://invitejs.trustpilot.com https://static.cloudflareinsights.com`,
+    `script-src 'self' 'unsafe-inline'${devEval}${extraSrc} https://js.stripe.com https://r.wdfl.co https://www.googletagmanager.com https://*.i.posthog.com https://widget.trustpilot.com https://invitejs.trustpilot.com https://static.cloudflareinsights.com`,
     `style-src 'self' 'unsafe-inline'`, // Tailwind JIT inlines styles; acceptable.
     `img-src 'self' data: https:`,
     `font-src 'self' data:`,
