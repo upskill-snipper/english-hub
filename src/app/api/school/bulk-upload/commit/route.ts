@@ -55,6 +55,18 @@ interface CommitResponse {
   readonly created: number
   readonly updated: number
   readonly skipped: number
+  /**
+   * Emails whose school_members row could not be written. Reported rather than
+   * logged, because this whole step failed silently for every import until
+   * 19 September 2026 and the school was told the upload had succeeded.
+   */
+  readonly memberLinkFailures: ReadonlyArray<string>
+  /**
+   * How many rows supplied a class code that was NOT acted on. Class
+   * membership lives in class_students and moves seat billing, so the import
+   * does not assign classes; saying so is better than appearing to.
+   */
+  readonly classCodesNotAssigned: number
   readonly errors: ReadonlyArray<ParseError>
   readonly outcomes: ReadonlyArray<PerRowOutcome>
 }
@@ -402,14 +414,35 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // 8. Link Supabase school_members for every row (best-effort; outside tx).
+    // 8. Link Supabase school_members for every row.
+    //
+    // THE DEFECT THIS FIXES (19 September 2026). This upsert named a
+    // `class_code` column that school_members does not have and never has.
+    // PostgREST rejects the whole request when one column is unknown, so NOT
+    // ONE member row was written for any bulk-uploaded student - and
+    // school_members holds 0 rows to prove it.
+    //
+    // It was invisible for two compounding reasons. Supabase returns
+    // `{ error }` rather than throwing, so the `catch` below never fired; and
+    // nothing read the result, so the error object was dropped on the floor.
+    // The import then reported "created: N" to the school.
+    //
+    // The class code is NOT written here. Class membership lives in
+    // `class_students`, and joining a student to a class moves
+    // `schools.seats_used`, which is seat billing. Wiring that from a CSV
+    // import is a real piece of work and is not being guessed at tonight - so
+    // the code the teacher supplied is reported back per row instead of being
+    // silently dropped into a column that does not exist.
+    const memberFailures: string[] = []
+    let classCodesSupplied = 0
     for (const row of normalisedRows) {
+      const email = row.email.toLowerCase()
+      if (row.classCode) classCodesSupplied += 1
       try {
-        const email = row.email.toLowerCase()
         const authId =
           createdAuthIds.find((a) => a.email === email)?.authId ?? existingByEmail.get(email)?.id
         if (!authId) continue
-        await admin.from('school_members').upsert(
+        const { error: memberError } = await admin.from('school_members').upsert(
           {
             school_id: schoolId,
             user_id: authId,
@@ -418,17 +451,28 @@ export async function POST(request: NextRequest) {
             email,
             invite_status: 'accepted',
             year_group: row.yearGroup,
-            class_code: row.classCode,
           },
           { onConflict: 'school_id,user_id' },
         )
+        if (memberError) {
+          console.error('bulk-upload.commit: school_members upsert failed', email, memberError)
+          memberFailures.push(email)
+        }
       } catch (e) {
-        console.warn('bulk-upload.commit: school_members upsert failed', row.email, e)
+        console.error('bulk-upload.commit: school_members upsert threw', email, e)
+        memberFailures.push(email)
       }
+    }
+    if (memberFailures.length) {
+      console.error(
+        `bulk-upload.commit: ${memberFailures.length} of ${normalisedRows.length} school_members rows failed`,
+      )
     }
 
     const response: CommitResponse = {
       jobId: job.id,
+      memberLinkFailures: memberFailures,
+      classCodesNotAssigned: classCodesSupplied,
       created: createdCount,
       updated: updatedCount,
       skipped: skippedCount,
