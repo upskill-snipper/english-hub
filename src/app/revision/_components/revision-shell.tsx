@@ -44,6 +44,7 @@ import { isIgcseBoard, isGcseBoard } from '@/lib/board/board-filter'
 import { gradeDisplayLabel } from '@/lib/board/grade-boundaries'
 import { useT } from '@/lib/i18n/use-t'
 import { buildTextNav, textSlugFromPath } from '@/lib/revision/text-nav'
+import { boardShelfHref } from '@/lib/board/board-landing'
 
 import { SidebarLink } from './sidebar-link'
 import { TextScopedNav } from './text-scoped-nav'
@@ -67,6 +68,15 @@ interface NavItem {
   /** Sidebar grouping - controls which collapsible bucket the item lands in.
    *  Items without an explicit group are treated as `top` (always visible). */
   group?: NavGroup
+  /**
+   * A better destination once the student's board is known.
+   *
+   * "Set texts" pointed at /revision/texts, the catch-all index, even for a
+   * student whose board we already had - so they were sent to a list of every
+   * text on the platform and left to find their own. With a board it now goes
+   * to that board's shelf.
+   */
+  hrefForBoard?: (board: ExamBoard) => string
 }
 
 // Boards that see literature (poetry, set texts, comparison essays). Cambridge
@@ -94,7 +104,7 @@ const NAV_ITEMS: NavItem[] = [
   { labelKey: 'revision.shell.nav.study_plan',         href: '/revision/study-plan',                                 icon: CalendarDays,   colour: 'text-primary',     group: 'top' },
   // Content & texts.
   { labelKey: 'revision.shell.nav.poetry',             href: '/revision/poetry',                                     icon: FileText,       colour: 'text-rose-400',    boards: LIT_BOARDS,                  group: 'content' },
-  { labelKey: 'revision.shell.nav.set_texts',          href: '/revision/texts',                                      icon: BookText,       colour: 'text-blue-400',    boards: LIT_BOARDS,                  group: 'content' },
+  { labelKey: 'revision.shell.nav.set_texts',          href: '/revision/texts',                                      icon: BookText,       colour: 'text-blue-400',    boards: LIT_BOARDS,                  group: 'content' , hrefForBoard: boardShelfHref },
   { labelKey: 'revision.shell.nav.language_skills',    href: '/revision/language',                                   icon: PenTool,        colour: 'text-violet-400',                                       group: 'content' },
   { labelKey: 'revision.shell.nav.comparison_essays',  href: '/revision/poetry/love-and-relationships/comparison-guide', icon: GitCompare, colour: 'text-violet-400',  boards: LIT_BOARDS,                  group: 'content' },
   // Practice & assess.
@@ -127,7 +137,9 @@ const NAV_ITEMS: NavItem[] = [
 ]
 
 function getNavItemsForBoard(board: ExamBoard | null): NavItem[] {
-  return NAV_ITEMS.filter((item) => {
+  const resolve = (item: NavItem): NavItem =>
+    board && item.hrefForBoard ? { ...item, href: item.hrefForBoard(board) } : item
+  return NAV_ITEMS.map(resolve).filter((item) => {
     if (!board) {
       // No board chosen yet - hide board-locked items (igcse-only / gcse-only)
       return !item.igcseOnly && !item.gcseOnly && !item.boards ? true : !item.boards // generic items pass; board-pinned items hidden until board chosen

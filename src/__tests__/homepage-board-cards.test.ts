@@ -109,45 +109,45 @@ describe('GCSE_BOARDS expected entries', () => {
   it('AQA -> /revision/poetry/power-and-conflict', () => {
     const entry = findEntry(GCSE_BOARDS, /AQA/)
     expect(entry, 'AQA entry missing from GCSE_BOARDS').toBeDefined()
-    expect(entry?.href).toBe('/revision?setBoard=aqa')
+    expect(entry?.href).toBe('/set-texts/aqa?setBoard=aqa')
   })
 
-  it('Pearson Edexcel -> /revision?setBoard=edexcel', () => {
+  it('Pearson Edexcel -> /set-texts/edexcel?setBoard=edexcel', () => {
     const entry = findEntry(GCSE_BOARDS, /Pearson Edexcel/)
     expect(entry, 'Pearson Edexcel entry missing from GCSE_BOARDS').toBeDefined()
-    expect(entry?.href).toBe('/revision?setBoard=edexcel')
+    expect(entry?.href).toBe('/set-texts/edexcel?setBoard=edexcel')
   })
 
-  it('OCR -> /revision?setBoard=ocr', () => {
+  it('OCR -> /set-texts/ocr?setBoard=ocr', () => {
     const entry = findEntry(GCSE_BOARDS, /OCR/)
     expect(entry, 'OCR entry missing from GCSE_BOARDS').toBeDefined()
-    expect(entry?.href).toBe('/revision?setBoard=ocr')
+    expect(entry?.href).toBe('/set-texts/ocr?setBoard=ocr')
   })
 
-  it('WJEC Eduqas / Eduqas -> /revision?setBoard=eduqas', () => {
+  it('WJEC Eduqas / Eduqas -> /set-texts/eduqas?setBoard=eduqas', () => {
     const entry = findEntry(GCSE_BOARDS, /WJEC Eduqas|Eduqas/)
     expect(entry, 'Eduqas entry missing from GCSE_BOARDS').toBeDefined()
-    expect(entry?.href).toBe('/revision?setBoard=eduqas')
+    expect(entry?.href).toBe('/set-texts/eduqas?setBoard=eduqas')
   })
 })
 
 describe('IGCSE_BOARDS expected entries', () => {
-  it('Cambridge IGCSE / CIE -> /revision?setBoard=cambridge-0500', () => {
+  it('Cambridge IGCSE / CIE -> /set-texts/cambridge-0500?setBoard=cambridge-0500', () => {
     const entry = findEntry(IGCSE_BOARDS, /Cambridge IGCSE|CIE/)
     expect(entry, 'Cambridge entry missing from IGCSE_BOARDS').toBeDefined()
-    expect(entry?.href).toBe('/revision?setBoard=cambridge-0500')
+    expect(entry?.href).toBe('/set-texts/cambridge-0500?setBoard=cambridge-0500')
   })
 
-  it('Pearson Edexcel IGCSE Literature -> /revision?setBoard=edexcel-igcse', () => {
+  it('Pearson Edexcel IGCSE Literature -> /set-texts/edexcel-igcse?setBoard=edexcel-igcse', () => {
     const entry = findEntry(IGCSE_BOARDS, /Pearson Edexcel IGCSE Literature|Edexcel IGCSE/)
     expect(entry, 'Edexcel IGCSE Literature entry missing from IGCSE_BOARDS').toBeDefined()
-    expect(entry?.href).toBe('/revision?setBoard=edexcel-igcse')
+    expect(entry?.href).toBe('/set-texts/edexcel-igcse?setBoard=edexcel-igcse')
   })
 
-  it('Pearson Edexcel IGCSE Language A -> /revision?setBoard=edexcel-igcse-lang', () => {
+  it('Pearson Edexcel IGCSE Language A -> /set-texts/edexcel-igcse-lang?setBoard=edexcel-igcse-lang', () => {
     const entry = findEntry(IGCSE_BOARDS, /Pearson Edexcel IGCSE Language|Language A/)
     expect(entry, 'Edexcel IGCSE Language entry missing from IGCSE_BOARDS').toBeDefined()
-    expect(entry?.href).toBe('/revision?setBoard=edexcel-igcse-lang')
+    expect(entry?.href).toBe('/set-texts/edexcel-igcse-lang?setBoard=edexcel-igcse-lang')
   })
 })
 
@@ -167,8 +167,8 @@ describe('GCSE / IGCSE URL boundary (regression: GCSE -> IGCSE Lit bug)', () => 
     }
   })
 
-  it('every card href is the canonical /revision?setBoard=<id> shape', () => {
-    const canonical = /^\/revision\?setBoard=[a-z0-9-]+$/
+  it('every card href is the canonical /set-texts/<id>?setBoard=<id> shape', () => {
+    const canonical = /^\/set-texts\/([a-z0-9-]+)\?setBoard=\1$/
     for (const b of [...GCSE_BOARDS, ...IGCSE_BOARDS]) {
       expect(
         canonical.test(b.href),

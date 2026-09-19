@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 /* ───────────────────── Board data ─────────────────────
  *
  * The seven board cards mirror the homepage's BoardPickerSection. Every card
- * lands on /revision?setBoard=<id>; the middleware validates the id against
+ * lands on /set-texts/<id>?setBoard=<id>; the middleware validates the id against
  * the BOARDS allow-list, writes the cookie, and 307s back to clean /revision.
  * Keep ids in sync with src/lib/board/boards.ts (single source of truth).
  */
@@ -54,7 +54,7 @@ const GCSE_BOARD_DEFS: BoardDef[] = [
     id: 'aqa',
     nameKey: 'exam_boards.aqa.name',
     initials: 'AQA',
-    href: '/revision?setBoard=aqa',
+    href: '/set-texts/aqa?setBoard=aqa',
     blurbKey: 'exam_boards.aqa.blurb',
     level: 'gcse',
     discClass: 'bg-emerald-500/15 text-emerald-700 ring-emerald-500/30 dark:text-emerald-300',
@@ -63,7 +63,7 @@ const GCSE_BOARD_DEFS: BoardDef[] = [
     id: 'edexcel',
     nameKey: 'exam_boards.edexcel.name',
     initials: 'EDX',
-    href: '/revision?setBoard=edexcel',
+    href: '/set-texts/edexcel?setBoard=edexcel',
     blurbKey: 'exam_boards.edexcel.blurb',
     level: 'gcse',
     discClass: 'bg-emerald-500/15 text-emerald-700 ring-emerald-500/30 dark:text-emerald-300',
@@ -72,7 +72,7 @@ const GCSE_BOARD_DEFS: BoardDef[] = [
     id: 'ocr',
     nameKey: 'exam_boards.ocr.name',
     initials: 'OCR',
-    href: '/revision?setBoard=ocr',
+    href: '/set-texts/ocr?setBoard=ocr',
     blurbKey: 'exam_boards.ocr.blurb',
     level: 'gcse',
     discClass: 'bg-emerald-500/15 text-emerald-700 ring-emerald-500/30 dark:text-emerald-300',
@@ -81,7 +81,7 @@ const GCSE_BOARD_DEFS: BoardDef[] = [
     id: 'eduqas',
     nameKey: 'exam_boards.eduqas.name',
     initials: 'WJEC',
-    href: '/revision?setBoard=eduqas',
+    href: '/set-texts/eduqas?setBoard=eduqas',
     blurbKey: 'exam_boards.eduqas.blurb',
     level: 'gcse',
     discClass: 'bg-emerald-500/15 text-emerald-700 ring-emerald-500/30 dark:text-emerald-300',
@@ -93,7 +93,7 @@ const IGCSE_BOARD_DEFS: BoardDef[] = [
     id: 'cambridge-0500',
     nameKey: 'exam_boards.cambridge.name',
     initials: 'CIE',
-    href: '/revision?setBoard=cambridge-0500',
+    href: '/set-texts/cambridge-0500?setBoard=cambridge-0500',
     blurbKey: 'exam_boards.cambridge.blurb',
     level: 'igcse',
     discClass: 'bg-clay-500/15 text-clay-700 ring-clay-500/30 dark:text-clay-300',
@@ -102,7 +102,7 @@ const IGCSE_BOARD_DEFS: BoardDef[] = [
     id: 'edexcel-igcse',
     nameKey: 'exam_boards.edexcel_igcse.name',
     initials: 'iEDX-Lit',
-    href: '/revision?setBoard=edexcel-igcse',
+    href: '/set-texts/edexcel-igcse?setBoard=edexcel-igcse',
     blurbKey: 'exam_boards.edexcel_igcse.blurb',
     level: 'igcse',
     discClass: 'bg-clay-500/15 text-clay-700 ring-clay-500/30 dark:text-clay-300',
@@ -111,7 +111,7 @@ const IGCSE_BOARD_DEFS: BoardDef[] = [
     id: 'edexcel-igcse-lang',
     nameKey: 'exam_boards.edexcel_igcse_lang.name',
     initials: 'iEDX-Lang',
-    href: '/revision?setBoard=edexcel-igcse-lang',
+    href: '/set-texts/edexcel-igcse-lang?setBoard=edexcel-igcse-lang',
     blurbKey: 'exam_boards.edexcel_igcse_lang.blurb',
     level: 'igcse',
     discClass: 'bg-clay-500/15 text-clay-700 ring-clay-500/30 dark:text-clay-300',

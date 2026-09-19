@@ -18,6 +18,7 @@ import {
 
 import { events } from '@/lib/gtag'
 import { useBoard, type ExamBoard } from '@/lib/board/board-store'
+import { boardLandingHref, boardShelfHref } from '@/lib/board/board-landing'
 import { cn } from '@/lib/utils'
 import { useT } from '@/lib/i18n/use-t'
 
@@ -27,6 +28,12 @@ import { useT } from '@/lib/i18n/use-t'
 
 type Props = {
   /** Where to redirect after a selection (defaults to `/revision`). */
+  /**
+   * Where to go after a board is chosen. Omit it and the student lands on that
+   * board's own set texts, which is the point of asking. A caller passes this
+   * only when it has somewhere more specific in mind, such as the `?next=`
+   * destination a visitor was heading for before being asked.
+   */
   redirectTo?: string
   /** When true, do not redirect on selection - used by the modal gate. */
   disableRedirect?: boolean
@@ -59,7 +66,7 @@ type AwardingBody =
  * ──────────────────────────────────────────────────────────────────────────── */
 
 export function BoardSelectorSection({
-  redirectTo = '/revision',
+  redirectTo,
   disableRedirect = false,
   onSelected,
   compact,
@@ -108,13 +115,23 @@ export function BoardSelectorSection({
         // (not `router.push` + `router.refresh`) because Next.js's client
         // navigation doesn't reliably resend the request with the freshly
         // written cookie on a single tick.
+        //
+        // 19 September 2026. This used to default to `/revision`, a
+        // board-agnostic hub, so a student answered "which board do you study?"
+        // and landed on a page that did not mention their board or their texts.
+        // With no explicit `redirectTo` the destination is now that board's own
+        // set texts.
         if (typeof window !== 'undefined') {
-          const sep = redirectTo.includes('?') ? '&' : '?'
-          window.location.href = `${redirectTo}${sep}setBoard=${encodeURIComponent(board)}`
+          if (redirectTo) {
+            const sep = redirectTo.includes('?') ? '&' : '?'
+            window.location.href = `${redirectTo}${sep}setBoard=${encodeURIComponent(board)}`
+          } else {
+            window.location.href = boardLandingHref(board)
+          }
         } else {
           // SSR fallback (handleSelect should never run server-side, but
           // keep the branch type-safe).
-          router.push(redirectTo)
+          router.push(redirectTo ?? boardShelfHref(board))
           router.refresh()
         }
       } catch {

@@ -8,7 +8,7 @@ import { join } from 'node:path'
  * Locks in the canonical board-navigation model documented in
  * `business-docs/BOARD_NAVIGATION_MODEL.md`:
  *
- *   A. Click any of the 7 homepage cards -> cookie set, user lands on /revision.
+ *   A. Click any of the 7 homepage cards -> cookie set, user lands on that board's set texts.
  *   B. Click browser back -> homepage, cookie unchanged.
  *   C. Click a different homepage card -> cookie updates.
  *   D. Deep-link to /igcse/edexcel with `aqa` cookie -> Edexcel IGCSE renders,
@@ -99,12 +99,21 @@ function extractBoardArray(source: string, arrayName: string): readonly BoardEnt
   })
 }
 
-const SET_BOARD_HREF_RE = /^\/revision\?setBoard=[a-z0-9-]+$/
+// 19 September 2026. Board selection used to land on /revision, a
+// board-agnostic hub: a student answered "which board do you study?" and
+// arrived somewhere that did not mention their board or their texts. It now
+// lands on that board's own set texts.
+//
+// The id appears twice on purpose - once in the path, which decides what is
+// shown, and once in the query, which the middleware reads to write the
+// cookie before redirecting to the clean URL. The backreference is the point:
+// the two must AGREE, or the site would set one board and display another.
+const SET_BOARD_HREF_RE = /^\/set-texts\/([a-z0-9-]+)\?setBoard=\1$/
 
 /* -------------------------------------------------------------------------
- * 1. Homepage card hrefs are canonical /revision?setBoard=<id>
+ * 1. Homepage card hrefs are canonical /set-texts/<id>?setBoard=<id>
  * ------------------------------------------------------------------------- */
-describe('homepage cards link to /revision?setBoard=<id> (contract A,C)', () => {
+describe('homepage cards link to /set-texts/<id>?setBoard=<id> (contract A,C)', () => {
   const HOMEPAGE_SOURCE = readSource('app', 'page.tsx')
   const GCSE = extractBoardArray(HOMEPAGE_SOURCE, 'GCSE_BOARDS')
   const IGCSE = extractBoardArray(HOMEPAGE_SOURCE, 'IGCSE_BOARDS')
@@ -116,11 +125,11 @@ describe('homepage cards link to /revision?setBoard=<id> (contract A,C)', () => 
     expect(ALL_HOMEPAGE_BOARDS.length).toBe(7)
   })
 
-  it('every homepage card href matches /revision?setBoard=<id>', () => {
+  it('every homepage card href matches /set-texts/<id>?setBoard=<id>', () => {
     for (const card of ALL_HOMEPAGE_BOARDS) {
       expect(
         SET_BOARD_HREF_RE.test(card.href),
-        `Card "${card.name}" href "${card.href}" must match /revision?setBoard=<id>`,
+        `Card "${card.name}" href "${card.href}" must match /set-texts/<id>?setBoard=<id>`,
       ).toBe(true)
     }
   })
@@ -146,9 +155,9 @@ describe('homepage cards link to /revision?setBoard=<id> (contract A,C)', () => 
 })
 
 /* -------------------------------------------------------------------------
- * 2. Board-select page hrefs are canonical /revision?setBoard=<id>
+ * 2. Board-select page hrefs are canonical /set-texts/<id>?setBoard=<id>
  * ------------------------------------------------------------------------- */
-describe('/board-select cards link to /revision?setBoard=<id>', () => {
+describe('/board-select cards link to /set-texts/<id>?setBoard=<id>', () => {
   const SOURCE = readSource('app', 'board-select', 'page.tsx')
   const GCSE = extractBoardArray(SOURCE, 'GCSE_BOARDS')
   const IGCSE = extractBoardArray(SOURCE, 'IGCSE_BOARDS')
@@ -159,11 +168,11 @@ describe('/board-select cards link to /revision?setBoard=<id>', () => {
     expect(IGCSE.length).toBeGreaterThan(0)
   })
 
-  it('every board-select card href matches /revision?setBoard=<id>', () => {
+  it('every board-select card href matches /set-texts/<id>?setBoard=<id>', () => {
     for (const card of ALL) {
       expect(
         SET_BOARD_HREF_RE.test(card.href),
-        `board-select card "${card.name}" href "${card.href}" must match /revision?setBoard=<id>`,
+        `board-select card "${card.name}" href "${card.href}" must match /set-texts/<id>?setBoard=<id>`,
       ).toBe(true)
     }
   })

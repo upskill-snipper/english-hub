@@ -34,7 +34,9 @@ type Board = {
   level: Level
 }
 
-// 02 May 2026 - hrefs use the canonical `/revision?setBoard=<id>` mechanism.
+// 02 May 2026 - hrefs use the canonical `?setBoard=<id>` mechanism.
+// 19 September 2026 - the destination is now the board's own set texts,
+// `/set-texts/<id>?setBoard=<id>`, rather than the board-agnostic hub.
 // Middleware reads ?setBoard=, validates, sets cookie, redirects to clean
 // /revision. See business-docs/BOARD_NAVIGATION_MODEL.md.
 
@@ -45,7 +47,7 @@ type Board = {
 const KS3_BOARDS: readonly Board[] = [
   {
     name: 'KS3 English (Years 7-9)',
-    href: '/revision?setBoard=ks3',
+    href: '/set-texts/ks3?setBoard=ks3',
     descriptionKey: 'board.desc.ks3',
     level: 'KS3',
   },
@@ -54,25 +56,25 @@ const KS3_BOARDS: readonly Board[] = [
 const GCSE_BOARDS: readonly Board[] = [
   {
     name: 'AQA',
-    href: '/revision?setBoard=aqa',
+    href: '/set-texts/aqa?setBoard=aqa',
     descriptionKey: 'board.desc.aqa',
     level: 'GCSE',
   },
   {
     name: 'Pearson Edexcel GCSE',
-    href: '/revision?setBoard=edexcel',
+    href: '/set-texts/edexcel?setBoard=edexcel',
     descriptionKey: 'board.desc.edexcel_gcse',
     level: 'GCSE',
   },
   {
     name: 'OCR',
-    href: '/revision?setBoard=ocr',
+    href: '/set-texts/ocr?setBoard=ocr',
     descriptionKey: 'board.desc.ocr',
     level: 'GCSE',
   },
   {
     name: 'WJEC Eduqas',
-    href: '/revision?setBoard=eduqas',
+    href: '/set-texts/eduqas?setBoard=eduqas',
     descriptionKey: 'board.desc.eduqas',
     level: 'GCSE',
   },
@@ -81,19 +83,19 @@ const GCSE_BOARDS: readonly Board[] = [
 const IGCSE_BOARDS: readonly Board[] = [
   {
     name: 'Cambridge IGCSE',
-    href: '/revision?setBoard=cambridge-0500',
+    href: '/set-texts/cambridge-0500?setBoard=cambridge-0500',
     descriptionKey: 'board.desc.cambridge_igcse',
     level: 'IGCSE',
   },
   {
     name: 'Pearson Edexcel IGCSE Literature',
-    href: '/revision?setBoard=edexcel-igcse',
+    href: '/set-texts/edexcel-igcse?setBoard=edexcel-igcse',
     descriptionKey: 'board.desc.edexcel_igcse_lit',
     level: 'IGCSE',
   },
   {
     name: 'Pearson Edexcel IGCSE Language A',
-    href: '/revision?setBoard=edexcel-igcse-lang',
+    href: '/set-texts/edexcel-igcse-lang?setBoard=edexcel-igcse-lang',
     descriptionKey: 'board.desc.edexcel_igcse_lang',
     level: 'IGCSE',
   },
@@ -121,7 +123,7 @@ const EAL_BOARDS: readonly Board[] = [
  *
  * The middleware redirects a board-gated request with no board cookie to
  * /board-select?next=<where they were going>. This page never read that
- * parameter, and every card linked to `/revision?setBoard=<id>`, so the
+ * parameter, and every card linked to `?setBoard=<id>`, so the
  * destination was discarded and everyone landed on the revision hub.
  *
  * For a newly confirmed account that meant: confirm email, get sent to your
@@ -131,7 +133,7 @@ const EAL_BOARDS: readonly Board[] = [
  *
  * The parameter has to be moved onto the DESTINATION rather than kept here:
  * the middleware reads `?setBoard=`, sets the cookie and redirects to the
- * clean URL, so `/revision?setBoard=aqa&next=/dashboard` would strip setBoard
+ * clean URL, so `/set-texts/aqa?setBoard=aqa&next=/dashboard` would strip setBoard
  * and still land on /revision. Building the href as
  * `<next>?setBoard=<id>` makes the clean-URL redirect land in the right place.
  */
@@ -498,7 +500,7 @@ async function GccRecommendationBanner() {
         </div>
         <div className="flex shrink-0 flex-col items-stretch gap-2 sm:items-end">
           <Link
-            href="/revision?setBoard=cambridge-0500"
+            href="/set-texts/cambridge-0500?setBoard=cambridge-0500"
             className="inline-flex items-center justify-center gap-1.5 rounded-full bg-clay-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-clay-600/85"
           >
             Open Cambridge 0500 <ArrowRight aria-hidden="true" className="size-3.5" />
