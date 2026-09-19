@@ -52,22 +52,38 @@ const SPEC_HUBS: Partial<Record<ExamBoard, string>> = {
 const LANGUAGE_ONLY: ExamBoard[] = ['cambridge-0500', 'cambridge-0990']
 
 /**
- * The board list is closed, so any other value must be a real 404.
+ * A KNOWN, UNFIXED DEFECT, recorded here rather than papered over.
  *
- * WITHOUT THIS the route soft-404s: `notFound()` renders the not-found UI but
- * the response still carries HTTP 200, so /set-texts/anything-at-all becomes an
- * indexable page and a crawler can mint unlimited junk URLs under this prefix.
- * Verified against a production server: /set-texts/not-a-board returned 200 with
- * the "Page not found" body until this line was added.
+ * /set-texts/<anything> returns HTTP 200 with the "Page not found" body. The
+ * `notFound()` call below runs and renders the right UI, but the status stays
+ * 200, which is a soft 404: a crawler can mint unlimited indexable URLs under
+ * this prefix and Google will treat each as a real page.
  *
- * That soft-404 is not unique to this route - /blog/<anything>,
- * /eal/<anything> and /revision/texts/<anything> all behave the same way today,
- * and only /learn returns a true 404. Fixing those is separate work; closing
- * this route's parameter set is the correct fix HERE because the fifteen boards
- * are a fixed, known set rather than a database lookup.
+ * THIS IS NOT SPECIFIC TO THIS ROUTE. Verified against a production build and a
+ * running server: /blog/<anything>, /eal/<anything> and
+ * /revision/texts/<anything> all behave identically. Thirty-nine page modules in
+ * src/app call notFound(), and none of them was observed to produce a 404.
+ * (/learn/not-a-course does return 404, but that is Next's own built-in 404 for
+ * an unmatched path - there is no page.tsx at /learn/[courseId] - so it is not
+ * evidence that notFound() works here.)
+ *
+ * `export const dynamicParams = false` was tried and DOES NOT HELP, because this
+ * page never prerenders in the first place: `t()` reads request headers to
+ * resolve the locale, which makes the route request-dynamic, so
+ * generateStaticParams produces nothing for dynamicParams to close. Confirmed in
+ * the build output: prerender-manifest.json contains zero entries for this
+ * route. The line was removed rather than left in place asserting a fix it does
+ * not deliver.
+ *
+ * The real fix is site-wide and belongs in its own change: establish why
+ * notFound() loses its status here, most likely in the interaction between the
+ * async root not-found.tsx and dynamically rendered routes, and fix it once for
+ * all thirty-nine call sites.
+ *
+ * generateStaticParams is kept because it is correct and costs nothing: the
+ * fifteen boards are a closed set, and it will prerender them the moment the
+ * locale is resolved without reading headers.
  */
-export const dynamicParams = false
-
 export function generateStaticParams() {
   return BOARDS.map((b) => ({ board: b.id }))
 }
