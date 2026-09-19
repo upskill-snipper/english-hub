@@ -55,7 +55,9 @@ const PROSE = [
   'the-war-of-the-worlds',
   'the-scarlet-letter',
 ]
-const PLAYS = ALL.filter((slug) => !PROSE.includes(slug))
+/** The poems, which are one short block rather than chapters. */
+const POEMS = ['remember', 'if', 'disabled', 'sonnet-116']
+const PLAYS = ALL.filter((slug) => !PROSE.includes(slug) && !POEMS.includes(slug))
 
 /**
  * Match a section id in either the generated form or the committed one.
@@ -91,9 +93,10 @@ function dataFor(slug: string): string {
 }
 
 describe('the texts are there', () => {
-  it('has twelve plays and six prose works', () => {
+  it('has twelve plays, six prose works and four poems', () => {
     expect(PLAYS).toHaveLength(12)
     expect(PROSE).toHaveLength(6)
+    expect(POEMS).toHaveLength(4)
   })
 
   it.each(ALL)('%s has a read route wired to its data', (slug) => {
@@ -122,9 +125,11 @@ describe('the parse matches the play', () => {
     expect(acts.size, `${slug} has acts: ${[...acts].join(', ')}`).toBe(5)
   })
 
-  it.each(ALL)('%s carries a substantial amount of text', (slug) => {
+  it.each([...PLAYS, ...PROSE])('%s carries a substantial amount of text', (slug) => {
     // A generator that writes an empty structure and reports success is the
-    // failure this codebase is full of.
+    // failure this codebase is full of. Poems are excluded and checked on
+    // their own terms below - Sonnet 116 is fourteen lines and would fail a
+    // threshold written for a novel, which says nothing about the poem.
     expect(dataFor(slug).length).toBeGreaterThan(80_000)
   })
 })
@@ -258,6 +263,55 @@ describe('the prose works parse to their real chapter counts', () => {
     // Either quoting: the generator emits JSON and prettier rewrites it on
     // commit, and this test runs in both states.
     expect(dataFor('the-sign-of-four')).toMatch(/["']?title["']?:\s*["']The Sign of Four["']/)
+  })
+})
+
+describe('the poems are whole, and are the poem', () => {
+  // A poem is not a chapter. It sits inside a collected volume with dozens of
+  // others, has no chapter marker, and its HEADING IS OFTEN NOT ITS NAME -
+  // Rossetti's "Remember" is printed in her collected Poems as "SONNET.". So
+  // each is anchored on its own first and last line and the count between them
+  // is asserted. A blank-line heuristic was tried first and ran Sonnet 116 on
+  // for ninety lines into the sonnets that follow it.
+
+  it.each([
+    ['remember', 14],
+    ['sonnet-116', 14],
+  ])('%s is exactly %i lines', (slug, count) => {
+    // Counted from the file rather than by parsing the escaped JSON string out
+    // of it: the data file holds exactly one poem, so every line break in it
+    // belongs to that poem, and a regex over escaped content is one more thing
+    // to get subtly wrong.
+    const breaks = (dataFor(slug).match(/<br \/>/g) ?? []).length
+    expect(breaks + 1).toBe(count)
+  })
+
+  it.each([
+    ['remember', 'Remember me when I am gone away', 'Than that you should remember and be sad'],
+    ['sonnet-116', 'Let me not to the marriage of true minds', 'I never writ, nor no man ever'],
+    ['if', 'If you can keep your head when all about you', 'be a Man, my son'],
+    ['disabled', 'He sat in a wheeled chair, waiting for dark', 'Why don'],
+  ])('%s opens and closes with the real lines', (slug, first, last) => {
+    const data = dataFor(slug)
+    expect(data, `${slug} opening`).toContain(first)
+    expect(data, `${slug} closing`).toContain(last)
+  })
+
+  it('keeps the line breaks, which are the form', () => {
+    // Collapsing a poem into flowing prose destroys the thing being studied.
+    expect(dataFor('sonnet-116')).toContain('<br />')
+  })
+
+  it('keeps the stanza breaks too', () => {
+    // If— is four stanzas; Disabled is five. A single paragraph would mean the
+    // stanza structure had been lost.
+    const paras = (dataFor('if').match(/<p>/g) ?? []).length
+    expect(paras).toBe(4)
+    expect((dataFor('disabled').match(/<p>/g) ?? []).length).toBe(5)
+  })
+
+  it.each(POEMS)('%s has a read route', (slug) => {
+    expect(existsSync(join(TEXTS_DIR, slug, 'read/page.tsx'))).toBe(true)
   })
 })
 

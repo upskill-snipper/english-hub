@@ -1,0 +1,201 @@
+#!/usr/bin/env node
+/**
+ * Fetch a public-domain poem out of the collection it was published in.
+ *
+ * WHY POEMS NEEDED A THIRD FETCHER. A poem is not a chapter. It sits inside a
+ * collected volume with dozens of others, it has no chapter marker, and its
+ * HEADING IS OFTEN NOT ITS NAME. Christina Rossetti's "Remember" is printed in
+ * her collected Poems as "SONNET." - so extracting by title would have taken
+ * the wrong poem or none at all, and extracting by heading would have been
+ * silently wrong on the poem a student is revising.
+ *
+ * SO EACH POEM IS ANCHORED ON ITS FIRST AND LAST LINE, both read off the source
+ * before being written here, and the line count between them is asserted. That
+ * is fully deterministic: there is no heuristic to be wrong about. A blank-line
+ * heuristic was tried first and ran Sonnet 116 on for ninety lines into the
+ * sonnets that follow it.
+ *
+ * EDITIONS THAT DO NOT WORK, and this is why each is verified rather than
+ * assumed. Project Gutenberg 1934, Songs of Innocence and of Experience, is an
+ * ILLUSTRATED edition: its poems are page images, so The Tyger cannot be taken
+ * from it at all. Gutenberg 23684 is Keats's 1820 volume, which does not
+ * contain La Belle Dame sans Merci. Neither is here, and neither is silently
+ * missing - see NOT YET SOURCED below.
+ *
+ * NOT YET SOURCED. The Tyger (Blake) and La Belle Dame sans Merci (Keats) need
+ * a text edition that has been checked. Do not go gentle into that good night
+ * cannot come from Project Gutenberg at all: Dylan Thomas died in 1953, so the
+ * poem is public domain in the UK since 1 January 2024 but remains in copyright
+ * in the United States, where Gutenberg publishes. Piano (D H Lawrence) and My
+ * Last Duchess (Browning) are UK public domain and simply not done yet.
+ *
+ *   node scripts/fetch-public-domain-poem.mjs [slug]
+ */
+
+import { writeFileSync, mkdirSync } from 'node:fs'
+import { join } from 'node:path'
+
+const ROOT = process.cwd()
+const OUT_DIR = join(ROOT, 'src/data/full-texts')
+
+/**
+ * One entry per poem.
+ *
+ * `first` and `last` are the poem's own opening and closing lines, copied from
+ * the source. `lines` is the count between them INCLUSIVE, blank lines between
+ * stanzas included, because that is what the extraction returns and a count
+ * that ignored them would not detect a dropped stanza.
+ */
+const POEMS = [
+  {
+    slug: 'remember',
+    id: 19188,
+    collection: 'Poems',
+    title: 'Remember',
+    author: 'Christina Rossetti',
+    year: '1862',
+    // Printed as "SONNET." in this edition, which is the whole reason for
+    // anchoring on lines rather than on a heading.
+    first: 'Remember me when I am gone away,',
+    last: 'Than that you should remember and be sad.',
+    lines: 14,
+  },
+  {
+    slug: 'if',
+    id: 556,
+    collection: 'Rewards and Fairies',
+    title: 'If—',
+    author: 'Rudyard Kipling',
+    year: '1910',
+    first: 'If you can keep your head when all about you',
+    last: 'And--which is more--you’ll be a Man, my son!',
+    lines: 35,
+  },
+  {
+    slug: 'disabled',
+    id: 1034,
+    collection: 'Poems',
+    title: 'Disabled',
+    author: 'Wilfred Owen',
+    year: '1917',
+    first: 'He sat in a wheeled chair, waiting for dark,',
+    last: "And put him into bed?  Why don't they come?",
+    lines: 49,
+  },
+  {
+    slug: 'sonnet-116',
+    id: 1041,
+    collection: "Shakespeare's Sonnets",
+    title: 'Sonnet 116: Let me not to the marriage of true minds',
+    author: 'William Shakespeare',
+    year: '1609',
+    first: 'Let me not to the marriage of true minds',
+    last: 'I never writ, nor no man ever lov’d.',
+    lines: 14,
+  },
+]
+
+function stripGutenberg(raw) {
+  const start = raw.indexOf('*** START OF THE PROJECT GUTENBERG')
+  const end = raw.indexOf('*** END OF THE PROJECT GUTENBERG')
+  if (start === -1 || end === -1) throw new Error('no Gutenberg markers - edition changed shape')
+  return raw.slice(raw.indexOf('\n', start) + 1, end)
+}
+
+async function build(poem) {
+  const url = `https://www.gutenberg.org/cache/epub/${poem.id}/pg${poem.id}.txt`
+  const res = await fetch(url)
+  if (!res.ok) throw new Error(`HTTP ${res.status}`)
+  const raw = await res.text()
+  if (/PROOFING METHODS AND TOOLS WERE NOT WELL DEVELOPED/.test(raw)) {
+    throw new Error(`Gutenberg marks id ${poem.id} as poorly proofed`)
+  }
+
+  const lines = stripGutenberg(raw)
+    .split('\n')
+    .map((l) => l.replace(/\s+$/, ''))
+
+  const start = lines.findIndex((l) => l.trim() === poem.first)
+  if (start === -1) throw new Error(`opening line not found: "${poem.first}"`)
+
+  const endOffset = lines.slice(start).findIndex((l) => l.trim() === poem.last)
+  if (endOffset === -1) throw new Error(`closing line not found after the opening: "${poem.last}"`)
+
+  const body = lines.slice(start, start + endOffset + 1)
+  if (body.length !== poem.lines) {
+    throw new Error(`extracted ${body.length} lines, expected ${poem.lines} - refusing to write`)
+  }
+
+  // A poem is one block. Blank lines separate stanzas and are preserved as
+  // paragraph breaks; every other line break is real and must survive, so the
+  // stanzas are joined with <br /> rather than collapsed into flowing prose.
+  const stanzas = body
+    .join('\n')
+    .split(/\n\s*\n/)
+    .map((s) => s.split('\n').filter((l) => l.trim().length > 0))
+    .filter((s) => s.length > 0)
+
+  const content = stanzas
+    .map(
+      (stanza) =>
+        `<p>${stanza
+          .map((l) => l.trim().replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'))
+          .join('<br />\n')}</p>`,
+    )
+    .join('\n\n')
+
+  // Digits after a hyphen too: `sonnet-116` was becoming `sonnet-116Text`,
+  // which is not an identifier and broke the module it was written into.
+  const varName = poem.slug.replace(/-(.)/g, (_, c) => c.toUpperCase()) + 'Text'
+  const file = `// AUTO-GENERATED by scripts/fetch-public-domain-poem.mjs - do not edit by hand.
+//
+// ${poem.title}, by ${poem.author} (${poem.year}). Out of UK copyright.
+//
+// The text is a byte copy of a published edition, not typed and not reproduced
+// from memory. Taken from ${poem.collection}, Project Gutenberg #${poem.id}, by
+// anchoring on the poem's own first and last line - this edition does not
+// always head a poem with its name. Gutenberg branding and licence text are
+// stripped per their terms; the underlying work is out of copyright.
+//
+// Re-run the generator to refresh. It refuses to write if either anchor line
+// has moved or if the extraction is not exactly ${poem.lines} lines.
+
+import type { TextData } from '@/components/study/InteractiveTextViewer'
+
+export const ${varName}: TextData = {
+  title: ${JSON.stringify(poem.title)},
+  author: ${JSON.stringify(poem.author)},
+  type: 'novella',
+  sections: [
+    {
+      id: 'poem',
+      title: ${JSON.stringify(poem.title)},
+      content: ${JSON.stringify(content)},
+    },
+  ],
+}
+`
+  mkdirSync(OUT_DIR, { recursive: true })
+  writeFileSync(join(OUT_DIR, `${poem.slug}.ts`), file, 'utf8')
+  return { slug: poem.slug, lines: body.length, stanzas: stanzas.length }
+}
+
+const only = process.argv[2]
+const wanted = only ? POEMS.filter((p) => p.slug === only) : POEMS
+if (wanted.length === 0) {
+  console.error(`No poem with slug "${only}". Known: ${POEMS.map((p) => p.slug).join(', ')}`)
+  process.exitCode = 1
+} else {
+  let failed = 0
+  for (const poem of wanted) {
+    try {
+      const r = await build(poem)
+      console.log(`  ok   ${r.slug.padEnd(18)} ${String(r.lines).padStart(2)} lines, ${r.stanzas} stanzas`)
+    } catch (err) {
+      failed++
+      console.error(`  FAIL ${poem.slug.padEnd(18)} ${err.message}`)
+    }
+  }
+  console.log(failed === 0 ? `\n${wanted.length} poems written.` : `\n${failed} failed.`)
+  if (failed > 0) process.exitCode = 1
+}
