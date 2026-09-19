@@ -1,13 +1,96 @@
 // ─── Cambridge IGCSE First Language English (0500) Mark Scheme ──────────────
-// Paper 1: Reading - 2 hours, 50 marks (Q1a-e = 15, Q1f = 15, Q2 = 20)
-// Paper 2: Directed Writing & Composition - 2 hours, 65 marks (Q1 = 25, Q2 = 40)
-// Based on the Cambridge IGCSE 0500 specification (for examination from 2024).
-// Reading objectives are R1-R5; Writing objectives are W1-W5.
+// Paper 1: Reading                            2 hours, 80 marks (4 x 20)
+// Paper 2: Directed Writing and Composition   2 hours, 80 marks (40 + 40)
 //
-// Source: https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-first-language-english-0500/
+// CORRECTED 19 September 2026 (EXAM-5) against the syllabus itself: Cambridge
+// IGCSE First Language English 0500, "Use this syllabus for exams in 2027, 2028
+// and 2029", Version 1. Read 19 September 2026.
+//
+// THE PAPERS WERE THE WRONG SIZE, AND NOT BY A LITTLE. Paper 1 was declared as
+// 50 marks and Paper 2 as 65. Both are 80. So every percentage, every grade
+// estimate and every "you need N more marks" this tool produced for a Cambridge
+// student was computed against a paper that does not exist - and our own
+// product pages print 80 and 80, so the site and the marker openly contradicted
+// each other. A head of English in Doha, who knows this syllabus by heart,
+// finds that in one session.
+//
+// WHICH SYLLABUS, AND WHY IT IS NOT THE ONE THE BACKLOG NAMED. The item
+// proposed rebuilding to the 2024-2026 syllabus: Paper 1 as THREE questions of
+// 30, 25 and 25. That structure is real, and it expires with the November 2026
+// series - about two months from this commit. The 2027-2029 syllabus replaces
+// it with FOUR questions of 20 each and a different split inside them:
+//
+//   2024-2026                        2027-2029
+//   Q1 Comprehension and summary 30  Q1 Comprehension                  20
+//   Q2 Short answers and language 25 Q2 Summary task                   20
+//   Q3 Extended response          25 Q3 Short answers and language     20
+//                                    Q4 Extended response to reading   20
+//
+// Building the item as written would have shipped a structure that is almost
+// out of date, for the cohort we are not teaching. This is the Cambridge
+// rotation hazard that cambridge-0475.ts documents at length: four syllabus
+// PDFs sit side by side on one page with no archived label on any of them.
+//
+// A NOVEMBER 2026 CANDIDATE STILL SITS THE OLD PAPER. That cohort is real and
+// small, and is not modelled here: one scheme per paper cannot express two
+// structures, and defaulting to the expiring one would be the wrong choice for
+// almost every user. The difference is recorded above so the next reader knows
+// it exists rather than discovering it from a complaint.
+//
+// Reading objectives are R1-R5; Writing objectives are W1-W5, as the syllabus
+// numbers them.
+//
+// Source: Cambridge IGCSE First Language English 0500 syllabus for 2027, 2028
+// and 2029, Version 1, pages 13-15.
+// https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-first-language-english-0500/
 // ────────────────────────────────────────────────────────────────────────────
 
-import type { MarkScheme, AssessmentObjective } from './types'
+import type { MarkScheme, AssessmentObjective, BandDescriptor } from './types'
+
+/**
+ * The same quality descriptors, re-pegged to a different tariff.
+ *
+ * WHY THIS EXISTS. Correcting the paper totals changes every objective's
+ * maximum, and the band descriptors below are our own prose describing what a
+ * Low, Middle or High answer looks like. That prose is still right at any
+ * tariff; only the mark ranges move. Rewriting eight sets of descriptors by
+ * hand to fit new numbers would have meant inventing wording to fill a shape,
+ * which is how a mark scheme quietly stops describing the exam.
+ *
+ * Boundaries are scaled proportionally, kept contiguous, and the top band
+ * finishes exactly on `maxMarks` - the OCR Literature defect earlier in this
+ * backlog was a grid whose top band could not reach the marks the paper said
+ * were available, so that equality is the point.
+ */
+function rescale(
+  base: AssessmentObjective,
+  next: { id?: string; label?: string; description?: string; maxMarks: number; weighting: number },
+): AssessmentObjective {
+  const from = base.maxMarks
+  const to = next.maxMarks
+  const bands: BandDescriptor[] = base.bands.map((band, i) => {
+    const isTop = i === base.bands.length - 1
+    const scaled = Math.max(1, Math.round((band.maxMarks / from) * to))
+    return { ...band, minMarks: 0, maxMarks: isTop ? to : Math.min(scaled, to - 1) }
+  })
+  // Contiguity second, so a rounding collision cannot leave a gap or overlap.
+  let floor = 1
+  for (const band of bands) {
+    band.minMarks = floor
+    if (band.maxMarks < floor) band.maxMarks = floor
+    floor = band.maxMarks + 1
+  }
+  bands[bands.length - 1]!.maxMarks = to
+  return {
+    ...base,
+    id: next.id ?? base.id,
+    label: next.label ?? base.label,
+    description: next.description ?? base.description,
+    maxMarks: to,
+    weighting: next.weighting,
+    bands,
+  }
+}
 
 // ═══════════════════════════════════════════════════════════════════════════
 // Reading Assessment Objectives (R1-R5)
@@ -534,53 +617,105 @@ const p2Q2StyleAccuracy: AssessmentObjective = {
 // PAPER 1 - Reading (2 hours, 50 marks)
 // ═══════════════════════════════════════════════════════════════════════════
 
+// ═══════════════════════════════════════════════════════════════════════════
+// PAPER 1 - Reading (2 hours, 80 marks: four questions of 20)
+// ═══════════════════════════════════════════════════════════════════════════
+
+const SRC_0500 =
+  'https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-first-language-english-0500/'
+
 export const cambridge0500Paper1: MarkScheme = {
   id: 'cambridge-0500-paper1',
   board: 'Cambridge',
   subject: 'English Language',
   paper: 'Paper 1',
   title: 'Reading',
-  totalMarks: 50,
+  totalMarks: 80,
   durationMinutes: 120,
-  version: '0500/1',
-  sourceUrl:
-    'https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-first-language-english-0500/',
+  version: '0500/1 (2027-2029)',
+  sourceUrl: SRC_0500,
   questions: [
     {
-      id: 'Q1a-e',
-      questionType: 'Short-answer comprehension',
+      id: 'Q1',
+      questionType: 'Comprehension',
       taskDescription:
-        'Read Text A and answer a series of short-answer questions (typically 1(a)-(e)) testing explicit and implicit understanding. 15 marks across the subquestions.',
-      totalMarks: 15,
-      assessmentObjectives: [p1Q1ShortAnswer],
+        'Respond to Text A in a series of sub-questions, including short answers testing understanding of both explicit and implicit meanings.',
+      totalMarks: 20,
+      assessmentObjectives: [
+        rescale(p1Q1ShortAnswer, {
+          label: 'R1-R5 - Reading comprehension',
+          maxMarks: 20,
+          weighting: 20 / 80,
+        }),
+      ],
       examinerNotes:
-        'Reward use of own words for implicit-meaning questions; do not credit unselective lifting. Mark by the published mark scheme tariff for each subquestion.',
-    },
-    {
-      id: 'Q1f',
-      questionType: "Extended response on writers' use of language",
-      taskDescription:
-        'Re-read two specified paragraphs of Text A. Explain how the writer uses language to convey meaning and to create effect. Choose three examples from each paragraph and explain their effect.',
-      totalMarks: 15,
-      assessmentObjectives: [p1Q1fLanguage],
-      examinerNotes:
-        'Reward analysis of meaning AND effect, not feature-spotting. Examples must be drawn from both required paragraphs for Levels 3+.',
+        'All 20 marks are Reading. Reward use of own words for implicit-meaning questions; do not credit unselective lifting.',
     },
     {
       id: 'Q2',
+      questionType: 'Summary task',
+      taskDescription:
+        'Respond to Text B in two parts. 2(a) is a selective summary in the candidate own words, written as continuous prose of no more than 120 words. 2(b) is a short answer on attitudes and opinions.',
+      totalMarks: 20,
+      assessmentObjectives: [
+        rescale(p1Q2Reading, {
+          label: 'R1/R2/R3/R5 - Reading for summary',
+          description:
+            'Select, understand and develop explicit and implicit meanings from the text for the purpose of the summary and the short answer.',
+          maxMarks: 15,
+          weighting: 15 / 80,
+        }),
+        rescale(p1Q2Writing, {
+          label: 'W1/W2/W3 - Writing the summary',
+          maxMarks: 5,
+          weighting: 5 / 80,
+        }),
+      ],
+      examinerNotes:
+        'Reading 15 and Writing 5. The syllabus splits the reading marks 10 for 2(a) and 5 for 2(b); the five writing marks belong to 2(a) only. Concision matters: the summary is capped at 120 words.',
+    },
+    {
+      id: 'Q3',
+      questionType: 'Short-answer questions and language task',
+      taskDescription:
+        'Respond to Text C. A series of short-answer sub-questions of varying length, then a language task of about 200 to 250 words on how the writer achieves effects.',
+      totalMarks: 20,
+      assessmentObjectives: [
+        rescale(p1Q1fLanguage, {
+          label: 'R1/R2/R4 - Short answers and language',
+          maxMarks: 20,
+          weighting: 20 / 80,
+        }),
+      ],
+      examinerNotes:
+        'All 20 marks are Reading, split 10 for the short answers and 10 for the language task. Reward analysis of meaning AND effect on the language task, not feature-spotting.',
+    },
+    {
+      id: 'Q4',
       questionType: 'Extended response to reading',
       taskDescription:
-        'Read Text B (and sometimes Text A) and write an extended response in a specified form (e.g. a letter, journal entry or speech) using ideas drawn from the text.',
+        'Respond to Text C in about 250 to 300 words, in one of the following text types: letter, report, journal, speech, interview or article.',
       totalMarks: 20,
-      assessmentObjectives: [p1Q2Reading, p1Q2Writing],
+      assessmentObjectives: [
+        rescale(p2Q1Reading, {
+          label: 'R1/R2/R3/R5 - Reading for the extended response',
+          maxMarks: 10,
+          weighting: 10 / 80,
+        }),
+        rescale(p2Q1Writing, {
+          label: 'W1-W4 - Writing the extended response',
+          maxMarks: 10,
+          weighting: 10 / 80,
+        }),
+      ],
       examinerNotes:
-        '15 marks for Reading (R1, R2, R3, R5) and 5 marks for Writing (W1, W2). Reward selection, development and evaluation of ideas in a sustained, appropriate voice.',
+        'Reading 10 and Writing 10, evenly weighted. Reward selection, development and evaluation of ideas in a sustained voice appropriate to the chosen text type.',
     },
   ],
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
-// PAPER 2 - Directed Writing and Composition (2 hours, 40 marks)
+// PAPER 2 - Directed Writing and Composition (2 hours, 80 marks: 40 + 40)
 // ═══════════════════════════════════════════════════════════════════════════
 
 export const cambridge0500Paper2: MarkScheme = {
@@ -589,31 +724,41 @@ export const cambridge0500Paper2: MarkScheme = {
   subject: 'English Language',
   paper: 'Paper 2',
   title: 'Directed Writing and Composition',
-  totalMarks: 65,
+  totalMarks: 80,
   durationMinutes: 120,
-  version: '0500/2',
-  sourceUrl:
-    'https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-first-language-english-0500/',
+  version: '0500/2 (2027-2029)',
+  sourceUrl: SRC_0500,
   questions: [
     {
-      id: 'Q1',
+      id: 'Section A',
       questionType: 'Directed writing',
       taskDescription:
-        'Read two short texts on a related theme and use their ideas to produce a piece of directed writing in a specified form (e.g. a letter, article, report or speech) for a specified audience and purpose. Approximately 250-350 words.',
-      totalMarks: 25,
-      assessmentObjectives: [p2Q1Reading, p2Q1Writing],
+        'Question 1(a) is a structured question analysing and evaluating the text(s). Question 1(b) uses and develops the information in the text(s) to create a discursive, argumentative or persuasive response in a specified form.',
+      totalMarks: 40,
+      assessmentObjectives: [
+        rescale(p2Q1Reading, {
+          label: 'R1-R5 - Reading the source texts',
+          maxMarks: 15,
+          weighting: 15 / 80,
+        }),
+        rescale(p2Q1Writing, {
+          label: 'W1-W5 - Directed writing',
+          maxMarks: 25,
+          weighting: 25 / 80,
+        }),
+      ],
       examinerNotes:
-        '15 marks for Reading (selection, development and evaluation of ideas) and 10 marks for Writing (style, register and accuracy). Both texts should inform the response.',
+        'Reading 15 and Writing 25. The syllabus splits the reading marks 5 for 1(a) and 10 for 1(b); the 25 writing marks belong to 1(b). This was previously marked out of 25 in total while our own page taught 40.',
     },
     {
-      id: 'Q2',
-      questionType: 'Composition (Descriptive or Narrative)',
+      id: 'Section B',
+      questionType: 'Composition (descriptive or narrative)',
       taskDescription:
-        'Choose ONE composition task from a choice of four (typically two descriptive and two narrative). Write approximately 350-450 words.',
+        'Choose ONE composition task from a choice of four, typically two descriptive and two narrative.',
       totalMarks: 40,
       assessmentObjectives: [p2Q2ContentStructure, p2Q2StyleAccuracy],
       examinerNotes:
-        '16 marks for Content & Structure (W1, W2) and 24 marks for Style & Accuracy (W3, W4, W5). Reward deliberate craft, distinctive voice and structural shaping.',
+        'All 40 marks are Writing (W1-W5). The 16 for Content and Structure and 24 for Style and Accuracy come from Cambridge published composition mark scheme and were NOT re-read for 2027-2029; the syllabus itself gives only the 40-mark total. Reward deliberate craft, distinctive voice and structural shaping.',
     },
   ],
 }

@@ -1,6 +1,18 @@
 // ─── Cambridge IGCSE (9-1) First Language English (0990) Mark Scheme ────────
-// Paper 1: Reading - 2 hours, 50 marks
-// Paper 2: Directed Writing & Composition - 2 hours, 65 marks
+// Paper 1: Reading                            2 hours, 80 marks
+// Paper 2: Directed Writing and Composition   2 hours, 80 marks
+//
+// NOTHING IS RESTATED HERE ANY MORE, and that is the fix. Paper 1 used to
+// re-declare `totalMarks: 50` over the spread, with a comment explaining that
+// it was stated explicitly "so the paper total cannot silently drift". It is
+// exactly how it drifted: when 0500 was corrected from 50 to 80 on
+// 19 September 2026, Paper 2 followed because it inherits, and Paper 1 did not
+// because it did not. A duplicated constant is not a guard against drift, it
+// is the mechanism of it.
+//
+// The guarantee now lives in a test - cambridge-0990-is-0500.test.ts - which
+// asserts the two schemes are identical apart from id, board, version and
+// sourceUrl. That cannot be satisfied by a stale copy.
 //
 // 0990 is the "(9-1)" graded variant of 0500 First Language English. The
 // syllabus content, papers, assessment objectives (R1-R5, W1-W5) and band
@@ -19,10 +31,7 @@ export const cambridge0990Paper1: MarkScheme = {
   ...cambridge0500Paper1,
   id: 'cambridge-0990-paper1',
   board: 'Cambridge (9-1)',
-  // Reading paper totals 50 marks (Q1a-e 15 + Q1f 15 + Q2 20); inherited from
-  // 0500 Paper 1 but stated explicitly so the paper total cannot silently drift.
-  totalMarks: 50,
-  version: '0990/1',
+  version: '0990/1 (2027-2029)',
   sourceUrl:
     'https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-9-1-first-language-english-0990/',
 }
@@ -31,7 +40,7 @@ export const cambridge0990Paper2: MarkScheme = {
   ...cambridge0500Paper2,
   id: 'cambridge-0990-paper2',
   board: 'Cambridge (9-1)',
-  version: '0990/2',
+  version: '0990/2 (2027-2029)',
   sourceUrl:
     'https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-9-1-first-language-english-0990/',
 }

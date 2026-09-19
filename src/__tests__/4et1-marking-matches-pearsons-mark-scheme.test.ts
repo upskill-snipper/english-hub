@@ -15,11 +15,12 @@ import { getMarkScheme } from '@/lib/marking/mark-schemes'
  *   B: 20 AO1 6+AO2 6+AO4 8   B: 30  AO2 15 + AO3 15
  *   C: 20 AO1 10+AO3 10 C: 40  AO1 20 + AO4 20
  *
- * TWO OF THOSE DO REAL DAMAGE, and they are different kinds of damage.
- *
- * The totals contradicted our own site. The product page for Section C tells a
- * student it is worth 40 marks; the marker returned a score out of 20. A head
- * of English comparing the two finds it in one session, and they are the buyer.
+ * THE TOTALS. A student's essay was scored out of a paper that does not exist -
+ * 60 marks where the board sets 90 - so every percentage, grade estimate and
+ * "you need N more marks" derived from it was wrong by a third. No page on the
+ * site states a 4ET1 paper total, checked, so this contradicted the board
+ * rather than contradicting us. That is the Cambridge 0500 half of this item,
+ * where the pages do print the totals and disagree with the engine.
  *
  * The objectives were SWAPPED, which is worse, because the feedback text is
  * generated from the objective. AO3 in 4ET1 is "Explore links and connections
