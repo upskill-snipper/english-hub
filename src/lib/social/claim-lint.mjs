@@ -24,41 +24,10 @@
  * correcting at all.
  */
 
-import { PRICING } from '@/constants/pricing'
 
-export type ClaimRuleId =
-  | 'fabricated-proof'
-  | 'grade-promise'
-  | 'unsourced-statistic'
-  | 'em-dash'
-  | 'hype'
-  | 'abbreviation'
-  | 'trial-mechanic'
-  | 'commission-rate'
-  | 'price-mismatch'
-  | 'mojibake'
-  | 'missing-demo-label'
-  | 'missing-spec-check'
-  | 'length'
-  | 'emoji'
-  | 'missing-approval-header'
-
-export interface ClaimFinding {
-  rule: ClaimRuleId
-  /** The offending text, quoted so the author can find it. */
-  quote: string
-  why: string
-}
-
-export interface ClaimReport {
-  ok: boolean
-  findings: ClaimFinding[]
-  /** Stored on the row as `claim_report`, so an approval has evidence behind it. */
-  checkedRules: ClaimRuleId[]
-}
 
 /** Per-platform hard limits. Exceeding one is not a style problem; the post is truncated. */
-export const PLATFORM_LIMITS: Record<string, number> = {
+export const PLATFORM_LIMITS = {
   x: 280,
   instagram: 2200,
   tiktok: 2200,
@@ -156,7 +125,7 @@ const APPROVAL_HEADER = /^﻿?#{0,6}\s*DRAFT FOR APPROVAL, not posted\s*$/m
  * has no markers and is one segment. The metadata block above the first marker
  * (platform, slot, claims check) is not published and is not measured.
  */
-export function splitPosts(body: string): { label: string; text: string }[] {
+export function splitPosts(body) {
   const markers = [...body.matchAll(/^\s*POST\s+(\d+)\s*:/gim)]
   if (markers.length === 0) {
     // Strip the metadata header so its lines are not counted against the limit.
@@ -173,26 +142,21 @@ export function splitPosts(body: string): { label: string; text: string }[] {
   })
 }
 
-export interface LintInput {
-  body: string
-  platform: string
-  /** Set false for an already-approved row being re-checked. */
-  requireApprovalHeader?: boolean
-}
 
 /**
  * Every rule, always run. The report lists which rules were applied so that an
  * approval records what was actually checked rather than that something was.
  */
-export function lintClaims({
-  body,
-  platform,
-  requireApprovalHeader = true,
-}: LintInput): ClaimReport {
-  const findings: ClaimFinding[] = []
-  const add = (rule: ClaimRuleId, quote: string, why: string) => findings.push({ rule, quote, why })
+/**
+ * @param {import('./claim-lint').LintInput} input
+ * @returns {import('./claim-lint').ClaimReport}
+ */
+export function lintClaims({ body, platform, requireApprovalHeader = true, permittedPrices = [] }) {
+  /** @type {import("./claim-lint").ClaimFinding[]} */
+  const findings = []
+  const add = (rule, quote, why) => findings.push({ rule, quote, why })
 
-  const quoteAround = (index: number, length = 60) =>
+  const quoteAround = (index, length = 60) =>
     body
       .slice(Math.max(0, index - 20), Math.min(body.length, index + length))
       .replace(/\s+/g, ' ')
@@ -286,11 +250,12 @@ export function lintClaims({
   }
 
   // Prices are checked against the only permitted source.
-  const permitted = new Set<string>()
-  for (const value of Object.values(PRICING)) {
-    if (typeof value === 'number') permitted.add(value.toFixed(2))
-    else if (typeof value === 'string') permitted.add(value.replace(/^£/, ''))
-  }
+  // Injected rather than imported: this file runs under plain Node in the
+  // drafter script as well as inside the app, and `src/constants/pricing.ts`
+  // is TypeScript. `every-claim-source-agrees` asserts the two callers pass
+  // the same set, because a second copy of a price list is how a post ends up
+  // advertising a price checkout does not charge.
+  const permitted = new Set(permittedPrices)
   //
   // Only where the amount is presented as OUR price. The first version flagged
   // every pound sign, including "a tutor typically costs £25-£50 an hour" - a
@@ -356,7 +321,7 @@ export function lintClaims({
   if (STUDENT_WRITING.test(body) && !DEMO_LABEL.test(body)) {
     add(
       'missing-demo-label',
-      body.match(STUDENT_WRITING)![0],
+      body.match(STUDENT_WRITING)[0],
       'Student writing shown in an asset must carry "Example written for this demo." so it is ' +
         'never mistaken for a real pupil’s work.',
     )
@@ -365,7 +330,7 @@ export function lintClaims({
   if (TARIFF.test(body) && !SPEC_CHECK.test(body)) {
     add(
       'missing-spec-check',
-      body.match(TARIFF)![0],
+      body.match(TARIFF)[0],
       'A tariff or question number asserted in public needs a "Spec check:" line naming the ' +
         'specification it came from, or the sentence rewritten at technique level.',
     )
@@ -420,7 +385,7 @@ export function lintClaims({
       'missing-spec-check',
       'length',
       'emoji',
-      ...(requireApprovalHeader ? (['missing-approval-header'] as const) : []),
+      ...(requireApprovalHeader ? ['missing-approval-header'] : []),
     ],
   }
 }

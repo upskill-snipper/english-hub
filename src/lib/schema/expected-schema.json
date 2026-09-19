@@ -63,6 +63,7 @@
     "school_members": "003_school_analytics.sql",
     "school_students": "20260404_school_promo_and_access.sql",
     "schools": "003_school_analytics.sql",
+    "social_posts": "20260919_social_posts.sql",
     "teacher_moderations": "20260518_smart_ip_marking.sql",
     "teacher_referrals": "20260918_public_form_tables.sql",
     "training_data": "20260518_smart_ip_marking.sql",
@@ -892,6 +893,14 @@
       "file": "20260823_school_inquiries.sql",
       "table": "school_inquiries"
     },
+    "social_posts_platform_idx": {
+      "file": "20260919_social_posts.sql",
+      "table": "social_posts"
+    },
+    "social_posts_status_scheduled_idx": {
+      "file": "20260919_social_posts.sql",
+      "table": "social_posts"
+    },
     "subscription_platform_status_idx": {
       "file": "20260420_01_revenuecat_mobile.sql",
       "table": "subscription"
@@ -1003,6 +1012,11 @@
       "file": "003_school_analytics.sql",
       "table": "schools",
       "schema": "public"
+    },
+    "social_posts_updated_at": {
+      "file": "20260919_social_posts.sql",
+      "table": "social_posts",
+      "schema": "public"
     }
   },
   "functions": {
@@ -1018,6 +1032,7 @@
     "recount_affiliate_referrals": "20260420_affiliates_v2.sql",
     "release_cron_lock": "20260919_cron_run_locks.sql",
     "set_affiliate_is_minor": "002_affiliate_system.sql",
+    "social_posts_set_updated_at": "20260919_social_posts.sql",
     "update_updated_at": "000_update_updated_at_helper.sql",
     "verify_certificate": "20260419_certificate_public_rpc.sql"
   }

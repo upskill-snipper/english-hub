@@ -3,6 +3,7 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { lintClaims, splitPosts, PLATFORM_LIMITS } from '@/lib/social/claim-lint'
 import { PRICING } from '@/constants/pricing'
+import { permittedPrices } from '@/lib/social/permitted-prices'
 
 /**
  * The claim check, as a machine rather than a sentence (AUTO-3).
@@ -55,34 +56,49 @@ describe('what it refuses', () => {
     ['Earn 20% commission on every referral', 'commission-rate'],
     ['Try TEH today', 'abbreviation'],
   ])('refuses "%s"', (line, rule) => {
-    const report = lintClaims({ body: clean(line), platform: 'linkedin' })
+    const report = lintClaims({
+      body: clean(line),
+      permittedPrices: permittedPrices(),
+      platform: 'linkedin',
+    })
     expect(report.ok).toBe(false)
     expect(report.findings.map((f) => f.rule)).toContain(rule)
   })
 
   it('refuses an em dash and a double hyphen', () => {
-    expect(lintClaims({ body: clean('one \u2014 two'), platform: 'x' }).findings[0].rule).toBe(
-      'em-dash',
-    )
-    expect(lintClaims({ body: clean('one -- two'), platform: 'x' }).findings[0].rule).toBe(
-      'em-dash',
-    )
+    expect(
+      lintClaims({
+        body: clean('one \u2014 two'),
+        permittedPrices: permittedPrices(),
+        platform: 'x',
+      }).findings[0].rule,
+    ).toBe('em-dash')
+    expect(
+      lintClaims({ body: clean('one -- two'), permittedPrices: permittedPrices(), platform: 'x' })
+        .findings[0].rule,
+    ).toBe('em-dash')
   })
 
   it('refuses mojibake, which is already in three live drafts', () => {
-    const report = lintClaims({ body: clean('Students \u00c2\u00a33.99 a month'), platform: 'x' })
+    const report = lintClaims({
+      body: clean('Students \u00c2\u00a33.99 a month'),
+      permittedPrices: permittedPrices(),
+      platform: 'x',
+    })
     expect(report.findings.map((f) => f.rule)).toContain('mojibake')
   })
 
   it('refuses a statistic with no source, and accepts one with', () => {
     const without = lintClaims({
       body: clean('42 per cent of pupils struggle'),
+      permittedPrices: permittedPrices(),
       platform: 'linkedin',
     })
     expect(without.findings.map((f) => f.rule)).toContain('unsourced-statistic')
 
     const with_ = lintClaims({
       body: clean('42 per cent of pupils struggle\n\n* Source: Ofsted, English Review (2022).'),
+      permittedPrices: permittedPrices(),
       platform: 'linkedin',
     })
     expect(with_.findings.map((f) => f.rule)).not.toContain('unsourced-statistic')
@@ -91,12 +107,14 @@ describe('what it refuses', () => {
   it('requires a spec-check line beside an asserted tariff', () => {
     const without = lintClaims({
       body: clean('Question 3 is worth 24 marks'),
+      permittedPrices: permittedPrices(),
       platform: 'linkedin',
     })
     expect(without.findings.map((f) => f.rule)).toContain('missing-spec-check')
 
     const with_ = lintClaims({
       body: clean('Question 3 is worth 24 marks\n\nSpec check: AQA 8700 Paper 1, June 2024.'),
+      permittedPrices: permittedPrices(),
       platform: 'linkedin',
     })
     expect(with_.findings.map((f) => f.rule)).not.toContain('missing-spec-check')
@@ -105,12 +123,14 @@ describe('what it refuses', () => {
   it('requires the demo label beside student writing', () => {
     const without = lintClaims({
       body: clean('Here is a model answer for Macbeth'),
+      permittedPrices: permittedPrices(),
       platform: 'instagram',
     })
     expect(without.findings.map((f) => f.rule)).toContain('missing-demo-label')
 
     const with_ = lintClaims({
       body: clean('Here is a model answer for Macbeth\n\nExample written for this demo.'),
+      permittedPrices: permittedPrices(),
       platform: 'instagram',
     })
     expect(with_.findings.map((f) => f.rule)).not.toContain('missing-demo-label')
@@ -125,6 +145,7 @@ describe('what it must NOT refuse', () => {
     // of 36 drafts before it was bounded.
     const report = lintClaims({
       body: clean('agent: Instagram Studio (TEH-03), asked through POST'),
+      permittedPrices: permittedPrices(),
       platform: 'instagram',
     })
     expect(report.findings.map((f) => f.rule)).not.toContain('abbreviation')
@@ -136,6 +157,7 @@ describe('what it must NOT refuse', () => {
     // would send somebody to change a number that was never ours.
     const report = lintClaims({
       body: clean('A tutor typically costs \u00a325-\u00a350 an hour.'),
+      permittedPrices: permittedPrices(),
       platform: 'facebook',
     })
     expect(report.findings.map((f) => f.rule)).not.toContain('price-mismatch')
@@ -144,13 +166,18 @@ describe('what it must NOT refuse', () => {
 
   it('still catches a wrong price presented as ours', () => {
     // The rule must not have been weakened into uselessness by the fix above.
-    const report = lintClaims({ body: clean('Students pay \u00a32.50 a month'), platform: 'x' })
+    const report = lintClaims({
+      body: clean('Students pay \u00a32.50 a month'),
+      permittedPrices: permittedPrices(),
+      platform: 'x',
+    })
     expect(report.findings.map((f) => f.rule)).toContain('price-mismatch')
   })
 
   it('accepts a price that is actually in the pricing constants', () => {
     const report = lintClaims({
       body: clean(`Students pay \u00a3${PRICING.STUDENT_MONTHLY} a month`),
+      permittedPrices: permittedPrices(),
       platform: 'x',
     })
     expect(report.findings.map((f) => f.rule)).not.toContain('price-mismatch')
@@ -161,6 +188,7 @@ describe('what it must NOT refuse', () => {
     // reported seven drafts that carried the header as unapproved.
     const report = lintClaims({
       body: '\uFEFF# DRAFT FOR APPROVAL, not posted\n\nA short post.',
+      permittedPrices: permittedPrices(),
       platform: 'x',
     })
     expect(report.findings.map((f) => f.rule)).not.toContain('missing-approval-header')
@@ -179,12 +207,16 @@ describe('what it must NOT refuse', () => {
       ].join('\n'),
     )
     expect(thread.length).toBeGreaterThan(PLATFORM_LIMITS.x)
-    const report = lintClaims({ body: thread, platform: 'x' })
+    const report = lintClaims({ body: thread, permittedPrices: permittedPrices(), platform: 'x' })
     expect(report.findings.map((f) => f.rule)).not.toContain('length')
   })
 
   it('still catches a single post over the limit', () => {
-    const report = lintClaims({ body: clean('---\n' + 'a'.repeat(400)), platform: 'x' })
+    const report = lintClaims({
+      body: clean('---\n' + 'a'.repeat(400)),
+      permittedPrices: permittedPrices(),
+      platform: 'x',
+    })
     expect(report.findings.map((f) => f.rule)).toContain('length')
   })
 })
@@ -215,6 +247,7 @@ describe('the live queue', () => {
     for (const f of files) {
       const report = lintClaims({
         body: readFileSync(join(QUEUE, f), 'utf8'),
+        permittedPrices: permittedPrices(),
         platform: f.split('-')[0],
       })
       if (report.ok) clean += 1
@@ -227,6 +260,7 @@ describe('the live queue', () => {
     const withMojibake = files.filter((f) =>
       lintClaims({
         body: readFileSync(join(QUEUE, f), 'utf8'),
+        permittedPrices: permittedPrices(),
         platform: f.split('-')[0],
       }).findings.some((x) => x.rule === 'mojibake'),
     )
