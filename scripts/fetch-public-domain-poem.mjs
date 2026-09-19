@@ -209,7 +209,10 @@ import type { TextData } from '@/components/study/InteractiveTextViewer'
 export const ${varName}: TextData = {
   title: ${JSON.stringify(poem.title)},
   author: ${JSON.stringify(poem.author)},
-  type: 'novella',
+  // 'poem', not 'novella'. The viewer prints this word under the title and
+  // uses it to choose between "scenes", "chapters" and "stanzas", so six poems
+  // shipped telling a student that The Tyger is a novella with one chapter.
+  type: 'poem',
   sections: [
     {
       id: 'poem',

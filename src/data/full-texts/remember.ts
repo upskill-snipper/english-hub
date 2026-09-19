@@ -16,7 +16,7 @@ import type { TextData } from '@/components/study/InteractiveTextViewer'
 export const rememberText: TextData = {
   title: 'Remember',
   author: 'Christina Rossetti',
-  type: 'novella',
+  type: 'poem',
   sections: [
     {
       id: 'poem',

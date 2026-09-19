@@ -16,7 +16,7 @@ import type { TextData } from '@/components/study/InteractiveTextViewer'
 export const disabledText: TextData = {
   title: 'Disabled',
   author: 'Wilfred Owen',
-  type: 'novella',
+  type: 'poem',
   sections: [
     {
       id: 'poem',

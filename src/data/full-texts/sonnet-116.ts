@@ -16,7 +16,7 @@ import type { TextData } from '@/components/study/InteractiveTextViewer'
 export const sonnet116Text: TextData = {
   title: 'Sonnet 116: Let me not to the marriage of true minds',
   author: 'William Shakespeare',
-  type: 'novella',
+  type: 'poem',
   sections: [
     {
       id: 'poem',

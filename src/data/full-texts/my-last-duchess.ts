@@ -16,7 +16,7 @@ import type { TextData } from '@/components/study/InteractiveTextViewer'
 export const myLastDuchessText: TextData = {
   title: 'My Last Duchess',
   author: 'Robert Browning',
-  type: 'novella',
+  type: 'poem',
   sections: [
     {
       id: 'poem',

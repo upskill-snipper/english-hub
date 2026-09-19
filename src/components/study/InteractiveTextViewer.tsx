@@ -37,7 +37,7 @@ interface ThemeInfo {
 interface TextData {
   title: string
   author: string
-  type: 'play' | 'novel' | 'novella'
+  type: 'play' | 'novel' | 'novella' | 'poem'
   sections: TextSection[]
   /**
    * Authored analysis, all three OPTIONAL since 19 September 2026.
@@ -848,7 +848,11 @@ function InteractiveTextViewer({ data, storageKey, className = '' }: Interactive
               <p className="text-xs text-muted-foreground">
                 {data.author} &middot; <span>{t(`text_viewer.type_${data.type}`)}</span> &middot;{' '}
                 {data.sections.length}{' '}
-                {data.type === 'play' ? t('text_viewer.scenes') : t('text_viewer.chapters')}
+                {data.type === 'play'
+                  ? t('text_viewer.scenes')
+                  : data.type === 'poem'
+                    ? t('text_viewer.stanzas')
+                    : t('text_viewer.chapters')}
               </p>
             </div>
           </div>
@@ -971,7 +975,11 @@ function InteractiveTextViewer({ data, storageKey, className = '' }: Interactive
           <div className="flex flex-col items-center gap-4 py-8 text-center">
             <CheckCircleIcon className="h-8 w-8 text-brand-accent" />
             <p className="text-sm font-semibold text-foreground">
-              {data.type === 'play' ? t('text_viewer.end_of_play') : t('text_viewer.end_of_text')}
+              {data.type === 'play'
+                ? t('text_viewer.end_of_play')
+                : data.type === 'poem'
+                  ? t('text_viewer.end_of_poem')
+                  : t('text_viewer.end_of_text')}
             </p>
             <p className="text-xs text-muted-foreground">
               {completedSections.size} {t('text_viewer.of')} {data.sections.length}{' '}

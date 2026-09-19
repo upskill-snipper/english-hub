@@ -16,7 +16,7 @@ import type { TextData } from '@/components/study/InteractiveTextViewer'
 export const ifText: TextData = {
   title: 'If—',
   author: 'Rudyard Kipling',
-  type: 'novella',
+  type: 'poem',
   sections: [
     {
       id: 'poem',

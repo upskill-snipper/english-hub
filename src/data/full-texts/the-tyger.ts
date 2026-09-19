@@ -16,7 +16,7 @@ import type { TextData } from '@/components/study/InteractiveTextViewer'
 export const theTygerText: TextData = {
   title: 'The Tyger',
   author: 'William Blake',
-  type: 'novella',
+  type: 'poem',
   sections: [
     {
       id: 'poem',
