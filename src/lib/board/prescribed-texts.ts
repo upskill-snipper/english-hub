@@ -26,13 +26,35 @@
  * document version and the date it was read, and re-reading it is the first
  * step of any future change.
  *
- * SCOPE. Five specifications are verified here. AQA 8702, Pearson Edexcel 1ET0,
- * OCR J352, Eduqas C720QS and Cambridge 0475. The remaining ten - Edexcel
- * International GCSE 4ET1 and 4EA1, Cambridge 0500 and 0990, Edexcel IAL, the
- * four UK A-Levels and KS3 - are NOT verified and must not be treated as though
- * they were. The four A-Level boards in particular carry a byte-identical
- * nine-text tag array in our data, which is the signature of blanket tagging
- * rather than four researched lists.
+ * SCOPE. FOUR specifications are verified in this file: AQA 8702, Pearson
+ * Edexcel 1ET0, OCR J352 and Eduqas C720QS.
+ *
+ * THIS PARAGRAPH SAID FIVE UNTIL 19 SEPTEMBER 2026, and named Cambridge 0475
+ * among them. The array has never contained it. That is the failure this
+ * codebase is full of and that this very file was written to prevent - a
+ * document asserting what the code does not do - and it survived here because
+ * nothing measured the claim. A test now does: see
+ * coverage-measured-against-the-specification.test.ts, which asserts the length
+ * and the board ids, so the sentence above cannot drift from the array again.
+ *
+ * Three specifications verified since have their own modules, because none of
+ * them fits a flat shakespeare/nineteenthCentury/modern list:
+ *
+ *   edexcel-igcse-anthology.ts   the 4EA1 and 4ET1 anthology, three parts
+ *                                split across two qualifications
+ *   edexcel-igcse-literature.ts  4ET1 whole texts, three choice lists
+ *   cambridge-0475.ts            Cambridge IGCSE Literature, which offers a
+ *                                choice of three alternative anthologies and
+ *                                rotates its set texts every single year
+ *
+ * Cambridge 0500 and 0990 are now verified to prescribe NOTHING - they are
+ * unseen-passage and directed-writing qualifications, and that is correct by
+ * design rather than a gap to fill.
+ *
+ * Still NOT verified, and not to be treated as though they were: Edexcel IAL,
+ * the four UK A-Levels and KS3. The four A-Level boards in particular carry a
+ * byte-identical nine-text tag array in our data, which is the signature of
+ * blanket tagging rather than four researched lists.
  *
  * WHAT THIS FILE DELIBERATELY DOES NOT MODEL. Anthology poems, and anything
  * that changes between exam series. Eduqas replaces its entire poetry anthology

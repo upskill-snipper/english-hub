@@ -88,6 +88,29 @@ export const STUB_SET_TEXT_SLUGS: ReadonlySet<string> = new Set([
   'kindertransport',
   'death-and-the-kings-horseman',
   'the-scarlet-letter',
+  // ── Added 19 September 2026: UK GCSE texts the "100%" figure hid ──────────
+  'dna',
+  'a-taste-of-honey',
+  'telling-tales',
+  'princess-and-the-hustler',
+  'leave-taking',
+  'my-name-is-leon',
+  'hobsons-choice',
+  'journeys-end',
+  'the-woman-in-black',
+  'the-empress',
+  'refugee-boy',
+  'coram-boy',
+  'boys-dont-cry',
+  'oranges-are-not-the-only-fruit',
+  'the-history-boys',
+  // ── Added 19 September 2026: Cambridge 0475, a board that read as empty ───
+  'blues-for-an-alabama-sky',
+  'a-midsummer-nights-dream',
+  'what-it-means-when-a-man-falls-from-the-sky',
+  'fire-on-the-mountain',
+  'hullaballoo-in-the-guava-orchard',
+  'im-the-king-of-the-castle',
 ])
 
 /**

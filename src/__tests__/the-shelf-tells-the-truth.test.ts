@@ -89,13 +89,20 @@ describe('the honesty invariant', () => {
   })
 
   it('still marks the real guides as real, so it is not honest by saying no to everything', () => {
-    // AQA is the best-covered board: a page for all twenty texts, and nine of
-    // them with three or more sections. A model that returned `none` for
+    // AQA is the best-covered board. A model that returned `none` for
     // everything would satisfy the invariant above perfectly, so this is the
     // counterweight.
+    //
+    // THIS USED TO ASSERT THAT AQA HAD NO GAPS AT ALL, and it passed, because
+    // the shelf was built from our own list of AQA texts. Reading AQA's
+    // specification on 19 September 2026 added six texts we had never held -
+    // DNA, A Taste of Honey, Telling Tales, Princess & The Hustler, Leave
+    // Taking and My Name is Leon - and none of them has a guide. So the board
+    // now has six honest gaps where it previously had a perfect score measured
+    // against itself. The perfect score was the bug.
     const aqa = buildShelf('aqa')
     expect(aqa.filter((e) => e.readiness === 'full').length).toBeGreaterThanOrEqual(8)
-    expect(aqa.filter((e) => e.readiness === 'none')).toEqual([])
+    expect(aqa.filter((e) => e.readiness === 'none').length).toBeLessThanOrEqual(6)
   })
 
   it('records the depth of coverage, which is not the same as having a page', () => {
@@ -155,14 +162,41 @@ describe('every board', () => {
     }
   })
 
-  it.each(['ks3', 'cambridge-0500', 'cambridge-0990', 'cambridge-0475'] as const)(
-    '%s has no set texts, which the page handles rather than rendering an empty grid',
+  it.each(['cambridge-0500', 'cambridge-0990'] as const)(
+    '%s has no set texts, and that is the specification, not a gap',
     (board) => {
-      // Four of fifteen prescribe nothing. For the two Cambridge language specs
-      // that is correct by design. The page must not present it as a gap.
+      // VERIFIED 19 September 2026 against both syllabuses, not assumed. Neither
+      // prescribes any literary work, anthology or named author: reading content
+      // is defined by genre and period only, the passages are printed on the
+      // question paper insert, and Cambridge explicitly delegates text choice to
+      // the centre. So an empty shelf here is correct and the page must not
+      // present it as something we have failed to build.
       expect(buildShelf(board)).toEqual([])
     },
   )
+
+  it('ks3 still has no set texts', () => {
+    // Different reason, and not yet verified. England's National Curriculum is
+    // understood to name categories rather than titles, leaving the choice to
+    // the school, but that has not been read from the programme of study. It is
+    // grouped separately from the two Cambridge specs so the verified negative
+    // and the unverified one are not confused.
+    expect(buildShelf('ks3')).toEqual([])
+  })
+
+  it('cambridge-0475 is no longer empty', () => {
+    // It used to be, and that was the defect. 0475 prescribes set texts and we
+    // held rows and finished guides for several of them tagged to other boards,
+    // so a student in the Gulf - most of this board's cohort - was shown that we
+    // had no idea what they study. Twelve whole texts now, for the 2027 series.
+    //
+    // The 45 prescribed poems and 10 short stories are deliberately NOT here:
+    // Paper 1 Section A is a choice of three alternative fifteen-poem sets and a
+    // candidate answers on one, which SetText cannot express. Listing all 45
+    // would tell a student to revise three times what they do. They are held in
+    // src/lib/board/cambridge-0475.ts until a surface can show the choice.
+    expect(buildShelf('cambridge-0475').length).toBeGreaterThanOrEqual(12)
+  })
 
   it('covers the boards that do have texts', () => {
     expect(buildShelf('aqa').length).toBeGreaterThan(15)

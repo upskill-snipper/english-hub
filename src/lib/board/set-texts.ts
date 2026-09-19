@@ -149,7 +149,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Pride and Prejudice',
     author: 'Jane Austen',
     category: '19th-century',
-    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'ial-edexcel', 'edexcel-igcse'],
+    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'ial-edexcel', 'edexcel-igcse', 'cambridge-0475'],
     copyrightStatus: 'public-domain',
   },
   {
@@ -215,7 +215,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'To Kill a Mockingbird',
     author: 'Harper Lee',
     category: 'modern',
-    boards: ['edexcel-igcse'],
+    boards: ['edexcel-igcse', 'cambridge-0475'],
     copyrightStatus: 'copyright',
   },
   {
@@ -223,7 +223,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Things Fall Apart',
     author: 'Chinua Achebe',
     category: 'modern',
-    boards: ['edexcel-igcse'],
+    boards: ['edexcel-igcse', 'cambridge-0475'],
     copyrightStatus: 'copyright',
   },
   {
@@ -299,7 +299,14 @@ export const SET_TEXTS: SetText[] = [
     title: 'Antony and Cleopatra',
     author: 'William Shakespeare',
     category: 'shakespeare',
-    boards: ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level', 'ial-edexcel'],
+    boards: [
+      'aqa-a-level',
+      'edexcel-a-level',
+      'ocr-a-level',
+      'eduqas-a-level',
+      'ial-edexcel',
+      'cambridge-0475',
+    ],
     copyrightStatus: 'public-domain',
   },
 
@@ -982,6 +989,243 @@ export const SET_TEXTS: SetText[] = [
     // long ago. Publishable in full.
     copyrightStatus: 'public-domain',
     year: '1850',
+  },
+
+  // ── UK GCSE texts we prescribe on paper and did not hold ───────────────────
+  //
+  // ADDED 19 September 2026. Fifteen titles that src/lib/board/prescribed-texts.ts
+  // records as prescribed, read from the boards' own specifications, and that
+  // this file had no row for at all. They cover twenty board-title pairs across
+  // AQA, Edexcel, OCR and Eduqas.
+  //
+  // THIS IS THE GAP THE "100% COVERED" FIGURE HID. Coverage was being computed
+  // against our own list - AQA 20 of 20, Edexcel 14 of 14 - which is a
+  // denominator that cannot fail. Measured against the specifications, six AQA
+  // texts, eight Edexcel, three OCR and five Eduqas were not in the data, so a
+  // student looking for them was told their board does not set them.
+  //
+  // NO DESCRIPTION AND NO THEMES, as with the other rows added today. The title
+  // and the prescription are read from a specification; a summary is not.
+  //
+  // TWO EDITIONS ARE NOT SETTLED AND ARE MARKED. Refugee Boy and Coram Boy each
+  // exist as a novel and as a stage adaptation by a different writer, and
+  // prescribed-texts.ts records only the title. Until the prescribed edition is
+  // read from the specification's own editions appendix, the original author is
+  // recorded and the ambiguity is stated rather than resolved by guessing. The
+  // Necklace is the precedent: its prescribed text is a copyright translation,
+  // not the free one, and assuming otherwise would have had us publish the
+  // wrong work.
+  {
+    slug: 'dna',
+    title: 'DNA',
+    author: 'Dennis Kelly (b. 1970)',
+    category: 'modern',
+    boards: ['aqa', 'ocr'],
+    copyrightStatus: 'copyright',
+  },
+  {
+    slug: 'a-taste-of-honey',
+    title: 'A Taste of Honey',
+    author: 'Shelagh Delaney (1938-2011)',
+    category: 'modern',
+    boards: ['aqa', 'cambridge-0475'],
+    copyrightStatus: 'copyright',
+  },
+  {
+    slug: 'telling-tales',
+    title: 'Telling Tales',
+    // An anthology of short stories, not a single-author work. Recorded as the
+    // specification names it rather than inventing a headline author.
+    author: 'AQA Anthology (various writers)',
+    category: 'modern',
+    boards: ['aqa'],
+    copyrightStatus: 'copyright',
+  },
+  {
+    slug: 'princess-and-the-hustler',
+    title: 'Princess & The Hustler',
+    author: 'Chinonyerem Odimba',
+    category: 'modern',
+    boards: ['aqa', 'cambridge-0475'],
+    copyrightStatus: 'copyright',
+  },
+  {
+    slug: 'leave-taking',
+    title: 'Leave Taking',
+    author: 'Winsome Pinnock (b. 1961)',
+    category: 'modern',
+    boards: ['aqa', 'ocr', 'eduqas'],
+    copyrightStatus: 'copyright',
+  },
+  {
+    slug: 'my-name-is-leon',
+    title: 'My Name is Leon',
+    author: 'Kit de Waal (b. 1960)',
+    category: 'modern',
+    boards: ['aqa'],
+    copyrightStatus: 'copyright',
+  },
+  {
+    slug: 'hobsons-choice',
+    title: "Hobson's Choice",
+    author: 'Harold Brighouse (1882-1958)',
+    category: 'modern',
+    boards: ['edexcel'],
+    // Brighouse died 1958, so UK copyright (CDPA 1988 s12: life + 70) runs to
+    // the end of 2028. Not publishable in full yet.
+    copyrightStatus: 'copyright',
+  },
+  {
+    slug: 'journeys-end',
+    title: "Journey's End",
+    author: 'R C Sherriff (1896-1975)',
+    category: 'modern',
+    boards: ['edexcel'],
+    copyrightStatus: 'copyright',
+  },
+  {
+    slug: 'the-woman-in-black',
+    title: 'The Woman in Black',
+    author: 'Susan Hill (b. 1942)',
+    category: 'modern',
+    boards: ['edexcel', 'eduqas'],
+    // Distinct from 'whistle-and-ill-come-to-you', which is an EXTRACT from
+    // this novel prescribed separately in the Edexcel International GCSE
+    // anthology. Same book, different prescribed text.
+    copyrightStatus: 'copyright',
+  },
+  {
+    slug: 'the-empress',
+    title: 'The Empress',
+    author: 'Tanika Gupta (b. 1963)',
+    category: 'modern',
+    boards: ['edexcel'],
+    copyrightStatus: 'copyright',
+  },
+  {
+    slug: 'refugee-boy',
+    title: 'Refugee Boy',
+    // EDITION NOT SETTLED. Benjamin Zephaniah wrote the novel; Lemn Sissay
+    // wrote a stage adaptation. Which is prescribed has not been read from the
+    // specification's editions appendix, so the original author is recorded and
+    // the question is left open rather than answered by assumption.
+    author: 'Benjamin Zephaniah (1958-2023)',
+    category: 'modern',
+    boards: ['edexcel'],
+    copyrightStatus: 'copyright',
+  },
+  {
+    slug: 'coram-boy',
+    title: 'Coram Boy',
+    // EDITION NOT SETTLED, as above. Jamila Gavin wrote the novel; Helen
+    // Edmundson wrote the stage adaptation.
+    author: 'Jamila Gavin (b. 1941)',
+    category: 'modern',
+    boards: ['edexcel'],
+    copyrightStatus: 'copyright',
+  },
+  {
+    slug: 'boys-dont-cry',
+    title: "Boys Don't Cry",
+    author: 'Fiona Scarlett',
+    category: 'modern',
+    boards: ['edexcel', 'eduqas'],
+    copyrightStatus: 'copyright',
+  },
+  {
+    slug: 'oranges-are-not-the-only-fruit',
+    title: 'Oranges are not the Only Fruit',
+    author: 'Jeanette Winterson (b. 1959)',
+    category: 'modern',
+    boards: ['eduqas'],
+    copyrightStatus: 'copyright',
+  },
+  {
+    slug: 'the-history-boys',
+    title: 'The History Boys',
+    author: 'Alan Bennett (b. 1934)',
+    category: 'modern',
+    // Eduqas only. AQA's list carries "Last exam 2024" against it, so it must
+    // not be shown to an AQA student as a live option.
+    boards: ['eduqas'],
+    copyrightStatus: 'copyright',
+  },
+
+  // ── Cambridge IGCSE Literature in English 0475 ─────────────────────────────
+  //
+  // ADDED 19 September 2026. The board read as completely empty: a student in
+  // the Gulf, which is most of this board's cohort, was shown that we have no
+  // idea what they study. We held rows and finished guides for several of its
+  // texts, tagged to other boards - Antony and Cleopatra, the longest guide on
+  // the site at 1,491 lines, is a prescribed 0475 drama text.
+  //
+  // These six are the prescribed whole texts we had no row for at all, for the
+  // 2027 examination, which is the series the current cohort sits.
+  //
+  // Source: Cambridge IGCSE Literature in English 0475 syllabus for examination
+  // in 2027, Version 2, published October 2024. See
+  // src/lib/board/cambridge-0475.ts, which holds both live years in full and
+  // explains why the year matters: Cambridge rotates these every single year and
+  // serves four syllabus PDFs side by side with no archived label on any of them.
+  //
+  // NOT ADDED HERE, deliberately: the 45 prescribed poems and the 10 Stories of
+  // Ourselves stories. Paper 1 Section A is a choice of THREE alternative
+  // fifteen-poem sets and a candidate answers on one. SetText has no way to say
+  // "one of three alternatives", so listing all 45 on one shelf would tell a
+  // student they must revise three times what they do. They are held in
+  // cambridge-0475.ts until there is a surface that can show the choice
+  // honestly.
+  {
+    slug: 'blues-for-an-alabama-sky',
+    title: 'Blues for an Alabama Sky',
+    author: 'Pearl Cleage',
+    category: 'modern',
+    boards: ['cambridge-0475'],
+    copyrightStatus: 'copyright',
+  },
+  {
+    slug: 'a-midsummer-nights-dream',
+    title: "A Midsummer Night's Dream",
+    author: 'William Shakespeare',
+    category: 'shakespeare',
+    boards: ['cambridge-0475'],
+    copyrightStatus: 'public-domain',
+  },
+  {
+    slug: 'what-it-means-when-a-man-falls-from-the-sky',
+    title: 'What it Means When a Man Falls from the Sky',
+    author: 'Lesley Nneka Arimah',
+    category: 'modern',
+    // In for 2027, replacing H G Wells's The War of the Worlds.
+    boards: ['cambridge-0475'],
+    copyrightStatus: 'copyright',
+  },
+  {
+    slug: 'fire-on-the-mountain',
+    title: 'Fire on the Mountain',
+    author: 'Anita Desai',
+    category: 'modern',
+    boards: ['cambridge-0475'],
+    copyrightStatus: 'copyright',
+  },
+  {
+    slug: 'hullaballoo-in-the-guava-orchard',
+    // The syllabus spells it "Hullaballoo". Kept as printed rather than
+    // corrected to the publisher's "Hullabaloo", so a teacher searching the
+    // syllabus text finds it.
+    title: 'Hullaballoo in the Guava Orchard',
+    author: 'Kiran Desai',
+    category: 'modern',
+    boards: ['cambridge-0475'],
+    copyrightStatus: 'copyright',
+  },
+  {
+    slug: 'im-the-king-of-the-castle',
+    title: "I'm the King of the Castle",
+    author: 'Susan Hill',
+    category: 'modern',
+    boards: ['cambridge-0475'],
+    copyrightStatus: 'copyright',
   },
 ]
 

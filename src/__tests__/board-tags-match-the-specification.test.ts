@@ -101,14 +101,26 @@ describe('the title the specification prints', () => {
 })
 
 describe('what is still missing, recorded rather than asserted', () => {
-  // These are real gaps in the product, not failures of the data model, so they
-  // are pinned as counts. If a count falls, someone has written a guide and
-  // should lower the number deliberately. If it rises, a text has been dropped.
+  // These were real gaps in the product, not failures of the data model, so
+  // they were pinned as counts, with the instruction that a count which falls
+  // should be lowered deliberately.
+  //
+  // ALL FOUR FELL TO ZERO ON 19 SEPTEMBER 2026. The twenty missing board-title
+  // pairs were fifteen distinct texts that had no row in SET_TEXTS at all: DNA,
+  // A Taste of Honey, Telling Tales, Princess & The Hustler, Leave Taking, My
+  // Name is Leon, Hobson's Choice, Journey's End, The Woman in Black, The
+  // Empress, Refugee Boy, Coram Boy, Boys Don't Cry, Oranges are not the Only
+  // Fruit and The History Boys. They are now held.
+  //
+  // The numbers stay rather than the block being deleted, because zero is the
+  // assertion worth keeping: every text these four specifications prescribe now
+  // has a row and is tagged to the board that sets it, and a regression would
+  // show up here as a count going back up.
   it.each([
-    ['aqa', 6],
-    ['edexcel', 7],
-    ['ocr', 2],
-    ['eduqas', 5],
+    ['aqa', 0],
+    ['edexcel', 0],
+    ['ocr', 0],
+    ['eduqas', 0],
   ])('%s is missing %i prescribed texts', (board, expected) => {
     const held = new Set(
       SET_TEXTS.filter((t) => t.boards.includes(board as never)).map((t) => normalise(t.title)),

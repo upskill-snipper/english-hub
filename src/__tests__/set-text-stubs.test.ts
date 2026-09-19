@@ -61,7 +61,8 @@ describe('the stub list', () => {
     // vacuously. Deliberately an exact number rather than a range, so the list
     // cannot grow or shrink without someone saying why here.
     //
-    // 20 -> 27 -> 34 on 19 September 2026, in two steps. Reading the Edexcel
+    // 20 -> 55 on 19 September 2026, in four steps, as four specifications
+    // were read against our data. Reading the Edexcel
     // International GCSE documents against our data found fourteen prescribed
     // texts missing from SET_TEXTS entirely: seven anthology Part 3 poems, then
     // seven 4ET1 whole texts including both 2024 additions. Adding the rows is
@@ -69,7 +70,7 @@ describe('the stub list', () => {
     // stubs by the same definition as the other twenty. Four of the anthology
     // seven already had a real guide under /igcse/edexcel/poetry that nothing
     // could reach; none of the 4ET1 seven has a guide anywhere yet.
-    expect(STUB_SET_TEXT_SLUGS.size).toBe(34)
+    expect(STUB_SET_TEXT_SLUGS.size).toBe(55)
     expect(SET_TEXTS.length).toBeGreaterThan(70)
   })
 })
