@@ -240,6 +240,29 @@ describe('splitPosts', () => {
 describe('the live queue', () => {
   const files = existsSync(QUEUE) ? readdirSync(QUEUE).filter((f) => f.endsWith('.md')) : []
 
+  /**
+   * Drafts whose ONLY fault is the hashtag ceiling added for SOC-4.
+   *
+   * Adding that rule found four real violations of the house position in
+   * section 6 of 01-Content-Pillars-and-Voice.md - an Instagram post with eight
+   * tags against a ceiling of six, and three YouTube posts carrying tags at all
+   * where the house style says keywords belong in the title.
+   *
+   * They are pinned rather than fixed, and the bar below is NOT lowered to
+   * accommodate them. They are Calum's copy, the whole point of the lint is to
+   * refuse a draft so a person edits it, and quietly rewriting his voice to make
+   * a test go green would be the wrong fix twice over. A NEW violation still
+   * breaks the threshold.
+   *
+   * Delete an entry when its draft is edited.
+   */
+  const KNOWN_HASHTAG_ONLY = [
+    'instagram-2026-07-03-quick-fixes-for-results-day-2026.md',
+    'youtube-2026-07-05-h06-mastering-complex-sentences-for-aqa-e',
+    'youtube-2026-07-07-h00-improve-your-essay-structure-in-30-se',
+    'youtube-2026-07-07-h07-improve-your-essay-introduction.md',
+  ]
+
   it.skipIf(files.length === 0)('is mostly clean, which is how a linter stays used', () => {
     // Pinned. If a change makes this fall off a cliff, the rules have become
     // noise and the real findings will go out with them.
@@ -250,9 +273,36 @@ describe('the live queue', () => {
         permittedPrices: permittedPrices(),
         platform: f.split('-')[0],
       })
-      if (report.ok) clean += 1
+      if (report.ok) {
+        clean += 1
+        continue
+      }
+      // A pinned draft counts as clean only while the hashtag ceiling is its
+      // ONLY fault. Pick up a second problem and it stops being excused.
+      const onlyHashtags = report.findings.every((x) => x.rule === 'hashtags')
+      if (onlyHashtags && KNOWN_HASHTAG_ONLY.some((k) => f.startsWith(k.replace(/\.md$/, '')))) {
+        clean += 1
+      }
     }
     expect(clean / files.length).toBeGreaterThan(0.7)
+  })
+
+  it.skipIf(files.length === 0)('and the pinned hashtag drafts are all still real', () => {
+    // An allowlist that outlives its entries is how a checker starts lying.
+    // When one of these is edited, this fails and the entry should go with it.
+    for (const pinned of KNOWN_HASHTAG_ONLY) {
+      const match = files.find((f) => f.startsWith(pinned.replace(/\.md$/, '')))
+      expect(match, `${pinned} is no longer in the queue - remove the pin`).toBeTruthy()
+      const report = lintClaims({
+        body: readFileSync(join(QUEUE, match!), 'utf8'),
+        permittedPrices: permittedPrices(),
+        platform: match!.split('-')[0],
+      })
+      expect(
+        report.findings.some((x) => x.rule === 'hashtags'),
+        `${pinned} no longer breaches the hashtag ceiling - remove the pin`,
+      ).toBe(true)
+    }
   })
 
   it.skipIf(files.length === 0)('still finds the mojibake the audit named', () => {
@@ -265,5 +315,63 @@ describe('the live queue', () => {
       }).findings.some((x) => x.rule === 'mojibake'),
     )
     expect(withMojibake.length).toBeGreaterThanOrEqual(3)
+  })
+})
+
+// ─── Hashtag ceilings ───────────────────────────────────────────────────
+
+/**
+ * SOC-4's last piece: the platform hashtag ceiling.
+ *
+ * These are NOT platform limits, and the distinction is the point. They are the
+ * house position from section 6 of 01-Content-Pillars-and-Voice.md, which says
+ * of itself: "Everything below is a starting hypothesis and it gets replaced by
+ * our own numbers from day 30... Do not treat this section as settled."
+ *
+ * So the lint refuses a draft and names the document, rather than silently
+ * trimming tags. A person who disagrees should change the document.
+ */
+describe('hashtag ceilings follow the house document', () => {
+  const lint = (platform: string, body: string) =>
+    lintClaims({
+      body: `DRAFT FOR APPROVAL, not posted\n\n${body}`,
+      platform,
+      requireApprovalHeader: false,
+    }).findings.filter((f) => f.rule === 'hashtags')
+
+  it.each([
+    ['instagram', '#gcse #gcseenglish #revision #studytok', 0],
+    ['tiktok', '#a #b #c #d #e #f', 0],
+    ['instagram', '#a #b #c #d #e #f #g', 1],
+    ['linkedin', '#a #b #c', 0],
+    ['linkedin', '#a #b #c #d', 1],
+    ['x', '#TeamEnglish', 0],
+    ['x', '#TeamEnglish #edutwitter', 1],
+  ])('%s with "%s"', (platform, body, expected) => {
+    expect(lint(platform, body)).toHaveLength(expected)
+  })
+
+  it.each(['facebook', 'youtube'])('%s takes no hashtags at all', (platform) => {
+    expect(lint(platform, 'A post with #gcse in it')).toHaveLength(1)
+    expect(lint(platform, 'A post with no tags')).toHaveLength(0)
+  })
+
+  it('names the document the number came from', () => {
+    // A refusal that just says "too many" invites an argument with the code.
+    // This one sends the reader to the file they can change.
+    const [finding] = lint('facebook', '#gcse')
+    expect(finding.why).toContain('01-Content-Pillars-and-Voice.md')
+    expect(finding.why).toContain('hypothesis')
+  })
+
+  it('does not count a C-sharp or a colour as a hashtag', () => {
+    // The counterweight: a pattern of /#\S+/ would refuse a post mentioning
+    // "#1 mistake" or a hex colour, which is a refusal nobody can act on.
+    expect(lint('facebook', 'The #1 mistake students make')).toHaveLength(0)
+    expect(lint('facebook', 'Our brand colour is #0F1411')).toHaveLength(0)
+  })
+
+  it('and says nothing about a platform with no stated ceiling', () => {
+    expect(lint('newsletter', '#a #b #c #d #e #f #g #h')).toHaveLength(0)
   })
 })

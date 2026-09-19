@@ -24,7 +24,40 @@
  * correcting at all.
  */
 
+/**
+ * Per-platform hashtag ceilings (SOC-4).
+ *
+ * These are NOT platform limits. They are the house position, taken verbatim
+ * from section 6 of
+ * `12 Launch Campaign 2026/04 Social Content/00 Plan/01-Content-Pillars-and-Voice.md`,
+ * which says so itself:
+ *
+ *   "We have no performance data of our own, because we launch on 1 September.
+ *    Everything below is a starting hypothesis and it gets replaced by our own
+ *    numbers from day 30... Do not treat this section as settled."
+ *
+ * That caveat is the reason this is a lint rather than a truncation: it refuses
+ * a draft and says which document the number came from, so the person reading
+ * the refusal can change the document rather than argue with the code.
+ *
+ *   TikTok and Instagram   three to six
+ *   X                      zero to one
+ *   LinkedIn               three at most
+ *   YouTube                keywords belong in the title, not a wall of tags
+ *   Facebook               none; they read as spam in a parents' group
+ */
+const HASHTAG_CEILING = {
+  tiktok: 6,
+  instagram: 6,
+  x: 1,
+  twitter: 1,
+  linkedin: 3,
+  youtube: 0,
+  facebook: 0,
+}
 
+/** A hashtag, not a C# heading or a colour. Requires a letter to follow the #. */
+const HASHTAG = /(?:^|\s)(#[A-Za-z][A-Za-z0-9_]*)/g
 
 /** Per-platform hard limits. Exceeding one is not a style problem; the post is truncated. */
 export const PLATFORM_LIMITS = {
@@ -141,7 +174,6 @@ export function splitPosts(body) {
     return { label: `POST ${m[1]}`, text: body.slice(start, end).trim() }
   })
 }
-
 
 /**
  * Every rule, always run. The report lists which rules were applied so that an
@@ -350,6 +382,23 @@ export function lintClaims({ body, platform, requireApprovalHeader = true, permi
             'the end of it does not exist.',
         )
       }
+    }
+  }
+
+  const ceiling = HASHTAG_CEILING[platform.toLowerCase()]
+  if (ceiling !== undefined) {
+    const tags = [...body.matchAll(HASHTAG)].map((m) => m[1])
+    if (tags.length > ceiling) {
+      add(
+        'hashtags',
+        tags.join(' '),
+        ceiling === 0
+          ? `House style puts no hashtags on ${platform}. See section 6 of ` +
+              '01-Content-Pillars-and-Voice.md, which is a starting hypothesis, not a platform rule.'
+          : `${tags.length} hashtags; house style for ${platform} is at most ${ceiling}. ` +
+              'See section 6 of 01-Content-Pillars-and-Voice.md, which is a starting ' +
+              'hypothesis and is meant to be replaced by our own numbers.',
+      )
     }
   }
 

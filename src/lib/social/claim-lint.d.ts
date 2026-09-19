@@ -23,6 +23,12 @@ export type ClaimRuleId =
   | 'missing-spec-check'
   | 'length'
   | 'emoji'
+  /**
+   * Over the house hashtag ceiling for the platform (SOC-4). Not a platform
+   * limit: the numbers come from section 6 of 01-Content-Pillars-and-Voice.md,
+   * which describes itself as a starting hypothesis.
+   */
+  | 'hashtags'
   | 'missing-approval-header'
 
 export interface ClaimFinding {
