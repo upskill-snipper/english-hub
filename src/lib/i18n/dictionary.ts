@@ -4567,6 +4567,13 @@ export const DICTIONARY: Dictionary = {
   },
 
   // ─── Blog chrome ─────────────────────────────────────────────────
+  // SEO-5: shown beside the byline only when a post carries an `updated:`
+  // field, so it is a claim the post was really revised, not a default.
+  'blog.updated_on': {
+    en: 'Updated',
+    ar: 'محدَّث',
+    es: 'Actualizado',
+  },
   'blog.index.eyebrow': {
     en: 'The English Hub Blog',
     ar: 'مدوّنة The English Hub',

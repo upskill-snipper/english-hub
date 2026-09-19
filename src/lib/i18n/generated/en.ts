@@ -1278,6 +1278,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'pricing.how_free_works.title': 'How free access works',
   'pricing.how_free_works.subtitle': 'Get started in three simple steps. No commitment, no card.',
   'pricing.faq.title': 'Frequently asked questions',
+  'blog.updated_on': 'Updated',
   'blog.index.eyebrow': 'The English Hub Blog',
   'blog.index.heading': 'Revision guides and exam technique',
   'blog.index.lead':

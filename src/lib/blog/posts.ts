@@ -70,6 +70,16 @@ export type BlogPost = {
   description: string
   /** ISO `YYYY-MM-DD`. */
   date: string
+  /**
+   * ISO `YYYY-MM-DD`, when the post was last substantively revised (SEO-5).
+   *
+   * Optional and deliberately not defaulted to `date`. `dateModified` equal to
+   * `datePublished` on every article tells a search engine nothing; an absent
+   * one at least does not assert something untrue. It is surfaced as
+   * `dateModified` in the Article JSON-LD and as a visible "Updated" line, so
+   * setting it is a claim that the post really was checked on that day.
+   */
+  updated?: string
   author: string
   /** Either an `/api/og?title=…` URL or a `/images/blog/<slug>.png` path. */
   cover: string
@@ -90,6 +100,7 @@ type BlogPostFrontmatter = {
   description: string
   slug: string
   date: string | Date
+  updated?: string | Date
   author: string
   cover: string
   tags: string[]
@@ -134,6 +145,7 @@ function toBlogPost(slug: string, data: BlogPostFrontmatter, content: string): B
     title: data.title,
     description: data.description,
     date: toIsoDate(data.date),
+    ...(data.updated ? { updated: toIsoDate(data.updated) } : {}),
     author: data.author,
     cover: data.cover,
     tags: Array.isArray(data.tags) ? data.tags : [],

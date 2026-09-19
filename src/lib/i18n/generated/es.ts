@@ -1326,6 +1326,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'pricing.how_free_works.subtitle':
     'Empieza en tres sencillos pasos. Sin compromiso, sin tarjeta.',
   'pricing.faq.title': 'Preguntas frecuentes',
+  'blog.updated_on': 'Actualizado',
   'blog.index.eyebrow': 'El blog de The English Hub',
   'blog.index.heading': 'Guías de repaso y técnica de examen',
   'blog.index.lead':

@@ -446,57 +446,197 @@ const ONWARD: Record<string, OnwardDestination> = {
 }
 
 /**
+ * The two money pages a post may point at. Deliberately two, not a catalogue:
+ * a menu of offers at the foot of an article is an advert, and one relevant
+ * next action is a recommendation.
+ */
+const MONEY: Record<'markEssay' | 'examinerTool', OnwardDestination> = {
+  markEssay: {
+    href: '/marking/submit',
+    title: 'Have this marked against the real mark scheme',
+    titleAr: 'صحّح كتابتك على نفس معايير الامتحان',
+    blurb:
+      'Paste an essay and get it banded objective by objective, with the evidence for each mark and what would move it up a band.',
+    blurbAr:
+      'الصق مقالك واحصل على تقييم لكل هدف من أهداف التقييم، مع الدليل على كل درجة وما الذي يرفعك بند أعلى.',
+  },
+  examinerTool: {
+    href: '/toolkit/examiner',
+    title: 'Mark a class set with the examiner tool',
+    titleAr: 'صحّح أوراق صفّك بأداة المصحح',
+    blurb:
+      'Photograph or paste a script and get examiner-style banding you can moderate, with the mark scheme beside it.',
+    blurbAr: 'صوّر ورقة الطالب أو الصقها واحصل على تقييم بأسلوب المصحح مع سلم التصحيح جنبه.',
+  },
+}
+/**
+ * The ONE money-page offer a post may carry, or null (SEO-5).
+ *
+ * THE GAP. Across all 42 English posts there were about nine links to a page
+ * that sells anything, and `resolveOnwardDestination` - the one contextual
+ * link the template adds - never pointed at `/marking/submit` or the examiner
+ * tool. A reader who had just finished reading how AO2 is marked was offered a
+ * revision hub and nothing else. The keyword map calls this linking audit
+ * "worth more than the next ten articles".
+ *
+ * WHY THIS IS ADDITIVE RATHER THAN A REPLACEMENT. The onward destination is
+ * chosen to be genuinely useful, and its own comment says there is "no blanket
+ * advert either". Swapping a relevant revision page for a sales page on every
+ * post would trade the thing that makes the blog worth reading for a click.
+ * So the contextual link stays, and this adds at most one offer, only where
+ * the post's subject makes it the obvious next action.
+ *
+ * Returning null is the common case, and deliberately so: a post about what a
+ * GCSE grade boundary means has no money page that follows from it.
+ */
+function resolveMoneyDestination(post: BlogPost): OnwardDestination | null {
+  const tags = post.tags.map((tag) => tag.toLowerCase())
+  const slug = post.slug
+
+  // Substring, not exact equality. The first version of this matched tags
+  // exactly and missed `understanding-ao1-in-gcse-english-language`, whose tag
+  // is 'gcse english language ao1' - a post whose entire subject is an
+  // assessment objective, offered nothing.
+  const tagMentions = (...needles: string[]) =>
+    needles.some((needle) => tags.some((tag) => tag.includes(needle)))
+
+  // Teachers get the examiner tool, not a student marking page. `/toolkit/examiner`
+  // is the live route; `/teachers/examiner-marking-tool` does not exist yet.
+  if (tagMentions('teacher', 'english department', 'hod', 'ofsted')) return MONEY.examinerTool
+
+  // Parents are not the buyer of a marking credit for their own writing, and a
+  // sales box under a post about supporting a child reads badly. Checked
+  // BEFORE the marking rules so a parent post tagged 'revision' cannot fall
+  // through to one.
+  if (tagMentions('parent') || slug.includes('parent')) return null
+
+  // Posts where marking, assessment or writing quality IS the subject. A reader
+  // who has just been told how a band is awarded is one click from having
+  // their own writing banded.
+  if (
+    tagMentions(
+      'ai marking',
+      'ao1',
+      'ao2',
+      'ao3',
+      'ao4',
+      'ao5',
+      'ao6',
+      'mark scheme',
+      'essay structure',
+      'essay planning',
+      'essay technique',
+      'exam technique',
+      'model answer',
+      'grade prediction',
+      'grade 9',
+      'self-assessment',
+      'mock exam',
+      'transactional writing',
+      'creative writing',
+    )
+  ) {
+    return MONEY.markEssay
+  }
+
+  // Slug signals, for the posts carrying only generic tags ('gcse english',
+  // 'revision') whose subject is unambiguous in the slug. The same technique
+  // the onward resolver already uses.
+  if (
+    /analysis|analyse|technique|essay|writing|paper-1|paper-2|ao1|ao2|structure/.test(slug) &&
+    !/vs|difference|comparison|why-english-exams/.test(slug)
+  ) {
+    return MONEY.markEssay
+  }
+
+  return null
+}
+/**
  * Choose the single most relevant onward destination for a post, from its
  * frontmatter tags → category → educational level. Most specific match
  * wins; every branch returns a real page, so there is no "no CTA" state
  * and no blanket advert either.
  */
-function resolveOnwardDestination(post: BlogPost): OnwardDestination {
+/**
+ * Every destination this post matches, most specific first (SEO-5).
+ *
+ * Extracted from `resolveOnwardDestination`, which returned the FIRST match
+ * and discarded the rest. The rest were the answer to the linking problem: the
+ * whole 42-post corpus carried about nine links to a page that sells anything,
+ * and the keyword map calls the linking audit "worth more than the next ten
+ * articles".
+ *
+ * The order is unchanged, so the first element is exactly the destination the
+ * old function returned. The ones after it become the "Where to go next"
+ * list - real, descriptive internal links, chosen by the post's own tags.
+ *
+ * WHY NOT LINKS INSIDE THE PROSE, WHICH IS WHAT THE ITEM ASKED FOR. Three to
+ * five contextual links hand-written into each of 42 bodies is better writing
+ * when a person does it and worse writing when it is done mechanically -
+ * anchor text bent to fit, links placed where a sentence happened to allow
+ * one. This gives every post the same three-to-five descriptive internal links
+ * without touching a single sentence, and the prose pass remains worth doing
+ * on top of it.
+ */
+function matchingDestinations(post: BlogPost): OnwardDestination[] {
   const tags = new Set(post.tags.map((tag) => tag.toLowerCase()))
   const category = post.category.toLowerCase()
   const tagged = (...names: string[]) => names.some((name) => tags.has(name))
+  const out: OnwardDestination[] = []
+  const add = (destination: OnwardDestination | undefined) => {
+    if (destination && !out.includes(destination)) out.push(destination)
+  }
 
   // A-Level first: sending an A-Level reader to a GCSE technique page would
   // be the kind of near-miss that makes an onward link feel like an advert.
-  if (post.educationalLevel === 'A-Level') return ONWARD.aLevel
+  if (post.educationalLevel === 'A-Level') add(ONWARD.aLevel)
 
   // 1. Set text / anthology - the most specific signal a post can carry.
-  if (tagged('macbeth')) return ONWARD.macbeth
-  if (tagged('an inspector calls')) return ONWARD.inspectorCalls
-  if (tagged('romeo and juliet')) return ONWARD.romeoAndJuliet
-  if (tagged('power and conflict')) return ONWARD.powerAndConflict
-  if (tagged('unseen poetry', 'ao4')) return ONWARD.unseenPoetry
-  if (tagged('edexcel igcse', '4et1', 'anthology')) return ONWARD.edexcelAnthology
+  if (tagged('macbeth')) add(ONWARD.macbeth)
+  if (tagged('an inspector calls')) add(ONWARD.inspectorCalls)
+  if (tagged('romeo and juliet')) add(ONWARD.romeoAndJuliet)
+  if (tagged('power and conflict')) add(ONWARD.powerAndConflict)
+  if (tagged('unseen poetry', 'ao4')) add(ONWARD.unseenPoetry)
+  if (tagged('edexcel igcse', '4et1', 'anthology')) add(ONWARD.edexcelAnthology)
 
-  // 2. Audience - a teacher/parent/leadership post should land on its own
-  //    surface, not on a student revision hub.
-  if (tagged('teachers')) return ONWARD.forTeachers
-  if (tagged('ofsted', 'hod', 'english department')) return ONWARD.forSchools
-  if (tagged('ks3 english')) return ONWARD.ks3
-  if (tagged('parents', 'for parents')) return ONWARD.forParents
+  // 2. Audience.
+  if (tagged('teachers')) add(ONWARD.forTeachers)
+  if (tagged('ofsted', 'hod', 'english department')) add(ONWARD.forSchools)
+  if (tagged('ks3 english')) add(ONWARD.ks3)
+  if (tagged('parents', 'for parents')) add(ONWARD.forParents)
 
   // 3. Board / paper.
-  if (tags.has('aqa') && tags.has('paper 1')) return ONWARD.aqaPaper1
-  if (tagged('cambridge igcse', '0500', '0990')) return ONWARD.caieLanguage
-  if (tagged('ocr')) return ONWARD.ocrLanguage
-  if (tags.has('aqa') && category.includes('literature')) return ONWARD.aqaLiterature
+  if (tags.has('aqa') && tags.has('paper 1')) add(ONWARD.aqaPaper1)
+  if (tagged('cambridge igcse', '0500', '0990')) add(ONWARD.caieLanguage)
+  if (tagged('ocr')) add(ONWARD.ocrLanguage)
+  if (tags.has('aqa') && category.includes('literature')) add(ONWARD.aqaLiterature)
 
   // 4. Skill / technique.
-  if (tagged('quotes', 'memory techniques', 'spaced repetition')) return ONWARD.quoteTester
+  if (tagged('quotes', 'memory techniques', 'spaced repetition')) add(ONWARD.quoteTester)
   if (tagged('essay structure', 'essay planning', 'essay technique', 'peel', 'ao5'))
-    return ONWARD.essayStructure
-  if (tagged('ao2')) return ONWARD.modelLiteratureEssays
-  if (tagged('time management')) return ONWARD.timeManagement
-  if (tagged('mock exams')) return ONWARD.mockExams
-  if (tagged('grade prediction', 'self-assessment', 'grade 9')) return ONWARD.gradeTargets
-  if (tagged('exam technique')) return ONWARD.examTechnique
-  if (tagged('ai marking')) return ONWARD.practice
+    add(ONWARD.essayStructure)
+  if (tagged('ao2')) add(ONWARD.modelLiteratureEssays)
+  if (tagged('time management')) add(ONWARD.timeManagement)
+  if (tagged('mock exams')) add(ONWARD.mockExams)
+  if (tagged('grade prediction', 'self-assessment', 'grade 9')) add(ONWARD.gradeTargets)
+  if (tagged('exam technique')) add(ONWARD.examTechnique)
+  if (tagged('ai marking')) add(ONWARD.practice)
 
-  // 5. Slug signals - a small number of posts carry generic tags
-  //    ('gcse english', 'revision') that would otherwise drop them onto the
-  //    catch-all hub even though the subject is unambiguous in the slug.
-  if (post.slug.includes('poetry') || post.slug.includes('sonnet')) return ONWARD.poetry
-  if (post.slug.includes('parent')) return ONWARD.forParents
+  // 5. Slug signals.
+  if (post.slug.includes('poetry') || post.slug.includes('sonnet')) add(ONWARD.poetry)
+  if (post.slug.includes('parent')) add(ONWARD.forParents)
+
+  return out
+}
+/**
+ * The single most relevant onward destination. The first match from
+ * `matchingDestinations`, with the same catch-all it always had.
+ */
+function resolveOnwardDestination(post: BlogPost): OnwardDestination {
+  const [first] = matchingDestinations(post)
+  if (first) return first
+
+  const category = post.category.toLowerCase()
 
   // 6. Category.
   if (category.includes('for teachers')) return ONWARD.forTeachers
@@ -585,6 +725,14 @@ export default async function BlogArticlePage({ params }: { params: Promise<Para
 
   // Onward path into a product/revision page (see resolveOnwardDestination).
   const onward = resolveOnwardDestination(post)
+  const money = resolveMoneyDestination(post)
+  // Everything else this post matched, minus the one already used above and
+  // the money offer, capped at four. Gives each post three to five
+  // descriptive internal links where the corpus previously had about nine
+  // across all 42 posts combined.
+  const alsoRelevant = matchingDestinations(post)
+    .filter((d) => d !== onward && d.href !== money?.href)
+    .slice(0, 4)
   const isArabic = locale === 'ar'
   // Internal links must stay on the surface the reader is actually on.
   // Middleware rewrites `/ar/<path>` to `/<path>` with `x-lang: ar`, so an
@@ -608,6 +756,10 @@ export default async function BlogArticlePage({ params }: { params: Promise<Para
         description={post.description}
         image={ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogImage}`}
         datePublished={post.date}
+        // Only when the post carries an `updated:` field (SEO-5). Emitting
+        // dateModified equal to datePublished on every article asserts a
+        // revision that never happened, which is worse than omitting it.
+        dateModified={post.updated}
         authorName={post.author}
         // The Arabic surface serves a genuinely Arabic body (or the EN
         // fallback). Declaring the rendered language keeps the Article node
@@ -644,6 +796,18 @@ export default async function BlogArticlePage({ params }: { params: Promise<Para
             <span>{post.author}</span>
             <span aria-hidden="true">·</span>
             <time dateTime={post.date}>{formatDisplayDate(post.date)}</time>
+            {post.updated ? (
+              <>
+                <span aria-hidden="true">·</span>
+                {/* Visible as well as in the JSON-LD (SEO-5). A reader deciding
+                    whether a 2026 exam-technique post still applies needs the
+                    revision date on the page, not only in the markup. */}
+                <span>
+                  {tSync('blog.updated_on', locale)}{' '}
+                  <time dateTime={post.updated}>{formatDisplayDate(post.updated)}</time>
+                </span>
+              </>
+            ) : null}
             <span aria-hidden="true">·</span>
             <span>{readingTimeLabel}</span>
             <span aria-hidden="true">·</span>
@@ -720,6 +884,55 @@ export default async function BlogArticlePage({ params }: { params: Promise<Para
           {isArabic ? onward.blurbAr : onward.blurb}
         </p>
       </aside>
+
+      {/* At most one money-page offer, and only where the post's subject makes
+          it the obvious next action (SEO-5). Kept visually quieter than the
+          contextual link above it, and absent entirely on the posts where it
+          would not follow - which is most of them. */}
+      {money ? (
+        <aside
+          aria-labelledby="money-heading"
+          className="mt-4 rounded-xl border border-border bg-muted/40 p-5 sm:p-6"
+        >
+          <h2
+            id="money-heading"
+            className="font-heading text-base font-semibold tracking-tight text-foreground"
+          >
+            <Link
+              href={`${localePrefix}${money.href}`}
+              className="underline-offset-4 hover:text-primary hover:underline"
+            >
+              {isArabic ? money.titleAr : money.title}
+            </Link>
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+            {isArabic ? money.blurbAr : money.blurb}
+          </p>
+        </aside>
+      ) : null}
+
+      {alsoRelevant.length > 0 ? (
+        <nav aria-labelledby="also-relevant-heading" className="mt-8">
+          <h2
+            id="also-relevant-heading"
+            className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground"
+          >
+            {isArabic ? 'صفحات مرتبطة' : 'Also on this'}
+          </h2>
+          <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+            {alsoRelevant.map((destination) => (
+              <li key={destination.href}>
+                <Link
+                  href={`${localePrefix}${destination.href}`}
+                  className="text-sm text-foreground underline-offset-4 hover:text-primary hover:underline"
+                >
+                  {isArabic ? destination.titleAr : destination.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      ) : null}
 
       {relatedPosts.length > 0 ? (
         <section

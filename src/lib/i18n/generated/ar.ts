@@ -1252,6 +1252,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'pricing.how_free_works.title': 'كيف يشتغل الوصول المجاني',
   'pricing.how_free_works.subtitle': 'ابدأ بثلاث خطوات بسيطة. بلا التزام، بلا بطاقة.',
   'pricing.faq.title': 'الأسئلة الشائعة',
+  'blog.updated_on': 'محدَّث',
   'blog.index.eyebrow': 'مدوّنة The English Hub',
   'blog.index.heading': 'أدلّة مراجعة وطرق الامتحان',
   'blog.index.lead':
