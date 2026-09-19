@@ -23,9 +23,20 @@
  *
  *   - Unknown slugs cannot rely on `dynamicParams = false` (that gate is
  *     only meaningful for statically-rendered routes; here it stamped a
- *     200 on the not-found shell). Instead we check the slug against the
- *     catalogue and call `notFound()`, which returns a real HTTP 404 on
- *     a dynamic render.
+ *     200 on the not-found shell). We check the slug against the catalogue
+ *     and call `notFound()`, and THAT STILL RETURNS 200, not 404. See the
+ *     long note in `generateMetadata` below, which has the mechanism and
+ *     the mitigation: Next streams the shell and the metadata with a
+ *     committed 200 before anything can change the status, so what
+ *     protects the site is the explicit `noindex`, not the status code.
+ *
+ *     This paragraph used to claim the opposite - "returns a real HTTP 404
+ *     on a dynamic render" - while the function sixty lines down recorded
+ *     having verified that it does not. Re-measured against production on
+ *     20 September 2026: /blog/<unknown> is 200 with two noindex metas,
+ *     and /revision/texts/<unknown> behaves the same way. A reader who
+ *     trusted the header would have gone looking for a broken 404 that was
+ *     never there.
  *   - A post that fails MDX compilation would throw per-request and
  *     collapse the page to an empty shell WITHOUT failing the build (19
  *     posts shipped broken this way until Aug 2026 - HTML `<!-- -->`
@@ -672,10 +683,11 @@ function getRelatedPosts(current: BlogPost, limit = 3): BlogPost[] {
 
 export default async function BlogArticlePage({ params }: { params: Promise<Params> }) {
   const { slug } = await params
-  // Hard 404 for slugs outside the catalogue. On this dynamically-rendered
-  // route `notFound()` returns a real HTTP 404 status (unlike the old
-  // `dynamicParams = false` gate, which only works for static renders and
-  // stamped 200 on the not-found shell here).
+  // The gate for slugs outside the catalogue, which now includes any post
+  // held back with `draft: true`. It swaps the article for the not-found UI
+  // and a noindex, but it does NOT produce a 404 status: this route is
+  // dynamically rendered and Next has already committed a 200. Measured on
+  // production, 20 September 2026, on a cache MISS.
   if (!getBlogSlugs().includes(slug)) notFound()
 
   const { locale, viaArUrl } = await resolveLocale()
@@ -710,9 +722,12 @@ export default async function BlogArticlePage({ params }: { params: Promise<Para
   })
 
   // Localised chrome - synchronous lookups using the locale we already
-  // resolved above (we avoid `tMany()` because re-reading `headers()`
-  // would opt the route into dynamic rendering and defeat the static
-  // `dynamicParams = false` 404 gate documented above).
+  // resolved above. `tMany()` is avoided because it would re-read
+  // `headers()` for a locale this render has already resolved, which is
+  // wasted work on a route that reads them once by design. The reason this
+  // comment used to give - protecting a `dynamicParams = false` 404 gate -
+  // described a gate the file's own header says was removed for not
+  // working.
   const tBlogLabel = tSync('blog.breadcrumb_label', locale)
   const readingTimeLabel = tSync('blog.reading_time', locale).replace(
     '{n}',
