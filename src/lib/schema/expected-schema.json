@@ -1,0 +1,1024 @@
+{
+  "generatedAt": "regenerate with scripts/generate-schema-manifest.mjs",
+  "tables": {
+    "affiliate_accounts": "20260420_affiliates_v2.sql",
+    "affiliate_clicks": "20260420_affiliates_v2.sql",
+    "affiliate_commission_defaults": "002_affiliate_system.sql",
+    "affiliate_conversions": "20260420_affiliates_v2.sql",
+    "affiliate_links": "20260420_affiliates_v2.sql",
+    "affiliate_payout_batches": "20260420_affiliates_v2.sql",
+    "affiliate_payouts": "002_affiliate_system.sql",
+    "affiliate_referrals": "002_affiliate_system.sql",
+    "affiliates": "002_affiliate_system.sql",
+    "analytics_snapshots": "003_school_analytics.sql",
+    "app_config_setting": "20260917_free_allowance_usage.sql",
+    "assessment_attempts": "001_initial_schema.sql",
+    "bulk_import_jobs": "20260404_school_promo_and_access.sql",
+    "calibration_baselines": "20260530_calibration_baselines.sql",
+    "cancellation_feedback": "20260919_cancellation_feedback.sql",
+    "certificates": "001_initial_schema.sql",
+    "class_students": "003_school_analytics.sql",
+    "classes": "003_school_analytics.sql",
+    "consent_tokens": "20260419_consent_tokens_table.sql",
+    "contact_submissions": "20260322_new_features.sql",
+    "courses": "001_initial_schema.sql",
+    "creator_applications": "20260918_public_form_tables.sql",
+    "cron_runs": "20260919_cron_run_locks.sql",
+    "email_subscribers": "20260504120000_email_subscribers.sql",
+    "enrolments": "001_initial_schema.sql",
+    "examiner_mark_schemes": "20260918_examiner_marking_tool.sql",
+    "examiner_marking_runs": "20260918_examiner_marking_tool.sql",
+    "feedback_entries": "20260918_public_form_tables.sql",
+    "free_allowance_usage": "20260917_free_allowance_usage.sql",
+    "human_review_requests": "20260420_human_review_requests.sql",
+    "import_results": "20260404_school_promo_and_access.sql",
+    "marker_batches": "20260519_marker_drive.sql",
+    "marker_board_access": "20260530_marker_board_access.sql",
+    "markers": "20260519_marker_drive.sql",
+    "marking_submissions": "20260512_marking_submissions.sql",
+    "mobiledevice": "20260420_01_revenuecat_mobile.sql",
+    "model_versions": "20260518_smart_ip_marking.sql",
+    "module_progress": "001_initial_schema.sql",
+    "modules": "001_initial_schema.sql",
+    "offlineessayqueueitem": "20260420_01_revenuecat_mobile.sql",
+    "parental_consents": "20260322_new_features.sql",
+    "practice_sessions": "001_initial_schema.sql",
+    "profiles": "001_initial_schema.sql",
+    "progress_cefr": "20260516_progress_cefr.sql",
+    "progress_games": "20260512_progress_tables.sql",
+    "progress_poems": "20260512_progress_tables.sql",
+    "progress_quizzes": "20260512_progress_tables.sql",
+    "progress_reading_age": "20260512_progress_tables.sql",
+    "promo_codes": "20260404_school_promo_and_access.sql",
+    "prompt_versions": "20260518_smart_ip_marking.sql",
+    "quiz_questions": "001_initial_schema.sql",
+    "quiz_responses": "20260420_quiz_responses.sql",
+    "rate_limit_counter": "20260918_rate_limit_counter.sql",
+    "revenuecatevent": "20260420_01_revenuecat_mobile.sql",
+    "rubric_versions": "20260518_smart_ip_marking.sql",
+    "school_access_periods": "20260404_school_promo_and_access.sql",
+    "school_contact_requests": "20260918_public_form_tables.sql",
+    "school_inquiries": "20260823_school_inquiries.sql",
+    "school_join_codes": "003_school_analytics.sql",
+    "school_members": "003_school_analytics.sql",
+    "school_students": "20260404_school_promo_and_access.sql",
+    "schools": "003_school_analytics.sql",
+    "teacher_moderations": "20260518_smart_ip_marking.sql",
+    "teacher_referrals": "20260918_public_form_tables.sql",
+    "training_data": "20260518_smart_ip_marking.sql",
+    "trustpilot_invite": "20260419_trustpilot_invites.sql",
+    "waitlist": "20260918_public_form_tables.sql",
+    "webhook_events": "20260419_webhook_events_table.sql",
+    "weeklystudentdigest": "20260823_weekly_student_digest_ledger.sql"
+  },
+  "columns": {
+    "affiliates.rewardful_link_token": "20260322_affiliate_link_token.sql",
+    "certificates.student_name": "20260322_certificate_student_name.sql",
+    "markers.cv_path": "20260531_marker_application_extras.sql",
+    "markers.linkedin_url": "20260531_marker_application_extras.sql",
+    "markers.marketing_anonymous": "20260605_marker_marketing_anonymous.sql",
+    "markers.marketing_consent": "20260531_marker_application_extras.sql",
+    "markers.marketing_consent_at": "20260531_marker_application_extras.sql",
+    "marking_submissions.ai_ao_breakdown": "20260518_smart_ip_marking.sql",
+    "marking_submissions.ai_grade_band": "20260518_smart_ip_marking.sql",
+    "marking_submissions.ai_max_marks": "20260518_smart_ip_marking.sql",
+    "marking_submissions.ai_result": "20260518_smart_ip_marking.sql",
+    "marking_submissions.ai_score": "20260518_smart_ip_marking.sql",
+    "marking_submissions.ai_uncertainty_flags": "20260518_smart_ip_marking.sql",
+    "marking_submissions.approved_at": "20260518_smart_ip_marking.sql",
+    "marking_submissions.approved_by": "20260518_smart_ip_marking.sql",
+    "marking_submissions.assigned_marker_id": "20260519_marker_drive.sql",
+    "marking_submissions.band_range": "20260529_marking_result_v2.sql",
+    "marking_submissions.batch_id": "20260519_marker_drive.sql",
+    "marking_submissions.final_teacher_feedback": "20260518_smart_ip_marking.sql",
+    "marking_submissions.final_teacher_mark": "20260518_smart_ip_marking.sql",
+    "marking_submissions.gold_expected": "20260519_marker_drive.sql",
+    "marking_submissions.is_gold": "20260519_marker_drive.sql",
+    "marking_submissions.mark_scheme_id": "20260518_smart_ip_marking.sql",
+    "marking_submissions.marking_errors": "20260529_marking_result_v2.sql",
+    "marking_submissions.model_version_id": "20260518_smart_ip_marking.sql",
+    "marking_submissions.moderation_notes": "20260518_smart_ip_marking.sql",
+    "marking_submissions.needs_human_review": "20260529_marking_result_v2.sql",
+    "marking_submissions.pack_version": "20260529_marking_result_v2.sql",
+    "marking_submissions.paper": "20260518_smart_ip_marking.sql",
+    "marking_submissions.prompt_version_id": "20260518_smart_ip_marking.sql",
+    "marking_submissions.proposed_overall_band": "20260529_marking_result_v2.sql",
+    "marking_submissions.qualification": "20260518_smart_ip_marking.sql",
+    "marking_submissions.question_text": "20260518_smart_ip_marking.sql",
+    "marking_submissions.question_type": "20260518_smart_ip_marking.sql",
+    "marking_submissions.result_schema_version": "20260529_marking_result_v2.sql",
+    "marking_submissions.rubric_ref": "20260518_smart_ip_marking.sql",
+    "marking_submissions.rubric_version_id": "20260518_smart_ip_marking.sql",
+    "marking_submissions.source": "20260518_smart_ip_marking.sql",
+    "marking_submissions.studied_text": "20260518_smart_ip_marking.sql",
+    "marking_submissions.target_grade": "20260518_smart_ip_marking.sql",
+    "marking_submissions.teacher_adjustment_reason": "20260518_smart_ip_marking.sql",
+    "marking_submissions.teacher_band_marks": "20260530_teacher_band_marks.sql",
+    "marking_submissions.training_eligible": "20260518_smart_ip_marking.sql",
+    "parental_consents.expires_at": "20260823_self_serve_parental_consent.sql",
+    "parental_consents.last_sent_at": "20260823_self_serve_parental_consent.sql",
+    "parental_consents.send_count": "20260823_self_serve_parental_consent.sql",
+    "profiles.date_of_birth": "20260322_new_features.sql",
+    "profiles.ielts_status": "20260530_ielts_entitlement.sql",
+    "profiles.is_minor": "20260512_user_is_minor.sql",
+    "profiles.parent_guardian_email": "20260328_utm_and_parent_columns.sql",
+    "profiles.role": "20260327_add_profile_role.sql",
+    "profiles.school_name": "20260327_add_profile_role.sql",
+    "profiles.streaks_enabled": "20260918_profiles_signup_privacy_columns.sql",
+    "profiles.utm_campaign": "20260328_utm_and_parent_columns.sql",
+    "profiles.utm_medium": "20260328_utm_and_parent_columns.sql",
+    "profiles.utm_source": "20260328_utm_and_parent_columns.sql",
+    "school_members.invite_expires_at": "20260322_new_features.sql",
+    "school_members.year_group": "20260818_school_members_student_role.sql",
+    "schools.access_type": "20260404_school_promo_and_access.sql",
+    "subscription.grandfathered_currency": "20260421_01_subscription_grandfather_price.sql",
+    "subscription.grandfathered_price_minor": "20260421_01_subscription_grandfather_price.sql",
+    "subscription.original_purchase_date": "20260420_01_revenuecat_mobile.sql",
+    "subscription.platform": "20260420_01_revenuecat_mobile.sql",
+    "subscription.pricing_tier": "20260421_01_subscription_grandfather_price.sql",
+    "subscription.refunded_at": "20260420_02_stripe_columns_nullable.sql",
+    "subscription.revenuecat_app_user_id": "20260420_01_revenuecat_mobile.sql",
+    "subscription.revenuecat_product_id": "20260420_01_revenuecat_mobile.sql",
+    "user.last_mobile_version": "20260420_01_revenuecat_mobile.sql",
+    "user.mobile_device_count": "20260420_01_revenuecat_mobile.sql",
+    "user.push_tokens": "20260420_01_revenuecat_mobile.sql"
+  },
+  "codeTables": {
+    "affiliate_accounts": "src/app/affiliates/dashboard/page.tsx",
+    "affiliate_clicks": "src/app/affiliates/dashboard/page.tsx",
+    "affiliate_conversions": "src/app/affiliates/dashboard/page.tsx",
+    "affiliate_links": "src/app/affiliates/dashboard/page.tsx",
+    "affiliate_payout_batches": "src/app/affiliates/dashboard/page.tsx",
+    "affiliate_payouts": "src/app/api/admin/affiliates/payout/route.ts",
+    "affiliate_referrals": "src/app/api/admin/affiliates/payout/route.ts",
+    "affiliates": "src/app/affiliates/page.tsx",
+    "assessment_attempts": "src/app/api/certificates/route.ts",
+    "assignments": "src/app/school/dashboard/page.tsx",
+    "calibration_baselines": "src/app/api/admin/calibration/run/route.ts",
+    "cancellation_feedback": "src/app/api/stripe/cancel/route.ts",
+    "certificates": "src/app/api/admin/stats/route.ts",
+    "class_students": "src/app/api/marking/[submissionId]/review/route.ts",
+    "classes": "src/app/api/marking/[submissionId]/review/route.ts",
+    "contact_submissions": "src/app/api/contact/route.ts",
+    "courses": "src/app/api/school/analytics/student-insights/route.ts",
+    "creator_applications": "src/app/api/creator-apply/route.ts",
+    "enrolments": "src/app/account/billing/page.tsx",
+    "examiner_mark_schemes": "src/app/api/examiner/schemes/route.ts",
+    "examiner_marking_runs": "src/app/api/examiner/runs/route.ts",
+    "feedback_entries": "src/app/api/feedback/route.ts",
+    "games": "src/lib/analytics/aggregate-progress.ts",
+    "human_review_requests": "src/app/api/review/route.ts",
+    "import_jobs": "src/app/api/school/export/logins/route.ts",
+    "marker_board_access": "src/lib/marker-board-access.ts",
+    "markers": "src/app/api/admin/marker-cv/route.ts",
+    "marking_submissions": "src/app/admin/training-data/page.tsx",
+    "model_versions": "src/lib/training/prepare.ts",
+    "module_progress": "src/app/api/school/analytics/class-performance/route.ts",
+    "modules": "src/app/api/school/analytics/student-insights/route.ts",
+    "parental_consents": "src/app/api/school/consent/details/route.ts",
+    "poems": "src/lib/recommendations/focus-on.ts",
+    "practice_sessions": "src/app/api/school/classes/[classId]/route.ts",
+    "profiles": "src/app/account/page.tsx",
+    "progress_cefr": "src/lib/eal/cefr-aggregate.ts",
+    "progress_games": "src/app/api/progress/games/route.ts",
+    "progress_poems": "src/app/api/progress/poems/route.ts",
+    "progress_quizzes": "src/app/api/progress/quizzes/route.ts",
+    "progress_reading_age": "src/app/api/progress/reading-age/route.ts",
+    "promo_codes": "src/app/api/school/promo/validate/route.ts",
+    "prompt_versions": "src/lib/training/prepare.ts",
+    "quiz_responses": "src/app/api/profile/grade-progress/route.ts",
+    "quizzes": "src/lib/analytics/aggregate-progress.ts",
+    "reading_assessments": "src/lib/recommendations/focus-on.ts",
+    "rubric_versions": "src/lib/versioning/admin.ts",
+    "school_contact_requests": "src/app/api/school/contact/route.ts",
+    "school_inquiries": "src/app/api/school-inquiry/route.ts",
+    "school_join_codes": "src/app/api/school/join/route.ts",
+    "school_members": "src/app/api/cron/expire-invites/route.ts",
+    "school_students": "src/app/api/school/analytics/class-performance/route.ts",
+    "schools": "src/app/api/cron/school-access/route.ts",
+    "student_progress": "src/app/api/progress/route.ts",
+    "teacher_moderations": "src/app/api/admin/evals/route.ts",
+    "teacher_referrals": "src/app/api/teacher-signup/route.ts",
+    "training_data": "src/app/admin/training-data/page.tsx",
+    "trustpilot_invite": "src/app/api/cron/trustpilot-followup-7d/route.ts",
+    "waitlist": "src/app/api/waitlist/route.ts",
+    "webhook_events": "src/app/api/stripe/webhook/route.ts"
+  },
+  "prismaTables": {
+    "AIFeedback": "prisma/schema.prisma",
+    "Assignment": "prisma/schema.prisma",
+    "AssignmentSubmission": "prisma/schema.prisma",
+    "AuditLog": "prisma/schema.prisma",
+    "BulkUploadJob": "prisma/schema.prisma",
+    "Consent": "prisma/schema.prisma",
+    "CookieConsent": "prisma/schema.prisma",
+    "DataAccessRequest": "prisma/schema.prisma",
+    "Essay": "prisma/schema.prisma",
+    "HumanReviewRequest": "prisma/schema.prisma",
+    "MobileDevice": "prisma/schema.prisma",
+    "OfflineEssayQueueItem": "prisma/schema.prisma",
+    "ParentInvite": "prisma/schema.prisma",
+    "PrivacySettings": "prisma/schema.prisma",
+    "RenewalReminder": "prisma/schema.prisma",
+    "RevenueCatEvent": "prisma/schema.prisma",
+    "SafeguardingReport": "prisma/schema.prisma",
+    "Subscription": "prisma/schema.prisma",
+    "Suggestion": "prisma/schema.prisma",
+    "User": "prisma/schema.prisma",
+    "WeeklyReport": "prisma/schema.prisma",
+    "WeeklyStudentDigest": "prisma/schema.prisma",
+    "app_config_setting": "prisma/schema.prisma",
+    "calibration_baselines": "prisma/schema.prisma",
+    "free_allowance_usage": "prisma/schema.prisma",
+    "ielts_attempts": "prisma/schema.prisma",
+    "marker_batches": "prisma/schema.prisma",
+    "marker_board_access": "prisma/schema.prisma",
+    "markers": "prisma/schema.prisma",
+    "marking_submissions": "prisma/schema.prisma",
+    "model_versions": "prisma/schema.prisma",
+    "prompt_versions": "prisma/schema.prisma",
+    "rubric_versions": "prisma/schema.prisma",
+    "teacher_moderations": "prisma/schema.prisma",
+    "training_data": "prisma/schema.prisma"
+  },
+  "policies": {
+    "_applied_migrations:service_role_full_access": "20260506_enable_rls_on_prisma_tables.sql",
+    "_prisma_migrations:service_role_full_access": "20260506_enable_rls_on_prisma_tables.sql",
+    "affiliate_accounts:affiliate_accounts_select_own": "20260420_affiliates_v2.sql",
+    "affiliate_accounts:affiliate_accounts_service_all": "20260420_affiliates_v2.sql",
+    "affiliate_accounts:affiliate_accounts_update_own": "20260420_affiliates_v2.sql",
+    "affiliate_clicks:affiliate_clicks_select_own": "20260420_affiliates_v2.sql",
+    "affiliate_clicks:affiliate_clicks_service_all": "20260420_affiliates_v2.sql",
+    "affiliate_commission_defaults:commission_defaults_select": "002_affiliate_system.sql",
+    "affiliate_commission_defaults:commission_defaults_service_all": "002_affiliate_system.sql",
+    "affiliate_conversions:affiliate_conversions_select_own": "20260420_affiliates_v2.sql",
+    "affiliate_conversions:affiliate_conversions_service_all": "20260420_affiliates_v2.sql",
+    "affiliate_links:affiliate_links_insert_own": "20260420_affiliates_v2.sql",
+    "affiliate_links:affiliate_links_select_own": "20260420_affiliates_v2.sql",
+    "affiliate_links:affiliate_links_service_all": "20260420_affiliates_v2.sql",
+    "affiliate_payout_batches:affiliate_payout_batches_select_own": "20260420_affiliates_v2.sql",
+    "affiliate_payout_batches:affiliate_payout_batches_service_all": "20260420_affiliates_v2.sql",
+    "affiliate_payouts:payouts_select_own": "002_affiliate_system.sql",
+    "affiliate_payouts:payouts_service_all": "002_affiliate_system.sql",
+    "affiliate_referrals:referrals_select_own": "002_affiliate_system.sql",
+    "affiliate_referrals:referrals_service_all": "002_affiliate_system.sql",
+    "affiliates:affiliates_select_own": "002_affiliate_system.sql",
+    "affiliates:affiliates_service_all": "002_affiliate_system.sql",
+    "aifeedback:service_role_full_access": "20260506_enable_rls_on_prisma_tables.sql",
+    "analytics_snapshots:school_staff_select_analytics": "004_fix_school_rls.sql",
+    "analytics_snapshots:students_select_own_analytics": "004_fix_school_rls.sql",
+    "assignment:service_role_full_access": "20260506_enable_rls_on_prisma_tables.sql",
+    "assignmentsubmission:service_role_full_access": "20260506_enable_rls_on_prisma_tables.sql",
+    "auditlog:service_role_full_access": "20260506_enable_rls_on_prisma_tables.sql",
+    "bulk_import_jobs:school_admins_view_import_jobs": "20260404_school_promo_and_access.sql",
+    "calibration_baselines:calibration_baselines_service_role_all": "20260530_calibration_baselines.sql",
+    "cancellation_feedback:cancellation_feedback_owner_select": "20260919_cancellation_feedback.sql",
+    "cancellation_feedback:cancellation_feedback_service_role_all": "20260919_cancellation_feedback.sql",
+    "class_students:school_admin_delete_class_students": "004_fix_school_rls.sql",
+    "class_students:school_staff_insert_class_students": "004_fix_school_rls.sql",
+    "class_students:school_staff_update_class_students": "004_fix_school_rls.sql",
+    "classes:school_admin_delete_classes": "004_fix_school_rls.sql",
+    "classes:school_admin_hod_insert_classes": "004_fix_school_rls.sql",
+    "classes:school_staff_update_classes": "004_fix_school_rls.sql",
+    "classes:students_select_own_classes": "004_fix_school_rls.sql",
+    "consent:service_role_full_access": "20260506_enable_rls_on_prisma_tables.sql",
+    "cookieconsent:service_role_full_access": "20260506_enable_rls_on_prisma_tables.sql",
+    "creator_applications:creator_applications_service_role_all": "20260918_public_form_tables.sql",
+    "dataaccessrequest:service_role_full_access": "20260506_enable_rls_on_prisma_tables.sql",
+    "essay:service_role_full_access": "20260506_enable_rls_on_prisma_tables.sql",
+    "examiner_mark_schemes:examiner_mark_schemes_owner_delete": "20260918_examiner_marking_tool.sql",
+    "examiner_mark_schemes:examiner_mark_schemes_owner_select": "20260918_examiner_marking_tool.sql",
+    "examiner_mark_schemes:examiner_mark_schemes_service_role_all": "20260918_examiner_marking_tool.sql",
+    "examiner_marking_runs:examiner_marking_runs_owner_delete": "20260918_examiner_marking_tool.sql",
+    "examiner_marking_runs:examiner_marking_runs_owner_select": "20260918_examiner_marking_tool.sql",
+    "examiner_marking_runs:examiner_marking_runs_service_role_all": "20260918_examiner_marking_tool.sql",
+    "feedback_entries:feedback_entries_service_role_all": "20260918_public_form_tables.sql",
+    "humanreviewrequest:service_role_full_access": "20260506_enable_rls_on_prisma_tables.sql",
+    "ielts_attempts:ielts_attempts_owner_insert": "20260918_ielts_attempts_rls.sql",
+    "ielts_attempts:ielts_attempts_owner_select": "20260918_ielts_attempts_rls.sql",
+    "ielts_attempts:ielts_attempts_service_role_all": "20260918_ielts_attempts_rls.sql",
+    "import_results:school_admins_view_import_results": "20260404_school_promo_and_access.sql",
+    "marker_batches:marker_batches_service_role_all": "20260519_marker_drive.sql",
+    "marker_board_access:marker_board_access_self_select": "20260530_marker_board_access.sql",
+    "marker_board_access:marker_board_access_service_role_all": "20260530_marker_board_access.sql",
+    "markers:markers_self_select": "20260519_marker_drive.sql",
+    "markers:markers_service_role_all": "20260519_marker_drive.sql",
+    "marking_submissions:marking_submissions_marker_select": "20260519_marker_drive.sql",
+    "marking_submissions:marking_submissions_school_admins_select": "20260512_marking_submissions.sql",
+    "marking_submissions:marking_submissions_service_role_all": "20260512_marking_submissions.sql",
+    "marking_submissions:marking_submissions_students_select": "20260512_marking_submissions.sql",
+    "marking_submissions:marking_submissions_teachers_select": "20260512_marking_submissions.sql",
+    "mobiledevice:mobiledevice_insert_own": "20260420_01_revenuecat_mobile.sql",
+    "mobiledevice:mobiledevice_revoke_own": "20260420_01_revenuecat_mobile.sql",
+    "mobiledevice:mobiledevice_select_own": "20260420_01_revenuecat_mobile.sql",
+    "mobiledevice:mobiledevice_service_all": "20260420_01_revenuecat_mobile.sql",
+    "offlineessayqueueitem:offlinequeue_delete_own": "20260420_01_revenuecat_mobile.sql",
+    "offlineessayqueueitem:offlinequeue_insert_own": "20260420_01_revenuecat_mobile.sql",
+    "offlineessayqueueitem:offlinequeue_select_own": "20260420_01_revenuecat_mobile.sql",
+    "offlineessayqueueitem:offlinequeue_service_all": "20260420_01_revenuecat_mobile.sql",
+    "offlineessayqueueitem:offlinequeue_update_own": "20260420_01_revenuecat_mobile.sql",
+    "parentinvite:service_role_full_access": "20260506_enable_rls_on_prisma_tables.sql",
+    "privacysettings:service_role_full_access": "20260506_enable_rls_on_prisma_tables.sql",
+    "progress_cefr:progress_cefr_insert_own": "20260516_progress_cefr.sql",
+    "progress_cefr:progress_cefr_select_own": "20260516_progress_cefr.sql",
+    "progress_cefr:progress_cefr_service_all": "20260516_progress_cefr.sql",
+    "progress_games:progress_games_delete_own": "20260512_progress_tables.sql",
+    "progress_games:progress_games_insert_own": "20260512_progress_tables.sql",
+    "progress_games:progress_games_select_own": "20260512_progress_tables.sql",
+    "progress_games:progress_games_service_all": "20260512_progress_tables.sql",
+    "progress_games:progress_games_update_own": "20260512_progress_tables.sql",
+    "progress_poems:progress_poems_delete_own": "20260512_progress_tables.sql",
+    "progress_poems:progress_poems_insert_own": "20260512_progress_tables.sql",
+    "progress_poems:progress_poems_select_own": "20260512_progress_tables.sql",
+    "progress_poems:progress_poems_service_all": "20260512_progress_tables.sql",
+    "progress_poems:progress_poems_update_own": "20260512_progress_tables.sql",
+    "progress_quizzes:progress_quizzes_delete_own": "20260512_progress_tables.sql",
+    "progress_quizzes:progress_quizzes_insert_own": "20260512_progress_tables.sql",
+    "progress_quizzes:progress_quizzes_select_own": "20260512_progress_tables.sql",
+    "progress_quizzes:progress_quizzes_service_all": "20260512_progress_tables.sql",
+    "progress_quizzes:progress_quizzes_update_own": "20260512_progress_tables.sql",
+    "progress_reading_age:progress_reading_age_delete_own": "20260512_progress_tables.sql",
+    "progress_reading_age:progress_reading_age_insert_own": "20260512_progress_tables.sql",
+    "progress_reading_age:progress_reading_age_select_own": "20260512_progress_tables.sql",
+    "progress_reading_age:progress_reading_age_service_all": "20260512_progress_tables.sql",
+    "progress_reading_age:progress_reading_age_update_own": "20260512_progress_tables.sql",
+    "promo_codes:promo_codes_public_read": "20260404_school_promo_and_access.sql",
+    "public:%I": "20260518_smart_ip_marking.sql",
+    "renewalreminder:service_role_full_access": "20260506_enable_rls_on_prisma_tables.sql",
+    "revenuecatevent:revenuecatevent_service_only": "20260420_01_revenuecat_mobile.sql",
+    "safeguardingreport:service_role_full_access": "20260506_enable_rls_on_prisma_tables.sql",
+    "school_contact_requests:school_contact_requests_service_role_all": "20260918_public_form_tables.sql",
+    "school_join_codes:anyone_can_read_active_join_codes": "004_fix_school_rls.sql",
+    "school_join_codes:school_admin_delete_join_codes": "004_fix_school_rls.sql",
+    "school_join_codes:school_admin_hod_insert_join_codes": "004_fix_school_rls.sql",
+    "school_join_codes:school_admin_hod_update_join_codes": "004_fix_school_rls.sql",
+    "school_members:members_update_own_row": "004_fix_school_rls.sql",
+    "school_members:school_admin_delete_members": "004_fix_school_rls.sql",
+    "school_members:school_admin_hod_insert_members": "004_fix_school_rls.sql",
+    "school_members:school_admin_update_members": "004_fix_school_rls.sql",
+    "school_students:school_admins_view_students": "20260404_school_promo_and_access.sql",
+    "school_students:students_view_own": "20260404_school_promo_and_access.sql",
+    "schools:school_admins_update": "004_fix_school_rls.sql",
+    "schools:school_staff_select": "004_fix_school_rls.sql",
+    "schools:school_students_select": "004_fix_school_rls.sql",
+    "subscription:subscription_select_own": "20260420_01_revenuecat_mobile.sql",
+    "subscription:subscription_service_all": "20260420_01_revenuecat_mobile.sql",
+    "suggestion:service_role_full_access": "20260506_enable_rls_on_prisma_tables.sql",
+    "teacher_moderations:teacher_moderations_school_select": "20260518_smart_ip_marking.sql",
+    "teacher_referrals:teacher_referrals_service_role_all": "20260918_public_form_tables.sql",
+    "user:service_role_full_access": "20260506_enable_rls_on_prisma_tables.sql",
+    "waitlist:waitlist_service_role_all": "20260918_public_form_tables.sql",
+    "weeklyreport:service_role_full_access": "20260506_enable_rls_on_prisma_tables.sql",
+    "weeklystudentdigest:service_role_full_access": "20260823_weekly_student_digest_ledger.sql"
+  },
+  "indexes": {
+    "cancellation_feedback_created_at_idx": {
+      "file": "20260919_cancellation_feedback.sql",
+      "table": "cancellation_feedback"
+    },
+    "cancellation_feedback_user_id_idx": {
+      "file": "20260919_cancellation_feedback.sql",
+      "table": "cancellation_feedback"
+    },
+    "creator_applications_email_idx": {
+      "file": "20260918_public_form_tables.sql",
+      "table": "creator_applications"
+    },
+    "creator_applications_status_idx": {
+      "file": "20260918_public_form_tables.sql",
+      "table": "creator_applications"
+    },
+    "examiner_mark_schemes_owner_pack_idx": {
+      "file": "20260918_examiner_marking_tool.sql",
+      "table": "examiner_mark_schemes"
+    },
+    "examiner_marking_runs_expires_idx": {
+      "file": "20260918_examiner_marking_tool.sql",
+      "table": "examiner_marking_runs"
+    },
+    "examiner_marking_runs_owner_created_idx": {
+      "file": "20260918_examiner_marking_tool.sql",
+      "table": "examiner_marking_runs"
+    },
+    "feedback_entries_type_status_idx": {
+      "file": "20260918_public_form_tables.sql",
+      "table": "feedback_entries"
+    },
+    "free_allowance_bucket": {
+      "file": "20260917_free_allowance_usage.sql",
+      "table": "free_allowance_usage"
+    },
+    "free_allowance_usage_last_used_at_idx": {
+      "file": "20260917_free_allowance_usage.sql",
+      "table": "free_allowance_usage"
+    },
+    "free_allowance_usage_meter_period_idx": {
+      "file": "20260917_free_allowance_usage.sql",
+      "table": "free_allowance_usage"
+    },
+    "free_allowance_usage_subject_idx": {
+      "file": "20260917_free_allowance_usage.sql",
+      "table": "free_allowance_usage"
+    },
+    "idx_affiliate_accounts_code": {
+      "file": "20260420_affiliates_v2.sql",
+      "table": "affiliate_accounts"
+    },
+    "idx_affiliate_accounts_status": {
+      "file": "20260420_affiliates_v2.sql",
+      "table": "affiliate_accounts"
+    },
+    "idx_affiliate_accounts_user_id": {
+      "file": "20260420_affiliates_v2.sql",
+      "table": "affiliate_accounts"
+    },
+    "idx_affiliate_clicks_affiliate_id": {
+      "file": "20260420_affiliates_v2.sql",
+      "table": "affiliate_clicks"
+    },
+    "idx_affiliate_clicks_created_at": {
+      "file": "20260420_affiliates_v2.sql",
+      "table": "affiliate_clicks"
+    },
+    "idx_affiliate_clicks_link_id": {
+      "file": "20260420_affiliates_v2.sql",
+      "table": "affiliate_clicks"
+    },
+    "idx_affiliate_conversions_affiliate_id": {
+      "file": "20260420_affiliates_v2.sql",
+      "table": "affiliate_conversions"
+    },
+    "idx_affiliate_conversions_external_id": {
+      "file": "20260420_affiliates_v2.sql",
+      "table": "affiliate_conversions"
+    },
+    "idx_affiliate_conversions_link_id": {
+      "file": "20260420_affiliates_v2.sql",
+      "table": "affiliate_conversions"
+    },
+    "idx_affiliate_conversions_status": {
+      "file": "20260420_affiliates_v2.sql",
+      "table": "affiliate_conversions"
+    },
+    "idx_affiliate_links_affiliate_id": {
+      "file": "20260420_affiliates_v2.sql",
+      "table": "affiliate_links"
+    },
+    "idx_affiliate_links_token": {
+      "file": "20260420_affiliates_v2.sql",
+      "table": "affiliate_links"
+    },
+    "idx_affiliate_payout_batches_affiliate_id": {
+      "file": "20260420_affiliates_v2.sql",
+      "table": "affiliate_payout_batches"
+    },
+    "idx_affiliate_payout_batches_period": {
+      "file": "20260420_affiliates_v2.sql",
+      "table": "affiliate_payout_batches"
+    },
+    "idx_affiliate_payout_batches_status": {
+      "file": "20260420_affiliates_v2.sql",
+      "table": "affiliate_payout_batches"
+    },
+    "idx_affiliates_email": {
+      "file": "002_affiliate_system.sql",
+      "table": "affiliates"
+    },
+    "idx_affiliates_rewardful_id": {
+      "file": "002_affiliate_system.sql",
+      "table": "affiliates"
+    },
+    "idx_affiliates_status": {
+      "file": "002_affiliate_system.sql",
+      "table": "affiliates"
+    },
+    "idx_affiliates_user_id": {
+      "file": "002_affiliate_system.sql",
+      "table": "affiliates"
+    },
+    "idx_analytics_snapshots_lookup": {
+      "file": "003_school_analytics.sql",
+      "table": "analytics_snapshots"
+    },
+    "idx_analytics_snapshots_student": {
+      "file": "004_fix_school_rls.sql",
+      "table": "analytics_snapshots"
+    },
+    "idx_assessment_attempts_user_attempted_at": {
+      "file": "20260420_perf_indexes.sql",
+      "table": "assessment_attempts"
+    },
+    "idx_assessment_attempts_user_course": {
+      "file": "001_initial_schema.sql",
+      "table": "assessment_attempts"
+    },
+    "idx_bulk_import_jobs_school": {
+      "file": "20260404_school_promo_and_access.sql",
+      "table": "bulk_import_jobs"
+    },
+    "idx_calibration_baselines_area": {
+      "file": "20260530_calibration_baselines.sql",
+      "table": "calibration_baselines"
+    },
+    "idx_calibration_baselines_promoted": {
+      "file": "20260530_calibration_baselines.sql",
+      "table": "calibration_baselines"
+    },
+    "idx_certificates_user_course": {
+      "file": "001_initial_schema.sql",
+      "table": "certificates"
+    },
+    "idx_class_students_class": {
+      "file": "003_school_analytics.sql",
+      "table": "class_students"
+    },
+    "idx_class_students_student": {
+      "file": "003_school_analytics.sql",
+      "table": "class_students"
+    },
+    "idx_class_students_student_active": {
+      "file": "004_fix_school_rls.sql",
+      "table": "class_students"
+    },
+    "idx_class_students_student_class_active": {
+      "file": "20260420_perf_indexes.sql",
+      "table": "class_students"
+    },
+    "idx_classes_school": {
+      "file": "003_school_analytics.sql",
+      "table": "classes"
+    },
+    "idx_classes_teacher": {
+      "file": "003_school_analytics.sql",
+      "table": "classes"
+    },
+    "idx_consent_tokens_expires": {
+      "file": "20260419_consent_tokens_table.sql",
+      "table": "consent_tokens"
+    },
+    "idx_consent_tokens_student": {
+      "file": "20260419_consent_tokens_table.sql",
+      "table": "consent_tokens"
+    },
+    "idx_contact_submissions_status": {
+      "file": "20260322_new_features.sql",
+      "table": "contact_submissions"
+    },
+    "idx_email_subscribers_created_at": {
+      "file": "20260504120000_email_subscribers.sql",
+      "table": "email_subscribers"
+    },
+    "idx_email_subscribers_email": {
+      "file": "20260504120000_email_subscribers.sql",
+      "table": "email_subscribers"
+    },
+    "idx_email_subscribers_magnet_slug": {
+      "file": "20260504120000_email_subscribers.sql",
+      "table": "email_subscribers"
+    },
+    "idx_enrolments_user_course": {
+      "file": "001_initial_schema.sql",
+      "table": "enrolments"
+    },
+    "idx_human_review_requests_status": {
+      "file": "20260420_human_review_requests.sql",
+      "table": "human_review_requests"
+    },
+    "idx_human_review_requests_user_id": {
+      "file": "20260420_human_review_requests.sql",
+      "table": "human_review_requests"
+    },
+    "idx_import_results_job": {
+      "file": "20260404_school_promo_and_access.sql",
+      "table": "import_results"
+    },
+    "idx_marker_batches_board": {
+      "file": "20260519_marker_drive.sql",
+      "table": "marker_batches"
+    },
+    "idx_marker_board_access_marker": {
+      "file": "20260530_marker_board_access.sql",
+      "table": "marker_board_access"
+    },
+    "idx_marker_board_access_marker_status": {
+      "file": "20260530_marker_board_access.sql",
+      "table": "marker_board_access"
+    },
+    "idx_marker_board_access_status": {
+      "file": "20260530_marker_board_access.sql",
+      "table": "marker_board_access"
+    },
+    "idx_markers_status": {
+      "file": "20260519_marker_drive.sql",
+      "table": "markers"
+    },
+    "idx_markers_user": {
+      "file": "20260519_marker_drive.sql",
+      "table": "markers"
+    },
+    "idx_marking_submissions_batch": {
+      "file": "20260519_marker_drive.sql",
+      "table": "marking_submissions"
+    },
+    "idx_marking_submissions_class": {
+      "file": "20260512_marking_submissions.sql",
+      "table": "marking_submissions"
+    },
+    "idx_marking_submissions_marker": {
+      "file": "20260519_marker_drive.sql",
+      "table": "marking_submissions"
+    },
+    "idx_marking_submissions_school_submitted": {
+      "file": "20260512_marking_submissions.sql",
+      "table": "marking_submissions"
+    },
+    "idx_marking_submissions_source": {
+      "file": "20260518_smart_ip_marking.sql",
+      "table": "marking_submissions"
+    },
+    "idx_marking_submissions_status": {
+      "file": "20260518_smart_ip_marking.sql",
+      "table": "marking_submissions"
+    },
+    "idx_marking_submissions_student": {
+      "file": "20260512_marking_submissions.sql",
+      "table": "marking_submissions"
+    },
+    "idx_module_progress_completed_at": {
+      "file": "20260420_perf_indexes.sql",
+      "table": "module_progress"
+    },
+    "idx_module_progress_quiz_score_not_null": {
+      "file": "20260420_perf_indexes.sql",
+      "table": "module_progress"
+    },
+    "idx_module_progress_user_completed": {
+      "file": "001_initial_schema.sql",
+      "table": "module_progress"
+    },
+    "idx_module_progress_user_completed_at": {
+      "file": "20260420_perf_indexes.sql",
+      "table": "module_progress"
+    },
+    "idx_module_progress_user_course": {
+      "file": "001_initial_schema.sql",
+      "table": "module_progress"
+    },
+    "idx_modules_course": {
+      "file": "001_initial_schema.sql",
+      "table": "modules"
+    },
+    "idx_parental_consents_school": {
+      "file": "20260322_new_features.sql",
+      "table": "parental_consents"
+    },
+    "idx_parental_consents_student": {
+      "file": "20260322_new_features.sql",
+      "table": "parental_consents"
+    },
+    "idx_parental_consents_token": {
+      "file": "20260322_new_features.sql",
+      "table": "parental_consents"
+    },
+    "idx_payouts_affiliate_id": {
+      "file": "002_affiliate_system.sql",
+      "table": "affiliate_payouts"
+    },
+    "idx_payouts_period": {
+      "file": "002_affiliate_system.sql",
+      "table": "affiliate_payouts"
+    },
+    "idx_payouts_status": {
+      "file": "002_affiliate_system.sql",
+      "table": "affiliate_payouts"
+    },
+    "idx_practice_sessions_user": {
+      "file": "001_initial_schema.sql",
+      "table": "practice_sessions"
+    },
+    "idx_practice_sessions_user_created_at": {
+      "file": "20260420_perf_indexes.sql",
+      "table": "practice_sessions"
+    },
+    "idx_profiles_role": {
+      "file": "20260327_add_profile_role.sql",
+      "table": "profiles"
+    },
+    "idx_prompt_versions_key": {
+      "file": "20260518_smart_ip_marking.sql",
+      "table": "prompt_versions"
+    },
+    "idx_quiz_responses_module_attempted_at": {
+      "file": "20260420_quiz_responses.sql",
+      "table": "quiz_responses"
+    },
+    "idx_quiz_responses_question": {
+      "file": "20260420_quiz_responses.sql",
+      "table": "quiz_responses"
+    },
+    "idx_quiz_responses_user_attempted_at": {
+      "file": "20260420_quiz_responses.sql",
+      "table": "quiz_responses"
+    },
+    "idx_referrals_affiliate_id": {
+      "file": "002_affiliate_system.sql",
+      "table": "affiliate_referrals"
+    },
+    "idx_referrals_commission_status": {
+      "file": "002_affiliate_system.sql",
+      "table": "affiliate_referrals"
+    },
+    "idx_referrals_converted_at": {
+      "file": "002_affiliate_system.sql",
+      "table": "affiliate_referrals"
+    },
+    "idx_referrals_referred_user": {
+      "file": "002_affiliate_system.sql",
+      "table": "affiliate_referrals"
+    },
+    "idx_school_access_periods_school": {
+      "file": "20260404_school_promo_and_access.sql",
+      "table": "school_access_periods"
+    },
+    "idx_school_join_codes_code": {
+      "file": "003_school_analytics.sql",
+      "table": "school_join_codes"
+    },
+    "idx_school_members_invite_expires": {
+      "file": "20260322_new_features.sql",
+      "table": "school_members"
+    },
+    "idx_school_members_school": {
+      "file": "003_school_analytics.sql",
+      "table": "school_members"
+    },
+    "idx_school_members_user": {
+      "file": "003_school_analytics.sql",
+      "table": "school_members"
+    },
+    "idx_school_members_user_status": {
+      "file": "004_fix_school_rls.sql",
+      "table": "school_members"
+    },
+    "idx_school_students_school": {
+      "file": "20260404_school_promo_and_access.sql",
+      "table": "school_students"
+    },
+    "idx_school_students_user": {
+      "file": "20260404_school_promo_and_access.sql",
+      "table": "school_students"
+    },
+    "idx_teacher_moderations_reviewer": {
+      "file": "20260518_smart_ip_marking.sql",
+      "table": "teacher_moderations"
+    },
+    "idx_teacher_moderations_submission": {
+      "file": "20260518_smart_ip_marking.sql",
+      "table": "teacher_moderations"
+    },
+    "idx_training_data_board": {
+      "file": "20260518_smart_ip_marking.sql",
+      "table": "training_data"
+    },
+    "idx_training_data_created": {
+      "file": "20260518_smart_ip_marking.sql",
+      "table": "training_data"
+    },
+    "idx_webhook_events_type_processed": {
+      "file": "20260419_webhook_events_table.sql",
+      "table": "webhook_events"
+    },
+    "marking_submissions_pack_version_idx": {
+      "file": "20260529_marking_result_v2.sql",
+      "table": "marking_submissions"
+    },
+    "mobiledevice_user_lastactive_active_idx": {
+      "file": "20260420_01_revenuecat_mobile.sql",
+      "table": "mobiledevice"
+    },
+    "mobiledevice_user_lastactive_idx": {
+      "file": "20260420_01_revenuecat_mobile.sql",
+      "table": "mobiledevice"
+    },
+    "offlineessayqueueitem_pending_idx": {
+      "file": "20260420_01_revenuecat_mobile.sql",
+      "table": "offlineessayqueueitem"
+    },
+    "offlineessayqueueitem_user_created_idx": {
+      "file": "20260420_01_revenuecat_mobile.sql",
+      "table": "offlineessayqueueitem"
+    },
+    "parental_consents_pending_expiry_idx": {
+      "file": "20260823_self_serve_parental_consent.sql",
+      "table": "parental_consents"
+    },
+    "parental_consents_self_serve_student_uniq": {
+      "file": "20260823_self_serve_parental_consent.sql",
+      "table": "parental_consents"
+    },
+    "parental_consents_token_idx": {
+      "file": "20260823_self_serve_parental_consent.sql",
+      "table": "parental_consents"
+    },
+    "profiles_is_minor_idx": {
+      "file": "20260512_user_is_minor.sql",
+      "table": "profiles"
+    },
+    "progress_cefr_user_idx": {
+      "file": "20260516_progress_cefr.sql",
+      "table": "progress_cefr"
+    },
+    "progress_cefr_user_taken_idx": {
+      "file": "20260516_progress_cefr.sql",
+      "table": "progress_cefr"
+    },
+    "progress_games_user_idx": {
+      "file": "20260512_progress_tables.sql",
+      "table": "progress_games"
+    },
+    "progress_games_user_lastplayed_idx": {
+      "file": "20260512_progress_tables.sql",
+      "table": "progress_games"
+    },
+    "progress_poems_user_idx": {
+      "file": "20260512_progress_tables.sql",
+      "table": "progress_poems"
+    },
+    "progress_poems_user_lastseen_idx": {
+      "file": "20260512_progress_tables.sql",
+      "table": "progress_poems"
+    },
+    "progress_quizzes_user_completed_idx": {
+      "file": "20260512_progress_tables.sql",
+      "table": "progress_quizzes"
+    },
+    "progress_quizzes_user_idx": {
+      "file": "20260512_progress_tables.sql",
+      "table": "progress_quizzes"
+    },
+    "progress_reading_age_user_completed_idx": {
+      "file": "20260512_progress_tables.sql",
+      "table": "progress_reading_age"
+    },
+    "progress_reading_age_user_idx": {
+      "file": "20260512_progress_tables.sql",
+      "table": "progress_reading_age"
+    },
+    "rate_limit_counter_window_end_idx": {
+      "file": "20260918_rate_limit_counter.sql",
+      "table": "rate_limit_counter"
+    },
+    "revenuecatevent_appuser_type_idx": {
+      "file": "20260420_01_revenuecat_mobile.sql",
+      "table": "revenuecatevent"
+    },
+    "revenuecatevent_payload_id_idx": {
+      "file": "20260420_03_revenuecatevent_index.sql",
+      "table": "revenuecatevent"
+    },
+    "revenuecatevent_unprocessed_idx": {
+      "file": "20260420_01_revenuecat_mobile.sql",
+      "table": "revenuecatevent"
+    },
+    "school_contact_requests_status_idx": {
+      "file": "20260918_public_form_tables.sql",
+      "table": "school_contact_requests"
+    },
+    "school_inquiries_created_at_idx": {
+      "file": "20260823_school_inquiries.sql",
+      "table": "school_inquiries"
+    },
+    "school_inquiries_status_idx": {
+      "file": "20260823_school_inquiries.sql",
+      "table": "school_inquiries"
+    },
+    "subscription_platform_status_idx": {
+      "file": "20260420_01_revenuecat_mobile.sql",
+      "table": "subscription"
+    },
+    "subscription_revenuecat_appuser_idx": {
+      "file": "20260420_01_revenuecat_mobile.sql",
+      "table": "subscription"
+    },
+    "trustpilot_invite_active_unique_idx": {
+      "file": "20260423_trustpilot_invites_extend.sql",
+      "table": "trustpilot_invite"
+    },
+    "trustpilot_invite_sent_at_idx": {
+      "file": "20260419_trustpilot_invites.sql",
+      "table": "trustpilot_invite"
+    },
+    "trustpilot_invite_trigger_idx": {
+      "file": "20260419_trustpilot_invites.sql",
+      "table": "trustpilot_invite"
+    },
+    "trustpilot_invite_user_idx": {
+      "file": "20260419_trustpilot_invites.sql",
+      "table": "trustpilot_invite"
+    },
+    "user_supabaseuserid_idx": {
+      "file": "20260420_user_supabase_user_id.sql",
+      "table": "user"
+    },
+    "user_supabaseuserid_key": {
+      "file": "20260420_user_supabase_user_id.sql",
+      "table": "user"
+    },
+    "weeklystudentdigest_student_id_week_starting_key": {
+      "file": "20260823_weekly_student_digest_ledger.sql",
+      "table": "weeklystudentdigest"
+    },
+    "weeklystudentdigest_week_starting_idx": {
+      "file": "20260823_weekly_student_digest_ledger.sql",
+      "table": "weeklystudentdigest"
+    }
+  },
+  "triggers": {
+    "affiliate_accounts_updated_at": {
+      "file": "20260420_affiliates_v2.sql",
+      "table": "affiliate_accounts",
+      "schema": "public"
+    },
+    "affiliate_conversions_updated_at": {
+      "file": "20260420_affiliates_v2.sql",
+      "table": "affiliate_conversions",
+      "schema": "public"
+    },
+    "affiliate_links_updated_at": {
+      "file": "20260420_affiliates_v2.sql",
+      "table": "affiliate_links",
+      "schema": "public"
+    },
+    "affiliate_payout_batches_updated_at": {
+      "file": "20260420_affiliates_v2.sql",
+      "table": "affiliate_payout_batches",
+      "schema": "public"
+    },
+    "affiliates_set_is_minor": {
+      "file": "002_affiliate_system.sql",
+      "table": "affiliates",
+      "schema": "public"
+    },
+    "affiliates_updated_at": {
+      "file": "002_affiliate_system.sql",
+      "table": "affiliates",
+      "schema": "public"
+    },
+    "classes_updated_at": {
+      "file": "003_school_analytics.sql",
+      "table": "classes",
+      "schema": "public"
+    },
+    "human_review_requests_updated_at": {
+      "file": "20260420_human_review_requests.sql",
+      "table": "human_review_requests",
+      "schema": "public"
+    },
+    "on_auth_user_created": {
+      "file": "001_initial_schema.sql",
+      "table": "users",
+      "schema": "auth"
+    },
+    "parental_consents_updated_at": {
+      "file": "20260322_new_features.sql",
+      "table": "parental_consents",
+      "schema": "public"
+    },
+    "payouts_updated_at": {
+      "file": "002_affiliate_system.sql",
+      "table": "affiliate_payouts",
+      "schema": "public"
+    },
+    "profiles_updated_at": {
+      "file": "001_initial_schema.sql",
+      "table": "profiles",
+      "schema": "public"
+    },
+    "referrals_updated_at": {
+      "file": "002_affiliate_system.sql",
+      "table": "affiliate_referrals",
+      "schema": "public"
+    },
+    "schools_updated_at": {
+      "file": "003_school_analytics.sql",
+      "table": "schools",
+      "schema": "public"
+    }
+  },
+  "functions": {
+    "app_user_id": "20260420_00_app_user_id_fn.sql",
+    "claim_cron_lock": "20260919_cron_run_locks.sql",
+    "get_commission_amount": "002_affiliate_system.sql",
+    "get_student_school_ids": "004_fix_school_rls.sql",
+    "get_user_school_ids": "004_fix_school_rls.sql",
+    "get_user_school_role": "004_fix_school_rls.sql",
+    "handle_new_user": "001_initial_schema.sql",
+    "increment_join_code_uses": "20260419_school_join_code_atomic_increment.sql",
+    "lookup_school_join_code": "20260419_school_join_code_lookup_rpc.sql",
+    "recount_affiliate_referrals": "20260420_affiliates_v2.sql",
+    "release_cron_lock": "20260919_cron_run_locks.sql",
+    "set_affiliate_is_minor": "002_affiliate_system.sql",
+    "update_updated_at": "000_update_updated_at_helper.sql",
+    "verify_certificate": "20260419_certificate_public_rpc.sql"
+  }
+}

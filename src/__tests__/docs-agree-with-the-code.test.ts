@@ -38,12 +38,23 @@ describe('numbers that came from somewhere real', () => {
     const doc = read('docs/system/09-scheduled-work.md')
     const cronRoutes = vercel.crons.filter((c) => c.path.startsWith('/api/cron/')).length
 
-    expect(vercel.crons.length).toBe(18)
-    expect(cronRoutes).toBe(16)
-    // The words have to match the file, not a number from six months ago.
-    expect(doc).toMatch(/Eighteen Vercel Cron entries/)
-    expect(doc).not.toMatch(/Fifteen Vercel Cron entries/)
-    expect(doc).not.toMatch(/Seventeen Vercel Cron entries/)
+    // DERIVED, not hard-coded. The first version of this assertion pinned 18
+    // and 16 as literals, so adding /api/health/schema failed a test about
+    // documentation for a reason that had nothing to do with documentation.
+    // A guard against stale numbers must not itself hold a stale number.
+    const WORDS = ['Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen', 'Twenty']
+    const expectedWord = WORDS[vercel.crons.length - 15]
+    expect(expectedWord, `no word for ${vercel.crons.length} crons`).toBeTruthy()
+
+    expect(cronRoutes).toBeGreaterThanOrEqual(16)
+    expect(doc, `the chapter should say "${expectedWord} Vercel Cron entries"`).toContain(
+      `${expectedWord} Vercel Cron entries`,
+    )
+    for (const wrong of WORDS.filter((w) => w !== expectedWord)) {
+      expect(doc, `the chapter still says ${wrong}`).not.toMatch(
+        new RegExp(`${wrong} Vercel Cron entries`),
+      )
+    }
   })
 
   it('the deployment guide does not hand out a four-migration list', () => {

@@ -16,6 +16,8 @@
     "start": "next start",
     "test": "vitest run",
     "test:watch": "vitest",
+    "schema:check": "node --env-file=.env.local scripts/check-schema-drift.mjs",
+    "schema:manifest": "node scripts/generate-schema-manifest.mjs",
     "eval:marking": "vitest run --config evals/vitest.eval.config.ts --disableConsoleIntercept",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",

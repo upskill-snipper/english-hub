@@ -1,6 +1,6 @@
 # Cron jobs, background work and data lifecycle
 
-Eighteen Vercel Cron entries - sixteen `/api/cron/*` jobs plus two health probes, `/api/health/ai` and `/api/health/marking` - in [`vercel.json`](../../vercel.json) drive everything this product does when nobody is looking: ending trials, confirming affiliate commissions, expiring school invites, sending weekly digests, generating blog drafts, and - the part that deserves the most care - deleting people's accounts. Four of those jobs destroy data, three of them irreversibly, and two of the three target child accounts. This chapter tells you what each job does, what it writes, which ones delete, and where the deletion logic will fire on the wrong person.
+Nineteen Vercel Cron entries - sixteen `/api/cron/*` jobs plus three health probes, `/api/health/ai`, `/api/health/marking` and `/api/health/schema` - in [`vercel.json`](../../vercel.json) drive everything this product does when nobody is looking: ending trials, confirming affiliate commissions, expiring school invites, sending weekly digests, generating blog drafts, and - the part that deserves the most care - deleting people's accounts. Four of those jobs destroy data, three of them irreversibly, and two of the three target child accounts. This chapter tells you what each job does, what it writes, which ones delete, and where the deletion logic will fire on the wrong person.
 
 There is no queue, no worker process and no job table. A cron job here is an HTTP GET to a Next.js route handler, authenticated by a shared secret, running for at most a minute. If it fails, it fails quietly unless you go and look.
 
@@ -82,6 +82,18 @@ Two things to understand about failure:
 - **A 500 does not guarantee a retry.** The comment at `observability.ts:49` says "500 so Vercel retries per its cron policy". I could not verify from this repository that Vercel Cron retries failed invocations, and several routes are written on the assumption that it does (the weekly digests deliberately throw on a total delivery failure so the run is "retried"). Treat the retry as unproven until you check the Vercel account's plan behaviour. The idempotency ledgers described below make a retry safe either way, which is the part that actually matters.
 
 Several routes deliberately do not throw on partial failure. `affiliate-confirm` and `affiliate-confirm-v2` tolerate up to 10% per-item failures and only throw past that ([`affiliate-confirm/route.ts:117-132`](../../src/app/api/cron/affiliate-confirm/route.ts)). `weekly-student-reports` throws only when _every_ attempted send failed ([`route.ts:415-421`](../../src/app/api/cron/weekly-student-reports/route.ts)). The rule across the codebase is: one bad row must never abort a batch, but a whole-run outage must be loud.
+
+### The schema probe
+
+Added 19 September 2026 (DATA-1). `GET /api/health/schema` runs at 06:40 daily and compares 529 things this repository claims about the database against `information_schema` and the `pg_*` catalogues: every table and column the migrations declare, every `.from('x')` in `src/`, every Prisma model, and the policies, indexes, triggers and functions.
+
+The half that did not exist before is the **code** scan. `scripts/check-schema-drift.mjs` compared only migrations against reality, which is structurally blind to a table that code reads and no migration declares - and that is the failure that actually happens here. Five public forms wrote to nothing for months while the checker reported no drift, because none of them had a migration to be missing from. Seven more tables are still in that state.
+
+It answers **503 on NEW drift and 200 on known drift**. The 31 findings already recorded against DATA-3 to DATA-9 live in [`scripts/schema-drift-known.json`](../../scripts/schema-drift-known.json), each with the reason it is there. Without that split the endpoint would be red on its first run and every run after, which is indistinguishable from being broken - and it is exactly how `email_subscribers` taught everyone to skim the old report. If it cannot read the schema at all it answers **500**, never "no drift".
+
+It answers from a committed manifest, [`src/lib/schema/expected-schema.json`](../../src/lib/schema/expected-schema.json), because the migration files and the `src/` tree are not in the serverless bundle: a route that scanned them there would parse zero files and report a clean schema for ever. `src/__tests__/schema-drift-guard.test.ts` regenerates the manifest and fails when it is stale.
+
+Locally: `npm run schema:check` (add `--all` to list the known findings).
 
 ### Duration
 

@@ -81,6 +81,10 @@
     {
       "path": "/api/health/marking",
       "schedule": "35 6 * * *"
+    },
+    {
+      "path": "/api/health/schema",
+      "schedule": "40 6 * * *"
     }
   ]
 }

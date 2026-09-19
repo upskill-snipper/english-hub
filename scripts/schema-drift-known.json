@@ -1,0 +1,176 @@
+{
+  "_comment": [
+    "Drift that is already known and already recorded elsewhere, so that exit 1",
+    "from the schema checker means NEW drift rather than old news (DATA-1).",
+    "",
+    "This list is a debt register, not a silencer. Every entry says why it is",
+    "here and where the decision lives. An entry whose drift is fixed becomes a",
+    "'stale' finding and must be deleted - the checker reports those too, so the",
+    "list cannot quietly become a second document that lies about the schema.",
+    "",
+    "Measured against production on 19 September 2026: 529 expectations checked,",
+    "31 findings, all listed below."
+  ],
+  "allow": [
+    {
+      "kind": "missing-table",
+      "object": "email_subscribers",
+      "why": "Dropped deliberately by scripts/drop-email-subscribers.ts when the lead magnet was cut. DATA-3 decides whether it comes back for the newsletter or the migration is retired. It is the worked example of why this allowlist exists: a permanent known finding taught everyone to skim the report."
+    },
+
+    {
+      "kind": "missing-column",
+      "object": "marking_submissions.band_range",
+      "why": "20260529_marking_result_v2.sql has never been applied. DATA-6; three documents wrongly say it recreates RLS."
+    },
+    {
+      "kind": "missing-column",
+      "object": "marking_submissions.marking_errors",
+      "why": "Same migration as marking_submissions.band_range (DATA-6)."
+    },
+    {
+      "kind": "missing-column",
+      "object": "marking_submissions.needs_human_review",
+      "why": "Same migration as marking_submissions.band_range (DATA-6)."
+    },
+    {
+      "kind": "missing-column",
+      "object": "marking_submissions.pack_version",
+      "why": "Same migration as marking_submissions.band_range (DATA-6)."
+    },
+    {
+      "kind": "missing-column",
+      "object": "marking_submissions.proposed_overall_band",
+      "why": "Same migration as marking_submissions.band_range (DATA-6)."
+    },
+    {
+      "kind": "missing-column",
+      "object": "marking_submissions.result_schema_version",
+      "why": "Same migration as marking_submissions.band_range (DATA-6)."
+    },
+    {
+      "kind": "missing-index",
+      "object": "marking_submissions_pack_version_idx",
+      "why": "Belongs to the same unapplied migration (DATA-6)."
+    },
+
+    {
+      "kind": "code-references-missing-table",
+      "object": "student_progress",
+      "why": "GET /api/progress, the mobile contract route, reads it and returns 500. DATA-4 resolves the progress store: four contracts, zero tables."
+    },
+    {
+      "kind": "code-references-missing-table",
+      "object": "quizzes",
+      "why": "Read by src/lib/analytics/aggregate-progress.ts. Part of the same progress store question (DATA-4)."
+    },
+    {
+      "kind": "code-references-missing-table",
+      "object": "games",
+      "why": "Read by src/lib/analytics/aggregate-progress.ts. Part of the same progress store question (DATA-4)."
+    },
+    {
+      "kind": "code-references-missing-table",
+      "object": "reading_assessments",
+      "why": "Read by src/lib/recommendations/focus-on.ts. Part of the same progress store question (DATA-4)."
+    },
+    {
+      "kind": "code-references-missing-table",
+      "object": "poems",
+      "why": "Read by src/lib/recommendations/focus-on.ts. Part of the same progress store question (DATA-4)."
+    },
+    {
+      "kind": "code-references-missing-table",
+      "object": "assignments",
+      "why": "The school dashboard reads snake_case `assignments` while Prisma owns a quoted PascalCase `Assignment`. Two different objects; recorded in chapter 03 section 5.2 and fixed in DATA-9's scope."
+    },
+    {
+      "kind": "code-references-missing-table",
+      "object": "import_jobs",
+      "why": "Read by the school login export. Known dual-store problem, DATA-9."
+    },
+    {
+      "kind": "prisma-model-without-table",
+      "object": "BulkUploadJob",
+      "why": "Prisma model with no @@map and no table. Known dual-store problem, DATA-9."
+    },
+
+    {
+      "kind": "missing-policy",
+      "object": "school_join_codes:anyone_can_read_active_join_codes",
+      "why": "Deliberately dropped. A later migration replaced open read of join codes with a service-role check; restoring it would let any visitor enumerate school join codes."
+    },
+
+    {
+      "kind": "missing-index",
+      "object": "idx_module_progress_user_course",
+      "why": "Declared in 001_initial_schema.sql, which the 30 May baseline inserted without executing. The table exists; the index does not. Performance only, no correctness effect. DATA-7."
+    },
+    {
+      "kind": "missing-index",
+      "object": "idx_module_progress_user_completed",
+      "why": "Same baselined file as idx_module_progress_user_course (DATA-7)."
+    },
+    {
+      "kind": "missing-index",
+      "object": "idx_enrolments_user_course",
+      "why": "Same baselined file as idx_module_progress_user_course (DATA-7)."
+    },
+    {
+      "kind": "missing-index",
+      "object": "idx_assessment_attempts_user_course",
+      "why": "Same baselined file as idx_module_progress_user_course (DATA-7)."
+    },
+    {
+      "kind": "missing-index",
+      "object": "idx_practice_sessions_user",
+      "why": "Same baselined file as idx_module_progress_user_course (DATA-7)."
+    },
+    {
+      "kind": "missing-index",
+      "object": "idx_modules_course",
+      "why": "Same baselined file as idx_module_progress_user_course (DATA-7)."
+    },
+    {
+      "kind": "missing-index",
+      "object": "idx_certificates_user_course",
+      "why": "Same baselined file as idx_module_progress_user_course (DATA-7)."
+    },
+    {
+      "kind": "missing-index",
+      "object": "user_supabaseuserid_idx",
+      "why": "Declared in 20260420_user_supabase_user_id.sql, baselined unexecuted. Worth creating: it indexes the uuid-to-cuid join that every identity read uses. DATA-5/DATA-7."
+    },
+    {
+      "kind": "missing-index",
+      "object": "trustpilot_invite_active_unique_idx",
+      "why": "Declared in 20260423_trustpilot_invites_extend.sql, baselined unexecuted. It is a UNIQUE index enforcing invite dedup, so its absence is a correctness gap, not only a performance one - but the two Trustpilot crons answered 405 from April to September, so nothing has written duplicates yet. Flagged in DATA-7."
+    },
+
+    {
+      "kind": "missing-trigger",
+      "object": "profiles_updated_at",
+      "why": "Declared in 001_initial_schema.sql, baselined unexecuted. profiles.updated_at is therefore only as accurate as the code that writes it. DATA-7."
+    },
+    {
+      "kind": "missing-trigger",
+      "object": "affiliate_accounts_updated_at",
+      "why": "Declared in 20260420_affiliates_v2.sql, baselined unexecuted (DATA-7)."
+    },
+    {
+      "kind": "missing-trigger",
+      "object": "affiliate_links_updated_at",
+      "why": "Declared in 20260420_affiliates_v2.sql, baselined unexecuted (DATA-7)."
+    },
+    {
+      "kind": "missing-trigger",
+      "object": "affiliate_conversions_updated_at",
+      "why": "Declared in 20260420_affiliates_v2.sql, baselined unexecuted (DATA-7)."
+    },
+    {
+      "kind": "missing-trigger",
+      "object": "affiliate_payout_batches_updated_at",
+      "why": "Declared in 20260420_affiliates_v2.sql, baselined unexecuted (DATA-7)."
+    }
+  ]
+}
