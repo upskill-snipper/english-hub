@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react'
+import { EnglishText } from '@/components/i18n/EnglishText'
 import { sanitiseHtml } from '@/lib/html/sanitise'
 import { ReadingProgressTracker } from './ReadingProgressTracker'
 import { useT } from '@/lib/i18n/use-t'
@@ -971,7 +972,13 @@ function InteractiveTextViewer({ data, storageKey, className = '' }: Interactive
             >
               {/* Section header */}
               <div className="mb-6 flex items-center gap-3">
-                <h2 className="text-heading-md text-foreground">{section.title}</h2>
+                {/* A11Y-5: the work's own words. "Act 1, Scene 3" read with
+                    Arabic pronunciation rules on /ar is not an accent, it is
+                    unintelligible. The word count below is interface copy and
+                    is deliberately NOT marked. */}
+                <EnglishText as="h2" className="text-heading-md text-foreground">
+                  {section.title}
+                </EnglishText>
                 {completedSections.has(section.id) && (
                   <CheckCircleIcon className="h-5 w-5 text-brand-accent flex-shrink-0" />
                 )}
@@ -984,13 +991,13 @@ function InteractiveTextViewer({ data, storageKey, className = '' }: Interactive
               </p>
 
               {/* Content */}
-              <div className="text-body-lg text-foreground/90 leading-relaxed">
+              <EnglishText className="text-body-lg text-foreground/90 leading-relaxed">
                 <AnnotatedContent
                   html={section.content}
                   annotations={section.annotations ?? []}
                   activeOverlays={effectiveOverlays}
                 />
-              </div>
+              </EnglishText>
 
               {/* Section divider */}
               <hr className="mt-10 border-border" />

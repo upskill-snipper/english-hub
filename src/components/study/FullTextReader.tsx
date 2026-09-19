@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { EnglishText } from '@/components/i18n/EnglishText'
 import { ArrowLeft, BookOpen } from 'lucide-react'
 import { InteractiveTextViewer, type TextData } from '@/components/study/InteractiveTextViewer'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
@@ -82,11 +83,14 @@ export function FullTextReader({
         {t('fulltext.back_to_guide')}
       </Link>
 
-      <h1 className="font-heading text-display-sm text-foreground sm:text-display">{data.title}</h1>
-      <p className="mt-2 text-body-lg text-muted-foreground">
+      {/* The title and the author are the work's, in every locale. */}
+      <EnglishText as="h1" className="font-heading text-display-sm text-foreground sm:text-display">
+        {data.title}
+      </EnglishText>
+      <EnglishText as="p" className="mt-2 text-body-lg text-muted-foreground">
         {data.author}
         {year ? ` (${year})` : null}
-      </p>
+      </EnglishText>
 
       {/* The rights position, stated plainly. A student who has met American
           revision sites hosting texts we cannot should be able to see why this
