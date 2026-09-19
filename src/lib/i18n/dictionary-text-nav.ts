@@ -128,4 +128,21 @@ export const TEXT_NAV_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     ar: 'روح لمركز المراجعة',
     es: 'Ir a tu centro de repaso',
   },
+
+  // ── The AI marking entry point, on every text ────────────────────────────
+  // Added 19 September 2026. Not one of the 54 pages under /revision/texts
+  // linked to the marker, Macbeth included, so from the place a student
+  // actually studies there was no way to tell the AI was connected at all.
+  // It lives in the text-scoped rail rather than on the pages, so it reaches
+  // every guide in all five trees and stays scoped to the text being read.
+  'textnav.mark_essay': {
+    en: 'Mark my essay',
+    ar: 'صحّح مقالي',
+    es: 'Corregir mi redacción',
+  },
+  'textnav.mark_essay_hint': {
+    en: 'AI feedback against the real mark scheme',
+    ar: 'ملاحظات بالذكاء الاصطناعي حسب سكيم التصحيح الرسمي',
+    es: 'Comentarios de IA según el baremo real',
+  },
 }

@@ -29,6 +29,7 @@ import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import {
   ArrowLeft,
+  PenLine,
   BookOpen,
   BookText,
   Users,
@@ -43,6 +44,7 @@ import { useT } from '@/lib/i18n/use-t'
 import { buildTextNav, type TextNavIcon } from '@/lib/revision/text-nav'
 import { getSetText } from '@/lib/board/set-texts'
 import { PLACEHOLDER_TEXT_SLUGS } from '@/lib/revision/placeholder-texts.generated'
+import { markingLink } from '@/lib/marking/submit-prefill'
 
 import { SidebarLink } from './sidebar-link'
 
@@ -115,6 +117,37 @@ export function TextScopedNav({ slug, onNavigate }: { slug: string; onNavigate?:
           {t('textnav.back_to_shelf')}
         </Link>
       </div>
+
+      {/* The AI marker, scoped to this text.
+
+          WHY IT IS HERE AND NOT ON THE PAGES. Not one of the 54 pages under
+          /revision/texts linked to the marker - Macbeth included - so from the
+          place a student actually studies there was no way to tell the AI was
+          connected to anything. Putting it in the rail reaches every guide in
+          all five trees at once and cannot drift page by page.
+
+          It carries the text, not a paper. Mapping a text to a mark scheme
+          would mean inventing a board-to-paper table; the form already resolves
+          the board from the stored cookie, so the honest link is the one that
+          says which text the essay is about and lets the student confirm the
+          rest. */}
+      {title && (
+        <Link
+          href={markingLink({ text: title, title })}
+          onClick={onNavigate}
+          className="mb-3 flex items-center gap-2.5 rounded-2xl border border-primary/30 bg-primary/5 p-3 transition-colors hover:border-primary/60 hover:bg-primary/10"
+        >
+          <PenLine aria-hidden="true" className="size-4 shrink-0 text-primary" />
+          <span className="min-w-0">
+            <span className="block text-sm font-medium leading-tight text-foreground">
+              {t('textnav.mark_essay')}
+            </span>
+            <span className="block text-[11px] leading-tight text-muted-foreground">
+              {t('textnav.mark_essay_hint')}
+            </span>
+          </span>
+        </Link>
+      )}
 
       {nav.sectionCount === 0 ? (
         // Twenty of the fifty-three texts are placeholders. Saying so is better

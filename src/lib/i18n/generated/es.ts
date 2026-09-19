@@ -20179,6 +20179,8 @@ export const ES_MESSAGES: Record<string, string> = {
   'shelf.none.generic':
     'Tu centro elige lo que lees, así que cubrimos las destrezas y la técnica de examen.',
   'shelf.none.cta': 'Ir a tu centro de repaso',
+  'textnav.mark_essay': 'Corregir mi redacción',
+  'textnav.mark_essay_hint': 'Comentarios de IA según el baremo real',
   'home.lp.h1': 'Aprendizaje de inglés inteligente para todos',
   'home.lp.subtitle':
     'Personalizado, alineado con el examen y asistido por IA: desde los años 7-9 hasta GCSE, IGCSE e IELTS, además de apoyo estructurado de inglés para estudiantes EAL. Elige tu itinerario y explora la demo en vivo.',

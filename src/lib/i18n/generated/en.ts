@@ -19678,6 +19678,8 @@ export const EN_MESSAGES: Record<string, string> = {
   'shelf.none.generic':
     'Your school chooses what you read, so we cover the skills and the exam technique instead.',
   'shelf.none.cta': 'Go to your revision hub',
+  'textnav.mark_essay': 'Mark my essay',
+  'textnav.mark_essay_hint': 'AI feedback against the real mark scheme',
   'home.lp.h1': 'Intelligent English Learning for Everyone',
   'home.lp.subtitle':
     'Personalised, exam-aligned and AI-assisted - from Years 7–9 through GCSE, IGCSE and IELTS, and structured English support for EAL learners. Pick your track to explore the live demo.',

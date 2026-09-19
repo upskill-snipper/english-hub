@@ -95,14 +95,25 @@ export function resolvePrefill(
  * parameter rename cannot leave a live link silently inert again.
  */
 export function markingLink(args: {
-  schemeId: string
+  /**
+   * The mark-scheme id, when the caller knows which paper the answer is for.
+   *
+   * OPTIONAL SINCE 19 September 2026. The text-scoped rail links every set-text
+   * guide to the marker, and it knows the text but not the paper - mapping a
+   * text to a scheme would mean inventing a board-to-paper table, and the form
+   * already resolves the board from the stored cookie. So a link may carry the
+   * text alone; `resolvePrefill` fills what it can and leaves the rest to the
+   * student.
+   */
+  schemeId?: string
   questionId?: string
   /** The set text the answer is about, sent to the marker as context. */
   text?: string
   /** Prefills the student's own title field. */
   title?: string
 }): string {
-  const q = new URLSearchParams({ paper: args.schemeId })
+  const q = new URLSearchParams()
+  if (args.schemeId) q.set('paper', args.schemeId)
   if (args.questionId) q.set('question', args.questionId)
   if (args.text) q.set('text', args.text)
   if (args.title) q.set('title', args.title)
