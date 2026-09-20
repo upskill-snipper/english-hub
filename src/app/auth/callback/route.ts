@@ -139,16 +139,40 @@ export async function GET(request: NextRequest) {
       if (type === 'recovery' || safeNext.startsWith('/auth/reset-password')) {
         return redirectTo('/auth/reset-password')
       }
+
+      // ── The trial, for EVERY session this branch establishes ───────────
+      //
+      // THE DEFECT THIS FIXES (20 September 2026, counted against production).
+      // This call used to sit inside the `type === 'signup'` block below. The
+      // comment above this branch says it "covers email-confirmed signup,
+      // OAuth, magic links and password reset" - and it does, but a Google or
+      // Apple return carries only `?code=` and `?next=`, never `type=signup`,
+      // because Supabase does not set it on an OAuth redirect. So no OAuth
+      // account has ever been provisioned a trial.
+      //
+      // /api/auth/record-login is documented as the second net and has the
+      // same hole: it is called from src/app/auth/login/page.tsx, the
+      // email-and-password form, which an OAuth user never submits.
+      //
+      // Measured before changing it: of the five accounts created since the
+      // trial fix shipped on 18 September, four are Google sign-ups that
+      // confirmed and signed in, and none holds a Subscription row. The one
+      // TRIALING row in production starts 2026-09-18T17:28, before that fix
+      // landed. The provisioner had never successfully run.
+      //
+      // Safe to call on a returning user: provisionSignupTrial reads the
+      // profile, returns early for anyone already entitled, and refuses any
+      // account older than the trial window, so a Google user signing in for
+      // the hundredth time gets one profile read and nothing else. It cannot
+      // throw into this flow.
+      if (data?.user?.id) {
+        await provisionSignupTrial(data.user.id)
+      }
+
       // For signup verification, add welcome flag so dashboard shows onboarding
       if (type === 'signup') {
-        // This is the first moment a session provably exists for a confirmed
-        // signup, which is why the trial is written here. It was previously
-        // written by /api/auth/register, whose session gate answered 403 on
-        // every account ever created. Awaited, not fired and forgotten: the
-        // page we are about to redirect to reads the entitlement.
         let target = safeNext
         if (data?.user?.id) {
-          await provisionSignupTrial(data.user.id)
           // Only override the default. An explicit `next` was asked for by
           // whoever built the confirmation link and must win.
           if (rawNext === '/dashboard' || !searchParams.get('next')) {
@@ -174,13 +198,20 @@ export async function GET(request: NextRequest) {
       if (type === 'recovery') {
         return redirectTo('/auth/reset-password')
       }
+
+      // Same rule as the PKCE branch: provision for every non-recovery
+      // session this establishes, not only for `type === 'signup'`. Supabase's
+      // own email templates still use this legacy flow, and an `invite` or
+      // `email` confirmation is just as much a first session as a `signup`.
+      if (data?.user?.id) {
+        await provisionSignupTrial(data.user.id)
+      }
+
       if (type === 'signup') {
-        // Same provisioning and routing, legacy non-PKCE flow. Supabase's own
-        // email templates still use this one, so both branches have to do it
-        // or half of confirmations would go without a trial and land wrong.
+        // Routing for a confirmed signup: the welcome flag and the role-aware
+        // landing page.
         let target = safeNext
         if (data?.user?.id) {
-          await provisionSignupTrial(data.user.id)
           if (rawNext === '/dashboard' || !searchParams.get('next')) {
             target = await landingFor(data.user.id)
           }
