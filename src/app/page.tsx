@@ -27,7 +27,6 @@ import { Card } from '@/components/ui/card'
 import { BenefitGrid } from '@/components/schools/BenefitCard'
 import { DemoShowcase } from '@/components/schools/DemoShowcase'
 import { FeatureGrid } from '@/components/schools/FeatureGrid'
-import { SchoolFAQ } from '@/components/schools/SchoolFAQ'
 import { PRICING_DISPLAY } from '@/constants/pricing'
 import { t } from '@/lib/i18n/t'
 
@@ -139,28 +138,28 @@ export default async function Home() {
       {/* 6. Pricing preview */}
       {await PricingPreviewSection()}
 
-      {/* 7. School-leader FAQ - visible B2B FAQ, genuinely about this page.
-             emitJsonLd was false for one reason only: the generic GeoFaq board
-             wall that used to sit above it owned the homepage's single FAQPage
-             slot, and two FAQPage entities on one URL is invalid. That wall was
-             removed on 19 September 2026, so the reason went with it and the
-             flag is back on.
-             This is not an SEO gamble. The questions are already rendered on the
-             page directly below, which is exactly what Google requires of
-             FAQPage markup: the answer must be visible to the reader. The
-             alternative was a homepage carrying no structured data at all while
-             showing a real FAQ. */}
-      <section aria-labelledby="home-faq-heading" className="border-t border-border/60">
-        <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20">
-          <h2
-            id="home-faq-heading"
-            className="mb-8 text-center font-serif text-3xl font-semibold tracking-tight text-foreground"
-          >
-            {await t('home.faq.school_leaders')}
-          </h2>
-          <SchoolFAQ />
-        </div>
-      </section>
+      {/* 7. The school-leader FAQ USED TO SIT HERE, and was removed on
+             20 September 2026 at the founder's instruction: "I do not want the
+             ten questions dumper at the bottom of each page again, it is often
+             irrelevant and overwhelming for users."
+
+             It was twelve procurement questions opening with "How long is a
+             school pilot?" - a good block, on the wrong page. The homepage's
+             visitors are students and parents, and the first thing it answered
+             was a question only a head of department asks. A full crawl also
+             found the same twelve, byte for byte, on /teachers, /schools and
+             /school-pilot: four URLs carrying one identical FAQPage entity,
+             which is duplicate structured data rather than four signals.
+
+             The content is not lost. It stays on the three pages where
+             procurement is genuinely the subject, and /school-pilot is still
+             linked from this page by PilotCtaSection above, which is the
+             conversion path this block was standing in for.
+
+             The homepage now carries no FAQPage. That is the correct trade: an
+             FAQPage whose questions are off-audience earns nothing and costs a
+             screen of scrolling, and the homepage still emits Organization,
+             WebSite and the site-wide attribution node. */}
 
       {/* 8. Closing CTA */}
       {await FinalCtaSection()}

@@ -112,6 +112,36 @@ describe('no tree-wide FAQ walls', () => {
     expect(RENDERS_GEOFAQ.test(source)).toBe(false)
   })
 
+  it('and carries no question block of ANY kind', () => {
+    // WIDENED 20 September 2026. This file guarded one component by name, and
+    // a different one walked straight past it: the homepage carried
+    // <SchoolFAQ />, twelve school-procurement questions opening with "How
+    // long is a school pilot?", on a page whose visitors are students and
+    // parents. A crawl found the same twelve byte-for-byte on /teachers,
+    // /schools and /school-pilot - four URLs, one identical FAQPage entity.
+    //
+    // The founder's instruction is about the SHAPE, not the component: "I do
+    // not want the ten questions dumper at the bottom of each page again, it
+    // is often irrelevant and overwhelming for users." So this asserts no FAQ
+    // component at all on the homepage, by any name.
+    //
+    // The three B2B pages keep it. Procurement questions are the subject
+    // there, which is the distinction that matters.
+    const source = sourceOf(join(APP_DIR, 'page.tsx'))
+    expect(source, 'the homepage mounts a FAQ component again').not.toMatch(
+      /<(SchoolFAQ|GeoFaq|FaqSection|FAQSection)\b/,
+    )
+    expect(source, 'the homepage emits FAQPage structured data again').not.toMatch(/FAQPageJsonLd/)
+  })
+
+  it('but the pages where procurement IS the subject still have it', () => {
+    // The counterweight. Deleting SchoolFAQ everywhere would satisfy the
+    // assertion above and throw away a real B2B conversion surface.
+    for (const page of ['teachers/page.tsx', 'schools/page.tsx', 'school-pilot/page.tsx']) {
+      expect(sourceOf(join(APP_DIR, page)), `${page} lost its FAQ`).toMatch(/<SchoolFAQ\b/)
+    }
+  })
+
   it('exactly the five on-topic set-text pages mount GeoFaq', () => {
     const mounts = PAGES.filter((f) => RENDERS_GEOFAQ.test(sourceOf(f)))
       .map(rel)
