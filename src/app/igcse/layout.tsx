@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { RevisionShell } from '@/app/revision/_components/revision-shell'
-import { LearningResourceJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   title: 'IGCSE English',
@@ -20,15 +19,11 @@ export const metadata: Metadata = {
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <LearningResourceJsonLd
-        name="IGCSE English Revision"
-        description="IGCSE English Literature and Language revision: study guides, exam technique and past-paper practice for Pearson Edexcel (4ET1, 4EA1) and Cambridge International (0500, 0990)."
-        educationalLevel="IGCSE"
-        learningResourceType="Revision hub"
-        url="https://theenglishhub.app/igcse"
-        about="IGCSE English"
-        audienceRole="student"
-      />
+      {/* THE HUB'S JSON-LD MOVED TO page.tsx ON 20 SEPTEMBER 2026. It
+          describes /igcse, and a layout wraps every descendant, so all 153
+          URLs beneath it carried a node naming a different page. Same rule
+          the FAQ walls established: a node describing one URL is mounted
+          from that URL's page, never from a layout. */}
       <RevisionShell>{children}</RevisionShell>
     </>
   )

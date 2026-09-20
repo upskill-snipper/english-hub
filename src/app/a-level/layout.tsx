@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { RevisionShell } from '@/app/revision/_components/revision-shell'
-import { LearningResourceJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   title: 'A-Level English',
@@ -19,15 +18,11 @@ export const metadata: Metadata = {
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <LearningResourceJsonLd
-        name="A-Level English Revision"
-        description="UK A-Level English Literature and Language revision: board-specific hubs for AQA, Pearson Edexcel, OCR and WJEC Eduqas, plus cross-board essay technique and set-text analysis."
-        educationalLevel="A-Level"
-        learningResourceType="Revision hub"
-        url="https://theenglishhub.app/a-level"
-        about="A-Level English"
-        audienceRole="student"
-      />
+      {/* THE HUB'S JSON-LD MOVED TO page.tsx ON 20 SEPTEMBER 2026. It
+          describes /a-level, and a layout wraps every descendant, so all 5
+          URLs beneath it carried a node naming a different page. Same rule
+          the FAQ walls established: a node describing one URL is mounted
+          from that URL's page, never from a layout. */}
       <RevisionShell>{children}</RevisionShell>
     </>
   )

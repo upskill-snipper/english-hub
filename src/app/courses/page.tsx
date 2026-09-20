@@ -14,6 +14,7 @@
  * into the RSC payload as `initialCourses` and shipped to every visitor. The
  * index carries the same card fields in ~107 KB.
  */
+import { CourseJsonLd } from '@/components/seo/json-ld'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { loadCourseIndex, verifyCourseIndex } from '@/data/course-loader'
@@ -74,6 +75,15 @@ export default async function CoursesPage() {
 
   return (
     <>
+      {/* This hub's own structured data. It lived in layout.tsx until
+          20 September 2026, where it stamped a node describing THIS url onto
+          the 88 pages beneath it. */}
+      <CourseJsonLd
+        name="GCSE & IGCSE English Courses"
+        description="Structured KS3, GCSE and IGCSE English courses with video lessons, quizzes and exam-style tasks across AQA, Edexcel, OCR, WJEC Eduqas and Cambridge IGCSE."
+        educationalLevel="GCSE"
+        url="https://theenglishhub.app/courses"
+      />
       <Breadcrumbs items={[{ label: coursesLabel, href: '/courses' }]} />
 
       {/* SEO-only: rendered on the server so Googlebot sees real content on

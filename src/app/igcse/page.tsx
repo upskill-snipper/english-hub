@@ -1,3 +1,4 @@
+import { LearningResourceJsonLd } from '@/components/seo/json-ld'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
@@ -130,6 +131,18 @@ export default async function IgcseHubPage() {
 
   return (
     <div className="space-y-10 pb-16">
+      {/* This hub's own structured data. It lived in layout.tsx until
+          20 September 2026, where it stamped a node describing THIS url
+          onto the 153 pages beneath it. */}
+      <LearningResourceJsonLd
+        name="IGCSE English Revision"
+        description="IGCSE English Literature and Language revision: study guides, exam technique and past-paper practice for Pearson Edexcel (4ET1, 4EA1) and Cambridge International (0500, 0990)."
+        educationalLevel="IGCSE"
+        learningResourceType="Revision hub"
+        url="https://theenglishhub.app/igcse"
+        about="IGCSE English"
+        audienceRole="student"
+      />
       <BreadcrumbJsonLd
         items={[
           { name: tCrumbHome, url: 'https://theenglishhub.app' },

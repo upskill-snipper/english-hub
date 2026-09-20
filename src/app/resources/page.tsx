@@ -1,3 +1,4 @@
+import { LearningResourceJsonLd } from '@/components/seo/json-ld'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getServerBoard } from '@/lib/board/get-server-board'
@@ -200,6 +201,17 @@ export default async function ResourcesPage() {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* This hub's own structured data. It lived in layout.tsx until
+          20 September 2026, where it stamped a node describing THIS url
+          onto the 214 pages beneath it. */}
+      <LearningResourceJsonLd
+        name="Free GCSE & IGCSE English Resources"
+        description="Free English resources: revision notes, poetry guides, writing-skills walkthroughs, exam techniques, vocabulary builders and study tools for AQA, Edexcel, OCR, Eduqas and Cambridge IGCSE."
+        learningResourceType="Resource library"
+        url="https://theenglishhub.app/resources"
+        about="GCSE and IGCSE English"
+        audienceRole="student"
+      />
       {/* ── Hero Section ─────────────────────────────────────────── */}
       <section className="border-b border-border/40">
         <div className="mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 lg:px-8">

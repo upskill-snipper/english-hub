@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { LearningResourceJsonLd } from '@/components/seo/json-ld'
 
 // Created 2026-05-16 for GEO: /resources had NO layout and ~181 leaf
 // pages emitted zero structured data - the single biggest schema gap.
@@ -13,14 +12,11 @@ export const metadata: Metadata = {
 export default function ResourcesLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <LearningResourceJsonLd
-        name="Free GCSE & IGCSE English Resources"
-        description="Free English resources: revision notes, poetry guides, writing-skills walkthroughs, exam techniques, vocabulary builders and study tools for AQA, Edexcel, OCR, Eduqas and Cambridge IGCSE."
-        learningResourceType="Resource library"
-        url="https://theenglishhub.app/resources"
-        about="GCSE and IGCSE English"
-        audienceRole="student"
-      />
+      {/* THE HUB'S JSON-LD MOVED TO page.tsx ON 20 SEPTEMBER 2026. It
+          describes /resources, and a layout wraps every descendant, so all 214
+          URLs beneath it carried a node naming a different page. Same rule
+          the FAQ walls established: a node describing one URL is mounted
+          from that URL's page, never from a layout. */}
       {children}
     </>
   )

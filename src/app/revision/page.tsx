@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { LearningResourceJsonLd } from '@/components/seo/json-ld'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -451,6 +452,20 @@ export default async function RevisionHubPage() {
 
   return (
     <div className="space-y-8 pb-16">
+      {/* The hub's own structured data. It lived in layout.tsx until
+          20 September 2026, where it stamped a node describing THIS url onto
+          all 277 pages beneath it. educationalLevel is intentionally omitted:
+          this tree spans KS3, GCSE, IGCSE and IAL, so a single level would be
+          wrong. */}
+      <LearningResourceJsonLd
+        name="English Revision Hub"
+        description="Unified English revision: study tools, progress tracking, set-text analysis and exam technique personalised to your exam board across KS3, GCSE, IGCSE and IAL."
+        learningResourceType="Revision hub"
+        url="https://theenglishhub.app/revision"
+        about="English revision"
+        audienceRole="student"
+      />
+
       {/* ── Trial countdown banner ─────────────────────────────────── */}
       <TrialCountdownBannerServer />
 

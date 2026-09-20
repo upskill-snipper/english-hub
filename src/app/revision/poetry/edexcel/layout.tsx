@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   title: 'Edexcel GCSE poetry anthology - Time and Place + Conflict',
@@ -23,13 +23,11 @@ export default async function EdexcelPoetryLayout({ children }: { children: Reac
   // user picked deliberately.
   return (
     <>
-      <CourseJsonLd
-        name="Pearson Edexcel GCSE English Literature poetry - 1ET0 anthology"
-        description="The Pearson Edexcel GCSE English Literature 1ET0 poetry anthology - Conflict and Time and Place clusters. Themes, language, structure, comparison practice."
-        educationalLevel="GCSE"
-        provider="The English Hub"
-        url="https://theenglishhub.app/revision/poetry/edexcel"
-      />
+      {/* THE Course NODE MOVED TO page.tsx ON 20 SEPTEMBER 2026.
+          It named /revision/poetry/edexcel on all 10 URLs beneath this layout,
+          including the Conflict and Time and Place cluster pages that should
+          rank for their own anthology searches. See
+          src/app/demo/school/layout.tsx for the full reasoning. */}
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },

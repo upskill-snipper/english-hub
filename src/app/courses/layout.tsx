@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { CourseJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   title: 'Courses',
@@ -25,12 +24,11 @@ export const metadata: Metadata = {
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <CourseJsonLd
-        name="GCSE & IGCSE English Courses"
-        description="Structured KS3, GCSE and IGCSE English courses with video lessons, quizzes and exam-style tasks across AQA, Edexcel, OCR, WJEC Eduqas and Cambridge IGCSE."
-        educationalLevel="GCSE"
-        url="https://theenglishhub.app/courses"
-      />
+      {/* THE HUB'S JSON-LD MOVED TO page.tsx ON 20 SEPTEMBER 2026. It describes
+          /courses, and a layout wraps every descendant, so all 88 URLs beneath
+          this one carried a node naming a different page. Same rule the FAQ
+          walls established: a node describing one URL is mounted from that
+          URL's page, never from a layout. */}
       {children}
     </>
   )

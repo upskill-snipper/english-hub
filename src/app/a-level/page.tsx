@@ -1,3 +1,4 @@
+import { LearningResourceJsonLd } from '@/components/seo/json-ld'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, BookOpen, Sparkles, GraduationCap } from 'lucide-react'
@@ -81,6 +82,18 @@ export default async function ALevelHubPage() {
 
   return (
     <div className="space-y-10 pb-16">
+      {/* This hub's own structured data. It lived in layout.tsx until
+          20 September 2026, where it stamped a node describing THIS url
+          onto the 5 pages beneath it. */}
+      <LearningResourceJsonLd
+        name="A-Level English Revision"
+        description="UK A-Level English Literature and Language revision: board-specific hubs for AQA, Pearson Edexcel, OCR and WJEC Eduqas, plus cross-board essay technique and set-text analysis."
+        educationalLevel="A-Level"
+        learningResourceType="Revision hub"
+        url="https://theenglishhub.app/a-level"
+        about="A-Level English"
+        audienceRole="student"
+      />
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },

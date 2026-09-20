@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
-import { SoftwareApplicationJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import DemoSchoolLayoutClient from './layout-client'
 
 export const dynamic = 'force-dynamic'
@@ -60,14 +60,13 @@ export default async function DemoSchoolLayout({ children }: { children: React.R
           { name: 'School portal', url: 'https://theenglishhub.app/demo/school' },
         ]}
       />
-      <SoftwareApplicationJsonLd
-        nonce={nonce}
-        name="The English Hub - school portal demo"
-        description="Interactive demo of the English Hub school portal with synthetic department data: class analytics, intervention insights, AI marking workflow and student progress."
-        url="https://theenglishhub.app/demo/school"
-        audience="Heads of English, school leaders, MAT leads"
-        screenshot="https://theenglishhub.app/api/og?title=School+portal+demo&subtitle=English+department+analytics+%26+intervention"
-      />
+      {/* THE SoftwareApplication NODE MOVED TO page.tsx ON 20 SEPTEMBER 2026.
+          It hard-codes url="https://theenglishhub.app/demo/school", and a layout
+          wraps every descendant, so all 15 URLs under /demo/school declared
+          themselves to be that one page. Fourteen of them are in the sitemap.
+          Same rule as the section hubs: a node naming one URL is mounted from
+          that URL's own page. The breadcrumb below stays - a shortened trail is
+          a weaker claim, not a false identity. */}
       <DemoSchoolLayoutClient>{children}</DemoSchoolLayoutClient>
     </>
   )

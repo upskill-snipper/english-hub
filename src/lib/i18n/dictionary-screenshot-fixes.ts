@@ -48,7 +48,8 @@ export const SCREENSHOT_FIX_DICTIONARY: Dictionary = {
   'analytics.metric.correct': { en: 'correct', ar: 'صح', es: 'correcto' },
 
   // ─── /demo/school/dashboard stat cards (still hardcoded EN in page) ──
-  // These render via direct JSX in src/app/demo/school/page.tsx so they
+  // These render via direct JSX in src/app/demo/school/page-client.tsx (it
+  // was page.tsx until 20 September 2026) so they
   // appear as English even in AR mode. The audit_top_n.py pipeline will
   // patch the page to consume content.ts which will then look these up.
   'demo_school.dash.avg_target': { en: 'AVG TARGET', ar: 'متوسط الهدف', es: 'OBJETIVO MEDIO' },

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
-import { SoftwareApplicationJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import StudentDemoLayoutClient from './layout-client'
 
 export const dynamic = 'force-dynamic'
@@ -60,14 +60,9 @@ export default async function StudentDemoLayout({ children }: { children: React.
           { name: 'Student dashboard', url: 'https://theenglishhub.app/demo/student' },
         ]}
       />
-      <SoftwareApplicationJsonLd
-        nonce={nonce}
-        name="The English Hub - student dashboard demo"
-        description="Interactive demo of the English Hub student dashboard with sample work: revision, AI essay feedback, flashcards, practice quizzes and progress tracking."
-        url="https://theenglishhub.app/demo/student"
-        audience="GCSE, IGCSE and KS3 English students"
-        screenshot="https://theenglishhub.app/api/og?title=Student+dashboard+demo&subtitle=Revision%2C+AI+feedback+and+progress"
-      />
+      {/* THE SoftwareApplication NODE MOVED TO page.tsx ON 20 SEPTEMBER 2026.
+          It named /demo/student on all 5 URLs beneath this layout. See
+          src/app/demo/school/layout.tsx for the full reasoning. */}
       <StudentDemoLayoutClient>{children}</StudentDemoLayoutClient>
     </>
   )

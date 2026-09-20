@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { RevisionShell } from './_components/revision-shell'
 import { VisitTracker } from './_components/visit-tracker'
-import { LearningResourceJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   title: 'Your Hub',
@@ -23,16 +22,15 @@ export const metadata: Metadata = {
 export default function RevisionLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      {/* educationalLevel intentionally omitted - this tree spans KS3,
-          GCSE, IGCSE and IAL, so a single level value would be wrong. */}
-      <LearningResourceJsonLd
-        name="English Revision Hub"
-        description="Unified English revision: study tools, progress tracking, set-text analysis and exam technique personalised to your exam board across KS3, GCSE, IGCSE and IAL."
-        learningResourceType="Revision hub"
-        url="https://theenglishhub.app/revision"
-        about="English revision"
-        audienceRole="student"
-      />
+      {/* THE HUB'S JSON-LD MOVED TO page.tsx ON 20 SEPTEMBER 2026.
+          It described /revision, and a layout wraps every descendant, so all
+          277 URLs under /revision carried a node naming a different page. On
+          /revision/texts/macbeth a crawl found two LearningResource nodes: the
+          guide's own, and "English Revision Hub" pointing at /revision. An
+          answer engine reading "what is this page about" from JSON-LD was told
+          the wrong thing on the deep pages that most need to be understood.
+          Same rule the FAQ walls established: a node describing one URL is
+          mounted from that URL's page, never from a layout. */}
       {/* Records which revision pages the student opens, so the hub's
           "In Progress" lens and RecentlyStudied panel have data to show.
           Nothing wrote those keys before, so both were always empty. */}
