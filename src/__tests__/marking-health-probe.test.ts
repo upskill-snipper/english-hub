@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
+import { describe, it, expect, vi, beforeAll, beforeEach, afterEach } from 'vitest'
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 
@@ -114,6 +114,29 @@ function overMaxResponse() {
 beforeEach(() => {
   createMock.mockReset()
 })
+
+/**
+ * Load the module chain ONCE, before the clock starts on any test.
+ *
+ * THE FLAKE THIS FIXES. `reports ok when a real mark comes back` is the first
+ * test to `await import('@/lib/marking/health-probe')`, so it paid the cost of
+ * resolving that whole chain - the probe, the feedback generator and the
+ * seventeen mark-scheme modules, 6,315 lines - inside its own five-second
+ * budget. The four tests after it hit a warm cache and run in milliseconds.
+ *
+ * Alone the file takes about a second and passes. Under the full suite, with
+ * every worker competing, it measured 5,238ms against a 5,000ms limit and the
+ * push was rejected. It failed roughly one run in four, which is the worst
+ * frequency to have: often enough to block work, rarely enough to look like
+ * someone else's problem.
+ *
+ * Warming the import here moves that cost out of a test's timeout rather than
+ * raising the limit, so the assertion still fails if the probe genuinely hangs.
+ */
+beforeAll(async () => {
+  await import('@/lib/marking/health-probe')
+  await import('@/lib/marking/mark-schemes')
+}, 60_000)
 
 describe('the probe result', () => {
   it('reports ok when a real mark comes back', async () => {
