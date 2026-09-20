@@ -71,8 +71,34 @@ const ICONS: Record<TextNavIcon, { Icon: typeof BookOpen; colour: string }> = {
 export function TextScopedNav({ slug, onNavigate }: { slug: string; onNavigate?: () => void }) {
   const pathname = usePathname()
   const t = useT()
-  const nav = buildTextNav(slug)
-  const text = getSetText(slug)
+
+  // RESOLVED ONCE, AT THE TOP, AND THAT IS THE FIX (20 September 2026).
+  //
+  // The alias existed and was applied to exactly one of the five things in this
+  // component that need it - the off-board notice, which is the bug its author
+  // was chasing. Every other use still took the raw route segment, so on the six
+  // revision-notes routes whose directory drops an article the rail was quietly
+  // wrong in three ways at once:
+  //
+  //   `getSetText('christmas-carol')` found nothing, so `title` was null. That
+  //   gates the text's name in the rail AND the "Mark my essay" link, so the
+  //   AI marking call-to-action - put in the rail precisely so it would "reach
+  //   every guide in all five trees at once" - was absent from the revision
+  //   notes for A Christmas Carol, An Inspector Calls, The Merchant of Venice,
+  //   The Sign of Four, A View from the Bridge and Much Ado About Nothing.
+  //
+  //   `buildTextNav('christmas-carol')` built /revision/texts/christmas-carol.
+  //   Verified on production: that URL returns the "Set Text Not Found" page
+  //   while the real guide sits at /revision/texts/a-christmas-carol.
+  //
+  //   `textBackLink` and the placeholder check took the raw segment too.
+  //
+  // Active state still compares the real `pathname`, which is untouched: these
+  // pages live under /resources/revision-notes, so no nav item matches there
+  // either way, and on /revision/texts the slug is already canonical.
+  const canonical = canonicalTextSlug(slug)
+  const nav = buildTextNav(canonical)
+  const text = getSetText(canonical)
 
   // THE REGRESSION THIS FIXES, shipped by me this morning and live for hours.
   //
@@ -86,9 +112,9 @@ export function TextScopedNav({ slug, onNavigate }: { slug: string; onNavigate?:
   //
   // Having no sub-pages is not the same as being unwritten. The generated
   // placeholder register is the only thing that actually knows, so it decides.
-  const isPlaceholder = PLACEHOLDER_TEXT_SLUGS.has(slug)
+  const isPlaceholder = PLACEHOLDER_TEXT_SLUGS.has(canonical)
   const { board, isHydrated } = useBoard()
-  const back = textBackLink(slug, isHydrated ? board : null)
+  const back = textBackLink(canonical, isHydrated ? board : null)
 
   // Is this text on the student's own course?
   //
@@ -114,7 +140,6 @@ export function TextScopedNav({ slug, onNavigate }: { slug: string; onNavigate?:
   // So the notice needs a text we actually recognise AND a board that does not
   // set it. "We have no record of this" and "your board does not set this" are
   // different statements, and only one of them is safe to print.
-  const canonical = canonicalTextSlug(slug)
   const offBoard =
     Boolean(board) && isHydrated && isKnownSetText(slug) && !textAvailableForBoard(canonical, board)
 

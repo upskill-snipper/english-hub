@@ -64,7 +64,12 @@ describe('the rail', () => {
   })
 
   it('waits for hydration before claiming to know the board', () => {
-    expect(CODE).toMatch(/textBackLink\(slug, isHydrated \? board : null\)/)
+    // The first argument is the CANONICAL slug since 20 September 2026: six
+    // revision-notes directories drop a leading article, and the rail was
+    // passing the raw route segment here along with three other places. The
+    // hydration guarantee this test is about is unchanged - only the slug that
+    // reaches the resolver is now the one that names a real text.
+    expect(CODE).toMatch(/textBackLink\(canonical, isHydrated \? board : null\)/)
   })
 
   it('changes the label with the destination', () => {

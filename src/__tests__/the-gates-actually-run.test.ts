@@ -167,10 +167,15 @@ describe('what the suite runs in', () => {
     // InteractiveTextViewer to prove a span carrying three authored notes shows
     // all three. That assertion cannot be made without a DOM: the defect it
     // guards was the renderer silently discarding two of them.
+    //
+    // Then to 18, the same day, for the-rail-knows-which-text-it-is-in.test.tsx.
+    // That defect is a MISSING LINK - the marking call-to-action vanished from
+    // six guides because a lookup was given the wrong slug - and a missing
+    // element is not observable without rendering the component.
     expect(
       annotated.length,
       'more files now claim to need a DOM - check each one',
-    ).toBeLessThanOrEqual(17)
+    ).toBeLessThanOrEqual(18)
   })
 })
 
