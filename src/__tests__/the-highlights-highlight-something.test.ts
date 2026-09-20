@@ -220,8 +220,14 @@ describe('every note is authored, not generated', () => {
       // taken from them became untraceable. The strip is right for the course
       // modules, whose prose is HTML, and wrong for these, whose prose IS the
       // markup.
-      const notesPage = join(ROOT, 'src/app/resources/revision-notes', slug, 'page.tsx')
-      const revisionNotes = existsSync(notesPage) ? readFileSync(notesPage, 'utf8') : ''
+      // The directory is usually the slug, but three guides are filed without
+      // the leading article - christmas-carol, merchant-of-venice,
+      // sign-of-four - so the lookup drops it as a fallback, exactly as the
+      // generator does.
+      const notesPage = [slug, slug.replace(/^(a|an|the)-/, '')]
+        .map((name) => join(ROOT, 'src/app/resources/revision-notes', name, 'page.tsx'))
+        .find((p) => existsSync(p))
+      const revisionNotes = notesPage ? readFileSync(notesPage, 'utf8') : ''
       // Built ONCE per text. It used to be rebuilt inside the inner loop, which
       // was survivable over one guide file and became a five-second timeout the
       // moment the haystack included the course modules - a test that fails on

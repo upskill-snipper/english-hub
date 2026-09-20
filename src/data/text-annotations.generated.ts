@@ -177,8 +177,28 @@ export const TEXT_ANNOTATIONS: Readonly<
       },
       {
         type: 'quote',
+        text: 'No rest, no peace. Incessant torture of remorse',
+        note: "Marley's Ghost - Stave One. Short, fragmented sentences convey Marley's anguish. The negative constructions ('no rest, no peace') mirror the emptiness of a life lived without compassion. 'Incessant' -- there is no escape. This terrifies Scrooge into openness to the three spirits' lessons.",
+      },
+      {
+        type: 'quote',
+        text: 'Mankind was my business',
+        note: "Marley's Ghost - Stave One. The defining statement of the novella's social message. Dickens redefines 'business' from commerce to compassion. Every person's true business is the welfare of others. This directly challenges the Victorian ideology of laissez-faire economics and individualism.",
+      },
+      {
+        type: 'quote',
+        text: 'No warmth could warm, no wintry weather chill him. No wind that blew was bitterer than he',
+        note: "Narrator - Stave One. The double negative construction ('no warmth could warm') suggests Scrooge is beyond reach. The pathetic fallacy ('wintry weather,' 'bitter wind') externalises his inner coldness. He is presented as colder than the weather itself -- more element than human, completely disconnected from normal feeling.",
+      },
+      {
+        type: 'quote',
+        text: 'a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner',
+        note: "Narrator - Stave One. Seven adjectives in asyndetic listing. Each suggests a different form of taking. The cumulative effect is overwhelming -- Scrooge is defined entirely by acquisition. 'Sinner' places greed in a moral and religious framework. The exclamation mark conveys the narrator's exasperation.",
+      },
+      {
+        type: 'quote',
         text: 'The cold within him froze his old features, nipped his pointed nose, shrivelled his cheek, stiffened his gait',
-        note: '"The cold within him froze his old features, nipped his pointed nose, shrivelled his cheek, stiffened his gait."',
+        note: "Narrator - Stave One. The internal 'cold' is made physical -- his emotional coldness literally shapes his appearance. The verbs ('froze,' 'nipped,' 'shrivelled,' 'stiffened') are violent and destructive, showing how isolation and greed have damaged him. Pathetic fallacy works in reverse: rather than the weather reflecting the character, the character has become the weather.",
       },
       {
         type: 'language',
@@ -299,13 +319,48 @@ export const TEXT_ANNOTATIONS: Readonly<
       },
       {
         type: 'quote',
-        text: 'Oh, a wonderful pudding! Bob Cratchit said, and calmly too, that he regarded it as the greatest success achieved by Mrs. Cratchit since their marriage',
-        note: '"Oh, a wonderful pudding! Bob Cratchit said, and calmly too, that he regarded it as the greatest success achieved by Mrs Cratchit since their marriage."',
+        text: "a jolly Giant, glorious to see; who bore a glowing torch, in shape not unlike Plenty's horn",
+        note: "Narrator - Stave Three. The cornucopia ('Plenty's horn') symbolises abundance and generosity -- the opposite of Scrooge's miserliness. 'Glorious' and 'jolly' present Christmas as a celebration of life and sharing, in contrast to Scrooge's cold isolation.",
+      },
+      {
+        type: 'quote',
+        text: 'a solemn Phantom, draped and hooded, coming, like a mist along the ground, towards him',
+        note: "Narrator - Stave Four. The simile 'like a mist' makes the ghost seem insubstantial yet all-encompassing, like death itself. 'Solemn' creates a funereal tone. The ghost 'comes towards him' -- Scrooge cannot escape his future. Its silence throughout is more terrifying than any words.",
+      },
+      {
+        type: 'quote',
+        text: 'Bob Cratchit told them how he had a situation in his eye for Master Peter, which would bring in, if obtained, full five-and-sixpence weekly',
+        note: "Narrator - Stave Three. This small detail reveals the family's poverty -- they would celebrate a child earning five shillings and sixpence. It shows the reality of working-class life and how little separates the Cratchits from destitution. Dickens uses such details to build sympathy for the poor.",
+      },
+      {
+        type: 'quote',
+        text: "He sat very close to his father's side upon his little stool. Bob held his withered little hand in his, as if he loved the child, and wished to keep him by his side, and dreaded that he might be taken from him",
+        note: "Narrator - Stave Three. The physical closeness reflects emotional devotion. 'Withered little hand' reminds us of Tim's fragility. The verbs 'loved,' 'wished,' and 'dreaded' create a powerful tricolon of paternal emotion. Dickens makes the threat to Tim feel immediate and personal.",
+      },
+      {
+        type: 'quote',
+        text: 'he hoped the people saw him in the church, because he was a cripple, and it might be pleasant to them to remember upon Christmas Day, who made lame beggars walk',
+        note: "Narrator (reporting Tiny Tim) - Stave Three. Tim connects his disability to Christ's healing miracles. This positions Tim as a Christ-like figure -- innocent, suffering, and redemptive. His presence in church is meant to remind others of their Christian duty to help the sick and poor.",
+      },
+      {
+        type: 'quote',
+        text: "His wealth is of no use to him. He don't do any good with it. He don't make himself comfortable with it",
+        note: "Fred - Stave Three. Fred identifies the paradox of Scrooge's life: he is rich but lives as if poor. The repetition of 'he don't' emphasises the waste. Fred sees through to the tragedy of Scrooge's existence -- money without purpose or connection is meaningless.",
       },
       {
         type: 'quote',
         text: 'Yellow, meagre, ragged, scowling, wolfish',
-        note: '"Yellow, meagre, ragged, scowling, wolfish" describes them in animal terms, showing how poverty dehumanises.',
+        note: "Narrator (describing Ignorance and Want) - Stave Three. The rapid-fire adjectives create a disturbing portrait of neglected children. 'Wolfish' is especially powerful -- society's neglect turns children into predators. These are not individual children but allegorical representations of social failure, making Dickens's criticism systematic rather than personal.",
+      },
+      {
+        type: 'quote',
+        text: 'Have they no refuge or resource',
+        note: "Scrooge - Stave Three. Scrooge asks about Ignorance and Want with genuine concern -- a marked change from Stave One. The ghost's devastating reply ('Are there no prisons? Are there no workhouses?') forces Scrooge to hear his own words and recognise their cruelty.",
+      },
+      {
+        type: 'quote',
+        text: 'Oh, a wonderful pudding! Bob Cratchit said, and calmly too, that he regarded it as the greatest success achieved by Mrs. Cratchit since their marriage',
+        note: '"Oh, a wonderful pudding! Bob Cratchit said, and calmly too, that he regarded it as the greatest success achieved by Mrs Cratchit since their marriage."',
       },
       {
         type: 'quote',
@@ -385,14 +440,44 @@ export const TEXT_ANNOTATIONS: Readonly<
         note: '"I will honour Christmas in my heart, and try to keep it all the year."',
       },
       {
-        type: 'language',
-        text: 'tenderness connected with a death',
-        note: 'Scrooge explicitly asks to see "tenderness connected with a death," and the spirit obliges -- but the tenderness belongs to the poor family, not to the rich man.',
+        type: 'quote',
+        text: 'I will honour Christmas in my heart, and try to keep it all the year. I will live in the Past, the Present, and the Future',
+        note: "Scrooge - Stave Four. Scrooge's pledge of transformation. 'All the year' shows the change is not temporary but a permanent shift in values. 'Past, Present, and Future' references the three spirits and shows Scrooge has learned from each. The tricolon structure gives his promise weight and completeness.",
+      },
+      {
+        type: 'quote',
+        text: 'I will live in the Past, the Present, and the Future. The Spirits of all Three shall strive within me',
+        note: "Scrooge - Stave Four. Scrooge commits to learning from all three temporal perspectives. 'Strive within me' suggests an ongoing internal struggle -- redemption is not a single moment but a continuous effort. The capitalisation of 'Past,' 'Present,' and 'Future' gives them almost spiritual significance.",
+      },
+      {
+        type: 'quote',
+        text: 'I will live in the Past, the Present, and the Future. The Spirits of all Three shall strive within me. I will not shut out the lessons that they teach',
+        note: "Scrooge - Stave Four. Scrooge's resolution integrates all three temporal perspectives. 'Strive within me' acknowledges that maintaining change requires effort. 'Shut out' echoes his earlier attempts to suppress the past (extinguishing the first spirit's light). He commits to remaining open to truth and self-reflection.",
+      },
+      {
+        type: 'quote',
+        text: 'THE Phantom slowly, gravely, silently, approached',
+        note: "Narrator - Stave Four. Three adverbs create a menacing, funereal pace. The ghost's silence is its most terrifying quality -- it offers no explanation, comfort, or negotiation. Each adverb intensifies the dread. This is death personified: inevitable, solemn, and speechless.",
+      },
+      {
+        type: 'quote',
+        text: 'Oh cold, cold, rigid, dreadful Death, set up thine altar here, and dress it with such terrors as thou hast at thy command',
+        note: "Narrator - Stave Four. The narrator addresses Death directly in apostrophe. 'Altar' creates a religious image -- death as a dark worship. The exclamatory tone and archaic 'thine' and 'thou' give the passage solemnity. This is the novella's darkest moment, over the corpse that the reader suspects is Scrooge.",
       },
       {
         type: 'quote',
         text: 'The case of this unhappy man might be my own. My life tends that way, now',
-        note: 'Scrooge - Stave 4. Scrooge begins connecting the vision to himself. "Tends that way" is careful -- his life is moving in this direction but has not arrived yet. There is still time. "Unhappy" is his own judgement: he recognises that greed produces misery, not security. This self-awareness precedes the gravestone revelation.',
+        note: "Scrooge - Stave Four. Scrooge begins to connect the dead man's fate with his own. 'Tends that way' shows he recognises the direction of his life but hasn't yet confirmed the dead man's identity. The understatement is chilling -- he is looking at his own death.",
+      },
+      {
+        type: 'quote',
+        text: 'I am not the man I was. I will not be the man I must have been but for this intercourse',
+        note: "Scrooge - Stave Four. The climactic pledge. The tense shifts are significant: 'was' (past, acknowledged), 'will not be' (future, rejected), 'must have been' (the path avoided). 'Intercourse' means 'interaction' -- the spirits' visits have changed his course. This sentence captures the entire transformation arc.",
+      },
+      {
+        type: 'language',
+        text: 'tenderness connected with a death',
+        note: 'Scrooge explicitly asks to see "tenderness connected with a death," and the spirit obliges -- but the tenderness belongs to the poor family, not to the rich man.',
       },
       {
         type: 'theme',
@@ -445,6 +530,21 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'character',
         text: 'I am as light as a feather, I am as happy as an angel, I am as merry as a schoolboy',
         note: '"I am as light as a feather, I am as happy as an angel, I am as merry as a school-boy."',
+      },
+      {
+        type: 'quote',
+        text: 'Not a farthing less. A great many back-payments are included in it, I assure you',
+        note: "Scrooge (to the charity collector) - Stave Five. The transformed Scrooge makes 'back-payments' -- acknowledging his years of failure to contribute. His whispered donation is large enough to shock the collector. 'Back-payments' implies a debt owed to society, reinforcing the theme of social responsibility.",
+      },
+      {
+        type: 'quote',
+        text: 'I am as light as a feather, I am as happy as an angel, I am as merry as a schoolboy. I am as giddy as a drunken man',
+        note: "Scrooge - Stave Five. Four similes in rapid succession convey Scrooge's overwhelming joy. 'Feather' (weightless -- his burden of guilt is lifted), 'angel' (spiritually redeemed), 'schoolboy' (return to childhood innocence), 'drunken man' (intoxicated with happiness). The anaphoric 'I am' repeats joyfully, as if Scrooge is rediscovering himself.",
+      },
+      {
+        type: 'quote',
+        text: "I don't know anything. I'm quite a baby. Never mind. I don't care. I'd rather be a baby",
+        note: "Scrooge - Stave Five. Scrooge embraces ignorance and vulnerability -- the opposite of his former controlling, cynical self. 'Baby' suggests rebirth: he is starting life afresh. The short, excited sentences mirror childlike excitement. 'I don't care' is liberating -- he has shed the self-consciousness that trapped him.",
       },
       {
         type: 'quote',
@@ -540,13 +640,28 @@ export const TEXT_ANNOTATIONS: Readonly<
       },
       {
         type: 'quote',
-        text: 'A solitary child, neglected by his friends, is left there still',
-        note: '"A solitary child, neglected by his friends, is left there still."',
+        text: 'a strange figure--like a child: yet not so like a child as like an old man',
+        note: "Narrator - Stave Two. The paradoxical description suggests the ghost exists outside normal time. Being both child and old man connects to its role showing scenes from across Scrooge's life. It may also reflect how memory itself feels both immediate and ancient.",
       },
       {
         type: 'quote',
         text: 'He has the power to render us happy or unhappy; to make our service light or burdensome; a pleasure or a toil',
-        note: '"He has the power to render us happy or unhappy; to make our service light or burdensome; a pleasure or a toil."',
+        note: "Scrooge (about Fezziwig) - Stave Two. Scrooge himself articulates the responsibility of employers. The antithetical pairs ('happy/unhappy,' 'light/burdensome,' 'pleasure/toil') make the choice stark. Scrooge recognises this truth but hasn't applied it to his own treatment of Bob Cratchit -- yet. This is a key step in his transformation.",
+      },
+      {
+        type: 'quote',
+        text: 'The happiness he gives, is quite as great as if it cost a fortune',
+        note: "Scrooge - Stave Two. Scrooge acknowledges that happiness doesn't require vast wealth. This directly contradicts his own philosophy. The Ghost's gentle prompting makes Scrooge think of Bob Cratchit, planting the seed of change.",
+      },
+      {
+        type: 'quote',
+        text: 'A solitary child, neglected by his friends, is left there still',
+        note: "Narrator - Stave Two. Describing young Scrooge alone at school. 'Solitary' and 'neglected' establish the roots of his adult isolation. 'Left there still' -- he is both physically abandoned and emotionally frozen in that moment. The present-tense 'is left' suggests the wound remains active in Scrooge's psyche.",
+      },
+      {
+        type: 'quote',
+        text: "There was a boy singing a Christmas Carol at my door last night. I should like to have given him something: that's all",
+        note: "Scrooge - Stave Two. Scrooge's first sign of softening. The understated 'that's all' tries to minimise the emotion, but regret is clearly present. This connects to his earlier rejection of the carol singer in Stave One. The past tense ('should like to have given') emphasises missed opportunity.",
       },
       {
         type: 'quote',
@@ -2954,12 +3069,27 @@ export const TEXT_ANNOTATIONS: Readonly<
         text: 'In sooth I know not why I am so sad',
         note: 'Antonio — Act 1, Scene 1. The play’s opening line establishes Antonio’s unexplained melancholy and sets a muted, uneasy tone beneath the comic surface. Critics have read the sadness as premonition, as grief over losing Bassanio to Portia, or as the existential cost of mercantile life. Shakespeare withholds the cause, so the line invites the audience to watch Antonio closely and to sense from the outset that this “comedy” will be shadowed by something harder to name.',
       },
+      {
+        type: 'quote',
+        text: 'In Belmont is a lady richly left',
+        note: "Bassanio - Act 1, Scene 1. Bassanio introduces Portia with 'richly left' -- her inheritance. Wealth is mentioned before beauty, charm, or virtue. This raises questions about whether Bassanio's love is genuine or financially motivated.",
+      },
+      {
+        type: 'quote',
+        text: 'In Belmont is a lady richly left,\nAnd she is fair',
+        note: "Bassanio - Act 1, Scene 1. Wealth ('richly left') precedes beauty ('fair') in Bassanio's description. The order reveals priorities -- or at least raises the question of whether his love is genuine or mercenary.",
+      },
     ],
     'acti-sceneiii': [
       {
         type: 'quote',
         text: 'I hate him for he is a Christian,\nBut more for that in low simplicity\nHe lends out money gratis, and brings down\nThe rate of usance here with us in Venice',
         note: 'Shylock — Act 1, Scene 3. Shylock’s aside when he first meets Antonio reveals motives that are both religious and commercial. Shakespeare makes Shylock’s grievance rational as well as vindictive: Antonio undercuts him economically by lending without interest. The blunt “I hate him” is shocking, but placed inside a reasoned economic analysis it complicates a purely villainous reading and sets up the play’s entanglement of faith and money.',
+      },
+      {
+        type: 'quote',
+        text: 'The devil can cite Scripture for his purpose',
+        note: "Antonio - Act 1, Scene 3. Antonio dismisses Shylock's biblical defence of usury by calling him a devil. This dehumanisation is casual and reflexive -- Antonio sees Shylock's use of Scripture as inherently illegitimate because of his Jewishness.",
       },
     ],
     'actiii-scenei': [
@@ -2978,6 +3108,11 @@ export const TEXT_ANNOTATIONS: Readonly<
         text: 'If you prick us, do we not bleed',
         note: 'Prejudice and otherness. Shakespeare stages this prejudice unflinchingly, but he also gives Shylock the play’s most famous plea for shared humanity: “If you prick us, do we not bleed?” The play both draws on and exposes the antisemitic stereotypes of its time, and modern productions usually foreground this tension.',
       },
+      {
+        type: 'quote',
+        text: 'I would my daughter were dead at my foot,\nand the jewels in her ear',
+        note: "Shylock - Act 3, Scene 1. Often cited as evidence of Shylock's cruelty, but spoken in extreme grief and anger. The hyperbole reveals a man pushed beyond endurance by betrayal. It can also be read as an expression of how much Jessica's loss has devastated him.",
+      },
     ],
     'actii-scenevii': [
       {
@@ -2989,6 +3124,16 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'theme',
         text: 'All that glisters is not gold',
         note: 'Appearance and the caskets. The scroll inside the gold casket, “All that glisters is not gold,” has become proverbial.',
+      },
+      {
+        type: 'quote',
+        text: 'All that glisters is not gold',
+        note: "Scroll in the gold casket - Act 2, Scene 7. A proverb warning against superficial judgement. Morocco chose gold because it seemed most worthy, but found a death's head inside. The casket test is designed to expose those who judge by outward show.",
+      },
+      {
+        type: 'quote',
+        text: 'Who chooseth me must give and hazard all he hath',
+        note: "Inscription on the lead casket - Act 2, Scene 7. The lead casket demands sacrifice and risk -- the opposite of greed. 'Hazard' means to gamble everything. Only Bassanio is willing to accept this, suggesting true love requires vulnerability.",
       },
       {
         type: 'character',
@@ -3033,6 +3178,21 @@ export const TEXT_ANNOTATIONS: Readonly<
         note: 'Mercy and justice. The play’s most quoted speech, Portia’s “The quality of mercy is not strained,” sets up mercy as an almost divine attribute that “blesseth him that gives and him that takes.” Yet the trial scene complicates the theme: Shylock refuses mercy, Portia defeats him on the strictest letter of the law, and the “merciful” outcome imposed on Shylock includes forced conversion and the loss of his estate.',
       },
       {
+        type: 'quote',
+        text: 'I am a tainted wether of the flock,\nMeetest for death',
+        note: "Antonio - Act 4, Scene 1. Antonio compares himself to a sick castrated ram ('wether') -- the weakest in the flock. This biblical imagery shows his acceptance of sacrifice and martyrdom. His willingness to die for Bassanio echoes Christian ideals of selfless love, but also suggests passive resignation.",
+      },
+      {
+        type: 'quote',
+        text: 'I crave the law,\nThe penalty and forfeit of my bond',
+        note: "Shylock - Act 4, Scene 1. Shylock insists on strict legal justice. 'Crave' suggests desperate need -- the law is all he has in a society that denies him equality. His legalism is villainous but also a rational response to a system that offers him no mercy.",
+      },
+      {
+        type: 'quote',
+        text: 'Tarry a little, there is something else.\nThis bond doth give thee here no jot of blood',
+        note: "Portia - Act 4, Scene 1. The dramatic turning point. 'Tarry a little' -- a devastatingly casual introduction to the technicality that destroys Shylock. Portia has been building to this moment, allowing Shylock to commit fully before springing the trap.",
+      },
+      {
         type: 'language',
         text: 'The quality of mercy is not strain’d,\nIt droppeth as the gentle rain from heaven',
         note: 'The mercy speech: "The quality of mercy is not strain\'d; / It droppeth as the gentle rain from heaven." Portia uses natural imagery, religious language, and balanced rhetoric to argue that mercy is divine - superior to earthly justice.',
@@ -3044,12 +3204,55 @@ export const TEXT_ANNOTATIONS: Readonly<
         text: 'How far that little candle throws his beams!\nSo shines a good deed in a naughty world',
         note: 'Portia — Act 5, Scene 1. Portia’s image as she returns to Belmont uses a single candle in darkness to represent the power of a good action in a corrupt society. Shakespeare invests the small visual detail with ethical weight: goodness, like the candle, is modest but essential. Placed after the trial, the line invites the audience to measure how “good” the deeds of Act 4 have really been, keeping the play’s moral questions alive into the comic ending.',
       },
+      {
+        type: 'quote',
+        text: 'Let me give light, but let me not be light',
+        note: "Portia - Act 5, Scene 1. A pun on 'light' (illumination vs wanton). Portia controls language as she controls situations. The wordplay reasserts her wit and intelligence in the play's resolution.",
+      },
+      {
+        type: 'quote',
+        text: 'The moon shines bright. In such a night as this',
+        note: 'Lorenzo - Act 5, Scene 1. Opens the lyrical final scene. Lorenzo and Jessica compare themselves to famous mythological lovers -- all of whose stories ended tragically (Troilus and Cressida, Pyramus and Thisbe, Dido and Aeneas). The beauty of the language masks dark undertones.',
+      },
+      {
+        type: 'quote',
+        text: 'I am never merry when I hear sweet music',
+        note: "Jessica - Act 5, Scene 1. A melancholy line amid the celebrations. Jessica's sadness may reflect guilt about her father, alienation from both Jewish and Christian worlds, or awareness that her happiness has come at a terrible cost.",
+      },
     ],
     'actii-scenei': [
       {
         type: 'theme',
         text: 'Mislike me not for my complexion',
         note: 'Prejudice and otherness. The Prince of Morocco’s arrival at Belmont — “Mislike me not for my complexion” — shows that racial prejudice is not confined to Venice or to Jewish characters, making otherness a structural concern of the whole play.',
+      },
+    ],
+    'actiii-scenev': [
+      {
+        type: 'quote',
+        text: 'I shall be saved by my husband. He hath made me a Christian',
+        note: "Jessica - Act 3, Scene 5. A deeply ironic line. Jessica claims salvation through conversion, but the forced nature of religious identity change is troubling. 'Made me' suggests passivity -- she has traded one form of control (her father's) for another (her husband's).",
+      },
+    ],
+    'actii-sceneviii': [
+      {
+        type: 'quote',
+        text: 'My daughter! O my ducats! O my daughter!\nFled with a Christian! O my Christian ducats',
+        note: "Shylock (reported by Solanio) - Act 2, Scene 8. The interweaving of 'daughter' and 'ducats' is often read as Shylock valuing money equally with his child. However, this is reported mockingly by Solanio, who may be exaggerating. The repetition suggests overwhelming grief where all losses blur together.",
+      },
+    ],
+    'actiii-sceneiv': [
+      {
+        type: 'quote',
+        text: 'I’ll prove the prettier fellow of the two,\nAnd wear my dagger with the braver grace',
+        note: "Portia - Act 3, Scene 4. Portia playfully claims she will be a more convincing man than actual men. The confidence and wit here is characteristic. 'Braver grace' puns on courage and elegance, suggesting she can outperform men in traditionally masculine roles.",
+      },
+    ],
+    'actii-sceneii': [
+      {
+        type: 'quote',
+        text: 'it\nis a wise father that knows his own child',
+        note: "Lancelot - Act 2, Scene 2. Spoken as comedy (Old Gobbo doesn't recognise Lancelot), but it resonates with the Shylock-Jessica plot. Shylock 'knows' Jessica is his daughter but doesn't truly understand her. The proverb inverts: can a child truly know their parent?",
       },
     ],
   },
@@ -3115,6 +3318,21 @@ export const TEXT_ANNOTATIONS: Readonly<
         text: 'destructive to the logical faculty',
         note: 'Reason versus emotion (Holmes and Watson). Holmes insists that "detection is, or ought to be, an exact science" and warns that emotion is "destructive to the logical faculty." Watson, however, falls in love, feels pity, and responds to suffering with sympathy.',
       },
+      {
+        type: 'quote',
+        text: 'I abhor the dull routine of existence. I crave for mental exaltation',
+        note: "Holmes. Establishes Holmes's central conflict - his extraordinary intellect makes ordinary life unbearable. 'Abhor' and 'crave' are extreme verbs that reveal the intensity of his need. This drives his cocaine use and frames the entire novel as Holmes's search for stimulation. Conan Doyle suggests that genius comes at a psychological cost.",
+      },
+      {
+        type: 'quote',
+        text: 'Detection is, or ought to be, an exact science',
+        note: "Holmes. Holmes's manifesto for scientific rationalism. The qualifying 'or ought to be' acknowledges that it is not yet fully scientific, revealing both ambition and frustration. This connects to Victorian faith in science and progress, while the novel itself subtly undermines Holmes's claim by showing that human cases involve messy emotions that resist scientific categorisation.",
+      },
+      {
+        type: 'quote',
+        text: 'Eliminate all other factors, and the one which remains must be the truth',
+        note: "Holmes. One of Holmes's most famous deductive principles. The logic is elegant but deceptively simple - it assumes one can identify and eliminate all other factors, which in complex human situations is rarely possible. This maxim reflects Victorian confidence in scientific method while the novel's messy human realities quietly undermine it.",
+      },
     ],
     'section-6': [
       {
@@ -3133,6 +3351,56 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'quote',
         text: 'Women are never to be entirely trusted,—not the best of them',
         note: 'Holmes — Chapter 2. A striking piece of Holmesian misogyny, immediately qualified by Watson’s love for Mary. The novella stages the limits of Holmes’s reason by having his general principle fail against an individual case.',
+      },
+    ],
+    'section-2': [
+      {
+        type: 'quote',
+        text: 'The emotional qualities are antagonistic to clear reasoning',
+        note: "Holmes. Holmes states his philosophy bluntly - emotion is the enemy of logic. 'Antagonistic' frames the relationship as a war between two incompatible forces. However, the novel complicates this: Watson's emotional engagement with Mary leads to happiness, while Holmes's suppression of emotion leads him back to cocaine. Conan Doyle suggests Holmes is wrong.",
+      },
+      {
+        type: 'quote',
+        text: 'What a very attractive woman',
+        note: "Watson (on first seeing Mary Morstan). Watson's immediate emotional response to Mary contrasts with Holmes's purely analytical assessment of her. Where Holmes catalogues physical details as data, Watson responds with feeling. This simple exclamation establishes the Watson-Mary romance and the reason-emotion duality that structures the entire novel.",
+      },
+      {
+        type: 'theme',
+        text: 'The emotional qualities are antagonistic to clear reasoning',
+        note: "Holmes prizes pure logic and dismisses emotion as a weakness: 'the emotional qualities are antagonistic to clear reasoning.' Watson, by contrast, falls in love with Mary and acts from compassion and empathy.",
+      },
+    ],
+    'section-7': [
+      {
+        type: 'quote',
+        text: 'How small we feel with our petty ambitions and strivings in the presence of the great elemental forces of nature',
+        note: "Watson. Watson's reflection during the Thames chase reveals his capacity for wonder and emotional depth - qualities Holmes entirely lacks. The contrast between 'petty ambitions' (the treasure hunt) and 'elemental forces' (nature, love) suggests that Watson grasps a deeper truth about human insignificance that Holmes's rational framework cannot access.",
+      },
+    ],
+    'section-3': [
+      {
+        type: 'quote',
+        text: 'It was a September evening, and not yet seven o’clock, but the day had been a dreary one, and a dense drizzly fog lay low upon the great city',
+        note: "Watson (narrating). Classic Victorian atmosphere-building. The fog operates as pathetic fallacy, reflecting the confusion and concealment central to the plot. 'Dense' and 'drizzly' create heaviness and discomfort. The fog literally and metaphorically obscures the truth. London becomes a Gothic landscape where danger hides in every shadow.",
+      },
+    ],
+    'section-12': [
+      {
+        type: 'quote',
+        text: 'It is my treasure; and if I can’t have the loot I’ll take darned good care that no one else does',
+        note: "Jonathan Small. Small's declaration as he throws the treasure into the Thames. The possessive 'my treasure' reveals his sense of entitlement - though the treasure was itself stolen. The colloquial 'loot' and 'darned' contrast with the formal language of other characters, marking Small's working-class status. His act is simultaneously petty revenge and a kind of rough justice.",
+      },
+      {
+        type: 'quote',
+        text: 'You have done all the work in this business. I get a wife out of it, Jones gets the credit, pray what remains for you',
+        note: "Watson. Watson's question to Holmes at the novel's end. Holmes's answer - reaching for the cocaine bottle - is devastating. The three outcomes neatly summarise the characters: Watson gains love (emotion), Jones gains reputation (social status), and Holmes gains nothing that matters to a human being, only the satisfaction of a solved puzzle. The implication is that Holmes's dedication to reason has cost him the ability to find meaning in life.",
+      },
+    ],
+    'section-11': [
+      {
+        type: 'quote',
+        text: 'Whoever had lost a treasure, I knew that night that I had gained one',
+        note: "Watson. Watson's declaration when he proposes to Mary. The wordplay on 'treasure' contrasts material wealth (the Agra jewels) with emotional wealth (love). Conan Doyle explicitly argues that human connection is more valuable than gold. The parallel structure ('lost a treasure... gained one') makes this a thesis statement for the novel's moral framework.",
       },
     ],
   },
