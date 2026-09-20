@@ -8,6 +8,32 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const nextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
+
+  // ─── AI crawlers get the <head> before the body ───────────────────────────
+  //
+  // THE DEFECT (measured 20 September 2026 across all 1,303 sitemap URLs). Next
+  // 15 STREAMS metadata: for a normal visitor the shell is flushed immediately
+  // and <title>, the meta description and the canonical arrive later, which is
+  // faster and entirely correct for a browser. On 1,111 of 1,303 pages (85.3%)
+  // the <title> therefore lands OUTSIDE </head> - median byte 58,251, and at
+  // byte 723,817 on the longest reader page.
+  //
+  // Next already handles this for crawlers that do not execute JavaScript, by
+  // blocking the response until metadata is resolved for any user agent
+  // matching `htmlLimitedBots`. Its default list is from the social/search era:
+  // Bingbot, Applebot, Twitterbot, Slackbot, facebookexternalhit, and so on.
+  //
+  // It contains none of the AI answer engines. Verified by fetching
+  // /revision/texts/macbeth as GPTBot, ClaudeBot and PerplexityBot: all three
+  // received </head> at byte 8,558 and the <title> at byte 79,278. They index
+  // what they are given and do not render, so for GEO purposes those pages have
+  // no title, no description and no canonical at all.
+  //
+  // This is Next's default string PLUS that cohort. Googlebot is deliberately
+  // absent: it renders JavaScript, so blocking the stream for it would cost
+  // real speed on the surface where speed is a ranking factor, and gain nothing.
+  htmlLimitedBots:
+    /[\w-]+-Google|Google-[\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight|GPTBot|OAI-SearchBot|ChatGPT-User|ClaudeBot|Claude-SearchBot|Claude-User|anthropic-ai|PerplexityBot|Perplexity-User|Amazonbot|Bytespider|CCBot|meta-externalagent|meta-externalfetcher|Diffbot|omgili|YouBot|cohere-ai|Timpibot|ImagesiftBot/i,
   typescript: {
     // Vercel Pro provides 8 GB build memory — re-enabled type checking
     // during builds (was disabled on Hobby due to OOM). CI/CD also checks.
