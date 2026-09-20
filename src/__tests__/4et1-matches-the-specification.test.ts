@@ -158,8 +158,18 @@ describe('nothing is claimed for 4ET1 that it does not prescribe', () => {
     'the-bright-lights-of-sarajevo',
     'still-i-rise',
     'out-out',
-  ])('%s is Language A only, because anthology Part 2 is not on the Literature paper', (slug) => {
+  ])('%s is not on the Literature paper, because anthology Part 2 is not', (slug) => {
     const text = SET_TEXTS.find((t) => t.slug === slug)
-    expect(text?.boards).toEqual(['edexcel-igcse-lang'])
+    expect(text, `${slug} has vanished from the data`).toBeTruthy()
+    // What this is actually about: the 4ET1 Literature tag, which these must
+    // not carry. It used to assert the whole array equalled
+    // ['edexcel-igcse-lang'], which said something much stronger and untrue -
+    // "Out, Out-" is also an OCR GCSE poem and an Edexcel A-Level one, both
+    // read off those boards' own documents on 20 September 2026. Pinning the
+    // array meant verifying any unrelated board broke a test about this one.
+    expect(text!.boards, `${slug} is tagged to the 4ET1 Literature paper`).not.toContain(
+      'edexcel-igcse',
+    )
+    expect(text!.boards, `${slug} has lost its Language A tag`).toContain('edexcel-igcse-lang')
   })
 })

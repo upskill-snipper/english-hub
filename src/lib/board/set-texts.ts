@@ -67,7 +67,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'The Tempest',
     author: 'William Shakespeare',
     category: 'shakespeare',
-    boards: ['aqa', 'edexcel'], // OCR prescribes four Shakespeare plays and this is not one. Edexcel does prescribe it.
+    boards: ['aqa', 'edexcel', 'ocr-a-level', 'eduqas-a-level'], // OCR prescribes four Shakespeare plays and this is not one. Edexcel does prescribe it.
     copyrightStatus: 'public-domain',
   },
   {
@@ -83,7 +83,14 @@ export const SET_TEXTS: SetText[] = [
     title: 'Othello',
     author: 'William Shakespeare',
     category: 'shakespeare',
-    boards: ['eduqas', 'aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level'],
+    boards: [
+      'eduqas',
+      'aqa-a-level',
+      'edexcel-a-level',
+      'ocr-a-level',
+      'eduqas-a-level',
+      'ial-edexcel',
+    ],
     copyrightStatus: 'public-domain',
   },
   {
@@ -99,7 +106,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Twelfth Night',
     author: 'William Shakespeare',
     category: 'shakespeare',
-    boards: ['edexcel', 'eduqas'], // Eduqas added it for assessment from 2025, replacing Henry V.
+    boards: ['edexcel', 'eduqas', 'ial-edexcel', 'edexcel-a-level'], // Eduqas added it for assessment from 2025, replacing Henry V.
     copyrightStatus: 'public-domain',
   },
 
@@ -133,7 +140,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Jane Eyre',
     author: 'Charlotte Brontë',
     category: '19th-century',
-    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'ial-edexcel'], // Prescribed by Edexcel and Eduqas as well; both were missing.
+    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'aqa-a-level', 'ocr-a-level'], // Prescribed by Edexcel and Eduqas as well; both were missing.
     copyrightStatus: 'public-domain',
   },
   {
@@ -141,7 +148,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Frankenstein',
     author: 'Mary Shelley',
     category: '19th-century',
-    boards: ['aqa', 'edexcel', 'ial-edexcel'], // Zero occurrences of Frankenstein in the OCR J352 specification.
+    boards: ['aqa', 'edexcel', 'ial-edexcel', 'edexcel-a-level', 'ocr-a-level'], // Zero occurrences of Frankenstein in the OCR J352 specification.
     copyrightStatus: 'public-domain',
   },
   {
@@ -149,7 +156,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Pride and Prejudice',
     author: 'Jane Austen',
     category: '19th-century',
-    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'ial-edexcel', 'edexcel-igcse', 'cambridge-0475'],
+    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse', 'cambridge-0475'],
     copyrightStatus: 'public-domain',
   },
   {
@@ -173,7 +180,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'The War of the Worlds',
     author: 'H.G. Wells',
     category: '19th-century',
-    boards: ['ocr', 'eduqas'],
+    boards: ['ocr', 'eduqas', 'edexcel-a-level'],
     copyrightStatus: 'public-domain',
   },
 
@@ -273,7 +280,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Never Let Me Go',
     author: 'Kazuo Ishiguro',
     category: 'modern',
-    boards: ['ocr'], // AQA examined it for the last time in summer 2024. OCR does prescribe it, and we were not tagging the one board that still teaches it.
+    boards: ['ocr', 'ial-edexcel', 'edexcel-a-level'], // AQA examined it for the last time in summer 2024. OCR does prescribe it, and we were not tagging the one board that still teaches it.
     copyrightStatus: 'copyright',
   },
 
@@ -299,14 +306,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Antony and Cleopatra',
     author: 'William Shakespeare',
     category: 'shakespeare',
-    boards: [
-      'aqa-a-level',
-      'edexcel-a-level',
-      'ocr-a-level',
-      'eduqas-a-level',
-      'ial-edexcel',
-      'cambridge-0475',
-    ],
+    boards: ['edexcel-a-level', 'eduqas-a-level', 'cambridge-0475'],
     copyrightStatus: 'public-domain',
   },
 
@@ -316,7 +316,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'The Waste Land',
     author: 'T.S. Eliot',
     category: 'poetry-anthology',
-    boards: ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level', 'ial-edexcel'],
+    boards: ['edexcel-a-level', 'ocr-a-level', 'eduqas-a-level'],
     copyrightStatus: 'copyright',
   },
   {
@@ -324,7 +324,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'A Streetcar Named Desire',
     author: 'Tennessee Williams',
     category: 'modern',
-    boards: ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level', 'ial-edexcel'],
+    boards: ['aqa-a-level', 'edexcel-a-level', 'eduqas-a-level', 'ial-edexcel'],
     copyrightStatus: 'copyright',
   },
   {
@@ -340,7 +340,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'The Great Gatsby',
     author: 'F. Scott Fitzgerald',
     category: 'modern',
-    boards: ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level', 'ial-edexcel'],
+    boards: ['aqa-a-level', 'ocr-a-level', 'eduqas-a-level'],
     copyrightStatus: 'public-domain',
   },
   {
@@ -348,7 +348,7 @@ export const SET_TEXTS: SetText[] = [
     title: "A Doll's House",
     author: 'Henrik Ibsen',
     category: 'modern',
-    boards: ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level', 'ial-edexcel'],
+    boards: ['aqa-a-level', 'ocr-a-level'],
     copyrightStatus: 'public-domain',
   },
 
@@ -513,7 +513,7 @@ export const SET_TEXTS: SetText[] = [
     title: "'Out, Out-'",
     author: 'Robert Frost',
     category: 'poetry-anthology',
-    boards: ['edexcel-igcse-lang'],
+    boards: ['edexcel-igcse-lang', 'ocr', 'edexcel-a-level'],
     // Frost died 1963; UK copyright (CDPA 1988 §12: life + 70 years) expires
     // 31 December 2033. Public domain in the United States, but NOT in the UK.
     copyrightStatus: 'copyright',
@@ -611,7 +611,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'War Photographer',
     author: 'Carol Ann Duffy (b. 1955)',
     category: 'poetry-anthology',
-    boards: ['edexcel-igcse'],
+    boards: ['edexcel-igcse', 'aqa'],
     copyrightStatus: 'copyright',
     year: '1985',
     keyThemes: ['War', 'Suffering', 'Moral responsibility', 'Detachment'],
@@ -691,7 +691,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'My Last Duchess',
     author: 'Robert Browning',
     category: 'poetry-anthology',
-    boards: ['edexcel-igcse'],
+    boards: ['edexcel-igcse', 'aqa', 'edexcel', 'ial-edexcel', 'aqa-a-level', 'edexcel-a-level'],
     copyrightStatus: 'public-domain',
     year: '1842',
     keyThemes: ['Power', 'Jealousy', 'Control', 'Possession'],
@@ -945,7 +945,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'La Belle Dame sans Merci',
     author: 'John Keats (1795-1821)',
     category: 'poetry-anthology',
-    boards: ['edexcel-igcse'],
+    boards: ['edexcel-igcse', 'edexcel', 'aqa-a-level'],
     // Keats died 1821, so UK copyright (CDPA 1988 s12: life + 70) lapsed long
     // ago. Publishable in full.
     copyrightStatus: 'public-domain',
@@ -964,7 +964,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'The Tyger',
     author: 'William Blake (1757-1827)',
     category: 'poetry-anthology',
-    boards: ['edexcel-igcse'],
+    boards: ['edexcel-igcse', 'ial-edexcel', 'edexcel-a-level', 'eduqas-a-level'],
     copyrightStatus: 'public-domain',
     year: '1794',
   },
@@ -973,7 +973,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Half-caste',
     author: 'John Agard (b. 1949)',
     category: 'poetry-anthology',
-    boards: ['edexcel-igcse'],
+    boards: ['edexcel-igcse', 'edexcel'],
     copyrightStatus: 'copyright',
   },
   {
@@ -981,7 +981,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Remember',
     author: 'Christina Rossetti (1830-1894)',
     category: 'poetry-anthology',
-    boards: ['edexcel-igcse'],
+    boards: ['edexcel-igcse', 'ial-edexcel', 'edexcel-a-level', 'eduqas-a-level'],
     copyrightStatus: 'public-domain',
     year: '1862',
   },
@@ -1152,7 +1152,7 @@ export const SET_TEXTS: SetText[] = [
     title: "Journey's End",
     author: 'R C Sherriff (1896-1975)',
     category: 'modern',
-    boards: ['edexcel'],
+    boards: ['edexcel', 'aqa-a-level'],
     copyrightStatus: 'copyright',
   },
   {
@@ -1209,7 +1209,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'Oranges are not the Only Fruit',
     author: 'Jeanette Winterson (b. 1959)',
     category: 'modern',
-    boards: ['eduqas'],
+    boards: ['eduqas', 'aqa-a-level', 'ocr-a-level'],
     copyrightStatus: 'copyright',
   },
   {
@@ -1260,7 +1260,7 @@ export const SET_TEXTS: SetText[] = [
     title: "A Midsummer Night's Dream",
     author: 'William Shakespeare',
     category: 'shakespeare',
-    boards: ['cambridge-0475'],
+    boards: ['cambridge-0475', 'edexcel-a-level'],
     copyrightStatus: 'public-domain',
   },
   {

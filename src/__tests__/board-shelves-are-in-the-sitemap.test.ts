@@ -94,8 +94,13 @@ describe('an unverified shelf is not submitted, and that is a correction', () =>
     }
   })
 
-  it('and they really do carry the same nine texts', () => {
-    // The evidence for the claim above, asserted rather than asserted-in-prose.
+  it('no longer carry one blanket list across all four', () => {
+    // THIS ASSERTED THE OPPOSITE UNTIL 20 SEPTEMBER 2026, and was right to: the
+    // four A-Level boards carried a byte-identical nine-text array, which is
+    // the signature of blanket tagging rather than four researched lists. The
+    // five A-Level and IAL specifications have now been read, which produced 32
+    // corrections - 24 texts added, 8 removed - so the four lists genuinely
+    // differ and this asserts the fix rather than the defect.
     const aLevel = ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level'] as const
     const lists = aLevel.map((b) =>
       buildShelf(b)
@@ -103,8 +108,28 @@ describe('an unverified shelf is not submitted, and that is a correction', () =>
         .sort()
         .join(','),
     )
-    expect(new Set(lists).size, 'the four A-Level lists differ, so re-check this').toBe(1)
-    expect(buildShelf('aqa-a-level')).toHaveLength(9)
+    expect(new Set(lists).size, 'the four A-Level lists are identical again').toBe(4)
+    for (const board of aLevel) {
+      expect(buildShelf(board).length, `${board} has an empty shelf`).toBeGreaterThan(5)
+    }
+  })
+
+  it('but stay out of the sitemap, because no list here can test them', () => {
+    // The distinction that matters, and the reason the block above still holds.
+    // "Verified" in this codebase means a list in prescribed-texts.ts that a
+    // test can check every tag against. The A-Level tags are now evidence-based
+    // - each change cites the awarding body's own specification and page - but
+    // no such list is modelled for them, so nothing would catch the next drift.
+    // Asking Google to crawl a shelf we cannot re-check is the thing this file
+    // exists to stop.
+    for (const board of [
+      'aqa-a-level',
+      'edexcel-a-level',
+      'ocr-a-level',
+      'eduqas-a-level',
+    ] as const) {
+      expect(shelfIsVerified(board), `${board} is now claimed as verified`).toBe(false)
+    }
   })
 
   it('none of them is in the sitemap', async () => {

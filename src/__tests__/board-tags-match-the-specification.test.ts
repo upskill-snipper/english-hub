@@ -148,20 +148,54 @@ describe('the boards whose specification has not been read', () => {
     ])
   })
 
-  it('still carries the blanket-tagged A-Level array, which is a known defect', () => {
-    // Nine texts share a byte-identical five-board array across four awarding
-    // bodies with different component structures. That is the signature of
-    // blanket tagging, not of four researched lists. Pinned here so it is
-    // visible in the suite until the four specifications are read, rather than
-    // sitting silently in the data.
+  it('no longer carries the blanket-tagged A-Level array', () => {
+    // THE DEFECT THIS PINNED, and the fix. Nine texts shared a byte-identical
+    // five-board array across four awarding bodies with different component
+    // structures - the signature of blanket tagging, not of four researched
+    // lists. It was recorded here so it stayed visible in the suite until the
+    // specifications were read.
+    //
+    // They were read on 20 September 2026, one agent per board against the
+    // awarding bodies' own PDFs, every proposed change then checked by a second
+    // agent instructed to refute it. That produced 32 corrections across the
+    // five A-Level and IAL lists: 24 texts added, 8 removed. Six of the
+    // removals were Edexcel IAL alone, which had been tagged to six texts it
+    // does not prescribe.
+    //
+    // So this now asserts the fix. If the four lists ever become identical
+    // again, something has re-applied a blanket.
     const aLevel = SET_TEXTS.filter((t) => t.boards.includes('aqa-a-level'))
-    expect(aLevel.length).toBe(9)
+    expect(aLevel.length, 'the AQA A-Level shelf has emptied').toBeGreaterThan(8)
     const identical = aLevel.filter(
       (t) =>
         t.boards.includes('edexcel-a-level') &&
         t.boards.includes('ocr-a-level') &&
         t.boards.includes('eduqas-a-level'),
     )
-    expect(identical.length).toBe(9)
+    expect(
+      identical.length,
+      'every AQA A-Level text carries all four boards again, which is a blanket',
+    ).toBeLessThan(aLevel.length)
+  })
+
+  it('and the five A-Level lists are genuinely different from one another', () => {
+    // The counterweight. Removing one text from one board would satisfy the
+    // assertion above while leaving the blanket essentially intact.
+    const boards = [
+      'aqa-a-level',
+      'edexcel-a-level',
+      'ocr-a-level',
+      'eduqas-a-level',
+      'ial-edexcel',
+    ] as const
+    const signatures = boards.map((b) =>
+      SET_TEXTS.filter((t) => t.boards.includes(b))
+        .map((t) => t.slug)
+        .sort()
+        .join(','),
+    )
+    expect(new Set(signatures).size, 'two A-Level boards still hold an identical list').toBe(
+      boards.length,
+    )
   })
 })

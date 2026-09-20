@@ -51,17 +51,25 @@
  * unseen-passage and directed-writing qualifications, and that is correct by
  * design rather than a gap to fill.
  *
- * Still NOT verified, and not to be treated as though they were: Edexcel IAL,
- * the four UK A-Levels and KS3. The four A-Level boards in particular carry a
- * byte-identical nine-text tag array in our data, which is the signature of
- * blanket tagging rather than four researched lists.
+ * KS3 is still not verified and has no awarding body to verify against.
  *
- * WHAT THIS FILE DELIBERATELY DOES NOT MODEL. Anthology poems, and anything
- * that changes between exam series. Eduqas replaces its entire poetry anthology
- * between summer 2026 and summer 2027 with no poem in common, and Cambridge
- * rotates 0475 every year. A flat list per board cannot express either, so
- * rather than encode something that would be wrong within twelve months, this
- * covers whole prose, drama and Shakespeare texts only and says so.
+ * EDEXCEL IAL AND THE FOUR UK A-LEVELS WERE VERIFIED ON 20 SEPTEMBER 2026, and
+ * the paragraph here used to say they were not. The suspicion recorded in it
+ * was right: the four A-Level boards carried a byte-identical nine-text tag
+ * array, the signature of blanket tagging rather than four researched lists.
+ * Reading the five specifications produced 32 corrections - 24 texts added and
+ * 8 removed - including a text on three A-Level lists that was on none of them
+ * and six tagged to Edexcel IAL that it does not prescribe. Those lists are
+ * NOT modelled here: they were applied directly to the board tags, and the
+ * evidence for each, quoting the specification and its page, is in the commit
+ * that made the change.
+ *
+ * WHAT THIS FILE DELIBERATELY DOES NOT MODEL. Anything that changes between
+ * exam series. Eduqas replaces its entire poetry anthology between summer 2026
+ * and summer 2027 with no poem in common, and Cambridge rotates 0475 every
+ * year. A flat list per board cannot express either, so rather than encode
+ * something that would be wrong within twelve months, this stays silent about
+ * them and `anthologyPoems` below records why Eduqas has no poem list.
  */
 
 import type { ExamBoard } from './board-config'
@@ -76,11 +84,34 @@ export interface PrescribedList {
   readOn: string
   /**
    * Prescribed whole texts, by the title the specification prints.
-   * Anthology poems are out of scope: see the docblock.
    */
   shakespeare: string[]
   nineteenthCentury: string[]
   modern: string[]
+  /**
+   * Anthology poems, VERIFIED INDIVIDUALLY and never as a cluster.
+   *
+   * The docblock above used to say anthology poems were out of scope
+   * altogether, and the reason was sound: a flat list cannot express a rotating
+   * anthology, and Eduqas replaces its entire poetry selection between the 2026
+   * and 2027 series with no poem in common. But the consequence was that no
+   * poem could carry a GCSE board tag at all, so an AQA student got no shelf
+   * entry for My Last Duchess, which is on their paper.
+   *
+   * So this list is NOT a cluster and does not claim to be complete. It holds
+   * the poems whose presence on a CURRENT series has been read off the awarding
+   * body's own document, one at a time, with the document named. The test reads
+   * it to answer one question - is every tag we hold prescribed? - which is
+   * exactly what a partial list can answer honestly.
+   *
+   * EDUQAS IS DELIBERATELY ABSENT. Two of its poems were verified to the same
+   * standard on 20 September 2026, and both were read off the anthology "for
+   * assessment from 2027". The cohort sitting in summer 2026 uses the old
+   * anthology. Tagging them now would be right for one cohort and wrong for the
+   * one that sits the exam first, and that needs a series-aware model rather
+   * than another row here.
+   */
+  anthologyPoems?: string[]
 }
 
 export const PRESCRIBED: PrescribedList[] = [
@@ -123,6 +154,12 @@ export const PRESCRIBED: PrescribedList[] = [
       'Leave Taking',
       'My Name is Leon',
     ],
+    // Verified individually on 20 September 2026 against AQA's own
+    // documents, not a cluster list: 'Past and present: poetry anthology'
+    // (8702, v1.2) and the June 2023 8702/2 question paper, which prints the
+    // Power and conflict contents block. AQA's 2023 change guide withdrew
+    // three modern prose/drama texts and no poetry.
+    anthologyPoems: ['My Last Duchess', 'War Photographer'],
   },
   {
     board: 'edexcel',
@@ -161,6 +198,11 @@ export const PRESCRIBED: PrescribedList[] = [
       'Coram Boy',
       "Boys Don't Cry",
     ],
+    // Verified individually on 20 September 2026 from Appendix 3, 'Poetry
+    // Anthology lists', of the 1ET0 specification PDF above (Issue 2, June
+    // 2019), cross-checked against the Pearson GCSE (9-1) English Literature
+    // Poetry Anthology, Issue 4, January 2023.
+    anthologyPoems: ['My Last Duchess', 'La Belle Dame sans Merci', 'Half-caste'],
   },
   {
     board: 'ocr',
@@ -192,6 +234,10 @@ export const PRESCRIBED: PrescribedList[] = [
       'DNA',
       'Leave Taking',
     ],
+    // Verified individually on 20 September 2026 from OCR's own mark scheme
+    // for J352/02 'Exploring poetry and Shakespeare', June 2024, whose
+    // 'Possible poems might include' list names Robert Frost, 'Out, Out - '.
+    anthologyPoems: ["'Out, Out-'"],
   },
   {
     board: 'eduqas',
@@ -233,11 +279,23 @@ export const PRESCRIBED: PrescribedList[] = [
   },
 ]
 
-/** Every whole text a board prescribes, flattened. */
+/**
+ * Every text a board prescribes that we have verified, flattened.
+ *
+ * The anthology poems are included because the one question this answers is
+ * "is every tag we hold prescribed?", and a poem tag has to be answerable too.
+ * The list is not complete for poems and does not pretend to be: see
+ * `anthologyPoems`.
+ */
 export function prescribedTitles(board: ExamBoard): string[] | null {
   const list = PRESCRIBED.find((p) => p.board === board)
   if (!list) return null
-  return [...list.shakespeare, ...list.nineteenthCentury, ...list.modern]
+  return [
+    ...list.shakespeare,
+    ...list.nineteenthCentury,
+    ...list.modern,
+    ...(list.anthologyPoems ?? []),
+  ]
 }
 
 /** The boards whose specification has actually been read. */
