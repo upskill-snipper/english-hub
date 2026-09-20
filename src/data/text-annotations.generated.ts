@@ -1047,11 +1047,6 @@ export const TEXT_ANNOTATIONS: Readonly<
     poem: [
       {
         type: 'context',
-        text: 'La Belle Dame sans Merci',
-        note: 'La Belle Dame sans Merci - John Keats (1819) Version note: The Edexcel IGCSE anthology uses the 1820 Indicator version of the poem (with "knight-at-arms").',
-      },
-      {
-        type: 'context',
         text: 'Alone and palely loitering',
         note: 'An unnamed speaker encounters a "knight-at-arms" who is "alone and palely loitering" in a barren landscape.',
       },
