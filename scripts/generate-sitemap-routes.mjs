@@ -75,10 +75,19 @@ const NOINDEX_PREFIXES = [
 // above; its layout still carries a self-canonical, which never ships because
 // the page 307s before rendering.
 
-// /marking root is a client-side tool hub (no metadata) — excluded from the
-// sitemap, but /marking/sample/** and /marking/ai-explainer are public
-// marketing/demo content and stay in.
-const EXACT_EXCLUDE = new Set(['/marking'])
+// /marking USED TO BE EXCLUDED because it was "a client-side tool hub (no
+// metadata)". The premise was true and the conclusion followed from it: a page
+// with no metadata inherits the root's, which meant /marking told Google it was
+// a duplicate of the homepage. Submitting that would have been worse than
+// leaving it out.
+//
+// It now has its own metadata and a self-canonical, so the reason is gone
+// (src/app/marking/layout.tsx, 20 September 2026). It is the flagship paid
+// feature, it renders <h1>AI Essay Marking</h1>, and a full crawl found 787
+// internal links pointing at it - more than any page outside the primary nav.
+// /marking/submit and /marking/history remain excluded above: those are
+// logged-in tools, not landing pages.
+const EXACT_EXCLUDE = new Set([])
 
 const matchesPrefix = (route, prefixes) =>
   prefixes.some((p) => route === p || route.startsWith(p + '/'))
