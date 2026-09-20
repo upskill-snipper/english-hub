@@ -6,7 +6,7 @@ import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
-import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { GeoFaq, type GeoFaqItem } from '@/components/seo/GeoFaq'
 import { t } from '@/lib/i18n/t'
 
@@ -795,17 +795,7 @@ export default async function AnInspectorCallsPage() {
         audienceRole="student"
         isAccessibleForFree={true}
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Set texts', url: 'https://theenglishhub.app/revision/texts' },
-          {
-            name: 'An Inspector Calls',
-            url: 'https://theenglishhub.app/revision/texts/an-inspector-calls',
-          },
-        ]}
-      />
+
       <section aria-labelledby="aic-direct-answer" className="mx-auto mt-8 max-w-3xl px-4">
         <h2 id="aic-direct-answer" className="sr-only">
           An Inspector Calls: quick summary

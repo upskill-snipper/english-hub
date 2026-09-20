@@ -6,7 +6,6 @@ import { ArrowLeft, BookOpen, FileText, Lightbulb, Sparkles } from 'lucide-react
 import StudyTools from '@/components/study/StudyTools'
 import { useT } from '@/lib/i18n/use-t'
 
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ────────────────────────────────────────────────────────────────────── */
 /*  Data                                                                 */
 /* ────────────────────────────────────────────────────────────────────── */
@@ -251,21 +250,6 @@ export default function LOTFEssayPlansPage() {
   const tParagraphTpl = t('rev.texts.common.paragraph_n_dash')
   return (
     <div className="min-h-screen bg-background">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
-          {
-            name: 'Lord of the Flies',
-            url: 'https://theenglishhub.app/revision/texts/lord-of-the-flies',
-          },
-          {
-            name: 'Essay Plans',
-            url: 'https://theenglishhub.app/revision/texts/lord-of-the-flies/essay-plans',
-          },
-        ]}
-      />
       <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
         {/* Study Tools */}
         <StudyTools textName="Lord of the Flies" textType="novel" />

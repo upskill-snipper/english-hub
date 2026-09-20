@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
@@ -163,17 +163,6 @@ export default async function AqaEnglishLiteraturePage() {
   const [h1, intro] = await tMany(['resources.lit.aqa.h1', 'resources.lit.aqa.intro'])
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Resources', url: 'https://theenglishhub.app/resources' },
-          {
-            name: 'English Literature',
-            url: 'https://theenglishhub.app/resources/english-literature',
-          },
-          { name: 'AQA', url: 'https://theenglishhub.app/resources/english-literature/aqa' },
-        ]}
-      />
       {/* ── Hero ── */}
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">

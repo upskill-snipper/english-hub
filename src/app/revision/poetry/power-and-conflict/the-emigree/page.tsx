@@ -7,7 +7,7 @@ import type { PoemData } from '@/components/study'
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd } from '@/components/seo/json-ld'
 export const metadata = {
   openGraph: {
     title: 'The Émigrée -- Carol Rumens -- The English Hub',
@@ -662,21 +662,7 @@ export default function TheEmigreePage() {
         name="The Émigrée by Carol Rumens - Analysis & Annotations"
         description="Line-by-line analysis of The Émigrée with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
-          {
-            name: 'Power and Conflict',
-            url: 'https://theenglishhub.app/revision/poetry/power-and-conflict',
-          },
-          {
-            name: 'The Émigrée',
-            url: 'https://theenglishhub.app/revision/poetry/power-and-conflict/the-emigree',
-          },
-        ]}
-      />
+
       {/* ── Back nav ───────────────────────────────────────────── */}
       <div>
         <Button

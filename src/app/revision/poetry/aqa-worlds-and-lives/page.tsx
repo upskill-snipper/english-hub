@@ -5,7 +5,7 @@ import { ArrowLeft, ArrowRight, BookOpen, Sparkles, Globe, Info, Clock, Shield }
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
@@ -63,17 +63,6 @@ export default async function AqaWorldsAndLivesHubPage() {
 
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
-          {
-            name: 'AQA Worlds and Lives',
-            url: 'https://theenglishhub.app/revision/poetry/aqa-worlds-and-lives',
-          },
-        ]}
-      />
       <Breadcrumb items={breadcrumbItems} />
       <div className="space-y-10 pb-16">
         {/* ── Back link ───────────────────────────────────────────────── */}

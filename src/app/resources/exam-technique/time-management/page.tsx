@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
-import { HowToJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { HowToJsonLd } from '@/components/seo/json-ld'
 import { tMany } from '@/lib/i18n/t'
 
 /* ─── Metadata ───────────────────────────────────────────────── */
@@ -455,17 +455,6 @@ export default async function TimeManagementPage() {
           {
             name: 'Reserve the last 5 minutes to review',
             text: 'Use the final five minutes to check spelling, punctuation and grammar, add any missing analysis, and make sure every question has been attempted. Never leave an answer blank - even bullet points score marks.',
-          },
-        ]}
-      />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Resources', url: 'https://theenglishhub.app/resources' },
-          { name: 'Exam technique', url: 'https://theenglishhub.app/resources/exam-technique' },
-          {
-            name: 'Time management',
-            url: 'https://theenglishhub.app/resources/exam-technique/time-management',
           },
         ]}
       />

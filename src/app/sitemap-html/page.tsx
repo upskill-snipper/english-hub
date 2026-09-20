@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import sitemap from '@/app/sitemap'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import { tMany } from '@/lib/i18n/t'
 
 /* ─── Metadata ───────────────────────────────────────────────── */
@@ -219,12 +219,6 @@ export default async function SitemapHtmlPage() {
 
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: tCrumbHome, url: BASE },
-          { name: tCrumbSitemap, url: `${BASE}/sitemap-html` },
-        ]}
-      />
       <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{tH1}</h1>
         <p className="mt-4 text-muted-foreground leading-relaxed">{tLead}</p>

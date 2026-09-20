@@ -13,8 +13,6 @@ import {
 
 import { useT } from '@/lib/i18n/use-t'
 
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
-
 /* ────────────────────────────────────────────────────────────────────── */
 /*  Data - fragments of the Inspector's final speech (Act 3)             */
 /*  Each direct quotation is ≤15 words, used under fair-dealing for      */
@@ -118,22 +116,6 @@ export default function ExtractWalkthroughPage() {
   const quoteCaptionTpl = t('rev.texts.aic.extract.quote_caption')
   return (
     <div className="min-h-screen bg-background font-heading">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
-          {
-            name: 'An Inspector Calls',
-            url: 'https://theenglishhub.app/revision/texts/an-inspector-calls',
-          },
-          {
-            name: 'Extract Walkthrough',
-            url: 'https://theenglishhub.app/revision/texts/an-inspector-calls/extract-walkthrough',
-          },
-        ]}
-      />
-
       <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
         {/* Hero */}
         <section className="rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.06] p-6 sm:p-8 lg:p-10">

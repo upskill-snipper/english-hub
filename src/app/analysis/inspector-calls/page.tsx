@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { ArrowRight, BookOpen, Quote, Users } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { LearningResourceJsonLd } from '@/components/seo/json-ld'
 import {
   MarkerByline,
   PageContainer,
@@ -215,17 +215,6 @@ export default async function InspectorCallsHubPage() {
         learningResourceType="Study guide"
         about="An Inspector Calls"
         url="https://theenglishhub.app/analysis/inspector-calls"
-        nonce={nonce}
-      />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Analysis', url: 'https://theenglishhub.app/analysis' },
-          {
-            name: 'An Inspector Calls Analysis',
-            url: 'https://theenglishhub.app/analysis/inspector-calls',
-          },
-        ]}
         nonce={nonce}
       />
 

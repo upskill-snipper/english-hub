@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 import Link from 'next/link'
-import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { AnalysisBoardGate } from './_components/AnalysisBoardGate'
 import { t } from '@/lib/i18n/t'
 
@@ -110,17 +110,7 @@ export default async function MacbethAnalysisHub() {
           url="https://theenglishhub.app/analysis/macbeth"
           nonce={nonce}
         />
-        <BreadcrumbJsonLd
-          items={[
-            { name: 'Home', url: 'https://theenglishhub.app' },
-            { name: 'Analysis', url: 'https://theenglishhub.app/analysis' },
-            {
-              name: 'Macbeth Quote, Theme & Character Analysis',
-              url: 'https://theenglishhub.app/analysis/macbeth',
-            },
-          ]}
-          nonce={nonce}
-        />
+
         <nav className="mb-4 text-sm text-muted-foreground">
           <Link href="/" className="hover:text-foreground">
             {tBreadHome}

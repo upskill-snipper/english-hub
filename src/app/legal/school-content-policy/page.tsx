@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   title: 'School content policy',
@@ -25,16 +24,6 @@ export const metadata: Metadata = {
 export default function SchoolContentPolicyPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Legal', url: 'https://theenglishhub.app/legal' },
-          {
-            name: 'School content policy',
-            url: 'https://theenglishhub.app/legal/school-content-policy',
-          },
-        ]}
-      />
       <h1 className="font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
         School content policy
       </h1>

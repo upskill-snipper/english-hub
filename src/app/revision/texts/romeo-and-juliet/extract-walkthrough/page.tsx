@@ -11,8 +11,6 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { useT } from '@/lib/i18n/use-t'
 
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
-
 /* ─── Data ───────────────────────────────────────────────────── */
 
 const PROLOGUE_LINES: { number: string; line: string; analysis: string }[] = [
@@ -103,22 +101,6 @@ export default function RomeoAndJulietExtractWalkthroughPage() {
   const t = useT()
   return (
     <div className="min-h-screen bg-background">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
-          {
-            name: 'Romeo and Juliet',
-            url: 'https://theenglishhub.app/revision/texts/romeo-and-juliet',
-          },
-          {
-            name: 'Extract Walkthrough',
-            url: 'https://theenglishhub.app/revision/texts/romeo-and-juliet/extract-walkthrough',
-          },
-        ]}
-      />
-
       <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
         {/* Hero */}
         <section className="relative mt-2 overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-amber-500/[0.04] p-6 sm:p-8 lg:p-10">

@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { t } from '@/lib/i18n/t'
 
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Of Mice and Men Chapter Analysis - Edexcel IGCSE Literature',
@@ -207,22 +206,6 @@ export default async function OmamChaptersPage() {
 
   return (
     <div className="space-y-10 pb-16">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
-          { name: 'Edexcel IGCSE Literature', url: 'https://theenglishhub.app/igcse/edexcel' },
-          { name: 'Prose', url: 'https://theenglishhub.app/igcse/edexcel/prose' },
-          {
-            name: 'Of Mice and Men',
-            url: 'https://theenglishhub.app/igcse/edexcel/prose/of-mice-and-men',
-          },
-          {
-            name: 'Chapter-by-Chapter Analysis',
-            url: 'https://theenglishhub.app/igcse/edexcel/prose/of-mice-and-men/chapters',
-          },
-        ]}
-      />
       <div>
         <Button
           variant="ghost"

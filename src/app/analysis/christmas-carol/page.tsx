@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 import Link from 'next/link'
-import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
@@ -204,17 +204,6 @@ export default async function ChristmasCarolAnalysisHub() {
         learningResourceType="Study guide"
         about="A Christmas Carol"
         url="https://theenglishhub.app/analysis/christmas-carol"
-        nonce={nonce}
-      />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Analysis', url: 'https://theenglishhub.app/analysis' },
-          {
-            name: 'A Christmas Carol Quote and Theme Analysis',
-            url: 'https://theenglishhub.app/analysis/christmas-carol',
-          },
-        ]}
         nonce={nonce}
       />
 

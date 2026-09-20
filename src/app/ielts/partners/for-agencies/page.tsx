@@ -16,7 +16,7 @@ import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { GlassPanel, PanelEyebrow } from '@/components/dataviz/GlassPanel'
-import { BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/json-ld'
+import { FAQPageJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
 
 // ─── /ielts/partners/for-agencies ──────────────────────────────────────────
@@ -171,14 +171,6 @@ export default async function IeltsPartnersForAgenciesPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'IELTS', url: 'https://theenglishhub.app/ielts' },
-          { name: 'Partners', url: 'https://theenglishhub.app/ielts/partners' },
-          { name: 'For agencies', url: 'https://theenglishhub.app/ielts/partners/for-agencies' },
-        ]}
-      />
       <FAQPageJsonLd faqs={FAQS} />
 
       {/* 1. Hero */}

@@ -4,7 +4,6 @@ import { InteractiveTextViewer, type TextData } from '@/components/study/Interac
 import { useLocale } from '@/lib/i18n/use-locale'
 import { translateMacbethData } from './translations'
 
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 // ─── Full Macbeth text data ─────────────────────────────────────────────────
 // Public domain text from Shakespeare's Macbeth (c. 1606)
 // Includes all 5 acts with key scenes, annotations, characters, and themes
@@ -2492,15 +2491,6 @@ export default function MacbethReadPage() {
   const data = translateMacbethData(macbethData, locale)
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
-          { name: 'Macbeth', url: 'https://theenglishhub.app/revision/texts/macbeth' },
-          { name: 'Read Full Text', url: 'https://theenglishhub.app/revision/texts/macbeth/read' },
-        ]}
-      />
       <InteractiveTextViewer data={data} storageKey="macbeth" />
     </div>
   )

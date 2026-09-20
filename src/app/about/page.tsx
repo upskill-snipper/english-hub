@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import { tMany } from '@/lib/i18n/t'
 
 // 2026-05-04: Founder-section removed at the founder's request - the
@@ -147,12 +147,6 @@ export default async function AboutPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
-      <BreadcrumbJsonLd
-        items={[
-          { name: breadcrumbHome, url: 'https://theenglishhub.app' },
-          { name: breadcrumbAbout, url: 'https://theenglishhub.app/about' },
-        ]}
-      />
       <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{h1}</h1>
 
       <div className="mt-8 space-y-8">

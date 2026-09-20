@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { t } from '@/lib/i18n/t'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import {
   WRITING_FORMS,
   WRITING_PURPOSES,
@@ -238,25 +238,6 @@ const PRACTICE_PROMPTS = [
 export default async function LetterDiaryPage() {
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'KS3', url: 'https://theenglishhub.app/ks3' },
-          {
-            name: 'iLowerSecondary English',
-            url: 'https://theenglishhub.app/ks3/ilowersecondary',
-          },
-          {
-            name: 'Writing forms',
-            url: 'https://theenglishhub.app/ks3/ilowersecondary/writing-forms',
-          },
-          {
-            name: 'Letter & diary',
-            url: 'https://theenglishhub.app/ks3/ilowersecondary/writing-forms/letter-diary',
-          },
-        ]}
-      />
-
       <article className="mx-auto max-w-3xl px-4 py-12">
         <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
           <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">

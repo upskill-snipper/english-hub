@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { LearningResourceJsonLd } from '@/components/seo/json-ld'
 
 const POEM_TITLE = 'My Last Duchess'
 const SLUG = 'my-last-duchess'
@@ -14,17 +14,6 @@ export const metadata: Metadata = {
 export default function MyLastDuchessLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          {
-            name: 'Power and Conflict',
-            url: 'https://theenglishhub.app/revision/poetry/power-and-conflict',
-          },
-          { name: POEM_TITLE, url: CANONICAL },
-        ]}
-      />
       <LearningResourceJsonLd
         name={`${POEM_TITLE} (AQA Power and Conflict)`}
         description={`Analysis of ${POEM_TITLE} for AQA GCSE English Literature Power and Conflict cluster: themes, language, structure, and comparisons.`}

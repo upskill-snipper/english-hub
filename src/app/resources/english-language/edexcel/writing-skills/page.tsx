@@ -2,7 +2,7 @@ import { STRINGS } from './content'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
-import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { LearningResourceJsonLd } from '@/components/seo/json-ld'
 
 import { headers } from 'next/headers'
 import { t } from '@/lib/i18n/t'
@@ -43,20 +43,6 @@ export default async function WritingSkillsPage() {
 
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'English Language', url: 'https://theenglishhub.app/resources/english-language' },
-          {
-            name: 'Pearson Edexcel',
-            url: 'https://theenglishhub.app/resources/english-language/edexcel',
-          },
-          {
-            name: 'Writing skills',
-            url: 'https://theenglishhub.app/resources/english-language/edexcel/writing-skills',
-          },
-        ]}
-      />
       <LearningResourceJsonLd
         name="Edexcel GCSE writing skills"
         description="Writing skills for Pearson Edexcel GCSE English Language: structure, vocabulary, sentence variety, and creative/transactional writing models."

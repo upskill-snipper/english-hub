@@ -15,7 +15,7 @@ import { FAQItem } from '@/components/for-schools/FAQItem'
 import { BookCallForm } from '@/components/for-schools/BookCallForm'
 import { VAT_LABEL } from '@/lib/copy/pricing'
 import { PRICING } from '@/constants/pricing'
-import { BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/json-ld'
+import { FAQPageJsonLd } from '@/components/seo/json-ld'
 import { t, tMany } from '@/lib/i18n/t'
 import {
   BookOpen,
@@ -365,12 +365,6 @@ export default async function ForSchoolsPage() {
   const gettingStartedStep = await t('mkt.schools.fs.getting_started.step')
   return (
     <div className="min-h-screen bg-background">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'For Schools', url: 'https://theenglishhub.app/for-schools' },
-        ]}
-      />
       {/* Infographic banner removed 2026-08-18: the PNG baked in unevidenced
           outcome stats (68% on track, +5-15% YoY, hours saved) - fabricated
           numbers are banned on this product. Reinstate only with a

@@ -6,7 +6,7 @@ import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
-import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
@@ -489,17 +489,7 @@ export default async function PrideAndPrejudicePage() {
         audienceRole="student"
         isAccessibleForFree={true}
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
-          {
-            name: 'Pride and Prejudice',
-            url: 'https://theenglishhub.app/revision/texts/pride-and-prejudice',
-          },
-        ]}
-      />
+
       <TextStudyHub
         textName="Pride and Prejudice"
         textType="novel"

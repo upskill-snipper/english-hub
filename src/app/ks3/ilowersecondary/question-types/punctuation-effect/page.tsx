@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { t } from '@/lib/i18n/t'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import { QUESTION_TYPES, ASSESSMENT_OBJECTIVES, SPEC_ATTRIBUTION } from '@/lib/ilowersecondary/spec'
 
 const PUNCTUATION_TYPE = QUESTION_TYPES.find((q) => q.id === 'punctuation-effect')!
@@ -196,25 +196,6 @@ const WORKED_EXAMPLES: WorkedExample[] = [
 export default async function PunctuationEffectPage() {
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'KS3', url: 'https://theenglishhub.app/ks3' },
-          {
-            name: 'iLowerSecondary English',
-            url: 'https://theenglishhub.app/ks3/ilowersecondary',
-          },
-          {
-            name: 'Question types',
-            url: 'https://theenglishhub.app/ks3/ilowersecondary/question-types',
-          },
-          {
-            name: 'Punctuation effect',
-            url: 'https://theenglishhub.app/ks3/ilowersecondary/question-types/punctuation-effect',
-          },
-        ]}
-      />
-
       <article className="mx-auto my-12 max-w-3xl px-4">
         <header className="mb-10">
           <nav aria-label="Breadcrumb" className="mb-4 text-xs text-muted-foreground">

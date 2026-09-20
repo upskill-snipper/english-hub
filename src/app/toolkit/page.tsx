@@ -18,7 +18,7 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 import { getBoardConfig } from '@/lib/board/board-config'
 import { Badge } from '@/components/ui/badge'
 import { ToolkitProgressPreview } from '@/components/toolkit/toolkit-progress-preview'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import { tMany } from '@/lib/i18n/t'
 
 // ─── Toolkit Hub (Server Component) ───────────────────────────────────────
@@ -191,12 +191,6 @@ export default async function ToolkitPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <BreadcrumbJsonLd
-        items={[
-          { name: tCrumbHome, url: 'https://theenglishhub.app' },
-          { name: tCrumbSelf, url: 'https://theenglishhub.app/toolkit' },
-        ]}
-      />
       {/* ── Hero ──────────────────────────────────────────────────── */}
       <section className="border-b border-border bg-card">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">

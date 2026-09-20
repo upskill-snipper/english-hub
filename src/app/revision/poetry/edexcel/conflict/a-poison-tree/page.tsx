@@ -8,7 +8,7 @@ import { InteractivePoemViewer, type PoemData } from '@/components/study/Interac
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd } from '@/components/seo/json-ld'
 import { useT } from '@/lib/i18n/use-t'
 const aPoisonTree: PoemData = {
   title: 'A Poison Tree',
@@ -685,18 +685,7 @@ export default function APoisonTreePage() {
         name="A Poison Tree by William Blake - Analysis & Annotations"
         description="Line-by-line analysis of A Poison Tree with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
-          { name: 'Edexcel Poetry', url: 'https://theenglishhub.app/revision/poetry/edexcel' },
-          {
-            name: 'A Poison Tree',
-            url: 'https://theenglishhub.app/revision/poetry/edexcel/a-poison-tree',
-          },
-        ]}
-      />
+
       <div>
         <Button
           variant="ghost"

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd } from '@/components/seo/json-ld'
 import {
   QUALIFICATION,
   SECTIONS,
@@ -181,13 +181,6 @@ export default async function ILowerSecondaryOverviewPage() {
         description={`Student learning hub for the ${QUALIFICATION.title} (${QUALIFICATION.subjectCode}) achievement test, assessing Key Stage 3 English reading and writing skills.`}
         educationalLevel="KS3"
         url={PAGE_URL}
-      />
-      <BreadcrumbJsonLd
-        items={[
-          { name: trHome, url: 'https://theenglishhub.app' },
-          { name: trKS3, url: 'https://theenglishhub.app/ks3' },
-          { name: trILS, url: PAGE_URL },
-        ]}
       />
 
       <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">

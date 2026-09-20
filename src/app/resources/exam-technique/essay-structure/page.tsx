@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
-import { HowToJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { HowToJsonLd } from '@/components/seo/json-ld'
 import { tMany } from '@/lib/i18n/t'
 
 /* ─── Metadata ───────────────────────────────────────────────── */
@@ -93,17 +93,6 @@ export default async function EssayStructurePage() {
           {
             name: 'Close with a strong conclusion',
             text: 'End with a definitive answer, wider significance, shift in perspective, or a cyclical link back to your introduction. Never introduce new evidence - your conclusion should leave the marker with a final insight.',
-          },
-        ]}
-      />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Resources', url: 'https://theenglishhub.app/resources' },
-          { name: 'Exam technique', url: 'https://theenglishhub.app/resources/exam-technique' },
-          {
-            name: 'Essay structure',
-            url: 'https://theenglishhub.app/resources/exam-technique/essay-structure',
           },
         ]}
       />

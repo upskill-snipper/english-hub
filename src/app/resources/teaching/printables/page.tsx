@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import { getAllPrintables, type Printable, isPublished } from '@/lib/printables/list'
 import { tMany } from '@/lib/i18n/t'
 
@@ -38,13 +38,6 @@ export const metadata: Metadata = {
     description: PAGE_DESCRIPTION,
   },
 }
-
-const BREADCRUMB_ITEMS = [
-  { name: 'Home', url: SITE_URL },
-  { name: 'Resources', url: `${SITE_URL}/resources` },
-  { name: 'Teaching', url: `${SITE_URL}/resources/teaching` },
-  { name: 'Printables', url: INDEX_URL },
-]
 
 function PrintableCard({
   printable,
@@ -118,8 +111,6 @@ export default async function PrintablesIndexPage() {
 
   return (
     <>
-      <BreadcrumbJsonLd items={BREADCRUMB_ITEMS} />
-
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <header className="max-w-3xl mb-10">
           <p className="text-sm font-medium text-muted-foreground mb-2">{eyebrow}</p>

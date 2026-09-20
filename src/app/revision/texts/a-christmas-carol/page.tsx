@@ -6,7 +6,7 @@ import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
-import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { GeoFaq, type GeoFaqItem } from '@/components/seo/GeoFaq'
 import { t } from '@/lib/i18n/t'
 
@@ -690,17 +690,7 @@ export default async function AChristmasCarolPage() {
         audienceRole="student"
         isAccessibleForFree={true}
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Set texts', url: 'https://theenglishhub.app/revision/texts' },
-          {
-            name: 'A Christmas Carol',
-            url: 'https://theenglishhub.app/revision/texts/a-christmas-carol',
-          },
-        ]}
-      />
+
       <section aria-labelledby="acc-direct-answer" className="mx-auto mt-8 max-w-3xl px-4">
         <h2 id="acc-direct-answer" className="sr-only">
           {await t('rev.texts.acc.quick_summary_h')}

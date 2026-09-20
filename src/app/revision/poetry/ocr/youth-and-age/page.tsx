@@ -5,7 +5,7 @@ import { ArrowLeft, ArrowRight, Clock, Sparkles, BookOpen, Lock, CheckCircle2 } 
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import { useT } from '@/lib/i18n/use-t'
 
 interface Poem {
@@ -135,18 +135,6 @@ export default function OCRYouthAndAgePage() {
   const t = useT()
   return (
     <div className="space-y-10 pb-16">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
-          { name: 'OCR', url: 'https://theenglishhub.app/revision/poetry/ocr' },
-          {
-            name: 'Youth and Age',
-            url: 'https://theenglishhub.app/revision/poetry/ocr/youth-and-age',
-          },
-        ]}
-      />
       <div>
         <Button
           variant="ghost"

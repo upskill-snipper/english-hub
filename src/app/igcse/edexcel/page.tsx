@@ -30,7 +30,7 @@ import { getSetTextsForBoard } from '@/lib/board/set-texts'
 import { textGuideHref } from '@/lib/revision/guide-href'
 import { t } from '@/lib/i18n/t'
 
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Edexcel IGCSE Literature - The English Hub',
@@ -375,13 +375,7 @@ export default async function EdexcelIgcseHubPage() {
         provider="The English Hub"
         url="https://theenglishhub.app/igcse/edexcel"
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
-          { name: 'Edexcel IGCSE Literature', url: 'https://theenglishhub.app/igcse/edexcel' },
-        ]}
-      />
+
       {!mismatch.matched && <BoardMismatchBanner pageBoard="edexcel-igcse" />}
       <div className="space-y-12 pb-16">
         {/* ── Back link ───────────────────────────────────────────────── */}

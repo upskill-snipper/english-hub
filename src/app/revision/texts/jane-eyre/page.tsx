@@ -6,7 +6,7 @@ import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
-import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
@@ -474,14 +474,7 @@ export default async function JaneEyrePage() {
         name="Jane Eyre - Complete GCSE Study Guide"
         description="In-depth study guide for Jane Eyre covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
-          { name: 'Jane Eyre', url: 'https://theenglishhub.app/revision/texts/jane-eyre' },
-        ]}
-      />
+
       <TextStudyHub
         textName="Jane Eyre"
         textType="novel"

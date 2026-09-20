@@ -10,7 +10,6 @@ import {
   SPEC_ATTRIBUTION,
   type WritingLevel,
 } from '@/lib/ilowersecondary/spec'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -33,8 +32,6 @@ export const metadata: Metadata = {
     canonical: 'https://theenglishhub.app/ks3/ilowersecondary/grade-targets',
   },
 }
-
-const SITE = 'https://theenglishhub.app'
 
 /* ─── Profile data, all derived from the canonical spec grids ─────────── */
 
@@ -98,21 +95,6 @@ const ORDER: WritingLevel[] = ['S1', 'S2', 'S3', 'S4']
 export default async function GradeTargetsPage() {
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: SITE },
-          { name: 'KS3', url: `${SITE}/ks3` },
-          {
-            name: 'iLowerSecondary English',
-            url: `${SITE}/ks3/ilowersecondary`,
-          },
-          {
-            name: 'Grade targets',
-            url: `${SITE}/ks3/ilowersecondary/grade-targets`,
-          },
-        ]}
-      />
-
       <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
         <Link href="/ks3" className="hover:text-foreground">
           {await t('ks3.page.bc.ks3')}

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 import Link from 'next/link'
 import LevelChip, { type Level } from '@/components/home/LevelChip'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import { tMany, t } from '@/lib/i18n/t'
 
 /* ───────────────────── Metadata ───────────────────── */
@@ -222,13 +222,6 @@ export default async function ExamBoardsPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <BreadcrumbJsonLd
-        nonce={nonce}
-        items={[
-          { name: tCrumbHome, url: SITE_URL },
-          { name: tCrumbSelf, url: `${SITE_URL}/exam-boards` },
-        ]}
-      />
       <script
         type="application/ld+json"
         nonce={nonce}

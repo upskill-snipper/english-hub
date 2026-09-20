@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
-import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { ArticleJsonLd } from '@/components/seo/json-ld'
 import { tMany } from '@/lib/i18n/t'
 
 /* ─── Metadata ───────────────────────────────────────────────── */
@@ -208,17 +208,6 @@ export default async function QuestionTypesPage() {
         description="Decode every question type in GCSE and IGCSE English exams - 'How does the writer...', 'To what extent...', comparison, extract-based, essay, and creative writing tasks - with structure guidance, common mistakes, and example responses."
         datePublished="2026-04-01"
         url="https://theenglishhub.app/resources/exam-technique/question-types"
-      />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Resources', url: 'https://theenglishhub.app/resources' },
-          { name: 'Exam technique', url: 'https://theenglishhub.app/resources/exam-technique' },
-          {
-            name: 'Question types',
-            url: 'https://theenglishhub.app/resources/exam-technique/question-types',
-          },
-        ]}
       />
 
       {/* Hero */}

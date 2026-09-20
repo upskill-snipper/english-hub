@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { t } from '@/lib/i18n/t'
-import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { LearningResourceJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -80,14 +80,6 @@ export default async function DramaHubPage() {
 
   return (
     <div className="space-y-10 pb-16">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
-          { name: 'Edexcel IGCSE Literature', url: 'https://theenglishhub.app/igcse/edexcel' },
-          { name: 'Drama', url: 'https://theenglishhub.app/igcse/edexcel/drama' },
-        ]}
-      />
       <LearningResourceJsonLd
         name="Edexcel IGCSE Literature drama section"
         description="Three modern drama texts - An Inspector Calls, A View from the Bridge, The Curious Incident - for Pearson Edexcel IGCSE Literature 4ET1."

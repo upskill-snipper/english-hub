@@ -22,7 +22,6 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
 import StudyTools from '@/components/study/StudyTools'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 // ─── localStorage key ──────────────────────────────────────────────────────
 
@@ -255,17 +254,6 @@ export default function PowerAndConflictPage() {
 
   return (
     <div className="space-y-10 pb-16">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
-          {
-            name: 'Power and Conflict',
-            url: 'https://theenglishhub.app/revision/poetry/power-and-conflict',
-          },
-        ]}
-      />
       {/* ── Back link ───────────────────────────────────────────────── */}
       <div>
         <Button

@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { t } from '@/lib/i18n/t'
-import { headers } from 'next/headers'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import { QUESTION_TYPES, ASSESSMENT_OBJECTIVES, SPEC_ATTRIBUTION } from '@/lib/ilowersecondary/spec'
 
 const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/question-types/meaning-impact'
@@ -231,26 +230,8 @@ const SENTENCE_FRAMES: { stage: string; frames: string[] }[] = [
 ]
 
 export default async function MeaningImpactPage() {
-  const nonce = (await headers()).get('x-nonce') ?? undefined
-
-  const breadcrumb = [
-    { name: 'Home', url: 'https://theenglishhub.app' },
-    { name: 'KS3', url: 'https://theenglishhub.app/ks3' },
-    {
-      name: 'iLowerSecondary English',
-      url: 'https://theenglishhub.app/ks3/ilowersecondary',
-    },
-    {
-      name: 'Question types',
-      url: 'https://theenglishhub.app/ks3/ilowersecondary/question-types',
-    },
-    { name: 'Meaning & impact', url: PAGE_URL },
-  ]
-
   return (
     <>
-      <BreadcrumbJsonLd items={breadcrumb} nonce={nonce} />
-
       <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
         <Link href="/" className="hover:text-foreground">
           {await t('ks3.page.bc.home')}

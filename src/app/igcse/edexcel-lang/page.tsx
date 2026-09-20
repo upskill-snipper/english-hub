@@ -23,7 +23,7 @@ import { getBoardMismatchState } from '@/app/igcse/_lib/guard'
 import BoardMismatchBanner from '@/components/board/BoardMismatchBanner'
 import { t } from '@/lib/i18n/t'
 
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Edexcel IGCSE English Language A (4EA1) - The English Hub',
@@ -129,22 +129,9 @@ export default async function EdexcelIgcseLangHubPage() {
         provider="The English Hub"
         url="https://theenglishhub.app/igcse/edexcel-lang"
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
-          { name: 'Edexcel IGCSE Language A', url: 'https://theenglishhub.app/igcse/edexcel-lang' },
-        ]}
-      />
+
       {!mismatch.matched && <BoardMismatchBanner pageBoard="edexcel-igcse-lang" />}
       <div className="space-y-12 pb-16">
-        <BreadcrumbJsonLd
-          items={[
-            { name: 'Home', url: 'https://theenglishhub.app' },
-            { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
-            { name: 'Edexcel IGCSE Language', url: 'https://theenglishhub.app/igcse/edexcel-lang' },
-          ]}
-        />
         {/* ── Back link ───────────────────────────────────────────────── */}
         <div>
           <Button

@@ -14,7 +14,6 @@ import {
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 // Public "Become an Examiner / Marker" landing page.
 //
@@ -126,13 +125,6 @@ const HOW_IT_WORKS: { icon: typeof PencilLine; title: string; body: string }[] =
 export default function ExaminersPage() {
   return (
     <div className="min-h-screen bg-background">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Examiners', url: 'https://theenglishhub.app/examiners' },
-        ]}
-      />
-
       {/* 1. Hero */}
       <section className="relative overflow-hidden border-b border-border/60">
         <div

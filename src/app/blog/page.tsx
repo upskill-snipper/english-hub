@@ -17,7 +17,7 @@ import { headers } from 'next/headers'
 import Link from 'next/link'
 
 import { Card, CardContent } from '@/components/ui/card'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import { getAllBlogPosts, type BlogPost } from '@/lib/blog/posts'
 import { tMany, tSync, preloadLocale } from '@/lib/i18n/t'
 import type { Locale } from '@/lib/i18n/dictionary'
@@ -151,13 +151,6 @@ export default async function BlogIndexPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: SITE_URL },
-          { name: 'Blog', url: PAGE_URL },
-        ]}
-        nonce={nonce}
-      />
       <script
         type="application/ld+json"
         nonce={nonce}

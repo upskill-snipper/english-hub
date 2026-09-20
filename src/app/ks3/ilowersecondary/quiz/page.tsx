@@ -5,15 +5,14 @@
 // This is a client component so the whole quiz can run in the browser
 // (category select → one question at a time → immediate feedback →
 // running score → restart). A client component cannot export `metadata`,
-// so SEO metadata is intentionally omitted here; the BreadcrumbJsonLd
-// below is rendered statically (no per-request nonce). Under the live
-// CSP the middleware sets the nonce on the response header so Next's
-// runtime and static JSON-LD remain consistent.
+// so SEO metadata is intentionally omitted here. The BreadcrumbList for
+// this page now comes from PathBreadcrumbJsonLd in the root layout, which
+// derives the trail from the URL; this file emits no JSON-LD of its own.
 
 import { useState, useMemo, useCallback } from 'react'
 import { useT } from '@/lib/i18n/use-t'
 import Link from 'next/link'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import {
   QUIZ_BANK,
   QUIZ_CATEGORIES,
@@ -23,16 +22,6 @@ import {
 import { SPEC_ATTRIBUTION } from '@/lib/ilowersecondary/spec'
 
 const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/quiz'
-
-const BREADCRUMB = [
-  { name: 'Home', url: 'https://theenglishhub.app' },
-  { name: 'KS3', url: 'https://theenglishhub.app/ks3' },
-  {
-    name: 'iLowerSecondary English',
-    url: 'https://theenglishhub.app/ks3/ilowersecondary',
-  },
-  { name: 'Quiz', url: PAGE_URL },
-]
 
 type Selection = QuizCategory | 'mixed'
 
@@ -128,7 +117,6 @@ export default function QuizPage() {
 
   return (
     <>
-      <BreadcrumbJsonLd items={BREADCRUMB} />
       <Breadcrumb />
 
       <h1>LEH11 readiness quiz</h1>

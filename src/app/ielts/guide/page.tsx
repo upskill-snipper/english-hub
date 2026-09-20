@@ -17,7 +17,7 @@ import {
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { t } from '@/lib/i18n/t'
-import { BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/json-ld'
+import { FAQPageJsonLd } from '@/components/seo/json-ld'
 import {
   IELTS_OVERVIEW,
   SECTION_FACTS,
@@ -230,13 +230,6 @@ export default async function IeltsGuidePage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'IELTS', url: 'https://theenglishhub.app/ielts' },
-          { name: 'Exam Guide', url: 'https://theenglishhub.app/ielts/guide' },
-        ]}
-      />
       <FAQPageJsonLd faqs={FAQS} />
 
       <div className="mx-auto max-w-5xl px-4 py-8 pb-20 sm:px-6 lg:px-8">

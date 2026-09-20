@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { headers } from 'next/headers'
 import type { Metadata } from 'next'
 import { ArrowRight, BookOpen, Quote, Sparkles, Users, Library, GraduationCap } from 'lucide-react'
-import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
@@ -199,17 +199,6 @@ export default async function JekyllHydeHubPage() {
         learningResourceType="Study guide"
         about="Strange Case of Dr Jekyll and Mr Hyde"
         url="https://theenglishhub.app/analysis/jekyll-hyde"
-        nonce={nonce}
-      />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Analysis', url: 'https://theenglishhub.app/analysis' },
-          {
-            name: 'Jekyll and Hyde Analysis - Quotes & Themes',
-            url: 'https://theenglishhub.app/analysis/jekyll-hyde',
-          },
-        ]}
         nonce={nonce}
       />
 

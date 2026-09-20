@@ -8,7 +8,6 @@ import { Button } from '@/components/ui/button'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
 import { getServerBoard } from '@/lib/board/get-server-board'
 
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
@@ -279,18 +278,6 @@ export default async function JaneEyreKeyQuotesPage() {
 
   return (
     <div className="space-y-10 pb-16">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
-          { name: 'Jane Eyre', url: 'https://theenglishhub.app/revision/texts/jane-eyre' },
-          {
-            name: 'Key Quotations',
-            url: 'https://theenglishhub.app/revision/texts/jane-eyre/key-quotes',
-          },
-        ]}
-      />
       <Breadcrumb
         items={[
           { label: await t('rev.textgrp4.common.bc_revision'), href: '/revision' },

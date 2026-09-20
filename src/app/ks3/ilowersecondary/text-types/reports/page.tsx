@@ -1,7 +1,7 @@
 ﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import { t } from '@/lib/i18n/t'
-import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { LearningResourceJsonLd } from '@/components/seo/json-ld'
 import {
   NON_FICTION_TEXT_TYPES,
   NON_FICTION_PURPOSES,
@@ -129,24 +129,6 @@ const NON_FICTION_PROMPTS = GUIDED_READING_PROMPTS.nonFiction
 export default async function ReportsTextTypePage() {
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'KS3', url: 'https://theenglishhub.app/ks3' },
-          {
-            name: 'iLowerSecondary English',
-            url: 'https://theenglishhub.app/ks3/ilowersecondary',
-          },
-          {
-            name: 'Text types',
-            url: 'https://theenglishhub.app/ks3/ilowersecondary/text-types',
-          },
-          {
-            name: 'Reports',
-            url: 'https://theenglishhub.app/ks3/ilowersecondary/text-types/reports',
-          },
-        ]}
-      />
       <LearningResourceJsonLd
         name="Report texts - reading and writing guide"
         description="A KS3 iLowerSecondary English guide to report texts: conventions, impersonal language, structure analysis, annotated original extracts and exam-style practice for LEH11."

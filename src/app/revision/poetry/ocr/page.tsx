@@ -17,7 +17,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import { useT } from '@/lib/i18n/use-t'
 
 interface Cluster {
@@ -73,17 +73,6 @@ export default function OCRPoetryHubPage() {
   const t = useT()
   return (
     <div className="space-y-10 pb-16">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
-          {
-            name: 'OCR Towards a World Unknown',
-            url: 'https://theenglishhub.app/revision/poetry/ocr',
-          },
-        ]}
-      />
       {/* ── Back nav ────────────────────────────────────────────────── */}
       <div>
         <Button

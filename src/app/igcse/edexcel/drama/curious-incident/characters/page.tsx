@@ -7,7 +7,6 @@ import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
 import { useT } from '@/lib/i18n/use-t'
 
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 const characters = [
   {
     name: 'Christopher John Francis Boone',
@@ -71,22 +70,6 @@ export default function CuriousIncidentCharactersPage() {
   const tr = useT()
   return (
     <div className="space-y-10 pb-16">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
-          { name: 'Edexcel IGCSE Literature', url: 'https://theenglishhub.app/igcse/edexcel' },
-          { name: 'Drama', url: 'https://theenglishhub.app/igcse/edexcel/drama' },
-          {
-            name: 'The Curious Incident of the Dog in the Night-Time',
-            url: 'https://theenglishhub.app/igcse/edexcel/drama/curious-incident',
-          },
-          {
-            name: 'Characters',
-            url: 'https://theenglishhub.app/igcse/edexcel/drama/curious-incident/characters',
-          },
-        ]}
-      />
       <div>
         <Button
           variant="ghost"

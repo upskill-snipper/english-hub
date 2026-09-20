@@ -6,7 +6,7 @@ import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
-import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
 import { GeoFaq, type GeoFaqItem } from '@/components/seo/GeoFaq'
 
@@ -843,17 +843,7 @@ export default async function JekyllAndHydePage() {
         audienceRole="student"
         isAccessibleForFree={true}
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Set texts', url: 'https://theenglishhub.app/revision/texts' },
-          {
-            name: 'Dr Jekyll and Mr Hyde',
-            url: 'https://theenglishhub.app/revision/texts/jekyll-and-hyde',
-          },
-        ]}
-      />
+
       <section aria-labelledby="jh-direct-answer" className="mx-auto mt-8 max-w-3xl px-4">
         <h2 id="jh-direct-answer" className="sr-only">
           {await t('rev.texts2.jh.quick_summary_heading')}

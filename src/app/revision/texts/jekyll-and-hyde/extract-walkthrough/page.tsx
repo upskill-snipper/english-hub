@@ -5,7 +5,7 @@ import { ArrowLeft, Eye, MessageSquareQuote, Telescope, BookOpen } from 'lucide-
 
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import { useT } from '@/lib/i18n/use-t'
 
 /* ─── Extract chunks (public domain - Stevenson, 1886) ─────────────────────
@@ -64,22 +64,6 @@ export default function JekyllExtractWalkthroughPage() {
   const tr = useT()
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Set texts', url: 'https://theenglishhub.app/revision/texts' },
-          {
-            name: 'Dr Jekyll and Mr Hyde',
-            url: 'https://theenglishhub.app/revision/texts/jekyll-and-hyde',
-          },
-          {
-            name: 'Extract walkthrough',
-            url: 'https://theenglishhub.app/revision/texts/jekyll-and-hyde/extract-walkthrough',
-          },
-        ]}
-      />
-
       <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
         <Link
           href="/revision/texts/jekyll-and-hyde"

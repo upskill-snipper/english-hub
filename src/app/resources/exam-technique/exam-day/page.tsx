@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
-import { HowToJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { HowToJsonLd } from '@/components/seo/json-ld'
 import { tMany } from '@/lib/i18n/t'
 
 /* ─── Metadata ───────────────────────────────────────────────── */
@@ -84,14 +84,6 @@ export default async function ExamDayPage() {
             name: 'Use the last 5 minutes wisely',
             text: 'Check every question has been attempted, proofread for spelling and punctuation, add any missing analysis using asterisks, strengthen weak conclusions with a brief summary sentence, and rewrite any illegible words clearly.',
           },
-        ]}
-      />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Resources', url: 'https://theenglishhub.app/resources' },
-          { name: 'Exam technique', url: 'https://theenglishhub.app/resources/exam-technique' },
-          { name: 'Exam day', url: 'https://theenglishhub.app/resources/exam-technique/exam-day' },
         ]}
       />
 

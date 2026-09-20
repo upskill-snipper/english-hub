@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
-import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { ArticleJsonLd } from '@/components/seo/json-ld'
 import { tMany } from '@/lib/i18n/t'
 
 /* ─── Metadata ───────────────────────────────────────────────── */
@@ -250,13 +250,6 @@ export default async function ExamTechniquePage() {
         description="Master the exam techniques that turn knowledge into top grades - time management, question types, essay structure, and exam-day advice for GCSE and IGCSE English."
         datePublished="2026-04-01"
         url="https://theenglishhub.app/resources/exam-technique"
-      />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Resources', url: 'https://theenglishhub.app/resources' },
-          { name: 'Exam technique', url: 'https://theenglishhub.app/resources/exam-technique' },
-        ]}
       />
 
       {/* Hero */}

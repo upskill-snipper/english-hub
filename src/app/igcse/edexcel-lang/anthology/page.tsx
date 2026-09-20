@@ -20,7 +20,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
@@ -137,14 +137,6 @@ export default async function AnthologyHubPage() {
 
   return (
     <div className="space-y-10 pb-16">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
-          { name: 'Edexcel IGCSE Language A', url: 'https://theenglishhub.app/igcse/edexcel-lang' },
-          { name: 'Anthology', url: 'https://theenglishhub.app/igcse/edexcel-lang/anthology' },
-        ]}
-      />
       {/* ── Back link ───────────────────────────────────────────────── */}
       <div>
         <Button

@@ -8,7 +8,7 @@ import { InteractivePoemViewer, type PoemData } from '@/components/study/Interac
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd } from '@/components/seo/json-ld'
 import { useT } from '@/lib/i18n/use-t'
 /* ── Poem data ─────────────────────────────────────────────────────── */
 
@@ -793,21 +793,7 @@ export default function ClimbingMyGrandfatherPage() {
         name="Climbing My Grandfather by Andrew Waterhouse - Analysis & Annotations"
         description="Line-by-line analysis of Climbing My Grandfather with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
-          {
-            name: 'Love and Relationships',
-            url: 'https://theenglishhub.app/revision/poetry/love-and-relationships',
-          },
-          {
-            name: 'Climbing My Grandfather',
-            url: 'https://theenglishhub.app/revision/poetry/love-and-relationships/climbing-my-grandfather',
-          },
-        ]}
-      />
+
       {/* ── Back navigation ──────────────────────────────────────── */}
       <div>
         <Button

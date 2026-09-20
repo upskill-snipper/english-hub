@@ -8,7 +8,7 @@ import { InteractivePoemViewer, type PoemData } from '@/components/study/Interac
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd } from '@/components/seo/json-ld'
 import { useT } from '@/lib/i18n/use-t'
 const sennacherib: PoemData = {
   title: 'The Destruction of Sennacherib',
@@ -773,18 +773,7 @@ export default function SennacheribPage() {
         name="The Destruction of Sennacherib by Lord Byron - Analysis & Annotations"
         description="Line-by-line analysis of The Destruction of Sennacherib with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
-          { name: 'Edexcel Poetry', url: 'https://theenglishhub.app/revision/poetry/edexcel' },
-          {
-            name: 'The Destruction of Sennacherib',
-            url: 'https://theenglishhub.app/revision/poetry/edexcel/the-destruction-of-sennacherib',
-          },
-        ]}
-      />
+
       <div>
         <Button
           variant="ghost"

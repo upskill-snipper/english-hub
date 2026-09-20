@@ -3,7 +3,7 @@ import { STRINGS as _EAL_STRINGS } from './content'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
-import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { LearningResourceJsonLd } from '@/components/seo/json-ld'
 
 /* ─── Metadata ───────────────────────────────────────────────── */
 
@@ -55,20 +55,6 @@ export default async function WritingSkillsPage() {
 
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'English Language', url: 'https://theenglishhub.app/resources/english-language' },
-          {
-            name: 'Cambridge IGCSE',
-            url: 'https://theenglishhub.app/resources/english-language/caie',
-          },
-          {
-            name: 'Writing skills',
-            url: 'https://theenglishhub.app/resources/english-language/caie/writing-skills',
-          },
-        ]}
-      />
       <LearningResourceJsonLd
         name="Cambridge IGCSE writing skills"
         description="Writing skills for Cambridge IGCSE English Language: structure, vocabulary, sentence variety, and creative/transactional writing models."

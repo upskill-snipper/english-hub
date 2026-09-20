@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { ArrowLeft, BookOpen, Construction } from 'lucide-react'
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -35,28 +35,6 @@ export default function OnFindingASmallFlyCrushedInABookPage() {
       <CourseJsonLd
         name="On Finding a Small Fly Crushed in a Book - Charles Tennyson Turner (Cambridge IGCSE 0475)"
         description="Study guide stub for 'On Finding a Small Fly Crushed in a Book' by Charles Tennyson Turner (1873). Cambridge IGCSE Literature in English (0475), Songs of Ourselves Vol 1 Part 4."
-      />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Resources', url: 'https://theenglishhub.app/resources' },
-          {
-            name: 'English Literature',
-            url: 'https://theenglishhub.app/resources/english-literature',
-          },
-          {
-            name: 'Cambridge IGCSE',
-            url: 'https://theenglishhub.app/resources/english-literature/caie',
-          },
-          {
-            name: 'Songs of Ourselves Vol 1',
-            url: 'https://theenglishhub.app/resources/english-literature/caie/songs-of-ourselves-v1',
-          },
-          {
-            name: 'On Finding a Small Fly Crushed in a Book',
-            url: 'https://theenglishhub.app/resources/english-literature/caie/songs-of-ourselves-v1/on-finding-a-small-fly-crushed-in-a-book',
-          },
-        ]}
       />
 
       <div>

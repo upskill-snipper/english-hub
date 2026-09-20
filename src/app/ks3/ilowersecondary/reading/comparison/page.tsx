@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { t } from '@/lib/i18n/t'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import {
   READING_SKILLS,
   COMPARISON_LEVELS,
@@ -66,25 +66,6 @@ const FEATURE_ROWS = [
 export default async function ComparisonPage() {
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'KS3', url: 'https://theenglishhub.app/ks3' },
-          {
-            name: 'iLowerSecondary English',
-            url: 'https://theenglishhub.app/ks3/ilowersecondary',
-          },
-          {
-            name: 'Reading skills',
-            url: 'https://theenglishhub.app/ks3/ilowersecondary/reading',
-          },
-          {
-            name: 'Comparison',
-            url: 'https://theenglishhub.app/ks3/ilowersecondary/reading/comparison',
-          },
-        ]}
-      />
-
       <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
         <Link href="/ks3" className="hover:text-foreground">
           {await t('ks3.page.bc.ks3')}

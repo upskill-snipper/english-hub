@@ -9,7 +9,7 @@ import {
   getIgcseRedirectPath,
   isGcseExamBoard,
 } from '@/components/revision/BoardSpecificExamTechnique'
-import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { ArticleJsonLd } from '@/components/seo/json-ld'
 
 import ExamTechniqueHubView from './exam-technique-hub-view'
 
@@ -47,13 +47,7 @@ export default async function ExamTechniquePage() {
         datePublished="2026-04-01"
         url="https://theenglishhub.app/revision/exam-technique"
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Exam technique', url: 'https://theenglishhub.app/revision/exam-technique' },
-        ]}
-      />
+
       <ExamTechniqueHubView boardName={content.boardName} shortName={content.shortName} />
     </>
   )

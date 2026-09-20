@@ -12,7 +12,7 @@ import {
   Target,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import { t } from '@/lib/i18n/t'
 
 // ─── UK Readiness Programme - overview / landing (Server Component) ──────────
@@ -155,14 +155,6 @@ export default async function UkReadinessOverviewPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'IELTS', url: 'https://theenglishhub.app/ielts' },
-          { name: 'UK Readiness', url: 'https://theenglishhub.app/ielts/uk-readiness' },
-        ]}
-      />
-
       {/* ── Header ─────────────────────────────────────────────────────── */}
       <section className="border-b border-border bg-card">
         <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">

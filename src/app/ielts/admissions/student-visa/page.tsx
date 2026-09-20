@@ -10,7 +10,7 @@ import {
   ShieldAlert,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/json-ld'
+import { FAQPageJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
 
 // ─── UK Student-visa basics - admissions sub-page (SEO) ──────────────────────
@@ -139,17 +139,6 @@ export default async function StudentVisaBasicsPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <BreadcrumbJsonLd
-        items={[
-          { name: bcHome, url: 'https://theenglishhub.app' },
-          { name: bcIelts, url: 'https://theenglishhub.app/ielts' },
-          { name: bcAdmissions, url: 'https://theenglishhub.app/ielts/admissions' },
-          {
-            name: bcVisa,
-            url: 'https://theenglishhub.app/ielts/admissions/student-visa',
-          },
-        ]}
-      />
       <FAQPageJsonLd faqs={FAQS} />
 
       <div className="mx-auto max-w-4xl px-4 py-8 pb-20 sm:px-6 lg:px-8">

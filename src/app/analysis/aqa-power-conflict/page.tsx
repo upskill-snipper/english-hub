@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 import Link from 'next/link'
-import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { AnalysisBoardGate } from './_components/AnalysisBoardGate'
 import { t } from '@/lib/i18n/t'
 
@@ -142,17 +142,7 @@ export default async function AQAPowerConflictHub() {
           url="https://theenglishhub.app/analysis/aqa-power-conflict"
           nonce={nonce}
         />
-        <BreadcrumbJsonLd
-          items={[
-            { name: 'Home', url: 'https://theenglishhub.app' },
-            { name: 'Analysis', url: 'https://theenglishhub.app/analysis' },
-            {
-              name: 'AQA Power and Conflict Poetry Analysis',
-              url: 'https://theenglishhub.app/analysis/aqa-power-conflict',
-            },
-          ]}
-          nonce={nonce}
-        />
+
         <nav className="mb-4 text-sm text-muted-foreground">
           <Link href="/" className="hover:text-foreground">
             {tBreadHome}

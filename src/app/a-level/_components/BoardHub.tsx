@@ -10,7 +10,6 @@ import {
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export type ALevelBoardHubProps = {
   boardName: string
@@ -46,17 +45,6 @@ const revisionLinks = [
 export function ALevelBoardHub({ boardName, examCode, hubSlug, summary }: ALevelBoardHubProps) {
   return (
     <div className="space-y-10 pb-16">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'A-Level', url: 'https://theenglishhub.app/a-level' },
-          {
-            name: boardName,
-            url: `https://theenglishhub.app/a-level/${hubSlug}`,
-          },
-        ]}
-      />
-
       {/* ── Back link ───────────────────────────────────────────────── */}
       <div>
         <Button

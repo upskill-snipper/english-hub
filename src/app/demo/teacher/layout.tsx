@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
-import { headers } from 'next/headers'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import TeacherDemoLayoutClient from './layout-client'
 
 export const dynamic = 'force-dynamic'
@@ -50,17 +49,8 @@ export const metadata: Metadata = {
 }
 
 export default async function TeacherDemoLayout({ children }: { children: React.ReactNode }) {
-  const nonce = (await headers()).get('x-nonce') ?? undefined
   return (
     <>
-      <BreadcrumbJsonLd
-        nonce={nonce}
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Demos', url: 'https://theenglishhub.app/demo' },
-          { name: 'Teacher portal', url: 'https://theenglishhub.app/demo/teacher' },
-        ]}
-      />
       {/* THE SoftwareApplication NODE MOVED TO page.tsx ON 20 SEPTEMBER 2026.
           It named /demo/teacher on all 11 URLs beneath this layout. See
           src/app/demo/school/layout.tsx for the full reasoning. */}

@@ -26,7 +26,7 @@ import { Button } from '@/components/ui/button'
 import { t } from '@/lib/i18n/t'
 import { PRICING } from '@/constants/pricing'
 import { IELTS_SKILLS, SKILL_META } from '@/lib/ielts/types'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import { SkillCard } from './_components/SkillCard'
 import { LoopStep } from './_components/LoopStep'
 
@@ -211,13 +211,6 @@ export default async function IeltsHubPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'IELTS', url: 'https://theenglishhub.app/ielts' },
-        ]}
-      />
-
       {/* 1. Hero */}
       <section className="relative overflow-hidden border-b border-border/60">
         <div

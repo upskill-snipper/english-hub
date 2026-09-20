@@ -1,6 +1,5 @@
 'use client'
 
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { useT } from '@/lib/i18n/use-t'
 
 type Card = {
@@ -69,22 +68,6 @@ export default function BloodBrothersExtractWalkthroughPage() {
   }
   return (
     <div className="mx-auto max-w-3xl space-y-8 px-4 py-10">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
-          {
-            name: 'Blood Brothers',
-            url: 'https://theenglishhub.app/revision/texts/blood-brothers',
-          },
-          {
-            name: 'Extract walkthrough',
-            url: 'https://theenglishhub.app/revision/texts/blood-brothers/extract-walkthrough',
-          },
-        ]}
-      />
-
       <header className="space-y-2">
         <p className="text-sm uppercase tracking-wide text-muted-foreground">
           {t('rev.texts.bloodbrothers.extract.eyebrow')}

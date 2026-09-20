@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { headers } from 'next/headers'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import { QUALIFICATION, SECTIONS, SPEC_ATTRIBUTION } from '@/lib/ilowersecondary/spec'
 import { t } from '@/lib/i18n/t'
 
@@ -57,8 +56,6 @@ const PAPERS: { slug: string; n: number; theme: string; blurb: string }[] = [
 ]
 
 export default async function PracticePapersHub() {
-  const nonce = (await headers()).get('x-nonce') ?? undefined
-
   const [
     trHome,
     trKS3,
@@ -89,17 +86,8 @@ export default async function PracticePapersHub() {
     t('ks3.ils.prac.skill_link_text'),
   ])
 
-  const breadcrumb = [
-    { name: trHome, url: 'https://theenglishhub.app' },
-    { name: trKS3, url: 'https://theenglishhub.app/ks3' },
-    { name: trILS, url: 'https://theenglishhub.app/ks3/ilowersecondary' },
-    { name: trPrac, url: PAGE_URL },
-  ]
-
   return (
     <>
-      <BreadcrumbJsonLd items={breadcrumb} nonce={nonce} />
-
       <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
         <Link href="/" className="hover:text-foreground">
           {trHome}

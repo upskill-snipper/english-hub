@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { t } from '@/lib/i18n/t'
-import { headers } from 'next/headers'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import {
   NON_FICTION_TEXT_TYPES,
   NON_FICTION_PURPOSES,
@@ -18,8 +17,6 @@ export const metadata: Metadata = {
     canonical: 'https://theenglishhub.app/ks3/ilowersecondary/text-types/articles',
   },
 }
-
-const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/text-types/articles'
 
 const ARTICLES_TYPE = NON_FICTION_TEXT_TYPES.find((t) => t === 'newspaper and magazine articles')!
 
@@ -231,27 +228,8 @@ const WRITING_MODEL_OPENING = [
 ]
 
 export default async function ArticlesPage() {
-  const nonce = (await headers()).get('x-nonce') ?? undefined
-
   return (
     <>
-      <BreadcrumbJsonLd
-        nonce={nonce}
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'KS3', url: 'https://theenglishhub.app/ks3' },
-          {
-            name: 'iLowerSecondary English',
-            url: 'https://theenglishhub.app/ks3/ilowersecondary',
-          },
-          {
-            name: 'Text types',
-            url: 'https://theenglishhub.app/ks3/ilowersecondary/text-types',
-          },
-          { name: 'Newspaper & magazine articles', url: PAGE_URL },
-        ]}
-      />
-
       <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
         <Link href="/" className="hover:text-foreground">
           {await t('ks3.page.bc.home')}

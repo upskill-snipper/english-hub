@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Languages, Star, ArrowRight } from 'lucide-react'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import { tMany } from '@/lib/i18n/t'
 import { isMuslimMajorityVisitor } from '@/lib/geo/gcc'
 import { validateRedirect } from '@/lib/utils'
@@ -236,12 +236,6 @@ export default async function BoardSelectPage({
 
   return (
     <div className="min-h-screen bg-background">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Choose your exam board', url: 'https://theenglishhub.app/board-select' },
-        ]}
-      />
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 pt-12 pb-14 sm:pt-16 sm:pb-20">
         {/* Headline */}
         <header className="text-center mb-12 sm:mb-16">

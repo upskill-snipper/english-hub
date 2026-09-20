@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
-import { headers } from 'next/headers'
+
 import { t } from '@/lib/i18n/t'
 import Link from 'next/link'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import {
   SECTIONS,
   ASSESSMENT_OBJECTIVES,
@@ -50,30 +50,8 @@ function aoDescriptor(code: string): string {
 }
 
 export default async function PracticePaper3Page() {
-  const nonce = (await headers()).get('x-nonce') ?? undefined
-
   return (
     <>
-      <BreadcrumbJsonLd
-        nonce={nonce}
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'KS3', url: 'https://theenglishhub.app/ks3' },
-          {
-            name: 'iLowerSecondary English',
-            url: 'https://theenglishhub.app/ks3/ilowersecondary',
-          },
-          {
-            name: 'Practice papers',
-            url: 'https://theenglishhub.app/ks3/ilowersecondary/practice',
-          },
-          {
-            name: 'Paper 3: The Natural World',
-            url: 'https://theenglishhub.app/ks3/ilowersecondary/practice/paper-3',
-          },
-        ]}
-      />
-
       <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
         <Link href="/ks3" className="hover:text-foreground">
           {await t('ks3.page.bc.ks3')}

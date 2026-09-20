@@ -8,7 +8,7 @@ import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
 import type { PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
 
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd } from '@/components/seo/json-ld'
 import { useT } from '@/lib/i18n/use-t'
 
 /* ── Poem data (verified PD text from Verified Library) ──────────── */
@@ -282,18 +282,6 @@ export default function CousinKateEduqasPage() {
       <CourseJsonLd
         name="Cousin Kate by Christina Rossetti - Analysis & Annotations"
         description="Verified public-domain text of Cousin Kate by Christina Rossetti, with line-by-line study notes and themes for Eduqas GCSE English Literature."
-      />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
-          { name: 'Eduqas Poetry', url: 'https://theenglishhub.app/revision/poetry/eduqas' },
-          {
-            name: 'Cousin Kate',
-            url: 'https://theenglishhub.app/revision/poetry/eduqas/cousin-kate',
-          },
-        ]}
       />
 
       <div>

@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { headers } from 'next/headers'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import {
   FICTION_GENRES,
   NARRATIVE_PERSPECTIVES,
@@ -19,8 +18,6 @@ export const metadata: Metadata = {
 }
 
 export default async function FictionIndex() {
-  const nonce = (await headers()).get('x-nonce') ?? undefined
-
   const [
     trHome,
     trKS3,
@@ -71,16 +68,8 @@ export default async function FictionIndex() {
     },
   ]
 
-  const breadcrumb = [
-    { name: trHome, url: 'https://theenglishhub.app' },
-    { name: trKS3, url: 'https://theenglishhub.app/ks3' },
-    { name: trILS, url: 'https://theenglishhub.app/ks3/ilowersecondary' },
-    { name: trFic, url: PAGE_URL },
-  ]
-
   return (
     <>
-      <BreadcrumbJsonLd items={breadcrumb} nonce={nonce} />
       <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
         <Link href="/" className="hover:text-foreground">
           {trHome}

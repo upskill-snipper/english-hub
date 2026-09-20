@@ -7,7 +7,7 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { t } from '@/lib/i18n/t'
 import StudyTools from '@/components/study/StudyTools'
 
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Romeo and Juliet - Edexcel IGCSE Literature Study Guide',
@@ -125,18 +125,7 @@ export default async function RomeoAndJulietHubPage() {
         name="Romeo and Juliet - Edexcel IGCSE Literature Study Guide"
         description="In-depth study guide for Romeo and Juliet for Edexcel IGCSE English Literature, covering plot, characters, themes, key quotations, context and exam essay plans."
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
-          { name: 'Edexcel IGCSE Literature', url: 'https://theenglishhub.app/igcse/edexcel' },
-          { name: 'Shakespeare', url: 'https://theenglishhub.app/igcse/edexcel/shakespeare' },
-          {
-            name: 'Romeo and Juliet',
-            url: 'https://theenglishhub.app/igcse/edexcel/shakespeare/romeo-and-juliet',
-          },
-        ]}
-      />
+
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="border-b border-border bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">

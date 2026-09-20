@@ -8,7 +8,7 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { t } from '@/lib/i18n/t'
 import StudyTools from '@/components/study/StudyTools'
 
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
     title: 'The Curious Incident of the Dog in the Night-Time - IGCSE',
@@ -182,18 +182,7 @@ export default async function CuriousIncidentHubPage() {
         name="The Curious Incident of the Dog in the Night-Time - IGCSE"
         description="In-depth study guide for The Curious Incident of the Dog in the Night-Time for Edexcel IGCSE English Literature, covering plot, characters, themes, key quotations, context and exam essay plans."
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
-          { name: 'Edexcel IGCSE Literature', url: 'https://theenglishhub.app/igcse/edexcel' },
-          { name: 'Drama', url: 'https://theenglishhub.app/igcse/edexcel/drama' },
-          {
-            name: 'The Curious Incident of the Dog in the Night-Time',
-            url: 'https://theenglishhub.app/igcse/edexcel/drama/curious-incident',
-          },
-        ]}
-      />
+
       <div>
         <Button variant="ghost" size="sm" render={<Link href="/igcse/edexcel/drama" />}>
           <ArrowLeft className="size-3.5" />

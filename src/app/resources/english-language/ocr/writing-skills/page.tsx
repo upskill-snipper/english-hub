@@ -2,7 +2,7 @@ import { STRINGS } from './content'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
-import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { LearningResourceJsonLd } from '@/components/seo/json-ld'
 
 import { headers } from 'next/headers'
 /* ─── Metadata ───────────────────────────────────────────────── */
@@ -42,17 +42,6 @@ export default async function OCRWritingSkillsPage() {
 
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'English Language', url: 'https://theenglishhub.app/resources/english-language' },
-          { name: 'OCR', url: 'https://theenglishhub.app/resources/english-language/ocr' },
-          {
-            name: 'Writing skills',
-            url: 'https://theenglishhub.app/resources/english-language/ocr/writing-skills',
-          },
-        ]}
-      />
       <LearningResourceJsonLd
         name="OCR GCSE English Language writing skills"
         description="Writing skills for OCR GCSE English Language: structure, vocabulary, sentence variety, and creative/transactional writing models."

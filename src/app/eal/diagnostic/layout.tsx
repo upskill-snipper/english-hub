@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { QuizJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { QuizJsonLd } from '@/components/seo/json-ld'
 import { getDiagnosticQuestions } from '@/lib/eal/diagnostic-bank'
 
 /**
@@ -44,16 +44,7 @@ export default function EALDiagnosticLayout({ children }: { children: React.Reac
         inLanguage="en-GB"
         audienceRole="student"
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'EAL', url: 'https://theenglishhub.app/eal' },
-          {
-            name: 'CEFR Placement Test',
-            url: 'https://theenglishhub.app/eal/diagnostic',
-          },
-        ]}
-      />
+
       {children}
     </>
   )

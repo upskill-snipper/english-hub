@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import AffiliatePublicPage from '@/components/affiliates/AffiliatePublicPage'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import { tMany } from '@/lib/i18n/t'
 
 // 2026-05-01: SEO/integrity pass - title rewritten to query-aligned form,
@@ -66,24 +66,9 @@ export default async function AffiliatesPage() {
     data: { user },
   } = await supabase.auth.getUser()
 
-  const [breadcrumbHome, breadcrumbSelf] = await tMany([
-    'affiliates.breadcrumb.home',
-    'affiliates.breadcrumb.self',
-  ])
-
-  const breadcrumbs = (
-    <BreadcrumbJsonLd
-      items={[
-        { name: breadcrumbHome, url: 'https://theenglishhub.app' },
-        { name: breadcrumbSelf, url: 'https://theenglishhub.app/affiliates' },
-      ]}
-    />
-  )
-
   if (!user) {
     return (
       <>
-        {breadcrumbs}
         <AffiliatePublicPage />
       </>
     )
@@ -121,7 +106,6 @@ export default async function AffiliatesPage() {
 
   return (
     <>
-      {breadcrumbs}
       <AffiliatePublicPage applicationStatus={applicationStatus} isLoggedIn />
     </>
   )

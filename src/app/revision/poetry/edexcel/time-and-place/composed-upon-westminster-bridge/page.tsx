@@ -8,7 +8,7 @@ import { InteractivePoemViewer, type PoemData } from '@/components/study/Interac
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd } from '@/components/seo/json-ld'
 import { useT } from '@/lib/i18n/use-t'
 const westminsterBridge: PoemData = {
   title: 'Composed Upon Westminster Bridge, September 3, 1802',
@@ -667,18 +667,7 @@ export default function WestminsterBridgePage() {
         name="Composed Upon Westminster Bridge by William Wordsworth - Analysis & Annotations"
         description="Line-by-line analysis of Composed Upon Westminster Bridge with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
-          { name: 'Edexcel Poetry', url: 'https://theenglishhub.app/revision/poetry/edexcel' },
-          {
-            name: 'Composed Upon Westminster Bridge',
-            url: 'https://theenglishhub.app/revision/poetry/edexcel/composed-upon-westminster-bridge',
-          },
-        ]}
-      />
+
       <div>
         <Button
           variant="ghost"

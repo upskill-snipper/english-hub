@@ -24,7 +24,7 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { t } from '@/lib/i18n/t'
 
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
     title: 'IGCSE Language B - The English Hub',
@@ -208,14 +208,7 @@ export default async function Cambridge0990HubPage() {
         provider="The English Hub"
         url="https://theenglishhub.app/igcse/cambridge/0990"
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
-          { name: 'Cambridge IGCSE', url: 'https://theenglishhub.app/igcse/cambridge' },
-          { name: 'IGCSE 0990', url: 'https://theenglishhub.app/igcse/cambridge/0990' },
-        ]}
-      />
+
       {/* ── Back link ─────────────────────────────────────────────── */}
       <div>
         <Button

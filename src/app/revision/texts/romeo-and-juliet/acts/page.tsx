@@ -7,7 +7,6 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
@@ -403,21 +402,6 @@ export default async function RomeoAndJulietActsPage() {
 
   return (
     <div className="space-y-10 pb-16">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
-          {
-            name: 'Romeo and Juliet',
-            url: 'https://theenglishhub.app/revision/texts/romeo-and-juliet',
-          },
-          {
-            name: 'Act-by-Act Analysis',
-            url: 'https://theenglishhub.app/revision/texts/romeo-and-juliet/acts',
-          },
-        ]}
-      />
       {/* Hero */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-blue-500/[0.04] p-6 sm:p-8 lg:p-10">
         <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-blue-500/5 blur-3xl" />

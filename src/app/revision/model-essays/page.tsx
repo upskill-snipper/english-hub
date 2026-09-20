@@ -5,7 +5,7 @@ import { ArrowLeft, ArrowRight, BookOpen, Sparkles, FileText } from 'lucide-reac
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import { t, tMany } from '@/lib/i18n/t'
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -195,14 +195,6 @@ export default async function ModelEssaysIndexPage() {
 
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Model essays', url: 'https://theenglishhub.app/revision/model-essays' },
-        ]}
-      />
-
       <Breadcrumb items={breadcrumbItems} />
 
       <div className="space-y-10 pb-16">

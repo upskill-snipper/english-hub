@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { cn } from '@/lib/utils'
-import { BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/json-ld'
+import { FAQPageJsonLd } from '@/components/seo/json-ld'
 import { tMany } from '@/lib/i18n/t'
 import {
   BarChart3,
@@ -164,12 +164,6 @@ export default async function ForParentsPage() {
   ])
   return (
     <div className="min-h-screen bg-background">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'For Parents', url: 'https://theenglishhub.app/for-parents' },
-        ]}
-      />
       <FAQPageJsonLd faqs={faqs} />
       {/* ━━━ HERO ━━━ */}
       <section className="relative overflow-hidden pt-24 pb-28 sm:pt-32 sm:pb-36">

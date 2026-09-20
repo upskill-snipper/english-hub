@@ -18,8 +18,6 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { t } from '@/lib/i18n/t'
 
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
-
 async function readServerLocale(): Promise<'en' | 'ar' | 'es'> {
   try {
     const h = await headers()
@@ -409,21 +407,6 @@ export default async function ActsPage() {
 
   return (
     <div className="space-y-10 pb-16" dir={isAr ? 'rtl' : 'ltr'}>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
-          {
-            name: 'An Inspector Calls',
-            url: 'https://theenglishhub.app/revision/texts/an-inspector-calls',
-          },
-          {
-            name: 'Act-by-Act Analysis',
-            url: 'https://theenglishhub.app/revision/texts/an-inspector-calls/acts',
-          },
-        ]}
-      />
       {/* Hero */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-violet-500/[0.04] p-6 sm:p-8 lg:p-10">
         <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-violet-500/5 blur-3xl" />

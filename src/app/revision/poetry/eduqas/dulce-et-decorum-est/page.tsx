@@ -9,7 +9,7 @@ import type { PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd } from '@/components/seo/json-ld'
 import { useT } from '@/lib/i18n/use-t'
 const dulce: PoemData = {
   title: 'Dulce et Decorum Est',
@@ -819,18 +819,7 @@ export default function DulceEduqasPage() {
         name="Dulce et Decorum Est by Wilfred Owen - Analysis & Annotations"
         description="Line-by-line analysis of Dulce et Decorum Est with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
-          { name: 'Eduqas Poetry', url: 'https://theenglishhub.app/revision/poetry/eduqas' },
-          {
-            name: 'Dulce et Decorum Est',
-            url: 'https://theenglishhub.app/revision/poetry/eduqas/dulce-et-decorum-est',
-          },
-        ]}
-      />
+
       <div>
         <Button
           variant="ghost"

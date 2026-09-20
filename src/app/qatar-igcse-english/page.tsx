@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/json-ld'
+import { FAQPageJsonLd } from '@/components/seo/json-ld'
 import { tMany } from '@/lib/i18n/t'
 /* ─────────────── Page Metadata ─────────────── */
 
@@ -178,13 +178,6 @@ export default async function QatarIgcseEnglishPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <BreadcrumbJsonLd
-        items={[
-          { name: bcHome, url: 'https://theenglishhub.app' },
-          { name: bcCurrent, url: PAGE_URL },
-        ]}
-        nonce={nonce}
-      />
       <FAQPageJsonLd faqs={FAQS} nonce={nonce} />
 
       {/* ════════════════ HERO ════════════════ */}

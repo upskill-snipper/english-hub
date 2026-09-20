@@ -9,7 +9,7 @@ import type { PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd } from '@/components/seo/json-ld'
 import { useT } from '@/lib/i18n/use-t'
 const prelude: PoemData = {
   title: 'The Prelude: stealing the boat',
@@ -946,18 +946,7 @@ export default function PreludeEduqasPage() {
         name="The Prelude by William Wordsworth - Analysis & Annotations"
         description="Line-by-line analysis of The Prelude with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
-          { name: 'Eduqas Poetry', url: 'https://theenglishhub.app/revision/poetry/eduqas' },
-          {
-            name: 'The Prelude',
-            url: 'https://theenglishhub.app/revision/poetry/eduqas/the-prelude',
-          },
-        ]}
-      />
+
       <div>
         <Button
           variant="ghost"

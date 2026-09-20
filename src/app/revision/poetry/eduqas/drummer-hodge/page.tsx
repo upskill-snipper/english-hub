@@ -8,7 +8,7 @@ import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
 import type { PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
 
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd } from '@/components/seo/json-ld'
 import { useT } from '@/lib/i18n/use-t'
 
 /* ── Poem data (verified PD text from Verified Library) ──────────── */
@@ -301,18 +301,6 @@ export default function DrummerHodgeEduqasPage() {
       <CourseJsonLd
         name="Drummer Hodge by Thomas Hardy - Analysis & Annotations"
         description="Verified public-domain text of Drummer Hodge by Thomas Hardy (Second Boer War, 1899), with line-by-line study notes and themes for Eduqas GCSE English Literature."
-      />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
-          { name: 'Eduqas Poetry', url: 'https://theenglishhub.app/revision/poetry/eduqas' },
-          {
-            name: 'Drummer Hodge',
-            url: 'https://theenglishhub.app/revision/poetry/eduqas/drummer-hodge',
-          },
-        ]}
       />
 
       <div>

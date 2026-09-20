@@ -4,7 +4,7 @@ import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import { COMPANY } from '@/config/company'
 import { PRICING } from '@/constants/pricing'
 import { t } from '@/lib/i18n/t'
@@ -177,14 +177,6 @@ export default async function SchoolPilotPackPage() {
   const phaseWord = await t('mkt.schools.pilot.phase_word')
   return (
     <div className="min-h-screen bg-background">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: COMPANY.websiteUrl },
-          { name: 'For Schools', url: `${COMPANY.websiteUrl}/for-schools` },
-          { name: 'School Pilot Pack', url: `${COMPANY.websiteUrl}/for-schools/pilot` },
-        ]}
-      />
-
       {/* ── Hero ───────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden pt-20 pb-20 sm:pt-28 sm:pb-24 border-b border-border/40">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/[0.05] rounded-full blur-[180px] pointer-events-none" />

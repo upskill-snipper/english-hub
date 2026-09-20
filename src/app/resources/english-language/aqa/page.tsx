@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
@@ -141,14 +141,6 @@ export default async function AQAEnglishLanguagePage() {
   const studyNowLabel = await t('study.shared.study_now')
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Resources', url: 'https://theenglishhub.app/resources' },
-          { name: 'English Language', url: 'https://theenglishhub.app/resources/english-language' },
-          { name: 'AQA', url: 'https://theenglishhub.app/resources/english-language/aqa' },
-        ]}
-      />
       {/* Hero */}
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">

@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
@@ -242,17 +242,7 @@ export default async function TheMerchantOfVenicePage() {
         name="The Merchant of Venice \u2014 Complete GCSE Study Guide"
         description="In-depth study guide for The Merchant of Venice covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
-          {
-            name: 'The Merchant of Venice',
-            url: 'https://theenglishhub.app/revision/texts/the-merchant-of-venice',
-          },
-        ]}
-      />
+
       <div className="mb-6 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-sm text-amber-100">
         <strong className="block text-foreground">
           {await t('rev.texts.common.draft_guide_title')}

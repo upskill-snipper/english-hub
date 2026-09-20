@@ -6,7 +6,6 @@ import { ArrowLeft, BookOpen, Eye, MessageSquare, ZoomOut, Sparkles } from 'luci
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { useT } from '@/lib/i18n/use-t'
 
 /* ────────────────────────────────────────────────────────────────────── */
@@ -77,22 +76,6 @@ export default function ExtractWalkthroughPage() {
   const t = useT()
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
-          {
-            name: 'A View from the Bridge',
-            url: 'https://theenglishhub.app/revision/texts/a-view-from-the-bridge',
-          },
-          {
-            name: 'Extract Walkthrough',
-            url: 'https://theenglishhub.app/revision/texts/a-view-from-the-bridge/extract-walkthrough',
-          },
-        ]}
-      />
-
       <div className="container mx-auto px-4 py-8 max-w-5xl">
         <div className="mb-6">
           <Link

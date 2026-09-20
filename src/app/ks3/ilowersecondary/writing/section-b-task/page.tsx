@@ -1,7 +1,7 @@
 ﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import { t } from '@/lib/i18n/t'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import {
   SECTIONS,
   WAO1_GRID,
@@ -172,25 +172,6 @@ const METHOD_STEPS = [
 export default async function SectionBTaskPage() {
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'KS3', url: 'https://theenglishhub.app/ks3' },
-          {
-            name: 'iLowerSecondary English',
-            url: 'https://theenglishhub.app/ks3/ilowersecondary',
-          },
-          {
-            name: 'Writing skills',
-            url: 'https://theenglishhub.app/ks3/ilowersecondary/writing',
-          },
-          {
-            name: 'The Section B task',
-            url: 'https://theenglishhub.app/ks3/ilowersecondary/writing/section-b-task',
-          },
-        ]}
-      />
-
       <div className="mx-auto max-w-3xl px-4 py-12">
         <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
           <ol className="flex flex-wrap items-center gap-1">

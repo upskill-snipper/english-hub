@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 /**
  * /eal section metadata + breadcrumb. The landing page itself is a
@@ -56,15 +55,5 @@ export const metadata: Metadata = {
 }
 
 export default function EALLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'EAL - English for Arabic Speakers', url: 'https://theenglishhub.app/eal' },
-        ]}
-      />
-      {children}
-    </>
-  )
+  return <>{children}</>
 }

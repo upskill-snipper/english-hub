@@ -8,7 +8,7 @@ import { InteractivePoemViewer, type PoemData } from '@/components/study'
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd } from '@/components/seo/json-ld'
 import { useT } from '@/lib/i18n/use-t'
 /* ── Poem data ─────────────────────────────────────────────────── */
 
@@ -857,21 +857,7 @@ export default function ThePreludePage() {
         name="The Prelude by William Wordsworth - Analysis & Annotations"
         description="Line-by-line analysis of The Prelude with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
-          {
-            name: 'Power and Conflict',
-            url: 'https://theenglishhub.app/revision/poetry/power-and-conflict',
-          },
-          {
-            name: 'The Prelude',
-            url: 'https://theenglishhub.app/revision/poetry/power-and-conflict/the-prelude',
-          },
-        ]}
-      />
+
       {/* ── Header ──────────────────────────────────────────────── */}
       <div>
         <Button

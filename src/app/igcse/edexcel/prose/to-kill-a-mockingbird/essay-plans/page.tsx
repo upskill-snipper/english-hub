@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { t } from '@/lib/i18n/t'
 
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
     title: 'To Kill a Mockingbird Essay Plans - Edexcel IGCSE Literature',
@@ -203,22 +202,6 @@ export default async function TkamEssayPlansPage() {
 
   return (
     <div className="space-y-10 pb-16">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
-          { name: 'Edexcel IGCSE Literature', url: 'https://theenglishhub.app/igcse/edexcel' },
-          { name: 'Prose', url: 'https://theenglishhub.app/igcse/edexcel/prose' },
-          {
-            name: 'To Kill a Mockingbird',
-            url: 'https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird',
-          },
-          {
-            name: 'Essay Plans',
-            url: 'https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird/essay-plans',
-          },
-        ]}
-      />
       <div>
         <Button
           variant="ghost"

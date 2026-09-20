@@ -1,7 +1,7 @@
 ﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import { t } from '@/lib/i18n/t'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import {
   NON_FICTION_TEXT_TYPES,
   NON_FICTION_PURPOSES,
@@ -180,25 +180,6 @@ const PRACTICE: PracticeQ[] = [
 export default async function LeafletsBrochuresGuidesPage() {
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'KS3', url: 'https://theenglishhub.app/ks3' },
-          {
-            name: 'iLowerSecondary English',
-            url: 'https://theenglishhub.app/ks3/ilowersecondary',
-          },
-          {
-            name: 'Text types',
-            url: 'https://theenglishhub.app/ks3/ilowersecondary/text-types',
-          },
-          {
-            name: 'Leaflets, brochures & guides',
-            url: 'https://theenglishhub.app/ks3/ilowersecondary/text-types/leaflets-brochures-guides',
-          },
-        ]}
-      />
-
       <div className="mx-auto max-w-3xl px-4 py-12">
         <nav aria-label="Breadcrumb" className="mb-6 text-sm text-muted-foreground">
           <ol className="flex flex-wrap items-center gap-1">

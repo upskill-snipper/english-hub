@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 import Link from 'next/link'
-import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
@@ -178,17 +178,7 @@ export default async function LanguagePaperAnalysisHub() {
         url="https://theenglishhub.app/analysis/language-paper"
         nonce={nonce}
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Analysis', url: 'https://theenglishhub.app/analysis' },
-          {
-            name: 'AQA English Language Paper 1 and 2 Guides',
-            url: 'https://theenglishhub.app/analysis/language-paper',
-          },
-        ]}
-        nonce={nonce}
-      />
+
       <nav className="mb-4 text-sm text-muted-foreground">
         <Link href="/" className="hover:text-foreground">
           {tBreadHome}

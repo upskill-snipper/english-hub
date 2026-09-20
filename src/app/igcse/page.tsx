@@ -10,7 +10,6 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { tMany } from '@/lib/i18n/t'
 
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   title: 'IGCSE English revision - Pearson Edexcel and Cambridge',
   description:
@@ -143,12 +142,7 @@ export default async function IgcseHubPage() {
         about="IGCSE English"
         audienceRole="student"
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: tCrumbHome, url: 'https://theenglishhub.app' },
-          { name: tCrumbSelf, url: 'https://theenglishhub.app/igcse' },
-        ]}
-      />
+
       {/* ── Hero ────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 lg:p-10">
         <div className="pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />

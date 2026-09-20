@@ -6,7 +6,6 @@ import { ArrowLeft, BookOpen, Eye, MessageSquare, Maximize2, Quote, Lightbulb } 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { useT } from '@/lib/i18n/use-t'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 /* ── Walkthrough data ──────────────────────────────────────────────── */
 
@@ -112,19 +111,6 @@ export default function FrankensteinExtractWalkthroughPage() {
   const t = useT()
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
-          { name: 'Frankenstein', url: 'https://theenglishhub.app/revision/texts/frankenstein' },
-          {
-            name: 'Extract Walkthrough',
-            url: 'https://theenglishhub.app/revision/texts/frankenstein/extract-walkthrough',
-          },
-        ]}
-      />
-
       <div className="container mx-auto max-w-5xl px-4 py-10">
         <Link
           href="/revision/texts/frankenstein"

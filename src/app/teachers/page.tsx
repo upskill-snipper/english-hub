@@ -28,7 +28,7 @@ import {
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import { FeatureGrid } from '@/components/schools/FeatureGrid'
 import { SchoolFAQ } from '@/components/schools/SchoolFAQ'
 import { GlassPanel, PanelEyebrow } from '@/components/dataviz/GlassPanel'
@@ -186,13 +186,6 @@ export default async function TeachersPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Teachers', url: 'https://theenglishhub.app/teachers' },
-        ]}
-      />
-
       {/* 1. Hero */}
       <section className="relative overflow-hidden border-b border-border/60">
         <div

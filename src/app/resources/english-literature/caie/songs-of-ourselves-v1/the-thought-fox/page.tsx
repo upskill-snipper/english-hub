@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { ArrowLeft, BookOpen, Construction, Scale } from 'lucide-react'
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -35,28 +35,6 @@ export default function TheThoughtFoxPage() {
       <CourseJsonLd
         name="The Thought-Fox - Ted Hughes (Cambridge IGCSE 0475)"
         description="Study guide stub for 'The Thought-Fox' by Ted Hughes (1957). Cambridge IGCSE Literature in English (0475), Songs of Ourselves Vol 1 Hughes cluster."
-      />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Resources', url: 'https://theenglishhub.app/resources' },
-          {
-            name: 'English Literature',
-            url: 'https://theenglishhub.app/resources/english-literature',
-          },
-          {
-            name: 'Cambridge IGCSE',
-            url: 'https://theenglishhub.app/resources/english-literature/caie',
-          },
-          {
-            name: 'Songs of Ourselves Vol 1',
-            url: 'https://theenglishhub.app/resources/english-literature/caie/songs-of-ourselves-v1',
-          },
-          {
-            name: 'The Thought-Fox',
-            url: 'https://theenglishhub.app/resources/english-literature/caie/songs-of-ourselves-v1/the-thought-fox',
-          },
-        ]}
       />
 
       <div>

@@ -9,7 +9,7 @@ import type { PoemData } from '@/components/study/InteractivePoemViewer'
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd } from '@/components/seo/json-ld'
 import { useT } from '@/lib/i18n/use-t'
 const theEagle: PoemData = {
   title: 'The Eagle',
@@ -534,15 +534,7 @@ export default function TheEaglePage() {
         name="The Eagle by Alfred, Lord Tennyson - Analysis & Annotations"
         description="Line-by-line analysis of The Eagle with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
-          { name: 'OCR Poetry', url: 'https://theenglishhub.app/revision/poetry/ocr' },
-          { name: 'The Eagle', url: 'https://theenglishhub.app/revision/poetry/ocr/the-eagle' },
-        ]}
-      />
+
       <div>
         <Button
           variant="ghost"

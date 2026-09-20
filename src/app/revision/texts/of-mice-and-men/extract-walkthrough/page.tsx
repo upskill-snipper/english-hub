@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { useT } from '@/lib/i18n/use-t'
 
 type WalkthroughCard = {
@@ -95,22 +94,6 @@ export default function OfMiceAndMenExtractWalkthroughPage() {
   const tr = useT()
   return (
     <div className="mx-auto max-w-4xl px-4 py-10">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
-          {
-            name: 'Of Mice and Men',
-            url: 'https://theenglishhub.app/revision/texts/of-mice-and-men',
-          },
-          {
-            name: 'Extract Walkthrough',
-            url: 'https://theenglishhub.app/revision/texts/of-mice-and-men/extract-walkthrough',
-          },
-        ]}
-      />
-
       <nav className="mb-6 text-sm text-muted-foreground">
         <Link href="/revision/texts/of-mice-and-men" className="hover:underline">
           &larr; {tr('rev.texts.common.back_to_text').replace('{text}', 'Of Mice and Men')}

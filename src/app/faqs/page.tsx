@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { ArrowRight, Mail } from 'lucide-react'
 import { tMany } from '@/lib/i18n/t'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 /**
  * /faqs - Server-rendered FAQs for SEO + rich results.
@@ -224,16 +223,6 @@ export default async function FaqsPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
-      {/* BreadcrumbList - /faqs previously emitted no breadcrumb structured
-          data at all, so the page had no declared position in the site
-          hierarchy. Names stay canonical English to match the URLs. */}
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'FAQs', url: 'https://theenglishhub.app/faqs' },
-        ]}
-      />
-
       {/* Header */}
       <header className="text-center">
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{title}</h1>

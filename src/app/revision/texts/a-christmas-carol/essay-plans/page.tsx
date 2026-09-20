@@ -8,7 +8,6 @@ import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
 import { useT } from '@/lib/i18n/use-t'
 
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ── Essay plan data ─────────────────────────────────────────────────── */
 
 type Paragraph = {
@@ -351,21 +350,6 @@ export default function EssayPlansPage() {
   const t = useT()
   return (
     <div className="space-y-10 pb-16">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
-          {
-            name: 'A Christmas Carol',
-            url: 'https://theenglishhub.app/revision/texts/a-christmas-carol',
-          },
-          {
-            name: 'Essay Plans',
-            url: 'https://theenglishhub.app/revision/texts/a-christmas-carol/essay-plans',
-          },
-        ]}
-      />
       {/* Study Tools */}
       <StudyTools textName="A Christmas Carol" textType="novella" />
 

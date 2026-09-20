@@ -19,7 +19,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
 import StudyTools from '@/components/study/StudyTools'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import { useT } from '@/lib/i18n/use-t'
 
 // ─── localStorage key (shared with other anthology pages) ─────────────────
@@ -253,17 +253,6 @@ export default function LoveAndRelationshipsPage() {
 
   return (
     <div className="space-y-10 pb-16">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
-          {
-            name: 'Love and Relationships',
-            url: 'https://theenglishhub.app/revision/poetry/love-and-relationships',
-          },
-        ]}
-      />
       {/* ── Back link ───────────────────────────────────────────────── */}
       <div>
         <Button

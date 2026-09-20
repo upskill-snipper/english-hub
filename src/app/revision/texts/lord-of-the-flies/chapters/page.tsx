@@ -9,7 +9,6 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
 
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Lord of the Flies Chapter Summaries | The English Hub',
@@ -370,21 +369,6 @@ export default async function LotFChaptersPage() {
 
   return (
     <div className="space-y-10 pb-16">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
-          {
-            name: 'Lord of the Flies',
-            url: 'https://theenglishhub.app/revision/texts/lord-of-the-flies',
-          },
-          {
-            name: 'Chapter-by-Chapter Analysis',
-            url: 'https://theenglishhub.app/revision/texts/lord-of-the-flies/chapters',
-          },
-        ]}
-      />
       <Breadcrumb
         items={[
           { label: await t('rev.texts.common.crumb_revision'), href: '/revision' },

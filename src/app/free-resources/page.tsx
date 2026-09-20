@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
-import { headers } from 'next/headers'
+
 import Link from 'next/link'
 import LevelChip, { type Level } from '@/components/home/LevelChip'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import { tMany } from '@/lib/i18n/t'
 
 /* ───────────────────── Metadata ───────────────────── */
@@ -117,8 +117,6 @@ const RESOURCE_DEFS: ResourceDef[] = [
 /* ───────────────────── Page ───────────────────── */
 
 export default async function FreeResourcesPage() {
-  const nonce = (await headers()).get('x-nonce') ?? undefined
-
   const resourceKeys = RESOURCE_DEFS.flatMap((r) => [r.titleKey, r.boardScopeKey, r.descKey])
   const baseKeys = [
     'free_res.crumb.home',
@@ -157,14 +155,6 @@ export default async function FreeResourcesPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <BreadcrumbJsonLd
-        nonce={nonce}
-        items={[
-          { name: tCrumbHome, url: SITE_URL },
-          { name: tCrumbSelf, url: PAGE_URL },
-        ]}
-      />
-
       {/* ── Hero ────────────────────────────────────────────────────── */}
       <section aria-labelledby="free-resources-heading" className="bg-background pb-10 sm:pb-14">
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 pt-12 sm:pt-16">

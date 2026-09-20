@@ -22,7 +22,6 @@ import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
 import { useT } from '@/lib/i18n/use-t'
 
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ── Theme data ──────────────────────────────────────────────────────── */
 
 type ThemeQuote = {
@@ -444,21 +443,6 @@ export default function ThemesPage() {
   const tr = useT()
   return (
     <div className="space-y-10 bg-background pb-16">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
-          {
-            name: 'Things Fall Apart',
-            url: 'https://theenglishhub.app/revision/texts/things-fall-apart',
-          },
-          {
-            name: 'Themes',
-            url: 'https://theenglishhub.app/revision/texts/things-fall-apart/themes',
-          },
-        ]}
-      />
       {/* Study Tools */}
       <StudyTools textName="Things Fall Apart" textType="novel" examBoard="IGCSE Edexcel" />
 

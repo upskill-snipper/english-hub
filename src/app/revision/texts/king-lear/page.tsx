@@ -6,7 +6,7 @@ import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
@@ -653,14 +653,7 @@ export default async function KingLearPage() {
         name="King Lear - Complete A-Level Study Guide"
         description="In-depth study guide for King Lear covering plot, characters, themes, key quotations, historical context and exam essay plans for A-Level English Literature."
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
-          { name: 'King Lear', url: 'https://theenglishhub.app/revision/texts/king-lear' },
-        ]}
-      />
+
       <TextStudyHub
         textName="King Lear"
         textType="play"

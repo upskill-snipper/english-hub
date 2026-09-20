@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { t } from '@/lib/i18n/t'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import {
   SECTIONS,
   ASSESSMENT_OBJECTIVES,
@@ -51,25 +51,6 @@ function aoDescriptor(code: string): string {
 export default async function PracticePaper4Page() {
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'KS3', url: 'https://theenglishhub.app/ks3' },
-          {
-            name: 'iLowerSecondary English',
-            url: 'https://theenglishhub.app/ks3/ilowersecondary',
-          },
-          {
-            name: 'Practice papers',
-            url: 'https://theenglishhub.app/ks3/ilowersecondary/practice',
-          },
-          {
-            name: 'Paper 4: Courage',
-            url: 'https://theenglishhub.app/ks3/ilowersecondary/practice/paper-4',
-          },
-        ]}
-      />
-
       <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
         <Link href="/ks3" className="hover:text-foreground">
           {await t('ks3.page.bc.ks3')}

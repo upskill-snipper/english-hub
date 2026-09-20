@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import {
   ShieldCheck,
   FileSearch,
@@ -110,17 +110,6 @@ export default async function ContentVerificationMethodologyPage() {
   )
   return (
     <div className="min-h-screen bg-background">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: COMPANY.websiteUrl },
-          { name: 'About', url: `${COMPANY.websiteUrl}/about` },
-          {
-            name: 'Content Verification Methodology',
-            url: `${COMPANY.websiteUrl}/about/content-verification`,
-          },
-        ]}
-      />
-
       {/* ── Hero ───────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden pt-20 pb-16 sm:pt-28 sm:pb-20 border-b border-border/40">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/[0.05] rounded-full blur-[140px] pointer-events-none" />

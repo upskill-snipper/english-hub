@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   title: 'Revision games',
@@ -23,15 +22,5 @@ export const metadata: Metadata = {
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return (
-    <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision games', url: 'https://theenglishhub.app/games' },
-        ]}
-      />
-      {children}
-    </>
-  )
+  return <>{children}</>
 }

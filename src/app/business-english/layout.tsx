@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import { selfCanonical, SITE_ORIGIN } from '@/lib/seo/canonical'
 
 /**
@@ -62,15 +62,5 @@ export const metadata: Metadata = {
 }
 
 export default function BusinessEnglishLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: SITE_ORIGIN },
-          { name: 'For organisations', url: selfCanonical('/business-english') },
-        ]}
-      />
-      {children}
-    </>
-  )
+  return <>{children}</>
 }

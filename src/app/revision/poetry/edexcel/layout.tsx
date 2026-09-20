@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   title: 'Edexcel GCSE poetry anthology - Time and Place + Conflict',
@@ -28,14 +27,7 @@ export default async function EdexcelPoetryLayout({ children }: { children: Reac
           including the Conflict and Time and Place cluster pages that should
           rank for their own anthology searches. See
           src/app/demo/school/layout.tsx for the full reasoning. */}
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
-          { name: 'Edexcel poetry', url: 'https://theenglishhub.app/revision/poetry/edexcel' },
-        ]}
-      />
+
       {children}
     </>
   )

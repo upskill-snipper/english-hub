@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 import Link from 'next/link'
-import { BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/json-ld'
+import { FAQPageJsonLd } from '@/components/seo/json-ld'
 import { tMany } from '@/lib/i18n/t'
 /* ───────────────────── Metadata ───────────────────── */
 
@@ -292,13 +292,6 @@ export default async function InternationalSchoolIgcsePage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <BreadcrumbJsonLd
-        nonce={nonce}
-        items={[
-          { name: bcHome, url: SITE_URL },
-          { name: bcCurrent, url: PAGE_URL },
-        ]}
-      />
       <FAQPageJsonLd nonce={nonce} faqs={FAQS} />
 
       {/* ── Hero ────────────────────────────────────────────────────── */}

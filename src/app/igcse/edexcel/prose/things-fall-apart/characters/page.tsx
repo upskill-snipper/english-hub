@@ -1,6 +1,5 @@
 'use client'
 
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import Link from 'next/link'
 import { ArrowLeft, Users, Sparkles, Info } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
@@ -88,22 +87,6 @@ export default function ThingsFallApartCharactersPage() {
   const tr = useT()
   return (
     <div className="space-y-10 pb-16">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
-          { name: 'Edexcel IGCSE Literature', url: 'https://theenglishhub.app/igcse/edexcel' },
-          { name: 'Prose', url: 'https://theenglishhub.app/igcse/edexcel/prose' },
-          {
-            name: 'Things Fall Apart',
-            url: 'https://theenglishhub.app/igcse/edexcel/prose/things-fall-apart',
-          },
-          {
-            name: 'Characters',
-            url: 'https://theenglishhub.app/igcse/edexcel/prose/things-fall-apart/characters',
-          },
-        ]}
-      />
       <div>
         <Button
           variant="ghost"

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   title: 'Pricing',
@@ -33,15 +32,5 @@ export const metadata: Metadata = {
 }
 
 export default function PricingLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Pricing', url: 'https://theenglishhub.app/pricing' },
-        ]}
-      />
-      {children}
-    </>
-  )
+  return <>{children}</>
 }

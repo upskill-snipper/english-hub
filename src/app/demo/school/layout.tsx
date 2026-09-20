@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
-import { headers } from 'next/headers'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import DemoSchoolLayoutClient from './layout-client'
 
 export const dynamic = 'force-dynamic'
@@ -49,17 +48,8 @@ export const metadata: Metadata = {
 }
 
 export default async function DemoSchoolLayout({ children }: { children: React.ReactNode }) {
-  const nonce = (await headers()).get('x-nonce') ?? undefined
   return (
     <>
-      <BreadcrumbJsonLd
-        nonce={nonce}
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Demos', url: 'https://theenglishhub.app/demo' },
-          { name: 'School portal', url: 'https://theenglishhub.app/demo/school' },
-        ]}
-      />
       {/* THE SoftwareApplication NODE MOVED TO page.tsx ON 20 SEPTEMBER 2026.
           It hard-codes url="https://theenglishhub.app/demo/school", and a layout
           wraps every descendant, so all 15 URLs under /demo/school declared

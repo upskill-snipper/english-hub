@@ -15,11 +15,8 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
 import { useT } from '@/lib/i18n/use-t'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 /* ─── Page metadata (client component, so no Metadata export) ─────── */
-
-const PAGE_URL = 'https://theenglishhub.app/revision/texts/lord-of-the-flies/extract-walkthrough'
 
 /* ─── Walkthrough card type ───────────────────────────────────────── */
 
@@ -152,19 +149,6 @@ export default function LordOfTheFliesExtractWalkthroughPage() {
   const cardOfTpl = t('rev.texts.lotf.extract.card_of')
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Texts', url: 'https://theenglishhub.app/revision/texts' },
-          {
-            name: 'Lord of the Flies',
-            url: 'https://theenglishhub.app/revision/texts/lord-of-the-flies',
-          },
-          { name: 'Extract walkthrough', url: PAGE_URL },
-        ]}
-      />
-
       <div className="mx-auto w-full max-w-4xl px-4 py-8 md:py-12">
         <Breadcrumb
           items={[

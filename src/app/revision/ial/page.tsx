@@ -23,7 +23,7 @@ import {
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import { getSetTextsForBoard } from '@/lib/board/set-texts'
 import { textGuideHref } from '@/lib/revision/guide-href'
 import { t } from '@/lib/i18n/t'
@@ -354,14 +354,6 @@ export default async function IalHubPage() {
 
   return (
     <div className="space-y-10 pb-16">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Your Hub', url: 'https://theenglishhub.app/revision' },
-          { name: 'IAL English', url: 'https://theenglishhub.app/revision/ial' },
-        ]}
-      />
-
       {/* ── Back link ─────────────────────────────────────────────── */}
       <div>
         <Button

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Clock, GraduationCap } from 'lucide-react'
 
 import { Card, CardContent } from '@/components/ui/card'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import { getAllLessonPlans, type LessonPlan } from '@/lib/lesson-plans/list'
 import { tMany } from '@/lib/i18n/t'
 
@@ -63,15 +63,6 @@ export default async function LessonPlansIndexPage() {
 
   return (
     <div className="min-h-screen">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Resources', url: 'https://theenglishhub.app/resources' },
-          { name: 'Teaching', url: 'https://theenglishhub.app/resources/teaching' },
-          { name: 'Lesson plans', url: PAGE_URL },
-        ]}
-      />
-
       {/* Hero */}
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-4xl">

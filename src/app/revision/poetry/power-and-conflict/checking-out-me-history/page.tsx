@@ -7,7 +7,7 @@ import type { PoemData } from '@/components/study'
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
-import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -940,20 +940,7 @@ export default function CheckingOutMeHistoryPage() {
         name="Checking Out Me History by John Agard - Analysis & Annotations"
         description="Line-by-line analysis of Checking Out Me History with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          {
-            name: 'Power and Conflict',
-            url: 'https://theenglishhub.app/revision/poetry/power-and-conflict',
-          },
-          {
-            name: 'Checking Out Me History',
-            url: 'https://theenglishhub.app/revision/poetry/power-and-conflict/checking-out-me-history',
-          },
-        ]}
-      />
+
       <LearningResourceJsonLd
         name="Checking Out Me History (AQA Power and Conflict)"
         description="Analysis of Checking Out Me History for AQA GCSE English Literature Power and Conflict cluster: themes, language, structure, and comparisons."

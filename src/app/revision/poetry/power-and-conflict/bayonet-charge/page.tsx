@@ -8,7 +8,7 @@ import type { Metadata } from 'next'
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
-import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 /* ── SEO ─────────────────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
@@ -734,20 +734,7 @@ export default function BayonetChargePage() {
         name="Bayonet Charge by Ted Hughes - Analysis & Annotations"
         description="Line-by-line analysis of Bayonet Charge with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          {
-            name: 'Power and Conflict',
-            url: 'https://theenglishhub.app/revision/poetry/power-and-conflict',
-          },
-          {
-            name: 'Bayonet Charge',
-            url: 'https://theenglishhub.app/revision/poetry/power-and-conflict/bayonet-charge',
-          },
-        ]}
-      />
+
       <LearningResourceJsonLd
         name="Bayonet Charge (AQA Power and Conflict)"
         description="Analysis of Bayonet Charge for AQA GCSE English Literature Power and Conflict cluster: themes, language, structure, and comparisons."

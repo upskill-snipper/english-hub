@@ -8,7 +8,7 @@ import { InteractivePoemViewer, type PoemData } from '@/components/study'
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd } from '@/components/seo/json-ld'
 import { useT } from '@/lib/i18n/use-t'
 const poemData: PoemData = {
   title: "Sonnet 29 -- 'I think of thee!'",
@@ -530,21 +530,7 @@ export default function Sonnet29Page() {
         name="Sonnet 29 by Elizabeth Barrett Browning - Analysis & Annotations"
         description="Line-by-line analysis of Sonnet 29 with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
-          {
-            name: 'Love and Relationships',
-            url: 'https://theenglishhub.app/revision/poetry/love-and-relationships',
-          },
-          {
-            name: 'Sonnet 29',
-            url: 'https://theenglishhub.app/revision/poetry/love-and-relationships/sonnet-29',
-          },
-        ]}
-      />
+
       <div>
         <Button
           variant="ghost"

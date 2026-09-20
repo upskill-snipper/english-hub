@@ -8,7 +8,7 @@ import { InteractivePoemViewer, type PoemData } from '@/components/study/Interac
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd } from '@/components/seo/json-ld'
 import { useT } from '@/lib/i18n/use-t'
 const toAutumn: PoemData = {
   title: 'To Autumn',
@@ -877,15 +877,7 @@ export default function ToAutumnPage() {
         name="To Autumn by John Keats - Analysis & Annotations"
         description="Line-by-line analysis of To Autumn with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
-          { name: 'Edexcel Poetry', url: 'https://theenglishhub.app/revision/poetry/edexcel' },
-          { name: 'To Autumn', url: 'https://theenglishhub.app/revision/poetry/edexcel/to-autumn' },
-        ]}
-      />
+
       <div>
         <Button
           variant="ghost"

@@ -2,6 +2,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { readFileSync } from 'node:fs'
+import { execSync } from 'node:child_process'
 
 /**
  * A third of the site said nothing about where its pages sit.
@@ -31,16 +32,21 @@ import { readFileSync } from 'node:fs'
  * no-hub-schema-in-layouts.test.ts states that distinction and deliberately
  * keeps BreadcrumbJsonLd out of its list.
  *
- * WHY THE 903 HAND-WRITTEN TRAILS STAY. Some describe a hierarchy the URL does
- * not. Replacing them would change the declared structure of 903 working pages
- * to fix 426 broken ones. Google's guidance covers the overlap: "If there are
- * multiple breadcrumb trails to reach a page, you can add multiple breadcrumb
- * trails to the page."
+ * THE 903 HAND-WRITTEN TRAILS STAYED, AND THEN MOST OF THEM WENT. For one day
+ * they were left alone, on the reasoning that replacing them would change the
+ * declared structure of 903 working pages to fix 426 broken ones, and that
+ * Google permits multiple trails anyway. That was true but it left 711 URLs
+ * emitting two, which is duplication this fix introduced.
+ *
+ * So each was compared, item by item, against what the path-derived trail
+ * produces for the same route. 931 mounts across 403 files said exactly the
+ * same thing and are gone. Twelve say something the URL cannot and stay; they
+ * are pinned as an exact set below, with the reason each earns its place.
  *
  * MUTATIONS RUN, each verified to have altered the file first: removing the
  * mount from the root layout fails; dropping the /ar prefix fails; returning a
- * trail for the homepage fails; and removing the specification-code rule from
- * labelFor fails.
+ * trail for the homepage fails; removing the specification-code rule from
+ * labelFor fails; and restoring a deleted hand-written mount fails the set.
  */
 
 const headerValues = new Map<string, string>()
@@ -116,6 +122,48 @@ describe('every page says where it sits', () => {
       'https://theenglishhub.app/ar/revision',
       'https://theenglishhub.app/ar/revision/texts',
     ])
+  })
+
+  it('and only twelve pages still write their own trail', () => {
+    // 20 September 2026, second pass. Mounting the path-derived trail put a
+    // SECOND BreadcrumbList on the 903 pages that already had one - 711 of
+    // 1,329 URLs ended up with two. Google permits it, so nothing was broken,
+    // but it was duplication introduced by the fix.
+    //
+    // 931 hand-written mounts across 403 files are gone. The twelve that stay
+    // each say something the URL cannot:
+    //
+    //   /school-pilot files itself under /schools; the URL is a flat slug.
+    //   Four iLowerSecondary pages file themselves under a skills hub that is
+    //     a real page at a different path from their own parent segment.
+    //   Six dynamic routes carry a real entity name - the post's title, the
+    //     course's title, the essay's question - where the path derives only a
+    //     humanised slug.
+    //
+    // Pinned as an exact set, not a count, so a thirteenth has to be argued
+    // for here rather than appearing quietly.
+    const mounts = execSync('git ls-files src/app', { encoding: 'utf8' })
+      .split('\n')
+      .filter((f) => f.endsWith('.tsx'))
+      .filter((f) => /<BreadcrumbJsonLd[\s/>]/.test(readFileSync(f, 'utf8')))
+      .sort()
+
+    expect(mounts).toEqual(
+      [
+        'src/app/blog/[slug]/page.tsx',
+        'src/app/courses/[id]/page.tsx',
+        'src/app/ks3/ilowersecondary/reading/retrieval/page.tsx',
+        'src/app/ks3/ilowersecondary/reference/connectives/page.tsx',
+        'src/app/ks3/ilowersecondary/reference/spelling-punctuation/page.tsx',
+        'src/app/ks3/ilowersecondary/writing/grammar-punctuation-spelling/page.tsx',
+        'src/app/ks3/ilowersecondary/writing/structure-organisation/page.tsx',
+        'src/app/resources/teaching/lesson-plans/[slug]/page.tsx',
+        'src/app/resources/teaching/printables/[slug]/page.tsx',
+        'src/app/revision/model-essays/[text]/[slug]/page.tsx',
+        'src/app/school-pilot/page.tsx',
+        'src/app/set-texts/[board]/page.tsx',
+      ].sort(),
+    )
   })
 
   it('labels segments the way a reader would write them', () => {

@@ -9,7 +9,6 @@ import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
 import { useT } from '@/lib/i18n/use-t'
 
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 // ── Character data ────────────────────────────────────────────────────────────
 
 type CharacterStudy = {
@@ -411,18 +410,6 @@ export default function MacbethCharactersPage() {
   const tr = useT()
   return (
     <div className="min-h-screen bg-background">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
-          { name: 'Macbeth', url: 'https://theenglishhub.app/revision/texts/macbeth' },
-          {
-            name: 'Characters',
-            url: 'https://theenglishhub.app/revision/texts/macbeth/characters',
-          },
-        ]}
-      />
       <div className="mx-auto max-w-4xl space-y-10 px-4 py-8 sm:px-6 lg:px-8">
         <StudyTools textName="Macbeth" textType="play" examBoard="AQA" />
 

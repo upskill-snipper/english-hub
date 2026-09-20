@@ -7,7 +7,6 @@ import {
   YEAR9_CODES,
   SPEC_ATTRIBUTION,
 } from '@/lib/ilowersecondary/spec'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -30,8 +29,6 @@ export const metadata: Metadata = {
     canonical: 'https://theenglishhub.app/ks3/ilowersecondary/writing/vocabulary-cohesion',
   },
 }
-
-const SITE = 'https://theenglishhub.app'
 
 /* ─── Skill anchors (labels only - never restate spec numbers inline) ─── */
 
@@ -232,25 +229,6 @@ const CHALLENGE: Challenge[] = [
 export default async function VocabularyCohesionPage() {
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: SITE },
-          { name: 'KS3', url: `${SITE}/ks3` },
-          {
-            name: 'iLowerSecondary English',
-            url: `${SITE}/ks3/ilowersecondary`,
-          },
-          {
-            name: 'Writing skills',
-            url: `${SITE}/ks3/ilowersecondary/writing`,
-          },
-          {
-            name: 'Vocabulary & cohesion',
-            url: `${SITE}/ks3/ilowersecondary/writing/vocabulary-cohesion`,
-          },
-        ]}
-      />
-
       <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
         <Link href="/ks3" className="hover:text-foreground">
           {await t('ks3.page.bc.ks3')}

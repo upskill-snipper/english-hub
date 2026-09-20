@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import StudyTools from '@/components/study/StudyTools'
-import { LearningResourceJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
@@ -255,17 +255,7 @@ export default async function CuriousIncidentPage() {
         audienceRole="student"
         isAccessibleForFree={true}
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
-          {
-            name: 'The Curious Incident of the Dog in the Night-Time',
-            url: 'https://theenglishhub.app/revision/texts/curious-incident',
-          },
-        ]}
-      />
+
       <div className="mb-6 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-sm text-amber-100">
         <strong className="block text-foreground">{await t('rev.texts.common.draft_badge')}</strong>
         <span>{await t('rev.texts.common.draft_note')}</span>

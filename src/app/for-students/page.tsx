@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
-import { BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/json-ld'
+import { FAQPageJsonLd } from '@/components/seo/json-ld'
 import {
   BookOpen,
   Target,
@@ -145,12 +145,6 @@ export default async function ForStudentsPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'For Students', url: 'https://theenglishhub.app/for-students' },
-        ]}
-      />
       {/* Infographic banner removed 2026-08-18: the PNG carried an invented
           "Aanya, Student" testimonial (see the old designer TODO) - invented
           testimonials are banned on this product. Reinstate only with a
