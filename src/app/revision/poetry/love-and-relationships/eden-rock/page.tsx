@@ -609,7 +609,7 @@ export default function EdenRockPage() {
         <p>
           <strong>Note on the poem text below:</strong> The full poem body is reproduced under
           fair-dealing extracts only. Students should refer to Causley&rsquo;s{' '}
-          <em>Collected Poems 1951&ndash;1997</em> (Macmillan) or the{' '}
+          <em>Collected Poems 1951–1997</em> (Macmillan) or the{' '}
           <a
             href="https://poetryarchive.org/poet/charles-causley/"
             target="_blank"

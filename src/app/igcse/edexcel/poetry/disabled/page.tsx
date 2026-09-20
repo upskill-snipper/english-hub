@@ -794,8 +794,8 @@ export default function DisabledPage() {
           <div>
             <h1 className="text-heading-lg font-heading text-foreground">Disabled</h1>
             <p className="text-body-sm text-muted-foreground">
-              Wilfred Owen (1893&ndash;1918) &middot; written October 1917, published posthumously
-              1920 in <em>Poems</em> (Chatto &amp; Windus) &middot; Edexcel IGCSE Anthology
+              Wilfred Owen (1893–1918) &middot; written October 1917, published posthumously 1920 in{' '}
+              <em>Poems</em> (Chatto &amp; Windus) &middot; Edexcel IGCSE Anthology
             </p>
             <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
               {tr('igcse.page.badge_edexcel_lit')}

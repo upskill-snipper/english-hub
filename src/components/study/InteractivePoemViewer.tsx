@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useCallback, useRef, useEffect } from 'react'
-import DOMPurify from 'dompurify'
+import { sanitiseHtml } from '@/lib/html/sanitise'
 import { cn } from '@/lib/utils'
 import { useT } from '@/lib/i18n/use-t'
 import type { Locale } from '@/lib/i18n/dictionary'
@@ -214,7 +214,11 @@ function ContextPanel({ html }: { html: string }) {
   return (
     <div
       className="prose prose-sm max-w-none text-sm leading-relaxed text-card-foreground"
-      dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(html) }}
+      // sanitiseHtml, NOT DOMPurify.sanitize. DOMPurify needs a DOM: on the
+      // server it has no `sanitize` method and calling it throws, which Next
+      // swallows into an error boundary. This panel only ever rendered after a
+      // click, so the server path was never taken until 20 September 2026.
+      dangerouslySetInnerHTML={{ __html: sanitiseHtml(html) }}
     />
   )
 }
@@ -477,86 +481,99 @@ export function InteractivePoemViewer({ poem }: { poem: PoemData }) {
           </div>
         </div>
 
-        {/* Analysis panel (desktop: right, mobile: below) */}
-        {hasAnyActive && activePanelTab && (
-          <div className="w-full border-t border-border lg:border-t-0 lg:w-[380px] xl:w-[420px] shrink-0 animate-fade-in">
-            {/* Panel tab switcher (when multiple active) */}
-            {activeTabs.size > 1 && (
-              <div className="flex border-b border-border px-3 pt-2 gap-1 overflow-x-auto">
-                {TABS.filter((tab) => activeTabs.has(tab.key)).map((tab) => (
-                  <button
-                    key={tab.key}
-                    onClick={() => {
-                      /* Cycle focus by toggling all others off then back on,
+        {/* Analysis panel (desktop: right, mobile: below).
+
+            ALWAYS MOUNTED, hidden with CSS until a tab is chosen. It used to
+            be conditionally rendered, which meant the analysis existed in the
+            component's props and never in the HTML - see the docblock at the
+            top of this file for what that cost.
+
+            `animate-fade-in` is gone with the conditional mount: the element
+            no longer remounts on open, so the class would fire once, on page
+            load, while the panel is still hidden. */}
+        <div
+          hidden={!hasAnyActive || !activePanelTab}
+          className="w-full border-t border-border lg:border-t-0 lg:w-[380px] xl:w-[420px] shrink-0"
+        >
+          {/* Panel tab switcher (when multiple active) */}
+          {activeTabs.size > 1 && (
+            <div className="flex border-b border-border px-3 pt-2 gap-1 overflow-x-auto">
+              {TABS.filter((tab) => activeTabs.has(tab.key)).map((tab) => (
+                <button
+                  key={tab.key}
+                  onClick={() => {
+                    /* Cycle focus by toggling all others off then back on,
                          or simpler: just re-order by removing & re-adding */
-                      setActiveTabs((prev) => {
-                        const next = new Set<AnalysisTab>()
-                        // Put the clicked tab first
-                        next.add(tab.key)
-                        prev.forEach((tk) => {
-                          if (tk !== tab.key) next.add(tk)
-                        })
-                        return next
+                    setActiveTabs((prev) => {
+                      const next = new Set<AnalysisTab>()
+                      // Put the clicked tab first
+                      next.add(tab.key)
+                      prev.forEach((tk) => {
+                        if (tk !== tab.key) next.add(tk)
                       })
-                    }}
-                    className={cn(
-                      'px-2.5 py-1.5 text-xs font-medium rounded-t-md border-b-2 transition-colors',
-                      activePanelTab === tab.key
-                        ? `${tab.color} border-current`
-                        : 'text-muted-foreground border-transparent hover:text-foreground',
-                    )}
-                  >
-                    {t(tab.labelKey)}
-                  </button>
-                ))}
-              </div>
-            )}
-
-            {/* Panel title */}
-            <div className="px-4 pt-4 pb-2 sm:px-5">
-              <h3
-                className={cn(
-                  'text-sm font-semibold',
-                  TABS.find((tab) => tab.key === activePanelTab)?.color,
-                )}
-              >
-                {(() => {
-                  const labelKey = TABS.find((tab) => tab.key === activePanelTab)?.labelKey
-                  return labelKey ? t(labelKey) : null
-                })()}
-              </h3>
+                      return next
+                    })
+                  }}
+                  className={cn(
+                    'px-2.5 py-1.5 text-xs font-medium rounded-t-md border-b-2 transition-colors',
+                    activePanelTab === tab.key
+                      ? `${tab.color} border-current`
+                      : 'text-muted-foreground border-transparent hover:text-foreground',
+                  )}
+                >
+                  {t(tab.labelKey)}
+                </button>
+              ))}
             </div>
+          )}
 
-            {/* Panel content */}
-            <div className="px-4 pb-5 sm:px-5 overflow-y-auto max-h-[60vh] lg:max-h-[calc(100vh-280px)]">
-              {activePanelTab === 'context' && (
-                <ContextPanel
-                  html={locale === 'ar' && poem.contextAr ? poem.contextAr : poem.context}
-                />
+          {/* Panel title */}
+          <div className="px-4 pt-4 pb-2 sm:px-5">
+            <h3
+              className={cn(
+                'text-sm font-semibold',
+                TABS.find((tab) => tab.key === activePanelTab)?.color,
               )}
-              {activePanelTab === 'summary' && (
-                <SummaryPanel
-                  text={locale === 'ar' && poem.summaryAr ? poem.summaryAr : poem.summary}
-                />
-              )}
-              {activePanelTab === 'form' && (
-                <FormPanel
-                  text={
-                    locale === 'ar' && poem.formAndStructureAr
-                      ? poem.formAndStructureAr
-                      : poem.formAndStructure
-                  }
-                />
-              )}
-              {activePanelTab === 'quotes' && (
-                <QuotesPanel quotes={poem.keyQuotes} locale={locale} />
-              )}
-              {activePanelTab === 'language' && (
-                <LanguagePanel devices={poem.languageDevices} locale={locale} />
-              )}
+            >
+              {(() => {
+                const labelKey = TABS.find((tab) => tab.key === activePanelTab)?.labelKey
+                return labelKey ? t(labelKey) : null
+              })()}
+            </h3>
+          </div>
+
+          {/* Panel content. Every panel is in the DOM and only the selected
+              one is shown - the pattern Google documents for tabbed content,
+              and the reason an answer engine can now read the analysis at
+              all. `&&` here would unmount the other four. */}
+          <div className="px-4 pb-5 sm:px-5 overflow-y-auto max-h-[60vh] lg:max-h-[calc(100vh-280px)]">
+            <div hidden={activePanelTab !== 'context'}>
+              <ContextPanel
+                html={locale === 'ar' && poem.contextAr ? poem.contextAr : poem.context}
+              />
+            </div>
+            <div hidden={activePanelTab !== 'summary'}>
+              <SummaryPanel
+                text={locale === 'ar' && poem.summaryAr ? poem.summaryAr : poem.summary}
+              />
+            </div>
+            <div hidden={activePanelTab !== 'form'}>
+              <FormPanel
+                text={
+                  locale === 'ar' && poem.formAndStructureAr
+                    ? poem.formAndStructureAr
+                    : poem.formAndStructure
+                }
+              />
+            </div>
+            <div hidden={activePanelTab !== 'quotes'}>
+              <QuotesPanel quotes={poem.keyQuotes} locale={locale} />
+            </div>
+            <div hidden={activePanelTab !== 'language'}>
+              <LanguagePanel devices={poem.languageDevices} locale={locale} />
             </div>
           </div>
-        )}
+        </div>
       </div>
     </div>
   )

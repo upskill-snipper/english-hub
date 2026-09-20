@@ -85,7 +85,7 @@ const aPoisonTree: PoemData = {
       annotations: [
         {
           type: 'Deception',
-          note: 'False smiles act as sunlight. Blake exposes how social politeness can mask &mdash; and even feed &mdash; hidden hatred.',
+          note: 'False smiles act as sunlight. Blake exposes how social politeness can mask — and even feed — hidden hatred.',
           color: '#ef4444',
         },
       ],
@@ -95,7 +95,7 @@ const aPoisonTree: PoemData = {
       annotations: [
         {
           type: 'Sibilance',
-          note: 'The hissing "s" sounds in "soft", "deceitful" and "wiles" evoke a serpent &mdash; a clear echo of the Eden story to come.',
+          note: 'The hissing "s" sounds in "soft", "deceitful" and "wiles" evoke a serpent — a clear echo of the Eden story to come.',
           color: '#10b981',
         },
         {
@@ -205,7 +205,7 @@ const aPoisonTree: PoemData = {
   ],
 
   context: `
-    <h3>William Blake (1757&ndash;1827)</h3>
+    <h3>William Blake (1757–1827)</h3>
     <p>Blake was a Romantic poet, painter and printmaker, almost entirely outside the literary establishment of his time. He combined poetry with hand-coloured engravings and was deeply religious in an unorthodox way, hostile to organised religion and to social injustice.</p>
 
     <h3>Songs of Innocence and of Experience (1794)</h3>
@@ -215,7 +215,7 @@ const aPoisonTree: PoemData = {
     <p>The poem is saturated with biblical imagery. The "garden", the "apple" and the foe lying "beneath the tree" all echo the Fall of Man in Genesis. But Blake reverses the moral: in the Bible, the serpent tempts Eve; here, it is the speaker who plays the serpent and grows the poisonous fruit himself.</p>
 
     <h3>Honesty vs. repression</h3>
-    <p>Blake was influenced by the radical writer Emanuel Swedenborg and the political upheavals of the 1790s, including the French and American Revolutions. He believed honest expression of emotion was a moral duty &mdash; suppression caused real harm. The poem dramatises that belief.</p>
+    <p>Blake was influenced by the radical writer Emanuel Swedenborg and the political upheavals of the 1790s, including the French and American Revolutions. He believed honest expression of emotion was a moral duty — suppression caused real harm. The poem dramatises that belief.</p>
   `,
 
   contextAr: `

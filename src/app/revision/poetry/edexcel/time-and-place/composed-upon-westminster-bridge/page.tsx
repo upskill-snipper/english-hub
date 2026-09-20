@@ -192,7 +192,7 @@ const westminsterBridge: PoemData = {
   ],
 
   context: `
-    <h3>William Wordsworth (1770&ndash;1850)</h3>
+    <h3>William Wordsworth (1770–1850)</h3>
     <p>Wordsworth was the leading poet of English Romanticism and a great celebrant of the natural world, particularly the Lake District. He believed nature was a source of moral and emotional truth, and spent most of his career writing about rural landscapes.</p>
 
     <h3>September 3, 1802</h3>
@@ -209,7 +209,7 @@ const westminsterBridge: PoemData = {
   `,
 
   contextAr: `
-    <h3>William Wordsworth (1770&ndash;1850)</h3>
+    <h3>William Wordsworth (1770–1850)</h3>
     <p><strong>William Wordsworth</strong> \u0647\u0648 \u0634\u0627\u0639\u0631 \u0627\u0644\u0631\u0648\u0645\u0627\u0646\u0633\u064a\u0629 \u0627\u0644\u0625\u0646\u062c\u0644\u064a\u0632\u064a\u0629 \u0627\u0644\u0623\u0628\u0631\u0632\u060c \u0648\u0645\u0646 \u0623\u0639\u0638\u0645 \u0645\u0646 \u062a\u063a\u0646\u0651\u0649 \u0628\u0627\u0644\u0637\u0628\u064a\u0639\u0629\u060c \u0648\u0628\u0627\u0644\u0623\u062e\u0635 \u0645\u0646\u0637\u0642\u0629 Lake District. \u0643\u0627\u0646 \u064a\u0639\u062a\u0642\u062f \u0625\u0646 \u0627\u0644\u0637\u0628\u064a\u0639\u0629 \u0645\u0635\u062f\u0631 \u0644\u0644\u062d\u0642\u064a\u0642\u0629 \u0627\u0644\u0623\u062e\u0644\u0627\u0642\u064a\u0629 \u0648\u0627\u0644\u0639\u0627\u0637\u0641\u064a\u0629\u060c \u0648\u0642\u0636\u0649 \u0645\u0639\u0638\u0645 \u0645\u0633\u064a\u0631\u062a\u0647 \u0627\u0644\u0634\u0639\u0631\u064a\u0629 \u064a\u0643\u062a\u0628 \u0639\u0646 \u0627\u0644\u0645\u0646\u0627\u0638\u0631 \u0627\u0644\u0631\u064a\u0641\u064a\u0629.</p>
 
     <h3>3 \u0633\u0628\u062a\u0645\u0628\u0631 1802</h3>

@@ -706,9 +706,9 @@ export default function FollowerPage() {
       <footer className="rounded-lg border border-border/40 bg-muted/30 px-4 py-3 text-[11px] leading-relaxed text-muted-foreground space-y-2">
         <p>
           <strong>Rights notice:</strong> &copy; Faber &amp; Faber on behalf of Seamus Heaney
-          (1939&ndash;2013). Quotations from <em>Follower</em> are short fair-dealing extracts under
-          CDPA 1988 &sect;30 (criticism, review, quotation). For full text, students should consult
-          the board-licensed AQA Love &amp; Relationships anthology or Heaney&rsquo;s collection
+          (1939–2013). Quotations from <em>Follower</em> are short fair-dealing extracts under CDPA
+          1988 &sect;30 (criticism, review, quotation). For full text, students should consult the
+          board-licensed AQA Love &amp; Relationships anthology or Heaney&rsquo;s collection
           <em>Death of a Naturalist</em> (1966).
         </p>
         <p>

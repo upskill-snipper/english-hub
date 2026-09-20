@@ -508,7 +508,7 @@ const prelude: PoemData = {
     <h3>The Prelude</h3>
     <p>العنوان الكامل هو <em>The Prelude, or Growth of a Poet's Mind</em>. هي قصيدة ملحمية سيرة ذاتية، Wordsworth يتتبّع فيها تطوّره الفكري والعاطفي. اشتغل عليها معظم حياته. هذا المقطع من الكتاب الأول.</p>
 
-    <p><strong>ملاحظة عن النسخة:</strong> منهج Eduqas يستخدم <strong>نسخة 1850 المنشورة من The Prelude</strong> (نفس النسخة اللي يستخدمها منهج AQA Power & Conflict). أما منهج OCR "Towards a World Unknown" فيستخدم النسخة الأقدم من <strong>1799 (The Prelude بنسختين)</strong>، اللي تختلف ماديّاً في الصياغة. لازم تقتبس من نسخة 1850 لما تجاوب على أسئلة Eduqas.</p>
+    <p><strong>ملاحظة عن النسخة:</strong> منهج Eduqas يستخدم <strong>نسخة 1850 المنشورة من The Prelude</strong> (نفس النسخة اللي يستخدمها منهج AQA Power &amp; Conflict). أما منهج OCR "Towards a World Unknown" فيستخدم النسخة الأقدم من <strong>1799 (The Prelude بنسختين)</strong>، اللي تختلف ماديّاً في الصياغة. لازم تقتبس من نسخة 1850 لما تجاوب على أسئلة Eduqas.</p>
 
     <h3>"Spots of Time"</h3>
     <p>Wordsworth كان يؤمن إن بعض تجارب الطفولة تترك أثر دائم على العقل - كان يسمّيها "spots of time". حادثة سرقة القارب وحدة من هذي الـspots. هالذكريات مكوّنة، وتستمر تشكّل الإنسان البالغ.</p>
@@ -1051,8 +1051,8 @@ export default function PreludeEduqasPage() {
 
       <footer className="rounded-lg border border-border/40 bg-muted/30 px-4 py-3 text-[11px] leading-relaxed text-muted-foreground">
         Extract from The Prelude (1850) by William Wordsworth is in the public domain. Source:
-        Project Gutenberg / Wikisource &mdash; verified against the Verified Library. Reproduced
-        freely for educational use.
+        Project Gutenberg / Wikisource — verified against the Verified Library. Reproduced freely
+        for educational use.
       </footer>
     </div>
   )

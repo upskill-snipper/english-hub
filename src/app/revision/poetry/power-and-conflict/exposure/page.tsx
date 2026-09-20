@@ -1009,8 +1009,8 @@ export default function ExposurePage() {
       </section>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Exposure by Wilfred Owen (1917-18) is in the public domain. Source: Wikisource &mdash;
-        verified against the Verified Library.
+        Exposure by Wilfred Owen (1917-18) is in the public domain. Source: Wikisource — verified
+        against the Verified Library.
       </p>
     </div>
   )

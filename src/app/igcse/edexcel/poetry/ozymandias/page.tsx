@@ -500,7 +500,7 @@ export default function OzymandiasPage() {
           <div>
             <h1 className="text-heading-lg font-heading text-foreground">Ozymandias</h1>
             <p className="text-body-sm text-muted-foreground">
-              Percy Bysshe Shelley (1792&ndash;1822) &middot; published 1818, <em>The Examiner</em>{' '}
+              Percy Bysshe Shelley (1792–1822) &middot; published 1818, <em>The Examiner</em>{' '}
               &middot; Edexcel IGCSE Anthology
             </p>
             <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">

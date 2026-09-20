@@ -540,7 +540,7 @@ const poem: PoemData = {
   ],
 
   context: `
-    <div class="version-note" style="border-left:3px solid #f59e0b;background:rgba(245,158,11,0.08);padding:0.85rem 1rem;border-radius:6px;margin-bottom:1rem;"><strong>Version note:</strong> The Edexcel IGCSE anthology uses the 1820 <em>Indicator</em> version of the poem (the version printed here, with "knight-at-arms"). Some online sources reproduce Keats's later 1848 (Milnes) revision, which differs in several lines - most notably replacing "knight-at-arms" with "wretched wight" and "I see a lily on thy brow" with "I see death's lily on thy brow". Always quote from the anthology version when answering Edexcel questions.</div>
+    <div class="version-note"><strong>Version note:</strong> The Edexcel IGCSE anthology uses the 1820 <em>Indicator</em> version of the poem (the version printed here, with "knight-at-arms"). Some online sources reproduce Keats's later 1848 (Milnes) revision, which differs in several lines - most notably replacing "knight-at-arms" with "wretched wight" and "I see a lily on thy brow" with "I see death's lily on thy brow". Always quote from the anthology version when answering Edexcel questions.</div>
 
     <h3>John Keats (1795-1821)</h3>
     <p>Keats was one of the great English Romantic poets, alongside Shelley, Byron, Wordsworth and Coleridge. He trained as a surgeon before dedicating himself to poetry. He wrote a series of masterpieces - including this poem, "Ode to a Nightingale", "To Autumn" and "Ode on a Grecian Urn" - in a single astonishing year (1819), before dying of tuberculosis in Rome at the age of 25.</p>

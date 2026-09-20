@@ -887,7 +887,7 @@ export default function ChargeOfTheLightBrigadePage() {
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         The Charge of the Light Brigade by Alfred Lord Tennyson (1854) is in the public domain.
-        Source: Project Gutenberg / Wikisource &mdash; verified against the Verified Library.
+        Source: Project Gutenberg / Wikisource — verified against the Verified Library.
       </p>
     </div>
   )

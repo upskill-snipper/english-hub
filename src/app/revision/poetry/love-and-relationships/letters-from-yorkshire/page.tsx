@@ -564,7 +564,7 @@ export default function LettersFromYorkshirePage() {
           <Badge variant="secondary">AQA</Badge>
         </div>
         <p className="text-body-sm text-muted-foreground">
-          Maura Dooley &middot; <em>Sound Barrier: Poems 1982&ndash;2002</em> (2002)
+          Maura Dooley &middot; <em>Sound Barrier: Poems 1982–2002</em> (2002)
         </p>
       </div>
 

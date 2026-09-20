@@ -827,7 +827,7 @@ export default function StormOnTheIslandPage() {
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         <strong>Rights notice:</strong> &copy; Faber &amp; Faber on behalf of Seamus Heaney
-        (1939&ndash;2013). Quotations from &ldquo;Storm on the Island&rdquo; are short fair-dealing
+        (1939–2013). Quotations from &ldquo;Storm on the Island&rdquo; are short fair-dealing
         extracts under CDPA 1988 &sect;30 (criticism, review, quotation). For full text, students
         should consult the board-licensed AQA Power &amp; Conflict anthology or Heaney&rsquo;s
         collection <em>Death of a Naturalist</em> (1966).

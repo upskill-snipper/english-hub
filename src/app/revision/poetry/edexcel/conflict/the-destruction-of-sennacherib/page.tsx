@@ -292,7 +292,7 @@ const sennacherib: PoemData = {
   ],
 
   context: `
-    <h3>Lord Byron (1788&ndash;1824)</h3>
+    <h3>Lord Byron (1788–1824)</h3>
     <p>George Gordon, Lord Byron, was one of the most famous Romantic poets, notorious for his scandalous personal life and his radical politics. He was deeply interested in heroism, power and the relationship between human ambition and divine or natural force.</p>
 
     <h3>Hebrew Melodies (1815)</h3>
@@ -302,7 +302,7 @@ const sennacherib: PoemData = {
     <p>The poem dramatises a story from 2 Kings 19. Sennacherib, king of Assyria, besieges Jerusalem during the reign of Hezekiah. The Bible says that "the angel of the Lord went out, and smote in the camp of the Assyrians a hundred fourscore and five thousand" \u2014 the entire army died in a single night, without battle.</p>
 
     <h3>Romantic context</h3>
-    <p>Byron was writing in the aftermath of the Napoleonic Wars (1803&ndash;1815). The collapse of Napoleon\u2019s seemingly invincible army would have been very recent in Byron\u2019s readers\u2019 minds. The poem can be read as a commentary on the fragility of all earthly empires \u2014 ancient or modern.</p>
+    <p>Byron was writing in the aftermath of the Napoleonic Wars (1803–1815). The collapse of Napoleon\u2019s seemingly invincible army would have been very recent in Byron\u2019s readers\u2019 minds. The poem can be read as a commentary on the fragility of all earthly empires \u2014 ancient or modern.</p>
   `,
 
   contextAr: `

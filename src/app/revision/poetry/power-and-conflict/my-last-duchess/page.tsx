@@ -963,7 +963,7 @@ export default function MyLastDuchessPage() {
       </section>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Public domain &mdash; quotations from My Last Duchess by Robert Browning reproduced freely.
+        Public domain — quotations from My Last Duchess by Robert Browning reproduced freely.
       </p>
     </div>
   )

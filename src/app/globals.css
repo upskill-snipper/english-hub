@@ -184,8 +184,7 @@
   [dir='rtl'],
   [dir='rtl'] body,
   [dir='rtl'] .font-sans {
-    font-family:
-      var(--font-geist), var(--font-arabic-sans), ui-sans-serif, system-ui, sans-serif;
+    font-family: var(--font-geist), var(--font-arabic-sans), ui-sans-serif, system-ui, sans-serif;
   }
 
   [dir='rtl'] h1,
@@ -201,19 +200,23 @@
   }
 
   /* ── Typographic scale — Anthology editorial hierarchy ─────── */
-  h1, .h1 {
+  h1,
+  .h1 {
     @apply text-4xl sm:text-5xl md:text-6xl font-serif font-medium tracking-tight leading-[1.1];
     letter-spacing: -0.02em;
   }
-  h2, .h2 {
+  h2,
+  .h2 {
     @apply text-3xl sm:text-4xl font-serif font-medium tracking-tight leading-[1.15];
     letter-spacing: -0.015em;
   }
-  h3, .h3 {
+  h3,
+  .h3 {
     @apply text-xl sm:text-2xl font-serif font-medium tracking-tight leading-snug;
     letter-spacing: -0.01em;
   }
-  h4, .h4 {
+  h4,
+  .h4 {
     @apply text-lg font-sans font-semibold leading-snug;
     letter-spacing: -0.01em;
   }
@@ -316,7 +319,8 @@
   .course-content p {
     @apply text-muted-foreground leading-relaxed mb-4;
   }
-  .course-content ul, .course-content ol {
+  .course-content ul,
+  .course-content ol {
     @apply ml-4 sm:ml-6 mb-4 space-y-2 text-muted-foreground;
   }
   .course-content ul {
@@ -375,11 +379,11 @@
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D6D7D3;
+  background: #d6d7d3;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #B5B8B3;
+  background: #b5b8b3;
 }
 .dark ::-webkit-scrollbar-thumb {
   background: hsl(150 8% 20%);
@@ -390,7 +394,9 @@
 
 /* ── Focus glow — Anthology teal ─────────────────────────────── */
 .focus-glow:focus-within {
-  box-shadow: 0 0 0 1px hsl(177 47% 16% / 0.25), 0 0 24px hsl(177 47% 16% / 0.06);
+  box-shadow:
+    0 0 0 1px hsl(177 47% 16% / 0.25),
+    0 0 24px hsl(177 47% 16% / 0.06);
 }
 
 /* ── Reduced motion — WCAG 2.3.3 ────────────────────────────── */
@@ -403,4 +409,19 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ── Version note callout, inside authored study HTML ─────────
+   This lived as an inline `style` attribute on the one poem that uses it,
+   La Belle Dame sans Merci. The server-side sanitiser in
+   src/lib/html/sanitise.ts keeps `class` and drops every other attribute,
+   so an inline style rendered on the client and not on the server - a
+   hydration mismatch the moment the analysis panel started being
+   server-rendered (20 September 2026). As a class it survives both. */
+.version-note {
+  border-inline-start: 3px solid #f59e0b;
+  background: rgb(245 158 11 / 0.08);
+  padding: 0.85rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
 }

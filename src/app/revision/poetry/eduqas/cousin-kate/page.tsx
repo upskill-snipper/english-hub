@@ -335,8 +335,7 @@ export default function CousinKateEduqasPage() {
 
       <footer className="rounded-lg border border-border/40 bg-muted/30 px-4 py-3 text-[11px] leading-relaxed text-muted-foreground">
         Cousin Kate by Christina Rossetti (1862) is in the public domain. Source: Project Gutenberg
-        / Wikisource &mdash; verified against the Verified Library. Reproduced freely for
-        educational use.
+        / Wikisource — verified against the Verified Library. Reproduced freely for educational use.
       </footer>
     </div>
   )

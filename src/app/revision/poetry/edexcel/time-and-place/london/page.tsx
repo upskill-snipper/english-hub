@@ -210,7 +210,7 @@ const london: PoemData = {
   ],
 
   context: `
-    <h3>William Blake (1757&ndash;1827)</h3>
+    <h3>William Blake (1757–1827)</h3>
     <p>Blake was a Romantic poet, painter and engraver who lived almost his entire life in London. Unlike most Romantics, he stayed in the city instead of writing about the countryside \u2014 and what he saw there filled him with anger.</p>
 
     <h3>Songs of Experience (1794)</h3>
@@ -227,7 +227,7 @@ const london: PoemData = {
   `,
 
   contextAr: `
-    <h3>William Blake (1757&ndash;1827)</h3>
+    <h3>William Blake (1757–1827)</h3>
     <p><strong>William Blake</strong> \u0634\u0627\u0639\u0631 \u0648\u0631\u0633\u0651\u0627\u0645 \u0648\u062d\u0641\u0651\u0627\u0631 (engraver) \u0631\u0648\u0645\u0627\u0646\u0633\u064a\u060c \u0639\u0627\u0634 \u0645\u0639\u0638\u0645 \u062d\u064a\u0627\u062a\u0647 \u0641\u064a London. \u0648\u0639\u0644\u0649 \u0639\u0643\u0633 \u0623\u063a\u0644\u0628 \u0627\u0644\u0631\u0648\u0645\u0627\u0646\u0633\u064a\u064a\u0646\u060c \u0638\u0644\u0651 \u0641\u064a \u0627\u0644\u0645\u062f\u064a\u0646\u0629 \u0628\u062f\u0644 \u0645\u0627 \u064a\u0643\u062a\u0628 \u0639\u0646 \u0627\u0644\u0631\u064a\u0641 \u2014 \u0648\u0627\u0644\u0644\u064a \u0634\u0627\u0641\u0647 \u0641\u064a\u0647\u0627 \u0639\u0628\u0651\u0623\u0647 \u063a\u064a\u0638\u0627\u064b.</p>
 
     <h3>Songs of Experience (1794)</h3>

@@ -292,7 +292,7 @@ const dickinson: PoemData = {
   ],
 
   context: `
-    <h3>Emily Dickinson (1830&ndash;1886)</h3>
+    <h3>Emily Dickinson (1830–1886)</h3>
     <p>Dickinson was an American poet who lived almost her entire life in her family\u2019s house in Amherst, Massachusetts. She wrote nearly 1,800 poems, most of them never published in her lifetime. Her work is marked by short lines, distinctive dashes, unusual capitalisation and a mind interested in death, nature, faith and the inner life.</p>
 
     <h3>Publication</h3>
@@ -309,7 +309,7 @@ const dickinson: PoemData = {
   `,
 
   contextAr: `
-    <h3>Emily Dickinson (1830&ndash;1886)</h3>
+    <h3>Emily Dickinson (1830–1886)</h3>
     <p><strong>Emily Dickinson</strong> \u0634\u0627\u0639\u0631\u0629 \u0623\u0645\u0631\u064a\u0643\u064a\u0629\u060c \u0639\u0627\u0634\u062a \u0645\u0639\u0638\u0645 \u062d\u064a\u0627\u062a\u0647\u0627 \u0641\u064a \u0628\u064a\u062a \u0623\u0647\u0644\u0647\u0627 \u0641\u064a Amherst, Massachusetts. \u0643\u062a\u0628\u062a \u0645\u0627 \u064a\u0642\u0627\u0631\u0628 1,800 \u0642\u0635\u064a\u062f\u0629\u060c \u0623\u063a\u0644\u0628\u0647\u0627 \u0645\u0627 \u0627\u0646\u062a\u0634\u0631\u062a \u0641\u064a \u062d\u064a\u0627\u062a\u0647\u0627. \u0634\u0639\u0631\u0647\u0627 \u064a\u062a\u0645\u064a\u0651\u0632 \u0628\u0623\u0628\u064a\u0627\u062a \u0642\u0635\u064a\u0631\u0629\u060c \u0648\u0639\u0644\u0627\u0645\u0627\u062a \u0634\u0631\u0637\u0629 (dashes) \u0630\u0627\u062a \u0628\u0635\u0645\u0629 \u062e\u0627\u0635\u0629\u060c \u0648\u0643\u0627\u067e\u062a\u0644\u0629 (capitalisation) \u063a\u064a\u0631 \u0645\u0639\u062a\u0627\u062f\u0629\u060c \u0648\u0630\u0647\u0646 \u0645\u0634\u063a\u0648\u0644 \u0628\u0627\u0644\u0645\u0648\u062a \u0648\u0627\u0644\u0637\u0628\u064a\u0639\u0629 \u0648\u0627\u0644\u0625\u064a\u0645\u0627\u0646 \u0648\u0627\u0644\u062d\u064a\u0627\u0629 \u0627\u0644\u062f\u0627\u062e\u0644\u064a\u0629.</p>
 
     <h3>\u0627\u0644\u0646\u0634\u0631</h3>
@@ -815,7 +815,7 @@ export default function IStartedEarlyPage() {
           </div>
           <div>
             <h1 className="text-heading-lg font-heading text-foreground">
-              I started Early &ndash; Took my Dog
+              I started Early – Took my Dog
             </h1>
             <p className="text-body-sm text-muted-foreground">
               Emily Dickinson &middot; Edexcel Time and Place anthology
@@ -851,7 +851,7 @@ export default function IStartedEarlyPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          Strong pairings with I started Early &ndash; Took my Dog from the Edexcel Time and Place
+          Strong pairings with I started Early – Took my Dog from the Edexcel Time and Place
           cluster.
         </p>
 
@@ -884,9 +884,9 @@ export default function IStartedEarlyPage() {
 
       <footer className="rounded-lg border border-border/40 bg-muted/30 px-4 py-3 text-[0.7rem] leading-relaxed text-muted-foreground">
         <p>
-          &ldquo;I started Early &ndash; Took my Dog&rdquo; by Emily Dickinson (c. 1862) is in the
-          public domain. All quotations on this page are used for the purpose of criticism, review
-          and educational study under fair dealing (s.30 Copyright, Designs and Patents Act 1988).
+          &ldquo;I started Early – Took my Dog&rdquo; by Emily Dickinson (c. 1862) is in the public
+          domain. All quotations on this page are used for the purpose of criticism, review and
+          educational study under fair dealing (s.30 Copyright, Designs and Patents Act 1988).
         </p>
       </footer>
     </div>

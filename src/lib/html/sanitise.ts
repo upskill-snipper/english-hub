@@ -33,6 +33,12 @@ const ALLOWED = new Set([
   'i',
   'u',
   'span',
+  // `div` joined the list on 20 September 2026, when the poem analysis panels
+  // started rendering on the server. The authored study HTML uses one for a
+  // callout box (La Belle Dame sans Merci's version note); stripping it left
+  // the client and server rendering different trees. With every attribute but
+  // `class` removed, a div can carry nothing that runs, loads or navigates.
+  'div',
   'blockquote',
   'ul',
   'ol',

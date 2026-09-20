@@ -394,7 +394,7 @@ const toAutumn: PoemData = {
   ],
 
   context: `
-    <h3>John Keats (1795&ndash;1821)</h3>
+    <h3>John Keats (1795–1821)</h3>
     <p>Keats was a second-generation Romantic poet, alongside Byron and Shelley. He died of tuberculosis at the age of just 25, having produced an extraordinary body of work in the last few years of his life. He was deeply attentive to sensory experience and to the relationship between beauty and mortality.</p>
 
     <h3>September 1819</h3>
@@ -411,7 +411,7 @@ const toAutumn: PoemData = {
   `,
 
   contextAr: `
-    <h3>John Keats (1795&ndash;1821)</h3>
+    <h3>John Keats (1795–1821)</h3>
     <p><strong>John Keats</strong> \u0634\u0627\u0639\u0631 \u0631\u0648\u0645\u0627\u0646\u0633\u064a \u0645\u0646 \u0627\u0644\u062c\u064a\u0644 \u0627\u0644\u062b\u0627\u0646\u064a\u060c \u062c\u0646\u0628\u0627\u064b \u0625\u0644\u0649 \u062c\u0646\u0628 \u0645\u0639 Byron \u0648 Shelley. \u062a\u0648\u0641\u0651\u064a \u0628\u0627\u0644\u0633\u0644\u0651 \u0648\u0639\u0645\u0631\u0647 25 \u0633\u0646\u0629 \u0628\u0633\u060c \u0648\u0643\u0627\u0646 \u0642\u062f \u0623\u0646\u062a\u062c \u0625\u0646\u062a\u0627\u062c\u0627\u064b \u0627\u0633\u062a\u062b\u0646\u0627\u0626\u064a\u0627\u064b \u0641\u064a \u0622\u062e\u0631 \u0633\u0646\u0648\u0627\u062a \u062d\u064a\u0627\u062a\u0647. \u0643\u0627\u0646 \u0645\u0646\u062a\u0628\u0647\u0627\u064b \u0628\u0639\u0645\u0642 \u0644\u0644\u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u062d\u0633\u0651\u064a\u0629\u060c \u0648\u0644\u0644\u0639\u0644\u0627\u0642\u0629 \u0628\u064a\u0646 \u0627\u0644\u062c\u0645\u0627\u0644 \u0648\u0627\u0644\u0641\u0646\u0627\u0621.</p>
 
     <h3>\u0633\u0628\u062a\u0645\u0628\u0631 1819</h3>

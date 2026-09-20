@@ -813,7 +813,7 @@ export default function OzymandiasPage() {
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         Ozymandias by Percy Bysshe Shelley (1818) is in the public domain. Source: Project Gutenberg
-        / Wikisource &mdash; verified against the Verified Library.
+        / Wikisource — verified against the Verified Library.
       </p>
     </div>
   )

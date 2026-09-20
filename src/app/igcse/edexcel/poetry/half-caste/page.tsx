@@ -445,7 +445,7 @@ export default function HalfCastePage() {
         <BookOpen className="mt-0.5 size-4 shrink-0 text-purple-500" />
         <div className="text-xs leading-relaxed text-muted-foreground">
           <p className="mb-1">
-            <strong className="text-foreground">Teacher note &mdash; on the spelling:</strong>
+            <strong className="text-foreground">Teacher note — on the spelling:</strong>
           </p>
           <p>
             Agard&apos;s Caribbean creole spelling (<strong>&quot;yu&quot;</strong> for
@@ -454,11 +454,11 @@ export default function HalfCastePage() {
             <strong className="text-foreground">
               deliberate and central to the poem&apos;s meaning
             </strong>
-            . Do not &quot;correct&quot; to Standard English &mdash; the creole is itself a
-            political statement. The Edexcel IGCSE Anthology (Issue 2) preserves Agard&apos;s
-            spelling, and students should quote it exactly as printed. &quot;Correcting&quot; the
-            dialect in an essay loses marks for accuracy and misses the poem&apos;s argument that
-            mixed languages, like mixed identities, are valid in their own right.
+            . Do not &quot;correct&quot; to Standard English — the creole is itself a political
+            statement. The Edexcel IGCSE Anthology (Issue 2) preserves Agard&apos;s spelling, and
+            students should quote it exactly as printed. &quot;Correcting&quot; the dialect in an
+            essay loses marks for accuracy and misses the poem&apos;s argument that mixed languages,
+            like mixed identities, are valid in their own right.
           </p>
         </div>
       </div>

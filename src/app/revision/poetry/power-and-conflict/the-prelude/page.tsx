@@ -971,7 +971,7 @@ export default function ThePreludePage() {
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         The Prelude (1850) by William Wordsworth is in the public domain. Source: Project Gutenberg
-        / Wikisource &mdash; verified against the Verified Library.
+        / Wikisource — verified against the Verified Library.
       </p>
     </div>
   )

@@ -651,7 +651,7 @@ export default function PoppiesStudyPage() {
       <header className="space-y-3">
         <h1 className="text-heading-lg text-foreground">Poppies</h1>
         <p className="text-lg text-muted-foreground">
-          Jane Weir (2009) &mdash; AQA Power &amp; Conflict Anthology
+          Jane Weir (2009) — AQA Power &amp; Conflict Anthology
         </p>
         <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
           AQA
