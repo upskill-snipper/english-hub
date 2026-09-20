@@ -14,6 +14,7 @@ import { RootLayoutShell } from '@/components/layout/root-layout-shell'
 import ROUTE_LASTMOD from '@/lib/seo/route-lastmod.json'
 import { WebsiteJsonLd } from '@/components/seo/website-json-ld'
 import { ReviewedBylineJsonLd } from '@/components/seo/json-ld'
+import { PathBreadcrumbJsonLd } from '@/components/seo/path-breadcrumb-json-ld'
 import { CookieConsent } from '@/components/cookie-consent'
 import { UtmCapture } from '@/components/utm-capture'
 import { GoogleAnalytics } from '@/components/GoogleAnalytics'
@@ -191,6 +192,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         ) : null}
         <WebsiteJsonLd />
         <ReviewedBylineJsonLd nonce={cspNonce} />
+        {/* A BreadcrumbList derived from this request's path. 426 of 1,329
+            URLs (32.1%) emitted none at all; the worst were /resources with
+            181 and /igcse with 93. Safe in a layout precisely because it is
+            COMPUTED from the path rather than hard-coded - the distinction
+            src/__tests__/no-hub-schema-in-layouts.test.ts draws. See the
+            component for why it does not replace the 903 hand-written
+            trails. */}
+        <PathBreadcrumbJsonLd />
         {/* Rewardful is loaded by <ConsentGatedAnalytics /> below after
             the visitor accepts analytics/marketing cookies. Loading it
             unconditionally here would breach PECR reg. 6. */}
