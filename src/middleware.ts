@@ -639,6 +639,17 @@ export async function middleware(request: NextRequest) {
   // the NextRequest (which doesn't have a safe clone constructor).
   request.headers.set('x-nonce', nonce)
 
+  // Propagate the route so the root layout can look up THIS page's own
+  // last-modified date (src/lib/seo/route-lastmod.json) for the footer
+  // byline. It used to print a hard-coded "Last updated May 2026" on all
+  // 1,071 pages, including pages edited the same day. The map is read in the
+  // layout, on the server, so its 62 KB never reaches a browser.
+  //
+  // Set here against the REQUESTED path and overridden in the Arabic branch
+  // with the stripped one, because /ar/revision renders the /revision route
+  // and it is that route's date we want.
+  request.headers.set('x-pathname', pathname)
+
   // Propagate language mode so the root layout can set <html lang dir="...">
   // on first paint (no flicker).
   //
@@ -711,6 +722,9 @@ export async function middleware(request: NextRequest) {
     // BEFORE the rewrite so server components see the right locale.
     request.headers.set('x-lang', 'ar')
     request.headers.set('x-lang-source', 'url')
+    // The route that actually renders, so the footer's last-updated lookup
+    // finds an entry instead of missing on '/ar/...'.
+    request.headers.set('x-pathname', strippedPath)
 
     // SECURITY (2026-08-23): this branch used to `return` here without ever
     // calling updateSession, so the Arabic URL surface skipped the Supabase

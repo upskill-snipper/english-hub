@@ -183,7 +183,7 @@ function groupIntoColumns(sections: FooterSection[]): FooterSection[][] {
   return cols
 }
 
-export function Footer() {
+export function Footer({ lastUpdated }: { lastUpdated?: string }) {
   const { board, isHydrated } = useBoard()
   const t = useT()
   const effectiveBoard = isHydrated ? board : null
@@ -320,7 +320,7 @@ export function Footer() {
             override since the component defaults to text-muted-foreground
             which is tuned for light surfaces. */}
         <div className="border-t py-5" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
-          <ReviewedByline className="text-[11px] text-[#B5B8B3]/70" />
+          <ReviewedByline updated={lastUpdated} className="text-[11px] text-[#B5B8B3]/70" />
         </div>
 
         {/* Responsible-use disclaimer (institutional positioning) */}

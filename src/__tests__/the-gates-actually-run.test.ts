@@ -172,10 +172,19 @@ describe('what the suite runs in', () => {
     // That defect is a MISSING LINK - the marking call-to-action vanished from
     // six guides because a lookup was given the wrong slug - and a missing
     // element is not observable without rendering the component.
+    //
+    // Then to 19 for the-byline-dates-the-page-it-is-on.test.tsx. Same reason
+    // again: the assertion that matters is that NO date is printed when none is
+    // known, and an absent element cannot be asserted from source text.
+    //
+    // Note poem-analysis-is-in-the-html.test.tsx deliberately did NOT take this
+    // count up. It renders a component too, but in the `node` environment on
+    // purpose - under jsdom it would pass while production crashed, because the
+    // thing it guards is a sanitiser that throws when there is no DOM.
     expect(
       annotated.length,
       'more files now claim to need a DOM - check each one',
-    ).toBeLessThanOrEqual(18)
+    ).toBeLessThanOrEqual(19)
   })
 })
 

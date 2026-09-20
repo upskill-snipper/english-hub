@@ -11,6 +11,7 @@ import { SupabaseProvider } from '@/components/providers/supabase-provider'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { Toaster } from '@/components/ui/sonner'
 import { RootLayoutShell } from '@/components/layout/root-layout-shell'
+import ROUTE_LASTMOD from '@/lib/seo/route-lastmod.json'
 import { WebsiteJsonLd } from '@/components/seo/website-json-ld'
 import { ReviewedBylineJsonLd } from '@/components/seo/json-ld'
 import { CookieConsent } from '@/components/cookie-consent'
@@ -154,6 +155,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   // engines until we ship a per-route `/ar/...` URL strategy.
   const htmlLang = lang === 'ar' ? 'ar' : lang === 'es' ? 'es' : 'en-GB'
   const skipToContent = await t('a11y.skip_short')
+  // This page's own last-modified date for the footer byline. Looked up here,
+  // on the server, so the 62 KB map stays out of every client bundle - the
+  // mistake this repository has already paid for once with the trilingual
+  // dictionary. `undefined` for a route the map does not know (a blog slug,
+  // say), and ReviewedByline then prints no date rather than a wrong one.
+  const pageLastUpdated = (ROUTE_LASTMOD as Record<string, string>)[
+    reqHeaders.get('x-pathname') ?? ''
+  ]
 
   return (
     <html
@@ -197,7 +206,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <SupabaseProvider>
             <TooltipProvider>
               <PostHogProvider>
-                <RootLayoutShell>
+                <RootLayoutShell lastUpdated={pageLastUpdated}>
                   <BoardGate>{children}</BoardGate>
                 </RootLayoutShell>
               </PostHogProvider>

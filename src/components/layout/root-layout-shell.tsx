@@ -23,7 +23,20 @@ import { useT } from '@/lib/i18n/use-t'
 
 const FULL_LAYOUT_PREFIXES = ['/school', '/demo/school']
 
-export function RootLayoutShell({ children }: { children: React.ReactNode }) {
+export function RootLayoutShell({
+  children,
+  lastUpdated,
+}: {
+  children: React.ReactNode
+  /**
+   * This page's own last-modified date, resolved by the root layout from
+   * src/lib/seo/route-lastmod.json. Passed down rather than looked up here
+   * because this is a client component, and importing that map would ship
+   * 62 KB of route dates to every visitor. Undefined for routes the map does
+   * not know; the footer byline then prints no date.
+   */
+  lastUpdated?: string
+}) {
   const pathname = usePathname()
   const t = useT()
   const isSchoolRoute = FULL_LAYOUT_PREFIXES.some(
@@ -45,7 +58,7 @@ export function RootLayoutShell({ children }: { children: React.ReactNode }) {
       >
         {children}
       </div>
-      <Footer />
+      <Footer lastUpdated={lastUpdated} />
     </>
   )
 }
