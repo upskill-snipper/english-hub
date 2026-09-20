@@ -157,6 +157,13 @@ const FOOTER_SECTIONS: FooterSection[] = [
     links: [
       { href: '/help', labelKey: 'footer.link.help_centre' },
       { href: '/faqs', labelKey: 'footer.link.faqs' },
+      // /sitemap-html was an orphan until 20 September 2026. It lists 1,305
+      // internal links, it is in sitemap.xml and llms.txt, and NOTHING on the
+      // site linked to it - so it received no internal link equity and passed
+      // none on, which is the entire job of an HTML sitemap. Reusing
+      // `sitemap.h1` rather than adding a key: it is the page's own heading,
+      // already translated into all three locales.
+      { href: '/sitemap-html', labelKey: 'sitemap.h1' },
     ],
   },
 ]

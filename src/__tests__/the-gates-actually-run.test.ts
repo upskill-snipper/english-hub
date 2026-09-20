@@ -181,10 +181,15 @@ describe('what the suite runs in', () => {
     // count up. It renders a component too, but in the `node` environment on
     // purpose - under jsdom it would pass while production crashed, because the
     // thing it guards is a sanitiser that throws when there is no DOM.
+    //
+    // Then to 20 for the-html-sitemap-is-reachable.test.tsx. It renders the
+    // real Footer with no board cookie, because the question is whether the
+    // link is in the DOM for a visitor the footer filters against, and source
+    // text cannot answer that.
     expect(
       annotated.length,
       'more files now claim to need a DOM - check each one',
-    ).toBeLessThanOrEqual(19)
+    ).toBeLessThanOrEqual(20)
   })
 })
 
