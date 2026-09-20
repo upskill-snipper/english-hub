@@ -1,5 +1,8 @@
 {
   "$comment": "Generated from next.config.js on 19 September 2026 (CUI-9). Edit here, not there.",
+  "$notes": {
+    "/llms-full.txt": "public/llms-full.txt was generated on 23 May 2026 and nothing in the build regenerated it. By 20 September it omitted 213 current routes including the whole A-Level section, listed 58 URLs that redirect (45 of them .ar filename artefacts that were never URLs), and pointed AI crawlers at three blog posts held back as drafts and served noindex. llms.txt is regenerated on every build by scripts/generate-llms-txt.mjs and is the accurate index, so the URL points there. A real llms-full.txt under the llmstxt.org convention carries full page CONTENT, which for this site means handing copyrighted set-text commentary to AI crawlers wholesale - a rights decision, not an engineering one."
+  },
   "redirects": [
     {
       "source": "/growth",
@@ -104,6 +107,11 @@
     {
       "source": "/legal/privacy-qatar-supplement",
       "destination": "/legal/privacy-qatar",
+      "permanent": true
+    },
+    {
+      "source": "/llms-full.txt",
+      "destination": "/llms.txt",
       "permanent": true
     }
   ]

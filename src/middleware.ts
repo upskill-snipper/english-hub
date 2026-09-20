@@ -849,7 +849,12 @@ export async function middleware(request: NextRequest) {
 // PERF-3. The matcher excluded only _next/static, _next/image, favicon.ico and
 // six raster/vector extensions, so the full middleware - session refresh, CSRF
 // attestation, CSP construction, affiliate tracking - ran on manifest.json,
-// llms.txt, llms-full.txt, .well-known/security.txt, the PDF worker, the
+// llms.txt, llms-full.txt (retired 20 September 2026 - the path is now a
+// permanent redirect to /llms.txt, which next.config's `redirects` resolves
+// before the middleware runs, so its entry below is inert rather than wrong;
+// left in place because this regex is load-bearing for auth on dot-tolerant
+// dynamic routes and is not worth editing for tidiness),
+// .well-known/security.txt, the PDF worker, the
 // self-hosted font and the generated robots.txt and sitemap.xml. None of those
 // has a session, a CSRF concern or a nonce to carry.
 //

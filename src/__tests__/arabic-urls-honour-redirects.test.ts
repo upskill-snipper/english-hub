@@ -34,8 +34,15 @@ const MIDDLEWARE = readFileSync(join(ROOT, 'src/middleware.ts'), 'utf8')
 const NEXT_CONFIG = readFileSync(join(ROOT, 'next.config.js'), 'utf8')
 
 describe('the shared redirect table', () => {
-  it('holds every rule', () => {
-    expect(ROUTE_REDIRECTS.redirects.length).toBe(21)
+  it('holds every rule, and next.config.js holds none', () => {
+    // This was `toBe(21)` until 20 September 2026, when adding a legitimate
+    // rule (/llms-full.txt) failed it. A pinned count does not express the
+    // invariant - which is that the extraction was COMPLETE and nothing has
+    // been added back inline - it just forbids ever adding a redirect. So:
+    // the 21 extracted rules are still here, and next.config.js carries
+    // exactly one `source:` literal, the headers block asserted below.
+    expect(ROUTE_REDIRECTS.redirects.length).toBeGreaterThanOrEqual(21)
+    expect((NEXT_CONFIG.match(/source: '/g) || []).length).toBe(1)
   })
 
   it('is read by next.config.js rather than duplicated there', () => {
