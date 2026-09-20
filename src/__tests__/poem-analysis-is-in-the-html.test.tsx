@@ -50,7 +50,7 @@ import { InteractivePoemViewer, type PoemData } from '@/components/study/Interac
  * production broke.
  *
  * MUTATIONS RUN, each verified to have altered the file first:
- *   - `{hasAnyActive && activePanelTab && (` restored  -> fails 3 assertions
+ *   - `{hasAnyActive && activePanelTab && (` restored  -> fails 7 of the 9
  *   - `hidden` dropped from the four unselected panels -> fails
  *   - `sanitiseHtml` swapped back to `DOMPurify.sanitize` -> throws, fails
  */
