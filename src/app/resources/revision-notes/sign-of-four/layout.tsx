@@ -1,14 +1,14 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Sign Of Four Revision Notes',
+  title: 'The Sign of Four Revision Notes',
   description:
-    'Free Sign Of Four revision notes for GCSE English Literature. Character analysis, themes, key quotes with analysis, context, and exam-ready essay tips.',
+    'The Sign of Four revision notes for GCSE English Literature. Character analysis, themes, key quotes with analysis, context, and exam-ready essay tips.',
   alternates: { canonical: 'https://theenglishhub.app/resources/revision-notes/sign-of-four' },
   openGraph: {
-    title: 'Sign Of Four Revision Notes - The English Hub',
+    title: 'The Sign of Four Revision Notes - The English Hub',
     description:
-      'Free Sign Of Four revision notes for GCSE English Literature. Character analysis, themes, key quotes with analysis, context, and exam-ready essay tips.',
+      'The Sign of Four revision notes for GCSE English Literature. Character analysis, themes, key quotes with analysis, context, and exam-ready essay tips.',
   },
 }
 
