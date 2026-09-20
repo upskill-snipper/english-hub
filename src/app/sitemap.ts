@@ -14,6 +14,7 @@ import { getAllLessonPlans, isLessonPlanPublished } from '@/lib/lesson-plans/lis
 import { getAllPrintables, isPublished } from '@/lib/printables/list'
 import staticRoutes from '@/lib/seo/static-routes.json'
 import ROUTE_LASTMOD from '@/lib/seo/route-lastmod.json'
+import { modelEssayRoutes } from '@/lib/revision/model-essays'
 
 // ============================================================
 // Sitemap — filesystem-driven since 2026-06-10.
@@ -227,6 +228,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         changeFrequency: 'monthly',
       })
     }
+  }
+
+  // Model essays: /revision/model-essays/<text>/<slug>, 25 of them.
+  //
+  // NOT IN ANY SITEMAP UNTIL 20 SEPTEMBER 2026. The route's
+  // generateStaticParams was removed in June to fix a real paywall bug - it
+  // prerendered hasAccess=false and served paying subscribers a locked page -
+  // and the note left behind says "SEO is unaffected - the page is
+  // server-rendered with the crawlable teaser on every request." The teaser
+  // part is true. But that function was the only enumeration of these URLs
+  // anywhere, so removing it left this file with no way to know they existed,
+  // and the live sitemap has carried the hub and none of the 25 leaves since.
+  //
+  // They are worth submitting. Each is an annotated Grade 9 essay on a named
+  // question, which is high-intent long-tail, and the crawler sees exactly
+  // what an anonymous visitor sees - the teaser and the lock - so there is
+  // nothing here to declare as paywalled-but-hidden.
+  for (const route of await modelEssayRoutes()) {
+    add(route, { priority: 0.6, changeFrequency: 'monthly' })
   }
 
   // Analysis catch-all pages ([category, article] slug pairs).

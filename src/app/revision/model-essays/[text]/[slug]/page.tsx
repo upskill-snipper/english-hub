@@ -11,6 +11,13 @@ import { LockedContent } from '@/components/paywall/LockedContent'
 import { t } from '@/lib/i18n/t'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { hasActiveSubscription } from '@/lib/course-access'
+import {
+  TEXT_LABELS,
+  isAnnotated,
+  isTextKey,
+  loadEssaysFor,
+  type ModelEssayParagraph,
+} from '@/lib/revision/model-essays'
 
 // 2026-06-08 paywall — force per-request rendering. The entitlement
 // (hasAccess) must be evaluated against the real request session, never
@@ -44,121 +51,14 @@ async function resolveHasAccess(): Promise<boolean> {
   return false
 }
 
-/* ─── Types (mirror sibling data files) ────────────────────────── */
-
-type ModelEssayParagraph = {
-  content: string
-  annotation: string
-}
-
-type ModelEssay = {
-  slug: string
-  title: string
-  text: string
-  paragraphs: ModelEssayParagraph[]
-  targetGrade: number | string
-  wordCount: number
-  keyTechniques: string[]
-}
-
-type TextKey =
-  | 'macbeth'
-  | 'an-inspector-calls'
-  | 'a-christmas-carol'
-  | 'jekyll-and-hyde'
-  | 'romeo-and-juliet'
-
-const TEXT_LABELS: Record<TextKey, string> = {
-  macbeth: 'Macbeth',
-  'an-inspector-calls': 'An Inspector Calls',
-  'a-christmas-carol': 'A Christmas Carol',
-  'jekyll-and-hyde': 'Jekyll and Hyde',
-  'romeo-and-juliet': 'Romeo and Juliet',
-}
-
-const ALL_TEXT_KEYS = Object.keys(TEXT_LABELS) as TextKey[]
-
-/* ─── Aggregator ───────────────────────────────────────────────── */
-// Sibling data files may not exist when this page first compiles. Resolve
-// dynamically with a template-string import that bypasses TS module
-// resolution; missing/malformed modules degrade to an empty array.
-
-async function loadEssaysFor(key: TextKey): Promise<ModelEssay[]> {
-  try {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const mod: any = await import(`@/data/model-essays/${key}`)
-    const candidates = [
-      mod?.default,
-      mod?.essays,
-      mod?.modelEssays,
-      mod?.[`${camelKey(key)}Essays`],
-      mod?.[`${camelKey(key)}ModelEssays`],
-    ]
-    const arr = candidates.find((c) => Array.isArray(c))
-    if (!Array.isArray(arr)) return []
-    // Some sibling data files use `id`/`grade`/`topic` instead of
-    // `slug`/`targetGrade`/`title`. Normalise so the page contract is
-    // satisfied; drop any entry that still lacks a usable slug after the
-    // fallback (otherwise generateStaticParams crashes the production build).
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return (
-      (arr as any[])
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        .map((e: any) => {
-          const slug = typeof e?.slug === 'string' && e.slug.length > 0 ? e.slug : e?.id
-          const targetGrade = e?.targetGrade ?? e?.grade
-          const title = e?.title ?? e?.topic
-          const paragraphs = Array.isArray(e?.paragraphs)
-            ? // eslint-disable-next-line @typescript-eslint/no-explicit-any
-              e.paragraphs.map((p: any) => ({
-                content: p?.content ?? p?.paragraph ?? '',
-                annotation: flattenAnnotation(p?.annotation),
-              }))
-            : []
-          return {
-            slug,
-            title,
-            text: e?.text,
-            paragraphs,
-            targetGrade,
-            wordCount: e?.wordCount,
-            keyTechniques: Array.isArray(e?.keyTechniques) ? e.keyTechniques : [],
-          } as ModelEssay
-        })
-        .filter((e) => typeof e.slug === 'string' && e.slug.length > 0)
-    )
-  } catch {
-    return []
-  }
-}
-
-function camelKey(key: TextKey): string {
-  return key.replace(/-([a-z])/g, (_, c: string) => c.toUpperCase())
-}
-
-/**
- * Sibling data files use one of two annotation shapes:
- *   • a plain string (macbeth.ts), OR
- *   • an object with AO1 / AO2 / AO3 keys (jekyll-and-hyde.ts).
- * Flatten the object form into a single readable string so we can render
- * the annotation column without runtime React errors.
- */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function flattenAnnotation(a: any): string {
-  if (typeof a === 'string') return a
-  if (a && typeof a === 'object') {
-    const parts: string[] = []
-    if (typeof a.AO1 === 'string') parts.push(`AO1 - ${a.AO1}`)
-    if (typeof a.AO2 === 'string') parts.push(`AO2 - ${a.AO2}`)
-    if (typeof a.AO3 === 'string') parts.push(`AO3 - ${a.AO3}`)
-    if (parts.length > 0) return parts.join('\n\n')
-  }
-  return ''
-}
-
-function isTextKey(s: string): s is TextKey {
-  return (ALL_TEXT_KEYS as string[]).includes(s)
-}
+/* ─── Catalogue ────────────────────────────────────────────────── */
+//
+// The types, the text keys, the labels and the loader moved to
+// src/lib/revision/model-essays.ts on 20 September 2026. They lived here, and
+// `generateStaticParams` - removed below for a real paywall reason - was the
+// only enumeration of these 25 URLs in the repository, so the sitemap had no
+// way to learn they existed and has listed the hub alone ever since. The
+// catalogue is now importable without prerendering anything.
 
 /* ─── Static params ────────────────────────────────────────────── */
 //
@@ -171,8 +71,14 @@ function isTextKey(s: string): s is TextKey {
 // evaluated against the real session on every request. Invalid slugs are
 // still 404'd by the `if (!essay) notFound()` guard in the page below
 // (dynamicParams defaults to true, so any slug renders then resolves to
-// notFound() when no matching essay exists). SEO is unaffected — the
-// page is server-rendered with the crawlable teaser on every request.
+// notFound() when no matching essay exists).
+//
+// "SEO is unaffected" is what this note used to end with, and it was half
+// right. The page is server-rendered with a crawlable teaser, yes. But this
+// function was the ONLY enumeration of these 25 URLs, so removing it left
+// src/app/sitemap.ts unable to list them, and it listed the hub alone for
+// three months. The catalogue lives in src/lib/revision/model-essays.ts now
+// and the sitemap reads it from there; this route stays per-request.
 
 /* ─── Metadata ─────────────────────────────────────────────────── */
 
@@ -195,14 +101,20 @@ export async function generateMetadata({
     }
   }
   return {
-    title: `${essay.title} - Annotated Grade ${essay.targetGrade} model essay (${textLabel})`,
-    description: `Read a Grade ${essay.targetGrade} model essay on ${textLabel} (${essay.title}) with paragraph-by-paragraph marker commentary covering structure, AO2 method analysis, and AO3 context.`,
+    // "Annotated" only when it is. The Romeo and Juliet essays have no marker
+    // commentary, and a title is not the place to promise one.
+    title: `${essay.title} - ${isAnnotated(essay) ? 'Annotated ' : ''}Grade ${essay.targetGrade} model essay (${textLabel})`,
+    description: isAnnotated(essay)
+      ? `Read a Grade ${essay.targetGrade} model essay on ${textLabel} (${essay.title}) with paragraph-by-paragraph marker commentary covering structure, AO2 method analysis, and AO3 context.`
+      : `Read a Grade ${essay.targetGrade} model essay on ${textLabel} (${essay.title}), written to show how a top-band answer builds argument, embeds quotation and handles context.`,
     alternates: {
       canonical: `https://theenglishhub.app/revision/model-essays/${text}/${slug}`,
     },
     openGraph: {
-      title: `${essay.title} - Annotated Grade ${essay.targetGrade} model essay`,
-      description: `Annotated Grade ${essay.targetGrade} ${textLabel} essay with paragraph-level commentary.`,
+      title: `${essay.title} - ${isAnnotated(essay) ? 'Annotated ' : ''}Grade ${essay.targetGrade} model essay`,
+      description: isAnnotated(essay)
+        ? `Annotated Grade ${essay.targetGrade} ${textLabel} essay with paragraph-level commentary.`
+        : `Grade ${essay.targetGrade} ${textLabel} model essay, written to show how a top-band answer is built.`,
     },
   }
 }
@@ -224,7 +136,7 @@ export default async function ModelEssayPage({
   if (!essay) notFound()
 
   const hasAccess = await resolveHasAccess()
-  // Teaser slice: show ~30% of the annotated paragraphs (at least the first one)
+  // Teaser slice: show ~30% of the paragraphs (at least the first one)
   // to everyone — anonymous visitors and crawlers included — then lock the rest
   // behind the paywall for non-subscribers. Subscribers see every paragraph.
   const totalParagraphs = essay.paragraphs.length
@@ -387,8 +299,18 @@ async function ParagraphRow({
   const tParagraph = await t('analysis.deep.model_essay.paragraph_label')
   const tAnnotationFor = await t('analysis.deep.model_essay.annotation_for')
   const tMarkersNotes = await t('analysis.deep.model_essay.markers_notes')
+  // Not every essay is annotated. The Romeo and Juliet five carry their prose
+  // as one `essay` string with no marker commentary, so they render full width
+  // rather than beside an empty dashed box labelled "marker's notes".
+  const annotated = paragraph.annotation.trim().length > 0
   return (
-    <div className="grid gap-4 rounded-2xl border border-border/60 bg-card p-5 sm:p-6 md:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] md:gap-6">
+    <div
+      className={
+        annotated
+          ? 'grid gap-4 rounded-2xl border border-border/60 bg-card p-5 sm:p-6 md:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] md:gap-6'
+          : 'rounded-2xl border border-border/60 bg-card p-5 sm:p-6'
+      }
+    >
       {/* Essay paragraph (serif body) */}
       <div className="space-y-3">
         <div className="flex items-center gap-2">
@@ -402,19 +324,21 @@ async function ParagraphRow({
         <ParagraphBody content={paragraph.content} />
       </div>
 
-      {/* Annotation column (mono) */}
-      <aside
-        aria-label={`${tAnnotationFor} ${index + 1}`}
-        className="rounded-xl border border-dashed border-border/60 bg-background/60 p-4"
-      >
-        <div className="mb-2 flex items-center gap-1.5 text-caption uppercase tracking-wider text-muted-foreground">
-          <Quote className="size-3.5" />
-          {tMarkersNotes}
-        </div>
-        <p className="font-mono text-xs leading-relaxed text-muted-foreground">
-          {paragraph.annotation}
-        </p>
-      </aside>
+      {/* Annotation column (mono), only where there is one */}
+      {annotated ? (
+        <aside
+          aria-label={`${tAnnotationFor} ${index + 1}`}
+          className="rounded-xl border border-dashed border-border/60 bg-background/60 p-4"
+        >
+          <div className="mb-2 flex items-center gap-1.5 text-caption uppercase tracking-wider text-muted-foreground">
+            <Quote className="size-3.5" />
+            {tMarkersNotes}
+          </div>
+          <p className="font-mono text-xs leading-relaxed text-muted-foreground">
+            {paragraph.annotation}
+          </p>
+        </aside>
+      ) : null}
     </div>
   )
 }
