@@ -207,6 +207,21 @@ describe('every note is authored, not generated', () => {
         '\n' +
         courseSources
       if (!existsSync(page) && !TEXT_ANNOTATIONS[slug]) continue
+
+      // The SECOND guide directory, kept apart from the rest ON PURPOSE.
+      // Twelve texts have a longer guide under resources/revision-notes/<slug>/
+      // on a different route, which nothing read until 20 September 2026 -
+      // Antony and Cleopatra's is 1,490 lines and the play had no annotations
+      // at all.
+      //
+      // It cannot go through the markup strip below. These pages store their
+      // analysis in JSX ATTRIBUTES - <Quote text="..." analysis="..." /> - and
+      // `<[^>]*>` deletes the whole element, attributes included, so every note
+      // taken from them became untraceable. The strip is right for the course
+      // modules, whose prose is HTML, and wrong for these, whose prose IS the
+      // markup.
+      const notesPage = join(ROOT, 'src/app/resources/revision-notes', slug, 'page.tsx')
+      const revisionNotes = existsSync(notesPage) ? readFileSync(notesPage, 'utf8') : ''
       // Built ONCE per text. It used to be rebuilt inside the inner loop, which
       // was survivable over one guide file and became a five-second timeout the
       // moment the haystack included the course modules - a test that fails on
@@ -222,8 +237,21 @@ describe('every note is authored, not generated', () => {
       const haystack = guide
         .replace(/\\u([0-9a-fA-F]{4})/g, (_, h: string) => String.fromCharCode(parseInt(h, 16)))
         .replace(/<[^>]*>/g, ' ')
+        // HTML entities go too. The revision-notes guides write their
+        // quotation marks as &ldquo; and &mdash;, which the generator decodes;
+        // left here, stripping punctuation would keep the literal "ldquo" and
+        // corrupt precisely the passages that contain a quotation.
+        .replace(/&[a-z]+;/g, ' ')
         .replace(/[^a-z0-9]+/gi, '')
         .toLowerCase()
+
+      // Same normalisation, minus the markup strip, for the reason above.
+      const notesHaystack = revisionNotes
+        .replace(/\\u([0-9a-fA-F]{4})/g, (_, h: string) => String.fromCharCode(parseInt(h, 16)))
+        .replace(/&[a-z]+;/g, ' ')
+        .replace(/[^a-z0-9]+/gi, '')
+        .toLowerCase()
+
       for (const anns of Object.values(TEXT_ANNOTATIONS[slug])) {
         for (const a of anns) {
           // Compare on words only.
@@ -231,7 +259,10 @@ describe('every note is authored, not generated', () => {
             .slice(-60)
             .replace(/[^a-z0-9]+/gi, '')
             .toLowerCase()
-          expect(haystack.includes(tail), `${slug}: note not found in its guide`).toBe(true)
+          expect(
+            haystack.includes(tail) || notesHaystack.includes(tail),
+            `${slug}: note not found in its guide`,
+          ).toBe(true)
           checked++
         }
       }
