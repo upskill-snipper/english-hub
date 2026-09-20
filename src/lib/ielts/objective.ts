@@ -13,6 +13,7 @@
 // ────────────────────────────────────────────────────────────────────────────
 
 import type { ObjectiveQuestion } from './types'
+import { shuffledOptionsFor } from '@/lib/quiz/shuffle'
 
 export type AnswerMap = Record<string, string>
 
@@ -24,14 +25,53 @@ export function matchKey(questionId: string, itemId: string): string {
   return `${questionId}::${itemId}`
 }
 
-/** Correctness of a single (non-matching) recorded answer. Empty = wrong. */
+/**
+ * The option order a learner is shown, and the correct option's TEXT.
+ *
+ * WHY THIS EXISTS (20 September 2026). Both surfaces that mark through this
+ * module rendered `question.options` in authored order and recorded the clicked
+ * POSITION, and this module marked it with `idx === q.correctIndex`. The
+ * authored order put the answer at B in 288 of 429 Reading MCQs (67.1%) and 260
+ * of 302 Listening MCQs (86.1%), so clicking B on every multiple-choice item,
+ * without reading or listening to anything, scored that share of the marks and
+ * a predicted band to match.
+ *
+ * The salt is the question id alone, with no per-attempt component. That is a
+ * deliberate trade: these are exam simulations rendered on the server, and a
+ * salt drawn at render would give the server one order and the browser another.
+ * A fixed but scattered order removes the bias, which is the defect; a retake
+ * showing the same order is a smaller cost than a hydration mismatch on a timed
+ * mock.
+ */
+export function shownMcqOptions(q: Extract<ObjectiveQuestion, { type: 'mcq' }>): {
+  options: string[]
+  correctValue: string
+  explanation: string
+} {
+  return shuffledOptionsFor(
+    q.options,
+    q.correctIndex,
+    q.id,
+    '',
+    q.prompt ?? '',
+    q.explanation ?? '',
+  )
+}
+
+/**
+ * Correctness of a single (non-matching) recorded answer. Empty = wrong.
+ *
+ * An mcq answer is the chosen option's TEXT, not its position. It was the
+ * position until 20 September 2026, which is what made the bias above scoreable
+ * - see `shownMcqOptions`. Nothing persists an AnswerMap, so there is no stored
+ * answer in the old shape to migrate.
+ */
 export function isSingleAnswerCorrect(q: SingleQuestion, raw: string | undefined): boolean {
   if (raw === undefined) return false
   const given = raw.trim()
   if (given === '') return false
   if (q.type === 'mcq') {
-    const idx = Number(given)
-    return Number.isInteger(idx) && idx === q.correctIndex
+    return given === (q.options[q.correctIndex] ?? '')
   }
   if (q.type === 'tfng') {
     return given === q.answer
@@ -133,10 +173,8 @@ export function userAnswerLabel(
   noAnswerLabel: string,
 ): string {
   if (raw === undefined || raw.trim() === '') return noAnswerLabel
-  if (q.type === 'mcq') {
-    const idx = Number(raw)
-    return Number.isInteger(idx) && q.options[idx] !== undefined ? q.options[idx] : noAnswerLabel
-  }
+  // An mcq answer is already the option's text, so it is its own label.
+  if (q.type === 'mcq') return raw
   if (q.type === 'tfng') {
     return TFNG_LABEL[raw as 'true' | 'false' | 'not-given'] ?? raw
   }

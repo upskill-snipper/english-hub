@@ -45,6 +45,7 @@ import {
   totalAnswered,
   questionStartNumbers,
   questionMarks,
+  shownMcqOptions,
 } from '@/lib/ielts/objective'
 import { saveAttempt, genId } from '@/lib/ielts/store'
 
@@ -304,6 +305,13 @@ export default function IeltsReadingPage() {
                 <div className="space-y-3">
                   {passage.questions.map((q) => {
                     const correct = isQuestionFullyCorrect(q, answers)
+                    // An MCQ explanation can name an option by letter ("Option
+                    // B paraphrases the second paragraph"), and the options are
+                    // now shown shuffled, so the authored letter would point at
+                    // the wrong row. shownMcqOptions moves the letters with the
+                    // options they name; render that copy, never q.explanation.
+                    const explanation =
+                      q.type === 'mcq' ? shownMcqOptions(q).explanation : q.explanation
                     return (
                       <details
                         key={q.id}
@@ -344,8 +352,8 @@ export default function IeltsReadingPage() {
                           <p className="text-sm text-emerald-500">
                             {t('ielts.reading.review.correct_answer')} {correctAnswerLabel(q)}
                           </p>
-                          {q.explanation && (
-                            <p className="text-sm text-muted-foreground">{q.explanation}</p>
+                          {explanation && (
+                            <p className="text-sm text-muted-foreground">{explanation}</p>
                           )}
                         </div>
                       </details>
@@ -526,6 +534,19 @@ function QuestionCard({
   const value = answers[question.id]
   const marks = questionMarks(question)
   const numberLabel = marks > 1 ? `${startNumber}-${startNumber + marks - 1}` : String(startNumber)
+  // WHAT WAS WRONG (20 September 2026). This rendered `question.options` in
+  // AUTHORED order and recorded the clicked POSITION (`String(i)`), which the
+  // shared marker compared with `correctIndex`. The authored order put the
+  // answer at B in 288 of 429 Reading MCQs (67.1%), so a learner who clicked B
+  // on every item, without reading a word of the passage, scored 67.1% of the
+  // multiple-choice marks and an estimated band to match. The order now comes
+  // from shownMcqOptions and the recorded answer is the option's TEXT, so the
+  // position carries no information. Memoised because this card re-renders on
+  // every answer anywhere in the test.
+  const mcqView = useMemo(
+    () => (question.type === 'mcq' ? shownMcqOptions(question) : null),
+    [question],
+  )
   return (
     <div className="rounded-2xl border border-border/60 bg-card p-4 sm:p-5">
       <div className="mb-3 flex items-start gap-2">
@@ -540,15 +561,15 @@ function QuestionCard({
         </div>
       </div>
 
-      {question.type === 'mcq' && (
+      {question.type === 'mcq' && mcqView && (
         <div className="grid gap-2">
-          {question.options.map((option, i) => {
-            const selected = value === String(i)
+          {mcqView.options.map((option, i) => {
+            const selected = value === option
             return (
               <button
                 key={i}
                 type="button"
-                onClick={() => onAnswer(question.id, String(i))}
+                onClick={() => onAnswer(question.id, option)}
                 aria-pressed={selected}
                 className={`rounded-xl border p-3 text-start text-sm transition-all duration-200 ${
                   selected

@@ -9,6 +9,12 @@ import {
   remapOptionLetters,
 } from '@/lib/quiz/shuffle'
 import { ALL_QUESTIONS } from '@/app/revision/quiz/quiz-data'
+import { shownMcqOptions, isSingleAnswerCorrect } from '@/lib/ielts/objective'
+import type { ObjectiveQuestion } from '@/lib/ielts/types'
+import { READING_TESTS } from '@/app/ielts/reading/reading-tests'
+import { LISTENING_TESTS } from '@/app/ielts/listening/listening-tests'
+
+type McqQuestion = Extract<ObjectiveQuestion, { type: 'mcq' }>
 
 /**
  * "On the quizzes the answer is B every time."
@@ -64,16 +70,28 @@ import { ALL_QUESTIONS } from '@/app/revision/quiz/quiz-data'
  * `mcqOptions.map(` - their absence from the failure list read as a pass. The
  * vacuity guard below now names every surface that must be in scope.
  *
- * MUTATIONS RUN, each verified to have altered the file first:
- *   - shuffleOptionsDeterministic returning its input: test 1 fails at 86.4%.
+ * AND A STRUCTURAL RULE CANNOT SEE EVERYTHING, which is why section 4 exists.
+ * /ielts/reading and /ielts/mock render their options and mark through
+ * src/lib/ielts/objective.ts, so neither page contains a comparison to find and
+ * the file that does is not a render surface. Four mutations against that path
+ * survived every rule above. Section 4 drives the real banks through the real
+ * marker instead of reading source, and kills them.
+ *
+ * ELEVEN MUTATIONS RUN, each verified to have altered the file first, all
+ * eleven killed:
+ *   - shuffleOptionsDeterministic returning its input: section 1 fails at 86.4%.
  *   - the Fisher-Yates bound `i > 0` changed to `i > 1`: the per-slot uniformity
- *     check fails, position 0 never receives.
- *   - optionsMustKeepOrder returning false always: test 2 fails.
- *   - remapOptionLetters returning its input: test 2's letter test fails.
- *   - restoring `idx === q.correctIndex` in InlineStudyEngine: rule 3 fails.
- *   - renaming `view.options.map(` to `rows.map(` in grade-climber: the vacuity
- *     guard fails, which is the escape described above.
- *   - deleting one entry from KEEPS_ITS_OWN_ORDER: rule 3 fails.
+ *     check fails, because position 0 never receives.
+ *   - optionsMustKeepOrder returning false always.
+ *   - remapOptionLetters returning its input.
+ *   - restoring `idx === q.correctIndex` in InlineStudyEngine.
+ *   - renaming `questionView.options.map(` in grade-climber, the escape
+ *     described above.
+ *   - deleting one entry from KEEPS_ITS_OWN_ORDER.
+ *   - restoring the index comparison in the IELTS marker.
+ *   - the IELTS wrapper no longer delegating to the shared shuffle.
+ *   - the mock rendering its options in authored order again.
+ *   - the reading page recording a position instead of the option text.
  */
 
 // ─── 1. The strategy no longer works ───────────────────────────────────────
@@ -363,8 +381,20 @@ function code(src: string): string {
  */
 const RENDERS_OPTIONS =
   /\b[\w.?[\]]*([Oo]ptions|[Cc]hoices|[Aa]nswers|[Dd]istractors)\b[^\n]{0,40}\.map\(/
+/**
+ * The stored answer, whether the file holds it or reaches it through a shared
+ * marker.
+ *
+ * The marker case is not hypothetical, and it is the last hole this rule had.
+ * /ielts/reading and /ielts/mock render their own options and hand the click to
+ * src/lib/ielts/objective.ts, which held the `idx === q.correctIndex`
+ * comparison. Neither page contained the string "correctIndex", so both sat
+ * outside this rule entirely while 429 Reading MCQs at 67.1% B and 302
+ * Listening MCQs at 86.1% B stayed exploitable through them. The rule saw
+ * nothing because it was reading the wrong file.
+ */
 const STORED_INDEX =
-  /\b(correctIndex|answerIndex|correctAnswerIndex)\b|\.correct\b|\bcorrect\s*:\s*\d/
+  /\b(correctIndex|answerIndex|correctAnswerIndex)\b|\.correct\b|\bcorrect\s*:\s*\d|\b(shownMcqOptions|isSingleAnswerCorrect)\b/
 const CLICKABLE = /onClick=|onSelect|handleSelect|handleAnswer/
 
 /**
@@ -438,6 +468,8 @@ describe('every surface that marks a clicked option', () => {
       'src/app/ielts/listening/page.tsx',
       'src/app/ielts/diagnostic/page.tsx',
       'src/app/toolkit/test-builder/page.tsx',
+      'src/app/ielts/mock/_components/ObjectiveQuestions.tsx',
+      'src/app/ielts/reading/page.tsx',
       'src/app/learn/[courseId]/[moduleId]/client-page.tsx',
       'src/app/learn/[courseId]/assessment/client-page.tsx',
       'src/app/resources/teaching/assessment/page.tsx',
@@ -447,9 +479,21 @@ describe('every surface that marks a clicked option', () => {
   })
 
   it('shuffles its options', () => {
+    // `shownMcqOptions` counts because it is a typed wrapper that knows the
+    // IELTS question shape. The assertion below is what stops that becoming a
+    // loophole: the wrapper has to actually delegate. Without it, "import a
+    // helper with an approved name" would be satisfiable by a helper that
+    // shuffles nothing.
+    const wrapper = readFileSync('src/lib/ielts/objective.ts', 'utf8')
+    expect(wrapper).toMatch(/import \{ shuffledOptionsFor \} from '@\/lib\/quiz\/shuffle'/)
+    expect(wrapper).toMatch(/return shuffledOptionsFor\(/)
+
     const offences = inScope()
       .filter((f) => !(f in KEEPS_ITS_OWN_ORDER))
-      .filter((f) => !/from '@\/lib\/quiz\/shuffle'/.test(readFileSync(f, 'utf8')))
+      .filter((f) => {
+        const src = readFileSync(f, 'utf8')
+        return !/from '@\/lib\/quiz\/shuffle'/.test(src) && !/\bshownMcqOptions\b/.test(src)
+      })
     expect(offences).toEqual([])
   })
 
@@ -492,6 +536,105 @@ describe('every surface that marks a clicked option', () => {
     const tracked = new Set(execSync('git ls-files src', { encoding: 'utf8' }).split('\n'))
     for (const file of Object.keys(KEEPS_ITS_OWN_ORDER)) {
       expect(tracked.has(file), `${file} is exempted but not tracked`).toBe(true)
+    }
+  })
+})
+
+// ─── 4. IELTS, where the marker lives in a different file ──────────────────
+
+/**
+ * Everything above is structural: it reads source files and looks for a shape.
+ * That is blind to /ielts/reading and /ielts/mock, and a mutation run proved it
+ * rather than a hunch. Those two pages render their own options and hand the
+ * click to src/lib/ielts/objective.ts, so neither file contains a comparison to
+ * find, and the file that does is not a render surface at all. Four separate
+ * mutations - putting the index comparison back, stopping the wrapper
+ * delegating, rendering in authored order, recording a position again - all
+ * survived every structural rule in this file.
+ *
+ * So this section does not read source. It drives the REAL banks through the
+ * REAL marker and asks what a student who clicks the second button every time
+ * would actually score.
+ */
+describe('the IELTS objective banks', () => {
+  const BANKS = [
+    ['reading', READING_TESTS, 429, 0.671],
+    ['listening', LISTENING_TESTS, 302, 0.861],
+  ] as const
+
+  function mcqsIn(node: unknown, found: McqQuestion[] = []): McqQuestion[] {
+    if (Array.isArray(node)) {
+      node.forEach((n) => mcqsIn(n, found))
+      return found
+    }
+    if (!node || typeof node !== 'object') return found
+    const o = node as Record<string, unknown>
+    if (o.type === 'mcq' && Array.isArray(o.options) && typeof o.correctIndex === 'number') {
+      found.push(o as unknown as McqQuestion)
+    }
+    Object.values(o).forEach((v) => mcqsIn(v, found))
+    return found
+  }
+
+  it.each(BANKS)(
+    '%s: clicking the second button scores chance, not the bias',
+    (label, tests, expectedCount, authoredAtB) => {
+      const mcqs = mcqsIn(tests)
+      // Vacuity guard. A traversal that finds nothing would pass everything.
+      expect(mcqs.length, `${label} bank`).toBe(expectedCount)
+
+      // The bias in the DATA is untouched and is expected to still be there.
+      const atB = mcqs.filter((q) => q.correctIndex === 1).length
+      expect(atB / mcqs.length).toBeCloseTo(authoredAtB, 2)
+
+      // What the second SHOWN button is actually worth, through the real marker.
+      let scored = 0
+      const landed = new Array(4).fill(0)
+      for (const q of mcqs) {
+        const view = shownMcqOptions(q)
+        expect(view.options.length, `${q.id} lost an option`).toBe(q.options.length)
+        if (isSingleAnswerCorrect(q, view.options[1])) scored++
+        const at = view.options.indexOf(view.correctValue)
+        if (at >= 0 && at < 4) landed[at]++
+      }
+      const share = scored / mcqs.length
+      expect(share, `${label}: clicking B scores ${(share * 100).toFixed(1)}%`).toBeLessThan(0.3)
+      expect(share, `${label}: clicking B scores ${(share * 100).toFixed(1)}%`).toBeGreaterThan(
+        0.18,
+      )
+      // And no other single position is a free pass either.
+      for (const [i, n] of landed.entries()) {
+        const p = n / mcqs.length
+        expect(
+          p,
+          `${label}: position ${i} holds the answer ${(p * 100).toFixed(1)}% of the time`,
+        ).toBeLessThan(0.32)
+      }
+    },
+  )
+
+  it('and both pages render the shuffled view, not the authored options', () => {
+    // The one thing the behavioural test above cannot see. If a page rendered
+    // `question.options` while recording the option TEXT, clicking the second
+    // button would still hand back the authored second option, and the bias
+    // would be live again with every other assertion here still green.
+    for (const [file, expression] of [
+      ['src/app/ielts/mock/_components/ObjectiveQuestions.tsx', 'mcqView.options.map('],
+      ['src/app/ielts/reading/page.tsx', 'mcqView.options.map('],
+    ]) {
+      const body = code(readFileSync(file, 'utf8'))
+      expect(body, `${file} must render the shuffled view`).toContain(expression)
+      expect(body, `${file} must not render the authored options`).not.toContain(
+        'question.options.map(',
+      )
+      // And it must record the option TEXT. Recording the position again is the
+      // one mutation the behavioural test above could not see: the marker would
+      // then compare a number against the answer's text, every answer would mark
+      // wrong, and every assertion here would still be green.
+      expect(body, `${file} must record the option text`).toContain('onAnswer(question.id, option)')
+      expect(body, `${file} must not record a position`).not.toMatch(
+        /onAnswer\(question\.id, String\(/,
+      )
     }
   })
 })

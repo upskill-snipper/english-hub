@@ -8,8 +8,10 @@
 // experience is consistent across the product.
 // ────────────────────────────────────────────────────────────────────────────
 
+import { useMemo } from 'react'
+
 import type { ObjectiveQuestion } from '@/lib/ielts/types'
-import { questionMarks, type AnswerMap } from '@/lib/ielts/objective'
+import { questionMarks, shownMcqOptions, type AnswerMap } from '@/lib/ielts/objective'
 import { MatchingControl } from '../../_components/MatchingControl'
 import { useMockT, type TFn } from '../use-mock-t'
 
@@ -71,6 +73,19 @@ function QuestionCard({
   const value = answers[question.id]
   const marks = questionMarks(question)
   const numberLabel = marks > 1 ? `${startNumber}-${startNumber + marks - 1}` : String(startNumber)
+  // WHAT WAS WRONG (20 September 2026). This rendered `question.options` in
+  // AUTHORED order and recorded the clicked POSITION (`String(i)`), which the
+  // shared marker compared with `correctIndex`. The authored order put the
+  // answer at B in 260 of 302 Listening MCQs (86.1%) and 288 of 429 Reading
+  // MCQs (67.1%), so a candidate who clicked B on every item, without listening
+  // or reading, scored that share of the mock and a predicted band to match.
+  // The order now comes from shownMcqOptions and the recorded answer is the
+  // option's TEXT, so the position carries no information. Memoised because
+  // this card re-renders on every keystroke elsewhere in the section.
+  const mcqView = useMemo(
+    () => (question.type === 'mcq' ? shownMcqOptions(question) : null),
+    [question],
+  )
   return (
     <div className="rounded-2xl border border-border/60 bg-card p-4 sm:p-5">
       <div className="mb-3 flex items-start gap-2">
@@ -87,15 +102,15 @@ function QuestionCard({
         </div>
       </div>
 
-      {question.type === 'mcq' && (
+      {question.type === 'mcq' && mcqView && (
         <div className="grid gap-2">
-          {question.options.map((option, i) => {
-            const selected = value === String(i)
+          {mcqView.options.map((option, i) => {
+            const selected = value === option
             return (
               <button
                 key={i}
                 type="button"
-                onClick={() => onAnswer(question.id, String(i))}
+                onClick={() => onAnswer(question.id, option)}
                 aria-pressed={selected}
                 className={`rounded-xl border p-3 text-start text-sm transition-all duration-200 ${
                   selected
