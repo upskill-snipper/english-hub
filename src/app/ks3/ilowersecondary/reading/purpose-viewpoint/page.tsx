@@ -20,7 +20,7 @@ const APPEAL_Q = QUESTION_TYPES.find((q) => q.id === 'which-text-appealing')!
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Purpose & viewpoint (RAO5) - iLowerSecondary English reading masterclass',
+    title: 'Purpose & viewpoint (RAO5)',
     description:
       "A masterclass on RAO5: identifying a writer's purpose and signposting language, detecting viewpoint, bias and tone across a whole text, and answering the meaning/impact and text-appeal questions in Pearson style.",
   },

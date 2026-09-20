@@ -12,7 +12,7 @@ import {
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Comparing non-fiction texts - iLowerSecondary English',
+    title: 'Comparing non-fiction texts',
     description:
       'Masterclass on the levelled comparison question: linking ideas and viewpoints across two texts, comparative connectives, the feature-tick table, and graded model answers for every level.',
   },

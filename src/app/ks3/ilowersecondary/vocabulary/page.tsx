@@ -16,7 +16,7 @@ const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/vocabulary'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'iLowerSecondary English vocabulary builder',
+    title: 'Vocabulary builder',
     description:
       'A precise vocabulary builder for Pearson iLowerSecondary English (LEH11): themed word banks for Survival, Journeys, the Natural World, Courage, Change and Discovery, an analytical-verb bank and a weak-to-precise upgrade table.',
   },

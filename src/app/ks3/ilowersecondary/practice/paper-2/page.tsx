@@ -21,7 +21,7 @@ import {
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Practice Paper 2: Journeys - iLowerSecondary English',
+    title: 'Paper 2: Journeys',
     description:
       'A complete original practice achievement test modelled on LEH11/01, theme “Journeys”: three original source texts, 22 Section A reading questions (40 marks), a 30-mark Section B writing task and a full Pearson-style mark scheme.',
   },

@@ -21,7 +21,7 @@ import {
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Practice Paper 5: Change - iLowerSecondary English',
+    title: 'Paper 5: Change',
     description:
       'A complete original practice achievement test modelled on LEH11/01, theme “Change”: three original source texts, 22 Section A reading questions (40 marks), a 30-mark Section B writing task and a full Pearson-style mark scheme.',
   },

@@ -9,7 +9,7 @@ const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/reference/senten
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'iLowerSecondary English sentence openers & connectives',
+    title: 'Sentence openers & connectives',
     description:
       'A practical bank of varied sentence openers and connectives for the LEH11/01 Section B writing task, organised by job, with original examples, usage notes and a vary-your-openers demo.',
   },

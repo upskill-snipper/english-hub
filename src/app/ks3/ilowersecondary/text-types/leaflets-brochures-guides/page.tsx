@@ -10,7 +10,7 @@ import {
 } from '@/lib/ilowersecondary/spec'
 
 export const metadata: Metadata = {
-  title: 'Leaflets, brochures & guides - iLowerSecondary English (LEH11) | The English Hub',
+  title: 'Leaflets, brochures & guides',
   description:
     'How to read and write leaflets, brochures and guides for Pearson Edexcel iLowerSecondary English (LEH11): conventions, structure and language analysis, two original annotated examples, practice questions with model answers, and a writing task.',
   alternates: {

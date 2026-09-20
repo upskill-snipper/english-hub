@@ -15,7 +15,7 @@ const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/reference/comman
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'iLowerSecondary English command words (LEH11/01)',
+    title: 'Command words (LEH11/01)',
     description:
       'A definitive glossary of the command and question words used in the LEH11/01 reading paper: what each one really asks, the response shape it demands, typical marks and an original model answer.',
   },

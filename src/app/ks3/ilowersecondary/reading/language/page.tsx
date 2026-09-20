@@ -22,7 +22,7 @@ const STYLE_TOOLKIT = GUIDED_READING_PROMPTS.fiction['Style and language']
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Language analysis masterclass (RAO4) - iLowerSecondary English',
+    title: 'Language analysis (RAO4)',
     description:
       "The flagship guide to RAO4: exploring writers' grammatical and literary language at word and sentence level, with original practice extracts and model answers.",
   },

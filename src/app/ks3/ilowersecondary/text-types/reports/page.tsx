@@ -10,7 +10,7 @@ import {
 } from '@/lib/ilowersecondary/spec'
 
 export const metadata: Metadata = {
-  title: 'Report texts - reading and writing guide (KS3 iLowerSecondary English)',
+  title: 'Report texts',
   description:
     'How to read and write report texts for Pearson Edexcel iLowerSecondary English (LEH11): conventions, impersonal language, structure analysis, two annotated original report extracts, practice questions with model answers and a writing task.',
   alternates: {

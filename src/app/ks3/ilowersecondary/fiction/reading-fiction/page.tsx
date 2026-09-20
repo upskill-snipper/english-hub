@@ -23,7 +23,7 @@ const PROMPT_GROUPS = Object.entries(FICTION_PROMPTS) as [
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Reading the fiction text (Section A): a guided-reading masterclass',
+    title: 'Reading the fiction text',
     description:
       'How to read the single fiction text in Section A of the iLowerSecondary English paper: characters, plot and structure, style and language, using the Teacher’s Guide guided-reading toolkit, plus one original extract with six fully worked questions in Pearson mark style.',
   },

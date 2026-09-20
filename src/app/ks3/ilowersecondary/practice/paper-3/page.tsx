@@ -21,7 +21,7 @@ import {
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Practice Paper 3: The Natural World - iLowerSecondary English',
+    title: 'Paper 3: The Natural World',
     description:
       'A complete original practice achievement test modelled on LEH11/01, theme “The Natural World”: three original source texts, 22 Section A reading questions (40 marks), a 30-mark Section B writing task and a full Pearson-style mark scheme.',
   },

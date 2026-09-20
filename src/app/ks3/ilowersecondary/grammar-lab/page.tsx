@@ -22,7 +22,7 @@ const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/grammar-lab'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Grammar lab - iLowerSecondary English (LEH11)',
+    title: 'Grammar lab',
     description:
       'A complete grammar, punctuation and spelling skill-builder for LEH11: word classes, sentence types, punctuation rules, UK spelling traps and a self-test.',
   },

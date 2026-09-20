@@ -9,7 +9,7 @@ const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/writing/planning
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Planning & proofreading the Section B writing task',
+    title: 'Planning & proofreading',
     description:
       'A masterclass on fast planning and reliable proofreading for the iLowerSecondary English (LEH11) Section B writing task: 3-minute plans, a time budget, a self-tuned proofreading checklist and a last-minute rescue routine.',
   },

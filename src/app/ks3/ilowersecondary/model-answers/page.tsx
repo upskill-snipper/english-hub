@@ -16,7 +16,7 @@ const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/model-answers'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'iLowerSecondary English model answers (LEH11)',
+    title: 'Model answers',
     description:
       'A curated bank of full-mark, original exemplar answers for every LEH11/01 question type, each with an examiner-style annotation tied to the official mark grids.',
   },

@@ -9,7 +9,7 @@ const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/question-types/s
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'iLowerSecondary English: short open-response answers',
+    title: 'Short open-response answers',
     description:
       'A masterclass on the 1- and 2-mark short open-response questions - answer length discipline, reading the question stem, quoting vs paraphrasing, and worked examples with weak and credited model answers.',
   },

@@ -5,7 +5,7 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { QUESTION_TYPES, ASSESSMENT_OBJECTIVES, SPEC_ATTRIBUTION } from '@/lib/ilowersecondary/spec'
 
 export const metadata: Metadata = {
-  title: 'Synonyms & vocabulary-in-context - question-type masterclass',
+  title: 'Vocabulary in context',
   description:
     'How to answer "circle the synonym", "underline the closest meaning" and "this word means…" questions on the Pearson Edexcel iLowerSecondary English achievement test: read in context, eliminate distractors, and weigh connotation. 20+ original graded practice items with answers and rationales.',
   alternates: {

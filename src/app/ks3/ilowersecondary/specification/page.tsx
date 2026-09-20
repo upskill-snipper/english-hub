@@ -24,7 +24,7 @@ const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/specification'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'iLowerSecondary English specification (LEH11)',
+    title: 'Specification (LEH11)',
     description:
       'The complete Pearson Edexcel International Award in Lower Secondary English (LEH11) specification: qualification facts, sections, assessment objectives and content skills.',
   },

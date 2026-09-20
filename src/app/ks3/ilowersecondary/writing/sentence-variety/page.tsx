@@ -20,7 +20,7 @@ const W9_3C = YEAR9_CODES.find((c) => c.code === 'W9.3C')!
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'iLowerSecondary English: a range of sentences & sentence openings (WAO2)',
+    title: 'Sentence variety & openings',
     description:
       'A masterclass on using simple, compound, complex and minor sentences for effect, varied sentence openings, short sentences for tension, the short-then-long rhythm and single-clause vs subordinate development - with original before/after rewrites, a sentence-opener bank and a drill task with a model answer.',
   },

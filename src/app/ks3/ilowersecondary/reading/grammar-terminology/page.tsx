@@ -11,7 +11,7 @@ import {
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Grammar terminology reference - iLowerSecondary English',
+    title: 'Grammar terminology',
     description:
       'A precise, plain-English glossary of every word class, sentence type, clause and punctuation term tested by the “underline the word / verb class” question, with original examples and a 15-item self-test.',
   },

@@ -11,7 +11,7 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'iLowerSecondary English: vocabulary & cohesion masterclass - The English Hub',
+    title: 'Vocabulary & cohesion',
     description:
       'Choose the exact word, vary synonyms without thesaurus-abuse, match register to your reader, and bind paragraphs with cohesion devices. Upgrade tables, a labelled rewrite and a 15-word challenge.',
   },

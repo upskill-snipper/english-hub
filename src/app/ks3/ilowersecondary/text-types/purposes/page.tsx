@@ -16,7 +16,7 @@ const RAO5 = ASSESSMENT_OBJECTIVES.RAO5
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'The five non-fiction purposes - argue, describe, explain, inform, persuade',
+    title: 'The five non-fiction purposes',
     description:
       'The hub guide to the five iLowerSecondary non-fiction purposes. Definitions, tell-tale language and structure, original examples, a purpose-detective decision tree, and a 12-item self-test with answers.',
   },

@@ -11,7 +11,7 @@ import {
 } from '@/lib/ilowersecondary/spec'
 
 export const metadata: Metadata = {
-  title: 'Newspaper & Magazine Articles | KS3 English',
+  title: 'Newspaper & magazine articles',
   description:
     'Learn the conventions of newspaper and magazine articles for KS3 iLowerSecondary English: headlines, structure, annotated examples and guided reading prompts.',
   alternates: {

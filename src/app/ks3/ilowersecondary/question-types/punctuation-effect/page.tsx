@@ -9,7 +9,7 @@ const TICK_TABLE_TYPE = QUESTION_TYPES.find((q) => q.id === 'feature-tick-table'
 const RAO3 = ASSESSMENT_OBJECTIVES.RAO3
 
 export const metadata: Metadata = {
-  title: 'Effect of a punctuation mark - iLowerSecondary English question masterclass',
+  title: 'Effect of a punctuation mark',
   description:
     'Master the 2-mark punctuation-effect question in the Pearson Edexcel iLowerSecondary English achievement test: an effects reference for every mark, worked extracts and split model answers.',
   alternates: {

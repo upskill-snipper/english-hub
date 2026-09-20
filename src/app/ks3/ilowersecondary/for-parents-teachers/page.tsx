@@ -19,7 +19,7 @@ const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/for-parents-teac
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'iLowerSecondary English: a guide for parents and teachers',
+    title: 'For parents and teachers',
     description:
       'A clear, reassuring guide to the Pearson Edexcel International Award in Lower Secondary English (LEH11) - what it is, how the exam works, what the grades mean, and how to support a child at home or in class.',
   },

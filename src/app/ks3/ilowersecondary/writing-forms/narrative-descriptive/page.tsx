@@ -18,7 +18,7 @@ const ENTERTAIN = WRITING_PURPOSES.find((p) => p === 'entertain')!
 const DESCRIBE = WRITING_PURPOSES.find((p) => p === 'describe')!
 
 export const metadata: Metadata = {
-  title: 'Narrative & descriptive writing - KS3 iLowerSecondary English writing-forms guide',
+  title: 'Narrative & descriptive writing',
   description:
     'Master Section B narrative and descriptive writing: story arc, viewpoint, show-don’t-tell, dialogue punctuation, pace and endings; sensory imagery, zooming, expanded noun phrases, controlled figurative language and atmosphere - with two original annotated models.',
   alternates: {

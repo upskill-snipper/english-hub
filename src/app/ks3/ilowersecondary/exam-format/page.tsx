@@ -14,7 +14,7 @@ const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/exam-format'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'iLowerSecondary English: what the exam looks like',
+    title: 'What the exam looks like',
     description:
       'A practical walkthrough of the single iLowerSecondary English achievement test - the Source Booklet, timing strategy, answering conventions, the question journey, and an exam-day checklist.',
   },

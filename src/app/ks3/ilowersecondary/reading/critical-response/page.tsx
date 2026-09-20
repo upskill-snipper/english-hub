@@ -21,7 +21,7 @@ const SHORT_RETRIEVAL = QUESTION_TYPES.find((q) => q.id === 'short-retrieval')!
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Developing a critical response to texts - iLowerSecondary English',
+    title: 'Critical response to texts',
     description:
       'A masterclass on reading skill 1.2a: interpreting information, selecting the best short quotation, embedding evidence and turning a vague answer into a credited, developed response.',
   },

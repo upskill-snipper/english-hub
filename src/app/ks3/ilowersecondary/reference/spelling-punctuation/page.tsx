@@ -8,7 +8,7 @@ import { WRITING_SKILLS, SPEC_ATTRIBUTION } from '@/lib/ilowersecondary/spec'
 const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/reference/spelling-punctuation'
 
 export const metadata: Metadata = {
-  title: 'Spelling & punctuation reference',
+  title: 'Spelling & punctuation',
   description:
     'A quick, accurate reference for the punctuation the iLowerSecondary ' +
     'English specification names explicitly, plus the spelling patterns ' +

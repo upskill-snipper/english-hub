@@ -23,7 +23,7 @@ const GENRE_PROMPTS = GUIDED_READING_PROMPTS.nonFiction.Genre
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'The recount - reading and writing guide (KS3 iLowerSecondary English)',
+    title: 'The recount',
     description:
       'A KS3 iLowerSecondary English guide to the recount as both a non-fiction text type and a Section B writing form: conventions, structure analysis (RAO3), worked extracts, practice questions with model answers, and a recount-writing task.',
   },

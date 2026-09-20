@@ -18,7 +18,7 @@ const PURPOSE_EXPLAIN = NON_FICTION_PURPOSES.find((p) => p === 'explain')!
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'iLowerSecondary English: instructional texts - reading & writing guide',
+    title: 'Instructional texts',
     description:
       'How instructional texts work for LEH11: sequential steps, imperative verbs, time and sequence connectives, lists, second person and precise vocabulary - how they are tested in RAO3 and RAO4, with original annotated extracts, practice questions and a write-instructions task with model.',
   },

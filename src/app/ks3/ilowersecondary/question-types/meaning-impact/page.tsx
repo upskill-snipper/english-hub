@@ -9,7 +9,7 @@ const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/question-types/m
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Meaning & impact questions - iLowerSecondary English masterclass',
+    title: 'Meaning & impact questions',
     description:
       'Master the "What did the writer mean…?", "Explain the impact…" and "How does the writer show…?" reading questions for Pearson iLowerSecondary English (LEH11). Worked extracts, weak vs model answers, mark splits and a sentence-frame toolkit.',
   },

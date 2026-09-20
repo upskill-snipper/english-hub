@@ -17,7 +17,7 @@ const GENRE_PROMPTS = GUIDED_READING_PROMPTS.nonFiction.Genre
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Autobiography & biography - iLowerSecondary English text types',
+    title: 'Autobiography & biography',
     description:
       'A reading-and-writing guide to autobiography and biography for LEH11: definitions, conventions, language features to spot, exam questions, and original annotated extracts with model answers.',
   },

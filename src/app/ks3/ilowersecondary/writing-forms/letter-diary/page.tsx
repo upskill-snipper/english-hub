@@ -19,7 +19,7 @@ const WAO1 = ASSESSMENT_OBJECTIVES.WAO1
 const SECTION_B = SECTIONS.B
 
 export const metadata: Metadata = {
-  title: 'Letter & diary - KS3 iLowerSecondary English writing-form guide',
+  title: 'Letter & diary',
   description:
     'Master the letter and diary forms for Section B: formal vs informal letter openings and sign-offs, dated reflective diary entries, register, purposes and audiences, two original annotated models and a form-conventions checklist.',
   alternates: {

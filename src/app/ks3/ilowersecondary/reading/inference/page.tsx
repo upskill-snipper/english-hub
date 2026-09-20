@@ -20,7 +20,7 @@ const MEANING_Q = QUESTION_TYPES.find((q) => q.id === 'meaning-impact')!
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Inference (RAO2): reading beyond the literal - masterclass',
+    title: 'Inference (RAO2)',
     description:
       'A masterclass on the iLowerSecondary English inference objective: literal vs implied meaning, deduction vs inference vs interpretation, the evidence-plus-suggestion sentence frame, how 1-mark and 2-mark questions are marked, and three original practice extracts with model answers.',
   },

@@ -21,7 +21,7 @@ import {
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Practice Paper 6: Discovery - iLowerSecondary English',
+    title: 'Paper 6: Discovery',
     description:
       'A complete original practice achievement test modelled on LEH11/01, theme “Discovery”: three original source texts, 22 Section A reading questions (40 marks), a 30-mark Section B writing task and a full Pearson-style mark scheme.',
   },

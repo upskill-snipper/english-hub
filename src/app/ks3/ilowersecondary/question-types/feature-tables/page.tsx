@@ -9,7 +9,7 @@ const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/question-types/f
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'iLowerSecondary English: tables & closed questions masterclass',
+    title: 'Tables & closed questions',
     description:
       'Master the closed iLowerSecondary English items - feature tick-tables with partial credit, A/B/C/D multiple choice, underline/circle the correct word, and the “which text is more appealing” evidence question. Worked examples and technique.',
   },

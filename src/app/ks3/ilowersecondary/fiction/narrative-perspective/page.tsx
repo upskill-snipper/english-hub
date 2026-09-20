@@ -18,7 +18,7 @@ const PLOT_PROMPTS = GUIDED_READING_PROMPTS.fiction['Plot and structure']
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Narrative perspective - iLowerSecondary English fiction guide',
+    title: 'Narrative perspective',
     description:
       'Spot and analyse first person, second person, third person limited and omniscient narration: pronouns and markers, what each viewpoint lets a writer do, the effect on the reader, limitations, original annotated extracts and a self-test.',
   },

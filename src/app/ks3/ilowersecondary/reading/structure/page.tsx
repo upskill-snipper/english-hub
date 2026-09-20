@@ -20,7 +20,7 @@ const TICK_TABLE_Q = QUESTION_TYPES.find((q) => q.id === 'feature-tick-table')!
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'iLowerSecondary English: structure & organisation of texts (RAO3)',
+    title: 'Structure & organisation',
     description:
       'A masterclass on identifying and commenting on how non-fiction texts are structured - openings, topic sentences, headings, connectives, endings, the punctuation-effect question and the feature-tick-table - with original practice extracts and model answers.',
   },

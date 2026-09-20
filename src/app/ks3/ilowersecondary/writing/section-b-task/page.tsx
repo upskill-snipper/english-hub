@@ -18,7 +18,7 @@ const S4_WAO1 = WAO1_GRID.find((g) => g.level === 'S4')!
 const S4_WAO2 = WAO2_GRID.find((g) => g.level === 'S4')!
 
 export const metadata: Metadata = {
-  title: 'The Section B writing task - method & worked example | iLowerSecondary English',
+  title: 'The Section B writing task',
   description:
     'A step-by-step walkthrough of the single extended writing task in Section B of the Pearson Edexcel iLowerSecondary English achievement test: decode, plan, draft and proofread, with an original worked example annotated against the WAO1 and WAO2 mark grids.',
   alternates: {

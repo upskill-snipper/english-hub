@@ -17,7 +17,7 @@ const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/study-plan'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'iLowerSecondary English study plan (LEH11/01)',
+    title: 'Study plan (LEH11/01)',
     description:
       'A weighting-led revision study plan for the Pearson Edexcel International Award in Lower Secondary English (LEH11/01): a six-week countdown, a one-week intensive, a self-test routine, a weakness-to-page diagnostic, and exam-week and exam-day routines.',
   },

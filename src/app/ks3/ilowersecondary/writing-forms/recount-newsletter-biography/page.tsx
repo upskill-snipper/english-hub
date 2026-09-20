@@ -16,7 +16,7 @@ const AUTOBIOGRAPHICAL = WRITING_FORMS.find((f) => f === 'autobiographical')!
 const BIOGRAPHICAL = WRITING_FORMS.find((f) => f === 'biographical')!
 
 export const metadata: Metadata = {
-  title: 'Recount, newsletter & biography - KS3 iLowerSecondary English writing forms',
+  title: 'Recount, newsletter & biography',
   description:
     'Structure, register, purpose and audience for three Section B writing forms - recount, newsletter and autobiographical/biographical writing - with original annotated models mapped to the WAO1 bands, a decision box and practice prompts.',
   alternates: {

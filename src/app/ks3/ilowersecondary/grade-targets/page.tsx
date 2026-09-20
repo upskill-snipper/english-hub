@@ -14,7 +14,7 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'iLowerSecondary English: grade targets (S1-S4) - The English Hub',
+    title: 'Grade targets (S1-S4)',
     description:
       'What an S1, S2, S3 and S4 answer looks like in iLowerSecondary English, and how to climb each band for writing and reading.',
   },

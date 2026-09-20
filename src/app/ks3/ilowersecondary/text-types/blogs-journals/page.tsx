@@ -22,7 +22,7 @@ const PARAGRAPH_PROMPTS = GUIDED_READING_PROMPTS.nonFiction.Paragraphs
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Blogs & journals - non-fiction text types - iLowerSecondary English',
+    title: 'Blogs & journals',
     description:
       'A reading-and-writing guide to blogs and journals (including diary-style journals) for iLowerSecondary English: conventions, how to identify and analyse them, and how to write one for Section B, with original annotated extracts and model answers.',
   },

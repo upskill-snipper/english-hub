@@ -11,7 +11,7 @@ import {
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'The 6-mark extended comparison question - iLowerSecondary English',
+    title: 'The 6-mark comparison question',
     description:
       'A deep masterclass on the extended comparison question: how to climb the levelled grid from an implicit comment to a clear, developed explanation of the contrast, with two original extracts and three annotated model answers.',
   },

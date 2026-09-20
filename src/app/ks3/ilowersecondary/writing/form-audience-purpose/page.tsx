@@ -18,7 +18,7 @@ const WAO1 = ASSESSMENT_OBJECTIVES.WAO1
 const SECTION_B = SECTIONS.B
 
 export const metadata: Metadata = {
-  title: 'Form, audience & purpose - KS3 iLowerSecondary English writing masterclass',
+  title: 'Form, audience & purpose',
   description:
     'Decode the Section B extended writing task: identify form, audience and purpose, learn the conventions of every form, signposting language for every purpose, register choices for each audience, and an annotated worked example.',
   alternates: {

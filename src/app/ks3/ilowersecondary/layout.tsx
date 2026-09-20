@@ -6,7 +6,16 @@ import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   title: {
     default: `${QUALIFICATION.title} (${QUALIFICATION.subjectCode})`,
-    template: '%s · iLowerSecondary English · The English Hub',
+    // SHORTENED 20 September 2026. This was
+    // '%s · iLowerSecondary English · The English Hub' - a 43-character suffix,
+    // so any page title longer than seventeen characters exceeded the ~60 that
+    // Google displays. Measured across the live sitemap: 56 of the 65 pages
+    // under this layout had a title too long to show, the worst at 125
+    // characters, and almost every one of them named the qualification twice
+    // because the page title repeated what this template already appends.
+    // Dropping the brand costs nothing a search result shows: Google appends or
+    // rewrites the site name itself.
+    template: '%s · iLowerSecondary English',
   },
   description:
     `Student learning hub for the ${QUALIFICATION.title} (${QUALIFICATION.subjectCode}). ` +

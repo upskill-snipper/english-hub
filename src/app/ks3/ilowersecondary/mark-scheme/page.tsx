@@ -13,7 +13,7 @@ import {
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'How your answers are marked - iLowerSecondary English',
+    title: 'How your answers are marked',
     description:
       'Plain-English guide to Pearson’s marking rules for the iLowerSecondary English achievement test: positive marking, best-fit levels, indicative content, and the full Section B writing and comparison grids.',
   },
