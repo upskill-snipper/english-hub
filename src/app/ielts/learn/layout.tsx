@@ -8,7 +8,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Learn IELTS - Free Self-Study Lessons (Beginner to Band 9)',
   description:
-    'A complete IELTS self-study library: short, original lessons for Listening, Reading, Writing and Speaking, plus a Foundation track for beginners. Work through each skill step by step, from the basics to a top band.',
+    'Short, original IELTS lessons in Listening, Reading, Writing and Speaking, plus a Foundation track for beginners. Work a track in order or pick a topic.',
   alternates: { canonical: 'https://theenglishhub.app/ielts/learn' },
 }
 

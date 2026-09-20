@@ -4,24 +4,24 @@ import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'An Inspector Calls Study Guide - AQA English Literature GCSE',
+    title: 'An Inspector Calls - AQA GCSE Literature',
     description:
-      'Complete An Inspector Calls revision guide for AQA GCSE English Literature. Plot summary, character analysis, themes, 20+ key quotations, Edwardian and post-war context, and essay planning.',
+      'An Inspector Calls for AQA GCSE English Literature: plot summary, characters, themes, key quotations, 1912 and 1945 context, and essay planning.',
     images: [
       {
-        url: '/api/og?title=An+Inspector+Calls+Study+Guide+-+AQA+English+Literature+GCSE',
+        url: '/api/og?title=An+Inspector+Calls+-+AQA+GCSE+Literature',
         width: 1200,
         height: 630,
-        alt: 'An Inspector Calls Study Guide - AQA English Literature GCSE',
+        alt: 'An Inspector Calls - AQA GCSE Literature',
       },
     ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/aqa/inspector-calls',
   },
-  title: 'An Inspector Calls Study Guide - AQA English Literature GCSE',
+  title: 'An Inspector Calls - AQA GCSE Literature',
   description:
-    'Complete An Inspector Calls revision guide for AQA GCSE English Literature. Plot summary, character analysis, themes, 20+ key quotations, Edwardian and post-war context, and essay planning.',
+    'An Inspector Calls for AQA GCSE English Literature: plot summary, characters, themes, key quotations, 1912 and 1945 context, and essay planning.',
 }
 
 /* ─── Data ──────────────────────────────────────────────────── */

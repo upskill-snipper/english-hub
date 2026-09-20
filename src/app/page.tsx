@@ -36,7 +36,7 @@ const OG =
 export const metadata: Metadata = {
   title: 'GCSE & IGCSE English Revision, AI-marked',
   description:
-    'Revise GCSE and IGCSE English with practice papers, model answers and instant AI marking against the real exam mark scheme, across AQA, Edexcel, OCR, Eduqas and Cambridge IGCSE. Built for students and parents, trusted by schools.',
+    'Revise GCSE and IGCSE English with practice papers, model answers and instant AI marking against your board: AQA, Edexcel, OCR, Eduqas and Cambridge.',
   alternates: { canonical: 'https://theenglishhub.app' },
   keywords: [
     'GCSE English revision',

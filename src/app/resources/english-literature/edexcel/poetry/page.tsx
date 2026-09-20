@@ -8,24 +8,24 @@ import { STRINGS as _EAL_STRINGS } from './content'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Edexcel Poetry Anthology - Relationships and Conflict Clusters',
+    title: 'Edexcel Poetry: Relationships and Conflict',
     description:
-      'Full analysis of all 30 poems in the Edexcel GCSE English Literature poetry anthology. Relationships and Conflict clusters with themes, language analysis, structure, and comparison ideas.',
+      'Analysis of all 30 poems in the Edexcel GCSE poetry anthology, Relationships and Conflict clusters, with themes, structure and comparison advice.',
     images: [
       {
-        url: '/api/og?title=Edexcel+Poetry+Anthology+-+Relationships+and+Conflict+Clusters',
+        url: '/api/og?title=Edexcel+Poetry%3A+Relationships+and+Conflict',
         width: 1200,
         height: 630,
-        alt: 'Edexcel Poetry Anthology - Relationships and Conflict Clusters',
+        alt: 'Edexcel Poetry: Relationships and Conflict',
       },
     ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/poetry',
   },
-  title: 'Edexcel Poetry Anthology - Relationships and Conflict Clusters',
+  title: 'Edexcel Poetry: Relationships and Conflict',
   description:
-    'Full analysis of all 30 poems in the Edexcel GCSE English Literature poetry anthology. Relationships and Conflict clusters with themes, language analysis, structure, and comparison ideas.',
+    'Analysis of all 30 poems in the Edexcel GCSE poetry anthology, Relationships and Conflict clusters, with themes, structure and comparison advice.',
 }
 
 /* ─── Data ───────────────────────────────────────────────────── */

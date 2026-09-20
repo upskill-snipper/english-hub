@@ -31,7 +31,7 @@ import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   title: 'IAL English - Your Hub',
   description:
-    'Pearson Edexcel International A-Level (IAL) English Literature & Language revision hub. Unit-by-unit breakdown, mock exam packs, AI self-learning, set-text guides and exam technique for IAL success.',
+    'Pearson Edexcel International A-Level (IAL) English revision: unit-by-unit breakdowns, mock exam packs, set-text guides and exam technique.',
   alternates: { canonical: 'https://theenglishhub.app/revision/ial' },
   openGraph: {
     title: 'IAL English - The English Hub',

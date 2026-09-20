@@ -9,7 +9,8 @@ import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
     title: 'He Never Expected Much - Thomas Hardy | Cambridge IGCSE 0475',
-    description: 'Study guide for ',
+    description:
+      'He Never Expected Much by Thomas Hardy (1928) for Cambridge IGCSE 0475, Songs of Ourselves Volume 1: themes, form, structure and study notes.',
     images: [
       {
         url: '/api/og?title=He+Never+Expected+Much+-+Thomas+Hardy+%7C+Cambridge+IGCSE+0475',
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
   },
   title: 'He Never Expected Much - Thomas Hardy | Cambridge IGCSE 0475',
   description:
-    "Study guide for 'He Never Expected Much' by Thomas Hardy (1928). Themes, form and structure for Cambridge IGCSE Literature in English (0475), Songs of Ourselves Vol 1 Part 4.",
+    'He Never Expected Much by Thomas Hardy (1928) for Cambridge IGCSE 0475, Songs of Ourselves Volume 1: themes, form, structure and study notes.',
   alternates: {
     canonical:
       'https://theenglishhub.app/resources/english-literature/caie/songs-of-ourselves-v1/he-never-expected-much',

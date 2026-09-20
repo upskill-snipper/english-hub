@@ -5,19 +5,19 @@ import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Macbeth: Ambition & the Supernatural - Lesson Plan',
+    title: 'Macbeth Lesson Plan: Ambition & Witches',
     description:
       'Full 60-minute GCSE English Literature lesson plan exploring ambition in Macbeth. Includes objectives, starter, main task, plenary, and differentiation.',
     images: [
       {
-        url: '/api/og?title=Macbeth%3A+Ambition+%26+the+Supernatural+-+Lesson+Plan',
+        url: '/api/og?title=Macbeth+Lesson+Plan%3A+Ambition+%26+Witches',
         width: 1200,
         height: 630,
-        alt: 'Macbeth: Ambition & the Supernatural - Lesson Plan',
+        alt: 'Macbeth Lesson Plan: Ambition & Witches',
       },
     ],
   },
-  title: 'Macbeth: Ambition & the Supernatural - Lesson Plan',
+  title: 'Macbeth Lesson Plan: Ambition & Witches',
   description:
     'Full 60-minute GCSE English Literature lesson plan exploring ambition in Macbeth. Includes objectives, starter, main task, plenary, and differentiation.',
   alternates: {

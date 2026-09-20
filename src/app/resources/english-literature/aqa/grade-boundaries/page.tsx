@@ -7,22 +7,22 @@ import { headers } from 'next/headers'
 import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'AQA GCSE English Literature (8702) Grade Boundaries',
+    title: 'AQA English Literature Grade Boundaries',
     description:
       'Approximate grade boundaries for AQA GCSE English Literature (8702), what each grade looks like, and how to push your marks higher.',
     images: [
       {
-        url: '/api/og?title=AQA+GCSE+English+Literature+(8702)+Grade+Boundaries',
+        url: '/api/og?title=AQA+English+Literature+Grade+Boundaries',
         width: 1200,
         height: 630,
-        alt: 'AQA GCSE English Literature (8702) Grade Boundaries',
+        alt: 'AQA English Literature Grade Boundaries',
       },
     ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/aqa/grade-boundaries',
   },
-  title: 'AQA GCSE English Literature (8702) Grade Boundaries',
+  title: 'AQA English Literature Grade Boundaries',
   description:
     'Approximate grade boundaries for AQA GCSE English Literature (8702), what each grade looks like, and how to push your marks higher.',
 }

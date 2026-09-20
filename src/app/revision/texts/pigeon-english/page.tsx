@@ -8,18 +8,18 @@ import { LearningResourceJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-
 import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Pigeon English revision guide - themes, characters, key quotes - The English Hub',
+    title: 'Pigeon English GCSE revision - themes, characters, quotes',
     description: 'Pigeon English GCSE revision - Stephen Kelman',
     images: [
       {
-        url: '/api/og?title=Pigeon+English+revision+guide+-+themes%2C+characters%2C+key+quotes+-+The+English+Hub',
+        url: '/api/og?title=Pigeon+English+GCSE+revision+-+themes%2C+characters%2C+quotes',
         width: 1200,
         height: 630,
-        alt: 'Pigeon English revision guide - themes, characters, key quotes - The English Hub',
+        alt: 'Pigeon English GCSE revision - themes, characters, quotes',
       },
     ],
   },
-  title: 'Pigeon English revision guide - themes, characters, key quotes',
+  title: 'Pigeon English GCSE revision - themes, characters, quotes',
   description:
     "Pigeon English GCSE revision - Stephen Kelman's 2011 novel with plot, characters, themes, context and key quotes. Aligned to the AQA GCSE Literature spec.",
   alternates: {

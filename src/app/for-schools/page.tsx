@@ -71,7 +71,7 @@ export const metadata = {
       'AI lesson planning, AI essay marking, department analytics, and resources mapped to your exam board. Founding Schools programme open now.',
     images: [
       {
-        url: '/api/og?title=English+platform+for+UK+schools&subtitle=Whole+department,+one+place',
+        url: '/api/og?title=Whole-department+English+platform+for+UK+schools+-+The+English+Hub',
         width: 1200,
         height: 630,
         alt: 'English platform for UK schools - whole department, one place',

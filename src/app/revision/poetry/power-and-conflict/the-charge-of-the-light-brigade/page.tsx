@@ -11,9 +11,9 @@ import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ── SEO ────────────────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
-  title: 'The Charge of the Light Brigade -- Alfred Lord Tennyson | Power & Conflict Poetry',
+  title: 'The Charge of the Light Brigade: Tennyson, Power & Conflict',
   description:
-    'Interactive GCSE revision for The Charge of the Light Brigade by Alfred Lord Tennyson. Annotated poem, key quotes, language devices, form & structure, and comparison poems.',
+    'The Charge of the Light Brigade by Tennyson, annotated line by line, with themes, a quiz, essay prompts and AQA comparison poems.',
   alternates: {
     canonical:
       'https://theenglishhub.app/revision/poetry/power-and-conflict/the-charge-of-the-light-brigade',

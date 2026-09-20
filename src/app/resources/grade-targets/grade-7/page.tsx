@@ -5,22 +5,22 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Getting a Grade 7 | Grade Targets | The English Hub',
+    title: 'Getting a Grade 7 | Grade Targets',
     description:
-      'What separates a Grade 7 from a 5 or 6 in GCSE English. Advanced skills, example responses, and detailed advice for pushing from Grade 6 to Grade 7 in English Language and Literature.',
+      'What separates a Grade 7 from a 5 or 6 in GCSE English: the advanced analytical skills, example Grade 7 responses, and how to push up from a 6.',
     images: [
       {
-        url: '/api/og?title=Getting+a+Grade+7+%7C+Grade+Targets+%7C+The+English+Hub',
+        url: '/api/og?title=Getting+a+Grade+7+%7C+Grade+Targets',
         width: 1200,
         height: 630,
-        alt: 'Getting a Grade 7 | Grade Targets | The English Hub',
+        alt: 'Getting a Grade 7 | Grade Targets',
       },
     ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/grade-targets/grade-7' },
   title: 'Getting a Grade 7 | Grade Targets',
   description:
-    'What separates a Grade 7 from a 5 or 6 in GCSE English. Advanced skills, example responses, and detailed advice for pushing from Grade 6 to Grade 7 in English Language and Literature.',
+    'What separates a Grade 7 from a 5 or 6 in GCSE English: the advanced analytical skills, example Grade 7 responses, and how to push up from a 6.',
 }
 
 /* ─── Data ───────────────────────────────────────────────────── */

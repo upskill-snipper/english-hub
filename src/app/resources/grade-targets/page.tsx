@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Grade Targets | The English Hub',
     description:
-      'Understand what each GCSE English grade looks like. Grade descriptors, self-assessment tools, and targeted advice for reaching Grade 5, 7, or 9 in English Language and Literature.',
+      'What each GCSE English grade looks like. Grade descriptors for reading and writing, a self-assessment check, and advice for reaching Grade 5, 7 or 9.',
     images: [
       {
         url: '/api/og?title=Grade+Targets+%7C+The+English+Hub',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/resources/grade-targets' },
   title: 'Grade Targets',
   description:
-    'Understand what each GCSE English grade looks like. Grade descriptors, self-assessment tools, and targeted advice for reaching Grade 5, 7, or 9 in English Language and Literature.',
+    'What each GCSE English grade looks like. Grade descriptors for reading and writing, a self-assessment check, and advice for reaching Grade 5, 7 or 9.',
 }
 
 /* ─── Data ───────────────────────────────────────────────────── */

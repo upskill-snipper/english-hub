@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Of Mice and Men Essay Plans - Edexcel IGCSE Literature',
     description:
-      'Five IGCSE essay plans for Of Mice and Men with PEEL paragraphs: the American Dream, loneliness, Curley\u2019s wife, George and Lennie\u2019s relationship, and Steinbeck\u2019s use of setting.',
+      'Five Of Mice and Men essay plans for Edexcel IGCSE Literature, each with an introduction, three PEEL paragraphs and a conclusion.',
     images: [
       {
         url: '/api/og?title=Of+Mice+and+Men+Essay+Plans+-+Edexcel+IGCSE+Literature',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   title: 'Of Mice and Men Essay Plans - Edexcel IGCSE Literature',
   description:
-    'Five IGCSE essay plans for Of Mice and Men with PEEL paragraphs: the American Dream, loneliness, Curley\u2019s wife, George and Lennie\u2019s relationship, and Steinbeck\u2019s use of setting.',
+    'Five Of Mice and Men essay plans for Edexcel IGCSE Literature, each with an introduction, three PEEL paragraphs and a conclusion.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/prose/of-mice-and-men/essay-plans',
   },

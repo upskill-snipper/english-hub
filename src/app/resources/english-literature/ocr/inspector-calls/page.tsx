@@ -8,22 +8,22 @@ import { STRINGS as _EAL_STRINGS } from './content'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'An Inspector Calls Study Guide for OCR | The English Hub',
+    title: 'An Inspector Calls - OCR GCSE Literature - The English Hub',
     description:
       'Comprehensive An Inspector Calls study guide for OCR GCSE English Literature. Characters, themes, key quotations, context, and essay planning.',
     images: [
       {
-        url: '/api/og?title=An+Inspector+Calls+Study+Guide+for+OCR+%7C+The+English+Hub',
+        url: '/api/og?title=An+Inspector+Calls+-+OCR+GCSE+Literature+-+The+English+Hub',
         width: 1200,
         height: 630,
-        alt: 'An Inspector Calls Study Guide for OCR | The English Hub',
+        alt: 'An Inspector Calls - OCR GCSE Literature - The English Hub',
       },
     ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/ocr/inspector-calls',
   },
-  title: 'An Inspector Calls Study Guide for OCR',
+  title: 'An Inspector Calls - OCR GCSE Literature',
   description:
     'Comprehensive An Inspector Calls study guide for OCR GCSE English Literature. Characters, themes, key quotations, context, and essay planning.',
 }

@@ -12,21 +12,21 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Jane Eyre Key Quotes -- 25 Essential Quotations | The English Hub',
+    title: 'Jane Eyre Key Quotes - 25 Essential Quotations',
     description:
-      '25 key quotations from Jane Eyre by Charlotte Bronte with detailed analysis for AQA and OCR GCSE English Literature.',
+      'Twenty-five key quotations from Jane Eyre by Charlotte Bronte with analysis, context and theme links, for AQA and OCR GCSE English Literature.',
     images: [
       {
-        url: '/api/og?title=Jane+Eyre+Key+Quotes+--+25+Essential+Quotations+%7C+The+English+Hub',
+        url: '/api/og?title=Jane+Eyre+Key+Quotes+-+25+Essential+Quotations',
         width: 1200,
         height: 630,
-        alt: 'Jane Eyre Key Quotes -- 25 Essential Quotations | The English Hub',
+        alt: 'Jane Eyre Key Quotes - 25 Essential Quotations',
       },
     ],
   },
-  title: 'Jane Eyre Key Quotes -- 25 Essential Quotations',
+  title: 'Jane Eyre Key Quotes - 25 Essential Quotations',
   description:
-    '25 key quotations from Jane Eyre by Charlotte Bronte with detailed analysis for AQA and OCR GCSE English Literature.',
+    'Twenty-five key quotations from Jane Eyre by Charlotte Bronte with analysis, context and theme links, for AQA and OCR GCSE English Literature.',
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/jane-eyre/key-quotes',
   },

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Hamlet - Study Guide | The English Hub',
     description:
-      'In-depth study guide for Hamlet by William Shakespeare: plot, characters, themes, context and key quotations.',
+      'Hamlet study guide: plot, characters including Claudius, Gertrude and Ophelia, themes of revenge, madness and mortality, context and key quotations.',
     images: [
       {
         url: '/api/og?title=Hamlet+-+Study+Guide+%7C+The+English+Hub',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   title: 'Hamlet - Study Guide',
   description:
-    'In-depth study guide for Hamlet by William Shakespeare: plot, characters, themes, context and key quotations.',
+    'Hamlet study guide: plot, characters including Claudius, Gertrude and Ophelia, themes of revenge, madness and mortality, context and key quotations.',
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/hamlet',
   },

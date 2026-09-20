@@ -7,22 +7,22 @@ import { headers } from 'next/headers'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Spoken Language Endorsement Guide | The English Hub',
+    title: 'Spoken Language Endorsement Guide',
     description:
-      'Complete guide to the GCSE English Language Spoken Language endorsement. Presentation planning, delivery techniques, responding to questions, Standard English, assessment criteria, and 20+ topic ideas.',
+      'The GCSE English Language spoken language endorsement: assessment criteria, planning and delivering a presentation, handling questions, Standard English.',
     images: [
       {
-        url: '/api/og?title=Spoken+Language+Endorsement+Guide+%7C+The+English+Hub',
+        url: '/api/og?title=Spoken+Language+Endorsement+Guide',
         width: 1200,
         height: 630,
-        alt: 'Spoken Language Endorsement Guide | The English Hub',
+        alt: 'Spoken Language Endorsement Guide',
       },
     ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/spoken-language' },
   title: 'Spoken Language Endorsement Guide',
   description:
-    'Complete guide to the GCSE English Language Spoken Language endorsement. Presentation planning, delivery techniques, responding to questions, Standard English, assessment criteria, and 20+ topic ideas.',
+    'The GCSE English Language spoken language endorsement: assessment criteria, planning and delivering a presentation, handling questions, Standard English.',
 }
 
 /* ─── Data ───────────────────────────────────────────────────── */

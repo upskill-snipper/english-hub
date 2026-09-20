@@ -8,22 +8,22 @@ import { headers } from 'next/headers'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Jekyll and Hyde Study Guide for OCR | The English Hub',
+    title: 'Jekyll and Hyde - OCR GCSE Literature - The English Hub',
     description:
       'Comprehensive Jekyll and Hyde study guide for OCR GCSE English Literature. Characters, themes, key quotations, context, and essay planning.',
     images: [
       {
-        url: '/api/og?title=Jekyll+and+Hyde+Study+Guide+for+OCR+%7C+The+English+Hub',
+        url: '/api/og?title=Jekyll+and+Hyde+-+OCR+GCSE+Literature+-+The+English+Hub',
         width: 1200,
         height: 630,
-        alt: 'Jekyll and Hyde Study Guide for OCR | The English Hub',
+        alt: 'Jekyll and Hyde - OCR GCSE Literature - The English Hub',
       },
     ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/ocr/jekyll-and-hyde',
   },
-  title: 'Jekyll and Hyde Study Guide for OCR',
+  title: 'Jekyll and Hyde - OCR GCSE Literature',
   description:
     'Comprehensive Jekyll and Hyde study guide for OCR GCSE English Literature. Characters, themes, key quotations, context, and essay planning.',
 }

@@ -7,22 +7,22 @@ import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Historical Context - GCSE English Literature',
+    title: 'Historical Context for GCSE Literature',
     description:
-      'Essential historical and social context for GCSE English Literature. Understand the Victorian era, Elizabethan and Jacobean periods, the Romantic movement, and twentieth-century Britain to unlock top marks in your exam essays.',
+      'Historical context for GCSE English Literature. Victorian, Elizabethan and Jacobean, Romantic and twentieth-century background, tied to the set texts.',
     images: [
       {
-        url: '/api/og?title=Historical+Context+-+GCSE+English+Literature',
+        url: '/api/og?title=Historical+Context+for+GCSE+Literature',
         width: 1200,
         height: 630,
-        alt: 'Historical Context - GCSE English Literature',
+        alt: 'Historical Context for GCSE Literature',
       },
     ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/context' },
-  title: 'Historical Context - GCSE English Literature',
+  title: 'Historical Context for GCSE Literature',
   description:
-    'Essential historical and social context for GCSE English Literature. Understand the Victorian era, Elizabethan and Jacobean periods, the Romantic movement, and twentieth-century Britain to unlock top marks in your exam essays.',
+    'Historical context for GCSE English Literature. Victorian, Elizabethan and Jacobean, Romantic and twentieth-century background, tied to the set texts.',
 }
 
 /* ─── Data ───────────────────────────────────────────────────── */

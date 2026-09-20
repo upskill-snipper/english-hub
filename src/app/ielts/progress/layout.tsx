@@ -6,7 +6,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'My IELTS Progress - The English Hub',
   description:
-    'Track your IELTS Academic progress: overall band, per-skill bands for Listening, Reading, Writing and Speaking, your weakest skill, band-over-time and recent attempts.',
+    'Track your IELTS Academic progress: your overall and per-skill bands, your weakest skill, band over time, and your recent practice attempts.',
   alternates: { canonical: 'https://theenglishhub.app/ielts/progress' },
   robots: { index: false, follow: true },
 }

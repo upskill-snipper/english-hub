@@ -45,18 +45,18 @@ const RJ_FAQS: GeoFaqItem[] = [
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Romeo and Juliet revision guide - themes, characters, key quotes - The English Hub',
+    title: 'Romeo and Juliet GCSE - themes, characters, key quotes',
     description: 'Romeo and Juliet GCSE revision - Shakespeare',
     images: [
       {
-        url: '/api/og?title=Romeo+and+Juliet+revision+guide+-+themes%2C+characters%2C+key+quotes+-+The+English+Hub',
+        url: '/api/og?title=Romeo+and+Juliet+GCSE+-+themes%2C+characters%2C+key+quotes',
         width: 1200,
         height: 630,
-        alt: 'Romeo and Juliet revision guide - themes, characters, key quotes - The English Hub',
+        alt: 'Romeo and Juliet GCSE - themes, characters, key quotes',
       },
     ],
   },
-  title: 'Romeo and Juliet revision guide - themes, characters, key quotes',
+  title: 'Romeo and Juliet GCSE - themes, characters, key quotes',
   description:
     "Romeo and Juliet GCSE revision - Shakespeare's tragedy with acts, characters, themes, context and key quotes. Aligned to AQA, Edexcel, OCR and Eduqas.",
   alternates: {

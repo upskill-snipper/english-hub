@@ -9,7 +9,7 @@ import { validateRedirect } from '@/lib/utils'
 export const metadata: Metadata = {
   title: 'Choose your level or exam board',
   description:
-    'Pick the level you study - KS3, GCSE or IGCSE - then the board so we can show you the right texts, poems, and past paper walkthroughs. EAL support is included alongside every board.',
+    'Pick your level - KS3, GCSE or IGCSE - then your exam board, so the texts, poems and practice you see match your specification. EAL runs alongside.',
   alternates: { canonical: 'https://theenglishhub.app/board-select' },
   openGraph: {
     title: 'Choose your level or exam board - The English Hub',

@@ -28,7 +28,7 @@ import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   title: '30 Mistakes That Cost Marks - Common Errors',
   description:
-    'Verified against board specifications and primary sources. The 30 most common factual, quotation, and anthology errors students make in GCSE and IGCSE English Literature - and what to write instead.',
+    'The 30 quotation, context and anthology errors students make most often in GCSE and IGCSE English Literature, each with a correction and why it matters.',
   alternates: { canonical: 'https://theenglishhub.app/revision/common-errors' },
   openGraph: {
     title: '30 Mistakes That Cost Marks - The English Hub',

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Cambridge IGCSE Composition - The English Hub',
     description:
-      'Master Cambridge IGCSE Language Paper 2 Section B composition. Descriptive and narrative writing techniques, Grade 9 model answers, practice prompts and mark scheme breakdown.',
+      'Cambridge IGCSE Language Paper 2 Section B, worth 40 marks: descriptive and narrative technique, Grade 9 model answers, practice prompts and the mark scheme.',
     images: [
       {
         url: '/api/og?title=Cambridge+IGCSE+Composition+-+The+English+Hub',
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   title: 'Cambridge IGCSE Composition',
   description:
-    'Master Cambridge IGCSE Language Paper 2 Section B composition. Descriptive and narrative writing techniques, Grade 9 model answers, practice prompts and mark scheme breakdown.',
+    'Cambridge IGCSE Language Paper 2 Section B, worth 40 marks: descriptive and narrative technique, Grade 9 model answers, practice prompts and the mark scheme.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/composition',
   },

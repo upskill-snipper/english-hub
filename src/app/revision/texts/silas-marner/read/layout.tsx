@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Read Silas Marner Online, Free',
   description:
-    'Read the full novel of Silas Marner by George Eliot online, free. Quotations highlighted inline.',
+    'Read Silas Marner by George Eliot in full, free. The complete public-domain novel, chapter by chapter, with twenty inline quotation notes.',
   alternates: { canonical: '/revision/texts/silas-marner/read' },
 }
 

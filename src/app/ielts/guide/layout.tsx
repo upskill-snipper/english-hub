@@ -6,9 +6,9 @@ import type { Metadata } from 'next'
 // single source of truth in `@/lib/ielts/exam-facts`. The page itself is a
 // Server Component with exactly one <h1>; its title + canonical live here.
 export const metadata: Metadata = {
-  title: 'IELTS Exam Guide: Structure, Scoring & Tips - The English Hub',
+  title: 'IELTS Exam Guide: Sections, Timings & Band Scores',
   description:
-    'The complete IELTS exam guide: the four sections and their timings, how the 0-9 band scale is scored, the most common mistakes per skill, typical institutional band requirements by country, and the step-by-step test process. An independent, factual reference.',
+    'How IELTS works: the four sections and their timings, the 0-9 band scale, where candidates lose marks, and the route from registration to results.',
   alternates: { canonical: 'https://theenglishhub.app/ielts/guide' },
 }
 

@@ -5,22 +5,22 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Power Theme Across Texts | GCSE English Literature',
+    title: 'Power Theme in GCSE English Literature',
     description:
-      'Explore the theme of power across GCSE set texts: Macbeth, An Inspector Calls, Animal Farm, Ozymandias, and My Last Duchess. Key quotes, analysis, and comparison essay planning.',
+      'Power across GCSE set texts: Macbeth, An Inspector Calls, Animal Farm, Ozymandias and My Last Duchess. Key quotations, analysis and comparison ideas.',
     images: [
       {
-        url: '/api/og?title=Power+Theme+Across+Texts+%7C+GCSE+English+Literature',
+        url: '/api/og?title=Power+Theme+in+GCSE+English+Literature',
         width: 1200,
         height: 630,
-        alt: 'Power Theme Across Texts | GCSE English Literature',
+        alt: 'Power Theme in GCSE English Literature',
       },
     ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/themes/power' },
-  title: 'Power Theme Across Texts | GCSE English Literature',
+  title: 'Power Theme in GCSE English Literature',
   description:
-    'Explore the theme of power across GCSE set texts: Macbeth, An Inspector Calls, Animal Farm, Ozymandias, and My Last Duchess. Key quotes, analysis, and comparison essay planning.',
+    'Power across GCSE set texts: Macbeth, An Inspector Calls, Animal Farm, Ozymandias and My Last Duchess. Key quotations, analysis and comparison ideas.',
 }
 
 /* ─── Data ───────────────────────────────────────────────────── */

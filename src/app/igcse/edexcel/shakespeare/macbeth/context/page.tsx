@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Macbeth Context - Edexcel IGCSE Literature',
     description:
-      'Jacobean context for Macbeth: James I, the Gunpowder Plot, Daemonologie and witchcraft, the Divine Right of Kings and the Great Chain of Being. For Edexcel IGCSE Literature.',
+      'Jacobean context for Macbeth: James I, the Gunpowder Plot, witchcraft, the Divine Right of Kings and the Great Chain of Being.',
     images: [
       {
         url: '/api/og?title=Macbeth+Context+-+Edexcel+IGCSE+Literature',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   title: 'Macbeth Context - Edexcel IGCSE Literature',
   description:
-    'Jacobean context for Macbeth: James I, the Gunpowder Plot, Daemonologie and witchcraft, the Divine Right of Kings and the Great Chain of Being. For Edexcel IGCSE Literature.',
+    'Jacobean context for Macbeth: James I, the Gunpowder Plot, witchcraft, the Divine Right of Kings and the Great Chain of Being.',
 }
 
 const CONTEXT_POINTS = [

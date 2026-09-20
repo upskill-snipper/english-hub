@@ -4,24 +4,24 @@ import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'A Christmas Carol Study Guide - AQA English Literature GCSE',
+    title: 'A Christmas Carol - AQA GCSE Literature',
     description:
-      'Complete A Christmas Carol revision guide for AQA GCSE English Literature. Stave-by-stave summary, character analysis, themes, 20+ key quotations, Victorian context, and essay planning.',
+      'A Christmas Carol for AQA GCSE English Literature: stave-by-stave summary, characters, themes, key quotations, Victorian context and essay plans.',
     images: [
       {
-        url: '/api/og?title=A+Christmas+Carol+Study+Guide+-+AQA+English+Literature+GCSE',
+        url: '/api/og?title=A+Christmas+Carol+-+AQA+GCSE+Literature',
         width: 1200,
         height: 630,
-        alt: 'A Christmas Carol Study Guide - AQA English Literature GCSE',
+        alt: 'A Christmas Carol - AQA GCSE Literature',
       },
     ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/aqa/christmas-carol',
   },
-  title: 'A Christmas Carol Study Guide - AQA English Literature GCSE',
+  title: 'A Christmas Carol - AQA GCSE Literature',
   description:
-    'Complete A Christmas Carol revision guide for AQA GCSE English Literature. Stave-by-stave summary, character analysis, themes, 20+ key quotations, Victorian context, and essay planning.',
+    'A Christmas Carol for AQA GCSE English Literature: stave-by-stave summary, characters, themes, key quotations, Victorian context and essay plans.',
 }
 
 /* ─── Data ──────────────────────────────────────────────────── */

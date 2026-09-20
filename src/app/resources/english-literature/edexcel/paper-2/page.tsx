@@ -8,24 +8,24 @@ import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Edexcel Paper 2: 19th-Century Novel and Poetry since 1789',
+    title: 'Edexcel Paper 2: 19th-Century Novel',
     description:
-      'Complete revision guide for Edexcel GCSE English Literature Paper 2 (1ET0/02). 19th-century novels, poetry anthology (Relationships and Conflict clusters), and unseen poetry.',
+      'Edexcel GCSE English Literature Paper 2: 19th-century novel set texts, the Relationships and Conflict poetry clusters, and unseen poetry.',
     images: [
       {
-        url: '/api/og?title=Edexcel+Paper+2%3A+19th-Century+Novel+and+Poetry+since+1789',
+        url: '/api/og?title=Edexcel+Paper+2%3A+19th-Century+Novel',
         width: 1200,
         height: 630,
-        alt: 'Edexcel Paper 2: 19th-Century Novel and Poetry since 1789',
+        alt: 'Edexcel Paper 2: 19th-Century Novel',
       },
     ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/paper-2',
   },
-  title: 'Edexcel Paper 2: 19th-Century Novel and Poetry since 1789',
+  title: 'Edexcel Paper 2: 19th-Century Novel',
   description:
-    'Complete revision guide for Edexcel GCSE English Literature Paper 2 (1ET0/02). 19th-century novels, poetry anthology (Relationships and Conflict clusters), and unseen poetry.',
+    'Edexcel GCSE English Literature Paper 2: 19th-century novel set texts, the Relationships and Conflict poetry clusters, and unseen poetry.',
 }
 
 /* ─── Page component ─────────────────────────────────────────── */

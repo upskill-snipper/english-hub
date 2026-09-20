@@ -6,24 +6,24 @@ import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Macbeth Study Guide - Edexcel GCSE English Literature',
+    title: 'Macbeth - Edexcel GCSE English Literature',
     description:
-      'Complete Macbeth revision guide for Edexcel GCSE English Literature. Plot summary, character analysis, themes, 20+ key quotes, historical context, and exam technique.',
+      'Macbeth for Edexcel GCSE English Literature: plot summary, character analysis, themes, key quotes, historical context and exam technique.',
     images: [
       {
-        url: '/api/og?title=Macbeth+Study+Guide+-+Edexcel+GCSE+English+Literature',
+        url: '/api/og?title=Macbeth+-+Edexcel+GCSE+English+Literature',
         width: 1200,
         height: 630,
-        alt: 'Macbeth Study Guide - Edexcel GCSE English Literature',
+        alt: 'Macbeth - Edexcel GCSE English Literature',
       },
     ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/macbeth',
   },
-  title: 'Macbeth Study Guide - Edexcel GCSE English Literature',
+  title: 'Macbeth - Edexcel GCSE English Literature',
   description:
-    'Complete Macbeth revision guide for Edexcel GCSE English Literature. Plot summary, character analysis, themes, 20+ key quotes, historical context, and exam technique.',
+    'Macbeth for Edexcel GCSE English Literature: plot summary, character analysis, themes, key quotes, historical context and exam technique.',
 }
 
 /* ─── Data ───────────────────────────────────────────────────── */

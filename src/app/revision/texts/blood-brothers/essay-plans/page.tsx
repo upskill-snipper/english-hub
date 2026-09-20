@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Blood Brothers - Essay Plans | The English Hub',
     description:
-      'Five exam-ready essay plans for Blood Brothers by Willy Russell with thesis, paragraph outlines and key quotations.',
+      'Five exam-style essay plans for Blood Brothers by Willy Russell: class, the Narrator, Mickey and Edward, motherhood and dramatic technique.',
     images: [
       {
         url: '/api/og?title=Blood+Brothers+-+Essay+Plans+%7C+The+English+Hub',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   title: 'Blood Brothers - Essay Plans',
   description:
-    'Five exam-ready essay plans for Blood Brothers by Willy Russell with thesis, paragraph outlines and key quotations.',
+    'Five exam-style essay plans for Blood Brothers by Willy Russell: class, the Narrator, Mickey and Edward, motherhood and dramatic technique.',
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/blood-brothers/essay-plans',
   },

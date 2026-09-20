@@ -5,22 +5,22 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Conflict Theme Across Texts | GCSE English Literature',
+    title: 'Conflict Theme in GCSE English Literature',
     description:
-      'Explore the theme of conflict across GCSE set texts: Romeo and Juliet, Power and Conflict poetry, and Lord of the Flies. Key quotes, analysis, and comparison ideas.',
+      'Conflict across GCSE set texts: Romeo and Juliet, the Power and Conflict poems, and Lord of the Flies. Key quotations, analysis and comparison ideas.',
     images: [
       {
-        url: '/api/og?title=Conflict+Theme+Across+Texts+%7C+GCSE+English+Literature',
+        url: '/api/og?title=Conflict+Theme+in+GCSE+English+Literature',
         width: 1200,
         height: 630,
-        alt: 'Conflict Theme Across Texts | GCSE English Literature',
+        alt: 'Conflict Theme in GCSE English Literature',
       },
     ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/themes/conflict' },
-  title: 'Conflict Theme Across Texts | GCSE English Literature',
+  title: 'Conflict Theme in GCSE English Literature',
   description:
-    'Explore the theme of conflict across GCSE set texts: Romeo and Juliet, Power and Conflict poetry, and Lord of the Flies. Key quotes, analysis, and comparison ideas.',
+    'Conflict across GCSE set texts: Romeo and Juliet, the Power and Conflict poems, and Lord of the Flies. Key quotations, analysis and comparison ideas.',
 }
 
 /* ─── Data ───────────────────────────────────────────────────── */

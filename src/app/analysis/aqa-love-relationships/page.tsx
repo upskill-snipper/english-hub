@@ -6,9 +6,9 @@ import { AnalysisBoardGate } from './_components/AnalysisBoardGate'
 import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
-  title: 'AQA Love and Relationships Analysis: Comparisons, Themes & Quotes',
+  title: 'AQA Love and Relationships Poetry Analysis',
   description:
-    'In-depth AQA Love and Relationships poetry analysis for GCSE. Compare poems side-by-side, explore every theme and master the unseen comparison question. Written by GCSE markers.',
+    'AQA Love and Relationships poetry analysis for GCSE: ten poem comparisons, eight themes traced across the anthology and seven exam-technique guides.',
   alternates: { canonical: 'https://theenglishhub.app/analysis/aqa-love-relationships' },
   openGraph: {
     title: 'AQA Love and Relationships Analysis Hub - The English Hub',
@@ -162,8 +162,8 @@ export default async function AqaLoveRelationshipsHub() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <LearningResourceJsonLd
-          name="AQA Love and Relationships Analysis: Comparisons, Themes & Quotes"
-          description="In-depth AQA Love and Relationships poetry analysis for GCSE. Compare poems side-by-side, explore every theme and master the unseen comparison question. Written by GCSE markers."
+          name="AQA Love and Relationships Poetry Analysis"
+          description="AQA Love and Relationships poetry analysis for GCSE: ten poem comparisons, eight themes traced across the anthology and seven exam-technique guides."
           educationalLevel="GCSE"
           learningResourceType="Study guide"
           about="AQA Love and Relationships poetry"
@@ -175,7 +175,7 @@ export default async function AqaLoveRelationshipsHub() {
             { name: 'Home', url: 'https://theenglishhub.app' },
             { name: 'Analysis', url: 'https://theenglishhub.app/analysis' },
             {
-              name: 'AQA Love and Relationships Analysis: Comparisons, Themes & Quotes',
+              name: 'AQA Love and Relationships Poetry Analysis',
               url: 'https://theenglishhub.app/analysis/aqa-love-relationships',
             },
           ]}

@@ -39,7 +39,7 @@ export const metadata: Metadata = {
       'How to help your child with GCSE or IGCSE English revision - from picking the right exam board to AI essay feedback they can trust.',
     images: [
       {
-        url: '/api/og?title=Help+your+child+succeed+in+GCSE+English&subtitle=Without+being+an+English+teacher',
+        url: '/api/og?title=GCSE+and+IGCSE+English+help+for+parents+-+The+English+Hub',
         width: 1200,
         height: 630,
         alt: 'Help your child succeed in GCSE English - without being an English teacher',

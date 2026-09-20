@@ -5,22 +5,22 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Getting a Grade 9 | Grade Targets | The English Hub',
+    title: 'Getting a Grade 9 | Grade Targets',
     description:
-      'What makes a Grade 9 exceptional in GCSE English. Perceptive and critical analysis, originality, sophistication, example Grade 9 responses, and expert tips for achieving the highest grade.',
+      'What makes a Grade 9 in GCSE English: conceptualised, critical analysis, originality and sophistication, with example responses and expert tips.',
     images: [
       {
-        url: '/api/og?title=Getting+a+Grade+9+%7C+Grade+Targets+%7C+The+English+Hub',
+        url: '/api/og?title=Getting+a+Grade+9+%7C+Grade+Targets',
         width: 1200,
         height: 630,
-        alt: 'Getting a Grade 9 | Grade Targets | The English Hub',
+        alt: 'Getting a Grade 9 | Grade Targets',
       },
     ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/grade-targets/grade-9' },
   title: 'Getting a Grade 9 | Grade Targets',
   description:
-    'What makes a Grade 9 exceptional in GCSE English. Perceptive and critical analysis, originality, sophistication, example Grade 9 responses, and expert tips for achieving the highest grade.',
+    'What makes a Grade 9 in GCSE English: conceptualised, critical analysis, originality and sophistication, with example responses and expert tips.',
 }
 
 /* ─── Data ───────────────────────────────────────────────────── */

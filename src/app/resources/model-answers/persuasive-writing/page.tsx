@@ -30,15 +30,15 @@ async function resolveHasAccess(): Promise<boolean> {
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Model Persuasive & Transactional Writing | The English Hub',
+    title: 'Model Persuasive & Transactional Writing',
     description:
-      'Grade 3, 5, 7, and 9 model articles, speeches, and letters for GCSE English Language with annotations highlighting rhetorical devices, structural choices, and persuasive techniques at every level.',
+      'Model persuasive articles and speeches for GCSE English Language at grades 3, 5, 7 and 9, annotated for rhetorical devices, structure and DAFOREST.',
     images: [
       {
-        url: '/api/og?title=Model+Persuasive+%26+Transactional+Writing+%7C+The+English+Hub',
+        url: '/api/og?title=Model+Persuasive+%26+Transactional+Writing',
         width: 1200,
         height: 630,
-        alt: 'Model Persuasive & Transactional Writing | The English Hub',
+        alt: 'Model Persuasive & Transactional Writing',
       },
     ],
   },
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   title: 'Model Persuasive & Transactional Writing',
   description:
-    'Grade 3, 5, 7, and 9 model articles, speeches, and letters for GCSE English Language with annotations highlighting rhetorical devices, structural choices, and persuasive techniques at every level.',
+    'Model persuasive articles and speeches for GCSE English Language at grades 3, 5, 7 and 9, annotated for rhetorical devices, structure and DAFOREST.',
 }
 
 /* ─── Annotation component ───────────────────────────────────── */

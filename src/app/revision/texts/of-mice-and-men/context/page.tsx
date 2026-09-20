@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Of Mice and Men - Historical Context | The English Hub',
     description:
-      "Historical and social context for Of Mice and Men by John Steinbeck: the Great Depression, migrant workers, racial segregation, women\\'s roles and Steinbeck\\'s background.",
+      'Historical context for Of Mice and Men: the Great Depression, migrant labour, racial segregation in 1930s America and attitudes to disability.',
     images: [
       {
         url: '/api/og?title=Of+Mice+and+Men+-+Historical+Context+%7C+The+English+Hub',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   title: 'Of Mice and Men - Historical Context',
   description:
-    "Historical and social context for Of Mice and Men by John Steinbeck: the Great Depression, migrant workers, racial segregation, women's roles and Steinbeck's background.",
+    'Historical context for Of Mice and Men: the Great Depression, migrant labour, racial segregation in 1930s America and attitudes to disability.',
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/of-mice-and-men/context',
   },

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Directed Writing - IGCSE Language A Paper 2 Section A',
     description:
-      'How to tackle IGCSE Language A Paper 2 Section A directed writing. Letters, speeches, articles, reports - style, structure and tone. Aligns with Cambridge syllabus 0500.',
+      'Directed writing is Section A of IGCSE Language A Paper 2, worth 40 marks. How the marks split, the four main forms and a seven-step process in the exam.',
     images: [
       {
         url: '/api/og?title=Directed+Writing+-+IGCSE+Language+A+Paper+2+Section+A',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   title: 'Directed Writing - IGCSE Language A Paper 2 Section A',
   description:
-    'How to tackle IGCSE Language A Paper 2 Section A directed writing. Letters, speeches, articles, reports - style, structure and tone. Aligns with Cambridge syllabus 0500.',
+    'Directed writing is Section A of IGCSE Language A Paper 2, worth 40 marks. How the marks split, the four main forms and a seven-step process in the exam.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/0500/paper-2/directed-writing',
   },

@@ -6,23 +6,23 @@ import { t } from '@/lib/i18n/t'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
-  title: 'Cambridge IGCSE English Language techniques',
+  title: 'Cambridge IGCSE language techniques',
   description:
     'Language and structural techniques for Cambridge IGCSE English: identification, analysis, and how to write about them.',
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-language/caie/techniques',
   },
   openGraph: {
-    title: 'Cambridge IGCSE English Language techniques - The English Hub',
+    title: 'Cambridge IGCSE language techniques - The English Hub',
     description:
       'Language and structural techniques for Cambridge IGCSE English: identification, analysis, and how to write about them.',
     url: 'https://theenglishhub.app/resources/english-language/caie/techniques',
     images: [
       {
-        url: '/api/og?title=Cambridge+IGCSE+English+Language+techniques+-+The+English+Hub',
+        url: '/api/og?title=Cambridge+IGCSE+language+techniques+-+The+English+Hub',
         width: 1200,
         height: 630,
-        alt: 'Cambridge IGCSE English Language techniques - The English Hub',
+        alt: 'Cambridge IGCSE language techniques - The English Hub',
       },
     ],
   },

@@ -8,20 +8,20 @@ import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Poetry Analysis - Cambridge IGCSE English Literature',
+    title: 'Cambridge IGCSE Poetry: Songs of Ourselves',
     description:
       'In-depth analysis of Songs of Ourselves poems for Cambridge IGCSE English Literature. 10+ poems with full analysis, comparison techniques, and marking guidance.',
     images: [
       {
-        url: '/api/og?title=Poetry+Analysis+-+Cambridge+IGCSE+English+Literature',
+        url: '/api/og?title=Cambridge+IGCSE+Poetry%3A+Songs+of+Ourselves',
         width: 1200,
         height: 630,
-        alt: 'Poetry Analysis - Cambridge IGCSE English Literature',
+        alt: 'Cambridge IGCSE Poetry: Songs of Ourselves',
       },
     ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/caie/poetry' },
-  title: 'Poetry Analysis - Cambridge IGCSE English Literature',
+  title: 'Cambridge IGCSE Poetry: Songs of Ourselves',
   description:
     'In-depth analysis of Songs of Ourselves poems for Cambridge IGCSE English Literature. 10+ poems with full analysis, comparison techniques, and marking guidance.',
 }

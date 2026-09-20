@@ -9,7 +9,7 @@ const SLUG = 'the-danger-of-a-single-story'
 export const metadata: Metadata = {
   title: 'The Danger of a Single Story - Chimamanda Ngozi Adichie',
   description:
-    'Study guide stub for The Danger of a Single Story by Chimamanda Ngozi Adichie. Pearson Edexcel International GCSE English Language A (4EA1) Section A non-fiction anthology.',
+    'Chimamanda Ngozi Adichie on stereotypes and cultural representation, from the Edexcel IGCSE English Language A (4EA1) anthology. Guide in production.',
   alternates: {
     canonical: `https://theenglishhub.app/revision/texts/${SLUG}`,
   },

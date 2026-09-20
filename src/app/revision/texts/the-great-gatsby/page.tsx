@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'The Great Gatsby - Study Guide | The English Hub',
     description:
-      'In-depth study guide for The Great Gatsby by F. Scott Fitzgerald: plot, characters, themes, context and key quotations.',
+      'The Great Gatsby study guide: plot, characters including Gatsby, Nick, Daisy and Tom, themes of the American Dream and class, and key quotations.',
     images: [
       {
         url: '/api/og?title=The+Great+Gatsby+-+Study+Guide+%7C+The+English+Hub',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   title: 'The Great Gatsby - Study Guide',
   description:
-    'In-depth study guide for The Great Gatsby by F. Scott Fitzgerald: plot, characters, themes, context and key quotations.',
+    'The Great Gatsby study guide: plot, characters including Gatsby, Nick, Daisy and Tom, themes of the American Dream and class, and key quotations.',
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/the-great-gatsby',
   },

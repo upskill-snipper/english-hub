@@ -12,7 +12,7 @@ export const metadata = {
   openGraph: {
     title: 'The Émigrée -- Carol Rumens -- The English Hub',
     description:
-      'Interactive study guide for The Émigrée by Carol Rumens. GCSE Power and Conflict poetry analysis with annotations, key quotes, language devices, and comparisons.',
+      'The Émigrée by Carol Rumens for AQA Power and Conflict: stanza-by-stanza notes, themes, context, quiz questions and comparison poems.',
     images: [
       {
         url: '/api/og?title=The+%C3%89migr%C3%A9e+--+Carol+Rumens+--+The+English+Hub',
@@ -27,7 +27,7 @@ export const metadata = {
   },
   title: 'The Émigrée -- Carol Rumens',
   description:
-    'Interactive study guide for The Émigrée by Carol Rumens. GCSE Power and Conflict poetry analysis with annotations, key quotes, language devices, and comparisons.',
+    'The Émigrée by Carol Rumens for AQA Power and Conflict: stanza-by-stanza notes, themes, context, quiz questions and comparison poems.',
 }
 
 /* ── Poem data ─────────────────────────────────────────────────────── */

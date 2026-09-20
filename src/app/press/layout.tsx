@@ -3,14 +3,14 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Press & media',
   description:
-    'Press kit, company facts, and press contact for The English Hub - a UK-built GCSE and IGCSE English platform with AI feedback trained on real examiners\u2019 mark schemes.',
+    'Press kit, company facts and press contact for The English Hub, an independent UK platform for GCSE, IGCSE, KS3 and EAL English with AI-assisted feedback.',
   alternates: { canonical: 'https://theenglishhub.app/press' },
   openGraph: {
     type: 'website',
     url: 'https://theenglishhub.app/press',
     title: 'Press & media | The English Hub',
     description:
-      'Press kit, company facts, and press contact for The English Hub - a UK-built GCSE and IGCSE English platform with AI feedback trained on real examiners\u2019 mark schemes.',
+      'Press kit, company facts and press contact for The English Hub, an independent UK platform for GCSE, IGCSE, KS3 and EAL English with AI-assisted feedback.',
     images: [
       {
         url: '/api/og?title=Press+%26+media+%7C+The+English+Hub',

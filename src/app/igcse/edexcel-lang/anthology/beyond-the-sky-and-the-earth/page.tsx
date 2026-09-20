@@ -18,21 +18,20 @@ import { getLocale, t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title:
-      'Beyond the Sky and the Earth - Jamie Zeppa - IGCSE Language A Anthology - The English Hub',
+    title: 'Beyond the Sky and the Earth - IGCSE Language A Anthology - The English Hub',
     description: 'Study guide for ',
     images: [
       {
-        url: '/api/og?title=Beyond+the+Sky+and+the+Earth+-+Jamie+Zeppa+-+IGCSE+Language+A+Anthology+-+The+English+Hub',
+        url: '/api/og?title=Beyond+the+Sky+and+the+Earth+-+IGCSE+Language+A+Anthology+-+The+English+Hub',
         width: 1200,
         height: 630,
-        alt: 'Beyond the Sky and the Earth - Jamie Zeppa - IGCSE Language A Anthology - The English Hub',
+        alt: 'Beyond the Sky and the Earth - IGCSE Language A Anthology - The English Hub',
       },
     ],
   },
-  title: 'Beyond the Sky and the Earth - Jamie Zeppa - IGCSE Language A Anthology',
+  title: 'Beyond the Sky and the Earth - IGCSE Language A Anthology',
   description:
-    'Study guide for "Beyond the Sky and the Earth: A Journey into Bhutan" by Jamie Zeppa. Language analysis, structural analysis, themes and exam practice for Edexcel IGCSE English Language A Paper 1 Section A.',
+    'Jamie Zeppa in Bhutan, for Edexcel IGCSE Language A: themes, structural analysis, purpose and Paper 1 Section A exam practice.',
   alternates: {
     canonical:
       'https://theenglishhub.app/igcse/edexcel-lang/anthology/beyond-the-sky-and-the-earth',

@@ -6,7 +6,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'IELTS Academic Writing - AI Band Feedback - The English Hub',
   description:
-    'Practise IELTS Academic Writing Task 1 and Task 2 and get an instant AI-predicted band for each marking criterion, with specific strengths, improvements and techniques to move up a band. For IELTS preparation.',
+    'Write an IELTS Academic Task 1 or Task 2 response and get an instant predicted band for each marking criterion, with strengths and improvements.',
   alternates: { canonical: 'https://theenglishhub.app/ielts/writing' },
 }
 

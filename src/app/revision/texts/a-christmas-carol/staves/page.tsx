@@ -11,15 +11,15 @@ import { t } from '@/lib/i18n/t'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'A Christmas Carol - All Five Staves Analysed | The English Hub',
+    title: 'A Christmas Carol - All Five Staves Analysed',
     description:
       'In-depth analysis of every stave in A Christmas Carol by Charles Dickens: plot, language, key quotations and exam-ready commentary.',
     images: [
       {
-        url: '/api/og?title=A+Christmas+Carol+-+All+Five+Staves+Analysed+%7C+The+English+Hub',
+        url: '/api/og?title=A+Christmas+Carol+-+All+Five+Staves+Analysed',
         width: 1200,
         height: 630,
-        alt: 'A Christmas Carol - All Five Staves Analysed | The English Hub',
+        alt: 'A Christmas Carol - All Five Staves Analysed',
       },
     ],
   },

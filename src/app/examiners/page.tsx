@@ -40,9 +40,9 @@ const OG =
   '/api/og?title=Become+an+examiner+with+The+English+Hub&subtitle=Mark+English+scripts+for+your+exam+board'
 
 export const metadata: Metadata = {
-  title: 'Become an Examiner & Marker | The English Hub',
+  title: 'Become an Examiner & Marker',
   description:
-    'Qualified English examiners: review AI-drafted scripts for your exam board, correct the mark and feedback, and get paid on project terms agreed up front. Apply per board.',
+    'Qualified English examiners review AI-drafted scripts for the boards they know, correct the mark and feedback, and are paid on project terms agreed up front.',
   alternates: { canonical: 'https://theenglishhub.app/examiners' },
   keywords: [
     'English examiner jobs',
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     'remote English marking work',
   ],
   openGraph: {
-    title: 'Become an Examiner & Marker | The English Hub',
+    title: 'Become an Examiner & Marker',
     description:
       'Review AI-drafted English scripts for your exam board, correct the mark and feedback, and get paid on project terms agreed up front.',
     url: 'https://theenglishhub.app/examiners',

@@ -10,19 +10,18 @@ import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/compon
 import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
-    title:
-      'Much Ado About Nothing revision guide - themes, characters, key quotes - The English Hub',
+    title: 'Much Ado About Nothing GCSE - themes, characters, quotes',
     description: 'Much Ado About Nothing GCSE revision - Shakespeare',
     images: [
       {
-        url: '/api/og?title=Much+Ado+About+Nothing+revision+guide+-+themes%2C+characters%2C+key+quotes+-+The+English+Hub',
+        url: '/api/og?title=Much+Ado+About+Nothing+GCSE+-+themes%2C+characters%2C+quotes',
         width: 1200,
         height: 630,
-        alt: 'Much Ado About Nothing revision guide - themes, characters, key quotes - The English Hub',
+        alt: 'Much Ado About Nothing GCSE - themes, characters, quotes',
       },
     ],
   },
-  title: 'Much Ado About Nothing revision guide - themes, characters, key quotes',
+  title: 'Much Ado About Nothing GCSE - themes, characters, quotes',
   description:
     "Much Ado About Nothing GCSE revision - Shakespeare's comedy with plot, characters, themes, context and key quotes. AQA, Edexcel, OCR, Eduqas, IGCSE.",
   alternates: {

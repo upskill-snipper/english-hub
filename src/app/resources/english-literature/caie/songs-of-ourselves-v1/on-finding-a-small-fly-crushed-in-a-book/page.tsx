@@ -8,22 +8,21 @@ import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   openGraph: {
-    title:
-      'On Finding a Small Fly Crushed in a Book - Charles Tennyson Turner | Cambridge IGCSE 0475',
-    description: 'Study guide for ',
+    title: 'On Finding a Small Fly Crushed in a Book | Cambridge IGCSE',
+    description:
+      'On Finding a Small Fly Crushed in a Book by Charles Tennyson Turner (1873) for Cambridge IGCSE 0475: themes, form, structure and study notes.',
     images: [
       {
-        url: '/api/og?title=On+Finding+a+Small+Fly+Crushed+in+a+Book+-+Charles+Tennyson+Turner+%7C+Cambridge+IGCSE+0475',
+        url: '/api/og?title=On+Finding+a+Small+Fly+Crushed+in+a+Book+%7C+Cambridge+IGCSE',
         width: 1200,
         height: 630,
-        alt: 'On Finding a Small Fly Crushed in a Book - Charles Tennyson Turner | Cambridge IGCSE 0475',
+        alt: 'On Finding a Small Fly Crushed in a Book | Cambridge IGCSE',
       },
     ],
   },
-  title:
-    'On Finding a Small Fly Crushed in a Book - Charles Tennyson Turner | Cambridge IGCSE 0475',
+  title: 'On Finding a Small Fly Crushed in a Book | Cambridge IGCSE',
   description:
-    "Study guide for 'On Finding a Small Fly Crushed in a Book' by Charles Tennyson Turner (1873). Themes, form and structure for Cambridge IGCSE Literature in English (0475), Songs of Ourselves Vol 1 Part 4.",
+    'On Finding a Small Fly Crushed in a Book by Charles Tennyson Turner (1873) for Cambridge IGCSE 0475: themes, form, structure and study notes.',
   alternates: {
     canonical:
       'https://theenglishhub.app/resources/english-literature/caie/songs-of-ourselves-v1/on-finding-a-small-fly-crushed-in-a-book',

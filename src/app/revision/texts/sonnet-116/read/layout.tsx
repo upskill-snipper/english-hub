@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Read Sonnet 116: Let me not to the marriage of true minds Online, Free',
+  title: 'Read Sonnet 116: Let me not to the marriage of true minds',
   description:
     'Read the full poem of Sonnet 116: Let me not to the marriage of true minds by William Shakespeare online, free. Language highlighted inline.',
   alternates: { canonical: '/revision/texts/sonnet-116/read' },

@@ -10,19 +10,18 @@ import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/compon
 import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
-    title:
-      'To Kill a Mockingbird revision guide - themes, characters, key quotes - The English Hub',
+    title: 'To Kill a Mockingbird IGCSE - themes, characters, quotes',
     description: 'To Kill a Mockingbird IGCSE revision - Harper Lee',
     images: [
       {
-        url: '/api/og?title=To+Kill+a+Mockingbird+revision+guide+-+themes%2C+characters%2C+key+quotes+-+The+English+Hub',
+        url: '/api/og?title=To+Kill+a+Mockingbird+IGCSE+-+themes%2C+characters%2C+quotes',
         width: 1200,
         height: 630,
-        alt: 'To Kill a Mockingbird revision guide - themes, characters, key quotes - The English Hub',
+        alt: 'To Kill a Mockingbird IGCSE - themes, characters, quotes',
       },
     ],
   },
-  title: 'To Kill a Mockingbird revision guide - themes, characters, key quotes',
+  title: 'To Kill a Mockingbird IGCSE - themes, characters, quotes',
   description:
     "To Kill a Mockingbird IGCSE revision - Harper Lee's novel with characters, themes, context and key quotes. Aligned to Pearson Edexcel IGCSE 4ET1 spec.",
   alternates: {

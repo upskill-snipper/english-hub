@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Of Mice and Men Key Quotes - Edexcel IGCSE Literature',
     description:
-      '20 key quotations from Of Mice and Men organised by theme for Edexcel IGCSE Literature revision: the American Dream, loneliness, friendship, discrimination and fate.',
+      '20 Of Mice and Men quotations grouped by theme for Edexcel IGCSE Literature: the American Dream, loneliness, friendship and fate.',
     images: [
       {
         url: '/api/og?title=Of+Mice+and+Men+Key+Quotes+-+Edexcel+IGCSE+Literature',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   title: 'Of Mice and Men Key Quotes - Edexcel IGCSE Literature',
   description:
-    '20 key quotations from Of Mice and Men organised by theme for Edexcel IGCSE Literature revision: the American Dream, loneliness, friendship, discrimination and fate.',
+    '20 Of Mice and Men quotations grouped by theme for Edexcel IGCSE Literature: the American Dream, loneliness, friendship and fate.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/prose/of-mice-and-men/key-quotes',
   },

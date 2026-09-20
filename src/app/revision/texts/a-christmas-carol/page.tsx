@@ -45,18 +45,18 @@ const ACC_FAQS: GeoFaqItem[] = [
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'A Christmas Carol revision guide - themes, characters, key quotes - The English Hub',
+    title: 'A Christmas Carol GCSE - themes, characters, key quotes',
     description: 'A Christmas Carol GCSE revision - Dickens',
     images: [
       {
-        url: '/api/og?title=A+Christmas+Carol+revision+guide+-+themes%2C+characters%2C+key+quotes+-+The+English+Hub',
+        url: '/api/og?title=A+Christmas+Carol+GCSE+-+themes%2C+characters%2C+key+quotes',
         width: 1200,
         height: 630,
-        alt: 'A Christmas Carol revision guide - themes, characters, key quotes - The English Hub',
+        alt: 'A Christmas Carol GCSE - themes, characters, key quotes',
       },
     ],
   },
-  title: 'A Christmas Carol revision guide - themes, characters, key quotes',
+  title: 'A Christmas Carol GCSE - themes, characters, key quotes',
   description:
     "A Christmas Carol GCSE revision - Dickens's novella by stave with characters, themes, context, key quotes and essays. Aligned to AQA, Edexcel and Eduqas.",
   alternates: {

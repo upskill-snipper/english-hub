@@ -5,22 +5,22 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: '30+ Spoken Language Presentation Topics | The English Hub',
+    title: '30+ Spoken Language Presentation Topics',
     description:
-      'Over 30 presentation topic ideas for the GCSE English Language Spoken Language endorsement, organised by category. Each includes a title, outline, key points, and potential audience questions.',
+      'Thirty-one presentation topics for the GCSE spoken language endorsement, in six categories, each with an outline, key points and likely questions.',
     images: [
       {
-        url: '/api/og?title=30%2B+Spoken+Language+Presentation+Topics+%7C+The+English+Hub',
+        url: '/api/og?title=30%2B+Spoken+Language+Presentation+Topics',
         width: 1200,
         height: 630,
-        alt: '30+ Spoken Language Presentation Topics | The English Hub',
+        alt: '30+ Spoken Language Presentation Topics',
       },
     ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/spoken-language/topics' },
   title: '30+ Spoken Language Presentation Topics',
   description:
-    'Over 30 presentation topic ideas for the GCSE English Language Spoken Language endorsement, organised by category. Each includes a title, outline, key points, and potential audience questions.',
+    'Thirty-one presentation topics for the GCSE spoken language endorsement, in six categories, each with an outline, key points and likely questions.',
 }
 
 /* ─── Types ──────────────────────────────────────────────────── */

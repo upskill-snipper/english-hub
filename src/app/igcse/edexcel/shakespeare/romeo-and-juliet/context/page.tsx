@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Romeo and Juliet Context - Edexcel IGCSE Literature',
     description:
-      'Elizabethan context for Romeo and Juliet: patriarchal society, arranged marriages, honour culture, the Italian setting and Petrarchan love poetry. For Edexcel IGCSE Literature.',
+      'Elizabethan context for Romeo and Juliet: patriarchy, arranged marriage, honour culture, the Italian setting and Petrarchan love poetry.',
     images: [
       {
         url: '/api/og?title=Romeo+and+Juliet+Context+-+Edexcel+IGCSE+Literature',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   title: 'Romeo and Juliet Context - Edexcel IGCSE Literature',
   description:
-    'Elizabethan context for Romeo and Juliet: patriarchal society, arranged marriages, honour culture, the Italian setting and Petrarchan love poetry. For Edexcel IGCSE Literature.',
+    'Elizabethan context for Romeo and Juliet: patriarchy, arranged marriage, honour culture, the Italian setting and Petrarchan love poetry.',
 }
 
 const CONTEXT_POINTS = [

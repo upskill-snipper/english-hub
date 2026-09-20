@@ -8,24 +8,24 @@ import { STRINGS as _EAL_STRINGS } from './content'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Edexcel Paper 1: Shakespeare and Post-1914 Literature',
+    title: 'Edexcel Paper 1: Shakespeare and Post-1914',
     description:
-      'Complete revision guide for Edexcel GCSE English Literature Paper 1 (1ET0/01). Shakespeare plays and Post-1914 texts including An Inspector Calls, Lord of the Flies, and Animal Farm.',
+      'Edexcel GCSE English Literature Paper 1 (1ET0/01): Shakespeare set texts, post-1914 prose and drama, timing guidance and essay technique.',
     images: [
       {
-        url: '/api/og?title=Edexcel+Paper+1%3A+Shakespeare+and+Post-1914+Literature',
+        url: '/api/og?title=Edexcel+Paper+1%3A+Shakespeare+and+Post-1914',
         width: 1200,
         height: 630,
-        alt: 'Edexcel Paper 1: Shakespeare and Post-1914 Literature',
+        alt: 'Edexcel Paper 1: Shakespeare and Post-1914',
       },
     ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/paper-1',
   },
-  title: 'Edexcel Paper 1: Shakespeare and Post-1914 Literature',
+  title: 'Edexcel Paper 1: Shakespeare and Post-1914',
   description:
-    'Complete revision guide for Edexcel GCSE English Literature Paper 1 (1ET0/01). Shakespeare plays and Post-1914 texts including An Inspector Calls, Lord of the Flies, and Animal Farm.',
+    'Edexcel GCSE English Literature Paper 1 (1ET0/01): Shakespeare set texts, post-1914 prose and drama, timing guidance and essay technique.',
 }
 
 /* ─── Page component ─────────────────────────────────────────── */

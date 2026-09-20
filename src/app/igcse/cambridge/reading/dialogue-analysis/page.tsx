@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Dialogue Analysis - Reading Practice Framework - The English Hub',
     description:
-      'Cambridge IGCSE Paper 1 reading practice for analysing dialogue in fiction. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
+      'Cambridge IGCSE Paper 1 reading framework on dialogue, set on Wilde, Conan Doyle and Alcott. Comprehension, language analysis, summary and a self-assessment.',
     images: [
       {
         url: '/api/og?title=Dialogue+Analysis+-+Reading+Practice+Framework+-+The+English+Hub',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   title: 'Dialogue Analysis - Reading Practice Framework',
   description:
-    'Cambridge IGCSE Paper 1 reading practice for analysing dialogue in fiction. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
+    'Cambridge IGCSE Paper 1 reading framework on dialogue, set on Wilde, Conan Doyle and Alcott. Comprehension, language analysis, summary and a self-assessment.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/reading/dialogue-analysis',
   },

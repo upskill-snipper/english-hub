@@ -5,19 +5,19 @@ import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'An Inspector Calls: Social Responsibility - Lesson Plan',
+    title: 'An Inspector Calls Lesson: Responsibility',
     description:
       'Full 60-minute lesson plan on responsibility in An Inspector Calls Act 1. Objectives, activities, differentiation, homework.',
     images: [
       {
-        url: '/api/og?title=An+Inspector+Calls%3A+Social+Responsibility+-+Lesson+Plan',
+        url: '/api/og?title=An+Inspector+Calls+Lesson%3A+Responsibility',
         width: 1200,
         height: 630,
-        alt: 'An Inspector Calls: Social Responsibility - Lesson Plan',
+        alt: 'An Inspector Calls Lesson: Responsibility',
       },
     ],
   },
-  title: 'An Inspector Calls: Social Responsibility - Lesson Plan',
+  title: 'An Inspector Calls Lesson: Responsibility',
   description:
     'Full 60-minute lesson plan on responsibility in An Inspector Calls Act 1. Objectives, activities, differentiation, homework.',
   alternates: {

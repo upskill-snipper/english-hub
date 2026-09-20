@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'UK Readiness Programme - English, Application, Visa & Transition | The English Hub',
+  title: 'UK Readiness Programme - English, Application & Visa',
   description:
-    'A single overview of the four-domain UK Readiness programme: English readiness, application readiness, visa & finance readiness and academic transition - with the tools that build your Readiness Report.',
+    'An overview of the four-part UK readiness programme: your English, your application, visa and finance, and the move, plus the tool behind each one.',
   alternates: { canonical: '/ielts/uk-readiness' },
   robots: { index: true, follow: true },
 }

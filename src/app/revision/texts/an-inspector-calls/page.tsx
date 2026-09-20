@@ -45,18 +45,18 @@ const AIC_FAQS: GeoFaqItem[] = [
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'An Inspector Calls revision guide - themes, characters, key quotes - The English Hub',
+    title: 'An Inspector Calls GCSE - themes, characters, key quotes',
     description: 'An Inspector Calls GCSE revision - Priestley',
     images: [
       {
-        url: '/api/og?title=An+Inspector+Calls+revision+guide+-+themes%2C+characters%2C+key+quotes+-+The+English+Hub',
+        url: '/api/og?title=An+Inspector+Calls+GCSE+-+themes%2C+characters%2C+key+quotes',
         width: 1200,
         height: 630,
-        alt: 'An Inspector Calls revision guide - themes, characters, key quotes - The English Hub',
+        alt: 'An Inspector Calls GCSE - themes, characters, key quotes',
       },
     ],
   },
-  title: 'An Inspector Calls revision guide - themes, characters, key quotes',
+  title: 'An Inspector Calls GCSE - themes, characters, key quotes',
   description:
     "An Inspector Calls GCSE revision - Priestley's play act-by-act with characters, themes, context, key quotes and essays. AQA, Edexcel, OCR, Eduqas.",
   alternates: {

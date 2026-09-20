@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Julius Caesar - Study Guide | The English Hub',
     description:
-      'In-depth study guide for Julius Caesar by William Shakespeare: plot, characters, themes, context and key quotations.',
+      'Julius Caesar study guide: plot, characters including Brutus, Cassius and Mark Antony, themes of power, rhetoric and fate, and key quotations.',
     images: [
       {
         url: '/api/og?title=Julius+Caesar+-+Study+Guide+%7C+The+English+Hub',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   title: 'Julius Caesar - Study Guide',
   description:
-    'In-depth study guide for Julius Caesar by William Shakespeare: plot, characters, themes, context and key quotations.',
+    'Julius Caesar study guide: plot, characters including Brutus, Cassius and Mark Antony, themes of power, rhetoric and fate, and key quotations.',
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/julius-caesar',
   },

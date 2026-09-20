@@ -31,15 +31,15 @@ async function resolveHasAccess(): Promise<boolean> {
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Model Creative Writing Answers | The English Hub',
+    title: 'Model Creative Writing Answers',
     description:
-      'Grade 3, 5, 7, and 9 model creative writing responses for GCSE English. Descriptive and narrative writing with examiner commentary and technique annotations at every grade level.',
+      'Model descriptive and narrative writing at grades 3, 5, 7 and 9 for GCSE English, with examiner commentary and annotations on the techniques used.',
     images: [
       {
-        url: '/api/og?title=Model+Creative+Writing+Answers+%7C+The+English+Hub',
+        url: '/api/og?title=Model+Creative+Writing+Answers',
         width: 1200,
         height: 630,
-        alt: 'Model Creative Writing Answers | The English Hub',
+        alt: 'Model Creative Writing Answers',
       },
     ],
   },
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   title: 'Model Creative Writing Answers',
   description:
-    'Grade 3, 5, 7, and 9 model creative writing responses for GCSE English. Descriptive and narrative writing with examiner commentary and technique annotations at every grade level.',
+    'Model descriptive and narrative writing at grades 3, 5, 7 and 9 for GCSE English, with examiner commentary and annotations on the techniques used.',
 }
 
 /* ─── Annotation component ───────────────────────────────────── */

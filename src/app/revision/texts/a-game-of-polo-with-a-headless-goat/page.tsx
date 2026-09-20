@@ -9,7 +9,7 @@ const SLUG = 'a-game-of-polo-with-a-headless-goat'
 export const metadata: Metadata = {
   title: 'A Game of Polo with a Headless Goat - Emma Levine',
   description:
-    'Study guide stub for A Game of Polo with a Headless Goat by Emma Levine. Pearson Edexcel International GCSE English Language A (4EA1) Section A non-fiction anthology.',
+    'Emma Levine on buzkashi, a sport played with a goat carcass, from the Edexcel IGCSE English Language A (4EA1) anthology. Full guide in production.',
   alternates: {
     canonical: `https://theenglishhub.app/revision/texts/${SLUG}`,
   },

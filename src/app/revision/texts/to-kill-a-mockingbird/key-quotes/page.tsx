@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'To Kill a Mockingbird - Key Quotes | The English Hub',
     description:
-      'Twenty-five essential quotations from To Kill a Mockingbird by Harper Lee with speaker, context and detailed analysis.',
+      'Twenty-five key quotations from To Kill a Mockingbird by Harper Lee, each with speaker, context, analysis and theme tags for IGCSE revision.',
     images: [
       {
         url: '/api/og?title=To+Kill+a+Mockingbird+-+Key+Quotes+%7C+The+English+Hub',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   title: 'To Kill a Mockingbird - Key Quotes',
   description:
-    'Twenty-five essential quotations from To Kill a Mockingbird by Harper Lee with speaker, context and detailed analysis.',
+    'Twenty-five key quotations from To Kill a Mockingbird by Harper Lee, each with speaker, context, analysis and theme tags for IGCSE revision.',
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/to-kill-a-mockingbird/key-quotes',
   },

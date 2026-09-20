@@ -8,20 +8,20 @@ import { headers } from 'next/headers'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'OCR Paper 1: Communicating Information and Ideas | The English Hub',
+    title: 'OCR Paper 1: Information and ideas | The English Hub',
     description:
       'Complete guide to OCR GCSE English Language Paper 1 - Communicating Information and Ideas. Non-fiction reading and writing for real purposes revision.',
     images: [
       {
-        url: '/api/og?title=OCR+Paper+1%3A+Communicating+Information+and+Ideas+%7C+The+English+Hub',
+        url: '/api/og?title=OCR+Paper+1%3A+Information+and+ideas+%7C+The+English+Hub',
         width: 1200,
         height: 630,
-        alt: 'OCR Paper 1: Communicating Information and Ideas | The English Hub',
+        alt: 'OCR Paper 1: Information and ideas | The English Hub',
       },
     ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-language/ocr/paper-1' },
-  title: 'OCR Paper 1: Communicating Information and Ideas',
+  title: 'OCR Paper 1: Information and ideas',
   description:
     'Complete guide to OCR GCSE English Language Paper 1 - Communicating Information and Ideas. Non-fiction reading and writing for real purposes revision.',
 }

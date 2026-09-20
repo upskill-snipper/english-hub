@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Of Mice and Men - Character Analysis | The English Hub',
     description:
-      "In-depth character analysis for Of Mice and Men by John Steinbeck: George, Lennie, Curley, Curley\\'s Wife, Crooks, Candy, Slim and The Boss.",
+      "In-depth character analysis for Of Mice and Men by John Steinbeck: George, Lennie, Curley, Curley's Wife, Crooks, Candy, Slim and The Boss.",
     images: [
       {
         url: '/api/og?title=Of+Mice+and+Men+-+Character+Analysis+%7C+The+English+Hub',

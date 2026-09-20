@@ -29,7 +29,7 @@ import { selfCanonical } from '@/lib/seo/canonical'
 export const metadata: Metadata = {
   title: 'AI Essay Marking for GCSE & IGCSE English',
   description:
-    'Submit an exam-style answer and get instant feedback marked against your board’s assessment objectives, with a grade indication. AQA, Edexcel, OCR, Eduqas and Cambridge.',
+    'Submit an exam-style answer and get instant feedback against the assessment objectives for your board, with a grade. AQA, Edexcel, OCR, Eduqas and Cambridge.',
   alternates: { canonical: selfCanonical('/marking') },
   openGraph: {
     title: 'AI Essay Marking for GCSE & IGCSE English',

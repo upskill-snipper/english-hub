@@ -15,12 +15,12 @@ const OG_IMAGE =
 export const metadata: Metadata = {
   title: 'IGCSE English revision for Qatar',
   description:
-    'IGCSE English Language and Literature revision for students at international schools in Qatar. Pearson Edexcel 4ET1, 4EA1 and Cambridge 0500, 0990 specs covered.',
+    'IGCSE English Language and Literature revision for students at international schools in Qatar. Pearson Edexcel 4ET1 and 4EA1, Cambridge 0500 and 0990.',
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: 'IGCSE English revision for Qatar - The English Hub',
     description:
-      'IGCSE English Language and Literature revision for students at international schools in Qatar. Pearson Edexcel 4ET1, 4EA1 and Cambridge 0500, 0990 specs covered.',
+      'IGCSE English Language and Literature revision for students at international schools in Qatar. Pearson Edexcel 4ET1 and 4EA1, Cambridge 0500 and 0990.',
     url: PAGE_URL,
     images: [
       {
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'IGCSE English revision for Qatar - The English Hub',
     description:
-      'IGCSE English Language and Literature revision for students at international schools in Qatar. Pearson Edexcel 4ET1, 4EA1 and Cambridge 0500, 0990 specs covered.',
+      'IGCSE English Language and Literature revision for students at international schools in Qatar. Pearson Edexcel 4ET1 and 4EA1, Cambridge 0500 and 0990.',
     images: [OG_IMAGE],
   },
 }

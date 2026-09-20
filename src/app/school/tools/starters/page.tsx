@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Starter Activity Generator | School Tools | The English Hub',
     description:
-      'Generate bellwork and starter activities for English lessons. Includes quotes, vocabulary challenges, inference puzzles, grammar fixes, creative prompts, and exam question unpicks.',
+      'Generate bellwork and starter activities for English lessons, filtered by set text, exam board, year group or skill, then project or print them.',
     images: [
       {
         url: '/api/og?title=Starter+Activity+Generator+%7C+School+Tools+%7C+The+English+Hub',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/school/tools/starters' },
   title: 'Starter Activity Generator | School Tools',
   description:
-    'Generate bellwork and starter activities for English lessons. Includes quotes, vocabulary challenges, inference puzzles, grammar fixes, creative prompts, and exam question unpicks.',
+    'Generate bellwork and starter activities for English lessons, filtered by set text, exam board, year group or skill, then project or print them.',
   robots: { index: false, follow: false },
 }
 

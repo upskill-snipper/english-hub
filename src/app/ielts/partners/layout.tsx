@@ -14,9 +14,9 @@ import type { Metadata } from 'next'
 // partner, nor an accredited university recruitment agent.
 // ────────────────────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
-  title: 'Partner with The English Hub - IELTS Preparation for Schools, Centres & Agencies',
+  title: 'IELTS Partnerships for Schools, Centres & Agencies',
   description:
-    'Bring AI-marked IELTS Academic preparation to your learners. The English Hub offers bulk access, a centre dashboard, bilingual English / Arabic delivery for Gulf students, and instant band feedback - with a partnership roadmap aligned to British Council and IELTS standards.',
+    'Bring AI-marked IELTS Academic preparation to your learners: bulk access, a centre dashboard, bilingual English and Arabic delivery, and band feedback.',
   alternates: { canonical: 'https://theenglishhub.app/ielts/partners' },
   keywords: [
     'IELTS preparation for schools',

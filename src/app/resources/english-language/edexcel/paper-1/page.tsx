@@ -9,22 +9,22 @@ import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Edexcel Paper 1: Fiction & Imaginative Writing',
+    title: 'Edexcel Paper 1: Fiction and writing',
     description:
-      'Complete revision guide for Edexcel English Language Paper 1 (1EN0/01). 19th-century fiction reading, imaginative writing, marking guides, key skills, and example responses.',
+      'Edexcel GCSE English Language Paper 1 (1EN0/01): 19th-century fiction reading, imaginative writing, level descriptors and example responses.',
     images: [
       {
-        url: '/api/og?title=Edexcel+Paper+1%3A+Fiction+%26+Imaginative+Writing',
+        url: '/api/og?title=Edexcel+Paper+1%3A+Fiction+and+writing',
         width: 1200,
         height: 630,
-        alt: 'Edexcel Paper 1: Fiction & Imaginative Writing',
+        alt: 'Edexcel Paper 1: Fiction and writing',
       },
     ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-language/edexcel/paper-1' },
-  title: 'Edexcel Paper 1: Fiction & Imaginative Writing',
+  title: 'Edexcel Paper 1: Fiction and writing',
   description:
-    'Complete revision guide for Edexcel English Language Paper 1 (1EN0/01). 19th-century fiction reading, imaginative writing, marking guides, key skills, and example responses.',
+    'Edexcel GCSE English Language Paper 1 (1EN0/01): 19th-century fiction reading, imaginative writing, level descriptors and example responses.',
 }
 
 /* ─── Page component ─────────────────────────────────────────── */

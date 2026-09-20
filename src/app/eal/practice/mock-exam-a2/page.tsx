@@ -12,7 +12,7 @@ import { MockExamClient } from '@/components/eal/MockExamClient'
 export const metadata: Metadata = {
   title: 'EAL Practice - A2 (Elementary)',
   description:
-    'Free A2-level English practice for Arabic speakers: grammar, sentence structure, vocabulary and common errors, with bilingual explanations. Modelled on Cambridge A2 Key for Schools.',
+    'Free, scored A2 English practice for Arabic speakers: articles, plurals, present simple and word order, with bilingual explanations. Cambridge A2 Key.',
   alternates: { canonical: 'https://theenglishhub.app/eal/practice/mock-exam-a2' },
 }
 

@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Read Hamlet Online, Free',
   description:
-    'Read the full play of Hamlet by William Shakespeare online, free. Quotations, themes and characters highlighted inline.',
+    'Read Hamlet by William Shakespeare in full, free. The complete public-domain play, scene by scene, in a clean reader with three reading modes.',
   alternates: { canonical: '/revision/texts/hamlet/read' },
 }
 

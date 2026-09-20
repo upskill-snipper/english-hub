@@ -5,19 +5,19 @@ import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'AQA GCSE English Literature resources - The English Hub',
+    title: 'AQA GCSE English Literature Revision - The English Hub',
     description:
       'AQA GCSE English Literature set-text guides for Macbeth, Romeo and Juliet, Power and Conflict poetry, exam technique and Grade 9 essay plans.',
     images: [
       {
-        url: '/api/og?title=AQA+GCSE+English+Literature+resources+-+The+English+Hub',
+        url: '/api/og?title=AQA+GCSE+English+Literature+Revision+-+The+English+Hub',
         width: 1200,
         height: 630,
-        alt: 'AQA GCSE English Literature resources - The English Hub',
+        alt: 'AQA GCSE English Literature Revision - The English Hub',
       },
     ],
   },
-  title: 'AQA GCSE English Literature resources',
+  title: 'AQA GCSE English Literature Revision',
   description:
     'AQA GCSE English Literature set-text guides for Macbeth, Romeo and Juliet, Power and Conflict poetry, exam technique and Grade 9 essay plans.',
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/aqa' },

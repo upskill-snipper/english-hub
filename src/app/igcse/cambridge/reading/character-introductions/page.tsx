@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Character Introductions - Reading Practice Framework - The English Hub',
     description:
-      'Cambridge IGCSE Paper 1 reading practice on character introductions. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
+      'Cambridge IGCSE Paper 1 reading framework on character introductions, with comprehension, analysis, summary and vocabulary tasks on Dickens, Austen and Twain.',
     images: [
       {
         url: '/api/og?title=Character+Introductions+-+Reading+Practice+Framework+-+The+English+Hub',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   title: 'Character Introductions - Reading Practice Framework',
   description:
-    'Cambridge IGCSE Paper 1 reading practice on character introductions. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
+    'Cambridge IGCSE Paper 1 reading framework on character introductions, with comprehension, analysis, summary and vocabulary tasks on Dickens, Austen and Twain.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/reading/character-introductions',
   },

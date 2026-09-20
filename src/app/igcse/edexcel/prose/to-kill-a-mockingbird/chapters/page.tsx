@@ -9,21 +9,21 @@ import { t } from '@/lib/i18n/t'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'To Kill a Mockingbird Chapter Analysis - Edexcel IGCSE Literature',
+    title: 'To Kill a Mockingbird Chapter Analysis - Edexcel IGCSE',
     description:
-      'Chapter-by-chapter analysis of To Kill a Mockingbird for Edexcel IGCSE Literature: summaries, key events, character development, key quotes and language techniques.',
+      'All 31 chapters of To Kill a Mockingbird for Edexcel IGCSE Literature: summaries, key events, character development and three quotations.',
     images: [
       {
-        url: '/api/og?title=To+Kill+a+Mockingbird+Chapter+Analysis+-+Edexcel+IGCSE+Literature',
+        url: '/api/og?title=To+Kill+a+Mockingbird+Chapter+Analysis+-+Edexcel+IGCSE',
         width: 1200,
         height: 630,
-        alt: 'To Kill a Mockingbird Chapter Analysis - Edexcel IGCSE Literature',
+        alt: 'To Kill a Mockingbird Chapter Analysis - Edexcel IGCSE',
       },
     ],
   },
-  title: 'To Kill a Mockingbird Chapter Analysis - Edexcel IGCSE Literature',
+  title: 'To Kill a Mockingbird Chapter Analysis - Edexcel IGCSE',
   description:
-    'Chapter-by-chapter analysis of To Kill a Mockingbird for Edexcel IGCSE Literature: summaries, key events, character development, key quotes and language techniques.',
+    'All 31 chapters of To Kill a Mockingbird for Edexcel IGCSE Literature: summaries, key events, character development and three quotations.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird/chapters',
   },

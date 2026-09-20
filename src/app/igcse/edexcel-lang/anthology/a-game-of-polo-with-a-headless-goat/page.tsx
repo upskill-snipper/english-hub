@@ -18,22 +18,21 @@ import { getLocale, t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title:
-      'A Game of Polo with a Headless Goat - Emma Levine - IGCSE Language A Anthology - The English Hub',
+    title: 'A Game of Polo with a Headless Goat - IGCSE Anthology - The English Hub',
     description:
-      'Study guide for the anthology extract from A Game of Polo with a Headless Goat by Emma Levine. Language analysis, structural analysis, themes and exam practice for Edexcel IGCSE English Language A Paper 1 Section A.',
+      'The Emma Levine anthology extract for Edexcel IGCSE Language A: themes, language features, structural analysis and Paper 1 Section A practice.',
     images: [
       {
-        url: '/api/og?title=A+Game+of+Polo+with+a+Headless+Goat+-+Emma+Levine+-+IGCSE+Language+A+Anthology+-+The+English+Hub',
+        url: '/api/og?title=A+Game+of+Polo+with+a+Headless+Goat+-+IGCSE+Anthology+-+The+English+Hub',
         width: 1200,
         height: 630,
-        alt: 'A Game of Polo with a Headless Goat - Emma Levine - IGCSE Language A Anthology - The English Hub',
+        alt: 'A Game of Polo with a Headless Goat - IGCSE Anthology - The English Hub',
       },
     ],
   },
-  title: 'A Game of Polo with a Headless Goat - Emma Levine - IGCSE Language A Anthology',
+  title: 'A Game of Polo with a Headless Goat - IGCSE Anthology',
   description:
-    'Study guide for the anthology extract from A Game of Polo with a Headless Goat by Emma Levine. Language analysis, structural analysis, themes and exam practice for Edexcel IGCSE English Language A Paper 1 Section A.',
+    'The Emma Levine anthology extract for Edexcel IGCSE Language A: themes, language features, structural analysis and Paper 1 Section A practice.',
   alternates: {
     canonical:
       'https://theenglishhub.app/igcse/edexcel-lang/anthology/a-game-of-polo-with-a-headless-goat',

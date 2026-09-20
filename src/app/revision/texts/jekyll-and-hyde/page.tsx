@@ -45,18 +45,18 @@ const JH_FAQS: GeoFaqItem[] = [
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Jekyll and Hyde revision guide - themes, characters, key quotes - The English Hub',
+    title: 'Jekyll and Hyde GCSE revision - themes, characters, quotes',
     description: 'Jekyll and Hyde GCSE revision - Stevenson',
     images: [
       {
-        url: '/api/og?title=Jekyll+and+Hyde+revision+guide+-+themes%2C+characters%2C+key+quotes+-+The+English+Hub',
+        url: '/api/og?title=Jekyll+and+Hyde+GCSE+revision+-+themes%2C+characters%2C+quotes',
         width: 1200,
         height: 630,
-        alt: 'Jekyll and Hyde revision guide - themes, characters, key quotes - The English Hub',
+        alt: 'Jekyll and Hyde GCSE revision - themes, characters, quotes',
       },
     ],
   },
-  title: 'Jekyll and Hyde revision guide - themes, characters, key quotes',
+  title: 'Jekyll and Hyde GCSE revision - themes, characters, quotes',
   description:
     "Jekyll and Hyde GCSE revision - Stevenson's Gothic novella with chapter analysis, characters, themes, context and key quotes. Aligned to AQA, Edexcel, OCR.",
   alternates: {

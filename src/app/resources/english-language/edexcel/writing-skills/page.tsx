@@ -10,22 +10,22 @@ import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Pearson Edexcel GCSE English Language writing skills - The English Hub',
+    title: 'Edexcel GCSE writing skills - The English Hub',
     description:
       'Writing skills for Pearson Edexcel GCSE English Language: structure, vocabulary, sentence variety, and creative/transactional writing models.',
     images: [
       {
-        url: '/api/og?title=Pearson+Edexcel+GCSE+English+Language+writing+skills+-+The+English+Hub',
+        url: '/api/og?title=Edexcel+GCSE+writing+skills+-+The+English+Hub',
         width: 1200,
         height: 630,
-        alt: 'Pearson Edexcel GCSE English Language writing skills - The English Hub',
+        alt: 'Edexcel GCSE writing skills - The English Hub',
       },
     ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-language/edexcel/writing-skills',
   },
-  title: 'Pearson Edexcel GCSE English Language writing skills',
+  title: 'Edexcel GCSE writing skills',
   description:
     'Writing skills for Pearson Edexcel GCSE English Language: structure, vocabulary, sentence variety, and creative/transactional writing models.',
 }
@@ -58,7 +58,7 @@ export default async function WritingSkillsPage() {
         ]}
       />
       <LearningResourceJsonLd
-        name="Pearson Edexcel GCSE English Language writing skills"
+        name="Edexcel GCSE writing skills"
         description="Writing skills for Pearson Edexcel GCSE English Language: structure, vocabulary, sentence variety, and creative/transactional writing models."
         educationalLevel="GCSE"
         learningResourceType="Lesson"

@@ -27,15 +27,15 @@ import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Unseen poetry - GCSE English Literature revision - The English Hub',
+    title: 'Unseen poetry - GCSE English Literature revision',
     description:
       'How to read and analyse an unseen poem in your GCSE English Literature exam. Approach, language, structure, comparison framework, practice prompts.',
     images: [
       {
-        url: '/api/og?title=Unseen+poetry+-+GCSE+English+Literature+revision+-+The+English+Hub',
+        url: '/api/og?title=Unseen+poetry+-+GCSE+English+Literature+revision',
         width: 1200,
         height: 630,
-        alt: 'Unseen poetry - GCSE English Literature revision - The English Hub',
+        alt: 'Unseen poetry - GCSE English Literature revision',
       },
     ],
   },

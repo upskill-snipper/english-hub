@@ -5,22 +5,22 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Paper 2: Modern Texts and Poetry - AQA English Literature',
+    title: 'AQA Paper 2: Modern Texts and Poetry',
     description:
-      'AQA GCSE English Literature Paper 2 revision. Modern texts (An Inspector Calls, Lord of the Flies, Animal Farm), Power and Conflict poetry anthology, and unseen poetry technique.',
+      'AQA GCSE English Literature Paper 2: modern texts in Section A, the Power and Conflict anthology in Section B, and unseen poetry in Section C.',
     images: [
       {
-        url: '/api/og?title=Paper+2%3A+Modern+Texts+and+Poetry+-+AQA+English+Literature',
+        url: '/api/og?title=AQA+Paper+2%3A+Modern+Texts+and+Poetry',
         width: 1200,
         height: 630,
-        alt: 'Paper 2: Modern Texts and Poetry - AQA English Literature',
+        alt: 'AQA Paper 2: Modern Texts and Poetry',
       },
     ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/aqa/paper-2' },
-  title: 'Paper 2: Modern Texts and Poetry - AQA English Literature',
+  title: 'AQA Paper 2: Modern Texts and Poetry',
   description:
-    'AQA GCSE English Literature Paper 2 revision. Modern texts (An Inspector Calls, Lord of the Flies, Animal Farm), Power and Conflict poetry anthology, and unseen poetry technique.',
+    'AQA GCSE English Literature Paper 2: modern texts in Section A, the Power and Conflict anthology in Section B, and unseen poetry in Section C.',
 }
 
 const modernTexts = [

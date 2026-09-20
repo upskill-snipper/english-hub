@@ -10,18 +10,18 @@ import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/compon
 import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Great Expectations revision guide - themes, characters, key quotes - The English Hub',
+    title: 'Great Expectations GCSE - themes, characters, key quotes',
     description: 'Great Expectations GCSE revision - Dickens',
     images: [
       {
-        url: '/api/og?title=Great+Expectations+revision+guide+-+themes%2C+characters%2C+key+quotes+-+The+English+Hub',
+        url: '/api/og?title=Great+Expectations+GCSE+-+themes%2C+characters%2C+key+quotes',
         width: 1200,
         height: 630,
-        alt: 'Great Expectations revision guide - themes, characters, key quotes - The English Hub',
+        alt: 'Great Expectations GCSE - themes, characters, key quotes',
       },
     ],
   },
-  title: 'Great Expectations revision guide - themes, characters, key quotes',
+  title: 'Great Expectations GCSE - themes, characters, key quotes',
   description:
     "Great Expectations GCSE revision - Dickens's bildungsroman by chapter with characters, themes, key quotes and essay plans. Aligned to the AQA spec.",
   alternates: {

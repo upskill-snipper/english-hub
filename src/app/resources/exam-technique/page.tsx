@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Exam Technique',
     description:
-      'Master the exam techniques that turn knowledge into top grades. Time management, question types, essay structure, and exam-day advice for GCSE and IGCSE English.',
+      'Exam technique for GCSE and IGCSE English: timing, question types, essay structure and exam day advice, so what you know turns into marks.',
     images: [
       {
         url: '/api/og?title=Exam+Technique',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/resources/exam-technique' },
   title: 'Exam Technique',
   description:
-    'Master the exam techniques that turn knowledge into top grades. Time management, question types, essay structure, and exam-day advice for GCSE and IGCSE English.',
+    'Exam technique for GCSE and IGCSE English: timing, question types, essay structure and exam day advice, so what you know turns into marks.',
 }
 
 /* ─── Section data ───────────────────────────────────────────── */

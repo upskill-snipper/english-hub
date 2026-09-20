@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: '9-1 vs A*-G grade conversion | Cambridge IGCSE Language B | The English Hub',
     description:
-      'Full conversion table between Cambridge IGCSE Language B 9-1 grades and Language A A*-G grades. Understand how your numerical grade compares to the letter scale.',
+      'Cambridge IGCSE Language B reports 9-1 and Language A reports A*-G. A full conversion table, why Grade 9 is harder than A*, and which grade you need.',
     images: [
       {
         url: '/api/og?title=9-1+vs+A*-G+grade+conversion+%7C+Cambridge+IGCSE+Language+B+%7C+The+English+Hub',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   title: '9-1 vs A*-G grade conversion | Cambridge IGCSE Language B',
   description:
-    'Full conversion table between Cambridge IGCSE Language B 9-1 grades and Language A A*-G grades. Understand how your numerical grade compares to the letter scale.',
+    'Cambridge IGCSE Language B reports 9-1 and Language A reports A*-G. A full conversion table, why Grade 9 is harder than A*, and which grade you need.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/0990/grade-conversion',
   },

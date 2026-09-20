@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Blood Brothers - Key Quotes | The English Hub',
     description:
-      'Twenty essential quotations from Blood Brothers by Willy Russell with speaker, context and detailed analysis.',
+      'Twenty key quotations from Blood Brothers by Willy Russell, each with speaker, context, analysis and theme tags for quick GCSE revision.',
     images: [
       {
         url: '/api/og?title=Blood+Brothers+-+Key+Quotes+%7C+The+English+Hub',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   title: 'Blood Brothers - Key Quotes',
   description:
-    'Twenty essential quotations from Blood Brothers by Willy Russell with speaker, context and detailed analysis.',
+    'Twenty key quotations from Blood Brothers by Willy Russell, each with speaker, context, analysis and theme tags for quick GCSE revision.',
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/blood-brothers/key-quotes',
   },

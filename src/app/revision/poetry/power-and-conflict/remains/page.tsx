@@ -23,7 +23,7 @@ export const metadata = {
   alternates: { canonical: 'https://theenglishhub.app/revision/poetry/power-and-conflict/remains' },
   title: 'Remains -- Simon Armitage',
   description:
-    'Interactive study of "Remains" by Simon Armitage. Annotations, key quotes, language analysis, form & structure, and comparison poems for GCSE English Literature.',
+    'Remains by Simon Armitage annotated line by line for AQA Power and Conflict, with themes, quiz questions, essay prompts and comparison poems.',
 }
 
 /* ── Poem data ─────────────────────────────────────────────────── */

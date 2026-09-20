@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Edexcel IGCSE Literature Anthology Poetry - The English Hub',
     description:
-      'Complete study guide for the prescribed poems in the Pearson Edexcel International GCSE Literature (4ET1) Anthology Poetry section. Line-by-line analysis, quotes, comparison guides and exam tips.',
+      'The 13 poems in the Edexcel IGCSE Literature 4ET1 anthology, with summaries, themes, comparison pairings and a study plan for Paper 1.',
     images: [
       {
         url: '/api/og?title=Edexcel+IGCSE+Literature+Anthology+Poetry+-+The+English+Hub',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   title: 'Edexcel IGCSE Literature Anthology Poetry',
   description:
-    'Complete study guide for the prescribed poems in the Pearson Edexcel International GCSE Literature (4ET1) Anthology Poetry section. Line-by-line analysis, quotes, comparison guides and exam tips.',
+    'The 13 poems in the Edexcel IGCSE Literature 4ET1 anthology, with summaries, themes, comparison pairings and a study plan for Paper 1.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/poetry',
   },

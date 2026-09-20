@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'To Kill a Mockingbird Key Quotes - Edexcel IGCSE Literature',
     description:
-      '20 key quotations from To Kill a Mockingbird organised by theme for Edexcel IGCSE Literature revision: racism, courage, innocence, empathy and the mockingbird motif.',
+      '20 To Kill a Mockingbird quotations grouped by theme for Edexcel IGCSE Literature: racism, courage, innocence and the mockingbird.',
     images: [
       {
         url: '/api/og?title=To+Kill+a+Mockingbird+Key+Quotes+-+Edexcel+IGCSE+Literature',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   title: 'To Kill a Mockingbird Key Quotes - Edexcel IGCSE Literature',
   description:
-    '20 key quotations from To Kill a Mockingbird organised by theme for Edexcel IGCSE Literature revision: racism, courage, innocence, empathy and the mockingbird motif.',
+    '20 To Kill a Mockingbird quotations grouped by theme for Edexcel IGCSE Literature: racism, courage, innocence and the mockingbird.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird/key-quotes',
   },

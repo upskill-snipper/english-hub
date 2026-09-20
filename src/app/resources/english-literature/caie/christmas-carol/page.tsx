@@ -7,24 +7,24 @@ import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'A Christmas Carol Study Guide - Cambridge IGCSE English Literature',
+    title: 'A Christmas Carol - Cambridge IGCSE',
     description:
-      'Complete A Christmas Carol study guide for Cambridge IGCSE English Literature. Stave summaries, character analysis, themes, 18 key quotes with analysis, Victorian context, Scrooge',
+      'A Christmas Carol for Cambridge IGCSE English Literature: stave summaries, characters, themes, key quotes, Victorian context and exam technique.',
     images: [
       {
-        url: '/api/og?title=A+Christmas+Carol+Study+Guide+-+Cambridge+IGCSE+English+Literature',
+        url: '/api/og?title=A+Christmas+Carol+-+Cambridge+IGCSE',
         width: 1200,
         height: 630,
-        alt: 'A Christmas Carol Study Guide - Cambridge IGCSE English Literature',
+        alt: 'A Christmas Carol - Cambridge IGCSE',
       },
     ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/caie/christmas-carol',
   },
-  title: 'A Christmas Carol Study Guide - Cambridge IGCSE English Literature',
+  title: 'A Christmas Carol - Cambridge IGCSE',
   description:
-    "Complete A Christmas Carol study guide for Cambridge IGCSE English Literature. Stave summaries, character analysis, themes, 18 key quotes with analysis, Victorian context, Scrooge's transformation, and Cambridge-specific exam technique.",
+    'A Christmas Carol for Cambridge IGCSE English Literature: stave summaries, characters, themes, key quotes, Victorian context and exam technique.',
 }
 
 /* ─── Data ───────────────────────────────────────────────────── */

@@ -9,7 +9,7 @@ const SLUG = 'between-a-rock-and-a-hard-place'
 export const metadata: Metadata = {
   title: 'Between a Rock and a Hard Place - Aron Ralston',
   description:
-    'Study guide stub for Between a Rock and a Hard Place by Aron Ralston. Pearson Edexcel International GCSE English Language A (4EA1) Section A non-fiction anthology.',
+    'Aron Ralston on amputating his own arm in a Utah canyon, from the Edexcel IGCSE English Language A (4EA1) anthology. Full study guide in production.',
   alternates: {
     canonical: `https://theenglishhub.app/revision/texts/${SLUG}`,
   },

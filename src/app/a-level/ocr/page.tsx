@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'OCR A-Level English - The English Hub',
     description:
-      'OCR A-Level English Literature (H472) and Language (H470) revision hub. Cross-board set text analysis, essay technique and language study while full OCR A-Level content is on our roadmap.',
+      'OCR A-Level English Literature (H472) and Language (H470). Cross-board set-text, essay technique and language tools while board guides are written.',
     images: [
       {
         url: '/api/og?title=OCR+A-Level+English+-+The+English+Hub',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   title: 'OCR A-Level English',
   description:
-    'OCR A-Level English Literature (H472) and Language (H470) revision hub. Cross-board set text analysis, essay technique and language study while full OCR A-Level content is on our roadmap.',
+    'OCR A-Level English Literature (H472) and Language (H470). Cross-board set-text, essay technique and language tools while board guides are written.',
   alternates: { canonical: 'https://theenglishhub.app/a-level/ocr' },
   robots: { index: true, follow: true },
 }

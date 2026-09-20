@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Julius Caesar Revision Notes | GCSE & A-Level Shakespeare',
+  title: 'Julius Caesar Notes | GCSE & A-Level',
   description:
     "Revise Shakespeare's Julius Caesar for GCSE and A-Level: act-by-act plot, Brutus and Antony analysis, rhetoric, key quotations, Roman context and essay plans.",
   alternates: { canonical: '/resources/revision-notes/julius-caesar' },

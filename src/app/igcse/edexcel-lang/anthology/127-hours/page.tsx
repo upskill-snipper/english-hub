@@ -19,22 +19,21 @@ import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title:
-      'Between a Rock and a Hard Place - Aron Ralston - IGCSE Language A Anthology - The English Hub',
+    title: 'Between a Rock and a Hard Place - IGCSE Language A Anthology - The English Hub',
     description:
-      'Study guide for the anthology extract from Between a Rock and a Hard Place by Aron Ralston (filmed as 127 Hours). Language analysis, structural analysis, key vocabulary and exam practice for Edexcel IGCSE English Language A.',
+      'The Aron Ralston anthology extract for Edexcel IGCSE Language A: language features, structure, key vocabulary and Paper 1 exam practice.',
     images: [
       {
-        url: '/api/og?title=Between+a+Rock+and+a+Hard+Place+-+Aron+Ralston+-+IGCSE+Language+A+Anthology+-+The+English+Hub',
+        url: '/api/og?title=Between+a+Rock+and+a+Hard+Place+-+IGCSE+Language+A+Anthology+-+The+English+Hub',
         width: 1200,
         height: 630,
-        alt: 'Between a Rock and a Hard Place - Aron Ralston - IGCSE Language A Anthology - The English Hub',
+        alt: 'Between a Rock and a Hard Place - IGCSE Language A Anthology - The English Hub',
       },
     ],
   },
-  title: 'Between a Rock and a Hard Place - Aron Ralston - IGCSE Language A Anthology',
+  title: 'Between a Rock and a Hard Place - IGCSE Language A Anthology',
   description:
-    'Study guide for the anthology extract from Between a Rock and a Hard Place by Aron Ralston (filmed as 127 Hours). Language analysis, structural analysis, key vocabulary and exam practice for Edexcel IGCSE English Language A.',
+    'The Aron Ralston anthology extract for Edexcel IGCSE Language A: language features, structure, key vocabulary and Paper 1 exam practice.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/edexcel-lang/anthology/127-hours' },
 }
 

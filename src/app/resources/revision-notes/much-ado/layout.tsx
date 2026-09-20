@@ -3,12 +3,12 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Much Ado About Nothing Revision Notes',
   description:
-    'Free Much Ado About Nothing revision notes for GCSE English Literature. Character analysis, themes, key quotes with analysis, context, and exam-ready essay tips.',
+    "GCSE revision notes for Shakespeare's Much Ado About Nothing: scene-by-scene plot, nine character profiles, five themes and 24 key quotations.",
   alternates: { canonical: 'https://theenglishhub.app/resources/revision-notes/much-ado' },
   openGraph: {
     title: 'Much Ado About Nothing Revision Notes - The English Hub',
     description:
-      'Free Much Ado About Nothing revision notes for GCSE English Literature. Character analysis, themes, key quotes with analysis, context, and exam-ready essay tips.',
+      "GCSE revision notes for Shakespeare's Much Ado About Nothing: scene-by-scene plot, nine character profiles, five themes and 24 key quotations.",
     images: [
       {
         url: '/api/og?title=Much+Ado+About+Nothing+Revision+Notes+-+The+English+Hub',

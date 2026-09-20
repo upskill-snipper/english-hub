@@ -7,9 +7,9 @@ import type { Metadata } from 'next'
 // COMPLIANCE: see ../layout.tsx - partnership/accreditation references on this
 // page are intent and alignment, never held affiliations.
 export const metadata: Metadata = {
-  title: 'IELTS Preparation for Schools & Exam Centres - The English Hub',
+  title: 'IELTS Prep for Schools & Exam Centres - The English Hub',
   description:
-    'Add an AI-marked IELTS Academic pathway to your school or exam-prep centre. Bulk learner access, a centre dashboard, bilingual English / Arabic delivery for Gulf students, and instant band feedback that extends your teaching team.',
+    'Add an AI-marked IELTS Academic pathway to your school or exam-prep centre: bulk learner access, a centre dashboard and instant band feedback.',
   alternates: { canonical: 'https://theenglishhub.app/ielts/partners/for-schools' },
   keywords: [
     'IELTS preparation for schools',

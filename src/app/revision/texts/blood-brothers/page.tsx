@@ -10,18 +10,18 @@ import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/compon
 import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Blood Brothers revision guide - themes, characters, key quotes - The English Hub',
+    title: 'Blood Brothers GCSE revision - themes, characters, quotes',
     description: 'Blood Brothers GCSE revision - Willy Russell',
     images: [
       {
-        url: '/api/og?title=Blood+Brothers+revision+guide+-+themes%2C+characters%2C+key+quotes+-+The+English+Hub',
+        url: '/api/og?title=Blood+Brothers+GCSE+revision+-+themes%2C+characters%2C+quotes',
         width: 1200,
         height: 630,
-        alt: 'Blood Brothers revision guide - themes, characters, key quotes - The English Hub',
+        alt: 'Blood Brothers GCSE revision - themes, characters, quotes',
       },
     ],
   },
-  title: 'Blood Brothers revision guide - themes, characters, key quotes',
+  title: 'Blood Brothers GCSE revision - themes, characters, quotes',
   description:
     "Blood Brothers GCSE revision - Willy Russell's musical play act-by-act with characters, themes, key quotes and essay plans. Aligned to Edexcel and Eduqas.",
   alternates: {

@@ -7,22 +7,22 @@ import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Writing Skills Masterclass | The English Hub',
+    title: 'Writing Skills Masterclass',
     description:
-      'Master every type of writing for your English exams. Comprehensive, board-agnostic guides covering creative writing, persuasive writing, analytical writing, and grammar & punctuation.',
+      'Board-agnostic writing guides for GCSE and IGCSE English: creative writing, persuasive writing, analytical writing, and grammar and punctuation.',
     images: [
       {
-        url: '/api/og?title=Writing+Skills+Masterclass+%7C+The+English+Hub',
+        url: '/api/og?title=Writing+Skills+Masterclass',
         width: 1200,
         height: 630,
-        alt: 'Writing Skills Masterclass | The English Hub',
+        alt: 'Writing Skills Masterclass',
       },
     ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/writing-skills' },
   title: 'Writing Skills Masterclass',
   description:
-    'Master every type of writing for your English exams. Comprehensive, board-agnostic guides covering creative writing, persuasive writing, analytical writing, and grammar & punctuation.',
+    'Board-agnostic writing guides for GCSE and IGCSE English: creative writing, persuasive writing, analytical writing, and grammar and punctuation.',
 }
 
 /* ─── Data ───────────────────────────────────────────────────── */

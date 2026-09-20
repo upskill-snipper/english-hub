@@ -9,21 +9,21 @@ import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Language A vs Language B - What is the difference? | Cambridge IGCSE | The English Hub',
+    title: 'Language A vs Language B - Cambridge IGCSE 0500 and 0990 | The English Hub',
     description:
-      'Cambridge IGCSE Language A and Language B First Language English are the same syllabus with different grade scales. Full comparison of content, papers, objectives and grading.',
+      'Cambridge IGCSE Language A and Language B are one syllabus with two grade scales. What stays the same, what changes, and which grades each one reports.',
     images: [
       {
-        url: '/api/og?title=Language+A+vs+Language+B+-+What+is+the+difference%3F+%7C+Cambridge+IGCSE+%7C+The+English+Hub',
+        url: '/api/og?title=Language+A+vs+Language+B+-+Cambridge+IGCSE+0500+and+0990+%7C+The+English+Hub',
         width: 1200,
         height: 630,
-        alt: 'Language A vs Language B - What is the difference? | Cambridge IGCSE | The English Hub',
+        alt: 'Language A vs Language B - Cambridge IGCSE 0500 and 0990 | The English Hub',
       },
     ],
   },
-  title: 'Language A vs Language B - What is the difference? | Cambridge IGCSE',
+  title: 'Language A vs Language B - Cambridge IGCSE 0500 and 0990',
   description:
-    'Cambridge IGCSE Language A and Language B First Language English are the same syllabus with different grade scales. Full comparison of content, papers, objectives and grading.',
+    'Cambridge IGCSE Language A and Language B are one syllabus with two grade scales. What stays the same, what changes, and which grades each one reports.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/0990/difference-vs-0500',
   },

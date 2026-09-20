@@ -32,7 +32,7 @@ import {
 export const metadata: Metadata = {
   title: 'School Pilot Pack',
   description:
-    'Run a structured 90-day English improvement pilot with student access, teacher tools, analytics and school progress reporting. Designed for British curriculum schools.',
+    'Run a structured 90-day English improvement pilot across three phases, with student access, teacher tools, analytics and progress reporting for your school.',
   alternates: { canonical: `${COMPANY.websiteUrl}/for-schools/pilot` },
   openGraph: {
     title: 'School Pilot Pack | The English Hub for Schools',

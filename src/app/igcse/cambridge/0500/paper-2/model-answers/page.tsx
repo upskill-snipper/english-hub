@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Paper 2 Model Answers - IGCSE Language A 0500',
     description:
-      'Grade A*/9 model answers for Cambridge IGCSE 0500 Paper 2: directed writing (letter, article, speech) and composition (descriptive and narrative). With examiner annotations.',
+      'Five annotated Grade A*/9 model answers for Cambridge IGCSE 0500 Paper 2: a letter, an article and a speech, plus descriptive and narrative compositions.',
     images: [
       {
         url: '/api/og?title=Paper+2+Model+Answers+-+IGCSE+Language+A+0500',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   title: 'Paper 2 Model Answers - IGCSE Language A 0500',
   description:
-    'Grade A*/9 model answers for Cambridge IGCSE 0500 Paper 2: directed writing (letter, article, speech) and composition (descriptive and narrative). With examiner annotations.',
+    'Five annotated Grade A*/9 model answers for Cambridge IGCSE 0500 Paper 2: a letter, an article and a speech, plus descriptive and narrative compositions.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/0500/paper-2/model-answers',
   },

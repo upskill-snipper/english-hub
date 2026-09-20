@@ -10,18 +10,18 @@ import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/compon
 import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Pride and Prejudice revision guide - themes, characters, key quotes - The English Hub',
+    title: 'Pride and Prejudice GCSE - themes, characters, key quotes',
     description: 'Pride and Prejudice GCSE revision - Austen',
     images: [
       {
-        url: '/api/og?title=Pride+and+Prejudice+revision+guide+-+themes%2C+characters%2C+key+quotes+-+The+English+Hub',
+        url: '/api/og?title=Pride+and+Prejudice+GCSE+-+themes%2C+characters%2C+key+quotes',
         width: 1200,
         height: 630,
-        alt: 'Pride and Prejudice revision guide - themes, characters, key quotes - The English Hub',
+        alt: 'Pride and Prejudice GCSE - themes, characters, key quotes',
       },
     ],
   },
-  title: 'Pride and Prejudice revision guide - themes, characters, key quotes',
+  title: 'Pride and Prejudice GCSE - themes, characters, key quotes',
   description:
     "Pride and Prejudice GCSE revision - Austen's novel of manners by chapter with character analysis. Aligned to AQA, Edexcel, OCR and Eduqas mark schemes.",
   alternates: {

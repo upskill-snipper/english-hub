@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Paper 1 Reading - IGCSE Language A',
     description:
-      'Everything you need for IGCSE Language A Paper 1 Reading. Question breakdown, reading techniques, language analysis, summary writing and practice passages. Aligns with Cambridge syllabus 0500.',
+      'Cambridge IGCSE 0500 Paper 1 Reading: three texts, four questions, 80 marks. A question-by-question breakdown, a timing plan and links to each skill guide.',
     images: [
       {
         url: '/api/og?title=Paper+1+Reading+-+IGCSE+Language+A',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   title: 'Paper 1 Reading - IGCSE Language A',
   description:
-    'Everything you need for IGCSE Language A Paper 1 Reading. Question breakdown, reading techniques, language analysis, summary writing and practice passages. Aligns with Cambridge syllabus 0500.',
+    'Cambridge IGCSE 0500 Paper 1 Reading: three texts, four questions, 80 marks. A question-by-question breakdown, a timing plan and links to each skill guide.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/0500/paper-1',
   },

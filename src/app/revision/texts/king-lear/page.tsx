@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'King Lear - Study Guide | The English Hub',
     description:
-      'In-depth study guide for King Lear by William Shakespeare: plot, characters, themes, context and key quotations.',
+      'King Lear study guide: plot, characters including Cordelia, Goneril, Regan and Edmund, themes of power, madness and blindness, and key quotations.',
     images: [
       {
         url: '/api/og?title=King+Lear+-+Study+Guide+%7C+The+English+Hub',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   title: 'King Lear - Study Guide',
   description:
-    'In-depth study guide for King Lear by William Shakespeare: plot, characters, themes, context and key quotations.',
+    'King Lear study guide: plot, characters including Cordelia, Goneril, Regan and Edmund, themes of power, madness and blindness, and key quotations.',
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/king-lear',
   },

@@ -9,7 +9,7 @@ import { getDiagnosticQuestions } from '@/lib/eal/diagnostic-bank'
 export const metadata: Metadata = {
   title: 'CEFR Placement Test - English for Arabic Speakers (free)',
   description:
-    'Free CEFR placement test for Arabic L1 learners. Answer bilingual multiple-choice questions across grammar, sentence structure, vocabulary, pronunciation and common errors to get your CEFR level (A2-C1), a per-skill breakdown and the topics to study next.',
+    'Free bilingual placement test for Arabic L1 learners. Multiple-choice grammar, vocabulary and pronunciation questions set your CEFR level and next topics.',
   alternates: { canonical: 'https://theenglishhub.app/eal/diagnostic' },
   openGraph: {
     title: 'Free CEFR Placement Test for Arabic Speakers - The English Hub',

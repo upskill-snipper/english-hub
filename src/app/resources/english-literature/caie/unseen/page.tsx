@@ -7,20 +7,20 @@ import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Unseen Analysis - Cambridge IGCSE English Literature',
+    title: 'Cambridge IGCSE Unseen Poetry and Prose',
     description:
       'Step-by-step techniques for unseen prose and poetry analysis in Cambridge IGCSE English Literature. Worked examples, frameworks, and marker tips.',
     images: [
       {
-        url: '/api/og?title=Unseen+Analysis+-+Cambridge+IGCSE+English+Literature',
+        url: '/api/og?title=Cambridge+IGCSE+Unseen+Poetry+and+Prose',
         width: 1200,
         height: 630,
-        alt: 'Unseen Analysis - Cambridge IGCSE English Literature',
+        alt: 'Cambridge IGCSE Unseen Poetry and Prose',
       },
     ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/caie/unseen' },
-  title: 'Unseen Analysis - Cambridge IGCSE English Literature',
+  title: 'Cambridge IGCSE Unseen Poetry and Prose',
   description:
     'Step-by-step techniques for unseen prose and poetry analysis in Cambridge IGCSE English Literature. Worked examples, frameworks, and marker tips.',
 }

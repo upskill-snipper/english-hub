@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Model Literature Essays | The English Hub',
     description:
-      'Grade 3, 5, 7, and 9 model literature essays on Macbeth, A Christmas Carol, An Inspector Calls, and poetry comparison. Annotations show how to structure arguments and embed quotations at every level.',
+      'Model literature essays on Macbeth, A Christmas Carol, An Inspector Calls and poetry comparison, graded 3 to 9 and annotated for argument and quotation.',
     images: [
       {
         url: '/api/og?title=Model+Literature+Essays+%7C+The+English+Hub',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   title: 'Model Literature Essays',
   description:
-    'Grade 3, 5, 7, and 9 model literature essays on Macbeth, A Christmas Carol, An Inspector Calls, and poetry comparison. Annotations show how to structure arguments and embed quotations at every level.',
+    'Model literature essays on Macbeth, A Christmas Carol, An Inspector Calls and poetry comparison, graded 3 to 9 and annotated for argument and quotation.',
 }
 
 /* ─── Annotation component ───────────────────────────────────── */

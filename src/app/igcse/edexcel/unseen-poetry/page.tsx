@@ -5,20 +5,19 @@ import UnseenPoetryClient from './client'
 
 export const metadata: Metadata = {
   openGraph: {
-    title:
-      'IGCSE Edexcel unseen poetry - approach, language, structure, comparison - The English Hub',
+    title: 'Edexcel IGCSE Unseen Poetry - Analysis and Comparison - The English Hub',
     description:
       'How to read an unseen poem for the Pearson Edexcel IGCSE 4ET1 Paper 1 Section A. Approach, language analysis, structure and form, comparison practice.',
     images: [
       {
-        url: '/api/og?title=IGCSE+Edexcel+unseen+poetry+-+approach%2C+language%2C+structure%2C+comparison+-+The+English+Hub',
+        url: '/api/og?title=Edexcel+IGCSE+Unseen+Poetry+-+Analysis+and+Comparison+-+The+English+Hub',
         width: 1200,
         height: 630,
-        alt: 'IGCSE Edexcel unseen poetry - approach, language, structure, comparison - The English Hub',
+        alt: 'Edexcel IGCSE Unseen Poetry - Analysis and Comparison - The English Hub',
       },
     ],
   },
-  title: 'IGCSE Edexcel unseen poetry - approach, language, structure, comparison',
+  title: 'Edexcel IGCSE Unseen Poetry - Analysis and Comparison',
   description:
     'How to read an unseen poem for the Pearson Edexcel IGCSE 4ET1 Paper 1 Section A. Approach, language analysis, structure and form, comparison practice.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/edexcel/unseen-poetry' },

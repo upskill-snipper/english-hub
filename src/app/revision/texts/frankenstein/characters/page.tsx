@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Frankenstein Characters - Deep Study | The English Hub',
     description:
-      'In-depth GCSE character analysis for Frankenstein by Mary Shelley: Victor Frankenstein, The Creature, Robert Walton, Elizabeth Lavenza, Henry Clerval, Justine Moritz, and the De Lacey family.',
+      'Frankenstein characters analysed for GCSE: Victor, the Creature, Walton, Elizabeth, Clerval, Justine and the De Laceys, with quotations and exam tips.',
     images: [
       {
         url: '/api/og?title=Frankenstein+Characters+-+Deep+Study+%7C+The+English+Hub',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   title: 'Frankenstein Characters - Deep Study',
   description:
-    'In-depth GCSE character analysis for Frankenstein by Mary Shelley: Victor Frankenstein, The Creature, Robert Walton, Elizabeth Lavenza, Henry Clerval, Justine Moritz, and the De Lacey family.',
+    'Frankenstein characters analysed for GCSE: Victor, the Creature, Walton, Elizabeth, Clerval, Justine and the De Laceys, with quotations and exam tips.',
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/frankenstein/characters',
   },

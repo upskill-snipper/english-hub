@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'A-Level English - The English Hub',
     description:
-      'UK A-Level English Literature and Language hubs for AQA, Pearson Edexcel, OCR and WJEC Eduqas. Cross-board revision tools while full A-Level content is on our roadmap.',
+      'A-Level English Literature and Language hubs for AQA, Pearson Edexcel, OCR and WJEC Eduqas, plus cross-board revision tools you can use today.',
     images: [
       {
         url: '/api/og?title=A-Level+English+-+The+English+Hub',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   title: 'A-Level English',
   description:
-    'UK A-Level English Literature and Language hubs for AQA, Pearson Edexcel, OCR and WJEC Eduqas. Cross-board revision tools while full A-Level content is on our roadmap.',
+    'A-Level English Literature and Language hubs for AQA, Pearson Edexcel, OCR and WJEC Eduqas, plus cross-board revision tools you can use today.',
   alternates: { canonical: 'https://theenglishhub.app/a-level' },
   robots: { index: true, follow: true },
 }

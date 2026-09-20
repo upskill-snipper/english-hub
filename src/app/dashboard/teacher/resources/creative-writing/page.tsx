@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { t } from '@/lib/i18n/t'
 
-export const metadata = { title: 'Creative Writing Masterclass - Teacher Resources' }
+export const metadata = { title: 'Creative Writing - Teacher Resources' }
 
 /* ─── Example 4: Creative Writing Teaching Resource ──────────────── */
 

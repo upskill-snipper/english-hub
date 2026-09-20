@@ -4,22 +4,22 @@ import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Macbeth Study Guide - AQA English Literature GCSE',
+    title: 'Macbeth - AQA GCSE English Literature',
     description:
-      'Complete Macbeth revision guide for AQA GCSE English Literature. Act-by-act plot summary, character analysis, themes, 20+ key quotations with analysis, Jacobean context, and essay planning.',
+      'Macbeth for AQA GCSE English Literature: act-by-act summary, character analysis, themes, key quotations, Jacobean context and essay planning.',
     images: [
       {
-        url: '/api/og?title=Macbeth+Study+Guide+-+AQA+English+Literature+GCSE',
+        url: '/api/og?title=Macbeth+-+AQA+GCSE+English+Literature',
         width: 1200,
         height: 630,
-        alt: 'Macbeth Study Guide - AQA English Literature GCSE',
+        alt: 'Macbeth - AQA GCSE English Literature',
       },
     ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/aqa/macbeth' },
-  title: 'Macbeth Study Guide - AQA English Literature GCSE',
+  title: 'Macbeth - AQA GCSE English Literature',
   description:
-    'Complete Macbeth revision guide for AQA GCSE English Literature. Act-by-act plot summary, character analysis, themes, 20+ key quotations with analysis, Jacobean context, and essay planning.',
+    'Macbeth for AQA GCSE English Literature: act-by-act summary, character analysis, themes, key quotations, Jacobean context and essay planning.',
 }
 
 /* ─── Data ──────────────────────────────────────────────────── */

@@ -11,15 +11,15 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Pride and Prejudice - Key Chapters Analysed | The English Hub',
+    title: 'Pride and Prejudice - Key Chapters Analysed',
     description:
       'Volume-by-volume and chapter-by-chapter analysis of Pride and Prejudice by Jane Austen with key quotations and exam-ready commentary.',
     images: [
       {
-        url: '/api/og?title=Pride+and+Prejudice+-+Key+Chapters+Analysed+%7C+The+English+Hub',
+        url: '/api/og?title=Pride+and+Prejudice+-+Key+Chapters+Analysed',
         width: 1200,
         height: 630,
-        alt: 'Pride and Prejudice - Key Chapters Analysed | The English Hub',
+        alt: 'Pride and Prejudice - Key Chapters Analysed',
       },
     ],
   },

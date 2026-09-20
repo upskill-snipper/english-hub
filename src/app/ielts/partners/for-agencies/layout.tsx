@@ -10,7 +10,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'IELTS Preparation for Education Agencies - The English Hub',
   description:
-    'Get the students you place IELTS-ready. The English Hub gives education agencies bulk access to AI-marked IELTS Academic preparation, predicted band evidence, bilingual English / Arabic delivery, and a roadmap aligned to British Council and IELTS standards.',
+    'Bulk access to AI-marked IELTS Academic preparation for education agencies, with a credible predicted band and bilingual English and Arabic delivery.',
   alternates: { canonical: 'https://theenglishhub.app/ielts/partners/for-agencies' },
   keywords: [
     'IELTS preparation for education agencies',

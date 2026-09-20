@@ -12,7 +12,7 @@ import { MockExamClient } from '@/components/eal/MockExamClient'
 export const metadata: Metadata = {
   title: 'EAL Practice - B2 (Upper Intermediate)',
   description:
-    'Free B2-level English practice for Arabic speakers: conditionals, passives, relative clauses, phrasal verbs and false friends, with bilingual explanations. Modelled on Cambridge B2 First for Schools.',
+    'Free, scored B2 English practice for Arabic speakers: conditionals, passives, relative clauses, phrasal verbs and reported speech, explained bilingually.',
   alternates: { canonical: 'https://theenglishhub.app/eal/practice/mock-exam-b2' },
 }
 

@@ -11,19 +11,19 @@ import StudyTools from '@/components/study/StudyTools'
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'A View from the Bridge - Edexcel IGCSE Literature Study Guide',
+    title: 'A View from the Bridge - Edexcel IGCSE Literature',
     description:
       'Arthur Miller\u2019s A View from the Bridge for Edexcel IGCSE Literature: plot, characters, themes, Red Hook context and key quotations.',
     images: [
       {
-        url: '/api/og?title=A+View+from+the+Bridge+-+Edexcel+IGCSE+Literature+Study+Guide',
+        url: '/api/og?title=A+View+from+the+Bridge+-+Edexcel+IGCSE+Literature',
         width: 1200,
         height: 630,
-        alt: 'A View from the Bridge - Edexcel IGCSE Literature Study Guide',
+        alt: 'A View from the Bridge - Edexcel IGCSE Literature',
       },
     ],
   },
-  title: 'A View from the Bridge - Edexcel IGCSE Literature Study Guide',
+  title: 'A View from the Bridge - Edexcel IGCSE Literature',
   description:
     'Arthur Miller\u2019s A View from the Bridge for Edexcel IGCSE Literature: plot, characters, themes, Red Hook context and key quotations.',
   alternates: {
@@ -175,7 +175,7 @@ export default async function AViewHubPage() {
   return (
     <div className="space-y-10 pb-16">
       <CourseJsonLd
-        name="A View from the Bridge - Edexcel IGCSE Literature Study Guide"
+        name="A View from the Bridge - Edexcel IGCSE Literature"
         description="In-depth study guide for A View from the Bridge for Edexcel IGCSE English Literature, covering plot, characters, themes, key quotations, context and exam essay plans."
       />
       <BreadcrumbJsonLd

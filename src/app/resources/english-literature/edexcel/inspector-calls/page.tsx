@@ -6,22 +6,22 @@ import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'An Inspector Calls Study Guide - Edexcel GCSE English Literature',
+    title: 'An Inspector Calls - Edexcel Literature',
     description:
       'Complete An Inspector Calls revision guide for Edexcel GCSE English Literature. Plot, characters, themes, 20+ key quotes, context, and Edexcel exam technique.',
     images: [
       {
-        url: '/api/og?title=An+Inspector+Calls+Study+Guide+-+Edexcel+GCSE+English+Literature',
+        url: '/api/og?title=An+Inspector+Calls+-+Edexcel+Literature',
         width: 1200,
         height: 630,
-        alt: 'An Inspector Calls Study Guide - Edexcel GCSE English Literature',
+        alt: 'An Inspector Calls - Edexcel Literature',
       },
     ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/inspector-calls',
   },
-  title: 'An Inspector Calls Study Guide - Edexcel GCSE English Literature',
+  title: 'An Inspector Calls - Edexcel Literature',
   description:
     'Complete An Inspector Calls revision guide for Edexcel GCSE English Literature. Plot, characters, themes, 20+ key quotes, context, and Edexcel exam technique.',
 }

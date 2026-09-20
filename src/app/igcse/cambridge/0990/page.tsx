@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'IGCSE Language B - The English Hub',
     description:
-      'IGCSE Language B hub. Same content as Language A with 9-1 numerical grading. Reading Paper, Writing Paper, grade-by-grade guides and practice papers. Aligns with Cambridge syllabus 0990.',
+      'The 9-1 graded version of Cambridge First Language English. Both papers, what the grade scale means, grade-by-grade guides and two practice papers.',
     images: [
       {
         url: '/api/og?title=IGCSE+Language+B+-+The+English+Hub',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   title: 'IGCSE Language B',
   description:
-    'IGCSE Language B hub. Same content as Language A with 9-1 numerical grading. Reading Paper, Writing Paper, grade-by-grade guides and practice papers. Aligns with Cambridge syllabus 0990.',
+    'The 9-1 graded version of Cambridge First Language English. Both papers, what the grade scale means, grade-by-grade guides and two practice papers.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/cambridge/0990' },
 }
 

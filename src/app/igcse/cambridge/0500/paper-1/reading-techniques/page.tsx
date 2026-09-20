@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Reading Techniques - IGCSE Language A Paper 1',
     description:
-      'How to read IGCSE Language A Paper 1 passages efficiently. Skimming, scanning, close reading and annotating strategies for the reading exam. Aligns with Cambridge syllabus 0500.',
+      'Skimming, scanning, close reading and annotating for IGCSE Language A Paper 1. Which technique suits each job, and how to combine them in the two hours.',
     images: [
       {
         url: '/api/og?title=Reading+Techniques+-+IGCSE+Language+A+Paper+1',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   title: 'Reading Techniques - IGCSE Language A Paper 1',
   description:
-    'How to read IGCSE Language A Paper 1 passages efficiently. Skimming, scanning, close reading and annotating strategies for the reading exam. Aligns with Cambridge syllabus 0500.',
+    'Skimming, scanning, close reading and annotating for IGCSE Language A Paper 1. Which technique suits each job, and how to combine them in the two hours.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/0500/paper-1/reading-techniques',
   },

@@ -6,7 +6,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'UK Student Visa & Finance Checklist - IELTS plan',
   description:
-    'An interactive UK Student visa and maintenance-funds readiness checklist: maintenance amounts, the 28-day rule, CAS stage, TB test, ATAS and passport. Get a clear can-apply / not-yet / blocked status that feeds your UK Candidate Readiness Report. Preparation guidance only - check gov.uk. Part of the IELTS plan.',
+    'An interactive UK Student route checklist covering funds, the 28-day rule, CAS, TB test, ATAS and passport, giving a clear can-apply status. Check gov.uk.',
   alternates: { canonical: 'https://theenglishhub.app/ielts/readiness/visa-finance' },
 }
 

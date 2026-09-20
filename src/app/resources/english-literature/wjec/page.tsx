@@ -7,19 +7,19 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'WJEC GCSE English Literature resources - The English Hub',
+    title: 'WJEC Eduqas English Literature Revision - The English Hub',
     description:
       'WJEC Eduqas GCSE English Literature set-text guides, Eduqas anthology poetry, unseen poetry and exam technique aligned to the 2025 specification.',
     images: [
       {
-        url: '/api/og?title=WJEC+GCSE+English+Literature+resources+-+The+English+Hub',
+        url: '/api/og?title=WJEC+Eduqas+English+Literature+Revision+-+The+English+Hub',
         width: 1200,
         height: 630,
-        alt: 'WJEC GCSE English Literature resources - The English Hub',
+        alt: 'WJEC Eduqas English Literature Revision - The English Hub',
       },
     ],
   },
-  title: 'WJEC GCSE English Literature resources',
+  title: 'WJEC Eduqas English Literature Revision',
   description:
     'WJEC Eduqas GCSE English Literature set-text guides, Eduqas anthology poetry, unseen poetry and exam technique aligned to the 2025 specification.',
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/wjec' },

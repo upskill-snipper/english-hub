@@ -3,22 +3,22 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Paper 1: Shakespeare and the 19th-Century Novel - AQA English Literature',
+    title: 'AQA Paper 1: Shakespeare and the Novel',
     description:
-      'AQA GCSE English Literature Paper 1 revision. Shakespeare plays (Macbeth, Romeo and Juliet) and 19th-century novels (A Christmas Carol, Jekyll and Hyde). Exam technique and essay structure.',
+      'AQA GCSE English Literature Paper 1: Shakespeare in Section A, the 19th-century novel in Section B, plus extract technique and essay structure.',
     images: [
       {
-        url: '/api/og?title=Paper+1%3A+Shakespeare+and+the+19th-Century+Novel+-+AQA+English+Literature',
+        url: '/api/og?title=AQA+Paper+1%3A+Shakespeare+and+the+Novel',
         width: 1200,
         height: 630,
-        alt: 'Paper 1: Shakespeare and the 19th-Century Novel - AQA English Literature',
+        alt: 'AQA Paper 1: Shakespeare and the Novel',
       },
     ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/aqa/paper-1' },
-  title: 'Paper 1: Shakespeare and the 19th-Century Novel - AQA English Literature',
+  title: 'AQA Paper 1: Shakespeare and the Novel',
   description:
-    'AQA GCSE English Literature Paper 1 revision. Shakespeare plays (Macbeth, Romeo and Juliet) and 19th-century novels (A Christmas Carol, Jekyll and Hyde). Exam technique and essay structure.',
+    'AQA GCSE English Literature Paper 1: Shakespeare in Section A, the 19th-century novel in Section B, plus extract technique and essay structure.',
 }
 
 /* ─── Data ──────────────────────────────────────────────────── */

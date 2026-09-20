@@ -6,24 +6,24 @@ import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Jekyll and Hyde Study Guide - Edexcel GCSE English Literature',
+    title: 'Jekyll and Hyde - Edexcel GCSE Literature',
     description:
-      'Complete Jekyll and Hyde revision guide for Edexcel GCSE English Literature Paper 2. Plot summary, character analysis, themes, 15+ key quotes, Victorian context, and exam technique.',
+      'Jekyll and Hyde for Edexcel GCSE English Literature Paper 2: plot, characters, themes, key quotes, Victorian context and exam technique.',
     images: [
       {
-        url: '/api/og?title=Jekyll+and+Hyde+Study+Guide+-+Edexcel+GCSE+English+Literature',
+        url: '/api/og?title=Jekyll+and+Hyde+-+Edexcel+GCSE+Literature',
         width: 1200,
         height: 630,
-        alt: 'Jekyll and Hyde Study Guide - Edexcel GCSE English Literature',
+        alt: 'Jekyll and Hyde - Edexcel GCSE Literature',
       },
     ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/jekyll-and-hyde',
   },
-  title: 'Jekyll and Hyde Study Guide - Edexcel GCSE English Literature',
+  title: 'Jekyll and Hyde - Edexcel GCSE Literature',
   description:
-    'Complete Jekyll and Hyde revision guide for Edexcel GCSE English Literature Paper 2. Plot summary, character analysis, themes, 15+ key quotes, Victorian context, and exam technique.',
+    'Jekyll and Hyde for Edexcel GCSE English Literature Paper 2: plot, characters, themes, key quotes, Victorian context and exam technique.',
 }
 
 /* ─── Data ───────────────────────────────────────────────────── */

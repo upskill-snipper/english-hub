@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Unseen Poetry Guide | The English Hub',
     description:
-      'Complete GCSE unseen poetry guide. The READ method, PEEL paragraphs, comparison technique, three full practice poems with model responses, and examiner commentary.',
+      'Unseen poetry for GCSE English Literature: the READ method, PEEL paragraphs, comparison technique, common question types, and three practice poems.',
     images: [
       {
         url: '/api/og?title=Unseen+Poetry+Guide+%7C+The+English+Hub',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/resources/poetry/unseen-poetry' },
   title: 'Unseen Poetry Guide',
   description:
-    'Complete GCSE unseen poetry guide. The READ method, PEEL paragraphs, comparison technique, three full practice poems with model responses, and examiner commentary.',
+    'Unseen poetry for GCSE English Literature: the READ method, PEEL paragraphs, comparison technique, common question types, and three practice poems.',
 }
 
 /* ─── Section wrapper ────────────────────────────────────────── */

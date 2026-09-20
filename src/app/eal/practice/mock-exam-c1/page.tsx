@@ -12,7 +12,7 @@ import { MockExamClient } from '@/components/eal/MockExamClient'
 export const metadata: Metadata = {
   title: 'EAL Practice - C1 (Advanced)',
   description:
-    'Free C1-level English practice for Arabic speakers: inversion, mixed conditionals, the subjunctive, cleft sentences and advanced vocabulary, with bilingual explanations. Modelled on Cambridge C1 Advanced.',
+    'Free, scored C1 English practice for Arabic speakers: inversion, mixed conditionals, the subjunctive, cleft sentences and idioms, explained in both languages.',
   alternates: { canonical: 'https://theenglishhub.app/eal/practice/mock-exam-c1' },
 }
 

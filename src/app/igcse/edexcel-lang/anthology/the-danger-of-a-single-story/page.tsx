@@ -20,22 +20,21 @@ import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title:
-      'The Danger of a Single Story - Chimamanda Ngozi Adichie - IGCSE Language A Anthology - The English Hub',
+    title: 'The Danger of a Single Story - IGCSE Language A Anthology - The English Hub',
     description:
-      'Full study guide for The Danger of a Single Story by Chimamanda Ngozi Adichie. Language analysis, structural analysis, key vocabulary and exam practice for Edexcel IGCSE English Language A.',
+      'The Chimamanda Ngozi Adichie talk for Edexcel IGCSE Language A: language features, structural analysis, key vocabulary and Paper 1 practice.',
     images: [
       {
-        url: '/api/og?title=The+Danger+of+a+Single+Story+-+Chimamanda+Ngozi+Adichie+-+IGCSE+Language+A+Anthology+-+The+English+Hub',
+        url: '/api/og?title=The+Danger+of+a+Single+Story+-+IGCSE+Language+A+Anthology+-+The+English+Hub',
         width: 1200,
         height: 630,
-        alt: 'The Danger of a Single Story - Chimamanda Ngozi Adichie - IGCSE Language A Anthology - The English Hub',
+        alt: 'The Danger of a Single Story - IGCSE Language A Anthology - The English Hub',
       },
     ],
   },
-  title: 'The Danger of a Single Story - Chimamanda Ngozi Adichie - IGCSE Language A Anthology',
+  title: 'The Danger of a Single Story - IGCSE Language A Anthology',
   description:
-    'Full study guide for The Danger of a Single Story by Chimamanda Ngozi Adichie. Language analysis, structural analysis, key vocabulary and exam practice for Edexcel IGCSE English Language A.',
+    'The Chimamanda Ngozi Adichie talk for Edexcel IGCSE Language A: language features, structural analysis, key vocabulary and Paper 1 practice.',
   alternates: {
     canonical:
       'https://theenglishhub.app/igcse/edexcel-lang/anthology/the-danger-of-a-single-story',

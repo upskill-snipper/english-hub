@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'AQA A-Level English - The English Hub',
     description:
-      'AQA A-Level English Literature (7712) and Language (7702) revision hub. Cross-board set text analysis, essay technique and language study while full AQA A-Level content is on our roadmap.',
+      'AQA A-Level English Literature (7712) and Language (7702). Cross-board set-text, essay technique and language tools while board guides are written.',
     images: [
       {
         url: '/api/og?title=AQA+A-Level+English+-+The+English+Hub',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   title: 'AQA A-Level English',
   description:
-    'AQA A-Level English Literature (7712) and Language (7702) revision hub. Cross-board set text analysis, essay technique and language study while full AQA A-Level content is on our roadmap.',
+    'AQA A-Level English Literature (7712) and Language (7702). Cross-board set-text, essay technique and language tools while board guides are written.',
   alternates: { canonical: 'https://theenglishhub.app/a-level/aqa' },
   robots: { index: true, follow: true },
 }

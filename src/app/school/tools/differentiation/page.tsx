@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Differentiation Toolkit | The English Hub',
     description:
-      'Build differentiated resources at Foundation, Core, and Extension levels. Auto-generate scaffolded tasks for essay writing, extract analysis, creative writing, and comparison.',
+      'Build differentiated resources at Foundation, Core and Extension levels, with scaffolded tasks for essay writing, extract analysis and comparison.',
     images: [
       {
         url: '/api/og?title=Differentiation+Toolkit+%7C+The+English+Hub',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/school/tools/differentiation' },
   title: 'Differentiation Toolkit',
   description:
-    'Build differentiated resources at Foundation, Core, and Extension levels. Auto-generate scaffolded tasks for essay writing, extract analysis, creative writing, and comparison.',
+    'Build differentiated resources at Foundation, Core and Extension levels, with scaffolded tasks for essay writing, extract analysis and comparison.',
   robots: { index: false, follow: false },
 }
 

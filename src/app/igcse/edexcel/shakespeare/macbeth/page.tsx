@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Macbeth - Edexcel IGCSE Literature Study Guide',
     description:
-      'Full Macbeth study guide for Edexcel IGCSE English Literature. Plot, characters, themes, quotes, Jacobean context and exam technique for the two-part Shakespeare question.',
+      'Macbeth study guide for Edexcel IGCSE Literature: plot, characters, themes, quotes and context for the two-part Shakespeare question.',
     images: [
       {
         url: '/api/og?title=Macbeth+-+Edexcel+IGCSE+Literature+Study+Guide',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   title: 'Macbeth - Edexcel IGCSE Literature Study Guide',
   description:
-    'Full Macbeth study guide for Edexcel IGCSE English Literature. Plot, characters, themes, quotes, Jacobean context and exam technique for the two-part Shakespeare question.',
+    'Macbeth study guide for Edexcel IGCSE Literature: plot, characters, themes, quotes and context for the two-part Shakespeare question.',
 }
 
 const SUB_PAGES = [

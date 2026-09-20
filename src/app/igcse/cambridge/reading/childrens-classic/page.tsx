@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   title: "Children's Classics - Reading Practice Framework",
   description:
-    "Cambridge IGCSE Paper 1 reading practice using children's classics. Comprehension, language analysis, summary and self-assessment with free Project Gutenberg texts.",
+    "Cambridge IGCSE Paper 1 reading framework on children's classics, with comprehension, analysis, summary and vocabulary tasks on Grahame, Montgomery and Carroll.",
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/reading/childrens-classic',
   },

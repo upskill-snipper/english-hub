@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Jekyll and Hyde Essay Plans - GCSE | The English Hub',
     description:
-      'Five GCSE essay plans for Strange Case of Dr Jekyll and Mr Hyde: duality, Hyde as frightening, setting and atmosphere, the Jekyll-Hyde relationship, and secrecy.',
+      'Five GCSE essay plans for Strange Case of Dr Jekyll and Mr Hyde: duality, Hyde as frightening, setting, the Jekyll-Hyde bond and secrecy.',
     images: [
       {
         url: '/api/og?title=Jekyll+and+Hyde+Essay+Plans+-+GCSE+%7C+The+English+Hub',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   title: 'Jekyll and Hyde Essay Plans - GCSE',
   description:
-    'Five GCSE essay plans for Strange Case of Dr Jekyll and Mr Hyde: duality, Hyde as frightening, setting and atmosphere, the Jekyll-Hyde relationship, and secrecy.',
+    'Five GCSE essay plans for Strange Case of Dr Jekyll and Mr Hyde: duality, Hyde as frightening, setting, the Jekyll-Hyde bond and secrecy.',
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/jekyll-and-hyde/essay-plans',
   },

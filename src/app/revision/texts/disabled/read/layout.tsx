@@ -2,7 +2,8 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Read Disabled Online, Free',
-  description: 'Read the full poem of Disabled by Wilfred Owen online, free.',
+  description:
+    'Read the poem Disabled by Wilfred Owen in full, free. The complete public-domain text in a clean, distraction-free reader with three reading modes.',
   alternates: { canonical: '/revision/texts/disabled/read' },
 }
 

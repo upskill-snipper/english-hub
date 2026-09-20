@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Lord of the Flies Character Analysis | The English Hub',
     description:
-      'In-depth character analysis for Lord of the Flies by William Golding: Ralph, Jack, Piggy, Simon, Roger, Sam and Eric -- allegorical roles, development and key quotations.',
+      'Lord of the Flies characters analysed: Ralph, Jack, Piggy, Simon, Roger and Samneric, with symbolic roles, development and key quotations.',
     images: [
       {
         url: '/api/og?title=Lord+of+the+Flies+Character+Analysis+%7C+The+English+Hub',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   title: 'Lord of the Flies Character Analysis',
   description:
-    'In-depth character analysis for Lord of the Flies by William Golding: Ralph, Jack, Piggy, Simon, Roger, Sam and Eric -- allegorical roles, development and key quotations.',
+    'Lord of the Flies characters analysed: Ralph, Jack, Piggy, Simon, Roger and Samneric, with symbolic roles, development and key quotations.',
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/lord-of-the-flies/characters',
   },

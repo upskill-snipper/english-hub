@@ -7,24 +7,24 @@ import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Jekyll and Hyde Study Guide - Cambridge IGCSE English Literature',
+    title: 'Jekyll and Hyde - Cambridge IGCSE',
     description:
-      'Complete Strange Case of Dr Jekyll and Mr Hyde study guide for Cambridge IGCSE English Literature. Plot summary, character analysis, themes, 18 key quotes with analysis, Victorian context, and exam question practice.',
+      'Jekyll and Hyde for Cambridge IGCSE English Literature: plot summary, characters, themes, key quotes, Victorian context and exam questions.',
     images: [
       {
-        url: '/api/og?title=Jekyll+and+Hyde+Study+Guide+-+Cambridge+IGCSE+English+Literature',
+        url: '/api/og?title=Jekyll+and+Hyde+-+Cambridge+IGCSE',
         width: 1200,
         height: 630,
-        alt: 'Jekyll and Hyde Study Guide - Cambridge IGCSE English Literature',
+        alt: 'Jekyll and Hyde - Cambridge IGCSE',
       },
     ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/caie/jekyll-and-hyde',
   },
-  title: 'Jekyll and Hyde Study Guide - Cambridge IGCSE English Literature',
+  title: 'Jekyll and Hyde - Cambridge IGCSE',
   description:
-    'Complete Strange Case of Dr Jekyll and Mr Hyde study guide for Cambridge IGCSE English Literature. Plot summary, character analysis, themes, 18 key quotes with analysis, Victorian context, and exam question practice.',
+    'Jekyll and Hyde for Cambridge IGCSE English Literature: plot summary, characters, themes, key quotes, Victorian context and exam questions.',
 }
 
 /* ─── Data ───────────────────────────────────────────────────── */

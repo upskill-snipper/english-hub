@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Animal Farm Themes - In-Depth Analysis | The English Hub',
     description:
-      'Explore the key themes in Animal Farm: power and corruption, class, language and propaganda, revolution, education and loyalty. GCSE revision with quotes and exam guidance.',
+      'Six Animal Farm themes analysed: power and corruption, class and labour, propaganda, revolution, education and loyalty, with quotes and exam links.',
     images: [
       {
         url: '/api/og?title=Animal+Farm+Themes+-+In-Depth+Analysis+%7C+The+English+Hub',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   title: 'Animal Farm Themes - In-Depth Analysis',
   description:
-    'Explore the key themes in Animal Farm: power and corruption, class, language and propaganda, revolution, education and loyalty. GCSE revision with quotes and exam guidance.',
+    'Six Animal Farm themes analysed: power and corruption, class and labour, propaganda, revolution, education and loyalty, with quotes and exam links.',
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/animal-farm/themes',
   },

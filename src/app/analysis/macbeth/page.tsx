@@ -6,9 +6,9 @@ import { AnalysisBoardGate } from './_components/AnalysisBoardGate'
 import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
-  title: 'Macbeth Analysis: Quotes, Themes & Characters',
+  title: 'Macbeth Quote, Theme & Character Analysis',
   description:
-    'In-depth Macbeth analysis for GCSE. Explore 15 famous quotes line-by-line, key themes like ambition and guilt, and character studies of Macbeth, Lady Macbeth and Banquo. Written by GCSE markers.',
+    'GCSE Macbeth analysis: fifteen quotes read line by line, themes from ambition to guilt, and character studies of Macbeth, Lady Macbeth and Banquo.',
   alternates: { canonical: 'https://theenglishhub.app/analysis/macbeth' },
   openGraph: {
     title: 'Macbeth Analysis Hub - The English Hub',
@@ -102,8 +102,8 @@ export default async function MacbethAnalysisHub() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <LearningResourceJsonLd
-          name="Macbeth Analysis: Quotes, Themes & Characters"
-          description="In-depth Macbeth analysis for GCSE. Explore 15 famous quotes line-by-line, key themes like ambition and guilt, and character studies of Macbeth, Lady Macbeth and Banquo. Written by GCSE markers."
+          name="Macbeth Quote, Theme & Character Analysis"
+          description="GCSE Macbeth analysis: fifteen quotes read line by line, themes from ambition to guilt, and character studies of Macbeth, Lady Macbeth and Banquo."
           educationalLevel="GCSE"
           learningResourceType="Study guide"
           about="Macbeth"
@@ -115,7 +115,7 @@ export default async function MacbethAnalysisHub() {
             { name: 'Home', url: 'https://theenglishhub.app' },
             { name: 'Analysis', url: 'https://theenglishhub.app/analysis' },
             {
-              name: 'Macbeth Analysis: Quotes, Themes & Characters',
+              name: 'Macbeth Quote, Theme & Character Analysis',
               url: 'https://theenglishhub.app/analysis/macbeth',
             },
           ]}

@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Read The Scarlet Letter Online, Free',
   description:
-    'Read the full novel of The Scarlet Letter by Nathaniel Hawthorne online, free. Themes highlighted inline.',
+    'Read The Scarlet Letter by Nathaniel Hawthorne in full, free. The complete public-domain novel, chapter by chapter, with inline theme notes.',
   alternates: { canonical: '/revision/texts/the-scarlet-letter/read' },
 }
 

@@ -8,7 +8,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'IELTS Academic Reading Practice - The English Hub',
   description:
-    'Practise IELTS Academic Reading with original passages and exam-style questions - multiple choice, True/False/Not Given, and sentence completion. Auto-marked with an estimated band score and full explanations.',
+    'Original IELTS Academic Reading passages with multiple choice, True/False/Not Given and sentence completion, auto-marked with a band and explanations.',
   alternates: { canonical: 'https://theenglishhub.app/ielts/reading' },
 }
 

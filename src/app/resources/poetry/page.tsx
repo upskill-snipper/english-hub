@@ -4,22 +4,22 @@ import { PoetryHubClient } from './PoetryHubClient'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Poetry Made Clear - GCSE English Literature Revision',
+    title: 'GCSE Poetry Revision and Analysis',
     description:
-      'Comprehensive GCSE poetry revision. Power and Conflict, Love and Relationships anthology analysis, poetry techniques, unseen poetry guides, and comparison skills.',
+      'GCSE poetry revision: AQA Power and Conflict and Love and Relationships, the Edexcel and Eduqas anthologies, poetic techniques, unseen poetry and comparison.',
     images: [
       {
-        url: '/api/og?title=Poetry+Made+Clear+-+GCSE+English+Literature+Revision',
+        url: '/api/og?title=GCSE+Poetry+Revision+and+Analysis',
         width: 1200,
         height: 630,
-        alt: 'Poetry Made Clear - GCSE English Literature Revision',
+        alt: 'GCSE Poetry Revision and Analysis',
       },
     ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/poetry' },
-  title: 'Poetry Made Clear - GCSE English Literature Revision',
+  title: 'GCSE Poetry Revision and Analysis',
   description:
-    'Comprehensive GCSE poetry revision. Power and Conflict, Love and Relationships anthology analysis, poetry techniques, unseen poetry guides, and comparison skills.',
+    'GCSE poetry revision: AQA Power and Conflict and Love and Relationships, the Edexcel and Eduqas anthologies, poetic techniques, unseen poetry and comparison.',
 }
 
 export default function PoetryHubPage() {

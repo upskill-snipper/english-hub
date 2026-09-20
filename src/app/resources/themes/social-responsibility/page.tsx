@@ -5,22 +5,22 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Social Responsibility Theme Across Texts | GCSE English Literature',
+    title: 'Social Responsibility in GCSE Literature',
     description:
-      'Explore the theme of social responsibility across GCSE set texts: An Inspector Calls, A Christmas Carol, and London by William Blake. Key quotes, analysis, and comparison ideas.',
+      'Social responsibility across GCSE set texts: An Inspector Calls, A Christmas Carol and London by William Blake. Key quotations and comparison ideas.',
     images: [
       {
-        url: '/api/og?title=Social+Responsibility+Theme+Across+Texts+%7C+GCSE+English+Literature',
+        url: '/api/og?title=Social+Responsibility+in+GCSE+Literature',
         width: 1200,
         height: 630,
-        alt: 'Social Responsibility Theme Across Texts | GCSE English Literature',
+        alt: 'Social Responsibility in GCSE Literature',
       },
     ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/themes/social-responsibility' },
-  title: 'Social Responsibility Theme Across Texts | GCSE English Literature',
+  title: 'Social Responsibility in GCSE Literature',
   description:
-    'Explore the theme of social responsibility across GCSE set texts: An Inspector Calls, A Christmas Carol, and London by William Blake. Key quotes, analysis, and comparison ideas.',
+    'Social responsibility across GCSE set texts: An Inspector Calls, A Christmas Carol and London by William Blake. Key quotations and comparison ideas.',
 }
 
 /* ─── Data ───────────────────────────────────────────────────── */

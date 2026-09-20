@@ -13,7 +13,7 @@ export const metadata: Metadata = {
       'AI lesson plans, AI essay marking, classroom analytics and a growing library of resources - built around your exam board specification.',
     images: [
       {
-        url: '/api/og?title=English+department+tools&subtitle=AI+marking+%2B+lesson+planning+%2B+analytics',
+        url: '/api/og?title=English+teacher+tools+and+AI+marking+-+The+English+Hub',
         width: 1200,
         height: 630,
         alt: 'English department tools - AI marking, lesson planning and analytics',

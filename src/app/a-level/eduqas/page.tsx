@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'WJEC Eduqas A-Level English - The English Hub',
     description:
-      'WJEC Eduqas A-Level English Literature and Language revision hub. Cross-board set text analysis, essay technique and language study while full Eduqas A-Level content is on our roadmap.',
+      'WJEC Eduqas A-Level English Literature and Language. Cross-board set-text, essay technique and language study tools while board guides are written.',
     images: [
       {
         url: '/api/og?title=WJEC+Eduqas+A-Level+English+-+The+English+Hub',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   title: 'WJEC Eduqas A-Level English',
   description:
-    'WJEC Eduqas A-Level English Literature and Language revision hub. Cross-board set text analysis, essay technique and language study while full Eduqas A-Level content is on our roadmap.',
+    'WJEC Eduqas A-Level English Literature and Language. Cross-board set-text, essay technique and language study tools while board guides are written.',
   alternates: { canonical: 'https://theenglishhub.app/a-level/eduqas' },
   robots: { index: true, follow: true },
 }

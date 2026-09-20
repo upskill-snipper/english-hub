@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Paper 2 Directed Writing & Composition - IGCSE Language A',
     description:
-      'IGCSE Language A Paper 2 overview. Section A directed writing, Section B descriptive or narrative composition. Marks, timings and technique. Aligns with Cambridge syllabus 0500.',
+      'IGCSE Language A Paper 2: Section A directed writing and Section B composition, 80 marks in two hours. Task breakdown and a suggested timing plan.',
     images: [
       {
         url: '/api/og?title=Paper+2+Directed+Writing+%26+Composition+-+IGCSE+Language+A',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   title: 'Paper 2 Directed Writing & Composition - IGCSE Language A',
   description:
-    'IGCSE Language A Paper 2 overview. Section A directed writing, Section B descriptive or narrative composition. Marks, timings and technique. Aligns with Cambridge syllabus 0500.',
+    'IGCSE Language A Paper 2: Section A directed writing and Section B composition, 80 marks in two hours. Task breakdown and a suggested timing plan.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/0500/paper-2',
   },

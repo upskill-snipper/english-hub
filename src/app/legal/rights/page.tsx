@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Rights & Permissions - The English Hub',
     description:
-      'Directory of publishers, literary agents, and rights-holders we contact for permissions and source attribution. Quotations on the platform are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation).',
+      'The publishers, literary agents and rights-holders we contact for permissions and attribution. Quotations here are short fair-dealing extracts under CDPA 1988.',
     images: [
       {
         url: '/api/og?title=Rights+%26+Permissions+-+The+English+Hub',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/legal/rights' },
   title: 'Rights & Permissions',
   description:
-    'Directory of publishers, literary agents, and rights-holders we contact for permissions and source attribution. Quotations on the platform are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation).',
+    'The publishers, literary agents and rights-holders we contact for permissions and attribution. Quotations here are short fair-dealing extracts under CDPA 1988.',
 }
 
 /* ─── Rights-holder data ─────────────────────────────────────── */

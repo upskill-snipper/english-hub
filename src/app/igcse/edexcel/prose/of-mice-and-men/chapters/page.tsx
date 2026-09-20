@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Of Mice and Men Chapter Analysis - Edexcel IGCSE Literature',
     description:
-      'Chapter-by-chapter analysis of Steinbeck\u2019s Of Mice and Men for Edexcel IGCSE Literature: summaries, key events, character development, key quotes and language techniques.',
+      'All six sections of Of Mice and Men for Edexcel IGCSE Literature: summaries, key events, character development and three quotations each.',
     images: [
       {
         url: '/api/og?title=Of+Mice+and+Men+Chapter+Analysis+-+Edexcel+IGCSE+Literature',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   title: 'Of Mice and Men Chapter Analysis - Edexcel IGCSE Literature',
   description:
-    'Chapter-by-chapter analysis of Steinbeck\u2019s Of Mice and Men for Edexcel IGCSE Literature: summaries, key events, character development, key quotes and language techniques.',
+    'All six sections of Of Mice and Men for Edexcel IGCSE Literature: summaries, key events, character development and three quotations each.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/prose/of-mice-and-men/chapters',
   },

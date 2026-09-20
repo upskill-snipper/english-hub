@@ -5,23 +5,23 @@ import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
-  title: 'Pearson Edexcel GCSE English Language techniques',
+  title: 'Edexcel GCSE language techniques',
   description:
     'Language and structural techniques for Pearson Edexcel GCSE English: identification, analysis, and how to write about them.',
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-language/edexcel/techniques',
   },
   openGraph: {
-    title: 'Pearson Edexcel GCSE English Language techniques - The English Hub',
+    title: 'Edexcel GCSE language techniques - The English Hub',
     description:
       'Language and structural techniques for Pearson Edexcel GCSE English: identification, analysis, and how to write about them.',
     url: 'https://theenglishhub.app/resources/english-language/edexcel/techniques',
     images: [
       {
-        url: '/api/og?title=Pearson+Edexcel+GCSE+English+Language+techniques+-+The+English+Hub',
+        url: '/api/og?title=Edexcel+GCSE+language+techniques+-+The+English+Hub',
         width: 1200,
         height: 630,
-        alt: 'Pearson Edexcel GCSE English Language techniques - The English Hub',
+        alt: 'Edexcel GCSE language techniques - The English Hub',
       },
     ],
   },

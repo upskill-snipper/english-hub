@@ -7,15 +7,15 @@ import { headers } from 'next/headers'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Analytical Writing Masterclass | The English Hub',
+    title: 'Analytical Writing Masterclass',
     description:
-      'Complete guide to analytical writing for GCSE and IGCSE English. PEEL paragraphs, embedding quotations, language and structural analysis, evaluative vocabulary, linking to context, model literature and language essays with annotations, comparing texts, and grade-level response comparisons.',
+      'Analytical writing for GCSE and IGCSE English: PEEL, embedding quotations, language and structural analysis, evaluative vocabulary, context, model essays.',
     images: [
       {
-        url: '/api/og?title=Analytical+Writing+Masterclass+%7C+The+English+Hub',
+        url: '/api/og?title=Analytical+Writing+Masterclass',
         width: 1200,
         height: 630,
-        alt: 'Analytical Writing Masterclass | The English Hub',
+        alt: 'Analytical Writing Masterclass',
       },
     ],
   },
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   title: 'Analytical Writing Masterclass',
   description:
-    'Complete guide to analytical writing for GCSE and IGCSE English. PEEL paragraphs, embedding quotations, language and structural analysis, evaluative vocabulary, linking to context, model literature and language essays with annotations, comparing texts, and grade-level response comparisons.',
+    'Analytical writing for GCSE and IGCSE English: PEEL, embedding quotations, language and structural analysis, evaluative vocabulary, context, model essays.',
 }
 
 /* ─── Annotation component ───────────────────────────────────── */

@@ -5,7 +5,7 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   title: 'School content policy',
   description:
-    'How The English Hub selects, frames and gates set-text content for GCSE, IGCSE and KS3 English - including content-guidance practice for international and culturally-sensitive markets such as the GCC.',
+    'How The English Hub selects, frames and gates set-text content for GCSE, IGCSE and KS3 English, including content guidance for schools in the GCC.',
   alternates: { canonical: 'https://theenglishhub.app/legal/school-content-policy' },
   openGraph: {
     title: 'School content policy - The English Hub',

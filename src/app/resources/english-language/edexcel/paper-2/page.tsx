@@ -9,22 +9,22 @@ import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Edexcel Paper 2: Non-Fiction & Writing for Real Purposes',
+    title: 'Edexcel Paper 2: Non-fiction writing',
     description:
-      'Complete revision guide for Edexcel English Language Paper 2 (1EN0/02). Two linked non-fiction texts, writing for real purposes, marking guides, key skills, and example responses.',
+      'Edexcel GCSE English Language Paper 2 (1EN0/02): two linked non-fiction texts, synthesis and comparison, writing for real purposes.',
     images: [
       {
-        url: '/api/og?title=Edexcel+Paper+2%3A+Non-Fiction+%26+Writing+for+Real+Purposes',
+        url: '/api/og?title=Edexcel+Paper+2%3A+Non-fiction+writing',
         width: 1200,
         height: 630,
-        alt: 'Edexcel Paper 2: Non-Fiction & Writing for Real Purposes',
+        alt: 'Edexcel Paper 2: Non-fiction writing',
       },
     ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-language/edexcel/paper-2' },
-  title: 'Edexcel Paper 2: Non-Fiction & Writing for Real Purposes',
+  title: 'Edexcel Paper 2: Non-fiction writing',
   description:
-    'Complete revision guide for Edexcel English Language Paper 2 (1EN0/02). Two linked non-fiction texts, writing for real purposes, marking guides, key skills, and example responses.',
+    'Edexcel GCSE English Language Paper 2 (1EN0/02): two linked non-fiction texts, synthesis and comparison, writing for real purposes.',
 }
 
 /* ─── Page component ─────────────────────────────────────────── */

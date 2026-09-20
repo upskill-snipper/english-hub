@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'To Kill a Mockingbird Essay Plans - Edexcel IGCSE Literature',
     description:
-      'Five IGCSE essay plans for To Kill a Mockingbird with PEEL paragraphs: racism and justice, moral courage, Scout\u2019s growth, the mockingbird symbol and Atticus as a moral figure.',
+      'Five To Kill a Mockingbird essay plans for Edexcel IGCSE Literature, each with an introduction, three PEEL paragraphs and a conclusion.',
     images: [
       {
         url: '/api/og?title=To+Kill+a+Mockingbird+Essay+Plans+-+Edexcel+IGCSE+Literature',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   title: 'To Kill a Mockingbird Essay Plans - Edexcel IGCSE Literature',
   description:
-    'Five IGCSE essay plans for To Kill a Mockingbird with PEEL paragraphs: racism and justice, moral courage, Scout\u2019s growth, the mockingbird symbol and Atticus as a moral figure.',
+    'Five To Kill a Mockingbird essay plans for Edexcel IGCSE Literature, each with an introduction, three PEEL paragraphs and a conclusion.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird/essay-plans',
   },

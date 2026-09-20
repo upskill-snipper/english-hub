@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'For Schools | Founding Schools Programme 2026',
+  title: 'For Schools - Founding Schools Programme',
   description:
-    'Join the Founding Schools Programme. Full platform access for all students and teachers. 5-8 hours saved per teacher per week. Ofsted-ready reporting. Only 10 places.',
+    'The Founding Schools Programme: full platform access for every student and teacher, department analytics and whole-department progress reporting. Ten places.',
   alternates: { canonical: 'https://theenglishhub.app/for-schools' },
   openGraph: {
-    title: 'For Schools | Founding Schools Programme 2026 - The English Hub',
+    title: 'For Schools - Founding Schools Programme - The English Hub',
     description:
       'Founding Schools Programme: unlimited students and teachers, all courses, analytics dashboard, priority onboarding. Only 10 places for 2026.',
     images: [{ url: 'https://theenglishhub.app/og/schools.png', width: 1200, height: 630 }],

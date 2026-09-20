@@ -9,22 +9,22 @@ import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Cambridge IGCSE English Language writing skills - The English Hub',
+    title: 'Cambridge IGCSE writing skills - The English Hub',
     description:
       'Writing skills for Cambridge IGCSE English Language: structure, vocabulary, sentence variety, and creative/transactional writing models.',
     images: [
       {
-        url: '/api/og?title=Cambridge+IGCSE+English+Language+writing+skills+-+The+English+Hub',
+        url: '/api/og?title=Cambridge+IGCSE+writing+skills+-+The+English+Hub',
         width: 1200,
         height: 630,
-        alt: 'Cambridge IGCSE English Language writing skills - The English Hub',
+        alt: 'Cambridge IGCSE writing skills - The English Hub',
       },
     ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-language/caie/writing-skills',
   },
-  title: 'Cambridge IGCSE English Language writing skills',
+  title: 'Cambridge IGCSE writing skills',
   description:
     'Writing skills for Cambridge IGCSE English Language: structure, vocabulary, sentence variety, and creative/transactional writing models.',
   keywords: [
@@ -70,7 +70,7 @@ export default async function WritingSkillsPage() {
         ]}
       />
       <LearningResourceJsonLd
-        name="Cambridge IGCSE English Language writing skills"
+        name="Cambridge IGCSE writing skills"
         description="Writing skills for Cambridge IGCSE English Language: structure, vocabulary, sentence variety, and creative/transactional writing models."
         educationalLevel="IGCSE"
         learningResourceType="Lesson"

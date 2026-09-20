@@ -16,17 +16,17 @@ import {
 import { t, tMany } from '@/lib/i18n/t'
 
 export const metadata = {
-  title: 'GCSE and IGCSE English revision for students',
+  title: 'GCSE & IGCSE English revision for students',
   description:
     'Personalised English revision built around your exam board. AI-marked essays, anthology guides, mock papers and grade tracking. Free to start.',
   alternates: { canonical: 'https://theenglishhub.app/for-students' },
   openGraph: {
-    title: 'GCSE and IGCSE English revision for students - The English Hub',
+    title: 'GCSE & IGCSE English revision for students - The English Hub',
     description:
       'Personalised English revision built around your exam board. AI-marked essays, anthology guides, mock papers and grade tracking. Free to start.',
     images: [
       {
-        url: '/api/og?title=Your+English+revision,+in+one+place&subtitle=GCSE+and+IGCSE+%E2%80%94+built+around+your+exam+board',
+        url: '/api/og?title=GCSE+%26+IGCSE+English+revision+for+students+-+The+English+Hub',
         width: 1200,
         height: 630,
         alt: 'Your English revision, in one place - GCSE and IGCSE built around your exam board',
@@ -35,7 +35,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'GCSE and IGCSE English revision for students - The English Hub',
+    title: 'GCSE & IGCSE English revision for students - The English Hub',
     description:
       'Personalised English revision built around your exam board. AI-marked essays, anthology guides, mock papers and grade tracking. Free to start.',
     images: [

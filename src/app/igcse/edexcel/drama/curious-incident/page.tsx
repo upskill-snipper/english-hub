@@ -11,20 +11,19 @@ import StudyTools from '@/components/study/StudyTools'
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title:
-      'The Curious Incident of the Dog in the Night-Time - Edexcel IGCSE Literature Study Guide',
+    title: 'The Curious Incident of the Dog in the Night-Time - IGCSE',
     description:
       'Simon Stephens\u2019s stage adaptation of Mark Haddon\u2019s novel for Edexcel IGCSE Literature: plot, characters, themes and key quotations.',
     images: [
       {
-        url: '/api/og?title=The+Curious+Incident+of+the+Dog+in+the+Night-Time+-+Edexcel+IGCSE+Literature+Study+Guide',
+        url: '/api/og?title=The+Curious+Incident+of+the+Dog+in+the+Night-Time+-+IGCSE',
         width: 1200,
         height: 630,
-        alt: 'The Curious Incident of the Dog in the Night-Time - Edexcel IGCSE Literature Study Guide',
+        alt: 'The Curious Incident of the Dog in the Night-Time - IGCSE',
       },
     ],
   },
-  title: 'The Curious Incident of the Dog in the Night-Time - Edexcel IGCSE Literature Study Guide',
+  title: 'The Curious Incident of the Dog in the Night-Time - IGCSE',
   description:
     'Simon Stephens\u2019s stage adaptation of Mark Haddon\u2019s novel for Edexcel IGCSE Literature: plot, characters, themes and key quotations.',
   alternates: {
@@ -180,7 +179,7 @@ export default async function CuriousIncidentHubPage() {
   return (
     <div className="space-y-10 pb-16">
       <CourseJsonLd
-        name="The Curious Incident of the Dog in the Night-Time - Edexcel IGCSE Literature Study Guide"
+        name="The Curious Incident of the Dog in the Night-Time - IGCSE"
         description="In-depth study guide for The Curious Incident of the Dog in the Night-Time for Edexcel IGCSE English Literature, covering plot, characters, themes, key quotations, context and exam essay plans."
       />
       <BreadcrumbJsonLd

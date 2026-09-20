@@ -5,22 +5,22 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Getting a Grade 5 | Grade Targets | The English Hub',
+    title: 'Getting a Grade 5 | Grade Targets',
     description:
-      'Everything you need to achieve a Grade 5 in GCSE English. What examiners expect, skills checklists, common weaknesses, example responses, and specific tips for moving from a 4 to a 5.',
+      'What a Grade 5 in GCSE English takes: examiner expectations, a skills checklist, common weaknesses, example responses, and how to move up from a 4.',
     images: [
       {
-        url: '/api/og?title=Getting+a+Grade+5+%7C+Grade+Targets+%7C+The+English+Hub',
+        url: '/api/og?title=Getting+a+Grade+5+%7C+Grade+Targets',
         width: 1200,
         height: 630,
-        alt: 'Getting a Grade 5 | Grade Targets | The English Hub',
+        alt: 'Getting a Grade 5 | Grade Targets',
       },
     ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/grade-targets/grade-5' },
   title: 'Getting a Grade 5 | Grade Targets',
   description:
-    'Everything you need to achieve a Grade 5 in GCSE English. What examiners expect, skills checklists, common weaknesses, example responses, and specific tips for moving from a 4 to a 5.',
+    'What a Grade 5 in GCSE English takes: examiner expectations, a skills checklist, common weaknesses, example responses, and how to move up from a 4.',
 }
 
 /* ─── Data ───────────────────────────────────────────────────── */

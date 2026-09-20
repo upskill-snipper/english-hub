@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     locale: 'en_GB',
     images: [
       {
-        url: '/api/og?title=English+Hub+Pricing&subtitle=7-day+free+trial+on+every+paid+plan',
+        url: '/api/og?title=Pricing+-+The+English+Hub',
         width: 1200,
         height: 630,
         alt: 'The English Hub pricing - 7-day free trial on every paid plan',

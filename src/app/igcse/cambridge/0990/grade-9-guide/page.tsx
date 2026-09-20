@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'How to get a Grade 9 | Cambridge IGCSE Language B | The English Hub',
     description:
-      'Grade 9 guide for Cambridge IGCSE Language B First Language English. Writing techniques, analytical depth and structural sophistication needed to reach the top grade.',
+      'Grade 9 goes to roughly the top 4% of Cambridge IGCSE Language B entries. Analytical sophistication, controlled style, exam craft and five habits.',
     images: [
       {
         url: '/api/og?title=How+to+get+a+Grade+9+%7C+Cambridge+IGCSE+Language+B+%7C+The+English+Hub',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   title: 'How to get a Grade 9 | Cambridge IGCSE Language B',
   description:
-    'Grade 9 guide for Cambridge IGCSE Language B First Language English. Writing techniques, analytical depth and structural sophistication needed to reach the top grade.',
+    'Grade 9 goes to roughly the top 4% of Cambridge IGCSE Language B entries. Analytical sophistication, controlled style, exam craft and five habits.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/cambridge/0990/grade-9-guide' },
 }
 

@@ -31,15 +31,15 @@ async function resolveHasAccess(): Promise<boolean> {
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Model Language Analysis Answers | The English Hub',
+    title: 'Model Language Analysis Answers',
     description:
-      'Grade 3, 5, 7, and 9 model language analysis responses with examiner commentary, technique annotations, and side-by-side comparisons showing what makes the difference between grades.',
+      'Model language analysis answers at grades 3, 5, 7 and 9, with examiner commentary and a side-by-side comparison of what separates one grade from the next.',
     images: [
       {
-        url: '/api/og?title=Model+Language+Analysis+Answers+%7C+The+English+Hub',
+        url: '/api/og?title=Model+Language+Analysis+Answers',
         width: 1200,
         height: 630,
-        alt: 'Model Language Analysis Answers | The English Hub',
+        alt: 'Model Language Analysis Answers',
       },
     ],
   },
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   title: 'Model Language Analysis Answers',
   description:
-    'Grade 3, 5, 7, and 9 model language analysis responses with examiner commentary, technique annotations, and side-by-side comparisons showing what makes the difference between grades.',
+    'Model language analysis answers at grades 3, 5, 7 and 9, with examiner commentary and a side-by-side comparison of what separates one grade from the next.',
 }
 
 /* ─── Annotation component ───────────────────────────────────── */

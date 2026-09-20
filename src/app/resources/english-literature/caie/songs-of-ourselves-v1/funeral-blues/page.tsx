@@ -11,7 +11,8 @@ import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Funeral Blues - W.H. Auden | Cambridge IGCSE 0475',
-    description: 'Study guide for ',
+    description:
+      'Funeral Blues by W.H. Auden (1940 revision) for Cambridge IGCSE 0475, Songs of Ourselves Volume 1: themes, form, structure and study notes.',
     images: [
       {
         url: '/api/og?title=Funeral+Blues+-+W.H.+Auden+%7C+Cambridge+IGCSE+0475',
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
   },
   title: 'Funeral Blues - W.H. Auden | Cambridge IGCSE 0475',
   description:
-    "Study guide for 'Funeral Blues' by W.H. Auden (1940 revised version). Themes, form and structure for Cambridge IGCSE Literature in English (0475), Songs of Ourselves Vol 1 Part 4.",
+    'Funeral Blues by W.H. Auden (1940 revision) for Cambridge IGCSE 0475, Songs of Ourselves Volume 1: themes, form, structure and study notes.',
   alternates: {
     canonical:
       'https://theenglishhub.app/resources/english-literature/caie/songs-of-ourselves-v1/funeral-blues',

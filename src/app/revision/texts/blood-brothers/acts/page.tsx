@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Blood Brothers - Act-by-Act Analysis | The English Hub',
     description:
-      'Detailed act-by-act analysis of Blood Brothers by Willy Russell with key quotes and examiner-focused commentary.',
+      'Blood Brothers by Willy Russell analysed act by act: the pact, childhood, adolescence, adulthood and the climax, with key quotes and commentary.',
     images: [
       {
         url: '/api/og?title=Blood+Brothers+-+Act-by-Act+Analysis+%7C+The+English+Hub',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   title: 'Blood Brothers - Act-by-Act Analysis',
   description:
-    'Detailed act-by-act analysis of Blood Brothers by Willy Russell with key quotes and examiner-focused commentary.',
+    'Blood Brothers by Willy Russell analysed act by act: the pact, childhood, adolescence, adulthood and the climax, with key quotes and commentary.',
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/blood-brothers/acts',
   },

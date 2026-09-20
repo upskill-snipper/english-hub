@@ -8,9 +8,9 @@ import { STRINGS as _EAL_STRINGS } from './content'
 // Served via Next.js default static caching.
 
 export const metadata: Metadata = {
-  title: 'AI Essay Feedback: AQA vs Edexcel vs OCR on the Same Macbeth Essay',
+  title: 'AQA vs Edexcel vs OCR: One Macbeth Essay',
   description:
-    "One Year-10 Macbeth essay, marked three times by The English Hub's AI, following each board's mark scheme. See exactly how board-specific AO feedback differs - and why a generic AI marker gets ~60% of the advice wrong.",
+    'One Year-10 Macbeth essay, marked three times against the AQA, Edexcel and OCR mark schemes, so you can see how board-specific AO feedback differs.',
   alternates: { canonical: 'https://theenglishhub.app/analysis/ai-feedback-head-to-head' },
   openGraph: {
     title: 'AI Essay Feedback: AQA vs Edexcel vs OCR - Same Macbeth Essay',

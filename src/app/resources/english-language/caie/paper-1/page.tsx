@@ -8,22 +8,22 @@ import { STRINGS as _EAL_STRINGS } from './content'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Paper 1: Reading | Cambridge IGCSE English Language',
+    title: 'Cambridge IGCSE Paper 1: Reading',
     description:
-      'Complete guide to Cambridge IGCSE English Language Paper 1 (Reading). Covers comprehension question types, summary writing, note-making, and passage analysis with marker tips.',
+      'Cambridge IGCSE English Language Paper 1 Reading: comprehension question types, summary writing, note-making and language analysis.',
     images: [
       {
-        url: '/api/og?title=Paper+1%3A+Reading+%7C+Cambridge+IGCSE+English+Language',
+        url: '/api/og?title=Cambridge+IGCSE+Paper+1%3A+Reading',
         width: 1200,
         height: 630,
-        alt: 'Paper 1: Reading | Cambridge IGCSE English Language',
+        alt: 'Cambridge IGCSE Paper 1: Reading',
       },
     ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-language/caie/paper-1' },
-  title: 'Paper 1: Reading | Cambridge IGCSE English Language',
+  title: 'Cambridge IGCSE Paper 1: Reading',
   description:
-    'Complete guide to Cambridge IGCSE English Language Paper 1 (Reading). Covers comprehension question types, summary writing, note-making, and passage analysis with marker tips.',
+    'Cambridge IGCSE English Language Paper 1 Reading: comprehension question types, summary writing, note-making and language analysis.',
   keywords: [
     'IGCSE English Language Paper 1',
     'Cambridge reading comprehension',

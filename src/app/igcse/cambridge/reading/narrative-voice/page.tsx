@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Narrative Voice - Reading Practice Framework - The English Hub',
     description:
-      'Cambridge IGCSE Paper 1 reading practice on first-person vs third-person narration. Comprehension, language analysis, summary and self-assessment with free Project Gutenberg texts.',
+      'Cambridge IGCSE Paper 1 reading framework on narrative voice and point of view, set on Treasure Island, Heart of Darkness and Middlemarch.',
     images: [
       {
         url: '/api/og?title=Narrative+Voice+-+Reading+Practice+Framework+-+The+English+Hub',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   title: 'Narrative Voice - Reading Practice Framework',
   description:
-    'Cambridge IGCSE Paper 1 reading practice on first-person vs third-person narration. Comprehension, language analysis, summary and self-assessment with free Project Gutenberg texts.',
+    'Cambridge IGCSE Paper 1 reading framework on narrative voice and point of view, set on Treasure Island, Heart of Darkness and Middlemarch.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/reading/narrative-voice',
   },

@@ -9,21 +9,21 @@ import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'A Christmas Carol Model Essays - Grade 5, 7 & 9 | The English Hub',
+    title: 'A Christmas Carol Model Essays - Grade 5, 7 & 9',
     description: 'Three fully-annotated model essays answering ',
     images: [
       {
-        url: '/api/og?title=A+Christmas+Carol+Model+Essays+-+Grade+5%2C+7+%26+9+%7C+The+English+Hub',
+        url: '/api/og?title=A+Christmas+Carol+Model+Essays+-+Grade+5%2C+7+%26+9',
         width: 1200,
         height: 630,
-        alt: 'A Christmas Carol Model Essays - Grade 5, 7 & 9 | The English Hub',
+        alt: 'A Christmas Carol Model Essays - Grade 5, 7 & 9',
       },
     ],
   },
   alternates: { canonical: 'https://theenglishhub.app/marking/sample/christmas-carol' },
   title: 'A Christmas Carol Model Essays - Grade 5, 7 & 9',
   description:
-    "Three fully-annotated model essays answering 'How does Dickens present Scrooge's transformation?' at Grade 5, 7 and 9, with AO breakdowns, paragraph annotations and marker commentary. AQA mark scheme.",
+    'Three annotated model A Christmas Carol essays on the transformation of Scrooge, at Grade 5, 7 and 9, with AO breakdowns and marker commentary.',
   keywords: [
     'A Christmas Carol',
     'model essay',

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Essay Structure Templates',
     description:
-      'Proven essay structure templates for GCSE and IGCSE English exams. Introduction techniques, PEEL paragraphs, conclusion strategies, topic sentences, and paragraph count guidance for different mark allocations.',
+      'Essay structure for GCSE and IGCSE English: four ways to open, PEEL paragraphs, topic sentences, linking, conclusions, and how many paragraphs to write.',
     images: [
       {
         url: '/api/og?title=Essay+Structure+Templates',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/resources/exam-technique/essay-structure' },
   title: 'Essay Structure Templates',
   description:
-    'Proven essay structure templates for GCSE and IGCSE English exams. Introduction techniques, PEEL paragraphs, conclusion strategies, topic sentences, and paragraph count guidance for different mark allocations.',
+    'Essay structure for GCSE and IGCSE English: four ways to open, PEEL paragraphs, topic sentences, linking, conclusions, and how many paragraphs to write.',
 }
 
 /* ─── Page ───────────────────────────────────────────────────── */

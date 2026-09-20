@@ -8,22 +8,22 @@ import { STRINGS as _EAL_STRINGS } from './content'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Romeo and Juliet Study Guide for OCR | The English Hub',
+    title: 'Romeo and Juliet - OCR GCSE Literature - The English Hub',
     description:
       'Comprehensive Romeo and Juliet study guide for OCR GCSE English Literature. Characters, themes, key quotations, context, and essay planning.',
     images: [
       {
-        url: '/api/og?title=Romeo+and+Juliet+Study+Guide+for+OCR+%7C+The+English+Hub',
+        url: '/api/og?title=Romeo+and+Juliet+-+OCR+GCSE+Literature+-+The+English+Hub',
         width: 1200,
         height: 630,
-        alt: 'Romeo and Juliet Study Guide for OCR | The English Hub',
+        alt: 'Romeo and Juliet - OCR GCSE Literature - The English Hub',
       },
     ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/ocr/romeo-and-juliet',
   },
-  title: 'Romeo and Juliet Study Guide for OCR',
+  title: 'Romeo and Juliet - OCR GCSE Literature',
   description:
     'Comprehensive Romeo and Juliet study guide for OCR GCSE English Literature. Characters, themes, key quotations, context, and essay planning.',
 }

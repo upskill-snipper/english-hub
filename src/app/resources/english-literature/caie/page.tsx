@@ -7,19 +7,19 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Cambridge IGCSE English Literature resources - The English Hub',
+    title: 'Cambridge IGCSE English Literature 0475 - The English Hub',
     description:
       'Cambridge IGCSE English Literature 0475 set-text guides, Songs of Ourselves anthology, unseen poetry and exam technique walkthroughs for Paper 1 and 2.',
     images: [
       {
-        url: '/api/og?title=Cambridge+IGCSE+English+Literature+resources+-+The+English+Hub',
+        url: '/api/og?title=Cambridge+IGCSE+English+Literature+0475+-+The+English+Hub',
         width: 1200,
         height: 630,
-        alt: 'Cambridge IGCSE English Literature resources - The English Hub',
+        alt: 'Cambridge IGCSE English Literature 0475 - The English Hub',
       },
     ],
   },
-  title: 'Cambridge IGCSE English Literature resources',
+  title: 'Cambridge IGCSE English Literature 0475',
   description:
     'Cambridge IGCSE English Literature 0475 set-text guides, Songs of Ourselves anthology, unseen poetry and exam technique walkthroughs for Paper 1 and 2.',
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/caie' },

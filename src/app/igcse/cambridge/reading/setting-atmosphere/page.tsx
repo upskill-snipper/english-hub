@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Setting and Atmosphere - Reading Practice Framework - The English Hub',
     description:
-      'Cambridge IGCSE Paper 1 reading practice on setting and atmosphere. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
+      'Cambridge IGCSE Paper 1 reading framework on setting and atmosphere, set on Dracula, The Hound of the Baskervilles and The Turn of the Screw.',
     images: [
       {
         url: '/api/og?title=Setting+and+Atmosphere+-+Reading+Practice+Framework+-+The+English+Hub',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   title: 'Setting and Atmosphere - Reading Practice Framework',
   description:
-    'Cambridge IGCSE Paper 1 reading practice on setting and atmosphere. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
+    'Cambridge IGCSE Paper 1 reading framework on setting and atmosphere, set on Dracula, The Hound of the Baskervilles and The Turn of the Screw.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/reading/setting-atmosphere',
   },

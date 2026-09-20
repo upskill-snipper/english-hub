@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   title: 'H is for Hawk - Helen Macdonald - IGCSE Language A Anthology',
   description:
-    'Study guide for "H is for Hawk" by Helen Macdonald. Language analysis, structural analysis, themes and exam practice for Edexcel IGCSE English Language A Paper 1 Section A.',
+    'Helen Macdonald on grief and a goshawk, for Edexcel IGCSE Language A: themes, structural analysis, purpose and Paper 1 Section A practice.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/edexcel-lang/anthology/h-is-for-hawk' },
 }
 

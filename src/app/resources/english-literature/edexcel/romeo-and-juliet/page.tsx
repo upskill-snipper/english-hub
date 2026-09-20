@@ -6,24 +6,24 @@ import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Romeo and Juliet Study Guide - Edexcel GCSE English Literature',
+    title: 'Romeo and Juliet - Edexcel GCSE Literature',
     description:
-      'Complete Romeo and Juliet revision guide for Edexcel GCSE English Literature. Plot summary, character analysis, themes, 15+ key quotes, historical context, and exam technique.',
+      'Romeo and Juliet for Edexcel GCSE English Literature Paper 1: plot, characters, themes, key quotes, historical context and exam technique.',
     images: [
       {
-        url: '/api/og?title=Romeo+and+Juliet+Study+Guide+-+Edexcel+GCSE+English+Literature',
+        url: '/api/og?title=Romeo+and+Juliet+-+Edexcel+GCSE+Literature',
         width: 1200,
         height: 630,
-        alt: 'Romeo and Juliet Study Guide - Edexcel GCSE English Literature',
+        alt: 'Romeo and Juliet - Edexcel GCSE Literature',
       },
     ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/romeo-and-juliet',
   },
-  title: 'Romeo and Juliet Study Guide - Edexcel GCSE English Literature',
+  title: 'Romeo and Juliet - Edexcel GCSE Literature',
   description:
-    'Complete Romeo and Juliet revision guide for Edexcel GCSE English Literature. Plot summary, character analysis, themes, 15+ key quotes, historical context, and exam technique.',
+    'Romeo and Juliet for Edexcel GCSE English Literature Paper 1: plot, characters, themes, key quotes, historical context and exam technique.',
 }
 
 /* ─── Data ───────────────────────────────────────────────────── */

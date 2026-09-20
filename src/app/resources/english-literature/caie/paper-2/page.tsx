@@ -7,20 +7,20 @@ import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Paper 2: Drama - Cambridge IGCSE English Literature',
+    title: 'Cambridge IGCSE Paper 2: Drama',
     description:
       'Study guide for Cambridge IGCSE English Literature Paper 2. Shakespeare set plays, modern drama texts, and how to write about dramatic technique and stagecraft.',
     images: [
       {
-        url: '/api/og?title=Paper+2%3A+Drama+-+Cambridge+IGCSE+English+Literature',
+        url: '/api/og?title=Cambridge+IGCSE+Paper+2%3A+Drama',
         width: 1200,
         height: 630,
-        alt: 'Paper 2: Drama - Cambridge IGCSE English Literature',
+        alt: 'Cambridge IGCSE Paper 2: Drama',
       },
     ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/caie/paper-2' },
-  title: 'Paper 2: Drama - Cambridge IGCSE English Literature',
+  title: 'Cambridge IGCSE Paper 2: Drama',
   description:
     'Study guide for Cambridge IGCSE English Literature Paper 2. Shakespeare set plays, modern drama texts, and how to write about dramatic technique and stagecraft.',
 }

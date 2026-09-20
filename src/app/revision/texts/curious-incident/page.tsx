@@ -8,18 +8,18 @@ import { LearningResourceJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-
 import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'The Curious Incident revision guide - themes, characters, key quotes - The English Hub',
+    title: 'The Curious Incident IGCSE - themes, characters, quotes',
     description: 'The Curious Incident IGCSE revision - Mark Haddon',
     images: [
       {
-        url: '/api/og?title=The+Curious+Incident+revision+guide+-+themes%2C+characters%2C+key+quotes+-+The+English+Hub',
+        url: '/api/og?title=The+Curious+Incident+IGCSE+-+themes%2C+characters%2C+quotes',
         width: 1200,
         height: 630,
-        alt: 'The Curious Incident revision guide - themes, characters, key quotes - The English Hub',
+        alt: 'The Curious Incident IGCSE - themes, characters, quotes',
       },
     ],
   },
-  title: 'The Curious Incident revision guide - themes, characters, key quotes',
+  title: 'The Curious Incident IGCSE - themes, characters, quotes',
   description:
     "The Curious Incident IGCSE revision - Mark Haddon's 2003 novel with plot, characters, themes, context and key quotes. Pearson Edexcel IGCSE 4ET1-aligned.",
   alternates: {

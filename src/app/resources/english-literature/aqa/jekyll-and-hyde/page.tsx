@@ -4,24 +4,24 @@ import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Jekyll and Hyde Study Guide - AQA English Literature GCSE',
+    title: 'Jekyll and Hyde - AQA GCSE Literature',
     description:
-      'Complete Jekyll and Hyde revision guide for AQA GCSE English Literature Paper 1 Section B. Key themes, 15+ quotations with analysis, Victorian context, character analysis, and sample essay plans.',
+      'Jekyll and Hyde for AQA GCSE English Literature Paper 1: chapter-by-chapter summary, characters, themes, key quotations and Victorian context.',
     images: [
       {
-        url: '/api/og?title=Jekyll+and+Hyde+Study+Guide+-+AQA+English+Literature+GCSE',
+        url: '/api/og?title=Jekyll+and+Hyde+-+AQA+GCSE+Literature',
         width: 1200,
         height: 630,
-        alt: 'Jekyll and Hyde Study Guide - AQA English Literature GCSE',
+        alt: 'Jekyll and Hyde - AQA GCSE Literature',
       },
     ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/aqa/jekyll-and-hyde',
   },
-  title: 'Jekyll and Hyde Study Guide - AQA English Literature GCSE',
+  title: 'Jekyll and Hyde - AQA GCSE Literature',
   description:
-    'Complete Jekyll and Hyde revision guide for AQA GCSE English Literature Paper 1 Section B. Key themes, 15+ quotations with analysis, Victorian context, character analysis, and sample essay plans.',
+    'Jekyll and Hyde for AQA GCSE English Literature Paper 1: chapter-by-chapter summary, characters, themes, key quotations and Victorian context.',
 }
 
 /* ─── Data ──────────────────────────────────────────────────── */

@@ -6,9 +6,9 @@ import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-
 import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
-  title: 'Jekyll and Hyde Analysis - Quotes, Characters & Themes',
+  title: 'Jekyll and Hyde Analysis - Quotes & Themes',
   description:
-    'In-depth Jekyll and Hyde analysis for GCSE English Literature. Quote breakdowns, 4 character studies, 4 theme essays, Victorian context and a Grade 9 essay guide - written by GCSE markers.',
+    'Jekyll and Hyde analysis for GCSE: nine quote breakdowns, four character studies, four theme essays, Victorian context and a Grade 9 essay guide.',
   alternates: {
     canonical: 'https://theenglishhub.app/analysis/jekyll-hyde',
   },
@@ -193,8 +193,8 @@ export default async function JekyllHydeHubPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(hubJsonLd) }}
       />
       <LearningResourceJsonLd
-        name="Jekyll and Hyde Analysis - Quotes, Characters & Themes"
-        description="In-depth Jekyll and Hyde analysis for GCSE English Literature. Quote breakdowns, 4 character studies, 4 theme essays, Victorian context and a Grade 9 essay guide - written by GCSE markers."
+        name="Jekyll and Hyde Analysis - Quotes & Themes"
+        description="Jekyll and Hyde analysis for GCSE: nine quote breakdowns, four character studies, four theme essays, Victorian context and a Grade 9 essay guide."
         educationalLevel="GCSE"
         learningResourceType="Study guide"
         about="Strange Case of Dr Jekyll and Mr Hyde"
@@ -206,7 +206,7 @@ export default async function JekyllHydeHubPage() {
           { name: 'Home', url: 'https://theenglishhub.app' },
           { name: 'Analysis', url: 'https://theenglishhub.app/analysis' },
           {
-            name: 'Jekyll and Hyde Analysis - Quotes, Characters & Themes',
+            name: 'Jekyll and Hyde Analysis - Quotes & Themes',
             url: 'https://theenglishhub.app/analysis/jekyll-hyde',
           },
         ]}

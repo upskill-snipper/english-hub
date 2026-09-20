@@ -19,21 +19,20 @@ import { getLocale, t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title:
-      'Explorers or Boys Messing About? - Steven Morris - IGCSE Language A Anthology - The English Hub',
+    title: 'Explorers or Boys Messing About? - IGCSE Anthology - The English Hub',
     description: 'Study guide for ',
     images: [
       {
-        url: '/api/og?title=Explorers+or+Boys+Messing+About%3F+-+Steven+Morris+-+IGCSE+Language+A+Anthology+-+The+English+Hub',
+        url: '/api/og?title=Explorers+or+Boys+Messing+About%3F+-+IGCSE+Anthology+-+The+English+Hub',
         width: 1200,
         height: 630,
-        alt: 'Explorers or Boys Messing About? - Steven Morris - IGCSE Language A Anthology - The English Hub',
+        alt: 'Explorers or Boys Messing About? - IGCSE Anthology - The English Hub',
       },
     ],
   },
-  title: 'Explorers or Boys Messing About? - Steven Morris - IGCSE Language A Anthology',
+  title: 'Explorers or Boys Messing About? - IGCSE Anthology',
   description:
-    'Study guide for "Explorers or boys messing about?" by Steven Morris (Guardian, 2003 - adapted in the Edexcel IGCSE Anthology). Language analysis, structural analysis, themes and exam practice for Paper 1 Section A.',
+    'The Steven Morris newspaper article for Edexcel IGCSE Language A: themes, structural analysis, purpose and Paper 1 Section A practice.',
   alternates: {
     canonical:
       'https://theenglishhub.app/igcse/edexcel-lang/anthology/explorers-or-boys-messing-about',

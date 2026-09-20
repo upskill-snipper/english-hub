@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Classic Novel Openings - Reading Practice Framework - The English Hub',
     description:
-      'Practise Cambridge IGCSE Paper 1 reading on classic novel openings. Structured comprehension, language analysis, summary and self-assessment using free public-domain texts from Project Gutenberg.',
+      'Cambridge IGCSE Paper 1 reading framework on novel openings, set on Pride and Prejudice, Jane Eyre and Great Expectations. Comprehension, analysis and summary.',
     images: [
       {
         url: '/api/og?title=Classic+Novel+Openings+-+Reading+Practice+Framework+-+The+English+Hub',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   title: 'Classic Novel Openings - Reading Practice Framework',
   description:
-    'Practise Cambridge IGCSE Paper 1 reading on classic novel openings. Structured comprehension, language analysis, summary and self-assessment using free public-domain texts from Project Gutenberg.',
+    'Cambridge IGCSE Paper 1 reading framework on novel openings, set on Pride and Prejudice, Jane Eyre and Great Expectations. Comprehension, analysis and summary.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/reading/classic-novel-openings',
   },

@@ -6,24 +6,24 @@ import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'A Christmas Carol Study Guide - Edexcel GCSE English Literature',
+    title: 'A Christmas Carol - Edexcel Literature',
     description:
-      'Complete A Christmas Carol revision guide for Edexcel GCSE English Literature. Plot, characters, themes, 20+ key quotes, Victorian context, and Edexcel exam technique.',
+      'A Christmas Carol for Edexcel GCSE English Literature: plot summary, characters, themes, key quotes, historical context and exam technique.',
     images: [
       {
-        url: '/api/og?title=A+Christmas+Carol+Study+Guide+-+Edexcel+GCSE+English+Literature',
+        url: '/api/og?title=A+Christmas+Carol+-+Edexcel+Literature',
         width: 1200,
         height: 630,
-        alt: 'A Christmas Carol Study Guide - Edexcel GCSE English Literature',
+        alt: 'A Christmas Carol - Edexcel Literature',
       },
     ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/christmas-carol',
   },
-  title: 'A Christmas Carol Study Guide - Edexcel GCSE English Literature',
+  title: 'A Christmas Carol - Edexcel Literature',
   description:
-    'Complete A Christmas Carol revision guide for Edexcel GCSE English Literature. Plot, characters, themes, 20+ key quotes, Victorian context, and Edexcel exam technique.',
+    'A Christmas Carol for Edexcel GCSE English Literature: plot summary, characters, themes, key quotes, historical context and exam technique.',
 }
 
 /* ─── Data ───────────────────────────────────────────────────── */

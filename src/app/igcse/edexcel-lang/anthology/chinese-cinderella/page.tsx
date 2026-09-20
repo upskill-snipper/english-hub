@@ -18,20 +18,20 @@ import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Chinese Cinderella - Adeline Yen Mah - IGCSE Language A Anthology - The English Hub',
+    title: 'Chinese Cinderella - Adeline Yen Mah - IGCSE Anthology - The English Hub',
     description: 'Study guide for ',
     images: [
       {
-        url: '/api/og?title=Chinese+Cinderella+-+Adeline+Yen+Mah+-+IGCSE+Language+A+Anthology+-+The+English+Hub',
+        url: '/api/og?title=Chinese+Cinderella+-+Adeline+Yen+Mah+-+IGCSE+Anthology+-+The+English+Hub',
         width: 1200,
         height: 630,
-        alt: 'Chinese Cinderella - Adeline Yen Mah - IGCSE Language A Anthology - The English Hub',
+        alt: 'Chinese Cinderella - Adeline Yen Mah - IGCSE Anthology - The English Hub',
       },
     ],
   },
-  title: 'Chinese Cinderella - Adeline Yen Mah - IGCSE Language A Anthology',
+  title: 'Chinese Cinderella - Adeline Yen Mah - IGCSE Anthology',
   description:
-    'Study guide for "Chinese Cinderella" by Adeline Yen Mah. Language analysis, structural analysis, themes and exam practice for Edexcel IGCSE English Language A Paper 1 Section A.',
+    'The Adeline Yen Mah anthology extract for Edexcel IGCSE Language A: themes, structural analysis, purpose and Paper 1 Section A practice.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel-lang/anthology/chinese-cinderella',
   },

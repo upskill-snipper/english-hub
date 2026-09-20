@@ -8,7 +8,7 @@ import { tMany } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   title: 'English Literature Revision - GCSE & IGCSE',
   description:
-    'Complete GCSE and IGCSE English Literature revision hub. Study guides for Shakespeare, prose, drama, and poetry. Character analysis, themes, quotations, essay techniques, and exam preparation for all boards.',
+    'GCSE and IGCSE English Literature revision: study guides for Shakespeare, prose, drama and poetry, with themes, key quotations and essay technique.',
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature',
   },

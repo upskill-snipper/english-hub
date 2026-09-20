@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Silas Marner - Study Guide | The English Hub',
     description:
-      'In-depth study guide for Silas Marner by George Eliot: plot, characters, themes, context and key quotations.',
+      'Silas Marner study guide: plot, characters including Godfrey Cass and Eppie, themes of community, faith and parenthood, context and key quotations.',
     images: [
       {
         url: '/api/og?title=Silas+Marner+-+Study+Guide+%7C+The+English+Hub',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   title: 'Silas Marner - Study Guide',
   description:
-    'In-depth study guide for Silas Marner by George Eliot: plot, characters, themes, context and key quotations.',
+    'Silas Marner study guide: plot, characters including Godfrey Cass and Eppie, themes of community, faith and parenthood, context and key quotations.',
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/silas-marner',
   },

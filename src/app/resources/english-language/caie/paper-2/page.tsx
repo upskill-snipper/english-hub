@@ -9,22 +9,22 @@ import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Paper 2: Directed Writing & Composition | Cambridge IGCSE English Language',
+    title: 'Cambridge IGCSE Paper 2: Writing',
     description:
-      'Complete guide to Cambridge IGCSE English Language directed writing and composition. Covers letters, reports, articles, speeches, journals, narrative and descriptive writing, with full band descriptors.',
+      'Cambridge IGCSE English Language Paper 2: directed writing formats, narrative and descriptive composition, and the full band descriptors.',
     images: [
       {
-        url: '/api/og?title=Paper+2%3A+Directed+Writing+%26+Composition+%7C+Cambridge+IGCSE+English+Language',
+        url: '/api/og?title=Cambridge+IGCSE+Paper+2%3A+Writing',
         width: 1200,
         height: 630,
-        alt: 'Paper 2: Directed Writing & Composition | Cambridge IGCSE English Language',
+        alt: 'Cambridge IGCSE Paper 2: Writing',
       },
     ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-language/caie/paper-2' },
-  title: 'Paper 2: Directed Writing & Composition | Cambridge IGCSE English Language',
+  title: 'Cambridge IGCSE Paper 2: Writing',
   description:
-    'Complete guide to Cambridge IGCSE English Language directed writing and composition. Covers letters, reports, articles, speeches, journals, narrative and descriptive writing, with full band descriptors.',
+    'Cambridge IGCSE English Language Paper 2: directed writing formats, narrative and descriptive composition, and the full band descriptors.',
   keywords: [
     'IGCSE directed writing',
     'IGCSE composition',

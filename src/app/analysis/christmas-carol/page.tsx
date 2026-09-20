@@ -5,24 +5,24 @@ import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-
 import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
-  title: 'A Christmas Carol Analysis - Quotes, Characters & Themes',
+  title: 'A Christmas Carol Quote and Theme Analysis',
   description:
     'In-depth GCSE analysis of A Christmas Carol by Charles Dickens. Key quotations, character studies, themes and Grade 9 essay guidance written by GCSE markers.',
   alternates: {
     canonical: 'https://theenglishhub.app/analysis/christmas-carol',
   },
   openGraph: {
-    title: 'A Christmas Carol Analysis - Quotes, Characters & Themes',
+    title: 'A Christmas Carol Quote and Theme Analysis',
     description:
       'In-depth GCSE analysis of A Christmas Carol by Charles Dickens. Key quotations, character studies, themes and Grade 9 essay guidance.',
     url: 'https://theenglishhub.app/analysis/christmas-carol',
     type: 'article',
     images: [
       {
-        url: '/api/og?title=A+Christmas+Carol+Analysis+-+Quotes%2C+Characters+%26+Themes',
+        url: '/api/og?title=A+Christmas+Carol+Quote+and+Theme+Analysis',
         width: 1200,
         height: 630,
-        alt: 'A Christmas Carol Analysis - Quotes, Characters & Themes',
+        alt: 'A Christmas Carol Quote and Theme Analysis',
       },
     ],
   },
@@ -198,7 +198,7 @@ export default async function ChristmasCarolAnalysisHub() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <LearningResourceJsonLd
-        name="A Christmas Carol Analysis - Quotes, Characters & Themes"
+        name="A Christmas Carol Quote and Theme Analysis"
         description="In-depth GCSE analysis of A Christmas Carol by Charles Dickens. Key quotations, character studies, themes and Grade 9 essay guidance written by GCSE markers."
         educationalLevel="GCSE"
         learningResourceType="Study guide"
@@ -211,7 +211,7 @@ export default async function ChristmasCarolAnalysisHub() {
           { name: 'Home', url: 'https://theenglishhub.app' },
           { name: 'Analysis', url: 'https://theenglishhub.app/analysis' },
           {
-            name: 'A Christmas Carol Analysis - Quotes, Characters & Themes',
+            name: 'A Christmas Carol Quote and Theme Analysis',
             url: 'https://theenglishhub.app/analysis/christmas-carol',
           },
         ]}

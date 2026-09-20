@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Twelfth Night - Study Guide | The English Hub',
     description:
-      'In-depth study guide for Twelfth Night by William Shakespeare: plot, characters, themes, context and key quotations.',
+      'Twelfth Night study guide: plot, characters including Viola, Orsino, Olivia and Malvolio, themes of love, disguise and misrule, and key quotations.',
     images: [
       {
         url: '/api/og?title=Twelfth+Night+-+Study+Guide+%7C+The+English+Hub',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   title: 'Twelfth Night - Study Guide',
   description:
-    'In-depth study guide for Twelfth Night by William Shakespeare: plot, characters, themes, context and key quotations.',
+    'Twelfth Night study guide: plot, characters including Viola, Orsino, Olivia and Malvolio, themes of love, disguise and misrule, and key quotations.',
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/twelfth-night',
   },

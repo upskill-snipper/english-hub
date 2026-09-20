@@ -7,7 +7,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'IELTS Mock Test - The English Hub',
   description:
-    'Sit a full, timed IELTS mock test under realistic exam conditions: Listening, Reading, Writing (Task 1 + Task 2) and Speaking, each strictly timed with auto-submit, then a predicted band report for every section and an overall band. For IELTS preparation.',
+    'A full, timed IELTS mock test across Listening, Reading, Writing Tasks 1 and 2, and Speaking, with auto-submit and a predicted band for each section.',
   alternates: { canonical: 'https://theenglishhub.app/ielts/mock' },
 }
 

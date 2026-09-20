@@ -12,7 +12,7 @@ import { MockExamClient } from '@/components/eal/MockExamClient'
 export const metadata: Metadata = {
   title: 'EAL Practice - B1 (Intermediate)',
   description:
-    'Free B1-level English practice for Arabic speakers: tenses, prepositions, collocations and common errors, with bilingual explanations. Modelled on Cambridge B1 Preliminary for Schools.',
+    'Free, scored B1 English practice for Arabic speakers: tenses, prepositions, linking words and collocations, with bilingual explanations after each answer.',
   alternates: { canonical: 'https://theenglishhub.app/eal/practice/mock-exam-b1' },
 }
 

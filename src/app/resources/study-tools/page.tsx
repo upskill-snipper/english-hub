@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Study Tools - GCSE English Revision',
     description:
-      'Interactive study tools for GCSE and IGCSE English revision. Revision planner, quote flashcards, quote tester, and progress checklists to help you prepare for your exams.',
+      'Study tools for GCSE and IGCSE English: a revision planner, spaced-repetition quote flashcards, a quote tester, and board-specific revision checklists.',
     images: [
       {
         url: '/api/og?title=Study+Tools+-+GCSE+English+Revision',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/resources/study-tools' },
   title: 'Study Tools - GCSE English Revision',
   description:
-    'Interactive study tools for GCSE and IGCSE English revision. Revision planner, quote flashcards, quote tester, and progress checklists to help you prepare for your exams.',
+    'Study tools for GCSE and IGCSE English: a revision planner, spaced-repetition quote flashcards, a quote tester, and board-specific revision checklists.',
 }
 
 /* ─── Data ───────────────────────────────────────────────────── */

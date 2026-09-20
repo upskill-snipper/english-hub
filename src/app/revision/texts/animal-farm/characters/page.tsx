@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Animal Farm Characters - In-Depth Analysis | The English Hub',
     description:
-      'Detailed character analysis for Animal Farm: Napoleon, Snowball, Squealer, Boxer, Old Major, Benjamin, Mollie and Clover. Allegorical significance, key quotes and character arcs.',
+      'Animal Farm characters analysed: Napoleon, Snowball, Squealer, Boxer, Old Major, Benjamin, Mollie and Clover, with allegory, arcs and key quotes.',
     images: [
       {
         url: '/api/og?title=Animal+Farm+Characters+-+In-Depth+Analysis+%7C+The+English+Hub',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   title: 'Animal Farm Characters - In-Depth Analysis',
   description:
-    'Detailed character analysis for Animal Farm: Napoleon, Snowball, Squealer, Boxer, Old Major, Benjamin, Mollie and Clover. Allegorical significance, key quotes and character arcs.',
+    'Animal Farm characters analysed: Napoleon, Snowball, Squealer, Boxer, Old Major, Benjamin, Mollie and Clover, with allegory, arcs and key quotes.',
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/animal-farm/characters',
   },

@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Read My Last Duchess Online, Free',
   description:
-    'Read the full poem of My Last Duchess by Robert Browning online, free. Language highlighted inline.',
+    'Read My Last Duchess by Robert Browning in full, free. The complete public-domain poem with inline language, quotation and theme notes.',
   alternates: { canonical: '/revision/texts/my-last-duchess/read' },
 }
 

@@ -4,9 +4,9 @@ import { headers } from 'next/headers'
 export const metadata: Metadata = {
   // 2026-06-08 — SEO audit fix. "Contact Us" (10 chars) was too short
   // and entity-blind. Now contains the brand + primary use cases.
-  title: 'Contact The English Hub - support, school enquiries, partnerships',
+  title: 'Contact - support, schools, partnerships',
   description:
-    'Get in touch with The English Hub. Reach our support team for help with courses, accounts, billing, school enquiries, partnerships, or feedback. We reply within one UK working day.',
+    'Reach The English Hub about your account, billing or a technical problem, or with a school enquiry, partnership or feedback. We reply within two business days.',
   alternates: { canonical: 'https://theenglishhub.app/contact' },
   keywords: [
     'contact The English Hub',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     'Upskill Energy Limited contact',
   ],
   openGraph: {
-    title: 'Contact The English Hub - support, school enquiries, partnerships',
+    title: 'Contact - support, schools, partnerships',
     description:
       'Get in touch with The English Hub. Support, school enquiries, partnerships and feedback - we reply within one UK working day.',
     url: 'https://theenglishhub.app/contact',
@@ -24,16 +24,16 @@ export const metadata: Metadata = {
     siteName: 'The English Hub',
     images: [
       {
-        url: '/api/og?title=Contact+The+English+Hub+-+support%2C+school+enquiries%2C+partnerships',
+        url: '/api/og?title=Contact+-+support%2C+schools%2C+partnerships',
         width: 1200,
         height: 630,
-        alt: 'Contact The English Hub - support, school enquiries, partnerships',
+        alt: 'Contact - support, schools, partnerships',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact The English Hub - support, school enquiries, partnerships',
+    title: 'Contact - support, schools, partnerships',
     description:
       'Support, school enquiries, partnerships and feedback. We reply within one UK working day.',
   },

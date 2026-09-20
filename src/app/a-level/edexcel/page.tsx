@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Pearson Edexcel A-Level English - The English Hub',
     description:
-      'Pearson Edexcel A-Level English Literature (9ET0) and Language (9EN0) revision hub. Cross-board set text analysis, essay technique and language study while full Edexcel A-Level content is on our roadmap.',
+      'Pearson Edexcel A-Level English Literature (9ET0) and Language (9EN0). Cross-board set-text and essay tools while board guides are written.',
     images: [
       {
         url: '/api/og?title=Pearson+Edexcel+A-Level+English+-+The+English+Hub',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   title: 'Pearson Edexcel A-Level English',
   description:
-    'Pearson Edexcel A-Level English Literature (9ET0) and Language (9EN0) revision hub. Cross-board set text analysis, essay technique and language study while full Edexcel A-Level content is on our roadmap.',
+    'Pearson Edexcel A-Level English Literature (9ET0) and Language (9EN0). Cross-board set-text and essay tools while board guides are written.',
   alternates: { canonical: 'https://theenglishhub.app/a-level/edexcel' },
   robots: { index: true, follow: true },
 }

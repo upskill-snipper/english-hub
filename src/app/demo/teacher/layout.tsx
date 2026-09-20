@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   // structured data wrapper.
   title: 'Teacher portal demo - AI-assisted marking and class insight',
   description:
-    'Explore the English Hub teacher portal with synthetic class data: AI-assisted essay feedback, homework setting, class weaknesses analysis and student reports. No signup required.',
+    'Walk the teacher portal on synthetic class data: AI-assisted essay feedback, homework, lesson resources, quizzes and class progress. No signup needed.',
   alternates: { canonical: 'https://theenglishhub.app/demo/teacher' },
   keywords: [
     'AI English teacher demo',

@@ -9,19 +9,18 @@ import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/compon
 import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
-    title:
-      'A View from the Bridge revision guide - themes, characters, key quotes - The English Hub',
+    title: 'A View from the Bridge IGCSE - themes, characters, quotes',
     description: 'A View from the Bridge IGCSE revision - Miller',
     images: [
       {
-        url: '/api/og?title=A+View+from+the+Bridge+revision+guide+-+themes%2C+characters%2C+key+quotes+-+The+English+Hub',
+        url: '/api/og?title=A+View+from+the+Bridge+IGCSE+-+themes%2C+characters%2C+quotes',
         width: 1200,
         height: 630,
-        alt: 'A View from the Bridge revision guide - themes, characters, key quotes - The English Hub',
+        alt: 'A View from the Bridge IGCSE - themes, characters, quotes',
       },
     ],
   },
-  title: 'A View from the Bridge revision guide - themes, characters, key quotes',
+  title: 'A View from the Bridge IGCSE - themes, characters, quotes',
   description:
     "A View from the Bridge IGCSE revision - Miller's tragedy with characters, themes, context and key quotes. Aligned to Pearson Edexcel IGCSE Literature 4ET1.",
   alternates: {

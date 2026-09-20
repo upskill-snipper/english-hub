@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Paper 1 Model Answers - IGCSE Language A 0500',
     description:
-      'Five Grade A*/9 model answers for Cambridge IGCSE 0500 Paper 1: retrieval (Q1), language analysis (Q2 at Grade C and A* compared), and summary (Q3). Each with examiner annotations.',
+      'Five annotated model answers for Cambridge IGCSE 0500 Paper 1: two retrieval responses, a Grade C and A* language analysis compared, and a summary.',
     images: [
       {
         url: '/api/og?title=Paper+1+Model+Answers+-+IGCSE+Language+A+0500',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   title: 'Paper 1 Model Answers - IGCSE Language A 0500',
   description:
-    'Five Grade A*/9 model answers for Cambridge IGCSE 0500 Paper 1: retrieval (Q1), language analysis (Q2 at Grade C and A* compared), and summary (Q3). Each with examiner annotations.',
+    'Five annotated model answers for Cambridge IGCSE 0500 Paper 1: two retrieval responses, a Grade C and A* language analysis compared, and a summary.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/0500/paper-1/model-answers',
   },

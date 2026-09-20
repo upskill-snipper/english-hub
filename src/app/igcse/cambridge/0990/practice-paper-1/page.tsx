@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Practice Paper 1 (Reading) | Cambridge IGCSE Language B | The English Hub',
     description:
-      'Full Cambridge IGCSE Language B Paper 1 Reading practice paper using public domain extracts from Charlotte Brontë and H.G. Wells. Questions, timing and mark breakdown.',
+      'A full Cambridge IGCSE Language B Paper 1 on extracts from Jane Eyre and The War of the Worlds. Three questions, 80 marks, two hours, with a mark breakdown.',
     images: [
       {
         url: '/api/og?title=Practice+Paper+1+(Reading)+%7C+Cambridge+IGCSE+Language+B+%7C+The+English+Hub',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   title: 'Practice Paper 1 (Reading) | Cambridge IGCSE Language B',
   description:
-    'Full Cambridge IGCSE Language B Paper 1 Reading practice paper using public domain extracts from Charlotte Brontë and H.G. Wells. Questions, timing and mark breakdown.',
+    'A full Cambridge IGCSE Language B Paper 1 on extracts from Jane Eyre and The War of the Worlds. Three questions, 80 marks, two hours, with a mark breakdown.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/0990/practice-paper-1',
   },

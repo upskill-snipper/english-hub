@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Frankenstein Key Chapters Analysed | The English Hub',
     description:
-      'In-depth GCSE analysis of key chapters in Frankenstein by Mary Shelley: Letters, Chapters 1-5 (creation), Chapter 10 (creature speaks), Chapters 16-17 (the bargain), and Chapters 20-24 (pursuit and destruction).',
+      'Key chapters of Frankenstein by Mary Shelley analysed for GCSE: the Letters, the creation, the creature speaks, the bargain and the final pursuit.',
     images: [
       {
         url: '/api/og?title=Frankenstein+Key+Chapters+Analysed+%7C+The+English+Hub',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   title: 'Frankenstein Key Chapters Analysed',
   description:
-    'In-depth GCSE analysis of key chapters in Frankenstein by Mary Shelley: Letters, Chapters 1-5 (creation), Chapter 10 (creature speaks), Chapters 16-17 (the bargain), and Chapters 20-24 (pursuit and destruction).',
+    'Key chapters of Frankenstein by Mary Shelley analysed for GCSE: the Letters, the creation, the creature speaks, the bargain and the final pursuit.',
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/frankenstein/chapters',
   },

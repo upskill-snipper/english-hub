@@ -8,22 +8,22 @@ import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Paper 1: Poetry & Prose - Cambridge IGCSE English Literature',
+    title: 'Cambridge IGCSE Paper 1: Poetry and Prose',
     description:
-      'Study guide for Cambridge IGCSE English Literature Paper 1. Songs of Ourselves poetry anthology, set prose texts, and exam technique for passage-based and essay questions.',
+      'Cambridge IGCSE English Literature Paper 1: Songs of Ourselves poetry, the set prose texts, and technique for passage-based and essay questions.',
     images: [
       {
-        url: '/api/og?title=Paper+1%3A+Poetry+%26+Prose+-+Cambridge+IGCSE+English+Literature',
+        url: '/api/og?title=Cambridge+IGCSE+Paper+1%3A+Poetry+and+Prose',
         width: 1200,
         height: 630,
-        alt: 'Paper 1: Poetry & Prose - Cambridge IGCSE English Literature',
+        alt: 'Cambridge IGCSE Paper 1: Poetry and Prose',
       },
     ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/caie/paper-1' },
-  title: 'Paper 1: Poetry & Prose - Cambridge IGCSE English Literature',
+  title: 'Cambridge IGCSE Paper 1: Poetry and Prose',
   description:
-    'Study guide for Cambridge IGCSE English Literature Paper 1. Songs of Ourselves poetry anthology, set prose texts, and exam technique for passage-based and essay questions.',
+    'Cambridge IGCSE English Literature Paper 1: Songs of Ourselves poetry, the set prose texts, and technique for passage-based and essay questions.',
 }
 
 /* ─── Data ───────────────────────────────────────────────────── */

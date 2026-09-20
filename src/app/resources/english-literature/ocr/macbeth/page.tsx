@@ -8,20 +8,20 @@ import { STRINGS as _EAL_STRINGS } from './content'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Macbeth Study Guide for OCR | The English Hub',
+    title: 'Macbeth - OCR GCSE English Literature - The English Hub',
     description:
       'Comprehensive Macbeth study guide for OCR GCSE English Literature. Characters, themes, key quotations, context, and essay planning.',
     images: [
       {
-        url: '/api/og?title=Macbeth+Study+Guide+for+OCR+%7C+The+English+Hub',
+        url: '/api/og?title=Macbeth+-+OCR+GCSE+English+Literature+-+The+English+Hub',
         width: 1200,
         height: 630,
-        alt: 'Macbeth Study Guide for OCR | The English Hub',
+        alt: 'Macbeth - OCR GCSE English Literature - The English Hub',
       },
     ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/ocr/macbeth' },
-  title: 'Macbeth Study Guide for OCR',
+  title: 'Macbeth - OCR GCSE English Literature',
   description:
     'Comprehensive Macbeth study guide for OCR GCSE English Literature. Characters, themes, key quotations, context, and essay planning.',
 }

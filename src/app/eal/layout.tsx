@@ -13,9 +13,9 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
  * Hub" template, so adding the brand here would double it.
  */
 export const metadata: Metadata = {
-  title: 'Structured English support for EAL learners',
+  title: 'English support for EAL learners',
   description:
-    'Structured English support for EAL learners - vocabulary, reading fluency, comprehension, grammar and writing confidence - with teacher visibility, differentiated support and progress reporting. Built for international and GCC schools and includes a bilingual CEFR placement test for Arabic L1 learners.',
+    'Structured EAL support for international schools: graded lessons, a free bilingual CEFR placement test, and progress visibility for teachers.',
   keywords: [
     'EAL support platform',
     'EAL learners English support',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://theenglishhub.app/eal' },
   openGraph: {
-    title: 'Structured English support for EAL learners - The English Hub',
+    title: 'English support for EAL learners - The English Hub',
     description:
       'Vocabulary, reading fluency, comprehension, grammar and writing confidence for EAL learners, with teacher visibility and progress reporting. Includes a bilingual CEFR placement test.',
     url: 'https://theenglishhub.app/eal',
@@ -37,16 +37,16 @@ export const metadata: Metadata = {
     locale: 'en_GB',
     images: [
       {
-        url: '/api/og?title=Structured+English+for+EAL+learners&subtitle=With+a+bilingual+CEFR+placement+test',
+        url: '/api/og?title=English+support+for+EAL+learners+-+The+English+Hub',
         width: 1200,
         height: 630,
-        alt: 'Structured English support for EAL learners - The English Hub',
+        alt: 'English support for EAL learners - The English Hub',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Structured English support for EAL learners - The English Hub',
+    title: 'English support for EAL learners - The English Hub',
     description:
       'Structured EAL support with teacher visibility and progress reporting, plus a bilingual CEFR placement test.',
     images: [

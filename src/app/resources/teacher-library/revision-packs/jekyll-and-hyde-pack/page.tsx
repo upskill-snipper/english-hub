@@ -4,19 +4,19 @@ import { Button } from '@/components/ui/button'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Jekyll and Hyde Revision Pack - Teacher Library',
+    title: 'Jekyll and Hyde Revision Pack',
     description:
       'Full Jekyll and Hyde revision pack: quote bank, themes, characters, Victorian context, and graded essay plans.',
     images: [
       {
-        url: '/api/og?title=Jekyll+and+Hyde+Revision+Pack+-+Teacher+Library',
+        url: '/api/og?title=Jekyll+and+Hyde+Revision+Pack',
         width: 1200,
         height: 630,
-        alt: 'Jekyll and Hyde Revision Pack - Teacher Library',
+        alt: 'Jekyll and Hyde Revision Pack',
       },
     ],
   },
-  title: 'Jekyll and Hyde Revision Pack - Teacher Library',
+  title: 'Jekyll and Hyde Revision Pack',
   description:
     'Full Jekyll and Hyde revision pack: quote bank, themes, characters, Victorian context, and graded essay plans.',
   alternates: {

@@ -21,9 +21,9 @@ import { selfCanonical, SITE_ORIGIN } from '@/lib/seo/canonical'
  * inherit a parent-pointing canonical.
  */
 export const metadata: Metadata = {
-  title: 'English training and IELTS preparation for organisations',
+  title: 'EAL and IELTS training for organisations',
   description:
-    'Structured EAL practice graded A2-C1, a free CEFR placement test and IELTS preparation with AI band feedback, run as a cohort for staff or students. Clear about what is included and what is not.',
+    'Structured EAL practice graded A2 to C1, a free CEFR placement test and IELTS preparation with AI band feedback, run as a cohort for staff or students.',
   keywords: [
     'English training for organisations',
     'IELTS preparation for staff',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: selfCanonical('/business-english') },
   openGraph: {
-    title: 'English training and IELTS preparation for organisations - The English Hub',
+    title: 'EAL and IELTS training for organisations - The English Hub',
     description:
       'Structured EAL practice graded A2-C1, a free CEFR placement test and IELTS preparation with AI band feedback, run as a cohort for staff or students.',
     url: selfCanonical('/business-english'),
@@ -43,16 +43,16 @@ export const metadata: Metadata = {
     locale: 'en_GB',
     images: [
       {
-        url: '/api/og?title=English+training+for+organisations&subtitle=EAL+practice,+CEFR+placement+and+IELTS+band+feedback',
+        url: '/api/og?title=EAL+and+IELTS+training+for+organisations+-+The+English+Hub',
         width: 1200,
         height: 630,
-        alt: 'English training and IELTS preparation for organisations - The English Hub',
+        alt: 'EAL and IELTS training for organisations - The English Hub',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'English training and IELTS preparation for organisations - The English Hub',
+    title: 'EAL and IELTS training for organisations - The English Hub',
     description:
       'EAL practice graded A2-C1, a free CEFR placement test and IELTS preparation with AI band feedback, run as a cohort.',
     images: [

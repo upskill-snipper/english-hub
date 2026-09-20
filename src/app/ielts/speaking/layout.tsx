@@ -6,7 +6,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'IELTS Speaking Practice - AI Band Feedback - The English Hub',
   description:
-    'Practise IELTS Academic Speaking Parts 1-3. Record yourself for private self-review, then get an AI band estimate for Fluency & Coherence, Lexical Resource, Grammatical Range and Pronunciation from your transcript.',
+    'Practise IELTS Speaking Parts 1 to 3: record yourself for private review, type what you said, then get a band estimate for all four criteria.',
   alternates: { canonical: 'https://theenglishhub.app/ielts/speaking' },
 }
 

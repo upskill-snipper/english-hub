@@ -7,19 +7,19 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Pearson Edexcel GCSE English Literature resources - The English Hub',
+    title: 'Edexcel GCSE English Literature Revision - The English Hub',
     description:
       'Pearson Edexcel 1ET0 GCSE English Literature set-text guides, anthology poetry, exam technique and Grade 9 essay plans for Paper 1 and Paper 2.',
     images: [
       {
-        url: '/api/og?title=Pearson+Edexcel+GCSE+English+Literature+resources+-+The+English+Hub',
+        url: '/api/og?title=Edexcel+GCSE+English+Literature+Revision+-+The+English+Hub',
         width: 1200,
         height: 630,
-        alt: 'Pearson Edexcel GCSE English Literature resources - The English Hub',
+        alt: 'Edexcel GCSE English Literature Revision - The English Hub',
       },
     ],
   },
-  title: 'Pearson Edexcel GCSE English Literature resources',
+  title: 'Edexcel GCSE English Literature Revision',
   description:
     'Pearson Edexcel 1ET0 GCSE English Literature set-text guides, anthology poetry, exam technique and Grade 9 essay plans for Paper 1 and Paper 2.',
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/edexcel' },

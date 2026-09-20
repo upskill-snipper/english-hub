@@ -5,19 +5,19 @@ import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Ozymandias vs My Last Duchess - Comparison Lesson Plan',
+    title: 'Ozymandias vs My Last Duchess Lesson Plan',
     description:
       'Full 60-minute comparison lesson for the Power & Conflict anthology. Compare Ozymandias and My Last Duchess as presentations of power.',
     images: [
       {
-        url: '/api/og?title=Ozymandias+vs+My+Last+Duchess+-+Comparison+Lesson+Plan',
+        url: '/api/og?title=Ozymandias+vs+My+Last+Duchess+Lesson+Plan',
         width: 1200,
         height: 630,
-        alt: 'Ozymandias vs My Last Duchess - Comparison Lesson Plan',
+        alt: 'Ozymandias vs My Last Duchess Lesson Plan',
       },
     ],
   },
-  title: 'Ozymandias vs My Last Duchess - Comparison Lesson Plan',
+  title: 'Ozymandias vs My Last Duchess Lesson Plan',
   description:
     'Full 60-minute comparison lesson for the Power & Conflict anthology. Compare Ozymandias and My Last Duchess as presentations of power.',
   alternates: {

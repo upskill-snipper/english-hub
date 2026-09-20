@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Henry V - Study Guide | The English Hub',
     description:
-      'In-depth study guide for Henry V by William Shakespeare: plot, characters, themes, context and key quotations.',
+      'Henry V study guide: plot, characters including the Chorus and the Dauphin, themes of kingship, war and nationhood, context and key quotations.',
     images: [
       {
         url: '/api/og?title=Henry+V+-+Study+Guide+%7C+The+English+Hub',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   title: 'Henry V - Study Guide',
   description:
-    'In-depth study guide for Henry V by William Shakespeare: plot, characters, themes, context and key quotations.',
+    'Henry V study guide: plot, characters including the Chorus and the Dauphin, themes of kingship, war and nationhood, context and key quotations.',
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/henry-v',
   },

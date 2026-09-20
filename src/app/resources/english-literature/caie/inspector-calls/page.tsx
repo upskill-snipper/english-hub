@@ -7,24 +7,24 @@ import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'An Inspector Calls Study Guide - Cambridge IGCSE English Literature',
+    title: 'An Inspector Calls - Cambridge IGCSE',
     description:
-      'Complete An Inspector Calls study guide for Cambridge IGCSE English Literature. Characters, themes, 15+ key quotes with analysis, 1912/1945 context, dramatic devices, and Cambridge-specific exam technique.',
+      'An Inspector Calls for Cambridge IGCSE English Literature: characters, themes, key quotes, dramatic devices, 1912 context and exam questions.',
     images: [
       {
-        url: '/api/og?title=An+Inspector+Calls+Study+Guide+-+Cambridge+IGCSE+English+Literature',
+        url: '/api/og?title=An+Inspector+Calls+-+Cambridge+IGCSE',
         width: 1200,
         height: 630,
-        alt: 'An Inspector Calls Study Guide - Cambridge IGCSE English Literature',
+        alt: 'An Inspector Calls - Cambridge IGCSE',
       },
     ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/caie/inspector-calls',
   },
-  title: 'An Inspector Calls Study Guide - Cambridge IGCSE English Literature',
+  title: 'An Inspector Calls - Cambridge IGCSE',
   description:
-    'Complete An Inspector Calls study guide for Cambridge IGCSE English Literature. Characters, themes, 15+ key quotes with analysis, 1912/1945 context, dramatic devices, and Cambridge-specific exam technique.',
+    'An Inspector Calls for Cambridge IGCSE English Literature: characters, themes, key quotes, dramatic devices, 1912 context and exam questions.',
 }
 
 /* ─── Data ───────────────────────────────────────────────────── */

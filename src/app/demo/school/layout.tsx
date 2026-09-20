@@ -10,9 +10,9 @@ export const metadata: Metadata = {
   // title + description + canonical + OG + Twitter — this is one of
   // the top conversion surfaces for Qatar / GCC school sales now that
   // /demo/ is no longer blocked in robots.txt.
-  title: 'School portal demo - English department analytics & intervention',
+  title: 'School portal demo - English department analytics',
   description:
-    'Explore the full English Hub school portal with synthetic department data: class analytics, intervention insights, AI marking workflow and student progress. No signup required.',
+    'Walk the school portal on synthetic department data: class and cohort analytics, intervention lists, benchmarks, reports and progress. No signup needed.',
   alternates: { canonical: 'https://theenglishhub.app/demo/school' },
   keywords: [
     'AI English platform demo',

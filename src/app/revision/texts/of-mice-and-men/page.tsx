@@ -10,18 +10,18 @@ import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/compon
 import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Of Mice and Men revision guide - themes, characters, key quotes - The English Hub',
+    title: 'Of Mice and Men IGCSE - themes, characters, key quotes',
     description: 'Of Mice and Men IGCSE revision - Steinbeck',
     images: [
       {
-        url: '/api/og?title=Of+Mice+and+Men+revision+guide+-+themes%2C+characters%2C+key+quotes+-+The+English+Hub',
+        url: '/api/og?title=Of+Mice+and+Men+IGCSE+-+themes%2C+characters%2C+key+quotes',
         width: 1200,
         height: 630,
-        alt: 'Of Mice and Men revision guide - themes, characters, key quotes - The English Hub',
+        alt: 'Of Mice and Men IGCSE - themes, characters, key quotes',
       },
     ],
   },
-  title: 'Of Mice and Men revision guide - themes, characters, key quotes',
+  title: 'Of Mice and Men IGCSE - themes, characters, key quotes',
   description:
     "Of Mice and Men IGCSE revision - Steinbeck's novella with characters, themes, context and key quotes. Aligned to Pearson Edexcel IGCSE Literature 4ET1.",
   alternates: {

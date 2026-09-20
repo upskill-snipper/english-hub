@@ -9,7 +9,8 @@ import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Hawk Roosting - Ted Hughes | Cambridge IGCSE 0475',
-    description: 'Study guide for ',
+    description:
+      'Hawk Roosting by Ted Hughes (1960) for Cambridge IGCSE 0475, Songs of Ourselves Volume 1: themes, form, structure and notes for study.',
     images: [
       {
         url: '/api/og?title=Hawk+Roosting+-+Ted+Hughes+%7C+Cambridge+IGCSE+0475',
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
   },
   title: 'Hawk Roosting - Ted Hughes | Cambridge IGCSE 0475',
   description:
-    "Study guide for 'Hawk Roosting' by Ted Hughes (1960). Themes, form and structure for Cambridge IGCSE Literature in English (0475), Songs of Ourselves Vol 1 Hughes cluster.",
+    'Hawk Roosting by Ted Hughes (1960) for Cambridge IGCSE 0475, Songs of Ourselves Volume 1: themes, form, structure and notes for study.',
   alternates: {
     canonical:
       'https://theenglishhub.app/resources/english-literature/caie/songs-of-ourselves-v1/hawk-roosting',

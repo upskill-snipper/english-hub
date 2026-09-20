@@ -7,19 +7,19 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Pearson Edexcel GCSE English Language resources - The English Hub',
+    title: 'Edexcel GCSE English Language - The English Hub',
     description:
       'Pearson Edexcel GCSE English Language Paper 1 and Paper 2 walkthroughs, mark schemes, writing skills, exam technique guides and grade boundaries.',
     images: [
       {
-        url: '/api/og?title=Pearson+Edexcel+GCSE+English+Language+resources+-+The+English+Hub',
+        url: '/api/og?title=Edexcel+GCSE+English+Language+-+The+English+Hub',
         width: 1200,
         height: 630,
-        alt: 'Pearson Edexcel GCSE English Language resources - The English Hub',
+        alt: 'Edexcel GCSE English Language - The English Hub',
       },
     ],
   },
-  title: 'Pearson Edexcel GCSE English Language resources',
+  title: 'Edexcel GCSE English Language',
   description:
     'Pearson Edexcel GCSE English Language Paper 1 and Paper 2 walkthroughs, mark schemes, writing skills, exam technique guides and grade boundaries.',
   alternates: { canonical: 'https://theenglishhub.app/resources/english-language/edexcel' },

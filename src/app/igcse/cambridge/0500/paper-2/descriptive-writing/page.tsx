@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Descriptive Writing - IGCSE Language A Paper 2 Section B',
     description:
-      'How to write a top-mark descriptive composition for IGCSE Language A Paper 2. Sensory detail, setting, atmosphere, structure and worked opening. Aligns with Cambridge syllabus 0500.',
+      'Descriptive composition for IGCSE Language A Paper 2 Section B, worth 40 marks. Sensory detail, a five-stage structure, a worked opening and common mistakes.',
     images: [
       {
         url: '/api/og?title=Descriptive+Writing+-+IGCSE+Language+A+Paper+2+Section+B',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   title: 'Descriptive Writing - IGCSE Language A Paper 2 Section B',
   description:
-    'How to write a top-mark descriptive composition for IGCSE Language A Paper 2. Sensory detail, setting, atmosphere, structure and worked opening. Aligns with Cambridge syllabus 0500.',
+    'Descriptive composition for IGCSE Language A Paper 2 Section B, worth 40 marks. Sensory detail, a five-stage structure, a worked opening and common mistakes.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/0500/paper-2/descriptive-writing',
   },

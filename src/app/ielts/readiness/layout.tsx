@@ -4,9 +4,9 @@ import type { Metadata } from 'next'
 // £39-plan feature. The page itself is a Server Component (it does the
 // hasIeltsAccess gate); this layout supplies its unique title/canonical.
 export const metadata: Metadata = {
-  title: 'UK Candidate Readiness Report - IELTS, UCAS, Visa & Transition',
+  title: 'UK Candidate Readiness Report - IELTS, UCAS & Visa',
   description:
-    'Your exportable UK-study readiness report: a traffic-light score across English (IELTS bands vs target), your UCAS application, visa & finance, and academic transition - with red flags and a 7/30/60-day action plan. Part of the IELTS plan.',
+    'A traffic-light readiness score across your English, UCAS application, visa and finance, and the move, with red flags and a 7/30/60-day action plan.',
   alternates: { canonical: 'https://theenglishhub.app/ielts/readiness' },
 }
 

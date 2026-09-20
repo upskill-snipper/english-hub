@@ -6,7 +6,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'IELTS Academic Listening Practice - The English Hub',
   description:
-    'Practise IELTS Academic Listening with original two-section tests: form and note completion plus multiple choice, instant auto-marking, a predicted band score, and full transcripts with explanations in the review.',
+    'Original two-section IELTS Listening tests: form and note completion plus multiple choice, auto-marked with a predicted band and full transcripts.',
   alternates: { canonical: 'https://theenglishhub.app/ielts/listening' },
 }
 

@@ -14,12 +14,12 @@ const OG_IMAGE =
 export const metadata: Metadata = {
   title: 'IGCSE English revision for the GCC',
   description:
-    'IGCSE English Language and Literature revision for students across the GCC: UAE, Qatar, Saudi Arabia, Kuwait, Bahrain, Oman. Pearson Edexcel and Cambridge specs covered.',
+    'IGCSE English Language and Literature revision for students across the GCC: the UAE, Qatar, Saudi Arabia, Kuwait, Bahrain and Oman. Edexcel and Cambridge.',
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: 'IGCSE English revision for the GCC - The English Hub',
     description:
-      'IGCSE English Language and Literature revision for students across the GCC: UAE, Qatar, Saudi Arabia, Kuwait, Bahrain, Oman. Pearson Edexcel and Cambridge specs covered.',
+      'IGCSE English Language and Literature revision for students across the GCC: the UAE, Qatar, Saudi Arabia, Kuwait, Bahrain and Oman. Edexcel and Cambridge.',
     url: PAGE_URL,
     images: [
       {
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'IGCSE English revision for the GCC - The English Hub',
     description:
-      'IGCSE English Language and Literature revision for students across the GCC: UAE, Qatar, Saudi Arabia, Kuwait, Bahrain, Oman. Pearson Edexcel and Cambridge specs covered.',
+      'IGCSE English Language and Literature revision for students across the GCC: the UAE, Qatar, Saudi Arabia, Kuwait, Bahrain and Oman. Edexcel and Cambridge.',
     images: [OG_IMAGE],
   },
 }

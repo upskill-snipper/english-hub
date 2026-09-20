@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Narrative Writing - IGCSE Language A Paper 2 Section B',
     description:
-      'How to write a top-mark narrative composition for IGCSE Language A Paper 2. Story structure, character, dialogue and worked example. Aligns with Cambridge syllabus 0500.',
+      'Narrative composition for IGCSE Language A Paper 2 Section B, worth 40 marks. A five-stage structure, character, dialogue rules and a worked opening.',
     images: [
       {
         url: '/api/og?title=Narrative+Writing+-+IGCSE+Language+A+Paper+2+Section+B',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   title: 'Narrative Writing - IGCSE Language A Paper 2 Section B',
   description:
-    'How to write a top-mark narrative composition for IGCSE Language A Paper 2. Story structure, character, dialogue and worked example. Aligns with Cambridge syllabus 0500.',
+    'Narrative composition for IGCSE Language A Paper 2 Section B, worth 40 marks. A five-stage structure, character, dialogue rules and a worked opening.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/0500/paper-2/narrative-writing',
   },

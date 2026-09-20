@@ -8,22 +8,22 @@ import { STRINGS as _EAL_STRINGS } from './content'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'A Christmas Carol Study Guide for OCR | The English Hub',
+    title: 'A Christmas Carol - OCR GCSE Literature - The English Hub',
     description:
       'Comprehensive A Christmas Carol study guide for OCR GCSE English Literature. Characters, themes, key quotations, context, and essay planning.',
     images: [
       {
-        url: '/api/og?title=A+Christmas+Carol+Study+Guide+for+OCR+%7C+The+English+Hub',
+        url: '/api/og?title=A+Christmas+Carol+-+OCR+GCSE+Literature+-+The+English+Hub',
         width: 1200,
         height: 630,
-        alt: 'A Christmas Carol Study Guide for OCR | The English Hub',
+        alt: 'A Christmas Carol - OCR GCSE Literature - The English Hub',
       },
     ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/ocr/christmas-carol',
   },
-  title: 'A Christmas Carol Study Guide for OCR',
+  title: 'A Christmas Carol - OCR GCSE Literature',
   description:
     'Comprehensive A Christmas Carol study guide for OCR GCSE English Literature. Characters, themes, key quotations, context, and essay planning.',
 }

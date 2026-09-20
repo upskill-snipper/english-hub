@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'A View from the Bridge - Key Quotes | The English Hub',
     description:
-      'Twenty essential quotations from A View from the Bridge by Arthur Miller with speaker, context and detailed analysis.',
+      'Twenty key quotations from A View from the Bridge by Arthur Miller, each with speaker, context, analysis and theme tags for IGCSE revision.',
     images: [
       {
         url: '/api/og?title=A+View+from+the+Bridge+-+Key+Quotes+%7C+The+English+Hub',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   title: 'A View from the Bridge - Key Quotes',
   description:
-    'Twenty essential quotations from A View from the Bridge by Arthur Miller with speaker, context and detailed analysis.',
+    'Twenty key quotations from A View from the Bridge by Arthur Miller, each with speaker, context, analysis and theme tags for IGCSE revision.',
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/a-view-from-the-bridge/key-quotes',
   },

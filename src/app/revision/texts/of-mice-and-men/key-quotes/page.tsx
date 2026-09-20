@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Of Mice and Men - Key Quotes | The English Hub',
     description:
-      'Twenty-five essential quotations from Of Mice and Men by John Steinbeck with speaker, context and detailed analysis.',
+      'Twenty-five key quotations from Of Mice and Men by John Steinbeck, each with speaker, context, analysis and theme tags for IGCSE revision.',
     images: [
       {
         url: '/api/og?title=Of+Mice+and+Men+-+Key+Quotes+%7C+The+English+Hub',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   title: 'Of Mice and Men - Key Quotes',
   description:
-    'Twenty-five essential quotations from Of Mice and Men by John Steinbeck with speaker, context and detailed analysis.',
+    'Twenty-five key quotations from Of Mice and Men by John Steinbeck, each with speaker, context, analysis and theme tags for IGCSE revision.',
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/of-mice-and-men/key-quotes',
   },

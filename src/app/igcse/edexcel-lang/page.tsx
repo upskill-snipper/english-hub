@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Edexcel IGCSE English Language A (4EA1) - The English Hub',
     description:
-      'Complete revision hub for Pearson Edexcel IGCSE English Language A. Paper 1 non-fiction anthology, Paper 2 transactional writing, exam technique and study tools.',
+      'Revision hub for Pearson Edexcel IGCSE English Language A 4EA1: the Paper 1 anthology and unseen extract, and Paper 2 transactional writing.',
     images: [
       {
         url: '/api/og?title=Edexcel+IGCSE+English+Language+A+(4EA1)+-+The+English+Hub',
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   title: 'Edexcel IGCSE English Language A (4EA1)',
   description:
-    'Complete revision hub for Pearson Edexcel IGCSE English Language A. Paper 1 non-fiction anthology, Paper 2 transactional writing, exam technique and study tools.',
+    'Revision hub for Pearson Edexcel IGCSE English Language A 4EA1: the Paper 1 anthology and unseen extract, and Paper 2 transactional writing.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/edexcel-lang' },
 }
 

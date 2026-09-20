@@ -6,7 +6,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'UK University Transition Modules - IELTS plan',
   description:
-    'Short, self-guided modules to prepare for UK university life: academic writing and referencing, lectures and independent study, budgeting and UK bank accounts, and accommodation. Each module includes a quick self-check that feeds your UK Candidate Readiness Report. Part of the IELTS plan.',
+    'Four short modules on UK university life: academic writing, lectures and independent study, budgeting and banking, and accommodation, each with a self-check.',
   alternates: { canonical: 'https://theenglishhub.app/ielts/readiness/transition' },
 }
 

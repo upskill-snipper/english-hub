@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Edexcel IGCSE Literature Syllabus - The English Hub',
     description:
-      'Complete breakdown of the Pearson Edexcel IGCSE English Literature syllabus: what the examiners are looking for, mark allocations, time limits and paper structure.',
+      'The Pearson Edexcel IGCSE English Literature syllabus: assessment objectives, mark allocations, timings and the structure of both papers.',
     images: [
       {
         url: '/api/og?title=Edexcel+IGCSE+Literature+Syllabus+-+The+English+Hub',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   title: 'Edexcel IGCSE Literature Syllabus',
   description:
-    'Complete breakdown of the Pearson Edexcel IGCSE English Literature syllabus: what the examiners are looking for, mark allocations, time limits and paper structure.',
+    'The Pearson Edexcel IGCSE English Literature syllabus: assessment objectives, mark allocations, timings and the structure of both papers.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/edexcel/syllabus' },
   robots: { index: false },
 }

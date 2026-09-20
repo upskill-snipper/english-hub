@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'To Kill a Mockingbird - Historical Context | The English Hub',
     description:
-      'Historical and social context for To Kill a Mockingbird by Harper Lee: 1930s Alabama, Jim Crow laws, the Great Depression, Harper Lee',
+      'Context for To Kill a Mockingbird: 1930s Alabama and Jim Crow, the Great Depression, the Scottsboro Boys trial, lynching and the Civil Rights era.',
     images: [
       {
         url: '/api/og?title=To+Kill+a+Mockingbird+-+Historical+Context+%7C+The+English+Hub',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   title: 'To Kill a Mockingbird - Historical Context',
   description:
-    "Historical and social context for To Kill a Mockingbird by Harper Lee: 1930s Alabama, Jim Crow laws, the Great Depression, Harper Lee's biography and the Scottsboro Boys.",
+    'Context for To Kill a Mockingbird: 1930s Alabama and Jim Crow, the Great Depression, the Scottsboro Boys trial, lynching and the Civil Rights era.',
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/to-kill-a-mockingbird/context',
   },

@@ -7,15 +7,15 @@ import { headers } from 'next/headers'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Persuasive Writing Masterclass | The English Hub',
+    title: 'Persuasive Writing Masterclass',
     description:
-      'Complete guide to persuasive and argumentative writing for GCSE and IGCSE English. AFOREST techniques, counter-arguments, tone, register, format conventions for articles, speeches, letters, reports, and reviews. Full annotated model responses, structural approaches, and vocabulary for persuasion.',
+      'Persuasive writing for GCSE and IGCSE English: AFOREST, counter-arguments, tone and register, formats for articles, letters and speeches, model responses.',
     images: [
       {
-        url: '/api/og?title=Persuasive+Writing+Masterclass+%7C+The+English+Hub',
+        url: '/api/og?title=Persuasive+Writing+Masterclass',
         width: 1200,
         height: 630,
-        alt: 'Persuasive Writing Masterclass | The English Hub',
+        alt: 'Persuasive Writing Masterclass',
       },
     ],
   },
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   title: 'Persuasive Writing Masterclass',
   description:
-    'Complete guide to persuasive and argumentative writing for GCSE and IGCSE English. AFOREST techniques, counter-arguments, tone, register, format conventions for articles, speeches, letters, reports, and reviews. Full annotated model responses, structural approaches, and vocabulary for persuasion.',
+    'Persuasive writing for GCSE and IGCSE English: AFOREST, counter-arguments, tone and register, formats for articles, letters and speeches, model responses.',
 }
 
 /* ─── Annotation component ───────────────────────────────────── */

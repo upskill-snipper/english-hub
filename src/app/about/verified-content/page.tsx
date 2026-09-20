@@ -5,7 +5,7 @@ import { tMany } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   title: 'Verified Content',
   description:
-    'Every quote, date, and biography on The English Hub is cross-checked against primary sources - Project Gutenberg, Folger Shakespeare Library, and official board syllabus PDFs.',
+    'Every quote, date and biography is cross-checked against primary sources: Project Gutenberg, the Folger Shakespeare Library and board-prescribed editions.',
   alternates: { canonical: 'https://theenglishhub.app/about/verified-content' },
   openGraph: {
     title: 'Verified Content - The English Hub',

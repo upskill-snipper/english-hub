@@ -31,10 +31,9 @@ export const metadata: Metadata = {
       },
     ],
   },
-  title:
-    "Young and Dyslexic? You've Got It Going On - Benjamin Zephaniah - IGCSE Language A Anthology",
+  title: "Young and Dyslexic? You've Got It Going On - IGCSE Anthology",
   description:
-    "Study guide for Young and Dyslexic? You've Got It Going On by Benjamin Zephaniah (1958-2023). Themes, structural analysis, key vocabulary and exam practice for Edexcel IGCSE English Language A.",
+    'Benjamin Zephaniah on dyslexia, for Edexcel IGCSE Language A: themes, language features, key vocabulary and Paper 1 Section A practice.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel-lang/anthology/young-and-dyslexic',
   },

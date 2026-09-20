@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'How to get a Grade 7 | Cambridge IGCSE Language B | The English Hub',
     description:
-      'Grade 7 guide for Cambridge IGCSE Language B First Language English. Clear checklists for reading analysis, writing control and exam technique to reach the old A grade.',
+      'What Grade 7 looks like in Cambridge IGCSE Language B: confident reading analysis, accurate writing and steady technique, with an exemplar and a self-check.',
     images: [
       {
         url: '/api/og?title=How+to+get+a+Grade+7+%7C+Cambridge+IGCSE+Language+B+%7C+The+English+Hub',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   title: 'How to get a Grade 7 | Cambridge IGCSE Language B',
   description:
-    'Grade 7 guide for Cambridge IGCSE Language B First Language English. Clear checklists for reading analysis, writing control and exam technique to reach the old A grade.',
+    'What Grade 7 looks like in Cambridge IGCSE Language B: confident reading analysis, accurate writing and steady technique, with an exemplar and a self-check.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/cambridge/0990/grade-7-guide' },
 }
 

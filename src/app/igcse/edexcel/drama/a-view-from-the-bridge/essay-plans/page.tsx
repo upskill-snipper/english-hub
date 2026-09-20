@@ -9,19 +9,19 @@ import { t } from '@/lib/i18n/t'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'A View from the Bridge Essay Plans - Edexcel IGCSE Literature',
+    title: 'A View from the Bridge: 5 Essay Plans - Edexcel IGCSE',
     description:
       'Five ready-to-use essay plans for A View from the Bridge covering Eddie\u2019s downfall, masculinity, honour, Alfieri\u2019s role and dramatic techniques.',
     images: [
       {
-        url: '/api/og?title=A+View+from+the+Bridge+Essay+Plans+-+Edexcel+IGCSE+Literature',
+        url: '/api/og?title=A+View+from+the+Bridge%3A+5+Essay+Plans+-+Edexcel+IGCSE',
         width: 1200,
         height: 630,
-        alt: 'A View from the Bridge Essay Plans - Edexcel IGCSE Literature',
+        alt: 'A View from the Bridge: 5 Essay Plans - Edexcel IGCSE',
       },
     ],
   },
-  title: 'A View from the Bridge Essay Plans - Edexcel IGCSE Literature',
+  title: 'A View from the Bridge: 5 Essay Plans - Edexcel IGCSE',
   description:
     'Five ready-to-use essay plans for A View from the Bridge covering Eddie\u2019s downfall, masculinity, honour, Alfieri\u2019s role and dramatic techniques.',
   alternates: {

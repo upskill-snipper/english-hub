@@ -5,22 +5,22 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Love Theme Across Texts | GCSE English Literature',
+    title: 'Love Theme in GCSE English Literature',
     description:
-      'Explore the theme of love across GCSE set texts: Romeo and Juliet, Love and Relationships poetry, and Pride and Prejudice. Key quotes, analysis, and comparison ideas.',
+      'Love across GCSE set texts: Romeo and Juliet, the Love and Relationships poems, and Pride and Prejudice. Key quotations, analysis and comparison ideas.',
     images: [
       {
-        url: '/api/og?title=Love+Theme+Across+Texts+%7C+GCSE+English+Literature',
+        url: '/api/og?title=Love+Theme+in+GCSE+English+Literature',
         width: 1200,
         height: 630,
-        alt: 'Love Theme Across Texts | GCSE English Literature',
+        alt: 'Love Theme in GCSE English Literature',
       },
     ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/themes/love' },
-  title: 'Love Theme Across Texts | GCSE English Literature',
+  title: 'Love Theme in GCSE English Literature',
   description:
-    'Explore the theme of love across GCSE set texts: Romeo and Juliet, Love and Relationships poetry, and Pride and Prejudice. Key quotes, analysis, and comparison ideas.',
+    'Love across GCSE set texts: Romeo and Juliet, the Love and Relationships poems, and Pride and Prejudice. Key quotations, analysis and comparison ideas.',
 }
 
 /* ─── Data ───────────────────────────────────────────────────── */

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Descriptive Nature Passages - Reading Practice Framework - The English Hub',
     description:
-      'Cambridge IGCSE Paper 1 reading practice on descriptive nature passages. Structured comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
+      'Cambridge IGCSE Paper 1 reading framework on nature writing, set on The Secret Garden, Wuthering Heights and The Call of the Wild. Analysis and summary tasks.',
     images: [
       {
         url: '/api/og?title=Descriptive+Nature+Passages+-+Reading+Practice+Framework+-+The+English+Hub',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   title: 'Descriptive Nature Passages - Reading Practice Framework',
   description:
-    'Cambridge IGCSE Paper 1 reading practice on descriptive nature passages. Structured comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
+    'Cambridge IGCSE Paper 1 reading framework on nature writing, set on The Secret Garden, Wuthering Heights and The Call of the Wild. Analysis and summary tasks.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/reading/descriptive-nature',
   },

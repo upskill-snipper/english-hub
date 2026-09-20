@@ -20,19 +20,19 @@ import { getLocale, t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'A Passage to Africa - George Alagiah - IGCSE Language A Anthology - The English Hub',
+    title: 'A Passage to Africa - George Alagiah - IGCSE Anthology - The English Hub',
     description:
       'Study guide for A Passage to Africa by George Alagiah. Thematic and structural analysis, key vocabulary and exam practice for Edexcel IGCSE English Language A.',
     images: [
       {
-        url: '/api/og?title=A+Passage+to+Africa+-+George+Alagiah+-+IGCSE+Language+A+Anthology+-+The+English+Hub',
+        url: '/api/og?title=A+Passage+to+Africa+-+George+Alagiah+-+IGCSE+Anthology+-+The+English+Hub',
         width: 1200,
         height: 630,
-        alt: 'A Passage to Africa - George Alagiah - IGCSE Language A Anthology - The English Hub',
+        alt: 'A Passage to Africa - George Alagiah - IGCSE Anthology - The English Hub',
       },
     ],
   },
-  title: 'A Passage to Africa - George Alagiah - IGCSE Language A Anthology',
+  title: 'A Passage to Africa - George Alagiah - IGCSE Anthology',
   description:
     'Study guide for A Passage to Africa by George Alagiah. Thematic and structural analysis, key vocabulary and exam practice for Edexcel IGCSE English Language A.',
   alternates: {

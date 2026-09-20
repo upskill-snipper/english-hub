@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Model Answers | The English Hub',
     description:
-      'Browse expert model answers for GCSE and IGCSE English Language and Literature. Grade 3, 5, 7, and 9 examples with examiner commentary, technique annotations, and grade-boundary breakdowns.',
+      'Model answers for GCSE and IGCSE English at grades 3, 5, 7 and 9: language analysis, creative writing, literature essays and persuasive writing, annotated.',
     images: [
       {
         url: '/api/og?title=Model+Answers+%7C+The+English+Hub',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/resources/model-answers' },
   title: 'Model Answers',
   description:
-    'Browse expert model answers for GCSE and IGCSE English Language and Literature. Grade 3, 5, 7, and 9 examples with examiner commentary, technique annotations, and grade-boundary breakdowns.',
+    'Model answers for GCSE and IGCSE English at grades 3, 5, 7 and 9: language analysis, creative writing, literature essays and persuasive writing, annotated.',
 }
 
 /* ─── Data ───────────────────────────────────────────────────── */

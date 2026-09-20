@@ -5,9 +5,9 @@ import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-
 import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
-  title: 'AQA English Language Paper 1 & Paper 2 Technique Guides',
+  title: 'AQA English Language Paper 1 and 2 Guides',
   description:
-    'Question-by-question AQA English Language Paper 1 and Paper 2 technique guides for GCSE. Grade 9 model answers, marking guides explained, timing and marker tips. Written by GCSE markers.',
+    'Question-by-question guides to AQA English Language Paper 1 and Paper 2, with writing technique, timing and the mistakes markers see most often.',
   alternates: { canonical: 'https://theenglishhub.app/analysis/language-paper' },
   openGraph: {
     title: 'AQA Language Paper 1 & 2 Technique Guides - The English Hub',
@@ -170,8 +170,8 @@ export default async function LanguagePaperAnalysisHub() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <LearningResourceJsonLd
-        name="AQA English Language Paper 1 & Paper 2 Technique Guides"
-        description="Question-by-question AQA English Language Paper 1 and Paper 2 technique guides for GCSE. Grade 9 model answers, marking guides explained, timing and marker tips. Written by GCSE markers."
+        name="AQA English Language Paper 1 and 2 Guides"
+        description="Question-by-question guides to AQA English Language Paper 1 and Paper 2, with writing technique, timing and the mistakes markers see most often."
         educationalLevel="GCSE"
         learningResourceType="Study guide"
         about="AQA English Language Paper 1 and Paper 2"
@@ -183,7 +183,7 @@ export default async function LanguagePaperAnalysisHub() {
           { name: 'Home', url: 'https://theenglishhub.app' },
           { name: 'Analysis', url: 'https://theenglishhub.app/analysis' },
           {
-            name: 'AQA English Language Paper 1 & Paper 2 Technique Guides',
+            name: 'AQA English Language Paper 1 and 2 Guides',
             url: 'https://theenglishhub.app/analysis/language-paper',
           },
         ]}

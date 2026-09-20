@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Paper 1 Practice Passages - IGCSE Language A',
     description:
-      'Three IGCSE Language A Paper 1 practice passages using public domain literary extracts from Dickens, Austen and Hardy. Full questions and model answers. Aligns with Cambridge syllabus 0500.',
+      'Three IGCSE Language A Paper 1 practice sets on public-domain passages by Dickens, Austen and Hardy, with questions, answers and a model analysis outline.',
     images: [
       {
         url: '/api/og?title=Paper+1+Practice+Passages+-+IGCSE+Language+A',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   title: 'Paper 1 Practice Passages - IGCSE Language A',
   description:
-    'Three IGCSE Language A Paper 1 practice passages using public domain literary extracts from Dickens, Austen and Hardy. Full questions and model answers. Aligns with Cambridge syllabus 0500.',
+    'Three IGCSE Language A Paper 1 practice sets on public-domain passages by Dickens, Austen and Hardy, with questions, answers and a model analysis outline.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/0500/paper-1/practice',
   },

@@ -10,15 +10,15 @@ import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Worlds and Lives poetry - AQA GCSE revision - The English Hub',
+    title: 'Worlds and Lives poetry - AQA GCSE revision',
     description:
       'AQA GCSE Worlds and Lives - the new 15-poem anthology cluster. Poem-by-poem breakdowns, themes, voices and comparison practice for Paper 2 Section B.',
     images: [
       {
-        url: '/api/og?title=Worlds+and+Lives+poetry+-+AQA+GCSE+revision+-+The+English+Hub',
+        url: '/api/og?title=Worlds+and+Lives+poetry+-+AQA+GCSE+revision',
         width: 1200,
         height: 630,
-        alt: 'Worlds and Lives poetry - AQA GCSE revision - The English Hub',
+        alt: 'Worlds and Lives poetry - AQA GCSE revision',
       },
     ],
   },

@@ -7,7 +7,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'UK Student Visa Basics for Gulf Students - The English Hub',
   description:
-    'A plain-English overview of the UK Student visa for Gulf students with a university offer: the CAS, evidence of funds, the English-language (IELTS) requirement, and when to apply. General preparation information, not immigration advice.',
+    'How the UK Student visa fits your journey: four steps from offer to visa, and a CAS, funds, English and passport checklist. Not immigration advice.',
   alternates: { canonical: 'https://theenglishhub.app/ielts/admissions/student-visa' },
 }
 

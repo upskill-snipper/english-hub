@@ -19,7 +19,7 @@ import { tMany } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description:
-    'How The English Hub collects, uses, and protects your personal data under UK GDPR. Includes Data Controller, DPO and Designated Safeguarding Lead contacts, Children’s Code commitments, third-party processors, international transfers, and how to exercise your data rights.',
+    'How The English Hub collects, uses and protects personal data under UK GDPR: controller, DPO and safeguarding contacts, processors, transfers and your rights.',
   alternates: { canonical: 'https://theenglishhub.app/legal/privacy' },
   openGraph: {
     title: 'Privacy Policy - The English Hub',

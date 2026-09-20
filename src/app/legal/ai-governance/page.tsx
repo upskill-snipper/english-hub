@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'AI Governance & Ethics',
     description:
-      'How The English Hub maps to Qatar’s PDPPL, Cybercrime Law, NCSA AI Guidelines, MCIT Ethical AI Principles, and adjacent frameworks. Includes an honest gap list and remediation roadmap.',
+      'How The English Hub maps to the Qatar PDPPL, the Cybercrime Law, NCSA AI Guidelines and MCIT Ethical AI Principles, with a gap list and a remediation roadmap.',
     images: [
       {
         url: '/api/og?title=AI+Governance+%26+Ethics',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/legal/ai-governance' },
   title: 'AI Governance & Ethics',
   description:
-    'How The English Hub maps to Qatar’s PDPPL, Cybercrime Law, NCSA AI Guidelines, MCIT Ethical AI Principles, and adjacent frameworks. Includes an honest gap list and remediation roadmap.',
+    'How The English Hub maps to the Qatar PDPPL, the Cybercrime Law, NCSA AI Guidelines and MCIT Ethical AI Principles, with a gap list and a remediation roadmap.',
 }
 
 export default async function AIGovernancePage() {

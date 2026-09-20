@@ -7,19 +7,19 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'OCR GCSE English Literature resources - The English Hub',
+    title: 'OCR GCSE English Literature Revision - The English Hub',
     description:
       'OCR J352 GCSE English Literature set-text guides, Towards a World Unknown anthology, exam technique and Grade 9 essay plans for Paper 1 and 2.',
     images: [
       {
-        url: '/api/og?title=OCR+GCSE+English+Literature+resources+-+The+English+Hub',
+        url: '/api/og?title=OCR+GCSE+English+Literature+Revision+-+The+English+Hub',
         width: 1200,
         height: 630,
-        alt: 'OCR GCSE English Literature resources - The English Hub',
+        alt: 'OCR GCSE English Literature Revision - The English Hub',
       },
     ],
   },
-  title: 'OCR GCSE English Literature resources',
+  title: 'OCR GCSE English Literature Revision',
   description:
     'OCR J352 GCSE English Literature set-text guides, Towards a World Unknown anthology, exam technique and Grade 9 essay plans for Paper 1 and 2.',
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/ocr' },

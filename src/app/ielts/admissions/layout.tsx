@@ -8,7 +8,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'IELTS to UK University Admissions - UCAS, Bands & Visa Guide',
   description:
-    'A preparation guide for Gulf students applying to UK universities: how UCAS works and when to apply, the IELTS Academic bands typically required by course type, writing a standout personal statement, and student-visa basics. Independent IELTS / UK-study preparation.',
+    'A guide for Gulf students applying to UK universities: how UCAS works, the IELTS bands courses typically ask for, personal statements and visa basics.',
   alternates: { canonical: 'https://theenglishhub.app/ielts/admissions' },
 }
 

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Language Analysis - IGCSE Language A Paper 1 Q2',
     description:
-      'How to analyse language for IGCSE Language A Paper 1 Question 2. Method, analytical vocabulary, model sentences and common mistakes. Aligns with Cambridge syllabus 0500.',
+      'How to analyse language in IGCSE Language A Paper 1 Question 2, worth 15 marks. A five-step paragraph framework, analytical vocabulary and a worked paragraph.',
     images: [
       {
         url: '/api/og?title=Language+Analysis+-+IGCSE+Language+A+Paper+1+Q2',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   title: 'Language Analysis - IGCSE Language A Paper 1 Q2',
   description:
-    'How to analyse language for IGCSE Language A Paper 1 Question 2. Method, analytical vocabulary, model sentences and common mistakes. Aligns with Cambridge syllabus 0500.',
+    'How to analyse language in IGCSE Language A Paper 1 Question 2, worth 15 marks. A five-step paragraph framework, analytical vocabulary and a worked paragraph.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/0500/paper-1/language-analysis',
   },

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "The Handmaid's Tale Notes | A-Level English Literature",
+  title: "The Handmaid's Tale Notes | A-Level",
   description:
     "A-Level revision notes for Atwood's The Handmaid's Tale: plot with the Historical Notes coda, Offred's narration, themes, key quotations and dystopian context.",
   alternates: { canonical: '/resources/revision-notes/the-handmaids-tale' },

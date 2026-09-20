@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Paper 1 Question Types | Cambridge IGCSE Language B | The English Hub',
     description:
-      'Full breakdown of the three question types on Cambridge IGCSE Language B Paper 1 Reading: comprehension, language analysis and summary. Worked technique for each.',
+      'The three question types on Cambridge IGCSE Language B Paper 1 - comprehension, language analysis and summary - and the technique each one needs.',
     images: [
       {
         url: '/api/og?title=Paper+1+Question+Types+%7C+Cambridge+IGCSE+Language+B+%7C+The+English+Hub',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   title: 'Paper 1 Question Types | Cambridge IGCSE Language B',
   description:
-    'Full breakdown of the three question types on Cambridge IGCSE Language B Paper 1 Reading: comprehension, language analysis and summary. Worked technique for each.',
+    'The three question types on Cambridge IGCSE Language B Paper 1 - comprehension, language analysis and summary - and the technique each one needs.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/0990/paper-1/question-types',
   },

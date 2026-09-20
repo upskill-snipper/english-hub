@@ -6,24 +6,24 @@ import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Lord of the Flies Study Guide - Edexcel GCSE English Literature',
+    title: 'Lord of the Flies - Edexcel Literature',
     description:
-      'Complete Lord of the Flies revision guide for Edexcel GCSE English Literature. Plot, characters, themes, 15+ key quotes, symbolism, context, and Edexcel exam technique.',
+      'Lord of the Flies for Edexcel GCSE English Literature: plot, characters, themes, symbolism, key quotes, context and exam technique.',
     images: [
       {
-        url: '/api/og?title=Lord+of+the+Flies+Study+Guide+-+Edexcel+GCSE+English+Literature',
+        url: '/api/og?title=Lord+of+the+Flies+-+Edexcel+Literature',
         width: 1200,
         height: 630,
-        alt: 'Lord of the Flies Study Guide - Edexcel GCSE English Literature',
+        alt: 'Lord of the Flies - Edexcel Literature',
       },
     ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/lord-of-the-flies',
   },
-  title: 'Lord of the Flies Study Guide - Edexcel GCSE English Literature',
+  title: 'Lord of the Flies - Edexcel Literature',
   description:
-    'Complete Lord of the Flies revision guide for Edexcel GCSE English Literature. Plot, characters, themes, 15+ key quotes, symbolism, context, and Edexcel exam technique.',
+    'Lord of the Flies for Edexcel GCSE English Literature: plot, characters, themes, symbolism, key quotes, context and exam technique.',
 }
 
 /* ─── Data ───────────────────────────────────────────────────── */

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Summary Writing - IGCSE Language A Paper 1 Q3',
     description:
-      'How to write a top-mark summary for IGCSE Language A Paper 1 Question 3. Method, model paragraph and marking criteria explained. Aligns with Cambridge syllabus 0500.',
+      'Question 3 of IGCSE Language A Paper 1 carries 25 marks. How the reading and writing marks split, a five-step method and a worked opening paragraph.',
     images: [
       {
         url: '/api/og?title=Summary+Writing+-+IGCSE+Language+A+Paper+1+Q3',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   title: 'Summary Writing - IGCSE Language A Paper 1 Q3',
   description:
-    'How to write a top-mark summary for IGCSE Language A Paper 1 Question 3. Method, model paragraph and marking criteria explained. Aligns with Cambridge syllabus 0500.',
+    'Question 3 of IGCSE Language A Paper 1 carries 25 marks. How the reading and writing marks split, a five-step method and a worked opening paragraph.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/0500/paper-1/summary-writing',
   },

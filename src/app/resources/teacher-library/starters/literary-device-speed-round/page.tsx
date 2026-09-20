@@ -4,19 +4,19 @@ import { Button } from '@/components/ui/button'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Literary Device Speed Round - 5-Minute Starter',
+    title: '5-Minute Starter: Literary Devices',
     description:
       'A 5-minute quick-fire starter with 10 literary device definitions. No printing required.',
     images: [
       {
-        url: '/api/og?title=Literary+Device+Speed+Round+-+5-Minute+Starter',
+        url: '/api/og?title=5-Minute+Starter%3A+Literary+Devices',
         width: 1200,
         height: 630,
-        alt: 'Literary Device Speed Round - 5-Minute Starter',
+        alt: '5-Minute Starter: Literary Devices',
       },
     ],
   },
-  title: 'Literary Device Speed Round - 5-Minute Starter',
+  title: '5-Minute Starter: Literary Devices',
   description:
     'A 5-minute quick-fire starter with 10 literary device definitions. No printing required.',
   alternates: {

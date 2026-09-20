@@ -6,24 +6,24 @@ import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Animal Farm Study Guide - Edexcel GCSE English Literature',
+    title: 'Animal Farm - Edexcel GCSE Literature',
     description:
-      'Complete Animal Farm revision guide for Edexcel GCSE English Literature. Plot, characters, themes, 15+ key quotes, Russian Revolution context, allegory analysis, and Edexcel exam technique.',
+      'Animal Farm for Edexcel GCSE English Literature Paper 1: plot, characters, themes, key quotes, the Russian Revolution allegory and exam technique.',
     images: [
       {
-        url: '/api/og?title=Animal+Farm+Study+Guide+-+Edexcel+GCSE+English+Literature',
+        url: '/api/og?title=Animal+Farm+-+Edexcel+GCSE+Literature',
         width: 1200,
         height: 630,
-        alt: 'Animal Farm Study Guide - Edexcel GCSE English Literature',
+        alt: 'Animal Farm - Edexcel GCSE Literature',
       },
     ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/animal-farm',
   },
-  title: 'Animal Farm Study Guide - Edexcel GCSE English Literature',
+  title: 'Animal Farm - Edexcel GCSE Literature',
   description:
-    'Complete Animal Farm revision guide for Edexcel GCSE English Literature. Plot, characters, themes, 15+ key quotes, Russian Revolution context, allegory analysis, and Edexcel exam technique.',
+    'Animal Farm for Edexcel GCSE English Literature Paper 1: plot, characters, themes, key quotes, the Russian Revolution allegory and exam technique.',
 }
 
 /* ─── Data ───────────────────────────────────────────────────── */

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  title: "The Explorer's Daughter - Kari Herbert - IGCSE Language A Anthology",
+  title: "The Explorer's Daughter - Kari Herbert - IGCSE Anthology",
   description:
     "Study guide for The Explorer's Daughter by Kari Herbert. Structural analysis, key vocabulary and exam practice for Edexcel IGCSE English Language A.",
   alternates: {
