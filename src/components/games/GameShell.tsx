@@ -336,7 +336,12 @@ export default function GameShell({
       <div className="flex flex-wrap items-start justify-between gap-4 border-b border-border px-6 py-5">
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-2.5">
-            <h2 className="text-lg font-bold text-foreground">{title}</h2>
+            {/* h1, not h2. This is the game's name and the only heading on the
+                page: all 37 game pages served no h1 at all, measured across the
+                sitemap on 20 September 2026. /games has its own h1 and does not
+                use this shell, so nothing gains a second one. The classes carry
+                the styling, so nothing looks different. */}
+            <h1 className="text-lg font-bold text-foreground">{title}</h1>
             {difficulty && <DifficultyBadge level={difficulty} t={t} />}
           </div>
           {description && <p className="mt-1 text-sm text-muted-foreground">{description}</p>}

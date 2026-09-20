@@ -107,7 +107,14 @@ export function FullTextReader({
       </p>
 
       <div className="mt-8">
-        <InteractiveTextViewer data={annotated} storageKey={slug} />
+        <InteractiveTextViewer
+          data={annotated}
+          storageKey={slug}
+          /* This component already renders the page heading above, with the
+           same text. Without this the 26 pages using FullTextReader served
+           two h1s saying the same thing. */
+          titleAs="h2"
+        />
       </div>
     </div>
   )

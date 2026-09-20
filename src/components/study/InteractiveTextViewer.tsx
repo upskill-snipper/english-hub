@@ -66,6 +66,17 @@ interface InteractiveTextViewerProps {
   /** Unique key for localStorage persistence (e.g. "macbeth" or "christmas-carol") */
   storageKey: string
   className?: string
+  /**
+   * The heading level for the viewer's own title bar.
+   *
+   * 'h1' when this component IS the page's heading, which is how
+   * /revision/texts/macbeth/read uses it. 'h2' when the page already has one
+   * above it: FullTextReader renders a display h1 with the same text and then
+   * mounts this, so the other 26 read pages were serving two h1s carrying the
+   * identical string. Measured across all 1,329 sitemap URLs on 20 September
+   * 2026; they were the only pages on the site with more than one.
+   */
+  titleAs?: 'h1' | 'h2'
 }
 
 // ─── Constants ───────────────────────────────────────────────────────────────
@@ -756,7 +767,12 @@ function InfoPanel({
 
 // ─── Main component ──────────────────────────────────────────────────────────
 
-function InteractiveTextViewer({ data, storageKey, className = '' }: InteractiveTextViewerProps) {
+function InteractiveTextViewer({
+  data,
+  storageKey,
+  className = '',
+  titleAs: TitleTag = 'h1',
+}: InteractiveTextViewerProps) {
   const t = useT()
   // ── Persisted state ──────────────────────────────────────────────────────
   const [completedSections, setCompletedSections] = useState<Set<string>>(
@@ -907,7 +923,9 @@ function InteractiveTextViewer({ data, storageKey, className = '' }: Interactive
           <div className="flex items-center gap-3">
             <BookOpenIcon className="h-5 w-5 text-brand-accent flex-shrink-0" />
             <div>
-              <h1 className="text-base font-bold text-foreground sm:text-lg">{data.title}</h1>
+              <TitleTag className="text-base font-bold text-foreground sm:text-lg">
+                {data.title}
+              </TitleTag>
               <p className="text-xs text-muted-foreground">
                 {data.author} &middot; <span>{t(`text_viewer.type_${data.type}`)}</span> &middot;{' '}
                 {data.sections.length}{' '}

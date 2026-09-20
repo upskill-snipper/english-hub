@@ -186,10 +186,14 @@ describe('what the suite runs in', () => {
     // real Footer with no board cookie, because the question is whether the
     // link is in the DOM for a visitor the footer filters against, and source
     // text cannot answer that.
+    //
+    // Then to 21 for one-h1-per-page.test.tsx, which asserts the heading LEVEL
+    // a component renders at. That depends on a prop its caller passes, so the
+    // element has to exist to be inspected.
     expect(
       annotated.length,
       'more files now claim to need a DOM - check each one',
-    ).toBeLessThanOrEqual(20)
+    ).toBeLessThanOrEqual(21)
   })
 })
 
