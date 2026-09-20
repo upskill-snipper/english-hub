@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { allCourses } from '@/data/courses'
+import { courseDescription } from '@/lib/seo/course-meta'
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import CourseDetailPage from './client-page'
 
@@ -30,9 +31,14 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const course = allCourses.find((c) => c.id === params.id)
   if (!course) return {}
 
-  const boardLabel = course.board ? ` (${course.board})` : ''
-  const title = `${course.title} | The English Hub`
-  const description = `${course.subtitle}. ${course.description.slice(0, 120)}... ${course.moduleList.length} modules, ${course.duration}.${boardLabel}`
+  // The title is the course's own. The brand suffix comes from the template
+  // declared in ../layout.tsx, so it matches the rest of the site instead of
+  // being appended here with a different separator.
+  const title = course.title
+  // openGraph and twitter titles do NOT inherit the metadata template, so the
+  // brand is spelled out for them and only for them.
+  const socialTitle = `${course.title} - The English Hub`
+  const description = courseDescription(course)
 
   return {
     title,
@@ -41,14 +47,14 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       canonical: `https://theenglishhub.app/courses/${params.id}`,
     },
     openGraph: {
-      title,
+      title: socialTitle,
       description,
       type: 'website',
       url: `https://theenglishhub.app/courses/${params.id}`,
     },
     twitter: {
       card: 'summary_large_image',
-      title,
+      title: socialTitle,
       description,
     },
   }
