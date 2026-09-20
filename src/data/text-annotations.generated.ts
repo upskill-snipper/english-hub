@@ -1043,6 +1043,60 @@ export const TEXT_ANNOTATIONS: Readonly<
       },
     ],
   },
+  'la-belle-dame-sans-merci': {
+    poem: [
+      {
+        type: 'context',
+        text: 'La Belle Dame sans Merci',
+        note: 'La Belle Dame sans Merci - John Keats (1819) Version note: The Edexcel IGCSE anthology uses the 1820 Indicator version of the poem (with "knight-at-arms").',
+      },
+      {
+        type: 'context',
+        text: 'Alone and palely loitering',
+        note: 'An unnamed speaker encounters a "knight-at-arms" who is "alone and palely loitering" in a barren landscape.',
+      },
+      {
+        type: 'language',
+        text: 'O what can ail thee, knight-at-arms\nAlone and palely loitering',
+        note: '"O what can ail thee, knight-at-arms, / Alone and palely loitering?" The opening question immediately establishes mystery.',
+      },
+      {
+        type: 'language',
+        text: "I met a lady in the meads\nFull beautiful, a faery's child",
+        note: '"I met a lady in the meads, / Full beautiful - a faery\'s child" The dash before "a faery\'s child" creates a moment of revelation.',
+      },
+      {
+        type: 'language',
+        text: 'Her hair was long, her foot was light,\nAnd her eyes were wild',
+        note: '"Her hair was long, her foot was light, / And her eyes were wild" The tricolon of physical description builds from conventional beauty (long hair) through ethereal grace (light foot) to something unsettling: wild eyes.',
+      },
+      {
+        type: 'language',
+        text: 'And there she lulled me asleep',
+        note: '"And there she lulled me asleep" The verb lulled suggests gentle, maternal comfort, but also carries connotations of deception - to lull someone into a false sense of security.',
+      },
+      {
+        type: 'language',
+        text: 'I saw pale kings, and princes too,\nPale warriors, death-pale were they all',
+        note: '"I saw pale kings and princes too, / Pale warriors, death-pale were they all" The repetition of pale three times, intensifying to the compound death-pale , creates a haunting crescendo.',
+      },
+      {
+        type: 'language',
+        text: 'And this is why I sojourn here\nAlone and palely loitering',
+        note: 'Stanza 12 (Circular return): The final stanza echoes the opening - "And this is why I sojourn here, / Alone and palely loitering" - returning us to the present and the barren landscape.',
+      },
+      {
+        type: 'language',
+        text: 'O what can ail thee, knight-at-arms',
+        note: 'Compare: "O what can ail thee, knight-at-arms" (8 syllables) "Alone and palely loitering?" (8 syllables) "The sedge has wither\'d from the lake" (8 syllables) "And no birds sing" (4 syllables) The sudden contraction of the fourth line creates a dying fall - the rhythm drops away, leaving a gap or silence.',
+      },
+      {
+        type: 'language',
+        text: 'Alone and palely loitering',
+        note: 'Compare: "O what can ail thee, knight-at-arms" (8 syllables) "Alone and palely loitering?" (8 syllables) "The sedge has wither\'d from the lake" (8 syllables) "And no birds sing" (4 syllables) The sudden contraction of the fourth line creates a dying fall - the rhythm drops away, leaving a gap or silence.',
+      },
+    ],
+  },
   'much-ado-about-nothing': {
     'acti-scenei': [
       {
@@ -1349,6 +1403,11 @@ export const TEXT_ANNOTATIONS: Readonly<
         text: 'My only love sprung from my only hate!\nToo early seen unknown, and known too late',
         note: 'antithesis. The antithesis of "love" and "hate" encapsulates the play\'s central tragic irony. "Too early" and "too late" introduce the sense that timing itself conspires against the lovers. Juliet recognises the hopelessness of her situation from the very start.',
       },
+      {
+        type: 'theme',
+        text: 'she doth teach the torches to burn bright',
+        note: 'Light and Dark Shakespeare\'s imagery consistently associates Romeo and Juliet with light - "she doth teach the torches to burn bright," "it is the east, and Juliet is the sun." But their love exists in darkness - they meet at night, marry in secret, and die in a tomb.',
+      },
     ],
     'actii-sceneii': [
       {
@@ -1370,6 +1429,11 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'language',
         text: 'My bounty is as boundless as the sea,\nMy love as deep; the more I give to thee,\nThe more I have, for both are infinite',
         note: 'metaphor. Juliet redefines love as abundance. The sea metaphor suggests love beyond human control. "The more I give... the more I have" inverts economic logic: love grows through generosity, not acquisition.',
+      },
+      {
+        type: 'theme',
+        text: 'It is the east, and Juliet is the sun',
+        note: 'Light and Dark Shakespeare\'s imagery consistently associates Romeo and Juliet with light - "she doth teach the torches to burn bright," "it is the east, and Juliet is the sun." But their love exists in darkness - they meet at night, marry in secret, and die in a tomb.',
       },
     ],
     'actii-scenevi': [
@@ -1404,6 +1468,11 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'theme',
         text: 'Romeo, the love I bear thee can afford\nNo better term than this: Thou art a villain',
         note: 'Conflict and Violence. Tybalt\'s formal challenge is devastating because Romeo now secretly loves him as family. "Villain" demands a response according to the honour code. Shakespeare shows how rigid social conventions make peace impossible even when individuals desire it.',
+      },
+      {
+        type: 'character',
+        text: 'A plague o’ both your houses',
+        note: 'Death: "A plague o\' both your houses!" - Mercutio\'s dying curse condemns both families and, by extension, the entire system of honour-based violence.',
       },
     ],
     'actiii-scenev': [
@@ -1441,6 +1510,21 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'language',
         text: 'More light and light, more dark and dark our woes',
         note: 'motif. As dawn forces Romeo to leave, Juliet recognises daylight as the enemy. The chiastic structure mirrors the inverse relationship between physical light and emotional darkness. The entire light-dark motif crystallises in one line.',
+      },
+      {
+        type: 'character',
+        text: 'If all else fail, myself have power to die',
+        note: 'Growth: At thirteen, Juliet moves from passive obedience ("I\'ll look to like, if looking liking move") to fierce independence ("If all else fail, myself have power to die").',
+      },
+      {
+        type: 'character',
+        text: 'Hang thee young baggage',
+        note: 'His violent response to Juliet\'s refusal to marry Paris ("Hang thee, young baggage!") exposes the brutality of patriarchal power.',
+      },
+      {
+        type: 'character',
+        text: 'I think you are happy in this second match',
+        note: 'Her advice to marry Paris ("I think you are happy in this second match") is a betrayal that leaves Juliet entirely alone.',
       },
     ],
     'activ-sceneiii': [
@@ -1547,6 +1631,13 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'theme',
         text: 'I fear too early: for my mind misgives\nSome consequence yet hanging in the stars',
         note: 'Fate and Free Will. Romeo senses disaster before the Capulet feast. "Hanging in the stars" suggests fate poised to fall. But Romeo goes to the feast anyway, making this both prophecy and evidence of his characteristic recklessness.',
+      },
+    ],
+    'acti-sceneiii': [
+      {
+        type: 'character',
+        text: 'I’ll look to like, if looking liking move',
+        note: 'Growth: At thirteen, Juliet moves from passive obedience ("I\'ll look to like, if looking liking move") to fierce independence ("If all else fail, myself have power to die").',
       },
     ],
   },
@@ -1678,6 +1769,11 @@ export const TEXT_ANNOTATIONS: Readonly<
         text: 'All that glisters is not gold',
         note: 'Appearance and the caskets. The scroll inside the gold casket, “All that glisters is not gold,” has become proverbial.',
       },
+      {
+        type: 'character',
+        text: 'Who chooseth me must give and hazard all he hath',
+        note: 'His choice of the lead casket ("Who chooseth me must give and hazard all he hath") suggests genuine insight - he values substance over appearance.',
+      },
     ],
     'activ-scenei': [
       {
@@ -1728,6 +1824,36 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'theme',
         text: 'Mislike me not for my complexion',
         note: 'Prejudice and otherness. The Prince of Morocco’s arrival at Belmont — “Mislike me not for my complexion” — shows that racial prejudice is not confined to Venice or to Jewish characters, making otherness a structural concern of the whole play.',
+      },
+    ],
+  },
+  'the-scarlet-letter': {
+    'section-13': [
+      {
+        type: 'theme',
+        text: 'The scarlet letter had not done its office',
+        note: 'Key Quotations on Sin and Guilt: "The scarlet letter had not done its office." - Explains how Hester\'s public shame, rather than destroying her, becomes the vehicle for her transformation.',
+      },
+    ],
+    'section-14': [
+      {
+        type: 'theme',
+        text: 'Let the black flower blossom as it may',
+        note: '"Let the black flower blossom as it may." - Hester\'s metaphorical acceptance of her situation while maintaining hope for growth - black flowers can still bloom.',
+      },
+    ],
+    'section-5': [
+      {
+        type: 'theme',
+        text: 'In all her intercourse with society, however, there was nothing that made her feel as if she belonged to it',
+        note: 'Isolation and Community - Key Quotations: "In all her intercourse with society, however, there was nothing that made her feel as if she belonged to it." - Hester\'s physical presence masking her psychological separation from community values.',
+      },
+    ],
+    'section-6': [
+      {
+        type: 'theme',
+        text: 'Pearl was a born outcast of the infantile world',
+        note: '"Pearl was a born outcast of the infantile world." - She exists in a different order of being, unable to conform to normal childhood patterns.',
       },
     ],
   },

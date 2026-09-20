@@ -159,27 +159,60 @@ describe('every note is authored, not generated', () => {
     // ones, so tracing a note to them is the same guarantee - but had this test
     // kept looking in page.tsx alone it would have failed honest notes and the
     // tempting fix would have been to delete the check.
+    // WIDENED A SECOND TIME, for the course modules. Eight of the texts that
+    // still highlighted nothing were poems with a four-module course written
+    // about them, and the analysis in those modules is as authored as the
+    // guides are. The haystack is built the way the GENERATOR chooses its
+    // sources - any src/data file declaring CourseModule[] - so the two cannot
+    // drift apart: a note can only pass here if it appears verbatim in a file a
+    // person wrote.
+    //
+    // A note on why widening does not hollow this out: the needle is the last
+    // sixty characters of the note with punctuation stripped. A sixty-character
+    // alphanumeric run does not occur by coincidence, whatever the size of the
+    // haystack. What widening costs is specificity about WHICH file, not
+    // whether the sentence was written by a person.
+    const courseSources = readdirSync(join(ROOT, 'src/data'))
+      .filter((f) => f.endsWith('.ts'))
+      .map((f) => join(ROOT, 'src/data', f))
+      .map((p) => readFileSync(p, 'utf8'))
+      .filter((s) => s.includes('CourseModule[]'))
+      .join('\n')
+
     let checked = 0
     for (const slug of SLUGS) {
       const page = join(ROOT, 'src/app/revision/texts', slug, 'page.tsx')
-      if (!existsSync(page)) continue
-      const guide = ['page.tsx', 'key-quotes/page.tsx', 'themes/page.tsx']
-        .map((rel) => join(ROOT, 'src/app/revision/texts', slug, rel))
-        .filter((p) => existsSync(p))
-        .map((p) => readFileSync(p, 'utf8'))
-        .join('\n')
+      const guide =
+        ['page.tsx', 'key-quotes/page.tsx', 'themes/page.tsx']
+          .map((rel) => join(ROOT, 'src/app/revision/texts', slug, rel))
+          .filter((p) => existsSync(p))
+          .map((p) => readFileSync(p, 'utf8'))
+          .join('\n') +
+        '\n' +
+        courseSources
+      if (!existsSync(page) && !TEXT_ANNOTATIONS[slug]) continue
+      // Built ONCE per text. It used to be rebuilt inside the inner loop, which
+      // was survivable over one guide file and became a five-second timeout the
+      // moment the haystack included the course modules - a test that fails on
+      // the clock rather than on the assertion, which reads like a real defect.
+      //
+      // The guide stores curly quotes and dashes as unicode escapes; left
+      // undecoded, stripping non-alphanumerics keeps the literal "u2019" and
+      // corrupts exactly the passages containing an apostrophe. Markup goes
+      // before the punctuation strip, not after: the course modules are HTML in
+      // a template literal, so "was commonly used" is stored as
+      // "was <em>commonly</em> used", and stripping only punctuation would
+      // leave the tag names behind as "wasemcommonlyemused".
+      const haystack = guide
+        .replace(/\\u([0-9a-fA-F]{4})/g, (_, h: string) => String.fromCharCode(parseInt(h, 16)))
+        .replace(/<[^>]*>/g, ' ')
+        .replace(/[^a-z0-9]+/gi, '')
+        .toLowerCase()
       for (const anns of Object.values(TEXT_ANNOTATIONS[slug])) {
         for (const a of anns) {
-          // Compare on words only: the guide stores curly quotes as \u escapes.
+          // Compare on words only.
           const tail = a.note
             .slice(-60)
-            .replace(/[^a-z0-9]+/gi, '')
-            .toLowerCase()
-          // The guide stores curly quotes and dashes as unicode escapes. Left
-          // undecoded, stripping non-alphanumerics keeps the literal "u2019"
-          // and corrupts exactly the passages that contain an apostrophe.
-          const haystack = guide
-            .replace(/\\u([0-9a-fA-F]{4})/g, (_, h: string) => String.fromCharCode(parseInt(h, 16)))
             .replace(/[^a-z0-9]+/gi, '')
             .toLowerCase()
           expect(haystack.includes(tail), `${slug}: note not found in its guide`).toBe(true)
