@@ -177,7 +177,10 @@ describe('every note is authored, not generated', () => {
     // extract walkthrough, each many hundred lines of authored prose, and they
     // are where most of the Characters and Themes highlighting now comes from.
     const subPages = (slug: string) =>
-      ['themes', 'characters', 'context', 'extract-walkthrough']
+      // The per-section pages join this list too: staves, chapters and acts are
+      // where the analysis is organised by the part of the text it discusses,
+      // which is where highlighting was thinnest.
+      ['themes', 'characters', 'context', 'extract-walkthrough', 'staves', 'chapters', 'acts']
         .map((d) => join(ROOT, 'src/app/revision/texts', slug, d, 'page.tsx'))
         .filter((p) => existsSync(p))
         .map((p) => readFileSync(p, 'utf8'))

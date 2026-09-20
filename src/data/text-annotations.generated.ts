@@ -181,6 +181,16 @@ export const TEXT_ANNOTATIONS: Readonly<
         note: '"No wind that blew was bitterer than he, no falling snow was more intent upon its purpose, no pelting rain less open to entreaty."',
       },
       {
+        type: 'quote',
+        text: 'The cold within him froze his old features, nipped his pointed nose, shrivelled his cheek, stiffened his gait',
+        note: '"The cold within him froze his old features, nipped his pointed nose, shrivelled his cheek, stiffened his gait."',
+      },
+      {
+        type: 'language',
+        text: 'There is no doubt that Marley was dead. This must be distinctly understood, or nothing wonderful can come of the story I am going to relate',
+        note: 'Dickens opens Stave One by speaking directly to the reader: "There is no doubt that Marley was dead. This must be distinctly understood, or nothing wonderful can come of the story I am going to relate." This conversational, almost conspiratorial tone establishes the narrative as a spoken story -- a fireside tale.',
+      },
+      {
         type: 'theme',
         text: 'Oh! But he was a tight-fisted hand at the grind-stone, Scrooge! a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner',
         note: 'Greed and Capitalism. Dickens uses a listing technique with seven consecutive adjectives, each suggesting physical violence or theft. The progressive participles ("-ing" endings) create a relentless, grinding rhythm. The exclamatory sentence and direct address involve the reader as witness. Every adjective describes taking -- Scrooge is defined entirely by what he extracts from the world, never by what he gives.',
@@ -189,11 +199,6 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'language',
         text: 'Oh! But he was a tight-fisted hand at the grind-stone, Scrooge! a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner',
         note: 'listing. Dickens uses a listing technique with seven consecutive adjectives, each suggesting physical violence or theft. The progressive participles ("-ing" endings) create a relentless, grinding rhythm. The exclamatory sentence and direct address involve the reader as witness. Every adjective describes taking -- Scrooge is defined entirely by what he extracts from the world, never by what he gives.',
-      },
-      {
-        type: 'quote',
-        text: 'The cold within him froze his old features, nipped his pointed nose, shrivelled his cheek, stiffened his gait',
-        note: 'Narrator - Stave 1. Pathetic fallacy makes Scrooge\'s inner emotional coldness manifest on his body. The "cold within him" is both literal (too miserly to pay for heating) and metaphorical (frozen out all human warmth). The verbs "froze," "nipped," "shrivelled," "stiffened" suggest decay and death -- Scrooge is already becoming corpse-like while alive, foreshadowing the death imagery of Stave 4.',
       },
       {
         type: 'theme',
@@ -305,7 +310,32 @@ export const TEXT_ANNOTATIONS: Readonly<
       {
         type: 'quote',
         text: 'Oh, a wonderful pudding! Bob Cratchit said, and calmly too, that he regarded it as the greatest success achieved by Mrs. Cratchit since their marriage',
-        note: 'Narrator - Stave 3. The comedy and warmth of Bob\'s deadpan compliment disguises real poverty. The pudding is "a small one for so large a family," but the Cratchits\' love transforms it into a triumph. "Calmly" adds humour -- Bob performs solemnity to honour his wife\'s effort. Dickens argues that wealth and happiness are not the same thing.',
+        note: '"Oh, a wonderful pudding! Bob Cratchit said, and calmly too, that he regarded it as the greatest success achieved by Mrs Cratchit since their marriage."',
+      },
+      {
+        type: 'quote',
+        text: 'Yellow, meagre, ragged, scowling, wolfish',
+        note: '"Yellow, meagre, ragged, scowling, wolfish" describes them in animal terms, showing how poverty dehumanises.',
+      },
+      {
+        type: 'quote',
+        text: 'If he be like to die, he had better do it, and decrease the surplus population',
+        note: '"If he be like to die, he had better do it, and decrease the surplus population."',
+      },
+      {
+        type: 'quote',
+        text: 'overcome with penitence and grief',
+        note: 'Scrooge is "overcome with penitence and grief." Dickens\'s technique is to make the reader experience the same shock: abstract policies have human consequences.',
+      },
+      {
+        type: 'language',
+        text: 'turkeys, geese, game, poultry, brawn, great joints of meat, sucking-pigs, long wreaths of sausages, mince-pies, plum-puddings, barrels of oysters, red-hot chestnuts, cherry-cheeked apples, juicy oranges, luscious pears, immense twelfth-cakes, and seething bowls of punch',
+        note: 'Dickens describes "turkeys, geese, game, poultry, brawn, great joints of meat, sucking-pigs, long wreaths of sausages, mince-pies, plum-puddings, barrels of oysters, red-hot chestnuts, cherry-cheeked apples, juicy oranges, luscious pears, immense twelfth-cakes, and seething bowls of punch." This cornucopia is deliberate: the sheer quantity of food makes generosity feel overwhelming and irresistible.',
+      },
+      {
+        type: 'language',
+        text: 'wretched, abject, frightful, hideous, miserable',
+        note: 'Their names are capitalised as abstract nouns; they are described as "wretched, abject, frightful, hideous, miserable." Dickens breaks from the narrative to deliver a direct political warning to his readership.',
       },
       {
         type: 'theme',
@@ -377,7 +407,12 @@ export const TEXT_ANNOTATIONS: Readonly<
       {
         type: 'quote',
         text: 'The case of this unhappy man might be my own. My life tends that way, now',
-        note: 'Scrooge - Stave 4. Scrooge begins connecting the vision to himself. "Tends that way" is careful -- his life is moving in this direction but has not arrived yet. There is still time. "Unhappy" is his own judgement: he recognises that greed produces misery, not security. This self-awareness precedes the gravestone revelation.',
+        note: '"The case of this unhappy man might be my own. My life tends that way, now."',
+      },
+      {
+        type: 'language',
+        text: 'tenderness connected with a death',
+        note: 'Scrooge explicitly asks to see "tenderness connected with a death," and the spirit obliges -- but the tenderness belongs to the poor family, not to the rich man.',
       },
       {
         type: 'language',
@@ -427,14 +462,24 @@ export const TEXT_ANNOTATIONS: Readonly<
         note: '"I am as light as a feather, I am as happy as an angel, I am as merry as a school-boy."',
       },
       {
+        type: 'quote',
+        text: "I'll raise your salary, and endeavour to assist your struggling family",
+        note: '"I\'ll raise your salary, and endeavour to assist your struggling family."',
+      },
+      {
+        type: 'language',
+        text: 'as good a friend, as good a master, and as good a man',
+        note: 'It is significant that in Stave Five, when Scrooge is redeemed, he is finally described in human terms: "as good a friend, as good a master, and as good a man."',
+      },
+      {
+        type: 'language',
+        text: 'He dressed himself "all in his best," and at last got out into the streets',
+        note: 'Short sentences pile up: "He dressed himself all in his best, and at last got out into the streets." Exclamation marks multiply.',
+      },
+      {
         type: 'language',
         text: 'I am as light as a feather, I am as happy as an angel, I am as merry as a schoolboy',
         note: 'simile. The triple simile mirrors the triple ghostly visitation. "Light" undoes his heaviness, "happy" undoes his misery, "merry" undoes his hostility. "School-boy" echoes the lonely child of Stave 2 -- Scrooge reclaims childhood joy. The anaphoric "I am" asserts a new identity with confidence. The rhythm is giddy and breathless.',
-      },
-      {
-        type: 'quote',
-        text: "I'll raise your salary, and endeavour to assist your struggling family",
-        note: 'Scrooge - Stave 5. Scrooge translates moral transformation into practical action. "Raise your salary" addresses economic injustice. "Endeavour" shows commitment. "Struggling" is the key word -- Scrooge now sees the Cratchits as real people with real difficulties, not abstractions. Personal redemption produces social reform.',
       },
       {
         type: 'theme',
@@ -511,7 +556,22 @@ export const TEXT_ANNOTATIONS: Readonly<
       {
         type: 'quote',
         text: 'A solitary child, neglected by his friends, is left there still',
-        note: 'Narrator - Stave 2. The emotional key to Scrooge\'s character. "Solitary" and "neglected" show his isolation began in childhood -- he was made cold, not born cold. "Left there still" is devastating: the child is still waiting, still alone. Dickens implies the lonely boy exists inside the old miser, buried but not gone. This generates the sympathy needed for the reader to want Scrooge to change.',
+        note: '"A solitary child, neglected by his friends, is left there still."',
+      },
+      {
+        type: 'quote',
+        text: 'He has the power to render us happy or unhappy; to make our service light or burdensome; a pleasure or a toil',
+        note: '"He has the power to render us happy or unhappy; to make our service light or burdensome; a pleasure or a toil."',
+      },
+      {
+        type: 'quote',
+        text: 'I should like to be able to say a word or two to my clerk just now',
+        note: '"I should like to be able to say a word or two to my clerk just now."',
+      },
+      {
+        type: 'language',
+        text: 'he could not hide the light: which streamed from under it',
+        note: 'Scrooge attempts to suppress this light by forcing the extinguisher cap over the spirit\'s head, but "he could not hide the light: which streamed from under it." This symbolism is central: Scrooge has spent years trying to suppress uncomfortable truths about his past, but the light of memory cannot be fully extinguished.',
       },
       {
         type: 'quote',
@@ -527,11 +587,6 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'language',
         text: "Father is so much kinder than he used to be, that home's like Heaven",
         note: 'simile. This brief line reveals a history of domestic cruelty. "Than he used to be" implies Scrooge\'s father was once harsh -- explaining, though not excusing, Scrooge\'s own emotional coldness. The simile "like Heaven" is poignant given Fan\'s early death. Dickens hints at a cycle of coldness passed down through generations.',
-      },
-      {
-        type: 'quote',
-        text: 'He has the power to render us happy or unhappy; to make our service light or burdensome; a pleasure or a toil',
-        note: 'Scrooge (reflecting on Fezziwig) - Stave 2. Scrooge himself articulates the novella\'s social message: employers have moral power over their workers\' lives. The balanced antithetical pairings ("happy or unhappy," "light or burdensome") present the choice as binary. This is a direct rebuke to his own treatment of Bob Cratchit -- and Scrooge knows it.',
       },
       {
         type: 'theme',
@@ -843,6 +898,41 @@ export const TEXT_ANNOTATIONS: Readonly<
         note: 'Jekyll becomes a prisoner of his own experiment, "slowly losing hold of my original and better self." His final confession is written in the third person ("that unhappy Henry Jekyll"), suggesting his identity has already fragmented beyond repair.',
       },
       {
+        type: 'language',
+        text: 'not truly one, but truly two',
+        note: 'The balanced, parallel structure ("not truly one, but truly two") gives it the authority of a scientific axiom.',
+      },
+      {
+        type: 'language',
+        text: 'a mere polity of multifarious, incongruous and independent denizens',
+        note: 'Jekyll goes even further, speculating that man may be "a mere polity of multifarious, incongruous and independent denizens," suggesting identity is even more fragmented than a simple binary.',
+      },
+      {
+        type: 'language',
+        text: 'I was slowly losing hold of my original and better self, and becoming slowly incorporated with my second and worse',
+        note: '"I was slowly losing hold of my original and better self, and becoming slowly incorporated with my second and worse"',
+      },
+      {
+        type: 'language',
+        text: 'This was the shocking thing; that the slime of the pit seemed to utter cries and voices',
+        note: '"this was the shocking thing; that the slime of the pit seemed to utter cries and voices"',
+      },
+      {
+        type: 'language',
+        text: 'I felt younger, lighter, happier in body; within I was conscious of a heady recklessness',
+        note: '"I felt younger, lighter, happier in body; within I was conscious of a heady recklessness"',
+      },
+      {
+        type: 'language',
+        text: 'younger, lighter, happier',
+        note: 'Jekyll describes becoming Hyde with genuinely positive language ("younger, lighter, happier"), creating an oxymoron with the moral horror of what Hyde represents.',
+      },
+      {
+        type: 'language',
+        text: 'that unhappy Henry Jekyll',
+        note: 'Jekyll refers to himself as "that unhappy Henry Jekyll," using the third person and the demonstrative "that" to create distance from his own identity.',
+      },
+      {
         type: 'theme',
         text: 'man is not truly one, but truly two',
         note: 'Duality of Man. Jekyll\'s central thesis, delivered with axiomatic force. The repetition of "truly" insists on authenticity. Yet the statement is also self-serving: it frames Jekyll\'s experiment as philosophical inquiry rather than moral transgression.',
@@ -861,11 +951,6 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'theme',
         text: 'I was slowly losing hold of my original and better self, and becoming slowly incorporated with my second and worse',
         note: 'Duality of Man. The passive constructions suggest involuntary change, like addiction. The repetition of "slowly" creates an insidious rhythm. "Incorporated" -- literally "made into one body" -- is darkly ironic: Jekyll wanted separation but gets merging.',
-      },
-      {
-        type: 'language',
-        text: 'I was slowly losing hold of my original and better self, and becoming slowly incorporated with my second and worse',
-        note: 'repetition. The passive constructions suggest involuntary change, like addiction. The repetition of "slowly" creates an insidious rhythm. "Incorporated" -- literally "made into one body" -- is darkly ironic: Jekyll wanted separation but gets merging.',
       },
       {
         type: 'theme',
@@ -1010,6 +1095,21 @@ export const TEXT_ANNOTATIONS: Readonly<
         note: '"It sounds nothing to hear, but it was hellish to see. It wasn\'t like a man; it was like some damned Juggernaut."',
       },
       {
+        type: 'language',
+        text: 'trampled calmly over the child’s body and left her screaming on the ground',
+        note: '"trampled calmly over the child\'s body and left her screaming on the ground"',
+      },
+      {
+        type: 'language',
+        text: 'The door, which was equipped with neither bell nor knocker, was blistered and distained',
+        note: '"The door, which was equipped with neither bell nor knocker, was blistered and distained"',
+      },
+      {
+        type: 'language',
+        text: 'street shone out in contrast to its dingy neighbourhood, like a fire in a forest',
+        note: '"street shone out in contrast to its dingy neighbourhood, like a fire in a forest"',
+      },
+      {
         type: 'quote',
         text: 'No sir, I make it a rule of mine: the more it looks like Queer Street, the less I ask',
         note: 'Enfield - Chapter 1. Enfield\'s "rule" of deliberate ignorance embodies the Victorian code of silence. "Queer Street" (trouble) is precisely where questions are most needed. Stevenson shows how gentlemanly discretion enables evil to operate unchallenged.',
@@ -1028,11 +1128,6 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'theme',
         text: 'The door, which was equipped with neither bell nor knocker, was blistered and distained',
         note: 'Secrecy and Silence. The sinister back door lacks any means of announcing a visitor -- it is designed for secrecy. "Blistered and distained" makes moral decay physical. The door is the novella\'s central symbol: the threshold between the respectable and the hidden.',
-      },
-      {
-        type: 'language',
-        text: 'The door, which was equipped with neither bell nor knocker, was blistered and distained',
-        note: 'symbol. The sinister back door lacks any means of announcing a visitor -- it is designed for secrecy. "Blistered and distained" makes moral decay physical. The door is the novella\'s central symbol: the threshold between the respectable and the hidden.',
       },
       {
         type: 'quote',
@@ -1066,12 +1161,37 @@ export const TEXT_ANNOTATIONS: Readonly<
         text: 'square of ancient, handsome houses',
         note: 'Jekyll\'s house has a respectable front on a "square of ancient, handsome houses" and a sinister rear entrance on a "dingy" by-street.',
       },
+      {
+        type: 'language',
+        text: 'Mr. Hyde was pale and dwarfish, he gave an impression of deformity without any nameable malformation',
+        note: '"Mr Hyde was pale and dwarfish, he gave an impression of deformity without any nameable malformation"',
+      },
+      {
+        type: 'language',
+        text: 'the figure had no face by which he might know it; even in his dreams, it had no face',
+        note: '"the figure had no face by which he might know it; even in his dreams, it had no face"',
+      },
     ],
     'section-3': [
       {
         type: 'quote',
         text: 'The large handsome face of Dr. Jekyll grew pale to the very lips, and there came a blackness about his eyes',
         note: 'Narrator. Physical description signals inner turmoil. The shift from "handsome" to "pale" and "blackness" mirrors the duality theme, suggesting Hyde lurks just beneath Jekyll\'s composed exterior.',
+      },
+      {
+        type: 'language',
+        text: 'The large handsome face of Dr. Jekyll grew pale to the very lips, and there came a blackness about his eyes',
+        note: '"the large handsome face of Dr Jekyll grew pale to the very lips, and there came a blackness about his eyes"',
+      },
+      {
+        type: 'language',
+        text: 'the moment I choose, I can be rid of Mr. Hyde. I give you my hand upon that',
+        note: '"the moment I choose, I can be rid of Mr Hyde. I give you my hand upon that"',
+      },
+      {
+        type: 'language',
+        text: 'I only ask for justice; I only ask you to help him for my sake, when I am no longer here',
+        note: '"I only ask for justice; I only ask you to help him for my sake, when I am no longer here"',
       },
     ],
     'section-4': [
@@ -1084,6 +1204,16 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'character',
         text: 'jumped upon the roadway',
         note: '"Jumped upon the roadway" makes the dead body seem to move of its own accord, adding a ghastly, puppet-like quality.',
+      },
+      {
+        type: 'language',
+        text: 'with ape-like fury, he was trampling his victim under foot and hailing down a storm of blows',
+        note: '"with ape-like fury, he was trampling his victim under foot and hailing down a storm of blows"',
+      },
+      {
+        type: 'language',
+        text: 'the bones were audibly shattered and the body jumped upon the roadway',
+        note: '"the bones were audibly shattered and the body jumped upon the roadway"',
       },
       {
         type: 'theme',
@@ -1112,12 +1242,73 @@ export const TEXT_ANNOTATIONS: Readonly<
         text: 'death-warrant written legibly upon his face',
         note: 'التضاد بين Lanyon "hearty, healthy, dapper" في الفصل الثاني والرجل "pale" اللي عليه "death-warrant written legibly upon his face" في الفصل السادس هو أكثر تحوّل شخصي درامي عند Stevenson.',
       },
+      {
+        type: 'language',
+        text: 'he had always been known for charities, he was now no less distinguished for religion. He was busy, he was much in the open air, he did good',
+        note: '"He had always been known for charities; he was now no less distinguished for religion. He was busy, he was much in the open air, he did good"',
+      },
     ],
     'section-5': [
       {
         type: 'quote',
         text: 'The fog still slept on the wing above the drowned city',
         note: 'Narrator. Pathetic fallacy creates a suffocating Gothic atmosphere. The personified fog "sleeping" over a "drowned" city suggests a London submerged in secrecy, unable to see clearly — mirroring the characters\' moral blindness.',
+      },
+      {
+        type: 'language',
+        text: 'the two hands are in many points identical: only differently sloped',
+        note: '"the two hands are in many points identical; only differently sloped"',
+      },
+      {
+        type: 'language',
+        text: 'the theatre, once crowded with eager students and now lying gaunt and silent, the tables laden with chemical apparatus',
+        note: '"the theatre... once crowded with eager students and now lying gaunt and silent, the tables laden with chemical apparatus"',
+      },
+    ],
+    'section-7': [
+      {
+        type: 'language',
+        text: 'an expression of such abject terror and despair, as froze the very blood of the two gentlemen below',
+        note: '"an expression of such abject terror and despair, as froze the very blood of the two gentlemen below"',
+      },
+      {
+        type: 'language',
+        text: 'abject terror and despair',
+        note: 'The triad "abject terror and despair" escalates the emotional intensity.',
+      },
+      {
+        type: 'language',
+        text: 'the smile was struck out of his face and succeeded by an expression of such abject terror',
+        note: '"the smile was struck out of his face and succeeded by an expression of such abject terror"',
+      },
+    ],
+    'section-8': [
+      {
+        type: 'language',
+        text: 'The wind, which only broke in puffs and draughts into that deep well of building, tossed the light of the candle to and fro',
+        note: '"the wind, which only broke in puffs and draughts into that deep well of building, tossed the light of the candle to and fro"',
+      },
+    ],
+    'section-9': [
+      {
+        type: 'language',
+        text: 'My life is shaken to its roots; sleep has left me; the deadliest terror sits by me at all hours',
+        note: '"my life is shaken to its roots; sleep has left me; the deadliest terror sits by me at all hours"',
+      },
+      {
+        type: 'language',
+        text: 'deadliest terror sits by me',
+        note: 'The tricolon escalates from existential crisis ("shaken to its roots") to physical suffering ("sleep has left me") to permanent psychological torment ("deadliest terror sits by me").',
+      },
+      {
+        type: 'language',
+        text: 'What he told me in the next hour, I cannot bring my mind to set on paper',
+        note: '"what he told me in the next hour, I cannot bring my mind to set on paper"',
+      },
+      {
+        type: 'language',
+        text: 'he reeled, staggered, clutched at the table and held on, staring with injected eyes, gasping with open mouth',
+        note: '"he reeled, staggered, clutched at the table and held on, staring with injected eyes, gasping with open mouth"',
       },
     ],
   },
@@ -1709,6 +1900,16 @@ export const TEXT_ANNOTATIONS: Readonly<
         note: 'Juliet - Act 1, Scene 5. Juliet recognises the paradox at the heart of the play: love and enmity are inseparable from birth.',
       },
       {
+        type: 'language',
+        text: 'lips, two blushing pilgrims',
+        note: 'Romeo and Juliet\'s first exchange is structured as a shared sonnet with a pilgrim-and-saint conceit: Romeo\'s "lips, two blushing pilgrims" approach Juliet\'s "holy shrine." The religious language elevates their attraction above the bawdy love of the Nurse and the commercial match-making of Paris.',
+      },
+      {
+        type: 'language',
+        text: 'My only love sprung from my only hate',
+        note: 'Juliet\'s oxymoron "My only love sprung from my only hate" encapsulates the paradox that will destroy them.',
+      },
+      {
         type: 'theme',
         text: 'My only love sprung from my only hate!\nToo early seen unknown, and known too late',
         note: 'Fate and Free Will. The antithesis of "love" and "hate" encapsulates the play\'s central tragic irony. "Too early" and "too late" introduce the sense that timing itself conspires against the lovers. Juliet recognises the hopelessness of her situation from the very start.',
@@ -1775,6 +1976,16 @@ export const TEXT_ANNOTATIONS: Readonly<
         note: 'Mercutio - Act 3, Scene 1. Mercutio’s dying curse condemns both families equally and voices the play’s moral judgement on the feud.',
       },
       {
+        type: 'language',
+        text: 'A plague o’ both your houses',
+        note: "Mercutio's dying words \"A plague o' both your houses!\" function as the play's moral verdict on the feud.",
+      },
+      {
+        type: 'language',
+        text: 'Ask for me tomorrow, and you shall find me a\ngrave man',
+        note: 'His bitter pun "Ask for me tomorrow, and you shall find me a grave man" shows wit surviving even at the point of death.',
+      },
+      {
         type: 'quote',
         text: 'Romeo, the love I bear thee can afford\nNo better term than this: Thou art a villain',
         note: 'Tybalt - Act 3, Scene 1. Tybalt\'s formal challenge is devastating because Romeo now secretly loves him as family. "Villain" demands a response according to the honour code. Shakespeare shows how rigid social conventions make peace impossible even when individuals desire it.',
@@ -1810,6 +2021,21 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'context',
         text: 'I think it best you married with the County',
         note: 'The Nurse\'s pragmatic advice ("I think it best you married with the County") shows how women learned to survive within the system by accepting its terms.',
+      },
+      {
+        type: 'language',
+        text: 'It was the nightingale, and not the lark',
+        note: 'The aubade (dawn song) debate - "It was the nightingale, and not the lark" - extends the play\'s light/dark imagery: for the lovers, dawn brings danger and separation, inverting the natural association of light with safety.',
+      },
+      {
+        type: 'language',
+        text: 'Hang thee young baggage, disobedient wretch',
+        note: 'Capulet\'s abusive language ("Hang thee, young baggage! Disobedient wretch!") exposes the violence beneath his earlier indulgence.',
+      },
+      {
+        type: 'language',
+        text: 'Thou and my bosom henceforth shall be twain',
+        note: 'Juliet\'s aside after the Nurse\'s betrayal - "Thou and my bosom henceforth shall be twain" - marks her final isolation from every adult who might have protected her.',
       },
       {
         type: 'quote',
@@ -1858,6 +2084,11 @@ export const TEXT_ANNOTATIONS: Readonly<
         text: 'My dismal scene I needs must act alone',
         note: 'Juliet - Act 4, Scene 3. Juliet steels herself to take the potion, acknowledging that she faces death with no support from anyone.',
       },
+      {
+        type: 'language',
+        text: 'My dismal scene I needs must act alone',
+        note: 'The line "My dismal scene I needs must act alone" uses theatrical language to acknowledge that she has no support.',
+      },
     ],
     'actv-sceneiii': [
       {
@@ -1876,6 +2107,16 @@ export const TEXT_ANNOTATIONS: Readonly<
         note: 'The Prince\'s final speech acknowledges that even he has been punished by the feud ("And I, for winking at your discords too, / Have lost a brace of kinsmen").',
       },
       {
+        type: 'language',
+        text: 'Death that hath suck’d the honey of thy breath,\nHath had no power yet upon thy beauty',
+        note: 'Romeo\'s final speech is rich with tragic irony: he notes that Juliet still looks alive - "Death, that hath suck\'d the honey of thy breath, / Hath had no power yet upon thy beauty" - because she is alive, but he cannot know it.',
+      },
+      {
+        type: 'language',
+        text: 'For never was a story of more woe\nThan this of Juliet and her Romeo',
+        note: 'The Prince\'s closing couplet, "For never was a story of more woe / Than this of Juliet and her Romeo," transforms the private tragedy into a public lesson.',
+      },
+      {
         type: 'theme',
         text: 'For never was a story of more woe\nThan this of Juliet and her Romeo',
         note: 'Death and Sacrifice. The final couplet is deliberately simple, as if the enormity of tragedy can only be expressed in the plainest language. "Her Romeo" gives Juliet possession in death that was denied to her in life.',
@@ -1892,12 +2133,27 @@ export const TEXT_ANNOTATIONS: Readonly<
         text: 'Wisely and slow; they stumble that run fast',
         note: 'The Friar begins as the voice of moderation ("Wisely and slow; they stumble that run fast") but is progressively drawn into deception.',
       },
+      {
+        type: 'language',
+        text: 'Within the infant rind of this weak flower\nPoison hath residence, and medicine power',
+        note: 'The Friar\'s soliloquy on herbs ("Within the infant rind of this weak flower / Poison hath residence, and medicine power") establishes the duality motif: the same plant can heal or kill, just as love can save or destroy.',
+      },
+      {
+        type: 'language',
+        text: 'Wisely and slow; they stumble that run fast',
+        note: 'His warning "Wisely and slow; they stumble that run fast" is proverbial wisdom that he himself will ignore, creating structural irony.',
+      },
     ],
     'activ-scenev': [
       {
         type: 'quote',
         text: 'Death lies on her like an untimely frost\nUpon the sweetest flower of all the field',
         note: 'Lord Capulet - Act 4, Scene 5. Capulet’s grief uses natural imagery to present Juliet’s apparent death as an unnatural destruction of youth and beauty.',
+      },
+      {
+        type: 'language',
+        text: 'O woe! O woeful, woeful, woeful day',
+        note: 'The lamentations of the Nurse ("O woe! O woeful, woeful, woeful day!"), Paris, and the Capulets are deliberately excessive and formulaic, contrasting with the genuine grief Juliet showed in earlier scenes.',
       },
     ],
     'actiii-sceneiii': [
@@ -1912,6 +2168,11 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'quote',
         text: 'Give me my Romeo, and when I shall die,\nTake him and cut him out in little stars,\nAnd he will make the face of heaven so fine\nThat all the world will be in love with night',
         note: 'Juliet - Act 3, Scene 2. Juliet’s epithalamium imagines love as cosmic and eternal, but the word "die" carries a dark premonition alongside its Elizabethan double meaning.',
+      },
+      {
+        type: 'language',
+        text: 'Gallop apace, you fiery-footed steeds',
+        note: 'Juliet\'s epithalamium ("Gallop apace, you fiery-footed steeds") is a passionate invocation of night that uses classical imagery to express sexual desire.',
       },
       {
         type: 'theme',
@@ -1936,6 +2197,16 @@ export const TEXT_ANNOTATIONS: Readonly<
         note: 'Mab brings soldiers dreams of "cutting foreign throats" and women dreams of sex.',
       },
       {
+        type: 'language',
+        text: 'cutting foreign throats',
+        note: 'The Queen Mab speech begins as playful fantasy but darkens into images of soldiers dreaming of "cutting foreign throats" and courtiers\' corruption.',
+      },
+      {
+        type: 'language',
+        text: 'my mind misgives\nSome consequence yet hanging in the stars',
+        note: 'Romeo\'s prophetic aside - "my mind misgives / Some consequence yet hanging in the stars" - explicitly links fate to the celestial imagery that will recur throughout the play.',
+      },
+      {
         type: 'quote',
         text: 'I fear too early: for my mind misgives\nSome consequence yet hanging in the stars',
         note: 'Romeo - Act 1, Scene 4. Romeo senses disaster before the Capulet feast. "Hanging in the stars" suggests fate poised to fall. But Romeo goes to the feast anyway, making this both prophecy and evidence of his characteristic recklessness.',
@@ -1951,6 +2222,16 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'character',
         text: 'What, drawn, and talk of peace? I hate the word',
         note: 'From his very first line ("What, drawn and talk of peace? I hate the word") he is defined by violence.',
+      },
+      {
+        type: 'language',
+        text: 'I will push Montague’s men from the wall, and\nthrust his maids to the wall',
+        note: 'The servants\' crude puns ("I will push Montague\'s men from the wall, and thrust his maids to the wall") ground the feud in low, physical violence before Shakespeare elevates it to the aristocratic level.',
+      },
+      {
+        type: 'language',
+        text: 'O brawling love! O loving hate',
+        note: 'Romeo\'s speeches about Rosaline are packed with conventional Petrarchan oxymorons - "O brawling love, O loving hate" - which sound hollow and rehearsed, contrasting sharply with the genuine emotion he will feel for Juliet.',
       },
       {
         type: 'quote',
@@ -1988,6 +2269,56 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'context',
         text: 'My will to her consent is but a part',
         note: 'His initial claim to value her consent ("My will to her consent is but a part") gives way to violent coercion when she refuses Paris.',
+      },
+      {
+        type: 'language',
+        text: 'earth hath swallowed all my hopes but she',
+        note: 'Capulet\'s metaphor "Earth hath swallowed all my hopes but she" reveals past bereavements and explains his protectiveness.',
+      },
+      {
+        type: 'language',
+        text: 'the hopeful lady of my earth',
+        note: 'His description of Juliet as "the hopeful lady of my earth" is poignant given the tragedy ahead.',
+      },
+    ],
+    'actii-scenei': [
+      {
+        type: 'language',
+        text: 'I conjure thee by Rosaline’s bright eyes,\nBy her high forehead and her scarlet lip',
+        note: 'Mercutio\'s bawdy conjuring ("I conjure thee by Rosaline\'s bright eyes, / By her high forehead and her scarlet lip") reduces love to physical appetite.',
+      },
+    ],
+    'actii-scenev': [
+      {
+        type: 'language',
+        text: 'old folks, many feign as they were dead;\nUnwieldy, slow, heavy and pale as lead',
+        note: 'Juliet\'s frustration builds through a soliloquy that contrasts youth and age: "Old folks, many feign as they were dead; / Unwieldy, slow, heavy and pale as lead." The Nurse\'s deliberate procrastination creates comic tension, and her focus on Romeo\'s physical attributes ("his face be better than any man\'s") reinforces her practical, bodily understanding of love.',
+      },
+      {
+        type: 'language',
+        text: 'his face be better than any man’s',
+        note: 'Juliet\'s frustration builds through a soliloquy that contrasts youth and age: "Old folks, many feign as they were dead; / Unwieldy, slow, heavy and pale as lead." The Nurse\'s deliberate procrastination creates comic tension, and her focus on Romeo\'s physical attributes ("his face be better than any man\'s") reinforces her practical, bodily understanding of love.',
+      },
+    ],
+    'activ-scenei': [
+      {
+        type: 'language',
+        text: 'I will confess to you that I love him',
+        note: 'Juliet\'s dialogue with Paris is loaded with double meanings: "I will confess to you that I love him" appears to refer to Paris but actually means Romeo.',
+      },
+    ],
+    'activ-sceneii': [
+      {
+        type: 'language',
+        text: 'Henceforward I am ever rul’d by you',
+        note: 'Juliet\'s performance of obedience - "Henceforward I am ever rul\'d by you" - is a masterful piece of deception that echoes Lady Capulet\'s earlier instruction to "look like the innocent flower." Capulet\'s response, advancing the wedding date, is a tragic acceleration: every attempt to fix the situation makes it worse.',
+      },
+    ],
+    'actv-scenei': [
+      {
+        type: 'language',
+        text: 'My poverty, but not my will consents',
+        note: 'The Apothecary scene explores poverty and desperation: the Apothecary knows selling poison is illegal but "My poverty, but not my will, consents." Romeo\'s observation that gold is a worse "poison" than the drug inverts social values, suggesting the real sickness lies in Verona\'s society.',
       },
     ],
     'acti-sceneiii': [
