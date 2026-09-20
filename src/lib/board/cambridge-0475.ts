@@ -193,9 +193,21 @@ export const CAMBRIDGE_0475: Cambridge0475Year[] = [
             texts: [
               { slug: 'things-fall-apart', title: 'Things Fall Apart', author: 'Chinua Achebe' },
               { slug: 'pride-and-prejudice', title: 'Pride and Prejudice', author: 'Jane Austen' },
-              { slug: null, title: 'Fire on the Mountain', author: 'Anita Desai' },
-              { slug: null, title: 'Hullaballoo in the Guava Orchard', author: 'Kiran Desai' },
-              { slug: null, title: "I'm the King of the Castle", author: 'Susan Hill' },
+              {
+                slug: 'fire-on-the-mountain',
+                title: 'Fire on the Mountain',
+                author: 'Anita Desai',
+              },
+              {
+                slug: 'hullaballoo-in-the-guava-orchard',
+                title: 'Hullaballoo in the Guava Orchard',
+                author: 'Kiran Desai',
+              },
+              {
+                slug: 'im-the-king-of-the-castle',
+                title: "I'm the King of the Castle",
+                author: 'Susan Hill',
+              },
               {
                 slug: 'to-kill-a-mockingbird',
                 title: 'To Kill a Mockingbird',
@@ -220,10 +232,14 @@ export const CAMBRIDGE_0475: Cambridge0475Year[] = [
           {
             label: 'Drama',
             texts: [
-              { slug: null, title: 'Blues for an Alabama Sky', author: 'Pearl Cleage' },
+              {
+                slug: 'blues-for-an-alabama-sky',
+                title: 'Blues for an Alabama Sky',
+                author: 'Pearl Cleage',
+              },
               { slug: 'a-taste-of-honey', title: 'A Taste of Honey', author: 'Shelagh Delaney' },
               {
-                slug: null,
+                slug: 'a-midsummer-nights-dream',
                 title: "A Midsummer Night's Dream",
                 author: 'William Shakespeare',
               },
@@ -263,15 +279,27 @@ export const CAMBRIDGE_0475: Cambridge0475Year[] = [
             texts: [
               { slug: 'things-fall-apart', title: 'Things Fall Apart', author: 'Chinua Achebe' },
               {
-                slug: null,
+                slug: 'what-it-means-when-a-man-falls-from-the-sky',
                 title: 'What it Means When a Man Falls from the Sky',
                 author: 'Lesley Nneka Arimah',
               },
               { slug: 'pride-and-prejudice', title: 'Pride and Prejudice', author: 'Jane Austen' },
-              { slug: null, title: 'Fire on the Mountain', author: 'Anita Desai' },
+              {
+                slug: 'fire-on-the-mountain',
+                title: 'Fire on the Mountain',
+                author: 'Anita Desai',
+              },
               // The syllabus spells it "Hullaballoo". Kept as printed.
-              { slug: null, title: 'Hullaballoo in the Guava Orchard', author: 'Kiran Desai' },
-              { slug: null, title: "I'm the King of the Castle", author: 'Susan Hill' },
+              {
+                slug: 'hullaballoo-in-the-guava-orchard',
+                title: 'Hullaballoo in the Guava Orchard',
+                author: 'Kiran Desai',
+              },
+              {
+                slug: 'im-the-king-of-the-castle',
+                title: "I'm the King of the Castle",
+                author: 'Susan Hill',
+              },
               {
                 slug: 'to-kill-a-mockingbird',
                 title: 'To Kill a Mockingbird',
@@ -290,7 +318,11 @@ export const CAMBRIDGE_0475: Cambridge0475Year[] = [
           {
             label: 'Drama',
             texts: [
-              { slug: null, title: 'Blues for an Alabama Sky', author: 'Pearl Cleage' },
+              {
+                slug: 'blues-for-an-alabama-sky',
+                title: 'Blues for an Alabama Sky',
+                author: 'Pearl Cleage',
+              },
               { slug: 'a-taste-of-honey', title: 'A Taste of Honey', author: 'Shelagh Delaney' },
               // Added for 2027. Version 2's single content change.
               {
@@ -299,7 +331,7 @@ export const CAMBRIDGE_0475: Cambridge0475Year[] = [
                 author: 'Chinonyerem Odimba',
               },
               {
-                slug: null,
+                slug: 'a-midsummer-nights-dream',
                 title: "A Midsummer Night's Dream",
                 author: 'William Shakespeare',
               },
