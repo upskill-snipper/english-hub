@@ -66,6 +66,21 @@ export const TEXT_ANNOTATIONS: Readonly<
         note: 'Fred. He argues that Christmas is "a good time: a kind, forgiving, charitable, pleasant time." Fred provides a living example that generosity and happiness are available to Scrooge if he will only accept them.',
       },
       {
+        type: 'character',
+        text: 'link by link, and yard by yard',
+        note: 'Jacob Marley. Marley\'s ghost is a terrifying warning: he wears the chain "I forged in life," made "link by link, and yard by yard." He tells Scrooge that his own chain was "as heavy and as long as this" seven Christmases ago and has grown since.',
+      },
+      {
+        type: 'character',
+        text: 'as heavy and as long as this',
+        note: 'Jacob Marley. Marley\'s ghost is a terrifying warning: he wears the chain "I forged in life," made "link by link, and yard by yard." He tells Scrooge that his own chain was "as heavy and as long as this" seven Christmases ago and has grown since.',
+      },
+      {
+        type: 'character',
+        text: 'Mankind was my business',
+        note: 'Jacob Marley. His most important line is his cry that "Mankind was my business!" - the duty he ignored while alive.',
+      },
+      {
         type: 'context',
         text: 'and decrease the surplus population',
         note: 'When Scrooge says that the poor should go to prisons and workhouses, and suggests they had better die "and decrease the surplus population," Dickens is quoting the utilitarian philosophy of Thomas Malthus, who argued that poverty was a natural check on overpopulation.',
@@ -381,6 +396,13 @@ export const TEXT_ANNOTATIONS: Readonly<
         note: 'Hamlet — Act 5, Scene 2. After surviving the voyage to England, Hamlet arrives at a calmer providential view; his philosophical restlessness gives way to a kind of religious acceptance before the final scene.',
       },
     ],
+    'acti-sceneii': [
+      {
+        type: 'quote',
+        text: 'Frailty, thy name is woman',
+        note: 'Hamlet — Act 1, Scene 2. Hamlet’s disgust at Gertrude’s remarriage is generalised into a misogynistic aphorism; Shakespeare shows the prince’s grief curdling into contempt for female sexuality.',
+      },
+    ],
     'acti-scenev': [
       {
         type: 'quote',
@@ -427,6 +449,11 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'quote',
         text: 'This above all: to thine own self be true',
         note: 'Polonius — Act 1, Scene 3. Polonius’s advice to Laertes sounds noble but is undercut by the speaker’s own hypocrisy; Shakespeare turns proverbial wisdom into characterisation of a meddling courtier.',
+      },
+      {
+        type: 'character',
+        text: 'to thine own self be true',
+        note: 'Polonius. Polonius is a pompous, long-winded courtier who dispenses proverbial advice ("to thine own self be true") while scheming behind every curtain.',
       },
     ],
   },
@@ -554,6 +581,11 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'quote',
         text: 'Think of it—I did not even exist',
         note: 'Hyde has no social identity, birth certificate, or history. He exists outside the legal and social frameworks that govern Victorian life, making him literally unaccountable — a walking embodiment of the freedom from consequence that Jekyll craves.',
+      },
+      {
+        type: 'theme',
+        text: 'not truly one, but truly two',
+        note: 'Duality of human nature. Jekyll describes man as "not truly one, but truly two," and his experiment is an attempt to separate these warring elements.',
       },
       {
         type: 'theme',
@@ -773,6 +805,11 @@ export const TEXT_ANNOTATIONS: Readonly<
     'acti-sceneii': [
       {
         type: 'quote',
+        text: 'Beware the Ides of March',
+        note: 'Soothsayer - Act 1, Scene 2. The play’s most famous warning, compressed into a single metrical line. Caesar dismisses the speaker as "a dreamer," establishing the pattern of ignored omens.',
+      },
+      {
+        type: 'quote',
         text: 'The fault, dear Brutus, is not in our stars,\nBut in ourselves, that we are underlings',
         note: 'Cassius - Act 1, Scene 2. Cassius’s republican manifesto: men make their own political fate. The line cuts directly against the play’s imagery of omens and stars.',
       },
@@ -819,6 +856,11 @@ export const TEXT_ANNOTATIONS: Readonly<
     'actiii-scenei': [
       {
         type: 'quote',
+        text: 'Et tu, Brute?_—Then fall, Caesar',
+        note: 'Caesar - Act 3, Scene 1. Shakespeare’s own wording, not historical Latin. The shock is that betrayal by Brutus ends Caesar’s will to resist; the public man accepts the verdict of his friend.',
+      },
+      {
+        type: 'quote',
         text: 'Cry havoc and let slip the dogs of war',
         note: 'Antony - Act 3, Scene 1. Antony’s soliloquy over Caesar’s body announces that civil war is now inevitable. "Havoc" was a military order permitting unrestricted killing and plunder.',
       },
@@ -848,6 +890,16 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'quote',
         text: 'O judgement, thou art fled to brutish beasts,\nAnd men have lost their reason',
         note: 'Antony - Act 3, Scene 2. A pause in the oration staged as grief. Antony accuses the crowd of losing reason while actively inciting them to do so, one of the play’s sharpest rhetorical ironies.',
+      },
+      {
+        type: 'theme',
+        text: 'Brutus is an honourable man',
+        note: 'Honour. Antony weaponises the word in the funeral speech, repeating "Brutus is an honourable man" until the repetition itself becomes accusation.',
+      },
+      {
+        type: 'character',
+        text: 'Brutus is an honourable man',
+        note: 'Mark Antony. His funeral oration is a masterclass in rhetorical manipulation: he uses repetition, irony ("Brutus is an honourable man"), physical spectacle (Caesar’s bloody cloak) and the contents of the will to turn the crowd into a rioting mob.',
       },
     ],
     'activ-sceneiii': [
@@ -915,6 +967,11 @@ export const TEXT_ANNOTATIONS: Readonly<
         text: 'unaccommodated man is no more\nbut such a poor, bare, forked animal as thou art',
         note: 'King Lear — Act 3, Scene 4. Lear’s vision of stripped humanity reduces the king and the beggar to the same creature. This levelling moment is the intellectual climax of his madness and of the play’s political radicalism.',
       },
+      {
+        type: 'theme',
+        text: 'poor, bare, forked animal',
+        note: 'Madness and wisdom. On the heath he sees with a clarity he never possessed as king: that "unaccommodated man" is a "poor, bare, forked animal", that justice is a theatre of costume, that the rich are indistinguishable from the poor once stripped.',
+      },
     ],
     'actiii-scenevii': [
       {
@@ -945,6 +1002,11 @@ export const TEXT_ANNOTATIONS: Readonly<
       },
       {
         type: 'quote',
+        text: 'Pray you undo this button',
+        note: 'King Lear — Act 5, Scene 3. Lear’s quietly domestic request as he dies beside Cordelia’s body is one of the most devastating lines in Shakespeare. The smallness of the request against the enormity of the grief exposes the limits of language under extreme feeling.',
+      },
+      {
+        type: 'quote',
         text: 'Never, never, never, never, never',
         note: 'King Lear — Act 5, Scene 3. Five identical monosyllables in iambic pentameter render grief as a rhythmic blow. The absolute finality of the word stands against any redemptive reading of the ending.',
       },
@@ -959,6 +1021,11 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'quote',
         text: 'Thou, Nature, art my goddess; to thy law\nMy services are bound',
         note: 'Edmund — Act 1, Scene 2. Edmund’s opening soliloquy replaces patriarchal and providential order with a self-serving "nature" that honours no hierarchy. The line crystallises his ideological challenge to the world of the play.',
+      },
+      {
+        type: 'character',
+        text: 'Thou, Nature, art my goddess',
+        note: 'Edmund. His opening soliloquy — "Thou, Nature, art my goddess" — rejects the social and religious codes that brand him a bastard, and he uses deception to oust his brother Edgar and then his father.',
       },
     ],
     'actii-sceneiv': [
@@ -1033,6 +1100,11 @@ export const TEXT_ANNOTATIONS: Readonly<
     'acti-sceneiii': [
       {
         type: 'quote',
+        text: 'I am a plain-dealing\nvillain',
+        note: 'Don John — Act 1, Scene 3. Don John’s flat, almost proud self-description is unusually honest for a Shakespearean villain. By refusing to disguise his malice from the audience — delivered in prose, with no elaborate rhetoric — he makes the deceptions he then engineers feel all the more disturbing: the audience is warned of his intentions from the start, but the characters onstage, trusting Don Pedro’s reconciled brother and unable to imagine such unprovoked spite, never see him clearly. The line works as a structural warning, asking why none of the supposedly clever men of Messina take his declared hostility seriously until it is too late.',
+      },
+      {
+        type: 'quote',
         text: 'let me be that I am, and seek not to alter me',
         note: 'Don John — Act 1, Scene 3. Don John defines himself by his refusal to perform sociability, in stark contrast to the witty self-presentation of Beatrice and Benedick, who are eventually willing to revise who they are in the light of love. The line is a blunt rejection of the festive, transformative spirit that drives Shakespearean comedy. Shakespeare uses his deliberate refusal of change to mark him as the play’s source of disorder, since comedy depends on characters being open to being surprised and reshaped by events; the insistence on being fixed is itself, in this world, a form of villainy.',
       },
@@ -1047,6 +1119,18 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'quote',
         text: 'Some Cupid kills with arrows, some with traps',
         note: 'Hero — Act 3, Scene 1. Hero’s line as she and Ursula prepare to trick Beatrice in the garden neatly sums up the play’s methods. Love here is never simply a natural feeling but a scheme, and Hero — who is usually portrayed as passive — enjoys a rare moment of directorial agency as she plans her own overhearing scene. Shakespeare blurs the distinction between kind and cruel traps by letting the same metaphor cover benign matchmaking and, by implication, the malicious window plot that will soon be laid for Claudio, warning us that the same engine can drive both happiness and disaster.',
+      },
+    ],
+    'actiii-scenev': [
+      {
+        type: 'quote',
+        text: 'Comparisons are odorous',
+        note: 'Dogberry — Act 3, Scene 5. Dogberry’s malapropism (for “odious”) is typical of the comic language Shakespeare gives the watch, where a constable’s insistence on his own dignity collapses into accidental nonsense the moment he opens his mouth. The muddled pomposity of the constables is itself a kind of “noting” gone wrong — an inept misreading of both the situation and the language used to describe it. And yet, crucially, this bungling policing is what eventually overhears and exposes Don John’s plot and rescues the play from tragedy, suggesting that luck and honest accident can succeed where clever courtly judgement has failed.',
+      },
+      {
+        type: 'theme',
+        text: 'Comparisons are odorous',
+        note: 'Language and wit. The prose sparring between Beatrice and Benedick, the malapropisms of Dogberry (“comparisons are odorous”; “I am a wise fellow; and which is more, an officer”), the Petrarchan clichés of Claudio’s early love-making, Balthasar’s teasing song about deceiving men, and the formal rhetoric of the wedding scene all draw attention to how language shapes experience in Messina.',
       },
     ],
     'actv-sceneiii': [
@@ -1068,6 +1152,60 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'theme',
         text: 'I am a wise fellow; and, which is more, an officer',
         note: 'Language and wit. The prose sparring between Beatrice and Benedick, the malapropisms of Dogberry (“comparisons are odorous”; “I am a wise fellow; and which is more, an officer”), the Petrarchan clichés of Claudio’s early love-making, Balthasar’s teasing song about deceiving men, and the formal rhetoric of the wedding scene all draw attention to how language shapes experience in Messina.',
+      },
+    ],
+  },
+  'my-last-duchess': {
+    poem: [
+      {
+        type: 'context',
+        text: 'gave commands;\nThen all smiles stopped together',
+        note: 'He "gave commands; / Then all smiles stopped together." The Duchess was silenced - likely killed.',
+      },
+      {
+        type: 'context',
+        text: 'I gave commands;\nThen all smiles stopped together',
+        note: 'The phrase "I gave commands; / Then all smiles stopped together" is deliberately ambiguous.',
+      },
+      {
+        type: 'language',
+        text: "That's my last Duchess painted on the wall,\nLooking as if she were alive",
+        note: '"That\'s my last Duchess painted on the wall, / Looking as if she were alive." The possessive pronoun my establishes ownership from the first word.',
+      },
+      {
+        type: 'language',
+        text: 'since none puts by\nThe curtain I have drawn for you, but I',
+        note: '"since none puts by / The curtain I have drawn for you, but I" The curtain is a symbol of control - the Duke alone decides who sees the Duchess\'s image.',
+      },
+      {
+        type: 'language',
+        text: 'She had\nA heart--how shall I say?--too soon made glad',
+        note: '"She had / A heart - how shall I say? - too soon made glad" The parenthetical how shall I say? is a masterpiece of false modesty.',
+      },
+      {
+        type: 'language',
+        text: "she ranked\nMy gift of a nine-hundred-years-old name\nWith anybody's gift",
+        note: '"she ranked / My gift of a nine-hundred-years-old name / With anybody\'s gift." The enjambment across "ranked / My gift" creates a falling rhythm that enacts the Duke\'s sense of degradation.',
+      },
+      {
+        type: 'language',
+        text: 'nine-hundred-years-old name',
+        note: '"she ranked / My gift of a nine-hundred-years-old name / With anybody\'s gift." The enjambment across "ranked / My gift" creates a falling rhythm that enacts the Duke\'s sense of degradation.',
+      },
+      {
+        type: 'language',
+        text: 'I gave commands;\nThen all smiles stopped together',
+        note: '"I gave commands; / Then all smiles stopped together." The most chilling lines in the poem.',
+      },
+      {
+        type: 'language',
+        text: 'Notice Neptune, though,\nTaming a sea-horse, thought a rarity',
+        note: '"Notice Neptune, though, / Taming a sea-horse, thought a rarity" The Duke casually draws attention to another art object as they leave.',
+      },
+      {
+        type: 'language',
+        text: 'if she let\nHerself be lessoned so',
+        note: 'Parenthetical asides: "how shall I say?" and "if she let / Herself be lessoned so" create a false impression of moderation and reasonableness.',
       },
     ],
   },
@@ -1112,6 +1250,11 @@ export const TEXT_ANNOTATIONS: Readonly<
         text: 'O, now, for ever\nFarewell the tranquil mind! Farewell content',
         note: 'Othello — Act 3, Scene 3. Othello’s farewell-to-occupation speech shows how the poisoning of his personal life annihilates his public identity as a soldier and commander.',
       },
+      {
+        type: 'quote',
+        text: 'I’ll tear her all to pieces',
+        note: 'Othello — Act 3, Scene 3. The sudden, violent image signals the collapse of Othello’s measured early-act eloquence into the fragmented, savage language of jealous rage.',
+      },
     ],
     'actv-sceneii': [
       {
@@ -1143,6 +1286,49 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'quote',
         text: 'O Spartan dog,\nMore fell than anguish, hunger, or the sea',
         note: 'Lodovico — Act 5, Scene 2. Lodovico’s final denunciation of Iago uses an image of ruthless animal violence, returning to the animal imagery with which Iago opened the play.',
+      },
+      {
+        type: 'character',
+        text: 'I will not charm my tongue',
+        note: 'Emilia. She exposes Iago in front of everyone, defies his command to be silent — “I will not charm my tongue” — and is murdered for it.',
+      },
+    ],
+  },
+  piano: {
+    poem: [
+      {
+        type: 'language',
+        text: 'the great black piano appassionato',
+        note: 'The Present-Day Singer The woman singing in the present is described only briefly: "A woman is singing to me", "the great black piano appassionato".',
+      },
+      {
+        type: 'language',
+        text: 'the insidious mastery of song\nBetrays me back',
+        note: 'Enjambment Despite the neat rhyme scheme, Lawrence uses enjambment across several lines: "the insidious mastery of song / Betrays me back".',
+      },
+    ],
+  },
+  remember: {
+    poem: [
+      {
+        type: 'language',
+        text: 'Remember me when I am gone away,\nGone far away into the silent land',
+        note: '"Remember me when I am gone away, / Gone far away into the silent land" The opening uses euphemism - death is "gone away," the afterlife is "the silent land." The repetition of gone (with the intensifier far ) emphasises the distance death creates.',
+      },
+      {
+        type: 'language',
+        text: 'the darkness and corruption',
+        note: 'Euphemism: Death is never named directly - "gone away," "the silent land," "the darkness and corruption." This gentleness reflects both Victorian decorum and the speaker\'s desire to comfort.',
+      },
+      {
+        type: 'language',
+        text: 'Better by far you should forget and smile',
+        note: 'The speaker reverses her position - "Better by far you should forget and smile." The Petrarchan form is ideally suited to this poem because its structural division (octave/sestet) mirrors the poem\'s emotional division.',
+      },
+      {
+        type: 'language',
+        text: 'Yet if you should forget me for a while',
+        note: 'The Volta The volta (turn) occurs at line 9: "Yet if you should forget me for a while." The word Yet signals the reversal - everything that follows contradicts the octave\'s insistent "Remember." This is one of the most effective voltas in English poetry because the shift is both surprising and logical: the speaker has been thinking through the implications of her demand and realises that remembrance could cause more pain than happiness.',
       },
     ],
   },
@@ -1201,6 +1387,23 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'language',
         text: 'These violent delights have violent ends,\nAnd in their triumph die; like fire and powder,\nWhich as they kiss consume',
         note: 'foreshadow. The Friar\'s simile of "fire and powder" presents love as a chemical reaction: beautiful in intensity but inherently self-destructive. "As they kiss consume" links the physical act of kissing to mutual annihilation. The warning foreshadows the play\'s ending.',
+      },
+    ],
+    'actiii-scenei': [
+      {
+        type: 'quote',
+        text: 'A plague o’ both your houses',
+        note: 'Mercutio - Act 3, Scene 1. Mercutio’s dying curse condemns both families equally and voices the play’s moral judgement on the feud.',
+      },
+      {
+        type: 'quote',
+        text: 'Romeo, the love I bear thee can afford\nNo better term than this: Thou art a villain',
+        note: 'Tybalt - Act 3, Scene 1. Tybalt\'s formal challenge is devastating because Romeo now secretly loves him as family. "Villain" demands a response according to the honour code. Shakespeare shows how rigid social conventions make peace impossible even when individuals desire it.',
+      },
+      {
+        type: 'theme',
+        text: 'Romeo, the love I bear thee can afford\nNo better term than this: Thou art a villain',
+        note: 'Conflict and Violence. Tybalt\'s formal challenge is devastating because Romeo now secretly loves him as family. "Villain" demands a response according to the honour code. Shakespeare shows how rigid social conventions make peace impossible even when individuals desire it.',
       },
     ],
     'actiii-scenev': [
@@ -1334,18 +1537,6 @@ export const TEXT_ANNOTATIONS: Readonly<
         note: 'foreshadow. The Prince establishes lethal stakes from the opening scene. "Forfeit of the peace" makes peace a commodity paid for in blood. The threat foreshadows the ending: it is the lovers\' lives that ultimately pay.',
       },
     ],
-    'actiii-scenei': [
-      {
-        type: 'quote',
-        text: 'Romeo, the love I bear thee can afford\nNo better term than this: Thou art a villain',
-        note: 'Tybalt - Act 3, Scene 1. Tybalt\'s formal challenge is devastating because Romeo now secretly loves him as family. "Villain" demands a response according to the honour code. Shakespeare shows how rigid social conventions make peace impossible even when individuals desire it.',
-      },
-      {
-        type: 'theme',
-        text: 'Romeo, the love I bear thee can afford\nNo better term than this: Thou art a villain',
-        note: 'Conflict and Violence. Tybalt\'s formal challenge is devastating because Romeo now secretly loves him as family. "Villain" demands a response according to the honour code. Shakespeare shows how rigid social conventions make peace impossible even when individuals desire it.',
-      },
-    ],
     'acti-sceneiv': [
       {
         type: 'quote',
@@ -1427,6 +1618,20 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'quote',
         text: 'Raveloe was not a place where moral censure was severe',
         note: 'Narrator — Chapter 3. A deceptively mild sentence that does important work. Eliot sketches Raveloe as a place of easy-going tolerance, which is partly a virtue because Silas is eventually received back without hostility, and partly a failing because the Cass brothers grow up unchecked. The line captures Eliot’s realist refusal to present any community as simply good or bad, and quietly contrasts the village’s lax mood with the unforgiving chapel world that falsely condemned Silas at Lantern Yard.',
+      },
+    ],
+  },
+  'sonnet-116': {
+    poem: [
+      {
+        type: 'language',
+        text: 'Let me not to the marriage of true minds',
+        note: 'Iambic Pentameter The poem is written in iambic pentameter - the most natural-sounding metre in English, consisting of five pairs of unstressed/stressed syllables per line: "Let ME not TO the MAR riage OF true MINDS".',
+      },
+      {
+        type: 'language',
+        text: 'Love is not love\nWhich alters when it alteration finds',
+        note: 'Enjambment and Caesura Shakespeare uses enjambment to create flow and urgency: "Love is not love / Which alters when it alteration finds".',
       },
     ],
   },
@@ -1726,8 +1931,37 @@ export const TEXT_ANNOTATIONS: Readonly<
       },
       {
         type: 'character',
+        text: 'Mine would, sir, were I human',
+        note: 'Ariel. His pity for the suffering nobles in Act 5 (“mine would, sir, were I human”) is the moment that tips Prospero towards mercy, so Ariel effectively teaches his master how to feel.',
+      },
+      {
+        type: 'character',
         text: 'in one voyage\nDid Claribel her husband find at Tunis,\nAnd Ferdinand, her brother, found a wife\nWhere he himself was lost; Prospero his dukedom\nIn a poor isle; and all of us ourselves,\nWhen no man was his own',
         note: 'Gonzalo. At the end he names the play’s romance pattern: “In one voyage / Did Claribel her husband find at Tunis, / And Ferdinand, her brother, found a wife / Where he himself was lost; Prospero his dukedom / In a poor isle; and all of us ourselves, / When no man was his own.”',
+      },
+    ],
+  },
+  'the-tyger': {
+    poem: [
+      {
+        type: 'language',
+        text: 'Tyger, tyger, burning bright\nIn the forests of the night',
+        note: '"Tyger Tyger, burning bright, / In the forests of the night" The opening apostrophe addresses the tiger directly, establishing an incantatory, almost hymn-like tone.',
+      },
+      {
+        type: 'language',
+        text: 'What immortal hand or eye\nCould frame thy fearful symmetry',
+        note: '"What immortal hand or eye, / Could frame thy fearful symmetry?" The question is directed not at the tiger but at its Creator - whose immortal hand or eye designed this creature? The word frame suggests both artistic composition and physical construction.',
+      },
+      {
+        type: 'language',
+        text: 'In what distant deeps or skies\nBurnt the fire of thine eyes',
+        note: '"In what distant deeps or skies, / Burnt the fire of thine eyes?" Distant deeps or skies - the alliterative pairing of "deeps" (hell) and "skies" (heaven) suggests the tiger\'s origins could be either infernal or divine, or both.',
+      },
+      {
+        type: 'language',
+        text: 'the stars threw down their spears',
+        note: 'Cosmic imagery: "distant deeps or skies," "the stars threw down their spears" - the poem operates on a cosmic scale, linking the tiger\'s creation to the forces that shaped the universe.',
       },
     ],
   },
@@ -1744,6 +1978,11 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'quote',
         text: 'Some are born great, some achieve\ngreatness, and some have greatness thrust upon ’em',
         note: 'Malvolio — Act 2, Scene 5 (reading the letter). The forged letter’s most famous line feeds Malvolio’s class ambition and sets up the cruel comedy of his gulling.',
+      },
+      {
+        type: 'quote',
+        text: 'be not afraid of greatness',
+        note: 'Maria’s forged letter — Act 2, Scene 5. The letter pitches directly at Malvolio’s vanity, inviting him to believe his ambitions are being invited rather than mocked.',
       },
     ],
     'actv-scenei': [
