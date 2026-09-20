@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { EnglishText } from '@/components/i18n/EnglishText'
 import { ArrowLeft, BookOpen } from 'lucide-react'
 import { InteractiveTextViewer, type TextData } from '@/components/study/InteractiveTextViewer'
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
 import { useT } from '@/lib/i18n/use-t'
 import { textGuideHref } from '@/lib/revision/guide-href'
 import { TEXT_ANNOTATIONS } from '@/data/text-annotations.generated'
@@ -73,14 +73,6 @@ export function FullTextReader({
 
   return (
     <div className="mx-auto max-w-5xl px-4 pb-16 pt-8 sm:px-6">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Set texts', url: 'https://theenglishhub.app/revision/texts' },
-          { name: data.title, url: `https://theenglishhub.app${guideHref}` },
-          { name: t('fulltext.crumb'), url: `https://theenglishhub.app${guideHref}/read` },
-        ]}
-      />
-
       <Link
         href={guideHref}
         className="mb-4 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"

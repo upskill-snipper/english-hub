@@ -142,14 +142,21 @@ describe('every page says where it sits', () => {
     //
     // Pinned as an exact set, not a count, so a thirteenth has to be argued
     // for here rather than appearing quietly.
-    const mounts = execSync('git ls-files src/app', { encoding: 'utf8' })
+    // ALL of src, not just src/app. The first version of this scanned src/app
+    // only and missed two shared components: FullTextReader, whose trail was
+    // deleted with the rest, and Breadcrumbs, which must keep its own.
+    const mounts = execSync('git ls-files src', { encoding: 'utf8' })
       .split('\n')
-      .filter((f) => f.endsWith('.tsx'))
+      .filter((f) => f.endsWith('.tsx') && !f.startsWith('src/__tests__/'))
       .filter((f) => /<BreadcrumbJsonLd[\s/>]/.test(readFileSync(f, 'utf8')))
       .sort()
 
     expect(mounts).toEqual(
       [
+        // The VISIBLE breadcrumb component. It renders a trail a reader can see
+        // and its JSON-LD from the same labels, which is the arrangement Google
+        // asks for. Deleting its markup would leave a visible trail with none.
+        'src/components/Breadcrumbs.tsx',
         'src/app/blog/[slug]/page.tsx',
         'src/app/courses/[id]/page.tsx',
         'src/app/ks3/ilowersecondary/reading/retrieval/page.tsx',
