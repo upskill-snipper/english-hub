@@ -461,18 +461,38 @@ export function QuizJsonLd({
 
 /**
  * Site-wide attribution node. Emitted once (root layout <head>) so
- * every page exposes JSON-LD author + reviewedBy + dateModified for AI
- * answer engines (GEO). Organisation-only - the site bans fabricated
- * named people, so author/reviewedBy are the Organization and a
- * role-based reviewer label, never a Person with an invented name.
+ * every page exposes JSON-LD author + reviewedBy for AI answer engines
+ * (GEO). Organisation-only - the site bans fabricated named people, so
+ * author/reviewedBy are the Organization and a role-based reviewer
+ * label, never a Person with an invented name.
+ *
+ * IT NO LONGER EMITS `dateModified`, AND THAT IS THE POINT (20 September
+ * 2026). It carried `SITE_LAST_REVIEWED`, a hand-maintained constant, which
+ * meant one identical modification date on all 1,071 pages - and it had not
+ * been bumped since May while the site changed underneath it.
+ *
+ * Schema.org defines `dateModified` as the date the work was MOST RECENTLY
+ * modified, so on any page touched since May the claim was simply false. On
+ * /blog/how-to-peel-a-paragraph it was worse than false: the WebPage node
+ * asserted dateModified 2026-05-01 against an Article node with
+ * datePublished 2026-05-04, a revision three days before publication.
+ *
+ * This codebase already holds the right position and tests it. From
+ * blog-posts-lead-somewhere.test.ts: "dateModified equal to datePublished on
+ * every article asserts a revision that never happened. An absent one at
+ * least says nothing untrue." `BlogPost.updated` is deliberately not
+ * defaulted for exactly this reason - and then the root layout asserted one
+ * anyway, on every page, over the top. Applying the project's own standard
+ * consistently means emitting nothing here.
+ *
+ * A real per-page date would be better than silence, but nothing in the
+ * repository knows when an arbitrary route last changed. The Article nodes
+ * that DO know still emit their own.
  */
 export function ReviewedBylineJsonLd({
-  dateModified,
   reviewerName = 'The English Hub subject specialists',
   nonce,
 }: {
-  /** ISO 8601 date, e.g. "2026-05-01". */
-  dateModified: string
   reviewerName?: string
   nonce?: string
 }) {
@@ -483,7 +503,6 @@ export function ReviewedBylineJsonLd({
     publisher: org,
     author: org,
     reviewedBy: { '@type': 'Organization', name: reviewerName, url: SITE_URL },
-    dateModified,
   }
   return (
     <script

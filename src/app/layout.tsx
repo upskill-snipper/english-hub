@@ -13,7 +13,6 @@ import { Toaster } from '@/components/ui/sonner'
 import { RootLayoutShell } from '@/components/layout/root-layout-shell'
 import { WebsiteJsonLd } from '@/components/seo/website-json-ld'
 import { ReviewedBylineJsonLd } from '@/components/seo/json-ld'
-import { SITE_LAST_REVIEWED } from '@/components/seo/ReviewedByline'
 import { CookieConsent } from '@/components/cookie-consent'
 import { UtmCapture } from '@/components/utm-capture'
 import { GoogleAnalytics } from '@/components/GoogleAnalytics'
@@ -182,10 +181,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <meta name="msvalidate.01" content={process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION} />
         ) : null}
         <WebsiteJsonLd />
-        <ReviewedBylineJsonLd
-          dateModified={SITE_LAST_REVIEWED.toISOString().slice(0, 10)}
-          nonce={cspNonce}
-        />
+        <ReviewedBylineJsonLd nonce={cspNonce} />
         {/* Rewardful is loaded by <ConsentGatedAnalytics /> below after
             the visitor accepts analytics/marketing cookies. Loading it
             unconditionally here would breach PECR reg. 6. */}
