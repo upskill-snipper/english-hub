@@ -2,7 +2,7 @@
 
 > The English Hub is an independent GCSE, IGCSE, KS3, IELTS and EAL English learning platform for students, parents, teachers and schools. It provides exam-board-aligned revision (AQA, Pearson Edexcel, OCR, WJEC Eduqas, Cambridge IGCSE), AI-assisted essay feedback against real mark schemes, exam-style practice, mock exams, teacher tools and school-level analytics. The interface is available in English, Gulf Arabic and Spanish; study content is English. The platform is exam-board aligned, not exam-board endorsed. Content accuracy is governed by a published content-verification methodology with human review of high-stakes material.
 
-Last generated: 2026-09-19. Canonical host: https://theenglishhub.app
+Last generated: 2026-09-20. Canonical host: https://theenglishhub.app
 
 This file follows the llms.txt convention so AI answer engines can cite accurate, exam-board-specific English education content. The English Hub is independent and exam-board aligned, not endorsed.
 
@@ -144,6 +144,7 @@ This file follows the llms.txt convention so AI answer engines can cite accurate
 - [Revision › Texts › A Christmas Carol › Essay Plans](https://theenglishhub.app/revision/texts/a-christmas-carol/essay-plans)
 - [Revision › Texts › A Christmas Carol › Extract Walkthrough](https://theenglishhub.app/revision/texts/a-christmas-carol/extract-walkthrough)
 - [Revision › Texts › A Christmas Carol › Key Quotes](https://theenglishhub.app/revision/texts/a-christmas-carol/key-quotes)
+- [Revision › Texts › A Christmas Carol › Read](https://theenglishhub.app/revision/texts/a-christmas-carol/read)
 - [Revision › Texts › A Christmas Carol › Staves](https://theenglishhub.app/revision/texts/a-christmas-carol/staves)
 - [Revision › Texts › A Christmas Carol › Themes](https://theenglishhub.app/revision/texts/a-christmas-carol/themes)
 - [Revision › Texts › A Game Of Polo With A Headless Goat](https://theenglishhub.app/revision/texts/a-game-of-polo-with-a-headless-goat)
@@ -185,6 +186,7 @@ This file follows the llms.txt convention so AI answer engines can cite accurate
 - [Revision › Texts › Blood Brothers › Themes](https://theenglishhub.app/revision/texts/blood-brothers/themes)
 - [Revision › Texts › Chinese Cinderella](https://theenglishhub.app/revision/texts/chinese-cinderella)
 - [Revision › Texts › Curious Incident](https://theenglishhub.app/revision/texts/curious-incident)
+- [Revision › Texts › Disabled › Read](https://theenglishhub.app/revision/texts/disabled/read)
 - [Revision › Texts › Explorers Or Boys Messing About](https://theenglishhub.app/revision/texts/explorers-or-boys-messing-about)
 - [Revision › Texts › Frankenstein](https://theenglishhub.app/revision/texts/frankenstein)
 - [Revision › Texts › Frankenstein › Chapters](https://theenglishhub.app/revision/texts/frankenstein/chapters)
@@ -205,6 +207,7 @@ This file follows the llms.txt convention so AI answer engines can cite accurate
 - [Revision › Texts › Hamlet › Read](https://theenglishhub.app/revision/texts/hamlet/read)
 - [Revision › Texts › Henry V](https://theenglishhub.app/revision/texts/henry-v)
 - [Revision › Texts › Henry V › Read](https://theenglishhub.app/revision/texts/henry-v/read)
+- [Revision › Texts › If › Read](https://theenglishhub.app/revision/texts/if/read)
 - [Revision › Texts › Jane Eyre](https://theenglishhub.app/revision/texts/jane-eyre)
 - [Revision › Texts › Jane Eyre › Chapters](https://theenglishhub.app/revision/texts/jane-eyre/chapters)
 - [Revision › Texts › Jane Eyre › Key Quotes](https://theenglishhub.app/revision/texts/jane-eyre/key-quotes)
@@ -215,11 +218,13 @@ This file follows the llms.txt convention so AI answer engines can cite accurate
 - [Revision › Texts › Jekyll And Hyde › Essay Plans](https://theenglishhub.app/revision/texts/jekyll-and-hyde/essay-plans)
 - [Revision › Texts › Jekyll And Hyde › Extract Walkthrough](https://theenglishhub.app/revision/texts/jekyll-and-hyde/extract-walkthrough)
 - [Revision › Texts › Jekyll And Hyde › Key Quotes](https://theenglishhub.app/revision/texts/jekyll-and-hyde/key-quotes)
+- [Revision › Texts › Jekyll And Hyde › Read](https://theenglishhub.app/revision/texts/jekyll-and-hyde/read)
 - [Revision › Texts › Jekyll And Hyde › Themes](https://theenglishhub.app/revision/texts/jekyll-and-hyde/themes)
 - [Revision › Texts › Julius Caesar](https://theenglishhub.app/revision/texts/julius-caesar)
 - [Revision › Texts › Julius Caesar › Read](https://theenglishhub.app/revision/texts/julius-caesar/read)
 - [Revision › Texts › King Lear](https://theenglishhub.app/revision/texts/king-lear)
 - [Revision › Texts › King Lear › Read](https://theenglishhub.app/revision/texts/king-lear/read)
+- [Revision › Texts › La Belle Dame Sans Merci › Read](https://theenglishhub.app/revision/texts/la-belle-dame-sans-merci/read)
 - [Revision › Texts › Lord Of The Flies](https://theenglishhub.app/revision/texts/lord-of-the-flies)
 - [Revision › Texts › Lord Of The Flies › Chapters](https://theenglishhub.app/revision/texts/lord-of-the-flies/chapters)
 - [Revision › Texts › Lord Of The Flies › Characters](https://theenglishhub.app/revision/texts/lord-of-the-flies/characters)
@@ -242,6 +247,7 @@ This file follows the llms.txt convention so AI answer engines can cite accurate
 - [Revision › Texts › Macbeth › Themes](https://theenglishhub.app/revision/texts/macbeth/themes)
 - [Revision › Texts › Much Ado About Nothing](https://theenglishhub.app/revision/texts/much-ado-about-nothing)
 - [Revision › Texts › Much Ado About Nothing › Read](https://theenglishhub.app/revision/texts/much-ado-about-nothing/read)
+- [Revision › Texts › My Last Duchess › Read](https://theenglishhub.app/revision/texts/my-last-duchess/read)
 - [Revision › Texts › Never Let Me Go](https://theenglishhub.app/revision/texts/never-let-me-go)
 - [Revision › Texts › Night](https://theenglishhub.app/revision/texts/night)
 - [Revision › Texts › Of Mice And Men](https://theenglishhub.app/revision/texts/of-mice-and-men)
@@ -252,10 +258,12 @@ This file follows the llms.txt convention so AI answer engines can cite accurate
 - [Revision › Texts › Of Mice And Men › Themes](https://theenglishhub.app/revision/texts/of-mice-and-men/themes)
 - [Revision › Texts › Othello](https://theenglishhub.app/revision/texts/othello)
 - [Revision › Texts › Othello › Read](https://theenglishhub.app/revision/texts/othello/read)
+- [Revision › Texts › Piano › Read](https://theenglishhub.app/revision/texts/piano/read)
 - [Revision › Texts › Pigeon English](https://theenglishhub.app/revision/texts/pigeon-english)
 - [Revision › Texts › Pride And Prejudice](https://theenglishhub.app/revision/texts/pride-and-prejudice)
 - [Revision › Texts › Pride And Prejudice › Chapters](https://theenglishhub.app/revision/texts/pride-and-prejudice/chapters)
 - [Revision › Texts › Pride And Prejudice › Characters](https://theenglishhub.app/revision/texts/pride-and-prejudice/characters)
+- [Revision › Texts › Remember › Read](https://theenglishhub.app/revision/texts/remember/read)
 - [Revision › Texts › Romeo And Juliet](https://theenglishhub.app/revision/texts/romeo-and-juliet)
 - [Revision › Texts › Romeo And Juliet › Acts](https://theenglishhub.app/revision/texts/romeo-and-juliet/acts)
 - [Revision › Texts › Romeo And Juliet › Characters](https://theenglishhub.app/revision/texts/romeo-and-juliet/characters)
@@ -267,6 +275,8 @@ This file follows the llms.txt convention so AI answer engines can cite accurate
 - [Revision › Texts › Romeo And Juliet › Themes](https://theenglishhub.app/revision/texts/romeo-and-juliet/themes)
 - [Revision › Texts › Significant Cigarettes](https://theenglishhub.app/revision/texts/significant-cigarettes)
 - [Revision › Texts › Silas Marner](https://theenglishhub.app/revision/texts/silas-marner)
+- [Revision › Texts › Silas Marner › Read](https://theenglishhub.app/revision/texts/silas-marner/read)
+- [Revision › Texts › Sonnet 116 › Read](https://theenglishhub.app/revision/texts/sonnet-116/read)
 - [Revision › Texts › The Danger Of A Single Story](https://theenglishhub.app/revision/texts/the-danger-of-a-single-story)
 - [Revision › Texts › The Door](https://theenglishhub.app/revision/texts/the-door)
 - [Revision › Texts › The Explorers Daughter](https://theenglishhub.app/revision/texts/the-explorers-daughter)
@@ -276,10 +286,14 @@ This file follows the llms.txt convention so AI answer engines can cite accurate
 - [Revision › Texts › The Merchant Of Venice › Read](https://theenglishhub.app/revision/texts/the-merchant-of-venice/read)
 - [Revision › Texts › The Necklace](https://theenglishhub.app/revision/texts/the-necklace)
 - [Revision › Texts › The Pedestrian](https://theenglishhub.app/revision/texts/the-pedestrian)
+- [Revision › Texts › The Scarlet Letter › Read](https://theenglishhub.app/revision/texts/the-scarlet-letter/read)
 - [Revision › Texts › The Sign Of Four](https://theenglishhub.app/revision/texts/the-sign-of-four)
+- [Revision › Texts › The Sign Of Four › Read](https://theenglishhub.app/revision/texts/the-sign-of-four/read)
 - [Revision › Texts › The Story Of An Hour](https://theenglishhub.app/revision/texts/the-story-of-an-hour)
 - [Revision › Texts › The Tempest](https://theenglishhub.app/revision/texts/the-tempest)
 - [Revision › Texts › The Tempest › Read](https://theenglishhub.app/revision/texts/the-tempest/read)
+- [Revision › Texts › The Tyger › Read](https://theenglishhub.app/revision/texts/the-tyger/read)
+- [Revision › Texts › The War Of The Worlds › Read](https://theenglishhub.app/revision/texts/the-war-of-the-worlds/read)
 - [Revision › Texts › The Yellow Wallpaper](https://theenglishhub.app/revision/texts/the-yellow-wallpaper)
 - [Revision › Texts › Things Fall Apart](https://theenglishhub.app/revision/texts/things-fall-apart)
 - [Revision › Texts › Things Fall Apart › Characters](https://theenglishhub.app/revision/texts/things-fall-apart/characters)
@@ -844,6 +858,7 @@ This file follows the llms.txt convention so AI answer engines can cite accurate
 
 ## AI marking
 
+- [Marking](https://theenglishhub.app/marking)
 - [Marking › Ai Explainer](https://theenglishhub.app/marking/ai-explainer)
 - [Marking › Sample](https://theenglishhub.app/marking/sample)
 - [Marking › Sample › Christmas Carol](https://theenglishhub.app/marking/sample/christmas-carol)
