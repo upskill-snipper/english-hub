@@ -172,6 +172,17 @@ describe('every note is authored, not generated', () => {
     // alphanumeric run does not occur by coincidence, whatever the size of the
     // haystack. What widening costs is specificity about WHICH file, not
     // whether the sentence was written by a person.
+    // The study-guide sub-pages, added when the generator began reading them.
+    // Three texts have a themes page, a characters page, a context page and an
+    // extract walkthrough, each many hundred lines of authored prose, and they
+    // are where most of the Characters and Themes highlighting now comes from.
+    const subPages = (slug: string) =>
+      ['themes', 'characters', 'context', 'extract-walkthrough']
+        .map((d) => join(ROOT, 'src/app/revision/texts', slug, d, 'page.tsx'))
+        .filter((p) => existsSync(p))
+        .map((p) => readFileSync(p, 'utf8'))
+        .join('\n')
+
     const courseSources = readdirSync(join(ROOT, 'src/data'))
       .filter((f) => f.endsWith('.ts'))
       .map((f) => join(ROOT, 'src/data', f))
@@ -188,6 +199,8 @@ describe('every note is authored, not generated', () => {
           .filter((p) => existsSync(p))
           .map((p) => readFileSync(p, 'utf8'))
           .join('\n') +
+        '\n' +
+        subPages(slug) +
         '\n' +
         courseSources
       if (!existsSync(page) && !TEXT_ANNOTATIONS[slug]) continue

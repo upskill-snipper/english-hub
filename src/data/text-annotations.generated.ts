@@ -87,6 +87,101 @@ export const TEXT_ANNOTATIONS: Readonly<
       },
       {
         type: 'theme',
+        text: 'I am here to-night to warn you, that you have yet a chance and hope of escaping my fate',
+        note: '"I am here to-night to warn you, that you have yet a chance and hope of escaping my fate."',
+      },
+      {
+        type: 'theme',
+        text: 'decrease the surplus population',
+        note: 'His suggestion that the poor should die to "decrease the surplus population" references Malthus directly.',
+      },
+      {
+        type: 'theme',
+        text: 'Mankind was my business. The common welfare was my business',
+        note: '"Mankind was my business. The common welfare was my business."',
+      },
+      {
+        type: 'theme',
+        text: 'Old Marley was as dead as a door-nail',
+        note: 'The novella opens with the declaration "Old Marley was as dead as a door-nail." Marley\'s ghost -- chained and wailing -- shows the consequences of dying without having lived compassionately.',
+      },
+      {
+        type: 'theme',
+        text: 'squeezing, wrenching, grasping',
+        note: 'His character is built from economic adjectives: "squeezing, wrenching, grasping."',
+      },
+      {
+        type: 'character',
+        text: 'decrease the surplus population',
+        note: 'His line about the poor dying to "decrease the surplus population" directly echoes the Malthusian economics Dickens despised.',
+      },
+      {
+        type: 'character',
+        text: 'Oh! But he was a tight-fisted hand at the grind-stone, Scrooge! a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner',
+        note: '"Oh! But he was a tight-fisted hand at the grindstone, Scrooge! a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner!"',
+      },
+      {
+        type: 'character',
+        text: 'Mankind was my business. The common welfare was my business; charity, mercy, forbearance, and benevolence, were, all, my business',
+        note: '"Mankind was my business. The common welfare was my business; charity, mercy, forbearance, and benevolence were, all, my business."',
+      },
+      {
+        type: 'character',
+        text: 'I am here to-night to warn you, that you have yet a chance and hope of escaping my fate',
+        note: '"I am here to-night to warn you, that you have yet a chance and hope of escaping my fate."',
+      },
+      {
+        type: 'character',
+        text: 'the only time I know of, in the long calendar of the year, when men and women seem by one consent to open their shut-up hearts freely',
+        note: '"The only time I know of, in the long calendar of the year, when men and women seem by one consent to open their shut-up hearts freely."',
+      },
+      {
+        type: 'context',
+        text: 'decrease the surplus population',
+        note: 'Scrooge\'s suggestion that the poor should die to "decrease the surplus population" reflects the influence of Thomas Malthus, who argued that poverty and famine were natural checks on overpopulation and that charity only made the problem worse.',
+      },
+      {
+        type: 'context',
+        text: 'Mankind was my business',
+        note: 'Marley\'s anguished cry that "Mankind was my business" is a direct rebuttal to the utilitarian argument that charity was not an individual\'s concern.',
+      },
+      {
+        type: 'language',
+        text: 'a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner',
+        note: '"a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner!"',
+      },
+      {
+        type: 'language',
+        text: 'squeezing, wrenching, grasping',
+        note: 'Dickens uses an asyndetic list of violent participles to characterise Scrooge as a man defined by perpetual extraction, the breathless rhythm of "squeezing, wrenching, grasping" mimicking the unending, grinding labour of the miser at his "grindstone".',
+      },
+      {
+        type: 'language',
+        text: 'Hard and sharp as flint, from which no steel had ever struck out generous fire; secret, and self-contained, and solitary as an oyster',
+        note: '"Hard and sharp as flint, from which no steel had ever struck out generous fire; secret, and self-contained, and solitary as an oyster."',
+      },
+      {
+        type: 'language',
+        text: 'no steel had ever struck out generous fire',
+        note: 'The phrase "no steel had ever struck out generous fire" extends the flint image and quietly hints at the possibility of fire (warmth, generosity) if only the right pressure were applied.',
+      },
+      {
+        type: 'language',
+        text: 'The cold within him froze his old features, nipped his pointed nose, shrivelled his cheek, stiffened his gait',
+        note: '"The cold within him froze his old features, nipped his pointed nose, shrivelled his cheek, stiffened his gait..."',
+      },
+      {
+        type: 'language',
+        text: 'iced his office in the dog-days',
+        note: 'The triadic image "iced his office in the dog-days" pushes the imagery to its logical extreme.',
+      },
+      {
+        type: 'language',
+        text: 'No wind that blew was bitterer than he, no falling snow was more intent upon its purpose, no pelting rain less open to entreaty',
+        note: '"No wind that blew was bitterer than he, no falling snow was more intent upon its purpose, no pelting rain less open to entreaty."',
+      },
+      {
+        type: 'theme',
         text: 'Oh! But he was a tight-fisted hand at the grind-stone, Scrooge! a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner',
         note: 'Greed and Capitalism. Dickens uses a listing technique with seven consecutive adjectives, each suggesting physical violence or theft. The progressive participles ("-ing" endings) create a relentless, grinding rhythm. The exclamatory sentence and direct address involve the reader as witness. Every adjective describes taking -- Scrooge is defined entirely by what he extracts from the world, never by what he gives.',
       },
@@ -104,11 +199,6 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'theme',
         text: 'The cold within him froze his old features, nipped his pointed nose, shrivelled his cheek, stiffened his gait',
         note: 'Isolation. Pathetic fallacy makes Scrooge\'s inner emotional coldness manifest on his body. The "cold within him" is both literal (too miserly to pay for heating) and metaphorical (frozen out all human warmth). The verbs "froze," "nipped," "shrivelled," "stiffened" suggest decay and death -- Scrooge is already becoming corpse-like while alive, foreshadowing the death imagery of Stave 4.',
-      },
-      {
-        type: 'language',
-        text: 'The cold within him froze his old features, nipped his pointed nose, shrivelled his cheek, stiffened his gait',
-        note: 'pathetic fallacy. Pathetic fallacy makes Scrooge\'s inner emotional coldness manifest on his body. The "cold within him" is both literal (too miserly to pay for heating) and metaphorical (frozen out all human warmth). The verbs "froze," "nipped," "shrivelled," "stiffened" suggest decay and death -- Scrooge is already becoming corpse-like while alive, foreshadowing the death imagery of Stave 4.',
       },
       {
         type: 'quote',
@@ -153,6 +243,66 @@ export const TEXT_ANNOTATIONS: Readonly<
         note: 'Ghost of Christmas Present - Stave Three. Dickens\'s most explicitly political passage. Ignorance and Want are allegorical children - products of society\'s neglect. The warning that ignorance leads to "Doom" is aimed directly at the Victorian ruling class.',
       },
       {
+        type: 'theme',
+        text: 'with an interest he had never felt before',
+        note: 'Scrooge feels genuine empathy for Tiny Tim and asks "with an interest he had never felt before" about the child\'s future.',
+      },
+      {
+        type: 'theme',
+        text: 'This boy is Ignorance. This girl is Want. Beware them both',
+        note: '"This boy is Ignorance. This girl is Want. Beware them both."',
+      },
+      {
+        type: 'theme',
+        text: 'If these shadows remain unaltered by the Future, the child will die',
+        note: '"If these shadows remain unaltered by the Future, the child will die."',
+      },
+      {
+        type: 'theme',
+        text: 'I mean to give him the same chance every year, whether he likes it or not, for I pity him',
+        note: '"I mean to give him the same chance every year, whether he likes it or not, for I pity him."',
+      },
+      {
+        type: 'theme',
+        text: 'If these shadows remain unaltered',
+        note: 'The Ghost of Christmas Present warns that Tiny Tim will die "if these shadows remain unaltered." The Ghost itself ages and dies within the stave.',
+      },
+      {
+        type: 'character',
+        text: 'Bob had but fifteen "Bob" a-week himself; he pocketed on Saturdays but fifteen copies of his Christian name',
+        note: '"Bob had but fifteen bob a week himself; he pocketed on Saturdays but fifteen copies of his Christian name."',
+      },
+      {
+        type: 'character',
+        text: 'If these shadows remain unaltered by the Future, the child will die',
+        note: '"If these shadows remain unaltered by the Future, the child will die."',
+      },
+      {
+        type: 'character',
+        text: 'he bore a little crutch, and had his limbs supported by an iron frame',
+        note: '"He bore a little crutch, and had his limbs supported by an iron frame."',
+      },
+      {
+        type: 'character',
+        text: 'If he be like to die, he had better do it, and decrease the surplus population',
+        note: '"If he be like to die, he had better do it, and decrease the surplus population."',
+      },
+      {
+        type: 'character',
+        text: 'solemn Phantom, draped and hooded',
+        note: 'It is described as a "solemn Phantom, draped and hooded" in a deep black garment that conceals everything except one outstretched hand.',
+      },
+      {
+        type: 'character',
+        text: 'I mean to give him the same chance every year, whether he likes it or not, for I pity him',
+        note: '"I mean to give him the same chance every year, whether he likes it or not, for I pity him."',
+      },
+      {
+        type: 'character',
+        text: 'A Merry Christmas and a Happy New Year to the old man, whatever he is',
+        note: '"A merry Christmas and a happy new year to the old man, whatever he is!"',
+      },
+      {
         type: 'quote',
         text: 'Oh, a wonderful pudding! Bob Cratchit said, and calmly too, that he regarded it as the greatest success achieved by Mrs. Cratchit since their marriage',
         note: 'Narrator - Stave 3. The comedy and warmth of Bob\'s deadpan compliment disguises real poverty. The pudding is "a small one for so large a family," but the Cratchits\' love transforms it into a triumph. "Calmly" adds humour -- Bob performs solemnity to honour his wife\'s effort. Dickens argues that wealth and happiness are not the same thing.',
@@ -161,11 +311,6 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'theme',
         text: 'Oh, a wonderful pudding! Bob Cratchit said, and calmly too, that he regarded it as the greatest success achieved by Mrs. Cratchit since their marriage',
         note: 'Family. The comedy and warmth of Bob\'s deadpan compliment disguises real poverty. The pudding is "a small one for so large a family," but the Cratchits\' love transforms it into a triumph. "Calmly" adds humour -- Bob performs solemnity to honour his wife\'s effort. Dickens argues that wealth and happiness are not the same thing.',
-      },
-      {
-        type: 'theme',
-        text: 'If these shadows remain unaltered by the Future, the child will die',
-        note: 'Social Responsibility. The conditional "if" is the most important word. Tiny Tim\'s death is not a prophecy but a warning -- the future can be changed. "Shadows" suggests possibilities, not certainties. Dickens places moral agency in the reader\'s hands: if children die, it is because we allow it.',
       },
       {
         type: 'theme',
@@ -193,11 +338,6 @@ export const TEXT_ANNOTATIONS: Readonly<
         note: 'Fred - Stave 3. Fred refuses to give up on Scrooge. "Pity" is crucial -- he sees his uncle as suffering, not as an enemy. This mirrors Dickens\'s own approach: understanding and patience, not punishment, lead to reform. Fred\'s persistence is ultimately rewarded in Stave 5 when Scrooge arrives at his door.',
       },
       {
-        type: 'theme',
-        text: 'I mean to give him the same chance every year, whether he likes it or not, for I pity him',
-        note: 'Christmas Spirit. Fred refuses to give up on Scrooge. "Pity" is crucial -- he sees his uncle as suffering, not as an enemy. This mirrors Dickens\'s own approach: understanding and patience, not punishment, lead to reform. Fred\'s persistence is ultimately rewarded in Stave 5 when Scrooge arrives at his door.',
-      },
-      {
         type: 'language',
         text: 'I mean to give him the same chance every year, whether he likes it or not, for I pity him',
         note: 'pun. Fred refuses to give up on Scrooge. "Pity" is crucial -- he sees his uncle as suffering, not as an enemy. This mirrors Dickens\'s own approach: understanding and patience, not punishment, lead to reform. Fred\'s persistence is ultimately rewarded in Stave 5 when Scrooge arrives at his door.',
@@ -210,19 +350,34 @@ export const TEXT_ANNOTATIONS: Readonly<
         note: 'Scrooge - Stave Four. Scrooge\'s vow is not just about the festive season but about maintaining compassion and generosity as a permanent way of life. The word "try" adds humility - change is a daily effort, not a single dramatic gesture.',
       },
       {
+        type: 'theme',
+        text: 'I will honour Christmas in my heart, and try to keep it all the year',
+        note: 'Scrooge\'s vow -- "I will honour Christmas in my heart, and try to keep it all the year" -- uses the word "try" deliberately: redemption is a daily effort, not a single dramatic gesture.',
+      },
+      {
+        type: 'theme',
+        text: 'live in the Past, the Present, and the Future. The Spirits of all Three shall strive within me',
+        note: 'Scrooge vows to "live in the Past, the Present, and the Future. The Spirits of all Three shall strive within me." He has learned to integrate all three perspectives.',
+      },
+      {
+        type: 'theme',
+        text: 'I will live in the Past, the Present, and the Future. The Spirits of all Three shall strive within me',
+        note: '"I will live in the Past, the Present, and the Future. The Spirits of all Three shall strive within me."',
+      },
+      {
+        type: 'theme',
+        text: 'The case of this unhappy man might be my own. My life tends that way, now',
+        note: '"The case of this unhappy man might be my own. My life tends that way, now."',
+      },
+      {
+        type: 'character',
+        text: 'I will honour Christmas in my heart, and try to keep it all the year',
+        note: '"I will honour Christmas in my heart, and try to keep it all the year."',
+      },
+      {
         type: 'quote',
         text: 'The case of this unhappy man might be my own. My life tends that way, now',
         note: 'Scrooge - Stave 4. Scrooge begins connecting the vision to himself. "Tends that way" is careful -- his life is moving in this direction but has not arrived yet. There is still time. "Unhappy" is his own judgement: he recognises that greed produces misery, not security. This self-awareness precedes the gravestone revelation.',
-      },
-      {
-        type: 'theme',
-        text: 'The case of this unhappy man might be my own. My life tends that way, now',
-        note: 'Death and Mortality. Scrooge begins connecting the vision to himself. "Tends that way" is careful -- his life is moving in this direction but has not arrived yet. There is still time. "Unhappy" is his own judgement: he recognises that greed produces misery, not security. This self-awareness precedes the gravestone revelation.',
-      },
-      {
-        type: 'theme',
-        text: 'I will honour Christmas in my heart, and try to keep it all the year',
-        note: 'Redemption. Scrooge\'s promise extends Christmas from a single day to a permanent way of life. "Honour" carries connotations of reverence and duty. "Try" adds humility -- he does not claim perfection. "All the year" echoes Fred\'s Stave 1 speech about opening hearts freely. This vow answers Fred\'s definition of Christmas and completes Scrooge\'s moral journey.',
       },
       {
         type: 'language',
@@ -253,8 +408,23 @@ export const TEXT_ANNOTATIONS: Readonly<
       },
       {
         type: 'theme',
+        text: 'He became as good a friend, as good a master, and as good a man, as the good old city knew',
+        note: '"He became as good a friend, as good a master, and as good a man, as the good old city knew."',
+      },
+      {
+        type: 'theme',
         text: 'I am as light as a feather, I am as happy as an angel, I am as merry as a schoolboy',
-        note: 'Redemption. The triple simile mirrors the triple ghostly visitation. "Light" undoes his heaviness, "happy" undoes his misery, "merry" undoes his hostility. "School-boy" echoes the lonely child of Stave 2 -- Scrooge reclaims childhood joy. The anaphoric "I am" asserts a new identity with confidence. The rhythm is giddy and breathless.',
+        note: '"I am as light as a feather, I am as happy as an angel, I am as merry as a school-boy."',
+      },
+      {
+        type: 'character',
+        text: 'as good a friend, as good a master, and as good a man, as the good old city knew',
+        note: 'Becomes "as good a friend, as good a master, and as good a man, as the good old city knew."',
+      },
+      {
+        type: 'character',
+        text: 'I am as light as a feather, I am as happy as an angel, I am as merry as a schoolboy',
+        note: '"I am as light as a feather, I am as happy as an angel, I am as merry as a school-boy."',
       },
       {
         type: 'language',
@@ -270,11 +440,6 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'theme',
         text: "I'll raise your salary, and endeavour to assist your struggling family",
         note: 'Social Responsibility. Scrooge translates moral transformation into practical action. "Raise your salary" addresses economic injustice. "Endeavour" shows commitment. "Struggling" is the key word -- Scrooge now sees the Cratchits as real people with real difficulties, not abstractions. Personal redemption produces social reform.',
-      },
-      {
-        type: 'theme',
-        text: 'He became as good a friend, as good a master, and as good a man, as the good old city knew',
-        note: 'Redemption. The triple structure -- friend, master, man -- proves transformation across every sphere: personal, professional, and moral. The fourfold repetition of "good" reinforces completeness. "As the good old city knew" connects Scrooge\'s private redemption to public recognition. The rhythm and balance give this sentence the weight of a definitive verdict.',
       },
       {
         type: 'language',
@@ -294,14 +459,59 @@ export const TEXT_ANNOTATIONS: Readonly<
     ],
     'section-2': [
       {
-        type: 'quote',
-        text: 'A solitary child, neglected by his friends, is left there still',
-        note: 'Narrator - Stave 2. The emotional key to Scrooge\'s character. "Solitary" and "neglected" show his isolation began in childhood -- he was made cold, not born cold. "Left there still" is devastating: the child is still waiting, still alone. Dickens implies the lonely boy exists inside the old miser, buried but not gone. This generates the sympathy needed for the reader to want Scrooge to change.',
+        type: 'theme',
+        text: 'power to render us happy or unhappy',
+        note: 'Fezziwig demonstrates that employers have the "power to render us happy or unhappy." This establishes the principle of employer responsibility.',
       },
       {
         type: 'theme',
         text: 'A solitary child, neglected by his friends, is left there still',
-        note: 'Isolation. The emotional key to Scrooge\'s character. "Solitary" and "neglected" show his isolation began in childhood -- he was made cold, not born cold. "Left there still" is devastating: the child is still waiting, still alone. Dickens implies the lonely boy exists inside the old miser, buried but not gone. This generates the sympathy needed for the reader to want Scrooge to change.',
+        note: '"A solitary child, neglected by his friends, is left there still."',
+      },
+      {
+        type: 'character',
+        text: 'Another idol has displaced me',
+        note: 'Watches Belle leave him because "another idol has displaced me."',
+      },
+      {
+        type: 'character',
+        text: 'I should like to be able to say a word or two to my clerk just now',
+        note: '"I should like to be able to say a word or two to my clerk just now."',
+      },
+      {
+        type: 'character',
+        text: 'It was a strange figure--like a child: yet not so like a child as like an old man',
+        note: '"It was a strange figure -- like a child: yet not so like a child as like an old man."',
+      },
+      {
+        type: 'character',
+        text: 'he could not hide the light: which streamed from under it, in an unbroken flood upon the ground',
+        note: '"He could not hide the light: which streamed from under it, in an unbroken flood upon the ground."',
+      },
+      {
+        type: 'character',
+        text: "Father is so much kinder than he used to be, that home's like Heaven",
+        note: '"Father is so much kinder than he used to be, that home\'s like Heaven!"',
+      },
+      {
+        type: 'character',
+        text: 'He has the power to render us happy or unhappy; to make our service light or burdensome',
+        note: 'Scrooge himself recognises the lesson: "He has the power to render us happy or unhappy; to make our service light or burdensome."',
+      },
+      {
+        type: 'character',
+        text: 'He has the power to render us happy or unhappy; to make our service light or burdensome; a pleasure or a toil',
+        note: '"He has the power to render us happy or unhappy; to make our service light or burdensome; a pleasure or a toil."',
+      },
+      {
+        type: 'character',
+        text: 'Quite alone in the world',
+        note: 'Her husband reports that Scrooge is now "quite alone in the world."',
+      },
+      {
+        type: 'quote',
+        text: 'A solitary child, neglected by his friends, is left there still',
+        note: 'Narrator - Stave 2. The emotional key to Scrooge\'s character. "Solitary" and "neglected" show his isolation began in childhood -- he was made cold, not born cold. "Left there still" is devastating: the child is still waiting, still alone. Dickens implies the lonely boy exists inside the old miser, buried but not gone. This generates the sympathy needed for the reader to want Scrooge to change.',
       },
       {
         type: 'quote',
@@ -594,6 +804,46 @@ export const TEXT_ANNOTATIONS: Readonly<
       },
       {
         type: 'theme',
+        text: 'a mere polity of multifarious, incongruous and independent denizens',
+        note: 'Jekyll describes man as "not truly one, but truly two," and goes even further to speculate that we are "a mere polity of multifarious, incongruous and independent denizens" -- multiple warring selves rather than a unified identity.',
+      },
+      {
+        type: 'theme',
+        text: 'certain impatient gaiety of disposition',
+        note: 'The "certain impatient gaiety of disposition" that Jekyll confesses to feeling is not inherently evil -- it is a normal range of human desire.',
+      },
+      {
+        type: 'theme',
+        text: 'younger, lighter, happier',
+        note: 'Hyde feels "younger, lighter, happier" than Jekyll because he is unburdened by conscience.',
+      },
+      {
+        type: 'theme',
+        text: 'sensual images running like a millrace',
+        note: '"Heady recklessness" suggests intoxication; "sensual images running like a mill-race" conveys wild, uncontrollable pleasure.',
+      },
+      {
+        type: 'theme',
+        text: 'I would scarce use a harder term',
+        note: '"I would scarce use a harder term" is either genuine self-assessment or self-deceptive minimisation.',
+      },
+      {
+        type: 'character',
+        text: 'younger, lighter, happier in body',
+        note: 'Initially, the transformations are voluntary and exhilarating: he feels "younger, lighter, happier in body." But over time the balance shifts.',
+      },
+      {
+        type: 'character',
+        text: 'slowly losing hold of my original and better self',
+        note: 'Jekyll becomes a prisoner of his own experiment, "slowly losing hold of my original and better self." His final confession is written in the third person ("that unhappy Henry Jekyll"), suggesting his identity has already fragmented beyond repair.',
+      },
+      {
+        type: 'character',
+        text: 'that unhappy Henry Jekyll',
+        note: 'Jekyll becomes a prisoner of his own experiment, "slowly losing hold of my original and better self." His final confession is written in the third person ("that unhappy Henry Jekyll"), suggesting his identity has already fragmented beyond repair.',
+      },
+      {
+        type: 'theme',
         text: 'man is not truly one, but truly two',
         note: 'Duality of Man. Jekyll\'s central thesis, delivered with axiomatic force. The repetition of "truly" insists on authenticity. Yet the statement is also self-serving: it frames Jekyll\'s experiment as philosophical inquiry rather than moral transgression.',
       },
@@ -715,6 +965,51 @@ export const TEXT_ANNOTATIONS: Readonly<
         note: 'Mr Edward Hyde. Every character who meets him feels an instinctive revulsion they cannot quite explain — Enfield calls it "something downright detestable," and Utterson describes "Satan\'s signature" on his face.',
       },
       {
+        type: 'theme',
+        text: 'mortify a taste for vintages',
+        note: 'Utterson is "lean, long, dusty, dreary" and drinks gin to "mortify a taste for vintages." Jekyll describes his "imperious desire" for pleasure and the "morbid sense of shame" that accompanies it.',
+      },
+      {
+        type: 'theme',
+        text: 'the more it looks like Queer Street, the less I ask',
+        note: 'Even Enfield instinctively suppresses disturbing information ("the more it looks like Queer Street, the less I ask").',
+      },
+      {
+        type: 'theme',
+        text: 'blistered and distained',
+        note: '"Blistered and distained" suggests moral decay made physical.',
+      },
+      {
+        type: 'character',
+        text: 'sick and white with the desire to kill him',
+        note: 'Every character who meets him feels an instinctive revulsion they cannot quite explain -- Enfield calls it "something downright detestable," Utterson describes "Satan\'s signature" on his face, and the doctor at the trampling scene turns "sick and white with the desire to kill him." Hyde represents the primal, id-driven self freed from conscience and social restraint.',
+      },
+      {
+        type: 'character',
+        text: 'never lighted by a smile',
+        note: '"Never lighted by a smile" suggests he has suppressed his own pleasures -- a milder version of Jekyll\'s repression.',
+      },
+      {
+        type: 'character',
+        text: 'It was a nut to crack for many',
+        note: 'Their unlikely friendship ("it was a nut to crack for many") mirrors the theme of duality: even the most mismatched surfaces can conceal deep connections.',
+      },
+      {
+        type: 'context',
+        text: 'mortify a taste for vintages',
+        note: 'Utterson drinks gin to "mortify a taste for vintages" -- he punishes himself for having preferences.',
+      },
+      {
+        type: 'context',
+        text: 'looks like Queer Street',
+        note: 'Jekyll conceals his "pleasures" behind a "morbid sense of shame." Enfield refuses to ask questions about anything that "looks like Queer Street." The entire social world of the novella is built on a foundation of deliberate self-deception.',
+      },
+      {
+        type: 'language',
+        text: 'It sounds nothing to hear, but it was hellish to see. It wasn’t like a man; it was like some damned Juggernaut',
+        note: '"It sounds nothing to hear, but it was hellish to see. It wasn\'t like a man; it was like some damned Juggernaut."',
+      },
+      {
         type: 'quote',
         text: 'No sir, I make it a rule of mine: the more it looks like Queer Street, the less I ask',
         note: 'Enfield - Chapter 1. Enfield\'s "rule" of deliberate ignorance embodies the Victorian code of silence. "Queer Street" (trouble) is precisely where questions are most needed. Stevenson shows how gentlemanly discretion enables evil to operate unchallenged.',
@@ -756,6 +1051,21 @@ export const TEXT_ANNOTATIONS: Readonly<
         text: 'Satan’s signature upon a face',
         note: 'Utterson. Religious imagery frames Hyde as diabolical. The metaphor of a "signature" implies that evil is inscribed on the body, making the physical a map of the moral — a common Victorian belief in physiognomy.',
       },
+      {
+        type: 'theme',
+        text: 'unscientific balderdash',
+        note: 'Jekyll is a man of science who crosses a boundary that his colleague Lanyon dismisses as "unscientific balderdash." The disagreement between them represents a fundamental split in Victorian attitudes to knowledge.',
+      },
+      {
+        type: 'character',
+        text: 'unscientific balderdash',
+        note: 'Lanyon is a conventional man of science who dismissed Jekyll\'s experiments as "unscientific balderdash." He represents the limits of rational Victorian science: when he witnesses Hyde\'s transformation into Jekyll, the shock is so total that it kills him within weeks.',
+      },
+      {
+        type: 'context',
+        text: 'square of ancient, handsome houses',
+        note: 'Jekyll\'s house has a respectable front on a "square of ancient, handsome houses" and a sinister rear entrance on a "dingy" by-street.',
+      },
     ],
     'section-3': [
       {
@@ -769,6 +1079,11 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'quote',
         text: 'with ape-like fury, he was trampling his victim under foot and hailing down a storm of blows',
         note: 'Narrator (the Carew murder). The simile "ape-like" connects Hyde to Darwinian fears of evolutionary regression. The extreme violence — "trampling" and "storm of blows" — shows Hyde\'s savagery escalating beyond control.',
+      },
+      {
+        type: 'character',
+        text: 'jumped upon the roadway',
+        note: '"Jumped upon the roadway" makes the dead body seem to move of its own accord, adding a ghastly, puppet-like quality.',
       },
       {
         type: 'theme',
@@ -791,6 +1106,11 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'quote',
         text: 'If I am the chief of sinners, I am the chief of sufferers also',
         note: 'Jekyll. Jekyll casts himself as both villain and victim, seeking sympathy. The biblical echo of "chief of sinners" (from St Paul) elevates the confession to a spiritual crisis while also revealing Jekyll\'s self-pity.',
+      },
+      {
+        type: 'character',
+        text: 'death-warrant written legibly upon his face',
+        note: 'التضاد بين Lanyon "hearty, healthy, dapper" في الفصل الثاني والرجل "pale" اللي عليه "death-warrant written legibly upon his face" في الفصل السادس هو أكثر تحوّل شخصي درامي عند Stevenson.',
       },
     ],
     'section-5': [
@@ -1482,6 +1802,16 @@ export const TEXT_ANNOTATIONS: Readonly<
         note: 'Juliet - Act 3, Scene 5. Juliet’s appeal to heaven after being abandoned by the Nurse emphasises her total isolation.',
       },
       {
+        type: 'theme',
+        text: 'As one dead in the bottom of a tomb',
+        note: 'Romeo has a presentiment of "some consequence yet hanging in the stars" before the Capulet feast; Juliet sees Romeo "as one dead in the bottom of a tomb"; the Friar\'s letter fails to reach Mantua by pure chance.',
+      },
+      {
+        type: 'context',
+        text: 'I think it best you married with the County',
+        note: 'The Nurse\'s pragmatic advice ("I think it best you married with the County") shows how women learned to survive within the system by accepting its terms.',
+      },
+      {
         type: 'quote',
         text: 'Hang thee young baggage, disobedient wretch',
         note: 'Lord Capulet - Act 3, Scene 5. Capulet\'s violent language reduces Juliet to disposable property. "Baggage" and "wretch" dehumanise her. The scene exposes how patriarchal authority operates through emotional and verbal violence before physical force.',
@@ -1541,6 +1871,11 @@ export const TEXT_ANNOTATIONS: Readonly<
         note: 'Prince Escalus - Act 5, Scene 3. The Prince’s closing couplet transforms the lovers into a lasting story, suggesting their deaths carry meaning beyond the personal.',
       },
       {
+        type: 'character',
+        text: 'And I, for winking at your discords too,\nHave lost a brace of kinsmen',
+        note: 'The Prince\'s final speech acknowledges that even he has been punished by the feud ("And I, for winking at your discords too, / Have lost a brace of kinsmen").',
+      },
+      {
         type: 'theme',
         text: 'For never was a story of more woe\nThan this of Juliet and her Romeo',
         note: 'Death and Sacrifice. The final couplet is deliberately simple, as if the enormity of tragedy can only be expressed in the plainest language. "Her Romeo" gives Juliet possession in death that was denied to her in life.',
@@ -1551,6 +1886,11 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'quote',
         text: 'Wisely and slow; they stumble that run fast',
         note: 'Friar Lawrence - Act 2, Scene 3. Proverbial advice that the Friar himself fails to follow, adding irony to his role as counsellor.',
+      },
+      {
+        type: 'character',
+        text: 'Wisely and slow; they stumble that run fast',
+        note: 'The Friar begins as the voice of moderation ("Wisely and slow; they stumble that run fast") but is progressively drawn into deception.',
       },
     ],
     'activ-scenev': [
@@ -1584,7 +1924,34 @@ export const TEXT_ANNOTATIONS: Readonly<
         note: 'foreshadow. Juliet\'s epithalamium transforms Romeo into a cosmic image. "My Romeo" claims ownership against patriarchal convention. "Die" carries an Elizabethan double meaning (sexual climax), linking love, sex and death. The stars image foreshadows Romeo\'s association with fate and astrology.',
       },
     ],
+    'acti-sceneiv': [
+      {
+        type: 'theme',
+        text: 'Some consequence yet hanging in the stars',
+        note: 'Romeo has a presentiment of "some consequence yet hanging in the stars" before the Capulet feast; Juliet sees Romeo "as one dead in the bottom of a tomb"; the Friar\'s letter fails to reach Mantua by pure chance.',
+      },
+      {
+        type: 'character',
+        text: 'cutting foreign throats',
+        note: 'Mab brings soldiers dreams of "cutting foreign throats" and women dreams of sex.',
+      },
+      {
+        type: 'quote',
+        text: 'I fear too early: for my mind misgives\nSome consequence yet hanging in the stars',
+        note: 'Romeo - Act 1, Scene 4. Romeo senses disaster before the Capulet feast. "Hanging in the stars" suggests fate poised to fall. But Romeo goes to the feast anyway, making this both prophecy and evidence of his characteristic recklessness.',
+      },
+      {
+        type: 'theme',
+        text: 'I fear too early: for my mind misgives\nSome consequence yet hanging in the stars',
+        note: 'Fate and Free Will. Romeo senses disaster before the Capulet feast. "Hanging in the stars" suggests fate poised to fall. But Romeo goes to the feast anyway, making this both prophecy and evidence of his characteristic recklessness.',
+      },
+    ],
     'acti-scenei': [
+      {
+        type: 'character',
+        text: 'What, drawn, and talk of peace? I hate the word',
+        note: 'From his very first line ("What, drawn and talk of peace? I hate the word") he is defined by violence.',
+      },
       {
         type: 'quote',
         text: 'O brawling love! O loving hate!\nO anything, of nothing first create',
@@ -1616,16 +1983,11 @@ export const TEXT_ANNOTATIONS: Readonly<
         note: 'foreshadow. The Prince establishes lethal stakes from the opening scene. "Forfeit of the peace" makes peace a commodity paid for in blood. The threat foreshadows the ending: it is the lovers\' lives that ultimately pay.',
       },
     ],
-    'acti-sceneiv': [
+    'acti-sceneii': [
       {
-        type: 'quote',
-        text: 'I fear too early: for my mind misgives\nSome consequence yet hanging in the stars',
-        note: 'Romeo - Act 1, Scene 4. Romeo senses disaster before the Capulet feast. "Hanging in the stars" suggests fate poised to fall. But Romeo goes to the feast anyway, making this both prophecy and evidence of his characteristic recklessness.',
-      },
-      {
-        type: 'theme',
-        text: 'I fear too early: for my mind misgives\nSome consequence yet hanging in the stars',
-        note: 'Fate and Free Will. Romeo senses disaster before the Capulet feast. "Hanging in the stars" suggests fate poised to fall. But Romeo goes to the feast anyway, making this both prophecy and evidence of his characteristic recklessness.',
+        type: 'context',
+        text: 'My will to her consent is but a part',
+        note: 'His initial claim to value her consent ("My will to her consent is but a part") gives way to violent coercion when she refuses Paris.',
       },
     ],
     'acti-sceneiii': [
