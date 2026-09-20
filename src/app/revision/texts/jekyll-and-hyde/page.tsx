@@ -72,7 +72,7 @@ const data: TextGuideData = {
   category: 'Novella',
   badge: 'AQA / Edexcel / OCR / Eduqas',
   intro:
-    "Robert Louis Stevenson's Gothic novella explores the duality of human nature through the respectable Dr Henry Jekyll and his violent alter ego Mr Edward Hyde. Famously inspired by a vivid dream and drafted at remarkable speed (Stevenson reportedly burned his first version and rewrote it within weeks), the story unfolds as a mystery focalised through the lawyer Gabriel John Utterson, who gradually uncovers the terrifying truth behind Jekyll's relationship with the sinister Hyde.",
+    'Jekyll and Hyde is about a respectable Victorian doctor who invents a drug to split the good and evil halves of himself, and discovers that the two cannot be split at all. Robert Louis Stevenson tells it as a mystery: the lawyer Gabriel John Utterson finds that his old friend Dr Henry Jekyll has left everything in his will to a violent stranger called Edward Hyde, and spends the novella working out why. The answer is that Hyde is not a second man but the part of Jekyll that respectable London had always required him to hide.',
   introAr:
     'رواية Robert Louis Stevenson القوطية القصيرة تغوص في ازدواجية النفس البشرية عن طريق Dr Henry Jekyll الموقّر وقرينه العنيف Mr Edward Hyde. يقولون إن الفكرة جت Stevenson في حلم وايد قوي، وكتبها بسرعة عجيبة (يقولون إنه حرق المسودة الأولى وعاد كتبها كلها خلال أسابيع). القصة تنفك بشكل لغز، شايفينها من زاوية المحامي Gabriel John Utterson، اللي يكشف الحين بعد الحين الحقيقة المرعبة وراء علاقة Jekyll بـ Hyde الشرير.',
   yearAr: '١٨٨٦',

@@ -72,7 +72,7 @@ const data: TextGuideData = {
   category: 'Novella',
   badge: 'AQA / Edexcel / Eduqas',
   intro:
-    "Charles Dickens's beloved novella follows the miserly Ebenezer Scrooge through a single Christmas Eve night as he is visited by three supernatural spirits who force him to confront his past, present and future. A powerful moral fable about redemption, social responsibility and the possibility of personal change, it remains one of the most influential works of English literature and helped shape the modern celebration of Christmas.",
+    'A Christmas Carol asks whether a hard, selfish man can genuinely change, and Dickens answers that he can, so long as he is made to look honestly at what his choices have cost other people. Over a single Christmas Eve night, three spirits take the miser Ebenezer Scrooge through his own past, the poverty going on in the houses around him, and the lonely death waiting for him if nothing changes. It is one of the most influential works in English literature, and it helped shape the way Christmas is celebrated today.',
   quickInfo: {
     genre: 'Gothic novella / Morality tale',
     setting: 'London, Victorian England, 1840s',

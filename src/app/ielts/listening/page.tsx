@@ -78,6 +78,40 @@ function isGapCorrect(input: string, acceptable: string[]): boolean {
   return acceptable.some((a) => a.trim().toLowerCase() === norm)
 }
 
+/**
+ * The page header, lifted out of the main return so the first-paint guard
+ * below can render it too. Until this change the guard returned a bare
+ * skeleton, so the server-rendered HTML for /ielts/listening, which is all a
+ * crawler ever sees, contained no <h1>. Nothing here depends on client state.
+ */
+function ListeningHeader() {
+  const t = useT()
+  return (
+    <section className="border-b border-border bg-card">
+      <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+        <Link
+          href="/ielts"
+          className="mb-4 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+        >
+          <ArrowLeft className="h-3.5 w-3.5" />
+          {t('ielts.listening.back_to_ielts')}
+        </Link>
+        <div className="flex items-center gap-3">
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-sky-500/10">
+            <Headphones className="h-6 w-6 text-sky-500" />
+          </div>
+          <div>
+            <h1 className="font-heading text-2xl font-medium tracking-tight sm:text-3xl">
+              {t('ielts.listening.title')}
+            </h1>
+            <p className="text-sm text-muted-foreground">{t('ielts.listening.subtitle')}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 export default function ListeningPage() {
   const t = useT()
   const [mounted, setMounted] = useState(false)
@@ -174,9 +208,9 @@ export default function ListeningPage() {
   if (!mounted) {
     return (
       <div className="min-h-screen bg-background">
+        <ListeningHeader />
         <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
-          <div className="h-8 w-48 animate-pulse rounded-lg bg-muted" />
-          <div className="mt-6 h-40 animate-pulse rounded-2xl border border-border/60 bg-card" />
+          <div className="h-40 animate-pulse rounded-2xl border border-border/60 bg-card" />
           <div className="mt-4 h-64 animate-pulse rounded-2xl border border-border/60 bg-card" />
         </div>
       </div>
@@ -204,28 +238,7 @@ export default function ListeningPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* ── Header ─────────────────────────────────────────────────────── */}
-      <section className="border-b border-border bg-card">
-        <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
-          <Link
-            href="/ielts"
-            className="mb-4 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
-          >
-            <ArrowLeft className="h-3.5 w-3.5" />
-            {t('ielts.listening.back_to_ielts')}
-          </Link>
-          <div className="flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-sky-500/10">
-              <Headphones className="h-6 w-6 text-sky-500" />
-            </div>
-            <div>
-              <h1 className="font-heading text-2xl font-medium tracking-tight sm:text-3xl">
-                {t('ielts.listening.title')}
-              </h1>
-              <p className="text-sm text-muted-foreground">{t('ielts.listening.subtitle')}</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ListeningHeader />
 
       <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
         {phase === 'intro' && <TestPicker onPick={startTest} />}

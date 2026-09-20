@@ -73,7 +73,7 @@ const data: TextGuideData = {
   category: 'Play',
   badge: 'AQA / Edexcel / OCR / Eduqas / Edexcel IGCSE',
   intro:
-    'J.B. Priestley wrote An Inspector Calls in 1944-1945 but deliberately set it in spring 1912 - before the sinking of the Titanic (April 1912), the First World War, and the creation of the welfare state. The play uses a mysterious police inspector to expose how every member of the wealthy Birling family has contributed to the death of a young working-class woman. It is at once a detective thriller, a morality play and a socialist argument for collective responsibility.',
+    'An Inspector Calls argues that we are responsible for the harm our choices do to people we will never meet, and it makes that argument by showing one wealthy family how each of them helped drive a young working-class woman to suicide. J.B. Priestley wrote the play in 1944-1945 but set it in spring 1912, before the Titanic sank, before the First World War and before the welfare state existed, so that an audience in 1945 could watch Arthur Birling be confident about a future they already knew had gone wrong. It works at once as a detective thriller, a morality play and a socialist argument for collective responsibility.',
   introAr:
     'كتب J.B. Priestley مسرحية An Inspector Calls في الفترة 1944-1945، بس تعمّد إنه يحط أحداثها في ربيع 1912 - قبل غرق Titanic (أبريل 1912)، وقبل الحرب العالمية الأولى، وقبل تأسيس دولة الرفاه. المسرحية تستخدم مفتش شرطة غامض عشان يكشف شلون ساهم كل واحد من أفراد عائلة Birling الثرية في موت بنت صغيرة من الطبقة العاملة. هي في نفس الوقت رواية بوليسية، ومسرحية أخلاقية، وحجة اشتراكية لصالح المسؤولية الجماعية.',
   quickInfo: {

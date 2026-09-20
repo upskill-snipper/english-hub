@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { buttonVariants } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button-variants'
 import { ArrowRight, Lightbulb, Quote, GraduationCap } from 'lucide-react'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'

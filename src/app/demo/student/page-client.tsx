@@ -780,14 +780,24 @@ function SoftEyebrow({ children }: { children: React.ReactNode }) {
   )
 }
 
-function SectionHeading({ id, children }: { id: string; children: React.ReactNode }) {
+// `as` exists only so the hero can be the page h1 while every other section
+// keeps its h2. All 13 call sites render identical markup otherwise.
+function SectionHeading({
+  id,
+  as: Tag = 'h2',
+  children,
+}: {
+  id: string
+  as?: 'h1' | 'h2'
+  children: React.ReactNode
+}) {
   return (
-    <h2
+    <Tag
       id={id}
       className="font-serif font-semibold tracking-tight text-foreground text-2xl md:text-3xl"
     >
       {children}
-    </h2>
+    </Tag>
   )
 }
 
@@ -881,7 +891,9 @@ export default function StudentDemoPage() {
           <SectionEyebrow>Personal dashboard</SectionEyebrow>
           <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div>
-              <SectionHeading id="hero-h">Good afternoon, {STUDENT.firstName}</SectionHeading>
+              <SectionHeading id="hero-h" as="h1">
+                Good afternoon, {STUDENT.firstName}
+              </SectionHeading>
               <p className="mt-2 text-sm text-muted-foreground">
                 {STUDENT.todayDateLong} · Three classes today, four assignments live, one focus
                 priority.

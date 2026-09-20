@@ -98,7 +98,7 @@ const data: TextGuideData = {
   category: 'Play',
   badge: 'Most-studied GCSE text',
   intro:
-    "Shakespeare's shortest and most intense tragedy charts the meteoric rise and catastrophic fall of a Scottish general who murders his king to seize the throne. Driven by prophecy, ambition, and the relentless goading of his wife, Macbeth descends from honoured warrior to paranoid tyrant, proving that unchecked ambition ultimately devours those who serve it.",
+    "Macbeth is a tragedy about a man who murders his king to take the throne and who knows, before he lifts the dagger, exactly what it will cost him. Shakespeare's shortest and most intense play follows Macbeth from honoured Scottish general to paranoid tyrant, pushed on by a witches' prophecy, by his own ambition and by the relentless goading of his wife. By the final act he has everything he killed for, and he finds that it means nothing.",
   quickInfo: {
     genre: 'Tragedy',
     setting: 'Scotland and England, 11th century',

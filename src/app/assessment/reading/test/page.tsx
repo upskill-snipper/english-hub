@@ -153,7 +153,13 @@ function AgeInputPhase({ onSubmit }: { onSubmit: (years: number, months: number)
     <div className="mx-auto max-w-lg space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle>{t('assessment.reading.test.age.title')}</CardTitle>
+          {/* The age-input phase is the only state a first-time visitor or a
+              crawler sees, so its card title is the page heading. CardTitle is a
+              <div>, which left this route with no h1; Tailwind preflight resets
+              h1 sizing to inherit, so nesting one changes nothing on screen. */}
+          <CardTitle>
+            <h1>{t('assessment.reading.test.age.title')}</h1>
+          </CardTitle>
           <CardDescription>{t('assessment.reading.test.age.subtitle')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">

@@ -38,7 +38,7 @@ const data: TextGuideData = {
   category: 'Play',
   badge: 'Edexcel A-Level / AQA A-Level / OCR A-Level',
   intro:
-    'Written in the shadow of the Jacobean succession, King Lear is Shakespeare\u2019s most unsparing tragedy. It follows an ageing monarch who divides his kingdom between his daughters on the basis of a love test, only to be cast out when flattery proves hollow and affection real. Across five acts the play ranges from court ritual to a storm-lashed heath, from aristocratic cruelty to the broken truths spoken by a fool, a beggar and a blinded man. Lear\u2019s disintegration is paralleled by the Gloucester subplot, in which a father is similarly deceived by a false child. Shakespeare interweaves both strands to ask what holds society, family and selfhood together once authority collapses. The result is a study of power, ingratitude, madness and, finally, the fragile possibility of redemption extinguished at the last moment.',
+    'King Lear is about a king who gives away his power in exchange for flattery and then finds out what he is worth without it. Lear divides his kingdom between the two daughters who tell him what he wants to hear and disinherits Cordelia, the one who refuses, and within two acts the elder sisters have stripped him of every attendant and turned him out into a storm. Shakespeare tells the same story twice over: the Earl of Gloucester is also tricked into rejecting the child who loves him, and is blinded on stage for helping the King. It is his bleakest tragedy, and it asks what holds a family, a society or a mind together once authority has gone.',
   quickInfo: {
     genre: 'Tragedy',
     setting: 'Pre-Christian Britain',
