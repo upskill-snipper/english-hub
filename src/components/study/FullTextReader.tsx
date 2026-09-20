@@ -26,15 +26,21 @@ import { TEXT_ANNOTATIONS } from '@/data/text-annotations.generated'
  * whole exercise exists to avoid.
  *
  * WHAT IT NOW DOES SHOW, and the distinction is the same one. Reported from the
- * live site: the reader offers five annotation overlays and highlighted
- * nothing, on every text, because not one of them carried an annotation. The
- * key quotations were not missing - they have been written, with commentary,
- * in each text's study guide - they simply had no connection to the place in
- * the text where they occur. `scripts/generate-text-annotations.mjs` makes that
- * connection and nothing else: it locates each authored quotation in our own
+ * live site twice. First: the reader offered five annotation overlays and
+ * highlighted nothing on every text. Then, after the first fix: it highlighted
+ * key quotations only - on A Christmas Carol, seven spans and 136 words of a
+ * 28,862-word novella, with Language, Themes, Characters and Context still
+ * controls for an empty set.
+ *
+ * None of that analysis was missing. It had been written, by a person, in each
+ * text's guide: `themes[]`, `characters[]` and `historicalContext[]` all quote
+ * the text while discussing it, and the key-quotes pages carry explicit theme
+ * tags and technique analysis per quotation.
+ * `scripts/generate-text-annotations.mjs` connects them to the line they are
+ * about and does nothing else - it locates each authored quotation in our own
  * edition and records the exact span. A quotation it cannot locate is left out
  * rather than approximated, so an overlay still shows only what somebody
- * actually wrote.
+ * actually wrote, and twelve texts with no guide still show nothing.
  */
 export function FullTextReader({
   data,

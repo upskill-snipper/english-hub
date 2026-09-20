@@ -275,16 +275,28 @@ function EyeIcon({ className = 'h-4 w-4' }: { className?: string }) {
 
 // ─── Annotation tooltip ──────────────────────────────────────────────────────
 
+/**
+ * Which overlay's colour a span wears when several apply to it.
+ *
+ * A key quotation usually also carries a theme, and often a language note about
+ * the same words. They are different readings of one line, not three lines.
+ */
+const FACET_ORDER: OverlayType[] = ['quote', 'theme', 'language', 'character', 'context']
+
 function AnnotationTooltip({
-  annotation,
+  annotations,
   children,
 }: {
-  annotation: Annotation
+  /** Every authored note on this exact span, one per overlay. */
+  annotations: Annotation[]
   children: React.ReactNode
 }) {
   const t = useT()
   const [show, setShow] = useState(false)
-  const cfg = OVERLAY_CONFIG[annotation.type]
+  const ordered = [...annotations].sort(
+    (a, b) => FACET_ORDER.indexOf(a.type) - FACET_ORDER.indexOf(b.type),
+  )
+  const cfg = OVERLAY_CONFIG[ordered[0].type]
   const label = t(cfg.labelKey)
 
   return (
@@ -296,20 +308,34 @@ function AnnotationTooltip({
       onBlur={() => setShow(false)}
       tabIndex={0}
       role="button"
-      aria-label={`${label} ${t('text_viewer.note_label')}: ${annotation.note}`}
+      aria-label={ordered
+        .map(
+          (a) => `${t(OVERLAY_CONFIG[a.type].labelKey)} ${t('text_viewer.note_label')}: ${a.note}`,
+        )
+        .join('. ')}
     >
       <span className={`rounded-sm px-0.5 ${cfg.bg} border-b-2 ${cfg.border}`}>{children}</span>
       {show && (
         <span
-          className="absolute bottom-full left-1/2 z-50 mb-2 w-64 -translate-x-1/2 rounded-lg border border-border bg-card p-3 shadow-elevated animate-fade-in"
+          className="absolute bottom-full left-1/2 z-50 mb-2 w-72 -translate-x-1/2 rounded-lg border border-border bg-card p-3 shadow-elevated animate-fade-in"
           role="tooltip"
         >
-          <span
-            className={`mb-1 block text-xs font-semibold uppercase tracking-wider ${cfg.color}`}
-          >
-            {label}
-          </span>
-          <span className="block text-sm leading-relaxed text-foreground">{annotation.note}</span>
+          {ordered.map((a, i) => {
+            const c = OVERLAY_CONFIG[a.type]
+            return (
+              <span
+                key={a.type}
+                className={i > 0 ? 'mt-2 block border-t border-border pt-2' : 'block'}
+              >
+                <span
+                  className={`mb-1 block text-xs font-semibold uppercase tracking-wider ${c.color}`}
+                >
+                  {t(c.labelKey)}
+                </span>
+                <span className="block text-sm leading-relaxed text-foreground">{a.note}</span>
+              </span>
+            )
+          })}
           {/* Arrow */}
           <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-border" />
         </span>
@@ -356,13 +382,28 @@ function AnnotatedContent({
       }
     }
 
-    // Sort by position, then by length (longer first for overlapping)
-    matches.sort((a, b) => a.start - b.start || b.end - a.end)
+    // Merge annotations that land on EXACTLY the same span before anything is
+    // discarded. A key quotation typically carries a theme as well, and often a
+    // language note about the same words; the overlap rule below would have
+    // kept one of them and thrown the others away, so a student with every
+    // overlay on - the default - saw one note where three were written.
+    const bySpan = new Map<string, { start: number; end: number; annotations: Annotation[] }>()
+    for (const m of matches) {
+      const key = `${m.start}-${m.end}`
+      const entry = bySpan.get(key)
+      if (entry) entry.annotations.push(m.annotation)
+      else bySpan.set(key, { start: m.start, end: m.end, annotations: [m.annotation] })
+    }
 
-    // Remove overlapping matches (keep first/longest)
-    const filtered: Match[] = []
+    // Sort by position, then by length (longer first for overlapping)
+    const merged = [...bySpan.values()].sort((a, b) => a.start - b.start || b.end - a.end)
+
+    // Remove genuinely overlapping spans (keep first/longest). Two annotations
+    // on the same span are no longer a conflict; two on different, crossing
+    // spans still are, because a nested highlight cannot be rendered.
+    const filtered: { start: number; end: number; annotations: Annotation[] }[] = []
     let lastEnd = -1
-    for (const match of matches) {
+    for (const match of merged) {
       if (match.start >= lastEnd) {
         filtered.push(match)
         lastEnd = match.end
@@ -374,7 +415,7 @@ function AnnotatedContent({
     let cursor = 0
 
     for (let i = 0; i < filtered.length; i++) {
-      const { start, end, annotation } = filtered[i]
+      const { start, end, annotations: onSpan } = filtered[i]
 
       // Text before this annotation
       if (cursor < start) {
@@ -383,7 +424,7 @@ function AnnotatedContent({
 
       // The annotated text
       segments.push(
-        <AnnotationTooltip key={`a-${i}`} annotation={annotation}>
+        <AnnotationTooltip key={`a-${i}`} annotations={onSpan}>
           {stripped.slice(start, end)}
         </AnnotationTooltip>,
       )

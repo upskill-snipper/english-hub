@@ -148,13 +148,26 @@ describe('every note is authored, not generated', () => {
   })
 
   it('and the commentary can be found in the guide it came from', () => {
-    // The anti-fabrication check. Every note must be traceable to the study
-    // guide; if the generator ever started writing its own, this fails.
+    // The anti-fabrication check. Every note must be traceable to something a
+    // person wrote; if the generator ever started writing its own, this fails.
+    //
+    // THE HAYSTACK WIDENED on 20 September 2026 and the guarantee did not. The
+    // generator used to read one file, so this read one file. It now also reads
+    // key-quotes/page.tsx and themes/page.tsx, which is where the theme tags
+    // and the technique analysis were sitting unused while four of the five
+    // overlays highlighted nothing. Those are authored pages, not generated
+    // ones, so tracing a note to them is the same guarantee - but had this test
+    // kept looking in page.tsx alone it would have failed honest notes and the
+    // tempting fix would have been to delete the check.
     let checked = 0
     for (const slug of SLUGS) {
       const page = join(ROOT, 'src/app/revision/texts', slug, 'page.tsx')
       if (!existsSync(page)) continue
-      const guide = readFileSync(page, 'utf8')
+      const guide = ['page.tsx', 'key-quotes/page.tsx', 'themes/page.tsx']
+        .map((rel) => join(ROOT, 'src/app/revision/texts', slug, rel))
+        .filter((p) => existsSync(p))
+        .map((p) => readFileSync(p, 'utf8'))
+        .join('\n')
       for (const anns of Object.values(TEXT_ANNOTATIONS[slug])) {
         for (const a of anns) {
           // Compare on words only: the guide stores curly quotes as \u escapes.

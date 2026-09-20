@@ -162,10 +162,15 @@ describe('what the suite runs in', () => {
       readFileSync(f, 'utf8').includes('@vitest-environment jsdom'),
     )
     expect(annotated.length).toBeGreaterThan(0)
+    // Raised from 16 to 17 on 20 September 2026 for
+    // every-overlay-highlights-something.test.tsx, which renders the real
+    // InteractiveTextViewer to prove a span carrying three authored notes shows
+    // all three. That assertion cannot be made without a DOM: the defect it
+    // guards was the renderer silently discarding two of them.
     expect(
       annotated.length,
       'more files now claim to need a DOM - check each one',
-    ).toBeLessThanOrEqual(16)
+    ).toBeLessThanOrEqual(17)
   })
 })
 
