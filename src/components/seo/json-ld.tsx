@@ -190,13 +190,29 @@ export function ArticleJsonLd({
 }) {
   const resolvedImage = image ?? `${SITE_URL}/api/og?title=${encodeURIComponent(headline)}`
   const resolvedAuthorName = authorName ?? SITE_NAME
-  // If no explicit author was supplied we fall back to the site itself, which
-  // schema.org models as an Organization rather than a Person.
+  // THE TYPE FOLLOWS THE NAME, NOT WHETHER ONE WAS SUPPLIED (20 September 2026).
+  //
+  // This used to read `'@type': authorName ? 'Person' : 'Organization'`, with a
+  // comment explaining that an absent author falls back to the site, which is
+  // an Organization. That reasoning was right about the fallback and blind to
+  // the case that actually happens: every one of the 82 blog posts sets
+  // `author: 'The English Hub'` in its frontmatter, so `authorName` is present,
+  // the ternary takes the Person branch, and 122 URLs - 82 posts plus 40 Arabic
+  // variants - tell Google that the company is a person.
+  //
+  // It also contradicted the site's own rule. ReviewedByline exists because
+  // "the site bans fabricated named people", and it credits "The English Hub
+  // editorial team". The structured data was inventing the one thing the
+  // visible byline is careful not to.
+  const isSiteItself = resolvedAuthorName.trim().toLowerCase() === SITE_NAME.toLowerCase()
   const author: ArticleAuthor = {
-    '@type': authorName ? 'Person' : 'Organization',
+    '@type': isSiteItself ? 'Organization' : 'Person',
     name: resolvedAuthorName,
   }
+  // An Organization author is worth identifying by url; a Person keeps whatever
+  // the caller passed, and passes nothing when the caller passed nothing.
   if (authorUrl) author.url = authorUrl
+  else if (isSiteItself) author.url = SITE_URL
 
   const publisher: ArticlePublisher = {
     '@type': 'Organization',
