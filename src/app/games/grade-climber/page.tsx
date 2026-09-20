@@ -10,6 +10,7 @@ import type { GCSEGrade } from '@/lib/grades'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { getSetTextsForBoard } from '@/lib/board/set-texts'
+import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
 
 // ─── Question Bank (155+ across grade levels) ─────────────────────────────────
 
@@ -1852,15 +1853,6 @@ const QUESTION_BANK: GradeQuestion[] = [
   },
 ]
 
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr]
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
-  }
-  return a
-}
-
 // Map title substrings to set-text slugs so we can filter board-specific questions.
 // A question is text-specific if its prompt contains one of these substrings.
 const TEXT_REFERENCES: { needle: string; slug: string }[] = [
@@ -1975,6 +1967,42 @@ export default function GradeClimberPage() {
   const [selected, setSelected] = useState<number | null>(null)
   const [showFeedback, setShowFeedback] = useState(false)
 
+  /**
+   * ANSWER-POSITION BIAS (fixed 20 September 2026).
+   *
+   * The game randomised which QUESTION was asked and never the order of its
+   * options, then scored and highlighted with `index === correctIndex`. 143 of
+   * the 156 questions in this bank (91.7%) have their answer at index 1, and
+   * none has it at index 3, so a student who clicked the second button every
+   * time scored 91.7% having read nothing.
+   *
+   * `shuffledOptionsFor` reorders the options per question and hands back the
+   * correct option's VALUE. Compare by value: after a shuffle `correctIndex`
+   * points at whatever landed in that slot. Questions carry no id, so the
+   * prompt is the seed and also the text the helper checks before deciding a
+   * question must keep its authored order.
+   *
+   * The salt is minted in `handleStart`, never in a `useState` initialiser:
+   * `newSessionSalt` calls Math.random(), and calling that while rendering a
+   * client component gives the server and the client different orders. The game
+   * has a start gate, so no option is painted before that first click.
+   */
+  const [optionSalt, setOptionSalt] = useState('')
+
+  const questionView = useMemo(
+    () =>
+      currentQuestion
+        ? shuffledOptionsFor(
+            currentQuestion.options,
+            currentQuestion.correctIndex,
+            currentQuestion.prompt,
+            optionSalt,
+            currentQuestion.prompt,
+          )
+        : null,
+    [currentQuestion, optionSalt],
+  )
+
   const pickQuestion = useCallback(
     (grade: GCSEGrade, used: Set<number>) => {
       const candidates = filteredBank
@@ -2010,6 +2038,7 @@ export default function GradeClimberPage() {
   )
 
   const handleStart = useCallback(() => {
+    setOptionSalt(newSessionSalt())
     const initialGrade: GCSEGrade = 3
     setCurrentGrade(initialGrade)
     setMaxGradeReached(initialGrade)
@@ -2035,12 +2064,14 @@ export default function GradeClimberPage() {
 
   const handleSelect = useCallback(
     (index: number) => {
-      if (showFeedback || !currentQuestion) return
+      if (showFeedback || !currentQuestion || !questionView) return
       setSelected(index)
       setShowFeedback(true)
       setTotalAnswered((t) => t + 1)
 
-      const correct = index === currentQuestion.correctIndex
+      // By value. `index` is a position in the shuffled list, so comparing it
+      // with the authored `correctIndex` would mark the wrong button right.
+      const correct = questionView.options[index] === questionView.correctValue
       let nextGrade = currentGrade
       let newCorrectStreak = correctStreak
       let newWrongStreak = wrongStreak
@@ -2080,6 +2111,7 @@ export default function GradeClimberPage() {
     [
       showFeedback,
       currentQuestion,
+      questionView,
       currentGrade,
       correctStreak,
       wrongStreak,
@@ -2121,7 +2153,7 @@ export default function GradeClimberPage() {
         onFinish={handleFinish}
         gameState={gameState}
       >
-        {currentQuestion && (
+        {currentQuestion && questionView && (
           <div className="flex gap-8">
             {/* Grade Ladder */}
             <div className="hidden shrink-0 sm:block">
@@ -2161,8 +2193,8 @@ export default function GradeClimberPage() {
 
               {/* Options */}
               <div className="grid grid-cols-1 gap-3">
-                {currentQuestion.options.map((option, i) => {
-                  const isCorrect = i === currentQuestion.correctIndex
+                {questionView.options.map((option, i) => {
+                  const isCorrect = option === questionView.correctValue
                   const isSelected = i === selected
                   let style = 'border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05]'
                   if (showFeedback) {

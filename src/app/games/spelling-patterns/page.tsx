@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useMemo } from 'react'
 import Link from 'next/link'
 import GameShell, { type GameState } from '@/components/games/GameShell'
 import { Button } from '@/components/ui/button'
@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils'
 import { ArrowLeft, CheckCircle, XCircle, Sparkles, Lightbulb } from 'lucide-react'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
+import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
@@ -65,7 +66,10 @@ const PATTERN_BANK: PatternItem[] = [
     rule: "Exception: 'ei' for the /ay/ sound; UK keeps the 'u' in -bour.",
   },
   {
-    options: ['wierd', 'weird', 'weerd', 'weird'],
+    // The fourth option used to be a second copy of 'weird'. Scoring by index
+    // marked that identical spelling wrong; scoring by value would mark two
+    // buttons right. Either way it is a misprint, so it is now a distractor.
+    options: ['wierd', 'weird', 'weerd', 'weired'],
     answerIndex: 1,
     rule: "Exception: 'weird' is spelled 'ei' though no 'c' precedes it.",
   },
@@ -371,9 +375,24 @@ function shuffle<T>(arr: T[]): T[] {
 
 const ROUND_SIZE = 15
 const LETTERS = ['A', 'B', 'C', 'D']
+const PROMPT = 'Which spelling is correct?'
 
 // ─── Component ─────────────────────────────────────────────────────────────────
 
+/**
+ * ANSWER POSITION WAS THE ANSWER (fixed 20 September 2026).
+ *
+ * The round shuffled the QUESTION pool and left each question's four options in
+ * authored order, then scored with `choice === current.answerIndex`. 41 of the
+ * 65 items in PATTERN_BANK carry answerIndex 1 and not one carries 3, so a
+ * student who tapped B every time and read nothing scored 63%, and never had
+ * any reason to consider D.
+ *
+ * The options are now shuffled per attempt from a salt created when the attempt
+ * starts, and every comparison goes through the correct option's VALUE rather
+ * than its position. Rebalancing the bank would have fixed today only: the next
+ * person to author fifty items writes the answer at B again.
+ */
 export default function SpellingPatternsPage() {
   const { board } = useBoard()
   const boardConfig = getBoardConfig(board)
@@ -383,13 +402,31 @@ export default function SpellingPatternsPage() {
   const [idx, setIdx] = useState(0)
   const [score, setScore] = useState(0)
   const [totalAnswered, setTotalAnswered] = useState(0)
+  /** Display position of the tapped option, never used to judge it. */
   const [selected, setSelected] = useState<number | null>(null)
   const [revealed, setRevealed] = useState(false)
+  /** Minted in the start handler, not in render: newSessionSalt calls Math.random. */
+  const [salt, setSalt] = useState('')
 
   const current = items[idx] ?? null
 
+  const view = useMemo(
+    () =>
+      current
+        ? shuffledOptionsFor(
+            current.options,
+            current.answerIndex,
+            current.options.join('|'),
+            salt,
+            PROMPT,
+          )
+        : null,
+    [current, salt],
+  )
+
   const handleStart = useCallback(() => {
     setItems(shuffle(PATTERN_BANK).slice(0, ROUND_SIZE))
+    setSalt(newSessionSalt())
     setIdx(0)
     setScore(0)
     setTotalAnswered(0)
@@ -403,16 +440,16 @@ export default function SpellingPatternsPage() {
   }, [])
 
   const handleSelect = useCallback(
-    (choice: number) => {
-      if (revealed || !current) return
+    (choice: number, value: string) => {
+      if (revealed || !view) return
       setSelected(choice)
       setRevealed(true)
       setTotalAnswered((t) => t + 1)
-      if (choice === current.answerIndex) {
+      if (value === view.correctValue) {
         setScore((s) => s + 1)
       }
     },
-    [revealed, current],
+    [revealed, view],
   )
 
   const handleNext = useCallback(() => {
@@ -426,6 +463,8 @@ export default function SpellingPatternsPage() {
   }, [idx, items.length])
 
   const accuracyPct = totalAnswered > 0 ? Math.round((score / totalAnswered) * 100) : 0
+  const selectedValue = view && selected !== null ? view.options[selected] : null
+  const answeredCorrectly = selectedValue !== null && selectedValue === view?.correctValue
 
   return (
     <div className="min-h-screen bg-background">
@@ -453,7 +492,7 @@ export default function SpellingPatternsPage() {
           onFinish={handleFinish}
           gameState={gameState}
         >
-          {current && (
+          {current && view && (
             <div className="space-y-6">
               {/* Progress */}
               <div className="flex items-center justify-between text-sm text-muted-foreground">
@@ -465,18 +504,18 @@ export default function SpellingPatternsPage() {
 
               {/* Prompt */}
               <div className="rounded-xl border border-border bg-card p-6 text-center">
-                <p className="text-sm text-muted-foreground">Which spelling is correct?</p>
+                <p className="text-sm text-muted-foreground">{PROMPT}</p>
               </div>
 
-              {/* Options */}
+              {/* Options - shuffled per attempt, so the letter is a position and nothing more */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {current.options.map((opt, i) => {
-                  const isCorrect = i === current.answerIndex
+                {view.options.map((opt, i) => {
+                  const isCorrect = opt === view.correctValue
                   const isChosen = i === selected
                   return (
                     <button
                       key={i}
-                      onClick={() => handleSelect(i)}
+                      onClick={() => handleSelect(i, opt)}
                       disabled={revealed}
                       className={cn(
                         'flex items-center gap-3 rounded-lg border px-4 py-3 text-start text-base font-medium transition-all',
@@ -523,19 +562,19 @@ export default function SpellingPatternsPage() {
                   <div
                     className={cn(
                       'flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium',
-                      selected === current.answerIndex
+                      answeredCorrectly
                         ? 'text-emerald-400 bg-emerald-500/10'
                         : 'text-red-400 bg-red-500/10',
                     )}
                   >
-                    {selected === current.answerIndex ? (
+                    {answeredCorrectly ? (
                       <>
-                        <CheckCircle className="size-4" /> Spot on - great pattern spotting!
+                        <CheckCircle className="size-4" /> Spot on - great pattern spotting
                       </>
                     ) : (
                       <>
                         <XCircle className="size-4" /> Not quite - the correct spelling is{' '}
-                        <span className="font-bold">{current.options[current.answerIndex]}</span>
+                        <span className="font-bold">{view.correctValue}</span>
                       </>
                     )}
                   </div>

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback, useMemo, useRef } from 'react'
+import { useState, useCallback, useMemo } from 'react'
 import Link from 'next/link'
 import { ArrowLeft, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils'
 import GameShell, { type GameState } from '@/components/games/GameShell'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
-import { shuffleOptionsDeterministic } from '@/app/revision/quiz/quiz-data'
+import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
 
 // ─── Passage & Question Types ─────────────────────────────────────────────────
 
@@ -450,30 +450,58 @@ export default function ComprehensionChallengePage() {
   const currentQuestion = currentPassage?.questions[questionIndex] ?? null
   const overallQuestionNum = passageIndex * 5 + questionIndex + 1
 
-  // Per-session salt - fresh on every page mount, so each new game shuffles
-  // option order differently. Stable for the whole session so feedback timing
-  // and visible state stay consistent within a single round.
-  const sessionSaltRef = useRef<string>(
-    `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`,
-  )
+  /**
+   * ANSWER-POSITION BIAS (fixed 20 September 2026).
+   *
+   * PASSAGE_BANK below was authored with the correct answer at index 1 in 29 of
+   * its 30 questions (96.7%), the odd one out being at index 2. Nothing sat at
+   * index 0 or 3. The page shuffled the PASSAGE pool and left each question's
+   * OPTIONS in array order, so a student who clicked the second button every
+   * time and read nothing scored 29/30.
+   *
+   * The options are therefore shuffled at render, and every comparison against
+   * the correct answer goes through `view.correctValue` - never an index. After
+   * a shuffle the authored `correctIndex` points at whatever landed in that
+   * slot, so scoring by index would mark the wrong answer right, which is worse
+   * than the bias it replaced.
+   *
+   * Two earlier mistakes this shape is written to avoid:
+   *
+   * 1. The salt lived in a `useRef` initialiser, so it was created once per
+   *    MOUNT. GameShell calls `onStart` again for a replay without remounting,
+   *    so every replay in a sitting reproduced the identical option order and a
+   *    student could simply memorise positions. It is now minted inside
+   *    `handleStart`, which is the moment an attempt actually begins.
+   * 2. `shuffleOptionsDeterministic` was called directly, which skips
+   *    `optionsMustKeepOrder`. `shuffledOptionsFor` is given the prompt as its
+   *    fifth argument so a future "all of the above" or letter-naming stem is
+   *    returned in its authored order rather than shuffled into nonsense.
+   *
+   * Rebalancing the data instead would have fixed today and not tomorrow: the
+   * next person to author a passage writes the answer at B again.
+   */
+  const [sessionSalt, setSessionSalt] = useState('')
 
-  // Shuffle the current question's options deterministically. The seed
-  // combines passage title, question index and the session salt so each
-  // question in each passage gets its own stable order. Authors of the
-  // passage bank tended to place the correct option in slot B; randomising
-  // at presentation time spreads the correct answer evenly across A/B/C/D
-  // over a session without rewriting the data.
-  const seed = currentPassage
-    ? `comp|${currentPassage.title}|${questionIndex}|${sessionSaltRef.current}`
-    : ''
-  const displayedOptions = useMemo(
-    () => (currentQuestion ? shuffleOptionsDeterministic(currentQuestion.options, seed) : []),
-    [currentQuestion, seed],
-  )
-  const correctValue = currentQuestion ? currentQuestion.options[currentQuestion.correctIndex] : ''
+  // Seeded on the passage title plus the prompt, because a CompQuestion carries
+  // no id and prompts such as "How does the writer present the robin?" are only
+  // unique within their own passage.
+  const view = useMemo(() => {
+    if (!currentPassage || !currentQuestion) return { options: [] as string[], correctValue: '' }
+    return shuffledOptionsFor(
+      currentQuestion.options,
+      currentQuestion.correctIndex,
+      `comp|${currentPassage.title}|${currentQuestion.prompt}`,
+      sessionSalt,
+      currentQuestion.prompt,
+    )
+  }, [currentPassage, currentQuestion, sessionSalt])
 
   const handleStart = useCallback(() => {
     const shuffled = shuffle(PASSAGE_BANK).slice(0, PASSAGES_PER_ROUND)
+    // Minted here, not during render: `newSessionSalt` calls Math.random(), and
+    // a render-time call in a server-rendered client component is a hydration
+    // mismatch waiting to happen. Options only paint once this has run.
+    setSessionSalt(newSessionSalt())
     setPassages(shuffled)
     setPassageIndex(0)
     setQuestionIndex(0)
@@ -492,10 +520,9 @@ export default function ComprehensionChallengePage() {
       if (showFeedback || !currentQuestion) return
       setSelected(index)
       setShowFeedback(true)
-      // Score by VALUE, not index - options are shuffled at render time.
-      const pickedValue = displayedOptions[index]
-      const correctForQ = currentQuestion.options[currentQuestion.correctIndex]
-      if (pickedValue === correctForQ) {
+      // Score by VALUE, not index - options are shuffled at render time, so the
+      // authored correctIndex no longer points at the correct option.
+      if (view.options[index] === view.correctValue) {
         setScore((s) => s + 1)
       }
 
@@ -517,7 +544,7 @@ export default function ComprehensionChallengePage() {
         setShowFeedback(false)
       }, 1200)
     },
-    [showFeedback, currentQuestion, displayedOptions, questionIndex, passageIndex, passages.length],
+    [showFeedback, currentQuestion, view, questionIndex, passageIndex, passages.length],
   )
 
   return (
@@ -594,8 +621,8 @@ export default function ComprehensionChallengePage() {
               <p className="text-base font-medium text-foreground">{currentQuestion.prompt}</p>
 
               <div className="grid grid-cols-1 gap-3">
-                {displayedOptions.map((option, i) => {
-                  const isCorrect = option === correctValue
+                {view.options.map((option, i) => {
+                  const isCorrect = option === view.correctValue
                   const isSelected = i === selected
                   let style = 'border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05]'
                   if (showFeedback) {

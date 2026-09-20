@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useMemo } from 'react'
 import Link from 'next/link'
 import GameShell, { type GameState } from '@/components/games/GameShell'
 import { Button } from '@/components/ui/button'
@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils'
 import { ArrowLeft, CheckCircle, XCircle, Sparkles, Lightbulb } from 'lucide-react'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
+import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
@@ -707,10 +708,41 @@ export default function CommonErrorFixerPage() {
   const [totalAnswered, setTotalAnswered] = useState(0)
   const [selected, setSelected] = useState<number | null>(null)
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
+  const [sessionSalt, setSessionSalt] = useState('')
 
   const currentItem = items[qIdx] ?? null
 
+  /**
+   * The options as the student sees them, plus the correct option's VALUE.
+   *
+   * WHAT WAS WRONG (fixed 20 September 2026). The SENTENCE pool was shuffled,
+   * the OPTIONS were not, and every comparison was `idx === answerIndex`. 23 of
+   * the 53 items in this bank answer at index 1, so clicking the second option
+   * every time scored 43.4% while reading nothing - the mildest of the three
+   * games fixed that day, and still nearly twice chance. The options are now
+   * shuffled per attempt and scored by value.
+   *
+   * The faulty sentence is the seed id: it is unique in the bank and stable, so
+   * the same item keeps one order for the whole attempt.
+   */
+  const view = useMemo(
+    () =>
+      currentItem
+        ? shuffledOptionsFor(
+            currentItem.options,
+            currentItem.answerIndex,
+            currentItem.wrong,
+            sessionSalt,
+            currentItem.wrong,
+          )
+        : { options: [] as string[], correctValue: '' },
+    [currentItem, sessionSalt],
+  )
+
   const handleStart = useCallback(() => {
+    // Minted here rather than during render: newSessionSalt calls Math.random,
+    // which would not agree between the server and client paint.
+    setSessionSalt(newSessionSalt())
     setItems(shuffle(ERROR_BANK).slice(0, ROUND_SIZE))
     setQIdx(0)
     setScore(0)
@@ -727,7 +759,7 @@ export default function CommonErrorFixerPage() {
   const handleSelect = useCallback(
     (idx: number) => {
       if (!currentItem || feedback) return
-      const isCorrect = idx === currentItem.answerIndex
+      const isCorrect = view.options[idx] === view.correctValue
       setSelected(idx)
       setTotalAnswered((t) => t + 1)
       if (isCorrect) {
@@ -747,7 +779,7 @@ export default function CommonErrorFixerPage() {
         }
       }, 2600)
     },
-    [currentItem, feedback, qIdx, items.length],
+    [currentItem, feedback, qIdx, items.length, view],
   )
 
   const accuracyPct = totalAnswered > 0 ? Math.round((score / totalAnswered) * 100) : 0
@@ -806,8 +838,8 @@ export default function CommonErrorFixerPage() {
 
               {/* Options */}
               <div className="grid gap-3 sm:grid-cols-2">
-                {currentItem.options.map((option, idx) => {
-                  const isAnswer = idx === currentItem.answerIndex
+                {view.options.map((option, idx) => {
+                  const isAnswer = option === view.correctValue
                   const isPicked = idx === selected
                   const showCorrect = !!feedback && isAnswer
                   const showWrong = feedback === 'wrong' && isPicked && !isAnswer

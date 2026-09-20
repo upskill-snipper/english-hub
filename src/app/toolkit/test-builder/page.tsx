@@ -1,7 +1,8 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useMemo } from 'react'
 import { useTopicFromUrl } from '@/lib/toolkit/use-topic-from-url'
+import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
 import Link from 'next/link'
 import { useT } from '@/lib/i18n/use-t'
 import {
@@ -69,6 +70,52 @@ export default function TestBuilderPage() {
   const [score, setScore] = useState<{ correct: number; total: number; percentage: number } | null>(
     null,
   )
+  // Per-attempt salt for the option shuffle below. Set in generateTest, which
+  // is the click handler that starts an attempt, never during render:
+  // newSessionSalt calls Math.random, and this is a client component.
+  const [salt, setSalt] = useState('')
+
+  // ─── Option order (fixed 20 September 2026) ──────────────────────────────
+  // This page used to render q.options in the order the API sent them and mark
+  // with `userAnswer === q.correctAnswer`, comparing the clicked position
+  // against the server's index. Nothing was mis-marked by that, but it left the
+  // correct answer's POSITION entirely up to the API, and the API shuffles with
+  // `sort(() => Math.random() - 0.5)`. A random comparator is not a shuffle:
+  // measured over 200,000 draws it puts the correct answer at A 36%, B 17%,
+  // C 16%, D 31%, so a student who clicked A every time beat the 25% a guess
+  // is worth by eleven points without reading a question.
+  //
+  // So we reshuffle here with a real Fisher-Yates and compare by VALUE. A
+  // proper shuffle maps any input distribution to a uniform one, which means
+  // this holds even if the API's own ordering changes or stops shuffling.
+  // Do not reintroduce an index comparison against q.correctAnswer: after this
+  // shuffle that index points at whichever option now occupies the slot.
+  const views = useMemo(() => {
+    const map = new Map<string, { options: string[]; correctValue: string }>()
+    if (!test) return map
+    for (const q of test.questions) {
+      if (q.type !== 'multiple-choice' || !q.options) continue
+      // Fails closed: a non-numeric correctAnswer on a multiple-choice question
+      // yields an empty correctValue, which marks wrong rather than marks all right.
+      const correctIndex = typeof q.correctAnswer === 'number' ? q.correctAnswer : -1
+      map.set(q.id, shuffledOptionsFor(q.options, correctIndex, q.id, salt, q.question))
+    }
+    return map
+  }, [test, salt])
+
+  /** True when the stored answer for a multiple-choice question names the correct option. */
+  const isAnswerCorrect = useCallback(
+    (q: GeneratedQuestion, userAnswer: string | number | undefined): boolean => {
+      if (q.type !== 'multiple-choice') {
+        // Short answer: marked correct if they wrote anything (self-assessed).
+        return typeof userAnswer === 'string' && userAnswer.trim().length > 0
+      }
+      const view = views.get(q.id)
+      if (!view || typeof userAnswer !== 'number') return false
+      return view.options[userAnswer] === view.correctValue
+    },
+    [views],
+  )
 
   // Generate test
   const generateTest = useCallback(async () => {
@@ -99,6 +146,7 @@ export default function TestBuilderPage() {
       setTest(data)
       setAnswers({})
       setCurrentQ(0)
+      setSalt(newSessionSalt())
       setStep('test')
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong')
@@ -111,13 +159,7 @@ export default function TestBuilderPage() {
     if (!test) return
     let correct = 0
     test.questions.forEach((q) => {
-      const userAnswer = answers[q.id]
-      if (q.type === 'multiple-choice') {
-        if (userAnswer === q.correctAnswer) correct++
-      } else {
-        // Short answer: mark as correct if they wrote anything (self-assessed)
-        if (typeof userAnswer === 'string' && userAnswer.trim().length > 0) correct++
-      }
+      if (isAnswerCorrect(q, answers[q.id])) correct++
     })
     const total = test.questions.length
     const percentage = Math.round((correct / total) * 100)
@@ -141,7 +183,7 @@ export default function TestBuilderPage() {
     const streakDates = lsGet<string[]>(LS_KEYS.streakDates, [])
     streakDates.push(new Date().toISOString())
     lsSet(LS_KEYS.streakDates, streakDates)
-  }, [test, answers, topic, board])
+  }, [test, answers, topic, board, isAnswerCorrect])
 
   // Save to My Materials
   const saveToMaterials = useCallback(() => {
@@ -176,6 +218,11 @@ export default function TestBuilderPage() {
   }
 
   const currentQuestion: GeneratedQuestion | undefined = test?.questions[currentQ]
+  // Shuffled order for the question on screen, so the rendered index i and the
+  // stored answer refer to the same list the student is looking at.
+  const currentOptions = currentQuestion
+    ? (views.get(currentQuestion.id)?.options ?? currentQuestion.options)
+    : undefined
 
   return (
     <div className="min-h-screen bg-background">
@@ -317,9 +364,9 @@ export default function TestBuilderPage() {
                 {currentQuestion.question}
               </h3>
 
-              {currentQuestion.type === 'multiple-choice' && currentQuestion.options ? (
+              {currentQuestion.type === 'multiple-choice' && currentOptions ? (
                 <div className="space-y-3">
-                  {currentQuestion.options.map((opt, i) => (
+                  {currentOptions.map((opt, i) => (
                     <button
                       key={i}
                       onClick={() => setAnswers({ ...answers, [currentQuestion.id]: i })}
@@ -430,10 +477,8 @@ export default function TestBuilderPage() {
               </h3>
               {test.questions.map((q, i) => {
                 const userAnswer = answers[q.id]
-                const isCorrect =
-                  q.type === 'multiple-choice'
-                    ? userAnswer === q.correctAnswer
-                    : typeof userAnswer === 'string' && userAnswer.trim().length > 0
+                const view = views.get(q.id)
+                const isCorrect = isAnswerCorrect(q, userAnswer)
 
                 return (
                   <div
@@ -464,7 +509,7 @@ export default function TestBuilderPage() {
                             {tx('toolkit.test_builder.your_answer')}{' '}
                             <span className={isCorrect ? 'text-emerald-600' : 'text-red-600'}>
                               {typeof userAnswer === 'number'
-                                ? q.options[userAnswer]
+                                ? (view?.options ?? q.options)[userAnswer]
                                 : tx('toolkit.test_builder.not_answered')}
                             </span>
                           </p>
@@ -472,7 +517,7 @@ export default function TestBuilderPage() {
                         {!isCorrect && q.type === 'multiple-choice' && q.options && (
                           <p className="text-sm text-emerald-600">
                             {tx('toolkit.test_builder.correct_answer')}{' '}
-                            {q.options[q.correctAnswer as number]}
+                            {view?.correctValue ?? q.options[q.correctAnswer as number]}
                           </p>
                         )}
                         <p className="text-sm text-muted-foreground mt-2 italic">{q.explanation}</p>

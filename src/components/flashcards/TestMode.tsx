@@ -18,7 +18,11 @@ import type { FlashcardDeck, FlashCard } from '@/data/flashcards/types'
 interface Question {
   card: FlashCard
   options: string[]
-  correctIndex: number
+  /**
+   * The correct option's TEXT, not its position. See the note on
+   * `generateQuestions` for why this is not an index.
+   */
+  correctValue: string
 }
 
 interface AnswerRecord {
@@ -29,6 +33,30 @@ interface AnswerRecord {
 
 // ─── Helpers ────────────────────────────────────────────────────────────────
 
+/**
+ * Build one multiple-choice question per card.
+ *
+ * NO ANSWER-POSITION BIAS HERE, AND NONE TO ADD (20 September 2026).
+ *
+ * The repository-wide audit found 2,557 of 3,254 questions with the correct
+ * answer at index 1 - the surfaces that shuffled the QUESTION pool, left the
+ * OPTIONS in authored order and scored by index. This surface is not one of
+ * them: the options do not exist until this function runs, and it shuffles them
+ * as it builds them. Simulated over the 1,251 cards in the 25 decks, twenty
+ * runs, 25,020 generated questions, a student clicking the second option every
+ * time scores 25.18%. That is chance. Do not bolt `shuffledOptionsFor` on top
+ * of a list that is already shuffled.
+ *
+ * WHAT WAS ACTUALLY WRONG. This returned `correctIndex = indexOf(card.back)`
+ * and every comparison downstream was `i === correctIndex`. `indexOf` finds the
+ * FIRST slot holding that text, and distractors are drawn from the same deck,
+ * so whenever two cards share a `back` the correct text lands in two option
+ * slots and only the earlier one scores. `final-deck` is 300 cards over 3
+ * distinct backs and `bulk-deck` has five more, which put the correct text in
+ * more than one slot in 4,198 of those 25,020 questions (16.78%): a student who
+ * read the right definition and clicked the second copy of it was marked wrong.
+ * Scoring by VALUE marks both copies right, which is what they are.
+ */
 function generateQuestions(deck: FlashcardDeck): Question[] {
   const shuffledCards = shuffleArray(deck.cards)
   return shuffledCards.map((card) => {
@@ -43,13 +71,11 @@ function generateQuestions(deck: FlashcardDeck): Question[] {
 
     // Create options with correct answer at random position
     const allOptions = [...wrongAnswers, card.back]
-    const shuffledOptions = shuffleArray(allOptions)
-    const correctIndex = shuffledOptions.indexOf(card.back)
 
     return {
       card,
-      options: shuffledOptions,
-      correctIndex,
+      options: shuffleArray(allOptions),
+      correctValue: card.back,
     }
   })
 }
@@ -82,7 +108,8 @@ export default function TestMode({ deck }: { deck: FlashcardDeck }) {
       setSelectedOption(optionIndex)
       setHasAnswered(true)
 
-      const isCorrect = optionIndex === currentQuestion.correctIndex
+      // By value, never by index: two cards in a deck can share a `back`.
+      const isCorrect = currentQuestion.options[optionIndex] === currentQuestion.correctValue
       setAnswers((prev) => [
         ...prev,
         { question: currentQuestion, chosenIndex: optionIndex, isCorrect },
@@ -149,7 +176,7 @@ export default function TestMode({ deck }: { deck: FlashcardDeck }) {
 
             <div className="space-y-2">
               {mistake.question.options.map((opt, i) => {
-                const isCorrect = i === mistake.question.correctIndex
+                const isCorrect = opt === mistake.question.correctValue
                 const isChosen = i === mistake.chosenIndex
                 return (
                   <div
@@ -285,7 +312,7 @@ export default function TestMode({ deck }: { deck: FlashcardDeck }) {
       {/* Options */}
       <div className="mx-auto max-w-2xl space-y-3">
         {currentQuestion.options.map((option, i) => {
-          const isCorrect = i === currentQuestion.correctIndex
+          const isCorrect = option === currentQuestion.correctValue
           const isSelected = i === selectedOption
           const letter = String.fromCharCode(65 + i) // A, B, C, D
 

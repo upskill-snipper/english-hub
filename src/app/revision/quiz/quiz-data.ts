@@ -2,6 +2,7 @@
 // 100+ GCSE English questions across 5 topics
 
 import type { ExamBoard } from '@/lib/board/board-config'
+import { shuffleOptionsDeterministic } from '@/lib/quiz/shuffle'
 
 export type Topic = 'poetry' | 'set-texts' | 'language-techniques' | 'exam-technique' | 'context'
 
@@ -6902,41 +6903,15 @@ export function shuffle<T>(arr: T[]): T[] {
 // order (so navigating back and forth is stable), but a fresh session
 // re-randomises.
 
-/** Cheap, stable string hash → 32-bit unsigned integer. */
-function hashString(input: string): number {
-  let h = 2166136261 >>> 0
-  for (let i = 0; i < input.length; i++) {
-    h ^= input.charCodeAt(i)
-    h = Math.imul(h, 16777619) >>> 0
-  }
-  return h >>> 0
-}
-
-/** Mulberry32 PRNG - small, fast, deterministic from a 32-bit seed. */
-function mulberry32(seed: number): () => number {
-  let t = seed >>> 0
-  return () => {
-    t = (t + 0x6d2b79f5) >>> 0
-    let r = t
-    r = Math.imul(r ^ (r >>> 15), r | 1)
-    r ^= r + Math.imul(r ^ (r >>> 7), r | 61)
-    return ((r ^ (r >>> 14)) >>> 0) / 4294967296
-  }
-}
-
 /**
- * Shuffle an option list deterministically, using a seed derived from the
- * question id and an opaque session salt. Pure - does not mutate input.
+ * The shuffle moved to src/lib/quiz/shuffle.ts on 20 September 2026 and is
+ * re-exported here so existing callers keep working. It left because a dozen
+ * other quiz surfaces need it and this module is 6,985 lines, 900 of them
+ * questions; with no `sideEffects: false` in package.json a bundler cannot
+ * drop that bank, so importing the shuffle from here would put the whole
+ * thing into a spelling game.
  */
-export function shuffleOptionsDeterministic<T>(options: readonly T[], seed: string): T[] {
-  const rng = mulberry32(hashString(seed))
-  const a = [...options]
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(rng() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
-  }
-  return a
-}
+export { shuffleOptionsDeterministic } from '@/lib/quiz/shuffle'
 
 /**
  * Build a shuffled view of a quiz question. Returns the new option order

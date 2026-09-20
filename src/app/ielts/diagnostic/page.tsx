@@ -44,6 +44,7 @@ import {
 import { useT } from '@/lib/i18n/use-t'
 import { useLocale } from '@/lib/i18n/use-locale'
 import { IELTS_DIAGNOSTIC_DICTIONARY } from '@/lib/i18n/dictionary-ielts-diagnostic'
+import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
 import { DictationButton } from '@/components/speech/DictationButton'
 import { Recorder } from '../speaking/_components/Recorder'
 
@@ -98,7 +99,8 @@ function useDiagT(): (key: string, vars?: Vars) => string {
 
 type Phase = 'intro' | 'questions' | 'result'
 
-// Local answer state: objective answers keyed by question id.
+// Local answer state: objective answers keyed by question id. An mcq answer is
+// the CHOSEN OPTION'S TEXT, not its position - see isCorrect() below.
 type ObjectiveAnswers = Record<string, string>
 
 // AI-assessed productive result for Writing/Speaking within the diagnostic.
@@ -149,9 +151,24 @@ interface ComputedResult {
 
 // ─── Auto-marking helpers ─────────────────────────────────────────────────────
 
+/**
+ * Marks one objective answer.
+ *
+ * MCQ IS MARKED BY VALUE, NEVER BY POSITION (fixed 20 September 2026). This
+ * function used to read `raw === String(q.correctIndex)` while the options were
+ * rendered in authored order, and the authored order put the answer second in
+ * 16 of the 24 placement MCQs (67%). A learner who clicked the second option in
+ * every one of them, reading nothing, banked two thirds of the MCQ marks and
+ * walked away with an inflated placement band, which is the number the whole
+ * study plan is then built from.
+ *
+ * The options are now shuffled per attempt (see ObjectiveQuestionCard), so a
+ * position means nothing. Storing the option's TEXT keeps marking independent
+ * of whatever order the learner happened to be shown.
+ */
 function isCorrect(q: ObjectiveQuestion, raw: string | undefined): boolean {
   if (raw === undefined || raw === '') return false
-  if (q.type === 'mcq') return raw === String(q.correctIndex)
+  if (q.type === 'mcq') return raw === q.options[q.correctIndex]
   if (q.type === 'tfng') return raw === q.answer
   // The placement diagnostic never uses `matching` questions; this guard keeps
   // the function type-safe against the shared ObjectiveQuestion union.
@@ -181,6 +198,14 @@ export default function IeltsDiagnosticPage() {
   const [answers, setAnswers] = useState<ObjectiveAnswers>({})
   const [result, setResult] = useState<ComputedResult | null>(null)
 
+  // Per-attempt salt for the MCQ option shuffle. Minted in the start handler,
+  // never in a useState initialiser or during render: newSessionSalt() calls
+  // Math.random(), and this is a client component Next.js still renders on the
+  // server, so seeding it at render time would hydrate to a different order.
+  // The empty start value is never used to render options - the intro screen
+  // shows none - and a fresh salt arrives before the questions do.
+  const [optionSalt, setOptionSalt] = useState('')
+
   // Productive (AI-assessed) task state.
   const [writingText, setWritingText] = useState('')
   const [speakingText, setSpeakingText] = useState('')
@@ -204,6 +229,11 @@ export default function IeltsDiagnosticPage() {
 
   function setObjective(id: string, value: string) {
     setAnswers((prev) => ({ ...prev, [id]: value }))
+  }
+
+  function handleStart() {
+    setOptionSalt(newSessionSalt())
+    setPhase('questions')
   }
 
   // ── AI assessment for a productive skill ────────────────────────────────────
@@ -424,7 +454,7 @@ export default function IeltsDiagnosticPage() {
       </section>
 
       <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-12">
-        {phase === 'intro' && <IntroPanel t={t} onStart={() => setPhase('questions')} />}
+        {phase === 'intro' && <IntroPanel t={t} onStart={handleStart} />}
 
         {phase === 'questions' && (
           <QuestionsPanel
@@ -432,6 +462,7 @@ export default function IeltsDiagnosticPage() {
             readingPassages={DIAGNOSTIC_READING_PASSAGES}
             listeningSections={DIAGNOSTIC_LISTENING_SECTIONS}
             answers={answers}
+            optionSalt={optionSalt}
             onObjective={setObjective}
             onSubmit={handleSubmit}
             allAnswered={allAnswered}
@@ -542,6 +573,7 @@ function QuestionsPanel({
   readingPassages,
   listeningSections,
   answers,
+  optionSalt,
   onObjective,
   onSubmit,
   allAnswered,
@@ -561,6 +593,7 @@ function QuestionsPanel({
   readingPassages: ReadingPassage[]
   listeningSections: ListeningSection[]
   answers: ObjectiveAnswers
+  optionSalt: string
   onObjective: (id: string, value: string) => void
   onSubmit: () => void
   allAnswered: boolean
@@ -614,6 +647,7 @@ function QuestionsPanel({
                     index={start + i + 1}
                     question={q}
                     value={answers[q.id]}
+                    optionSalt={optionSalt}
                     onChange={(v) => onObjective(q.id, v)}
                   />
                 ))}
@@ -641,6 +675,7 @@ function QuestionsPanel({
                     index={start + i + 1}
                     question={q}
                     value={answers[q.id]}
+                    optionSalt={optionSalt}
                     onChange={(v) => onObjective(q.id, v)}
                   />
                 ))}
@@ -781,14 +816,37 @@ function ObjectiveQuestionCard({
   index,
   question,
   value,
+  optionSalt,
   onChange,
 }: {
   t: TFn
   index: number
   question: ObjectiveQuestion
   value: string | undefined
+  optionSalt: string
   onChange: (value: string) => void
 }) {
+  // MCQ options are shuffled per attempt, seeded by the question id plus the
+  // attempt salt, so the order is stable while the learner reads and different
+  // next time. shuffledOptionsFor() hands back the authored order for the few
+  // questions that cannot survive a shuffle; the prompt goes in as the fifth
+  // argument so that guard can see the stem. Only the option list is needed
+  // here, because marking compares the stored TEXT against
+  // question.options[correctIndex] and so does not depend on the order shown.
+  const mcqOptions = useMemo(
+    () =>
+      question.type === 'mcq'
+        ? shuffledOptionsFor(
+            question.options,
+            question.correctIndex,
+            question.id,
+            optionSalt,
+            question.prompt,
+          ).options
+        : [],
+    [question, optionSalt],
+  )
+
   return (
     <div className="rounded-xl border border-border bg-card p-4 shadow-soft sm:p-5">
       <div className="flex gap-3">
@@ -800,12 +858,12 @@ function ObjectiveQuestionCard({
 
           {question.type === 'mcq' && (
             <div className="space-y-2">
-              {question.options.map((opt, oi) => (
+              {mcqOptions.map((opt) => (
                 <OptionButton
-                  key={oi}
-                  selected={value === String(oi)}
+                  key={opt}
+                  selected={value === opt}
                   label={opt}
-                  onClick={() => onChange(String(oi))}
+                  onClick={() => onChange(opt)}
                 />
               ))}
             </div>

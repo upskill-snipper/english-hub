@@ -20,12 +20,19 @@ import {
   type QuizQuestion,
 } from '@/data/ilowersecondary/quiz-bank'
 import { SPEC_ATTRIBUTION } from '@/lib/ilowersecondary/spec'
+import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
 
 const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/quiz'
 
 type Selection = QuizCategory | 'mixed'
 
-/** Fisher-Yates shuffle returning a new array (does not mutate input). */
+/**
+ * Fisher-Yates shuffle returning a new array (does not mutate input).
+ *
+ * This shuffles the QUESTION POOL only. It is deliberately not used on the
+ * options: see the `view` memo below for why those need a deterministic,
+ * seeded shuffle instead.
+ */
 function shuffle<T>(input: readonly T[]): T[] {
   const arr = [...input]
   for (let i = arr.length - 1; i > 0; i--) {
@@ -64,6 +71,7 @@ export default function QuizPage() {
   const [score, setScore] = useState(0)
   const [answered, setAnswered] = useState(0)
   const [finished, setFinished] = useState(false)
+  const [salt, setSalt] = useState('')
 
   const counts = useMemo(() => {
     const map: Record<string, number> = {}
@@ -71,10 +79,64 @@ export default function QuizPage() {
     return map
   }, [])
 
+  const current = questions[index]
+
+  /**
+   * The options as the student sees them, plus the correct option's VALUE.
+   *
+   * WHAT WAS WRONG (fixed 20 September 2026). This page shuffled the question
+   * pool and left each question's options in authored order, then scored with
+   * `optionIndex === current.correctIndex`. The bank is heavily skewed to the
+   * first option: of its 80 questions the answer is A in 55 (68.8%), B in 16,
+   * C in 8 and D in 1, and three of the six categories are 100% A -
+   * exam-format 16/16, punctuation-effect 12/12, synonym-in-context 12/12. So a
+   * student clicking A without reading scored 68.8% on the mixed quiz and 100%
+   * on any of those three categories. Rebalancing the data would fix today and
+   * not tomorrow; shuffling at render cannot be undone by authoring.
+   *
+   * Every comparison against the correct answer therefore goes through
+   * `view.correctValue`, never an index. The stored `correctIndex` points into
+   * the AUTHORED array and is meaningless once the options have moved.
+   *
+   * The salt is created in `start`, inside the click handler, never during
+   * render: `newSessionSalt` calls Math.random(), and this page is server
+   * rendered, so seeding it in a useState initialiser would be a hydration
+   * mismatch. There is a category gate before any option is painted, so the
+   * handler always runs first.
+   *
+   * THE EXPLANATION IS PASSED TOO, and that is deliberate. The helper's
+   * order-lock test scans the text it is given for a stem naming an option by
+   * letter or position. No stem in this bank does, but one EXPLANATION does:
+   * `gram-9` ("Which sentence is a compound sentence?") ends "The second option
+   * does this", which is the feedback shown after answering. Shuffling it would
+   * score correctly and then explain the wrong option. Handing the helper the
+   * question and the explanation together keeps that one question in its
+   * authored order. It is the only one of the 80 affected, so the bank is still
+   * unbiased in practice.
+   */
+  const view = useMemo(
+    () =>
+      current
+        ? shuffledOptionsFor(
+            current.options,
+            current.correctIndex,
+            current.id,
+            salt,
+            `${current.question}\n${current.explanation}`,
+          )
+        : null,
+    [current, salt],
+  )
+
+  const chosenOption = chosen !== null && view ? (view.options[chosen] ?? null) : null
+  const chosenIsCorrect =
+    view !== null && chosenOption !== null && chosenOption === view.correctValue
+
   const start = useCallback((sel: Selection) => {
     const pool = sel === 'mixed' ? QUIZ_BANK : QUIZ_BANK.filter((q) => q.category === sel)
     setSelection(sel)
     setQuestions(shuffle(pool))
+    setSalt(newSessionSalt())
     setIndex(0)
     setChosen(null)
     setScore(0)
@@ -85,6 +147,7 @@ export default function QuizPage() {
   const restart = useCallback(() => {
     setSelection(null)
     setQuestions([])
+    setSalt('')
     setIndex(0)
     setChosen(null)
     setScore(0)
@@ -93,15 +156,15 @@ export default function QuizPage() {
   }, [])
 
   const handleAnswer = useCallback(
-    (optionIndex: number) => {
+    (optionIndex: number, option: string) => {
       if (chosen !== null) return
-      const current = questions[index]
-      if (!current) return
+      if (!view) return
       setChosen(optionIndex)
       setAnswered((a) => a + 1)
-      if (optionIndex === current.correctIndex) setScore((s) => s + 1)
+      // By value. `optionIndex` is a display position after the shuffle.
+      if (option === view.correctValue) setScore((s) => s + 1)
     },
-    [chosen, questions, index],
+    [chosen, view],
   )
 
   const next = useCallback(() => {
@@ -112,8 +175,6 @@ export default function QuizPage() {
     setIndex((i) => i + 1)
     setChosen(null)
   }, [index, questions.length])
-
-  const current = questions[index]
 
   return (
     <>
@@ -171,7 +232,7 @@ export default function QuizPage() {
       )}
 
       {/* ── Active question ─────────────────────────────────────────── */}
-      {selection !== null && !finished && current && (
+      {selection !== null && !finished && current && view && (
         <section className="not-prose my-10">
           <div className="flex items-center justify-between gap-3 mb-4">
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
@@ -195,8 +256,8 @@ export default function QuizPage() {
             <p className="text-base text-foreground leading-relaxed">{current.question}</p>
 
             <div className="mt-5 grid gap-2.5">
-              {current.options.map((option, i) => {
-                const isCorrect = i === current.correctIndex
+              {view.options.map((option, i) => {
+                const isCorrect = option === view.correctValue
                 const isChosen = i === chosen
                 let cls =
                   'rounded-xl border border-border/60 bg-background px-4 py-3 text-left text-sm transition-colors'
@@ -214,7 +275,7 @@ export default function QuizPage() {
                     key={i}
                     type="button"
                     disabled={chosen !== null}
-                    onClick={() => handleAnswer(i)}
+                    onClick={() => handleAnswer(i, option)}
                     className={cls}
                   >
                     <span className="font-mono text-xs text-muted-foreground me-2">
@@ -229,11 +290,9 @@ export default function QuizPage() {
             {chosen !== null && (
               <div className="mt-5 rounded-xl border border-border/60 bg-background p-4">
                 <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground mb-1.5">
-                  {chosen === current.correctIndex ? 'Correct' : 'Not quite'}
+                  {chosenIsCorrect ? 'Correct' : 'Not quite'}
                 </p>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {current.explanation}
-                </p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{view.explanation}</p>
                 <button
                   type="button"
                   onClick={next}

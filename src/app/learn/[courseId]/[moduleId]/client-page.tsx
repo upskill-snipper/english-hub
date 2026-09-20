@@ -25,9 +25,33 @@ import { useAuthUserProfile } from '@/store/auth-store'
 import { useCourseStore, useCourseProgress, useCourseActions } from '@/store/course-store'
 import { useBoard } from '@/hooks/useBoard'
 import { matchesBoard } from '@/lib/board-filter'
+import { shuffledOptionsFor } from '@/lib/quiz/shuffle'
 import { useT } from '@/lib/i18n/use-t'
 
 // ─── Quiz Card ───────────────────────────────────────────────────────────────
+
+/**
+ * The session salt used to shuffle a question's options. Deliberately empty.
+ *
+ * `newSessionSalt()` would give a fresh order per attempt, but there is nowhere
+ * safe to call it here. This surface has no start gate: the quiz is part of the
+ * lesson page and paints as soon as the module loads, so there is no click
+ * handler in which to mint a salt. `newSessionSalt()` calls Math.random(), so
+ * calling it during render in a client component that is also rendered on the
+ * server gives the two sides different orders, which is a hydration mismatch.
+ * Minting it in an effect is no better: the reset effect on this page also
+ * depends on `completedModules`, so the options would reshuffle under the
+ * student's cursor the moment any module was marked complete.
+ *
+ * An empty salt seeds the shuffle on the question id alone. The order is then
+ * identical on server and client, identical on every visit, and still unbiased,
+ * because each id hashes to its own permutation. Measured over 2,509 course
+ * quiz questions on 20 September 2026 it moves the correct answer from 71.0% at
+ * position B to 24.9 / 25.7 / 24.4 / 24.7% across A to D. If a start or restart
+ * control is ever added to this page, mint a real salt inside its handler and
+ * pass it in instead.
+ */
+const SESSION_SALT = ''
 
 function QuizCard({
   quiz,
@@ -43,7 +67,32 @@ function QuizCard({
   const t = useT()
   const [selected, setSelected] = useState<number | null>(null)
   const [submitted, setSubmitted] = useState(false)
-  const isCorrect = selected === quiz.correct
+
+  /**
+   * WHAT WAS WRONG (fixed 20 September 2026). The options were rendered in
+   * authored order and scored with `selected === quiz.correct`, an index
+   * comparison. Across the 49 course data files 2,618 of 3,649 `correct` values
+   * are 1, so the answer was the second option 71% of the time and a student
+   * who clicked B on every question and read nothing scored about 71%.
+   *
+   * The options are now shuffled per question and every comparison against the
+   * answer goes through the VALUE. `quiz.correct` must not be compared with a
+   * display index again: after the shuffle it points at whatever happens to sit
+   * in that slot, so an index comparison marks the wrong answer right.
+   */
+  const view = useMemo(
+    () =>
+      shuffledOptionsFor(
+        quiz.options,
+        quiz.correct,
+        quiz.id,
+        SESSION_SALT,
+        quiz.question,
+        quiz.explanation,
+      ),
+    [quiz],
+  )
+  const isCorrect = selected !== null && view.options[selected] === view.correctValue
 
   function handleSelect(optionIndex: number) {
     if (submitted) return
@@ -53,7 +102,7 @@ function QuizCard({
   function handleSubmit() {
     if (selected === null || submitted) return
     setSubmitted(true)
-    onAnswer(selected === quiz.correct)
+    onAnswer(isCorrect)
   }
 
   return (
@@ -76,12 +125,12 @@ function QuizCard({
       <p className="text-foreground font-medium mb-4 text-lg">{quiz.question}</p>
 
       <div className="space-y-3">
-        {quiz.options.map((option, i) => {
+        {view.options.map((option, i) => {
           let borderClass = 'border-border hover:border-primary/50'
           let bgClass = 'bg-background'
 
           if (submitted) {
-            if (i === quiz.correct) {
+            if (option === view.correctValue) {
               borderClass = 'border-primary'
               bgClass = 'bg-primary/10'
             } else if (i === selected && !isCorrect) {
@@ -107,7 +156,7 @@ function QuizCard({
               <div className="flex items-start gap-3">
                 <span
                   className={`flex-shrink-0 w-7 h-7 rounded-full border-2 flex items-center justify-center text-sm font-semibold ${
-                    submitted && i === quiz.correct
+                    submitted && option === view.correctValue
                       ? 'border-primary text-primary'
                       : submitted && i === selected
                         ? 'border-destructive text-destructive'
@@ -145,7 +194,7 @@ function QuizCard({
             <span className="font-semibold text-foreground">
               {t('learn.quiz.explanation_prefix')}
             </span>
-            {quiz.explanation}
+            {view.explanation}
           </p>
         </div>
       )}

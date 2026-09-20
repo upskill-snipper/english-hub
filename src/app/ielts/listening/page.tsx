@@ -22,9 +22,16 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { useT } from '@/lib/i18n/use-t'
 
-import type { ListeningTest, ListeningSection, ObjectiveQuestion, Band } from '@/lib/ielts/types'
+import type {
+  ListeningTest,
+  ListeningSection,
+  McqQuestion,
+  ObjectiveQuestion,
+  Band,
+} from '@/lib/ielts/types'
 import { objectiveToBand, bandLabel, bandColour, bandBgColour, bandTier } from '@/lib/ielts/bands'
 import { saveAttempt, genId } from '@/lib/ielts/store'
+import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
 
 import { LISTENING_TESTS } from './listening-tests'
 import AudioPlayer from './_components/AudioPlayer'
@@ -35,7 +42,9 @@ import AudioPlayer from './_components/AudioPlayer'
 // reveal and explanations. Persistence is localStorage via @/lib/ielts/store.
 //
 // Marking:
-//   • mcq → compare the selected index to `correctIndex`.
+//   • mcq → compare the TEXT of the option the learner picked against the text
+//           of the correct one. Never by position: the options are shuffled per
+//           attempt, so a position means nothing (see McqView below).
 //   • gap → trim + lower-case the typed answer and match it against any of the
 //           question's `acceptableAnswers` (also trimmed + lower-cased).
 // The band comes from objectiveToBand('listening', correct, total), which scales
@@ -76,6 +85,47 @@ function isGapCorrect(input: string, acceptable: string[]): boolean {
   const norm = input.trim().toLowerCase()
   if (!norm) return false
   return acceptable.some((a) => a.trim().toLowerCase() === norm)
+}
+
+/**
+ * One MCQ as this attempt shows it: the option order the learner sees, the text
+ * of the correct option, and the explanation with any option letters it names
+ * moved to match.
+ *
+ * WHY THIS EXISTS (20 September 2026). The options were rendered in authored
+ * order and marked with `mcqAnswers[id] === question.correctIndex`, and the
+ * authored order put the answer at B in 260 of the 302 Listening MCQs (86%).
+ * Clicking B on every multiple-choice item, without listening to anything,
+ * scored 86% of the MCQ marks and a predicted band to match.
+ */
+interface McqView {
+  options: string[]
+  correctValue: string
+  explanation?: string
+}
+
+/**
+ * 266 of those 302 explanations name an option by its letter ("Option B
+ * matches; the others are not stated"). Shuffling without touching them would
+ * have traded a scoring bug for a worse one: a review screen confidently
+ * pointing at a letter that now sits somewhere else.
+ *
+ * shuffledOptionsFor() moves those letters with the options they name and hands
+ * back the repaired text, so this page renders view.explanation and never the
+ * authored one. The rule lives in src/lib/quiz/shuffle.ts because this is not
+ * the only bank written that way - 717 explanations across the repository name
+ * an option by letter.
+ */
+function buildMcqView(question: McqQuestion, salt: string): McqView {
+  const view = shuffledOptionsFor(
+    question.options,
+    question.correctIndex,
+    question.id,
+    salt,
+    question.prompt,
+    question.explanation ?? '',
+  )
+  return { options: view.options, correctValue: view.correctValue, explanation: view.explanation }
 }
 
 /**
@@ -126,9 +176,27 @@ export default function ListeningPage() {
   const flat = useMemo(() => (test ? flattenQuestions(test) : []), [test])
   const total = flat.length
 
-  // Answers keyed by question id. mcq → option index; gap → typed string.
+  // Answers keyed by question id. mcq → the position in the SHUFFLED list the
+  // learner clicked (a display index, never compared to `correctIndex`);
+  // tfng → index into the fixed true/false/not-given trio; gap → typed string.
   const [mcqAnswers, setMcqAnswers] = useState<Record<string, number>>({})
   const [gapAnswers, setGapAnswers] = useState<Record<string, string>>({})
+
+  // Per-attempt salt for the MCQ option shuffle. Minted in startTest, never in
+  // a useState initialiser or during render: newSessionSalt() calls
+  // Math.random(), and seeding at render time in a client component Next.js
+  // also renders on the server hydrates to a different order.
+  const [optionSalt, setOptionSalt] = useState('')
+
+  // One view per MCQ, derived once for the whole page so the test screen, the
+  // marker and the review screen cannot drift apart over what order was shown.
+  const mcqViews = useMemo(() => {
+    const map: Record<string, McqView> = {}
+    for (const { question } of flat) {
+      if (question.type === 'mcq') map[question.id] = buildMcqView(question, optionSalt)
+    }
+    return map
+  }, [flat, optionSalt])
 
   // Results state (computed at submit, then frozen for the review screen).
   const [correctCount, setCorrectCount] = useState(0)
@@ -144,6 +212,7 @@ export default function ListeningPage() {
 
   const startTest = useCallback((testId: string) => {
     setSelectedTestId(testId)
+    setOptionSalt(newSessionSalt())
     setMcqAnswers({})
     setGapAnswers({})
     setCorrectCount(0)
@@ -178,7 +247,11 @@ export default function ListeningPage() {
     let correct = 0
     for (const { question } of flat) {
       if (question.type === 'mcq') {
-        if (mcqAnswers[question.id] === question.correctIndex) correct += 1
+        // By value. The picked index is a position in the shuffled list, so
+        // comparing it to `correctIndex` would mark the wrong answer right.
+        const view = mcqViews[question.id]
+        const picked = mcqAnswers[question.id]
+        if (view && picked !== undefined && view.options[picked] === view.correctValue) correct += 1
       } else if (question.type === 'gap') {
         if (isGapCorrect(gapAnswers[question.id] ?? '', question.acceptableAnswers)) correct += 1
       }
@@ -202,7 +275,7 @@ export default function ListeningPage() {
     setSavedId(id)
     setPhase('results')
     if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'smooth' })
-  }, [test, flat, mcqAnswers, gapAnswers, total])
+  }, [test, flat, mcqAnswers, mcqViews, gapAnswers, total])
 
   // ─── SSR / first paint guard ──────────────────────────────────────────────
   if (!mounted) {
@@ -250,6 +323,7 @@ export default function ListeningPage() {
             total={total}
             answeredCount={answeredCount}
             mcqAnswers={mcqAnswers}
+            mcqViews={mcqViews}
             gapAnswers={gapAnswers}
             onPickMcq={(id, idx) => setMcqAnswers((prev) => ({ ...prev, [id]: idx }))}
             onTypeGap={(id, value) => setGapAnswers((prev) => ({ ...prev, [id]: value }))}
@@ -266,6 +340,7 @@ export default function ListeningPage() {
             band={band}
             savedId={savedId}
             mcqAnswers={mcqAnswers}
+            mcqViews={mcqViews}
             gapAnswers={gapAnswers}
             revealed={revealed}
             onToggleReveal={(sectionId) =>
@@ -367,6 +442,7 @@ function TestPanel({
   total,
   answeredCount,
   mcqAnswers,
+  mcqViews,
   gapAnswers,
   onPickMcq,
   onTypeGap,
@@ -377,6 +453,7 @@ function TestPanel({
   total: number
   answeredCount: number
   mcqAnswers: Record<string, number>
+  mcqViews: Record<string, McqView>
   gapAnswers: Record<string, string>
   onPickMcq: (id: string, idx: number) => void
   onTypeGap: (id: string, value: string) => void
@@ -438,6 +515,7 @@ function TestPanel({
                   key={fq.question.id}
                   fq={fq}
                   mcqValue={mcqAnswers[fq.question.id]}
+                  view={mcqViews[fq.question.id]}
                   gapValue={gapAnswers[fq.question.id] ?? ''}
                   onPickMcq={onPickMcq}
                   onTypeGap={onTypeGap}
@@ -478,12 +556,14 @@ function TestPanel({
 function QuestionCard({
   fq,
   mcqValue,
+  view,
   gapValue,
   onPickMcq,
   onTypeGap,
 }: {
   fq: FlatQuestion
   mcqValue: number | undefined
+  view: McqView | undefined
   gapValue: string
   onPickMcq: (id: string, idx: number) => void
   onTypeGap: (id: string, value: string) => void
@@ -504,7 +584,10 @@ function QuestionCard({
 
           {question.type === 'mcq' && (
             <div className="mt-4 grid gap-2.5">
-              {question.options.map((option, i) => {
+              {/* The A/B/C/D badge below labels the SHUFFLED position, which is
+                  the letter the learner is looking at and the one the review
+                  screen's remapped explanation names. */}
+              {(view ? view.options : question.options).map((option, i) => {
                 const selected = mcqValue === i
                 return (
                   <button
@@ -595,6 +678,7 @@ function ResultsPanel({
   band,
   savedId,
   mcqAnswers,
+  mcqViews,
   gapAnswers,
   revealed,
   onToggleReveal,
@@ -608,6 +692,7 @@ function ResultsPanel({
   band: Band
   savedId: string | null
   mcqAnswers: Record<string, number>
+  mcqViews: Record<string, McqView>
   gapAnswers: Record<string, string>
   revealed: Record<string, boolean>
   onToggleReveal: (sectionId: string) => void
@@ -741,6 +826,7 @@ function ResultsPanel({
                   key={fq.question.id}
                   fq={fq}
                   mcqValue={mcqAnswers[fq.question.id]}
+                  view={mcqViews[fq.question.id]}
                   gapValue={gapAnswers[fq.question.id] ?? ''}
                 />
               ))}
@@ -755,10 +841,12 @@ function ResultsPanel({
 function ReviewItem({
   fq,
   mcqValue,
+  view,
   gapValue,
 }: {
   fq: FlatQuestion
   mcqValue: number | undefined
+  view: McqView | undefined
   gapValue: string
 }) {
   const t = useT()
@@ -769,11 +857,19 @@ function ReviewItem({
   let isCorrect = false
   let yourAnswer = noAnswer
   let correctAnswer = ''
+  // The explanation carries remapped option letters for a shuffled MCQ.
+  let explanation = question.explanation
 
   if (question.type === 'mcq') {
-    isCorrect = mcqValue === question.correctIndex
-    yourAnswer = mcqValue !== undefined ? (question.options[mcqValue] ?? noAnswer) : noAnswer
-    correctAnswer = question.options[question.correctIndex]
+    // By value, exactly as the marker in handleSubmit does it. The tick, the
+    // green border and the score have to agree, and an index comparison here
+    // would quietly disagree with all three.
+    const shown = view ? view.options : question.options
+    const correctValue = view ? view.correctValue : (question.options[question.correctIndex] ?? '')
+    isCorrect = mcqValue !== undefined && shown[mcqValue] === correctValue
+    yourAnswer = mcqValue !== undefined ? (shown[mcqValue] ?? noAnswer) : noAnswer
+    correctAnswer = correctValue
+    explanation = view ? view.explanation : question.explanation
   } else if (question.type === 'gap') {
     isCorrect = isGapCorrect(gapValue, question.acceptableAnswers)
     yourAnswer = gapValue.trim() !== '' ? gapValue.trim() : noAnswer
@@ -829,9 +925,7 @@ function ReviewItem({
             </span>
           )}
         </p>
-        {question.explanation && (
-          <p className="text-body-sm text-muted-foreground">{question.explanation}</p>
-        )}
+        {explanation && <p className="text-body-sm text-muted-foreground">{explanation}</p>}
       </div>
     </details>
   )

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useMemo } from 'react'
 import Link from 'next/link'
 import GameShell, { type GameState } from '@/components/games/GameShell'
 import { Button } from '@/components/ui/button'
@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils'
 import { ArrowLeft, CheckCircle, XCircle, Sparkles, Wrench } from 'lucide-react'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
+import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
@@ -683,11 +684,40 @@ export default function PunctuationRepairPage() {
   const [totalAnswered, setTotalAnswered] = useState(0)
   const [selected, setSelected] = useState<number | null>(null)
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
+  const [salt, setSalt] = useState('')
 
   const currentQ = questions[qIdx] ?? null
 
+  /**
+   * SHUFFLE THE OPTIONS, SCORE BY VALUE (20 September 2026).
+   *
+   * This round shuffled the QUESTION pool, left `options` in authored order and
+   * scored with `idx === currentQ.answerIndex`. The bank puts the answer at
+   * index 1 in 28 of its 57 sentences and at index 3 in exactly one, so a
+   * student who clicked B every time scored 49% against a 25% baseline, and
+   * clicking B or C covered 77% of the bank.
+   *
+   * Every comparison against the answer now goes through `view.correctValue`,
+   * the option letter in the feedback line included: after a shuffle
+   * `answerIndex` points at whatever landed in that slot. The salt is minted in
+   * `handleStart`, never during render, because `newSessionSalt` calls
+   * Math.random and a render-time call would hydrate to a different order than
+   * the server rendered.
+   */
+  const view = useMemo(() => {
+    if (!currentQ) return { options: [] as string[], correctValue: '' }
+    return shuffledOptionsFor(
+      currentQ.options,
+      currentQ.answerIndex,
+      currentQ.broken,
+      salt,
+      currentQ.broken,
+    )
+  }, [currentQ, salt])
+
   const handleStart = useCallback(() => {
     setQuestions(shuffle(PUNCTUATION_BANK).slice(0, QUESTIONS_PER_ROUND))
+    setSalt(newSessionSalt())
     setQIdx(0)
     setScore(0)
     setTotalAnswered(0)
@@ -703,7 +733,7 @@ export default function PunctuationRepairPage() {
   const handleSelect = useCallback(
     (idx: number) => {
       if (!currentQ || feedback) return
-      const isCorrect = idx === currentQ.answerIndex
+      const isCorrect = view.options[idx] === view.correctValue
       setSelected(idx)
       setTotalAnswered((t) => t + 1)
       if (isCorrect) {
@@ -723,10 +753,14 @@ export default function PunctuationRepairPage() {
         }
       }, 2200)
     },
-    [currentQ, feedback, qIdx, questions.length],
+    [currentQ, feedback, qIdx, questions.length, view],
   )
 
   const accuracyPct = totalAnswered > 0 ? Math.round((score / totalAnswered) * 100) : 0
+
+  // The letter of the answer's SHUFFLED position, not its authored one.
+  const correctPos = view.options.indexOf(view.correctValue)
+  const correctLetter = String.fromCharCode(65 + (correctPos >= 0 ? correctPos : 0))
 
   return (
     <div className="min-h-screen bg-background">
@@ -777,8 +811,8 @@ export default function PunctuationRepairPage() {
 
               {/* Options */}
               <div className="grid gap-3">
-                {currentQ.options.map((opt, idx) => {
-                  const isAnswer = idx === currentQ.answerIndex
+                {view.options.map((opt, idx) => {
+                  const isAnswer = opt === view.correctValue
                   const isPicked = selected === idx
                   return (
                     <button
@@ -827,7 +861,7 @@ export default function PunctuationRepairPage() {
                     ) : (
                       <>
                         <XCircle className="size-4" /> Not quite. The correct version is option{' '}
-                        {String.fromCharCode(65 + currentQ.answerIndex)}.
+                        {correctLetter}.
                       </>
                     )}
                   </div>

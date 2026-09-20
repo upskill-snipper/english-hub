@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useMemo } from 'react'
 import Link from 'next/link'
 import GameShell, { type GameState } from '@/components/games/GameShell'
 import { Button } from '@/components/ui/button'
@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils'
 import { ArrowLeft, CheckCircle, XCircle, Sparkles, Lightbulb } from 'lucide-react'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
+import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
@@ -675,6 +676,17 @@ function shuffle<T>(arr: T[]): T[] {
 
 const ROUND_SIZE = 15
 
+/** The stem every question shares. Also handed to the shuffle as the question text. */
+const PROMPT = 'Which sentence is punctuated correctly?'
+
+/**
+ * No question carries an id and they all share one stem, so the option set is
+ * the only stable identity this bank offers for a shuffle seed.
+ */
+function questionSeedId(question: ApostropheQuestion): string {
+  return question.options.join('|')
+}
+
 // ─── Component ─────────────────────────────────────────────────────────────────
 
 export default function ApostropheAcePage() {
@@ -687,11 +699,39 @@ export default function ApostropheAcePage() {
   const [score, setScore] = useState(0)
   const [totalAnswered, setTotalAnswered] = useState(0)
   const [selected, setSelected] = useState<number | null>(null)
+  const [sessionSalt, setSessionSalt] = useState('')
 
   const currentQuestion = questions[qIdx] ?? null
   const answered = selected !== null
 
+  /**
+   * The options as the student sees them, plus the correct option's VALUE.
+   *
+   * WHAT WAS WRONG (fixed 20 September 2026). The QUESTION pool was shuffled,
+   * the OPTIONS were not, and every comparison was `idx === answerIndex`. 54 of
+   * the 55 questions in this bank answer at index 1, so a student who clicked
+   * the second option every time scored 98.2% while reading nothing - the worst
+   * single bank on the site. The options are now shuffled per attempt and
+   * scored by value. Never compare a display index with `answerIndex` again.
+   */
+  const view = useMemo(
+    () =>
+      currentQuestion
+        ? shuffledOptionsFor(
+            currentQuestion.options,
+            currentQuestion.answerIndex,
+            questionSeedId(currentQuestion),
+            sessionSalt,
+            PROMPT,
+          )
+        : { options: [] as string[], correctValue: '' },
+    [currentQuestion, sessionSalt],
+  )
+
   const handleStart = useCallback(() => {
+    // Minted here rather than during render: newSessionSalt calls Math.random,
+    // which would not agree between the server and client paint.
+    setSessionSalt(newSessionSalt())
     setQuestions(shuffle(QUESTION_BANK).slice(0, ROUND_SIZE))
     setQIdx(0)
     setScore(0)
@@ -709,11 +749,11 @@ export default function ApostropheAcePage() {
       if (!currentQuestion || answered) return
       setSelected(idx)
       setTotalAnswered((t) => t + 1)
-      if (idx === currentQuestion.answerIndex) {
+      if (view.options[idx] === view.correctValue) {
         setScore((s) => s + 1)
       }
     },
-    [currentQuestion, answered],
+    [currentQuestion, answered, view],
   )
 
   const handleNext = useCallback(() => {
@@ -726,7 +766,7 @@ export default function ApostropheAcePage() {
   }, [qIdx, questions.length])
 
   const accuracyPct = totalAnswered > 0 ? Math.round((score / totalAnswered) * 100) : 0
-  const isCorrect = answered && selected === currentQuestion?.answerIndex
+  const isCorrect = selected !== null && view.options[selected] === view.correctValue
 
   return (
     <div className="min-h-screen bg-background">
@@ -771,15 +811,13 @@ export default function ApostropheAcePage() {
 
               {/* Prompt */}
               <div className="rounded-xl border border-border bg-card p-6 text-center">
-                <p className="text-sm text-muted-foreground">
-                  Which sentence is punctuated correctly?
-                </p>
+                <p className="text-sm text-muted-foreground">{PROMPT}</p>
               </div>
 
               {/* Options */}
               <div className="grid gap-3">
-                {currentQuestion.options.map((option, idx) => {
-                  const isAnswer = idx === currentQuestion.answerIndex
+                {view.options.map((option, idx) => {
+                  const isAnswer = option === view.correctValue
                   const isPicked = idx === selected
                   return (
                     <button

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useMemo } from 'react'
 import Link from 'next/link'
 import GameShell, { type GameState } from '@/components/games/GameShell'
 import { Button } from '@/components/ui/button'
@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils'
 import { ArrowLeft, CheckCircle, XCircle, Sparkles, Type } from 'lucide-react'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
+import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
@@ -612,6 +613,17 @@ function shuffle<T>(arr: T[]): T[] {
 const QUESTIONS_PER_ROUND = 15
 const OPTION_LABELS = ['A', 'B', 'C', 'D']
 
+/** The stem every question shares. Also handed to the shuffle as the question text. */
+const PROMPT = 'Which sentence is written correctly?'
+
+/**
+ * No question carries an id and they all share one stem, so the option set is
+ * the only stable identity this bank offers for a shuffle seed.
+ */
+function questionSeedId(question: CapitalQuestion): string {
+  return question.options.join('|')
+}
+
 // ─── Component ─────────────────────────────────────────────────────────────────
 
 export default function CapitalLetterQuestPage() {
@@ -625,10 +637,38 @@ export default function CapitalLetterQuestPage() {
   const [totalAnswered, setTotalAnswered] = useState(0)
   const [selected, setSelected] = useState<number | null>(null)
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
+  const [sessionSalt, setSessionSalt] = useState('')
 
   const currentQuestion = questions[qIdx] ?? null
 
+  /**
+   * The options as the student sees them, plus the correct option's VALUE.
+   *
+   * WHAT WAS WRONG (fixed 20 September 2026). The QUESTION pool was shuffled,
+   * the OPTIONS were not, and every comparison was `index === answerIndex`. 53
+   * of the 60 questions in this bank answer at index 2, so a student who
+   * clicked C every time scored 88.3% while reading nothing. The options are
+   * now shuffled per attempt and scored by value. The A/B/C/D badge labels the
+   * shuffled position, which is what the student is actually choosing.
+   */
+  const view = useMemo(
+    () =>
+      currentQuestion
+        ? shuffledOptionsFor(
+            currentQuestion.options,
+            currentQuestion.answerIndex,
+            questionSeedId(currentQuestion),
+            sessionSalt,
+            PROMPT,
+          )
+        : { options: [] as string[], correctValue: '' },
+    [currentQuestion, sessionSalt],
+  )
+
   const handleStart = useCallback(() => {
+    // Minted here rather than during render: newSessionSalt calls Math.random,
+    // which would not agree between the server and client paint.
+    setSessionSalt(newSessionSalt())
     const round = shuffle(QUESTION_BANK).slice(0, QUESTIONS_PER_ROUND)
     setQuestions(round)
     setQIdx(0)
@@ -646,7 +686,7 @@ export default function CapitalLetterQuestPage() {
   const handleSelect = useCallback(
     (index: number) => {
       if (!currentQuestion || feedback) return
-      const isCorrect = index === currentQuestion.answerIndex
+      const isCorrect = view.options[index] === view.correctValue
       setSelected(index)
       setTotalAnswered((t) => t + 1)
       if (isCorrect) {
@@ -666,7 +706,7 @@ export default function CapitalLetterQuestPage() {
         }
       }, 2200)
     },
-    [currentQuestion, feedback, qIdx, questions.length],
+    [currentQuestion, feedback, qIdx, questions.length, view],
   )
 
   const accuracyPct = totalAnswered > 0 ? Math.round((score / totalAnswered) * 100) : 0
@@ -711,7 +751,7 @@ export default function CapitalLetterQuestPage() {
               <div className="rounded-xl border border-border bg-card p-6 text-center space-y-2">
                 <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary">
                   <Type className="size-4" />
-                  Which sentence is written correctly?
+                  {PROMPT}
                 </div>
                 <p className="text-sm text-muted-foreground">
                   Pick the option with capital letters in all the right places.
@@ -720,8 +760,8 @@ export default function CapitalLetterQuestPage() {
 
               {/* Options */}
               <div className="grid gap-3">
-                {currentQuestion.options.map((option, index) => {
-                  const isAnswer = index === currentQuestion.answerIndex
+                {view.options.map((option, index) => {
+                  const isAnswer = option === view.correctValue
                   const isPicked = selected === index
                   const showCorrect = feedback && isAnswer
                   const showWrong = feedback && isPicked && !isAnswer

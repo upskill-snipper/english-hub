@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback, useRef } from 'react'
+import { useState, useEffect, useCallback, useRef, useMemo } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import {
@@ -26,6 +26,7 @@ import {
   type ReadingPassage,
   type ComprehensionQuestion,
   type DecodingWord,
+  type AnswerOption,
 } from '@/data/reading-passages'
 import {
   calculateReadingAge,
@@ -36,6 +37,11 @@ import {
   type AssessmentInput,
 } from '@/lib/reading-assessment'
 import { useT } from '@/lib/i18n/use-t'
+import {
+  shuffleOptionsDeterministic,
+  optionsMustKeepOrder,
+  newSessionSalt,
+} from '@/lib/quiz/shuffle'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -58,6 +64,8 @@ interface TestState {
   // Question state
   currentQuestionIndex: number
   currentAnswer: string
+  /** Per-attempt salt for the option shuffle. Empty until the attempt starts. */
+  sessionSalt: string
   // Ceiling rule tracking
   consecutiveWrong: number
   passageScores: { passageIndex: number; correct: number; total: number }[]
@@ -314,21 +322,68 @@ function PassagePhase({
 
 // ─── Questions Phase ─────────────────────────────────────────────────────────
 
+/**
+ * ANSWER-POSITION BIAS, fixed 20 September 2026.
+ *
+ * This phase shuffled the QUESTION pool (see `shuffle(p.questions)` below) and
+ * rendered each question's OPTIONS in the order they were authored. Every option
+ * array in `reading-passages.ts` is written a, b, c, d, so the authored position
+ * and the option id were the same thing, and `scoreAnswer` comparing
+ * `answer === question.correctAnswer` was an id comparison in name and a position
+ * comparison in effect.
+ *
+ * Measured over the 28 multiple-choice items in that file: the correct option sat
+ * at position 1 - the button labelled B - in 18 of them (64.3%), at position 2 in
+ * the other 10, and never at position 0 or 3. A child who pressed the second
+ * button on every question, without reading the passage at all, scored 64.3% and
+ * was handed a reading age for it.
+ *
+ * The options are now shuffled per attempt and the A/B/C/D badge labels the
+ * shuffled POSITION. Scoring is untouched and still compares option ids, which
+ * travel with the option through the shuffle, so it stays correct.
+ *
+ * NOT `shuffledOptionsFor`: that helper takes `readonly string[]` plus a
+ * `correctIndex` and hands back a `correctValue`. Options here are
+ * `{ id, text }` objects and the correct answer is stored as an option ID, so
+ * routing them through a string list would drop the id that scoring depends on
+ * and could not survive two options sharing text. This calls the same generic
+ * shuffle and the same guard that `shuffledOptionsFor` uses internally.
+ */
 function QuestionsPhase({
   passage,
   currentQuestionIndex,
   currentAnswer,
+  sessionSalt,
   onAnswerChange,
   onSubmitAnswer,
 }: {
   passage: ReadingPassage
   currentQuestionIndex: number
   currentAnswer: string
+  sessionSalt: string
   onAnswerChange: (answer: string) => void
   onSubmitAnswer: () => void
 }) {
   const t = useT()
   const question = passage.questions[currentQuestionIndex]
+
+  // Keyed on the question and the attempt salt, so the order holds still while
+  // the child reads it and differs on a retake. Computed before the early return
+  // so the hook order never changes.
+  const shuffledOptions = useMemo<AnswerOption[]>(() => {
+    const options = question?.options
+    if (!options || options.length === 0) return []
+    if (
+      optionsMustKeepOrder(
+        question.question,
+        options.map((o) => o.text),
+      )
+    ) {
+      return [...options]
+    }
+    return shuffleOptionsDeterministic(options, `${question.id}|${sessionSalt}`)
+  }, [question, sessionSalt])
+
   if (!question) return null
 
   const isLast = currentQuestionIndex === passage.questions.length - 1
@@ -380,7 +435,7 @@ function QuestionsPhase({
 
           {question.type === 'multiple-choice' && question.options ? (
             <div className="space-y-2">
-              {question.options.map((option) => (
+              {shuffledOptions.map((option, i) => (
                 <button
                   key={option.id}
                   onClick={() => onAnswerChange(option.id)}
@@ -398,7 +453,7 @@ function QuestionsPhase({
                           : 'border-border/60 text-muted-foreground'
                       }`}
                     >
-                      {option.id.toUpperCase()}
+                      {String.fromCharCode(65 + i)}
                     </div>
                     <span>{option.text}</span>
                   </div>
@@ -609,6 +664,10 @@ export default function ReadingTestPage() {
     decodingStartTime: null,
     currentQuestionIndex: 0,
     currentAnswer: '',
+    // Minted in handleAgeSubmit, not here: newSessionSalt calls Math.random, and
+    // a random value created during render differs between the server and the
+    // client and trips a hydration mismatch.
+    sessionSalt: '',
     consecutiveWrong: 0,
     passageScores: [],
     ceilingReached: false,
@@ -631,6 +690,10 @@ export default function ReadingTestPage() {
       phase: 'passage',
       passageStartTime: Date.now(),
       passageElapsedBeforePause: 0,
+      // The attempt starts here. This is the click that leaves the age-input
+      // gate, and no option has been painted yet, so minting the salt now is
+      // safe and gives a retake a different option order.
+      sessionSalt: newSessionSalt(),
     }))
   }, [])
 
@@ -941,6 +1004,7 @@ export default function ReadingTestPage() {
           passage={currentPassage}
           currentQuestionIndex={state.currentQuestionIndex}
           currentAnswer={state.currentAnswer}
+          sessionSalt={state.sessionSalt}
           onAnswerChange={handleAnswerChange}
           onSubmitAnswer={handleSubmitAnswer}
         />

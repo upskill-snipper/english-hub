@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils'
 import { ArrowLeft, CheckCircle, XCircle, Sparkles, MessageCircle } from 'lucide-react'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
+import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
@@ -434,6 +435,7 @@ export default function GreetingsDialoguePage() {
   const [score, setScore] = useState(0)
   const [answered, setAnswered] = useState(0)
   const [selected, setSelected] = useState<number | null>(null)
+  const [salt, setSalt] = useState('')
 
   const current = round[idx] ?? null
   const revealed = selected !== null
@@ -443,8 +445,34 @@ export default function GreetingsDialoguePage() {
     [],
   )
 
+  /**
+   * SHUFFLE THE OPTIONS, SCORE BY VALUE (20 September 2026).
+   *
+   * This round shuffled the QUESTION pool, left `options` in authored order and
+   * scored with `choice === current.answerIndex`. 36 of the 46 exchanges in the
+   * bank have their answer at index 0, so a student who clicked the first reply
+   * every time scored 78% without reading anything.
+   *
+   * Every comparison against the answer now goes through `view.correctValue`,
+   * because after a shuffle `answerIndex` points at whatever landed in that
+   * slot. The salt is minted in `handleStart`, never during render:
+   * `newSessionSalt` calls Math.random, and a render-time call in a client
+   * component gives the server and the client different orders.
+   */
+  const view = useMemo(() => {
+    if (!current) return { options: [] as string[], correctValue: '' }
+    return shuffledOptionsFor(
+      current.options,
+      current.answerIndex,
+      `${current.situation}|${current.prompt}`,
+      salt,
+      `${current.situation} ${current.prompt}`,
+    )
+  }, [current, salt])
+
   const handleStart = useCallback(() => {
     setRound(shuffle(EXCHANGE_BANK).slice(0, ROUND_SIZE))
+    setSalt(newSessionSalt())
     setIdx(0)
     setScore(0)
     setAnswered(0)
@@ -461,7 +489,7 @@ export default function GreetingsDialoguePage() {
       if (!current || revealed) return
       setSelected(choice)
       setAnswered((a) => a + 1)
-      if (choice === current.answerIndex) {
+      if (view.options[choice] === view.correctValue) {
         setScore((s) => s + 1)
       }
 
@@ -474,11 +502,11 @@ export default function GreetingsDialoguePage() {
         }
       }, 2200)
     },
-    [current, revealed, idx, round.length],
+    [current, revealed, idx, round.length, view],
   )
 
   const accuracyPct = answered > 0 ? Math.round((score / answered) * 100) : 0
-  const isCorrectChoice = revealed && current !== null && selected === current.answerIndex
+  const isCorrectChoice = selected !== null && view.options[selected] === view.correctValue
 
   return (
     <div className="min-h-screen bg-background">
@@ -534,8 +562,8 @@ export default function GreetingsDialoguePage() {
 
               {/* Options */}
               <div className="grid gap-3 sm:grid-cols-2">
-                {current.options.map((opt, i) => {
-                  const isAnswer = i === current.answerIndex
+                {view.options.map((opt, i) => {
+                  const isAnswer = opt === view.correctValue
                   const isPicked = i === selected
                   return (
                     <button

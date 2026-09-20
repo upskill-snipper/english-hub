@@ -1,11 +1,12 @@
 'use client'
 
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import Link from 'next/link'
 import { notFound, useParams } from 'next/navigation'
 import { findEALTopic } from '@/lib/eal/curriculum'
-import { EAL_CATEGORY_LABEL, loc } from '@/lib/eal/types'
+import { EAL_CATEGORY_LABEL, loc, type LocalizedString } from '@/lib/eal/types'
 import { useLocale } from '@/lib/i18n/use-locale'
+import { shuffledOptionsFor } from '@/lib/quiz/shuffle'
 
 export default function EALTopicPage() {
   const locale = useLocale()
@@ -80,6 +81,23 @@ export default function EALTopicPage() {
   )
 }
 
+/**
+ * One practice question with its answer reveal.
+ *
+ * ANSWER-POSITION BIAS, FIXED 20 September 2026. This block rendered
+ * `exercise.options` in authored order and marked with
+ * `selected === exercise.correctIndex`. Across the 17 exercises in the
+ * EAL curriculum the answer was the second option 9 times (53%) and the
+ * fourth option 0 times. Nothing here is aggregated into a score, so a
+ * learner cannot inflate a number with it, but the marking is real: the
+ * green highlight and the Correct heading both came from the stored
+ * index, so a learner practising here was taught that B is usually
+ * right and D never is, and carried that to the banded practice runner
+ * and the placement test, where it does score.
+ *
+ * Options are shuffled by `shuffledOptionsFor` and both comparisons go
+ * through `view.correctValue`.
+ */
 function ExerciseBlock({
   exercise,
   index,
@@ -93,7 +111,37 @@ function ExerciseBlock({
 }) {
   const [selected, setSelected] = useState<number | null>(null)
   const t = (s: { en: string; ar?: string }) => loc(s, locale)
-  const correct = selected !== null && selected === exercise.correctIndex
+
+  /**
+   * The helper takes plain strings, so the English form is shuffled and
+   * each survivor is mapped back to its bilingual option. No exercise in
+   * the curriculum repeats an English option within one list, so the
+   * lookup is one to one.
+   *
+   * The salt is deliberately the empty string. The options paint on the
+   * first server render with no start gate in front of them, and
+   * `newSessionSalt()` calls Math.random, which would hand the server
+   * and the client different orders and break hydration. An empty salt
+   * matches on both sides and is still unbiased, because the seed
+   * carries the question and its prompt. Exercises carry no id, so the
+   * two together are the stable identifier.
+   */
+  const view = useMemo(() => {
+    const shuffled = shuffledOptionsFor(
+      exercise.options.map((o) => o.en),
+      exercise.correctIndex,
+      `${exercise.question.en}|${exercise.prompt.en}`,
+      '',
+      exercise.question.en,
+    )
+    const byEnglish = new Map(exercise.options.map((o) => [o.en, o] as const))
+    return {
+      options: shuffled.options.map((en): LocalizedString => byEnglish.get(en) ?? { en }),
+      correctValue: shuffled.correctValue,
+    }
+  }, [exercise])
+
+  const correct = selected !== null && view.options[selected].en === view.correctValue
 
   return (
     <div className="rounded-xl border border-border bg-card p-5">
@@ -105,9 +153,9 @@ function ExerciseBlock({
         {t(exercise.prompt)}
       </p>
       <div className="mt-4 grid gap-2">
-        {exercise.options.map((opt, i) => {
+        {view.options.map((opt, i) => {
           const isSelected = selected === i
-          const isCorrect = i === exercise.correctIndex
+          const isCorrect = opt.en === view.correctValue
           const showState = selected !== null
           let cls = 'border-border bg-background hover:bg-muted'
           if (showState) {

@@ -13,7 +13,7 @@
  * - All sub-page navigation (characters, themes, quotes, context, essays)
  */
 
-import { useState, useCallback } from 'react'
+import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import {
   BookOpen,
@@ -37,6 +37,7 @@ import {
   ArrowRight,
 } from 'lucide-react'
 import { useT } from '@/lib/i18n/use-t'
+import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
 import { TEXT_SUBPAGE_ROUTES } from '@/lib/revision/text-subpages.generated'
 
 // ─── Marking destinations ──────────────────────────────────────────────────
@@ -114,6 +115,33 @@ const colorMap = {
 
 // ─── Quick Quiz Component ──────────────────────────────────────────────────
 
+/**
+ * QuickQuiz - five "who said this" questions built from the text's quotations.
+ *
+ * WHAT WAS WRONG (fixed 20 September 2026). Two defects, one cause: the whole
+ * question bank was rebuilt in the component body on every render, and the
+ * options were ordered by `.sort(() => Math.random() - 0.5)`.
+ *
+ * 1. A random comparator is not a shuffle. The correct answer was written at
+ *    index 0 and V8's insertion sort leaves it near where it started. Measured
+ *    over 400,000 trials on the 140 questions these 28 text pages generate
+ *    (every one of them has four options): the answer landed at A 36.0% of the
+ *    time and at C 15.6%, against 25% for chance. A student clicking the first
+ *    option and reading nothing scored 36%.
+ *
+ * 2. Worse, the rebuild reshuffled the options the instant the student
+ *    answered, because answering sets state and state sets off a render. The
+ *    tick followed the correct answer to its new slot, but `selectedAnswer` was
+ *    an index into the order that had just been thrown away, so the cross
+ *    landed on an arbitrary option. Roughly a quarter of answered questions
+ *    showed the student feedback that contradicted their own score: a wrong
+ *    answer highlighted green, or a right one crossed out.
+ *
+ * The bank is now deterministic and memoised, the order comes from
+ * `shuffledOptionsFor` keyed on a per-attempt salt, and everything that decides
+ * right from wrong compares the option VALUE against `view.correctValue`.
+ * Nothing here may compare an index against a stored answer position again.
+ */
 function QuickQuiz({
   quotes,
   textName,
@@ -123,38 +151,66 @@ function QuickQuiz({
 }) {
   const t = useT()
   const [started, setStarted] = useState(false)
+  const [sessionSalt, setSessionSalt] = useState('')
   const [currentQ, setCurrentQ] = useState(0)
   const [score, setScore] = useState(0)
   const [answered, setAnswered] = useState(false)
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null)
   const [finished, setFinished] = useState(false)
 
-  // Generate 5 questions from quotes
-  const questions = quotes.slice(0, 5).map((q, i) => {
-    const correctAnswer = q.character
-    // Create wrong answers from other characters
-    const otherChars = quotes
-      .filter((_, j) => j !== i)
-      .map((oq) => oq.character)
-      .filter((c, idx, arr) => arr.indexOf(c) === idx && c !== correctAnswer)
-      .slice(0, 3)
+  // Generate 5 questions from quotes. Deterministic, and memoised so that
+  // answering a question cannot rebuild the list underneath the student.
+  const questions = useMemo(
+    () =>
+      quotes.slice(0, 5).map((q, i) => {
+        const correctAnswer = q.character
+        // Create wrong answers from other characters
+        const otherChars = quotes
+          .filter((_, j) => j !== i)
+          .map((oq) => oq.character)
+          .filter((c, idx, arr) => arr.indexOf(c) === idx && c !== correctAnswer)
+          .slice(0, 3)
 
-    const options = [correctAnswer, ...otherChars].sort(() => Math.random() - 0.5)
-    const correctIndex = options.indexOf(correctAnswer)
+        return {
+          // Seeds the shuffle, so it is the raw quote and the text name rather
+          // than the rendered stem: the stem is translated, and a seed that
+          // moved with the locale would reorder the options under an Arabic
+          // reader the moment the locale chunk landed.
+          id: `${textName}|${q.quote}`,
+          question: `${t('text_hub.who_says')}: "${q.quote.length > 80 ? q.quote.slice(0, 80) + '...' : q.quote}"?`,
+          options: [correctAnswer, ...otherChars],
+          correctIndex: 0,
+          explanation: q.context,
+        }
+      }),
+    [quotes, textName, t],
+  )
 
-    return {
-      question: `${t('text_hub.who_says')}: "${q.quote.length > 80 ? q.quote.slice(0, 80) + '...' : q.quote}"?`,
-      options,
-      correct: correctIndex,
-      explanation: q.context,
-    }
-  })
+  const q = questions[currentQ]
 
-  const handleAnswer = (idx: number) => {
+  // The order the student sees, plus the correct option's value. Hooks run
+  // before the early returns below, so this is declared here rather than beside
+  // the question screen it feeds.
+  const view = useMemo(
+    () =>
+      shuffledOptionsFor(q.options, q.correctIndex, q.id, sessionSalt, q.question, q.explanation),
+    [q, sessionSalt],
+  )
+
+  const handleStart = () => {
+    // Minted in the click handler, never in a useState initialiser or during
+    // render: newSessionSalt() calls Math.random(), and this is a client
+    // component the server also renders, so a salt chosen at render time would
+    // differ between the two passes and mismatch on hydration.
+    setSessionSalt(newSessionSalt())
+    setStarted(true)
+  }
+
+  const handleAnswer = (option: string, idx: number) => {
     if (answered) return
     setSelectedAnswer(idx)
     setAnswered(true)
-    if (idx === questions[currentQ].correct) setScore((s) => s + 1)
+    if (option === view.correctValue) setScore((s) => s + 1)
   }
 
   const handleNext = () => {
@@ -179,7 +235,7 @@ function QuickQuiz({
   if (!started) {
     return (
       <button
-        onClick={() => setStarted(true)}
+        onClick={handleStart}
         className="flex w-full items-center gap-3 rounded-xl border border-teal-800/15 bg-teal-800/5 p-4 text-start transition-all hover:bg-teal-800/10 hover:border-teal-800/25"
       >
         <div className="flex size-10 items-center justify-center rounded-lg bg-teal-800/15">
@@ -218,7 +274,6 @@ function QuickQuiz({
     )
   }
 
-  const q = questions[currentQ]
   return (
     <div className="rounded-xl border border-border bg-card p-5">
       <div className="flex items-center justify-between mb-3">
@@ -231,22 +286,25 @@ function QuickQuiz({
       </div>
       <p className="text-sm font-medium text-ink-900 mb-3">{q.question}</p>
       <div className="space-y-2">
-        {q.options.map((opt, i) => {
+        {view.options.map((opt, i) => {
+          // By value, not by index. `i` is a display position after the
+          // shuffle and says nothing about which answer is right.
+          const isCorrect = opt === view.correctValue
           let cls = 'border-ink-200 bg-cream-50 text-ink-700 hover:bg-cream-100'
           if (answered) {
-            if (i === q.correct) cls = 'border-teal-500/50 bg-teal-500/10 text-teal-800'
+            if (isCorrect) cls = 'border-teal-500/50 bg-teal-500/10 text-teal-800'
             else if (i === selectedAnswer) cls = 'border-clay-500/50 bg-clay-500/10 text-clay-700'
             else cls = 'border-ink-100 bg-ink-50 text-ink-400'
           }
           return (
             <button
-              key={i}
-              onClick={() => handleAnswer(i)}
+              key={opt}
+              onClick={() => handleAnswer(opt, i)}
               disabled={answered}
               className={`w-full flex items-center gap-2 rounded-lg border px-3 py-2 text-xs text-start transition-colors ${cls}`}
             >
-              {answered && i === q.correct && <Check className="size-3 text-teal-700 shrink-0" />}
-              {answered && i === selectedAnswer && i !== q.correct && (
+              {answered && isCorrect && <Check className="size-3 text-teal-700 shrink-0" />}
+              {answered && i === selectedAnswer && !isCorrect && (
                 <X className="size-3 text-clay-600 shrink-0" />
               )}
               {opt}
@@ -256,7 +314,7 @@ function QuickQuiz({
       </div>
       {answered && (
         <>
-          <p className="text-xs text-ink-500 mt-3 italic">{q.explanation}</p>
+          <p className="text-xs text-ink-500 mt-3 italic">{view.explanation}</p>
           <button
             onClick={handleNext}
             className="mt-3 w-full rounded-lg bg-teal-800 py-2 text-xs font-medium text-cream-50 hover:bg-teal-700 transition-colors"

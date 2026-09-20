@@ -7,14 +7,33 @@
  * band. Immediate per-question feedback (this is practice, not the
  * placement test) plus a running score and an end summary that routes
  * the learner to the full diagnostic and the banded topic content.
+ *
+ * ANSWER-POSITION BIAS, FIXED 20 September 2026. This runner rendered
+ * `q.options` in authored order and marked with
+ * `answers[q.id] === q.correctIndex`. Counted over the whole 32-item
+ * diagnostic bank the answer positions look close to chance - A=13,
+ * B=12, C=7, D=0 - which is why a bank-level audit cleared this file.
+ * But the page never renders the bank. It renders one band, and the
+ * band is the denominator that matters: C1 is seven items, five of
+ * them answer A. A learner who clicked the first option seven times
+ * scored 5/7 (71%), cleared the 0.7 threshold in the summary below and
+ * was told "Strong at C1 - try the next band up" without reading a
+ * question. D was the answer in 0 of the 32 items, so a quarter of
+ * every board could be discarded unread as well.
+ *
+ * Options are now shuffled per question by `shuffledOptionsFor` and
+ * every comparison - the score, the highlight, the Correct heading -
+ * goes through `view.correctValue`. The stored index is handed to the
+ * helper and never read again.
  */
 
 import { useMemo, useState } from 'react'
 import Link from 'next/link'
 import { useLocale } from '@/lib/i18n/use-locale'
-import { loc } from '@/lib/eal/types'
+import { loc, type LocalizedString } from '@/lib/eal/types'
 import { CEFR_LABEL, CEFR_DESCRIPTORS, type CEFRBand } from '@/lib/eal/cefr'
 import { getQuestionsForLevel } from '@/lib/eal/diagnostic-bank'
+import { shuffledOptionsFor } from '@/lib/quiz/shuffle'
 
 export function MockExamClient({ level }: { level: CEFRBand }) {
   const locale = useLocale()
@@ -24,8 +43,47 @@ export function MockExamClient({ level }: { level: CEFRBand }) {
   const questions = useMemo(() => getQuestionsForLevel(level), [level])
   const [answers, setAnswers] = useState<Record<string, number>>({})
 
+  /**
+   * One shuffled view per question, aligned index-for-index with
+   * `questions`. The helper takes plain strings, so the English form is
+   * shuffled and each survivor is mapped back to its bilingual option.
+   * No option list in the bank repeats an English string, so the lookup
+   * is one to one.
+   *
+   * The salt is deliberately the empty string. There is no start gate
+   * here: the options paint on the first server render, and a salt from
+   * `newSessionSalt()` calls Math.random, which would give the server
+   * and the client different orders and break hydration. An empty salt
+   * is identical on both sides and still unbiased, because the seed
+   * also carries the question id. The cost is that a learner who
+   * revisits the page sees the same order.
+   */
+  const views = useMemo(
+    () =>
+      questions.map((q) => {
+        const view = shuffledOptionsFor(
+          q.options.map((o) => o.en),
+          q.correctIndex,
+          q.id,
+          '',
+          q.question.en,
+          q.explanation.en,
+        )
+        const byEnglish = new Map(q.options.map((o) => [o.en, o] as const))
+        return {
+          options: view.options.map((en): LocalizedString => byEnglish.get(en) ?? { en }),
+          correctValue: view.correctValue,
+        }
+      }),
+    [questions],
+  )
+
   const answeredCount = Object.keys(answers).length
-  const score = questions.reduce((acc, q) => acc + (answers[q.id] === q.correctIndex ? 1 : 0), 0)
+  const score = questions.reduce((acc, q, i) => {
+    const chosen = answers[q.id]
+    const view = views[i]
+    return acc + (chosen !== undefined && view.options[chosen].en === view.correctValue ? 1 : 0)
+  }, 0)
   const allDone = answeredCount === questions.length && questions.length > 0
 
   return (
@@ -57,9 +115,10 @@ export function MockExamClient({ level }: { level: CEFRBand }) {
 
       <div className="space-y-4">
         {questions.map((q, idx) => {
+          const view = views[idx]
           const selected = answers[q.id]
           const answered = selected !== undefined
-          const correct = answered && selected === q.correctIndex
+          const correct = answered && view.options[selected].en === view.correctValue
           return (
             <div key={q.id} className="rounded-xl border border-border bg-card p-5">
               <p className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground mb-2">
@@ -70,9 +129,9 @@ export function MockExamClient({ level }: { level: CEFRBand }) {
                 {t(q.prompt)}
               </p>
               <div className="mt-4 grid gap-2">
-                {q.options.map((opt, i) => {
+                {view.options.map((opt, i) => {
                   const isSelected = selected === i
-                  const isCorrect = i === q.correctIndex
+                  const isCorrect = opt.en === view.correctValue
                   let cls = 'border-border bg-background hover:bg-muted'
                   if (answered) {
                     if (isSelected && isCorrect) cls = 'border-teal-600 bg-teal-600/10'

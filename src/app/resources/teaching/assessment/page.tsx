@@ -1,7 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import Link from 'next/link'
+import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
 
 /* ─── Role guard ──────────────────────────────────────────────── */
 const MOCK_USER_ROLE: 'student' | 'teacher' | 'parent' = 'teacher'
@@ -37,6 +38,21 @@ interface MarkSchemeTemplate {
 
 /* ─── Quiz data (5 texts x 10 questions each) ────────────────── */
 
+/**
+ * The authored `correctIndex` values in this bank are badly skewed, and always
+ * were. Measured on 20 September 2026: 37 of the 50 questions (74%) answer at
+ * index 1, and the remaining 13 answer at index 2. Index 0 and index 3 are
+ * never correct in any question here, so a teacher demonstrating the quiz by
+ * clicking B every time, reading nothing, scores 74%.
+ *
+ * The options are now shuffled at render by `shuffledOptionsFor` and scored by
+ * VALUE, so the skew below no longer reaches the screen. Do not "fix" this by
+ * rebalancing the indices: that fixes today and not tomorrow, because the next
+ * person to author ten questions writes the answer at B again. Equally, do not
+ * reintroduce an `index === correctIndex` comparison anywhere - after a shuffle
+ * the stored index points at whichever option happens to sit in that slot, so
+ * it marks the wrong answer right.
+ */
 const QUIZ_TOPICS: Record<string, QuizQuestion[]> = {
   Macbeth: [
     {
@@ -941,11 +957,43 @@ export default function AssessmentToolsPage() {
   const [score, setScore] = useState(0)
   const [quizComplete, setQuizComplete] = useState(false)
   const [showAllAnswers, setShowAllAnswers] = useState(false)
+  // Per-attempt shuffle salt. Set in startQuiz, never during render: the salt
+  // calls Math.random, and this is a server-rendered client component.
+  const [quizSalt, setQuizSalt] = useState('')
   const [essayTopicFilter, setEssayTopicFilter] = useState('')
   const [expandedMarkSchemes, setExpandedMarkSchemes] = useState<Set<number>>(new Set())
 
-  const quizQuestions = QUIZ_TOPICS[selectedQuizTopic] || []
+  // Memoised so the answer-key memo below is not invalidated on every render:
+  // the lookup builds a fresh [] each time it misses.
+  const quizQuestions = useMemo(() => QUIZ_TOPICS[selectedQuizTopic] || [], [selectedQuizTopic])
   const currentQuestion = quizQuestions[currentQuestionIndex]
+
+  // Questions carry no id, so the question text is the stable seed.
+  const currentQuestionView = useMemo(() => {
+    if (!currentQuestion) return { options: [] as string[], correctValue: '' }
+    return shuffledOptionsFor(
+      currentQuestion.options,
+      currentQuestion.correctIndex,
+      currentQuestion.question,
+      quizSalt,
+      currentQuestion.question,
+    )
+  }, [currentQuestion, quizSalt])
+
+  // The answer key is shuffled with the same salt, so the letter it prints is
+  // the letter the teacher actually saw on screen during the attempt.
+  const answerKey = useMemo(
+    () =>
+      quizQuestions.map((q) => {
+        const view = shuffledOptionsFor(q.options, q.correctIndex, q.question, quizSalt, q.question)
+        return {
+          question: q.question,
+          correctValue: view.correctValue,
+          correctLetter: String.fromCharCode(65 + view.options.indexOf(view.correctValue)),
+        }
+      }),
+    [quizQuestions, quizSalt],
+  )
 
   const filteredEssays = ESSAY_QUESTIONS.filter((eq) => {
     const matchesTopic = essayTopicFilter === '' || eq.topic === essayTopicFilter
@@ -957,6 +1005,7 @@ export default function AssessmentToolsPage() {
   const filteredMarkSchemes = MARK_SCHEME_TEMPLATES
 
   function startQuiz() {
+    setQuizSalt(newSessionSalt())
     setQuizStarted(true)
     setCurrentQuestionIndex(0)
     setSelectedAnswer(null)
@@ -968,7 +1017,12 @@ export default function AssessmentToolsPage() {
 
   function checkAnswer() {
     setShowAnswer(true)
-    if (selectedAnswer === currentQuestion.correctIndex) {
+    // By value, not by index: after the shuffle, correctIndex points at
+    // whichever option landed in that slot, not at the correct one.
+    if (
+      selectedAnswer !== null &&
+      currentQuestionView.options[selectedAnswer] === currentQuestionView.correctValue
+    ) {
       setScore((s) => s + 1)
     }
   }
@@ -1140,12 +1194,13 @@ export default function AssessmentToolsPage() {
                   <h3 className="text-lg font-bold text-foreground">{currentQuestion.question}</h3>
 
                   <div className="mt-4 space-y-2">
-                    {currentQuestion.options.map((option, i) => {
+                    {currentQuestionView.options.map((option, i) => {
+                      const isCorrectOption = option === currentQuestionView.correctValue
                       let optionClass = 'border-border bg-card hover:border-primary/40'
                       if (showAnswer) {
-                        if (i === currentQuestion.correctIndex) {
+                        if (isCorrectOption) {
                           optionClass = 'border-green-500 bg-green-500/10'
-                        } else if (i === selectedAnswer && i !== currentQuestion.correctIndex) {
+                        } else if (i === selectedAnswer) {
                           optionClass = 'border-red-500 bg-red-500/10'
                         }
                       } else if (i === selectedAnswer) {
@@ -1231,15 +1286,15 @@ export default function AssessmentToolsPage() {
                   <h3 className="font-bold text-white">{selectedQuizTopic} - Answer Key</h3>
                 </div>
                 <div className="divide-y divide-border">
-                  {quizQuestions.map((q, i) => (
+                  {answerKey.map((entry, i) => (
                     <div key={i} className="px-5 py-4">
                       <p className="text-sm font-medium text-foreground">
                         <span className="me-2 font-bold text-primary">Q{i + 1}.</span>
-                        {q.question}
+                        {entry.question}
                       </p>
                       <p className="mt-1 text-sm text-green-700 dark:text-green-300">
-                        <span className="font-semibold">Answer:</span>{' '}
-                        {String.fromCharCode(65 + q.correctIndex)}) {q.options[q.correctIndex]}
+                        <span className="font-semibold">Answer:</span> {entry.correctLetter}){' '}
+                        {entry.correctValue}
                       </p>
                     </div>
                   ))}

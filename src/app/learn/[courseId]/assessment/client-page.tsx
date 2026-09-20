@@ -24,6 +24,7 @@ import { useAuthStore } from '@/store/auth-store'
 import { useBoard } from '@/hooks/useBoard'
 import { matchesBoard } from '@/lib/board-filter'
 import { shuffleArray, formatTime } from '@/lib/utils'
+import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
 import { percentageToGCSEGrade, gcseGradeColor } from '@/lib/grades'
 import { useT } from '@/lib/i18n/use-t'
 
@@ -50,6 +51,10 @@ interface AssessmentResult {
   percentage: number
   grade: string
   passed: boolean
+  // `selected` is an index into the question's AUTHORED `options`, not into the
+  // shuffled order the student saw. It is mapped back at submit time so that
+  // the breakdown below and the stored `assessment_attempts` row keep meaning
+  // the same thing they meant before options were shuffled. -1 means skipped.
   answers: { questionId: string; selected: number; correct: boolean }[]
 }
 
@@ -162,6 +167,35 @@ export default function AssessmentPage() {
   const startTimeRef = useRef<number>(0)
   const handleSubmitRef = useRef<() => void>(() => {})
 
+  /**
+   * ANSWER-POSITION BIAS (fixed 20 September 2026).
+   *
+   * `startAssessment` shuffled the QUESTION pool and left each question's
+   * OPTIONS in authored order, while scoring was `selected === q.correct`. The
+   * authored data is heavily skewed: 399 of the 526 questions reachable from
+   * this surface (75.9%) had the answer at index 1, so a student who clicked B
+   * on all twenty questions and read nothing scored around 76% - above the 50%
+   * pass mark, and issued a certificate.
+   *
+   * The options are now shuffled per attempt and every comparison against the
+   * correct answer goes through the option's VALUE. `q.correct` must never be
+   * compared with a position on screen again: after the shuffle it points at
+   * whatever happens to occupy that slot.
+   */
+  const [optionSalt, setOptionSalt] = useState('')
+
+  // One view per question, in the same order as `questions`, so the results
+  // breakdown can reach the order a student actually saw as well as the
+  // question screen can. Stable for the whole attempt: the salt only changes
+  // when an attempt starts, which also clears `answers`.
+  const questionViews = useMemo(
+    () =>
+      questions.map((q) =>
+        shuffledOptionsFor(q.options, q.correct, q.id, optionSalt, q.question, q.explanation),
+      ),
+    [questions, optionSalt],
+  )
+
   // Timer
   useEffect(() => {
     if (phase !== 'active') return
@@ -190,6 +224,11 @@ export default function AssessmentPage() {
         : shuffleArray(allQuestions).slice(0, maxQuestions)
 
     setQuestions(selected)
+    // Fresh option order for this attempt. Created here, in the start handler,
+    // and never during render: `newSessionSalt` calls Math.random(), so seeding
+    // it in a useState initialiser would give the server and the client
+    // different orders and produce a hydration mismatch.
+    setOptionSalt(newSessionSalt())
     setCurrentIndex(0)
     setAnswers({})
     setTimeLeft(30 * 60)
@@ -222,12 +261,17 @@ export default function AssessmentPage() {
     const answeredList: AssessmentResult['answers'] = []
 
     questions.forEach((q, i) => {
-      const selected = answers[i] ?? -1
-      const isCorrect = selected === q.correct
+      const view = questionViews[i]
+      // `answers` holds the position the student clicked, which is a position
+      // in the SHUFFLED list. Score by value, never by position.
+      const clicked = answers[i] ?? -1
+      const selectedValue = clicked >= 0 ? view?.options[clicked] : undefined
+      const isCorrect = selectedValue !== undefined && selectedValue === view?.correctValue
       if (isCorrect) correct++
       answeredList.push({
         questionId: q.id,
-        selected,
+        // Back to the authored index for the breakdown and for the stored row.
+        selected: selectedValue === undefined ? -1 : q.options.indexOf(selectedValue),
         correct: isCorrect,
       })
     })
@@ -309,7 +353,7 @@ export default function AssessmentPage() {
 
     setResult(assessmentResult)
     setPhase('results')
-  }, [phase, questions, answers, user, courseId, t])
+  }, [phase, questions, questionViews, answers, user, courseId, t])
 
   // Keep handleSubmitRef in sync so the timer never uses a stale closure
   handleSubmitRef.current = handleSubmit
@@ -460,6 +504,7 @@ export default function AssessmentPage() {
 
   if (phase === 'active' || phase === 'submitting') {
     const currentQ = questions[currentIndex]
+    const currentView = questionViews[currentIndex]
     const selectedAnswer = answers[currentIndex]
     const answeredCount = Object.keys(answers).length
     const isTimeLow = timeLeft <= 300 // 5 minutes
@@ -500,7 +545,7 @@ export default function AssessmentPage() {
         {/* Question */}
         <div className="flex-1 flex items-start justify-center px-4 py-8">
           <div className="max-w-2xl w-full">
-            {currentQ && (
+            {currentQ && currentView && (
               <>
                 <div className="mb-2">
                   <span className="text-xs text-muted-foreground">
@@ -515,7 +560,10 @@ export default function AssessmentPage() {
                 </h2>
 
                 <div className="space-y-3 mb-8">
-                  {currentQ.options.map((option, i) => {
+                  {/* Shuffled order. The A/B/C/D badge below labels the
+                      position on screen, which is what the student is choosing
+                      between, so it stays derived from `i`. */}
+                  {currentView.options.map((option, i) => {
                     const isSelected = selectedAnswer === i
                     return (
                       <button
@@ -743,6 +791,12 @@ export default function AssessmentPage() {
                       </span>
                       <div className="min-w-0 flex-1">
                         <p className="text-foreground text-sm font-medium mb-1">{q.question}</p>
+                        {/* Both lookups index the AUTHORED `q.options`, which
+                            never moved: `answer.selected` was mapped back to an
+                            authored index at submit time and `q.correct` has
+                            always been one. Do not switch either to the
+                            shuffled view - they would then disagree with the
+                            row stored in `assessment_attempts`. */}
                         {!answer?.correct && (
                           <div className="text-xs text-muted-foreground mt-1 space-y-1">
                             <p>
@@ -761,9 +815,9 @@ export default function AssessmentPage() {
                             </p>
                           </div>
                         )}
-                        {q.explanation && (
+                        {questionViews[i]?.explanation && (
                           <p className="text-xs text-muted-foreground-subtle mt-2 italic">
-                            {q.explanation}
+                            {questionViews[i].explanation}
                           </p>
                         )}
                       </div>

@@ -26,12 +26,8 @@ import { useT } from '@/lib/i18n/use-t'
 import type { QuizHistoryEntry } from '@/components/toolkit/toolkit-types'
 
 import type { QuizQuestion, Topic } from './quiz-data'
-import {
-  TOPIC_META,
-  getGrade,
-  questionMatchesBoard,
-  shuffleOptionsDeterministic,
-} from './quiz-data'
+import { TOPIC_META, getGrade, questionMatchesBoard } from './quiz-data'
+import { shuffledOptionsFor } from '@/lib/quiz/shuffle'
 
 // ─── Weak topic → revision page mapping (board-aware) ─────────────────────
 
@@ -319,10 +315,25 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
   // Pre-compute the shuffled option order for every question. Storing the
   // shuffled options as strings lets us score by VALUE rather than index, so
   // shuffling cannot break correctness checks.
+  //
+  // This called shuffleOptionsDeterministic directly until 20 September 2026,
+  // which meant it shuffled everything. An adversarial re-read found lt115,
+  // "What technique is used in I came, I saw, I conquered?", whose options
+  // include "All of these" - shuffled to the top, that question stops making
+  // sense. shuffledOptionsFor applies the order guard. This engine was the one
+  // surface already scoring by value, and so the last to be given it.
   const shuffledOptions = useMemo(
     () =>
-      questions.map((q) =>
-        shuffleOptionsDeterministic(q.options, `${q.id}|${sessionSaltRef.current}`),
+      questions.map(
+        (q) =>
+          shuffledOptionsFor(
+            q.options,
+            q.correctIndex,
+            q.id,
+            sessionSaltRef.current,
+            q.question,
+            q.explanation,
+          ).options,
       ),
     [questions],
   )

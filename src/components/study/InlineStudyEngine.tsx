@@ -31,6 +31,7 @@ import {
 } from 'lucide-react'
 import { events } from '@/lib/gtag'
 import { useT } from '@/lib/i18n/use-t'
+import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
 
 // ─── Types ─────────────────────────────────────────────────────────────────
 
@@ -122,6 +123,9 @@ function QuizMode({
   const [topicResults, setTopicResults] = useState<
     Record<string, { correct: number; total: number }>
   >({})
+  // Set in startQuiz, never during render: newSessionSalt calls Math.random, and
+  // this is a client component that is server-rendered by 78 revision pages.
+  const [sessionSalt, setSessionSalt] = useState('')
 
   const filteredQuestions = useMemo(() => {
     let qs = [...questions]
@@ -134,8 +138,38 @@ function QuizMode({
     return qs.slice(0, Math.min(questionCount, qs.length))
   }, [questions, difficulty, questionCount])
 
+  /**
+   * The current question's options in the order the student sees them, plus the
+   * correct option's VALUE.
+   *
+   * WHAT WAS WRONG, fixed 20 September 2026. The block above shuffled the
+   * QUESTION pool and nothing ever shuffled the OPTIONS, while every comparison
+   * here was `index === q.correctIndex`. Across the 78 revision pages that mount
+   * this engine, 944 of 1,050 questions - 89.9% - have their answer at index 1,
+   * so a student who clicked B every time and read nothing scored about ninety
+   * per cent.
+   *
+   * Everything downstream now compares by `correctValue` and never by an index:
+   * once the options move, the authored `correctIndex` points at whatever landed
+   * in that slot, so scoring by index after a shuffle marks the wrong answer
+   * right. The A/B/C/D letter is still the render position, which is correct.
+   */
+  const currentQuestion = started ? quizQuestions[currentIdx] : undefined
+  const optionView = useMemo(() => {
+    if (!currentQuestion) return { options: [] as string[], correctValue: '', explanation: '' }
+    return shuffledOptionsFor(
+      currentQuestion.options,
+      currentQuestion.correctIndex,
+      currentQuestion.id,
+      sessionSalt,
+      currentQuestion.question,
+      currentQuestion.explanation,
+    )
+  }, [currentQuestion, sessionSalt])
+
   const startQuiz = () => {
     setQuizQuestions(filteredQuestions)
+    setSessionSalt(newSessionSalt())
     setCurrentIdx(0)
     setSelected(null)
     setAnswered(false)
@@ -150,12 +184,14 @@ function QuizMode({
     }
   }
 
-  const handleSelect = (idx: number) => {
+  // `idx` is the display position, used only to highlight the row the student
+  // picked. Correctness is decided by `option`, the text they actually chose.
+  const handleSelect = (idx: number, option: string) => {
     if (answered) return
     setSelected(idx)
     setAnswered(true)
     const q = quizQuestions[currentIdx]
-    const isCorrect = idx === q.correctIndex
+    const isCorrect = option === optionView.correctValue
     if (isCorrect) setScore((s) => s + 1)
 
     setTopicResults((prev) => {
@@ -174,8 +210,12 @@ function QuizMode({
   const handleNext = () => {
     if (currentIdx >= quizQuestions.length - 1) {
       setFinished(true)
+      // `score` already counts the final question: handleSelect ran and
+      // re-rendered before this button could be clicked. The old expression here
+      // added `selected === correctIndex ? 0 : 0`, which was a stale index
+      // comparison that contributed nothing either way.
       onComplete({
-        correct: score + (selected === quizQuestions[currentIdx]?.correctIndex ? 0 : 0),
+        correct: score,
         total: quizQuestions.length,
         topicResults,
       })
@@ -343,17 +383,18 @@ function QuizMode({
       <p className="text-sm font-medium text-ink-900 leading-relaxed">{q.question}</p>
 
       <div className="space-y-2">
-        {q.options.map((opt, i) => {
+        {optionView.options.map((opt, i) => {
+          const isCorrectOption = opt === optionView.correctValue
           let cls = 'border-ink-200 bg-cream-50 text-ink-700 hover:bg-cream-100 cursor-pointer'
           if (answered) {
-            if (i === q.correctIndex) cls = 'border-teal-500/50 bg-teal-500/10 text-teal-800'
+            if (isCorrectOption) cls = 'border-teal-500/50 bg-teal-500/10 text-teal-800'
             else if (i === selected) cls = 'border-clay-500/50 bg-clay-500/10 text-clay-700'
             else cls = 'border-border bg-card text-muted-foreground'
           }
           return (
             <button
               key={i}
-              onClick={() => handleSelect(i)}
+              onClick={() => handleSelect(i, opt)}
               disabled={answered}
               className={`w-full flex items-center gap-2.5 rounded-lg border px-3 py-2.5 text-xs text-start transition-all ${cls}`}
             >
@@ -361,10 +402,10 @@ function QuizMode({
                 {String.fromCharCode(65 + i)}.
               </span>
               {opt}
-              {answered && i === q.correctIndex && (
+              {answered && isCorrectOption && (
                 <Check className="size-3.5 text-teal-700 ms-auto shrink-0" />
               )}
-              {answered && i === selected && i !== q.correctIndex && (
+              {answered && i === selected && !isCorrectOption && (
                 <X className="size-3.5 text-clay-600 ms-auto shrink-0" />
               )}
             </button>
@@ -376,7 +417,7 @@ function QuizMode({
         <div className="rounded-lg bg-cream-50 border border-ink-100 p-3">
           <p className="text-xs text-ink-600 leading-relaxed">
             <span className="font-medium text-ink-800">{t('quiz.explanation')}: </span>
-            {q.explanation}
+            {optionView.explanation}
           </p>
         </div>
       )}

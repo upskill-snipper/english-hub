@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback, useEffect, useMemo } from 'react'
 import Link from 'next/link'
 import GameShell, { type GameState } from '@/components/games/GameShell'
 import { Button } from '@/components/ui/button'
@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils'
 import { ArrowLeft, CheckCircle, XCircle, Sparkles, Lightbulb, Zap } from 'lucide-react'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
+import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
@@ -371,6 +372,7 @@ const WORD_BANK: TrickyWord[] = [
 const ROUND_SIZE = 18
 const TIME_LIMIT = 90
 const FEEDBACK_MS = 1500
+const PROMPT = 'Which spelling is correct?'
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -385,6 +387,19 @@ function shuffle<T>(arr: T[]): T[] {
 
 // ─── Component ─────────────────────────────────────────────────────────────────
 
+/**
+ * ANSWER POSITION WAS THE ANSWER (fixed 20 September 2026).
+ *
+ * The sprint shuffled the WORD pool and left each word's four spellings in
+ * authored order, then scored with `idx === current.answerIndex`. 38 of the 69
+ * items in WORD_BANK carry answerIndex 1 and 27 carry 2, while none carries 3,
+ * so tapping the second tile every time scored 55% and tapping second-or-third
+ * covered 94% of the bank. Under a 90-second timer that is the fastest way to
+ * play, which is the worst thing a spelling game can teach.
+ *
+ * The four spellings are now shuffled per attempt from a salt created when the
+ * attempt starts, and the tapped tile is judged on its TEXT, never its slot.
+ */
 export default function TrickyWordSpellingPage() {
   const { board } = useBoard()
   const boardConfig = getBoardConfig(board)
@@ -394,12 +409,30 @@ export default function TrickyWordSpellingPage() {
   const [qIdx, setQIdx] = useState(0)
   const [score, setScore] = useState(0)
   const [answered, setAnswered] = useState(0)
+  /** Display position of the tapped tile, never used to judge it. */
   const [picked, setPicked] = useState<number | null>(null)
+  /** Minted in the start handler, not in render: newSessionSalt calls Math.random. */
+  const [salt, setSalt] = useState('')
 
   const current = round[qIdx] ?? null
 
+  const view = useMemo(
+    () =>
+      current
+        ? shuffledOptionsFor(
+            current.options,
+            current.answerIndex,
+            current.options.join('|'),
+            salt,
+            PROMPT,
+          )
+        : null,
+    [current, salt],
+  )
+
   const handleStart = useCallback(() => {
     setRound(shuffle(WORD_BANK).slice(0, ROUND_SIZE))
+    setSalt(newSessionSalt())
     setQIdx(0)
     setScore(0)
     setAnswered(0)
@@ -412,11 +445,11 @@ export default function TrickyWordSpellingPage() {
   }, [])
 
   const handlePick = useCallback(
-    (idx: number) => {
-      if (!current || picked !== null) return
+    (idx: number, value: string) => {
+      if (!view || picked !== null) return
       setPicked(idx)
       setAnswered((a) => a + 1)
-      if (idx === current.answerIndex) setScore((s) => s + 1)
+      if (value === view.correctValue) setScore((s) => s + 1)
 
       setTimeout(() => {
         if (qIdx + 1 >= round.length) {
@@ -427,7 +460,7 @@ export default function TrickyWordSpellingPage() {
         }
       }, FEEDBACK_MS)
     },
-    [current, picked, qIdx, round.length],
+    [view, picked, qIdx, round.length],
   )
 
   // Reset feedback if a round restarts mid-play
@@ -436,7 +469,8 @@ export default function TrickyWordSpellingPage() {
   }, [gameState])
 
   const accuracyPct = answered > 0 ? Math.round((score / answered) * 100) : 0
-  const isCorrect = picked !== null && current !== null && picked === current.answerIndex
+  const pickedValue = view && picked !== null ? view.options[picked] : null
+  const isCorrect = pickedValue !== null && pickedValue === view?.correctValue
 
   return (
     <div className="min-h-screen bg-background">
@@ -465,7 +499,7 @@ export default function TrickyWordSpellingPage() {
           onFinish={handleFinish}
           gameState={gameState}
         >
-          {current && (
+          {current && view && (
             <div className="space-y-6">
               {/* Progress */}
               <div className="flex items-center justify-between text-sm text-muted-foreground">
@@ -478,19 +512,19 @@ export default function TrickyWordSpellingPage() {
 
               {/* Prompt */}
               <div className="rounded-xl border border-border bg-card p-6 text-center">
-                <p className="text-sm text-muted-foreground">Which spelling is correct?</p>
+                <p className="text-sm text-muted-foreground">{PROMPT}</p>
               </div>
 
-              {/* Options */}
+              {/* Options - shuffled per attempt, so a tile's slot carries no information */}
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                {current.options.map((opt, idx) => {
-                  const isAnswer = idx === current.answerIndex
+                {view.options.map((opt, idx) => {
+                  const isAnswer = opt === view.correctValue
                   const isPicked = picked === idx
                   const showState = picked !== null
                   return (
                     <button
                       key={idx}
-                      onClick={() => handlePick(idx)}
+                      onClick={() => handlePick(idx, opt)}
                       disabled={showState}
                       className={cn(
                         'rounded-lg border px-4 py-4 text-center text-lg font-semibold transition-all',
@@ -529,12 +563,12 @@ export default function TrickyWordSpellingPage() {
                   >
                     {isCorrect ? (
                       <>
-                        <CheckCircle className="size-4" /> Spot on - nice work!
+                        <CheckCircle className="size-4" /> Spot on - nice work
                       </>
                     ) : (
                       <>
                         <XCircle className="size-4" /> The correct spelling is{' '}
-                        <span className="font-bold">{current.options[current.answerIndex]}</span>
+                        <span className="font-bold">{view.correctValue}</span>
                       </>
                     )}
                   </div>
