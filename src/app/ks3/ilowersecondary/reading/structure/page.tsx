@@ -22,11 +22,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Structure & organisation',
     description:
-      'A masterclass on identifying and commenting on how non-fiction texts are structured - openings, topic sentences, headings, connectives, endings, the punctuation-effect question and the feature-tick-table - with original practice extracts and model answers.',
+      'Commenting on how non-fiction texts are structured: openings, topic sentences, headings, connectives and endings, with extracts and model answers.',
+    images: [
+      {
+        url: '/api/og?title=Structure+%26+organisation',
+        width: 1200,
+        height: 630,
+        alt: 'Structure & organisation',
+      },
+    ],
   },
-  title: 'Structure & organisation of texts (RAO3) - a masterclass',
+  title: 'Structure & organisation (RAO3)',
   description:
-    'How to identify and comment on the structure and organisation of texts for iLowerSecondary English RAO3: text-level structure, organisational choices and their effect on the reader, the punctuation-effect question and the feature-tick-table, with original practice extracts and model answers in Pearson mark style.',
+    'Commenting on how non-fiction texts are structured: openings, topic sentences, headings, connectives and endings, with extracts and model answers.',
   alternates: { canonical: PAGE_URL },
 }
 

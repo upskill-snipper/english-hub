@@ -21,6 +21,14 @@ export const metadata: Metadata = {
     title: 'IGCSE Language B course overview | Cambridge IGCSE | The English Hub',
     description:
       'Full overview of the Cambridge IGCSE Language B First Language English course - what is tested across reading and writing, and the skills each paper assesses.',
+    images: [
+      {
+        url: '/api/og?title=IGCSE+Language+B+course+overview+%7C+Cambridge+IGCSE+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'IGCSE Language B course overview | Cambridge IGCSE | The English Hub',
+      },
+    ],
   },
   title: 'IGCSE Language B course overview | Cambridge IGCSE',
   description:

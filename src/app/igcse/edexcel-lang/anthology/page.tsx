@@ -28,6 +28,14 @@ export const metadata: Metadata = {
     title: 'Edexcel IGCSE Language A 4EA1 non-fiction anthology - The English Hub',
     description:
       'Pearson Edexcel IGCSE Language A 4EA1 - the 10 prescribed non-fiction texts in the anthology. Full study guides and exam practice for Paper 1 Section A.',
+    images: [
+      {
+        url: '/api/og?title=Edexcel+IGCSE+Language+A+4EA1+non-fiction+anthology+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Edexcel IGCSE Language A 4EA1 non-fiction anthology - The English Hub',
+      },
+    ],
   },
   title: 'Edexcel IGCSE Language A 4EA1 non-fiction anthology',
   description:

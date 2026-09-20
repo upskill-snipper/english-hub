@@ -16,6 +16,14 @@ export const metadata: Metadata = {
     title: 'English Literature Revision - The English Hub',
     description:
       'Complete GCSE and IGCSE English Literature revision hub. Study guides, essay techniques, and exam preparation.',
+    images: [
+      {
+        url: '/api/og?title=English+Literature+Revision+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'English Literature Revision - The English Hub',
+      },
+    ],
   },
 }
 

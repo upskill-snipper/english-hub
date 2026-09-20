@@ -37,6 +37,14 @@ export const metadata: Metadata = {
     title: 'IAL English - The English Hub',
     description:
       'Pearson IAL English unit breakdown, mock exams, AI self-learning guidance and set-text guides.',
+    images: [
+      {
+        url: '/api/og?title=IAL+English+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'IAL English - The English Hub',
+      },
+    ],
   },
 }
 

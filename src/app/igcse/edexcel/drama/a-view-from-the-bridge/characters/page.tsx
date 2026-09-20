@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'A View from the Bridge Characters - Edexcel IGCSE Literature',
     description:
       'Character analysis for A View from the Bridge: Eddie Carbone, Catherine, Beatrice, Marco, Rodolpho and Alfieri.',
+    images: [
+      {
+        url: '/api/og?title=A+View+from+the+Bridge+Characters+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'A View from the Bridge Characters - Edexcel IGCSE Literature',
+      },
+    ],
   },
   title: 'A View from the Bridge Characters - Edexcel IGCSE Literature',
   description:

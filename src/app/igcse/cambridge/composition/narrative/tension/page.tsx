@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'Tension and Pacing - Cambridge IGCSE Narrative Writing',
     description:
       'Build tension and control pacing in a Cambridge IGCSE short story. Withhold information, use short sentences, interruptions, and credible cliffhangers.',
+    images: [
+      {
+        url: '/api/og?title=Tension+and+Pacing+-+Cambridge+IGCSE+Narrative+Writing',
+        width: 1200,
+        height: 630,
+        alt: 'Tension and Pacing - Cambridge IGCSE Narrative Writing',
+      },
+    ],
   },
   title: 'Tension and Pacing - Cambridge IGCSE Narrative Writing',
   description:

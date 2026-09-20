@@ -13,6 +13,14 @@ export const metadata: Metadata = {
     title: 'A Streetcar Named Desire - Study Guide | The English Hub',
     description:
       'In-depth study guide for A Streetcar Named Desire by Tennessee Williams: plot, characters, themes, context and key quotations.',
+    images: [
+      {
+        url: '/api/og?title=A+Streetcar+Named+Desire+-+Study+Guide+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'A Streetcar Named Desire - Study Guide | The English Hub',
+      },
+    ],
   },
   title: 'A Streetcar Named Desire - Study Guide',
   description:

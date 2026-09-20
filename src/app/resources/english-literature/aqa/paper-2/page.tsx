@@ -8,6 +8,14 @@ export const metadata: Metadata = {
     title: 'Paper 2: Modern Texts and Poetry - AQA English Literature',
     description:
       'AQA GCSE English Literature Paper 2 revision. Modern texts (An Inspector Calls, Lord of the Flies, Animal Farm), Power and Conflict poetry anthology, and unseen poetry technique.',
+    images: [
+      {
+        url: '/api/og?title=Paper+2%3A+Modern+Texts+and+Poetry+-+AQA+English+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'Paper 2: Modern Texts and Poetry - AQA English Literature',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/aqa/paper-2' },
   title: 'Paper 2: Modern Texts and Poetry - AQA English Literature',

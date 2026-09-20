@@ -10,6 +10,14 @@ export const metadata: Metadata = {
     title: 'Jekyll and Hyde Study Guide - Cambridge IGCSE English Literature',
     description:
       'Complete Strange Case of Dr Jekyll and Mr Hyde study guide for Cambridge IGCSE English Literature. Plot summary, character analysis, themes, 18 key quotes with analysis, Victorian context, and exam question practice.',
+    images: [
+      {
+        url: '/api/og?title=Jekyll+and+Hyde+Study+Guide+-+Cambridge+IGCSE+English+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'Jekyll and Hyde Study Guide - Cambridge IGCSE English Literature',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/caie/jekyll-and-hyde',

@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Narrative Writing - IGCSE Language A Paper 2 Section B',
     description:
       'How to write a top-mark narrative composition for IGCSE Language A Paper 2. Story structure, character, dialogue and worked example. Aligns with Cambridge syllabus 0500.',
+    images: [
+      {
+        url: '/api/og?title=Narrative+Writing+-+IGCSE+Language+A+Paper+2+Section+B',
+        width: 1200,
+        height: 630,
+        alt: 'Narrative Writing - IGCSE Language A Paper 2 Section B',
+      },
+    ],
   },
   title: 'Narrative Writing - IGCSE Language A Paper 2 Section B',
   description:

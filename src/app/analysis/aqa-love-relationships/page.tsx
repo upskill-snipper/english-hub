@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     title: 'AQA Love and Relationships Analysis Hub - The English Hub',
     description:
       'Grade 9 AQA Love and Relationships analysis: poem comparisons, themes, quotes and essay writing, written by GCSE markers.',
+    images: [
+      {
+        url: '/api/og?title=AQA+Love+and+Relationships+Analysis+Hub+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'AQA Love and Relationships Analysis Hub - The English Hub',
+      },
+    ],
   },
 }
 

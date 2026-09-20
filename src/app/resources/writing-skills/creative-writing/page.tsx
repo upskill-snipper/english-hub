@@ -10,6 +10,14 @@ export const metadata: Metadata = {
     title: 'Creative Writing Masterclass | The English Hub',
     description:
       'Complete guide to creative writing for GCSE and IGCSE English. Descriptive and narrative techniques, opening and ending strategies, structural devices, vocabulary enhancement, planning templates, and full annotated model responses.',
+    images: [
+      {
+        url: '/api/og?title=Creative+Writing+Masterclass+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Creative Writing Masterclass | The English Hub',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/writing-skills/creative-writing' },
   title: 'Creative Writing Masterclass',

@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Security & Vulnerability Disclosure | The English Hub',
     description:
       'Coordinated vulnerability disclosure policy, scope, safe harbour and response targets for The English Hub.',
+    images: [
+      {
+        url: '/api/og?title=Security+%26+Vulnerability+Disclosure+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Security & Vulnerability Disclosure | The English Hub',
+      },
+    ],
   },
 }
 

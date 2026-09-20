@@ -36,6 +36,14 @@ export const metadata: Metadata = {
     title: 'Edexcel IGCSE Literature - The English Hub',
     description:
       'Complete revision hub for Pearson Edexcel IGCSE English Literature. Paper 1 and Paper 2 breakdowns, set text guides, anthology poetry and exam technique.',
+    images: [
+      {
+        url: '/api/og?title=Edexcel+IGCSE+Literature+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Edexcel IGCSE Literature - The English Hub',
+      },
+    ],
   },
   title: 'Edexcel IGCSE Literature',
   description:

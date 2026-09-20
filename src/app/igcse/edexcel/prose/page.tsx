@@ -14,6 +14,14 @@ export const metadata: Metadata = {
       'IGCSE Edexcel prose - Of Mice and Men, To Kill a Mockingbird, Things Fall Apart - The English Hub',
     description:
       'Pearson Edexcel IGCSE Literature 4ET1 modern prose. Three texts: Of Mice and Men, To Kill a Mockingbird, Things Fall Apart. Full study guides.',
+    images: [
+      {
+        url: '/api/og?title=IGCSE+Edexcel+prose+-+Of+Mice+and+Men%2C+To+Kill+a+Mockingbird%2C+Things+Fall+Apart+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'IGCSE Edexcel prose - Of Mice and Men, To Kill a Mockingbird, Things Fall Apart - The English Hub',
+      },
+    ],
   },
   title: 'IGCSE Edexcel prose - Of Mice and Men, To Kill a Mockingbird, Things Fall Apart',
   description:

@@ -13,6 +13,14 @@ export const metadata: Metadata = {
     title: 'Contact Us - The English Hub',
     description:
       'Get in touch with The English Hub support team. We are here to help with questions about your account, feedback, billing, data, or safeguarding.',
+    images: [
+      {
+        url: '/api/og?title=Contact+Us+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Contact Us - The English Hub',
+      },
+    ],
   },
 }
 

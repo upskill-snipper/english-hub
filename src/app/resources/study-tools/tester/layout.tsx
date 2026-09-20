@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'Knowledge Tester - The English Hub',
     description:
       'Test your GCSE English knowledge with interactive quizzes. Covers Literature texts, Language techniques, vocabulary, and exam terminology.',
+    images: [
+      {
+        url: '/api/og?title=Knowledge+Tester+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Knowledge Tester - The English Hub',
+      },
+    ],
   },
 }
 

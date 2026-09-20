@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'Revision Checklists - The English Hub',
     description:
       'Free GCSE English revision checklists. Track your progress across key topics, texts, and skills to ensure nothing is missed before exam day.',
+    images: [
+      {
+        url: '/api/og?title=Revision+Checklists+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Revision Checklists - The English Hub',
+      },
+    ],
   },
 }
 

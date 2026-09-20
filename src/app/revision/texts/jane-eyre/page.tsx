@@ -12,6 +12,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Jane Eyre revision guide - themes, characters, key quotes - The English Hub',
     description: 'Jane Eyre GCSE revision - Charlotte Brontë',
+    images: [
+      {
+        url: '/api/og?title=Jane+Eyre+revision+guide+-+themes%2C+characters%2C+key+quotes+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Jane Eyre revision guide - themes, characters, key quotes - The English Hub',
+      },
+    ],
   },
   title: 'Jane Eyre revision guide - themes, characters, key quotes',
   description:

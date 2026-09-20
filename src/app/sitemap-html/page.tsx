@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Sitemap - The English Hub',
     description:
       'Every page on The English Hub, organised by section. Use this to find anything: revision hubs, set texts, exam boards, resources.',
+    images: [
+      {
+        url: '/api/og?title=Sitemap+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Sitemap - The English Hub',
+      },
+    ],
   },
   title: 'Sitemap',
   description:

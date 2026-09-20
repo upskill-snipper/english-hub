@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'AQA English Language Grade Boundaries - The English Hub',
     description:
       'AQA GCSE English Language grade boundaries with historical data. Understand the marks needed for grades 4, 5, 7, and 9 across Paper 1 and Paper 2.',
+    images: [
+      {
+        url: '/api/og?title=AQA+English+Language+Grade+Boundaries+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'AQA English Language Grade Boundaries - The English Hub',
+      },
+    ],
   },
 }
 

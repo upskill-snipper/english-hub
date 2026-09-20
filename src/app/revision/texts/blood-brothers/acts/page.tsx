@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     title: 'Blood Brothers - Act-by-Act Analysis | The English Hub',
     description:
       'Detailed act-by-act analysis of Blood Brothers by Willy Russell with key quotes and examiner-focused commentary.',
+    images: [
+      {
+        url: '/api/og?title=Blood+Brothers+-+Act-by-Act+Analysis+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Blood Brothers - Act-by-Act Analysis | The English Hub',
+      },
+    ],
   },
   title: 'Blood Brothers - Act-by-Act Analysis',
   description:

@@ -17,6 +17,14 @@ export const metadata: Metadata = {
     description:
       'Line-by-line Jekyll and Hyde quote analysis, character studies, theme essays and Victorian context for AQA, Edexcel and OCR GCSE English Literature.',
     type: 'article',
+    images: [
+      {
+        url: '/api/og?title=Jekyll+and+Hyde+Analysis+Hub+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Jekyll and Hyde Analysis Hub - The English Hub',
+      },
+    ],
   },
 }
 

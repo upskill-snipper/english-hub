@@ -6,6 +6,14 @@ export const metadata: Metadata = {
     title: 'Mark Scheme Reference | The English Hub',
     description:
       'Browse GCSE English mark schemes for AQA, Edexcel, OCR, and WJEC. View level descriptors, top tips, and common mistakes for every question.',
+    images: [
+      {
+        url: '/api/og?title=Mark+Scheme+Reference+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Mark Scheme Reference | The English Hub',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/school/tools/mark-schemes' },
   title: 'Mark Scheme Reference',

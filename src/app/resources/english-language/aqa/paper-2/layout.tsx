@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'AQA English Language Paper 2 - The English Hub',
     description:
       'AQA GCSE English Language Paper 2 guide. Writers Viewpoints and Perspectives: question breakdowns, timing advice, marking guide, and top-grade tips.',
+    images: [
+      {
+        url: '/api/og?title=AQA+English+Language+Paper+2+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'AQA English Language Paper 2 - The English Hub',
+      },
+    ],
   },
 }
 

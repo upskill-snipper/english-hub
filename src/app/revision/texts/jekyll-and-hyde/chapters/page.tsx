@@ -18,6 +18,14 @@ export const metadata: Metadata = {
     title: 'Jekyll and Hyde Chapter Analysis | The English Hub',
     description:
       'Detailed analysis of all 10 chapters of Strange Case of Dr Jekyll and Mr Hyde: summaries, key events, character development, language techniques with quotes, and structural significance.',
+    images: [
+      {
+        url: '/api/og?title=Jekyll+and+Hyde+Chapter+Analysis+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Jekyll and Hyde Chapter Analysis | The English Hub',
+      },
+    ],
   },
   title: 'Jekyll and Hyde Chapter Analysis',
   description:

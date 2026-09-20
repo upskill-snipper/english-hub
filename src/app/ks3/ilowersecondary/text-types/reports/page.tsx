@@ -12,14 +12,22 @@ import {
 export const metadata: Metadata = {
   title: 'Report texts',
   description:
-    'How to read and write report texts for Pearson Edexcel iLowerSecondary English (LEH11): conventions, impersonal language, structure analysis, two annotated original report extracts, practice questions with model answers and a writing task.',
+    'Report texts for LEH11: conventions, impersonal language, how a report differs from a recount and an article, annotated extracts and a writing task.',
   alternates: {
     canonical: 'https://theenglishhub.app/ks3/ilowersecondary/text-types/reports',
   },
   openGraph: {
     title: 'Report texts - reading and writing guide - The English Hub',
     description:
-      'Conventions of report writing, distinguishing reports from recounts and articles, annotated original extracts, and exam-style practice for KS3 iLowerSecondary English.',
+      'Report texts for LEH11: conventions, impersonal language, how a report differs from a recount and an article, annotated extracts and a writing task.',
+    images: [
+      {
+        url: '/api/og?title=Report+texts+-+reading+and+writing+guide+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Report texts - reading and writing guide - The English Hub',
+      },
+    ],
   },
 }
 

@@ -9,6 +9,14 @@ export const metadata: Metadata = {
       'IGCSE Edexcel unseen poetry - approach, language, structure, comparison - The English Hub',
     description:
       'How to read an unseen poem for the Pearson Edexcel IGCSE 4ET1 Paper 1 Section A. Approach, language analysis, structure and form, comparison practice.',
+    images: [
+      {
+        url: '/api/og?title=IGCSE+Edexcel+unseen+poetry+-+approach%2C+language%2C+structure%2C+comparison+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'IGCSE Edexcel unseen poetry - approach, language, structure, comparison - The English Hub',
+      },
+    ],
   },
   title: 'IGCSE Edexcel unseen poetry - approach, language, structure, comparison',
   description:

@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'To Kill a Mockingbird Characters - Edexcel IGCSE Literature',
     description:
       'Character analysis for To Kill a Mockingbird: Scout, Atticus, Jem, Tom Robinson, Boo Radley, Calpurnia, Bob and Mayella Ewell, Aunt Alexandra.',
+    images: [
+      {
+        url: '/api/og?title=To+Kill+a+Mockingbird+Characters+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'To Kill a Mockingbird Characters - Edexcel IGCSE Literature',
+      },
+    ],
   },
   title: 'To Kill a Mockingbird Characters - Edexcel IGCSE Literature',
   description:

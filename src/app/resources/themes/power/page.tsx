@@ -8,6 +8,14 @@ export const metadata: Metadata = {
     title: 'Power Theme Across Texts | GCSE English Literature',
     description:
       'Explore the theme of power across GCSE set texts: Macbeth, An Inspector Calls, Animal Farm, Ozymandias, and My Last Duchess. Key quotes, analysis, and comparison essay planning.',
+    images: [
+      {
+        url: '/api/og?title=Power+Theme+Across+Texts+%7C+GCSE+English+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'Power Theme Across Texts | GCSE English Literature',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/themes/power' },
   title: 'Power Theme Across Texts | GCSE English Literature',

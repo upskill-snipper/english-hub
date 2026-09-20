@@ -8,6 +8,14 @@ export const metadata: Metadata = {
     title: '30+ Spoken Language Presentation Topics | The English Hub',
     description:
       'Over 30 presentation topic ideas for the GCSE English Language Spoken Language endorsement, organised by category. Each includes a title, outline, key points, and potential audience questions.',
+    images: [
+      {
+        url: '/api/og?title=30%2B+Spoken+Language+Presentation+Topics+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: '30+ Spoken Language Presentation Topics | The English Hub',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/spoken-language/topics' },
   title: '30+ Spoken Language Presentation Topics',

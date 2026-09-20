@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'An Inspector Calls Themes - Edexcel IGCSE Literature',
     description:
       'Themes in An Inspector Calls: social responsibility, class, gender, age versus youth, morality, power and dramatic form.',
+    images: [
+      {
+        url: '/api/og?title=An+Inspector+Calls+Themes+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'An Inspector Calls Themes - Edexcel IGCSE Literature',
+      },
+    ],
   },
   title: 'An Inspector Calls Themes - Edexcel IGCSE Literature',
   description:

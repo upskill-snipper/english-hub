@@ -16,9 +16,7 @@ const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/progression'
 export const metadata: Metadata = {
   title: 'Progression',
   description:
-    'How KS3 English (Years 7-9) builds towards the iLowerSecondary ' +
-    'English exam, and where the qualification leads next - Pearson ' +
-    'Edexcel International GCSE English Language.',
+    'How KS3 English in Years 7 to 9 builds towards the iLowerSecondary exam, and where it leads next: Pearson Edexcel International GCSE English Language.',
   alternates: { canonical: PAGE_URL },
 }
 

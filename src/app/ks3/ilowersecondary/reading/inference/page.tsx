@@ -22,11 +22,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Inference (RAO2)',
     description:
-      'A masterclass on the iLowerSecondary English inference objective: literal vs implied meaning, deduction vs inference vs interpretation, the evidence-plus-suggestion sentence frame, how 1-mark and 2-mark questions are marked, and three original practice extracts with model answers.',
+      'Literal versus implied meaning, deduce versus infer, the evidence-plus-suggestion frame, and how 1-mark and 2-mark inference questions are marked.',
+    images: [
+      {
+        url: '/api/og?title=Inference+(RAO2)',
+        width: 1200,
+        height: 630,
+        alt: 'Inference (RAO2)',
+      },
+    ],
   },
-  title: 'Inference (RAO2): reading beyond the literal',
+  title: 'Inference (RAO2)',
   description:
-    'A masterclass on the iLowerSecondary English inference objective: literal vs implied meaning, deduction vs inference vs interpretation, the evidence-plus-suggestion sentence frame, how 1-mark and 2-mark questions are marked, and three original practice extracts with model answers.',
+    'Literal versus implied meaning, deduce versus infer, the evidence-plus-suggestion frame, and how 1-mark and 2-mark inference questions are marked.',
   alternates: { canonical: PAGE_URL },
 }
 

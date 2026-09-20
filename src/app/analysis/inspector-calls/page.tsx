@@ -26,6 +26,14 @@ export const metadata: Metadata = {
       'GCSE-ready analysis of An Inspector Calls - quotes, characters, themes and context written by markers.',
     url: 'https://theenglishhub.app/analysis/inspector-calls',
     type: 'article',
+    images: [
+      {
+        url: '/api/og?title=An+Inspector+Calls+Analysis+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'An Inspector Calls Analysis | The English Hub',
+      },
+    ],
   },
 }
 

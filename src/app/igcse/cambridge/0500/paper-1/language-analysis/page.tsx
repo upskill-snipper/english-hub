@@ -19,6 +19,14 @@ export const metadata: Metadata = {
     title: 'Language Analysis - IGCSE Language A Paper 1 Q2',
     description:
       'How to analyse language for IGCSE Language A Paper 1 Question 2. Method, analytical vocabulary, model sentences and common mistakes. Aligns with Cambridge syllabus 0500.',
+    images: [
+      {
+        url: '/api/og?title=Language+Analysis+-+IGCSE+Language+A+Paper+1+Q2',
+        width: 1200,
+        height: 630,
+        alt: 'Language Analysis - IGCSE Language A Paper 1 Q2',
+      },
+    ],
   },
   title: 'Language Analysis - IGCSE Language A Paper 1 Q2',
   description:

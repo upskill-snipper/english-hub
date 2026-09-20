@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: '30 Narrative Practice Prompts - Cambridge IGCSE',
     description:
       'Thirty Cambridge IGCSE-style narrative writing prompts, graded by difficulty, with story hooks and planning tips for each.',
+    images: [
+      {
+        url: '/api/og?title=30+Narrative+Practice+Prompts+-+Cambridge+IGCSE',
+        width: 1200,
+        height: 630,
+        alt: '30 Narrative Practice Prompts - Cambridge IGCSE',
+      },
+    ],
   },
   title: '30 Narrative Practice Prompts - Cambridge IGCSE',
   description:

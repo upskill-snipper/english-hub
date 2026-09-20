@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'GCSE and IGCSE English exam boards covered - The English Hub',
     description:
       'Six exam boards covered: AQA, Pearson Edexcel, OCR, WJEC Eduqas, Cambridge IGCSE, Pearson Edexcel IGCSE. Pick yours and revise the way examiners actually mark.',
+    images: [
+      {
+        url: '/api/og?title=GCSE+and+IGCSE+English+exam+boards+covered+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'GCSE and IGCSE English exam boards covered - The English Hub',
+      },
+    ],
   },
   title: 'GCSE and IGCSE English exam boards covered',
   description:

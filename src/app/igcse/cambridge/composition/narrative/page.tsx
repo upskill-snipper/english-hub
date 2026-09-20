@@ -23,6 +23,14 @@ export const metadata: Metadata = {
     title: 'Narrative Writing - Cambridge IGCSE Composition',
     description:
       'Cambridge IGCSE narrative writing techniques. Story structure, character, dialogue, tension and pacing, Grade 9 model stories and 30 practice prompts.',
+    images: [
+      {
+        url: '/api/og?title=Narrative+Writing+-+Cambridge+IGCSE+Composition',
+        width: 1200,
+        height: 630,
+        alt: 'Narrative Writing - Cambridge IGCSE Composition',
+      },
+    ],
   },
   title: 'Narrative Writing - Cambridge IGCSE Composition',
   description:

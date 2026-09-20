@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'Printable English Resources - The English Hub',
     description:
       'Free printable English worksheets and resources for the classroom. Revision mats, quote cards, technique lists, and display materials for teachers.',
+    images: [
+      {
+        url: '/api/og?title=Printable+English+Resources+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Printable English Resources - The English Hub',
+      },
+    ],
   },
 }
 

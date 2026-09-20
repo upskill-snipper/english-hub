@@ -13,6 +13,14 @@ export const metadata: Metadata = {
     description:
       'Language and structural techniques for AQA GCSE English: identification, analysis, and how to write about them.',
     url: 'https://theenglishhub.app/resources/english-language/aqa/techniques',
+    images: [
+      {
+        url: '/api/og?title=AQA+GCSE+English+Language+techniques+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'AQA GCSE English Language techniques - The English Hub',
+      },
+    ],
   },
 }
 

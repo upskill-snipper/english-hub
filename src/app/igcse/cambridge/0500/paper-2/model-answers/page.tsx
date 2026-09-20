@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Paper 2 Model Answers - IGCSE Language A 0500',
     description:
       'Grade A*/9 model answers for Cambridge IGCSE 0500 Paper 2: directed writing (letter, article, speech) and composition (descriptive and narrative). With examiner annotations.',
+    images: [
+      {
+        url: '/api/og?title=Paper+2+Model+Answers+-+IGCSE+Language+A+0500',
+        width: 1200,
+        height: 630,
+        alt: 'Paper 2 Model Answers - IGCSE Language A 0500',
+      },
+    ],
   },
   title: 'Paper 2 Model Answers - IGCSE Language A 0500',
   description:

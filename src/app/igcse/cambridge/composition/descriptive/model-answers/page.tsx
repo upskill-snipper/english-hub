@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'Grade 9 Descriptive Model Answers - Cambridge IGCSE',
     description:
       'Three full Grade 9 Cambridge IGCSE descriptive compositions with paragraph-by-paragraph examiner commentary on vocabulary, imagery and structure.',
+    images: [
+      {
+        url: '/api/og?title=Grade+9+Descriptive+Model+Answers+-+Cambridge+IGCSE',
+        width: 1200,
+        height: 630,
+        alt: 'Grade 9 Descriptive Model Answers - Cambridge IGCSE',
+      },
+    ],
   },
   title: 'Grade 9 Descriptive Model Answers - Cambridge IGCSE',
   description:

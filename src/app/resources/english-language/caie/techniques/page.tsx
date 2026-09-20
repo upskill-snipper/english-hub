@@ -17,6 +17,14 @@ export const metadata: Metadata = {
     description:
       'Language and structural techniques for Cambridge IGCSE English: identification, analysis, and how to write about them.',
     url: 'https://theenglishhub.app/resources/english-language/caie/techniques',
+    images: [
+      {
+        url: '/api/og?title=Cambridge+IGCSE+English+Language+techniques+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Cambridge IGCSE English Language techniques - The English Hub',
+      },
+    ],
   },
   keywords: [
     'language techniques',

@@ -10,6 +10,14 @@ export const metadata: Metadata = {
     title: 'An Inspector Calls Study Guide - Cambridge IGCSE English Literature',
     description:
       'Complete An Inspector Calls study guide for Cambridge IGCSE English Literature. Characters, themes, 15+ key quotes with analysis, 1912/1945 context, dramatic devices, and Cambridge-specific exam technique.',
+    images: [
+      {
+        url: '/api/og?title=An+Inspector+Calls+Study+Guide+-+Cambridge+IGCSE+English+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'An Inspector Calls Study Guide - Cambridge IGCSE English Literature',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/caie/inspector-calls',

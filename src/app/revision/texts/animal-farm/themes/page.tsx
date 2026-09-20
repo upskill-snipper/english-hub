@@ -24,6 +24,14 @@ export const metadata: Metadata = {
     title: 'Animal Farm Themes - In-Depth Analysis | The English Hub',
     description:
       'Explore the key themes in Animal Farm: power and corruption, class, language and propaganda, revolution, education and loyalty. GCSE revision with quotes and exam guidance.',
+    images: [
+      {
+        url: '/api/og?title=Animal+Farm+Themes+-+In-Depth+Analysis+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Animal Farm Themes - In-Depth Analysis | The English Hub',
+      },
+    ],
   },
   title: 'Animal Farm Themes - In-Depth Analysis',
   description:

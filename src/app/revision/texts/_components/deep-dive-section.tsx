@@ -1,5 +1,14 @@
 import Link from 'next/link'
-import { ArrowRight, BookOpen, BookText, Clock, PenLine, Quote, Users, Lightbulb } from 'lucide-react'
+import {
+  ArrowRight,
+  BookOpen,
+  BookText,
+  Clock,
+  PenLine,
+  Quote,
+  Users,
+  Lightbulb,
+} from 'lucide-react'
 
 export type DeepDiveLink = {
   href: string

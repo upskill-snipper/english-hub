@@ -22,6 +22,14 @@ export const metadata: Metadata = {
     title: 'Descriptive Writing - Cambridge IGCSE Composition',
     description:
       'Cambridge IGCSE descriptive writing techniques. Sensory language, extended metaphors, cinematic zoom structure, Grade 9 model answers and 30 practice prompts.',
+    images: [
+      {
+        url: '/api/og?title=Descriptive+Writing+-+Cambridge+IGCSE+Composition',
+        width: 1200,
+        height: 630,
+        alt: 'Descriptive Writing - Cambridge IGCSE Composition',
+      },
+    ],
   },
   title: 'Descriptive Writing - Cambridge IGCSE Composition',
   description:

@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'CAIE IGCSE Literature Exam Technique - The English Hub',
     description:
       'Exam technique guide for CAIE IGCSE English Literature. Question types, time management, essay structure, and strategies for top marks.',
+    images: [
+      {
+        url: '/api/og?title=CAIE+IGCSE+Literature+Exam+Technique+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'CAIE IGCSE Literature Exam Technique - The English Hub',
+      },
+    ],
   },
 }
 

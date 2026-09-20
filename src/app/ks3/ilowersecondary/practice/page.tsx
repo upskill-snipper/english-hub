@@ -10,10 +10,7 @@ const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/practice'
 export const metadata: Metadata = {
   title: 'Practice papers',
   description:
-    `Full original practice papers for the ${QUALIFICATION.title} ` +
-    `(${QUALIFICATION.paperCode}). Each is a complete ${QUALIFICATION.totalMarks}-mark, ` +
-    `${QUALIFICATION.durationLabel} paper with a Section A reading set (three linked ` +
-    'unseen texts), a Section B writing task, and a full mark scheme.',
+    'Six full original practice papers for LEH11/01, each a 70-mark, 1 hour 45 minute test with three linked unseen texts and a complete mark scheme.',
   alternates: { canonical: PAGE_URL },
 }
 

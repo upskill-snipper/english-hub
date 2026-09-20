@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     title: 'Things Fall Apart - Edexcel IGCSE Literature Study Guide',
     description:
       'Chinua Achebe\u2019s Things Fall Apart for Edexcel IGCSE Literature: Okonkwo, Umuofia, the arrival of the missionaries, key themes and quotations.',
+    images: [
+      {
+        url: '/api/og?title=Things+Fall+Apart+-+Edexcel+IGCSE+Literature+Study+Guide',
+        width: 1200,
+        height: 630,
+        alt: 'Things Fall Apart - Edexcel IGCSE Literature Study Guide',
+      },
+    ],
   },
   title: 'Things Fall Apart - Edexcel IGCSE Literature Study Guide',
   description:

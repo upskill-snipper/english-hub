@@ -10,6 +10,14 @@ export const metadata: Metadata = {
     title: 'OCR GCSE English Language resources - The English Hub',
     description:
       'OCR GCSE English Language resources. Paper 1 and Paper 2 breakdowns, spoken language assessment, writing skills, mark schemes and grade boundaries.',
+    images: [
+      {
+        url: '/api/og?title=OCR+GCSE+English+Language+resources+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'OCR GCSE English Language resources - The English Hub',
+      },
+    ],
   },
   title: 'OCR GCSE English Language resources',
   description:

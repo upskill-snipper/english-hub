@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'Structural Devices - The English Hub',
     description:
       'Master structural devices for GCSE English. Learn to identify and analyse narrative structure, paragraph organisation, and pacing techniques.',
+    images: [
+      {
+        url: '/api/og?title=Structural+Devices+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Structural Devices - The English Hub',
+      },
+    ],
   },
 }
 

@@ -25,6 +25,14 @@ export const metadata: Metadata = {
     title: 'Privacy Policy - The English Hub',
     description:
       'How The English Hub collects, uses, and protects your personal data under UK GDPR. Transparent data practices for students, parents, and schools.',
+    images: [
+      {
+        url: '/api/og?title=Privacy+Policy+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Privacy Policy - The English Hub',
+      },
+    ],
   },
 }
 

@@ -21,11 +21,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'For parents and teachers',
     description:
-      'A clear, reassuring guide to the Pearson Edexcel International Award in Lower Secondary English (LEH11) - what it is, how the exam works, what the grades mean, and how to support a child at home or in class.',
+      'What the Pearson Edexcel International Award in Lower Secondary English (LEH11) is, how the single exam works, and how to help at home or in class.',
+    images: [
+      {
+        url: '/api/og?title=For+parents+and+teachers',
+        width: 1200,
+        height: 630,
+        alt: 'For parents and teachers',
+      },
+    ],
   },
-  title: 'iLowerSecondary English: for parents & teachers',
+  title: 'For parents and teachers',
   description:
-    'A clear, reassuring guide to the Pearson Edexcel International Award in Lower Secondary English (LEH11) - what it is, how the exam works, what the grades mean, and how to support a child at home or in class.',
+    'What the Pearson Edexcel International Award in Lower Secondary English (LEH11) is, how the single exam works, and how to help at home or in class.',
   alternates: { canonical: PAGE_URL },
 }
 

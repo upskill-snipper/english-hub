@@ -10,6 +10,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'He Never Expected Much - Thomas Hardy | Cambridge IGCSE 0475',
     description: 'Study guide for ',
+    images: [
+      {
+        url: '/api/og?title=He+Never+Expected+Much+-+Thomas+Hardy+%7C+Cambridge+IGCSE+0475',
+        width: 1200,
+        height: 630,
+        alt: 'He Never Expected Much - Thomas Hardy | Cambridge IGCSE 0475',
+      },
+    ],
   },
   title: 'He Never Expected Much - Thomas Hardy | Cambridge IGCSE 0475',
   description:

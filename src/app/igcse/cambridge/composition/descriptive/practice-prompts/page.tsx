@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: '30 Descriptive Practice Prompts - Cambridge IGCSE',
     description:
       'Thirty Cambridge IGCSE-style descriptive writing prompts graded by difficulty, with planning tips for each.',
+    images: [
+      {
+        url: '/api/og?title=30+Descriptive+Practice+Prompts+-+Cambridge+IGCSE',
+        width: 1200,
+        height: 630,
+        alt: '30 Descriptive Practice Prompts - Cambridge IGCSE',
+      },
+    ],
   },
   title: '30 Descriptive Practice Prompts - Cambridge IGCSE',
   description:

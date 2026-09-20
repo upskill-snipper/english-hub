@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Songs of Ourselves Volume 2 - CAIE IGCSE - The English Hub',
     description:
       'CAIE IGCSE English Literature guide for Songs of Ourselves Volume 2. Poetry analysis, themes, techniques, and exam-ready comparison strategies.',
+    images: [
+      {
+        url: '/api/og?title=Songs+of+Ourselves+Volume+2+-+CAIE+IGCSE+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Songs of Ourselves Volume 2 - CAIE IGCSE - The English Hub',
+      },
+    ],
   },
 }
 

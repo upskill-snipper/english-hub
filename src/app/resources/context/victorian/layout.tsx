@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'Victorian Context - The English Hub',
     description:
       'Victorian historical context for GCSE English Literature. Social class, industrialisation, morality, and key themes in Dickens, Stevenson, and Bronte texts.',
+    images: [
+      {
+        url: '/api/og?title=Victorian+Context+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Victorian Context - The English Hub',
+      },
+    ],
   },
 }
 

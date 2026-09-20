@@ -15,6 +15,14 @@ export const metadata: Metadata = {
     title: 'Choose your level or exam board - The English Hub',
     description:
       'Pick the level you study, then the board. KS3, GCSE and IGCSE supported, with EAL learner support alongside every board.',
+    images: [
+      {
+        url: '/api/og?title=Choose+your+level+or+exam+board+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Choose your level or exam board - The English Hub',
+      },
+    ],
   },
   robots: { index: false, follow: true },
 }

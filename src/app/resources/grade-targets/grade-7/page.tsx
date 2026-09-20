@@ -8,6 +8,14 @@ export const metadata: Metadata = {
     title: 'Getting a Grade 7 | Grade Targets | The English Hub',
     description:
       'What separates a Grade 7 from a 5 or 6 in GCSE English. Advanced skills, example responses, and detailed advice for pushing from Grade 6 to Grade 7 in English Language and Literature.',
+    images: [
+      {
+        url: '/api/og?title=Getting+a+Grade+7+%7C+Grade+Targets+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Getting a Grade 7 | Grade Targets | The English Hub',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/grade-targets/grade-7' },
   title: 'Getting a Grade 7 | Grade Targets',

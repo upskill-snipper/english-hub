@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'A View from the Bridge Key Quotes - Edexcel IGCSE Literature',
     description:
       'Fifteen key quotations from A View from the Bridge with speaker, context and analysis for Edexcel IGCSE Literature exam revision.',
+    images: [
+      {
+        url: '/api/og?title=A+View+from+the+Bridge+Key+Quotes+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'A View from the Bridge Key Quotes - Edexcel IGCSE Literature',
+      },
+    ],
   },
   title: 'A View from the Bridge Key Quotes - Edexcel IGCSE Literature',
   description:

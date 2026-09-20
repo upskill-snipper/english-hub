@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     title: 'Blood Brothers - Key Quotes | The English Hub',
     description:
       'Twenty essential quotations from Blood Brothers by Willy Russell with speaker, context and detailed analysis.',
+    images: [
+      {
+        url: '/api/og?title=Blood+Brothers+-+Key+Quotes+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Blood Brothers - Key Quotes | The English Hub',
+      },
+    ],
   },
   title: 'Blood Brothers - Key Quotes',
   description:

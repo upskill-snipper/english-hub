@@ -115,6 +115,14 @@ export async function generateMetadata({
       description: isAnnotated(essay)
         ? `Annotated Grade ${essay.targetGrade} ${textLabel} essay with paragraph-level commentary.`
         : `Grade ${essay.targetGrade} ${textLabel} model essay, written to show how a top-band answer is built.`,
+      images: [
+        {
+          url: `/api/og?title=${encodeURIComponent(`${essay.title} - ${isAnnotated(essay) ? 'Annotated ' : ''}Grade ${essay.targetGrade} model essay`)}`,
+          width: 1200,
+          height: 630,
+          alt: `${essay.title} - ${isAnnotated(essay) ? 'Annotated ' : ''}Grade ${essay.targetGrade} model essay`,
+        },
+      ],
     },
   }
 }

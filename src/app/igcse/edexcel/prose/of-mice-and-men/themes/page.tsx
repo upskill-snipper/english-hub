@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'Of Mice and Men Themes - Edexcel IGCSE Literature',
     description:
       'Themes in Steinbeck\u2019s Of Mice and Men: the American Dream, loneliness, friendship, discrimination, fate, power and nature.',
+    images: [
+      {
+        url: '/api/og?title=Of+Mice+and+Men+Themes+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'Of Mice and Men Themes - Edexcel IGCSE Literature',
+      },
+    ],
   },
   title: 'Of Mice and Men Themes - Edexcel IGCSE Literature',
   description:

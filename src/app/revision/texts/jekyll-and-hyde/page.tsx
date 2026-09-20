@@ -47,6 +47,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Jekyll and Hyde revision guide - themes, characters, key quotes - The English Hub',
     description: 'Jekyll and Hyde GCSE revision - Stevenson',
+    images: [
+      {
+        url: '/api/og?title=Jekyll+and+Hyde+revision+guide+-+themes%2C+characters%2C+key+quotes+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Jekyll and Hyde revision guide - themes, characters, key quotes - The English Hub',
+      },
+    ],
   },
   title: 'Jekyll and Hyde revision guide - themes, characters, key quotes',
   description:

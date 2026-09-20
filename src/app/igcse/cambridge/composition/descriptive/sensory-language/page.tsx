@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'Sensory Language - Cambridge IGCSE Descriptive Writing',
     description:
       'Cambridge IGCSE descriptive writing: how to use all five senses - sight, sound, smell, touch, taste - to build immersive description.',
+    images: [
+      {
+        url: '/api/og?title=Sensory+Language+-+Cambridge+IGCSE+Descriptive+Writing',
+        width: 1200,
+        height: 630,
+        alt: 'Sensory Language - Cambridge IGCSE Descriptive Writing',
+      },
+    ],
   },
   title: 'Sensory Language - Cambridge IGCSE Descriptive Writing',
   description:

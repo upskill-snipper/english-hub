@@ -25,11 +25,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'The recount',
     description:
-      'A KS3 iLowerSecondary English guide to the recount as both a non-fiction text type and a Section B writing form: conventions, structure analysis (RAO3), worked extracts, practice questions with model answers, and a recount-writing task.',
+      'The recount as a non-fiction text type and a Section B writing form: conventions, structure analysis, two annotated extracts and a writing task.',
+    images: [
+      {
+        url: '/api/og?title=The+recount',
+        width: 1200,
+        height: 630,
+        alt: 'The recount',
+      },
+    ],
   },
-  title: 'The recount - reading and writing guide',
+  title: 'Recount texts',
   description:
-    'A KS3 iLowerSecondary English guide to the recount as both a non-fiction text type and a Section B writing form: conventions, structure analysis (RAO3), worked extracts, practice questions with model answers, and a recount-writing task.',
+    'The recount as a non-fiction text type and a Section B writing form: conventions, structure analysis, two annotated extracts and a writing task.',
   alternates: { canonical: PAGE_URL },
 }
 

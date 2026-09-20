@@ -10,9 +10,7 @@ const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/reading-skills'
 export const metadata: Metadata = {
   title: 'Reading skills',
   description:
-    'Every Section A reading skill for the iLowerSecondary English exam - ' +
-    'retrieval, inference, structure, language, purpose and viewpoint, ' +
-    'critical response and comparison - each a full masterclass.',
+    'Every Section A reading skill for the iLowerSecondary English exam: retrieval, inference, structure, language, purpose, critical response and comparison.',
   alternates: { canonical: PAGE_URL },
 }
 

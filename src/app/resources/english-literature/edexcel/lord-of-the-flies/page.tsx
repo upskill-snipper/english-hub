@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'Lord of the Flies Study Guide - Edexcel GCSE English Literature',
     description:
       'Complete Lord of the Flies revision guide for Edexcel GCSE English Literature. Plot, characters, themes, 15+ key quotes, symbolism, context, and Edexcel exam technique.',
+    images: [
+      {
+        url: '/api/og?title=Lord+of+the+Flies+Study+Guide+-+Edexcel+GCSE+English+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'Lord of the Flies Study Guide - Edexcel GCSE English Literature',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/lord-of-the-flies',

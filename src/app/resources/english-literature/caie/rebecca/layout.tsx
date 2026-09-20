@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'Rebecca - CAIE IGCSE - The English Hub',
     description:
       'CAIE IGCSE English Literature guide for Rebecca by Daphne du Maurier. Character analysis, gothic themes, key quotes, and exam techniques.',
+    images: [
+      {
+        url: '/api/og?title=Rebecca+-+CAIE+IGCSE+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Rebecca - CAIE IGCSE - The English Hub',
+      },
+    ],
   },
 }
 

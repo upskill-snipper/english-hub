@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'Study Tools - GCSE English Revision',
     description:
       'Interactive study tools for GCSE and IGCSE English revision. Revision planner, quote flashcards, quote tester, and progress checklists to help you prepare for your exams.',
+    images: [
+      {
+        url: '/api/og?title=Study+Tools+-+GCSE+English+Revision',
+        width: 1200,
+        height: 630,
+        alt: 'Study Tools - GCSE English Revision',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/study-tools' },
   title: 'Study Tools - GCSE English Revision',

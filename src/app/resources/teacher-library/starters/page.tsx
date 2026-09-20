@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'Starter Activities - Teacher Library',
     description:
       '20 quick 5-minute English lesson starters. Retrieval practice, vocabulary warm-ups, and analysis hooks.',
+    images: [
+      {
+        url: '/api/og?title=Starter+Activities+-+Teacher+Library',
+        width: 1200,
+        height: 630,
+        alt: 'Starter Activities - Teacher Library',
+      },
+    ],
   },
   title: 'Starter Activities - Teacher Library',
   description:

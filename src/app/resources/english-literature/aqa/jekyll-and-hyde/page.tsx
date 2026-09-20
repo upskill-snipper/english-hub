@@ -7,6 +7,14 @@ export const metadata: Metadata = {
     title: 'Jekyll and Hyde Study Guide - AQA English Literature GCSE',
     description:
       'Complete Jekyll and Hyde revision guide for AQA GCSE English Literature Paper 1 Section B. Key themes, 15+ quotations with analysis, Victorian context, character analysis, and sample essay plans.',
+    images: [
+      {
+        url: '/api/og?title=Jekyll+and+Hyde+Study+Guide+-+AQA+English+Literature+GCSE',
+        width: 1200,
+        height: 630,
+        alt: 'Jekyll and Hyde Study Guide - AQA English Literature GCSE',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/aqa/jekyll-and-hyde',

@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Edexcel Poetry Anthology - Relationships and Conflict Clusters',
     description:
       'Full analysis of all 30 poems in the Edexcel GCSE English Literature poetry anthology. Relationships and Conflict clusters with themes, language analysis, structure, and comparison ideas.',
+    images: [
+      {
+        url: '/api/og?title=Edexcel+Poetry+Anthology+-+Relationships+and+Conflict+Clusters',
+        width: 1200,
+        height: 630,
+        alt: 'Edexcel Poetry Anthology - Relationships and Conflict Clusters',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/poetry',

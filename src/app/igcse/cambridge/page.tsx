@@ -31,6 +31,14 @@ export const metadata: Metadata = {
     title: 'Cambridge IGCSE English - The English Hub',
     description:
       'Cambridge IGCSE English hub. Covers Language A and Language B with full study guides, exam technique and assessment breakdowns.',
+    images: [
+      {
+        url: '/api/og?title=Cambridge+IGCSE+English+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Cambridge IGCSE English - The English Hub',
+      },
+    ],
   },
   title: 'Cambridge IGCSE English',
   description:

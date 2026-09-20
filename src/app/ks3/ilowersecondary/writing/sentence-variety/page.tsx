@@ -22,11 +22,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Sentence variety & openings',
     description:
-      'A masterclass on using simple, compound, complex and minor sentences for effect, varied sentence openings, short sentences for tension, the short-then-long rhythm and single-clause vs subordinate development - with original before/after rewrites, a sentence-opener bank and a drill task with a model answer.',
+      'Simple, compound, complex and minor sentences for effect, varied openings and short sentences for tension, with before-and-after rewrites and a drill.',
+    images: [
+      {
+        url: '/api/og?title=Sentence+variety+%26+openings',
+        width: 1200,
+        height: 630,
+        alt: 'Sentence variety & openings',
+      },
+    ],
   },
-  title: 'A range of sentences & sentence openings - a masterclass',
+  title: 'Sentence variety & openings',
   description:
-    'How to use a range of sentences and sentence openings for effect and impact in iLowerSecondary English writing: simple, compound, complex and minor sentences and when each works, varied openings, short sentences for tension, the short-then-long rhythm and single-clause precision vs subordinate development (W9.3C), with original before/after rewrites and a drill task with a model answer.',
+    'Simple, compound, complex and minor sentences for effect, varied openings and short sentences for tension, with before-and-after rewrites and a drill.',
   alternates: { canonical: PAGE_URL },
 }
 

@@ -24,6 +24,14 @@ export const metadata: Metadata = {
     title: 'Narrative Voice - Reading Practice Framework - The English Hub',
     description:
       'Cambridge IGCSE Paper 1 reading practice on first-person vs third-person narration. Comprehension, language analysis, summary and self-assessment with free Project Gutenberg texts.',
+    images: [
+      {
+        url: '/api/og?title=Narrative+Voice+-+Reading+Practice+Framework+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Narrative Voice - Reading Practice Framework - The English Hub',
+      },
+    ],
   },
   title: 'Narrative Voice - Reading Practice Framework',
   description:

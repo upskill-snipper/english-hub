@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     title: 'Of Mice and Men - Themes | The English Hub',
     description:
       'Detailed theme analysis for Of Mice and Men by John Steinbeck: The American Dream, Loneliness, Power, Friendship, Prejudice and Nature.',
+    images: [
+      {
+        url: '/api/og?title=Of+Mice+and+Men+-+Themes+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Of Mice and Men - Themes | The English Hub',
+      },
+    ],
   },
   title: 'Of Mice and Men - Themes',
   description:

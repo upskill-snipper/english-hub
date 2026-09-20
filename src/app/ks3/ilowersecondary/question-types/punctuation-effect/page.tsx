@@ -11,7 +11,7 @@ const RAO3 = ASSESSMENT_OBJECTIVES.RAO3
 export const metadata: Metadata = {
   title: 'Effect of a punctuation mark',
   description:
-    'Master the 2-mark punctuation-effect question in the Pearson Edexcel iLowerSecondary English achievement test: an effects reference for every mark, worked extracts and split model answers.',
+    'The 2-mark punctuation-effect question in the LEH11/01 reading paper: an effects reference for every mark, worked extracts and split model answers.',
   alternates: {
     canonical: 'https://theenglishhub.app/ks3/ilowersecondary/question-types/punctuation-effect',
   },
@@ -20,6 +20,14 @@ export const metadata: Metadata = {
       'Effect of a punctuation mark - iLowerSecondary English question masterclass - The English Hub',
     description:
       'How to earn both marks on the punctuation-effect question: name the effect, then explain it from the text. Original worked examples and model answers.',
+    images: [
+      {
+        url: '/api/og?title=Effect+of+a+punctuation+mark+-+iLowerSecondary+English+question+masterclass+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Effect of a punctuation mark - iLowerSecondary English question masterclass - The English Hub',
+      },
+    ],
   },
 }
 

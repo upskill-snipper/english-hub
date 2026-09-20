@@ -22,6 +22,14 @@ export const metadata: Metadata = {
     title: 'How to get a Grade 7 | Cambridge IGCSE Language B | The English Hub',
     description:
       'Grade 7 guide for Cambridge IGCSE Language B First Language English. Clear checklists for reading analysis, writing control and exam technique to reach the old A grade.',
+    images: [
+      {
+        url: '/api/og?title=How+to+get+a+Grade+7+%7C+Cambridge+IGCSE+Language+B+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'How to get a Grade 7 | Cambridge IGCSE Language B | The English Hub',
+      },
+    ],
   },
   title: 'How to get a Grade 7 | Cambridge IGCSE Language B',
   description:

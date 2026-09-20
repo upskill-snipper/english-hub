@@ -6,6 +6,14 @@ export const metadata: Metadata = {
     title: 'Starter Activity Generator | School Tools | The English Hub',
     description:
       'Generate bellwork and starter activities for English lessons. Includes quotes, vocabulary challenges, inference puzzles, grammar fixes, creative prompts, and exam question unpicks.',
+    images: [
+      {
+        url: '/api/og?title=Starter+Activity+Generator+%7C+School+Tools+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Starter Activity Generator | School Tools | The English Hub',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/school/tools/starters' },
   title: 'Starter Activity Generator | School Tools',

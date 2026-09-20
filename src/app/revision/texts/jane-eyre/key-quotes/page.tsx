@@ -15,6 +15,14 @@ export const metadata: Metadata = {
     title: 'Jane Eyre Key Quotes -- 25 Essential Quotations | The English Hub',
     description:
       '25 key quotations from Jane Eyre by Charlotte Bronte with detailed analysis for AQA and OCR GCSE English Literature.',
+    images: [
+      {
+        url: '/api/og?title=Jane+Eyre+Key+Quotes+--+25+Essential+Quotations+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Jane Eyre Key Quotes -- 25 Essential Quotations | The English Hub',
+      },
+    ],
   },
   title: 'Jane Eyre Key Quotes -- 25 Essential Quotations',
   description:

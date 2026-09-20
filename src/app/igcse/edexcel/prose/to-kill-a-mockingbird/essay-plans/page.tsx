@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'To Kill a Mockingbird Essay Plans - Edexcel IGCSE Literature',
     description:
       'Five IGCSE essay plans for To Kill a Mockingbird with PEEL paragraphs: racism and justice, moral courage, Scout\u2019s growth, the mockingbird symbol and Atticus as a moral figure.',
+    images: [
+      {
+        url: '/api/og?title=To+Kill+a+Mockingbird+Essay+Plans+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'To Kill a Mockingbird Essay Plans - Edexcel IGCSE Literature',
+      },
+    ],
   },
   title: 'To Kill a Mockingbird Essay Plans - Edexcel IGCSE Literature',
   description:

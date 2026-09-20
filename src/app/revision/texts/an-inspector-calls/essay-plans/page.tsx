@@ -25,6 +25,14 @@ export const metadata: Metadata = {
     title: 'An Inspector Calls Essay Plans | The English Hub',
     description:
       'Five GCSE essay plans for An Inspector Calls by J.B. Priestley with thesis statements, paragraph structures and key quotes for exam preparation.',
+    images: [
+      {
+        url: '/api/og?title=An+Inspector+Calls+Essay+Plans+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'An Inspector Calls Essay Plans | The English Hub',
+      },
+    ],
   },
   title: 'An Inspector Calls Essay Plans',
   description:

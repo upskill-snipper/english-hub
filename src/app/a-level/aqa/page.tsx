@@ -7,6 +7,14 @@ export const metadata: Metadata = {
     title: 'AQA A-Level English - The English Hub',
     description:
       'AQA A-Level English Literature (7712) and Language (7702) revision hub. Cross-board set text analysis, essay technique and language study while full AQA A-Level content is on our roadmap.',
+    images: [
+      {
+        url: '/api/og?title=AQA+A-Level+English+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'AQA A-Level English - The English Hub',
+      },
+    ],
   },
   title: 'AQA A-Level English',
   description:

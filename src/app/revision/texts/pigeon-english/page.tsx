@@ -10,6 +10,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Pigeon English revision guide - themes, characters, key quotes - The English Hub',
     description: 'Pigeon English GCSE revision - Stephen Kelman',
+    images: [
+      {
+        url: '/api/og?title=Pigeon+English+revision+guide+-+themes%2C+characters%2C+key+quotes+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Pigeon English revision guide - themes, characters, key quotes - The English Hub',
+      },
+    ],
   },
   title: 'Pigeon English revision guide - themes, characters, key quotes',
   description:

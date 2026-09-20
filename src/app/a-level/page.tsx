@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     title: 'A-Level English - The English Hub',
     description:
       'UK A-Level English Literature and Language hubs for AQA, Pearson Edexcel, OCR and WJEC Eduqas. Cross-board revision tools while full A-Level content is on our roadmap.',
+    images: [
+      {
+        url: '/api/og?title=A-Level+English+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'A-Level English - The English Hub',
+      },
+    ],
   },
   title: 'A-Level English',
   description:

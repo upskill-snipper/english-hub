@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     title: 'Romeo and Juliet - Act-by-Act Analysis | The English Hub',
     description:
       'Detailed act-by-act and scene-by-scene analysis of Romeo and Juliet by William Shakespeare, with language analysis and key quotations for GCSE revision.',
+    images: [
+      {
+        url: '/api/og?title=Romeo+and+Juliet+-+Act-by-Act+Analysis+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Romeo and Juliet - Act-by-Act Analysis | The English Hub',
+      },
+    ],
   },
   title: 'Romeo and Juliet - Act-by-Act Analysis',
   description:

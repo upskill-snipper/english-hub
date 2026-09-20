@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     title: 'GCSE English Analysis Hub | The English Hub',
     description:
       'In-depth analysis, themed essays and quote-by-quote breakdowns for every GCSE English Literature set text and the Language paper.',
+    images: [
+      {
+        url: '/api/og?title=GCSE+English+Analysis+Hub+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'GCSE English Analysis Hub | The English Hub',
+      },
+    ],
   },
   title: 'GCSE English Analysis Hub',
   description:

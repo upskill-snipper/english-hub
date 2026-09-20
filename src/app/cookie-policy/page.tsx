@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Cookie Policy - The English Hub',
     description:
       'How The English Hub uses cookies and similar technologies to improve your experience, remember preferences, and analyse site traffic responsibly.',
+    images: [
+      {
+        url: '/api/og?title=Cookie+Policy+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Cookie Policy - The English Hub',
+      },
+    ],
   },
 }
 

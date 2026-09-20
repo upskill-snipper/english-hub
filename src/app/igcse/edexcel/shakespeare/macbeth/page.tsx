@@ -21,6 +21,14 @@ export const metadata: Metadata = {
     title: 'Macbeth - Edexcel IGCSE Literature Study Guide',
     description:
       'Full Macbeth study guide for Edexcel IGCSE English Literature. Plot, characters, themes, quotes, Jacobean context and exam technique for the two-part Shakespeare question.',
+    images: [
+      {
+        url: '/api/og?title=Macbeth+-+Edexcel+IGCSE+Literature+Study+Guide',
+        width: 1200,
+        height: 630,
+        alt: 'Macbeth - Edexcel IGCSE Literature Study Guide',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/macbeth',

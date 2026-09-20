@@ -20,6 +20,14 @@ export const metadata: Metadata = {
     title: 'IGCSE Language A Course Overview - The English Hub',
     description:
       'Course overview for Cambridge IGCSE Language A (First Language English). Reading skills, writing skills and paper-by-paper content.',
+    images: [
+      {
+        url: '/api/og?title=IGCSE+Language+A+Course+Overview+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'IGCSE Language A Course Overview - The English Hub',
+      },
+    ],
   },
   title: 'IGCSE Language A Course Overview',
   description:

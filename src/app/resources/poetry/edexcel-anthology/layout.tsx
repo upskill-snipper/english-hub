@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'Edexcel Poetry Anthology - The English Hub',
     description:
       'Edexcel GCSE English Literature poetry anthology guide. Complete analysis of anthology poems with themes, techniques, and comparison strategies.',
+    images: [
+      {
+        url: '/api/og?title=Edexcel+Poetry+Anthology+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Edexcel Poetry Anthology - The English Hub',
+      },
+    ],
   },
 }
 

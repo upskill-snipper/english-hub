@@ -13,6 +13,14 @@ export const metadata: Metadata = {
     title: 'AQA Language Paper 1 & 2 Technique Guides - The English Hub',
     description:
       'Grade 9 walkthroughs for every AQA English Language Paper 1 and Paper 2 question, written by GCSE markers.',
+    images: [
+      {
+        url: '/api/og?title=AQA+Language+Paper+1+%26+2+Technique+Guides+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'AQA Language Paper 1 & 2 Technique Guides - The English Hub',
+      },
+    ],
   },
 }
 

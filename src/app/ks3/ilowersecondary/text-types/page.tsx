@@ -10,10 +10,7 @@ const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/text-types'
 export const metadata: Metadata = {
   title: 'Non-fiction text types',
   description:
-    'Reading-and-writing guides to every non-fiction text type on the ' +
-    'iLowerSecondary English specification - autobiography, blogs, ' +
-    'leaflets, articles, instructions, recount, reports - and the five ' +
-    'purposes.',
+    'Guides to every non-fiction text type on the specification - autobiography, blogs, leaflets, articles, instructions, recounts, reports - and the five purposes.',
   alternates: { canonical: PAGE_URL },
 }
 

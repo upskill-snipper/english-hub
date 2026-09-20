@@ -12,6 +12,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Animal Farm revision guide - themes, characters, key quotes - The English Hub',
     description: 'Animal Farm GCSE revision - Orwell',
+    images: [
+      {
+        url: '/api/og?title=Animal+Farm+revision+guide+-+themes%2C+characters%2C+key+quotes+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Animal Farm revision guide - themes, characters, key quotes - The English Hub',
+      },
+    ],
   },
   title: 'Animal Farm revision guide - themes, characters, key quotes',
   description:

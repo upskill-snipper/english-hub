@@ -7,6 +7,14 @@ export const metadata: Metadata = {
     title: 'Poetry Annotation Framework - Worksheet',
     description:
       'A reusable poem annotation worksheet using the SMILE framework (Structure, Meaning, Imagery, Language, Effect).',
+    images: [
+      {
+        url: '/api/og?title=Poetry+Annotation+Framework+-+Worksheet',
+        width: 1200,
+        height: 630,
+        alt: 'Poetry Annotation Framework - Worksheet',
+      },
+    ],
   },
   title: 'Poetry Annotation Framework - Worksheet',
   description:

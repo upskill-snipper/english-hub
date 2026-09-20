@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'A View from the Bridge Themes - Edexcel IGCSE Literature',
     description:
       'Themes in A View from the Bridge: honour and reputation, masculinity and sexuality, law versus justice, family, immigration and tragic form.',
+    images: [
+      {
+        url: '/api/og?title=A+View+from+the+Bridge+Themes+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'A View from the Bridge Themes - Edexcel IGCSE Literature',
+      },
+    ],
   },
   title: 'A View from the Bridge Themes - Edexcel IGCSE Literature',
   description:

@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Romeo and Juliet Characters - Edexcel IGCSE Literature',
     description:
       'Character analysis for Romeo, Juliet, Friar Lawrence, the Nurse, Mercutio, Tybalt, Lord Capulet and Paris for Edexcel IGCSE English Literature.',
+    images: [
+      {
+        url: '/api/og?title=Romeo+and+Juliet+Characters+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'Romeo and Juliet Characters - Edexcel IGCSE Literature',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/romeo-and-juliet/characters',

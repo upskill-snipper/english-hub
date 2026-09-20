@@ -10,6 +10,14 @@ export const metadata: Metadata = {
     title: 'Love and Relationships Poetry Anthology - The English Hub',
     description:
       'Love and Relationships poetry anthology guide. Analysis of all 15 poems with themes, techniques, key quotes, and comparison strategies.',
+    images: [
+      {
+        url: '/api/og?title=Love+and+Relationships+Poetry+Anthology+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Love and Relationships Poetry Anthology - The English Hub',
+      },
+    ],
   },
 }
 

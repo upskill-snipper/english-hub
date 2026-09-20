@@ -8,6 +8,14 @@ export const metadata: Metadata = {
     title: 'AQA GCSE English Literature resources - The English Hub',
     description:
       'AQA GCSE English Literature set-text guides for Macbeth, Romeo and Juliet, Power and Conflict poetry, exam technique and Grade 9 essay plans.',
+    images: [
+      {
+        url: '/api/og?title=AQA+GCSE+English+Literature+resources+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'AQA GCSE English Literature resources - The English Hub',
+      },
+    ],
   },
   title: 'AQA GCSE English Literature resources',
   description:

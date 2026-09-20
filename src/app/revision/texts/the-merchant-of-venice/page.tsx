@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'The Merchant of Venice - Study Guide | The English Hub',
     description:
       'In-depth study guide for The Merchant of Venice by William Shakespeare: plot, characters, themes, context and key quotations.',
+    images: [
+      {
+        url: '/api/og?title=The+Merchant+of+Venice+-+Study+Guide+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'The Merchant of Venice - Study Guide | The English Hub',
+      },
+    ],
   },
   title: 'The Merchant of Venice - Study Guide',
   description:

@@ -19,6 +19,14 @@ export const metadata: Metadata = {
     title: 'Essay Plans - Power & Conflict Poetry | The English Hub',
     description:
       'Ten ready-made essay plans for AQA Power & Conflict poetry comparison questions. Grade 5 and Grade 9 approaches with full PEEL paragraphs.',
+    images: [
+      {
+        url: '/api/og?title=Essay+Plans+-+Power+%26+Conflict+Poetry+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Essay Plans - Power & Conflict Poetry | The English Hub',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/revision/poetry/power-and-conflict/essay-plans',

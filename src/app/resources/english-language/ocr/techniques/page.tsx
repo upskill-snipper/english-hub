@@ -16,6 +16,14 @@ export const metadata: Metadata = {
     description:
       'Language and structural techniques for OCR GCSE English: identification, analysis, and how to write about them.',
     url: 'https://theenglishhub.app/resources/english-language/ocr/techniques',
+    images: [
+      {
+        url: '/api/og?title=OCR+GCSE+English+Language+techniques+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'OCR GCSE English Language techniques - The English Hub',
+      },
+    ],
   },
 }
 

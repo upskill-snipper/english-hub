@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Macbeth Plot Summary - Edexcel IGCSE Literature',
     description:
       'Scene-by-scene Macbeth plot summary for Edexcel IGCSE English Literature. Follow the whole play from the witches',
+    images: [
+      {
+        url: '/api/og?title=Macbeth+Plot+Summary+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'Macbeth Plot Summary - Edexcel IGCSE Literature',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/macbeth/plot',

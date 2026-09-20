@@ -19,6 +19,14 @@ export const metadata: Metadata = {
     url: 'https://theenglishhub.app/analysis/ai-feedback-head-to-head',
     type: 'article',
     siteName: 'The English Hub',
+    images: [
+      {
+        url: '/api/og?title=AI+Essay+Feedback%3A+AQA+vs+Edexcel+vs+OCR+-+Same+Macbeth+Essay',
+        width: 1200,
+        height: 630,
+        alt: 'AI Essay Feedback: AQA vs Edexcel vs OCR - Same Macbeth Essay',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',

@@ -16,6 +16,14 @@ export const metadata: Metadata = {
     title: 'Bayonet Charge - AQA Power and Conflict | The English Hub',
     description:
       'Analysis of Bayonet Charge for AQA GCSE English Literature Power and Conflict cluster: themes, language, structure, and comparisons.',
+    images: [
+      {
+        url: '/api/og?title=Bayonet+Charge+-+AQA+Power+and+Conflict+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Bayonet Charge - AQA Power and Conflict | The English Hub',
+      },
+    ],
   },
   title: 'Bayonet Charge - AQA Power and Conflict',
   description:

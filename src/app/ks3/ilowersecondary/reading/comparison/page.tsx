@@ -14,11 +14,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Comparing non-fiction texts',
     description:
-      'Masterclass on the levelled comparison question: linking ideas and viewpoints across two texts, comparative connectives, the feature-tick table, and graded model answers for every level.',
+      'The levelled comparison question: linking ideas across two texts, comparative connectives, the feature-tick table and model answers at every level.',
+    images: [
+      {
+        url: '/api/og?title=Comparing+non-fiction+texts',
+        width: 1200,
+        height: 630,
+        alt: 'Comparing non-fiction texts',
+      },
+    ],
   },
-  title: 'Comparing non-fiction texts - iLowerSecondary English',
+  title: 'Comparing non-fiction texts',
   description:
-    'Masterclass on the levelled comparison question: linking ideas and viewpoints across two texts, comparative connectives, the feature-tick table, and graded model answers for every level.',
+    'The levelled comparison question: linking ideas across two texts, comparative connectives, the feature-tick table and model answers at every level.',
   alternates: {
     canonical: 'https://theenglishhub.app/ks3/ilowersecondary/reading/comparison',
   },

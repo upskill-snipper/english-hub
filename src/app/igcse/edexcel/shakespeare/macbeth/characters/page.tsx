@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Macbeth Characters - Edexcel IGCSE Literature',
     description:
       'Character analysis for Macbeth, Lady Macbeth, Banquo, Duncan, Macduff and the Witches for Edexcel IGCSE English Literature.',
+    images: [
+      {
+        url: '/api/og?title=Macbeth+Characters+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'Macbeth Characters - Edexcel IGCSE Literature',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/macbeth/characters',

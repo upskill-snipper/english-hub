@@ -8,6 +8,14 @@ export const metadata: Metadata = {
     title: 'Conflict Theme Across Texts | GCSE English Literature',
     description:
       'Explore the theme of conflict across GCSE set texts: Romeo and Juliet, Power and Conflict poetry, and Lord of the Flies. Key quotes, analysis, and comparison ideas.',
+    images: [
+      {
+        url: '/api/og?title=Conflict+Theme+Across+Texts+%7C+GCSE+English+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'Conflict Theme Across Texts | GCSE English Literature',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/themes/conflict' },
   title: 'Conflict Theme Across Texts | GCSE English Literature',

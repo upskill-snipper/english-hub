@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Macbeth Key Quotes - Edexcel IGCSE Literature',
     description:
       '20 key Macbeth quotations with speaker, scene reference and detailed analysis for the Edexcel IGCSE Literature closed-book Shakespeare exam.',
+    images: [
+      {
+        url: '/api/og?title=Macbeth+Key+Quotes+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'Macbeth Key Quotes - Edexcel IGCSE Literature',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/macbeth/quotes',

@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'Romeo and Juliet Revision Notes - The English Hub',
     description:
       'Free Romeo and Juliet revision notes for GCSE English Literature. Character analysis, themes, key quotes with analysis, context, and exam-ready essay tips.',
+    images: [
+      {
+        url: '/api/og?title=Romeo+and+Juliet+Revision+Notes+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Romeo and Juliet Revision Notes - The English Hub',
+      },
+    ],
   },
 }
 

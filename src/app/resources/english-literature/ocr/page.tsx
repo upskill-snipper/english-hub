@@ -10,6 +10,14 @@ export const metadata: Metadata = {
     title: 'OCR GCSE English Literature resources - The English Hub',
     description:
       'OCR J352 GCSE English Literature set-text guides, Towards a World Unknown anthology, exam technique and Grade 9 essay plans for Paper 1 and 2.',
+    images: [
+      {
+        url: '/api/og?title=OCR+GCSE+English+Literature+resources+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'OCR GCSE English Literature resources - The English Hub',
+      },
+    ],
   },
   title: 'OCR GCSE English Literature resources',
   description:

@@ -23,6 +23,14 @@ export const metadata: Metadata = {
     title: 'Edexcel IGCSE Literature Exam Technique - The English Hub',
     description:
       'Paper 1 and Paper 2 exam technique for Pearson Edexcel IGCSE English Literature. Comparison, extract-based and essay-style question strategies.',
+    images: [
+      {
+        url: '/api/og?title=Edexcel+IGCSE+Literature+Exam+Technique+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Edexcel IGCSE Literature Exam Technique - The English Hub',
+      },
+    ],
   },
   title: 'Edexcel IGCSE Literature Exam Technique',
   description:

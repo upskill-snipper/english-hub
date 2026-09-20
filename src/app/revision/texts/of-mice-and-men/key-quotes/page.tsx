@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     title: 'Of Mice and Men - Key Quotes | The English Hub',
     description:
       'Twenty-five essential quotations from Of Mice and Men by John Steinbeck with speaker, context and detailed analysis.',
+    images: [
+      {
+        url: '/api/og?title=Of+Mice+and+Men+-+Key+Quotes+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Of Mice and Men - Key Quotes | The English Hub',
+      },
+    ],
   },
   title: 'Of Mice and Men - Key Quotes',
   description:

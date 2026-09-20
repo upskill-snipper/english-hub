@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Exam Technique',
     description:
       'Master the exam techniques that turn knowledge into top grades. Time management, question types, essay structure, and exam-day advice for GCSE and IGCSE English.',
+    images: [
+      {
+        url: '/api/og?title=Exam+Technique',
+        width: 1200,
+        height: 630,
+        alt: 'Exam Technique',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/exam-technique' },
   title: 'Exam Technique',

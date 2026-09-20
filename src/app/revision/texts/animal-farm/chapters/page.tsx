@@ -27,6 +27,14 @@ export const metadata: Metadata = {
     title: 'Animal Farm Chapter Analysis - All 10 Chapters | The English Hub',
     description:
       'Chapter-by-chapter analysis of Animal Farm by George Orwell. Key events, character development, allegory, and short quotations for GCSE revision.',
+    images: [
+      {
+        url: '/api/og?title=Animal+Farm+Chapter+Analysis+-+All+10+Chapters+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Animal Farm Chapter Analysis - All 10 Chapters | The English Hub',
+      },
+    ],
   },
   title: 'Animal Farm Chapter Analysis - All 10 Chapters',
   description:

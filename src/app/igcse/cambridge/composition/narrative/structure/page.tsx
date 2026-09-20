@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'Narrative Structure - Cambridge IGCSE Composition',
     description:
       'Structure a Cambridge IGCSE narrative composition using the five-part arc, Freytag’s triangle, in medias res openings and cliff-turn endings.',
+    images: [
+      {
+        url: '/api/og?title=Narrative+Structure+-+Cambridge+IGCSE+Composition',
+        width: 1200,
+        height: 630,
+        alt: 'Narrative Structure - Cambridge IGCSE Composition',
+      },
+    ],
   },
   title: 'Narrative Structure - Cambridge IGCSE Composition',
   description:

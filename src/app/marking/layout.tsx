@@ -35,6 +35,14 @@ export const metadata: Metadata = {
     title: 'AI Essay Marking for GCSE & IGCSE English',
     description:
       'Submit an exam-style answer and get instant feedback marked against your board’s assessment objectives, with a grade indication.',
+    images: [
+      {
+        url: '/api/og?title=AI+Essay+Marking+for+GCSE+%26+IGCSE+English',
+        width: 1200,
+        height: 630,
+        alt: 'AI Essay Marking for GCSE & IGCSE English',
+      },
+    ],
   },
 }
 

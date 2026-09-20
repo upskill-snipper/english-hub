@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Much Ado About Nothing Key Quotes - Edexcel IGCSE Literature',
     description:
       '15 key Much Ado About Nothing quotations with speaker, scene and analysis for the Edexcel IGCSE Literature closed-book Shakespeare exam.',
+    images: [
+      {
+        url: '/api/og?title=Much+Ado+About+Nothing+Key+Quotes+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'Much Ado About Nothing Key Quotes - Edexcel IGCSE Literature',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/much-ado/quotes',

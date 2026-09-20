@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     title: 'To Kill a Mockingbird - Key Quotes | The English Hub',
     description:
       'Twenty-five essential quotations from To Kill a Mockingbird by Harper Lee with speaker, context and detailed analysis.',
+    images: [
+      {
+        url: '/api/og?title=To+Kill+a+Mockingbird+-+Key+Quotes+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'To Kill a Mockingbird - Key Quotes | The English Hub',
+      },
+    ],
   },
   title: 'To Kill a Mockingbird - Key Quotes',
   description:

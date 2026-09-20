@@ -41,6 +41,14 @@ export const metadata = {
     title: 'Your Analytics -- The English Hub',
     description:
       'See your own quiz performance, weakest topics, and a suggested next-step study plan based on real answers.',
+    images: [
+      {
+        url: '/api/og?title=Your+Analytics+--+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Your Analytics -- The English Hub',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/revision/analytics' },
   title: 'Your Analytics',

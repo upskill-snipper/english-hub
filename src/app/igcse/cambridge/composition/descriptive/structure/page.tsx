@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'Descriptive Structure - Cambridge IGCSE Composition',
     description:
       'Structure a Cambridge IGCSE descriptive composition using the cinematic zoom technique: wide shot, mid shot, close-up and inner monologue.',
+    images: [
+      {
+        url: '/api/og?title=Descriptive+Structure+-+Cambridge+IGCSE+Composition',
+        width: 1200,
+        height: 630,
+        alt: 'Descriptive Structure - Cambridge IGCSE Composition',
+      },
+    ],
   },
   title: 'Descriptive Structure - Cambridge IGCSE Composition',
   description:

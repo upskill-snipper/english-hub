@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     description:
       'Quick recall games for GCSE & IGCSE English: quote drills, technique spotting, character matching.',
     url: 'https://theenglishhub.app/games',
+    images: [
+      {
+        url: '/api/og?title=Revision+games+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Revision games - The English Hub',
+      },
+    ],
   },
 }
 

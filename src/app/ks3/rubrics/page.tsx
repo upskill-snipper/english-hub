@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'KS3 marking rubrics',
     description:
       'Marking rubrics for KS3 English - three years × four strands × four levels (Below target / Working towards / Expected / Greater depth).',
+    images: [
+      {
+        url: '/api/og?title=KS3+marking+rubrics',
+        width: 1200,
+        height: 630,
+        alt: 'KS3 marking rubrics',
+      },
+    ],
   },
   title: 'KS3 marking rubrics',
   description:

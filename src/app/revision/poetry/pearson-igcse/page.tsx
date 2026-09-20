@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     title: 'Pearson IGCSE Poetry Anthology (4EA1) - Section B - The English Hub',
     description:
       'All 15 prescribed poems for the Pearson Edexcel International GCSE English Language A (4EA1) Section B poetry anthology.',
+    images: [
+      {
+        url: '/api/og?title=Pearson+IGCSE+Poetry+Anthology+(4EA1)+-+Section+B+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Pearson IGCSE Poetry Anthology (4EA1) - Section B - The English Hub',
+      },
+    ],
   },
   title: 'Pearson IGCSE Poetry Anthology (4EA1) - Section B',
   description:

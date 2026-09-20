@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Picnic at Hanging Rock - CAIE IGCSE - The English Hub',
     description:
       'CAIE IGCSE English Literature guide for Picnic at Hanging Rock. Plot summary, character analysis, themes, key quotes, and exam preparation.',
+    images: [
+      {
+        url: '/api/og?title=Picnic+at+Hanging+Rock+-+CAIE+IGCSE+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Picnic at Hanging Rock - CAIE IGCSE - The English Hub',
+      },
+    ],
   },
 }
 

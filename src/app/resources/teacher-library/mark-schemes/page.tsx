@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Mark Schemes - Teacher Library',
     description:
       'Mark scheme reference cards for AQA, Edexcel, OCR, and Eduqas GCSE English. Quick-reference grade descriptors and AOs.',
+    images: [
+      {
+        url: '/api/og?title=Mark+Schemes+-+Teacher+Library',
+        width: 1200,
+        height: 630,
+        alt: 'Mark Schemes - Teacher Library',
+      },
+    ],
   },
   title: 'Mark Schemes - Teacher Library',
   description:

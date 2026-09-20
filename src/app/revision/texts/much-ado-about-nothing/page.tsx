@@ -13,6 +13,14 @@ export const metadata: Metadata = {
     title:
       'Much Ado About Nothing revision guide - themes, characters, key quotes - The English Hub',
     description: 'Much Ado About Nothing GCSE revision - Shakespeare',
+    images: [
+      {
+        url: '/api/og?title=Much+Ado+About+Nothing+revision+guide+-+themes%2C+characters%2C+key+quotes+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Much Ado About Nothing revision guide - themes, characters, key quotes - The English Hub',
+      },
+    ],
   },
   title: 'Much Ado About Nothing revision guide - themes, characters, key quotes',
   description:

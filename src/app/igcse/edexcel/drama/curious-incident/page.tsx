@@ -15,6 +15,14 @@ export const metadata: Metadata = {
       'The Curious Incident of the Dog in the Night-Time - Edexcel IGCSE Literature Study Guide',
     description:
       'Simon Stephens\u2019s stage adaptation of Mark Haddon\u2019s novel for Edexcel IGCSE Literature: plot, characters, themes and key quotations.',
+    images: [
+      {
+        url: '/api/og?title=The+Curious+Incident+of+the+Dog+in+the+Night-Time+-+Edexcel+IGCSE+Literature+Study+Guide',
+        width: 1200,
+        height: 630,
+        alt: 'The Curious Incident of the Dog in the Night-Time - Edexcel IGCSE Literature Study Guide',
+      },
+    ],
   },
   title: 'The Curious Incident of the Dog in the Night-Time - Edexcel IGCSE Literature Study Guide',
   description:

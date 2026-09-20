@@ -22,11 +22,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Paper 4: Courage',
     description:
-      'A complete original practice achievement test modelled on LEH11/01, theme “Courage”: three original source texts, 22 Section A reading questions (40 marks), a 30-mark Section B writing task and a full Pearson-style mark scheme.',
+      'An original practice test on the theme of courage, modelled on LEH11/01: three source texts, 22 reading questions, a writing task and a mark scheme.',
+    images: [
+      {
+        url: '/api/og?title=Paper+4%3A+Courage',
+        width: 1200,
+        height: 630,
+        alt: 'Paper 4: Courage',
+      },
+    ],
   },
-  title: 'Practice Paper 4: Courage - iLowerSecondary English',
+  title: 'Practice Paper 4: Courage',
   description:
-    'A complete original practice achievement test modelled on LEH11/01, theme “Courage”: three original source texts, 22 Section A reading questions (40 marks), a 30-mark Section B writing task and a full Pearson-style mark scheme.',
+    'An original practice test on the theme of courage, modelled on LEH11/01: three source texts, 22 reading questions, a writing task and a mark scheme.',
   alternates: {
     canonical: 'https://theenglishhub.app/ks3/ilowersecondary/practice/paper-4',
   },

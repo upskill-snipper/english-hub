@@ -8,6 +8,14 @@ export const metadata: Metadata = {
     title: 'End of KS3 expectations',
     description:
       'British National Curriculum end-of-KS3 standard - what students working at the expected level can do at the end of Year 9.',
+    images: [
+      {
+        url: '/api/og?title=End+of+KS3+expectations',
+        width: 1200,
+        height: 630,
+        alt: 'End of KS3 expectations',
+      },
+    ],
   },
   title: 'End of KS3 expectations',
   description:

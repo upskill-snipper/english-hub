@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Romeo and Juliet Essay Plans - Edexcel IGCSE Literature',
     description:
       'Five model essay plans for Romeo and Juliet with paragraph-by-paragraph structure, key quotations and context for Edexcel IGCSE English Literature.',
+    images: [
+      {
+        url: '/api/og?title=Romeo+and+Juliet+Essay+Plans+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'Romeo and Juliet Essay Plans - Edexcel IGCSE Literature',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/romeo-and-juliet/essay-plans',

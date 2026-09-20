@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'Assessment Resources - The English Hub',
     description:
       'Free English assessment resources for teachers. Mark schemes, assessment criteria, and moderation support aligned to GCSE and IGCSE specifications.',
+    images: [
+      {
+        url: '/api/og?title=Assessment+Resources+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Assessment Resources - The English Hub',
+      },
+    ],
   },
 }
 

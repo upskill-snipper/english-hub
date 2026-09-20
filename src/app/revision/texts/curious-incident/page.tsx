@@ -10,6 +10,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'The Curious Incident revision guide - themes, characters, key quotes - The English Hub',
     description: 'The Curious Incident IGCSE revision - Mark Haddon',
+    images: [
+      {
+        url: '/api/og?title=The+Curious+Incident+revision+guide+-+themes%2C+characters%2C+key+quotes+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'The Curious Incident revision guide - themes, characters, key quotes - The English Hub',
+      },
+    ],
   },
   title: 'The Curious Incident revision guide - themes, characters, key quotes',
   description:

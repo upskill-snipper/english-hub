@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Much Ado About Nothing Themes - Edexcel IGCSE Literature',
     description:
       'Detailed themes guide for Much Ado About Nothing for Edexcel IGCSE Literature: love, deception, honour, marriage and gender, with quotes and analysis.',
+    images: [
+      {
+        url: '/api/og?title=Much+Ado+About+Nothing+Themes+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'Much Ado About Nothing Themes - Edexcel IGCSE Literature',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/much-ado/themes',

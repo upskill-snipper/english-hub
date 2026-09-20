@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Grade Boundaries - IGCSE Language A',
     description:
       'Historical grade boundaries for IGCSE Language A First Language English and how to hit an A* grade. Aligns with Cambridge syllabus 0500.',
+    images: [
+      {
+        url: '/api/og?title=Grade+Boundaries+-+IGCSE+Language+A',
+        width: 1200,
+        height: 630,
+        alt: 'Grade Boundaries - IGCSE Language A',
+      },
+    ],
   },
   title: 'Grade Boundaries - IGCSE Language A',
   description:

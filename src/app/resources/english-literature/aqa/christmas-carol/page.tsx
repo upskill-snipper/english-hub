@@ -7,6 +7,14 @@ export const metadata: Metadata = {
     title: 'A Christmas Carol Study Guide - AQA English Literature GCSE',
     description:
       'Complete A Christmas Carol revision guide for AQA GCSE English Literature. Stave-by-stave summary, character analysis, themes, 20+ key quotations, Victorian context, and essay planning.',
+    images: [
+      {
+        url: '/api/og?title=A+Christmas+Carol+Study+Guide+-+AQA+English+Literature+GCSE',
+        width: 1200,
+        height: 630,
+        alt: 'A Christmas Carol Study Guide - AQA English Literature GCSE',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/aqa/christmas-carol',

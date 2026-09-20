@@ -28,6 +28,14 @@ export const metadata: Metadata = {
     title: 'Courses - The English Hub',
     description:
       'Browse structured KS3, GCSE and IGCSE English courses with video lessons, quizzes and exam-style tasks across all major UK exam boards.',
+    images: [
+      {
+        url: '/api/og?title=Courses+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Courses - The English Hub',
+      },
+    ],
   },
   title: 'Courses',
   description:

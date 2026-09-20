@@ -8,6 +8,14 @@ export const metadata: Metadata = {
     title: 'Theme Explorer | GCSE English Literature',
     description:
       'Explore major GCSE English Literature themes across texts. Compare how power, guilt, love, conflict, and social responsibility appear in set texts.',
+    images: [
+      {
+        url: '/api/og?title=Theme+Explorer+%7C+GCSE+English+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'Theme Explorer | GCSE English Literature',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/themes' },
   title: 'Theme Explorer | GCSE English Literature',

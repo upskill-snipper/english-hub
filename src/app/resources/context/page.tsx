@@ -10,6 +10,14 @@ export const metadata: Metadata = {
     title: 'Historical Context - GCSE English Literature',
     description:
       'Essential historical and social context for GCSE English Literature. Understand the Victorian era, Elizabethan and Jacobean periods, the Romantic movement, and twentieth-century Britain to unlock top marks in your exam essays.',
+    images: [
+      {
+        url: '/api/og?title=Historical+Context+-+GCSE+English+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'Historical Context - GCSE English Literature',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/context' },
   title: 'Historical Context - GCSE English Literature',

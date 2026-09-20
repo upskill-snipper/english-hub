@@ -7,6 +7,14 @@ export const metadata: Metadata = {
     title: 'PEE Paragraph Builder - Worksheet',
     description:
       'A scaffolded PEE (Point, Evidence, Explain) worksheet with sentence starters, a worked example, and differentiation.',
+    images: [
+      {
+        url: '/api/og?title=PEE+Paragraph+Builder+-+Worksheet',
+        width: 1200,
+        height: 630,
+        alt: 'PEE Paragraph Builder - Worksheet',
+      },
+    ],
   },
   title: 'PEE Paragraph Builder - Worksheet',
   description:

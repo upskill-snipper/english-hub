@@ -47,6 +47,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'An Inspector Calls revision guide - themes, characters, key quotes - The English Hub',
     description: 'An Inspector Calls GCSE revision - Priestley',
+    images: [
+      {
+        url: '/api/og?title=An+Inspector+Calls+revision+guide+-+themes%2C+characters%2C+key+quotes+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'An Inspector Calls revision guide - themes, characters, key quotes - The English Hub',
+      },
+    ],
   },
   title: 'An Inspector Calls revision guide - themes, characters, key quotes',
   description:

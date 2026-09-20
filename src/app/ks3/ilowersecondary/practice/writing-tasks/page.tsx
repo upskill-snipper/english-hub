@@ -10,9 +10,7 @@ const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/practice/writing
 export const metadata: Metadata = {
   title: 'Writing task bank',
   description:
-    'A large bank of original Section B extended-writing prompts for the ' +
-    'iLowerSecondary English exam, mapped to every form, audience and ' +
-    'purpose on the specification, each with a planning steer.',
+    'A bank of original Section B extended-writing prompts mapped to every form, audience and purpose on the specification, each with a planning steer.',
   alternates: { canonical: PAGE_URL },
 }
 

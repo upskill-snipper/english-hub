@@ -19,11 +19,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Autobiography & biography',
     description:
-      'A reading-and-writing guide to autobiography and biography for LEH11: definitions, conventions, language features to spot, exam questions, and original annotated extracts with model answers.',
+      'Autobiography and biography for LEH11: the difference, conventions, language features to spot, annotated extracts and how to write one for Section B.',
+    images: [
+      {
+        url: '/api/og?title=Autobiography+%26+biography',
+        width: 1200,
+        height: 630,
+        alt: 'Autobiography & biography',
+      },
+    ],
   },
-  title: 'Autobiography & biography - iLowerSecondary English',
+  title: 'Autobiography & biography',
   description:
-    'A reading-and-writing guide to autobiography and biography for LEH11: definitions, conventions, language features to spot, exam questions, and original annotated extracts with model answers.',
+    'Autobiography and biography for LEH11: the difference, conventions, language features to spot, annotated extracts and how to write one for Section B.',
   alternates: { canonical: PAGE_URL },
 }
 

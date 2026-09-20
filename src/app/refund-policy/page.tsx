@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Refund Policy - The English Hub',
     description:
       'Our refund and cancellation policy for The English Hub subscriptions and course purchases. Clear terms for students, parents, and institutions.',
+    images: [
+      {
+        url: '/api/og?title=Refund+Policy+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Refund Policy - The English Hub',
+      },
+    ],
   },
 }
 

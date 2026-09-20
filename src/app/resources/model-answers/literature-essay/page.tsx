@@ -34,6 +34,14 @@ export const metadata: Metadata = {
     title: 'Model Literature Essays | The English Hub',
     description:
       'Grade 3, 5, 7, and 9 model literature essays on Macbeth, A Christmas Carol, An Inspector Calls, and poetry comparison. Annotations show how to structure arguments and embed quotations at every level.',
+    images: [
+      {
+        url: '/api/og?title=Model+Literature+Essays+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Model Literature Essays | The English Hub',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/model-answers/literature-essay',

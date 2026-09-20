@@ -10,6 +10,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'The Thought-Fox - Ted Hughes | Cambridge IGCSE 0475',
     description: 'Study guide for ',
+    images: [
+      {
+        url: '/api/og?title=The+Thought-Fox+-+Ted+Hughes+%7C+Cambridge+IGCSE+0475',
+        width: 1200,
+        height: 630,
+        alt: 'The Thought-Fox - Ted Hughes | Cambridge IGCSE 0475',
+      },
+    ],
   },
   title: 'The Thought-Fox - Ted Hughes | Cambridge IGCSE 0475',
   description:

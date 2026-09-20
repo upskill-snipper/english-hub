@@ -6,6 +6,14 @@ export const metadata: Metadata = {
     title: 'Online Safety Policy',
     description:
       'How The English Hub complies with the Online Safety Act 2023, including content moderation, reporting routes, and risk assessment for user-generated content.',
+    images: [
+      {
+        url: '/api/og?title=Online+Safety+Policy',
+        width: 1200,
+        height: 630,
+        alt: 'Online Safety Policy',
+      },
+    ],
   },
   title: 'Online Safety Policy',
   description:

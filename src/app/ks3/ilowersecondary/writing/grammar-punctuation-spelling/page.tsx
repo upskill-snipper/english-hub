@@ -16,11 +16,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/ks3/ilowersecondary/writing/grammar-punctuation-spelling' },
   title: 'Grammar, punctuation & spelling',
   description:
-    `A masterclass on ${WAO2.code}: ${WAO2.descriptor} Learn sentence ` +
-    'demarcation, the five punctuation marks the spec names, complex ' +
-    'connectives, ambitious-but-accurate vocabulary and spelling. Includes ' +
-    'the WAO2 mark grid, an error-riddled paragraph with every fix labelled, ' +
-    'a punctuation-for-effect bank and a top-20 KS3 spelling-trap list.',
+    'WAO2: sentence demarcation, the five named punctuation marks, complex connectives, punctuation for effect, and twenty KS3 spelling traps.',
 }
 
 // ─── Band translations: spec descriptor → "what your writing must do" ──

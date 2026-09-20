@@ -7,6 +7,14 @@ export const metadata: Metadata = {
     title: 'Language Devices Bingo - Worksheet',
     description:
       'A printable language devices bingo activity. 24 devices with definitions for a 5-minute starter or recap.',
+    images: [
+      {
+        url: '/api/og?title=Language+Devices+Bingo+-+Worksheet',
+        width: 1200,
+        height: 630,
+        alt: 'Language Devices Bingo - Worksheet',
+      },
+    ],
   },
   title: 'Language Devices Bingo - Worksheet',
   description:

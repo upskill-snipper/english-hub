@@ -10,9 +10,7 @@ const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/reference/spelli
 export const metadata: Metadata = {
   title: 'Spelling & punctuation',
   description:
-    'A quick, accurate reference for the punctuation the iLowerSecondary ' +
-    'English specification names explicitly, plus the spelling patterns ' +
-    'that most often cost marks in Section B (WAO2).',
+    'The five punctuation marks the specification names, the marks that lift you to the top bands, and twenty spelling traps that cost easy WAO2 credit.',
   alternates: { canonical: PAGE_URL },
 }
 

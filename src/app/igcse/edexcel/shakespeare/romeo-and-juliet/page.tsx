@@ -13,6 +13,14 @@ export const metadata: Metadata = {
     title: 'Romeo and Juliet - Edexcel IGCSE Literature Study Guide',
     description:
       'Romeo and Juliet study hub for Edexcel IGCSE English Literature: plot, characters, themes overview, and exam technique for the two-part Shakespeare question.',
+    images: [
+      {
+        url: '/api/og?title=Romeo+and+Juliet+-+Edexcel+IGCSE+Literature+Study+Guide',
+        width: 1200,
+        height: 630,
+        alt: 'Romeo and Juliet - Edexcel IGCSE Literature Study Guide',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/romeo-and-juliet',

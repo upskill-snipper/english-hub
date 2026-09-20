@@ -13,6 +13,14 @@ export const metadata: Metadata = {
     title: 'Much Ado About Nothing - Edexcel IGCSE Literature Study Guide',
     description:
       'Much Ado About Nothing study hub for Edexcel IGCSE English Literature: plot, characters, themes overview and exam technique.',
+    images: [
+      {
+        url: '/api/og?title=Much+Ado+About+Nothing+-+Edexcel+IGCSE+Literature+Study+Guide',
+        width: 1200,
+        height: 630,
+        alt: 'Much Ado About Nothing - Edexcel IGCSE Literature Study Guide',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/much-ado',

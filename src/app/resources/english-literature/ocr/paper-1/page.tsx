@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'OCR Paper 1: Exploring Modern and Literary Heritage Texts | The English Hub',
     description:
       'Complete guide to OCR GCSE English Literature Paper 01. Modern prose/drama and 19th-century literary heritage text revision.',
+    images: [
+      {
+        url: '/api/og?title=OCR+Paper+1%3A+Exploring+Modern+and+Literary+Heritage+Texts+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'OCR Paper 1: Exploring Modern and Literary Heritage Texts | The English Hub',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/ocr/paper-1' },
   title: 'OCR Paper 1: Exploring Modern and Literary Heritage Texts',

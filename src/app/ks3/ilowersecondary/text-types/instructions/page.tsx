@@ -20,11 +20,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Instructional texts',
     description:
-      'How instructional texts work for LEH11: sequential steps, imperative verbs, time and sequence connectives, lists, second person and precise vocabulary - how they are tested in RAO3 and RAO4, with original annotated extracts, practice questions and a write-instructions task with model.',
+      'How instructional texts work: sequential steps, imperative verbs, time connectives and second person, with annotated extracts and a writing task.',
+    images: [
+      {
+        url: '/api/og?title=Instructional+texts',
+        width: 1200,
+        height: 630,
+        alt: 'Instructional texts',
+      },
+    ],
   },
-  title: 'Instructional texts - a reading & writing guide',
+  title: 'Instructional texts',
   description:
-    'A complete guide to instructional texts for iLowerSecondary English: conventions (sequential steps, imperative verbs, sequence connectives, lists, second person, concrete vocabulary, materials lists, labelled diagrams), how the imperative-verb and sequencing language is tested in RAO3 and RAO4, with original annotated extracts, practice questions, model answers and a Section B writing task.',
+    'How instructional texts work: sequential steps, imperative verbs, time connectives and second person, with annotated extracts and a writing task.',
   alternates: { canonical: PAGE_URL },
 }
 

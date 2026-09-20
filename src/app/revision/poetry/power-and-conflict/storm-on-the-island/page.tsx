@@ -13,6 +13,14 @@ export const metadata: Metadata = {
     title: 'Storm on the Island - Seamus Heaney | Power & Conflict Poetry',
     description:
       'Interactive GCSE English study guide for Storm on the Island by Seamus Heaney. Annotations, key quotes, language analysis, context and comparisons.',
+    images: [
+      {
+        url: '/api/og?title=Storm+on+the+Island+-+Seamus+Heaney+%7C+Power+%26+Conflict+Poetry',
+        width: 1200,
+        height: 630,
+        alt: 'Storm on the Island - Seamus Heaney | Power & Conflict Poetry',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/revision/poetry/power-and-conflict/storm-on-the-island',

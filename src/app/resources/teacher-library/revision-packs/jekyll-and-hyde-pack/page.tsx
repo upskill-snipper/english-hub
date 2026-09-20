@@ -7,6 +7,14 @@ export const metadata: Metadata = {
     title: 'Jekyll and Hyde Revision Pack - Teacher Library',
     description:
       'Full Jekyll and Hyde revision pack: quote bank, themes, characters, Victorian context, and graded essay plans.',
+    images: [
+      {
+        url: '/api/og?title=Jekyll+and+Hyde+Revision+Pack+-+Teacher+Library',
+        width: 1200,
+        height: 630,
+        alt: 'Jekyll and Hyde Revision Pack - Teacher Library',
+      },
+    ],
   },
   title: 'Jekyll and Hyde Revision Pack - Teacher Library',
   description:

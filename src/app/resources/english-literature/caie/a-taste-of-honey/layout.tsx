@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'A Taste of Honey - CAIE IGCSE - The English Hub',
     description:
       'CAIE IGCSE English Literature guide for A Taste of Honey. Plot summary, character analysis, themes, key quotes, and exam preparation strategies.',
+    images: [
+      {
+        url: '/api/og?title=A+Taste+of+Honey+-+CAIE+IGCSE+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'A Taste of Honey - CAIE IGCSE - The English Hub',
+      },
+    ],
   },
 }
 

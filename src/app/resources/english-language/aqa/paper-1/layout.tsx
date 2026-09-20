@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'AQA English Language Paper 1 - The English Hub',
     description:
       'AQA GCSE English Language Paper 1 guide. Explorations in Creative Reading and Writing: question breakdowns, timing, marking guide, and model answers.',
+    images: [
+      {
+        url: '/api/og?title=AQA+English+Language+Paper+1+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'AQA English Language Paper 1 - The English Hub',
+      },
+    ],
   },
 }
 

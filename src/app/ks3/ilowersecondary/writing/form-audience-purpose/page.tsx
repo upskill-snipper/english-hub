@@ -20,7 +20,7 @@ const SECTION_B = SECTIONS.B
 export const metadata: Metadata = {
   title: 'Form, audience & purpose',
   description:
-    'Decode the Section B extended writing task: identify form, audience and purpose, learn the conventions of every form, signposting language for every purpose, register choices for each audience, and an annotated worked example.',
+    'Decode the Section B task: identify form, audience and purpose, learn the conventions of every form and match register to reader, with a worked example.',
   alternates: {
     canonical: 'https://theenglishhub.app/ks3/ilowersecondary/writing/form-audience-purpose',
   },
@@ -28,6 +28,14 @@ export const metadata: Metadata = {
     title: 'Form, audience & purpose - iLowerSecondary writing masterclass',
     description:
       'How to decode the Section B task and control form, audience and purpose for top WAO1 marks, with an original annotated worked example.',
+    images: [
+      {
+        url: '/api/og?title=Form%2C+audience+%26+purpose+-+iLowerSecondary+writing+masterclass',
+        width: 1200,
+        height: 630,
+        alt: 'Form, audience & purpose - iLowerSecondary writing masterclass',
+      },
+    ],
   },
 }
 

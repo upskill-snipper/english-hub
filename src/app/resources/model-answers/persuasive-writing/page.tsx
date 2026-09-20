@@ -33,6 +33,14 @@ export const metadata: Metadata = {
     title: 'Model Persuasive & Transactional Writing | The English Hub',
     description:
       'Grade 3, 5, 7, and 9 model articles, speeches, and letters for GCSE English Language with annotations highlighting rhetorical devices, structural choices, and persuasive techniques at every level.',
+    images: [
+      {
+        url: '/api/og?title=Model+Persuasive+%26+Transactional+Writing+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Model Persuasive & Transactional Writing | The English Hub',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/model-answers/persuasive-writing',

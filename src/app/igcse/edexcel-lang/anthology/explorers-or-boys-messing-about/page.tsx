@@ -22,6 +22,14 @@ export const metadata: Metadata = {
     title:
       'Explorers or Boys Messing About? - Steven Morris - IGCSE Language A Anthology - The English Hub',
     description: 'Study guide for ',
+    images: [
+      {
+        url: '/api/og?title=Explorers+or+Boys+Messing+About%3F+-+Steven+Morris+-+IGCSE+Language+A+Anthology+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Explorers or Boys Messing About? - Steven Morris - IGCSE Language A Anthology - The English Hub',
+      },
+    ],
   },
   title: 'Explorers or Boys Messing About? - Steven Morris - IGCSE Language A Anthology',
   description:

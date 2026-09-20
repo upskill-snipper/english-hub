@@ -7,6 +7,14 @@ export const metadata = {
   openGraph: {
     title: 'Your Papers | The English Hub',
     description: 'Navigate all your exam papers, sections, and revision content in one place.',
+    images: [
+      {
+        url: '/api/og?title=Your+Papers+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Your Papers | The English Hub',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/dashboard/papers' },
   title: 'Your Papers',

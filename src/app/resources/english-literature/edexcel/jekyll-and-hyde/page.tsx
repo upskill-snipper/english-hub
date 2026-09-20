@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'Jekyll and Hyde Study Guide - Edexcel GCSE English Literature',
     description:
       'Complete Jekyll and Hyde revision guide for Edexcel GCSE English Literature Paper 2. Plot summary, character analysis, themes, 15+ key quotes, Victorian context, and exam technique.',
+    images: [
+      {
+        url: '/api/og?title=Jekyll+and+Hyde+Study+Guide+-+Edexcel+GCSE+English+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'Jekyll and Hyde Study Guide - Edexcel GCSE English Literature',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/jekyll-and-hyde',

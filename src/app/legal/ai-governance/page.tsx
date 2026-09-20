@@ -24,6 +24,14 @@ export const metadata: Metadata = {
     title: 'AI Governance & Ethics',
     description:
       'How The English Hub maps to Qatar’s PDPPL, Cybercrime Law, NCSA AI Guidelines, MCIT Ethical AI Principles, and adjacent frameworks. Includes an honest gap list and remediation roadmap.',
+    images: [
+      {
+        url: '/api/og?title=AI+Governance+%26+Ethics',
+        width: 1200,
+        height: 630,
+        alt: 'AI Governance & Ethics',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/legal/ai-governance' },
   title: 'AI Governance & Ethics',

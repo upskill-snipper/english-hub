@@ -21,6 +21,14 @@ export const metadata: Metadata = {
     title: 'Comprehension Strategies - IGCSE Language A Paper 1',
     description:
       'Detailed guide to answering every Paper 1 question type for Cambridge IGCSE 0500. Step-by-step methods, common mistakes, and examiner tips for Q1, Q2, and Q3.',
+    images: [
+      {
+        url: '/api/og?title=Comprehension+Strategies+-+IGCSE+Language+A+Paper+1',
+        width: 1200,
+        height: 630,
+        alt: 'Comprehension Strategies - IGCSE Language A Paper 1',
+      },
+    ],
   },
   title: 'Comprehension Strategies - IGCSE Language A Paper 1',
   description:

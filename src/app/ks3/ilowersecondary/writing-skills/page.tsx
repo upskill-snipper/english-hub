@@ -10,9 +10,7 @@ const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/writing-skills'
 export const metadata: Metadata = {
   title: 'Writing skills',
   description:
-    'Everything for Section B of the iLowerSecondary English exam - form, ' +
-    'audience and purpose, structure, sentence variety, vocabulary, ' +
-    'grammar and punctuation, planning, and every writing form.',
+    'Everything for Section B of the iLowerSecondary English exam: form, audience and purpose, structure, sentence variety, vocabulary, planning and every form.',
   alternates: { canonical: PAGE_URL },
 }
 

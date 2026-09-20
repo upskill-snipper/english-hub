@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'Animal Farm Study Guide - Edexcel GCSE English Literature',
     description:
       'Complete Animal Farm revision guide for Edexcel GCSE English Literature. Plot, characters, themes, 15+ key quotes, Russian Revolution context, allegory analysis, and Edexcel exam technique.',
+    images: [
+      {
+        url: '/api/og?title=Animal+Farm+Study+Guide+-+Edexcel+GCSE+English+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'Animal Farm Study Guide - Edexcel GCSE English Literature',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/animal-farm',

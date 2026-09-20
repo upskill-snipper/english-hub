@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Romeo and Juliet Themes - Edexcel IGCSE Literature',
     description:
       'Detailed themes guide for Romeo and Juliet for Edexcel IGCSE Literature: love, fate, conflict, youth vs age and honour, with key quotations and analysis.',
+    images: [
+      {
+        url: '/api/og?title=Romeo+and+Juliet+Themes+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'Romeo and Juliet Themes - Edexcel IGCSE Literature',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/romeo-and-juliet/themes',

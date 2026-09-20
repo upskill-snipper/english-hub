@@ -43,6 +43,14 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       url: canonical,
       type: 'article',
       siteName: 'The English Hub',
+      images: [
+        {
+          url: `/api/og?title=${encodeURIComponent(entry.title)}`,
+          width: 1200,
+          height: 630,
+          alt: entry.title,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',

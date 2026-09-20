@@ -8,6 +8,14 @@ export const metadata: Metadata = {
     title: 'Authors & Poets - Verified Bios for GCSE & IGCSE English',
     description:
       'Verified author and poet biographies for GCSE and IGCSE English Literature: dates, key works, exam-board notes, and the common factual errors students make.',
+    images: [
+      {
+        url: '/api/og?title=Authors+%26+Poets+-+Verified+Bios+for+GCSE+%26+IGCSE+English',
+        width: 1200,
+        height: 630,
+        alt: 'Authors & Poets - Verified Bios for GCSE & IGCSE English',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/authors' },
   title: 'Authors & Poets - Verified Bios for GCSE & IGCSE English',

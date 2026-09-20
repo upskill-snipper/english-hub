@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'The Woman in Black Revision Notes - The English Hub',
     description:
       'The Woman in Black revision notes for GCSE English Literature. Character analysis, themes, key quotes with analysis, context, and exam-ready essay tips.',
+    images: [
+      {
+        url: '/api/og?title=The+Woman+in+Black+Revision+Notes+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'The Woman in Black Revision Notes - The English Hub',
+      },
+    ],
   },
 }
 

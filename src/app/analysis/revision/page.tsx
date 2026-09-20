@@ -13,6 +13,14 @@ export const metadata: Metadata = {
     title: 'GCSE English Revision & Grade Guides - The English Hub',
     description:
       'Free, marker-written GCSE English revision guides covering grade targets, revision plans, exam day prep and parent support.',
+    images: [
+      {
+        url: '/api/og?title=GCSE+English+Revision+%26+Grade+Guides+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'GCSE English Revision & Grade Guides - The English Hub',
+      },
+    ],
   },
 }
 

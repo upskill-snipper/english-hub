@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'A Midsummer Nights Dream - CAIE IGCSE - The English Hub',
     description:
       'CAIE IGCSE English Literature guide for A Midsummer Nights Dream. Plot summary, character analysis, themes, key quotes, and exam preparation tips.',
+    images: [
+      {
+        url: '/api/og?title=A+Midsummer+Nights+Dream+-+CAIE+IGCSE+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'A Midsummer Nights Dream - CAIE IGCSE - The English Hub',
+      },
+    ],
   },
 }
 

@@ -23,11 +23,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Paper 3: The Natural World',
     description:
-      'A complete original practice achievement test modelled on LEH11/01, theme “The Natural World”: three original source texts, 22 Section A reading questions (40 marks), a 30-mark Section B writing task and a full Pearson-style mark scheme.',
+      'An original practice test on the theme of the natural world, modelled on LEH11/01: three source texts, 22 reading questions and a full mark scheme.',
+    images: [
+      {
+        url: '/api/og?title=Paper+3%3A+The+Natural+World',
+        width: 1200,
+        height: 630,
+        alt: 'Paper 3: The Natural World',
+      },
+    ],
   },
-  title: 'Practice Paper 3: The Natural World - iLowerSecondary English',
+  title: 'Practice Paper 3: Natural World',
   description:
-    'A complete original practice achievement test modelled on LEH11/01, theme “The Natural World”: three original source texts, 22 Section A reading questions (40 marks), a 30-mark Section B writing task and a full Pearson-style mark scheme.',
+    'An original practice test on the theme of the natural world, modelled on LEH11/01: three source texts, 22 reading questions and a full mark scheme.',
   alternates: {
     canonical: 'https://theenglishhub.app/ks3/ilowersecondary/practice/paper-3',
   },

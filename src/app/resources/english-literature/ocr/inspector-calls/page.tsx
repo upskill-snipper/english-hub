@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'An Inspector Calls Study Guide for OCR | The English Hub',
     description:
       'Comprehensive An Inspector Calls study guide for OCR GCSE English Literature. Characters, themes, key quotations, context, and essay planning.',
+    images: [
+      {
+        url: '/api/og?title=An+Inspector+Calls+Study+Guide+for+OCR+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'An Inspector Calls Study Guide for OCR | The English Hub',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/ocr/inspector-calls',

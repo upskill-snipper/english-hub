@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'An Inspector Calls Act 3 Analysis - Edexcel IGCSE Literature',
     description:
       'Detailed Act 3 analysis of An Inspector Calls: Eric\u2019s confession, the Inspector\u2019s final speech, the family splits, and the phone-call twist.',
+    images: [
+      {
+        url: '/api/og?title=An+Inspector+Calls+Act+3+Analysis+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'An Inspector Calls Act 3 Analysis - Edexcel IGCSE Literature',
+      },
+    ],
   },
   title: 'An Inspector Calls Act 3 Analysis - Edexcel IGCSE Literature',
   description:

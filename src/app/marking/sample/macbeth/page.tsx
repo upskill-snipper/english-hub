@@ -13,6 +13,14 @@ export const metadata: Metadata = {
     title: 'Model Macbeth Essay Bank - The English Hub',
     description:
       'Grade 5, 7 and 9 model essays on Lady Macbeth and guilt, with marker annotations and AO breakdowns.',
+    images: [
+      {
+        url: '/api/og?title=Model+Macbeth+Essay+Bank+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Model Macbeth Essay Bank - The English Hub',
+      },
+    ],
   },
 }
 

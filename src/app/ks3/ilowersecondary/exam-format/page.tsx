@@ -16,11 +16,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'What the exam looks like',
     description:
-      'A practical walkthrough of the single iLowerSecondary English achievement test - the Source Booklet, timing strategy, answering conventions, the question journey, and an exam-day checklist.',
+      'Inside the single LEH11/01 achievement test: the Source Booklet, how to spend 1 hour 45 minutes, answering conventions and an exam-day checklist.',
+    images: [
+      {
+        url: '/api/og?title=What+the+exam+looks+like',
+        width: 1200,
+        height: 630,
+        alt: 'What the exam looks like',
+      },
+    ],
   },
-  title: 'iLowerSecondary English: exam format & strategy',
+  title: 'What the exam looks like',
   description:
-    'A practical walkthrough of the single iLowerSecondary English achievement test - the Source Booklet, timing strategy, answering conventions, the question journey, and an exam-day checklist.',
+    'Inside the single LEH11/01 achievement test: the Source Booklet, how to spend 1 hour 45 minutes, answering conventions and an exam-day checklist.',
   alternates: { canonical: PAGE_URL },
 }
 

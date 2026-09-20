@@ -6,6 +6,14 @@ export const metadata: Metadata = {
     title: 'Grade 4 Guide - The English Hub',
     description:
       'Grade 4 English GCSE / IGCSE target guide. The standard-pass benchmark and how to push toward Grade 5.',
+    images: [
+      {
+        url: '/api/og?title=Grade+4+Guide+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Grade 4 Guide - The English Hub',
+      },
+    ],
   },
   title: 'Grade 4 Guide',
   description:

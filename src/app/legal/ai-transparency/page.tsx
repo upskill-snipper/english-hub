@@ -6,6 +6,14 @@ export const metadata: Metadata = {
     title: 'AI Transparency',
     description:
       'How our AI works at The English Hub - what it does, its limitations, and your rights.',
+    images: [
+      {
+        url: '/api/og?title=AI+Transparency',
+        width: 1200,
+        height: 630,
+        alt: 'AI Transparency',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/legal/ai-transparency' },
   title: 'AI Transparency',

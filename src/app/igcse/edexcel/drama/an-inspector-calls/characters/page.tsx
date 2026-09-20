@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'An Inspector Calls Characters - Edexcel IGCSE Literature',
     description:
       'Character analysis for An Inspector Calls: Arthur and Sybil Birling, Sheila, Eric, Gerald Croft, Eva Smith/Daisy Renton and Inspector Goole.',
+    images: [
+      {
+        url: '/api/og?title=An+Inspector+Calls+Characters+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'An Inspector Calls Characters - Edexcel IGCSE Literature',
+      },
+    ],
   },
   title: 'An Inspector Calls Characters - Edexcel IGCSE Literature',
   description:

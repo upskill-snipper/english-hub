@@ -10,6 +10,14 @@ export const metadata: Metadata = {
     title: 'Accessibility Statement - The English Hub',
     description:
       'Our commitment to making The English Hub accessible to all learners: a WCAG 2.2 AA target, assistive-technology support, honest known limitations, and inclusive design.',
+    images: [
+      {
+        url: '/api/og?title=Accessibility+Statement+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Accessibility Statement - The English Hub',
+      },
+    ],
   },
 }
 

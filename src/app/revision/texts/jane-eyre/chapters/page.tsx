@@ -15,6 +15,14 @@ export const metadata: Metadata = {
     title: 'Jane Eyre Key Chapters Analysed | The English Hub',
     description:
       'In-depth analysis of the most important chapters in Jane Eyre by Charlotte Bronte for AQA and OCR GCSE English Literature.',
+    images: [
+      {
+        url: '/api/og?title=Jane+Eyre+Key+Chapters+Analysed+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Jane Eyre Key Chapters Analysed | The English Hub',
+      },
+    ],
   },
   title: 'Jane Eyre Key Chapters Analysed',
   description:

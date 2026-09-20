@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Macbeth Themes - Edexcel IGCSE Literature',
     description:
       'The seven major themes of Macbeth for Edexcel IGCSE Literature: ambition, guilt, the supernatural, kingship, appearance vs reality, gender, and fate vs free will.',
+    images: [
+      {
+        url: '/api/og?title=Macbeth+Themes+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'Macbeth Themes - Edexcel IGCSE Literature',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/macbeth/themes',

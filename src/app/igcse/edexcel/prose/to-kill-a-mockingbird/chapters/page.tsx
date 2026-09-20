@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'To Kill a Mockingbird Chapter Analysis - Edexcel IGCSE Literature',
     description:
       'Chapter-by-chapter analysis of To Kill a Mockingbird for Edexcel IGCSE Literature: summaries, key events, character development, key quotes and language techniques.',
+    images: [
+      {
+        url: '/api/og?title=To+Kill+a+Mockingbird+Chapter+Analysis+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'To Kill a Mockingbird Chapter Analysis - Edexcel IGCSE Literature',
+      },
+    ],
   },
   title: 'To Kill a Mockingbird Chapter Analysis - Edexcel IGCSE Literature',
   description:

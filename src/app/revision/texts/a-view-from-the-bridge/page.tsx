@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title:
       'A View from the Bridge revision guide - themes, characters, key quotes - The English Hub',
     description: 'A View from the Bridge IGCSE revision - Miller',
+    images: [
+      {
+        url: '/api/og?title=A+View+from+the+Bridge+revision+guide+-+themes%2C+characters%2C+key+quotes+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'A View from the Bridge revision guide - themes, characters, key quotes - The English Hub',
+      },
+    ],
   },
   title: 'A View from the Bridge revision guide - themes, characters, key quotes',
   description:

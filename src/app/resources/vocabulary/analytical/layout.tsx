@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'Analytical Vocabulary - The English Hub',
     description:
       'Master analytical vocabulary for GCSE English Literature and Language. Key terms for discussing techniques, effects, and writers intentions.',
+    images: [
+      {
+        url: '/api/og?title=Analytical+Vocabulary+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Analytical Vocabulary - The English Hub',
+      },
+    ],
   },
 }
 

@@ -33,6 +33,14 @@ export const metadata: Metadata = {
     description:
       'How The English Hub checks content accuracy, manages AI-assisted feedback, reviews quotations and maintains trusted English learning resources.',
     type: 'article',
+    images: [
+      {
+        url: '/api/og?title=Content+Verification+Methodology+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Content Verification Methodology | The English Hub',
+      },
+    ],
   },
 }
 

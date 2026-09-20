@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     title: 'Free English Resources - The English Hub',
     description:
       'Free GCSE and IGCSE English resources: revision notes, poetry guides, writing skills, exam techniques, vocabulary builders, and study tools for all boards.',
+    images: [
+      {
+        url: '/api/og?title=Free+English+Resources+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Free English Resources - The English Hub',
+      },
+    ],
   },
 }
 import {

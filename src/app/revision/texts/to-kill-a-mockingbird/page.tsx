@@ -13,6 +13,14 @@ export const metadata: Metadata = {
     title:
       'To Kill a Mockingbird revision guide - themes, characters, key quotes - The English Hub',
     description: 'To Kill a Mockingbird IGCSE revision - Harper Lee',
+    images: [
+      {
+        url: '/api/og?title=To+Kill+a+Mockingbird+revision+guide+-+themes%2C+characters%2C+key+quotes+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'To Kill a Mockingbird revision guide - themes, characters, key quotes - The English Hub',
+      },
+    ],
   },
   title: 'To Kill a Mockingbird revision guide - themes, characters, key quotes',
   description:

@@ -7,6 +7,14 @@ export const metadata: Metadata = {
     title: 'Cancellation Policy',
     description:
       'Cancellation Policy for The English Hub, explaining your right to cancel and how refunds work.',
+    images: [
+      {
+        url: '/api/og?title=Cancellation+Policy',
+        width: 1200,
+        height: 630,
+        alt: 'Cancellation Policy',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/legal/cancellation' },
   title: 'Cancellation Policy',

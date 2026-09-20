@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'Romantic Period Context - The English Hub',
     description:
       'Understand Romantic era historical and literary context for GCSE English. Key ideas, writers, and social changes that shaped Romantic poetry and prose.',
+    images: [
+      {
+        url: '/api/og?title=Romantic+Period+Context+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Romantic Period Context - The English Hub',
+      },
+    ],
   },
 }
 

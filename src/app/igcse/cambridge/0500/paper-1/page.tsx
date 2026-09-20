@@ -21,6 +21,14 @@ export const metadata: Metadata = {
     title: 'Paper 1 Reading - IGCSE Language A',
     description:
       'Everything you need for IGCSE Language A Paper 1 Reading. Question breakdown, reading techniques, language analysis, summary writing and practice passages. Aligns with Cambridge syllabus 0500.',
+    images: [
+      {
+        url: '/api/og?title=Paper+1+Reading+-+IGCSE+Language+A',
+        width: 1200,
+        height: 630,
+        alt: 'Paper 1 Reading - IGCSE Language A',
+      },
+    ],
   },
   title: 'Paper 1 Reading - IGCSE Language A',
   description:

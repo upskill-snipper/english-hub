@@ -17,10 +17,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/ks3/ilowersecondary/reading/retrieval' },
   title: 'Retrieval (RAO1)',
   description:
-    `A masterclass on ${RAO1.code}: ${RAO1.descriptor} Learn what retrieval means, ` +
-    'how retrieval questions are worded, how to scan and pinpoint exact evidence, ' +
-    'and how to quote precisely. Includes original practice extracts, model answers ' +
-    'with mark notes, a do/don’t box and a self-check.',
+    'RAO1 retrieval: how the questions are worded, how to scan and pinpoint the exact evidence, and how to quote precisely, with extracts and model answers.',
 }
 
 type PracticeQ = {

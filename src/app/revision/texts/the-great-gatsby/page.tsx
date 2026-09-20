@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     title: 'The Great Gatsby - Study Guide | The English Hub',
     description:
       'In-depth study guide for The Great Gatsby by F. Scott Fitzgerald: plot, characters, themes, context and key quotations.',
+    images: [
+      {
+        url: '/api/og?title=The+Great+Gatsby+-+Study+Guide+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'The Great Gatsby - Study Guide | The English Hub',
+      },
+    ],
   },
   title: 'The Great Gatsby - Study Guide',
   description:

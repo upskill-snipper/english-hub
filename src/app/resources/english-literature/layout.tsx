@@ -11,7 +11,18 @@ export async function generateMetadata(): Promise<Metadata> {
     title,
     description,
     alternates: { canonical: 'https://theenglishhub.app/resources/english-literature' },
-    openGraph: { title: ogTitle, description },
+    openGraph: {
+      title: ogTitle,
+      description,
+      images: [
+        {
+          url: `/api/og?title=${encodeURIComponent(ogTitle)}`,
+          width: 1200,
+          height: 630,
+          alt: ogTitle,
+        },
+      ],
+    },
   }
 }
 

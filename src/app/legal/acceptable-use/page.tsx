@@ -8,6 +8,14 @@ export const metadata: Metadata = {
     title: 'Acceptable Use Policy',
     description:
       'Acceptable Use Policy for The English Hub, explaining what you can and cannot do on the platform.',
+    images: [
+      {
+        url: '/api/og?title=Acceptable+Use+Policy',
+        width: 1200,
+        height: 630,
+        alt: 'Acceptable Use Policy',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/legal/acceptable-use' },
   title: 'Acceptable Use Policy',

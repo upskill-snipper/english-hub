@@ -30,6 +30,14 @@ export const metadata: Metadata = {
     title: 'IGCSE Language B - The English Hub',
     description:
       'IGCSE Language B hub. Same content as Language A with 9-1 numerical grading. Reading Paper, Writing Paper, grade-by-grade guides and practice papers. Aligns with Cambridge syllabus 0990.',
+    images: [
+      {
+        url: '/api/og?title=IGCSE+Language+B+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'IGCSE Language B - The English Hub',
+      },
+    ],
   },
   title: 'IGCSE Language B',
   description:

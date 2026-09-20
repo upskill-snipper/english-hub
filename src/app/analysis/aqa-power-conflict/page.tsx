@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     title: 'AQA Power and Conflict Analysis Hub - The English Hub',
     description:
       'Grade 9 AQA Power and Conflict analysis: poem comparisons, theme essays, key quotes and exam technique.',
+    images: [
+      {
+        url: '/api/og?title=AQA+Power+and+Conflict+Analysis+Hub+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'AQA Power and Conflict Analysis Hub - The English Hub',
+      },
+    ],
   },
 }
 

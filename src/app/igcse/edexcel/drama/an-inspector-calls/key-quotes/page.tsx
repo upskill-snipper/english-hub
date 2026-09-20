@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'An Inspector Calls Key Quotes - Edexcel IGCSE Literature',
     description:
       'Twenty key quotations from An Inspector Calls with speaker, context and analysis for Edexcel IGCSE Literature exam revision.',
+    images: [
+      {
+        url: '/api/og?title=An+Inspector+Calls+Key+Quotes+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'An Inspector Calls Key Quotes - Edexcel IGCSE Literature',
+      },
+    ],
   },
   title: 'An Inspector Calls Key Quotes - Edexcel IGCSE Literature',
   description:

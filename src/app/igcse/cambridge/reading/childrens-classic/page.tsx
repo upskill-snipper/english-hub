@@ -23,6 +23,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Children',
     description: 'Cambridge IGCSE Paper 1 reading practice using children',
+    images: [
+      {
+        url: '/api/og?title=Children',
+        width: 1200,
+        height: 630,
+        alt: 'Children',
+      },
+    ],
   },
   title: "Children's Classics - Reading Practice Framework",
   description:

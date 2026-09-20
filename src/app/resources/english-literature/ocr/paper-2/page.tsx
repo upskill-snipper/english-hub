@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'OCR Paper 2: Exploring Poetry and Shakespeare | The English Hub',
     description:
       'Complete guide to OCR GCSE English Literature Paper 2. Shakespeare play, poetry anthology comparison, and unseen poetry revision.',
+    images: [
+      {
+        url: '/api/og?title=OCR+Paper+2%3A+Exploring+Poetry+and+Shakespeare+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'OCR Paper 2: Exploring Poetry and Shakespeare | The English Hub',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/ocr/paper-2' },
   title: 'OCR Paper 2: Exploring Poetry and Shakespeare',

@@ -17,6 +17,14 @@ export const metadata: Metadata = {
       'In-depth GCSE analysis of A Christmas Carol by Charles Dickens. Key quotations, character studies, themes and Grade 9 essay guidance.',
     url: 'https://theenglishhub.app/analysis/christmas-carol',
     type: 'article',
+    images: [
+      {
+        url: '/api/og?title=A+Christmas+Carol+Analysis+-+Quotes%2C+Characters+%26+Themes',
+        width: 1200,
+        height: 630,
+        alt: 'A Christmas Carol Analysis - Quotes, Characters & Themes',
+      },
+    ],
   },
 }
 

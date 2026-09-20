@@ -24,11 +24,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Blogs & journals',
     description:
-      'A reading-and-writing guide to blogs and journals (including diary-style journals) for iLowerSecondary English: conventions, how to identify and analyse them, and how to write one for Section B, with original annotated extracts and model answers.',
+      'Blogs and journals as non-fiction text types: shared conventions, what tells them apart, annotated extracts, and how to write one for Section B.',
+    images: [
+      {
+        url: '/api/og?title=Blogs+%26+journals',
+        width: 1200,
+        height: 630,
+        alt: 'Blogs & journals',
+      },
+    ],
   },
-  title: 'Blogs & journals - non-fiction text types - iLowerSecondary English',
+  title: 'Blogs & journals',
   description:
-    'A reading-and-writing guide to blogs and journals (including diary-style journals): conventions, how to identify and analyse them, and how to write one for Section B, with original annotated extracts and model answers.',
+    'Blogs and journals as non-fiction text types: shared conventions, what tells them apart, annotated extracts, and how to write one for Section B.',
   alternates: { canonical: PAGE_URL },
 }
 

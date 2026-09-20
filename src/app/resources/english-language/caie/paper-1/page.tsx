@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Paper 1: Reading | Cambridge IGCSE English Language',
     description:
       'Complete guide to Cambridge IGCSE English Language Paper 1 (Reading). Covers comprehension question types, summary writing, note-making, and passage analysis with marker tips.',
+    images: [
+      {
+        url: '/api/og?title=Paper+1%3A+Reading+%7C+Cambridge+IGCSE+English+Language',
+        width: 1200,
+        height: 630,
+        alt: 'Paper 1: Reading | Cambridge IGCSE English Language',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-language/caie/paper-1' },
   title: 'Paper 1: Reading | Cambridge IGCSE English Language',

@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'Dialogue - Cambridge IGCSE Narrative Writing',
     description:
       'Punctuation rules, subtext, the four jobs of dialogue and how to write believable speech for a Cambridge IGCSE short story.',
+    images: [
+      {
+        url: '/api/og?title=Dialogue+-+Cambridge+IGCSE+Narrative+Writing',
+        width: 1200,
+        height: 630,
+        alt: 'Dialogue - Cambridge IGCSE Narrative Writing',
+      },
+    ],
   },
   title: 'Dialogue - Cambridge IGCSE Narrative Writing',
   description:

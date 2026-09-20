@@ -24,6 +24,14 @@ export const metadata: Metadata = {
     title: 'An Inspector Calls - Edexcel IGCSE Literature Study Guide',
     description:
       'J. B. Priestley\u2019s An Inspector Calls for Edexcel IGCSE Literature: plot summary, characters, themes, post-war context and key quotations.',
+    images: [
+      {
+        url: '/api/og?title=An+Inspector+Calls+-+Edexcel+IGCSE+Literature+Study+Guide',
+        width: 1200,
+        height: 630,
+        alt: 'An Inspector Calls - Edexcel IGCSE Literature Study Guide',
+      },
+    ],
   },
   title: 'An Inspector Calls - Edexcel IGCSE Literature Study Guide',
   description:

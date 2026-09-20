@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Edexcel Paper 1: Shakespeare and Post-1914 Literature',
     description:
       'Complete revision guide for Edexcel GCSE English Literature Paper 1 (1ET0/01). Shakespeare plays and Post-1914 texts including An Inspector Calls, Lord of the Flies, and Animal Farm.',
+    images: [
+      {
+        url: '/api/og?title=Edexcel+Paper+1%3A+Shakespeare+and+Post-1914+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'Edexcel Paper 1: Shakespeare and Post-1914 Literature',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/paper-1',

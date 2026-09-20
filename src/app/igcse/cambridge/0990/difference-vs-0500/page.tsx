@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'Language A vs Language B - What is the difference? | Cambridge IGCSE | The English Hub',
     description:
       'Cambridge IGCSE Language A and Language B First Language English are the same syllabus with different grade scales. Full comparison of content, papers, objectives and grading.',
+    images: [
+      {
+        url: '/api/og?title=Language+A+vs+Language+B+-+What+is+the+difference%3F+%7C+Cambridge+IGCSE+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Language A vs Language B - What is the difference? | Cambridge IGCSE | The English Hub',
+      },
+    ],
   },
   title: 'Language A vs Language B - What is the difference? | Cambridge IGCSE',
   description:

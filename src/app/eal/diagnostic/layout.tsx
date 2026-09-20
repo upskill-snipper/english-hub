@@ -19,6 +19,14 @@ export const metadata: Metadata = {
     siteName: 'The English Hub',
     type: 'website',
     locale: 'en_GB',
+    images: [
+      {
+        url: '/api/og?title=Free+CEFR+Placement+Test+for+Arabic+Speakers+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Free CEFR Placement Test for Arabic Speakers - The English Hub',
+      },
+    ],
   },
 }
 

@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Lesson Plans - Teacher Library',
     description:
       '20 free, ready-to-teach GCSE English lesson plans with learning objectives, activities, differentiation, and plenaries.',
+    images: [
+      {
+        url: '/api/og?title=Lesson+Plans+-+Teacher+Library',
+        width: 1200,
+        height: 630,
+        alt: 'Lesson Plans - Teacher Library',
+      },
+    ],
   },
   title: 'Lesson Plans - Teacher Library',
   description:

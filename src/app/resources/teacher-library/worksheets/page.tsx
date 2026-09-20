@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'Worksheets - Teacher Library',
     description:
       '25 free printable worksheets for GCSE English: comprehension, analysis, writing scaffolds, and exam skills practice.',
+    images: [
+      {
+        url: '/api/og?title=Worksheets+-+Teacher+Library',
+        width: 1200,
+        height: 630,
+        alt: 'Worksheets - Teacher Library',
+      },
+    ],
   },
   title: 'Worksheets - Teacher Library',
   description:

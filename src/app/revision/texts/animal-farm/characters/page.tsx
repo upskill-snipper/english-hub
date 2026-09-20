@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     title: 'Animal Farm Characters - In-Depth Analysis | The English Hub',
     description:
       'Detailed character analysis for Animal Farm: Napoleon, Snowball, Squealer, Boxer, Old Major, Benjamin, Mollie and Clover. Allegorical significance, key quotes and character arcs.',
+    images: [
+      {
+        url: '/api/og?title=Animal+Farm+Characters+-+In-Depth+Analysis+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Animal Farm Characters - In-Depth Analysis | The English Hub',
+      },
+    ],
   },
   title: 'Animal Farm Characters - In-Depth Analysis',
   description:

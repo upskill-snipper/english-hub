@@ -51,6 +51,14 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       description,
       type: 'website',
       url: `https://theenglishhub.app/courses/${params.id}`,
+      images: [
+        {
+          url: `/api/og?title=${encodeURIComponent(socialTitle)}`,
+          width: 1200,
+          height: 630,
+          alt: socialTitle,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',

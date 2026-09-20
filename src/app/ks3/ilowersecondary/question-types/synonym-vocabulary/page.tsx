@@ -7,7 +7,7 @@ import { QUESTION_TYPES, ASSESSMENT_OBJECTIVES, SPEC_ATTRIBUTION } from '@/lib/i
 export const metadata: Metadata = {
   title: 'Vocabulary in context',
   description:
-    'How to answer "circle the synonym", "underline the closest meaning" and "this word means…" questions on the Pearson Edexcel iLowerSecondary English achievement test: read in context, eliminate distractors, and weigh connotation. 20+ original graded practice items with answers and rationales.',
+    'Circle the synonym and closest-meaning questions: read in context, eliminate distractors and weigh connotation, with 23 graded items and answers.',
   alternates: {
     canonical: 'https://theenglishhub.app/ks3/ilowersecondary/question-types/synonym-vocabulary',
   },
@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title:
       'Synonyms & vocabulary-in-context - iLowerSecondary English question-type masterclass - The English Hub',
     description:
-      'Master synonym and vocabulary-in-context questions: read the word in context, eliminate distractors, weigh connotation. 20+ original graded practice items with answers.',
+      'Circle the synonym and closest-meaning questions: read in context, eliminate distractors and weigh connotation, with 23 graded items and answers.',
+    images: [
+      {
+        url: '/api/og?title=Synonyms+%26+vocabulary-in-context+-+iLowerSecondary+English+question-type+masterclass+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Synonyms & vocabulary-in-context - iLowerSecondary English question-type masterclass - The English Hub',
+      },
+    ],
   },
 }
 

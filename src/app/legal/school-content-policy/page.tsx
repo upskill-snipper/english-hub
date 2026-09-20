@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'School content policy - The English Hub',
     description:
       'How The English Hub selects, frames and gates set-text content. Cultural-review practice for international and GCC-region schools.',
+    images: [
+      {
+        url: '/api/og?title=School+content+policy+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'School content policy - The English Hub',
+      },
+    ],
   },
 }
 

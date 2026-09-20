@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'A View from the Bridge Essay Plans - Edexcel IGCSE Literature',
     description:
       'Five ready-to-use essay plans for A View from the Bridge covering Eddie\u2019s downfall, masculinity, honour, Alfieri\u2019s role and dramatic techniques.',
+    images: [
+      {
+        url: '/api/og?title=A+View+from+the+Bridge+Essay+Plans+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'A View from the Bridge Essay Plans - Edexcel IGCSE Literature',
+      },
+    ],
   },
   title: 'A View from the Bridge Essay Plans - Edexcel IGCSE Literature',
   description:

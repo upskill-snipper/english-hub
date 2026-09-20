@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'An Inspector Calls Essay Plans - Edexcel IGCSE Literature',
     description:
       'Five ready-to-use essay plans for An Inspector Calls covering responsibility, Sheila\u2019s development, the Inspector\u2019s role, class and dramatic techniques.',
+    images: [
+      {
+        url: '/api/og?title=An+Inspector+Calls+Essay+Plans+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'An Inspector Calls Essay Plans - Edexcel IGCSE Literature',
+      },
+    ],
   },
   title: 'An Inspector Calls Essay Plans - Edexcel IGCSE Literature',
   description:

@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     title: 'Pride and Prejudice - Character Analysis | The English Hub',
     description:
       'In-depth character analysis for Pride and Prejudice by Jane Austen: Elizabeth Bennet, Darcy, Jane, Bingley, Wickham, Mr & Mrs Bennet, Lydia and Lady Catherine.',
+    images: [
+      {
+        url: '/api/og?title=Pride+and+Prejudice+-+Character+Analysis+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Pride and Prejudice - Character Analysis | The English Hub',
+      },
+    ],
   },
   title: 'Pride and Prejudice - Character Analysis',
   description:

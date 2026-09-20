@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'Poetry Techniques Guide - The English Hub',
     description:
       'Master poetry analysis techniques for GCSE English Literature. Learn to identify and discuss poetic devices, form, structure, and language features.',
+    images: [
+      {
+        url: '/api/og?title=Poetry+Techniques+Guide+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Poetry Techniques Guide - The English Hub',
+      },
+    ],
   },
 }
 

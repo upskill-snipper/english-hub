@@ -12,6 +12,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Pride and Prejudice revision guide - themes, characters, key quotes - The English Hub',
     description: 'Pride and Prejudice GCSE revision - Austen',
+    images: [
+      {
+        url: '/api/og?title=Pride+and+Prejudice+revision+guide+-+themes%2C+characters%2C+key+quotes+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Pride and Prejudice revision guide - themes, characters, key quotes - The English Hub',
+      },
+    ],
   },
   title: 'Pride and Prejudice revision guide - themes, characters, key quotes',
   description:

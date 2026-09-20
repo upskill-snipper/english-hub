@@ -19,6 +19,14 @@ export const metadata: Metadata = {
     title: 'Summary Writing - IGCSE Language A Paper 1 Q3',
     description:
       'How to write a top-mark summary for IGCSE Language A Paper 1 Question 3. Method, model paragraph and marking criteria explained. Aligns with Cambridge syllabus 0500.',
+    images: [
+      {
+        url: '/api/og?title=Summary+Writing+-+IGCSE+Language+A+Paper+1+Q3',
+        width: 1200,
+        height: 630,
+        alt: 'Summary Writing - IGCSE Language A Paper 1 Q3',
+      },
+    ],
   },
   title: 'Summary Writing - IGCSE Language A Paper 1 Q3',
   description:

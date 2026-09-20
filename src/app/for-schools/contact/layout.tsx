@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'Book a Call | Schools | The English Hub',
     description:
       'Book a 20-minute call to learn about The English Hub for your school. No obligation, no sales deck.',
+    images: [
+      {
+        url: '/api/og?title=Book+a+Call+%7C+Schools+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Book a Call | Schools | The English Hub',
+      },
+    ],
   },
 }
 

@@ -19,13 +19,21 @@ const W92C = YEAR9_CODES.find((c) => c.code === 'W9.2C')!
 
 export const metadata: Metadata = {
   openGraph: {
-    title: `Structure & organisation - writing skill ${SKILL.code} masterclass`,
+    title: `Writing structure & organisation`,
     description:
-      'A KS3 iLowerSecondary English masterclass on structuring and organising writing: whole-text shape, topic sentences, paragraph construction, and linking paragraphs with a range of methods.',
+      'Structuring and organising Section B writing: whole-text shape, topic sentences, building a paragraph, and linking paragraphs with a range of methods.',
+    images: [
+      {
+        url: `/api/og?title=${encodeURIComponent(`Structure and organisation - ${SKILL.code}`)}`,
+        width: 1200,
+        height: 630,
+        alt: `Structure and organisation - writing skill ${SKILL.code}`,
+      },
+    ],
   },
-  title: `Structure & organisation - writing skill ${SKILL.code}`,
+  title: `Writing structure & organisation`,
   description:
-    'A KS3 iLowerSecondary English masterclass on structuring and organising writing: whole-text shape, topic sentences, paragraph construction, and linking paragraphs with a range of methods.',
+    'Structuring and organising Section B writing: whole-text shape, topic sentences, building a paragraph, and linking paragraphs with a range of methods.',
   alternates: { canonical: PAGE_URL },
 }
 

@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: '9-1 vs A*-G grade conversion | Cambridge IGCSE Language B | The English Hub',
     description:
       'Full conversion table between Cambridge IGCSE Language B 9-1 grades and Language A A*-G grades. Understand how your numerical grade compares to the letter scale.',
+    images: [
+      {
+        url: '/api/og?title=9-1+vs+A*-G+grade+conversion+%7C+Cambridge+IGCSE+Language+B+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: '9-1 vs A*-G grade conversion | Cambridge IGCSE Language B | The English Hub',
+      },
+    ],
   },
   title: '9-1 vs A*-G grade conversion | Cambridge IGCSE Language B',
   description:

@@ -8,6 +8,14 @@ export const metadata: Metadata = {
     title: 'Grade Targets | The English Hub',
     description:
       'Understand what each GCSE English grade looks like. Grade descriptors, self-assessment tools, and targeted advice for reaching Grade 5, 7, or 9 in English Language and Literature.',
+    images: [
+      {
+        url: '/api/og?title=Grade+Targets+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Grade Targets | The English Hub',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/grade-targets' },
   title: 'Grade Targets',

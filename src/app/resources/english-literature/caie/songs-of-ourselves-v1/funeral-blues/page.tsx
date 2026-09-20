@@ -12,6 +12,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Funeral Blues - W.H. Auden | Cambridge IGCSE 0475',
     description: 'Study guide for ',
+    images: [
+      {
+        url: '/api/og?title=Funeral+Blues+-+W.H.+Auden+%7C+Cambridge+IGCSE+0475',
+        width: 1200,
+        height: 630,
+        alt: 'Funeral Blues - W.H. Auden | Cambridge IGCSE 0475',
+      },
+    ],
   },
   title: 'Funeral Blues - W.H. Auden | Cambridge IGCSE 0475',
   description:

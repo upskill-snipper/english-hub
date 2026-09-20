@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'Compare Classes | The English Hub',
     description:
       'Compare 2-4 classes side by side. Analyse average scores, completion rates, engagement, skill breakdowns, grade distributions, and trends.',
+    images: [
+      {
+        url: '/api/og?title=Compare+Classes+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Compare Classes | The English Hub',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/school/compare' },
   title: 'Compare Classes',

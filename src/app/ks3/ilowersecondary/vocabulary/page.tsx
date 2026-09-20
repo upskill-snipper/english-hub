@@ -18,11 +18,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Vocabulary builder',
     description:
-      'A precise vocabulary builder for Pearson iLowerSecondary English (LEH11): themed word banks for Survival, Journeys, the Natural World, Courage, Change and Discovery, an analytical-verb bank and a weak-to-precise upgrade table.',
+      'Themed word banks for survival, journeys, the natural world, courage, change and discovery, plus analytical verbs and a weak-to-precise upgrade table.',
+    images: [
+      {
+        url: '/api/og?title=Vocabulary+builder',
+        width: 1200,
+        height: 630,
+        alt: 'Vocabulary builder',
+      },
+    ],
   },
-  title: 'iLowerSecondary English vocabulary builder',
+  title: 'Vocabulary builder',
   description:
-    'A precise vocabulary builder for Pearson iLowerSecondary English (LEH11): themed word banks for Survival, Journeys, the Natural World, Courage, Change and Discovery, an analytical-verb bank and a weak-to-precise upgrade table.',
+    'Themed word banks for survival, journeys, the natural world, courage, change and discovery, plus analytical verbs and a weak-to-precise upgrade table.',
   alternates: { canonical: PAGE_URL },
 }
 

@@ -7,6 +7,14 @@ export const metadata = {
     title: 'Full Disclaimer',
     description:
       'Complete disclaimer for The English Hub, including exam board non-affiliation, AI feedback, and supplementary education disclaimers.',
+    images: [
+      {
+        url: '/api/og?title=Full+Disclaimer',
+        width: 1200,
+        height: 630,
+        alt: 'Full Disclaimer',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/legal/disclaimer' },
   title: 'Full Disclaimer',

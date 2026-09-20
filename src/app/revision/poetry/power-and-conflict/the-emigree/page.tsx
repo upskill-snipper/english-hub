@@ -13,6 +13,14 @@ export const metadata = {
     title: 'The Émigrée -- Carol Rumens -- The English Hub',
     description:
       'Interactive study guide for The Émigrée by Carol Rumens. GCSE Power and Conflict poetry analysis with annotations, key quotes, language devices, and comparisons.',
+    images: [
+      {
+        url: '/api/og?title=The+%C3%89migr%C3%A9e+--+Carol+Rumens+--+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'The Émigrée -- Carol Rumens -- The English Hub',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/revision/poetry/power-and-conflict/the-emigree',

@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'Paper 2: Directed Writing & Composition | Cambridge IGCSE English Language',
     description:
       'Complete guide to Cambridge IGCSE English Language directed writing and composition. Covers letters, reports, articles, speeches, journals, narrative and descriptive writing, with full band descriptors.',
+    images: [
+      {
+        url: '/api/og?title=Paper+2%3A+Directed+Writing+%26+Composition+%7C+Cambridge+IGCSE+English+Language',
+        width: 1200,
+        height: 630,
+        alt: 'Paper 2: Directed Writing & Composition | Cambridge IGCSE English Language',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-language/caie/paper-2' },
   title: 'Paper 2: Directed Writing & Composition | Cambridge IGCSE English Language',

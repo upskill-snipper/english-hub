@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Edexcel Paper 2: 19th-Century Novel and Poetry since 1789',
     description:
       'Complete revision guide for Edexcel GCSE English Literature Paper 2 (1ET0/02). 19th-century novels, poetry anthology (Relationships and Conflict clusters), and unseen poetry.',
+    images: [
+      {
+        url: '/api/og?title=Edexcel+Paper+2%3A+19th-Century+Novel+and+Poetry+since+1789',
+        width: 1200,
+        height: 630,
+        alt: 'Edexcel Paper 2: 19th-Century Novel and Poetry since 1789',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/paper-2',

@@ -29,6 +29,14 @@ export const metadata: Metadata = {
     title: 'Edexcel IGCSE English Language A (4EA1) - The English Hub',
     description:
       'Complete revision hub for Pearson Edexcel IGCSE English Language A. Paper 1 non-fiction anthology, Paper 2 transactional writing, exam technique and study tools.',
+    images: [
+      {
+        url: '/api/og?title=Edexcel+IGCSE+English+Language+A+(4EA1)+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Edexcel IGCSE English Language A (4EA1) - The English Hub',
+      },
+    ],
   },
   title: 'Edexcel IGCSE English Language A (4EA1)',
   description:

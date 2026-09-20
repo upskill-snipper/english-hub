@@ -8,11 +8,7 @@ import { WrongBoardBanner } from '@/components/board/WrongBoardBanner'
  * not study the AQA Power and Conflict poetry cluster. Using a layout means
  * all pages get the gate without needing per-page imports.
  */
-export default function Layout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <WrongBoardBanner

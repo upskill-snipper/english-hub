@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Descriptive Writing - IGCSE Language A Paper 2 Section B',
     description:
       'How to write a top-mark descriptive composition for IGCSE Language A Paper 2. Sensory detail, setting, atmosphere, structure and worked opening. Aligns with Cambridge syllabus 0500.',
+    images: [
+      {
+        url: '/api/og?title=Descriptive+Writing+-+IGCSE+Language+A+Paper+2+Section+B',
+        width: 1200,
+        height: 630,
+        alt: 'Descriptive Writing - IGCSE Language A Paper 2 Section B',
+      },
+    ],
   },
   title: 'Descriptive Writing - IGCSE Language A Paper 2 Section B',
   description:

@@ -17,11 +17,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Command words (LEH11/01)',
     description:
-      'A definitive glossary of the command and question words used in the LEH11/01 reading paper: what each one really asks, the response shape it demands, typical marks and an original model answer.',
+      'A glossary of the command and question words in the LEH11/01 reading paper: what each asks for, the answer shape, typical marks and a model answer.',
+    images: [
+      {
+        url: '/api/og?title=Command+words+(LEH11%2F01)',
+        width: 1200,
+        height: 630,
+        alt: 'Command words (LEH11/01)',
+      },
+    ],
   },
-  title: 'iLowerSecondary English command words (LEH11/01)',
+  title: 'Command words (LEH11/01)',
   description:
-    'A definitive glossary of the command and question words used in the LEH11/01 reading paper: what each one really asks, the response shape it demands, typical marks and an original model answer.',
+    'A glossary of the command and question words in the LEH11/01 reading paper: what each asks for, the answer shape, typical marks and a model answer.',
   alternates: { canonical: PAGE_URL },
 }
 

@@ -13,6 +13,14 @@ export const metadata: Metadata = {
     title: 'Julius Caesar - Study Guide | The English Hub',
     description:
       'In-depth study guide for Julius Caesar by William Shakespeare: plot, characters, themes, context and key quotations.',
+    images: [
+      {
+        url: '/api/og?title=Julius+Caesar+-+Study+Guide+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Julius Caesar - Study Guide | The English Hub',
+      },
+    ],
   },
   title: 'Julius Caesar - Study Guide',
   description:

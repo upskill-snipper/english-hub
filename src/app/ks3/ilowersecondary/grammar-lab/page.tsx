@@ -25,8 +25,16 @@ export const metadata: Metadata = {
     title: 'Grammar lab',
     description:
       'A complete grammar, punctuation and spelling skill-builder for LEH11: word classes, sentence types, punctuation rules, UK spelling traps and a self-test.',
+    images: [
+      {
+        url: '/api/og?title=Grammar+lab',
+        width: 1200,
+        height: 630,
+        alt: 'Grammar lab',
+      },
+    ],
   },
-  title: 'Grammar lab - iLowerSecondary English (LEH11)',
+  title: 'Grammar lab (LEH11)',
   description:
     'A complete grammar, punctuation and spelling skill-builder for LEH11: word classes, sentence types, punctuation rules, UK spelling traps and a self-test.',
   alternates: { canonical: PAGE_URL },

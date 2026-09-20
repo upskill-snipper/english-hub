@@ -20,14 +20,22 @@ const DESCRIBE = WRITING_PURPOSES.find((p) => p === 'describe')!
 export const metadata: Metadata = {
   title: 'Narrative & descriptive writing',
   description:
-    'Master Section B narrative and descriptive writing: story arc, viewpoint, show-don’t-tell, dialogue punctuation, pace and endings; sensory imagery, zooming, expanded noun phrases, controlled figurative language and atmosphere - with two original annotated models.',
+    'Section B narrative and descriptive writing: story arc, viewpoint, dialogue punctuation, sensory imagery and pace, with two annotated models.',
   alternates: {
     canonical: 'https://theenglishhub.app/ks3/ilowersecondary/writing-forms/narrative-descriptive',
   },
   openGraph: {
     title: 'Narrative & descriptive writing - iLowerSecondary writing-forms guide',
     description:
-      'How to control story arc, viewpoint and pace, and how to describe with sensory precision and atmosphere - with two original annotated models mapped to the mark grids.',
+      'Section B narrative and descriptive writing: story arc, viewpoint, dialogue punctuation, sensory imagery and pace, with two annotated models.',
+    images: [
+      {
+        url: '/api/og?title=Narrative+%26+descriptive+writing+-+iLowerSecondary+writing-forms+guide',
+        width: 1200,
+        height: 630,
+        alt: 'Narrative & descriptive writing - iLowerSecondary writing-forms guide',
+      },
+    ],
   },
 }
 

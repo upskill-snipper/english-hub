@@ -11,11 +11,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Tables & closed questions',
     description:
-      'Master the closed iLowerSecondary English items - feature tick-tables with partial credit, A/B/C/D multiple choice, underline/circle the correct word, and the “which text is more appealing” evidence question. Worked examples and technique.',
+      'Feature tick-tables with partial credit, A/B/C/D multiple choice, underline the correct word and the text-appeal question, with worked examples.',
+    images: [
+      {
+        url: '/api/og?title=Tables+%26+closed+questions',
+        width: 1200,
+        height: 630,
+        alt: 'Tables & closed questions',
+      },
+    ],
   },
-  title: 'Tables & closed questions: a masterclass',
+  title: 'Tables & closed questions',
   description:
-    'Master the closed iLowerSecondary English items - feature tick-tables with partial credit, A/B/C/D multiple choice, underline/circle the correct word, and the “which text is more appealing” evidence question. Worked examples and technique.',
+    'Feature tick-tables with partial credit, A/B/C/D multiple choice, underline the correct word and the text-appeal question, with worked examples.',
   alternates: { canonical: PAGE_URL },
 }
 

@@ -26,11 +26,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Specification (LEH11)',
     description:
-      'The complete Pearson Edexcel International Award in Lower Secondary English (LEH11) specification: qualification facts, sections, assessment objectives and content skills.',
+      'The Pearson Edexcel International Award in Lower Secondary English (LEH11) specification: qualification facts, paper structure and assessment objectives.',
+    images: [
+      {
+        url: '/api/og?title=Specification+(LEH11)',
+        width: 1200,
+        height: 630,
+        alt: 'Specification (LEH11)',
+      },
+    ],
   },
-  title: 'iLowerSecondary English specification (LEH11)',
+  title: 'Specification (LEH11)',
   description:
-    'The complete Pearson Edexcel International Award in Lower Secondary English (LEH11) specification: qualification facts, sections, assessment objectives and content skills.',
+    'The Pearson Edexcel International Award in Lower Secondary English (LEH11) specification: qualification facts, paper structure and assessment objectives.',
   alternates: { canonical: PAGE_URL },
 }
 

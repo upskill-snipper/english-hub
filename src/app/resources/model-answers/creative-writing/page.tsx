@@ -34,6 +34,14 @@ export const metadata: Metadata = {
     title: 'Model Creative Writing Answers | The English Hub',
     description:
       'Grade 3, 5, 7, and 9 model creative writing responses for GCSE English. Descriptive and narrative writing with examiner commentary and technique annotations at every grade level.',
+    images: [
+      {
+        url: '/api/og?title=Model+Creative+Writing+Answers+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Model Creative Writing Answers | The English Hub',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/model-answers/creative-writing',

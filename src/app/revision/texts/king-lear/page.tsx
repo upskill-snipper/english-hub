@@ -13,6 +13,14 @@ export const metadata: Metadata = {
     title: 'King Lear - Study Guide | The English Hub',
     description:
       'In-depth study guide for King Lear by William Shakespeare: plot, characters, themes, context and key quotations.',
+    images: [
+      {
+        url: '/api/og?title=King+Lear+-+Study+Guide+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'King Lear - Study Guide | The English Hub',
+      },
+    ],
   },
   title: 'King Lear - Study Guide',
   description:

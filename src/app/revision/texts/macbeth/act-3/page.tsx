@@ -13,6 +13,14 @@ export const metadata = {
   openGraph: {
     title: 'Macbeth Act 3 - Scene-by-Scene Analysis | The English Hub',
     description: 'Detailed GCSE analysis of Macbeth Act 3: Banquo',
+    images: [
+      {
+        url: '/api/og?title=Macbeth+Act+3+-+Scene-by-Scene+Analysis+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Macbeth Act 3 - Scene-by-Scene Analysis | The English Hub',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/revision/texts/macbeth/act-3' },
   title: 'Macbeth Act 3 - Scene-by-Scene Analysis',

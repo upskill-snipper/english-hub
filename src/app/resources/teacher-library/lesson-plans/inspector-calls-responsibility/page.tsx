@@ -8,6 +8,14 @@ export const metadata: Metadata = {
     title: 'An Inspector Calls: Social Responsibility - Lesson Plan',
     description:
       'Full 60-minute lesson plan on responsibility in An Inspector Calls Act 1. Objectives, activities, differentiation, homework.',
+    images: [
+      {
+        url: '/api/og?title=An+Inspector+Calls%3A+Social+Responsibility+-+Lesson+Plan',
+        width: 1200,
+        height: 630,
+        alt: 'An Inspector Calls: Social Responsibility - Lesson Plan',
+      },
+    ],
   },
   title: 'An Inspector Calls: Social Responsibility - Lesson Plan',
   description:

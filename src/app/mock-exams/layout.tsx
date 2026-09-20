@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     description:
       'Practice papers for GCSE & IGCSE English Language and Literature, with mark-scheme breakdowns.',
     url: 'https://theenglishhub.app/mock-exams',
+    images: [
+      {
+        url: '/api/og?title=Mock+exams+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Mock exams - The English Hub',
+      },
+    ],
   },
 }
 

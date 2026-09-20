@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'Curious Incident Themes - Edexcel IGCSE Literature',
     description:
       'Themes in The Curious Incident of the Dog in the Night-Time: neurodivergence, family, truth and lies, independence, order and theatrical form.',
+    images: [
+      {
+        url: '/api/og?title=Curious+Incident+Themes+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'Curious Incident Themes - Edexcel IGCSE Literature',
+      },
+    ],
   },
   title: 'Curious Incident Themes - Edexcel IGCSE Literature',
   description:

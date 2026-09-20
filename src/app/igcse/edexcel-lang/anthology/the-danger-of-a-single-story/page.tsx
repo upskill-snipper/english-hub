@@ -24,6 +24,14 @@ export const metadata: Metadata = {
       'The Danger of a Single Story - Chimamanda Ngozi Adichie - IGCSE Language A Anthology - The English Hub',
     description:
       'Full study guide for The Danger of a Single Story by Chimamanda Ngozi Adichie. Language analysis, structural analysis, key vocabulary and exam practice for Edexcel IGCSE English Language A.',
+    images: [
+      {
+        url: '/api/og?title=The+Danger+of+a+Single+Story+-+Chimamanda+Ngozi+Adichie+-+IGCSE+Language+A+Anthology+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'The Danger of a Single Story - Chimamanda Ngozi Adichie - IGCSE Language A Anthology - The English Hub',
+      },
+    ],
   },
   title: 'The Danger of a Single Story - Chimamanda Ngozi Adichie - IGCSE Language A Anthology',
   description:

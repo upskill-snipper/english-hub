@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Romeo and Juliet Key Quotes - Edexcel IGCSE Literature',
     description:
       '20 key Romeo and Juliet quotations with speaker, scene reference and analysis, for the Edexcel IGCSE Literature closed-book Shakespeare exam.',
+    images: [
+      {
+        url: '/api/og?title=Romeo+and+Juliet+Key+Quotes+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'Romeo and Juliet Key Quotes - Edexcel IGCSE Literature',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/romeo-and-juliet/quotes',

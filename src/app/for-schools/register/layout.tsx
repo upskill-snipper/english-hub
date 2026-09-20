@@ -10,6 +10,14 @@ export const metadata: Metadata = {
     title: 'Book a Call | The English Hub for Schools',
     description:
       'Founding Schools Programme: book a call to discuss tailored pricing for your department.',
+    images: [
+      {
+        url: '/api/og?title=Book+a+Call+%7C+The+English+Hub+for+Schools',
+        width: 1200,
+        height: 630,
+        alt: 'Book a Call | The English Hub for Schools',
+      },
+    ],
   },
 }
 

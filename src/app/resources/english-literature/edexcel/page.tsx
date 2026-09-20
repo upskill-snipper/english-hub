@@ -10,6 +10,14 @@ export const metadata: Metadata = {
     title: 'Pearson Edexcel GCSE English Literature resources - The English Hub',
     description:
       'Pearson Edexcel 1ET0 GCSE English Literature set-text guides, anthology poetry, exam technique and Grade 9 essay plans for Paper 1 and Paper 2.',
+    images: [
+      {
+        url: '/api/og?title=Pearson+Edexcel+GCSE+English+Literature+resources+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Pearson Edexcel GCSE English Literature resources - The English Hub',
+      },
+    ],
   },
   title: 'Pearson Edexcel GCSE English Literature resources',
   description:

@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     title: 'Blood Brothers - Themes | The English Hub',
     description:
       'Detailed theme analysis for Blood Brothers by Willy Russell: Class, Nature vs Nurture, Superstition, Friendship, Violence and Fate.',
+    images: [
+      {
+        url: '/api/og?title=Blood+Brothers+-+Themes+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Blood Brothers - Themes | The English Hub',
+      },
+    ],
   },
   title: 'Blood Brothers - Themes',
   description:

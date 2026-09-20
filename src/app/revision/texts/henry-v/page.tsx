@@ -13,6 +13,14 @@ export const metadata: Metadata = {
     title: 'Henry V - Study Guide | The English Hub',
     description:
       'In-depth study guide for Henry V by William Shakespeare: plot, characters, themes, context and key quotations.',
+    images: [
+      {
+        url: '/api/og?title=Henry+V+-+Study+Guide+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Henry V - Study Guide | The English Hub',
+      },
+    ],
   },
   title: 'Henry V - Study Guide',
   description:

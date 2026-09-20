@@ -10,6 +10,14 @@ export const metadata: Metadata = {
     title: 'Grammar & Punctuation Guide | The English Hub',
     description:
       'Comprehensive GCSE grammar and punctuation guide. Sentence types, punctuation for effect, paragraph techniques, SPaG errors, active and passive voice, tense consistency, apostrophes, direct speech rules, commonly misspelled words, and technical accuracy marking guide guidance.',
+    images: [
+      {
+        url: '/api/og?title=Grammar+%26+Punctuation+Guide+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Grammar & Punctuation Guide | The English Hub',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/writing-skills/grammar-punctuation',

@@ -10,6 +10,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'The City Planners - Margaret Atwood | Cambridge IGCSE 0475',
     description: 'Study guide for ',
+    images: [
+      {
+        url: '/api/og?title=The+City+Planners+-+Margaret+Atwood+%7C+Cambridge+IGCSE+0475',
+        width: 1200,
+        height: 630,
+        alt: 'The City Planners - Margaret Atwood | Cambridge IGCSE 0475',
+      },
+    ],
   },
   title: 'The City Planners - Margaret Atwood | Cambridge IGCSE 0475',
   description:

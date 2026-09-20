@@ -10,9 +10,7 @@ const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/about'
 export const metadata: Metadata = {
   title: 'About the qualification',
   description:
-    `Plain-English facts about the ${QUALIFICATION.title} ` +
-    `(${QUALIFICATION.subjectCode}): what it is, how it is assessed and ` +
-    'graded, when it is sat, and what it leads to.',
+    'Plain-English facts about the Pearson Edexcel iLowerSecondary English award: how the single paper is built, how it is graded, and where it leads.',
   alternates: { canonical: PAGE_URL },
 }
 

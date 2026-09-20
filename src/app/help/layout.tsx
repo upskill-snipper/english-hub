@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     siteName: 'The English Hub',
     type: 'website',
     locale: 'en_GB',
+    images: [
+      {
+        url: '/api/og?title=Help+Centre+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Help Centre - The English Hub',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',

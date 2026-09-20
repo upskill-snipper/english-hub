@@ -18,11 +18,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'The five non-fiction purposes',
     description:
-      'The hub guide to the five iLowerSecondary non-fiction purposes. Definitions, tell-tale language and structure, original examples, a purpose-detective decision tree, and a 12-item self-test with answers.',
+      'Argue, describe, explain, inform and persuade: definitions, tell-tale language and structure, a purpose-detective decision tree and a 12-item self-test.',
+    images: [
+      {
+        url: '/api/og?title=The+five+non-fiction+purposes',
+        width: 1200,
+        height: 630,
+        alt: 'The five non-fiction purposes',
+      },
+    ],
   },
-  title: 'The five non-fiction purposes - argue, describe, explain, inform, persuade',
+  title: 'The five non-fiction purposes',
   description:
-    'The hub guide to the five iLowerSecondary non-fiction purposes. Definitions, tell-tale language and structure, original examples, a purpose-detective decision tree, and a 12-item self-test with answers.',
+    'Argue, describe, explain, inform and persuade: definitions, tell-tale language and structure, a purpose-detective decision tree and a 12-item self-test.',
   alternates: { canonical: PAGE_URL },
 }
 

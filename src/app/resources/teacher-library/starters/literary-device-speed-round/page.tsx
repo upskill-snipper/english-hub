@@ -7,6 +7,14 @@ export const metadata: Metadata = {
     title: 'Literary Device Speed Round - 5-Minute Starter',
     description:
       'A 5-minute quick-fire starter with 10 literary device definitions. No printing required.',
+    images: [
+      {
+        url: '/api/og?title=Literary+Device+Speed+Round+-+5-Minute+Starter',
+        width: 1200,
+        height: 630,
+        alt: 'Literary Device Speed Round - 5-Minute Starter',
+      },
+    ],
   },
   title: 'Literary Device Speed Round - 5-Minute Starter',
   description:

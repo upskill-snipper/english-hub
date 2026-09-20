@@ -11,10 +11,6 @@ import { AnalysisBoardGate } from './_components/AnalysisBoardGate'
  * sibling routes, so the banner state stays consistent as the student
  * moves between Paper 1 / Paper 2 guides.
  */
-export default function LanguagePaperLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function LanguagePaperLayout({ children }: { children: React.ReactNode }) {
   return <AnalysisBoardGate>{children}</AnalysisBoardGate>
 }

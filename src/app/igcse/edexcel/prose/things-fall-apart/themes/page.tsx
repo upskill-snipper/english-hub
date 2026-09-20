@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'Things Fall Apart Themes - Edexcel IGCSE Literature',
     description:
       'Themes in Achebe\u2019s Things Fall Apart: colonialism, masculinity, tradition vs change, fate and chi, gender, language and narrative form.',
+    images: [
+      {
+        url: '/api/og?title=Things+Fall+Apart+Themes+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'Things Fall Apart Themes - Edexcel IGCSE Literature',
+      },
+    ],
   },
   title: 'Things Fall Apart Themes - Edexcel IGCSE Literature',
   description:

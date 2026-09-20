@@ -10,6 +10,14 @@ export const metadata: Metadata = {
     title: 'Terms of Service - The English Hub',
     description:
       'Terms and conditions for using The English Hub platform. Rules governing access to courses, subscriptions, content usage, and user responsibilities.',
+    images: [
+      {
+        url: '/api/og?title=Terms+of+Service+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Terms of Service - The English Hub',
+      },
+    ],
   },
 }
 

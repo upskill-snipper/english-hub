@@ -10,6 +10,14 @@ export const metadata: Metadata = {
     title: 'AQA GCSE English Literature (8702) Grade Boundaries',
     description:
       'Approximate grade boundaries for AQA GCSE English Literature (8702), what each grade looks like, and how to push your marks higher.',
+    images: [
+      {
+        url: '/api/og?title=AQA+GCSE+English+Literature+(8702)+Grade+Boundaries',
+        width: 1200,
+        height: 630,
+        alt: 'AQA GCSE English Literature (8702) Grade Boundaries',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/aqa/grade-boundaries',

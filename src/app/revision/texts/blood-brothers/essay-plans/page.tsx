@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     title: 'Blood Brothers - Essay Plans | The English Hub',
     description:
       'Five exam-ready essay plans for Blood Brothers by Willy Russell with thesis, paragraph outlines and key quotations.',
+    images: [
+      {
+        url: '/api/og?title=Blood+Brothers+-+Essay+Plans+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Blood Brothers - Essay Plans | The English Hub',
+      },
+    ],
   },
   title: 'Blood Brothers - Essay Plans',
   description:

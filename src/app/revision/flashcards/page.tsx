@@ -5,6 +5,14 @@ export const metadata = {
     title: 'Flashcards - Revision - The English Hub',
     description:
       'Master GCSE English with smart review flashcards. Quotes, techniques, vocabulary and exam skills with progress tracking and GCSE grade equivalents.',
+    images: [
+      {
+        url: '/api/og?title=Flashcards+-+Revision+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Flashcards - Revision - The English Hub',
+      },
+    ],
   },
   title: 'Flashcards - Revision',
   description:

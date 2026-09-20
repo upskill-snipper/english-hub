@@ -24,6 +24,14 @@ export const metadata: Metadata = {
     title: 'Setting and Atmosphere - Reading Practice Framework - The English Hub',
     description:
       'Cambridge IGCSE Paper 1 reading practice on setting and atmosphere. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
+    images: [
+      {
+        url: '/api/og?title=Setting+and+Atmosphere+-+Reading+Practice+Framework+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Setting and Atmosphere - Reading Practice Framework - The English Hub',
+      },
+    ],
   },
   title: 'Setting and Atmosphere - Reading Practice Framework',
   description:

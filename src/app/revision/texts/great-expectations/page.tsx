@@ -12,6 +12,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Great Expectations revision guide - themes, characters, key quotes - The English Hub',
     description: 'Great Expectations GCSE revision - Dickens',
+    images: [
+      {
+        url: '/api/og?title=Great+Expectations+revision+guide+-+themes%2C+characters%2C+key+quotes+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Great Expectations revision guide - themes, characters, key quotes - The English Hub',
+      },
+    ],
   },
   title: 'Great Expectations revision guide - themes, characters, key quotes',
   description:

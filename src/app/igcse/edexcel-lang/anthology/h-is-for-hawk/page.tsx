@@ -20,6 +20,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'H is for Hawk - Helen Macdonald - IGCSE Language A Anthology - The English Hub',
     description: 'Study guide for ',
+    images: [
+      {
+        url: '/api/og?title=H+is+for+Hawk+-+Helen+Macdonald+-+IGCSE+Language+A+Anthology+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'H is for Hawk - Helen Macdonald - IGCSE Language A Anthology - The English Hub',
+      },
+    ],
   },
   title: 'H is for Hawk - Helen Macdonald - IGCSE Language A Anthology',
   description:

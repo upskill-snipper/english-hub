@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'To Kill a Mockingbird - CAIE IGCSE - The English Hub',
     description:
       'CAIE IGCSE English Literature guide for To Kill a Mockingbird. Character analysis, themes of justice and prejudice, key quotes, and exam tips.',
+    images: [
+      {
+        url: '/api/og?title=To+Kill+a+Mockingbird+-+CAIE+IGCSE+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'To Kill a Mockingbird - CAIE IGCSE - The English Hub',
+      },
+    ],
   },
 }
 

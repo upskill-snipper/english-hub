@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'KS3 skill codes',
     description:
       'Every KS3 English skill code (Y7→Y8→Y9 progression) across Reading, Writing, Language Control, and Speaking & Listening.',
+    images: [
+      {
+        url: '/api/og?title=KS3+skill+codes',
+        width: 1200,
+        height: 630,
+        alt: 'KS3 skill codes',
+      },
+    ],
   },
   title: 'KS3 skill codes',
   description:

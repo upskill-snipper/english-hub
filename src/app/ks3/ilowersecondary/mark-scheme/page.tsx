@@ -15,11 +15,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'How your answers are marked',
     description:
-      'Plain-English guide to Pearson’s marking rules for the iLowerSecondary English achievement test: positive marking, best-fit levels, indicative content, and the full Section B writing and comparison grids.',
+      'How Pearson marks the iLowerSecondary English test: positive marking, best-fit levels, indicative content and the full Section B writing grids.',
+    images: [
+      {
+        url: '/api/og?title=How+your+answers+are+marked',
+        width: 1200,
+        height: 630,
+        alt: 'How your answers are marked',
+      },
+    ],
   },
-  title: 'How your answers are marked - iLowerSecondary English',
+  title: 'How your answers are marked',
   description:
-    'Plain-English guide to Pearson’s marking rules for the iLowerSecondary English achievement test: positive marking, best-fit levels, indicative content, and the full Section B writing and comparison grids.',
+    'How Pearson marks the iLowerSecondary English test: positive marking, best-fit levels, indicative content and the full Section B writing grids.',
   alternates: {
     canonical: 'https://theenglishhub.app/ks3/ilowersecondary/mark-scheme',
   },

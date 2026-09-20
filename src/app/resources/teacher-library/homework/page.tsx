@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'Homework Tasks - Teacher Library',
     description:
       'A library of meaningful GCSE English homework tasks that extend learning without creating a marking mountain.',
+    images: [
+      {
+        url: '/api/og?title=Homework+Tasks+-+Teacher+Library',
+        width: 1200,
+        height: 630,
+        alt: 'Homework Tasks - Teacher Library',
+      },
+    ],
   },
   title: 'Homework Tasks - Teacher Library',
   description:

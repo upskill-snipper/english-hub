@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Paper 1 Practice Passages - IGCSE Language A',
     description:
       'Three IGCSE Language A Paper 1 practice passages using public domain literary extracts from Dickens, Austen and Hardy. Full questions and model answers. Aligns with Cambridge syllabus 0500.',
+    images: [
+      {
+        url: '/api/og?title=Paper+1+Practice+Passages+-+IGCSE+Language+A',
+        width: 1200,
+        height: 630,
+        alt: 'Paper 1 Practice Passages - IGCSE Language A',
+      },
+    ],
   },
   title: 'Paper 1 Practice Passages - IGCSE Language A',
   description:

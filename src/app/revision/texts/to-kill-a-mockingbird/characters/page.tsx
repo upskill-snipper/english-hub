@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     title: 'To Kill a Mockingbird - Character Analysis | The English Hub',
     description:
       'In-depth character analysis for To Kill a Mockingbird by Harper Lee: Scout, Atticus, Jem, Boo Radley, Tom Robinson, Bob Ewell, Calpurnia, Miss Maudie and Dill.',
+    images: [
+      {
+        url: '/api/og?title=To+Kill+a+Mockingbird+-+Character+Analysis+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'To Kill a Mockingbird - Character Analysis | The English Hub',
+      },
+    ],
   },
   title: 'To Kill a Mockingbird - Character Analysis',
   description:

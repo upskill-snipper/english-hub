@@ -21,7 +21,7 @@ const SECTION_B = SECTIONS.B
 export const metadata: Metadata = {
   title: 'Letter & diary',
   description:
-    'Master the letter and diary forms for Section B: formal vs informal letter openings and sign-offs, dated reflective diary entries, register, purposes and audiences, two original annotated models and a form-conventions checklist.',
+    'The letter and diary forms for Section B: formal and informal openings and sign-offs, dated diary entries, register, and two annotated models.',
   alternates: {
     canonical: 'https://theenglishhub.app/ks3/ilowersecondary/writing-forms/letter-diary',
   },
@@ -29,6 +29,14 @@ export const metadata: Metadata = {
     title: 'Letter & diary - iLowerSecondary writing-form guide',
     description:
       'Conventions, register, purposes and audiences for the letter and diary forms, with two original examiner-annotated models and a checklist.',
+    images: [
+      {
+        url: '/api/og?title=Letter+%26+diary+-+iLowerSecondary+writing-form+guide',
+        width: 1200,
+        height: 630,
+        alt: 'Letter & diary - iLowerSecondary writing-form guide',
+      },
+    ],
   },
 }
 

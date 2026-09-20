@@ -22,6 +22,14 @@ export const metadata: Metadata = {
     title: 'How to get a Grade 9 | Cambridge IGCSE Language B | The English Hub',
     description:
       'Grade 9 guide for Cambridge IGCSE Language B First Language English. Writing techniques, analytical depth and structural sophistication needed to reach the top grade.',
+    images: [
+      {
+        url: '/api/og?title=How+to+get+a+Grade+9+%7C+Cambridge+IGCSE+Language+B+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'How to get a Grade 9 | Cambridge IGCSE Language B | The English Hub',
+      },
+    ],
   },
   title: 'How to get a Grade 9 | Cambridge IGCSE Language B',
   description:

@@ -24,6 +24,14 @@ export const metadata: Metadata = {
     title: 'Approaching Modernist Fiction - Reading Practice Framework - The English Hub',
     description:
       'Cambridge IGCSE Paper 1 reading practice on modernist fiction. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
+    images: [
+      {
+        url: '/api/og?title=Approaching+Modernist+Fiction+-+Reading+Practice+Framework+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Approaching Modernist Fiction - Reading Practice Framework - The English Hub',
+      },
+    ],
   },
   title: 'Approaching Modernist Fiction - Reading Practice Framework',
   description:

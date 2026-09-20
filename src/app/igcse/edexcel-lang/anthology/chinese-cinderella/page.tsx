@@ -20,6 +20,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Chinese Cinderella - Adeline Yen Mah - IGCSE Language A Anthology - The English Hub',
     description: 'Study guide for ',
+    images: [
+      {
+        url: '/api/og?title=Chinese+Cinderella+-+Adeline+Yen+Mah+-+IGCSE+Language+A+Anthology+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Chinese Cinderella - Adeline Yen Mah - IGCSE Language A Anthology - The English Hub',
+      },
+    ],
   },
   title: 'Chinese Cinderella - Adeline Yen Mah - IGCSE Language A Anthology',
   description:

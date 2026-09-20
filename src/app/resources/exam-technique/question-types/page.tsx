@@ -10,6 +10,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'How to Approach Different Question Types',
     description: 'Learn how to approach every question type in GCSE and IGCSE English exams. ',
+    images: [
+      {
+        url: '/api/og?title=How+to+Approach+Different+Question+Types',
+        width: 1200,
+        height: 630,
+        alt: 'How to Approach Different Question Types',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/exam-technique/question-types' },
   title: 'How to Approach Different Question Types',

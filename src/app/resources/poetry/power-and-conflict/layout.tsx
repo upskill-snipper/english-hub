@@ -10,6 +10,14 @@ export const metadata: Metadata = {
     title: 'Power and Conflict Poetry Anthology - The English Hub',
     description:
       'Power and Conflict poetry anthology guide. Analysis of all 15 poems with themes, techniques, key quotes, and comparison strategies.',
+    images: [
+      {
+        url: '/api/og?title=Power+and+Conflict+Poetry+Anthology+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Power and Conflict Poetry Anthology - The English Hub',
+      },
+    ],
   },
 }
 

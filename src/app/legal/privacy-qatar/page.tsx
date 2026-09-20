@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Qatar Privacy Notice',
     description: 'Privacy Notice for The English Hub users in Qatar, compliant with Qatar',
+    images: [
+      {
+        url: '/api/og?title=Qatar+Privacy+Notice',
+        width: 1200,
+        height: 630,
+        alt: 'Qatar Privacy Notice',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/legal/privacy-qatar' },
   title: 'Qatar Privacy Notice',

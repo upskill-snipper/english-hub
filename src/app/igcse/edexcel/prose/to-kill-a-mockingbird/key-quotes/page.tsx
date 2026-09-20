@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'To Kill a Mockingbird Key Quotes - Edexcel IGCSE Literature',
     description:
       '20 key quotations from To Kill a Mockingbird organised by theme for Edexcel IGCSE Literature revision: racism, courage, innocence, empathy and the mockingbird motif.',
+    images: [
+      {
+        url: '/api/og?title=To+Kill+a+Mockingbird+Key+Quotes+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'To Kill a Mockingbird Key Quotes - Edexcel IGCSE Literature',
+      },
+    ],
   },
   title: 'To Kill a Mockingbird Key Quotes - Edexcel IGCSE Literature',
   description:

@@ -18,7 +18,7 @@ const BIOGRAPHICAL = WRITING_FORMS.find((f) => f === 'biographical')!
 export const metadata: Metadata = {
   title: 'Recount, newsletter & biography',
   description:
-    'Structure, register, purpose and audience for three Section B writing forms - recount, newsletter and autobiographical/biographical writing - with original annotated models mapped to the WAO1 bands, a decision box and practice prompts.',
+    'Structure, register, purpose and audience for three Section B forms - recount, newsletter and biography - with annotated models and practice prompts.',
   alternates: {
     canonical:
       'https://theenglishhub.app/ks3/ilowersecondary/writing-forms/recount-newsletter-biography',
@@ -27,6 +27,14 @@ export const metadata: Metadata = {
     title: 'Recount, newsletter & biography - iLowerSecondary writing forms',
     description:
       'How to control recount chronology, the newsletter community voice and reflective auto/biographical writing for top WAO1 marks, with original annotated models.',
+    images: [
+      {
+        url: '/api/og?title=Recount%2C+newsletter+%26+biography+-+iLowerSecondary+writing+forms',
+        width: 1200,
+        height: 630,
+        alt: 'Recount, newsletter & biography - iLowerSecondary writing forms',
+      },
+    ],
   },
 }
 

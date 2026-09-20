@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Macbeth Essay Plans - Edexcel IGCSE Literature',
     description:
       'Five model essay plans for Macbeth with paragraph-by-paragraph structure, key quotations and context for Edexcel IGCSE English Literature.',
+    images: [
+      {
+        url: '/api/og?title=Macbeth+Essay+Plans+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'Macbeth Essay Plans - Edexcel IGCSE Literature',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/macbeth/essay-plans',

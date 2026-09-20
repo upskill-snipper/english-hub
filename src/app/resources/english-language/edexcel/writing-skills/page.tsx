@@ -13,6 +13,14 @@ export const metadata: Metadata = {
     title: 'Pearson Edexcel GCSE English Language writing skills - The English Hub',
     description:
       'Writing skills for Pearson Edexcel GCSE English Language: structure, vocabulary, sentence variety, and creative/transactional writing models.',
+    images: [
+      {
+        url: '/api/og?title=Pearson+Edexcel+GCSE+English+Language+writing+skills+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Pearson Edexcel GCSE English Language writing skills - The English Hub',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-language/edexcel/writing-skills',

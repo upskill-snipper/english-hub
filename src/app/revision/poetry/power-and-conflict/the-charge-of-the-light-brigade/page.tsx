@@ -22,6 +22,14 @@ export const metadata: Metadata = {
     title: 'The Charge of the Light Brigade -- Tennyson | GCSE Poetry Revision',
     description:
       'Full interactive study guide for The Charge of the Light Brigade: stanza-by-stanza summary, context, key quotes, language analysis and comparison poems.',
+    images: [
+      {
+        url: '/api/og?title=The+Charge+of+the+Light+Brigade+--+Tennyson+%7C+GCSE+Poetry+Revision',
+        width: 1200,
+        height: 630,
+        alt: 'The Charge of the Light Brigade -- Tennyson | GCSE Poetry Revision',
+      },
+    ],
   },
 }
 

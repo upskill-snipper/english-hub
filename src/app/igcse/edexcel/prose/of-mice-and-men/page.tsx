@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     title: 'Of Mice and Men - Edexcel IGCSE Literature Study Guide',
     description:
       'Steinbeck\u2019s Of Mice and Men for Edexcel IGCSE Literature: plot, characters, themes, Great Depression context and key quotations.',
+    images: [
+      {
+        url: '/api/og?title=Of+Mice+and+Men+-+Edexcel+IGCSE+Literature+Study+Guide',
+        width: 1200,
+        height: 630,
+        alt: 'Of Mice and Men - Edexcel IGCSE Literature Study Guide',
+      },
+    ],
   },
   title: 'Of Mice and Men - Edexcel IGCSE Literature Study Guide',
   description:

@@ -19,8 +19,16 @@ export const metadata: Metadata = {
     title: 'Model answers',
     description:
       'A curated bank of full-mark, original exemplar answers for every LEH11/01 question type, each with an examiner-style annotation tied to the official mark grids.',
+    images: [
+      {
+        url: '/api/og?title=Model+answers',
+        width: 1200,
+        height: 630,
+        alt: 'Model answers',
+      },
+    ],
   },
-  title: 'iLowerSecondary English model answers (LEH11)',
+  title: 'Model answers (LEH11/01)',
   description:
     'A curated bank of full-mark, original exemplar answers for every LEH11/01 question type, each with an examiner-style annotation tied to the official mark grids.',
   alternates: { canonical: PAGE_URL },

@@ -13,6 +13,14 @@ export const metadata: Metadata = {
     title: 'Othello - Study Guide | The English Hub',
     description:
       'In-depth study guide for Othello by William Shakespeare: plot, characters, themes, context and key quotations for A-Level English Literature.',
+    images: [
+      {
+        url: '/api/og?title=Othello+-+Study+Guide+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Othello - Study Guide | The English Hub',
+      },
+    ],
   },
   title: 'Othello - Study Guide',
   description:

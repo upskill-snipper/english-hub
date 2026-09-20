@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'To Kill a Mockingbird Themes - Edexcel IGCSE Literature',
     description:
       'Themes in To Kill a Mockingbird: racism and justice, moral courage, childhood innocence, empathy, class, gender and the mockingbird motif.',
+    images: [
+      {
+        url: '/api/og?title=To+Kill+a+Mockingbird+Themes+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'To Kill a Mockingbird Themes - Edexcel IGCSE Literature',
+      },
+    ],
   },
   title: 'To Kill a Mockingbird Themes - Edexcel IGCSE Literature',
   description:

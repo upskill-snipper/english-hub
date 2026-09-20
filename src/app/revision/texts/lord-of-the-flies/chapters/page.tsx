@@ -15,6 +15,14 @@ export const metadata: Metadata = {
     title: 'Lord of the Flies Chapter Summaries | The English Hub',
     description:
       'Detailed chapter-by-chapter analysis of Lord of the Flies by William Golding: key events, symbolism, character development and key quotations for every chapter.',
+    images: [
+      {
+        url: '/api/og?title=Lord+of+the+Flies+Chapter+Summaries+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Lord of the Flies Chapter Summaries | The English Hub',
+      },
+    ],
   },
   title: 'Lord of the Flies Chapter Summaries',
   description:

@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: '%s · KS3 English · The English Hub',
   },
   description:
-    'The full KS3 English curriculum (Years 7-9) - yearly expectations, termly plans, weekly lesson frameworks, marking rubrics, skill progression, and end-of-KS3 standards.',
+    'The KS3 English curriculum for Years 7 to 9: yearly expectations, termly plans, weekly lesson frameworks, marking rubrics and end-of-KS3 standards.',
   alternates: { canonical: 'https://theenglishhub.app/ks3' },
 }
 

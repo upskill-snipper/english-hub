@@ -16,6 +16,14 @@ export const metadata: Metadata = {
     title: 'Your Hub -- The English Hub',
     description:
       'Your unified home for English revision, study tools, progress tracking, and exam technique -- personalised to your exam board.',
+    images: [
+      {
+        url: '/api/og?title=Your+Hub+--+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Your Hub -- The English Hub',
+      },
+    ],
   },
 }
 

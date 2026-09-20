@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'An Inspector Calls Act 1 Analysis - Edexcel IGCSE Literature',
     description:
       'Detailed Act 1 analysis of An Inspector Calls: the dinner party, Birling\u2019s speeches, the Inspector\u2019s arrival and Eva Smith\u2019s story begins.',
+    images: [
+      {
+        url: '/api/og?title=An+Inspector+Calls+Act+1+Analysis+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'An Inspector Calls Act 1 Analysis - Edexcel IGCSE Literature',
+      },
+    ],
   },
   title: 'An Inspector Calls Act 1 Analysis - Edexcel IGCSE Literature',
   description:

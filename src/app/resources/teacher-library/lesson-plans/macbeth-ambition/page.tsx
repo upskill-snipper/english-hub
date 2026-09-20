@@ -8,6 +8,14 @@ export const metadata: Metadata = {
     title: 'Macbeth: Ambition & the Supernatural - Lesson Plan',
     description:
       'Full 60-minute GCSE English Literature lesson plan exploring ambition in Macbeth. Includes objectives, starter, main task, plenary, and differentiation.',
+    images: [
+      {
+        url: '/api/og?title=Macbeth%3A+Ambition+%26+the+Supernatural+-+Lesson+Plan',
+        width: 1200,
+        height: 630,
+        alt: 'Macbeth: Ambition & the Supernatural - Lesson Plan',
+      },
+    ],
   },
   title: 'Macbeth: Ambition & the Supernatural - Lesson Plan',
   description:

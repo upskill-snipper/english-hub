@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Revision Packs - Teacher Library',
     description:
       'Ready-made GCSE English revision packs by set text. Quote banks, themes, characters, context, and essay plans in one place.',
+    images: [
+      {
+        url: '/api/og?title=Revision+Packs+-+Teacher+Library',
+        width: 1200,
+        height: 630,
+        alt: 'Revision Packs - Teacher Library',
+      },
+    ],
   },
   title: 'Revision Packs - Teacher Library',
   description:

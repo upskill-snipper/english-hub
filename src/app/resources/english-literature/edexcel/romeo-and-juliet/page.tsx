@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'Romeo and Juliet Study Guide - Edexcel GCSE English Literature',
     description:
       'Complete Romeo and Juliet revision guide for Edexcel GCSE English Literature. Plot summary, character analysis, themes, 15+ key quotes, historical context, and exam technique.',
+    images: [
+      {
+        url: '/api/og?title=Romeo+and+Juliet+Study+Guide+-+Edexcel+GCSE+English+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'Romeo and Juliet Study Guide - Edexcel GCSE English Literature',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/romeo-and-juliet',

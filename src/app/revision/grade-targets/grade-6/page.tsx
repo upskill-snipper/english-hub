@@ -6,6 +6,14 @@ export const metadata: Metadata = {
     title: 'Grade 6 Guide - The English Hub',
     description:
       'Grade 6 English GCSE / IGCSE target guide. A solid pass with sustained analysis - how to push toward Grade 7.',
+    images: [
+      {
+        url: '/api/og?title=Grade+6+Guide+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Grade 6 Guide - The English Hub',
+      },
+    ],
   },
   title: 'Grade 6 Guide',
   description:

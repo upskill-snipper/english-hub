@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     title: 'Frankenstein Key Quotes by Theme | The English Hub',
     description:
       'Twenty-five key quotations from Frankenstein by Mary Shelley organised by theme with detailed analysis for GCSE revision.',
+    images: [
+      {
+        url: '/api/og?title=Frankenstein+Key+Quotes+by+Theme+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Frankenstein Key Quotes by Theme | The English Hub',
+      },
+    ],
   },
   title: 'Frankenstein Key Quotes by Theme',
   description:

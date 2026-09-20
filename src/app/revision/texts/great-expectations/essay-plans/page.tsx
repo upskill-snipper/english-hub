@@ -13,6 +13,14 @@ export const metadata: Metadata = {
     title: 'Great Expectations Essay Plans | The English Hub',
     description:
       'Five exam-ready essay plans for Great Expectations by Charles Dickens, covering class, guilt, love, ambition and identity for AQA GCSE English Literature.',
+    images: [
+      {
+        url: '/api/og?title=Great+Expectations+Essay+Plans+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Great Expectations Essay Plans | The English Hub',
+      },
+    ],
   },
   title: 'Great Expectations Essay Plans',
   description:

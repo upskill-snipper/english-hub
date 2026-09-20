@@ -22,6 +22,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Young and Dyslexic? You',
     description: 'Study guide for Young and Dyslexic? You',
+    images: [
+      {
+        url: '/api/og?title=Young+and+Dyslexic%3F+You',
+        width: 1200,
+        height: 630,
+        alt: 'Young and Dyslexic? You',
+      },
+    ],
   },
   title:
     "Young and Dyslexic? You've Got It Going On - Benjamin Zephaniah - IGCSE Language A Anthology",

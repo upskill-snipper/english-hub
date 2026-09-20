@@ -16,6 +16,14 @@ export const metadata: Metadata = {
     title: 'An Inspector Calls - Model Essay Bank',
     description:
       'Five fully-annotated model essays for An Inspector Calls at Grades 5, 7 and 9, with AO breakdowns and marker commentary.',
+    images: [
+      {
+        url: '/api/og?title=An+Inspector+Calls+-+Model+Essay+Bank',
+        width: 1200,
+        height: 630,
+        alt: 'An Inspector Calls - Model Essay Bank',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/marking/sample/inspector-calls' },
   title: 'An Inspector Calls - Model Essay Bank',

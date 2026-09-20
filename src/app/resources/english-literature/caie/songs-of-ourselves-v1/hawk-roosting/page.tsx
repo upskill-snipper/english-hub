@@ -10,6 +10,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Hawk Roosting - Ted Hughes | Cambridge IGCSE 0475',
     description: 'Study guide for ',
+    images: [
+      {
+        url: '/api/og?title=Hawk+Roosting+-+Ted+Hughes+%7C+Cambridge+IGCSE+0475',
+        width: 1200,
+        height: 630,
+        alt: 'Hawk Roosting - Ted Hughes | Cambridge IGCSE 0475',
+      },
+    ],
   },
   title: 'Hawk Roosting - Ted Hughes | Cambridge IGCSE 0475',
   description:

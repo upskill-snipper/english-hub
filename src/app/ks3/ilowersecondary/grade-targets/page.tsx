@@ -17,8 +17,16 @@ export const metadata: Metadata = {
     title: 'Grade targets (S1-S4)',
     description:
       'What an S1, S2, S3 and S4 answer looks like in iLowerSecondary English, and how to climb each band for writing and reading.',
+    images: [
+      {
+        url: '/api/og?title=Grade+targets+(S1-S4)',
+        width: 1200,
+        height: 630,
+        alt: 'Grade targets (S1-S4)',
+      },
+    ],
   },
-  title: 'iLowerSecondary English grade targets (S1-S4)',
+  title: 'Grade targets (S1-S4)',
   description:
     'A plain-English guide to the four-level S1-S4 scale: what each band reads like in writing and reading, and exactly how to move up a band.',
   alternates: {

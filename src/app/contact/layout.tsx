@@ -22,6 +22,14 @@ export const metadata: Metadata = {
     url: 'https://theenglishhub.app/contact',
     type: 'website',
     siteName: 'The English Hub',
+    images: [
+      {
+        url: '/api/og?title=Contact+The+English+Hub+-+support%2C+school+enquiries%2C+partnerships',
+        width: 1200,
+        height: 630,
+        alt: 'Contact The English Hub - support, school enquiries, partnerships',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',

@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Verified Content - The English Hub',
     description:
       'Every quote, date, and biography on The English Hub is cross-checked against primary sources.',
+    images: [
+      {
+        url: '/api/og?title=Verified+Content+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Verified Content - The English Hub',
+      },
+    ],
   },
 }
 

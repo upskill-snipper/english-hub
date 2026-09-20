@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'Of Mice and Men Key Quotes - Edexcel IGCSE Literature',
     description:
       '20 key quotations from Of Mice and Men organised by theme for Edexcel IGCSE Literature revision: the American Dream, loneliness, friendship, discrimination and fate.',
+    images: [
+      {
+        url: '/api/og?title=Of+Mice+and+Men+Key+Quotes+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'Of Mice and Men Key Quotes - Edexcel IGCSE Literature',
+      },
+    ],
   },
   title: 'Of Mice and Men Key Quotes - Edexcel IGCSE Literature',
   description:

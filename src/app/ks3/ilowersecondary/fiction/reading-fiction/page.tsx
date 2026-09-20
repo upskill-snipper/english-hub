@@ -25,11 +25,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Reading the fiction text',
     description:
-      'How to read the single fiction text in Section A of the iLowerSecondary English paper: characters, plot and structure, style and language, using the Teacher’s Guide guided-reading toolkit, plus one original extract with six fully worked questions in Pearson mark style.',
+      'How to read the fiction text in Section A: character, plot, structure and style, with one original extract and six fully worked questions.',
+    images: [
+      {
+        url: '/api/og?title=Reading+the+fiction+text',
+        width: 1200,
+        height: 630,
+        alt: 'Reading the fiction text',
+      },
+    ],
   },
-  title: 'Reading the fiction text (Section A): guided-reading masterclass',
+  title: 'Reading the fiction text',
   description:
-    'How to read the single fiction text in Section A: characters, plot and structure, style and language, with the guided-reading toolkit and one original extract with six worked questions in Pearson mark style.',
+    'How to read the fiction text in Section A: character, plot, structure and style, with one original extract and six fully worked questions.',
   alternates: { canonical: PAGE_URL },
 }
 

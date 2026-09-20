@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'To Kill a Mockingbird Context - Edexcel IGCSE Literature',
     description:
       '1930s Alabama, Jim Crow, the Scottsboro Boys, Harper Lee\u2019s Monroeville childhood and the Civil Rights Movement context for To Kill a Mockingbird.',
+    images: [
+      {
+        url: '/api/og?title=To+Kill+a+Mockingbird+Context+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'To Kill a Mockingbird Context - Edexcel IGCSE Literature',
+      },
+    ],
   },
   title: 'To Kill a Mockingbird Context - Edexcel IGCSE Literature',
   description:

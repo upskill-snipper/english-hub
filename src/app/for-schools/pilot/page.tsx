@@ -38,6 +38,14 @@ export const metadata: Metadata = {
     title: 'School Pilot Pack | The English Hub for Schools',
     description:
       'Run a structured 90-day English improvement pilot with student access, teacher tools, analytics and school progress reporting.',
+    images: [
+      {
+        url: '/api/og?title=School+Pilot+Pack+%7C+The+English+Hub+for+Schools',
+        width: 1200,
+        height: 630,
+        alt: 'School Pilot Pack | The English Hub for Schools',
+      },
+    ],
   },
 }
 

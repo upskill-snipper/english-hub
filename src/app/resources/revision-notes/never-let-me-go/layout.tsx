@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'Never Let Me Go Revision Notes - The English Hub',
     description:
       'Free Never Let Me Go revision notes for GCSE English Literature. Character analysis, themes, key quotes with analysis, context, and exam-ready essay tips.',
+    images: [
+      {
+        url: '/api/og?title=Never+Let+Me+Go+Revision+Notes+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Never Let Me Go Revision Notes - The English Hub',
+      },
+    ],
   },
 }
 

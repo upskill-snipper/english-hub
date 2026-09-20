@@ -12,6 +12,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'The Tempest revision guide - themes, characters, key quotes - The English Hub',
     description: 'The Tempest GCSE revision - Shakespeare',
+    images: [
+      {
+        url: '/api/og?title=The+Tempest+revision+guide+-+themes%2C+characters%2C+key+quotes+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'The Tempest revision guide - themes, characters, key quotes - The English Hub',
+      },
+    ],
   },
   title: 'The Tempest revision guide - themes, characters, key quotes',
   description:

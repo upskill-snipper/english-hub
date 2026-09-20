@@ -24,6 +24,14 @@ export const metadata: Metadata = {
     title: 'Classic Novel Openings - Reading Practice Framework - The English Hub',
     description:
       'Practise Cambridge IGCSE Paper 1 reading on classic novel openings. Structured comprehension, language analysis, summary and self-assessment using free public-domain texts from Project Gutenberg.',
+    images: [
+      {
+        url: '/api/og?title=Classic+Novel+Openings+-+Reading+Practice+Framework+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Classic Novel Openings - Reading Practice Framework - The English Hub',
+      },
+    ],
   },
   title: 'Classic Novel Openings - Reading Practice Framework',
   description:

@@ -10,10 +10,7 @@ const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/reference/connec
 export const metadata: Metadata = {
   title: 'Connectives bank',
   description:
-    'A connectives and discourse-marker bank for the iLowerSecondary ' +
-    'English exam - organised by job, for linking paragraphs and ' +
-    'developing sentences in Section B, and for comparing texts in ' +
-    'Section A.',
+    'A connectives and discourse-marker bank organised by job, for linking paragraphs in Section B writing and for comparing texts in Section A reading.',
   alternates: { canonical: PAGE_URL },
 }
 

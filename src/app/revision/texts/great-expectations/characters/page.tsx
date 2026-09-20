@@ -13,6 +13,14 @@ export const metadata: Metadata = {
     title: 'Great Expectations Characters | The English Hub',
     description:
       'In-depth character analysis for Great Expectations by Charles Dickens: Pip, Estella, Miss Havisham, Magwitch, Joe, Herbert, Jaggers, Wemmick and Biddy.',
+    images: [
+      {
+        url: '/api/og?title=Great+Expectations+Characters+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Great Expectations Characters | The English Hub',
+      },
+    ],
   },
   title: 'Great Expectations Characters',
   description:

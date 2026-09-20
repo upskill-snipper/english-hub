@@ -23,6 +23,14 @@ export const metadata: Metadata = {
     description: PAGE_DESCRIPTION,
     url: INDEX_URL,
     type: 'website',
+    images: [
+      {
+        url: `/api/og?title=${encodeURIComponent(PAGE_TITLE)}`,
+        width: 1200,
+        height: 630,
+        alt: PAGE_TITLE,
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',

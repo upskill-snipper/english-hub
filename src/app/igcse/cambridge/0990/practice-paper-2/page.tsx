@@ -22,6 +22,14 @@ export const metadata: Metadata = {
     title: 'Practice Paper 2 (Writing) | Cambridge IGCSE Language B | The English Hub',
     description:
       'Full Cambridge IGCSE Language B Paper 2 Directed Writing and Composition practice paper with stimulus text, task options and model answers.',
+    images: [
+      {
+        url: '/api/og?title=Practice+Paper+2+(Writing)+%7C+Cambridge+IGCSE+Language+B+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Practice Paper 2 (Writing) | Cambridge IGCSE Language B | The English Hub',
+      },
+    ],
   },
   title: 'Practice Paper 2 (Writing) | Cambridge IGCSE Language B',
   description:

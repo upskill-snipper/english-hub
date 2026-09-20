@@ -17,6 +17,14 @@ export const metadata: Metadata = {
     title: 'Jekyll and Hyde Essay Plans - GCSE | The English Hub',
     description:
       'Five GCSE essay plans for Strange Case of Dr Jekyll and Mr Hyde: duality, Hyde as frightening, setting and atmosphere, the Jekyll-Hyde relationship, and secrecy.',
+    images: [
+      {
+        url: '/api/og?title=Jekyll+and+Hyde+Essay+Plans+-+GCSE+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Jekyll and Hyde Essay Plans - GCSE | The English Hub',
+      },
+    ],
   },
   title: 'Jekyll and Hyde Essay Plans - GCSE',
   description:

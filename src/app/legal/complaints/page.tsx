@@ -7,6 +7,14 @@ export const metadata: Metadata = {
     title: 'Complaints Procedure',
     description:
       'Complaints Procedure for The English Hub, explaining how to raise concerns and what to expect.',
+    images: [
+      {
+        url: '/api/og?title=Complaints+Procedure',
+        width: 1200,
+        height: 630,
+        alt: 'Complaints Procedure',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/legal/complaints' },
   title: 'Complaints Procedure',

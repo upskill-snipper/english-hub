@@ -10,6 +10,14 @@ export const metadata: Metadata = {
     title: 'Data Processing - The English Hub',
     description:
       'How The English Hub processes personal data for schools and institutions. UK GDPR compliant data processing agreements and transparent practices.',
+    images: [
+      {
+        url: '/api/og?title=Data+Processing+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Data Processing - The English Hub',
+      },
+    ],
   },
 }
 

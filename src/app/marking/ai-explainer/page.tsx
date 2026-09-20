@@ -8,6 +8,14 @@ export const metadata: Metadata = {
     title: 'How AI Marking Works',
     description:
       'A simple explanation of how The English Hub uses AI to mark your GCSE English essays, what data is shared, and how to opt out.',
+    images: [
+      {
+        url: '/api/og?title=How+AI+Marking+Works',
+        width: 1200,
+        height: 630,
+        alt: 'How AI Marking Works',
+      },
+    ],
   },
   title: 'How AI Marking Works',
   description:

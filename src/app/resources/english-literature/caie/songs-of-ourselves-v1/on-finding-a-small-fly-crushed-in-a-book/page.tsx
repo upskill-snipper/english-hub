@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title:
       'On Finding a Small Fly Crushed in a Book - Charles Tennyson Turner | Cambridge IGCSE 0475',
     description: 'Study guide for ',
+    images: [
+      {
+        url: '/api/og?title=On+Finding+a+Small+Fly+Crushed+in+a+Book+-+Charles+Tennyson+Turner+%7C+Cambridge+IGCSE+0475',
+        width: 1200,
+        height: 630,
+        alt: 'On Finding a Small Fly Crushed in a Book - Charles Tennyson Turner | Cambridge IGCSE 0475',
+      },
+    ],
   },
   title:
     'On Finding a Small Fly Crushed in a Book - Charles Tennyson Turner | Cambridge IGCSE 0475',

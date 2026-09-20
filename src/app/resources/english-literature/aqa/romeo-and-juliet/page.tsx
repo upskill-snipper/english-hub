@@ -7,6 +7,14 @@ export const metadata: Metadata = {
     title: 'Romeo and Juliet Study Guide - AQA English Literature GCSE',
     description:
       'Complete Romeo and Juliet revision guide for AQA GCSE English Literature. Act-by-act plot summary, character analysis, themes, 20+ key quotations with analysis, Elizabethan context, AQA exam format, and essay planning.',
+    images: [
+      {
+        url: '/api/og?title=Romeo+and+Juliet+Study+Guide+-+AQA+English+Literature+GCSE',
+        width: 1200,
+        height: 630,
+        alt: 'Romeo and Juliet Study Guide - AQA English Literature GCSE',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/aqa/romeo-and-juliet',

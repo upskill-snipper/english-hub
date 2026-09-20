@@ -10,6 +10,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Rain - Edward Thomas | Cambridge IGCSE 0475',
     description: 'Study guide for ',
+    images: [
+      {
+        url: '/api/og?title=Rain+-+Edward+Thomas+%7C+Cambridge+IGCSE+0475',
+        width: 1200,
+        height: 630,
+        alt: 'Rain - Edward Thomas | Cambridge IGCSE 0475',
+      },
+    ],
   },
   title: 'Rain - Edward Thomas | Cambridge IGCSE 0475',
   description:

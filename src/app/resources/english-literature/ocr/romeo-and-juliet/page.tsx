@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Romeo and Juliet Study Guide for OCR | The English Hub',
     description:
       'Comprehensive Romeo and Juliet study guide for OCR GCSE English Literature. Characters, themes, key quotations, context, and essay planning.',
+    images: [
+      {
+        url: '/api/og?title=Romeo+and+Juliet+Study+Guide+for+OCR+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Romeo and Juliet Study Guide for OCR | The English Hub',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/ocr/romeo-and-juliet',

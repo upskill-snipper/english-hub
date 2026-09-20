@@ -11,6 +11,14 @@ export const metadata = {
   openGraph: {
     title: 'Remains -- Simon Armitage -- The English Hub',
     description: 'Interactive study of ',
+    images: [
+      {
+        url: '/api/og?title=Remains+--+Simon+Armitage+--+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Remains -- Simon Armitage -- The English Hub',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/revision/poetry/power-and-conflict/remains' },
   title: 'Remains -- Simon Armitage',

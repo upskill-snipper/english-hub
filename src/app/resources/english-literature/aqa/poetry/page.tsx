@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'AQA Poetry Anthology - Power and Conflict & Love and Relationships',
     description:
       'Full analysis of all 30 poems in the AQA GCSE English Literature poetry anthology. Power and Conflict & Love and Relationships clusters with themes, language analysis, structure, and comparison ideas.',
+    images: [
+      {
+        url: '/api/og?title=AQA+Poetry+Anthology+-+Power+and+Conflict+%26+Love+and+Relationships',
+        width: 1200,
+        height: 630,
+        alt: 'AQA Poetry Anthology - Power and Conflict & Love and Relationships',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/aqa/poetry' },
   title: 'AQA Poetry Anthology - Power and Conflict & Love and Relationships',

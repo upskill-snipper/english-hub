@@ -29,6 +29,14 @@ export const metadata: Metadata = {
     title: 'Cambridge IGCSE Composition - The English Hub',
     description:
       'Master Cambridge IGCSE Language Paper 2 Section B composition. Descriptive and narrative writing techniques, Grade 9 model answers, practice prompts and mark scheme breakdown.',
+    images: [
+      {
+        url: '/api/og?title=Cambridge+IGCSE+Composition+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Cambridge IGCSE Composition - The English Hub',
+      },
+    ],
   },
   title: 'Cambridge IGCSE Composition',
   description:

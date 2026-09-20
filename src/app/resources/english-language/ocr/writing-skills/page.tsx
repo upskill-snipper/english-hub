@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'OCR GCSE English Language writing skills - The English Hub',
     description:
       'Writing skills for OCR GCSE English Language: structure, vocabulary, sentence variety, and creative/transactional writing models.',
+    images: [
+      {
+        url: '/api/og?title=OCR+GCSE+English+Language+writing+skills+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'OCR GCSE English Language writing skills - The English Hub',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-language/ocr/writing-skills',

@@ -7,10 +7,6 @@
 // cached HTML). Child layouts that also export `revalidate` will override.
 export const revalidate = 86400
 
-export default function AnalysisLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function AnalysisLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>
 }

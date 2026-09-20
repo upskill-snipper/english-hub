@@ -11,11 +11,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Meaning & impact questions',
     description:
-      'Master the "What did the writer mean…?", "Explain the impact…" and "How does the writer show…?" reading questions for Pearson iLowerSecondary English (LEH11). Worked extracts, weak vs model answers, mark splits and a sentence-frame toolkit.',
+      'The meaning and impact reading questions: what each one asks for, worked extracts, weak versus model answers, mark splits and a sentence-frame toolkit.',
+    images: [
+      {
+        url: '/api/og?title=Meaning+%26+impact+questions',
+        width: 1200,
+        height: 630,
+        alt: 'Meaning & impact questions',
+      },
+    ],
   },
-  title: 'Meaning & impact questions - iLowerSecondary English masterclass',
+  title: 'Meaning & impact questions',
   description:
-    'Master the "What did the writer mean…?", "Explain the impact…" and "How does the writer show…?" reading questions for Pearson iLowerSecondary English (LEH11). Worked extracts, weak vs model answers, mark splits and a sentence-frame toolkit.',
+    'The meaning and impact reading questions: what each one asks for, worked extracts, weak versus model answers, mark splits and a sentence-frame toolkit.',
   alternates: { canonical: PAGE_URL },
 }
 

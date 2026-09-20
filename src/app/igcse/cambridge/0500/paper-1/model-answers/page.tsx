@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Paper 1 Model Answers - IGCSE Language A 0500',
     description:
       'Five Grade A*/9 model answers for Cambridge IGCSE 0500 Paper 1: retrieval (Q1), language analysis (Q2 at Grade C and A* compared), and summary (Q3). Each with examiner annotations.',
+    images: [
+      {
+        url: '/api/og?title=Paper+1+Model+Answers+-+IGCSE+Language+A+0500',
+        width: 1200,
+        height: 630,
+        alt: 'Paper 1 Model Answers - IGCSE Language A 0500',
+      },
+    ],
   },
   title: 'Paper 1 Model Answers - IGCSE Language A 0500',
   description:

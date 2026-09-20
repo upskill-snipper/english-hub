@@ -114,7 +114,17 @@ export const metadata: Metadata = {
   description:
     'Free tools for GCSE & IGCSE English: quote builders, essay frames, mark-scheme checklists.',
   alternates: { canonical: 'https://theenglishhub.app/toolkit' },
-  openGraph: { url: 'https://theenglishhub.app/toolkit' },
+  openGraph: {
+    url: 'https://theenglishhub.app/toolkit',
+    images: [
+      {
+        url: '/api/og?title=Revision+toolkit',
+        width: 1200,
+        height: 630,
+        alt: 'Revision toolkit',
+      },
+    ],
+  },
 }
 
 export default async function ToolkitPage() {

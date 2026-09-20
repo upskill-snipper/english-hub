@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'Character Creation - Cambridge IGCSE Narrative Writing',
     description:
       'Build rounded characters fast in a Cambridge IGCSE short story. Show-don’t-tell, the iceberg principle, contradictions and the two-sentence sketch.',
+    images: [
+      {
+        url: '/api/og?title=Character+Creation+-+Cambridge+IGCSE+Narrative+Writing',
+        width: 1200,
+        height: 630,
+        alt: 'Character Creation - Cambridge IGCSE Narrative Writing',
+      },
+    ],
   },
   title: 'Character Creation - Cambridge IGCSE Narrative Writing',
   description:

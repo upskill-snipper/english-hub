@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'AQA GCSE English Language writing skills - The English Hub',
     description:
       'Writing skills for AQA GCSE English Language: structure, vocabulary, sentence variety, and creative/transactional writing models.',
+    images: [
+      {
+        url: '/api/og?title=AQA+GCSE+English+Language+writing+skills+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'AQA GCSE English Language writing skills - The English Hub',
+      },
+    ],
   },
 }
 

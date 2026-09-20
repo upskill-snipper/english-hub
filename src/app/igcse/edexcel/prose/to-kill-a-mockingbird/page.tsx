@@ -24,6 +24,14 @@ export const metadata: Metadata = {
     title: 'To Kill a Mockingbird - Edexcel IGCSE Literature Study Guide',
     description:
       'Study guide for Harper Lee\u2019s To Kill a Mockingbird: plot summary, characters, themes, 1930s Alabama context and key quotations for Edexcel IGCSE Literature.',
+    images: [
+      {
+        url: '/api/og?title=To+Kill+a+Mockingbird+-+Edexcel+IGCSE+Literature+Study+Guide',
+        width: 1200,
+        height: 630,
+        alt: 'To Kill a Mockingbird - Edexcel IGCSE Literature Study Guide',
+      },
+    ],
   },
   title: 'To Kill a Mockingbird - Edexcel IGCSE Literature Study Guide',
   description:

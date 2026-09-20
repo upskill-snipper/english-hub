@@ -34,6 +34,14 @@ export const metadata: Metadata = {
     title: 'Model Language Analysis Answers | The English Hub',
     description:
       'Grade 3, 5, 7, and 9 model language analysis responses with examiner commentary, technique annotations, and side-by-side comparisons showing what makes the difference between grades.',
+    images: [
+      {
+        url: '/api/og?title=Model+Language+Analysis+Answers+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Model Language Analysis Answers | The English Hub',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/model-answers/language-analysis',

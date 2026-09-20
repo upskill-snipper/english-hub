@@ -21,6 +21,14 @@ export const metadata: Metadata = {
     title:
       'Beyond the Sky and the Earth - Jamie Zeppa - IGCSE Language A Anthology - The English Hub',
     description: 'Study guide for ',
+    images: [
+      {
+        url: '/api/og?title=Beyond+the+Sky+and+the+Earth+-+Jamie+Zeppa+-+IGCSE+Language+A+Anthology+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Beyond the Sky and the Earth - Jamie Zeppa - IGCSE Language A Anthology - The English Hub',
+      },
+    ],
   },
   title: 'Beyond the Sky and the Earth - Jamie Zeppa - IGCSE Language A Anthology',
   description:

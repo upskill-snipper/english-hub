@@ -22,11 +22,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Purpose & viewpoint (RAO5)',
     description:
-      "A masterclass on RAO5: identifying a writer's purpose and signposting language, detecting viewpoint, bias and tone across a whole text, and answering the meaning/impact and text-appeal questions in Pearson style.",
+      'RAO5: identifying purpose and signposting language, tracking viewpoint, bias and tone across a whole text, with three worked practice texts.',
+    images: [
+      {
+        url: '/api/og?title=Purpose+%26+viewpoint+(RAO5)',
+        width: 1200,
+        height: 630,
+        alt: 'Purpose & viewpoint (RAO5)',
+      },
+    ],
   },
-  title: 'Purpose & viewpoint (RAO5) - reading masterclass',
+  title: 'Purpose & viewpoint (RAO5)',
   description:
-    "A masterclass on RAO5: identifying a writer's purpose and signposting language, detecting viewpoint, bias and tone across a whole text, and answering the meaning/impact and text-appeal questions in Pearson style.",
+    'RAO5: identifying purpose and signposting language, tracking viewpoint, bias and tone across a whole text, with three worked practice texts.',
   alternates: { canonical: PAGE_URL },
 }
 

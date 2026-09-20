@@ -10,6 +10,14 @@ export const metadata: Metadata = {
     title: 'Spoken Language Endorsement Guide | The English Hub',
     description:
       'Complete guide to the GCSE English Language Spoken Language endorsement. Presentation planning, delivery techniques, responding to questions, Standard English, assessment criteria, and 20+ topic ideas.',
+    images: [
+      {
+        url: '/api/og?title=Spoken+Language+Endorsement+Guide+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Spoken Language Endorsement Guide | The English Hub',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/spoken-language' },
   title: 'Spoken Language Endorsement Guide',

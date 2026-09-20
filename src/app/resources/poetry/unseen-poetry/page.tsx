@@ -10,6 +10,14 @@ export const metadata: Metadata = {
     title: 'Unseen Poetry Guide | The English Hub',
     description:
       'Complete GCSE unseen poetry guide. The READ method, PEEL paragraphs, comparison technique, three full practice poems with model responses, and examiner commentary.',
+    images: [
+      {
+        url: '/api/og?title=Unseen+Poetry+Guide+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Unseen Poetry Guide | The English Hub',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/poetry/unseen-poetry' },
   title: 'Unseen Poetry Guide',

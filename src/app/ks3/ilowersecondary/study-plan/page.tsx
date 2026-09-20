@@ -19,11 +19,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Study plan (LEH11/01)',
     description:
-      'A weighting-led revision study plan for the Pearson Edexcel International Award in Lower Secondary English (LEH11/01): a six-week countdown, a one-week intensive, a self-test routine, a weakness-to-page diagnostic, and exam-week and exam-day routines.',
+      'A weighting-led revision plan for LEH11/01: a six-week countdown, a one-week intensive, a weekly self-test routine and exam-week and exam-day routines.',
+    images: [
+      {
+        url: '/api/og?title=Study+plan+(LEH11%2F01)',
+        width: 1200,
+        height: 630,
+        alt: 'Study plan (LEH11/01)',
+      },
+    ],
   },
-  title: 'iLowerSecondary English study plan (LEH11/01)',
+  title: 'Study plan (LEH11/01)',
   description:
-    'A weighting-led revision study plan for the Pearson Edexcel International Award in Lower Secondary English (LEH11/01): a six-week countdown, a one-week intensive, a self-test routine, a weakness-to-page diagnostic, and exam-week and exam-day routines.',
+    'A weighting-led revision plan for LEH11/01: a six-week countdown, a one-week intensive, a weekly self-test routine and exam-week and exam-day routines.',
   alternates: { canonical: PAGE_URL },
 }
 

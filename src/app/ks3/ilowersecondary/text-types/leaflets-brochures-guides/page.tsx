@@ -12,14 +12,22 @@ import {
 export const metadata: Metadata = {
   title: 'Leaflets, brochures & guides',
   description:
-    'How to read and write leaflets, brochures and guides for Pearson Edexcel iLowerSecondary English (LEH11): conventions, structure and language analysis, two original annotated examples, practice questions with model answers, and a writing task.',
+    'Reading and writing leaflets, brochures and guides for LEH11: conventions, structure and language, two annotated examples and a Section B writing task.',
   alternates: {
     canonical: 'https://theenglishhub.app/ks3/ilowersecondary/text-types/leaflets-brochures-guides',
   },
   openGraph: {
     title: 'Leaflets, brochures & guides - iLowerSecondary English (LEH11)',
     description:
-      'Read and write leaflets, brochures and guides for LEH11: conventions, structure and language, annotated original examples and practice questions with model answers.',
+      'Reading and writing leaflets, brochures and guides for LEH11: conventions, structure and language, two annotated examples and a Section B writing task.',
+    images: [
+      {
+        url: '/api/og?title=Leaflets%2C+brochures+%26+guides+-+iLowerSecondary+English+(LEH11)',
+        width: 1200,
+        height: 630,
+        alt: 'Leaflets, brochures & guides - iLowerSecondary English (LEH11)',
+      },
+    ],
   },
 }
 

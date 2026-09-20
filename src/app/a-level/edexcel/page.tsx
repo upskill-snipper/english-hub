@@ -7,6 +7,14 @@ export const metadata: Metadata = {
     title: 'Pearson Edexcel A-Level English - The English Hub',
     description:
       'Pearson Edexcel A-Level English Literature (9ET0) and Language (9EN0) revision hub. Cross-board set text analysis, essay technique and language study while full Edexcel A-Level content is on our roadmap.',
+    images: [
+      {
+        url: '/api/og?title=Pearson+Edexcel+A-Level+English+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Pearson Edexcel A-Level English - The English Hub',
+      },
+    ],
   },
   title: 'Pearson Edexcel A-Level English',
   description:

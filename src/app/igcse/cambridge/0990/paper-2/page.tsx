@@ -23,6 +23,14 @@ export const metadata: Metadata = {
     title: 'Paper 2 Directed Writing & Composition | Cambridge IGCSE Language B | The English Hub',
     description:
       'Cambridge IGCSE Language B Paper 2 Directed Writing and Composition: full breakdown, timing, grade boundaries and exam technique.',
+    images: [
+      {
+        url: '/api/og?title=Paper+2+Directed+Writing+%26+Composition+%7C+Cambridge+IGCSE+Language+B+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Paper 2 Directed Writing & Composition | Cambridge IGCSE Language B | The English Hub',
+      },
+    ],
   },
   title: 'Paper 2 Directed Writing & Composition | Cambridge IGCSE Language B',
   description:

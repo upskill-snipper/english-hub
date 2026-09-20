@@ -22,6 +22,14 @@ export const metadata: Metadata = {
     title: 'How to pass with Grade 5 | Cambridge IGCSE Language B | The English Hub',
     description:
       'Strong pass guide for Cambridge IGCSE Language B First Language English. Reach Grade 5 with clear understanding, accurate writing and dependable exam technique.',
+    images: [
+      {
+        url: '/api/og?title=How+to+pass+with+Grade+5+%7C+Cambridge+IGCSE+Language+B+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'How to pass with Grade 5 | Cambridge IGCSE Language B | The English Hub',
+      },
+    ],
   },
   title: 'How to pass with Grade 5 | Cambridge IGCSE Language B',
   description:

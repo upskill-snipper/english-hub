@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     title: 'A View from the Bridge - Edexcel IGCSE Literature Study Guide',
     description:
       'Arthur Miller\u2019s A View from the Bridge for Edexcel IGCSE Literature: plot, characters, themes, Red Hook context and key quotations.',
+    images: [
+      {
+        url: '/api/og?title=A+View+from+the+Bridge+-+Edexcel+IGCSE+Literature+Study+Guide',
+        width: 1200,
+        height: 630,
+        alt: 'A View from the Bridge - Edexcel IGCSE Literature Study Guide',
+      },
+    ],
   },
   title: 'A View from the Bridge - Edexcel IGCSE Literature Study Guide',
   description:

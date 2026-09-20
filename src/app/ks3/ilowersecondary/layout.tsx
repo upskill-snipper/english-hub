@@ -4,23 +4,25 @@ import { QUALIFICATION } from '@/lib/ilowersecondary/spec'
 import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
+  // BOTH a default and a template, and the pair matters.
+  //
+  // `default` is this segment's own title. `template` is what the 64 pages
+  // beneath it compose with, and without it Next gives them no template at
+  // all - a page then renders bare, so /ks3/ilowersecondary/fiction is a
+  // search result reading "Fiction" and nothing else. That was briefly the
+  // state on 20 September while this section's titles were being shortened.
+  //
+  // The template was ' · iLowerSecondary English · The English Hub' until the
+  // same day: 43 characters, so any page title over seventeen exceeded the ~60
+  // Google displays, and 56 of 65 pages did. The brand is dropped because
+  // Google appends or rewrites the site name itself; the qualification stays
+  // because it is what a student types.
   title: {
-    default: `${QUALIFICATION.title} (${QUALIFICATION.subjectCode})`,
-    // SHORTENED 20 September 2026. This was
-    // '%s · iLowerSecondary English · The English Hub' - a 43-character suffix,
-    // so any page title longer than seventeen characters exceeded the ~60 that
-    // Google displays. Measured across the live sitemap: 56 of the 65 pages
-    // under this layout had a title too long to show, the worst at 125
-    // characters, and almost every one of them named the qualification twice
-    // because the page title repeated what this template already appends.
-    // Dropping the brand costs nothing a search result shows: Google appends or
-    // rewrites the site name itself.
+    default: 'iLowerSecondary English (LEH11)',
     template: '%s · iLowerSecondary English',
   },
   description:
-    `Student learning hub for the ${QUALIFICATION.title} (${QUALIFICATION.subjectCode}). ` +
-    'Specification, exam format, mark scheme, grade targets S1-S4, reading and writing skills, ' +
-    'question types, text types, original practice papers, quizzes, a grammar lab and vocabulary builder.',
+    'The iLowerSecondary English student hub: specification, exam format, mark scheme, grade targets, reading and writing skills, and practice papers.',
 }
 
 /**

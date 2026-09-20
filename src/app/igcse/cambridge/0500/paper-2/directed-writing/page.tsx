@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Directed Writing - IGCSE Language A Paper 2 Section A',
     description:
       'How to tackle IGCSE Language A Paper 2 Section A directed writing. Letters, speeches, articles, reports - style, structure and tone. Aligns with Cambridge syllabus 0500.',
+    images: [
+      {
+        url: '/api/og?title=Directed+Writing+-+IGCSE+Language+A+Paper+2+Section+A',
+        width: 1200,
+        height: 630,
+        alt: 'Directed Writing - IGCSE Language A Paper 2 Section A',
+      },
+    ],
   },
   title: 'Directed Writing - IGCSE Language A Paper 2 Section A',
   description:

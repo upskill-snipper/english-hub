@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'An Inspector Calls Study Guide - Edexcel GCSE English Literature',
     description:
       'Complete An Inspector Calls revision guide for Edexcel GCSE English Literature. Plot, characters, themes, 20+ key quotes, context, and Edexcel exam technique.',
+    images: [
+      {
+        url: '/api/og?title=An+Inspector+Calls+Study+Guide+-+Edexcel+GCSE+English+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'An Inspector Calls Study Guide - Edexcel GCSE English Literature',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/inspector-calls',

@@ -469,10 +469,18 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'The five fiction genres - adventure, fantasy, historical, mystery, sci-fi',
     description:
-      'A reading guide to the five iLowerSecondary English fiction genres: defining conventions, settings and characters, language and atmosphere, and how to read each critically - with an original annotated extract, analysis question and model answer per genre, plus a cross-genre reading toolkit.',
+      'Adventure, fantasy, historical, mystery and science fiction: conventions, settings, language, and an annotated extract with a model answer for each.',
+    images: [
+      {
+        url: '/api/og?title=The+five+fiction+genres+-+adventure%2C+fantasy%2C+historical%2C+mystery%2C+sci-fi',
+        width: 1200,
+        height: 630,
+        alt: 'The five fiction genres - adventure, fantasy, historical, mystery, sci-fi',
+      },
+    ],
   },
-  title: 'The five fiction genres - a critical reading guide',
+  title: 'The five fiction genres',
   description:
-    'A reading guide to the five iLowerSecondary English fiction genres: defining conventions, settings and characters, language and atmosphere, and how to read each critically - with an original annotated extract, analysis question and model answer per genre, plus a cross-genre reading toolkit.',
+    'Adventure, fantasy, historical, mystery and science fiction: conventions, settings, language, and an annotated extract with a model answer for each.',
   alternates: { canonical: PAGE_URL },
 }

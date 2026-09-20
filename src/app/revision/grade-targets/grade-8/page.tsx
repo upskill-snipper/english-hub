@@ -6,6 +6,14 @@ export const metadata: Metadata = {
     title: 'Grade 8 Guide - The English Hub',
     description:
       'Grade 8 English GCSE / IGCSE target guide. Convincing, conceptualised analysis - top 10% territory and how to push to Grade 9.',
+    images: [
+      {
+        url: '/api/og?title=Grade+8+Guide+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Grade 8 Guide - The English Hub',
+      },
+    ],
   },
   title: 'Grade 8 Guide',
   description:

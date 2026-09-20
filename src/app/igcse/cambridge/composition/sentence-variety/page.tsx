@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'Sentence Variety - Cambridge IGCSE Composition',
     description:
       'Simple, compound, complex and compound-complex sentences for Cambridge IGCSE composition, plus rhetorical techniques: tricolon, anaphora, inversion.',
+    images: [
+      {
+        url: '/api/og?title=Sentence+Variety+-+Cambridge+IGCSE+Composition',
+        width: 1200,
+        height: 630,
+        alt: 'Sentence Variety - Cambridge IGCSE Composition',
+      },
+    ],
   },
   title: 'Sentence Variety - Cambridge IGCSE Composition',
   description:

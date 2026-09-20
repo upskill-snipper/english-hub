@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Essay Structure Templates',
     description:
       'Proven essay structure templates for GCSE and IGCSE English exams. Introduction techniques, PEEL paragraphs, conclusion strategies, topic sentences, and paragraph count guidance for different mark allocations.',
+    images: [
+      {
+        url: '/api/og?title=Essay+Structure+Templates',
+        width: 1200,
+        height: 630,
+        alt: 'Essay Structure Templates',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/exam-technique/essay-structure' },
   title: 'Essay Structure Templates',

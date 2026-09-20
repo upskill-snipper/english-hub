@@ -6,6 +6,14 @@ export const metadata: Metadata = {
     title: 'Grade 2 Guide - The English Hub',
     description:
       'Grade 2 English GCSE / IGCSE target guide. What a Grade 2 answer looks like and the next steps toward Grade 3.',
+    images: [
+      {
+        url: '/api/og?title=Grade+2+Guide+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Grade 2 Guide - The English Hub',
+      },
+    ],
   },
   title: 'Grade 2 Guide',
   description:

@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     title: 'Macbeth Analysis Hub - The English Hub',
     description:
       'Grade 9 Macbeth analysis: quotes, themes, characters and essay writing, written by GCSE markers.',
+    images: [
+      {
+        url: '/api/og?title=Macbeth+Analysis+Hub+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Macbeth Analysis Hub - The English Hub',
+      },
+    ],
   },
 }
 

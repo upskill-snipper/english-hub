@@ -8,6 +8,14 @@ export const metadata: Metadata = {
     title: 'Guilt Theme Across Texts | GCSE English Literature',
     description:
       'Explore the theme of guilt across GCSE set texts: Macbeth, An Inspector Calls, Remains, and A Christmas Carol. Key quotes, analysis, and comparison essay ideas.',
+    images: [
+      {
+        url: '/api/og?title=Guilt+Theme+Across+Texts+%7C+GCSE+English+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'Guilt Theme Across Texts | GCSE English Literature',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/themes/guilt' },
   title: 'Guilt Theme Across Texts | GCSE English Literature',

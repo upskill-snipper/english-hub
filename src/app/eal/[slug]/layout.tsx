@@ -33,6 +33,14 @@ export async function generateMetadata({
       description,
       url: canonical,
       type: 'article',
+      images: [
+        {
+          url: `/api/og?title=${encodeURIComponent(`${topic.title.en} - The English Hub`)}`,
+          width: 1200,
+          height: 630,
+          alt: `${topic.title.en} - The English Hub`,
+        },
+      ],
     },
   }
 }

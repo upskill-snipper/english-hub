@@ -15,6 +15,14 @@ export const metadata: Metadata = {
     title: 'Lord of the Flies Themes & Symbolism | The English Hub',
     description:
       'In-depth analysis of themes and symbols in Lord of the Flies by William Golding: civilisation vs savagery, power, innocence, fear, the conch, fire, beast and pig',
+    images: [
+      {
+        url: '/api/og?title=Lord+of+the+Flies+Themes+%26+Symbolism+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Lord of the Flies Themes & Symbolism | The English Hub',
+      },
+    ],
   },
   title: 'Lord of the Flies Themes & Symbolism',
   description:

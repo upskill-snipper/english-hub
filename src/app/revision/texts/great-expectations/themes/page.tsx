@@ -13,6 +13,14 @@ export const metadata: Metadata = {
     title: 'Great Expectations Themes | The English Hub',
     description:
       'Detailed analysis of key themes in Great Expectations by Charles Dickens: Social Class, Ambition, Justice, Love, Identity and Loyalty.',
+    images: [
+      {
+        url: '/api/og?title=Great+Expectations+Themes+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Great Expectations Themes | The English Hub',
+      },
+    ],
   },
   title: 'Great Expectations Themes',
   description:

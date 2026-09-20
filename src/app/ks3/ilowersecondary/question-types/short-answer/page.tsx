@@ -11,11 +11,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Short open-response answers',
     description:
-      'A masterclass on the 1- and 2-mark short open-response questions - answer length discipline, reading the question stem, quoting vs paraphrasing, and worked examples with weak and credited model answers.',
+      'The 1- and 2-mark short open-response questions: answer length, reading the stem, quoting versus paraphrasing, and worked weak and credited answers.',
+    images: [
+      {
+        url: '/api/og?title=Short+open-response+answers',
+        width: 1200,
+        height: 630,
+        alt: 'Short open-response answers',
+      },
+    ],
   },
-  title: 'iLowerSecondary English: short open-response answers',
+  title: 'Short open-response answers',
   description:
-    'A masterclass on the 1- and 2-mark short open-response questions - answer length discipline, reading the question stem, quoting vs paraphrasing, and worked examples with weak and credited model answers.',
+    'The 1- and 2-mark short open-response questions: answer length, reading the stem, quoting versus paraphrasing, and worked weak and credited answers.',
   alternates: { canonical: PAGE_URL },
 }
 

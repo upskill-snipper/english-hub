@@ -10,6 +10,14 @@ export const metadata: Metadata = {
     title: 'Paper 2: Drama - Cambridge IGCSE English Literature',
     description:
       'Study guide for Cambridge IGCSE English Literature Paper 2. Shakespeare set plays, modern drama texts, and how to write about dramatic technique and stagecraft.',
+    images: [
+      {
+        url: '/api/og?title=Paper+2%3A+Drama+-+Cambridge+IGCSE+English+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'Paper 2: Drama - Cambridge IGCSE English Literature',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/caie/paper-2' },
   title: 'Paper 2: Drama - Cambridge IGCSE English Literature',

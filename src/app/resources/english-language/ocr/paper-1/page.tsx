@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'OCR Paper 1: Communicating Information and Ideas | The English Hub',
     description:
       'Complete guide to OCR GCSE English Language Paper 1 - Communicating Information and Ideas. Non-fiction reading and writing for real purposes revision.',
+    images: [
+      {
+        url: '/api/og?title=OCR+Paper+1%3A+Communicating+Information+and+Ideas+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'OCR Paper 1: Communicating Information and Ideas | The English Hub',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-language/ocr/paper-1' },
   title: 'OCR Paper 1: Communicating Information and Ideas',

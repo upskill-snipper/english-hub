@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Much Ado About Nothing Revision Notes - The English Hub',
     description:
       'Free Much Ado About Nothing revision notes for GCSE English Literature. Character analysis, themes, key quotes with analysis, context, and exam-ready essay tips.',
+    images: [
+      {
+        url: '/api/og?title=Much+Ado+About+Nothing+Revision+Notes+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Much Ado About Nothing Revision Notes - The English Hub',
+      },
+    ],
   },
 }
 

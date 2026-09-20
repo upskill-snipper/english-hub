@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'Extended Metaphors - Cambridge IGCSE Descriptive Writing',
     description:
       'How to build, sustain and evolve an extended metaphor for Cambridge IGCSE descriptive composition, with worked examples and controlling-image patterns.',
+    images: [
+      {
+        url: '/api/og?title=Extended+Metaphors+-+Cambridge+IGCSE+Descriptive+Writing',
+        width: 1200,
+        height: 630,
+        alt: 'Extended Metaphors - Cambridge IGCSE Descriptive Writing',
+      },
+    ],
   },
   title: 'Extended Metaphors - Cambridge IGCSE Descriptive Writing',
   description:

@@ -20,6 +20,14 @@ export const metadata: Metadata = {
     title: 'Paper 2 Directed Writing & Composition - IGCSE Language A',
     description:
       'IGCSE Language A Paper 2 overview. Section A directed writing, Section B descriptive or narrative composition. Marks, timings and technique. Aligns with Cambridge syllabus 0500.',
+    images: [
+      {
+        url: '/api/og?title=Paper+2+Directed+Writing+%26+Composition+-+IGCSE+Language+A',
+        width: 1200,
+        height: 630,
+        alt: 'Paper 2 Directed Writing & Composition - IGCSE Language A',
+      },
+    ],
   },
   title: 'Paper 2 Directed Writing & Composition - IGCSE Language A',
   description:

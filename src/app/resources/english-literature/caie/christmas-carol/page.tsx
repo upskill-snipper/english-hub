@@ -10,6 +10,14 @@ export const metadata: Metadata = {
     title: 'A Christmas Carol Study Guide - Cambridge IGCSE English Literature',
     description:
       'Complete A Christmas Carol study guide for Cambridge IGCSE English Literature. Stave summaries, character analysis, themes, 18 key quotes with analysis, Victorian context, Scrooge',
+    images: [
+      {
+        url: '/api/og?title=A+Christmas+Carol+Study+Guide+-+Cambridge+IGCSE+English+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'A Christmas Carol Study Guide - Cambridge IGCSE English Literature',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/caie/christmas-carol',

@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'An Inspector Calls Act 2 Analysis - Edexcel IGCSE Literature',
     description:
       'Detailed Act 2 analysis of An Inspector Calls: Gerald\u2019s affair with Daisy Renton, Mrs Birling\u2019s charity refusal, and the trap that closes on Eric.',
+    images: [
+      {
+        url: '/api/og?title=An+Inspector+Calls+Act+2+Analysis+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'An Inspector Calls Act 2 Analysis - Edexcel IGCSE Literature',
+      },
+    ],
   },
   title: 'An Inspector Calls Act 2 Analysis - Edexcel IGCSE Literature',
   description:

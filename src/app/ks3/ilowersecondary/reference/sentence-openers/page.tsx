@@ -11,11 +11,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Sentence openers & connectives',
     description:
-      'A practical bank of varied sentence openers and connectives for the LEH11/01 Section B writing task, organised by job, with original examples, usage notes and a vary-your-openers demo.',
+      'A bank of sentence openers and connectives for the LEH11/01 Section B writing task, organised by job, with examples and a vary-your-openers demo.',
+    images: [
+      {
+        url: '/api/og?title=Sentence+openers+%26+connectives',
+        width: 1200,
+        height: 630,
+        alt: 'Sentence openers & connectives',
+      },
+    ],
   },
-  title: 'iLowerSecondary English sentence openers & connectives',
+  title: 'Sentence openers & connectives',
   description:
-    'A practical bank of varied sentence openers and connectives for the LEH11/01 Section B writing task, organised by job, with original examples, usage notes and a vary-your-openers demo.',
+    'A bank of sentence openers and connectives for the LEH11/01 Section B writing task, organised by job, with examples and a vary-your-openers demo.',
   alternates: { canonical: PAGE_URL },
 }
 

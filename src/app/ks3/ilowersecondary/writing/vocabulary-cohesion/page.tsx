@@ -13,11 +13,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Vocabulary & cohesion',
     description:
-      'Choose the exact word, vary synonyms without thesaurus-abuse, match register to your reader, and bind paragraphs with cohesion devices. Upgrade tables, a labelled rewrite and a 15-word challenge.',
+      'Choose the exact word, vary synonyms without thesaurus-abuse, match register to your reader and bind paragraphs with cohesion devices.',
+    images: [
+      {
+        url: '/api/og?title=Vocabulary+%26+cohesion',
+        width: 1200,
+        height: 630,
+        alt: 'Vocabulary & cohesion',
+      },
+    ],
   },
-  title: 'Vocabulary & cohesion: precision, synonyms and register',
+  title: 'Vocabulary & cohesion',
   description:
-    'A plain-English masterclass on selecting vocabulary for clarity and impact and using synonyms for cohesion - with original upgrade tables, a labelled rewrite, a thesaurus-trap warning and an upgrade challenge.',
+    'Choose the exact word, vary synonyms without thesaurus-abuse, match register to your reader and bind paragraphs with cohesion devices.',
   alternates: {
     canonical: 'https://theenglishhub.app/ks3/ilowersecondary/writing/vocabulary-cohesion',
   },

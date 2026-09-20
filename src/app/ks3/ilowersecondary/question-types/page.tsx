@@ -10,10 +10,7 @@ const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/question-types'
 export const metadata: Metadata = {
   title: 'Question types',
   description:
-    'Every question type in the iLowerSecondary English Section A reading ' +
-    'paper, with a dedicated masterclass: synonyms, short answers, ' +
-    'punctuation effect, meaning & impact, closed tables and the extended ' +
-    'comparison.',
+    'Every question type in the Section A reading paper with its own masterclass: synonyms, short answers, punctuation effect, tables and the comparison.',
   alternates: { canonical: PAGE_URL },
 }
 

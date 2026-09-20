@@ -9,6 +9,14 @@ export const metadata: Metadata = {
     title: 'For Creators - The English Hub',
     description:
       'Join The English Hub as a content creator. Publish courses, earn revenue and reach thousands of students preparing for GCSE and IGCSE English exams.',
+    images: [
+      {
+        url: '/api/og?title=For+Creators+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'For Creators - The English Hub',
+      },
+    ],
   },
 }
 

@@ -190,6 +190,14 @@ export async function generateMetadata({
     description,
     alternates: { canonical },
     ...(isNativeBand ? {} : { robots: { index: false, follow: true } }),
-    openGraph: { title, description, type: 'article', locale: 'en_GB' },
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+      locale: 'en_GB',
+      images: [
+        { url: `/api/og?title=${encodeURIComponent(title)}`, width: 1200, height: 630, alt: title },
+      ],
+    },
   }
 }

@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'Of Mice and Men Essay Plans - Edexcel IGCSE Literature',
     description:
       'Five IGCSE essay plans for Of Mice and Men with PEEL paragraphs: the American Dream, loneliness, Curley\u2019s wife, George and Lennie\u2019s relationship, and Steinbeck\u2019s use of setting.',
+    images: [
+      {
+        url: '/api/og?title=Of+Mice+and+Men+Essay+Plans+-+Edexcel+IGCSE+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'Of Mice and Men Essay Plans - Edexcel IGCSE Literature',
+      },
+    ],
   },
   title: 'Of Mice and Men Essay Plans - Edexcel IGCSE Literature',
   description:

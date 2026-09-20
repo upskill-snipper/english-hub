@@ -24,6 +24,14 @@ export const metadata: Metadata = {
     title: 'Descriptive Nature Passages - Reading Practice Framework - The English Hub',
     description:
       'Cambridge IGCSE Paper 1 reading practice on descriptive nature passages. Structured comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
+    images: [
+      {
+        url: '/api/og?title=Descriptive+Nature+Passages+-+Reading+Practice+Framework+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Descriptive Nature Passages - Reading Practice Framework - The English Hub',
+      },
+    ],
   },
   title: 'Descriptive Nature Passages - Reading Practice Framework',
   description:

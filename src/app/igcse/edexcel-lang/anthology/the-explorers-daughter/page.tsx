@@ -22,6 +22,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'The Explorer',
     description: 'Study guide for The Explorer',
+    images: [
+      {
+        url: '/api/og?title=The+Explorer',
+        width: 1200,
+        height: 630,
+        alt: 'The Explorer',
+      },
+    ],
   },
   title: "The Explorer's Daughter - Kari Herbert - IGCSE Language A Anthology",
   description:

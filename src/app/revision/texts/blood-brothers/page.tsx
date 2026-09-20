@@ -12,6 +12,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Blood Brothers revision guide - themes, characters, key quotes - The English Hub',
     description: 'Blood Brothers GCSE revision - Willy Russell',
+    images: [
+      {
+        url: '/api/og?title=Blood+Brothers+revision+guide+-+themes%2C+characters%2C+key+quotes+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Blood Brothers revision guide - themes, characters, key quotes - The English Hub',
+      },
+    ],
   },
   title: 'Blood Brothers revision guide - themes, characters, key quotes',
   description:

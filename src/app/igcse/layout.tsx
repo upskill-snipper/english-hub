@@ -10,6 +10,14 @@ export const metadata: Metadata = {
     title: 'IGCSE English - The English Hub',
     description:
       'IGCSE English Literature and Language revision resources. Study guides, exam technique and past-paper practice for top grades.',
+    images: [
+      {
+        url: '/api/og?title=IGCSE+English+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'IGCSE English - The English Hub',
+      },
+    ],
   },
 }
 

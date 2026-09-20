@@ -20,11 +20,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Narrative perspective',
     description:
-      'Spot and analyse first person, second person, third person limited and omniscient narration: pronouns and markers, what each viewpoint lets a writer do, the effect on the reader, limitations, original annotated extracts and a self-test.',
+      'First person, second person, third person limited and omniscient narration: how to spot each, what it does to the reader, and annotated extracts.',
+    images: [
+      {
+        url: '/api/og?title=Narrative+perspective',
+        width: 1200,
+        height: 630,
+        alt: 'Narrative perspective',
+      },
+    ],
   },
-  title: 'Narrative perspective - fiction guide',
+  title: 'Narrative perspective',
   description:
-    'Spot and analyse first, second, third-limited and omniscient narration: markers, effects, limitations, original annotated extracts and a "spot the perspective" self-test for KS3 iLowerSecondary English.',
+    'First person, second person, third person limited and omniscient narration: how to spot each, what it does to the reader, and annotated extracts.',
   alternates: { canonical: PAGE_URL },
 }
 

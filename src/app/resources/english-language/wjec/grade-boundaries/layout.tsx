@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'WJEC English Language Grade Boundaries - The English Hub',
     description:
       'WJEC Eduqas GCSE English Language grade boundaries. Historical marks needed for grades 4, 5, 7, and 9 across both exam components.',
+    images: [
+      {
+        url: '/api/og?title=WJEC+English+Language+Grade+Boundaries+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'WJEC English Language Grade Boundaries - The English Hub',
+      },
+    ],
   },
 }
 

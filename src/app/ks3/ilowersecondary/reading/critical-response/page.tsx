@@ -23,11 +23,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Critical response to texts',
     description:
-      'A masterclass on reading skill 1.2a: interpreting information, selecting the best short quotation, embedding evidence and turning a vague answer into a credited, developed response.',
+      'Reading skill 1.2a: interpreting what a text means, choosing the best short quotation, embedding evidence and turning a vague answer into a credited one.',
+    images: [
+      {
+        url: '/api/og?title=Critical+response+to+texts',
+        width: 1200,
+        height: 630,
+        alt: 'Critical response to texts',
+      },
+    ],
   },
-  title: 'Developing a critical response to texts - iLowerSecondary English',
+  title: 'Critical response to texts',
   description:
-    'A masterclass on reading skill 1.2a: interpreting information, selecting the best short quotation, embedding evidence and turning a vague answer into a credited, developed response.',
+    'Reading skill 1.2a: interpreting what a text means, choosing the best short quotation, embedding evidence and turning a vague answer into a credited one.',
   alternates: { canonical: PAGE_URL },
 }
 

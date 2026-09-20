@@ -12,6 +12,14 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title: `${title} - The English Hub`,
       description,
+      images: [
+        {
+          url: `/api/og?title=${encodeURIComponent(`${title} - The English Hub`)}`,
+          width: 1200,
+          height: 630,
+          alt: `${title} - The English Hub`,
+        },
+      ],
     },
   }
 }

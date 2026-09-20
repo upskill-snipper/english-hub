@@ -21,6 +21,14 @@ export const metadata: Metadata = {
     title: 'Paper 1 Reading | Cambridge IGCSE Language B | The English Hub',
     description:
       'Cambridge IGCSE Language B Paper 1 Reading: full overview, question structure, timing strategy and 9-1 grade boundaries.',
+    images: [
+      {
+        url: '/api/og?title=Paper+1+Reading+%7C+Cambridge+IGCSE+Language+B+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Paper 1 Reading | Cambridge IGCSE Language B | The English Hub',
+      },
+    ],
   },
   title: 'Paper 1 Reading | Cambridge IGCSE Language B',
   description:

@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     title: 'Blood Brothers - Character Analysis | The English Hub',
     description:
       'In-depth character analysis for Blood Brothers by Willy Russell: Mickey, Eddie, Mrs Johnstone, Mrs Lyons, Linda, Narrator and Sammy.',
+    images: [
+      {
+        url: '/api/og?title=Blood+Brothers+-+Character+Analysis+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Blood Brothers - Character Analysis | The English Hub',
+      },
+    ],
   },
   title: 'Blood Brothers - Character Analysis',
   description:

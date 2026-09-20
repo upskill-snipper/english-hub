@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Jekyll and Hyde Study Guide for OCR | The English Hub',
     description:
       'Comprehensive Jekyll and Hyde study guide for OCR GCSE English Literature. Characters, themes, key quotations, context, and essay planning.',
+    images: [
+      {
+        url: '/api/og?title=Jekyll+and+Hyde+Study+Guide+for+OCR+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Jekyll and Hyde Study Guide for OCR | The English Hub',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/ocr/jekyll-and-hyde',

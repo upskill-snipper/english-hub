@@ -10,6 +10,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Anita and Me revision guide - themes, characters, key quotes - The English Hub',
     description: 'Anita and Me GCSE revision - Meera Syal',
+    images: [
+      {
+        url: '/api/og?title=Anita+and+Me+revision+guide+-+themes%2C+characters%2C+key+quotes+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Anita and Me revision guide - themes, characters, key quotes - The English Hub',
+      },
+    ],
   },
   title: 'Anita and Me revision guide - themes, characters, key quotes',
   description:

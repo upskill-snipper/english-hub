@@ -11,11 +11,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Planning & proofreading',
     description:
-      'A masterclass on fast planning and reliable proofreading for the iLowerSecondary English (LEH11) Section B writing task: 3-minute plans, a time budget, a self-tuned proofreading checklist and a last-minute rescue routine.',
+      'Fast planning and reliable proofreading for the LEH11 Section B task: 3-minute plans, a time budget, a proofreading checklist and a rescue routine.',
+    images: [
+      {
+        url: '/api/og?title=Planning+%26+proofreading',
+        width: 1200,
+        height: 630,
+        alt: 'Planning & proofreading',
+      },
+    ],
   },
-  title: 'Planning & proofreading the Section B writing task',
+  title: 'Planning & proofreading',
   description:
-    'A masterclass on fast planning and reliable proofreading for the iLowerSecondary English (LEH11) Section B writing task: 3-minute plans, a time budget, a self-tuned proofreading checklist and a last-minute rescue routine.',
+    'Fast planning and reliable proofreading for the LEH11 Section B task: 3-minute plans, a time budget, a proofreading checklist and a rescue routine.',
   alternates: { canonical: PAGE_URL },
 }
 

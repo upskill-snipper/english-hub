@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'Composition Mark Scheme - Cambridge IGCSE Language',
     description:
       'Cambridge IGCSE Language Paper 2 composition mark scheme explained. Content and structure (16), style and accuracy (24), with band descriptors.',
+    images: [
+      {
+        url: '/api/og?title=Composition+Mark+Scheme+-+Cambridge+IGCSE+Language',
+        width: 1200,
+        height: 630,
+        alt: 'Composition Mark Scheme - Cambridge IGCSE Language',
+      },
+    ],
   },
   title: 'Composition Mark Scheme - Cambridge IGCSE Language',
   description:

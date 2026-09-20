@@ -12,6 +12,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Frankenstein revision guide - themes, characters, key quotes - The English Hub',
     description: 'Frankenstein GCSE revision - Shelley',
+    images: [
+      {
+        url: '/api/og?title=Frankenstein+revision+guide+-+themes%2C+characters%2C+key+quotes+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Frankenstein revision guide - themes, characters, key quotes - The English Hub',
+      },
+    ],
   },
   title: 'Frankenstein revision guide - themes, characters, key quotes',
   description:

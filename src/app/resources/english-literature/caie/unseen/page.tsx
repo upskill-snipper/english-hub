@@ -10,6 +10,14 @@ export const metadata: Metadata = {
     title: 'Unseen Analysis - Cambridge IGCSE English Literature',
     description:
       'Step-by-step techniques for unseen prose and poetry analysis in Cambridge IGCSE English Literature. Worked examples, frameworks, and marker tips.',
+    images: [
+      {
+        url: '/api/og?title=Unseen+Analysis+-+Cambridge+IGCSE+English+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'Unseen Analysis - Cambridge IGCSE English Literature',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/caie/unseen' },
   title: 'Unseen Analysis - Cambridge IGCSE English Literature',

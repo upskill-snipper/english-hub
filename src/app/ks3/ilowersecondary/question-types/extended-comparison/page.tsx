@@ -13,11 +13,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'The 6-mark comparison question',
     description:
-      'A deep masterclass on the extended comparison question: how to climb the levelled grid from an implicit comment to a clear, developed explanation of the contrast, with two original extracts and three annotated model answers.',
+      'How to climb the levelled grid on the 6-mark comparison question, with two original extracts, three annotated model answers and sentence frames.',
+    images: [
+      {
+        url: '/api/og?title=The+6-mark+comparison+question',
+        width: 1200,
+        height: 630,
+        alt: 'The 6-mark comparison question',
+      },
+    ],
   },
-  title: 'The 6-mark extended comparison question - iLowerSecondary English',
+  title: 'The 6-mark comparison question',
   description:
-    'A deep masterclass on the extended comparison question: how to climb the levelled grid from an implicit comment to a clear, developed explanation of the contrast, with two original extracts and three annotated model answers.',
+    'How to climb the levelled grid on the 6-mark comparison question, with two original extracts, three annotated model answers and sentence frames.',
   alternates: {
     canonical: 'https://theenglishhub.app/ks3/ilowersecondary/question-types/extended-comparison',
   },

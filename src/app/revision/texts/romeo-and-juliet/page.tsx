@@ -47,6 +47,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Romeo and Juliet revision guide - themes, characters, key quotes - The English Hub',
     description: 'Romeo and Juliet GCSE revision - Shakespeare',
+    images: [
+      {
+        url: '/api/og?title=Romeo+and+Juliet+revision+guide+-+themes%2C+characters%2C+key+quotes+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Romeo and Juliet revision guide - themes, characters, key quotes - The English Hub',
+      },
+    ],
   },
   title: 'Romeo and Juliet revision guide - themes, characters, key quotes',
   description:

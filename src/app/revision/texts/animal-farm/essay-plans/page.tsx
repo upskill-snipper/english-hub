@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     title: 'Animal Farm Essay Plans - GCSE Revision | The English Hub',
     description:
       'Five full essay plans for Animal Farm by George Orwell. Structured introductions, paragraph plans with quotes, and conclusions for GCSE English Literature.',
+    images: [
+      {
+        url: '/api/og?title=Animal+Farm+Essay+Plans+-+GCSE+Revision+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Animal Farm Essay Plans - GCSE Revision | The English Hub',
+      },
+    ],
   },
   title: 'Animal Farm Essay Plans - GCSE Revision',
   description:

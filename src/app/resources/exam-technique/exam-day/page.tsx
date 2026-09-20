@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     title: 'Exam Day Advice',
     description:
       'Practical exam day advice for GCSE and IGCSE English. What to bring, how to read the paper, how to plan answers, how to stay calm under pressure, and what to do in the last 5 minutes.',
+    images: [
+      {
+        url: '/api/og?title=Exam+Day+Advice',
+        width: 1200,
+        height: 630,
+        alt: 'Exam Day Advice',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/exam-technique/exam-day' },
   title: 'Exam Day Advice',

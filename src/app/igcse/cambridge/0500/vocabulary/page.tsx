@@ -20,6 +20,14 @@ export const metadata: Metadata = {
     title: 'Vocabulary Builder - IGCSE Language A 0500',
     description:
       '100 challenging vocabulary words commonly found in Cambridge IGCSE 0500 passages, organised by theme. Each with definition, example sentence, and synonym.',
+    images: [
+      {
+        url: '/api/og?title=Vocabulary+Builder+-+IGCSE+Language+A+0500',
+        width: 1200,
+        height: 630,
+        alt: 'Vocabulary Builder - IGCSE Language A 0500',
+      },
+    ],
   },
   title: 'Vocabulary Builder - IGCSE Language A 0500',
   description:

@@ -15,6 +15,14 @@ export const metadata: Metadata = {
     title: 'Teacher Resources Library - The English Hub',
     description:
       'Free, downloadable teaching resources for GCSE English teachers. Lesson plans, worksheets, mark schemes, and more.',
+    images: [
+      {
+        url: '/api/og?title=Teacher+Resources+Library+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'Teacher Resources Library - The English Hub',
+      },
+    ],
   },
 }
 

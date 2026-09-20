@@ -8,6 +8,14 @@ export const metadata: Metadata = {
     title: 'Social Responsibility Theme Across Texts | GCSE English Literature',
     description:
       'Explore the theme of social responsibility across GCSE set texts: An Inspector Calls, A Christmas Carol, and London by William Blake. Key quotes, analysis, and comparison ideas.',
+    images: [
+      {
+        url: '/api/og?title=Social+Responsibility+Theme+Across+Texts+%7C+GCSE+English+Literature',
+        width: 1200,
+        height: 630,
+        alt: 'Social Responsibility Theme Across Texts | GCSE English Literature',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/themes/social-responsibility' },
   title: 'Social Responsibility Theme Across Texts | GCSE English Literature',

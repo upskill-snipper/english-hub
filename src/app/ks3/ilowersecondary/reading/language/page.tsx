@@ -25,8 +25,16 @@ export const metadata: Metadata = {
     title: 'Language analysis (RAO4)',
     description:
       "The flagship guide to RAO4: exploring writers' grammatical and literary language at word and sentence level, with original practice extracts and model answers.",
+    images: [
+      {
+        url: '/api/og?title=Language+analysis+(RAO4)',
+        width: 1200,
+        height: 630,
+        alt: 'Language analysis (RAO4)',
+      },
+    ],
   },
-  title: 'Language analysis masterclass (RAO4) - iLowerSecondary English',
+  title: 'Language analysis (RAO4)',
   description:
     "The flagship guide to RAO4: exploring writers' grammatical and literary language at word and sentence level, with original practice extracts and model answers.",
   alternates: { canonical: PAGE_URL },

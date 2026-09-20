@@ -20,7 +20,7 @@ const S4_WAO2 = WAO2_GRID.find((g) => g.level === 'S4')!
 export const metadata: Metadata = {
   title: 'The Section B writing task',
   description:
-    'A step-by-step walkthrough of the single extended writing task in Section B of the Pearson Edexcel iLowerSecondary English achievement test: decode, plan, draft and proofread, with an original worked example annotated against the WAO1 and WAO2 mark grids.',
+    'The single extended writing task in Section B: decode, plan, draft and proofread, with a worked example annotated against the WAO1 and WAO2 grids.',
   alternates: {
     canonical: 'https://theenglishhub.app/ks3/ilowersecondary/writing/section-b-task',
   },
@@ -28,6 +28,14 @@ export const metadata: Metadata = {
     title: 'The Section B writing task - method & worked example',
     description:
       'Decode the task, plan, draft and proofread the Section B extended writing task, with an original S4-standard model answer and examiner annotation.',
+    images: [
+      {
+        url: '/api/og?title=The+Section+B+writing+task+-+method+%26+worked+example',
+        width: 1200,
+        height: 630,
+        alt: 'The Section B writing task - method & worked example',
+      },
+    ],
   },
 }
 

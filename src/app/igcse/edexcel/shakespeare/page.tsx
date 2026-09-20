@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'IGCSE Edexcel Shakespeare - Macbeth, Romeo and Juliet, Much Ado - The English Hub',
     description:
       'Pearson Edexcel IGCSE Literature 4ET1 Shakespeare section. Three plays: Macbeth, Romeo and Juliet, Much Ado About Nothing. Themes, characters, essay plans.',
+    images: [
+      {
+        url: '/api/og?title=IGCSE+Edexcel+Shakespeare+-+Macbeth%2C+Romeo+and+Juliet%2C+Much+Ado+-+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'IGCSE Edexcel Shakespeare - Macbeth, Romeo and Juliet, Much Ado - The English Hub',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare',

@@ -11,6 +11,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'A Christmas Carol Model Essays - Grade 5, 7 & 9 | The English Hub',
     description: 'Three fully-annotated model essays answering ',
+    images: [
+      {
+        url: '/api/og?title=A+Christmas+Carol+Model+Essays+-+Grade+5%2C+7+%26+9+%7C+The+English+Hub',
+        width: 1200,
+        height: 630,
+        alt: 'A Christmas Carol Model Essays - Grade 5, 7 & 9 | The English Hub',
+      },
+    ],
   },
   alternates: { canonical: 'https://theenglishhub.app/marking/sample/christmas-carol' },
   title: 'A Christmas Carol Model Essays - Grade 5, 7 & 9',

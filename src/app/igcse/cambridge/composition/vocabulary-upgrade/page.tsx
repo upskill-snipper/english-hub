@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: 'Vocabulary Upgrade - Cambridge IGCSE Composition',
     description:
       'Replace tired, overused words with precise alternatives for Cambridge IGCSE composition. Said, big, small, good, bad, walked, looked and more.',
+    images: [
+      {
+        url: '/api/og?title=Vocabulary+Upgrade+-+Cambridge+IGCSE+Composition',
+        width: 1200,
+        height: 630,
+        alt: 'Vocabulary Upgrade - Cambridge IGCSE Composition',
+      },
+    ],
   },
   title: 'Vocabulary Upgrade - Cambridge IGCSE Composition',
   description:
