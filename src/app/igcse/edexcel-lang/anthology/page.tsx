@@ -201,7 +201,7 @@ export default async function AnthologyHubPage() {
           <li>
             &lsquo;<em>Explorers or boys messing about?</em>&rsquo; by{' '}
             <strong className="text-foreground">Steven Morris</strong> &mdash; originally published
-            in <em>The Guardian</em>, 24 January 2003; adapted for the Edexcel anthology by Pearson.
+            in <em>The Guardian</em>, 28 January 2003; adapted for the Edexcel anthology by Pearson.
             Online reproductions of the <em>Guardian</em> original are{' '}
             <strong className="text-foreground">not the anthology text</strong>.
           </li>

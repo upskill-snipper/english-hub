@@ -51,6 +51,19 @@ export async function StubStudyGuide({ text, backHref = '/revision/texts', backL
   const tCategoryLabel = await t(CATEGORY_KEY[text.category])
   const resolvedBackLabel = backLabel ?? tDefaultBack
 
+  // Four things on this page are claims about where the text is examined: the
+  // "Pearson IGCSE Language A (4EA1)" badge, the promise of questions aligned
+  // with the 4EA1 mark scheme, the pointer to "other anthology texts" and the
+  // link to the Language A hub. Until 25 September 2026 every stub carried all
+  // four, whatever its boards, so The Pedestrian, The Man Who Loved Flowers and
+  // When Greek Meets Greek, which no specification we cover prescribes, each
+  // told students they were on 4EA1. They now follow set-texts.ts.
+  const onLangA = text.boards.includes('edexcel-igcse-lang')
+  // The labels for these three categories all say "Anthology", which is true
+  // only of a text some board sets in one.
+  const anthologyLabel = ['prose', 'non-fiction', 'poetry-anthology'].includes(text.category)
+  const showCategory = !anthologyLabel || text.boards.length > 0
+
   return (
     <div className="space-y-10 pb-16">
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-blue-500/[0.04] p-6 sm:p-8 lg:p-10">
@@ -69,18 +82,22 @@ export async function StubStudyGuide({ text, backHref = '/revision/texts', backL
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
-            <Badge variant="secondary">
-              <Sparkles className="me-1 size-3" />
-              {tCategoryLabel}
-            </Badge>
+            {showCategory && (
+              <Badge variant="secondary">
+                <Sparkles className="me-1 size-3" />
+                {tCategoryLabel}
+              </Badge>
+            )}
             {text.year && (
               <Badge variant="outline" className="text-muted-foreground">
                 {text.year}
               </Badge>
             )}
-            <Badge variant="outline" className="text-muted-foreground">
-              {tLangABadge}
-            </Badge>
+            {onLangA && (
+              <Badge variant="outline" className="text-muted-foreground">
+                {tLangABadge}
+              </Badge>
+            )}
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
@@ -148,19 +165,21 @@ export async function StubStudyGuide({ text, backHref = '/revision/texts', backL
         <CardContent className="space-y-3 text-body-sm text-muted-foreground">
           <p>
             {tInProdP1Prefix} <strong className="text-foreground">{text.title}</strong>
-            {tInProdP1Suffix}
+            {onLangA ? tInProdP1Suffix : '.'}
           </p>
-          <p>{tInProdP2}</p>
+          {onLangA && <p>{tInProdP2}</p>}
           <div className="flex flex-wrap gap-3 pt-2">
             <Button variant="outline" size="sm" render={<Link href="/revision/texts" />}>
               <BookOpen className="size-3.5" />
               {tBrowseTexts}
               <ArrowRight className="size-3.5" />
             </Button>
-            <Button variant="ghost" size="sm" render={<Link href="/igcse/edexcel-lang" />}>
-              {tLangAHub}
-              <ArrowRight className="size-3.5" />
-            </Button>
+            {onLangA && (
+              <Button variant="ghost" size="sm" render={<Link href="/igcse/edexcel-lang" />}>
+                {tLangAHub}
+                <ArrowRight className="size-3.5" />
+              </Button>
+            )}
           </div>
         </CardContent>
       </Card>

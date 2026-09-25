@@ -408,7 +408,7 @@ const TWENTIETH_CENTURY_POETS: AuthorEntry[] = [
     name: 'Benjamin Zephaniah',
     dates: '1958-2023',
     era: 'Contemporary',
-    bio: 'British dub poet, novelist, playwright and rights campaigner; born in Birmingham to Jamaican and Barbadian parents. Died on 7 January 2023.',
+    bio: 'British dub poet, novelist, playwright and rights campaigner; born in Birmingham to Jamaican and Barbadian parents. Died on 7 December 2023.',
     keyWorks: [
       'City Psalms (1992) - wider reading',
       'No Problem (Propa Propaganda, 1996) - Edexcel Conflict, OCR Conflict',

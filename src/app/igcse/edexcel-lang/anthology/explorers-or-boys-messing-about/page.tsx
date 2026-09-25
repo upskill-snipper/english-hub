@@ -214,7 +214,7 @@ export default async function ExplorersOrBoysMessingAboutPage() {
                 </>
               ) : (
                 <>
-                  Newspaper article (<em>The Guardian</em>, 24 January 2003 - adapted for the
+                  Newspaper article (<em>The Guardian</em>, 28 January 2003 - adapted for the
                   anthology)
                 </>
               )}

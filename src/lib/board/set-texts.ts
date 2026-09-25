@@ -244,7 +244,10 @@ export const SET_TEXTS: SetText[] = [
   {
     slug: 'curious-incident',
     title: 'The Curious Incident of the Dog in the Night-Time',
-    author: 'Mark Haddon',
+    // CORRECTED 25 September 2026. Both boards that set this text prescribe
+    // Simon Stephens's stage adaptation: the 4ET1 specification lists it under
+    // Modern Drama as "Mark Haddon (adapted by Simon Stephens)".
+    author: 'Mark Haddon, adapted for the stage by Simon Stephens',
     category: 'modern',
     boards: ['edexcel-igcse', 'eduqas'], // Eduqas prescribes the Simon Stephens play script (Bloomsbury, ISBN 978-1-4081-8521-6); the tag was missing.
     copyrightStatus: 'copyright',
@@ -406,9 +409,9 @@ export const SET_TEXTS: SetText[] = [
     year: '2003',
     keyThemes: ['Adventure', 'Risk', 'Responsibility', 'Public criticism'],
     description:
-      'Originally published in The Guardian, 24 January 2003; adapted for the Edexcel anthology by Pearson. The article reports the rescue of two British explorers stranded in the Antarctic, and the public debate over whether their expedition was bravery or recklessness.',
+      'Originally published in The Guardian, 28 January 2003; adapted for the Edexcel anthology by Pearson. The article reports the rescue of two British explorers stranded in the Antarctic, and the public debate over whether their expedition was bravery or recklessness.',
     ukRightsNotice:
-      'Anthology version warning: This text is an adapted version printed in the Edexcel IGCSE Anthology (ISBN 978-1-446-93108-0). The freely-available Guardian original (linked from many revision sites) differs in cuts, re-orderings, and minor word choice. Always use the anthology version when answering Edexcel exam questions - examiners will mark against the anthology text. Originally published in The Guardian, 24 January 2003; adapted for the Edexcel anthology by Pearson. © Guardian News & Media Ltd / Pearson Education. Short fair-dealing extracts only.',
+      'Anthology version warning: This text is an adapted version printed in the Edexcel IGCSE Anthology (ISBN 978-1-446-93108-0). The freely-available Guardian original (linked from many revision sites) differs in cuts, re-orderings, and minor word choice. Always use the anthology version when answering Edexcel exam questions - examiners will mark against the anthology text. Originally published in The Guardian, 28 January 2003; adapted for the Edexcel anthology by Pearson. © Guardian News & Media Ltd / Pearson Education. Short fair-dealing extracts only.',
   },
   {
     slug: 'between-a-rock-and-a-hard-place',
@@ -434,7 +437,7 @@ export const SET_TEXTS: SetText[] = [
     year: '2015',
     keyThemes: ['Education', 'Identity', 'Disability', 'Self-belief'],
     description:
-      'Benjamin Zephaniah (1958-2023) was a British dub poet and rights campaigner; he died in January 2023 and rights to his work are now held by his estate. The text was originally a 2017 Guardian opinion piece and has been adapted for the Edexcel anthology - the printed version differs from the freely-available online original in cuts and re-orderings. In it, Zephaniah wrote about growing up labelled as stupid because of dyslexia, and argued that creative thinking and refusal to be defined by an educational system are strengths.',
+      'Benjamin Zephaniah (1958-2023) was a British dub poet and rights campaigner; he died on 7 December 2023 and rights to his work are now held by his estate. The text was originally a Guardian opinion piece (2 October 2015) and has been adapted for the Edexcel anthology - the printed version differs from the freely-available online original in cuts and re-orderings. In it, Zephaniah wrote about growing up labelled as stupid because of dyslexia, and argued that creative thinking and refusal to be defined by an educational system are strengths.',
     ukRightsNotice:
       'Anthology version warning: This text is an adapted version printed in the Edexcel IGCSE Anthology (ISBN 978-1-446-93108-0). The freely-available Guardian original (linked from many revision sites) differs in cuts, re-orderings, and minor word choice. Always use the anthology version when answering Edexcel exam questions - examiners will mark against the anthology text. Rights notice: Benjamin Zephaniah (1958-2023) - rights now held by his estate. © estate via Pearson Education. Quotations are short fair-dealing extracts.',
   },
@@ -447,10 +450,14 @@ export const SET_TEXTS: SetText[] = [
     copyrightStatus: 'copyright',
     year: '2000',
     keyThemes: ['Culture', 'Spectacle', 'Tradition', 'Travel writing'],
+    // CORRECTED 25 September 2026. The description said the text was about
+    // buzkashi, the sport in the book's title. The anthology extract is Levine
+    // filming an illegal donkey-cart race on a main road in Karachi; buzkashi is
+    // not in it. The publisher was André Deutsch (2000), not Little, Brown.
     description:
-      "Levine's account of watching buzkashi - a violent Asian sport played with the carcass of a goat - and her attempt to describe a tradition very far from her own without judging it.",
+      "Levine's account of filming an illegal donkey-cart race along a main road in Karachi, from the long wait to the chaotic chase that follows it.",
     ukRightsNotice:
-      'Rights notice: © Little, Brown / Pearson Education on behalf of Emma Levine. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
+      'Rights notice: © André Deutsch / Pearson Education on behalf of Emma Levine. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
   },
   {
     slug: 'beyond-the-sky-and-the-earth',
@@ -744,7 +751,13 @@ export const SET_TEXTS: SetText[] = [
     author: 'Guy de Maupassant',
     category: 'prose',
     boards: ['edexcel-igcse-lang'],
-    copyrightStatus: 'public-domain',
+    // CORRECTED 25 September 2026 from 'public-domain'. Maupassant's French is
+    // out of copyright; the text the anthology prints is David Coward's
+    // translation, which is not. The older free translations are not the
+    // prescribed text. Marked by the words a student actually studies.
+    copyrightStatus: 'copyright',
+    ukRightsNotice:
+      'Rights notice: the anthology prints the translation by David Coward, which is in copyright. Quotations are short fair-dealing extracts under CDPA 1988 s.30 (criticism and review). Older translations that are freely available online are not the prescribed text, and their wording differs.',
     year: '1884',
     keyThemes: ['Vanity', 'Class', 'Pride', 'Ironic reversal'],
     description:
@@ -766,29 +779,35 @@ export const SET_TEXTS: SetText[] = [
   },
   {
     slug: 'whistle-and-ill-come-to-you',
-    title: "Whistle and I'll Come to You, My Lad",
-    author: 'M.R. James',
-    category: 'prose',
-    boards: ['edexcel-igcse-lang'],
-    copyrightStatus: 'public-domain',
-    year: '1904',
-    keyThemes: ['The supernatural', 'Rationalism', 'Fear', 'Isolation'],
-    description:
-      'A sceptical Cambridge professor on holiday on the East Anglian coast finds an ancient bronze whistle in a graveyard and, unable to resist blowing it, summons something he cannot explain.',
-  },
-  {
-    slug: 'night',
-    title: 'Night',
-    author: 'Bernard MacLaverty (b. 1942)',
+    // CORRECTED 25 September 2026. This row said M.R. James's 1904 ghost story
+    // "Oh, Whistle, and I'll Come to You, My Lad", public domain, with a
+    // description of its plot. The Pearson Edexcel International GCSE English
+    // Anthology (Issue 8, February 2026) prints the chapter "Whistle and I'll
+    // Come to You" from Susan Hill's The Woman in Black (1983), which is in
+    // copyright. A guide written from the old row would have analysed the wrong
+    // story and, marked public domain, could have published James's in full as
+    // though it were the prescribed text. See edexcel-igcse-anthology.ts.
+    title: "Whistle and I'll Come to You (from The Woman in Black)",
+    author: 'Susan Hill (b. 1942)',
     category: 'prose',
     boards: ['edexcel-igcse-lang'],
     copyrightStatus: 'copyright',
-    year: '1990',
-    keyThemes: ['Loneliness', 'Aging', 'Empathy', 'Quiet despair'],
-    description:
-      'A short, finely observed story about an elderly woman alone at night, listening to a younger woman in distress in the flat below, and the small moral question of what to do.',
-    ukRightsNotice:
-      'Rights notice: © Jonathan Cape / Penguin Random House / Pearson Education on behalf of Bernard MacLaverty. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
+    year: '1983',
+  },
+  {
+    slug: 'night',
+    // CORRECTED 25 September 2026. This row credited Bernard MacLaverty and
+    // described an elderly woman listening to a neighbour through the floor.
+    // The anthology (Issue 8) prints Alice Munro's "Night", from Dear Life
+    // (2012), and the description matched neither story. The description and
+    // themes are removed rather than rewritten from memory; the study guide
+    // for this text is the verified account.
+    title: 'Night',
+    author: 'Alice Munro (1931-2024)',
+    category: 'prose',
+    boards: ['edexcel-igcse-lang'],
+    copyrightStatus: 'copyright',
+    year: '2012',
   },
   {
     slug: 'the-pedestrian',
@@ -814,7 +833,10 @@ export const SET_TEXTS: SetText[] = [
     description:
       "In a future city where everyone watches television indoors, a man's nightly walks alone become so unusual that an automated police car arrests him for being on the street.",
     ukRightsNotice:
-      'Rights notice: © HarperCollins / Don Congdon Associates / Pearson Education on behalf of the Ray Bradbury estate (1920-2012). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
+      // Until 25 September 2026 this named Pearson as a rights holder and sent
+      // students to the Edexcel anthology (ISBN 978-1-446-93108-0), which does
+      // not contain this story. Checked against the anthology PDF, Issue 8.
+      'Rights notice: © the Ray Bradbury estate (1920-2012). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). The full story is in Bradbury’s collection The Golden Apples of the Sun (1953). It is not in the Pearson Edexcel International GCSE English Anthology.',
   },
   {
     slug: 'the-yellow-wallpaper',
@@ -864,7 +886,10 @@ export const SET_TEXTS: SetText[] = [
     description:
       'A comic but biting story of Caribbean migrants in 1950s London, where two friends pretend to be Indian to navigate the racism of the British housing market.',
     ukRightsNotice:
-      'Rights notice: © Longman / Pearson Education on behalf of the Sam Selvon estate (1923-1994). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
+      // Until 25 September 2026 this named Pearson as a rights holder and sent
+      // students to the Edexcel anthology (ISBN 978-1-446-93108-0), which does
+      // not contain this story. Checked against the anthology PDF, Issue 8.
+      'Rights notice: © the Sam Selvon estate (1923-1994). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). The full story is in Selvon’s collection Ways of Sunlight (1957). It is not in the Pearson Edexcel International GCSE English Anthology.',
   },
   {
     slug: 'the-man-who-loved-flowers',
@@ -890,7 +915,10 @@ export const SET_TEXTS: SetText[] = [
     description:
       "On a beautiful spring evening in 1960s New York, a young man in love walks the streets buying flowers - but his sweet anticipation curdles into something terrifying by the story's end.",
     ukRightsNotice:
-      'Rights notice: © Hodder & Stoughton / Doubleday / Pearson Education on behalf of Stephen King. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0) or King’s collection Night Shift (1978).',
+      // Until 25 September 2026 this named Pearson as a rights holder and sent
+      // students to the Edexcel anthology (ISBN 978-1-446-93108-0), which does
+      // not contain this story. Checked against the anthology PDF, Issue 8.
+      'Rights notice: © Stephen King. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). The full story is in King’s collection Night Shift (1978). It is not in the Pearson Edexcel International GCSE English Anthology.',
   },
   {
     slug: 'the-story-of-an-hour',
@@ -1177,11 +1205,12 @@ export const SET_TEXTS: SetText[] = [
   {
     slug: 'refugee-boy',
     title: 'Refugee Boy',
-    // EDITION NOT SETTLED. Benjamin Zephaniah wrote the novel; Lemn Sissay
-    // wrote a stage adaptation. Which is prescribed has not been read from the
-    // specification's editions appendix, so the original author is recorded and
-    // the question is left open rather than answered by assumption.
-    author: 'Benjamin Zephaniah (1958-2023)',
+    // EDITION SETTLED 25 September 2026. The Edexcel 1ET0 specification, Issue
+    // 2 (June 2019), lists "play: Refugee Boy, Benjamin Zephaniah (adapted for
+    // the stage by Lemn Sissay)". The prescribed text is Sissay's 2013 play, not
+    // Zephaniah's 2001 novel, whose plot and structure differ.
+    author: 'Benjamin Zephaniah, adapted for the stage by Lemn Sissay',
+    year: '2013',
     category: 'modern',
     boards: ['edexcel'],
     copyrightStatus: 'copyright',
@@ -1189,8 +1218,9 @@ export const SET_TEXTS: SetText[] = [
   {
     slug: 'coram-boy',
     title: 'Coram Boy',
-    // EDITION NOT SETTLED, as above. Jamila Gavin wrote the novel; Helen
-    // Edmundson wrote the stage adaptation.
+    // EDITION SETTLED 25 September 2026. The Edexcel 1ET0 specification, Issue
+    // 2, lists "novel: Coram Boy, Jamila Gavin". Helen Edmundson's stage
+    // adaptation is not the prescribed text.
     author: 'Jamila Gavin (b. 1941)',
     category: 'modern',
     boards: ['edexcel'],
@@ -1199,7 +1229,12 @@ export const SET_TEXTS: SetText[] = [
   {
     slug: 'boys-dont-cry',
     title: "Boys Don't Cry",
-    author: 'Fiona Scarlett',
+    // CORRECTED 25 September 2026. Both Edexcel 1ET0 and Eduqas prescribe
+    // Malorie Blackman's 2010 novel. Fiona Scarlett's 2021 novel of the same
+    // title is a different book on no specification. prescribed-texts.ts holds
+    // titles only, which is how the wrong author got through.
+    author: 'Malorie Blackman (b. 1962)',
+    year: '2010',
     category: 'modern',
     boards: ['edexcel', 'eduqas'],
     copyrightStatus: 'copyright',
