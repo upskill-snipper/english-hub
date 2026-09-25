@@ -71,7 +71,7 @@ const CHARACTERS = [
       '"Napoleon is always right"',
       '"All animals are equal, but some animals are more equal than others"',
       '"He carried a whip in his trotter"',
-      '"The creatures outside looked from pig to man, and from man to pig... but already it was impossible to say which was which"',
+      '"The creatures outside looked from pig to man, ... impossible to say which was which"',
     ],
   },
   {
@@ -105,7 +105,7 @@ const CHARACTERS = [
     key_quotes: [
       '"I will work harder"',
       '"Napoleon is always right"',
-      "\"His two slogans, 'I will work harder' and 'Napoleon is always right,' seemed to him a sufficient answer to all problems\"",
+      '"His two slogans ... seemed to him a sufficient answer to all problems"',
       '"The van was taking Boxer to the horse slaughterer\'s!"',
     ],
   },
@@ -116,8 +116,8 @@ const CHARACTERS = [
       "The prize-winning boar whose speech in Chapter 1 inspires the Rebellion. He articulates the vision of an equal society where animals are free from human exploitation. His philosophy is later codified as 'Animalism' (representing Marxism/Communism). Old Major dies before the revolution, so his ideas are corrupted by those who come after him. He represents the original revolutionary thinkers whose ideals are perverted by the leaders who seize power.",
     key_quotes: [
       '"All men are enemies. All animals are comrades"',
-      '"Whatever goes upon two legs is an enemy. Whatever goes upon four legs, or has wings, is a friend"',
-      '"Is it not crystal clear, comrades, that all the evils of this life of ours spring from the tyranny of human beings?"',
+      '"Whatever goes upon two legs is an enemy."',
+      '"all the evils of this life ... spring from the tyranny of human beings"',
     ],
   },
   {
@@ -136,9 +136,7 @@ const CHARACTERS = [
     allegory: 'Tsar Nicholas II',
     description:
       'The original owner of Manor Farm. He is a neglectful, drunken farmer who mistreats his animals. His failure to feed the animals triggers the Rebellion. He represents the incompetent and corrupt ruler whose mismanagement provokes revolution. After the Rebellion he tries to recapture the farm at the Battle of the Cowshed but fails. He eventually dies in an inebriates\u0027 home.',
-    key_quotes: [
-      '"Mr Jones, of the Manor Farm, had locked the hen-houses for the night, but was too drunk to remember to shut the pop-holes"',
-    ],
+    key_quotes: ['"Mr Jones, ... was too drunk to remember to shut the pop-holes"'],
   },
   {
     name: 'The Sheep',
@@ -156,7 +154,7 @@ const THEMES = [
       'The central theme of the novella. Orwell shows how power corrupts absolutely. The pigs begin as liberators fighting for equality but gradually become indistinguishable from the humans they replaced. Napoleon accumulates power through violence (the dogs), propaganda (Squealer), and the rewriting of history. The Seven Commandments are steadily altered to justify the pigs\u0027 privileges. The final image - pigs and men becoming indistinguishable - is Orwell\u0027s devastating conclusion: revolutions that concentrate power in a ruling elite inevitably reproduce the tyranny they overthrew.',
     quotes: [
       '"All animals are equal, but some animals are more equal than others"',
-      '"The creatures outside looked from pig to man, and from man to pig... but already it was impossible to say which was which"',
+      '"The creatures outside looked from pig to man, ... impossible to say which was which"',
       '"He carried a whip in his trotter"',
     ],
   },
@@ -167,7 +165,7 @@ const THEMES = [
     quotes: [
       '"He could turn black into white"',
       '"Surely, comrades, you do not want Jones back?"',
-      '"The Seven Commandments... had been altered. There was nothing there now except a single Commandment"',
+      '"The Seven Commandments... There was nothing there now except a single Commandment"',
       '"Four legs good, two legs better"',
     ],
   },
@@ -209,7 +207,7 @@ const THEMES = [
       "Napoleon and Squealer repeatedly rewrite the past to serve the present. Snowball\u0027s heroism at the Battle of the Cowshed is erased and replaced with a narrative of treachery. The windmill - Snowball\u0027s idea - is attributed to Napoleon. The animals\u0027 memories are gaslit: 'Surely, comrades, you do not want Jones back?' Orwell, who witnessed Soviet propaganda firsthand, warns that those who control the past control the present - a theme he would explore further in Nineteen Eighty-Four.",
     quotes: [
       '"Squealer spoke so persuasively... that they accepted his explanation without further questions"',
-      '"Do you not remember how, just at the moment when Jones and his men had got inside the yard, Snowball suddenly turned and fled?"',
+      '"Do you not remember how, ... Snowball suddenly turned and fled?"',
       '"Snowball was in league with Jones from the very start"',
     ],
   },
@@ -223,8 +221,7 @@ const KEY_QUOTES = [
       "The final, corrupted commandment. Orwell's most famous line - it captures the entire betrayal of the revolution in a single paradox. Equality has been twisted to justify totalitarian hierarchy.",
   },
   {
-    quote:
-      '"The creatures outside looked from pig to man, and from man to pig... but already it was impossible to say which was which"',
+    quote: '"The creatures outside looked from pig to man, ... impossible to say which was which"',
     speaker: 'Narrator (Chapter 10)',
     significance:
       "The novella's closing image. The pigs have become identical to the humans they overthrew. Orwell's devastating conclusion: the revolution has come full circle.",
@@ -296,8 +293,7 @@ const KEY_QUOTES = [
       "Benjamin finally speaks out - but too late. The most emotionally devastating moment in the novella. Boxer's loyalty is repaid with betrayal and death.",
   },
   {
-    quote:
-      '"Is it not crystal clear, comrades, that all the evils of this life of ours spring from the tyranny of human beings?"',
+    quote: '"all the evils of this life ... spring from the tyranny of human beings"',
     speaker: 'Old Major (Chapter 1)',
     significance:
       'The ideological foundation of the Rebellion. Orwell shows how a legitimate grievance can be exploited by those who replace one tyranny with another.',

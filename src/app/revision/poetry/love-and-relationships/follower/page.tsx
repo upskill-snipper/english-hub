@@ -15,10 +15,19 @@ import { useT } from '@/lib/i18n/use-t'
 const followerPoem: PoemData = {
   title: 'Follower',
   poet: 'Seamus Heaney',
+  // NOTE: "Follower" (Seamus Heaney, from Death of a Naturalist, Faber &
+  // Faber, 1966) remains in copyright. To avoid reproducing the poem
+  // verbatim, each line below is given as a PARAPHRASE in the site's own
+  // words rather than the poet's exact text, and the annotations quote only
+  // short phrases (22 words across all of them, within 15 per cent of the
+  // poem's 153). Students must read the full original in the AQA Love &
+  // Relationships anthology. Until 25 September 2026 this array printed the
+  // whole poem. Check the paraphrases against the anthology before relying
+  // on them.
   lines: [
     // Stanza 1
     {
-      text: 'My father worked with a horse-plough,',
+      text: '[Paraphrase] My father ploughed his fields using horses,',
       annotations: [
         {
           type: 'Setting',
@@ -28,7 +37,7 @@ const followerPoem: PoemData = {
       ],
     },
     {
-      text: 'The shoulders globed like a full sail strung',
+      text: '[Paraphrase] his shoulders rounded out like a canvas swelling in the wind, stretched',
       annotations: [
         {
           type: 'Simile',
@@ -37,13 +46,13 @@ const followerPoem: PoemData = {
         },
       ],
     },
-    { text: 'Between the shafts and the furrow.' },
-    { text: 'The horses strained at his clicking tongue.' },
+    { text: "[Paraphrase] between the plough's wooden arms and the groove it was cutting." },
+    { text: '[Paraphrase] The horses pulled hard whenever he clicked his tongue at them.' },
     // Stanza break
     { text: '' },
     // Stanza 2
     {
-      text: 'An expert. He would set the wing',
+      text: "[Paraphrase] He was a master of it. He would adjust the plough's side-blade",
       annotations: [
         {
           type: 'Fragment',
@@ -53,7 +62,7 @@ const followerPoem: PoemData = {
       ],
     },
     {
-      text: 'And fit the bright steel-pointed sock.',
+      text: '[Paraphrase] and attach the shining metal tip that cuts into the earth.',
       annotations: [
         {
           type: 'Technical language',
@@ -62,13 +71,13 @@ const followerPoem: PoemData = {
         },
       ],
     },
-    { text: 'The sod rolled over without breaking.' },
-    { text: 'At the headrig, with a single pluck' },
+    { text: '[Paraphrase] The turf turned over in one unbroken strip.' },
+    { text: '[Paraphrase] At the end of the field, with one tug' },
     // Stanza break
     { text: '' },
     // Stanza 3
     {
-      text: 'Of reins, the sweating team turned round',
+      text: '[Paraphrase] on the reins, the sweaty horses swung about',
       annotations: [
         {
           type: 'Enjambment',
@@ -77,10 +86,10 @@ const followerPoem: PoemData = {
         },
       ],
     },
-    { text: 'And back into the land. His eye' },
-    { text: 'Narrowed and angled at the ground,' },
+    { text: '[Paraphrase] and returned across the field. His gaze' },
+    { text: '[Paraphrase] squinted, tilted down towards the earth,' },
     {
-      text: 'Mapping the furrow exactly.',
+      text: '[Paraphrase] plotting the line of the furrow precisely.',
       annotations: [
         {
           type: 'Precision',
@@ -93,35 +102,35 @@ const followerPoem: PoemData = {
     { text: '' },
     // Stanza 4
     {
-      text: 'I stumbled in his hobnailed wake,',
+      text: '[Paraphrase] I tripped along behind him in the trail of his studded boots,',
       annotations: [
         {
           type: 'Contrast',
-          note: '"Stumbled" contrasts sharply with the father\'s expert control. "Wake" continues the nautical metaphor \u2014 the father cuts through earth like a ship through water.',
+          note: '"Stumbled" contrasts sharply with the father\'s expert control. "Wake" continues the nautical metaphor - the father cuts through earth like a ship through water.',
           color: '#f59e0b',
         },
       ],
     },
-    { text: 'Fell sometimes on the polished sod;' },
-    { text: 'Sometimes he rode me on his back' },
-    { text: 'Dipping and rising to his plod.' },
+    { text: '[Paraphrase] now and then falling over on the smooth, freshly turned turf;' },
+    { text: '[Paraphrase] at times he gave me a piggyback ride,' },
+    { text: '[Paraphrase] bobbing down and up with his slow, heavy steps.' },
     // Stanza break
     { text: '' },
     // Stanza 5
     {
-      text: 'I wanted to grow up and plough,',
+      text: '[Paraphrase] I longed to be a ploughman myself when I was older,',
       annotations: [
         {
           type: 'Aspiration',
-          note: "The child's simple desire to emulate his father is touching but will ultimately go unfulfilled \u2014 Heaney became a poet, not a farmer.",
+          note: "The child's simple desire to emulate his father is touching but will ultimately go unfulfilled - Heaney became a poet, not a farmer.",
           color: '#3b82f6',
         },
       ],
     },
-    { text: 'To close one eye, stiff my arm.' },
-    { text: 'All I ever did was follow' },
+    { text: '[Paraphrase] to squint with one eye shut and hold my arm rigid.' },
+    { text: '[Paraphrase] Yet all I managed was to trail' },
     {
-      text: 'In his broad shadow round the farm.',
+      text: '[Paraphrase] behind him, in his large shadow, about the farm.',
       annotations: [
         {
           type: 'Metaphor',
@@ -134,7 +143,7 @@ const followerPoem: PoemData = {
     { text: '' },
     // Stanza 6
     {
-      text: 'I was a nuisance, tripping, falling,',
+      text: '[Paraphrase] I got under his feet, forever losing my footing and tumbling,',
       annotations: [
         {
           type: 'Listing',
@@ -143,19 +152,19 @@ const followerPoem: PoemData = {
         },
       ],
     },
-    { text: 'Yapping always. But today' },
+    { text: '[Paraphrase] and chattering non-stop. Now, though,' },
     {
-      text: 'It is my father who keeps stumbling',
+      text: '[Paraphrase] my father is the one who keeps tripping along',
       annotations: [
         {
           type: 'Volta',
-          note: 'The dramatic reversal: "But today" pivots the entire poem. Now the father "stumbles" \u2014 the same verb used for the child earlier. Ageing has reversed their roles.',
+          note: 'The dramatic reversal: "But today" pivots the entire poem. Now the father "stumbles" - the same verb used for the child earlier. Ageing has reversed their roles.',
           color: '#ef4444',
         },
       ],
     },
     {
-      text: 'Behind me, and will not go away.',
+      text: '[Paraphrase] at my back, and he refuses to leave.',
       annotations: [
         {
           type: 'Ambiguity',
@@ -693,15 +702,15 @@ export default function FollowerPage() {
         <p>
           <strong>Rights notice:</strong> &copy; Faber &amp; Faber on behalf of Seamus Heaney
           (1939–2013). Quotations from <em>Follower</em> are short fair-dealing extracts under CDPA
-          1988 &sect;30 (criticism, review, quotation). For full text, students should consult the
-          board-licensed AQA Love &amp; Relationships anthology or Heaney&rsquo;s collection
+          1988 &sect;30 (criticism, review, quotation). The full text is printed in the
+          board-licensed AQA Love &amp; Relationships anthology and in Heaney&rsquo;s collection{' '}
           <em>Death of a Naturalist</em> (1966).
         </p>
         <p>
-          Poem text is reproduced for the purpose of private study and educational criticism under
-          UK fair-dealing provisions (Copyright, Designs and Patents Act 1988, s.30). No commercial
-          use is intended. All quotations remain the intellectual property of the respective rights
-          holders.
+          The poem is paraphrased here rather than printed: each line in the viewer above is given
+          in our own words, and only short phrases are quoted, for criticism and review under UK
+          fair-dealing provisions (Copyright, Designs and Patents Act 1988, s.30). All quotations
+          remain the intellectual property of the respective rights holders.
         </p>
       </footer>
     </div>

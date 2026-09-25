@@ -62,8 +62,7 @@ const THEMES: ThemeStudy[] = [
           'Birling\u2019s capitalist philosophy, which the entire play exists to refute. "His own" limits moral obligation to family and class, excluding the working class entirely. Dramatic irony ensures the audience rejects this before the Inspector arrives.',
       },
       {
-        quote:
-          '"If we were all responsible for everything that happened to everybody \u2026 it would be very awkward."',
+        quote: '"If we were all responsible for everything ... it would be very awkward."',
         speaker: 'Arthur Birling',
         act: 'Act 3',
         analysis:
@@ -121,8 +120,7 @@ const THEMES: ThemeStudy[] = [
           'Sheila rejects her father\u2019s dehumanising language and insists on Eva\u2019s humanity. The opposition between "cheap labour" and "people" captures Priestley\u2019s argument that the class system turns human beings into economic units.',
       },
       {
-        quote:
-          '"She was claiming elaborate fine feelings and scruples that were simply absurd in a girl in her position."',
+        quote: '"She was claiming elaborate fine feelings ... absurd in a girl in her position."',
         speaker: 'Sybil Birling',
         act: 'Act 2',
         analysis:
@@ -346,7 +344,7 @@ const THEMES: ThemeStudy[] = [
           'The model response to guilt: immediate, unconditional, and forward-looking. The repetition of "never" conveys the depth of Sheila\u2019s remorse. Priestley presents this as the response he wants from his audience.',
       },
       {
-        quote: '"It\u2019s what happened to the girl and what we all did to her that matters."',
+        quote: '"what happened to the girl and what we all did to her that matters."',
         speaker: 'Sheila Birling',
         act: 'Act 3',
         analysis:
@@ -398,7 +396,7 @@ const THEMES: ThemeStudy[] = [
     keyQuotes: [
       {
         quote:
-          '"The way some of these cranks talk and write now, you\u2019d think everybody has to look after everybody else."',
+          '"cranks talk and write now, you\u2019d think everybody has to look after everybody else."',
         speaker: 'Arthur Birling',
         act: 'Act 1',
         analysis:
@@ -419,8 +417,7 @@ const THEMES: ThemeStudy[] = [
           'The capitalist creed in its purest form. Priestley presents it at the start of the play so that every subsequent revelation demonstrates its human cost. By Act 3, this philosophy has been proven responsible for Eva\u2019s death.',
       },
       {
-        quote:
-          '"One Eva Smith has gone \u2014 but there are millions and millions and millions of Eva Smiths and John Smiths still left with us."',
+        quote: '"One Eva Smith has gone \u2014 but there are millions and millions and millions"',
         speaker: 'Inspector Goole',
         act: 'Act 3',
         analysis:

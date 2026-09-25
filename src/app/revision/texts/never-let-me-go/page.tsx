@@ -124,29 +124,26 @@ const data: TextGuideData = {
   ],
   quotations: [
     {
-      quote:
-        '"My name is Kathy H. I\'m thirty-one years old, and I\'ve been a carer now for over eleven years."',
+      quote: '"My name is Kathy H. ... I\'ve been a carer now for over eleven years."',
       who: 'Kathy \u2014 Chapter 1',
       analysis:
         'The opening sentence introduces the flat, CV-like voice Ishiguro uses throughout the novel. The single-letter surname and the bureaucratic job title \u2018carer\u2019 already hint that Kathy belongs to a category rather than a family, and the horror of the book will hide in plain sight inside this matter-of-fact tone.',
     },
     {
-      quote:
-        '"You\'ve been told and not told. You\'ve been told, but none of you really understand."',
+      quote: '"You\'ve been told and not told. ... but none of you really understand."',
       who: 'Miss Lucy \u2014 Chapter 7',
       analysis:
         'Miss Lucy\u2019s diagnosis of the students\u2019 condition is also the novel\u2019s diagnosis of complicity. Hailsham\u2019s central cruelty is informational: the truth is given in pieces too small to absorb but too present to allow later claims of ignorance. The phrase becomes a moral test the reader, too, has to apply to their own knowledge of suffering.',
     },
     {
       quote:
-        "\"Your lives are set out for you. You'll become adults, then before you're old, before you're even middle-aged, you'll start to donate your vital organs.\"",
+        '"Your lives are set out for you. You\'ll become adults, ... donate your vital organs."',
       who: 'Miss Lucy \u2014 Chapter 7',
       analysis:
         'The only moment in the novel when the truth is spoken plainly. Ishiguro\u2019s chilling choice is to have this speech change almost nothing: the students absorb it, Miss Lucy is dismissed, and life continues. The sentence shows how little information alone can do against institutional conditioning.',
     },
     {
-      quote:
-        '"We took away your art because we thought it would reveal your souls. Or to put it more finely, we did it to prove you had souls at all."',
+      quote: '"We took away your art ... to prove you had souls at all."',
       who: 'Miss Emily \u2014 Chapter 22',
       analysis:
         'Miss Emily\u2019s revelation that Hailsham was an experiment to argue for the clones\u2019 humanity turns every art lesson in the novel retrospectively into evidence in a legal case. The fact that the soul of a child had to be proven to exist \u2014 and that most of society declined to be convinced \u2014 is Ishiguro\u2019s quiet moral verdict.',
@@ -165,14 +162,13 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"I saw a new world coming rapidly. More scientific, efficient, yes. More cures for the old sicknesses. Very good. But a harsh, cruel world."',
+        '"a new world coming rapidly. More scientific, efficient, yes. ... But a harsh, cruel world."',
       who: 'Miss Emily \u2014 Chapter 22',
       analysis:
-        'The banal language of progress \u2014 \u2018scientific\u2019, \u2018efficient\u2019, \u2018cures\u2019 \u2014 is being used here to justify an atrocity. Ishiguro lets the defender of Hailsham condemn the wider society without ever defending her own participation in it, and the reader is left to weigh how much kinder her experiment really was.',
+        'The banal language of progress \u2014 \u2018scientific\u2019, \u2018efficient\u2019 \u2014 is being used here to justify an atrocity. Ishiguro lets the defender of Hailsham condemn the wider society without ever defending her own participation in it, and the reader is left to weigh how much kinder her experiment really was.',
     },
     {
-      quote:
-        '"I just waited a bit, then turned back to the car, to drive off to wherever it was I was supposed to be."',
+      quote: '"to drive off to wherever it was I was supposed to be."',
       who: 'Kathy \u2014 final lines',
       analysis:
         'The novel\u2019s closing refusal of melodrama. Kathy imagines Tommy appearing on the horizon, does not see him, and returns to the schedule. The flatness of the final clause \u2014 \u2018wherever it was I was supposed to be\u2019 \u2014 is the whole book compressed: a life entirely scheduled by someone else, accepted without protest.',
@@ -191,8 +187,7 @@ const data: TextGuideData = {
         'Madame\u2019s lament is the only moment a figure of authority addresses the clones as victims to their face. The phrase \u2018poor creatures\u2019 is loaded: it expresses real sympathy but also, perhaps involuntarily, reproduces the language that placed them outside full humanity in the first place.',
     },
     {
-      quote:
-        '"I don\'t know how it was where you were, but at Hailsham we had to have some form of medical almost every week."',
+      quote: '"at Hailsham we had to have some form of medical almost every week."',
       who: 'Kathy \u2014 Chapter 2',
       analysis:
         'The throwaway mention of constant medicals is planted early and only acquires its full meaning later, when the reader understands that the bodies being monitored are being grown for harvest. Ishiguro\u2019s technique is to let such details sit in plain view for chapters before their weight is revealed.',
@@ -204,8 +199,7 @@ const data: TextGuideData = {
         'A second occurrence of the formulation that becomes the moral axis of the novel. Ishiguro returns to the phrase because he wants the reader to return to it: it is a test applied as much to society outside the book as to Hailsham inside it.',
     },
     {
-      quote:
-        '"It had never occurred to me that our lives, which had been so closely interwoven, could unravel with such speed."',
+      quote: '"It had never occurred to me that our lives, ... could unravel with such speed."',
       who: 'Kathy \u2014 Chapter 17',
       analysis:
         'Kathy\u2019s reflection as the three friends disperse from the Cottages registers the first adult loss of her life. The verb \u2018unravel\u2019 gestures at the novel\u2019s larger pattern \u2014 lives that were always going to come apart on schedule \u2014 but Kathy herself feels the parting as ordinary friendship loss, which is precisely Ishiguro\u2019s point.',
@@ -217,15 +211,13 @@ const data: TextGuideData = {
         'After the visit to Madame, Tommy\u2019s final tantrum in the dark field is the one place in the novel where the injustice of the characters\u2019 situation becomes physical. Ishiguro deliberately contains the outburst \u2014 it passes, Tommy quietens, Kathy drives him home \u2014 and the containment is exactly the horror of what the system does to rage.',
     },
     {
-      quote:
-        '"We didn\'t have the Gallery to prove you had souls. We had the Gallery to see if you had souls at all."',
+      quote: '"We had the Gallery to see if you had souls at all."',
       who: 'Miss Emily \u2014 Chapter 22',
       analysis:
-        'Miss Emily\u2019s half-correction is crucial: she moves from the kinder framing (proving what was assumed) to the harsher one (testing for what was doubted). The line exposes how conditional the whole Hailsham project was, and how little the students could have relied on the adults\u2019 good opinion for their lives.',
+        'Miss Emily\u2019s half-correction is crucial: in the full line, she moves from the kinder framing (proving what was assumed) to the harsher one (testing for what was doubted). The line exposes how conditional the whole Hailsham project was, and how little the students could have relied on the adults\u2019 good opinion for their lives.',
     },
     {
-      quote:
-        '"Hailsham shut down a couple of years ago. They\'re selling off the property in separate lots now."',
+      quote: '"Hailsham shut down a couple of years ago. They\'re selling off the property"',
       who: 'Miss Emily \u2014 Chapter 22',
       analysis:
         'The revelation that Hailsham itself is gone, and that the less-kind institutions continue, denies the reader even the comfort of thinking the experiment is still running somewhere. Progress in the novel moves in only one direction: towards harsher conditions, not softer ones.',

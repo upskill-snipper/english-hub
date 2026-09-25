@@ -42,7 +42,7 @@ const themes = [
     intro:
       'The Birlings\u2019 dining room is a microcosm of Edwardian capital. Arthur\u2019s factory, Gerald\u2019s aristocratic family, Milwards, the Palace Bar, the charity board - each is a node in the system that passes Eva along until she dies. Priestley uses dramatic irony (the Titanic, Germany) to make the audience see through the Birlings\u2019 certainty.',
     moments: 'Birling\u2019s Act One speech; the wage strike; the charity refusal.',
-    quote: '”Come down sharply on some of these people, they\u2019d soon be asking for the earth.”',
+    quote: '”Come down sharply on some of these people, ... asking for the earth.”',
   },
   {
     title: 'Gender and power',

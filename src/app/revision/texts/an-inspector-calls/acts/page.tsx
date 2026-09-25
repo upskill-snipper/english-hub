@@ -317,7 +317,7 @@ const acts: ActData[] = [
           'Eric\u2019s accusation exposes the emotional bankruptcy beneath Birling\u2019s patriarchal authority. The phrase reveals that the family\u2019s dysfunction is not caused by the Inspector but was always present.',
       },
       {
-        quote: '"It\u2019s what happened to the girl and what we all did to her that matters."',
+        quote: '"what happened to the girl and what we all did to her that matters."',
         speaker: 'Sheila Birling',
         analysis:
           'Sheila insists that the moral lesson matters regardless of the Inspector\u2019s identity. She cuts through her parents\u2019 evasion with a clarity that marks her as the play\u2019s moral centre alongside the Inspector.',

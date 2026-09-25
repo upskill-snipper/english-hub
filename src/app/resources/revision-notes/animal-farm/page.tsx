@@ -228,11 +228,10 @@ const keyQuotes = [
       "The sheep's slogan, which reduces Animalism to its simplest form. It is used throughout the novel to silence debate and shut down opposition. When the pigs begin walking on two legs in Chapter 10, it is changed to 'Four legs good, two legs better!' The ease with which the slogan is altered demonstrates how propaganda works: those who think in slogans can be redirected without realising it.",
   },
   {
-    quote:
-      'The creatures outside looked from pig to man, and from man to pig, and from pig to man again; but already it was impossible to say which was which.',
+    quote: 'The creatures outside looked from pig to man, ... impossible to say which was which.',
     chapter: 'Chapter 10',
     analysis:
-      "The novel's devastating final line. The syntactic pattern (pig to man, man to pig) creates a chiasmus that enacts the merging of oppressor and oppressed. The revolution has come full circle: the pigs have become identical to the humans they overthrew. Orwell suggests that power itself, not the identity of who holds it, is the source of tyranny.",
+      "The novel's devastating final line. In the full sentence, the syntactic pattern (pig to man, man to pig) creates a chiasmus that enacts the merging of oppressor and oppressed. The revolution has come full circle: the pigs have become identical to the humans they overthrew. Orwell suggests that power itself, not the identity of who holds it, is the source of tyranny.",
   },
   {
     quote: 'I will work harder.',
@@ -275,8 +274,7 @@ const keyQuotes = [
       "The simile is devastatingly ironic. The revolution was supposed to free the animals from slavery, yet they now work harder than ever, for even less reward. The word 'slaves' exposes the gap between the revolution's rhetoric and its reality. Orwell shows that exploitation does not end when the exploiter changes; it ends only when the structures of exploitation are dismantled.",
   },
   {
-    quote:
-      'He would say that God had given him a tail to keep the flies off, but that he would sooner have had no tail and no flies.',
+    quote: 'God had given him a tail ... sooner have had no tail and no flies.',
     chapter: 'Chapter 3',
     speaker: 'Narrator, describing Benjamin',
     analysis:
@@ -297,8 +295,7 @@ const keyQuotes = [
       "Snowball's statement after the Battle of the Cowshed reveals that even the idealistic revolutionaries can adopt extreme positions. It foreshadows how the revolution's initial idealism will be replaced by increasingly violent rhetoric and action. Orwell shows that dehumanising language is the first step towards political violence.",
   },
   {
-    quote:
-      'Windmill or no windmill, he said, life would go on as it had always gone on -- that is, badly.',
+    quote: 'life would go on as it had always gone on -- that is, badly.',
     chapter: 'Chapter 6',
     speaker: 'Benjamin',
     analysis:
@@ -325,7 +322,7 @@ const keyQuotes = [
       "Squealer rewrites history so that Napoleon's apparent opposition to the windmill is reframed as a clever tactic to get rid of Snowball, whom he now describes as dangerous and a bad influence (Ch. 5). The double-think required (Napoleon opposed it but really supported it) is a hallmark of totalitarian propaganda. The speed with which the narrative is reversed shows how easily history can be rewritten when the population lacks independent records.",
   },
   {
-    quote: 'It was a pig walking on his hind legs... He carried a whip in his trotter.',
+    quote: 'a pig walking on his hind legs... He carried a whip in his trotter.',
     chapter: 'Chapter 10',
     analysis:
       "The climactic image of the novel. The pigs' adoption of upright walking and whip-carrying completes their transformation into the humans they overthrew. The whip, a symbol of human oppression in Chapter 1, has been taken up by the new oppressors. The revolution has achieved nothing; it has merely replaced one ruling class with another.",
@@ -337,7 +334,7 @@ const keyQuotes = [
       "An early indication that the animals' lack of understanding will be their downfall. The birds accept what they cannot comprehend because they trust the authority figure. Orwell shows that the gap between leaders' language and followers' comprehension is the space in which tyranny grows.",
   },
   {
-    quote: 'Do you know what would happen if we pigs failed in our duty? Jones would come back!',
+    quote: 'what would happen if we pigs failed in our duty? Jones would come back!',
     chapter: 'Chapter 3',
     speaker: 'Squealer',
     analysis:
@@ -356,11 +353,10 @@ const keyQuotes = [
       "Orwell's narrator (Ch. 7) describes the conditions of terror under Napoleon's rule: animals afraid to speak, growling dogs patrolling, and public executions of confessed 'traitors'. The tricolon (silence, surveillance, public execution) mirrors the mechanisms of Stalinist repression. The narrator's detached register conveys the animals' helplessness, and the staged confessions echo the Soviet show trials of the 1930s. (Teacher note: Source: Orwell, *Animal Farm* (1945) - quoted under estate-licensed extracts. For longer extracts, students should refer to a licensed school edition.)",
   },
   {
-    quote:
-      'Twelve voices were shouting in anger, and they were all alike. No question, now, what had happened to the faces of the pigs.',
+    quote: 'Twelve voices were shouting in anger, and they were all alike.',
     chapter: 'Chapter 10',
     analysis:
-      "The penultimate sentences of the novel. 'All alike' completes the pigs' transformation into humans. The 'twelve voices' recall the original Twelve Commandments (reduced from seven through alteration) and the twelve pigs who form the ruling elite. Orwell's final image is of power as a force that makes all tyrants identical, regardless of their species or their revolutionary rhetoric.",
+      "One of the novel's closing sentences. 'All alike' completes the pigs' transformation into humans. The 'twelve voices' recall the original Twelve Commandments (reduced from seven through alteration) and the twelve pigs who form the ruling elite. Orwell's final image is of power as a force that makes all tyrants identical, regardless of their species or their revolutionary rhetoric.",
   },
   {
     quote: 'Out of his kindness, a pension has been arranged for old Boxer.',
@@ -370,8 +366,7 @@ const keyQuotes = [
       "Squealer's most monstrous lie: Boxer has not been pensioned but sold to a glue factory. The word 'kindness' is obscene in context. This moment represents the apex of propaganda's power: Squealer can present the murder of the farm's most beloved worker as an act of compassion, and the animals accept it because they have no means to verify the truth.",
   },
   {
-    quote:
-      'The distinguishing mark of Man is the hand, the instrument with which he does all his mischief.',
+    quote: 'The distinguishing mark of Man is the hand, the instrument ... does all his mischief.',
     chapter: 'Chapter 1',
     speaker: 'Old Major',
     analysis:

@@ -111,8 +111,7 @@ const data: TextGuideData = {
   ],
   quotations: [
     {
-      quote:
-        '"You can quicker get back a million dollars that was stole than a word that you gave away."',
+      quote: '"You can quicker get back ... than a word that you gave away."',
       who: 'Eddie - Act 1',
       analysis: "Eddie's own warning about the value of reputation, which he will later betray.",
     },
@@ -333,7 +332,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Eddie\'s final demand before his death reveals that honour and reputation are everything to him. The devastating irony is that he destroyed his own name by informing - the very act he warned against ("You can quicker get back a million dollars that was stole than a word that you gave away").',
+      'Eddie\'s final demand before his death reveals that honour and reputation are everything to him. The devastating irony is that he destroyed his own name by informing - the very act he warned against ("You can quicker get back ... than a word that you gave away").',
     topic: 'Themes',
     difficulty: 'higher',
   },

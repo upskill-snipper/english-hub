@@ -33,25 +33,37 @@ export const metadata = {
 const TISSUE: PoemData = {
   title: 'Tissue',
   poet: 'Imtiaz Dharker',
+  // NOTE: "Tissue" (Imtiaz Dharker, 2006) remains in copyright. To avoid
+  // reproducing the poem, each line below is given as a PARAPHRASE in the site's
+  // own words, and the annotations quote only short phrases. Students must read
+  // the full original text in the AQA Power and Conflict anthology.
+  //
+  // Until 25 September 2026 this array printed a corrupted text as the poem. Of
+  // its 30 lines, ten were Dharker's as she wrote them, ten were garbled or
+  // spliced versions of hers and ten were invented, and 18 of her 37 lines were
+  // missing. It now follows the published poem, nine quatrains and a final
+  // single line, 37 lines in all, one entry per line in the poem's order,
+  // checked line by line on 26 September 2026 against a printed copy of the
+  // poem. The viewer numbers entries by position, stanza breaks included, so
+  // after the first stanza its numbers run ahead of the anthology's. Annotations
+  // that described invented lines were rewritten or corrected. The summary, key
+  // quotes, devices, form notes and quiz below were not rebuilt and still quote
+  // some invented lines and count ten quatrains; each device lineRef was
+  // re-pointed only where its example is, or garbles, a line of the poem.
   lines: [
     // Stanza 1
     {
-      text: 'Paper that lets the light',
+      text: '[Paraphrase] Paper so thin that light can',
       annotations: [
         {
           type: 'Metaphor',
           note: 'Paper becomes a metaphor for human life and structures throughout the poem. Light symbolises truth and understanding.',
           color: '#f59e0b',
         },
-        {
-          type: 'Enjambment',
-          note: 'The sentence runs across the stanza break, mirroring how paper/life resists neat boundaries.',
-          color: '#a855f7',
-        },
       ],
     },
     {
-      text: 'shine through, this',
+      text: '[Paraphrase] pass through it: this,',
       annotations: [
         {
           type: 'Light imagery',
@@ -61,7 +73,7 @@ const TISSUE: PoemData = {
       ],
     },
     {
-      text: 'is what could alter things.',
+      text: '[Paraphrase] is something with the power to change things.',
       annotations: [
         {
           type: 'Imperative tone',
@@ -70,22 +82,26 @@ const TISSUE: PoemData = {
         },
       ],
     },
-    { text: 'Paper thinned by age or touching,' },
-    { text: '' },
-    // Stanza 2
-    { text: 'the kind you find in well-used books,' },
     {
-      text: 'the kind you find in the back of',
+      text: '[Paraphrase] Paper worn thin by the years or by handling,',
       annotations: [
         {
+          type: 'Enjambment',
+          note: 'The sentence runs across the stanza break, mirroring how paper/life resists neat boundaries.',
+          color: '#a855f7',
+        },
+        {
           type: 'Repetition',
-          note: '"The kind you find" is repeated, creating a listing effect that catalogues paper\'s many forms and uses.',
+          note: 'Repeating "Paper" to open a new sentence begins a listing effect that catalogues paper\'s many forms and uses.',
           color: '#10b981',
         },
       ],
     },
+    { text: '' },
+    // Stanza 2
+    { text: '[Paraphrase] like the pages of books read again and again,' },
     {
-      text: 'the Koran, where a hand',
+      text: '[Paraphrase] or the last pages inside a Koran, where someone',
       annotations: [
         {
           type: 'Cultural reference',
@@ -94,38 +110,27 @@ const TISSUE: PoemData = {
         },
       ],
     },
-    { text: 'has written in the names and histories,' },
-    { text: '' },
-    // Stanza 3
+    { text: "[Paraphrase] has noted down people's names and life stories:" },
     {
-      text: 'who was born to whom,',
+      text: '[Paraphrase] who the parents of each child were,',
       annotations: [
         {
           type: 'Listing',
-          note: 'The list of family records (births, marriages, deaths) shows how paper documents and controls human identity.',
+          note: 'The list of family records (births, heights and weights, deaths) shows how paper documents and controls human identity.',
           color: '#10b981',
         },
       ],
     },
-    // VERIFY: lines following 'who was born to whom,' previously read 'the marriage lines, / the prayers, the rules, / the proof, the perforations, / that might fly off any day.' - phrasing 'the prayers, the rules, the proof, the perforations' is NOT in any verified Dharker primary source and appears to be a fabrication. Conservatively removed pending verification against Dharker's The terrorist at my table (Bloodaxe, 2006) / AQA anthology. Do not restore without cross-check against primary source.
+    { text: '' },
+    // Stanza 3
+    { text: '[Paraphrase] how tall and heavy each was, and who' },
+    { text: '[Paraphrase] died, in what place and by what cause, on which faded date,' },
+    { text: '[Paraphrase] pages flattened and stroked so often they have become' },
+    { text: '[Paraphrase] see-through from so much careful attention.' },
     { text: '' },
     // Stanza 4
-    { text: 'Paper smoothed and stroked and torn' },
     {
-      text: 'living tissue, raise it',
-      annotations: [
-        {
-          type: 'Key metaphor',
-          note: '"Living tissue" is the poem\'s central image -- paper is compared to skin/flesh, blurring the boundary between human bodies and the records that define us.',
-          color: '#f59e0b',
-        },
-      ],
-    },
-    { text: 'to the light, changed into your skin.' },
-    { text: '' },
-    // Stanza 5 (removed the space in text)
-    {
-      text: 'If buildings were paper,',
+      text: '[Paraphrase] Were buildings made of paper, the speaker might',
       annotations: [
         {
           type: 'Conditional / Hypothetical',
@@ -134,25 +139,14 @@ const TISSUE: PoemData = {
         },
       ],
     },
-    { text: 'I might feel their drift and pull,' },
-    { text: 'gravity as paper does.' },
+    { text: '[Paraphrase] sense them shifting, and notice how readily' },
+    { text: '[Paraphrase] they collapse with a breath, a small change' },
+    { text: '[Paraphrase] in which way the wind is blowing.' },
     { text: '' },
-    // Stanza 6
+    // Stanza 5
+    { text: '[Paraphrase] Maps as well: sunlight passes through' },
     {
-      text: 'Pages and pages could be',
-      annotations: [
-        {
-          type: 'Repetition',
-          note: '"Pages and pages" emphasises the overwhelming volume of bureaucratic records that control lives.',
-          color: '#10b981',
-        },
-      ],
-    },
-    { text: 'anything could be beautiful,' },
-    { text: '' },
-    // Stanza 7
-    {
-      text: 'borderlines, the marks',
+      text: '[Paraphrase] the borders drawn on them, the lines',
       annotations: [
         {
           type: 'Symbolism',
@@ -161,12 +155,25 @@ const TISSUE: PoemData = {
         },
       ],
     },
-    { text: 'that rivers make, roads,' },
-    { text: 'mountain folds,' },
+    { text: '[Paraphrase] made by rivers, and roads,' },
+    { text: '[Paraphrase] railway lines, the creases of mountains,' },
+    { text: '' },
+    // Stanza 6
+    { text: "[Paraphrase] Thin receipts from the grocer's" },
+    { text: '[Paraphrase] recording the amount sold' },
+    { text: '[Paraphrase] and the sum charged to a credit card' },
+    { text: '[Paraphrase] might set our lives flying, like kites made of paper.' },
+    { text: '' },
+    // Stanza 7
+    { text: '[Paraphrase] An architect might take all of this,' },
+    { text: '[Paraphrase] lay one sheet upon another, glowing' },
+    { text: '[Paraphrase] writing, figures and lines, each laid over the next,' },
+    { text: '[Paraphrase] and never again want to construct things out of brick' },
     { text: '' },
     // Stanza 8
+    { text: '[Paraphrase] or building blocks, but allow the sunlight to burst' },
     {
-      text: 'Capitals and monoliths,',
+      text: '[Paraphrase] through the capitals, and through huge single blocks of stone,',
       annotations: [
         {
           type: 'Symbolism',
@@ -175,35 +182,49 @@ const TISSUE: PoemData = {
         },
       ],
     },
-    { text: 'brought down to' },
-    { text: 'near-transparent things,' },
-    { text: '' },
-    // Stanza 9
-    { text: 'Fine slips from grocery shops,' },
-    { text: 'records of what we bought,' },
-    { text: 'what we could not have.' },
-    { text: '' },
-    // Stanza 10
+    { text: '[Paraphrase] through the forms that human pride creates,' },
     {
-      text: 'Fine slips might design',
+      text: '[Paraphrase] and discover how to sketch out a great plan',
       annotations: [
         {
           type: 'Extended metaphor',
-          note: 'The poem\'s final stanza shifts to "a grand design" -- paper/tissue as the blueprint for all human structures and identity.',
+          note: 'Near the close the poem turns to "a grand design": paper and tissue as the blueprint for all human structures and identity.',
           color: '#f59e0b',
         },
       ],
     },
-    { text: 'a grand design,' },
-    { text: 'the design of how we live,' },
     { text: '' },
-    // Final single line -- isolated stanza
+    // Stanza 9
     {
-      text: 'turned into your skin.',
+      text: '[Paraphrase] using living tissue, and build something',
+      annotations: [
+        {
+          type: 'Key metaphor',
+          note: '"Living tissue" is the poem\'s central image -- paper is compared to skin/flesh, blurring the boundary between human bodies and the records that define us.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    { text: '[Paraphrase] that was never designed to endure,' },
+    {
+      text: '[Paraphrase] made from paper flattened and stroked',
+      annotations: [
+        {
+          type: 'Repetition',
+          note: 'Words from the third stanza return here, tying the imagined structure back to the much-handled family pages.',
+          color: '#10b981',
+        },
+      ],
+    },
+    { text: '[Paraphrase] and worn so fine that light shows through it,' },
+    { text: '' },
+    // Stanza 10
+    {
+      text: '[Paraphrase] becoming your own skin.',
       annotations: [
         {
           type: 'Structural isolation',
-          note: 'The final line stands ALONE as its own single-line stanza, deliberately separated from the ten preceding quatrains. It brings the metaphor full circle: paper becomes skin, records become identity, the external becomes the self.',
+          note: 'The final line stands ALONE as its own single-line stanza, deliberately separated from the nine preceding quatrains. It brings the metaphor full circle: paper becomes skin, records become identity, the external becomes the self.',
           color: '#ef4444',
         },
         {
@@ -373,7 +394,7 @@ ENJAMBMENT: تسلسل واسع للأبيات بدون توقّف، الجمل 
       example: 'the back of / the Koran, where a hand / has written',
       effect:
         "Pervasive enjambment runs sentences across lines and stanzas, preventing meaning from being contained within fixed boundaries. This mirrors the poem's central argument: that structures (borders, records, identities) should not confine us. The flowing form enacts the transparency of tissue.",
-      lineRef: 7,
+      lineRef: 6,
       effectAr:
         'الـenjambment الواسع يمدّ الجمل عبر الأبيات والمقاطع، ويمنع المعنى من إنه ينحبس داخل حدود ثابتة. هذا يعكس الحجّة المركزية للقصيدة: إن الهياكل (الحدود والسجلات والهويات) ما يصير تقيّدنا. الشكل المتدفّق يجسّد شفافية الـtissue.',
     },
@@ -382,7 +403,7 @@ ENJAMBMENT: تسلسل واسع للأبيات بدون توقّف، الجمل 
       example: 'who was born to whom, the inks, the runs and ruled lines',
       effect:
         "Dharker catalogues the many uses of paper (birth records, receipts, maps, architectural plans) through extensive listing. This accumulation shows the sheer scale of paper's influence on human life, building a sense of how thoroughly documents control and define us.",
-      lineRef: 10,
+      lineRef: 8,
       effectAr:
         'Dharker تعدّد الاستخدامات الكثيرة للورق (سجلات الميلاد، الفواتير، الخرائط، المخطّطات المعمارية) عبر سرد مطوّل. هذا التكدّس يبيّن حجم تأثير الورق على حياة البشر، ويبني إحساس بكم بعمق تتحكّم فينا الوثائق وتعرّفنا.',
     },
@@ -400,7 +421,7 @@ ENJAMBMENT: تسلسل واسع للأبيات بدون توقّف، الجمل 
       example: 'borderlines, the marks that rivers make',
       effect:
         'Borders symbolise the arbitrary divisions humans impose on the world. By placing "borderlines" alongside natural features like rivers and mountains, Dharker questions whether political boundaries are any more real or permanent than creases in paper.',
-      lineRef: 26,
+      lineRef: 21,
       effectAr:
         'الحدود ترمز للتقسيمات الاعتباطية اللي يفرضها البشر على العالم. بحطّها كلمة "borderlines" جنب معالم طبيعية مثل الأنهار والجبال، Dharker تتساءل: هل الحدود السياسية أكثر واقعية أو دواماً من ثنيات في الورق؟',
     },
@@ -409,7 +430,7 @@ ENJAMBMENT: تسلسل واسع للأبيات بدون توقّف، الجمل 
       example: 'If buildings were paper, I might feel',
       effect:
         'Modal verbs ("could," "might") and conditional "if" create a tentative, speculative tone. Rather than demanding change, Dharker imagines alternatives -- reflecting a belief that questioning and possibility are more powerful than rigid certainty.',
-      lineRef: 19,
+      lineRef: 15,
       effectAr:
         'الـmodal verbs ("could"، "might") والشرطية "if" تخلق نبرة مترّددة وتأمّلية. بدل ما تطالب بتغيير، Dharker تتخيّل بدائل - وهذا يعكس قناعتها إن التساؤل والإمكانية أقوى من اليقين الصارم.',
     },
@@ -769,9 +790,10 @@ export default function TissuePage() {
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         &ldquo;Tissue&rdquo; by Imtiaz Dharker, from <em>The terrorist at my table</em> (Bloodaxe
-        Books, 2006). Rights held by Bloodaxe Books (bloodaxebooks.com). Short quotations are
-        reproduced under the fair dealing provision of the CDPA 1988 for criticism and review. Full
-        text available in your AQA Power and Conflict anthology.
+        Books, 2006). Rights held by Bloodaxe Books (bloodaxebooks.com). The poem is paraphrased
+        line by line here, not printed. Short quotations are reproduced under the fair dealing
+        provision of the CDPA 1988 for criticism and review. The full text is printed in your AQA
+        Power and Conflict anthology.
       </p>
     </div>
   )

@@ -114,17 +114,17 @@ const poem: PoemData = {
     },
     { text: '' },
     {
-      text: '[Extract: come back tomorrow / wid de whole of yu eye]',
+      text: '[Paraphrase] The speaker tells the listener to come back the next day, looking with their full attention.',
       annotations: [
         {
           type: 'Key phrase',
-          note: '"Come back tomorrow / wid de whole of yu eye" - the poem ends with a challenge. The speaker tells the listener to return with their full humanity - whole eye, whole ear, whole mind - and then the speaker will tell them "de other half / of my story". The implication: you can only understand me when you see me as a whole person.',
+          note: 'The poem ends with a challenge, "wid de whole of yu eye". The speaker tells the listener to return with their full humanity - whole eye, whole ear, whole mind - and then the speaker will tell them "de other half / of my story". The implication: you can only understand me when you see me as a whole person.',
           color: '#f59e0b',
         },
       ],
     },
     {
-      text: '[Extract: de other half / of my story]',
+      text: '[Paraphrase] Only then will the speaker tell them the rest of the story.',
       annotations: [
         {
           type: 'Final reversal',
@@ -152,7 +152,7 @@ const poem: PoemData = {
     <p>"Half-Caste" is a <strong>performance poem</strong> - written to be spoken aloud. Agard is a celebrated performer, and the poem's rhythms, repetitions and direct address all work best when heard. The confrontational "Explain yuself" is addressed to a live audience, making every listener feel the challenge personally.</p>
   `,
 
-  summary: `The poem opens with mock politeness - "Excuse me / standing on one leg / I'm half-caste". The speaker adopts the offensive label in order to dismantle it, performing its literal meaning to show how absurd it is.
+  summary: `The poem opens with mock politeness - "Excuse me ... I'm half-caste". The speaker adopts the offensive label in order to dismantle it, performing its literal meaning to show how absurd it is.
 
 The speaker then demands that the listener explain what they mean by "half-caste". This demand - "Explain yuself / wha yu mean" - is repeated throughout the poem as a refrain, turning the burden of explanation onto the person who used the word.
 
@@ -185,12 +185,12 @@ Enjambment: Lines flow into each other without stops, creating a sense of rapid,
 
   keyQuotes: [
     {
-      quote: "Excuse me / standing on one leg / I'm half-caste",
+      quote: "Excuse me ... I'm half-caste",
       analysis:
-        'The opening is brilliantly ironic. "Excuse me" is mock-polite - the speaker pretends to apologise for existing. "Standing on one leg" literalises "half" immediately, showing that if the term were true, the speaker would be physically incomplete. The absurdity is deliberate and sets the tone for the whole poem.',
+        'The opening is brilliantly ironic. "Excuse me" is mock-polite - the speaker pretends to apologise for existing. "Standing on one leg" (the line between them in the poem) literalises "half" immediately, showing that if the term were true, the speaker would be physically incomplete. The absurdity is deliberate and sets the tone for the whole poem.',
       themes: ['Identity', 'Irony', 'Absurdity'],
       analysisAr:
-        'مفتتحٌ ساخرٌ ببراعة. عبارة "Excuse me" متأدّبةٌ تأدّباً متصنّعاً - يتظاهر المتكلّم بأنّه يعتذر عن وجوده. أمّا "standing on one leg" فتُحرفي "half" فوراً، لتُري أنّ كلمة "half-caste" لو كانت صحيحة لكان المتكلّم ناقصاً جسديّاً. والعبثيّةُ مقصودة، وتضبط نبرة القصيدة كلّها.',
+        'مفتتحٌ ساخرٌ ببراعة. عبارة "Excuse me" متأدّبةٌ تأدّباً متصنّعاً - يتظاهر المتكلّم بأنّه يعتذر عن وجوده. أمّا "standing on one leg" (السطر الواقع بينهما في القصيدة) فتُحرفي "half" فوراً، لتُري أنّ كلمة "half-caste" لو كانت صحيحة لكان المتكلّم ناقصاً جسديّاً. والعبثيّةُ مقصودة، وتضبط نبرة القصيدة كلّها.',
       themesAr: ['الهويّة', 'المفارقة', 'العبثيّة'],
     },
     {
@@ -332,7 +332,7 @@ Enjambment: Lines flow into each other without stops, creating a sense of rapid,
     <p>"Half-Caste" قصيدةُ <strong>أداءٍ</strong> - كُتبت لتُلقى صوتاً. وAgard مُؤدٍّ معروف، وإيقاعات القصيدة وتكرارها ونداؤها المباشر تعمل كلّها في أبهى صورها متى سُمعت. ونداءُ "Explain yuself" المواجِه موجَّهٌ إلى جمهورٍ حيّ، فيُحسّ كلُّ سامعٍ بأنّ التحدّي شخصيّ.</p>
   `,
 
-  summaryAr: `تبدأ القصيدة بتأدّبٍ متصنّع - "Excuse me / standing on one leg / I\'m half-caste". يتقمّص المتكلّم الوَسمَ المهين ليُفكّكه، مؤدّياً معناه الحرفيّ ليُبيّن سخفه.
+  summaryAr: `تبدأ القصيدة بتأدّبٍ متصنّع - "Excuse me ... I\'m half-caste". يتقمّص المتكلّم الوَسمَ المهين ليُفكّكه، مؤدّياً معناه الحرفيّ ليُبيّن سخفه.
 
 ثمّ يطالب المتكلّمُ السامعَ بأن يشرح ما يقصده بـ"half-caste". وهذا الطلب - "Explain yuself / wha yu mean" - يتكرّر على امتداد القصيدة لازمةً، فيُلقي عبءَ الشرح على من استعمل الكلمة.
 
@@ -471,11 +471,10 @@ export default function HalfCastePage() {
           from mid-poem analogies (Picasso, Tchaikovsky, weather, half-a-shadow, accumulating
           &quot;halves&quot;) and other passages we could not verify against a primary source have
           been replaced with paraphrases or pointers to the anthology. The well-attested opening
-          (&ldquo;Excuse me / standing on one leg / I&rsquo;m half-caste&rdquo;), the refrain
-          (&ldquo;Explain yuself / wha yu mean&rdquo;) and the closing lines (&ldquo;come back
-          tomorrow / wid de whole of yu eye&rdquo; and &ldquo;de other half / of my story&rdquo;)
-          are retained. Quote from your Edexcel IGCSE Anthology (Issue 2) for the exact wording of
-          all other passages.
+          (&ldquo;Excuse me ... I&rsquo;m half-caste&rdquo;), the refrain (&ldquo;Explain yuself /
+          wha yu mean&rdquo;) and the closing lines (&ldquo;come back tomorrow / wid de whole of yu
+          eye&rdquo; and &ldquo;de other half / of my story&rdquo;) are retained. Quote from your
+          Edexcel IGCSE Anthology (Issue 2) for the exact wording of all other passages.
         </p>
       </div>
 

@@ -94,7 +94,7 @@ const keyQuotations = [
       'Completes the refrain with the dream of belonging. The repetition emphasises that this dream is partly spoken into existence.',
   },
   {
-    quote: 'I got you to look after me, and you got me to look after you.',
+    quote: 'I got you to look after me, ... you got me to look after you.',
     speaker: 'Lennie',
     analysis:
       'Lennie\u2019s echo of the dream ritual. The reciprocity is, tragically, only real from George\u2019s side.',

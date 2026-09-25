@@ -15,13 +15,21 @@ import { useT } from '@/lib/i18n/use-t'
 const winterSwansPoem: PoemData = {
   title: 'Winter Swans',
   poet: 'Owen Sheers',
-  // RIGHTS NOTE: "Winter Swans" by Owen Sheers is in copyright (Seren Books, 2005).
-  // Full text is not reproduced here. Under fair-dealing for criticism/review (CDPA 1988 s.30),
-  // only verified short extracts are quoted; bracketed prose summarises the rest of each tercet.
+  // NOTE: "Winter Swans" (Owen Sheers, from "Skirrid Hill", 2005) is in copyright; the
+  // poet is living. To avoid reproducing the poem, each line below is a PARAPHRASE in the
+  // site's own words, not the poet's text, and the annotations quote only short phrases.
+  // Students must read the full poem in the AQA Love and Relationships anthology.
+  //
+  // What this replaced, 25 September 2026: the array printed the poem line by line, which
+  // is reproduction, not fair dealing, and its one bracketed "summary" still quoted its
+  // line whole. Every line is now paraphrased, in the same order and stanza layout, and
+  // notes that quoted more than a short phrase describe the technique instead, so the
+  // notes together quote under 15 per cent of the poem. The paraphrases were written
+  // from the poem's sense and have not been checked against a primary edition.
   lines: [
     // Stanza 1 (tercet 1)
     {
-      text: 'The clouds had given their all \u2014',
+      text: '[Paraphrase] The rain clouds had exhausted themselves.',
       annotations: [
         {
           type: 'Pathetic fallacy',
@@ -31,21 +39,21 @@ const winterSwansPoem: PoemData = {
       ],
     },
     {
-      text: 'two days of rain and then a break',
+      text: '[Paraphrase] It had rained for two days, and then the weather let up for a while,',
       annotations: [
         {
           type: 'Structure',
-          note: 'The "break" in the weather foreshadows the emotional turning point in the relationship. A storm has passed, and clarity is returning.',
+          note: 'The pause in the weather foreshadows the emotional turning point in the relationship. A storm has passed, and clarity is returning.',
           color: '#8b5cf6',
         },
       ],
     },
     {
-      text: 'in which we walked,',
+      text: '[Paraphrase] and during that pause the couple went out walking.',
       annotations: [
         {
           type: 'Pronoun',
-          note: '"We" establishes that this is a poem about a couple, but the sparse detail suggests distance and silence between them.',
+          note: 'The first-person plural establishes that this is a poem about a couple, but the sparse detail suggests distance and silence between them.',
           color: '#3b82f6',
         },
       ],
@@ -54,27 +62,27 @@ const winterSwansPoem: PoemData = {
     { text: '' },
     // Stanza 2 (tercet 2)
     {
-      text: 'the waterlogged earth',
+      text: '[Paraphrase] The ground was soaked through',
       annotations: [
         {
           type: 'Imagery',
-          note: '"Waterlogged" suggests saturation \u2014 the ground is heavy and sodden, mirroring the emotional heaviness of the relationship.',
+          note: 'The saturated ground suggests heaviness: the earth is sodden, mirroring the emotional weight of the relationship.',
           color: '#10b981',
         },
       ],
     },
     {
-      text: 'gulping for breath at our feet',
+      text: '[Paraphrase] and seemed to gasp for air beneath their shoes',
       annotations: [
         {
           type: 'Personification',
-          note: 'The earth "gulps for breath" as though drowning. This vivid personification of the landscape reflects the couple\'s own struggle to breathe through their difficulties.',
+          note: 'The earth is personified as "gulping" for air, as though drowning. This vivid personification of the landscape reflects the couple\'s own struggle to breathe through their difficulties.',
           color: '#ef4444',
         },
       ],
     },
     {
-      text: 'as we skirted the lake, silent and apart,',
+      text: '[Paraphrase] as they walked around the edge of the lake, not talking and keeping their distance,',
       annotations: [
         {
           type: 'Distance',
@@ -87,31 +95,31 @@ const winterSwansPoem: PoemData = {
     { text: '' },
     // Stanza 3 (tercet 3)
     {
-      text: 'until the swans came and stopped us',
+      text: '[Paraphrase] until some swans arrived and made them halt',
       annotations: [
         {
           type: 'Turning point',
-          note: '"Stopped us" makes the swans into agents of change \u2014 they physically arrest the couple\'s silent walking. The arrival of nature interrupts the relationship\'s drift.',
+          note: "The swans halting the couple makes them agents of change: they physically arrest the couple's silent walking. The arrival of nature interrupts the relationship's drift.",
           color: '#ec4899',
         },
       ],
     },
     {
-      text: 'with a show of tipping in unison.',
+      text: '[Paraphrase] by putting on a display of dipping down together, perfectly in time.',
       annotations: [
         {
           type: 'Symbolism',
-          note: '"Tipping in unison" is the swans\' synchronised dipping underwater \u2014 a model of partnership and harmony. "Unison" pointedly contrasts with the couple\'s "silent and apart".',
+          note: 'The swans\' synchronised dipping underwater is a model of partnership and harmony. "Unison" pointedly contrasts with the couple\'s silence and distance.',
           color: '#10b981',
         },
       ],
     },
     {
-      text: '[Tercet continues: "As if rolling weights down their bodies to their heads" \u2014 the swans\u2019 movement is given a graceful, weighted physicality.]',
+      text: '[Paraphrase] As though a heavy weight were sliding forward through each swan into its head,',
       annotations: [
         {
           type: 'Simile',
-          note: 'The swans\u2019 dipping is described as if they were rolling weights through their bodies \u2014 turning ordinary animal behaviour into a kind of slow, considered ritual the couple are forced to watch.',
+          note: "The swans' dipping is compared to a heavy weight shifting through them, turning ordinary animal behaviour into a slow, considered ritual the couple are made to watch.",
           color: '#8b5cf6',
         },
       ],
@@ -120,7 +128,7 @@ const winterSwansPoem: PoemData = {
     { text: '' },
     // Stanza 4 (tercet 4)
     {
-      text: 'they halved themselves in the dark water,',
+      text: '[Paraphrase] each seemed to split in two, half of it hidden under the dark lake,',
       annotations: [
         {
           type: 'Imagery',
@@ -130,7 +138,7 @@ const winterSwansPoem: PoemData = {
       ],
     },
     {
-      text: 'icebergs of white feather, paused before returning again',
+      text: '[Paraphrase] white-feathered shapes like floating ice, holding still before coming back up',
       annotations: [
         {
           type: 'Metaphor',
@@ -140,11 +148,11 @@ const winterSwansPoem: PoemData = {
       ],
     },
     {
-      text: 'like boats righting in rough weather.',
+      text: '[Paraphrase] the way boats steady themselves upright in a storm.',
       annotations: [
         {
           type: 'Simile',
-          note: 'The swans returning upright are compared to boats steadying themselves after rough weather \u2014 picking up the storm imagery from the opening. After turbulence, things right themselves; the implication for the relationship is clear.',
+          note: 'The swans returning upright are compared to boats steadying themselves in a storm, picking up the storm imagery from the opening. After turbulence, things right themselves; the implication for the relationship is clear.',
           color: '#10b981',
         },
       ],
@@ -153,36 +161,36 @@ const winterSwansPoem: PoemData = {
     { text: '' },
     // Stanza 5 (tercet 5)
     {
-      text: '\u2018They mate for life\u2019 you said as they left,',
+      text: "[Paraphrase] As the swans moved away, the speaker's partner remarked that swans pair for life.",
       annotations: [
         {
           type: 'Direct speech',
-          note: 'The first and only spoken line in the poem belongs to the partner, not the speaker. "They mate for life" is the poem\'s emotional pivot \u2014 a statement about swans that is unmistakably also about the couple.',
+          note: "The first and only spoken line in the poem belongs to the partner, not the speaker. The remark that swans pair for life is the poem's emotional pivot: a statement about swans that is unmistakably also about the couple.",
           color: '#ec4899',
         },
       ],
     },
     {
-      text: 'porcelain over the stilling water. I didn\u2019t reply',
+      text: '[Paraphrase] The swans looked like fine china on the calming lake. The speaker said nothing in return',
       annotations: [
         {
           type: 'Imagery',
-          note: '"Porcelain" makes the swans seem fragile, decorative, valuable. "Stilling water" continues the calming arc \u2014 from churned waterlogged earth to a surface that is settling.',
+          note: '"Porcelain" makes the swans seem fragile, decorative, valuable. The water growing still continues the calming arc, from the sodden earth of the opening to a surface that is settling.',
           color: '#10b981',
         },
         {
           type: 'Silence',
-          note: '"I didn\u2019t reply" is loaded. The speaker can\u2019t yet speak \u2014 perhaps too moved, perhaps still hurt \u2014 but he doesn\u2019t need to. Reconciliation will happen wordlessly.',
+          note: "The speaker's silence is loaded. He cannot yet speak, perhaps too moved, perhaps still hurt, but he does not need to. Reconciliation will happen wordlessly.",
           color: '#8b5cf6',
         },
       ],
     },
     {
-      text: 'but as we moved on through the afternoon light,',
+      text: '[Paraphrase] but as the pair walked on in the light of the afternoon,',
       annotations: [
         {
           type: 'Movement',
-          note: 'The couple resume walking, but now together rather than "apart". "Afternoon light" introduces brightness and warmth where earlier there was waterlogged dimness.',
+          note: 'The couple resume walking, but now together rather than apart. The afternoon sunshine introduces brightness and warmth where earlier there was sodden dimness.',
           color: '#3b82f6',
         },
       ],
@@ -191,27 +199,27 @@ const winterSwansPoem: PoemData = {
     { text: '' },
     // Stanza 6 (tercet 6)
     {
-      text: 'slow-stepping in the lake\u2019s shingle and sand,',
+      text: "[Paraphrase] walking slowly over the pebbles and sand at the lake's edge,",
       annotations: [
         {
           type: 'Pace',
-          note: '"Slow-stepping" enacts a quiet, careful pace. The texture of shingle and sand underfoot is tactile and grounding \u2014 the couple are coming back to their bodies and to each other.',
+          note: '"Slow-stepping" enacts a quiet, careful pace. The texture of the pebbly shore underfoot is tactile and grounding: the couple are coming back to their bodies and to each other.',
           color: '#3b82f6',
         },
       ],
     },
     {
-      text: 'I noticed our hands, that had, somehow,',
+      text: '[Paraphrase] the speaker saw that their hands had, in some unexplained way,',
       annotations: [
         {
           type: 'Understatement',
-          note: '"I noticed" is wonderfully understated \u2014 the hands have moved towards each other without conscious decision. "Somehow" preserves the mystery; reconciliation feels almost involuntary, instinctive.',
+          note: 'The speaker simply noticing is wonderfully understated: the hands have moved towards each other without conscious decision. "Somehow" preserves the mystery; reconciliation feels almost involuntary, instinctive.',
           color: '#ec4899',
         },
       ],
     },
     {
-      text: 'swum the distance between us',
+      text: '[Paraphrase] crossed the gap between the two of them, as if swimming,',
       annotations: [
         {
           type: 'Metaphor',
@@ -224,7 +232,7 @@ const winterSwansPoem: PoemData = {
     { text: '' },
     // Final couplet
     {
-      text: 'and folded, one over the other,',
+      text: '[Paraphrase] and lay folded together, one hand across the other,',
       annotations: [
         {
           type: 'Verb echo',
@@ -234,11 +242,11 @@ const winterSwansPoem: PoemData = {
       ],
     },
     {
-      text: 'like a pair of wings settling after flight.',
+      text: '[Paraphrase] like two wings coming to rest once a bird has landed.',
       annotations: [
         {
           type: 'Simile',
-          note: 'The closing simile collapses the couple into the swans. "Settling after flight" works literally (a bird landing) and metaphorically: the turmoil of the argument is over, and the relationship comes to rest.',
+          note: 'The closing simile collapses the couple into the swans. The image of wings coming to rest works literally (a bird landing) and metaphorically: the turmoil of the argument is over, and the relationship comes to rest.',
           color: '#ef4444',
         },
         {
@@ -766,19 +774,22 @@ export default function WinterSwansPage() {
         revisionTopics={REVISION_TOPICS}
       />
 
-      {/* Fair-dealing extract notice - Winter Swans is in copyright (Seren Books).
-          Only verified short extracts are quoted; one mid-poem line is summarised in brackets. */}
+      {/* Copyright notice - Winter Swans is in copyright (Seren Books). The viewer below
+          paraphrases every line; only short phrases are quoted, in the notes. Until 25 September
+          2026 this notice said the poem was reproduced in fair-dealing extracts, while the viewer
+          printed all of it. */}
       <aside
         role="note"
         aria-label="Copyright and fair-dealing notice"
         className="rounded-lg border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-[12px] leading-relaxed text-amber-900 dark:text-amber-200"
       >
         <p>
-          <strong>Note on the poem text below:</strong> The poem body is reproduced under
-          fair-dealing extracts only. Students should refer to Sheers&rsquo; <em>Skirrid Hill</em>{' '}
-          (Seren, 2005) for the complete authoritative text. Bracketed prose paraphrases passages
-          omitted for copyright; quoted material is restricted to short extracts used for analytical
-          purposes under CDPA 1988 s.30.
+          <strong>Note on the poem text below:</strong> The poem is in copyright, so it is not
+          printed here. Each line below is a paraphrase in our own words, not Sheers&rsquo; text,
+          and the notes quote only short phrases, for criticism and review under CDPA 1988 s.30. The
+          poem is printed in full in the AQA Love &amp; Relationships anthology and in Sheers&rsquo;
+          collection <em>Skirrid Hill</em> (Seren, 2005): read it there before quoting it in an
+          exam.
         </p>
       </aside>
 
@@ -833,10 +844,10 @@ export default function WinterSwansPage() {
           <em>Skirrid Hill</em> (2005).
         </p>
         <p>
-          Poem text is reproduced for the purpose of private study and educational criticism under
-          UK fair-dealing provisions (Copyright, Designs and Patents Act 1988, s.30). No commercial
-          use is intended. All quotations remain the intellectual property of the respective rights
-          holders.
+          The poem itself is not printed on this page: each line in the poem viewer is a paraphrase
+          in our own words, and only short phrases are quoted, for criticism and review under UK
+          fair-dealing provisions (Copyright, Designs and Patents Act 1988, s.30). All quotations
+          remain the intellectual property of the rights holders.
         </p>
       </footer>
     </div>

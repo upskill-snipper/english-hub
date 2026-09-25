@@ -79,13 +79,13 @@ const CHARACTERS: CharacterProfile[] = [
     arc: "Atticus does not undergo a dramatic transformation; instead, he remains steady while the world around him shifts. His consistency is the point: he teaches Scout and Jem that courage means doing right even when you know you will lose. His stoicism is tested by the trial, by Bob Ewell's threats and by the attack on his children, but he never breaks. His moral authority is what makes the verdict so devastating.",
     keyQuotes: [
       {
-        text: '"You never really understand a person until you consider things from his point of view."',
+        text: '"You never ... understand a person until you consider things from his point of view."',
         context: 'Chapter 3 - to Scout',
         analysis:
           "The novel's moral compass statement. Lee makes empathy the foundation of Atticus's teaching and the lesson Scout must learn across the entire book.",
       },
       {
-        text: '"Simply because we were licked a hundred years before we started is no reason not to try."',
+        text: '"Simply because we were licked a hundred years ... is no reason not to try."',
         context: 'Chapter 9 - on defending Tom',
         analysis:
           "Atticus's definition of moral courage. Lee shows that he fights not for victory but for integrity, knowing the system is rigged against him.",
@@ -131,7 +131,7 @@ const CHARACTERS: CharacterProfile[] = [
     arc: "Boo's arc is unusual because it happens almost entirely offstage. We learn about him through gifts in the tree, a blanket placed over Scout's shoulders during a fire, and finally through his rescue of the children from Bob Ewell. He appears physically only in the last two chapters, and his silence speaks louder than any dialogue. Sheriff Tate's refusal to expose him is the final act of empathy in the novel.",
     keyQuotes: [
       {
-        text: '"Boo was our neighbour. He gave us two soap dolls, a broken watch and chain."',
+        text: '"Boo was our neighbour. ... two soap dolls, a broken watch and chain."',
         context: 'Chapter 31 - Scout reflecting',
         analysis:
           "Scout lists Boo's quiet gifts. Lee shows that he communicated love through small acts while the town projected horror onto him.",

@@ -55,7 +55,7 @@ const QUOTES: QuoteEntry[] = [
   {
     id: 3,
     quote:
-      '"The way some of these cranks talk and write now, you\u2019d think everybody has to look after everybody else."',
+      '"cranks talk and write now, you\u2019d think everybody has to look after everybody else."',
     speaker: 'Arthur Birling',
     act: 'Act 1',
     context: 'Birling dismisses socialist thinkers before the Inspector arrives.',
@@ -211,8 +211,7 @@ const QUOTES: QuoteEntry[] = [
   },
   {
     id: 14,
-    quote:
-      '"She was claiming elaborate fine feelings and scruples that were simply absurd in a girl in her position."',
+    quote: '"She was claiming elaborate fine feelings ... absurd in a girl in her position."',
     speaker: 'Sybil Birling',
     act: 'Act 2',
     context: 'Sybil explains why she rejected Eva\u2019s appeal at the charity committee.',
@@ -269,13 +268,12 @@ const QUOTES: QuoteEntry[] = [
   },
   {
     id: 18,
-    quote:
-      '"One Eva Smith has gone \u2014 but there are millions and millions and millions of Eva Smiths and John Smiths still left with us."',
+    quote: '"One Eva Smith has gone \u2014 but there are millions and millions and millions"',
     speaker: 'Inspector Goole',
     act: 'Act 3',
     context: 'The Inspector universalises Eva\u2019s suffering in his final speech.',
     ao2Analysis:
-      'The shift from singular "One Eva Smith" to the tripled "millions and millions and millions" turns a personal tragedy into a systemic argument; the rhythmic repetition forces the audience to feel the scale. The addition of "John Smiths" makes the point gender-inclusive. "Still left with us" insists the problem is present, not past.',
+      'The shift from singular "One Eva Smith" to the tripled "millions and millions and millions" turns a personal tragedy into a systemic argument; the rhythmic repetition forces the audience to feel the scale. As the speech goes on, the addition of "John Smiths" makes the point gender-inclusive, and "still left with us" insists the problem is present, not past.',
     ao3Context:
       'Priestley\u2019s 1945 audience knew that millions had suffered from poverty, unemployment, and war. The Inspector\u2019s speech argues that Eva\u2019s story is not exceptional but representative of systemic failure.',
     themes: ['Social Responsibility', 'Class & Inequality'],
@@ -312,7 +310,7 @@ const QUOTES: QuoteEntry[] = [
   },
   {
     id: 21,
-    quote: '"It\u2019s what happened to the girl and what we all did to her that matters."',
+    quote: '"what happened to the girl and what we all did to her that matters."',
     speaker: 'Sheila Birling',
     act: 'Act 3',
     context: 'Sheila insists the moral lesson stands regardless of the Inspector\u2019s identity.',
@@ -354,8 +352,7 @@ const QUOTES: QuoteEntry[] = [
   },
   {
     id: 24,
-    quote:
-      '"If we were all responsible for everything that happened to everybody \u2026 it would be very awkward."',
+    quote: '"If we were all responsible for everything ... it would be very awkward."',
     speaker: 'Arthur Birling',
     act: 'Act 3',
     context: 'Birling tries to dismiss the Inspector\u2019s message after his departure.',
@@ -383,8 +380,7 @@ const QUOTES: QuoteEntry[] = [
   },
   {
     id: 26,
-    quote:
-      '"she didn\u2019t want me to marry her \u2026 she treated me \u2014 as if I were a kid."',
+    quote: '"she treated me \u2014 as if I were a kid."',
     speaker: 'Eric Birling',
     act: 'Act 3',
     context: 'Eric reveals that Eva refused his offer of marriage and saw his immaturity.',
@@ -413,7 +409,7 @@ const QUOTES: QuoteEntry[] = [
   },
   {
     id: 28,
-    quote: '"No, because I remember what he said, how he looked, and what he made me feel."',
+    quote: '"I remember what he said, how he looked, and what he made me feel."',
     speaker: 'Sheila Birling',
     act: 'Act 3',
     context: 'Sheila explains why she cannot dismiss the Inspector as a hoax.',

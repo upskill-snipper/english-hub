@@ -117,7 +117,7 @@ const sections: ContextSection[] = [
     ],
     textLinks: [
       'The title prepares the reader for inevitable collapse. The question is not whether things will fall apart but how and why.',
-      'Obierika\'s line "He has put a knife on the things that held us together and we have fallen apart" (Chapter 20) directly echoes the title and Yeats.',
+      'Obierika\'s line "He has put a knife on the things that held us together ... fallen apart" (Chapter 20) directly echoes the title and Yeats.',
       "The poem's cyclical view of history aligns with the Igbo concept of chi: forces larger than individuals shape the course of events.",
     ],
   },
@@ -151,7 +151,7 @@ const sections: ContextSection[] = [
     content: [
       "One of the most debated aspects of Achebe's work is his decision to write in English rather than Igbo. The Nigerian writer Ngugi wa Thiong'o argued that African writers should write in African languages to decolonise the mind. Achebe disagreed: he believed English could be reshaped to carry African experience, and that writing in English was the most effective way to challenge the European narratives that had been written in English.",
       "Achebe's English in Things Fall Apart is distinctive. He weaves Igbo proverbs, idioms and speech rhythms into his prose, creating a hybrid literary language. Proverbs are described as \"the palm-oil with which words are eaten\" -- central to Igbo rhetoric and to the novel's style. The result is an English that sounds different from metropolitan English, asserting the presence of Igbo culture within the coloniser's language.",
-      'This linguistic strategy is itself a form of resistance. By bending English to accommodate Igbo thought-patterns, Achebe refuses to accept the language on colonial terms. He takes possession of it, just as the novel takes possession of the narrative about Africa. As Achebe wrote: "The price a world language must be prepared to pay is submission to many different kinds of use."',
+      'This linguistic strategy is itself a form of resistance. By bending English to accommodate Igbo thought-patterns, Achebe refuses to accept the language on colonial terms. He takes possession of it, just as the novel takes possession of the narrative about Africa. As Achebe wrote: "The price a world language ... is submission to many different kinds of use."',
     ],
     keyFacts: [
       'Achebe chose English deliberately to reach the global audience that had consumed European representations of Africa.',

@@ -106,7 +106,7 @@ const characters = [
   {
     name: "Curley's Wife",
     analysis:
-      "Curley's wife is never given a name, reflecting her status as a possession. She is the only woman on the ranch and is desperately lonely. She is initially presented as a dangerous 'tart' through the men's perspective, but Chapter 5 reveals her as a victim: she married Curley to escape her mother and clings to a lost dream of being in 'pitchers'. Her death is presented sympathetically: 'the meanness and the plannings and the discontent and the ache for attention were all gone from her face'. She represents the silencing of women's voices in 1930s America and the universal human need for connection and recognition.",
+      "Curley's wife is never given a name, reflecting her status as a possession. She is the only woman on the ranch and is desperately lonely. She is initially presented as a dangerous 'tart' through the men's perspective, but Chapter 5 reveals her as a victim: she married Curley to escape her mother and clings to a lost dream of being in 'pitchers'. Her death is presented sympathetically: 'the meanness and the plannings and the discontent ... were all gone from her face'. She represents the silencing of women's voices in 1930s America and the universal human need for connection and recognition.",
   },
   {
     name: 'Candy',
@@ -134,7 +134,7 @@ const themes = [
   {
     name: 'The American Dream',
     detail:
-      "George and Lennie's dream of owning a small farm ('an' live off the fatta the lan'') is a version of the American Dream: the idea that hard work and determination can lead to independence and prosperity. Steinbeck systematically dismantles this dream. The Depression has made it unachievable for most. Crooks articulates the futility: 'I seen hundreds of men come by on the road... every damn one of 'em's got a little piece of land in his head. An' never a God damn one of 'em ever gets it.' The dream is beautiful but ultimately an illusion that makes the characters' real powerlessness bearable.",
+      "George and Lennie's dream of owning a small farm ('an' live off the fatta the lan'') is a version of the American Dream: the idea that hard work and determination can lead to independence and prosperity. Steinbeck systematically dismantles this dream. The Depression has made it unachievable for most. Crooks articulates the futility: 'An' never a God damn one of 'em ever gets it.' The dream is beautiful but ultimately an illusion that makes the characters' real powerlessness bearable.",
   },
   {
     name: 'Friendship and Loyalty',
@@ -160,46 +160,42 @@ const themes = [
 
 const keyQuotes = [
   {
-    quote:
-      "Guys like us, that work on ranches, are the loneliest guys in the world. They got no family. They don't belong no place.",
+    quote: 'Guys like us, that work on ranches, are the loneliest guys in the world.',
     chapter: 'Chapter 1',
     speaker: 'George',
     analysis:
-      "George articulates the central condition of itinerant workers' lives. The repetition of negatives ('no family', 'don't belong no place') emphasises absence and lack. 'Loneliest guys in the world' is a superlative that universalises their suffering. This speech establishes loneliness as the novel's dominant theme and makes George and Lennie's friendship exceptional by contrast.",
+      "George articulates the central condition of itinerant workers' lives. As the speech goes on, the repetition of negatives ('no family', 'don't belong no place') emphasises absence and lack. 'Loneliest guys in the world' is a superlative that universalises their suffering. This speech establishes loneliness as the novel's dominant theme and makes George and Lennie's friendship exceptional by contrast.",
   },
   {
-    quote:
-      "With us it ain't like that. We got a future. We got somebody to talk to that gives a damn about us.",
+    quote: 'We got somebody to talk to that gives a damn about us.',
     chapter: 'Chapter 1',
     speaker: 'George',
     analysis:
-      "The counterpart to the loneliness speech. George distinguishes himself and Lennie from other ranch workers through the language of possession ('We got'). The phrase 'gives a damn about us' is colloquial and heartfelt. Their friendship is presented as their greatest asset - more valuable than money or land. The future he promises is, tragically, an illusion.",
+      "The counterpart to the loneliness speech. George distinguishes himself and Lennie from other ranch workers through the language of possession ('We got'). The phrase 'gives a damn about us' is colloquial and heartfelt. Their friendship is presented as their greatest asset - more valuable than money or land. The future he promises in the full speech is, tragically, an illusion.",
   },
   {
-    quote: "I could get you strung up on a tree so easy it ain't even funny.",
+    quote: "I could get you strung up ... so easy it ain't even funny.",
     chapter: 'Chapter 4',
     speaker: "Curley's wife to Crooks",
     analysis:
       "Curley's wife threatens Crooks with lynching when he challenges her presence. The casual tone ('so easy it ain't even funny') reveals the systemic nature of racial violence: it is so normalised that she can threaten murder as a matter of routine. This moment exposes the racial hierarchy that underpins the ranch and the wider society. It also shows that Curley's wife, herself a victim of gender oppression, can still exercise racial power.",
   },
   {
-    quote: "A guy needs somebody - to be near him. A guy goes nuts if he ain't got nobody.",
+    quote: "A guy needs somebody ... A guy goes nuts if he ain't got nobody.",
     chapter: 'Chapter 4',
     speaker: 'Crooks',
     analysis:
       "Crooks articulates the psychological damage of isolation. 'Goes nuts' is a colloquial expression for mental breakdown, giving clinical loneliness a visceral, human expression. The repetition of 'guy' and 'nobody' creates a circular, trapped rhythm. Crooks speaks from painful experience: years of enforced solitude have left him bitter and defensive. This is Steinbeck's most direct statement that human beings require connection to survive.",
   },
   {
-    quote:
-      "I seen hundreds of men come by on the road an' on the ranches, with their bindles on their back an' that same damn thing in their heads... An' never a God damn one of 'em ever gets it.",
+    quote: "that same damn thing ... never a God damn one of 'em ever gets it.",
     chapter: 'Chapter 4',
     speaker: 'Crooks',
     analysis:
-      "Crooks deconstructs the American Dream with the authority of lived experience. 'Hundreds of men' and 'that same damn thing' reduce the dream to a mass delusion. The phrase 'never a God damn one of 'em ever gets it' is absolute and unanswerable. Steinbeck uses Crooks to voice the novel's bleakest assessment: the dream is not deferred but impossible.",
+      "Crooks deconstructs the American Dream with the authority of lived experience. In the full speech, 'Hundreds of men' and 'that same damn thing' reduce the dream to a mass delusion. The phrase 'never a God damn one of 'em ever gets it' is absolute and unanswerable. Steinbeck uses Crooks to voice the novel's bleakest assessment: the dream is not deferred but impossible.",
   },
   {
-    quote:
-      "I ought to of shot that dog myself, George. I shouldn't ought to of let no stranger shoot my dog.",
+    quote: 'I ought to of shot that dog myself ... let no stranger shoot my dog.',
     chapter: 'Chapter 3',
     speaker: 'Candy',
     analysis:
@@ -213,8 +209,7 @@ const keyQuotes = [
       "In death, Curley's wife is finally described without the lens of male desire or suspicion. 'Sweet and young' replaces 'the eye' and 'jail bait'. The simplicity of the prose reflects the simplicity she achieves in death: free from 'the meanness and the plannings and the discontent'. Steinbeck invites the reader to see her as she truly was - a young woman whose life was wasted by the structures of gender and class.",
   },
   {
-    quote:
-      "A guy sets alone out here at night, maybe readin' books or thinkin' or stuff like that. Sometimes he gets thinkin', an' he got nothing to tell him what's so an' what ain't so.",
+    quote: "A guy sets alone ... nothing to tell him what's so an' what ain't so",
     chapter: 'Chapter 4',
     speaker: 'Crooks',
     analysis:
@@ -259,16 +254,14 @@ const keyQuotes = [
       "George's outburst reveals his suppressed resentment at being tied to Lennie. 'So easy' contrasts with the difficulty of his actual life. The 'girl' he might have represents normalcy, independence, and choice. Yet George always returns to the dream and to Lennie, suggesting that his complaints are a release valve rather than genuine desire to leave. The tension between frustration and devotion defines George's character.",
   },
   {
-    quote:
-      "We'd jus' live there. We'd belong there. There wouldn't be no more runnin' round the country.",
+    quote: "We'd belong there. There wouldn't be no more runnin' round the country.",
     chapter: 'Chapter 3',
     speaker: 'George',
     analysis:
       "The dream farm offers belonging - the one thing itinerant workers lack. 'We'd belong there' is the emotional heart of the dream: not wealth but home. 'No more runnin'' implies safety and permanence. The conditional tense ('We'd') maintains the dream as hypothetical, hovering between hope and impossibility. Steinbeck makes the dream beautiful precisely so its destruction is devastating.",
   },
   {
-    quote:
-      "I seen things out here. I wasn't drunk. I don't know if I was asleep. If some guy was with me, he could tell me I was asleep, an' then it would be all right.",
+    quote: 'If some guy was with me, he could tell me I was asleep',
     chapter: 'Chapter 4',
     speaker: 'Crooks',
     analysis:
@@ -282,27 +275,25 @@ const keyQuotes = [
       "Curley's wife clings to her dream of Hollywood stardom even as she knows it is dead. 'Maybe I will yet' is heartbreaking in its futility - she says this minutes before her death. The contrast between her aspirations and her reality (trapped on a ranch, married to a man she despises) encapsulates Steinbeck's critique of the American Dream: it sustains hope but delivers nothing.",
   },
   {
-    quote: "I think I knowed from the very first. I think I knowed we'd never do her.",
+    quote: "I knowed from the very first. I think I knowed we'd never do her.",
     chapter: 'Chapter 5',
     speaker: 'George',
     analysis:
       "After Curley's wife's death, George admits that the dream was always impossible. 'From the very first' suggests that George has been performing hope rather than genuinely believing. 'We'd never do her' uses the past conditional to close down the future entirely. This confession reframes every earlier recitation of the dream as a kind of prayer George knew would go unanswered - an act of love for Lennie rather than a genuine plan.",
   },
   {
-    quote:
-      "Ain't many guys travel around together... I don't know why. Maybe ever'body in the whole damn world is scared of each other.",
+    quote: "Maybe ever'body in the whole damn world is scared of each other.",
     chapter: 'Chapter 2',
     speaker: 'Slim',
     analysis:
       "Slim articulates the isolation at the heart of the novel with quiet authority. His observation that people are 'scared of each other' suggests that loneliness is not accidental but the product of mutual fear and distrust. Steinbeck uses Slim - the most perceptive character - to diagnose the social condition that makes George and Lennie's friendship both extraordinary and doomed.",
   },
   {
-    quote:
-      "I seen it over an' over - a guy talkin' to another guy and it don't make no difference if he don't hear or understand. The thing is, they're talkin'.",
+    quote: "a guy talkin' to another guy ... The thing is, they're talkin'.",
     chapter: 'Chapter 4',
     speaker: 'Crooks',
     analysis:
-      "Crooks observes that communication matters more than comprehension. The need to speak to another human being is so fundamental that even being heard imperfectly is better than silence. Steinbeck uses this insight to explain why every character in the novel seeks connection, however imperfect: Curley's wife talks to Lennie knowing he barely understands; Candy talks to his dog. The act of speaking is itself an assertion of humanity.",
+      "In the full line, Crooks observes that communication matters more than comprehension. The need to speak to another human being is so fundamental that even being heard imperfectly is better than silence. Steinbeck uses this insight to explain why every character in the novel seeks connection, however imperfect: Curley's wife talks to Lennie knowing he barely understands; Candy talks to his dog. The act of speaking is itself an assertion of humanity.",
   },
 ]
 
@@ -608,7 +599,7 @@ export default function OfMiceAndMenStudyGuide() {
                 'Introduction: Crooks is the only Black character, and Steinbeck uses his enforced isolation to expose the systematic racism of 1930s America. His treatment on the ranch is a microcosm of Jim Crow segregation.',
                 'Para 1 -- Physical segregation: Crooks lives in the harness room, separate from the other workers. His room is both prison and refuge. Steinbeck uses setting to make racial segregation visible and visceral.',
                 "Para 2 -- Psychological damage: 'A guy goes nuts if he ain't got nobody.' Crooks articulates the mental health consequences of enforced isolation. His initial hostility to Lennie is defensive - he has learned to pre-empt rejection.",
-                "Para 3 -- The brief hope: When Crooks hears about the dream farm, he tentatively asks to join. For a moment, he imagines belonging. This makes Curley's wife's threat all the more devastating: 'I could get you strung up on a tree so easy it ain't even funny.'",
+                "Para 3 -- The brief hope: When Crooks hears about the dream farm, he tentatively asks to join. For a moment, he imagines belonging. This makes Curley's wife's threat all the more devastating: 'I could get you strung up ... so easy it ain't even funny.'",
                 "Para 4 -- Withdrawal: After the threat, Crooks retreats: 'I didn' mean it. Jus' foolin'.' He has been reminded of the racial hierarchy and crushes his own hope before the system can do it more brutally. Steinbeck shows that racism destroys not just opportunity but the capacity to dream.",
                 'Conclusion: Steinbeck presents Crooks as a man whose intelligence, pride, and capacity for connection have been systematically destroyed by racism. His brief hope and immediate withdrawal make the reader understand that prejudice does not merely exclude - it annihilates.',
               ],

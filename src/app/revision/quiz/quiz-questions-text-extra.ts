@@ -573,7 +573,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     options: ['Wealth', 'Chain', 'Tomb', 'Empire'],
     correctIndex: 1,
     explanation:
-      'Marley laments: "I wear the chain I forged in life... I made it link by link, and yard by yard." The chain symbolises greed.',
+      'Marley laments: "I wear the chain I forged in life... I made it link by link." The chain symbolises greed.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
@@ -633,7 +633,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'In Stave 5 Scrooge is "as light as a feather... as happy as an angel... as merry as a school-boy", reborn into joyful generosity.',
+      'In Stave 5 Scrooge is "as light as a feather... as merry as a school-boy", reborn into joyful generosity.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
 
@@ -1173,7 +1173,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     question: 'How does Pride and Prejudice famously open?',
     options: [
       '"Call me Ishmael."',
-      '"It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife."',
+      '"It is a truth universally acknowledged, ... must be in want of a wife."',
       '"Happy families are all alike."',
       '"All this happened, more or less."',
     ],

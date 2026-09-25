@@ -51,7 +51,7 @@ const CHARACTERS: CharacterProfile[] = [
     arc: "Eddie begins as a respected community figure who opens his home to illegal immigrants. As Catherine falls in love with Rodolpho, Eddie's jealousy escalates from subtle disapproval to open hostility. He seeks legal help from Alfieri, kisses both Catherine and Rodolpho in acts of desperate aggression, and finally commits the unforgivable sin: he calls Immigration. His death at Marco's hands is the logical end of a path he chose with his eyes closed.",
     keyQuotes: [
       {
-        text: '"You can quicker get back a million dollars that was stole than a word that you gave away."',
+        text: '"You can quicker get back ... than a word that you gave away."',
         context: 'Act 1 - warning Catherine about informers',
         analysis:
           'Eddie states the community code he will later violate. Miller uses dramatic irony: the audience remembers this line when Eddie makes his phone call.',

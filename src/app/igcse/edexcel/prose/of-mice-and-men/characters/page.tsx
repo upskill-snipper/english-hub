@@ -20,7 +20,7 @@ const characters = [
     role: 'George\u2019s companion',
     analysis:
       'Lennie is "a huge man, shapeless of face, with large, pale eyes". His name is ironic \u2014 he is physically enormous but mentally childlike. Steinbeck consistently describes him with animal imagery: he drinks "like a horse", moves "the way a bear drags his paws". His love of soft things \u2014 mice, puppies, Curley\u2019s wife\u2019s hair \u2014 is genuine but lethal because he cannot calibrate his own strength. Lennie\u2019s disability means he is always the most vulnerable person on the ranch and simultaneously the most dangerous.',
-    quote: '\u201cI got you to look after me, and you got me to look after you.\u201d',
+    quote: '\u201cI got you to look after me, ... you got me to look after you.\u201d',
   },
   {
     name: 'Candy',

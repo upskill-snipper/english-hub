@@ -44,7 +44,7 @@ const sections = [
   {
     title: 'The Inspector\u2019s final speech',
     analysis:
-      'The Inspector\u2019s exit speech is the play\u2019s rhetorical climax. "We are members of one body. We are responsible for each other. And I tell you that the time will soon come when, if men will not learn that lesson, then they will be taught it in fire and blood and anguish." The speech has the cadence of a sermon and the politics of a Labour manifesto. The phrase "fire and blood and anguish" resonates with a 1945 audience who have already lived through two world wars \u2014 the "lesson" the Birlings refused to learn.',
+      'The Inspector\u2019s exit speech is the play\u2019s rhetorical climax. "We are members of one body. ... taught it in fire and blood and anguish." The speech has the cadence of a sermon and the politics of a Labour manifesto. The phrase "fire and blood and anguish" resonates with a 1945 audience who have already lived through two world wars \u2014 the "lesson" of the full speech, which the Birlings refused to learn.',
     quote: '"fire and blood and anguish"',
   },
   {

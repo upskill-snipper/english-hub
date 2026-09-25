@@ -118,7 +118,7 @@ const data: TextGuideData = {
         'Introduces the theme of isolation and immediately sets George and Lennie apart because they have each other.',
     },
     {
-      quote: '"I got you to look after me, and you got me to look after you."',
+      quote: '"I got you to look after me, ... you got me to look after you."',
       who: 'Lennie - Chapter 1',
       analysis:
         'Captures the childlike clarity of their bond. The mutual dependence is the emotional core of the book.',
@@ -516,7 +516,7 @@ const REVISION_TOPICS = [
     topic: 'Friendship and Companionship',
     summary: "George and Lennie's bond is what makes them different from every other worker.",
     keyPoints: [
-      '"I got you to look after me, and you got me to look after you"',
+      '"I got you to look after me, ... you got me to look after you"',
       'Their friendship is both sacred and fragile',
       'It cannot survive the economic and social pressures',
       "Candy's dog foreshadows: it is better to be killed by a friend",

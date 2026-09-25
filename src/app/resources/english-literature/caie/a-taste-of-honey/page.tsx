@@ -21,8 +21,7 @@ const keyQuotes = [
       "Jo ironically celebrates the dysfunctional mother-daughter bond she shares with Helen. The exclamation conveys a brittle, self-aware humour that is characteristic of Delaney's dialogue. 'Unique' carries both pride and pain: Jo recognises that their relationship is unusual but cannot escape its limitations.",
   },
   {
-    quote:
-      "You're a cruel woman, Helen. You've had your life ruined by men but you won't let me have mine.",
+    quote: "You've had your life ruined by men but you won't let me have mine.",
     speaker: 'Jo',
     act: 'Act 1',
     analysis:
@@ -78,8 +77,7 @@ const keyQuotes = [
       "Jo's anxious question about her unborn child's skin colour reveals her awareness of the racial prejudice the child will face. The hedging ('not really') suggests Jo is trying to minimise the social consequences. Delaney confronts 1950s racial attitudes directly, showing how prejudice permeates even intimate family moments.",
   },
   {
-    quote:
-      "I used to try to hold my mother's hands but she always pushed me away. She had me but she didn't want me.",
+    quote: "try to hold my mother's hands ... She had me but she didn't want me.",
     speaker: 'Jo',
     act: 'Act 2',
     analysis:
@@ -763,10 +761,10 @@ export default function ATasteOfHoneyStudyGuide() {
                     Delaney presents motherhood as a cycle of neglect shaped by poverty and limited
                     opportunity, rather than the natural, instinctive bond idealised by 1950s
                     society <span className="font-semibold text-primary">[Textual Knowledge]</span>.
-                    When Jo confesses, &ldquo;I used to try to hold my mother&rsquo;s hands but she
-                    always pushed me away,&rdquo; the contrast between the child&rsquo;s reaching
-                    gesture and the mother&rsquo;s rejection creates a painful image of emotional
-                    deprivation{' '}
+                    When Jo confesses that she used to &ldquo;try to hold my mother&rsquo;s hands
+                    but she always pushed me away,&rdquo; the contrast between the child&rsquo;s
+                    reaching gesture and the mother&rsquo;s rejection creates a painful image of
+                    emotional deprivation{' '}
                     <span className="font-semibold text-primary">[Writer's Methods]</span>. The verb
                     &ldquo;pushed&rdquo; implies physical force, while &ldquo;always&rdquo;
                     establishes this as a habitual pattern rather than a single incident, suggesting

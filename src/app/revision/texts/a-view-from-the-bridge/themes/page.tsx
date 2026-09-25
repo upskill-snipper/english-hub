@@ -113,7 +113,7 @@ const THEMES: ThemeData[] = [
       "Miller uses the cousins' arrival as the inciting event. Their illegal status makes them vulnerable: they depend on Eddie's hospitality and silence, which gives him power over them. When Eddie betrays them, the play exposes the precariousness of immigrant life. Marco's arrest - in front of his family's only breadwinner - is Miller's sharpest image of the American Dream's failure.",
     keyQuotes: [
       {
-        text: '"You can quicker get back a million dollars that was stole than a word that you gave away."',
+        text: '"You can quicker get back ... than a word that you gave away."',
         speaker: 'Eddie - Act 1',
         analysis:
           "Eddie defines the community's code of silence about immigrants. Miller uses the line to establish the standard Eddie will later violate.",

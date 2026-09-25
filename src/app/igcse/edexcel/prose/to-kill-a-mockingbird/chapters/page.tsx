@@ -100,7 +100,7 @@ const chapters = [
       'Atticus\u2019s moral authority is established. Calpurnia emerges as a disciplinarian with her own authority in the house.',
     quotes: [
       {
-        text: 'You never really understand a person until you consider things from his point of view.',
+        text: 'You never ... understand a person until you consider things from his point of view.',
         technique: 'The novel\u2019s central moral instruction, expressed in plain register',
       },
       {
@@ -384,11 +384,11 @@ const chapters = [
         technique: 'Retrospective narration signals a dying social order',
       },
       {
-        text: 'She asked me to tell you that you must try to behave like the little lady you are.',
+        text: 'She asked me ... you must try to behave like the little lady you are.',
         technique: 'Atticus\u2019s discomfort shows his disagreement with Alexandra',
       },
       {
-        text: 'I know now what he was trying to do, but Atticus was only a man.',
+        text: 'I know now what he was trying to do, ... Atticus was only a man.',
         technique: 'Scout\u2019s adult narrator voice reflects with gentle irony',
       },
     ],
@@ -408,8 +408,8 @@ const chapters = [
       'Dill\u2019s vulnerability deepens. Alexandra\u2019s conflict with Atticus over Calpurnia reveals the household\u2019s class and race tensions.',
     quotes: [
       {
-        text: 'The thing is, what I\u2019m tryin\u2019 to say is \u2014 they do get on a lot better without me.',
-        technique: 'Dill\u2019s broken syntax conveys genuine emotional pain',
+        text: 'The thing is, ... they do get on a lot better without me.',
+        technique: 'Dill\u2019s broken syntax in the full line conveys genuine emotional pain',
       },
       {
         text: 'Why do you reckon Boo Radley\u2019s never run off?',
@@ -660,7 +660,7 @@ const chapters = [
       'Jem attempts to systematise injustice; Scout\u2019s simpler view is morally cleaner. Atticus bridges the two.',
     quotes: [
       {
-        text: 'When it\u2019s a white man\u2019s word against a black man\u2019s, the white man always wins.',
+        text: 'it\u2019s a white man\u2019s word against a black man\u2019s, the white man always wins.',
         technique: 'Plain statement of structural racism with no rhetorical flourish',
       },
       {
@@ -744,7 +744,7 @@ const chapters = [
       'Scout begins to recognise adult hypocrisy. Jem\u2019s refusal to discuss the trial signals deep emotional scarring.',
     quotes: [
       {
-        text: 'How can you hate Hitler so bad an\u2019 then turn around and be ugly about folks right at home?',
+        text: 'How can you hate Hitler so bad ... be ugly about folks right at home?',
         technique: 'Scout\u2019s question exposes the moral inconsistency of selective empathy',
       },
       {
@@ -752,7 +752,7 @@ const chapters = [
         technique: 'Dramatic irony: the reader recognises the lie the speaker cannot',
       },
       {
-        text: 'Jem got furious. He said he didn\u2019t want to ever hear about that courthouse again.',
+        text: 'He said he didn\u2019t want to ever hear about that courthouse again.',
         technique: 'Emotional shutdown signals trauma in Jem\u2019s coming-of-age',
       },
     ],
@@ -780,7 +780,7 @@ const chapters = [
         technique: 'Scout\u2019s in-between status mirrors her moral position throughout',
       },
       {
-        text: 'Ruth Jones, the welfare lady, said Mr Ewell openly accused Atticus of getting his job.',
+        text: 'Ruth Jones, ... said Mr Ewell openly accused Atticus of getting his job.',
         technique: 'Indirect reporting builds a pattern of Ewell\u2019s vindictiveness',
       },
     ],
@@ -804,7 +804,7 @@ const chapters = [
         technique: 'Scout\u2019s fragmented sensory narration conveys the confusion of the attack',
       },
       {
-        text: 'The man was walking with the staccato steps of someone carrying a load too heavy.',
+        text: 'The man was walking ... staccato steps of someone carrying a load too heavy.',
         technique: 'Precise physical detail before the reveal of Boo\u2019s identity',
       },
       {
@@ -893,7 +893,7 @@ const chapters = [
         technique: 'Physical perspective shift embodies the novel\u2019s moral argument',
       },
       {
-        text: 'He gently released my hand, opened the door, went inside, and shut the door behind him.',
+        text: 'He gently released my hand, opened the door, went inside, and shut the door',
         technique: 'Simple sequential verbs close the Boo narrative with quiet finality',
       },
     ],

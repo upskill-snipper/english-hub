@@ -15,32 +15,43 @@ import { useT } from '@/lib/i18n/use-t'
 const climbingMyGrandfatherPoem: PoemData = {
   title: 'Climbing My Grandfather',
   poet: 'Andrew Waterhouse',
-  // RIGHTS NOTE: "Climbing My Grandfather" by Andrew Waterhouse is in copyright (estate / The Rialto / Rialto Press / Faber editions).
-  // Full text is not reproduced here. Under fair-dealing for criticism/review (CDPA 1988 s.30),
-  // only verified short extracts are quoted; bracketed prose summarises the rest of the poem,
-  // which is a single 25-line free-verse block.
+  // NOTE: "Climbing My Grandfather" (Andrew Waterhouse, 2000) remains in copyright:
+  // Waterhouse died in 2001, so UK copyright runs to the end of 2071. To avoid reproducing
+  // the poem, each line below is a PARAPHRASE in the site's own words, not the poet's
+  // text, and the annotations quote only short phrases. Students must read the full poem
+  // in the AQA Love and Relationships anthology.
+  //
+  // What this replaced, 25 September 2026: the array printed most of the poem line by
+  // line, which is reproduction, not fair dealing, and what it printed was not the poem.
+  // Its closing third was out of order, five of its lines are not in the poem at all, and
+  // six bracketed summaries stood in for lines, some describing details the poem does not
+  // contain. It now follows the published poem, one entry per line in order, as a single
+  // unbroken stanza. Each annotation sits on the line it discusses; notes written for the
+  // invented lines were rewritten for the real ones, and the languageDevices lineRefs
+  // below were moved to match. The paraphrases were written from the poem's sense and
+  // have not been checked against a primary edition.
   lines: [
     {
-      text: 'I decide to do it free, without a rope or net.',
+      text: '[Paraphrase] The speaker chooses to climb with no safety equipment at all, neither rope nor net.',
       annotations: [
         {
           type: 'Extended metaphor',
-          note: 'The poem opens by establishing the central conceit: the speaker will "climb" his grandfather like a mountaineer scaling a rock face. "Free" means without safety equipment \u2014 this is an act of trust and vulnerability.',
+          note: 'The poem opens by establishing the central conceit: the speaker will climb his grandfather like a mountaineer scaling a rock face. "Free" means without safety equipment; this is an act of trust and vulnerability.',
           color: '#ef4444',
         },
         {
           type: 'Tone',
-          note: '"I decide" is confident and deliberate. The speaker chooses to engage with his grandfather openly, without emotional protection or barriers.',
+          note: 'The opening statement of a decision is confident and deliberate. The speaker chooses to engage with his grandfather openly, without emotional protection or barriers.',
           color: '#3b82f6',
         },
       ],
     },
     {
-      text: 'First, the old brogues, dusty and cracked;',
+      text: "[Paraphrase] He starts at the bottom, with his grandfather's worn, dusty, split leather shoes;",
       annotations: [
         {
           type: 'Starting point',
-          note: 'The climb begins at the feet \u2014 the grandfather\'s shoes. "Old", "dusty" and "cracked" hint at age, wear, and a life of work without making the grandfather pitiable.',
+          note: "The climb begins at the feet, with the grandfather's shoes. Their age, dust and cracks hint at a long life of work without making the grandfather pitiable.",
           color: '#10b981',
         },
         {
@@ -51,17 +62,7 @@ const climbingMyGrandfatherPoem: PoemData = {
       ],
     },
     {
-      text: '[the climb continues onto his trousers: the speaker finds handholds in the corduroy, pushing into the weave to "get a grip" \u2014 fair-dealing summary]',
-      annotations: [
-        {
-          type: 'Tactile imagery',
-          note: 'The corduroy of the trousers becomes a textured rock face \u2014 ridges to grip, "splintered" surfaces. The mundane detail of clothing is transformed into geological terrain.',
-          color: '#10b981',
-        },
-      ],
-    },
-    {
-      text: 'an easy scramble onto his trousers,',
+      text: '[Paraphrase] then climbs without difficulty up onto the trouser legs,',
       annotations: [
         {
           type: 'Climbing diction',
@@ -71,47 +72,47 @@ const climbingMyGrandfatherPoem: PoemData = {
       ],
     },
     {
-      text: 'pushing into the weave, trying to get a grip.',
+      text: '[Paraphrase] pressing his fingers into the woven cloth to find something to hold.',
       annotations: [
         {
           type: 'Physical verbs',
-          note: '"Pushing" and "trying to get a grip" are effortful, physical actions. Knowing a grandparent takes work \u2014 close engagement, not distant observation.',
+          note: 'The verbs of pressing and straining for a hold are effortful, physical actions. Knowing a grandparent takes work: close engagement, not distant observation.',
           color: '#3b82f6',
         },
-      ],
-    },
-    {
-      text: '[Onto the belt and shirt: the speaker moves up to the broad chest \u2014 fair-dealing summary; original continues with detail of buckle, shirt, and skin.]',
-      annotations: [
         {
-          type: 'Ascent',
-          note: 'Each item of clothing becomes a stage of the climb. The body is mapped from below as a landscape with belts as ridges and shirts as expansive faces.',
-          color: '#8b5cf6',
+          type: 'Tactile imagery',
+          note: 'The woven fabric of the trousers becomes a textured rock face with ridges to grip. The mundane detail of clothing is transformed into geological terrain.',
+          color: '#10b981',
         },
       ],
     },
     {
-      text: 'By the overhanging shirt I change',
+      text: '[Paraphrase] Where the shirt juts out above him like a rock overhang, he alters',
       annotations: [
         {
           type: 'Metaphor',
-          note: 'The shirt "overhangs" like a rock outcrop the climber must navigate around. The mountaineering metaphor is sustained with geological precision.',
+          note: 'The shirt juts out like a rock overhang that the climber must work around. The mountaineering metaphor is sustained with geological precision.',
           color: '#ef4444',
         },
       ],
     },
     {
-      text: 'direction, traverse along his belt',
+      text: "[Paraphrase] course and moves sideways along the grandfather's belt",
       annotations: [
         {
           type: 'Climbing diction',
           note: '"Traverse" is a technical climbing term for moving sideways across a rock face rather than straight up. Once again, the metaphor uses real mountaineering vocabulary.',
           color: '#ef4444',
         },
+        {
+          type: 'Ascent',
+          note: 'Each item of clothing becomes a stage of the climb. The body is mapped from below as a landscape: shoes, then trousers, then the overhang of the shirt and the ledge of the belt.',
+          color: '#8b5cf6',
+        },
       ],
     },
     {
-      text: 'to an earth-stained hand. The nails',
+      text: '[Paraphrase] to reach a hand marked with soil. The fingernails',
       annotations: [
         {
           type: 'Detail',
@@ -121,48 +122,33 @@ const climbingMyGrandfatherPoem: PoemData = {
       ],
     },
     {
-      text: 'are splintered and give good purchase,',
+      text: '[Paraphrase] are broken and rough, which makes them easy to grip,',
       annotations: [
         {
           type: 'Tactile imagery',
-          note: '"Splintered" nails like cracked rock; "give good purchase" is climbing terminology for a reliable handhold. The body is presented as solid, dependable terrain.',
+          note: '"Splintered" nails are like cracked rock, and "good purchase" is climbing terminology for a reliable handhold. The body is presented as solid, dependable terrain.',
           color: '#10b981',
         },
       ],
     },
     {
-      text: '[The climb continues onto the arm and shoulder \u2014 fair-dealing summary; the speaker scales the sleeve and feels the strong, steady muscle beneath the cloth.]',
-      annotations: [
-        {
-          type: 'Strength',
-          note: "The grandfather's arm is presented as enduring and powerful. The metaphor of the mountain reinforces his solidity \u2014 he is something that has lasted.",
-          color: '#8b5cf6',
-        },
-      ],
-    },
-    {
-      text: 'the skin of his finger is smooth and thick',
+      text: "[Paraphrase] and the finger's skin feels thick and slippery-smooth",
       annotations: [
         {
           type: 'Tactile imagery',
-          note: '"Smooth and thick" describes aged skin with tenderness rather than disgust. The physical detail creates intimacy \u2014 the speaker knows his grandfather\'s body through touch.',
+          note: "An old man's skin is described with tenderness rather than disgust. The physical detail creates intimacy: the speaker knows his grandfather's body through touch.",
           color: '#10b981',
         },
       ],
     },
     {
-      text: 'like warm ice.',
+      text: '[Paraphrase] like ice that is somehow warm. Along the arm he comes across',
       annotations: [
         {
           type: 'Oxymoron',
           note: '"Warm ice" is a contradiction. Ice is cold, but the grandfather\'s skin has the smoothness of ice with the warmth of life. The phrase captures the strangeness and tenderness of an old body.',
           color: '#ef4444',
         },
-      ],
-    },
-    {
-      text: 'On his arm I discover',
-      annotations: [
         {
           type: 'Verb choice',
           note: '"Discover" frames the climb as exploration. The grandfather is uncharted territory; each new feature is a discovery. The body is a continent to be mapped.',
@@ -171,7 +157,7 @@ const climbingMyGrandfatherPoem: PoemData = {
       ],
     },
     {
-      text: 'the glassy ridge of a scar,',
+      text: '[Paraphrase] a shiny raised line where an old wound healed, and sets his feet',
       annotations: [
         {
           type: 'History',
@@ -180,119 +166,128 @@ const climbingMyGrandfatherPoem: PoemData = {
         },
       ],
     },
+    { text: '[Paraphrase] carefully into the marks of long-ago stitching, then keeps going.' },
     {
-      text: '[The speaker pauses, then continues up the shoulder, through the white hair "soft and thick", towards the head and face \u2014 fair-dealing summary.]',
+      text: '[Paraphrase] At the shoulder, which is still strong, he pauses to recover for a time',
       annotations: [
         {
-          type: 'Pace',
-          note: 'The climb slows as it approaches the summit. The speaker takes time with the hair, the neck, the face \u2014 the most intimate territory is approached carefully.',
+          type: 'Strength',
+          note: "The grandfather's shoulder is presented as enduring and powerful, still strong in old age. The metaphor of the mountain reinforces his solidity: he is something that has lasted.",
           color: '#8b5cf6',
         },
       ],
     },
     {
-      text: 'gasping for breath I can only lie',
+      text: '[Paraphrase] in its shadow, taking care not to glance below,',
       annotations: [
         {
-          type: 'Physical effort',
-          note: '"Gasping for breath" makes the climb exhausting \u2014 fully knowing someone is hard work. The speaker has to stop and rest before the final push.',
-          color: '#f59e0b',
+          type: 'Pace',
+          note: 'The climb slows here: the speaker rests in the shadow of the shoulder and avoids looking below. From this point he takes his time with the neck, mouth, cheek, eyes and hair; the most intimate territory is approached carefully.',
+          color: '#8b5cf6',
+        },
+      ],
+    },
+    { text: '[Paraphrase] because climbing is risky, and then he hauls' },
+    {
+      text: "[Paraphrase] himself up by the slack skin of the grandfather's neck",
+      annotations: [
+        {
+          type: 'Detail',
+          note: 'The slack skin at the neck continues the landscape metaphor: the grandfather has been shaped by time, like a mountain shaped by wind and rain, and a sign of age becomes a handhold.',
+          color: '#10b981',
         },
       ],
     },
     {
-      text: 'watching clouds and birds circle,',
+      text: '[Paraphrase] to reach the smiling lips, where he drinks between the teeth.',
       annotations: [
         {
-          type: 'Imagery',
-          note: 'From this height (near the head), the view is of sky and birds \u2014 the speaker has climbed high enough to see what the grandfather sees. The perspective is shared.',
-          color: '#3b82f6',
-        },
-      ],
-    },
-    {
-      text: 'feeling his heat, knowing',
-      annotations: [
-        {
-          type: 'Intimacy',
-          note: '"Feeling his heat" is extraordinarily close \u2014 body heat is felt only at very intimate distances. "Knowing" is left dangling; the line break delays what is known.',
+          type: 'Reciprocity',
+          note: "The grandfather's smile reveals that he is awake and aware throughout, and enjoying the game. The climb is not a one-way exploration but a shared moment.",
           color: '#ec4899',
         },
       ],
     },
     {
-      text: 'the slow pulse of his good heart.',
+      text: '[Paraphrase] Feeling restored, he crosses the cheek, which is like a slope of loose stones,',
+      annotations: [
+        {
+          type: 'Metaphor',
+          note: '"Screed" suggests scree, the loose broken rock on a mountain slope, so the cheek becomes a slope to cross with care. The face is mapped with the same geological precision as the rest of the body.',
+          color: '#ef4444',
+        },
+      ],
+    },
+    { text: "[Paraphrase] to gaze deep into his grandfather's brown eyes and watch one pupil" },
+    {
+      text: '[Paraphrase] widen and narrow gradually. Next he goes on up across',
+      annotations: [
+        {
+          type: 'Final ascent',
+          note: 'The face and head are the last and highest territory. Each feature, from mouth and cheek to eyes, forehead and hair, is a separate stage of the summit attempt.',
+          color: '#8b5cf6',
+        },
+      ],
+    },
+    {
+      text: '[Paraphrase] the brow, where the lines are evenly spread out',
+      annotations: [
+        {
+          type: 'Tactile imagery',
+          note: "The forehead's wrinkles become evenly spaced, easy holds, giving texture and grip on the rock face. Signs of age are again turned into help for the climber; the image is funny and tender at once.",
+          color: '#10b981',
+        },
+      ],
+    },
+    { text: '[Paraphrase] and simple to climb, towards the thick hair, pale and soft' },
+    {
+      text: '[Paraphrase] up at this height, as he strains towards the very top,',
+      annotations: [
+        {
+          type: 'Climax',
+          note: '"Summit" completes the metaphor: the highest point of the climb is the top of the grandfather\'s head, where the white hair reads like snow at altitude. The deep look into his eyes just before is the most intimate moment of the ascent.',
+          color: '#ec4899',
+        },
+      ],
+    },
+    {
+      text: '[Paraphrase] where, out of breath, he is able only to lie back',
+      annotations: [
+        {
+          type: 'Physical effort',
+          note: 'The speaker reaches the top so exhausted that all he can do is lie there: fully knowing someone is hard work, and the rest at the summit is earned.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: '[Paraphrase] and look up at birds and clouds turning in circles overhead,',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: 'From the summit, the top of the head, the view is of sky and birds: the speaker has climbed high enough to see what the grandfather sees. The perspective is shared.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: "[Paraphrase] sensing the warmth of his grandfather's body, aware of",
+      annotations: [
+        {
+          type: 'Intimacy',
+          note: 'Sensing the grandfather\'s body heat is extraordinarily close: warmth like this is felt only at very intimate distances. "Knowing" is left dangling; the line break delays what is known.',
+          color: '#ec4899',
+        },
+      ],
+    },
+    {
+      text: "[Paraphrase] the slow, steady beat of the old man's good heart.",
       annotations: [
         {
           type: 'Double meaning',
           note: '"Good heart" works literally (a steady, healthy heartbeat) and metaphorically (the grandfather\'s kind nature). The two meanings fuse \u2014 physical and moral worth are inseparable.',
           color: '#ef4444',
         },
-      ],
-    },
-    {
-      text: '[The speaker resumes the climb, reaching for the face: the lined forehead, the cheek, the lips \u2014 fair-dealing summary.]',
-      annotations: [
-        {
-          type: 'Final ascent',
-          note: 'The face is the last and highest territory. Each feature is a separate stage of the summit attempt.',
-          color: '#8b5cf6',
-        },
-      ],
-    },
-    {
-      text: 'Finally, the cliff of the face',
-      annotations: [
-        {
-          type: 'Metaphor',
-          note: '"Cliff" suggests both the vertical, imposing nature of the face and its weathered, lined surface. The speaker approaches it like a real climber tackling a wall.',
-          color: '#ef4444',
-        },
-      ],
-    },
-    {
-      text: 'I rest my feet in the bristle of his chin,',
-      annotations: [
-        {
-          type: 'Tactile imagery',
-          note: '"Bristle" makes the stubble into footholds \u2014 texture and grip on the cliff. The image is funny and tender at once.',
-          color: '#10b981',
-        },
-      ],
-    },
-    {
-      text: 'reach the summit, gaze into his eyes,',
-      annotations: [
-        {
-          type: 'Climax',
-          note: '"Summit" completes the metaphor: the highest point of the climb is the grandfather\'s eyes. "Gaze into" is the deepest possible look \u2014 eye contact, soul to soul.',
-          color: '#ec4899',
-        },
-      ],
-    },
-    {
-      text: 'and grinning back, watch a pulse',
-      annotations: [
-        {
-          type: 'Reciprocity',
-          note: '"Grinning back" reveals that the grandfather is awake and aware throughout \u2014 he sees the speaker and smiles. The climb is not a one-way exploration but a shared moment.',
-          color: '#ec4899',
-        },
-      ],
-    },
-    {
-      text: 'in his weathered neck.',
-      annotations: [
-        {
-          type: 'Detail',
-          note: '"Weathered" continues the landscape metaphor \u2014 the grandfather has been shaped by time and exposure, like a mountain shaped by wind and rain.',
-          color: '#10b981',
-        },
-      ],
-    },
-    {
-      text: '[The closing lines come to rest in the white hair of the summit, "soft and thick", with the speaker still watching the slow heartbeat \u2014 fair-dealing summary.]',
-      annotations: [
         {
           type: 'Final image',
           note: "The poem ends with the speaker at the summit, settled into the grandfather's hair, listening to his heart. The image is one of complete intimacy, trust, and rest.",
@@ -488,7 +483,7 @@ const climbingMyGrandfatherPoem: PoemData = {
       example: 'pushing into the weave / smooth and thick / bristle of his chin',
       effect:
         'The poem is dominated by the sense of touch. The speaker understands his grandfather through physical contact \u2014 the textures of clothing, skin, and stubble. Touch becomes a language of love.',
-      lineRef: 4,
+      lineRef: 3,
       effectAr:
         '\u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u064a\u0633\u064a\u0637\u0631 \u0639\u0644\u064a\u0647\u0627 \u062d\u0627\u0633\u0651\u0629 \u0627\u0644\u0644\u0645\u0633. \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u064a\u0641\u0647\u0645 \u062c\u062f\u0651\u0647 \u0639\u0646 \u0637\u0631\u064a\u0642 \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0627\u0644\u062c\u0633\u062f\u064a \u2014 \u0645\u0644\u0627\u0645\u0633 \u0627\u0644\u0645\u0644\u0627\u0628\u0633\u060c \u0648\u0627\u0644\u062c\u0644\u062f\u060c \u0648\u0634\u0639\u0631 \u0627\u0644\u0644\u062d\u064a\u0629. \u0627\u0644\u0644\u0645\u0633 \u064a\u0635\u064a\u0631 \u0644\u063a\u0629 \u0645\u0646 \u0644\u063a\u0627\u062a \u0627\u0644\u062d\u0628.',
     },
@@ -497,7 +492,7 @@ const climbingMyGrandfatherPoem: PoemData = {
       example: 'like warm ice',
       effect:
         "Ice is cold; the grandfather's skin is warm. The contradiction holds together the smoothness of aged skin and the warmth of a living body in one perfect phrase.",
-      lineRef: 12,
+      lineRef: 9,
       effectAr:
         '\u0627\u0644\u062b\u0644\u062c \u0628\u0627\u0631\u062f\u061b \u0648\u062c\u0644\u062f \u0627\u0644\u062c\u062f\u0651 \u062f\u0627\u0641\u064a. \u0627\u0644\u062a\u0646\u0627\u0642\u0636 \u064a\u062c\u0645\u0639 \u0646\u0639\u0648\u0645\u0629 \u0627\u0644\u062c\u0644\u062f \u0627\u0644\u0643\u0628\u064a\u0631 \u0641\u064a \u0627\u0644\u0633\u0646 \u0645\u0639 \u062f\u0641\u0621 \u062c\u0633\u0645 \u062d\u064a\u0651\u060c \u0641\u064a \u0639\u0628\u0627\u0631\u0629 \u0648\u0627\u062d\u062f\u0629 \u0643\u0627\u0645\u0644\u0629.',
     },
@@ -506,7 +501,7 @@ const climbingMyGrandfatherPoem: PoemData = {
       example: 'scramble / traverse / purchase / summit',
       effect:
         'Waterhouse uses authentic mountaineering vocabulary rather than vague metaphor. The technical precision makes the conceit feel honest and earned, not decorative.',
-      lineRef: 3,
+      lineRef: 2,
       effectAr:
         'Waterhouse \u064a\u0633\u062a\u062e\u062f\u0645 \u0645\u0641\u0631\u062f\u0627\u062a \u062a\u0633\u0644\u0651\u0642 \u062d\u0642\u064a\u0642\u064a\u0629\u060c \u0645\u0648 \u0627\u0633\u062a\u0639\u0627\u0631\u0629 \u0641\u0636\u0641\u0627\u0636\u0629. \u0627\u0644\u062f\u0642\u0651\u0629 \u0627\u0644\u062a\u0642\u0646\u064a\u0629 \u062a\u062e\u0644\u0651\u064a \u0627\u0644\u0640conceit \u064a\u062d\u0633\u0651 \u0627\u0644\u0642\u0627\u0631\u0626 \u0625\u0646\u0647 \u0635\u0627\u062f\u0642 \u0648\u0645\u0633\u062a\u062d\u064e\u0642\u060c \u0645\u0648 \u0645\u062c\u0631\u0651\u062f \u0632\u064a\u0646\u0629.',
     },
@@ -515,7 +510,7 @@ const climbingMyGrandfatherPoem: PoemData = {
       example: 'feeling his heat, knowing / the slow pulse of his good heart',
       effect:
         'Lines run into each other, mimicking the continuous, hand-over-hand motion of climbing. The line break across "knowing / the slow pulse" delays the moment of intimate knowledge.',
-      lineRef: 18,
+      lineRef: 25,
       effectAr:
         '\u0627\u0644\u0623\u0628\u064a\u0627\u062a \u062a\u0646\u0633\u0627\u0628 \u0645\u0646 \u0648\u0627\u062d\u062f \u0644\u0644\u062b\u0627\u0646\u064a\u060c \u0639\u0634\u0627\u0646 \u062a\u062d\u0627\u0643\u064a \u062d\u0631\u0643\u0629 \u0627\u0644\u062a\u0633\u0644\u0651\u0642 \u0627\u0644\u0645\u0633\u062a\u0645\u0631\u0651\u0629 (\u064a\u062f \u0641\u0648\u0642 \u064a\u062f). \u0648\u0627\u0644\u0643\u0633\u0631 \u0628\u064a\u0646 "knowing / the slow pulse" \u064a\u0623\u062c\u0651\u0644 \u0644\u062d\u0638\u0629 \u0627\u0644\u0645\u0639\u0631\u0641\u0629 \u0627\u0644\u062d\u0645\u064a\u0645\u0629.',
     },
@@ -524,7 +519,7 @@ const climbingMyGrandfatherPoem: PoemData = {
       example: 'the slow pulse of his good heart',
       effect:
         '"Good heart" works literally (a healthy heartbeat) and metaphorically (the grandfather\'s kind nature). The two meanings fuse \u2014 physical and moral worth become inseparable.',
-      lineRef: 19,
+      lineRef: 26,
       effectAr:
         '"Good heart" \u062a\u0634\u062a\u063a\u0644 \u062d\u0631\u0641\u064a\u0627\u064b (\u0646\u0628\u0636 \u0642\u0644\u0628 \u0635\u062d\u064a) \u0648\u0645\u062c\u0627\u0632\u064a\u0627\u064b (\u0637\u0628\u064a\u0639\u0629 \u0627\u0644\u062c\u062f\u0651 \u0627\u0644\u0637\u064a\u0651\u0628\u0629). \u0648\u0627\u0644\u0645\u0639\u0646\u064a\u064a\u0646 \u064a\u0646\u062f\u0645\u062c\u0648\u0646 \u2014 \u0627\u0644\u0642\u064a\u0645\u0629 \u0627\u0644\u062c\u0633\u062f\u064a\u0629 \u0648\u0627\u0644\u0623\u062e\u0644\u0627\u0642\u064a\u0629 \u062a\u0635\u064a\u0631 \u0645\u0627 \u062a\u0646\u0641\u0635\u0644 \u0639\u0646 \u0628\u0639\u0636\u0647\u0627.',
     },
@@ -533,7 +528,7 @@ const climbingMyGrandfatherPoem: PoemData = {
       example: 'earth-stained hand / glassy ridge of a scar / cliff of the face',
       effect:
         'Rather than personifying nature, Waterhouse "geographifies" the human body. The grandfather becomes a landscape, suggesting he is as vast, ancient, and worthy of exploration as a mountain.',
-      lineRef: 7,
+      lineRef: 6,
       effectAr:
         '\u0628\u062f\u0644 \u0645\u0627 \u064a\u0639\u0637\u064a \u0627\u0644\u0637\u0628\u064a\u0639\u0629 \u0635\u0641\u0627\u062a \u0625\u0646\u0633\u0627\u0646\u064a\u0629 (personification)\u060c Waterhouse \u064a\u0639\u0643\u0633 \u0627\u0644\u0639\u0645\u0644\u064a\u0629 \u0648\u064a\u062d\u0648\u0651\u0644 \u0627\u0644\u062c\u0633\u0645 \u0627\u0644\u0628\u0634\u0631\u064a \u0625\u0644\u0649 \u062c\u063a\u0631\u0627\u0641\u064a\u0627. \u0627\u0644\u062c\u062f\u0651 \u064a\u0635\u064a\u0631 \u0645\u0646\u0638\u0631 \u0637\u0628\u064a\u0639\u064a\u060c \u0648\u0647\u0630\u0627 \u064a\u0644\u0645\u0651\u062d \u0625\u0646\u0647 \u0634\u0627\u0633\u0639 \u0648\u0642\u062f\u064a\u0645 \u0648\u064a\u0633\u062a\u062d\u0642 \u0627\u0644\u0627\u0633\u062a\u0643\u0634\u0627\u0641 \u0645\u062b\u0644 \u0623\u064a \u062c\u0628\u0644.',
     },
@@ -542,7 +537,7 @@ const climbingMyGrandfatherPoem: PoemData = {
       example: 'gaze into his eyes, / and grinning back',
       effect:
         'The final reveal that the grandfather is "grinning back" reframes the entire climb as a shared moment. The exploration has not been one-way \u2014 the grandfather has known he was being known.',
-      lineRef: 23,
+      lineRef: 18,
       effectAr:
         '\u0627\u0644\u0643\u0634\u0641 \u0627\u0644\u0623\u062e\u064a\u0631 \u0625\u0646 \u0627\u0644\u062c\u062f\u0651 "grinning back" (\u064a\u0628\u062a\u0633\u0645 \u0644\u0647) \u064a\u0639\u064a\u062f \u0635\u064a\u0627\u063a\u0629 \u0627\u0644\u062a\u0633\u0644\u0651\u0642 \u0643\u0644\u0647 \u0643\u0644\u062d\u0638\u0629 \u0645\u0634\u062a\u0631\u0643\u0629. \u0627\u0644\u0627\u0633\u062a\u0643\u0634\u0627\u0641 \u0645\u0627 \u0643\u0627\u0646 \u0645\u0646 \u0637\u0631\u0641 \u0648\u0627\u062d\u062f \u2014 \u0627\u0644\u062c\u062f\u0651 \u0643\u0627\u0646 \u0639\u0627\u0631\u0641 \u0645\u0646 \u0627\u0644\u0628\u062f\u0627\u064a\u0629 \u0625\u0646\u0647 \u064a\u064f\u0639\u0631\u064e\u0641.',
     },
@@ -838,20 +833,22 @@ export default function ClimbingMyGrandfatherPage() {
         revisionTopics={REVISION_TOPICS}
       />
 
-      {/* Fair-dealing extract notice - Climbing My Grandfather is in copyright (Waterhouse estate).
-          Only verified short extracts are quoted; mid-climb passages are summarised in brackets. */}
+      {/* Copyright notice - Climbing My Grandfather is in copyright (Waterhouse estate). The
+          viewer below paraphrases every line; only short phrases are quoted, in the notes. Until
+          25 September 2026 this notice said the poem was reproduced in fair-dealing extracts,
+          while the viewer printed most of it. */}
       <aside
         role="note"
         aria-label="Copyright and fair-dealing notice"
         className="rounded-lg border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-[12px] leading-relaxed text-amber-900 dark:text-amber-200"
       >
         <p>
-          <strong>Note on the poem text below:</strong> The poem body is reproduced under
-          fair-dealing extracts only. Students should refer to Waterhouse&rsquo;s <em>In</em> (The
-          Rialto, 2000) or the board-licensed AQA Love &amp; Relationships anthology for the
-          complete authoritative 25-line text. Bracketed prose paraphrases passages omitted for
-          copyright; quoted material is restricted to short extracts used for analytical purposes
-          under CDPA 1988 s.30.
+          <strong>Note on the poem text below:</strong> The poem is in copyright, so it is not
+          printed here. Each line below is a paraphrase in our own words, not Waterhouse&rsquo;s
+          text, and the notes quote only short phrases, for criticism and review under CDPA 1988
+          s.30. The poem is printed in full in the AQA Love &amp; Relationships anthology and in
+          Waterhouse&rsquo;s collection <em>In</em> (2000): read it there before quoting it in an
+          exam.
         </p>
       </aside>
 
@@ -907,10 +904,10 @@ export default function ClimbingMyGrandfatherPage() {
           (2000).
         </p>
         <p>
-          Poem text is reproduced for the purpose of private study and educational criticism under
-          UK fair-dealing provisions (Copyright, Designs and Patents Act 1988, s.30). No commercial
-          use is intended. All quotations remain the intellectual property of the respective rights
-          holders.
+          The poem itself is not printed on this page: each line in the poem viewer is a paraphrase
+          in our own words, and only short phrases are quoted, for criticism and review under UK
+          fair-dealing provisions (Copyright, Designs and Patents Act 1988, s.30). All quotations
+          remain the intellectual property of the rights holders.
         </p>
       </footer>
     </div>

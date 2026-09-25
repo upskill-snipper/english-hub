@@ -69,11 +69,10 @@ const CHARACTERS: CharacterStudy[] = [
           'The Inspector directly challenges the capitalist assumption that wealth entitles its holders to immunity from scrutiny. The balanced phrasing frames social duty as non-negotiable, immediately inverting the power dynamic between the Inspector and Birling.',
       },
       {
-        quote:
-          '"One Eva Smith has gone \u2014 but there are millions and millions and millions of Eva Smiths and John Smiths still left with us."',
+        quote: '"One Eva Smith has gone \u2014 but there are millions and millions and millions"',
         act: 'Act 3',
         analysis:
-          'The Inspector universalises Eva\u2019s suffering, turning a single case into a political argument about systemic injustice. The tripled "millions" insists on scale; the addition of "John Smiths" makes the argument gender-inclusive; "still left with us" insists that the problem is present, not past.',
+          'The Inspector universalises Eva\u2019s suffering, turning a single case into a political argument about systemic injustice. The tripled "millions" insists on scale; as the speech goes on, the addition of "John Smiths" makes the argument gender-inclusive and "still left with us" insists that the problem is present, not past.',
       },
       {
         quote: '"We don\u2019t live alone. We are members of one body."',
@@ -111,15 +110,14 @@ const CHARACTERS: CharacterStudy[] = [
           'Birling articulates the capitalist individualism that Priestley wrote the play to dismantle. "His own" draws a boundary around family and class, leaving people like Eva outside the circle of moral obligation. It is the direct opposite of the Inspector\u2019s final speech.',
       },
       {
-        quote:
-          '"If we were all responsible for everything that happened to everybody \u2026 it would be very awkward."',
+        quote: '"If we were all responsible for everything ... it would be very awkward."',
         act: 'Act 3',
         analysis:
           'Birling reduces a moral question to a practical inconvenience. The word "awkward" reveals the hollowness of his position \u2014 he cannot engage with the ethics of responsibility, only with its personal cost. Priestley uses understatement to expose moral emptiness.',
       },
       {
         quote:
-          '"The way some of these cranks talk and write now, you\u2019d think everybody has to look after everybody else."',
+          '"cranks talk and write now, you\u2019d think everybody has to look after everybody else."',
         act: 'Act 1',
         analysis:
           'Birling dismisses socialists as "cranks" before the Inspector arrives, setting up the dramatic reversal that follows. The word "cranks" reveals his contempt for collective responsibility, making the Inspector\u2019s arrival an immediate challenge to his worldview.',
@@ -207,13 +205,13 @@ const CHARACTERS: CharacterStudy[] = [
           'Sheila accuses Gerald and her parents of moral regression. The short, accusing sentences convey frustrated disappointment and position her as the play\u2019s moral centre. "Stopped" implies a deliberate choice to retreat from uncomfortable truth.',
       },
       {
-        quote: '"It\u2019s what happened to the girl and what we all did to her that matters."',
+        quote: '"what happened to the girl and what we all did to her that matters."',
         act: 'Act 3',
         analysis:
           'Sheila cuts through her parents\u2019 evasion with devastating clarity. "We all" insists on collective guilt. "Matters" is a simple, emphatic word that refuses to let the family reduce Eva\u2019s death to a question of the Inspector\u2019s identity.',
       },
       {
-        quote: '"No, because I remember what he said, how he looked, and what he made me feel."',
+        quote: '"I remember what he said, how he looked, and what he made me feel."',
         act: 'Act 3',
         analysis:
           'Sheila explains why she cannot return to ignorance. The tricolon \u2014 "said," "looked," "feel" \u2014 moves from intellectual to emotional, showing that the Inspector\u2019s impact was not just rational but deeply felt. Priestley argues that genuine moral change is irreversible.',
@@ -248,8 +246,7 @@ const CHARACTERS: CharacterStudy[] = [
           'Eric\u2019s euphemism for his assault on Eva. "That state" avoids naming his drunkenness directly, while "turns nasty" sanitises violence. Priestley forces the audience to read through Eric\u2019s evasive language to understand the full horror of what he did.',
       },
       {
-        quote:
-          '"she didn\u2019t want me to marry her \u2026 she treated me \u2014 as if I were a kid."',
+        quote: '"she treated me \u2014 as if I were a kid."',
         act: 'Act 3',
         analysis:
           'Eric reveals that Eva had more emotional maturity than he did. The phrase "as if I were a kid" shows his immaturity and his dependence. Priestley gives Eva, even in her absence, more moral stature than the privileged young man who wronged her.',
@@ -319,8 +316,7 @@ const CHARACTERS: CharacterStudy[] = [
     arc: 'Eva\u2019s story is told in reverse through the confessions of others. Each revelation adds a new layer of exploitation. She moves from independent worker (sacked by Birling) to shop assistant (dismissed by Sheila) to kept woman (abandoned by Gerald) to assault victim (Eric) to charity applicant (rejected by Sybil) to suicide. The downward trajectory is relentless, and Priestley ensures that every step was caused by a Birling or a Croft.',
     keyQuotes: [
       {
-        quote:
-          '"One Eva Smith has gone \u2014 but there are millions and millions and millions of Eva Smiths and John Smiths still left with us."',
+        quote: '"One Eva Smith has gone \u2014 but there are millions and millions and millions"',
         act: 'Act 3 (Inspector)',
         analysis:
           'The Inspector universalises Eva\u2019s suffering. She is not a unique case but a representative of systemic injustice. The tripled "millions" turns a personal tragedy into a political argument about the scale of class exploitation.',
@@ -332,8 +328,7 @@ const CHARACTERS: CharacterStudy[] = [
           'Birling\u2019s description of Eva\u2019s dismissal reveals that her "crime" was speaking up. "Far too much" measures speech by class entitlement: a working-class woman who demands fair wages is automatically saying too much. Priestley shows how power silences dissent.',
       },
       {
-        quote:
-          '"She was claiming elaborate fine feelings and scruples that were simply absurd in a girl in her position."',
+        quote: '"She was claiming elaborate fine feelings ... absurd in a girl in her position."',
         act: 'Act 2 (Sybil)',
         analysis:
           'Sybil denies Eva the capacity for moral feeling based solely on her class. "In her position" reveals that Sybil\u2019s moral framework reserves virtues like scruple and feeling for the upper classes. Priestley exposes this as the ugliest form of class prejudice.',

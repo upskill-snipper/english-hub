@@ -38,10 +38,30 @@ export const metadata: Metadata = {
 const BAYONET_CHARGE: PoemData = {
   title: 'Bayonet Charge',
   poet: 'Ted Hughes',
+  // NOTE: "Bayonet Charge" (Ted Hughes, from The Hawk in the Rain, Faber &
+  // Faber, 1957) remains in copyright. To avoid reproducing the poem verbatim,
+  // each line below is given as a PARAPHRASE in the site's own words rather
+  // than the poet's exact text, and the annotations quote only short phrases
+  // (23 words across all of them, under 15 per cent of the poem's 192).
+  // Students must read the full original in the AQA Power & Conflict
+  // anthology.
+  //
+  // Until 25 September 2026 this array printed the whole poem, and entries 4
+  // to 6 were not Hughes at all: two invented lines and a conflation of two
+  // real ones. Entries 4 to 6 now paraphrase the published lines 4 to 6. The
+  // blank entry after entry 6 is also wrong (the first stanza runs on to the
+  // molten-iron line), but it is kept, because the viewer numbers entries by
+  // position and every languageDevices lineRef below counts it. The note on
+  // the numb rifle moved from entry 4 to entry 6, where that line now is.
+  // lineRef is zero-based: the caesura device pointed at index 5, which held
+  // the invented short line and now holds the rifle line, so it points at the
+  // bewilderment line (index 10); the furrows, hare and blue-air devices were
+  // each one entry late (the furrows one on a blank) and now point at 16, 18
+  // and 24. Check the paraphrases against the anthology before relying on them.
   lines: [
     // ── Stanza 1 ──
     {
-      text: 'Suddenly he awoke and was running - raw',
+      text: '[Paraphrase] Without warning he snapped awake to find himself already charging, chafed and sore',
       annotations: [
         {
           type: 'In medias res',
@@ -56,17 +76,17 @@ const BAYONET_CHARGE: PoemData = {
       ],
     },
     {
-      text: 'In raw-seamed hot khaki, his sweat heavy,',
+      text: '[Paraphrase] in a hot, rough-stitched uniform, weighed down by his sweat.',
       annotations: [
         {
           type: 'Tactile imagery',
-          note: '"Raw-seamed hot khaki" - the rough, chafing uniform emphasises physical discomfort and the reality of war, far from any romantic ideal.',
+          note: 'The rough, chafing "raw-seamed" uniform emphasises physical discomfort and the reality of war, far from any romantic ideal.',
           color: '#22c55e',
         },
       ],
     },
     {
-      text: 'Stumbling across a field of clods towards a green hedge',
+      text: '[Paraphrase] He staggered over lumpy, ploughed earth in the direction of a leafy hedge',
       annotations: [
         {
           type: 'Verbs',
@@ -76,35 +96,42 @@ const BAYONET_CHARGE: PoemData = {
       ],
     },
     {
-      text: 'That dazzled with rifle fire, he lugged a rifle numb',
+      text: '[Paraphrase] that glittered with the flashes of gunfire, and he could hear',
       annotations: [
         {
           type: 'Contrast',
-          note: '"Dazzled" creates a jarring beauty amid violence. "Numb" shows emotional and physical shutdown.',
+          note: '"Dazzled" creates a jarring beauty amid violence.',
           color: '#3b82f6',
         },
       ],
     },
     {
-      text: 'As blind as a smashed arm, and he sweat and he sweat -',
+      text: '[Paraphrase] bullets ripping through the sky as if gutting it.',
     },
     {
-      text: 'Almost stopped -',
+      text: '[Paraphrase] He hauled his gun along, as dead and useless in his grip as a shattered limb.',
+      annotations: [
+        {
+          type: 'Simile',
+          note: '"Numb" shows emotional and physical shutdown: the rifle is as lifeless as a broken limb.',
+          color: '#3b82f6',
+        },
+      ],
     },
     { text: '' },
     // ── Stanza 2 ──
     {
-      text: 'The patriotic tear that had brimmed in his eye',
+      text: '[Paraphrase] The tear of national pride that once filled his eyes',
       annotations: [
         {
           type: 'Irony',
-          note: '"The patriotic tear" is presented as something that once motivated him, but is now meaningless in the face of real combat.',
+          note: 'The "patriotic tear" is presented as something that once motivated him, but is now meaningless in the face of real combat.',
           color: '#f59e0b',
         },
       ],
     },
     {
-      text: 'Sweating like molten iron from the centre of his chest, -',
+      text: '[Paraphrase] had become sweat pouring from deep in his torso, like red-hot liquid metal.',
       annotations: [
         {
           type: 'Simile',
@@ -115,7 +142,7 @@ const BAYONET_CHARGE: PoemData = {
     },
     { text: '' },
     {
-      text: 'In bewilderment then he almost stopped -',
+      text: '[Paraphrase] Confused, he very nearly came to a halt.',
       annotations: [
         {
           type: 'Caesura',
@@ -125,7 +152,7 @@ const BAYONET_CHARGE: PoemData = {
       ],
     },
     {
-      text: 'In what cold clockwork of the stars and the nations',
+      text: '[Paraphrase] He wondered: in which unfeeling, machine-like scheme of destiny and politics',
       annotations: [
         {
           type: 'Metaphor',
@@ -135,7 +162,7 @@ const BAYONET_CHARGE: PoemData = {
       ],
     },
     {
-      text: 'Was he the hand pointing that second? He was running',
+      text: '[Paraphrase] had he become the pointer on the dial at that instant? He kept on running',
       annotations: [
         {
           type: 'Rhetorical question',
@@ -145,10 +172,10 @@ const BAYONET_CHARGE: PoemData = {
       ],
     },
     {
-      text: 'Like a man who has jumped up in the dark and runs',
+      text: '[Paraphrase] like someone who has sprung to his feet in pitch darkness and keeps going,',
     },
     {
-      text: 'Listening between his footfalls for the reason',
+      text: '[Paraphrase] trying to make out, in the gaps between his strides, the cause',
       annotations: [
         {
           type: 'Simile',
@@ -158,14 +185,14 @@ const BAYONET_CHARGE: PoemData = {
       ],
     },
     {
-      text: 'Of his still running, and his foot hung like',
+      text: '[Paraphrase] that keeps him running at all; then his lifted foot paused in the air, like',
     },
     {
-      text: 'Statuary in mid-stride. Then the shot-slashed furrows',
+      text: '[Paraphrase] a sculpture caught between steps. Next, the ploughed rows torn up by gunfire',
       annotations: [
         {
           type: 'Imagery',
-          note: '"Statuary in mid-stride" freezes the soldier like a monument - a powerful image of paralysis between thought and action.',
+          note: 'Comparing the frozen soldier to "statuary" turns him into a monument - a powerful image of paralysis between thought and action.',
           color: '#22c55e',
         },
       ],
@@ -173,7 +200,7 @@ const BAYONET_CHARGE: PoemData = {
     { text: '' },
     // ── Stanza 3 ──
     {
-      text: 'Threw up a yellow hare that rolled like a flame',
+      text: '[Paraphrase] flushed out a straw-coloured hare, which rolled over as if it were ablaze',
       annotations: [
         {
           type: 'Symbolism',
@@ -182,22 +209,22 @@ const BAYONET_CHARGE: PoemData = {
         },
         {
           type: 'Simile',
-          note: '"Rolled like a flame" - the hare\'s agony is compared to fire, linking it to the destruction of war.',
+          note: 'The hare\'s agony is compared to fire ("like a flame"), linking it to the destruction of war.',
           color: '#22c55e',
         },
       ],
     },
     {
-      text: 'And crawled in a threshing circle, his mouth wide',
+      text: '[Paraphrase] and dragged itself round and round, writhing, its jaws gaping',
     },
     {
-      text: 'Open silent, its eyes standing out.',
+      text: '[Paraphrase] open but soundless, its eyes bulging.',
     },
     {
-      text: 'He plunged past with his bayonet toward the green hedge,',
+      text: '[Paraphrase] He charged past it, bayonet in hand, making for the hedge.',
     },
     {
-      text: 'King, honour, human dignity, etcetera',
+      text: '[Paraphrase] His ideals (duty to the monarch, honour, the worth of every person, and so on)',
       annotations: [
         {
           type: 'Listing / Bathos',
@@ -212,7 +239,7 @@ const BAYONET_CHARGE: PoemData = {
       ],
     },
     {
-      text: 'Dropped like luxuries in a yelling alarm',
+      text: '[Paraphrase] were thrown aside like needless extras amid the screaming panic',
       annotations: [
         {
           type: 'Simile',
@@ -222,7 +249,7 @@ const BAYONET_CHARGE: PoemData = {
       ],
     },
     {
-      text: 'To get out of that blue crackling air',
+      text: '[Paraphrase] in his rush to escape the air, blue and snapping with gunfire,',
       annotations: [
         {
           type: 'Synaesthesia / Onomatopoeia',
@@ -231,8 +258,9 @@ const BAYONET_CHARGE: PoemData = {
         },
       ],
     },
-    // VERIFY: previously contained fabricated lines using the word 'survey' three times ("His terror's survey, he ran, and his survey / As a survey of heat - to get out - / Of the survey of pain."). The actual Hughes ending is 'His terror's touchy dynamite.' but until full closing verified against The Hawk in the Rain, lines removed conservatively.
-    { text: "His terror's touchy dynamite." },
+    {
+      text: '[Paraphrase] The fear that drives him is volatile explosive, liable to go off at the slightest touch.',
+    },
   ],
 
   /* ── Context ──────────────────────────────────────────────────── */
@@ -423,7 +451,7 @@ Caesura: شَرَطات ووقفات في وسط الأبيات (مثلاً "Alm
       example: 'Almost stopped -',
       effect:
         "The abrupt dash and short line create a physical pause, mirroring the soldier's hesitation on the battlefield. It dramatises the tension between the instinct to flee and the impulse to stop and think.",
-      lineRef: 5,
+      lineRef: 10,
       effectAr:
         'الشَرْطَة المفاجئة والسطر القصير يخلقون وقفة ماديّة، تحاكي تردّد الجندي في الميدان. وتجسّد التوتر بين غريزة الهروب ودافع التوقّف والتفكير.',
     },
@@ -432,7 +460,7 @@ Caesura: شَرَطات ووقفات في وسط الأبيات (مثلاً "Alm
       example: 'shot-slashed furrows',
       effect:
         'The compound adjective "shot-slashed" combines the violence of bullets with the agricultural image of ploughed furrows, showing how war destroys the natural landscape. The harsh consonants create an aggressive sonic quality.',
-      lineRef: 17,
+      lineRef: 16,
       effectAr:
         'الصفة المركّبة "shot-slashed" تجمع عنف الرصاص مع الصورة الزراعية للأخاديد المحروثة، وتبيّن كيف الحرب تدمّر المنظر الطبيعي. والحروف الساكنة القاسية فيها تولّد جودة صوتيّة عدوانية.',
     },
@@ -441,7 +469,7 @@ Caesura: شَرَطات ووقفات في وسط الأبيات (مثلاً "Alm
       example: 'blue crackling air',
       effect:
         '"Crackling" mimics the sound of gunfire while "blue" adds a visual dimension, creating synaesthesia. This sensory overload conveys the overwhelming, nightmarish quality of the battlefield.',
-      lineRef: 25,
+      lineRef: 24,
       effectAr:
         '"Crackling" تحاكي صوت الرصاص (onomatopoeia)، و"blue" تضيف بُعد بصري، فينتج synaesthesia. وهذا الفيض الحسي يوصل جودة الميدان الكابوسيّة اللي تطغى على الجندي وتطمسه.',
     },
@@ -450,7 +478,7 @@ Caesura: شَرَطات ووقفات في وسط الأبيات (مثلاً "Alm
       example: 'a yellow hare that rolled like a flame',
       effect:
         "The hare symbolises nature and innocence caught in human violence. Its suffering - silent, wide-eyed, purposeless - mirrors the soldier's own. It becomes the catalyst that strips away his last patriotic illusions.",
-      lineRef: 19,
+      lineRef: 18,
       effectAr:
         'الأرنب symbol للطبيعة والبراءة اللي علقت في العنف البشري. ومعاناته - صامتة، بعيون مفتوحة بسعة، وبلا هدف - تعكس معاناة الجندي. ويصير هو المحفّز اللي يجرّد الجندي من آخر أوهامه الوطنية.',
     },
@@ -830,9 +858,10 @@ export default function BayonetChargePage() {
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         &ldquo;Bayonet Charge&rdquo; by Ted Hughes is published by Faber &amp; Faber in{' '}
-        <em>The Hawk in the Rain</em> (1957). Short quotations are reproduced here under the fair
-        dealing provision of the CDPA 1988 for the purposes of criticism and review. Full text
-        available in your AQA Power &amp; Conflict anthology.
+        <em>The Hawk in the Rain</em> (1957). The poem is paraphrased here rather than printed, and
+        short quotations are reproduced under the fair dealing provision of the CDPA 1988 for the
+        purposes of criticism and review. The full text is printed in your AQA Power &amp; Conflict
+        anthology.
       </p>
     </div>
   )

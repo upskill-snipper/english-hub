@@ -38,21 +38,32 @@ export const metadata: Metadata = {
 const POEM: PoemData = {
   title: 'Checking Out Me History',
   poet: 'John Agard',
+  // NOTE: "Checking Out Me History" (John Agard) is in copyright. To avoid
+  // reproducing the poem, each line below is given as a PARAPHRASE in the site's
+  // own words, in standard English, one entry per line of the poem, and the
+  // notes quote only short phrases. Students must read the full text, and hear
+  // its Creole, in the AQA Power and Conflict anthology.
+  // Until 25 September 2026 this array printed the poem verbatim, and printed
+  // it wrongly: its closing two lines also appeared near the start, other
+  // lines were duplicated, reworded or placed in the wrong stanza, and eleven
+  // of its 53 lines were missing, six of them from the Mary Seacole stanza. The
+  // viewer numbers entries by position, so the entries below follow the poem's
+  // own order and stanza breaks.
   lines: [
-    // Stanza 1 - British education / nursery rhyme
+    // Stanza 1
     {
-      text: 'Dem tell me',
+      text: '[Paraphrase] Those in charge told him things,',
       annotations: [
         {
           type: 'Phonetic dialect',
-          note: '"Dem" instead of "They" - Agard writes in Caribbean Creole throughout, asserting his cultural identity through language itself. The pronoun "Dem" distances the speaker from the British establishment.',
+          note: '"Dem" in place of the standard English pronoun - Agard writes in Caribbean Creole throughout, asserting his cultural identity through language itself. The pronoun "Dem" distances the speaker from the British establishment.',
           color: '#f59e0b',
         },
       ],
     },
-    { text: 'Dem tell me' },
+    { text: '[Paraphrase] (repeated) those in charge told him things,' },
     {
-      text: 'Wha dem want to tell me',
+      text: '[Paraphrase] but only what they wanted him to hear.',
       annotations: [
         {
           type: 'Anaphora',
@@ -62,18 +73,20 @@ const POEM: PoemData = {
       ],
     },
     { text: '' },
+
+    // Stanza 2
     {
-      text: 'Bandage up me eye with me own history',
+      text: '[Paraphrase] They bound his eyes, using his own history as the blindfold',
       annotations: [
         {
           type: 'Metaphor',
-          note: '"Bandage up me eye" - a powerful metaphor for being blinded by a one-sided education. The bandage is made from "me own history", suggesting his Caribbean heritage has been used against him, wrapped around him to prevent him from seeing the truth.',
+          note: '"Bandage up me eye" - a powerful metaphor for being blinded by a one-sided education. The bandage is made from his own history, suggesting his Caribbean heritage has been used against him, wrapped around him to prevent him from seeing the truth.',
           color: '#ef4444',
         },
       ],
     },
     {
-      text: 'Blind me to me own identity',
+      text: '[Paraphrase] and stopped him seeing who he really is.',
       annotations: [
         {
           type: 'Identity',
@@ -83,8 +96,10 @@ const POEM: PoemData = {
       ],
     },
     { text: '' },
+
+    // Stanza 3
     {
-      text: 'Dem tell me bout 1066 and all dat',
+      text: '[Paraphrase] They taught him the Norman Conquest of 1066 and the rest',
       annotations: [
         {
           type: 'Allusion',
@@ -94,7 +109,7 @@ const POEM: PoemData = {
       ],
     },
     {
-      text: 'Dem tell me bout Dick Whittington and he cat',
+      text: '[Paraphrase] and the story of Dick Whittington’s cat.',
       annotations: [
         {
           type: 'Nursery rhyme',
@@ -104,93 +119,21 @@ const POEM: PoemData = {
       ],
     },
     {
-      text: 'Dem tell me bout Ole King Cole was a merry ole soul',
-      annotations: [
-        {
-          type: 'Nursery rhyme',
-          note: 'Old King Cole - a nursery rhyme character placed alongside genuine historical events, blurring the line between history and fantasy in the British curriculum as Agard experienced it.',
-          color: '#ec4899',
-        },
-      ],
-    },
-    {
-      text: 'and de dish ran away with de spoon',
-      annotations: [
-        {
-          type: 'Nursery rhyme',
-          note: 'From "Hey Diddle Diddle" - the descent into pure nonsense underscores Agard\'s argument that the British education he received was meaningless compared to the history he was denied.',
-          color: '#ec4899',
-        },
-      ],
-    },
-    { text: '' },
-
-    // Stanza 2 - Toussaint L'Ouverture
-    {
-      text: 'But now I checking out me own history',
-      annotations: [
-        {
-          type: 'Volta / Turning point',
-          note: '"But now" marks the shift from passive recipient to active agent. The present continuous "checking out" suggests an ongoing, deliberate process of self-education. This is the poem\'s refrain and thesis statement.',
-          color: '#f59e0b',
-        },
-      ],
-    },
-    {
-      text: 'I carving out me identity',
-      annotations: [
-        {
-          type: 'Metaphor',
-          note: '"Carving" suggests something permanent and deliberate, like a sculptor creating art from raw material. Identity is not given - it must be actively made. The verb also implies effort and resistance against hard material.',
-          color: '#ef4444',
-        },
-      ],
-    },
-    { text: '' },
-    {
-      text: 'Dem tell me bout de man who discover de balloon',
-      annotations: [
-        {
-          type: 'Contrast',
-          note: 'The balloon - a relatively trivial invention - is what the British curriculum chose to teach, while the heroic achievements of Caribbean figures were ignored.',
-          color: '#6366f1',
-        },
-      ],
-    },
-    {
-      text: 'and de cow who jump over de moon',
-      annotations: [
-        {
-          type: 'Nursery rhyme',
-          note: 'Another nursery rhyme mixed with historical fact, reinforcing the idea that British education blurred the line between trivial fantasy and genuine knowledge.',
-          color: '#ec4899',
-        },
-      ],
-    },
-    { text: '' },
-    {
-      text: 'Dem tell me bout de dish heaving away with de spoon',
-      annotations: [
-        {
-          type: 'Repetition',
-          note: 'A return to the nursery rhyme imagery, creating a cyclical pattern that mirrors the repetitive, narrow nature of the education system Agard criticises.',
-          color: '#8b5cf6',
-        },
-      ],
-    },
-    {
-      text: "but dem never tell me bout Toussaint L'Ouverture",
+      text: '[Paraphrase] Yet as for Toussaint L’Ouverture,',
       annotations: [
         {
           type: 'Allusion - Caribbean hero',
-          note: "Toussaint L'Ouverture (1743-1803) - the leader of the Haitian Revolution, the only successful slave revolt in history. He is the first of three Caribbean/African heroes Agard celebrates as missing from his education.",
+          note: "Toussaint L'Ouverture (1743-1803) - the leader of the Haitian Revolution, the only slave revolt in history to found an independent state. He is the first of the three Caribbean heroes Agard gives a stanza of their own, all missing from his education.",
           color: '#10b981',
         },
       ],
     },
+    { text: '[Paraphrase] no, not one lesson ever mentioned him.' },
     { text: '' },
+
+    // Stanza 4 - Toussaint L'Ouverture
     {
-      text: 'Toussaint',
+      text: '[Paraphrase] The name Toussaint stands alone.',
       annotations: [
         {
           type: 'Italicised stanza',
@@ -200,7 +143,7 @@ const POEM: PoemData = {
       ],
     },
     {
-      text: 'a slave',
+      text: '[Paraphrase] an enslaved man',
       annotations: [
         {
           type: 'Short lines',
@@ -209,22 +152,22 @@ const POEM: PoemData = {
         },
       ],
     },
-    { text: 'with vision' },
-    { text: 'lick back' },
+    { text: '[Paraphrase] who had foresight' },
+    { text: '[Paraphrase] defeated and drove back' },
     {
-      text: 'Napoleon',
+      text: '[Paraphrase] the emperor Napoleon’s',
       annotations: [
         {
           type: 'Heroic language',
-          note: '"Lick back Napoleon" - Caribbean dialect for "defeated". L\'Ouverture\'s forces defeated Napoleon\'s army, one of the most powerful in the world. The colloquial language makes the achievement feel personal and immediate.',
+          note: "\"Lick back Napoleon\" - Caribbean dialect for beating an enemy back. L'Ouverture's forces defeated Napoleon's army, one of the most powerful in the world. The colloquial language makes the achievement feel personal and immediate.",
           color: '#f59e0b',
         },
       ],
     },
-    { text: 'battalion' },
-    { text: 'and first Black' },
+    { text: '[Paraphrase] troops,' },
+    { text: '[Paraphrase] and a pioneering Black' },
     {
-      text: 'Republic born',
+      text: '[Paraphrase] republic, Haiti, was founded.',
       annotations: [
         {
           type: 'Achievement',
@@ -234,7 +177,7 @@ const POEM: PoemData = {
       ],
     },
     {
-      text: 'Toussaint de thorn',
+      text: '[Paraphrase] Toussaint, a constant irritation',
       annotations: [
         {
           type: 'Metaphor',
@@ -243,24 +186,29 @@ const POEM: PoemData = {
         },
       ],
     },
-    { text: 'to de French' },
+    { text: '[Paraphrase] for the French colonisers' },
     {
-      text: 'Toussaint de beacon',
+      text: '[Paraphrase] Toussaint, a guiding light',
       annotations: [
         {
           type: 'Metaphor',
-          note: '"De beacon" - a guiding light. Toussaint represents hope and direction for oppressed people. The contrast between "thorn" (pain to oppressors) and "beacon" (hope to the oppressed) shows his dual significance.',
+          note: '"De beacon" - a guiding light. Toussaint represents hope and direction for oppressed people. The contrast between the thorn (pain to oppressors) and the beacon (hope to the oppressed) shows his dual significance.',
           color: '#ef4444',
         },
       ],
     },
-    { text: 'of de Haitian Revolution' },
+    { text: '[Paraphrase] for the revolution in Haiti.' },
     { text: '' },
 
-    // Stanza 3 - British education again
+    // Stanza 5 - British education again
     {
-      text: 'Dem tell me bout de man who discover de balloon',
+      text: '[Paraphrase] They taught him about the inventor of the balloon',
       annotations: [
+        {
+          type: 'Contrast',
+          note: 'The balloon - a relatively trivial invention - is what the British curriculum chose to teach, while the heroic achievements of Caribbean figures were ignored.',
+          color: '#6366f1',
+        },
         {
           type: 'Repetition',
           note: 'The repetition of British curriculum content creates a monotonous, cyclical feel - the same narrow history taught over and over while Caribbean history remains invisible.',
@@ -268,24 +216,41 @@ const POEM: PoemData = {
         },
       ],
     },
-    { text: 'and de cow who jump over de moon' },
-    { text: '' },
-    { text: 'Dem tell me bout de dish heaving away with de spoon' },
     {
-      text: 'but dem never tell me bout Nanny de maroon',
+      text: '[Paraphrase] and the nursery-rhyme cow that leapt across the moon.',
+      annotations: [
+        {
+          type: 'Nursery rhyme',
+          note: 'Another nursery rhyme mixed with historical fact, reinforcing the idea that British education blurred the line between trivial fantasy and genuine knowledge.',
+          color: '#ec4899',
+        },
+      ],
+    },
+    {
+      text: '[Paraphrase] They taught him of the dish and spoon that eloped together',
+      annotations: [
+        {
+          type: 'Nursery rhyme',
+          note: 'From "Hey Diddle Diddle" - the descent into pure nonsense underscores Agard\'s argument that the British education he received was meaningless compared to the history he was denied.',
+          color: '#ec4899',
+        },
+      ],
+    },
+    {
+      text: '[Paraphrase] but never about Nanny, the leader of the Maroons.',
       annotations: [
         {
           type: 'Allusion - Caribbean hero',
-          note: 'Nanny of the Maroons (c.1686-c.1755) - a Jamaican national hero who led guerrilla warfare against British colonisers. She is one of only two women named as a National Hero of Jamaica.',
+          note: 'Nanny of the Maroons (c.1686-c.1755) - a Jamaican national hero who led guerrilla warfare against British colonisers. She is the only woman among the National Heroes of Jamaica.',
           color: '#10b981',
         },
       ],
     },
     { text: '' },
 
-    // Stanza 4 - Nanny de maroon
+    // Stanza 6 - Nanny of the Maroons
     {
-      text: 'Nanny',
+      text: '[Paraphrase] The name Nanny stands alone.',
       annotations: [
         {
           type: 'Italicised stanza',
@@ -294,9 +259,9 @@ const POEM: PoemData = {
         },
       ],
     },
-    { text: 'see-far woman' },
+    { text: '[Paraphrase] a woman with far-reaching sight' },
     {
-      text: 'of mountain dream',
+      text: '[Paraphrase] whose dreams belonged to the mountains,',
       annotations: [
         {
           type: 'Metaphor',
@@ -305,19 +270,19 @@ const POEM: PoemData = {
         },
       ],
     },
-    { text: 'fire-woman' },
+    { text: '[Paraphrase] a blazing woman whose fight' },
     {
-      text: 'struggle stream',
+      text: '[Paraphrase] was a stream full of hope',
       annotations: [
         {
           type: 'Metaphor',
-          note: '"Struggle stream" - the ongoing flow of resistance. "Stream" suggests something natural, unstoppable, and life-giving. The struggle is not a single event but a continuous force.',
+          note: '"Hopeful stream" - the ongoing flow of resistance. "Stream" suggests something natural, unstoppable, and life-giving. The struggle is not a single event but a continuous force.',
           color: '#ef4444',
         },
       ],
     },
     {
-      text: 'to freedom river',
+      text: '[Paraphrase] flowing into the river of liberty.',
       annotations: [
         {
           type: 'Metaphor',
@@ -328,19 +293,19 @@ const POEM: PoemData = {
     },
     { text: '' },
 
-    // Stanza 5 - British education again
+    // Stanza 7 - British education again
     {
-      text: 'Dem tell me bout Lord Nelson and Waterloo',
+      text: '[Paraphrase] They taught him of Waterloo and of Admiral Nelson',
       annotations: [
         {
           type: 'Allusion',
-          note: 'Lord Nelson - a British naval hero. Agard juxtaposes celebrated British military figures with forgotten Caribbean resistance fighters, questioning who gets to be called a "hero".',
+          note: 'Lord Nelson - a British naval hero. Agard juxtaposes celebrated British military figures with forgotten Caribbean resistance fighters, questioning who gets to be called a hero.',
           color: '#10b981',
         },
       ],
     },
     {
-      text: 'but dem never tell me bout Shaka de great Zulu',
+      text: '[Paraphrase] but never about Shaka, the mighty Zulu king.',
       annotations: [
         {
           type: 'Allusion - African hero',
@@ -349,19 +314,18 @@ const POEM: PoemData = {
         },
       ],
     },
-    { text: '' },
     {
-      text: 'Dem tell me bout Columbus and 1492',
+      text: '[Paraphrase] They taught him of Columbus’s voyage of 1492',
       annotations: [
         {
           type: 'Allusion',
-          note: 'Columbus\'s arrival in the Americas in 1492 - presented as "discovery" in British education, but from a Caribbean perspective it marks the beginning of colonisation, slavery, and genocide.',
+          note: "Columbus's arrival in the Americas in 1492 - presented as a discovery in British education, but from a Caribbean perspective it marks the beginning of colonisation, slavery, and genocide.",
           color: '#10b981',
         },
       ],
     },
     {
-      text: 'but not a word bout de Caribs and de Arawaks too',
+      text: '[Paraphrase] but what became of the islands’ first peoples, Caribs and Arawaks alike?',
       annotations: [
         {
           type: 'Contrast',
@@ -372,9 +336,9 @@ const POEM: PoemData = {
     },
     { text: '' },
 
-    // Stanza 6 - British education again
+    // Stanza 8 - British education again
     {
-      text: 'Dem tell me bout Florence Nightingale and she lamp',
+      text: '[Paraphrase] They taught him of Florence Nightingale carrying her lamp',
       annotations: [
         {
           type: 'Allusion',
@@ -383,12 +347,24 @@ const POEM: PoemData = {
         },
       ],
     },
-    // VERIFY: line 'and target me with dem statistics' was previously inserted here AND duplicated again later. The phrase does not appear in any verified Agard primary source I can confirm. Removed.
-    { text: '' },
-
-    // Stanza 7 - Mary Seacole
+    { text: '[Paraphrase] and of Robin Hood living rough in the forest,' },
     {
-      text: 'but dem never tell me bout Mary Seacole',
+      text: '[Paraphrase] They taught him the rhyme about cheerful old King Cole',
+      annotations: [
+        {
+          type: 'Nursery rhyme',
+          note: 'Old King Cole - a nursery rhyme character placed alongside genuine historical events, blurring the line between history and fantasy in the British curriculum as Agard experienced it.',
+          color: '#ec4899',
+        },
+        {
+          type: 'Repetition',
+          note: 'A return to the nursery rhyme imagery, creating a cyclical pattern that mirrors the repetitive, narrow nature of the education system Agard criticises.',
+          color: '#8b5cf6',
+        },
+      ],
+    },
+    {
+      text: '[Paraphrase] but nothing at all about Mary Seacole.',
       annotations: [
         {
           type: 'Allusion - Caribbean hero',
@@ -398,8 +374,10 @@ const POEM: PoemData = {
       ],
     },
     { text: '' },
+
+    // Stanza 9 - Mary Seacole
     {
-      text: 'From Jamaica',
+      text: '[Paraphrase] Starting out in Jamaica',
       annotations: [
         {
           type: 'Italicised stanza',
@@ -408,9 +386,9 @@ const POEM: PoemData = {
         },
       ],
     },
-    { text: 'she travel far' },
+    { text: '[Paraphrase] she made a long journey' },
     {
-      text: 'to de Crimean War',
+      text: '[Paraphrase] to the war in Crimea;',
       annotations: [
         {
           type: 'Historical detail',
@@ -419,25 +397,48 @@ const POEM: PoemData = {
         },
       ],
     },
-    { text: 'she volunteer to go' },
-    // VERIFY: removed fabricated lines 'and target me with dem statistics' and 'and target me with dem dates' - neither phrase appears in Agard's primary text. The actual Mary Seacole stanza ends with the heroic praise of Seacole; cross-check against Half-Caste and Other Poems (Hodder, 2005).
+    { text: '[Paraphrase] she offered her services willingly' },
+    { text: '[Paraphrase] and although the British authorities refused her,' },
+    { text: '[Paraphrase] she faced the Russian winter regardless,' },
+    { text: '[Paraphrase] a bright source of healing' },
+    { text: '[Paraphrase] for the injured soldiers,' },
+    { text: '[Paraphrase] like a golden dawn' },
+    { text: '[Paraphrase] for men close to death.' },
     { text: '' },
+
+    // Stanza 10
     {
-      text: 'But now I checking out me own history',
+      text: '[Paraphrase] Those in charge told him things,',
       annotations: [
         {
           type: 'Refrain',
-          note: "The return of the refrain, now carrying accumulated power from all the heroes who have been celebrated. The speaker's resolve has grown stronger through the poem.",
+          note: "The opening chant returns, now carrying the accumulated weight of all the heroes the poem has celebrated, and this time it is answered by the speaker's own resolve.",
+          color: '#f59e0b',
+        },
+      ],
+    },
+    { text: '[Paraphrase] and gave him only the version of the past that suited them.' },
+    {
+      text: '[Paraphrase] But now the speaker is investigating his own past',
+      annotations: [
+        {
+          type: 'Volta / Turning point',
+          note: '"But now" marks the shift from passive recipient to active agent. The present continuous "checking out" suggests an ongoing, deliberate process of self-education. This line and the next are the poem\'s thesis statement, held back until its final moment.',
           color: '#f59e0b',
         },
       ],
     },
     {
-      text: 'I carving out me identity',
+      text: '[Paraphrase] and is forging an identity for himself.',
       annotations: [
         {
+          type: 'Metaphor',
+          note: '"Carving" suggests something permanent and deliberate, like a sculptor creating art from raw material. Identity is not given - it must be actively made. The verb also implies effort and resistance against hard material.',
+          color: '#ef4444',
+        },
+        {
           type: 'Final declaration',
-          note: 'The poem ends with the same defiant statement of self-determination. Identity is not something given by an education system - it must be carved out, actively and deliberately, by the individual.',
+          note: 'The poem ends with a defiant statement of self-determination. Identity is not something given by an education system - it must be carved out, actively and deliberately, by the individual.',
           color: '#f59e0b',
         },
       ],

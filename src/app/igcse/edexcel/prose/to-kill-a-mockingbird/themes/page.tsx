@@ -36,7 +36,7 @@ const themes = [
     textualMoments:
       'The trial chapters (17-21); the Missionary Society tea (ch. 24); Atticus\u2019s closing speech; the night at the jail (ch. 15).',
     quote:
-      '”When it\u2019s a white man\u2019s word against a black man\u2019s, the white man always wins.”',
+      '”it\u2019s a white man\u2019s word against a black man\u2019s, the white man always wins.”',
   },
   {
     title: 'Moral courage',
@@ -52,8 +52,7 @@ const themes = [
       'The dual-voice narration lets Lee track the children\u2019s loss of innocence in slow motion. Scout keeps hers longer than Jem, partly because the trial\u2019s sexual charge passes over her head. Jem is shattered; Dill, more sensitive still, weeps openly. The novel refuses the easy consolation that growing up means understanding - it often means unlearning.',
     textualMoments:
       'The Radley games (ch. 1-5); Jem\u2019s reaction to the verdict (ch. 22); the final walk home.',
-    quote:
-      '”Like watching Atticus walk into the street, raise a rifle… knowing the gun was empty.”',
+    quote: '”watching Atticus walk into the street, raise a rifle… knowing the gun was empty.”',
   },
   {
     title: 'Empathy and perspective',
@@ -61,8 +60,7 @@ const themes = [
       'Atticus\u2019s instruction to "climb into [another person\u2019s] skin and walk around in it" functions as the novel\u2019s moral engine. Scout applies it variously - to Walter Cunningham, Miss Caroline, eventually Boo Radley - and Lee uses its successful and failed applications to measure each character\u2019s growth.',
     textualMoments:
       'Walter Cunningham at lunch (ch. 3); the final scene on Boo\u2019s porch (ch. 31).',
-    quote:
-      '“You never really understand a person until you consider things from his point of view.”',
+    quote: '“You never ... understand a person until you consider things from his point of view.”',
   },
   {
     title: 'The mockingbird motif',
@@ -75,7 +73,7 @@ const themes = [
   {
     title: 'Class and the Southern hierarchy',
     intro:
-      'Jem\u2019s taxonomy of Maycomb - "our kind of folks don\u2019t like the Cunninghams, the Cunninghams don\u2019t like the Ewells, and the Ewells hate and despise the colored folks" - lays out the brittle class system that racial scapegoating holds together. Lee repeatedly shows how class anxiety feeds racial violence.',
+      'Jem\u2019s taxonomy of Maycomb - "Cunninghams don\u2019t like the Ewells, and the Ewells hate and despise the colored folks" - lays out the brittle class system that racial scapegoating holds together. Lee repeatedly shows how class anxiety feeds racial violence.',
     textualMoments:
       'Scout\u2019s lunch with Walter (ch. 3); Jem\u2019s taxonomy (ch. 23); Aunt Alexandra\u2019s Finch Family lectures.',
     quote: '“There\u2019s four kinds of folks in the world.”',

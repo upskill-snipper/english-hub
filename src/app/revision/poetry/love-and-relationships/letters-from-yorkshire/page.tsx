@@ -15,10 +15,27 @@ import { useT } from '@/lib/i18n/use-t'
 const lettersPoem: PoemData = {
   title: 'Letters from Yorkshire',
   poet: 'Maura Dooley',
+  // NOTE: "Letters from Yorkshire" (Maura Dooley) remains in copyright. To avoid
+  // reproducing the poem, each line below is given as a PARAPHRASE in the site's
+  // own words, and the annotations quote only short phrases. Students must read
+  // the full original text in the AQA Love and Relationships anthology.
+  //
+  // Until 25 September 2026 this array printed a corrupted text as the poem. Of
+  // its 18 lines, two were Dooley's as she wrote them, two were garbled versions
+  // of hers and 14 were invented, and 11 of her 15 lines were missing. It now
+  // follows the published poem, 15 lines in five tercets, one entry per line in
+  // the poem's order, checked line by line on 26 September 2026 against a
+  // printed copy of the poem. The viewer numbers entries by position, stanza
+  // breaks included, so after the first stanza its numbers run ahead of the
+  // anthology's. Annotations that described invented lines were rewritten for
+  // the real ones. The summary, key quotes, devices, form notes and quiz below
+  // were not rebuilt and still quote or describe invented lines; each device
+  // lineRef was re-pointed only where its example is, or garbles, a line of the
+  // poem.
   lines: [
     // Stanza 1
     {
-      text: 'In February, digging his garden, planting potatoes,',
+      text: '[Paraphrase] One February he was out in his garden, setting potatoes in the ground.',
       annotations: [
         {
           type: 'Imagery',
@@ -27,13 +44,13 @@ const lettersPoem: PoemData = {
         },
       ],
     },
-    { text: 'he wrote to tell me the first lapwings had returned' },
-    { text: 'and, on his allotment, the cutting of a rose.' },
-    // Stanza break
+    { text: '[Paraphrase] He noticed the lapwings were back, the first of the year, and went' },
+    { text: '[Paraphrase] into the house to write her a letter, his knuckles tingling' },
     { text: '' },
     // Stanza 2
+    { text: '[Paraphrase] as the warmth of the room turned them red.' },
     {
-      text: "It's not romance, simply how things are.",
+      text: '[Paraphrase] There is nothing romantic here; this is simply everyday life.',
       annotations: [
         {
           type: 'Tone',
@@ -43,45 +60,30 @@ const lettersPoem: PoemData = {
       ],
     },
     {
-      text: "You wouldn't think that such a casual thing could be",
+      text: '[Paraphrase] Addressing him now: he is outside in the chill, watching the seasons',
       annotations: [
         {
           type: 'Direct address',
-          note: '"You" draws the reader in, making us reflect on how we value everyday communication.',
+          note: '"You" turns to address him directly, so the poem reads like her side of their correspondence.',
           color: '#3b82f6',
         },
       ],
     },
-    { text: 'more romantic than a dozen roses.' },
-    // Stanza break
     { text: '' },
     // Stanza 3
     {
-      text: 'His are the true transformations \u2014',
+      text: '[Paraphrase] change, while she, her heart brimming with news stories,',
       annotations: [
         {
           type: 'Contrast',
-          note: 'The dash creates a pause before the contrast between his physical, tangible world and her intellectual, screen-based one.',
+          note: 'The line turns from his world to hers, setting his physical, tangible life against her intellectual, screen-based one.',
           color: '#f59e0b',
         },
       ],
     },
-    { text: 'word of mouth, from field to stove,' },
+    { text: '[Paraphrase] types words into an empty computer screen.' },
     {
-      text: 'he feeds his days on what he finds.',
-      annotations: [
-        {
-          type: 'Metaphor',
-          note: 'Presents his daily experience as nourishment, implying his connection to nature sustains him spiritually as well as physically.',
-          color: '#10b981',
-        },
-      ],
-    },
-    // Stanza break
-    { text: '' },
-    // Stanza 4
-    {
-      text: 'Is his life more real because he digs and plants',
+      text: '[Paraphrase] She asks if his digging and sowing make the way he lives more genuine.',
       annotations: [
         {
           type: 'Rhetorical question',
@@ -90,43 +92,46 @@ const lettersPoem: PoemData = {
         },
       ],
     },
-    { text: 'and tends, rather than just logging on and off?' },
-    // Stanza break
     { text: '' },
-    // Stanza 5
-    { text: 'Sometimes I need to stand at the door,' },
-    { text: 'perching at the edge of a country' },
+    // Stanza 4
+    { text: '[Paraphrase] He would not agree, cracking the frozen surface of a rain barrel' },
     {
-      text: 'I love, watching the sheep, the sky over Yorkshire,',
-      annotations: [
-        {
-          type: 'Visual imagery',
-          note: 'The vast Yorkshire sky symbolises the emotional and physical distance between the two correspondents.',
-          color: '#3b82f6',
-        },
-      ],
-    },
-    { text: 'and to remember how a letter fixed things firmly.' },
-    // Stanza break
-    { text: '' },
-    // Stanza 6
-    {
-      text: "Still, it's the same old thing; he's out there",
+      text: '[Paraphrase] and shovelling a way through the snow. Yet he is the one',
       annotations: [
         {
           type: 'Colloquial tone',
-          note: '"Same old thing" is deliberately understated, suggesting constancy and reliability in the relationship.',
+          note: 'The conversational "Still" is deliberately understated, turning the poem to his constancy and reliability: he is the one who keeps writing.',
           color: '#8b5cf6',
         },
       ],
     },
-    { text: 'feeding the hens, stopping by the garden gate,' },
+    { text: '[Paraphrase] who writes to her with news of that different life,' },
+    { text: '' },
+    // Stanza 5
     {
-      text: 'and looking out for me, and I for him.',
+      text: '[Paraphrase] packing daylight and fresh air into each envelope he posts. And so,',
       annotations: [
         {
+          type: 'Metaphor',
+          note: 'Presents his letters as carrying the outdoors itself, implying his connection to nature can reach and sustain her in the city.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: '[Paraphrase] after dark, they watch identical news bulletins in their separate homes,',
+    },
+    {
+      text: '[Paraphrase] and their spirits send each other signals across the frozen distance.',
+      annotations: [
+        {
+          type: 'Visual imagery',
+          note: 'The final image of frozen distance makes the physical space between the two correspondents vivid, echoing the wintry opening.',
+          color: '#3b82f6',
+        },
+        {
           type: 'Ambiguity',
-          note: '"Looking out" means both physically watching and emotionally caring. The symmetry conveys mutual devotion and equality.',
+          note: '"Tap out" suggests both typing and signalling in code. The shared "our" conveys mutual devotion and equality.',
           color: '#f59e0b',
         },
       ],
@@ -247,7 +252,7 @@ const lettersPoem: PoemData = {
       example: 'digs and plants / logging on and off',
       effect:
         "Juxtaposes his physical, earthy labour with her digital, ephemeral work, highlighting the poem's central tension between rural authenticity and urban abstraction.",
-      lineRef: 12,
+      lineRef: 10,
       effectAr:
         '\u064a\u0636\u0639 \u0634\u063a\u0644\u0647 \u0627\u0644\u0628\u062f\u0646\u064a \u0627\u0644\u0645\u0631\u062a\u0628\u0637 \u0628\u0627\u0644\u0623\u0631\u0636 \u062c\u0646\u0628 \u0634\u063a\u0644\u0647\u0627 \u0647\u064a \u0627\u0644\u0631\u0642\u0645\u064a \u0627\u0644\u0639\u0627\u0628\u0631\u060c \u0648\u064a\u0628\u0631\u0632 \u0627\u0644\u062a\u0648\u062a\u0631 \u0627\u0644\u0645\u0631\u0643\u0632\u064a \u0641\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0628\u064a\u0646 \u0627\u0644\u0623\u0635\u0627\u0644\u0629 \u0627\u0644\u0631\u064a\u0641\u064a\u0629 \u0648\u0627\u0644\u062a\u062c\u0631\u064a\u062f \u0627\u0644\u0645\u062f\u0646\u064a.',
     },
@@ -256,7 +261,7 @@ const lettersPoem: PoemData = {
       example: 'Is his life more real because he digs and plants and tends?',
       effect:
         "Invites the reader to question what constitutes a meaningful life, while revealing the speaker's own self-doubt about her lifestyle choices.",
-      lineRef: 12,
+      lineRef: 10,
       effectAr:
         '\u064a\u062f\u0639\u0648 \u0627\u0644\u0642\u0627\u0631\u0626 \u064a\u0633\u0623\u0644 \u0646\u0641\u0633\u0647: \u0634\u0648 \u0627\u0644\u0644\u064a \u064a\u0639\u062a\u0628\u0631 \u062d\u064a\u0627\u0629 \u0630\u0627\u062a \u0645\u0639\u0646\u0649\u061f \u0648\u0641\u064a \u0646\u0641\u0633 \u0627\u0644\u0648\u0642\u062a \u064a\u0643\u0634\u0641 \u0634\u0643 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645\u0629 (\u0623\u0646\u062b\u0649) \u0641\u064a \u062e\u064a\u0627\u0631\u0627\u062a\u0647\u0627 \u0627\u0644\u062d\u064a\u0627\u062a\u064a\u0629.',
     },
@@ -623,10 +628,10 @@ export default function LettersFromYorkshirePage() {
       </section>
 
       <footer className="rounded-lg border border-border/40 bg-muted/30 px-4 py-3 text-[11px] leading-relaxed text-muted-foreground">
-        Poem text is reproduced for the purpose of private study and educational criticism under UK
-        fair-dealing provisions (Copyright, Designs and Patents Act 1988, s.30). No commercial use
-        is intended. All quotations remain the intellectual property of the respective rights
-        holders.
+        The poem is paraphrased line by line here, not printed. Short quotations are used for
+        criticism and review under UK fair-dealing provisions (Copyright, Designs and Patents Act
+        1988, s.30) and remain the intellectual property of the respective rights holders. The full
+        text is printed in the AQA Love and Relationships anthology.
       </footer>
     </div>
   )

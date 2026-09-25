@@ -85,14 +85,14 @@ const chapterSummary = [
       'Raka arrives: thin, silent, and unresponsive to Nanda\u2019s tentative attempts at connection. Rather than clinging to her great-grandmother, Raka slips away to explore the ravine, the abandoned Pasteur Institute, and the burned hillside. Nanda is disturbed by Raka\u2019s wildness but also drawn to her. Desai parallels their isolations: Nanda\u2019s is willed and fragile; Raka\u2019s is instinctive and complete. Nanda begins inventing stories about her past (a glamorous life in the Vice-Chancellor\u2019s lodge) to win Raka\u2019s attention, but Raka is indifferent.',
     quotes: [
       {
-        text: 'Raka, she saw, was one of those people who would be an observer all her life.',
+        text: 'Raka, ... was one of those people who would be an observer all her life.',
         analysis:
           'Nanda recognises in Raka a detachment more genuine than her own. \u2018Observer\u2019 positions Raka outside human participation, foreshadowing her role as witness to the novel\u2019s violence.',
       },
       {
-        text: 'The child did not listen to her. She had gone to the edge of the ridge and stood there, looking down at the gorge.',
+        text: 'The child did not listen to her. ... looking down at the gorge.',
         analysis:
-          'Raka\u2019s physical movement away from Nanda towards the gorge symbolises her orientation towards wildness and danger rather than domestic comfort.',
+          'Raka\u2019s turning away from Nanda towards the gorge symbolises her orientation towards wildness and danger rather than domestic comfort.',
       },
     ],
   },
@@ -102,7 +102,7 @@ const chapterSummary = [
       'Ila Das, Nanda\u2019s old friend, arrives uninvited for an afternoon visit. She is garrulous, impoverished, and pathetic \u2014 the opposite of Nanda\u2019s composed withdrawal. She reminisces about their youth, inadvertently exposing the lies in Nanda\u2019s self-constructed narrative: the Vice-Chancellor\u2019s infidelity, Nanda\u2019s suppressed misery. Ila Das describes her work campaigning against child marriage and her confrontation with Preet Singh, who has threatened her for trying to prevent his daughter\u2019s marriage. Nanda, uncomfortable, does not offer to walk her home.',
     quotes: [
       {
-        text: 'It was the droning, the endless, meaningless droning of Ila Das that she could not bear.',
+        text: 'It was the droning, ... meaningless droning of Ila Das that she could not bear.',
         analysis:
           'Nanda\u2019s irritation reveals her fear of truth rather than of noise. Ila Das\u2019s \u2018droning\u2019 threatens to collapse the illusion Nanda has built around her past.',
       },
@@ -119,7 +119,7 @@ const chapterSummary = [
       'After Ila Das leaves, Nanda receives a phone call informing her that Ila Das has been raped and murdered by Preet Singh on the path home. Nanda is devastated \u2014 partly by grief, partly by guilt for not walking her friend home, and partly by the final collapse of her illusions. While Nanda crumbles inside the house, Raka appears and announces: \u2018Look, Nana, I have set the forest on fire.\u2019 The novel ends with this single line, fusing the literal fire with the metaphorical destruction that has consumed every illusion in the book.',
     quotes: [
       {
-        text: 'Nanda Kaul, lifeless on the stool, heard and knew it all. There was no illusion she was stripped of now.',
+        text: 'lifeless on the stool, ... There was no illusion she was stripped of now.',
         analysis:
           'The adjective \u2018lifeless\u2019 suggests a death of identity: everything Nanda believed about herself has been destroyed. \u2018Stripped\u2019 echoes the novel\u2019s pattern of exposure and vulnerability.',
       },

@@ -79,7 +79,7 @@ const CHARACTERS: CharacterProfile[] = [
     arc: "Lennie's arc is one of repeating, escalating accidents. He kills mice, then a puppy, then a woman - the same compulsive stroking, the same panic, the same inability to control his own strength. Steinbeck structures this escalation so that Lennie's death feels both inevitable and heartbreaking. He never learns, because he cannot learn, and that is the tragedy.",
     keyQuotes: [
       {
-        text: '"I got you to look after me, and you got me to look after you."',
+        text: '"I got you to look after me, ... you got me to look after you."',
         context: 'Chapter 1 - the dream recitation',
         analysis:
           'Captures the childlike clarity of their bond. The mutual dependence is the emotional core of the novella, even though it is George who does most of the protecting.',
@@ -224,7 +224,7 @@ const CHARACTERS: CharacterProfile[] = [
           "The respected moral voice validates George's impossible choice and closes the novella with painful compassion. Steinbeck uses Slim to give the ending moral weight.",
       },
       {
-        text: '"Ain\'t many guys travel around together... Maybe ever\'body in the whole world is scared of each other."',
+        text: '"Maybe ever\'body in the whole world is scared of each other."',
         context: 'Chapter 3 - to George',
         analysis:
           'Slim identifies the universal fear that prevents human connection. Steinbeck uses him to articulate what the other characters feel but cannot express.',

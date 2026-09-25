@@ -125,17 +125,16 @@ const data: TextGuideData = {
   quotations: [
     {
       quote:
-        '"I\'m really not a liar, I just learnt very early on that those of us deprived of history sometimes need to turn to mythology."',
+        '"I\'m really not a liar, ... deprived of history sometimes need to turn to mythology."',
       who: 'Meena - opening chapter',
       analysis:
         "The novel's thesis statement. Syal links Meena's compulsive storytelling directly to migration and diaspora: without an inherited place in English history, Meena must invent one. Sets up the retrospective, self-aware adult narrator and the book's defence of creative self-making.",
     },
     {
-      quote:
-        '"I knew I was a freak of some kind, too mouthy, clumsy and scabby to be a real Indian girl, too Indian to be a real Tollington wench."',
+      quote: '"I knew I was a freak ... too Indian to be a real Tollington wench."',
       who: 'Meena - early chapters',
       analysis:
-        "A textbook expression of Meena's bicultural double-bind. The paired insults - 'real Indian girl' and 'real Tollington wench' - show how both sides of her identity demand a purity she cannot perform. 'Freak' turns cultural in-betweenness into pathology, anticipating the novel's work to revalue it.",
+        "A textbook expression of Meena's bicultural double-bind. In the full sentence, the paired insults - 'real Indian girl' and 'real Tollington wench' - show how both sides of her identity demand a purity she cannot perform. 'Freak' turns cultural in-betweenness into pathology, anticipating the novel's work to revalue it.",
     },
     {
       quote: '"Anita was the undisputed cock of our yard."',
@@ -162,8 +161,7 @@ const data: TextGuideData = {
         "Sam's public outburst at the fete is the novel's political turning point. The word 'them' does the work of racism - it separates a group from the village's 'us' - and Meena hears herself named. The scene crystallises how Powellite rhetoric turns into street violence in a single speech act.",
     },
     {
-      quote:
-        '"I realised that Sam Lowbridge had meant me, he had meant my Papa, he had meant my mama."',
+      quote: '"Lowbridge had meant me, he had meant my Papa, he had meant my mama."',
       who: 'Meena - after the attack',
       analysis:
         "The collapse of Meena's strategy of ignoring racism. The repetition of 'he had meant' enacts her dawning recognition. Syal marks this as a loss of childhood innocence that is specifically racialised: Meena has lost the ability to imagine that racism is about other people.",

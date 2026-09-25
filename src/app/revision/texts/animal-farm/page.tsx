@@ -141,8 +141,7 @@ const data: TextGuideData = {
         'The simplified slogan that replaces debate. Orwell\u2019s warning about the death of nuance.',
     },
     {
-      quote:
-        '"The creatures outside looked from pig to man, and from man to pig, and from pig to man again."',
+      quote: '"The creatures outside looked from pig to man, and from man to pig"',
       who: 'Narrator - final chapter',
       analysis:
         'The shattering closing image. Revolution has produced a mirror of the regime it replaced.',
@@ -362,7 +361,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      '"The creatures outside looked from pig to man, and from man to pig, and from pig to man again; but already it was impossible to say which was which." The revolutionaries have become indistinguishable from the oppressors they replaced.',
+      '"The creatures outside looked from pig to man, ... impossible to say which was which." The revolutionaries have become indistinguishable from the oppressors they replaced.',
     topic: 'Themes',
     difficulty: 'higher',
   },

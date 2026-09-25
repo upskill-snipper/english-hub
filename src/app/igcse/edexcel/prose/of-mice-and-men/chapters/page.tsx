@@ -48,7 +48,7 @@ const chapters = [
         technique: 'Superlative and refrain establish the novel\u2019s central theme of loneliness',
       },
       {
-        text: 'I got you to look after me, and you got me to look after you.',
+        text: 'I got you to look after me, ... you got me to look after you.',
         technique: 'Parallel structure creates a ritual of reciprocal care',
       },
       {
@@ -80,7 +80,7 @@ const chapters = [
         technique: 'Visual description filters her through the male gaze, denying interiority',
       },
       {
-        text: 'There was a gravity in his manner and a quiet so profound that all talk stopped.',
+        text: 'a gravity in his manner and a quiet so profound that all talk stopped.',
         technique: 'Slim\u2019s introduction uses gravitas language to mark him as moral authority',
       },
     ],
@@ -129,7 +129,7 @@ const chapters = [
       'Crooks is the novella\u2019s most isolated figure: segregated by race, excluded from community. His momentary belief and its immediate destruction is the novel\u2019s most painful narrative beat. Curley\u2019s wife is revealed as both lonely and capable of racial cruelty.',
     quotes: [
       {
-        text: 'A guy needs somebody - to be near him. A guy goes nuts if he ain\u2019t got nobody.',
+        text: 'A guy needs somebody ... A guy goes nuts if he ain\u2019t got nobody.',
         technique: 'Crooks diagnoses loneliness as pathology, not sentiment',
       },
       {
@@ -137,7 +137,7 @@ const chapters = [
         technique: 'Crooks asserts boundaries that segregation itself imposed on him',
       },
       {
-        text: 'I could get you strung up on a tree so easy it ain\u2019t even funny.',
+        text: 'I could get you strung up ... so easy it ain\u2019t even funny.',
         technique: 'Curley\u2019s wife weaponises racial violence to reclaim power',
       },
     ],

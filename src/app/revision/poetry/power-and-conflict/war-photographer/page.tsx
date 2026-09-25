@@ -37,11 +37,28 @@ export const metadata: Metadata = {
 const WAR_PHOTOGRAPHER: PoemData = {
   title: 'War Photographer',
   poet: 'Carol Ann Duffy',
-
+  // NOTE: "War Photographer" (Carol Ann Duffy, from Standing Female Nude,
+  // 1985) remains in copyright. To avoid reproducing the poem verbatim, each
+  // line below is given as a PARAPHRASE in the site's own words rather than
+  // the poet's exact text, and the annotations quote only short phrases
+  // (25 words across all of them, under 15 per cent of the poem's 187).
+  // Students must read the full original in the AQA Power & Conflict
+  // anthology.
+  //
+  // Until 25 September 2026 this array printed the whole poem. Its line order
+  // is right, but two of its stanza breaks are not: the poem is four six-line
+  // stanzas, and the second and third blanks below each fall three lines late
+  // (after poem lines 15 and 21, not 12 and 18). They are kept, because the
+  // viewer numbers entries by position and the languageDevices lineRef values
+  // below count them. Six of those eight lineRefs pointed at the wrong entry
+  // (one at a blank), apparently left over from the scrambled stanza order
+  // this file once had; they were re-pointed on 26 September 2026 to the
+  // entries whose lines they quote. Check the paraphrases against the
+  // anthology before relying on them.
   lines: [
     // Stanza 1
     {
-      text: 'In his darkroom he is finally alone',
+      text: '[Paraphrase] At last the photographer is by himself in his developing room,',
       annotations: [
         {
           type: 'Imagery',
@@ -50,17 +67,17 @@ const WAR_PHOTOGRAPHER: PoemData = {
         },
         {
           type: 'Tone',
-          note: '"Finally alone" suggests relief - he is away from the war zones at last, yet isolation also implies emotional distance.',
+          note: 'The stress on his being alone at last suggests relief - he is away from the war zones, yet isolation also implies emotional distance.',
           color: '#8b5cf6',
         },
       ],
     },
     {
-      text: 'with spools of suffering set out in ordered rows.',
+      text: '[Paraphrase] with reels of film full of human pain laid out in neat lines.',
       annotations: [
         {
           type: 'Sibilance',
-          note: 'The repeated "s" sounds in "spools of suffering set" create a soft, solemn tone, almost like a whispered prayer.',
+          note: 'The repeated "s" sounds across the line create a soft, solemn tone, almost like a whispered prayer.',
           color: '#10b981',
         },
         {
@@ -70,13 +87,13 @@ const WAR_PHOTOGRAPHER: PoemData = {
         },
         {
           type: 'Contrast',
-          note: '"Ordered rows" contrasts with the chaos of war - the photographer imposes order on something inherently disordered.',
+          note: 'The neat arrangement of the film contrasts with the chaos of war - the photographer imposes order on something inherently disordered.',
           color: '#ef4444',
         },
       ],
     },
     {
-      text: 'The only light is red and softly glows,',
+      text: "[Paraphrase] A dim red glow is the room's sole illumination,",
       annotations: [
         {
           type: 'Symbolism',
@@ -86,7 +103,7 @@ const WAR_PHOTOGRAPHER: PoemData = {
       ],
     },
     {
-      text: 'as though this were a church and he',
+      text: '[Paraphrase] making the room seem like a place of worship, with him cast as',
       annotations: [
         {
           type: 'Simile / Religious imagery',
@@ -96,7 +113,7 @@ const WAR_PHOTOGRAPHER: PoemData = {
       ],
     },
     {
-      text: 'a priest preparing to intone a Mass.',
+      text: '[Paraphrase] a clergyman getting ready to chant a Mass.',
       annotations: [
         {
           type: 'Religious imagery',
@@ -111,11 +128,11 @@ const WAR_PHOTOGRAPHER: PoemData = {
       ],
     },
     {
-      text: 'Belfast. Beirut. Phnom Penh. All flesh is grass.',
+      text: '[Paraphrase] The places he has worked are named (Belfast, Beirut, Phnom Penh), followed by a Biblical reminder that human life is as brief as grass.',
       annotations: [
         {
           type: 'Listing of war zones',
-          note: 'Three asyndetic place-names locate the photographer\'s assignments. The Biblical allusion "All flesh is grass" (Isaiah 40:6) reduces all human life to something fragile and short-lived.',
+          note: "Three asyndetic place-names locate the photographer's assignments. The Biblical allusion to Isaiah 40:6, which likens human flesh to grass, reduces all human life to something fragile and short-lived.",
           color: '#ef4444',
         },
       ],
@@ -126,7 +143,7 @@ const WAR_PHOTOGRAPHER: PoemData = {
 
     // Stanza 2
     {
-      text: 'He has a job to do. Solutions slop in trays',
+      text: '[Paraphrase] He has work to get on with. Developing chemicals slosh in their trays',
       annotations: [
         {
           type: 'Double meaning',
@@ -136,10 +153,10 @@ const WAR_PHOTOGRAPHER: PoemData = {
       ],
     },
     {
-      text: 'beneath his hands, which did not tremble then',
+      text: '[Paraphrase] under his fingers, which were steady at the time',
     },
     {
-      text: 'though seem to now. Rural England. Home again',
+      text: '[Paraphrase] but appear to shake now. He is back in the English countryside,',
       annotations: [
         {
           type: 'Contrast',
@@ -149,10 +166,10 @@ const WAR_PHOTOGRAPHER: PoemData = {
       ],
     },
     {
-      text: 'to ordinary pain which simple weather can dispel,',
+      text: '[Paraphrase] where everyday troubles can be cured by a spell of fine weather,',
     },
     {
-      text: "to fields which don't explode beneath the feet",
+      text: '[Paraphrase] and to fields that will not blow up beneath',
       annotations: [
         {
           type: 'Contrast',
@@ -162,27 +179,27 @@ const WAR_PHOTOGRAPHER: PoemData = {
       ],
     },
     {
-      text: 'of running children in a nightmare heat.',
+      text: "[Paraphrase] fleeing children's feet in heat as terrible as a nightmare.",
       annotations: [
         {
           type: 'Emotive language',
-          note: '"Running children" and "nightmare heat" evoke the iconic images of children fleeing napalm attacks, referencing real war photography.',
+          note: 'The image of children fleeing through a "nightmare heat" evokes the iconic images of children fleeing napalm attacks, referencing real war photography.',
           color: '#f59e0b',
         },
       ],
     },
     {
-      text: "Something is happening. A stranger's features",
+      text: '[Paraphrase] An image begins to appear. The face of someone he does not know',
       annotations: [
         {
           type: 'Short sentence',
-          note: '"Something is happening" is deliberately vague and understated, building suspense as the photograph develops.',
+          note: 'The short opening sentence is deliberately vague and understated, building suspense as the photograph develops.',
           color: '#10b981',
         },
       ],
     },
     {
-      text: 'faintly start to twist before his eyes,',
+      text: '[Paraphrase] slowly takes shape and seems to writhe as he watches,',
       annotations: [
         {
           type: 'Verb choice',
@@ -192,11 +209,11 @@ const WAR_PHOTOGRAPHER: PoemData = {
       ],
     },
     {
-      text: 'a half-formed ghost. He remembers the cries',
+      text: '[Paraphrase] a phantom, not yet fully formed. He recalls the wailing',
       annotations: [
         {
           type: 'Metaphor',
-          note: '"Half-formed ghost" - the developing image is spectral, suggesting the subject may already be dead. The photograph is a haunting.',
+          note: 'The "ghost" image - the developing picture is spectral, suggesting the subject may already be dead. The photograph is a haunting.',
           color: '#f59e0b',
         },
         {
@@ -212,14 +229,14 @@ const WAR_PHOTOGRAPHER: PoemData = {
 
     // Stanza 3
     {
-      text: "of this man's wife, and how he sought approval",
+      text: "[Paraphrase] of the man's wife, as well as the way he asked for permission,",
     },
     {
-      text: 'without words to do what someone must',
+      text: '[Paraphrase] silently, to do the job that somebody has to do,',
       annotations: [
         {
           type: 'Tone',
-          note: '"Without words" highlights the language barrier, but also the inadequacy of language in the face of such suffering.',
+          note: 'The wordless exchange highlights the language barrier, but also the inadequacy of language in the face of such suffering.',
           color: '#8b5cf6',
         },
         {
@@ -230,27 +247,27 @@ const WAR_PHOTOGRAPHER: PoemData = {
       ],
     },
     {
-      text: 'and how the blood stained into foreign dust.',
+      text: '[Paraphrase] and how blood soaked into the soil of a distant country.',
       annotations: [
         {
           type: 'Imagery',
-          note: '"Blood stained into foreign dust" - a visceral, permanent image. The blood becomes part of the landscape, absorbed and forgotten by the wider world.',
+          note: 'Blood soaking into "foreign dust" is a visceral, permanent image. The blood becomes part of the landscape, absorbed and forgotten by the wider world.',
           color: '#ef4444',
         },
       ],
     },
     {
-      text: 'A hundred agonies in black-and-white',
+      text: '[Paraphrase] Now there are a hundred photographs of anguish in monochrome,',
       annotations: [
         {
           type: 'Hyperbole / Metonymy',
-          note: '"A hundred agonies" reduces immense human suffering to a number. "Black-and-white" refers to newspaper photographs - stripping colour strips away humanity.',
+          note: 'The "hundred agonies" reduce immense human suffering to a number. The monochrome prints refer to newspaper photographs - stripping colour strips away humanity.',
           color: '#f59e0b',
         },
       ],
     },
     {
-      text: 'from which his editor will pick out five or six',
+      text: "[Paraphrase] of which the paper's editor is going to choose only a handful",
       annotations: [
         {
           type: 'Contrast / Criticism',
@@ -260,11 +277,11 @@ const WAR_PHOTOGRAPHER: PoemData = {
       ],
     },
     {
-      text: "for Sunday's supplement. The reader's eyeballs prick",
+      text: "[Paraphrase] for the Sunday colour magazine. Readers' eyes smart briefly",
       annotations: [
         {
           type: 'Contrast',
-          note: '"Sunday\'s supplement" is casual, leisurely reading - trivialising the suffering depicted. The alliterative "reader\'s" and "prick" is dismissive.',
+          note: 'The "Sunday\'s supplement" is casual, leisurely reading - trivialising the suffering depicted. The clipped, plosive sounds of the reader\'s reaction are dismissive.',
           color: '#ef4444',
         },
         {
@@ -280,34 +297,33 @@ const WAR_PHOTOGRAPHER: PoemData = {
 
     // Stanza 4
     {
-      text: 'with tears between the bath and pre-lunch beers.',
+      text: '[Paraphrase] with tears, somewhere between their bath and a drink before lunch.',
       annotations: [
         {
           type: 'Bathos / Contrast',
-          note: 'The juxtaposition of tears with "bath and pre-lunch beers" highlights the comfortable, indifferent lifestyle of the reader. Their sadness is fleeting and shallow.',
+          note: 'The juxtaposition of tears with a bath and "pre-lunch beers" highlights the comfortable, indifferent lifestyle of the reader. Their sadness is fleeting and shallow.',
           color: '#ef4444',
         },
       ],
     },
     {
-      text: 'From the aeroplane he stares impassively at where',
+      text: '[Paraphrase] Looking down from the plane, he gazes without emotion at the place where',
     },
     {
-      text: 'he earns his living and they do not care.',
+      text: '[Paraphrase] he makes his money, and they are indifferent.',
       annotations: [
         {
           type: 'Final couplet',
-          note: 'The closing rhyme ("where" / "care") delivers a blunt, bitter conclusion. "They" is ambiguous - it could mean the public, the editors, or both.',
+          note: 'The closing rhyme of the final couplet delivers a blunt, bitter conclusion. "They" is ambiguous - it could mean the public, the editors, or both.',
           color: '#f59e0b',
         },
         {
           type: 'Tone',
-          note: '"Do not care" is stark and accusatory - Duffy indicts society for its apathy towards the suffering the photographer documents.',
+          note: 'The flat final clause is stark and accusatory - Duffy indicts society for its apathy towards the suffering the photographer documents.',
           color: '#8b5cf6',
         },
       ],
     },
-    // VERIFY: stanza ordering in this file was scrambled - 'Solutions slop in trays beneath his hands, / which did not tremble then though seem to now. / Rural England. Home again' originally appears in STANZA 2, not stanza 4. Lines moved to their correct location. The actual stanza 4 ends after 'where / he earns his living and they do not care.'
   ],
 
   context: `<p><strong>Carol Ann Duffy</strong> (born 1955) served as the UK Poet Laureate from 2009 to 2019. She is known for giving voice to those on the margins and for exploring how language shapes power and identity.</p>
@@ -462,7 +478,7 @@ CYCLICAL STRUCTURE: "Rural England" appears in stanza one and is echoed in the f
         "fields which don't explode beneath the feet / of running children in a nightmare heat",
       effect:
         'Duffy sharply contrasts the safety of English fields with the minefields of war zones. The juxtaposition forces the reader to confront the vast gap between their comfortable existence and the reality of conflict.',
-      lineRef: 8,
+      lineRef: 11,
       effectAr:
         'Duffy تقابل بشكل حاد بين أمان الحقول الإنجليزية وحقول الألغام في مناطق الحرب. الـjuxtaposition تجبر القارئ إنه يواجه الهوّة الواسعة بين وجوده المريح وواقع الصراع.',
     },
@@ -471,7 +487,7 @@ CYCLICAL STRUCTURE: "Rural England" appears in stanza one and is echoed in the f
       example: 'a half-formed ghost',
       effect:
         'The developing photograph becomes a ghostly apparition - blurring the line between image and person, life and death. It suggests the subjects of war photography are spectral presences who haunt the photographer.',
-      lineRef: 12,
+      lineRef: 15,
       effectAr:
         'الصورة وهي تتحمّض تتحوّل لطيف شبحي - وتطمس الحد بين الصورة والشخص، بين الحياة والموت. هالشي يوحي إن أشخاص الصور الحربية حضور طيفي يلاحق المصوّر.',
     },
@@ -480,7 +496,7 @@ CYCLICAL STRUCTURE: "Rural England" appears in stanza one and is echoed in the f
       example: 'blood stained into foreign dust',
       effect:
         'The visceral image of blood seeping into soil makes the violence tangible and permanent. "Foreign" reminds us of the distance - both geographical and emotional - between the reader and the suffering.',
-      lineRef: 16,
+      lineRef: 19,
       effectAr:
         'صورة الدم وهو يتسرّب في التراب صورة جسدية تخلّي العنف ملموس ودائم. وكلمة "foreign" تذكّرنا بالمسافة - الجغرافية والعاطفية - بين القارئ والمعاناة.',
     },
@@ -489,7 +505,7 @@ CYCLICAL STRUCTURE: "Rural England" appears in stanza one and is echoed in the f
       example: 'Solutions slop in trays beneath his hands',
       effect:
         '"Solutions" refers literally to the photographic chemicals but also ironically to answers or remedies for the suffering he documents - remedies that do not exist. The word carries a bitter dual weight.',
-      lineRef: 22,
+      lineRef: 7,
       effectAr:
         'كلمة "solutions" تشير حرفياً للمواد الكيميائية اللي يستخدمها في التحميض، بس بسخرية تشير كذلك لـ"حلول" أو علاجات للمعاناة اللي يوثّقها - علاجات ما لها وجود. الكلمة تحمل ثقل مزدوج مرير.',
     },
@@ -498,7 +514,7 @@ CYCLICAL STRUCTURE: "Rural England" appears in stanza one and is echoed in the f
       example: 'tears between the bath and pre-lunch beers',
       effect:
         'The deflation from genuine tears to "bath and pre-lunch beers" is deliberately jarring. It mocks the superficial emotional engagement of the public, who consume images of suffering alongside everyday leisure.',
-      lineRef: 20,
+      lineRef: 24,
       effectAr:
         'الهبوط من دموع حقيقية إلى "bath and pre-lunch beers" مقصود ومزعج. وهو يسخر من التفاعل العاطفي السطحي عند الجمهور، اللي يستهلك صور المعاناة جنب أنشطة الترفيه اليومية.',
     },
@@ -507,7 +523,7 @@ CYCLICAL STRUCTURE: "Rural England" appears in stanza one and is echoed in the f
       example: 'Rural England (stanza 1 and stanza 4)',
       effect:
         'The repetition of "Rural England" bookends the poem, creating a circular structure. The photographer is trapped in an endless cycle of witnessing horror, returning to indifference, and leaving again. There is no resolution.',
-      lineRef: 24,
+      lineRef: 9,
       effectAr:
         'تكرار "Rural England" يحيط القصيدة من طرفيها، ويخلق بنية دائرية. المصوّر محصور في دورة ما تنتهي: يشهد الرعب، يرجع للامبالاة، ويرحل مرة ثانية. ما في حل ولا خاتمة.',
     },
@@ -880,10 +896,11 @@ export default function WarPhotographerPage() {
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         <strong>Rights notice:</strong> &copy; Picador / Pan Macmillan and Rogers Coleridge &amp;
-        White on behalf of Carol Ann Duffy (b. 1955). Quotations from &ldquo;War Photographer&rdquo;
-        are short fair-dealing extracts under CDPA 1988 &sect;30 (criticism, review, quotation). For
-        full text, students should consult the board-licensed AQA Power &amp; Conflict anthology or
-        Duffy&rsquo;s collection <em>Standing Female Nude</em> (1985).
+        White on behalf of Carol Ann Duffy (b. 1955). The poem is paraphrased here rather than
+        printed. Quotations from &ldquo;War Photographer&rdquo; are short fair-dealing extracts
+        under CDPA 1988 &sect;30 (criticism, review, quotation). The full text is printed in the
+        board-licensed AQA Power &amp; Conflict anthology and in Duffy&rsquo;s collection{' '}
+        <em>Standing Female Nude</em> (1985).
       </p>
     </div>
   )

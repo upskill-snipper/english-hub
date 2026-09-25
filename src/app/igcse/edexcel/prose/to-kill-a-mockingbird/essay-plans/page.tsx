@@ -38,7 +38,7 @@ const essayPlans = [
         point:
           'The trial reveals how the legal system performs fairness while delivering a pre-written verdict.',
         evidence:
-          '"When it\u2019s a white man\u2019s word against a black man\u2019s, the white man always wins."',
+          '"it\u2019s a white man\u2019s word against a black man\u2019s, the white man always wins."',
         explanation:
           'Atticus names the structural inequality plainly, without rhetorical flourish, which makes the diagnosis feel clinical and irrefutable.',
         link: 'This connects to the 1930s Jim Crow context, where Edexcel expects students to relate the text to its historical moment.',
@@ -186,7 +186,7 @@ const essayPlans = [
       {
         point:
           'Lee filters Atticus through Scout\u2019s dual perspective, allowing both admiration and irony.',
-        evidence: '"I know now what he was trying to do, but Atticus was only a man."',
+        evidence: '"I know now what he was trying to do, ... Atticus was only a man."',
         explanation:
           'The adult narrator gently undermines the child\u2019s hero-worship. Lee\u2019s technique prevents Atticus from becoming a flat symbol: he is presented as morally serious but humanly limited.',
         link: 'Link to structure: the dual narration is essential to how the reader receives Atticus \u2014 through the filter of a child who is growing up.',

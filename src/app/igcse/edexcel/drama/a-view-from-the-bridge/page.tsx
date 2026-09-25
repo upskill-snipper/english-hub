@@ -90,7 +90,7 @@ const keyQuotations = [
       'Alfieri\u2019s diagnosis of Italian-American life: the accommodation between old-country honour and American law. The phrase "settle for half" is the play\u2019s central moral formula.',
   },
   {
-    quote: 'As good a man as he had to be in a life that was hard.',
+    quote: 'As good a man as he had to be ... life that was hard.',
     speaker: 'Alfieri on Eddie',
     analysis:
       'An epitaph, offered early - Miller uses Alfieri to put moral weight on Eddie before we judge him.',

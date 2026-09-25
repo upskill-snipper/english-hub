@@ -12,7 +12,7 @@ const themeGroups = [
     theme: 'Colonialism and cultural disruption',
     quotes: [
       {
-        text: 'He has put a knife on the things that held us together and we have fallen apart.',
+        text: 'He has put a knife on the things that held us together ... fallen apart.',
         speaker: 'Obierika',
         analysis:
           'The novel\u2019s title in miniature. Obierika identifies colonialism as a blade inserted into existing bonds, not a force arriving from outside.',
@@ -24,13 +24,13 @@ const themeGroups = [
           'Achebe shows colonialism as a slow, multi-stage process. By the time the clan perceives the threat clearly, the damage is done.',
       },
       {
-        text: 'Does the white man understand our custom about land? How can he when he does not even speak our tongue?',
+        text: 'Does the white man understand our custom about land? ... not even speak our tongue?',
         speaker: 'Obierika',
         analysis:
           'Language is power. The colonisers\u2019 inability to speak Igbo is not a minor inconvenience but a fundamental disqualification.',
       },
       {
-        text: 'One could almost write a whole chapter on him. Perhaps not a whole chapter but a reasonable paragraph.',
+        text: 'One could almost write a whole chapter on him. ... but a reasonable paragraph.',
         speaker: 'The District Commissioner',
         analysis:
           'The novel\u2019s most devastating irony. Achebe\u2019s entire book is the answer to the Commissioner\u2019s dismissive footnote.',
@@ -70,7 +70,7 @@ const themeGroups = [
     theme: 'Tradition versus change',
     quotes: [
       {
-        text: 'The clan was like a lizard; if it lost its tail it soon grew another.',
+        text: 'The clan was like a lizard; if it lost its tail ... soon grew another.',
         speaker: 'Narrator',
         analysis:
           'Achebe presents Igbo society as resilient and adaptive before colonialism. Change is not inherently destructive \u2014 it is the kind of change that matters.',
@@ -128,7 +128,7 @@ const themeGroups = [
           'Language itself is presented through an image of nourishment \u2014 food, communal eating, maternal provision. Form and theme merge.',
       },
       {
-        text: 'She walked through Okonkwo\u2019s hut into the barn and had not even looked at her dangerously.',
+        text: 'She walked through Okonkwo\u2019s hut ... and had not even looked at her dangerously.',
         speaker: 'Narrator (about Chielo)',
         analysis:
           'Chielo the priestess commands Okonkwo\u2019s obedience when she comes for Ezinma. Even Okonkwo\u2019s masculine authority cannot override the spiritual power of the feminine divine.',
@@ -139,13 +139,13 @@ const themeGroups = [
     theme: 'Language, proverbs and narrative form',
     quotes: [
       {
-        text: 'Among the Ibo the art of conversation is regarded very highly, and proverbs are the palm-oil with which words are eaten.',
+        text: 'the art of conversation ... proverbs are the palm-oil with which words are eaten.',
         speaker: 'Narrator',
         analysis:
           'The novel\u2019s most famous sentence. Achebe announces his method: English prose saturated with Igbo rhetorical form.',
       },
       {
-        text: 'The sun will shine on those who stand before it shines on those who kneel under them.',
+        text: 'sun will shine on those who stand before it shines on those who kneel',
         speaker: 'Proverb',
         analysis:
           'Igbo proverbs carry political philosophy. This one asserts the value of independence and self-reliance, the qualities Okonkwo takes to an extreme.',

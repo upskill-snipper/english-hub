@@ -15,14 +15,21 @@ import { useT } from '@/lib/i18n/use-t'
 const beforeYouWereMinePOem: PoemData = {
   title: 'Before You Were Mine',
   poet: 'Carol Ann Duffy',
-  // NOTE: To avoid reproducing in-copyright text that could not be
-  // verified here, each line below is a paraphrased DESCRIPTION of what
-  // the poem does at that point, not the poem's wording. Restore exact
-  // lines only from a verified primary edition (see context note).
+  // NOTE: "Before You Were Mine" (Carol Ann Duffy, 1993) is in copyright. To
+  // avoid reproducing the poem, each line below is given as a PARAPHRASE in the
+  // site's own words, one entry per line of the poem, and the notes quote only
+  // short phrases. Students must read the full text in the AQA Love and
+  // Relationships anthology.
+  // Until 25 September 2026 this array held descriptions written without the
+  // text to hand. From the eighth line on they described things the poem does
+  // not contain, and they ran four lines in the third stanza and six in the
+  // fourth, so the viewer, which numbers entries by position, numbered them
+  // wrongly. The poem has four stanzas of five lines, and the entries below
+  // follow it.
   lines: [
     // Stanza 1
     {
-      text: 'Stanza 1, line 1 \u2014 the speaker places herself ten years before her own birth, picturing her mother laughing on a street corner.',
+      text: '[Paraphrase] A decade before the speaker\u2019s birth, her mother laughs on a street corner.',
       annotations: [
         {
           type: 'Time shift',
@@ -32,7 +39,7 @@ const beforeYouWereMinePOem: PoemData = {
       ],
     },
     {
-      text: 'Line 2 \u2014 the mother is named alongside two friends, real young women from her own life.',
+      text: '[Paraphrase] She is out with two friends, Jean Duff and Maggie McGeeney.',
       annotations: [
         {
           type: 'Detail',
@@ -42,7 +49,7 @@ const beforeYouWereMinePOem: PoemData = {
       ],
     },
     {
-      text: 'Line 3 \u2014 the three young women are pictured doubled over, helpless with laughter.',
+      text: '[Paraphrase] The three friends double over, clinging on to',
       annotations: [
         {
           type: 'Visual imagery',
@@ -52,7 +59,7 @@ const beforeYouWereMinePOem: PoemData = {
       ],
     },
     {
-      text: 'Line 4 \u2014 their loud, unrestrained laughter is emphasised by a sharp verb of shrieking.',
+      text: '[Paraphrase] one another or their own knees, and scream with laughter at the ground.',
       annotations: [
         {
           type: 'Verb choice',
@@ -62,7 +69,7 @@ const beforeYouWereMinePOem: PoemData = {
       ],
     },
     {
-      text: 'Line 5 \u2014 the mother\u2019s patterned dress lifts in the wind, and a one-word Marilyn Monroe allusion lands after a full stop.',
+      text: '[Paraphrase] Her spotted dress billows about her legs. A one-word sentence: Marilyn.',
       annotations: [
         {
           type: 'Allusion',
@@ -80,7 +87,7 @@ const beforeYouWereMinePOem: PoemData = {
     { text: '' },
     // Stanza 2
     {
-      text: 'Line 6 \u2014 the speaker notes she does not yet exist; the idea of her has not even crossed the mother\u2019s mind.',
+      text: '[Paraphrase] The speaker is not born yet; no one gives a thought to her',
       annotations: [
         {
           type: 'Possessive tone',
@@ -90,11 +97,11 @@ const beforeYouWereMinePOem: PoemData = {
       ],
     },
     {
-      text: 'Line 7 \u2014 a crowded, glittering dancehall is evoked, with the mother\u2019s future imagined as bright and effervescent.',
+      text: '[Paraphrase] in a dance hall of admiring eyes and bubbly, cinematic futures',
       annotations: [
         {
           type: 'Imagery',
-          note: 'The dancehall imagery evokes admiring gazes and a glittering room; the effervescent description suggests excitement and champagne-like energy. The mother\u2019s youth is intoxicating.',
+          note: 'The ballroom imagery evokes a room full of admiring gazes; the effervescent description suggests excitement and champagne-like energy. The mother\u2019s youth is intoxicating.',
           color: '#10b981',
         },
         {
@@ -105,32 +112,32 @@ const beforeYouWereMinePOem: PoemData = {
       ],
     },
     {
-      text: 'Line 8 \u2014 the sentence enjambs into an image of the speaker as the catalyst of conception.',
+      text: '[Paraphrase] that a suitable partner walking her home might bring. The speaker is sure her mother danced',
       annotations: [
         {
           type: 'Enjambment',
-          note: 'The clause runs across the stanza, connecting the mother\u2019s romantic youth to the speaker\u2019s own conception. The line break creates a momentary shock.',
+          note: 'Sentences run across the line breaks here: the effervescent futures spill into this line, and the speaker\u2019s certainty about how her mother would dance spills into the next. The flow mimics the energy of the dance hall.',
           color: '#8b5cf6',
         },
       ],
     },
     {
-      text: 'Line 9 \u2014 the speaker says she changed the mother\u2019s life, while rejecting the sentimental idea of a baby as an angel.',
+      text: '[Paraphrase] in just that style. Back then, before she was the speaker\u2019s, Grandma waits at the tenement entrance',
       annotations: [
         {
-          type: 'Self-awareness',
-          note: 'The speaker acknowledges she changed her mother\u2019s life \u2014 not necessarily for the better. She rejects the sentimental image of a baby as an angel.',
-          color: '#f59e0b',
+          type: 'Detail',
+          note: 'Before motherhood, the mother was herself a daughter: her own mother waits at the "close", the Scots word for the shared entrance to a tenement, ready to punish her for coming home late. The local detail roots the poem in working-class Glasgow.',
+          color: '#10b981',
         },
       ],
     },
     {
-      text: 'Line 10 \u2014 the mother is pictured looking down at a child in her arms rather than outward at the world.',
+      text: '[Paraphrase] ready to punish her for coming in late. Her mother judges the risk worthwhile.',
       annotations: [
         {
-          type: 'Ambiguity',
-          note: 'The phrase about her arms is doubled in sense \u2014 both the child held in them and the contentment she feels. Either way, the mother is absorbed in caring for the child, looking down rather than outward.',
-          color: '#f59e0b',
+          type: 'Colloquial tone',
+          note: 'The informal, conversational phrasing sounds like the speaker teasing her mother, imagining her deciding that the fun was worth the punishment. The tone is warm and intimate.',
+          color: '#3b82f6',
         },
       ],
     },
@@ -138,42 +145,48 @@ const beforeYouWereMinePOem: PoemData = {
     { text: '' },
     // Stanza 3
     {
-      text: 'Line 11 \u2014 the speaker says that even before her birth she wanted this bold, flirtatious version of her mother.',
+      text: '[Paraphrase] Was the decade before her demanding baby cry her mother\u2019s best, she asks.',
       annotations: [
         {
+          type: 'Self-awareness',
+          note: 'The speaker admits that her arrival ended what she suggests was her mother\u2019s best decade: she knows it was her birth, not just time, that took her mother\u2019s youth away.',
+          color: '#f59e0b',
+        },
+        {
           type: 'Possessive language',
-          note: 'The verb of wanting is controlling and acquisitive. The speaker claims desire for a version of her mother that existed before her \u2014 as though the mother belongs to her in every era.',
+          note: 'The speaker calls her own newborn cry "possessive", naming the poem\u2019s central idea: her claim on her mother began the moment she was born.',
           color: '#ec4899',
         },
       ],
     },
     {
-      text: 'Line 12 \u2014 the mother is placed in a glamorous setting holding artificial paper roses.',
+      text: '[Paraphrase] She recalls slipping her small hands into the old red stilettos, now relics,',
       annotations: [
         {
           type: 'Imagery',
-          note: 'The paper roses are artificial \u2014 beautiful but not real. This hints that the speaker\u2019s vision of her mother\u2019s past may be romanticised and constructed from imagination rather than memory.',
+          note: 'The red high heels are called "relics", as if they were sacred objects left from a vanished era. As a child the speaker handles them, touching a glamorous past she can only reach through things.',
           color: '#10b981',
         },
       ],
     },
     {
-      text: 'Line 13 \u2014 the mother is described walking with the self-assurance of a grown, independent woman.',
+      text: '[Paraphrase] Now the ghost of her young mother noisily crosses George Square towards her',
       annotations: [
         {
-          type: 'Characterisation',
-          note: 'The mother walks with confidence \u2014 she is self-assured, independent, and free. This is a woman who has not yet been defined by motherhood.',
-          color: '#3b82f6',
+          type: 'Role reversal',
+          note: 'The ghost here is not a dead person but the mother\u2019s own younger self, and it is the daughter who is haunted. The usual pattern of haunting is turned round: the living mother\u2019s lost youth pursues her child, its noisy approach recalling the high heels of the line before.',
+          color: '#ef4444',
         },
       ],
     },
+    { text: '[Paraphrase] until she sees her, as vivid as a remembered perfume, beneath the tree' },
     {
-      text: 'Line 14 \u2014 the speaker insists that street should belong to her and wishes she could be present in it.',
+      text: '[Paraphrase] strung with lights, and asks, affectionately, who gave her those love bites.',
       annotations: [
         {
-          type: 'Possessive language',
-          note: 'The desire to have her mother\u2019s past under her own feet, and to be there, expresses a wish to own, occupy, and control it. The speaker wants to be present in every moment of her mother\u2019s life.',
-          color: '#ec4899',
+          type: 'Ambiguity',
+          note: 'The question about the marks on her mother\u2019s neck is left unanswered: they hint at a lover the speaker never knew, and at a part of her mother\u2019s life that is closed to her.',
+          color: '#f59e0b',
         },
       ],
     },
@@ -181,76 +194,64 @@ const beforeYouWereMinePOem: PoemData = {
     { text: '' },
     // Stanza 4
     {
-      text: 'Line 16 \u2014 the voice shifts to a remembered mother-daughter exchange about the dress, in a casual, conversational register.',
-      annotations: [
-        {
-          type: 'Colloquial tone',
-          note: 'The informal, conversational diction suggests a real mother-daughter exchange. The tone shifts to warmth and intimacy.',
-          color: '#3b82f6',
-        },
-      ],
-    },
-    {
-      text: 'Line 17 \u2014 the mother dresses up specially even for the short walk from the station.',
-      annotations: [
-        {
-          type: 'Detail',
-          note: 'The mother puts on a special dress just for the short walk from the station \u2014 she takes pride in her appearance, in being seen. Fashion is her self-expression.',
-          color: '#10b981',
-        },
-      ],
-    },
-    {
-      text: 'Line 18 \u2014 the speaker identifies completely with her mother and recalls being taught to dance on a marble stair.',
+      text: '[Paraphrase] The cha-cha: her mother taught her its steps walking back from Mass,',
       annotations: [
         {
           type: 'Identification',
-          note: 'The speaker states she IS her mother, identifying completely and claiming her identity. The dance is one of joy and freedom that the mother taught the speaker.',
+          note: 'Here the speaker\u2019s own childhood memory joins the imagined past: the mother teaches her daughter the dance steps, passing her younger self on to the child.',
           color: '#ec4899',
         },
         {
           type: 'Sound',
-          note: 'The name of the dance is onomatopoeic and rhythmic, evoking the sound of heels on marble stairs. It brings the memory alive through sound.',
+          note: 'The name of the dance, called out as an exclamation, is rhythmic and onomatopoeic, evoking the beat of the steps. It brings the memory alive through sound.',
           color: '#f59e0b',
         },
       ],
     },
     {
-      text: 'Line 19 \u2014 a breathless run of five linked verbs captures the mother sparkling, dancing, laughing and moving.',
+      text: '[Paraphrase] their feet striking sparks off a street not meant for dancing. Already, as a child,',
+      annotations: [
+        {
+          type: 'Alliteration',
+          note: 'The alliterative "stamping stars" makes the dancing feet strike sparks from the pavement, turning an ordinary walk home into something magical.',
+          color: '#8b5cf6',
+        },
+      ],
+    },
+    {
+      text: '[Paraphrase] she wanted that daring, flirtatious young woman seen at Portobello,',
+      annotations: [
+        {
+          type: 'Possessive language',
+          note: 'The verb of wanting is controlling and acquisitive. The speaker claims desire for a version of her mother that existed before her \u2014 as though the mother belongs to her in every era.',
+          color: '#ec4899',
+        },
+        {
+          type: 'Characterisation',
+          note: 'The young mother is bold and flirtatious - self-assured, independent, and free. This is a woman who has not yet been defined by motherhood.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: '[Paraphrase] in Scotland, prior to her own birth. The glamour of that love has not faded',
+    },
+    {
+      text: '[Paraphrase] in the time when her mother shone, danced and laughed, before being hers.',
       annotations: [
         {
           type: 'Polysyndeton',
           note: 'The repeated conjunction creates a breathless, excited list. Each verb captures a different facet of the mother\u2019s vitality \u2014 she is dazzling, joyful, and alive.',
           color: '#f59e0b',
         },
-      ],
-    },
-    {
-      text: 'Line 20 \u2014 the speaker, as a demanding child, stamps her feet on the street she romanticises as glamorous.',
-      annotations: [
         {
           type: 'Possessive language',
-          note: 'The stamping-feet image suggests a child\u2019s tantrum \u2014 demanding attention, demanding ownership. The speaker claims her mother\u2019s glamorous past as her own territory.',
+          note: 'The poem closes on its title phrase, so the last word it gives is "mine": a final claim of ownership over the mother.',
           color: '#ec4899',
         },
         {
-          type: 'Rhyme',
-          note: 'The internal rhyme on this line ties the speaker physically to her mother\u2019s world, anchoring her in the romanticised past.',
-          color: '#8b5cf6',
-        },
-      ],
-    },
-    {
-      text: 'Line 21 \u2014 the speaker calls herself her mother\u2019s ghost and again the one who changed her life, closing the poem.',
-      annotations: [
-        {
-          type: 'Role reversal',
-          note: 'The speaker calls herself her mother\u2019s ghost \u2014 reversing expectations. Usually it is the dead who haunt the living, but here the unborn child haunts the mother\u2019s past. Motherhood is framed as a kind of death of the mother\u2019s former self.',
-          color: '#ef4444',
-        },
-        {
           type: 'Repetition',
-          note: 'The self-identification and the idea of changing the mother\u2019s life are repeated from earlier, creating a cyclical structure. The poem ends where it conceptually began \u2014 with possession and transformation.',
+          note: 'The title phrase returns in the final line after appearing in the second stanza, giving the poem a circular shape: it ends on the claim of possession it began with.',
           color: '#f59e0b',
         },
       ],
@@ -837,9 +838,10 @@ export default function BeforeYouWereMinePage() {
           (1993).
         </p>
         <p>
-          Poem text is reproduced for the purpose of private study and educational criticism under
-          UK fair-dealing provisions (Copyright, Designs and Patents Act 1988, s.30). No commercial
-          use is intended. All quotations remain the intellectual property of the respective rights
+          The poem is paraphrased line by line here rather than reproduced, and only short phrases
+          are quoted, for criticism and review under UK fair-dealing provisions (Copyright, Designs
+          and Patents Act 1988, s.30). It is printed in full in the AQA Love &amp; Relationships
+          anthology. All quotations remain the intellectual property of the respective rights
           holders.
         </p>
       </footer>

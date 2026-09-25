@@ -59,8 +59,7 @@ const themes = [
       'Steinbeck layers forms of discrimination: racial (Crooks), disability (Candy, Lennie), age (Candy), and gender (Curley\u2019s wife). Each character experiences powerlessness in a different register, and Steinbeck refuses to rank them - instead he shows how all of them are exploited by the ranch economy and by Curley\u2019s unchecked aggression.',
     moments:
       'Candy\u2019s dog; Crooks\u2019s segregated room; Curley\u2019s wife\u2019s threat to have Crooks lynched; the fight in the bunkhouse.',
-    quote:
-      '”I could get you strung up on a tree so easy it ain\u2019t even funny.” - Curley\u2019s wife',
+    quote: '”I could get you strung up ... so easy it ain\u2019t even funny.” - Curley\u2019s wife',
   },
   {
     title: 'Fate and predestination',

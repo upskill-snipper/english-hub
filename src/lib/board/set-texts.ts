@@ -611,7 +611,7 @@ export const SET_TEXTS: SetText[] = [
     description:
       'Two German-Jewish refugees walk through New York on the eve of the Second World War, finding everywhere shut to them; the blues form gives political horror a quietly mournful music.',
     ukRightsNotice:
-      'Rights notice: © Curtis Brown / Faber & Faber on behalf of the W.H. Auden estate (1907-1973; UK copyright runs to 2044). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0) or Auden’s Collected Poems (Faber).',
+      'Rights notice: © Curtis Brown / Faber & Faber on behalf of the W.H. Auden estate (1907-1973; UK copyright runs to 2044). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). The full poem is in Auden’s Collected Poems (Faber). It is not in the Pearson Edexcel International GCSE English Anthology, which earlier versions of this notice named.',
   },
   {
     slug: 'war-photographer',

@@ -503,27 +503,27 @@ export default function HandmaidsTalePage() {
                 analysis="The Commander's defence of Gilead. The chiastic structure ('better... worse') is rhetorically polished but morally chilling: the regime is justified through the language of zero-sum trade-offs. Atwood uses the line to suggest that authoritarian thinking is not crude but seductive - couched in the syntax of reasonableness. The italicised 'some' invites the reader to ask: which 'some'? Always, in the novel, women."
               />
               <QuoteCard
-                quote="We were the people who were not in the papers. We lived in the blank white spaces at the edges of print. It gave us more freedom. We lived in the gaps between the stories."
+                quote="the blank white spaces ... We lived in the gaps between the stories."
                 speaker="Offred"
-                analysis="A retrospective reflection on pre-Gilead complacency. The metaphor of 'blank white spaces' and 'gaps between stories' is deeply ironic: what felt like freedom was actually invisibility, and invisibility is what allowed the coup to succeed. Atwood is writing directly to her 1980s reader: the warning is that to be apolitical, to be 'not in the papers,' is to be unprepared when politics comes for you."
+                analysis="A retrospective reflection on pre-Gilead complacency. The metaphor of 'blank white spaces' and 'gaps between stories' is deeply ironic: what felt like freedom was actually invisibility, and invisibility is what allowed the coup to succeed. Atwood is writing directly to her 1980s reader: the warning is that to be apolitical, to be 'not in the papers' (as the full passage puts it), is to be unprepared when politics comes for you."
               />
               <QuoteCard
-                quote="I would like to believe this is a story I'm telling. I need to believe it. I must believe it."
+                quote="I would like to believe ... I need to believe it. I must believe it."
                 speaker="Offred"
                 analysis="The narrator's central self-revising sentence. The escalating sequence of modal verbs - 'would like... need... must' - performs the rising desperation behind the act of narration. Atwood foregrounds the constructed nature of the narrative even as she insists on its psychological necessity: storytelling as survival. The line connects Offred to centuries of women who told stories to live through what they could not change."
               />
               <QuoteCard
-                quote="Pen Is Envy, Aunt Lydia would say, quoting another Centre motto, warning us away from such objects."
+                quote="Pen Is Envy, Aunt Lydia would say, quoting another Centre motto"
                 speaker="Offred recalling Aunt Lydia"
                 analysis="Atwood's most explicit Freudian joke: the slogan reads as both a parody of feminist analysis and a sound-pun on 'penis envy.' Aunt Lydia uses it to ridicule women's desire to write; Offred, narrating, registers the deeper truth - the pen, not the penis, is the instrument of male power in Gilead. The line crystallises the novel's argument that the patriarchy's deepest theft is the theft of literacy."
               />
               <QuoteCard
-                quote="There is more than one kind of freedom, said Aunt Lydia. Freedom to and freedom from. In the days of anarchy, it was freedom to. Now you are being given freedom from. Don't underrate it."
+                quote="There is more than one kind of freedom, ... Freedom to and freedom from."
                 speaker="Aunt Lydia"
-                analysis="Aunt Lydia's most-quoted line, drawing (and distorting) Isaiah Berlin's famous distinction between positive and negative liberty. Atwood uses the Aunt's voice to expose how authoritarian regimes always claim to be liberating: women are 'free from' street harassment, abortion, divorce. The chiasmus is rhetorically neat but conceals the lie that captivity can be a gift."
+                analysis="Aunt Lydia's most-quoted line, drawing (and distorting) Isaiah Berlin's famous distinction between positive and negative liberty. Atwood uses the Aunt's voice to expose how authoritarian regimes always claim to be liberating: women are 'free from' street harassment, abortion, divorce. In the full passage, the chiasmus is rhetorically neat but conceals the lie that captivity can be a gift."
               />
               <QuoteCard
-                quote="A rat in a maze is free to go anywhere, as long as it stays inside the maze."
+                quote="A rat in a maze is free to go anywhere, ... stays inside the maze."
                 speaker="Offred"
                 analysis="A devastating metaphor for life under Gilead. The aphorism turns Aunt Lydia's 'freedom from' rhetoric inside out: the appearance of choice within a closed system is not freedom. The image of the rat - vermin, experimental subject, scurrying - also reflects Offred's diminished sense of self. The line is one of Atwood's most epigrammatic critiques of negative liberty."
               />
@@ -533,7 +533,7 @@ export default function HandmaidsTalePage() {
                 analysis="The required greeting between Handmaids, drawn from Luke 1:42 ('Blessed art thou among women, and blessed is the fruit of thy womb'). The response is 'May the Lord open.' The greeting reduces women to their wombs through liturgical formula - every encounter is framed by the regime's reproductive imperative. Atwood's ear for the way real Christian liturgy is plagiarised and twisted by Gilead is one of the novel's sharpest satirical instruments."
               />
               <QuoteCard
-                quote="My name isn't Offred, I have another name, which nobody uses now because it's forbidden. I tell myself it doesn't matter, your name is like your telephone number, useful only to others; but what I tell myself is wrong, it does matter."
+                quote="your name is like your telephone number, ... what I tell myself is wrong"
                 speaker="Offred"
                 analysis="The narrator's most explicit reflection on naming. The self-correction ('what I tell myself is wrong') models the constant interior negotiation of resistance: rationalising loss, then refusing to rationalise it. The simile 'like your telephone number' is comic in its banality and tragic in its inadequacy: a name is precisely not like a phone number. Atwood places identity-by-naming at the centre of her political analysis."
               />
@@ -543,7 +543,7 @@ export default function HandmaidsTalePage() {
                 analysis="A starkly simple sentence in a narrative full of qualified ones. Offred's wish is for any small object she could call her own, in a system that has stripped her of property, name, and movement. The line connects desire to theft and to self-recovery: even wanting is, in Gilead, an act of resistance against the regime's claim on every aspect of her life."
               />
               <QuoteCard
-                quote="Give me children, or else I die. Am I in God's stead, who hath withheld from thee the fruit of the womb? Behold my maid Bilhah. She shall bear upon my knees, that I may also have children by her."
+                quote="Give me children, or else I die. ... Behold my maid Bilhah."
                 speaker="Genesis 30:1-3 (epigraph)"
                 analysis="Atwood's first epigraph, from the Old Testament. Rachel's plea, and Jacob's surrogate child by her handmaid Bilhah, is the literal scriptural justification for Gilead's Ceremony. The epigraph anchors Atwood's argument that Gilead is not foreign to the Western tradition but a literal reading of one strand of it. The Wife who 'has children' through her Handmaid is enacting a story already in scripture."
               />
@@ -558,14 +558,14 @@ export default function HandmaidsTalePage() {
                 analysis="Offred's bitter summary of the Handmaid's status. The juxtaposition of clinical anatomy ('two-legged wombs') with elevated religious diction ('sacred vessels, ambulatory chalices') exposes how Gilead disguises biological reduction as theological honour. The tricolon escalates into Latinate ecclesiastical vocabulary, mimicking the regime's own euphemistic register before turning it back on itself with the ironic 'that's all.'"
               />
               <QuoteCard
-                quote="Nothing changes instantaneously: in a gradually heating bathtub you'd be boiled to death before you knew it."
+                quote="in a gradually heating bathtub you'd be boiled to death before you knew it."
                 speaker="Offred"
                 analysis="The 'boiled frog' metaphor for the slow erosion of liberty. Atwood is speaking directly to her 1980s reader: the takeover of America did not feel like a takeover at the time. The image is comic-domestic (the bathtub) and lethal - exactly Atwood's tonal signature. The line is one of the novel's clearest political messages: pay attention to small changes."
               />
               <QuoteCard
-                quote="Ordinary, said Aunt Lydia, is what you are used to. This may not seem ordinary to you now, but after a time it will. It will become ordinary."
+                quote="Ordinary, said Aunt Lydia, is what you are used to. ... It will become ordinary."
                 speaker="Aunt Lydia, recalled by Offred"
-                analysis="Aunt Lydia's lesson that the body and mind acclimatise to anything. The triple repetition of 'ordinary' - definition, prediction, certainty - performs the very habituation it describes. Atwood uses this line to articulate one of the novel's central political insights: that authoritarianism survives by becoming familiar. The horror of Gilead is not that it is shocking but that it stops being shocking."
+                analysis="Aunt Lydia's lesson that the body and mind acclimatise to anything. In the full passage, the triple repetition of 'ordinary' - definition, prediction, certainty - performs the very habituation it describes. Atwood uses this line to articulate one of the novel's central political insights: that authoritarianism survives by becoming familiar. The horror of Gilead is not that it is shocking but that it stops being shocking."
               />
               <QuoteCard
                 quote="And so I step up, into the darkness within; or else the light."
@@ -597,10 +597,10 @@ export default function HandmaidsTalePage() {
                   scarlet letter worn by Hawthorne&apos;s Hester Prynne (a deliberate Atwood echo,
                   given the New England setting). Red also marks the women as visible from a
                   distance: there is no hiding. Offred reflects that &ldquo;everything except the
-                  wings around my face is red: the colour of blood, which defines us.&rdquo; The
-                  colour combines biological essentialism, religious shame, and visibility into a
-                  single uniform. In contrast, Wives wear blue (the Virgin Mary), Marthas dull
-                  green, Aunts brown.
+                  wings ... is red: the colour of blood, which defines us.&rdquo; The colour
+                  combines biological essentialism, religious shame, and visibility into a single
+                  uniform. In contrast, Wives wear blue (the Virgin Mary), Marthas dull green, Aunts
+                  brown.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -634,11 +634,11 @@ export default function HandmaidsTalePage() {
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Serena Joy tends an immaculate garden of tulips and irises &mdash; one of the few
                   activities available to her. The flowers are described in language that
-                  recurrently sexualises them (&ldquo;the tulips are red, a darker crimson towards
-                  the stem, as if they have been cut and are beginning to heal there&rdquo;). The
-                  garden is a displaced site of Serena&apos;s own thwarted fertility and creativity.
-                  Atwood draws on the long iconography of women-as-gardens (the{' '}
-                  <em>hortus conclusus</em>) to expose Serena&apos;s confinement.
+                  recurrently sexualises them (&ldquo;the tulips ... as if they have been cut and
+                  are beginning to heal there&rdquo;). The garden is a displaced site of
+                  Serena&apos;s own thwarted fertility and creativity. Atwood draws on the long
+                  iconography of women-as-gardens (the <em>hortus conclusus</em>) to expose
+                  Serena&apos;s confinement.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -679,10 +679,9 @@ export default function HandmaidsTalePage() {
                   The monthly state-sanctioned rape, framed by Genesis 30 and conducted with the
                   Wife pinning the Handmaid by the wrists, is a piece of choreographed theology. By
                   calling it the &ldquo;Ceremony,&rdquo; the regime turns rape into ritual, and
-                  ritual into law. Offred&apos;s flat description (&ldquo;What he is fucking is the
-                  lower part of my body. I do not say making love, because this is not what
-                  he&apos;s doing. Copulating too would be inaccurate&rdquo;) refuses the
-                  regime&apos;s euphemism by refusing all available words.
+                  ritual into law. Offred&apos;s account of it is deliberately flat: she rejects,
+                  one by one, each word that might soften or dignify the act, and in refusing them
+                  all she refuses the regime&apos;s euphemism.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">

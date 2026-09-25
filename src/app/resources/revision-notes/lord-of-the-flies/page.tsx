@@ -117,7 +117,7 @@ const chapters = [
   {
     chapter: 'Chapter 12: Cry of the Hunters',
     summary:
-      "Jack's tribe hunts Ralph across the island. They set the jungle on fire to smoke him out, willing to destroy the entire island to kill him. Ralph runs for his life, stumbling onto the beach, where he collapses at the feet of a British naval officer who has seen the smoke. The officer is shocked that British boys could behave this way. Ralph weeps 'for the end of innocence, the darkness of man's heart, and the fall through the air of the true, wise friend called Piggy'. The other boys begin to cry too. The officer turns away, embarrassed, to look at his warship.",
+      "Jack's tribe hunts Ralph across the island. They set the jungle on fire to smoke him out, willing to destroy the entire island to kill him. Ralph runs for his life, stumbling onto the beach, where he collapses at the feet of a British naval officer who has seen the smoke. The officer is shocked that British boys could behave this way. Ralph weeps 'for the end of innocence, the darkness of man's heart'. The other boys begin to cry too. The officer turns away, embarrassed, to look at his warship.",
   },
 ]
 
@@ -194,11 +194,10 @@ const themes = [
 
 const keyQuotes = [
   {
-    quote:
-      "Ralph wept for the end of innocence, the darkness of man's heart, and the fall through the air of the true, wise friend called Piggy.",
+    quote: "Ralph wept for the end of innocence, the darkness of man's heart",
     chapter: 'Chapter 12',
     analysis:
-      "The novel's final emotional statement. The tricolon structure gives Ralph's grief a ritualistic quality. 'The darkness of man's heart' encapsulates the novel's thesis. 'The fall through the air' echoes both Piggy's literal death and the parachutist's descent, linking individual violence to the wider war.",
+      "The novel's final emotional statement. The full sentence is a tricolon, which gives Ralph's grief a ritualistic quality. 'The darkness of man's heart' encapsulates the novel's thesis. In the full sentence, 'the fall through the air' echoes both Piggy's literal death and the parachutist's descent, linking individual violence to the wider war.",
   },
   {
     quote: "Maybe there is a beast... maybe it's only us.",
@@ -208,8 +207,7 @@ const keyQuotes = [
       "Simon alone grasps the truth: the beast is not an external creature but the capacity for evil within every human being. The tentative 'maybe' reflects his struggle to articulate a profound insight. The other boys shout him down, refusing to confront this uncomfortable truth.",
   },
   {
-    quote:
-      "You knew, didn't you? I'm part of you? Close, close, close! I'm the reason why it's no go? Why things are what they are?",
+    quote: "I'm part of you? Close, close, close! ... Why things are what they are?",
     chapter: 'Chapter 8',
     speaker: 'The Lord of the Flies',
     analysis:
@@ -229,15 +227,14 @@ const keyQuotes = [
       "Ironic, since Jack later exploits fear to gain power. The dash and conversational tone show Jack dismissing the littluns' concerns. Golding shows how those who deny fear publicly are often those who weaponise it politically.",
   },
   {
-    quote: "We've got to have rules and obey them. After all, we're not savages. We're English.",
+    quote: "We've got to have rules and obey them. ... we're not savages. We're English.",
     chapter: 'Chapter 2',
     speaker: 'Jack',
     analysis:
       "Deeply ironic given Jack's later descent into savagery. The equation of Englishness with civilisation reflects the imperial attitudes Golding is critiquing. The boys' British identity provides no protection against the darkness within. The statement also satirises the British colonial assumption of cultural superiority.",
   },
   {
-    quote:
-      'Roger gathered a handful of stones and began to throw them. Yet there was a space round Henry... into which he dare not throw. Here, invisible yet strong, was the taboo of the old life.',
+    quote: 'Here, invisible yet strong, was the taboo of the old life.',
     chapter: 'Chapter 4',
     analysis:
       "A crucial passage showing civilisation's influence still holding Roger back. The 'invisible yet strong' taboo is the memory of parental authority, law, and punishment. By Chapter 11, this taboo has completely dissolved, and Roger kills Piggy without hesitation. The passage demonstrates Golding's argument that moral behaviour depends on social enforcement.",
@@ -250,8 +247,7 @@ const keyQuotes = [
       "Jack's transformation from choirboy to hunter is marked by physical change. The verb 'dance' and noun 'snarling' fuse human and animal behaviour. The face paint has freed Jack from his identity, allowing the savage within to emerge.",
   },
   {
-    quote:
-      'The mask was a thing on its own, behind which Jack hid, liberated from shame and self-consciousness.',
+    quote: 'The mask was a thing on its own, ... liberated from shame and self-consciousness.',
     chapter: 'Chapter 4',
     analysis:
       "The face paint functions as a psychological shield, removing individual identity and moral responsibility. 'Liberated' is a loaded word: Jack is freed, but freed from the constraints that make civilised behaviour possible. The mask enables the violence that follows.",
@@ -264,8 +260,7 @@ const keyQuotes = [
       "Simon's ellipsis and tentative phrasing reflect his difficulty in articulating an abstract idea to a hostile audience. His insight is the novel's central truth, but it is rejected. Golding shows that inconvenient truths are often suppressed by societies unwilling to examine themselves.",
   },
   {
-    quote:
-      "Bollocks to the rules! We're strong -- we hunt! If there's a beast, we'll hunt it down!",
+    quote: "Bollocks to the rules! We're strong -- we hunt!",
     chapter: 'Chapter 5',
     speaker: 'Jack',
     analysis:
@@ -279,11 +274,10 @@ const keyQuotes = [
       "Piggy's final rhetorical question distils the novel's central conflict into a single sentence. The parallel structure ('to have rules and agree' versus 'to hunt and kill') presents civilisation and savagery as a clear binary choice. Moments later, Piggy is killed, and the question is answered by force rather than reason.",
   },
   {
-    quote:
-      'The rock struck Piggy a glancing blow from chin to knee; the conch exploded into a thousand white fragments and ceased to exist.',
+    quote: 'the conch exploded into a thousand white fragments and ceased to exist.',
     chapter: 'Chapter 11',
     analysis:
-      "Piggy's death and the conch's destruction occur simultaneously, linking the death of reason to the death of democracy. 'Ceased to exist' is final and absolute. The conch, which has symbolised order and the right to speak throughout the novel, is obliterated. There is no rebuilding from this point.",
+      "In the full sentence, Piggy's death and the conch's destruction occur simultaneously, linking the death of reason to the death of democracy. 'Ceased to exist' is final and absolute. The conch, which has symbolised order and the right to speak throughout the novel, is obliterated. There is no rebuilding from this point.",
   },
   {
     quote: 'The world, that understandable and lawful world, was slipping away.',
@@ -292,11 +286,11 @@ const keyQuotes = [
       "Focalised through Ralph, this sentence captures the gradual dissolution of civilised order. 'Understandable and lawful' suggests a world governed by reason and rules. 'Slipping away' implies the process is passive and almost imperceptible. Ralph senses the danger but cannot stop it.",
   },
   {
-    quote: "I ought to be chief... because I'm chapter chorister and head boy. I can sing C sharp.",
+    quote: 'I ought to be chief... I can sing C sharp.',
     chapter: 'Chapter 1',
     speaker: 'Jack',
     analysis:
-      "Jack's claim to leadership is based on the arbitrary hierarchies of English boarding school life. 'I can sing C sharp' is comically irrelevant to survival on a desert island. Golding satirises how power is often claimed on the basis of existing privilege rather than competence.",
+      "In the full line, Jack's claim to leadership is based on the arbitrary hierarchies of English boarding school life. 'I can sing C sharp' is comically irrelevant to survival on a desert island. Golding satirises how power is often claimed on the basis of existing privilege rather than competence.",
   },
   {
     quote: 'Him with the shell. Ralph! Ralph! Let him be chief with the trumpet-thing.',
@@ -332,10 +326,10 @@ const keyQuotes = [
   },
   {
     quote:
-      "Softly, surrounded by a fringe of inquisitive bright creatures, itself a silver shape beneath the steadfast constellations, Simon's dead body moved out towards the open sea.",
+      "beneath the steadfast constellations, Simon's dead body moved out towards the open sea.",
     chapter: 'Chapter 9',
     analysis:
-      "One of the most beautiful passages in the novel. The contrast between the brutal murder and this serene, almost transcendent description elevates Simon to a spiritual figure. The 'steadfast constellations' suggest an unchanging moral order that the boys have violated. The phosphorescent creatures give Simon a halo-like quality, reinforcing his Christ-like symbolism.",
+      "One of the most beautiful passages in the novel. The contrast between the brutal murder and this serene, almost transcendent description elevates Simon to a spiritual figure. The 'steadfast constellations' suggest an unchanging moral order that the boys have violated. In the full sentence, the phosphorescent creatures give Simon a halo-like quality, reinforcing his Christ-like symbolism.",
   },
   {
     quote: "The rules! You're breaking the rules! ... Who cares?",
@@ -346,10 +340,10 @@ const keyQuotes = [
   },
   {
     quote:
-      "He found himself understanding the wearisomeness of this life, where every path was an improvisation and a considerable part of one's waking life was spent watching one's feet.",
+      "wearisomeness of this life, where every path was an improvisation ... spent watching one's feet.",
     chapter: 'Chapter 7',
     analysis:
-      "Ralph's moment of clarity about their degraded existence. The long, complex sentence structure mimics the weariness it describes. 'Watching one's feet' suggests a loss of the ability to look ahead or plan. Ralph is losing the capacity for abstract thought that distinguishes him from the hunters.",
+      "Ralph's moment of clarity about their degraded existence. The full sentence's long, complex structure mimics the weariness it describes. 'Watching one's feet' suggests a loss of the ability to look ahead or plan. Ralph is losing the capacity for abstract thought that distinguishes him from the hunters.",
   },
   {
     quote: "I'm frightened. Of us.",
@@ -366,8 +360,7 @@ const keyQuotes = [
       "Piggy's rhetorical questions articulate the novel's central concern. The descending hierarchy (humans, animals, savages) suggests that savagery is lower than animality. The question is never answered directly; instead, the boys' actions provide the answer. Golding implies that the categories are not fixed but fluid.",
   },
   {
-    quote:
-      'The officer... turned away to give them time to pull themselves together; and waited, allowing his eyes to rest on the trim cruiser in the distance.',
+    quote: 'The officer... allowing his eyes to rest on the trim cruiser in the distance.',
     chapter: 'Chapter 12',
     analysis:
       "The novel's final image. The naval officer represents adult civilisation and rescue, but his 'trim cruiser' is a warship, engaged in the same violence the boys have enacted in miniature. Golding's irony is devastating: the adults who will 'rescue' the boys are themselves waging a war. Civilisation's savagery is merely better organised.",
@@ -416,7 +409,7 @@ const contextSections = [
   {
     title: "William Golding's World War II Experience",
     content:
-      "Golding served in the Royal Navy during World War II, commanding a rocket-launching ship during the D-Day landings. He witnessed the full horror of industrial warfare and the capacity of ordinary people to commit terrible acts. After the war, he said: 'I began to see what people were capable of doing. Anyone who moved through those years without understanding that man produces evil as a bee produces honey, must have been blind or wrong in the head.' This direct experience of human brutality profoundly shaped the novel's pessimistic view of human nature.",
+      "Golding served in the Royal Navy during World War II, commanding a rocket-launching ship during the D-Day landings. He witnessed the full horror of industrial warfare and the capacity of ordinary people to commit terrible acts. After the war, he said he had come to see 'what people were capable of doing', and that 'man produces evil as a bee produces honey'. This direct experience of human brutality profoundly shaped the novel's pessimistic view of human nature.",
   },
   {
     title: 'The Cold War Context',

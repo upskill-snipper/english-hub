@@ -113,7 +113,7 @@ const data: TextGuideData = {
   quotations: [
     {
       quote:
-        '"You never really understand a person until you consider things from his point of view."',
+        '"You never ... understand a person until you consider things from his point of view."',
       who: 'Atticus - Chapter 3',
       analysis: "The novel's moral compass. Empathy is the lesson Scout has to learn.",
     },
@@ -123,8 +123,7 @@ const data: TextGuideData = {
       analysis: 'The central symbol. Defines the innocence that Tom and Boo share.',
     },
     {
-      quote:
-        '"Simply because we were licked a hundred years before we started is no reason not to try."',
+      quote: '"Simply because we were licked a hundred years ... is no reason not to try."',
       who: 'Atticus - Chapter 9',
       analysis: "Atticus's definition of courage and his justification for defending Tom.",
     },
@@ -263,7 +262,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   {
     id: 'tkm-9',
     question:
-      'What is the significance of Atticus\'s teaching that "you never really understand a person until you consider things from his point of view"?',
+      'What is the significance of Atticus\'s teaching that "you never ... understand a person until you consider things from his point of view"?',
     type: 'multiple-choice',
     options: [
       'It is just good advice',
@@ -472,7 +471,7 @@ const REVISION_TOPICS = [
     topic: 'Moral Courage',
     summary: 'Atticus defines courage as doing right even when you know you will lose.',
     keyPoints: [
-      '"Simply because we were licked a hundred years before we started is no reason not to try"',
+      '"Simply because we were licked a hundred years ... is no reason not to try"',
       'Mrs Dubose models courage by fighting her addiction before death',
       'Atticus takes the case knowing the town will turn against him',
       'Scout learns courage through fighting, then through restraint',

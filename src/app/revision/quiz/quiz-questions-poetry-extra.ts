@@ -292,7 +292,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Sunlight is the poem\'s controlling motif: "There once was a country… I left it as a child / but my memory of it is sunlight-clear". Light symbolises memory, hope and identity that politics ("tyrants", "branded by an impression of sunlight") cannot extinguish (AO2).',
+      'Sunlight is the poem\'s controlling motif: "but my memory of it is sunlight-clear". Light symbolises memory, hope and identity that politics ("tyrants", "branded by an impression of sunlight") cannot extinguish (AO2).',
     boards: ['aqa'],
   },
   {
@@ -1278,7 +1278,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Duffy uses Shakespeare's own sonnet form to give Anne the last word. The closing couplet-\"I hold him in the casket of my widow's head / as he held me upon that next best bed\"-seals the lovers' equality with the form's most marital convention (AO2).",
+      "Duffy uses Shakespeare's own sonnet form to give Anne the last word. The closing couplet, which opens \"I hold him in the casket of my widow's head\", seals the lovers' equality with the form's most marital convention (AO2).",
     boards: ['eduqas'],
   },
 

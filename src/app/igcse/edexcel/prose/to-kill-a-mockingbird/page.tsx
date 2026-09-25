@@ -106,7 +106,7 @@ const subPages = [
 const keyQuotations = [
   {
     quote:
-      'You never really understand a person until you consider things from his point of view\u2026',
+      'You never ... understand a person until you consider things from his point of view\u2026',
     speaker: 'Atticus Finch',
     analysis:
       'Atticus introduces the novel\u2019s ethic of empathy early, framing moral understanding as an imaginative act. The metaphor recurs at the close when Scout stands on the Radley porch.',
@@ -162,7 +162,7 @@ const keyQuotations = [
   },
   {
     quote:
-      'When it\u2019s a white man\u2019s word against a black man\u2019s, the white man always wins.',
+      'it\u2019s a white man\u2019s word against a black man\u2019s, the white man always wins.',
     speaker: 'Atticus Finch',
     analysis:
       'A plain statement of the structural racism the trial will dramatise. Useful for relating to context and understanding the text.',

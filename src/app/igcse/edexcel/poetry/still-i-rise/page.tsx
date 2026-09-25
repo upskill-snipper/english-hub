@@ -63,7 +63,7 @@ const stanzaSummaries = [
   {
     n: 'Closing stanzas',
     label: 'I rise',
-    body: 'The poem ends in a chant. The phrase &ldquo;I rise&rdquo; is repeated in short, hammered lines &mdash; closing with the famous triple repetition: &ldquo;I rise / I rise / I rise.&rdquo; The repetition turns the poem into something close to a song or a prayer. The closing image is of the speaker rising like &ldquo;air&rdquo; or &ldquo;the tide&rdquo; &mdash; an unstoppable natural force.',
+    body: 'The poem ends in a chant. The phrase &ldquo;I rise&rdquo; is repeated in short, hammered lines &mdash; closing with the famous triple repetition of &ldquo;I rise&rdquo;. The repetition turns the poem into something close to a song or a prayer. The closing image is of the speaker rising like &ldquo;air&rdquo; or &ldquo;the tide&rdquo; &mdash; an unstoppable natural force.',
   },
 ]
 

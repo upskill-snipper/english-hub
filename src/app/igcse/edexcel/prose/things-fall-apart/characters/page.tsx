@@ -20,8 +20,7 @@ const characters = [
     role: 'Okonkwo\u2019s closest friend',
     analysis:
       'Obierika is Okonkwo\u2019s intellectual counterpart: thoughtful, questioning, and willing to voice doubts about Igbo customs. He refuses to join the expedition to kill Ikemefuna. He questions the exile system. He visits Okonkwo in Mbanta and reports on the missionaries\u2019 progress. Achebe uses Obierika to show that critical thinking about tradition is not a colonial import \u2014 it existed within Igbo culture before the Europeans arrived. His final speech to the District Commissioner, "That man was one of the greatest men in Umuofia", is the novel\u2019s moral verdict.',
-    quote:
-      '\u201cHe has put a knife on the things that held us together and we have fallen apart.\u201d',
+    quote: '\u201cHe has put a knife on the things that held us together ... fallen apart.\u201d',
   },
   {
     name: 'Nwoye',
@@ -79,7 +78,7 @@ const characters = [
     analysis:
       'The District Commissioner appears only in the final pages but delivers the novel\u2019s most devastating irony. Looking at Okonkwo\u2019s body, he considers that the man\u2019s story might merit "a reasonable paragraph" in his planned book, The Pacification of the Primitive Tribes of the Lower Niger. Achebe\u2019s entire novel is the answer to that paragraph \u2014 a complete, complex, dignified account of the world the Commissioner can only footnote.',
     quote:
-      '\u201cOne could almost write a whole chapter on him. Perhaps not a whole chapter but a reasonable paragraph.\u201d',
+      '\u201cOne could almost write a whole chapter on him. ... but a reasonable paragraph.\u201d',
   },
 ]
 

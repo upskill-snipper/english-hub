@@ -9,16 +9,14 @@ import { useLocale } from '@/lib/i18n/use-locale'
 
 const keyQuotes = [
   {
-    quote:
-      'You never really understand a person until you consider things from his point of view... Until you climb inside of his skin and walk around in it',
+    quote: 'Until you climb inside of his skin and walk around in it',
     speaker: 'Atticus Finch',
     chapter: 'Chapter 3',
     analysis:
       "Atticus's central moral teaching, conveying Lee's theme of empathy. The metaphor of climbing into another's skin is deliberately physical and visceral, making the abstract concept of empathy tangible for the child narrator (and the reader). This advice becomes the moral framework against which every character in the novel is measured. Atticus teaches Scout that judgement must be preceded by understanding, a lesson that applies to her encounters with Boo Radley, Mrs Dubose, and the Cunninghams alike.",
   },
   {
-    quote:
-      "Shoot all the bluejays you want, if you can hit 'em, but remember it's a sin to kill a mockingbird",
+    quote: "Shoot all the bluejays you want, ... remember it's a sin to kill a mockingbird",
     speaker: 'Atticus Finch',
     chapter: 'Chapter 10',
     analysis:
@@ -32,36 +30,32 @@ const keyQuotes = [
       'Atticus distinguishes between legal democracy and moral courage. In Maycomb, the majority endorses racial prejudice, but Atticus insists that individual conscience must override collective injustice. Lee positions Atticus as a moral absolutist: doing right is not determined by popular opinion but by personal integrity. This statement foreshadows his decision to defend Tom Robinson despite overwhelming community opposition.',
   },
   {
-    quote:
-      "I wanted you to see what real courage is, instead of getting the idea that courage is a man with a gun in his hand. It's when you know you're licked before you begin but you begin anyway and you see it through no matter what",
+    quote: "It's when you know you're licked before you begin but you begin anyway",
     speaker: 'Atticus Finch',
     chapter: 'Chapter 11',
     analysis:
-      "Atticus redefines courage through the example of Mrs Dubose, who battles her morphine addiction before dying. Lee contrasts physical bravery (the gun) with moral courage (persisting despite certain defeat). This definition applies directly to Atticus's defence of Tom Robinson: he knows the all-white jury will convict, but he proceeds because it is morally right. The passage is key for Writer's Methods analysis of Lee's use of juxtaposition and redefinition.",
+      "Atticus redefines courage through the example of Mrs Dubose, who battles her morphine addiction before dying. Lee contrasts physical bravery (in the full passage, a man with a gun) with moral courage (persisting despite certain defeat). This definition applies directly to Atticus's defence of Tom Robinson: he knows the all-white jury will convict, but he proceeds because it is morally right. The passage is key for Writer's Methods analysis of Lee's use of juxtaposition and redefinition.",
   },
   {
-    quote:
-      "As you grow older, you'll see white men cheat black men every day of your life, but let me tell you something and don't you forget it - whenever a white man does that to a black man, no matter who he is, how rich he is, or how fine a family he comes from, that white man is trash",
+    quote: "you'll see white men cheat black men ... that white man is trash",
     speaker: 'Atticus Finch',
     chapter: 'Chapter 23',
     analysis:
-      "Atticus uses the loaded term 'trash' - usually reserved for poor whites in Maycomb's class hierarchy - to condemn racial injustice. By inverting the social vocabulary, Lee exposes how the town's real moral failing is not poverty but prejudice. The direct address to Jem ('don't you forget it') signals that this is a lesson meant to shape the next generation. Atticus's quiet fury here reveals that his calm exterior masks deep anger at systemic injustice.",
+      "Atticus uses the loaded term 'trash' - usually reserved for poor whites in Maycomb's class hierarchy - to condemn racial injustice. By inverting the social vocabulary, Lee exposes how the town's real moral failing is not poverty but prejudice. In the full passage, the direct address to Jem ('don't you forget it') signals that this is a lesson meant to shape the next generation. Atticus's quiet fury here reveals that his calm exterior masks deep anger at systemic injustice.",
   },
   {
-    quote:
-      "Mockingbirds don't do one thing but make music for us to enjoy. They don't eat up people's gardens, don't nest in corncribs, they don't do one thing but sing their hearts out for us. That's why it's a sin to kill a mockingbird",
+    quote: "Mockingbirds don't do one thing but make music ... a sin to kill a mockingbird",
     speaker: 'Miss Maudie Atkinson',
     chapter: 'Chapter 10',
     analysis:
-      "Miss Maudie elaborates on the mockingbird metaphor, establishing that the bird symbolises pure, harmless goodness. The repetition of 'don't do one thing but' emphasises the creature's complete innocence. Lee uses Miss Maudie as a moral interpreter for Scout and the reader, reinforcing Atticus's values. The passage is essential for any essay on symbolism and should be analysed alongside the fates of Tom Robinson and Boo Radley.",
+      "Miss Maudie elaborates on the mockingbird metaphor, establishing that the bird symbolises pure, harmless goodness. In the full passage, the repetition of 'don't do one thing but' emphasises the creature's complete innocence. Lee uses Miss Maudie as a moral interpreter for Scout and the reader, reinforcing Atticus's values. The passage is essential for any essay on symbolism and should be analysed alongside the fates of Tom Robinson and Boo Radley.",
   },
   {
-    quote:
-      "There's something in our world that makes men lose their heads - they couldn't be fair if they tried. In our courts, when it's a white man's word against a black man's, the white man always wins. They're ugly, but those are the facts of life",
+    quote: "that makes men lose their heads - they couldn't be fair if they tried.",
     speaker: 'Atticus Finch',
     chapter: 'Chapter 23',
     analysis:
-      "Atticus acknowledges the systemic nature of racism in the American South. 'Lose their heads' implies irrationality - prejudice overrides reason. The frank admission that courts are unjust is remarkable from a lawyer who reveres the legal system, showing how deeply embedded racism is. Lee uses Atticus's disillusionment to convey her critique of Southern racial justice without descending into polemic.",
+      "Atticus acknowledges the systemic nature of racism in the American South. 'Lose their heads' implies irrationality - prejudice overrides reason. The frank admission, in the full passage, that courts are unjust is remarkable from a lawyer who reveres the legal system, showing how deeply embedded racism is. Lee uses Atticus's disillusionment to convey her critique of Southern racial justice without descending into polemic.",
   },
   {
     quote: "I think there's just one kind of folks. Folks",
@@ -85,12 +79,11 @@ const keyQuotes = [
       "Scout's final assessment of Boo Radley completes her moral education. Atticus replies, 'Most people are, Scout, when you finally see them.' The verb 'see' echoes his earlier lesson about climbing into someone's skin. Lee brings the novel full circle: Scout has learned to replace fear and prejudice with empathy and understanding. The simplicity of the language mirrors the clarity of Scout's moral vision at the end of her childhood journey.",
   },
   {
-    quote:
-      'The witnesses for the state... have presented themselves to you gentlemen... in the cynical confidence that their testimony would not be doubted, confident that you gentlemen would go along with them on the assumption - the evil assumption - that all Negroes lie, all Negroes are basically immoral beings',
+    quote: 'the evil assumption - that all Negroes lie, all Negroes are basically immoral beings',
     speaker: 'Atticus Finch',
     chapter: 'Chapter 20',
     analysis:
-      "Atticus's closing argument to the jury directly names the racism underpinning the case. The repetition of 'confident' and 'assumption' exposes how prejudice masquerades as common sense. The phrase 'evil assumption' is Atticus's strongest moral language in the courtroom, marking the moment he moves from legal argument to moral appeal. Lee uses the trial as a dramatic set piece to confront the reader with the mechanics of institutional racism.",
+      "Atticus's closing argument to the jury directly names the racism underpinning the case. In the full passage, the repetition of 'confident' and 'assumption' exposes how prejudice masquerades as common sense. The phrase 'evil assumption' is Atticus's strongest moral language in the courtroom, marking the moment he moves from legal argument to moral appeal. Lee uses the trial as a dramatic set piece to confront the reader with the mechanics of institutional racism.",
   },
   {
     quote: "Before I can live with other folks I've got to live with myself",
@@ -100,28 +93,25 @@ const keyQuotes = [
       "Atticus explains to Scout why he must defend Tom Robinson regardless of public opinion. Personal integrity is placed above social acceptance. Lee presents conscience as the ultimate authority: Atticus cannot function as a moral guide to his children if he compromises his own principles. The statement encapsulates Lee's humanist philosophy - that moral courage begins with individual accountability.",
   },
   {
-    quote:
-      'Neighbours bring food with death and flowers with sickness and little things in between. Boo was our neighbour',
+    quote: 'Neighbours bring food with death and flowers with sickness ... Boo was our neighbour',
     speaker: 'Scout Finch (narrating)',
     chapter: 'Chapter 31',
     analysis:
       "Scout's mature retrospective voice recognises that Boo Radley has been a good neighbour all along - leaving gifts, mending Jem's trousers, wrapping a blanket around Scout, and ultimately saving the children's lives. The simple declaration 'Boo was our neighbour' strips away years of fear and fantasy. Lee uses this realisation to complete the novel's moral arc: true understanding replaces prejudice when we see people as they really are.",
   },
   {
-    quote:
-      'It was times like these when I thought my father, who hated guns and had never been to any wars, was the bravest man who ever lived',
+    quote: 'I thought my father, who hated guns ... was the bravest man who ever lived',
     speaker: 'Scout Finch (narrating)',
     chapter: 'Chapter 11',
     analysis:
-      "Scout's retrospective narration redefines heroism. Lee contrasts traditional masculine courage (guns, war) with Atticus's quiet moral bravery. The child narrator's growing understanding of her father mirrors the reader's deepening appreciation of moral courage. This passage works in tandem with Atticus's definition of 'real courage' and is essential for discussing Lee's presentation of masculinity and heroism.",
+      "Scout's retrospective narration redefines heroism. Lee contrasts traditional masculine courage (guns and, in the full sentence, war) with Atticus's quiet moral bravery. The child narrator's growing understanding of her father mirrors the reader's deepening appreciation of moral courage. This passage works in tandem with Atticus's definition of 'real courage' and is essential for discussing Lee's presentation of masculinity and heroism.",
   },
   {
-    quote:
-      'We know all men are not created equal in the sense some people would have us believe... But there is one way in this country in which all men are created equal... That institution, gentlemen, is a court',
+    quote: 'We know all men are not created equal ... That institution, gentlemen, is a court',
     speaker: 'Atticus Finch',
     chapter: 'Chapter 20',
     analysis:
-      "Atticus appeals to the ideal of legal equality, echoing the Declaration of Independence. The rhetorical structure builds from concession (acknowledging real inequality) to aspiration (the court as equaliser). The tragic irony is that the jury will betray this ideal by convicting Tom. Lee uses Atticus's idealism to heighten the injustice of the verdict: the institution that should protect the vulnerable instead destroys them.",
+      "Atticus appeals to the ideal of legal equality, echoing the Declaration of Independence. In the full passage, the rhetorical structure builds from concession (acknowledging real inequality) to aspiration (the court as equaliser). The tragic irony is that the jury will betray this ideal by convicting Tom. Lee uses Atticus's idealism to heighten the injustice of the verdict: the institution that should protect the vulnerable instead destroys them.",
   },
 ]
 
@@ -172,7 +162,7 @@ const themes = [
   {
     name: 'Justice and Racial Prejudice',
     detail:
-      "The trial of Tom Robinson is the novel's central dramatic event and Lee's most sustained critique of racial injustice in the American South. Despite overwhelming evidence of Tom's innocence, the all-white jury convicts him because, as Atticus explains, 'when it's a white man's word against a black man's, the white man always wins.' Lee exposes how the legal system - which should embody fairness - is corrupted by institutionalised racism. The guilty verdict represents not just Tom's personal tragedy but the systematic denial of justice to an entire race. Lee uses the courtroom as a microcosm of Southern society to argue that prejudice destroys the very foundations of civilisation.",
+      "The trial of Tom Robinson is the novel's central dramatic event and Lee's most sustained critique of racial injustice in the American South. Despite overwhelming evidence of Tom's innocence, the all-white jury convicts him because, as Atticus explains, when 'it's a white man's word against a black man's, the white man always wins.' Lee exposes how the legal system - which should embody fairness - is corrupted by institutionalised racism. The guilty verdict represents not just Tom's personal tragedy but the systematic denial of justice to an entire race. Lee uses the courtroom as a microcosm of Southern society to argue that prejudice destroys the very foundations of civilisation.",
   },
   {
     name: 'Moral Courage',
@@ -202,8 +192,7 @@ const chapterEvents = [
     title: "Maycomb, the Radleys, and Scout's First Days at School",
     events:
       "Lee establishes Maycomb as a tired, insular Southern town during the Great Depression. Scout, Jem, and their summer friend Dill become fascinated by the mysterious Boo Radley. Scout's first day at school introduces the Cunningham family (proud but poor) and exposes the rigid social hierarchy. Miss Caroline's failure to understand Walter Cunningham's refusal of a quarter demonstrates institutional ignorance of class realities.",
-    keyQuote:
-      'You never really understand a person until you consider things from his point of view... Until you climb inside of his skin and walk around in it',
+    keyQuote: 'Until you climb inside of his skin and walk around in it',
     quoteContext: "Atticus to Scout, Chapter 3 - the novel's moral foundation",
   },
   {
@@ -220,8 +209,7 @@ const chapterEvents = [
     title: "Miss Maudie's Fire and the Shadow of the Trial",
     events:
       "Miss Maudie's house burns down on the coldest night Maycomb has known. During the fire, someone (Boo Radley) places a blanket around Scout's shoulders without her noticing. Atticus agrees to defend Tom Robinson, and Scout fights Cecil Jacobs and her cousin Francis for calling Atticus a 'nigger-lover'. Atticus tells Uncle Jack that he hopes Scout and Jem will come to him rather than the town for answers about the case.",
-    keyQuote:
-      "I hope and pray I can get Jem and Scout through it without bitterness, and most of all, without catching Maycomb's usual disease",
+    keyQuote: "I hope and pray ... and most of all, without catching Maycomb's usual disease",
     quoteContext: "Atticus to Uncle Jack, Chapter 9 - 'Maycomb's usual disease' is racism",
   },
   {
@@ -229,8 +217,7 @@ const chapterEvents = [
     title: 'The Mad Dog and Mrs Dubose',
     events:
       "Atticus shoots a rabid dog (Tim Johnson) in a single shot, revealing his hidden skill as a marksman. The children discover he was once known as 'One-Shot Finch' but has chosen not to use guns. The mad dog symbolises the madness of racism approaching Maycomb. Mrs Dubose, a morphine-addicted neighbour, insults Atticus. Jem destroys her camellia bushes; as punishment, he reads to her daily. After her death, Atticus reveals she was battling addiction to die free - his example of 'real courage'.",
-    keyQuote:
-      'I wanted you to see what real courage is, instead of getting the idea that courage is a man with a gun in his hand',
+    keyQuote: 'what real courage is, instead of ... a man with a gun in his hand',
     quoteContext: 'Atticus to Jem, Chapter 11 - redefining courage from physical to moral',
   },
   {
@@ -238,8 +225,7 @@ const chapterEvents = [
     title: "Calpurnia's Church and Aunt Alexandra's Arrival",
     events:
       "Calpurnia takes Scout and Jem to First Purchase African M.E. Church, where they witness the Black community's poverty, dignity, and solidarity in supporting Tom Robinson's family. Aunt Alexandra arrives to provide 'feminine influence' for Scout and insists on proper behaviour and awareness of family heritage. Dill runs away from home to Maycomb, revealing his own neglect. Tensions rise as the trial approaches.",
-    keyQuote:
-      "It's not necessary to tell all you know. It's not ladylike - in the second place, folks don't like to have somebody around knowin' more than they do",
+    keyQuote: "It's not necessary to tell all you know. It's not ladylike",
     quoteContext:
       'Calpurnia to Scout, Chapter 12 - Calpurnia explains code-switching between communities',
   },
@@ -248,8 +234,7 @@ const chapterEvents = [
     title: 'The Mob at the Jail',
     events:
       "A lynch mob arrives at the jail where Tom Robinson is held. Atticus sits alone outside to protect Tom. Scout, Jem, and Dill intervene. Scout recognises Walter Cunningham's father in the mob and speaks to him with childish innocence about his son and his legal affairs. Her empathy - seeing him as a person, not a member of a mob - shames him into dispersing the group. The next day, the trial begins and the courtroom is packed. The children watch from the 'Colored balcony'.",
-    keyQuote:
-      "It took an eight-year-old child to bring 'em to their senses... That proves something - that a gang of wild animals can be stopped, simply because they're still human",
+    keyQuote: "It took an eight-year-old child to bring 'em to their senses...",
     quoteContext: "Atticus to Jem, Chapter 16 - Scout's innocence defeats mob mentality",
   },
   {
@@ -275,8 +260,7 @@ const chapterEvents = [
     title: 'Aftermath of the Trial',
     events:
       "Bob Ewell spits in Atticus's face; Atticus absorbs the insult without retaliation. Jem and Atticus discuss the jury system and why the verdict was unjust. Scout reflects that 'there's just one kind of folks. Folks.' Tom Robinson is shot dead attempting to escape prison - seventeen bullet wounds. Mr Underwood's editorial compares Tom's death to 'the senseless slaughter of songbirds', directly linking Tom to the mockingbird symbol. Aunt Alexandra and the missionary circle reveal the hypocrisy of white Christian women who pity Africans but endorse local racism.",
-    keyQuote:
-      "Mr Underwood didn't talk about miscarriages of justice, he was writing so children could understand. Mr Underwood simply figured it was a sin to kill cripples, be they standing, sitting, or escaping",
+    keyQuote: 'it was a sin to kill cripples, be they standing, sitting, or escaping',
     quoteContext: "Scout narrating, Chapter 25 - Tom's death linked to the mockingbird motif",
   },
   {
@@ -284,8 +268,7 @@ const chapterEvents = [
     title: 'Hypocrisy, Halloween, and the Attack',
     events:
       "Scout's teacher Miss Gates condemns Hitler's persecution of Jews but sees no contradiction with Maycomb's treatment of Black people - Lee's sharpest critique of Southern hypocrisy. On Halloween night, Scout and Jem walk home from a school pageant through dark streets. Bob Ewell attacks them. Scout's ham costume (made of wire mesh) saves her. A mysterious figure carries the injured Jem home. Scout realises the rescuer is Boo Radley.",
-    keyQuote:
-      "How can you hate Hitler so bad an' then turn around and be ugly about folks right at home?",
+    keyQuote: 'How can you hate Hitler so bad ... be ugly about folks right at home?',
     quoteContext: 'Scout to Jem, Chapter 26 - exposing the hypocrisy of selective morality',
   },
   {

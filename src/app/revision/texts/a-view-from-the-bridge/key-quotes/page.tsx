@@ -54,7 +54,7 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     id: 2,
-    text: '"You can quicker get back a million dollars that was stole than a word that you gave away."',
+    text: '"You can quicker get back ... than a word that you gave away."',
     speaker: 'Eddie',
     context: 'Act 1 - warning about informers',
     analysis:

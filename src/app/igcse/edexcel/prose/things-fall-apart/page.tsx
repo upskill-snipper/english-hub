@@ -120,7 +120,7 @@ const keyQuotations = [
       'Achebe\u2019s most quoted line about Igbo orality. It also signals his authorial project: translating that tradition into English prose without subordinating it.',
   },
   {
-    quote: 'Now he has won our brothers, and our clan can no longer act like one.',
+    quote: 'he has won our brothers, and our clan can no longer act like one.',
     speaker: 'Obierika',
     analysis:
       'Obierika\u2019s diagnosis of colonialism as an internal loosening - more powerful than the external force itself.',

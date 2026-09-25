@@ -45,14 +45,13 @@ const QUOTES: QuoteEntry[] = [
   },
   {
     id: 3,
-    quote:
-      'Ralph wept for the end of innocence, the darkness of man\u2019s heart, and the fall through the air of the true, wise friend called Piggy.',
+    quote: 'Ralph wept for the end of innocence, the darkness of man\u2019s heart',
     speaker: 'Narrator',
     chapter: 'Chapter 12 \u2014 Cry of the Hunters',
     context:
       'The final paragraph of the novel. Ralph weeps as the naval officer arrives and the reality of what has happened overwhelms him.',
     analysis:
-      'This is the novel\u2019s emotional and thematic climax. The tricolon moves from the abstract ("end of innocence") through the universal ("darkness of man\u2019s heart") to the painfully specific ("the true, wise friend called Piggy"). "Darkness of man\u2019s heart" encapsulates Golding\u2019s thesis: the beast is not external but internal. Ralph\u2019s tears represent the reader\u2019s own reckoning with the novel\u2019s argument.',
+      'This is the novel\u2019s emotional and thematic climax. The full sentence is a tricolon that moves from the abstract ("end of innocence") through the universal ("darkness of man\u2019s heart") to the painfully specific ("the true, wise friend called Piggy"). "Darkness of man\u2019s heart" encapsulates Golding\u2019s thesis: the beast is not external but internal. Ralph\u2019s tears represent the reader\u2019s own reckoning with the novel\u2019s argument.',
     themes: ['Loss of Innocence', 'Fear & the Beast', 'Civilisation vs Savagery'],
   },
   {
@@ -68,8 +67,7 @@ const QUOTES: QuoteEntry[] = [
   },
   {
     id: 5,
-    quote:
-      'Grownups know things. They ain\u2019t afraid of the dark. They\u2019d meet and have tea and discuss. Then things \u2019ud be all right.',
+    quote: 'Grownups know things. ... They\u2019d meet and have tea and discuss.',
     speaker: 'Piggy',
     chapter: 'Chapter 5 \u2014 Beast from Water',
     context: 'Piggy laments the absence of adults during the chaotic assembly about the beast.',
@@ -99,8 +97,7 @@ const QUOTES: QuoteEntry[] = [
   },
   {
     id: 8,
-    quote:
-      'I\u2019m part of you. Close, close, close! I\u2019m the reason why it\u2019s no go. Why things are what they are.',
+    quote: 'I\u2019m part of you. Close, close, close! ... Why things are what they are.',
     speaker: 'The Lord of the Flies',
     chapter: 'Chapter 8 \u2014 Gift for the Darkness',
     context:
@@ -111,8 +108,7 @@ const QUOTES: QuoteEntry[] = [
   },
   {
     id: 9,
-    quote:
-      'The mask was a thing on its own, behind which Jack hid, liberated from shame and self-consciousness.',
+    quote: 'The mask was a thing on its own, ... liberated from shame and self-consciousness.',
     speaker: 'Narrator',
     chapter: 'Chapter 4 \u2014 Painted Faces and Long Hair',
     context: 'Jack paints his face with clay and charcoal before the first hunt.',
@@ -122,8 +118,7 @@ const QUOTES: QuoteEntry[] = [
   },
   {
     id: 10,
-    quote:
-      'Which is better \u2014 to be a pack of painted savages like you are, or to be sensible like Ralph is?',
+    quote: 'Which is better \u2014 to be a pack of painted savages ... sensible like Ralph is?',
     speaker: 'Piggy',
     chapter: 'Chapter 11 \u2014 Castle Rock',
     context: 'Piggy\u2019s final speech before he is killed, pleading for reason and order.',
@@ -134,7 +129,7 @@ const QUOTES: QuoteEntry[] = [
   {
     id: 11,
     quote:
-      'He found himself understanding the wearisomeness of this life, where every path was an improvisation and a considerable part of one\u2019s waking life was spent watching one\u2019s feet.',
+      'wearisomeness of this life, where every path was an improvisation ... spent watching one\u2019s feet.',
     speaker: 'Narrator (about Ralph)',
     chapter: 'Chapter 7 \u2014 Shadows and Tall Trees',
     context: 'Ralph becomes aware of how far they have fallen from civilised standards.',
@@ -144,7 +139,7 @@ const QUOTES: QuoteEntry[] = [
   },
   {
     id: 12,
-    quote: 'Roger gathered a handful of stones and began to throw them at Henry, throwing to miss.',
+    quote: 'Roger gathered a handful of stones ... Henry, throwing to miss.',
     speaker: 'Narrator',
     chapter: 'Chapter 4 \u2014 Painted Faces and Long Hair',
     context:
@@ -155,8 +150,7 @@ const QUOTES: QuoteEntry[] = [
   },
   {
     id: 13,
-    quote:
-      'His mind was crowded with memories; memories of the knowledge that had come to them when they closed in on the struggling pig, knowledge that they had outwitted a living thing, imposed their will upon it, taken away its life like a long satisfying drink.',
+    quote: 'imposed their will upon it, taken away its life like a long satisfying drink.',
     speaker: 'Narrator (about Jack)',
     chapter: 'Chapter 4 \u2014 Painted Faces and Long Hair',
     context: 'Jack\u2019s internal experience after his first successful kill.',
@@ -206,13 +200,12 @@ const QUOTES: QuoteEntry[] = [
   },
   {
     id: 18,
-    quote:
-      'The rock struck Piggy a glancing blow from chin to knee; the conch exploded \u2026 Piggy fell forty feet and landed on his back across the square red rock in the sea.',
+    quote: 'The rock struck Piggy a glancing blow from chin to knee; ... fell forty feet',
     speaker: 'Narrator',
     chapter: 'Chapter 11 \u2014 Castle Rock',
     context: 'Roger levers the boulder from the cliff, killing Piggy.',
     analysis:
-      'The clinical, precise narration ("a glancing blow from chin to knee," "forty feet") contrasts with the enormity of the act. Golding deliberately avoids sensationalism: the flat reporting makes the violence more shocking, not less. The simultaneous destruction of Piggy and the conch confirms that reason and democracy are inseparable.',
+      'The clinical, precise narration ("a glancing blow from chin to knee," "forty feet") contrasts with the enormity of the act. Golding deliberately avoids sensationalism: the flat reporting makes the violence more shocking, not less. In the full passage, the simultaneous destruction of Piggy and the conch confirms that reason and democracy are inseparable.',
     themes: ['Civilisation vs Savagery', 'Power & Leadership', 'Human Nature'],
   },
   {
@@ -227,7 +220,7 @@ const QUOTES: QuoteEntry[] = [
   },
   {
     id: 20,
-    quote: 'A naval officer stood on the sand, looking down at Ralph in wary ceremonial surprise.',
+    quote: 'stood on the sand, looking down at Ralph in wary ceremonial surprise.',
     speaker: 'Narrator',
     chapter: 'Chapter 12 \u2014 Cry of the Hunters',
     context: 'The naval officer discovers the boys on the burning island.',

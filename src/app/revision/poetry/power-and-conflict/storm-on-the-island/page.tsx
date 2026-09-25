@@ -35,9 +35,21 @@ export const metadata: Metadata = {
 const poem: PoemData = {
   title: 'Storm on the Island',
   poet: 'Seamus Heaney',
+  // NOTE: "Storm on the Island" (Seamus Heaney, from Death of a Naturalist,
+  // Faber & Faber, 1966) remains in copyright. To avoid reproducing the poem
+  // verbatim, each line below is given as a PARAPHRASE in the site's own
+  // words rather than the poet's exact text, and the annotations quote only
+  // short phrases (21 words across all of them, under 15 per cent of the
+  // poem's 158). Students must read the full original in the AQA Power &
+  // Conflict anthology.
+  //
+  // Until 25 September 2026 this array printed the whole poem. Its entry 15
+  // appears to have lost a word from the published line, so its paraphrase
+  // follows the published line instead. Check the paraphrases against the
+  // anthology before relying on them.
   lines: [
     {
-      text: 'We are prepared: we build our houses squat,',
+      text: '[Paraphrase] We islanders are ready for it: our homes are built low and solid,',
       annotations: [
         {
           type: 'Tone',
@@ -52,17 +64,17 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'Sink walls in rock and roof them with good slate.',
+      text: '[Paraphrase] with foundations set into the rock and sound slate roofs.',
       annotations: [
         {
           type: 'Imagery',
-          note: 'Monosyllabic, practical language ("sink", "rock", "roof", "slate") conveys the solidity and resilience of the islanders\' homes.',
+          note: "Monosyllabic, practical words for building and materials convey the solidity and resilience of the islanders' homes.",
           color: '#34d399',
         },
       ],
     },
     {
-      text: 'This wizened earth has never troubled us',
+      text: '[Paraphrase] The shrivelled, barren soil here has never given us trouble',
       annotations: [
         {
           type: 'Personification',
@@ -72,17 +84,17 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'With hay, so, as you can see, there are no stacks',
+      text: '[Paraphrase] by producing a hay crop, which is plainly why you will find no haystacks',
       annotations: [
         {
           type: 'Conversational',
-          note: '"As you can see" is a direct address to the reader, creating an intimate, conversational tone as if giving a tour of the island.',
+          note: 'The aside to the reader in the middle of the line is a direct address, creating an intimate, conversational tone as if giving a tour of the island.',
           color: '#60a5fa',
         },
       ],
     },
     {
-      text: 'Or stooks that can be lost. Nor are there trees',
+      text: '[Paraphrase] or bundles of sheaves that could be blown away. We have no trees either',
       annotations: [
         {
           type: 'Enjambment',
@@ -92,7 +104,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'Which might prove company when it blows full',
+      text: '[Paraphrase] that could be companions to us when the wind reaches its full',
       annotations: [
         {
           type: 'Personification',
@@ -102,11 +114,11 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'Blast: you know what I mean - leaves and branches',
+      text: '[Paraphrase] force (you understand me): foliage and boughs',
       annotations: [
         {
           type: 'Direct address',
-          note: '"You know what I mean" reinforces the conversational tone and assumes shared experience between speaker and reader.',
+          note: 'The colloquial aside to the listener reinforces the conversational tone and assumes shared experience between speaker and reader.',
           color: '#60a5fa',
         },
         {
@@ -117,7 +129,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'Can raise a tragic chorus in a gale',
+      text: '[Paraphrase] can set up a mournful, dramatic wailing in high winds,',
       annotations: [
         {
           type: 'Metaphor',
@@ -127,7 +139,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'So that you listen to the thing you fear',
+      text: '[Paraphrase] which makes you attend to the very sound that scares you,',
       annotations: [
         {
           type: 'Theme',
@@ -137,7 +149,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'Forgetting that it pummels your house too.',
+      text: '[Paraphrase] and overlook the fact that it is battering your own home as well.',
       annotations: [
         {
           type: 'Violence',
@@ -147,17 +159,17 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'But there are no trees, no natural shelter.',
+      text: '[Paraphrase] Here, though, we have not a single tree, and nothing in nature to protect us.',
       annotations: [
         {
           type: 'Repetition',
-          note: '"No trees" is repeated from line 5, reinforcing the barren, exposed landscape and the community\'s vulnerability.',
+          note: "The absence of trees is repeated from line 5, reinforcing the barren, exposed landscape and the community's vulnerability.",
           color: '#f59e0b',
         },
       ],
     },
     {
-      text: 'You might think that the sea is company,',
+      text: '[Paraphrase] You could suppose the sea keeps us company,',
       annotations: [
         {
           type: 'Irony',
@@ -167,22 +179,22 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'Exploding comfortably down on the cliffs,',
+      text: '[Paraphrase] crashing cosily against the cliffs below,',
       annotations: [
         {
           type: 'Oxymoron',
-          note: '"Exploding comfortably" is a striking oxymoron - the violent verb "exploding" paired with "comfortably" captures how the islanders have normalised danger.',
+          note: '"Exploding comfortably" is a striking oxymoron - a violent verb paired with a cosy adverb captures how the islanders have normalised danger.',
           color: '#34d399',
         },
         {
           type: 'Military imagery',
-          note: '"Exploding" introduces military language, linking to the Troubles allegory - violence has become routine and almost domestic.',
+          note: 'The explosive verb introduces military language, linking to the Troubles allegory - violence has become routine and almost domestic.',
           color: '#ef4444',
         },
       ],
     },
     {
-      text: 'But no: when it begins, the flung spray hits',
+      text: '[Paraphrase] Not so: once the storm starts, hurled seawater strikes',
       annotations: [
         {
           type: 'Volta',
@@ -191,27 +203,27 @@ const poem: PoemData = {
         },
         {
           type: 'Violence',
-          note: '"Flung" and "hits" are aggressive, violent verbs showing nature attacking the islanders.',
+          note: 'The verbs for the spray are aggressive and violent, showing nature attacking the islanders.',
           color: '#ef4444',
         },
       ],
     },
     {
-      text: 'The windows, spits like a tame cat',
+      text: '[Paraphrase] even the glass of the windows, spitting like a pet cat',
       annotations: [
         {
           type: 'Simile',
-          note: '"Spits like a tame cat" compares the sea spray to a domesticated animal turning savage - what seemed safe becomes dangerous. Links to the Troubles: familiar neighbours becoming enemies.',
+          note: 'Comparing the sea spray to a "tame cat" gone savage shows a domesticated animal turning on its owners - what seemed safe becomes dangerous. Links to the Troubles: familiar neighbours becoming enemies.',
           color: '#34d399',
         },
       ],
     },
     {
-      text: 'Turned savage. We just sit tight while wind dives',
+      text: '[Paraphrase] that has gone wild. We simply stay put as the wind swoops',
       annotations: [
         {
           type: 'Enjambment',
-          note: '"Turned savage" completes the simile across the line break, the enjambment enacting the sudden, shocking transformation.',
+          note: 'The word that completes the simile arrives after the line break, the enjambment enacting the sudden, shocking transformation.',
           color: '#a78bfa',
         },
         {
@@ -222,7 +234,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'And strafes invisibly. Space is a salvo,',
+      text: '[Paraphrase] and fires on us unseen. The emptiness itself is a volley of shots;',
       annotations: [
         {
           type: 'Military metaphor',
@@ -232,11 +244,11 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'We are bombarded by the empty air.',
+      text: '[Paraphrase] we are under heavy fire from air that holds nothing.',
       annotations: [
         {
           type: 'Paradox',
-          note: '"Bombarded by the empty air" - they are attacked by nothing. The greatest threat is invisible and intangible, reflecting how fear itself is the true enemy.',
+          note: 'Being bombarded by "empty air" means they are attacked by nothing. The greatest threat is invisible and intangible, reflecting how fear itself is the true enemy.',
           color: '#f59e0b',
         },
         {
@@ -247,7 +259,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'Strange, it is a huge nothing that we fear.',
+      text: '[Paraphrase] Oddly, what we are afraid of is a vast emptiness.',
       annotations: [
         {
           type: 'Oxymoron',
@@ -821,10 +833,10 @@ export default function StormOnTheIslandPage() {
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         <strong>Rights notice:</strong> &copy; Faber &amp; Faber on behalf of Seamus Heaney
-        (1939–2013). Quotations from &ldquo;Storm on the Island&rdquo; are short fair-dealing
-        extracts under CDPA 1988 &sect;30 (criticism, review, quotation). For full text, students
-        should consult the board-licensed AQA Power &amp; Conflict anthology or Heaney&rsquo;s
-        collection <em>Death of a Naturalist</em> (1966).
+        (1939–2013). The poem is paraphrased here rather than printed. Quotations from &ldquo;Storm
+        on the Island&rdquo; are short fair-dealing extracts under CDPA 1988 &sect;30 (criticism,
+        review, quotation). The full text is printed in the board-licensed AQA Power &amp; Conflict
+        anthology and in Heaney&rsquo;s collection <em>Death of a Naturalist</em> (1966).
       </p>
     </div>
   )

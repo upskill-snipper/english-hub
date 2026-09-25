@@ -19,7 +19,7 @@ export const quoteDetectiveExtra: QuoteEntryExtra[] = [
   { quote: 'Nothing in his life became him like the leaving it.', text: 'Macbeth' },
   { quote: 'Brave Macbeth, well he deserves that name.', text: 'Macbeth' },
   {
-    quote: 'Unsex me here, and fill me from the crown to the toe top-full of direst cruelty.',
+    quote: 'Unsex me here, ... top-full of direst cruelty.',
     text: 'Macbeth',
   },
   { quote: 'Come, thick night, and pall thee in the dunnest smoke of hell.', text: 'Macbeth' },
@@ -58,8 +58,7 @@ export const quoteDetectiveExtra: QuoteEntryExtra[] = [
     text: 'An Inspector Calls',
   },
   {
-    quote:
-      'There are millions and millions and millions of Eva Smiths and John Smiths still left with us.',
+    quote: 'There are millions and millions and millions ... still left with us.',
     text: 'An Inspector Calls',
   },
   { quote: "We don't live alone.", text: 'An Inspector Calls' },
@@ -100,7 +99,7 @@ export const quoteDetectiveExtra: QuoteEntryExtra[] = [
   { quote: 'Man is not truly one, but truly two.', text: 'Jekyll and Hyde' },
   { quote: 'My devil had been long caged, he came out roaring.', text: 'Jekyll and Hyde' },
   {
-    quote: 'I sat in the sun on a bench; the animal within me licking the chops of memory.',
+    quote: 'the animal within me licking the chops of memory.',
     text: 'Jekyll and Hyde',
   },
   { quote: 'The hand of Edward Hyde.', text: 'Jekyll and Hyde' },

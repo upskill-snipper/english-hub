@@ -15,15 +15,23 @@ import { CourseJsonLd } from '@/components/seo/json-ld'
 const kamikazeData: PoemData = {
   title: 'Kamikaze',
   poet: 'Beatrice Garland',
+  // NOTE: "Kamikaze" (Beatrice Garland) is in copyright. To avoid reproducing
+  // the poem, each line below is given as a PARAPHRASE in the site's own words,
+  // one entry per line of the poem, and the notes quote only short phrases.
+  // Students must read the full text in the AQA Power and Conflict anthology.
+  // Until 25 September 2026 this array printed the poem verbatim, and only its
+  // first stanza correctly: most of the rest had been replaced by lines that are
+  // not in the poem, and the stanza breaks fell in the wrong places. The viewer
+  // numbers entries by position, so the entries below follow the poem's own
+  // shape: seven stanzas of six lines.
   lines: [
     // Stanza 1
-    // VERIFY: opening stanza heavily corrupted in earlier batches. Restored to widely-attested opening of Garland's Kamikaze (from Beatrice Garland, The Invention of Fireworks, 2013). Fabricated lines 'in the cockpit, a sheath of purpose,', 'tilting into the sun', and the doubled 'and he flew into the sun' have been removed.
     {
-      text: 'Her father embarked at sunrise',
+      text: '[Paraphrase] The daughter’s father set off as the sun came up',
       annotations: [
         {
           type: 'Narrative voice',
-          note: 'Third-person narration -- the daughter tells the story, distancing herself from the events.',
+          note: "Third-person narration -- an outside voice retells the daughter's account of her father, distancing the reader from the events.",
           color: '#60a5fa',
         },
         {
@@ -34,7 +42,7 @@ const kamikazeData: PoemData = {
       ],
     },
     {
-      text: 'with a flask of water, a samurai sword',
+      text: '[Paraphrase] carrying water in a flask and a samurai blade',
       annotations: [
         {
           type: 'Juxtaposition',
@@ -43,9 +51,9 @@ const kamikazeData: PoemData = {
         },
       ],
     },
-    { text: 'in the cockpit, a shaven head' },
+    { text: '[Paraphrase] in the plane’s cabin; his head was shaved' },
     {
-      text: 'full of powerful incantations',
+      text: '[Paraphrase] and filled with strong ritual chants',
       annotations: [
         {
           type: 'Religious imagery',
@@ -54,9 +62,9 @@ const kamikazeData: PoemData = {
         },
       ],
     },
-    { text: 'and enough fuel for a one-way' },
+    { text: '[Paraphrase] with only enough fuel to fly there and not back,' },
     {
-      text: 'journey into history',
+      text: '[Paraphrase] a trip that would make him part of history.',
       annotations: [
         {
           type: 'Euphemism',
@@ -66,57 +74,30 @@ const kamikazeData: PoemData = {
       ],
     },
     { text: '' },
+
     // Stanza 2
-    { text: 'But half way there, the fish' },
     {
-      text: 'swivelled their silver bodies',
-      annotations: [
-        {
-          type: 'Nature imagery',
-          note: 'Sibilance in "swivelled" and "silver" creates a flowing, mesmerising sound that mirrors the beauty of the natural world.',
-          color: '#34d399',
-        },
-      ],
-    },
-    { text: 'in the morning current and wood pigeons' },
-    { text: 'were fanning out their tails' },
-    {
-      text: 'over the mountain passes.',
+      text: '[Paraphrase] But midway, the daughter imagined,',
       annotations: [
         {
           type: 'Turning point',
-          note: 'The natural beauty of Japan -- fish, birds, mountains -- begins to pull the pilot away from his mission. Nature represents life over death.',
+          note: 'The opening conjunction marks the turn: halfway to his target, the natural beauty far below -- boats, sea, fish -- begins to pull the pilot away from his mission. Nature represents life over death.',
           color: '#60a5fa',
         },
       ],
     },
-    { text: '' },
-    // Stanza 3
     {
-      text: 'And then, the boats came back',
+      text: '[Paraphrase] telling the story years afterwards to her own children,',
       annotations: [
         {
           type: 'Structure',
-          note: '"And then" is conversational, reflecting oral storytelling. The daughter is recounting what she was told.',
+          note: 'This framing clause is oral storytelling: the daughter is retelling the story to her own children, years later, and imagining what her father saw.',
           color: '#a78bfa',
         },
       ],
     },
     {
-      text: 'trembling, silver in the morning light,',
-      annotations: [
-        {
-          type: 'Colour imagery',
-          note: '"silver" recurs -- linking the fish and the boats, connecting the natural world with human industry.',
-          color: '#f59e0b',
-        },
-      ],
-    },
-    { text: 'and the boats came back from the island' },
-    { text: '' },
-    // Stanza 4
-    {
-      text: 'And somehow, he must have looked far down',
+      text: '[Paraphrase] he surely gazed a long way below',
       annotations: [
         {
           type: 'Perspective',
@@ -126,43 +107,27 @@ const kamikazeData: PoemData = {
       ],
     },
     {
-      text: 'at the little fish',
+      text: '[Paraphrase] at the tiny boats out fishing',
       annotations: [
         {
           type: 'Diminutive',
-          note: '"little" makes the fish seem vulnerable and precious, contrasting with the enormity of the suicide mission.',
+          note: '"little" makes the fishing boats seem small, vulnerable and precious from the air, contrasting with the enormity of the suicide mission.',
           color: '#34d399',
         },
       ],
     },
-    { text: 'inking the sea between them' },
-    { text: '' },
-    // Stanza 5
     {
-      text: 'like a shower of dark, metallic rain,',
+      text: '[Paraphrase] spread in a line like festive flags',
       annotations: [
         {
           type: 'Simile',
-          note: 'The fish are compared to "dark, metallic rain" -- beautiful yet the adjectives "dark" and "metallic" foreshadow the military imagery and death.',
+          note: 'The boats are compared to "bunting", the strings of small flags hung up for celebrations: from the air the scene looks festive and full of life, the opposite of his mission.',
           color: '#34d399',
         },
       ],
     },
-    { text: 'of black shoals' },
-    { text: 'nudging towards the shore,' },
     {
-      text: 'and remembered how',
-      annotations: [
-        {
-          type: 'Memory',
-          note: 'The shift to memory -- the pilot recalls childhood experiences of fishing with his father, connecting past and present.',
-          color: '#60a5fa',
-        },
-      ],
-    },
-    { text: 'his brothers too had fished from boats' },
-    {
-      text: 'rocking in the green-blue translucent sea.',
+      text: '[Paraphrase] on a clear, see-through sea of blue and green',
       annotations: [
         {
           type: 'Colour imagery',
@@ -172,12 +137,13 @@ const kamikazeData: PoemData = {
       ],
     },
     { text: '' },
-    // Stanza 6
-    { text: 'And on this day, the weights and selvedges' },
-    { text: 'of the ocean, wood pigeons' },
-    { text: 'the cloud-marked mackerel, told him' },
+
+    // Stanza 3
+    { text: '[Paraphrase] and under the boats, curving in broad bands,' },
+    { text: '[Paraphrase] like an enormous banner swung to one side' },
+    { text: '[Paraphrase] and then back again, tracing a looping figure-eight pattern,' },
     {
-      text: 'the dark shoals',
+      text: '[Paraphrase] swam vast, shadowy schools of fish,',
       annotations: [
         {
           type: 'Double meaning',
@@ -187,84 +153,126 @@ const kamikazeData: PoemData = {
       ],
     },
     {
-      text: 'of fishes flashing silver',
+      text: '[Paraphrase] which gleamed silver whenever their undersides',
       annotations: [
         {
           type: 'Colour imagery',
-          note: '"silver" appears for the third time, creating a motif of natural beauty that opposes the darkness of war.',
+          note: 'The fish flash "silver" as they turn, catching the light and creating a motif of natural beauty that opposes the darkness of war.',
           color: '#f59e0b',
         },
       ],
     },
-    { text: 'as their bellies' },
     {
-      text: 'swivelled towards the sun',
+      text: '[Paraphrase] twisted round to face the sunlight.',
       annotations: [
         {
+          type: 'Nature imagery',
+          note: 'Sibilance in "silver" and "swivelled" across these two lines creates a flowing, mesmerising sound that mirrors the beauty of the natural world.',
+          color: '#34d399',
+        },
+        {
           type: 'Contrast',
-          note: 'The fish "swivelled towards the sun" echoes the pilot\'s earlier flight "into the sun" -- but the fish turn towards life and light, not death.',
+          note: 'The fish turning towards the sun echoes the sunrise at which the pilot set out -- but the fish turn towards life and light, not death.',
           color: '#34d399',
         },
       ],
     },
-    { text: 'and then he thought' },
     { text: '' },
-    // Stanza 7 -- shift to first person / italicised in original
+
+    // Stanza 4
     {
-      text: 'he must have wondered',
+      text: '[Paraphrase] and he would have recalled how he',
+      annotations: [
+        {
+          type: 'Memory',
+          note: "The shift to memory -- the pilot recalls waiting by the sea with his brothers for his father's fishing boat to come in, connecting past and present.",
+          color: '#60a5fa',
+        },
+      ],
+    },
+    { text: '[Paraphrase] together with his brothers, as they waited by the sea,' },
+    { text: '[Paraphrase] piled up little towers of pale grey stones' },
+    { text: '[Paraphrase] to find out whose would survive the longest' },
+    { text: '[Paraphrase] against the rough rush of incoming waves' },
+    { text: '[Paraphrase] as the waves carried the boys’ father’s boat back unharmed' },
+    { text: '' },
+
+    // Stanza 5
+    {
+      text: '[Paraphrase] (the daughter interrupts to say it was her grandfather’s boat) coming unharmed',
+    },
+    { text: '[Paraphrase] to land, soaked with seawater and overflowing' },
+    { text: '[Paraphrase] with mackerel patterned like clouds,' },
+    { text: '[Paraphrase] dark crabs and delicate, frond-like prawns,' },
+    {
+      text: '[Paraphrase] scattered silvery whitebait, and on one occasion',
+      annotations: [
+        {
+          type: 'Colour imagery',
+          note: '"silver" recurs -- linking the fish the pilot sees from the air with the fish of his childhood memory, connecting the natural world with home.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    { text: '[Paraphrase] a tuna, like a sinister royal, powerful and threatening.' },
+    { text: '' },
+
+    // Stanza 6 -- the daughter now speaks in her own voice
+    { text: '[Paraphrase] Even though he returned home alive,' },
+    {
+      text: '[Paraphrase] his wife, the daughter’s mother, stopped speaking',
+      annotations: [
+        {
+          type: 'Perspective shift',
+          note: "The voice changes: the daughter now speaks in her own words about her mother, and the poem turns from the father's flight to the response of his wife and neighbours, who punish him with silence.",
+          color: '#a78bfa',
+        },
+      ],
+    },
+    { text: '[Paraphrase] when he was there, and she would not look at him' },
+    { text: '[Paraphrase] The neighbours also behaved towards him' },
+    {
+      text: '[Paraphrase] as if he had ceased to exist;',
+      annotations: [
+        {
+          type: 'Social death',
+          note: 'His wife and neighbours enact a living death -- he is physically present but socially erased, which may be worse than the kamikaze death.',
+          color: '#60a5fa',
+        },
+      ],
+    },
+    {
+      text: '[Paraphrase] only the children, the daughter among them, went on chatting and laughing',
+    },
+    { text: '' },
+
+    // Stanza 7 -- the outside narrator returns in the last two lines
+    { text: '[Paraphrase] until, little by little, the children learned it too:' },
+    { text: '[Paraphrase] to keep quiet and to behave as if' },
+    { text: '[Paraphrase] he had not come back, as if this man' },
+    { text: '[Paraphrase] had stopped being the dad they once loved.' },
+    {
+      text: '[Paraphrase] At times, the daughter said, her father surely asked himself',
       annotations: [
         {
           type: 'Shift',
           note: 'The speculative "must have" reminds us this is the daughter\'s reconstruction -- she can never truly know her father\'s thoughts.',
           color: '#a78bfa',
         },
+        {
+          type: 'Cyclical ending',
+          note: 'The closing lines return to the outside narrator of the opening ("she said"), closing the frame around the daughter\'s story. The poem offers no answer to its question -- the ambiguity is the point.',
+          color: '#a78bfa',
+        },
       ],
     },
     {
-      text: 'which had been the better way to die.',
+      text: '[Paraphrase] which of the two kinds of death was the better one.',
       annotations: [
         {
           type: 'Irony',
           note: 'The question is not whether to die, but how -- yet by turning back, the father chooses a kind of social death instead of a physical one.',
           color: '#60a5fa',
-        },
-      ],
-    },
-    { text: '' },
-    // Final section -- daughter's direct speech / reflection
-    {
-      text: 'They treated him',
-      annotations: [
-        {
-          type: 'Perspective shift',
-          note: 'The poem shifts from the father\'s experience to the family\'s response. "They" -- his own family -- becomes the agent of punishment.',
-          color: '#a78bfa',
-        },
-      ],
-    },
-    {
-      text: 'as though he no longer existed,',
-      annotations: [
-        {
-          type: 'Social death',
-          note: 'The family enacts a living death -- he is physically present but socially erased, which may be worse than the kamikaze death.',
-          color: '#60a5fa',
-        },
-      ],
-    },
-    { text: 'as though he had never returned,' },
-    { text: 'so that his children and grandchildren' },
-    { text: 'learned not to speak of him' },
-    { text: 'treated him as though he had never existed.' },
-    { text: '' },
-    { text: 'And sometimes, she said, he must have wondered' },
-    {
-      text: 'which had been the better way to die.',
-      annotations: [
-        {
-          type: 'Cyclical ending',
-          note: 'The final line repeats the earlier question, creating a cyclical structure. The poem offers no answer -- the ambiguity is the point.',
-          color: '#a78bfa',
         },
         {
           type: 'Irony',

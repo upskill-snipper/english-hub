@@ -75,7 +75,7 @@ const data: TextGuideData = {
     {
       name: 'Eunice Hubbel',
       role: 'Stella\u2019s upstairs neighbour and landlady',
-      body: 'Eunice lives in the flat above the Kowalskis with her husband Steve, and offers Stella a model of how to survive a marriage that combines fights, infidelity and reconciliation. She pronounces the play\u2019s quiet moral compromise in Scene 11: \u201cDon\u2019t ever believe it. Life has got to go on. No matter what happens, you\u2019ve got to keep on going.\u201d Williams uses her to show how the working-class community of Elysian Fields absorbs and normalises the violence within its walls.',
+      body: 'Eunice lives in the flat above the Kowalskis with her husband Steve, and offers Stella a model of how to survive a marriage that combines fights, infidelity and reconciliation. She pronounces the play\u2019s quiet moral compromise in Scene 11: \u201cDon\u2019t ever believe it. Life has got to go on.\u201d Williams uses her to show how the working-class community of Elysian Fields absorbs and normalises the violence within its walls.',
     },
     {
       name: 'Steve Hubbel',
@@ -123,7 +123,7 @@ const data: TextGuideData = {
   quotations: [
     {
       quote:
-        '"They told me to take a streetcar named Desire, and transfer to one called Cemeteries, and ride six blocks and get off at \u2014 Elysian Fields!"',
+        '"take a streetcar named Desire, and transfer to one called Cemeteries, ... Elysian Fields!"',
       who: 'Blanche \u2014 Scene 1',
       analysis:
         'Blanche\u2019s arrival line makes her journey a symbolic one: from Desire, via Cemeteries, to the afterlife of Elysian Fields. Williams loads the whole trajectory of the play \u2014 desire leading to death leading to institutional exile \u2014 into a single set of street names.',
@@ -148,7 +148,7 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"Deliberate cruelty is not forgivable. It is the one unforgivable thing in my opinion and it is the one thing of which I have never, never been guilty."',
+        '"Deliberate cruelty is not forgivable. ... thing of which I have never, never been guilty."',
       who: 'Blanche \u2014 Scene 11',
       analysis:
         'Blanche\u2019s moral statement \u2014 delivered to Mitch \u2014 sets out the single standard against which Stanley\u2019s behaviour is judged. The play tests whether the working-class, post-war world it depicts can meet any such ethical benchmark.',
@@ -178,22 +178,19 @@ const data: TextGuideData = {
         'Stella\u2019s understatement to Blanche names the class and cultural gulf that drives the play. Williams gives her the language of diplomatic compromise \u2014 the register of a woman who has chosen Stanley\u2019s world and will not be argued out of it.',
     },
     {
-      quote:
-        '"There are thousands of papers, stretching back over hundreds of years, affecting Belle Reve as, piece by piece, our improvident grandfathers and father and uncles and brothers exchanged the land for their epic fornications."',
+      quote: '"our improvident grandfathers ... exchanged the land for their epic fornications."',
       who: 'Blanche \u2014 Scene 2',
       analysis:
         'Blanche\u2019s account of the loss of Belle Reve is both an indictment of the DuBois men and an economic explanation of her ruin. The rhetorical grandeur (\u201cepic fornications\u201d) is itself a kind of illusion, turning decline into mythology.',
     },
     {
-      quote:
-        '"He acts like an animal, has an animal\u2019s habits! Eats like one, moves like one, talks like one! \u2026 Thousands and thousands of years have passed him right by, and there he is \u2014 Stanley Kowalski."',
+      quote: '"He acts like an animal, ... Eats like one, moves like one, talks like one!"',
       who: 'Blanche \u2014 Scene 4',
       analysis:
         'Blanche\u2019s attack on Stanley, overheard by him, fuses class snobbery with a Darwinian vocabulary. Williams lets Stanley listen from the doorway, so that the audience watches the precise moment her destruction begins.',
     },
     {
-      quote:
-        '"I pulled you down off them columns and how you loved it, having them coloured lights going!"',
+      quote: '"I pulled you down off them columns ... having them coloured lights going!"',
       who: 'Stanley \u2014 Scene 8',
       analysis:
         'Stanley\u2019s account of his sexual life with Stella \u2014 the \u201ccoloured lights\u201d \u2014 offers a rival theory of desire to Blanche\u2019s paper-lantern version. Williams makes the body\u2019s pleasure a political force capable of pulling a woman down from the plantation.',
@@ -211,7 +208,7 @@ const data: TextGuideData = {
         'The blunt restatement of the rejection strips away any residual tenderness in their courtship. Mitch\u2019s withdrawal leaves Blanche in the apartment alone with Stanley\u2019s imminent return and is a structural hinge into the rape.',
     },
     {
-      quote: '"Every man is a king! And I am the king around here, so don\u2019t you forget it!"',
+      quote: '"Every man is a king! And I am the king around here"',
       who: 'Stanley \u2014 Scene 8',
       analysis:
         'Stanley\u2019s boast, shouted after he has thrown the plates, collapses democratic vocabulary into domestic tyranny. Williams uses the line to show how post-war American ideology of the self-made man can become a licence for male rule.',
@@ -223,22 +220,20 @@ const data: TextGuideData = {
         'One of Blanche\u2019s earliest and most repeated self-instructions. The line, delivered to an empty apartment, establishes from the start that the play will be the story of someone trying, and failing, to hold a self together.',
     },
     {
-      quote:
-        '"What you are talking about is brutal desire \u2014 just \u2014 Desire! \u2014 the name of that rattle-trap street-car that bangs through the Quarter, up one old narrow street and down another."',
+      quote: '"What you are talking about is brutal desire \u2014 just \u2014 Desire!"',
       who: 'Blanche \u2014 Scene 4',
       analysis:
-        'Blanche\u2019s attempt to dismiss Stella\u2019s sexual bond as \u201cbrutal desire\u201d turns the streetcar into a symbol of rattling, indiscriminate sexual energy. Williams lets the geography of New Orleans and the geography of the body become the same map.',
+        'Blanche\u2019s attempt to dismiss Stella\u2019s sexual bond as \u201cbrutal desire\u201d turns the streetcar, in the full line, into a symbol of rattling, indiscriminate sexual energy. Williams lets the geography of New Orleans and the geography of the body become the same map.',
     },
     {
       quote:
-        '"It\u2019s only a paper moon, sailing over a cardboard sea \u2014 but it wouldn\u2019t be make-believe if you believed in me!"',
+        '[Blanche sings a popular song of 1933 in the bath. Its lyric says that a make-believe world would become real if only someone believed in it.]',
       who: 'Blanche \u2014 Scene 7 (singing in the bath)',
       analysis:
         'Blanche sings the Harold Arlen song from the bath as Stanley, in the next room, reveals her history to Stella. Williams sets her fragile fiction of belief against Stanley\u2019s hard narrative, so that the two scenes interrupt and indict each other.',
     },
     {
-      quote:
-        '"Don\u2019t ever believe it. Life has got to go on. No matter what happens, you\u2019ve got to keep on going."',
+      quote: '"Don\u2019t ever believe it. Life has got to go on."',
       who: 'Eunice \u2014 Scene 11',
       analysis:
         'Eunice\u2019s advice to Stella, as Blanche is being led out, names the moral compromise of the play. Williams gives it to a minor character, as if to show that it belongs to the community rather than to any one person.',

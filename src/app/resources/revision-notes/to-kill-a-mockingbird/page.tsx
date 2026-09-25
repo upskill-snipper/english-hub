@@ -237,7 +237,7 @@ export default function ToKillAMockingbirdPage() {
               />
               <CharacterCard
                 name="Atticus Finch"
-                description="The widowed father of Jem and Scout, an attorney serving in the Alabama state legislature, and the moral centre of the novel. Atticus is fifty when the story begins, gentle, principled, and deeply unfashionable in his refusal to accept Maycomb's racial codes. He defends Tom Robinson knowing he cannot win because, as he tells Scout, he 'couldn't go to church and worship God' otherwise. Lee presents him as embodying real courage: 'when you know you're licked before you begin but you begin anyway and you see it through.' He is not a saint but a flawed, tired man who chooses integrity at personal cost."
+                description="The widowed father of Jem and Scout, an attorney serving in the Alabama state legislature, and the moral centre of the novel. Atticus is fifty when the story begins, gentle, principled, and deeply unfashionable in his refusal to accept Maycomb's racial codes. He defends Tom Robinson knowing he cannot win because, as he tells Scout, he 'couldn't go to church and worship God' otherwise. Lee presents him as embodying real courage: 'when you know you're licked before you begin but you begin anyway.' He is not a saint but a flawed, tired man who chooses integrity at personal cost."
               />
               <CharacterCard
                 name="Calpurnia"
@@ -285,7 +285,7 @@ export default function ToKillAMockingbirdPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <ThemeCard
                 title={tr(`Racial Injustice`)}
-                description="The novel's most prominent theme. Lee depicts a justice system structurally rigged against Black defendants in the Jim Crow South. Tom Robinson's case is hopeless not because of evidence but because of his race: an all-white jury cannot acquit a Black man accused by a white woman, regardless of facts. Atticus tells Jem that 'in our courts, when it's a white man's word against a black man's, the white man always wins.' Tom's death - shot trying to escape - and the community's relative indifference reveal the lethal violence of legalised racism. Lee shows segregation operating at every level: the segregated courthouse balcony, the Black church, even Aunt Alexandra's missionary tea."
+                description="The novel's most prominent theme. Lee depicts a justice system structurally rigged against Black defendants in the Jim Crow South. Tom Robinson's case is hopeless not because of evidence but because of his race: an all-white jury cannot acquit a Black man accused by a white woman, regardless of facts. Atticus tells Jem that when 'it's a white man's word against a black man's, the white man always wins.' Tom's death - shot trying to escape - and the community's relative indifference reveal the lethal violence of legalised racism. Lee shows segregation operating at every level: the segregated courthouse balcony, the Black church, even Aunt Alexandra's missionary tea."
               />
               <ThemeCard
                 title={tr(`Childhood Innocence vs Adult Prejudice`)}
@@ -293,15 +293,15 @@ export default function ToKillAMockingbirdPage() {
               />
               <ThemeCard
                 title={tr(`Moral Courage`)}
-                description="Lee redefines courage through Atticus and Mrs Dubose. Real courage, Atticus says, is 'when you know you're licked before you begin but you begin anyway and you see it through no matter what.' Mrs Dubose conquering morphine addiction before death exemplifies it; so does Atticus defending Tom in full knowledge he cannot win. The novel distinguishes physical bravery (the rabid dog) from moral courage (standing against community opinion). Scout learns that her father is 'the bravest man who ever lived' because he refuses to compromise integrity, even when his children are insulted in the street."
+                description="Lee redefines courage through Atticus and Mrs Dubose. Real courage, Atticus says, is 'when you know you're licked before you begin but you begin anyway.' Mrs Dubose conquering morphine addiction before death exemplifies it; so does Atticus defending Tom in full knowledge he cannot win. The novel distinguishes physical bravery (the rabid dog) from moral courage (standing against community opinion). Scout learns that her father is 'the bravest man who ever lived' because he refuses to compromise integrity, even when his children are insulted in the street."
               />
               <ThemeCard
                 title="Empathy ('walk around in his skin')"
-                description="The ethical core of the novel, articulated in Atticus's first lesson to Scout: 'You never really understand a person until you consider things from his point of view - until you climb into his skin and walk around in it.' Empathy is the corrective to prejudice. Scout learns to apply it to Walter Cunningham, to Mrs Dubose, to Mayella, and finally to Boo Radley, whose porch she literally stands on at the novel's climactic moment. Lee suggests empathy is not an emotion but a discipline - a chosen act of imagination."
+                description="The ethical core of the novel, articulated in Atticus's first lesson to Scout: that you cannot understand someone 'until you climb into his skin and walk around in it.' Empathy is the corrective to prejudice. Scout learns to apply it to Walter Cunningham, to Mrs Dubose, to Mayella, and finally to Boo Radley, whose porch she literally stands on at the novel's climactic moment. Lee suggests empathy is not an emotion but a discipline - a chosen act of imagination."
               />
               <ThemeCard
                 title={tr(`Class Hierarchies in Maycomb`)}
-                description="Beyond race, Maycomb is rigidly stratified by class. Jem theorises: 'There's four kinds of folks in the world. There's the ordinary kind like us and the neighbours, there's the kind like the Cunninghams out in the woods, the kind like the Ewells down at the dump, and the Negroes.' The Cunninghams are poor but proud (Walter will not accept charity); the Ewells are 'trash' who exploit social codes for power; the Black community sits beneath all white classes regardless of dignity. Aunt Alexandra polices class boundaries (Walter cannot visit because he is 'trash'); Scout questions them. Lee uses class to show that the Southern hierarchy is not natural but artificially maintained through education, privilege, and exclusion."
+                description="Beyond race, Maycomb is rigidly stratified by class. Jem theorises: 'There's four kinds of folks in the world.' The Cunninghams are poor but proud (Walter will not accept charity); the Ewells are 'trash' who exploit social codes for power; the Black community sits beneath all white classes regardless of dignity. Aunt Alexandra polices class boundaries (Walter cannot visit because he is 'trash'); Scout questions them. Lee uses class to show that the Southern hierarchy is not natural but artificially maintained through education, privilege, and exclusion."
               />
               <ThemeCard
                 title="Education"
@@ -414,17 +414,17 @@ export default function ToKillAMockingbirdPage() {
             </p>
             <div className="space-y-1">
               <QuoteCard
-                quote="You never really understand a person until you consider things from his point of view - until you climb into his skin and walk around in it."
+                quote="until you climb into his skin and walk around in it."
                 speaker="Atticus to Scout, Chapter 3"
                 analysis="The novel's thesis statement on empathy. The metaphor of climbing inside another's skin is bodily and visceral, suggesting empathy is a physical act of imagination, not abstract sympathy. The phrase echoes throughout the novel: Scout applies it to Walter Cunningham, Mayella, and finally Boo, whose porch she literally stands on. Atticus offers this as the antidote to prejudice - and the entire moral arc of Scout's development depends on this single sentence."
               />
               <QuoteCard
-                quote="Mockingbirds don't do one thing but make music for us to enjoy. They don't eat up people's gardens, don't nest in corncribs, they don't do one thing but sing their hearts out for us. That's why it's a sin to kill a mockingbird."
+                quote="Mockingbirds don't do one thing but make music ... a sin to kill a mockingbird."
                 speaker="Miss Maudie to Scout, Chapter 10"
-                analysis="The novel's title metaphor and moral key. Miss Maudie defines the mockingbird as harmless, generous, and innocent - a creature that exists only to give. The repeated negative ('don't... don't... don't') emphasises its incapacity for harm. The quotation illuminates the title and unlocks the symbolic meanings of Tom Robinson and Boo Radley as the novel's two 'mockingbirds.' To destroy such a being is described as a 'sin' - not a crime but a moral wrong."
+                analysis="The novel's title metaphor and moral key. Miss Maudie defines the mockingbird as harmless, generous, and innocent - a creature that exists only to give. In the full passage, the repeated negative ('don't... don't... don't') emphasises its incapacity for harm. The quotation illuminates the title and unlocks the symbolic meanings of Tom Robinson and Boo Radley as the novel's two 'mockingbirds.' To destroy such a being is described as a 'sin' - not a crime but a moral wrong."
               />
               <QuoteCard
-                quote="Shoot all the bluejays you want, if you can hit 'em, but remember it's a sin to kill a mockingbird."
+                quote="Shoot all the bluejays you want, ... remember it's a sin to kill a mockingbird."
                 speaker="Atticus to Jem and Scout, Chapter 10"
                 analysis="The novel's only explicit moral injunction from Atticus on this subject. The contrast between bluejays (aggressive, predatory) and mockingbirds (harmless songbirds) draws an ethical distinction familiar from Christian and natural-law traditions. Significantly, this is one of the few times Atticus prohibits something outright - the moral weight is total. The line connects later to both Tom (innocent and destroyed) and Boo (revealing him would be 'sort of like shootin' a mockingbird,' Scout says)."
               />
@@ -434,14 +434,14 @@ export default function ToKillAMockingbirdPage() {
                 analysis="Scout's closing line about Boo Radley. The simplicity of the diction - childish and direct - captures the moral arrival of the novel: after years of dramatising Boo as a monster, Scout sees him as a person, and the verdict is utterly plain. The deflationary modesty ('real nice') refuses melodrama; the truth Scout has spent the whole novel learning is, in the end, almost banal. Atticus's reply - 'Most people are, Scout, when you finally see them' - completes the lesson."
               />
               <QuoteCard
-                quote="Maycomb was an old town, but it was a tired old town when I first knew it."
+                quote="Maycomb was an old town, ... a tired old town when I first knew it."
                 speaker="Scout (narrator), Chapter 1"
                 analysis="The novel's opening characterisation of setting. The repetition of 'old' and the personification ('tired') establish Maycomb as a place worn out by tradition. The clauses lengthen as the description goes on, mimicking the slow pace of Southern small-town life. The atmosphere of stagnation prefigures the resistance to change that the trial will expose. The retrospective tense ('when I first knew it') marks the dual narrative voice: adult Jean Louise looking back."
               />
               <QuoteCard
-                quote="I wanted you to see what real courage is, instead of getting the idea that courage is a man with a gun in his hand. It's when you know you're licked before you begin but you begin anyway and you see it through no matter what."
+                quote="It's when you know you're licked before you begin but you begin anyway"
                 speaker="Atticus to Jem about Mrs Dubose, Chapter 11"
-                analysis="The novel's redefinition of courage. Atticus rejects the conventional masculine image (gun, violence) and offers a moral one: persistence in the face of certain defeat. The phrase 'licked before you begin' will apply most precisely to Atticus himself defending Tom Robinson. The line teaches readers how to reread the rabid-dog scene (physical courage) against the trial (moral courage), and primes us to see Mrs Dubose's morphine struggle as heroic."
+                analysis="The novel's redefinition of courage. In the full speech, Atticus rejects the conventional masculine image (gun, violence) and offers a moral one: persistence in the face of certain defeat. The phrase 'licked before you begin' will apply most precisely to Atticus himself defending Tom Robinson. The line teaches readers how to reread the rabid-dog scene (physical courage) against the trial (moral courage), and primes us to see Mrs Dubose's morphine struggle as heroic."
               />
               <QuoteCard
                 quote="The one thing that doesn't abide by majority rule is a person's conscience."
@@ -449,19 +449,19 @@ export default function ToKillAMockingbirdPage() {
                 analysis="A statement of moral individualism. Atticus distinguishes democratic process (which respects majority opinion) from ethics (which cannot). In a community where 'everybody' regards Tom as guilty, this principle justifies his stand. The line participates in the long American tradition of conscience-against-the-crowd from Thoreau and Emerson. Lee uses it to validate moral nonconformity at a moment when the Civil Rights Movement was demanding precisely that of white Americans."
               />
               <QuoteCard
-                quote="Simply because we were licked a hundred years before we started is no reason for us not to try to win."
+                quote="licked a hundred years ... is no reason for us not to try to win."
                 speaker="Atticus to Scout, Chapter 9"
                 analysis="The historical depth of Atticus's stance. 'A hundred years' before 1935 places the origin of injustice at the antebellum slave system; Atticus acknowledges that the racial structure of the South is centuries old. Yet the syntax - the double negative leading to 'try to win' - refuses fatalism. The line is Atticus's case for moral effort even within a corrupt system. It also operates as Lee's own implicit argument to her 1960 readership."
               />
               <QuoteCard
-                quote="There's something in our world that makes men lose their heads - they couldn't be fair if they tried. In our courts, when it's a white man's word against a black man's, the white man always wins. They're ugly, but those are the facts of life."
+                quote="that makes men lose their heads - they couldn't be fair if they tried."
                 speaker="Atticus to Jem after the trial, Chapter 23"
-                analysis="Atticus's most direct statement of structural racism. 'Lose their heads' suggests racial prejudice is a kind of madness; 'couldn't be fair if they tried' acknowledges that even individual goodwill cannot overcome systemic bias. The flat phrase 'facts of life' refuses euphemism. This is Atticus speaking to his son not in idealism but in painful realism - a turning point where Jem must integrate the moral truth of the world he has inherited."
+                analysis="Atticus's most direct statement of structural racism. 'Lose their heads' suggests racial prejudice is a kind of madness; 'couldn't be fair if they tried' acknowledges that even individual goodwill cannot overcome systemic bias. The flat phrase 'facts of life', later in the full speech, refuses euphemism. This is Atticus speaking to his son not in idealism but in painful realism - a turning point where Jem must integrate the moral truth of the world he has inherited."
               />
               <QuoteCard
-                quote="As you grow older, you'll see white men cheat black men every day of your life, but let me tell you something and don't you forget it - whenever a white man does that to a black man, no matter who he is, how rich he is, or how fine a family he comes from, that white man is trash."
+                quote="you'll see white men cheat black men ... that white man is trash."
                 speaker="Atticus to Jem, Chapter 23"
-                analysis="A redefinition of the word 'trash.' Maycomb uses 'trash' to mean the poorest whites (the Ewells); Atticus reverses the term to apply to any white person who exploits a Black person, regardless of class. The line demolishes Aunt Alexandra's class snobbery in a single sentence. 'No matter who he is, how rich he is, or how fine a family he comes from' attacks every status marker the Finches' world relies on."
+                analysis="A redefinition of the word 'trash.' Maycomb uses 'trash' to mean the poorest whites (the Ewells); Atticus reverses the term to apply to any white person who exploits a Black person, regardless of class. The line demolishes Aunt Alexandra's class snobbery in a single sentence. In the full sentence, 'No matter who he is, ... or how fine a family he comes from' attacks every status marker the Finches' world relies on."
               />
               <QuoteCard
                 quote="People generally see what they look for, and hear what they listen for."
@@ -469,29 +469,29 @@ export default function ToKillAMockingbirdPage() {
                 analysis="A statement of perceptual prejudice. Judge Taylor articulates what the trial verdict will demonstrate: the all-white jury will see and hear what they have already decided to see and hear. The line is also an instruction to the reader about reading itself: it asks us to confront our own preconceptions about the characters (especially Boo Radley) and what we expect to find."
               />
               <QuoteCard
-                quote="The thing about it is, our kind of folks don't like the Cunninghams, the Cunninghams don't like the Ewells, and the Ewells hate and despise the colored folks."
+                quote="Cunninghams don't like the Ewells, and the Ewells hate and despise the colored folks."
                 speaker="Jem to Scout, Chapter 23"
-                analysis="Jem's class theory of Maycomb, articulated after the trial. The descending scale of contempt - don't like... don't like... hate and despise - reveals how each tier of society defines itself by looking down on the next. The Black community sits beneath all white classes regardless of moral worth. Lee uses Jem's emerging adult perception to anatomise the social structure that produces the verdict."
+                analysis="Jem's class theory of Maycomb, articulated after the trial. In the full sentence, the descending scale of contempt - don't like... don't like... hate and despise - reveals how each tier of society defines itself by looking down on the next. The Black community sits beneath all white classes regardless of moral worth. Lee uses Jem's emerging adult perception to anatomise the social structure that produces the verdict."
               />
               <QuoteCard
-                quote="Until I feared I would lose it, I never loved to read. One does not love breathing."
+                quote="I never loved to read. One does not love breathing."
                 speaker="Scout (narrator), Chapter 2"
                 analysis="Scout's reflection after Miss Caroline forbids Atticus to teach her. The simile equating reading with breathing makes literacy elemental - not an achievement but an automatic life-function. The chiastic structure of the second sentence ('does not love breathing' inverting 'never loved to read') gives the line aphoristic weight. Lee implicitly criticises the Maycomb school for trying to deny something so fundamental, and signals literacy as the foundation of Scout's eventual moral autonomy."
               />
               <QuoteCard
-                quote="Atticus had used every tool available to free men to save Tom Robinson, but in the secret courts of men's hearts Atticus had no case."
+                quote="but in the secret courts of men's hearts Atticus had no case."
                 speaker="Scout (narrator), Chapter 22"
-                analysis="The retrospective adult voice's verdict on the trial. The phrase 'secret courts of men's hearts' moves the action from the courthouse to the interior, identifying the real site of injustice as the prejudiced consciousness of jurors. 'Every tool available to free men' acknowledges that Atticus exhausted the legal possibilities; 'no case' means none of those tools could reach where it mattered. A precise, devastating sentence."
+                analysis="The retrospective adult voice's verdict on the trial. The phrase 'secret courts of men's hearts' moves the action from the courthouse to the interior, identifying the real site of injustice as the prejudiced consciousness of jurors. In the full sentence, 'every tool available to free men' acknowledges that Atticus exhausted the legal possibilities; 'no case' means none of those tools could reach where it mattered. A precise, devastating sentence."
               />
               <QuoteCard
-                quote="I think I'm beginning to understand why Boo Radley's stayed shut up in the house all this time. It's because he wants to stay inside."
+                quote="understand why Boo Radley's stayed shut up ... It's because he wants to stay inside."
                 speaker="Jem to Scout, Chapter 23"
                 analysis="Jem's matured judgement after the trial. Earlier in the novel the children invent reasons why Boo cannot leave (chained to a bed, monstrous); here Jem inverts the assumption. Boo chooses isolation as a refuge from a world that has just convicted Tom Robinson. The line marks Jem's transition into disillusioned adulthood and reframes Boo as a figure of moral retreat from a corrupted community."
               />
               <QuoteCard
-                quote="Atticus was right. One time he said you never really know a man until you stand in his shoes and walk around in them. Just standing on the Radley porch was enough."
+                quote="Atticus was right. ... Just standing on the Radley porch was enough."
                 speaker="Scout (narrator), Chapter 31"
-                analysis="The novel's culminating realisation. Scout literalises Atticus's empathy lesson by physically standing on Boo's porch and seeing the street from his perspective. The simplicity of 'just standing... was enough' shows that empathy is sufficient - not a complex theory but a simple act of seeing. Lee returns to Atticus's earlier metaphor (skin/shoes) and resolves the entire Bildungsroman in a single image of perspective achieved."
+                analysis="The novel's culminating realisation. Scout literalises Atticus's empathy lesson by physically standing on Boo's porch and seeing the street from his perspective. The simplicity of 'just standing... was enough' shows that empathy is sufficient - not a complex theory but a simple act of seeing. Lee returns, in the full passage, to Atticus's earlier metaphor (skin/shoes) and resolves the entire Bildungsroman in a single image of perspective achieved."
               />
               <QuoteCard
                 quote="Most people are, Scout, when you finally see them."
@@ -648,9 +648,9 @@ export default function ToKillAMockingbirdPage() {
                       Paragraph 1 &mdash; Racial prejudice
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      &ldquo;In our courts, when it&apos;s a white man&apos;s word against a black
-                      man&apos;s, the white man always wins.&rdquo; Trace the trial as systemic
-                      racism in action. Atticus admits the structural truth.
+                      &ldquo;it&apos;s a white man&apos;s word against a black man&apos;s, the white
+                      man always wins.&rdquo; Trace the trial as systemic racism in action. Atticus
+                      admits the structural truth.
                     </p>
                   </div>
                   <div>
@@ -718,8 +718,8 @@ export default function ToKillAMockingbirdPage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;It&apos;s when you know you&apos;re licked before you begin but you
-                      begin anyway and you see it through.&rdquo; This is offered after Mrs
-                      Dubose&apos;s death &mdash; a deliberately unromantic example.
+                      begin anyway.&rdquo; This is offered after Mrs Dubose&apos;s death &mdash; a
+                      deliberately unromantic example.
                     </p>
                   </div>
                   <div>
@@ -727,9 +727,8 @@ export default function ToKillAMockingbirdPage() {
                       Paragraph 2 &mdash; Defending Tom
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Atticus accepts knowing he will lose. &ldquo;Simply because we were licked a
-                      hundred years before we started is no reason for us not to try to win.&rdquo;
-                      The community ostracises him.
+                      Atticus accepts knowing he will lose. &ldquo;licked a hundred years ... is no
+                      reason for us not to try to win.&rdquo; The community ostracises him.
                     </p>
                   </div>
                   <div>
@@ -923,7 +922,7 @@ export default function ToKillAMockingbirdPage() {
                       Paragraph 1 &mdash; The opening characterisation
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      &ldquo;Maycomb was an old town, but it was a tired old town when I first knew
+                      &ldquo;Maycomb was an old town, ... a tired old town when I first knew
                       it.&rdquo; Personification creates atmosphere of stagnation. Repetition of
                       &ldquo;old&rdquo; signals tradition&apos;s weight.
                     </p>

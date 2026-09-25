@@ -15,9 +15,24 @@ import { useT } from '@/lib/i18n/use-t'
 const motherAnyDistancePoem: PoemData = {
   title: 'Mother, any distance',
   poet: 'Simon Armitage',
+  // NOTE: "Mother, any distance" (Simon Armitage, 1993) remains in copyright. To
+  // avoid reproducing the poem verbatim, each line below is given as a
+  // PARAPHRASE in the site's own words, and the notes quote only short
+  // phrases. Students must read the full original text in the AQA Love and
+  // Relationships anthology (or Armitage, "Book of Matches", Faber and Faber).
+  //
+  // Until 25 September 2026 this array printed the whole poem, and two of its
+  // third-stanza entries were not Armitage's lines at all: they stood where
+  // lines 9 to 11 of the published poem belong, so the stanza had six entries
+  // and the poem fourteen. Those three lines are now paraphrased from the
+  // published text, one entry each, giving the fifteen lines the form notes
+  // describe. The languageDevices "Neologism" entry still quotes the invented
+  // compound and needs the same correction, as do the summary's stanza 3 line
+  // range and the quiz (mad-9) and revision-topic references to a window, which
+  // came from the same invented lines.
   lines: [
     {
-      text: 'Mother, any distance greater than a single span',
+      text: '[Paraphrase] The speaker tells his mother that measuring anything longer than one person can stretch across',
       annotations: [
         {
           type: 'Direct address',
@@ -26,13 +41,13 @@ const motherAnyDistancePoem: PoemData = {
         },
         {
           type: 'Metaphor',
-          note: '"Single span" means an arm\'s length, but also suggests the small distances of childhood when mother and child were always close.',
+          note: 'The opening measurement is the distance one person can stretch across alone, but it also suggests the small distances of childhood, when mother and child were always close.',
           color: '#ef4444',
         },
       ],
     },
     {
-      text: 'requires a second pair of hands.',
+      text: '[Paraphrase] needs another person to help, one holding each end of the tape.',
       annotations: [
         {
           type: 'Dependence',
@@ -42,7 +57,7 @@ const motherAnyDistancePoem: PoemData = {
       ],
     },
     {
-      text: 'You come to help me measure windows, pelmets, doors,',
+      text: '[Paraphrase] She has come round to assist him in measuring up the windows, doors and curtain fittings.',
       annotations: [
         {
           type: 'Domestic imagery',
@@ -52,7 +67,7 @@ const motherAnyDistancePoem: PoemData = {
       ],
     },
     {
-      text: 'the acres of the walls, the prairies of the floors.',
+      text: '[Paraphrase] The walls and floors seem as vast as fields and open plains.',
       annotations: [
         {
           type: 'Hyperbole',
@@ -69,11 +84,11 @@ const motherAnyDistancePoem: PoemData = {
     // Stanza break
     { text: '' },
     {
-      text: 'You at the zero-end, me with the spool of tape, recording',
+      text: '[Paraphrase] She holds the start of the tape while he takes the reel and notes down',
       annotations: [
         {
           type: 'Symbolism',
-          note: '"Zero-end" suggests the mother is at the origin, the starting point \u2014 she is where the speaker\'s life began. He moves away while she stays anchored.',
+          note: "Holding the very start of the tape places the mother at the origin, the starting point: she is where the speaker's life began. He moves away while she stays anchored.",
           color: '#ef4444',
         },
         {
@@ -84,37 +99,37 @@ const motherAnyDistancePoem: PoemData = {
       ],
     },
     {
-      text: 'length, reporting metres, centimetres back to base, then leaving',
+      text: '[Paraphrase] each length, calling the figures to her, his home base, before setting off',
       annotations: [
         {
           type: 'Military language',
-          note: '"Reporting back to base" uses military-style language, suggesting the mother is a safe headquarters and the speaker is venturing into unknown territory.',
+          note: 'Calling the figures down to "base" sounds like a military or mission report, suggesting the mother is a safe headquarters and the speaker is venturing into unknown territory.',
           color: '#3b82f6',
         },
         {
           type: 'Enjambment',
-          note: '"then leaving" runs into the next line, physically enacting the movement away from the mother. The line break mirrors the separation.',
+          note: 'The line ends on "leaving", which runs on into the next line, physically enacting the movement away from the mother. The line break mirrors the separation.',
           color: '#8b5cf6',
         },
       ],
     },
     {
-      text: 'up the stairs, the line still feeding out, unreeling',
+      text: '[Paraphrase] upstairs, the tape still running out behind him and unwinding',
       annotations: [
         {
           type: 'Vertical movement',
-          note: 'Moving "up the stairs" suggests aspiration and growth. The speaker is rising, progressing, climbing towards independence.',
+          note: 'Climbing the stairs suggests aspiration and growth. The speaker is rising, progressing, climbing towards independence.',
           color: '#10b981',
         },
         {
           type: 'Umbilical imagery',
-          note: '"The line still feeding out" echoes an umbilical cord delivering nourishment. The connection sustains the speaker even as he moves away.',
+          note: 'The verb "feeding" echoes an umbilical cord delivering nourishment. The connection sustains the speaker even as he moves away.',
           color: '#ec4899',
         },
       ],
     },
     {
-      text: 'years between us. Anchor. Kite.',
+      text: '[Paraphrase] across the years that lie between them. Then come two one-word images: an anchor, and a kite.',
       annotations: [
         {
           type: 'Caesura',
@@ -136,41 +151,42 @@ const motherAnyDistancePoem: PoemData = {
     // Stanza break
     { text: '' },
     {
-      text: 'I space-making across the landing to the door,',
+      text: '[Paraphrase] He moves through the bare bedrooms like an astronaut floating in space, then climbs',
       annotations: [
         {
           type: 'Verb choice',
-          note: '"Space-making" is hyphenated as though newly invented. The speaker is literally creating space between himself and his mother \u2014 forging his own identity.',
+          note: 'The hyphenated verb "space-walk" casts the speaker as an astronaut drifting round the bare house, with the tape as the cable tethering him to his mother. He is creating space between himself and her, and forging his own identity.',
           color: '#3b82f6',
         },
       ],
     },
     {
-      text: 'to the wall of windows, hoping to escape.',
+      text: '[Paraphrase] the attic ladder, stretching the tape to its very limit, the point at which something',
       annotations: [
         {
           type: 'Ambiguity',
-          note: '"Hoping to escape" reveals mixed emotions. He wants freedom but the word "hoping" suggests uncertainty \u2014 he is not confident he can manage alone.',
+          note: 'Stretching the tape to its limit works on two levels: the tape can go no further, and perhaps neither can the bond between mother and son. What will yield (the tape, her grip or the tie between them) is left open, and the line break makes the reader wait to find out.',
           color: '#f59e0b',
         },
       ],
     },
+    { text: '[Paraphrase] is bound to yield or snap.' },
     {
-      text: 'Two floors below your fingertips still pinch',
+      text: '[Paraphrase] Two storeys beneath him, the tips of her fingers are still gripping',
       annotations: [
         {
           type: 'Precision',
-          note: 'The "two floors below" emphasises the growing physical distance \u2014 the mother is far below, anchoring the tape. "Pinch" suggests careful holding and reluctance: she is unwilling to let the tape slip out of her grip.',
+          note: 'The growing physical distance is stressed here: the mother is now far below, anchoring the tape. "Pinch" suggests careful holding and reluctance: she is unwilling to let the tape slip out of her grip.',
           color: '#ec4899',
         },
       ],
     },
     {
-      text: 'the last one-hundredth of an inch... I reach',
+      text: '[Paraphrase] the barest sliver at the very end of the tape. After a pause, he stretches out',
       annotations: [
         {
           type: 'Reluctance to release',
-          note: 'The precise measurement "one-hundredth of an inch" shows how little connection remains \u2014 yet the mother still holds on. The image captures the painful, tender reluctance of letting go.',
+          note: 'The tiny measurement she still holds shows how little connection remains, yet the mother keeps hold. The image captures the painful, tender reluctance of letting go.',
           color: '#ef4444',
         },
         {
@@ -181,11 +197,11 @@ const motherAnyDistancePoem: PoemData = {
       ],
     },
     {
-      text: 'towards a hatch that opens on an endless sky',
+      text: '[Paraphrase] for a trapdoor in the roof that gives onto a boundless sky',
       annotations: [
         {
           type: 'Imagery',
-          note: 'The "hatch" opens onto "an endless sky" \u2014 a thrilling image of infinite possibility but also of danger. There is nothing to hold onto in an endless sky.',
+          note: 'The "hatch" opens onto a sky without limits: a thrilling image of infinite possibility but also of danger. There is nothing to hold onto in a sky that never ends.',
           color: '#10b981',
         },
         {
@@ -196,7 +212,7 @@ const motherAnyDistancePoem: PoemData = {
       ],
     },
     {
-      text: 'to fall or fly.',
+      text: '[Paraphrase] where he may either plunge or soar.',
       annotations: [
         {
           type: 'Ambiguity',
@@ -204,8 +220,8 @@ const motherAnyDistancePoem: PoemData = {
           color: '#f59e0b',
         },
         {
-          type: 'Half-rhyme',
-          note: '"Fly" half-rhymes with "sky" above, creating a sense of near-resolution without full closure, mirroring the speaker\'s uncertain future.',
+          type: 'Rhyme',
+          note: '"Fly" rhymes fully with "sky" in the line above, so the poem closes on a firm sound even though the choice it names is left open, mirroring the speaker\'s uncertain future.',
           color: '#8b5cf6',
         },
       ],
@@ -769,10 +785,11 @@ export default function MotherAnyDistancePage() {
       </section>
 
       <footer className="rounded-lg border border-border/40 bg-muted/30 px-4 py-3 text-[11px] leading-relaxed text-muted-foreground">
-        Poem text is reproduced for the purpose of private study and educational criticism under UK
-        fair-dealing provisions (Copyright, Designs and Patents Act 1988, s.30). No commercial use
-        is intended. All quotations remain the intellectual property of the respective rights
-        holders.
+        The poem is paraphrased here, not reproduced; it is printed in full in the AQA Love and
+        Relationships anthology. Short quotations are used for private study and educational
+        criticism under UK fair-dealing provisions (Copyright, Designs and Patents Act 1988, s.30).
+        No commercial use is intended. All quotations remain the intellectual property of the
+        respective rights holders.
       </footer>
     </div>
   )

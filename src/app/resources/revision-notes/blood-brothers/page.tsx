@@ -65,7 +65,7 @@ const scenes = [
       {
         scene: "Opening & The Narrator's Prologue",
         summary:
-          "The Narrator introduces the story of the Johnstone twins who were 'separated at birth' and tells the audience from the very start that both brothers will die. This use of dramatic irony means the audience watches the entire play knowing the tragic outcome, creating tension and a sense of inevitability. The Narrator functions like a Greek chorus, commenting on events and reminding us of the superstitious prophecy that 'if either twin was told he was one of a pair, they shall both immediately die.'",
+          "The Narrator introduces the story of the Johnstone twins who were 'separated at birth' and tells the audience from the very start that both brothers will die. This use of dramatic irony means the audience watches the entire play knowing the tragic outcome, creating tension and a sense of inevitability. The Narrator functions like a Greek chorus, commenting on events and reminding us of the superstitious prophecy that 'if either twin was told ... one of a pair, they shall both immediately die.'",
       },
       {
         scene: "Mrs Johnstone's Introduction",
@@ -75,7 +75,7 @@ const scenes = [
       {
         scene: 'The Pact with Mrs Lyons',
         summary:
-          "Mrs Lyons, who cannot have children of her own, persuades Mrs Johnstone to give up one of the twins. She manipulates Mrs Johnstone by arguing the child will have a better life and by exploiting her superstitious nature, telling her that 'if either twin was told he was one of a pair, they shall both immediately die.' Mrs Johnstone reluctantly agrees. This moment establishes the central dramatic tension and the class-based power dynamic: Mrs Lyons has the social authority to take what she wants from a vulnerable working-class woman.",
+          "Mrs Lyons, who cannot have children of her own, persuades Mrs Johnstone to give up one of the twins. She manipulates Mrs Johnstone by arguing the child will have a better life and by exploiting her superstitious nature, telling her that 'if either twin was told ... one of a pair, they shall both immediately die.' Mrs Johnstone reluctantly agrees. This moment establishes the central dramatic tension and the class-based power dynamic: Mrs Lyons has the social authority to take what she wants from a vulnerable working-class woman.",
       },
       {
         scene: 'The Twins Are Born and Separated',
@@ -210,7 +210,7 @@ const themes = [
   {
     name: 'Superstition and Fate',
     detail:
-      "The superstition that 'if either twin was told he was one of a pair, they shall both immediately die' hangs over the entire play. Mrs Lyons invents it to control Mrs Johnstone, but it takes on a life of its own: Mrs Johnstone genuinely believes it, and Mrs Lyons comes to believe her own lie. The Narrator reinforces the sense of fate through repeated references to 'the devil' and 'shoes upon the table'. Russell uses superstition as a dramatic device to create tension and inevitability, but the play's final question challenges the audience: was it really superstition that killed the brothers, or was it the class system? Russell implies that superstition is a way of avoiding responsibility. If we blame fate, we do not have to blame society. The superstition is a metaphor for all the myths that justify inequality: the idea that some people are simply 'meant' to succeed or fail.",
+      "The superstition that 'if either twin was told ... one of a pair, they shall both immediately die' hangs over the entire play. Mrs Lyons invents it to control Mrs Johnstone, but it takes on a life of its own: Mrs Johnstone genuinely believes it, and Mrs Lyons comes to believe her own lie. The Narrator reinforces the sense of fate through repeated references to 'the devil' and 'shoes upon the table'. Russell uses superstition as a dramatic device to create tension and inevitability, but the play's final question challenges the audience: was it really superstition that killed the brothers, or was it the class system? Russell implies that superstition is a way of avoiding responsibility. If we blame fate, we do not have to blame society. The superstition is a metaphor for all the myths that justify inequality: the idea that some people are simply 'meant' to succeed or fail.",
   },
   {
     name: 'Friendship and Brotherhood',
@@ -231,7 +231,7 @@ const themes = [
 
 const keyQuotes = [
   {
-    quote: 'If either twin was told he was one of a pair, they shall both immediately die.',
+    quote: 'If either twin was told ... one of a pair, they shall both immediately die.',
     speaker: 'Mrs Lyons / The Narrator',
     context: 'Act One',
     analysis:
@@ -287,12 +287,11 @@ const keyQuotes = [
       "Eddie's fascination with Mickey's slang reveals how class segregation works: the boys inhabit different linguistic worlds. Eddie finds Mickey's language exotic and exciting precisely because his privileged upbringing has sheltered him from it. The exchange is comic but also revealing: language marks class identity, and Eddie's delight in crossing linguistic boundaries mirrors his desire to cross class boundaries. Russell shows that as children, class differences are a source of curiosity and pleasure; only later do they become sources of pain.",
   },
   {
-    quote:
-      'And do we blame superstition for what came to pass? Or could it be what we, the English, have come to know as class?',
+    quote: 'Or could it be what we, the English, have come to know as class?',
     speaker: 'The Narrator',
     context: 'Act Two (finale)',
     analysis:
-      "The play's final and most important lines. The Narrator directly addresses the audience, forcing them to consider whether the twins' deaths were caused by superstition (fate) or class (social inequality). By framing it as a question, Russell refuses to let the audience off the hook: they must make their own judgement. The phrase 'we, the English' implicates the entire audience in a national class system. Russell's answer is clearly that class is responsible, but by posing it as a question, he makes the argument more persuasive than a simple statement would be.",
+      "The play's final and most important lines. In the full couplet, the Narrator directly addresses the audience, forcing them to consider whether the twins' deaths were caused by superstition (fate) or class (social inequality). By framing it as a question, Russell refuses to let the audience off the hook: they must make their own judgement. The phrase 'we, the English' implicates the entire audience in a national class system. Russell's answer is clearly that class is responsible, but by posing it as a question, he makes the argument more persuasive than a simple statement would be.",
   },
   {
     quote: 'I could have been him!',
@@ -323,12 +322,11 @@ const keyQuotes = [
       "This recurring line personifies fate as the devil, creating a sinister, Gothic atmosphere. 'Lookin' through the door' suggests surveillance and inevitability: the characters cannot escape their fate. Russell uses religious imagery (the devil) alongside folk superstition to create a multi-layered sense of doom. The Narrator's warnings function as a dramatic device, heightening tension while reminding the audience that the outcome is already determined.",
   },
   {
-    quote:
-      "But you know the devil's got your number, y'know he's gonna find you, y'know he's right behind you.",
+    quote: "But you know the devil's got your number",
     speaker: 'The Narrator',
     context: 'Act Two',
     analysis:
-      "The intensification of the devil motif in Act Two mirrors the escalating tragedy. The shift from 'lookin' through the door' to 'right behind you' creates a sense of closing distance and imminent catastrophe. Russell accelerates the Narrator's warnings as the social pressures on Mickey intensify, connecting supernatural menace with social reality. The audience understands that 'the devil' is not a supernatural entity but the class system itself.",
+      "The intensification of the devil motif in Act Two mirrors the escalating tragedy. In the full lines, the shift from 'lookin' through the door' to 'right behind you' creates a sense of closing distance and imminent catastrophe. Russell accelerates the Narrator's warnings as the social pressures on Mickey intensify, connecting supernatural menace with social reality. The audience understands that 'the devil' is not a supernatural entity but the class system itself.",
   },
   {
     quote: 'That guy, I could kill that guy.',

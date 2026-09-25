@@ -271,7 +271,7 @@ export default function ThingsFallApartPage() {
                 <strong>{tr(`Chapter 20.`)}</strong> Okonkwo returns to a transformed Umuofia. The
                 white government has built a court at Umuofia and a District Commissioner tries
                 cases &ldquo;in ignorance&rdquo; of Igbo custom. Obierika&rsquo;s lament: &ldquo;he
-                has put a knife on the things that held us together and we have fallen apart&rdquo;.
+                has put a knife on the things that held us together ... fallen apart&rdquo;.
               </li>
               <li>
                 <strong>{tr(`Chapter 21.`)}</strong> Mr Brown, the first missionary, befriends the
@@ -421,7 +421,7 @@ export default function ThingsFallApartPage() {
             />
 
             <QuoteCard
-              quote="Among the Ibo the art of conversation is regarded very highly, and proverbs are the palm-oil with which words are eaten."
+              quote="the art of conversation ... proverbs are the palm-oil with which words are eaten."
               speaker="Narrator, chapter 1"
               analysis="The novel&rsquo;s most famous metaphor for Igbo speech. Palm-oil is essential to Igbo cooking; proverbs are essential to Igbo discourse. Tone matters: this is the narrator speaking with the cultural authority colonial novels denied African speakers."
             />
@@ -464,9 +464,9 @@ export default function ThingsFallApartPage() {
             />
 
             <QuoteCard
-              quote="The white man is very clever. He came quietly and peaceably with his religion. We were amused at his foolishness and allowed him to stay. Now he has won our brothers, and our clan can no longer act like one. He has put a knife on the things that held us together and we have fallen apart."
+              quote="He has put a knife on the things that held us together ... fallen apart."
               speaker="Obierika, chapter 20"
-              analysis="The most quotable diagnosis in the novel and the source of the title&rsquo;s explicit echo (&lsquo;fallen apart&rsquo;). Notice the rhetorical move: Obierika does not blame the colonisers&rsquo; force, but their patience and their wedge. The clan&rsquo;s undoing is internal &mdash; converts, the osu admission, the unmasking &mdash; once the wedge is in."
+              analysis="The most quotable diagnosis in the novel and the source of the title&rsquo;s explicit echo (&lsquo;fallen apart&rsquo;). Notice the rhetorical move in the full speech: Obierika does not blame the colonisers&rsquo; force, but their patience and their wedge. The clan&rsquo;s undoing is internal &mdash; converts, the osu admission, the unmasking &mdash; once the wedge is in."
             />
 
             <div className="my-4 rounded-lg border border-violet-200 bg-violet-50/50 p-4 dark:border-violet-900 dark:bg-violet-950/30">
@@ -504,7 +504,7 @@ export default function ThingsFallApartPage() {
             </div>
 
             <QuoteCard
-              quote="The story of this man who had killed a messenger and hanged himself would make interesting reading. One could almost write a whole chapter on him. Perhaps not a whole chapter but a reasonable paragraph, at any rate."
+              quote="One could almost write a whole chapter on him. ... reasonable paragraph, at any rate."
               speaker="The District Commissioner, chapter 25"
               analysis="The novel&rsquo;s closing irony. A man whose interior life Achebe has just spent two hundred and forty pages tracing is reduced, in the colonist&rsquo;s mind, from a chapter to a paragraph. The book the Commissioner intends to write &mdash; The Pacification of the Primitive Tribes of the Lower Niger &mdash; is the kind of writing Things Fall Apart was published in 1958 to answer."
             />
@@ -616,7 +616,7 @@ export default function ThingsFallApartPage() {
             />
             <CharacterCard
               name="Proverbs and embedded folktales"
-              description="Proverbs are quoted constantly (&lsquo;a man who pays respect to the great paves the way for his own greatness&rsquo;, &lsquo;a chick that will grow into a cock can be spotted the very day it hatches&rsquo;). Embedded folktales &mdash; the tortoise and the birds, told by Ekwefi to Ezinma in chapter 11 &mdash; carry thematic weight (cunning leads to a fall) without breaking the realist surface."
+              description="Proverbs are quoted constantly (&lsquo;man who pays respect to the great paves the way for his own greatness&rsquo;, &lsquo;a chick that will grow into a cock ... spotted the very day it hatches&rsquo;). Embedded folktales &mdash; the tortoise and the birds, told by Ekwefi to Ezinma in chapter 11 &mdash; carry thematic weight (cunning leads to a fall) without breaking the realist surface."
             />
             <CharacterCard
               name="The closing point-of-view shift"

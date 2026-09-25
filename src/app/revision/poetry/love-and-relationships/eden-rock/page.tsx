@@ -15,15 +15,25 @@ import { useT } from '@/lib/i18n/use-t'
 const edenRockPoem: PoemData = {
   title: 'Eden Rock',
   poet: 'Charles Causley',
-  // RIGHTS NOTE: "Eden Rock" by Charles Causley is in copyright. Rights administered by David Higham Associates.
-  // The full poem body is NOT reproduced here. Under fair-dealing for criticism/review (CDPA 1988 s.30), only the
-  // verified opening line, verified final line, and a small number of short representative phrases are included
-  // for analytical purposes. Students must consult Causley, *Collected Poems 1951-1997* (Macmillan), or the
-  // Poetry Archive's licensed reproduction, for the complete text.
+  // NOTE: "Eden Rock" (Charles Causley, 1988) remains in copyright; the rights
+  // are administered by David Higham Associates. To avoid reproducing the poem,
+  // the entries below are in the site's own words: each [Paraphrase] entry
+  // stands for a line of the poem, and the bracketed entries summarise the
+  // lines between them. The notes quote only short phrases. Students must read
+  // the full original text in the AQA Love and Relationships anthology (or
+  // Causley, "Collected Poems 1951-1997", Macmillan).
+  //
+  // Until 25 September 2026 this array printed five lines or part-lines of the
+  // poem verbatim, and its bracketed summaries carried longer runs of it, one of
+  // them a nine-word quotation. Those entries are now paraphrased or rewritten.
+  // The array is still not one entry per line: its three stanza breaks are kept
+  // where they stood, and they do not fall where the published poem's do (four
+  // quatrains, a tercet and a closing single line). The viewer numbers entries
+  // by position, so its numbers here are not the poem's line numbers.
   lines: [
-    // Stanza 1 \u2014 opening line (verified, fair-dealing extract)
+    // Stanza 1: the opening line, paraphrased, then a summary
     {
-      text: 'They are waiting for me somewhere beyond Eden Rock:',
+      text: '[Paraphrase] The speaker says that people he has not yet named are expecting him somewhere past Eden Rock.',
       annotations: [
         {
           type: 'Biblical allusion',
@@ -33,7 +43,7 @@ const edenRockPoem: PoemData = {
       ],
     },
     {
-      text: '[Stanza 1 continues: the speaker pictures his father as a young man in a tweed suit, with his terrier at his feet \u2014 full text omitted for copyright.]',
+      text: '[Stanza 1 continues: the speaker pictures his father as a young man in a tweed suit, with his terrier beside him. Full text omitted for copyright.]',
       annotations: [
         {
           type: 'Precise detail',
@@ -44,9 +54,9 @@ const edenRockPoem: PoemData = {
     },
     // Stanza break
     { text: '' },
-    // Stanza 2 \u2014 short representative phrase, then summary
+    // Stanza 2: its first line paraphrased, then a summary that runs on into stanza 3
     {
-      text: '"My mother, twenty-three, in a sprigged dress" \u2026',
+      text: '[Paraphrase] His mother is there as well, twenty-three years old and wearing a dress patterned with little sprays of flowers.',
       annotations: [
         {
           type: 'Colour imagery',
@@ -56,7 +66,7 @@ const edenRockPoem: PoemData = {
       ],
     },
     {
-      text: '[Stanza 2 continues: the mother spreads a stiff white cloth over the grass and pours tea from a Thermos, the milk improvised from an old sauce-bottle \u2014 full text omitted for copyright.]',
+      text: '[The scene continues: her dress has a fitted waist and she wears a straw hat trimmed with ribbon; she has laid a crisp white cloth on the lawn, and her wheat-coloured hair catches the light. She serves tea out of a flask, the milk carried in a used sauce bottle corked with a twist of paper. Full text omitted for copyright.]',
       annotations: [
         {
           type: 'Sacramental detail',
@@ -67,9 +77,9 @@ const edenRockPoem: PoemData = {
     },
     // Stanza break
     { text: '' },
-    // Stanza 3 \u2014 representative phrase + summary
+    // Lines 11 to 13 paraphrased, then a summary of the rest of stanza 4
     {
-      text: '\u2026 "the same three plates, the tin cups painted blue" \u2026',
+      text: '[Paraphrase] Unhurriedly, she lays out the familiar three plates and the blue-painted tin cups.',
       annotations: [
         {
           type: 'Listing',
@@ -79,7 +89,7 @@ const edenRockPoem: PoemData = {
       ],
     },
     {
-      text: 'The sky whitens as if lit by three suns.',
+      text: '[Paraphrase] The sky goes white, as though three suns were blazing at once.',
       annotations: [
         {
           type: 'Supernatural imagery',
@@ -89,7 +99,7 @@ const edenRockPoem: PoemData = {
       ],
     },
     {
-      text: '[Stanza 3 continues: the father skims a stone along the water; the mother shades her eyes and looks toward the speaker \u2014 full text omitted for copyright.]',
+      text: '[The scene continues: shielding her eyes with a hand, the mother gazes across the stream towards the speaker, while the father sends a pebble skipping over the surface. Full text omitted for copyright.]',
       annotations: [
         {
           type: 'Symbolism',
@@ -100,9 +110,9 @@ const edenRockPoem: PoemData = {
     },
     // Stanza break
     { text: '' },
-    // Stanza 4 \u2014 final line (verified, fair-dealing extract)
+    // Stanza 5 summarised, then the one-line final stanza paraphrased
     {
-      text: '[Final stanza: the parents call across the water that "crossing is not as hard as you might think" \u2014 full text omitted for copyright.]',
+      text: '[Penultimate stanza: at their ease, the parents wave him over from the far bank. He hears them calling to him to look for the path along the stream, and telling him that getting across is easier than he might expect. Full text omitted for copyright.]',
       annotations: [
         {
           type: 'Direct address',
@@ -112,7 +122,7 @@ const edenRockPoem: PoemData = {
       ],
     },
     {
-      text: 'I had not thought that it would be like this.',
+      text: '[Paraphrase] The speaker admits he never expected it to be this way.',
       annotations: [
         {
           type: 'Understated revelation',
@@ -584,18 +594,18 @@ export default function EdenRockPage() {
         revisionTopics={REVISION_TOPICS}
       />
 
-      {/* Fair-dealing extract notice - Eden Rock is in copyright (David Higham Associates).
-          Only the verified opening line, the verified final line, and a few short
-          representative phrases are reproduced; bracketed prose summarises the rest. */}
+      {/* Copyright notice - Eden Rock is in copyright (David Higham Associates). The line
+          viewer paraphrases the poem in the site's own words; only short extracts are
+          quoted, in the analysis. */}
       <aside
         role="note"
         aria-label="Copyright and fair-dealing notice"
         className="rounded-lg border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-[12px] leading-relaxed text-amber-900 dark:text-amber-200"
       >
         <p>
-          <strong>Note on the poem text below:</strong> The full poem body is reproduced under
-          fair-dealing extracts only. Students should refer to Causley&rsquo;s{' '}
-          <em>Collected Poems 1951–1997</em> (Macmillan) or the{' '}
+          <strong>Note on the poem text below:</strong> The poem is paraphrased here, not
+          reproduced, and is printed in full in the AQA Love &amp; Relationships anthology. Students
+          can also refer to Causley&rsquo;s <em>Collected Poems 1951–1997</em> (Macmillan) or the{' '}
           <a
             href="https://poetryarchive.org/poet/charles-causley/"
             target="_blank"
@@ -604,9 +614,8 @@ export default function EdenRockPage() {
           >
             Poetry Archive
           </a>{' '}
-          for the full text. Bracketed prose paraphrases passages omitted for copyright; quoted
-          material is restricted to the verified opening line, verified final line, and short
-          representative phrases used for analytical purposes under CDPA 1988 s.30.
+          for the full text. Lines marked [Paraphrase] and the bracketed summaries are in our own
+          words; the analysis quotes only short extracts, for criticism under CDPA 1988 s.30.
         </p>
       </aside>
 
@@ -658,10 +667,11 @@ export default function EdenRockPage() {
           Associates on behalf of the Causley estate.
         </p>
         <p>
-          Poem text is reproduced for the purpose of private study and educational criticism under
-          UK fair-dealing provisions (Copyright, Designs and Patents Act 1988, s.30). No commercial
-          use is intended. All quotations remain the intellectual property of the respective rights
-          holders.
+          The poem is paraphrased here, not reproduced; it is printed in full in the AQA Love and
+          Relationships anthology. Short quotations are used for private study and educational
+          criticism under UK fair-dealing provisions (Copyright, Designs and Patents Act 1988,
+          s.30). No commercial use is intended. All quotations remain the intellectual property of
+          the respective rights holders.
         </p>
       </footer>
     </div>

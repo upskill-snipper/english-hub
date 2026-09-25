@@ -13,10 +13,28 @@ import { CourseJsonLd } from '@/components/seo/json-ld'
 const poppiesData: PoemData = {
   title: 'Poppies',
   poet: 'Jane Weir',
+  // NOTE: "Poppies" (Jane Weir, 2009) remains in copyright. To avoid reproducing
+  // the poem, each line below is given as a PARAPHRASE in the site's own words,
+  // and the annotations quote only short phrases. Students must read the full
+  // original text in the AQA Power and Conflict anthology.
+  //
+  // Until 25 September 2026 this array printed a corrupted text as the poem. Of
+  // its 24 lines, four were Weir's as she wrote them, 14 were garbled or spliced
+  // versions of hers and six were invented, and 18 of her 35 lines were missing;
+  // VERIFY comments marked some of the damage. It now follows the published
+  // poem, 35 lines in four stanzas of 6, 11, 12 and 6, one entry per line in the
+  // poem's order, checked line by line on 26 September 2026 against a printed
+  // copy of the poem. The viewer numbers entries by position, stanza breaks
+  // included, so after the first stanza its numbers run ahead of the
+  // anthology's. Annotations that described invented lines or repetitions the
+  // poem does not make were rewritten or trimmed. The summary, key quotes,
+  // devices, form notes and quiz below were not rebuilt and still quote some
+  // invented lines; each device lineRef was re-pointed only where its example
+  // is, or garbles, a line of the poem.
   lines: [
     // Stanza 1
     {
-      text: 'Three days before Armistice Sunday',
+      text: '[Paraphrase] Armistice Sunday was still three days off,',
       annotations: [
         {
           type: 'Context',
@@ -26,7 +44,7 @@ const poppiesData: PoemData = {
       ],
     },
     {
-      text: 'and poppies had already been placed',
+      text: '[Paraphrase] yet poppies were already laid out',
       annotations: [
         {
           type: 'Symbolism',
@@ -35,9 +53,9 @@ const poppiesData: PoemData = {
         },
       ],
     },
-    { text: 'on individual white crosses in the graveyard.' },
+    { text: "[Paraphrase] on each soldier's grave. Before her son went away," },
     {
-      text: 'Before you left, I pinned one',
+      text: '[Paraphrase] she fixed a poppy to his lapel, its petals crinkled,',
       annotations: [
         {
           type: 'Domestic imagery',
@@ -46,12 +64,40 @@ const poppiesData: PoemData = {
         },
       ],
     },
-    { text: 'onto your lapel, crimped petals,' },
-    { text: 'trembling, slowly melting' },
+    {
+      text: '[Paraphrase] twitching flashes of red paper, breaking up a barrier',
+      annotations: [
+        {
+          type: 'Tactile imagery',
+          note: '"Spasms" suggests involuntary, painful movement - the artificial poppy\'s crepe paper becomes a metaphor for the mother\'s convulsive grief.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    { text: '[Paraphrase] formed by the yellow edging tape that trims his blazer.' },
     { text: '' },
     // Stanza 2
+    { text: '[Paraphrase] Her hand wrapped in sticky tape like a bandage,' },
+    { text: "[Paraphrase] she gathered up as much of the cat's white fur" },
+    { text: '[Paraphrase] as she was able, then flattened the collar of his shirt,' },
+    { text: '[Paraphrase] which stood up, and made herself hold back the tenderness' },
+    { text: '[Paraphrase] showing in her face. She longed to brush her nose' },
     {
-      text: 'on my tongue. All my words',
+      text: '[Paraphrase] against the end of his, and to play',
+      annotations: [
+        {
+          type: 'Repetition',
+          note: 'Repeating "nose" dwells on one small physical detail, giving the memory a cyclical, obsessive quality: the mother replays it.',
+          color: '#f472b6',
+        },
+      ],
+    },
+    { text: '[Paraphrase] the nose-rubbing game they shared back when' },
+    { text: '[Paraphrase] he was small. She fought back the urge' },
+    { text: '[Paraphrase] to rake her fingers through his hair, stiff with gel' },
+    { text: '[Paraphrase] and spiked like blackthorn. Every word she had' },
+    {
+      text: '[Paraphrase] was pressed flat and matted down like felt,',
       annotations: [
         {
           type: 'Enjambment',
@@ -60,55 +106,12 @@ const poppiesData: PoemData = {
         },
       ],
     },
-    { text: 'flattened, rolled, turned into felt,' },
-    { text: '' },
-    {
-      text: 'slowly melting. I pinned one',
-      annotations: [
-        {
-          type: 'Repetition',
-          note: 'The repeated phrase "I pinned one" and "slowly melting" create a cyclical, obsessive quality - the mother replays the memory.',
-          color: '#f472b6',
-        },
-      ],
-    },
-    { text: 'onto your lapel, crimped petals,' },
-    {
-      text: 'spasms of paper red, paper red',
-      annotations: [
-        {
-          type: 'Tactile imagery',
-          note: '"Spasms" suggests involuntary, painful movement - the artificial poppy\'s crepe paper becomes a metaphor for the mother\'s convulsive grief. The repetition of "paper red" mimics the stuttering of someone in distress.',
-          color: '#f59e0b',
-        },
-      ],
-    },
     { text: '' },
     // Stanza 3
-    { text: 'blockade of yellow bias binding around your blazer.' },
-    { text: '' },
-    // VERIFY: 'I made you play at being Eskimos / like a treasure chest to me, / its blown, exhausted, yawning mouth.' - does not appear in any verified Weir text I can confirm. Removed until cross-checked against the Templar Poetry / AQA anthology.
-    { text: '' },
-    { text: "After you'd gone I went outside," },
+    { text: '[Paraphrase] gradually dissolving. She kept her courage as she walked' },
+    { text: '[Paraphrase] him to the entrance of the house, and flung' },
     {
-      text: 'paused, then released a song bird from its cage.',
-      annotations: [
-        {
-          type: 'Metaphor',
-          note: "The songbird released from its cage symbolises the mother letting her child go - an act that is both liberating and painful. It may also represent the child's spirit or the mother's suppressed emotions finally finding release.",
-          color: '#60a5fa',
-        },
-      ],
-    },
-    { text: '' },
-    // Stanza 4
-    { text: 'Later a single dove flew out from the pear tree,' },
-    // VERIFY: 'this dove threw me for a second - in my chest / as it were, / as if pulling at the wishbone / of my war-torn nerves, my stomach busy' - phrasing not confirmed against verified Weir text. Removed until cross-checked.
-    { text: 'pulling at a wishbone,' },
-    // VERIFY: original Weir text in this neighbourhood - a corruption artefact (hyphenated compound) was previously here and has been replaced with a conservative blank line. Do not restore until cross-checked against Templar Poetry / AQA anthology.
-    { text: '' },
-    {
-      text: 'and the world overflowing',
+      text: '[Paraphrase] it wide, the world beyond it brimming over',
       annotations: [
         {
           type: 'Sensory detail',
@@ -117,21 +120,32 @@ const poppiesData: PoemData = {
         },
       ],
     },
-    // VERIFY: 'like a treasure chest to me, / your, its, our fire, ball of hair, its only treasure' - does not appear in any verified Weir source I can confirm. Removed.
+    { text: '[Paraphrase] like a chest full of treasure. In an instant' },
+    { text: '[Paraphrase] he was gone, giddy with excitement.' },
+    { text: '[Paraphrase] When he had left, she went into his room' },
+    {
+      text: '[Paraphrase] and set free a songbird that was kept in a cage.',
+      annotations: [
+        {
+          type: 'Metaphor',
+          note: "The songbird released from its cage symbolises the mother letting her child go - an act that is both liberating and painful. It may also represent the child's spirit or the mother's suppressed emotions finally finding release.",
+          color: '#60a5fa',
+        },
+      ],
+    },
+    { text: '[Paraphrase] Next, a lone dove left a pear tree,' },
+    { text: '[Paraphrase] and she has followed it to this place,' },
+    { text: '[Paraphrase] edging round the walls of the churchyard, her stomach knotted' },
+    { text: '[Paraphrase] as if folded and stitched like fabric; she had no hat,' },
+    { text: '[Paraphrase] no warm coat, and no scarf or gloves for extra protection.' },
     { text: '' },
-    { text: 'I traced the diary dates with my finger, longing' },
-    { text: 'to graze my nose across the top of your head,' },
-    { text: 'to breathe you in, to taste' },
-    { text: '' },
-    { text: 'the graze of your skin, playground voice.' },
-    // VERIFY: a corrupted token (hyphenated compound containing a substitution artefact) was previously here. Removed until cross-checked against the Weir primary text.
-    { text: '' },
-    { text: '' },
-    { text: 'I think I\u2014' },
-    { text: '' },
-    // VERIFY: 'And now it rains. / And the dove flew / And I leaned against it like a bird.' - closing phrasing not verifiable against primary source. The widely-attested closing is 'I listened, hoping to hear / your playground voice catching on the wind.' Conservatively pruned.
-    { text: 'I listened, hoping to hear' },
-    { text: 'your playground voice catching on the wind.' },
+    // Stanza 4
+    { text: '[Paraphrase] When she got to the hilltop, she ran her fingers over' },
+    { text: '[Paraphrase] the words carved into the memorial for the war dead,' },
+    { text: '[Paraphrase] and rested on it, her body in the shape of a wishbone.' },
+    { text: '[Paraphrase] Overhead, the dove tugged its way freely across the sky,' },
+    { text: '[Paraphrase] like a decorative stitch. She listened, hoping she might catch' },
+    { text: '[Paraphrase] his voice from his playground days, carried faintly by the breeze.' },
   ],
 
   context: `<p><strong>Jane Weir</strong> is a British poet born in 1963 who grew up in Manchester and has also lived in Italy. She works as a textile designer, and the influence of textiles - stitching, weaving, fabric - runs throughout her poetry.</p>
@@ -261,14 +275,14 @@ TENSE SHIFTS (تبدّل الأزمنة): القصيدة تتنقّل بين ا�
       example: 'crimped petals, trembling, slowly melting on my tongue',
       effect:
         'Weir saturates the poem with physical sensation - touch, taste, texture. Grief in this poem is not abstract but felt in the body. The "crimped petals" are both the poppy and the mother\'s crumpled emotions; "melting on my tongue" suggests words dissolving before they can be spoken.',
-      lineRef: 4,
+      lineRef: 3,
     },
     {
       device: 'Metaphor - textile imagery',
       example: 'tucks, darts, pleats',
       effect:
         "The sewing terminology reflects Weir's background as a textile designer and becomes a metaphor for the mother's attempt to hold herself together. \"Tucks, darts, pleats\" are techniques for shaping fabric - the mother is trying to shape and contain her unravelling grief, but the list's accumulation suggests the effort is overwhelming.",
-      lineRef: 26,
+      lineRef: 29,
     },
     {
       device: 'Symbolism - poppies',
@@ -282,7 +296,7 @@ TENSE SHIFTS (تبدّل الأزمنة): القصيدة تتنقّل بين ا�
       example: 'blockade of yellow bias binding around your blazer',
       effect:
         '"Bias binding" is a sewing term, and "blazer" belongs to school uniform. This domestic vocabulary pulls the poem away from the battlefield and into the home, reinforcing that this is a mother\'s perspective. The word "blockade" - a military term - intrudes into the domestic scene, showing how war infiltrates everyday life.',
-      lineRef: 14,
+      lineRef: 4,
     },
     {
       device: 'Enjambment',
@@ -763,11 +777,10 @@ export default function PoppiesStudyPage() {
       </div>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        <strong>Rights notice:</strong> &copy; Templar Poetry on behalf of Jane Weir (b. 1963).
-        Quotations from &ldquo;Poppies&rdquo; are short fair-dealing extracts under CDPA 1988
-        &sect;30 (criticism, review, quotation). For full text, students should consult the
-        board-licensed AQA Power &amp; Conflict anthology (the poem was commissioned for the AQA
-        anthology, 2009).
+        <strong>Rights notice:</strong> &copy; Templar Poetry on behalf of Jane Weir (b. 1963). The
+        poem is paraphrased line by line here, not printed. Quotations from &ldquo;Poppies&rdquo;
+        are short fair-dealing extracts under CDPA 1988 &sect;30 (criticism, review, quotation). The
+        full text is printed in the AQA Power &amp; Conflict anthology.
       </p>
     </div>
   )

@@ -23,8 +23,7 @@ type KeyQuote = {
 const quotes: KeyQuote[] = [
   {
     id: 1,
-    quote:
-      '"Among the Igbo the art of conversation is regarded very highly, and proverbs are the palm-oil with which words are eaten."',
+    quote: '"the art of conversation ... proverbs are the palm-oil with which words are eaten."',
     speaker: 'Narrator',
     part: 'Part 1, Chapter 1',
     context: 'The opening pages, establishing Igbo culture before any colonial contact.',
@@ -124,18 +123,18 @@ const quotes: KeyQuote[] = [
   },
   {
     id: 11,
-    quote:
-      '"If the Oracle said that my son should be killed, I would neither dispute it nor be the one to do it."',
+    quote: '"I would neither dispute it nor be the one to do it."',
     speaker: 'Obierika',
     part: 'Part 1, Chapter 8',
-    context: "Obierika discussing Ikemefuna's death with Okonkwo.",
+    context:
+      "Obierika discussing Ikemefuna's death with Okonkwo, and what he would do if the Oracle demanded the death of his own son.",
     analysis:
       "Obierika finds a moral middle ground that Okonkwo cannot imagine. He respects tradition without abandoning his conscience. Achebe's subtle argument: Igbo culture has space for ethical nuance, but Okonkwo is too rigid to occupy it.",
     themes: ['Tradition vs Change', 'Justice & Power'],
   },
   {
     id: 12,
-    quote: '"The clan was like a lizard; if it lost its tail it soon grew another."',
+    quote: '"The clan was like a lizard; if it lost its tail ... soon grew another."',
     speaker: 'Narrator',
     part: 'Part 1, Chapter 13',
     context: "Describing the clan's resilience after setbacks.",
@@ -145,8 +144,7 @@ const quotes: KeyQuote[] = [
   },
   {
     id: 13,
-    quote:
-      '"The world has no end, and what is good among one people is an abomination with others."',
+    quote: '"what is good among one people is an abomination with others."',
     speaker: 'Uchendu',
     part: 'Part 2, Chapter 15',
     context: 'Uchendu counsels Okonkwo during his exile in Mbanta.',
@@ -176,7 +174,7 @@ const quotes: KeyQuote[] = [
   },
   {
     id: 16,
-    quote: '"He has put a knife on the things that held us together and we have fallen apart."',
+    quote: '"He has put a knife on the things that held us together ... fallen apart."',
     speaker: 'Obierika',
     part: 'Part 3, Chapter 20',
     context:
@@ -187,8 +185,7 @@ const quotes: KeyQuote[] = [
   },
   {
     id: 17,
-    quote:
-      '"The white man is very clever... Now he has won our brothers, and our clan can no longer act like one."',
+    quote: '"The white man is very clever... our clan can no longer act like one."',
     speaker: 'Obierika',
     part: 'Part 3, Chapter 20',
     context: 'Obierika analyses the colonial strategy with Okonkwo.',
@@ -218,7 +215,7 @@ const quotes: KeyQuote[] = [
   },
   {
     id: 20,
-    quote: '"That man was one of the greatest men in Umuofia. You drove him to kill himself."',
+    quote: '"one of the greatest men in Umuofia. You drove him to kill himself."',
     speaker: 'Obierika to the District Commissioner',
     part: 'Part 3, Chapter 25',
     context: "Obierika's accusation after Okonkwo's body is discovered.",
@@ -228,8 +225,7 @@ const quotes: KeyQuote[] = [
   },
   {
     id: 21,
-    quote:
-      '"One could almost write a whole chapter on him. Perhaps not a whole chapter but a reasonable paragraph."',
+    quote: '"One could almost write a whole chapter on him. ... but a reasonable paragraph."',
     speaker: 'District Commissioner',
     part: 'Part 3, Chapter 25',
     context: "The Commissioner considers how much space Okonkwo's story deserves in his book.",

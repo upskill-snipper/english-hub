@@ -62,7 +62,7 @@ const THEMES: ThemeData[] = [
           'Crooks has seen hundreds of men with the same dream and none who achieved it. Steinbeck uses him to expose the dream as a collective delusion.',
       },
       {
-        text: '"I think I knowed from the very first. I think I knowed we\'d never do her."',
+        text: '"I knowed from the very first. I think I knowed we\'d never do her."',
         speaker: 'George - Chapter 5',
         analysis:
           'George admits the dream was always impossible. Steinbeck collapses hope and self-awareness in a single devastating line.',
@@ -155,10 +155,10 @@ const THEMES: ThemeData[] = [
           'George believes it when he says it. Steinbeck makes the reader believe it too, which is what makes the ending unbearable.',
       },
       {
-        text: '"Ain\'t many guys travel around together... Maybe ever\'body in the whole world is scared of each other."',
+        text: '"Maybe ever\'body in the whole world is scared of each other."',
         speaker: 'Slim - Chapter 3',
         analysis:
-          'Slim identifies both what is special about the friendship and what destroys it in everyone else: fear. Steinbeck uses Slim as the voice of structural analysis.',
+          'In the full passage, Slim identifies both what is special about the friendship and what destroys it in everyone else: fear. Steinbeck uses Slim as the voice of structural analysis.',
       },
     ],
     contextLink:

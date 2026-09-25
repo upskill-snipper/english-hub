@@ -35,7 +35,7 @@ const QUOTE_BANK: QuoteEntry[] = [
   // A Christmas Carol
   { quote: 'Are there no prisons? Are there no workhouses?', text: 'A Christmas Carol' },
   {
-    quote: 'I wear the chain I forged in life. I made it link by link, and yard by yard.',
+    quote: 'I wear the chain I forged in life. I made it link by link',
     text: 'A Christmas Carol',
   },
   {
@@ -82,7 +82,7 @@ const QUOTE_BANK: QuoteEntry[] = [
   { quote: 'Kill the beast! Cut his throat! Spill his blood!', text: 'Lord of the Flies' },
   // Of Mice and Men
   {
-    quote: "A guy needs somebody -- to be near him. A guy goes nuts if he ain't got nobody.",
+    quote: "A guy needs somebody ... A guy goes nuts if he ain't got nobody.",
     text: 'Of Mice and Men',
   },
   {
@@ -104,7 +104,7 @@ const QUOTE_BANK: QuoteEntry[] = [
   { quote: 'I dare do all that may become a man; who dares do more is none.', text: 'Macbeth' },
   { quote: 'By the pricking of my thumbs, something wicked this way comes.', text: 'Macbeth' },
   {
-    quote: "Yet do I fear thy nature; it is too full o' the milk of human kindness.",
+    quote: "Yet do I fear thy nature; ... too full o' the milk of human kindness.",
     text: 'Macbeth',
   },
   { quote: "What's done cannot be undone.", text: 'Macbeth' },
@@ -115,8 +115,7 @@ const QUOTE_BANK: QuoteEntry[] = [
     text: 'Macbeth',
   },
   {
-    quote:
-      "I am in blood stepped in so far that, should I wade no more, returning were as tedious as go o'er.",
+    quote: 'I am in blood stepped in so far',
     text: 'Macbeth',
   },
   { quote: 'So foul and fair a day I have not seen.', text: 'Macbeth' },
@@ -138,8 +137,7 @@ const QUOTE_BANK: QuoteEntry[] = [
     text: 'An Inspector Calls',
   },
   {
-    quote:
-      "If we were all responsible for everything that happened to everybody we'd had anything to do with, it would be very awkward.",
+    quote: 'If we were all responsible for everything ... it would be very awkward.',
     text: 'An Inspector Calls',
   },
   { quote: "I'm ashamed of you as well - yes both of you.", text: 'An Inspector Calls' },
@@ -170,7 +168,7 @@ const QUOTE_BANK: QuoteEntry[] = [
   { quote: 'No warmth could warm, no wintry weather chill him.', text: 'A Christmas Carol' },
   { quote: 'He carried his own low temperature always about with him.', text: 'A Christmas Carol' },
   {
-    quote: 'I am as light as a feather, I am as happy as an angel, I am as merry as a schoolboy.',
+    quote: 'I am as light as a feather, ... I am as merry as a schoolboy.',
     text: 'A Christmas Carol',
   },
 
@@ -180,7 +178,7 @@ const QUOTE_BANK: QuoteEntry[] = [
     text: 'Jekyll and Hyde',
   },
   {
-    quote: 'With every day I drew nearer to the truth, that man is not truly one, but truly two.',
+    quote: 'that man is not truly one, but truly two.',
     text: 'Jekyll and Hyde',
   },
   {
@@ -207,7 +205,7 @@ const QUOTE_BANK: QuoteEntry[] = [
   // ── Additional Romeo and Juliet quotes (public domain) ─────────────────────
   { quote: 'O Romeo, Romeo! Wherefore art thou Romeo?', text: 'Romeo and Juliet' },
   {
-    quote: "What's in a name? That which we call a rose by any other name would smell as sweet.",
+    quote: 'That which we call a rose by any other name would smell as sweet.',
     text: 'Romeo and Juliet',
   },
   {
@@ -217,8 +215,7 @@ const QUOTE_BANK: QuoteEntry[] = [
   { quote: 'O, she doth teach the torches to burn bright!', text: 'Romeo and Juliet' },
   { quote: 'Wisely and slow; they stumble that run fast.', text: 'Romeo and Juliet' },
   {
-    quote:
-      'Good night, good night! Parting is such sweet sorrow, that I shall say good night till it be morrow.',
+    quote: 'Good night, good night! Parting is such sweet sorrow',
     text: 'Romeo and Juliet',
   },
   { quote: 'Do you bite your thumb at us, sir?', text: 'Romeo and Juliet' },
@@ -254,8 +251,7 @@ const QUOTE_BANK: QuoteEntry[] = [
 
   // ── Additional Of Mice and Men quotes (<=15 words, fair dealing) ───────────
   {
-    quote:
-      "I seen hundreds of men come by on the road... every damn one of 'em's got a little piece of land in his head.",
+    quote: "every damn one of 'em's got a little piece of land in his head.",
     text: 'Of Mice and Men',
   },
   {
@@ -283,8 +279,7 @@ const QUOTE_BANK: QuoteEntry[] = [
     text: 'To Kill a Mockingbird',
   },
   {
-    quote:
-      'I wanted you to see what real courage is, instead of getting the idea that courage is a man with a gun.',
+    quote: 'what real courage is, ... courage is a man with a gun.',
     text: 'To Kill a Mockingbird',
   },
   {

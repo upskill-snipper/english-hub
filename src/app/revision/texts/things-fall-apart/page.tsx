@@ -111,8 +111,7 @@ const data: TextGuideData = {
   ],
   quotations: [
     {
-      quote:
-        '"Among the Igbo the art of conversation is regarded very highly, and proverbs are the palm-oil with which words are eaten."',
+      quote: '"the art of conversation ... proverbs are the palm-oil with which words are eaten."',
       who: 'Narrator - Chapter 1',
       analysis: 'Establishes the sophistication of Igbo culture before any colonial contact.',
     },
@@ -127,8 +126,7 @@ const data: TextGuideData = {
       analysis: 'Identifies fear as the engine of his rigidity and eventual destruction.',
     },
     {
-      quote:
-        '"The white man is very clever... Now he has won our brothers, and our clan can no longer act like one."',
+      quote: '"The white man is very clever... our clan can no longer act like one."',
       who: 'Obierika - Chapter 20',
       analysis: 'A precise diagnosis of colonial strategy: divide, convert, rule.',
     },
@@ -138,7 +136,7 @@ const data: TextGuideData = {
       analysis: "Okonkwo's bitter view of his son Nwoye - foreshadows his own solitary end.",
     },
     {
-      quote: '"That man was one of the greatest men in Umuofia. You drove him to kill himself."',
+      quote: '"one of the greatest men in Umuofia. You drove him to kill himself."',
       who: 'Obierika - Chapter 25',
       analysis:
         "Reclaims Okonkwo's death from the colonial record and lays the blame where it belongs.",

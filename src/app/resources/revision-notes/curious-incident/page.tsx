@@ -571,14 +571,14 @@ export default function CuriousIncidentPage() {
             </p>
             <div className="space-y-1">
               <QuoteCard
-                quote="It was 7 minutes after midnight. The dog was lying on the grass in the middle of the lawn in front of Mrs Shears&rsquo;s house. Its eyes were closed."
+                quote="It was 7 minutes after midnight. ... Its eyes were closed."
                 speaker="Christopher (opening of chapter 2)"
-                analysis="The novel's famous opening uses precise time, specific location and bare physical description. The numerical opening signals Christopher's ordered worldview; the present-tense vividness pulls the reader directly into a crime scene. Note the appearance-rather-than-meaning approach: 'Its eyes were closed' is descriptive, not interpretive. Haddon withholds emotional framing throughout, forcing the reader to supply it."
+                analysis="The novel's famous opening, in full, uses precise time, specific location and bare physical description. The numerical opening signals Christopher's ordered worldview; the present-tense vividness pulls the reader directly into a crime scene. Note the appearance-rather-than-meaning approach: 'Its eyes were closed' is descriptive, not interpretive. Haddon withholds emotional framing throughout, forcing the reader to supply it."
               />
               <QuoteCard
-                quote="The dog was dead. There was a garden fork sticking out of the dog. The points of the fork must have gone all the way through the dog and into the ground because the fork had not fallen over."
+                quote="The dog was dead. There was a garden fork sticking out of the dog."
                 speaker="Christopher"
-                analysis="Christopher's narration is forensic rather than emotional. The reasoning ('must have gone all the way through... because the fork had not fallen over') foregrounds his deductive style. The bluntness of the repeated noun 'dog' (rather than 'it' or 'Wellington') is characteristic of his refusal to soften reality. The reader experiences both the horror of the image and the strangeness of the voice that records it."
+                analysis="Christopher's narration is forensic rather than emotional. In the full passage, the reasoning ('must have gone all the way through... because the fork had not fallen over') foregrounds his deductive style. The bluntness of the repeated noun 'dog' (rather than 'it' or 'Wellington') is characteristic of his refusal to soften reality. The reader experiences both the horror of the image and the strangeness of the voice that records it."
               />
               <QuoteCard
                 quote="This is a murder mystery novel."
@@ -591,19 +591,19 @@ export default function CuriousIncidentPage() {
                 analysis="A simple, unembellished thesis statement that recurs across the novel. The brevity is itself characteristic of Christopher's voice. The remark applies equally to social interaction, idiom, emotion, and family secrets. Haddon places it early so that subsequent miscommunications are read against this baseline declaration."
               />
               <QuoteCard
-                quote="I do not tell lies. Mother used to say that this was because I was a good person. But it is not because I am a good person. It is because I can&rsquo;t tell lies."
+                quote="I do not tell lies. ... It is because I can&rsquo;t tell lies."
                 speaker="Christopher"
-                analysis="Christopher dismantles a moral compliment by replacing virtue with capacity. He does not claim moral superiority; he claims cognitive incapacity. This precision matters: the novel's critique of lying is structural, not pious. By the time the reader meets Ed's catastrophic lie, this principle has been carefully established as a fixed truth-stake against which the family drama will be measured."
+                analysis="In the full passage, Christopher dismantles a moral compliment by replacing virtue with capacity. He does not claim moral superiority; he claims cognitive incapacity. This precision matters: the novel's critique of lying is structural, not pious. By the time the reader meets Ed's catastrophic lie, this principle has been carefully established as a fixed truth-stake against which the family drama will be measured."
               />
               <QuoteCard
-                quote="Prime numbers are what is left when you have taken all the patterns away. I think prime numbers are like life. They are very logical but you could never work out the rules, even if you spent all your time thinking about them."
+                quote="I think prime numbers are like life. ... you could never work out the rules"
                 speaker="Christopher"
                 analysis="A rare moment of metaphor from Christopher, who claims elsewhere to dislike them. Note that this 'simile' is a logical rather than emotional comparison. The image positions life as patterned but not fully predictable, which is Christopher's working philosophy throughout the novel: structure exists, but exhaustive understanding does not. This is Haddon's clearest statement of the novel's epistemology."
               />
               <QuoteCard
-                quote="I think people believe in heaven because they don&rsquo;t like the idea of dying, because they want to carry on living and they don&rsquo;t like the idea that other people will move into their house and put their things into the rubbish."
+                quote="I think people believe in heaven because they don&rsquo;t like the idea of dying"
                 speaker="Christopher"
-                analysis="A sharply rationalist account of religious belief, presented with Christopher's characteristic literalism. The mundane image ('put their things into the rubbish') deflates the metaphysical question. The novel does not endorse Christopher's atheism wholesale, but his rational stance is treated as coherent rather than naive. Contrast with Reverend Peters."
+                analysis="A sharply rationalist account of religious belief, presented with Christopher's characteristic literalism. The mundane image in the full passage ('put their things into the rubbish') deflates the metaphysical question. The novel does not endorse Christopher's atheism wholesale, but his rational stance is treated as coherent rather than naive. Contrast with Reverend Peters."
               />
               <QuoteCard
                 quote="I see everything."
@@ -616,14 +616,14 @@ export default function CuriousIncidentPage() {
                 analysis="Christopher imagines space as a place free of crowds, idioms, and unpredictable people - only machines, mathematics, and silence. The astronaut fantasy is both literal ambition and metaphor for an environment in which his strengths are valued. Haddon uses it to suggest that what Christopher needs is not a cure but a context."
               />
               <QuoteCard
-                quote="Mr Jeavons said that I liked maths because it was safe. He said I liked maths because it meant solving problems, and these problems were difficult and interesting but there was always a straightforward answer at the end. And what he meant was that maths wasn&rsquo;t like life because in life there are no straightforward answers at the end."
+                quote="Mr Jeavons said that I liked maths because it was safe."
                 speaker="Christopher reporting Mr Jeavons"
-                analysis="A teacher's interpretation that Christopher records faithfully without endorsement. The passage encapsulates the novel's thematic dialectic: maths-as-order versus life-as-chaos. By relaying Mr Jeavons's words rather than agreeing with them, Christopher implicitly resists the framing - the rest of the book argues that life, while complicated, is not unintelligible."
+                analysis="A teacher's interpretation that Christopher records faithfully without endorsement. The full passage encapsulates the novel's thematic dialectic: maths-as-order versus life-as-chaos. By relaying Mr Jeavons's words rather than agreeing with them, Christopher implicitly resists the framing - the rest of the book argues that life, while complicated, is not unintelligible."
               />
               <QuoteCard
-                quote="I like dogs. You always know what a dog is thinking. It has four moods. Happy, sad, cross and concentrating. Also, dogs are faithful and they do not tell lies because they cannot talk."
+                quote="You always know what a dog is thinking. ... Happy, sad, cross and concentrating."
                 speaker="Christopher"
-                analysis="Establishes the moral architecture of the novel: dogs as honest, humans as deceitful. The taxonomic listing of moods ('Happy, sad, cross and concentrating') is characteristic of Christopher's pattern-imposing mind. The final clause is a deceptively simple ethical claim that resurfaces tragically when Ed kills a dog and lies."
+                analysis="Establishes the moral architecture of the novel: dogs as honest, humans as deceitful. The taxonomic listing of moods ('Happy, sad, cross and concentrating') is characteristic of Christopher's pattern-imposing mind. The final clause of the full passage is a deceptively simple ethical claim that resurfaces tragically when Ed kills a dog and lies."
               />
               <QuoteCard
                 quote="The world is full of obvious things which nobody by any chance ever observes."
@@ -636,9 +636,9 @@ export default function CuriousIncidentPage() {
                 analysis="Often used as a one-line paragraph at moments of overload (the railway station, encounters with strangers). The minimalism is the point: where another narrator would describe panic at length, Christopher records the fact. The reader feels the magnitude through the cleared white space around the line. Haddon's prose treats sensory crisis with extreme economy."
               />
               <QuoteCard
-                quote="And I know I can do this because I went to London on my own, and because I solved the mystery of Who Killed Wellington? and I found my mother and I was brave and I wrote a book and that means I can do anything."
+                quote="and I found my mother and I was brave ... I can do anything."
                 speaker="Christopher (closing words of the novel)"
-                analysis="The novel's closing affirmation. The list of achievements is given in plain coordinated clauses ('and... and... and') rather than in a literary cadence - the syntax itself is Christopher's voice. Note the carefully chosen evidence: travel, deduction, family reunion, courage, and authorship. The sentence is hopeful but earned; it is also qualified by the realities of the novel (he is back in Swindon, his parents are still apart). Haddon avoids tying everything into a neat resolution while still permitting Christopher his triumph."
+                analysis="The novel's closing affirmation. The list of achievements is given in plain coordinated clauses ('and... and... and') rather than in a literary cadence - the syntax itself is Christopher's voice. In the full sentence, note the carefully chosen evidence: travel, deduction, family reunion, courage, and authorship. The sentence is hopeful but earned; it is also qualified by the realities of the novel (he is back in Swindon, his parents are still apart). Haddon avoids tying everything into a neat resolution while still permitting Christopher his triumph."
               />
             </div>
           </Section>

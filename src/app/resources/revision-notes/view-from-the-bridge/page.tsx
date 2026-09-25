@@ -352,7 +352,7 @@ export default function ViewFromTheBridgeRevisionPage() {
                   explore how cultural difference can be weaponised by those who feel threatened.
                 </p>
                 <Quote
-                  text="If I take in my hands a little bird. And she grows and wishes to fly. But I will not let her out of my hands because I love her, then she can never fly"
+                  text="If I take in my hands a little bird. ... then she can never fly"
                   speaker="Rodolpho"
                   act="Act 2"
                   analysis="Rodolpho uses this analogy to help Catherine understand Eddie's possessiveness. The 'little bird' metaphor presents Eddie's love as a cage. It shows Rodolpho's emotional intelligence and his understanding that real love requires freedom -- a direct contrast to Eddie's controlling obsession."
@@ -400,7 +400,7 @@ export default function ViewFromTheBridgeRevisionPage() {
                   grandeur, even though it led to destruction.
                 </p>
                 <Quote
-                  text="I could see every step coming, step after step, like a dark figure walking down a hall toward a certain door"
+                  text="like a dark figure walking down a hall toward a certain door"
                   speaker="Alfieri"
                   act="Act 1"
                   analysis="The metaphor of the 'dark figure' walking toward a 'certain door' creates a sense of tragic inevitability. 'Certain' means both 'specific' and 'inevitable.' Alfieri positions himself -- and the audience -- as powerless witnesses to a fate that cannot be altered, reinforcing the Greek tragic structure."
@@ -592,7 +592,7 @@ export default function ViewFromTheBridgeRevisionPage() {
                     analysis="Eddie's repeated claim about Rodolpho, implying he is homosexual. The vagueness ('ain't right') shows Eddie cannot articulate his real objection. Miller uses Eddie's homophobia to reveal the fragility of his masculine identity."
                   />
                   <Quote
-                    text="A man works hard, he's got a right to come home to a house that ain't full of strangers"
+                    text="a right to come home to a house that ain't full of strangers"
                     speaker="Eddie"
                     act="Act 1"
                     analysis="Eddie frames his jealousy as a working man's right, connecting his masculinity to his role as provider. The irony is that he invited Marco and Rodolpho in. 'Strangers' shows how quickly he has othered them once Rodolpho becomes a rival."
@@ -610,10 +610,10 @@ export default function ViewFromTheBridgeRevisionPage() {
                 <h3 className="font-bold text-foreground mb-3">Alfieri</h3>
                 <div className="grid gap-3 sm:grid-cols-2">
                   <Quote
-                    text="In some Caesar's year, in Calabria perhaps... another lawyer sat there as powerless as I, and watched it run its bloody course"
+                    text="another lawyer sat there as powerless as I, ... watched it run its bloody course"
                     speaker="Alfieri"
                     act="Act 1 (opening)"
-                    analysis="Alfieri links Eddie's story to ancient tragedy, suggesting history repeats itself. 'Bloody course' foreshadows the violent ending. 'Powerless' establishes Alfieri's role as witness, not agent -- like the audience, he can see what is coming but cannot stop it."
+                    analysis="In the full speech, Alfieri links Eddie's story to ancient tragedy, suggesting history repeats itself. 'Bloody course' foreshadows the violent ending. 'Powerless' establishes Alfieri's role as witness, not agent -- like the audience, he can see what is coming but cannot stop it."
                   />
                   <Quote
                     text="His eyes were like tunnels"
@@ -634,7 +634,7 @@ export default function ViewFromTheBridgeRevisionPage() {
                 <h3 className="font-bold text-foreground mb-3">{tr(`Other Characters`)}</h3>
                 <div className="grid gap-3 sm:grid-cols-2">
                   <Quote
-                    text="You can quicker get back a million dollars that was stole than a word that you gave away"
+                    text="You can quicker get back ... than a word that you gave away"
                     speaker="Marco"
                     act="Act 2"
                     analysis="Marco articulates the community's code: a promise or accusation once spoken cannot be taken back. This explains why he cannot retract his accusation of Eddie -- in his value system, the truth, once spoken, is permanent."

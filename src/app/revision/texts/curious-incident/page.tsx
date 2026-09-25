@@ -123,8 +123,7 @@ const data: TextGuideData = {
   ],
   quotations: [
     {
-      quote:
-        '"It was 7 minutes after midnight. The dog was lying on the grass in the middle of the lawn in front of Mrs Shears\u2019 house."',
+      quote: '"It was 7 minutes after midnight. The dog was lying on the grass"',
       who: 'Christopher - Chapter 2 (opening)',
       analysis:
         'The novel\u2019s opening sentence establishes Christopher\u2019s precision with time, his noticing of exact detail and the flat, affectless tone that the book will sustain. It is also a sly opening for a detective novel: a body on a lawn.',
@@ -142,11 +141,10 @@ const data: TextGuideData = {
         'Christopher\u2019s absolute honesty is both a moral stance and a plot device: it means every lie he uncovers in other people will count. It also makes his running away from his father an unusually serious decision.',
     },
     {
-      quote:
-        '"Prime numbers are what is left when you have taken all the patterns away. I think prime numbers are like life. They are very logical but you could never work out the rules, even if you spent all your time thinking about them."',
+      quote: '"Prime numbers are what is left ... I think prime numbers are like life."',
       who: 'Christopher',
       analysis:
-        'Christopher\u2019s defence of the prime-numbered chapters and of his own way of thinking. The sentence explains both a formal feature of the book and the theme of order-within-chaos.',
+        'Christopher\u2019s defence of the prime-numbered chapters and of his own way of thinking. The full passage explains both a formal feature of the book and the theme of order-within-chaos.',
     },
     {
       quote: '"Mother had died 2 years ago."',
@@ -167,8 +165,7 @@ const data: TextGuideData = {
         'Christopher\u2019s claim that he notices more than other people do, illustrated by a long list of details from a field. The novel reframes difference as a kind of perceptual power rather than a deficit.',
     },
     {
-      quote:
-        '"This will not be a funny book. I cannot tell jokes because I do not understand them."',
+      quote: '"This will not be a funny book. I cannot tell jokes"',
       who: 'Christopher',
       analysis:
         'A meta-comment on the book\u2019s own tone and on Christopher\u2019s relationship to language. In practice the novel is often funny, but only because Christopher\u2019s literal readings of the adult world keep exposing its absurdities.',
@@ -198,8 +195,7 @@ const data: TextGuideData = {
         'The decision to run to London, stated with the same flatness as every other fact in the book. Haddon lets the emotional weight come from the reader rather than from Christopher\u2019s prose.',
     },
     {
-      quote:
-        '"Being frightened is like when you suddenly wake up in the dark and you think that there is someone in the room with you."',
+      quote: '"Being frightened is like when you suddenly wake up in the dark"',
       who: 'Christopher - during the London journey',
       analysis:
         'One of the rare moments when Christopher attempts a simile for an emotion. Its clumsiness is moving, and it marks how hard he is working to describe his own fear on the train.',
@@ -224,11 +220,10 @@ const data: TextGuideData = {
         'The short, declarative sentence lands with extraordinary force. Christopher has wanted to prove that he is not stupid, and he has done it. The book\u2019s quietest triumph.',
     },
     {
-      quote:
-        '"And I know I can do this because I went to London on my own, and because I solved the mystery of Who Killed Wellington? and I found my mother and I was brave and I wrote a book and that means I can do anything."',
+      quote: '"and I found my mother and I was brave ... I can do anything."',
       who: 'Christopher - final page',
       analysis:
-        'The novel\u2019s last sentence. Haddon ends on a conditional triumph: Christopher states what his achievements mean to him without the narrative confirming or denying the claim. The conditional hope is part of the book\u2019s honesty.',
+        'From the novel\u2019s last sentence. Haddon ends on a conditional triumph: Christopher states what his achievements mean to him without the narrative confirming or denying the claim. The conditional hope is part of the book\u2019s honesty.',
     },
     {
       quote: '"Dad said, \u2018Christopher, do you understand that I love you?\u2019"',

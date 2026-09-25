@@ -177,7 +177,7 @@ const themes: ThemeData[] = [
           "The pig's head confirms Simon's insight: the beast cannot be destroyed because it lives inside them.",
       },
       {
-        text: '"However Simon thought of the beast, there rose before his inward sight the picture of a human."',
+        text: '"However Simon thought of the beast, ... the picture of a human."',
         speaker: 'Narrator -- Ch. 6',
         relevance: 'Golding explicitly equates the beast with human nature.',
       },

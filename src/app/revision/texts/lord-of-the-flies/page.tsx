@@ -309,7 +309,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 2,
     explanation:
-      'Ralph weeps for "the end of innocence, the darkness of man\'s heart, and the fall through the air of the true, wise friend called Piggy." Golding\'s closing judgement mourns not just the dead but the shared myth of childhood purity itself.',
+      'Ralph weeps for "the end of innocence, the darkness of man\'s heart" and for Piggy. Golding\'s closing judgement mourns not just the dead but the shared myth of childhood purity itself.',
     topic: 'Themes',
     difficulty: 'higher',
   },

@@ -78,10 +78,10 @@ const THEMES: ThemeData[] = [
     overview:
       "The novel is a Bildungsroman - a story of moral growth. Scout and Jem learn, through Atticus's teaching and their own experience, to distinguish right from wrong in a society where the two are often confused. Lee structures the entire narrative as Scout's education: every event, from the Boo Radley game to the trial to the final attack, teaches her something about human nature.",
     howLeePresentsIt:
-      'Atticus teaches through example and conversation, not lectures. His key instruction - "You never really understand a person until you consider things from his point of view" - is repeated and tested throughout the novel. Lee also uses other characters as teachers: Calpurnia teaches dignity, Miss Maudie teaches independence, Mrs Dubose teaches courage. Each lesson builds toward Scout\'s final act of empathy: standing on Boo\'s porch and seeing the world through his eyes.',
+      'Atticus teaches through example and conversation, not lectures. His key instruction - "You never ... understand a person until you consider things from his point of view" - is repeated and tested throughout the novel. Lee also uses other characters as teachers: Calpurnia teaches dignity, Miss Maudie teaches independence, Mrs Dubose teaches courage. Each lesson builds toward Scout\'s final act of empathy: standing on Boo\'s porch and seeing the world through his eyes.',
     keyQuotes: [
       {
-        text: '"You never really understand a person until you consider things from his point of view."',
+        text: '"You never ... understand a person until you consider things from his point of view."',
         speaker: 'Atticus - Chapter 3',
         analysis:
           "The novel's moral thesis. Lee makes empathy the foundation of all other virtues and the lesson Scout must learn across the entire book.",
@@ -143,7 +143,7 @@ const THEMES: ThemeData[] = [
       "Lee uses the Mrs Dubose subplot to teach the children - and the reader - her definition of courage before the trial begins. This prepares them to understand Atticus's decision to defend Tom as an act of courage rather than foolishness. She also contrasts moral courage with physical courage: Atticus is the best shot in Maycomb but refuses to carry a gun, showing that restraint, not violence, is the braver choice.",
     keyQuotes: [
       {
-        text: '"Simply because we were licked a hundred years before we started is no reason not to try."',
+        text: '"Simply because we were licked a hundred years ... is no reason not to try."',
         speaker: 'Atticus - Chapter 9',
         analysis:
           "Atticus's definition of courage. Lee argues that the value of fighting for justice lies in the fight itself, not in the outcome.",
@@ -205,13 +205,13 @@ const THEMES: ThemeData[] = [
       "Lee embeds empathy in the novel's narrative method. The retrospective first person lets the adult Scout look back with understanding she did not have as a child, modelling the empathetic imagination Atticus teaches. The Boo Radley arc is the fullest expression: the children begin by projecting their fears onto him and end by understanding him as a person. Scout's final walk home from Boo's porch - seeing the street through his eyes - is the culmination of her moral education.",
     keyQuotes: [
       {
-        text: '"You never really understand a person until you consider things from his point of view."',
+        text: '"You never ... understand a person until you consider things from his point of view."',
         speaker: 'Atticus - Chapter 3',
         analysis:
           "The novel's foundational statement. Lee makes empathy the prerequisite for justice, courage and all other virtues.",
       },
       {
-        text: '"Atticus was right. One time he said you never really know a man until you stand in his shoes."',
+        text: '"Atticus was right. ... never really know a man until you stand in his shoes."',
         speaker: 'Scout - Chapter 31',
         analysis:
           "Scout applies Atticus's lesson after standing on Boo's porch. Lee closes the circle: theory becomes practice, and the child surpasses the teacher.",

@@ -33,7 +33,7 @@ const themeGroups = [
     theme: 'Racism and justice',
     quotes: [
       {
-        text: 'When it\u2019s a white man\u2019s word against a black man\u2019s, the white man always wins.',
+        text: 'it\u2019s a white man\u2019s word against a black man\u2019s, the white man always wins.',
         speaker: 'Atticus',
         analysis: 'Names the structural racism of the legal system without rhetorical flourish.',
       },
@@ -115,7 +115,7 @@ const themeGroups = [
     theme: 'Empathy and perspective',
     quotes: [
       {
-        text: 'You never really understand a person until you consider things from his point of view.',
+        text: 'You never ... understand a person until you consider things from his point of view.',
         speaker: 'Atticus',
         analysis:
           'The novel\u2019s central moral instruction, introduced early and fulfilled at the close.',

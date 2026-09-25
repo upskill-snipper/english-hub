@@ -53,7 +53,7 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     id: 2,
-    text: '"I got you to look after me, and you got me to look after you."',
+    text: '"I got you to look after me, ... you got me to look after you."',
     speaker: 'Lennie',
     context: 'Chapter 1 - dream recitation',
     analysis:
@@ -134,7 +134,7 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     id: 11,
-    text: '"I seen hundreds of men come by on the road... every damn one of \'em\'s got a little piece of land in his head."',
+    text: '"every damn one of \'em\'s got a little piece of land in his head."',
     speaker: 'Crooks',
     context: 'Chapter 4',
     analysis:
@@ -197,7 +197,7 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     id: 18,
-    text: '"I think I knowed from the very first. I think I knowed we\'d never do her."',
+    text: '"I knowed from the very first. I think I knowed we\'d never do her."',
     speaker: 'George',
     context: "Chapter 5 - after Curley's wife's death",
     analysis:
@@ -224,7 +224,7 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     id: 21,
-    text: '"Ain\'t many guys travel around together... Maybe ever\'body in the whole world is scared of each other."',
+    text: '"Maybe ever\'body in the whole world is scared of each other."',
     speaker: 'Slim',
     context: 'Chapter 3',
     analysis:

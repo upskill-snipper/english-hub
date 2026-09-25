@@ -115,14 +115,13 @@ const QUOTES: QuoteEntry[] = [
   },
   {
     id: 7,
-    quote:
-      'The creatures outside looked from pig to man, and from man to pig, and from pig to man again; but already it was impossible to say which was which.',
+    quote: 'The creatures outside looked from pig to man, ... impossible to say which was which.',
     speaker: 'Narrator',
     chapter: 'Chapter 10',
     context:
       'The novel\u2019s final image: animals watch through the farmhouse window as pigs and humans play cards and quarrel.',
     analysis:
-      'The circular structure is Orwell\u2019s most powerful device. The repetitive syntax ("from pig to man, and from man to pig") mirrors the interchangeability of oppressors. "Already" suggests the transformation is complete and irreversible. The pigs have not merely become like the humans \u2014 they have become indistinguishable from them, completing the revolution\u2019s total failure.',
+      'The circular structure is Orwell\u2019s most powerful device. In the full sentence, the repetitive syntax ("from pig to man, and from man to pig") mirrors the interchangeability of oppressors, and "already" suggests the transformation is complete and irreversible. The pigs have not merely become like the humans \u2014 they have become indistinguishable from them, completing the revolution\u2019s total failure.',
     thematicLinks:
       'The definitive image of the circular narrative. Manor Farm returns to its original name; the revolution has returned to exactly where it started. Connects to Orwell\u2019s argument that revolution without democratic safeguards replicates tyranny.',
     themes: ['Power & Corruption', 'Revolution & Betrayal'],
@@ -161,8 +160,7 @@ const QUOTES: QuoteEntry[] = [
   },
   {
     id: 10,
-    quote:
-      'Windmill or no windmill, he said, life would go on as it had always gone on \u2014 that is, badly.',
+    quote: 'life would go on as it had always gone on \u2014 that is, badly.',
     speaker: 'Narrator (reporting Benjamin\u2019s view)',
     chapter: 'Chapter 5',
     context:
@@ -208,7 +206,7 @@ const QUOTES: QuoteEntry[] = [
   {
     id: 13,
     quote:
-      'Comrade Napoleon, Father of All Animals, Terror of Mankind, Protector of the Sheepfold, Ducklings\u2019 Friend.',
+      'Napoleon, Father of All Animals, Terror of Mankind, Protector of the Sheepfold, Ducklings\u2019 Friend.',
     speaker: 'Narrator (listing Napoleon\u2019s titles)',
     chapter: 'Chapter 8',
     context:
@@ -223,13 +221,13 @@ const QUOTES: QuoteEntry[] = [
   },
   {
     id: 14,
-    quote: 'Fools! Fools! Do you not see what is written on the side of that van?',
+    quote: 'Fools! Do you not see what is written on the side of that van?',
     speaker: 'Benjamin',
     chapter: 'Chapter 9',
     context:
       'Benjamin reads the lettering on the van taking Boxer to the knacker\u2019s: "Alfred Simmonds, Horse Slaughterer."',
     analysis:
-      'Benjamin\u2019s outburst is the novel\u2019s most agonising moment. He has always been able to read but has chosen silence and disengagement. His cry comes too late to save Boxer. The repetition of "Fools" \u2014 directed at the other animals \u2014 is also directed at himself. Orwell\u2019s sharpest critique falls not on the powerful but on the educated who refuse to act until it is too late.',
+      'Benjamin\u2019s outburst is the novel\u2019s most agonising moment. He has always been able to read but has chosen silence and disengagement. His cry comes too late to save Boxer. In the full line, the repetition of "Fools" \u2014 directed at the other animals \u2014 is also directed at himself. Orwell\u2019s sharpest critique falls not on the powerful but on the educated who refuse to act until it is too late.',
     thematicLinks:
       'The climax of both the Boxer and Benjamin arcs. Education without moral courage is worthless. Benjamin\u2019s literacy could have saved lives; his silence made him complicit.',
     themes: ['Loyalty & Exploitation', 'Education & Awareness'],
@@ -298,7 +296,7 @@ const QUOTES: QuoteEntry[] = [
   },
   {
     id: 19,
-    quote: 'He had seemed to oppose the windmill, simply as a manoeuvre to get rid of Snowball.',
+    quote: 'seemed to oppose the windmill, simply as a manoeuvre to get rid of Snowball.',
     speaker: 'Narrator',
     chapter: 'Chapter 5',
     context:

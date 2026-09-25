@@ -75,12 +75,12 @@ const themes: ThemeData[] = [
     ],
     keyQuotes: [
       {
-        text: '"He has put a knife on the things that held us together and we have fallen apart."',
+        text: '"He has put a knife on the things that held us together ... fallen apart."',
         speaker: 'Obierika',
         part: 'Part 3, Chapter 20',
       },
       {
-        text: '"The world has no end, and what is good among one people is an abomination with others."',
+        text: '"what is good among one people is an abomination with others."',
         speaker: 'Uchendu',
         part: 'Part 2, Chapter 15',
       },
@@ -90,7 +90,7 @@ const themes: ThemeData[] = [
         part: 'Part 3, Chapter 20',
       },
       {
-        text: '"The clan was like a lizard; if it lost its tail it soon grew another."',
+        text: '"The clan was like a lizard; if it lost its tail ... soon grew another."',
         speaker: 'Narrator',
         part: 'Part 1, Chapter 13',
       },
@@ -198,12 +198,12 @@ const themes: ThemeData[] = [
         part: 'Part 3, Chapter 25',
       },
       {
-        text: '"He has put a knife on the things that held us together and we have fallen apart."',
+        text: '"He has put a knife on the things that held us together ... fallen apart."',
         speaker: 'Obierika',
         part: 'Part 3, Chapter 20',
       },
       {
-        text: '"The white man is very clever... Now he has won our brothers, and our clan can no longer act like one."',
+        text: '"The white man is very clever... our clan can no longer act like one."',
         speaker: 'Obierika',
         part: 'Part 3, Chapter 20',
       },
@@ -247,7 +247,7 @@ const themes: ThemeData[] = [
     ],
     keyQuotes: [
       {
-        text: '"Among the Igbo the art of conversation is regarded very highly, and proverbs are the palm-oil with which words are eaten."',
+        text: '"the art of conversation ... proverbs are the palm-oil with which words are eaten."',
         speaker: 'Narrator',
         part: 'Part 1, Chapter 1',
       },
@@ -257,7 +257,7 @@ const themes: ThemeData[] = [
         part: 'Part 2, Chapter 16',
       },
       {
-        text: '"The world has no end, and what is good among one people is an abomination with others."',
+        text: '"what is good among one people is an abomination with others."',
         speaker: 'Uchendu',
         part: 'Part 2, Chapter 15',
       },
@@ -334,7 +334,7 @@ const themes: ThemeData[] = [
     definition:
       'Proverbs as cultural markers, the political act of writing in English, and the violence of colonial language.',
     overview:
-      'Achebe saturates the novel with Igbo proverbs, songs, and conversational rituals. "Proverbs are the palm-oil with which words are eaten," the narrator tells us early on, establishing that language in Igbo culture is not merely functional but artistic. Each proverb encodes generations of accumulated wisdom and demonstrates the culture\'s intellectual sophistication. Achebe writes in English but infuses it with Igbo rhythms, idioms, and structures -- a deliberate political act. He later wrote that he chose English because "the price a world language must be prepared to pay is submission to many different kinds of use." The novel\'s final paragraph -- the Commissioner\'s reductive book title -- shows colonial language as an instrument of erasure: the power to name is the power to control.',
+      'Achebe saturates the novel with Igbo proverbs, songs, and conversational rituals. "Proverbs are the palm-oil with which words are eaten," the narrator tells us early on, establishing that language in Igbo culture is not merely functional but artistic. Each proverb encodes generations of accumulated wisdom and demonstrates the culture\'s intellectual sophistication. Achebe writes in English but infuses it with Igbo rhythms, idioms, and structures -- a deliberate political act. He later wrote that he chose English because "the price a world language ... is submission to many different kinds of use." The novel\'s final paragraph -- the Commissioner\'s reductive book title -- shows colonial language as an instrument of erasure: the power to name is the power to control.',
     partEvidence: [
       {
         part: 'Part 1 (Chapters 1-13)',
@@ -354,7 +354,7 @@ const themes: ThemeData[] = [
     ],
     keyQuotes: [
       {
-        text: '"Among the Igbo the art of conversation is regarded very highly, and proverbs are the palm-oil with which words are eaten."',
+        text: '"the art of conversation ... proverbs are the palm-oil with which words are eaten."',
         speaker: 'Narrator',
         part: 'Part 1, Chapter 1',
       },
@@ -413,12 +413,12 @@ const themes: ThemeData[] = [
         part: 'Part 3, Chapter 20',
       },
       {
-        text: '"We cannot leave the matter in his hands because he does not understand our customs."',
+        text: '"cannot leave the matter in his hands because he does not understand our customs."',
         speaker: 'Ogbuefi Ekwueme',
         part: 'Part 3, Chapter 23',
       },
       {
-        text: '"He has put a knife on the things that held us together and we have fallen apart."',
+        text: '"He has put a knife on the things that held us together ... fallen apart."',
         speaker: 'Obierika',
         part: 'Part 3, Chapter 20',
       },

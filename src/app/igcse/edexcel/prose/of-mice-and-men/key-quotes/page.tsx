@@ -86,13 +86,13 @@ const themeGroups = [
     theme: 'Friendship and companionship',
     quotes: [
       {
-        text: 'I got you to look after me, and you got me to look after you.',
+        text: 'I got you to look after me, ... you got me to look after you.',
         speaker: 'Lennie',
         analysis:
           'Parallel structure creates the illusion of reciprocity in a one-sided relationship.',
       },
       {
-        text: 'We got a future. We got somebody to talk to that gives a damn about us.',
+        text: 'We got somebody to talk to that gives a damn about us.',
         speaker: 'George',
         analysis: 'Friendship is defined against the ranch\u2019s default of isolation.',
       },
@@ -117,7 +117,7 @@ const themeGroups = [
         analysis: 'Crooks asserts the only boundaries segregation allows him: his tiny space.',
       },
       {
-        text: 'I could get you strung up on a tree so easy it ain\u2019t even funny.',
+        text: 'I could get you strung up ... so easy it ain\u2019t even funny.',
         speaker: 'Curley\u2019s wife (to Crooks)',
         analysis: 'She weaponises racial violence to reclaim power from her own marginalisation.',
       },

@@ -32,21 +32,30 @@ const REMAINS: PoemData = {
   title: 'Remains',
   poet: 'Simon Armitage',
 
+  // NOTE: "Remains" (Simon Armitage) is in copyright. To avoid reproducing the
+  // poem, each line below is given as a PARAPHRASE in the site's own words, one
+  // entry per line of the poem, and the notes quote only short phrases.
+  // Students must read the full text in the AQA Power and Conflict anthology.
+  // Until 25 September 2026 this array printed the poem verbatim, and printed
+  // it wrongly: five of its 30 lines were missing, a line that is not in the
+  // poem had been added, and the stanza breaks fell in the wrong places. The
+  // viewer numbers entries by position, so the entries below follow the poem's
+  // own shape: seven quatrains and a closing couplet.
   lines: [
     // Stanza 1
     {
-      text: 'On another occasion, we got sent out',
+      text: '[Paraphrase] The speaker recalls a different time when his unit was dispatched',
       annotations: [
         {
           type: 'Colloquialism',
-          note: '"On another occasion" -- casual, anecdotal opening as if recounting just one of many similar incidents. The passive voice ("got sent out") distances the speaker from responsibility.',
+          note: '"On another occasion" -- casual, anecdotal opening as if recounting just one of many similar incidents. The passive construction (the soldiers are sent by someone else) distances the speaker from responsibility.',
           color: '#60a5fa',
         },
       ],
     },
-    { text: 'to tackle looters raiding a bank.' },
+    { text: '[Paraphrase] to deal with thieves who were robbing a bank.' },
     {
-      text: 'And one of them legs it up the road,',
+      text: '[Paraphrase] One of the thieves runs off along the street,',
       annotations: [
         {
           type: 'Colloquialism',
@@ -56,7 +65,7 @@ const REMAINS: PoemData = {
       ],
     },
     {
-      text: 'probably armed, possibly not.',
+      text: '[Paraphrase] He is likely carrying a weapon, but perhaps he is not.',
       annotations: [
         {
           type: 'Ambiguity',
@@ -67,48 +76,46 @@ const REMAINS: PoemData = {
     },
     { text: '' },
 
-    // VERIFY: previous lines 'Another one dies in the doorway / of some bank, his arms outstretched inside.' do NOT appear in Armitage's Remains and have been removed as fabrication. The actual stanza 2 continues directly from 'probably armed, possibly not' into 'Well myself and somebody else and somebody else / are all of the same mind, / so all three of us open fire.'
-
     // Stanza 2
     {
-      text: 'Well myself and somebody else and somebody else',
+      text: '[Paraphrase] So the speaker and two other soldiers',
       annotations: [
         {
           type: 'Shared responsibility',
-          note: '"somebody else and somebody else" distributes the blame through deliberately vague repetition. The speaker tries to share the guilt across the group rather than shoulder it alone.',
+          note: 'The doubled, deliberately vague "somebody else" distributes the blame across the group. The speaker tries to share the guilt rather than shoulder it alone.',
           color: '#60a5fa',
         },
       ],
     },
-    { text: 'are all of the same mind,' },
+    { text: '[Paraphrase] all agree on what to do,' },
     {
-      text: 'so all three of us open fire.',
+      text: '[Paraphrase] and so the three of them start shooting.',
       annotations: [
         {
           type: 'Repetition',
-          note: 'The insistent repetition of "all three" and "all of the same mind" reveals the speaker desperately trying to dilute personal guilt through collective action.',
+          note: 'The insistent repetition of "all" across these lines reveals the speaker desperately trying to dilute personal guilt through collective action.',
           color: '#34d399',
         },
       ],
     },
-    { text: 'Three of a kind all letting fly, and I swear' },
+    { text: '[Paraphrase] The three fire together as one, and the speaker insists' },
+    { text: '' },
+
+    // Stanza 3
     {
-      text: 'I see every round as it rips through his life --',
+      text: '[Paraphrase] he can see each bullet tearing through the man’s life,',
       annotations: [
         {
           type: 'Graphic imagery',
-          note: '"rips through his life" makes the bullets feel like they tear not just flesh but the entirety of the man\'s existence. The dash creates a sudden pause before the visual detail that follows.',
+          note: 'The verb "rips" makes the bullets feel like they tear not just flesh but the entirety of the man\'s existence. The dash at the end of the line creates a sudden pause before the visual detail that follows.',
           color: '#f87171',
         },
       ],
     },
-    { text: 'I see broad daylight on the other side.' },
-    { text: '' },
-
-    // Stanza 3
-    { text: "So we've hit this looter a dozen times" },
+    { text: '[Paraphrase] He sees bright daylight through the man’s body, on the far side.' },
+    { text: '[Paraphrase] They have shot the thief about twelve times' },
     {
-      text: "and he's there on the ground, sort of inside out,",
+      text: '[Paraphrase] and he lies on the road with his insides spilling out,',
       annotations: [
         {
           type: 'Visceral imagery',
@@ -117,10 +124,13 @@ const REMAINS: PoemData = {
         },
       ],
     },
-    { text: 'pain itself, the image of agony.' },
-    { text: 'One of my mates goes by' },
+    { text: '' },
+
+    // Stanza 4
+    { text: '[Paraphrase] a picture of suffering in its purest form.' },
+    { text: '[Paraphrase] A fellow soldier walks past' },
     {
-      text: 'and tosses his guts back into his body.',
+      text: '[Paraphrase] and casually throws the man’s intestines back inside him.',
       annotations: [
         {
           type: 'Graphic imagery',
@@ -129,12 +139,12 @@ const REMAINS: PoemData = {
         },
       ],
     },
-    { text: 'Then he’s carted off in the back of a lorry.' },
+    { text: '[Paraphrase] Then his body is loaded onto a lorry and driven off.' },
     { text: '' },
 
-    // Stanza 4
+    // Stanza 5
     {
-      text: 'End of story, except not really.',
+      text: '[Paraphrase] That should be the end of it, only it is not.',
       annotations: [
         {
           type: 'Volta / Turning point',
@@ -144,7 +154,7 @@ const REMAINS: PoemData = {
       ],
     },
     {
-      text: 'His blood-shadow stays on the street, and out on patrol',
+      text: '[Paraphrase] His bloodstain lingers where he fell, and while patrolling',
       annotations: [
         {
           type: 'Metaphor',
@@ -153,13 +163,16 @@ const REMAINS: PoemData = {
         },
       ],
     },
-    { text: 'I walk right over it week after week.' },
-    { text: 'Then I’m home on leave. But I blink' },
+    { text: '[Paraphrase] the speaker crosses that spot again and again, for weeks.' },
+    { text: '[Paraphrase] Later he gets military leave at home, yet whenever he blinks' },
     { text: '' },
 
-    // Stanza 5
+    // Stanza 6
+    { text: '[Paraphrase] the looter charges out through the bank’s entrance again.' },
+    { text: '[Paraphrase] When he sleeps, the man is again likely armed, but perhaps not.' },
+    { text: '[Paraphrase] In his dreams, twelve bullets rip the man to pieces.' },
     {
-      text: "drink and the drugs won't flush him out --",
+      text: '[Paraphrase] Alcohol and drugs cannot drive the dead man from his mind,',
       annotations: [
         {
           type: 'PTSD',
@@ -168,28 +181,31 @@ const REMAINS: PoemData = {
         },
       ],
     },
+    { text: '' },
+
+    // Stanza 7
     {
-      text: "he's here in my head when I close my eyes,",
+      text: '[Paraphrase] he is present in the speaker’s mind whenever his eyes shut,',
       annotations: [
         {
           type: 'Shift to present tense',
-          note: 'The move to present tense shows the memory is inescapable and ongoing. "Here in my head" makes the dead man a permanent, haunting presence.',
+          note: "Most of the poem is told in the present tense, but from here it is the present of the speaker's life at home rather than a retold incident: the haunting is current and ongoing. Placing the dead man inside the speaker's head makes him a permanent presence.",
           color: '#f59e0b',
         },
       ],
     },
     {
-      text: 'dug in behind enemy lines,',
+      text: '[Paraphrase] entrenched like a soldier deep in hostile territory,',
       annotations: [
         {
           type: 'Military metaphor',
-          note: '"dug in behind enemy lines" -- the dead man has invaded the speaker\'s mind like a soldier entrenched in hostile territory. The speaker\'s own mind has become a battlefield.',
+          note: '"Dug in" -- the dead man has invaded the speaker\'s mind like a soldier entrenched in hostile territory. The speaker\'s own mind has become a battlefield.',
           color: '#a78bfa',
         },
       ],
     },
     {
-      text: 'not left for dead in some distant, sun-stunned, sand-smothered',
+      text: '[Paraphrase] not abandoned to die in a far-off, sunstruck, sand-choked country',
       annotations: [
         {
           type: 'Sibilance',
@@ -198,11 +214,12 @@ const REMAINS: PoemData = {
         },
       ],
     },
+    { text: '[Paraphrase] or buried in a desert grave,' },
     { text: '' },
 
-    // Stanza 6 (isolated couplet)
+    // Stanza 8 (closing couplet)
     {
-      text: 'land of dust and sand.',
+      text: '[Paraphrase] but uncomfortably close, right here in the present,',
       annotations: [
         {
           type: 'Isolation',
@@ -212,7 +229,7 @@ const REMAINS: PoemData = {
       ],
     },
     {
-      text: 'His bloody life in my bloody hands.',
+      text: '[Paraphrase] the dead man’s blood-soaked life lies in the speaker’s blood-stained hands.',
       annotations: [
         {
           type: 'Pun',
@@ -221,7 +238,7 @@ const REMAINS: PoemData = {
         },
         {
           type: 'Final line',
-          note: 'The end-stopped final line is definitive -- the speaker accepts inescapable guilt. "His life in my hands" echoes the idiom about responsibility, made literal and devastating.',
+          note: "The end-stopped final line is definitive -- the speaker accepts inescapable guilt. Take away the two intensifiers and what is left is the idiom about holding someone's life in your hands, made literal and devastating.",
           color: '#f87171',
         },
       ],

@@ -15,15 +15,16 @@ import { useT } from '@/lib/i18n/use-t'
 const singhSongPoem: PoemData = {
   title: 'Singh Song!',
   poet: 'Daljit Nagra',
-  // NOTE: "Singh Song!" is in copyright and its exact wording cannot be
-  // verified here, so the poem is NOT reproduced. The entries below are a
-  // paraphrased reading guide written in our own words: each item summarises
-  // a movement of the poem and its devices for study. No verbatim Nagra line
-  // is presented. Verify all wording against the named primary edition before
-  // quoting in an exam answer.
+  // NOTE: "Singh Song!" (Daljit Nagra; collected in "Look We Have Coming to
+  // Dover!", Faber and Faber, 2007) is in copyright, and its exact wording
+  // could not be verified for this guide, so the poem is NOT reproduced. Each
+  // entry below paraphrases a movement of the poem, not a single line, in the
+  // site's own words, and the notes quote none of Nagra's wording. Students
+  // must read the full original text in the AQA Love and Relationships
+  // anthology, and check any wording there before quoting it in an exam answer.
   lines: [
     {
-      text: 'Movement 1 \u2014 The speaker introduces himself (paraphrase, not the poem text).',
+      text: '[Paraphrase] Movement 1: the speaker introduces himself.',
       annotations: [
         {
           type: 'Voice',
@@ -38,7 +39,7 @@ const singhSongPoem: PoemData = {
       ],
     },
     {
-      text: 'Movement 2 \u2014 The newly-wed bride is introduced (paraphrase).',
+      text: '[Paraphrase] Movement 2: the newly-wed bride is introduced.',
       annotations: [
         {
           type: 'Characterisation',
@@ -53,7 +54,7 @@ const singhSongPoem: PoemData = {
       ],
     },
     {
-      text: 'Movement 3 \u2014 The customers complain about the neglected shop (paraphrase).',
+      text: '[Paraphrase] Movement 3: the customers complain about the neglected shop.',
       annotations: [
         {
           type: 'Dialogue & comic chorus',
@@ -68,7 +69,7 @@ const singhSongPoem: PoemData = {
       ],
     },
     {
-      text: 'Movement 4 \u2014 The couple\u2019s private, domestic intimacy (paraphrase).',
+      text: '[Paraphrase] Movement 4: the couple\u2019s private, domestic intimacy.',
       annotations: [
         {
           type: 'Cultural detail',
@@ -83,7 +84,7 @@ const singhSongPoem: PoemData = {
       ],
     },
     {
-      text: 'Movement 5 \u2014 The bride speaks; the poem\u2019s tender close (paraphrase).',
+      text: '[Paraphrase] Movement 5: the bride speaks, and the poem\u2019s tender close.',
       annotations: [
         {
           type: 'Refrain & structure',
@@ -91,8 +92,8 @@ const singhSongPoem: PoemData = {
           color: '#f59e0b',
         },
         {
-          type: 'Contentment & defiance',
-          note: 'The bride\u2019s closing declaration of happiness values their love above commerce and family expectation. Her phonetic voice is kept to the very end \u2014 Nagra refuses to standardise it, asserting its beauty and validity.',
+          type: 'Love above price',
+          note: 'The close is a quiet night-time exchange: she asks what the moon is worth, and the final words go to the speaker, who tells her that she is beyond any price. Love is valued above commerce and family expectation. The phonetic voice is kept to the very end: Nagra refuses to standardise it, asserting its beauty and validity.',
           color: '#ec4899',
         },
       ],
@@ -507,16 +508,17 @@ export default function SinghSongPage() {
       <footer className="rounded-lg border border-border/40 bg-muted/30 px-4 py-3 text-[11px] leading-relaxed text-muted-foreground space-y-2">
         <p>
           <strong>Rights notice:</strong> &copy; Faber &amp; Faber on behalf of Daljit Nagra (b.
-          1966). Quotations from <em>Singh Song!</em> are short fair-dealing extracts under CDPA
+          1966). Any quotation from <em>Singh Song!</em> is a short fair-dealing extract under CDPA
           1988 &sect;30 (criticism, review, quotation). For full text, students should consult the
           board-licensed AQA Love &amp; Relationships anthology or Nagra&rsquo;s collection
           <em>Look We Have Coming to Dover!</em> (2007).
         </p>
         <p>
-          Poem text is reproduced for the purpose of private study and educational criticism under
-          UK fair-dealing provisions (Copyright, Designs and Patents Act 1988, s.30). No commercial
-          use is intended. All quotations remain the intellectual property of the respective rights
-          holders.
+          The poem is paraphrased here, not reproduced; it is printed in full in the AQA Love and
+          Relationships anthology. Any short quotation is used for private study and educational
+          criticism under UK fair-dealing provisions (Copyright, Designs and Patents Act 1988,
+          s.30). No commercial use is intended. All quotations remain the intellectual property of
+          the respective rights holders.
         </p>
       </footer>
     </div>

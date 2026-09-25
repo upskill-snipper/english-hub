@@ -63,7 +63,7 @@ const powerPairings: ThemeQuotePairing[] = [
   {
     id: 'tm-extra-power-04',
     theme: 'Power',
-    quote: 'Unsex me here, and fill me from the crown to the toe top-full of direst cruelty.',
+    quote: 'Unsex me here, ... top-full of direst cruelty.',
     text: 'Macbeth',
     board: ['AQA', 'Edexcel', 'OCR', 'Eduqas'],
   },
@@ -140,8 +140,7 @@ const powerPairings: ThemeQuotePairing[] = [
   {
     id: 'tm-extra-power-15',
     theme: 'Power',
-    quote:
-      'If you don’t come down sharply on some of these people, they’d soon be asking for the earth.',
+    quote: 'come down sharply on some of these people, ... asking for the earth.',
     text: 'An Inspector Calls',
     board: ['AQA', 'Edexcel', 'OCR', 'Eduqas'],
   },
@@ -203,8 +202,7 @@ const lovePairings: ThemeQuotePairing[] = [
   {
     id: 'tm-extra-love-08',
     theme: 'Love',
-    quote:
-      'Nothing in the world is single; all things by a law divine in one spirit meet and mingle.',
+    quote: 'Nothing in the world is single; ... in one spirit meet and mingle.',
     text: 'Love’s Philosophy',
     board: ['AQA', 'Eduqas'],
   },
@@ -523,8 +521,7 @@ const guiltPairings: ThemeQuotePairing[] = [
   {
     id: 'tm-extra-guilt-03',
     theme: 'Guilt',
-    quote:
-      'Here’s the smell of the blood still: all the perfumes of Arabia will not sweeten this little hand.',
+    quote: 'all the perfumes of Arabia will not sweeten this little hand.',
     text: 'Macbeth',
     board: ['AQA', 'Edexcel', 'OCR', 'Eduqas'],
   },
@@ -560,8 +557,7 @@ const guiltPairings: ThemeQuotePairing[] = [
   {
     id: 'tm-extra-guilt-08',
     theme: 'Guilt',
-    quote:
-      'Dug in behind enemy lines, not left for dead in some distant, sun-stunned, sand-smothered land.',
+    quote: 'Dug in behind enemy lines, not left for dead',
     text: 'Remains',
     board: ['AQA'],
   },
@@ -602,8 +598,7 @@ const mortalityPairings: ThemeQuotePairing[] = [
   {
     id: 'tm-extra-mortality-05',
     theme: 'Mortality',
-    quote:
-      'In what cold clockwork of the stars and the nations was he the hand pointing that second?',
+    quote: 'In what cold clockwork of the stars ... was he the hand pointing that second?',
     text: 'Bayonet Charge',
     board: ['AQA'],
   },
@@ -624,8 +619,7 @@ const mortalityPairings: ThemeQuotePairing[] = [
   {
     id: 'tm-extra-mortality-08',
     theme: 'Mortality',
-    quote:
-      'To-night, this frost will fasten on this mud and us, shrivelling many hands, puckering foreheads crisp.',
+    quote: 'To-night, this frost will fasten on this mud and us',
     text: 'Exposure',
     board: ['AQA'],
   },

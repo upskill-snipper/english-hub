@@ -51,7 +51,7 @@ const PLOT_SUMMARY = [
     chapter: 'Chapters 10-12',
     title: 'Total Collapse and Rescue',
     summary:
-      "Jack's tribe raids Ralph's camp and steals Piggy's glasses to make fire. Ralph, Piggy, and the twins go to Castle Rock to confront Jack. Roger pushes a boulder that kills Piggy and destroys the conch. Sam and Eric are captured and tortured into joining Jack's tribe. Ralph is hunted across the island; Jack sets the jungle on fire to smoke him out. Ralph stumbles onto the beach and collapses at the feet of a naval officer. The officer is shocked. Ralph weeps 'for the end of innocence, the darkness of man's heart, and the fall through the air of the true, wise friend called Piggy.'",
+      "Jack's tribe raids Ralph's camp and steals Piggy's glasses to make fire. Ralph, Piggy, and the twins go to Castle Rock to confront Jack. Roger pushes a boulder that kills Piggy and destroys the conch. Sam and Eric are captured and tortured into joining Jack's tribe. Ralph is hunted across the island; Jack sets the jungle on fire to smoke him out. Ralph stumbles onto the beach and collapses at the feet of a naval officer. The officer is shocked. Ralph weeps 'for the end of innocence, the darkness of man's heart'.",
   },
 ]
 
@@ -73,7 +73,7 @@ const CHARACTERS = [
       "The antagonist who represents savagery, dictatorship, and the will to power. Initially the head of the choir, Jack becomes increasingly obsessed with hunting and violence. He paints his face, creating a mask that frees him from civilised restraint. He exploits the boys' fear of the beast to seize power, establishing a brutal tribal regime at Castle Rock. Jack represents the human instinct towards cruelty and authoritarian control when the structures of civilisation are removed.",
     key_quotes: [
       '"We\'ve got to have rules and obey them. After all, we\'re not savages" (ironic - Jack later becomes the most savage)',
-      '"The mask was a thing on its own, behind which Jack hid, liberated from shame and self-consciousness"',
+      '"The mask was a thing on its own, ... liberated from shame and self-consciousness"',
       '"Bollocks to the rules! We\'re strong - we hunt!"',
       '"He began to dance and his laughter became a bloodthirsty snarling"',
     ],
@@ -83,7 +83,7 @@ const CHARACTERS = [
     description:
       "Represents intellect, reason, and scientific thinking. Piggy is overweight, asthmatic, and wears glasses - he is physically weak but intellectually the strongest. He is the most loyal supporter of Ralph and the rules. The other boys mock and marginalise him, reflecting society's tendency to ignore rational voices. His glasses symbolise knowledge and are used to create fire. His death - crushed by a boulder alongside the conch - marks the final destruction of reason and civilisation on the island.",
     key_quotes: [
-      '"Which is better - to be a pack of painted savages like you are, or to be sensible like Ralph is?"',
+      '"Which is better - to be a pack of painted savages ... sensible like Ralph is?"',
       '"What are we? Humans? Or animals? Or savages?"',
       '"I got the conch! Just you listen!"',
       '"Life is scientific, that\'s what it is"',
@@ -105,7 +105,7 @@ const CHARACTERS = [
     description:
       "Represents pure sadism and cruelty. Roger begins by throwing stones near (but not at) a littlun - civilisation's conditioning still holds. As the novel progresses, he is freed from all restraint and becomes Jack's torturer and enforcer. He kills Piggy by pushing a boulder onto him. Roger represents the darkest impulse within human nature - the desire to hurt others - which is normally suppressed by society but unleashed when authority collapses.",
     key_quotes: [
-      '"Roger gathered a handful of stones and began to throw them. Yet there was a space round Henry... into which he dare not throw"',
+      '"Yet there was a space round Henry... into which he dare not throw"',
       '"Roger, with a sense of delirious abandonment, leaned all his weight on the lever"',
       '"The hangman\'s horror clung round him" (about Roger)',
     ],
@@ -125,7 +125,7 @@ const THEMES = [
       "The central conflict of the novel. Golding explores what happens when the structures of civilisation - rules, democracy, morality - are removed. Ralph and Piggy represent civilisation; Jack and Roger represent savagery. The boys' descent from orderly democracy to tribal violence suggests that savagery is not learned but innate - civilisation is merely a thin veneer. The conch, the signal fire, and Piggy's glasses all symbolise civilisation, and each is destroyed as savagery takes over.",
     quotes: [
       '"We\'ve got to have rules and obey them. After all, we\'re not savages"',
-      '"Which is better - to be a pack of painted savages like you are, or to be sensible like Ralph is?"',
+      '"Which is better - to be a pack of painted savages ... sensible like Ralph is?"',
       '"The world, that understandable and lawful world, was slipping away"',
     ],
   },
@@ -145,7 +145,7 @@ const THEMES = [
       "The boys arrive as schoolchildren and leave as murderers. The novel systematically strips away their innocence, revealing the darkness within. Ralph's final weeping - 'for the end of innocence, the darkness of man's heart' - is the novel's emotional climax. The littluns' nightmares about the beast foreshadow the real horror that the older boys will commit. Golding subverts the traditional 'boys' adventure' genre (like Coral Island) to show that children are not inherently innocent.",
     quotes: [
       '"Ralph wept for the end of innocence, the darkness of man\'s heart"',
-      '"The mask was a thing on its own, behind which Jack hid, liberated from shame and self-consciousness"',
+      '"The mask was a thing on its own, ... liberated from shame and self-consciousness"',
       '"Kill the beast! Cut his throat! Spill his blood!"',
     ],
   },
@@ -166,7 +166,7 @@ const THEMES = [
       "Fear is the catalyst for the boys' descent into savagery. The littluns fear the beast; Jack exploits this fear to undermine Ralph and seize power. He offers protection (the hunt) and a scapegoat (the beast), exactly as totalitarian leaders do. The signal fire goes out because fear distracts the boys from rescue. Golding shows that fear is the most powerful political tool - it overrides reason, enables violence, and allows tyrants to rise.",
     quotes: [
       '"The thing is - fear can\'t hurt you any more than a dream"',
-      "\"If there's a beast, we'll hunt it down! We'll close in and beat and beat and beat!\"",
+      '"If there\'s a beast, ... We\'ll close in and beat and beat and beat!"',
       '"He says the beastie came in the dark"',
     ],
   },
@@ -247,15 +247,13 @@ const KEY_QUOTES = [
       'The hunting chant that becomes increasingly frenzied. Its rhythm and repetition show how collective ritual overrides individual morality.',
   },
   {
-    quote:
-      '"The mask was a thing on its own, behind which Jack hid, liberated from shame and self-consciousness"',
+    quote: '"The mask was a thing on its own, ... liberated from shame and self-consciousness"',
     speaker: 'Narrator (Ch. 4)',
     significance:
       "Face paint removes civilised identity and moral restraint. 'Liberated' suggests civilisation is experienced as a constraint on natural impulses.",
   },
   {
-    quote:
-      '"Which is better - to be a pack of painted savages like you are, or to be sensible like Ralph is?"',
+    quote: '"Which is better - to be a pack of painted savages ... sensible like Ralph is?"',
     speaker: 'Piggy (Ch. 11)',
     significance:
       "Piggy's last stand - a direct appeal to reason over savagery. Moments later, he is killed, and the question is answered: savagery wins.",
@@ -285,8 +283,7 @@ const KEY_QUOTES = [
       "Golding shows civilisation as fragile and impermanent. 'Slipping away' suggests a gradual, irreversible decline.",
   },
   {
-    quote:
-      '"Roger gathered a handful of stones and began to throw them. Yet there was a space round Henry... into which he dare not throw"',
+    quote: '"Yet there was a space round Henry... into which he dare not throw"',
     speaker: 'Narrator (Ch. 4)',
     significance:
       "The 'space' represents the residual conditioning of civilisation - the invisible barrier of social rules. Later, this barrier disappears entirely when Roger kills Piggy.",
@@ -338,7 +335,7 @@ const CONTEXT_POINTS = [
   {
     topic: "Golding's View of Human Nature",
     detail:
-      "Golding stated: 'The theme is an attempt to trace the defects of society back to the defects of human nature.' He believed that evil is innate, not a product of environment or upbringing. This is a deliberately pessimistic counter to the Enlightenment belief in human reason and progress. Every boy on the island - not just Jack and Roger - is capable of violence.",
+      "Golding described the novel's theme as an attempt to 'trace the defects of society back to the defects of human nature.' He believed that evil is innate, not a product of environment or upbringing. This is a deliberately pessimistic counter to the Enlightenment belief in human reason and progress. Every boy on the island - not just Jack and Roger - is capable of violence.",
   },
   {
     topic: 'Cold War and Nuclear Anxiety',

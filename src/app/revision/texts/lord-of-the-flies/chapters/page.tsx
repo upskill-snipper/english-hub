@@ -195,7 +195,7 @@ const chapters: ChapterData[] = [
       'Sam and Eric, normally reliable, distort what they see through fear, showing how terror corrupts perception.',
     ],
     keyQuote: {
-      text: '"However Simon thought of the beast, there rose before his inward sight the picture of a human."',
+      text: '"However Simon thought of the beast, ... the picture of a human."',
       speaker: 'Narrator -- Chapter 6',
       analysis: "Golding confirms Simon's insight: the true beast wears a human face.",
     },
@@ -220,7 +220,7 @@ const chapters: ChapterData[] = [
       'Jack uses the supposed beast sighting to further his authority.',
     ],
     keyQuote: {
-      text: '"Ralph too was fighting to get near, to get a handful of that brown, vulnerable flesh."',
+      text: '"Ralph too was fighting to get near, ... a handful of that brown, vulnerable flesh."',
       speaker: 'Narrator -- Chapter 7',
       analysis:
         'Golding implicates even Ralph in the violence, proving no one is immune to the savage instinct.',
@@ -272,7 +272,7 @@ const chapters: ChapterData[] = [
       'Jack has become a full tyrant, presiding over ritual and feast like a tribal chief.',
     ],
     keyQuote: {
-      text: '"The beast struggled forward, broke the ring, fell over the steep edge of the rock."',
+      text: '"The beast struggled forward, ... fell over the steep edge of the rock."',
       speaker: 'Narrator -- Chapter 9',
       analysis:
         'Golding calls Simon "the beast," making the reader complicit in the boys\' delusion. The real beast is the mob.',

@@ -24,7 +24,7 @@ const AIC_FAQS: GeoFaqItem[] = [
   {
     question: 'What is the most important quotation in An Inspector Calls?',
     answer:
-      'The Inspector’s warning that "We don’t live alone. We are members of one body. We are responsible for each other" is the play’s thesis. It rejects Arthur Birling’s capitalist individualism and echoes the communal spirit of the 1945 welfare-state moment, making the line Priestley’s clearest statement of his socialist message.',
+      'The Inspector’s warning that "We are members of one body. We are responsible for each other" is the play’s thesis. It rejects Arthur Birling’s capitalist individualism and echoes the communal spirit of the 1945 welfare-state moment, making the line Priestley’s clearest statement of his socialist message.',
   },
   {
     question: 'Who is responsible for Eva Smith’s death in An Inspector Calls?',
@@ -259,8 +259,7 @@ const data: TextGuideData = {
         '\u0633\u062e\u0631\u064a\u0629 \u062f\u0631\u0627\u0645\u064a\u0629 \u0641\u064a \u0623\u062d\u062f\u0651 \u0635\u0648\u0631\u0647\u0627. \u062b\u0642\u0629 Birling \u062a\u0639\u0644\u0651\u0645\u0647 \u0639\u0644\u0649 \u0637\u0648\u0644 \u0643\u0631\u062c\u0651\u0627\u0644 \u0645\u0627 \u064a\u064f\u0639\u062a\u0645\u062f \u0639\u0644\u0649 \u062d\u0643\u0645\u0647.',
     },
     {
-      quote:
-        '"If we were all responsible for everything that happened to everybody \u2026 it would be very awkward."',
+      quote: '"If we were all responsible for everything ... it would be very awkward."',
       who: 'Arthur Birling - Act 3',
       whoAr: 'Arthur Birling - الفصل 3',
       analysis:
@@ -314,7 +313,7 @@ const data: TextGuideData = {
         '\u0627\u0644\u0645\u0641\u062a\u0634 \u064a\u062a\u062d\u062f\u0651\u0649 \u0631\u0623\u0633\u0627\u064b \u0642\u0646\u0627\u0639\u0629 Birling \u0628\u0625\u0646 \u0627\u0644\u062b\u0631\u0648\u0629 \u062a\u0633\u062a\u062d\u0642\u0651 \u062d\u0635\u0627\u0646\u0629 \u0645\u0646 \u0627\u0644\u0645\u0633\u0627\u0621\u0644\u0629.',
     },
     {
-      quote: '"It\u2019s what happened to the girl and what we all did to her that matters."',
+      quote: '"what happened to the girl and what we all did to her that matters."',
       who: 'Sheila Birling - Act 3',
       whoAr: 'Sheila Birling \u2014 \u0627\u0644\u0641\u0635\u0644 3',
       analysis:
@@ -351,7 +350,7 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"The way some of these cranks talk and write now, you\u2019d think everybody has to look after everybody else."',
+        '"cranks talk and write now, you\u2019d think everybody has to look after everybody else."',
       who: 'Arthur Birling - Act 1',
       whoAr: 'Arthur Birling - الفصل 1',
       analysis:
@@ -360,8 +359,7 @@ const data: TextGuideData = {
         'Birling يرفض الاشتراكية قبل ما يوصل المفتش، ويهيّئ بهذا الطريق الانقلاب الدرامي اللي يجي بعده.',
     },
     {
-      quote:
-        '"One Eva Smith has gone \u2014 but there are millions and millions and millions of Eva Smiths and John Smiths still left with us."',
+      quote: '"One Eva Smith has gone \u2014 but there are millions and millions and millions"',
       who: 'Inspector Goole - Act 3',
       whoAr: 'Inspector Goole \u2014 \u0627\u0644\u0641\u0635\u0644 3',
       analysis:

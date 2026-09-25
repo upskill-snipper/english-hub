@@ -47,7 +47,7 @@ const verifiedTedLines = [
   {
     id: 1,
     label: 'On the cumulative effect of a single story',
-    text: '"…show a people as one thing, as only one thing, over and over again, and that is what they become."',
+    text: '"…as only one thing, over and over again, and that is what they become."',
     context:
       'A widely-attested line from the TED talk, capturing how repeated narratives harden into perceived reality.',
   },
@@ -61,7 +61,7 @@ const verifiedTedLines = [
   {
     id: 3,
     label: 'Closing image - paradise regained',
-    text: '"When we reject the single story, when we realize that there is never a single story about any place, we regain a kind of paradise."',
+    text: '"When we reject the single story, ... we regain a kind of paradise."',
     context:
       'The final sentence of the TED talk: rejecting the single story is framed as a recovery of fullness and humanity.',
   },

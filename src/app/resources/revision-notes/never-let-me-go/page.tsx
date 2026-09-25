@@ -253,65 +253,59 @@ const themes = [
   {
     name: 'Ethics of Science and Technology',
     detail:
-      "The novel raises profound ethical questions about the limits of scientific progress. Miss Emily explains that society embraced cloning because the medical benefits, curing cancer, motor neurone disease, heart disease, were too great to refuse. Once people saw these cures as available, there was no going back: 'How can you ask a world that has come to regard cancer as curable, how can you ask such a world to put away that cure?' Ishiguro explores how utilitarian reasoning can justify profound cruelty, and how societies choose not to see the human cost of their comfort. The novel's world is not a distant dystopia but a version of contemporary Britain, suggesting that the ethical failures it depicts are not hypothetical but already present in different forms: in attitudes towards marginalised groups, in the exploitation of unseen labour, and in the moral compromises that sustain modern medicine.",
+      "The novel raises profound ethical questions about the limits of scientific progress. Miss Emily explains that society embraced cloning because the medical benefits, curing cancer, motor neurone disease, heart disease, were too great to refuse. Once people saw these cures as available, there was no going back: 'how can you ask such a world to put away that cure?' Ishiguro explores how utilitarian reasoning can justify profound cruelty, and how societies choose not to see the human cost of their comfort. The novel's world is not a distant dystopia but a version of contemporary Britain, suggesting that the ethical failures it depicts are not hypothetical but already present in different forms: in attitudes towards marginalised groups, in the exploitation of unseen labour, and in the moral compromises that sustain modern medicine.",
   },
 ]
 
 const keyQuotes = [
   {
-    quote:
-      "We all know it. We're modelled from trash. Junkies, prostitutes, winos, tramps. Convicts, maybe, just so long as they aren't psychos.",
+    quote: "We all know it. We're modelled from trash. Junkies, prostitutes, winos, tramps.",
     chapter: 'Chapter 13',
     speaker: 'Ruth',
     analysis:
       "Ruth's outburst after the failed search for her possible reveals the students' deepest fear about their origins. The word 'modelled' reduces human identity to a manufacturing process. The list of marginalised figures ('junkies, prostitutes, winos, tramps') exposes the class system underlying the donation programme: clones are created from those society already considers disposable. Ruth's pain is not just about her own origin but about the entire system's contempt for their humanity.",
   },
   {
-    quote: "What I'm not sure about, is if our memories are the same as everyone else's.",
+    quote: "What I'm not sure about, ... if our memories are the same as everyone else's.",
     chapter: 'Chapter 6',
     speaker: 'Kathy',
     analysis:
       "This early reflection establishes the novel's central concern with whether the clones' inner lives are equivalent to those of 'normal' humans. Kathy's uncertainty about the quality of her own memories mirrors the broader question the novel poses: what makes a person fully human? The tentative phrasing ('what I'm not sure about') is characteristic of Kathy's narration, which proceeds through doubt and qualification rather than certainty.",
   },
   {
-    quote:
-      "Your lives are set out for you. You'll become adults, then before you're old, before you're even middle-aged, you'll start to donate your vital organs.",
+    quote: "Your lives are set out for you. You'll become adults, ... donate your vital organs.",
     chapter: 'Chapter 7',
     speaker: 'Miss Lucy',
     analysis:
       "Miss Lucy's direct statement is the novel's most explicit articulation of the students' fate. The phrase 'set out for you' removes all agency: their lives are not lived but administered. The clinical precision of 'vital organs' strips away euphemism. The structure of the sentence, moving from ordinary milestones ('become adults') to the extraordinary ('donate your vital organs'), mirrors how the novel itself gradually reveals the horror beneath the familiar.",
   },
   {
-    quote:
-      "She was weeping... and what I saw was a new kind of sadness, a sadness I hadn't come across before. It was a sadness about something she'd lost or was losing. Something she was afraid of losing.",
+    quote: "It was a sadness about something she'd lost or was losing.",
     chapter: 'Chapter 9',
     speaker: 'Kathy, describing Madame',
     analysis:
-      "Madame's tears when she watches Kathy dance to 'Never Let Me Go' represent the novel's emotional climax of Part One. Kathy interprets the sadness as personal loss, but the reader understands that Madame weeps for all the clones: children who will never grow old, never become mothers, never have the futures they innocently imagine. The repetition of 'sadness' and 'losing' creates a rhythmic intensity that undercuts the typically restrained narration.",
+      "Madame's tears when she watches Kathy dance to 'Never Let Me Go' represent the novel's emotional climax of Part One. Kathy interprets the sadness as personal loss, but the reader understands that Madame weeps for all the clones: children who will never grow old, never become mothers, never have the futures they innocently imagine. In the full passage, the repetition of 'sadness' and 'losing' creates a rhythmic intensity that undercuts the typically restrained narration.",
   },
   {
-    quote:
-      "I keep thinking about this river somewhere, with the water moving really fast. And these two people in the water, trying to hold onto each other, holding on as hard as they can, but in the end it's just too much. The current's too strong. They've got to let go, drift apart.",
+    quote: "holding on as hard as they can, ... They've got to let go, drift apart.",
     chapter: 'Chapter 20',
     speaker: 'Kathy',
     analysis:
-      "This extended metaphor captures the novel's central tragedy: love cannot overcome the forces that separate people. The river represents time, mortality, and the donation system. 'Holding on as hard as they can' conveys the desperation of Kathy and Tommy's relationship, while 'the current's too strong' acknowledges that individual resistance is futile against systemic power. The imagery of drifting apart resonates with the novel's ending, where Kathy stands alone imagining her losses.",
+      "This extended metaphor captures the novel's central tragedy: love cannot overcome the forces that separate people. The river of the full passage represents time, mortality, and the donation system. 'Holding on as hard as they can' conveys the desperation of Kathy and Tommy's relationship, while 'the current's too strong', in the full passage, acknowledges that individual resistance is futile against systemic power. The imagery of drifting apart resonates with the novel's ending, where Kathy stands alone imagining her losses.",
   },
   {
-    quote:
-      'We took away your art because we thought it would reveal your souls. Or to put it more finely, we did it to prove you had souls at all.',
+    quote: 'We took away your art ... to prove you had souls at all.',
     chapter: 'Chapter 21',
     speaker: 'Miss Emily',
     analysis:
-      "This revelation reframes the entire novel. The Gallery, which the students believed might grant them deferrals, was actually designed to convince the outside world that clones are human. The phrase 'prove you had souls at all' is devastating: it reveals that the students' humanity was never taken for granted but was something that required evidence. The word 'finely' suggests Miss Emily's awareness of the cruelty embedded in her own project.",
+      "This revelation reframes the entire novel. The Gallery, which the students believed might grant them deferrals, was actually designed to convince the outside world that clones are human. The phrase 'prove you had souls at all' is devastating: it reveals that the students' humanity was never taken for granted but was something that required evidence. The word 'finely', in the full line, suggests Miss Emily's awareness of the cruelty embedded in her own project.",
   },
   {
-    quote:
-      'How can you ask a world that has come to regard cancer as curable, how can you ask such a world to put away that cure, to go back to the dark days?',
+    quote: 'How can you ask a world ... to go back to the dark days?',
     chapter: 'Chapter 22',
     speaker: 'Miss Emily',
     analysis:
-      "Miss Emily's rhetorical question exposes the utilitarian logic that sustains the donation system. The phrase 'dark days' reframes a world without organ harvesting as primitive, making the exploitation of clones seem like progress. The repetition of 'how can you ask' conveys the impossibility of reversing a system once its benefits have been normalised. Ishiguro implicates the reader: we, too, benefit from systems whose human costs we choose not to examine.",
+      "Miss Emily's rhetorical question exposes the utilitarian logic that sustains the donation system. The phrase 'dark days' reframes a world without organ harvesting as primitive, making the exploitation of clones seem like progress. In the full speech, the repetition of 'how can you ask' conveys the impossibility of reversing a system once its benefits have been normalised. Ishiguro implicates the reader: we, too, benefit from systems whose human costs we choose not to examine.",
   },
   {
     quote: 'Poor creatures. What did we do to you? With all our schemes and plans?',
@@ -321,12 +315,11 @@ const keyQuotes = [
       "Madame's lament is one of the novel's few moments of explicit moral reckoning. 'Poor creatures' is both compassionate and dehumanising, reflecting the ambivalence that characterises society's relationship with the clones. 'What did we do to you?' acknowledges guilt, while 'our schemes and plans' implicates the entire reform movement, not just the donation system. Madame recognises that even Hailsham, designed to be humane, was a form of control.",
   },
   {
-    quote:
-      "It was like when you make a move in chess and just as you take your finger off the piece, you see the mistake you've made, and there's this panic because you don't know yet the scale of disaster you've left yourself open to.",
+    quote: 'It was like when you make a move in chess ... the scale of disaster',
     chapter: 'Chapter 19',
     speaker: 'Kathy',
     analysis:
-      "This simile describes the moment of irreversible recognition, the feeling of understanding something too late to change it. The chess metaphor suggests a game with rules and consequences, mirroring the students' lives, which follow a predetermined sequence of moves. 'The scale of disaster' remains unknown, which is worse than certainty: it captures the clones' experience of gradually comprehending a fate they cannot alter.",
+      "This simile describes the moment of irreversible recognition, the feeling of understanding something too late to change it. The chess metaphor suggests a game with rules and consequences, mirroring the students' lives, which follow a predetermined sequence of moves. In the full sentence, 'the scale of disaster' remains unknown, which is worse than certainty: it captures the clones' experience of gradually comprehending a fate they cannot alter.",
   },
   {
     quote: "The problem, as I see it, is that you've been told and not told.",
@@ -336,15 +329,14 @@ const keyQuotes = [
       "This paradox encapsulates how Hailsham operates. The students receive information about their futures in fragments, delivered in ways designed to prevent full comprehension. 'Told and not told' describes a state of partial knowledge that is worse than ignorance because it prevents the students from either accepting or resisting their fate. The phrase also describes the novel's own narrative technique: Kathy reveals the truth gradually, keeping the reader in the same state of incomplete understanding.",
   },
   {
-    quote:
-      "I half closed my eyes and imagined this was the spot where everything I'd ever lost since my childhood had washed up, and I was now standing here in front of it.",
+    quote: "the spot where everything I'd ever lost since my childhood had washed up",
     chapter: 'Chapter 23',
     speaker: 'Kathy',
     analysis:
-      "The novel's final image. Kathy stands in a Norfolk field imagining that all her losses, Tommy, Ruth, Hailsham, have gathered in one place. Norfolk, described earlier as England's 'lost corner' where lost things wash up, becomes a metaphor for memory itself: the place where we keep what we have lost. The phrase 'half closed my eyes' suggests a deliberate act of imagination, an acknowledgement that consolation requires self-deception. The image is beautiful and devastating in equal measure.",
+      "The novel's final image. Kathy stands in a Norfolk field imagining that all her losses, Tommy, Ruth, Hailsham, have gathered in one place. Norfolk, described earlier as England's 'lost corner' where lost things wash up, becomes a metaphor for memory itself: the place where we keep what we have lost. In the full sentence, the phrase 'half closed my eyes' suggests a deliberate act of imagination, an acknowledgement that consolation requires self-deception. The image is beautiful and devastating in equal measure.",
   },
   {
-    quote: 'Driving around the country now, I still see things that will remind me of Hailsham.',
+    quote: 'Driving around the country ... I still see things that will remind me of Hailsham.',
     chapter: 'Chapter 1',
     speaker: 'Kathy',
     analysis:
@@ -352,35 +344,32 @@ const keyQuotes = [
   },
   {
     quote:
-      "She'd have been told about the donations and all that. But she wouldn't have understood. Not really.",
+      "She'd have been told about the donations ... But she wouldn't have understood. Not really.",
     chapter: 'Chapter 5',
     speaker: 'Kathy',
     analysis:
-      "This distinction between being told and understanding recurs throughout the novel. The phrase 'and all that' is characteristically casual, minimising the horror of organ harvesting through understatement. 'Not really' acknowledges that comprehension requires emotional as well as intellectual processing. Ishiguro shows how language can simultaneously communicate and conceal: the information is available, but its meaning is withheld.",
+      "This distinction between being told and understanding recurs throughout the novel. In the full line, the phrase 'and all that' is characteristically casual, minimising the horror of organ harvesting through understatement. 'Not really' acknowledges that comprehension requires emotional as well as intellectual processing. Ishiguro shows how language can simultaneously communicate and conceal: the information is available, but its meaning is withheld.",
   },
   {
-    quote:
-      "If I were a student at Hailsham, I'd want to know the truth about my future. But you see, the students aren't like that. They don't want to know.",
+    quote: "I'd want to know the truth about my future. ... They don't want to know.",
     chapter: 'Chapter 7',
     speaker: 'Miss Lucy (paraphrased by Kathy)',
     analysis:
       "This observation complicates the ethics of disclosure. Miss Lucy initially believes truth is always preferable, but she comes to recognise that the students' capacity for denial is a survival mechanism. 'They don't want to know' raises the question of whether complicity in one's own oppression can be a form of self-protection. Ishiguro challenges the assumption that knowledge is always liberating: sometimes understanding one's fate only deepens the suffering.",
   },
   {
-    quote:
-      "Tommy's face was right up against the mesh, and he was sort of shaking the wire. And he let out this bellowing sound.",
+    quote: "Tommy's face was right up against the mesh, ... he let out this bellowing sound.",
     chapter: 'Chapter 2',
     speaker: 'Kathy',
     analysis:
       "Tommy's childhood rage is one of the novel's recurring motifs. The mesh represents confinement: Tommy is literally caged by Hailsham's structures. 'Bellowing' is an animalistic word that connects to the broader question of how society dehumanises the clones. His rages are the instinctive response of someone who senses injustice but cannot articulate it. This early image foreshadows his scream into the darkness in Chapter 22, the adult version of the same primal protest.",
   },
   {
-    quote:
-      'None of you will go to America, none of you will be film stars. And none of you will be working in supermarkets as I heard some of you planning the other day.',
+    quote: 'None of you will go to America, none of you will be film stars.',
     chapter: 'Chapter 7',
     speaker: 'Miss Lucy',
     analysis:
-      "The juxtaposition of extraordinary and mundane ambitions ('film stars' and 'working in supermarkets') makes this passage particularly devastating. The students are denied not only glamorous futures but ordinary ones. 'None of you' is repeated three times, hammering home the totality of their exclusion. Miss Lucy's directness contrasts with the guardians' usual evasiveness, and her dismissal from Hailsham shows how the system punishes honesty.",
+      "Across the full speech, the juxtaposition of extraordinary and mundane ambitions ('film stars' and 'working in supermarkets') makes this passage particularly devastating. The students are denied not only glamorous futures but ordinary ones. 'None of you' is repeated three times in the full speech, hammering home the totality of their exclusion. Miss Lucy's directness contrasts with the guardians' usual evasiveness, and her dismissal from Hailsham shows how the system punishes honesty.",
   },
   {
     // VERIFY: direct quotation withheld - the previous text contained an unverifiable corruption. The passage referenced is Kathy's closing reflection in Chapter 23 (Norfolk shoreline imagery: rubbish, flapping plastic). Restore the exact wording only from a verified Faber edition.
@@ -392,40 +381,35 @@ const keyQuotes = [
       "The image of rubbish caught in trees along the Norfolk coast becomes a metaphor for the students themselves: discarded by society, caught in structures they did not choose, unable to free themselves. The 'flapping plastic' is mundane and ugly, deliberately unromantic, which makes the moment more honest than a conventionally beautiful ending. Ishiguro refuses to sentimentalise loss, instead grounding it in the ordinary detritus of the physical world.",
   },
   {
-    quote:
-      'What he wanted was not just to hear about Hailsham, but to remember Hailsham, just like it was his own memory.',
+    quote: 'What he wanted was not just to hear about Hailsham, but to remember Hailsham',
     chapter: 'Chapter 1',
     speaker: 'Kathy, describing a donor',
     analysis:
       "This passage reveals that Hailsham has become a myth for clones who were raised in less humane conditions. The desire to 'remember' something one never experienced highlights how memory and identity are constructed rather than fixed. Hailsham represents hope, humanity, and childhood innocence, qualities that the donation system systematically destroys. The donor's longing for borrowed memories mirrors the clones' broader search for an identity that feels authentically their own.",
   },
   {
-    quote:
-      "She gave me the same look as she'd given me at the roundabout, a look that was sort of querying and kind at the same time.",
+    quote: 'a look that was sort of querying and kind at the same time.',
     chapter: 'Chapter 19',
     speaker: 'Kathy, describing Ruth',
     analysis:
       "This moment captures Ruth's transformation in the novel's final section. The 'querying' element reflects her uncertainty about whether she can repair the damage she has done, while 'kind' reveals the genuine affection beneath her years of manipulation. Ruth's late-life tenderness towards Kathy and Tommy represents Ishiguro's belief in the possibility of moral growth, even within a system designed to prevent it.",
   },
   {
-    quote:
-      "It's something for me to go with, even though I know now it won't bring Tommy back or anything like that. But it does give me a lot of strength.",
+    quote: "it won't bring Tommy back ... But it does give me a lot of strength.",
     chapter: 'Chapter 23',
     speaker: 'Kathy',
     analysis:
       "Kathy's final reflection acknowledges that memory cannot undo loss ('it won't bring Tommy back') but insists that it provides 'strength'. This is the novel's qualified consolation: meaning does not come from defeating death or injustice but from the act of remembering, of refusing to let the people we loved disappear entirely. Kathy's strength is the strength of witness: she carries the stories of those who have completed.",
   },
   {
-    quote:
-      "I didn't want to be friends with anyone. I just wanted to be left alone, to go on doing my work.",
+    quote: 'I just wanted to be left alone, to go on doing my work.',
     chapter: 'Chapter 17',
     speaker: 'Kathy',
     analysis:
       "Kathy's withdrawal after leaving the Cottages reveals the emotional cost of living within the donation system. Isolation becomes a form of self-protection: if she does not form attachments, she cannot be hurt by loss. The phrase 'doing my work' is grimly ironic: her 'work' is caring for people as their organs are removed. Kathy's retreat into professionalism mirrors how many people cope with unbearable circumstances by focusing on routine and duty.",
   },
   {
-    quote:
-      'He opened his arms and shouted into the wind... and I could see his whole body was shaking.',
+    quote: 'He opened his arms and shouted into the wind... his whole body was shaking.',
     chapter: 'Chapter 22',
     speaker: 'Kathy, describing Tommy',
     analysis:
@@ -437,7 +421,7 @@ const contextSections = [
   {
     title: 'Kazuo Ishiguro',
     content:
-      "Kazuo Ishiguro was born in Nagasaki, Japan, in 1954 and moved to England at the age of five. He is one of the most acclaimed novelists of his generation, winning the Nobel Prize in Literature in 2017. His work is characterised by restrained, first-person narration, unreliable narrators, and an exploration of memory, self-deception, and the passage of time. Never Let Me Go (2005) draws on themes present in his earlier novels, particularly The Remains of the Day (1989), which similarly features a narrator who has sacrificed personal fulfilment in service to an institution. Ishiguro has stated that the novel is not primarily about cloning or science fiction but about 'how all of us have to find a way to live with the knowledge that we will age and die'.",
+      "Kazuo Ishiguro was born in Nagasaki, Japan, in 1954 and moved to England at the age of five. He is one of the most acclaimed novelists of his generation, winning the Nobel Prize in Literature in 2017. His work is characterised by restrained, first-person narration, unreliable narrators, and an exploration of memory, self-deception, and the passage of time. Never Let Me Go (2005) draws on themes present in his earlier novels, particularly The Remains of the Day (1989), which similarly features a narrator who has sacrificed personal fulfilment in service to an institution. Ishiguro has stated that the novel is not primarily about cloning or science fiction but about the need to 'find a way to live with the knowledge that we will age and die'.",
   },
   {
     title: 'Dystopian Fiction',

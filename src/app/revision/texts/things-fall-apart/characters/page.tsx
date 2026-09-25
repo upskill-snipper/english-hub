@@ -51,7 +51,7 @@ const characters: CharacterData[] = [
           "After Ikemefuna's death, Okonkwo suppresses grief by gendering it as weakness. Achebe shows how toxic masculinity turns legitimate emotion into shame. The self-addressed question reveals an internal dialogue Okonkwo can never win.",
       },
       {
-        text: '"He has put a knife on the things that held us together and we have fallen apart."',
+        text: '"He has put a knife on the things that held us together ... fallen apart."',
         chapter: 'Chapter 20 -- Obierika',
         analysis:
           'Obierika names the cultural destruction, echoing the novel\'s title. The "knife" metaphor suggests deliberate cutting rather than accidental collapse. Achebe gives the diagnosis to the reflective Obierika -- but Okonkwo, who hears it, has no tools except violence to respond.',
@@ -96,10 +96,10 @@ const characters: CharacterData[] = [
           'Okonkwo\'s bitter judgement of his son. The irony is that Okonkwo\'s own "fire" -- his violence and contempt -- is what created the "ash." Achebe shows how a father\'s rigidity produces the very outcome he most fears.',
       },
       {
-        text: '"He remembered this period very vaguely. There was a constant point of sorrow and bitterness in his heart."',
+        text: '"There was a constant point of sorrow and bitterness in his heart."',
         chapter: "Chapter 7 -- Narrator on Nwoye after Ikemefuna's death",
         analysis:
-          'The vagueness suggests trauma too deep to process clearly. The "constant point" is a wound that never heals. Achebe links Ikemefuna\'s death directly to Nwoye\'s eventual rejection of his father and his culture.',
+          "In the full passage, the vagueness of Nwoye's memory suggests trauma too deep to process clearly. The \"constant point\" is a wound that never heals. Achebe links Ikemefuna's death directly to Nwoye's eventual rejection of his father and his culture.",
       },
     ],
     themeLinks: [
@@ -154,26 +154,26 @@ const characters: CharacterData[] = [
     arc: [
       "Part 1: Questions the customs he finds unjust -- why must twins be abandoned? Why must a man be exiled for an accident? He refuses to participate in Ikemefuna's killing.",
       "Part 2: Visits Okonkwo in exile, sells his yams, and brings him news of the missionaries' arrival and the destruction of Abame.",
-      'Part 3: Witnesses Okonkwo\'s suicide and delivers the novel\'s moral verdict to the District Commissioner: "That man was one of the greatest men in Umuofia. You drove him to kill himself."',
+      'Part 3: Witnesses Okonkwo\'s suicide and delivers the novel\'s moral verdict to the District Commissioner: Okonkwo was "one of the greatest men in Umuofia. You drove him to kill himself."',
     ],
     keyQuotes: [
       {
-        text: '"That man was one of the greatest men in Umuofia. You drove him to kill himself."',
+        text: '"one of the greatest men in Umuofia. You drove him to kill himself."',
         chapter: 'Chapter 25 -- Obierika to the District Commissioner',
         analysis:
           "Obierika delivers the novel's final moral judgement. He reclaims Okonkwo's death from the colonial record and places blame where it belongs. Achebe uses him to insist that Okonkwo's life matters on its own terms.",
       },
       {
-        text: '"The white man is very clever... Now he has won our brothers, and our clan can no longer act like one."',
+        text: '"The white man is very clever... our clan can no longer act like one."',
         chapter: 'Chapter 20 -- Obierika',
         analysis:
           'Obierika analyses the colonial strategy with surgical precision: divide, convert, rule. Achebe shows that understanding the threat is not the same as being able to stop it.',
       },
       {
-        text: '"If the Oracle said that my son should be killed, I would neither dispute it nor be the one to do it."',
+        text: '"I would neither dispute it nor be the one to do it."',
         chapter: 'Chapter 8 -- Obierika',
         analysis:
-          "Obierika finds a moral middle ground that Okonkwo cannot imagine. He respects tradition without abandoning his conscience. This is Achebe's subtle argument that Igbo culture had space for ethical nuance.",
+          "Discussing the Oracle's decree that Ikemefuna must die, Obierika finds a moral middle ground that Okonkwo cannot imagine. He respects tradition without abandoning his conscience. This is Achebe's subtle argument that Igbo culture had space for ethical nuance.",
       },
     ],
     themeLinks: [
@@ -208,7 +208,7 @@ const characters: CharacterData[] = [
           "Achebe presents Ezinma's intelligence as intuitive and perceptive. She sees what Okonkwo refuses to see, but her gender denies her the authority to act on her understanding.",
       },
       {
-        text: '"Ezinma was the only child who could have been bold enough to walk into his hut."',
+        text: '"Ezinma was the only child ... bold enough to walk into his hut."',
         chapter: 'Chapter 5 -- Narrator',
         analysis:
           "Ezinma's boldness mirrors Okonkwo's own forceful personality, underlining the irony of his wish that she were male. She already possesses the qualities he values; he simply cannot recognise them in a girl.",
@@ -245,7 +245,7 @@ const characters: CharacterData[] = [
           'Ekwefi defies the authority of the priestess and the Oracle out of love for Ezinma. Achebe shows that maternal love overrides even the most powerful spiritual prohibitions.',
       },
       {
-        text: '"She determined that if she lived with Okonkwo she would not allow her to go."',
+        text: '"She determined ... if she lived with Okonkwo she would not allow her to go."',
         chapter: 'Chapter 9 -- Narrator',
         analysis:
           "Ekwefi treats Ezinma's survival as an act of will. Her fierce protectiveness is the response of a woman who has been given one final chance at motherhood.",
@@ -269,19 +269,19 @@ const characters: CharacterData[] = [
     ],
     keyQuotes: [
       {
-        text: '"In his day he was lazy and improvident and was quite incapable of thinking about tomorrow."',
+        text: '"he was lazy and improvident and was quite incapable of thinking about tomorrow."',
         chapter: 'Chapter 1 -- Narrator',
         analysis:
           "Achebe presents the clan's verdict on Unoka with apparent objectivity. But the narrator's tone carries a gentleness absent from Okonkwo's furious dismissals. The word \"improvident\" is the culture's judgement; the novel quietly asks whether that judgement is the whole story.",
       },
       {
-        text: '"When Unoka died he had taken no title at all and he was heavily in debt."',
+        text: '"When Unoka died he had taken no title ... and he was heavily in debt."',
         chapter: 'Chapter 1 -- Narrator',
         analysis:
           "By the clan's metric, Unoka is a complete failure. But Achebe establishes early that this metric is not the only one available. Unoka's failure is also the failure of a culture to accommodate artistic temperament.",
       },
       {
-        text: '"Unoka loved the good fellowship of the dry season, the coming and going of neighbours, the drinking of palm wine."',
+        text: '"Unoka loved the good fellowship of the dry season, ... the drinking of palm wine."',
         chapter: 'Chapter 1 -- Narrator',
         analysis:
           "Achebe lists the things Unoka values: community, warmth, pleasure. These are not contemptible. Achebe subtly suggests that Okonkwo's rejection of everything his father stood for involves rejecting things that are genuinely good.",
@@ -383,7 +383,7 @@ const characters: CharacterData[] = [
           'The novel\'s final line. Every word is loaded: "Pacification" disguises violence as peace; "Primitive" denies the culture\'s complexity; "Lower Niger" reduces a living people to a geographic category. Achebe\'s entire novel exists as a refutation of this title.',
       },
       {
-        text: '"One could almost write a whole chapter on him. Perhaps not a whole chapter but a reasonable paragraph."',
+        text: '"One could almost write a whole chapter on him. ... but a reasonable paragraph."',
         chapter: 'Chapter 25 -- District Commissioner',
         analysis:
           "The Commissioner reduces Okonkwo's tragedy to a matter of editorial length. Achebe uses this casual calculation to show that colonialism's deepest violence is narrative: the power to decide whose story matters and how much space it deserves.",

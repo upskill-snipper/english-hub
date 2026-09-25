@@ -68,12 +68,12 @@ const WALKTHROUGH: WalkthroughCard[] = [
     icon: MessageSquare,
     iconColour: 'text-blue-400',
     body: [
-      'The triple repetition "from pig to man, and from man to pig, and from pig to man again" enacts the dizzying back-and-forth of the animals\' gaze. The grammar mimics the impossibility of distinguishing them.',
+      'The triple repetition "from pig to man, and from man to pig, and from pig to man" enacts the dizzying back-and-forth of the animals\' gaze. The grammar mimics the impossibility of distinguishing them.',
       'The blunt monosyllabic verdict - "it was impossible to say which was which" - refuses elaboration. There is no commentary, no lament, no rhetorical flourish: only the bare fact that the equation has been made.',
       'Orwell denies the reader any comforting moral framing. The animals outside the window are us - silent, watching, too late.',
     ],
     evidence:
-      '"The creatures outside looked from pig to man, and from man to pig, and from pig to man again; but already it was impossible to say which was which."',
+      '"The creatures outside looked from pig to man, ... impossible to say which was which."',
   },
   {
     stage: 'Say',
@@ -276,9 +276,9 @@ export default function ExtractWalkthroughPage() {
               regardless of the ideology it began with. The pigs were never uniquely wicked, only
               uniquely unaccountable; the silencing of debate, the monopoly of force, and the quiet
               rewriting of the Seven Commandments made the final equation inevitable. The
-              triple-clause sweep - &ldquo;from pig to man, and from man to pig, and from pig to man
-              again&rdquo; - enacts that exhaustion in the reader. Orwell denies us comfort: there
-              is no rebellion brewing outside the window, only animals who can no longer tell the
+              triple-clause sweep - &ldquo;from pig to man, and from man to pig, and from pig to
+              man&rdquo; - enacts that exhaustion in the reader. Orwell denies us comfort: there is
+              no rebellion brewing outside the window, only animals who can no longer tell the
               difference. That refusal is the moral.
             </p>
           </CardContent>

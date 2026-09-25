@@ -29,7 +29,7 @@ const characters = [
   {
     name: 'Eunice Hubbell',
     description:
-      "Steve's wife, who lives in the apartment above the Kowalskis. Eunice functions as a mirror for Stella: she too endures a volatile relationship marked by arguments and reconciliations. Her advice to Stella in Scene 11 - 'Don't ever believe it. Life has got to go on. No matter what happens, you've got to keep on going' - articulates the play's pragmatic philosophy of survival through wilful denial. Eunice normalises the cycle of male violence and female submission that defines the world of Elysian Fields.",
+      "Steve's wife, who lives in the apartment above the Kowalskis. Eunice functions as a mirror for Stella: she too endures a volatile relationship marked by arguments and reconciliations. Her advice to Stella in Scene 11 - 'Don't ever believe it. Life has got to go on.' - articulates the play's pragmatic philosophy of survival through wilful denial. Eunice normalises the cycle of male violence and female submission that defines the world of Elysian Fields.",
   },
   {
     name: 'Steve Hubbell',
@@ -74,7 +74,7 @@ const sceneSummary = [
     keyQuotations: [
       {
         quote:
-          'They told me to take a streetcar named Desire, and then transfer to one called Cemeteries and ride six blocks and get off at - Elysian Fields!',
+          'take a streetcar named Desire, and then transfer to one called Cemeteries ... Elysian Fields!',
         analysis:
           "Blanche's journey is an allegory: Desire led to death (Cemeteries) and finally to a pagan afterlife (Elysian Fields). Williams maps her emotional trajectory onto the geography of New Orleans, foreshadowing her fate from the very first lines.",
       },
@@ -94,7 +94,7 @@ const sceneSummary = [
     keyQuotations: [
       {
         quote:
-          'In the state of Louisiana we have the Napoleonic code according to which what belongs to the wife belongs to the husband and vice versa.',
+          'Napoleonic code ... what belongs to the wife belongs to the husband and vice versa.',
         analysis:
           "Stanley's invocation of the law reveals his understanding of marriage as ownership. The Napoleonic Code is a real legal framework, but Williams uses it to expose the property-based logic underlying Stanley's masculinity: he sees Stella - and by extension Blanche - as assets to be controlled.",
       },
@@ -113,8 +113,7 @@ const sceneSummary = [
           "Stanley's primal scream is one of the most famous moments in American drama. The elongated, animalistic cry reduces language to pure need. It demonstrates the power of desire over reason: despite the violence, Stella is drawn back to Stanley. Williams stages this as both disturbing and magnetic, refusing to let the audience dismiss Stanley entirely.",
       },
       {
-        quote:
-          "I can't stand a naked light bulb, any more than I can a rude remark or a vulgar action",
+        quote: "I can't stand a naked light bulb, ... a rude remark or a vulgar action",
         analysis:
           "Blanche's aversion to harsh light is central to the play's symbolism. Light represents truth, scrutiny, and the ageing she fears. Her preference for softness, dimness, and illusion is both self-protective and self-deceptive. Williams links physical lighting to emotional and moral exposure.",
       },
@@ -128,8 +127,7 @@ const sceneSummary = [
       "The morning after the poker night. Blanche is horrified that Stella has returned to Stanley and urges her to leave him. Stella defends her marriage, describing the intensity of her physical relationship with Stanley. Blanche delivers an impassioned speech about Stanley's brutishness, unaware that he is listening from the doorway.",
     keyQuotations: [
       {
-        quote:
-          "He acts like an animal, has an animal's habits! ... Thousands of years have passed him right by, and there he is - Stanley Kowalski - survivor of the Stone Age!",
+        quote: "He acts like an animal, has an animal's habits! ... survivor of the Stone Age!",
         analysis:
           "Blanche's speech articulates the play's central opposition between civilisation and primitivism. Her rhetoric is eloquent but also snobbish and classist: she equates working-class masculinity with evolutionary regression. Williams ensures the audience hears Stanley overhearing this, creating dramatic irony and sealing Blanche's fate - Stanley will now pursue her destruction with full motivation.",
       },
@@ -162,10 +160,9 @@ const sceneSummary = [
           "These three short, brutal sentences are the cause of Blanche's guilt and psychological disintegration. The monosyllabic rhythm hammers like gunshots (foreshadowing Allan's suicide). Blanche's condemnation of Allan's homosexuality mirrors the intolerance of the society Williams himself faced as a gay man. The line is both Blanche's greatest cruelty and her greatest wound.",
       },
       {
-        quote:
-          'And then the searchlight which had been turned on the world was turned off again and never for one moment since has there been any light stronger than this - kitchen - candle',
+        quote: 'the searchlight which had been turned on the world was turned off again',
         analysis:
-          "Blanche's metaphor of light and darkness encapsulates her experience: Allan's death extinguished her capacity for genuine happiness. The pause before 'kitchen candle' (indicated by dashes) conveys emotional deflation. Williams uses light as a sustained symbol: Blanche has been living in dimness - literal and emotional - ever since.",
+          "Blanche's metaphor of light and darkness encapsulates her experience: Allan's death extinguished her capacity for genuine happiness. In the full line, the pause before 'kitchen candle' (indicated by dashes) conveys emotional deflation. Williams uses light as a sustained symbol: Blanche has been living in dimness - literal and emotional - ever since.",
       },
     ],
     stageDirections:
@@ -177,7 +174,7 @@ const sceneSummary = [
       "It is Blanche's birthday. While she bathes and sings 'It's Only a Paper Moon', Stanley tells Stella what he has learned about Blanche's past in Laurel: her promiscuity, her affair with a seventeen-year-old student, and her expulsion from the hotel. Stanley reveals he has already told Mitch.",
     keyQuotations: [
       {
-        quote: "It's only a paper moon, / Sailing over a cardboard sea",
+        quote: "[Blanche's song in the bath: the lyric is not reproduced here]",
         analysis:
           "The song Blanche sings offstage is a pointed commentary on the play's central theme: the lyric argues that illusion becomes real if two people believe in it. Williams uses this as contrapuntal irony - even as Blanche sings about the sustaining power of make-believe, Stanley is systematically destroying every illusion she has constructed.",
       },
@@ -191,8 +188,7 @@ const sceneSummary = [
       'A tense, hostile birthday dinner. Mitch does not attend. Stanley gives Blanche a cruel birthday present: a one-way bus ticket back to Laurel. Blanche is devastated. Stella goes into labour and Stanley takes her to the hospital.',
     keyQuotations: [
       {
-        quote:
-          'You showed me the snapshot of the place with the columns. I pulled you down off them columns and how you loved it',
+        quote: 'I pulled you down off them columns and how you loved it',
         analysis:
           "Stanley's speech to Stella lays bare the class and sexual dynamics of their marriage. 'Pulled you down off them columns' is both literal (from the plantation house) and metaphorical (from her social class). The verb 'pulled' implies force, but 'how you loved it' asserts Stella's complicity. Williams shows that desire has its own logic, operating outside social hierarchy.",
       },
@@ -206,8 +202,7 @@ const sceneSummary = [
       "Mitch arrives, drunk and aggressive. He confronts Blanche about her lies, tears the paper lantern off the lightbulb to see her face in harsh light, and declares she is not clean enough to bring into his mother's house. Blanche is left alone.",
     keyQuotations: [
       {
-        quote:
-          "I don't want realism. I want magic! ... I try to give that to people. I misrepresent things to them. I don't tell truth, I tell what ought to be truth.",
+        quote: "I don't want realism. I want magic! ... I tell what ought to be truth.",
         analysis:
           "Blanche's most self-aware speech is also her most defiant. She articulates Williams' own artistic credo: art, like Blanche's lies, reshapes reality to reveal emotional truth. The distinction between factual truth and imaginative truth is central to Williams' dramaturgy. This speech invites the audience to question whether Stanley's brutal 'realism' is morally superior to Blanche's compassionate fabrications.",
       },
@@ -240,8 +235,7 @@ const sceneSummary = [
           "Blanche's final line, spoken to the Doctor, brings the play full circle. Its repetition from Scene 1 transforms it from exposition to elegy. The line is simultaneously heartbreaking and ironic: the 'strangers' she depends on are now institutional authorities removing her from society. Williams gives Blanche dignity in her final moment - she leaves on the arm of a gentleman, preserving the illusion of courtesy even as she enters confinement.",
       },
       {
-        quote:
-          "Don't ever believe it. Life has got to go on. No matter what happens, you've got to keep on going",
+        quote: "Don't ever believe it. Life has got to go on.",
         analysis:
           "Eunice's advice to Stella articulates the pragmatic philosophy that sustains the world of the play: survival requires denial. Williams does not endorse this view but presents it as the only option available to women in a patriarchal society. Stella's complicity is not villainy but a desperate strategy for self-preservation.",
       },

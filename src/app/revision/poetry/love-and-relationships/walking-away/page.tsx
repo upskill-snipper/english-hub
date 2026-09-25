@@ -15,10 +15,26 @@ import { useT } from '@/lib/i18n/use-t'
 const walkingAwayPoem: PoemData = {
   title: 'Walking Away',
   poet: 'C. Day-Lewis',
+  // NOTE: "Walking Away" (C. Day-Lewis, 1962) remains in copyright: Day-Lewis died in
+  // 1972, so UK copyright runs to the end of 2042. To avoid reproducing the poem, each
+  // line below is a PARAPHRASE in the site's own words, not the poet's text, and the
+  // annotations quote only short phrases. Students must read the full poem in the AQA
+  // Love and Relationships anthology.
+  //
+  // What this replaced, 25 September 2026: the array printed the poem line by line, which
+  // is reproduction, not fair dealing. It was also corrupt. Eight of its sixteen printed
+  // lines are not lines of the poem, twelve real lines were absent (four blank entries
+  // marked lines an earlier audit had removed), and it showed five stanzas where the poem
+  // has four of five lines each. Paraphrasing those entries in place would have taught
+  // students the invented lines, so the array now follows the published poem, one entry
+  // per line in order, and each annotation sits on the line it discusses; notes written
+  // for invented lines were rewritten for the real ones. The languageDevices lineRefs
+  // below were moved to match. The paraphrases were written from the poem's sense and
+  // have not been checked against a primary edition.
   lines: [
     // Stanza 1
     {
-      text: 'It is eighteen years ago, almost to the day \u2014',
+      text: '[Paraphrase] It is now eighteen years, give or take a day or two, since the moment the father recalls.',
       annotations: [
         {
           type: 'Precision',
@@ -27,33 +43,14 @@ const walkingAwayPoem: PoemData = {
         },
       ],
     },
-    { text: 'A sunny day with the leaves just turning,' },
-    // VERIFY: line redacted \u2014 previously contained a corruption artefact (a hyphenated compound describing pitch / touch-line imagery in stanza 1). Day-Lewis's image in this position concerns the football pitch markings; restore only against a verified primary source (e.g. Faber edition of Walking Away).
-    { text: '' },
-    { text: 'When I watched you play your first game of football,' },
     {
-      text: 'And my heart went with you as you walked away',
-      annotations: [
-        {
-          type: 'Metaphor',
-          note: "The father's heart literally departing with his son captures the physical pain of letting go. This image echoes throughout the poem.",
-          color: '#10b981',
-        },
-      ],
+      text: '[Paraphrase] It was a bright day, and the leaves were only beginning to change colour.',
     },
-    // Stanza break
-    { text: '' },
-    // Stanza 2
-    { text: 'To the ignominy of a side that lost;' },
-    { text: 'And in the agony of having to decide,' },
-    { text: "It's as if the child I'd fathered had, grown," },
-    // VERIFY: line redacted - previously contained an unverifiable phrase ('survey of himself' was a corruption that does not match any verified Day-Lewis text). Restore only against a primary source.
-    { text: '' },
-    // Stanza break
-    { text: '' },
-    // Stanza 3
     {
-      text: 'Like a satellite wrenched from its orbit, you went,',
+      text: '[Paraphrase] The lines around the pitch had just been marked out, on the day he watched his son play',
+    },
+    {
+      text: '[Paraphrase] his first football match, and then saw the boy, like some satellite',
       annotations: [
         {
           type: 'Simile',
@@ -63,44 +60,69 @@ const walkingAwayPoem: PoemData = {
       ],
     },
     {
-      text: 'Like a winged seed loosened from its parent stem,',
+      text: '[Paraphrase] knocked violently out of its path in space, float off into the distance',
+    },
+    // Stanza break
+    { text: '' },
+    // Stanza 2
+    { text: '[Paraphrase] trailing behind a loose group of boys. The father can still picture' },
+    { text: '[Paraphrase] his son heading off from him in the direction of the school' },
+    {
+      text: '[Paraphrase] with the sad vulnerability of a young bird, not yet fully feathered, released',
+      annotations: [
+        {
+          type: 'Compound adjectives',
+          note: '"Half-fledged" pictures a young bird whose flight feathers have not fully grown, emphasising the child\'s incompleteness and vulnerability. He is not yet ready but must go anyway.',
+          color: '#8b5cf6',
+        },
+      ],
+    },
+    {
+      text: '[Paraphrase] into wild, unmapped country, walking like someone',
+      annotations: [
+        {
+          type: 'Metaphor',
+          note: 'The world the boy walks into is pictured as a "wilderness" with no track to follow, so his first step into independence feels like exposure to danger. The father feels the separation as a physical loss, and that pain runs through the whole poem.',
+          color: '#10b981',
+        },
+      ],
+    },
+    { text: '[Paraphrase] who cannot find a route where there ought to be one.' },
+    // Stanza break
+    { text: '' },
+    // Stanza 3
+    {
+      text: '[Paraphrase] That uncertain figure, drifting off in circling, unsteady movements,',
+    },
+    {
+      text: '[Paraphrase] as a seed with wings floats free once it has come loose from the plant that grew it,',
       annotations: [
         {
           type: 'Simile / natural imagery',
-          note: 'The organic image reframes separation as natural and necessary for growth - a seed must leave the parent stem to take root elsewhere. "Loosened" suggests gradual release rather than violent rupture.',
+          note: 'The organic image reframes separation as natural and necessary for growth - a seed must leave the plant that grew it to take root elsewhere. "Loosened" suggests gradual release rather than violent rupture.',
           color: '#10b981',
         },
       ],
     },
     {
-      text: 'Half-fledged, half-knowing, wide-eyed into a world',
-      annotations: [
-        {
-          type: 'Compound adjectives',
-          note: 'The "half-" prefix repeated twice emphasises the child\'s incompleteness and vulnerability. He is not yet ready but must go anyway.',
-          color: '#8b5cf6',
-        },
-      ],
-    },
-    // VERIFY: line redacted - 'survey of the road' was a corruption that does not match any verified Day-Lewis text. Restore only against a primary source.
-    { text: '' },
-    // Stanza break
-    { text: '' },
-    // Stanza 4
-    // VERIFY: line redacted - 'survey of the road' was a corruption that does not match any verified Day-Lewis text. Restore only against a primary source.
-    { text: '' },
-    {
-      text: 'Has altered, though it was not so at first.',
+      text: '[Paraphrase] holds a meaning the father has never fully managed to put into words',
       annotations: [
         {
           type: 'Volta',
-          note: 'The shift to present tense and the word "now" marks the turn from memory to mature reflection. The father can finally understand what the moment meant.',
+          note: 'The poem turns here from describing the memory to reflecting on what it means. The present tense marks the move to mature reflection, yet the father admits he has still not found the words for it.',
           color: '#f59e0b',
         },
       ],
     },
+    { text: '[Paraphrase] about how nature gives and takes away: the minor yet searing' },
     {
-      text: 'I have had worse partings, but none that so',
+      text: "[Paraphrase] trials that harden a person's soft, unformed nature, the way heat hardens clay.",
+    },
+    // Stanza break
+    { text: '' },
+    // Stanza 4
+    {
+      text: '[Paraphrase] The father has known more painful separations, yet none that',
       annotations: [
         {
           type: 'Understatement',
@@ -109,12 +131,9 @@ const walkingAwayPoem: PoemData = {
         },
       ],
     },
-    { text: 'Gnaws at my mind still. Perhaps it is roughly' },
-    // Stanza break
-    { text: '' },
-    // Stanza 5
+    { text: '[Paraphrase] still eats away at him like this one. Perhaps, in a rough way, it is' },
     {
-      text: 'Saying what God alone could perfectly show \u2014',
+      text: '[Paraphrase] expressing, imperfectly, something only God could show completely:',
       annotations: [
         {
           type: 'Religious allusion',
@@ -123,9 +142,9 @@ const walkingAwayPoem: PoemData = {
         },
       ],
     },
-    { text: 'How selfhood begins with a walking away,' },
+    { text: "[Paraphrase] that a person's sense of self starts when they walk away," },
     {
-      text: 'And love is proved in the letting go.',
+      text: '[Paraphrase] and that the true test of love is being able to release someone.',
       annotations: [
         {
           type: 'Aphorism',
@@ -264,7 +283,7 @@ const walkingAwayPoem: PoemData = {
       example: 'Like a satellite wrenched from its orbit',
       effect:
         'The cosmic comparison elevates a personal moment to universal significance. "Wrenched" conveys the violence of separation, while "orbit" implies the child was once held in the parent\'s gravitational pull.',
-      lineRef: 11,
+      lineRef: 3,
       effectAr:
         'المقارنة الكونية ترفع لحظة شخصية لمستوى معنى عام وكوني. كلمة "wrenched" تنقل عنف الفراق، بينما "orbit" تلمّح إن الولد كان أصلاً ممسوك بجاذبية أبوه.',
     },
@@ -273,7 +292,7 @@ const walkingAwayPoem: PoemData = {
       example: 'Half-fledged',
       effect:
         "Bird imagery presents the child as a young bird not yet ready to fly, emphasising vulnerability and the parent's anxiety about whether they can survive independently.",
-      lineRef: 12,
+      lineRef: 8,
       effectAr:
         'صور الطيور تقدّم الولد كأنه طير صغير لين الحين ما هو جاهز يطير، وتأكّد على هشاشته وعلى قلق الأب: هل ولده يقدر يعيش بدونه؟',
     },
@@ -282,7 +301,7 @@ const walkingAwayPoem: PoemData = {
       example: 'Gnaws at my mind still',
       effect:
         'The visceral, animalistic verb "gnaws" makes the abstract concept of memory physically painful, suggesting persistent, consuming grief.',
-      lineRef: 18,
+      lineRef: 19,
       effectAr:
         'الفعل الحسّي والحيواني "gnaws" يحوّل المفهوم المجرّد (الذكرى) إلى ألم مادي محسوس، ويلمّح بحزن مستمر يقضم الأب من جوّاه.',
     },
@@ -300,7 +319,7 @@ const walkingAwayPoem: PoemData = {
       example: 'so / Gnaws at my mind still',
       effect:
         'The line break isolates "Gnaws" at the start of the line, giving it greater impact and enacting the way the memory catches him unexpectedly.',
-      lineRef: 17,
+      lineRef: 18,
       effectAr:
         'كسر البيت يعزل كلمة "Gnaws" في بداية السطر الجديد، فيعطيها وقع أقوى ويجسّد كيف إن الذكرى تباغت الأب بدون مقدّمات.',
     },
@@ -659,10 +678,12 @@ export default function WalkingAwayPage() {
       </section>
 
       <footer className="rounded-lg border border-border/40 bg-muted/30 px-4 py-3 text-[11px] leading-relaxed text-muted-foreground">
-        Poem text is reproduced for the purpose of private study and educational criticism under UK
-        fair-dealing provisions (Copyright, Designs and Patents Act 1988, s.30). No commercial use
-        is intended. All quotations remain the intellectual property of the respective rights
-        holders.
+        <em>Walking Away</em> by C. Day-Lewis is in copyright, so this page does not print it. Each
+        line in the poem viewer is a paraphrase in our own words, and only short phrases are quoted,
+        for criticism and review under UK fair-dealing provisions (Copyright, Designs and Patents
+        Act 1988, s.30). The poem is printed in full in the AQA Love &amp; Relationships anthology:
+        read it there before quoting it in an exam. All quotations remain the intellectual property
+        of the rights holders.
       </footer>
     </div>
   )

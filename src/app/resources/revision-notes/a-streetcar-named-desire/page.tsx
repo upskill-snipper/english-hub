@@ -489,7 +489,7 @@ export default function StreetcarNamedDesirePage() {
               />
               <CharacterCard
                 name="Stella Kowalski"
-                description="Blanche's younger sister, in her mid-twenties, married to Stanley and pregnant throughout the play. Williams describes her as 'gentle' and of a 'background obviously quite different from her husband's.' She has chosen physical desire and working-class New Orleans over the dying gentility of Belle Reve, and frankly defends the sexual heart of her marriage: 'there are things that happen between a man and a woman in the dark that sort of make everything else seem &mdash; unimportant.' Critics divide on Stella: some see her as morally compromised for staying with Stanley after the rape; others see her as a realist who recognises that to believe Blanche would be to lose her child's father. Her final sobs and the crucial line 'I couldn't believe her story and go on living with Stanley' make her complicity central to the play's tragic vision."
+                description="Blanche's younger sister, in her mid-twenties, married to Stanley and pregnant throughout the play. Williams describes her as 'gentle' and of a 'background obviously quite different from her husband's.' She has chosen physical desire and working-class New Orleans over the dying gentility of Belle Reve, and frankly defends the sexual heart of her marriage: 'things that happen ... in the dark that sort of make everything else seem &mdash; unimportant.' Critics divide on Stella: some see her as morally compromised for staying with Stanley after the rape; others see her as a realist who recognises that to believe Blanche would be to lose her child's father. Her final sobs and the crucial line 'I couldn't believe her story and go on living with Stanley' make her complicity central to the play's tragic vision."
               />
               <CharacterCard
                 name="Stanley Kowalski"
@@ -501,7 +501,7 @@ export default function StreetcarNamedDesirePage() {
               />
               <CharacterCard
                 name="Eunice and Steve Hubbell"
-                description="The upstairs neighbours and the Kowalskis' landlords. Their noisy, reconciliatory marriage &mdash; comic violence followed by rapid forgiveness &mdash; functions as a working-class echo of Stella and Stanley's, normalising domestic conflict in the world of Elysian Fields. Eunice is generous and direct; she shelters Stella after Stanley beats her and ultimately delivers the play's bleak realist creed: 'Don't ever believe it. Life has got to go on. No matter what happens, you've got to keep on going.' Steve is one of the poker-playing men, anonymous within the male collective. Together the Hubbells dramatise the working-class community Blanche refuses to be assimilated into."
+                description="The upstairs neighbours and the Kowalskis' landlords. Their noisy, reconciliatory marriage &mdash; comic violence followed by rapid forgiveness &mdash; functions as a working-class echo of Stella and Stanley's, normalising domestic conflict in the world of Elysian Fields. Eunice is generous and direct; she shelters Stella after Stanley beats her and ultimately delivers the play's bleak realist creed: 'Don't ever believe it. Life has got to go on.' Steve is one of the poker-playing men, anonymous within the male collective. Together the Hubbells dramatise the working-class community Blanche refuses to be assimilated into."
               />
               <CharacterCard
                 name="Pablo Gonzales"
@@ -631,12 +631,11 @@ export default function StreetcarNamedDesirePage() {
                   Orleans. The Desire line ran along Royal and Bourbon Streets through the French
                   Quarter; the Cemeteries line, named for the cemeteries at its terminus,
                   intersected the city&apos;s graveyards. In the opening scene Blanche describes her
-                  route literally: &ldquo;They told me to take a streetcar named Desire, and then
-                  transfer to one called Cemeteries, and ride six blocks and get off at &mdash;
-                  Elysian Fields!&rdquo; The route is also an emblem of her life: from Desire,
-                  through Cemeteries (the parade of family deaths), to Elysian Fields (the
-                  underworld of the dead). Williams turns a literal map of the city into a symbolic
-                  map of her psyche.
+                  route literally: &ldquo;take a streetcar named Desire, and then transfer to one
+                  called Cemeteries, ... Elysian Fields!&rdquo; The route is also an emblem of her
+                  life: from Desire, through Cemeteries (the parade of family deaths), to Elysian
+                  Fields (the underworld of the dead). Williams turns a literal map of the city into
+                  a symbolic map of her psyche.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -666,9 +665,9 @@ export default function StreetcarNamedDesirePage() {
             </p>
             <div className="space-y-1">
               <QuoteCard
-                quote="They told me to take a streetcar named Desire, and then transfer to one called Cemeteries, and ride six blocks and get off at &mdash; Elysian Fields!"
+                quote="take a streetcar named Desire, and then transfer to one called Cemeteries, ... Elysian Fields!"
                 speaker="Blanche, Scene 1"
-                analysis="Blanche's opening account of her route into the play is also Williams's thesis statement. The three named stops &mdash; Desire, Cemeteries, Elysian Fields &mdash; form a symbolic itinerary from sexual desire, through death, to a Greek paradise of the dead. The dash before &lsquo;Elysian Fields&rsquo; is a typical Williams stage rhythm: a beat of disbelief. From the first scene the play tells us Blanche has ridden Desire to its terminus."
+                analysis="Blanche's opening account of her route into the play is also Williams's thesis statement. The three named stops &mdash; Desire, Cemeteries, Elysian Fields &mdash; form a symbolic itinerary from sexual desire, through death, to a Greek paradise of the dead. In the full line, the dash before &lsquo;Elysian Fields&rsquo; is a typical Williams stage rhythm: a beat of disbelief. From the first scene the play tells us Blanche has ridden Desire to its terminus."
               />
               <QuoteCard
                 quote="I have always depended on the kindness of strangers."
@@ -681,9 +680,9 @@ export default function StreetcarNamedDesirePage() {
                 analysis="The famous bellowing cry from the street after Stanley has beaten Stella. The primal, animal call &mdash; reduced to her name &mdash; expresses both his violence and his erotic dependence. Stella's descent of the staircase to him stages the inseparability of desire and abuse in their marriage. Brando's 1947 delivery made the line one of the most quoted in American drama."
               />
               <QuoteCard
-                quote="I don't want realism. I want magic! Yes, yes, magic! I try to give that to people. I misrepresent things to them. I don't tell truth, I tell what ought to be truth."
+                quote="I don't want realism. I want magic! ... I tell what ought to be truth."
                 speaker="Blanche, Scene 9"
-                analysis="Blanche's defence of illusion to Mitch after he has torn the lantern from the bulb. The exclamatory tricolon (&lsquo;magic! Yes, yes, magic!&rsquo;) and the careful distinction between &lsquo;truth&rsquo; and &lsquo;what ought to be truth&rsquo; show Williams's sympathy for the lie as a form of moral creativity. Williams refuses to side simply with Stanley's &lsquo;truth&rsquo; against Blanche's &lsquo;magic.&rsquo;"
+                analysis="Blanche's defence of illusion to Mitch after he has torn the lantern from the bulb. In the full speech, the exclamatory tricolon (&lsquo;magic! Yes, yes, magic!&rsquo;) and the careful distinction between &lsquo;truth&rsquo; and &lsquo;what ought to be truth&rsquo; show Williams's sympathy for the lie as a form of moral creativity. Williams refuses to side simply with Stanley's &lsquo;truth&rsquo; against Blanche's &lsquo;magic.&rsquo;"
               />
               <QuoteCard
                 quote="The opposite is desire."
@@ -691,17 +690,17 @@ export default function StreetcarNamedDesirePage() {
                 analysis="Blanche replies to Mitch's mention of death with this stark counter. The line crystallises the play's structuring opposition: against the long parade of family deaths at Belle Reve, the only force she has known to set against mortality is sexual desire &mdash; which is also what has destroyed her. The line stands as the play's explicit philosophical statement."
               />
               <QuoteCard
-                quote="He acts like an animal, has an animal's habits! Eats like one, moves like one, talks like one!"
+                quote="He acts like an animal, ... Eats like one, moves like one, talks like one!"
                 speaker="Blanche, Scene 4"
                 analysis="Blanche's denunciation of Stanley to Stella, overheard by him. The repetitive parallelism (&lsquo;eats... moves... talks&rsquo;) reduces Stanley to bestial functions. The speech is laced with class disgust &mdash; Stanley as the &lsquo;survivor of the stone age&rsquo; &mdash; and provokes his vendetta. Williams ironises Blanche: her revulsion is rooted in Old-South snobbery, but the audience is asked to weigh that against the genuine danger Stanley poses."
               />
               <QuoteCard
-                quote="Maybe we are a long way from being made in God's image, but Stella &mdash; my sister &mdash; there has been some progress since then!"
+                quote="a long way from being made in God's image, ... some progress since then!"
                 speaker="Blanche, Scene 4"
                 analysis="Within the &lsquo;ape&rsquo; speech. The reference to the human as &lsquo;made in God's image&rsquo; situates the quarrel in a Christian-classical frame Blanche shares with the dying gentility of the Old South. &lsquo;Some progress&rsquo; is dryly understated; the implication is that Stanley represents a regression from civilisation. Williams gives Blanche a moralist's vocabulary even at her most snobbish."
               />
               <QuoteCard
-                quote="There are things that happen between a man and a woman in the dark that sort of make everything else seem &mdash; unimportant."
+                quote="things that happen ... in the dark that sort of make everything else seem &mdash; unimportant."
                 speaker="Stella, Scene 4"
                 analysis="Stella's defence of her marriage. The euphemistic &lsquo;things that happen... in the dark&rsquo; refuses to specify but plainly invokes sex. The dash before &lsquo;unimportant&rsquo; is Williams's favourite mark for a half-acknowledged truth. Stella articulates the play's theme of desire as an obliterating force; everything else &mdash; abuse, class, decency &mdash; is rendered &lsquo;unimportant&rsquo; by it."
               />
@@ -726,12 +725,12 @@ export default function StreetcarNamedDesirePage() {
                 analysis="Stella's explanation to Eunice for committing Blanche to the asylum. The grammar is exact: not &lsquo;I don't believe&rsquo; but &lsquo;I couldn't believe.&rsquo; She admits the disbelief is a chosen necessity, not a verdict. Williams puts the play's moral burden on the spectator: Stella's complicity is conscious. The line implicates wider patriarchal structures in which women survive by refusing other women's testimony."
               />
               <QuoteCard
-                quote="Don't ever believe it. Life has got to go on. No matter what happens, you've got to keep on going."
+                quote="Don't ever believe it. Life has got to go on."
                 speaker="Eunice, Scene 11"
                 analysis="Eunice's consolation to Stella. The unsentimental working-class realism stands as the play's alternative ethic to Blanche's &lsquo;magic.&rsquo; Williams places it deliberately just before the asylum scene: it both supports Stella's decision and indicts it. &lsquo;Don't ever believe it&rsquo; is a chilling injunction to refuse a woman's testimony in order to keep the household intact."
               />
               <QuoteCard
-                quote="I can't stand a naked light bulb, any more than I can a rude remark or a vulgar action."
+                quote="I can't stand a naked light bulb, ... a rude remark or a vulgar action."
                 speaker="Blanche, Scene 3"
                 analysis="Blanche to Mitch as she covers the bulb with the paper lantern. The triple equation &mdash; bulb, rude remark, vulgar action &mdash; collapses literal and moral exposure. The bare bulb is rude; rudeness is a kind of bare bulb. Williams gives Blanche an aesthetic creed in a sentence: she requires soft light, soft speech, soft handling, and the world of Elysian Fields will deny her all three."
               />
@@ -763,12 +762,12 @@ export default function StreetcarNamedDesirePage() {
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The Chinese paper lantern Blanche places over the naked light bulb in Scene 3 is
                   the play&apos;s defining domestic symbol. She tells Mitch &ldquo;I can&apos;t
-                  stand a naked light bulb, any more than I can a rude remark or a vulgar
-                  action.&rdquo; The lantern is a metonym for her whole project of illusion: it
-                  softens harsh light, hides her ageing face, and spares her her own past. When
-                  Mitch tears it from the bulb in Scene 9 the literal destruction enacts her
-                  psychological unmasking. Stanley likewise rips it off and shoves it at her in the
-                  play&apos;s dying minutes, completing the symbolic violence.
+                  stand a naked light bulb, ... a rude remark or a vulgar action.&rdquo; The lantern
+                  is a metonym for her whole project of illusion: it softens harsh light, hides her
+                  ageing face, and spares her her own past. When Mitch tears it from the bulb in
+                  Scene 9 the literal destruction enacts her psychological unmasking. Stanley
+                  likewise rips it off and shoves it at her in the play&apos;s dying minutes,
+                  completing the symbolic violence.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -803,13 +802,12 @@ export default function StreetcarNamedDesirePage() {
                 <h4 className="font-bold text-foreground">{tr(`Blanche&apos;s Costumes`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Williams describes Blanche&apos;s costumes with care. She enters in a &lsquo;white
-                  suit with a fluffy bodice, necklace and earrings of pearl, white gloves and
-                  hat,&rsquo; an ensemble that recalls a wedding outfit and underlines the moth
-                  motif. She owns rhinestones that Stanley mistakes for diamonds, a soiled satin
-                  gown, a tiara. The trunk-full of furs and costume jewellery, ransacked by Stanley
-                  in Scene 2, is a metonym for the whole Old-South performance Blanche puts on. By
-                  Scene 10 the white satin is &lsquo;crumpled&rsquo;: the costume has lost its power
-                  to deceive even herself.
+                  suit with a fluffy bodice, necklace and earrings of pearl,&rsquo; an ensemble that
+                  recalls a wedding outfit and underlines the moth motif. She owns rhinestones that
+                  Stanley mistakes for diamonds, a soiled satin gown, a tiara. The trunk-full of
+                  furs and costume jewellery, ransacked by Stanley in Scene 2, is a metonym for the
+                  whole Old-South performance Blanche puts on. By Scene 10 the white satin is
+                  &lsquo;crumpled&rsquo;: the costume has lost its power to deceive even herself.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">

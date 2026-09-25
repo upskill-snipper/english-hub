@@ -69,8 +69,7 @@ const essayPlans = [
     paragraphs: [
       {
         point: 'Crooks\u2019s segregated room dramatises loneliness as racial exclusion.',
-        evidence:
-          '"A guy needs somebody \u2014 to be near him. A guy goes nuts if he ain\u2019t got nobody."',
+        evidence: '"A guy needs somebody ... A guy goes nuts if he ain\u2019t got nobody."',
         explanation:
           'Crooks diagnoses loneliness as a pathology, not merely a feeling. His medical language ("goes nuts") elevates loneliness from mood to illness. His isolated room is a physical manifestation of Jim Crow segregation.',
         link: 'Context: Steinbeck wrote during the Depression when Black workers faced double marginalisation \u2014 economic precarity and racial segregation.',
@@ -134,7 +133,7 @@ const essayPlans = [
       {
         point:
           'The dream speech is a ritual that maintains the relationship through shared language.',
-        evidence: '"I got you to look after me, and you got me to look after you."',
+        evidence: '"I got you to look after me, ... you got me to look after you."',
         explanation:
           'Lennie\u2019s echo of George\u2019s words creates the illusion of reciprocity. In practice, the care flows one way \u2014 but the ritual itself is the relationship\u2019s sustaining mechanism.',
         link: 'Slim\u2019s observation "Ain\u2019t many guys travel around together" marks this friendship as exceptional in a world of isolation.',

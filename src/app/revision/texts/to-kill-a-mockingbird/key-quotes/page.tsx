@@ -44,7 +44,7 @@ type KeyQuote = {
 const KEY_QUOTES: KeyQuote[] = [
   {
     id: 1,
-    text: '"You never really understand a person until you consider things from his point of view."',
+    text: '"You never ... understand a person until you consider things from his point of view."',
     speaker: 'Atticus',
     context: 'Chapter 3 - to Scout',
     analysis:
@@ -62,7 +62,7 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     id: 3,
-    text: '"Simply because we were licked a hundred years before we started is no reason not to try."',
+    text: '"Simply because we were licked a hundred years ... is no reason not to try."',
     speaker: 'Atticus',
     context: 'Chapter 9 - on defending Tom Robinson',
     analysis:
@@ -233,11 +233,11 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     id: 22,
-    text: '"Shoot all the bluejays you want, if you can hit \'em, but remember it\'s a sin to kill a mockingbird."',
+    text: '"Shoot all the bluejays you want, ... remember it\'s a sin to kill a mockingbird."',
     speaker: 'Atticus',
     context: 'Chapter 10',
     analysis:
-      "The full statement of the novel's central metaphor. Lee distinguishes between those who cause harm (bluejays) and those who are harmless (mockingbirds), making protection of innocence a moral imperative.",
+      "From the full statement of the novel's central metaphor. Lee distinguishes between those who cause harm (bluejays) and those who are harmless (mockingbirds), making protection of innocence a moral imperative.",
     themes: ['Innocence', 'Moral education'],
   },
   {
@@ -251,7 +251,7 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     id: 24,
-    text: '"Atticus was right. One time he said you never really know a man until you stand in his shoes."',
+    text: '"Atticus was right. ... never really know a man until you stand in his shoes."',
     speaker: 'Scout',
     context: "Chapter 31 - on Boo's porch",
     analysis:

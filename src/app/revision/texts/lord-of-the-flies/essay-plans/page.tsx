@@ -152,7 +152,7 @@ const ESSAY_PLANS: EssayPlan[] = [
       {
         point: 'The gradual erosion of civilised behaviour',
         evidence:
-          '"Roger gathered a handful of stones and began to throw them at Henry, throwing to miss." \u2014 Chapter 4.',
+          '"Roger gathered a handful of stones ... Henry, throwing to miss." \u2014 Chapter 4.',
         analysis:
           'Roger\u2019s stone-throwing is Golding\u2019s most precise image of civilisation\u2019s fragility. Roger wants to hurt Henry but is restrained by "the taboo of the old life." This taboo is not innate \u2014 it is a memory of adult authority that weakens over time. By Chapter 11, Roger drops the boulder on Piggy without hesitation. Golding charts the distance between throwing to miss and killing to show that civilisation is a habit, not an instinct.',
       },
@@ -214,17 +214,15 @@ const ESSAY_PLANS: EssayPlan[] = [
     paragraphs: [
       {
         point: 'The naval officer as false rescuer',
-        evidence:
-          '"A naval officer stood on the sand, looking down at Ralph in wary ceremonial surprise."',
+        evidence: '"stood on the sand, looking down at Ralph in wary ceremonial surprise."',
         analysis:
           '"Ceremonial" reveals the officer as a representative of the same civilised order the boys have destroyed. But he is part of a warship \u2014 an instrument of war. Golding\u2019s irony is precise: the "rescuer" is engaged in the same violence, only with better technology. The officer represents not the triumph of civilisation but its hypocrisy.',
       },
       {
         point: 'The Coral Island reference and the failure of Victorian optimism',
-        evidence:
-          '"I should have thought that a pack of British boys would have been able to put up a better show than that."',
+        evidence: '"I should have thought that a pack of British boys ... better show than that."',
         analysis:
-          'The officer\u2019s expectation that British boys should behave better is a direct quotation of Victorian colonial confidence \u2014 the same confidence Ballantyne\u2019s Coral Island embodies. Golding has spent twelve chapters demolishing this assumption. The officer\u2019s inability to finish his sentence shows that reality has outstripped his framework. He does not understand what has happened because his worldview cannot accommodate it.',
+          'The officer\u2019s expectation that British boys should behave better is a direct quotation of Victorian colonial confidence \u2014 the same confidence Ballantyne\u2019s Coral Island embodies. Golding has spent twelve chapters demolishing this assumption. In the full passage, the officer\u2019s inability to finish his sentence shows that reality has outstripped his framework. He does not understand what has happened because his worldview cannot accommodate it.',
       },
       {
         point: 'Ralph\u2019s weeping: the recognition of universal darkness',

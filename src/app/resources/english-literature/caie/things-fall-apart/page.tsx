@@ -93,13 +93,12 @@ const partSummaries = [
           "One of many Igbo proverbs Achebe weaves into the narrative, demonstrating the linguistic sophistication of Igbo culture. Proverbs function as communal wisdom, carrying the authority of generations. Achebe's use of them in English challenges the colonial assumption that African languages and thought systems are 'primitive'.",
       },
       {
-        quote:
-          'The world has no end, and what is good among one people is an abomination with others.',
+        quote: 'what is good among one people is an abomination with others.',
         analysis:
           "Spoken by Uchendu, this proverb articulates a philosophy of cultural relativism that directly counters colonial absolutism. It acknowledges that moral systems are culturally specific, anticipating the novel's later critique of missionaries who impose a single moral framework on diverse societies.",
       },
       {
-        quote: 'He had no patience with unsuccessful men. He had had no patience with his father.',
+        quote: 'He had no patience with unsuccessful men. ... had had no patience with his father.',
         analysis:
           "The repetition with variation (past tense shifting to past perfect) compresses Okonkwo's entire psychology into two sentences. Achebe shows how Okonkwo's general intolerance is rooted in a specific personal trauma - his shame about Unoka. The technique is characteristic of Achebe's economical, precise prose.",
       },
@@ -138,25 +137,22 @@ const partSummaries = [
       "Okonkwo returns to a transformed Umuofia. The church, the colonial government, and the trading store have reshaped the community. The clan's authority has been undermined: the District Commissioner's court now settles disputes, and converts no longer fear traditional sanctions. The moderate Mr Brown has been replaced by the zealous Reverend Smith, whose intolerance provokes conflict. When the convert Enoch unmasks an egwugwu (a grave sacrilege), the clan retaliates by burning the church. The District Commissioner lures the clan's leaders into a meeting and imprisons them, demanding a fine. Upon release, Okonkwo kills a colonial messenger at a clan meeting, but when the community does not rally behind him, he hangs himself. The novel ends with the District Commissioner reducing Okonkwo's story to a footnote in his planned book, The Pacification of the Primitive Tribes of the Lower Niger.",
     keyQuotes: [
       {
-        quote: 'He has put a knife on the things that held us together and we have fallen apart.',
+        quote: 'He has put a knife on the things that held us together ... fallen apart.',
         analysis:
-          "Obierika's diagnosis of colonialism's impact, and the source of the novel's title. The metaphor of the knife implies deliberate, surgical violence - colonialism does not simply arrive but actively severs communal bonds. 'The things that held us together' refers to shared customs, beliefs, and governance structures. The first-person plural 'us' and 'we' emphasises communal loss. This single sentence encapsulates the novel's central argument.",
+          "Obierika's diagnosis of colonialism's impact, and the source of the novel's title. The metaphor of the knife implies deliberate, surgical violence - colonialism does not simply arrive but actively severs communal bonds. 'The things that held us together' refers to shared customs, beliefs, and governance structures. The first-person plural 'us' (and 'we', in the full sentence) emphasises communal loss. This single sentence encapsulates the novel's central argument.",
       },
       {
-        quote:
-          'The clan was like a lizard that fell from the iroko tree - it did not know what to do next.',
+        quote: 'The clan was like a lizard that fell from the iroko tree',
         analysis:
-          "A characteristically Igbo simile that conveys the community's paralysis in the face of colonial power. The iroko tree is sacred in Igbo culture, and the lizard's fall from it symbolises the community's dislocation from its spiritual and cultural foundations. Achebe's use of Igbo imagery to describe colonial trauma keeps the narrative rooted in the culture it depicts.",
+          "A characteristically Igbo simile that, in the full sentence, conveys the community's paralysis in the face of colonial power. The iroko tree is sacred in Igbo culture, and the lizard's fall from it symbolises the community's dislocation from its spiritual and cultural foundations. Achebe's use of Igbo imagery to describe colonial trauma keeps the narrative rooted in the culture it depicts.",
       },
       {
-        quote:
-          'The Commissioner went away, taking three or four of the soldiers with him. In the many years in which he had toiled to bring civilisation to different parts of Africa he had learnt a number of things.',
+        quote: 'he had toiled to bring civilisation to different parts of Africa',
         analysis:
           "Achebe's narration becomes coldly ironic here. The word 'civilisation' is laden with sarcasm - the Commissioner has just driven a man to suicide and shown no understanding of the culture he has destroyed. 'Toiled' implies self-congratulatory effort, oblivious to the devastation he has caused. The Commissioner's detachment is the final indictment of colonialism's moral blindness.",
       },
       {
-        quote:
-          'The story of this man who had killed a messenger and hanged himself would make interesting reading. One could almost write a whole chapter on him. Perhaps not a whole chapter but a reasonable paragraph.',
+        quote: 'One could almost write a whole chapter on him. ... but a reasonable paragraph.',
         analysis:
           "The novel's devastating final irony. A complex, dignified life is reduced from a chapter to a paragraph in a colonial administrator's book. Achebe inverts this erasure: Things Fall Apart is the full story that the Commissioner would never tell. The diminishing scale (chapter to paragraph) dramatises how colonial narratives dehumanise and diminish African lives. The very existence of Achebe's novel is a rebuttal.",
       },
@@ -173,7 +169,7 @@ const narrativeTechniques = [
   {
     name: 'Igbo Proverbs & Language',
     detail:
-      "Proverbs are central to Achebe's narrative style. As the narrator states, 'Among the Igbo, the art of conversation is regarded very highly, and proverbs are the palm-oil with which words are eaten.' By embedding Igbo proverbs, folktales, and vocabulary (chi, egwugwu, obi, osu) into an English-language novel, Achebe creates a distinctively African literary voice. This technique serves a political purpose: it demonstrates the intellectual richness of Igbo culture and challenges the colonial claim that African languages and thought are unsophisticated. The proverbs also function structurally, conveying communal wisdom that often foreshadows or comments on the action.",
+      "Proverbs are central to Achebe's narrative style. As the narrator states, 'the art of conversation ... proverbs are the palm-oil with which words are eaten.' By embedding Igbo proverbs, folktales, and vocabulary (chi, egwugwu, obi, osu) into an English-language novel, Achebe creates a distinctively African literary voice. This technique serves a political purpose: it demonstrates the intellectual richness of Igbo culture and challenges the colonial claim that African languages and thought are unsophisticated. The proverbs also function structurally, conveying communal wisdom that often foreshadows or comments on the action.",
   },
   {
     name: 'Oral Tradition Style',
