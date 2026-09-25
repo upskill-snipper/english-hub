@@ -190,10 +190,16 @@ describe('what the suite runs in', () => {
     // Then to 21 for one-h1-per-page.test.tsx, which asserts the heading LEVEL
     // a component renders at. That depends on a prop its caller passes, so the
     // element has to exist to be inspected.
+    //
+    // Then to 22 on 25 September 2026 for button-links-are-links.test.tsx. What
+    // it guards is what Base UI's Button actually puts on the element (type,
+    // tabindex, role) and whether Base UI logs its warning, both of which exist
+    // only once the component has rendered; the source text of 1,064 call sites
+    // was identical before and after the fix.
     expect(
       annotated.length,
       'more files now claim to need a DOM - check each one',
-    ).toBeLessThanOrEqual(21)
+    ).toBeLessThanOrEqual(22)
   })
 })
 

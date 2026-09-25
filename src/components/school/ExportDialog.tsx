@@ -54,7 +54,12 @@ interface ExportDialogProps {
   targetGrades?: Map<string, string>
   /** Class ID for attendance exports */
   classId?: string
-  /** Custom trigger element */
+  /**
+   * Custom trigger CONTENT: it is rendered inside the dialog's <button>, so it
+   * must not itself be a button or a link. It used to be wrapped in a <span>,
+   * which Base UI's Dialog.Trigger cannot make keyboard-operable: focusable,
+   * announced as nothing, and dead to Enter and Space.
+   */
   trigger?: React.ReactNode
   className?: string
 }
@@ -188,7 +193,9 @@ export function ExportDialog({
       <DialogTrigger
         render={
           trigger ? (
-            <span className={className}>{trigger}</span>
+            <button type="button" className={className}>
+              {trigger}
+            </button>
           ) : (
             <Button variant="outline" size="sm" className={className}>
               <Download className="size-4" data-icon="inline-start" />
