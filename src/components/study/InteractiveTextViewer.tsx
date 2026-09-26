@@ -792,6 +792,14 @@ function InteractiveTextViewer({
 
   const contentRef = useRef<HTMLDivElement>(null)
   const sectionRefs = useRef<Map<string, HTMLElement>>(new Map())
+  /**
+   * True while the reader itself is scrolling to a section. A section counts as
+   * read when its end scrolls into view, so a jump from the contents, or a
+   * chapter guide's deep link, swept every chapter before the target into view
+   * and ticked them all as read (found 26 September 2026: opening Chapter VII
+   * marked II to VI complete).
+   */
+  const jumping = useRef(false)
 
   /** Which overlay types this text has any annotation for. */
   const availableOverlays = useMemo(
@@ -853,15 +861,22 @@ function InteractiveTextViewer({
     if (!container) return
 
     function handleScroll() {
-      if (!container) return
+      if (!container || jumping.current) return
 
       // Check each section's scroll position
       sectionRefs.current.forEach((el, sectionId) => {
         const rect = el.getBoundingClientRect()
         const containerRect = container!.getBoundingClientRect()
 
-        // Section is considered "read" when bottom is visible (within 100px of container bottom)
-        if (rect.bottom <= containerRect.bottom + 100 && rect.top < containerRect.bottom) {
+        // Section is considered "read" when its end is visible: within 100px of
+        // the container's bottom and not already scrolled away above its top.
+        // Without the second half, every section above the view counted, so any
+        // jump down the text ticked everything it passed.
+        if (
+          rect.bottom <= containerRect.bottom + 100 &&
+          rect.bottom >= containerRect.top &&
+          rect.top < containerRect.bottom
+        ) {
           setCompletedSections((prev) => {
             if (prev.has(sectionId)) return prev
             const next = new Set(prev)
@@ -881,9 +896,33 @@ function InteractiveTextViewer({
     setActiveSectionId(sectionId)
     const el = sectionRefs.current.get(sectionId)
     if (el && contentRef.current) {
+      // Nothing passed on the way counts as read (see `jumping`). The flag
+      // clears when the reader's own scroll box stops (not the window's, which
+      // settles first), or after 1.5 seconds where scrollend is unsupported or
+      // the box did not need to move.
+      const box = contentRef.current
+      jumping.current = true
+      const done = () => {
+        jumping.current = false
+        box.removeEventListener('scrollend', done)
+      }
+      box.addEventListener('scrollend', done, { once: true })
+      window.setTimeout(done, 1500)
       el.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
   }, [])
+
+  // A chapter guide's "Read this chapter in full" links to ?section=section-5.
+  // Read after mount, so the server render and the first client render agree,
+  // and only a section that exists overrides where the reader last left off. It
+  // navigates as a click in the contents does: setting the active section alone
+  // highlighted Chapter VII in the contents while the text still showed Chapter I.
+  useEffect(() => {
+    const wanted = new URLSearchParams(window.location.search).get('section')
+    if (!wanted || !data.sections.some((s) => s.id === wanted)) return
+    const frame = requestAnimationFrame(() => navigateToSection(wanted))
+    return () => cancelAnimationFrame(frame)
+  }, [data.sections, navigateToSection])
 
   // ── Overlay toggle ───────────────────────────────────────────────────────
   const toggleOverlay = useCallback((type: OverlayType) => {

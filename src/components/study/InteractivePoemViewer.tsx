@@ -85,6 +85,22 @@ export interface PoemData {
   formAndStructureAr?: string
 }
 
+/**
+ * Whether a line of the poem is (part of) a key quotation, for the Quotes
+ * overlay. A stanza break is never one. Until 26 September 2026 this compared
+ * each quotation with the line's trimmed text, and a stanza break trims to "",
+ * which every string contains, so opening the Quotes tab highlighted every
+ * blank row on every poem page as a quotation.
+ */
+export function isQuoteLine(lineText: string | undefined, quotes: readonly KeyQuote[]): boolean {
+  const text = (lineText ?? '').trim()
+  if (!text) return false
+  return quotes.some((q) => {
+    const quote = q.quote.trim()
+    return quote !== '' && (text.includes(quote) || quote.includes(text))
+  })
+}
+
 /* ── Analysis panel types ───────────────────────────────────────── */
 
 type AnalysisTab = 'context' | 'summary' | 'form' | 'quotes' | 'language'
@@ -349,12 +365,8 @@ export function InteractivePoemViewer({ poem }: { poem: PoemData }) {
       const classes: string[] = []
 
       if (activeTabs.has('quotes')) {
-        const isQuoteLine = poem.keyQuotes.some(
-          (q) =>
-            poem.lines[lineIndex]?.text.includes(q.quote) ||
-            q.quote.includes(poem.lines[lineIndex]?.text?.trim()),
-        )
-        if (isQuoteLine) classes.push('bg-amber-500/15')
+        if (isQuoteLine(poem.lines[lineIndex]?.text, poem.keyQuotes))
+          classes.push('bg-amber-500/15')
       }
 
       if (activeTabs.has('language')) {
