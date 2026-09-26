@@ -981,6 +981,21 @@ describe('the measure itself', () => {
     expect(b?.poems.map((p) => p.title)).toEqual(['Exposure'])
   })
 
+  it("reads a guide's section paths as routes, and its quotations as quotations", () => {
+    // A study guide's `native` map is keyed by section name, keyQuotes among
+    // them, and its values are paths. Until 26 September 2026 each path was
+    // measured as words of the poem.
+    const src = [
+      'export const guide = {',
+      "  native: { keyQuotes: '/resources/revision-notes/the-door' },",
+      "  keyQuotes: ['alpha bravo charlie'],",
+      '}',
+    ].join('\n')
+    expect(scanSource('guide.ts', src, POEM_FIELDS).map((q) => q.text)).toEqual([
+      'alpha bravo charlie',
+    ])
+  })
+
   it('does not know a poet it has not been told about', () => {
     expect(canonicalPoet('A. Nonymous Versifier')).toBeUndefined()
     expect(canonicalPoet('Lord Byron (1816)')).toBe('Lord Byron')

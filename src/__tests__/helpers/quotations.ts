@@ -367,7 +367,14 @@ export function scanSource(
       // Its share of the poem is measured by
       // no-copyrighted-poem-printed-whole.test.ts, which counts every verbatim
       // word left in a PoemData lines array.
-      !/^\[Paraphrase\]/i.test(t)
+      !/^\[Paraphrase\]/i.test(t) &&
+      // "/resources/revision-notes/the-door" is a route. A study guide's
+      // `native` map names each section the page already teaches (keyQuotes
+      // among them) and gives the path that teaches it, so the field name
+      // matched. Until 26 September 2026 each path was measured as words
+      // taken from the poem: The Door's route quoted 18 distinct words against
+      // a share of 20 and was reported as 21.
+      !/^\/[a-z0-9/-]*$/.test(t)
     if (wholeField) push(u, 0, u.text.length)
     for (const [a, b] of doubleSpans(u.text)) push(u, a, b)
     for (const [a, b] of singleSpans(u.text)) push(u, a, b)
