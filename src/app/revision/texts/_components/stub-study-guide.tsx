@@ -88,10 +88,11 @@ export async function StubStudyGuide({ text, backHref = '/revision/texts', backL
   // When Greek Meets Greek, which no specification we cover prescribes, each
   // told students they were on 4EA1. They now follow set-texts.ts.
   const onLangA = text.boards.includes('edexcel-igcse-lang')
-  // The labels for these three categories all say "Anthology", which is true
-  // only of a text some board sets in one.
-  const anthologyLabel = ['prose', 'non-fiction', 'poetry-anthology'].includes(text.category)
-  const showCategory = !anthologyLabel || text.boards.length > 0
+  // The non-fiction label says "Anthology", which is true only of a text some
+  // board sets in one. The prose and poetry labels said so too until
+  // 26 September 2026 and now say only "Prose" and "Poetry", which is true of
+  // every text they label.
+  const showCategory = text.category !== 'non-fiction' || text.boards.length > 0
 
   return (
     <div className="space-y-10 pb-16">

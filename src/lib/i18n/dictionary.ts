@@ -20272,10 +20272,16 @@ export const DICTIONARY: Dictionary = {
     es: 'Novela del siglo XIX',
   },
   'analysis.deep.set_text.cat.modern': { en: 'Modern Text', ar: 'نص حديث', es: 'Texto moderno' },
+  // "Poetry Anthology" and "Anthology Prose" until 26 September 2026. Both were
+  // false for some of the texts they labelled: The Waste Land, Refugee Blues
+  // and The Door are in no anthology, and nor are four of the nine prose texts
+  // (The Pedestrian, The Yellow Wallpaper, When Greek Meets Greek, The Man Who
+  // Loved Flowers). The labels now say what the texts are. The non-fiction
+  // label keeps "Anthology" because all ten are in the 4EA1 anthology.
   'analysis.deep.set_text.cat.poetry_anthology': {
-    en: 'Poetry Anthology',
-    ar: 'أنثولوجي الشعر',
-    es: 'Antología de poesía',
+    en: 'Poetry',
+    ar: 'شعر',
+    es: 'Poesía',
   },
   'analysis.deep.set_text.cat.non_fiction': {
     en: 'Non-Fiction Anthology',
@@ -20283,9 +20289,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Antología de no ficción',
   },
   'analysis.deep.set_text.cat.prose': {
-    en: 'Anthology Prose',
-    ar: 'نثر الأنثولوجي',
-    es: 'Prosa de la antología',
+    en: 'Prose',
+    ar: 'نثر',
+    es: 'Prosa',
   },
   'analysis.deep.set_text.resources_h2': {
     en: 'Study Resources',

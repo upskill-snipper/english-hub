@@ -68,8 +68,10 @@ const CATEGORIES: {
   },
   {
     key: 'poetry-anthology',
-    label: 'Poetry Anthology',
-    description: 'Anthology poems studied for the poetry component',
+    // "Poetry Anthology" until 26 September 2026: The Waste Land, Refugee Blues
+    // and The Door are in no anthology.
+    label: 'Poetry',
+    description: 'Poems studied for the poetry component, most of them from an anthology',
     icon: BookOpen,
     colour: 'text-blue-400',
     bgColour: 'bg-blue-500/10',
@@ -85,8 +87,13 @@ const CATEGORIES: {
   },
   {
     key: 'prose',
-    label: 'Anthology Prose',
-    description: 'Short stories from the Pearson IGCSE Language A anthology Section C',
+    // "Anthology Prose" and "Short stories from the Pearson IGCSE Language A
+    // anthology Section C" until 26 September 2026. The anthology has no
+    // Section C, four of these texts are in no anthology, and Significant
+    // Cigarettes is the opening of a novel.
+    label: 'Prose',
+    description:
+      'Short stories and prose extracts, most of them from the Pearson IGCSE Language A anthology',
     icon: Feather,
     colour: 'text-rose-400',
     bgColour: 'bg-rose-500/10',
