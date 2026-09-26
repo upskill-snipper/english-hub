@@ -77,6 +77,65 @@ export const TEXT_NAV_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Abrir la guía de estudio',
   },
 
+  // ── Text search: "I know my text, take me to it" (26 September 2026) ──────
+  //
+  // On the homepage above the course picker, and on the set-text index. The
+  // titles, authors and anthology names in the results stay in English, like
+  // the rest of the literary content.
+  'search.texts.heading': {
+    en: 'Get right to it',
+    ar: 'روح لنصك على طول',
+    es: 'Ve directo al grano',
+  },
+  'search.texts.sub': {
+    en: 'Know which text you are studying? Search for it and go straight to its guide.',
+    ar: 'تعرف أي نص تدرسه؟ دوّر عليه وروح لدليله على طول.',
+    es: '¿Sabes qué texto estás estudiando? Búscalo y ve directo a su guía.',
+  },
+  'search.texts.label': {
+    en: 'Search set texts and poems',
+    ar: 'دوّر في النصوص المقررة والقصائد',
+    es: 'Buscar textos y poemas',
+  },
+  'search.texts.placeholder': {
+    en: 'Search a text, poem or author',
+    ar: 'دوّر على نص أو قصيدة أو كاتب',
+    es: 'Busca un texto, un poema o un autor',
+  },
+  'search.texts.examples': {
+    en: 'For example: Macbeth, Ozymandias, Priestley',
+    ar: 'مثلاً: Macbeth، Ozymandias، Priestley',
+    es: 'Por ejemplo: Macbeth, Ozymandias, Priestley',
+  },
+  'search.texts.none': {
+    en: 'No set text or poem matches that.',
+    ar: 'ما في نص مقرر أو قصيدة تطابق بحثك.',
+    es: 'Ningún texto ni poema coincide con eso.',
+  },
+  'search.texts.none_hint': {
+    en: "Try the author's surname, or",
+    ar: 'جرّب اسم عائلة الكاتب، أو',
+    es: 'Prueba con el apellido del autor, o',
+  },
+  'search.texts.browse_all': {
+    en: 'browse every set text',
+    ar: 'تصفح كل النصوص المقررة',
+    es: 'explora todos los textos',
+  },
+  'search.texts.count_one': { en: '1 result', ar: 'نتيجة وحدة', es: '1 resultado' },
+  'search.texts.count_other': { en: '{n} results', ar: '{n} نتيجة', es: '{n} resultados' },
+  'search.texts.more': {
+    en: 'Showing {shown} of {n}. Keep typing to narrow it down.',
+    ar: 'نعرض {shown} من {n}. كمّل كتابة عشان تضيّق البحث.',
+    es: 'Mostrando {shown} de {n}. Sigue escribiendo para afinar.',
+  },
+  'search.texts.go': { en: 'Go to the guide', ar: 'روح للدليل', es: 'Ir a la guía' },
+  'search.texts.or_course': {
+    en: 'Or start with your course',
+    ar: 'أو ابدأ من مسارك',
+    es: 'O empieza por tu curso',
+  },
+
   // ── The board shelf: /set-texts/<board> ─────────────────────────────────
   //
   // The page a student reaches straight after choosing their board. It lists

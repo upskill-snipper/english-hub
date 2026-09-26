@@ -27,6 +27,7 @@ import { Card } from '@/components/ui/card'
 import { BenefitGrid } from '@/components/schools/BenefitCard'
 import { DemoShowcase } from '@/components/schools/DemoShowcase'
 import { FeatureGrid } from '@/components/schools/FeatureGrid'
+import { TextSearchBox } from '@/components/search/text-search-box'
 import { PRICING_DISPLAY } from '@/constants/pricing'
 import { t } from '@/lib/i18n/t'
 
@@ -282,6 +283,10 @@ async function HomeHero() {
   const heroSubtitle = await t('home.lp.subtitle')
   const ctaPilot = await t('home.lp.cta_pilot')
   const specNote = await t('home.lp.spec_note')
+  const searchHeading = await t('search.texts.heading')
+  const searchSub = await t('search.texts.sub')
+  const searchExamples = await t('search.texts.examples')
+  const orCourse = await t('search.texts.or_course')
 
   // GCSE / IGCSE board pickers - clicking a board sets the board cookie via
   // the middleware, then lands the visitor on the real revision hub filtered
@@ -344,12 +349,30 @@ async function HomeHero() {
           {heroSubtitle}
         </p>
 
+        {/* Get right to it: the text search (26 September 2026, founder ask).
+            A student who already knows their text should not have to choose a
+            track, then a board, then find it on a shelf. It sits above the
+            course picker because it is the shorter path; the picker stays for
+            everyone who does not know where to start. */}
+        <div className="mx-auto mt-10 max-w-xl">
+          <h2 className="font-serif text-xl font-semibold text-foreground sm:text-2xl">
+            {searchHeading}
+          </h2>
+          <p className="mt-1.5 text-sm text-muted-foreground">{searchSub}</p>
+          <TextSearchBox size="hero" className="mt-4" />
+          <p className="mt-2 text-xs text-muted-foreground">{searchExamples}</p>
+        </div>
+
+        <p className="mt-12 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+          {orCourse}
+        </p>
+
         {/* Seven primary demo buttons — five learner tracks (IELTS · EAL ·
             KS3 · GCSE · IGCSE) followed by two audience demos
             (Teachers, Schools). Responsive grid: 2-col on mobile,
             4-col at md, 7-col at lg so they sit in a single row on
             laptop+ widths. */}
-        <div className="mx-auto mt-10 grid w-full max-w-5xl gap-3 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7">
+        <div className="mx-auto mt-4 grid w-full max-w-5xl gap-3 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7">
           {TRACKS.map((track) => {
             const Icon = track.icon
             const inner = (

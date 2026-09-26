@@ -196,10 +196,17 @@ describe('what the suite runs in', () => {
     // tabindex, role) and whether Base UI logs its warning, both of which exist
     // only once the component has rendered; the source text of 1,064 call sites
     // was identical before and after the fix.
+    //
+    // Then to 23 on 26 September 2026 for text-search-box.test.tsx. The search
+    // is a combobox, and what it must get right is behaviour: the arrow keys
+    // move aria-activedescendant, Enter opens the active result, and the
+    // analytics event never carries what a child typed. None of that exists
+    // until the component runs; its matching rules are tested in the node
+    // environment in text-search.test.ts.
     expect(
       annotated.length,
       'more files now claim to need a DOM - check each one',
-    ).toBeLessThanOrEqual(22)
+    ).toBeLessThanOrEqual(23)
   })
 })
 

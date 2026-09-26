@@ -5,6 +5,7 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 import { getBoardConfig } from '@/lib/board/board-config'
 import { getSetTextsForBoard, SET_TEXTS } from '@/lib/board/set-texts'
 import { t } from '@/lib/i18n/t'
+import { TextSearchBox } from '@/components/search/text-search-box'
 
 import TextsRevisionView from './texts-view'
 
@@ -43,6 +44,10 @@ export default async function TextsRevisionPage() {
             {await t('texts.boardless.h2')}
           </h1>
           <p className="mt-2 text-slate-600">{await t('texts.boardless.intro')}</p>
+          {/* The text search (26 September 2026). Only on this board-less
+              list: the board view below has its own filter box, and two search
+              boxes on one page would ask the student to choose between them. */}
+          <TextSearchBox className="mt-5 max-w-xl" />
 
           <h3 className="mt-6 text-lg font-semibold">{await t('texts.section.shakespeare')}</h3>
           <ul className="mt-2 list-disc space-y-1 ps-6 text-slate-700">
