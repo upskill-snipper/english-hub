@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Languages, Star, ArrowRight } from 'lucide-react'
 
+import { boardLandingHref } from '@/lib/board/board-landing'
 import { tMany } from '@/lib/i18n/t'
 import { isMuslimMajorityVisitor } from '@/lib/geo/gcc'
 import { validateRedirect } from '@/lib/utils'
@@ -45,8 +46,12 @@ type Board = {
 // 02 May 2026 - hrefs use the canonical `?setBoard=<id>` mechanism.
 // 19 September 2026 - the destination is now the board's own set texts,
 // `/set-texts/<id>?setBoard=<id>`, rather than the board-agnostic hub.
-// Middleware reads ?setBoard=, validates, sets cookie, redirects to clean
-// /revision. See business-docs/BOARD_NAVIGATION_MODEL.md.
+// Middleware reads ?setBoard=, validates, sets cookie, redirects to the clean
+// URL. See business-docs/BOARD_NAVIGATION_MODEL.md.
+// 26 September 2026 - built by boardLandingHref rather than written out, because
+// KS3 and Cambridge set no texts and their literal links landed on an empty
+// shelf. The helper sends those boards to their hub and is the one place that
+// knows which they are.
 
 // 2026-05-20: KS3 was missing from the picker entirely - added so younger
 // learners (Years 7-9) can find their starting point. EAL is added as its
@@ -55,7 +60,7 @@ type Board = {
 const KS3_BOARDS: readonly Board[] = [
   {
     name: 'KS3 English (Years 7-9)',
-    href: '/set-texts/ks3?setBoard=ks3',
+    href: boardLandingHref('ks3'),
     descriptionKey: 'board.desc.ks3',
     level: 'KS3',
   },
@@ -64,25 +69,25 @@ const KS3_BOARDS: readonly Board[] = [
 const GCSE_BOARDS: readonly Board[] = [
   {
     name: 'AQA',
-    href: '/set-texts/aqa?setBoard=aqa',
+    href: boardLandingHref('aqa'),
     descriptionKey: 'board.desc.aqa',
     level: 'GCSE',
   },
   {
     name: 'Pearson Edexcel GCSE',
-    href: '/set-texts/edexcel?setBoard=edexcel',
+    href: boardLandingHref('edexcel'),
     descriptionKey: 'board.desc.edexcel_gcse',
     level: 'GCSE',
   },
   {
     name: 'OCR',
-    href: '/set-texts/ocr?setBoard=ocr',
+    href: boardLandingHref('ocr'),
     descriptionKey: 'board.desc.ocr',
     level: 'GCSE',
   },
   {
     name: 'WJEC Eduqas',
-    href: '/set-texts/eduqas?setBoard=eduqas',
+    href: boardLandingHref('eduqas'),
     descriptionKey: 'board.desc.eduqas',
     level: 'GCSE',
   },
@@ -91,19 +96,19 @@ const GCSE_BOARDS: readonly Board[] = [
 const IGCSE_BOARDS: readonly Board[] = [
   {
     name: 'Cambridge IGCSE',
-    href: '/set-texts/cambridge-0500?setBoard=cambridge-0500',
+    href: boardLandingHref('cambridge-0500'),
     descriptionKey: 'board.desc.cambridge_igcse',
     level: 'IGCSE',
   },
   {
     name: 'Pearson Edexcel IGCSE Literature',
-    href: '/set-texts/edexcel-igcse?setBoard=edexcel-igcse',
+    href: boardLandingHref('edexcel-igcse'),
     descriptionKey: 'board.desc.edexcel_igcse_lit',
     level: 'IGCSE',
   },
   {
     name: 'Pearson Edexcel IGCSE Language A',
-    href: '/set-texts/edexcel-igcse-lang?setBoard=edexcel-igcse-lang',
+    href: boardLandingHref('edexcel-igcse-lang'),
     descriptionKey: 'board.desc.edexcel_igcse_lang',
     level: 'IGCSE',
   },
@@ -502,7 +507,7 @@ async function GccRecommendationBanner() {
         </div>
         <div className="flex shrink-0 flex-col items-stretch gap-2 sm:items-end">
           <Link
-            href="/set-texts/cambridge-0500?setBoard=cambridge-0500"
+            href={boardLandingHref('cambridge-0500')}
             className="inline-flex items-center justify-center gap-1.5 rounded-full bg-clay-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-clay-600/85"
           >
             Open Cambridge 0500 <ArrowRight aria-hidden="true" className="size-3.5" />

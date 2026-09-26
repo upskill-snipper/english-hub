@@ -4,6 +4,7 @@ import { join } from 'node:path'
 import { BOARDS } from '@/lib/board/board-config'
 import { buildShelf } from '@/lib/revision/shelf'
 import { shelfIsVerified, unverifiedShelves } from '@/lib/board/shelf-provenance'
+import { SHELFLESS_BOARD_HUBS, boardHasShelf } from '@/lib/board/board-landing'
 
 /**
  * The page every board picker points at, submitted to nobody.
@@ -161,10 +162,14 @@ describe('an unverified shelf is not submitted, and that is a correction', () =>
 })
 
 describe('a board with nothing on its shelf is not submitted', () => {
-  it('skips the empty ones rather than listing a blank page', async () => {
-    // Cambridge 0500 and 0990 prescribe no set texts at all - verified against
-    // both syllabuses, and correct by design rather than a gap. KS3 has none
-    // either. An empty page is still not a page worth ranking.
+  // Cambridge 0500 and 0990 prescribe no set texts at all - verified against
+  // both syllabuses, and correct by design rather than a gap. KS3 has none
+  // either. Since 26 September 2026 their /set-texts URL is not a page at all:
+  // the middleware sends it to the board's hub with a 308, so submitting it
+  // would ask Google to crawl a redirect. The sitemap asks boardHasShelf, the
+  // same decision the redirect uses, so both halves are checked here.
+
+  it('skips the empty ones rather than listing a redirect', async () => {
     const { default: sitemap } = await import('@/app/sitemap')
     const paths = new Set(
       (await sitemap()).map((e) => e.url.replace('https://theenglishhub.app', '')),
@@ -174,7 +179,16 @@ describe('a board with nothing on its shelf is not submitted', () => {
     for (const board of empty) {
       expect(paths.has(`/set-texts/${board.id}`), `${board.id} is empty but submitted`).toBe(false)
     }
+    for (const id of Object.keys(SHELFLESS_BOARD_HUBS)) {
+      expect(paths.has(`/set-texts/${id}`), `${id} redirects but is submitted`).toBe(false)
+    }
   }, 30_000)
+
+  it('and the decision the sitemap uses agrees with the shelves themselves', () => {
+    for (const board of BOARDS) {
+      expect(boardHasShelf(board.id), board.id).toBe(buildShelf(board.id).length > 0)
+    }
+  })
 })
 
 describe('the four pages the item proposed were deliberately not built', () => {

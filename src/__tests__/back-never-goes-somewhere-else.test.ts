@@ -5,6 +5,7 @@ import { textBackLink, ALL_TEXTS_HREF } from '@/lib/revision/text-back-href'
 import { SET_TEXTS, textAvailableForBoard } from '@/lib/board/set-texts'
 import { BOARDS } from '@/lib/board/board-config'
 import type { ExamBoard } from '@/lib/board/board-config'
+import { boardHasShelf } from '@/lib/board/board-landing'
 
 /**
  * "All your set texts" took a student from Shakespeare into the language
@@ -90,6 +91,21 @@ describe('every text, every board', () => {
       const back = textBackLink(slug, board as ExamBoard)
       if (back.isBoardShelf) expect(back.href.startsWith('/set-texts/')).toBe(true)
       else expect(back.href).toBe(ALL_TEXTS_HREF)
+    }
+  })
+
+  it('a board with no set texts is never offered a shelf, or its hub dressed as one', () => {
+    // 26 September 2026. KS3, Cambridge 0500 and 0990 have no shelf page; for
+    // them boardShelfHref returns the specification hub. "Back to your set
+    // texts" landing on a hub would be the label disagreeing with the
+    // destination, so for these boards back is always the all-texts index.
+    const shelfless = BOARD_IDS.filter((b) => !boardHasShelf(b))
+    expect(shelfless.length, 'no shelfless boards, so this proves nothing').toBeGreaterThan(0)
+    for (const t of SET_TEXTS) {
+      for (const board of shelfless) {
+        const back = textBackLink(t.slug, board as ExamBoard)
+        expect(back, `${t.slug} @ ${board}`).toEqual({ href: ALL_TEXTS_HREF, isBoardShelf: false })
+      }
     }
   })
 })

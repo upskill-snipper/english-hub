@@ -1,6 +1,8 @@
 import { describe, it, expect } from 'vitest'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { BOARDS } from '@/lib/board/board-config'
+import { boardHasShelf, boardLandingHref, shelflessBoardHub } from '@/lib/board/board-landing'
 
 /**
  * Smoke test for the homepage board picker contract.
@@ -15,6 +17,11 @@ import { resolve } from 'node:path'
  *   - Each board card's href must point at the spec it advertises.
  *   - In particular: no GCSE board may link to an /igcse/ URL (regression
  *     test for the "Pearson GCSE -> IGCSE Lit" bug that shipped previously).
+ *
+ * 26 September 2026. The cards now build their href with boardLandingHref
+ * instead of writing it out, because the literal sent Cambridge 0500 to an
+ * empty shelf. The extractor below resolves `boardLandingHref('<id>')` through
+ * the real helper, so these assertions test the URL a visitor actually gets.
  */
 
 const HOMEPAGE_PATH = resolve(__dirname, '..', 'app', 'page.tsx')
@@ -82,11 +89,11 @@ function extractBoardsArray(source: string, arrayName: string): BoardEntry[] {
 
   return objects.map((obj) => {
     const nameMatch = obj.match(/name\s*:\s*'([^']+)'/)
-    const hrefMatch = obj.match(/href\s*:\s*'([^']+)'/)
+    const hrefMatch = obj.match(/href\s*:\s*(?:'([^']+)'|boardLandingHref\('([a-z0-9-]+)'\))/)
     if (!nameMatch || !hrefMatch) {
       throw new Error(`Object in ${arrayName} missing name or href: ${obj}`)
     }
-    return { name: nameMatch[1], href: hrefMatch[1] }
+    return { name: nameMatch[1], href: hrefMatch[1] ?? boardLandingHref(hrefMatch[2]) }
   })
 }
 
@@ -132,10 +139,12 @@ describe('GCSE_BOARDS expected entries', () => {
 })
 
 describe('IGCSE_BOARDS expected entries', () => {
-  it('Cambridge IGCSE / CIE -> /set-texts/cambridge-0500?setBoard=cambridge-0500', () => {
+  it('Cambridge IGCSE / CIE -> its specification hub, not an empty shelf', () => {
+    // It went to /set-texts/cambridge-0500 until 26 September 2026: a page
+    // headed "Your set texts" for a specification that sets none.
     const entry = findEntry(IGCSE_BOARDS, /Cambridge IGCSE|CIE/)
     expect(entry, 'Cambridge entry missing from IGCSE_BOARDS').toBeDefined()
-    expect(entry?.href).toBe('/set-texts/cambridge-0500?setBoard=cambridge-0500')
+    expect(entry?.href).toBe('/igcse/cambridge/0500?setBoard=cambridge-0500')
   })
 
   it('Pearson Edexcel IGCSE Literature -> /set-texts/edexcel-igcse?setBoard=edexcel-igcse', () => {
@@ -152,28 +161,51 @@ describe('IGCSE_BOARDS expected entries', () => {
 })
 
 describe('GCSE / IGCSE URL boundary (regression: GCSE -> IGCSE Lit bug)', () => {
-  // Per BOARD_NAVIGATION_MODEL.md (02 May 2026) every board card is now a
-  // canonical `/revision?setBoard=<id>` URL. Middleware reads the param,
-  // sets the cookie, and redirects to clean /revision. The historic
-  // "GCSE -> IGCSE Lit" bug was that one of seven cards used /igcse/edexcel
-  // (which silently set the IGCSE cookie via BOARD_LANDING_REDIRECTS).
-  // The invariant we lock in: NO card href may start with /igcse/ ever again.
-  it('no homepage card href starts with /igcse/ (regression for original bug)', () => {
-    for (const b of [...GCSE_BOARDS, ...IGCSE_BOARDS]) {
-      expect(
-        b.href.startsWith('/igcse/'),
-        `Card "${b.name}" must use /revision?setBoard=<id> but href=${b.href}`,
-      ).toBe(false)
+  // The historic "GCSE -> IGCSE Lit" bug was that one of seven cards used
+  // /igcse/edexcel (which silently set the IGCSE cookie via
+  // BOARD_LANDING_REDIRECTS): a GCSE card with an IGCSE destination.
+  //
+  // THIS USED TO SAY NO CARD MAY START WITH /igcse/, which was a proxy for the
+  // rule rather than the rule. Since 26 September 2026 the Cambridge card
+  // correctly lands on /igcse/cambridge/0500, its own hub, because 0500 sets no
+  // texts. What must never happen is a GCSE card going there, or any card
+  // setting one board while showing another, and that is what is asserted now.
+  const idOf = (href: string) => new URLSearchParams(href.split('?')[1] ?? '').get('setBoard')
+
+  it('no GCSE card href starts with /igcse/ (regression for original bug)', () => {
+    for (const b of GCSE_BOARDS) {
+      expect(b.href.startsWith('/igcse/'), `GCSE card "${b.name}" links to ${b.href}`).toBe(false)
     }
   })
 
-  it('every card href is the canonical /set-texts/<id>?setBoard=<id> shape', () => {
+  it('a GCSE card only ever sets a GCSE board', () => {
+    for (const b of GCSE_BOARDS) {
+      const board = BOARDS.find((x) => x.id === idOf(b.href))
+      expect(board?.type, `GCSE card "${b.name}" sets ${idOf(b.href)}`).toBe('gcse')
+    }
+  })
+
+  it('every card href is exactly boardLandingHref of the board it sets', () => {
+    // One rule for both shapes, so the path and the query cannot name different
+    // boards: the helper builds both halves from the same id.
+    for (const b of [...GCSE_BOARDS, ...IGCSE_BOARDS]) {
+      const id = idOf(b.href)
+      expect(id, `Card "${b.name}" carries no setBoard`).toBeTruthy()
+      expect(b.href, `Card "${b.name}"`).toBe(boardLandingHref(id as string))
+    }
+  })
+
+  it('a board with set texts lands on its shelf, a board without lands on its hub', () => {
+    // The counterweight. Sending every card to a hub would satisfy the
+    // assertion above and undo the rule that choosing a board shows its texts.
     const canonical = /^\/set-texts\/([a-z0-9-]+)\?setBoard=\1$/
     for (const b of [...GCSE_BOARDS, ...IGCSE_BOARDS]) {
-      expect(
-        canonical.test(b.href),
-        `Card "${b.name}" href "${b.href}" must match /revision?setBoard=<id>`,
-      ).toBe(true)
+      const id = idOf(b.href) as string
+      if (boardHasShelf(id)) {
+        expect(canonical.test(b.href), `Card "${b.name}" href "${b.href}"`).toBe(true)
+      } else {
+        expect(b.href, `Card "${b.name}"`).toBe(`${shelflessBoardHub(id)}?setBoard=${id}`)
+      }
     }
   })
 })

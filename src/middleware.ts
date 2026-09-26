@@ -5,6 +5,7 @@ import { NextResponse, type NextRequest } from 'next/server'
 import { BOARDS } from '@/lib/board/board-config'
 import { BOARD_SPECIFIC_PREFIXES } from '@/lib/board/gated-paths'
 import { boardToRememberFromPath } from '@/lib/board/remember-shelf-board'
+import { shelflessBoardHub } from '@/lib/board/board-landing'
 import { evaluateCsrfAttestation } from '@/lib/security/csrf-origin'
 // Note: the previous `import crypto from 'crypto'` worked on Vercel but
 // trips an edge-runtime warning in dev. We use the Web Crypto API
@@ -465,6 +466,46 @@ export async function middleware(request: NextRequest) {
     target.protocol = 'https:'
     target.port = ''
     return NextResponse.redirect(target, 308)
+  }
+
+  // ── A board with no set texts has no shelf to land on ─────────────────────
+  //
+  // THE DEFECT (26 September 2026). Choosing Cambridge 0500 landed the student
+  // on /set-texts/cambridge-0500: "Your set texts", then "This specification
+  // has no prescribed set texts". KS3, 0500 and 0990 set none by design. The
+  // pickers now send those boards to their specification hub, and this sends
+  // every older link - bookmarks, search results, cached pages - the same way.
+  //
+  // WHY HERE AND NOT IN THE PAGE. A redirect thrown from that page's render
+  // does not reliably reach the browser as a status: the root loading.tsx
+  // streams the shell first, which is also why its notFound() comes back 200
+  // (see the page's docblock). A 308 from here is a real status a search engine
+  // acts on. It runs before the ?setBoard= handler and keeps the query, so an
+  // old picker link still has its board written one hop later, and before the
+  // /ar rewrite so the Arabic surface stays Arabic.
+  //
+  // WHY IT REMEMBERS THE BOARD. Arriving at /set-texts/<board> directly used to
+  // write the cookie from the path (the tail of this function). The redirect
+  // returns before the tail, so it applies the same rule itself - including
+  // never overwriting a board the visitor already has.
+  const shelflessMatch = /^(\/ar)?\/set-texts\/([a-z0-9-]+)\/?$/.exec(pathname)
+  const shelflessHub = shelflessMatch ? shelflessBoardHub(shelflessMatch[2]) : null
+  if (shelflessMatch && shelflessHub) {
+    const target = request.nextUrl.clone()
+    target.pathname = `${shelflessMatch[1] ?? ''}${shelflessHub}`
+    const shelflessResponse = NextResponse.redirect(target, 308)
+    const shelflessBoard = boardToRememberFromPath(
+      `/set-texts/${shelflessMatch[2]}`,
+      request.cookies.get(BOARD_COOKIE)?.value,
+    )
+    if (shelflessBoard) {
+      shelflessResponse.cookies.set(BOARD_COOKIE, shelflessBoard, {
+        path: '/',
+        maxAge: 60 * 60 * 24 * 365,
+        sameSite: 'lax',
+      })
+    }
+    return shelflessResponse
   }
 
   // Web Crypto `randomUUID()` + `btoa` - edge-runtime safe, avoids the

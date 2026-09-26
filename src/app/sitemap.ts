@@ -7,7 +7,7 @@ import { allCourses } from '@/data/courses'
 import { getBlogSlugs, hasArabicVariant } from '@/lib/blog/posts'
 import { SET_TEXTS } from '@/lib/board/set-texts'
 import { BOARDS } from '@/lib/board/board-config'
-import { buildShelf } from '@/lib/revision/shelf'
+import { boardHasShelf } from '@/lib/board/board-landing'
 import { shelfIsVerified } from '@/lib/board/shelf-provenance'
 import { EAL } from '@/lib/eal/curriculum'
 import { ALL_LESSONS } from '@/lib/ielts/lessons'
@@ -204,10 +204,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // page - committed deliberately. So the existing shelves are submitted
   // instead.
   //
-  // A board with no set texts is skipped rather than submitted empty. KS3 has
-  // none, and Cambridge 0500 and 0990 prescribe none at all, which is their
-  // specification rather than a gap - but an empty page is still not a page
-  // worth ranking.
+  // A board with no set texts is skipped. KS3 has none, and Cambridge 0500 and
+  // 0990 prescribe none at all, which is their specification rather than a gap.
+  // Since 26 September 2026 their /set-texts URL is not even a page - the
+  // middleware 308s it to the board's hub - so submitting it would ask Google to
+  // crawl a redirect. The test is the shared one in board-landing.ts rather than
+  // an emptiness check here, so the sitemap cannot disagree with the redirect.
   //
   // AND ONLY WHERE THE LIST IS VERIFIED. This loop originally submitted every
   // board with texts, which was wrong for five of them. The four A-Level boards
@@ -218,7 +220,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // submitting them because it was introduced while fixing something else.
   // The pages still render; we simply stop asking to rank them.
   for (const board of BOARDS) {
-    if (buildShelf(board.id).length === 0) continue
+    if (!boardHasShelf(board.id)) continue
     if (!shelfIsVerified(board.id)) continue
     add(`/set-texts/${board.id}`, { priority: 0.9, changeFrequency: 'monthly' })
   }

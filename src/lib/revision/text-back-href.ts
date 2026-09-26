@@ -29,7 +29,7 @@
 
 import { textAvailableForBoard } from '@/lib/board/set-texts'
 import type { ExamBoard } from '@/lib/board/board-config'
-import { boardShelfHref } from '@/lib/board/board-landing'
+import { boardHasShelf, boardShelfHref } from '@/lib/board/board-landing'
 import { canonicalTextSlug, isKnownSetText } from '@/lib/revision/text-slug-aliases'
 
 /** Every set text on the site, across all fifteen specifications. */
@@ -50,7 +50,13 @@ export interface TextBackLink {
  */
 export function textBackLink(slug: string, board: ExamBoard | null | undefined): TextBackLink {
   if (!board) return { href: ALL_TEXTS_HREF, isBoardShelf: false }
-  const onThisBoard = isKnownSetText(slug) && textAvailableForBoard(canonicalTextSlug(slug), board)
+  // `boardHasShelf` cannot change the answer today - a board with no shelf sets
+  // no text, so `textAvailableForBoard` is already false - but it keeps "your set
+  // texts" from ever labelling a specification hub if the two lists drift.
+  const onThisBoard =
+    boardHasShelf(board) &&
+    isKnownSetText(slug) &&
+    textAvailableForBoard(canonicalTextSlug(slug), board)
   return onThisBoard
     ? { href: boardShelfHref(board), isBoardShelf: true }
     : { href: ALL_TEXTS_HREF, isBoardShelf: false }

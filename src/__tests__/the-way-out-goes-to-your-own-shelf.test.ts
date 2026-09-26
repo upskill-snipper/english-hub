@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { BOARDS } from '@/lib/board/board-config'
-import { boardShelfHref } from '@/lib/board/board-landing'
+import { boardHasShelf, boardShelfHref, shelflessBoardHub } from '@/lib/board/board-landing'
 import { buildShelf } from '@/lib/revision/shelf'
 import { SET_TEXTS } from '@/lib/board/set-texts'
 
@@ -122,8 +122,30 @@ describe('the other two ways out, which the first pass missed', () => {
 })
 
 describe('the destination it points at when the board does hold the text', () => {
-  it.each(BOARDS.map((b) => b.id))('%s resolves to its own shelf URL', (id) => {
-    expect(boardShelfHref(id)).toBe(`/set-texts/${id}`)
+  // Split on 26 September 2026. A board that sets no texts has no shelf page
+  // any more - /set-texts/<board> said "no prescribed set texts" and nothing
+  // else - so boardShelfHref gives its specification hub. Every other board
+  // resolves exactly as before, and that half is the one this file is about.
+  it.each(BOARDS.filter((b) => boardHasShelf(b.id)).map((b) => b.id))(
+    '%s resolves to its own shelf URL',
+    (id) => {
+      expect(boardShelfHref(id)).toBe(`/set-texts/${id}`)
+    },
+  )
+
+  it.each(BOARDS.filter((b) => !boardHasShelf(b.id)).map((b) => b.id))(
+    '%s, which sets no texts, resolves to its hub rather than an empty shelf',
+    (id) => {
+      expect(boardShelfHref(id)).toBe(shelflessBoardHub(id))
+      expect(boardShelfHref(id).startsWith('/set-texts/')).toBe(false)
+    },
+  )
+
+  it('and the shelfless boards are exactly the ones with nothing on the shelf', () => {
+    // Otherwise the split above could hide a board with texts behind a hub.
+    for (const board of BOARDS) {
+      expect(boardHasShelf(board.id), board.id).toBe(buildShelf(board.id).length > 0)
+    }
   })
 
   it('is a genuinely smaller list than the all-texts index', () => {

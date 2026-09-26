@@ -120,7 +120,8 @@ export function BoardSelectorSection({
         // board-agnostic hub, so a student answered "which board do you study?"
         // and landed on a page that did not mention their board or their texts.
         // With no explicit `redirectTo` the destination is now that board's own
-        // set texts.
+        // set texts - or, for a board that sets none, its specification hub
+        // (boardLandingHref decides; see its docblock).
         if (typeof window !== 'undefined') {
           if (redirectTo) {
             const sep = redirectTo.includes('?') ? '&' : '?'

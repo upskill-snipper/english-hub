@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { readFileSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
+import { boardHasShelf, boardLandingHref, shelflessBoardHub } from '@/lib/board/board-landing'
 
 /**
  * Board-navigation contract test (I14).
@@ -8,7 +9,8 @@ import { join } from 'node:path'
  * Locks in the canonical board-navigation model documented in
  * `business-docs/BOARD_NAVIGATION_MODEL.md`:
  *
- *   A. Click any of the 7 homepage cards -> cookie set, user lands on that board's set texts.
+ *   A. Click any of the 7 homepage cards -> cookie set, user lands on that board's set texts
+ *      (or, for a board that sets none, its specification hub).
  *   B. Click browser back -> homepage, cookie unchanged.
  *   C. Click a different homepage card -> cookie updates.
  *   D. Deep-link to /igcse/edexcel with `aqa` cookie -> Edexcel IGCSE renders,
@@ -91,11 +93,14 @@ function extractBoardArray(source: string, arrayName: string): readonly BoardEnt
 
   return objects.map((obj) => {
     const nameMatch = obj.match(/name\s*:\s*'([^']+)'/)
-    const hrefMatch = obj.match(/href\s*:\s*'([^']+)'/)
+    // A card may write its href out or build it with boardLandingHref('<id>');
+    // the second is resolved through the real helper, so what is tested is the
+    // URL a visitor gets rather than the source text.
+    const hrefMatch = obj.match(/href\s*:\s*(?:'([^']+)'|boardLandingHref\('([a-z0-9-]+)'\))/)
     if (!nameMatch || !hrefMatch) {
       throw new Error(`Object in ${arrayName} missing name or href: ${obj}`)
     }
-    return { name: nameMatch[1], href: hrefMatch[1] }
+    return { name: nameMatch[1], href: hrefMatch[1] ?? boardLandingHref(hrefMatch[2]) }
   })
 }
 
@@ -108,12 +113,33 @@ function extractBoardArray(source: string, arrayName: string): readonly BoardEnt
 // shown, and once in the query, which the middleware reads to write the
 // cookie before redirecting to the clean URL. The backreference is the point:
 // the two must AGREE, or the site would set one board and display another.
+//
+// 26 September 2026. For KS3 and Cambridge 0500 / 0990, which set no texts,
+// "its own set texts" was an empty page, so those boards land on their
+// specification hub instead - still with ?setBoard=<id>. The rule is therefore
+// no longer one URL shape but one function: every card's href is
+// boardLandingHref(<the board it sets>), which builds path and query from the
+// same id. `landsCorrectly` states that, and still requires the /set-texts shape
+// for every board that has a shelf, so it cannot pass by sending everyone to a
+// hub.
 const SET_BOARD_HREF_RE = /^\/set-texts\/([a-z0-9-]+)\?setBoard=\1$/
 
+function setBoardOf(href: string): string | null {
+  return new URLSearchParams(href.split('?')[1] ?? '').get('setBoard')
+}
+
+function landsCorrectly(href: string): boolean {
+  const id = setBoardOf(href)
+  if (!id || href !== boardLandingHref(id)) return false
+  return boardHasShelf(id)
+    ? SET_BOARD_HREF_RE.test(href)
+    : href === `${shelflessBoardHub(id)}?setBoard=${id}`
+}
+
 /* -------------------------------------------------------------------------
- * 1. Homepage card hrefs are canonical /set-texts/<id>?setBoard=<id>
+ * 1. Homepage card hrefs are boardLandingHref(<id>)
  * ------------------------------------------------------------------------- */
-describe('homepage cards link to /set-texts/<id>?setBoard=<id> (contract A,C)', () => {
+describe('homepage cards land on boardLandingHref(<id>) (contract A,C)', () => {
   const HOMEPAGE_SOURCE = readSource('app', 'page.tsx')
   const GCSE = extractBoardArray(HOMEPAGE_SOURCE, 'GCSE_BOARDS')
   const IGCSE = extractBoardArray(HOMEPAGE_SOURCE, 'IGCSE_BOARDS')
@@ -125,21 +151,30 @@ describe('homepage cards link to /set-texts/<id>?setBoard=<id> (contract A,C)', 
     expect(ALL_HOMEPAGE_BOARDS.length).toBe(7)
   })
 
-  it('every homepage card href matches /set-texts/<id>?setBoard=<id>', () => {
+  it('every homepage card href is boardLandingHref of the board it sets', () => {
     for (const card of ALL_HOMEPAGE_BOARDS) {
       expect(
-        SET_BOARD_HREF_RE.test(card.href),
-        `Card "${card.name}" href "${card.href}" must match /set-texts/<id>?setBoard=<id>`,
+        landsCorrectly(card.href),
+        `Card "${card.name}" href "${card.href}" is not boardLandingHref(${setBoardOf(card.href)})`,
       ).toBe(true)
     }
   })
 
-  it('no homepage card href starts with /igcse/ (regression for Pearson GCSE -> IGCSE Lit bug)', () => {
-    for (const card of ALL_HOMEPAGE_BOARDS) {
+  it('no GCSE homepage card href starts with /igcse/ (regression for Pearson GCSE -> IGCSE Lit bug)', () => {
+    // Narrowed to GCSE on 26 September 2026: the Cambridge IGCSE card now
+    // rightly lands on /igcse/cambridge/0500. The bug was a GCSE card there.
+    for (const card of GCSE) {
       expect(
         card.href.startsWith('/igcse/'),
         `Card "${card.name}" must not link to /igcse/* but href=${card.href}`,
       ).toBe(false)
+    }
+  })
+
+  it('the only cards that leave /set-texts are boards with no set texts', () => {
+    for (const card of ALL_HOMEPAGE_BOARDS) {
+      if (card.href.startsWith('/set-texts/')) continue
+      expect(boardHasShelf(setBoardOf(card.href) ?? ''), `Card "${card.name}"`).toBe(false)
     }
   })
 
@@ -155,9 +190,9 @@ describe('homepage cards link to /set-texts/<id>?setBoard=<id> (contract A,C)', 
 })
 
 /* -------------------------------------------------------------------------
- * 2. Board-select page hrefs are canonical /set-texts/<id>?setBoard=<id>
+ * 2. Board-select page hrefs are boardLandingHref(<id>)
  * ------------------------------------------------------------------------- */
-describe('/board-select cards link to /set-texts/<id>?setBoard=<id>', () => {
+describe('/board-select cards land on boardLandingHref(<id>)', () => {
   const SOURCE = readSource('app', 'board-select', 'page.tsx')
   const GCSE = extractBoardArray(SOURCE, 'GCSE_BOARDS')
   const IGCSE = extractBoardArray(SOURCE, 'IGCSE_BOARDS')
@@ -168,17 +203,17 @@ describe('/board-select cards link to /set-texts/<id>?setBoard=<id>', () => {
     expect(IGCSE.length).toBeGreaterThan(0)
   })
 
-  it('every board-select card href matches /set-texts/<id>?setBoard=<id>', () => {
+  it('every board-select card href is boardLandingHref of the board it sets', () => {
     for (const card of ALL) {
       expect(
-        SET_BOARD_HREF_RE.test(card.href),
-        `board-select card "${card.name}" href "${card.href}" must match /set-texts/<id>?setBoard=<id>`,
+        landsCorrectly(card.href),
+        `board-select card "${card.name}" href "${card.href}" is not boardLandingHref(${setBoardOf(card.href)})`,
       ).toBe(true)
     }
   })
 
-  it('no board-select card href starts with /igcse/', () => {
-    for (const card of ALL) {
+  it('no GCSE board-select card href starts with /igcse/', () => {
+    for (const card of GCSE) {
       expect(
         card.href.startsWith('/igcse/'),
         `board-select card "${card.name}" must not link to /igcse/* but href=${card.href}`,

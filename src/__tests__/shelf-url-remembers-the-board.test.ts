@@ -21,7 +21,8 @@ import { BOARDS } from '@/lib/board/board-config'
  * surfaces that were not choices. So the three limits below matter more than the
  * feature:
  *
- *   - it never redirects (asserted against the middleware source)
+ *   - it never redirects (asserted against the middleware source; the one
+ *     redirect near it, for boards with no set texts, is pinned separately)
  *   - it never overwrites a board the visitor already has
  *   - it validates against the canonical BOARDS list
  *
@@ -92,14 +93,19 @@ describe('the middleware uses it, and does not redirect', () => {
     .filter((l) => !l.trim().startsWith('//') && !l.trim().startsWith('*'))
     .join('\n')
 
+  // Anchored on the tail call by name. Since 26 September 2026 there is a
+  // second call, earlier in the file, for the one redirect described below; a
+  // bare indexOf would find that one and test the wrong block.
+  const TAIL = 'const rememberBoard = boardToRememberFromPath('
+
   it('calls the resolver rather than matching the path inline', () => {
-    expect(code).toContain('boardToRememberFromPath(')
+    expect(code).toContain(TAIL)
   })
 
   it('sets the cookie on the response for the page that was requested', () => {
     // Not a redirect. The removed BOARD_LANDING_REDIRECTS map redirected, and
     // that was its bug: the visitor lost the page they clicked.
-    const at = code.indexOf('boardToRememberFromPath(')
+    const at = code.indexOf(TAIL)
     expect(at).toBeGreaterThan(-1)
     const block = code.slice(at, at + 400)
     expect(block).toContain("response.cookies.set('english-hub-board'")
@@ -108,8 +114,34 @@ describe('the middleware uses it, and does not redirect', () => {
   })
 
   it('passes the existing cookie in, so the resolver can decline', () => {
-    const at = code.indexOf('boardToRememberFromPath(')
+    const at = code.indexOf(TAIL)
     const block = code.slice(at, at + 200)
     expect(block).toContain("request.cookies.get('english-hub-board')")
+  })
+})
+
+describe('the one redirect, and why it is not the old bug', () => {
+  // 26 September 2026. KS3, Cambridge 0500 and 0990 set no texts, and their
+  // shelf said so and nothing else, so /set-texts/<board> for those three is
+  // now permanently redirected to the board's hub. That is a redirect in the
+  // file whose history is a redirect bug, so its limits are pinned here: it
+  // fires only for a board with no shelf, and it remembers the board under the
+  // same never-overwrite rule as the tail. The behaviour itself is driven
+  // through the real middleware in a-board-with-no-texts-lands-on-its-hub.
+  const SRC = readFileSync(join(process.cwd(), 'src/middleware.ts'), 'utf8')
+  const code = SRC.split('\n')
+    .filter((l) => !l.trim().startsWith('//') && !l.trim().startsWith('*'))
+    .join('\n')
+  const at = code.indexOf('shelflessBoardHub(')
+  const block = code.slice(at, at + 900)
+
+  it('is gated on the shared shelfless decision, not on the path alone', () => {
+    expect(at).toBeGreaterThan(-1)
+    expect(block).toContain('if (shelflessMatch && shelflessHub)')
+  })
+
+  it('remembers the board through the same resolver, passing the existing cookie', () => {
+    expect(block).toContain('boardToRememberFromPath(')
+    expect(block).toContain('request.cookies.get(BOARD_COOKIE)')
   })
 })

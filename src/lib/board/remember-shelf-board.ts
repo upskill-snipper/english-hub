@@ -18,6 +18,13 @@
  * /revision and the visitor lost the page they had clicked. The caller attaches
  * a cookie to the response for the page that was actually requested.
  *
+ * ONE EXCEPTION, AND IT IS NOT THIS FUNCTION'S. Since 26 September 2026 a board
+ * that sets no texts (see SHELFLESS_BOARD_HUBS in board-landing.ts) has no shelf
+ * page: the middleware 308s /set-texts/<board> to the board's hub. It calls this
+ * as well, so the visitor arriving by that old URL is remembered exactly as they
+ * were before, under the same never-overwrite rule. This function still only
+ * answers "which board", and still never redirects anything itself.
+ *
  * NEVER OVERWRITES. A student with AQA stored who opens a shared Edexcel shelf
  * link keeps AQA. Silently reassigning the board their whole account is filtered
  * by - their sidebar, their texts, their mark schemes - because they followed a

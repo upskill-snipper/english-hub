@@ -21,35 +21,28 @@
 
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { notFound } from 'next/navigation'
+import { notFound, permanentRedirect } from 'next/navigation'
 import { ArrowRight, BookOpen, Sparkles } from 'lucide-react'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { BOARDS, getBoardConfig, type ExamBoard } from '@/lib/board/board-config'
+import { boardHasShelf, shelflessBoardHub, specHubHref } from '@/lib/board/board-landing'
 import { buildShelf, groupShelf, type ShelfEntry } from '@/lib/revision/shelf'
 import { t } from '@/lib/i18n/t'
 
 const SITE = 'https://theenglishhub.app'
 
-/**
- * Boards that already have a hand-built specification hub worth linking to.
- *
- * Those pages carry paper-by-paper structure this shelf deliberately does not
- * duplicate. Where a board has no hub the reader is sent to the revision hub
- * instead, which is what every board picker on the site already does.
- */
-const SPEC_HUBS: Partial<Record<ExamBoard, string>> = {
-  'edexcel-igcse': '/igcse/edexcel',
-  'edexcel-igcse-lang': '/igcse/edexcel-lang',
-  'cambridge-0500': '/igcse/cambridge/0500',
-  'cambridge-0990': '/igcse/cambridge/0990',
-  'ial-edexcel': '/revision/ial',
-}
-
-/** The four boards that prescribe no set texts, and why, so the page can say so. */
-const LANGUAGE_ONLY: ExamBoard[] = ['cambridge-0500', 'cambridge-0990']
+// WHY THERE IS NO EMPTY SHELF ANY MORE (26 September 2026). KS3, Cambridge 0500
+// and Cambridge 0990 prescribe no set texts, and this page used to render for
+// them anyway: "Your set texts", then "This specification has no prescribed set
+// texts". A student who had just chosen 0500 was shown a page about having
+// nothing. Those boards now land on their specification hub instead, and the
+// decision - which boards, which hub - lives in src/lib/board/board-landing.ts,
+// shared with the pickers, the middleware redirect and the sitemap so that none
+// of them can disagree with this page. (The previous comment here said four
+// boards had no texts; measured with buildShelf it is three.)
 
 /**
  * A KNOWN, UNFIXED DEFECT, recorded here rather than papered over.
@@ -81,11 +74,11 @@ const LANGUAGE_ONLY: ExamBoard[] = ['cambridge-0500', 'cambridge-0990']
  * all thirty-nine call sites.
  *
  * generateStaticParams is kept because it is correct and costs nothing: the
- * fifteen boards are a closed set, and it will prerender them the moment the
- * locale is resolved without reading headers.
+ * twelve boards with a shelf are a closed set, and it will prerender them the
+ * moment the locale is resolved without reading headers.
  */
 export function generateStaticParams() {
-  return BOARDS.map((b) => ({ board: b.id }))
+  return BOARDS.filter((b) => boardHasShelf(b.id)).map((b) => ({ board: b.id }))
 }
 
 export async function generateMetadata({
@@ -179,9 +172,15 @@ export default async function BoardShelfPage({ params }: { params: Promise<{ boa
   const config = getBoardConfig(board as ExamBoard)
   if (!config) notFound()
 
+  // The middleware has already sent a shelfless board to its hub with a 308;
+  // this only catches a request that bypassed it, and may reach the browser as a
+  // client-side redirect rather than a status, for the reason given above.
+  const hub = shelflessBoardHub(config.id)
+  if (hub) permanentRedirect(hub)
+
   const entries = buildShelf(config.id)
   const groups = groupShelf(entries)
-  const specHub = SPEC_HUBS[config.id]
+  const specHub = specHubHref(config.id)
 
   const labels: ShelfLabels = {
     none: await t('shelf.status.none'),
@@ -225,9 +224,7 @@ export default async function BoardShelfPage({ params }: { params: Promise<{ boa
         <h1 className="font-heading text-display-sm text-foreground sm:text-display">
           {config.fullName}
         </h1>
-        <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-          {entries.length > 0 ? tLead : ''}
-        </p>
+        <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">{tLead}</p>
         {specHub && (
           <Button variant="outline" size="sm" className="mt-5" render={<Link href={specHub} />}>
             {tSpecHub}
@@ -236,42 +233,23 @@ export default async function BoardShelfPage({ params }: { params: Promise<{ boa
         )}
       </section>
 
-      {entries.length === 0 ? (
-        // Four of the fifteen boards prescribe no set texts. For Cambridge 0500
-        // and 0990 that is correct by design rather than a gap, and saying which
-        // it is stops the page reading as broken.
-        <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
-          <h2 className="font-heading text-heading-lg text-foreground">
-            {await t('shelf.none.heading')}
-          </h2>
-          <p className="mt-3 max-w-2xl text-body text-muted-foreground">
-            {LANGUAGE_ONLY.includes(config.id)
-              ? await t('shelf.none.language')
-              : await t('shelf.none.generic')}
-          </p>
-          <Button className="mt-5" render={<Link href="/revision" />}>
-            {await t('shelf.none.cta')}
-            <ArrowRight className="size-3.5" aria-hidden="true" />
-          </Button>
+      {/* No empty-shelf branch: a board with no set texts is redirected to its hub above. */}
+      {groupsWithLabels.map((group) => (
+        <section key={group.category}>
+          <div className="mb-4 flex items-center gap-3">
+            <BookOpen className="size-4 text-primary" aria-hidden="true" />
+            <h2 className="font-heading text-heading-md text-foreground">{group.label}</h2>
+            <span className="text-body-sm text-muted-foreground-subtle">
+              {group.entries.length}
+            </span>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {group.entries.map((entry) => (
+              <TextCard key={entry.text.slug} entry={entry} labels={labels} />
+            ))}
+          </div>
         </section>
-      ) : (
-        groupsWithLabels.map((group) => (
-          <section key={group.category}>
-            <div className="mb-4 flex items-center gap-3">
-              <BookOpen className="size-4 text-primary" aria-hidden="true" />
-              <h2 className="font-heading text-heading-md text-foreground">{group.label}</h2>
-              <span className="text-body-sm text-muted-foreground-subtle">
-                {group.entries.length}
-              </span>
-            </div>
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {group.entries.map((entry) => (
-                <TextCard key={entry.text.slug} entry={entry} labels={labels} />
-              ))}
-            </div>
-          </section>
-        ))
-      )}
+      ))}
     </div>
   )
 }

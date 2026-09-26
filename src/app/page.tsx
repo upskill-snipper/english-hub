@@ -29,6 +29,7 @@ import { DemoShowcase } from '@/components/schools/DemoShowcase'
 import { FeatureGrid } from '@/components/schools/FeatureGrid'
 import { TextSearchBox } from '@/components/search/text-search-box'
 import { PRICING_DISPLAY } from '@/constants/pricing'
+import { boardLandingHref } from '@/lib/board/board-landing'
 import { t } from '@/lib/i18n/t'
 
 const OG =
@@ -177,9 +178,9 @@ export default async function Home() {
  *   Underneath: 5 track buttons (IELTS, EAL, KS3, GCSE, IGCSE).
  *   GCSE + IGCSE expand to a board sub-selector via native <details>
  *   so no client-side state is needed and the hero stays a server
- *   component. Each board routes through /set-texts/<id>?setBoard=<id>
- *   so the middleware sets the cookie and lands the visitor in the
- *   live revision hub (the real "demo" experience).
+ *   component. Each board routes through boardLandingHref(<id>) - its
+ *   set texts, or its specification hub for a board that sets none -
+ *   with ?setBoard=<id> so the middleware sets the cookie.
  *   Language toggle is surfaced inline at the top of the hero so
  *   Arabic visitors can switch without scrolling to the header.
  *
@@ -302,23 +303,23 @@ async function HomeHero() {
   // reachable from the Teachers and Schools cards, where there is no free
   // signed-out surface to show instead.
   const GCSE_BOARDS = [
-    { name: 'AQA', href: '/set-texts/aqa?setBoard=aqa' },
-    { name: 'Pearson Edexcel', href: '/set-texts/edexcel?setBoard=edexcel' },
-    { name: 'OCR', href: '/set-texts/ocr?setBoard=ocr' },
-    { name: 'WJEC Eduqas', href: '/set-texts/eduqas?setBoard=eduqas' },
+    { name: 'AQA', href: boardLandingHref('aqa') },
+    { name: 'Pearson Edexcel', href: boardLandingHref('edexcel') },
+    { name: 'OCR', href: boardLandingHref('ocr') },
+    { name: 'WJEC Eduqas', href: boardLandingHref('eduqas') },
   ]
   const IGCSE_BOARDS = [
     {
       name: 'Cambridge IGCSE (0500 / 0990)',
-      href: '/set-texts/cambridge-0500?setBoard=cambridge-0500',
+      href: boardLandingHref('cambridge-0500'),
     },
     {
       name: 'Pearson Edexcel IGCSE Literature',
-      href: '/set-texts/edexcel-igcse?setBoard=edexcel-igcse',
+      href: boardLandingHref('edexcel-igcse'),
     },
     {
       name: 'Pearson Edexcel IGCSE Language A',
-      href: '/set-texts/edexcel-igcse-lang?setBoard=edexcel-igcse-lang',
+      href: boardLandingHref('edexcel-igcse-lang'),
     },
   ]
 
@@ -939,11 +940,16 @@ type Board = {
 // to clean /revision - which then renders the personalised hub
 // (Poetry, Set Texts, Mock Papers, Practice, Progress, etc.) keyed off
 // that cookie. See business-docs/BOARD_NAVIGATION_MODEL.md.
+//
+// 26 September 2026 - the destination is boardLandingHref(<id>), not a literal.
+// KS3 and Cambridge set no texts, and their literal /set-texts links landed a
+// student on an empty shelf; the helper sends them to their hub instead, and
+// is the one place that decides which boards those are.
 const GCSE_BOARDS: Board[] = [
   {
     name: 'AQA',
     initials: 'AQA',
-    href: '/set-texts/aqa?setBoard=aqa',
+    href: boardLandingHref('aqa'),
     blurbKey: 'homepage.board.aqa.blurb',
     level: 'gcse',
     discClass: 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-300 ring-emerald-500/30',
@@ -951,7 +957,7 @@ const GCSE_BOARDS: Board[] = [
   {
     name: 'Pearson Edexcel GCSE',
     initials: 'EDX',
-    href: '/set-texts/edexcel?setBoard=edexcel',
+    href: boardLandingHref('edexcel'),
     blurbKey: 'homepage.board.edexcel.blurb',
     level: 'gcse',
     discClass: 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-300 ring-emerald-500/30',
@@ -959,7 +965,7 @@ const GCSE_BOARDS: Board[] = [
   {
     name: 'OCR',
     initials: 'OCR',
-    href: '/set-texts/ocr?setBoard=ocr',
+    href: boardLandingHref('ocr'),
     blurbKey: 'homepage.board.ocr.blurb',
     level: 'gcse',
     discClass: 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-300 ring-emerald-500/30',
@@ -967,7 +973,7 @@ const GCSE_BOARDS: Board[] = [
   {
     name: 'WJEC Eduqas',
     initials: 'WJEC',
-    href: '/set-texts/eduqas?setBoard=eduqas',
+    href: boardLandingHref('eduqas'),
     blurbKey: 'homepage.board.eduqas.blurb',
     level: 'gcse',
     discClass: 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-300 ring-emerald-500/30',
@@ -982,7 +988,7 @@ const KS3_BOARDS: Board[] = [
   {
     name: 'KS3 English (Years 7-9)',
     initials: 'KS3',
-    href: '/set-texts/ks3?setBoard=ks3',
+    href: boardLandingHref('ks3'),
     blurbKey: 'homepage.board.ks3.blurb',
     level: 'ks3',
     discClass: 'bg-violet-500/15 text-violet-600 dark:text-violet-300 ring-violet-500/30',
@@ -993,7 +999,7 @@ const IGCSE_BOARDS: Board[] = [
   {
     name: 'Cambridge IGCSE (CIE 0500 / 0990)',
     initials: 'CIE',
-    href: '/set-texts/cambridge-0500?setBoard=cambridge-0500',
+    href: boardLandingHref('cambridge-0500'),
     blurbKey: 'homepage.board.cambridge.blurb',
     level: 'igcse',
     discClass: 'bg-orange-500/15 text-orange-700 dark:text-orange-300 ring-orange-500/30',
@@ -1001,7 +1007,7 @@ const IGCSE_BOARDS: Board[] = [
   {
     name: 'Pearson Edexcel IGCSE Literature (4ET1)',
     initials: 'iEDX-Lit',
-    href: '/set-texts/edexcel-igcse?setBoard=edexcel-igcse',
+    href: boardLandingHref('edexcel-igcse'),
     blurbKey: 'homepage.board.edexcel_igcse_lit.blurb',
     level: 'igcse',
     discClass: 'bg-orange-500/15 text-orange-700 dark:text-orange-300 ring-orange-500/30',
@@ -1009,7 +1015,7 @@ const IGCSE_BOARDS: Board[] = [
   {
     name: 'Pearson Edexcel IGCSE Language A (4EA1)',
     initials: 'iEDX-Lang',
-    href: '/set-texts/edexcel-igcse-lang?setBoard=edexcel-igcse-lang',
+    href: boardLandingHref('edexcel-igcse-lang'),
     blurbKey: 'homepage.board.edexcel_igcse_lang.blurb',
     level: 'igcse',
     discClass: 'bg-orange-500/15 text-orange-700 dark:text-orange-300 ring-orange-500/30',
