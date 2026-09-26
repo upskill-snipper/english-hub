@@ -309,14 +309,20 @@ function LevelStep({
   const t = useT()
   return (
     <div className="flex flex-col gap-10">
+      {/* Every step heading here is an h3 (26 September 2026). This picker only
+          ever renders inside BoardGate, under the gate's own h2 title, on a page
+          that already has its h1. The steps used h1s, so a visitor with no board
+          chosen, and any crawler, got two or three visible h1s on board-gated
+          pages such as /revision/texts/macbeth and /igcse/edexcel/poetry. The
+          classes, and so the look, are unchanged. */}
       <header className="mx-auto flex max-w-2xl flex-col items-center gap-4 text-center">
         <span className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary backdrop-blur-md">
           <Sparkles className="size-3.5" aria-hidden="true" />
           {t('board.welcome')}
         </span>
-        <h1 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+        <h3 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
           {t('board.level.title')}
-        </h1>
+        </h3>
         <p className="text-base text-muted-foreground sm:text-lg">{t('board.level.subtitle')}</p>
       </header>
 
@@ -460,9 +466,9 @@ function LevelCard({
           <p className="font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground">
             {subLabel}
           </p>
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground">
+          <h3 className="font-heading text-3xl font-bold tracking-tight text-foreground">
             {label}
-          </h2>
+          </h3>
         </div>
 
         <p className="text-sm leading-relaxed text-muted-foreground">{description}</p>
@@ -701,9 +707,9 @@ function AwardingBodyStep({
               .replace('{current}', String(currentStep))
               .replace('{total}', String(totalSteps))}
           </span>
-          <h1 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h3 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             {heading}
-          </h1>
+          </h3>
           <p className="max-w-2xl text-base text-muted-foreground sm:text-lg">{subheading}</p>
         </div>
       </header>
@@ -876,9 +882,9 @@ function PaperStep({
           <span className="mx-auto inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary backdrop-blur-md sm:mx-0">
             {t('board.step_of').replace('{current}', '3').replace('{total}', '3')}
           </span>
-          <h1 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h3 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             {t('board.paper.heading_before')} {bodyLabel} {t('board.paper.heading_after')}
-          </h1>
+          </h3>
           <p className="max-w-2xl text-base text-muted-foreground sm:text-lg">
             {t('board.paper.subheading')}
           </p>
