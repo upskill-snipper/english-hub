@@ -16,5 +16,7 @@ import type { ComicSet } from '@/lib/comics/types'
 
 export const COMIC_LOADERS: Record<string, () => Promise<ComicSet>> = {
   'a-christmas-carol': () => import('./a-christmas-carol').then((m) => m.comics),
+  'jekyll-and-hyde': () => import('./jekyll-and-hyde').then((m) => m.comics),
   macbeth: () => import('./macbeth').then((m) => m.comics),
+  'romeo-and-juliet': () => import('./romeo-and-juliet').then((m) => m.comics),
 }
