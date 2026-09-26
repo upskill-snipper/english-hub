@@ -106,8 +106,12 @@ function fullText(slug: string): string | null {
 describe('the study-guide register', () => {
   it('lists every guide file, and every entry has a file', () => {
     const index = readFileSync(join(DIR, 'index.ts'), 'utf8')
-    const registered = [...index.matchAll(/^\s*'([a-z0-9-]+)':\s*\(\)\s*=>/gm)]
-      .map((m) => m[1])
+    // Quoted keys or bare ones: the generator writes 'night':, and the commit
+    // hook's Prettier rewrites it night:. Reading only the quoted form passed on
+    // a freshly generated index and failed on every committed one (found on 26
+    // September 2026 by running the suite on a clean checkout of the commit).
+    const registered = [...index.matchAll(/^\s*(?:'([a-z0-9-]+)'|([a-z][a-z0-9]*)):\s*\(\)\s*=>/gm)]
+      .map((m) => m[1] ?? m[2])
       .sort()
     expect(registered).toEqual(guideFiles())
     expect(Object.keys(STUDY_GUIDE_LOADERS).sort()).toEqual(guideFiles())
