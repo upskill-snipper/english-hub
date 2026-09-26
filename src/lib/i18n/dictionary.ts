@@ -68,6 +68,7 @@ import { AMG_DICTIONARY } from './dictionary-amg'
 import { SCHOOL_3_DICTIONARY } from './dictionary-school-3'
 import { B1_KS3_DICTIONARY } from './dictionary-b1-ks3'
 import { B1_REVISION_DICTIONARY } from './dictionary-b1-revision'
+import { STUDY_GUIDE_DICTIONARY } from './dictionary-study-guide'
 import { B1_RESOURCES_DICTIONARY } from './dictionary-b1-resources'
 import { B15_MARKING_SCHOOL_DICTIONARY } from './dictionary-b15-marking-school'
 import { B15_DASHBOARD_DICTIONARY } from './dictionary-b15-dashboard'
@@ -25255,6 +25256,8 @@ export const DICTIONARY_CHAIN: Dictionary[] = [
   // genuine Arabic wins over any junk/placeholder entry.
   B1_KS3_DICTIONARY,
   B1_REVISION_DICTIONARY,
+  // 25 September 2026: the shared study-guide sections (study_guide.*).
+  STUDY_GUIDE_DICTIONARY,
   B1_RESOURCES_DICTIONARY,
   // Bucket B Phase B1.5 - curated EN + Khaleeji AR for app-surface
   // product-UI pages: /marking + /school, /dashboard + /toolkit, and

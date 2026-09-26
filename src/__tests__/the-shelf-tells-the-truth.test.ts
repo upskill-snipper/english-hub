@@ -84,9 +84,12 @@ describe('the honesty invariant', () => {
 
   it('finds placeholders to be honest about, so that is not vacuous', () => {
     // If both registers emptied, the test above would pass by proving nothing.
-    expect(PLACEHOLDER_TEXT_SLUGS.size).toBeGreaterThan(15)
+    // These floors fall as guides are written: from above 15 to 15 on 26
+    // September 2026, when five anthology texts got real pages. Lower them
+    // deliberately in the change that writes more, and say so.
+    expect(PLACEHOLDER_TEXT_SLUGS.size).toBeGreaterThanOrEqual(10)
     const anyNone = BOARDS.flatMap((b) => buildShelf(b.id)).filter((e) => e.readiness === 'none')
-    expect(anyNone.length).toBeGreaterThan(15)
+    expect(anyNone.length).toBeGreaterThanOrEqual(10)
   })
 
   it('still marks the real guides as real, so it is not honest by saying no to everything', () => {
@@ -147,13 +150,22 @@ describe('classifyReadiness', () => {
   })
 
   it.each([
-    ['night', 'a placeholder with no guide anywhere'],
-    ['the-necklace', 'a placeholder with no guide anywhere'],
+    ['the-pedestrian', 'a placeholder with no guide anywhere'],
+    ['the-man-who-loved-flowers', 'a placeholder with no guide anywhere'],
   ])('%s is still none (%s)', (slug) => {
     // The counterweight. If everything became `partial` the invariant above
-    // would be satisfied by saying yes to everything.
+    // would be satisfied by saying yes to everything. These two were Night
+    // and The Necklace until 26 September 2026, when both got a study guide
+    // page: when these get theirs, pick the next text with none.
     expect(classifyReadiness(slug).readiness).toBe('none')
   })
+
+  it.each(['night', 'the-necklace'])(
+    '%s, once a placeholder, now has a real guide page',
+    (slug) => {
+      expect(classifyReadiness(slug).readiness).not.toBe('none')
+    },
+  )
 })
 
 describe('every board', () => {

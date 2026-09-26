@@ -138,7 +138,9 @@ describe('the invariant, across every text', () => {
   })
 
   it('and the placeholders are still identified, so the message still has a use', () => {
-    expect(PLACEHOLDER_TEXT_SLUGS.size).toBeGreaterThan(15)
+    // Falls as guides are written: above 15 until 26 September 2026, when six
+    // anthology texts got real pages. Lower it in the change that writes more.
+    expect(PLACEHOLDER_TEXT_SLUGS.size).toBeGreaterThanOrEqual(10)
     for (const slug of PLACEHOLDER_TEXT_SLUGS) {
       expect(buildTextNav(slug).sectionCount, `${slug} is a placeholder with sections`).toBe(0)
     }

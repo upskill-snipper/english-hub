@@ -40,7 +40,6 @@
 // ────────────────────────────────────────────────────────────────────────────
 
 export const STUB_SET_TEXT_SLUGS: ReadonlySet<string> = new Set([
-  'the-war-of-the-worlds',
   'antony-and-cleopatra',
   'the-waste-land',
   'the-handmaids-tale',
@@ -69,10 +68,7 @@ export const STUB_SET_TEXT_SLUGS: ReadonlySet<string> = new Set([
   // worth adding: the guides were written and unreachable. Being listed here
   // keeps the thin catch-all page out of the sitemap while the shelf links
   // past it to the guide. See src/lib/revision/guide-locations.generated.ts.
-  'blessing',
-  'search-for-my-tongue',
   'la-belle-dame-sans-merci',
-  'poem-at-thirty-nine',
   'the-tyger',
   'half-caste',
   'remember',
