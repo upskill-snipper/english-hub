@@ -112,6 +112,47 @@ export const PLATE_SRC: Readonly<Record<string, string>> = {
   'lc-animal-farm-without-cause': '/comics/animal-farm/without-cause.cab910dcf077.svg',
   'lc-animal-farm-working-like-slaves': '/comics/animal-farm/working-like-slaves.6bf29ffb7d9d.svg',
   'lc-animal-farm-years-pass': '/comics/animal-farm/years-pass.8ebe1fa88324.svg',
+  'lc-frankenstein-a-geneva-childhood-and-a-fatal-subject':
+    '/comics/frankenstein/a-geneva-childhood-and-a-fatal-subject.2112965f20b2.svg',
+  'lc-frankenstein-alphonse-frankenstein':
+    '/comics/frankenstein/alphonse-frankenstein.b9909673f9cf.svg',
+  'lc-frankenstein-clerval-s-murder': '/comics/frankenstein/clerval-s-murder.248e701bcf3f.svg',
+  'lc-frankenstein-elizabeth-lavenza': '/comics/frankenstein/elizabeth-lavenza.40672f582bee.svg',
+  'lc-frankenstein-henry-clerval': '/comics/frankenstein/henry-clerval.403b0ebb4e1d.svg',
+  'lc-frankenstein-justine-moritz': '/comics/frankenstein/justine-moritz.26acc5be657b.svg',
+  'lc-frankenstein-learning-to-be-human':
+    '/comics/frankenstein/learning-to-be-human.5b6a4bf28b62.svg',
+  'lc-frankenstein-robert-walton': '/comics/frankenstein/robert-walton.a743fabff179.svg',
+  'lc-frankenstein-the-creation-and-the-flight':
+    '/comics/frankenstein/the-creation-and-the-flight.f9b5aad6448d.svg',
+  'lc-frankenstein-the-creature': '/comics/frankenstein/the-creature.d38e13862538.svg',
+  'lc-frankenstein-the-creature-over-victor-s-body':
+    '/comics/frankenstein/the-creature-over-victor-s-body.efca382242fb.svg',
+  'lc-frankenstein-the-de-lacey-family':
+    '/comics/frankenstein/the-de-lacey-family.a13868f0a3e7.svg',
+  'lc-frankenstein-the-demand-for-a-companion':
+    '/comics/frankenstein/the-demand-for-a-companion.9992adf8ea60.svg',
+  'lc-frankenstein-the-meeting-on-the-glacier':
+    '/comics/frankenstein/the-meeting-on-the-glacier.2df0a99c61fe.svg',
+  'lc-frankenstein-the-pursuit-north-and-victor-s-death':
+    '/comics/frankenstein/the-pursuit-north-and-victor-s-death.96fdad8a274d.svg',
+  'lc-frankenstein-the-second-creation-destroyed':
+    '/comics/frankenstein/the-second-creation-destroyed.87fa8d603b2f.svg',
+  'lc-frankenstein-the-secret-toil': '/comics/frankenstein/the-secret-toil.538accb03617.svg',
+  'lc-frankenstein-the-stranger-on-the-ice':
+    '/comics/frankenstein/the-stranger-on-the-ice.a43006e6db07.svg',
+  'lc-frankenstein-the-wedding-night': '/comics/frankenstein/the-wedding-night.c201c06e5558.svg',
+  'lc-frankenstein-three-books-and-a-rejection':
+    '/comics/frankenstein/three-books-and-a-rejection.7eb641b996b7.svg',
+  'lc-frankenstein-victor-frankenstein':
+    '/comics/frankenstein/victor-frankenstein.ae7b6dfd0af7.svg',
+  'lc-frankenstein-walton-sets-out-for-the-pole':
+    '/comics/frankenstein/walton-sets-out-for-the-pole.14542d12abba.svg',
+  'lc-frankenstein-war-on-humankind': '/comics/frankenstein/war-on-humankind.4c540a4a11ec.svg',
+  'lc-frankenstein-william-frankenstein':
+    '/comics/frankenstein/william-frankenstein.50cabb40c004.svg',
+  'lc-frankenstein-william-s-murder-and-justine-s-trial':
+    '/comics/frankenstein/william-s-murder-and-justine-s-trial.6629a56dc29e.svg',
   'lc-jekyll-and-hyde-dr-hastie-lanyon':
     '/comics/jekyll-and-hyde/dr-hastie-lanyon.73a56dc5b2f8.svg',
   'lc-jekyll-and-hyde-dr-henry-jekyll': '/comics/jekyll-and-hyde/dr-henry-jekyll.8f2611ebefc9.svg',
@@ -263,4 +304,49 @@ export const PLATE_SRC: Readonly<Record<string, string>> = {
   'lc-romeo-and-juliet-tybalt': '/comics/romeo-and-juliet/tybalt.3793b9ef8047.svg',
   'lc-romeo-and-juliet-wedding-turned-to-funeral':
     '/comics/romeo-and-juliet/wedding-turned-to-funeral.889fca150359.svg',
+  'lc-the-merchant-of-venice-antonio': '/comics/the-merchant-of-venice/antonio.8419d86baba4.svg',
+  'lc-the-merchant-of-venice-antonio-s-sadness':
+    '/comics/the-merchant-of-venice/antonio-s-sadness.20fa297111ed.svg',
+  'lc-the-merchant-of-venice-arragon-chooses-silver':
+    '/comics/the-merchant-of-venice/arragon-chooses-silver.e27ecf32df32.svg',
+  'lc-the-merchant-of-venice-bassanio': '/comics/the-merchant-of-venice/bassanio.45ebcc05a31b.svg',
+  'lc-the-merchant-of-venice-gratiano': '/comics/the-merchant-of-venice/gratiano.b1e81449d2e0.svg',
+  'lc-the-merchant-of-venice-hath-not-a-jew-eyes':
+    '/comics/the-merchant-of-venice/hath-not-a-jew-eyes.24374301a2e1.svg',
+  'lc-the-merchant-of-venice-i-ll-have-my-bond':
+    '/comics/the-merchant-of-venice/i-ll-have-my-bond.47f55ede8a10.svg',
+  'lc-the-merchant-of-venice-in-such-a-night':
+    '/comics/the-merchant-of-venice/in-such-a-night.d9d838be17d3.svg',
+  'lc-the-merchant-of-venice-jessica': '/comics/the-merchant-of-venice/jessica.eba3e467596d.svg',
+  'lc-the-merchant-of-venice-jessica-leaves-her-father':
+    '/comics/the-merchant-of-venice/jessica-leaves-her-father.c269097c1d2f.svg',
+  'lc-the-merchant-of-venice-launcelet-gobbo':
+    '/comics/the-merchant-of-venice/launcelet-gobbo.c5c2b9c1a276.svg',
+  'lc-the-merchant-of-venice-lead-and-a-letter':
+    '/comics/the-merchant-of-venice/lead-and-a-letter.e933723b90a0.svg',
+  'lc-the-merchant-of-venice-lorenzo': '/comics/the-merchant-of-venice/lorenzo.6bc06373ddf8.svg',
+  'lc-the-merchant-of-venice-morocco-chooses-gold':
+    '/comics/the-merchant-of-venice/morocco-chooses-gold.77db7b523d9f.svg',
+  'lc-the-merchant-of-venice-my-daughter-my-ducats':
+    '/comics/the-merchant-of-venice/my-daughter-my-ducats.ba14cfe2d014.svg',
+  'lc-the-merchant-of-venice-nerissa': '/comics/the-merchant-of-venice/nerissa.0ce1cc9b49e1.svg',
+  'lc-the-merchant-of-venice-portia': '/comics/the-merchant-of-venice/portia.120c9e36283c.svg',
+  'lc-the-merchant-of-venice-portia-and-her-father-s-will':
+    '/comics/the-merchant-of-venice/portia-and-her-father-s-will.522d9e0af56f.svg',
+  'lc-the-merchant-of-venice-portia-s-plan':
+    '/comics/the-merchant-of-venice/portia-s-plan.eafa1b9ef7d1.svg',
+  'lc-the-merchant-of-venice-shylock': '/comics/the-merchant-of-venice/shylock.b6c37f2f7852.svg',
+  'lc-the-merchant-of-venice-the-merry-bond':
+    '/comics/the-merchant-of-venice/the-merry-bond.687602f06485.svg',
+  'lc-the-merchant-of-venice-the-prince-of-morocco':
+    '/comics/the-merchant-of-venice/the-prince-of-morocco.473645c67ce1.svg',
+  'lc-the-merchant-of-venice-the-ring-quarrel':
+    '/comics/the-merchant-of-venice/the-ring-quarrel.2dbb1f622845.svg',
+  'lc-the-merchant-of-venice-the-rings-given-away':
+    '/comics/the-merchant-of-venice/the-rings-given-away.a77e1f81c8de.svg',
+  'lc-the-merchant-of-venice-the-trial-mercy-refused':
+    '/comics/the-merchant-of-venice/the-trial-mercy-refused.3abf9e3432ce.svg',
+  'lc-the-merchant-of-venice-the-trial-the-reversal':
+    '/comics/the-merchant-of-venice/the-trial-the-reversal.36f43a940e1b.svg',
+  'lc-the-merchant-of-venice-tubal': '/comics/the-merchant-of-venice/tubal.0e75f48ef612.svg',
 }
