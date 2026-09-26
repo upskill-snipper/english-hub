@@ -1,6 +1,8 @@
 import { describe, it, expect } from 'vitest'
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
+import { boardLandingHref } from '@/lib/board/board-landing'
+import { boardSelectCardHref } from '@/lib/board/board-select-href'
 import { validateRedirect } from '@/lib/utils'
 
 /**
@@ -18,9 +20,12 @@ import { validateRedirect } from '@/lib/utils'
  * of the examiner tool never saw the teacher hub on their first visit, and
  * teachers are the higher-value segment.
  *
- * Three fixes, one per surface, and this file pins each of them. They are
+ * Three fixes, one per surface, and this file pins each of them. Most are
  * source-level assertions because the alternative is booting Next's middleware
- * and a server component, which these tests would then be about.
+ * and a server component, which these tests would then be about. The picker's
+ * links are the exception: a source assertion passed while the page rendered
+ * the wrong href (26 September 2026), so they are checked through the function
+ * that decides them.
  */
 
 function read(rel: string): string {
@@ -111,28 +116,51 @@ describe('the board gate in middleware', () => {
 })
 
 // ─── 3. /board-select honours where you were going ──────────────────────
+//
+// 26 September 2026. These used to pin source text: the '/revision' fallback
+// and the `${destination}?setBoard=` template. The fallback was the defect - it
+// overrode every card's own landing link, so a student who chose a board with
+// no `next` never reached their set texts - and a source assertion cannot tell
+// a rule from a mistake. They now call the function the page calls. The full
+// rule is tested in src/lib/board/board-select-href.test.ts.
 
 describe('the board picker', () => {
-  it('reads the next parameter it is given', () => {
+  it('passes the next parameter it is given to boardSelectCardHref', () => {
     expect(boardSelect).toContain('searchParams')
-    expect(boardSelect).toContain('validateRedirect(rawNext)')
+    expect(boardSelect).toContain('const rawNext = params.next')
   })
 
-  it('puts setBoard on the destination, not on /revision', () => {
+  it('decides every board group through that one function, not just the first', () => {
+    const hits = boardSelect.match(/href: boardSelectCardHref\(b\.href, rawNext\)/g) ?? []
+    expect(hits.length).toBe(4) // KS3, GCSE, IGCSE, EAL
+    // And nothing else on the page rewrites a card's href.
+    expect(boardSelect).not.toMatch(/`\$\{[a-zA-Z]+\}\?setBoard=/)
+  })
+
+  it('puts setBoard on the destination when there is a next', () => {
     // The middleware strips ?setBoard= and redirects to the clean URL, so the
     // parameter has to sit on the path the visitor should end up at.
-    expect(boardSelect).toContain('`${destination}?setBoard=${encodeURIComponent(id)}`')
+    expect(boardSelectCardHref(boardLandingHref('aqa'), '/dashboard')).toBe(
+      '/dashboard?setBoard=aqa',
+    )
+    expect(boardSelectCardHref(boardLandingHref('aqa'), '/dashboard/teacher')).toBe(
+      '/dashboard/teacher?setBoard=aqa',
+    )
   })
 
-  it('still sends a visitor with no next to the revision hub', () => {
-    // The previous behaviour, preserved for anyone who reaches the picker by
-    // choice rather than by redirect.
-    expect(boardSelect).toContain("nextPath === '/dashboard' && !rawNext ? '/revision'")
+  it('sends a visitor with no next to the board they chose, not the revision hub', () => {
+    // Anyone who reaches the picker by choice rather than by redirect lands
+    // where every other board picker sends them.
+    expect(boardSelectCardHref(boardLandingHref('aqa'), undefined)).toBe(
+      '/set-texts/aqa?setBoard=aqa',
+    )
+    expect(boardSelectCardHref(boardLandingHref('ks3'), undefined)).toBe('/ks3?setBoard=ks3')
   })
 
-  it('retargets every board group, not just the first', () => {
-    const hits = boardSelect.match(/href: retarget\(b\.href\)/g) ?? []
-    expect(hits.length).toBe(4) // KS3, GCSE, IGCSE, EAL
+  it('treats an unsafe next as no next, rather than falling back to /dashboard', () => {
+    expect(boardSelectCardHref(boardLandingHref('aqa'), '//evil.example')).toBe(
+      '/set-texts/aqa?setBoard=aqa',
+    )
   })
 })
 

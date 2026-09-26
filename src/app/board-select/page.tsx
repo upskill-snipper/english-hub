@@ -3,9 +3,9 @@ import Link from 'next/link'
 import { Languages, Star, ArrowRight } from 'lucide-react'
 
 import { boardLandingHref } from '@/lib/board/board-landing'
+import { boardSelectCardHref } from '@/lib/board/board-select-href'
 import { tMany } from '@/lib/i18n/t'
 import { isMuslimMajorityVisitor } from '@/lib/geo/gcc'
-import { validateRedirect } from '@/lib/utils'
 
 export const metadata: Metadata = {
   title: 'Choose your level or exam board',
@@ -149,6 +149,23 @@ const EAL_BOARDS: readonly Board[] = [
  * clean URL, so `/set-texts/aqa?setBoard=aqa&next=/dashboard` would strip setBoard
  * and still land on /revision. Building the href as
  * `<next>?setBoard=<id>` makes the clean-URL redirect land in the right place.
+ *
+ * AND THE FIX OVERRODE THE LANDING RULE (26 September 2026)
+ *
+ * The fix above rewrote EVERY card's href to `<destination>?setBoard=<id>` and,
+ * with no `next`, set the destination to '/revision'. A day later the cards
+ * were changed to land on the board's own set texts (82558a0b), and that change
+ * never reached this page: the arrays above said `/set-texts/aqa?setBoard=aqa`,
+ * the rendered page said `/revision?setBoard=aqa`, and the test that guarded
+ * the landing rule read the arrays, so it passed. A student who chose a board
+ * here - the normal way in, with no `next` - never reached their set texts, and
+ * KS3 and Cambridge never reached their hub. An unsafe `next` fell back to
+ * validateRedirect's '/dashboard', and a `next` carrying a query string got a
+ * second `?`, which hid setBoard from the middleware.
+ *
+ * The decision now lives in boardSelectCardHref (src/lib/board/board-select-href.ts),
+ * which is tested directly: no usable `next` keeps the card's own landing link,
+ * a usable one is honoured as described above, and EAL is never touched.
  */
 export default async function BoardSelectPage({
   searchParams,
@@ -156,11 +173,9 @@ export default async function BoardSelectPage({
   searchParams?: Promise<Record<string, string | string[] | undefined>>
 }) {
   const params = searchParams ? await searchParams : {}
-  const rawNext = typeof params.next === 'string' ? params.next : null
-  // Same rule as validateRedirect in src/lib/utils.ts. Anything that is not a
-  // plain same-site path falls back to the previous behaviour.
-  const nextPath = validateRedirect(rawNext)
-  const destination = nextPath === '/dashboard' && !rawNext ? '/revision' : nextPath
+  // Passed raw: boardSelectCardHref validates it, and treats anything that is
+  // not a plain same-site path as though there were no `next` at all.
+  const rawNext = params.next
 
   // Pre-resolve all visible strings on the server (one locale read for the
   // whole page). Order matches the keys array exactly.
@@ -207,35 +222,27 @@ export default async function BoardSelectPage({
   const igcseDescriptions = descResolved.slice(gcseEnd, igcseEnd)
   const ealDescriptions = descResolved.slice(igcseEnd)
 
-  /**
-   * Point each card at where the visitor was actually going. The board id is
-   * taken from the card's own canonical href so there is still one source of
-   * board ids on this page.
-   */
-  const retarget = (href: string): string => {
-    const id = new URLSearchParams(href.split('?')[1] ?? '').get('setBoard')
-    if (!id) return href
-    return `${destination}?setBoard=${encodeURIComponent(id)}`
-  }
-
+  // Each card keeps its own landing link unless the visitor was sent here from
+  // somewhere they should go back to. The board id is read from that landing
+  // link, so there is still one source of board ids on this page.
   const ks3Boards = KS3_BOARDS.map((b, i) => ({
     ...b,
-    href: retarget(b.href),
+    href: boardSelectCardHref(b.href, rawNext),
     description: ks3Descriptions[i] ?? '',
   }))
   const gcseBoards = GCSE_BOARDS.map((b, i) => ({
     ...b,
-    href: retarget(b.href),
+    href: boardSelectCardHref(b.href, rawNext),
     description: gcseDescriptions[i] ?? '',
   }))
   const igcseBoards = IGCSE_BOARDS.map((b, i) => ({
     ...b,
-    href: retarget(b.href),
+    href: boardSelectCardHref(b.href, rawNext),
     description: igcseDescriptions[i] ?? '',
   }))
   const ealBoards = EAL_BOARDS.map((b, i) => ({
     ...b,
-    href: retarget(b.href),
+    href: boardSelectCardHref(b.href, rawNext),
     description: ealDescriptions[i] ?? '',
   }))
 

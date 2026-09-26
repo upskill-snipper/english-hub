@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { readFileSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { boardHasShelf, boardLandingHref, shelflessBoardHub } from '@/lib/board/board-landing'
+import { boardSelectCardHref } from '@/lib/board/board-select-href'
 
 /**
  * Board-navigation contract test (I14).
@@ -191,23 +192,33 @@ describe('homepage cards land on boardLandingHref(<id>) (contract A,C)', () => {
 
 /* -------------------------------------------------------------------------
  * 2. Board-select page hrefs are boardLandingHref(<id>)
+ *
+ * 26 September 2026. This checked the hrefs as written in the page's arrays,
+ * and passed for a week while the page rewrote every one of them to
+ * /revision?setBoard=<id> before rendering. The arrays are now passed through
+ * boardSelectCardHref, the function the page renders them with, as a visitor
+ * with no ?next= gets them. The other cases are tested in
+ * src/lib/board/board-select-href.test.ts.
  * ------------------------------------------------------------------------- */
 describe('/board-select cards land on boardLandingHref(<id>)', () => {
   const SOURCE = readSource('app', 'board-select', 'page.tsx')
+  const KS3 = extractBoardArray(SOURCE, 'KS3_BOARDS')
   const GCSE = extractBoardArray(SOURCE, 'GCSE_BOARDS')
   const IGCSE = extractBoardArray(SOURCE, 'IGCSE_BOARDS')
-  const ALL: readonly BoardEntry[] = [...GCSE, ...IGCSE]
+  const ALL: readonly BoardEntry[] = [...KS3, ...GCSE, ...IGCSE]
 
-  it('parses both BOARDS arrays from board-select/page.tsx', () => {
+  it('parses the three BOARDS arrays from board-select/page.tsx', () => {
+    expect(KS3.length).toBeGreaterThan(0)
     expect(GCSE.length).toBeGreaterThan(0)
     expect(IGCSE.length).toBeGreaterThan(0)
   })
 
-  it('every board-select card href is boardLandingHref of the board it sets', () => {
+  it('every board-select card, as rendered, is boardLandingHref of the board it sets', () => {
     for (const card of ALL) {
+      const rendered = boardSelectCardHref(card.href, undefined)
       expect(
-        landsCorrectly(card.href),
-        `board-select card "${card.name}" href "${card.href}" is not boardLandingHref(${setBoardOf(card.href)})`,
+        landsCorrectly(rendered),
+        `board-select card "${card.name}" renders "${rendered}", not boardLandingHref(${setBoardOf(card.href)})`,
       ).toBe(true)
     }
   })

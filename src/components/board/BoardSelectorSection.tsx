@@ -27,7 +27,6 @@ import { useT } from '@/lib/i18n/use-t'
  * ──────────────────────────────────────────────────────────────────────────── */
 
 type Props = {
-  /** Where to redirect after a selection (defaults to `/revision`). */
   /**
    * Where to go after a board is chosen. Omit it and the student lands on that
    * board's own set texts, which is the point of asking. A caller passes this
