@@ -62,14 +62,14 @@ const THEMES: ThemeData[] = [
           'An imperative that treats a child as a commodity. Russell shows that class power lets some people buy what others cannot keep.',
       },
       {
-        text: '"I could have been him."',
+        text: '"I could have been him!"',
         speaker: 'Mickey',
         analysis:
           'The realisation that only circumstance separates them. Russell delays this to the climax for maximum emotional and political impact.',
       },
     ],
     contextLink:
-      'Liverpool in the 1970s and 1980s suffered massive deindustrialisation. Unemployment rates in working-class areas exceeded 25%. Russell names Margaret Thatcher explicitly and frames the play as an indictment of policies that widened the class gap.',
+      'Liverpool in the 1970s and 1980s suffered massive deindustrialisation. Unemployment rates in working-class areas exceeded 25%. The play never names Margaret Thatcher, but it opened in 1983 under her government and can be read as an indictment of policies that widened the class gap.',
     examTip:
       'Class is the safest theme to lead with in an essay because it connects to every other theme. Examiners expect precise contextual detail: name Thatcherism, deindustrialisation and the specific geography of Liverpool.',
   },
@@ -87,10 +87,10 @@ const THEMES: ThemeData[] = [
           'The boys choose kinship before they know they share it. Russell uses the ritual to underline that connection is natural; separation is imposed.',
       },
       {
-        text: '"If you\'d been born here, you would have been just like him."',
-        speaker: 'Linda',
+        text: '"while no one was looking I grew up"',
+        speaker: 'Mickey',
         analysis:
-          'Linda voices the nature-versus-nurture question directly. Russell gives this insight to a teenager to show that the truth is obvious to everyone except those in power.',
+          'Mickey explains why he can no longer believe in the blood-brother promise: hardship, not age, has made him grow up. Russell makes the difference between the twins a product of circumstance, not nature.',
       },
     ],
     contextLink:
@@ -162,16 +162,16 @@ const THEMES: ThemeData[] = [
       "Russell uses Sammy as the early marker of violence, showing how poverty normalises aggression. Mickey resists violence for most of the play, but prison and depression push him toward it. The climax is deliberately chaotic: Mickey's gun goes off almost accidentally, and the police response is immediate and lethal. Russell refuses a clean moral: the violence is everyone's fault and no one's.",
     keyQuotes: [
       {
-        text: '"There\'s a man gone mad in the town tonight."',
-        speaker: 'Narrator',
+        text: '"I curse the day I met you. You ruined me."',
+        speaker: 'Mrs Lyons',
         analysis:
-          "The Narrator frames Mickey's breakdown as both personal tragedy and social crisis. Russell uses the ballad form to universalise the violence.",
+          'Mrs Lyons turns guilt into blame, and within moments she is calling Mrs Johnstone a witch and reaching for a knife. Russell shows violence growing out of fear and a guarded secret, not out of poverty alone.',
       },
       {
-        text: '"I\'ll get y\' after."',
-        speaker: 'Sammy',
+        text: '"I could have been... I could have been him!"',
+        speaker: 'Mickey',
         analysis:
-          'Casual childhood threat that Russell uses to plant the seed of later violence. Aggression is normalised where power is scarce.',
+          'Mickey has just learned that he and Edward are twins, and his rage runs straight into the shooting. Russell makes the play’s argument and its violence arrive in the same moment.',
       },
     ],
     contextLink:
@@ -199,7 +199,7 @@ const THEMES: ThemeData[] = [
           'The closing song begs for a different outcome. Russell makes the audience feel the desire for change while forcing them to recognise that only structural change could deliver it.',
       },
       {
-        text: '"Shoes upon the table."',
+        text: '"you never put new shoes on the table"',
         speaker: 'Mrs Johnstone',
         analysis:
           'A folk superstition treated as omen. Russell uses it to show how people without power reach for magical explanations of systemic injustice.',
@@ -248,7 +248,7 @@ export default async function BloodBrothersThemesPage() {
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="me-1 size-3" />
-              Edexcel / Eduqas
+              AQA / Edexcel / Eduqas
             </Badge>
           </div>
 

@@ -8,6 +8,8 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
+import { GuideSupplement } from '@/components/study-guide/guide-supplement'
+import { guide as studyGuide } from '@/data/study-guides/blood-brothers'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Blood Brothers GCSE revision - themes, characters, quotes',
@@ -29,26 +31,43 @@ export const metadata: Metadata = {
   },
 }
 
+/*
+ * Corrected 26 September 2026 against the verified guide (src/data/study-guides/blood-brothers.ts)
+ * and an exact-phrase search of three printings (Methuen Student Edition, Methuen 1986 collection,
+ * Samuel French 1985). What was wrong, so it is not reintroduced here or on the subpages:
+ * - this page (five places) and the themes subpage said that Russell names Margaret Thatcher in
+ *   the play; a full-text search finds the name in none of the three printings;
+ * - quoted lines from the Narrator's song Madman and from Easy Terms were presented as speech (no
+ *   lyric is quoted on the site), and the Narrator's sung shoes line was credited to Mrs Johnstone;
+ * - a four-word line to Linda was placed after prison, with Mickey on antidepressants; a full-text
+ *   search found it in neither Methuen printing, and in the 1985 printing no mention of tablets
+ *   or a councillor comes within 200 words of it (the first writer places it with the teenage
+ *   Mickey, early in Act 2);
+ * - Mickey's recited speech about Sammy was called a song, and quiz bb-9 cited it as one;
+ * - the badge left out AQA, which prescribes the play (see src/lib/board/set-texts.ts);
+ * - "published 1983" was the year of the first performance; the Samuel French edition is 1985;
+ * - the copyright is Willy Russell's own, not Methuen's on his behalf.
+ */
 const data: TextGuideData = {
   slug: 'blood-brothers',
   title: 'Blood Brothers',
   author: 'Willy Russell',
   year: 'first staged 1983',
   category: 'Play',
-  badge: 'Edexcel / Eduqas',
+  badge: 'AQA / Edexcel / Eduqas',
   intro:
     "Willy Russell's musical play tells the story of twin brothers separated at birth - one raised in poverty by their biological mother Mrs Johnstone, the other in wealth by Mrs Lyons. Framed by a Narrator who speaks of superstition and fate, Blood Brothers is a ballad about class, love and the predictable ending of a society that refuses to care for everyone equally.",
   quickInfo: {
     genre: 'Musical play / Social tragedy',
     setting: 'Liverpool, 1960s to early 1980s',
     length: 'Two-act play with songs',
-    published: '1983 (musical version)',
+    published: '1985 (the musical was first staged in 1983)',
   },
   plotSummary: [
     'Mrs Johnstone, a working-class Liverpool mother already raising seven children, discovers she is pregnant with twins. Her employer Mrs Lyons, childless and desperate, persuades her to give up one of the babies. They swear on a Bible, and Mrs Lyons invents a superstition that twins separated at birth must die the moment they learn the truth. Mrs Lyons keeps Edward; Mrs Johnstone raises Mickey.',
     'Seven years later, Mickey and Edward meet by chance, become instant best friends and, not knowing the truth, declare themselves blood brothers. Their friendship crosses the class line that their mothers have drawn, and Russell uses their innocence to expose how absurd and brutal that line really is. The Lyons family moves to the countryside to keep Edward away from Mickey.',
     'In a middle section built on songs and montages, the boys grow up. Mickey works in a factory and marries his childhood sweetheart Linda; Edward goes to university. When Mickey loses his job, gets drawn into a robbery with his older brother Sammy, and is sent to prison, his world collapses. Released depressed and on medication, he struggles to rebuild his life.',
-    'Edward, now a local councillor, tries to help Mickey and Linda. When Mickey learns that Edward and Linda have been spending time together, he takes a gun to the town hall. Mrs Johnstone arrives and tells both sons the truth: they are twins. Mickey, shattered by the revelation that everything could have been different, accidentally shoots Edward, and the police shoot Mickey. The Narrator\u2019s superstition is fulfilled.',
+    'Edward, now a local councillor, tries to help Mickey and Linda. When Mickey learns that Edward and Linda have been spending time together, he takes a gun to the town hall. Mrs Johnstone arrives and tells both sons the truth: they are twins. Mickey, shattered by the revelation that everything could have been different, accidentally shoots Edward, and the police shoot Mickey. Mrs Lyons\u2019s superstition is fulfilled.',
   ],
   characters: [
     {
@@ -101,13 +120,13 @@ const data: TextGuideData = {
     },
     {
       title: 'Thatcher\u2019s Britain',
-      body: 'The play moves into the 1980s, when unemployment in Liverpool hit devastating levels. Russell names Thatcher in the text and makes the economic collapse of Mickey\u2019s world explicit and political.',
+      body: 'The musical opened in Liverpool in 1983, a year after UK unemployment passed three million, with Margaret Thatcher as Prime Minister. The play never names Thatcher, but it makes the economic collapse of Mickey\u2019s world explicit and political.',
     },
   ],
   historicalContext: [
     'Willy Russell grew up in working-class Liverpool and wrote Blood Brothers first as a school play in 1981, then as a musical in 1983. The play draws directly on his own city: its streets, its speech, its humour and the slow economic disaster that engulfed it in the decade after his own childhood.',
     'Liverpool in the 1970s and 1980s was devastated by industrial decline and mass unemployment. Factories closed, docks shrank, and the Toxteth riots of 1981 marked a flashpoint in national anger. Mickey\u2019s trajectory - young worker to unemployed to depressed and imprisoned - tracks the experience of many real families.',
-    'Russell names Margaret Thatcher explicitly in the play. Her government\u2019s monetarist policies were widely blamed for accelerating deindustrialisation in cities like Liverpool, and the tone of Blood Brothers is one of controlled political fury dressed up as a pop musical.',
+    'The play never names Margaret Thatcher, but it opened in 1983 under her government, whose monetarist policies were widely blamed for accelerating deindustrialisation in cities like Liverpool, and the tone of Blood Brothers is one of controlled political fury dressed up as a pop musical.',
     'The play belongs to a tradition of British social-realist drama that includes Shelagh Delaney\u2019s A Taste of Honey and Alan Bleasdale\u2019s Boys from the Blackstuff. Russell\u2019s innovation is marrying that tradition to the accessibility of popular musical theatre.',
   ],
   quotations: [
@@ -124,12 +143,13 @@ const data: TextGuideData = {
       analysis: 'Frames the whole play as a ballad foretold, priming the audience for tragedy.',
     },
     {
-      quote: '"There\'s a man gone mad in the town tonight, he\'s gonna shoot somebody down."',
-      who: 'Narrator - Act 2',
-      analysis: 'The Narrator\u2019s warnings drive the rising sense of doom.',
+      quote: '"And do we blame superstition for what came to pass?"',
+      who: 'Narrator - final speech',
+      analysis:
+        'The Narrator\u2019s closing question hands the verdict to the audience and asks them to look past fate for the real cause.',
     },
     {
-      quote: '"I could have been...I could have been him!"',
+      quote: '"I could have been... I could have been him!"',
       who: 'Mickey - final scene',
       analysis:
         'Mickey\u2019s cry of class-rage at the climax, spoken just before the accidental shooting. The play\u2019s thesis in ordinary speech.',
@@ -138,7 +158,7 @@ const data: TextGuideData = {
       quote: '"I wish I was our Sammy."',
       who: 'Mickey - Act 1',
       analysis:
-        'A childhood song about wanting to be older. Russell uses it to track how innocence is stolen.',
+        'A childhood speech, marked in the script as recited, about wanting to be older. Russell uses it to track how innocence is stolen.',
     },
     {
       quote:
@@ -148,10 +168,10 @@ const data: TextGuideData = {
         'The play\u2019s superstitious language, which Russell repurposes to critique a fatalistic society.',
     },
     {
-      quote: '"I wanna kiss y\'."',
+      quote: '"You sorted it out. You an’ Councillor Eddie Lyons."',
       who: 'Mickey to Linda - Act 2',
       analysis:
-        'A fragmented moment of tenderness from a Mickey numbed by antidepressants, making the final violence all the more unbearable.',
+        'Mickey has learned that the house and his job came through Edward, now a councillor. The favour humiliates him, and his bitterness drives the marriage towards the ending.',
     },
   ],
 }
@@ -191,7 +211,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Mrs Lyons invents the superstition that separated twins "must die the moment they learn the truth." She uses this to control Mrs Johnstone and prevent her from revealing the secret. Russell uses this superstition to critique a society that blames fate for problems of its own making.',
+      'Mrs Lyons invents the superstition that if separated twins learn the truth, "they shall both immediately die". She uses this to control Mrs Johnstone and prevent her from revealing the secret. Russell uses this superstition to critique a society that blames fate for problems of its own making.',
     topic: 'Plot',
     difficulty: 'foundation',
   },
@@ -245,17 +265,17 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'bb-7',
-    question: 'What does Edward do while Mickey is in prison?',
+    question: 'What has Edward done by the time Mickey comes out of prison?',
     type: 'multiple-choice',
     options: [
-      'He goes to prison too',
-      'He goes to university and becomes a local councillor',
-      'He moves abroad',
-      'He joins the army',
+      'He has been to prison too',
+      'He has been to university and become a local councillor',
+      'He has moved abroad',
+      'He has joined the army',
     ],
     correctIndex: 1,
     explanation:
-      "Edward goes to university and becomes a local councillor. The contrast with Mickey's trajectory is the play's core argument: identical twins with identical potential have radically different lives because of class.",
+      "Edward was already at university when Mickey lost his job, and by the time Mickey is released he is a local councillor. The contrast with Mickey's trajectory is the play's core argument: identical twins with identical potential have radically different lives because of class.",
     topic: 'Plot',
     difficulty: 'foundation',
   },
@@ -271,7 +291,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Mickey's anguished line 'I could have been...I could have been him!' distils the play's thesis at the climax. He is expressing the unbearable realisation that an identical twin was given wealth, education, and opportunity simply because of which mother raised him. It is pure class-rage.",
+      "Mickey's anguished line 'I could have been... I could have been him!' distils the play's thesis at the climax. He is expressing the unbearable realisation that an identical twin was given wealth, education, and opportunity simply because of which mother raised him. It is pure class-rage.",
     topic: 'Themes',
     difficulty: 'higher',
   },
@@ -287,7 +307,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Russell marries social-realist drama to the accessibility of musical theatre. Songs like "Tell Me It\'s Not True" and "I Wish I Was Our Sammy" compress time, build emotional investment, and make the political argument about class accessible to a wide audience.',
+      'Russell marries social-realist drama to the accessibility of musical theatre. Songs such as Marilyn Monroe, which returns as the years pass, and the closing Tell Me It\u2019s Not True compress time, build emotional investment, and make the political argument about class accessible to a wide audience.',
     topic: "Writer's Methods",
     difficulty: 'higher',
   },
@@ -325,12 +345,12 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'bb-12',
-    question: 'What political figure does Russell explicitly name in the play?',
+    question: 'Who was Prime Minister when the musical opened in Liverpool in 1983?',
     type: 'multiple-choice',
     options: ['Tony Blair', 'Margaret Thatcher', 'Winston Churchill', 'Harold Wilson'],
     correctIndex: 1,
     explanation:
-      "Russell names Margaret Thatcher explicitly. Her government's monetarist policies were widely blamed for accelerating deindustrialisation in cities like Liverpool. Mickey's trajectory mirrors the experience of thousands of families under Thatcherism.",
+      "Margaret Thatcher was Prime Minister from 1979 to 1990. The play never names her, but her government's monetarist policies were widely blamed for accelerating deindustrialisation in cities like Liverpool. Mickey's trajectory mirrors the experience of thousands of families under Thatcherism.",
     topic: 'Context',
     difficulty: 'higher',
   },
@@ -362,7 +382,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "When Mrs Johnstone reveals the truth, Mickey is shattered by the revelation that everything could have been different. He accidentally shoots Edward, and police shoot Mickey, fulfilling the Narrator's superstition. The cycle of class violence is complete.",
+      'When Mrs Johnstone reveals the truth, Mickey is shattered by the revelation that everything could have been different. He accidentally shoots Edward, and police shoot Mickey, fulfilling the superstition Mrs Lyons invented. The cycle of class violence is complete.',
     topic: 'Plot',
     difficulty: 'higher',
   },
@@ -473,8 +493,8 @@ const REVISION_TOPICS = [
       'The twin conceit creates a controlled experiment about class',
       'Mickey: factory, unemployment, prison, depression',
       'Edward: private school, university, councillor',
-      '"I could have been...I could have been him!" - the play\'s thesis at the climax',
-      'Russell names Thatcher and makes the economic collapse explicit',
+      '"I could have been... I could have been him!" - the play\'s thesis at the climax',
+      'The play never names Thatcher, but it makes the economic collapse explicit',
     ],
   },
   {
@@ -514,11 +534,11 @@ const REVISION_TOPICS = [
   {
     topic: "Thatcher's Britain",
     summary:
-      'The play moves into the 1980s, when unemployment in Liverpool hit devastating levels.',
+      'The musical opened in 1983, when unemployment in Liverpool had reached devastating levels.',
     keyPoints: [
       'Factories closed, docks shrank, the Toxteth riots of 1981',
       "Mickey's trajectory tracks thousands of real families",
-      'Russell names Thatcher explicitly in the text',
+      'The play never names Thatcher: the politics are carried by Mickey’s story',
       'The tone is one of controlled political fury',
       'The musical form makes the political message accessible',
     ],
@@ -622,11 +642,14 @@ export default async function BloodBrothersPage() {
       />
       <TextGuide data={data} />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        <strong>{await t('rev.texts.bloodbrothers.rights_notice_label')}</strong> &copy; Methuen
-        Drama / Bloomsbury on behalf of Willy Russell (b. 1947). Quotations are short fair-dealing
-        extracts under CDPA 1988 &sect;30 (criticism, review, quotation). For full text, students
-        should consult the licensed school edition.
+        <strong>{await t('rev.texts.bloodbrothers.rights_notice_label')}</strong> &copy; Willy
+        Russell (b. 1947), published by Methuen Drama / Bloomsbury. Quotations are short
+        fair-dealing extracts under CDPA 1988 &sect;30 (criticism, review, quotation). For full
+        text, students should consult the licensed school edition.
       </p>
+      {/* The sections this page did not have, and its story visuals.
+          See scripts/mount-study-guide-supplement.mjs. */}
+      <GuideSupplement guide={studyGuide} />
     </>
   )
 }

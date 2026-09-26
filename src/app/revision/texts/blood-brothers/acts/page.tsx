@@ -8,6 +8,8 @@ import { Button } from '@/components/ui/button'
 import { getServerBoard } from '@/lib/board/get-server-board'
 
 import { t } from '@/lib/i18n/t'
+import { StoryVisuals } from '@/components/study-guide/visuals/story-visuals'
+import { guide as studyGuide } from '@/data/study-guides/blood-brothers'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Blood Brothers - Act-by-Act Analysis | The English Hub',
@@ -76,7 +78,7 @@ const ACT_1: SceneBlock[] = [
         text: '"I wish I was our Sammy."',
         speaker: 'Mickey',
         analysis:
-          "A child's song about wanting to be older. Russell uses it to foreshadow Mickey's later wish that he had Edward's life instead.",
+          "A child's recited speech about wanting to be older. Russell uses it to foreshadow Mickey's later wish that he had Edward's life instead.",
       },
       {
         text: '"We\'re blood brothers."',
@@ -106,7 +108,7 @@ const ACT_1: SceneBlock[] = [
           'Mrs Lyons invents the curse, but Russell turns it into a self-fulfilling prophecy driven by class forces, not magic.',
       },
       {
-        text: '"Shoes upon the table."',
+        text: '"you never put new shoes on the table"',
         speaker: 'Mrs Johnstone',
         analysis:
           "Working-class superstition used as a motif. Russell parallels folk belief with Mrs Lyons's invented superstition to question who controls narratives of fate.",
@@ -123,12 +125,6 @@ const ACT_2: SceneBlock[] = [
     summary:
       'The teenagers reunite after the Johnstones are rehoused near the Lyons. Mickey, Edward and Linda form a triangle. Russell uses song montages to compress time and show how the same experiences - school, first love, growing up - produce different outcomes depending on class.',
     quotes: [
-      {
-        text: '"If you\'d been born here, you would have been just like him."',
-        speaker: 'Linda',
-        analysis:
-          "Linda voices the play's central question directly. Russell lets a teenager articulate what adult society refuses to acknowledge.",
-      },
       {
         text: '"I thought we always stuck together."',
         speaker: 'Edward',
@@ -151,13 +147,7 @@ const ACT_2: SceneBlock[] = [
           'Mickey calls Edward a kid because Edward has been spared adult reality. Russell shows how unemployment and poverty have aged Mickey past his twin, even though they are the same age. The line marks the end of childhood equality.',
       },
       {
-        text: '"There\'s a man gone mad in the town tonight."',
-        speaker: 'Narrator',
-        analysis:
-          "The Narrator's warning builds toward the climax. Russell uses the ballad form to make Mickey's breakdown feel both personal and systemic.",
-      },
-      {
-        text: '"I could have been him."',
+        text: '"I could have been him!"',
         speaker: 'Mickey',
         analysis:
           'Mickey realises that only circumstance separates him from Edward. Russell distils the entire nature-versus-nurture argument into five words.',
@@ -227,7 +217,7 @@ export default async function BloodBrothersActsPage() {
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="me-1 size-3" />
-              Edexcel / Eduqas
+              AQA / Edexcel / Eduqas
             </Badge>
           </div>
 
@@ -240,6 +230,9 @@ export default async function BloodBrothersActsPage() {
           </p>
         </div>
       </section>
+
+      {/* The key scenes, part by part, animated. See scripts/mount-story-visuals.mjs. */}
+      <StoryVisuals guide={studyGuide} scenesOnly />
 
       {/* Act 1 */}
       <section>

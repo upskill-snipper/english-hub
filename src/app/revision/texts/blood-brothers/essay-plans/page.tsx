@@ -63,8 +63,11 @@ const ESSAY_PLANS: EssayPlan[] = [
         quoteContext: 'Mrs Lyons - Act 1',
         analysis:
           'The blunt imperative reduces a baby to a commodity. Russell shows that wealth confers the power to take what poverty cannot protect. The pact is not a mutual agreement but an exploitation of economic desperation.',
+        // This link used to place the pact in "1980s Liverpool". The pact comes before the twins
+        // are born, and they are in their twenties by the end, so the 1980s context belongs to
+        // Mickey's redundancy in Act 2, not to this decision.
         contextLink:
-          'Link to the economic vulnerability of working-class women in 1980s Liverpool, where limited welfare provision left mothers like Mrs Johnstone with impossible choices.',
+          'Link to the poverty the play shows at the start: Mrs Johnstone, left by her husband with seven children and working as a cleaner, is already struggling to feed them, and Mrs Lyons suggests that giving one baby away would stop some of the children being taken into care. Keep the 1980s for Act 2: the pact comes long before Mickey loses his job.',
       },
       {
         pointHeading: 'Parallel childhoods',
@@ -164,7 +167,7 @@ const ESSAY_PLANS: EssayPlan[] = [
       {
         pointHeading: 'Adult destruction',
         topic: 'The friendship collapses under the weight of inequality in adulthood.',
-        quote: '"I could have been him."',
+        quote: '"I could have been him!"',
         quoteContext: 'Mickey - Act 2',
         analysis:
           "Mickey's realisation destroys the friendship because it exposes the lie of equality on which it was built. Russell shows that genuine friendship requires genuine equality, and a class-divided society makes both impossible.",
@@ -185,12 +188,15 @@ const ESSAY_PLANS: EssayPlan[] = [
         pointHeading: 'Mrs Johnstone: love constrained by poverty',
         topic:
           "Russell presents Mrs Johnstone's decision to give up her child as an act forced by economic desperation, not moral failure.",
-        quote: '"Only mine until the time comes round to pay the bill."',
-        quoteContext: 'Mrs Johnstone - Act 1',
+        quote: '"I couldn’t afford to keep both of you."',
+        quoteContext: 'Mrs Johnstone - Act 2, the final scene',
         analysis:
-          "Mrs Johnstone's anguish when she tries to reclaim the child shows that maternal love is powerless against class privilege. Russell uses her songs to give a working-class mother a voice that the social structures around her deny.",
+          'When she finally tells the twins the truth, Mrs Johnstone gives money as the only reason she gave one of them away: the verb afford turns a choice between her children into a question of budget. Russell uses her songs to give a working-class mother a voice that the social structures around her deny.',
+        // This link used to tie Mrs Johnstone's decision to Thatcher-era welfare cuts. The decision
+        // is made before the twins are born, some twenty years before the play's ending, so it
+        // cannot be a response to a government that took office in 1979.
         contextLink:
-          'Link to the welfare state under Thatcher: cuts to benefits, housing and childcare left working-class mothers with fewer resources and fewer choices.',
+          'Link to the poverty of large working-class families: a single mother of seven on a cleaner’s wage, Mrs Johnstone fears she cannot feed twins, and Mrs Lyons suggests that giving one away would keep the rest of the family together. Do not tie this decision to Thatcher: it is made before the twins are born, long before the unemployment of Act 2.',
       },
       {
         pointHeading: 'Mrs Lyons: love deformed by privilege',
@@ -301,7 +307,7 @@ export default async function BloodBrothersEssayPlansPage() {
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="me-1 size-3" />
-              Edexcel / Eduqas
+              AQA / Edexcel / Eduqas
             </Badge>
           </div>
 

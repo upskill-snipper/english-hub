@@ -11,12 +11,16 @@ type Card = {
 const cards: Card[] = [
   {
     kind: 'Notice',
-    fragment: '"shoes upon the table"',
-    body: 'The Narrator opens by drawing our attention to a single domestic image - a pair of shoes placed on a table - and treats it as the first move in a tragedy. Notice that we are told about the superstition before we are shown any character: the convention of bad luck has authority over the world of the play before Mrs Johnstone has even spoken. Notice too that the Narrator addresses us directly, like a chorus, breaking any naturalistic frame.',
+    // This card used to quote the Narrator's song about the shoes and claimed he raises the
+    // superstition before Mrs Johnstone has spoken. The song is sung (no lyrics are quoted on the
+    // site), and in the play her own horror at the shoes comes first, in Mrs Lyons's house, with
+    // the Narrator turning it into a warning afterwards.
+    fragment: 'New shoes on the table',
+    body: 'Soon after the prologue, the play fixes our attention on a single domestic image - a pair of new shoes placed on a table - and treats it as the first move in a tragedy. Notice that the superstition comes from Mrs Johnstone’s own fear, in Mrs Lyons’s house, and that the Narrator then turns it into a warning: the convention of bad luck gains authority over the world of the play before the pact is even made. Notice too that the Narrator addresses us directly, like a chorus, breaking any naturalistic frame.',
   },
   {
     kind: 'Say',
-    fragment: '"so did you hear the story"',
+    fragment: '"so did y’ hear the story"',
     body: "Russell makes the Narrator a story-teller in the ballad tradition: he invites us to 'hear the story' as if it has happened already and we are gathering, after the fact, around a song. The verb tense matters - the Narrator speaks of a fate that is sealed, not unfolding. Say aloud how the rhythm flattens into a sing-song line; Russell wants the audience seduced by ballad before they are wounded by ending.",
   },
   {
@@ -57,7 +61,7 @@ const cards: Card[] = [
   },
 ]
 
-const modelParagraph = `The opening sequence of Blood Brothers is Russell's argument in miniature. Before any naturalistic action begins, the Narrator addresses the audience directly, in the register of a Greek-tragic chorus, telling us a story whose ending is already sealed. The "shoes upon the table" superstition and the question of whether we "blame superstition for what came to pass" are placed in our hands as a deliberate trap: Russell wants us to be tempted by the mythological reading so that, by the final scene in the Council Chamber, we feel the inadequacy of it. The play's ballad-like circularity - refrains, repeated lines, a Narrator who appears and reappears - lends a humble Liverpool tragedy the weight of folk myth, but it is folk myth in service of a political thesis. Mickey and Edward are genetically identical; the only meaningful difference between them is the class of the household each is placed in. By collapsing nature into a single shared starting point, Russell isolates nurture as the operative variable, and nurture in 1980s Britain meant unemployment, prescription Valium and prison for one twin and university and the council chamber for the other. The Narrator's superstition is the alibi a society reaches for when it cannot face that diagnosis. Nature loses to nurture, and Thatcher-era Britain - by gutting the industries, the youth schemes and the welfare safety net Mickey depends on - fails both brothers, not just the poor one.`
+const modelParagraph = `The opening sequence of Blood Brothers is Russell's argument in miniature. Before any naturalistic action begins, the Narrator addresses the audience directly, in the register of a Greek-tragic chorus, telling us a story whose ending is already sealed. The superstition about new shoes on the table and the question of whether we "blame superstition for what came to pass" are placed in our hands as a deliberate trap: Russell wants us to be tempted by the mythological reading so that, by the final scene in the Council Chamber, we feel the inadequacy of it. The play's ballad-like circularity - refrains, repeated lines, a Narrator who appears and reappears - lends a humble Liverpool tragedy the weight of folk myth, but it is folk myth in service of a political thesis. Mickey and Edward are genetically identical; the only meaningful difference between them is the class of the household each is placed in. By collapsing nature into a single shared starting point, Russell isolates nurture as the operative variable, and nurture in 1980s Britain meant unemployment, prescription tablets and prison for one twin and university and the council chamber for the other. The Narrator's superstition is the alibi a society reaches for when it cannot face that diagnosis. Nature loses to nurture, and Thatcher-era Britain - by gutting the industries, the youth schemes and the welfare safety net Mickey depends on - fails both brothers, not just the poor one.`
 
 export default function BloodBrothersExtractWalkthroughPage() {
   const t = useT()

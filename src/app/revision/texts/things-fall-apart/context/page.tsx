@@ -36,13 +36,13 @@ const sections: ContextSection[] = [
     icon: Landmark,
     iconColour: 'text-clay-500',
     content: [
-      'The Igbo people of southeastern Nigeria lived in decentralised communities governed by councils of elders, titled men and the authority of oracles and ancestral spirits. Unlike many West African societies, the Igbo did not have kings or centralised monarchies. Power was earned through personal achievement -- wealth, agricultural success and the taking of titles -- creating a meritocratic system that Achebe presents in careful detail throughout Part One of the novel.',
+      'The Igbo people of southeastern Nigeria lived in decentralised communities governed by councils of elders, titled men and the authority of oracles and ancestral spirits. Unlike many West African societies, most Igbo communities did not have kings or centralised monarchies. Power was earned through personal achievement -- wealth, agricultural success and the taking of titles -- creating a meritocratic system that Achebe presents in careful detail throughout Part One of the novel.',
       "Social life revolved around agriculture, especially yam cultivation. Yams were more than food: they were a measure of a man's worth, his ability to feed his family and his standing in the clan. The New Yam Festival celebrated the harvest and reinforced community bonds. Achebe uses Okonkwo's enormous yam barns as a marker of his status and his obsessive need to prove himself.",
       "Igbo religion was polytheistic, centred on Chukwu (the supreme god), personal chi (a person's spirit or destiny), local deities and ancestral spirits. The egwugwu -- masked figures representing the ancestors -- dispensed justice and settled disputes. Priestesses like Chielo served oracles and wielded significant spiritual authority, showing that women held real power in certain domains despite the patriarchal structure.",
       'The culture also contained practices that created internal tensions: twins were abandoned in the Evil Forest, certain families were designated osu (outcasts), and the Oracle could demand human sacrifice. Achebe does not hide these elements. He presents them as part of a complete, imperfect human society -- which is precisely his argument against European accounts that depicted Africa as either savage or blank.',
     ],
     keyFacts: [
-      'The Igbo had no kings or centralised state. Power was earned through titles, yam cultivation and military prowess.',
+      'Most Igbo communities had no kings or centralised state. Power was earned through titles, yam cultivation and military prowess.',
       'The egwugwu court system dispensed justice through masked ancestral spirits. Decisions were made by community consensus.',
       'Women held spiritual authority through roles such as priestess of the Oracle, and the concept of "Mother is Supreme" governed exile.',
       'The osu caste system, twin abandonment and Oracle-demanded killings were genuine social tensions that Christianity later exploited.',
@@ -50,7 +50,7 @@ const sections: ContextSection[] = [
     textLinks: [
       "Okonkwo's three wives, his yam barns and his titles all demonstrate the Igbo social system in action. His rise from poverty proves the system is meritocratic.",
       "The egwugwu court in Chapter 10 shows a functioning indigenous justice system that the District Commissioner's court will later replace.",
-      "Chielo's night journey with Ezinma (Chapters 9-11) demonstrates women's spiritual power within a patriarchal structure.",
+      "Chielo's night journey with Ezinma (Chapter 11) demonstrates women's spiritual power within a patriarchal structure.",
     ],
   },
   {
@@ -58,14 +58,14 @@ const sections: ContextSection[] = [
     icon: Globe,
     iconColour: 'text-teal-500',
     content: [
-      'The Berlin Conference of 1884-85 formalised the European "Scramble for Africa," dividing the continent into colonial territories with no regard for existing political, ethnic or cultural boundaries. Britain claimed Nigeria as part of its sphere of influence, establishing the Niger Coast Protectorate (1891) and later the Protectorate of Southern Nigeria (1900). By 1914, the entire territory of modern Nigeria was under British control.',
+      'The Berlin Conference of 1884-85 formalised the European "Scramble for Africa," dividing the continent into colonial territories with no regard for existing political, ethnic or cultural boundaries. Britain claimed Nigeria as part of its sphere of influence, establishing the Oil Rivers Protectorate (1884, renamed the Niger Coast Protectorate in 1893) and later the Protectorate of Southern Nigeria (1900). By 1914, the entire territory of modern Nigeria was under British control.',
       'The colonial strategy in Igboland followed a consistent pattern: missionaries established churches and schools, creating a class of literate, English-speaking converts who served as intermediaries. Administrative officers then imposed "native courts" and a system of indirect rule that replaced traditional governance structures. When resistance occurred, it was met with military force -- as dramatised by the destruction of Abame in the novel.',
-      'Indirect rule required local leaders to act as agents of colonial authority. In Igboland, where there were no kings, the British appointed "warrant chiefs" -- men given artificial authority that often bore no relation to their standing in the community. This created resentment and disrupted the democratic, consensus-based structures the Igbo had developed over centuries.',
+      'Indirect rule required local leaders to act as agents of colonial authority. In Igboland, where most communities had no kings, the British appointed "warrant chiefs" -- men given artificial authority that often bore no relation to their standing in the community. This created resentment and disrupted the democratic, consensus-based structures the Igbo had developed over centuries.',
       'The colonial economy was extractive: raw materials were exported to Britain, and manufactured goods were imported. Education was provided by mission schools and oriented toward producing clerks and administrators for the colonial system, not toward the needs of Igbo society.',
     ],
     keyFacts: [
       'The Berlin Conference (1884-85) divided Africa among European powers without any African participation.',
-      'Britain established the Niger Coast Protectorate in 1891 and the Protectorate of Southern Nigeria in 1900.',
+      'Britain established the Oil Rivers Protectorate in 1884 (renamed the Niger Coast Protectorate in 1893) and the Protectorate of Southern Nigeria in 1900.',
       '"Indirect rule" co-opted local leaders or created artificial ones (warrant chiefs) to serve British interests.',
       'Mission schools were conversion tools: education was conditional on church attendance.',
       "The Aba Women's Riots of 1929 demonstrated organised Igbo resistance to colonial taxation and warrant chiefs.",
@@ -82,14 +82,14 @@ const sections: ContextSection[] = [
     iconColour: 'text-ochre-500',
     content: [
       "Chinua Achebe (1930-2013) was born Albert Chinualumogu Achebe in Ogidi, southeastern Nigeria. He grew up at the crossroads of Igbo and colonial culture: his father was a catechist for the Church Missionary Society, but his extended family maintained traditional Igbo practices. This dual inheritance gave Achebe an insider's understanding of both the colonised and the missionary worldview.",
-      'Achebe studied English Literature at the University of Ibadan, where he encountered the European literary tradition\'s representation of Africa. He was particularly struck by Joseph Conrad\'s Heart of Darkness (1899), which he later condemned in his famous 1977 essay "An Image of Africa" as a novel that reduces Africa to "the other world, the antithesis of Europe and therefore of civilisation." Conrad\'s Africa has no history, no culture and no autonomous human life.',
+      'Achebe studied at University College, Ibadan, where he moved from medicine to English, history and theology and encountered the European literary tradition\'s representation of Africa. He was particularly struck by Joseph Conrad\'s Heart of Darkness (1899), which he later condemned in his famous 1977 essay "An Image of Africa" as a novel that reduces Africa to "the other world, the antithesis of Europe and therefore of civilisation." Conrad\'s Africa has no history, no culture and no autonomous human life.',
       'Things Fall Apart (1958) is Achebe\'s most powerful answer to this tradition. By creating a fully realised African society -- with law, art, philosophy, humour, debate and moral complexity -- he demonstrates that the "darkness" Conrad described was not in Africa but in the European imagination. The novel insists that African stories belong to African storytellers.',
       "Achebe chose to write in English deliberately. He wanted to reach the global audience that had consumed Conrad's version of Africa and replace it with a version written from the inside. His English is inflected with Igbo rhythms, proverbs and speech patterns, creating a literary language that is both accessible to Western readers and rooted in Igbo culture.",
     ],
     keyFacts: [
       'Born 1930 in Ogidi, southeastern Nigeria. Died 2013.',
       'Father was a Church Missionary Society catechist; extended family practised Igbo traditions.',
-      'Studied English Literature at the University of Ibadan (1948-53).',
+      'Studied at University College, Ibadan (1948-53), switching from medicine to English, history and theology.',
       'Published Things Fall Apart in 1958, two years before Nigerian independence.',
       'His 1977 essay "An Image of Africa" formally condemned Conrad\'s Heart of Darkness as racist.',
       'Declined the Nigerian national honour of Commander of the Federal Republic twice, citing governance failures.',
@@ -105,12 +105,12 @@ const sections: ContextSection[] = [
     icon: Scroll,
     iconColour: 'text-sage-500',
     content: [
-      'The title Things Fall Apart is taken from W.B. Yeats\'s 1919 poem "The Second Coming": "Things fall apart; the centre cannot hold; / Mere anarchy is loosed upon the world." Yeats wrote the poem in the aftermath of World War One and the Irish War of Independence, reflecting on the collapse of European civilisation and the approach of a terrifying new age.',
+      'The title Things Fall Apart is taken from W.B. Yeats\'s 1919 poem "The Second Coming": "Things fall apart; the centre cannot hold; / Mere anarchy is loosed upon the world." Yeats wrote the poem in the aftermath of World War One and at the start of the Irish War of Independence, reflecting on the collapse of European civilisation and the approach of a terrifying new age.',
       "Achebe's use of a European poem as his title is strategic. By placing an Igbo tragedy within the frame of European apocalyptic literature, he claims equal standing for his subject matter. If Yeats can mourn the disintegration of European order, Achebe can mourn the disintegration of Igbo order -- and the cause of the latter is the former.",
       'The Yeats allusion also carries ironic weight. Yeats\'s poem imagines a "rough beast" slouching toward Bethlehem -- an image of encroaching barbarism. Achebe reverses the direction: the barbarism in his novel comes not from Africa but from Europe. The "rough beast" is colonialism itself, arriving under the banner of Christianity and civilisation.',
     ],
     keyFacts: [
-      'W.B. Yeats published "The Second Coming" in 1919, reflecting on post-WWI collapse and the Irish War of Independence.',
+      'W.B. Yeats wrote "The Second Coming" in 1919 (it was first printed in 1920), reflecting on post-WWI collapse and the start of the Irish War of Independence.',
       'The full Yeats line: "Things fall apart; the centre cannot hold; / Mere anarchy is loosed upon the world."',
       "Achebe's use of a European poem to frame an African novel is a deliberate act of literary integration -- inserting his work into the canon it critiques.",
       'The "rough beast" in Yeats becomes colonialism in Achebe -- a reversal of the expected direction of barbarism.',
@@ -198,7 +198,7 @@ export default function ContextPage() {
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="me-1 size-3" />
-              IGCSE Edexcel
+              Edexcel IGCSE / Cambridge IGCSE
             </Badge>
           </div>
 
@@ -361,9 +361,9 @@ export default function ContextPage() {
               </li>
               <li>
                 <strong className="text-foreground">Remember the publication context.</strong>{' '}
-                Achebe wrote Things Fall Apart in 1958, two years before Nigerian independence. His
-                audience includes both African readers reclaiming their history and European readers
-                who had consumed Conrad&apos;s version of Africa.
+                Achebe published Things Fall Apart in 1958, two years before Nigerian independence.
+                His audience includes both African readers reclaiming their history and European
+                readers who had consumed Conrad&apos;s version of Africa.
               </li>
             </ul>
           </CardContent>

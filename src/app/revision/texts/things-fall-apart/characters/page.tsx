@@ -33,20 +33,20 @@ const characters: CharacterData[] = [
     description:
       'Okonkwo is the emotional and thematic centre of the novel. A man of enormous physical strength and fierce ambition, he has risen from nothing to become one of the most respected men in Umuofia. Every choice he makes is governed by a single terror: the fear of resembling his father, Unoka. This fear drives him to equate manhood with violence and emotional suppression. Achebe constructs him as a tragic hero in the classical sense -- a great man brought down by a flaw he cannot see. His rigidity is not strength but brittleness: when the world changes, he shatters rather than bends. He embodies the cost of defining masculinity as dominance and the tragedy of a man who fights on two fronts -- against colonial invasion and against his own nature -- and loses on both.',
     arc: [
-      "Part 1: Rises from poverty to become a titled elder with three wives and a large farm. Takes in Ikemefuna as a ward. His participation in Ikemefuna's killing -- against Obierika's advice -- marks the beginning of his decline and alienates Nwoye.",
-      "Part 2: Accidentally kills a clansman's son and is exiled to Mbanta for seven years. In exile, he broods while missionaries arrive and his son converts to Christianity. He plans a triumphant return but the world he returns to has changed beyond recognition.",
+      "Part 1: Rises from poverty to become a titled elder with three wives and a large farm. Takes in Ikemefuna as a ward. His participation in Ikemefuna's killing -- against Ogbuefi Ezeudu's advice -- marks the beginning of his decline and alienates Nwoye.",
+      "Part 2: After accidentally killing a clansman's son at the end of Part 1, he is exiled to Mbanta for seven years. In exile, he broods while missionaries arrive and his son converts to Christianity. He plans a triumphant return but the world he returns to has changed beyond recognition.",
       'Part 3: Returns to Umuofia to find colonial institutions entrenched. Kills a court messenger in a desperate act of resistance, realises the clan will not fight, and hangs himself -- a final act of defiance that is simultaneously an admission of defeat.',
     ],
     keyQuotes: [
       {
         text: '"He was afraid of being thought weak."',
-        chapter: 'Chapter 2 -- Narrator',
+        chapter: 'Chapter 7 -- Narrator',
         analysis:
           "Achebe identifies fear, not strength, as the engine of Okonkwo's character. His entire personality is overcompensation. This single sentence is the key to understanding everything he does -- from the beating of his wives to the killing of Ikemefuna.",
       },
       {
         text: '"When did you become a shivering old woman?"',
-        chapter: 'Chapter 7 -- Okonkwo to himself',
+        chapter: 'Chapter 8 -- Okonkwo to himself',
         analysis:
           "After Ikemefuna's death, Okonkwo suppresses grief by gendering it as weakness. Achebe shows how toxic masculinity turns legitimate emotion into shame. The self-addressed question reveals an internal dialogue Okonkwo can never win.",
       },
@@ -80,7 +80,7 @@ const characters: CharacterData[] = [
     arc: [
       "Part 1: A quiet, sensitive boy who thrives under Ikemefuna's companionship. The killing of Ikemefuna -- his closest friend, murdered with Okonkwo's participation -- breaks something fundamental in him.",
       'Part 2: When the missionaries arrive in Mbanta, their hymns speak to the part of Nwoye that Igbo culture could not accommodate. He converts, takes the Christian name Isaac, and is violently disowned by Okonkwo.',
-      'Part 3: Attends the missionary school in Umuofia. His separation from his father is complete. Achebe presents this as both liberation and tragedy -- Nwoye is free but rootless.',
+      'Part 3: Mr Brown sends him, now called Isaac, to the new training college for teachers in Umuru (Chapter 21). His separation from his father is complete. Achebe presents this as both liberation and tragedy -- Nwoye is free but rootless.',
     ],
     keyQuotes: [
       {
@@ -94,12 +94,6 @@ const characters: CharacterData[] = [
         chapter: "Chapter 17 -- Narrator on Okonkwo's view of Nwoye",
         analysis:
           'Okonkwo\'s bitter judgement of his son. The irony is that Okonkwo\'s own "fire" -- his violence and contempt -- is what created the "ash." Achebe shows how a father\'s rigidity produces the very outcome he most fears.',
-      },
-      {
-        text: '"There was a constant point of sorrow and bitterness in his heart."',
-        chapter: "Chapter 7 -- Narrator on Nwoye after Ikemefuna's death",
-        analysis:
-          "In the full passage, the vagueness of Nwoye's memory suggests trauma too deep to process clearly. The \"constant point\" is a wound that never heals. Achebe links Ikemefuna's death directly to Nwoye's eventual rejection of his father and his culture.",
       },
     ],
     themeLinks: [
@@ -123,11 +117,11 @@ const characters: CharacterData[] = [
         text: '"My father, they have killed me!"',
         chapter: 'Chapter 7 -- Ikemefuna',
         analysis:
-          'Ikemefuna\'s last words concentrate the novel\'s moral horror in five words. He calls Okonkwo "father" as the blow falls. The child trusts the man who kills him. Achebe uses the simplicity to devastating effect.',
+          'Ikemefuna\'s last words concentrate the novel\'s moral horror in six words. He calls Okonkwo "father" as the blow falls. The child trusts the man who kills him. Achebe uses the simplicity to devastating effect.',
       },
       {
         text: '"He could hardly imagine that Okonkwo was not his real father."',
-        chapter: 'Chapter 4 -- Narrator',
+        chapter: 'Chapter 7 -- Narrator',
         analysis:
           'Achebe establishes the depth of the bond to make its destruction more devastating. The adoption is genuine on both sides, which transforms the killing from an act of obedience into an act of self-mutilation.',
       },
@@ -154,7 +148,7 @@ const characters: CharacterData[] = [
     arc: [
       "Part 1: Questions the customs he finds unjust -- why must twins be abandoned? Why must a man be exiled for an accident? He refuses to participate in Ikemefuna's killing.",
       "Part 2: Visits Okonkwo in exile, sells his yams, and brings him news of the missionaries' arrival and the destruction of Abame.",
-      'Part 3: Witnesses Okonkwo\'s suicide and delivers the novel\'s moral verdict to the District Commissioner: Okonkwo was "one of the greatest men in Umuofia. You drove him to kill himself."',
+      'Part 3: Leads the District Commissioner to Okonkwo\'s body and delivers the novel\'s moral verdict to him: Okonkwo was "one of the greatest men in Umuofia. You drove him to kill himself."',
     ],
     keyQuotes: [
       {
@@ -190,8 +184,8 @@ const characters: CharacterData[] = [
     description:
       "Ezinma is the only surviving child of Okonkwo's second wife Ekwefi, the sole survivor of ten pregnancies. She is bold, perceptive and the only person who can challenge Okonkwo without being crushed. As a suspected ogbanje (spirit child who dies and returns to torment its mother), she carries a supernatural weight that reinforces her singularity. Achebe uses her to expose the rigidity of gender roles in Igbo culture: Okonkwo repeatedly wishes she had been born a boy, revealing both his love for her and his inability to value femininity on its own terms.",
     arc: [
-      'Part 1: Grows from a sickly child feared to be an ogbanje into a confident young woman. Her iyi-uwa (the stone linking her to the spirit world) is dug up and destroyed, symbolising her commitment to life.',
-      'Part 2: Accompanies the family into exile in Mbanta. Refuses to marry there, insisting on waiting until the family returns to Umuofia -- an act of loyalty and independence.',
+      'Part 1: Grows from a sickly child feared to be an ogbanje into a confident young woman. Her iyi-uwa (the stone linking her to the spirit world) is dug up, symbolising her commitment to life.',
+      "Part 2: Accompanies the family into exile in Mbanta. Agrees to Okonkwo's request that she wait and marry in Umuofia when the family returns (Chapter 20), an act of loyalty to her father.",
       'Part 3: Returns to Umuofia as a beautiful young woman. Her strength parallels the resilience of Igbo culture itself.',
     ],
     keyQuotes: [
@@ -202,16 +196,10 @@ const characters: CharacterData[] = [
           "Okonkwo's highest compliment reveals his deepest limitation. He can only value strength when it looks masculine. Achebe exposes the patriarchal structure that limits how love can be expressed.",
       },
       {
-        text: '"She understood things."',
-        chapter: 'Chapter 11 -- Narrator',
+        text: '"She understood things so perfectly."',
+        chapter: 'Chapter 20 -- Narrator',
         analysis:
           "Achebe presents Ezinma's intelligence as intuitive and perceptive. She sees what Okonkwo refuses to see, but her gender denies her the authority to act on her understanding.",
-      },
-      {
-        text: '"Ezinma was the only child ... bold enough to walk into his hut."',
-        chapter: 'Chapter 5 -- Narrator',
-        analysis:
-          "Ezinma's boldness mirrors Okonkwo's own forceful personality, underlining the irony of his wish that she were male. She already possesses the qualities he values; he simply cannot recognise them in a girl.",
       },
     ],
     themeLinks: [
@@ -233,22 +221,10 @@ const characters: CharacterData[] = [
     ],
     keyQuotes: [
       {
-        text: '"Ekwefi had suffered a great deal in her life."',
+        text: '"Ekwefi had suffered a good deal in her life."',
         chapter: 'Chapter 9 -- Narrator',
         analysis:
           'Achebe states the fact with the plainness of someone who has run out of words for grief. The understatement is deliberate: nine dead children cannot be adequately described.',
-      },
-      {
-        text: '"She could bear the silence no longer."',
-        chapter: 'Chapter 11 -- Narrator, as Ekwefi follows Chielo',
-        analysis:
-          'Ekwefi defies the authority of the priestess and the Oracle out of love for Ezinma. Achebe shows that maternal love overrides even the most powerful spiritual prohibitions.',
-      },
-      {
-        text: '"She determined ... if she lived with Okonkwo she would not allow her to go."',
-        chapter: 'Chapter 9 -- Narrator',
-        analysis:
-          "Ekwefi treats Ezinma's survival as an act of will. Her fierce protectiveness is the response of a woman who has been given one final chance at motherhood.",
       },
     ],
     themeLinks: [
@@ -279,12 +255,6 @@ const characters: CharacterData[] = [
         chapter: 'Chapter 1 -- Narrator',
         analysis:
           "By the clan's metric, Unoka is a complete failure. But Achebe establishes early that this metric is not the only one available. Unoka's failure is also the failure of a culture to accommodate artistic temperament.",
-      },
-      {
-        text: '"Unoka loved the good fellowship of the dry season, ... the drinking of palm wine."',
-        chapter: 'Chapter 1 -- Narrator',
-        analysis:
-          "Achebe lists the things Unoka values: community, warmth, pleasure. These are not contemptible. Achebe subtly suggests that Okonkwo's rejection of everything his father stood for involves rejecting things that are genuinely good.",
       },
     ],
     themeLinks: [
@@ -317,7 +287,7 @@ const characters: CharacterData[] = [
           'Brown restrains his followers from extremism. But Achebe makes clear that his restraint is tactical, not just moral. He knows that too much too fast will provoke resistance.',
       },
       {
-        text: '"Mr Brown learned a good deal about the religion of the clan."',
+        text: '"Mr Brown learnt a good deal about the religion of the clan."',
         chapter: 'Chapter 21 -- Narrator',
         analysis:
           "Brown's curiosity is genuine, but it also serves the colonial project. Knowledge of the indigenous religion makes conversion more effective. Achebe refuses to let the reader rest comfortably with Mr Brown.",
@@ -352,12 +322,6 @@ const characters: CharacterData[] = [
         analysis:
           "Smith dismantles the coexistence Brown had built. Achebe shows that colonialism's moderate phase is always temporary -- the system ultimately demands total submission.",
       },
-      {
-        text: '"He was filled with wrath against the sons of the clan."',
-        chapter: 'Chapter 22 -- Narrator',
-        analysis:
-          'Smith\'s "wrath" is presented as righteous from his perspective but as destructive from the novel\'s. Achebe shows how religious certainty can become indistinguishable from cultural violence.',
-      },
     ],
     themeLinks: [
       'Colonialism & Cultural Destruction -- Smith represents the aggressive phase that follows the moderate opening.',
@@ -373,7 +337,7 @@ const characters: CharacterData[] = [
     description:
       "The District Commissioner appears only in the final chapters but delivers the novel's sharpest blow. He is not a villain in any dramatic sense -- he is calm, bureaucratic and entirely convinced of his own civilising mission. His reduction of Okonkwo's entire life to a single paragraph in a book titled \"The Pacification of the Primitive Tribes of the Lower Niger\" is Achebe's devastating final statement about the violence of colonial narrative. The Commissioner represents not physical brutality but something worse: the power to define, to narrate, to erase.",
     arc: [
-      'Part 3: Summons the clan elders, has them beaten and humiliated. After Okonkwo\'s suicide, he reflects that the event might make "interesting reading" and would merit "a reasonable paragraph" in his planned book. The novel ends with his perspective -- and the reader realises they have just read the book the Commissioner could never write.',
+      'Part 3: Summons six leaders of the clan, has them handcuffed and held, and fines the village. After Okonkwo\'s suicide, he reflects that the event might make "interesting reading" and would merit "a reasonable paragraph" in his planned book. The novel ends with his perspective -- and the reader realises they have just read the book the Commissioner could never write.',
     ],
     keyQuotes: [
       {
@@ -390,7 +354,7 @@ const characters: CharacterData[] = [
       },
       {
         text: '"Does the white man understand our custom about land?"',
-        chapter: "Chapter 20 -- Obierika (about the Commissioner's court)",
+        chapter: "Chapter 20 -- Okonkwo, to Obierika (about the Commissioner's court)",
         analysis:
           'The question exposes the absurdity of colonial law: foreigners who do not understand local customs are adjudicating disputes rooted in generations of tradition. The answer, of course, is no -- and the Commissioner has no interest in learning.',
       },
@@ -436,7 +400,7 @@ export default function CharactersPage() {
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="me-1 size-3" />
-              IGCSE Edexcel
+              Edexcel IGCSE / Cambridge IGCSE
             </Badge>
           </div>
 

@@ -86,13 +86,13 @@ const themes: ThemeData[] = [
       },
       {
         text: '"Does the white man understand our custom about land?"',
-        speaker: 'Obierika',
+        speaker: 'Okonkwo',
         part: 'Part 3, Chapter 20',
       },
       {
         text: '"The clan was like a lizard; if it lost its tail ... soon grew another."',
         speaker: 'Narrator',
-        part: 'Part 1, Chapter 13',
+        part: 'Part 3, Chapter 20',
       },
     ],
     contextLinks: [
@@ -119,7 +119,7 @@ const themes: ThemeData[] = [
       {
         part: 'Part 1 (Chapters 1-13)',
         evidence:
-          "Okonkwo is introduced through his opposition to Unoka. He beats Ojiugo during the Week of Peace. He kills Ikemefuna despite Obierika's warning, afraid of appearing weak. He suppresses all emotion except anger. Nwoye's gentleness fills him with contempt and fear.",
+          "Okonkwo is introduced through his opposition to Unoka. He beats Ojiugo during the Week of Peace. He kills Ikemefuna despite Ogbuefi Ezeudu's warning, afraid of appearing weak. He suppresses all emotion except anger. Nwoye's gentleness fills him with contempt and fear.",
       },
       {
         part: 'Part 2 (Chapters 14-19)',
@@ -136,12 +136,12 @@ const themes: ThemeData[] = [
       {
         text: '"He was afraid of being thought weak."',
         speaker: 'Narrator',
-        part: 'Part 1, Chapter 2',
+        part: 'Part 1, Chapter 7',
       },
       {
         text: '"When did you become a shivering old woman?"',
         speaker: 'Okonkwo to himself',
-        part: 'Part 1, Chapter 7',
+        part: 'Part 1, Chapter 8',
       },
       {
         text: '"She should have been a boy."',
@@ -162,7 +162,7 @@ const themes: ThemeData[] = [
     essayTips: [
       'Always distinguish between what the culture values and what Okonkwo believes the culture values. He takes masculine achievement to an extreme the culture does not require.',
       'Discuss the "Mother is Supreme" speech by Uchendu as Achebe\'s internal critique of Okonkwo\'s masculinity.',
-      'Link Okonkwo\'s fear of weakness to his suicide: the man who lived to avoid appearing weak ends with the "most abominable" act in Igbo culture. His fear destroys him completely.',
+      "Link Okonkwo's fear of weakness to his suicide: the man who lived to avoid appearing weak ends with suicide, which his clan regards as an abomination. His fear destroys him completely.",
       'Compare Okonkwo and Obierika to show that Achebe offers an alternative model of Igbo masculinity -- one that includes reflection and moral courage.',
     ],
   },
@@ -173,7 +173,7 @@ const themes: ThemeData[] = [
     definition:
       'The systematic dismantling of Igbo society through religion, law, commerce, and narrative control.',
     overview:
-      "Achebe devotes the first two-thirds of the novel to building a vivid, functioning Igbo world so that the reader feels its destruction as a genuine loss. Colonialism in Things Fall Apart operates in stages: first the missionaries (Mr Brown), then the zealots (Reverend Smith), then the administrators (the District Commissioner). Each stage depends on the one before it. The church creates converts who become disconnected from the clan; the court creates a legal system that overrides clan justice; the trading post creates economic dependence. Achebe's masterful final paragraph -- the District Commissioner reducing Okonkwo's life to \"a reasonable paragraph\" -- shows that colonialism's deepest violence is narrative: the power to tell someone else's story on your own terms.",
+      "Achebe devotes Part One, more than half the novel, to building a vivid, functioning Igbo world so that the reader feels its destruction as a genuine loss. Colonialism in Things Fall Apart operates in stages: first the missionaries (Mr Brown), then the zealots (Reverend Smith), then the administrators (the District Commissioner). Each stage depends on the one before it. The church creates converts who become disconnected from the clan; the court creates a legal system that overrides clan justice; the trading post creates economic dependence. Achebe's masterful final paragraph -- the District Commissioner reducing Okonkwo's life to \"a reasonable paragraph\" -- shows that colonialism's deepest violence is narrative: the power to tell someone else's story on your own terms.",
     partEvidence: [
       {
         part: 'Part 1 (Chapters 1-13)',
@@ -188,7 +188,7 @@ const themes: ThemeData[] = [
       {
         part: 'Part 3 (Chapters 20-25)',
         evidence:
-          'Umuofia now has a church, a court, a trading post, and a prison. The egwugwu court has been replaced by the Commissioner\'s court, where translators and clerks wield power. Elders are arrested and beaten. Okonkwo\'s suicide becomes a paragraph in a book titled "The Pacification of the Primitive Tribes of the Lower Niger."',
+          'Umuofia now has a church, a court, a trading post, and a prison. The egwugwu court has been replaced by the Commissioner\'s court, where translators and clerks wield power. Elders are handcuffed, held, shaved and beaten. Okonkwo\'s suicide becomes a paragraph in a book titled "The Pacification of the Primitive Tribes of the Lower Niger."',
       },
     ],
     keyQuotes: [
@@ -237,12 +237,12 @@ const themes: ThemeData[] = [
       {
         part: 'Part 2 (Chapters 14-19)',
         evidence:
-          'Missionaries arrive and are given land in the Evil Forest, expected to die. When they survive, Igbo cosmology is undermined. Mr Brown debates theology with Akunna -- a scene that shows the two systems as intellectual equals. Converts are drawn from those the religion has marginalised: osu, mothers of twins. Nwoye converts not from theological conviction but from emotional need.',
+          'Missionaries arrive and are given land in the Evil Forest, expected to die. When they survive, Igbo cosmology is undermined. Converts are drawn from those the religion has marginalised: osu, mothers of twins. Nwoye converts not from theological conviction but from emotional need.',
       },
       {
         part: 'Part 3 (Chapters 20-25)',
         evidence:
-          'Enoch unmasks an egwugwu -- an act of profound sacrilege that collapses the boundary between sacred and profane. The clan burns the church in response, but the District Commissioner punishes them for it. Colonial power backs one religion and criminalises the other.',
+          'Mr Brown debates theology with Akunna (Chapter 21), a scene that shows the two systems as intellectual equals. Enoch unmasks an egwugwu -- an act of profound sacrilege that collapses the boundary between sacred and profane. The clan burns the church in response, but the District Commissioner punishes them for it. Colonial power backs one religion and criminalises the other.',
       },
     ],
     keyQuotes: [
@@ -361,7 +361,7 @@ const themes: ThemeData[] = [
       {
         text: '"When the moon is shining the cripple becomes hungry for a walk."',
         speaker: 'Igbo proverb',
-        part: 'Part 1, Chapter 1',
+        part: 'Part 1, Chapter 2',
       },
       {
         text: '"The Pacification of the Primitive Tribes of the Lower Niger."',
@@ -403,19 +403,19 @@ const themes: ThemeData[] = [
       {
         part: 'Part 3 (Chapters 20-25)',
         evidence:
-          "The Commissioner's court has replaced the egwugwu. The kotma use their positions for corruption and abuse. The elders are arrested, shaved, and beaten. Colonial justice is shown to be neither just nor legal by any standard the Igbo would recognise.",
+          "The Commissioner's court has replaced the egwugwu. The kotma use their positions for corruption and abuse. The elders are handcuffed and held, their heads are shaved, the court messengers taunt them and knock their heads together, and Okonkwo is left with the marks of a warder's whip on his back (Chapter 24). Colonial justice is shown to be neither just nor legal by any standard the Igbo would recognise.",
       },
     ],
     keyQuotes: [
       {
         text: '"Does the white man understand our custom about land?"',
-        speaker: 'Obierika',
+        speaker: 'Okonkwo',
         part: 'Part 3, Chapter 20',
       },
       {
         text: '"cannot leave the matter in his hands because he does not understand our customs."',
-        speaker: 'Ogbuefi Ekwueme',
-        part: 'Part 3, Chapter 23',
+        speaker: 'Ajofia, the leading egwugwu',
+        part: 'Part 3, Chapter 22',
       },
       {
         text: '"He has put a knife on the things that held us together ... fallen apart."',
@@ -425,7 +425,7 @@ const themes: ThemeData[] = [
     ],
     contextLinks: [
       'British "indirect rule" in Nigeria co-opted local leaders where possible and created new ones (warrant chiefs) where necessary. The native courts in the novel reflect this system.',
-      'The Igbo had no centralised monarchy or hierarchical state. Their democratic clan system was poorly understood by British administrators who expected to find kings to negotiate with.',
+      'Most Igbo communities had no centralised monarchy or hierarchical state. Their democratic clan system was poorly understood by British administrators who expected to find kings to negotiate with.',
       'The novel was written in the context of Nigerian independence (1960). Achebe was arguing that Nigerians had governed themselves effectively before colonialism and could do so again.',
     ],
     essayTips: [
@@ -468,7 +468,7 @@ export default function ThemesPage() {
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="me-1 size-3" />
-              IGCSE Edexcel
+              Edexcel IGCSE / Cambridge IGCSE
             </Badge>
           </div>
 

@@ -29,6 +29,7 @@ export const STUDY_GUIDE_LOADERS: Record<string, () => Promise<StudyGuide>> = {
   'beyond-the-sky-and-the-earth': () =>
     import('./beyond-the-sky-and-the-earth').then((m) => m.guide),
   blessing: () => import('./blessing').then((m) => m.guide),
+  'blood-brothers': () => import('./blood-brothers').then((m) => m.guide),
   'blues-for-an-alabama-sky': () => import('./blues-for-an-alabama-sky').then((m) => m.guide),
   'boys-dont-cry': () => import('./boys-dont-cry').then((m) => m.guide),
   'chinese-cinderella': () => import('./chinese-cinderella').then((m) => m.guide),
@@ -118,6 +119,7 @@ export const STUDY_GUIDE_LOADERS: Record<string, () => Promise<StudyGuide>> = {
   'the-whale-rider': () => import('./the-whale-rider').then((m) => m.guide),
   'the-woman-in-black': () => import('./the-woman-in-black').then((m) => m.guide),
   'the-yellow-wallpaper': () => import('./the-yellow-wallpaper').then((m) => m.guide),
+  'things-fall-apart': () => import('./things-fall-apart').then((m) => m.guide),
   'to-kill-a-mockingbird': () => import('./to-kill-a-mockingbird').then((m) => m.guide),
   'twelfth-night': () => import('./twelfth-night').then((m) => m.guide),
   'war-photographer': () => import('./war-photographer').then((m) => m.guide),

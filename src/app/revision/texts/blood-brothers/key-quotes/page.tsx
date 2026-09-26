@@ -80,7 +80,7 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     id: 5,
-    text: '"Shoes upon the table."',
+    text: '"you never put new shoes on the table"',
     speaker: 'Mrs Johnstone',
     context: 'Act 1 - superstition motif',
     analysis:
@@ -93,7 +93,7 @@ const KEY_QUOTES: KeyQuote[] = [
     speaker: 'Mickey',
     context: 'Act 1 - Mickey, aged seven',
     analysis:
-      "An innocent wish to be older that foreshadows Mickey's devastating adult wish to have been Edward. Russell plants the theme of wanting a different life early, in a comic song, so that its tragic echo in Act 2 hits harder.",
+      "An innocent wish to be older that foreshadows Mickey's devastating adult wish to have been Edward. Russell plants the theme of wanting a different life early, in a comic speech the script marks as recited, so that its tragic echo in Act 2 hits harder.",
     themes: ['Nature vs nurture', 'Childhood'],
   },
   {
@@ -116,12 +116,12 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     id: 9,
-    text: '"Only mine until the time comes round to pay the bill."',
-    speaker: 'Mrs Johnstone',
-    context: 'Act 1 - trying to reclaim her child',
+    text: '"it was more of a prank, really, Mr Lyons"',
+    speaker: 'Policeman',
+    context: 'Act 1 - to Mr Lyons, after the children are caught throwing stones',
     analysis:
-      "Mrs Johnstone's anguish shows that maternal love is powerless against class privilege. Russell uses the possessive phrase to highlight the irony: the child is biologically hers, but socially he belongs to Mrs Lyons.",
-    themes: ['Motherhood', 'Class'],
+      'Moments earlier the same policeman has threatened Mrs Johnstone over the same offence; to Mr Lyons he calls it a prank. Russell stages the two conversations back to back so the audience sees the law applied by class.',
+    themes: ['Class', 'Childhood'],
   },
   {
     id: 10,
@@ -134,12 +134,12 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     id: 11,
-    text: '"If you\'d been born here, you would have been just like him."',
+    text: '"An’ what about what I need? I need you."',
     speaker: 'Linda',
-    context: 'Act 2 - adolescence',
+    context: 'Act 2 - to Mickey, after his release from prison',
     analysis:
-      "Linda voices the play's central question directly. Russell lets a teenager articulate what adult society refuses to acknowledge: outcomes are determined by postcode, not personality.",
-    themes: ['Nature vs nurture', 'Class'],
+      'Linda pleads with Mickey to come back to her from his tablets. Russell presents her later turn to Edward as the act of a woman who asked for her husband back and was refused, not as simple betrayal.',
+    themes: ['Class', 'Friendship'],
   },
   {
     id: 12,
@@ -152,11 +152,11 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     id: 13,
-    text: '"I wanna kiss y\'."',
+    text: '"You sorted it out. You an’ Councillor Eddie Lyons."',
     speaker: 'Mickey',
     context: 'Act 2 - Mickey to Linda, after prison',
     analysis:
-      "A fragmented moment of tenderness from a Mickey numbed by antidepressants. Russell shows love persisting inside structures designed to crush it, while making the cost of poverty and prison painfully visible in Mickey's broken speech.",
+      'Mickey realises that the new house and his job came through Edward, now a councillor. The favour from a twin with power humiliates him, and his wounded pride pushes Linda towards Edward.',
     themes: ['Friendship', 'Class'],
   },
   {
@@ -170,16 +170,16 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     id: 15,
-    text: '"There\'s a man gone mad in the town tonight."',
-    speaker: 'Narrator',
-    context: 'Act 2 - approaching climax',
+    text: '"I couldn’t afford to keep both of you."',
+    speaker: 'Mrs Johnstone',
+    context: 'Act 2 - the final scene',
     analysis:
-      "The Narrator's warning builds dread using the ballad form. Russell makes Mickey's breakdown feel both personal and historically inevitable, connecting one man's madness to an entire city's economic collapse.",
-    themes: ['Violence', 'Fate and free will'],
+      'Mrs Johnstone’s confession is plain and names the cause of everything: money. Coming just before the shooting, it answers the prologue that called her cruel, and it places the blame on poverty rather than fate.',
+    themes: ['Motherhood', 'Class'],
   },
   {
     id: 16,
-    text: '"I could have been him."',
+    text: '"I could have been him!"',
     speaker: 'Mickey',
     context: 'Act 2 - confrontation with Edward',
     analysis:
@@ -215,12 +215,12 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     id: 20,
-    text: '"I\'ll get y\' after."',
-    speaker: 'Sammy',
-    context: 'Act 1 - childhood threats',
+    text: '"I curse the day I met you. You ruined me."',
+    speaker: 'Mrs Lyons',
+    context: 'Act 2 - when her offer of money is refused',
     analysis:
-      "Casual childhood threats from Sammy that foreshadow adult violence. Russell uses Sammy's aggression to show that deprivation normalises conflict and that the criminal trajectory Mickey is later dragged into begins in childhood.",
-    themes: ['Violence', 'Class'],
+      'Mrs Lyons reverses the truth, blaming Mrs Johnstone for a bargain she asked for herself. Within moments she is calling her a witch and reaching for a knife: guilt has become paranoia, and paranoia violence.',
+    themes: ['Violence', 'Superstition'],
   },
 ]
 
@@ -255,7 +255,7 @@ export default async function BloodBrothersKeyQuotesPage() {
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="me-1 size-3" />
-              Edexcel / Eduqas
+              AQA / Edexcel / Eduqas
             </Badge>
           </div>
 

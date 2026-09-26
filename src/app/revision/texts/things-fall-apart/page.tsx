@@ -7,6 +7,8 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
+import { GuideSupplement } from '@/components/study-guide/guide-supplement'
+import { guide as studyGuide } from '@/data/study-guides/things-fall-apart'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Things Fall Apart IGCSE - themes, characters, key quotes',
@@ -22,7 +24,7 @@ export const metadata: Metadata = {
   },
   title: 'Things Fall Apart IGCSE - themes, characters, key quotes',
   description:
-    "Things Fall Apart IGCSE revision - Achebe's postcolonial novel with characters, themes, context and key quotes. Aligned to Pearson Edexcel IGCSE 4ET1.",
+    "Things Fall Apart IGCSE revision - Achebe's postcolonial novel with characters, themes, context and key quotes. For Pearson Edexcel 4ET1 and Cambridge 0475.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/things-fall-apart',
   },
@@ -34,7 +36,7 @@ const data: TextGuideData = {
   author: 'Chinua Achebe',
   year: 'published 1958',
   category: 'Novel',
-  badge: 'Edexcel IGCSE',
+  badge: 'Edexcel IGCSE / Cambridge IGCSE',
   intro:
     "Chinua Achebe's landmark novel follows Okonkwo, a proud Igbo warrior in pre-colonial Nigeria, whose rigid masculinity and world are shattered by the arrival of European missionaries and colonial administrators. It is a foundational text of postcolonial literature and a direct reply to European narratives of Africa.",
   quickInfo: {
@@ -44,10 +46,10 @@ const data: TextGuideData = {
     published: '1958',
   },
   plotSummary: [
-    'The novel opens in the nine Igbo villages of Umuofia, where Okonkwo is a celebrated wrestler and yam farmer. Determined not to resemble his lazy, debt-ridden father Unoka, Okonkwo builds wealth, takes three wives and earns titles. Achebe devotes the first third of the book to the rich fabric of Igbo daily life: festivals, proverbs, egwugwu ceremonies and the Oracle of the Hills and Caves.',
+    'The novel opens in the nine Igbo villages of Umuofia, where Okonkwo is a celebrated wrestler and yam farmer. Determined not to resemble his lazy, debt-ridden father Unoka, Okonkwo builds wealth, takes three wives and earns titles. Achebe devotes Part One, more than half the book, to the rich fabric of Igbo daily life: festivals, proverbs, egwugwu ceremonies and the Oracle of the Hills and Caves.',
     "Okonkwo's world begins to fracture when a neighbouring village offers a young boy, Ikemefuna, as reparation for a killing. Ikemefuna lives with Okonkwo's family for three years and becomes like a son to him. When the Oracle decrees that Ikemefuna must be killed, Okonkwo takes part in the execution, cutting the boy down with his machete to avoid appearing weak. The act haunts him and marks the first step in his decline.",
     'During a funeral, Okonkwo\u2019s gun accidentally kills a clansman and he is exiled to his mother\u2019s village of Mbanta for seven years. While he is away, Christian missionaries arrive, bringing with them a new religion and, soon, a colonial court. His son Nwoye, alienated by the killing of Ikemefuna and the rigidity of his father, converts to Christianity.',
-    "When Okonkwo returns to Umuofia he finds the village changed beyond recognition. After a clash between the clan and the church, a colonial officer summons the elders and has them beaten. Okonkwo kills a messenger sent to disperse a meeting, realises the clan will not fight, and hangs himself. The novel ends with the District Commissioner reducing Okonkwo's life to a single paragraph in a book tentatively titled 'The Pacification of the Primitive Tribes of the Lower Niger'.",
+    "When Okonkwo returns to Umuofia he finds the village changed beyond recognition. After a clash between the clan and the church, a colonial officer summons six of the clan's leaders, has them handcuffed and held, and fines the village. Okonkwo kills a messenger sent to disperse a meeting, realises the clan will not fight, and hangs himself. The novel ends with the District Commissioner reducing Okonkwo's life to a single paragraph in a book whose title he has already chosen, 'The Pacification of the Primitive Tribes of the Lower Niger'.",
   ],
   characters: [
     {
@@ -122,7 +124,7 @@ const data: TextGuideData = {
     },
     {
       quote: '"He was afraid of being thought weak."',
-      who: 'Narrator on Okonkwo - Chapter 2',
+      who: 'Narrator on Okonkwo - Chapter 7',
       analysis: 'Identifies fear as the engine of his rigidity and eventual destruction.',
     },
     {
@@ -341,7 +343,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The novel ends with the Commissioner reducing Okonkwo\'s entire tragedy to "a paragraph" in a book called "The Pacification of the Primitive Tribes of the Lower Niger." This is the novel\'s sharpest irony: the violence of colonial storytelling, which erases real human lives.',
+      'The novel ends with the Commissioner reducing Okonkwo\'s entire tragedy to a paragraph in a book called "The Pacification of the Primitive Tribes of the Lower Niger." This is the novel\'s sharpest irony: the violence of colonial storytelling, which erases real human lives.',
     topic: "Writer's Methods",
     difficulty: 'higher',
   },
@@ -390,7 +392,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The missionaries first attract the osu (outcasts), mothers of abandoned twins, and dissatisfied youth like Nwoye. As Obierika observes: "He has won our brothers, and our clan can no longer act like one." Achebe shows colonial strategy as divide, convert, rule.',
+      'The missionaries first attract the efulefu (men with no titles or standing) and dissatisfied youth like Nwoye; mothers of abandoned twins and the osu (outcasts) follow. As Obierika observes: "He has won our brothers, and our clan can no longer act like one." Achebe shows colonial strategy as divide, convert, rule.',
     topic: 'Themes',
     difficulty: 'higher',
   },
@@ -613,6 +615,9 @@ export default async function ThingsFallApartPage() {
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         {await t('rev.texts2.common.fair_dealing_notice')}
       </p>
+      {/* The sections this page did not have, and its story visuals.
+          See scripts/mount-study-guide-supplement.mjs. */}
+      <GuideSupplement guide={studyGuide} />
     </>
   )
 }

@@ -62,7 +62,7 @@ const CHARACTERS: CharacterProfile[] = [
           "The play's thesis distilled into ordinary speech. Mickey articulates class rage as a raw question, making the political argument viscerally personal.",
       },
       {
-        text: '"I could have been him."',
+        text: '"I could have been him!"',
         context: 'Act 2 - confrontation',
         analysis:
           'Mickey grasps the nature-versus-nurture argument the audience already knows. Russell delays this revelation to maximum dramatic effect.',
@@ -102,16 +102,16 @@ const CHARACTERS: CharacterProfile[] = [
           'The haunting refrain asks the audience to refuse the tragedy. Russell implicates the viewers: if they are moved, they must ask why society allows this.',
       },
       {
-        text: '"Shoes upon the table."',
+        text: '"you never put new shoes on the table"',
         context: 'Act 1 - superstition motif',
         analysis:
           "Working-class superstition used as a motif. Russell parallels genuine folk belief with Mrs Lyons's invented curse to question who controls narratives of fate.",
       },
       {
-        text: '"Only mine until the time comes round to pay the bill."',
-        context: 'Act 1 - giving up the baby',
+        text: '"I couldn’t afford to keep both of you."',
+        context: 'Act 2 - the final scene',
         analysis:
-          "Mrs Johnstone's anguish when she tries to reclaim the child. Russell shows that maternal love is powerless against class privilege.",
+          "Mrs Johnstone's confession names the cause of everything: money. Russell shows that maternal love is powerless against poverty.",
       },
     ],
     examTip:
@@ -154,16 +154,16 @@ const CHARACTERS: CharacterProfile[] = [
     arc: 'Linda begins as a bold, equal presence in the childhood trio. As an adult, she supports Mickey through unemployment and prison. When Mickey withdraws into medication, she turns to Edward for help - an act of pragmatism, not betrayal. Russell makes clear that her choices are constrained by the same class forces that crush Mickey.',
     keyQuotes: [
       {
-        text: '"If you\'d been born here, you would have been just like him."',
-        context: 'Act 2 - adolescence',
+        text: '"You sorted it out. You an’ Councillor Eddie Lyons."',
+        context: 'Act 2 - Mickey to Linda, after prison',
         analysis:
-          "Linda voices the play's central question directly. Russell lets a teenager articulate what adult society refuses to acknowledge.",
+          'Mickey discovers that Linda asked Edward, now a councillor, for the house and the job. Russell shows how help from a twin with power humiliates a man worn down by poverty and prison.',
       },
       {
-        text: '"I wanna kiss y\'."',
-        context: 'Act 2 - Mickey to Linda, on medication',
+        text: '"An’ what about what I need? I need you."',
+        context: 'Act 2 - Linda to Mickey, the same scene',
         analysis:
-          "A fragmented moment of tenderness from a Mickey numbed by antidepressants. Russell shows love persisting inside structures designed to crush it, while making the cost of poverty and prison painfully visible in Mickey's broken speech.",
+          'Linda pleads with Mickey to come back to her from his tablets. Russell presents her later turn to Edward as the act of a woman who asked for her husband back and was refused, not as simple betrayal.',
       },
     ],
     examTip:
@@ -183,12 +183,6 @@ const CHARACTERS: CharacterProfile[] = [
           'The "devil" functions as a metaphor for systemic class forces. Russell repurposes superstitious language to critique a fatalistic society.',
       },
       {
-        text: '"There\'s a man gone mad in the town tonight."',
-        context: 'Act 2 - approaching climax',
-        analysis:
-          "The Narrator's warning drives rising dread. Russell uses the ballad form to make Mickey's breakdown feel both personal and historically inevitable.",
-      },
-      {
         text: '"And do we blame superstition for what came to pass?"',
         context: 'Act 2 - final line',
         analysis:
@@ -204,14 +198,10 @@ const CHARACTERS: CharacterProfile[] = [
     overview:
       'Sammy is aggressive, reckless and violent, but Russell does not present him as naturally bad. He is a product of the same deprivation that shapes Mickey. His trajectory from petty childhood troublemaker to armed robber illustrates how poverty escalates risk and narrows choices.',
     arc: "Sammy moves from childhood mischief to violent crime. He drags Mickey into an armed robbery that leads to Mickey's imprisonment. Russell uses Sammy to show the spectrum of working-class outcomes: where Mickey is ground down, Sammy lashes out. Both responses are consequences of the same environment.",
-    keyQuotes: [
-      {
-        text: '"I\'ll get y\' after."',
-        context: 'Act 1 - Sammy threatening',
-        analysis:
-          "Even as children, Sammy's aggression is apparent. Casual childhood threats foreshadow the adult violence that culminates in armed robbery. Russell shows how the Johnstone environment normalises aggression where power is scarce.",
-      },
-    ],
+    // The one quotation this profile had was not found in any of the three printings checked
+    // (Methuen Student Edition, Methuen 1986 collection, Samuel French 1985), so it was removed
+    // rather than left to be learned. The key quotations block below is hidden when empty.
+    keyQuotes: [],
     examTip:
       'Sammy is a minor character, but he is structurally important. Use him to argue that Russell shows a range of working-class responses to deprivation, avoiding the stereotype that poverty produces a single type of person.',
   },
@@ -252,7 +242,7 @@ export default async function BloodBrothersCharactersPage() {
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="me-1 size-3" />
-              Edexcel / Eduqas
+              AQA / Edexcel / Eduqas
             </Badge>
           </div>
 
@@ -297,21 +287,23 @@ export default async function BloodBrothersCharactersPage() {
                 </div>
 
                 {/* Key quotes */}
-                <div className="space-y-3">
-                  <h3 className="text-sm font-semibold text-foreground">{keyQuotationsLabel}</h3>
-                  {c.keyQuotes.map((q) => (
-                    <div
-                      key={q.text}
-                      className="rounded-xl border border-border/60 bg-background/50 p-4 space-y-1.5"
-                    >
-                      <p className="text-body-md font-medium italic text-foreground">{q.text}</p>
-                      <p className="text-caption uppercase tracking-wide text-primary">
-                        {q.context}
-                      </p>
-                      <p className="text-body-sm text-muted-foreground">{q.analysis}</p>
-                    </div>
-                  ))}
-                </div>
+                {c.keyQuotes.length > 0 && (
+                  <div className="space-y-3">
+                    <h3 className="text-sm font-semibold text-foreground">{keyQuotationsLabel}</h3>
+                    {c.keyQuotes.map((q) => (
+                      <div
+                        key={q.text}
+                        className="rounded-xl border border-border/60 bg-background/50 p-4 space-y-1.5"
+                      >
+                        <p className="text-body-md font-medium italic text-foreground">{q.text}</p>
+                        <p className="text-caption uppercase tracking-wide text-primary">
+                          {q.context}
+                        </p>
+                        <p className="text-body-sm text-muted-foreground">{q.analysis}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
 
                 {/* Exam tip */}
                 <div className="rounded-xl border border-primary/20 bg-primary/5 p-4">

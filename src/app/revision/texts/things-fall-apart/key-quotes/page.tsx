@@ -35,8 +35,9 @@ const quotes: KeyQuote[] = [
     id: 2,
     quote: '"When the moon is shining the cripple becomes hungry for a walk."',
     speaker: 'Narrator (Igbo proverb)',
-    part: 'Part 1, Chapter 1',
-    context: 'Describing the moonlit nights when the village gathers for storytelling.',
+    part: 'Part 1, Chapter 2',
+    context:
+      'The narrator sets a quiet, dark night against moonlit nights, when even the old remember their youth.',
     analysis:
       "One of many Igbo proverbs Achebe embeds to demonstrate the culture's rhetorical richness. The proverb celebrates beauty's power to inspire even the most constrained. Achebe uses it to immerse the reader in an Igbo way of thinking -- poetic, metaphorical, rooted in observation of the natural world.",
     themes: ['Language & Communication', 'Tradition vs Change'],
@@ -55,10 +56,10 @@ const quotes: KeyQuote[] = [
     id: 4,
     quote: '"He was afraid of being thought weak."',
     speaker: 'Narrator',
-    part: 'Part 1, Chapter 2',
-    context: "The narrator identifies the psychological engine of Okonkwo's character.",
+    part: 'Part 1, Chapter 7',
+    context: 'The narrator explains why Okonkwo kills Ikemefuna.',
     analysis:
-      "The novel's key character insight, stated with devastating simplicity. Achebe identifies fear -- not strength -- as the driving force behind Okonkwo's aggression. Every subsequent act of violence, from the beating of his wives to the killing of Ikemefuna, can be traced back to this single sentence.",
+      "The novel's key character insight, stated with devastating simplicity. Achebe identifies fear -- not strength -- as the driving force behind Okonkwo's aggression. Every act of violence, from the beating of his wives to the killing of Ikemefuna, can be traced back to the fear this sentence names.",
     themes: ['Masculinity & Fear'],
   },
   {
@@ -85,8 +86,9 @@ const quotes: KeyQuote[] = [
     id: 7,
     quote: '"He could hardly imagine that Okonkwo was not his real father."',
     speaker: 'Narrator on Ikemefuna',
-    part: 'Part 1, Chapter 4',
-    context: "Describing how fully Ikemefuna has been absorbed into Okonkwo's family.",
+    part: 'Part 1, Chapter 7',
+    context:
+      "Ikemefuna's thought on the walk into the forest, when he believes he is being taken home.",
     analysis:
       'Achebe establishes the depth of the father-son bond to make its destruction devastating. The adoption is genuine on both sides. When Okonkwo kills Ikemefuna, the reader understands it as an act of self-mutilation -- he destroys what he loves most to avoid appearing weak.',
     themes: ['Masculinity & Fear', 'Tradition vs Change'],
@@ -98,14 +100,14 @@ const quotes: KeyQuote[] = [
     part: 'Part 1, Chapter 7',
     context: "Ikemefuna's last words as he is struck down in the forest.",
     analysis:
-      'The novel\'s most devastating line. Five words concentrate trust, betrayal, love, and horror. Ikemefuna calls Okonkwo "father" at the moment of death -- the child trusts the man who kills him. Achebe\'s restraint makes the horror more effective: no elaboration is needed.',
+      'The novel\'s most devastating line. Six words concentrate trust, betrayal, love, and horror. Ikemefuna calls Okonkwo "father" at the moment of death -- the child trusts the man who kills him. Achebe\'s restraint makes the horror more effective: no elaboration is needed.',
     themes: ['Masculinity & Fear', 'Tradition vs Change', 'Justice & Power'],
   },
   {
     id: 9,
     quote: '"When did you become a shivering old woman?"',
     speaker: 'Okonkwo to himself',
-    part: 'Part 1, Chapter 7',
+    part: 'Part 1, Chapter 8',
     context: "Okonkwo's internal monologue after Ikemefuna's death, as grief threatens to surface.",
     analysis:
       'Okonkwo genders his grief as feminine weakness. Achebe shows how toxic masculinity transforms legitimate emotion into shame. The self-addressed question reveals an internal dialogue Okonkwo can never win: his humanity is always at war with his idea of manhood.',
@@ -136,8 +138,9 @@ const quotes: KeyQuote[] = [
     id: 12,
     quote: '"The clan was like a lizard; if it lost its tail ... soon grew another."',
     speaker: 'Narrator',
-    part: 'Part 1, Chapter 13',
-    context: "Describing the clan's resilience after setbacks.",
+    part: 'Part 3, Chapter 20',
+    context:
+      'Okonkwo returns from exile to find that, while he was away, others have taken his place in the clan.',
     analysis:
       'Achebe uses an Igbo metaphor to describe cultural adaptability. The proverb suggests the clan can absorb loss and regenerate. But the colonial intrusion will prove to be an amputation the lizard cannot survive -- a loss too deep for regrowth.',
     themes: ['Tradition vs Change', 'Fate & Chi'],
@@ -147,7 +150,8 @@ const quotes: KeyQuote[] = [
     quote: '"what is good among one people is an abomination with others."',
     speaker: 'Uchendu',
     part: 'Part 2, Chapter 15',
-    context: 'Uchendu counsels Okonkwo during his exile in Mbanta.',
+    context:
+      "Uchendu responds to Obierika's account of the destruction of Abame, during Okonkwo's exile in Mbanta.",
     analysis:
       'Uchendu articulates cultural relativism from within Igbo thought itself. Achebe uses an elder to show that the culture already possesses the intellectual tools to understand difference -- countering the colonial claim that only Europeans possess philosophical sophistication.',
     themes: ['Tradition vs Change', 'Colonialism & Cultural Destruction'],
@@ -196,11 +200,12 @@ const quotes: KeyQuote[] = [
   {
     id: 18,
     quote: '"Does the white man understand our custom about land?"',
-    speaker: 'Obierika',
+    speaker: 'Okonkwo',
     part: 'Part 3, Chapter 20',
-    context: 'Obierika questions the legitimacy of the colonial court system.',
+    context:
+      'Okonkwo asks whether the colonial court can understand Igbo law; Obierika answers him.',
     analysis:
-      'The rhetorical question exposes the fundamental absurdity of colonial justice: foreigners who do not understand local customs are adjudicating disputes rooted in generations of tradition. The answer is no -- and the colonisers have no interest in learning.',
+      'The question exposes the fundamental absurdity of colonial justice: foreigners who do not understand local customs are adjudicating disputes rooted in generations of tradition. The answer is no -- and the colonisers have no interest in learning.',
     themes: ['Justice & Power', 'Colonialism & Cultural Destruction'],
   },
   {
@@ -288,7 +293,7 @@ export default function KeyQuotesPage() {
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="me-1 size-3" />
-              IGCSE Edexcel
+              Edexcel IGCSE / Cambridge IGCSE
             </Badge>
           </div>
 
