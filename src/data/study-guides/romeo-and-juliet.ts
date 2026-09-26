@@ -14,10 +14,12 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * edition, not by searching for the phrase alone.
  *
  * TWO THINGS THE NEXT EDITOR SHOULD KNOW.
- * - The held edition has no Prologue: the generator drops the Chorus sonnet
- *   before Act 1, Scene 1 (the Act 2 Chorus survives, at the end of 1.5). So
- *   the Prologue is described here, from the Gutenberg text online, but never
- *   quoted, because the quotation test could not check it.
+ * - Until 26 September 2026 the held edition had no Prologue: the generator
+ *   dropped the Chorus sonnet before Act 1, Scene 1, and ran the Act 2 Chorus
+ *   on to the end of 1.5. So the Prologue is described here, from the
+ *   Gutenberg text online, but never quoted, because the quotation test could
+ *   not check it. The held file now has both, as sections of their own
+ *   ("prologue" and "actii-chorus"); the guide has not been revised for that.
  * - Editions differ in a few words. Gutenberg reads "name" where the Folger
  *   edition reads "word" in Juliet's line about the rose, and "rest" where the
  *   Folger reads "rust" in her last line. Lines where editions disagree were
@@ -779,7 +781,7 @@ export const guide: StudyGuide = {
     },
     {
       label:
-        'Project Gutenberg #1513 plain text: the Prologue spoken by the Chorus, which the held copy omits (described in the guide, not quoted)',
+        'Project Gutenberg #1513 plain text: the Prologue spoken by the Chorus (described in the guide, not quoted)',
       url: 'https://www.gutenberg.org/cache/epub/1513/pg1513.txt',
     },
     {

@@ -2,7 +2,10 @@ import { describe, it, expect } from 'vitest'
 import { readFileSync, readdirSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { TEXT_ANNOTATIONS } from '@/data/text-annotations.generated'
-import { setForTheViewer } from '@/components/study/set-play-for-the-viewer'
+import {
+  setSectionForTheViewer,
+  type HeldTextType,
+} from '@/components/study/set-play-for-the-viewer'
 
 /**
  * The reader offered five highlighting overlays and highlighted nothing.
@@ -68,6 +71,10 @@ interface LoadedSection {
  * every-play-is-set-as-a-play.test.ts holds that none changes; what goes are
  * the edition's italic underscores, so a span over one ("_Et tu, Brute?_") is
  * cut without it, which is how it appears on the page.
+ *
+ * Every other text too, since that evening: a novel's underscores became
+ * italics on the page ("the _purpose_" in Silas Marner), so its notes are cut
+ * from, and found in, the text without them.
  */
 function sectionsOf(slug: string): Map<string, string> {
   const path = Object.keys(MODULES).find((k) => k.endsWith(`/${slug}.ts`))
@@ -76,10 +83,10 @@ function sectionsOf(slug: string): Map<string, string> {
   const data = Object.values(MODULES[path]).find(
     (v) =>
       typeof v === 'object' && v !== null && Array.isArray((v as { sections?: unknown }).sections),
-  ) as { type?: string; sections: LoadedSection[] } | undefined
+  ) as { type: HeldTextType; sections: LoadedSection[] } | undefined
   if (!data) return out
   for (const section of data.sections) {
-    const printed = data.type === 'play' ? setForTheViewer(section.content) : section.content
+    const printed = setSectionForTheViewer(data.type, section.content)
     out.set(section.id, printed.replace(/<[^>]*>/g, ''))
   }
   return out
@@ -308,8 +315,11 @@ describe('the reader only offers overlays it can fill', () => {
     expect(READER).toContain('data={annotated}')
   })
 
-  it('and leaves a text with none untouched', () => {
-    expect(READER).toMatch(/: data\b/)
+  it('and gives a section with none no annotations', () => {
+    // It used to hand a text with no located notes to the viewer untouched.
+    // Every text is set out now (italics, verse), so the guard is that only a
+    // section the generator located notes in is given any.
+    expect(READER).toContain('located?.[section.id]?.length')
   })
 })
 

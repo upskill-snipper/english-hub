@@ -13,14 +13,16 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * src/data/full-texts/henry-v.ts, and its speaker and scene were checked by
  * reading the whole play in that edition, not by searching for the phrase.
  *
- * WHAT THE HELD EDITION LACKS. The held file begins at Act 1, Scene 1: its
- * parser dropped the Prologue ("O for a Muse of fire"), which the Gutenberg
- * original does contain. Because the guide test checks every quotation against
- * the held file, the Prologue is described here in the guide's own words and
- * never quoted. The Choruses to Acts 2 to 5 and the Epilogue are held, appended
- * to the end of the scene before each. The soliloquy "Upon the King!" (4.1) is
- * held as one run-on line, its verse lineation lost, so it is quoted in phrases
- * here and never printed as a passage with invented line breaks.
+ * WHAT THE HELD EDITION LACKED, until 26 September 2026. The held file began
+ * at Act 1, Scene 1: its generator dropped the Prologue ("O for a Muse of
+ * fire"), which the Gutenberg original does contain, so the Prologue is
+ * described here in the guide's own words and never quoted. The Choruses to
+ * Acts 2 to 5 and the Epilogue were appended to the end of the scene before
+ * each, and the soliloquy "Upon the King!" (4.1) was printed as one run-on
+ * italic line, so it is quoted in phrases here. The held file now has the
+ * Prologue, each Chorus and the Epilogue as sections of their own ("prologue",
+ * "actii-chorus" to "actv-chorus", "epilogue"), and the soliloquy in its
+ * lines; the guide was written before that and has not been revised for it.
  *
  * WHY EVERY QUOTATION SITS WITHIN ONE LINE OF THE HELD FILE. The guide test
  * normalises the raw .ts source, where line breaks are the two characters

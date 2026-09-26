@@ -59,11 +59,34 @@ const PLAYS = [
   // each agreed with its edition's own contents list on that run. Before, only
   // Macbeth carried one, so a play whose contents list stopped parsing would
   // have been written with whatever the body parse produced.
-  { slug: 'romeo-and-juliet', id: 1513, title: 'Romeo and Juliet', scenes: 24 },
+  //
+  // `besides` is every part of the play that is not a scene, in order: a
+  // prologue, a chorus before an act, an epilogue (see `parseParts`). Three
+  // plays have them, and each list is the one in the edition's own contents.
+  {
+    slug: 'romeo-and-juliet',
+    id: 1513,
+    title: 'Romeo and Juliet',
+    scenes: 24,
+    besides: ['prologue', 'actii-chorus'],
+  },
   { slug: 'a-midsummer-nights-dream', id: 1514, title: "A Midsummer Night's Dream", scenes: 9 },
   { slug: 'the-merchant-of-venice', id: 1515, title: 'The Merchant of Venice', scenes: 20 },
   { slug: 'much-ado-about-nothing', id: 1519, title: 'Much Ado about Nothing', scenes: 17 },
-  { slug: 'henry-v', id: 1521, title: 'King Henry V', scenes: 23 },
+  {
+    slug: 'henry-v',
+    id: 1521,
+    title: 'King Henry V',
+    scenes: 23,
+    besides: [
+      'prologue',
+      'actii-chorus',
+      'actiii-chorus',
+      'activ-chorus',
+      'actv-chorus',
+      'epilogue',
+    ],
+  },
   { slug: 'julius-caesar', id: 1522, title: 'Julius Caesar', scenes: 18 },
   { slug: 'hamlet', id: 1524, title: 'Hamlet', scenes: 20 },
   { slug: 'twelfth-night', id: 1526, title: 'Twelfth Night', scenes: 18 },
@@ -82,8 +105,41 @@ const PLAYS = [
   // is the guard that still holds if the edition's front matter changes shape.
   { slug: 'macbeth', id: 1533, title: 'Macbeth', scenes: 28 },
   { slug: 'antony-and-cleopatra', id: 1534, title: 'Antony and Cleopatra', scenes: 42 },
-  { slug: 'the-tempest', id: 1540, title: 'The Tempest', scenes: 9 },
+  { slug: 'the-tempest', id: 1540, title: 'The Tempest', scenes: 9, besides: ['epilogue'] },
 ]
+
+/**
+ * Stage directions printed at the margin that no rule can tell from a speech
+ * resumed after a direction, each exactly as the edition prints it, by play.
+ *
+ * WHAT BROKE (found 26 September 2026, in a review of the readers). Each of
+ * these was printed in ordinary type, as though somebody said it: the dumb
+ * show's "Trumpets sound." in Hamlet, "Caesar enters the Capitol" in Julius
+ * Caesar, "Fairies sing." in A Midsummer Night's Dream, and the labels over
+ * Hero's epitaph and the song that follows it in Much Ado.
+ *
+ * WHY A LIST AND NOT A RULE. Every block with no speaker and no indent in the
+ * thirteen plays, 400 of them, was read on that day. All but these (and the
+ * dumb show itself, which DIRECTION_AT_MARGIN now catches) are speech resumed
+ * after a direction, and the ones that look most like these are speech too:
+ * "Juliet, the County stays." and "Here she comes, and her passion ends the
+ * play." describe somebody in the present tense, as "Malvolio within." does. A
+ * rule that took these would take those. The generator refuses to write a play
+ * in which a listed direction is not found once, as a block of its own, so the
+ * list cannot go quietly stale.
+ */
+const DIRECTIONS_AS_PRINTED = {
+  hamlet: ['Trumpets sound. The dumb show enters.', 'The King rises and advances.'],
+  'julius-caesar': ['Caesar enters the Capitol, the rest following. All the Senators rise.'],
+  othello: ['Brabantio appears above at a window.'],
+  'twelfth-night': ['Malvolio within.'],
+  'the-tempest': [
+    'Here Prospero discovers Ferdinand and Miranda playing at chess.',
+    'ARIEL’S SONG.',
+  ],
+  'a-midsummer-nights-dream': ['Fairies sing.'],
+  'much-ado-about-nothing': ['Epitaph.', 'Song.'],
+}
 
 /**
  * An act heading, with or without the trailing period.
@@ -94,8 +150,30 @@ const PLAYS = [
  */
 const ACT_HEADING = /^ACT ([IVXLC]+)\.?$/
 
-/** One name as the editions print it above a speech: "LADY MACBETH". */
-const NAME = "[A-Z][A-Z’' .-]+"
+/**
+ * The heading of a prologue spoken before Act I ("THE PROLOGUE" in Romeo and
+ * Juliet, "PROLOGUE." in Henry V), and of an epilogue ("EPILOGUE." in Henry
+ * V, "EPILOGUE" in The Tempest). Each is a line of its own with a blank line
+ * under it; a speaker's heading has the speech under it, which is how Hamlet's
+ * "PROLOGUE." in the play within the play stays a speaker.
+ */
+const PROLOGUE_HEADING = /^(?:THE )?PROLOGUE\.?$/
+const EPILOGUE_HEADING = /^EPILOGUE\.?$/
+
+/**
+ * How far above Act I a prologue's heading may sit. Henry V's is 44 lines up,
+ * the length of the speech. The edition's contents list, which names the
+ * prologue too, is more than a hundred lines above in both plays.
+ */
+const PROLOGUE_LOOKBACK = 60
+
+/**
+ * One name as the editions print it above a speech: "LADY MACBETH". Capitals
+ * with accents count: Henry V's "GRANDPRÉ." failed the rule while it knew
+ * only A to Z, and was printed as the first line of his speech in ordinary
+ * type (found 26 September 2026; the only such heading in the thirteen).
+ */
+const NAME = "[A-ZÀ-ÖØ-Þ][A-ZÀ-ÖØ-Þ’' .-]+"
 
 /** One name, or several speaking together: "MACBETH, LENNOX", "OSRIC and LORDS". */
 const NAMES = `${NAME}(?:(?:,| and|, and) ${NAME})*`
@@ -135,12 +213,17 @@ const HEADING_WITH_SPEECH = new RegExp(`^(${NAMES})\\.? (\\S.*)$`)
  * short sentences of sound: "Alarum. Retreat. Enter Antony"), is a direction,
  * as is one that opens a scene (see `toHtml`); anything else without a speaker is
  * left as speech, because in every edition that is what it usually is: a
- * speech resumed after a direction. So a direction in those four plays that
+ * speech resumed after a direction. A direction in those four plays that
  * begins some other way mid-scene ("Trumpets sound. The dumb show enters.")
- * is still printed in ordinary type.
+ * is named in DIRECTIONS_AS_PRINTED.
+ *
+ * The entrance may open with the underscore of italic type. Hamlet's dumb show,
+ * ten lines set in italics at the margin ("_Enter a King and a Queen very
+ * lovingly;"), failed the rule on its first character and was printed as a
+ * speech, set out as verse (found 26 September 2026).
  */
 const DIRECTION_AT_MARGIN =
-  /^(?:\[[^[\]]*\]|(?:[A-Z][^.!?\n]{0,30}\.\s+){0,3}(?:Enter|Re-enter|Exit|Exeunt)\b[\s\S]*)$/
+  /^(?:\[[^[\]]*\]|_?(?:[A-Z][^.!?\n]{0,30}\.\s+){0,3}(?:Enter|Re-enter|Exit|Exeunt)\b[\s\S]*)$/
 
 /**
  * Whether an indented block is spoken, although the indentation rule in
@@ -191,6 +274,24 @@ function stripGutenberg(raw) {
 }
 
 /**
+ * The parts that are not scenes, as the edition's own table of contents lists
+ * them, in order: 'prologue', 'chorus' or 'epilogue'. The contents run from
+ * their "Contents" heading to "Dramatis Personæ", whose cast list names the
+ * Chorus too and is not read. Null when the contents cannot be found, as
+ * `scenesInContents` returns 0.
+ */
+function besidesInContents(body) {
+  const lines = body.split('\n').map((l) => l.trim())
+  const from = lines.findIndex((l) => l === 'Contents')
+  const to = lines.findIndex((l) => /^Dramatis Person/.test(l))
+  if (from === -1 || to <= from) return null
+  return lines
+    .slice(from + 1, to)
+    .map((l) => /^(?:the )?(prologue|chorus|epilogue)\.?$/i.exec(l)?.[1].toLowerCase())
+    .filter(Boolean)
+}
+
+/**
  * How many scenes the edition's own table of contents lists.
  *
  * A free cross-check the document hands us, and the one that would have caught
@@ -204,8 +305,27 @@ function scenesInContents(body) {
   return lines.slice(0, firstBodyScene).filter((l) => /^Scene [IVXLC]+\./.test(l.trim())).length
 }
 
-/** Split the body into scenes, carrying the act each belongs to. */
-function parseScenes(body) {
+/**
+ * Split the body into its parts, in order, each carrying the act it belongs
+ * to: every scene, and the prologue, the choruses and the epilogue where the
+ * play has them. A part is `{ kind, act, scene, setting, lines }`, `kind` being
+ * 'scene', 'prologue', 'chorus' or 'epilogue'.
+ *
+ * WHAT BROKE (found 26 September 2026, in a review of the readers). This read
+ * scenes only, starting at the Act I heading and cutting at each SCENE
+ * heading. So Romeo and Juliet's Prologue ("Two households, both alike in
+ * dignity"), one of the most examined passages in GCSE English Literature,
+ * and Henry V's ("O for a Muse of fire"), both printed above Act I, were
+ * never read; a chorus, printed between an act's heading and its first scene,
+ * was run on to the end of the previous act's last scene (Romeo and Juliet's
+ * Act II Chorus, and Henry V's four); and each epilogue was run on to the
+ * play's last scene under a line of ordinary type saying "EPILOGUE".
+ *
+ * Each is now a part of its own, where the edition prints it, with its words
+ * as they were. The scenes are cut exactly as before, so their ids, and the
+ * progress and notes keyed on them, are unchanged.
+ */
+function parseParts(body) {
   const lines = body.split('\n')
   // The body starts at the first ALL-CAPS scene heading; everything above it is
   // the dramatis personae and the table of contents, which use "Scene I."
@@ -229,45 +349,74 @@ function parseScenes(body) {
     }
   }
 
-  const scenes = []
+  // A prologue spoken before Act I is printed above its heading, after the
+  // cast list. Bounded for the same reason as the walk-back above.
+  let start = from
+  for (let i = from - 1; i >= Math.max(0, from - PROLOGUE_LOOKBACK); i--) {
+    if (PROLOGUE_HEADING.test(lines[i].trim()) && !lines[i + 1]?.trim()) {
+      start = i
+      break
+    }
+  }
+
+  const parts = []
   let act = null
   let current = null
-  for (const line of lines.slice(from)) {
+  // A part that holds nothing but blank lines is not a part: the gap between
+  // an act's heading and its first scene, in every act without a chorus.
+  const begin = (part) => {
+    if (current && (current.kind === 'scene' || current.lines.some((l) => l.trim())))
+      parts.push(current)
+    current = part
+  }
+  lines.slice(start).forEach((line, i, rest) => {
     const trimmed = line.trim()
+    const alone = !rest[i + 1]?.trim()
+    if (act === null && current === null && PROLOGUE_HEADING.test(trimmed) && alone) {
+      begin({ kind: 'prologue', act: null, lines: [] })
+      return
+    }
     const actMatch = ACT_HEADING.exec(trimmed)
     if (actMatch) {
       act = actMatch[1]
-      continue
+      // Whatever the edition prints before the act's first scene is its
+      // chorus: Romeo and Juliet's Act II and Henry V's Acts II to V.
+      begin({ kind: 'chorus', act, lines: [] })
+      return
+    }
+    if (act !== null && EPILOGUE_HEADING.test(trimmed) && alone) {
+      begin({ kind: 'epilogue', act, lines: [] })
+      return
     }
     // Case-insensitive, deliberately. Gutenberg's Much Ado (1519) mixes
     // "SCENE III." and "Scene III." inside the SAME body, and matching only the
     // upper-case form silently folded four scenes into their predecessors -
     // Act III Scenes II to V arrived as one page. Only the body is scanned, and
-    // the body begins at the first upper-case heading, so the contents list
-    // above it cannot be swept up by this.
+    // the body begins at the first upper-case heading (or the prologue just
+    // above it), so the contents list above it cannot be swept up by this.
     const sceneMatch = /^SCENE ([IVXLC]+)\.?\s*(.*)$/i.exec(trimmed)
     if (sceneMatch) {
-      if (current) scenes.push(current)
-      current = {
+      begin({
+        kind: 'scene',
         act,
         scene: sceneMatch[1],
         setting: sceneMatch[2].replace(/\s+$/, ''),
         lines: [],
-      }
-      continue
+      })
+      return
     }
     // A place too long for one line runs on to the next, with no blank line
     // between. The Tempest's first scene does it, and its place was cut at
     // "thunder and lightning", with "heard." printed below as a paragraph of
     // its own (seen 26 September 2026, once the reader began printing places).
-    if (current && current.lines.length === 0 && trimmed && !/^\s/.test(line)) {
+    if (current?.kind === 'scene' && current.lines.length === 0 && trimmed && !/^\s/.test(line)) {
       current.setting = `${current.setting} ${trimmed}`.trim()
-      continue
+      return
     }
     if (current) current.lines.push(line)
-  }
-  if (current) scenes.push(current)
-  return scenes
+  })
+  begin(null)
+  return parts
 }
 
 /**
@@ -280,9 +429,9 @@ function parseScenes(body) {
  * capitals ("THE FORTUNATE UNHAPPY."), a song is announced in them ("ARIEL’S
  * SONG."), and neither is somebody speaking.
  */
-function castOf(scenes) {
+function castOf(parts) {
   const names = new Set()
-  for (const { lines } of scenes) {
+  for (const { lines } of parts) {
     lines.forEach((line, i) => {
       const heading = line.trimEnd()
       if (!HEADING.test(heading) || lines[i - 1]?.trim() || !lines[i + 1]?.trim()) return
@@ -369,8 +518,11 @@ function splitRunTogether(block, cast, tally) {
   return parts.map((p) => p.join('\n'))
 }
 
-/** Turn a scene's plain-text lines into the HTML the viewer renders. */
-function toHtml(sceneLines, cast, tally) {
+/**
+ * Turn a part's plain-text lines into the HTML the viewer renders. `listed`
+ * maps each of the play's DIRECTIONS_AS_PRINTED to the times it was found.
+ */
+function toHtml(sceneLines, cast, tally, listed) {
   // trimEnd, not trim. A leading trim strips the indent off the FIRST block of
   // every scene, which is almost always the opening stage direction, and renders
   // "Enter Sampson and Gregory" as though somebody said it aloud.
@@ -412,6 +564,12 @@ function toHtml(sceneLines, cast, tally) {
       // here too, wherever it falls.
       if (!indented && (index === 0 || DIRECTION_AT_MARGIN.test(text.trim()))) {
         tally.margin++
+        return direction(escaped)
+      }
+      // Or one of the directions no rule can tell from speech, named by play.
+      if (!indented && listed.has(text.trim())) {
+        listed.set(text.trim(), listed.get(text.trim()) + 1)
+        tally.listed++
         return direction(escaped)
       }
       return `<p>${escaped}</p>`
@@ -462,7 +620,8 @@ async function build(play) {
   }
 
   const body = stripGutenberg(raw)
-  const scenes = parseScenes(body)
+  const parts = parseParts(body)
+  const scenes = parts.filter((p) => p.kind === 'scene')
   if (scenes.length < MIN_SCENES) {
     throw new Error(`${play.slug}: parsed only ${scenes.length} scenes - refusing to write`)
   }
@@ -494,14 +653,53 @@ async function build(play) {
     throw new Error(`${play.slug}: found ${acts.length} acts (${acts.join(', ')}), expected 5`)
   }
 
-  const cast = castOf(scenes)
-  const tally = { joint: 0, variant: 0, sameLine: 0, split: 0, margin: 0, spoken: 0 }
-  const sections = scenes.map((s) => ({
-    id: `act${s.act ?? '0'}-scene${s.scene}`.toLowerCase(),
-    title: s.act ? `Act ${s.act}, Scene ${s.scene}` : `Scene ${s.scene}`,
-    setting: s.setting,
-    content: toHtml(s.lines, cast, tally),
+  // The parts that are not scenes, by id, and checked twice: against the list
+  // for this play above, and against the edition's own contents, so a prologue
+  // that stopped parsing (or a stray line after an act heading taken for a
+  // chorus) refuses the write rather than reaching a student.
+  const idOf = (p) =>
+    p.kind === 'scene'
+      ? `act${p.act}-scene${p.scene}`.toLowerCase()
+      : p.kind === 'chorus'
+        ? `act${p.act}-chorus`.toLowerCase()
+        : p.kind
+  const besides = parts.filter((p) => p.kind !== 'scene')
+  const expected = play.besides ?? []
+  if (besides.map(idOf).join() !== expected.join()) {
+    throw new Error(
+      `${play.slug}: expected [${expected.join(', ')}] besides the scenes, parsed [${besides.map(idOf).join(', ')}] - refusing to write`,
+    )
+  }
+  const contents = besidesInContents(body)
+  if (contents && contents.join() !== besides.map((p) => p.kind).join()) {
+    throw new Error(
+      `${play.slug}: contents lists [${contents.join(', ')}], parsed [${besides.map((p) => p.kind).join(', ')}] - refusing to write`,
+    )
+  }
+
+  const cast = castOf(parts)
+  const tally = { joint: 0, variant: 0, sameLine: 0, split: 0, margin: 0, spoken: 0, listed: 0 }
+  const asPrinted = new Map((DIRECTIONS_AS_PRINTED[play.slug] ?? []).map((d) => [d, 0]))
+  const sections = parts.map((p) => ({
+    id: idOf(p),
+    title:
+      p.kind === 'scene'
+        ? `Act ${p.act}, Scene ${p.scene}`
+        : p.kind === 'chorus'
+          ? `Act ${p.act}, Chorus`
+          : p.kind === 'prologue'
+            ? 'Prologue'
+            : 'Epilogue',
+    // A prologue, a chorus or an epilogue has no place of its own in the edition.
+    ...(p.kind === 'scene' ? { setting: p.setting } : {}),
+    content: toHtml(p.lines, cast, tally, asPrinted),
   }))
+  const unfound = [...asPrinted].filter(([, n]) => n !== 1).map(([d, n]) => `"${d}" ${n} times`)
+  if (unfound.length > 0) {
+    throw new Error(
+      `${play.slug}: listed direction(s) not found once each: ${unfound.join('; ')} - refusing to write`,
+    )
+  }
 
   const totalChars = sections.reduce((n, s) => n + s.content.length, 0)
   if (totalChars < MIN_CHARS) {
@@ -536,7 +734,13 @@ export const ${play.slug.replace(/-([a-z])/g, (_, c) => c.toUpperCase())}Text: T
 `
   mkdirSync(OUT_DIR, { recursive: true })
   writeFileSync(join(OUT_DIR, `${play.slug}.ts`), file, 'utf8')
-  return { slug: play.slug, scenes: sections.length, chars: totalChars, tally }
+  return {
+    slug: play.slug,
+    scenes: scenes.length,
+    besides: besides.map(idOf),
+    chars: totalChars,
+    tally,
+  }
 }
 
 const only = process.argv[2]
@@ -560,9 +764,11 @@ for (const play of wanted) {
       t.split && `${t.split} direction(s) run into a speech`,
       t.margin && `${t.margin} direction(s) at the margin`,
       t.spoken && `${t.spoken} indented song(s) or speech(es) kept as speech`,
+      t.listed && `${t.listed} listed direction(s)`,
     ].filter(Boolean)
     console.log(
       `  ok   ${r.slug.padEnd(28)} ${String(r.scenes).padStart(2)} scenes, ${r.chars} chars` +
+        (r.besides.length ? `, and ${r.besides.join(', ')}` : '') +
         (repaired.length ? `\n         ${repaired.join(', ')}` : ''),
     )
   } catch (err) {

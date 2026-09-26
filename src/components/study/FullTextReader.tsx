@@ -5,7 +5,8 @@ import Link from 'next/link'
 import { EnglishText } from '@/components/i18n/EnglishText'
 import { ArrowLeft, BookOpen } from 'lucide-react'
 import { InteractiveTextViewer, type TextData } from '@/components/study/InteractiveTextViewer'
-import { setForTheViewer } from '@/components/study/set-play-for-the-viewer'
+import { setSectionForTheViewer } from '@/components/study/set-play-for-the-viewer'
+import { rightsLineKey } from '@/components/study/rights-line'
 
 import { useT } from '@/lib/i18n/use-t'
 import { textGuideHref } from '@/lib/revision/guide-href'
@@ -62,33 +63,33 @@ export function FullTextReader({
   // generated map is keyed by slug then section id, so a text with none is
   // untouched and its overlays stay closed.
   //
-  // A play is also set out as a play first (./set-play-for-the-viewer.ts):
-  // verse in lines, prose left to flow, the speaker above the speech, the
-  // edition's italics as italics and the scene's place at its head. Without
-  // it the viewer ran verse on as prose in every scene without notes and
-  // printed Gutenberg's underscores (found 26 September 2026). The notes are
-  // cut from this same set-out text by scripts/generate-text-annotations.mjs,
-  // so each still finds its line.
+  // Every text is set out first (./set-play-for-the-viewer.ts). A play: verse
+  // in lines, prose left to flow, the speaker above the speech, the edition's
+  // italics as italics and the scene's place at its head. Without it the
+  // viewer ran verse on as prose in every scene without notes and printed
+  // Gutenberg's underscores (found 26 September 2026). A novel: its italics,
+  // which until that evening it printed as underscores, 111 spans in Silas
+  // Marner alone, because only a play was set out. A poem: its lines marked
+  // as verse, so a long one wraps indented on a phone. The notes are cut from
+  // this same set-out text by scripts/generate-text-annotations.mjs, so each
+  // still finds its line; a section with none carries none.
   const located = TEXT_ANNOTATIONS[slug]
   const annotated: TextData = useMemo(
-    () =>
-      located || data.type === 'play'
-        ? {
-            ...data,
-            sections: data.sections.map((held) => {
-              const section =
-                data.type === 'play'
-                  ? { ...held, content: setForTheViewer(held.content, held.setting) }
-                  : held
-              return located?.[section.id]?.length
-                ? {
-                    ...section,
-                    annotations: [...(section.annotations ?? []), ...located[section.id]],
-                  }
-                : section
-            }),
-          }
-        : data,
+    () => ({
+      ...data,
+      sections: data.sections.map((held) => {
+        const section = {
+          ...held,
+          content: setSectionForTheViewer(data.type, held.content, held.setting),
+        }
+        return located?.[section.id]?.length
+          ? {
+              ...section,
+              annotations: [...(section.annotations ?? []), ...located[section.id]],
+            }
+          : section
+      }),
+    }),
     [data, located],
   )
 
@@ -113,10 +114,13 @@ export function FullTextReader({
 
       {/* The rights position, stated plainly. A student who has met American
           revision sites hosting texts we cannot should be able to see why this
-          one is here. */}
+          one is here. And which text it is, truly for each: one line saying
+          "modern-spelling edition" was printed on every reader until 26
+          September 2026, and was false for all but the plays (see
+          ./rights-line.ts). */}
       <p className="mt-4 flex items-start gap-2 text-body-sm text-muted-foreground">
         <BookOpen aria-hidden="true" className="mt-0.5 size-4 shrink-0" />
-        <span>{t('fulltext.public_domain')}</span>
+        <span>{t(rightsLineKey(slug, data.type))}</span>
       </p>
 
       <div className="mt-8">

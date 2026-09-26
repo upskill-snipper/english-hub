@@ -1256,8 +1256,8 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
     ar: 'اقرأ الرواية',
     es: 'Leer la novela',
   },
-  // Not the shared fulltext.public_domain line, which says "modern-spelling
-  // edition": this reader prints the 1831 edition in its own spelling.
+  // Not one of the shared fulltext.rights.* lines: this reader prints the 1831
+  // edition in its own spelling, and says which edition that is.
   'rev.texts.fr.read.rights': {
     en: 'This work is out of copyright in the UK, so we can publish it in full. The text is a copy of the edition Mary Shelley revised in 1831, in its original spelling, not a retyping.',
     ar: 'هذا العمل خرج من حقوق النشر في بريطانيا، فنقدر ننشره كامل. النص منسوخ من الطبعة اللي راجعتها Mary Shelley سنة 1831، بإملائها الأصلي، مو مكتوب من جديد.',

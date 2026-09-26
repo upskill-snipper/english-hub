@@ -425,3 +425,27 @@
   border-radius: 6px;
   margin-bottom: 1rem;
 }
+
+/* ── Verse in the full-text reader ────────────────────────────
+   src/components/study/set-play-for-the-viewer.ts marks a speech in verse, a
+   poem's stanza and a run of verse inside a prose speech (VERSE_CLASS), and
+   the viewer sets each line of those in a block of its own (VERSE_LINE_CLASS,
+   `verseLinesAsBlocks`). Each line starts at the margin, as the edition prints
+   it; a line too long for the screen carries on indented under itself, so a
+   phone never makes the end of a line look like the next one. Found on 26
+   September 2026: Sonnet 116's first line ended "true" at 390px, and "minds"
+   read as the start of line 2.
+
+   Padding and a negative indent, and not `text-indent: 2em hanging
+   each-line`, which was the first fix: Samsung Internet has never supported
+   those keywords, nor Chrome before 146, and a browser that does not drops the
+   rule. In Chromium 145 it indented none of the 2,219 wrapped verse lines on
+   the Hamlet reader (27 September 2026). */
+.prose-reader .verse-line {
+  display: block;
+  padding-inline-start: 2em;
+  text-indent: -2em;
+}
+.prose-reader span.verse {
+  display: block;
+}

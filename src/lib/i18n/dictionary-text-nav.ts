@@ -278,10 +278,24 @@ export const TEXT_NAV_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     ar: 'رجوع لدليل الدراسة',
     es: 'Volver a la guía de estudio',
   },
-  'fulltext.public_domain': {
-    en: 'This work is out of copyright in the UK, so we can publish it in full. The text is a copy of a published modern-spelling edition, not a retyping.',
-    ar: 'هذا العمل خرج من حقوق النشر في بريطانيا، فنقدر ننشره كامل. النص منسوخ من طبعة منشورة بالإملاء الحديث، مو مكتوب من جديد.',
-    es: 'Esta obra está libre de derechos en el Reino Unido, así que podemos publicarla completa. El texto es una copia de una edición publicada con ortografía moderna, no una transcripción.',
+  // The rights line under a held text's title, one per kind of source (see
+  // src/components/study/rights-line.ts). Until 26 September 2026 one line,
+  // "a published modern-spelling edition", was printed on every reader, and
+  // was true only of the plays.
+  'fulltext.rights.play': {
+    en: 'This work is out of copyright in the UK, so we can publish it in full. The text is a copy of a published modern-spelling edition of the play, not a retyping.',
+    ar: 'هذا العمل خرج من حقوق النشر في بريطانيا، فنقدر ننشره كامل. النص منسوخ من طبعة منشورة للمسرحية بالإملاء الحديث، مو مكتوب من جديد.',
+    es: 'Esta obra está libre de derechos en el Reino Unido, así que podemos publicarla completa. El texto es una copia de una edición publicada de la obra con ortografía moderna, no una transcripción.',
+  },
+  'fulltext.rights.edition': {
+    en: 'This work is out of copyright in the UK, so we can publish it in full. The text is a copy of a published edition, spelt as that edition prints it, not a retyping.',
+    ar: 'هذا العمل خرج من حقوق النشر في بريطانيا، فنقدر ننشره كامل. النص منسوخ من طبعة منشورة، بإملائها مثل ما طبعته، مو مكتوب من جديد.',
+    es: 'Esta obra está libre de derechos en el Reino Unido, así que podemos publicarla completa. El texto es una copia de una edición publicada, con la ortografía que esa edición imprime, no una transcripción.',
+  },
+  'fulltext.rights.anthology': {
+    en: 'This work is out of copyright in the UK, so we can publish it in full. The text is the one printed in the Pearson Edexcel International GCSE English Anthology (Issue 8), which is the text the exam prints.',
+    ar: 'هذا العمل خرج من حقوق النشر في بريطانيا، فنقدر ننشره كامل. النص هو المطبوع في Pearson Edexcel International GCSE English Anthology (Issue 8)، وهو نفس النص اللي يطبعه الامتحان.',
+    es: 'Esta obra está libre de derechos en el Reino Unido, así que podemos publicarla completa. El texto es el que imprime la Pearson Edexcel International GCSE English Anthology (Issue 8), que es el texto que imprime el examen.',
   },
 
   'placement.none': {

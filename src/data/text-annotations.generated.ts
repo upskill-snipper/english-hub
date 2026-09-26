@@ -1367,6 +1367,48 @@ export const TEXT_ANNOTATIONS: Readonly<
     ],
   },
   'henry-v': {
+    prologue: [
+      {
+        type: 'quote',
+        text: 'O for a Muse of fire, that would ascend\nThe brightest heaven of invention,\nA kingdom for a stage, princes to act,\nAnd monarchs to behold the swelling scene',
+        note: 'Chorus — Prologue. The opening lines ask for epic poetic power while apologising for the bare Globe stage, framing the play’s self-conscious theatricality from the first moment.',
+      },
+      {
+        type: 'quote',
+        text: 'Piece out our imperfections with your thoughts.\nInto a thousand parts divide one man,\nAnd make imaginary puissance',
+        note: 'Chorus — Prologue. The Chorus invites the audience to collaborate in creating the play’s world, making imagination itself a patriotic act and drawing attention to the artifice of history.',
+      },
+      {
+        type: 'context',
+        text: 'Piece out our imperfections with your thoughts',
+        note: 'The Chorus convention — a single speaker who addresses the audience directly between acts — was unusual for the public stage, and Shakespeare uses it to draw attention to the limits of theatrical representation, asking the audience to "piece out our imperfections with your thoughts" and so become collaborators in the nation-building the play performs.',
+      },
+      {
+        type: 'quote',
+        text: 'O for a Muse of fire, that would ascend\nThe brightest heaven of invention',
+        note: "Chorus, Prologue. The opening lines invoke classical poetics: a 'Muse of fire' would lift the play to epic. The conditional 'O for' immediately undercuts itself - the play does not have such a Muse. From its first line the play apologises for its scale. Shakespeare yokes high heroic ambition to humble theatrical reality, framing the audience as participants in supplying what the stage cannot.",
+      },
+      {
+        type: 'quote',
+        text: 'Can this cockpit hold\nThe vasty fields of France? Or may we cram\nWithin this wooden O the very casques\nThat did affright the air at Agincourt',
+        note: "Chorus, Prologue. The 'wooden O' is the Globe Theatre, opened in 1599 - the same year Henry V was first performed. The diminishing imagery ('cockpit', 'wooden O') against the vast subject matter ('vasty fields') makes a feature of its inadequacy. The triple rhetorical questioning enlists audiences as imaginative collaborators. The reference to 'casques' (helmets) at Agincourt frames history as a sensory event the theatre can only gesture at.",
+      },
+      {
+        type: 'quote',
+        text: 'Piece out our imperfections with your thoughts',
+        note: "Chorus, Prologue. The Chorus's defining instruction. Theatre is collaborative: the audience must supply with imagination what the stage cannot. The verb 'piece out' suggests patchwork - the play is a torn cloth needing the viewer's mind to make it whole. This metatheatrical address is unique in Shakespeare's history plays and licenses the play's persistent self-awareness of its own artifice.",
+      },
+      {
+        type: 'theme',
+        text: 'The vasty fields of France',
+        note: "Theatre and Performance - the Chorus's Apologies. The Chorus apologises in every act for the inadequacy of the 'wooden O' to depict 'the vasty fields of France' and asks audiences to 'piece out our imperfections with your thoughts.' The play stages its own limitations.",
+      },
+      {
+        type: 'theme',
+        text: 'Piece out our imperfections with your thoughts',
+        note: "Theatre and Performance - the Chorus's Apologies. The Chorus apologises in every act for the inadequacy of the 'wooden O' to depict 'the vasty fields of France' and asks audiences to 'piece out our imperfections with your thoughts.' The play stages its own limitations.",
+      },
+    ],
     'acti-scenei': [
       {
         type: 'quote',
@@ -1403,7 +1445,7 @@ export const TEXT_ANNOTATIONS: Readonly<
         note: "Henry V, Act 3 Scene 1. The closing line of the breach speech. The triadic war-cry yokes king ('Harry'), nation ('England'), and patron saint ('Saint George') in a single shout. 'The game's afoot' echoes the tennis-ball conceit of Act 1 - war as the King's continued game. The cry became proverbial. As patriotic icon it is as forceful as anything in Shakespeare; its power is undeniable even if (as some critics argue) the play surrounds it with material that complicates simple celebration.",
       },
     ],
-    'actiii-scenevii': [
+    'activ-chorus': [
       {
         type: 'quote',
         text: 'Now entertain conjecture of a time\nWhen creeping murmur and the poring dark\nFills the wide vessel of the universe',
@@ -1484,6 +1526,8 @@ export const TEXT_ANNOTATIONS: Readonly<
         text: 'O God, thy arm was here;\nAnd not to us, but to thy arm alone,\nAscribe we all',
         note: 'King Henry — Act 4, Scene 8. Henry’s reaction to the Agincourt casualty list frames the victory as divine intervention, supporting the play’s providential reading of English success.',
       },
+    ],
+    'actv-chorus': [
       {
         type: 'context',
         text: 'the general of our gracious empress',
@@ -1502,7 +1546,7 @@ export const TEXT_ANNOTATIONS: Readonly<
         note: "Mistress Quickly (the Hostess). Her Act 2 description of Falstaff's death - 'a parted ev'n just between twelve and one' - is one of the most moving prose passages in Shakespeare.",
       },
     ],
-    'actv-sceneii': [
+    epilogue: [
       {
         type: 'quote',
         text: 'Small time, but in that small most greatly lived\nThis star of England',
@@ -3014,6 +3058,58 @@ export const TEXT_ANNOTATIONS: Readonly<
     ],
   },
   'romeo-and-juliet': {
+    prologue: [
+      {
+        type: 'quote',
+        text: 'Two households, both alike in dignity,\nIn fair Verona, where we lay our scene,\nFrom ancient grudge break to new mutiny,\nWhere civil blood makes civil hands unclean',
+        note: 'Chorus - Prologue. The sonnet prologue establishes the feud, foreshadows the tragedy and frames the play as a story whose ending is already known.',
+      },
+      {
+        type: 'quote',
+        text: 'From forth the fatal loins of these two foes\nA pair of star-cross’d lovers take their life',
+        note: 'Chorus - Prologue. Introduces the idea of fate ("star-cross\'d") and the double meaning of "take their life" - both born and killed.',
+      },
+      {
+        type: 'theme',
+        text: 'A pair of star-cross’d lovers take their life',
+        note: 'The Prologue announces that "a pair of star-cross\'d lovers take their life," removing all suspense about the outcome.',
+      },
+      {
+        type: 'language',
+        text: 'bury their parents’ strife',
+        note: '"Bury their parents\' strife" makes the lovers\' deaths function as sacrificial: only their corpses, laid in the tomb, can end the feud.',
+      },
+      {
+        type: 'language',
+        text: 'star-cross’d lovers take their life',
+        note: '"Star-cross\'d lovers take their life" and "death-mark\'d love" remove all suspense.',
+      },
+      {
+        type: 'language',
+        text: 'civil blood makes civil hands unclean',
+        note: '"Civil blood makes civil hands unclean" is the prologue\'s most quoted line because of how Shakespeare loads the word "civil" with three simultaneous meanings: of the same city, civilised, and civil-war.',
+      },
+      {
+        type: 'language',
+        text: 'the two hours’ traffic of our stage',
+        note: 'The prologue\'s closing image - "the two hours\' traffic of our stage" - is openly metatheatrical.',
+      },
+      {
+        type: 'quote',
+        text: 'Two households, both alike in dignity',
+        note: "Chorus. The families are equal, making the feud pointless. 'Dignity' is ironic -- their behaviour is undignified.",
+      },
+      {
+        type: 'quote',
+        text: 'A pair of star-cross’d lovers take their life',
+        note: "Chorus. 'Star-cross'd' means fated to be thwarted. 'Take their life' is a pun: they live AND end their lives. Dramatic irony from line one.",
+      },
+      {
+        type: 'quote',
+        text: 'The fearful passage of their death-mark’d love',
+        note: "Chorus. 'Death-mark'd' -- branded with death from the beginning. The oxymoron 'death-mark'd love' captures the play's central paradox.",
+      },
+    ],
     'acti-scenev': [
       {
         type: 'quote',
@@ -3549,7 +3645,7 @@ export const TEXT_ANNOTATIONS: Readonly<
       },
       {
         type: 'quote',
-        text: 'He had seemed to love it little in the years when every penny had its purpose for him; for he loved the _purpose_ then',
+        text: 'He had seemed to love it little in the years when every penny had its purpose for him; for he loved the purpose then',
         note: 'Narrator — Chapter 2. Eliot tracks the psychological shift by which Silas’s gold moves from ordinary earnings to beloved hoard. The word "then" is the key: once the purpose has gone, the coins take a relational role, which Eliot calls their "companionship", and fill a space that should be occupied by a person. The quiet horror of the sentence is that Silas himself no longer seems to recognise the difference, which tells us how far his isolation has damaged him.',
       },
       {
@@ -4005,7 +4101,7 @@ export const TEXT_ANNOTATIONS: Readonly<
     'section-6': [
       {
         type: 'quote',
-        text: 'How often have I said to you that when you have eliminated the impossible whatever remains, _however improbable_, must be the truth',
+        text: 'How often have I said to you that when you have eliminated the impossible whatever remains, however improbable, must be the truth',
         note: 'Holmes — Chapter 6. The novella’s most famous line of detective method. The logic is deliberately counter-intuitive: the "improbable" is the point. Conan Doyle’s detective teaches the reader a new way of thinking about evidence.',
       },
       {
@@ -4243,11 +4339,6 @@ export const TEXT_ANNOTATIONS: Readonly<
         note: 'Prospero (to Ariel) — Act 5, Scene 1. Prospero finally fulfils his twelve-year-old promise and dissolves the bond that has structured almost every scene of the play. Ariel has been promised freedom repeatedly — the audience has heard him ask for it in Act 1 — and the release placed here at the climax rather than at the beginning of the action gives freedom the weight of a reward. The short, unadorned line also makes a striking contrast with Prospero’s previous grand invocations of spiritual power.',
       },
       {
-        type: 'quote',
-        text: 'As you from crimes would pardon’d be,\n    Let your indulgence set me free',
-        note: 'Prospero — Epilogue. In the Epilogue the actor playing Prospero steps out of the magician’s role and asks the audience’s applause to release him from the stage, framing the theatrical contract itself in the same language of “pardon” that has governed the whole play. The final couplet makes the audience complicit in the drama’s economy of forgiveness: we are asked to grant to Prospero the mercy he has just extended to his enemies. It is one of Shakespeare’s most metatheatrical endings.',
-      },
-      {
         type: 'theme',
         text: 'the rarer action is\nIn virtue than in vengeance',
         note: 'Forgiveness and reconciliation. Prospero has twelve years of grievance against his brother, yet Ariel’s observation that his own heart would soften “were I human” shames Prospero into declaring that “the rarer action is / In virtue than in vengeance.” The marriage of Ferdinand and Miranda symbolically heals the split between Milan and Naples; Alonso’s grief leads to repentance; even Caliban promises to “seek for grace.” Yet Shakespeare complicates the pattern.',
@@ -4256,11 +4347,6 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'theme',
         text: 'be wise hereafter,\nAnd seek for grace',
         note: 'Nature vs nurture. Caliban has been taught language only to use it for curses; he plots murder; yet he also speaks some of the play’s most beautiful lines about the island’s music, and by the end promises to “be wise hereafter, / And seek for grace.” Against his alleged untameability Shakespeare sets Miranda, raised in almost total isolation but naturally compassionate, and Ferdinand, whose noble bearing is visible even after shipwreck.',
-      },
-      {
-        type: 'theme',
-        text: 'Let your indulgence set me free',
-        note: 'Freedom and servitude. Even the shipwrecked nobles are held in a “charmed” bondage by Prospero’s art, and Prospero himself turns out to be bound — to his books, to his revenge, and finally, in the Epilogue, to the audience (“Let your indulgence set me free”).',
       },
       {
         type: 'character',
@@ -4299,11 +4385,6 @@ export const TEXT_ANNOTATIONS: Readonly<
       },
       {
         type: 'quote',
-        text: 'Now my charms are all o’erthrown,\nAnd what strength I have’s mine own,\nWhich is most faint',
-        note: "Prospero - Epilogue. The boundary between character and actor dissolves. Stripped of magic, Prospero asks the audience for freedom. 'What strength I have's mine own, which is most faint' is a humbling admission of human vulnerability. If Prospero is Shakespeare, this is the playwright acknowledging that without theatre's 'magic', he is merely a man.",
-      },
-      {
-        type: 'quote',
         text: 'this thing of darkness I\nAcknowledge mine',
         note: "Prospero - Act 5, Scene 1. One of the play's most ambiguous lines. On one level, he claims ownership (Caliban is his slave). On another, he acknowledges responsibility for Caliban's condition. Psychologically, 'this thing of darkness' can be read as Prospero accepting his own shadow self: the capacity for cruelty he shares with Caliban.",
       },
@@ -4316,6 +4397,23 @@ export const TEXT_ANNOTATIONS: Readonly<
         type: 'quote',
         text: 'I’ll deliver all;\nAnd promise you calm seas, auspicious gales',
         note: "Prospero - Act 5, Scene 1. Prospero promises safe passage home after renouncing magic. 'Deliver' carries dual meaning: to set free and to fulfil a promise. Having used nature as a weapon (the tempest), he now promises harmony with it. Nature is restored when power is relinquished.",
+      },
+    ],
+    epilogue: [
+      {
+        type: 'quote',
+        text: 'As you from crimes would pardon’d be,\n    Let your indulgence set me free',
+        note: 'Prospero — Epilogue. In the Epilogue the actor playing Prospero steps out of the magician’s role and asks the audience’s applause to release him from the stage, framing the theatrical contract itself in the same language of “pardon” that has governed the whole play. The final couplet makes the audience complicit in the drama’s economy of forgiveness: we are asked to grant to Prospero the mercy he has just extended to his enemies. It is one of Shakespeare’s most metatheatrical endings.',
+      },
+      {
+        type: 'theme',
+        text: 'Let your indulgence set me free',
+        note: 'Freedom and servitude. Even the shipwrecked nobles are held in a “charmed” bondage by Prospero’s art, and Prospero himself turns out to be bound — to his books, to his revenge, and finally, in the Epilogue, to the audience (“Let your indulgence set me free”).',
+      },
+      {
+        type: 'quote',
+        text: 'Now my charms are all o’erthrown,\nAnd what strength I have’s mine own,\nWhich is most faint',
+        note: "Prospero - Epilogue. The boundary between character and actor dissolves. Stripped of magic, Prospero asks the audience for freedom. 'What strength I have's mine own, which is most faint' is a humbling admission of human vulnerability. If Prospero is Shakespeare, this is the playwright acknowledging that without theatre's 'magic', he is merely a man.",
       },
     ],
     'actiii-scenei': [

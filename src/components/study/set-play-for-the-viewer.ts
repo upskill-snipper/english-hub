@@ -30,7 +30,132 @@
  * fixed width, and a <br> there sets a clown out as ragged verse. See
  * `isProse` for how a speech is judged, and `breaksAfter` for the lines inside
  * prose that do keep their break.
+ *
+ * THE OTHER TEXTS pass through here too (`setSectionForTheViewer`), so that
+ * FullTextReader and the annotation generator have one way to print any held
+ * text: a novel's underscores become italics (`italicsAsItalics`) and a poem's
+ * lines are verse (`setPoemForTheViewer`). The module still has no imports,
+ * for the generator's sake.
  */
+
+/**
+ * The class that marks verse for the reader (see VERSE_LINE_CLASS for its
+ * stylesheet): each line a student would quote as one line keeps
+ * its start at the margin, and whatever the screen makes it wrap onto is
+ * indented under it.
+ *
+ * WHAT BROKE (found 26 September 2026, in a review of the readers on a 390px
+ * phone). A verse line longer than the screen wrapped to the margin, so its
+ * end looked like the next line of verse: Sonnet 116 read "Let me not to the
+ * marriage of true" and then "minds" as though that were line 2, and Hamlet's
+ * "To be, or not to be" did the same. A student copying the lines out would
+ * divide them wrongly, which an examiner reads as misquotation.
+ *
+ * This class says which blocks are verse; the viewer lays each of their lines
+ * out as a block of its own (see `verseLinesAsBlocks` and VERSE_LINE_CLASS),
+ * and the stylesheet hangs the indent on those. Prose is given no class, so it
+ * flows as before.
+ */
+export const VERSE_CLASS = 'verse'
+
+/**
+ * The class of one line of verse as the reader lays it out: a block, its
+ * first line at the margin and anything the screen wraps onto indented under
+ * it (src/app/globals.css, `.prose-reader .verse-line`).
+ *
+ * WHAT BROKE (found 27 September 2026, in a review of the fix above). The
+ * indent was first one rule on the verse block, `text-indent: 2em hanging
+ * each-line`, which indents every line after a soft wrap and none after a
+ * <br>. Only Chrome 146 and later, Safari 15 and later and Firefox 121 and
+ * later know those keywords, and a browser that does not drops the whole rule.
+ * Samsung Internet knows neither, in any version (MDN's compatibility data,
+ * read that day). Measured in Chromium 145 at 390px, the Hamlet reader had
+ * 2,219 verse lines wrapped and none of them indented, and Sonnet 116 had 11
+ * wrapped and none indented. A line that is a block of its own takes the indent from
+ * `padding` and a negative `text-indent`, which every browser has.
+ */
+export const VERSE_LINE_CLASS = 'verse-line'
+
+/**
+ * Gutenberg's underscores, which mark italic type ("_Exeunt._"), as italics.
+ * Paired within a run of text with no tag in it, so a stray underscore could
+ * never italicise the rest of a chapter; the held texts have none.
+ *
+ * WHAT BROKE (found 26 September 2026, in a review of the readers). The plays
+ * were given this that morning, and the novels were not: the reader printed
+ * the underscores as written, 111 spans in Silas Marner ("_You_", "_their_"),
+ * 51 in The Sign of Four ("_Au revoir_"), 37 in The War of the Worlds ("_Daily
+ * Telegraph_") and 10 in Jekyll and Hyde ("_protégé_").
+ */
+export function italicsAsItalics(html: string): string {
+  return html.replace(/_([^_<>]+)_/g, '<em>$1</em>')
+}
+
+/** Whether an <em> is left open after `s`, given whether one was open before it. */
+function italicAfter(s: string, open: boolean): boolean {
+  return [...s.matchAll(/<(\/?)em>/g)].reduce((_, m) => !m[1], open)
+}
+
+/** A line break as the held texts write it: <br> in a play, <br /> in a poem. */
+const BREAK = /<br\s*\/?>/
+
+/**
+ * One verse block's inner HTML with each line in a VERSE_LINE_CLASS span.
+ *
+ * A line is whatever sits between two breaks, and it keeps the break that
+ * ends it, inside its span: a break at the end of a block starts no new line,
+ * where one between two blocks would print an empty one. The newline after a
+ * break stays between the spans, where it was. Italics that run from one line
+ * to the next (a song, set in italics from its first line to its last) are
+ * closed at the end of each line and opened again at the start of the next,
+ * so no tag crosses a line's edge. Only tags are added: the text, and so
+ * every note's place in it, is what it was.
+ */
+function linesAsBlocks(inner: string): string {
+  if (inner.includes(`class="${VERSE_LINE_CLASS}"`)) return inner
+  const parts = inner.split(BREAK)
+  let italic = false
+  return parts
+    .map((part, i) => {
+      const last = i === parts.length - 1
+      const lead = part.startsWith('\n') ? '\n' : ''
+      const line = part.slice(lead.length)
+      // A break that ends the block ends the line before it, and no more.
+      if (last && !line.trim()) return part
+      const reopen = italic ? '<em>' : ''
+      italic = italicAfter(line, italic)
+      const close = italic ? '</em>' : ''
+      return `${lead}<span class="${VERSE_LINE_CLASS}">${reopen}${line}${close}${last ? '' : '<br>'}</span>`
+    })
+    .join('')
+}
+
+/** Whether an opening tag's attributes give it `cls` as one of its classes. */
+function hasClass(attrs: string, cls: string): boolean {
+  const value = /\bclass="([^"]*)"/.exec(attrs)?.[1] ?? ''
+  return value.split(/\s+/).includes(cls)
+}
+
+/**
+ * A section's HTML with every line of its verse laid out as a block, for the
+ * hanging indent (see VERSE_LINE_CLASS). The viewer applies it to whatever it
+ * is given, as it is printed, so a play, a poem and the verse a prose speech
+ * quotes all get it, and so does any reader that mounts the viewer itself.
+ *
+ * The verse blocks are the ones marked VERSE_CLASS: a speech or a stanza (a
+ * <p>), or a run of verse inside a prose speech (a <span>, which holds no
+ * other span). Applying it twice changes nothing.
+ */
+export function verseLinesAsBlocks(html: string): string {
+  if (!html.includes(VERSE_CLASS)) return html
+  return html
+    .replace(/<span\b([^>]*)>([\s\S]*?)<\/span>/g, (whole, attrs: string, inner: string) =>
+      hasClass(attrs, VERSE_CLASS) ? `<span${attrs}>${linesAsBlocks(inner)}</span>` : whole,
+    )
+    .replace(/<p\b([^>]*)>([\s\S]*?)<\/p>/g, (whole, attrs: string, inner: string) =>
+      hasClass(attrs, VERSE_CLASS) ? `<p${attrs}>${linesAsBlocks(inner)}</p>` : whole,
+    )
+}
 
 /**
  * A line as the reader sees it, for measuring: tags and the edition's
@@ -167,26 +292,115 @@ export function breaksAfter(lines: string[]): boolean[] {
 }
 
 /**
+ * A prose speech's lines, with the verse it quotes or sings marked as verse.
+ *
+ * `breaksAfter` keeps the break after each line the edition chose to end, so a
+ * line with a break before it and after it (or at the end of the speech) was
+ * set on its own. Three or more such lines together, each opening with a
+ * capital, are verse: the same test the play generator uses for a song the
+ * edition indents. They are set in a block marked VERSE_CLASS, so a long one
+ * carries on indented, as Hamlet's "Hath now this dread and black complexion
+ * smear’d" does in Act 2, Scene 2. Measured on the thirteen plays (26
+ * September 2026) that is 12 runs, every one a song or quoted verse: the
+ * Fool's and Edgar's songs and "Ay, every inch a king" in King Lear, Bottom's
+ * songs, the Pyrrhus lines and "Imperious Caesar" in Hamlet. The other 32
+ * runs of lines set alone (shorter, or with a line in lower case) are mostly
+ * prose, a signature or an aside, and are left as they were, as is a run whose
+ * italics carry across its edge, which the block would cut in two.
+ *
+ * The prose around them flows as it did. Every <br> and every "\n" stays where
+ * `breaksAfter` put it, so the text a note is found in does not change.
+ */
+function proseAndItsVerse(lines: string[], breaks: boolean[]): string {
+  const units: string[][] = [[]]
+  lines.forEach((line, i) => {
+    units[units.length - 1].push(line)
+    if (i < lines.length - 1 && breaks[i]) units.push([])
+  })
+  const capital = (l: string) => {
+    const b = bare(l)
+    return !b || /^[^A-Za-z]*[A-Z]/.test(b)
+  }
+  const out: string[] = []
+  let italic = false
+  for (let u = 0; u < units.length; ) {
+    const more = () => u < units.length
+    const run: string[] = []
+    while (u + run.length < units.length && units[u + run.length].length === 1)
+      run.push(units[u + run.length][0])
+    const inside = run.join('<br>\n')
+    if (run.length >= 3 && run.every(capital) && !italic && !italicAfter(inside, false)) {
+      u += run.length
+      // The last <br> sits inside the block: after it, it would start a line
+      // of its own and print an empty one.
+      out.push(`<span class="${VERSE_CLASS}">${inside}${more() ? '<br>' : ''}</span>`)
+      continue
+    }
+    const text = `${units[u++].join('\n')}${more() ? '<br>' : ''}`
+    italic = italicAfter(text, italic)
+    out.push(text)
+  }
+  return out.join('\n')
+}
+
+/**
  * A scene's HTML, as the held edition stores it, set out for the viewer.
  *
- * `place` is the scene's `setting`, printed first when there is one.
+ * `place` is the scene's `setting`, printed first when there is one. A
+ * prologue, a chorus or an epilogue has none.
  */
 export function setForTheViewer(html: string, place?: string): string {
   const body = html.replace(/<p([^>]*)>([\s\S]*?)<\/p>/g, (_, attrs: string, held: string) => {
-    const cls = attrs.replace(/class="/, 'class="mb-4 ') || ' class="mb-4"'
     // Paired within the paragraph, across its lines: a song or a letter is
     // italic from its first line to its last ("_Come unto these yellow
     // sands,"). Paired within a line only, as Macbeth's reader first did, left
     // 150 underscores in the other plays, 48 of them in Twelfth Night.
-    const inner = held.replace(/_([^_<>]+)_/g, '<em>$1</em>')
+    const inner = italicsAsItalics(held)
     const name = /^<strong>[^<]*<\/strong>\n/.exec(inner)?.[0] ?? ''
     const lines = inner.slice(name.length).split('\n')
     const breaks = breaksAfter(lines)
-    const said = lines.map((l, i) => (breaks[i] ? `${l}<br>` : l)).join('\n')
+    // A stage direction carries the edition's class and is one line; a
+    // speech carries none. A speech in verse is marked as verse (see
+    // VERSE_CLASS), and a speech in prose only where it sings or quotes verse
+    // (see proseAndItsVerse).
+    const prose = isProse(lines)
+    const said = prose
+      ? proseAndItsVerse(lines, breaks)
+      : lines.map((l, i) => (breaks[i] ? `${l}<br>` : l)).join('\n')
+    const cls = attrs
+      ? attrs.replace(/class="/, 'class="mb-4 ')
+      : ` class="mb-4${prose ? '' : ` ${VERSE_CLASS}`}"`
     return `<p${cls}>${name.replace(/\n$/, '<br>\n')}${said}</p>`
   })
   if (!place) return body
   // Escaped as the edition's text is: the place is held as plain text.
   const at = place.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
   return `<p class="mb-4 italic text-muted-foreground">${at}</p>\n\n${body}`
+}
+
+/**
+ * A poem's HTML set out for the viewer: every stanza is verse (see
+ * VERSE_CLASS), and any underscore is italic. The held poems set their lines
+ * with <br /> already; this adds a class and changes no text.
+ */
+export function setPoemForTheViewer(html: string): string {
+  return italicsAsItalics(html).replace(/<p(\s[^>]*)?>/g, (_, attrs?: string) =>
+    attrs && /class="/.test(attrs)
+      ? `<p${attrs.replace(/class="/, `class="${VERSE_CLASS} `)}>`
+      : `<p${attrs ?? ''} class="${VERSE_CLASS}">`,
+  )
+}
+
+/** What a held text declares itself to be (TextData['type']). */
+export type HeldTextType = 'play' | 'novel' | 'novella' | 'poem'
+
+/**
+ * Any held text's section as the reader prints it, and as the annotation
+ * generator cuts its notes from: a play set out as a play, a poem as verse, a
+ * novel with its italics. `place` is a scene's setting, for a play.
+ */
+export function setSectionForTheViewer(type: HeldTextType, html: string, place?: string): string {
+  if (type === 'play') return setForTheViewer(html, place)
+  if (type === 'poem') return setPoemForTheViewer(html)
+  return italicsAsItalics(html)
 }

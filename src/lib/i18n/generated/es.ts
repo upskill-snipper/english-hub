@@ -20411,8 +20411,12 @@ export const ES_MESSAGES: Record<string, string> = {
   'textnav.off_board_hint': 'Tu junta no incluye este texto. Puedes leerlo igualmente.',
   'fulltext.crumb': 'Texto completo',
   'fulltext.back_to_guide': 'Volver a la guía de estudio',
-  'fulltext.public_domain':
-    'Esta obra está libre de derechos en el Reino Unido, así que podemos publicarla completa. El texto es una copia de una edición publicada con ortografía moderna, no una transcripción.',
+  'fulltext.rights.play':
+    'Esta obra está libre de derechos en el Reino Unido, así que podemos publicarla completa. El texto es una copia de una edición publicada de la obra con ortografía moderna, no una transcripción.',
+  'fulltext.rights.edition':
+    'Esta obra está libre de derechos en el Reino Unido, así que podemos publicarla completa. El texto es una copia de una edición publicada, con la ortografía que esa edición imprime, no una transcripción.',
+  'fulltext.rights.anthology':
+    'Esta obra está libre de derechos en el Reino Unido, así que podemos publicarla completa. El texto es el que imprime la Pearson Edexcel International GCSE English Anthology (Issue 8), que es el texto que imprime el examen.',
   'placement.none':
     'Todavía no hemos comprobado este texto con una especificación, así que no vamos a decirte en qué examen aparece. Cuando hayamos leído el documento, lo indicaremos aquí.',
   'home.lp.h1': 'Aprendizaje de inglés inteligente para todos',

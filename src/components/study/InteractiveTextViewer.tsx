@@ -5,6 +5,7 @@ import { EnglishText } from '@/components/i18n/EnglishText'
 import { sanitiseHtml } from '@/lib/html/sanitise'
 import { ReadingProgressTracker } from './ReadingProgressTracker'
 import { BLOCK_TAGS, decodeEntities, parseSectionHtml, type HtmlNode } from './section-html'
+import { VERSE_CLASS, VERSE_LINE_CLASS, verseLinesAsBlocks } from './set-play-for-the-viewer'
 import { useT } from '@/lib/i18n/use-t'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
@@ -164,6 +165,20 @@ function saveToStorage(key: string, value: unknown): void {
   }
 }
 
+/**
+ * How many parts the header names: chapters, stanzas, or a play's scenes.
+ *
+ * A play counts only its scenes (ids "acti-scenei" and so on). Its prologue,
+ * choruses and epilogue are sections of the reader, and are not scenes: once
+ * they were held (26 September 2026), counting sections would have told a
+ * student that Romeo and Juliet has 26 scenes and Henry V 29.
+ */
+function partsNamed(data: TextData): number {
+  return data.type === 'play'
+    ? data.sections.filter((s) => /-scene[ivxlc]+$/.test(s.id)).length
+    : data.sections.length
+}
+
 function countWords(html: string): number {
   const text = html
     .replace(/<[^>]*>/g, ' ')
@@ -318,6 +333,12 @@ function AnnotationTooltip({
   const cfg = OVERLAY_CONFIG[ordered[0].type]
 
   return (
+    // `indent-0` on the note, below. A verse line's indent (VERSE_LINE_CLASS in
+    // ./set-play-for-the-viewer.ts) is inherited by everything inside it, and
+    // the note is a box of its own inside the line, so without the reset the
+    // note took the indent too: under the first fix, every line of a note on
+    // a line of verse but its first was indented (seen at 390px on 27
+    // September 2026, on the Prologue of Romeo and Juliet).
     <span
       className="relative inline cursor-help"
       onMouseEnter={() => setShow(true)}
@@ -340,7 +361,7 @@ function AnnotationTooltip({
       <span className={`rounded-sm px-0.5 ${cfg.bg} border-b-2 ${cfg.border}`}>{children}</span>
       {show && (
         <span
-          className="absolute bottom-full left-1/2 z-50 mb-2 w-72 -translate-x-1/2 rounded-lg border border-border bg-card p-3 shadow-elevated animate-fade-in"
+          className="absolute bottom-full left-1/2 z-50 mb-2 w-72 -translate-x-1/2 rounded-lg border border-border bg-card p-3 indent-0 shadow-elevated animate-fade-in"
           role="tooltip"
         >
           {ordered.map((a, i) => {
@@ -382,9 +403,14 @@ function AnnotatedContent({
     // Filter annotations to only those with active overlays
     const active = annotations.filter((a) => activeOverlays.has(a.type))
 
+    // Each line of verse a block of its own, for its hanging indent (see
+    // VERSE_LINE_CLASS). It adds tags and no text, so the notes below are
+    // found where they always were.
+    const laid = verseLinesAsBlocks(html)
+
     if (active.length === 0) {
       return (
-        <div className={READER_CLASS} dangerouslySetInnerHTML={{ __html: sanitiseHtml(html) }} />
+        <div className={READER_CLASS} dangerouslySetInnerHTML={{ __html: sanitiseHtml(laid) }} />
       )
     }
 
@@ -393,7 +419,7 @@ function AnnotatedContent({
     // the HTML itself: see ./section-html.ts for what printing the plain text
     // instead cost. Each note's span is decoded the same way below, so a span
     // cut from the escaped HTML still finds its place.
-    const { nodes, plain: stripped } = parseSectionHtml(html)
+    const { nodes, plain: stripped } = parseSectionHtml(laid)
 
     // Find all annotation matches and their positions
     type Match = { start: number; end: number; annotation: Annotation }
@@ -457,17 +483,34 @@ const READER_CLASS = 'prose-reader space-y-4'
 type Highlight = { start: number; end: number; annotations: Annotation[] }
 
 /**
+ * Whether the reader lays this node out as a block: a paragraph and the like,
+ * or a <span> the stylesheet sets as one, which is a run of verse inside a
+ * prose speech (VERSE_CLASS) or one line of verse (VERSE_LINE_CLASS). A
+ * highlight never wraps a block: an inline highlight round a block paints
+ * nothing behind its lines.
+ */
+function isBlock(node: HtmlNode | undefined): boolean {
+  if (node?.kind !== 'element') return false
+  if (BLOCK_TAGS.has(node.tag)) return true
+  const classes = (node.className ?? '').split(/\s+/)
+  return (
+    node.tag === 'span' && (classes.includes(VERSE_CLASS) || classes.includes(VERSE_LINE_CLASS))
+  )
+}
+
+/**
  * The section's HTML as React elements, with each highlight laid over the text
  * it covers.
  *
  * A highlight often runs over more than one piece of HTML: a quotation of two
- * verse lines covers the text, the <br> between them and the text after it.
+ * lines of prose covers the text, the <br> between them and the text after it.
  * Consecutive pieces inside one highlight are wrapped together, so it is one
- * highlight, and the <br> still breaks the line inside it. A paragraph is
- * never wrapped (a <p> inside a <span> is not HTML, and React would refuse to
- * hydrate it), so a highlight that crosses from one speech to the next is
- * drawn in each, and only its first part is the control (see
- * AnnotationTooltip's `continued`).
+ * highlight, and the <br> still breaks the line inside it. A block is never
+ * wrapped (see `isBlock`; a <p> inside a <span> is not HTML, and React would
+ * refuse to hydrate it), so a highlight that crosses from one speech to the
+ * next, or from one line of verse to the next (each line is a block of its
+ * own, for its indent), is drawn in each, and only its first part is the
+ * control (see AnnotationTooltip's `continued`).
  */
 function withHighlights(nodes: HtmlNode[], highlights: Highlight[]): React.ReactNode[] {
   const drawn = new Set<number>()
@@ -475,16 +518,16 @@ function withHighlights(nodes: HtmlNode[], highlights: Highlight[]): React.React
 
   /** A piece of the list, drawn only when its turn comes, in document order. */
   type Piece = { highlight: number; draw: () => React.ReactNode }
-  const holdsBlocks = (list: HtmlNode[]) =>
-    list.some((c) => c.kind === 'element' && BLOCK_TAGS.has(c.tag))
 
   function render(list: HtmlNode[], key: string): React.ReactNode[] {
-    // White space between two blocks is not part of any line, so it is never
-    // highlighted: a highlight there would draw a stray mark between speeches.
-    const betweenBlocks = holdsBlocks(list)
     const pieces: Piece[] = []
     list.forEach((node, n) => {
       const k = `${key}.${n}`
+      // White space beside a block is not part of any line, so it is never
+      // highlighted: a highlight there would draw a stray mark between
+      // speeches, or, between two lines of verse (each a block of its own),
+      // an empty line with a mark on it.
+      const besideBlock = isBlock(list[n - 1]) || isBlock(list[n + 1])
       if (node.kind === 'text') {
         // Cut the text wherever a highlight starts or ends inside it.
         const end = node.start + node.text.length
@@ -497,7 +540,7 @@ function withHighlights(nodes: HtmlNode[], highlights: Highlight[]): React.React
         for (let i = 0; i < at.length - 1; i++) {
           const text = node.text.slice(at[i] - node.start, at[i + 1] - node.start)
           pieces.push({
-            highlight: betweenBlocks && !text.trim() ? -1 : within(at[i]),
+            highlight: besideBlock && !text.trim() ? -1 : within(at[i]),
             draw: () => <React.Fragment key={`${k}.${i}`}>{text}</React.Fragment>,
           })
         }
@@ -511,11 +554,10 @@ function withHighlights(nodes: HtmlNode[], highlights: Highlight[]): React.React
         return
       }
       const h = within(node.start)
+      // A block is never wrapped whole (see `isBlock`): its text is
+      // highlighted inside it, as a paragraph's is.
       const whole =
-        !BLOCK_TAGS.has(node.tag) &&
-        h !== -1 &&
-        node.end > node.start &&
-        node.end <= highlights[h].end
+        !isBlock(node) && h !== -1 && node.end > node.start && node.end <= highlights[h].end
       pieces.push({
         highlight: whole ? h : -1,
         draw: () =>
@@ -1132,7 +1174,7 @@ function InteractiveTextViewer({
               </TitleTag>
               <p className="text-xs text-muted-foreground">
                 {data.author} &middot; <span>{t(`text_viewer.type_${data.type}`)}</span> &middot;{' '}
-                {data.sections.length}{' '}
+                {partsNamed(data)}{' '}
                 {data.type === 'play'
                   ? t('text_viewer.scenes')
                   : data.type === 'poem'

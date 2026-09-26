@@ -7,7 +7,7 @@ import { describe, it, expect } from 'vitest'
 import { act } from 'react'
 import { hydrateRoot } from 'react-dom/client'
 import { renderToString } from 'react-dom/server'
-import { render, screen } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 import { readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { TEXT_ANNOTATIONS } from '@/data/text-annotations.generated'
@@ -15,7 +15,16 @@ import { InteractiveTextViewer, type TextData } from '@/components/study/Interac
 import { macbethText } from '@/data/full-texts/macbeth'
 import { hamletText } from '@/data/full-texts/hamlet'
 import { FullTextReader } from '@/components/study/FullTextReader'
-import { setForTheViewer } from '@/components/study/set-play-for-the-viewer'
+import {
+  setForTheViewer,
+  setSectionForTheViewer,
+  VERSE_CLASS,
+  VERSE_LINE_CLASS,
+} from '@/components/study/set-play-for-the-viewer'
+import { silasMarnerText } from '@/data/full-texts/silas-marner'
+import { romeoAndJulietText } from '@/data/full-texts/romeo-and-juliet'
+import { sonnet116Text } from '@/data/full-texts/sonnet-116'
+import { kingLearText } from '@/data/full-texts/king-lear'
 
 /**
  * The reader offered five highlighting overlays and highlighted almost nothing.
@@ -144,8 +153,7 @@ describe('nothing here is invented', () => {
     for (const [slug, sections] of Object.entries(TEXT_ANNOTATIONS)) {
       const mod = await import(`@/data/full-texts/${slug}`)
       const data = Object.values(mod).find(
-        (v): v is { type: string; sections: { id: string; content: string }[] } =>
-          !!v && typeof v === 'object' && 'sections' in (v as object),
+        (v): v is TextData => !!v && typeof v === 'object' && 'sections' in (v as object),
       )
       expect(data, `${slug} has annotations but no text`).toBeDefined()
       for (const [sectionId, anns] of Object.entries(sections)) {
@@ -154,11 +162,12 @@ describe('nothing here is invented', () => {
           failures.push(`${slug}: annotations for missing section ${sectionId}`)
           continue
         }
-        // As the viewer prints it: a play set out by setForTheViewer, whose
+        // As the viewer prints it: set out by setSectionForTheViewer, whose
         // words are the edition's (every-play-is-set-as-a-play.test.ts) and
-        // whose italic underscores are gone. See the-highlights-highlight-
-        // something.test.ts for the span that needed this.
-        const printed = data!.type === 'play' ? setForTheViewer(section.content) : section.content
+        // whose italic underscores are gone, in a novel as in a play. See
+        // the-highlights-highlight-something.test.ts for the spans that
+        // needed this.
+        const printed = setSectionForTheViewer(data!.type, section.content)
         const plain = printed.replace(/<[^>]*>/g, '')
         for (const ann of anns as readonly Ann[]) {
           checked += 1
@@ -445,10 +454,17 @@ describe('a play scene with notes', () => {
     expect([...reader.querySelectorAll('strong')].map((s) => s.textContent)).toContain('FRANCISCO')
     expect(reader.querySelectorAll('p.italic')[1].textContent).toContain('Enter Francisco')
     expect(reader.textContent).not.toContain('_')
+    // One note over both lines. Each line of verse is a block of its own (see
+    // VERSE_LINE_CLASS), so the note is drawn inside each line, never round
+    // one, and only its first part is the control; the line is still broken
+    // where the edition breaks it, inside that first part.
     const marks = [...reader.querySelectorAll('[role="button"]')]
-    expect(marks.map((m) => m.textContent)).toEqual([TWO_LINES])
-    // One highlight over both lines, with the line still broken inside it.
+    expect(marks.map((m) => m.textContent)).toEqual([TWO_LINES.split('\n')[0]])
     expect(marks[0].querySelectorAll('br')).toHaveLength(1)
+    const parts = [...reader.querySelectorAll('span.cursor-help')]
+    expect(parts.map((p) => p.textContent).join('\n')).toBe(TWO_LINES)
+    for (const part of parts) expect(part.closest(`.${VERSE_LINE_CLASS}`)).not.toBeNull()
+    expect(reader.querySelector(`span.cursor-help .${VERSE_LINE_CLASS}`)).toBeNull()
   })
 
   it('draws a note that crosses two speeches in each, as one control', () => {
@@ -500,5 +516,222 @@ describe('FullTextReader sets every play out', () => {
     expect(noted.querySelectorAll('strong').length).toBeGreaterThan(10)
     expect(noted.innerHTML).toContain('Whether ’tis nobler in the mind to suffer<br>')
     expect(noted.textContent).not.toContain('_')
+  })
+})
+
+/**
+ * What FullTextReader does to the texts that are not plays, and what the
+ * viewer makes of the play sections that are not scenes.
+ *
+ * WHAT BROKE (found 26 September 2026, in a review of the readers). The
+ * reader set out plays only, so a novel printed Gutenberg's italic underscores
+ * as written: 111 spans in Silas Marner. A poem's long line wrapped to the
+ * margin on a phone. And once Romeo and Juliet held its Prologue and its Act
+ * II Chorus as sections, a header counting sections would have said the play
+ * has 26 scenes.
+ */
+describe('FullTextReader sets out every text', () => {
+  it('prints a novel’s italics as italics, and no underscore', () => {
+    const { container } = render(<FullTextReader data={silasMarnerText} slug="silas-marner" />)
+    const reader = container.querySelector('[data-reader-text]')!
+    const held = silasMarnerText.sections.map((s) => s.content).join('')
+    expect(held.match(/_([^_<>]+)_/g)).toHaveLength(111)
+    expect(reader.textContent).not.toContain('_')
+    expect(reader.querySelectorAll('em').length).toBeGreaterThanOrEqual(111)
+    expect([...reader.querySelectorAll('em')].map((e) => e.textContent)).toContain('purpose')
+  })
+
+  it('counts a play’s scenes, not its prologue and chorus, and prints both', () => {
+    const { container } = render(
+      <FullTextReader data={romeoAndJulietText} slug="romeo-and-juliet" />,
+    )
+    expect(romeoAndJulietText.sections).toHaveLength(26)
+    expect(container.textContent).toContain('24 scenes')
+    expect(container.textContent).not.toContain('26 scenes')
+    const prologue = container.querySelector('#section-prologue')!
+    expect(prologue.querySelector('h2')!.textContent).toBe('Prologue')
+    const sonnet = prologue.querySelector(`p.${VERSE_CLASS}`)!
+    expect(sonnet.textContent).toContain('Two households, both alike in dignity,')
+    expect(sonnet.querySelectorAll('br')).toHaveLength(14) // after the name, and 13 lines
+    expect(container.querySelector('#section-actii-chorus')).not.toBeNull()
+  })
+
+  it('marks a poem’s stanzas as verse, and changes none of its text', () => {
+    const { container } = render(<FullTextReader data={sonnet116Text} slug="sonnet-116" />)
+    const stanza = container.querySelector(`[data-reader-text] p.${VERSE_CLASS}`)!
+    expect(stanza.textContent).toContain('Let me not to the marriage of true minds')
+    const plain = (html: string) => html.replace(/<[^>]*>/g, '')
+    for (const s of sonnet116Text.sections)
+      expect(plain(setSectionForTheViewer('poem', s.content))).toBe(plain(s.content))
+  })
+
+  it('says which edition each text is, truly', () => {
+    const line = (data: TextData, slug: string) =>
+      render(<FullTextReader data={data} slug={slug} />).container.querySelector('p.mt-4 span')!
+        .textContent
+    expect(line(romeoAndJulietText, 'romeo-and-juliet')).toContain('modern-spelling')
+    expect(line(silasMarnerText, 'silas-marner')).not.toContain('modern-spelling')
+    expect(line(sonnet116Text, 'sonnet-116')).not.toContain('modern-spelling')
+  })
+})
+
+/**
+ * A note that runs into the verse a prose speech quotes is drawn inside it.
+ *
+ * The run is a <span> the stylesheet makes a block (set-play-for-the-viewer's
+ * VERSE_CLASS), and an inline highlight wrapped round a block paints nothing
+ * behind its lines. So, as with a paragraph, the highlight is drawn in each
+ * part and only the first part is the control.
+ */
+describe('a note that runs into a verse block', () => {
+  const held = hamletScene('actii-sceneii')
+  const ACROSS = 'let me see, let me see:\n   The rugged Pyrrhus'
+  const data: TextData = {
+    title: 'Hamlet',
+    author: 'William Shakespeare',
+    type: 'play',
+    sections: [
+      {
+        ...held,
+        content: setForTheViewer(held.content, held.setting),
+        annotations: [
+          { type: 'quote', text: ACROSS, note: 'Hamlet. A note long enough to be one.' },
+        ],
+      },
+    ],
+  }
+
+  it('is drawn in the prose and in the block, as one control, never round the block', () => {
+    expect(data.sections[0].content).toContain(`see:<br>\n<span class="${VERSE_CLASS}">`)
+    const { container } = render(<InteractiveTextViewer data={data} storageKey="t-verse" />)
+    const reader = container.querySelector('.prose-reader')!
+    const marks = [...reader.querySelectorAll('[role="button"]')]
+    expect(marks).toHaveLength(1)
+    expect(marks[0].textContent).toContain('let me see, let me see:')
+    expect(reader.querySelector(`span.cursor-help span.${VERSE_CLASS}`)).toBeNull()
+    // Inside the block the rest of the note is highlighted: its indent, and
+    // the words inside the edition's italics.
+    const block = reader.querySelector(`span.${VERSE_CLASS}`)!
+    const inside = [...block.querySelectorAll('span.cursor-help')].map((e) => e.textContent)
+    expect(inside.join('')).toBe('   The rugged Pyrrhus')
+  })
+
+  it('and a note that covers the whole block is drawn inside it too', () => {
+    // The Fool's rhyme in King Lear, Act 1, Scene 4, which ends the speech: a
+    // note from the prose before it to its last word covers the block whole,
+    // which is the case the viewer used to wrap in the highlight.
+    const lear = kingLearText.sections.find((s) => s.id === 'acti-sceneiv')!
+    const WHOLE =
+      'Mum, mum,\n     He that keeps nor crust nor crum,\n     Weary of all, shall want some.\n' +
+      '[Pointing to Lear.] That’s a shealed peascod.'
+    const { container } = render(
+      <InteractiveTextViewer
+        data={{
+          title: 'King Lear',
+          author: 'William Shakespeare',
+          type: 'play',
+          sections: [
+            {
+              ...lear,
+              content: setForTheViewer(lear.content, lear.setting),
+              annotations: [{ type: 'quote', text: WHOLE, note: 'Fool. A note long enough.' }],
+            },
+          ],
+        }}
+        storageKey="t-verse-whole"
+      />,
+    )
+    const reader = container.querySelector('.prose-reader')!
+    expect(reader.querySelectorAll('[role="button"]')).toHaveLength(1)
+    expect(reader.querySelector(`span.cursor-help span.${VERSE_CLASS}`)).toBeNull()
+    const block = [...reader.querySelectorAll(`span.${VERSE_CLASS}`)].find((b) =>
+      b.textContent!.includes('He that keeps nor crust'),
+    )!
+    expect(
+      [...block.querySelectorAll('span.cursor-help')].map((e) => e.textContent).join(''),
+    ).toContain('shealed peascod.')
+  })
+})
+
+/**
+ * Each line of verse is a block of its own in the reader, for its hanging
+ * indent.
+ *
+ * WHAT BROKE (found 27 September 2026, reviewing the first fix). The indent
+ * was one rule on the verse block, `text-indent: 2em hanging each-line`, which
+ * Samsung Internet has never supported, nor Chrome before 146; a browser that
+ * does not drops the rule, and in Chromium 145 none of the 2,219 wrapped verse
+ * lines on the Hamlet reader was indented. And the rule was inherited by the
+ * box a note opens in, so every line of a note on a line of verse but its
+ * first was indented too. The viewer now sets each line in a block of its own
+ * (verseLinesAsBlocks), which the stylesheet indents with padding and a
+ * negative indent, and the note's box resets it. jsdom lays nothing out, so
+ * this holds the markup; the layout was measured in Chromium 145 and 148.
+ */
+describe('each line of verse is a block of its own', () => {
+  it('in a speech, a poem’s stanza and the verse a prose speech quotes, prose left alone', () => {
+    const { container } = render(
+      <FullTextReader data={romeoAndJulietText} slug="romeo-and-juliet" />,
+    )
+    const prologue = container.querySelector(`#section-prologue p.${VERSE_CLASS}`)!
+    // The name, and the sonnet's fourteen lines, each a block.
+    const lines = [...prologue.querySelectorAll(`span.${VERSE_LINE_CLASS}`)]
+    expect(lines).toHaveLength(15)
+    expect(lines[1].textContent).toBe('Two households, both alike in dignity,')
+    expect(lines[14].textContent).toBe('What here shall miss, our toil shall strive to mend.')
+    // A speech in prose has none.
+    const prose = [...container.querySelectorAll('.prose-reader p')].filter(
+      (p) => !p.className.split(' ').includes(VERSE_CLASS) && p.querySelector('strong'),
+    )
+    expect(prose.length).toBeGreaterThan(50)
+    for (const p of prose)
+      if (!p.querySelector(`span.${VERSE_CLASS}`))
+        expect(p.querySelector(`.${VERSE_LINE_CLASS}`), p.textContent!.slice(0, 40)).toBeNull()
+
+    const sonnet = render(<FullTextReader data={sonnet116Text} slug="sonnet-116" />).container
+    expect(sonnet.querySelectorAll(`p.${VERSE_CLASS} span.${VERSE_LINE_CLASS}`)).toHaveLength(14)
+
+    // The Fool's rhyme in King Lear, Act 1, Scene 4: a run inside prose.
+    const lear = render(<FullTextReader data={kingLearText} slug="king-lear" />).container
+    const run = [...lear.querySelectorAll(`span.${VERSE_CLASS}`)].find((r) =>
+      r.textContent!.includes('He that keeps nor crust'),
+    )!
+    expect(run.querySelectorAll(`span.${VERSE_LINE_CLASS}`).length).toBeGreaterThanOrEqual(2)
+  })
+
+  it('and a note on one is drawn in its lines, its box not indented', () => {
+    const held = romeoAndJulietText.sections.find((s) => s.id === 'prologue')!
+    const NOTE = 'Two households, both alike in dignity,\nIn fair Verona'
+    const { container } = render(
+      <InteractiveTextViewer
+        data={{
+          title: 'Romeo and Juliet',
+          author: 'William Shakespeare',
+          type: 'play',
+          sections: [
+            {
+              ...held,
+              content: setForTheViewer(held.content),
+              annotations: [{ type: 'quote', text: NOTE, note: 'Chorus. A note long enough.' }],
+            },
+          ],
+        }}
+        storageKey="t-verse-lines"
+      />,
+    )
+    const reader = container.querySelector('.prose-reader')!
+    const parts = [...reader.querySelectorAll('span.cursor-help')]
+    expect(parts.map((p) => p.textContent).join('\n')).toBe(NOTE)
+    // Never round a line, and never on the white space between two lines,
+    // which would print an empty line with a mark on it.
+    expect(reader.querySelector(`span.cursor-help .${VERSE_LINE_CLASS}`)).toBeNull()
+    for (const part of parts) {
+      expect(part.closest(`.${VERSE_LINE_CLASS}`)).not.toBeNull()
+      expect(part.textContent!.trim()).not.toBe('')
+    }
+    fireEvent.mouseEnter(reader.querySelector('[role="button"]')!)
+    const box = reader.querySelector('[role="tooltip"]')!
+    expect(box.closest(`.${VERSE_LINE_CLASS}`)).not.toBeNull()
+    expect(box.className.split(' ')).toContain('indent-0')
   })
 })

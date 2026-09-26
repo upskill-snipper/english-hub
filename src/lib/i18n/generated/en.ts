@@ -19905,8 +19905,12 @@ export const EN_MESSAGES: Record<string, string> = {
   'textnav.off_board_hint': 'Your board does not set this text. You can still read it.',
   'fulltext.crumb': 'Full text',
   'fulltext.back_to_guide': 'Back to the study guide',
-  'fulltext.public_domain':
-    'This work is out of copyright in the UK, so we can publish it in full. The text is a copy of a published modern-spelling edition, not a retyping.',
+  'fulltext.rights.play':
+    'This work is out of copyright in the UK, so we can publish it in full. The text is a copy of a published modern-spelling edition of the play, not a retyping.',
+  'fulltext.rights.edition':
+    'This work is out of copyright in the UK, so we can publish it in full. The text is a copy of a published edition, spelt as that edition prints it, not a retyping.',
+  'fulltext.rights.anthology':
+    'This work is out of copyright in the UK, so we can publish it in full. The text is the one printed in the Pearson Edexcel International GCSE English Anthology (Issue 8), which is the text the exam prints.',
   'placement.none':
     'We have not yet checked this text against a specification, so we are not going to tell you which paper it is on. When we have read the document, it will say so here.',
   'home.lp.h1': 'Intelligent English Learning for Everyone',
