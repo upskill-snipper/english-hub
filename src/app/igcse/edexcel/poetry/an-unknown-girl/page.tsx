@@ -10,11 +10,21 @@ import StudyTools from '@/components/study/StudyTools'
 
 /* ── JSON-LD ──────────────────────────────────────────────────────── */
 
+// WHICH QUALIFICATION. Until 26 September 2026 this page called An Unknown
+// Girl a 4ET1 Literature poem, examined in Paper 1 Section B, and told
+// students to compare it with another anthology poem. It is not: the poem is in
+// Part 2 of the anthology, which only English Language A (4EA1) sets. The 4EA1
+// specification (Issue 7, August 2025, pp. 6 and 12 to 15) examines Part 2 in
+// Component 2 (Paper 2) Section A, one 30-mark essay on a single poem or prose
+// text printed in the paper, or in Component 3, the coursework alternative,
+// whose Assignment A is one 30-mark essay on three Part 2 texts, at least one
+// of them prose. The June 2023 Paper 2 set a single-poem question with no
+// comparison. See src/lib/board/edexcel-igcse-anthology.ts.
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'CreativeWork',
   name: 'An Unknown Girl',
-  alternativeHeadline: 'A Pearson Edexcel IGCSE 4ET1 set-text study guide',
+  alternativeHeadline: 'A Pearson Edexcel International GCSE English Language A (4EA1) study guide',
   author: {
     '@type': 'Person',
     name: 'Moniza Alvi',
@@ -26,8 +36,8 @@ const jsonLd = {
   educationalAlignment: {
     '@type': 'AlignmentObject',
     alignmentType: 'educationalSubject',
-    educationalFramework: 'Pearson Edexcel IGCSE English Literature 4ET1',
-    targetName: 'Anthology Poetry - Paper 1 Section B',
+    educationalFramework: 'Pearson Edexcel International GCSE English Language A 4EA1',
+    targetName: 'Anthology Part 2 - Paper 2 Section A, or Component 3 Assignment A',
   },
 }
 
@@ -43,26 +53,35 @@ const themes = [
 
 /* ── Stanza summaries (paraphrase only) ───────────────────────────── */
 
+// CHECKED AGAINST THE TEXT, 26 September 2026. These summaries used to invent
+// most of their detail: saris and music, a pattern of leaves and curls, jeans
+// and Western kitsch on the stalls, a line drawn across the palm, an "amber"
+// coin paid to the girl, and a closing dream in which the girl "peels back" the
+// speaker's skin. None of it is in the poem, and the two phrases were printed
+// in quotation marks as though they were. Every detail below was checked
+// against the Issue 8 anthology text, page 27, by script, without reproducing
+// it. The only pattern the poem names is a peacock, and it ends with the
+// speaker reaching across a country towards the girl, not dreaming of her.
 const stanzaSummaries = [
   {
     n: 'Section 1',
     label: 'In the evening bazaar',
-    body: "The poem opens in an Indian street market &mdash; the widely-quoted phrase &ldquo;In the evening bazaar&rdquo; sets the scene. The bazaar is bright with electric light: the imagery is &ldquo;studded with neon&rdquo;. An unnamed young woman is decorating the speaker's hand with henna paste (mehndi), tracing intricate patterns on the palm. The atmosphere is busy, sensuous and brightly coloured &mdash; saris, lights, shop-fronts, music.",
+    body: "The poem opens in an Indian street market &mdash; the widely-quoted phrase &ldquo;In the evening bazaar&rdquo; sets the scene. The bazaar is bright with electric light: the imagery is &ldquo;studded with neon&rdquo;. An unnamed young woman is decorating the speaker's hand with henna paste (mehndi), squeezing it from a nozzle as if icing a cake and steadying the speaker's hand against her own knee.",
   },
   {
     n: 'Section 2',
     label: 'The henna pattern emerges',
-    body: 'Alvi describes the mehndi being squeezed onto her hand from a tube: a pattern of leaves, peacocks and curls slowly forms. The girl works with quiet expertise. The speaker is still &mdash; she submits to the decoration. Around them, modernity crowds in: hung-up jeans, Western kitsch on the stalls, Indian shop signs, the noise of the market.',
+    body: "The henna costs the speaker very little. As the girl works, a peacock spreads across the speaker's palm: it is the one pattern the poem names. The speaker is still - she submits to the decoration. Around them the bazaar goes on, with its colours, its shops and its cloth and banners.",
   },
   {
     n: 'Section 3',
-    label: 'A line dividing the palm',
-    body: "The girl draws a line across the speaker's open palm &mdash; an image often read as a literal henna line and as a metaphorical division between the two halves of the speaker's identity. India is being marked onto her body. The speaker pays the girl an &ldquo;amber&rdquo; coin (the colour of the henna) &mdash; the transaction quietly turns into something more than commerce.",
+    label: 'The refrain returns',
+    body: "The opening comes round again like a refrain: the evening bazaar, the unknown girl, the hennaing of the speaker's hand. The speaker admits she is clinging on, and the peacock appears again. A small transaction in a market has quietly turned into something more than commerce.",
   },
   {
     n: 'Section 4',
-    label: 'Returning to the West',
-    body: "The speaker imagines the henna fading, slowly, over the days that follow. The poem closes with her thinking ahead to the West: she will lie awake at night, dreaming of the unknown girl in the evening bazaar. The dream-image is cinematic &mdash; the girl &ldquo;peels back&rdquo; the speaker's skin in her sleep. Identity, she suggests, is not just decoration; it goes into the body.",
+    label: 'Longing from a distance',
+    body: 'The speaker knows the henna will fade. The poem ends in an imagined future, with the speaker stretching out across a whole country towards the girl and the lit-up market. The girl who marked her hand is out of reach, and the poem closes on longing rather than belonging.',
   },
 ]
 
@@ -75,15 +94,15 @@ const formAndStructure = [
   },
   {
     label: 'Line breaks and pace',
-    body: 'Alvi uses short, broken lines &mdash; sometimes a single word per line &mdash; to slow the eye and to mimic the slow, careful tracing of the henna pattern. The reader has to move through the poem at the pace of the painting. The fragmented appearance also suggests an identity composed of pieces.',
+    body: 'Alvi uses short, broken lines, most of them three to five words long and none shorter than two, to slow the eye and to mimic the slow, careful tracing of the henna pattern. The reader has to move through the poem at the pace of the painting. The fragmented appearance also suggests an identity composed of pieces.',
   },
   {
     label: 'Imagery: light, colour, body',
-    body: 'The bazaar imagery is electric and sensory: neon, amber, dye, music, jeans on a stall. The body imagery is intimate: the open palm, the line drawn across it, the dye drying on skin. Alvi places the personal body inside the public market, and lets the henna become a symbol of cultural inscription.',
+    body: "The bazaar imagery is electric and sensory: neon, satin, colours, cloth and banners. The body imagery is intimate: the hand steadied on the girl's knee, the peacock spreading across the palm, a pattern the speaker knows will fade. Alvi places the personal body inside the public market, and lets the henna become a symbol of cultural inscription.",
   },
   {
     label: 'Symbolism of mehndi',
-    body: 'Mehndi (henna painting) is traditionally applied to brides in South Asian cultures &mdash; here, the bride-imagery is pulled into a moment of tourist transaction. The henna becomes a symbol both of cultural belonging (it lasts on the skin for weeks) and of cultural distance (it fades, and the speaker returns to the West).',
+    body: 'Mehndi (henna painting) is traditionally applied to brides in South Asian cultures &mdash; here, the bride-imagery is pulled into a moment of tourist transaction. The henna becomes a symbol both of cultural belonging (it lasts on the skin for weeks) and of cultural distance (it fades, and the poem ends with the speaker reaching back across a country).',
   },
   {
     label: 'Repetition',
@@ -91,21 +110,17 @@ const formAndStructure = [
   },
   {
     label: 'Closing image',
-    body: 'The poem ends not with a return to the bazaar but with an imagined future scene in the West, where the speaker dreams of the girl &ldquo;peeling back&rdquo; her skin to reveal what is underneath. The image is unsettling and tender at once &mdash; identity is not a costume but something written into the body.',
+    body: 'The poem ends in an imagined future, with the speaker reaching out across a whole country towards the girl she met in the bazaar. The hands the girl decorated now stretch towards someone out of reach. The image is tender and unresolved - the connection the henna made is also a measure of distance.',
   },
 ]
 
 /* ── Comparison poems ─────────────────────────────────────────────── */
 
+// PART 2 TEXTS ONLY. Until 26 September 2026 this list offered Half-caste and
+// Piano, both Part 3 poems that only 4ET1 Literature students study. A 4EA1
+// student can pair An Unknown Girl only with other Part 2 texts, and only in
+// the coursework option, which needs at least one prose text among its three.
 const comparisons = [
-  {
-    title: 'Half-Caste',
-    poet: 'John Agard',
-    href: '/igcse/edexcel/poetry/half-caste',
-    reason:
-      'Both poems are written by poets of mixed cultural heritage and explore identity through inventive, sensory language. Agard challenges the prejudice of the term &ldquo;half-caste&rdquo;; Alvi quietly explores the experience of being culturally divided. Compare confrontational defiance with reflective longing.',
-    themes: ['Cultural identity', 'Heritage', 'Self-definition'],
-  },
   {
     title: 'Still I Rise',
     poet: 'Maya Angelou',
@@ -115,12 +130,12 @@ const comparisons = [
     themes: ['Identity', 'Body', 'Belonging'],
   },
   {
-    title: 'Piano',
-    poet: 'D.H. Lawrence',
-    href: '/igcse/edexcel/poetry/piano',
+    title: 'Significant Cigarettes',
+    poet: 'Rose Tremain',
+    href: '/revision/texts/significant-cigarettes',
     reason:
-      'Both poems show an adult overwhelmed by an experience that pulls them back through layers of memory and longing. Lawrence is dragged into childhood by music; Alvi is drawn into half-remembered heritage by henna. Compare two different kinds of irresistible nostalgia.',
-    themes: ['Memory', 'Longing', 'Identity'],
+      'A prose pairing. Both texts are about belonging and distance between two countries. Lev travels by coach to London for work, thinking of the village, the mother and the daughter he has left; Alvi&rsquo;s speaker is drawn to a heritage she only half knows, and ends reaching back towards it. Compare leaving home with longing for a home.',
+    themes: ['Belonging', 'Displacement', 'Longing'],
   },
 ]
 
@@ -156,8 +171,10 @@ export default function AnUnknownGirlPage() {
               Moniza Alvi (b. 1954) &middot; published 1996 in <em>A Bowl of Warm Air</em> (Oxford
               University Press); reprinted by Bloodaxe Books &middot; Edexcel IGCSE Anthology
             </p>
+            {/* Not igcse.page.badge_edexcel_lit: this is a 4EA1 Language A
+                text, not Literature. The old key read the same in every locale. */}
             <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
-              {tr('igcse.page.badge_edexcel_lit')}
+              Edexcel IGCSE English Language A
             </Badge>
           </div>
         </div>
@@ -304,8 +321,11 @@ export default function AnUnknownGirlPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          The Edexcel exam asks you to compare the named poem with another from the anthology. These
-          are strong pairings for An Unknown Girl.
+          In the exam (Paper 2, Section A) you answer one 30-mark essay question on a single Part 2
+          text, printed in the paper, so there is no comparison. If your school takes the coursework
+          route instead (Component 3, Assignment A), you write one essay on three Part 2 texts, at
+          least one a poem and one prose. These Part 2 texts pair well with An Unknown Girl for
+          that.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -339,7 +359,7 @@ export default function AnUnknownGirlPage() {
       </section>
 
       <footer className="pt-4 text-center text-body-xs text-muted-foreground">
-        {tr('igcse.page.spec_aligned_4et1')}
+        Spec aligned: Pearson Edexcel International GCSE English Language A (4EA1)
       </footer>
     </div>
   )

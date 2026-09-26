@@ -345,11 +345,15 @@ describe('the poems are whole, and are the poem', () => {
   })
 
   it('keeps the stanza breaks too', () => {
-    // If— is four stanzas; Disabled is five. A single paragraph would mean the
+    // If— is four stanzas; Disabled is seven. A single paragraph would mean the
     // stanza structure had been lost.
+    //
+    // DISABLED WAS ASSERTED AS FIVE until 26 September 2026, which was the 1920
+    // Gutenberg edition's layout, not the poem the exam prints. The Issue 8
+    // anthology prints 46 lines in seven stanzas, and the file now follows it.
     const paras = (dataFor('if').match(/<p>/g) ?? []).length
     expect(paras).toBe(4)
-    expect((dataFor('disabled').match(/<p>/g) ?? []).length).toBe(5)
+    expect((dataFor('disabled').match(/<p>/g) ?? []).length).toBe(7)
   })
 
   it.each(POEMS)('%s has a read route', (slug) => {

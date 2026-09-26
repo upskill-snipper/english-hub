@@ -70,17 +70,11 @@ const POEMS = [
     last: 'And--which is more--you’ll be a Man, my son!',
     lines: 35,
   },
-  {
-    slug: 'disabled',
-    id: 1034,
-    collection: 'Poems',
-    title: 'Disabled',
-    author: 'Wilfred Owen',
-    year: '1917',
-    first: 'He sat in a wheeled chair, waiting for dark,',
-    last: "And put him into bed?  Why don't they come?",
-    lines: 49,
-  },
+  // 'disabled' was removed on 26 September 2026. This script fetched the 1920
+  // edition, which differs from the text the Pearson anthology prints and the
+  // exam sets (five stanzas against seven, "pleasure" against "pleasures",
+  // "To-night" against "Tonight"). src/data/full-texts/disabled.ts is now kept
+  // by hand to the anthology; running this for it would silently undo that.
   {
     slug: 'the-tyger',
     id: 574,

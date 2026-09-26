@@ -202,8 +202,8 @@ export const guide: StudyGuide = {
       title: 'Homecoming and the final evening',
       where: 'Stanzas 6 and 7, lines 37-46',
       pointer:
-        "From “Some cheered him home” (line 37) to the final question (line 46). The passage follows the 1920 edition in hyphenating the first word of line 43, which the anthology prints as one word; the wording is otherwise the same as the anthology's, which also breaks the stanza after line 39.",
-      text: "Some cheered him home, but not as crowds cheer Goal. / Only a solemn man who brought him fruits / Thanked him; and then inquired about his soul. / Now, he will spend a few sick years in Institutes, / And do what things the rules consider wise, / And take whatever pity they may dole. / To-night he noticed how the women's eyes / Passed from him to the strong men that were whole. / How cold and late it is! Why don't they come / And put him into bed? Why don't they come?",
+        "From “Some cheered him home” (line 37) to the final question (line 46). The wording is the anthology's, which also breaks the stanza after line 39.",
+      text: "Some cheered him home, but not as crowds cheer Goal. / Only a solemn man who brought him fruits / Thanked him; and then inquired about his soul. / Now, he will spend a few sick years in Institutes, / And do what things the rules consider wise, / And take whatever pity they may dole. / Tonight he noticed how the women's eyes / Passed from him to the strong men that were whole. / How cold and late it is! Why don't they come / And put him into bed? Why don't they come?",
       annotations: [
         {
           phrase: 'not as crowds cheer Goal',

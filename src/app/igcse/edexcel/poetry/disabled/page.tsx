@@ -12,11 +12,21 @@ import StudyTools from '@/components/study/StudyTools'
 
 /* ── JSON-LD ──────────────────────────────────────────────────────── */
 
+// WHICH QUALIFICATION. Until 26 September 2026 this page called Disabled a
+// 4ET1 Literature poem, examined in Paper 1 Section B, and told students to
+// compare it with another anthology poem. It is not: Disabled is in Part 2 of
+// the anthology, which only English Language A (4EA1) sets. The 4EA1
+// specification (Issue 7, August 2025, pp. 6 and 12 to 15) examines Part 2 in
+// Component 2 (Paper 2) Section A, one 30-mark essay on a single poem or prose
+// text printed in the paper, or in Component 3, the coursework alternative,
+// whose Assignment A is one 30-mark essay on three Part 2 texts, at least one
+// of them prose. The June 2023 Paper 2 set a single-poem question with no
+// comparison. See src/lib/board/edexcel-igcse-anthology.ts.
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'CreativeWork',
   name: 'Disabled',
-  alternativeHeadline: 'A Pearson Edexcel IGCSE 4ET1 set-text study guide',
+  alternativeHeadline: 'A Pearson Edexcel International GCSE English Language A (4EA1) study guide',
   author: {
     '@type': 'Person',
     name: 'Wilfred Owen',
@@ -29,12 +39,25 @@ const jsonLd = {
   educationalAlignment: {
     '@type': 'AlignmentObject',
     alignmentType: 'educationalSubject',
-    educationalFramework: 'Pearson Edexcel IGCSE English Literature 4ET1',
-    targetName: 'Anthology Poetry - Paper 1 Section B',
+    educationalFramework: 'Pearson Edexcel International GCSE English Language A 4EA1',
+    targetName: 'Anthology Part 2 - Paper 2 Section A, or Component 3 Assignment A',
   },
 }
 
 /* ── Poem data ────────────────────────────────────────────────────── */
+
+// THE TEXT IS THE ANTHOLOGY'S. Until 26 September 2026 the lines below were a
+// third version, matching neither the prescribed text nor the 1920 edition:
+// five stanzas where the anthology prints seven, "pleasure" for "pleasures",
+// a colon for the semicolon after "his lie", "enquired" for "inquired" and
+// several commas the anthology does not have. They now follow the Pearson
+// Edexcel International GCSE English Anthology, Issue 8 (February 2026), page
+// 25, word for word: 46 lines in seven stanzas (6, 7, 7, 8, 8, 3, 7), checked
+// against the PDF. The viewer cannot show italics, so "Esprit de corps" and
+// "Thanked", italic in the anthology, are roman here; the /read page has them.
+//
+// Blank rows are stanza breaks and the viewer counts them as rows, so every
+// languageDevices lineRef below is a ROW index, not a line number.
 
 const poem: PoemData = {
   title: 'Disabled',
@@ -86,11 +109,11 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'Voices of play and pleasure after day,',
+      text: 'Voices of play and pleasures after day,',
       annotations: [
         {
           type: 'Sibilance',
-          note: 'The soft "p" and "s" sounds of "play and pleasure" make the line itself sound youthful and light - and unreachable. The world he can no longer enter is sketched in sound.',
+          note: 'The soft "p" and "s" sounds of "play and pleasures" make the line itself sound youthful and light - and unreachable. The world he can no longer enter is sketched in sound.',
           color: '#a855f7',
         },
       ],
@@ -127,7 +150,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'And girls glanced lovelier as the air grew dim, -',
+      text: 'And girls glanced lovelier as the air grew dim —',
       annotations: [
         {
           type: 'Loss',
@@ -242,7 +265,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Imagery',
-          note: '"Leap of purple" - arterial blood, painted as an athletic movement. The "leap" recalls the sporting young man of an earlier stanza. His own blood is the last thing of his that can leap.',
+          note: '"Leap of purple" - arterial blood, painted as an athletic movement. The "leap" looks ahead to the sporting young man of the next stanza. His own blood is the last thing of his that can leap.',
           color: '#a855f7',
         },
       ],
@@ -259,7 +282,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'After the matches carried shoulder-high.',
+      text: 'After the matches, carried shoulder-high.',
       annotations: [
         {
           type: 'Imagery of glory',
@@ -273,13 +296,13 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Casual masculinity',
-          note: 'The world of the pre-war young man: football, beer ("a peg"), pals. The casualness sharpens the loss; we see the easiness of the life that has ended.',
+          note: 'The world of the pre-war young man: football, a drink (a peg is a small measure of spirits, such as whisky, not beer), pals. The casualness sharpens the loss; we see the easiness of the life that has ended.',
           color: '#3b82f6',
         },
       ],
     },
     {
-      text: "He thought he'd better join. - He wonders why.",
+      text: "He thought he'd better join. — He wonders why.",
       annotations: [
         {
           type: 'Key quote',
@@ -309,7 +332,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'Aye, that was it, to please the giddy jilts,',
+      text: 'Aye, that was it, to please the giddy jilts',
       annotations: [
         {
           type: 'Diction',
@@ -328,12 +351,13 @@ const poem: PoemData = {
         },
       ],
     },
+    { text: '' },
     {
-      text: 'Smiling they wrote his lie: aged nineteen years.',
+      text: 'Smiling they wrote his lie; aged nineteen years.',
       annotations: [
         {
           type: 'Key quote',
-          note: '"Smiling they wrote his lie." The recruiting officers knowingly accepted his false age. He was probably 17. The smiling is what condemns them: they enlisted a child and pretended not to notice.',
+          note: '"Smiling they wrote his lie". The recruiting officers knowingly accepted his false age. The poem never gives his real age, only that nineteen was a lie, so he was younger. The smiling is what condemns them: they enlisted a boy who was too young and pretended not to notice.',
           color: '#f59e0b',
         },
       ],
@@ -399,7 +423,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'And soon, he was drafted out with drums and cheers.',
+      text: 'And soon he was drafted out with drums and cheers.',
       annotations: [
         {
           type: 'Departure',
@@ -414,7 +438,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Anti-climax',
-          note: 'Stanza 5 returns to the present and to homecoming. "Some cheered him home, but not as crowds cheer Goal." The football comparison is devastating - winning a goal got more cheers than coming back wounded from war.',
+          note: 'Stanza 6, only three lines long, turns to the homecoming. "Some cheered him home, but not as crowds cheer Goal." The football comparison is devastating - winning a goal got more cheers than coming back wounded from war.',
           color: '#ef4444',
         },
       ],
@@ -430,7 +454,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'Thanked him; and then enquired about his soul.',
+      text: 'Thanked him; and then inquired about his soul.',
       annotations: [
         {
           type: 'Religious bitterness',
@@ -439,8 +463,9 @@ const poem: PoemData = {
         },
       ],
     },
+    { text: '' },
     {
-      text: 'Now, he will spend a few sick years in institutes,',
+      text: 'Now, he will spend a few sick years in Institutes,',
       annotations: [
         {
           type: 'Future',
@@ -522,7 +547,7 @@ const poem: PoemData = {
     <p>The poem was first published in 1920, two years after Owen\'s death, in his posthumous <em>Poems</em> (edited by Sassoon, Chatto &amp; Windus). Owen had only seen four of his poems in print during his lifetime. His mother, Susan Owen, devoted years to ensuring his work survived.</p>
 
     <h3>Recruitment culture</h3>
-    <p>The poem condemns the wartime recruiting culture that pressured boys - many under-age - into volunteering. Posters, music-hall songs, and white-feather campaigns shamed young men into the army. Owen himself was older when he enlisted, but he saw at first hand how easily teenagers were swept up: "Smiling they wrote his lie: aged nineteen years."</p>
+    <p>The poem condemns the wartime recruiting culture that pressured boys - many under-age - into volunteering. Posters, music-hall songs, and white-feather campaigns shamed young men into the army. Owen himself was older when he enlisted, but he saw at first hand how easily teenagers were swept up: "Smiling they wrote his lie; aged nineteen years."</p>
 
     <h3>Disability and the home front</h3>
     <p>By 1918 there were <strong>over 41,000 amputees</strong> from the British forces alone. Many returned to small pensions, social isolation, and a country that quickly looked away. "Disabled" insists on the human cost that the official narrative tried to hide.</p>
@@ -531,27 +556,31 @@ const poem: PoemData = {
     <p>Owen wrote a famous draft preface to his planned 1918 collection: "My subject is War, and the pity of War. The Poetry is in the pity." "Disabled" exemplifies that programme: there is no glorification, only patient attention to a single wounded man.</p>
   `,
 
-  summary: `Stanza 1 (lines 1-6): A young soldier, both legs amputated and one arm gone above the elbow, sits in a wheelchair in a hospital park "waiting for dark". The voices of boys playing in the park sound mournful to him; sleep eventually carries them away.
+  summary: `Stanza 1 (lines 1-6): A young soldier, both legs amputated and an arm gone at the elbow, sits in a wheelchair in a hospital park "waiting for dark". The voices of boys playing in the park sound mournful to him; sleep eventually carries them away.
 
 Stanza 2 (lines 7-13): He remembers the town before the war - full of light, music and pretty girls. Now he can no longer feel a girl\'s waist. Women treat him "like some queer disease." He has lost the body that used to make him desirable.
 
-Stanza 3 (lines 14-21): He remembers being painted by an artist who admired his face, "younger than his youth, last year". Now he is aged. His blood was poured into shell-holes; "half his lifetime lapsed in the hot race" of battle.
+Stanza 3 (lines 14-20): He remembers being painted by an artist who admired his face, "younger than his youth, last year". Now he is aged. His blood was poured into shell-holes; "half his lifetime lapsed in the hot race" of battle.
 
-Stanza 4 (lines 22-37): The longest stanza, looking back at his enlistment. He joined on a drunken whim after a football match, partly because someone said he\'d "look a god in kilts" and partly to impress a girl called Meg. He thought nothing of Germany or Austria. The recruiting officers smiled and wrote his false age in the records. He was drafted out "with drums and cheers".
+Stanza 4 (lines 21-28): Looking back at his enlistment. He remembers being carried shoulder-high after matches. It was after football, when he\'d had a drink, that he decided to join up, partly because someone said he\'d "look a god in kilts" and partly to impress a girl called Meg.
 
-Stanza 5 (lines 38-47): The homecoming. No crowds, just "a solemn man" with fruit. He will now spend "a few sick years in institutes". The women\'s eyes "passed from him to the strong men that were whole". The poem ends with him asking, twice, "Why don\'t they come?" - waiting helplessly for someone to put him to bed.
+Stanza 5 (lines 29-36): The recruiting officers smiled and wrote down his false age. He scarcely thought about the Germans, and neither their guilt nor Austria\'s moved him; he felt no fear yet, and imagined jewelled daggers, smart salutes, leave and pay. He was drafted out "with drums and cheers".
+
+Stanza 6 (lines 37-39): The homecoming. No crowds, just "a solemn man" who brought fruit, thanked him and asked about his soul.
+
+Stanza 7 (lines 40-46): He will now spend "a few sick years in Institutes". Tonight the women\'s eyes "passed from him to the strong men that were whole". The poem ends with him asking, twice, "Why don\'t they come?" - waiting helplessly for someone to put him to bed.
 
 Overall meaning: A devastating portrait of a young veteran whose life has been emptied by the war he was tricked into joining. Owen attacks recruiting culture, wartime glamour and the indifference of the home front. The "pity" Owen promised in his preface is here directed at one specific, ordinary young man.`,
 
-  formAndStructure: `Form: Five stanzas of irregular length (six, seven, eight, sixteen, ten lines). The fourth stanza - the recruitment scene - is by far the longest, mirroring how the foolish decision to enlist still dominates the soldier\'s thinking.
+  formAndStructure: `Form: Seven stanzas of irregular length (six, seven, seven, eight, eight, three and seven lines), 46 lines in all. The recruitment scene fills the two longest stanzas, the fourth and fifth, mirroring how the foolish decision to enlist still dominates the soldier\'s thinking; the homecoming gets only three lines.
 
-Rhyme scheme: ABABCD CCDCED CCEFCC FF GFAGBHCBHCC IFFCGCDCDD - irregular, with frequent half-rhymes and pararhymes (a technique Owen pioneered, where consonants match but vowels don\'t - e.g. "park / dark", "hilts / kilts"). The almost-rhymes feel like a body that doesn\'t quite work properly.
+Rhyme: irregular, with no fixed scheme. Most of the rhymes are full rhymes ("park / dark", "knees / disease", "hilts / kilts"), but they come at unpredictable distances and often carry across a stanza break: "dry" and "thigh" in stanza 3 are answered by "high" and "why" in stanza 4, and "salutes" and "recruits" in stanza 5 by "fruits" in stanza 6 and "Institutes" in stanza 7. Owen is known for pararhyme elsewhere, but Disabled mostly uses full rhyme. The rhyme never settles into a pattern, like a body that no longer works as it did.
 
 Iambic pentameter: The metre is loosely iambic pentameter but Owen continually disrupts it. The breaks in rhythm match the soldier\'s broken body and broken life.
 
-Time structure: The poem moves between the bleak present (stanzas 1, 5) and remembered past (stanzas 2, 3, 4). The structure is itself a kind of trauma: he keeps drifting back to who he was, and being pulled into who he is now.
+Time structure: The poem moves between the bleak present (stanzas 1 and 7) and remembered past (stanzas 2 to 6). The structure is itself a kind of trauma: he keeps drifting back to who he was, and being pulled into who he is now.
 
-Volta: There are several minor turns. The largest is at the start of stanza 4, where the poem zooms further back to the moment of enlistment - and at the close of stanza 5, where the soldier\'s own voice finally enters: "How cold and late it is!"
+Volta: There are several minor turns. The largest is at the start of stanza 4, where the poem zooms further back to the moment of enlistment - and in the last two lines, where the soldier\'s own voice finally enters: "How cold and late it is!"
 
 Caesura: Owen uses heavy mid-line stops ("Legless, sewn short at elbow.") to fragment the lines. The fractured movement of the verse mirrors the fractured movement of the soldier\'s body.
 
@@ -595,7 +624,7 @@ Closing question: The final two lines are a repeated question. Owen ends not wit
       themesAr: ['الحرب', 'التضحية', 'الفقد'],
     },
     {
-      quote: "He thought he'd better join. - He wonders why.",
+      quote: "He thought he'd better join. — He wonders why.",
       analysis:
         'The most damning line in the poem. He enlisted on a drunken whim - "he thought he\'d better join". The em-dash and the four-word follow-up - "He wonders why." - drop the entire cost of the war onto a casual, half-conscious decision. There was no real reason; only a moment of bravado.',
       themes: ['Recruitment', 'Regret', 'Naivety'],
@@ -604,12 +633,12 @@ Closing question: The final two lines are a repeated question. Owen ends not wit
       themesAr: ['التجنيد', 'الندم', 'السذاجة'],
     },
     {
-      quote: 'Smiling they wrote his lie: aged nineteen years',
+      quote: 'Smiling they wrote his lie; aged nineteen years',
       analysis:
-        'A condemnation of the recruiting officers. They knowingly accepted his false age - he was probably 17. "Smiling" is the killing word: they enlisted a child and pretended not to notice. Owen blames the system as much as the boy.',
+        'A condemnation of the recruiting officers. They knowingly accepted his false age; the poem never gives his real one, only that nineteen was a lie, so he was younger. "Smiling" is the killing word: they enlisted a boy who was too young and pretended not to notice. Owen blames the system as much as the boy.',
       themes: ['Recruitment', 'Institutional guilt', 'Age'],
       analysisAr:
-        'إدانةٌ لضبّاط التجنيد. فقد قبلوا عن علمٍ سنَّه الزائف؛ إذ كان على الأرجح في السابعة عشرة. وكلمة "Smiling" هي القاتلة في السطر: قد جنّدوا طفلاً وتظاهروا بأنّهم لم يلحظوا. يُحمّل Owen المنظومةَ من اللوم بقدرِ ما يُحمّل الفتى.',
+        'إدانةٌ لضبّاط التجنيد. فقد قبلوا عن علمٍ سنَّه الزائف؛ والقصيدة لا تذكر سنّه الحقيقيّة، بل تقول فقط إنّ التاسعة عشرة كانت كذبة، أي أنّه كان أصغر من ذلك. وكلمة "Smiling" هي القاتلة في السطر: قد جنّدوا فتىً دون السنّ وتظاهروا بأنّهم لم يلحظوا. يُحمّل Owen المنظومةَ من اللوم بقدرِ ما يُحمّل الفتى.',
       themesAr: ['التجنيد', 'الذنب المؤسّسيّ', 'العمر'],
     },
     {
@@ -634,20 +663,20 @@ Closing question: The final two lines are a repeated question. Owen ends not wit
 
   languageDevices: [
     {
-      device: 'Pararhyme',
-      example: 'park / dark; hilts / kilts',
+      device: 'Irregular rhyme',
+      example: 'park / dark; knees / disease',
       effect:
-        'Owen pioneered pararhyme - rhymes where the consonants match but the vowels don\'t. The almost-rhymes leave the ear unsettled, like a body that doesn\'t quite work properly. Throughout "Disabled" the technique creates a sense of brokenness in the very sound of the poem.',
-      lineRef: 1,
+        'Disabled mostly uses full rhymes, not the pararhyme Owen is known for elsewhere, but it places them unpredictably: sometimes several lines apart, sometimes across a stanza break. The ear keeps expecting a pattern that never settles, like a body that no longer works as it did.',
+      lineRef: 0,
       effectAr:
-        'يُعدّ Owen رائداً في توظيف الـ pararhyme، وهي قوافٍ تتطابق فيها الصوامتُ دون الصوائت. هذه القوافي الشبه تامّة تُبقي الأذنَ في قلقٍ مستمرّ، كأنّها جسدٌ لا يعمل على وجهٍ سليم. وعلى امتداد قصيدة "Disabled" تُولّد هذه التقنيةُ إحساساً بالتصدّع في صوت القصيدة ذاته.',
+        'تعتمد "Disabled" في الغالب قوافيَ تامّة، لا الـ pararhyme الذي عُرف به Owen في قصائد أخرى، لكنّه يوزّعها على نحوٍ غير متوقّع: تتباعد أحياناً عدّة أسطر، وتعبر أحياناً الفاصلَ بين مقطعين. تظلّ الأذن تترقّب نمطاً لا يستقرّ أبداً، كجسدٍ لم يعد يعمل كما كان.',
     },
     {
       device: 'Caesura',
       example: 'Legless, sewn short at elbow.',
       effect:
         "A heavy mid-line stop that fragments the verse. The fractured rhythm mirrors the soldier's fractured body. Owen uses caesura repeatedly to refuse the smoothness of pre-war pastoral verse.",
-      lineRef: 3,
+      lineRef: 2,
       effectAr:
         'وقفةٌ ثقيلة في وسط السطر تُشظّي البيتَ. الإيقاع المتصدّع يحاكي جسد الجنديّ المتصدّع. ويُلحّ Owen على استعمال الـ caesura ليرفضَ سلاسةَ الشعر الرعويّ السابقِ للحرب.',
     },
@@ -656,16 +685,16 @@ Closing question: The final two lines are a repeated question. Owen ends not wit
       example: 'gathering sleep had mothered them from him',
       effect:
         'Sleep is personified as a mother. The soldier is locked outside maternal warmth - sleep mothers everyone except him. The image makes his loneliness intimate and devastating.',
-      lineRef: 6,
+      lineRef: 5,
       effectAr:
         'يُشخَّص النومُ هنا أُمّاً. الجنديّ موصدةٌ في وجهه الدفءُ الأموميّ؛ فالنومُ يحتضن الكلّ إلّاه. هذه الصورة تجعل وحدتَه حميمةً ومدمّرة في آنٍ معاً.',
     },
     {
       device: 'Juxtaposition',
-      example: 'a blood-smear down his leg / After the matches carried shoulder-high',
+      example: 'a blood-smear down his leg / After the matches, carried shoulder-high',
       effect:
         'Owen juxtaposes football blood (a badge of glory) with battlefield blood (the loss of his legs). The same bodily image carries opposite meanings - pre-war pride against post-war ruin.',
-      lineRef: 22,
+      lineRef: 23,
       effectAr:
         'يُجاور Owen بين دمِ مباراة كرة القدم (وسامِ مجدٍ آنذاك) ودمِ ساحة المعركة (الذي كلّفه ساقيه). الصورة الجسديّة ذاتُها تحمل معنيين متضادّين؛ كبرياء ما قبل الحرب في مقابل خراب ما بعدها.',
     },
@@ -674,7 +703,7 @@ Closing question: The final two lines are a repeated question. Owen ends not wit
       example: 'Esprit de corps; and hints for young recruits',
       effect:
         'Owen mixes high official language ("esprit de corps") with banal fillers ("hints for young recruits"). The recruiting culture is exposed as a mishmash of phrases, none of them connected to the reality of war.',
-      lineRef: 35,
+      lineRef: 38,
       effectAr:
         'يخلط Owen بين اللغة الرسميّة الرفيعة ("esprit de corps") وحشوٍ ركيكٍ مبتذل ("hints for young recruits"). تُكشف ثقافةُ التجنيد عن كونها خليطاً من العبارات الجاهزة، لا تربطها بحقيقة الحرب رابطة.',
     },
@@ -683,7 +712,7 @@ Closing question: The final two lines are a repeated question. Owen ends not wit
       example: "Why don't they come? … Why don't they come?",
       effect:
         'The poem ends with a question repeated twice. There is no answer. Owen refuses resolution - the helpless waiting is the final image. The repetition makes the silence after the question deafening.',
-      lineRef: 47,
+      lineRef: 50,
       effectAr:
         'تنتهي القصيدة بسؤالٍ يُكرَّر مرّتين، ولا جواب. يأبى Owen أن يَختِم بحلّ؛ فالانتظار العاجز هو الصورة الأخيرة. والتكرارُ يُحوّل الصمتَ الذي يلي السؤال إلى صَخَبٍ مُصِمّ.',
     },
@@ -700,7 +729,7 @@ Closing question: The final two lines are a repeated question. Owen ends not wit
     <p>نُشرت القصيدة أوّل مرّة سنة 1920، أي بعد عامين من رحيله، ضمن ديوانه <em>Poems</em> (تحرير Sassoon، عن دار Chatto &amp; Windus). لم يكن Owen قد رأى من شعره مطبوعاً في حياته سوى أربع قصائد. وقد كرّست أمُّه، Susan Owen، سنواتٍ من عمرها لضمان بقاء أعماله.</p>
 
     <h3>ثقافة التجنيد</h3>
-    <p>تُدين القصيدة ثقافةَ التجنيد زمن الحرب، التي أرغمت فتياناً - كثيرٌ منهم دون السنّ القانونيّة - على التطوّع. الملصقاتُ، وأغاني صالات الموسيقى، وحملاتُ "الريشة البيضاء" التي تَصِم الشابّ بالجبن، كلّ ذلك دفع الفتيان دفعاً إلى الجيش. كان Owen أكبر سنّاً حين تطوّع، لكنّه شهد بأمّ عينه كيف يُستدرَج المراهقون: "Smiling they wrote his lie: aged nineteen years."</p>
+    <p>تُدين القصيدة ثقافةَ التجنيد زمن الحرب، التي أرغمت فتياناً - كثيرٌ منهم دون السنّ القانونيّة - على التطوّع. الملصقاتُ، وأغاني صالات الموسيقى، وحملاتُ "الريشة البيضاء" التي تَصِم الشابّ بالجبن، كلّ ذلك دفع الفتيان دفعاً إلى الجيش. كان Owen أكبر سنّاً حين تطوّع، لكنّه شهد بأمّ عينه كيف يُستدرَج المراهقون: "Smiling they wrote his lie; aged nineteen years."</p>
 
     <h3>الإعاقة والجبهة الداخليّة</h3>
     <p>بحلول 1918 كان ثمّ <strong>أكثر من 41,000 مبتور</strong> من القوّات البريطانيّة وحدها. عاد كثيرٌ منهم إلى معاشات شحيحة، وعزلةٍ اجتماعيّة، وبلدٍ سرعان ما حوّل بصره عنهم. تُصرّ "Disabled" على الكشف عن الكلفة الإنسانيّة التي حاول الخطاب الرسميّ إخفاءها.</p>
@@ -709,27 +738,31 @@ Closing question: The final two lines are a repeated question. Owen ends not wit
     <p>كتب Owen تمهيداً شهيراً للمجموعة التي كان يخطّط لإصدارها سنة 1918: "موضوعي هو الحرب، وشَفقتُها. الشعر يكمن في الشفقة." وتجسّد "Disabled" هذا البرنامج تمام التجسيد؛ فلا تمجيد، بل التفاتٌ متأنٍّ إلى رجلٍ جريحٍ بعينه.</p>
   `,
 
-  summaryAr: `المقطع الأوّل (السطور 1-6): شابٌّ جنديّ بُترت ساقاه وذراعه الواحدة من فوق المرفق، يجلس في كرسيٍّ متحرّكٍ في حديقة مستشفى "ينتظر الظلام". أصواتُ الفتيان اللاعبين في الحديقة تبدو له موجعةً، حتى يحملهم النوم بعيداً.
+  summaryAr: `المقطع الأوّل (السطور 1-6): شابٌّ جنديّ بُترت ساقاه وبُترت ذراعه عند المرفق، يجلس في كرسيٍّ متحرّكٍ في حديقة مستشفى "ينتظر الظلام". أصواتُ الفتيان اللاعبين في الحديقة تبدو له موجعةً، حتى يحملهم النوم بعيداً.
 
 المقطع الثاني (السطور 7-13): يتذكّر المدينة قبل الحرب، بأضوائها وموسيقاها وفتياتها. الآن لم يعد يقدر على الإمساك بخصرِ فتاة. النساءُ يلمسنه "like some queer disease". لقد فقد الجسد الذي كان يجعله مرغوباً.
 
-المقطع الثالث (السطور 14-21): يتذكّر أنّ فنّاناً رسمه ذات يوم إعجاباً بوجهه، "younger than his youth, last year". أمّا الآن فقد هَرِم. لقد سُكِب دمه في حُفر القذائف، و"half his lifetime lapsed in the hot race" في غمرة المعركة.
+المقطع الثالث (السطور 14-20): يتذكّر أنّ فنّاناً رسمه ذات يوم إعجاباً بوجهه، "younger than his youth, last year". أمّا الآن فقد هَرِم. لقد سُكِب دمه في حُفر القذائف، و"half his lifetime lapsed in the hot race" في غمرة المعركة.
 
-المقطع الرابع (السطور 22-37): أطولُ المقاطع، يعود إلى لحظة التطوّع. تطوّع بنزوةِ سُكْرٍ بعد مباراة كرة القدم، جزئيّاً لأنّ أحدهم قال إنّه "look a god in kilts"، وجزئيّاً ليُعجب فتاةً اسمها Meg. لم يفكّر بألمانيا ولا بالنمسا. ابتسم ضبّاط التجنيد وسجّلوا سنّه الزائف في السجلّات. ثمّ سيق إلى المعركة "with drums and cheers".
+المقطع الرابع (السطور 21-28): يعود إلى لحظة التطوّع. يتذكّر كيف كان يُحمَل على الأكتاف بعد المباريات. وبعد مباراة كرة قدم، وقد شرب كأساً، قرّر أن يتطوّع، جزئيّاً لأنّ أحدهم قال إنّه سيبدو "a god in kilts"، وجزئيّاً ليُعجب فتاةً اسمها Meg.
 
-المقطع الخامس (السطور 38-47): العودة إلى الوطن. لا حشودَ، إنّما "a solemn man" يحمل فاكهة. سيُمضي الآن "a few sick years in institutes". أعينُ النساء "passed from him to the strong men that were whole". وتختم القصيدة بسؤاله المكرَّر "Why don\'t they come?" - منتظراً عاجزاً من يُضجعه في فراشه.
+المقطع الخامس (السطور 29-36): ابتسم ضبّاط التجنيد وسجّلوا سنّه الزائف. لم يكد يفكّر بالألمان، ولم يحرّكه ذنبُهم ولا ذنبُ النمسا، ولم يعرف الخوف بعد؛ بل تخيّل الخناجر المرصّعة والتحيّات العسكريّة الأنيقة والإجازات والرواتب. ثمّ سيق إلى الجبهة "with drums and cheers".
+
+المقطع السادس (السطور 37-39): العودة إلى الوطن. لا حشودَ، إنّما "a solemn man" حمل إليه فاكهة، وشكره، ثمّ سأله عن روحه.
+
+المقطع السابع (السطور 40-46): سيُمضي الآن "a few sick years in Institutes". والليلة لاحظ أنّ أعين النساء "passed from him to the strong men that were whole". وتختم القصيدة بسؤاله المكرَّر "Why don\'t they come?" - منتظراً عاجزاً من يُضجعه في فراشه.
 
 المعنى الإجماليّ: لوحةٌ موجعة لشابٍّ جنديٍّ أُفرغت حياته من معناها بسبب حربٍ خُدع فيها إلى التطوّع. يُهاجم Owen ثقافةَ التجنيد، وزِيف البريق العسكريّ، ولا مبالاةَ الجبهة الداخليّة. وتلك "الشفقة" التي وعد بها في تمهيده موجَّهةٌ هنا إلى شابٍّ بعينه، عاديٍّ مفرد.`,
 
-  formAndStructureAr: `الشكل: خمسة مقاطع متفاوتة الطول (ستة وسبعة وثمانية وستّة عشر وعشرة). المقطع الرابع - مشهد التطوّع - هو الأطول قاطبةً، وهو ما يحاكي كيف يظلّ ذلك القرارُ الأحمق مهيمناً على ذهن الجنديّ.
+  formAndStructureAr: `الشكل: سبعة مقاطع متفاوتة الطول (ستة وسبعة وسبعة وثمانية وثمانية وثلاثة وسبعة أسطر)، أي ستّة وأربعون سطراً. ويشغل مشهدُ التطوّع أطولَ مقطعين، الرابع والخامس، وهو ما يحاكي كيف يظلّ ذلك القرارُ الأحمق مهيمناً على ذهن الجنديّ؛ أمّا العودة إلى الوطن فلا تنال سوى ثلاثة أسطر.
 
-نظام القافية: ABABCD CCDCED CCEFCC FF GFAGBHCBHCC IFFCGCDCDD - مضطربٌ، يكثر فيه الـ half-rhyme والـ pararhyme (التقنية التي يُعدّ Owen رائدَها، إذ تتطابق الصوامتُ دون الصوائت، كما في "park / dark" و"hilts / kilts"). هذه القوافي الشبه تامّة تُحاكي جسداً لا يعمل كما ينبغي.
+القافية: غير منتظمة، بلا نظامٍ ثابت. معظم القوافي تامّة ("park / dark" و"knees / disease" و"hilts / kilts")، لكنّها تأتي على مسافاتٍ غير متوقّعة، وكثيراً ما تعبر الفاصل بين المقاطع: فـ"dry" و"thigh" في المقطع الثالث تُجيبهما "high" و"why" في المقطع الرابع، و"salutes" و"recruits" في المقطع الخامس تُجيبهما "fruits" في السادس و"Institutes" في السابع. يُعرَف Owen بالـ pararhyme في قصائد أخرى، لكنّ "Disabled" تعتمد في الغالب القافيةَ التامّة. ولا تستقرّ القافية على نمط، كجسدٍ لم يعد يعمل كما كان.
 
 الـ iambic pentameter: الوزن إجمالاً iambic pentameter، لكنّ Owen يكسره باستمرار. وانكساراتُ الإيقاع تحاكي انكسار جسد الجنديّ وحياته.
 
-تركيب الزمن: تتنقّل القصيدة بين الحاضر القاتم (المقطعان الأوّل والخامس) والماضي المُستعاد (المقاطع الثاني والثالث والرابع). هذه البنية نفسُها ضربٌ من الصدمة؛ يظلّ ينجرف إلى ما كان عليه، ثمّ يُجَرّ إلى ما هو عليه الآن.
+تركيب الزمن: تتنقّل القصيدة بين الحاضر القاتم (المقطعان الأوّل والسابع) والماضي المُستعاد (المقاطع من الثاني إلى السادس). هذه البنية نفسُها ضربٌ من الصدمة؛ يظلّ ينجرف إلى ما كان عليه، ثمّ يُجَرّ إلى ما هو عليه الآن.
 
-الـ volta: في القصيدة عدّةُ تحوّلات صغرى. أكبرها في مفتتح المقطع الرابع، حيث تتراجع القصيدة إلى لحظة التطوّع - وفي خاتمة المقطع الخامس، حيث يدخل أخيراً صوتُ الجنديّ ذاته: "How cold and late it is!"
+الـ volta: في القصيدة عدّةُ تحوّلات صغرى. أكبرها في مفتتح المقطع الرابع، حيث تتراجع القصيدة إلى لحظة التطوّع - وفي البيتين الأخيرين، حيث يدخل أخيراً صوتُ الجنديّ ذاته: "How cold and late it is!"
 
 الـ caesura: يستخدم Owen وقفاتٍ ثقيلة في وسط السطر ("Legless, sewn short at elbow.") لتفتيت السطر. هذه الحركة المتصدّعة في البيت تحاكي الحركة المتصدّعة في جسد الجنديّ.
 
@@ -738,14 +771,19 @@ Closing question: The final two lines are a repeated question. Owen ends not wit
 
 /* ── Comparison poems ─────────────────────────────────────────────── */
 
+// PART 2 TEXTS ONLY. Until 26 September 2026 this list offered War
+// Photographer, a Part 3 poem that only 4ET1 Literature students study, and
+// Ozymandias, which is not in the anthology at all. A 4EA1 student can pair
+// Disabled only with other Part 2 texts, and only in the coursework option,
+// which needs at least one prose text among its three.
 const comparisons = [
   {
-    title: 'War Photographer',
-    poet: 'Carol Ann Duffy',
-    href: '/igcse/edexcel/poetry/war-photographer',
+    title: 'The Bright Lights of Sarajevo',
+    poet: 'Tony Harrison',
+    href: '/igcse/edexcel/poetry/the-bright-lights-of-sarajevo',
     reason:
-      "Both poems sit on the home front and look at the human cost of war. Owen forces us to look at one wounded man; Duffy's photographer mediates suffering through images that the public will quickly forget. Compare how each poem indicts the indifference of those at home.",
-    themes: ['War', 'Witness', 'Suffering'],
+      "Both poems look at war through young people rather than battles. Owen's soldier has lost his youth to the war; Harrison's young people in besieged Sarajevo still go out looking for each other after dark. Compare a war poem of loss with a war poem of resilience.",
+    themes: ['War', 'Youth', 'Resilience'],
   },
   {
     title: 'Out, Out-',
@@ -756,12 +794,12 @@ const comparisons = [
     themes: ['Mortality', 'Indifference', 'Youth'],
   },
   {
-    title: 'Ozymandias',
-    poet: 'Percy Bysshe Shelley',
-    href: '/igcse/edexcel/poetry/ozymandias',
+    title: 'The Necklace',
+    poet: 'Guy de Maupassant',
+    href: '/revision/texts/the-necklace',
     reason:
-      'Both poems undo a heroic image of masculinity. Shelley\'s "sneer of cold command" is reduced to rubble; Owen\'s recruit, who once played football and chased glory, is reduced to a wheelchair. Compare how each poet exposes the emptiness of conquering masculinity.',
-    themes: ['Masculinity', 'Loss', 'Empire vs. trench'],
+      "A prose pairing. Both texts turn on one vain, casual decision that costs years of a life. Owen's recruit joins up partly to look a god in a kilt and to please the girls; Mathilde Loisel borrows a necklace to shine at a ball, loses it, and spends ten years paying for its replacement.",
+    themes: ['Vanity', 'Consequences', 'Wasted youth'],
   },
 ]
 
@@ -797,8 +835,10 @@ export default function DisabledPage() {
               Wilfred Owen (1893–1918) &middot; written October 1917, published posthumously 1920 in{' '}
               <em>Poems</em> (Chatto &amp; Windus) &middot; Edexcel IGCSE Anthology
             </p>
+            {/* Not igcse.page.badge_edexcel_lit: Disabled is a 4EA1 Language A
+                text, not Literature. The old key read the same in every locale. */}
             <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
-              {tr('igcse.page.badge_edexcel_lit')}
+              Edexcel IGCSE English Language A
             </Badge>
           </div>
         </div>
@@ -816,8 +856,10 @@ export default function DisabledPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          The Edexcel exam asks you to compare the named poem with another from the anthology. These
-          are strong pairings for Disabled.
+          In the exam (Paper 2, Section A) you answer one 30-mark essay question on a single Part 2
+          text, printed in the paper, so there is no comparison. If your school takes the coursework
+          route instead (Component 3, Assignment A), you write one essay on three Part 2 texts, at
+          least one a poem and one prose. These Part 2 texts pair well with Disabled for that.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -848,7 +890,7 @@ export default function DisabledPage() {
       </section>
 
       <footer className="pt-4 text-center text-body-xs text-muted-foreground">
-        {tr('igcse.page.spec_aligned_4et1')}
+        Spec aligned: Pearson Edexcel International GCSE English Language A (4EA1)
       </footer>
     </div>
   )

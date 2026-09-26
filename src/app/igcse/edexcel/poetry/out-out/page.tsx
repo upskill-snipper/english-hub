@@ -10,11 +10,21 @@ import StudyTools from '@/components/study/StudyTools'
 
 /* ── JSON-LD ──────────────────────────────────────────────────────── */
 
+// WHICH QUALIFICATION. Until 26 September 2026 this page called "Out, Out-" a
+// 4ET1 Literature poem, examined in Paper 1 Section B, and told students to
+// compare it with another anthology poem. It is not: the poem is in Part 2 of
+// the anthology, which only English Language A (4EA1) sets. The 4EA1
+// specification (Issue 7, August 2025, pp. 6 and 12 to 15) examines Part 2 in
+// Component 2 (Paper 2) Section A, one 30-mark essay on a single poem or prose
+// text printed in the paper, or in Component 3, the coursework alternative,
+// whose Assignment A is one 30-mark essay on three Part 2 texts, at least one
+// of them prose. The June 2023 Paper 2 set this poem, on its own, with no
+// comparison. See src/lib/board/edexcel-igcse-anthology.ts.
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'CreativeWork',
   name: 'Out, Out-',
-  alternativeHeadline: 'A Pearson Edexcel IGCSE 4ET1 set-text study guide',
+  alternativeHeadline: 'A Pearson Edexcel International GCSE English Language A (4EA1) study guide',
   author: {
     '@type': 'Person',
     name: 'Robert Frost',
@@ -27,8 +37,8 @@ const jsonLd = {
   educationalAlignment: {
     '@type': 'AlignmentObject',
     alignmentType: 'educationalSubject',
-    educationalFramework: 'Pearson Edexcel IGCSE English Literature 4ET1',
-    targetName: 'Anthology Poetry - Paper 1 Section B',
+    educationalFramework: 'Pearson Edexcel International GCSE English Language A 4EA1',
+    targetName: 'Anthology Part 2 - Paper 2 Section A, or Component 3 Assignment A',
   },
 }
 
@@ -44,11 +54,17 @@ const themes = [
 
 /* ── Stanza summaries (paraphrase only) ───────────────────────────── */
 
+// CHECKED AGAINST THE TEXT, 26 September 2026. These summaries used to put
+// the yard in Vermont (the poem only looks towards Vermont; the real accident
+// was in New Hampshire), have the boy beg the doctor (he begs his sister),
+// give reasons nobody believed he was dying (the poem gives none) and ask
+// whether he "slipped" (the poem says he must have given the hand). Each claim
+// below was checked against the Issue 8 anthology text, page 26.
 const stanzaSummaries = [
   {
     n: 'Lines 1-9',
     label: 'The saw and the mountain valley',
-    body: 'Frost opens with the buzz-saw at work in a Vermont yard, scattering sawdust and shavings. The setting is sharply localised: five mountain ranges visible in the late-afternoon sun, the smell of wood, the snarl of the machine. The sensory detail is vivid and pastoral - until the saw\'s sound is given an animal personality (a "snarled" rattle) and the reader is quietly warned that something living is at work in the metal.',
+    body: 'Frost opens with the buzz-saw at work in a yard, scattering sawdust and cutting firewood. The setting is sharply localised: five mountain ranges visible under the sunset, stretching far into Vermont, the smell of wood, the snarl of the machine. The sensory detail is vivid and pastoral - until the saw\'s sound is given an animal personality (a "snarled" rattle) and the reader is quietly warned that something living is at work in the metal.',
   },
   {
     n: 'Lines 10-14',
@@ -58,17 +74,17 @@ const stanzaSummaries = [
   {
     n: 'Lines 15-22',
     label: 'The accident',
-    body: 'At the moment the sister calls "Supper", the saw - as if alive - leaps out and strikes the boy\'s hand. Frost personifies the saw heavily, refusing to settle the question of whether the boy slipped or whether the machine, in some sense, knew. The boy gives a "rueful laugh" - an extraordinary, painful detail - before he holds up the hand as though he could stop his life escaping from it.',
+    body: 'At the moment the sister calls "Supper", the saw - as if alive - leaps out and strikes the boy\'s hand. Frost personifies the saw heavily and will not settle whether it really leapt or only seemed to, though the speaker adds that the boy must have given the hand. The boy gives a "rueful laugh" - an extraordinary, painful detail - before he holds up the hand as though he could stop his life escaping from it.',
   },
   {
     n: 'Lines 23-28',
     label: 'The doctor and the dark',
-    body: "The boy realises, very fast, what the loss of his hand will mean. He begs the doctor not to amputate, but the limb is already gone. The doctor administers ether and the boy slips into unconsciousness. The narrator's tone is calm and clinical - the medical procedure is described in plain, professional language.",
+    body: "The boy realises, very fast, what the loss of his hand will mean. He begs his sister not to let the doctor cut his hand off, but the hand is already lost. The doctor administers ether and the boy slips into unconsciousness. The narrator's tone is calm and clinical - the medical procedure is described in plain, professional language.",
   },
   {
     n: 'Lines 29-34',
     label: 'The pulse fails',
-    body: 'The boy\'s pulse weakens. Those watching cannot believe it: he is too young, the injury too small to kill. The line "Little - less - nothing!" condenses dying into three words. After his death the watchers, because they are not the ones who died, turn back to their daily affairs. The poem ends in cold indifference, not lament.',
+    body: 'The boy\'s pulse weakens, and the person checking it is suddenly afraid. No one can believe it. The line "Little—less—nothing!" condenses dying into three words. After his death the watchers, because they are not the ones who died, turn back to their daily affairs. The poem ends in cold indifference, not lament.',
   },
 ]
 
@@ -89,11 +105,11 @@ const formAndStructure = [
   },
   {
     label: 'Personification of the saw',
-    body: 'The buzz-saw is personified throughout. It "snarls" and "rattles", and at the moment of the accident it appears to leap "as if to prove saws knew what supper meant". Frost will not let us decide whether the machine is conscious or whether the boy slipped - the ambiguity is part of the poem\'s horror.',
+    body: 'The buzz-saw is personified throughout. It "snarled and rattled", and at the moment of the accident it appears to leap "as if to prove saws knew what supper meant". Frost will not let us decide whether the machine leapt or only seemed to, and the speaker\'s answer, that the boy must have given the hand, only deepens the question - the ambiguity is part of the poem\'s horror.',
   },
   {
     label: 'Pace',
-    body: 'The poem moves slowly through pastoral description, then the accident is over in a few lines. The pace mirrors the way disaster ambushes ordinary days. The dying itself is compressed into a list of single words ("Little - less - nothing!") - the smallest unit of language for the largest loss.',
+    body: 'The poem moves slowly through pastoral description, then the accident is over in a few lines. The pace mirrors the way disaster ambushes ordinary days. The dying itself is compressed into a list of single words ("Little—less—nothing!") - the smallest unit of language for the largest loss.',
   },
   {
     label: 'Closing turn',
@@ -103,6 +119,10 @@ const formAndStructure = [
 
 /* ── Comparison poems ─────────────────────────────────────────────── */
 
+// PART 2 TEXTS ONLY. Until 26 September 2026 this list included Remember, a
+// Part 3 poem that only 4ET1 Literature students study. A 4EA1 student can
+// pair "Out, Out-" only with other Part 2 texts, and only in the coursework
+// option, which needs at least one prose text among its three.
 const comparisons = [
   {
     title: 'Disabled',
@@ -113,19 +133,19 @@ const comparisons = [
     themes: ['Mortality', 'Youth', 'Indifference'],
   },
   {
-    title: 'Remember',
-    poet: 'Christina Rossetti',
-    href: '/igcse/edexcel/poetry/remember',
+    title: 'The Story of an Hour',
+    poet: 'Kate Chopin',
+    href: '/revision/texts/the-story-of-an-hour',
     reason:
-      'Both poems confront sudden death from very different angles. Rossetti meditates on her own future death and asks her beloved not to be sad; Frost watches a child die and lets the bystanders move on without ceremony. Compare the gentle sonnet against the unsentimental blank verse.',
-    themes: ['Death', 'Memory', 'Grief'],
+      "A prose pairing. Both texts end in a sudden death and in what the people left behind make of it. Frost's bystanders turn back to their affairs; Chopin's doctors decide that Louise Mallard died of joy, when the reader knows better. Compare how each writer uses a flat, brief ending to expose the living.",
+    themes: ['Sudden death', 'Onlookers', 'Irony'],
   },
   {
     title: 'The Bright Lights of Sarajevo',
     poet: 'Tony Harrison',
     href: '/igcse/edexcel/poetry/the-bright-lights-of-sarajevo',
     reason:
-      'Both poems explore how life carries on around violence. Harrison shows young people defying war by walking under starlight; Frost shows neighbours moving back to work after a death. Compare resilient continuation against numb continuation.',
+      'Both poems explore how life carries on around violence. Harrison shows young people defying war by walking out in the dark; Frost shows neighbours moving back to work after a death. Compare resilient continuation against numb continuation.',
     themes: ['Indifference', 'Resilience', 'Continuation'],
   },
 ]
@@ -162,8 +182,10 @@ export default function OutOutPage() {
               Robert Frost (1874&ndash;1963) &middot; published 1916 in <em>Mountain Interval</em>{' '}
               (Henry Holt &amp; Co.) &middot; Edexcel IGCSE Anthology
             </p>
+            {/* Not igcse.page.badge_edexcel_lit: this is a 4EA1 Language A
+                text, not Literature. The old key read the same in every locale. */}
             <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
-              {tr('igcse.page.badge_edexcel_lit')}
+              Edexcel IGCSE English Language A
             </Badge>
           </div>
         </div>
@@ -181,7 +203,7 @@ export default function OutOutPage() {
               <strong className="text-foreground">Rights notice.</strong> Robert Frost (d. 1963) is
               in the public domain in the United States but{' '}
               <strong className="text-foreground">
-                remains in copyright in the United Kingdom until 2034
+                remains in copyright in the United Kingdom until the end of 2033
               </strong>{' '}
               (life + 70 years). For that reason this study guide does not reproduce the poem in
               full. Use the official Edexcel anthology (Pearson Education, ISBN 978-1-446-93108-0)
@@ -304,8 +326,11 @@ export default function OutOutPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          The Edexcel exam asks you to compare the named poem with another from the anthology. These
-          are strong pairings for &ldquo;Out, Out&mdash;&rdquo;.
+          In the exam (Paper 2, Section A) you answer one 30-mark essay question on a single Part 2
+          text, printed in the paper, so there is no comparison. If your school takes the coursework
+          route instead (Component 3, Assignment A), you write one essay on three Part 2 texts, at
+          least one a poem and one prose. These Part 2 texts pair well with &ldquo;Out,
+          Out&mdash;&rdquo; for that.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -336,7 +361,7 @@ export default function OutOutPage() {
       </section>
 
       <footer className="pt-4 text-center text-body-xs text-muted-foreground">
-        {tr('igcse.page.spec_aligned_4et1')}
+        Spec aligned: Pearson Edexcel International GCSE English Language A (4EA1)
       </footer>
     </div>
   )

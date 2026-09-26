@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/igcse/edexcel/poetry/still-i-rise' },
   title: 'Still I Rise (Maya Angelou) - Edexcel IGCSE Poetry',
   description:
-    "Analysis of Angelou's 'Still I Rise' for the Edexcel IGCSE Literature anthology: resilience, pride and oppression, with key quotations, repetition and tone.",
+    "Analysis of Angelou's 'Still I Rise' for Edexcel IGCSE Language A (4EA1): resilience, pride and oppression, with key quotations, repetition and tone.",
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {

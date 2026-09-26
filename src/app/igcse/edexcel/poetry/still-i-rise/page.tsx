@@ -10,11 +10,21 @@ import StudyTools from '@/components/study/StudyTools'
 
 /* ── JSON-LD ──────────────────────────────────────────────────────── */
 
+// WHICH QUALIFICATION. Until 26 September 2026 this page called Still I Rise a
+// 4ET1 Literature poem, examined in Paper 1 Section B, and told students to
+// compare it with another anthology poem. 4ET1 does not set it: the poem is in
+// Part 2 of the anthology, which only English Language A (4EA1) sets. The 4EA1
+// specification (Issue 7, August 2025, pp. 6 and 12 to 15) examines Part 2 in
+// Component 2 (Paper 2) Section A, one 30-mark essay on a single poem or prose
+// text printed in the paper, or in Component 3, the coursework alternative,
+// whose Assignment A is one 30-mark essay on three Part 2 texts, at least one
+// of them prose. The June 2023 Paper 2 set a single-poem question with no
+// comparison. See src/lib/board/edexcel-igcse-anthology.ts.
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'CreativeWork',
   name: 'Still I Rise',
-  alternativeHeadline: 'A Pearson Edexcel IGCSE 4ET1 set-text study guide',
+  alternativeHeadline: 'A Pearson Edexcel International GCSE English Language A (4EA1) study guide',
   author: {
     '@type': 'Person',
     name: 'Maya Angelou',
@@ -27,8 +37,8 @@ const jsonLd = {
   educationalAlignment: {
     '@type': 'AlignmentObject',
     alignmentType: 'educationalSubject',
-    educationalFramework: 'Pearson Edexcel IGCSE English Literature 4ET1',
-    targetName: 'Anthology Poetry - Paper 1 Section B',
+    educationalFramework: 'Pearson Edexcel International GCSE English Language A 4EA1',
+    targetName: 'Anthology Part 2 - Paper 2 Section A, or Component 3 Assignment A',
   },
 }
 
@@ -44,6 +54,12 @@ const themes = [
 
 /* ── Stanza summaries (paraphrase only) ───────────────────────────── */
 
+// CHECKED AGAINST THE TEXT, 26 September 2026. This page used to say the
+// refrain ends every stanza (before stanza 8 it ends only stanzas 1, 3 and 6),
+// that the poem closes on the speaker rising like air or the tide (it closes on
+// the triple refrain), and printed "back yard" for the anthology's single word.
+// Four quotations the mounted guide does not already use were also cut, to
+// keep the page within its share of a copyrighted poem.
 const stanzaSummaries = [
   {
     n: 'Opening stanzas',
@@ -53,7 +69,7 @@ const stanzaSummaries = [
   {
     n: 'Middle stanzas',
     label: 'Confidence, sass and the female body',
-    body: 'Angelou shifts to celebrating the speaker&rsquo;s confidence: she walks as if she has &ldquo;oil wells&rdquo; pumping in her living room and laughs as if she has &ldquo;gold mines&rdquo; in her back yard (these images are the poem&rsquo;s standard rhetorical signature). She embraces sensuality and pride in her body, daring the oppressor to be offended. The tone is playful as well as fierce &mdash; &ldquo;sassiness&rdquo; is part of the resilience.',
+    body: 'Angelou shifts to celebrating the speaker&rsquo;s confidence: she walks as if she has &ldquo;oil wells&rdquo; pumping in her living room and laughs as if she owned a gold mine (these images of private riches are the poem&rsquo;s standard rhetorical signature). She embraces sensuality and pride in her body, daring the oppressor to be offended. The tone is playful as well as fierce &mdash; &ldquo;sassiness&rdquo; is part of the resilience.',
   },
   {
     n: 'Ancestral movement',
@@ -63,7 +79,7 @@ const stanzaSummaries = [
   {
     n: 'Closing stanzas',
     label: 'I rise',
-    body: 'The poem ends in a chant. The phrase &ldquo;I rise&rdquo; is repeated in short, hammered lines &mdash; closing with the famous triple repetition of &ldquo;I rise&rdquo;. The repetition turns the poem into something close to a song or a prayer. The closing image is of the speaker rising like &ldquo;air&rdquo; or &ldquo;the tide&rdquo; &mdash; an unstoppable natural force.',
+    body: 'The poem ends in a chant. The phrase &ldquo;I rise&rdquo; is repeated in short, hammered lines &mdash; closing with the famous triple repetition of &ldquo;I rise&rdquo;. The repetition turns the poem into something close to a song or a prayer. Earlier images of moons, suns, tides and air have prepared for it: by the end, the rising sounds like a natural force that cannot be stopped.',
   },
 ]
 
@@ -80,7 +96,7 @@ const formAndStructure = [
   },
   {
     label: 'Repetition',
-    body: 'The line &ldquo;I rise&rdquo; (or &ldquo;Still I&rsquo;ll rise&rdquo;) is the spine of the poem. It returns at the end of every stanza and, in the final movement, repeats again and again in short single-line stanzas. The repetition turns assertion into incantation.',
+    body: 'The refrain &ldquo;I rise&rdquo; is the spine of the poem. A version of it ends the first, third and sixth stanzas; in the last two stanzas it takes over, coming back again and again in short two-word lines until the poem ends on it three times. The repetition turns assertion into incantation.',
   },
   {
     label: 'Direct address',
@@ -98,22 +114,26 @@ const formAndStructure = [
 
 /* ── Comparison poems ─────────────────────────────────────────────── */
 
+// PART 2 TEXTS ONLY. Until 26 September 2026 this list offered Half-caste and
+// If-, both Part 3 poems that only 4ET1 Literature students study. A 4EA1
+// student can pair Still I Rise only with other Part 2 texts, and only in the
+// coursework option, which needs at least one prose text among its three.
 const comparisons = [
   {
-    title: 'Half-Caste',
-    poet: 'John Agard',
-    href: '/igcse/edexcel/poetry/half-caste',
+    title: 'The Story of an Hour',
+    poet: 'Kate Chopin',
+    href: '/revision/texts/the-story-of-an-hour',
     reason:
-      'Both poems confront racial prejudice through direct, performative voice. Agard challenges the term &ldquo;half-caste&rdquo;; Angelou rises against attempts to be written down. Both use repetition and rhythm to assert identity. Compare two voices of defiance from different sides of the Atlantic.',
-    themes: ['Race', 'Identity', 'Defiance'],
+      'A prose pairing. Both texts give a woman a moment of self-possession against the forces that hold her down. Angelou&rsquo;s speaker rises in open defiance; Chopin&rsquo;s Louise Mallard, alone at an open window after news of her husband&rsquo;s death, discovers a freedom she can only whisper to herself and does not live to keep. Compare public triumph with private awakening.',
+    themes: ['Freedom', 'Selfhood', 'Women'],
   },
   {
-    title: 'If-',
-    poet: 'Rudyard Kipling',
-    href: '/igcse/edexcel/poetry/if',
+    title: 'Disabled',
+    poet: 'Wilfred Owen',
+    href: '/igcse/edexcel/poetry/disabled',
     reason:
-      'Both poems are conduct manuals of a kind: Kipling tells his son how to be a man under pressure; Angelou tells her oppressor (and her audience) how she will be a woman under pressure. Compare Edwardian stoic restraint with twentieth-century African-American assertion.',
-    themes: ['Resilience', 'Identity', 'Strength of character'],
+      'A poem of rising set against a poem of falling. Owen&rsquo;s soldier is diminished, pitied and ignored, waiting for others to act; Angelou&rsquo;s speaker refuses pity and will not be diminished by what others do to her. Compare how each poet uses the way others look at the speaker.',
+    themes: ['Resilience', 'Pity', 'How others see us'],
   },
   {
     title: 'An Unknown Girl',
@@ -157,8 +177,10 @@ export default function StillIRisePage() {
               Maya Angelou (1928&ndash;2014) &middot; published 1978 in <em>And Still I Rise</em>{' '}
               (Random House) &middot; Edexcel IGCSE Anthology
             </p>
+            {/* Not igcse.page.badge_edexcel_lit: this is a 4EA1 Language A
+                text, not Literature. The old key read the same in every locale. */}
             <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
-              {tr('igcse.page.badge_edexcel_lit')}
+              Edexcel IGCSE English Language A
             </Badge>
           </div>
         </div>
@@ -172,15 +194,22 @@ export default function StillIRisePage() {
         <div className="flex items-start gap-3">
           <Lock className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-2">
+            {/* Until 26 September 2026 this said world rights were held by
+                Random House alone. The Issue 8 acknowledgements (page 72)
+                credit the UK edition (Virago Press, 1986) and the permission of
+                Little, Brown Book Group as well as Random House. */}
             <p>
               <strong className="text-foreground">Rights notice.</strong> &ldquo;Still I Rise&rdquo;
-              is in copyright. World rights are held by{' '}
+              is in copyright (&copy; Maya Angelou 1978). The Edexcel anthology takes its text from
+              the UK edition of <em>And Still I Rise</em> (Virago Press, 1986) and reproduces it by
+              permission of <strong className="text-foreground">Little, Brown Book Group</strong>{' '}
+              and of{' '}
               <strong className="text-foreground">
-                Random House (an imprint of Penguin Random House)
-              </strong>{' '}
-              (rights enquiries: penguinrandomhouse.com/permissions). For that reason this study
-              guide does not reproduce the poem in full. Use the official Edexcel anthology (Pearson
-              Education, ISBN 978-1-446-93108-0) or a licensed Random House edition of
+                Random House, an imprint and division of Penguin Random House
+              </strong>
+              . For that reason this study guide does not reproduce the poem in full. Use the
+              official Edexcel anthology (Pearson Education, ISBN 978-1-446-93108-0) or a licensed
+              Random House edition of
               <em> And Still I Rise</em> (1978) or{' '}
               <em>The Complete Collected Poems of Maya Angelou</em> (1994) when reading the text.
             </p>
@@ -215,8 +244,9 @@ export default function StillIRisePage() {
             <strong className="text-foreground">Publication:</strong> &ldquo;Still I Rise&rdquo;
             gives its name to Angelou&rsquo;s third poetry collection, <em>And Still I Rise</em>{' '}
             (Random House, 1978). It has since been reprinted in{' '}
-            <em>The Complete Collected Poems of Maya Angelou</em> (Random House, 1994). UK rights
-            are held through Penguin Random House.
+            <em>The Complete Collected Poems of Maya Angelou</em> (Random House, 1994). In the UK,{' '}
+            <em>And Still I Rise</em> was published by Virago Press (1986), and the anthology
+            reproduces the poem by permission of Little, Brown Book Group as well as Random House.
           </p>
           <p>
             <strong className="text-foreground">Context:</strong> The poem grew out of
@@ -308,8 +338,10 @@ export default function StillIRisePage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          The Edexcel exam asks you to compare the named poem with another from the anthology. These
-          are strong pairings for Still I Rise.
+          In the exam (Paper 2, Section A) you answer one 30-mark essay question on a single Part 2
+          text, printed in the paper, so there is no comparison. If your school takes the coursework
+          route instead (Component 3, Assignment A), you write one essay on three Part 2 texts, at
+          least one a poem and one prose. These Part 2 texts pair well with Still I Rise for that.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -343,7 +375,7 @@ export default function StillIRisePage() {
       </section>
 
       <footer className="pt-4 text-center text-body-xs text-muted-foreground">
-        {tr('igcse.page.spec_aligned_4et1')}
+        Spec aligned: Pearson Edexcel International GCSE English Language A (4EA1)
       </footer>
     </div>
   )
