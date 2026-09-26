@@ -21,6 +21,8 @@ export const STUDY_GUIDE_LOADERS: Record<string, () => Promise<StudyGuide>> = {
   blessing: () => import('./blessing').then((m) => m.guide),
   'chinese-cinderella': () => import('./chinese-cinderella').then((m) => m.guide),
   disabled: () => import('./disabled').then((m) => m.guide),
+  'do-not-go-gentle-into-that-good-night': () =>
+    import('./do-not-go-gentle-into-that-good-night').then((m) => m.guide),
   'explorers-or-boys-messing-about': () =>
     import('./explorers-or-boys-messing-about').then((m) => m.guide),
   'h-is-for-hawk': () => import('./h-is-for-hawk').then((m) => m.guide),
@@ -34,6 +36,7 @@ export const STUDY_GUIDE_LOADERS: Record<string, () => Promise<StudyGuide>> = {
   'out-out': () => import('./out-out').then((m) => m.guide),
   piano: () => import('./piano').then((m) => m.guide),
   'poem-at-thirty-nine': () => import('./poem-at-thirty-nine').then((m) => m.guide),
+  'prayer-before-birth': () => import('./prayer-before-birth').then((m) => m.guide),
   remember: () => import('./remember').then((m) => m.guide),
   'search-for-my-tongue': () => import('./search-for-my-tongue').then((m) => m.guide),
   'significant-cigarettes': () => import('./significant-cigarettes').then((m) => m.guide),

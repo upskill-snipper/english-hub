@@ -53,7 +53,6 @@ export const STUB_SET_TEXT_SLUGS: ReadonlySet<string> = new Set([
   'refugee-blues',
   'war-photographer',
   'if',
-  'prayer-before-birth',
   'piano',
   'hide-and-seek',
   'half-past-two',
