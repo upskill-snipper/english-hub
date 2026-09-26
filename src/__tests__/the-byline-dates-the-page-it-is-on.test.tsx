@@ -116,13 +116,23 @@ describe('the byline dates the page it is on', () => {
     expect((ROUTE_LASTMOD as Record<string, string>)['/revision/texts/macbeth']).toBeTruthy()
   })
 
-  it('and the map keeps the pages that really have not changed since May', () => {
+  it('and the map does not stamp the whole site with one date', () => {
     // The counterweight. Regenerating everything to "today" would satisfy the
     // assertion above and restore, in a new costume, the defect the sitemap
     // lastmod work removed: every deploy claiming the whole site just changed.
-    const may = Object.values(ROUTE_LASTMOD as Record<string, string>).filter((d) =>
-      d.startsWith('2026-05'),
-    )
-    expect(may.length).toBeGreaterThan(20)
+    //
+    // This used to require more than 20 routes still dated May 2026. That was
+    // a snapshot, not the rule: the sweeps of 19, 20 and 26 September really
+    // changed most pages, and an honest regeneration on 26 September left 6
+    // in May. What the defect looks like is one date everywhere, so that is
+    // what is checked: no single day holds half the routes, and the dates span
+    // several days.
+    const days = Object.values(ROUTE_LASTMOD as Record<string, string>).map((d) => d.slice(0, 10))
+    const byDay = new Map<string, number>()
+    for (const d of days) byDay.set(d, (byDay.get(d) ?? 0) + 1)
+    expect(Math.max(...byDay.values()) / days.length).toBeLessThan(0.75)
+    const newest = [...byDay.keys()].sort().at(-1)!
+    expect(byDay.get(newest)! / days.length).toBeLessThan(0.5)
+    expect(byDay.size).toBeGreaterThanOrEqual(5)
   })
 })

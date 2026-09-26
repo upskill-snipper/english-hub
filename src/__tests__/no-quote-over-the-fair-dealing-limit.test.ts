@@ -216,7 +216,11 @@ describe('every guide page for a text in copyright', () => {
   it.each([
     'src/app/resources/revision-notes/the-handmaids-tale/page.tsx',
     'src/app/revision/texts/lord-of-the-flies/key-quotes/page.tsx',
-    'src/app/revision/texts/curious-incident/page.tsx',
+    // Was src/app/revision/texts/curious-incident/page.tsx, a hand-written guide
+    // to the novel with its quotations inline. On 26 September 2026 it became a
+    // generated page for the verified guide to the play, whose quotations live
+    // in src/data/study-guides and are measured by study-guides.test.ts.
+    'src/app/igcse/edexcel/drama/curious-incident/page.tsx',
     'src/app/revision/texts/a-streetcar-named-desire/page.tsx',
     'src/app/igcse/edexcel/prose/of-mice-and-men/key-quotes/page.tsx',
   ])('scans %s and finds quotations on it', (file) => {
