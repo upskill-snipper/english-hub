@@ -15,6 +15,7 @@ export const STUDY_GUIDE_LOADERS: Record<string, () => Promise<StudyGuide>> = {
   'a-midsummer-nights-dream': () => import('./a-midsummer-nights-dream').then((m) => m.guide),
   'a-passage-to-africa': () => import('./a-passage-to-africa').then((m) => m.guide),
   'a-taste-of-honey': () => import('./a-taste-of-honey').then((m) => m.guide),
+  'an-inspector-calls': () => import('./an-inspector-calls').then((m) => m.guide),
   'an-unknown-girl': () => import('./an-unknown-girl').then((m) => m.guide),
   'between-a-rock-and-a-hard-place': () =>
     import('./between-a-rock-and-a-hard-place').then((m) => m.guide),
@@ -49,6 +50,7 @@ export const STUDY_GUIDE_LOADERS: Record<string, () => Promise<StudyGuide>> = {
   'klara-and-the-sun': () => import('./klara-and-the-sun').then((m) => m.guide),
   'la-belle-dame-sans-merci': () => import('./la-belle-dame-sans-merci').then((m) => m.guide),
   'leave-taking': () => import('./leave-taking').then((m) => m.guide),
+  macbeth: () => import('./macbeth').then((m) => m.guide),
   'my-last-duchess': () => import('./my-last-duchess').then((m) => m.guide),
   'my-name-is-leon': () => import('./my-name-is-leon').then((m) => m.guide),
   night: () => import('./night').then((m) => m.guide),
