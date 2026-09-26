@@ -796,13 +796,19 @@ function InteractiveTextViewer({
 }: InteractiveTextViewerProps) {
   const t = useT()
   // ── Persisted state ──────────────────────────────────────────────────────
-  const [completedSections, setCompletedSections] = useState<Set<string>>(
-    () => new Set(loadFromStorage<string[]>(getStorageKey(storageKey, 'completed'), [])),
-  )
-
-  const [activeSectionId, setActiveSectionId] = useState<string>(() =>
-    loadFromStorage<string>(getStorageKey(storageKey, 'active'), data.sections[0]?.id ?? ''),
-  )
+  // Both start as the server renders them (nothing read, the first section)
+  // and are restored from this browser's storage after mount, below.
+  //
+  // THE DEFECT, found 26 September 2026: they were read from localStorage in
+  // the useState initialisers. The server has no storage, so for anyone who
+  // had read before, its "0% complete" and the browser's first render
+  // disagreed, React threw a hydration error and rebuilt the whole reader in
+  // the browser, on every reader page. The restored section was also only
+  // highlighted in the contents while the text opened at the start.
+  const [completedSections, setCompletedSections] = useState<Set<string>>(() => new Set())
+  const [activeSectionId, setActiveSectionId] = useState<string>(data.sections[0]?.id ?? '')
+  /** False until storage has been read, so the defaults are never saved over it. */
+  const [restored, setRestored] = useState(false)
 
   // ── UI state ─────────────────────────────────────────────────────────────
   const [readingMode, setReadingMode] = useState<ReadingMode>('close')
@@ -868,13 +874,15 @@ function InteractiveTextViewer({
 
   // ── Persist completed sections ───────────────────────────────────────────
   useEffect(() => {
+    if (!restored) return
     saveToStorage(getStorageKey(storageKey, 'completed'), Array.from(completedSections))
-  }, [completedSections, storageKey])
+  }, [completedSections, storageKey, restored])
 
   // ── Persist active section ───────────────────────────────────────────────
   useEffect(() => {
+    if (!restored) return
     saveToStorage(getStorageKey(storageKey, 'active'), activeSectionId)
-  }, [activeSectionId, storageKey])
+  }, [activeSectionId, storageKey, restored])
 
   // ── Scroll-based section completion detection ────────────────────────────
   useEffect(() => {
@@ -933,15 +941,52 @@ function InteractiveTextViewer({
     }
   }, [])
 
+  // Restore this browser's progress after mount (see the persisted state
+  // above). A returning reader opens where they left off: the reader's own box
+  // is scrolled to that section, without moving the page, and nothing passed
+  // on the way is ticked. A ?section= link wins, below. Once per text: callers
+  // rebuild `data` when they render, and a second run would pull the reader
+  // back to where they started.
+  const restoredFor = useRef<string | null>(null)
+  useEffect(() => {
+    if (restoredFor.current === storageKey) return
+    restoredFor.current = storageKey
+    setCompletedSections(
+      new Set(loadFromStorage<string[]>(getStorageKey(storageKey, 'completed'), [])),
+    )
+    const last = loadFromStorage<string>(getStorageKey(storageKey, 'active'), '')
+    const wanted = new URLSearchParams(window.location.search).get('section')
+    const linked = data.sections.some((s) => s.id === wanted)
+    const box = contentRef.current
+    const el = sectionRefs.current.get(last)
+    if (!linked && last && last !== data.sections[0]?.id && el && box) {
+      setActiveSectionId(last)
+      jumping.current = true
+      box.scrollTop += el.getBoundingClientRect().top - box.getBoundingClientRect().top
+      window.setTimeout(() => {
+        jumping.current = false
+      }, 300)
+    }
+    setRestored(true)
+  }, [storageKey, data.sections])
+
   // A chapter guide's "Read this chapter in full" links to ?section=section-5.
   // Read after mount, so the server render and the first client render agree,
   // and only a section that exists overrides where the reader last left off. It
   // navigates as a click in the contents does: setting the active section alone
   // highlighted Chapter VII in the contents while the text still showed Chapter I.
+  // Once only, for the same reason as the restore above; the flag is set when
+  // the jump happens, so a cancelled frame (React's development double run)
+  // does not use it up.
+  const followedLink = useRef(false)
   useEffect(() => {
+    if (followedLink.current) return
     const wanted = new URLSearchParams(window.location.search).get('section')
     if (!wanted || !data.sections.some((s) => s.id === wanted)) return
-    const frame = requestAnimationFrame(() => navigateToSection(wanted))
+    const frame = requestAnimationFrame(() => {
+      followedLink.current = true
+      navigateToSection(wanted)
+    })
     return () => cancelAnimationFrame(frame)
   }, [data.sections, navigateToSection])
 

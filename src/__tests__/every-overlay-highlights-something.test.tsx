@@ -4,6 +4,9 @@
 // The project default is 'node', and without this pragma they fail on
 // "document is not defined" rather than on behaviour.
 import { describe, it, expect } from 'vitest'
+import { act } from 'react'
+import { hydrateRoot } from 'react-dom/client'
+import { renderToString } from 'react-dom/server'
 import { render, screen } from '@testing-library/react'
 import { readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
@@ -304,5 +307,59 @@ describe('an annotated scene', () => {
     ])
     const marked = [...container.querySelectorAll('[role="button"]')].map((el) => el.textContent)
     expect(marked).toContain('Black Spirits,” &c.')
+  })
+})
+
+/**
+ * A returning reader's page hydrates, and then shows their progress.
+ *
+ * WHAT BROKE (found 26 September 2026). The viewer read the ticked sections
+ * and the last section from localStorage in its useState initialisers. The
+ * server has no storage, so for anyone who had read before, the server said
+ * "0/28" and the browser's first render said otherwise; React threw "Hydration
+ * failed because the server rendered text didn't match the client" and rebuilt
+ * the whole reader in the browser. Every reader page, every returning student.
+ *
+ * The server render is simulated with storage empty, then hydrated with it
+ * full, which is exactly the difference between the two.
+ */
+describe('a returning reader', () => {
+  const data: TextData = {
+    title: 'A Test',
+    author: 'An Author',
+    type: 'novella',
+    sections: [
+      { id: 'one', title: 'Chapter One', content: '<p>The first chapter.</p>' },
+      { id: 'two', title: 'Chapter Two', content: '<p>The second chapter.</p>' },
+    ],
+  }
+  const key = 'test-returning'
+
+  it('hydrates without a mismatch and then restores what they had read', async () => {
+    localStorage.clear()
+    const html = renderToString(<InteractiveTextViewer data={data} storageKey={key} />)
+    expect(html.replace(/<!-- -->/g, '')).toContain('0/2 sections')
+
+    localStorage.setItem(`itv_${key}_completed`, JSON.stringify(['two']))
+    localStorage.setItem(`itv_${key}_active`, JSON.stringify('two'))
+    const container = document.createElement('div')
+    container.innerHTML = html
+    document.body.appendChild(container)
+    const errors: unknown[] = []
+    await act(async () => {
+      hydrateRoot(container, <InteractiveTextViewer data={data} storageKey={key} />, {
+        onRecoverableError: (e) => errors.push(e),
+      })
+    })
+
+    expect(errors, String(errors[0])).toEqual([])
+    expect(container.textContent).toContain('1/2 sections')
+    const active = [...container.querySelectorAll('nav button')].find((b) =>
+      b.className.includes('bg-primary/10'),
+    )
+    expect(active?.textContent).toContain('Chapter Two')
+    // and the defaults of the first render were never saved over the storage
+    expect(JSON.parse(localStorage.getItem(`itv_${key}_completed`) ?? '[]')).toEqual(['two'])
+    container.remove()
   })
 })
