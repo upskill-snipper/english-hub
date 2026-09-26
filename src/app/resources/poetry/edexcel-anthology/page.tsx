@@ -787,7 +787,7 @@ const POEMS: Poem[] = [
     poet: 'Robert Browning',
     date: '1842',
     context:
-      "Based on the historical Duke Alfonso II of Ferrara, whose first wife Lucrezia de' Medici died in suspicious circumstances in 1561, aged 17. Browning pioneered the dramatic monologue, in which a speaker inadvertently reveals their true character. The poem is set during negotiations for the Duke's next marriage, adding chilling dramatic irony as he discusses how he dealt with his previous wife.",
+      "Based on the historical Duke Alfonso II of Ferrara, whose first wife Lucrezia de' Medici died in suspicious circumstances in 1561, aged 16. Browning pioneered the dramatic monologue, in which a speaker inadvertently reveals their true character. The poem is set during negotiations for the Duke's next marriage, adding chilling dramatic irony as he discusses how he dealt with his previous wife.",
     summary:
       "The Duke shows a visitor (an envoy negotiating his next marriage) a portrait of his late wife, hidden behind a curtain that only he controls. He complains that the Duchess smiled too easily and equally at everyone, treating his 'nine-hundred-years-old name' as no more special than a sunset or a gift of cherries. He implies he had her killed ('I gave commands; then all smiles stopped together') before smoothly returning to the marriage negotiation.",
     formAndStructure:

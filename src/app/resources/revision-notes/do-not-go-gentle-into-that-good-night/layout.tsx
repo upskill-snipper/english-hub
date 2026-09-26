@@ -5,7 +5,7 @@ import { guide } from '@/data/study-guides/do-not-go-gentle-into-that-good-night
 export const metadata: Metadata = {
   title: 'Do Not Go Gentle Into That Good Night',
   description:
-    "Revise Dylan Thomas's villanelle for GCSE: form and refrains explained, themes of death and defiance, key quotations with analysis and exam tips.",
+    "Revise Dylan Thomas's villanelle for Edexcel International GCSE Literature: form, refrains, themes of death and defiance, key quotations and exam tips.",
   alternates: { canonical: '/resources/revision-notes/do-not-go-gentle-into-that-good-night' },
 }
 

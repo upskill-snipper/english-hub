@@ -56,7 +56,7 @@ const deck: FlashcardDeck = {
     {
       id: 'eig-9',
       front: 'La Belle Dame sans Merci - John Keats',
-      back: `Key quote: "O what can ail thee, knight-at-arms, / Alone and palely loitering?"\n\nThemes: Destructive love, enchantment, isolation, supernatural power, death-like state.\n\nTechniques: Ballad form, archaic diction, supernatural imagery ("faery\'s child"), cyclical structure, the knight is left "On the cold hill\'s side" - stripped of vitality.\n\nCompare with: Sonnet 116 (contrasting view of love), My Last Duchess (love and power).\n\nVersion note: The Edexcel IGCSE anthology uses the 1820 "Indicator" version of the poem (the one quoted above, with "knight-at-arms"). Some online sources reproduce Keats\'s 1848 (Milnes) revision, which uses "wretched wight" instead. Always quote from the anthology version when answering Edexcel questions.`,
+      back: `Key quote: "O what can ail thee, knight-at-arms, / Alone and palely loitering?"\n\nThemes: Destructive love, enchantment, isolation, supernatural power, death-like state.\n\nTechniques: Ballad form, archaic diction, supernatural imagery ("faery\'s child"), cyclical structure, the knight is left "On the cold hill\'s side" - stripped of vitality.\n\nCompare with: Sonnet 116 (contrasting view of love), My Last Duchess (love and power).\n\nVersion note: The Edexcel IGCSE anthology prints Keats\'s original 1819 version of the poem (the one quoted above, with "knight-at-arms"), first published in 1848. Some online sources reproduce the revised version from The Indicator (1820), which uses "wretched wight" instead. Always quote from the anthology version when answering Edexcel questions.`,
     },
     {
       id: 'eig-10',

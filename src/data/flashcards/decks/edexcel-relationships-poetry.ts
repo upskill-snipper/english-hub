@@ -17,7 +17,7 @@ const deck: FlashcardDeck = {
     {
       id: 'erp-1',
       front: 'La Belle Dame Sans Merci - John Keats',
-      back: `Key quote: "I met a lady in the meads, / Full beautiful - a faery\'s child"\n\nThemes: Destructive love, power imbalance, enchantment, isolation.\n\nTechniques: Ballad form, archaic language, supernatural imagery, cyclical structure (returns to the pale knight on the hillside).\n\nCompare with: She Walks in Beauty (idealised beauty), Neutral Tones (love that destroys).\n\nVersion note: The Edexcel anthology uses the 1820 "Indicator" version (with "knight-at-arms"), not the 1848 (Milnes) revision (with "wretched wight"). Always quote from the anthology version.`,
+      back: `Key quote: "I met a lady in the meads, / Full beautiful - a faery\'s child"\n\nThemes: Destructive love, power imbalance, enchantment, isolation.\n\nTechniques: Ballad form, archaic language, supernatural imagery, cyclical structure (returns to the pale knight on the hillside).\n\nCompare with: She Walks in Beauty (idealised beauty), Neutral Tones (love that destroys).\n\nVersion note: The Edexcel anthology prints Keats's original 1819 version (with "knight-at-arms"), not the revised 1820 Indicator version (with "wretched wight"). Always quote from the anthology version.`,
     },
     {
       id: 'erp-2',

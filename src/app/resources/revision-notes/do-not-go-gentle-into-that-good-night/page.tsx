@@ -93,9 +93,10 @@ export default function DoNotGoGentlePage() {
         </h1>
         <p className="mt-1 text-lg text-muted-foreground">Dylan Thomas, published 1951</p>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
-          A complete GCSE guide to Dylan Thomas&apos;s famous villanelle: the strict 19-line form
-          and its two refrains, the four types of men who face death, the turn to the poet&apos;s
-          own dying father, key quotations with analysis, context, comparison ideas and exam tips.
+          A complete International GCSE guide to Dylan Thomas&apos;s famous villanelle: the strict
+          19-line form and its two refrains, the four types of men who face death, the turn to the
+          poet&apos;s own dying father, key quotations with analysis, context, comparison ideas and
+          exam tips.
         </p>
       </div>
 
@@ -139,9 +140,9 @@ export default function DoNotGoGentlePage() {
                 journal <em>Botteghe Oscure</em> in 1951, the year before his father died.
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                The argument unfolds with almost legal precision (AO1). Stanza 1 states the thesis:
-                old age should &ldquo;burn and rave&rdquo; rather than fade. Stanzas 2 to 5 then
-                present four kinds of men, wise men, good men, wild men and grave men, each of whom
+                The argument unfolds with almost legal precision. Stanza 1 states the thesis: old
+                age should &ldquo;burn and rave&rdquo; rather than fade. Stanzas 2 to 5 then present
+                four kinds of men, wise men, good men, wild men and grave men, each of whom
                 discovers at the end of life that something is unfinished, and each of whom
                 therefore refuses to surrender meekly. Only in the final quatrain does the poem
                 reveal its true addressee: &ldquo;And you, my father&rdquo;. The universal argument
@@ -157,9 +158,11 @@ export default function DoNotGoGentlePage() {
                   <li>&bull; Metre: largely iambic pentameter</li>
                   <li>&bull; Voice: a son addressing his dying father</li>
                   <li>&bull; Core tension: acceptance of death versus furious resistance</li>
+                  {/* 26 September 2026: this said English Language A as well. The poem is in
+                      Part 3 of the anthology, set for English Literature (4ET1) only. */}
                   <li>
-                    &bull; Set in the Pearson Edexcel International GCSE Anthology (English Language
-                    A and Literature)
+                    &bull; In Part 3 of the Pearson Edexcel International GCSE English Anthology:
+                    set for English Literature (4ET1) only, not English Language A
                   </li>
                 </ul>
               </div>
@@ -172,7 +175,7 @@ export default function DoNotGoGentlePage() {
           <Section title="Form & Structure" icon="🏗️">
             <div className="space-y-4">
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">The Villanelle (AO2)</h4>
+                <h4 className="font-bold text-primary">The Villanelle</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   A villanelle is a French fixed form: 19 lines arranged as five three-line stanzas
                   (tercets) and a closing four-line stanza (quatrain), using only two rhyme sounds
@@ -207,7 +210,7 @@ export default function DoNotGoGentlePage() {
                   men...&rdquo;, &ldquo;Wild men...&rdquo;, &ldquo;Grave men...&rdquo;) builds a
                   rhetorical case so that the final, personal stanza arrives with the full weight of
                   the preceding evidence behind it. The shift from third person to second person
-                  (&ldquo;And you, my father&rdquo;) is the structural climax of the poem (AO2).
+                  (&ldquo;And you, my father&rdquo;) is the structural climax of the poem.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -235,10 +238,10 @@ export default function DoNotGoGentlePage() {
                 direct address. Yet for five stanzas the father is hidden behind generalisation: the
                 speaker talks about &ldquo;wise men&rdquo;, &ldquo;good men&rdquo;, &ldquo;wild
                 men&rdquo; and &ldquo;grave men&rdquo; as if delivering a lecture on how humanity
-                should die. Only in line 16 does the mask slip: &ldquo;And you, my father, there on
-                the sad height&rdquo;. The delay is psychologically revealing (AO1): the son hides
-                his personal terror inside a universal argument, because speaking directly about his
-                father&apos;s death is almost unbearable.
+                should die. Only in line 16 does the mask slip: &ldquo;And you, my father&rdquo;.
+                The delay is psychologically revealing: the son hides his personal terror inside a
+                universal argument, because speaking directly about his father&apos;s death is
+                almost unbearable.
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 The voice is commanding, even bullying: imperatives (&ldquo;Do not go&rdquo;,
@@ -292,8 +295,7 @@ export default function DoNotGoGentlePage() {
           <Section title="Key Quotations with Analysis" icon="📝">
             <p className="text-sm text-muted-foreground mb-4 italic">
               Learn the two refrains plus two or three supporting quotations. In the exam, always
-              link the quotation to the villanelle form (AO2): repetition is the poem&apos;s main
-              method.
+              link the quotation to the villanelle form: repetition is the poem&apos;s main method.
             </p>
             <div className="space-y-1">
               <QuoteCard
@@ -306,40 +308,44 @@ export default function DoNotGoGentlePage() {
                 speaker="Refrain 2: lines 3, 9, 15 and 19"
                 analysis="The counter-refrain. The repeated monosyllable 'Rage' opens with a double stress that breaks the iambic flow: the line performs the fury it demands. 'The dying of the light' makes death a slow extinguishing rather than a sudden event, which is exactly what Thomas was watching happen to his father. Note the verb is 'rage', not 'fight' or 'win': the poem asks for passion, not victory. The two refrains finally meet as a couplet in the last stanza, command and exhortation fused."
               />
+              {/* 26 September 2026: nine cards here each printed a whole line, and with the
+                  rest of the page quoted most of the poem, which the anthology prints under
+                  copyright. The refrains stay whole; the other cards print only the phrase
+                  analysed. */}
               <QuoteCard
-                quote="Old age should burn and rave at close of day"
+                quote="burn and rave"
                 speaker="Line 2"
                 analysis="The thesis of the whole argument. 'Burn' begins the poem's fire imagery (lightning, sun, meteors all follow), making vitality a kind of combustion. 'Rave' is startling: it suggests madness, the loss of dignified self-control, and the poem embraces that. Dignified acceptance is exactly what the speaker rejects. 'Close of day' establishes the governing metaphor of life as a single day now reaching evening."
               />
               <QuoteCard
-                quote="Because their words had forked no lightning"
+                quote="forked no lightning"
                 speaker="Line 5, the wise men"
-                analysis="Why do even the wise resist a death they know is 'right'? Because their wisdom never struck home: 'forked no lightning' imagines language as a natural force that should split the sky, and theirs did not. For Thomas, a poet, this is the nightmare of words without power. The wise men's intellectual acceptance of death is overruled by the artist's sense of unfinished work (AO1: a good example of the poem's logic of regret)."
+                analysis="Why do even the wise resist a death they know is 'right'? Because their wisdom never struck home: 'forked no lightning' imagines language as a natural force that should split the sky, and theirs did not. For Thomas, a poet, this is the nightmare of words without power. The wise men's intellectual acceptance of death is overruled by the artist's sense of unfinished work (a good example of the poem's logic of regret)."
               />
               <QuoteCard
-                quote="Their frail deeds might have danced in a green bay"
+                quote="frail deeds might have danced"
                 speaker="Line 8, the good men"
                 analysis="The good men, 'the last wave by', cry that their modest moral actions could have shone more brightly in a kinder setting. 'Frail deeds' is a poignant admission of smallness; 'danced' gives those deeds a lost gaiety; 'green bay' is one of the poem's few images of fertile, living colour. The wave metaphor matters too: a wave's whole existence is its brief breaking, so the good men are mourning the shortness of any human life."
               />
               <QuoteCard
-                quote="And learn, too late, they grieved it on its way"
+                quote="learn, too late"
                 speaker="Line 11, the wild men"
-                analysis="The wild men 'caught and sang the sun in flight', living so intensely that they seemed to celebrate time, and only discover afterwards that their revelry was hastening the very sun they sang. 'Too late' is the bleakest phrase in the poem: some knowledge arrives only when it is useless. Yet even these men do not 'go gentle'; regret converts itself into resistance."
+                analysis="The wild men 'sang the sun in flight', living so intensely that they seemed to celebrate time, and, on one reading, only discover afterwards that their revelry was hastening the very sun they sang. 'Too late' is the bleakest phrase in the poem: some knowledge arrives only when it is useless. Yet even these men do not 'go gentle'; regret converts itself into resistance."
               />
               <QuoteCard
-                quote="Blind eyes could blaze like meteors and be gay"
+                quote="blaze like meteors"
                 speaker="Line 14, the grave men"
                 analysis="'Grave men' is the poem's sharpest pun: serious men, and men at the edge of the grave. The paradox of 'blinding sight' in the previous line and blazing 'Blind eyes' here insists that loss of sight can coexist with visionary intensity. The simile 'like meteors' is exact: a meteor burns brightest precisely as it is destroyed. The line is almost unbearably personal, since D. J. Thomas was losing his sight as his son wrote."
               />
               <QuoteCard
-                quote="And you, my father, there on the sad height"
+                quote="And you, my father"
                 speaker="Line 16"
                 analysis="The volta. After fifteen lines of generalised argument the poem turns to its real subject, and the change of pronoun ('you') lands like a confession. 'The sad height' suggests a summit at the end of life's climb, a place of lonely eminence; some readers hear an echo of a deathbed raised above the watching son, or of a Calvary-like place of suffering. The phrase's quiet sorrow contrasts with the fire imagery everywhere else: here, finally, is plain grief."
               />
               <QuoteCard
-                quote="Curse, bless, me now with your fierce tears, I pray"
+                quote="Curse, bless, me now"
                 speaker="Line 17"
-                analysis="A line of compressed paradoxes. 'Curse, bless' asks for opposite things at once because any passionate response, fury or love, would prove the father still burns. 'Fierce tears' fuses rage and grief into a single image. The commas around 'me now' slow the line to a series of sobs. And 'I pray', after sixteen lines of commands, admits the truth: the son has no power here at all. The poem ends by repeating both refrains, a son chanting against the dark."
+                analysis="A line of compressed paradoxes. 'Curse, bless' asks for opposite things at once because any passionate response, fury or love, would prove the father still burns. 'Fierce tears' fuses rage and grief into a single image. The commas after 'Curse' and 'bless' break the line into a series of sobs, the second cutting the verbs off from 'me'. And 'I pray', after sixteen lines of commands, admits the truth: the son has no power here at all. The poem ends by repeating both refrains, a son chanting against the dark."
               />
             </div>
           </Section>
@@ -357,7 +363,7 @@ export default function DoNotGoGentlePage() {
                   light&rdquo;). Against the encroaching dark, Thomas sets escalating images of
                   fierce light: burning, forked lightning, the sun in flight, blazing meteors. Each
                   type of man is associated with his own form of light, so the catalogue of stanzas
-                  is also a catalogue of fires. The effect (AO2) is to make resistance luminous and
+                  is also a catalogue of fires. The effect is to make resistance luminous and
                   surrender merely dim.
                 </p>
               </div>
@@ -394,7 +400,7 @@ export default function DoNotGoGentlePage() {
           <Section title="Context" icon="🏛️">
             <div className="space-y-4">
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Dylan Thomas and His Father (AO3)</h4>
+                <h4 className="font-bold text-primary">Dylan Thomas and His Father</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Dylan Thomas (1914-1953) grew up in Swansea, Wales. His father, D. J. Thomas, was
                   the senior English master at Swansea Grammar School: a formidable, frustrated man
@@ -414,8 +420,8 @@ export default function DoNotGoGentlePage() {
                   most famous villanelle in English. The choice connects him to a tradition of
                   technically intricate, musical poetry, and reflects his belief in the craft and
                   sound of verse: he was celebrated for his sonorous radio broadcasts and public
-                  readings. Knowing the form&apos;s rules lets you show (AO2) how meaning is made by
-                  the form itself, not just decorated by it.
+                  readings. Knowing the form&apos;s rules lets you show how meaning is made by the
+                  form itself, not just decorated by it.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -425,7 +431,7 @@ export default function DoNotGoGentlePage() {
                   death. Thomas&apos;s poem pushes against that whole tradition: it offers no
                   afterlife, no comfort, only the demand that life be gripped to the last. Some
                   readers find this heroic and humanist; others find it a refusal of the peace a
-                  dying person might need. Strong exam answers (AO3) can set the poem against more
+                  dying person might need. Strong comparison answers can set the poem against more
                   accepting treatments of death elsewhere in the anthology.
                 </p>
               </div>
@@ -492,23 +498,23 @@ export default function DoNotGoGentlePage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>AO2: lead with the villanelle.</strong> Name the form precisely (19 lines,
-              five tercets and a quatrain, two refrains, two rhyme sounds) and, crucially, explain
-              its effect: the circling repetition enacts refusal to let go.
+              <strong>Lead with the villanelle.</strong> Name the form precisely (19 lines, five
+              tercets and a quatrain, two refrains, two rhyme sounds) and, crucially, explain its
+              effect: the circling repetition enacts refusal to let go.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>AO1: track the structure of the argument.</strong> Thesis, four categories of
-              men, then the personal turn at &ldquo;And you, my father&rdquo;. Essays organised
-              around this turn almost write themselves.
+              <strong>Track the structure of the argument.</strong> Thesis, four categories of men,
+              then the personal turn at &ldquo;And you, my father&rdquo;. Essays organised around
+              this turn almost write themselves.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>AO2: zoom in on small grammatical choices.</strong> &ldquo;Gentle&rdquo; for
+              <strong>Zoom in on small grammatical choices.</strong> &ldquo;Gentle&rdquo; for
               &ldquo;gently&rdquo;, the spondee of &ldquo;Rage, rage&rdquo;, the paradox of
               &ldquo;Curse, bless&rdquo;. Examiners reward word-level analysis tied to effect.
             </span>
@@ -516,9 +522,13 @@ export default function DoNotGoGentlePage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>AO3: use the biography with care.</strong> The dying, blind father makes
-              &ldquo;blind eyes&rdquo; and &ldquo;sad height&rdquo; concrete, but keep context brief
-              and tied to specific lines rather than bolted on.
+              {/* 26 September 2026: this and the context heading labelled biography AO3. In
+                  4ET1, AO3 is links between texts, and the anthology poetry section assesses AO2
+                  and AO3 only (specification, Paper 1 Section B), so context earns no marks. */}
+              <strong>Use the biography sparingly.</strong> The anthology poetry question rewards
+              analysis and comparison, not context. The dying, blind father makes &ldquo;Blind
+              eyes&rdquo; and &ldquo;sad height&rdquo; concrete, but keep it to a clause tied to
+              specific lines rather than bolted on.
             </span>
           </li>
           <li className="flex items-start gap-2">

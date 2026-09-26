@@ -568,7 +568,7 @@ The experience does not end when the boat is returned. The phrase suggests lasti
 <h2>My Last Duchess - Robert Browning (1842)</h2>
 
 <h3>Context</h3>
-<p>Robert Browning (1812-1889) was a Victorian poet famous for his dramatic monologues. <strong>My Last Duchess</strong> was published in 1842 and is based loosely on Alfonso II, Duke of Ferrara (1533-1598), an Italian Renaissance nobleman whose first wife, Lucrezia de' Medici, died in suspicious circumstances aged just 17. The Duke then negotiated a new marriage.</p>
+<p>Robert Browning (1812-1889) was a Victorian poet famous for his dramatic monologues. <strong>My Last Duchess</strong> was published in 1842 and is based loosely on Alfonso II, Duke of Ferrara (1533-1598), an Italian Renaissance nobleman whose first wife, Lucrezia de' Medici, died in suspicious circumstances aged just 16. The Duke then negotiated a new marriage.</p>
 
 <p>Browning was fascinated by psychology and moral complexity. The poem does not tell us outright that the Duke killed his wife - instead, the reader must infer it from his chilling, controlled speech.</p>
 

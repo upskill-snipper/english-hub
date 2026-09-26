@@ -13,6 +13,10 @@ import { CourseJsonLd } from '@/components/seo/json-ld'
 import { useT } from '@/lib/i18n/use-t'
 /* ── Poem data ─────────────────────────────────────────────────── */
 
+// 26 September 2026: the lines below had "made that spot" for "called that spot" (line
+// 14), a semicolon for the colon after "now" (line 3), and the dash that opens line 42
+// moved to the end of line 41. Checked against the Pearson Issue 8 anthology and the
+// held edition in src/data/full-texts/my-last-duchess.ts, which agree on all three.
 const poemData: PoemData = {
   title: 'My Last Duchess',
   poet: 'Robert Browning',
@@ -43,7 +47,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: "That piece a wonder, now; Fra Pandolf's hands",
+      text: "That piece a wonder, now: Fra Pandolf's hands",
       annotations: [
         {
           type: 'Objectification',
@@ -111,7 +115,7 @@ const poemData: PoemData = {
       ],
     },
     {
-      text: "Her husband's presence only, made that spot",
+      text: "Her husband's presence only, called that spot",
     },
     {
       text: "Of joy into the Duchess' cheek; perhaps",
@@ -274,10 +278,10 @@ const poemData: PoemData = {
       text: 'Herself be lessoned so, nor plainly set',
     },
     {
-      text: 'Her wits to yours, forsooth, and made excuse -',
+      text: 'Her wits to yours, forsooth, and made excuse,',
     },
     {
-      text: "E'en then would be some stooping; and I choose",
+      text: "- E'en then would be some stooping; and I choose",
       annotations: [
         {
           type: 'Key word: "choose"',
@@ -390,9 +394,13 @@ const poemData: PoemData = {
       ],
     },
   ],
+  // 26 September 2026: this said Lucrezia died aged 17 and that Barbara of Austria was
+  // the Count of Tyrol's niece. Lucrezia was born 14 February 1545 and died 21 April
+  // 1561, aged 16; Barbara and Ferdinand II were both children of Emperor Ferdinand I.
+  // The quiz explanation (mld-8) and the Arabic copy carried the same two errors.
   context: `<p><strong>Robert Browning</strong> published <em>My Last Duchess</em> in 1842 as part of his collection <em>Dramatic Lyrics</em>. The poem is a <strong>dramatic monologue</strong> - a form Browning perfected - in which a single speaker inadvertently reveals their true character to the reader.</p>
 
-<p>The speaker is based on <strong>Alfonso II, Duke of Ferrara</strong> (1533-1598), a real Italian Renaissance nobleman. His first wife, <strong>Lucrezia de' Medici</strong>, died in suspicious circumstances aged just 17, after only three years of marriage. Alfonso then negotiated to marry Barbara of Austria, niece of Ferdinand II, Count of Tyrol.</p>
+<p>The speaker is based on <strong>Alfonso II, Duke of Ferrara</strong> (1533-1598), a real Italian Renaissance nobleman. His first wife, <strong>Lucrezia de' Medici</strong>, died in suspicious circumstances aged just 16, after only three years of marriage. Alfonso then negotiated to marry Barbara of Austria, sister of Ferdinand II, Count of Tyrol.</p>
 
 <p><strong>Historical context:</strong> Renaissance Italian courts were centres of art patronage but also ruthless political power. Marriages among the aristocracy were transactional alliances - women were exchanged as property between powerful families. The poem explores how <strong>patriarchal power</strong> operated in this world: the Duke treats his wife as an extension of his status and property.</p>
 
@@ -402,7 +410,7 @@ const poemData: PoemData = {
 
   contextAr: `<p><strong>Robert Browning</strong> نشر قصيدة <em>My Last Duchess</em> سنة 1842 ضمن ديوانه <em>Dramatic Lyrics</em>. القصيدة <strong>dramatic monologue</strong> (مونولوج درامي) - وهو شكل أتقنه Browning، فيه متكلّم واحد بدون قصد منه يكشف للقارئ حقيقة شخصيته.</p>
 
-<p>المتكلّم في القصيدة مستوحى من <strong>Alfonso II, Duke of Ferrara</strong> (1533-1598)، نبيل إيطالي حقيقي من عصر النهضة. زوجته الأولى، <strong>Lucrezia de' Medici</strong>، توفّت في ظروف مريبة وعمرها 17 سنة بس، بعد ثلاث سنوات من الزواج. بعدها، Alfonso بدأ مفاوضات للزواج من Barbara of Austria، بنت أخ Ferdinand II, Count of Tyrol.</p>
+<p>المتكلّم في القصيدة مستوحى من <strong>Alfonso II, Duke of Ferrara</strong> (1533-1598)، نبيل إيطالي حقيقي من عصر النهضة. زوجته الأولى، <strong>Lucrezia de' Medici</strong>، توفّت في ظروف مريبة وعمرها 16 سنة بس، بعد ثلاث سنوات من الزواج. بعدها، Alfonso بدأ مفاوضات للزواج من Barbara of Austria، أخت Ferdinand II, Count of Tyrol.</p>
 
 <p><strong>السياق التاريخي:</strong> القصور الإيطالية في عصر النهضة كانت مراكز لرعاية الفنون، بس في نفس الوقت كانت مراكز سلطة سياسية قاسية. زيجات الأرستقراطية كانت تحالفات سياسية - النساء يتبادلون كأنهم ممتلكات بين العائلات النافذة. والقصيدة تستعرض كيف كانت <strong>السلطة الذكورية</strong> تشتغل في هذا العالم: الـDuke يعامل زوجته كامتداد لمكانته وممتلكاته.</p>
 
@@ -426,6 +434,9 @@ As they leave, the Duke pauses to admire a bronze sculpture of Neptune taming a 
 
 ولمّا يطلعون، الـDuke يوقف عشان يتأمّل تمثال برونزي يصوّر Neptune وهو "يروّض" حصان البحر - استعارة ختامية لرغبته في الهيمنة والتملّك.`,
 
+  // 26 September 2026: the enjambment example here, in the Arabic copy and in the
+  // language devices split "she thanked / Men". Line 31 is one line, "She thanked men -
+  // good! but thanked", and the run-on is from its last word into "Somehow".
   formAndStructure: `DRAMATIC MONOLOGUE
 The entire poem is spoken by a single character - the Duke - to a silent listener (the envoy). Browning's genius is in what the Duke inadvertently reveals: he intends to appear cultured and reasonable, but the reader recognises a murderer. This creates dramatic irony throughout.
 
@@ -433,7 +444,7 @@ RHYMING COUPLETS (HEROIC COUPLETS)
 The poem uses rhyming couplets (AABB) in iambic pentameter, but the heavy use of enjambment disguises the rhyme scheme. This mirrors the Duke's speech: he appears to speak naturally and spontaneously, but the tight structure beneath reveals his calculated control.
 
 ENJAMBMENT
-Lines frequently run on without pause ("she thanked / Men - good! but thanked / Somehow"), creating a sense of conversational flow. But the enjambment also enacts the Duke's inability to contain his anger - his grievances spill across line boundaries despite his attempt at composure.
+Lines frequently run on without pause ("She thanked men - good! but thanked / Somehow"), creating a sense of conversational flow. But the enjambment also enacts the Duke's inability to contain his anger - his grievances spill across line boundaries despite his attempt at composure.
 
 IAMBIC PENTAMETER
 The regular metre reflects the Duke's desire for order and control. When the rhythm breaks - as in the staccato "This grew; I gave commands;" - it signals moments of emotional intensity beneath his controlled exterior.
@@ -451,7 +462,7 @@ RHYMING COUPLETS (HEROIC COUPLETS)
 القصيدة تستخدم rhyming couplets (AABB) في iambic pentameter، بس الاستخدام المكثّف للـenjambment يخفي نمط القافية. هذا يعكس طريقة كلام الـDuke: يبدو إنه يحكي بشكل طبيعي وعفوي، بس البنية المحكمة تحت السطح تكشف سيطرته المحسوبة.
 
 ENJAMBMENT
-الأبيات تتسلسل بدون توقّف كثير ("she thanked / Men - good! but thanked / Somehow")، وهذا يعطي إحساس بالتدفّق الحواري. بس الـenjambment أيضاً يجسّد عجز الـDuke عن كبح غضبه - شكاويه تطفح عبر حدود الأبيات رغم محاولته يبيّن نفسه رزين.
+الأبيات تتسلسل بدون توقّف كثير ("She thanked men - good! but thanked / Somehow")، وهذا يعطي إحساس بالتدفّق الحواري. بس الـenjambment أيضاً يجسّد عجز الـDuke عن كبح غضبه - شكاويه تطفح عبر حدود الأبيات رغم محاولته يبيّن نفسه رزين.
 
 IAMBIC PENTAMETER
 الوزن المنتظم يعكس رغبة الـDuke في النظام والسيطرة. ولمّا يكسر الإيقاع - مثلاً في الجملة المتقطّعة "This grew; I gave commands;" - يكون هذا إشارة للحظات شدّة عاطفية تحت قشرته المتحكّمة.
@@ -585,7 +596,7 @@ SINGLE STANZA (مقطوعة واحدة)
     },
     {
       device: 'Enjambment',
-      example: 'she thanked / Men - good! but thanked / Somehow',
+      example: 'She thanked men - good! but thanked / Somehow',
       effect:
         "The enjambment across line breaks enacts the Duke's loss of composure. His anger overflows the neat couplet form, just as the Duchess's behaviour overflowed the boundaries he tried to impose. The tension between form and content mirrors his internal conflict.",
       lineRef: 30,
@@ -736,7 +747,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      "Written in 1842, the poem is loosely based on Alfonso II, Duke of Ferrara, whose first wife Lucrezia de' Medici died aged 17 under suspicious circumstances. He then negotiated to marry the niece of a Count.",
+      "Written in 1842, the poem is loosely based on Alfonso II, Duke of Ferrara, whose first wife Lucrezia de' Medici died aged 16 under suspicious circumstances. He then negotiated to marry the sister of a Count.",
     topic: 'Context',
     difficulty: 'higher',
   },

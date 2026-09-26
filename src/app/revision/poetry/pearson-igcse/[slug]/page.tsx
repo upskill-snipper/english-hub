@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   }
   return {
     title: `${text.title} - ${text.author} | Pearson IGCSE Poetry | The English Hub`,
-    description: `Study notes for ${text.title} by ${text.author}. Pearson Edexcel International GCSE English Language A (4EA1) Section B poetry anthology.`,
+    description: `Study notes for ${text.title} by ${text.author}. A Part 2 poem in the Pearson Edexcel International GCSE English Language A (4EA1) anthology.`,
     alternates: {
       // Sarajevo's guide is on this route. The other four render the
       // placeholder, which since 26 September 2026 points to their finished

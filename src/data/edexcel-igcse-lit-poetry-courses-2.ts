@@ -17,10 +17,10 @@ const laBelleDameModules: CourseModule[] = [
     content: `
 <h2>La Belle Dame sans Merci - John Keats (1819)</h2>
 
-<div class="version-note" style="border-left:3px solid #f59e0b;background:rgba(245,158,11,0.08);padding:0.85rem 1rem;border-radius:6px;margin-bottom:1rem;"><strong>Version note:</strong> The Edexcel IGCSE anthology uses the 1820 <em>Indicator</em> version of the poem (with "knight-at-arms"). Some online sources reproduce Keats's later 1848 (Milnes) revision, which differs in several lines - most notably replacing "knight-at-arms" with "wretched wight" and "I see a lily on thy brow" with "I see death's lily on thy brow". Always quote from the anthology version when answering Edexcel questions; this study guide uses the 1820 text throughout.</div>
+<div class="version-note" style="border-left:3px solid #f59e0b;background:rgba(245,158,11,0.08);padding:0.85rem 1rem;border-radius:6px;margin-bottom:1rem;"><strong>Version note:</strong> The Edexcel IGCSE anthology prints Keats's original 1819 version of the poem (with "knight-at-arms"), first published by Richard Monckton Milnes in 1848. Some online sources reproduce the revised version published in Leigh Hunt's <em>The Indicator</em> in May 1820, which differs in several lines, most notably by addressing a "wretched wight" instead of a "knight-at-arms". Always quote from the anthology version when answering Edexcel questions; this study guide uses the 1819 text throughout.</div>
 
 <h3>Context</h3>
-<p>John Keats (1795-1821) was one of the principal figures of the English Romantic movement. He died of tuberculosis at just twenty-five, yet produced some of the most enduring poetry in the English language. <strong>"La Belle Dame sans Merci"</strong> (French for "The Beautiful Lady Without Mercy") was composed on 21 April 1819, the same extraordinarily productive period that yielded his great odes. The poem was first published in Leigh Hunt's <em>The Indicator</em> in May 1820 - the version Keats himself prepared for the press, and the version printed in the Edexcel anthology. A revised text was published posthumously by Richard Monckton Milnes in 1848.</p>
+<p>John Keats (1795-1821) was one of the principal figures of the English Romantic movement. He died of tuberculosis at just twenty-five, yet produced some of the most enduring poetry in the English language. <strong>"La Belle Dame sans Merci"</strong> (French for "The Beautiful Lady Without Mercy") was composed on 21 April 1819, the same extraordinarily productive period that yielded his great odes. Keats wrote the poem in April 1819, in a letter to his brother George and sister-in-law Georgiana. A revised version was first published in Leigh Hunt's <em>The Indicator</em> in May 1820. The original letter text, which is the version printed in the Edexcel anthology, was first published by Richard Monckton Milnes in 1848.</p>
 
 <p>The title is borrowed from a medieval poem by Alain Chartier (1424). Keats was deeply influenced by medieval romance and balladry, and the poem imitates the form and atmosphere of the traditional ballad. At the time of writing, Keats was falling in love with Fanny Brawne, but was also acutely aware of his deteriorating health and his inability to provide for a wife. This tension between desire and doom pervades the poem.</p>
 
@@ -1509,7 +1509,7 @@ const myLastDuchessModules: CourseModule[] = [
 <h3>Context</h3>
 <p>Robert Browning (1812-1889) was one of the foremost Victorian poets, celebrated for perfecting the <strong>dramatic monologue</strong> - a form in which a single speaker addresses a silent listener, inadvertently revealing their own character. "My Last Duchess" was published in <em>Dramatic Lyrics</em> (1842) and is based on historical figures.</p>
 
-<p>The speaker is widely identified as <strong>Alfonso II, Duke of Ferrara</strong> (1533-1597), an Italian Renaissance nobleman. His first wife, Lucrezia de' Medici, died in 1561 at the age of seventeen under suspicious circumstances - possibly poisoned. Shortly after her death, Alfonso began negotiations to marry the niece of the Count of Tyrol. In the poem, the Duke is showing a portrait of his deceased wife to an envoy who has come to negotiate the new marriage.</p>
+<p>The speaker is widely identified as <strong>Alfonso II, Duke of Ferrara</strong> (1533-1597), an Italian Renaissance nobleman. His first wife, Lucrezia de' Medici, died in 1561 at the age of sixteen under suspicious circumstances - possibly poisoned. Shortly after her death, Alfonso began negotiations to marry the sister of the Count of Tyrol. In the poem, the Duke is showing a portrait of his deceased wife to an envoy who has come to negotiate the new marriage.</p>
 
 <div class="key-term"><strong>Key Term: Dramatic Monologue</strong> - A poem in which a single speaker (not the poet) addresses a silent listener. The speaker unintentionally reveals aspects of their character - often negative ones - through what they say and how they say it. The reader must "read between the lines."</div>
 
@@ -1539,7 +1539,7 @@ const myLastDuchessModules: CourseModule[] = [
         ],
         correct: 1,
         explanation:
-          "The Duke is based on Alfonso II of Ferrara, whose first wife Lucrezia de' Medici died at seventeen, possibly poisoned. He was negotiating a new marriage shortly afterward - the situation the poem dramatises.",
+          "The Duke is based on Alfonso II of Ferrara, whose first wife Lucrezia de' Medici died at sixteen, possibly poisoned. He was negotiating a new marriage shortly afterward - the situation the poem dramatises.",
       },
       {
         id: 'igp2-duchess-m1-q2',

@@ -9,7 +9,7 @@ const SLUG = 'a-game-of-polo-with-a-headless-goat'
 export const metadata: Metadata = {
   title: 'A Game of Polo with a Headless Goat - Emma Levine',
   description:
-    'Emma Levine on an illegal donkey-cart race in Karachi, from the Edexcel IGCSE English Language A (4EA1) anthology, with a link to the full study guide.',
+    'Emma Levine on a donkey-cart race along a main road in Karachi, from the Edexcel IGCSE English Language A (4EA1) anthology, with a link to the full study guide.',
   alternates: {
     canonical: stubCanonical(SLUG, `/revision/texts/${SLUG}`),
   },
