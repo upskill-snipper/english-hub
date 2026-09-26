@@ -12283,6 +12283,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'study_guide.visuals.intro_part': 'Cada momento clave de esta parte del texto, por turno.',
   'study_guide.visuals.intro_scenes':
     'Cada momento clave por turno. Elige una parte del texto para ir a ella.',
+  'study_guide.visuals.intro_scenes_all': 'Cada momento clave del texto, por turno.',
   'study_guide.visuals.arc_title': 'Arco de tensión',
   'study_guide.visuals.arc_desc':
     'Cómo sube y baja la tensión. Selecciona un punto para abrir ese momento.',

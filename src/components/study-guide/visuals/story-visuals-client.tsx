@@ -4,7 +4,7 @@ import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react'
 import type { KeyboardEvent, RefObject } from 'react'
 import { ChevronLeft, ChevronRight, MapPin, Pause, Play, Sparkles, Users } from 'lucide-react'
 
-import { partOf } from '@/lib/study-guides/parts'
+import { partOf, showsPartChips } from '@/lib/study-guides/parts'
 import type { GuideMoment, GuideRelationship } from '@/lib/study-guides/types'
 
 /**
@@ -226,7 +226,7 @@ export function StoryVisualsClient({
     })
     return out
   }, [timeline])
-  const showParts = parts.length >= 2 && parts.length <= 16
+  const showParts = showsPartChips(timeline.map((m) => m.where))
   const currentPart = current ? partOf(current.where) : null
 
   const [mapRef, mapSeen] = useSeen<SVGSVGElement>()

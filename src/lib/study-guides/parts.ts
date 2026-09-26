@@ -20,3 +20,15 @@ export function partOf(where: string): string {
 export function inPart(where: string, part: string): boolean {
   return partOf(where).toLowerCase() === part.trim().toLowerCase()
 }
+
+/**
+ * Whether the scene player shows chips to jump between parts: only when there
+ * is more than one part and few enough to be a menu rather than a second
+ * progress bar. The server wrapper reads it too, so its introduction offers
+ * the chips only when they are there: until 26 September 2026 Jane Eyre's
+ * chapter page, with 23 parts and so no chips, told students to choose one.
+ */
+export function showsPartChips(wheres: readonly string[]): boolean {
+  const count = new Set(wheres.map(partOf)).size
+  return count >= 2 && count <= 16
+}

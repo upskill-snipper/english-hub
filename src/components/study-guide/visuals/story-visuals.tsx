@@ -1,7 +1,7 @@
 import { Clapperboard } from 'lucide-react'
 
 import { t } from '@/lib/i18n/t'
-import { inPart } from '@/lib/study-guides/parts'
+import { inPart, showsPartChips } from '@/lib/study-guides/parts'
 import type { StudyGuide } from '@/lib/study-guides/types'
 import { StoryVisualsClient, type StoryVisualsLabels } from './story-visuals-client'
 
@@ -59,15 +59,18 @@ export async function StoryVisuals({
     'parts',
   ] as const
   // The whole-text intro names the arc and the character map, so a page that
-  // shows the scene player alone says what it does show instead.
+  // shows the scene player alone says what it does show instead, and offers
+  // the part chips only where the player draws them.
   const [heading, intro, ...values] = await Promise.all([
     t('study_guide.visuals.heading'),
     t(
       part
         ? 'study_guide.visuals.intro_part'
-        : scenesOnly
-          ? 'study_guide.visuals.intro_scenes'
-          : 'study_guide.visuals.intro',
+        : !scenesOnly
+          ? 'study_guide.visuals.intro'
+          : showsPartChips(timeline.map((m) => m.where))
+            ? 'study_guide.visuals.intro_scenes'
+            : 'study_guide.visuals.intro_scenes_all',
     ),
     ...keys.map((k) => t(`study_guide.visuals.${k}`)),
   ])

@@ -11701,6 +11701,7 @@ export const AR_MESSAGES: Record<string, string> = {
     'شكل النص كامل، وكل لحظة مفتاحية بالترتيب، وشلون ترتبط الشخصيات ببعض.',
   'study_guide.visuals.intro_part': 'كل لحظة مفتاحية في هالجزء من النص، بالترتيب.',
   'study_guide.visuals.intro_scenes': 'كل لحظة مفتاحية بالترتيب. اختار جزء من النص عشان تروح له.',
+  'study_guide.visuals.intro_scenes_all': 'كل لحظة مفتاحية في النص، بالترتيب.',
   'study_guide.visuals.arc_title': 'منحنى التوتّر',
   'study_guide.visuals.arc_desc': 'شلون يرتفع التوتّر وينزل. اختار نقطة عشان تفتح هاللحظة.',
   'study_guide.visuals.arc_note': 'التوتّر قراءة للنص مو حقيقة عنه: استخدمه للشكل العام، وناقشه.',

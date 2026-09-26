@@ -17,7 +17,7 @@ import {
 } from '@/lib/study-guides/validate'
 import { SECTION_KEYS, type StudyGuide } from '@/lib/study-guides/types'
 import { sectionsPresent } from '@/lib/study-guides/sections'
-import { inPart, partOf } from '@/lib/study-guides/parts'
+import { inPart, partOf, showsPartChips } from '@/lib/study-guides/parts'
 
 /**
  * Every study guide meets the same bar, and every quotation from an
@@ -407,6 +407,19 @@ describe('the parts of a text', () => {
     expect(inPart('Chapter 1, the door', 'Chapter 1')).toBe(true)
     expect(inPart('Chapter 10, the last night', 'Chapter 1')).toBe(false)
     expect(inPart('act 2, scene 1', 'Act 2')).toBe(true)
+  })
+
+  it('offers part chips only between 2 and 16 parts, and both halves ask the same rule', () => {
+    const acts = (n: number) => Array.from({ length: n }, (_, i) => `Act ${i + 1}, scene`)
+    expect(showsPartChips(acts(1))).toBe(false)
+    expect(showsPartChips(acts(5))).toBe(true)
+    expect(showsPartChips(acts(16))).toBe(true)
+    // Jane Eyre's guide has 23 parts: no chips, so its introduction must not
+    // tell the student to choose one, as it did until 26 September 2026.
+    expect(showsPartChips(acts(23))).toBe(false)
+    const dir = join(process.cwd(), 'src/components/study-guide/visuals')
+    for (const f of ['story-visuals.tsx', 'story-visuals-client.tsx'])
+      expect(readFileSync(join(dir, f), 'utf8'), f).toMatch(/showsPartChips\(timeline\.map/)
   })
 })
 

@@ -110,6 +110,13 @@ export const STUDY_GUIDE_DICTIONARY: Record<string, { en: string; ar: string; es
     ar: 'كل لحظة مفتاحية بالترتيب. اختار جزء من النص عشان تروح له.',
     es: 'Cada momento clave por turno. Elige una parte del texto para ir a ella.',
   },
+  // For an overview whose text has too many parts for the chips (Jane Eyre's
+  // 23 chapters), so the player shows none to choose from.
+  'study_guide.visuals.intro_scenes_all': {
+    en: 'Each key moment in the text, in turn.',
+    ar: 'كل لحظة مفتاحية في النص، بالترتيب.',
+    es: 'Cada momento clave del texto, por turno.',
+  },
   'study_guide.visuals.arc_title': {
     en: 'Tension arc',
     ar: 'منحنى التوتّر',
