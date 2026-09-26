@@ -451,7 +451,7 @@ export default function MacbethEssayPlansPage() {
         {ESSAY_PLANS.map((plan, index) => (
           <Card key={index} id={`plan-${index + 1}`}>
             <CardHeader>
-              <div className="flex items-start justify-between gap-3">
+              <div className="flex flex-col-reverse items-start gap-2 sm:flex-row sm:justify-between sm:gap-3">
                 <CardTitle className="flex items-start gap-2 text-lg leading-snug">
                   <FileText className="mt-0.5 size-5 shrink-0 text-rose-400" />
                   <span>{plan.question}</span>

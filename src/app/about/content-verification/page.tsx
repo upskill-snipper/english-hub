@@ -186,7 +186,7 @@ export default async function ContentVerificationMethodologyPage() {
             {reviewCategories.map((cat) => (
               <div
                 key={cat.label}
-                className={`rounded-xl border p-4 flex items-start gap-4 ${toneClass[cat.tone]}`}
+                className={`rounded-xl border p-4 flex flex-col items-start gap-2 sm:flex-row sm:gap-4 ${toneClass[cat.tone]}`}
               >
                 <Badge variant="outline" className="font-mono text-xs px-2 py-0.5 shrink-0">
                   {cat.label}

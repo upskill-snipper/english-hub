@@ -708,7 +708,10 @@ export default function FreeResourcesPage() {
               <h3 className="text-lg font-semibold mb-3">{tr(`Key Characters`)}</h3>
               <div className="space-y-3">
                 {teachingGuide.characters.map((char) => (
-                  <div key={char.name} className="flex items-start gap-3 text-sm">
+                  <div
+                    key={char.name}
+                    className="flex flex-col items-start gap-1.5 text-sm sm:flex-row sm:gap-3"
+                  >
                     <Badge
                       variant="outline"
                       className="shrink-0 mt-0.5 text-xs min-w-[120px] justify-center"
