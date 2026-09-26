@@ -11707,10 +11707,34 @@ export const DICTIONARY: Dictionary = {
     ar: 'مختارات Pearson IGCSE Language A (4EA1)',
     es: 'Antología de Pearson IGCSE Language A (4EA1)',
   },
+  // CORRECTED 26 September 2026. The note said "Section A non-fiction,
+  // Section B poetry and Section C prose". The anthology has no Section C:
+  // Part 1 is examined in Unit 1 Section A and Part 2 (poetry and prose) in
+  // Unit 2 Section A, or by coursework. Its Part 3 poems are Literature only.
   'texts.section.pearson_anthology_note': {
-    en: 'Section A non-fiction, Section B poetry and Section C prose for the Pearson Edexcel International GCSE English Language A specification.',
-    ar: 'Section A نصوص غير قصصية، Section B شِعر، و Section C نثر - لمواصفات Pearson Edexcel International GCSE English Language A.',
-    es: 'No ficción de la Section A, poesía de la Section B y prosa de la Section C para la especificación de Pearson Edexcel International GCSE English Language A.',
+    en: 'Parts 1 and 2 of the Pearson Edexcel International GCSE English Anthology, set for English Language A. Part 1 (non-fiction) is examined in Unit 1 Section A. Part 2 (poetry and prose) is examined in Unit 2 Section A, or assessed by coursework for students on that route.',
+    ar: 'الجزآن 1 و2 من Pearson Edexcel International GCSE English Anthology، وهما مقرّران لـ English Language A. الجزء 1 (نصوص غير قصصية) يُمتحن في Unit 1 Section A. الجزء 2 (شِعر ونثر) يُمتحن في Unit 2 Section A، أو يُقيَّم بالـ coursework للطلاب في هذا المسار.',
+    es: 'Las partes 1 y 2 de la Pearson Edexcel International GCSE English Anthology, prescritas para English Language A. La parte 1 (no ficción) se examina en la Unit 1 Section A. La parte 2 (poesía y prosa) se examina en la Unit 2 Section A o se evalúa mediante coursework para quienes siguen esa vía.',
+  },
+  'texts.section.pearson_lit_anthology': {
+    en: 'Pearson IGCSE Literature (4ET1) anthology poems',
+    ar: 'قصائد مختارات Pearson IGCSE Literature (4ET1)',
+    es: 'Poemas de la antología de Pearson IGCSE Literature (4ET1)',
+  },
+  'texts.section.pearson_lit_anthology_note': {
+    en: 'Part 3 of the same anthology. All sixteen poems must be studied for English Literature (4ET1), examined in Unit 1 Section B. They are not studied for English Language A.',
+    ar: 'الجزء 3 من المختارات نفسها. يجب دراسة القصائد الست عشرة كلها لـ English Literature (4ET1)، وتُمتحن في Unit 1 Section B. لا تُدرس لـ English Language A.',
+    es: 'La parte 3 de la misma antología. Los dieciséis poemas son obligatorios en English Literature (4ET1) y se examinan en la Unit 1 Section B. No se estudian en English Language A.',
+  },
+  'texts.section.other_texts': {
+    en: 'Other poems and short stories',
+    ar: 'قصائد وقصص قصيرة أخرى',
+    es: 'Otros poemas y relatos breves',
+  },
+  'texts.section.other_texts_note': {
+    en: 'These are not in the Pearson anthology, and we have not found them set by any exam board we cover.',
+    ar: 'هذه النصوص ليست في مختارات Pearson، ولم نجدها مقرّرة لدى أي بورد امتحانات نغطيه.',
+    es: 'No están en la antología de Pearson, y no las hemos encontrado como textos prescritos por ninguna junta examinadora que cubrimos.',
   },
   'texts.label.non_fiction': { en: 'Non-fiction:', ar: 'نصوص غير قصصية:', es: 'No ficción:' },
   'texts.label.poetry': { en: 'Poetry:', ar: 'شِعر:', es: 'Poesía:' },
@@ -11785,10 +11809,13 @@ export const DICTIONARY: Dictionary = {
     ar: 'تنبيه نسخة المختارات:',
     es: 'Aviso sobre la versión de la antología:',
   },
+  // CORRECTED 26 September 2026. This named Issue 2. The current anthology is
+  // Issue 8 (February 2026, same ISBN), and Pearson publishes it free as a PDF,
+  // so no notice here should send students to a licensed edition.
   'anth_page.version_warning_body': {
-    en: 'This site teaches the Edexcel IGCSE Anthology Issue 2 (ISBN 978-1-446-93108-0, Pearson Education). Two of the non-fiction texts in this Paper 1 Section A anthology are adapted versions that differ from their freely-available online originals.',
-    ar: 'هذا الموقع يدرّس Edexcel IGCSE Anthology Issue 2 (ISBN 978-1-446-93108-0, Pearson Education). نصّين من النصوص غير القصصية في Paper 1 Section A نسخ معدّلة تختلف عن الأصول المتاحة أونلاين ببلاش.',
-    es: 'Este sitio enseña la Edexcel IGCSE Anthology Issue 2 (ISBN 978-1-446-93108-0, Pearson Education). Dos de los textos de no ficción de esta antología del Paper 1 Section A son versiones adaptadas que difieren de sus originales disponibles gratuitamente en internet.',
+    en: 'This site teaches Issue 8 (February 2026) of the Pearson Edexcel International GCSE English Anthology (ISBN 978-1-446-93108-0), which Pearson publishes free as a PDF on its qualifications website. Two of the non-fiction texts in Part 1, the texts for Paper 1 Section A, are adapted versions that differ from their freely-available online originals.',
+    ar: 'هذا الموقع يدرّس Issue 8 (فبراير 2026) من Pearson Edexcel International GCSE English Anthology (ISBN 978-1-446-93108-0)، واللي تنشرها Pearson ببلاش كملف PDF على موقع مؤهّلاتها. نصّين من النصوص غير القصصية في Part 1، وهي نصوص Paper 1 Section A، نسخ معدّلة تختلف عن الأصول المتاحة أونلاين ببلاش.',
+    es: 'Este sitio enseña la Issue 8 (febrero de 2026) de la Pearson Edexcel International GCSE English Anthology (ISBN 978-1-446-93108-0), que Pearson publica gratis en PDF en su web de titulaciones. Dos de los textos de no ficción de la Part 1, los del Paper 1 Section A, son versiones adaptadas que difieren de sus originales disponibles gratuitamente en internet.',
   },
   'anth_page.use_anthology_emph': {
     en: 'Always use the anthology version',
@@ -11821,40 +11848,49 @@ export const DICTIONARY: Dictionary = {
     ar: 'Paper 1 Section A - شنو تتوقّع',
     es: 'Paper 1 Section A - qué esperar',
   },
+  // CORRECTED 26 September 2026. This box described a paper that does not
+  // exist: a 4-mark "List four things" retrieval question (Q1), then separate
+  // 12-mark language (Q2) and structure (Q3) questions, all on the anthology
+  // extract, with no unseen text and no comparison. On every 4EA1/01 paper
+  // from the 2016 sample to the June 2026 mark scheme, Text One is an unseen
+  // extract carrying Q1 to Q3 (2, 4 and 5 marks), Text Two is the anthology
+  // text carrying Q4 (12 marks, language and structure in one answer, one
+  // grid), and Q5 (22 marks) compares the two. The three item keys keep their
+  // names but now mean Q1-3, Q4 and Q5.
   'anth_page.expect_intro': {
-    en: 'In Paper 1 Section A you will be given an extract from one of the ten anthology texts. You will answer three types of question:',
-    ar: 'في Paper 1 Section A بيعطونك مقطع من أحد النصوص العشرة. بتجاوب على ثلاث أنواع أسئلة:',
-    es: 'En el Paper 1 Section A se te dará un extracto de uno de los diez textos de la antología. Responderás a tres tipos de pregunta:',
+    en: 'Section A is worth 45 marks and you answer every question. It gives you two texts: Text One, an unseen extract you have not read before, and Text Two, one of the ten anthology texts, which is provided in the exam. Pearson advises about 1 hour 30 minutes for the section, including reading time.',
+    ar: 'Section A عليها ٤٥ درجة ولازم تجاوب على كل الأسئلة. بيعطونك نصّين: Text One مقطع unseen ما قد قريته قبل، و Text Two واحد من نصوص المختارات العشرة، ويكون موجود لك في الامتحان. Pearson تنصح بحوالي ساعة ونص للـ Section كلها، مع وقت القراءة.',
+    es: 'La Section A vale 45 puntos y debes responder a todas las preguntas. Te da dos textos: el Text One, un extracto inédito que no has leído antes, y el Text Two, uno de los diez textos de la antología, que se te proporciona en el examen. Pearson recomienda dedicarle alrededor de 1 hora y 30 minutos, incluido el tiempo de lectura.',
   },
   'anth_page.expect_q1_label': {
-    en: 'Retrieval (Q1):',
-    ar: 'الاسترجاع (Q1):',
-    es: 'Recuperación (Q1):',
+    en: 'Questions 1 to 3, Text One (2, 4 and 5 marks):',
+    ar: 'الأسئلة 1 إلى 3، Text One (٢ و٤ و٥ درجات):',
+    es: 'Preguntas 1 a 3, Text One (2, 4 y 5 puntos):',
   },
   'anth_page.expect_q1_body': {
-    en: '"List four things about..." - straightforward identification of information from the text. Worth 4 marks.',
-    ar: '"اذكر أربعة أشياء عن…" - استخراج مباشر للمعلومات من النص. القيمة ٤ درجات.',
-    es: '"List four things about..." - identificación directa de información del texto. Vale 4 puntos.',
+    en: 'short-answer questions on the unseen extract only, testing how well you read and understand it. No past paper has set a short-answer or retrieval question on the anthology text.',
+    ar: 'أسئلة إجاباتها قصيرة على المقطع الـ unseen بس، تختبر قراءتك وفهمك له. ولا ورقة امتحان سابقة حطّت سؤال قصير أو سؤال استرجاع على نص المختارات.',
+    es: 'preguntas de respuesta breve solo sobre el extracto inédito, que evalúan tu lectura y comprensión. Ningún examen anterior ha puesto una pregunta de respuesta breve o de localizar información sobre el texto de la antología.',
   },
   'anth_page.expect_q2_label': {
-    en: 'Language analysis (Q2):',
-    ar: 'تحليل اللغة (Q2):',
-    es: 'Análisis del lenguaje (Q2):',
+    en: 'Question 4, Text Two (12 marks):',
+    ar: 'السؤال 4، Text Two (١٢ درجة):',
+    es: 'Pregunta 4, Text Two (12 puntos):',
   },
   'anth_page.expect_q2_body': {
-    en: '"How does the writer use language to..." - close analysis of specific techniques and their effects on the reader. Worth 12 marks.',
-    ar: '"كيف يستخدم الكاتب اللغة عشان…" - تحليل دقيق لتقنيات معيّنة وأثرها على القارئ. القيمة ١٢ درجة.',
-    es: '"How does the writer use language to..." - análisis detallado de técnicas concretas y sus efectos en el lector. Vale 12 puntos.',
+    en: '"How does the writer, [name], use language and structure to...?" This is the only question on the anthology text by itself. Write about language and structure together, from across the whole extract, in one answer: it is marked on a single grid, and every level above Level 1 describes both.',
+    ar: '"How does the writer, [name], use language and structure to...?" هذا السؤال الوحيد على نص المختارات لحاله. اكتب عن اللغة والبنية مع بعض، من المقطع كله، في إجابة وحدة: يتصحّح على جدول مستويات واحد، وكل مستوى فوق Level 1 يوصف الاثنين.',
+    es: '"How does the writer, [name], use language and structure to...?" Es la única pregunta sobre el texto de la antología por sí solo. Escribe sobre el lenguaje y la estructura a la vez, con ejemplos de todo el extracto, en una sola respuesta: se corrige con una única tabla de niveles, y todos los niveles por encima del Level 1 describen ambos.',
   },
   'anth_page.expect_q3_label': {
-    en: 'Structural analysis (Q3):',
-    ar: 'تحليل البنية (Q3):',
-    es: 'Análisis estructural (Q3):',
+    en: 'Question 5, both texts (22 marks):',
+    ar: 'السؤال 5، النصّين مع بعض (٢٢ درجة):',
+    es: 'Pregunta 5, ambos textos (22 puntos):',
   },
   'anth_page.expect_q3_body': {
-    en: '"How does the writer structure the text to..." - analysis of how the text is organised to engage and influence the reader. Worth 12 marks.',
-    ar: '"كيف يبني الكاتب النص عشان…" - تحليل كيف ينظّم النص ليجذب القارئ ويؤثّر فيه. القيمة ١٢ درجة.',
-    es: '"How does the writer structure the text to..." - análisis de cómo se organiza el texto para captar e influir en el lector. Vale 12 puntos.',
+    en: 'compare how the two writers present their ideas and perspectives. The comparison is always between the unseen extract and the anthology text, never two anthology texts, and an answer that covers only one text cannot score more than 8.',
+    ar: 'قارن كيف يعرض الكاتبين أفكارهم ووجهات نظرهم. المقارنة دايماً بين المقطع الـ unseen ونص المختارات، وأبداً ما تكون بين نصّين من المختارات، والإجابة اللي تغطّي نص واحد بس ما تاخذ أكثر من ٨ درجات.',
+    es: 'compara cómo los dos escritores presentan sus ideas y perspectivas. La comparación es siempre entre el extracto inédito y el texto de la antología, nunca entre dos textos de la antología, y una respuesta que trate solo un texto no puede obtener más de 8 puntos.',
   },
   'anth_page.study_all_note': {
     en: 'You should study all ten texts. You will not know which text will appear in the exam until you open the paper.',
@@ -19418,10 +19454,17 @@ export const DICTIONARY: Dictionary = {
     ar: 'Pearson Edexcel IGCSE Language A',
     es: 'Pearson Edexcel IGCSE Language A',
   },
+  // CORRECTED 26 September 2026, with the paper keys below, against the
+  // specification (Issue 7, August 2025). This called 4EA1 a two-paper
+  // qualification covering only non-fiction and transactional writing, and the
+  // hub gave Paper 1 as 1h45 and 60 marks, Paper 2 as 40 marks of non-fiction
+  // reading and writing, and 3h15 in all. Paper 1 is 2h15 and 90 marks; Paper 2
+  // is poetry, prose and imaginative writing, 1h30 and 60 marks, and a
+  // coursework component (Component 3) can replace it.
   'edexcel.lang.hero_lead_pre': {
-    en: 'The Pearson Edexcel International GCSE in English Language (Specification A) is a two-paper qualification covering ',
-    ar: 'مؤهّل Pearson Edexcel International GCSE in English Language (Specification A) بورقتين امتحان، ويغطّي ',
-    es: 'El Pearson Edexcel International GCSE in English Language (Specification A) es una titulación de dos exámenes que cubre ',
+    en: 'The Pearson Edexcel International GCSE in English Language (Specification A) is taken as Paper 1 plus either Paper 2 or a non-examined coursework component. Paper 1 covers ',
+    ar: 'مؤهّل Pearson Edexcel International GCSE in English Language (Specification A) فيه Paper 1، وبعدها يا Paper 2 يا مكوّن coursework ما فيه امتحان. Paper 1 يغطّي ',
+    es: 'El Pearson Edexcel International GCSE in English Language (Specification A) consta del Paper 1 más el Paper 2 o un componente de coursework no examinado. El Paper 1 cubre ',
   },
   'edexcel.lang.hero_lead_nf': {
     en: 'non-fiction reading',
@@ -19444,10 +19487,11 @@ export const DICTIONARY: Dictionary = {
     ar: ' فيها عشرة نصوص غير أدبية للمذاكرة في Paper 1 Section A.',
     es: ' de diez textos de no ficción estudiados para el Paper 1 Section A.',
   },
-  'edexcel.lang.duration_3h15': {
-    en: '3h 15m total',
-    ar: '٣ ساعات و١٥ دقيقة إجمالاً',
-    es: '3 h 15 min en total',
+  // Was 'edexcel.lang.duration_3h15' ("3h 15m total"). 2h15 + 1h30 is 3h45.
+  'edexcel.lang.duration_total': {
+    en: '3h 45m total (Papers 1 and 2)',
+    ar: '٣ ساعات و٤٥ دقيقة إجمالاً (Paper 1 و Paper 2)',
+    es: '3 h 45 min en total (Paper 1 y Paper 2)',
   },
   'edexcel.lang.anth_texts_count': {
     en: '10 anthology texts',
@@ -19470,19 +19514,19 @@ export const DICTIONARY: Dictionary = {
     es: 'Paper 1: Textos de no ficción y escritura transaccional',
   },
   'edexcel.lang.paper1.meta': {
-    en: '1 hour 45 minutes · 60 marks · 60% of total',
-    ar: 'ساعة و٤٥ دقيقة · ٦٠ درجة · ٦٠٪ من المجموع',
-    es: '1 hora 45 minutos · 60 puntos · 60% del total',
+    en: '2 hours 15 minutes · 90 marks · 60% of total',
+    ar: 'ساعتين و١٥ دقيقة · ٩٠ درجة · ٦٠٪ من المجموع',
+    es: '2 horas 15 minutos · 90 puntos · 60% del total',
   },
   'edexcel.lang.paper2.title': {
-    en: 'Paper 2: Reading and Writing (Non-Fiction)',
-    ar: 'Paper 2: القراءة والكتابة (نصوص غير أدبية)',
-    es: 'Paper 2: Lectura y escritura (no ficción)',
+    en: 'Paper 2: Poetry and Prose Texts and Imaginative Writing',
+    ar: 'Paper 2: نصوص الشِّعر والنثر والكتابة الإبداعية',
+    es: 'Paper 2: Textos de poesía y prosa y escritura imaginativa',
   },
   'edexcel.lang.paper2.meta': {
-    en: '1 hour 30 minutes · 40 marks · 40% of total',
-    ar: 'ساعة و٣٠ دقيقة · ٤٠ درجة · ٤٠٪ من المجموع',
-    es: '1 hora 30 minutos · 40 puntos · 40% del total',
+    en: '1 hour 30 minutes · 60 marks · 40% of total',
+    ar: 'ساعة و٣٠ دقيقة · ٦٠ درجة · ٤٠٪ من المجموع',
+    es: '1 hora 30 minutos · 60 puntos · 40% del total',
   },
   'edexcel.lang.footer_align': {
     en: 'Aligned with Pearson Edexcel specification 4EA1',
@@ -19975,10 +20019,12 @@ export const DICTIONARY: Dictionary = {
     ar: 'تنبيه نسخة المختارات:',
     es: 'Aviso sobre la versión de la antología:',
   },
+  // CORRECTED 26 September 2026: named Issue 2. The current anthology is
+  // Issue 8 (February 2026).
   'anthology_hub.version_warning_body': {
-    en: 'This site teaches the Edexcel IGCSE Anthology Issue 2. Two of the non-fiction texts are adapted versions that differ from their freely-available online originals.',
-    ar: 'هذا الموقع يدرّس Edexcel IGCSE Anthology Issue 2. نصّين من النصوص غير القصصية نسخ معدّلة تختلف عن الأصول المتاحة أونلاين ببلاش.',
-    es: 'Este sitio enseña la Edexcel IGCSE Anthology Issue 2. Dos de los textos de no ficción son versiones adaptadas que difieren de sus originales disponibles gratuitamente en internet.',
+    en: 'This site teaches Issue 8 (February 2026) of the Pearson Edexcel International GCSE English Anthology, which Pearson publishes free as a PDF. Two of the non-fiction texts are adapted versions that differ from their freely-available online originals.',
+    ar: 'هذا الموقع يدرّس Issue 8 (فبراير 2026) من Pearson Edexcel International GCSE English Anthology، واللي تنشرها Pearson ببلاش كملف PDF. نصّين من النصوص غير القصصية نسخ معدّلة تختلف عن الأصول المتاحة أونلاين ببلاش.',
+    es: 'Este sitio enseña la Issue 8 (febrero de 2026) de la Pearson Edexcel International GCSE English Anthology, que Pearson publica gratis en PDF. Dos de los textos de no ficción son versiones adaptadas que difieren de sus originales disponibles gratuitamente en internet.',
   },
   'anthology_hub.use_anthology_emph': {
     en: 'Always use the anthology version',

@@ -19,7 +19,8 @@ import { t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title: 'H is for Hawk - Helen Macdonald - IGCSE Language A Anthology - The English Hub',
-    description: 'Study guide for ',
+    description:
+      'Helen Macdonald on grief and a goshawk, for Edexcel IGCSE Language A: themes, structural analysis, purpose and Paper 1 Section A practice.',
     images: [
       {
         url: '/api/og?title=H+is+for+Hawk+-+Helen+Macdonald+-+IGCSE+Language+A+Anthology+-+The+English+Hub',
@@ -35,11 +36,20 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/igcse/edexcel-lang/anthology/h-is-for-hawk' },
 }
 
+/**
+ * CORRECTED 26 September 2026 against Pearson's anthology, Issue 8 (February
+ * 2026), pp. 19-20. The themes and structure notes described the book, not the
+ * extract: training and flying the hawk, a climax of self-recognition, a
+ * resolution of quieter understanding. The extract is her first meeting with
+ * the hawks. It opens on the seller checking ring numbers against paperwork,
+ * contains no training or flying, and ends unresolved, in silence, before the
+ * seller answers her plea. Grief is named only in the anthology's introduction.
+ */
 const themes = [
   {
     label: 'Grief',
     detail:
-      'Macdonald begins training a goshawk in the aftermath of her father’s death; the bird and the grief are bound together throughout the text.',
+      'The anthology’s introduction explains that Macdonald adopted a goshawk to distract herself from her grief after her father’s sudden death. The extract itself never names the grief, which leaves the reader to sense it in the intensity of her reaction to the hawks.',
   },
   {
     label: 'Nature and the wild',
@@ -49,7 +59,7 @@ const themes = [
   {
     label: 'Obsession',
     detail:
-      'Training the hawk consumes her - physically, mentally, emotionally. The text registers obsession as both a refuge and a danger.',
+      'She has only just met the hawks, yet her sense of which bird is hers is already overwhelming: when the hawk meant for her feels wrong, she breaks etiquette and pleads with the seller in a desperate, incoherent barrage. The text registers obsession as both a refuge and a danger.',
   },
   {
     label: 'Identity and self',
@@ -65,13 +75,13 @@ const themes = [
 
 const structuralAnalysis = {
   opening:
-    'Macdonald opens in a moment of intense observation - a precise, sensory image that pulls the reader into her hyper-attentive state of mind.',
+    'Macdonald opens with dialogue and paperwork: the seller checking the hawks’ ring numbers against their official documents. The procedural start delays the moment the reader is waiting for, the first sight of the hawk.',
   development:
-    'The text moves between external action (training, flying the hawk) and internal reflection (grief, memory, self-examination), the two threads tightening as the narrative progresses.',
+    'The text moves between external action (unboxing and hooding the hawks, checking the ring numbers) and Macdonald’s internal reaction, the two threads tightening as the narrative progresses.',
   climax:
-    'The emotional climax is internal rather than external - a moment of recognition where Macdonald sees herself clearly through the hawk.',
+    'The turning point comes when the ring numbers show that the first hawk, the younger and smaller one, is the wrong bird. The second, meant to be hers, is wild and wailing and she cannot recognise it as her hawk; the climax is her slow panic and desperate plea to the seller to let her have the first bird instead.',
   resolution:
-    'The resolution is not closure but a quieter understanding. Grief is not resolved; it has been moved through.',
+    'There is no resolution. The extract ends in silence, before the seller answers her plea, leaving the reader in suspense.',
   perspective:
     'First-person literary memoir. Macdonald’s voice is precise, lyrical and unsparing about her own emotional state.',
 }
@@ -88,19 +98,40 @@ const writersPurpose = {
 /** The text these practice questions are about, sent to the marker as context. */
 const ANTHOLOGY_TEXT_TITLE = 'H is for Hawk'
 
+/**
+ * CHANGED 26 September 2026 to match the paper. This page used to set a
+ * "Retrieval - 4 marks" question ("List four things you learn about Macdonald’s
+ * relationship with the hawk"), a language-only question and a structure-only
+ * question, each "12 marks". 4EA1 Paper 1 asks none of them. In every Pearson
+ * document checked (the 2016 SAMs, the 2017 extra assessment materials, papers
+ * P65890A and P65891RA of 2021, the June 2023, November 2023, May 2024 and
+ * November 2024 papers, the November 2023, June 2024, June 2025 and Summer 2026
+ * mark schemes, and the June 2019 and June 2025 examiners' reports), Q1 to Q3
+ * are short answers on Text One, the unseen extract. The anthology text is
+ * Text Two, and the only question on it alone is Q4: language and structure
+ * together, on the whole extract, one 12-mark AO2 grid. Q5 (22 marks) compares
+ * it with the unseen text, never with another anthology text.
+ *
+ * The labels are what questionIdForPracticeType maps: "12 marks" goes to Q4 and
+ * "22 marks" to nothing, so q3 carries no marking button and says why. Do not
+ * set a question on training or flying the hawk: the extract ends, in silence,
+ * before the breeder answers her plea, and neither happens in it.
+ */
 const examPractice = {
   q1: {
-    question: 'List four things you learn about Macdonald’s relationship with the hawk.',
-    type: 'Retrieval - 4 marks',
+    question:
+      'How does the writer, Helen Macdonald, use language and structure to build towards her first sight of the hawk? Support your answer with close reference to the extract, including brief quotations.',
+    type: 'Language and structure - 12 marks',
   },
   q2: {
-    question: 'How does Macdonald use language to convey her emotional state?',
-    type: 'Language analysis - 12 marks',
+    question:
+      'How does the writer, Helen Macdonald, use language and structure to convey her emotional state? Support your answer with close reference to the extract, including brief quotations.',
+    type: 'Language and structure - 12 marks',
   },
   q3: {
     question:
-      'How does Macdonald structure the text to interweave grief and the training of the hawk?',
-    type: 'Structural analysis - 12 marks',
+      'In the exam, Question 5 asks you to compare this extract with an unseen passage. Practise with any passage on a similar subject: compare how the two writers present their ideas and perspectives about a powerful encounter with an animal.',
+    type: 'Comparison - 22 marks',
   },
 }
 
@@ -184,9 +215,9 @@ export default async function HIsForHawkPage() {
           </p>
           <p>
             The book won the Samuel Johnson Prize and the Costa Book of the Year, and is widely
-            regarded as a landmark of contemporary British nature writing. The anthology extract
-            concentrates on Macdonald&apos;s close-quarters relationship with the hawk and what that
-            relationship reveals about her grief.
+            regarded as a landmark of contemporary British nature writing. The anthology extract is
+            Macdonald&apos;s first meeting with her hawk, as the man selling the birds unpacks them
+            on a quayside.
           </p>
           <p>Published by Jonathan Cape (Penguin Random House).</p>
         </div>
@@ -310,11 +341,10 @@ export default async function HIsForHawkPage() {
               {examPractice.q3.type}
             </span>
             <p className="mt-2 text-body text-foreground font-medium">{examPractice.q3.question}</p>
-            {await PracticeMarkingButton({
-              type: examPractice.q3.type,
-              question: examPractice.q3.question,
-              textTitle: ANTHOLOGY_TEXT_TITLE,
-            })}
+            <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
+              This question can&apos;t be marked here: it needs the unseen passage that the exam
+              pairs with this text.
+            </p>
           </div>
         </div>
       </section>
@@ -326,8 +356,11 @@ export default async function HIsForHawkPage() {
             {await t('anth_text.section.compare_with')}
           </h2>
         </div>
+        {/* Second sentence added 26 September 2026: the shared intro calls these
+            pairings for the exam, but 4EA1 never pairs two anthology texts. */}
         <p className="text-body-sm text-muted-foreground mb-5">
-          {await t('anth_text.compare_with.intro')}
+          {await t('anth_text.compare_with.intro')} In the exam, Question 5 pairs this text with an
+          unseen passage, never another anthology text, so use these comparisons for revision.
         </p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {comparisonLinks.map((c) => (
@@ -359,10 +392,13 @@ export default async function HIsForHawkPage() {
       <footer className="rounded-lg bg-muted/50 p-4 text-center text-body-xs text-muted-foreground">
         <p>
           <strong className="text-foreground">{await t('anth_text.rights_notice_label')}</strong>{' '}
-          &copy; Jonathan Cape (Penguin Random House) / Helen Macdonald 2014. Brief paraphrases on
-          this page are for criticism, review and quotation under CDPA 1988 &sect;30. For full text,
-          students should consult the licensed school edition (Pearson Edexcel IGCSE anthology, ISBN
-          978-1-446-93108-0).
+          {/* As the anthology's acknowledgements give it. Jonathan Cape is the
+              publisher, not the copyright holder; until 26 September 2026 this read
+              "Jonathan Cape (Penguin Random House) / Helen Macdonald 2014". */}
+          &copy; Helen Macdonald 2014, reproduced in the anthology by permission of The Random House
+          Group Limited and Grove/Atlantic, Inc. Brief paraphrases on this page are for criticism,
+          review and quotation under CDPA 1988 &sect;30. For the full text, use the Pearson Edexcel
+          IGCSE anthology (ISBN 978-1-446-93108-0), which Pearson publishes free.
         </p>
         <p className="mt-2">{await t('anth_text.footer_align')}</p>
       </footer>

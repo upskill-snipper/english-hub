@@ -188,12 +188,18 @@ export interface StudyGuide {
   /**
    * Why the quotations are fewer than usual, shown to the student above them.
    *
-   * For a text whose prescribed wording cannot be checked from here - The
-   * Necklace is set in David Coward's copyrighted translation, and several
-   * anthology texts are printed as adapted extracts - a rule demanding six
-   * quotations is a rule demanding six guesses. With a note, three verified
-   * quotations meet the bar, and the note tells the student to check any
-   * others against their own copy.
+   * For a text whose prescribed wording cannot be checked from here - a novel
+   * or play in copyright whose prescribed edition could not be read in full,
+   * as with The Whale Rider - a rule demanding six quotations is a rule
+   * demanding six guesses. With a note, three verified quotations meet the
+   * bar, and the note tells the student to check any others against their
+   * own copy. A short copyrighted poem, where the quotation limits leave room
+   * for only a few, uses it too.
+   *
+   * Until 26 September 2026 this named The Necklace (David Coward's
+   * translation) and the anthology's adapted extracts as texts that cannot be
+   * checked. Both can: the anthology PDF prints the prescribed wording of
+   * every one, Coward's translation included, so neither needs the lower bar.
    */
   quoteNote?: string
   extracts?: GuideExtract[]

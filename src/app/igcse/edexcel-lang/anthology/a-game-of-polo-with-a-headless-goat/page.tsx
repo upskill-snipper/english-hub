@@ -17,7 +17,7 @@ import { guide } from '@/data/study-guides/a-game-of-polo-with-a-headless-goat'
  * REWRITTEN 26 September 2026. The 705-line guide that stood here was about the
  * wrong text. It analysed buzkashi, the Central Asian sport in the book's
  * title, while the extract Pearson prints in the anthology is Emma Levine
- * filming an illegal donkey-cart race on a main road in Karachi, in which
+ * filming a donkey-cart race on a main road in Karachi, in which
  * buzkashi does not appear. Its themes, language notes, structure notes and
  * model outline all described the sport, so none of it was kept. Its rights
  * notice also named the wrong publisher (Little, Brown; the book is André
@@ -26,10 +26,10 @@ import { guide } from '@/data/study-guides/a-game-of-polo-with-a-headless-goat'
  * The body is now the verified study guide in
  * src/data/study-guides/a-game-of-polo-with-a-headless-goat.ts, written from
  * the anthology and checked quotation by quotation. What this page keeps is its
- * own frame, and the three practice questions with their marking buttons,
- * because those are how a student gets an answer on this text marked, and
- * their wording fits the extract. Their type labels are the ones
- * questionIdForPracticeType maps to the 4EA1 mark scheme.
+ * own frame and its exam-practice section, because the marking buttons there
+ * are how a student gets an answer on this text marked. Later the same day the
+ * practice questions themselves were rewritten to match the real paper: see
+ * the comment above examPractice.
  */
 
 export const metadata: Metadata = {
@@ -57,24 +57,55 @@ export const metadata: Metadata = {
 
 const ANTHOLOGY_TEXT_TITLE = 'A Game of Polo with a Headless Goat'
 
+// REWRITTEN 26 September 2026. Until then this asked a 4-mark retrieval
+// question ("List four things you learn about the event Levine witnesses"),
+// then a language-only and a structure-only question, each "12 marks". None of
+// the three is a question 4EA1 Paper 1 sets on the anthology text. On every
+// Pearson paper checked (the 2016 SAMs, P65890A and P65891RA of 2021, 4EA1/01R
+// of June 2023, November 2023, and 23 May 2024, which printed this extract as
+// Text Two) and in the June 2019 and June 2025 examiners' reports, Q1-3 are
+// short answers on the unseen Text One. The anthology text is examined only by
+// Q4, one 12-mark question on language AND structure across the whole extract,
+// and by Q5, a 22-mark comparison with the unseen text. The retrieval answer
+// was also sent to the Q2 scheme, which describes Text One, so it was marked
+// as the wrong question.
+//
+// The labels are what questionIdForPracticeType in PracticeMarkingButton maps:
+// "12 marks" goes to Q4 and "22 marks" to nothing, so q3 has no button call at
+// all (a call there would render nothing and still count as a button). The
+// button is always passed the English `type`, even on the Arabic page. Until
+// this rewrite the Arabic page passed typeAr, which the mapping, reading only
+// Western digits and "marks", could not match ("١٢ درجة"), so every button
+// silently disappeared in Arabic. The English label keeps the button
+// independent of whether the mapping can read a translation.
 const examPractice = {
   q1: {
-    question: 'List four things you learn about the event Levine witnesses.',
-    questionAr: 'اذكر أربعةَ أشياء تعرفها عن الحدث الذي تشاهده Levine.',
-    type: 'Retrieval - 4 marks',
-    typeAr: 'الاسترجاع - ٤ درجات',
+    question:
+      'How does the writer, Emma Levine, use language and structure to take the reader through the experience of the race? Support your answer with close reference to the extract, including brief quotations.',
+    questionAr:
+      'كيف تستخدم الكاتبة، Emma Levine، اللغةَ والبنيةَ لتأخذ القارئ عبر تجربة السباق؟ ادعم إجابتك بإحالات دقيقة إلى المقتطف، بما في ذلك اقتباسات قصيرة.',
+    type: 'Language and structure - 12 marks',
+    typeAr: 'اللغة والبنية - ١٢ درجة',
   },
   q2: {
-    question: 'How does Levine use language to convey the atmosphere of the spectacle?',
-    questionAr: 'كيف تستخدم Levine اللغةَ لنقل أجواء المشهد؟',
-    type: 'Language analysis - 12 marks',
-    typeAr: 'تحليل اللغة - ١٢ درجة',
+    question:
+      'How does the writer, Emma Levine, use language and structure to convey the atmosphere of the race? Support your answer with close reference to the extract, including brief quotations.',
+    questionAr:
+      'كيف تستخدم الكاتبة، Emma Levine، اللغةَ والبنيةَ لنقل أجواء السباق؟ ادعم إجابتك بإحالات دقيقة إلى المقتطف، بما في ذلك اقتباسات قصيرة.',
+    type: 'Language and structure - 12 marks',
+    typeAr: 'اللغة والبنية - ١٢ درجة',
   },
   q3: {
-    question: 'How does Levine structure the text to take the reader through the experience?',
-    questionAr: 'كيف تبني Levine النصَّ لتأخذ القارئ عبر التجربة؟',
-    type: 'Structural analysis - 12 marks',
-    typeAr: 'التحليل البنائيّ - ١٢ درجة',
+    question:
+      'In the exam, Question 5 asks you to compare this extract with an unseen passage. Practise with any passage on a similar subject: compare how the two writers present their ideas and perspectives about an unusual sporting event.',
+    questionAr:
+      'في الامتحان، يطلب منك السؤال الخامس مقارنة هذا المقتطف بنصٍّ لم تره من قبل. تدرَّب بأيّ نصٍّ عن موضوع مشابه: قارن كيف يقدّم الكاتبان أفكارهما ووجهات نظرهما حول حدثٍ رياضيٍّ غير مألوف.',
+    type: 'Comparison - 22 marks',
+    typeAr: 'المقارنة - ٢٢ درجة',
+    unmarkedNote:
+      "This question can't be marked here: it needs the unseen passage that the exam pairs with this text.",
+    unmarkedNoteAr:
+      'لا يمكن تصحيح هذا السؤال هنا: فهو يحتاج إلى النصّ الذي لم تره من قبل، والذي يضعه الامتحان إلى جانب هذا النص.',
   },
 }
 
@@ -137,7 +168,7 @@ export default async function AGameOfPoloPage() {
               {ar ? examPractice.q1.questionAr : examPractice.q1.question}
             </p>
             {await PracticeMarkingButton({
-              type: ar ? examPractice.q1.typeAr : examPractice.q1.type,
+              type: examPractice.q1.type,
               question: ar ? examPractice.q1.questionAr : examPractice.q1.question,
               textTitle: ANTHOLOGY_TEXT_TITLE,
             })}
@@ -150,7 +181,7 @@ export default async function AGameOfPoloPage() {
               {ar ? examPractice.q2.questionAr : examPractice.q2.question}
             </p>
             {await PracticeMarkingButton({
-              type: ar ? examPractice.q2.typeAr : examPractice.q2.type,
+              type: examPractice.q2.type,
               question: ar ? examPractice.q2.questionAr : examPractice.q2.question,
               textTitle: ANTHOLOGY_TEXT_TITLE,
             })}
@@ -162,11 +193,9 @@ export default async function AGameOfPoloPage() {
             <p className="mt-2 text-body text-foreground font-medium">
               {ar ? examPractice.q3.questionAr : examPractice.q3.question}
             </p>
-            {await PracticeMarkingButton({
-              type: ar ? examPractice.q3.typeAr : examPractice.q3.type,
-              question: ar ? examPractice.q3.questionAr : examPractice.q3.question,
-              textTitle: ANTHOLOGY_TEXT_TITLE,
-            })}
+            <p className="mt-2 text-body-sm text-muted-foreground">
+              {ar ? examPractice.q3.unmarkedNoteAr : examPractice.q3.unmarkedNote}
+            </p>
           </div>
         </div>
       </section>

@@ -8,8 +8,10 @@ const SLUG = 'h-is-for-hawk'
 
 export const metadata: Metadata = {
   title: 'H is for Hawk - Helen Macdonald',
+  // Until 26 September 2026 this said "training a goshawk". That is the
+  // memoir; the anthology extract ends at the handover, before any training.
   description:
-    "Helen Macdonald on training a goshawk after her father's death, from the Edexcel IGCSE Language A (4EA1) anthology, with a link to the full guide.",
+    'Helen Macdonald, grieving her father, meets her goshawk for the first time, from the Edexcel IGCSE Language A (4EA1) anthology, with a link to the full guide.',
   alternates: {
     canonical: stubCanonical(SLUG, `/revision/texts/${SLUG}`),
   },

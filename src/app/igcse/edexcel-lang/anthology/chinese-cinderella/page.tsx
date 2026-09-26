@@ -68,8 +68,11 @@ const themes = [
 const structuralAnalysis = {
   opening:
     'Yen Mah opens with a small, specific moment that immediately situates the reader inside the young Adeline’s emotional world - concrete detail rather than abstract framing.',
+  // Until 26 September 2026 this described "accumulated incidents" that
+  // "establish a pattern". The anthology extract (Issue 8, pp. 21-23) is one
+  // continuous episode on a single Saturday afternoon.
   development:
-    'The text builds through accumulated incidents - small slights, exclusions, unequal treatment - that establish a pattern rather than a single dramatic event.',
+    'The text follows a single continuous episode on one Saturday afternoon: Adeline is called away from a game of Monopoly at school, driven home full of foreboding, and summoned to her father’s room. Tension builds through her uncertainty about why she has been sent for.',
   climax:
     'A moment of unexpected recognition or success becomes the structural climax, all the more powerful for being set against the long preceding pattern of neglect.',
   resolution:
@@ -90,20 +93,36 @@ const writersPurpose = {
 /** The text these practice questions are about, sent to the marker as context. */
 const ANTHOLOGY_TEXT_TITLE = 'Chinese Cinderella'
 
+// Until 26 September 2026 this set a "List four things" retrieval question
+// for 4 marks, a language-only question and a structure-only question, each
+// for 12. No 4EA1 paper asks any of those. On every Pearson 4EA1/01 paper,
+// mark scheme and examiners' report checked (the SAMs, the 2017 extra
+// assessment material, the June 2019 examiners' report, the 2021 papers, June
+// 2023, November 2023, May 2024, November 2024 and the June 2025 mark scheme
+// and examiners' report) Questions 1-3 are on the unseen Text One, Question 4
+// (12 marks, AO2) is the only question on the anthology text and always asks
+// about language AND structure together on one grid, and Question 5 (22 marks,
+// AO3) compares the anthology text with the unseen one; the exam never pairs
+// two anthology texts.
+// The retrieval question was also sent to Q2, a Text One question, so it was
+// marked as the wrong question. The labels are what questionIdForPracticeType
+// in PracticeMarkingButton reads: "12 marks" maps to Q4, and "22 marks" maps to
+// nothing, which is why q3 renders no button. Keep the space before "marks".
 const examPractice = {
   q1: {
-    question: 'List four things you learn about Yen Mah’s family situation.',
-    type: 'Retrieval - 4 marks',
+    question:
+      'How does the writer, Adeline Yen Mah, use language and structure to lead the reader towards the moment of recognition? Support your answer with close reference to the extract, including brief quotations.',
+    type: 'Language and structure - 12 marks',
   },
   q2: {
     question:
-      'How does Yen Mah use language to convey her emotions during the events she describes?',
-    type: 'Language analysis - 12 marks',
+      'How does the writer, Adeline Yen Mah, use language and structure to convey her emotions? Support your answer with close reference to the extract, including brief quotations.',
+    type: 'Language and structure - 12 marks',
   },
   q3: {
     question:
-      'How does Yen Mah structure the text to lead the reader towards the moment of recognition?',
-    type: 'Structural analysis - 12 marks',
+      'In the exam, Question 5 asks you to compare this extract with an unseen passage. Practise with any passage on a similar subject: compare how the two writers present their ideas and perspectives about childhood and family.',
+    type: 'Comparison - 22 marks',
   },
 }
 
@@ -313,11 +332,10 @@ export default async function ChineseCinderellaPage() {
               {examPractice.q3.type}
             </span>
             <p className="mt-2 text-body text-foreground font-medium">{examPractice.q3.question}</p>
-            {await PracticeMarkingButton({
-              type: examPractice.q3.type,
-              question: examPractice.q3.question,
-              textTitle: ANTHOLOGY_TEXT_TITLE,
-            })}
+            <p className="mt-2 text-body-sm text-muted-foreground">
+              This question can&apos;t be marked here: it needs the unseen passage that the exam
+              pairs with this text.
+            </p>
           </div>
         </div>
       </section>
@@ -330,7 +348,9 @@ export default async function ChineseCinderellaPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          {await t('anth_text.compare_with.intro')}
+          {await t('anth_text.compare_with.intro')} In the exam, though, this text is always
+          compared with an unseen passage, never another anthology text, so these pairings are for
+          revision.
         </p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {comparisonLinks.map((c) => (

@@ -237,38 +237,73 @@ const keyVocabulary = [
 /** The text these practice questions are about, sent to the marker as context. */
 const ANTHOLOGY_TEXT_TITLE = "The Explorer's Daughter"
 
+/**
+ * CHANGED 26 September 2026 to match the paper. This page used to set a
+ * "Retrieval - 4 marks" question ("List four things you learn about the narwhal
+ * hunt"), a language-only question and a structure-only question, each "12
+ * marks". 4EA1 Paper 1 asks none of them. In every Pearson document checked (the
+ * 2016 SAMs, the 2017 extra assessment materials, papers P65890A and P65891RA of
+ * 2021, the June 2023, November 2023, May 2024 and November 2024 papers, the
+ * November 2023, June 2024, June 2025 and Summer 2026 mark schemes, and the June
+ * 2019 and June 2025 examiners' reports), Q1 to Q3 are short answers on Text
+ * One, the unseen extract. The anthology text is Text Two, and the only question
+ * on it alone is Q4: language and structure together, on the whole extract, one
+ * 12-mark AO2 grid. Q5 (22 marks) compares it with the unseen text, never with
+ * another anthology text. The retrieval question was also sent to Q2, a Text One
+ * question, so it was marked as the wrong question.
+ *
+ * The labels are what questionIdForPracticeType maps: "12 marks" goes to Q4 and
+ * "22 marks" to nothing, so q3 carries no marking button and says why. Pass the
+ * English `type` to the button even in Arabic: until this change the page passed
+ * typeAr, whose Arabic numerals the button could not then read, and every button
+ * vanished on the Arabic page.
+ *
+ * Checked against the extract the same day. q3's subject is survival, not
+ * tradition: Herbert argues from necessity and never calls the hunt a tradition.
+ * Two outline points were also wrong. The first gave her sympathy to the narwhal
+ * alone and cited first-person interjections the extract does not have; her
+ * sympathy goes to hunter and narwhal both. The third made nature a powerful
+ * agent; the personification the verified study guide finds is of the light in
+ * the opening, which is playful and deceptive, not powerful.
+ */
 const examPractice = {
   q1: {
-    question: 'List four things you learn about the narwhal hunt from the text.',
-    questionAr: 'اذكر أربعةَ أشياء تعرفها عن صيد الـ narwhal من النصّ.',
-    type: 'Retrieval - 4 marks',
-    typeAr: 'الاسترجاع - ٤ درجات',
+    question:
+      'How does the writer, Kari Herbert, use language and structure to move from observation to reflection? Support your answer with close reference to the extract, including brief quotations.',
+    questionAr:
+      'كيف تستعمل الكاتبة، Kari Herbert، اللغةَ والبنيةَ للانتقال من المراقبة إلى التأمّل؟ ادعم إجابتك بإحالاتٍ دقيقة إلى المقتطف، مع اقتباساتٍ موجزة.',
+    type: 'Language and structure - 12 marks',
+    typeAr: 'اللغة والبنية - ١٢ درجة',
   },
   q2: {
     question:
-      'How does Herbert use language to present her conflicted feelings about the narwhal hunt?',
-    questionAr: 'كيف تستعمل Herbert اللغةَ لتُقدّم مشاعرها المتنازعة تجاه صيد الـ narwhal؟',
-    type: 'Language analysis - 12 marks',
-    typeAr: 'تحليل اللغة - ١٢ درجة',
+      'How does the writer, Kari Herbert, use language and structure to present her conflicted feelings about the hunt? Support your answer with close reference to the extract, including brief quotations.',
+    questionAr:
+      'كيف تستعمل الكاتبة، Kari Herbert، اللغةَ والبنيةَ لتُقدّم مشاعرها المتنازعة تجاه الصيد؟ ادعم إجابتك بإحالاتٍ دقيقة إلى المقتطف، مع اقتباساتٍ موجزة.',
+    type: 'Language and structure - 12 marks',
+    typeAr: 'اللغة والبنية - ١٢ درجة',
     modelOutline: [
-      "Identify Herbert's use of emotive verbs and first-person interjections that reveal her instinctive sympathy for the narwhal, and explain how these draw the reader into her internal conflict.",
+      "Identify Herbert's emotive verbs and first-person voice at the climax, which reveal her instinctive sympathy for the man and the whales alike, and explain how these draw the reader into her internal conflict.",
       "Analyse contrasting pairs (beauty / danger, admiration / unease) that mirror Herbert's own dual response to the Arctic and the hunt.",
-      'Examine personification of the landscape, which positions nature as a powerful agent and frames both hunters and narwhal as participants in a larger natural drama.',
+      'Examine the personification of the light in the opening paragraph, a playful trickster that makes distances deceptive and leaves Herbert unsure whether the narwhal are real, so the extract begins in wonder and uncertainty before the hunt comes into focus.',
       'Track the shift to practical, list-based language towards the end of the extract, which reframes the hunt in terms of survival rather than sentiment and complicates any easy moral judgement.',
+      'Comment on structure at the climax: the extract stops the action as the hunter raises his harpoon, turns to her divided response and then to a new paragraph in which she names her dilemma, and never shows whether the hunt succeeds, so her feelings are left unresolved even as the final paragraph argues that hunting is necessary.',
     ],
     modelOutlineAr: [
-      'حدّد استعمال Herbert للأفعال الانفعاليّة واعتراضات المتكلّم التي تكشف عن تعاطفها الغريزيّ مع الـ narwhal، واشرح كيف تُدخل القارئَ في صراعها الداخليّ.',
+      'حدّد استعمال Herbert للأفعال الانفعاليّة ولصوت المتكلّم عند الذروة، التي تكشف عن تعاطفها الغريزيّ مع الصيّاد والـ narwhal معاً، واشرح كيف تُدخل القارئَ في صراعها الداخليّ.',
       'حلِّل الأزواج المتضادّة (الجمال / الخطر، الإعجاب / القلق) التي تعكس استجابةَ Herbert الثنائيّةَ للقطب الشماليّ ولمشهد الصيد.',
-      'افحص تشخيصَ المنظر، الذي يضع الطبيعةَ في موقع الفاعل القويّ، ويُؤطّر الصيّادين والـ narwhal بوصفهم مشاركين في دراما طبيعيّة أكبر.',
+      'افحص تشخيصَ الضوء في الفقرة الأولى بوصفه مخادعاً لعوباً يُضلّل العينَ في تقدير المسافات، ويترك Herbert غيرَ واثقةٍ من أنّ الـ narwhal حقيقيّة، فيبدأ المقتطفُ بالدهشة والشكّ قبل أن يتّضح مشهدُ الصيد.',
       'تتبّع الانتقال إلى لغةٍ عمليّة قائمة على التَّعداد قرب نهاية المقتطف، التي تُعيد تأطير الصيد بمنطق النجاة لا العاطفة، وتُعقّد أيَّ حُكمٍ أخلاقيّ سهل.',
+      'علّق على البنية عند الذروة: يوقف المقتطفُ الحدثَ لحظةَ يرفع الصيّادُ حربتَه، فينتقل إلى استجابتها المنقسمة ثمّ إلى فقرةٍ جديدة تُسمّي فيها معضلتَها، ولا يكشف أبداً إن نجح الصيد، فتبقى مشاعرها بلا حسم حتّى وهي تُحاجّ في الفقرة الأخيرة بأنّ الصيد ضرورة.',
     ],
   },
   q3: {
     question:
-      'How does Herbert structure the text to move from observation to personal reflection?',
-    questionAr: 'كيف تبني Herbert النصَّ للانتقال من المراقبة إلى التأمّل الشخصيّ؟',
-    type: 'Structural analysis - 12 marks',
-    typeAr: 'التحليل البنائيّ - ١٢ درجة',
+      'In the exam, Question 5 asks you to compare this extract with an unseen passage. Practise with any passage on a similar subject: compare how the two writers present their ideas and perspectives about hunting and survival.',
+    questionAr:
+      'في الامتحان، يطلب منك السؤال الخامس أن تقارن هذا المقتطف بنصٍّ غير مرئيّ. تدرّب بأيّ نصٍّ في موضوعٍ مشابه: قارن كيف يعرض الكاتبان أفكارهما ووجهات نظرهما عن الصيد والنجاة.',
+    type: 'Comparison - 22 marks',
+    typeAr: 'المقارنة - ٢٢ درجة',
   },
 }
 
@@ -536,7 +571,7 @@ export default async function TheExplorersDaughterPage() {
               {ar ? examPractice.q1.questionAr : examPractice.q1.question}
             </p>
             {await PracticeMarkingButton({
-              type: ar ? examPractice.q1.typeAr : examPractice.q1.type,
+              type: examPractice.q1.type,
               question: ar ? examPractice.q1.questionAr : examPractice.q1.question,
               textTitle: ANTHOLOGY_TEXT_TITLE,
             })}
@@ -549,7 +584,7 @@ export default async function TheExplorersDaughterPage() {
               {ar ? examPractice.q2.questionAr : examPractice.q2.question}
             </p>
             {await PracticeMarkingButton({
-              type: ar ? examPractice.q2.typeAr : examPractice.q2.type,
+              type: examPractice.q2.type,
               question: ar ? examPractice.q2.questionAr : examPractice.q2.question,
               textTitle: ANTHOLOGY_TEXT_TITLE,
             })}
@@ -576,11 +611,11 @@ export default async function TheExplorersDaughterPage() {
             <p className="mt-2 text-body text-foreground font-medium">
               {ar ? examPractice.q3.questionAr : examPractice.q3.question}
             </p>
-            {await PracticeMarkingButton({
-              type: ar ? examPractice.q3.typeAr : examPractice.q3.type,
-              question: ar ? examPractice.q3.questionAr : examPractice.q3.question,
-              textTitle: ANTHOLOGY_TEXT_TITLE,
-            })}
+            <p className="mt-2 text-body-sm text-muted-foreground">
+              {ar
+                ? 'لا يمكن تصحيح هذا السؤال هنا: فهو يحتاج إلى النصّ غير المرئيّ الذي يقرنه الامتحان بهذا النصّ.'
+                : "This question can't be marked here: it needs the unseen passage that the exam pairs with this text."}
+            </p>
           </div>
         </div>
       </section>
@@ -592,8 +627,13 @@ export default async function TheExplorersDaughterPage() {
             {await t('anth_text.section.compare_with')}
           </h2>
         </div>
+        {/* Second sentence added 26 September 2026: the shared intro calls these
+            pairings for the exam, but 4EA1 never pairs two anthology texts. */}
         <p className="text-body-sm text-muted-foreground mb-5">
-          {await t('anth_text.compare_with.intro')}
+          {await t('anth_text.compare_with.intro')}{' '}
+          {ar
+            ? 'في الامتحان يُقارَن هذا النصّ دائماً بنصٍّ غير مرئيّ، لا بنصٍّ آخر من المختارات، لذا فهذه المقارنات للمراجعة.'
+            : 'In the exam this text is always compared with an unseen passage, never another anthology text, so these pairings are for revision.'}
         </p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {comparisonLinks.map((c) => (
@@ -628,15 +668,19 @@ export default async function TheExplorersDaughterPage() {
         {ar ? (
           <p>
             <strong className="text-foreground">{await t('anth_text.rights_notice_label')}</strong>{' '}
-            © Penguin بالنيابة عن Kari Herbert (مواليد 1970). للحصول على النصّ الكامل، يرجع الطلاب
-            إلى الطبعة المدرسيّة المرخّصة (Pearson Edexcel IGCSE anthology، ISBN 978-1-446-93108-0).
+            Kari Herbert (مواليد 1970). © Kari Herbert 2004، يُعاد نشره في المختارات بإذنٍ من Aitken
+            Alexander Associates Ltd. للحصول على النصّ الكامل، ارجع إلى Pearson Edexcel IGCSE
+            anthology (ISBN 978-1-446-93108-0)، التي تنشرها Pearson مجّاناً.
           </p>
         ) : (
           <p>
             <strong className="text-foreground">{await t('anth_text.rights_notice_label')}</strong>{' '}
-            &copy; Penguin on behalf of Kari Herbert (b. 1970). For full text, students should
-            consult the licensed school edition (Pearson Edexcel IGCSE anthology, ISBN
-            978-1-446-93108-0).
+            {/* As the anthology's acknowledgements give it. Penguin (2006) is the
+                edition, not the holder; until 26 September 2026 this read "Penguin on
+                behalf of Kari Herbert". */}
+            Kari Herbert (b. 1970). &copy; Kari Herbert 2004, reproduced in the anthology by
+            permission of Aitken Alexander Associates Ltd. For the full text, use the Pearson
+            Edexcel IGCSE anthology (ISBN 978-1-446-93108-0), which Pearson publishes free.
           </p>
         )}
         <p className="mt-2">{await t('anth_text.footer_align')}</p>

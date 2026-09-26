@@ -22,6 +22,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 import { t } from '@/lib/i18n/t'
+import { ANTHOLOGY_SOURCE } from '@/lib/board/edexcel-igcse-anthology'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -109,7 +110,11 @@ const texts = [
     title: 'Beyond the Sky and the Earth: A Journey into Bhutan',
     author: 'Jamie Zeppa',
     type: 'Travel memoir',
-    theme: 'Culture shock, isolation, beauty, transformation',
+    // Until 26 September 2026: "Culture shock, isolation, beauty,
+    // transformation", which describes the memoir. The extract is her first
+    // week in Thimphu, before her remote posting, and ends in admiration for
+    // Bhutan's history (see src/data/study-guides/beyond-the-sky-and-the-earth.ts).
+    theme: 'Landscape, culture shock, tradition, history, admiration',
     icon: MapPin,
   },
   {
@@ -200,17 +205,26 @@ export default async function AnthologyHubPage() {
         <ol className="mb-2 list-decimal space-y-1 ps-5 text-muted-foreground">
           <li>
             &lsquo;<em>Explorers or boys messing about?</em>&rsquo; by{' '}
-            <strong className="text-foreground">Steven Morris</strong> &mdash; originally published
-            in <em>The Guardian</em>, 28 January 2003; adapted for the Edexcel anthology by Pearson.
-            Online reproductions of the <em>Guardian</em> original are{' '}
+            <strong className="text-foreground">Steven Morris</strong>, originally published in{' '}
+            <em>The Guardian</em>, 28 January 2003, and adapted for the Edexcel anthology by
+            Pearson. Online reproductions of the <em>Guardian</em> original are{' '}
             <strong className="text-foreground">not the anthology text</strong>.
           </li>
           <li>
             &lsquo;<em>Young and dyslexic? You&rsquo;ve got it going on.</em>&rsquo; by{' '}
-            <strong className="text-foreground">Benjamin Zephaniah (1958&ndash;2023)</strong>{' '}
-            &mdash; originally a 2017 <em>Guardian</em> opinion piece; adapted for the anthology
-            with cuts and re-orderings. Zephaniah died in January 2023; rights are now held by his
-            estate.
+            <strong className="text-foreground">Benjamin Zephaniah (1958&ndash;2023)</strong>
+            {/* The Guardian ran it on 2 October 2015 (the anthology's headnote and
+                acknowledgements) and Zephaniah died on 7 December 2023. Until 26
+                September 2026 this said 2017 and January 2023, called the
+                piece "originally" a Guardian one (the headnote says the Guardian
+                article was adapted from his contribution to a 2015 book) and said
+                rights were held by his estate: the anthology prints no copyright
+                line for this text, only that it is reproduced by permission of
+                Jessica Kingsley Publishers. */}
+            , a <em>Guardian</em> article of 2 October 2015 adapted from his contribution to{' '}
+            <em>Creative, Successful, Dyslexic</em> (2015); adapted for the anthology with cuts and
+            re-orderings. Zephaniah died on 7 December 2023. The anthology reproduces the text by
+            permission of Jessica Kingsley Publishers.
           </li>
         </ol>
         <p className="mb-2 text-foreground">
@@ -223,10 +237,26 @@ export default async function AnthologyHubPage() {
           <em>The Bright Lights of Sarajevo</em> has additional stanza breaks not in
           Harrison&rsquo;s original <em>Guardian</em> publication.
         </p>
+        {/* Until 26 September 2026 this credited a "Zephaniah estate" and said
+            the anthology was available only through Pearson's school-licensed
+            editions. The acknowledgements (page 71) give Guardian News & Media
+            as holder for Morris and no holder for Zephaniah, and Pearson
+            publishes the whole anthology free as a PDF. */}
         <p className="text-body-xs text-muted-foreground">
-          © Pearson Education / Guardian News &amp; Media Ltd / Zephaniah estate. Quotations on
-          individual set-text pages are short fair-dealing extracts under CDPA s.30. The full
-          anthology is available only through Pearson&rsquo;s school-licensed editions.
+          Anthology © Pearson Education Limited 2026. &lsquo;Explorers, or boys messing
+          about?&rsquo; © Guardian News &amp; Media Ltd. &lsquo;Young and dyslexic?&rsquo; is
+          reproduced in the anthology by permission of Jessica Kingsley Publishers. Quotations on
+          individual set-text pages are short fair-dealing extracts under CDPA s.30. Pearson
+          publishes the full anthology free as a{' '}
+          <a
+            href={ANTHOLOGY_SOURCE.url}
+            className="underline underline-offset-2 hover:text-foreground"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            PDF on its qualifications website
+          </a>
+          .
         </p>
       </section>
 

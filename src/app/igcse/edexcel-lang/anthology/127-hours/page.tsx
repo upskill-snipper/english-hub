@@ -28,12 +28,13 @@ import { guide } from '@/data/study-guides/between-a-rock-and-a-hard-place'
  * anthology and checked quotation by quotation against it. Its canonical page
  * is /revision/texts/between-a-rock-and-a-hard-place, and this page's
  * canonical points there so the guide is one page to a search engine. This
- * page keeps its frame and the three practice questions with their marking
- * buttons: those are how a student gets an answer on this extract marked. Two
+ * page kept its frame and its practice questions with their marking buttons:
+ * those are how a student gets an answer on this extract marked. Two
  * questions were reworded to fit the extract (the first asked about "his time
  * trapped in the canyon", the third about "the moment of his escape"), and the
- * model outline, which described the amputation, is gone. Their type labels
- * are the ones questionIdForPracticeType maps to the 4EA1 mark scheme.
+ * model outline, which described the amputation, is gone. Later the same day
+ * the practice set itself was replaced, because it did not match the paper:
+ * see the comment above examPractice.
  */
 
 export const metadata: Metadata = {
@@ -60,19 +61,44 @@ export const metadata: Metadata = {
 
 const ANTHOLOGY_TEXT_TITLE = 'From Between a Rock and a Hard Place'
 
+/**
+ * CHANGED 26 September 2026. This set used to ask a "Retrieval - 4 marks"
+ * question ("List four things you learn about Ralston's situation in the
+ * canyon"), a language-only question and a structure-only question, each "12
+ * marks". The paper sets none of the three. On 4EA1 Paper 1 the anthology text
+ * is always Text Two: the short-answer questions, Q1-3, are on the unseen Text
+ * One only, and the anthology text alone gets one question, Q4, on language
+ * and structure together across the whole extract, marked on one 12-mark AO2
+ * grid. Q5 (22 marks) compares it with the unseen text, never with another
+ * anthology text. Every Pearson paper checked has that shape: the 2016 sample
+ * assessment (S52496A) and the November 2023 paper and mark scheme, both with
+ * Q4 on this extract, the June 2024 and June 2025 mark schemes, and the June
+ * 2019 examiners' report, which says Q4 "will always be on Text Two, the
+ * Anthology text". The retrieval question was also sent to the Q2 scheme, an
+ * unseen-text question, so it was always marked as the wrong question.
+ *
+ * q1 and q2 are now Q4 questions. 'Language and structure - 12 marks' is the
+ * label questionIdForPracticeType maps to Q4: it reads the number before
+ * "marks" and gives a question only for 12, so keep that number in the
+ * label. q3 is Q5 practice, and its 22 marks map to nothing, so it has no
+ * PracticeMarkingButton call at all: a call that returned null would still be
+ * counted as a button by any test that counts calls in the source.
+ */
 const examPractice = {
   q1: {
-    question: "List four things you learn about Ralston's situation in the canyon.",
-    type: 'Retrieval - 4 marks',
+    question:
+      'How does the writer, Aron Ralston, use language and structure to build tension before and after the boulder falls? Support your answer with close reference to the extract, including brief quotations.',
+    type: 'Language and structure - 12 marks',
   },
   q2: {
-    question: 'How does Ralston use language to convey the intensity of the accident?',
-    type: 'Language analysis - 12 marks',
+    question:
+      'How does the writer, Aron Ralston, use language and structure to convey the intensity of the accident? Support your answer with close reference to the extract, including brief quotations.',
+    type: 'Language and structure - 12 marks',
   },
   q3: {
     question:
-      'How does Ralston structure the text to build tension before and after the boulder falls?',
-    type: 'Structural analysis - 12 marks',
+      'In the exam, Question 5 asks you to compare this extract with an unseen passage. Practise with any passage on a similar subject: compare how the two writers present their ideas and perspectives about danger and survival.',
+    type: 'Comparison - 22 marks',
   },
 }
 
@@ -152,11 +178,10 @@ export default async function OneHundredTwentySevenHoursPage() {
               {examPractice.q3.type}
             </span>
             <p className="mt-2 text-body text-foreground font-medium">{examPractice.q3.question}</p>
-            {await PracticeMarkingButton({
-              type: examPractice.q3.type,
-              question: examPractice.q3.question,
-              textTitle: ANTHOLOGY_TEXT_TITLE,
-            })}
+            <p className="mt-2 text-body-sm text-muted-foreground">
+              This question can&apos;t be marked here: it needs the unseen passage that the exam
+              pairs with this text.
+            </p>
           </div>
         </div>
       </section>

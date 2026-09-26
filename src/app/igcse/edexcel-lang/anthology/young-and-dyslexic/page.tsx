@@ -19,15 +19,18 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { getLocale, t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
+  // The title was cut off at the apostrophe ("Young and Dyslexic? You") in
+  // every field below until 26 September 2026.
   openGraph: {
-    title: 'Young and Dyslexic? You',
-    description: 'Study guide for Young and Dyslexic? You',
+    title: "Young and Dyslexic? You've Got It Going On - IGCSE Anthology - The English Hub",
+    description:
+      'Benjamin Zephaniah on dyslexia, for Edexcel IGCSE Language A: themes, language features, key vocabulary and Paper 1 Section A practice.',
     images: [
       {
-        url: '/api/og?title=Young+and+Dyslexic%3F+You',
+        url: '/api/og?title=Young+and+Dyslexic%3F+You%27ve+Got+It+Going+On+-+IGCSE+Anthology+-+The+English+Hub',
         width: 1200,
         height: 630,
-        alt: 'Young and Dyslexic? You',
+        alt: "Young and Dyslexic? You've Got It Going On - IGCSE Anthology - The English Hub",
       },
     ],
   },
@@ -149,15 +152,24 @@ const languageFeatures = [
   },
 ]
 
+/**
+ * CORRECTED 26 September 2026 against Pearson's anthology, Issue 8 (February
+ * 2026), pp. 12-13. The structure notes said the piece opens on school-era
+ * failure and moves in a straight line to success. It does not: its first two
+ * lines state the confident conclusion (he learned to turn dyslexia to his
+ * advantage; dyslexic people are the architects and designers) and its ending
+ * repeats it, so the shape is circular. The perspective note said there were no
+ * statistics; he appeals to them explicitly, though he gives no figures.
+ */
 const structuralAnalysis = {
   opening:
-    'The piece opened from a position of school-era failure - Zephaniah established the negative starting point first, so that everything that followed registered as upward movement away from it.',
+    'The piece opens with its conclusion rather than its problem: Zephaniah admits he suffered as a child but says he learned to turn dyslexia to his advantage, and claims dyslexic people as the architects and designers. The school-era failures that follow are read in the light of that confident start.',
   openingAr:
-    'يفتتح المقالُ من موضع إخفاقِ زمن المدرسة - يُرسّخ Zephaniah نقطةَ الانطلاق السلبيّة أوّلاً، كي يُسجَّل كلُّ ما يلي حركةً صاعدةً مبتعدةً عنها.',
+    'يفتتح المقالُ بخلاصته لا بمشكلته: يعترف Zephaniah بأنّه عانى طفلاً، لكنّه يقول إنّه تعلّم أن يحوّل الـ dyslexia إلى ميزة، ويَعُدّ ذوي الـ dyslexia هم المهندسين المعماريّين والمصمّمين. وتُقرأ إخفاقاتُ زمن المدرسة التي تلي ذلك في ضوء هذه البداية الواثقة.',
   development:
-    'The text developed chronologically: school in the past, success in the present, encouragement for the future. Each section reframed the previous one, so that early failure became the precondition for later achievement rather than evidence of inadequacy.',
+    'After that opening, the middle moves broadly chronologically: school, expulsion at 13, learning at 21 that he was dyslexic, then his writing career and the present. Each section reframed the previous one, so that early failure became the precondition for later achievement rather than evidence of inadequacy.',
   developmentAr:
-    'يتطوّر النصُّ زمنيّاً: المدرسةُ في الماضي، النجاحُ في الحاضر، التشجيعُ نحو المستقبل. ويُعيد كلُّ قسمٍ تأطيرَ سابقه، فيصير الإخفاقُ المبكّر شرطاً لإنجازٍ لاحق لا دليلاً على قصور.',
+    'بعد هذا الافتتاح، يسير وسطُ النصّ زمنيّاً في الجملة: المدرسة، فالطرد في الثالثة عشرة، فمعرفته في الحادية والعشرين أنّ لديه dyslexia، ثمّ مسيرته في الكتابة والحاضر. ويُعيد كلُّ قسمٍ تأطيرَ سابقه، فيصير الإخفاقُ المبكّر شرطاً لإنجازٍ لاحق لا دليلاً على قصور.',
   climax:
     'The structural climax was the moment of reframing - the shift from disability to difference - which transformed the article from personal memoir into general argument.',
   climaxAr:
@@ -167,20 +179,20 @@ const structuralAnalysis = {
   resolutionAr:
     'الخاتمةُ خارجيّةُ الوجهة: بعد أن روى Zephaniah قصّته الخاصّة، التفت إلى القارئ الشابّ ذي الـ dyslexia وطبّق الدرسَ عليه مباشرةً. وينتهي المقال رسالةً لا سيرةً.',
   perspective:
-    'First-person throughout. The authority of the piece rested entirely on lived experience - there were no statistics or expert voices, only Zephaniah’s own testimony.',
+    'First-person throughout. The authority of the piece rests almost entirely on lived experience: there are no expert voices, and although he appeals to the statistics on dyslexia in prison, he gives no figures, so Zephaniah’s own testimony carries the argument.',
   perspectiveAr:
-    'ضمير المتكلّم في النصّ كلِّه. تتّكئ سلطةُ المقال بالكامل على التجربة المعيشة - لا إحصاءاتٍ ولا أصواتٍ من خبراء، بل شهادةُ Zephaniah وحدها.',
+    'ضمير المتكلّم في النصّ كلِّه. تتّكئ سلطةُ المقال كلّها تقريباً على التجربة المعيشة: لا أصواتَ من خبراء، ومع أنّه يحتكم إلى الإحصاءات عن الـ dyslexia في السجون، فإنّه لا يذكر أرقاماً، فتحمل شهادةُ Zephaniah الحُجّة.',
   paragraphing:
     'Short paragraphs and direct sentences reflected Zephaniah’s background as a performance poet. The text was written to be spoken as much as read, with each unit landing as a discrete beat.',
   paragraphingAr:
     'الفقرات القصيرة والجمل المباشرة تعكس خلفيّة Zephaniah شاعرَ أداء. كُتب النصُّ ليُلقى بقدر ما يُقرأ، فتسقط كلُّ وحدةٍ نبضةً منفصلة.',
-  time: 'Broadly chronological - past failure, present success, future hope. The temporal structure mirrored a redemption arc, from the labels of childhood to the agency of adulthood.',
+  time: 'Broadly chronological in the middle - past failure, present success, future hope - but framed by an opening and an ending that state the same confident conclusion. The temporal structure mirrored a redemption arc, from the labels of childhood to the agency of adulthood.',
   timeAr:
-    'زمنيّاً في الجملة - إخفاق ماضٍ، ونجاح حاضر، وأملٌ مستقبليّ. وتعكس البنيةُ الزمنيّة قوسَ خلاصٍ ينتقل من وسوم الطفولة إلى فاعليّة سنّ الرشد.',
+    'زمنيٌّ في الجملة في وسطه - إخفاق ماضٍ، ونجاح حاضر، وأملٌ مستقبليّ - لكنّه مؤطَّرٌ بافتتاحٍ وخاتمةٍ يُعلنان الخلاصةَ الواثقة نفسها. وتعكس البنيةُ الزمنيّة قوسَ خلاصٍ ينتقل من وسوم الطفولة إلى فاعليّة سنّ الرشد.',
   openingClosing:
-    'The opening dwelt on a young person being told they were inadequate; the closing told a young person they had real capability. The structural inversion was the embodiment of the article’s argument.',
+    'The opening and the ending make the same claim: the article begins with Zephaniah’s confident statement that dyslexic people are the architects and designers, and ends with him saying it again to children who tell him they are dyslexic too. The circular structure is the embodiment of the article’s argument.',
   openingClosingAr:
-    'يتمهّل الافتتاحُ عند فتى يُقال له إنّه قاصر؛ وتقول الخاتمةُ لفتى آخر إنّ لديه قدرةً حقيقيّة. وهذا الانقلابُ البنائيّ تجسيدٌ لحُجّة المقال.',
+    'يُعلن الافتتاحُ والخاتمة الفكرةَ نفسها: يبدأ المقال بقول Zephaniah الواثق إنّ ذوي الـ dyslexia هم المهندسون المعماريّون والمصمّمون، وينتهي به يكرّرها لأطفالٍ يخبرونه أنّ لديهم dyslexia مثله. وهذه البنيةُ الدائريّة تجسيدٌ لحُجّة المقال.',
 }
 
 const writersPurpose = {
@@ -266,38 +278,71 @@ const keyVocabulary = [
 /** The text these practice questions are about, sent to the marker as context. */
 const ANTHOLOGY_TEXT_TITLE = "Young and Dyslexic? You've Got It Going On"
 
+/**
+ * CHANGED 26 September 2026. This set used to ask a "Retrieval - 4 marks"
+ * question (list four things about his experience of school), a language-only
+ * question and a structure-only question, each "12 marks". None of the three is
+ * a 4EA1 question. On every Paper 1 checked (the 2016 SAMs, the 2017 extra
+ * assessment material, P65890A and P65891RA from 2021, June and November 2023,
+ * May and November 2024, and the mark schemes for November 2023, June 2024 and
+ * June 2025), Q1-3 are short answers on Text One, the unseen extract. The
+ * anthology text is Text Two and is examined alone only at Q4: one 12-mark AO2
+ * question on language AND structure across the whole extract. Q5 (22 marks)
+ * compares it with the unseen text, never with another anthology text. This
+ * article was Text Two in the 2017 extra assessment material (S58056A), in June
+ * 2023 (4EA1/01R) and in June 2025 (mark scheme and examiners' report).
+ *
+ * The English `type` labels are what questionIdForPracticeType maps: "12 marks"
+ * goes to Q4 and "22 marks" to nothing, so q3 has no marking button (it needs
+ * the unseen passage). The button is always given the English label: passing
+ * typeAr, whose Arabic numerals the mapping could not read until that same day,
+ * silently removed every button on the Arabic page. q2's model outline gained
+ * one structural point, the circular opening and ending, so that it answers a
+ * language-and-structure question. Its fourth point used to place his humour in
+ * his spelling; the article's joke about himself is the retold question about
+ * needing an operation, and the spelling passage (lines 55-59) is candour, so
+ * the point now names both. The "Compare with" intro now also says the
+ * exam pairs this text with an unseen passage, since its shared string calls
+ * these links pairings for comparison questions in the exam.
+ */
 const examPractice = {
   q1: {
-    question: 'List four things you learn about Zephaniah’s experience of school from the text.',
-    questionAr: 'اذكر أربعةَ أشياء تعرفها عن تجربة Zephaniah المدرسيّة من النصّ.',
-    type: 'Retrieval - 4 marks',
-    typeAr: 'الاسترجاع - ٤ درجات',
+    question:
+      'How does the writer, Benjamin Zephaniah, use language and structure to move from personal experience to a message for young readers? Support your answer with close reference to the extract, including brief quotations.',
+    questionAr:
+      'كيف يستعمل الكاتب، Benjamin Zephaniah، اللغةَ والبنيةَ لينتقل من التجربة الشخصيّة إلى رسالةٍ موجَّهة إلى القرّاء الشباب؟ ادعم إجابتك بإحالاتٍ دقيقة إلى المقتطف، مع اقتباساتٍ موجزة.',
+    type: 'Language and structure - 12 marks',
+    typeAr: 'اللغة والبنية - ١٢ درجة',
   },
   q2: {
-    question: 'How does Zephaniah use language to challenge negative attitudes towards dyslexia?',
-    questionAr: 'كيف يستعمل Zephaniah اللغةَ ليتحدّى المواقفَ السلبيّة من الـ dyslexia؟',
-    type: 'Language analysis - 12 marks',
-    typeAr: 'تحليل اللغة - ١٢ درجة',
+    question:
+      'How does the writer, Benjamin Zephaniah, use language and structure to challenge negative attitudes to dyslexia? Support your answer with close reference to the extract, including brief quotations.',
+    questionAr:
+      'كيف يستعمل الكاتب، Benjamin Zephaniah، اللغةَ والبنيةَ ليتحدّى المواقفَ السلبيّة من الـ dyslexia؟ ادعم إجابتك بإحالاتٍ دقيقة إلى المقتطف، مع اقتباساتٍ موجزة.',
+    type: 'Language and structure - 12 marks',
+    typeAr: 'اللغة والبنية - ١٢ درجة',
     modelOutline: [
       'Zephaniah’s reframing of dyslexia - from disability to difference - is the article’s central rhetorical move, replacing one vocabulary with another to transform the meaning of the condition.',
       'Personal anecdote and direct address combine to give the piece its authority: the reader is being spoken to by someone who has lived through what is being described, rather than being lectured at by an outside expert.',
       'The piling-up of later achievements answers the earlier catalogue of school-era failures, so that the structure of the prose itself argues against the labels of childhood.',
-      'Humour and self-deprecation about his own struggles with the mechanics of writing disarm the reader and challenge the assumption that surface accuracy equals intelligence - a serious argument carried by a light tone.',
+      'Humour and candour about his own struggles disarm the reader: he laughs at his own confusion when he was told he was dyslexic, and admits without embarrassment the tricks he still uses to spell some words. Both challenge the assumption that surface accuracy equals intelligence - a serious argument carried by a light tone.',
+      'The structure carries the challenge too: the article opens with its conclusion, claiming dyslexic people as the architects and designers before any story of school is told, so the teachers’ verdicts that follow read as already overturned. When he repeats that claim to children in the final paragraph, the challenge is handed on to the next generation.',
     ],
     modelOutlineAr: [
       'إعادةُ Zephaniah تأطيرَ الـ dyslexia - من إعاقةٍ إلى اختلافٍ - هي الحركةُ البلاغيّة المركزيّة للمقال، إذ تستبدل مفرداتٍ بأخرى لتُحوّل معنى الحالة.',
       'تتضافر الحكايةُ الشخصيّة والخطابُ المباشر لإكساب النصّ سلطته: يُكلَّم القارئ على لسان مَن عاش ما يُوصف، لا أن يُحاضَر فيه من خبيرٍ خارجيّ.',
       'تكديسُ الإنجازات اللاحقة يُجيب عن تَعداد إخفاقات زمن المدرسة السابق، فتُحاجج بنيةُ النثر نفسها ضدّ وسوم الطفولة.',
-      'الفكاهةُ والسخريةُ من النفس بشأن متاعبه مع آلية الكتابة تُذيب تحفّظَ القارئ، وتتحدّى الافتراضَ القائل إنّ الدقّةَ السطحيّة تساوي الذكاء - حُجّةٌ جدّيّة تحملها نبرةٌ خفيفة.',
+      'الفكاهةُ والصراحةُ بشأن متاعبه تُذيبان تحفّظَ القارئ: فهو يضحك من حيرته حين قيل له إنّ لديه dyslexia، ويعترف دون حرجٍ بالحيل التي ما زال يلجأ إليها لكتابة بعض الكلمات. وكلتاهما تتحدّى الافتراضَ القائل إنّ الدقّةَ السطحيّة تساوي الذكاء - حُجّةٌ جدّيّة تحملها نبرةٌ خفيفة.',
+      'والبنيةُ تحمل التحدّي أيضاً: يفتتح المقالُ بخلاصته، فيَعُدّ ذوي الـ dyslexia هم المهندسين المعماريّين والمصمّمين قبل أن يروي أيّ حكايةٍ عن المدرسة، فتُقرأ أحكامُ المعلّمين التي تلي ذلك كأنّها نُقضت سلفاً. وحين يكرّر هذه الفكرةَ لأطفالٍ في الفقرة الأخيرة، يُسلّم التحدّي إلى الجيل التالي.',
     ],
   },
   q3: {
     question:
-      'How does Zephaniah structure the text to move from personal experience to a message for young readers?',
+      'In the exam, Question 5 asks you to compare this extract with an unseen passage. Practise with any passage on a similar subject: compare how the two writers present their ideas and perspectives about learning and being labelled at school.',
     questionAr:
-      'كيف يبني Zephaniah النصَّ للانتقال من التجربة الشخصيّة إلى رسالةٍ موجَّهة إلى القرّاء الشباب؟',
-    type: 'Structural analysis - 12 marks',
-    typeAr: 'التحليل البنائيّ - ١٢ درجة',
+      'في الامتحان، يطلب منك السؤال الخامس مقارنةَ هذا المقتطف بنصٍّ غير مرئيّ. تدرّب بأيّ نصٍّ في موضوعٍ مشابه: قارن كيف يعرض الكاتبان أفكارهما ووجهات نظرهما حول التعلّم وإلصاق الوسوم بالتلاميذ في المدرسة.',
+    type: 'Comparison - 22 marks',
+    typeAr: 'المقارنة - ٢٢ درجة',
   },
 }
 
@@ -364,9 +409,11 @@ export default async function YoungAndDyslexicPage() {
             </h1>
             <p className="text-body-sm text-muted-foreground">
               Benjamin Zephaniah (1958&ndash;2023) &middot;{' '}
+              {/* 2015, not 2017: the anthology's headnote and acknowledgements
+                  both give The Guardian, Friday 2 October 2015. */}
               {ar
-                ? 'مقال رأي (Guardian، 2017 - مُكيَّف للمختارات)'
-                : 'Opinion article (Guardian, 2017 - adapted for the anthology)'}
+                ? 'مقال رأي (Guardian، 2015 - مُكيَّف للمختارات)'
+                : 'Opinion article (Guardian, 2015 - adapted for the anthology)'}
             </p>
             <div className="mt-1.5 flex flex-wrap gap-1.5">
               <Badge variant="secondary" className="text-[0.65rem]">
@@ -377,17 +424,18 @@ export default async function YoungAndDyslexicPage() {
               </Badge>
             </div>
             <p className="mt-3 max-w-3xl text-body-sm text-muted-foreground leading-relaxed">
+              {/* He died on 7 December 2023 (his family's statement that day). Until
+                  26 September 2026 this page said January 2023. */}
               {ar ? (
                 <>
                   <strong className="text-foreground">Benjamin Zephaniah (1958&ndash;2023)</strong>{' '}
-                  شاعرُ دَب بريطانيّ وروائيّ ومناضلٌ في الحقوق. توفّي في يناير 2023؛ وحقوقُ أعماله
-                  بحوزة ورثته الآن.
+                  شاعرُ دَب بريطانيّ وروائيّ ومناضلٌ في الحقوق. توفّي في 7 ديسمبر 2023.
                 </>
               ) : (
                 <>
                   <strong className="text-foreground">Benjamin Zephaniah (1958&ndash;2023)</strong>{' '}
-                  was a British dub poet, novelist and rights campaigner. He died in January 2023;
-                  rights to his work are now held by his estate.
+                  was a British dub poet, novelist and rights campaigner. He died on 7 December
+                  2023.
                 </>
               )}
             </p>
@@ -404,9 +452,13 @@ export default async function YoungAndDyslexicPage() {
           <div>
             <p>
               <strong className="text-foreground">{await t('anth_text.rebuilt_label')}</strong>{' '}
+              {/* Until 26 September 2026 this called it the "licensed" anthology, as
+                  if students needed a licensed copy. Pearson publishes it free as a
+                  PDF, and for this text it prints no copyright line, only
+                  "Reproduced by permission of Jessica Kingsley Publishers". */}
               {ar
-                ? 'أُعيد بناء هذه الصفحة لإزالة الاقتباسات الحرفيّة التي تعذّر التأكّد منها قبالةَ مصدرٍ أوّليّ. والنقاش الآن موضوعيّ. للحصول على الصياغة المدروسة، يلزم الطلابَ دائماً الرجوعُ إلى مختارات Pearson Edexcel IGCSE المرخّصة (ISBN 978-1-446-93108-0) - يُصحّح الممتحنون قبالةَ نصّ المختارات.'
-                : 'This page was rebuilt to remove direct quotations that could not be confidently verified against a primary source. Discussion is now thematic. For the studied wording, students should always consult the licensed Pearson Edexcel IGCSE Anthology (ISBN 978-1-446-93108-0) - examiners mark against the anthology text.'}
+                ? 'أُعيد بناء هذه الصفحة لإزالة الاقتباسات الحرفيّة التي تعذّر التأكّد منها قبالةَ مصدرٍ أوّليّ. والنقاش الآن موضوعيّ. للحصول على الصياغة المدروسة، يلزم الطلابَ دائماً الرجوعُ إلى مختارات Pearson Edexcel IGCSE (ISBN 978-1-446-93108-0)، التي تنشرها Pearson مجّاناً بصيغة PDF - يُصحّح الممتحنون قبالةَ نصّ المختارات.'
+                : 'This page was rebuilt to remove direct quotations that could not be confidently verified against a primary source. Discussion is now thematic. For the studied wording, students should always consult the Pearson Edexcel IGCSE Anthology (ISBN 978-1-446-93108-0), which Pearson publishes free as a PDF - examiners mark against the anthology text.'}
             </p>
           </div>
         </div>
@@ -446,15 +498,19 @@ export default async function YoungAndDyslexicPage() {
               </strong>{' '}
               {ar ? (
                 <>
-                  Benjamin Zephaniah (1958&ndash;2023) - الحقوقُ الآن بحوزة ورثته. © الورثة عبر
-                  Pearson Education. الصياغاتُ الموجزة في هذه الصفحة إشاراتٌ قصيرة بمقتضى الاستعمال
-                  العادل لأغراض النقد والمراجعة والتعليم.
+                  Benjamin Zephaniah (1958&ndash;2023). يُعاد نشر النصّ في المختارات بإذنٍ من
+                  Jessica Kingsley Publishers. الصياغاتُ الموجزة في هذه الصفحة إشاراتٌ قصيرة بمقتضى
+                  الاستعمال العادل لأغراض النقد والمراجعة والتعليم.
                 </>
               ) : (
                 <>
-                  Benjamin Zephaniah (1958&ndash;2023) - rights now held by his estate. &copy;
-                  estate via Pearson Education. Brief paraphrases on this page are short
-                  fair-dealing references for the purposes of criticism, review and education.
+                  {/* The anthology prints no copyright line for this text, only
+                      permission from the publisher. Until 26 September 2026 this said
+                      "estate via Pearson Education", which nothing in the anthology
+                      supports. */}
+                  Benjamin Zephaniah (1958&ndash;2023). The anthology reproduces the text by
+                  permission of Jessica Kingsley Publishers. Brief paraphrases on this page are
+                  short fair-dealing references for the purposes of criticism, review and education.
                 </>
               )}
             </p>
@@ -476,12 +532,13 @@ export default async function YoungAndDyslexicPage() {
                 Benjamin Zephaniah (1958&ndash;2023) شاعرُ دَب بريطانيّ وروائيّ ومناضلٌ سياسيّ. ترك
                 المدرسة في الثالثة عشرة، وكافح مع الـ dyslexia، وبنى مسيرةً أدبيّة على الأداء والسرد
                 الشفهيّ، وعلى رفضٍ أن تُحدّده أحكامُ المؤسّسات. نشر هذا المقال في{' '}
-                <em>The Guardian</em> عام 2017، مخاطباً القرّاءَ الشباب من ذوي الـ dyslexia مباشرةً.
+                <em>The Guardian</em> في 2 أكتوبر 2015، مخاطباً القرّاءَ الشباب من ذوي الـ dyslexia
+                مباشرةً.
               </p>
               <p>
                 نسخةُ المختارات المدروسة هنا صيغةٌ{' '}
-                <strong className="text-foreground">مُكيَّفة</strong> من مقال 2017. توفّي Zephaniah
-                في يناير 2023؛ والحقوق الآن بحوزة ورثته.
+                <strong className="text-foreground">مُكيَّفة</strong> من مقال 2015. توفّي Zephaniah
+                في 7 ديسمبر 2023.
               </p>
               <p>
                 يعمل المقال سيرةً وبيانَ مبادئ في آنٍ معاً - تجربةٌ شخصيّة تُستعمل محرّكاً لحُجّةٍ
@@ -494,13 +551,13 @@ export default async function YoungAndDyslexicPage() {
                 Benjamin Zephaniah (1958&ndash;2023) was a British dub poet, novelist and political
                 campaigner. He left school at thirteen, struggled with dyslexia, and built a
                 literary career on performance, oral storytelling and a refusal to let institutional
-                verdicts define him. He published this article in <em>The Guardian</em> in 2017,
-                addressing young dyslexic readers directly.
+                verdicts define him. He published this article in <em>The Guardian</em> on 2 October
+                2015, addressing young dyslexic readers directly.
               </p>
               <p>
                 The anthology version studied here is an{' '}
-                <strong className="text-foreground">adapted</strong> form of that 2017 article.
-                Zephaniah died in January 2023; rights now sit with his estate.
+                <strong className="text-foreground">adapted</strong> form of that 2015 article.
+                Zephaniah died on 7 December 2023.
               </p>
               <p>
                 The piece functions as both memoir and manifesto - personal experience used as the
@@ -542,8 +599,8 @@ export default async function YoungAndDyslexicPage() {
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
           {ar
-            ? 'الخصائصُ اللغويّة الرئيسة عند Zephaniah وأثرها في القارئ. النقاشُ موضوعيّ - وعلى الطلاب أن يستقوا الصياغة المدروسة من المختارات المرخّصة.'
-            : 'Key language features used by Zephaniah and their effects on the reader. Discussion is thematic - students should source the studied wording from the licensed anthology.'}
+            ? 'الخصائصُ اللغويّة الرئيسة عند Zephaniah وأثرها في القارئ. النقاشُ موضوعيّ - وعلى الطلاب أن يستقوا الصياغة المدروسة من المختارات، التي تنشرها Pearson مجّاناً.'
+            : 'Key language features used by Zephaniah and their effects on the reader. Discussion is thematic - students should source the studied wording from the anthology, which Pearson publishes free.'}
         </p>
         <div className="space-y-4">
           {languageFeatures.map((f) => (
@@ -683,7 +740,7 @@ export default async function YoungAndDyslexicPage() {
               {ar ? examPractice.q1.questionAr : examPractice.q1.question}
             </p>
             {await PracticeMarkingButton({
-              type: ar ? examPractice.q1.typeAr : examPractice.q1.type,
+              type: examPractice.q1.type,
               question: ar ? examPractice.q1.questionAr : examPractice.q1.question,
               textTitle: ANTHOLOGY_TEXT_TITLE,
             })}
@@ -696,7 +753,7 @@ export default async function YoungAndDyslexicPage() {
               {ar ? examPractice.q2.questionAr : examPractice.q2.question}
             </p>
             {await PracticeMarkingButton({
-              type: ar ? examPractice.q2.typeAr : examPractice.q2.type,
+              type: examPractice.q2.type,
               question: ar ? examPractice.q2.questionAr : examPractice.q2.question,
               textTitle: ANTHOLOGY_TEXT_TITLE,
             })}
@@ -723,11 +780,11 @@ export default async function YoungAndDyslexicPage() {
             <p className="mt-2 text-body text-foreground font-medium">
               {ar ? examPractice.q3.questionAr : examPractice.q3.question}
             </p>
-            {await PracticeMarkingButton({
-              type: ar ? examPractice.q3.typeAr : examPractice.q3.type,
-              question: ar ? examPractice.q3.questionAr : examPractice.q3.question,
-              textTitle: ANTHOLOGY_TEXT_TITLE,
-            })}
+            <p className="mt-2 text-body-sm text-muted-foreground">
+              {ar
+                ? 'لا يمكن تصحيح هذا السؤال هنا: فهو يحتاج إلى النصّ غير المرئيّ الذي يقرنه الامتحان بهذا النصّ.'
+                : "This question can't be marked here: it needs the unseen passage that the exam pairs with this text."}
+            </p>
           </div>
         </div>
       </section>
@@ -740,7 +797,10 @@ export default async function YoungAndDyslexicPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          {await t('anth_text.compare_with.intro')}
+          {await t('anth_text.compare_with.intro')}{' '}
+          {ar
+            ? 'في الامتحان يُقارَن هذا النصّ بنصٍّ غير مرئيّ، لا بنصٍّ آخر من المختارات، فهذه المقارنات للمراجعة.'
+            : 'In the exam this text is compared with an unseen passage, never another anthology text, so these pairings are for revision.'}
         </p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {comparisonLinks.map((c) => (
@@ -783,10 +843,9 @@ export default async function YoungAndDyslexicPage() {
             </p>
             <p className="mt-2">
               <strong className="text-foreground">إشعار الحقوق:</strong> Benjamin Zephaniah
-              (1958&ndash;2023) - الحقوقُ الآن بحوزة ورثته. © الورثة عبر Pearson Education.
+              (1958&ndash;2023). يُعاد نشر النصّ في المختارات بإذنٍ من Jessica Kingsley Publishers.
               الصياغاتُ الموجزة في هذه الصفحة إشاراتٌ قصيرة بمقتضى الاستعمال العادل لأغراض النقد
-              والمراجعة والتعليم؛ وتتطلّب اختياراتُ المختارات الكاملة طبعةً مدرسيّة مرخّصة من
-              Edexcel.
+              والمراجعة والتعليم؛ وتنشر Pearson المختاراتِ كاملةً مجّاناً.
             </p>
             <p className="mt-2">
               متوافق مع مواصفات Pearson Edexcel 4EA1 · Paper 1 Section A - مختارات النثر غير
@@ -804,10 +863,10 @@ export default async function YoungAndDyslexicPage() {
             </p>
             <p className="mt-2">
               <strong className="text-foreground">Rights notice:</strong> Benjamin Zephaniah
-              (1958&ndash;2023) - rights now held by his estate. &copy; estate via Pearson
-              Education. Brief paraphrases on this page are short fair-dealing references used for
-              the purposes of criticism, review and education; full anthology selections require an
-              Edexcel-licensed school edition.
+              (1958&ndash;2023). The anthology reproduces the text by permission of Jessica Kingsley
+              Publishers. Brief paraphrases on this page are short fair-dealing references used for
+              the purposes of criticism, review and education; Pearson publishes the full anthology
+              free.
             </p>
             <p className="mt-2">
               Aligned with Pearson Edexcel specification 4EA1 &middot; Paper 1 Section A - Anthology

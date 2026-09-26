@@ -22,13 +22,14 @@ import { Button } from '@/components/ui/button'
 import { getBoardMismatchState } from '@/app/igcse/_lib/guard'
 import BoardMismatchBanner from '@/components/board/BoardMismatchBanner'
 import { t } from '@/lib/i18n/t'
+import { ANTHOLOGY_SOURCE } from '@/lib/board/edexcel-igcse-anthology'
 
 import { CourseJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Edexcel IGCSE English Language A (4EA1) - The English Hub',
     description:
-      'Revision hub for Pearson Edexcel IGCSE English Language A 4EA1: the Paper 1 anthology and unseen extract, and Paper 2 transactional writing.',
+      'Revision hub for Pearson Edexcel IGCSE English Language A 4EA1: Paper 1 non-fiction and transactional writing, Paper 2 poetry, prose and imaginative writing.',
     images: [
       {
         url: '/api/og?title=Edexcel+IGCSE+English+Language+A+(4EA1)+-+The+English+Hub',
@@ -40,18 +41,35 @@ export const metadata: Metadata = {
   },
   title: 'Edexcel IGCSE English Language A (4EA1)',
   description:
-    'Revision hub for Pearson Edexcel IGCSE English Language A 4EA1: the Paper 1 anthology and unseen extract, and Paper 2 transactional writing.',
+    'Revision hub for Pearson Edexcel IGCSE English Language A 4EA1: Paper 1 non-fiction and transactional writing, Paper 2 poetry, prose and imaginative writing.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/edexcel-lang' },
 }
 
 /* ─── Data ───────────────────────────────────────────────────────────── */
 
-const paper1Sections = [
+// CORRECTED 26 September 2026 against the specification (Issue 7, August
+// 2025) and the 4EA1 papers. These cards put the unseen extract in a Paper 1
+// "Section B", gave Section A retrieval and separate language and structure
+// questions, and described Paper 2 as unseen fiction plus two transactional
+// tasks. Paper 1 Section A is one anthology text and one unseen extract (45
+// marks); Section B is one transactional task (45 marks); Paper 2 is a
+// 30-mark essay on a Part 2 anthology text and a 30-mark imaginative task.
+// A card with no href renders without a link: the site has no IGCSE
+// transactional writing page, and the GCSE one sets a different paper.
+type PaperSection = {
+  heading: string
+  label: string
+  detail: string
+  href?: string
+  subLinks?: { label: string; href: string }[]
+}
+
+const paper1Sections: PaperSection[] = [
   {
-    heading: 'Section A - Non-Fiction Anthology',
+    heading: 'Section A - Reading: Non-Fiction Texts',
     label: 'Paper 1 Section A',
     detail:
-      'Questions on the 10 prescribed non-fiction texts from the Pearson Edexcel anthology. Retrieval, language analysis, and structural analysis.',
+      'Two texts: an unseen extract (Text One) and one of the 10 prescribed non-fiction texts from the Pearson Edexcel anthology (Text Two). Questions 1 to 3 (2, 4 and 5 marks) are on the unseen extract, Question 4 (12 marks) asks how the anthology writer uses language and structure, and Question 5 (22 marks) compares the two texts. 45 marks; about 1 hour 30 minutes, including reading time.',
     href: '/igcse/edexcel-lang/anthology',
     subLinks: [
       {
@@ -90,28 +108,24 @@ const paper1Sections = [
     ],
   },
   {
-    heading: 'Section B - Unseen Non-Fiction',
+    heading: 'Section B - Transactional Writing',
     label: 'Paper 1 Section B',
     detail:
-      'One unseen non-fiction extract with comprehension, language and comparison questions. Skills transfer from Section A anthology study.',
-    href: '/igcse/edexcel-lang/anthology',
+      'One 45-mark writing task, chosen from two prompts that set an audience, form or purpose. The text types are an article for a magazine or newspaper, a speech, a letter, a guide, a review and the text of a leaflet. About 45 minutes.',
   },
 ]
 
-const paper2Sections = [
+const paper2Sections: PaperSection[] = [
   {
-    heading: 'Section A - Reading (Fiction/Literary Non-Fiction)',
+    heading: 'Section A - Poetry and Prose Texts',
     label: 'Paper 2 Section A',
     detail:
-      'One unseen fiction or literary non-fiction extract with comprehension and analytical response questions.',
-    href: '/igcse/edexcel-lang',
+      'One 30-mark essay on a poem or prose text from Part 2 of the anthology, which is provided in the exam. There is no choice of text. About 45 minutes.',
   },
   {
-    heading: 'Section B - Transactional Writing',
+    heading: 'Section B - Imaginative Writing',
     label: 'Paper 2 Section B',
-    detail:
-      'Two transactional writing tasks from a choice. Text types include articles, letters, reports, reviews, speeches and essays.',
-    href: '/igcse/edexcel-lang',
+    detail: 'One 30-mark imaginative writing task, chosen from three prompts. About 45 minutes.',
   },
 ]
 
@@ -178,7 +192,7 @@ export default async function EdexcelIgcseLangHubPage() {
               </span>
               <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5">
                 <Clock className="size-3.5" />
-                {await t('edexcel.lang.duration_3h15')}
+                {await t('edexcel.lang.duration_total')}
               </span>
               <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5">
                 <BookOpen className="size-3.5" />
@@ -214,11 +228,15 @@ export default async function EdexcelIgcseLangHubPage() {
           aria-label="Anthology version notice"
           className="rounded-xl border border-amber-500/30 bg-amber-500/[0.06] p-5 text-body-sm text-card-foreground"
         >
+          {/* Until 26 September 2026 this named Issue 2 and said the anthology was
+              available "only through Pearson's school-licensed editions". The
+              current issue is 8 (February 2026, same ISBN), and Pearson publishes
+              it free as a PDF at the address linked below. */}
           <p className="mb-2">
-            <strong className="text-foreground">Anthology version:</strong> This site teaches the{' '}
-            <strong className="text-foreground">Edexcel IGCSE Anthology Issue 2</strong> (ISBN
-            978-1-446-93108-0, Pearson Education). Material differences from Issue 1 and from
-            freely-available online versions include:
+            <strong className="text-foreground">Anthology version:</strong> This site teaches{' '}
+            <strong className="text-foreground">Issue 8 (February 2026)</strong> of the Pearson
+            Edexcel International GCSE English Anthology (ISBN 978-1-446-93108-0). Material
+            differences from freely-available online versions include:
           </p>
           <ol className="mb-2 list-decimal space-y-1 ps-5 text-muted-foreground">
             <li>
@@ -236,9 +254,18 @@ export default async function EdexcelIgcseLangHubPage() {
             </li>
           </ol>
           <p className="text-body-xs text-muted-foreground">
-            © Pearson Education - quotations on individual set-text pages are short fair-dealing
-            extracts under CDPA s.30. The full anthology is available only through Pearson&rsquo;s
-            school-licensed editions.
+            Anthology © Pearson Education Limited 2026. Quotations on individual set-text pages are
+            short fair-dealing extracts under CDPA s.30. Pearson publishes the full anthology free
+            as a{' '}
+            <a
+              href={ANTHOLOGY_SOURCE.url}
+              className="underline underline-offset-2 hover:text-foreground"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              PDF on its qualifications website
+            </a>
+            .
           </p>
         </section>
 
@@ -264,23 +291,37 @@ export default async function EdexcelIgcseLangHubPage() {
                 key={section.heading}
                 className="rounded-2xl border border-border/60 bg-card transition-all duration-200"
               >
-                <Link
-                  href={section.href}
-                  className="group/section flex items-center justify-between gap-3 p-5 pb-3"
-                >
-                  <div className="min-w-0">
+                {section.href ? (
+                  <Link
+                    href={section.href}
+                    className="group/section flex items-center justify-between gap-3 p-5 pb-3"
+                  >
+                    <div className="min-w-0">
+                      <span className="mb-1 block font-mono text-body-xs text-muted-foreground uppercase tracking-wider">
+                        {section.label}
+                      </span>
+                      <h3 className="font-heading text-heading-sm text-foreground group-hover/section:text-primary transition-colors">
+                        {section.heading}
+                      </h3>
+                      <p className="mt-1 text-body-sm text-muted-foreground leading-relaxed">
+                        {section.detail}
+                      </p>
+                    </div>
+                    <ChevronRight className="size-5 shrink-0 text-muted-foreground transition-transform group-hover/section:translate-x-0.5 group-hover/section:text-primary" />
+                  </Link>
+                ) : (
+                  <div className="p-5 pb-3">
                     <span className="mb-1 block font-mono text-body-xs text-muted-foreground uppercase tracking-wider">
                       {section.label}
                     </span>
-                    <h3 className="font-heading text-heading-sm text-foreground group-hover/section:text-primary transition-colors">
+                    <h3 className="font-heading text-heading-sm text-foreground">
                       {section.heading}
                     </h3>
                     <p className="mt-1 text-body-sm text-muted-foreground leading-relaxed">
                       {section.detail}
                     </p>
                   </div>
-                  <ChevronRight className="size-5 shrink-0 text-muted-foreground transition-transform group-hover/section:translate-x-0.5 group-hover/section:text-primary" />
-                </Link>
+                )}
 
                 {section.subLinks && section.subLinks.length > 0 && (
                   <div className="flex flex-wrap gap-1.5 border-t border-border/40 px-5 py-3">

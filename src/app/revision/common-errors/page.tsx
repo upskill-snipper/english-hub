@@ -221,18 +221,23 @@ const ERROR_GROUPS: ErrorGroup[] = [
       },
       {
         number: 13,
-        text: 'Edexcel IGCSE Anthology Issue 2 - Half-Caste uses "yu" not "you"',
+        // Issue 2 until 26 September 2026. The current anthology is Issue 8
+        // (February 2026), which still prints "yu" throughout the poem.
+        text: 'Edexcel IGCSE Anthology Issue 8 - Half-Caste uses "yu" not "you"',
         wrong: 'Writing "you" when quoting Half-Caste in Edexcel IGCSE.',
         right:
-          'The Edexcel IGCSE Anthology Issue 2 prints "yu" - Agard\'s phonetic spelling reflecting Caribbean Creole.',
+          'The Edexcel IGCSE Anthology (Issue 8, February 2026) prints "yu" - Agard\'s phonetic spelling reflecting Caribbean Creole.',
         why: 'The spelling is part of the poem\'s linguistic protest. "Correcting" it to standard English erases Agard\'s point about which Englishes are deemed legitimate.',
       },
       {
         number: 14,
-        text: 'Bright Lights of Sarajevo - extra stanza breaks in Edexcel IGCSE Issue 2',
+        // Named Issue 2 until 26 September 2026. The issue number is dropped
+        // rather than changed to 8 because the stanza-break comparison with
+        // other printings has not been re-checked against Issue 8.
+        text: 'Bright Lights of Sarajevo - extra stanza breaks in the Edexcel IGCSE Anthology',
         wrong: 'Describing the structure based on a non-Edexcel printing.',
         right:
-          'The Edexcel IGCSE Anthology Issue 2 prints extra stanza breaks not present in some other editions. Use the anthology version when discussing form.',
+          'The Edexcel IGCSE Anthology prints extra stanza breaks not present in some other editions. Use the anthology version when discussing form.',
         why: "Stanza breaks are a structural feature you can analyse. Using a different printing's layout in the exam will produce a structural reading the examiner can't verify against the anthology.",
       },
       {
@@ -348,11 +353,20 @@ const ERROR_GROUPS: ErrorGroup[] = [
       },
       {
         number: 26,
-        text: 'Zephaniah and Alagiah (cross-board, platform rights flag) - estates now hold rights',
+        // Until 26 September 2026 this said both writers' rights "are now held
+        // by their estates". The anthology's acknowledgements (Issue 8, page 71)
+        // name no estate: Alagiah's text is © George Alagiah 2001, printed by
+        // permission of Little, Brown Book Group and the author c/o The Hanbury
+        // Agency, and Zephaniah's carries no copyright line, only permission
+        // from Jessica Kingsley Publishers. Say whose permission the anthology
+        // cites, not who inherited what.
+        text: 'Zephaniah and Alagiah (cross-board, platform rights flag) - both writers have died',
         wrong:
           'Treating the writers as still living when discussing rights or recent publications.',
         right:
-          'Benjamin Zephaniah died January 2023. George Alagiah died July 2023. Rights are now held by their estates.',
+          // Zephaniah died on 7 December 2023, not January (his family's statement
+          // that day); Alagiah on 24 July 2023. Corrected 26 September 2026.
+          'Benjamin Zephaniah died December 2023. George Alagiah died July 2023. The Edexcel IGCSE anthology reproduces their texts by permission of their publishers and agents: Jessica Kingsley Publishers for Zephaniah, and Little, Brown Book Group and the author (care of The Hanbury Agency) for Alagiah.',
         why: 'Cross-board platform rights flag - not exam-specific. Affects rights handling and biographical context (when discussing the writer in present tense versus past tense). Both writers are anthologised across multiple boards (e.g. AQA, Edexcel IGCSE) and remain examinable.',
       },
     ],

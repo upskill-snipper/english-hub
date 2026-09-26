@@ -3507,7 +3507,13 @@ export const AR_MESSAGES: Record<string, string> = {
   'texts.section.igcse_a_level': 'نصوص IGCSE و A-Level',
   'texts.section.pearson_anthology': 'مختارات Pearson IGCSE Language A (4EA1)',
   'texts.section.pearson_anthology_note':
-    'Section A نصوص غير قصصية، Section B شِعر، و Section C نثر - لمواصفات Pearson Edexcel International GCSE English Language A.',
+    'الجزآن 1 و2 من Pearson Edexcel International GCSE English Anthology، وهما مقرّران لـ English Language A. الجزء 1 (نصوص غير قصصية) يُمتحن في Unit 1 Section A. الجزء 2 (شِعر ونثر) يُمتحن في Unit 2 Section A، أو يُقيَّم بالـ coursework للطلاب في هذا المسار.',
+  'texts.section.pearson_lit_anthology': 'قصائد مختارات Pearson IGCSE Literature (4ET1)',
+  'texts.section.pearson_lit_anthology_note':
+    'الجزء 3 من المختارات نفسها. يجب دراسة القصائد الست عشرة كلها لـ English Literature (4ET1)، وتُمتحن في Unit 1 Section B. لا تُدرس لـ English Language A.',
+  'texts.section.other_texts': 'قصائد وقصص قصيرة أخرى',
+  'texts.section.other_texts_note':
+    'هذه النصوص ليست في مختارات Pearson، ولم نجدها مقرّرة لدى أي بورد امتحانات نغطيه.',
   'texts.label.non_fiction': 'نصوص غير قصصية:',
   'texts.label.poetry': 'شِعر:',
   'texts.label.prose': 'نثر:',
@@ -3530,7 +3536,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'anth_page.cta_start_studying': 'ابدأ المذاكرة',
   'anth_page.version_warning_label': 'تنبيه نسخة المختارات:',
   'anth_page.version_warning_body':
-    'هذا الموقع يدرّس Edexcel IGCSE Anthology Issue 2 (ISBN 978-1-446-93108-0, Pearson Education). نصّين من النصوص غير القصصية في Paper 1 Section A نسخ معدّلة تختلف عن الأصول المتاحة أونلاين ببلاش.',
+    'هذا الموقع يدرّس Issue 8 (فبراير 2026) من Pearson Edexcel International GCSE English Anthology (ISBN 978-1-446-93108-0)، واللي تنشرها Pearson ببلاش كملف PDF على موقع مؤهّلاتها. نصّين من النصوص غير القصصية في Part 1، وهي نصوص Paper 1 Section A، نسخ معدّلة تختلف عن الأصول المتاحة أونلاين ببلاش.',
   'anth_page.use_anthology_emph': 'استخدم نسخة المختارات دايماً',
   'anth_page.use_anthology_body':
     'لما تجاوب أسئلة Edexcel - المصحّحون يصحّحون بناءً على نص المختارات، مو نسخ The Guardian اللي تلقاها في مواقع المراجعة.',
@@ -3541,16 +3547,16 @@ export const AR_MESSAGES: Record<string, string> = {
   'anth_page.study_this_text': 'ذاكر هذا النص',
   'anth_page.expect_heading': 'Paper 1 Section A - شنو تتوقّع',
   'anth_page.expect_intro':
-    'في Paper 1 Section A بيعطونك مقطع من أحد النصوص العشرة. بتجاوب على ثلاث أنواع أسئلة:',
-  'anth_page.expect_q1_label': 'الاسترجاع (Q1):',
+    'Section A عليها ٤٥ درجة ولازم تجاوب على كل الأسئلة. بيعطونك نصّين: Text One مقطع unseen ما قد قريته قبل، و Text Two واحد من نصوص المختارات العشرة، ويكون موجود لك في الامتحان. Pearson تنصح بحوالي ساعة ونص للـ Section كلها، مع وقت القراءة.',
+  'anth_page.expect_q1_label': 'الأسئلة 1 إلى 3، Text One (٢ و٤ و٥ درجات):',
   'anth_page.expect_q1_body':
-    '"اذكر أربعة أشياء عن…" - استخراج مباشر للمعلومات من النص. القيمة ٤ درجات.',
-  'anth_page.expect_q2_label': 'تحليل اللغة (Q2):',
+    'أسئلة إجاباتها قصيرة على المقطع الـ unseen بس، تختبر قراءتك وفهمك له. ولا ورقة امتحان سابقة حطّت سؤال قصير أو سؤال استرجاع على نص المختارات.',
+  'anth_page.expect_q2_label': 'السؤال 4، Text Two (١٢ درجة):',
   'anth_page.expect_q2_body':
-    '"كيف يستخدم الكاتب اللغة عشان…" - تحليل دقيق لتقنيات معيّنة وأثرها على القارئ. القيمة ١٢ درجة.',
-  'anth_page.expect_q3_label': 'تحليل البنية (Q3):',
+    '"How does the writer, [name], use language and structure to...?" هذا السؤال الوحيد على نص المختارات لحاله. اكتب عن اللغة والبنية مع بعض، من المقطع كله، في إجابة وحدة: يتصحّح على جدول مستويات واحد، وكل مستوى فوق Level 1 يوصف الاثنين.',
+  'anth_page.expect_q3_label': 'السؤال 5، النصّين مع بعض (٢٢ درجة):',
   'anth_page.expect_q3_body':
-    '"كيف يبني الكاتب النص عشان…" - تحليل كيف ينظّم النص ليجذب القارئ ويؤثّر فيه. القيمة ١٢ درجة.',
+    'قارن كيف يعرض الكاتبين أفكارهم ووجهات نظرهم. المقارنة دايماً بين المقطع الـ unseen ونص المختارات، وأبداً ما تكون بين نصّين من المختارات، والإجابة اللي تغطّي نص واحد بس ما تاخذ أكثر من ٨ درجات.',
   'anth_page.study_all_note':
     'لازم تذاكر كل النصوص العشرة. ما بتعرف أي نص بيجي في الامتحان لين تفتح الورقة.',
   'anth_page.footer_align': 'متوافق مع مواصفات Pearson Edexcel 4EA1 · Paper 1 Section A',
@@ -5669,21 +5675,21 @@ export const AR_MESSAGES: Record<string, string> = {
   'edexcel.lang.hero_badge': 'International GCSE English Language',
   'edexcel.lang.hero_title': 'Pearson Edexcel IGCSE Language A',
   'edexcel.lang.hero_lead_pre':
-    'مؤهّل Pearson Edexcel International GCSE in English Language (Specification A) بورقتين امتحان، ويغطّي ',
+    'مؤهّل Pearson Edexcel International GCSE in English Language (Specification A) فيه Paper 1، وبعدها يا Paper 2 يا مكوّن coursework ما فيه امتحان. Paper 1 يغطّي ',
   'edexcel.lang.hero_lead_nf': 'قراءة النصوص غير الأدبية',
   'edexcel.lang.hero_lead_trans': 'الكتابة الإجرائية (transactional)',
   'edexcel.lang.hero_lead_anth': 'الـ Anthology المقرَّرة',
   'edexcel.lang.hero_lead_and': ' و',
   'edexcel.lang.hero_lead_post': ' فيها عشرة نصوص غير أدبية للمذاكرة في Paper 1 Section A.',
-  'edexcel.lang.duration_3h15': '٣ ساعات و١٥ دقيقة إجمالاً',
+  'edexcel.lang.duration_total': '٣ ساعات و٤٥ دقيقة إجمالاً (Paper 1 و Paper 2)',
   'edexcel.lang.anth_texts_count': '١٠ نصوص في الـ Anthology',
   'edexcel.lang.studying_lit_title': 'تذاكر Literature بعد؟',
   'edexcel.lang.studying_lit_body':
     'شوف نصوص Pearson Edexcel IGCSE Literature المقرَّرة - أدلّة مذاكرة كاملة لـ Macbeth، An Inspector Calls، Of Mice and Men، وأكثر.',
   'edexcel.lang.paper1.title': 'Paper 1: النصوص غير الأدبية والكتابة الإجرائية',
-  'edexcel.lang.paper1.meta': 'ساعة و٤٥ دقيقة · ٦٠ درجة · ٦٠٪ من المجموع',
-  'edexcel.lang.paper2.title': 'Paper 2: القراءة والكتابة (نصوص غير أدبية)',
-  'edexcel.lang.paper2.meta': 'ساعة و٣٠ دقيقة · ٤٠ درجة · ٤٠٪ من المجموع',
+  'edexcel.lang.paper1.meta': 'ساعتين و١٥ دقيقة · ٩٠ درجة · ٦٠٪ من المجموع',
+  'edexcel.lang.paper2.title': 'Paper 2: نصوص الشِّعر والنثر والكتابة الإبداعية',
+  'edexcel.lang.paper2.meta': 'ساعة و٣٠ دقيقة · ٦٠ درجة · ٤٠٪ من المجموع',
   'edexcel.lang.footer_align': 'متوافق مع مواصفة Pearson Edexcel رقم 4EA1',
   'edexcel.lang.tool.anthology.title': 'مذاكرة الـ Anthology',
   'edexcel.lang.tool.anthology.desc': 'كل الـ ١٠ نصوص غير الأدبية بتحليل كامل',
@@ -5803,7 +5809,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'anthology_hub.cta_start_studying': 'ابدأ المذاكرة',
   'anthology_hub.version_warning_label': 'تنبيه نسخة المختارات:',
   'anthology_hub.version_warning_body':
-    'هذا الموقع يدرّس Edexcel IGCSE Anthology Issue 2. نصّين من النصوص غير القصصية نسخ معدّلة تختلف عن الأصول المتاحة أونلاين ببلاش.',
+    'هذا الموقع يدرّس Issue 8 (فبراير 2026) من Pearson Edexcel International GCSE English Anthology، واللي تنشرها Pearson ببلاش كملف PDF. نصّين من النصوص غير القصصية نسخ معدّلة تختلف عن الأصول المتاحة أونلاين ببلاش.',
   'anthology_hub.use_anthology_emph': 'استخدم نسخة المختارات دايماً',
   'anthology_hub.use_anthology_body':
     'لما تجاوب أسئلة Edexcel - المصحّحون يصحّحون بناءً على نص المختارات، مو النسخ الأصلية اللي أونلاين.',

@@ -9,8 +9,7 @@ import { MARK_SCHEMES } from '@/lib/marking/mark-schemes'
  * The exam-practice questions on the anthology pages, which had nowhere to go.
  *
  * THE DEFECT. Each of the ten Edexcel IGCSE Language A anthology pages ends with
- * an "Exam practice" section carrying three real questions - a 4-mark retrieval
- * and two 12-mark analysis tasks. They were rendered as text in a grey box. A
+ * an "Exam practice" section. Its questions were rendered as text in a grey box. A
  * student who had just read the whole guide to their set text reached a question
  * about it and had nothing to click, while the paid AI marking tool sat two
  * navigations away behind an empty form.
@@ -40,69 +39,86 @@ const PAGES = readdirSync(BASE, { withFileTypes: true })
 
 describe('the mapping from a practice label to a mark-scheme question', () => {
   it.each([
-    ['Retrieval - 4 marks', 'Q2'],
-    ['Language analysis - 12 marks', 'Q4'],
-    ['Structural analysis - 12 marks', 'Q4'],
+    ['Language and structure - 12 marks', 'Q4'],
+    // The Arabic label the bilingual pages show. Until 26 September 2026 the
+    // pages passed it to the button and the pattern could not read it, so every
+    // button vanished for Arabic readers.
+    ['اللغة والبنية - ١٢ درجة', 'Q4'],
+    ['Language and structure - 12-mark question', 'Q4'],
   ])('%s maps to %s', (label, expected) => {
     expect(questionIdForPracticeType(label)).toBe(expected)
   })
 
-  it('maps both 12-mark labels to the same question, because Q4 asks for both', () => {
-    // Q4's task is "language AND structure". Splitting them across two question
-    // ids would mark half of each answer against objectives it was not set on.
-    expect(questionIdForPracticeType('Language analysis - 12 marks')).toBe(
-      questionIdForPracticeType('Structural analysis - 12 marks'),
-    )
-  })
-
   it.each([
-    ['Comparison - 22 marks', 'Q5 needs two texts and cannot be set from one page'],
+    ['Comparison - 22 marks', 'Q5 needs the unseen passage and cannot be set from one page'],
+    ['المقارنة - ٢٢ درجة', 'the same, in Arabic'],
+    // 4EA1 never sets a retrieval question on the anthology text: Q1 to Q3 are
+    // on Text One, the unseen extract. This label used to map to Q2 and so
+    // marked an answer about the anthology text against a question on another.
+    ['Retrieval - 4 marks', 'no such question on the anthology text'],
     ['Transactional writing - 45 marks', 'a different section of the paper'],
     ['Some new question type', 'no mark allocation at all'],
     ['', 'empty'],
   ])('refuses to guess for "%s" (%s)', (label) => {
-    // Failing safe is the point. A wrong question id would mark a 4-mark
-    // retrieval answer against the 12-mark analysis grid and hand a child a
-    // number against objectives they were not assessed on.
+    // Failing safe is the point. A wrong question id hands a child a mark
+    // against objectives they were not assessed on.
     expect(questionIdForPracticeType(label)).toBeNull()
   })
 
-  it('only ever returns a question that exists on the 4EA1 scheme', () => {
+  it('only ever returns Q4, the 12-mark language-and-structure question', () => {
     const scheme = MARK_SCHEMES['edexcel-igcse-lang-paper1']!
-    for (const label of ['Retrieval - 4 marks', 'Language analysis - 12 marks']) {
-      const id = questionIdForPracticeType(label)!
-      expect(
-        scheme.questions.some((q) => q.id === id),
-        `${id} is not on the scheme`,
-      ).toBe(true)
-    }
-  })
-
-  it('maps to a question whose mark total matches the label', () => {
-    // The mapping is derived FROM the marks, so this closes the loop: 4 marks
-    // must land on a 4-mark question and 12 on a 12-mark one.
-    const scheme = MARK_SCHEMES['edexcel-igcse-lang-paper1']!
-    for (const [label, marks] of [
-      ['Retrieval - 4 marks', 4],
-      ['Language analysis - 12 marks', 12],
-    ] as const) {
-      const q = scheme.questions.find((x) => x.id === questionIdForPracticeType(label))!
-      expect(q.totalMarks, label).toBe(marks)
-    }
+    const q = scheme.questions.find(
+      (x) => x.id === questionIdForPracticeType('Language and structure - 12 marks'),
+    )!
+    expect(q.id).toBe('Q4')
+    expect(q.totalMarks).toBe(12)
   })
 })
+
+/** The label literal of examPractice.qN on a page, or null. */
+function labelOf(src: string, q: string): string | null {
+  const at = src.indexOf('const examPractice')
+  if (at < 0) return null
+  const block = src.slice(src.indexOf(`${q}: {`, at))
+  const m = /\n\s*type:\s*(['"])((?:\.|(?!\1).)*)\1/.exec(block)
+  return m ? m[2]! : null
+}
 
 describe('every anthology page', () => {
   it('there are ten of them, so the loop below is not vacuous', () => {
     expect(PAGES.length).toBe(10)
   })
 
-  it.each(PAGES)('%s offers a way to get the practice marked', (name) => {
+  it.each(PAGES)('%s sets only questions the real paper asks', (name) => {
+    // 4EA1 Paper 1 examines the anthology text in Q4 (language and structure
+    // together, 12 marks) and Q5 (a comparison with an unseen passage, 22
+    // marks), and in no other way. The pages set a 4-mark retrieval question
+    // and split Q4 into a language-only and a structure-only question until
+    // 26 September 2026. See the mark scheme file for the Pearson papers checked.
     const src = readFileSync(join(BASE, name, 'page.tsx'), 'utf8')
-    expect(src).toContain('PracticeMarkingButton')
-    // Three practice questions per page, three buttons.
-    const calls = src.match(/await PracticeMarkingButton\(/g) ?? []
-    expect(calls.length, `${name} has ${calls.length} buttons`).toBe(3)
+    const labels = ['q1', 'q2', 'q3'].map((q) => labelOf(src, q))
+    expect(labels).toEqual([
+      'Language and structure - 12 marks',
+      'Language and structure - 12 marks',
+      'Comparison - 22 marks',
+    ])
+    expect(src).not.toMatch(/'Retrieval - \d+ marks'|'(?:Language|Structural) analysis - 12 marks'/)
+  })
+
+  it.each(PAGES)('%s gives each markable question a button that renders', (name) => {
+    // Counting calls is not enough: a call whose label maps to nothing renders
+    // nothing, and the page looks finished. So each call's label is resolved
+    // through the real mapping.
+    const src = readFileSync(join(BASE, name, 'page.tsx'), 'utf8')
+    const calls = [...src.matchAll(/await PracticeMarkingButton\(\{([\s\S]*?)\}\)/g)]
+    expect(calls.length, `${name} has ${calls.length} buttons`).toBe(2)
+    for (const [, args] of calls) {
+      const type = /type:\s*([^,\n]+)/.exec(args!)?.[1]?.trim()
+      // Always the English label: the displayed label may be Arabic.
+      expect(type, `${name} passes ${type}`).toMatch(/^examPractice\.q\d\.type$/)
+      const q = /examPractice\.(q\d)\.type/.exec(type!)![1]!
+      expect(questionIdForPracticeType(labelOf(src, q) ?? ''), `${name} ${q}`).toBe('Q4')
+    }
   })
 
   it.each(PAGES)('%s names the text it is about, cleanly', (name) => {
@@ -123,7 +139,7 @@ describe('every anthology page', () => {
   it.each(PAGES)('%s passes the title to every button', (name) => {
     const src = readFileSync(join(BASE, name, 'page.tsx'), 'utf8')
     const passes = src.match(/textTitle: ANTHOLOGY_TEXT_TITLE/g) ?? []
-    expect(passes.length).toBe(3)
+    expect(passes.length).toBe(2)
   })
 })
 
@@ -132,7 +148,7 @@ describe('the link the button produces', () => {
     // End to end: what the button builds is what the form reads.
     const href = markingLink({
       schemeId: 'edexcel-igcse-lang-paper1',
-      questionId: questionIdForPracticeType('Language analysis - 12 marks')!,
+      questionId: questionIdForPracticeType('Language and structure - 12 marks')!,
       text: 'A Passage to Africa',
     })
     const boards = [

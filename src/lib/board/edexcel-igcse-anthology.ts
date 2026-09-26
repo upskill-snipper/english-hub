@@ -118,7 +118,9 @@ export const ANTHOLOGY: AnthologyPart[] = [
         author: 'Steven Morris',
         page: 8,
         altered: 'adapted',
-        alteredNote: 'The anthology prints an explicit adaptation note under this article.',
+        // "under this article" until 26 September 2026. The note is a headnote,
+        // printed above the article's first line, on both adapted texts.
+        alteredNote: 'The anthology prints an explicit adaptation note above this article.',
       },
       {
         slug: 'between-a-rock-and-a-hard-place',
@@ -133,7 +135,7 @@ export const ANTHOLOGY: AnthologyPart[] = [
         author: 'Benjamin Zephaniah',
         page: 12,
         altered: 'adapted',
-        alteredNote: 'The anthology prints an explicit adaptation note under this article.',
+        alteredNote: 'The anthology prints an explicit adaptation note above this article.',
       },
       {
         slug: 'a-game-of-polo-with-a-headless-goat',
@@ -210,7 +212,18 @@ export const ANTHOLOGY: AnthologyPart[] = [
         page: 42,
         altered: 'extract',
       },
-      { slug: 'night', title: 'Night', author: 'Alice Munro', page: 44 },
+      {
+        slug: 'night',
+        title: 'Night',
+        author: 'Alice Munro',
+        page: 44,
+        // Unflagged until 26 September 2026, which recorded the anthology text
+        // as the whole story. It is not, and a student revising from Dear Life
+        // would be revising passages the examiner's text leaves out.
+        altered: 'extract',
+        alteredNote:
+          'The anthology prints the story shortened: eight ellipses between sentences mark cuts, and it runs to about 3,700 words from the fifteen pages (pp. 271-285 of Dear Life, 2012) its acknowledgement cites.',
+      },
     ],
   },
   {

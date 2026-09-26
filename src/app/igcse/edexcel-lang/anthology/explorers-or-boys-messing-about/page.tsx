@@ -20,7 +20,8 @@ import { getLocale, t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Explorers or Boys Messing About? - IGCSE Anthology - The English Hub',
-    description: 'Study guide for ',
+    description:
+      'The Steven Morris newspaper article for Edexcel IGCSE Language A: themes, structural analysis, purpose and Paper 1 Section A practice.',
     images: [
       {
         url: '/api/og?title=Explorers+or+Boys+Messing+About%3F+-+IGCSE+Anthology+-+The+English+Hub',
@@ -39,6 +40,18 @@ export const metadata: Metadata = {
   },
 }
 
+/**
+ * CORRECTED 26 September 2026 against Pearson's anthology, Issue 8 (February
+ * 2026), pp. 8-9. The context section said the men "attempted a journey across
+ * Antarctica", quoted "the Frozen Continent" and named an "Iridium" phone; the
+ * article says none of that. They ditched a helicopter in the sea about 100
+ * miles off Antarctica, and Brooks called his wife on a satellite phone. The
+ * Guardian date was given as 24 January in places; the anthology's note and
+ * acknowledgements both give 28 January 2003. The structure notes said expert
+ * criticism clusters mid-article and that Morris quotes the men less than their
+ * critics: the only named critic (Endres) comes near the end, the one explorer
+ * quoted calls their survival a miracle, and neither man is quoted directly.
+ */
 const themes = [
   {
     label: 'Risk and recklessness',
@@ -88,21 +101,21 @@ const structuralAnalysis = {
   openingAr:
     'يطرح العنوانُ سؤالاً ثنائيّاً - “Explorers or boys messing about?” - يؤطّر المقالَ فوراً بوصفه حُكماً لا تقريراً محايداً. ويُدعى القارئ إلى اختيار موقفٍ من السطر الأوّل.',
   development:
-    'Morris alternates the bare facts of the incident (the crash, the Iridium phone call, the rescue) with critical voices from polar experts, building an evidence-based case that leans toward the “messing about” verdict.',
+    'Morris alternates the bare facts of the incident (the crash, the satellite phone call, the rescue) with critical voices, building an evidence-based case that leans toward the “messing about” verdict.',
   developmentAr:
-    'يتناوب Morris بين الحقائق الجرداء للحادثة (التحطّم، مكالمة هاتف Iridium، الإنقاذ) وبين أصواتٍ ناقدةٍ من خبراء القطب، فيبني قضيّةً قائمةً على الدليل تميل إلى حُكم “messing about”.',
+    'يتناوب Morris بين الحقائق الجرداء للحادثة (التحطّم، مكالمة الهاتف الفضائيّ، الإنقاذ) وبين أصواتٍ ناقدة، فيبني قضيّةً قائمةً على الدليل تميل إلى حُكم “messing about”.',
   climax:
-    'The strongest critical quotations from established explorers cluster in the middle of the article, where the rhetorical weight of expert disapproval is most concentrated.',
+    'There is no single climax of criticism. Experts’ doubts about the small helicopter are reported early; the one Antarctic explorer quoted calls their survival a miracle rather than criticising them; and the only named critic, the helicopter expert Günter Endres, is held back until near the end, shortly before the Ministry of Defence confirms the taxpayer will pay.',
   climaxAr:
-    'تتجمّع أقوى الاقتباسات الناقدة من مستكشفين مُكرَّسين في وسط المقال، حيث يبلغ ثقل الاستنكار من الخبراء أعلى تركيزه البلاغيّ.',
+    'لا توجد ذروةٌ واحدة للنقد. تُنقل شكوكُ الخبراء في المروحيّة الصغيرة في وقتٍ مبكّر؛ والمستكشف القطبيّ الوحيد المُقتبَس يَعُدّ نجاتهما معجزةً ولا ينتقدهما؛ أمّا الناقد الوحيد المُسمّى، خبير المروحيّات Günter Endres، فيُؤجَّل إلى قرب النهاية، قُبيل تأكيد وزارة الدفاع أنّ دافع الضرائب سيتحمّل الكلفة.',
   resolution:
     'The piece closes without resolving the question outright, leaving readers to weigh the evidence - but the cumulative framing has already nudged them toward scepticism of the men’s judgement.',
   resolutionAr:
     'يُختم المقالُ دون حسمٍ صريحٍ للسؤال، تاركاً للقرّاء وزنَ الأدلّة - غير أنّ التأطيرَ التراكميَّ يكون قد دفعهم سلفاً نحو الارتياب من حُكم الرجلَين.',
   perspective:
-    'Third-person reportage with an embedded editorial slant. Morris quotes critics far more than he quotes the men themselves, allowing voices of authority to dominate the moral verdict.',
+    'Third-person reportage with an embedded editorial slant. Neither man is quoted directly: Brooks is heard only through his wife’s account of his phone call and through a spokesman. Other voices (Ms Vestey, an Antarctic explorer, Endres, the Ministry of Defence) fill the article, so outsiders shape the moral verdict.',
   perspectiveAr:
-    'تقريرٌ بضمير الغائب مع ميلٍ تحريريٍّ مُضمَّن. يقتبس Morris من الناقدين أكثر بكثير ممّا يقتبس من الرجلَين أنفسهما، فيدع أصواتَ السلطة تُهيمن على الحُكم الأخلاقيّ.',
+    'تقريرٌ بضمير الغائب مع ميلٍ تحريريٍّ مُضمَّن. لا يُقتبس أيٌّ من الرجلَين مباشرةً: لا نسمع Brooks إلّا عبر رواية زوجته لمكالمته الهاتفيّة، وعبر متحدّثٍ باسمهما. وتملأ المقالَ أصواتٌ أخرى (Ms Vestey، ومستكشفٌ قطبيّ، وEndres، ووزارة الدفاع)، فيصوغ الغرباءُ الحُكمَ الأخلاقيّ.',
 }
 
 const writersPurpose = {
@@ -123,25 +136,53 @@ const writersPurpose = {
 /** The text these practice questions are about, sent to the marker as context. */
 const ANTHOLOGY_TEXT_TITLE = 'Explorers or Boys Messing About?'
 
+/**
+ * CHANGED 26 September 2026. This set used to ask a "Retrieval - 4 marks"
+ * question (list four things about the expedition), a language-only question
+ * and a structure-only question, each "12 marks". None of the three is a 4EA1
+ * question. On every Paper 1 checked (the 2016 SAMs, the 2017 extra assessment
+ * material, P65890A and P65891RA from 2021, June and November 2023, May and
+ * November 2024, and the mark schemes for November 2023, June 2024 and June
+ * 2025), Q1-3 are short answers on Text One, the unseen extract. The anthology
+ * text is Text Two and is examined alone only at Q4: one 12-mark AO2 question
+ * on language AND structure across the whole extract. Q5 (22 marks) compares it
+ * with the unseen text, never with another anthology text. This article was
+ * Text Two in June 2019 (examiners' report) and in P65891RA.
+ *
+ * The English `type` labels are what questionIdForPracticeType maps: "12 marks"
+ * goes to Q4 and "22 marks" to nothing, so q3 has no marking button (it needs
+ * the unseen passage). The button is always given the English label. The
+ * Arabic render used to pass typeAr, and while the mapping read only ASCII
+ * digits and the word "marks" that silently removed every button on the Arabic
+ * page. The mapping now reads Arabic labels too, but passing the English one
+ * keeps the button independent of that. The "Compare with" intro now also says
+ * the exam pairs this text with an unseen passage, since its shared string calls
+ * these links pairings for comparison questions in the exam.
+ */
 const examPractice = {
   q1: {
-    question: 'List four things you learn about the explorers’ expedition from the article.',
-    questionAr: 'اذكر أربعةَ أشياء تعرفها عن رحلة المستكشفَين من المقال.',
-    type: 'Retrieval - 4 marks',
-    typeAr: 'الاسترجاع - ٤ درجات',
+    question:
+      'How does the writer, Steven Morris, use language and structure to lead the reader towards a judgement of the explorers? Support your answer with close reference to the extract, including brief quotations.',
+    questionAr:
+      'كيف يستعمل الكاتب، Steven Morris، اللغةَ والبنيةَ ليقود القارئ نحو حُكمٍ على المستكشفَين؟ ادعم إجابتك بإحالاتٍ دقيقة إلى المقتطف، مع اقتباساتٍ موجزة.',
+    type: 'Language and structure - 12 marks',
+    typeAr: 'اللغة والبنية - ١٢ درجة',
   },
   q2: {
-    question: 'How does Morris use language to convey his attitude towards the explorers’ conduct?',
-    questionAr: 'كيف يستعمل Morris اللغةَ لينقل موقفه من سلوك المستكشفَين؟',
-    type: 'Language analysis - 12 marks',
-    typeAr: 'تحليل اللغة - ١٢ درجة',
+    question:
+      'How does the writer, Steven Morris, use language and structure to convey attitudes to the explorers and their rescue? Support your answer with close reference to the extract, including brief quotations.',
+    questionAr:
+      'كيف يستعمل الكاتب، Steven Morris، اللغةَ والبنيةَ لينقل المواقفَ من المستكشفَين ومن عمليّة إنقاذهما؟ ادعم إجابتك بإحالاتٍ دقيقة إلى المقتطف، مع اقتباساتٍ موجزة.',
+    type: 'Language and structure - 12 marks',
+    typeAr: 'اللغة والبنية - ١٢ درجة',
   },
   q3: {
     question:
-      'How does Morris structure the article to lead the reader towards a particular judgement?',
-    questionAr: 'كيف يبني Morris المقالَ ليقود القارئ نحو حُكمٍ بعينه؟',
-    type: 'Structural analysis - 12 marks',
-    typeAr: 'التحليل البنائيّ - ١٢ درجة',
+      'In the exam, Question 5 asks you to compare this extract with an unseen passage. Practise with any passage on a similar subject: compare how the two writers present their ideas and perspectives about risk and responsibility.',
+    questionAr:
+      'في الامتحان، يطلب منك السؤال الخامس مقارنةَ هذا المقتطف بنصٍّ غير مرئيّ. تدرّب بأيّ نصٍّ في موضوعٍ مشابه: قارن كيف يعرض الكاتبان أفكارهما ووجهات نظرهما حول المخاطرة والمسؤوليّة.',
+    type: 'Comparison - 22 marks',
+    typeAr: 'المقارنة - ٢٢ درجة',
   },
 }
 
@@ -210,7 +251,7 @@ export default async function ExplorersOrBoysMessingAboutPage() {
               Steven Morris &middot;{' '}
               {ar ? (
                 <>
-                  مقال صحفيّ (<em>The Guardian</em>، 24 يناير 2003 - مُكيَّف للمختارات)
+                  مقال صحفيّ (<em>The Guardian</em>، 28 يناير 2003 - مُكيَّف للمختارات)
                 </>
               ) : (
                 <>
@@ -243,7 +284,7 @@ export default async function ExplorersOrBoysMessingAboutPage() {
                 <>
                   <strong className="text-foreground">تحذير نسخة المختارات:</strong> هذا النصّ هو
                   النسخة <strong className="text-foreground">المُكيَّفة</strong> المطبوعة في مختارات
-                  Edexcel IGCSE Issue 2 (ISBN 978-1-446-93108-0). نسخةُ <em>Guardian</em> الأصليّة
+                  Edexcel IGCSE Issue 8 (ISBN 978-1-446-93108-0). نسخةُ <em>Guardian</em> الأصليّة
                   المتاحة مجّاناً تختلف في الحذف والترتيب وتفاصيل المفردات. استعمل دائماً نسخةَ
                   المختارات حين تجيب على أسئلة Edexcel - يُصحّح الممتحنون قبالةَ نصّ المختارات، لا
                   قبالةَ النسخ المنشورة على الإنترنت.
@@ -252,7 +293,7 @@ export default async function ExplorersOrBoysMessingAboutPage() {
                 <>
                   <strong className="text-foreground">Anthology version warning:</strong> This text
                   is the <strong className="text-foreground">adapted</strong> version printed in the
-                  Edexcel IGCSE Anthology Issue 2 (ISBN 978-1-446-93108-0). The freely-available{' '}
+                  Edexcel IGCSE Anthology Issue 8 (ISBN 978-1-446-93108-0). The freely-available{' '}
                   <em>Guardian</em> original differs in cuts, re-orderings, and minor word choice.
                   Always use the anthology version when answering Edexcel questions - examiners mark
                   against the anthology text, not online reproductions.
@@ -274,12 +315,13 @@ export default async function ExplorersOrBoysMessingAboutPage() {
           {ar ? (
             <>
               <p>
-                في يناير 2003، حاول مغامران بريطانيّان عبور أنتاركتيكا - &ldquo;the Frozen
-                Continent&rdquo; - واضطُرّا إلى إجراء مكالمة طارئة من هاتف Iridium الفضائيّ بعد أن
-                وقعت رحلتهما في ورطةٍ خطيرة. وتلت ذلك عمليّةُ إنقاذ.
+                في يناير 2003، سقطت مروحيّةُ المغامرَين البريطانيَّين Steve Brooks وQuentin Smith في
+                البحر على بُعد نحو 100 ميل من أنتاركتيكا، فلجآ إلى طوّافة نجاة، واتّصل Brooks بزوجته
+                في لندن من هاتفه الفضائيّ. وتلت ذلك عمليّةُ إنقاذ شاركت فيها البحريّة الملكيّة وسلاح
+                الجوّ الملكيّ وخفر السواحل البريطانيّ.
               </p>
               <p>
-                مقالُ Steven Morris، المنشورُ أصلاً في <em>The Guardian</em> في 24 يناير 2003، غطّى
+                مقالُ Steven Morris، المنشورُ أصلاً في <em>The Guardian</em> في 28 يناير 2003، غطّى
                 الحادثةَ لكنّه أطّرها بسؤالٍ موجَّه: هل كان هذان مستكشفَين، أم هاويَين أَوقَع
                 استهتارُهما الآخرين في الخطر؟ والعنوانُ نفسه يطرح المعضلةَ التي يُدعى القارئ إلى
                 وزنها.
@@ -294,13 +336,13 @@ export default async function ExplorersOrBoysMessingAboutPage() {
           ) : (
             <>
               <p>
-                In January 2003, two British adventurers attempted a journey across Antarctica -
-                &ldquo;the Frozen Continent&rdquo; - and were forced to make an emergency call from
-                an Iridium satellite phone after their expedition ran into serious trouble. A rescue
-                operation followed.
+                In January 2003, two British adventurers, Steve Brooks and Quentin Smith, ditched
+                their helicopter in the sea about 100 miles off Antarctica and scrambled into a
+                liferaft. Brooks called his wife in London on his satellite phone, and a rescue
+                involving the Royal Navy, the RAF and British coastguards followed.
               </p>
               <p>
-                Steven Morris&apos;s article, originally published in <em>The Guardian</em> on 24
+                Steven Morris&apos;s article, originally published in <em>The Guardian</em> on 28
                 January 2003, reported the incident but framed it through a pointed question: were
                 these men explorers, or were they amateurs whose recklessness placed others at risk?
                 The headline itself poses the dilemma the reader is invited to weigh.
@@ -430,7 +472,7 @@ export default async function ExplorersOrBoysMessingAboutPage() {
               {ar ? examPractice.q1.questionAr : examPractice.q1.question}
             </p>
             {await PracticeMarkingButton({
-              type: ar ? examPractice.q1.typeAr : examPractice.q1.type,
+              type: examPractice.q1.type,
               question: ar ? examPractice.q1.questionAr : examPractice.q1.question,
               textTitle: ANTHOLOGY_TEXT_TITLE,
             })}
@@ -443,7 +485,7 @@ export default async function ExplorersOrBoysMessingAboutPage() {
               {ar ? examPractice.q2.questionAr : examPractice.q2.question}
             </p>
             {await PracticeMarkingButton({
-              type: ar ? examPractice.q2.typeAr : examPractice.q2.type,
+              type: examPractice.q2.type,
               question: ar ? examPractice.q2.questionAr : examPractice.q2.question,
               textTitle: ANTHOLOGY_TEXT_TITLE,
             })}
@@ -455,11 +497,11 @@ export default async function ExplorersOrBoysMessingAboutPage() {
             <p className="mt-2 text-body text-foreground font-medium">
               {ar ? examPractice.q3.questionAr : examPractice.q3.question}
             </p>
-            {await PracticeMarkingButton({
-              type: ar ? examPractice.q3.typeAr : examPractice.q3.type,
-              question: ar ? examPractice.q3.questionAr : examPractice.q3.question,
-              textTitle: ANTHOLOGY_TEXT_TITLE,
-            })}
+            <p className="mt-2 text-body-sm text-muted-foreground">
+              {ar
+                ? 'لا يمكن تصحيح هذا السؤال هنا: فهو يحتاج إلى النصّ غير المرئيّ الذي يقرنه الامتحان بهذا النصّ.'
+                : "This question can't be marked here: it needs the unseen passage that the exam pairs with this text."}
+            </p>
           </div>
         </div>
       </section>
@@ -472,7 +514,10 @@ export default async function ExplorersOrBoysMessingAboutPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          {await t('anth_text.compare_with.intro')}
+          {await t('anth_text.compare_with.intro')}{' '}
+          {ar
+            ? 'في الامتحان يُقارَن هذا النصّ بنصٍّ غير مرئيّ، لا بنصٍّ آخر من المختارات، فهذه المقارنات للمراجعة.'
+            : 'In the exam this text is compared with an unseen passage, never another anthology text, so these pairings are for revision.'}
         </p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {comparisonLinks.map((c) => (
@@ -507,19 +552,22 @@ export default async function ExplorersOrBoysMessingAboutPage() {
         {ar ? (
           <p>
             <strong className="text-foreground">{await t('anth_text.rights_notice_label')}</strong>{' '}
-            © Guardian News &amp; Media Ltd 2003 / Steven Morris. النسخةُ المدروسة هنا هي النصّ
-            المُكيَّف المطبوع في مختارات Pearson Edexcel IGCSE Issue 2 (ISBN 978-1-446-93108-0).
-            الشروحاتُ والصياغاتُ القصيرة في هذه الصفحة لأغراض النقد والمراجعة والاقتباس بمقتضى CDPA
-            1988 §30. ينبغي للطلاب الرجوع إلى الطبعة المدرسيّة المرخّصة للنصّ الكامل في المختارات.
+            © Guardian News &amp; Media Ltd 2016 (كما تذكره المختارات في قسم الشكر). النسخةُ
+            المدروسة هنا هي النصّ المُكيَّف المطبوع في مختارات Pearson Edexcel IGCSE Issue 8 (ISBN
+            978-1-446-93108-0). الشروحاتُ والصياغاتُ القصيرة في هذه الصفحة لأغراض النقد والمراجعة
+            والاقتباس بمقتضى CDPA 1988 §30. وتنشر Pearson المختاراتِ كاملةً مجّاناً، فارجع إليها
+            للنصّ الكامل.
           </p>
         ) : (
           <p>
             <strong className="text-foreground">{await t('anth_text.rights_notice_label')}</strong>{' '}
-            &copy; Guardian News &amp; Media Ltd 2003 / Steven Morris. The version studied here is
-            the adapted text printed in the Pearson Edexcel IGCSE Anthology Issue 2 (ISBN
-            978-1-446-93108-0). Brief paraphrases on this page are for criticism, review and
-            quotation under CDPA 1988 &sect;30. Students should consult the licensed school edition
-            for the full anthology text.
+            {/* Holder and year as the anthology's acknowledgements give them;
+                until 26 September 2026 this read "2003 / Steven Morris" and "Issue 2". */}
+            &copy; Guardian News &amp; Media Ltd 2016 (as acknowledged in the anthology). The
+            version studied here is the adapted text printed in the Pearson Edexcel IGCSE Anthology
+            Issue 8 (ISBN 978-1-446-93108-0). Brief paraphrases on this page are for criticism,
+            review and quotation under CDPA 1988 &sect;30. Pearson publishes the full anthology
+            free; use it for the full text.
           </p>
         )}
         <p className="mt-2">{await t('anth_text.footer_align')}</p>

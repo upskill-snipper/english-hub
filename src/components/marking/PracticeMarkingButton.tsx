@@ -10,8 +10,8 @@ import { t } from '@/lib/i18n/t'
  * to go.
  *
  * THE DEFECT. Each of the ten Edexcel IGCSE Language A anthology pages ends with
- * an "Exam practice" section carrying real questions - a 4-mark retrieval and
- * two 12-mark analysis tasks. They were rendered as text in a grey box. A
+ * an "Exam practice" section carrying real questions. They were rendered as
+ * text in a grey box. A
  * student who had just read the whole guide to their set text reached a question
  * about it and had nothing to click. The AI marking tool, which is the paid
  * feature, was two navigations away and arrived with an empty form, because
@@ -44,25 +44,32 @@ const SCHEME_ID = 'edexcel-igcse-lang-paper1'
 /**
  * Map a practice-question label to the mark-scheme question it exemplifies.
  *
- * The mark allocation is what identifies the question on this paper: 4 marks is
- * Q2 (explain in your own words, AO1) and 12 marks is Q4 (language AND
- * structure, AO2) - which is why both the "Language analysis" and "Structural
- * analysis" labels map to Q4 rather than to two different questions.
+ * The mark allocation is what identifies the question: on 4EA1 Paper 1 the only
+ * question on the anthology text alone is Q4, language and structure together,
+ * 12 marks. Everything else returns null and renders no button: the 22-mark
+ * comparison needs the unseen passage, and Q1 to Q3 are always on that unseen
+ * passage, never on the anthology text.
  *
- * Returns null for anything else, including the 22-mark comparison, which
- * cannot be answered from a single text's page.
+ * CHANGED 26 September 2026, twice over.
+ *  - "4 marks" used to map to Q2. The pages set a 4-mark retrieval question on
+ *    the anthology text, which 4EA1 never asks (Q1 to Q3 are on Text One, the
+ *    unseen extract, in every paper from the 2016 SAMs to Summer 2026), and the
+ *    answer was marked against Q2, a question about a different text. The pages
+ *    no longer set it and the mapping no longer accepts it.
+ *  - The label had to be English. The bilingual pages passed their Arabic label
+ *    ("... - ١٢ درجة") when the page was shown in Arabic, the pattern needed
+ *    ASCII digits and the word "marks", and so every button silently
+ *    disappeared for Arabic readers. Arabic-Indic digits and "درجة" / "درجات"
+ *    are now read too, and "12-mark" with a hyphen, which also returned null.
  */
 export function questionIdForPracticeType(label: string): string | null {
-  const marks = /(\d+)\s*marks?/i.exec(label)
+  const ascii = label
+    // Arabic-Indic (U+0660-0669) and extended Arabic-Indic (U+06F0-06F9) digits.
+    .replace(/[٠-٩]/g, (d) => String(d.charCodeAt(0) - 0x0660))
+    .replace(/[۰-۹]/g, (d) => String(d.charCodeAt(0) - 0x06f0))
+  const marks = /(\d+)[\s-]*(?:marks?|درجة|درجات)/i.exec(ascii)
   if (!marks) return null
-  switch (marks[1]) {
-    case '4':
-      return 'Q2'
-    case '12':
-      return 'Q4'
-    default:
-      return null
-  }
+  return marks[1] === '12' ? 'Q4' : null
 }
 
 export async function PracticeMarkingButton({
@@ -70,7 +77,7 @@ export async function PracticeMarkingButton({
   question,
   textTitle,
 }: {
-  /** The label above the question, e.g. "Language analysis - 12 marks". */
+  /** The label above the question, e.g. "Language and structure - 12 marks". */
   type: string
   /** The question itself, in whichever language the page resolved. */
   question: string

@@ -88,10 +88,13 @@ const languageFeatures = [
     explanation:
       'Adichie contrasts the destructive and constructive uses of stories using parallel pairs, showing that narrative is a tool that can cut both ways.',
   },
+  // This was "Rhetorical question" until 26 September 2026. The extract's only
+  // question is her mother's "Don't you know...?" at dinner, not one put to the
+  // audience, so the technique could not be evidenced from the anthology text.
   {
-    technique: 'Rhetorical question',
+    technique: 'Humour',
     explanation:
-      'Rhetorical questions challenge the audience to consider alternatives to their own assumptions. They invite reflection without demanding an answer, drawing the listener into active engagement.',
+      'Adichie uses gentle, self-aware humour, as when her roommate asks to hear her "tribal music" and is disappointed when Adichie produces her tape of Mariah Carey. The humour disarms the audience before she makes the serious point that the roommate had a single story of Africa.',
   },
   {
     technique: 'List of three',
@@ -147,6 +150,10 @@ const writersPurpose = {
     'Her central argument is that stories carry power, and that the dominance of a single story - whether about Africa, about immigrants, about any group - flattens complexity and denies humanity. The antidote is a balance of stories.',
 }
 
+// Every headword below is in the anthology extract, spelled as it prints it
+// (American -ize). Until 26 September 2026 the list included stereotype,
+// authenticity and narrative, which the extract does not use, and gave
+// "patronising" and "humanise".
 const keyVocabulary = [
   {
     word: 'dispossess',
@@ -158,41 +165,42 @@ const keyVocabulary = [
     definition: 'To speak about someone in a spitefully critical manner; to slander.',
   },
   {
-    word: 'patronising',
+    word: 'patronizing',
     definition: 'Treating someone with an apparent kindness that reveals a feeling of superiority.',
   },
   {
-    word: 'stereotype',
+    word: 'abject',
     definition:
-      'A widely held but oversimplified and fixed image or idea of a particular type of person or group.',
+      'Wretched and hopeless; the single image of Mexican immigrants that Adichie admits she had absorbed.',
   },
   {
     word: 'impressionable',
     definition: 'Easily influenced or affected, especially by new ideas or experiences.',
   },
   {
-    word: 'vulnerability',
-    definition: 'The quality of being open to emotional or physical harm; exposure.',
+    word: 'vulnerable',
+    definition: 'Open to emotional or physical harm; exposed.',
   },
   { word: 'perception', definition: 'The way in which something is understood or interpreted.' },
   {
     word: 'catastrophe',
     definition:
-      'A sudden disaster or great misfortune; used by Adichie to describe the consequence of a single story.',
+      'A sudden disaster or great misfortune; in the single story of Africa that Adichie’s roommate held, Africa was nothing but catastrophe.',
   },
   {
-    word: 'authenticity',
-    definition: "The quality of being genuine, real, or true to one's own character.",
+    word: 'synonymous',
+    definition:
+      'So closely linked as to seem to mean the same thing; Adichie says that in America immigration had become synonymous with Mexicans.',
   },
   {
-    word: 'humanise',
+    word: 'humanize',
     definition:
       'To make something more humane or civilised; to portray someone as a full, complex person.',
   },
   {
-    word: 'narrative',
+    word: 'empower',
     definition:
-      'A spoken or written account of connected events; a story or way of telling a story.',
+      'To give someone power or confidence; Adichie sets it against dispossess and malign as a use of stories.',
   },
   {
     word: 'default',
@@ -204,26 +212,47 @@ const keyVocabulary = [
 /** The text these practice questions are about, sent to the marker as context. */
 const ANTHOLOGY_TEXT_TITLE = 'The Danger of a Single Story'
 
+// Until 26 September 2026 this set a "List four things" retrieval question on
+// her childhood reading for 4 marks, a language-only question and a
+// structure-only question, each for 12. No 4EA1 paper asks any of those. On
+// every Pearson 4EA1/01 paper and mark scheme checked (the SAMs, the 2017 extra
+// assessment material, the June 2019 examiners' report, the 2021 papers, June
+// 2023, November 2023, May 2024, November 2024, which set this very text, and
+// the June 2025 mark scheme and examiners' report) Questions 1-3 are on the
+// unseen Text One, Question 4 (12 marks, AO2) is the only question on the
+// anthology text and always asks about language AND structure together on one
+// grid, and Question 5 (22 marks, AO3) compares the anthology text with the
+// unseen one; the exam never pairs two anthology texts. The retrieval question
+// was also sent to Q2, a Text One question, so it was marked as the wrong
+// question. The labels are what questionIdForPracticeType in
+// PracticeMarkingButton reads: "12 marks" maps to Q4, and "22 marks" maps to
+// nothing, which is why q3 renders no button. Keep the space before "marks".
 const examPractice = {
   q1: {
     question:
-      "List four things you learn about Adichie's childhood reading habits from the opening of the text.",
-    type: 'Retrieval - 4 marks',
+      'How does the writer, Chimamanda Ngozi Adichie, use language and structure to build a persuasive argument? Support your answer with close reference to the extract, including brief quotations.',
+    type: 'Language and structure - 12 marks',
   },
   q2: {
-    question: 'How does Adichie use language to convey the impact of stereotypes on individuals?',
-    type: 'Language analysis - 12 marks',
+    question:
+      'How does the writer, Chimamanda Ngozi Adichie, use language and structure to convey the impact of stereotypes? Support your answer with close reference to the extract, including brief quotations.',
+    type: 'Language and structure - 12 marks',
     modelOutline: [
-      'Adichie uses emotive language to convey the patronising assumptions of her American roommate, making the reader feel the frustration of being reduced to a single narrative.',
+      // Until 26 September 2026 this point said emotive language about the
+      // roommate made the reader feel frustration. The extract never voices
+      // frustration: Adichie tells that story without anger, through humour and
+      // anticlimax, as the study guide notes, so the point now says so.
+      "Adichie presents the patronising assumptions of her American roommate with gentle humour rather than anger: she calls the roommate's pity well-meaning and lets the anticlimax of the Mariah Carey tape expose it, so the reader sees what it is to be reduced to a single narrative without the speaker ever sounding bitter.",
       'The repetition of the phrase "single story" throughout the text reinforces the central concept and mirrors how stereotypes are themselves reinforced through repetition, creating a cumulative effect on the audience.',
       'Antithetical pairings - stories that diminish set against stories that empower - present narrative as a tool with dual potential, sharpening the argument that storytelling power must be used responsibly.',
       "Adichie's use of personal anecdote - her own single story of her family's house boy, Fide - is particularly effective because it removes moral superiority: she includes herself as both perpetrator and victim of stereotyping, which strengthens her credibility.",
+      "Structurally, the anecdotes are arranged as mirrors: the roommate's pity for Adichie repeats the child's pity for Fide's family, and Adichie then turns the charge on herself with her confession about Mexico. Moving from being misjudged to misjudging leaves no one, speaker or audience, outside the problem, so the impact of stereotypes is shown to be shared.",
     ],
   },
   q3: {
     question:
-      'How does Adichie structure her speech to build a persuasive argument about the danger of single stories?',
-    type: 'Structural analysis - 12 marks',
+      'In the exam, Question 5 asks you to compare this extract with an unseen passage. Practise with any passage on a similar subject: compare how the two writers present their ideas and perspectives about stereotypes and how people see one another.',
+    type: 'Comparison - 22 marks',
   },
 }
 
@@ -301,12 +330,13 @@ export default async function TheDangerOfASingleStoryPage() {
         <div className="flex items-start gap-3">
           <AlertTriangle className="mt-0.5 size-4.5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="text-body-sm text-foreground/90 leading-relaxed">
-            <strong className="text-foreground">
-              Page rebuilt April 2026 - direct quotations removed pending verified anthology review.
-            </strong>{' '}
-            We retain only widely-attested lines from the TED talk transcript while we re-verify the
-            Edexcel anthology adaptation against a licensed copy. Structural and thematic
-            commentary, vocabulary, and comparison guidance remain unchanged.
+            {/* Until 26 September 2026 this said the anthology text was awaiting
+                re-verification against a licensed copy. Pearson publishes it free,
+                and the three lines below were matched to it word for word. */}
+            <strong className="text-foreground">Quotations checked against the anthology.</strong>{' '}
+            The lines quoted below match the text in Pearson&apos;s International GCSE English
+            Anthology (Issue 8, February 2026), which Pearson publishes free as a PDF. Use it for
+            the full extract.
           </div>
         </div>
       </section>
@@ -323,9 +353,8 @@ export default async function TheDangerOfASingleStoryPage() {
           </span>
         </div>
         <p className="text-body-sm text-muted-foreground mb-4">
-          The lines below are widely attested in the 2009 TEDGlobal talk and are highly likely to
-          appear in the Edexcel anthology adaptation. All other direct quotations have been
-          temporarily removed pending verification against the licensed anthology text.
+          The lines below are from the 2009 TEDGlobal talk and appear word for word in the anthology
+          extract (Issue 8, February 2026).
         </p>
         <div className="space-y-4">
           {verifiedTedLines.map((extract) => (
@@ -351,9 +380,8 @@ export default async function TheDangerOfASingleStoryPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          Key language features used by Adichie and their effects on the reader. Specific quotations
-          have been removed pending verification; the techniques themselves are clearly present in
-          the text.
+          Key language features used by Adichie and their effects on the reader. Find a short
+          quotation for each in your anthology.
         </p>
         <div className="space-y-4">
           {languageFeatures.map((f) => (
@@ -505,11 +533,10 @@ export default async function TheDangerOfASingleStoryPage() {
               {examPractice.q3.type}
             </span>
             <p className="mt-2 text-body text-foreground font-medium">{examPractice.q3.question}</p>
-            {await PracticeMarkingButton({
-              type: examPractice.q3.type,
-              question: examPractice.q3.question,
-              textTitle: ANTHOLOGY_TEXT_TITLE,
-            })}
+            <p className="mt-2 text-body-sm text-muted-foreground">
+              This question can&apos;t be marked here: it needs the unseen passage that the exam
+              pairs with this text.
+            </p>
           </div>
         </div>
       </section>
@@ -523,7 +550,8 @@ export default async function TheDangerOfASingleStoryPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          {await t('anth_text.compare_with.intro')}
+          {await t('anth_text.compare_with.intro')} In the exam this text is always compared with an
+          unseen passage, never another anthology text, so these pairings are for revision.
         </p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {comparisonLinks.map((c) => (
@@ -556,11 +584,13 @@ export default async function TheDangerOfASingleStoryPage() {
       <footer className="rounded-lg bg-muted/50 p-4 text-center text-body-xs text-muted-foreground">
         <p>
           <strong className="text-foreground">{await t('anth_text.rights_notice_label')}</strong>{' '}
-          &copy; Wylie Agency / TED Conferences / Pearson Education on behalf of Chimamanda Ngozi
-          Adichie (b. 1977). Quotations are short fair-dealing extracts under CDPA 1988 &sect;30
-          (criticism, review, quotation). For full text, students should consult the licensed school
-          edition (Pearson Edexcel IGCSE anthology, ISBN 978-1-446-93108-0) or the original
-          TEDGlobal 2009 talk transcript.
+          {/* As the anthology's acknowledgements give it. Until 26 September 2026
+              this read "Wylie Agency / TED Conferences / Pearson Education". */}
+          &copy; Chimamanda Ngozi Adichie 2009, reproduced in the anthology by permission of The
+          Wylie Agency (UK) Limited. Quotations are short fair-dealing extracts under CDPA 1988
+          &sect;30 (criticism, review, quotation). For the full text, use the Pearson Edexcel
+          International GCSE English Anthology (ISBN 978-1-446-93108-0), which Pearson publishes
+          free, or the original TEDGlobal 2009 talk transcript.
         </p>
         <p className="mt-2">Aligned with Pearson Edexcel specification 4EA1</p>
       </footer>

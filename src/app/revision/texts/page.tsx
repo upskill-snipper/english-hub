@@ -336,84 +336,10 @@ export default async function TextsRevisionPage() {
               >
                 Still I Rise
               </Link>
-              ,{' '}
-              <Link
-                className="text-blue-700 hover:underline"
-                href="/revision/poetry/pearson-igcse/do-not-go-gentle-into-that-good-night"
-              >
-                Do not go gentle into that good night
-              </Link>
-              ,{' '}
-              <Link
-                className="text-blue-700 hover:underline"
-                href="/revision/poetry/pearson-igcse/refugee-blues"
-              >
-                Refugee Blues
-              </Link>
-              ,{' '}
-              <Link
-                className="text-blue-700 hover:underline"
-                href="/revision/poetry/pearson-igcse/war-photographer"
-              >
-                War Photographer
-              </Link>
-              ,{' '}
-              <Link
-                className="text-blue-700 hover:underline"
-                href="/revision/poetry/pearson-igcse/if"
-              >
-                If&mdash;
-              </Link>
-              ,{' '}
-              <Link
-                className="text-blue-700 hover:underline"
-                href="/revision/poetry/pearson-igcse/prayer-before-birth"
-              >
-                Prayer Before Birth
-              </Link>
-              ,{' '}
-              <Link
-                className="text-blue-700 hover:underline"
-                href="/revision/poetry/pearson-igcse/piano"
-              >
-                Piano
-              </Link>
-              ,{' '}
-              <Link
-                className="text-blue-700 hover:underline"
-                href="/revision/poetry/pearson-igcse/hide-and-seek"
-              >
-                Hide and Seek
-              </Link>
-              ,{' '}
-              <Link
-                className="text-blue-700 hover:underline"
-                href="/revision/poetry/pearson-igcse/half-past-two"
-              >
-                Half-past Two
-              </Link>
-              ,{' '}
-              <Link
-                className="text-blue-700 hover:underline"
-                href="/revision/poetry/pearson-igcse/my-last-duchess"
-              >
-                My Last Duchess
-              </Link>
-              ,{' '}
-              <Link
-                className="text-blue-700 hover:underline"
-                href="/revision/poetry/pearson-igcse/sonnet-116"
-              >
-                Sonnet 116
-              </Link>
               .
             </li>
             <li>
               <strong>{await t('texts.label.prose')}</strong>{' '}
-              <Link className="text-blue-700 hover:underline" href="/revision/texts/the-door">
-                The Door
-              </Link>
-              ,{' '}
               <Link className="text-blue-700 hover:underline" href="/revision/texts/the-necklace">
                 The Necklace
               </Link>
@@ -436,6 +362,133 @@ export default async function TextsRevisionPage() {
                 Night
               </Link>
               ,{' '}
+              <Link
+                className="text-blue-700 hover:underline"
+                href="/revision/texts/the-story-of-an-hour"
+              >
+                The Story of an Hour
+              </Link>
+              .
+            </li>
+          </ul>
+
+          {/* Until 26 September 2026 the Language A list above also carried the
+              Part 3 poems, which are set for English Literature (4ET1) only and
+              linked to a Language A route that returns 404 for them, and six texts
+              that are in no anthology at all (Refugee Blues, The Door and four short
+              stories). Each now sits under a heading that is true of it. */}
+          <h3 className="mt-6 text-lg font-semibold">
+            {await t('texts.section.pearson_lit_anthology')}
+          </h3>
+          <p className="mt-1 text-sm text-slate-600">
+            {await t('texts.section.pearson_lit_anthology_note')}
+          </p>
+          <ul className="mt-2 list-disc space-y-1 ps-6 text-slate-700">
+            <li>
+              <Link className="text-blue-700 hover:underline" href="/revision/texts/if">
+                If&mdash;
+              </Link>
+              ,{' '}
+              <Link
+                className="text-blue-700 hover:underline"
+                href="/revision/texts/prayer-before-birth"
+              >
+                Prayer Before Birth
+              </Link>
+              ,{' '}
+              <Link className="text-blue-700 hover:underline" href="/revision/texts/blessing">
+                Blessing
+              </Link>
+              ,{' '}
+              <Link
+                className="text-blue-700 hover:underline"
+                href="/revision/texts/search-for-my-tongue"
+              >
+                Search For My Tongue
+              </Link>
+              ,{' '}
+              <Link className="text-blue-700 hover:underline" href="/revision/texts/half-past-two">
+                Half-past Two
+              </Link>
+              ,{' '}
+              <Link className="text-blue-700 hover:underline" href="/revision/texts/piano">
+                Piano
+              </Link>
+              ,{' '}
+              <Link className="text-blue-700 hover:underline" href="/revision/texts/hide-and-seek">
+                Hide and Seek
+              </Link>
+              ,{' '}
+              <Link className="text-blue-700 hover:underline" href="/revision/texts/sonnet-116">
+                Sonnet 116
+              </Link>
+              ,{' '}
+              <Link
+                className="text-blue-700 hover:underline"
+                href="/revision/texts/la-belle-dame-sans-merci"
+              >
+                La Belle Dame sans Merci
+              </Link>
+              ,{' '}
+              <Link
+                className="text-blue-700 hover:underline"
+                href="/revision/texts/poem-at-thirty-nine"
+              >
+                Poem at Thirty-Nine
+              </Link>
+              ,{' '}
+              <Link
+                className="text-blue-700 hover:underline"
+                href="/revision/texts/war-photographer"
+              >
+                War Photographer
+              </Link>
+              ,{' '}
+              <Link className="text-blue-700 hover:underline" href="/revision/texts/the-tyger">
+                The Tyger
+              </Link>
+              ,{' '}
+              <Link
+                className="text-blue-700 hover:underline"
+                href="/revision/texts/my-last-duchess"
+              >
+                My Last Duchess
+              </Link>
+              ,{' '}
+              <Link className="text-blue-700 hover:underline" href="/revision/texts/half-caste">
+                Half-caste
+              </Link>
+              ,{' '}
+              <Link
+                className="text-blue-700 hover:underline"
+                href="/revision/texts/do-not-go-gentle-into-that-good-night"
+              >
+                Do not go gentle into that good night
+              </Link>
+              ,{' '}
+              <Link className="text-blue-700 hover:underline" href="/revision/texts/remember">
+                Remember
+              </Link>
+              .
+            </li>
+          </ul>
+
+          <h3 className="mt-6 text-lg font-semibold">{await t('texts.section.other_texts')}</h3>
+          <p className="mt-1 text-sm text-slate-600">{await t('texts.section.other_texts_note')}</p>
+          <ul className="mt-2 list-disc space-y-1 ps-6 text-slate-700">
+            <li>
+              <strong>{await t('texts.label.poetry')}</strong>{' '}
+              <Link className="text-blue-700 hover:underline" href="/revision/texts/refugee-blues">
+                Refugee Blues
+              </Link>
+              ,{' '}
+              <Link className="text-blue-700 hover:underline" href="/revision/texts/the-door">
+                The Door
+              </Link>
+              .
+            </li>
+            <li>
+              <strong>{await t('texts.label.prose')}</strong>{' '}
               <Link className="text-blue-700 hover:underline" href="/revision/texts/the-pedestrian">
                 The Pedestrian
               </Link>
@@ -459,13 +512,6 @@ export default async function TextsRevisionPage() {
                 href="/revision/texts/the-man-who-loved-flowers"
               >
                 The Man Who Loved Flowers
-              </Link>
-              ,{' '}
-              <Link
-                className="text-blue-700 hover:underline"
-                href="/revision/texts/the-story-of-an-hour"
-              >
-                The Story of an Hour
               </Link>
               .
             </li>

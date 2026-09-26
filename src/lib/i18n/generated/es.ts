@@ -3671,7 +3671,14 @@ export const ES_MESSAGES: Record<string, string> = {
   'texts.section.igcse_a_level': 'Textos de IGCSE + A-Level',
   'texts.section.pearson_anthology': 'Antología de Pearson IGCSE Language A (4EA1)',
   'texts.section.pearson_anthology_note':
-    'No ficción de la Section A, poesía de la Section B y prosa de la Section C para la especificación de Pearson Edexcel International GCSE English Language A.',
+    'Las partes 1 y 2 de la Pearson Edexcel International GCSE English Anthology, prescritas para English Language A. La parte 1 (no ficción) se examina en la Unit 1 Section A. La parte 2 (poesía y prosa) se examina en la Unit 2 Section A o se evalúa mediante coursework para quienes siguen esa vía.',
+  'texts.section.pearson_lit_anthology':
+    'Poemas de la antología de Pearson IGCSE Literature (4ET1)',
+  'texts.section.pearson_lit_anthology_note':
+    'La parte 3 de la misma antología. Los dieciséis poemas son obligatorios en English Literature (4ET1) y se examinan en la Unit 1 Section B. No se estudian en English Language A.',
+  'texts.section.other_texts': 'Otros poemas y relatos breves',
+  'texts.section.other_texts_note':
+    'No están en la antología de Pearson, y no las hemos encontrado como textos prescritos por ninguna junta examinadora que cubrimos.',
   'texts.label.non_fiction': 'No ficción:',
   'texts.label.poetry': 'Poesía:',
   'texts.label.prose': 'Prosa:',
@@ -3694,7 +3701,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'anth_page.cta_start_studying': 'Empieza a estudiar',
   'anth_page.version_warning_label': 'Aviso sobre la versión de la antología:',
   'anth_page.version_warning_body':
-    'Este sitio enseña la Edexcel IGCSE Anthology Issue 2 (ISBN 978-1-446-93108-0, Pearson Education). Dos de los textos de no ficción de esta antología del Paper 1 Section A son versiones adaptadas que difieren de sus originales disponibles gratuitamente en internet.',
+    'Este sitio enseña la Issue 8 (febrero de 2026) de la Pearson Edexcel International GCSE English Anthology (ISBN 978-1-446-93108-0), que Pearson publica gratis en PDF en su web de titulaciones. Dos de los textos de no ficción de la Part 1, los del Paper 1 Section A, son versiones adaptadas que difieren de sus originales disponibles gratuitamente en internet.',
   'anth_page.use_anthology_emph': 'Usa siempre la versión de la antología',
   'anth_page.use_anthology_body':
     'al responder a las preguntas de examen de Edexcel - los examinadores corregirán según el texto de la antología, no según los originales de The Guardian que puedas encontrar en webs de repaso.',
@@ -3705,16 +3712,16 @@ export const ES_MESSAGES: Record<string, string> = {
   'anth_page.study_this_text': 'Estudiar este texto',
   'anth_page.expect_heading': 'Paper 1 Section A - qué esperar',
   'anth_page.expect_intro':
-    'En el Paper 1 Section A se te dará un extracto de uno de los diez textos de la antología. Responderás a tres tipos de pregunta:',
-  'anth_page.expect_q1_label': 'Recuperación (Q1):',
+    'La Section A vale 45 puntos y debes responder a todas las preguntas. Te da dos textos: el Text One, un extracto inédito que no has leído antes, y el Text Two, uno de los diez textos de la antología, que se te proporciona en el examen. Pearson recomienda dedicarle alrededor de 1 hora y 30 minutos, incluido el tiempo de lectura.',
+  'anth_page.expect_q1_label': 'Preguntas 1 a 3, Text One (2, 4 y 5 puntos):',
   'anth_page.expect_q1_body':
-    '"List four things about..." - identificación directa de información del texto. Vale 4 puntos.',
-  'anth_page.expect_q2_label': 'Análisis del lenguaje (Q2):',
+    'preguntas de respuesta breve solo sobre el extracto inédito, que evalúan tu lectura y comprensión. Ningún examen anterior ha puesto una pregunta de respuesta breve o de localizar información sobre el texto de la antología.',
+  'anth_page.expect_q2_label': 'Pregunta 4, Text Two (12 puntos):',
   'anth_page.expect_q2_body':
-    '"How does the writer use language to..." - análisis detallado de técnicas concretas y sus efectos en el lector. Vale 12 puntos.',
-  'anth_page.expect_q3_label': 'Análisis estructural (Q3):',
+    '"How does the writer, [name], use language and structure to...?" Es la única pregunta sobre el texto de la antología por sí solo. Escribe sobre el lenguaje y la estructura a la vez, con ejemplos de todo el extracto, en una sola respuesta: se corrige con una única tabla de niveles, y todos los niveles por encima del Level 1 describen ambos.',
+  'anth_page.expect_q3_label': 'Pregunta 5, ambos textos (22 puntos):',
   'anth_page.expect_q3_body':
-    '"How does the writer structure the text to..." - análisis de cómo se organiza el texto para captar e influir en el lector. Vale 12 puntos.',
+    'compara cómo los dos escritores presentan sus ideas y perspectivas. La comparación es siempre entre el extracto inédito y el texto de la antología, nunca entre dos textos de la antología, y una respuesta que trate solo un texto no puede obtener más de 8 puntos.',
   'anth_page.study_all_note':
     'Debes estudiar los diez textos. No sabrás qué texto aparecerá en el examen hasta que abras el cuadernillo.',
   'anth_page.footer_align':
@@ -5929,22 +5936,22 @@ export const ES_MESSAGES: Record<string, string> = {
   'edexcel.lang.hero_badge': 'International GCSE English Language',
   'edexcel.lang.hero_title': 'Pearson Edexcel IGCSE Language A',
   'edexcel.lang.hero_lead_pre':
-    'El Pearson Edexcel International GCSE in English Language (Specification A) es una titulación de dos exámenes que cubre ',
+    'El Pearson Edexcel International GCSE in English Language (Specification A) consta del Paper 1 más el Paper 2 o un componente de coursework no examinado. El Paper 1 cubre ',
   'edexcel.lang.hero_lead_nf': 'lectura de no ficción',
   'edexcel.lang.hero_lead_trans': 'escritura transaccional',
   'edexcel.lang.hero_lead_anth': 'antología prescrita',
   'edexcel.lang.hero_lead_and': ' y una ',
   'edexcel.lang.hero_lead_post':
     ' de diez textos de no ficción estudiados para el Paper 1 Section A.',
-  'edexcel.lang.duration_3h15': '3 h 15 min en total',
+  'edexcel.lang.duration_total': '3 h 45 min en total (Paper 1 y Paper 2)',
   'edexcel.lang.anth_texts_count': '10 textos de la antología',
   'edexcel.lang.studying_lit_title': '¿También estudias Literature?',
   'edexcel.lang.studying_lit_body':
     'Consulta tus textos fijados de Pearson Edexcel IGCSE Literature - guías de estudio completas de Macbeth, An Inspector Calls, Of Mice and Men y más.',
   'edexcel.lang.paper1.title': 'Paper 1: Textos de no ficción y escritura transaccional',
-  'edexcel.lang.paper1.meta': '1 hora 45 minutos · 60 puntos · 60% del total',
-  'edexcel.lang.paper2.title': 'Paper 2: Lectura y escritura (no ficción)',
-  'edexcel.lang.paper2.meta': '1 hora 30 minutos · 40 puntos · 40% del total',
+  'edexcel.lang.paper1.meta': '2 horas 15 minutos · 90 puntos · 60% del total',
+  'edexcel.lang.paper2.title': 'Paper 2: Textos de poesía y prosa y escritura imaginativa',
+  'edexcel.lang.paper2.meta': '1 hora 30 minutos · 60 puntos · 40% del total',
   'edexcel.lang.footer_align': 'Alineado con la especificación 4EA1 de Pearson Edexcel',
   'edexcel.lang.tool.anthology.title': 'Estudio de la antología',
   'edexcel.lang.tool.anthology.desc': 'Los 10 textos de no ficción con análisis completo',
@@ -6077,7 +6084,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'anthology_hub.cta_start_studying': 'Empieza a estudiar',
   'anthology_hub.version_warning_label': 'Aviso sobre la versión de la antología:',
   'anthology_hub.version_warning_body':
-    'Este sitio enseña la Edexcel IGCSE Anthology Issue 2. Dos de los textos de no ficción son versiones adaptadas que difieren de sus originales disponibles gratuitamente en internet.',
+    'Este sitio enseña la Issue 8 (febrero de 2026) de la Pearson Edexcel International GCSE English Anthology, que Pearson publica gratis en PDF. Dos de los textos de no ficción son versiones adaptadas que difieren de sus originales disponibles gratuitamente en internet.',
   'anthology_hub.use_anthology_emph': 'Usa siempre la versión de la antología',
   'anthology_hub.use_anthology_body':
     'al responder a las preguntas de examen de Edexcel - los examinadores corregirán según el texto de la antología, no según los originales en línea.',

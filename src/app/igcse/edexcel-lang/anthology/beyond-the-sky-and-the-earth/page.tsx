@@ -19,7 +19,8 @@ import { getLocale, t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title: 'Beyond the Sky and the Earth - IGCSE Language A Anthology - The English Hub',
-    description: 'Study guide for ',
+    description:
+      'Jamie Zeppa in Bhutan, for Edexcel IGCSE Language A: themes, structural analysis, purpose and Paper 1 Section A exam practice.',
     images: [
       {
         url: '/api/og?title=Beyond+the+Sky+and+the+Earth+-+IGCSE+Language+A+Anthology+-+The+English+Hub',
@@ -38,6 +39,18 @@ export const metadata: Metadata = {
   },
 }
 
+/**
+ * CORRECTED 26 September 2026 against Pearson's anthology, Issue 8 (February
+ * 2026), pp. 16-18. Several notes here described the whole memoir, not the
+ * extract: growing relationships with students, a climax where she feels at
+ * home, a resolution where she has been changed. The extract covers only her
+ * first night and first week in Thimphu, at an orientation for new teachers.
+ * It has no students in it, is told largely in the present tense, and ends on
+ * her admiration for Bhutan's independence. Two theme notes survived that pass
+ * and were fixed the same day: one had the mountains shaping her teaching, which
+ * the extract never reaches, and one said she writes looking back as an older
+ * self, when the extract is written without hindsight.
+ */
 const themes = [
   {
     label: 'Culture shock',
@@ -48,36 +61,36 @@ const themes = [
       'تصل Zeppa إلى Bhutan غريبةً، ويرصد النصُّ التشوّشاتِ الصغيرة في اللغة والطعام والمناخ والعادات التي تَسِم أيّامها الأولى.',
   },
   {
-    label: 'Isolation and adjustment',
-    labelAr: 'العزلة والتأقلم',
+    label: 'First impressions',
+    labelAr: 'الانطباعات الأولى',
     detail:
-      'Far from home, Zeppa must build a sense of place and routine from scratch. The text traces the slow shift from outsider to inhabitant.',
+      'Far from home and exhausted after four days of travel, Zeppa records her first night and first week in Thimphu. The extract captures a newcomer’s first impressions of the town and its people; settling in lies beyond it.',
     detailAr:
-      'بعيدةً عن الديار، يلزم Zeppa أن تبني الشعور بالمكان والروتين من الصفر. ويتتبّع النصُّ الانتقال البطيء من غريبةٍ إلى مقيمة.',
+      'بعيدةً عن الديار ومُنهَكةً بعد أربعة أيّامٍ من السفر، تُسجّل Zeppa ليلتها الأولى وأسبوعها الأوّل في Thimphu. ويلتقط المقتطف انطباعاتِ القادمة الجديدة الأولى عن المدينة وأهلها؛ أمّا الاستقرار فيقع خارجه.',
   },
   {
     label: 'Beauty and landscape',
     labelAr: 'الجمال والمنظر',
     detail:
-      'Bhutan’s mountains are not ornament - they shape Zeppa’s mood, her teaching, her sense of time. Landscape is presented as a force, not a backdrop.',
+      'Bhutan’s mountains are not ornament - they open the extract, shape Zeppa’s mood and make her feel how far from home she is. Landscape is presented as a force, not a backdrop.',
     detailAr:
-      'جبالُ Bhutan ليست زينةً - هي تُشكّل مزاج Zeppa، وتدريسها، وإحساسها بالزمن. ويُقدَّم المنظر بوصفه قوّةً لا خلفيّة.',
+      'جبالُ Bhutan ليست زينةً - هي تفتتح المقتطف، وتُشكّل مزاج Zeppa، وتُشعرها بمدى بُعدها عن الديار. ويُقدَّم المنظر بوصفه قوّةً لا خلفيّة.',
   },
   {
-    label: 'Transformation',
-    labelAr: 'التحوّل',
+    label: 'Learning about Bhutan',
+    labelAr: 'التعرّف إلى Bhutan',
     detail:
-      'The journey is internal as much as geographic. Zeppa is changed by the place, and the text shows the change happening rather than reporting it.',
+      'At a week-long orientation Zeppa has her first lessons in Bhutanese history, and the extract ends on her admiration for a small country that kept its independence while European powers overran the rest of Asia. The change the full memoir describes lies beyond the extract.',
     detailAr:
-      'الرحلةُ داخليّةٌ بقدر ما هي جغرافيّة. يُغيّر المكانُ Zeppa، ويُرينا النصُّ التغيّرَ يحدث لا يُبلَّغ عنه.',
+      'في دورةٍ تعريفيّة مدّتها أسبوع، تتلقّى Zeppa دروسها الأولى في تاريخ Bhutan، وينتهي المقتطف بإعجابها ببلدٍ صغير حافظ على استقلاله بينما اجتاحت القوى الأوروبيّة بقيّة آسيا. أمّا التحوّل الذي تصفه السيرة كاملةً فيقع خارج المقتطف.',
   },
   {
     label: 'Reflection and memoir',
     labelAr: 'التأمّل والسيرة',
     detail:
-      'Zeppa writes from the perspective of someone looking back - the older voice processing the younger self’s experience.',
+      'Zeppa reflects as she goes. Written in the first person and largely in the present tense, the extract records her first week as it happens rather than looking back with hindsight, and her honesty about her doubts makes her later admiration convincing.',
     detailAr:
-      'تكتب Zeppa من منظور النظر إلى الوراء - صوتُ الذات الأكبر يستوعب تجربةَ الذات الأصغر.',
+      'تتأمّل Zeppa وهي تمضي. فالمقتطف، المكتوب بضمير المتكلّم وفي معظمه بصيغة المضارع، يُسجّل أسبوعها الأوّل كما يحدث لا بنظرةٍ استرجاعيّة، وصراحتُها بشأن شكوكها تجعل إعجابها اللاحق مُقنِعاً.',
   },
 ]
 
@@ -87,21 +100,21 @@ const structuralAnalysis = {
   openingAr:
     'تستهلّ Zeppa بالوصول - التشوّشُ، المشاهدُ غيرُ المألوفة، الفجوةُ بين التوقّع والواقع. ويصل القارئ معها.',
   development:
-    'The text develops through accumulating detail: small encounters, lessons in language, growing relationships with students and colleagues. The shift from outside to inside happens gradually.',
+    'The text develops through accumulating detail: breakfast with two other Canadian teachers, a walk along the main road, descriptions of the town and its people. The focus then widens from her own impressions to the country’s history, taught at the week-long orientation.',
   developmentAr:
-    'يتطوّر النصُّ عبر تراكم التفاصيل: لقاءاتٌ صغيرة، دروسٌ في اللغة، علاقاتٌ تنمو مع الطلاب والزملاء. ويحدث الانتقالُ من الخارج إلى الداخل تدريجاً.',
+    'يتطوّر النصُّ عبر تراكم التفاصيل: الفطور مع معلّمَين كنديَّين آخرَين، ونزهةٌ على امتداد الشارع الرئيس، ووصفُ المدينة وأهلها. ثمّ يتّسع التركيز من انطباعاتها الخاصّة إلى تاريخ البلد، كما تتلقّاه في الدورة التعريفيّة التي تدوم أسبوعاً.',
   climax:
-    'There is no single dramatic climax; instead, the text reaches a quiet emotional peak when Zeppa realises she has begun to feel at home.',
+    'There is no single dramatic climax; the extract builds towards its final paragraph, where a history lesson turns into Zeppa’s own admiration for Bhutan.',
   climaxAr:
-    'لا توجد ذروةٌ دراميّةٌ واحدة؛ بل يبلغ النصّ ذروةً عاطفيّةً هادئة حين تُدرك Zeppa أنّها بدأت تشعر بأنّها في الديار.',
+    'لا توجد ذروةٌ دراميّةٌ واحدة؛ بل يتصاعد المقتطف نحو فقرته الأخيرة، حيث يتحوّل درسٌ في التاريخ إلى إعجاب Zeppa الشخصيّ بـ Bhutan.',
   resolution:
-    'The resolution is reflective rather than tidy - Zeppa acknowledges that she has been changed but does not pretend to have understood Bhutan completely.',
+    'The extract ends while she is still at orientation in Thimphu, on her admiration for how this small country kept its independence and has looked after itself so well. Nothing is resolved about her own life there; that lies beyond the extract.',
   resolutionAr:
-    'الخاتمة تأمّليّةٌ لا مرتّبة - تُقرّ Zeppa بأنّها قد تغيّرت، لكنّها لا تدّعي أنّها فهمت Bhutan بالكامل.',
+    'ينتهي المقتطف وهي ما تزال في الدورة التعريفيّة في Thimphu، على إعجابها بكيف حافظ هذا البلد الصغير على استقلاله وأحسن رعاية نفسه. ولا يُحسم فيه شيءٌ من حياتها هناك؛ فذلك يقع خارج المقتطف.',
   perspective:
-    'First-person memoir, written with retrospective awareness. The older Zeppa understands what the younger Zeppa was experiencing.',
+    'First-person memoir, told largely in the present tense, so the reader discovers Thimphu alongside her on her first night and first week.',
   perspectiveAr:
-    'سيرةٌ بضمير المتكلّم، مكتوبةٌ بوعيٍ استرجاعيّ. تَفهم Zeppa الأكبرُ ما كانت تختبره Zeppa الأصغر.',
+    'سيرةٌ بضمير المتكلّم، تُروى في معظمها بصيغة المضارع، فيكتشف القارئ Thimphu معها في ليلتها الأولى وأسبوعها الأوّل.',
 }
 
 const writersPurpose = {
@@ -110,9 +123,9 @@ const writersPurpose = {
   achieveAr:
     'تريد Zeppa أن تنقل التجربةَ البطيئة الداخليّة للصدمة الثقافيّة والتأقلم، دون أن تستغرب المكان أو تُمَوّه دورها.',
   readerFeel:
-    'She wants the reader to feel the texture of unfamiliarity becoming familiarity - the gradual softening of disorientation into belonging.',
+    'She wants the reader to feel the texture of unfamiliarity - the exhaustion, cold and strangeness of a first night abroad - and then to share her growing fascination with the country and its history.',
   readerFeelAr:
-    'تريد للقارئ أن يحسّ نسيجَ الغرابة وهي تصير ألفةً - الذوبانَ التدريجيّ للتشوّش في الانتماء.',
+    'تريد للقارئ أن يحسّ نسيجَ الغرابة - الإنهاكَ والبردَ وغرابةَ الليلة الأولى في بلدٍ أجنبيّ - ثمّ أن يشاركها افتتانها المتنامي بالبلد وتاريخه.',
   message:
     'A place changes the person who lives in it. Genuine encounter requires patience, humility and willingness to be changed.',
   messageAr:
@@ -122,25 +135,49 @@ const writersPurpose = {
 /** The text these practice questions are about, sent to the marker as context. */
 const ANTHOLOGY_TEXT_TITLE = 'Beyond the Sky and the Earth: A Journey into Bhutan'
 
+// Until 26 September 2026 this set a "List four things" retrieval question
+// for 4 marks, a language-only question and a structure-only question, each
+// for 12. No 4EA1 paper asks any of those. On every Pearson 4EA1/01 paper,
+// mark scheme and examiners' report checked (the SAMs, the 2017 extra
+// assessment material, the June 2019 report, the 2021 papers, June 2023,
+// November 2023, May 2024, November 2024 and the June 2025 mark scheme and
+// report) Questions 1-3 are on the unseen Text One, Question 4 (12 marks, AO2)
+// is the only question on the anthology text alone and always asks about
+// language AND structure together on one grid, and Question 5 (22 marks, AO3)
+// compares the anthology text with the unseen one; the exam never pairs two
+// anthology texts. This text was itself Text Two on paper P65890A (2021), with
+// that single Q4 on it. The retrieval question was also sent to Q2, a Text One
+// question, so it was marked as the wrong question. The labels are what
+// questionIdForPracticeType in PracticeMarkingButton reads: "12 marks" maps to
+// Q4, and "22 marks" maps to nothing, which is why q3 renders no button. Keep
+// the space before "marks", and pass the English `type` to the button even in
+// Arabic: until 26 September 2026 the mapping could not read Arabic numerals,
+// so passing typeAr removed every button on the Arabic page, and the English
+// label is still the form the mapping is written for.
 const examPractice = {
   q1: {
-    question: 'List four things you learn about Zeppa’s early experience in Bhutan.',
-    questionAr: 'اذكر أربعةَ أشياء تعرفها عن تجربة Zeppa الأولى في Bhutan.',
-    type: 'Retrieval - 4 marks',
-    typeAr: 'الاسترجاع - ٤ درجات',
+    question:
+      'How does the writer, Jamie Zeppa, use language and structure to show how her understanding of Bhutan changes? Support your answer with close reference to the extract, including brief quotations.',
+    questionAr:
+      'كيف تستعمل الكاتبة، Jamie Zeppa، اللغةَ والبنيةَ لتُظهر كيف يتغيّر فهمها لـ Bhutan؟ ادعم إجابتك بإحالاتٍ دقيقة إلى المقتطف، مع اقتباساتٍ موجزة.',
+    type: 'Language and structure - 12 marks',
+    typeAr: 'اللغة والبنية - ١٢ درجة',
   },
   q2: {
     question:
-      'How does Zeppa use language to convey her feelings of disorientation and adjustment?',
-    questionAr: 'كيف تستعمل Zeppa اللغةَ لتنقل مشاعرها من التشوّش إلى التأقلم؟',
-    type: 'Language analysis - 12 marks',
-    typeAr: 'تحليل اللغة - ١٢ درجة',
+      'How does the writer, Jamie Zeppa, use language and structure to convey her first impressions of Bhutan? Support your answer with close reference to the extract, including brief quotations.',
+    questionAr:
+      'كيف تستعمل الكاتبة، Jamie Zeppa، اللغةَ والبنيةَ لتنقل انطباعاتها الأولى عن Bhutan؟ ادعم إجابتك بإحالاتٍ دقيقة إلى المقتطف، مع اقتباساتٍ موجزة.',
+    type: 'Language and structure - 12 marks',
+    typeAr: 'اللغة والبنية - ١٢ درجة',
   },
   q3: {
-    question: 'How does Zeppa structure the text to chart her changing relationship with Bhutan?',
-    questionAr: 'كيف تبني Zeppa النصَّ لرسم علاقتها المتبدّلة مع Bhutan؟',
-    type: 'Structural analysis - 12 marks',
-    typeAr: 'التحليل البنائيّ - ١٢ درجة',
+    question:
+      'In the exam, Question 5 asks you to compare this extract with an unseen passage. Practise with any passage on a similar subject: compare how the two writers present their ideas and perspectives about arriving in an unfamiliar place.',
+    questionAr:
+      'في الامتحان، يطلب منك السؤال الخامس أن تقارن هذا المقتطف بنصٍّ غير مرئيّ. تدرّب بأيّ نصٍّ في موضوعٍ مشابه: قارن كيف يعرض الكاتبان أفكارهما ووجهات نظرهما عن الوصول إلى مكانٍ غير مألوف.',
+    type: 'Comparison - 22 marks',
+    typeAr: 'المقارنة - ٢٢ درجة',
   },
 }
 
@@ -231,22 +268,26 @@ export default async function BeyondTheSkyAndTheEarthPage() {
           {ar ? (
             <>
               <p>
-                Jamie Zeppa، كاتبةٌ كنديّة، سافرت إلى Bhutan في أواخر الثمانينيّات لتدريس
-                الإنجليزيّة في مدرسةٍ نائية ضمن برنامج معونةٍ كنديّ. وكتاب{' '}
-                <em>Beyond the Sky and the Earth</em> هو سيرتها مع تلك التجربة - الوصول والتأقلّم
-                وصلةٌ عميقة فيما بعد بالبلد وأهله.
+                Jamie Zeppa، كاتبةٌ كنديّة، سافرت إلى Bhutan عام 1988 لتدريس الإنجليزيّة في مدرسةٍ
+                نائية ضمن برنامج معونةٍ كنديّ. وكتاب <em>Beyond the Sky and the Earth</em> هو سيرتها
+                مع تلك التجربة - الوصول والتأقلّم وصلةٌ عميقة فيما بعد بالبلد وأهله.
               </p>
               <p>
                 النصُّ المدروس هنا مقتطفٌ من الفصول المبكّرة، حين كانت Zeppa لا تزال تتعامل مع
                 الصدمة الثقافيّة، ومع وعورة البُعد عن الديار في مكانٍ لم تستوعب عاداته بعد.
               </p>
-              <p>صدر عن Penguin Canada.</p>
             </>
           ) : (
             <>
+              {/* Corrected 26 September 2026. This said "the late 1980s"; Kirkus
+                  gives 1988 (the anthology's note gives only her age, 24). A
+                  closing line said "Published by Penguin Canada", which the
+                  anthology does not say: its acknowledgements (p.71) name
+                  Riverhead Books, 2000, as the footer below now does, so the
+                  line was removed in both languages. */}
               <p>
-                Jamie Zeppa, a Canadian writer, travelled to Bhutan in the late 1980s to teach
-                English at a remote school as part of a Canadian aid programme.{' '}
+                Jamie Zeppa, a Canadian writer, travelled to Bhutan in 1988 to teach English at a
+                remote school as part of a Canadian aid programme.{' '}
                 <em>Beyond the Sky and the Earth</em> is her memoir of the experience - arrival,
                 adjustment, and eventual deep connection to the country and its people.
               </p>
@@ -255,7 +296,6 @@ export default async function BeyondTheSkyAndTheEarthPage() {
                 navigating culture shock and the difficulty of being far from home in a place whose
                 customs she does not yet understand.
               </p>
-              <p>Published by Penguin Canada.</p>
             </>
           )}
         </div>
@@ -375,7 +415,7 @@ export default async function BeyondTheSkyAndTheEarthPage() {
               {ar ? examPractice.q1.questionAr : examPractice.q1.question}
             </p>
             {await PracticeMarkingButton({
-              type: ar ? examPractice.q1.typeAr : examPractice.q1.type,
+              type: examPractice.q1.type,
               question: ar ? examPractice.q1.questionAr : examPractice.q1.question,
               textTitle: ANTHOLOGY_TEXT_TITLE,
             })}
@@ -388,7 +428,7 @@ export default async function BeyondTheSkyAndTheEarthPage() {
               {ar ? examPractice.q2.questionAr : examPractice.q2.question}
             </p>
             {await PracticeMarkingButton({
-              type: ar ? examPractice.q2.typeAr : examPractice.q2.type,
+              type: examPractice.q2.type,
               question: ar ? examPractice.q2.questionAr : examPractice.q2.question,
               textTitle: ANTHOLOGY_TEXT_TITLE,
             })}
@@ -400,11 +440,11 @@ export default async function BeyondTheSkyAndTheEarthPage() {
             <p className="mt-2 text-body text-foreground font-medium">
               {ar ? examPractice.q3.questionAr : examPractice.q3.question}
             </p>
-            {await PracticeMarkingButton({
-              type: ar ? examPractice.q3.typeAr : examPractice.q3.type,
-              question: ar ? examPractice.q3.questionAr : examPractice.q3.question,
-              textTitle: ANTHOLOGY_TEXT_TITLE,
-            })}
+            <p className="mt-2 text-body-sm text-muted-foreground">
+              {ar
+                ? 'لا يمكن تصحيح هذا السؤال هنا: فهو يحتاج إلى النصّ غير المرئيّ الذي يقرنه الامتحان بهذا النصّ.'
+                : "This question can't be marked here: it needs the unseen passage that the exam pairs with this text."}
+            </p>
           </div>
         </div>
       </section>
@@ -417,7 +457,10 @@ export default async function BeyondTheSkyAndTheEarthPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          {await t('anth_text.compare_with.intro')}
+          {await t('anth_text.compare_with.intro')}{' '}
+          {ar
+            ? 'في الامتحان يُقارَن هذا النصّ دائماً بنصٍّ غير مرئيّ، لا بنصٍّ آخر من المختارات، لذا فهذه المقارنات للمراجعة.'
+            : 'In the exam this text is always compared with an unseen passage, never another anthology text, so these pairings are for revision.'}
         </p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {comparisonLinks.map((c) => (
@@ -452,16 +495,20 @@ export default async function BeyondTheSkyAndTheEarthPage() {
         {ar ? (
           <p>
             <strong className="text-foreground">{await t('anth_text.rights_notice_label')}</strong>{' '}
-            © Penguin Canada / Jamie Zeppa. الصياغات الموجزة في هذه الصفحة لأغراض النقد والمراجعة
-            والاقتباس بمقتضى CDPA 1988 §30. للحصول على النصّ الكامل، يرجع الطلاب إلى الطبعة
-            المدرسيّة المرخّصة (Pearson Edexcel IGCSE anthology، ISBN 978-1-446-93108-0).
+            © Jamie Zeppa 1999 (Riverhead Books، 2000، كما تذكره المختارات في قسم الشكر). الصياغات
+            الموجزة في هذه الصفحة لأغراض النقد والمراجعة والاقتباس بمقتضى CDPA 1988 §30. للحصول على
+            النصّ الكامل، ارجع إلى Pearson Edexcel IGCSE anthology (ISBN 978-1-446-93108-0)، التي
+            تنشرها Pearson مجّاناً.
           </p>
         ) : (
           <p>
             <strong className="text-foreground">{await t('anth_text.rights_notice_label')}</strong>{' '}
-            &copy; Penguin Canada / Jamie Zeppa. Brief paraphrases on this page are for criticism,
-            review and quotation under CDPA 1988 &sect;30. For full text, students should consult
-            the licensed school edition (Pearson Edexcel IGCSE anthology, ISBN 978-1-446-93108-0).
+            {/* As the anthology's acknowledgements give it. Until 26 September 2026
+                this read "Penguin Canada / Jamie Zeppa". */}
+            &copy; Jamie Zeppa 1999 (Riverhead Books, 2000, as acknowledged in the anthology). Brief
+            paraphrases on this page are for criticism, review and quotation under CDPA 1988
+            &sect;30. For the full text, use the Pearson Edexcel IGCSE anthology (ISBN
+            978-1-446-93108-0), which Pearson publishes free.
           </p>
         )}
         <p className="mt-2">{await t('anth_text.footer_align')}</p>

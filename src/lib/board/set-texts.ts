@@ -356,6 +356,16 @@ export const SET_TEXTS: SetText[] = [
   },
 
   // ── Pearson Edexcel IGCSE English Language A (4EA1) Anthology ──────────────
+  //
+  // RIGHTS NOTICES CORRECTED 26 September 2026 against the anthology's own
+  // acknowledgements (Issue 8, pages 71 to 73). Many named Pearson Education
+  // or a publisher as the copyright holder "on behalf of" the writer, or an
+  // estate "via Pearson Education". Pearson owns the compilation, not these
+  // works, and the acknowledgements name the writer (or estate) as holder and
+  // say whose permission the text is printed by. Write a new notice from that
+  // page, not by copying a neighbouring row: that is how the wrong holder
+  // spread.
+  //
   // Section A - Non-fiction (10 texts)
   {
     slug: 'the-danger-of-a-single-story',
@@ -368,8 +378,11 @@ export const SET_TEXTS: SetText[] = [
     keyThemes: ['Identity', 'Stereotypes', 'Cultural representation', 'Power of stories'],
     description:
       "Adichie's TED talk arguing that reducing any people, place or culture to a single story dispossesses them of full humanity, and that many stories are needed to see the world honestly.",
+    // The holder and permission match the acknowledgements. Until 26 September
+    // 2026 this sent students to an "Edexcel-licensed school edition": Pearson
+    // publishes the anthology free as a PDF.
     ukRightsNotice:
-      'Rights notice: © Wylie Agency / TED Conferences / Pearson Education on behalf of Chimamanda Ngozi Adichie. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0) or the original TEDGlobal 2009 talk transcript.',
+      'Rights notice: © Chimamanda Ngozi Adichie 2009, reproduced in the anthology by permission of The Wylie Agency (UK). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the anthology (ISBN 978-1-446-93108-0), which Pearson publishes free as a PDF, or the original TEDGlobal 2009 talk transcript.',
   },
   {
     slug: 'a-passage-to-africa',
@@ -381,9 +394,9 @@ export const SET_TEXTS: SetText[] = [
     year: '2001',
     keyThemes: ['Suffering', 'Empathy', 'Guilt', 'Media ethics'],
     description:
-      "George Alagiah (1955-2023) was a Sri Lankan-born British BBC journalist and broadcaster; rights to his work are now held by his estate. In this memoir extract, Alagiah recalled reporting on famine in Somalia and the moment one man's apologetic smile forced him to question how journalism turns suffering into spectacle.",
+      "George Alagiah (1955-2023) was a Sri Lankan-born British BBC journalist and broadcaster. In this memoir extract, Alagiah recalled reporting on famine in Somalia and the moment one man's apologetic smile forced him to question how journalism turns suffering into spectacle.",
     ukRightsNotice:
-      '© Alagiah estate via Pearson Education. Short fair-dealing extracts; full anthology selections require an Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
+      'Rights notice: © George Alagiah 2001, reproduced in the anthology by permission of Little, Brown Book Group and the author c/o The Hanbury Agency. Short fair-dealing extracts; full anthology selections require an Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
   },
   {
     slug: 'the-explorers-daughter',
@@ -397,7 +410,7 @@ export const SET_TEXTS: SetText[] = [
     description:
       "Herbert watches Inuit hunters pursue narwhal in the Arctic and reflects on the tension between her instinctive sympathy for the whales and the community's need to hunt to survive.",
     ukRightsNotice:
-      'Rights notice: © Penguin / Pearson Education on behalf of Kari Herbert. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
+      'Rights notice: © Kari Herbert 2004, reproduced in the anthology by permission of Aitken Alexander Associates. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
   },
   {
     slug: 'explorers-or-boys-messing-about',
@@ -409,9 +422,9 @@ export const SET_TEXTS: SetText[] = [
     year: '2003',
     keyThemes: ['Adventure', 'Risk', 'Responsibility', 'Public criticism'],
     description:
-      'Originally published in The Guardian, 28 January 2003; adapted for the Edexcel anthology by Pearson. The article reports the rescue of two British explorers stranded in the Antarctic, and the public debate over whether their expedition was bravery or recklessness.',
+      'Originally published in The Guardian, 28 January 2003; adapted for the Edexcel anthology by Pearson. The article reports the rescue of two British explorers whose helicopter ditched in the sea off Antarctica, and the public debate over whether their expedition was bravery or recklessness.',
     ukRightsNotice:
-      'Anthology version warning: This text is an adapted version printed in the Edexcel IGCSE Anthology (ISBN 978-1-446-93108-0). The freely-available Guardian original (linked from many revision sites) differs in cuts, re-orderings, and minor word choice. Always use the anthology version when answering Edexcel exam questions - examiners will mark against the anthology text. Originally published in The Guardian, 28 January 2003; adapted for the Edexcel anthology by Pearson. © Guardian News & Media Ltd / Pearson Education. Short fair-dealing extracts only.',
+      'Anthology version warning: This text is an adapted version printed in the Edexcel IGCSE Anthology (ISBN 978-1-446-93108-0). The freely-available Guardian original (linked from many revision sites) differs in cuts, re-orderings, and minor word choice. Always use the anthology version when answering Edexcel exam questions - examiners will mark against the anthology text. Originally published in The Guardian, 28 January 2003; adapted for the Edexcel anthology by Pearson. © Guardian News & Media Ltd. Short fair-dealing extracts only.',
   },
   {
     slug: 'between-a-rock-and-a-hard-place',
@@ -422,10 +435,13 @@ export const SET_TEXTS: SetText[] = [
     copyrightStatus: 'copyright',
     year: '2004',
     keyThemes: ['Survival', 'Isolation', 'Determination', 'Nature'],
+    // CORRECTED 26 September 2026. This said he amputated his own arm. The
+    // anthology extract ends minutes after the boulder traps it, with his
+    // first attempts to shift the rock; the amputation is not in it.
     description:
-      'Ralston recounts the moment he was forced to amputate his own arm after a boulder pinned him in a remote Utah canyon - a meditation on solitude, willpower and the limits of the body.',
+      'Ralston recounts the moment a falling boulder crushed his hand and trapped his arm in a remote Utah canyon, and his first desperate attempts to free himself - a meditation on solitude, willpower and the limits of the body.',
     ukRightsNotice:
-      'Rights notice: © Simon & Schuster / Pearson Education on behalf of Aron Ralston. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
+      'Rights notice: © Aron Ralston 2004. The anthology prints the extract from the Simon & Schuster 2010 edition, by permission of Simon & Schuster UK and Atria Books, a division of Simon & Schuster, Inc. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
   },
   {
     slug: 'young-and-dyslexic',
@@ -436,10 +452,15 @@ export const SET_TEXTS: SetText[] = [
     copyrightStatus: 'copyright',
     year: '2015',
     keyThemes: ['Education', 'Identity', 'Disability', 'Self-belief'],
+    // Until 26 September 2026 this said rights to his work "are now held by
+    // his estate" (the anthology names no estate, only permission from Jessica
+    // Kingsley Publishers, as the notice below says) and called the text
+    // "originally" a Guardian piece, when the anthology's headnote says the
+    // Guardian article was adapted from his contribution to a 2015 book.
     description:
-      'Benjamin Zephaniah (1958-2023) was a British dub poet and rights campaigner; he died on 7 December 2023 and rights to his work are now held by his estate. The text was originally a Guardian opinion piece (2 October 2015) and has been adapted for the Edexcel anthology - the printed version differs from the freely-available online original in cuts and re-orderings. In it, Zephaniah wrote about growing up labelled as stupid because of dyslexia, and argued that creative thinking and refusal to be defined by an educational system are strengths.',
+      'Benjamin Zephaniah (1958-2023) was a British dub poet and rights campaigner; he died on 7 December 2023. The text is a Guardian article (2 October 2015) adapted from his contribution to Creative, Successful, Dyslexic (2015), and has been adapted for the Edexcel anthology - the printed version differs from the freely-available online original in cuts and re-orderings. In it, Zephaniah wrote about growing up labelled as stupid because of dyslexia, and argued that creative thinking and refusal to be defined by an educational system are strengths.',
     ukRightsNotice:
-      'Anthology version warning: This text is an adapted version printed in the Edexcel IGCSE Anthology (ISBN 978-1-446-93108-0). The freely-available Guardian original (linked from many revision sites) differs in cuts, re-orderings, and minor word choice. Always use the anthology version when answering Edexcel exam questions - examiners will mark against the anthology text. Rights notice: Benjamin Zephaniah (1958-2023) - rights now held by his estate. © estate via Pearson Education. Quotations are short fair-dealing extracts.',
+      'Anthology version warning: This text is an adapted version printed in the Edexcel IGCSE Anthology (ISBN 978-1-446-93108-0). The freely-available Guardian original (linked from many revision sites) differs in cuts, re-orderings, and minor word choice. Always use the anthology version when answering Edexcel exam questions - examiners will mark against the anthology text. Rights notice: the anthology prints no copyright line for this article, only that it is reproduced by permission of Jessica Kingsley Publishers. Quotations are short fair-dealing extracts.',
   },
   {
     slug: 'a-game-of-polo-with-a-headless-goat',
@@ -452,12 +473,16 @@ export const SET_TEXTS: SetText[] = [
     keyThemes: ['Culture', 'Spectacle', 'Tradition', 'Travel writing'],
     // CORRECTED 25 September 2026. The description said the text was about
     // buzkashi, the sport in the book's title. The anthology extract is Levine
-    // filming an illegal donkey-cart race on a main road in Karachi; buzkashi is
-    // not in it. The publisher was André Deutsch (2000), not Little, Brown.
+    // filming a donkey-cart race on a main road in Karachi; buzkashi is not in
+    // it. The publisher was André Deutsch (2000), not Little, Brown.
+    //
+    // CORRECTED 26 September 2026: "illegal" removed. The extract never says
+    // the race is illegal; it shows traffic rules flouted, bookmakers and an
+    // underage driver, and the study guide says so.
     description:
-      "Levine's account of filming an illegal donkey-cart race along a main road in Karachi, from the long wait to the chaotic chase that follows it.",
+      "Levine's account of filming a donkey-cart race along a main road in Karachi, from the long wait to the chaotic chase that follows it.",
     ukRightsNotice:
-      'Rights notice: © André Deutsch / Pearson Education on behalf of Emma Levine. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
+      'Rights notice: © Emma Levine 2000, reproduced in the anthology by permission of Carlton Publishing Group. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
   },
   {
     slug: 'beyond-the-sky-and-the-earth',
@@ -471,7 +496,7 @@ export const SET_TEXTS: SetText[] = [
     description:
       "Zeppa's memoir of arriving as a young Canadian teacher in remote Bhutan, and how the strangeness of the landscape and language slowly reshaped her sense of home.",
     ukRightsNotice:
-      'Rights notice: © Penguin Canada / Pearson Education on behalf of Jamie Zeppa. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
+      'Rights notice: © Jamie Zeppa 1999, reproduced in the anthology by permission of The McDermid Agency, Riverhead (Penguin Random House) and Doubleday Canada. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
   },
   {
     slug: 'h-is-for-hawk',
@@ -482,10 +507,15 @@ export const SET_TEXTS: SetText[] = [
     copyrightStatus: 'copyright',
     year: '2014',
     keyThemes: ['Grief', 'Nature', 'Obsession', 'Identity'],
+    // CORRECTED 26 September 2026. The description was of the memoir
+    // ("training a goshawk"); the extract is the handover on the quayside and
+    // ends before any training. The notice sent students to an
+    // "Edexcel-licensed school edition": Pearson publishes the anthology free
+    // as a PDF. Holder and permission already matched the acknowledgements.
     description:
-      "Macdonald's memoir of training a goshawk in the months after her father's sudden death - a study of how wildness and grief can mirror and reshape each other.",
+      'In the anthology extract from her memoir, Macdonald, whose father has died, meets the goshawk she has come to collect from a breeder, prefers the smaller bird meant for someone else, and asks to swap.',
     ukRightsNotice:
-      'Rights notice: © Jonathan Cape / Penguin Random House / Pearson Education on behalf of Helen Macdonald. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
+      'Rights notice: © Helen Macdonald 2014, reproduced in the anthology by permission of The Random House Group and Grove/Atlantic. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the anthology (ISBN 978-1-446-93108-0), which Pearson publishes free as a PDF.',
   },
   {
     slug: 'chinese-cinderella',
@@ -499,10 +529,14 @@ export const SET_TEXTS: SetText[] = [
     description:
       'Yen Mah recalls her childhood in mid-twentieth-century China as the unwanted daughter blamed for her mother’s death, and how academic success became her way of being seen.',
     ukRightsNotice:
-      'Rights notice: © Penguin / Pearson Education on behalf of Adeline Yen Mah. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
+      'Rights notice: © Adeline Yen Mah 1999, reproduced in the anthology by permission of Penguin Books, Delacorte Press (Random House Children’s Books) and Penguin Random House Australia. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
   },
 
-  // Section B - Poetry (15 poems)
+  // Poetry. This heading read "Section B - Poetry (15 poems)" until 26
+  // September 2026. The first five rows are the anthology's Part 2 poems
+  // (4EA1, Unit 2 Section A); most of the rest are Part 3 poems, set for
+  // English Literature (4ET1) only, and Refugee Blues is in no anthology.
+  // Each row's boards say where it is set.
   {
     slug: 'disabled',
     title: 'Disabled',
@@ -512,8 +546,11 @@ export const SET_TEXTS: SetText[] = [
     copyrightStatus: 'public-domain',
     year: '1917',
     keyThemes: ['War', 'Loss of youth', 'Isolation', 'Disability'],
+    // CORRECTED 26 September 2026. This said he enlisted before he had
+    // started shaving, which is not in the poem. What the poem says is that
+    // he lied about his age and the recruiters wrote the lie down.
     description:
-      'A young soldier, now a multiple amputee, sits in a wheelchair at dusk and remembers the careless decisions and patriotic pressure that led him to enlist before he was even shaving.',
+      'A young soldier, now a multiple amputee, sits in a wheelchair at dusk and remembers the careless decisions and patriotic pressure that led him to lie about his age and enlist.',
   },
   {
     slug: 'out-out',
@@ -526,8 +563,11 @@ export const SET_TEXTS: SetText[] = [
     copyrightStatus: 'copyright',
     year: '1916',
     keyThemes: ['Death', 'Childhood', 'Indifference of nature', 'Work'],
+    // CORRECTED 26 September 2026. This called it a Vermont farm. The poem
+    // does not place the farm in Vermont; the view from the yard stretches
+    // into Vermont.
     description:
-      'A boy doing chores on a Vermont farm loses his hand to a buzz-saw and dies; the watching adults, after a brief shock, "turn[] to their affairs". Frost’s title quotes Macbeth.',
+      'A boy doing chores on a farm loses his hand to a buzz-saw and dies; the watching adults, after a brief shock, "turn[] to their affairs". Frost’s title quotes Macbeth.',
     ukRightsNotice:
       'Rights notice (UK): Frost died 1963; UK copyright expires 31 December 2033. Quotations are short fair-dealing extracts. Frost is public domain in the United States, but not in the UK - students using overseas revision resources should be aware that those reproductions are not redistributable in the UK platform.',
   },
@@ -543,12 +583,14 @@ export const SET_TEXTS: SetText[] = [
     description:
       'In an Indian bazaar, the speaker has her hand decorated with henna by a girl she does not know; the temporary pattern becomes a meditation on her own divided sense of cultural identity.',
     ukRightsNotice:
-      'Rights notice: © Bloodaxe Books on behalf of Moniza Alvi. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0) or Alvi’s collection Carrying My Wife (2000).',
+      'Rights notice: © Moniza Alvi, reproduced in the anthology by permission of Bloodaxe Books on behalf of the author. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0) or Alvi’s collection Carrying My Wife (2000).',
   },
   {
     slug: 'the-bright-lights-of-sarajevo',
     title: 'The Bright Lights of Sarajevo',
-    author: 'Tony Harrison (b. 1937)',
+    // Harrison died on 26 September 2025 (his publisher Bloodaxe's obituary
+    // notice; Wikipedia agrees). This read "b. 1937" until 26 September 2026.
+    author: 'Tony Harrison (1937-2025)',
     category: 'poetry-anthology',
     boards: ['edexcel-igcse-lang'],
     copyrightStatus: 'copyright',
@@ -557,7 +599,7 @@ export const SET_TEXTS: SetText[] = [
     description:
       'Harrison reports from besieged Sarajevo, where young couples flirt in the dark streets between sniper fire and shell craters - the persistence of ordinary life inside war.',
     ukRightsNotice:
-      'Rights notice: © Bloodaxe Books on behalf of Tony Harrison. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0). Note: the anthology layout uses extra stanza breaks not in the original 1995 Guardian text or the Bloodaxe collected edition - students should revise from the anthology.',
+      'Rights notice: © Tony Harrison, reproduced in the anthology by kind permission of Tony Harrison. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0). Note: the anthology layout uses extra stanza breaks not in the original 1995 Guardian text or the Bloodaxe collected edition - students should revise from the anthology.',
   },
   {
     slug: 'still-i-rise',
@@ -651,7 +693,7 @@ export const SET_TEXTS: SetText[] = [
     description:
       "An unborn child pleads to be protected from the violence, dehumanisation and moral corruption of the adult world; the prayer's mounting urgency reflects mid-war anxiety.",
     ukRightsNotice:
-      'Rights notice: © Faber & Faber on behalf of the Louis MacNeice estate (1907-1963). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0) or MacNeice’s Collected Poems (Faber).',
+      'Rights notice: © The Estate of Louis MacNeice (1907-1963), 1966 and 1979, reproduced in the anthology by permission of David Higham Associates. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0) or MacNeice’s Collected Poems (Faber).',
   },
   {
     slug: 'piano',
@@ -672,12 +714,15 @@ export const SET_TEXTS: SetText[] = [
     category: 'poetry-anthology',
     boards: ['edexcel-igcse'],
     copyrightStatus: 'copyright',
-    year: '1984',
+    // CORRECTED 26 September 2026 from '1984'. The poem is in Walking Wounded
+    // (1965), per LitCharts; Wikipedia dates that collection 1965. The
+    // anthology prints it from Collected Poems 1950-1993 (Faber & Faber, 2011).
+    year: '1965',
     keyThemes: ['Childhood', 'Isolation', 'Betrayal', 'Imagination'],
     description:
-      'A child hiding in an ingenious spot waits to be found, only to discover with a jolt that his friends have already left and he is alone in the dark.',
+      'A child hiding in an ingenious spot waits to be found, only to discover with a jolt that the others have already gone and the hider is alone in the dark.',
     ukRightsNotice:
-      'Rights notice: © Robson Books on behalf of the Vernon Scannell estate (1922-2007). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
+      'Rights notice: the anthology reproduces the poem, from Collected Poems 1950-1993 (Faber & Faber, 2011), by permission of the Estate of Vernon Scannell (1922-2007). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
   },
   {
     slug: 'half-past-two',
@@ -689,7 +734,7 @@ export const SET_TEXTS: SetText[] = [
     year: '1992',
     keyThemes: ['Childhood', 'Time', 'Authority', 'Innocence'],
     description:
-      'A small boy kept behind after school becomes lost in a timeless world because he cannot yet read a clock, and a careless punishment becomes an accidental gift of escape.',
+      'A small boy kept in the schoolroom as a punishment becomes lost in a timeless world because he cannot yet read a clock, and a careless punishment becomes an accidental gift of escape.',
     ukRightsNotice:
       'Rights notice: © Peterloo Poets / Enitharmon on behalf of the U.A. Fanthorpe estate (1929-2009). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
   },
@@ -790,7 +835,7 @@ export const SET_TEXTS: SetText[] = [
     description:
       'On a long coach journey from rural Eastern Europe to London, a migrant worker named Lev contemplates the past he is leaving and the precarious future ahead.',
     ukRightsNotice:
-      'Rights notice: © Vintage / Penguin Random House / Pearson Education on behalf of Rose Tremain. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0) or Tremain’s novel The Road Home (2007).',
+      'Rights notice: © Rose Tremain 2007, reproduced in the anthology by permission of The Random House Group and Little, Brown and Company. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0) or Tremain’s novel The Road Home (2007).',
   },
   {
     slug: 'whistle-and-ill-come-to-you',
@@ -1018,6 +1063,9 @@ export const SET_TEXTS: SetText[] = [
     category: 'poetry-anthology',
     boards: ['edexcel-igcse', 'edexcel'],
     copyrightStatus: 'copyright',
+    // The anthology's own acknowledgement (Issue 8, page 73): copyright 1996
+    // by John Agard. Added 26 September 2026; the row had no year.
+    year: '1996',
   },
   {
     slug: 'remember',

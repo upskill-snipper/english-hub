@@ -3575,7 +3575,13 @@ export const EN_MESSAGES: Record<string, string> = {
   'texts.section.igcse_a_level': 'IGCSE + A-Level texts',
   'texts.section.pearson_anthology': 'Pearson IGCSE Language A (4EA1) anthology',
   'texts.section.pearson_anthology_note':
-    'Section A non-fiction, Section B poetry and Section C prose for the Pearson Edexcel International GCSE English Language A specification.',
+    'Parts 1 and 2 of the Pearson Edexcel International GCSE English Anthology, set for English Language A. Part 1 (non-fiction) is examined in Unit 1 Section A. Part 2 (poetry and prose) is examined in Unit 2 Section A, or assessed by coursework for students on that route.',
+  'texts.section.pearson_lit_anthology': 'Pearson IGCSE Literature (4ET1) anthology poems',
+  'texts.section.pearson_lit_anthology_note':
+    'Part 3 of the same anthology. All sixteen poems must be studied for English Literature (4ET1), examined in Unit 1 Section B. They are not studied for English Language A.',
+  'texts.section.other_texts': 'Other poems and short stories',
+  'texts.section.other_texts_note':
+    'These are not in the Pearson anthology, and we have not found them set by any exam board we cover.',
   'texts.label.non_fiction': 'Non-fiction:',
   'texts.label.poetry': 'Poetry:',
   'texts.label.prose': 'Prose:',
@@ -3598,7 +3604,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'anth_page.cta_start_studying': 'Start studying',
   'anth_page.version_warning_label': 'Anthology version warning:',
   'anth_page.version_warning_body':
-    'This site teaches the Edexcel IGCSE Anthology Issue 2 (ISBN 978-1-446-93108-0, Pearson Education). Two of the non-fiction texts in this Paper 1 Section A anthology are adapted versions that differ from their freely-available online originals.',
+    'This site teaches Issue 8 (February 2026) of the Pearson Edexcel International GCSE English Anthology (ISBN 978-1-446-93108-0), which Pearson publishes free as a PDF on its qualifications website. Two of the non-fiction texts in Part 1, the texts for Paper 1 Section A, are adapted versions that differ from their freely-available online originals.',
   'anth_page.use_anthology_emph': 'Always use the anthology version',
   'anth_page.use_anthology_body':
     'when answering Edexcel exam questions - examiners will mark against the anthology text, not the Guardian originals you may find on revision websites.',
@@ -3609,16 +3615,16 @@ export const EN_MESSAGES: Record<string, string> = {
   'anth_page.study_this_text': 'Study this text',
   'anth_page.expect_heading': 'Paper 1 Section A - What to Expect',
   'anth_page.expect_intro':
-    'In Paper 1 Section A you will be given an extract from one of the ten anthology texts. You will answer three types of question:',
-  'anth_page.expect_q1_label': 'Retrieval (Q1):',
+    'Section A is worth 45 marks and you answer every question. It gives you two texts: Text One, an unseen extract you have not read before, and Text Two, one of the ten anthology texts, which is provided in the exam. Pearson advises about 1 hour 30 minutes for the section, including reading time.',
+  'anth_page.expect_q1_label': 'Questions 1 to 3, Text One (2, 4 and 5 marks):',
   'anth_page.expect_q1_body':
-    '"List four things about..." - straightforward identification of information from the text. Worth 4 marks.',
-  'anth_page.expect_q2_label': 'Language analysis (Q2):',
+    'short-answer questions on the unseen extract only, testing how well you read and understand it. No past paper has set a short-answer or retrieval question on the anthology text.',
+  'anth_page.expect_q2_label': 'Question 4, Text Two (12 marks):',
   'anth_page.expect_q2_body':
-    '"How does the writer use language to..." - close analysis of specific techniques and their effects on the reader. Worth 12 marks.',
-  'anth_page.expect_q3_label': 'Structural analysis (Q3):',
+    '"How does the writer, [name], use language and structure to...?" This is the only question on the anthology text by itself. Write about language and structure together, from across the whole extract, in one answer: it is marked on a single grid, and every level above Level 1 describes both.',
+  'anth_page.expect_q3_label': 'Question 5, both texts (22 marks):',
   'anth_page.expect_q3_body':
-    '"How does the writer structure the text to..." - analysis of how the text is organised to engage and influence the reader. Worth 12 marks.',
+    'compare how the two writers present their ideas and perspectives. The comparison is always between the unseen extract and the anthology text, never two anthology texts, and an answer that covers only one text cannot score more than 8.',
   'anth_page.study_all_note':
     'You should study all ten texts. You will not know which text will appear in the exam until you open the paper.',
   'anth_page.footer_align': 'Aligned with Pearson Edexcel specification 4EA1 · Paper 1 Section A',
@@ -5786,21 +5792,21 @@ export const EN_MESSAGES: Record<string, string> = {
   'edexcel.lang.hero_badge': 'International GCSE English Language',
   'edexcel.lang.hero_title': 'Pearson Edexcel IGCSE Language A',
   'edexcel.lang.hero_lead_pre':
-    'The Pearson Edexcel International GCSE in English Language (Specification A) is a two-paper qualification covering ',
+    'The Pearson Edexcel International GCSE in English Language (Specification A) is taken as Paper 1 plus either Paper 2 or a non-examined coursework component. Paper 1 covers ',
   'edexcel.lang.hero_lead_nf': 'non-fiction reading',
   'edexcel.lang.hero_lead_trans': 'transactional writing',
   'edexcel.lang.hero_lead_anth': 'prescribed anthology',
   'edexcel.lang.hero_lead_and': ' and a ',
   'edexcel.lang.hero_lead_post': ' of ten non-fiction texts studied for Paper 1 Section A.',
-  'edexcel.lang.duration_3h15': '3h 15m total',
+  'edexcel.lang.duration_total': '3h 45m total (Papers 1 and 2)',
   'edexcel.lang.anth_texts_count': '10 anthology texts',
   'edexcel.lang.studying_lit_title': 'Studying Literature too?',
   'edexcel.lang.studying_lit_body':
     'See your Pearson Edexcel IGCSE Literature set texts - full study guides for Macbeth, An Inspector Calls, Of Mice and Men and more.',
   'edexcel.lang.paper1.title': 'Paper 1: Non-Fiction Texts and Transactional Writing',
-  'edexcel.lang.paper1.meta': '1 hour 45 minutes · 60 marks · 60% of total',
-  'edexcel.lang.paper2.title': 'Paper 2: Reading and Writing (Non-Fiction)',
-  'edexcel.lang.paper2.meta': '1 hour 30 minutes · 40 marks · 40% of total',
+  'edexcel.lang.paper1.meta': '2 hours 15 minutes · 90 marks · 60% of total',
+  'edexcel.lang.paper2.title': 'Paper 2: Poetry and Prose Texts and Imaginative Writing',
+  'edexcel.lang.paper2.meta': '1 hour 30 minutes · 60 marks · 40% of total',
   'edexcel.lang.footer_align': 'Aligned with Pearson Edexcel specification 4EA1',
   'edexcel.lang.tool.anthology.title': 'Anthology Study',
   'edexcel.lang.tool.anthology.desc': 'All 10 non-fiction texts with full analysis',
@@ -5925,7 +5931,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'anthology_hub.cta_start_studying': 'Start studying',
   'anthology_hub.version_warning_label': 'Anthology version warning:',
   'anthology_hub.version_warning_body':
-    'This site teaches the Edexcel IGCSE Anthology Issue 2. Two of the non-fiction texts are adapted versions that differ from their freely-available online originals.',
+    'This site teaches Issue 8 (February 2026) of the Pearson Edexcel International GCSE English Anthology, which Pearson publishes free as a PDF. Two of the non-fiction texts are adapted versions that differ from their freely-available online originals.',
   'anthology_hub.use_anthology_emph': 'Always use the anthology version',
   'anthology_hub.use_anthology_body':
     'when answering Edexcel exam questions - examiners will mark against the anthology text, not the online originals.',
