@@ -39,6 +39,7 @@ import {
 import { useT } from '@/lib/i18n/use-t'
 import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
 import { TEXT_SUBPAGE_ROUTES } from '@/lib/revision/text-subpages.generated'
+import { withoutOuterQuotes } from '@/lib/study-guides/quote-marks'
 
 // ─── Marking destinations ──────────────────────────────────────────────────
 
@@ -349,7 +350,7 @@ function EssayPrompt({ questions, markingHref }: { questions: string[]; markingH
 
       <div className="rounded-lg bg-cream-50 border border-ink-100 p-4 mb-3">
         <p className="text-sm font-serif italic text-ink-800 leading-relaxed">
-          &ldquo;{question}&rdquo;
+          &ldquo;{withoutOuterQuotes(question)}&rdquo;
         </p>
       </div>
 
@@ -405,7 +406,9 @@ function FlashcardDrill({ cards }: { cards: { front: string; back: string }[] })
         className="w-full min-h-[80px] rounded-lg border border-ink-100 bg-cream-50 p-4 text-start transition-all hover:bg-cream-100"
       >
         {!flipped ? (
-          <p className="text-sm font-serif italic text-ink-800">&ldquo;{card.front}&rdquo;</p>
+          <p className="text-sm font-serif italic text-ink-800">
+            &ldquo;{withoutOuterQuotes(card.front)}&rdquo;
+          </p>
         ) : (
           <p className="text-xs text-ink-600 leading-relaxed">{card.back}</p>
         )}
