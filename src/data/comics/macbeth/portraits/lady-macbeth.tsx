@@ -17,8 +17,8 @@ import { PH, portraitGround, PortraitRule, PW } from './common'
  * Lady Macbeth in the sleepwalking scene (5.1), the one place the play shows
  * her body at all, and then only her hands:
  *
- *   "Yet here's a spot." "Out, damned spot, out, I say!" "What, will these
- *   hands ne'er be clean?" "Here's the smell of the blood still. All the
+ *   "Yet here's a spot." "Out, damned spot! out, I say!" "What, will these
+ *   hands ne'er be clean?" "Here's the smell of the blood still: all the
  *   perfumes of Arabia will not sweeten this little hand."
  *
  * So she holds up one small hand and stares at it, and the spot on it is the

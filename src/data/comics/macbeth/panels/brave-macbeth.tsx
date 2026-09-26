@@ -30,8 +30,9 @@ import {
  * Act 1, Scene 2: "Brave Macbeth", the second moment in the guide's timeline.
  * Every detail is from the scene:
  *
- * - "A camp near Forres. Alarum within. Enter Duncan, Malcolm, Donalbain,
- *   Lennox, with Attendants, meeting a bleeding Sergeant." So the king's tent
+ * - "A Camp near Forres." "Alarum within. Enter King Duncan, Malcolm,
+ *   Donalbain, Lennox, with Attendants, meeting a bleeding Captain." So the
+ *   king's tent
  *   on the right, and the battle still going on beyond the camp ("Alarum
  *   within"), on the ridge to the left: spears and banners black against the
  *   pale haze of the fight, dark smoke rising behind them.
@@ -39,20 +40,21 @@ import {
  *   captain has come straight from the fight and can barely stand, so he is
  *   down on one knee, holding himself up on his spear. His wounds are the
  *   play's words, never the picture's: nothing on him is cut or marked.
- * - "For brave Macbeth, well he deserves that name, / Disdaining fortune, with
- *   his brandished steel, / Which smoked with bloody execution, / Like
- *   valour's minion carved out his passage". The captain flings an arm back
+ * - "For brave Macbeth (well he deserves that name), / Disdaining Fortune, with
+ *   his brandish’d steel, / Which smok’d with bloody execution, / Like Valour’s
+ *   minion, carv’d out his passage". The captain flings an arm back
  *   at the ridge where the fight is. Macbeth is not in this scene (he first
  *   enters in 1.3), so he is not in the picture: what he did to Macdonwald
  *   is the captain's story, and is left entirely to the words. No one is
  *   struck, and no one lies on the field.
- * - "O valiant cousin, worthy gentleman!" Duncan, old and crowned as the other
+ * - "O valiant cousin! worthy gentleman!" Duncan, old and crowned as the other
  *   Macbeth panels draw him ("the old man", 5.1; "His silver skin", 2.3),
  *   lifts a hand in praise. His crown is the panel's only red. His white
  *   beard and hair are edged in ink, because the tent behind his head is
  *   paper and a paper beard on paper disappears.
- * - "This is the sergeant / Who like a good and hardy soldier fought / 'Gainst
- *   my captivity. Hail, brave friend!" Malcolm, young and beardless, holds out
+ * - "This is the sergeant / Who, like a good and hardy soldier, fought /
+ *   ’Gainst my captivity.—Hail, brave friend!" Malcolm, young and beardless,
+ *   holds out
  *   a hand to him, at shoulder height, clear of the dark door of the tent.
  *
  * REVIEWED 26 September 2026. The first version drew a small Macbeth on the

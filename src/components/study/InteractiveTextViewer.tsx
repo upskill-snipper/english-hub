@@ -175,6 +175,24 @@ function escapeRegExp(str: string): string {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 }
 
+/**
+ * The entities the play editions escape, back to the characters they stand for.
+ *
+ * An annotated section is rendered as plain text, not HTML, so an entity left
+ * in it is shown to the student as written. Macbeth's Act 4, Scene 1 prints a
+ * stage direction ending "&amp;c.", and once the scene carried notes it read
+ * "Black Spirits, &amp;c." on the page (26 September 2026). `&amp;` goes last,
+ * so "&amp;lt;" becomes "&lt;" and not "<".
+ */
+function decodeEntities(s: string): string {
+  return s
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&amp;/g, '&')
+}
+
 // ─── Icons ───────────────────────────────────────────────────────────────────
 
 function ChevronDownIcon({ className = 'h-4 w-4' }: { className?: string }) {
@@ -378,14 +396,17 @@ function AnnotatedContent({
 
     // Parse the HTML to plain text for matching, then rebuild with annotations
     // We use a simple approach: strip tags, find annotation positions, then reconstruct
-    const stripped = html.replace(/<[^>]*>/g, '')
+    // Decoded, because this text is rendered as text; and each note's span is
+    // decoded the same way below, so a span cut from the escaped HTML still
+    // finds its place.
+    const stripped = decodeEntities(html.replace(/<[^>]*>/g, ''))
 
     // Find all annotation matches and their positions
     type Match = { start: number; end: number; annotation: Annotation }
     const matches: Match[] = []
 
     for (const ann of active) {
-      const escaped = escapeRegExp(ann.text)
+      const escaped = escapeRegExp(decodeEntities(ann.text))
       const regex = new RegExp(escaped, 'gi')
       let m: RegExpExecArray | null
       while ((m = regex.exec(stripped)) !== null) {

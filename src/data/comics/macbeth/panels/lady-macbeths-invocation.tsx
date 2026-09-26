@@ -10,7 +10,8 @@ import { EYE, HEAD_WOMAN, VEIL } from './inverness-people'
  * Act 1, Scene 5: "Lady Macbeth's invocation", the fifth moment in the
  * guide's timeline. Every detail is from the scene:
  *
- * - "Inverness. Macbeth's castle. Enter Lady Macbeth, reading a letter." She
+ * - "Inverness. A Room in Macbeth’s Castle." "Enter Lady Macbeth, reading a
+ *   letter." She
  *   holds the letter still, lowered in one hand: the paper, and nothing on
  *   it that could be read as words.
  * - "The King comes here tonight." So the day is ending: through the window

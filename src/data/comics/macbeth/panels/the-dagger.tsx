@@ -20,22 +20,22 @@ import { EYE, HEAD_BEARD, HEAD_MACBETH, HEAD_MAN } from './inverness-people'
  * Act 2, Scene 1: "The dagger", the eighth moment in the guide's timeline.
  * Every detail is from the scene:
  *
- * - "Inverness. Court of Macbeth's castle." "The moon is down." "There's
+ * - "Inverness. Court within the Castle." "The moon is down." "There's
  *   husbandry in heaven; / Their candles are all out." So the courtyard is
  *   black, with no moon and no stars.
- * - "Enter Banquo and Fleance, bearing a torch before him"; "How goes the
+ * - "Enter Banquo and Fleance with a torch before him"; "How goes the
  *   night, boy?"; "Exeunt Banquo and Fleance." Far off on the left the two of
  *   them go out through an arch, the boy a head shorter and carrying the torch.
- *   Stage directions are quoted from the site's own reader
- *   (src/app/revision/texts/macbeth/read/page.tsx).
+ *   Stage directions are quoted from the held edition
+ *   (src/data/full-texts/macbeth.ts).
  * - "Is this a dagger which I see before me, / The handle toward my hand?
  *   Come, let me clutch thee." The dagger hangs in the air, cut as the one
  *   light in the courtyard, its handle towards Macbeth, who reaches for it. His
  *   own dagger is still at his belt: "As this which now I draw".
- * - "Thou marshal'st me the way that I was going". Its point is towards the
+ * - "Thou marshall’st me the way that I was going". Its point is towards the
  *   stair and the door of the king's chamber.
- * - "And, on thy blade and dudgeon, gouts of blood, / Which was not so
- *   before." The spot colour is the drops on the blade and the handle, and it
+ * - "And on thy blade and dudgeon, gouts of blood, / Which was not so before."
+ *   The spot colour is the drops on the blade and the handle, and it
  *   arrives after the dagger does. It stands for blood; nothing is wounded.
  * - "Go bid thy mistress, when my drink is ready, / She strike upon the bell."
  *   "A bell rings." Last, rings of sound cut round a small bell by the stair.

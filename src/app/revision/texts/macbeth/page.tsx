@@ -18,12 +18,12 @@ type TopQuote = {
 
 const TOP_FIVE_QUOTES: TopQuote[] = [
   {
-    quote: '"Vaulting ambition, which o\'erleaps itself / And falls on the other."',
+    quote: '"Vaulting ambition, which o’erleaps itself / And falls on th’ other."',
     character: 'Macbeth - Act 1, Scene 7',
     ao2: 'The equestrian metaphor of "vaulting" suggests ambition is a horse Macbeth tries to mount; it leaps too far and throws him. Shakespeare names the play\'s tragic engine in Macbeth\'s own voice, making him conscious of the flaw that will destroy him. The enjambment between "itself" and "And falls" enacts the fall.',
   },
   {
-    quote: '"Look like th\' innocent flower, / But be the serpent under\'t."',
+    quote: '"Look like the innocent flower, / But be the serpent under’t."',
     character: 'Lady Macbeth - Act 1, Scene 5',
     ao2: 'The biblical allusion to the Genesis serpent aligns the Macbeths\' regicide with original sin and casts Duncan as an Eden-like innocent. The antithesis of "flower" and "serpent" crystallises the appearance-vs-reality theme into a single image, and the imperative verbs frame Lady Macbeth as the play\'s strategist of deception.',
   },
@@ -39,7 +39,7 @@ const TOP_FIVE_QUOTES: TopQuote[] = [
   },
   {
     quote:
-      '"Life\'s but a walking shadow, a poor player / That struts and frets his hour upon the stage / And then is heard no more."',
+      '"Life’s but a walking shadow; a poor player, / That struts and frets his hour upon the stage, / And then is heard no more."',
     character: 'Macbeth - Act 5, Scene 5',
     ao2: 'The theatrical metaphor reduces existence to a brief, futile performance and is meta-theatrically self-aware: Macbeth is himself a player on Shakespeare\'s stage. The verbs "struts" and "frets" diminish human action to vanity and anxiety. The soliloquy marks the nihilistic endpoint of ambition, where Macbeth has murdered his way to a throne that signifies nothing.',
   },
@@ -95,9 +95,18 @@ export const metadata: Metadata = {
 /**
  * Corrected on 26 September 2026, because the guide mounted below contradicted
  * this page: the castle Duncan praises in 1.6 is Macbeth's, not his own, and
- * the Porter never calls his gate "the other devil's name" (he imagines an
- * equivocator at hell's gate). "Look like th' innocent flower" now reads the
- * same everywhere on the page, as in the site's reader and the Folger text.
+ * the Porter never calls his gate "th’ other devil’s name" (he imagines an
+ * equivocator at hell's gate). "Look like the innocent flower" now reads the
+ * same everywhere on the page, as in the site's reader.
+ *
+ * The quotations follow the held edition, Project Gutenberg #1533
+ * (src/data/full-texts/macbeth.ts), which the reader prints in full. Until the
+ * same day they followed the Folger Shakespeare Library's text, which Folger
+ * licenses for non-commercial use only, so they were moved to Gutenberg's
+ * wording by a script that cut each one from the held edition ("Fire, burn;
+ * and cauldron, bubble", "Untimely ripp'd"). Every passage of three lines or
+ * more on the Macbeth pages is pinned to it by
+ * src/__tests__/macbeth-pages-print-the-held-text.test.ts.
  */
 const data: TextGuideData = {
   slug: 'macbeth',
@@ -122,7 +131,7 @@ const data: TextGuideData = {
 
     'Macbeth visits the witches again and receives three new apparitions: to beware Macduff, that no man born of woman can harm him, and that he will not be defeated until Birnam Wood comes to Dunsinane Hill. Emboldened by the seemingly impossible conditions, Macbeth has Macduff\'s wife and children slaughtered when he learns Macduff has fled to England. In England, Macduff joins Malcolm, and they raise an army with English support. Meanwhile, Lady Macbeth has been driven mad by guilt. She sleepwalks through the castle obsessively washing imaginary blood from her hands, crying "Out, damned spot!" Her doctor and gentlewoman watch helplessly as she relives the crimes she helped orchestrate.',
 
-    'Malcolm\'s army marches on Dunsinane, using branches from Birnam Wood as camouflage, fulfilling the witches\' prophecy. Lady Macbeth dies offscreen, and Macbeth delivers his famous nihilistic soliloquy: "Life\'s but a walking shadow, a poor player / That struts and frets his hour upon the stage." In the final battle, Macbeth confronts Macduff, who reveals he was "from his mother\'s womb untimely ripped" by caesarean section and is therefore not technically "born of woman." Macduff kills Macbeth and presents his severed head to Malcolm, who is proclaimed the rightful King of Scotland, restoring the natural order that Macbeth\'s ambition had shattered.',
+    'Malcolm\'s army marches on Dunsinane, using branches from Birnam Wood as camouflage, fulfilling the witches\' prophecy. Lady Macbeth dies offscreen, and Macbeth delivers his famous nihilistic soliloquy: "Life’s but a walking shadow; a poor player, / That struts and frets his hour upon the stage." In the final battle, Macbeth confronts Macduff, who reveals he was "from his mother’s womb / Untimely ripp’d" by caesarean section and is therefore not technically "born of woman." Macduff kills Macbeth and presents his severed head to Malcolm, who is proclaimed the rightful King of Scotland, restoring the natural order that Macbeth\'s ambition had shattered.',
   ],
 
   characters: [
@@ -134,17 +143,17 @@ const data: TextGuideData = {
     {
       name: 'Lady Macbeth',
       role: "Macbeth's wife and co-conspirator",
-      body: 'Lady Macbeth is one of Shakespeare\'s most complex female characters. On hearing of the witches\' prophecy, she calls on dark spirits to "unsex me here" and fill her "from the crown to the toe top-full of direst cruelty," explicitly rejecting femininity in favour of ruthless ambition. She is the driving force behind Duncan\'s murder, questioning her husband\'s manhood and orchestrating the practical details while Macbeth falters. Her taunt "When you durst do it, then you were a man" reveals her manipulation of gender expectations. However, her iron resolve crumbles as guilt takes hold. By Act 5, she is sleepwalking and hallucinating, desperately trying to wash invisible blood from her hands: "Here\'s the smell of the blood still. All the perfumes of Arabia will not sweeten this little hand." Her offstage death, likely by suicide, completes her arc from fierce ambition to psychological destruction, showing that guilt cannot be suppressed indefinitely.',
+      body: 'Lady Macbeth is one of Shakespeare\'s most complex female characters. On hearing of the witches\' prophecy, she calls on dark spirits to "unsex me here" and fill her "from the crown to the toe, top-full / Of direst cruelty," explicitly rejecting femininity in favour of ruthless ambition. She is the driving force behind Duncan\'s murder, questioning her husband\'s manhood and orchestrating the practical details while Macbeth falters. Her taunt "When you durst do it, then you were a man" reveals her manipulation of gender expectations. However, her iron resolve crumbles as guilt takes hold. By Act 5, she is sleepwalking and hallucinating, desperately trying to wash invisible blood from her hands: "Here’s the smell of the blood still: all the perfumes of Arabia will not sweeten this little hand." Her offstage death, likely by suicide, completes her arc from fierce ambition to psychological destruction, showing that guilt cannot be suppressed indefinitely.',
     },
     {
       name: 'Banquo',
       role: "Macbeth's fellow general and friend; father of Fleance",
-      body: "Banquo serves as a moral foil to Macbeth. He hears the same prophecy but responds with caution rather than ambition, warning that \"the instruments of darkness tell us truths, / Win us with honest trifles, to betray's / In deepest consequence.\" Where Macbeth acts on the witches' words, Banquo resists temptation, despite being promised that his descendants will be kings. After Duncan's murder, Banquo suspects Macbeth: \"Thou hast it now: King, Cawdor, Glamis, all, / As the weird women promised, and I fear / Thou play'dst most foully for't.\" His murder shows how far Macbeth has fallen, and his ghost's appearance at the banquet serves as a physical manifestation of Macbeth's guilt. Shakespeare presents him as a virtuous ancestor of James I, whose Stuart line claimed descent from Banquo through his son Fleance - a genealogy popularised by Hector Boece in the sixteenth century that modern historians treat as legendary rather than verifiable.",
+      body: 'Banquo serves as a moral foil to Macbeth. He hears the same prophecy but responds with caution rather than ambition, warning that "the instruments of darkness tell us truths; / Win us with honest trifles, to betray’s / In deepest consequence." Where Macbeth acts on the witches\' words, Banquo resists temptation, despite being promised that his descendants will be kings. After Duncan\'s murder, Banquo suspects Macbeth: "Thou hast it now, King, Cawdor, Glamis, all, / As the Weird Women promis’d; and, I fear, / Thou play’dst most foully for’t." His murder shows how far Macbeth has fallen, and his ghost\'s appearance at the banquet serves as a physical manifestation of Macbeth\'s guilt. Shakespeare presents him as a virtuous ancestor of James I, whose Stuart line claimed descent from Banquo through his son Fleance - a genealogy popularised by Hector Boece in the sixteenth century that modern historians treat as legendary rather than verifiable.',
     },
     {
       name: 'King Duncan',
       role: 'King of Scotland; murdered by Macbeth',
-      body: 'Duncan is presented as a gracious, trusting, and generous king who represents the divinely ordained order. He praises Macbeth lavishly, calling him "O worthiest cousin," and rewards loyalty with titles and honour. His fatal flaw is excessive trust: he admits "There\'s no art / To find the mind\'s construction in the face" after the previous Thane of Cawdor\'s betrayal, yet immediately places the same trust in the new Thane of Cawdor, Macbeth. His murder is presented as an act against nature itself: on the night he dies, "chimneys were blown down" and "the earth was feverous and did shake." Duncan\'s goodness makes Macbeth\'s crime all the more horrifying, and his death disrupts the natural order of Scotland, plunging the nation into tyranny and chaos.',
+      body: 'Duncan is presented as a gracious, trusting, and generous king who represents the divinely ordained order. He praises Macbeth lavishly, calling him "O worthiest cousin!" and rewards loyalty with titles and honour. His fatal flaw is excessive trust: he admits "There\'s no art / To find the mind\'s construction in the face" after the previous Thane of Cawdor\'s betrayal, yet immediately places the same trust in the new Thane of Cawdor, Macbeth. His murder is presented as an act against nature itself: on the night he dies, "chimneys were blown down" and "the earth / Was feverous, and did shake." Duncan\'s goodness makes Macbeth\'s crime all the more horrifying, and his death disrupts the natural order of Scotland, plunging the nation into tyranny and chaos.',
     },
     {
       name: 'Macduff',
@@ -154,19 +163,19 @@ const data: TextGuideData = {
     {
       name: 'The Witches (Weird Sisters)',
       role: "Supernatural agents who prophesy Macbeth's rise",
-      body: 'The three witches open the play with "Fair is foul, and foul is fair," establishing the theme of moral inversion that runs throughout the tragedy. They exist in a deliberate moral ambiguity: Shakespeare never clarifies whether they cause Macbeth\'s downfall or merely predict what he would have done anyway. Their prophecies are technically true but deeply misleading, exploiting equivocation to give Macbeth a false sense of invincibility. They speak in trochaic tetrameter, setting them apart from the iambic pentameter of the court and marking them as creatures outside the natural order. Their chant "Double, double toil and trouble; / Fire burn and cauldron bubble" has become one of the most recognisable passages in English literature. For a Jacobean audience, the witches would have been genuinely terrifying, reflecting widespread belief in witchcraft and King James I\'s personal obsession with demonology.',
+      body: 'The three witches open the play with "Fair is foul, and foul is fair," establishing the theme of moral inversion that runs throughout the tragedy. They exist in a deliberate moral ambiguity: Shakespeare never clarifies whether they cause Macbeth\'s downfall or merely predict what he would have done anyway. Their prophecies are technically true but deeply misleading, exploiting equivocation to give Macbeth a false sense of invincibility. They speak in trochaic tetrameter, setting them apart from the iambic pentameter of the court and marking them as creatures outside the natural order. Their chant "Double, double, toil and trouble; / Fire, burn; and cauldron, bubble" has become one of the most recognisable passages in English literature. For a Jacobean audience, the witches would have been genuinely terrifying, reflecting widespread belief in witchcraft and King James I\'s personal obsession with demonology.',
     },
     {
       name: 'Malcolm',
       role: "Duncan's eldest son; heir to the Scottish throne",
-      body: 'Malcolm initially appears as a passive figure who flees after his father\'s murder, but he matures into a shrewd and cautious leader. In the extended testing scene with Macduff in England (Act 4, Scene 3), Malcolm pretends to be riddled with vices to test Macduff\'s loyalty, demonstrating the political wisdom his father lacked. He lists the "king-becoming graces" such as "justice, verity, temperance, stableness," presenting himself as Duncan\'s opposite in terms of political awareness while sharing his father\'s virtue. His final speech, in which he rewards his supporters and invites them to see him crowned "at Scone," restores order and legitimate kingship, bringing the play full circle.',
+      body: 'Malcolm initially appears as a passive figure who flees after his father\'s murder, but he matures into a shrewd and cautious leader. In the extended testing scene with Macduff in England (Act 4, Scene 3), Malcolm pretends to be riddled with vices to test Macduff\'s loyalty, demonstrating the political wisdom his father lacked. He lists the "king-becoming graces" such as "justice, verity, temp’rance, stableness," presenting himself as Duncan\'s opposite in terms of political awareness while sharing his father\'s virtue. His final speech, in which he rewards his supporters and invites them to see him crowned "at Scone," restores order and legitimate kingship, bringing the play full circle.',
     },
   ],
 
   themes: [
     {
       title: 'Ambition',
-      body: "Ambition is the engine of the entire tragedy. Macbeth himself identifies it as his only motive for murder: \"I have no spur / To prick the sides of my intent, but only / Vaulting ambition, which o'erleaps itself / And falls on the other.\" Shakespeare does not present ambition as inherently evil; Macbeth's military ambition is praised at the start of the play. It is unchecked, morally unmoored ambition that proves destructive. The witches provide the spark, Lady Macbeth fans the flame, but the ambition itself belongs to Macbeth. Banquo hears the same prophecy but does not act on it, proving that ambition requires a willing agent.\n\nThe play traces a clear arc: ambition leads to action, action to guilt, guilt to paranoia, and paranoia to further violence. Each murder is easier for Macbeth than the last, suggesting that ambition, once it overrides conscience, becomes self-perpetuating. Lady Macbeth's ambition is arguably even more striking because, as a woman in a patriarchal society, the throne is not hers to claim directly. She must channel her ambition through her husband, which makes her manipulation both more calculated and more psychologically costly.\n\nShakespeare's message resonated powerfully in Jacobean England, where ambitious nobles had recently attempted to blow up Parliament in the Gunpowder Plot. The play serves as a cautionary tale: ambition that defies the divinely ordained social order leads not to greatness but to destruction.",
+      body: "Ambition is the engine of the entire tragedy. Macbeth himself identifies it as his only motive for murder: \"I have no spur / To prick the sides of my intent, but only / Vaulting ambition, which o’erleaps itself / And falls on th’ other.\" Shakespeare does not present ambition as inherently evil; Macbeth's military ambition is praised at the start of the play. It is unchecked, morally unmoored ambition that proves destructive. The witches provide the spark, Lady Macbeth fans the flame, but the ambition itself belongs to Macbeth. Banquo hears the same prophecy but does not act on it, proving that ambition requires a willing agent.\n\nThe play traces a clear arc: ambition leads to action, action to guilt, guilt to paranoia, and paranoia to further violence. Each murder is easier for Macbeth than the last, suggesting that ambition, once it overrides conscience, becomes self-perpetuating. Lady Macbeth's ambition is arguably even more striking because, as a woman in a patriarchal society, the throne is not hers to claim directly. She must channel her ambition through her husband, which makes her manipulation both more calculated and more psychologically costly.\n\nShakespeare's message resonated powerfully in Jacobean England, where ambitious nobles had recently attempted to blow up Parliament in the Gunpowder Plot. The play serves as a cautionary tale: ambition that defies the divinely ordained social order leads not to greatness but to destruction.",
     },
     {
       title: 'Guilt and Conscience',
@@ -178,15 +187,15 @@ const data: TextGuideData = {
     },
     {
       title: 'Kingship and Power',
-      body: 'Macbeth explores what makes a good or bad ruler by contrasting Duncan, Macbeth, and Malcolm as three models of kingship. Duncan embodies the medieval ideal of the gracious, divinely appointed monarch. He rewards loyalty, dispenses justice, and is mourned as a saintly king. However, his excessive trust makes him vulnerable, suggesting that goodness alone is not sufficient for effective rule.\n\nMacbeth\'s reign is its inverse: he rules through fear, suspicion, and violence. He has no legitimate claim to the throne, and the natural world itself rebels against his authority. His subjects serve him out of obligation rather than love, and he becomes increasingly isolated, admitting that his life has fallen "into the sere, the yellow leaf" and that he has "honour, love, obedience, troops of friends, / I must not look to have." Shakespeare uses Macbeth\'s tyranny to dramatise the consequences of illegitimate power.\n\nMalcolm represents a synthesis: he has Duncan\'s virtue but adds political shrewdness, testing Macduff\'s loyalty before trusting him. His list of "king-becoming graces" including "justice, verity, temperance" provides a direct checklist against which Macbeth\'s rule fails on every count. The play\'s endorsement of rightful, divinely sanctioned monarchy would have pleased James I, who promoted the doctrine of the Divine Right of Kings and saw himself as Duncan\'s legitimate successor through the line of Banquo.',
+      body: 'Macbeth explores what makes a good or bad ruler by contrasting Duncan, Macbeth, and Malcolm as three models of kingship. Duncan embodies the medieval ideal of the gracious, divinely appointed monarch. He rewards loyalty, dispenses justice, and is mourned as a saintly king. However, his excessive trust makes him vulnerable, suggesting that goodness alone is not sufficient for effective rule.\n\nMacbeth\'s reign is its inverse: he rules through fear, suspicion, and violence. He has no legitimate claim to the throne, and the natural world itself rebels against his authority. His subjects serve him out of obligation rather than love, and he becomes increasingly isolated, admitting that his life has fallen "into the sere, the yellow leaf" and that he has "honour, love, obedience, troops of friends, / I must not look to have." Shakespeare uses Macbeth\'s tyranny to dramatise the consequences of illegitimate power.\n\nMalcolm represents a synthesis: he has Duncan\'s virtue but adds political shrewdness, testing Macduff\'s loyalty before trusting him. His list of "king-becoming graces" including "justice, verity, temp’rance" provides a direct checklist against which Macbeth\'s rule fails on every count. The play\'s endorsement of rightful, divinely sanctioned monarchy would have pleased James I, who promoted the doctrine of the Divine Right of Kings and saw himself as Duncan\'s legitimate successor through the line of Banquo.',
     },
     {
       title: 'Appearance vs Reality',
-      body: 'The gap between appearance and reality is announced in the play\'s first scene: "Fair is foul, and foul is fair." Nothing in Macbeth is what it seems. The witches\' prophecies appear to promise glory but deliver destruction. Macbeth appears to be a loyal subject while plotting regicide. Lady Macbeth instructs her husband to "look like th\' innocent flower, / But be the serpent under\'t," articulating the play\'s central deception. Macbeth\'s castle, which Duncan praises for its pleasant atmosphere, becomes the site of his murder.\n\nShakespeare explores this theme through the motif of equivocation, which had particular resonance for Jacobean audiences. The Gunpowder Plot trials of 1606 had exposed the Jesuit doctrine of equivocation, the idea that one could mislead without technically lying. The witches are the play\'s great equivocators: every prophecy is literally true but deliberately misleading. "None of woman born" excludes caesarean birth; Birnam Wood "moves" through soldiers carrying branches. The Porter\'s comic scene explicitly references equivocation, imagining an equivocator at the gate of hell who "could not equivocate to heaven".\n\nThe theme extends to self-deception. Macbeth convinces himself that each murder will be the last, that security can be achieved through further violence. Lady Macbeth believes she can commit murder and simply wash her hands of it. Both discover that the reality of guilt cannot be concealed by the appearance of composure.',
+      body: 'The gap between appearance and reality is announced in the play\'s first scene: "Fair is foul, and foul is fair." Nothing in Macbeth is what it seems. The witches\' prophecies appear to promise glory but deliver destruction. Macbeth appears to be a loyal subject while plotting regicide. Lady Macbeth instructs her husband to "look like the innocent flower, / But be the serpent under’t," articulating the play\'s central deception. Macbeth\'s castle, which Duncan praises for its pleasant atmosphere, becomes the site of his murder.\n\nShakespeare explores this theme through the motif of equivocation, which had particular resonance for Jacobean audiences. The Gunpowder Plot trials of 1606 had exposed the Jesuit doctrine of equivocation, the idea that one could mislead without technically lying. The witches are the play\'s great equivocators: every prophecy is literally true but deliberately misleading. "None of woman born" excludes caesarean birth; Birnam Wood "moves" through soldiers carrying branches. The Porter\'s comic scene explicitly references equivocation, imagining an equivocator at the gate of hell who "could not equivocate to heaven".\n\nThe theme extends to self-deception. Macbeth convinces himself that each murder will be the last, that security can be achieved through further violence. Lady Macbeth believes she can commit murder and simply wash her hands of it. Both discover that the reality of guilt cannot be concealed by the appearance of composure.',
     },
     {
       title: 'Gender and Masculinity',
-      body: 'Shakespeare interrogates ideas of masculinity throughout the play. Lady Macbeth equates manhood with violence and ambition, taunting Macbeth by questioning his courage: "When you durst do it, then you were a man; / And to be more than what you were, you would / Be so much more the man." She herself asks evil spirits to "unsex me here," suggesting that femininity and ruthlessness are incompatible in her worldview. She weaponises gender expectations to manipulate Macbeth into murder.\n\nHowever, the play ultimately challenges Lady Macbeth\'s reductive definition of manhood. Macduff provides an alternative model when, grieving for his murdered family, he insists, "I shall do so; / But I must also feel it as a man." Here, true masculinity encompasses emotional depth, compassion, and moral feeling rather than suppressing them. Malcolm\'s "king-becoming graces" similarly define male authority through virtue rather than violence.\n\nMacbeth himself is trapped by toxic masculinity. He murders Duncan partly to prove his manhood to his wife, and he sends murderers after Banquo by questioning their masculinity in exactly the way Lady Macbeth questioned his. The cycle of violence is perpetuated through a corrupted ideal of what it means to be a man. Lady Macbeth\'s eventual breakdown suggests that the attempt to reject feminine qualities such as compassion and nurturing comes at a devastating psychological cost.',
+      body: 'Shakespeare interrogates ideas of masculinity throughout the play. Lady Macbeth equates manhood with violence and ambition, taunting Macbeth by questioning his courage: "When you durst do it, then you were a man; / And, to be more than what you were, you would / Be so much more the man." She herself asks evil spirits to "unsex me here," suggesting that femininity and ruthlessness are incompatible in her worldview. She weaponises gender expectations to manipulate Macbeth into murder.\n\nHowever, the play ultimately challenges Lady Macbeth\'s reductive definition of manhood. Macduff provides an alternative model when, grieving for his murdered family, he insists, "I shall do so; / But I must also feel it as a man." Here, true masculinity encompasses emotional depth, compassion, and moral feeling rather than suppressing them. Malcolm\'s "king-becoming graces" similarly define male authority through virtue rather than violence.\n\nMacbeth himself is trapped by toxic masculinity. He murders Duncan partly to prove his manhood to his wife, and he sends murderers after Banquo by questioning their masculinity in exactly the way Lady Macbeth questioned his. The cycle of violence is perpetuated through a corrupted ideal of what it means to be a man. Lady Macbeth\'s eventual breakdown suggests that the attempt to reject feminine qualities such as compassion and nurturing comes at a devastating psychological cost.',
     },
   ],
 
@@ -197,7 +206,7 @@ const data: TextGuideData = {
 
     "James I had a well-documented fascination with witchcraft and demonology. In 1597, he published Daemonologie, a treatise arguing for the reality of witchcraft and advocating harsher persecution of witches. He had personally interrogated accused witches during the North Berwick witch trials in 1590, where suspects confessed to raising storms to sink the ship carrying James and his new bride from Denmark. Shakespeare's portrayal of the witches as genuinely malevolent supernatural beings who manipulate a vulnerable man into damnation reflected and validated the king's beliefs, making the play both topical entertainment and royal flattery.",
 
-    "The doctrine of the Divine Right of Kings is central to the play's moral framework. Jacobean audiences widely believed that monarchs were God's appointed representatives on earth, and that to murder a king was not merely a political crime but a sin against the divine order. This belief explains the cosmic disturbances that follow Duncan's murder: an unnatural darkness covers the land, Duncan's horses eat each other, and an owl kills a falcon. The natural world itself rebels against the violation of God's order. Macbeth's Scotland is a land in which \"sighs and groans and shrieks that rend the air / Are made, not mark'd,\" a nation suffering under a ruler who has no divine mandate. The play's resolution, with Malcolm's restoration, affirms that legitimate succession and divinely sanctioned kingship will always triumph over usurped power.",
+    "The doctrine of the Divine Right of Kings is central to the play's moral framework. Jacobean audiences widely believed that monarchs were God's appointed representatives on earth, and that to murder a king was not merely a political crime but a sin against the divine order. This belief explains the cosmic disturbances that follow Duncan's murder: an unnatural darkness covers the land, Duncan's horses eat each other, and an owl kills a falcon. The natural world itself rebels against the violation of God's order. Macbeth's Scotland is a land in which \"sighs, and groans, and shrieks, that rent the air, / Are made, not mark’d\", a nation suffering under a ruler who has no divine mandate. The play's resolution, with Malcolm's restoration, affirms that legitimate succession and divinely sanctioned kingship will always triumph over usurped power.",
   ],
 
   quotations: [
@@ -214,7 +223,7 @@ const data: TextGuideData = {
         'Lady Macbeth assesses her husband\'s weakness: he has ambition but lacks the ruthlessness to act on it. The metaphor of "milk" associates kindness with femininity and nurturing, qualities she intends to override. Ironically, her complaint that Macbeth is too kind reveals that she understands his fundamental decency, which she must actively corrupt.',
     },
     {
-      quote: '"Look like th\' innocent flower, / But be the serpent under\'t."',
+      quote: '"Look like the innocent flower, / But be the serpent under’t."',
       who: 'Lady Macbeth - Act 1, Scene 5',
       analysis:
         'Lady Macbeth instructs Macbeth to conceal his murderous intentions behind a welcoming exterior. The biblical allusion to the serpent in the Garden of Eden aligns their planned regicide with the original sin, casting Duncan as an innocent Adam and the Macbeths as agents of the devil. This encapsulates the appearance versus reality theme.',
@@ -232,7 +241,7 @@ const data: TextGuideData = {
         'Immediately after killing Duncan, Macbeth recognises the permanence of his guilt. The hyperbole of an entire ocean being insufficient to cleanse his hands conveys the enormity of regicide. This contrasts sharply with Lady Macbeth\'s dismissive response, "A little water clears us of this deed," a confidence that will be devastatingly reversed in her sleepwalking scene.',
     },
     {
-      quote: '"Nought\'s had, all\'s spent, / Where our desire is got without content."',
+      quote: '"Naught’s had, all’s spent, / Where our desire is got without content."',
       who: 'Lady Macbeth - Act 3, Scene 2',
       analysis:
         "This couplet captures the tragic irony of the Macbeths' situation: they have achieved everything they desired yet gained nothing of value. The rhyming couplet (spent/content) gives the observation a proverbial quality, making it sound like a universal truth about the emptiness of ill-gotten gains. It marks the beginning of Lady Macbeth's disillusionment.",
@@ -245,7 +254,7 @@ const data: TextGuideData = {
         'This extended metaphor imagines guilt as a river of blood that Macbeth has waded halfway across. The word "tedious" is chillingly understated: returning to virtue has become merely inconvenient rather than morally desirable. The metaphor suggests that once a certain threshold of evil is crossed, the moral cost of repentance feels equal to the cost of continuing, trapping the sinner in a cycle of violence.',
     },
     {
-      quote: '"Double, double toil and trouble; / Fire burn and cauldron bubble."',
+      quote: '"Double, double, toil and trouble; / Fire, burn; and cauldron, bubble."',
       who: 'The Witches - Act 4, Scene 1',
       analysis:
         "The witches' famous incantation uses trochaic tetrameter (stressed-unstressed rhythm) in contrast to the play's standard iambic pentameter, marking the witches as beings outside the natural order. The chanting, repetitive quality mimics a ritual spell. The word \"double\" reinforces the play's motif of duplicity and equivocation, while the grotesque ingredients of their cauldron symbolise the moral corruption they represent.",
@@ -264,21 +273,21 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"Here\'s the smell of the blood still. All the perfumes of Arabia will not sweeten this little hand."',
+        '"Here’s the smell of the blood still: all the perfumes of Arabia will not sweeten this little hand."',
       who: 'Lady Macbeth - Act 5, Scene 1',
       analysis:
         'This line directly inverts Macbeth\'s earlier "Neptune\'s ocean" image, showing that Lady Macbeth has arrived at the same recognition of ineradicable guilt. The sensory shift from sight to smell suggests the guilt has become even more pervasive and inescapable. The word "little" is poignant: she is suddenly diminished, no longer the towering figure who summoned evil spirits but a small, fragile woman destroyed by remorse.',
     },
     {
       quote:
-        '"Unsex me here, / And fill me from the crown to the toe top-full / Of direst cruelty."',
+        '"Unsex me here, / And fill me, from the crown to the toe, top-full / Of direst cruelty."',
       who: 'Lady Macbeth - Act 1, Scene 5',
       analysis:
         'Lady Macbeth calls on dark spirits to strip away her femininity so she can participate in murder. The verb "unsex" is a violent demand to remove the compassion and nurturing associated with womanhood. The request to be filled "from the crown to the toe" with cruelty suggests she wants evil to saturate her completely. The invocation parallels a demonic possession, aligning her ambition with the supernatural forces that drive the play.',
     },
     {
       quote:
-        '"When you durst do it, then you were a man; / And to be more than what you were, you would / Be so much more the man."',
+        '"When you durst do it, then you were a man; / And, to be more than what you were, you would / Be so much more the man."',
       who: 'Lady Macbeth - Act 1, Scene 7',
       analysis:
         'Lady Macbeth manipulates her husband by equating manhood with the willingness to murder. She redefines masculinity as the capacity for violence, shaming Macbeth into acting against his conscience. This is a key quotation for the theme of gender, as it shows how toxic definitions of masculinity can be weaponised to drive destructive behaviour.',
@@ -302,21 +311,21 @@ const data: TextGuideData = {
         "Duncan reflects on the treachery of the former Thane of Cawdor, observing that one cannot read someone's true thoughts from their appearance. The dramatic irony is devastating: he speaks this line just as he is about to place his trust in the new Thane of Cawdor, Macbeth, who is already contemplating his murder. The quotation encapsulates the appearance versus reality theme.",
     },
     {
-      quote: '"Stars, hide your fires; / Let not light see my black and deep desires."',
+      quote: '"Stars, hide your fires! / Let not light see my black and deep desires."',
       who: 'Macbeth - Act 1, Scene 4',
       analysis:
         "Macbeth's aside reveals his first conscious embrace of dark ambition. The opposition of light and darkness is a central motif: light represents goodness, truth, and divine order, while darkness conceals evil. By asking the stars to hide, Macbeth is symbolically asking heaven to look away while he pursues his murderous intentions, aligning himself with the forces of darkness.",
     },
     {
       quote:
-        '"The instruments of darkness tell us truths, / Win us with honest trifles, to betray\'s / In deepest consequence."',
+        '"The instruments of darkness tell us truths; / Win us with honest trifles, to betray’s / In deepest consequence."',
       who: 'Banquo - Act 1, Scene 3',
       analysis:
         "Banquo recognises the witches' strategy: they offer small, verifiable truths to build trust before delivering the truly destructive prophecy. This line demonstrates Banquo's moral clarity and serves as a warning that Macbeth ignores. It also articulates the play's view of the supernatural as fundamentally deceptive, using truth itself as a weapon.",
     },
     {
       quote:
-        '"Life\'s but a walking shadow, a poor player / That struts and frets his hour upon the stage / And then is heard no more."',
+        '"Life’s but a walking shadow; a poor player, / That struts and frets his hour upon the stage, / And then is heard no more."',
       who: 'Macbeth - Act 5, Scene 5',
       analysis:
         "Macbeth's nihilistic soliloquy, delivered upon hearing of Lady Macbeth's death, reduces all of human existence to a meaningless performance. The theatrical metaphor (a \"poor player\" on a stage) is deeply self-aware, as Macbeth is himself a character on Shakespeare's stage. The passage represents Macbeth's final psychological state: not remorse, but a terrifying emptiness where ambition has burned away all meaning, leaving only despair.",
@@ -329,7 +338,7 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"Tomorrow, and tomorrow, and tomorrow, / Creeps in this petty pace from day to day / To the last syllable of recorded time."',
+        '"Tomorrow, and tomorrow, and tomorrow, / Creeps in this petty pace from day to day, / To the last syllable of recorded time."',
       who: 'Macbeth - Act 5, Scene 5',
       analysis:
         'The opening of Macbeth\'s most famous soliloquy uses repetition and monosyllabic diction to create a sense of unbearable monotony and weariness. The word "creeps" suggests time moving with painful slowness, and "petty pace" diminishes it further. Having murdered his way to the throne, Macbeth finds that the future holds nothing worth living for. The speech is the tragic culmination of his journey from ambitious warrior to hollowed-out nihilist.',
@@ -412,7 +421,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     options: ['Malcolm', 'Macduff', 'Banquo', 'Ross'],
     correctIndex: 2,
     explanation:
-      'Banquo hears the same witches\' prophecy but responds with caution, warning that "the instruments of darkness tell us truths, / Win us with honest trifles, to betray\'s / In deepest consequence." He resists where Macbeth succumbs.',
+      'Banquo hears the same witches\' prophecy but responds with caution, warning that "the instruments of darkness tell us truths; / Win us with honest trifles, to betray’s / In deepest consequence." He resists where Macbeth succumbs.',
     topic: 'Characters',
     difficulty: 'foundation',
   },
@@ -556,7 +565,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   {
     id: 'mac-16',
     question:
-      "What literary term describes Lady Macbeth's instruction to \"look like th' innocent flower, / But be the serpent under't\"?",
+      'What literary term describes Lady Macbeth\'s instruction to "look like the innocent flower, / But be the serpent under’t"?',
     type: 'multiple-choice',
     options: [
       'Pathetic fallacy',
@@ -706,7 +715,7 @@ const REVISION_TOPICS = [
       "Nothing in Macbeth is what it seems, from the witches' equivocations to the characters' deceptions.",
     keyPoints: [
       '"Fair is foul, and foul is fair" establishes moral instability',
-      '"Look like th\' innocent flower, / But be the serpent under\'t"',
+      '"Look like the innocent flower, / But be the serpent under’t"',
       'The Gunpowder Plot trials exposed the Jesuit doctrine of equivocation',
       "The witches' prophecies are literally true but deliberately misleading",
       'Self-deception: both Macbeths believe they can commit murder without lasting consequence',

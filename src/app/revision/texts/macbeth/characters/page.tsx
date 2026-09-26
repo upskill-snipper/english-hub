@@ -30,7 +30,7 @@ const CHARACTERS: CharacterStudy[] = [
     keyQuotes: [
       {
         quote:
-          "I have no spur / To prick the sides of my intent, but only / Vaulting ambition, which o'erleaps itself / And falls on the other.",
+          'I have no spur / To prick the sides of my intent, but only / Vaulting ambition, which o’erleaps itself / And falls on th’ other.',
         context: "Act 1, Scene 7 -- soliloquy before Duncan's murder",
         analysis:
           'The horse-riding metaphor imagines ambition as a rider who leaps too far and falls. Macbeth diagnoses his own destruction but proceeds anyway, revealing the self-aware nature of his tragedy.',
@@ -50,13 +50,13 @@ const CHARACTERS: CharacterStudy[] = [
       },
       {
         quote:
-          'Tomorrow, and tomorrow, and tomorrow, / Creeps in this petty pace from day to day / To the last syllable of recorded time.',
+          'Tomorrow, and tomorrow, and tomorrow, / Creeps in this petty pace from day to day, / To the last syllable of recorded time.',
         context: "Act 5, Scene 5 -- on hearing of Lady Macbeth's death",
         analysis:
           'Repetition and monosyllabic diction create unbearable monotony. The nihilistic soliloquy reveals a man stripped of all meaning, the tragic culmination of his journey from ambitious warrior to hollowed-out tyrant.',
       },
       {
-        quote: 'Stars, hide your fires; / Let not light see my black and deep desires.',
+        quote: 'Stars, hide your fires! / Let not light see my black and deep desires.',
         context: 'Act 1, Scene 4 -- aside after Malcolm is named heir',
         analysis:
           'Light represents divine goodness; darkness conceals evil. Macbeth symbolically asks heaven to look away, aligning himself with the forces of darkness. The rhyming couplet gives the aside a spell-like decisiveness.',
@@ -75,13 +75,13 @@ const CHARACTERS: CharacterStudy[] = [
     keyQuotes: [
       {
         quote:
-          'Unsex me here, / And fill me from the crown to the toe top-full / Of direst cruelty.',
+          'Unsex me here, / And fill me, from the crown to the toe, top-full / Of direst cruelty.',
         context: 'Act 1, Scene 5 -- invocation to dark spirits',
         analysis:
           'Lady Macbeth demands the removal of femininity so she can participate in murder. The request to be filled "from the crown to the toe" with cruelty parallels demonic possession. Crucially, her need to invoke spirits reveals that cruelty does not come naturally to her.',
       },
       {
-        quote: "Look like th' innocent flower, / But be the serpent under't.",
+        quote: 'Look like the innocent flower, / But be the serpent under’t.',
         context: 'Act 1, Scene 5 -- instructing Macbeth',
         analysis:
           'The biblical allusion to the serpent in Eden aligns their plot with original sin. Lady Macbeth masters the gap between appearance and reality that will ultimately destroy them both.',
@@ -100,13 +100,13 @@ const CHARACTERS: CharacterStudy[] = [
       },
       {
         quote:
-          "Here's the smell of the blood still. All the perfumes of Arabia will not sweeten this little hand.",
+          'Here’s the smell of the blood still: all the perfumes of Arabia will not sweeten this little hand.',
         context: 'Act 5, Scene 1 -- sleepwalking scene',
         analysis:
           'This directly inverts Macbeth\'s "Neptune\'s ocean" image. The word "little" is poignant: she is no longer the towering figure who summoned evil spirits but a diminished woman destroyed by remorse.',
       },
     ],
-    arc: "Lady Macbeth's arc is an inversion of her husband's. She begins as the stronger, more decisive partner and ends as the weaker, more tormented one. In Act 1 she commands; in Act 3 she pleads (\"Nought's had, all's spent\"); in Act 5 she is powerless against her own guilt. Shakespeare demonstrates that suppressing conscience does not eliminate it -- guilt erupts unconsciously through sleepwalking, hallucination, and madness.",
+    arc: 'Lady Macbeth\'s arc is an inversion of her husband\'s. She begins as the stronger, more decisive partner and ends as the weaker, more tormented one. In Act 1 she commands; in Act 3 she pleads ("Naught’s had, all’s spent"); in Act 5 she is powerless against her own guilt. Shakespeare demonstrates that suppressing conscience does not eliminate it -- guilt erupts unconsciously through sleepwalking, hallucination, and madness.',
     themeLinks: ['Masculinity & Power', 'Guilt & Conscience', 'Ambition', 'Supernatural & Fate'],
     examTip:
       'Avoid the simplistic reading of Lady Macbeth as "evil." Her need to call on spirits to remove her femininity proves she recognises the unnaturalness of what she is doing. Her breakdown in Act 5 proves that guilt cannot be permanently suppressed. She is not a monster but a person who tried to become one and was destroyed by the attempt.',
@@ -115,18 +115,18 @@ const CHARACTERS: CharacterStudy[] = [
     name: 'Banquo',
     role: "Macbeth's fellow general and friend; father of Fleance",
     analysis:
-      "Banquo serves as a moral foil to Macbeth. He hears the same prophecy but responds with caution rather than ambition, warning that \"the instruments of darkness tell us truths, / Win us with honest trifles, to betray's / In deepest consequence.\" Where Macbeth acts on the witches' words, Banquo resists temptation. His murder shows how far Macbeth has fallen, and his ghost's appearance at the banquet serves as a physical manifestation of Macbeth's guilt.",
+      "Banquo serves as a moral foil to Macbeth. He hears the same prophecy but responds with caution rather than ambition, warning that \"the instruments of darkness tell us truths; / Win us with honest trifles, to betray’s / In deepest consequence.\" Where Macbeth acts on the witches' words, Banquo resists temptation. His murder shows how far Macbeth has fallen, and his ghost's appearance at the banquet serves as a physical manifestation of Macbeth's guilt.",
     keyQuotes: [
       {
         quote:
-          "The instruments of darkness tell us truths, / Win us with honest trifles, to betray's / In deepest consequence.",
+          'The instruments of darkness tell us truths; / Win us with honest trifles, to betray’s / In deepest consequence.',
         context: "Act 1, Scene 3 -- after the witches' prophecy",
         analysis:
           "Banquo recognises the witches' strategy of using small truths as bait for greater deceptions. His moral clarity and Macbeth's failure to heed this warning establish Banquo as the voice of reason.",
       },
       {
         quote:
-          "Thou hast it now: King, Cawdor, Glamis, all, / As the weird women promised, and I fear / Thou play'dst most foully for't.",
+          'Thou hast it now, King, Cawdor, Glamis, all, / As the Weird Women promis’d; and, I fear, / Thou play’dst most foully for’t.',
         context: "Act 3, Scene 1 -- Banquo's suspicions",
         analysis:
           'Banquo suspects Macbeth but does not act on his suspicion. The word "foully" echoes the witches\' "fair is foul," connecting Macbeth\'s crime to the moral disorder established in the opening scene.',
@@ -138,7 +138,7 @@ const CHARACTERS: CharacterStudy[] = [
           "Banquo's final words prioritise his son's survival over his own life. The desperate repetition of \"fly\" reveals parental love and self-sacrifice, contrasting with Macbeth's increasingly selfish violence.",
       },
       {
-        quote: 'Thou canst not say I did it; never shake / Thy gory locks at me.',
+        quote: 'Thou canst not say I did it. Never shake / Thy gory locks at me.',
         context: "Act 3, Scene 4 -- Macbeth to Banquo's ghost",
         analysis:
           "Though spoken by Macbeth, this reveals Banquo's continued power. The ghost's silent accusation is more devastating than any words, and Macbeth's denial (\"I did it\") is a confession disguised as a protest.",
@@ -156,7 +156,7 @@ const CHARACTERS: CharacterStudy[] = [
       "Macduff represents justice, honour, and righteous vengeance. He is the first to discover Duncan's body and is notably absent from Macbeth's coronation, signalling early suspicion. His decision to flee to England, leaving his family unprotected, leads to their slaughter. His grief at hearing of their deaths provides the play's most emotionally devastating moment and its most positive definition of masculinity.",
     keyQuotes: [
       {
-        quote: 'O horror, horror, horror! Tongue nor heart / Cannot conceive nor name thee!',
+        quote: 'O horror, horror, horror! / Tongue nor heart cannot conceive nor name thee!',
         context: "Act 2, Scene 3 -- discovering Duncan's body",
         analysis:
           'The triple repetition of "horror" and the claim that language itself fails conveys the enormity of regicide. Macduff\'s genuine shock contrasts with Macbeth\'s performed outrage.',
@@ -174,7 +174,7 @@ const CHARACTERS: CharacterStudy[] = [
           "The caesarean birth fulfils the witches' equivocating prophecy. Macduff is technically not \"born\" of woman, exposing the witches' deceptive literalism and ending Macbeth's false sense of invincibility.",
       },
       {
-        quote: 'All my pretty ones? / Did you say all? O hell-kite! All?',
+        quote: 'All my pretty ones? / Did you say all?—O hell-kite!—All?',
         context: "Act 4, Scene 3 -- learning of his family's murder",
         analysis:
           'The repetition of "all" and the animal imagery ("hell-kite") reveal raw, uncontrolled grief. The tenderness of "pretty ones" humanises Macduff and makes Macbeth\'s crime all the more monstrous.',
@@ -203,7 +203,7 @@ const CHARACTERS: CharacterStudy[] = [
           "The dramatic irony is devastating: Duncan observes that appearances are deceptive at the exact moment he places his trust in the man who will murder him. He has learned nothing from the previous Cawdor's betrayal.",
       },
       {
-        quote: 'This castle hath a pleasant seat; the air / Nimbly and sweetly recommends itself.',
+        quote: 'This castle hath a pleasant seat. The air / Nimbly and sweetly recommends itself.',
         context: 'Act 1, Scene 6 -- arriving at Inverness',
         analysis:
           'Duncan finds the air "sweet" at the place where he will be murdered. The tranquil sensory language creates a false sense of safety that heightens the horror of what follows.',
@@ -244,7 +244,7 @@ const CHARACTERS: CharacterStudy[] = [
           "Malcolm acknowledges the gap between appearance and reality that enabled Macbeth's rise. The visceral image of blistered tongues makes Macbeth's name itself toxic.",
       },
       {
-        quote: 'The king-becoming graces: / As justice, verity, temperance, stableness.',
+        quote: 'The king-becoming graces, / As justice, verity, temp’rance, stableness.',
         context: "Act 4, Scene 3 -- Malcolm's test of Macduff",
         analysis:
           "Malcolm lists the virtues a true king should possess, providing a direct checklist against which Macbeth's rule fails on every count. This passage defines Shakespeare's ideal of legitimate monarchy.",
@@ -275,13 +275,13 @@ const CHARACTERS: CharacterStudy[] = [
       'The three witches open the play with "Fair is foul, and foul is fair," establishing the theme of moral inversion. Shakespeare never clarifies whether they cause Macbeth\'s downfall or merely predict it, creating deliberate ambiguity about fate and free will. Their prophecies are technically true but deeply misleading, exploiting equivocation to give Macbeth a false sense of invincibility. They speak in trochaic tetrameter, setting them apart from the iambic pentameter of the court.',
     keyQuotes: [
       {
-        quote: 'Fair is foul, and foul is fair, / Hover through the fog and filthy air.',
+        quote: 'Fair is foul, and foul is fair: / Hover through the fog and filthy air.',
         context: 'Act 1, Scene 1 -- the opening chant',
         analysis:
           'The chiasmus mirrors moral inversion. The alliterative "f" sounds create a hissing, sinister tone. This single couplet establishes the play\'s central thematic tension: nothing is what it seems.',
       },
       {
-        quote: 'Double, double toil and trouble; / Fire burn and cauldron bubble.',
+        quote: 'Double, double, toil and trouble; / Fire, burn; and cauldron, bubble.',
         context: 'Act 4, Scene 1 -- the cauldron scene',
         analysis:
           'Trochaic tetrameter sets the witches apart from normal speech rhythms. "Double" reinforces the motif of duplicity and equivocation. The incantation has become one of the most recognisable passages in English literature.',
@@ -293,7 +293,7 @@ const CHARACTERS: CharacterStudy[] = [
           'The witch calls Macbeth "something wicked" rather than "someone," stripping him of humanity. Even agents of evil now recognise Macbeth as corrupt, marking his total moral degradation.',
       },
       {
-        quote: 'All hail, Macbeth, that shalt be king hereafter!',
+        quote: 'All hail, Macbeth! that shalt be king hereafter!',
         context: 'Act 1, Scene 3 -- the prophecy',
         analysis:
           'The prophecy is the inciting incident of the entire plot. "Shalt be" implies inevitability but leaves open whether Macbeth must act to make it happen. This ambiguity is the source of the play\'s central tension.',
@@ -311,7 +311,7 @@ const CHARACTERS: CharacterStudy[] = [
       "Lady Macduff appears in only one scene (Act 4, Scene 2) but serves several important functions. Her domesticity and maternal love contrast sharply with Lady Macbeth's rejection of femininity. Her murder demonstrates Macbeth's descent into indiscriminate violence -- she and her children pose no political threat whatsoever. Her accusation that her husband has abandoned them raises uncomfortable questions about Macduff's decision to leave his family unprotected.",
     keyQuotes: [
       {
-        quote: 'He loves us not; / He wants the natural touch.',
+        quote: 'He loves us not: / He wants the natural touch.',
         context: "Act 4, Scene 2 -- criticising Macduff's absence",
         analysis:
           'Lady Macduff accuses her husband of lacking natural paternal instinct. "Natural touch" connects to the play\'s wider theme of nature disrupted by unnatural acts.',
@@ -335,7 +335,7 @@ const CHARACTERS: CharacterStudy[] = [
       'The Porter appears in only one scene (Act 2, Scene 3) but provides crucial comic relief and thematic commentary. His drunken monologue imagines himself as the gatekeeper of hell, unknowingly describing Macbeth\'s castle accurately. His references to an "equivocator" allude directly to the Gunpowder Plot trials, anchoring the play in Jacobean political anxiety.',
     keyQuotes: [
       {
-        quote: "Here's a farmer that hanged himself on th' expectation of plenty.",
+        quote: 'Here’s a farmer that hanged himself on the expectation of plenty.',
         context: "Act 2, Scene 3 -- the Porter's monologue",
         analysis:
           "The farmer who kills himself expecting abundance mirrors Macbeth, who gains the crown but finds it empty. The Porter's comedy contains serious thematic parallels.",
@@ -360,7 +360,7 @@ const CHARACTERS: CharacterStudy[] = [
       "Ross appears throughout the play as a bearer of news, both good and bad. He announces Macbeth's new Cawdor title, reports the murder of Lady Macduff and her children, and supports Malcolm's restoration. His political adaptability -- he serves Duncan, then Macbeth, then Malcolm -- reflects the survival instinct of the Scottish nobility under tyranny.",
     keyQuotes: [
       {
-        quote: "Your castle is surprised; your wife and babes / Savagely slaughter'd.",
+        quote: 'Your castle is surpris’d; your wife and babes / Savagely slaughter’d.',
         context: "Act 4, Scene 3 -- telling Macduff of his family's murder",
         analysis:
           'Ross delivers the play\'s most devastating news with blunt directness. "Savagely" emphasises the barbarity of Macbeth\'s orders and the complete absence of political necessity behind the act.',
@@ -391,7 +391,7 @@ const CHARACTERS: CharacterStudy[] = [
           'Lennox\'s mock acceptance of Macbeth\'s version of events is dripping with sarcasm. The suggestion that Fleance killed Banquo because he "fled" exposes the absurdity of the official narrative, showing how tyranny requires subjects to pretend to believe obvious lies.',
       },
       {
-        quote: 'May soon return to this our suffering country / Under a hand accursed!',
+        quote: 'May soon return to this our suffering country / Under a hand accurs’d!',
         context: 'Act 3, Scene 6 -- hoping for liberation',
         analysis:
           'Lennox openly calls Macbeth\'s rule "accursed," signalling the shift from private discontent to active opposition. "Suffering country" personifies Scotland as a victim of Macbeth\'s tyranny.',

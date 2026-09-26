@@ -7,8 +7,8 @@ import { deg, gouge, n, ribbon, type Pt } from '@/components/comics/linocut/carv
  *
  * The play describes them only through Banquo, in Act 1, Scene 3:
  *
- *   "What are these / So withered and so wild in their attire, / That look
- *   not like th' inhabitants o' th' earth, / And yet are on 't?" ... "each at
+ *   "What are these, / So wither’d, and so wild in their attire, / That look
+ *   not like the inhabitants o’ th’ earth, / And yet are on’t?" ... "each at
  *   once her choppy finger laying / Upon her skinny lips. You should be women,
  *   / And yet your beards forbid me to interpret / That you are so."
  *

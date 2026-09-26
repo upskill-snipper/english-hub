@@ -2,10 +2,22 @@
  * Macbeth in linocut: the panels for its key moments and the portraits of its
  * people as the play describes them.
  *
- * No edition of Macbeth is held in src/data/full-texts, so every quotation on
- * the art is copied from the guide's own verified quotations in
- * src/data/study-guides/macbeth.ts (its timeline, extracts and annotations,
- * checked against the Folger text), and the comics test checks it there.
+ * Every quotation on the art is verbatim from the held edition,
+ * src/data/full-texts/macbeth.ts (Project Gutenberg #1533), and the comics
+ * test checks it there, mark for mark, within one speech.
+ *
+ * THE QUOTATIONS MOVED EDITION ON 26 SEPTEMBER 2026. They were first copied
+ * from the guide, whose wording was the Folger Shakespeare Library's, and
+ * Folger licenses its texts for non-commercial use only. With Gutenberg's text
+ * held, eight panel quotations and two portrait markers took its wording: "All
+ * hail, Macbeth! that shalt be king hereafter!", "a soldier, and afeard". A
+ * quotation that runs over a verse line is printed with the break as a space
+ * ("By the pricking of my thumbs, Something wicked this way comes"), because
+ * the test reads a speech as one paragraph and has no " / ". The artists'
+ * notes in the panel and portrait files were moved to the held wording too,
+ * stage directions included, and say where they first came from; where the two
+ * editions differ on a detail the art draws, the note says so (see the torches
+ * in ./panels/duncan-arrives.tsx).
  *
  * How to add a piece, and how to preview one, are set out at the top of
  * src/data/comics/a-christmas-carol/index.ts and in the style guide,
@@ -58,21 +70,21 @@ export const comics: ComicSet = {
       moment: 'Brave Macbeth',
       art: braveMacbeth,
       alt: "A linocut print of King Duncan's camp beside a battle. On the left, on a ridge, the armies' spears and banners stand black against the pale haze of the fight, with dark smoke rising behind them. In the middle, a captain who has come from the fight is down on one knee, holding himself up on his spear and flinging his other arm back towards the ridge as he tells the story. On the right, in front of a large pale tent with a pennant, old King Duncan, with a white beard and a red crown, lifts a hand in praise, and his young son Malcolm, beardless, holds out a hand to the captain. Macbeth himself is not in the picture.",
-      quote: 'O valiant cousin, worthy gentleman',
+      quote: 'O valiant cousin! worthy gentleman!',
       quoteAt: 'bottom-left',
     },
     {
       moment: 'The prophecies',
       art: theProphecies,
       alt: "A linocut print of a heath by day under a split sky: a dark storm with rain and a far fork of lightning over the left, the sun breaking through on the right. On the left the three witches stand in a row in a low mist, bent and bearded, in ragged shawls: the nearest points a long bony finger at Macbeth, the next lays a finger on her lips, and the one at the back lifts both arms. On the right Macbeth, a soldier in a mail shirt and cloak, starts back from them with one hand thrown up and the other on his sword. Behind him Banquo stands his ground, a spear upright in one hand, the other held out towards the witches. In the air above Macbeth's head, not on it, a crown printed in red hangs inside a dark disc shot through with rays of light.",
-      quote: 'All hail, Macbeth, that shalt be king hereafter',
+      quote: 'All hail, Macbeth! that shalt be king hereafter!',
       quoteAt: 'top-left',
     },
     {
       moment: 'The Prince of Cumberland',
       art: thePrinceOfCumberland,
       alt: "A linocut print of King Duncan's hall at Forres. On the left, old King Duncan, white-bearded and wearing a red crown, sits on a high-backed throne on a stepped dais, under a dark cloth of state cut with white stars, and holds out his hand over his son Malcolm, who kneels on the step below him with his head bowed. Two thanes stand beyond them, watching. In the foreground on the right, large and close, Macbeth has turned his back on the throne: his face, in profile, is black against the bright window behind him, and one fist is clenched at his chest over his mail shirt.",
-      quote: 'Stars, hide your fires; / Let not light see my black and deep desires',
+      quote: 'Stars, hide your fires! Let not light see my black and deep desires',
       quoteAt: 'bottom-left',
     },
     {
@@ -121,14 +133,14 @@ export const comics: ComicSet = {
       moment: 'Nature in disorder',
       art: natureInDisorder,
       alt: "A linocut print of the road outside Macbeth's castle, by day, under a black sky. In the middle of the sky the sun is a red disc with bands of black night drawn tight across it, and only a thin strip of daylight lies along the horizon. High to the right an owl, wings raised and talons out, stoops on a falcon, and a few feathers fall. Below, two of Duncan's horses rear at each other. On the right stands the dark castle, and a small cloaked figure, Macduff, walks away from its gate. On the left, in the foreground, an old man with a white beard, bent over his staff, and Ross, a nobleman in a cloak, look up at the sky, and Ross points at the darkened sun.",
-      quote: "'Tis unnatural, / Even like the deed that's done",
+      quote: '’Tis unnatural, Even like the deed that’s done',
       quoteAt: 'bottom-right',
     },
     {
       moment: 'Banquo suspects',
       art: banquoSuspects,
       alt: 'A linocut print of a stone hall in the royal palace. On the left Banquo, a bearded man in a riding cloak, with a sword at his side, stands black against a tall bright window, one hand raised to his beard, looking across the hall past a stone pillar. On the right, up three steps on a dais, Macbeth sits on a high-backed throne, facing him and leaning forward, gripping an upright sceptre, with a red crown on his head. Behind the throne, in the bright arch of an open door, two plain, bare-headed men stand waiting in shadow: the murderers.',
-      quote: 'To be thus is nothing, / But to be safely thus',
+      quote: 'To be thus is nothing, But to be safely thus',
       quoteAt: 'bottom-right',
     },
     {
@@ -156,7 +168,7 @@ export const comics: ComicSet = {
       moment: 'The apparitions',
       art: theApparitions,
       alt: 'A linocut print of a dark cave. In the middle a great black cauldron stands on three legs over a red fire, and a column of pale steam rises from it to the top of the picture. In the steam three apparitions rise one after another: high on the left, a head in a pointed helmet and a mail hood, its lit face staring; to the right, a small black figure of a child ringed in red; lower down, a child wearing a crown and holding a young tree upright. Two witches in ragged shawls lean over the cauldron with their bony hands raised, and the third, further right, lays a finger on her lips. On the left Macbeth, bearded, in a mail shirt and cloak, with a red crown on his head, flings out an arm at them, his other hand on his sword. On the right eight crowned kings, cut in white like ghosts, stand in a line that shrinks away into the dark; the nearest holds up a round mirror in which more crowns appear.',
-      quote: 'By the pricking of my thumbs, / Something wicked this way comes',
+      quote: 'By the pricking of my thumbs, Something wicked this way comes',
       quoteAt: 'top-right',
     },
     {
@@ -198,14 +210,14 @@ export const comics: ComicSet = {
       moment: 'Tomorrow',
       art: tomorrow,
       alt: 'A linocut print of a stone room in the castle at Dunsinane, lit by a single candle. In the middle a short stub of candle burns with a red flame on a tall iron stand. To its right Macbeth stands in his mail shirt, cloak and red crown, his head bowed, holding one open hand out towards the flame. Behind him the candle throws his shadow high up the wall, larger than he is, crown and all. On the left, in the pale arch of a door to the inner rooms, stands Seyton, a smaller dark figure with his head bowed and his hands clasped, who has just brought the news that the Queen is dead.',
-      quote: "Life's but a walking shadow, a poor player",
+      quote: 'Life’s but a walking shadow; a poor player',
       quoteAt: 'bottom-right',
     },
     {
       moment: 'Macduff and Macbeth',
       art: macduffAndMacbeth,
       alt: 'A linocut print of the field below the castle of Dunsinane after the battle, with the taken castle dark on its hill behind on the left. In the foreground on the left lie the things Macbeth has left behind: his round shield, thrown down on the grass, his sword beside it, and his crown, printed in red, fallen on its side. In the middle Macduff, bearded and helmeted, in mail, raises his sword high towards Malcolm, who stands on the right, young and bareheaded, and lifts an open hand to receive the greeting. Behind Malcolm old Siward and another thane raise their swords too, and a third holds up a staff with a red banner.',
-      quote: 'this dead butcher and his fiend-like queen',
+      quote: 'this dead butcher, and his fiend-like queen',
       quoteAt: 'bottom-right',
     },
   ],

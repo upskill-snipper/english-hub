@@ -19,14 +19,14 @@ import { Brooch, lerp2, mailRings, PH, portraitGround, PortraitRule, PW, strands
  * the mail shirt and pinned cloak of an eleventh-century Scottish thane. What
  * the markers point to is what the play says:
  *
- * - "O valiant cousin, worthy gentleman" (Duncan, 1.2): the soldier, so the
+ * - "O valiant cousin! worthy gentleman" (Duncan, 1.2): the soldier, so the
  *   mail shirt.
  * - "Is this a dagger which I see before me, / The handle toward my hand?"
  *   (2.1): the dagger hangs in the air before his face, handle towards him.
- * - "And, on thy blade and dudgeon, gouts of blood" (2.1): three drops in the
+ * - "And on thy blade and dudgeon, gouts of blood" (2.1): three drops in the
  *   spot colour on the blade, and nothing more. The dagger is a vision; there
  *   is no wound anywhere in the picture.
- * - "Fie, my lord, fie, a soldier and afeard?" (Lady Macbeth, 5.1, reliving
+ * - "Fie, my lord, fie! a soldier, and afeard?" (Lady Macbeth, 5.1, reliving
  *   that night): the eye wide and the brow lifted.
  *
  * The dagger is the only light in the plate: the ground is cut brightest round
@@ -347,8 +347,8 @@ export const macbeth: Portrait = {
   art: macbethPortrait,
   alt: 'A linocut portrait of Macbeth in profile, facing right: a man in his prime with dark swept-back hair and a full dark beard, in a mail shirt with a cloak pinned by a ring brooch. His eye is wide and his brow lifted. In the air before his face hangs a pale dagger, its handle towards him and its point away, lighting the dark around it, with three small red drops on the blade. Four numbered red markers point to his mail shirt, his staring eye, the dagger and the drops on its blade.',
   describedBy: [
-    { phrase: 'O valiant cousin, worthy gentleman', at: [196, 298] },
-    { phrase: 'a soldier and afeard', at: [196, 52], to: [180, 102] },
+    { phrase: 'O valiant cousin! worthy gentleman!', at: [196, 298] },
+    { phrase: 'a soldier, and afeard', at: [196, 52], to: [180, 102] },
     { phrase: 'Is this a dagger which I see before me', at: [300, 90], to: [268, 128] },
     { phrase: 'gouts of blood', at: [306, 138], to: [285, 158] },
   ],

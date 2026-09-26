@@ -17,7 +17,7 @@ import {
  * Act 5, Scene 8: "Macduff and Macbeth", the twenty-third and last moment in
  * the guide's timeline.
  *
- * SAFEGUARDING. The scene ends with "Enter Macduff, with Macbeth's head." The
+ * SAFEGUARDING. The scene ends with "Enter Macduff with Macbeth’s head." The
  * style guide rules that Macbeth's severed head is never drawn, and neither is
  * the fight's end or his body. So the panel shows what comes after: the
  * victors, and the things Macbeth leaves on the field. Nothing in it is a
@@ -25,23 +25,23 @@ import {
  *
  * Every detail is from the scene:
  *
- * - "Before my body / I throw my warlike shield. Lay on, Macduff." So
+ * - "Before my body / I throw my warlike shield: lay on, Macduff." So
  *   Macbeth's round shield lies thrown down on the field in the foreground,
  *   with his sword beside it. His crown lies there too, in the spot colour.
  *   The text does not say where his crown ends up; it stands here for the
  *   king he no longer is, and for what Macduff carries in, which is never
  *   drawn. (The guide is careful that Malcolm is hailed, not crowned: he will
- *   be "crowned at Scone". So no one wears the crown in this panel.)
- * - "Retreat. Flourish. Enter, with drum and colours, Malcolm, Old Siward,
- *   Ross, the other Thanes, and Soldiers." The colours are the red banner the
+ *   be "crown’d at Scone". So no one wears the crown in this panel.)
+ * - "Retreat. Flourish. Enter, with drum and colours, Malcolm, old Siward,
+ *   Ross, Thanes and Soldiers." The colours are the red banner the
  *   army marched under from Birnam (see ./birnam-wood.tsx).
- * - "Hail, King! For so thou art. [...] The time is free." "Hail, King of
+ * - "Hail, King, for so thou art. [...] The time is free." "Hail, King of
  *   Scotland!" So Macduff, bearded and helmeted, raises his sword to Malcolm,
  *   and Siward, Ross and the thanes behind Malcolm raise theirs; Malcolm,
  *   young and bareheaded, lifts an open hand to receive it.
  * - The castle of Dunsinane stands on its hill behind, taken.
  *
- * The panel's quotation, "this dead butcher and his fiend-like queen", is
+ * The panel's quotation, "this dead butcher, and his fiend-like queen", is
  * Malcolm's verdict in this same speech. Nothing is taken from a film or stage
  * production. Seeds: 2301 (sky), 2302 (field).
  */
@@ -185,7 +185,7 @@ function MacduffAndMacbeth({ uid }: ArtProps) {
           arms={ARMS.greet}
         />
 
-        {/* Macduff: "Hail, King! For so thou art." */}
+        {/* Macduff: "Hail, King, for so thou art." */}
         <Warrior
           uid={uid}
           at={[MACDUFF[0], MACDUFF[1]]}

@@ -23,13 +23,13 @@ import { Witch } from './witch'
  * - "Thunder and lightning. Enter three Witches." "When shall we three meet
  *   again? / In thunder, lightning, or in rain?" So a storm: a bolt of
  *   lightning splitting the sky between them, rain driving across the right.
- * - "When the hurly-burly's done, / When the battle's lost and won." The battle
+ * - "When the hurlyburly’s done, / When the battle’s lost and won." The battle
  *   is still being fought, so it burns on the far horizon: the spot colour
  *   marks its fires, and nothing else in the panel.
  * - "Upon the heath." A bare, open heath and one dead thorn, no house or road.
  * - "I come, Graymalkin!" "Paddock calls." Their familiars, a cat and a toad,
  *   wait on the ground.
- * - "Fair is foul, and foul is fair, / Hover through the fog and filthy air."
+ * - "Fair is foul, and foul is fair: / Hover through the fog and filthy air."
  *   So they stand in a bank of fog that hides their feet.
  * - The scene does not describe them. Banquo does, in Act 1, Scene 3, and the
  *   figures are drawn from his words in ./witch.tsx, where the reasons are.

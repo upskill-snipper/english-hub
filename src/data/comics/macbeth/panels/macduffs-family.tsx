@@ -9,12 +9,12 @@ import { HEAD_WOMAN, VEIL } from './inverness-people'
 
 /**
  * Act 4, Scene 2: "Macduff's family", the seventeenth moment in the guide's
- * timeline. The site's reader does not print this scene, so the details are
- * from the Folger text the guide was checked against, and from the guide's
- * own summary:
+ * timeline. The details were drawn from the Folger text the guide was first
+ * checked against, and from the guide's own summary; the quotations below
+ * follow the held edition (src/data/full-texts/macbeth.ts):
  *
- * - "Enter Macduff's Wife, her Son, and Ross." The scene is her home, the
- *   castle in Fife (Ross in 4.3: "Your castle is surprised"), so a stone room
+ * - "Enter Lady Macduff her Son and Ross." The scene is her home, the
+ *   castle in Fife (Ross in 4.3: "Your castle is surpris’d"), so a stone room
  *   with its hearth.
  * - A messenger warns her to take her "little ones" and go ("Be not found
  *   here"), and leaves. She answers "Whither should I fly? / I have done no

@@ -9,18 +9,18 @@ import { flagFloor, footShadow, Macbeth, MailPattern, stoneWall } from './dunsin
  * Act 5, Scene 3: "Macbeth at bay", the twentieth moment in the guide's
  * timeline. Every detail is from the scene:
  *
- * - "Bring me no more reports. Let them fly all. / Till Birnam Wood remove to
+ * - "Bring me no more reports; let them fly all: / Till Birnam wood remove to
  *   Dunsinane / I cannot taint with fear." Macbeth stands in the window of his
  *   castle, and Birnam Wood lies far off on the hills behind him: the wood he
  *   trusts cannot move.
- * - "Give me my armour", "Come, put mine armour on. Give me my staff", "Pull 't
+ * - "Give me my armour", "Come, put mine armour on; give me my staff", "Pull’t
  *   off, I say", "Bring it after me." He is half-armed, in mail and a
  *   breastplate, his sword at his hip, and his helmet and shield wait on a
  *   chest by the wall.
  * - The Doctor reports that Lady Macbeth is "Not so sick, my lord, / As she is
  *   troubled with thick-coming fancies"; asked to cure her, he answers
- *   "Therein the patient / Must minister to himself." Macbeth: "Throw physic
- *   to the dogs. I'll none of it." So the Doctor holds out a phial, and
+ *   "Therein the patient / Must minister to himself." Macbeth: "Throw physic to
+ *   the dogs, I’ll none of it." So the Doctor holds out a phial, and
  *   Macbeth flings out his hand against it.
  * - Neither man is described. The Doctor is an older man, bareheaded, in a
  *   plain long girdled gown; Macbeth is drawn as in the other Act 5 panels

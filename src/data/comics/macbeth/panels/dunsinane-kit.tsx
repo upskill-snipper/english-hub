@@ -24,7 +24,7 @@ import {
  * - Macbeth is not described in the play beyond his arms and his hair ("my
  *   fell of hair / Would at a dismal treatise rouse and stir", 5.5). In Act 5
  *   he calls for his armour again and again ("Give me my armour", "Come, put
- *   mine armour on", "Pull 't off, I say", 5.3; "At least we'll die with
+ *   mine armour on", "Pull’t off, I say", 5.3; "At least we'll die with
  *   harness on our back", 5.5; "Before my body / I throw my warlike shield",
  *   5.8). So he is drawn plainly, in a knee-length mail shirt, a cloak and a
  *   sword, with a short beard and thick hair: the dress of an
@@ -674,7 +674,7 @@ export function fieldMarks(r: Rng, box: Box, count: number) {
 }
 
 /**
- * A soldier walking behind the bough he carries, "bear 't before him": only
+ * A soldier walking behind the bough he carries, "bear’t before him": only
  * his legs in mid-stride and the skirt of his mail show below it. Same frame
  * as `Warrior`, facing left; flip him to walk right. The bough is a small
  * crown of leaves on a stem, cut like the trees of the wood it came from.

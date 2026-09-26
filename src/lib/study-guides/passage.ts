@@ -41,6 +41,63 @@ export function passage(text: TextData, sectionId: string, from: string, to: str
   return blocks.slice(start, start + endOffset + 1).join('\n\n')
 }
 
+/** A speaker's name as the play editions print it above a speech: "LADY MACBETH". */
+const SPEAKER = /^[A-Z][A-Z’' .-]+$/
+
+/**
+ * A passage of a held PLAY, cut by passage() and set out as a guide prints
+ * one: each speech as "SPEAKER: line / line", and speeches and stage
+ * directions joined by " / ", the line mark types.ts asks for. A block that
+ * continues a speech after a stage direction carries no name, as in the
+ * edition, and a passage that is one speaker's soliloquy prints none.
+ *
+ * WHY IT EXISTS (26 September 2026). The Macbeth guide printed three passages
+ * in the Folger Shakespeare Library's text, which Folger licenses for
+ * non-commercial use only, and two more pasted in as strings. Cutting all five
+ * from the held edition means none can differ from it; this only lays them out.
+ *
+ * `prose` joins a speech's lines with a space instead of " / ". The editions
+ * wrap prose at a fixed width, so those breaks are the printer's, and marking
+ * them as verse lines would misdescribe the sleepwalking scene, which is prose.
+ *
+ * Stage directions are bracketed, as the guides print them, and the edition's
+ * underscores ("[_Exit._]") are dropped: they mark italic type, not words.
+ */
+export function playPassage(
+  text: TextData,
+  sectionId: string,
+  from: string,
+  to: string,
+  opts: { prose?: boolean } = {},
+): string {
+  const section = text.sections.find((s) => s.id === sectionId)
+  // The edition marks a stage direction by its class; passage() returns plain
+  // text, so the directions are collected here to be recognised again.
+  const directions = new Set(
+    (section?.content ?? '')
+      .split(/<\/p>\s*/)
+      .filter((b) => /^<p class="italic/.test(b.trim()))
+      .map((b) => decode(b.replace(/<[^>]+>/g, '').trim())),
+  )
+  const join = (lines: string[]) =>
+    lines
+      .map((l) => l.trim())
+      .filter(Boolean)
+      .join(opts.prose ? ' ' : ' / ')
+  return passage(text, sectionId, from, to)
+    .split('\n\n')
+    .map((block) => {
+      if (directions.has(block)) return `[${block.replace(/_/g, '').replace(/^\[|\]$/g, '')}]`
+      const [first, ...rest] = block.split('\n')
+      const set =
+        SPEAKER.test(first.trim()) && rest.length > 0
+          ? `${first.trim()}: ${join(rest)}`
+          : join([first, ...rest])
+      return set.replace(/_/g, '')
+    })
+    .join(' / ')
+}
+
 /** Each line of a poem held as one section of stanza paragraphs; stanzas end with "". */
 export function poemLines(text: TextData): string[] {
   const section = text.sections[0]

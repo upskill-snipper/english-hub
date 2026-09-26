@@ -20,20 +20,21 @@ import { EYE, HEAD_BEARD, HEAD_OLD, OLD_BEARD, OLD_HAIR, OLD_STRANDS } from './i
 /**
  * Act 2, Scene 4: "Nature in disorder", the eleventh moment in the guide's
  * timeline. Outside Macbeth's castle, by day, the morning after Duncan's
- * murder. Every detail is from the scene (Folger text):
+ * murder. Every detail is from the scene (quoted from the held
+ * edition, src/data/full-texts/macbeth.ts):
  *
- * - ROSS: "By th' clock 'tis day, / And yet dark night strangles the
- *   travelling lamp", and "darkness does the face of earth entomb / When
- *   living light should kiss it". So the sky is black by day, a thin band
+ * - ROSS: "By the clock ’tis day, / And yet dark night strangles the travelling
+ *   lamp", and "darkness does the face of earth entomb, / When living light
+ *   should kiss it". So the sky is black by day, a thin band
  *   of day lies along the horizon, and the sun is a red disc with black
  *   bands of night drawn tight across it. The red is the sun and nothing else.
- * - OLD MAN: "On Tuesday last / A falcon, tow'ring in her pride of place, /
- *   Was by a mousing owl hawked at and killed." So an owl stoops on a falcon
+ * - OLD MAN: "On Tuesday last, / A falcon, towering in her pride of place, /
+ *   Was by a mousing owl hawk’d at and kill’d." So an owl stoops on a falcon
  *   high over the scene, talons out, and a few feathers fall. The kill itself
  *   is not drawn.
- * - ROSS: "Duncan's horses ... Beauteous and swift, the minions of their race,
- *   / Turned wild in nature, broke their stalls, flung out, / Contending 'gainst
- *   obedience"; OLD MAN: "'Tis said they eat each other." So two horses rear
+ * - ROSS: "Duncan’s horses ... Beauteous and swift, the minions of their race,
+ *   / Turn’d wild in nature, broke their stalls, flung out, / Contending ’gainst
+ *   obedience"; OLD MAN: "’Tis said they eat each other." So two horses rear
  *   at each other below the castle.
  * - The Old Man: "Threescore and ten I can remember well", so he is seventy:
  *   stooped, on a staff, white-bearded. Ross is a nobleman, and points up at

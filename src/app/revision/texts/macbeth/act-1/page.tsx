@@ -102,7 +102,7 @@ export default async function MacbethAct1Page() {
             <p className="text-muted-foreground">
               Thunder and lightning. Three witches meet on a desolate heath and plan to reconvene
               &ldquo;when the battle&rsquo;s lost and won&rdquo; to meet Macbeth. They depart with
-              the chant: &ldquo;Fair is foul, and foul is fair, / Hover through the fog and filthy
+              the chant: &ldquo;Fair is foul, and foul is fair: / Hover through the fog and filthy
               air.&rdquo;
             </p>
           </div>
@@ -194,10 +194,9 @@ export default async function MacbethAct1Page() {
             <h4 className="font-semibold mb-1">Summary</h4>
             <p className="text-muted-foreground">
               King Duncan receives news of the battle from a bleeding sergeant. Macbeth has fought
-              heroically, killing the rebel Macdonwald by unseaming him &ldquo;from the nave to
-              th&rsquo; chops.&rdquo; The Thane of Cawdor has betrayed Scotland and sided with
-              Norway. Duncan orders Cawdor&apos;s execution and bestows the title on Macbeth as a
-              reward.
+              heroically, killing the rebel Macdonwald by unseaming him &ldquo;from the nave to the
+              chops.&rdquo; The Thane of Cawdor has betrayed Scotland and sided with Norway. Duncan
+              orders Cawdor&apos;s execution and bestows the title on Macbeth as a reward.
             </p>
           </div>
           <div>
@@ -223,7 +222,7 @@ export default async function MacbethAct1Page() {
             <div className="space-y-3">
               <div className="rounded-lg border border-border/60 p-3">
                 <p className="font-medium">
-                  &ldquo;Unseamed him from the nave to th&rsquo; chops.&rdquo;
+                  &ldquo;Unseam’d him from the nave to the chops.&rdquo;
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
                   <span className="font-medium text-foreground">Technique:</span> Violent imagery
@@ -345,8 +344,8 @@ export default async function MacbethAct1Page() {
               </div>
               <div className="rounded-lg border border-border/60 p-3">
                 <p className="font-medium">
-                  &ldquo;The instruments of darkness tell us truths, / Win us with honest trifles,
-                  to betray&rsquo;s / In deepest consequence.&rdquo;
+                  &ldquo;The instruments of darkness tell us truths; / Win us with honest trifles,
+                  to betray’s / In deepest consequence.&rdquo;
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
                   <span className="font-medium text-foreground">Technique:</span> Metaphor &amp;
@@ -358,11 +357,11 @@ export default async function MacbethAct1Page() {
               </div>
               <div className="rounded-lg border border-border/60 p-3">
                 <p className="font-medium">
-                  &ldquo;This supernatural soliciting / Cannot be ill, cannot be good.&rdquo;
+                  &ldquo;This supernatural soliciting / Cannot be ill; cannot be good.&rdquo;
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
                   <span className="font-medium text-foreground">Technique:</span> Antithesis &amp;
-                  soliloquy. The balanced structure (&ldquo;cannot be ill, cannot be good&rdquo;)
+                  soliloquy. The balanced structure (&ldquo;cannot be ill; cannot be good&rdquo;)
                   dramatises Macbeth&apos;s moral confusion. He is caught between his conscience and
                   his desire, unable to categorise the prophecy as either. This indecision is the
                   seed of his tragedy.
@@ -487,7 +486,7 @@ export default async function MacbethAct1Page() {
               </div>
               <div className="rounded-lg border border-border/60 p-3">
                 <p className="font-medium">
-                  &ldquo;Stars, hide your fires; / Let not light see my black and deep
+                  &ldquo;Stars, hide your fires! / Let not light see my black and deep
                   desires.&rdquo;
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
@@ -579,7 +578,7 @@ export default async function MacbethAct1Page() {
               </li>
               <li>
                 {_tr(
-                  `She takes charge of the murder plot, instructing Macbeth to &ldquo;look like th&rsquo; innocent flower, / But be the serpent under&rsquo;t.&rdquo;`,
+                  `She takes charge of the murder plot, instructing Macbeth to &ldquo;look like the innocent flower, / But be the serpent under’t.&rdquo;`,
                 )}
               </li>
               <li>
@@ -605,15 +604,15 @@ export default async function MacbethAct1Page() {
               </div>
               <div className="rounded-lg border border-border/60 p-3">
                 <p className="font-medium">
-                  &ldquo;Unsex me here, / And fill me from the crown to the toe top-full / Of direst
-                  cruelty.&rdquo;
+                  &ldquo;Unsex me here, / And fill me, from the crown to the toe, top-full / Of
+                  direst cruelty.&rdquo;
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
                   <span className="font-medium text-foreground">Technique:</span> Imperative verbs,
                   invocation &amp; imagery. &ldquo;Unsex&rdquo; demands the removal of all feminine
                   compassion. The image of being filled &ldquo;from the crown to the toe&rdquo; with
                   cruelty suggests a total bodily possession, paralleling demonic possession. The
-                  invocation of &ldquo;murdering ministers&rdquo; and &ldquo;thick night&rdquo;
+                  invocation of &ldquo;murd’ring ministers&rdquo; and &ldquo;thick night&rdquo;
                   aligns her with the witches&apos; supernatural realm.
                 </p>
               </div>
@@ -631,8 +630,7 @@ export default async function MacbethAct1Page() {
               </div>
               <div className="rounded-lg border border-border/60 p-3">
                 <p className="font-medium">
-                  &ldquo;Look like th&rsquo; innocent flower, / But be the serpent
-                  under&rsquo;t.&rdquo;
+                  &ldquo;Look like the innocent flower, / But be the serpent under’t.&rdquo;
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
                   <span className="font-medium text-foreground">Technique:</span> Biblical allusion
@@ -732,7 +730,7 @@ export default async function MacbethAct1Page() {
             <div className="space-y-3">
               <div className="rounded-lg border border-border/60 p-3">
                 <p className="font-medium">
-                  &ldquo;This castle hath a pleasant seat; the air / Nimbly and sweetly recommends
+                  &ldquo;This castle hath a pleasant seat. The air / Nimbly and sweetly recommends
                   itself / Unto our gentle senses.&rdquo;
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
@@ -761,9 +759,8 @@ export default async function MacbethAct1Page() {
               This short, peaceful scene functions as the calm before the storm. Shakespeare
               deliberately creates a tone of domestic tranquillity to heighten the horror of what
               follows. The scene also demonstrates Lady Macbeth&apos;s ability to perform innocence
-              &mdash; she follows her own advice to &ldquo;look like th&rsquo; innocent
-              flower&rdquo; with complete success. Duncan&apos;s trusting nature makes him an easy
-              victim.
+              &mdash; she follows her own advice to &ldquo;look like the innocent flower&rdquo; with
+              complete success. Duncan&apos;s trusting nature makes him an easy victim.
             </p>
           </div>
           <div>
@@ -836,7 +833,7 @@ export default async function MacbethAct1Page() {
               <div className="rounded-lg border border-border/60 p-3">
                 <p className="font-medium">
                   &ldquo;I have no spur / To prick the sides of my intent, but only / Vaulting
-                  ambition, which o&rsquo;erleaps itself / And falls on the other.&rdquo;
+                  ambition, which o’erleaps itself / And falls on th’ other.&rdquo;
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
                   <span className="font-medium text-foreground">Technique:</span> Extended metaphor.
@@ -848,7 +845,7 @@ export default async function MacbethAct1Page() {
               </div>
               <div className="rounded-lg border border-border/60 p-3">
                 <p className="font-medium">
-                  &ldquo;When you durst do it, then you were a man; / And to be more than what you
+                  &ldquo;When you durst do it, then you were a man; / And, to be more than what you
                   were, you would / Be so much more the man.&rdquo;
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
@@ -872,9 +869,9 @@ export default async function MacbethAct1Page() {
               </div>
               <div className="rounded-lg border border-border/60 p-3">
                 <p className="font-medium">
-                  &ldquo;I have given suck, and know / How tender &rsquo;tis to love the babe that
-                  milks me; / I would, while it was smiling in my face, / Have plucked my nipple
-                  from his boneless gums / And dashed the brains out, had I so sworn.&rdquo;
+                  &ldquo;I have given suck, and know / How tender ’tis to love the babe that milks
+                  me: / I would, while it was smiling in my face, / Have pluck’d my nipple from his
+                  boneless gums / And dash’d the brains out, had I so sworn.&rdquo;
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
                   <span className="font-medium text-foreground">Technique:</span> Hyperbolic imagery
@@ -882,7 +879,7 @@ export default async function MacbethAct1Page() {
                   &mdash; killing her own nursing baby &mdash; to demonstrate her commitment. The
                   juxtaposition of tender maternal language (&ldquo;tender,&rdquo;
                   &ldquo;smiling,&rdquo; &ldquo;boneless gums&rdquo;) with extreme violence
-                  (&ldquo;dashed the brains out&rdquo;) is designed to shame Macbeth into matching
+                  (&ldquo;dash’d the brains out&rdquo;) is designed to shame Macbeth into matching
                   her resolve.
                 </p>
               </div>

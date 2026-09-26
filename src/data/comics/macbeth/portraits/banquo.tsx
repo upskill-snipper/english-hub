@@ -9,8 +9,8 @@ import { Brooch, lerp2, PH, portraitGround, PortraitRule, PW, strands } from './
  * an eleventh-century thane: long hair, a long beard, a cloak pinned with a
  * ring brooch. What the play does say about him is what he will father. The
  * witches tell him "Thou shalt get kings, though thou be none" (1.3), and in
- * 4.1 Macbeth is shown "A show of eight kings". He tells the first "Thou art
- * too like the spirit of Banquo", and each after it is like the first.
+ * 4.1 Macbeth is shown "A show of eight kings". He tells the first he is "too
+ * like the spirit of Banquo", and each after it is like the first.
  *
  * So he wears no crown, and he looks after eight crowned heads in his own
  * profile (the same outline, smaller and smaller) going away from him into
@@ -257,10 +257,11 @@ export const banquo: Portrait = {
   alt: 'A linocut portrait of Banquo in profile, facing right: a man with long hair to his shoulders and a long beard, bareheaded, in a dark cloak pinned with a ring brooch. Ahead of him, climbing away into the dark at the top right, goes a line of eight smaller heads with his own profile, each smaller and farther than the last, each wearing a red crown. Two numbered red markers point to his bare head and to the line of crowned heads.',
   // Both markers come from the one line of 1.3, split where the picture
   // splits: the bare head, then the kings. The second was "A show of eight
-  // kings", a stage direction in 4.1; the comics test checks marker phrases
-  // against the guide's verified quotations, which hold 1.3 but not that
+  // kings", a stage direction in 4.1; the comics test then checked marker
+  // phrases against the guide's quotations, which held 1.3 but not that
   // direction, so the portrait was held back until it pointed at words the
-  // guide can vouch for (26 September 2026).
+  // guide could vouch for (26 September 2026). The test now checks them
+  // against the held edition, where both lines are.
   describedBy: [
     { phrase: 'though thou be none', at: [BROW_AT[0], 24], to: BROW_AT },
     { phrase: 'Thou shalt get kings', at: [306, 206], to: KINGS_AT },

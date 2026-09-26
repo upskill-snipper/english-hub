@@ -23,17 +23,17 @@ import { EYE, HEAD_MACBETH, HEAD_WOMAN, VEIL } from './inverness-people'
  * - "The same." The courtyard of The dagger, the same night, with the same
  *   stair to the king's chamber. "The doors are open", so the door at the top
  *   stands open on to black. Nothing inside it is drawn.
- * - "It was the owl that shrieked, the fatal bellman". An owl sits on a
+ * - "It was the owl that shriek’d, the fatal bellman". An owl sits on a
  *   ledge by the king's door.
  * - The panel is the moment of its quotation, near the end of the scene.
  *   "Give me the daggers": Lady Macbeth has taken them back up to the
  *   chamber and returned, so neither of them holds a dagger now. "My hands
- *   are of your colour, but I shame / To wear a heart so white."
+ *   are of your color, but I shame / To wear a heart so white."
  * - "I have done the deed." "As I descended?" Macbeth stands at the foot of
  *   the stair. "This is a sorry sight", "these hangman's hands", "Will all
  *   great Neptune's ocean wash this blood / Clean from my hand?": he stares
  *   down at his open hands, held up before him.
- * - "I hear a knocking / At the south entry. Retire we to our chamber. / A
+ * - "I hear knocking / At the south entry:—retire we to our chamber. / A
  *   little water clears us of this deed." White knocks break out round the
  *   gate on the left, one after another, and she reaches out to lead him
  *   away.
@@ -145,7 +145,7 @@ const LADY: Part[] = [
   // the reaching arm; the hand at its end is drawn red, in LADY_HAND
   { d: 'M13 -150C22 -142 30 -138 40 -138L56 -142', w: 7.4, sep: 1.4 },
 ]
-/** Her open hand, turned up, red as his are: "My hands are of your colour". */
+/** Her open hand, turned up, red as his are: "My hands are of your color". */
 const LADY_HAND =
   'M53 -146C56 -148 62 -148 68 -147L69 -144.5L62 -144L69 -142L68 -139.5L60 -140C57 -139 54 -139.5 53 -141Z'
 const LADY_CUTS =

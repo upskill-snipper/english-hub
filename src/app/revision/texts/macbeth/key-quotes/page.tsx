@@ -50,7 +50,7 @@ const QUOTES_BY_ACT: ActQuotes[] = [
       },
       {
         quote:
-          "The instruments of darkness tell us truths, / Win us with honest trifles, to betray's / In deepest consequence.",
+          'The instruments of darkness tell us truths; / Win us with honest trifles, to betray’s / In deepest consequence.',
         speaker: 'Banquo',
         actScene: 'Act 1, Scene 3',
         analysis:
@@ -58,7 +58,7 @@ const QUOTES_BY_ACT: ActQuotes[] = [
         themes: ['Supernatural & Fate', 'Appearance vs Reality', 'Loyalty & Betrayal'],
       },
       {
-        quote: 'Stars, hide your fires; / Let not light see my black and deep desires.',
+        quote: 'Stars, hide your fires! / Let not light see my black and deep desires.',
         speaker: 'Macbeth',
         actScene: 'Act 1, Scene 4',
         analysis:
@@ -83,7 +83,7 @@ const QUOTES_BY_ACT: ActQuotes[] = [
       },
       {
         quote:
-          'Unsex me here, / And fill me from the crown to the toe top-full / Of direst cruelty.',
+          'Unsex me here, / And fill me, from the crown to the toe, top-full / Of direst cruelty.',
         speaker: 'Lady Macbeth',
         actScene: 'Act 1, Scene 5',
         analysis:
@@ -91,7 +91,7 @@ const QUOTES_BY_ACT: ActQuotes[] = [
         themes: ['Masculinity & Power', 'Supernatural & Fate', 'Nature & the Unnatural'],
       },
       {
-        quote: "Look like th' innocent flower, / But be the serpent under't.",
+        quote: 'Look like the innocent flower, / But be the serpent under’t.',
         speaker: 'Lady Macbeth',
         actScene: 'Act 1, Scene 5',
         analysis:
@@ -100,7 +100,7 @@ const QUOTES_BY_ACT: ActQuotes[] = [
       },
       {
         quote:
-          "I have no spur / To prick the sides of my intent, but only / Vaulting ambition, which o'erleaps itself / And falls on the other.",
+          'I have no spur / To prick the sides of my intent, but only / Vaulting ambition, which o’erleaps itself / And falls on th’ other.',
         speaker: 'Macbeth',
         actScene: 'Act 1, Scene 7',
         analysis:
@@ -109,7 +109,7 @@ const QUOTES_BY_ACT: ActQuotes[] = [
       },
       {
         quote:
-          'When you durst do it, then you were a man; / And to be more than what you were, you would / Be so much more the man.',
+          'When you durst do it, then you were a man; / And, to be more than what you were, you would / Be so much more the man.',
         speaker: 'Lady Macbeth',
         actScene: 'Act 1, Scene 7',
         analysis:
@@ -165,7 +165,7 @@ const QUOTES_BY_ACT: ActQuotes[] = [
       },
       {
         quote:
-          "Macbeth does murder sleep -- the innocent sleep, / Sleep that knits up the ravell'd sleave of care.",
+          'Macbeth does murder sleep,—the innocent sleep; / Sleep that knits up the ravell’d sleave of care.',
         speaker: 'Macbeth',
         actScene: 'Act 2, Scene 2',
         analysis:
@@ -173,7 +173,7 @@ const QUOTES_BY_ACT: ActQuotes[] = [
         themes: ['Guilt & Conscience', 'Nature & the Unnatural'],
       },
       {
-        quote: 'Had I but died an hour before this chance, / I had lived a blessed time.',
+        quote: 'Had I but died an hour before this chance, / I had liv’d a blessed time.',
         speaker: 'Macbeth',
         actScene: 'Act 2, Scene 3',
         analysis:
@@ -189,7 +189,7 @@ const QUOTES_BY_ACT: ActQuotes[] = [
     quotes: [
       {
         quote:
-          "Thou hast it now: King, Cawdor, Glamis, all, / As the weird women promised, and I fear / Thou play'dst most foully for't.",
+          'Thou hast it now, King, Cawdor, Glamis, all, / As the Weird Women promis’d; and, I fear, / Thou play’dst most foully for’t.',
         speaker: 'Banquo',
         actScene: 'Act 3, Scene 1',
         analysis:
@@ -197,7 +197,7 @@ const QUOTES_BY_ACT: ActQuotes[] = [
         themes: ['Loyalty & Betrayal', 'Appearance vs Reality'],
       },
       {
-        quote: "Nought's had, all's spent, / Where our desire is got without content.",
+        quote: 'Naught’s had, all’s spent, / Where our desire is got without content.',
         speaker: 'Lady Macbeth',
         actScene: 'Act 3, Scene 2',
         analysis:
@@ -222,7 +222,7 @@ const QUOTES_BY_ACT: ActQuotes[] = [
         themes: ['Guilt & Conscience', 'Violence & Blood'],
       },
       {
-        quote: 'It will have blood, they say: blood will have blood.',
+        quote: 'It will have blood, they say, blood will have blood.',
         speaker: 'Macbeth',
         actScene: 'Act 3, Scene 4',
         analysis:
@@ -237,7 +237,7 @@ const QUOTES_BY_ACT: ActQuotes[] = [
     colour: 'bg-teal-400',
     quotes: [
       {
-        quote: 'Double, double toil and trouble; / Fire burn and cauldron bubble.',
+        quote: 'Double, double, toil and trouble; / Fire, burn; and cauldron, bubble.',
         speaker: 'The Witches',
         actScene: 'Act 4, Scene 1',
         analysis:
@@ -253,7 +253,7 @@ const QUOTES_BY_ACT: ActQuotes[] = [
         themes: ['Supernatural & Fate', 'Violence & Blood'],
       },
       {
-        quote: 'The king-becoming graces: / As justice, verity, temperance, stableness.',
+        quote: 'The king-becoming graces, / As justice, verity, temp’rance, stableness.',
         speaker: 'Malcolm',
         actScene: 'Act 4, Scene 3',
         analysis:
@@ -269,7 +269,7 @@ const QUOTES_BY_ACT: ActQuotes[] = [
         themes: ['Masculinity & Power'],
       },
       {
-        quote: 'All my pretty ones? / Did you say all? O hell-kite! All?',
+        quote: 'All my pretty ones? / Did you say all?—O hell-kite!—All?',
         speaker: 'Macduff',
         actScene: 'Act 4, Scene 3',
         analysis:
@@ -293,7 +293,7 @@ const QUOTES_BY_ACT: ActQuotes[] = [
       },
       {
         quote:
-          "Here's the smell of the blood still. All the perfumes of Arabia will not sweeten this little hand.",
+          'Here’s the smell of the blood still: all the perfumes of Arabia will not sweeten this little hand.',
         speaker: 'Lady Macbeth',
         actScene: 'Act 5, Scene 1',
         analysis:
@@ -310,7 +310,7 @@ const QUOTES_BY_ACT: ActQuotes[] = [
       },
       {
         quote:
-          'Tomorrow, and tomorrow, and tomorrow, / Creeps in this petty pace from day to day / To the last syllable of recorded time.',
+          'Tomorrow, and tomorrow, and tomorrow, / Creeps in this petty pace from day to day, / To the last syllable of recorded time.',
         speaker: 'Macbeth',
         actScene: 'Act 5, Scene 5',
         analysis:
@@ -319,7 +319,7 @@ const QUOTES_BY_ACT: ActQuotes[] = [
       },
       {
         quote:
-          "Life's but a walking shadow, a poor player / That struts and frets his hour upon the stage / And then is heard no more.",
+          'Life’s but a walking shadow; a poor player, / That struts and frets his hour upon the stage, / And then is heard no more.',
         speaker: 'Macbeth',
         actScene: 'Act 5, Scene 5',
         analysis:

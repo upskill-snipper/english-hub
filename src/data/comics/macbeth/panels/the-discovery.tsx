@@ -18,9 +18,9 @@ import { EYE, HEAD_BEARD, HEAD_MACBETH, HEAD_YOUTH, HEAD_WOMAN, VEIL } from './i
 /**
  * Act 2, Scene 3: "The discovery", the tenth moment in the guide's timeline.
  * The courtyard and stair of The dagger and The murder, at the moment the
- * house is woken. The site's reader does not hold this scene, so the lines
- * below were checked against the Folger text the guide follows. Every detail
- * is from the play:
+ * house is woken. The lines below were first checked against the Folger
+ * text and now quote the held edition (src/data/full-texts/macbeth.ts).
+ * Every detail is from the play:
  *
  * - "O horror, horror, horror" (Macduff). He has gone up to wake the king and
  *   comes out on the landing with his arms flung up. The door behind him is

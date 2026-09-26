@@ -32,27 +32,29 @@ import {
 
 /**
  * Act 1, Scene 6: "Duncan arrives", the sixth moment in the guide's timeline.
- * The site's reader does not hold this scene, so the lines below were checked
- * against the Folger text the guide follows (its editorial brackets removed).
- * Every detail is from the scene:
+ * The details were first checked against the Folger text; the lines below
+ * now quote the held edition (src/data/full-texts/macbeth.ts), which the
+ * site's reader prints in full. Every detail is from the scene:
  *
- * - "Hautboys and Torches. Enter King Duncan, Malcolm, Donalbain, Banquo,
- *   Lennox, Macduff, Ross, Angus, and Attendants." The king comes at the end
- *   of "his day's hard journey" (1.7), by torchlight, so the sky is an
+ * - "Hautboys. Servants of Macbeth attending." "Enter Duncan, Malcolm,
+ *   Donalbain, Banquo, Lennox, Macduff, Ross, Angus and Attendants." The king
+ *   comes at the end of "his day’s hard journey" (1.7), and the next scene,
+ *   the same evening, opens with "Hautboys and torches", so the sky is an
  *   evening sky, pale at the horizon, and an attendant of the royal train
- *   lifts a torch.
+ *   lifts a torch. (The Folger text puts the torches in this scene's own
+ *   direction; the held edition puts them at the start of the next.)
  * - "This castle hath a pleasant seat. The air / Nimbly and sweetly recommends
  *   itself / Unto our gentle senses." Duncan, old and crowned (see
  *   ./inverness-people.tsx), lifts an open hand to the castle.
  * - "This guest of summer, / The temple-haunting martlet, does approve, / By
- *   his loved mansionry, that the heaven's breath / Smells wooingly here. No
- *   jutty, frieze, / Buttress, nor coign of vantage, but this bird / Hath made
+ *   his loved mansionry, that the heaven’s breath / Smells wooingly here: no
+ *   jutty, frieze, / Buttress, nor coign of vantage, but this bird / hath made
  *   his pendant bed and procreant cradle." Banquo looks up and points at the
  *   martlets; their nests hang under the jutty below the battlements.
- * - Lady Macbeth comes out to meet them, and Duncan greets "our honored
- *   hostess" (Folger's spelling). She is cut in paper against the black of the
- *   gate: in 1.5 she told her husband to "Look like th' innocent flower, / But
- *   be the serpent under 't", and the panel lets the gate behind her be the
+ * - Lady Macbeth comes out to meet them, and Duncan greets "our honour’d
+ *   hostess". She is cut in paper against the black of the
+ *   gate: in 1.5 she told her husband to "Look like the innocent flower, / But
+ *   be the serpent under’t", and the panel lets the gate behind her be the
  *   dark. The torches either side of it carry the spot colour, the welcome,
  *   and so does Duncan's crown, printed red as the other Macbeth panels print
  *   it.

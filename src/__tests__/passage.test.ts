@@ -2,7 +2,8 @@ import { describe, it, expect } from 'vitest'
 
 import { animalFarmText } from '@/data/full-texts/animal-farm'
 import { doNotGoGentleIntoThatGoodNightText } from '@/data/full-texts/do-not-go-gentle-into-that-good-night'
-import { passage, poemLines } from '@/lib/study-guides/passage'
+import { macbethText } from '@/data/full-texts/macbeth'
+import { passage, playPassage, poemLines } from '@/lib/study-guides/passage'
 
 /**
  * The helpers that let a guide print a passage without typing it. What they
@@ -43,5 +44,55 @@ describe('passage', () => {
     expect(() =>
       passage(animalFarmText, 'section-1', 'Beasts of England', 'Mr. Jones, of the Manor Farm'),
     ).toThrow()
+  })
+})
+
+describe('playPassage', () => {
+  // The Macbeth guide prints all five of its extracts through this, so what it
+  // must never do is set a stage direction as speech, lose a speaker, or mark
+  // the printer's prose line breaks as verse.
+  it('names each speaker and brackets each stage direction', () => {
+    const p = playPassage(
+      macbethText,
+      'actv-sceneiii',
+      'Bring me no more reports',
+      'Which the poor heart would fain deny',
+    )
+    expect(p.startsWith('MACBETH: Bring me no more reports; let them fly all: / Till Birnam')).toBe(
+      true,
+    )
+    expect(p).toContain(' / [Enter a Servant.] / The devil damn thee black')
+    expect(p).toContain(' / SERVANT: Soldiers, sir. / MACBETH: Go prick thy face')
+    expect(p).toContain(' / [Exit Servant.] / Seyton!')
+    expect(p).not.toMatch(/_|<|\n/)
+  })
+
+  it('prints a soliloquy without a name, and keeps the lines after a direction', () => {
+    const p = playPassage(
+      macbethText,
+      'actii-scenei',
+      'Is this a dagger which I see before me',
+      'That summons thee to heaven or to hell',
+    )
+    expect(
+      p.startsWith('Is this a dagger which I see before me, / The handle toward my hand?'),
+    ).toBe(true)
+    expect(p).toContain(' / [A bell rings.] / I go, and it is done.')
+    expect(p.endsWith('That summons thee to heaven or to hell.')).toBe(true)
+  })
+
+  it('joins prose as prose', () => {
+    const p = playPassage(
+      macbethText,
+      'actv-scenei',
+      'Yet here’s a spot',
+      'What’s done cannot be undone',
+      {
+        prose: true,
+      },
+    )
+    // The edition breaks this sentence after "will"; as verse it would read "will / not".
+    expect(p).toContain('all the perfumes of Arabia will not sweeten this little hand')
+    expect(p).toContain(' / DOCTOR: What a sigh is there!')
   })
 })

@@ -44,7 +44,7 @@ export const STRINGS: Record<string, Bi> = {
   s12: { en: `Kingship &amp; Power`, ar: `الملكية والسلطة` },
   s14: { en: `The Supernatural`, ar: `` },
   s15: {
-    en: `Scene 2 - &ldquo;Nought&rsquo;s Had, All&rsquo;s Spent&rdquo;`,
+    en: `Scene 2 - &ldquo;Naught’s Had, All’s Spent&rdquo;`,
     ar: `الشِّهَادَةُ 2 - "نُوتٍ حَد، أَلٍّ سُپِنت`,
   },
   s16: {

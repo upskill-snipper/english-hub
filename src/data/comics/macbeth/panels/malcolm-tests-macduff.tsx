@@ -17,20 +17,21 @@ import { HEAD_BEARD } from './inverness-people'
 
 /**
  * Act 4, Scene 3: "Malcolm tests Macduff", the eighteenth moment in the
- * guide's timeline. The site's reader does not print this scene, so the
- * details are from the Folger text the guide was checked against:
+ * guide's timeline. The details were drawn from the Folger text the guide
+ * was first checked against; the quotations below follow the held edition
+ * (src/data/full-texts/macbeth.ts):
  *
  * - The scene is in England, where Malcolm has fled and Macduff has come to
- *   find him. It opens with Malcolm's "Let us seek out some desolate shade,
- *   and there / Weep our sad bosoms empty." So the three stand in the open
+ *   find him. It opens with Malcolm's "Let us seek out some desolate shade and
+ *   there / Weep our sad bosoms empty." So the three stand in the open
  *   under a great tree. The scene is at the English king's court (a Doctor
  *   comes out from the king in the middle of it), so his palace stands far
  *   off on the horizon.
- * - Ross brings the news: "Your castle is surprised; your wife and babes /
- *   Savagely slaughtered." Malcolm: "What, man, ne'er pull your hat upon your
+ * - Ross brings the news: "Your castle is surpris’d; your wife and babes /
+ *   Savagely slaughter’d." Malcolm: "What, man! ne’er pull your hat upon your
  *   brows. / Give sorrow words." So Macduff has pulled his hat down over his
  *   eyes, his head is bowed, and one hand is clenched over his heart.
- * - "Dispute it like a man." "I shall do so, / But I must also feel it as a
+ * - "Dispute it like a man." "I shall do so; / But I must also feel it as a
  *   man." Malcolm, facing him, puts a hand on his shoulder; Ross, who brought
  *   the news, stands behind with his head bowed.
  * - "Be this the whetstone of your sword. Let grief / Convert to anger." So

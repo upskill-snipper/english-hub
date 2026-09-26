@@ -31,14 +31,14 @@ const THEMES: ThemeStudy[] = [
     keyQuotes: [
       {
         quote:
-          "I have no spur / To prick the sides of my intent, but only / Vaulting ambition, which o'erleaps itself / And falls on the other.",
+          'I have no spur / To prick the sides of my intent, but only / Vaulting ambition, which o’erleaps itself / And falls on th’ other.',
         speaker: 'Macbeth',
         actScene: 'Act 1, Scene 7',
         analysis:
           'The horse-riding metaphor imagines ambition as a rider who overreaches and falls. Macbeth knows his ambition will destroy him but cannot resist it.',
       },
       {
-        quote: 'Stars, hide your fires; / Let not light see my black and deep desires.',
+        quote: 'Stars, hide your fires! / Let not light see my black and deep desires.',
         speaker: 'Macbeth',
         actScene: 'Act 1, Scene 4',
         analysis:
@@ -88,7 +88,7 @@ const THEMES: ThemeStudy[] = [
       },
       {
         quote:
-          "Macbeth does murder sleep -- the innocent sleep, / Sleep that knits up the ravell'd sleave of care.",
+          'Macbeth does murder sleep,—the innocent sleep; / Sleep that knits up the ravell’d sleave of care.',
         speaker: 'Macbeth (reporting a voice)',
         actScene: 'Act 2, Scene 2',
         analysis:
@@ -137,7 +137,7 @@ const THEMES: ThemeStudy[] = [
       },
     ],
     evidenceByAct: [
-      'Act 1: The witches prophesy Macbeth\'s rise; Lady Macbeth invokes "murdering ministers." Both scenes establish the supernatural as a force that tempts rather than compels.',
+      'Act 1: The witches prophesy Macbeth\'s rise; Lady Macbeth invokes "murd’ring ministers." Both scenes establish the supernatural as a force that tempts rather than compels.',
       'Act 2: The dagger hallucination, the voice crying "Sleep no more," and the cosmic disturbances after Duncan\'s murder blur the line between supernatural event and guilty imagination.',
       "Act 3: Banquo's ghost appears at the feast -- is it real or is it Macbeth's guilt? The ambiguity is maintained throughout.",
       'Act 4: The witches deliver three new apparitions. Their prophecies are technically true but deliberately misleading, exploiting equivocation.',
@@ -157,7 +157,7 @@ const THEMES: ThemeStudy[] = [
     keyQuotes: [
       {
         quote:
-          'When you durst do it, then you were a man; / And to be more than what you were, you would / Be so much more the man.',
+          'When you durst do it, then you were a man; / And, to be more than what you were, you would / Be so much more the man.',
         speaker: 'Lady Macbeth',
         actScene: 'Act 1, Scene 7',
         analysis:
@@ -195,10 +195,10 @@ const THEMES: ThemeStudy[] = [
     overview:
       "Nothing in Macbeth is what it seems -- from the witches' equivocation to the characters' masks of loyalty.",
     detailed:
-      'The gap between appearance and reality is announced in the play\'s first scene: "Fair is foul, and foul is fair." Nothing in Macbeth is what it seems. The witches\' prophecies appear to promise glory but deliver destruction. Macbeth appears to be a loyal subject while plotting regicide. Lady Macbeth instructs her husband to "look like the innocent flower, / But be the serpent under\'t." Shakespeare explores this through the motif of equivocation, which had particular resonance for Jacobean audiences. The Gunpowder Plot trials exposed the Jesuit doctrine of equivocation -- misleading without technically lying. The witches are the play\'s great equivocators: every prophecy is literally true but deliberately misleading. The Porter\'s comic scene explicitly references equivocation, calling his gate "the other devil\'s name" for an equivocator. The theme extends to self-deception: Macbeth convinces himself each murder will be the last, and Lady Macbeth believes she can commit murder and simply wash her hands of it.',
+      'The gap between appearance and reality is announced in the play\'s first scene: "Fair is foul, and foul is fair." Nothing in Macbeth is what it seems. The witches\' prophecies appear to promise glory but deliver destruction. Macbeth appears to be a loyal subject while plotting regicide. Lady Macbeth instructs her husband to "look like the innocent flower, / But be the serpent under\'t." Shakespeare explores this through the motif of equivocation, which had particular resonance for Jacobean audiences. The Gunpowder Plot trials exposed the Jesuit doctrine of equivocation -- misleading without technically lying. The witches are the play\'s great equivocators: every prophecy is literally true but deliberately misleading. The Porter\'s comic scene explicitly references equivocation, calling his gate "th’ other devil’s name" for an equivocator. The theme extends to self-deception: Macbeth convinces himself each murder will be the last, and Lady Macbeth believes she can commit murder and simply wash her hands of it.',
     keyQuotes: [
       {
-        quote: "Look like th' innocent flower, / But be the serpent under't.",
+        quote: 'Look like the innocent flower, / But be the serpent under’t.',
         speaker: 'Lady Macbeth',
         actScene: 'Act 1, Scene 5',
         analysis:
@@ -247,14 +247,14 @@ const THEMES: ThemeStudy[] = [
           'Macbeth lists three bonds he will violate: kinship, political duty, and hospitality. Shakespeare layers the betrayal to maximise its moral weight.',
       },
       {
-        quote: 'Had I but died an hour before this chance, / I had lived a blessed time.',
+        quote: 'Had I but died an hour before this chance, / I had liv’d a blessed time.',
         speaker: 'Macbeth',
         actScene: 'Act 2, Scene 3',
         analysis:
           "Macbeth performs shock at Duncan's death. The dramatic irony is that the statement is literally true: his life after Duncan's murder is cursed.",
       },
       {
-        quote: "Nought's had, all's spent, / Where our desire is got without content.",
+        quote: 'Naught’s had, all’s spent, / Where our desire is got without content.',
         speaker: 'Lady Macbeth',
         actScene: 'Act 3, Scene 2',
         analysis:
@@ -281,14 +281,14 @@ const THEMES: ThemeStudy[] = [
       "Macbeth explores what makes a good or bad ruler by contrasting Duncan, Macbeth, and Malcolm. Duncan embodies the medieval ideal of the gracious, divinely appointed monarch. He rewards loyalty, dispenses justice, and is mourned as saintly. However, his excessive trust makes him vulnerable. Macbeth's reign is the inverse: he rules through fear, suspicion, and violence. He has no legitimate claim, and the natural world rebels against his authority. His subjects serve out of obligation rather than love. Malcolm represents a synthesis: he has Duncan's virtue but adds political shrewdness. His list of \"king-becoming graces\" provides a direct checklist against which Macbeth's rule fails on every count. The play's endorsement of rightful monarchy would have pleased James I, who promoted the Divine Right of Kings.",
     keyQuotes: [
       {
-        quote: 'The king-becoming graces: / As justice, verity, temperance, stableness.',
+        quote: 'The king-becoming graces, / As justice, verity, temp’rance, stableness.',
         speaker: 'Malcolm',
         actScene: 'Act 4, Scene 3',
         analysis:
           'Malcolm provides a direct list of royal virtues. Each one is a quality Macbeth conspicuously lacks, creating a systematic indictment of his rule.',
       },
       {
-        quote: 'I have honour, love, obedience, troops of friends, / I must not look to have.',
+        quote: 'As honour, love, obedience, troops of friends, / I must not look to have.',
         speaker: 'Macbeth',
         actScene: 'Act 5, Scene 3',
         analysis:
@@ -306,7 +306,7 @@ const THEMES: ThemeStudy[] = [
       'Act 1: Duncan models generous kingship, rewarding service and expressing gratitude. However, his inability to read character reveals the vulnerability of unguarded virtue.',
       'Act 2: The murder of a divinely appointed king provokes cosmic disorder: horses eat each other, darkness covers the land, an owl kills a falcon.',
       "Act 3: Macbeth rules through suspicion, ordering Banquo's murder. The disrupted feast symbolises a kingdom where communal bonds have broken down.",
-      'Act 4: Scotland under Macbeth is a place of terror. Ross describes a country where "sighs and groans and shrieks" go unnoticed. Malcolm\'s testing of Macduff demonstrates the shrewd leadership Scotland needs.',
+      'Act 4: Scotland under Macbeth is a place of terror. Ross describes a country where "sighs, and groans, and shrieks" go unnoticed. Malcolm\'s testing of Macduff demonstrates the shrewd leadership Scotland needs.',
       "Act 5: Macbeth is abandoned by his thanes, proving that tyranny cannot sustain itself. Malcolm's coronation at Scone restores legitimate order.",
     ],
     contextLink:
@@ -336,7 +336,7 @@ const THEMES: ThemeStudy[] = [
           "Her casual dismissal will be reversed in the sleepwalking scene. The contrast between this confidence and her later despair is one of the play's most powerful ironies.",
       },
       {
-        quote: 'It will have blood, they say: blood will have blood.',
+        quote: 'It will have blood, they say, blood will have blood.',
         speaker: 'Macbeth',
         actScene: 'Act 3, Scene 4',
         analysis:

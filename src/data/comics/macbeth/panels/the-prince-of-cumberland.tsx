@@ -22,17 +22,18 @@ import {
  * Act 1, Scene 4: "The Prince of Cumberland", the fourth moment in the
  * guide's timeline. Every detail is from the scene:
  *
- * - "Forres. The palace." Duncan receives Macbeth and Banquo at court, so a
+ * - "Forres. A Room in the Palace." Duncan receives Macbeth and Banquo at
+ *   court, so a
  *   stone hall, the king enthroned on a dais under a cloth of state.
- * - "We will establish our estate upon / Our eldest, Malcolm, whom we name
+ * - "We will establish our estate upon / Our eldest, Malcolm; whom we name
  *   hereafter / The Prince of Cumberland". Malcolm kneels on the step below
  *   his father, and the old king (white-bearded and crowned in red, as the
  *   other Macbeth panels draw him) holds out his hand over him.
  * - "signs of nobleness, like stars, shall shine / On all deservers." Duncan's
  *   own image, so the cloth of state behind the throne is cut with stars.
- * - Macbeth's aside: "The Prince of Cumberland! That is a step / On which I
- *   must fall down or else o'erleap, / For in my way it lies. Stars, hide your
- *   fires; / Let not light see my black and deep desires." Macbeth is the big
+ * - Macbeth's aside: "The Prince of Cumberland!—That is a step / On which I
+ *   must fall down, or else o’erleap, / For in my way it lies. Stars, hide
+ *   your fires! / Let not light see my black and deep desires." Macbeth is the big
  *   figure in the foreground, turned away from the throne towards us, so that
  *   the court behind him cannot see his face. The steps of the dais are
  *   Malcolm's "step", between Macbeth and the crown.

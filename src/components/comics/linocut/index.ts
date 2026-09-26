@@ -75,9 +75,11 @@
  *   reviewer can check the picture against the book.
  * - Quotations on art are verbatim, copied from the held edition
  *   (src/data/full-texts/<slug>.ts) or, where none is held, from the guide's
- *   own verified quotations (Macbeth: the timeline and key quotations in
- *   src/data/study-guides/macbeth.ts, checked against the Folger text). 15
- *   words at most on a panel. The comics test checks every one.
+ *   own verified quotations. Never from another edition you find online:
+ *   Macbeth's quotations were first taken from the Folger Shakespeare
+ *   Library's text, which is licensed for non-commercial use only, and were
+ *   moved to the held Gutenberg edition on 26 September 2026. 15 words at
+ *   most on a panel. The comics test checks every one.
  *
  * ── SAFEGUARDING: MANY READERS ARE CHILDREN ─────────────────────────────────
  * - Suggest violence; never show it. No wounds, no gore, no bodies. Show the

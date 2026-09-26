@@ -132,8 +132,8 @@ export default async function MacbethAct3Page() {
             <div className="space-y-3">
               <div className="rounded-lg border border-border/60 p-3">
                 <p className="font-medium">
-                  &ldquo;Thou hast it now: King, Cawdor, Glamis, all, / As the weird women promised,
-                  and I fear / Thou play&rsquo;dst most foully for&rsquo;t.&rdquo;
+                  &ldquo;Thou hast it now, King, Cawdor, Glamis, all, / As the Weird Women promis’d;
+                  and, I fear, / Thou play’dst most foully for’t.&rdquo;
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
                   <span className="font-medium text-foreground">Technique:</span> List structure
@@ -157,8 +157,8 @@ export default async function MacbethAct3Page() {
               </div>
               <div className="rounded-lg border border-border/60 p-3">
                 <p className="font-medium">
-                  &ldquo;Upon my head they placed a fruitless crown / And put a barren sceptre in my
-                  grip.&rdquo;
+                  &ldquo;Upon my head they plac’d a fruitless crown, / And put a barren sceptre in
+                  my gripe.&rdquo;
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
                   <span className="font-medium text-foreground">Technique:</span> Metaphor &amp;
@@ -170,8 +170,8 @@ export default async function MacbethAct3Page() {
               </div>
               <div className="rounded-lg border border-border/60 p-3">
                 <p className="font-medium">
-                  &ldquo;There is none but he / Whose being I do fear; and under him / My genius is
-                  rebuked.&rdquo;
+                  &ldquo;There is none but he / Whose being I do fear: and under him / My genius is
+                  rebuk’d.&rdquo;
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
                   <span className="font-medium text-foreground">Technique:</span> Classical
@@ -222,14 +222,14 @@ export default async function MacbethAct3Page() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Sparkles className="size-5 text-clay-600" />
-            {_tr(`Scene 2 - &ldquo;Nought&rsquo;s Had, All&rsquo;s Spent&rdquo;`)}
+            {_tr(`Scene 2 - &ldquo;Naught’s Had, All’s Spent&rdquo;`)}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <div>
             <h4 className="font-semibold mb-1">Summary</h4>
             <p className="text-muted-foreground">
-              Lady Macbeth, alone, reveals her own discontent: &ldquo;Nought&rsquo;s had,
+              Lady Macbeth, alone, reveals her own discontent: &ldquo;Naught&rsquo;s had,
               all&rsquo;s spent, / Where our desire is got without content.&rdquo; Macbeth enters
               and confesses he is tortured by &ldquo;terrible dreams&rdquo; and envies Duncan, who
               &ldquo;sleeps well&rdquo; in death. He hints at a plan against Banquo but does not
@@ -262,7 +262,7 @@ export default async function MacbethAct3Page() {
             <div className="space-y-3">
               <div className="rounded-lg border border-border/60 p-3">
                 <p className="font-medium">
-                  &ldquo;Nought&rsquo;s had, all&rsquo;s spent, / Where our desire is got without
+                  &ldquo;Naught’s had, all’s spent, / Where our desire is got without
                   content.&rdquo;
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
@@ -383,7 +383,7 @@ export default async function MacbethAct3Page() {
             <div className="space-y-3">
               <div className="rounded-lg border border-border/60 p-3">
                 <p className="font-medium">
-                  &ldquo;O treachery! Fly, good Fleance, fly, fly, fly!&rdquo;
+                  &ldquo;O, treachery! Fly, good Fleance, fly, fly, fly!&rdquo;
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
                   <span className="font-medium text-foreground">Technique:</span> Repetition &amp;
@@ -491,7 +491,7 @@ export default async function MacbethAct3Page() {
               </div>
               <div className="rounded-lg border border-border/60 p-3">
                 <p className="font-medium">
-                  &ldquo;Thou canst not say I did it; never shake / Thy gory locks at me.&rdquo;
+                  &ldquo;Thou canst not say I did it. Never shake / Thy gory locks at me.&rdquo;
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
                   <span className="font-medium text-foreground">Technique:</span> Dramatic irony
@@ -503,7 +503,7 @@ export default async function MacbethAct3Page() {
               </div>
               <div className="rounded-lg border border-border/60 p-3">
                 <p className="font-medium">
-                  &ldquo;It will have blood, they say: blood will have blood.&rdquo;
+                  &ldquo;It will have blood, they say, blood will have blood.&rdquo;
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
                   <span className="font-medium text-foreground">Technique:</span> Repetition &amp;
@@ -648,8 +648,9 @@ export default async function MacbethAct3Page() {
             <div className="space-y-3">
               <div className="rounded-lg border border-border/60 p-3">
                 <p className="font-medium">
-                  &ldquo;The son of Duncan / Lives in the English court and is received / Of the
-                  most pious Edward with such grace.&rdquo;
+                  &ldquo;The son of Duncan, / From whom this tyrant holds the due of birth, / Lives
+                  in the English court and is receiv’d / Of the most pious Edward with such
+                  grace.&rdquo;
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
                   <span className="font-medium text-foreground">Technique:</span> Contrast.

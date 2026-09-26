@@ -24,8 +24,8 @@ import {
  *   armed himself in ("At least we'll die with harness on our back"), stands
  *   with his head bowed, one open hand held out to the one light in the room,
  *   as he speaks to it.
- * - "Out, out, brief candle! / Life's but a walking shadow, a poor player /
- *   That struts and frets his hour upon the stage / And then is heard no
+ * - "Out, out, brief candle! / Life’s but a walking shadow; a poor player, /
+ *   That struts and frets his hour upon the stage, / And then is heard no
  *   more." So the only light is a candle burnt down to a stub, and the candle
  *   throws Macbeth's shadow, crown and all, huge and flat on the stone behind
  *   him: the walking shadow standing over the man.

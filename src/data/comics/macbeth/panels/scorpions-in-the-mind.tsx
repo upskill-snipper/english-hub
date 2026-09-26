@@ -18,22 +18,23 @@ import { CROWN, CROWN_CUTS, EYE, HEAD_MACBETH, HEAD_WOMAN, VEIL } from './invern
 /**
  * Act 3, Scene 2: "Scorpions in the mind", the thirteenth moment in the
  * guide's timeline. A room in the palace, towards evening, before the feast.
- * Every detail is from the scene (Folger text):
+ * Every detail is from the scene (quoted from the held
+ * edition, src/data/full-texts/macbeth.ts):
  *
  * - MACBETH: "O, full of scorpions is my mind, dear wife!" The picture makes
  *   the metaphor visible without putting anything on his body: the candle
  *   throws his shadow, crown and all, huge on the wall behind him, and the
  *   shadow of his head is crawling with red scorpions. The red is the
- *   scorpions, the candle flame and the crown he has "scorched the snake"
+ *   scorpions, the candle flame and the crown he has "scorch’d the snake"
  *   to keep.
  * - He is shaken by "terrible dreams / That shake us nightly", so he sits
  *   with his head in his hand.
- * - LADY MACBETH: "Come on, gentle my lord, / Sleek o'er your rugged looks.
+ * - LADY MACBETH: "Come on, / Gently my lord, sleek o’er your rugged looks; /
  *   Be bright and jovial among your guests tonight." So she stands across the
  *   table from him and reaches towards him. He keeps the plan to kill Banquo
  *   from her ("Be innocent of the knowledge, dearest chuck"), so the candle
  *   stands between them and his face is turned down, away from her.
- * - MACBETH: "Light thickens, and the crow / Makes wing to th' rooky wood."
+ * - MACBETH: "Light thickens; and the crow / Makes wing to th’ rooky wood."
  *   So through the window it is dusk, a last band of light over a dark wood,
  *   and crows fly towards it.
  *

@@ -8,7 +8,8 @@ import { render, screen } from '@testing-library/react'
 import { readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { TEXT_ANNOTATIONS } from '@/data/text-annotations.generated'
-import { InteractiveTextViewer } from '@/components/study/InteractiveTextViewer'
+import { InteractiveTextViewer, type TextData } from '@/components/study/InteractiveTextViewer'
+import { macbethText } from '@/data/full-texts/macbeth'
 
 /**
  * The reader offered five highlighting overlays and highlighted almost nothing.
@@ -245,5 +246,63 @@ describe('the viewer keeps every note on a shared span', () => {
     const marks = screen.getAllByRole('button').filter((el) => el.textContent === SPAN)
     expect(marks).toHaveLength(1)
     expect(marks[0].getAttribute('aria-label') ?? '').toContain('The famous opening simile')
+  })
+})
+
+/**
+ * A scene with notes shows the student "&c.", not "&amp;c.".
+ *
+ * WHAT BROKE (26 September 2026). The viewer renders a scene that carries
+ * notes as plain text, so it can wrap each noted line in a highlight, and it
+ * made that text by deleting the HTML tags and nothing else. The entities the
+ * editions escape stayed escaped and were printed as written, in any text
+ * whose noted scene holds one. It surfaced when Macbeth's reader moved to the
+ * held edition, whose Act 4, Scene 1 has both notes and "Black Spirits, &c.";
+ * the hand-typed text it replaced had no ampersand.
+ */
+
+const ENTITY_SCENE = macbethText.sections.find((s) => s.id === 'activ-scenei')!
+
+function renderWith(annotations: TextData['sections'][number]['annotations']) {
+  const data: TextData = {
+    title: 'Macbeth',
+    author: 'William Shakespeare',
+    type: 'play',
+    sections: [{ ...ENTITY_SCENE, annotations }],
+  }
+  return render(<InteractiveTextViewer data={data} storageKey="test-entities" />)
+}
+
+describe('an annotated scene', () => {
+  it('holds the escaped ampersand this test is about', () => {
+    // If the edition stopped escaping it, the test below would prove nothing.
+    expect(ENTITY_SCENE.content).toContain('&amp;c.')
+  })
+
+  it('prints the character, not the entity', () => {
+    const { container } = renderWith([
+      {
+        type: 'language',
+        text: 'Double, double, toil and trouble;',
+        note: 'The chant, in the rhythm the witches keep throughout.',
+      },
+    ])
+    const text = container.textContent ?? ''
+    expect(text).toContain('Black Spirits,” &c.')
+    expect(text).not.toContain('&amp;')
+  })
+
+  it('and still finds a note whose span was cut from the escaped text', () => {
+    // Generated notes are cut from the section's HTML with its tags removed, so
+    // a span may carry the entity. It has to land on the decoded text.
+    const { container } = renderWith([
+      {
+        type: 'context',
+        text: 'Black Spirits,” &amp;c.',
+        note: 'A song the edition names only by its first words.',
+      },
+    ])
+    const marked = [...container.querySelectorAll('[role="button"]')].map((el) => el.textContent)
+    expect(marked).toContain('Black Spirits,” &c.')
   })
 })

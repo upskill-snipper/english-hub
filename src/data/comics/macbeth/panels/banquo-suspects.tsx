@@ -17,16 +17,17 @@ import { CROWN, CROWN_CUTS, EYE, HEAD_BEARD, HEAD_MACBETH } from './inverness-pe
 /**
  * Act 3, Scene 1: "Banquo suspects", the twelfth moment in the guide's
  * timeline. The royal palace at Forres, in the morning of the day of the
- * feast. Every detail is from the scene (Folger text):
+ * feast. Every detail is from the scene (quoted from the held
+ * edition, src/data/full-texts/macbeth.ts):
  *
- * - BANQUO, alone: "Thou hast it now: King, Cawdor, Glamis, all, / As the
- *   weird women promised, and I fear / Thou played'st most foully for 't." So
+ * - BANQUO, alone: "Thou hast it now, King, Cawdor, Glamis, all, / As the Weird
+ *   Women promis’d; and, I fear, / Thou play’dst most foully for’t." So
  *   he stands apart, a hand at his beard, looking across the hall at the new
  *   king: the look of a man turning a thought over.
  * - "Enter Macbeth as King". He asks Banquo "Ride you this afternoon?", so
  *   Banquo is dressed to ride: a cloak, boots, a sword.
  * - MACBETH, alone: "To be thus is nothing, / But to be safely thus. Our fears
- *   in Banquo / Stick deep", and "Upon my head they placed a fruitless crown /
+ *   in Banquo / Stick deep", and "Upon my head they plac’d a fruitless crown, /
  *   And put a barren sceptre in my gripe". So Macbeth sits enthroned on a
  *   dais, gripping his sceptre, watching Banquo. The crown is the spot colour,
  *   because it is what the scene is about: the thing he has, and cannot keep

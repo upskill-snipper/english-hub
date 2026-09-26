@@ -104,6 +104,9 @@ const EXPECTED_SCENES: Record<string, number> = {
   'king-lear': 26,
   'antony-and-cleopatra': 42,
   'the-tempest': 9,
+  // Counted in the edition's own contents list (7, 4, 6, 3, 8) before the
+  // generator was pointed at it, not taken from the parse it is checking.
+  macbeth: 28,
 }
 
 function dataFor(slug: string): string {
@@ -111,11 +114,15 @@ function dataFor(slug: string): string {
 }
 
 describe('the texts are there', () => {
-  it('has twelve plays, seven prose works and nine poems', () => {
+  it('has thirteen plays, seven prose works and nine poems', () => {
     // 26 September 2026: Animal Farm (from Project Gutenberg Australia) and Do
     // not go gentle (from the Pearson anthology) joined, once the site began
     // judging copyright by UK law only.
-    expect(PLAYS).toHaveLength(12)
+    //
+    // Macbeth joined the same day as the thirteenth play. Its reader had printed
+    // the Folger Shakespeare Library's edited text, which Folger licenses for
+    // non-commercial use only; it now reads Project Gutenberg #1533, held here.
+    expect(PLAYS).toHaveLength(13)
     expect(PROSE).toHaveLength(7)
     expect(POEMS).toHaveLength(9)
   })
@@ -176,6 +183,9 @@ describe('it is the real text, not a reproduction', () => {
     ['twelfth-night', 'If music be the food of love'],
     ['a-midsummer-nights-dream', 'course of true love'],
     ['henry-v', 'Once more unto the breach'],
+    // The Gutenberg spelling, not Folger's "Untimely ripped": a reader that
+    // slid back to the licensed edition would fail here.
+    ['macbeth', 'Untimely ripp’d'],
   ])('%s contains "%s"', (slug, line) => {
     expect(dataFor(slug)).toContain(line)
   })

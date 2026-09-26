@@ -18,12 +18,12 @@ import { Brooch, mailRings, PH, portraitGround, PortraitRule, PW } from './commo
  * twice that he is young: "I am young" (his own words to Macduff, 4.3) and
  * Macbeth's sneer, "What's the boy Malcolm?" (5.3). So he is beardless, the
  * youngest face in the set. The one thing the play puts in his hands is his
- * own order at Birnam Wood (5.4): "Let every soldier hew him down a bough /
- * And bear 't before him", so he carries a leafy bough before him, the wood
+ * own order at Birnam Wood (5.4): "Let every soldier hew him down a bough, /
+ * And bear’t before him", so he carries a leafy bough before him, the wood
  * that comes to Dunsinane.
  *
  * He wears the mail and pinned cloak of an eleventh-century prince, and no
- * crown: he is hailed king at the very end and will be "crowned at Scone"
+ * crown: he is hailed king at the very end and will be "crown’d at Scone"
  * after the play is over. There is no red in this plate.
  */
 

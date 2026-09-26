@@ -18,7 +18,7 @@ import { Brooch, PH, portraitGround, PortraitRule, PW } from './common'
  * Duncan, King of Scotland. The play's only word for how he looks is Lady
  * Macbeth's, remembering him in her sleep: "the old man" (5.1). In 2.2 she
  * says she could not kill him herself because "Had he not resembled / My
- * father as he slept, I had done 't", so he is an old man who could be
+ * father as he slept, I had done’t", so he is an old man who could be
  * someone's father: white hair, a long white beard, a mild face.
  *
  * Everything else is plain eleventh-century dress for a king: a crown with
@@ -285,7 +285,7 @@ export const duncan: Portrait = {
   alt: 'A linocut portrait of King Duncan in profile, facing right: an old man with white hair, bushy white brows, a lined face with a mild, heavy-lidded eye, and a long white beard falling in waves over a dark mantle pinned with a ring brooch. On his head is a plain crown with five points, printed in red. One numbered red marker points to his white beard.',
   describedBy: [{ phrase: 'the old man', at: [BEARD_AT[0] + 72, BEARD_AT[1] + 18], to: BEARD_AT }],
   where: 'Act 5, Scene 1',
-  note: 'Lady Macbeth, walking in her sleep, remembers the king only as “the old man”. In Act 2 she could not kill him herself: “Had he not resembled / My father as he slept, I had done ’t.”',
+  note: 'Lady Macbeth, walking in her sleep, remembers the king only as “the old man”. In Act 2 she could not kill him herself: “Had he not resembled / My father as he slept, I had done’t.”',
   artNote:
     'Nothing else in the play describes the living king, so his crown, mantle and brooch are the plain dress of an eleventh-century king.',
 }

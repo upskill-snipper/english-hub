@@ -1,3 +1,5 @@
+import { macbethText } from '@/data/full-texts/macbeth'
+import { playPassage } from '@/lib/study-guides/passage'
 import type { StudyGuide } from '@/lib/study-guides/types'
 
 /**
@@ -7,26 +9,30 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * so this file adds only what that page lacked: close-reading extracts and a
  * glossary, plus the scene timeline and character map the visuals draw.
  *
- * No edition of Macbeth is held in src/data/full-texts, so the guide test cannot
- * check these quotations mechanically. Every quotation here, in the extracts,
- * on the scene cards and inside the prose, was copied from the Folger
- * Shakespeare Library's online text, scene by scene, and its wording checked
- * against the MIT Shakespeare text and Project Gutenberg eBook #1533; speakers
- * and scenes were confirmed on the Folger page for that scene. Where editions
- * differ (Folger's "you murd'ring ministers" is "your" in the Gutenberg text;
- * Folger's "one-half world" and "whereabouts" are "one halfworld" and
- * "whereabout" in the MIT text), the guide follows the Folger text and says so
- * in rights.acknowledgement.
+ * THE EDITION, AND WHY IT CHANGED (26 September 2026). This guide was written
+ * from the Folger Shakespeare Library's online text: its extracts printed
+ * Folger's wording and its quotations followed it. Folger's copyright policy
+ * (folger.edu/copyright-policy) licenses Folger Digital Texts under CC BY-NC
+ * 3.0 and says they may not be used "for commercial purposes", and this site
+ * sells subscriptions. Shakespeare's words are free; an editor's text is not.
  *
- * The exception is the two extracts added on 26 September 2026 (1.3 and 5.3),
- * which print the Gutenberg text because Folger Digital Texts are licensed for
- * non-commercial use only; the note above the extracts says why and how. The
- * same licence bears on everything else here that follows Folger, which has
- * not been re-examined.
+ * So the guide now follows Project Gutenberg eBook #1533, held in full as
+ * src/data/full-texts/macbeth.ts and printed in the reader. Every extract is
+ * cut from it by playPassage() in src/lib/study-guides/passage.ts, never typed,
+ * and study-guides.test.ts checks every quotation here against it: extracts,
+ * annotations, scene cards and the quotations inside the prose. Where the two
+ * editions differ the guide says what Gutenberg says: "wither'd", "ripp'd",
+ * "call'd", "your murd'ring ministers", "one half-world", "whereabout",
+ * "Thou marshall'st", "Oh, oh, oh!", and its punctuation ("All hail, Macbeth!
+ * that shalt be king hereafter!"). Annotation phrases keep the edition's curly
+ * apostrophes, because the guide page marks each phrase by finding it in the
+ * printed passage character for character.
  *
- * A fact-check pass (September 2026) searched every quotation, speaker and
- * scene against the full Folger text (Mowat and Werstine) and found them all.
- * It corrected the plot instead: Duncan does not "greet" Macbeth in 1.2 (Macbeth
+ * A fact-check pass earlier in September 2026, while the guide still quoted
+ * Folger, searched every quotation, speaker and scene against the full Folger
+ * text (Mowat and Werstine) and found them all; the quotations have since
+ * moved to Gutenberg's wording, as above, and it is that the test now checks.
+ * The pass corrected the plot instead: Duncan does not "greet" Macbeth in 1.2 (Macbeth
  * is not on stage); Malcolm is hailed king at the end, not crowned; the first
  * prophecy in 1.3 is Glamis, which Macbeth already holds, so it is the Cawdor
  * prophecy that comes true within minutes; "Beware Macduff" is not misleading,
@@ -48,7 +54,7 @@ export const guide: StudyGuide = {
   rights: {
     status: 'public-domain',
     acknowledgement:
-      "First printed in the First Folio (1623). Quotations and scene numbers follow the Folger Shakespeare Library's edition, edited by Barbara A. Mowat and Paul Werstine, with its editorial brackets removed, and were checked against the MIT Shakespeare text and Project Gutenberg eBook #1533. The two passages printed from Act 1, Scene 3 and Act 5, Scene 3, and the notes on them, follow Project Gutenberg's text instead, with its older spellings such as “wither'd”. Punctuation, spelling and line numbers differ slightly between editions, so find each passage in your own copy by its opening words.",
+      "First printed in the First Folio (1623). The passages and quotations here follow Project Gutenberg eBook #1533, a public-domain edition that this site prints in full in its reader, with its older spellings such as “wither'd” and “ripp'd”. Punctuation, spelling and line numbers differ slightly between editions, so find each passage in your own copy by its opening words.",
   },
 
   native: {
@@ -68,37 +74,37 @@ export const guide: StudyGuide = {
   // prophecies that start everything, Lady Macbeth at her strongest, Macbeth on
   // the brink, Lady Macbeth broken, and Macbeth at bay.
   //
-  // The first and last were added on 26 September 2026, and they print Project
-  // Gutenberg eBook #1533, not the Folger text the rest of this file follows.
-  // They were first cut from the Folger pages for 1.3 and 5.3, but Folger's
-  // copyright policy (folger.edu/copyright-policy, read 26 September 2026)
-  // licenses Folger Digital Texts under CC BY-NC 3.0 and says the texts may
-  // not be used "for commercial purposes", and this site is commercial. So
-  // each passage was cut again from the Gutenberg file by script, never
-  // retyped, and matched line for line against the Folger scene: the same 32
-  // and 31 lines, the same speakers, nothing dropped. The two differ in
-  // spelling and elision ("wither'd", "call'd", "pronounc'd", "favours",
-  // "honour"), in punctuation, in "ye" for "you" twice in 1.3 ("Are ye
-  // fantastical") and in "the inhabitants" for "th' inhabitants". The
-  // annotations, notes and pointers of these two quote Gutenberg too,
-  // including their lines from other scenes, and every quotation in them was
-  // matched against the Gutenberg file by script, case and marks included.
+  // All five are cut from the held edition by playPassage(), from the paragraph
+  // holding the first phrase to the one holding the second, and it throws
+  // rather than drift if either stops being found. It cuts whole speeches, so
+  // the 5.3 passage ends on the "Seyton!—" that closes Macbeth's speech.
   //
-  // They also carry the play's own words for the Witches, Banquo and Malcolm,
-  // which the comic portraits in src/data/comics/macbeth point to: the comics
-  // test checks every marker phrase against these quotations, so rewording a
-  // line here can unregister a portrait. The Witches' first marker is
-  // therefore "So wither'd", Gutenberg's spelling.
+  // The first and last were added on 26 September 2026, first from the Folger
+  // pages for 1.3 and 5.3 and then, the same day, from the Gutenberg file, when
+  // Folger's licence was read (see the header). The other three were Folger's
+  // text until they were cut again here, and the sleepwalking passage is
+  // printed as prose, as the edition sets it: playPassage's `prose` joins the
+  // printer's line breaks rather than marking them as verse.
+  //
+  // The comic portraits in src/data/comics/macbeth point to the play's words
+  // for the Witches, Banquo and Malcolm, and the comics test checks each marker
+  // phrase against the held edition, so the Witches' first marker is "So
+  // wither'd", Gutenberg's spelling.
   extracts: [
     {
       title: "The witches' prophecies",
       where: 'Act 1, Scene 3',
       pointer:
         "Macbeth and Banquo come upon the witches on the heath, just after Macbeth's first line, “So foul and fair a day I have not seen”: from Banquo's “How far is't call'd to Forres?” to “Banquo and Macbeth, all hail!”, just before Macbeth orders them to stay and “tell me more”.",
-      text: "BANQUO: How far is't call'd to Forres?—What are these, / So wither'd, and so wild in their attire, / That look not like the inhabitants o' th' earth, / And yet are on't?—Live you? or are you aught / That man may question? You seem to understand me, / By each at once her choppy finger laying / Upon her skinny lips. You should be women, / And yet your beards forbid me to interpret / That you are so. / MACBETH: Speak, if you can;—what are you? / FIRST WITCH: All hail, Macbeth! hail to thee, Thane of Glamis! / SECOND WITCH: All hail, Macbeth! hail to thee, Thane of Cawdor! / THIRD WITCH: All hail, Macbeth! that shalt be king hereafter! / BANQUO: Good sir, why do you start and seem to fear / Things that do sound so fair?—I' th' name of truth, / Are ye fantastical, or that indeed / Which outwardly ye show? My noble partner / You greet with present grace and great prediction / Of noble having and of royal hope, / That he seems rapt withal. To me you speak not. / If you can look into the seeds of time, / And say which grain will grow, and which will not, / Speak then to me, who neither beg nor fear / Your favours nor your hate. / FIRST WITCH: Hail! / SECOND WITCH: Hail! / THIRD WITCH: Hail! / FIRST WITCH: Lesser than Macbeth, and greater. / SECOND WITCH: Not so happy, yet much happier. / THIRD WITCH: Thou shalt get kings, though thou be none: / So all hail, Macbeth and Banquo! / FIRST WITCH: Banquo and Macbeth, all hail!",
+      text: playPassage(
+        macbethText,
+        'acti-sceneiii',
+        'How far is’t call’d to Forres',
+        'Banquo and Macbeth, all hail',
+      ),
       annotations: [
         {
-          phrase: "So wither'd, and so wild in their attire",
+          phrase: 'So wither’d, and so wild in their attire',
           note: "It is Banquo, not Macbeth, who describes the witches, and after “wither'd” and “wild” he turns to what they are not: they “look not like the inhabitants o' th' earth, / And yet are on't”. Everything about them sits on a border, earthly and unearthly, living and something else. The play never settles exactly what they are, so an answer can weigh more than one reading.",
         },
         {
@@ -139,8 +145,13 @@ export const guide: StudyGuide = {
       title: 'Lady Macbeth calls on the spirits',
       where: 'Act 1, Scene 5',
       pointer:
-        "Lady Macbeth's soliloquy after the messenger's news that “The King comes here tonight”: from “The raven himself is hoarse” to “To cry ‘Hold, hold!’”, just before Macbeth enters.",
-      text: "The raven himself is hoarse / That croaks the fatal entrance of Duncan / Under my battlements. Come, you spirits / That tend on mortal thoughts, unsex me here, / And fill me from the crown to the toe top-full / Of direst cruelty. Make thick my blood. / Stop up th' access and passage to remorse, / That no compunctious visitings of nature / Shake my fell purpose, nor keep peace between / Th' effect and it. Come to my woman's breasts / And take my milk for gall, you murd'ring ministers, / Wherever in your sightless substances / You wait on nature's mischief. Come, thick night, / And pall thee in the dunnest smoke of hell, / That my keen knife see not the wound it makes, / Nor heaven peep through the blanket of the dark / To cry ‘Hold, hold!’",
+        "Lady Macbeth's soliloquy after the messenger's news that “The King comes here tonight”: from “The raven himself is hoarse” to the cry of “Hold, hold!” she prays heaven will not make, just before Macbeth enters.",
+      text: playPassage(
+        macbethText,
+        'acti-scenev',
+        'The raven himself is hoarse',
+        'To cry, “Hold, hold!”',
+      ),
       annotations: [
         {
           phrase: 'The raven himself is hoarse',
@@ -151,11 +162,11 @@ export const guide: StudyGuide = {
           note: 'The imperatives “Come, you spirits” and “unsex me here” are an invocation, the language of someone summoning spirits. She asks to be stripped of the gentleness her world expected of women, which suggests she believes cruelty is not natural to her and must be put there. A Jacobean audience would probably also hear a woman calling on spirits as close to witchcraft.',
         },
         {
-          phrase: 'from the crown to the toe top-full',
+          phrase: 'from the crown to the toe, top-full',
           note: 'The image is of a body as a vessel, filled from head to foot with cruelty. “Crown” can also be heard as a pun: the crown of the head, and the crown of Scotland she wants for her husband, as if the cruelty and the ambition filled her together.',
         },
         {
-          phrase: "Stop up th' access and passage to remorse",
+          phrase: 'Stop up th’ access and passage to remorse',
           note: 'She imagines conscience as something that travels through the body and can be blocked, like a passage sealed shut. The whole play proves her wrong: in Act 5, Scene 1 the remorse she walled up comes back in her sleep, and the Doctor says “More needs she the divine than the physician”.',
         },
         {
@@ -172,7 +183,7 @@ export const guide: StudyGuide = {
         },
         {
           phrase: 'Nor heaven peep through the blanket of the dark',
-          note: 'Heaven is pictured as a watcher who might peep through and cry “Hold, hold!”, meaning stop. The homely word “blanket” makes the night a bedcover over a sleeping house. At the end of the play Macbeth damns whoever first cries “Hold! Enough!”, so the cry she fears here returns in his last words.',
+          note: 'Heaven is pictured as a watcher who might peep through and cry “Hold, hold!”, meaning stop. The homely word “blanket” makes the night a bedcover over a sleeping house. At the end of the play Macbeth damns whoever first cries “Hold, enough!”, so the cry she fears here returns in his last words.',
         },
       ],
       question:
@@ -183,7 +194,12 @@ export const guide: StudyGuide = {
       where: 'Act 2, Scene 1',
       pointer:
         "The end of the scene, after Macbeth sends his servant away: from “Is this a dagger which I see before me” to “That summons thee to heaven or to hell”, as Macbeth leaves for Duncan's room.",
-      text: "Is this a dagger which I see before me, / The handle toward my hand? Come, let me clutch thee. / I have thee not, and yet I see thee still. / Art thou not, fatal vision, sensible / To feeling as to sight? Or art thou but / A dagger of the mind, a false creation / Proceeding from the heat-oppressèd brain? / I see thee yet, in form as palpable / As this which now I draw. / Thou marshal'st me the way that I was going, / And such an instrument I was to use. / Mine eyes are made the fools o' th' other senses / Or else worth all the rest. I see thee still, / And, on thy blade and dudgeon, gouts of blood, / Which was not so before. There's no such thing. / It is the bloody business which informs / Thus to mine eyes. Now o'er the one-half world / Nature seems dead, and wicked dreams abuse / The curtained sleep. Witchcraft celebrates / Pale Hecate's off'rings, and withered murder, / Alarumed by his sentinel, the wolf, / Whose howl's his watch, thus with his stealthy pace, / With Tarquin's ravishing strides, towards his design / Moves like a ghost. Thou sure and firm-set earth, / Hear not my steps, which way they walk, for fear / Thy very stones prate of my whereabouts / And take the present horror from the time, / Which now suits with it. Whiles I threat, he lives. / Words to the heat of deeds too cold breath gives. / [A bell rings.] / I go, and it is done. The bell invites me. / Hear it not, Duncan, for it is a knell / That summons thee to heaven or to hell.",
+      text: playPassage(
+        macbethText,
+        'actii-scenei',
+        'Is this a dagger which I see before me',
+        'That summons thee to heaven or to hell',
+      ),
       annotations: [
         {
           phrase: 'Is this a dagger which I see before me',
@@ -191,10 +207,10 @@ export const guide: StudyGuide = {
         },
         {
           phrase: 'A dagger of the mind, a false creation',
-          note: 'Macbeth diagnoses himself: the dagger may come from a “heat-oppressèd brain”, a mind feverish with what it plans. The more convincing reading is that guilt is already at work before the crime, since the vision appears only after he has decided to kill.',
+          note: 'Macbeth diagnoses himself: the dagger may come from a “heat-oppressed brain”, a mind feverish with what it plans. The more convincing reading is that guilt is already at work before the crime, since the vision appears only after he has decided to kill.',
         },
         {
-          phrase: "Thou marshal'st me the way that I was going",
+          phrase: 'Thou marshall’st me the way that I was going',
           note: 'To marshal is to lead, as an officer leads troops. But the dagger leads him only “the way that I was going”. This is the key line for any question about fate and free will: whatever the vision is, it points him where he has already chosen to go, and in Act 1 he had hoped “chance may crown me / Without my stir”.',
         },
         {
@@ -206,11 +222,11 @@ export const guide: StudyGuide = {
           note: "He argues himself out of the vision: “There's no such thing”, only the murder shaping what he sees. The shift from terror to explanation shows a man trying to control his conscience with reason, a pattern that returns throughout the play, where reason never silences his conscience for long.",
         },
         {
-          phrase: "Witchcraft celebrates / Pale Hecate's off'rings",
+          phrase: 'Witchcraft celebrates / Pale Hecate’s off’rings',
           note: 'Hecate was the goddess of witchcraft. Macbeth pictures half the world asleep while witches make offerings and wicked dreams disturb sleepers, so the night he enters is a night that belongs to the powers he met on the heath. The sleep imagery prepares for the voice that cries he has murdered sleep.',
         },
         {
-          phrase: 'withered murder',
+          phrase: 'wither’d murder',
           note: "Murder is personified as a gaunt figure, woken by the wolf's howl, stealing towards its victim and moving “like a ghost”. Many readers see Macbeth picturing himself here in the third person, as murder itself, as if the deed were done by someone else. That distance may be how he makes himself able to act.",
         },
         {
@@ -226,10 +242,18 @@ export const guide: StudyGuide = {
       where: 'Act 5, Scene 1',
       pointer:
         "The middle of the scene, after the Gentlewoman tells the Doctor that Lady Macbeth rubs her hands as if washing them: from “Yet here's a spot” to “To bed, to bed, to bed” and her exit.",
-      text: "LADY MACBETH: Yet here's a spot. / DOCTOR: Hark, she speaks. I will set down what comes from her, to satisfy my remembrance the more strongly. / LADY MACBETH: Out, damned spot, out, I say! One. Two. Why then, 'tis time to do 't. Hell is murky. Fie, my lord, fie, a soldier and afeard? What need we fear who knows it, when none can call our power to account? Yet who would have thought the old man to have had so much blood in him? / DOCTOR: Do you mark that? / LADY MACBETH: The Thane of Fife had a wife. Where is she now? What, will these hands ne'er be clean? No more o' that, my lord, no more o' that. You mar all with this starting. / DOCTOR: Go to, go to. You have known what you should not. / GENTLEWOMAN: She has spoke what she should not, I am sure of that. Heaven knows what she has known. / LADY MACBETH: Here's the smell of the blood still. All the perfumes of Arabia will not sweeten this little hand. O, O, O! / DOCTOR: What a sigh is there! The heart is sorely charged. / GENTLEWOMAN: I would not have such a heart in my bosom for the dignity of the whole body. / DOCTOR: Well, well, well. / GENTLEWOMAN: Pray God it be, sir. / DOCTOR: This disease is beyond my practice. Yet I have known those which have walked in their sleep, who have died holily in their beds. / LADY MACBETH: Wash your hands. Put on your nightgown. Look not so pale. I tell you yet again, Banquo's buried; he cannot come out on 's grave. / DOCTOR: Even so? / LADY MACBETH: To bed, to bed. There's knocking at the gate. Come, come, come, come. Give me your hand. What's done cannot be undone. To bed, to bed, to bed.",
+      text: playPassage(
+        macbethText,
+        'actv-scenei',
+        'Yet here’s a spot',
+        'What’s done cannot be undone',
+        {
+          prose: true,
+        },
+      ),
       annotations: [
         {
-          phrase: 'Out, damned spot, out, I say!',
+          phrase: 'Out, damned spot! out, I say!',
           note: 'The woman who once gave orders to spirits now gives orders to a stain, and it will not obey. “Damned” carries its full religious weight: she speaks as if the mark is on her soul. Her speech is broken prose, not the controlled verse of Act 1, and its fragments jump between moments.',
         },
         {
@@ -237,7 +261,7 @@ export const guide: StudyGuide = {
           note: 'In Act 1 she called on night to wrap itself “in the dunnest smoke of hell”. Now hell is not a useful darkness to hide in but a place she seems to see and dread. One reading is that she has realised her damnation; another is simply that her nightmares have taken her there.',
         },
         {
-          phrase: 'Fie, my lord, fie, a soldier and afeard?',
+          phrase: 'Fie, my lord, fie! a soldier, and afeard?',
           note: "She replays her own taunts from the night of the murder, still attacking her husband's courage as she did with “When you durst do it, then you were a man”. The sleepwalker is trapped in the scene she once controlled, speaking lines to a husband who is not there.",
         },
         {
@@ -249,15 +273,15 @@ export const guide: StudyGuide = {
           note: 'A jingling rhyme, almost a nursery rhyme, about the murder of Lady Macduff. Lady Macbeth played no part in that killing, which Macbeth ordered alone, yet she knows of it and it haunts her. Her guilt has spread to cover crimes she did not plan, and the childish sound makes it more disturbing.',
         },
         {
-          phrase: 'All the perfumes of Arabia will not sweeten this little hand',
-          note: "Hyperbole that echoes Macbeth's fear in Act 2 that no ocean could wash his hand clean. Arabia was famous for perfumes, yet all of them cannot remove a smell. “Little hand” shrinks her: this is the hand that once meant to hold the “keen knife”.",
+          phrase: 'all the perfumes of Arabia will not sweeten this little hand',
+          note: "Hyperbole that echoes Macbeth's fear in Act 2 that no ocean could wash his hand clean. Arabia was famous for perfumes, yet all of them cannot remove a smell. The words “little hand” shrink her: this is the hand that once meant to hold the “keen knife”.",
         },
         {
           phrase: 'This disease is beyond my practice',
           note: 'The Doctor and the Gentlewoman are sober witnesses, and he even means to “set down” what she says, so her private breakdown becomes testimony. He recognises that her sickness is not of the body: after she leaves he says “More needs she the divine than the physician”, meaning she needs a priest, not a doctor.',
         },
         {
-          phrase: "What's done cannot be undone",
+          phrase: 'What’s done cannot be undone',
           note: "The word “done” has run through the play, from Macbeth's “I go, and it is done” as the bell rang. Here it becomes final and hopeless: nothing can reverse the murder. Her last words, “To bed, to bed, to bed”, send her back to the night of Duncan's killing, when the knocking at the gate began.",
         },
       ],
@@ -268,15 +292,20 @@ export const guide: StudyGuide = {
       title: 'Macbeth at bay',
       where: 'Act 5, Scene 3',
       pointer:
-        'The opening of the scene in the castle at Dunsinane, as reports come in that his thanes are deserting to the English: from “Bring me no more reports” to “Which the poor heart would fain deny, and dare not”, as he calls again for Seyton.',
-      text: "MACBETH: Bring me no more reports; let them fly all: / Till Birnam wood remove to Dunsinane / I cannot taint with fear. What's the boy Malcolm? / Was he not born of woman? The spirits that know / All mortal consequences have pronounc'd me thus: / “Fear not, Macbeth; no man that's born of woman / Shall e'er have power upon thee.”—Then fly, false thanes, / And mingle with the English epicures: / The mind I sway by, and the heart I bear, / Shall never sag with doubt nor shake with fear. / [Enter a Servant.] / The devil damn thee black, thou cream-fac'd loon! / Where gott'st thou that goose look? / SERVANT: There is ten thousand— / MACBETH: Geese, villain? / SERVANT: Soldiers, sir. / MACBETH: Go prick thy face and over-red thy fear, / Thou lily-liver'd boy. What soldiers, patch? / Death of thy soul! those linen cheeks of thine / Are counsellors to fear. What soldiers, whey-face? / SERVANT: The English force, so please you. / MACBETH: Take thy face hence. / [Exit Servant.] / Seyton!—I am sick at heart, / When I behold—Seyton, I say!—This push / Will cheer me ever or disseat me now. / I have liv'd long enough: my way of life / Is fall'n into the sere, the yellow leaf; / And that which should accompany old age, / As honour, love, obedience, troops of friends, / I must not look to have; but, in their stead, / Curses, not loud but deep, mouth-honour, breath, / Which the poor heart would fain deny, and dare not.",
+        'The opening of the scene in the castle at Dunsinane, as reports come in that his thanes are deserting to the English: from “Bring me no more reports” to “Which the poor heart would fain deny, and dare not”, and the call for Seyton that ends his speech.',
+      text: playPassage(
+        macbethText,
+        'actv-sceneiii',
+        'Bring me no more reports',
+        'Which the poor heart would fain deny, and dare not',
+      ),
       annotations: [
         {
           phrase: 'Bring me no more reports; let them fly all',
           note: 'He opens with orders, as a king should, but the orders are to stop the news and let his thanes desert. Macbeth sounds less like a king ruling Scotland than a man waiting to be proved safe, and his confidence seems to rest entirely on the two prophecies he repeats to himself in the next lines.',
         },
         {
-          phrase: "What's the boy Malcolm? / Was he not born of woman?",
+          phrase: 'What’s the boy Malcolm? / Was he not born of woman?',
           note: "Macbeth sneers at Malcolm as a “boy”, the word he throws at the servant a moment later, “Thou lily-liver'd boy”. The question is meant to be scornful, but it is a trap he sets for himself: he hears “born of woman” in its ordinary sense, while the prophecy is waiting for the one man who, as Act 5, Scene 8 reveals, was “Untimely ripp'd” from his mother's womb. An audience that has learned to distrust the witches' words may already suspect a trick he cannot see.",
         },
         {
@@ -284,7 +313,7 @@ export const guide: StudyGuide = {
           note: 'A rhyming couplet (“bear” and “fear”) that sounds final and certain, the way a speech often closes. The alliteration of “sag” and “shake” gives the boast a strong beat. It is interrupted at once by a frightened servant, and within a dozen lines the certainty has collapsed into “I am sick at heart”.',
         },
         {
-          phrase: "The devil damn thee black, thou cream-fac'd loon!",
+          phrase: 'The devil damn thee black, thou cream-fac’d loon!',
           note: "Macbeth turns on a frightened servant with insults about his pallor and cowardice: “cream-fac'd”, “linen cheeks”, “whey-face”, “lily-liver'd”. Each accuses the servant of the fear Macbeth has just said he will never feel, which suggests the fear is really his own, turned on someone who cannot answer back. It is a long way from the “brave Macbeth” of Act 1, Scene 2.",
         },
         {
@@ -292,7 +321,7 @@ export const guide: StudyGuide = {
           note: 'The first admission of weakness in the scene, spoken between his shouts for Seyton, the officer who attends him. The sentence is broken off by those shouts, and the bravado cracks. From here the speech turns from orders to reflection, and Macbeth looks at his own life instead of at his enemies.',
         },
         {
-          phrase: "my way of life / Is fall'n into the sere, the yellow leaf",
+          phrase: 'my way of life / Is fall’n into the sere, the yellow leaf',
           note: "“Sere” means dry and withered. Macbeth pictures his life as a leaf in autumn, dried out and ready to fall. In the next scene Malcolm's soldiers cut boughs from Birnam Wood to carry towards Dunsinane, so the living wood comes for a man who already feels like a dead leaf.",
         },
         {
@@ -317,9 +346,9 @@ export const guide: StudyGuide = {
         'The name the witches go by in the play: Banquo dreams of them by it, and Macbeth goes to visit them by it (some editions print Weïrd, to show it is sounded as two syllables). Weird comes from the Old English wyrd, meaning fate or destiny, so the name makes them sisters of fate rather than simply strange women. The modern sense of odd grew up much later, partly from this play.',
     },
     {
-      term: 'Hurly-burly',
+      term: 'Hurlyburly',
       definition:
-        "A noisy, confused uproar, especially of battle. The Second Witch's “When the hurly-burly's done” (1.1) places the opening in the chaos of war.",
+        "A noisy, confused uproar, especially of battle. The Second Witch's “When the hurlyburly’s done” (1.1) places the opening in the chaos of war.",
     },
     {
       term: "Bellona's bridegroom",
@@ -349,7 +378,7 @@ export const guide: StudyGuide = {
     {
       term: 'Pall',
       definition:
-        'As a verb, to wrap or cover, as a coffin is covered with a pall, the heavy cloth laid over it at a funeral. “Pall thee in the dunnest smoke of hell” (1.5) dresses the night in a shroud.',
+        "As a verb, to wrap or cover, as a coffin is covered with a pall, the heavy cloth laid over it at a funeral. Lady Macbeth's “pall thee in the dunnest smoke of hell” (1.5) dresses the night in a shroud.",
     },
     {
       term: 'Dun, dunnest',
@@ -414,7 +443,7 @@ export const guide: StudyGuide = {
     {
       term: 'Loon',
       definition:
-        "A worthless fellow, a fool. Macbeth's insult to a terrified servant, “cream-faced loon” (5.3), shows how far his self-control has frayed.",
+        "A worthless fellow, a fool. Macbeth's insult to a terrified servant, “cream-fac’d loon” (5.3), shows how far his self-control has frayed.",
     },
     {
       term: 'Sere',
@@ -464,7 +493,7 @@ export const guide: StudyGuide = {
     {
       term: 'Trochaic tetrameter',
       definition:
-        "Lines of four beats in which each foot falls from stressed to unstressed, the chanting rhythm of the witches' spells, as in “Double, double toil and trouble” (4.1). It marks them off from the blank verse of the human characters.",
+        "Lines of four beats in which each foot falls from stressed to unstressed, the chanting rhythm of the witches' spells, as in “Double, double, toil and trouble” (4.1). It marks them off from the blank verse of the human characters.",
     },
     {
       term: 'Prose',
@@ -499,7 +528,7 @@ export const guide: StudyGuide = {
         "A wounded captain (a sergeant in some editions) tells King Duncan how Macbeth cut his way through the rebel army and killed the traitor Macdonwald. Ross brings news of victory over the invading Norwegians and of the Thane of Cawdor's treachery, and Duncan orders Cawdor's execution and gives his title to Macbeth.",
       setting: "King Duncan's camp, near the battle",
       who: ['Duncan', 'Malcolm', 'Ross'],
-      quote: 'O valiant cousin, worthy gentleman',
+      quote: 'O valiant cousin! worthy gentleman!',
       themes: ['Kingship and Power', 'Gender and Masculinity'],
       tension: 3,
       significance:
@@ -512,7 +541,7 @@ export const guide: StudyGuide = {
         'On the heath the witches hail Macbeth as Thane of Glamis, Thane of Cawdor and future king, and tell Banquo he will father kings without being one. Ross and Angus then bring the news that Macbeth is Thane of Cawdor, and Macbeth is shaken by a “horrid image” of what he might do.',
       setting: 'A heath',
       who: ['The Witches', 'Macbeth', 'Banquo', 'Ross'],
-      quote: 'All hail, Macbeth, that shalt be king hereafter',
+      quote: 'All hail, Macbeth! that shalt be king hereafter!',
       themes: ['The Supernatural', 'Ambition'],
       tension: 4,
       significance:
@@ -525,7 +554,7 @@ export const guide: StudyGuide = {
         "Duncan, who admits there is no art to read a traitor's mind in his face, greets Macbeth warmly and then names his son Malcolm heir to the throne. In an aside Macbeth sees Malcolm as a step he must fall on or leap over, and asks the stars to hide his desires.",
       setting: "Duncan's court",
       who: ['Duncan', 'Macbeth', 'Malcolm'],
-      quote: 'Stars, hide your fires; / Let not light see my black and deep desires',
+      quote: 'Stars, hide your fires! / Let not light see my black and deep desires',
       themes: ['Ambition', 'Appearance vs Reality', 'Kingship and Power'],
       tension: 3,
       significance:
@@ -538,7 +567,7 @@ export const guide: StudyGuide = {
         "Lady Macbeth reads her husband's letter and fears he is too kind “To catch the nearest way”. Told the king is coming that night, she calls on spirits to “unsex” her; when Macbeth arrives she tells him to hide his intentions and “Leave all the rest to me”.",
       setting: "Macbeth's castle at Inverness",
       who: ['Lady Macbeth', 'Macbeth'],
-      quote: "Look like th' innocent flower, / But be the serpent under 't",
+      quote: 'look like the innocent flower, / But be the serpent under’t',
       themes: ['Ambition', 'Gender and Masculinity', 'Appearance vs Reality', 'The Supernatural'],
       tension: 4,
       significance:
@@ -561,7 +590,7 @@ export const guide: StudyGuide = {
       where: 'Act 1, Scene 7',
       title: 'Macbeth wavers',
       summary:
-        "Alone during the feast, Macbeth argues himself out of the murder and tells his wife “We will proceed no further in this business”. She attacks his courage, tells him to “screw your courage to the sticking place”, and explains how Duncan's servants can be drugged and blamed. He agrees.",
+        "Alone during the feast, Macbeth argues himself out of the murder and tells his wife “We will proceed no further in this business”. She attacks his courage, tells him to “screw your courage to the sticking-place”, and explains how Duncan's servants can be drugged and blamed. He agrees.",
       setting: "Macbeth's castle, during the feast",
       who: ['Macbeth', 'Lady Macbeth'],
       quote: 'When you durst do it, then you were a man',
@@ -626,7 +655,7 @@ export const guide: StudyGuide = {
       where: 'Act 3, Scene 1',
       title: 'Banquo suspects',
       summary:
-        "Alone, Banquo fears that Macbeth “played'st most foully” for the crown, and remembers he was promised to be the “root and father / Of many kings”. Macbeth, now king, fears exactly that, and persuades two murderers to kill Banquo and his son Fleance.",
+        'Alone, Banquo fears that Macbeth “play’dst most foully” for the crown, and remembers he was promised to be the “root and father / Of many kings”. Macbeth, now king, fears exactly that, and persuades two murderers to kill Banquo and his son Fleance.',
       setting: 'The royal palace',
       who: ['Banquo', 'Macbeth', 'The Murderers'],
       quote: 'To be thus is nothing, / But to be safely thus',
@@ -639,7 +668,7 @@ export const guide: StudyGuide = {
       where: 'Act 3, Scene 2',
       title: 'Scorpions in the mind',
       summary:
-        "Lady Macbeth finds that the crown has brought no contentment: “Naught's had, all's spent”. Macbeth, shaken nightly by “terrible dreams”, says they have “scorched the snake, not killed it”, and hints at a new crime while keeping it from her: “Be innocent of the knowledge, dearest chuck”.",
+        "Lady Macbeth finds that the crown has brought no contentment: “Naught's had, all's spent”. Macbeth, shaken nightly by “terrible dreams”, says they have “scorch’d the snake, not kill’d it”, and hints at a new crime while keeping it from her: “Be innocent of the knowledge, dearest chuck”.",
       setting: 'The royal palace',
       who: ['Macbeth', 'Lady Macbeth'],
       quote: 'O, full of scorpions is my mind, dear wife',
@@ -652,7 +681,7 @@ export const guide: StudyGuide = {
       where: 'Act 3, Scene 3',
       title: 'The ambush',
       summary:
-        "At dusk three murderers wait for Banquo and Fleance on the road to the palace. Banquo is killed, but the light goes out, and the murderers realise “There's but one down. The son is fled.”",
+        'At dusk three murderers wait for Banquo and Fleance on the road to the palace. Banquo is killed, but the light goes out, and the murderers realise “There’s but one down: the son is fled.”',
       setting: 'A road near the palace, at dusk',
       who: ['The Murderers', 'Banquo', 'Fleance'],
       quote: 'Fly, good Fleance, fly, fly, fly',
@@ -672,7 +701,7 @@ export const guide: StudyGuide = {
       themes: ['Guilt and Conscience', 'The Supernatural', 'Kingship and Power'],
       tension: 5,
       significance:
-        'The public face of the reign cracks in front of the nobles, and Macbeth decides that he is “in blood / Stepped in so far” that going back is pointless.',
+        'The public face of the reign cracks in front of the nobles, and Macbeth decides that he is “in blood / Stepp’d in so far” that going back is pointless.',
     },
     {
       where: 'Act 4, Scene 1',
@@ -759,7 +788,7 @@ export const guide: StudyGuide = {
         'A cry of women is heard, and Seyton reports “The Queen, my lord, is dead”. Macbeth answers “She should have died hereafter” and reflects that life is a tale “Signifying nothing”. A messenger reports that the wood began to move, and Macbeth goes out to fight.',
       setting: 'The castle at Dunsinane',
       who: ['Macbeth', 'Seyton'],
-      quote: "Life's but a walking shadow, a poor player",
+      quote: 'Life’s but a walking shadow; a poor player',
       themes: ['Ambition', 'Guilt and Conscience'],
       tension: 4,
       significance:
@@ -769,10 +798,10 @@ export const guide: StudyGuide = {
       where: 'Act 5, Scene 8',
       title: 'Macduff and Macbeth',
       summary:
-        "Macbeth refuses to “play the Roman fool” and kill himself. Facing Macduff, he learns Macduff was “from his mother's womb / Untimely ripped”, cut from his mother rather than born in the usual way. He fights on and is killed; Macduff brings his head to Malcolm, who is hailed king and will be “crowned at Scone”.",
+        'Macbeth refuses to “play the Roman fool” and kill himself. Facing Macduff, he learns Macduff was “from his mother’s womb / Untimely ripp’d”, cut from his mother rather than born in the usual way. He fights on and is killed; Macduff brings his head to Malcolm, who is hailed king and will be “crown’d at Scone”.',
       setting: 'The battlefield at Dunsinane',
       who: ['Macbeth', 'Macduff', 'Malcolm'],
-      quote: 'this dead butcher and his fiend-like queen',
+      quote: 'this dead butcher, and his fiend-like queen',
       themes: ['Kingship and Power', 'The Supernatural', 'Appearance vs Reality'],
       tension: 5,
       significance:
@@ -791,13 +820,13 @@ export const guide: StudyGuide = {
       from: 'Macbeth',
       to: 'Banquo',
       kind: 'fellow generals, then murderer and victim',
-      note: "They hear the prophecies together and respond differently: Banquo warns that “The instruments of darkness tell us truths” to betray us. He suspects Macbeth “played'st most foully”, Macbeth fears him and has him killed, and he returns as the ghost at the banquet.",
+      note: 'They hear the prophecies together and respond differently: Banquo warns that “The instruments of darkness tell us truths” to betray us. He suspects Macbeth “play’dst most foully”, Macbeth fears him and has him killed, and he returns as the ghost at the banquet.',
     },
     {
       from: 'Duncan',
       to: 'Macbeth',
       kind: 'king and subject, kinsman and guest',
-      note: 'Before Macbeth has even appeared, Duncan praises him as “O valiant cousin, worthy gentleman” and rewards him with Cawdor. Macbeth kills him under his own roof, breaking the bonds of kinship, loyalty and hospitality at once.',
+      note: 'Before Macbeth has even appeared, Duncan praises him as “O valiant cousin! worthy gentleman!” and rewards him with Cawdor. Macbeth kills him under his own roof, breaking the bonds of kinship, loyalty and hospitality at once.',
     },
     {
       from: 'The Witches',
@@ -839,7 +868,7 @@ export const guide: StudyGuide = {
       from: 'Lady Macbeth',
       to: 'Duncan',
       kind: 'hostess and royal guest',
-      note: "She welcomes him with perfect courtesy and plans his death, yet cannot kill him herself: “Had he not resembled / My father as he slept, I had done 't.” The line is the first sign of the feeling she prayed to lose.",
+      note: 'She welcomes him with perfect courtesy and plans his death, yet cannot kill him herself: “Had he not resembled / My father as he slept, I had done’t.” The line is the first sign of the feeling she prayed to lose.',
     },
     {
       from: 'Macduff',
@@ -851,7 +880,7 @@ export const guide: StudyGuide = {
       from: 'Ross',
       to: 'Macduff',
       kind: 'kinsmen',
-      note: "Macduff calls him cousin (“No, cousin, I'll to Fife”). Ross carries news through the play, and in England it is he who must tell Macduff “Your castle is surprised”, turning Macduff's cause from Scotland's into his own.",
+      note: "Macduff calls him cousin (“No, cousin, I'll to Fife”). Ross carries news through the play, and in England it is he who must tell Macduff “Your castle is surpris’d”, turning Macduff's cause from Scotland's into his own.",
     },
     {
       from: 'Macbeth',
@@ -873,39 +902,23 @@ export const guide: StudyGuide = {
   sources: [
     {
       label:
-        'Folger Shakespeare Library, Macbeth online text: the source for every quotation, speaker and scene number (each scene quoted here read individually)',
+        'Project Gutenberg eBook #1533, Macbeth: the edition every passage and quotation here follows, held on this site as src/data/full-texts/macbeth.ts; passages are cut from it by script and every quotation is checked against it by test',
+      url: 'https://www.gutenberg.org/cache/epub/1533/pg1533.txt',
+    },
+    {
+      label:
+        'Folger Shakespeare Library, copyright policy: Folger Digital Texts are licensed CC BY-NC 3.0, not for commercial use, which is why this guide no longer prints their wording (read 26 September 2026)',
+      url: 'https://www.folger.edu/copyright-policy/',
+    },
+    {
+      label:
+        'Folger Shakespeare, Macbeth, edited by Barbara A. Mowat and Paul Werstine: used in September 2026 to confirm speakers, scene numbers and the plot of each scene summary; its wording is not reproduced',
       url: 'https://www.folger.edu/explore/shakespeares-works/macbeth/read/1/1/',
     },
     {
       label:
-        'Folger Shakespeare, Macbeth, edited by Barbara A. Mowat and Paul Werstine, plain-text download: the whole play, used for an independent recheck of every quotation, speaker and scene',
-      url: 'https://folger-main-site-assets.s3.amazonaws.com/uploads/2022/11/macbeth_TXT_FolgerShakespeare.txt',
-    },
-    {
-      label: 'Folger, Act 1, Scene 5 (the raven soliloquy, verbatim)',
-      url: 'https://www.folger.edu/explore/shakespeares-works/macbeth/read/1/5/',
-    },
-    {
-      label: 'Folger, Act 2, Scene 1 (the dagger soliloquy, verbatim)',
-      url: 'https://www.folger.edu/explore/shakespeares-works/macbeth/read/2/1/',
-    },
-    {
-      label: 'Folger, Act 5, Scene 1 (the sleepwalking passage, verbatim)',
-      url: 'https://www.folger.edu/explore/shakespeares-works/macbeth/read/5/1/',
-    },
-    {
-      label: 'Folger, Act 5, Scene 8 (stage directions, final scene)',
-      url: 'https://www.folger.edu/explore/shakespeares-works/macbeth/read/5/8/',
-    },
-    {
-      label:
-        'MIT Shakespeare (Moby text): second check of wording (reads "you murdering ministers", "one halfworld" and "whereabout")',
+        'MIT Shakespeare (Moby text): a second modern text compared on wording (reads "you murdering ministers", "one halfworld" and "whereabout")',
       url: 'https://shakespeare.mit.edu/macbeth/full.html',
-    },
-    {
-      label:
-        'Project Gutenberg eBook #1533, Macbeth: third check of wording and speakers (reads "your murd\'ring ministers" where Folger and MIT read "you")',
-      url: 'https://www.gutenberg.org/cache/epub/1533/pg1533.txt',
     },
     {
       label:

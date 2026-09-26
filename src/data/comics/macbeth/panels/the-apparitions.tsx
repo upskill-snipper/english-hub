@@ -20,34 +20,38 @@ import { Witch } from './witch'
 
 /**
  * Act 4, Scene 1: "The apparitions", the sixteenth moment in the guide's
- * timeline. Every detail is from the scene, as the site's reader prints it
- * (src/app/revision/texts/macbeth/read/page.tsx):
+ * timeline. Every detail is from the scene, as the held edition prints it
+ * (src/data/full-texts/macbeth.ts), which is the text of the site's reader:
  *
- * - "A cavern. In the middle, a boiling cauldron. Thunder." "Double, double
- *   toil and trouble; / Fire burn and cauldron bubble." So a rock cave, the
+ * - "A dark Cave. In the middle, a Cauldron Boiling." "Double, double,
+ *   toil and trouble; / Fire, burn; and cauldron, bubble." So a rock cave, the
  *   cauldron in the middle over its fire, and its steam rising into the dark.
- * - "I conjure you, by that which you profess, / Howe'er you come to know it,
+ * - "I conjure you, by that which you profess, / (Howe’er you come to know it)
  *   answer me." Macbeth, king now, stands at the left with his arm flung out
  *   at the cauldron, his other hand on his sword. He is the Macbeth of the
  *   Act 5 panels (./dunsinane-kit.tsx), turned to face right.
- * - "First Apparition: an armed Head." A head in a nasal helmet and a mail
+ * - "Thunder. An Apparition of an armed Head rises." A head in a nasal helmet
+ *   and a mail
  *   hood, the mail falling away into the steam, so it reads as armour rising
  *   out of smoke and not as a head cut off.
- * - "Second Apparition: a bloody Child." A child's silhouette ringed in the
+ * - "Thunder. An Apparition of a bloody Child rises." A child's silhouette
+ *   ringed in the
  *   spot colour. The blood is a symbol, as the style guide allows: the child
  *   is not hurt, and nothing on it is a wound. It foretells Macduff, "none of
  *   woman born".
- * - "Third Apparition: a Child crowned, with a tree in his hand." A crowned
+ * - "Thunder. An Apparition of a Child crowned, with a tree in his hand,
+ *   rises." A crowned
  *   child holding a young tree upright, for Birnam Wood.
- * - "A show of eight Kings, the last with a glass in his hand." "What, will
- *   the line stretch out to th' crack of doom?" Eight crowned figures, cut as
+ * - "A show of eight kings appear, and pass over in order, the last with a
+ *   glass in his hand". "What, will the line stretch out to th’ crack of
+ *   doom?" Eight crowned figures, cut as
  *   light rather than as bodies (as Banquo's ghost is cut at the banquet),
  *   stretch away into the dark on the right. The nearest is the eighth, and
  *   his glass "shows me many more": small crowns in the mirror. The ghost of
  *   Banquo who follows them is left out, to keep the panel legible on a
  *   phone; he has the banquet panel to himself.
  * - The witches are the three of The witches meet (./witch.tsx), drawn from
- *   Banquo's description in Act 1, Scene 3: "So withered and so wild in their
+ *   Banquo's description in Act 1, Scene 3: "So wither’d, and so wild in their
  *   attire", "choppy finger", "skinny lips", "beards". Two lean over the
  *   cauldron with their arms up; the third lays her finger on her lips.
  *

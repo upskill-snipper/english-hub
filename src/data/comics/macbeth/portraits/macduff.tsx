@@ -7,7 +7,7 @@ import { Brooch, lerp2, mailRings, PH, portraitGround, PortraitRule, PW, strands
 /**
  * Macduff, Thane of Fife, in England (4.3), at the moment Ross tells him his
  * wife and children have been killed. The play gives him one gesture and no
- * description: Malcolm says "What, man, ne'er pull your hat upon your brows. /
+ * description: Malcolm says "What, man! ne’er pull your hat upon your brows. /
  * Give sorrow words." So his hat is pulled down over his brows, his head is
  * bowed and his eye is lowered, and his own answer to Malcolm's "Dispute it
  * like a man" is the marker: "But I must also feel it as a man".

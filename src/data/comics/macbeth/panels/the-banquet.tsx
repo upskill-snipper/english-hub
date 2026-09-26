@@ -26,12 +26,13 @@ import {
 /**
  * Act 3, Scene 4: "The banquet", the fifteenth moment in the guide's
  * timeline. The banqueting hall of the palace, that night. Every detail is
- * from the scene (the site's reader and the Folger text):
+ * from the scene (quoted from the held
+ * edition, src/data/full-texts/macbeth.ts):
  *
  * - "A banquet prepared." The lords sit at a long table with a cloth, cups
  *   and candles; the candle flames are the spot colour, with Macbeth's crown.
- * - "The Ghost of Banquo enters, and sits in Macbeth's place." LENNOX: "Here
- *   is a place reserved, sir." MACBETH: "Where?" So the ghost sits in the
+ * - "The Ghost of Banquo rises, and sits in Macbeth’s place." LENNOX: "Here is
+ *   a place reserv’d, sir." MACBETH: "Where?" So the ghost sits in the
  *   high chair at the table, and Lennox, standing, gestures to it: he sees an
  *   empty seat.
  * - Only Macbeth sees the ghost, so the ghost is cut in paper, as light

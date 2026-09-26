@@ -19,13 +19,14 @@ import {
  * Act 5, Scene 4: "Birnam Wood", the twenty-first moment in the guide's
  * timeline. Every detail is from the scene:
  *
- * - "Drum and colours. Enter Malcolm, Siward, Macduff, Siward's son, Menteith,
- *   Caithness, Angus, and Soldiers, marching." So the army carries its
+ * - "Enter, with drum and colours Malcolm, old Siward and his Son, Macduff,
+ *   Menteith, Caithness, Angus, Lennox, Ross and Soldiers, marching." So the
+ *   army carries its
  *   colours, and the spot colour is on the banner: the cause that has come to
  *   end the tyranny.
- * - "What wood is this before us?" "The Wood of Birnam." "Let every soldier
- *   hew him down a bough / And bear 't before him. Thereby shall we shadow /
- *   The numbers of our host and make discovery / Err in report of us." So on
+ * - "What wood is this before us?" "The Wood of Birnam." "Let every soldier hew
+ *   him down a bough, / And bear’t before him. Thereby shall we shadow / The
+ *   numbers of our host, and make discovery / Err in report of us." So on
  *   the left is the wood, and a soldier at its edge hews down a bough; in
  *   front, Malcolm points to the trees as he gives the order, with Macduff and
  *   old Siward beside him; and across the middle the soldiers march off, each

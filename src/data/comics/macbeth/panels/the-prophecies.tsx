@@ -23,16 +23,16 @@ import { Witch } from './witch'
  * Act 1, Scene 3: "The prophecies", the third moment in the guide's timeline.
  * Every detail is from the scene:
  *
- * - "A heath near Forres. Thunder." Macbeth's first line is "So foul and fair
+ * - "A heath." "Thunder." Macbeth's first line is "So foul and fair
  *   a day I have not seen", and he calls it "this blasted heath". So it is
  *   day, and the sky is split: a dark storm, rain and a far fork of
  *   lightning over the witches on the left, the sun breaking through on the
  *   right, behind the two soldiers, so they stand black against daylight.
- * - Banquo sees them "So withered and so wild in their attire", "each at once
+ * - Banquo sees them "So wither’d, and so wild in their attire", "each at once
  *   her choppy finger laying / Upon her skinny lips", with beards. The same
  *   three as in The witches meet, drawn from those words (./witch.tsx): one
  *   points at Macbeth, one lays a finger on her lips, one lifts both arms.
- * - "All hail, Macbeth, that shalt be king hereafter!" The promise is shown as
+ * - "All hail, Macbeth! that shalt be king hereafter!" The promise is shown as
  *   a crown hanging in the air above Macbeth's head, not on it, in the spot
  *   colour, inside a dark disc with light breaking out of it: a sign, not a
  *   thing he could reach. It is the only red in the panel, as the other

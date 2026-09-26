@@ -9,23 +9,23 @@ import { HEAD_WOMAN, VEIL } from './inverness-people'
 
 /**
  * Act 5, Scene 1: "The sleepwalking", the nineteenth moment in the guide's
- * timeline. Every detail is from the scene, as the site's reader prints it
- * (src/app/revision/texts/macbeth/read/page.tsx):
+ * timeline. Every detail is from the scene, as the held edition prints it
+ * (src/data/full-texts/macbeth.ts), which is the text of the site's reader:
  *
  * - "Enter a Doctor of Physic and a Waiting-Gentlewoman." They have watched
  *   two nights for her. The Doctor: "I will set down what comes from her, to
  *   satisfy my remembrance the more strongly." So they stand back in the
  *   shadows on the left, the Doctor writing on a tablet, the Gentlewoman with
  *   her hand at her mouth.
- * - "Enter Lady Macbeth, with a taper." "How came she by that light?" "Why,
- *   it stood by her. She has light by her continually." So the taper stands
+ * - "Enter Lady Macbeth with a taper." "How came she by that light?" "Why, it
+ *   stood by her: she has light by her continually." So the taper stands
  *   by her on its iron stand, the only light in the room: its rays are cut
  *   into the dark stone, and it throws her shadow up the wall behind her.
  * - The Gentlewoman has seen her "rise from her bed, throw her nightgown upon
  *   her". So she walks in a long loose gown, her hair down.
  * - "You see, her eyes are open." "Ay, but their sense are shut." Her eyes
  *   are cut as open rings with nothing in them.
- * - "Look, how she rubs her hands." "It is an accustomed action with her, to
+ * - "Look how she rubs her hands." "It is an accustomed action with her, to
  *   seem thus washing her hands." Her hands are together before her, one
  *   rubbing the other. "Yet here's a spot." The spot colour marks one small
  *   spot on her hand, the blood she sees and nobody else can: a symbol, as

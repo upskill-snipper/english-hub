@@ -61,6 +61,18 @@ const PLAYS = [
   { slug: 'twelfth-night', id: 1526, title: 'Twelfth Night' },
   { slug: 'othello', id: 1531, title: 'Othello' },
   { slug: 'king-lear', id: 1532, title: 'King Lear' },
+  // Added 26 September 2026, a week after the others, and for a different
+  // reason. Macbeth already had a hand-built reader, and its text followed the
+  // Folger Shakespeare Library's edition ("So withered", "Untimely ripped").
+  // Folger licenses its digital texts CC BY-NC 3.0, not for commercial use,
+  // and this site sells subscriptions. Shakespeare's words are free; Folger's
+  // edited text is not, so the reader and the guide now print this edition.
+  //
+  // `scenes` is the count in this file's own contents list (7, 4, 6, 3 and 8 by
+  // act), read before this entry was written. The contents cross-check below is
+  // skipped when the contents list cannot be read at all, so an explicit count
+  // is the guard that still holds if the edition's front matter changes shape.
+  { slug: 'macbeth', id: 1533, title: 'Macbeth', scenes: 28 },
   { slug: 'antony-and-cleopatra', id: 1534, title: 'Antony and Cleopatra' },
   { slug: 'the-tempest', id: 1540, title: 'The Tempest' },
 ]
@@ -102,9 +114,7 @@ function scenesInContents(body) {
   const lines = body.split('\n')
   const firstBodyScene = lines.findIndex((l) => /^SCENE [IVXLC]+\./.test(l.trim()))
   if (firstBodyScene === -1) return 0
-  return lines
-    .slice(0, firstBodyScene)
-    .filter((l) => /^Scene [IVXLC]+\./.test(l.trim())).length
+  return lines.slice(0, firstBodyScene).filter((l) => /^Scene [IVXLC]+\./.test(l.trim())).length
 }
 
 /** Split the body into scenes, carrying the act each belongs to. */
@@ -179,10 +189,7 @@ function toHtml(sceneLines) {
     .map((block) => {
       const text = block.replace(/\s+$/gm, '')
       if (!text.trim()) return ''
-      const escaped = text
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
+      const escaped = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
       // A stage direction is INDENTED in these editions; speech starts at
       // column zero with the speaker's name. One leading space is enough - the
       // first version required two and rendered every entrance and exit as
@@ -206,7 +213,16 @@ async function build(play) {
   const url = `https://www.gutenberg.org/cache/epub/${play.id}/pg${play.id}.txt`
   const res = await fetch(url)
   if (!res.ok) throw new Error(`${play.slug}: HTTP ${res.status}`)
-  const raw = await res.text()
+  // Line endings normalised first. Gutenberg serves these files to fetch() with
+  // CRLF endings, and every rule below splits on "\n" alone, so each line kept a
+  // trailing "\r". Most rules trim it away; the stage-direction test does not.
+  // A scene's opening direction ("Alarum within. Enter King Duncan...") sits
+  // after a blank line, so its block began with "\r" rather than an indent, was
+  // read as speech, and was published as a plain paragraph opening on a blank
+  // line: 23 of Macbeth's 28 scenes when it was added on 26 September 2026. The
+  // twelve plays generated before this line carry the same defect until they
+  // are regenerated.
+  const raw = (await res.text()).replace(/\r\n?/g, '\n')
 
   // The edition must still be the play we confirmed by hand.
   const titleLine = /^Title:\s*(.+)$/m.exec(raw)
@@ -233,6 +249,11 @@ async function build(play) {
   if (listed > 0 && listed !== scenes.length) {
     throw new Error(
       `${play.slug}: contents lists ${listed} scenes, parsed ${scenes.length} - refusing to write`,
+    )
+  }
+  if (play.scenes !== undefined && play.scenes !== scenes.length) {
+    throw new Error(
+      `${play.slug}: expected ${play.scenes} scenes, parsed ${scenes.length} - refusing to write`,
     )
   }
 
@@ -302,7 +323,9 @@ let failed = 0
 for (const play of wanted) {
   try {
     const r = await build(play)
-    console.log(`  ok   ${r.slug.padEnd(28)} ${String(r.scenes).padStart(2)} scenes, ${r.chars} chars`)
+    console.log(
+      `  ok   ${r.slug.padEnd(28)} ${String(r.scenes).padStart(2)} scenes, ${r.chars} chars`,
+    )
   } catch (err) {
     failed++
     console.error(`  FAIL ${play.slug.padEnd(28)} ${err.message}`)

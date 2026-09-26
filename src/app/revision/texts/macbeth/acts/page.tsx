@@ -79,7 +79,7 @@ const ACTS: Act[] = [
           },
           {
             name: 'Trochaic tetrameter',
-            quote: '"When the hurly-burly\'s done, / When the battle\'s lost and won."',
+            quote: '"When the hurlyburly’s done, / When the battle’s lost and won."',
             analysis:
               'The witches speak in a stressed-unstressed rhythm (trochaic) that inverts the natural iambic pentameter of the court. This metrical inversion signals that they exist outside the natural and social order, reinforcing their otherness.',
           },
@@ -117,7 +117,7 @@ const ACTS: Act[] = [
           },
           {
             name: 'Dramatic irony',
-            quote: '"What he hath lost noble Macbeth hath won."',
+            quote: '"What he hath lost, noble Macbeth hath won."',
             analysis:
               "Duncan gives the traitor Cawdor's title to Macbeth, unwittingly creating the next traitor. The audience recognises the irony before the characters do, building dramatic tension around the theme of appearance versus reality.",
           },
@@ -149,21 +149,21 @@ const ACTS: Act[] = [
           {
             name: 'Tricolon / anaphora',
             quote:
-              '"All hail, Macbeth! Hail to thee, Thane of Glamis! / All hail, Macbeth! Hail to thee, Thane of Cawdor! / All hail, Macbeth, that shalt be king hereafter!"',
+              '"All hail, Macbeth! hail to thee, Thane of Glamis! / All hail, Macbeth! hail to thee, Thane of Cawdor! / All hail, Macbeth! that shalt be king hereafter!"',
             analysis:
               'The three-part greeting builds in intensity from current title to new title to kingship. The ritualistic repetition of "All hail" mimics an incantation and gives the prophecy an irresistible momentum that sweeps Macbeth towards his fate.',
           },
           {
             name: 'Foreshadowing / metaphor',
             quote:
-              '"The instruments of darkness tell us truths, / Win us with honest trifles, to betray\'s / In deepest consequence."',
+              '"The instruments of darkness tell us truths; / Win us with honest trifles, to betray’s / In deepest consequence."',
             analysis:
               'Banquo recognises the witches\' strategy: small truths build trust before the devastating lie. The metaphor of "instruments of darkness" personifies evil as a musician playing a tune the listener cannot resist. This is Banquo\'s moral clarity, which Macbeth fatally lacks.',
           },
           {
             name: 'Aside / soliloquy',
             quote:
-              '"If good, why do I yield to that suggestion / Whose horrid image doth unfix my hair / And make my seated heart knock at my ribs?"',
+              '"If good, why do I yield to that suggestion / Whose horrid image doth unfix my hair, / And make my seated heart knock at my ribs?"',
             analysis:
               'Macbeth\'s aside reveals that murder has already entered his mind unbidden. The physical symptoms (hair standing on end, heart pounding) show his body rebelling against his thoughts. The word "suggestion" implies the idea comes from outside himself, yet it is his own imagination that creates the "horrid image."',
           },
@@ -188,14 +188,14 @@ const ACTS: Act[] = [
           },
           {
             name: 'Light and dark imagery / apostrophe',
-            quote: '"Stars, hide your fires; / Let not light see my black and deep desires."',
+            quote: '"Stars, hide your fires! / Let not light see my black and deep desires."',
             analysis:
               'Macbeth invokes cosmic darkness to conceal his ambition. The opposition between "fires" (light/goodness/divine order) and "black and deep desires" (darkness/evil/the abyss) introduces the play\'s sustained light-versus-dark motif. The apostrophe to the stars aligns his ambition with a disruption of the celestial order.',
           },
           {
             name: 'Metaphor',
             quote:
-              '"The eye wink at the hand; yet let that be / Which the eye fears, when it is done, to see."',
+              '"The eye wink at the hand, yet let that be, / Which the eye fears, when it is done, to see."',
             analysis:
               'Macbeth imagines a dissociation between seeing and doing, between conscience and action. The hand acts while the eye looks away, suggesting he wants to commit murder without confronting its moral reality. This split anticipates his psychological disintegration.',
           },
@@ -221,7 +221,7 @@ const ACTS: Act[] = [
           {
             name: 'Invocation / apostrophe',
             quote:
-              '"Come, you spirits / That tend on mortal thoughts, unsex me here, / And fill me from the crown to the toe top-full / Of direst cruelty!"',
+              '"Come, you spirits / That tend on mortal thoughts, unsex me here, / And fill me, from the crown to the toe, top-full / Of direst cruelty!"',
             analysis:
               'Lady Macbeth directly addresses supernatural forces, asking them to remove her femininity, equating womanhood with compassion and gentleness. The verb "unsex" is a violent neologism implying a fundamental transformation of identity. "Crown to the toe" suggests total possession, anticipating the demonic imagery of the play.',
           },
@@ -234,19 +234,19 @@ const ACTS: Act[] = [
           {
             name: 'Imperative / imagery of darkness',
             quote:
-              '"Come, thick night, / And pall thee in the dunnest smoke of hell, / That my keen knife see not the wound it makes."',
+              '"Come, thick night, / And pall thee in the dunnest smoke of hell / That my keen knife see not the wound it makes."',
             analysis:
               'Lady Macbeth echoes Macbeth\'s "Stars, hide your fires," calling for darkness to conceal the murder. The word "pall" (a cloth draped over a coffin) associates night with death. "Dunnest smoke of hell" directly links their plan to damnation, and the knife that cannot see its own wound mirrors Macbeth\'s desire for moral blindness.',
           },
           {
             name: 'Simile / imperative',
-            quote: '"Look like th\' innocent flower, / But be the serpent under\'t."',
+            quote: '"Look like the innocent flower, / But be the serpent under’t."',
             analysis:
               'The biblical allusion to the serpent in Eden casts the Macbeths as agents of original sin and Duncan as the innocent to be corrupted. The imperative mood shows Lady Macbeth taking command, instructing Macbeth in the art of deception. The flower-serpent duality crystallises the appearance-versus-reality theme.',
           },
           {
             name: 'Imagery of bodily violation',
-            quote: '"Make thick my blood; / Stop up the access and passage to remorse."',
+            quote: '"Make thick my blood, / Stop up th’ access and passage to remorse."',
             analysis:
               'Lady Macbeth requests a physical blockage of remorse, imagining guilt as something that flows through the blood and can be dammed. The visceral, bodily language shows her attempting to transform herself at a physiological level, suggesting she understands that cruelty does not come naturally to her.',
           },
@@ -260,7 +260,7 @@ const ACTS: Act[] = [
           {
             name: 'Dramatic irony',
             quote:
-              '"This castle hath a pleasant seat; the air / Nimbly and sweetly recommends itself / Unto our gentle senses."',
+              '"This castle hath a pleasant seat. The air / Nimbly and sweetly recommends itself / Unto our gentle senses."',
             analysis:
               'Duncan praises the very location where he will be murdered. The words "pleasant," "sweetly," and "gentle" create an atmosphere of ease and trust that the audience knows is about to be shattered. The air that seems sweet is the "filthy air" the witches inhabit.',
           },
@@ -273,13 +273,13 @@ const ACTS: Act[] = [
           },
           {
             name: 'Dramatic irony / hyperbole',
-            quote: '"All our service / In every point twice done and then done double."',
+            quote: '"All our service, / In every point twice done, and then done double."',
             analysis:
-              'Lady Macbeth\'s extravagant protestations of loyalty and service are pure performance. Her language of doubling ("twice done... done double") unconsciously echoes the witches\' "Double, double toil and trouble," linking her hospitality to their deception.',
+              'Lady Macbeth\'s extravagant protestations of loyalty and service are pure performance. Her language of doubling ("twice done... done double") unconsciously echoes the witches\' "Double, double, toil and trouble," linking her hospitality to their deception.',
           },
           {
             name: 'Role performance',
-            quote: '"Your servant ever."',
+            quote: '"Your servants ever"',
             analysis:
               'Lady Macbeth adopts the language of feudal submission while planning regicide. The gap between her words and her intentions is absolute, dramatising the theme of appearance versus reality in its starkest form.',
           },
@@ -301,21 +301,21 @@ const ACTS: Act[] = [
           {
             name: 'Metaphor / personification',
             quote:
-              '"I have no spur / To prick the sides of my intent, but only / Vaulting ambition, which o\'erleaps itself / And falls on the other."',
+              '"I have no spur / To prick the sides of my intent, but only / Vaulting ambition, which o’erleaps itself / And falls on th’ other."',
             analysis:
               "Macbeth uses a horse-riding metaphor: his ambition is a rider that leaps too high and falls on the other side of the horse. He acknowledges that ambition is his only motive and recognises that it is self-defeating. This is the play's most explicit diagnosis of his tragic flaw.",
           },
           {
             name: 'Challenge to masculinity',
             quote:
-              '"When you durst do it, then you were a man; / And to be more than what you were, you would / Be so much more the man."',
+              '"When you durst do it, then you were a man; / And, to be more than what you were, you would / Be so much more the man."',
             analysis:
               "Lady Macbeth equates manhood with the capacity for murder. Her manipulation exploits the patriarchal association between masculinity and action/courage, weaponising gender expectations to override Macbeth's moral objections.",
           },
           {
             name: 'Shocking imagery / hyperbole',
             quote:
-              "\"I have given suck, and know / How tender 'tis to love the babe that milks me: / I would, while it was smiling in my face, / Have pluck'd my nipple from his boneless gums, / And dash'd the brains out, had I so sworn as you / Have done to this.\"",
+              '"I have given suck, and know / How tender ’tis to love the babe that milks me: / I would, while it was smiling in my face, / Have pluck’d my nipple from his boneless gums / And dash’d the brains out, had I so sworn as you / Have done to this."',
             analysis:
               'The most disturbing image in the play: Lady Macbeth claims she would murder her own nursing child to keep a promise. The tenderness of "smiling in my face" makes the violence of "dash\'d the brains out" all the more shocking. This demonstrates the extremity of her will and her willingness to transgress every natural bond.',
           },
@@ -372,7 +372,7 @@ const ACTS: Act[] = [
           {
             name: 'Sound as symbol',
             quote:
-              '"I go, and it is done; the bell invites me. / Hear it not, Duncan; for it is a knell / That summons thee to heaven or to hell."',
+              '"I go, and it is done. The bell invites me. / Hear it not, Duncan, for it is a knell / That summons thee to heaven or to hell."',
             analysis:
               'The bell is simultaneously a practical signal from Lady Macbeth and a funeral knell. The rhyming couplet (knell/hell) gives the moment a ritualistic finality. "Heaven or to hell" acknowledges the spiritual stakes while leaving Duncan\'s fate (and Macbeth\'s damnation) ambiguously balanced.',
           },
@@ -385,8 +385,7 @@ const ACTS: Act[] = [
         techniques: [
           {
             name: 'Auditory hallucination',
-            quote:
-              '"Methought I heard a voice cry \'Sleep no more! / Macbeth does murder sleep.\'"',
+            quote: '"Methought I heard a voice cry, ‘Sleep no more! / Macbeth does murder sleep’"',
             analysis:
               "Macbeth believes he hears a supernatural judgement: by killing the sleeping Duncan, he has murdered sleep itself. Sleep symbolises innocence, peace of mind, and the natural order. Macbeth's insomnia for the rest of the play becomes a physical manifestation of his irrecoverable guilt.",
           },
@@ -426,7 +425,7 @@ const ACTS: Act[] = [
           {
             name: 'Comic relief / dramatic irony',
             quote:
-              '"Here\'s a knocking indeed! If a man were porter of hell-gate, he should have old turning the key."',
+              '"Here’s a knocking indeed! If a man were porter of hell gate, he should have old turning the key."',
             analysis:
               "The Porter's drunken comedy provides relief from the tension of the murder scene, but his joke is more truth than he knows: the castle has become hell, and he is literally guarding the gate of a house where a king has just been murdered. The metatheatrical humour adds dark irony.",
           },
@@ -439,7 +438,7 @@ const ACTS: Act[] = [
           },
           {
             name: 'Exclamatory language / hyperbole',
-            quote: '"O horror, horror, horror! Tongue nor heart / Cannot conceive nor name thee!"',
+            quote: '"O horror, horror, horror! / Tongue nor heart cannot conceive nor name thee!"',
             analysis:
               'Macduff\'s triple exclamation conveys shock beyond the capacity of language. The claim that neither "tongue" (speech) nor "heart" (feeling) can process the sight emphasises the enormity of regicide. The failure of language mirrors the breakdown of natural order.',
           },
@@ -478,7 +477,7 @@ const ACTS: Act[] = [
           {
             name: 'Grotesque imagery',
             quote:
-              "\"Duncan's horses... turn'd wild in nature, broke their stalls, flung out, / Contending 'gainst obedience, as they would / Make war upon mankind... 'Tis said they eat each other.\"",
+              '"Duncan’s horses... / Turn’d wild in nature, broke their stalls, flung out, / Contending ’gainst obedience, as they would make / War with mankind... ’Tis said they eat each other."',
             analysis:
               'The horses\' unnatural behaviour symbolises the rebellion against natural order. Animals that served humans now turn against them and against each other. The cannibalistic detail ("eat each other") suggests that Macbeth\'s crime has unleashed a chain of destruction that consumes even nature.',
           },
@@ -491,7 +490,7 @@ const ACTS: Act[] = [
           },
           {
             name: 'Prolepsis / foreshadowing',
-            quote: '"He is already named, and gone to Scone / To be invested."',
+            quote: '"He is already nam’d; and gone to Scone / To be invested."',
             analysis:
               "Macbeth's coronation is reported rather than shown, keeping it offstage. This deliberate choice denies Macbeth any triumphal moment, suggesting that his reign lacks the legitimacy that would merit theatrical spectacle.",
           },
@@ -515,54 +514,55 @@ const ACTS: Act[] = [
           {
             name: 'Suspicion / dramatic irony',
             quote:
-              '"Thou hast it now: King, Cawdor, Glamis, all, / As the weird women promised, and I fear / Thou play\'dst most foully for\'t."',
+              '"Thou hast it now, King, Cawdor, Glamis, all, / As the Weird Women promis’d; and, I fear, / Thou play’dst most foully for’t."',
             analysis:
               'Banquo\'s aside reveals he suspects Macbeth but does not act on it. The word "foully" echoes "fair is foul," connecting Macbeth\'s achieved ambition to the witches\' moral inversion. Banquo\'s silence about his suspicions makes him complicit, complicating his role as a simple moral foil.',
           },
           {
             name: 'Metaphor / frustration',
             quote:
-              '"Upon my head they placed a fruitless crown, / And put a barren sceptre in my gripe."',
+              '"Upon my head they plac’d a fruitless crown, / And put a barren sceptre in my gripe."',
             analysis:
               'Macbeth uses images of sterility (fruitless, barren) to describe his kingship. His crown is "fruitless" because the witches prophesied that Banquo, not Macbeth, would father kings. The organic imagery contrasts with Duncan\'s "planting" language: Macbeth\'s reign produces nothing.',
           },
           {
             name: 'Manipulation / echoing Lady Macbeth',
             quote:
-              '"Do you find / Your patience so predominant in your nature / That you can let this go?"',
+              '"Do you find / Your patience so predominant in your nature, / That you can let this go?"',
             analysis:
               "Macbeth manipulates the murderers by questioning their manhood, exactly as Lady Macbeth manipulated him. This mirroring shows how toxic patterns of coercion replicate themselves. Macbeth has internalised his wife's strategy and now weaponises it against others.",
           },
           {
             name: 'Metaphor of the enemy within',
             quote:
-              '"There is none but he / Whose being I do fear: and, under him, / My Genius is rebuked."',
+              '"There is none but he / Whose being I do fear: and under him / My genius is rebuk’d."',
             analysis:
               'Macbeth admits that Banquo\'s moral integrity ("Genius" meaning guardian spirit) diminishes his own. The verb "rebuked" suggests a supernatural correction: Banquo\'s virtue is a standing reproach to Macbeth\'s corruption. This is a rare moment of self-awareness.',
           },
           {
             name: 'Soliloquy / resolution',
-            quote: '"Rather than so, come fate into the list, / And champion me to the utterance!"',
+            quote:
+              '"Rather than so, come, fate, into the list, / And champion me to th’ utterance!"',
             analysis:
               'Macbeth challenges fate to single combat, using chivalric jousting imagery ("list" is the tournament arena). "Utterance" means "to the death" (from French outrance). He has moved from passively waiting for fate in Act 1 to actively fighting against it, showing his increasingly desperate attempts to control destiny.',
           },
         ],
       },
       {
-        title: 'Act 3, Scene 2 - "Nought\'s Had, All\'s Spent"',
+        title: 'Act 3, Scene 2 - "Naught’s Had, All’s Spent"',
         summary:
           'Lady Macbeth expresses her dissatisfaction privately. When Macbeth enters, he reveals his anxiety about Banquo but does not tell her about the murder he has planned. Their conversation reveals a marriage deteriorating under the weight of shared guilt.',
         techniques: [
           {
             name: 'Antithesis / couplet',
-            quote: '"Nought\'s had, all\'s spent, / Where our desire is got without content."',
+            quote: '"Naught’s had, all’s spent, / Where our desire is got without content."',
             analysis:
               'Lady Macbeth recognises the cruel paradox: they have achieved everything but gained nothing. The rhyming couplet gives this a proverbial quality, as though it is a universal truth. The antithesis of "had" and "spent" suggests their gains are already losses.',
           },
           {
             name: 'Envy of the dead',
             quote:
-              '"\'Tis safer to be that which we destroy / Than by destruction dwell in doubtful joy."',
+              '"’Tis safer to be that which we destroy, / Than by destruction dwell in doubtful joy."',
             analysis:
               'Lady Macbeth argues that Duncan, in death, is better off than they are in their anxious power. The dead man has certainty; the living murderers have only "doubtful joy." This inversion, where the victim is envied and the victors are pitied, deepens the play\'s tragic irony.',
           },
@@ -605,7 +605,7 @@ const ACTS: Act[] = [
           },
           {
             name: 'Dramatic irony / partial failure',
-            quote: '"There\'s but one down; the son is fled."',
+            quote: '"There’s but one down: the son is fled."',
             analysis:
               "The murderers' report that Fleance has escaped is the turning point of the play. Macbeth has committed an act of irreversible evil but failed to achieve its purpose. This partial success mirrors the witches' equivocal prophecies: what appears to be a victory contains the seed of defeat.",
           },
@@ -630,7 +630,7 @@ const ACTS: Act[] = [
         techniques: [
           {
             name: 'Stage direction / supernatural',
-            quote: '"The GHOST OF BANQUO enters, and sits in MACBETH\'s place."',
+            quote: '"The Ghost of Banquo rises, and sits in Macbeth’s place."',
             analysis:
               "The ghost physically occupying Macbeth's seat is theatrically powerful: the man Macbeth murdered to secure his position literally takes it. The ghost can be played as visible to the audience but invisible to other characters, or as purely Macbeth's hallucination. Either reading emphasises Macbeth's psychological disintegration.",
           },
@@ -643,7 +643,7 @@ const ACTS: Act[] = [
           },
           {
             name: 'Exclamatory / terror',
-            quote: '"Thou canst not say I did it: never shake / Thy gory locks at me."',
+            quote: '"Thou canst not say I did it. Never shake / Thy gory locks at me."',
             analysis:
               'Macbeth addresses the ghost directly, protesting his innocence because he did not personally kill Banquo. The "gory locks" detail makes the ghost physically horrifying. His denial reveals a legalistic attempt to evade guilt: he hired the murderers, so technically he is not responsible.',
           },
@@ -655,7 +655,7 @@ const ACTS: Act[] = [
           },
           {
             name: 'Proverbial language / fatalism',
-            quote: '"It will have blood; they say, blood will have blood."',
+            quote: '"It will have blood, they say, blood will have blood."',
             analysis:
               'Macbeth acknowledges the inevitability of retribution: violence begets violence. The sentence has a proverbial, almost biblical quality, suggesting an inescapable natural law. The passive construction ("it will have") implies that bloodshed operates as an autonomous force beyond his control.',
           },
@@ -669,7 +669,7 @@ const ACTS: Act[] = [
           {
             name: 'Iambic tetrameter / song',
             quote:
-              '"And that distill\'d by magic sleights / Shall raise such artificial sprites / As by the strength of their illusion / Shall draw him on to his confusion."',
+              '"And that, distill’d by magic sleights, / Shall raise such artificial sprites, / As, by the strength of their illusion, / Shall draw him on to his confusion."',
             analysis:
               'Hecate reveals the witches\' strategy: they will use false confidence to destroy Macbeth. The word "confusion" meant both mental disorder and destruction. The rhyming couplets and regular metre give her speech a song-like quality, reflecting the seductive nature of the deception.',
           },
@@ -689,7 +689,7 @@ const ACTS: Act[] = [
           {
             name: 'Manipulation through comfort',
             quote:
-              '"He shall spurn fate, scorn death, and bear / His hopes \'bove wisdom, grace and fear."',
+              '"He shall spurn fate, scorn death, and bear / His hopes ’bove wisdom, grace, and fear."',
             analysis:
               'The plan is to make Macbeth feel invincible. The list of what he will "spurn" (fate, death, wisdom, grace, fear) encompasses everything that might restrain him. Removing these safeguards will lead to reckless self-destruction.',
           },
@@ -709,7 +709,7 @@ const ACTS: Act[] = [
           {
             name: 'Sustained irony / sarcasm',
             quote:
-              '"How it did grieve Macbeth! Did he not straight / In pious rage, the two delinquents tear, / That were the slaves of drink and thralls of sleep?"',
+              '"How it did grieve Macbeth! did he not straight, / In pious rage, the two delinquents tear / That were the slaves of drink and thralls of sleep?"',
             analysis:
               "Lennox's seemingly admiring language drips with sarcasm. \"Pious rage\" is oxymoronic: there is nothing holy about Macbeth's murder of the grooms. The irony signals that the nobility are beginning to see through Macbeth's facade, building the political opposition that will culminate in Act 5.",
           },
@@ -728,14 +728,14 @@ const ACTS: Act[] = [
           {
             name: 'Collective resistance forming',
             quote:
-              '"Some holy angel / Fly to the court of England and unfold / His message ere he come."',
+              '"Some holy angel / Fly to the court of England, and unfold / His message ere he come."',
             analysis:
               'The invocation of a "holy angel" positions the resistance against Macbeth as divinely supported. This aligns the overthrow of Macbeth with God\'s will, reinforcing the play\'s framework of the Divine Right of Kings.',
           },
           {
             name: 'Reportage / off-stage action',
             quote:
-              '"Macduff is gone to pray the holy king, upon his aid / To wake Northumberland and warlike Siward."',
+              '"Macduff / Is gone to pray the holy king, upon his aid / To wake Northumberland, and warlike Siward."',
             analysis:
               "Shakespeare uses reported action to advance the political plot efficiently while keeping the focus on Macbeth's psychological deterioration. The gathering army remains a distant threat that will materialise in Act 5.",
           },
@@ -758,7 +758,7 @@ const ACTS: Act[] = [
         techniques: [
           {
             name: 'Incantation / trochaic tetrameter',
-            quote: '"Double, double toil and trouble; / Fire burn and cauldron bubble."',
+            quote: '"Double, double, toil and trouble; / Fire, burn; and cauldron, bubble."',
             analysis:
               'The witches\' most famous chant uses the inverted rhythm (trochaic) that marks them as unnatural. "Double" reinforces the play\'s motifs of duplicity and equivocation. The grotesque ingredients of their cauldron (eye of newt, tongue of dog, finger of birth-strangled babe) catalogue abominations that invert natural creation.',
           },
@@ -771,7 +771,7 @@ const ACTS: Act[] = [
           {
             name: 'Visual symbolism (apparitions)',
             quote:
-              '"Be lion-mettled, proud; and take no care / Who chafes, who frets, or where conspirers are: / Macbeth shall never vanquish\'d be until / Great Birnam Wood to high Dunsinane Hill / Shall come against him."',
+              '"Be lion-mettled, proud, and take no care / Who chafes, who frets, or where conspirers are: / Macbeth shall never vanquish’d be, until / Great Birnam wood to high Dunsinane hill / Shall come against him."',
             analysis:
               'The third apparition, a crowned child holding a tree, visually foreshadows its own fulfilment: Malcolm\'s soldiers will carry branches. Macbeth dismisses the prophecy as impossible, interpreting it literally rather than recognising the potential for metaphorical fulfilment. His overconfidence is precisely the "security" Hecate prescribed.',
           },
@@ -784,7 +784,7 @@ const ACTS: Act[] = [
           {
             name: 'Decisive tyranny / imperative',
             quote:
-              '"The castle of Macduff I will surprise; / Seize upon Fife; give to the edge o\' the sword / His wife, his babes, and all unfortunate souls / That trace him in his line."',
+              '"The castle of Macduff I will surprise; / Seize upon Fife; give to th’ edge o’ th’ sword / His wife, his babes, and all unfortunate souls / That trace him in his line."',
             analysis:
               "Macbeth's decision to murder Macduff's entire family represents his most despicable act. Unlike Duncan's murder, there is no hesitation, no soliloquy of conscience. The staccato imperatives (\"Surprise... Seize... give\") show a man who has stripped away all moral deliberation. The murder of children is the ultimate marker of tyranny.",
           },
@@ -798,7 +798,7 @@ const ACTS: Act[] = [
           {
             name: 'Domestic intimacy / pathos',
             quote:
-              '"Sirrah, your father\'s dead; / And what will you do now? How will you live?" / "As birds do, mother." / "What, with worms and flies?" / "With what I get, I mean; and so do they."',
+              '"Sirrah, your father’s dead. / And what will you do now? How will you live?" / "As birds do, mother." / "What, with worms and flies?" / "With what I get, I mean; and so do they."',
             analysis:
               "The tender, witty exchange between mother and child makes the coming violence unbearable. The son's innocent resilience and quick intelligence make his murder all the more devastating. Shakespeare deliberately builds emotional attachment before destroying it.",
           },
@@ -818,14 +818,14 @@ const ACTS: Act[] = [
           {
             name: 'Abandoned femininity',
             quote:
-              '"I am in this earthly world; where to do harm / Is often laudable, to do good sometime / Accounted dangerous folly."',
+              '"I am in this earthly world, where to do harm / Is often laudable; to do good sometime / Accounted dangerous folly."',
             analysis:
               'Lady Macduff identifies the moral inversion of Macbeth\'s Scotland: doing harm is rewarded while doing good is dangerous. This directly echoes the witches\' "fair is foul, and foul is fair." The corruption has spread from individual to national level.',
           },
           {
             name: 'Urgency / failed warning',
             quote:
-              '"I pray you, school yourself: but for your husband, / He is noble, wise, judicious."',
+              '"I pray you, school yourself: but, for your husband, / He is noble, wise, judicious."',
             analysis:
               "Ross's awkward, evasive reassurances reveal his inability to protect the family. His departure before the murderers arrive suggests either cowardice or strategic retreat. The messenger who warns them to flee arrives too late, making the scene a study in helplessness under tyranny.",
           },
@@ -839,14 +839,14 @@ const ACTS: Act[] = [
           {
             name: 'The testing scene / dramatic tension',
             quote:
-              '"I am yet / Unknown to woman, never was forsworn, / Scarcely have coveted what was mine own."',
+              '"I am yet / Unknown to woman; never was forsworn; / Scarcely have coveted what was mine own."',
             analysis:
               "Malcolm's revelation that his earlier confessions of vice were a lie tests the audience as well as Macduff. The false confession serves a political purpose: Malcolm will not make his father's mistake of trusting too easily. His shrewdness qualifies him to be a better king than Duncan.",
           },
           {
             name: 'Catalogue of virtues / antithesis',
             quote:
-              '"The king-becoming graces, / As justice, verity, temperance, stableness, / Bounty, perseverance, mercy, lowliness, / Devotion, patience, courage, fortitude."',
+              '"the king-becoming graces, / As justice, verity, temp’rance, stableness, / Bounty, perseverance, mercy, lowliness, / Devotion, patience, courage, fortitude"',
             analysis:
               "Malcolm lists twelve virtues required of a good king, creating a direct checklist against which Macbeth's rule fails on every count. The list functions as a political manifesto for legitimate kingship, flattering James I's self-image.",
           },
@@ -865,7 +865,7 @@ const ACTS: Act[] = [
           {
             name: 'Channelling grief into action',
             quote:
-              '"Front to front / Bring thou this fiend of Scotland and myself; / Within my sword\'s length set him."',
+              '"Front to front, / Bring thou this fiend of Scotland and myself; / Within my sword’s length set him."',
             analysis:
               'Macduff transforms grief into righteous vengeance. The phrase "fiend of Scotland" dehumanises Macbeth just as the witches did ("something wicked"), showing how completely he has lost his place in the human community. The physical specificity of "sword\'s length" grounds the abstract desire for justice in concrete martial action.',
           },
@@ -889,14 +889,14 @@ const ACTS: Act[] = [
           {
             name: 'Prose (not verse) / fragmentation',
             quote:
-              '"Out, damned spot! Out, I say!--One: two: why, then, \'tis time to do\'t.--Hell is murky!--Fie, my lord, fie! a soldier, and afeard? What need we fear who knows it, when none can call our power to account?"',
+              '"Out, damned spot! out, I say! One; two. Why, then ’tis time to do’t. Hell is murky! Fie, my lord, fie! a soldier, and afeard? What need we fear who knows it, when none can call our power to account?"',
             analysis:
               'Lady Macbeth speaks in prose rather than her earlier commanding verse, reflecting her mental disintegration. The fragmented sentences, dashes, and disjointed references to multiple murders create a collage of guilt. Her subconscious reveals everything she repressed while awake.',
           },
           {
             name: 'Ironic reversal / blood imagery',
             quote:
-              '"Here\'s the smell of the blood still. All the perfumes of Arabia will not sweeten this little hand."',
+              '"Here’s the smell of the blood still: all the perfumes of Arabia will not sweeten this little hand."',
             analysis:
               'This directly inverts her Act 2 claim that "a little water clears us of this deed." The blood has shifted from sight to smell, becoming even more pervasive and inescapable. The word "little" is poignant: she is diminished from the towering figure who summoned spirits to a fragile woman broken by guilt.',
           },
@@ -936,14 +936,14 @@ const ACTS: Act[] = [
           {
             name: 'Medical metaphor',
             quote:
-              '"Meet we the medicine of the sickly weal; / And with him pour we in our country\'s purge / Each drop of us."',
+              '"Meet we the med’cine of the sickly weal; / And with him pour we, in our country’s purge, / Each drop of us."',
             analysis:
               'Caithness describes Malcolm\'s army as medicine for the sick state of Scotland. The extended medical metaphor (medicine, sickly, purge) treats Macbeth\'s tyranny as a disease that requires violent treatment. Each soldier is a "drop" of the cure, suggesting collective sacrifice.',
           },
           {
             name: 'Dehumanisation from within',
             quote:
-              '"Who then shall blame / His pester\'d senses to recoil and start, / When all that is within him does condemn / Itself for being there?"',
+              '"Who, then, shall blame / His pester’d senses to recoil and start, / When all that is within him does condemn / Itself for being there?"',
             analysis:
               "Even Macbeth's own body rebels against him. The image of his senses recoiling from his own corruption suggests a man at war with himself. This internal self-condemnation is arguably the harshest punishment the play inflicts on Macbeth.",
           },
@@ -955,7 +955,7 @@ const ACTS: Act[] = [
           },
           {
             name: 'Plant imagery / natural order',
-            quote: '"To dew the sovereign flower and drown the weeds."',
+            quote: '"To dew the sovereign flower, and drown the weeds."',
             analysis:
               'Malcolm is the "sovereign flower" (legitimate king) and Macbeth the "weed" (usurper). The organic metaphor returns the play to Duncan\'s planting imagery from Act 1, suggesting that the natural order reasserts itself. Legitimate kingship grows; illegitimate power is uprooted.',
           },
@@ -975,7 +975,7 @@ const ACTS: Act[] = [
           {
             name: 'Autumnal imagery / self-knowledge',
             quote:
-              '"I have lived long enough: my way of life / Is fall\'n into the sere, the yellow leaf."',
+              '"I have liv’d long enough: my way of life / Is fall’n into the sere, the yellow leaf."',
             analysis:
               'Macbeth compares his life to an autumn leaf, dried and withered. The seasonal metaphor acknowledges that his vitality is spent. This rare moment of honest self-assessment shows a man who recognises what he has lost but sees no way to recover it.',
           },
@@ -995,7 +995,7 @@ const ACTS: Act[] = [
           },
           {
             name: 'Frustrated imperative',
-            quote: '"Throw physic to the dogs; I\'ll none of it."',
+            quote: '"Throw physic to the dogs, I’ll none of it."',
             analysis:
               'Macbeth rejects medicine with contempt, dismissing both physical and spiritual healing. The explosive energy of "throw" contrasts with his earlier weariness, showing a man who oscillates between exhaustion and rage, unable to find any stable emotional ground.',
           },
@@ -1009,7 +1009,7 @@ const ACTS: Act[] = [
           {
             name: 'Fulfilment of prophecy / dramatic irony',
             quote:
-              '"Let every soldier hew him down a bough / And bear\'t before him: thereby shall we shadow / The numbers of our host."',
+              '"Let every soldier hew him down a bough, / And bear’t before him. Thereby shall we shadow / The numbers of our host."',
             analysis:
               "Malcolm's tactical decision unknowingly fulfils the witches' prophecy. The practical military reasoning (concealment) achieves the supposedly impossible (the wood moving). Shakespeare demonstrates that the witches' prophecies are equivocal: what seemed supernatural turns out to have a natural explanation.",
           },
@@ -1027,9 +1027,14 @@ const ACTS: Act[] = [
           },
           {
             name: 'Understatement / battlefield focus',
-            quote: '"Certain the issue / Of the battle we will determine."',
+            // This was "Certain the issue / Of the battle we will determine", given
+            // to Malcolm. No edition has that line: the scene ends on Siward's
+            // three below (26 September 2026, found checking the page against
+            // the held edition).
+            quote:
+              '"Thoughts speculative their unsure hopes relate, / But certain issue strokes must arbitrate; / Towards which advance the war."',
             analysis:
-              "Malcolm's matter-of-fact tone about determining the battle's outcome contrasts with Macbeth's increasingly desperate bravado. His pragmatic leadership offers a model of kingship that is both competent and morally grounded.",
+              'Siward sets speculation aside: only blows ("strokes") will decide the outcome. The plain, practical tone of Malcolm\'s commanders contrasts with Macbeth\'s increasingly desperate bravado, and offers a model of leadership that is both competent and morally grounded.',
           },
           {
             name: 'Ironic inversion of concealment',
@@ -1047,14 +1052,14 @@ const ACTS: Act[] = [
           {
             name: 'Repetition / monosyllabic diction',
             quote:
-              '"Tomorrow, and tomorrow, and tomorrow, / Creeps in this petty pace from day to day / To the last syllable of recorded time."',
+              '"Tomorrow, and tomorrow, and tomorrow, / Creeps in this petty pace from day to day, / To the last syllable of recorded time."',
             analysis:
               'The triple repetition of "tomorrow" creates a sense of unbearable, meaningless duration. The monosyllabic words (each stressed equally) mimic the monotonous passage of time. "Creeps" and "petty" diminish time to something contemptible. Life has become an endurance test without purpose.',
           },
           {
             name: 'Extended metaphor / metatheatre',
             quote:
-              '"Life\'s but a walking shadow, a poor player / That struts and frets his hour upon the stage / And then is heard no more."',
+              '"Life’s but a walking shadow; a poor player, / That struts and frets his hour upon the stage, / And then is heard no more."',
             analysis:
               'The theatrical metaphor is deeply self-aware: Macbeth, himself a character on Shakespeare\'s stage, reduces all human existence to a meaningless performance. The "poor player" who "struts and frets" is both pathetic and pretentious. Being "heard no more" suggests total annihilation, not even a memory left behind.',
           },
@@ -1068,14 +1073,14 @@ const ACTS: Act[] = [
           {
             name: 'Emotional numbness',
             quote:
-              '"She should have died hereafter; / There would have been a time for such a word."',
+              '"She should have died hereafter. / There would have been a time for such a word."',
             analysis:
               'Macbeth\'s response to his wife\'s death is stunningly flat. "She should have died hereafter" can mean either "she would have died eventually anyway" or "she should have died at a more convenient time." Either reading reveals a man so drained of feeling that even his wife\'s death provokes only weariness, not grief.',
           },
           {
             name: 'Prophecy collapses',
             quote:
-              '"I pull in resolution, and begin / To doubt the equivocation of the fiend / That lies like truth."',
+              '"I pull in resolution; and begin / To doubt th’ equivocation of the fiend, / That lies like truth."',
             analysis:
               'When told Birnam Wood is moving, Macbeth finally recognises the witches\' equivocation: they told truths that functioned as lies. The phrase "lies like truth" captures the entire mechanism of their deception. His "resolution" (courage) deflates as his supernatural supports collapse.',
           },
@@ -1089,7 +1094,7 @@ const ACTS: Act[] = [
           {
             name: 'Military command / shedding of disguise',
             quote:
-              '"Now near enough: your leavy screens throw down, / And show like those you are."',
+              '"Now near enough. Your leafy screens throw down, / And show like those you are."',
             analysis:
               "The order to reveal themselves inverts the play's theme of concealment. Where Macbeth hid his true nature behind false appearances, Malcolm's army reveals its true strength. The shedding of disguise symbolises the triumph of truth over deception.",
           },
@@ -1135,21 +1140,21 @@ const ACTS: Act[] = [
           {
             name: 'Bear-baiting imagery',
             quote:
-              '"They have tied me to a stake; I cannot fly, / But bear-like, I must fight the course."',
+              '"They have tied me to a stake. I cannot fly, / But, bear-like I must fight the course."',
             analysis:
               'Macbeth compares himself to a bear tied to a post in a bear-baiting arena, forced to fight dogs. The image is simultaneously pathetic and fierce: he is trapped but will fight with animal desperation. The bear-baiting metaphor also dehumanises him, aligning his final stand with bestial instinct rather than human courage.',
           },
           {
             name: "Macduff's determination",
-            quote: '"That way the noise is. Tyrant, show thy face!"',
+            quote: '"That way the noise is.—Tyrant, show thy face!"',
             analysis:
               'Macduff follows the sound of combat, actively hunting Macbeth. The epithet "Tyrant" reduces Macbeth from his name to his political crime. The imperative "show thy face" demands that Macbeth confront the consequences of his actions without hiding.',
           },
           {
             name: 'Castle falls / symbol',
-            quote: '"The castle\'s gently rendered."',
+            quote: '"The castle’s gently render’d."',
             analysis:
-              'The easy surrender of Dunsinane castle symbolises the collapse of Macbeth\'s power. "Gently rendered" means surrendered without resistance, showing that even his fortress has abandoned him. The castle that once seemed impregnable reflects the hollowness of his rule.',
+              'The easy surrender of Dunsinane castle symbolises the collapse of Macbeth\'s power. "Gently render’d" means surrendered without resistance, showing that even his fortress has abandoned him. The castle that once seemed impregnable reflects the hollowness of his rule.',
           },
         ],
       },
@@ -1159,10 +1164,10 @@ const ACTS: Act[] = [
           'Macbeth and Macduff face each other. Macbeth boasts that no man born of woman can harm him. Macduff reveals he was delivered by caesarean section. Macbeth briefly despairs but refuses to yield. They fight; Macduff kills Macbeth. Malcolm is hailed as King of Scotland.',
         techniques: [
           // Moved from 5.7: this line opens 5.8 in the Folger and MIT texts and
-          // in the site's own reader.
+          // in the held edition the site's reader prints.
           {
             name: 'Classical allusion',
-            quote: '"Why should I play the Roman fool and die / On mine own sword?"',
+            quote: '"Why should I play the Roman fool, and die / On mine own sword?"',
             analysis:
               'Macbeth rejects the Roman (Stoic) tradition of suicide, choosing to fight rather than take the honourable way out. This refusal to follow classical precedent marks him as neither noble villain nor tragic hero in the traditional sense, but something more primal and desperate.',
           },
@@ -1175,14 +1180,14 @@ const ACTS: Act[] = [
           {
             name: 'Despair then defiance',
             quote:
-              '"I\'ll not yield, / To kiss the ground before young Malcolm\'s feet... / Yet I will try the last."',
+              '"I will not yield, / To kiss the ground before young Malcolm’s feet... / Yet I will try the last."',
             analysis:
-              'Even knowing the prophecy has been broken, Macbeth refuses to surrender. "I\'ll try the last" is a final assertion of will that retains a shadow of his original martial courage. Some audiences find this defiant last stand admirable, others merely stubborn. The ambiguity preserves Macbeth\'s complexity as a tragic figure.',
+              'Even knowing the prophecy has been broken, Macbeth refuses to surrender. "Yet I will try the last" is a final assertion of will that retains a shadow of his original martial courage. Some audiences find this defiant last stand admirable, others merely stubborn. The ambiguity preserves Macbeth\'s complexity as a tragic figure.',
           },
           {
             name: 'Cursing the witches',
             quote:
-              '"And be these juggling fiends no more believed, / That palter with us in a double sense."',
+              '"And be these juggling fiends no more believ’d, / That palter with us in a double sense."',
             analysis:
               'Macbeth denounces the witches as "juggling fiends" who "palter" (equivocate) with double meanings. The word "juggling" suggests trickery and sleight of hand. This belated recognition of their deception comes too late to save him but provides the audience with a moral lesson about placing trust in supernatural reassurance.',
           },
@@ -1195,9 +1200,9 @@ const ACTS: Act[] = [
           {
             name: 'Forward-looking language',
             quote:
-              '"We will perform in measure, time and place... / What needful else / That calls upon us, by the grace of God."',
+              '"this, and what needful else / That calls upon us, by the grace of Grace, / We will perform in measure, time, and place."',
             analysis:
-              'Malcolm\'s final speech invokes divine grace and promises orderly governance. "Measure, time and place" suggests measured, rational rule in contrast to Macbeth\'s impulsive violence. The invocation of God signals the restoration of the divinely sanctioned order that Macbeth disrupted.',
+              'Malcolm\'s final speech invokes divine grace and promises orderly governance. "Measure, time, and place" suggests measured, rational rule in contrast to Macbeth\'s impulsive violence. "The grace of Grace", the favour of God himself, signals the restoration of the divinely sanctioned order that Macbeth disrupted.',
           },
         ],
       },

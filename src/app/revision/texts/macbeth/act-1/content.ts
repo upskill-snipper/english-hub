@@ -57,7 +57,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `استدعاؤها للأرواح يوازي فعل الساحرات، مما يضعها في صف الشر الخارق للطبيعة.`,
   },
   s32: {
-    en: `She takes charge of the murder plot, instructing Macbeth to &ldquo;look like th&rsquo; innocent flower, / But be the serpent under&rsquo;t.&rdquo;`,
+    en: `She takes charge of the murder plot, instructing Macbeth to &ldquo;look like the innocent flower, / But be the serpent under’t.&rdquo;`,
     ar: `تستحوذ على خطة القتل، وتوجه مكbeth لـ "يشبhim في صورة الزهرة البريئة، / لكن كن الحية تحته.`,
   },
   s34: { en: `Lady Macbeth`, ar: `` },

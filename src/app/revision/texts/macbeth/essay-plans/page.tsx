@@ -40,7 +40,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         point:
           'Macbeth is established as a courageous and honoured warrior, creating the height from which he will fall.',
         quote:
-          "For brave Macbeth -- well he deserves that name -- / Disdaining fortune, with his brandish'd steel, / Which smoked with bloody execution.",
+          'For brave Macbeth (well he deserves that name), / Disdaining Fortune, with his brandish’d steel, / Which smok’d with bloody execution.',
         quoteSource: 'Captain -- Act 1, Scene 2',
         analysis:
           'The Captain\'s report establishes Macbeth as the epitome of martial virtue. "Brave" and "bloody execution" frame violence as heroic in the context of war. The phrase "disdaining fortune" positions Macbeth as a man who masters fate rather than submitting to it -- an ironic quality given that he will later become enslaved by the witches\' prophecy. Shakespeare creates the maximum dramatic distance between Macbeth\'s reputation and his later crimes, which is essential for the tragic structure.',
@@ -52,7 +52,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         point:
           "Macbeth's self-awareness of his own ambition makes him a tragic rather than simply a villainous figure.",
         quote:
-          "I have no spur / To prick the sides of my intent, but only / Vaulting ambition, which o'erleaps itself / And falls on the other.",
+          'I have no spur / To prick the sides of my intent, but only / Vaulting ambition, which o’erleaps itself / And falls on th’ other.',
         quoteSource: 'Macbeth -- Act 1, Scene 7',
         analysis:
           'Macbeth identifies ambition as his sole motive and predicts his own destruction in the horse-riding metaphor of overreaching and falling. The word "only" is devastating: he has examined every possible justification and found nothing but naked ambition. This self-awareness is what makes him tragic -- he sees the abyss and walks into it anyway. A mere villain would not question his own motives; a tragic hero must understand what he is losing.',
@@ -87,7 +87,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         point:
           "Lady Macbeth dominates the murder plot, demonstrating intellectual power and force of will that exceed her husband's.",
         quote:
-          'Unsex me here, / And fill me from the crown to the toe top-full / Of direst cruelty.',
+          'Unsex me here, / And fill me, from the crown to the toe, top-full / Of direst cruelty.',
         quoteSource: 'Lady Macbeth -- Act 1, Scene 5',
         analysis:
           'Lady Macbeth\'s invocation demands the removal of femininity itself. "Unsex" is a violent neologism that treats gender as something that can be surgically removed. The request to be filled "from the crown to the toe" with cruelty suggests a total bodily possession, paralleling demonic possession. Crucially, her need to call on spirits proves that cruelty does not come naturally to her -- she must actively override her nature. This is the seed of her eventual destruction: what is suppressed will eventually erupt.',
@@ -99,7 +99,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         point:
           'Lady Macbeth manipulates Macbeth by attacking his masculinity, revealing both her intelligence and the toxicity of rigid gender expectations.',
         quote:
-          'When you durst do it, then you were a man; / And to be more than what you were, you would / Be so much more the man.',
+          'When you durst do it, then you were a man; / And, to be more than what you were, you would / Be so much more the man.',
         quoteSource: 'Lady Macbeth -- Act 1, Scene 7',
         analysis:
           'Lady Macbeth redefines masculinity as the capacity for violence, shaming Macbeth into action by questioning his manhood. She exploits the patriarchal value system she is excluded from: she cannot seize the crown herself, so she weaponises gender to control the man who can. Shakespeare reveals the circular trap of toxic masculinity -- violence is demanded to prove manhood, and manhood is defined by willingness to commit violence.',
@@ -111,7 +111,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         point:
           "Lady Macbeth's sleepwalking scene reveals that suppressed guilt eventually destroys the mind that tried to contain it.",
         quote:
-          "Here's the smell of the blood still. All the perfumes of Arabia will not sweeten this little hand.",
+          'Here’s the smell of the blood still: all the perfumes of Arabia will not sweeten this little hand.',
         quoteSource: 'Lady Macbeth -- Act 5, Scene 1',
         analysis:
           'This line directly inverts Macbeth\'s "Neptune\'s ocean" image and her own earlier "A little water clears us of this deed." The sensory shift from sight to smell makes guilt more pervasive and inescapable. The word "little" is profoundly poignant: she is no longer the towering figure who summoned spirits but a small, fragile woman destroyed by what she tried to suppress. Her fragmented prose (replacing her earlier commanding verse) mirrors her psychological disintegration.',
@@ -144,10 +144,10 @@ const ESSAY_PLANS: EssayPlan[] = [
         label: 'Paragraph 2 -- Suppressed guilt erupting',
         point:
           "Lady Macbeth's sleepwalking proves that suppressed guilt erupts more destructively than acknowledged guilt.",
-        quote: "Out, damned spot! Out, I say! One, two -- why then, 'tis time to do't.",
+        quote: 'Out, damned spot! out, I say! One; two. Why, then ’tis time to do’t.',
         quoteSource: 'Lady Macbeth -- Act 5, Scene 1',
         analysis:
-          'Lady Macbeth\'s fragmented prose contrasts sharply with her earlier commanding blank verse, signalling psychological disintegration. The word "damned" carries religious weight, suggesting unconscious recognition of spiritual condemnation. Her reliving of the murder sequence ("One, two") shows that guilt has not been suppressed but has been replaying internally, waiting for the conscious defences to weaken.',
+          'Lady Macbeth\'s fragmented prose contrasts sharply with her earlier commanding blank verse, signalling psychological disintegration. The word "damned" carries religious weight, suggesting unconscious recognition of spiritual condemnation. Her reliving of the murder sequence ("One; two") shows that guilt has not been suppressed but has been replaying internally, waiting for the conscious defences to weaken.',
         contextLink:
           'Shakespeare draws on contemporary medical theories of melancholy and the relationship between conscience and dreams. The doctor\'s observation that "unnatural deeds / Do breed unnatural troubles" frames guilt as a natural consequence rather than a punishment imposed from outside.',
       },
@@ -156,7 +156,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         point:
           "Macbeth's final soliloquy can be read as the last stage of guilt: the complete destruction of meaning and feeling.",
         quote:
-          "Life's but a walking shadow, a poor player / That struts and frets his hour upon the stage / And then is heard no more.",
+          'Life’s but a walking shadow; a poor player, / That struts and frets his hour upon the stage, / And then is heard no more.',
         quoteSource: 'Macbeth -- Act 5, Scene 5',
         analysis:
           'Macbeth\'s nihilism is not a philosophical position but the emotional endpoint of sustained guilt. He has lost the capacity to feel anything -- even remorse. The theatrical metaphor ("poor player") is deeply self-aware: Macbeth recognises that his life has become a meaningless performance. Shakespeare suggests that the ultimate consequence of guilt is not madness (Lady Macbeth\'s fate) but a total emptying of meaning.',
@@ -222,7 +222,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         point:
           'Lady Macbeth uses a reductive definition of manhood as a weapon to drive Macbeth to murder.',
         quote:
-          'When you durst do it, then you were a man; / And to be more than what you were, you would / Be so much more the man.',
+          'When you durst do it, then you were a man; / And, to be more than what you were, you would / Be so much more the man.',
         quoteSource: 'Lady Macbeth -- Act 1, Scene 7',
         analysis:
           'Lady Macbeth defines manhood as the willingness to commit violence, shaming Macbeth by implying that hesitation is cowardice and therefore unmanliness. The circular logic -- you were a man when you dared, and daring more would make you more of a man -- creates an escalating trap where masculinity can only be proved through increasingly extreme action. Shakespeare exposes how weaponised gender expectations can override individual moral judgement.',
@@ -234,7 +234,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         point:
           "Macbeth perpetuates the toxic definition by questioning the murderers' manhood, showing how corrupted masculinity reproduces itself.",
         quote:
-          "Are you so gospell'd / To pray for this good man and for his issue, / Whose heavy hand hath bow'd you to the grave?",
+          'Are you so gospell’d, / To pray for this good man and for his issue, / Whose heavy hand hath bow’d you to the grave?',
         quoteSource: 'Macbeth -- Act 3, Scene 1',
         analysis:
           'Macbeth uses the same technique Lady Macbeth used on him: equating moral restraint with weakness. "Gospell\'d" dismisses Christian virtue as effeminate. He has internalised the toxic definition of masculinity and now reproduces it, creating a cycle of violence driven by shame. Shakespeare shows that corrupted ideas about manhood do not remain with the individual but spread outward, infecting others.',
@@ -267,7 +267,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         label: 'Paragraph 1 -- Ambition before the crime',
         point:
           "Macbeth's ambition initially coexists with a functioning conscience, creating agonised internal conflict.",
-        quote: 'Stars, hide your fires; / Let not light see my black and deep desires.',
+        quote: 'Stars, hide your fires! / Let not light see my black and deep desires.',
         quoteSource: 'Macbeth -- Act 1, Scene 4',
         analysis:
           'Macbeth\'s aside reveals ambition emerging alongside shame. He asks heaven to look away, acknowledging that his desires are "black" and require concealment. The light/dark opposition externalises an internal conflict between ambition and conscience. At this stage, Macbeth still recognises the moral weight of what he contemplates. Shakespeare establishes that ambition does not simply override conscience -- it must actively suppress it, and the suppression itself becomes a source of psychological damage.',
@@ -315,7 +315,7 @@ const ESSAY_PLANS: EssayPlan[] = [
           "Will all great Neptune's ocean wash this blood / Clean from my hand? No, this my hand will rather / The multitudinous seas incarnadine.",
         quoteSource: 'Macbeth -- Act 2, Scene 2',
         analysis:
-          'In Act 1, blood is heroic: Macbeth\'s sword "smoked with bloody execution" in honourable battle. By Act 2, blood has become guilt. The hyperbole of Neptune\'s ocean being insufficient conveys permanence, and "incarnadine" (to turn red) imagines guilt contaminating the entire natural world. The shift from "bloody execution" (praised) to blood that cannot be washed (condemned) mirrors Macbeth\'s transformation from warrior to murderer.',
+          'In Act 1, blood is heroic: Macbeth\'s sword "smok’d with bloody execution" in honourable battle. By Act 2, blood has become guilt. The hyperbole of Neptune\'s ocean being insufficient conveys permanence, and "incarnadine" (to turn red) imagines guilt contaminating the entire natural world. The shift from "bloody execution" (praised) to blood that cannot be washed (condemned) mirrors Macbeth\'s transformation from warrior to murderer.',
         contextLink:
           "Blood-guilt was a theological concept: the blood of the innocent cried out to God for justice. Macbeth's unwashable blood symbolises not merely psychological guilt but spiritual separation from divine grace.",
       },
@@ -324,7 +324,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         point:
           'Both Macbeths invoke darkness to conceal their crimes, linking evil to the absence of divine light.',
         quote:
-          'Come, thick night, / And pall thee in the dunnest smoke of hell, / That my keen knife see not the wound it makes.',
+          'Come, thick night, / And pall thee in the dunnest smoke of hell / That my keen knife see not the wound it makes.',
         quoteSource: 'Lady Macbeth -- Act 1, Scene 5',
         analysis:
           'Lady Macbeth asks darkness to cover her actions from heaven and from herself. "Pall" evokes a funeral shroud, foreshadowing death. "Dunnest smoke of hell" explicitly locates the murder in the infernal realm. The desire for the knife not to "see" its own wound personifies the weapon and suggests that even the instrument of murder should be shielded from the horror. Shakespeare uses darkness as a spiritual concept: evil requires the absence of God\'s light.',
@@ -336,7 +336,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         point:
           "In Act 5, blood and darkness converge in Lady Macbeth's sleepwalking scene, where imaginary blood becomes the final mark of guilt.",
         quote:
-          "Here's the smell of the blood still. All the perfumes of Arabia will not sweeten this little hand.",
+          'Here’s the smell of the blood still: all the perfumes of Arabia will not sweeten this little hand.',
         quoteSource: 'Lady Macbeth -- Act 5, Scene 1',
         analysis:
           'Lady Macbeth\'s hallucinated blood inverts her earlier dismissal ("A little water clears us of this deed"). The sensory shift from sight to smell suggests guilt has become even more pervasive. "Little hand" reduces her from commanding figure to fragile human. The scene takes place at night, with a candle that Lady Macbeth insists on having -- the light she once asked to be extinguished is now her only comfort. Shakespeare brings the blood and darkness imagery to its devastating conclusion: the darkness Lady Macbeth summoned has become her prison, and the blood she dismissed has become her torment.',
@@ -370,7 +370,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         label: 'Paragraph 2 -- Macbeth as tyrant',
         point:
           "Macbeth's rule demonstrates what happens when kingship is seized without divine sanction.",
-        quote: 'I have honour, love, obedience, troops of friends, / I must not look to have.',
+        quote: 'As honour, love, obedience, troops of friends, / I must not look to have.',
         quoteSource: 'Macbeth -- Act 5, Scene 3',
         analysis:
           'Macbeth\'s self-assessment is a devastating admission that his kingship has yielded none of the rewards of legitimate rule. He has power without honour, a throne without love. The list of things he "must not look to have" directly mirrors Malcolm\'s "king-becoming graces": Macbeth knows exactly what a good king should possess and knows he has none of it. Shakespeare presents tyranny as inherently self-defeating -- it cannot produce the loyalty and respect that make kingship sustainable.',
@@ -381,7 +381,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         label: 'Paragraph 3 -- Malcolm as restoration',
         point:
           "Malcolm's cautious virtue represents Shakespeare's ideal king, combining moral authority with political wisdom.",
-        quote: 'The king-becoming graces: / As justice, verity, temperance, stableness.',
+        quote: 'The king-becoming graces, / As justice, verity, temp’rance, stableness.',
         quoteSource: 'Malcolm -- Act 4, Scene 3',
         analysis:
           "Malcolm's list functions as a direct checklist for good kingship. Each virtue -- justice, truth, moderation, steadfastness -- is one that Macbeth conspicuously lacks. However, Malcolm adds something Duncan lacked: political shrewdness. His elaborate test of Macduff demonstrates that he will not trust blindly as his father did. Shakespeare argues that the ideal king must be both virtuous and politically astute.",

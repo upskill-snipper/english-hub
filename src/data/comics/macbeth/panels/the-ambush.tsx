@@ -17,12 +17,12 @@ import { EYE, HEAD_BEARD, HEAD_MAN } from './inverness-people'
 /**
  * Act 3, Scene 3: "The ambush", the fourteenth moment in the guide's
  * timeline. A road in the park near the palace, at dusk. Every detail is from
- * the scene (Folger text):
+ * the scene (quoted from the held edition, src/data/full-texts/macbeth.ts):
  *
  * - FIRST MURDERER: "The west yet glimmers with some streaks of day." So the
  *   sky is dark but for long streaks of light low on the left, and the
  *   murderers come out of that side.
- * - "Enter Banquo and Fleance, with a torch." BANQUO: "It will be rain
+ * - "Enter Banquo and Fleance with a torch." BANQUO: "It will be rain
  *   tonight." FIRST MURDERER: "Let it come down." So the first rain is
  *   falling, cut as fine slanting lines.
  * - They set on him, and the THIRD MURDERER asks "Who did strike out the
@@ -31,8 +31,8 @@ import { EYE, HEAD_BEARD, HEAD_MAN } from './inverness-people'
  * - BANQUO: "O, treachery! Fly, good Fleance, fly, fly, fly!" So Banquo turns
  *   to face the three, one hand up against them and the other flung back
  *   towards his son, and Fleance, a boy, runs away along the road to the
- *   right. "There's but one down. The son is fled."
- * - Banquo's walk ends "at th' palace gate", so the palace is far off at the
+ *   right. "There’s but one down: the son is fled."
+ * - Banquo's walk runs "to the palace gate", so the palace is far off at the
  *   end of the road, its gate still lit.
  *
  * SAFEGUARDING. The killing is not drawn. The picture stops at the moment

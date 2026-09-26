@@ -141,8 +141,8 @@ export default async function MacbethAct2Page() {
               </div>
               <div className="rounded-lg border border-border/60 p-3">
                 <p className="font-medium">
-                  &ldquo;Art thou not, fatal vision, sensible / To feeling as to sight? Or art thou
-                  but / A dagger of the mind, a false creation / Proceeding from the heat-oppressed
+                  &ldquo;Art thou not, fatal vision, sensible / To feeling as to sight? or art thou
+                  but / A dagger of the mind, a false creation, / Proceeding from the heat-oppressed
                   brain?&rdquo;
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
@@ -155,7 +155,7 @@ export default async function MacbethAct2Page() {
               </div>
               <div className="rounded-lg border border-border/60 p-3">
                 <p className="font-medium">
-                  &ldquo;I see thee still, / And on thy blade and dudgeon gouts of blood, / Which
+                  &ldquo;I see thee still; / And on thy blade and dudgeon, gouts of blood, / Which
                   was not so before.&rdquo;
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
@@ -168,10 +168,10 @@ export default async function MacbethAct2Page() {
               </div>
               <div className="rounded-lg border border-border/60 p-3">
                 <p className="font-medium">
-                  &ldquo;Witchcraft celebrates / Pale Hecate&rsquo;s offerings, and withered murder,
-                  / Alarumed by his sentinel, the wolf, / Whose howl&rsquo;s his watch, thus with
-                  his stealthy pace, / With Tarquin&rsquo;s ravishing strides, towards his design /
-                  Moves like a ghost.&rdquo;
+                  &ldquo;Witchcraft celebrates / Pale Hecate’s off’rings; and wither’d murder, /
+                  Alarum’d by his sentinel, the wolf, / Whose howl’s his watch, thus with his
+                  stealthy pace, / With Tarquin’s ravishing strides, towards his design / Moves like
+                  a ghost.&rdquo;
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
                   <span className="font-medium text-foreground">Technique:</span> Classical
@@ -286,8 +286,8 @@ export default async function MacbethAct2Page() {
             <div className="space-y-3">
               <div className="rounded-lg border border-border/60 p-3">
                 <p className="font-medium">
-                  &ldquo;Methought I heard a voice cry &lsquo;Sleep no more! / Macbeth does murder
-                  sleep.&rsquo;&rdquo;
+                  &ldquo;Methought I heard a voice cry, &lsquo;Sleep no more! / Macbeth does murder
+                  sleep&rsquo;&rdquo;
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
                   <span className="font-medium text-foreground">Technique:</span> Auditory
@@ -438,8 +438,8 @@ export default async function MacbethAct2Page() {
             <div className="space-y-3">
               <div className="rounded-lg border border-border/60 p-3">
                 <p className="font-medium">
-                  &ldquo;Here&rsquo;s a knocking indeed! If a man were porter of hell-gate, he
-                  should have old turning the key.&rdquo;
+                  &ldquo;Here’s a knocking indeed! If a man were porter of hell gate, he should have
+                  old turning the key.&rdquo;
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
                   <span className="font-medium text-foreground">Technique:</span> Dark comedy &amp;
@@ -452,7 +452,7 @@ export default async function MacbethAct2Page() {
               </div>
               <div className="rounded-lg border border-border/60 p-3">
                 <p className="font-medium">
-                  &ldquo;O horror, horror, horror! Tongue nor heart / Cannot conceive nor name
+                  &ldquo;O horror, horror, horror! / Tongue nor heart cannot conceive nor name
                   thee!&rdquo;
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
@@ -465,7 +465,7 @@ export default async function MacbethAct2Page() {
               </div>
               <div className="rounded-lg border border-border/60 p-3">
                 <p className="font-medium">
-                  &ldquo;Had I but died an hour before this chance, / I had lived a blessed
+                  &ldquo;Had I but died an hour before this chance, / I had liv’d a blessed
                   time.&rdquo;
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
@@ -574,8 +574,8 @@ export default async function MacbethAct2Page() {
             <div className="space-y-3">
               <div className="rounded-lg border border-border/60 p-3">
                 <p className="font-medium">
-                  &ldquo;By th&rsquo; clock &rsquo;tis day, / And yet dark night strangles the
-                  travelling lamp.&rdquo;
+                  &ldquo;By the clock ’tis day, / And yet dark night strangles the travelling
+                  lamp.&rdquo;
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
                   <span className="font-medium text-foreground">Technique:</span> Pathetic fallacy
@@ -588,8 +588,8 @@ export default async function MacbethAct2Page() {
               </div>
               <div className="rounded-lg border border-border/60 p-3">
                 <p className="font-medium">
-                  &ldquo;A falcon, towering in her pride of place, / Was by a mousing owl hawked at
-                  and killed.&rdquo;
+                  &ldquo;A falcon, towering in her pride of place, / Was by a mousing owl hawk’d at
+                  and kill’d.&rdquo;
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
                   <span className="font-medium text-foreground">Technique:</span> Symbolism &amp;

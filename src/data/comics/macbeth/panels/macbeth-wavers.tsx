@@ -21,13 +21,13 @@ import {
  * Act 1, Scene 7: "Macbeth wavers", the seventh moment in the guide's
  * timeline. Every detail is from the scene:
  *
- * - "Macbeth's castle. Hautboys and torches. Enter a Sewer, and divers
- *   Servants with dishes and service, and pass over the stage. Then enter
- *   Macbeth." (The stage directions here are quoted from the site's own
- *   reader, src/app/revision/texts/macbeth/read/page.tsx.) The feast goes on
+ * - "Hautboys and torches. Enter, and pass over, a Sewer and divers Servants
+ *   with dishes and service. Then enter Macbeth." (The stage directions here
+ *   are quoted from the held edition, src/data/full-texts/macbeth.ts.) The
+ *   feast goes on
  *   in the great hall behind: a long table laid with dishes and candles, the
  *   guests seated along it.
- * - "He has almost supped. Why have you left the chamber?" "Hath he asked for
+ * - "He has almost supp’d. Why have you left the chamber?" "Hath he ask’d for
  *   me?" So Macbeth has left the hall, and the two of them stand in the
  *   passage outside it, black against its light, with the king at the head of
  *   his own table between them.
