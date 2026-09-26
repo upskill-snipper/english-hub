@@ -15,6 +15,8 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { StoryVisuals } from '@/components/study-guide/visuals/story-visuals'
+import { guide as studyGuide } from '@/data/study-guides/macbeth'
 
 export const metadata = {
   openGraph: {
@@ -82,6 +84,9 @@ export default async function MacbethAct1Page() {
           </p>
         </div>
       </section>
+
+      {/* The key scenes of Act 1, animated. See scripts/mount-story-visuals.mjs. */}
+      <StoryVisuals guide={studyGuide} part="Act 1" />
 
       {/* Scene 1 */}
       <Card>
