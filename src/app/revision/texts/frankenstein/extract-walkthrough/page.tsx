@@ -18,18 +18,27 @@ type WalkthroughCard = {
   devices: string[]
 }
 
-const EXTRACT_TITLE = "The Creature's Awakening - Volume I, Chapter 5"
+// Chapter 5 in the 1831 numbering every Frankenstein page uses. Until 26
+// September 2026 this read "Volume I, Chapter 5", which is neither edition:
+// the 1818 first edition prints the scene as Volume I, Chapter IV.
+const EXTRACT_TITLE = "The Creature's Awakening - Chapter 5"
 
 const EXTRACT_OPENER =
   '"It was on a dreary night of November, that I beheld the accomplishment of my toils..."'
 
 const EXTRACT_CLOSER = '"...breathless horror and disgust filled my heart."'
 
-// VERIFIED: 1818 first edition via Project Gutenberg #41445 (https://www.gutenberg.org/files/41445/41445-h/41445-h.htm)
-// and Pennsylvania Electronic Edition of the 1818 text. Comma after "November" present in 1818; absent in 1831 (PG #84).
+// The held 1831 text, src/data/full-texts/frankenstein.ts (Project Gutenberg
+// #42324), which the reader prints. The 1818 first edition (#41445) has the
+// same words and one more comma ("shrivelled complexion, and"). Corrected 26
+// September 2026: "dun-white sockets" was the modernised spelling of Gutenberg
+// #84, and both editions print "dun white". The comma after "November" is in
+// 1818 and in 1831; only #84, which modernises the punctuation, drops it. The
+// comment this replaces said the text was verified against 1818 and that 1831
+// lacks the comma.
 const EXTRACT_PARAGRAPHS: string[] = [
   'It was on a dreary night of November, that I beheld the accomplishment of my toils. With an anxiety that almost amounted to agony, I collected the instruments of life around me, that I might infuse a spark of being into the lifeless thing that lay at my feet. It was already one in the morning; the rain pattered dismally against the panes, and my candle was nearly burnt out, when, by the glimmer of the half-extinguished light, I saw the dull yellow eye of the creature open; it breathed hard, and a convulsive motion agitated its limbs.',
-  'How can I describe my emotions at this catastrophe, or how delineate the wretch whom with such infinite pains and care I had endeavoured to form? His limbs were in proportion, and I had selected his features as beautiful. Beautiful! - Great God! His yellow skin scarcely covered the work of muscles and arteries beneath; his hair was of a lustrous black, and flowing; his teeth of a pearly whiteness; but these luxuriances only formed a more horrid contrast with his watery eyes, that seemed almost of the same colour as the dun-white sockets in which they were set, his shrivelled complexion and straight black lips.',
+  'How can I describe my emotions at this catastrophe, or how delineate the wretch whom with such infinite pains and care I had endeavoured to form? His limbs were in proportion, and I had selected his features as beautiful. Beautiful! - Great God! His yellow skin scarcely covered the work of muscles and arteries beneath; his hair was of a lustrous black, and flowing; his teeth of a pearly whiteness; but these luxuriances only formed a more horrid contrast with his watery eyes, that seemed almost of the same colour as the dun white sockets in which they were set, his shrivelled complexion and straight black lips.',
   'The different accidents of life are not so changeable as the feelings of human nature. I had worked hard for nearly two years, for the sole purpose of infusing life into an inanimate body. For this I had deprived myself of rest and health. I had desired it with an ardour that far exceeded moderation; but now that I had finished, the beauty of the dream vanished, and breathless horror and disgust filled my heart.',
 ]
 

@@ -18970,15 +18970,15 @@ export const EN_MESSAGES: Record<string, string> = {
     "Deep analysis of the most important chapters for the exam: key quotations, writer's methods, and theme links for each section of the novel.",
   'rev.texts.fr.quotes.title': '25 Key Quotes by Theme',
   'rev.texts.fr.quotes.intro':
-    'Every quotation you need for the exam, organised by theme with detailed analysis. All from the public-domain 1818 text.',
+    'Every quotation you need for the exam, organised by theme with detailed analysis. All from the text Mary Shelley revised in 1831, which is in the public domain.',
   'rev.texts.fr.quotes.jump_to_theme': 'Jump to theme',
   'rev.texts.fr.quotes.public_domain':
-    'Frankenstein; or, The Modern Prometheus (1818) by Mary Shelley is in the public domain. All quotations are from the original 1818 text and are reproduced freely.',
+    'Frankenstein; or, The Modern Prometheus (1818) by Mary Shelley is in the public domain. All quotations are from the text she revised for the 1831 edition, and are reproduced freely.',
   'rev.texts.fr.essays.title': 'Model Essay Plans',
   'rev.texts.fr.essays.intro':
     'Five exam-ready essay plans with introductions, three-paragraph structures, embedded quotations, analysis, context, and conclusions.',
   'rev.texts.fr.essays.general_strategy': 'General exam strategy',
-  'rev.texts.fr.extract.badge': 'Volume I · Chapter 5 · The Awakening',
+  'rev.texts.fr.extract.badge': 'Chapter 5 · The Awakening',
   'rev.texts.fr.extract.intro':
     'A guided extract walkthrough on the moment Victor Frankenstein animates the Creature. Each card invites you to notice a feature, say what the writer is doing with it, and zoom out to context. A model 250-word paragraph follows.',
   'rev.texts.fr.extract.opens': 'Extract opens: ',
@@ -18989,11 +18989,8 @@ export const EN_MESSAGES: Record<string, string> = {
   'rev.texts.fr.extract.model_para_h': 'Model Paragraph (250 words)',
   'rev.texts.fr.extract.why_works_h': 'Why this paragraph works',
   'rev.texts.fr.read.crumb_current': 'Read the Novel',
-  'rev.texts.fr.read.pd_label': 'Public Domain Text',
-  'rev.texts.fr.read.pd_body':
-    'Frankenstein; or, The Modern Prometheus (1818) by Mary Shelley is in the public domain. The text below is from the original 1818 first edition. Key chapters are presented with interactive annotations for GCSE study.',
-  'rev.texts.fr.read.footer_pd':
-    'Frankenstein; or, The Modern Prometheus (1818) by Mary Shelley is in the public domain. Text sourced from the 1818 first edition. Annotations are original study material.',
+  'rev.texts.fr.read.rights':
+    'This work is out of copyright in the UK, so we can publish it in full. The text is a copy of the edition Mary Shelley revised in 1831, in its original spelling, not a retyping.',
   'rev.texts.fr.read.back_to_guide': 'Back to Study Guide',
   'rev.texts.fr.themes.intro':
     'Comprehensive analysis of the six key themes with quotations, contextual links, and exam strategies.',

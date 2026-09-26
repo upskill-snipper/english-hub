@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import { EnglishText } from '@/components/i18n/EnglishText'
 import { sanitiseHtml } from '@/lib/html/sanitise'
 import { ReadingProgressTracker } from './ReadingProgressTracker'
+import { BLOCK_TAGS, decodeEntities, parseSectionHtml, type HtmlNode } from './section-html'
 import { useT } from '@/lib/i18n/use-t'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
@@ -175,24 +176,6 @@ function escapeRegExp(str: string): string {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 }
 
-/**
- * The entities the play editions escape, back to the characters they stand for.
- *
- * An annotated section is rendered as plain text, not HTML, so an entity left
- * in it is shown to the student as written. Macbeth's Act 4, Scene 1 prints a
- * stage direction ending "&amp;c.", and once the scene carried notes it read
- * "Black Spirits, &amp;c." on the page (26 September 2026). `&amp;` goes last,
- * so "&amp;lt;" becomes "&lt;" and not "<".
- */
-function decodeEntities(s: string): string {
-  return s
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&amp;/g, '&')
-}
-
 // ─── Icons ───────────────────────────────────────────────────────────────────
 
 function ChevronDownIcon({ className = 'h-4 w-4' }: { className?: string }) {
@@ -314,10 +297,17 @@ const FACET_ORDER: OverlayType[] = ['quote', 'theme', 'language', 'character', '
 
 function AnnotationTooltip({
   annotations,
+  continued = false,
   children,
 }: {
   /** Every authored note on this exact span, one per overlay. */
   annotations: Annotation[]
+  /**
+   * The span carries on here from an earlier paragraph, or from outside the
+   * element it began in. It is highlighted and shows its note on hover, but
+   * only the first part is a control, so a screen reader meets the note once.
+   */
+  continued?: boolean
   children: React.ReactNode
 }) {
   const t = useT()
@@ -326,7 +316,6 @@ function AnnotationTooltip({
     (a, b) => FACET_ORDER.indexOf(a.type) - FACET_ORDER.indexOf(b.type),
   )
   const cfg = OVERLAY_CONFIG[ordered[0].type]
-  const label = t(cfg.labelKey)
 
   return (
     <span
@@ -335,13 +324,18 @@ function AnnotationTooltip({
       onMouseLeave={() => setShow(false)}
       onFocus={() => setShow(true)}
       onBlur={() => setShow(false)}
-      tabIndex={0}
-      role="button"
-      aria-label={ordered
-        .map(
-          (a) => `${t(OVERLAY_CONFIG[a.type].labelKey)} ${t('text_viewer.note_label')}: ${a.note}`,
-        )
-        .join('. ')}
+      {...(continued
+        ? {}
+        : {
+            tabIndex: 0,
+            role: 'button',
+            'aria-label': ordered
+              .map(
+                (a) =>
+                  `${t(OVERLAY_CONFIG[a.type].labelKey)} ${t('text_viewer.note_label')}: ${a.note}`,
+              )
+              .join('. '),
+          })}
     >
       <span className={`rounded-sm px-0.5 ${cfg.bg} border-b-2 ${cfg.border}`}>{children}</span>
       {show && (
@@ -390,16 +384,16 @@ function AnnotatedContent({
 
     if (active.length === 0) {
       return (
-        <div className="prose-reader" dangerouslySetInnerHTML={{ __html: sanitiseHtml(html) }} />
+        <div className={READER_CLASS} dangerouslySetInnerHTML={{ __html: sanitiseHtml(html) }} />
       )
     }
 
-    // Parse the HTML to plain text for matching, then rebuild with annotations
-    // We use a simple approach: strip tags, find annotation positions, then reconstruct
-    // Decoded, because this text is rendered as text; and each note's span is
-    // decoded the same way below, so a span cut from the escaped HTML still
-    // finds its place.
-    const stripped = decodeEntities(html.replace(/<[^>]*>/g, ''))
+    // The notes are found in the plain text (tags deleted, entities decoded,
+    // which is what they are cut from), and the highlights are then laid into
+    // the HTML itself: see ./section-html.ts for what printing the plain text
+    // instead cost. Each note's span is decoded the same way below, so a span
+    // cut from the escaped HTML still finds its place.
+    const { nodes, plain: stripped } = parseSectionHtml(html)
 
     // Find all annotation matches and their positions
     type Match = { start: number; end: number; annotation: Annotation }
@@ -442,37 +436,142 @@ function AnnotatedContent({
       }
     }
 
-    // Build segments
-    const segments: React.ReactNode[] = []
-    let cursor = 0
-
-    for (let i = 0; i < filtered.length; i++) {
-      const { start, end, annotations: onSpan } = filtered[i]
-
-      // Text before this annotation
-      if (cursor < start) {
-        segments.push(<span key={`t-${i}`}>{stripped.slice(cursor, start)}</span>)
-      }
-
-      // The annotated text
-      segments.push(
-        <AnnotationTooltip key={`a-${i}`} annotations={onSpan}>
-          {stripped.slice(start, end)}
-        </AnnotationTooltip>,
-      )
-
-      cursor = end
-    }
-
-    // Remaining text
-    if (cursor < stripped.length) {
-      segments.push(<span key="t-end">{stripped.slice(cursor)}</span>)
-    }
-
-    return <div className="prose-reader whitespace-pre-line">{segments}</div>
+    return <div className={READER_CLASS}>{withHighlights(nodes, filtered)}</div>
   }, [html, annotations, activeOverlays])
 
   return rendered
+}
+
+/**
+ * The text's own container, the same with notes and without.
+ *
+ * `space-y-4` puts a line of space between paragraphs, speeches and stanzas.
+ * The page's CSS reset takes every margin off a <p>, so a chapter without
+ * notes ran its paragraphs together and a poem its stanzas, while the old
+ * plain-text rendering of a section with notes showed a gap only because it
+ * printed the blank line between them. A play's speeches already carry mb-4
+ * from set-play-for-the-viewer.ts; the two margins collapse into one.
+ */
+const READER_CLASS = 'prose-reader space-y-4'
+
+type Highlight = { start: number; end: number; annotations: Annotation[] }
+
+/**
+ * The section's HTML as React elements, with each highlight laid over the text
+ * it covers.
+ *
+ * A highlight often runs over more than one piece of HTML: a quotation of two
+ * verse lines covers the text, the <br> between them and the text after it.
+ * Consecutive pieces inside one highlight are wrapped together, so it is one
+ * highlight, and the <br> still breaks the line inside it. A paragraph is
+ * never wrapped (a <p> inside a <span> is not HTML, and React would refuse to
+ * hydrate it), so a highlight that crosses from one speech to the next is
+ * drawn in each, and only its first part is the control (see
+ * AnnotationTooltip's `continued`).
+ */
+function withHighlights(nodes: HtmlNode[], highlights: Highlight[]): React.ReactNode[] {
+  const drawn = new Set<number>()
+  const within = (pos: number) => highlights.findIndex((h) => h.start <= pos && pos < h.end)
+
+  /** A piece of the list, drawn only when its turn comes, in document order. */
+  type Piece = { highlight: number; draw: () => React.ReactNode }
+  const holdsBlocks = (list: HtmlNode[]) =>
+    list.some((c) => c.kind === 'element' && BLOCK_TAGS.has(c.tag))
+
+  function render(list: HtmlNode[], key: string): React.ReactNode[] {
+    // White space between two blocks is not part of any line, so it is never
+    // highlighted: a highlight there would draw a stray mark between speeches.
+    const betweenBlocks = holdsBlocks(list)
+    const pieces: Piece[] = []
+    list.forEach((node, n) => {
+      const k = `${key}.${n}`
+      if (node.kind === 'text') {
+        // Cut the text wherever a highlight starts or ends inside it.
+        const end = node.start + node.text.length
+        const cuts = new Set([node.start, end])
+        for (const h of highlights) {
+          if (h.start > node.start && h.start < end) cuts.add(h.start)
+          if (h.end > node.start && h.end < end) cuts.add(h.end)
+        }
+        const at = [...cuts].sort((a, b) => a - b)
+        for (let i = 0; i < at.length - 1; i++) {
+          const text = node.text.slice(at[i] - node.start, at[i + 1] - node.start)
+          pieces.push({
+            highlight: betweenBlocks && !text.trim() ? -1 : within(at[i]),
+            draw: () => <React.Fragment key={`${k}.${i}`}>{text}</React.Fragment>,
+          })
+        }
+        return
+      }
+      if (node.tag === 'br') {
+        // Inside a highlight when the highlight runs on past it.
+        const h = within(node.start)
+        const inside = h !== -1 && highlights[h].start < node.start
+        pieces.push({ highlight: inside ? h : -1, draw: () => <br key={k} /> })
+        return
+      }
+      const h = within(node.start)
+      const whole =
+        !BLOCK_TAGS.has(node.tag) &&
+        h !== -1 &&
+        node.end > node.start &&
+        node.end <= highlights[h].end
+      pieces.push({
+        highlight: whole ? h : -1,
+        draw: () =>
+          React.createElement(
+            node.tag,
+            { key: k, className: node.className },
+            ...(whole ? plainly(node.children, k) : render(node.children, k)),
+          ),
+      })
+    })
+
+    // Wrap each run of pieces inside one highlight. Drawn in order, so the
+    // first part of a highlight is the one met first.
+    const out: React.ReactNode[] = []
+    for (let i = 0; i < pieces.length; ) {
+      const h = pieces[i].highlight
+      if (h === -1) {
+        out.push(pieces[i++].draw())
+        continue
+      }
+      const continued = drawn.has(h)
+      drawn.add(h)
+      const run: React.ReactNode[] = []
+      const first = i
+      while (i < pieces.length && pieces[i].highlight === h) run.push(pieces[i++].draw())
+      out.push(
+        <AnnotationTooltip
+          key={`${key}.h${first}`}
+          annotations={highlights[h].annotations}
+          continued={continued}
+        >
+          {run}
+        </AnnotationTooltip>,
+      )
+    }
+    return out
+  }
+
+  /** An element wholly inside a highlight: its children, with none of their own. */
+  function plainly(list: HtmlNode[], key: string): React.ReactNode[] {
+    return list.map((node, n) =>
+      node.kind === 'text' ? (
+        <React.Fragment key={`${key}.${n}`}>{node.text}</React.Fragment>
+      ) : node.tag === 'br' ? (
+        <br key={`${key}.${n}`} />
+      ) : (
+        React.createElement(
+          node.tag,
+          { key: `${key}.${n}`, className: node.className },
+          ...plainly(node.children, `${key}.${n}`),
+        )
+      ),
+    )
+  }
+
+  return render(nodes, 'n')
 }
 
 // ─── Section navigation sidebar (desktop) ────────────────────────────────────

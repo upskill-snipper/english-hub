@@ -13,6 +13,9 @@ import { join } from 'node:path'
 import { TEXT_ANNOTATIONS } from '@/data/text-annotations.generated'
 import { InteractiveTextViewer, type TextData } from '@/components/study/InteractiveTextViewer'
 import { macbethText } from '@/data/full-texts/macbeth'
+import { hamletText } from '@/data/full-texts/hamlet'
+import { FullTextReader } from '@/components/study/FullTextReader'
+import { setForTheViewer } from '@/components/study/set-play-for-the-viewer'
 
 /**
  * The reader offered five highlighting overlays and highlighted almost nothing.
@@ -141,7 +144,7 @@ describe('nothing here is invented', () => {
     for (const [slug, sections] of Object.entries(TEXT_ANNOTATIONS)) {
       const mod = await import(`@/data/full-texts/${slug}`)
       const data = Object.values(mod).find(
-        (v): v is { sections: { id: string; content: string }[] } =>
+        (v): v is { type: string; sections: { id: string; content: string }[] } =>
           !!v && typeof v === 'object' && 'sections' in (v as object),
       )
       expect(data, `${slug} has annotations but no text`).toBeDefined()
@@ -151,7 +154,12 @@ describe('nothing here is invented', () => {
           failures.push(`${slug}: annotations for missing section ${sectionId}`)
           continue
         }
-        const plain = section.content.replace(/<[^>]*>/g, '')
+        // As the viewer prints it: a play set out by setForTheViewer, whose
+        // words are the edition's (every-play-is-set-as-a-play.test.ts) and
+        // whose italic underscores are gone. See the-highlights-highlight-
+        // something.test.ts for the span that needed this.
+        const printed = data!.type === 'play' ? setForTheViewer(section.content) : section.content
+        const plain = printed.replace(/<[^>]*>/g, '')
         for (const ann of anns as readonly Ann[]) {
           checked += 1
           if (!plain.includes(ann.text)) {
@@ -165,7 +173,10 @@ describe('nothing here is invented', () => {
     // resolved to nothing is exactly how that would happen here.
     expect(checked, 'the comparison ran against no annotations at all').toBeGreaterThan(250)
     expect(failures).toEqual([])
-  })
+    // 30 s, not vitest's 5: it imports and lays out every held text, about 1.3 s
+    // alone, and it timed out 3 runs in 3 when the whole suite shared 24 cores
+    // (26 September 2026, while CI was being repaired).
+  }, 30_000)
 
   it('every note is authored prose, not the quotation echoed back', () => {
     for (const { slug, ann } of everyAnnotation()) {
@@ -393,5 +404,101 @@ describe('the reader on a narrow screen', () => {
     expect(sidebar.className.split(/\s+/)).toEqual(expect.arrayContaining(['hidden', 'lg:block']))
     expect(text.style.maxHeight).toBe('')
     expect(row.style.maxHeight).toBe('70vh')
+  })
+})
+
+/**
+ * A play scene with notes is printed as a play, as it is without them.
+ *
+ * WHAT BROKE (found 26 September 2026). The viewer printed a section with
+ * notes as plain text: tags deleted, notes found, line breaks kept. Every play
+ * scene with a note lost its bold speaker names, its italic directions and the
+ * space between speeches, and its prose broke wherever the printer had run out
+ * of room. The highlights are now laid into the HTML (see
+ * ../components/study/section-html.ts); the layout itself is checked for all
+ * thirteen plays in every-play-is-set-as-a-play.test.ts.
+ */
+const hamletScene = (id: string) => hamletText.sections.find((s) => s.id === id)!
+
+describe('a play scene with notes', () => {
+  const held = hamletScene('acti-scenei')
+  const TWO_LINES = 'For this relief much thanks. ’Tis bitter cold,\nAnd I am sick at heart.'
+  const ACROSS = 'Who’s there?\n\nFRANCISCO\nNay, answer me.'
+  const data = (text: string): TextData => ({
+    title: 'Hamlet',
+    author: 'William Shakespeare',
+    type: 'play',
+    sections: [
+      {
+        ...held,
+        content: setForTheViewer(held.content, held.setting),
+        annotations: [{ type: 'quote', text, note: 'Francisco. A note long enough to be a note.' }],
+      },
+    ],
+  })
+
+  it('bold names, italic directions and the place, with the note highlighted', () => {
+    const { container } = render(<InteractiveTextViewer data={data(TWO_LINES)} storageKey="t1" />)
+    const reader = container.querySelector('.prose-reader')!
+    expect(reader.className).not.toContain('whitespace-pre-line')
+    expect(reader.querySelector('p')!.textContent).toBe(held.setting)
+    expect([...reader.querySelectorAll('strong')].map((s) => s.textContent)).toContain('FRANCISCO')
+    expect(reader.querySelectorAll('p.italic')[1].textContent).toContain('Enter Francisco')
+    expect(reader.textContent).not.toContain('_')
+    const marks = [...reader.querySelectorAll('[role="button"]')]
+    expect(marks.map((m) => m.textContent)).toEqual([TWO_LINES])
+    // One highlight over both lines, with the line still broken inside it.
+    expect(marks[0].querySelectorAll('br')).toHaveLength(1)
+  })
+
+  it('draws a note that crosses two speeches in each, as one control', () => {
+    const { container } = render(<InteractiveTextViewer data={data(ACROSS)} storageKey="t2" />)
+    const reader = container.querySelector('.prose-reader')!
+    const marks = [...reader.querySelectorAll('[role="button"]')]
+    expect(marks).toHaveLength(1)
+    expect(marks[0].textContent).toBe('Who’s there?')
+    // The rest is highlighted in the next speech, and no paragraph is inside
+    // a highlight, which React would refuse to hydrate.
+    expect(reader.querySelector('p p, span p')).toBeNull()
+    // The place, the entrance, Barnardo's speech, then Francisco's.
+    const second = reader.querySelectorAll('p')[3]
+    expect(second.querySelector('strong')!.closest('span.cursor-help')).not.toBeNull()
+  })
+
+  it('and hydrates without a mismatch', async () => {
+    const d = data(TWO_LINES)
+    const html = renderToString(<InteractiveTextViewer data={d} storageKey="t3" />)
+    const container = document.createElement('div')
+    container.innerHTML = html
+    document.body.appendChild(container)
+    const errors: unknown[] = []
+    await act(async () => {
+      hydrateRoot(container, <InteractiveTextViewer data={d} storageKey="t3" />, {
+        onRecoverableError: (e) => errors.push(e),
+      })
+    })
+    expect(errors, String(errors[0])).toEqual([])
+    container.remove()
+  })
+})
+
+describe('FullTextReader sets every play out', () => {
+  // The checks above hold the layout. This holds that the reader applies it:
+  // Hamlet's first scene has no notes and was one of the eight that ran on as
+  // prose; Act 3, Scene 1 has a note.
+  it('Hamlet, in a scene without notes and in one with', () => {
+    const { container } = render(<FullTextReader data={hamletText} slug="hamlet" />)
+    const plain = container.querySelector('#section-acti-scenei')!
+    expect(plain.querySelector('.prose-reader p')!.textContent).toBe(
+      hamletScene('acti-scenei').setting,
+    )
+    expect(plain.innerHTML).toContain('You come most carefully upon your hour.')
+    expect(plain.innerHTML).toContain('’Tis bitter cold,<br>')
+    expect(plain.textContent).not.toContain('_')
+    const noted = container.querySelector('#section-actiii-scenei')!
+    expect(noted.querySelectorAll('[role="button"]').length).toBeGreaterThan(0)
+    expect(noted.querySelectorAll('strong').length).toBeGreaterThan(10)
+    expect(noted.innerHTML).toContain('Whether ’tis nobler in the mind to suffer<br>')
+    expect(noted.textContent).not.toContain('_')
   })
 })

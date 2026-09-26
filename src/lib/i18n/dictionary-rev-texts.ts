@@ -1182,9 +1182,9 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
     es: '25 citas clave por tema',
   },
   'rev.texts.fr.quotes.intro': {
-    en: 'Every quotation you need for the exam, organised by theme with detailed analysis. All from the public-domain 1818 text.',
-    ar: 'كل اقتباس تحتاجه للامتحان، مرتّب حسب المحور مع تحليل مفصّل. كله من نص 1818 ضمن الملكية العامة.',
-    es: 'Todas las citas que necesitas para el examen, organizadas por tema con análisis detallado. Todas del texto de dominio público de 1818.',
+    en: 'Every quotation you need for the exam, organised by theme with detailed analysis. All from the text Mary Shelley revised in 1831, which is in the public domain.',
+    ar: 'كل اقتباس تحتاجه للامتحان، مرتّب حسب المحور مع تحليل مفصّل. كله من النص اللي راجعته Mary Shelley سنة 1831، وهو ضمن الملكية العامة.',
+    es: 'Todas las citas que necesitas para el examen, organizadas por tema con análisis detallado. Todas del texto que Mary Shelley revisó en 1831, de dominio público.',
   },
   'rev.texts.fr.quotes.jump_to_theme': {
     en: 'Jump to theme',
@@ -1192,9 +1192,9 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
     es: 'Ir a un tema',
   },
   'rev.texts.fr.quotes.public_domain': {
-    en: 'Frankenstein; or, The Modern Prometheus (1818) by Mary Shelley is in the public domain. All quotations are from the original 1818 text and are reproduced freely.',
-    ar: 'Frankenstein; or, The Modern Prometheus (1818) تأليف Mary Shelley ضمن الملكية العامة. كل الاقتباسات من نص 1818 الأصلي ومُعاد إنتاجها بحرية.',
-    es: 'Frankenstein; or, The Modern Prometheus (1818) de Mary Shelley es de dominio público. Todas las citas provienen del texto original de 1818 y se reproducen libremente.',
+    en: 'Frankenstein; or, The Modern Prometheus (1818) by Mary Shelley is in the public domain. All quotations are from the text she revised for the 1831 edition, and are reproduced freely.',
+    ar: 'Frankenstein; or, The Modern Prometheus (1818) تأليف Mary Shelley ضمن الملكية العامة. كل الاقتباسات من النص اللي راجعته لطبعة 1831، ومُعاد إنتاجها بحرية.',
+    es: 'Frankenstein; or, The Modern Prometheus (1818) de Mary Shelley es de dominio público. Todas las citas provienen del texto que revisó para la edición de 1831 y se reproducen libremente.',
   },
   'rev.texts.fr.essays.title': {
     en: 'Model Essay Plans',
@@ -1212,9 +1212,9 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
     es: 'Estrategia general de examen',
   },
   'rev.texts.fr.extract.badge': {
-    en: 'Volume I · Chapter 5 · The Awakening',
-    ar: 'Volume I · Chapter 5 · The Awakening',
-    es: 'Volume I · Chapter 5 · The Awakening',
+    en: 'Chapter 5 · The Awakening',
+    ar: 'Chapter 5 · The Awakening',
+    es: 'Chapter 5 · The Awakening',
   },
   'rev.texts.fr.extract.intro': {
     en: 'A guided extract walkthrough on the moment Victor Frankenstein animates the Creature. Each card invites you to notice a feature, say what the writer is doing with it, and zoom out to context. A model 250-word paragraph follows.',
@@ -1256,20 +1256,12 @@ export const REV_TEXTS_DICTIONARY: Record<string, { en: string; ar?: string; es?
     ar: 'اقرأ الرواية',
     es: 'Leer la novela',
   },
-  'rev.texts.fr.read.pd_label': {
-    en: 'Public Domain Text',
-    ar: 'نص ضمن الملكية العامة',
-    es: 'Texto de dominio público',
-  },
-  'rev.texts.fr.read.pd_body': {
-    en: 'Frankenstein; or, The Modern Prometheus (1818) by Mary Shelley is in the public domain. The text below is from the original 1818 first edition. Key chapters are presented with interactive annotations for GCSE study.',
-    ar: 'Frankenstein; or, The Modern Prometheus (1818) تأليف Mary Shelley ضمن الملكية العامة. النص تحت من الطبعة الأولى الأصلية 1818. الفصول المفتاحية معروضة مع شروحات تفاعلية لدراسة GCSE.',
-    es: 'Frankenstein; or, The Modern Prometheus (1818) de Mary Shelley es de dominio público. El texto siguiente es de la primera edición original de 1818. Los capítulos clave se presentan con anotaciones interactivas para el estudio de GCSE.',
-  },
-  'rev.texts.fr.read.footer_pd': {
-    en: 'Frankenstein; or, The Modern Prometheus (1818) by Mary Shelley is in the public domain. Text sourced from the 1818 first edition. Annotations are original study material.',
-    ar: 'Frankenstein; or, The Modern Prometheus (1818) تأليف Mary Shelley ضمن الملكية العامة. النص مأخوذ من الطبعة الأولى 1818. الشروحات مادة دراسية أصلية.',
-    es: 'Frankenstein; or, The Modern Prometheus (1818) de Mary Shelley es de dominio público. Texto tomado de la primera edición de 1818. Las anotaciones son material de estudio original.',
+  // Not the shared fulltext.public_domain line, which says "modern-spelling
+  // edition": this reader prints the 1831 edition in its own spelling.
+  'rev.texts.fr.read.rights': {
+    en: 'This work is out of copyright in the UK, so we can publish it in full. The text is a copy of the edition Mary Shelley revised in 1831, in its original spelling, not a retyping.',
+    ar: 'هذا العمل خرج من حقوق النشر في بريطانيا، فنقدر ننشره كامل. النص منسوخ من الطبعة اللي راجعتها Mary Shelley سنة 1831، بإملائها الأصلي، مو مكتوب من جديد.',
+    es: 'Esta obra está libre de derechos en el Reino Unido, así que podemos publicarla completa. El texto es una copia de la edición que Mary Shelley revisó en 1831, con su ortografía original, no una transcripción.',
   },
   'rev.texts.fr.read.back_to_guide': {
     en: 'Back to Study Guide',

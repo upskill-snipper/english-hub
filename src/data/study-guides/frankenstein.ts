@@ -8,8 +8,17 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * structure and form, and a glossary, plus the timeline and character map that
  * the animated visuals draw.
  *
- * EDITION. No byte copy of the novel is held in src/data/full-texts, so the test
- * cannot check these quotations for us. Every quotation and every printed
+ * EDITION. Since 26 September 2026 the 1831 text is held, Introduction and all,
+ * as src/data/full-texts/frankenstein.ts (eBook #42324 below), and
+ * study-guides.test.ts checks every quotation here against it. Two phrases
+ * from Shelley's 1831 Introduction had been listed in quotesFromElsewhere while
+ * nothing was held; the Introduction is held now, so they are checked like any
+ * other quotation. The 1818 reading "bloody as they may be", which the guide
+ * quotes to show where the editions differ, is listed there instead: it is in
+ * #41445 and in no 1831 text.
+ *
+ * Before that no byte copy was held, and the test could not check these
+ * quotations for us. Every quotation and every printed
  * extract here was copied from Project Gutenberg eBook #42324, which is
  * transcribed from a photo-reprint of the 1831 edition, and confirmed with a
  * normalised search of that whole text, with the chapter found from the
@@ -700,9 +709,10 @@ He sprung from the cabin-window, as he said this, upon the ice-raft which lay cl
   ],
 
   quotesFromElsewhere: [
-    'the offspring of happy days, when death and grief were but words',
-    'galvanism had given token of such things',
+    // The 1818 title-page epigraph, which the 1831 edition does not print.
     'Did I request thee, Maker, from my clay / To mould me man?',
+    // The 1818 wording in Chapter 10, quoted beside the 1831 one.
+    'bloody as they may be',
   ],
 
   sources: [

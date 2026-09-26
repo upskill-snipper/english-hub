@@ -4,7 +4,7 @@ import { InteractiveTextViewer, type TextData } from '@/components/study/Interac
 import { macbethText } from '@/data/full-texts/macbeth'
 import { useLocale } from '@/lib/i18n/use-locale'
 import { CHARACTERS, CONTEXT_NOTES, SCENES, THEMES } from './notes'
-import { setForTheViewer } from './set-for-the-viewer'
+import { setForTheViewer } from '@/components/study/set-play-for-the-viewer'
 import { translateMacbethData } from './translations'
 
 /**
@@ -24,8 +24,10 @@ import { translateMacbethData } from './translations'
  * Macbeth entry and the generator was not rerun. The authored layer in
  * ./notes.ts is merged onto the held scenes by id. A scene with no entry there
  * keeps the edition's own heading rather than disappearing. Each scene's HTML
- * is set out by ./set-for-the-viewer.ts first, which says why: without it 16
- * scenes printed their verse as run-on prose.
+ * is set out first by src/components/study/set-play-for-the-viewer.ts, which
+ * says why: without it 16 scenes printed their verse as run-on prose. That
+ * repair was made here first, for this reader alone, and moved there on 26
+ * September 2026 so that FullTextReader gives every other play the same.
  */
 const macbethData: TextData = {
   ...macbethText,

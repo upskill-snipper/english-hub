@@ -35,9 +35,11 @@
  *
  *   node scripts/fetch-public-domain-play.mjs [slug]
  *   node scripts/fetch-public-domain-play.mjs          (all of them)
+ *   GUTENBERG_DIR=<dir> node scripts/fetch-public-domain-play.mjs
+ *                                    (from pg<id>.txt files already downloaded)
  */
 
-import { writeFileSync, mkdirSync, existsSync } from 'node:fs'
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 
 const ROOT = process.cwd()
@@ -51,16 +53,22 @@ const OUT_DIR = join(ROOT, 'src/data/full-texts')
  * writing the wrong play under the right slug.
  */
 const PLAYS = [
-  { slug: 'romeo-and-juliet', id: 1513, title: 'Romeo and Juliet' },
-  { slug: 'a-midsummer-nights-dream', id: 1514, title: "A Midsummer Night's Dream" },
-  { slug: 'the-merchant-of-venice', id: 1515, title: 'The Merchant of Venice' },
-  { slug: 'much-ado-about-nothing', id: 1519, title: 'Much Ado about Nothing' },
-  { slug: 'henry-v', id: 1521, title: 'King Henry V' },
-  { slug: 'julius-caesar', id: 1522, title: 'Julius Caesar' },
-  { slug: 'hamlet', id: 1524, title: 'Hamlet' },
-  { slug: 'twelfth-night', id: 1526, title: 'Twelfth Night' },
-  { slug: 'othello', id: 1531, title: 'Othello' },
-  { slug: 'king-lear', id: 1532, title: 'King Lear' },
+  // `scenes` on every play since 26 September 2026, when all thirteen were
+  // regenerated together. The counts are the ones the scene-count test has
+  // always asserted (src/__tests__/full-texts-are-the-real-text.test.ts), and
+  // each agreed with its edition's own contents list on that run. Before, only
+  // Macbeth carried one, so a play whose contents list stopped parsing would
+  // have been written with whatever the body parse produced.
+  { slug: 'romeo-and-juliet', id: 1513, title: 'Romeo and Juliet', scenes: 24 },
+  { slug: 'a-midsummer-nights-dream', id: 1514, title: "A Midsummer Night's Dream", scenes: 9 },
+  { slug: 'the-merchant-of-venice', id: 1515, title: 'The Merchant of Venice', scenes: 20 },
+  { slug: 'much-ado-about-nothing', id: 1519, title: 'Much Ado about Nothing', scenes: 17 },
+  { slug: 'henry-v', id: 1521, title: 'King Henry V', scenes: 23 },
+  { slug: 'julius-caesar', id: 1522, title: 'Julius Caesar', scenes: 18 },
+  { slug: 'hamlet', id: 1524, title: 'Hamlet', scenes: 20 },
+  { slug: 'twelfth-night', id: 1526, title: 'Twelfth Night', scenes: 18 },
+  { slug: 'othello', id: 1531, title: 'Othello', scenes: 15 },
+  { slug: 'king-lear', id: 1532, title: 'King Lear', scenes: 26 },
   // Added 26 September 2026, a week after the others, and for a different
   // reason. Macbeth already had a hand-built reader, and its text followed the
   // Folger Shakespeare Library's edition ("So withered", "Untimely ripped").
@@ -73,8 +81,8 @@ const PLAYS = [
   // skipped when the contents list cannot be read at all, so an explicit count
   // is the guard that still holds if the edition's front matter changes shape.
   { slug: 'macbeth', id: 1533, title: 'Macbeth', scenes: 28 },
-  { slug: 'antony-and-cleopatra', id: 1534, title: 'Antony and Cleopatra' },
-  { slug: 'the-tempest', id: 1540, title: 'The Tempest' },
+  { slug: 'antony-and-cleopatra', id: 1534, title: 'Antony and Cleopatra', scenes: 42 },
+  { slug: 'the-tempest', id: 1540, title: 'The Tempest', scenes: 9 },
 ]
 
 /**
@@ -85,6 +93,85 @@ const PLAYS = [
  * other. Defined once so the two places that match it cannot drift apart.
  */
 const ACT_HEADING = /^ACT ([IVXLC]+)\.?$/
+
+/** One name as the editions print it above a speech: "LADY MACBETH". */
+const NAME = "[A-Z][A-Z’' .-]+"
+
+/** One name, or several speaking together: "MACBETH, LENNOX", "OSRIC and LORDS". */
+const NAMES = `${NAME}(?:(?:,| and|, and) ${NAME})*`
+
+/**
+ * A speech heading on a line of its own: one name, or several speaking
+ * together, ending with a stop.
+ *
+ * WHAT BROKE (found 26 September 2026). The rule knew one name only. Joint
+ * headings - "MACBETH, LENNOX.", "MARCELLUS and BARNARDO.", "CAESAR, ANTONY,
+ * and LEPIDUS." - have a comma or a lower-case "and" in them, failed it, and
+ * were printed as the first line of the speech in ordinary type: 19 headings
+ * in 8 plays, 11 of them in Hamlet.
+ */
+const HEADING = new RegExp(`^${NAMES}\\.$`)
+
+/**
+ * The other ways the editions print a heading, found on the same run: with no
+ * stop ("BARNARDO", "SECOND SENATOR", and SNOUT, SNUG, FAIRY and PROLOGUE
+ * every time they speak), in small letters ("All.", "Both."), or on the same
+ * line as the first words of the speech ("DON PEDRO. Yea, marry;", "BALTHASAR
+ * [sings.]"). Each of those printed the name as ordinary text. Apart from the
+ * first, which is as sure as the usual form, they are believed only for a
+ * name the play uses as a heading elsewhere (see `isSpeaker`): a letter read
+ * aloud is signed in capitals, and a speech can open with a word that is
+ * somebody's name.
+ */
+const HEADING_ALONE = new RegExp(`^(${NAMES})\\.?$`, 'i')
+const HEADING_WITH_SPEECH = new RegExp(`^(${NAMES})\\.? (\\S.*)$`)
+
+/**
+ * A stage direction printed at column zero. Four editions (Hamlet, Julius
+ * Caesar, Much Ado and Othello) do not indent their directions, so the
+ * indentation rule below never saw one, and every entrance and exit in them
+ * was printed as though somebody said it. A paragraph with no speaker that is
+ * wholly in brackets, or opens with an entrance or an exit (after at most three
+ * short sentences of sound: "Alarum. Retreat. Enter Antony"), is a direction,
+ * as is one that opens a scene (see `toHtml`); anything else without a speaker is
+ * left as speech, because in every edition that is what it usually is: a
+ * speech resumed after a direction. So a direction in those four plays that
+ * begins some other way mid-scene ("Trumpets sound. The dumb show enters.")
+ * is still printed in ordinary type.
+ */
+const DIRECTION_AT_MARGIN =
+  /^(?:\[[^[\]]*\]|(?:[A-Z][^.!?\n]{0,30}\.\s+){0,3}(?:Enter|Re-enter|Exit|Exeunt)\b[\s\S]*)$/
+
+/**
+ * Whether an indented block is spoken, although the indentation rule in
+ * `toHtml` would take it for a stage direction.
+ *
+ * WHAT BROKE (found 26 September 2026, in a review of the readers). The
+ * editions indent songs, scrolls and epitaphs as they indent directions, and
+ * now and then the first line of a speech resumed after one. Each was printed
+ * as a direction: in italic, its lines run into one. 21 blocks in 7 plays,
+ * among them Henry V's "Upon the King!" soliloquy (55 lines, set as one italic
+ * paragraph), Ophelia's songs, the three casket scrolls in The Merchant of
+ * Venice with Morocco's reply to his, the second verse of "Sigh no more" and
+ * Hero's epitaph in Much Ado, and Prospero's "How fares my gracious sir?".
+ *
+ * A direction here opens as one (see DIRECTION_AT_MARGIN) or is plain
+ * description. So a block that does not open as one is spoken when it asks or
+ * exclaims outside its brackets and quotations (a direction never does:
+ * "crying “Murder!”" is quoted), or when it runs to three lines or more and
+ * each after the first opens with a capital, which is verse. A description of
+ * two lines ("The bodies of Goneril and / Regan are brought in.") stays a
+ * direction.
+ */
+function spokenThoughIndented(text) {
+  const trimmed = text.trim()
+  if (DIRECTION_AT_MARGIN.test(trimmed)) return false
+  const lines = trimmed.split('\n').map((l) => l.trim())
+  const said = (l) => l.replace(/\[[^\]]*\]/g, '').replace(/[“‘][^”’]*[”’]/g, '')
+  if (lines.some((l) => /[?!]/.test(said(l)))) return true
+  const rest = lines.slice(1)
+  return rest.length >= 2 && rest.every((l) => /^[^A-Za-z]*[A-Z]/.test(l))
+}
 
 /** Lowest counts a real Shakespeare play can have. Below these, refuse. */
 const MIN_SCENES = 5
@@ -169,14 +256,121 @@ function parseScenes(body) {
       }
       continue
     }
+    // A place too long for one line runs on to the next, with no blank line
+    // between. The Tempest's first scene does it, and its place was cut at
+    // "thunder and lightning", with "heard." printed below as a paragraph of
+    // its own (seen 26 September 2026, once the reader began printing places).
+    if (current && current.lines.length === 0 && trimmed && !/^\s/.test(line)) {
+      current.setting = `${current.setting} ${trimmed}`.trim()
+      continue
+    }
     if (current) current.lines.push(line)
   }
   if (current) scenes.push(current)
   return scenes
 }
 
+/**
+ * Who speaks in this play: every name printed as a heading on its own line at
+ * column zero, after a blank line, with the speech under it; and the words
+ * those names are made of.
+ *
+ * The repairs in `toHtml` below believe a heading only if its name is in
+ * here. Capitals are not enough on their own: a letter read aloud is signed in
+ * capitals ("THE FORTUNATE UNHAPPY."), a song is announced in them ("ARIEL’S
+ * SONG."), and neither is somebody speaking.
+ */
+function castOf(scenes) {
+  const names = new Set()
+  for (const { lines } of scenes) {
+    lines.forEach((line, i) => {
+      const heading = line.trimEnd()
+      if (!HEADING.test(heading) || lines[i - 1]?.trim() || !lines[i + 1]?.trim()) return
+      for (const one of heading.slice(0, -1).split(/,? and |, /)) names.add(one)
+    })
+  }
+  return { names, words: new Set([...names].flatMap((n) => n.split(' '))) }
+}
+
+/**
+ * Whether `name` is somebody in this play: every name in it heads a speech
+ * elsewhere. With `loose`, a name of two words or more may instead be made of
+ * words the play's headings use. That is for one heading: THIRD WATCH speaks
+ * once in Romeo and Juliet, on the line he shares with his words, and "THIRD"
+ * and "WATCH" are in "THIRD MUSICIAN" and "FIRST WATCH".
+ */
+function isSpeaker(name, cast, loose = false) {
+  return name
+    .split(/,? and |, /)
+    .every(
+      (one) =>
+        cast.names.has(one) ||
+        (loose && one.includes(' ') && one.split(' ').every((w) => cast.words.has(w))),
+    )
+}
+
+/**
+ * The speaker of a block that starts at column zero, and the lines they say,
+ * or null when the block names nobody. `tally` counts each repair, so a run
+ * says what it changed.
+ */
+function speechOf(first, rest, cast, tally) {
+  const line = first.trim()
+  // The edition's own form: capitals and a stop, on a line of its own. Taken
+  // as it always was, known name or not.
+  if (rest.length > 0 && HEADING.test(line)) {
+    const name = line.slice(0, -1)
+    if (/,| and /.test(name)) tally.joint++
+    return { name, said: rest }
+  }
+  // No stop: "BARNARDO", and "SNOUT", whom A Midsummer Night's Dream never
+  // prints with one. In capitals that is as sure as the form above. In small
+  // letters ("All.", "Both.") only a name the play uses as a heading
+  // elsewhere, and only with its stop, so a line of speech that happens to be
+  // a name ("Romeo") is not taken.
+  const alone = HEADING_ALONE.exec(line)
+  if (rest.length > 0 && alone) {
+    const name = alone[1].replace(/\.$/, '')
+    const capitals = line === line.toUpperCase()
+    if (capitals || (line.endsWith('.') && isSpeaker(name.toUpperCase(), cast))) {
+      tally.variant++
+      return { name, said: rest }
+    }
+  }
+  // The heading on the same line as the first words.
+  const same = HEADING_WITH_SPEECH.exec(line)
+  if (same && isSpeaker(same[1].replace(/\.$/, ''), cast, true)) {
+    tally.sameLine++
+    return { name: same[1].replace(/\.$/, ''), said: [same[2], ...rest] }
+  }
+  return null
+}
+
+/**
+ * A block split where the edition runs a stage direction straight into the
+ * next speech, with no blank line between: " _Sounds retreat far off._" and
+ * then "ANTONY." on the next line. Read as one block, it was neither a
+ * direction nor a speech, and printed the name as a line of ordinary text.
+ * Split only at a known speaker's heading that follows an indented line, so a
+ * name inside a speech (a letter's signature) is left where it is.
+ */
+function splitRunTogether(block, cast, tally) {
+  const lines = block.split('\n')
+  const parts = [[]]
+  lines.forEach((line, i) => {
+    const name = line.trimEnd()
+    const heading = HEADING.test(name) && isSpeaker(name.slice(0, -1), cast)
+    if (i > 0 && heading && /^[ \t]/.test(lines[i - 1])) {
+      parts.push([])
+      tally.split++
+    }
+    parts[parts.length - 1].push(line)
+  })
+  return parts.map((p) => p.join('\n'))
+}
+
 /** Turn a scene's plain-text lines into the HTML the viewer renders. */
-function toHtml(sceneLines) {
+function toHtml(sceneLines, cast, tally) {
   // trimEnd, not trim. A leading trim strips the indent off the FIRST block of
   // every scene, which is almost always the opening stage direction, and renders
   // "Enter Sampson and Gregory" as though somebody said it aloud.
@@ -185,23 +379,40 @@ function toHtml(sceneLines) {
     .replace(/^\n+/, '')
     .trimEnd()
     .split(/\n\s*\n/)
+    .flatMap((block) => splitRunTogether(block, cast, tally))
+  const direction = (escaped) =>
+    `<p class="italic text-muted-foreground">${escaped.trim().replace(/\n\s*/g, ' ')}</p>`
   return blocks
-    .map((block) => {
+    .map((block, index) => {
       const text = block.replace(/\s+$/gm, '')
       if (!text.trim()) return ''
       const escaped = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
       // A stage direction is INDENTED in these editions; speech starts at
       // column zero with the speaker's name. One leading space is enough - the
       // first version required two and rendered every entrance and exit as
-      // dialogue.
-      const isDirection = /^[ 	]+\S/.test(block) && !/^[A-Z][A-Z’' .-]+\.$/m.test(text.trim())
-      if (isDirection) {
-        return `<p class="italic text-muted-foreground">${escaped.trim().replace(/\n\s*/g, ' ')}</p>`
-      }
-      // First line is the speaker when it is capitalised and ends with a stop.
+      // dialogue. Unless it is a song or a speech the edition happens to
+      // indent: see spokenThoughIndented.
+      const indented =
+        /^[ \t]+\S/.test(block) &&
+        !text
+          .trim()
+          .split('\n')
+          .some((l) => HEADING.test(l))
+      if (indented && !spokenThoughIndented(text)) return direction(escaped)
+      if (indented) tally.spoken++
+      // First line is the speaker: see speechOf for the forms it takes.
       const [first, ...rest] = escaped.split('\n')
-      if (/^[A-Z][A-Z’' .-]+\.$/.test(first.trim()) && rest.length > 0) {
-        return `<p><strong>${first.trim().replace(/\.$/, '')}</strong>\n${rest.join('\n')}</p>`
+      const speech = speechOf(first, rest, cast, tally)
+      if (speech) return `<p><strong>${speech.name}</strong>\n${speech.said.join('\n')}</p>`
+      // No speaker. In the four editions that print directions at the margin,
+      // an entrance, an exit, a bracketed direction, or whatever opens the
+      // scene, which cannot be a speech resumed ("Thunder and lightning. Enter
+      // Caesar, in his nightgown."); otherwise a speech resumed after a
+      // direction, as it was. An indented block found to be spoken is speech
+      // here too, wherever it falls.
+      if (!indented && (index === 0 || DIRECTION_AT_MARGIN.test(text.trim()))) {
+        tally.margin++
+        return direction(escaped)
       }
       return `<p>${escaped}</p>`
     })
@@ -209,10 +420,25 @@ function toHtml(sceneLines) {
     .join('\n\n')
 }
 
-async function build(play) {
-  const url = `https://www.gutenberg.org/cache/epub/${play.id}/pg${play.id}.txt`
-  const res = await fetch(url)
+/**
+ * The edition's text: from GUTENBERG_DIR when that is set (pg<id>.txt, as the
+ * site serves it, for a run that regenerates all thirteen plays more than
+ * once), otherwise from the site, naming this script and giving up after a
+ * minute rather than hanging on a slow mirror.
+ */
+async function edition(play) {
+  const name = `pg${play.id}.txt`
+  if (process.env.GUTENBERG_DIR) return readFileSync(join(process.env.GUTENBERG_DIR, name), 'utf8')
+  const url = `https://www.gutenberg.org/cache/epub/${play.id}/${name}`
+  const res = await fetch(url, {
+    headers: { 'User-Agent': 'TheEnglishHub-factcheck/1.0' },
+    signal: AbortSignal.timeout(60_000),
+  })
   if (!res.ok) throw new Error(`${play.slug}: HTTP ${res.status}`)
+  return res.text()
+}
+
+async function build(play) {
   // Line endings normalised first. Gutenberg serves these files to fetch() with
   // CRLF endings, and every rule below splits on "\n" alone, so each line kept a
   // trailing "\r". Most rules trim it away; the stage-direction test does not.
@@ -220,9 +446,8 @@ async function build(play) {
   // after a blank line, so its block began with "\r" rather than an indent, was
   // read as speech, and was published as a plain paragraph opening on a blank
   // line: 23 of Macbeth's 28 scenes when it was added on 26 September 2026. The
-  // twelve plays generated before this line carry the same defect until they
-  // are regenerated.
-  const raw = (await res.text()).replace(/\r\n?/g, '\n')
+  // other twelve plays were regenerated with it the same day.
+  const raw = (await edition(play)).replace(/\r\n?/g, '\n')
 
   // The edition must still be the play we confirmed by hand.
   const titleLine = /^Title:\s*(.+)$/m.exec(raw)
@@ -269,11 +494,13 @@ async function build(play) {
     throw new Error(`${play.slug}: found ${acts.length} acts (${acts.join(', ')}), expected 5`)
   }
 
+  const cast = castOf(scenes)
+  const tally = { joint: 0, variant: 0, sameLine: 0, split: 0, margin: 0, spoken: 0 }
   const sections = scenes.map((s) => ({
     id: `act${s.act ?? '0'}-scene${s.scene}`.toLowerCase(),
     title: s.act ? `Act ${s.act}, Scene ${s.scene}` : `Scene ${s.scene}`,
     setting: s.setting,
-    content: toHtml(s.lines),
+    content: toHtml(s.lines, cast, tally),
   }))
 
   const totalChars = sections.reduce((n, s) => n + s.content.length, 0)
@@ -309,7 +536,7 @@ export const ${play.slug.replace(/-([a-z])/g, (_, c) => c.toUpperCase())}Text: T
 `
   mkdirSync(OUT_DIR, { recursive: true })
   writeFileSync(join(OUT_DIR, `${play.slug}.ts`), file, 'utf8')
-  return { slug: play.slug, scenes: sections.length, chars: totalChars }
+  return { slug: play.slug, scenes: sections.length, chars: totalChars, tally }
 }
 
 const only = process.argv[2]
@@ -323,8 +550,20 @@ let failed = 0
 for (const play of wanted) {
   try {
     const r = await build(play)
+    // What the heading and direction repairs changed, by kind, so a run on a
+    // new edition shows where it leant on them.
+    const t = r.tally
+    const repaired = [
+      t.joint && `${t.joint} joint heading(s)`,
+      t.variant && `${t.variant} heading(s) without a stop or in small letters`,
+      t.sameLine && `${t.sameLine} heading(s) on the speech's own line`,
+      t.split && `${t.split} direction(s) run into a speech`,
+      t.margin && `${t.margin} direction(s) at the margin`,
+      t.spoken && `${t.spoken} indented song(s) or speech(es) kept as speech`,
+    ].filter(Boolean)
     console.log(
-      `  ok   ${r.slug.padEnd(28)} ${String(r.scenes).padStart(2)} scenes, ${r.chars} chars`,
+      `  ok   ${r.slug.padEnd(28)} ${String(r.scenes).padStart(2)} scenes, ${r.chars} chars` +
+        (repaired.length ? `\n         ${repaired.join(', ')}` : ''),
     )
   } catch (err) {
     failed++

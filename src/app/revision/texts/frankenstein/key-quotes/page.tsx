@@ -160,9 +160,9 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
         quote:
           'The more I saw of them, the greater became my desire to claim their protection and kindness; my heart yearned to be known and loved by these amiable creatures.',
         speaker: 'The Creature',
-        chapter: 'Chapter 12',
+        chapter: 'Chapter 15',
         analysis:
-          'The Creature\'s "yearning" is presented as a fundamental need. "Known and loved" are psychological necessities, not optional extras. The word "creatures" unconsciously asserts his kinship with humanity.',
+          'The Creature\'s heart "yearned": his longing is presented as a fundamental need. "Known and loved" are psychological necessities, not optional extras. The word "creatures" unconsciously asserts his kinship with humanity.',
       },
     ],
   },
@@ -234,7 +234,7 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
       },
       {
         quote:
-          'Hateful day when I received life! Accursed creator! Why did you form a monster so hideous that even you turned from me in disgust?',
+          'Hateful day when I received life! ... Accursed creator! Why did you form a monster so hideous that even you turned from me in disgust?',
         speaker: 'The Creature',
         chapter: 'Chapter 15',
         analysis:

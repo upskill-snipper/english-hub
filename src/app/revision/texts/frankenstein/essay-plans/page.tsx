@@ -237,9 +237,9 @@ const ESSAY_PLANS: EssayPlan[] = [
           "The Creature's narrative reveals a being of extraordinary sensitivity and a genuine desire for human connection.",
         quote:
           'The more I saw of them, the greater became my desire to claim their protection and kindness; my heart yearned to be known and loved by these amiable creatures.',
-        quoteSource: 'The Creature -- Chapter 12',
+        quoteSource: 'The Creature -- Chapter 15',
         analysis:
-          'The Creature\'s "yearning" for love is presented as a fundamental need, not a calculated strategy. The word "creatures" is significant: the Creature uses the same word for the De Laceys that others use for him, unconsciously asserting his kinship with humanity. "Known and loved" are not luxuries but psychological necessities -- Shelley, drawing on her parents\' philosophical writings, argues that recognition is the foundation of moral life.',
+          'That the Creature\'s heart "yearned" for love presents it as a fundamental need, not a calculated strategy. The word "creatures" is significant: the Creature uses the same word for the De Laceys that others use for him, unconsciously asserting his kinship with humanity. "Known and loved" are not luxuries but psychological necessities -- Shelley, drawing on her parents\' philosophical writings, argues that recognition is the foundation of moral life.',
         contextLink:
           "The Creature's desire for recognition connects to Wollstonecraft's and Godwin's arguments that social exclusion produces moral degradation. His education through observation of the De Laceys echoes Rousseau's Emile, which argues that natural learning produces moral beings.",
       },

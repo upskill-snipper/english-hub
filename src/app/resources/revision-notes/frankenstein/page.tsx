@@ -358,7 +358,7 @@ export default function FrankensteinPage() {
         <div className="grid gap-4 sm:grid-cols-2">
           <ThemeCard
             title={tr(`Creation and Responsibility`)}
-            description="The novel's central theme. Victor creates life but takes no responsibility for it. He is a negligent 'parent' who abandons his 'child' at birth because it does not meet his aesthetic expectations. Shelley, who lost her own mother at birth and later lost children, explores the devastating consequences of parental rejection. The Creature repeatedly frames his argument in terms of a creator's duty: 'You are my creator... you owe me.' Victor's refusal to accept responsibility leads to the destruction of everyone he loves."
+            description="The novel's central theme. Victor creates life but takes no responsibility for it. He is a negligent 'parent' who abandons his 'child' at birth because it does not meet his aesthetic expectations. Shelley, who lost her own mother at birth and later lost children, explores the devastating consequences of parental rejection. The Creature repeatedly frames his argument in terms of a creator's duty: 'I am thy creature... if thou wilt also perform thy part, the which thou owest me.' Victor's refusal to accept responsibility leads to the destruction of everyone he loves."
           />
           <ThemeCard
             title={tr(`Nature vs Nurture`)}
@@ -366,7 +366,7 @@ export default function FrankensteinPage() {
           />
           <ThemeCard
             title={tr(`Isolation and Loneliness`)}
-            description="Nearly every character suffers from isolation. Victor isolates himself during creation, cutting off from family and society. The Creature is isolated by his appearance - 'everywhere I see bliss, from which I alone am irrevocably excluded.' Walton is lonely at sea. Elizabeth waits alone. Shelley presents isolation as both a cause and consequence of obsession. The Creature's loneliness is the most poignant: he desires nothing more than companionship yet is denied it by every human he encounters."
+            description="Nearly every character suffers from isolation. Victor isolates himself during creation, cutting off from family and society. The Creature is isolated by his appearance - 'Every where I see bliss, from which I alone am irrevocably excluded.' Walton is lonely at sea. Elizabeth waits alone. Shelley presents isolation as both a cause and consequence of obsession. The Creature's loneliness is the most poignant: he desires nothing more than companionship yet is denied it by every human he encounters."
           />
           <ThemeCard
             title={tr(`Ambition and Hubris`)}
@@ -382,7 +382,7 @@ export default function FrankensteinPage() {
           />
           <ThemeCard
             title="Monstrosity"
-            description="The novel constantly questions what 'monster' means. Victor calls the Creature a 'daemon,' 'wretch,' and 'fiend,' yet Victor himself is arguably more monstrous - he creates and abandons life, allows an innocent woman to be executed, and destroys the female creature out of selfish fear. The Creature becomes violent only after being denied basic humanity. Shelley suggests that the true monsters are those who refuse compassion, not those who look different."
+            description="The novel constantly questions what 'monster' means. Victor calls the Creature a 'dæmon,' 'wretch,' and 'fiend,' yet Victor himself is arguably more monstrous - he creates and abandons life, allows an innocent woman to be executed, and destroys the female creature out of selfish fear. The Creature becomes violent only after being denied basic humanity. Shelley suggests that the true monsters are those who refuse compassion, not those who look different."
           />
         </div>
       </Section>
@@ -398,7 +398,7 @@ export default function FrankensteinPage() {
           <QuoteCard
             quote="Beware; for I am fearless, and therefore powerful."
             speaker="The Creature"
-            analysis="The Creature's threat to Victor before departing for the Arctic. Having lost everything - hope, companionship, the possibility of love - he has nothing left to fear. Shelley presents a terrifying insight: a being with nothing to lose is the most dangerous force of all. The sentence structure is chillingly logical, almost philosophical."
+            analysis="The Creature's threat to Victor after Victor tears apart the half-made female creature (Chapter 20). Having lost everything - hope, companionship, the possibility of love - he has nothing left to fear. Shelley presents a terrifying insight: a being with nothing to lose is the most dangerous force of all. The sentence structure is chillingly logical, almost philosophical."
           />
           <QuoteCard
             quote="I ought to be thy Adam, but I am rather the fallen angel, whom thou drivest from joy for no misdeed."
@@ -408,12 +408,12 @@ export default function FrankensteinPage() {
           <QuoteCard
             quote="Did I request thee, Maker, from my clay / To mould me Man?"
             speaker="Epigraph, from Paradise Lost"
-            analysis="Shelley places this quotation from Milton's Adam at the novel's opening. It frames the entire narrative as a question about the responsibility of creators towards their creations. The Creature did not ask to be made; Victor chose to create him and then abandoned him. This epigraph demands that the reader consider the ethics of creation before the story even begins."
+            analysis="Shelley placed this quotation from Milton's Adam on the title page of the 1818 first edition; the 1831 edition leaves it out. It frames the entire narrative as a question about the responsibility of creators towards their creations. The Creature did not ask to be made; Victor chose to create him and then abandoned him. This epigraph demands that the reader consider the ethics of creation before the story even begins."
           />
           <QuoteCard
             quote="I, the miserable and the abandoned, am an abortion, to be spurned at, and kicked, and trampled on."
             speaker="The Creature"
-            analysis="'Abortion' means something incomplete, a failed creation. The Creature sees himself as fundamentally unfinished - made but not cared for. The passive voice ('to be spurned at, kicked, trampled') emphasises his powerlessness. The tricolon of verbs escalates in violence, reflecting how society treats those it deems different. This is among the novel's most emotionally devastating lines."
+            analysis="'Abortion' means something incomplete, a failed creation. The Creature sees himself as fundamentally unfinished - made but not cared for. The passive voice ('to be spurned at, and kicked, and trampled on') emphasises his powerlessness. The tricolon of verbs escalates in violence, reflecting how society treats those it deems different. This is among the novel's most emotionally devastating lines."
           />
           <QuoteCard
             quote="Learn from me, if not by my precepts, at least by my example, how dangerous is the acquirement of knowledge."
@@ -421,9 +421,9 @@ export default function FrankensteinPage() {
             analysis="Victor's warning to Walton frames the entire narrative as a cautionary tale. Yet the irony is that Victor never fully learns his own lesson - he remains ambivalent about his experiment to the end. 'Dangerous' knowledge echoes the Tree of Knowledge in Genesis and Prometheus's stolen fire. Shelley positions Victor as an unreliable moral authority."
           />
           <QuoteCard
-            quote="Everywhere I see bliss, from which I alone am irrevocably excluded."
+            quote="Every where I see bliss, from which I alone am irrevocably excluded."
             speaker="The Creature"
-            analysis="Encapsulates the Creature's existential loneliness. 'Everywhere' and 'alone' create a painful contrast between the universal and the singular. 'Irrevocably' means permanently - there is no hope. This is not self-pity but an accurate assessment: the Creature is the only one of his kind and can never be accepted by human society."
+            analysis="Encapsulates the Creature's existential loneliness. 'Every where' and 'alone' create a painful contrast between the universal and the singular. 'Irrevocably' means permanently - there is no hope. This is not self-pity but an accurate assessment: the Creature is the only one of his kind and can never be accepted by human society."
           />
           <QuoteCard
             quote="I was benevolent and good; misery made me a fiend."
@@ -813,8 +813,8 @@ export default function FrankensteinPage() {
               </p>
               <p>
                 <strong>{tr(`Paragraph 2 &mdash; The Creature&apos;s enforced isolation:`)}</strong>{' '}
-                &ldquo;Everywhere I see bliss, from which I alone am irrevocably excluded.&rdquo; He
-                is isolated by his unique existence and by human prejudice. His loneliness drives
+                &ldquo;Every where I see bliss, from which I alone am irrevocably excluded.&rdquo;
+                He is isolated by his unique existence and by human prejudice. His loneliness drives
                 him to demand a companion.
               </p>
               <p>
@@ -983,7 +983,7 @@ export default function FrankensteinPage() {
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
               <strong>{tr(`Analyse language closely.`)}</strong> Pick apart individual words &mdash;
-              &ldquo;wretch,&rdquo; &ldquo;daemon,&rdquo; &ldquo;abortion&rdquo; &mdash; to show how
+              &ldquo;wretch,&rdquo; &ldquo;dæmon,&rdquo; &ldquo;abortion&rdquo; &mdash; to show how
               Shelley shapes the reader&apos;s response through diction.
             </span>
           </li>

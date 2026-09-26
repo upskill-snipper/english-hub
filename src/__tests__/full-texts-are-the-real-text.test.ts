@@ -3,6 +3,7 @@ import { readdirSync, readFileSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { sanitiseHtml, sanitiseOnServer } from '@/lib/html/sanitise'
 import { SET_TEXTS } from '@/lib/board/set-texts'
+import { frankensteinText } from '@/data/full-texts/frankenstein'
 
 /**
  * Twelve complete plays, and the two ways this could have gone wrong.
@@ -114,7 +115,7 @@ function dataFor(slug: string): string {
 }
 
 describe('the texts are there', () => {
-  it('has thirteen plays, seven prose works and nine poems', () => {
+  it('has thirteen plays, eight prose works and nine poems', () => {
     // 26 September 2026: Animal Farm (from Project Gutenberg Australia) and Do
     // not go gentle (from the Pearson anthology) joined, once the site began
     // judging copyright by UK law only.
@@ -122,8 +123,12 @@ describe('the texts are there', () => {
     // Macbeth joined the same day as the thirteenth play. Its reader had printed
     // the Folger Shakespeare Library's edited text, which Folger licenses for
     // non-commercial use only; it now reads Project Gutenberg #1533, held here.
+    //
+    // Frankenstein joined the same day as the eighth prose work. Its reader had
+    // printed a hand-typed eighth of the novel as "the 1818 first edition"; it
+    // now reads the 1831 text, Project Gutenberg #42324, held here.
     expect(PLAYS).toHaveLength(13)
-    expect(PROSE).toHaveLength(7)
+    expect(PROSE).toHaveLength(8)
     expect(POEMS).toHaveLength(9)
   })
 
@@ -234,6 +239,8 @@ describe('the prose works parse to their real chapter counts', () => {
     ['jekyll-and-hyde', 10],
     ['the-war-of-the-worlds', 27],
     ['the-scarlet-letter', 24],
+    // The 1831 Introduction, the Preface, four letters and 24 chapters.
+    ['frankenstein', 30],
   ])('%s has %i sections', (slug, count) => {
     const sections = [...dataFor(slug).matchAll(/["']?id["']?:\s*["']section-\d+["']/g)].length
     expect(sections).toBe(count)
@@ -263,6 +270,7 @@ describe('the prose works parse to their real chapter counts', () => {
     ['jekyll-and-hyde', 'Mr. Utterson the lawyer'],
     ['the-war-of-the-worlds', 'no one would have believed'],
     ['the-scarlet-letter', 'A throng of bearded men'],
+    ['frankenstein', 'You will rejoice to hear that no disaster has accompanied'],
   ])('%s opens with the real text', (slug, line) => {
     expect(dataFor(slug).toLowerCase()).toContain(line.toLowerCase())
   })
@@ -301,6 +309,58 @@ describe('the prose works parse to their real chapter counts', () => {
     // Either quoting: the generator emits JSON and prettier rewrites it on
     // commit, and this test runs in both states.
     expect(dataFor('the-sign-of-four')).toMatch(/["']?title["']?:\s*["']The Sign of Four["']/)
+  })
+})
+
+describe('Frankenstein is the 1831 text, whole', () => {
+  // WHAT BROKE (26 September 2026). The reader said it printed "the 1818 first
+  // edition" and held 9,357 hand-typed words of the novel, a third of its
+  // paragraphs not matching any edition. Both Gutenberg files the site had
+  // used (#84 and #42324) turned out to be the 1831 revision, and every
+  // Frankenstein page quotes 1831 and numbers its chapters as 1831 does, so
+  // that is the text held. scripts/fetch-public-domain-prose.mjs says why
+  // #42324 and not #84: the pages also quote the 1831 Introduction.
+  const titles = frankensteinText.sections.map((s) => s.title)
+  const roman = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X']
+  const toRoman = (n: number) =>
+    n <= 10 ? roman[n - 1] : n < 20 ? `X${roman[n - 11]}` : `XX${n > 20 ? roman[n - 21] : ''}`
+
+  it('holds the letters as sections, with the Introduction and the Preface', () => {
+    // Walton's letters are the novel's frame, not front matter; the parser
+    // drops everything before its first heading, which is why they are named
+    // in the heading rule.
+    expect(titles).toEqual([
+      'Introduction',
+      'Preface',
+      ...['I', 'II', 'III', 'IV'].map((n) => `Letter ${n}`),
+      ...Array.from({ length: 24 }, (_, i) => `Chapter ${toRoman(i + 1)}`),
+    ])
+  })
+
+  it('is the 1831 revision, not the 1818 first edition', () => {
+    // Each pair is one sentence in its two versions; the first is 1831's.
+    const text = frankensteinText.sections.map((s) => s.content).join(' ')
+    expect(text).toContain('five hungry babes') // 1831's new Chapter I
+    expect(text).toContain('bloody as they are, to speak in their own defence')
+    expect(text).not.toContain('bloody as they may be')
+    // And the Introduction, which only 1831 has, and which the pages quote.
+    expect(text).toContain('galvanism had given token of such things')
+  })
+
+  it('ends where the novel ends, with nothing of the transcription in it', () => {
+    const last = frankensteinText.sections.at(-1)!.content
+    expect(last.trimEnd().endsWith('lost in darkness and distance.</p>')).toBe(true)
+    const text = frankensteinText.sections.map((s) => s.content).join(' ')
+    for (const stray of ['[Illustration', 'Transcriber', 'Spottiswoode', 'THE END'])
+      expect(text, stray).not.toContain(stray)
+  })
+
+  it('keeps the verse it quotes as verse', () => {
+    // Coleridge, Percy Shelley's "Mutability" and Wordsworth: 6, 8 and 8 lines,
+    // so 5, 7 and 7 breaks. Run into one paragraph, they read as prose.
+    const text = frankensteinText.sections.map((s) => s.content).join(' ')
+    expect(text.match(/<br \/>/g)).toHaveLength(19)
+    expect(text).toContain('"Like one who, on a lonely road,<br />')
   })
 })
 

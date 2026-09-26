@@ -18472,15 +18472,15 @@ export const AR_MESSAGES: Record<string, string> = {
     'تحليل معمّق لأهم الفصول للامتحان: الاقتباسات المفتاحية وأساليب الكاتب وروابط المحاور لكل قسم من الرواية.',
   'rev.texts.fr.quotes.title': '25 اقتباس مفتاحي حسب المحور',
   'rev.texts.fr.quotes.intro':
-    'كل اقتباس تحتاجه للامتحان، مرتّب حسب المحور مع تحليل مفصّل. كله من نص 1818 ضمن الملكية العامة.',
+    'كل اقتباس تحتاجه للامتحان، مرتّب حسب المحور مع تحليل مفصّل. كله من النص اللي راجعته Mary Shelley سنة 1831، وهو ضمن الملكية العامة.',
   'rev.texts.fr.quotes.jump_to_theme': 'انتقل لمحور',
   'rev.texts.fr.quotes.public_domain':
-    'Frankenstein; or, The Modern Prometheus (1818) تأليف Mary Shelley ضمن الملكية العامة. كل الاقتباسات من نص 1818 الأصلي ومُعاد إنتاجها بحرية.',
+    'Frankenstein; or, The Modern Prometheus (1818) تأليف Mary Shelley ضمن الملكية العامة. كل الاقتباسات من النص اللي راجعته لطبعة 1831، ومُعاد إنتاجها بحرية.',
   'rev.texts.fr.essays.title': 'خطط مقالات نموذجية',
   'rev.texts.fr.essays.intro':
     'خمس خطط مقالات جاهزة للامتحان مع مقدّمات وبنى من ثلاث فقرات واقتباسات مدمجة وتحليل وسياق وخواتيم.',
   'rev.texts.fr.essays.general_strategy': 'استراتيجية امتحان عامة',
-  'rev.texts.fr.extract.badge': 'Volume I · Chapter 5 · The Awakening',
+  'rev.texts.fr.extract.badge': 'Chapter 5 · The Awakening',
   'rev.texts.fr.extract.intro':
     'شرح موجّه لمقتطف اللحظة اللي يبثّ فيها Victor Frankenstein الحياة في the Creature. كل بطاقة تدعوك تلاحظ ميزة (notice)، وتقول شنو يسوّي الكاتب فيها (say)، وتوسّع الصورة للسياق (zoom out). تتبعها فقرة نموذجية من 250 كلمة.',
   'rev.texts.fr.extract.opens': 'المقتطف يبدأ: ',
@@ -18491,11 +18491,8 @@ export const AR_MESSAGES: Record<string, string> = {
   'rev.texts.fr.extract.model_para_h': 'الفقرة النموذجية (250 كلمة)',
   'rev.texts.fr.extract.why_works_h': 'ليش هذي الفقرة ناجحة',
   'rev.texts.fr.read.crumb_current': 'اقرأ الرواية',
-  'rev.texts.fr.read.pd_label': 'نص ضمن الملكية العامة',
-  'rev.texts.fr.read.pd_body':
-    'Frankenstein; or, The Modern Prometheus (1818) تأليف Mary Shelley ضمن الملكية العامة. النص تحت من الطبعة الأولى الأصلية 1818. الفصول المفتاحية معروضة مع شروحات تفاعلية لدراسة GCSE.',
-  'rev.texts.fr.read.footer_pd':
-    'Frankenstein; or, The Modern Prometheus (1818) تأليف Mary Shelley ضمن الملكية العامة. النص مأخوذ من الطبعة الأولى 1818. الشروحات مادة دراسية أصلية.',
+  'rev.texts.fr.read.rights':
+    'هذا العمل خرج من حقوق النشر في بريطانيا، فنقدر ننشره كامل. النص منسوخ من الطبعة اللي راجعتها Mary Shelley سنة 1831، بإملائها الأصلي، مو مكتوب من جديد.',
   'rev.texts.fr.read.back_to_guide': 'رجوع لدليل الدراسة',
   'rev.texts.fr.themes.intro':
     'تحليل شامل للمحاور الستة المفتاحية مع الاقتباسات والروابط السياقية واستراتيجيات الامتحان.',

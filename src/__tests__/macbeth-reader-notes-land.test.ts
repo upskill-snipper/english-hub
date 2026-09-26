@@ -3,7 +3,7 @@ import { describe, it, expect } from 'vitest'
 import { macbethText } from '@/data/full-texts/macbeth'
 import { CHARACTERS, SCENES, THEMES } from '@/app/revision/texts/macbeth/read/notes'
 import { MACBETH_AR } from '@/app/revision/texts/macbeth/read/translations'
-import { setForTheViewer } from '@/app/revision/texts/macbeth/read/set-for-the-viewer'
+import { setForTheViewer } from '@/components/study/set-play-for-the-viewer'
 
 /**
  * The Macbeth reader's notes land on the text they are about.
@@ -135,7 +135,8 @@ describe('the reader sets the edition out as a play', () => {
   // passing). A scene without notes is printed as HTML, where the edition's line
   // breaks are white space, so 16 scenes ran their verse on as prose; and the
   // edition's italic underscores were printed as underscores. See
-  // ../app/revision/texts/macbeth/read/set-for-the-viewer.ts.
+  // ../components/study/set-play-for-the-viewer.ts, where the repair now lives
+  // for every play; every-play-is-set-as-a-play.test.ts checks the other twelve.
   const SET = macbethText.sections.map((s) => ({
     held: s,
     html: setForTheViewer(s.content, s.setting),

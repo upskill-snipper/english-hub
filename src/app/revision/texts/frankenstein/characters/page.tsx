@@ -134,14 +134,14 @@ const CHARACTERS: CharacterStudy[] = [
       "Elizabeth is presented as an ideal of feminine virtue: beautiful, gentle, devoted, and self-sacrificing. She was adopted into the Frankenstein family as a child and raised alongside Victor, who describes her as \"a possession\" given to him by his mother. This disturbing language of ownership reveals the patriarchal framework within which Elizabeth exists. She has no independent story arc; her role in the novel is entirely defined by her relationships with Victor and with the Frankenstein family. She writes letters urging Victor to return home, tends to the family during crises, and pleads for Justine's innocence, but she is never given agency over the novel's central events. Her murder on her wedding night by the Creature is the culmination of this objectification: she dies as a consequence of Victor's actions, a pawn in the conflict between creator and creation. Some critics read Elizabeth as Shelley's critique of the limited roles available to women in Romantic-era society. Others see her passivity as a structural weakness in the novel. Either way, her death is significant because it demonstrates the collateral damage caused by male ambition: Elizabeth is destroyed not by anything she has done but by Victor's refusal to take responsibility for his creation.",
     keyQuotes: [
       {
-        quote: 'I have a pretty present for my Victor -- tomorrow he shall have it.',
+        quote: 'I have a pretty present for my Victor--to-morrow he shall have it.',
         context: "Chapter 1 -- Victor's mother presenting Elizabeth to him as a child",
         analysis:
           'Elizabeth is introduced as a "present" -- an object to be given. This language of possession runs through Victor\'s entire description of Elizabeth and reflects the commodification of women in the early nineteenth century. Shelley draws attention to the power imbalance from the very beginning.',
       },
       {
         quote: 'She was the living spirit of love to soften and attract.',
-        context: 'Chapter 1 -- Victor describing Elizabeth',
+        context: 'Chapter 2 -- Victor describing Elizabeth',
         analysis:
           'Elizabeth is defined entirely through her emotional function for others: she exists to "soften and attract." The description reduces her to a civilising influence rather than an autonomous person, reflecting Mary Wollstonecraft\'s critique (in A Vindication of the Rights of Woman) of women being valued only for their appearance and emotional labour.',
       },
@@ -177,7 +177,7 @@ const CHARACTERS: CharacterStudy[] = [
     name: 'Justine Moritz',
     role: 'Servant in the Frankenstein household, wrongly executed',
     analysis:
-      "Justine is one of the novel's most tragic figures. A kind, loyal servant who has been virtually adopted by the Frankenstein family, she is framed for the murder of William when the Creature plants Victor's miniature portrait in her pocket. Despite her obvious innocence, Justine is convicted and executed. What makes her death especially damning is Victor's silence: he knows the Creature is responsible but says nothing, fearing that no one would believe his story. Justine's execution exposes the failure of every system of justice in the novel -- legal, moral, and familial. The court convicts an innocent woman on circumstantial evidence; Victor, who possesses the truth, is too cowardly to speak; and the Creature, who committed the crime, has been driven to it by a society that refused him any place. Justine herself is dignified in death, forgiving those who have wronged her. Shelley uses her to demonstrate the real human cost of Victor's irresponsibility: innocent people die because he will not face the consequences of what he has created.",
+      "Justine is one of the novel's most tragic figures. A kind, loyal servant who has been virtually adopted by the Frankenstein family, she is framed for the murder of William when the Creature hides the miniature of Victor's mother, which William had been wearing, in the folds of her dress. Despite her obvious innocence, Justine is convicted and executed. What makes her death especially damning is Victor's silence: he knows the Creature is responsible but says nothing, fearing that no one would believe his story. Justine's execution exposes the failure of every system of justice in the novel -- legal, moral, and familial. The court convicts an innocent woman on circumstantial evidence; Victor, who possesses the truth, is too cowardly to speak; and the Creature, who committed the crime, has been driven to it by a society that refused him any place. Justine herself is dignified in death, forgiving those who have wronged her. Shelley uses her to demonstrate the real human cost of Victor's irresponsibility: innocent people die because he will not face the consequences of what he has created.",
     keyQuotes: [
       {
         quote:
@@ -199,9 +199,9 @@ const CHARACTERS: CharacterStudy[] = [
       {
         quote:
           'The more I saw of them, the greater became my desire to claim their protection and kindness; my heart yearned to be known and loved by these amiable creatures.',
-        context: 'Chapter 12 -- the Creature watching the De Laceys',
+        context: 'Chapter 15 -- the Creature watching the De Laceys',
         analysis:
-          'The Creature\'s "yearning" is presented as a fundamental human need: to be "known and loved." The word "creatures" is significant -- the Creature uses the same word for the De Laceys that Victor uses for him, collapsing the distinction between human and non-human. His desire for recognition is the same desire that drives Walton and Victor.',
+          'The Creature\'s longing is presented as a fundamental human need: his heart "yearned" to be "known and loved." The word "creatures" is significant -- the Creature uses the same word for the De Laceys that Victor uses for him, collapsing the distinction between human and non-human. His desire for recognition is the same desire that drives Walton and Victor.',
       },
       {
         quote:

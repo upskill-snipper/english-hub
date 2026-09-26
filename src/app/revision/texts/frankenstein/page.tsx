@@ -105,7 +105,7 @@ const data: TextGuideData = {
     },
   ],
   historicalContext: [
-    'Mary Shelley wrote Frankenstein in 1816 during the famous "ghost story" competition at the Villa Diodati near Lake Geneva, where she was staying with Percy Bysshe Shelley, Lord Byron and John Polidori. She was just eighteen years old. The novel was published anonymously in 1818 and attributed to a man by most reviewers; when Shelley was revealed as the author, many refused to believe a young woman could have written it.',
+    'Mary Shelley wrote Frankenstein in 1816 during the famous "ghost story" competition at the Villa Diodati near Lake Geneva, where Lord Byron was staying with John Polidori; she and Percy Bysshe Shelley were his neighbours. She was just eighteen years old. The novel was published anonymously in 1818, and some reviewers took it for Percy Shelley\'s work: Walter Scott did, reviewing it in Blackwood\'s Edinburgh Magazine, and Mary Shelley wrote to him to say that she was the author.',
 
     'The novel was influenced by contemporary scientific experiments, particularly Luigi Galvani\'s work on "animal electricity" and the public demonstrations of Giovanni Aldini, who applied electrical current to the bodies of executed criminals, causing their limbs to twitch. These experiments raised genuine questions about the nature of life and whether science could reanimate the dead.',
 

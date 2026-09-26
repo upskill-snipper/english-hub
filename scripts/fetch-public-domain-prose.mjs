@@ -12,6 +12,8 @@
  *   Jekyll and Hyde        bare capitalised titles, no chapter marker at all
  *   War of the Worlds,     numeral on one line, title on the next; and the
  *   The Scarlet Letter     numbering restarts at Book Two in the first
+ *   Frankenstein           LETTER I. then CHAPTER I., each numbered from one,
+ *                          after an INTRODUCTION. and a PREFACE. (26 Sept 2026)
  *
  * A generic prose parser that guessed at this would fold chapters together
  * silently, which is exactly what the play fetcher did to Much Ado before its
@@ -150,6 +152,60 @@ const BOOKS = [
     label: (n) => `Chapter ${n}`,
     expect: 10,
   },
+  {
+    // THE 1831 TEXT, AND WHY NOT THE 1818 ONE. Both Gutenberg files the site
+    // had been pointed at are the 1831 revision: #84 and #42324 each carry
+    // 1831's new Chapter 1 (Elizabeth found among "five hungry babes" by the
+    // Lake of Como), which the 1818 first edition does not have; only #41445
+    // is 1818. Every Frankenstein page quotes 1831 and numbers its chapters 1
+    // to 24 as 1831 does, the study guide says it copied #42324, and it and
+    // the main page quote Shelley's 1831 Introduction, which only #42324
+    // prints. Measured 26 September 2026: seven quotations on the pages are
+    // found in #42324 and not #84, one the other way. The reader that claimed
+    // "the 1818 first edition" was a hand-typed mixture of both.
+    //
+    // No contents list is printed, so the count was taken from the headings in
+    // the body: the Introduction, the Preface, four letters and twenty-four
+    // chapters. #84's contents list gives the same four letters and 24
+    // chapters. Letters are sections: Walton's frame is the novel, not front
+    // matter.
+    slug: 'frankenstein',
+    id: 42324,
+    title: 'Frankenstein; Or, The Modern Prometheus',
+    displayTitle: 'Frankenstein',
+    author: 'Mary Shelley',
+    type: 'novel',
+    // The whole heading is the "numeral", so the label keeps LETTER I apart
+    // from CHAPTER I: both editions' numbers restart after the letters.
+    heading: /^((?:LETTER|CHAPTER)\s+[IVXLC]+|INTRODUCTION|PREFACE)\.$/,
+    label: (n) => n[0] + n.slice(1).replace(/^[A-Z]+/, (w) => w.toLowerCase()),
+    // Everything after the last chapter is the printer's imprint and a
+    // transcriber's note, which would otherwise end Chapter XXIV.
+    end: /^THE END\.\r?$/m,
+    strip: [
+      {
+        // Captions for the two 1831 engravings, which are not reproduced. One
+        // re-quotes the creation scene with its own punctuation ("the dull,
+        // yellow eye"), which would print a second, different version of the
+        // line a few paragraphs from the real one.
+        pattern: /^\[Illustration:[\s\S]*?\]\r?$/gm,
+        count: 2,
+        why: 'the captions of the two engravings, which are not reproduced',
+      },
+      {
+        // The half-title between the Preface and Letter I, which would
+        // otherwise print as the last lines of the Preface.
+        pattern: /^FRANKENSTEIN;\s+OR,\s+THE MODERN PROMETHEUS\.\r?$/gm,
+        count: 1,
+        why: 'the half-title between the Preface and Letter I',
+      },
+    ],
+    // Three passages of verse are quoted (Coleridge, Wordsworth, and Percy
+    // Shelley's "Mutability"), set indented. Joined into one paragraph they
+    // read as prose.
+    verse: true,
+    expect: 30,
+  },
 ]
 
 const MIN_CHARS = 8000
@@ -264,7 +320,21 @@ function pgaHtmlToText(html) {
   const body = html.slice(html.search(/<body[^>]*>/i))
   const end = body.search(/<h2[^>]*>\s*THE END\s*<\/h2>/i)
   if (end === -1) throw new Error('no "THE END" heading - edition changed shape')
-  const named = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', mdash: '—', ndash: '–', lsquo: '‘', rsquo: '’', ldquo: '“', rdquo: '”', hellip: '…' }
+  const named = {
+    amp: '&',
+    lt: '<',
+    gt: '>',
+    quot: '"',
+    apos: "'",
+    nbsp: ' ',
+    mdash: '—',
+    ndash: '–',
+    lsquo: '‘',
+    rsquo: '’',
+    ldquo: '“',
+    rdquo: '”',
+    hellip: '…',
+  }
   const decode = (s) =>
     s
       .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)))
@@ -276,15 +346,24 @@ function pgaHtmlToText(html) {
       // Verse and lists are set in <pre>: Beasts of England, the Seven
       // Commandments, Minimus's poem. Each line becomes its own block, or the
       // paragraph rule below would run the Commandments together as one line.
-      .replace(/<pre[^>]*>([\s\S]*?)<\/pre>/gi, (_, p) =>
-        `\n\n${p
-          .replace(/<[^>]+>/g, '')
-          .split('\n')
-          .map((l) => l.trim())
-          .filter(Boolean)
-          .join('\n\n')}\n\n`,
+      .replace(
+        /<pre[^>]*>([\s\S]*?)<\/pre>/gi,
+        (_, p) =>
+          `\n\n${p
+            .replace(/<[^>]+>/g, '')
+            .split('\n')
+            .map((l) => l.trim())
+            .filter(Boolean)
+            .join('\n\n')}\n\n`,
       )
-      .replace(/<h2[^>]*>([\s\S]*?)<\/h2>/gi, (_, h) => `\n\n${h.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim()}\n\n`)
+      .replace(
+        /<h2[^>]*>([\s\S]*?)<\/h2>/gi,
+        (_, h) =>
+          `\n\n${h
+            .replace(/<[^>]+>/g, '')
+            .replace(/\s+/g, ' ')
+            .trim()}\n\n`,
+      )
       .replace(/<\/p>|<br\s*\/?>/gi, '\n\n')
       .replace(/<[^>]+>/g, ' ')
       .replace(/[ \t]+/g, ' ')
@@ -292,8 +371,15 @@ function pgaHtmlToText(html) {
   )
 }
 
-/** Plain text to the HTML the viewer renders. Prose is paragraphs. */
-function toHtml(sectionLines) {
+/**
+ * Plain text to the HTML the viewer renders. Prose is paragraphs.
+ *
+ * With `verse`, a block of more than one line whose every line is indented is
+ * verse quoted in the prose, and keeps its line breaks. Only Frankenstein asks
+ * for it: the other editions here were written before this existed and have
+ * not been checked for indented blocks that are not verse.
+ */
+function toHtml(sectionLines, book = {}) {
   return sectionLines
     .join('\n')
     .replace(/^\n+/, '')
@@ -303,10 +389,37 @@ function toHtml(sectionLines) {
       const text = block.replace(/\s+$/gm, '').trim()
       if (!text) return ''
       const escaped = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      const lines = block.split('\n').filter((l) => l.trim())
+      if (book.verse && lines.length > 1 && lines.every((l) => /^\s/.test(l))) {
+        return `<p>${escaped.replace(/\n\s*/g, '<br />\n')}</p>`
+      }
       return `<p>${escaped.replace(/\n\s*/g, ' ')}</p>`
     })
     .filter(Boolean)
     .join('\n\n')
+}
+
+/**
+ * Cut what follows the book's last line, and remove the named pieces that are
+ * not the text. Each removal states how many times it must match, so an
+ * edition that has changed shape stops the write rather than printing what
+ * the pattern no longer catches.
+ */
+function trimToText(body, book) {
+  let out = body
+  if (book.end) {
+    const at = out.search(book.end)
+    if (at === -1) throw new Error(`no end marker ${book.end} - edition changed shape`)
+    out = out.slice(0, at)
+  }
+  for (const s of book.strip ?? []) {
+    const found = out.match(s.pattern)?.length ?? 0
+    if (found !== s.count) {
+      throw new Error(`expected ${s.count} of ${s.why}, found ${found} - edition changed shape`)
+    }
+    out = out.replace(s.pattern, '')
+  }
+  return out
 }
 
 async function fetchBody(book) {
@@ -316,7 +429,9 @@ async function fetchBody(book) {
     const html = new TextDecoder('iso-8859-1').decode(await res.arrayBuffer())
     const title = /<title>\s*([^<]*?)\s*<\/title>/i.exec(html)
     if (!title || title[1] !== book.title) {
-      throw new Error(`expected title "${book.title}", got "${title ? title[1] : 'none'}" - URL now points elsewhere`)
+      throw new Error(
+        `expected title "${book.title}", got "${title ? title[1] : 'none'}" - URL now points elsewhere`,
+      )
     }
     return pgaHtmlToText(html)
   }
@@ -329,7 +444,9 @@ async function fetchBody(book) {
   const titleLine = /^Title:\s*(.+)$/m.exec(raw)
   if (!titleLine) throw new Error('no Title line')
   if (titleLine[1].trim() !== book.title) {
-    throw new Error(`expected "${book.title}", got "${titleLine[1].trim()}" - id now points elsewhere`)
+    throw new Error(
+      `expected "${book.title}", got "${titleLine[1].trim()}" - id now points elsewhere`,
+    )
   }
   if (/PROOFING METHODS AND TOOLS WERE NOT WELL DEVELOPED/.test(raw)) {
     throw new Error(`Gutenberg marks id ${book.id} as poorly proofed`)
@@ -338,7 +455,7 @@ async function fetchBody(book) {
 }
 
 async function build(book) {
-  const all = parseSections(await fetchBody(book), book)
+  const all = parseSections(trimToText(await fetchBody(book), book), book)
 
   // DROP THE TABLE OF CONTENTS, by substance rather than by position.
   //
@@ -367,7 +484,7 @@ async function build(book) {
     title:
       book.label(s.numeral, s.part) +
       (s.subtitle ? `: ${titleCase(s.subtitle).replace(/\.$/, '')}` : ''),
-    content: toHtml(s.lines),
+    content: toHtml(s.lines, book),
   }))
 
   const totalChars = sections.reduce((n, s) => n + s.content.length, 0)
@@ -389,6 +506,19 @@ async function build(book) {
       : `Project
 // Gutenberg #${book.id}, whose branding and licence text are stripped per their
 // terms; the underlying work is out of copyright.`
+  }${
+    book.strip || book.end
+      ? `
+//
+// Removed from the edition, and nothing else:${[
+          ...(book.strip ?? []).map((s) => s.why),
+          ...(book.end
+            ? ['everything after its last line (an imprint and a transcriber’s note)']
+            : []),
+        ]
+          .map((why) => `\n//   - ${why}`)
+          .join('')}`
+      : ''
   }
 //
 // Re-run the generator to refresh. It refuses to write if the edition's own
@@ -415,7 +545,21 @@ export const ${varName}: TextData = {
  * Small words stay lower case unless they open the title, so the staves read
  * "The First of the Three Spirits" rather than "The First Of The Three Spirits".
  */
-const SMALL_WORDS = new Set(['of', 'the', 'a', 'an', 'and', 'or', 'in', 'on', 'to', 'at', 'for', 'with', 'from'])
+const SMALL_WORDS = new Set([
+  'of',
+  'the',
+  'a',
+  'an',
+  'and',
+  'or',
+  'in',
+  'on',
+  'to',
+  'at',
+  'for',
+  'with',
+  'from',
+])
 
 function titleCase(s) {
   if (s !== s.toUpperCase()) return s
@@ -441,7 +585,9 @@ if (wanted.length === 0) {
   for (const book of wanted) {
     try {
       const r = await build(book)
-      console.log(`  ok   ${r.slug.padEnd(24)} ${String(r.sections).padStart(2)} sections, ${r.chars} chars`)
+      console.log(
+        `  ok   ${r.slug.padEnd(24)} ${String(r.sections).padStart(2)} sections, ${r.chars} chars`,
+      )
     } catch (err) {
       failed++
       console.error(`  FAIL ${book.slug.padEnd(24)} ${err.message}`)

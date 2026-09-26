@@ -1,9 +1,11 @@
 'use client'
 
+import { useMemo } from 'react'
 import Link from 'next/link'
 import { EnglishText } from '@/components/i18n/EnglishText'
 import { ArrowLeft, BookOpen } from 'lucide-react'
 import { InteractiveTextViewer, type TextData } from '@/components/study/InteractiveTextViewer'
+import { setForTheViewer } from '@/components/study/set-play-for-the-viewer'
 
 import { useT } from '@/lib/i18n/use-t'
 import { textGuideHref } from '@/lib/revision/guide-href'
@@ -59,17 +61,36 @@ export function FullTextReader({
   // Merge the located quotations into the sections the viewer renders. The
   // generated map is keyed by slug then section id, so a text with none is
   // untouched and its overlays stay closed.
+  //
+  // A play is also set out as a play first (./set-play-for-the-viewer.ts):
+  // verse in lines, prose left to flow, the speaker above the speech, the
+  // edition's italics as italics and the scene's place at its head. Without
+  // it the viewer ran verse on as prose in every scene without notes and
+  // printed Gutenberg's underscores (found 26 September 2026). The notes are
+  // cut from this same set-out text by scripts/generate-text-annotations.mjs,
+  // so each still finds its line.
   const located = TEXT_ANNOTATIONS[slug]
-  const annotated: TextData = located
-    ? {
-        ...data,
-        sections: data.sections.map((section) =>
-          located[section.id]?.length
-            ? { ...section, annotations: [...(section.annotations ?? []), ...located[section.id]] }
-            : section,
-        ),
-      }
-    : data
+  const annotated: TextData = useMemo(
+    () =>
+      located || data.type === 'play'
+        ? {
+            ...data,
+            sections: data.sections.map((held) => {
+              const section =
+                data.type === 'play'
+                  ? { ...held, content: setForTheViewer(held.content, held.setting) }
+                  : held
+              return located?.[section.id]?.length
+                ? {
+                    ...section,
+                    annotations: [...(section.annotations ?? []), ...located[section.id]],
+                  }
+                : section
+            }),
+          }
+        : data,
+    [data, located],
+  )
 
   return (
     <div className="mx-auto max-w-5xl px-4 pb-16 pt-8 sm:px-6">

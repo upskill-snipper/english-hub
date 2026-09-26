@@ -79,6 +79,13 @@ export function playPassage(
       .filter((b) => /^<p class="italic/.test(b.trim()))
       .map((b) => decode(b.replace(/<[^>]+>/g, '').trim())),
   )
+  // And the speakers by their bold, for the headings capitals alone do not
+  // describe: "MARCELLUS and BARNARDO", "MACBETH, LENNOX" and Hamlet's "All",
+  // bolded since the plays were regenerated on 26 September 2026. SPEAKER
+  // alone printed those as the first line of the speech.
+  const speakers = new Set(
+    [...(section?.content ?? '').matchAll(/<strong>([^<]*)<\/strong>/g)].map((m) => decode(m[1])),
+  )
   const join = (lines: string[]) =>
     lines
       .map((l) => l.trim())
@@ -90,7 +97,7 @@ export function playPassage(
       if (directions.has(block)) return `[${block.replace(/_/g, '').replace(/^\[|\]$/g, '')}]`
       const [first, ...rest] = block.split('\n')
       const set =
-        SPEAKER.test(first.trim()) && rest.length > 0
+        (SPEAKER.test(first.trim()) || speakers.has(first.trim())) && rest.length > 0
           ? `${first.trim()}: ${join(rest)}`
           : join([first, ...rest])
       return set.replace(/_/g, '')

@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest'
 
 import { animalFarmText } from '@/data/full-texts/animal-farm'
 import { doNotGoGentleIntoThatGoodNightText } from '@/data/full-texts/do-not-go-gentle-into-that-good-night'
+import { hamletText } from '@/data/full-texts/hamlet'
 import { macbethText } from '@/data/full-texts/macbeth'
 import { passage, playPassage, poemLines } from '@/lib/study-guides/passage'
 
@@ -94,5 +95,19 @@ describe('playPassage', () => {
     // The edition breaks this sentence after "will"; as verse it would read "will / not".
     expect(p).toContain('all the perfumes of Arabia will not sweeten this little hand')
     expect(p).toContain(' / DOCTOR: What a sigh is there!')
+  })
+
+  it('names a joint speaker, and one printed in small letters', () => {
+    // Bolded since the plays were regenerated on 26 September 2026; capitals
+    // alone do not describe "MARCELLUS and BARNARDO" or Hamlet's "Both", and
+    // before this they were printed as the first line of what was said.
+    const p = playPassage(
+      hamletText,
+      'acti-sceneii',
+      'Hold you the watch tonight',
+      'Arm’d, my lord',
+    )
+    expect(p).toContain(' / MARCELLUS and BARNARDO: We do, my lord. / HAMLET: Arm’d, say you?')
+    expect(p.endsWith('Both: Arm’d, my lord.')).toBe(true)
   })
 })

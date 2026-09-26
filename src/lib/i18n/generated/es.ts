@@ -19469,15 +19469,15 @@ export const ES_MESSAGES: Record<string, string> = {
     'Análisis profundo de los capítulos más importantes para el examen: citas clave, recursos del autor y vínculos temáticos de cada sección de la novela.',
   'rev.texts.fr.quotes.title': '25 citas clave por tema',
   'rev.texts.fr.quotes.intro':
-    'Todas las citas que necesitas para el examen, organizadas por tema con análisis detallado. Todas del texto de dominio público de 1818.',
+    'Todas las citas que necesitas para el examen, organizadas por tema con análisis detallado. Todas del texto que Mary Shelley revisó en 1831, de dominio público.',
   'rev.texts.fr.quotes.jump_to_theme': 'Ir a un tema',
   'rev.texts.fr.quotes.public_domain':
-    'Frankenstein; or, The Modern Prometheus (1818) de Mary Shelley es de dominio público. Todas las citas provienen del texto original de 1818 y se reproducen libremente.',
+    'Frankenstein; or, The Modern Prometheus (1818) de Mary Shelley es de dominio público. Todas las citas provienen del texto que revisó para la edición de 1831 y se reproducen libremente.',
   'rev.texts.fr.essays.title': 'Planes de ensayo modelo',
   'rev.texts.fr.essays.intro':
     'Cinco planes de ensayo listos para el examen con introducciones, estructuras de tres párrafos, citas integradas, análisis, contexto y conclusiones.',
   'rev.texts.fr.essays.general_strategy': 'Estrategia general de examen',
-  'rev.texts.fr.extract.badge': 'Volume I · Chapter 5 · The Awakening',
+  'rev.texts.fr.extract.badge': 'Chapter 5 · The Awakening',
   'rev.texts.fr.extract.intro':
     'Un recorrido guiado por el extracto del momento en que Victor Frankenstein da vida a la Criatura. Cada tarjeta te invita a observar un rasgo (notice), decir qué hace el autor con él (say) y ampliar al contexto (zoom out). A continuación, un párrafo modelo de 250 palabras.',
   'rev.texts.fr.extract.opens': 'El extracto comienza: ',
@@ -19488,11 +19488,8 @@ export const ES_MESSAGES: Record<string, string> = {
   'rev.texts.fr.extract.model_para_h': 'Párrafo modelo (250 palabras)',
   'rev.texts.fr.extract.why_works_h': 'Por qué funciona este párrafo',
   'rev.texts.fr.read.crumb_current': 'Leer la novela',
-  'rev.texts.fr.read.pd_label': 'Texto de dominio público',
-  'rev.texts.fr.read.pd_body':
-    'Frankenstein; or, The Modern Prometheus (1818) de Mary Shelley es de dominio público. El texto siguiente es de la primera edición original de 1818. Los capítulos clave se presentan con anotaciones interactivas para el estudio de GCSE.',
-  'rev.texts.fr.read.footer_pd':
-    'Frankenstein; or, The Modern Prometheus (1818) de Mary Shelley es de dominio público. Texto tomado de la primera edición de 1818. Las anotaciones son material de estudio original.',
+  'rev.texts.fr.read.rights':
+    'Esta obra está libre de derechos en el Reino Unido, así que podemos publicarla completa. El texto es una copia de la edición que Mary Shelley revisó en 1831, con su ortografía original, no una transcripción.',
   'rev.texts.fr.read.back_to_guide': 'Volver a la guía de estudio',
   'rev.texts.fr.themes.intro':
     'Análisis exhaustivo de los seis temas clave con citas, vínculos contextuales y estrategias de examen.',

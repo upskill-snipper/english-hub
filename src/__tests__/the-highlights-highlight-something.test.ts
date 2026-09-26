@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { readFileSync, readdirSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { TEXT_ANNOTATIONS } from '@/data/text-annotations.generated'
+import { setForTheViewer } from '@/components/study/set-play-for-the-viewer'
 
 /**
  * The reader offered five highlighting overlays and highlighted nothing.
@@ -58,7 +59,16 @@ interface LoadedSection {
   content: string
 }
 
-/** The plain text the viewer sees: tags stripped, nothing else changed. */
+/**
+ * The plain text the viewer sees: tags stripped, nothing else changed.
+ *
+ * For a play, that is the scene as setForTheViewer sets it out, which is what
+ * FullTextReader prints and what the generator cuts each span from (26
+ * September 2026). The words are the edition's, and
+ * every-play-is-set-as-a-play.test.ts holds that none changes; what goes are
+ * the edition's italic underscores, so a span over one ("_Et tu, Brute?_") is
+ * cut without it, which is how it appears on the page.
+ */
 function sectionsOf(slug: string): Map<string, string> {
   const path = Object.keys(MODULES).find((k) => k.endsWith(`/${slug}.ts`))
   const out = new Map<string, string>()
@@ -66,10 +76,11 @@ function sectionsOf(slug: string): Map<string, string> {
   const data = Object.values(MODULES[path]).find(
     (v) =>
       typeof v === 'object' && v !== null && Array.isArray((v as { sections?: unknown }).sections),
-  ) as { sections: LoadedSection[] } | undefined
+  ) as { type?: string; sections: LoadedSection[] } | undefined
   if (!data) return out
   for (const section of data.sections) {
-    out.set(section.id, section.content.replace(/<[^>]*>/g, ''))
+    const printed = data.type === 'play' ? setForTheViewer(section.content) : section.content
+    out.set(section.id, printed.replace(/<[^>]*>/g, ''))
   }
   return out
 }

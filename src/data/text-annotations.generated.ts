@@ -1445,7 +1445,7 @@ export const TEXT_ANNOTATIONS: Readonly<
     'activ-scenei': [
       {
         type: 'quote',
-        text: 'Upon the King! Let us our lives, our souls, Our debts, our careful wives, Our children, and our sins lay on the King',
+        text: 'Upon the King! Let us our lives, our souls,\nOur debts, our careful wives,\nOur children, and our sins lay on the King',
         note: 'King Henry — Act 4, Scene 1. Alone at night in the borrowed cloak, Henry voices the private burden of ceremony: every subject’s suffering is laid on his conscience, exposing the hollow cost of royal public performance.',
       },
       {
@@ -2234,7 +2234,7 @@ export const TEXT_ANNOTATIONS: Readonly<
     'actiii-scenei': [
       {
         type: 'quote',
-        text: 'Et tu, Brute?_—Then fall, Caesar',
+        text: 'Et tu, Brute?—Then fall, Caesar',
         note: 'Caesar - Act 3, Scene 1. No ancient historian gives Caesar these words (Suetonius says some claimed he spoke to Brutus in Greek), and the Latin phrase was already in an English play printed in 1595. The shock is that betrayal by Brutus ends Caesar’s will to resist; the public man accepts the verdict of his friend.',
       },
       {
@@ -2650,7 +2650,7 @@ export const TEXT_ANNOTATIONS: Readonly<
     'actv-sceneiii': [
       {
         type: 'quote',
-        text: 'Done to death by slanderous tongues Was the Hero that here lies',
+        text: 'Done to death by slanderous tongues\n     Was the Hero that here lies',
         note: 'Claudio — Act 5, Scene 3. Claudio’s epitaph, posted at Hero’s supposed tomb, admits the lethal power of language, even as the passive construction conveniently frames him as a mourner of an anonymous injustice rather than the chief speaker of the slander that nearly killed her. The epitaph turns “noting” from a comic device into a moral verdict and underlines the play’s insistence that words have consequences for which somebody has to take responsibility. Shakespeare makes the scene a ritual of penance, but the evasive phrasing also invites the audience to question how much Claudio has genuinely understood about his own part in the crime.',
       },
     ],
@@ -3758,7 +3758,7 @@ export const TEXT_ANNOTATIONS: Readonly<
     'actii-scenevii': [
       {
         type: 'quote',
-        text: 'All that glisters is not gold, Often have you heard that told',
+        text: 'All that glisters is not gold,\n     Often have you heard that told',
         note: 'Scroll in Morocco’s gold casket — Act 2, Scene 7. The proverb inside the gold casket rebukes Morocco for choosing by outward splendour and states the play’s central warning in miniature. Shakespeare uses the scroll’s bouncy rhyme to give a moral truism the feel of ancient wisdom. The line has passed into everyday English and anchors the play’s repeated motif of ornament concealing emptiness — a pattern that reaches beyond the caskets into disguise, rhetoric and the trial itself.',
       },
       {
